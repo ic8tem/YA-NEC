@@ -1,12 +1,12 @@
 # YA-NEC - compilazione e pacchetti per Windows, Linux e Mac.
-# Con un tag vX.Y (o avviandolo a mano): pacchetti di tutte le piattaforme e Release vX.Y (versione letta dal file VERSION).
+# Con un push sul ramo release, o un tag vX.Y (o avviandolo a mano): pacchetti di tutte le piattaforme e Release vX.Y (versione letta dal file VERSION).
 # A ogni push sul ramo main: solo una compilazione di controllo su Linux (Windows 7 compreso).
 # Nomi dei pacchetti: YA-NEC-<versione>-<rid>.zip e .zip.sha256, quelli che l'aggiornamento automatico cerca (src/Diag/Aggiornamento.cs).
 name: build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, release ]
     tags: [ 'v*' ]
   workflow_dispatch:
 
@@ -36,7 +36,7 @@ jobs:
           dotnet build /tmp/w7/YA-NEC.csproj -c Release -p:Windows7=true
 
   pacchetti:
-    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/release' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -87,7 +87,7 @@ jobs:
           path: dist/*
 
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/release'
     needs: [ pacchetti ]
     runs-on: ubuntu-latest
     steps:
@@ -101,6 +101,7 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           name: YA-NEC ${{ env.VER }}
-          tag_name: ${{ github.ref_name }}
+          tag_name: v${{ env.VER }}
+          target_commitish: ${{ github.sha }}
           body_path: .github/release.md
           files: dist/*
