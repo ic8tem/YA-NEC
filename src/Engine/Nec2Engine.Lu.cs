@@ -168,6 +168,26 @@ namespace YaNec.Engine
         }
 
         // A[r0:r1, c0:c1] -= A[r0:r1, k0:k1] * A[k0:k1, c0:c1]
+        // 1.0: lettura e scrittura di 4 double; .NET 8 ha Vector256.LoadUnsafe/StoreUnsafe, .NET 6 (Windows 7) no: stesso effetto con Unsafe
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static Vector256<double> Ld256(ref double d0, nuint e)
+        {
+#if WINDOWS7
+            return Unsafe.ReadUnaligned<Vector256<double>>(ref Unsafe.As<double, byte>(ref Unsafe.Add(ref d0, (nint)e)));
+#else
+            return Vector256.LoadUnsafe(ref d0, e);
+#endif
+        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static void St256(Vector256<double> v, ref double d0, nuint e)
+        {
+#if WINDOWS7
+            Unsafe.WriteUnaligned(ref Unsafe.As<double, byte>(ref Unsafe.Add(ref d0, (nint)e)), v);
+#else
+            v.StoreUnsafe(ref d0, e);
+#endif
+        }
+
         static void GemmScalare(Complex[] a, int ndim, int k0, int k1, int r0, int r1, int c0, int c1)
         {
             for (int c = c0; c < c1; c++)
@@ -205,12 +225,12 @@ namespace YaNec.Engine
                 for (; i + 2 <= r1; i += 2)
                 {
                     nuint e0 = (nuint)((i + o0) * 2), e1 = (nuint)((i + o1) * 2), e2 = (nuint)((i + o2) * 2), e3 = (nuint)((i + o3) * 2);
-                    Vector256<double> s0 = Vector256.LoadUnsafe(ref d0, e0), s1 = Vector256.LoadUnsafe(ref d0, e1);
-                    Vector256<double> s2 = Vector256.LoadUnsafe(ref d0, e2), s3 = Vector256.LoadUnsafe(ref d0, e3);
+                    Vector256<double> s0 = Ld256(ref d0, e0), s1 = Ld256(ref d0, e1);
+                    Vector256<double> s2 = Ld256(ref d0, e2), s3 = Ld256(ref d0, e3);
                     long lo = (i + (long)k0 * ndim) * 2, passo = (long)ndim * 2;
                     for (int j = 0; j < nb; j++, lo += passo)
                     {
-                        Vector256<double> l = Vector256.LoadUnsafe(ref d0, (nuint)lo);
+                        Vector256<double> l = Ld256(ref d0, (nuint)lo);
                         Vector256<double> ls = Avx.Permute(l, 0b0101);
                         int b = j * 8;
                         s0 = Avx.Subtract(s0, Fma.MultiplyAddSubtract(l, buf[b], Avx.Multiply(ls, buf[b + 1])));
@@ -218,7 +238,7 @@ namespace YaNec.Engine
                         s2 = Avx.Subtract(s2, Fma.MultiplyAddSubtract(l, buf[b + 4], Avx.Multiply(ls, buf[b + 5])));
                         s3 = Avx.Subtract(s3, Fma.MultiplyAddSubtract(l, buf[b + 6], Avx.Multiply(ls, buf[b + 7])));
                     }
-                    s0.StoreUnsafe(ref d0, e0); s1.StoreUnsafe(ref d0, e1); s2.StoreUnsafe(ref d0, e2); s3.StoreUnsafe(ref d0, e3);
+                    St256(s0, ref d0, e0); St256(s1, ref d0, e1); St256(s2, ref d0, e2); St256(s3, ref d0, e3);
                 }
                 if (i < r1) GemmScalare(a, ndim, k0, k1, i, r1, c, c + 4);
             }

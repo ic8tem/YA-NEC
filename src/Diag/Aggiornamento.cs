@@ -180,7 +180,7 @@ namespace YaNec
                     using (Stream s = await http.GetStreamAsync(urlZip)) using (FileStream fs = File.Create(zip)) await s.CopyToAsync(fs);
                     string attesa = (await http.GetStringAsync(urlSha)).Trim().Split(' ', '\t', '\r', '\n')[0].ToLowerInvariant();
                     string calcolata;
-                    using (FileStream fs = File.OpenRead(zip)) calcolata = Convert.ToHexString(SHA256.HashData(fs)).ToLowerInvariant();
+                    using (FileStream fs = File.OpenRead(zip)) using (SHA256 sha = SHA256.Create()) calcolata = Convert.ToHexString(sha.ComputeHash(fs)).ToLowerInvariant();
                     if (calcolata != attesa) { ImpostaStato("versione " + nuova + ": impronta SHA-256 diversa da quella pubblicata, pacchetto scartato"); try { File.Delete(zip); } catch { } return; }
                     if (MainWindow.ProveAutomatiche) return;
                     Installa(zip, attuale.ToString(), nuova.ToString());
