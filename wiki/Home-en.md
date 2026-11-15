@@ -1,4 +1,4 @@
-[Italiano](Home) · **English** · [Français](Home-fr)
+[Italiano](Home) · **English** · [Deutsch](Home-de) · [Français](Home-fr) · [Español](Home-es) · [Português](Home-pt)
 
 # YA-NEC
 
