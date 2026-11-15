@@ -1,0 +1,196 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=LPDA by Elems+Boom
+CM YANEC DESCRIZIONE=LPDA by Elems+Boom
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=LPDA by Elems+Boom.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14	in	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+
+_13.6	_Min Freq	"_<<< Variables B thru M, user input, set as desired."			
+_30	_Max Freq	"_=""          Design bandwidth will be  (Fmin * "" & FIXED(0.93, 2) & "")  to  (Fmax * "" & FIXED(1.3, 1) & "")"""			
+_7	_Number of elements  (max 70)				
+_147	"_=""Boom length ("" & UnitsXYZ & "")"""				
+_0.5	"_=""Rear element diameter ("" & UnitsDia & "")"""				
+_0	"_Constant diameters?  0=No, 1=Yes"		"_Calculator for Feeder Zo.  Enter desired input Z in cell E20,"		
+_6	"_=""Rear stub length ("" & UnitsXYZ & "")  0=no stub"""		_read approximate required Feeder Zo in cell E21.		
+_600	_Rear stub Zo	_200	_Desired input (feedpoint) Z		
+_400	_Feeder (phase-line) Zo	"_=ROUND(E20^2 / (8 * T / SQRT(S) * 120 * (LN(U) - 2.25)) + E20 * SQRT((E20 / (8 * T / SQRT(S) * 120 * (LN(U) - 2.25))^2) + 1), 0)"	_Feeder (phase-line) Zo		
+_850	"_=""Boom height ("" & UnitsXYZ & "")"""				
+
+
+_=299.792458 / UnitsFact / (B * 0.93) * 0.94901369239916 * 0.5	"_=""Length rear element"" & IF(UnitsXYZ=""in"", ""  ("" & FIXED(P/12, 2, TRUE) & "" ft)"", """")"	"_<<< Variables P thru V, calculated values, do not modify."			
+_=T * 2 * P	"_=""Initial spacing"" & IF(UnitsXYZ=""in"", ""  ("" & FIXED(Q/12, 2, TRUE) & "" ft)"", """")"				
+"_=ROUND(10^(LOG((B * 0.93) / (D * 1.3)) / (E - 1)), 4)"	_Tau		"_Calculator for Feeder spacing.  Enter Feeder Zo in cell E29,"					
+"_=ROUND(G / ((1 + S * (1 - S^(E-2)) / (1 - S))) / 2 / P, 4)"	_Sigma		"_enter wire diameter in cell E30, read spacing in cell E31."					
+"_=P / IF(UnitsXYZ=""ft"", H/12, IF(UnitsXYZ=""m"", H/1000, H))"	_L/D (Length/Diameter) ratio	_400	_Feeder (phase-line) Zo					
+"_=ROUND(DEGREES(ATAN((1-S) / (4*T))), 1)"	_Alpha angle (deg)	_0.0808	"_Wire diameter, inches or mm"					
+		"_=ROUND(E30 * COSH(E29 / 120 / 0.95), 4)"	"_=""Wire spacing, same units  (assumes VF="" & FIXED(0.95, 2) & "")"""					
+
+
+	_LPDA by Elems+Boom							
+	_0	_=-P/2	_=M	_0	_=P/2	_=M	_=H	_=ODD(WireLen / WL * 20)
+"_=IF(E>1, """", ""X"")"	_=Q	_=C11 * S	_=M	_=Q	_=F11 * S	_=M	"_=IF(I, H, H11 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>2, """", ""X"")"	_=B12 + (B12-B11) * S	_=C12 * S	_=M	_=E12 + (E12-E11) * S	_=F12 * S	_=M	"_=IF(I, H, H12 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>3, """", ""X"")"	_=B13 + (B13-B12) * S	_=C13 * S	_=M	_=E13 + (E13-E12) * S	_=F13 * S	_=M	"_=IF(I, H, H13 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>4, """", ""X"")"	_=B14 + (B14-B13) * S	_=C14 * S	_=M	_=E14 + (E14-E13) * S	_=F14 * S	_=M	"_=IF(I, H, H14 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>5, """", ""X"")"	_=B15 + (B15-B14) * S	_=C15 * S	_=M	_=E15 + (E15-E14) * S	_=F15 * S	_=M	"_=IF(I, H, H15 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>6, """", ""X"")"	_=B16 + (B16-B15) * S	_=C16 * S	_=M	_=E16 + (E16-E15) * S	_=F16 * S	_=M	"_=IF(I, H, H16 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>7, """", ""X"")"	_=B17 + (B17-B16) * S	_=C17 * S	_=M	_=E17 + (E17-E16) * S	_=F17 * S	_=M	"_=IF(I, H, H17 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>8, """", ""X"")"	_=B18 + (B18-B17) * S	_=C18 * S	_=M	_=E18 + (E18-E17) * S	_=F18 * S	_=M	"_=IF(I, H, H18 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>9, """", ""X"")"	_=B19 + (B19-B18) * S	_=C19 * S	_=M	_=E19 + (E19-E18) * S	_=F19 * S	_=M	"_=IF(I, H, H19 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>10, """", ""X"")"	_=B20 + (B20-B19) * S	_=C20 * S	_=M	_=E20 + (E20-E19) * S	_=F20 * S	_=M	"_=IF(I, H, H20 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>11, """", ""X"")"	_=B21 + (B21-B20) * S	_=C21 * S	_=M	_=E21 + (E21-E20) * S	_=F21 * S	_=M	"_=IF(I, H, H21 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>12, """", ""X"")"	_=B22 + (B22-B21) * S	_=C22 * S	_=M	_=E22 + (E22-E21) * S	_=F22 * S	_=M	"_=IF(I, H, H22 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>13, """", ""X"")"	_=B23 + (B23-B22) * S	_=C23 * S	_=M	_=E23 + (E23-E22) * S	_=F23 * S	_=M	"_=IF(I, H, H23 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>14, """", ""X"")"	_=B24 + (B24-B23) * S	_=C24 * S	_=M	_=E24 + (E24-E23) * S	_=F24 * S	_=M	"_=IF(I, H, H24 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>15, """", ""X"")"	_=B25 + (B25-B24) * S	_=C25 * S	_=M	_=E25 + (E25-E24) * S	_=F25 * S	_=M	"_=IF(I, H, H25 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>16, """", ""X"")"	_=B26 + (B26-B25) * S	_=C26 * S	_=M	_=E26 + (E26-E25) * S	_=F26 * S	_=M	"_=IF(I, H, H26 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>17, """", ""X"")"	_=B27 + (B27-B26) * S	_=C27 * S	_=M	_=E27 + (E27-E26) * S	_=F27 * S	_=M	"_=IF(I, H, H27 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>18, """", ""X"")"	_=B28 + (B28-B27) * S	_=C28 * S	_=M	_=E28 + (E28-E27) * S	_=F28 * S	_=M	"_=IF(I, H, H28 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>19, """", ""X"")"	_=B29 + (B29-B28) * S	_=C29 * S	_=M	_=E29 + (E29-E28) * S	_=F29 * S	_=M	"_=IF(I, H, H29 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>20, """", ""X"")"	_=B30 + (B30-B29) * S	_=C30 * S	_=M	_=E30 + (E30-E29) * S	_=F30 * S	_=M	"_=IF(I, H, H30 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>21, """", ""X"")"	_=B31 + (B31-B30) * S	_=C31 * S	_=M	_=E31 + (E31-E30) * S	_=F31 * S	_=M	"_=IF(I, H, H31 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>22, """", ""X"")"	_=B32 + (B32-B31) * S	_=C32 * S	_=M	_=E32 + (E32-E31) * S	_=F32 * S	_=M	"_=IF(I, H, H32 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>23, """", ""X"")"	_=B33 + (B33-B32) * S	_=C33 * S	_=M	_=E33 + (E33-E32) * S	_=F33 * S	_=M	"_=IF(I, H, H33 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>24, """", ""X"")"	_=B34 + (B34-B33) * S	_=C34 * S	_=M	_=E34 + (E34-E33) * S	_=F34 * S	_=M	"_=IF(I, H, H34 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>25, """", ""X"")"	_=B35 + (B35-B34) * S	_=C35 * S	_=M	_=E35 + (E35-E34) * S	_=F35 * S	_=M	"_=IF(I, H, H35 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>26, """", ""X"")"	_=B36 + (B36-B35) * S	_=C36 * S	_=M	_=E36 + (E36-E35) * S	_=F36 * S	_=M	"_=IF(I, H, H36 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>27, """", ""X"")"	_=B37 + (B37-B36) * S	_=C37 * S	_=M	_=E37 + (E37-E36) * S	_=F37 * S	_=M	"_=IF(I, H, H37 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>28, """", ""X"")"	_=B38 + (B38-B37) * S	_=C38 * S	_=M	_=E38 + (E38-E37) * S	_=F38 * S	_=M	"_=IF(I, H, H38 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>29, """", ""X"")"	_=B39 + (B39-B38) * S	_=C39 * S	_=M	_=E39 + (E39-E38) * S	_=F39 * S	_=M	"_=IF(I, H, H39 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>30, """", ""X"")"	_=B40 + (B40-B39) * S	_=C40 * S	_=M	_=E40 + (E40-E39) * S	_=F40 * S	_=M	"_=IF(I, H, H40 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>31, """", ""X"")"	_=B41 + (B41-B40) * S	_=C41 * S	_=M	_=E41 + (E41-E40) * S	_=F41 * S	_=M	"_=IF(I, H, H41 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>32, """", ""X"")"	_=B42 + (B42-B41) * S	_=C42 * S	_=M	_=E42 + (E42-E41) * S	_=F42 * S	_=M	"_=IF(I, H, H42 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>33, """", ""X"")"	_=B43 + (B43-B42) * S	_=C43 * S	_=M	_=E43 + (E43-E42) * S	_=F43 * S	_=M	"_=IF(I, H, H43 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>34, """", ""X"")"	_=B44 + (B44-B43) * S	_=C44 * S	_=M	_=E44 + (E44-E43) * S	_=F44 * S	_=M	"_=IF(I, H, H44 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>35, """", ""X"")"	_=B45 + (B45-B44) * S	_=C45 * S	_=M	_=E45 + (E45-E44) * S	_=F45 * S	_=M	"_=IF(I, H, H45 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>36, """", ""X"")"	_=B46 + (B46-B45) * S	_=C46 * S	_=M	_=E46 + (E46-E45) * S	_=F46 * S	_=M	"_=IF(I, H, H46 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>37, """", ""X"")"	_=B47 + (B47-B46) * S	_=C47 * S	_=M	_=E47 + (E47-E46) * S	_=F47 * S	_=M	"_=IF(I, H, H47 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>38, """", ""X"")"	_=B48 + (B48-B47) * S	_=C48 * S	_=M	_=E48 + (E48-E47) * S	_=F48 * S	_=M	"_=IF(I, H, H48 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>39, """", ""X"")"	_=B49 + (B49-B48) * S	_=C49 * S	_=M	_=E49 + (E49-E48) * S	_=F49 * S	_=M	"_=IF(I, H, H49 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>40, """", ""X"")"	_=B50 + (B50-B49) * S	_=C50 * S	_=M	_=E50 + (E50-E49) * S	_=F50 * S	_=M	"_=IF(I, H, H50 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>41, """", ""X"")"	_=B51 + (B51-B50) * S	_=C51 * S	_=M	_=E51 + (E51-E50) * S	_=F51 * S	_=M	"_=IF(I, H, H51 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>42, """", ""X"")"	_=B52 + (B52-B51) * S	_=C52 * S	_=M	_=E52 + (E52-E51) * S	_=F52 * S	_=M	"_=IF(I, H, H52 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>43, """", ""X"")"	_=B53 + (B53-B52) * S	_=C53 * S	_=M	_=E53 + (E53-E52) * S	_=F53 * S	_=M	"_=IF(I, H, H53 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>44, """", ""X"")"	_=B54 + (B54-B53) * S	_=C54 * S	_=M	_=E54 + (E54-E53) * S	_=F54 * S	_=M	"_=IF(I, H, H54 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>45, """", ""X"")"	_=B55 + (B55-B54) * S	_=C55 * S	_=M	_=E55 + (E55-E54) * S	_=F55 * S	_=M	"_=IF(I, H, H55 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>46, """", ""X"")"	_=B56 + (B56-B55) * S	_=C56 * S	_=M	_=E56 + (E56-E55) * S	_=F56 * S	_=M	"_=IF(I, H, H56 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>47, """", ""X"")"	_=B57 + (B57-B56) * S	_=C57 * S	_=M	_=E57 + (E57-E56) * S	_=F57 * S	_=M	"_=IF(I, H, H57 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>48, """", ""X"")"	_=B58 + (B58-B57) * S	_=C58 * S	_=M	_=E58 + (E58-E57) * S	_=F58 * S	_=M	"_=IF(I, H, H58 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>49, """", ""X"")"	_=B59 + (B59-B58) * S	_=C59 * S	_=M	_=E59 + (E59-E58) * S	_=F59 * S	_=M	"_=IF(I, H, H59 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>50, """", ""X"")"	_=B60 + (B60-B59) * S	_=C60 * S	_=M	_=E60 + (E60-E59) * S	_=F60 * S	_=M	"_=IF(I, H, H60 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>51, """", ""X"")"	_=B61 + (B61-B60) * S	_=C61 * S	_=M	_=E61 + (E61-E60) * S	_=F61 * S	_=M	"_=IF(I, H, H61 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>52, """", ""X"")"	_=B62 + (B62-B61) * S	_=C62 * S	_=M	_=E62 + (E62-E61) * S	_=F62 * S	_=M	"_=IF(I, H, H62 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>53, """", ""X"")"	_=B63 + (B63-B62) * S	_=C63 * S	_=M	_=E63 + (E63-E62) * S	_=F63 * S	_=M	"_=IF(I, H, H63 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>54, """", ""X"")"	_=B64 + (B64-B63) * S	_=C64 * S	_=M	_=E64 + (E64-E63) * S	_=F64 * S	_=M	"_=IF(I, H, H64 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>55, """", ""X"")"	_=B65 + (B65-B64) * S	_=C65 * S	_=M	_=E65 + (E65-E64) * S	_=F65 * S	_=M	"_=IF(I, H, H65 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>56, """", ""X"")"	_=B66 + (B66-B65) * S	_=C66 * S	_=M	_=E66 + (E66-E65) * S	_=F66 * S	_=M	"_=IF(I, H, H66 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>57, """", ""X"")"	_=B67 + (B67-B66) * S	_=C67 * S	_=M	_=E67 + (E67-E66) * S	_=F67 * S	_=M	"_=IF(I, H, H67 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>58, """", ""X"")"	_=B68 + (B68-B67) * S	_=C68 * S	_=M	_=E68 + (E68-E67) * S	_=F68 * S	_=M	"_=IF(I, H, H68 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>59, """", ""X"")"	_=B69 + (B69-B68) * S	_=C69 * S	_=M	_=E69 + (E69-E68) * S	_=F69 * S	_=M	"_=IF(I, H, H69 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>60, """", ""X"")"	_=B70 + (B70-B69) * S	_=C70 * S	_=M	_=E70 + (E70-E69) * S	_=F70 * S	_=M	"_=IF(I, H, H70 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>61, """", ""X"")"	_=B71 + (B71-B70) * S	_=C71 * S	_=M	_=E71 + (E71-E70) * S	_=F71 * S	_=M	"_=IF(I, H, H71 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>62, """", ""X"")"	_=B72 + (B72-B71) * S	_=C72 * S	_=M	_=E72 + (E72-E71) * S	_=F72 * S	_=M	"_=IF(I, H, H72 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>63, """", ""X"")"	_=B73 + (B73-B72) * S	_=C73 * S	_=M	_=E73 + (E73-E72) * S	_=F73 * S	_=M	"_=IF(I, H, H73 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>64, """", ""X"")"	_=B74 + (B74-B73) * S	_=C74 * S	_=M	_=E74 + (E74-E73) * S	_=F74 * S	_=M	"_=IF(I, H, H74 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>65, """", ""X"")"	_=B75 + (B75-B74) * S	_=C75 * S	_=M	_=E75 + (E75-E74) * S	_=F75 * S	_=M	"_=IF(I, H, H75 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>66, """", ""X"")"	_=B76 + (B76-B75) * S	_=C76 * S	_=M	_=E76 + (E76-E75) * S	_=F76 * S	_=M	"_=IF(I, H, H76 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>67, """", ""X"")"	_=B77 + (B77-B76) * S	_=C77 * S	_=M	_=E77 + (E77-E76) * S	_=F77 * S	_=M	"_=IF(I, H, H77 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>68, """", ""X"")"	_=B78 + (B78-B77) * S	_=C78 * S	_=M	_=E78 + (E78-E77) * S	_=F78 * S	_=M	"_=IF(I, H, H78 * S)"	_=ODD(WireLen / WL * 20)
+"_=IF(E>69, """", ""X"")"	_=B79 + (B79-B78) * S	_=C79 * S	_=M	_=E79 + (E79-E78) * S	_=F79 * S	_=M	"_=IF(I, H, H79 * S)"	_=ODD(WireLen / WL * 20)
+	"_Use the ""Unhide Rows"" button if necessary to see all wires.  Max number of elements = 70."							
+_=E	_50	_1	_0	_I				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_1	_50	_Short		_=J	_=K	_0.95	_N	_0	_0			"_=IF(J>0, """", ""X"")"
+_1	_50	_2	_50	_Actual dist	_=L	_0.95	_R	_0	_0			
+"_=""LPDA repeat to "" & E"		"_<<< Additional TLs for LPDA, not shown in header count."										
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	0	4	2	0	0	1	50	0	0																FALSE	TRUE	_1	_0
+_Freq (MHz)																														
+_14																														
+2																														

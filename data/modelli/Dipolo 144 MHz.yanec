@@ -1,0 +1,15 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Dipolo 144 MHz
+CM YANEC DESCRIZIONE=dipolo 144.3 spazio libero
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Dipolo 144 MHz.nec
+CM YANEC CONTENUTO=nec
+CM dipolo 144.3 spazio libero
+CE
+GW 1 21 0 -0.5 0 0 0.5 0 0.002
+GE 0
+EX 0 1 11 0 1 0
+FR 0 1 0 0 144.3 0
+RP 0 1 2 1000 90 0 0 90
+EN

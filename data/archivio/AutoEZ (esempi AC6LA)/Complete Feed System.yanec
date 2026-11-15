@@ -1,0 +1,140 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Complete Feed System
+CM YANEC DESCRIZIONE=Complete Feed System
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Complete Feed System.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14.35	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	_Back yard dipole																															
+	_0	_0	_30	_0	_33.42999	_30	_#12	_11																								
+_V1		_1	_0	_I																						_V2		_V3		_25	_100	_N
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																										_Zmatch Hi Pass T     Components:     C1:  250 pF     L:  0.48327 µH     C2:  99.0894 pF						
+																										_Input:  Wire V1 (Cell C150)     Output:  Wire V2 (Cell C152)						
+																										_V1		"_=IF(G150<>0, ROUND(1000000 / (TwoPi * H150 * G150) / (1000 * 1 / H150), 2), 0)"		_250	_=Freq	_Ser
+																										_V900		"_=ROUND(TwoPi * H151 * F151 / (200 * SQRT(H151 / 1)), 2)"	_=0.48327 * 2		_=Freq	_Ser
+																										_V2		"_=IF(G152<>0, ROUND(1000000 / (TwoPi * H152 * G152) / (1000 * 1 / H152), 2), 0)"		_99.0894	_=Freq	_Ser
+																										_V900		"_=ROUND(TwoPi * H153 * F153 / (200 * SQRT(H153 / 1)), 2)"	_=0.48327 * 2		_=Freq	_Ser
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_V3		_1	_50	_100	"_=TLParms(L76,  395,  0.902,  0.077708,  0.078862,  0.0009,  100,  ""Ro"",  88)"	"_=TLParms(L76,  395,  0.902,  0.077708,  0.078862,  0.0009,  100,  ""VF"",  88)"	_N	"_=TLParms(L76,  395,  0.902,  0.077708,  0.078862,  0.0009,  100,  ""dB"",  88)"	_=Freq				_Wireman 553 Ladder Line
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	4	8	0	1	0	1	50	0	0	14	14.35	0.025													FALSE	TRUE	_1	_0
+_Freq (MHz)																														
+_14																														
+_14.025																														
+_14.05																														
+_14.075																														
+_14.1																														
+_14.125																														
+_14.15																														
+_14.175																														
+_14.2																														
+_14.225																														
+_14.25																														
+_14.275
+_14.3
+_14.325
+_14.35
+16

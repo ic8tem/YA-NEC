@@ -1,0 +1,31 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=10 el DJ9BV BVO2-3WL 144 MHz (MMANA)
+CM YANEC DESCRIZIONE=bj9bv-bvo2-3wl
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=10 el DJ9BV BVO2-3WL 144 MHz (MMANA).maa
+CM YANEC CONTENUTO=maa
+bj9bv-bvo2-3wl
+*
+144.3
+***Wires***
+10
+0.0,	-0.506,	0.0,	0.0,	0.506,	0.0,	0.002,	-1
+0.391,	-0.479,	0.0,	0.391,	0.479,	0.0,	0.006,	-1
+0.669,	-0.4785,	0.0,	0.669,	0.4785,	0.0,	0.002,	-1
+1.244,	-0.468,	0.0,	1.244,	0.468,	0.0,	0.002,	-1
+2.0,	-0.4595,	0.0,	2.0,	0.4595,	0.0,	0.002,	-1
+2.847,	-0.454,	0.0,	2.847,	0.454,	0.0,	0.002,	-1
+3.734,	-0.451,	0.0,	3.734,	0.451,	0.0,	0.002,	-1
+4.625,	-0.4495,	0.0,	4.625,	0.4495,	0.0,	0.002,	-1
+5.503,	-0.4475,	0.0,	5.503,	0.4475,	0.0,	0.002,	-1
+6.264,	-0.455,	0.0,	6.264,	0.455,	0.0,	0.002,	-1
+*** Source ***
+1,	1
+w2c,	0.0,	1.0
+***   Load   ***
+0,	1
+**Segmentation**
+400,	40,	2.0,	1
+*G/H/M/R/AzEl/X*
+0,	12.0,	0,	50.0,	120,	60,	0

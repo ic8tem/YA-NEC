@@ -1,0 +1,181 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Pentaband Quad Square (d)
+CM YANEC DESCRIZIONE=Pentaband Quad Square (d)
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Pentaband Quad Square (d).weq
+CM YANEC CONTENUTO=weq
+MultiNEC	18.125	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+_8	_Refl-DE spacing	"_Formulas for original circumferences,"			
+_50	_Boom height	_       including fractional inches to feet.			
+_72.3333333333333	_20M Refl	_=72+4/12			
+_69.875	_20M DE	_=69+10.5/12			
+_56.3333333333333	_  17M Refl	_=56+4/12			
+_54.875	_  17M DE	_=54+10.5/12			
+_48.5	_    15M Refl	_=48+6/12			
+_46.5833333333333	_    15M DE	_=46+7/12			
+_40.9375	_      12M Refl	_=40+11.25/12			
+_39.875	_      12M DE	_=39+10.5/12			
+_37.4583333333333	_        10M Refl	_=37+5.5/12			
+_34.5	_        10M DE	_=34+6/12			
+
+
+
+_30	_Segs per WL								
+
+
+
+
+
+
+	_(demo) Pentaband Quad Square								
+	_You won't be able to Calculate this model with AutoEZ Demo but you can View it.								
+	"_Based on a model from the ARRL Antenna Book, ""A Two-Element, 8-Foot Boom Pentaband Quad"""								
+	_20M Refl and DE								
+	_= -A/2	_= -D / 8	_=B - D / 8	_= -A/2	_= +D / 8	_=B - D / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +D / 8	_=B - D / 8	_= -A/2	_= +D / 8	_=B + D / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +D / 8	_=B + D / 8	_= -A/2	_= -D / 8	_=B + D / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= -D / 8	_=B + D / 8	_= -A/2	_= -D / 8	_=B - D / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -E / 8	_=B - E / 8	_= +A/2	_= +E / 8	_=B - E / 8	_#14	_=ODD(WireLen / WL * S)	_Src
+	_= +A/2	_= +E / 8	_=B - E / 8	_= +A/2	_= +E / 8	_=B + E / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= +E / 8	_=B + E / 8	_= +A/2	_= -E / 8	_=B + E / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -E / 8	_=B + E / 8	_= +A/2	_= -E / 8	_=B - E / 8	_#14	_=ODD(WireLen / WL * S)	
+	_17M Refl and DE								
+	_= -A/2	_= -G / 8	_=B - G / 8	_= -A/2	_= +G / 8	_=B - G / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +G / 8	_=B - G / 8	_= -A/2	_= +G / 8	_=B + G / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +G / 8	_=B + G / 8	_= -A/2	_= -G / 8	_=B + G / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= -G / 8	_=B + G / 8	_= -A/2	_= -G / 8	_=B - G / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -H / 8	_=B - H / 8	_= +A/2	_= +H / 8	_=B - H / 8	_#14	_=ODD(WireLen / WL * S)	_Src
+	_= +A/2	_= +H / 8	_=B - H / 8	_= +A/2	_= +H / 8	_=B + H / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= +H / 8	_=B + H / 8	_= +A/2	_= -H / 8	_=B + H / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -H / 8	_=B + H / 8	_= +A/2	_= -H / 8	_=B - H / 8	_#14	_=ODD(WireLen / WL * S)	
+	_15M Refl and DE								
+	_= -A/2	_= -I / 8	_=B - I / 8	_= -A/2	_= +I / 8	_=B - I / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +I / 8	_=B - I / 8	_= -A/2	_= +I / 8	_=B + I / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +I / 8	_=B + I / 8	_= -A/2	_= -I / 8	_=B + I / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= -I / 8	_=B + I / 8	_= -A/2	_= -I / 8	_=B - I / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -J / 8	_=B - J / 8	_= +A/2	_= +J / 8	_=B - J / 8	_#14	_=ODD(WireLen / WL * S)	_Src
+	_= +A/2	_= +J / 8	_=B - J / 8	_= +A/2	_= +J / 8	_=B + J / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= +J / 8	_=B + J / 8	_= +A/2	_= -J / 8	_=B + J / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -J / 8	_=B + J / 8	_= +A/2	_= -J / 8	_=B - J / 8	_#14	_=ODD(WireLen / WL * S)	
+	_12M Refl and DE								
+	_= -A/2	_= -K / 8	_=B - K / 8	_= -A/2	_= +K / 8	_=B - K / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +K / 8	_=B - K / 8	_= -A/2	_= +K / 8	_=B + K / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +K / 8	_=B + K / 8	_= -A/2	_= -K / 8	_=B + K / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= -K / 8	_=B + K / 8	_= -A/2	_= -K / 8	_=B - K / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -L / 8	_=B - L / 8	_= +A/2	_= +L / 8	_=B - L / 8	_#14	_=ODD(WireLen / WL * S)	_Src
+	_= +A/2	_= +L / 8	_=B - L / 8	_= +A/2	_= +L / 8	_=B + L / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= +L / 8	_=B + L / 8	_= +A/2	_= -L / 8	_=B + L / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= +A/2	_= -L / 8	_=B + L / 8	_= +A/2	_= -L / 8	_=B - L / 8	_#14	_=ODD(WireLen / WL * S)	
+	_10M Refl and DE								
+	_= -A/2	_= -M / 8	_=B - M / 8	_= -A/2	_= +M / 8	_=B - M / 8	_#14	_=ODD(WireLen / WL * S)	
+	_= -A/2	_= +M / 8	_=B - M / 8	_= -A/2	_= +M / 8	_=B + M / 8	_#14	_=ODD(WireLen / WL * S)				
+	_= -A/2	_= +M / 8	_=B + M / 8	_= -A/2	_= -M / 8	_=B + M / 8	_#14	_=ODD(WireLen / WL * S)				
+	_= -A/2	_= -M / 8	_=B + M / 8	_= -A/2	_= -M / 8	_=B - M / 8	_#14	_=ODD(WireLen / WL * S)				
+	_= +A/2	_= -N / 8	_=B - N / 8	_= +A/2	_= +N / 8	_=B - N / 8	_#14	_=ODD(WireLen / WL * S)	_Src			
+	_= +A/2	_= +N / 8	_=B - N / 8	_= +A/2	_= +N / 8	_=B + N / 8	_#14	_=ODD(WireLen / WL * S)				
+	_= +A/2	_= +N / 8	_=B + N / 8	_= +A/2	_= -N / 8	_=B + N / 8	_#14	_=ODD(WireLen / WL * S)				
+	_= +A/2	_= -N / 8	_=B + N / 8	_= +A/2	_= -N / 8	_=B - N / 8	_#14	_=ODD(WireLen / WL * S)				
+"_Via the ""mark out"" formulas in column A, only one of the five"												
+_sources will be used at any given test case frequency.												
+_5	_50	_1	_0	_I								"_=IF(AND(Freq>=14, Freq<=14.35), """", ""X"")"
+_13	_50	_1	_0	_I								"_=IF(AND(Freq>=18.068, Freq<=18.168), """", ""X"")"
+_21	_50	_1	_0	_I								"_=IF(AND(Freq>=21, Freq<=21.45), """", ""X"")"
+_29	_50	_1	_0	_I								"_=IF(AND(Freq>=24.89, Freq<=24.99), """", ""X"")"
+_37	_50	_1	_0	_I								"_=IF(AND(Freq>=28, Freq<=29.7), """", ""X"")"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"_Via the ""mark out"" formulas in column A, only four of the five"													
+_transmission line stubs will be used at any given test case frequency.													
+_Open		_5	_50	_17.091	"_=TLParms(L78,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""Ro"",  37)"	"_=TLParms(L78,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""VF"",  37)"	_N	"_=TLParms(L78,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""dB"",  37)"	_=Freq			"_=IF(AND(Freq>=14, Freq<=14.35), ""X"", """")"	_Belden 8267    (RG-213/U)
+_Open		_13	_50	_17.091	"_=TLParms(L79,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""Ro"",  37)"	"_=TLParms(L79,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""VF"",  37)"	_N	"_=TLParms(L79,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""dB"",  37)"	_=Freq			"_=IF(AND(Freq>=18.068, Freq<=18.168), ""X"", """")"	_Belden 8267    (RG-213/U)
+_Open		_21	_50	_17.091	"_=TLParms(L80,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""Ro"",  37)"	"_=TLParms(L80,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""VF"",  37)"	_N	"_=TLParms(L80,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""dB"",  37)"	_=Freq			"_=IF(AND(Freq>=21, Freq<=21.45), ""X"", """")"	_Belden 8267    (RG-213/U)
+_Open		_29	_50	_17.091	"_=TLParms(L81,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""Ro"",  37)"	"_=TLParms(L81,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""VF"",  37)"	_N	"_=TLParms(L81,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""dB"",  37)"	_=Freq			"_=IF(AND(Freq>=24.89, Freq<=24.99), ""X"", """")"	_Belden 8267    (RG-213/U)
+_Open		_37	_50	_17.091	"_=TLParms(L82,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""Ro"",  37)"	"_=TLParms(L82,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""VF"",  37)"	_N	"_=TLParms(L82,  50,  0.66,  0.256179,  0.154587,  0.003135,  100,  ""dB"",  37)"	_=Freq			"_=IF(AND(Freq>=28, Freq<=29.7), ""X"", """")"	_Belden 8267    (RG-213/U)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	TRUE	FALSE	0	4	1	0	0	1	50	0	0	14	14.35	0.05													TRUE	FALSE	_1	_0
+_Freq (MHz)	_S																													
+_14.2	_30																													
+_18.125	_30																													
+_21.2	_30																													
+_24.9	_30																													
+_28.4	_30																													
+_14.2	_60																													
+_18.125	_60																													
+_21.2	_60																													
+_24.9	_60																													
+_28.4	_60																													
+11																														

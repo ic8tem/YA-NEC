@@ -1,0 +1,774 @@
+// YA-NEC - linguetta "Calcolatori": fascione largo con le voci descritte e i calcolatori delle forme semplici
+// secondo il bozzetto approvato alla lettera (dati con pillole, formule e fonti, pulsanti, disegno a destra,
+// riquadri dei risultati con la verifica NEC, grafico di un parametro, avvisi), e il calcolatore della four-square
+// con la grafica del bozzetto approvato (vista 3D con le fasi, tabella delle sorgenti con la Z risultante, diagrammi polari).
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Numerics;
+using System.Threading.Tasks;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+using Avalonia.Layout;
+using Avalonia.Media;
+using Avalonia.Platform.Storage;
+using Avalonia.Threading;
+using YaNec.Engine;
+
+namespace YaNec
+{
+    public partial class MainWindow
+    {
+        Fascione fasCalc;
+        ContentControl hostCalc;
+        readonly Dictionary<string, Control> calcPages = new Dictionary<string, Control>();
+        List<SimpleCalc> simpleCalcs;
+
+        Control BuildCalcolatoriPage()
+        {
+            simpleCalcs = SimpleCalc.All();
+            try { CalcCavi.Lista = Cables.Load(Path.Combine(AppPaths.DataDir, "cavi.csv")); } catch { }
+            calcPages.Clear();
+            fasCalc = new Fascione();
+            fasCalc.Children.Add(new TextBlock { Text = "Calcolatori", FontSize = 18, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(2, 0, 0, 2) });
+            fasCalc.Famiglia("FORME SEMPLICI");
+            fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD", true);
+            fasCalc.Voce("dipmb", "Dipolo multibanda", false, null, "bacchette parallele, manica aperta, radiatori XR-5");   // 0.4.30
+            fasCalc.Voce("yagimb", "Yagi multibanda", false, null, "HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda");   // 0.4.30
+            fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole", true);
+            fasCalc.Voce("vertmb", "Verticale multibanda (DX Commander)", false, null, "elementi a ventaglio, terreno suo, verifica per banda");   // 0.4.30
+            fasCalc.Voce("loopmag", "Loop magnetica", false, null, "piccolo loop con condensatore");
+            fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
+            fasCalc.Voce("quad", "Quad", false, null, "1-2-3 elementi, multibanda (DK7ZB)", true);
+            fasCalc.Voce("eh", "Antenna EH", false, null, "con avviso sulle prestazioni", true);
+            fasCalc.Voce("moxon", "Moxon", false, null, "gia' approvato (Cebik / DK7ZB)");
+            fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
+            fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
+            fasCalc.Voce("looprett", "Loop rettangolare", false, null, "lati e alimentazione");
+            fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
+            fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
+            fasCalc.Famiglia("STRUMENTI");
+            fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "scala un modello a un'altra frequenza");
+            fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
+            fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");
+            fasCalc.Voce("rrad", "Resistenza di radiazione", false, null, "dipolo corto, monopolo, loop", true);
+            fasCalc.Voce("cavi", "Cavi RG", false, null, "dal nostro abaco cavi");
+            fasCalc.Voce("toroidiT", "Toroidi iron powder (T)", false, null, "AL, spire, banda", true);
+            fasCalc.Voce("toroidiFT", "Toroidi ferrite (FT)", false, null, "AL, spire, impedenza", true);
+            fasCalc.Voce("balun", "Balun / Un-Un", false, null, "rapporti e avvolgimenti", true);
+            fasCalc.Famiglia("LOG-PERIODICHE E SCHIERE");
+            fasCalc.Voce("lpda", "Log-periodica (LPDA)", false, null, "metodo Carrel, linea incrociata");
+            fasCalc.Voce("4sq", "Four-square", false, null, "quattro verticali sfasati (ON4UN)");
+            fasCalc.Voce("yagidl6wu", "Yagi lunga DL6WU", false, null, "VHF e UHF: progetto DL6WU, quattro alimentazioni, ottimizzazione a passi");   // 0.5.0
+            fasCalc.Voce("quagi", "Quagi e quad a piu' elementi", false, null, "N6NB e Cebik, ottimizzazione a passi");   // 0.5.0
+            fasCalc.Voce("loopyagi", "Loop Yagi 1296 MHz", false, null, "tutta ad anelli: N6CA (ARRL) e G3JVL, ottimizzazione a passi");   // 0.5.0
+            fasCalc.Voce("stackdl6wu", "Distanze di stack DL6WU", false, null, "affiancate e sovrapposte");
+            fasCalc.Voce("boom", "Correzione del boom", false, null, "DL6WU/G3SEK, SM5BSZ, DG7YBN");
+            fasCalc.Voce("staffe", "Staffe di fissaggio", false, null, "piastre al boom: compensazione e modello (ARRL, Leeson)");   // 0.4.30
+            fasCalc.Famiglia("POLARIZZAZIONE CIRCOLARE (SATELLITI)");
+            fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
+            fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
+            fasCalc.Famiglia("2,4 GHZ COMMERCIALE");   // 0.4.30, bozzetto 2 approvato il 14/11/2026
+            fasCalc.Voce("pcb24", "Antenne su PCB", false, null, "IFA, MIFA, dipolo, Yagi, Big Wheel; disegno 1:1");
+            fasCalc.Famiglia("PARABOLE");
+            fasCalc.Voce("parabola", "Parabola primo fuoco", false, null, "1296 / 2320 / 5760 / 10368 MHz, meccanica, lobi, EME");
+            fasCalc.Voce("trombe", "Trombe e illuminatori", false, null, "coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC");   // 0.4.19
+            fasCalc.Voce("offset", "Parabola offset", false, null, "geometria, dime, illuminazione asimmetrica, lobi H e V, EME");
+            hostCalc = new ContentControl();
+            fasCalc.Selected += k =>
+            {
+                Control c;
+                if (!calcPages.TryGetValue(k, out c))
+                {
+                    c = k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
+                    calcPages[k] = c;
+                }
+                hostCalc.Content = c;
+            };
+            // il fascione puo' arrivare al 30 % (IC8TEM): qui il 26 %
+            Grid page = Fascione.PaginaLarga(fasCalc, hostCalc, 26);
+            fasCalc.Select("loopmag");
+            return page;
+        }
+
+        // voce del fascione con piu' varianti: pillole "Tipo" in alto e il calcolatore sotto
+        Control BuildGruppoCalc(string key)
+        {
+            List<SimpleCalc> l = simpleCalcs.FindAll(c => c.Group == key);
+            if (l.Count == 0) return Pannello("Calcolatore", Nota("Non disponibile."));
+            if (l.Count == 1) return BuildSimpleCalcPanel(l[0], null);
+            ContentControl cc = new ContentControl();
+            Dictionary<int, Control> cache = new Dictionary<int, Control>();
+            StackPanel tipo = Scelta(l.Select(c => c.Variant).ToArray(), 0, k => { });
+            cache[0] = BuildSimpleCalcPanel(l[0], tipo);
+            cc.Content = cache[0];
+            // le pillole "Tipo" stanno nella riga "Tipo" del pannello visibile: alla scelta si spostano nel pannello della variante
+            for (int i = 0; i < tipo.Children.Count; i++)
+            {
+                Button bb = tipo.Children[i] as Button;
+                if (bb == null) continue;
+                int k = i;
+                bb.Click += (s, e) =>
+                {
+                    Control x;
+                    if (!cache.TryGetValue(k, out x)) { x = BuildSimpleCalcPanel(l[k], null); cache[k] = x; }
+                    SpostaPillole(tipo, x);
+                    cc.Content = x;
+                };
+            }
+            return cc;
+        }
+
+        // le pillole della variante vanno nella riga "Tipo" del pannello visibile
+        static void SpostaPillole(StackPanel tipo, Control pannello)
+        {
+            ContentControl posto = FindTag(pannello, "posto-tipo") as ContentControl;
+            if (posto == null) return;
+            if (tipo.Parent is ContentControl vecchio) vecchio.Content = null;
+            posto.Content = tipo;
+        }
+
+        static Control FindTag(Control c, string tag)
+        {
+            if (c == null) return null;
+            if (c.Tag as string == tag) return c;
+            if (c is Panel p) foreach (Control x in p.Children) { Control r = FindTag(x, tag); if (r != null) return r; }
+            if (c is Decorator d) return FindTag(d.Child as Control, tag);
+            if (c is ContentControl cc) return FindTag(cc.Content as Control, tag);
+            return null;
+        }
+
+        static TextBlock Muto(string s)
+        {
+            return new TextBlock { Text = s ?? "", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 340 };
+        }
+
+        Border Scheda(Control corpo)
+        {
+            return new Border
+            {
+                Background = Pal.B(Pal.Panel), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(10), Padding = new Thickness(14, 10), Margin = new Thickness(0, 0, 0, 10), Child = corpo
+            };
+        }
+
+        // ------------------------------------------------------------------------------------------------
+        // calcolatore delle forme semplici, impaginato come il bozzetto approvato
+        // ------------------------------------------------------------------------------------------------
+        Control BuildSimpleCalcPanel(SimpleCalc sc, StackPanel pilloleTipo)
+        {
+            CalcOutput first;
+            sc.Model = model;
+            try { first = sc.Run(); } catch { first = new CalcOutput(); }
+
+            StackPanel root = new StackPanel();
+            // 0.5.3 (bozzetto C approvato da IC8TEM il 15/11/2026 19:55): caselle su 2-3 colonne, formule in una riga che si apre, riquadri dei
+            // risultati sotto i pulsanti nella stessa scheda, disegno ridotto a destra; per Cavi RG a destra il cambio d'impedenza, per il
+            // Balun il disegno di costruzione con i passi
+            bool conTrasf = sc.Key == "cavi", conBalun = sc.Key == "balun";
+            Grid top = new Grid { ColumnDefinitions = new ColumnDefinitions(conTrasf ? "10*,12*" : (conBalun ? "10*,11*" : "*,330")) };
+            StackPanel left = new StackPanel { Spacing = 4 };
+            left.Children.Add(new TextBlock { Text = sc.Title, FontSize = 17, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6) });
+            if (pilloleTipo != null || !string.IsNullOrEmpty(sc.Variant))
+            {
+                ContentControl posto = new ContentControl { Tag = "posto-tipo", Content = pilloleTipo };
+                left.Children.Add(RigaCalc("Tipo", posto));
+            }
+
+            List<Action> leggi = new List<Action>();
+            List<Action> aggiornaHint = new List<Action>();
+            Dictionary<string, TextBox> campi = new Dictionary<string, TextBox>();
+            Dictionary<string, ComboBox> tendine = new Dictionary<string, ComboBox>();
+            WrapPanel gruppo = null;   // caselle numeriche consecutive: celle che vanno a capo (3 per riga se c'e' posto)
+            Action mostra = null;
+            if (sc.PuoUsareModello)
+            {
+                // IC8TEM 13/11/2026 18:19: casella per scegliere se i dati vengono dal modello della finestra principale
+                CheckBox cbMod = new CheckBox { Content = "Prendi i dati dal modello (finestra principale)", IsChecked = sc.UsaModello, Margin = new Thickness(0, 0, 0, 4) };
+                ToolTip.SetTip(cbMod, "Accesa: frequenza (barra in alto), aperture a -3 dB e boom vengono dal calcolo del modello aperto e si aggiornano da soli. Spenta: valori scritti a mano.");
+                cbMod.IsCheckedChanged += (s, e) => { sc.UsaModello = cbMod.IsChecked == true; if (mostra != null) mostra(); };
+                left.Children.Add(cbMod);
+            }
+            foreach (CalcParam p in sc.Params)
+            {
+                CalcParam pp = p;
+                if (pp.Choices != null && pp.Choices.Length > 0 && (pp.Choices.Length <= 4 || pp.Pillole))
+                {
+                    gruppo = null;
+                    TextBlock h = Muto(pp.Hint);
+                    StackPanel sp = Scelta(pp.Choices, (int)pp.Value, k => { pp.Value = k; sc.Scale = 1; if (mostra != null) mostra(); });
+                    if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(sp, pp.Tip);
+                    if (pp.Pillole)
+                    {
+                        // tante voci: pillole che vanno a capo
+                        WrapPanel wp = new WrapPanel { Tag = "pillole-" + pp.Key };
+                        List<Control> figli = new List<Control>();
+                        foreach (Control x in sp.Children) figli.Add(x);
+                        sp.Children.Clear();
+                        foreach (Control x in figli) { x.Margin = new Thickness(0, 1, 4, 3); wp.Children.Add(x); }
+                        if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(wp, pp.Tip);
+                        DockPanel riga = RigaCalc(pp.Label);
+                        riga.Children.Add(wp);
+                        left.Children.Add(riga);
+                    }
+                    else left.Children.Add(RigaCalc(pp.Label, sp, h));
+                    aggiornaHint.Add(() => h.Text = pp.Hint ?? "");
+                }
+                else if (pp.Choices != null)
+                {
+                    gruppo = null;
+                    ComboBox cb = new ComboBox { MinWidth = 230 };
+                    tendine[pp.Key] = cb;
+                    Action carica = () =>
+                    {
+                        if (cb.ItemCount != pp.Choices.Length)
+                        {
+                            cb.ItemsSource = pp.Choices.ToList();
+                            cb.SelectedIndex = Math.Max(0, Math.Min(pp.Choices.Length - 1, (int)pp.Value));
+                        }
+                    };
+                    carica();
+                    cb.SelectionChanged += (s, e) => { if (cb.SelectedIndex >= 0 && cb.SelectedIndex != (int)pp.Value) { pp.Value = cb.SelectedIndex; sc.Scale = 1; if (mostra != null) mostra(); } };
+                    if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(cb, pp.Tip);
+                    TextBlock h = Muto(pp.Hint);
+                    left.Children.Add(RigaCalc(pp.Label, cb, h));
+                    aggiornaHint.Add(() => { carica(); h.Text = pp.Hint ?? ""; });
+                }
+                else
+                {
+                    TextBox t = Tb(pp.Value.ToString("0.####", CultureInfo.CurrentCulture), 84);
+                    t.FontFamily = Pal.Mono;
+                    campi[pp.Key] = t;
+                    if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(t, pp.Tip);
+                    TextBlock u = new TextBlock { Text = pp.Unit, VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(4, 0, 0, 0), MinWidth = 26 };
+                    TextBlock h = new TextBlock { Text = pp.Hint ?? "", Foreground = Pal.B(Pal.Muted), FontSize = 11.5, TextWrapping = TextWrapping.Wrap, MaxWidth = 280, Margin = new Thickness(146, 0, 0, 0) };
+                    if (gruppo == null) { gruppo = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 2, 0, 2) }; left.Children.Add(gruppo); }
+                    gruppo.Children.Add(CellaCalc(pp.Label, pp.Tip, t, u, h));
+                    leggi.Add(() => pp.Value = ParseNum(t.Text, pp.Value));
+                    aggiornaHint.Add(() => { h.Text = pp.Hint ?? ""; h.IsVisible = !string.IsNullOrEmpty(h.Text); });
+                    t.LostFocus += (s, e) =>
+                    {
+                        // il fuoco si perde anche quando la scheda viene tolta (cambio di calcolatore): il ridisegno si rimanda
+                        // e si salta se il campo non e' piu' nella finestra (evita AvaloniaInternalException, registro 13/11 17:58)
+                        Avalonia.Threading.Dispatcher.UIThread.Post(() =>
+                        {
+                            if (TopLevel.GetTopLevel(t) == null) return;
+                            double old = pp.Value; pp.Value = ParseNum(t.Text, pp.Value); if (old != pp.Value) sc.Scale = 1; if (mostra != null) mostra();
+                        });
+                    };
+                    t.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { pp.Value = ParseNum(t.Text, pp.Value); sc.Scale = 1; if (mostra != null) mostra(); } };
+                }
+            }
+            // 0.4.30 (IC8TEM 14/11/2026 23:40): rastremazione dei tubi nei progetti HF non filari
+            if (sc.Tubolare)
+            {
+                CheckBox cR = new CheckBox { Content = "Tubi rastremati", IsChecked = sc.Rastrema, VerticalAlignment = VerticalAlignment.Center };
+                TextBox tR = Tb(sc.SchemaRastr, 260);
+                tR.FontFamily = Pal.Mono;
+                ToolTip.SetTip(tR, "Diametro in mm x lunghezza in m per lato, dal centro o dalla base verso la punta; l'ultimo tubo arriva alla punta. Esempio: 35x1; 30x1; 25x1; 20x1; 16x1; 12");
+                Action leggiR = () => { sc.Rastrema = cR.IsChecked == true; sc.SchemaRastr = tR.Text; };
+                cR.IsCheckedChanged += (s, e) => { leggiR(); sc.Scale = 1; if (mostra != null) mostra(); };
+                tR.LostFocus += (s, e) => Avalonia.Threading.Dispatcher.UIThread.Post(() => { if (TopLevel.GetTopLevel(tR) == null) return; leggiR(); sc.Scale = 1; if (mostra != null) mostra(); });
+                leggi.Add(leggiR);
+                gruppo = null;
+                left.Children.Add(RigaCalc("Rastremazione (HF)", cR, tR));
+                left.Children.Add(Nota("tubi telescopici del radiatore: diametro x lunghezza per lato, dal centro o dalla base; nel calcolo correzione di Leeson; \"Porta in risonanza\" tiene conto dei tubi"));
+            }
+            TextBlock formula = new TextBlock { TextWrapping = TextWrapping.Wrap, FontSize = 13, Foreground = Pal.B(Pal.Muted), Margin = new Thickness(0, 2, 0, 2), LineHeight = 20 };
+            Expander espFormule = new Expander { Header = "Formule e fonti", Content = formula, IsExpanded = false, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 6, 0, 6) };
+            ToolTip.SetTip(espFormule, "Clic per aprire le formule e le fonti del calcolatore.");
+            left.Children.Add(espFormule);
+
+            WrapPanel btns = new WrapPanel { Margin = new Thickness(0, 4, 0, 0) };
+            Button bNec = Btn(sc.Key == "ridim" ? "Crea il modello scalato e verificalo" : "Crea il modello NEC e verificalo", true);
+            Button bSalva = Btn("Salva il modello (.nec / .yanec)", false);
+            Button bApri = Btn("Apri come modello", false);
+            Button bTune = Btn("Porta in risonanza (NEC)", false);
+            Button bCar = Btn("Carichi (C) ›", false);
+            foreach (Button b in new[] { bNec, bSalva, bApri, bTune, bCar }) { b.Margin = new Thickness(0, 0, 8, 6); btns.Children.Add(b); }
+            left.Children.Add(btns);
+            // 0.4.20 (IC8TEM 14/11/2026 16:24, "creare lo stack"): dalla scheda DL6WU si crea lo stack nel modello aperto con le distanze calcolate;
+            // se il modello e' gia' uno stack si applicano le distanze alle copie che ci sono
+            if (sc is CalcStackDl6wu sdl)
+            {
+                Button bStack = Btn("Crea lo stack nel modello aperto", true);
+                bStack.Margin = new Thickness(0, 0, 8, 6);
+                ToolTip.SetTip(bStack, "Copia l'antenna del modello aperto in righe (una sopra l'altra) e colonne (affiancate, perpendicolari al lobo) con le distanze DL6WU della scheda; " +
+                    "ogni antenna ha la sua sorgente, uguale in ampiezza e fase (cavi uguali e divisore ideale). Se il modello e' gia' uno stack, sposta le copie alle distanze DL6WU. " +
+                    "Solo modelli fatti di fili GW. Il file su disco non cambia: salvalo se vuoi tenerlo.");
+                bStack.Click += (s, e) =>
+                {
+                    if (mostra != null) mostra();
+                    if (model == null) { Status("Apri prima un modello (l'antenna da mettere in stack).", true); return; }
+                    if (sdl.UsaModello && !sdl.DaModello) { Status("Calcolo dell'antenna base in corso: riprova appena la scheda si aggiorna (servono le aperture e la direzione del lobo).", true); return; }
+                    try
+                    {
+                        StackInfo esiste = StackDetect.Detect(model);
+                        if (esiste != null)
+                        {
+                            StackDetect.Apply(model, esiste, sdl.UltimaDv, sdl.UltimaDh, double.NaN);
+                            Status("Stack gia' presente (" + esiste.Rows + " x " + esiste.Cols + "): copie spostate alle distanze DL6WU.");
+                            ApplicaERicalcola("stack DL6WU applicato");
+                            return;
+                        }
+                        List<string> note = new List<string>();
+                        NecModel nm = StackDetect.Crea(model, sdl.I("righe"), sdl.I("col"), sdl.UltimaDv, sdl.UltimaDh, sdl.UltimoPhiLobo, note);
+                        string fn = model.FileName;
+                        SetModel(nm, null);
+                        model.FileName = string.IsNullOrEmpty(fn) ? "stack.nec" : Path.Combine(Path.GetDirectoryName(fn) ?? "", Path.GetFileNameWithoutExtension(fn) + " stack " + sdl.I("righe") + "x" + sdl.I("col") + ".nec");
+                        Registro.Scrivi("AZIONE", "stack DL6WU creato: " + string.Join(" ", note));
+                        int ti = -1;
+                        for (int i = 0; i < tabs.Count; i++) if ((tabs[i].Tag as string) == "Struttura 3D") ti = i;
+                        if (ti >= 0) SelectTab(ti);
+                        Status(string.Join(" ", note) + " Il file su disco non e' cambiato.");
+                        Calculate(true);
+                    }
+                    catch (Exception ex) { Status("Stack non creato: " + ex.Message, true); }
+                };
+                btns.Children.Add(bStack);
+            }
+
+            WrapPanel cards = new WrapPanel { Margin = new Thickness(0, 6, 0, 0) };
+            left.Children.Add(cards);
+            CalcDrawing dr = new CalcDrawing { Height = conBalun ? 330 : 300, Margin = new Thickness(0) };
+            Control destra = dr;
+            Action<CalcOutput> mostraDestra = null;
+            if (conTrasf) destra = CostruisciTrasformatore(sc, campi, tendine, () => { if (mostra != null) mostra(); });
+            else if (conBalun) destra = CostruisciDisegnoBalun(sc, dr, left, tendine, out mostraDestra, () => { if (mostra != null) mostra(); });
+            Border colDestra = new Border { Child = destra, Margin = new Thickness(14, 0, 0, 0), Padding = new Thickness(14, 0, 0, 0), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1, 0, 0, 0) };
+            Grid.SetColumn(left, 0);
+            Grid.SetColumn(colDestra, 1);
+            top.Children.Add(left);
+            top.Children.Add(colDestra);
+            root.Children.Add(Scheda(top));
+            Action<string, double, double, double> avviaTempoReale;
+            root.Children.Add(TempoRealePanel(out avviaTempoReale));   // 0.4.2: calcolo in tempo reale (IC8TEM 13/11/2026)
+            Border necCard = Riquadretto("Verifica NEC (modello creato)", "in attesa", "Z, G, efficienza dal motore");
+
+            Grid bottom = new Grid { ColumnDefinitions = new ColumnDefinitions("3*,10,2*") };
+            LineChart chart = new LineChart { Height = 270, XLabel = "", EmptyText = "nessun grafico per questo calcolatore" };
+            StackPanel chartBox = new StackPanel();
+            TextBlock chartTitle = new TextBlock { FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6), TextWrapping = TextWrapping.Wrap };
+            chartBox.Children.Add(chartTitle);
+            chartBox.Children.Add(chart);
+            Border chartPanel = Scheda(chartBox);
+            StackPanel avv = new StackPanel { Spacing = 4 };
+            StackPanel avvBox = new StackPanel();
+            avvBox.Children.Add(new TextBlock { Text = "Avvisi", FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6) });
+            avvBox.Children.Add(avv);
+            Border avvPanel = Scheda(avvBox);
+            Grid.SetColumn(chartPanel, 0);
+            Grid.SetColumn(avvPanel, 2);
+            bottom.Children.Add(chartPanel);
+            bottom.Children.Add(avvPanel);
+            root.Children.Add(bottom);
+
+            CalcOutput last = first;
+            Action<string, string> setNec = (v, sub) =>
+            {
+                StackPanel sp = (StackPanel)necCard.Child;
+                ((TextBlock)sp.Children[1]).Text = v;
+                ((TextBlock)sp.Children[2]).Text = sub;
+            };
+
+            mostra = () =>
+            {
+                foreach (Action a in leggi) a();
+                sc.Model = model;
+                sc.MainFreqMHz = txtFreq != null ? ParseNum(txtFreq.Text, double.NaN) : double.NaN;
+                try { using (Prestazioni.Misura("Calcolatore: formule (" + sc.Title + ")")) last = sc.Run(); }
+                catch (Exception ex) { last = new CalcOutput(); last.Warnings.Add("Errore nel calcolo: " + ex.Message); }
+                // parametri presi dal modello della finestra principale: caselle aggiornate e in sola lettura
+                foreach (KeyValuePair<string, TextBox> kv in campi)
+                {
+                    double vm;
+                    bool dalModello = sc.DalModello.TryGetValue(kv.Key, out vm);
+                    if (dalModello) kv.Value.Text = vm.ToString(kv.Key == "f" ? "0.###" : "0.##", CultureInfo.CurrentCulture);
+                    kv.Value.IsReadOnly = dalModello;
+                    kv.Value.Opacity = dalModello ? 0.75 : 1.0;
+                    string tipo = null;
+                    foreach (CalcParam cp in sc.Params) if (cp.Key == kv.Key) tipo = cp.Tip;
+                    ToolTip.SetTip(kv.Value, dalModello ? "Valore preso dal modello aperto nella finestra principale (si aggiorna da solo)." : (string.IsNullOrEmpty(tipo) ? null : tipo));
+                }
+                foreach (Action a in aggiornaHint) a();
+                formula.Text = last.Formula;
+                cards.Children.Clear();
+                foreach (CalcCard c in last.Cards) cards.Children.Add(Riquadretto(c.Title, c.Value, c.Sub, c.Hl));
+                if (last.Nec != null)
+                {
+                    if (necCard.Parent is Panel pp0) pp0.Children.Remove(necCard);
+                    cards.Children.Add(necCard);
+                    setNec("in attesa", "Z, G, efficienza dal motore");
+                }
+                dr.Nec = last.Nec; dr.Out = last; dr.InvalidateVisual();
+                if (mostraDestra != null) mostraDestra(last);
+                if (last.Chart != null && last.Chart.X != null)
+                {
+                    chartTitle.Text = last.Chart.Title + (string.IsNullOrEmpty(last.Chart.MarkText) ? "" : "  (" + last.Chart.MarkText + ")");
+                    chart.X = last.Chart.X;
+                    chart.XLabel = last.Chart.XLabel;
+                    chart.YLabel = last.Chart.YLabel;
+                    chart.Series = new List<LineSeries> { new LineSeries { Name = last.Chart.YLabel, Y = last.Chart.Y, Color = Pal.Accent } };
+                    chart.MarkX = last.Chart.MarkX;
+                    chart.YMinFixed = last.Chart.YMin;
+                    chartPanel.IsVisible = true;
+                }
+                else chartPanel.IsVisible = false;
+                // 0.4.8 (IC8TEM 13/11/2026 23:41, antenna EH): senza grafico gli avvisi restavano nella colonna stretta a destra, tagliati
+                // in fondo alla pagina: ora prendono tutta la larghezza
+                Grid.SetColumn(avvPanel, chartPanel.IsVisible ? 2 : 0);
+                Grid.SetColumnSpan(avvPanel, chartPanel.IsVisible ? 1 : 3);
+                chart.InvalidateVisual();
+                avv.Children.Clear();
+                foreach (string w in last.Warnings) avv.Children.Add(new TextBlock { Text = "⚠ " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Orange), FontSize = 13.5 });
+                foreach (string w in last.Oks) avv.Children.Add(new TextBlock { Text = "✓ " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Green), FontSize = 13.5 });
+                if (avv.Children.Count == 0) avv.Children.Add(new TextBlock { Text = "nessun avviso", Foreground = Pal.B(Pal.Muted) });
+                bool haNec = last.Nec != null;
+                // 0.4.20 (IC8TEM 14/11/2026 16:01): fumetto giallo con gli avvisi del modello NEC che i pulsanti creano
+                {
+                    List<string> avMod = haNec ? AvvisiDelMazzo(last.Nec) : new List<string>();
+                    FumettoConAvvisi(bNec, "Crea il modello NEC dai valori della scheda, lo calcola con il motore e lo apre nella Struttura 3D.", avMod);
+                    FumettoConAvvisi(bApri, "Apre il modello NEC della scheda nella finestra principale.", avMod);
+                    foreach (string w in avMod) avv.Children.Insert(0, new TextBlock { Text = "⚠ modello NEC: " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Yellow), FontSize = 13.5 });
+                    if (avMod.Count > 0 && avv.Children.Count > 1 && avv.Children[avv.Children.Count - 1] is TextBlock tbn && (tbn.Text == "nessun avviso" || tbn.Text == Lang.T("nessun avviso"))) avv.Children.RemoveAt(avv.Children.Count - 1);
+                }
+                avviaTempoReale(last.Nec, model != null ? model.Z0 : 50, double.NaN, double.NaN);
+                bNec.IsVisible = bSalva.IsVisible = bApri.IsVisible = haNec || sc.UsesModel;
+                bTune.IsVisible = haNec && sc.CanTune;
+                bTune.Content = sc.TuneLabel;
+                bCar.IsVisible = haNec && last.Nec.Contains("\nLD ");
+            };
+
+            string necCreato = null;   // testo del modello creato con "Crea il modello NEC e verificalo" (se i valori cambiano, va ricreato)
+            Action verifica = () =>
+            {
+                mostra();
+                if (last == null || last.Nec == null) return;
+                necCreato = last.Nec;
+                CalcOutput o = last;
+                setNec("calcolo...", "motore NEC-2");
+                Task.Run(() =>
+                {
+                    using (Prestazioni.Misura("Calcolatore: verifica NEC (" + sc.Title + ")"))
+                    {
+                        NecModel m = NecModel.Parse(o.Nec);
+                        return SimpleCalc.Solve(o, m.FreqMHz, model != null ? model.Z0 : 50);
+                    }
+                }).ContinueWith(t => Dispatcher.UIThread.Post(() =>
+                {
+                    if (t.IsFaulted) { setNec("errore", t.Exception.GetBaseException().Message); return; }
+                    RunResult r = t.Result;
+                    string pol = "";
+                    try
+                    {
+                        FarFieldPoint fp = r.Engine.Gain(r.ThetaMax, r.PhiMax);
+                        pol = fp.GainVert > fp.GainHor + 3 ? ", pol. V" : (fp.GainHor > fp.GainVert + 3 ? ", pol. H" : ", pol. mista");
+                    }
+                    catch { }
+                    string z = r.Sources.Count > 1 ? r.Sources.Count + " sorgenti" : FN(r.Zin.Real, 1) + (r.Zin.Imaginary >= 0 ? " +j" : " -j") + FN(Math.Abs(r.Zin.Imaginary), 1) + " Ω";
+                    setNec(z, "G " + FN(r.GmaxDbi, 1) + " dBi, eff. " + FN(r.Efficiency, 0) + " %" + (r.Sources.Count == 1 ? ", ROS " + FN(r.Swr, 2) : "") + pol);
+                }));
+            };
+            // richiesta IC8TEM 13/11/2026 18:10: il modello creato si apre anche nella finestra principale e si vede nella Struttura 3D
+            Action creaEApri = () =>
+            {
+                verifica();
+                if (last != null && last.Nec != null) ApriModelloCalcolatore(last.Nec, sc.Nome + ".nec");
+            };
+            bNec.Click += (s, e) => creaEApri();
+            bApri.Click += (s, e) => { mostra(); if (last != null && last.Nec != null) ApriModelloCalcolatore(last.Nec, sc.Nome + ".nec"); };
+            // richiesta IC8TEM 13/11/2026 18:01: salvataggio senza aver creato il modello -> promemoria, poi il modello si crea comunque e si salva
+            Func<Task> salvaDaQui = async () =>
+            {
+                mostra();
+                if (last == null || last.Nec == null) { Status("Questa scheda non produce un modello NEC da salvare.", true); return; }
+                if (necCreato != last.Nec)
+                {
+                    await Promemoria("Prima crea il modello NEC",
+                        "Non hai ancora premuto \"" + bNec.Content + "\".\n\nRicorda di creare prima il modello NEC dai valori della scheda: " +
+                        "lo creo adesso, lo verifico con il motore e lo apro nella Struttura 3D, poi si apre la finestra per salvarlo.");
+                    creaEApri();
+                }
+                await SalvaTestoModello(last.Nec, sc.Nome);
+            };
+            bSalva.Click += async (s, e) => await salvaDaQui();
+            root.AttachedToVisualTree += (s, e) => salvaCalcolatoreCorrente = salvaDaQui;
+            // calcolatori che dipendono dal modello aperto: si ricalcolano ogni volta che la scheda torna visibile
+            if (sc is CalcStackDl6wu)
+            {
+                bool aVideo = false;
+                root.AttachedToVisualTree += (s, e) => { aVideo = true; if (mostra != null) mostra(); };
+                root.DetachedFromVisualTree += (s, e) => aVideo = false;
+                // 0.4.20: il calcolo dell'antenna base gira in sottofondo; quando finisce la scheda si ridisegna (solo se e' a video)
+                CalcStackDl6wu.Pronto += () => Dispatcher.UIThread.Post(() => { if (aVideo && mostra != null) mostra(); });
+            }
+            root.DetachedFromVisualTree += (s, e) => { if (salvaCalcolatoreCorrente == salvaDaQui) salvaCalcolatoreCorrente = null; };
+            bCar.Click += (s, e) =>
+            {
+                mostra();
+                if (last == null || last.Nec == null) return;
+                ApriModelloCalcolatore(last.Nec, sc.Nome + ".nec");
+                try { bassoCorrente = "carichi"; MostraBasso("carichi"); } catch { }
+            };
+            bTune.Click += (s, e) =>
+            {
+                mostra();
+                if (last == null || last.Nec == null) return;
+                double f = NecModel.Parse(last.Nec).FreqMHz;
+                setNec("risonanza...", "ricerca con il NEC");
+                Task.Run(() => { using (Prestazioni.Misura("Calcolatore: risonanza NEC (" + sc.Title + ")")) return sc.Tune(f); }).ContinueWith(t => Dispatcher.UIThread.Post(() =>
+                {
+                    if (t.IsFaulted) { setNec("errore", t.Exception.GetBaseException().Message); return; }
+                    verifica();
+                }));
+            };
+            mostra();
+            return new ScrollViewer { Content = root, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
+        }
+
+        // scheda del calcolatore visibile: il pulsante "Salva .nec..." in alto, senza modello aperto, salva il suo modello
+        Func<Task> salvaCalcolatoreCorrente;
+
+        // finestrella di promemoria con un solo pulsante
+        async Task Promemoria(string titolo, string testo)
+        {
+            Window w = new Window { Title = titolo, Width = 460, SizeToContent = SizeToContent.Height, CanResize = false,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = Pal.B(Pal.Panel) };
+            StackPanel sp = new StackPanel { Margin = new Thickness(18), Spacing = 14 };
+            sp.Children.Add(new TextBlock { Text = titolo, FontSize = 16, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
+            sp.Children.Add(new TextBlock { Text = testo, TextWrapping = TextWrapping.Wrap, FontSize = 14, Foreground = Pal.B(Pal.Fore) });
+            Button ok = Btn("Ho capito: crea e salva", true);
+            ok.HorizontalAlignment = HorizontalAlignment.Right;
+            ok.Click += (s, e) => w.Close();
+            sp.Children.Add(ok);
+            w.Content = sp;
+            Registro.Scrivi("AZIONE", "promemoria: " + titolo);
+            await w.ShowDialog(this);
+        }
+
+        // 0.5.3: cella "etichetta + casella + unita'" (con il suggerimento sotto) per le caselle su piu' colonne
+        Control CellaCalc(string etichetta, string tip, TextBox t, TextBlock unita, TextBlock suggerimento)
+        {
+            StackPanel v = new StackPanel { Width = 300, Margin = new Thickness(0, 2, 14, 2) };
+            StackPanel h = new StackPanel { Orientation = Orientation.Horizontal };
+            TextBlock l = new TextBlock { Text = etichetta, Width = 142, Margin = new Thickness(0, 0, 4, 0), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap, FontSize = 13.5, Foreground = Pal.B(Pal.Muted) };
+            if (!string.IsNullOrEmpty(tip)) ToolTip.SetTip(l, tip);
+            h.Children.Add(l); h.Children.Add(t); h.Children.Add(unita);
+            v.Children.Add(h);
+            suggerimento.IsVisible = !string.IsNullOrEmpty(suggerimento.Text);
+            v.Children.Add(suggerimento);
+            return v;
+        }
+
+        DockPanel RigaCalc(string etichetta, params Control[] c)
+        {
+            DockPanel d = new DockPanel { Margin = new Thickness(0, 2) };
+            TextBlock l = new TextBlock { Text = etichetta, Width = 190, VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap, FontSize = 14, Foreground = Pal.B(Pal.Muted) };
+            DockPanel.SetDock(l, Dock.Left);
+            d.Children.Add(l);
+            StackPanel h = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4 };
+            foreach (Control x in c) h.Children.Add(x);
+            d.Children.Add(h);
+            return d;
+        }
+
+        // salva il testo di un modello in .nec (NEC2 universale) o .yanec (completo: stesso testo con le righe CM YA-NEC)
+        async Task SalvaTestoModello(string nec, string nome)
+        {
+            try
+            {
+                IStorageFile f = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+                {
+                    Title = "Salva il modello del calcolatore",
+                    SuggestedFileName = nome + ".nec",
+                    DefaultExtension = "nec",
+                    FileTypeChoices = new[]
+                    {
+                        new FilePickerFileType("NEC2 (universale)") { Patterns = new[] { "*.nec" } },
+                        new FilePickerFileType("YA-NEC (completo)") { Patterns = new[] { "*.yanec" } }
+                    }
+                });
+                if (f == null) return;
+                string path = f.TryGetLocalPath();
+                if (path == null) { Status("Impossibile scrivere nel percorso scelto.", true); return; }
+                string testo = nec;
+                if (path.EndsWith(".yanec", StringComparison.OrdinalIgnoreCase)) testo = YanecFile.Testo(null, Path.GetFileNameWithoutExtension(path), nec);   // 0.4.30: formato .yanec 2
+                File.WriteAllText(path, testo);
+                Status("Modello salvato: " + path);
+            }
+            catch (Exception ex) { Status("Errore nel salvataggio: " + ex.Message, true); }
+        }
+
+        // ------------------------------------------------------------------------------------------------
+        // four-square con la grafica del bozzetto approvato
+        // ------------------------------------------------------------------------------------------------
+        Control BuildFourSquarePanel()
+        {
+            SimpleCalc sc = simpleCalcs.Find(c => c.Key == "4sq");
+            StackPanel root = new StackPanel();
+
+            // dati in una riga
+            WrapPanel dati = new WrapPanel();
+            List<Action> leggi = new List<Action>();
+            Action calcola = null;
+            foreach (CalcParam p in sc.Params)
+            {
+                CalcParam pp = p;
+                StackPanel cell = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Margin = new Thickness(0, 2, 18, 2) };
+                cell.Children.Add(new TextBlock { Text = pp.Label, VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) });
+                if (pp.Choices != null)
+                    cell.Children.Add(Scelta(pp.Choices, (int)pp.Value, k => { pp.Value = k; if (calcola != null) calcola(); }));
+                else
+                {
+                    TextBox t = Tb(pp.Value.ToString("0.####", CultureInfo.CurrentCulture), 70);
+                    cell.Children.Add(t);
+                    cell.Children.Add(new TextBlock { Text = pp.Unit, VerticalAlignment = VerticalAlignment.Center });
+                    leggi.Add(() => pp.Value = ParseNum(t.Text, pp.Value));
+                    t.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter && calcola != null) calcola(); };
+                }
+                dati.Children.Add(cell);
+            }
+            Button bCalc = Btn("Calcola", true), bApri = Btn("Apri come modello", false), bSalva = Btn("Salva il modello (.nec / .yanec)", false);
+            foreach (Button b in new[] { bCalc, bApri, bSalva }) { b.Margin = new Thickness(0, 2, 8, 2); dati.Children.Add(b); }
+            root.Children.Add(Scheda(dati));
+
+            WrapPanel cards = new WrapPanel();
+            root.Children.Add(cards);
+
+            Grid g = new Grid { ColumnDefinitions = new ColumnDefinitions("11*,10,9*") };
+            Structure3DView v3 = new Structure3DView { Height = 560, ShowPattern = false, ShowGroundAndHeight = true, ShowPhases = true };
+            StackPanel sx = new StackPanel();
+            StackPanel chk = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 14, Margin = new Thickness(0, 0, 0, 6) };
+            CheckBox cFasi = new CheckBox { Content = "Fasi delle sorgenti", IsChecked = true };
+            CheckBox cLobo = new CheckBox { Content = "Lobo 3D", IsChecked = false };
+            CheckBox cTer = new CheckBox { Content = "Terreno e quota", IsChecked = true };
+            cFasi.IsCheckedChanged += (s, e) => { v3.ShowPhases = cFasi.IsChecked == true; v3.InvalidateVisual(); };
+            cLobo.IsCheckedChanged += (s, e) => { v3.ShowPattern = cLobo.IsChecked == true; v3.InvalidateVisual(); };
+            cTer.IsCheckedChanged += (s, e) => { v3.ShowGroundAndHeight = cTer.IsChecked == true; v3.InvalidateVisual(); };
+            chk.Children.Add(cFasi); chk.Children.Add(cLobo); chk.Children.Add(cTer);
+            sx.Children.Add(chk);
+            sx.Children.Add(new Border { Child = v3, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(8), ClipToBounds = true });
+            Grid.SetColumn(sx, 0);
+            g.Children.Add(sx);
+
+            StackPanel dx = new StackPanel();
+            StackPanel tab = new StackPanel { Spacing = 2 };
+            StackPanel tabBox = new StackPanel();
+            tabBox.Children.Add(new TextBlock { Text = "Sorgenti (Oggetti del modello) - alimentazione a corrente", FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6) });
+            tabBox.Children.Add(tab);
+            tabBox.Children.Add(Nota("Con il tipo \"corrente\" il programma calcola da solo le tensioni che danno esattamente queste correnti (matrice delle impedenze mutue). " +
+                "L'elemento A puo' avere resistenza negativa: restituisce potenza alla rete di sfasamento."));
+            dx.Children.Add(Scheda(tabBox));
+            PolarPlot pAz = new PolarPlot { Height = 300, Rotate = 90, LinRange = 30 };
+            PolarPlot pEl = new PolarPlot { Height = 300, Elevation = true, GroundHalf = true, LinRange = 30 };
+            Grid pol = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*") };
+            Grid.SetColumn(pEl, 1);
+            pol.Children.Add(pAz); pol.Children.Add(pEl);
+            TextBlock polNote = Nota("");
+            StackPanel polBox = new StackPanel();
+            polBox.Children.Add(pol);
+            polBox.Children.Add(polNote);
+            dx.Children.Add(Scheda(polBox));
+            Grid.SetColumn(dx, 2);
+            g.Children.Add(dx);
+            root.Children.Add(g);
+            StackPanel avv = new StackPanel();
+            root.Children.Add(avv);
+            Action<string, double, double, double> avviaTempoReale4;
+            root.Children.Add(TempoRealePanel(out avviaTempoReale4));   // 0.4.2: calcolo in tempo reale
+
+            CalcOutput last = null;
+            Func<string, string[], Control> rigaTab = (nome, celle) =>
+            {
+                StackPanel r = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4 };
+                r.Children.Add(new TextBlock { Text = nome, Width = 26, FontWeight = FontWeight.Bold, VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) });
+                double[] w = { 70, 80, 80, 90, 130 };
+                for (int i = 0; i < celle.Length; i++)
+                {
+                    bool head = nome == "";
+                    r.Children.Add(head ? (Control)new TextBlock { Text = celle[i], Width = w[i], Foreground = Pal.B(Pal.Muted), FontSize = 13 }
+                        : Cella(celle[i], w[i], true, true));
+                }
+                return r;
+            };
+
+            calcola = () =>
+            {
+                foreach (Action a in leggi) a();
+                last = sc.Run();
+                avviaTempoReale4(last.Nec, model != null ? model.Z0 : 50, double.NaN, double.NaN);
+                // 0.4.20 (IC8TEM 14/11/2026 16:01): fumetto giallo con gli avvisi del modello NEC
+                List<string> av4 = AvvisiDelMazzo(last.Nec);
+                FumettoConAvvisi(bApri, "Apre il modello NEC della four-square nella finestra principale.", av4);
+                FumettoConAvvisi(bCalc, "Calcola le impedenze delle quattro verticali con le sorgenti a corrente.", av4);
+                cards.Children.Clear();
+                foreach (CalcCard c in last.Cards) cards.Children.Add(Riquadretto(c.Title, c.Value, c.Sub, c.Hl));
+                avv.Children.Clear();
+                foreach (string w in last.Warnings) avv.Children.Add(Nota("⚠ " + w, Pal.Orange));
+                foreach (string w in av4) avv.Children.Add(Nota("⚠ modello NEC: " + w, Pal.Yellow));
+                tab.Children.Clear();
+                tab.Children.Add(rigaTab("", new[] { "Filo", "Ampiezza", "Fase", "Tipo", "Z risultante" }));
+                tab.Children.Add(Nota("calcolo NEC in corso..."));
+                CalcOutput o = last;
+                Task.Run(() =>
+                {
+                    NecModel m = NecModel.Parse(o.Nec);
+                    SegmentGeometry geo = m.BuildGeometry();
+                    RunResult r = Analysis.Run(m, geo, m.FreqMHz, 2.0);
+                    return Tuple.Create(m, geo, r);
+                }).ContinueWith(t => Dispatcher.UIThread.Post(() =>
+                {
+                    tab.Children.RemoveAt(tab.Children.Count - 1);
+                    if (t.IsFaulted) { tab.Children.Add(Nota("Errore NEC: " + t.Exception.GetBaseException().Message, Pal.Red)); return; }
+                    NecModel m = t.Result.Item1;
+                    SegmentGeometry geo = t.Result.Item2;
+                    RunResult r = t.Result.Item3;
+                    string[] fasi = { "0°", "-90°", "-90°", "-180°" };
+                    v3.Geo = geo;
+                    v3.Ground = m.Ground.Kind != GroundKind.FreeSpace;
+                    v3.GroundLook = m.Ground.Kind == GroundKind.Perfect ? GroundPainter.ByIndex(0) : GroundPainter.ByIndex(1);
+                    v3.SourceSegs = new HashSet<int>();
+                    v3.SourceLabels = new List<KeyValuePair<int, string>>();
+                    for (int i = 0; i < m.Sources.Count && i < 4; i++)
+                    {
+                        int sg = geo.SegNo(m.Sources[i].Tag, m.Sources[i].Seg) - 1;
+                        v3.SourceSegs.Add(sg);
+                        v3.SourceLabels.Add(new KeyValuePair<int, string>(sg, CalcFourSquare.Nomi[i] + " 1∠" + fasi[i]));
+                        Complex z = i < r.Sources.Count ? r.Sources[i].Z : Complex.Zero;
+                        tab.Children.Add(rigaTab(CalcFourSquare.Nomi[i], new[] { m.Sources[i].Tag.ToString(), "1 A", fasi[i], "corrente",
+                            FN(z.Real, 1) + (z.Imaginary >= 0 ? " +j" : " -j") + FN(Math.Abs(z.Imaginary), 1) }));
+                    }
+                    double[] cn = new double[geo.N];
+                    double mx = 0;
+                    for (int i = 0; i < geo.N; i++) { cn[i] = Complex.Abs(r.Engine.SegmentCurrent(i)); mx = Math.Max(mx, cn[i]); }
+                    if (mx > 0) for (int i = 0; i < geo.N; i++) cn[i] /= mx;
+                    v3.CurrentNorm = cn;
+                    v3.Pattern = r.Grid; v3.PatternMax = r.GmaxDbi;
+                    v3.LobeAz = r.PhiMax; v3.LobeEl = r.ElevationOfMax;
+                    v3.Info = geo.N + " segmenti, " + m.Geometry.Count + " fili, " + (m.Ground.Kind == GroundKind.Perfect ? "terreno perfetto" : "terreno medio (εr 13, σ 0,005 S/m, Sommerfeld)");
+                    v3.InvalidateVisual();
+                    Complex za = r.Sources.Count > 0 ? r.Sources[0].Z : Complex.Zero;
+                    cards.Children.Insert(0, Riquadretto("Impedenza A (dietro)", FN(za.Real, 1) + (za.Imaginary >= 0 ? " +j" : " -j") + FN(Math.Abs(za.Imaginary), 1), "4 sorgenti: vedi tabella"));
+                    cards.Children.Insert(1, Riquadretto("Guadagno massimo", FN(r.GmaxDbi, 2) + " dBi", m.Ground.Kind == GroundKind.Perfect ? "terreno perfetto" : "terreno medio", true));
+                    cards.Children.Insert(2, Riquadretto("Direzione del massimo", "az " + FN(r.PhiMax, 1) + "°", "elevazione " + FN(r.ElevationOfMax, 0) + "°"));
+                    cards.Children.Insert(3, Riquadretto("F/B", FN(r.FrontBack, 1) + " dB", "a " + FN(r.ElevationOfMax, 0) + "° di elevazione"));
+                    cards.Children.Insert(4, Riquadretto("Apertura a -3 dB", FN(r.HpbwAz, 0) + "° / " + FN(r.HpbwEl, 0) + "°", "orizzontale / verticale"));
+                    pAz.Traces = new List<PolarTrace> { new PolarTrace { Db = r.AzCut, Color = Pal.Accent, Name = "totale" } };
+                    pAz.RefDb = r.GmaxDbi; pAz.MarkAngle = r.PhiMax; pAz.Title = "Azimut a " + FN(r.ElevationOfMax, 0) + "° di elevazione";
+                    pEl.Traces = new List<PolarTrace> { new PolarTrace { Db = r.ElCut, Color = Pal.Orange, Name = "totale" } };
+                    pEl.RefDb = r.GmaxDbi; pEl.MarkAngle = r.ElevationOfMax; pEl.Title = "Elevazione (piano az " + FN(r.PhiMax, 0) + "°)";
+                    pAz.InvalidateVisual(); pEl.InvalidateVisual();
+                    polNote.Text = "max " + FN(r.GmaxDbi, 2) + " dBi a " + FN(r.ElevationOfMax, 0) + "°, F/B " + FN(r.FrontBack, 1) + " dB";
+                }));
+            };
+            bCalc.Click += (s, e) => calcola();
+            bApri.Click += (s, e) => { if (last != null) ApriModelloCalcolatore(last.Nec, "Four-square.nec"); };
+            bSalva.Click += async (s, e) => { if (last != null) await SalvaTestoModello(last.Nec, "Four-square"); };
+            calcola();
+            return new ScrollViewer { Content = root, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
+        }
+    }
+}

@@ -1,0 +1,149 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=moxon 24+28
+CM YANEC DESCRIZIONE=moxon 24+28
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=moxon 24+28.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	28.5	m	mm	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***																									
+_2.077	_largh moxon 24																													
+_1.569	_largh moxon 28																													
+_0																														
+_0																														
+_0																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+	_=0	_=-A	_=0	_=0	_=-0.75	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_=0	_=-0.75	_=0	_=0	_=0.75	_=0	_=16	_=ODD(WireLen / WL * 20)																						
+	_=0	_=0.75	_=0	_=0	_=A	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_0	_=C10	_0	_0.84	_=C13	_0	_12	_3																						
+	_0	_=F12	_0	_0.84	_=F12	_0	_12	_3																						
+	_=0.84+0.17	_=C10	_0	_1.605	_=C10	_0	_12	_3																						
+	_1.01	_=F12	_0	_1.605	_=F12	_0	_12	_3																						
+	_1.605	_=C10	_=0	_1.605	_=-0.75	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_1.605	_=-0.75	_=0	_1.605	_=0.75	_=0	_=16	_=ODD(WireLen / WL * 20)																						
+	_1.605	_=0.75	_=0	_1.605	_=F12	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_=B21	_=-B	_=0	_=E21	_=-0.75	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_=B22	_=-0.75	_=0	_=E22	_=0.75	_=0	_=16	_=ODD(WireLen / WL * 20)																						
+	_=B23	_=0.75	_=0	_=B22	_=B	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_=E23-0.73	_=C20	_0	_=B25-0.16	_=C20	_0	_12	_3																						
+	_=E24-0.73	_=F22	_0	_=E23	_=F22	_0	_12	_3																						
+	_=E25-0.53	_=C20	_0	_=E26	_=C20	_0	_12	_3																						
+	_=E26-0.53	_=F22	_0	_=E27	_=F22	_0	_12	_3																						
+	_=B28	_=C20	_=0	_=E28	_=-0.75	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+	_=B29	_=-0.75	_=0	_=E29	_=0.75	_=0	_=16	_=ODD(WireLen / WL * 20)																						
+	_=E29	_=0.75	_=0	_=E19-0.15	_=F22	_=0	_=12	_=ODD(WireLen / WL * 20)																						
+_9	_50	_1	_0	_I											_24.89		_A													
+															_24.99		_B													
+															_28.05															
+															_28.5															
+															_															
+															_															
+															_															
+															_															
+															_															
+																														
+															_0	_0.5														
+															_0	_0.5														
+															_1	_1.01														
+															_1	_99														
+															_0	_40														
+															_0	_40														
+																														
+															_	_														
+															_	_														
+																														
+															_															
+																														
+																														
+															TRUE															
+															3															
+															TRUE															
+															TRUE															
+															TRUE															
+															TRUE															
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+Controls	FALSE	TRUE	0	0	2	1	0	1	50	0	0																FALSE	TRUE	_1	_0
+_Freq (MHz)																														
+_24.89																														
+_24.915																														
+_24.99																														
+_28																														
+_28.1																														
+_28.5																														
+7																														

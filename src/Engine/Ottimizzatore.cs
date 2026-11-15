@@ -1,0 +1,349 @@
+// YA-NEC - ottimizzatore (fase 5, bozzetto approvato doc/bozzetto-ottimizzatore.png). GPL-3.0.
+//
+// Obiettivi pesati con soglie (jX, ROS, guadagno, F/B, elevazione, impedenza voluta, corrente in un punto), piu' frequenze,
+// variabili della linguetta Variabili con minimo, massimo e passo. Idee: ottimizzatore di MMANA-GAL (obiettivi pesati con
+// cursori, "una variabile alla volta"), xnec2c-optimize e AutoEZ (variabili SY); metodo del simplesso di Nelder e Mead (1965).
+// Nessun codice preso da quei programmi.
+//
+// Voto (0-100): per ogni frequenza e ogni obiettivo un punteggio tra 0 e 1, media pesata con i pesi dei cursori, poi media
+// sulle frequenze. Raggiunta la soglia il punteggio di quell'obiettivo vale 1 e smette di tirare. Punteggi:
+//   jX         1 / (1 + (X / (0,2 Z0))^2)                         soglia: |X| <= valore
+//   ROS        1 - |gamma|^2 rispetto a Z0 (potenza adattata)     soglia: ROS <= valore
+//   guadagno   1 / (1 + exp(-(G - G0) / 1 dB)), G0 = partenza      soglia: G >= valore (dBi)
+//   F/B        1 - exp(-F/B / 15 dB)                               soglia: F/B >= valore
+//   elevazione exp(-((el - voluta) / 10 gradi)^2)                  il valore e' l'elevazione voluta del massimo
+//   impedenza  1 - |(Z - Zv) / (Z + Zv)|^2                         il valore e' Zv (es. 28 +j0)
+//   corrente   1 - |I punto| / |I massima|                         corrente piu' bassa possibile nel punto (trappole, nodi)
+// Elevazione e corrente si calcolano alla frequenza centrale con il diagramma completo; gli altri con lo sweep in frequenza
+// nella direzione del massimo del modello di partenza.
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Numerics;
+using System.Threading;
+
+namespace YaNec.Engine
+{
+    public class OttVariabile
+    {
+        public string Nome = "";
+        public bool Attiva = true;
+        public double Valore, Min, Max, Passo;
+    }
+
+    public class OttObiettivo
+    {
+        public string Chiave = "";      // jx, ros, g, fb, el, z, i
+        public double Peso;             // 0-100
+        public bool HaSoglia;
+        public double Soglia;           // jx, ros, g, fb, el
+        public Complex Zvoluta = new Complex(50, 0);
+        public int Tag, Seg;            // corrente in un punto
+    }
+
+    public class OttPasso
+    {
+        public int N;
+        public double[] Valori;
+        public double Voto = -1;
+        public double G, FB, RosPeggiore, Elev;
+        public Complex Z;               // alla frequenza principale
+        public bool Valido;
+        public string Errore;
+    }
+
+    public class Ottimizzatore
+    {
+        public NecModel Partenza;
+        public List<OttVariabile> Variabili = new List<OttVariabile>();
+        public List<OttObiettivo> Obiettivi = new List<OttObiettivo>();
+        public List<double> Frequenze = new List<double>();
+        public int Principale;                    // indice della frequenza principale (in grassetto nel bozzetto)
+        public bool MantieniBoom;
+        public bool Simplesso;                    // falso = una variabile alla volta (come MMANA)
+        public int MaxPassi = 3000;
+
+        public OttPasso Iniziale, Migliore;
+        public readonly List<OttPasso> Registro = new List<OttPasso>();   // ultimi 128 passi che hanno migliorato o richiesto
+        public int Passi;
+        public event Action<OttPasso, bool> PassoFatto;                  // ogni prova calcolata (non quelle gia' in memoria)
+
+        double thFwd, phFwd, boom0 = double.NaN;
+        double[] g0;
+        List<OttVariabile> att;
+        readonly Dictionary<string, OttPasso> cache = new Dictionary<string, OttPasso>();
+
+        public static double Valuta(string testo)
+        {
+            string t = Expr.NormalizeDecimal((testo ?? "").Trim().Replace(" ", ""));
+            return Expr.Eval(t, null);
+        }
+
+        /// <summary>Esegue l'ottimizzazione fino alla fine, a MaxPassi o all'annullamento.</summary>
+        public void Esegui(CancellationToken ct)
+        {
+            if (Frequenze.Count == 0) throw new NecException("Manca la frequenza da rispettare.");
+            double somma = 0;
+            foreach (OttObiettivo o in Obiettivi) somma += Math.Max(0, o.Peso);
+            if (somma <= 0) throw new NecException("Tutti i pesi sono a zero: sposta almeno un cursore a destra.");
+            att = Variabili.FindAll(v => v.Attiva && v.Max > v.Min);
+            if (att.Count == 0) throw new NecException("Nessuna variabile spuntata con minimo e massimo diversi.");
+            Principale = Math.Max(0, Math.Min(Frequenze.Count - 1, Principale));
+            // direzione del massimo e guadagni di partenza
+            SegmentGeometry g = Partenza.BuildGeometry();
+            RunResult r0 = Analysis.Run(Partenza, g, Frequenze[Principale], 2.0, ct);
+            thFwd = r0.ThetaMax; phFwd = r0.PhiMax;
+            List<SweepPoint> sp0 = Sweep(Partenza, g, ct);
+            g0 = new double[Frequenze.Count];
+            for (int i = 0; i < g0.Length; i++) g0[i] = sp0[i].Ok ? sp0[i].GainFwd : r0.GmaxDbi;
+            if (MantieniBoom) boom0 = Boom(Partenza, g);
+            double[] x = new double[att.Count];
+            for (int i = 0; i < x.Length; i++) x[i] = Math.Max(att[i].Min, Math.Min(att[i].Max, att[i].Valore));
+            Iniziale = Prova(x, ct);
+            if (!Iniziale.Valido) throw new NecException("Il modello di partenza non si calcola: " + Iniziale.Errore);
+            Migliore = Iniziale;
+            Annota(Iniziale, true);
+            if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct);
+        }
+
+        // ---------------------------------------------------------------------------------------------
+        // metodi
+        // ---------------------------------------------------------------------------------------------
+        void UnaAllaVolta(CancellationToken ct)
+        {
+            // passo iniziale: 8 volte il passo dichiarato (al massimo un quarto dell'intervallo), poi si dimezza fino al passo
+            double[] st = new double[att.Count];
+            for (int i = 0; i < st.Length; i++) st[i] = Math.Max(att[i].Passo, Math.Min(8 * att[i].Passo, (att[i].Max - att[i].Min) / 4));
+            while (Passi < MaxPassi && !ct.IsCancellationRequested)
+            {
+                bool migliorato = false;
+                for (int i = 0; i < att.Count && Passi < MaxPassi && !ct.IsCancellationRequested; i++)
+                {
+                    foreach (int dir in new[] { 1, -1 })
+                    {
+                        bool avanti = true, mosso = false;
+                        while (avanti && Passi < MaxPassi && !ct.IsCancellationRequested)
+                        {
+                            double[] y = (double[])Migliore.Valori.Clone();
+                            y[i] = y[i] + dir * st[i];
+                            if (y[i] < att[i].Min - 1e-12 || y[i] > att[i].Max + 1e-12) break;
+                            OttPasso p = Prova(y, ct);
+                            if (p.Valido && p.Voto > Migliore.Voto + 1e-9) { Migliore = p; Annota(p, true); mosso = migliorato = true; }
+                            else avanti = false;
+                        }
+                        if (mosso) break;
+                    }
+                }
+                if (!migliorato)
+                {
+                    bool finito = true;
+                    for (int i = 0; i < st.Length; i++)
+                        if (st[i] > att[i].Passo * 1.0001) { st[i] = Math.Max(att[i].Passo, st[i] / 2); finito = false; }
+                    if (finito) break;
+                }
+            }
+        }
+
+        void NelderMead(CancellationToken ct)
+        {
+            int n = att.Count;
+            // coordinate normalizzate 0..1 nell'intervallo di ogni variabile
+            Func<double[], double[]> reale = u =>
+            {
+                double[] y = new double[n];
+                for (int i = 0; i < n; i++) y[i] = att[i].Min + Math.Max(0, Math.Min(1, u[i])) * (att[i].Max - att[i].Min);
+                return y;
+            };
+            Func<double[], double> f = u => { OttPasso p = Prova(reale(u), ct); if (p.Valido && p.Voto > Migliore.Voto + 1e-9) { Migliore = p; Annota(p, true); } return p.Valido ? -p.Voto : 1e9; };
+            double[][] s = new double[n + 1][];
+            double[] fv = new double[n + 1];
+            s[0] = new double[n];
+            for (int i = 0; i < n; i++) s[0][i] = (Migliore.Valori[i] - att[i].Min) / (att[i].Max - att[i].Min);
+            fv[0] = -Migliore.Voto;
+            for (int k = 1; k <= n; k++)
+            {
+                s[k] = (double[])s[0].Clone();
+                s[k][k - 1] += s[k][k - 1] < 0.85 ? 0.15 : -0.15;
+                fv[k] = f(s[k]);
+            }
+            int giri = 0;   // le prove gia' in memoria non contano come passi: limite anche sui giri
+            while (Passi < MaxPassi && giri++ < 20 * MaxPassi && !ct.IsCancellationRequested)
+            {
+                Array.Sort(fv, s);
+                if (Math.Abs(fv[n] - fv[0]) < 0.01)
+                {
+                    // simplesso ristretto: basta se e' gia' sotto i passi dichiarati
+                    bool piccolo = true;
+                    for (int i = 0; i < n; i++)
+                        for (int k = 1; k <= n; k++)
+                            if (Math.Abs(s[k][i] - s[0][i]) * (att[i].Max - att[i].Min) > att[i].Passo) piccolo = false;
+                    if (piccolo) break;
+                }
+                double[] c = new double[n];
+                for (int k = 0; k < n; k++) for (int i = 0; i < n; i++) c[i] += s[k][i] / n;
+                Func<double, double[]> lungo = a => { double[] y = new double[n]; for (int i = 0; i < n; i++) y[i] = c[i] + a * (s[n][i] - c[i]); return y; };
+                double[] xr = lungo(-1); double fr = f(xr);
+                if (fr < fv[0])
+                {
+                    double[] xe = lungo(-2); double fe = f(xe);
+                    if (fe < fr) { s[n] = xe; fv[n] = fe; } else { s[n] = xr; fv[n] = fr; }
+                }
+                else if (fr < fv[n - 1]) { s[n] = xr; fv[n] = fr; }
+                else
+                {
+                    double[] xc = fr < fv[n] ? lungo(-0.5) : lungo(0.5); double fc = f(xc);
+                    if (fc < Math.Min(fr, fv[n])) { s[n] = xc; fv[n] = fc; }
+                    else
+                        for (int k = 1; k <= n; k++)
+                        {
+                            for (int i = 0; i < n; i++) s[k][i] = s[0][i] + 0.5 * (s[k][i] - s[0][i]);
+                            fv[k] = f(s[k]);
+                        }
+                }
+            }
+        }
+
+        // ---------------------------------------------------------------------------------------------
+        // valutazione di un punto
+        // ---------------------------------------------------------------------------------------------
+        OttPasso Prova(double[] x, CancellationToken ct)
+        {
+            // valori arrotondati al passo: misure costruibili e niente doppioni
+            double[] y = new double[x.Length];
+            System.Text.StringBuilder k = new System.Text.StringBuilder();
+            for (int i = 0; i < x.Length; i++)
+            {
+                double p = att[i].Passo > 0 ? att[i].Passo : 1e-4;
+                y[i] = Math.Max(att[i].Min, Math.Min(att[i].Max, att[i].Min + Math.Round((x[i] - att[i].Min) / p) * p));
+                k.Append(y[i].ToString("R", CultureInfo.InvariantCulture)).Append(';');
+            }
+            OttPasso vecchio;
+            if (cache.TryGetValue(k.ToString(), out vecchio)) return vecchio;
+            ct.ThrowIfCancellationRequested();
+            OttPasso r = new OttPasso { Valori = y, N = Passi++ };
+            try
+            {
+                NecModel m = Modello(y);
+                SegmentGeometry g = m.BuildGeometry();
+                if (MantieniBoom && Math.Abs(Boom(m, g) - boom0) > 5e-4) throw new NecException("lunghezza del boom cambiata");
+                List<SweepPoint> sp = Sweep(m, g, ct);
+                RunResult rc = null;
+                foreach (OttObiettivo o in Obiettivi)
+                    if (o.Peso > 0 && (o.Chiave == "el" || o.Chiave == "i")) { rc = Analysis.Run(m, g, Frequenze[Principale], 2.0, ct); break; }
+                double voto = 0, pesi = 0, rosMax = 0;
+                for (int fi = 0; fi < Frequenze.Count; fi++)
+                {
+                    SweepPoint p = sp[fi];
+                    if (!p.Ok) throw new NecException(p.Error ?? "calcolo non riuscito");
+                    rosMax = Math.Max(rosMax, p.Swr);
+                    foreach (OttObiettivo o in Obiettivi)
+                    {
+                        if (o.Peso <= 0) continue;
+                        double s = Punteggio(o, p, fi, rc, m.Z0);
+                        voto += o.Peso * s; pesi += o.Peso;
+                    }
+                }
+                SweepPoint pp = sp[Principale];
+                r.Voto = 100 * voto / pesi;
+                r.G = pp.GainFwd; r.FB = pp.FrontBack; r.Z = pp.Z; r.RosPeggiore = rosMax;
+                r.Elev = rc != null ? rc.ElevationOfMax : 90 - thFwd;
+                r.Valido = true;
+            }
+            catch (OperationCanceledException) { throw; }
+            catch (Exception ex) { r.Valido = false; r.Errore = ex.Message; }
+            cache[k.ToString()] = r;
+            if (PassoFatto != null) PassoFatto(r, false);
+            return r;
+        }
+
+        double Punteggio(OttObiettivo o, SweepPoint p, int fi, RunResult rc, double z0)
+        {
+            switch (o.Chiave)
+            {
+                case "jx":
+                    if (o.HaSoglia && Math.Abs(p.Z.Imaginary) <= o.Soglia) return 1;
+                    { double q = p.Z.Imaginary / (0.2 * z0); return 1 / (1 + q * q); }
+                case "ros":
+                    if (o.HaSoglia && p.Swr <= o.Soglia) return 1;
+                    { Complex gm = (p.Z - z0) / (p.Z + z0); return 1 - gm.Magnitude * gm.Magnitude; }
+                case "g":
+                    if (o.HaSoglia && p.GainFwd >= o.Soglia) return 1;
+                    return 1 / (1 + Math.Exp(-(p.GainFwd - g0[fi])));
+                case "fb":
+                    if (o.HaSoglia && p.FrontBack >= o.Soglia) return 1;
+                    return 1 - Math.Exp(-Math.Max(0, p.FrontBack) / 15);
+                case "el":
+                    if (rc == null || !o.HaSoglia) return 1;
+                    { double q = (rc.ElevationOfMax - o.Soglia) / 10; return Math.Exp(-q * q); }
+                case "z":
+                    { Complex gm = (p.Z - o.Zvoluta) / (p.Z + o.Zvoluta); return 1 - Math.Min(1, gm.Magnitude * gm.Magnitude); }
+                case "i":
+                    {
+                        if (rc == null) return 1;
+                        double imax = 1e-30, ip = 0;
+                        int conta = 0;
+                        for (int s = 0; s < rc.Geometry.N; s++)
+                        {
+                            double a = Complex.Abs(rc.Engine.SegmentCurrent(s));
+                            imax = Math.Max(imax, a);
+                            if (rc.Geometry.Tag[s] == o.Tag && ++conta == o.Seg) ip = a;
+                        }
+                        return 1 - Math.Min(1, ip / imax);
+                    }
+            }
+            return 1;
+        }
+
+        List<SweepPoint> Sweep(NecModel m, SegmentGeometry g, CancellationToken ct)
+        {
+            // poche frequenze: lo sweep le calcola tutte (MBPE solo da 9 punti in su)
+            return Analysis.Sweep(m, g, Frequenze, thFwd, phFwd, null, ct);
+        }
+
+        /// <summary>Modello con i valori dati alle variabili attive (numeri in metri o nell'unita' del valore).</summary>
+        public NecModel Modello(double[] y)
+        {
+            NecModel m = Partenza.Clone();
+            for (int i = 0; i < att.Count; i++)
+            {
+                SyVar v = m.Variables.Find(q => string.Equals(q.Name, att[i].Nome, StringComparison.OrdinalIgnoreCase));
+                if (v != null) v.Expr = y[i].ToString("R", CultureInfo.InvariantCulture);
+            }
+            List<string> err = m.Reevaluate();
+            if (err.Count > 0) throw new NecException(err[0]);
+            return m;
+        }
+
+        // lunghezza del boom: estensione dei centri dei fili lungo l'asse piu' lungo tra quelli perpendicolari al filo alimentato
+        public static double Boom(NecModel m, SegmentGeometry g)
+        {
+            int sTag = m.Sources.Count > 0 ? m.Sources[0].Tag : g.Tag[0];
+            double dx = 0, dy = 0, dz = 0;
+            for (int i = 0; i < g.N; i++)
+                if (g.Tag[i] == sTag) { dx += Math.Abs(g.X2[i] - g.X1[i]); dy += Math.Abs(g.Y2[i] - g.Y1[i]); dz += Math.Abs(g.Z2[i] - g.Z1[i]); }
+            int asseFilo = dx >= dy && dx >= dz ? 0 : (dy >= dz ? 1 : 2);
+            double best = 0;
+            for (int a = 0; a < 3; a++)
+            {
+                if (a == asseFilo) continue;
+                double mn = double.MaxValue, mx = double.MinValue;
+                for (int i = 0; i < g.N; i++)
+                {
+                    double c = a == 0 ? (g.X1[i] + g.X2[i]) / 2 : a == 1 ? (g.Y1[i] + g.Y2[i]) / 2 : (g.Z1[i] + g.Z2[i]) / 2;
+                    mn = Math.Min(mn, c); mx = Math.Max(mx, c);
+                }
+                best = Math.Max(best, mx - mn);
+            }
+            return best;
+        }
+
+        void Annota(OttPasso p, bool migliore)
+        {
+            lock (Registro)
+            {
+                Registro.Add(p);
+                if (Registro.Count > 128) Registro.RemoveAt(0);
+            }
+        }
+    }
+}

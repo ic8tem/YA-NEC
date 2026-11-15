@@ -1,0 +1,92 @@
+# YA-NEC - elenco dei cavi per la colonna "Cavo" degli oggetti inseriti (Linee), per Calcolatori > Cavi RG e per il cambio d'impedenza.
+# nome;Z0 ohm;VF;dB/100m a 50 MHz;144 MHz;432 MHz;1296 MHz;diametro esterno mm;dielettrico;fonte
+# Perdite tipiche da catalogo, interpolate in scala logaritmica. Si possono aggiungere righe.
+# 0.5.3 (IC8TEM 15/11/2026 19:42-19:45): aggiunti i cavi del database di YAEC (perdite delle schede dei costruttori, formula k1 sqrt(f) + k2 f)
+# e, da ricerca, coassiali a 75, 93, 95, 125, 185 ohm e linee bifilari 300/450/600 ohm. "VF tipico" = fattore di velocita' tipico del
+# dielettrico (la scheda del costruttore non lo riporta nella fonte usata). Linee bifilari: diametro 0 (non coassiali), serve un balun.
+RG-59/U (Belden 8241);75;0.66;7.79;13.5;23.88;41.5;6.15;PE pieno;W4ZT / YB0EMJ
+RG-59/U schiuma (Belden 9259);75;0.78;6.65;12.13;22.55;40.13;6.12;PE espanso;W4ZT
+RG-6/U (Belden 1694A);75;0.82;4.45;7.12;12.39;22.23;6.96;PE espanso a gas;Belden 1694A
+RG-11/U (Belden 8238);75;0.66;4.54;7.98;14.35;25.57;10.29;PE pieno;W4ZT / YB0EMJ
+RG-216/U;75;0.66;5.23;9.17;16.41;29.36;10.8;PE pieno;YB0EMJ
+RG-302/U;75;0.69;8.95;15.47;27.31;47.97;5.11;PTFE pieno;YB0EMJ / RF Cafe
+RG-179B/U;75;0.69;26.6;36.68;52.19;95.81;2.54;PTFE pieno;koax24 / YB0EMJ
+RG-187A/U;75;0.69;25.81;36.14;52.19;95.81;2.65;PTFE pieno;koax24 / YB0EMJ
+Heliax LDF4-75A (1/2");75;0.89;1.33;2.55;4.91;7.75;16.0;PE espanso;YB0EMJ
+Heliax LDF5-75A (7/8");75;0.89;0.84;1.46;2.68;5.04;27.43;PE espanso;CommScope LDF5-75A
+RG-58 C/U;50;0.66;11.02;20.03;40.01;90.01;5.0;PE pieno;SV1BSX
+RG-213/U;50;0.66;4.31;8.21;15.0;26.0;10.3;PE pieno;SV1BSX
+RG-174/U;50;0.66;19.71;34.04;60.02;110.01;2.8;PE pieno;SV1BSX
+RG-223/U;50;0.66;10.31;18.52;34.01;60.0;5.4;PE pieno;SV1BSX
+H-155;50;0.79;6.51;11.21;19.8;34.9;5.4;PE espanso;SV1BSX
+H-100;50;0.84;2.8;4.91;8.8;16.0;9.8;PE espanso;SV1BSX
+H-500;50;0.81;2.9;5.2;9.51;17.4;9.8;PE espanso;SV1BSX
+H-2000 Flex;50;0.83;2.7;4.81;8.5;15.7;10.3;PE espanso;SV1BSX
+Aircell 7;50;0.83;4.81;7.91;14.1;26.1;7.3;PE espanso;SV1BSX
+Aircom Plus;50;0.85;2.53;4.51;8.2;14.5;10.8;aria-PE;SV1BSX
+Ecoflex 10;50;0.86;2.65;4.81;8.9;16.5;10.2;PE espanso;SV1BSX
+Ecoflex 15;50;0.86;1.96;3.4;6.1;11.4;14.6;PE espanso;SV1BSX
+Cellflex 1/2";50;0.88;1.65;3.0;5.6;10.0;16.0;PE espanso;SV1BSX
+Cellflex 5/8";50;0.85;1.59;2.5;4.0;7.2;23.0;PE espanso;SV1BSX
+LMR-240;50;0.84;5.59;9.65;17.04;30.12;6.1;PE espanso;RF Parts
+LMR-400;50;0.85;2.96;4.83;8.68;15.5;10.29;PE espanso;Times/Fairview LMR-400
+LMR-600;50;0.87;1.64;3.2;5.47;10.0;15.0;PE espanso;RF Parts
+RG-8X (Belden);50;0.8;8.22;15.08;27.65;51.77;6.15;PE espanso;RF Parts
+Belden 9913F7;50;0.85;3.61;5.49;9.65;19.53;10.29;PE espanso;RF Parts
+# --- altre impedenze (ricerca 0.5.3) ---
+RG-62A/U (Belden 9228);93;0.84;6.19;10.56;18.46;32.48;6.15;PE con aria (spirale);W4ZT (Belden 9228) / YB0EMJ
+RG-63/U;125;0.84;4.38;7.57;13.55;24.76;10.29;PE con aria (spirale);YB0EMJ
+RG-133/U;95;0.66;5.04;8.79;15.97;29.88;10.29;PE pieno;YB0EMJ, VF tipico (PE pieno)
+RG-180B/U;95;0.69;12.68;21.52;37.27;64.56;3.56;PTFE pieno;YB0EMJ, VF tipico (PTFE pieno)
+RG-6A/U;75;0.66;6.18;10.85;19.91;37.83;8.43;PE pieno;YB0EMJ
+RG-11A/U;75;0.66;5.3;9.15;16.3;29.62;10.29;PE pieno;YB0EMJ
+RG-164/U;75;0.66;1.76;3.27;6.52;13.85;22.10;PE pieno;YB0EMJ
+RG-307/U;75;0.66;6.23;10.62;18.53;32.53;6.86;PE pieno;YB0EMJ, VF tipico (PE pieno)
+RG-114/U;185;0.66;8.07;13.81;24.3;43.23;10.29;PE con aria;YB0EMJ
+Linea bifilare 300 Ω DX Engineering LL300 (272 Ω misurati);272;0.88;2.26;3.84;6.64;11.51;0;bifilare (polietilene);DX Engineering (misura a secco, 0,69 dB/100 ft a 50 MHz)
+Piattina TV 300 Ω;300;0.82;2.79;4.73;8.2;14.2;0;bifilare (polietilene);catalogo citato da Electronics World gen. 1965 (1,7 dB/100 ft a 200 MHz, asciutta), VF tipico
+Linea a finestra 450 Ω (filo 1 mm);450;0.91;1.11;1.88;3.26;5.65;0;bifilare a finestra;calcolata: perdite nei conduttori di rame, asciutta, VF tipico (KV5R: 0,91-0,95)
+Linea aperta 600 Ω (filo 2 mm, distanza 15 cm);600;0.98;0.41;0.7;1.21;2.09;0;bifilare in aria;calcolata: perdite nei conduttori di rame, VF tipico (ARRL 0,975)
+# --- database di YAEC (IC8TEM), 50 ohm ---
+RG-142 (PTFE);50;0.69;8.74;15.08;26.9;48.89;4.95;PTFE pieno;YAEC (Caledonian MIL-C-17), VF tipico (PTFE pieno)
+Aircell 5;50;0.84;6.59;11.32;19.99;35.79;5.0;PE espanso;YAEC (moonrakeronline (SSB)), VF tipico (PE espanso)
+XT2400;50;0.84;7.09;12.04;20.85;36.11;5.0;PE espanso;YAEC (Prospecta XT2400), VF tipico (PE espanso)
+LLF195;50;0.84;8.51;14.45;25.02;43.34;5.0;PE espanso;YAEC (Qaxial), VF tipico (PE espanso)
+Sivacavi HF 240;50;0.84;5.3;9.01;15.66;27.27;6.1;PE espanso;YAEC (sivacavi.it), VF tipico (PE espanso)
+Ultraflex 7;50;0.84;4.0;6.9;12.3;22.35;7.3;PE espanso;YAEC (messi.it / WiMo), VF tipico (PE espanso)
+Sivacavi HF 287;50;0.84;4.1;7.09;12.69;23.2;7.3;PE espanso;YAEC (sivacavi.it), VF tipico (PE espanso)
+RG-393 (PTFE);50;0.69;4.62;8.11;14.91;28.41;9.9;PTFE pieno;YAEC (Caledonian MIL-C-17), VF tipico (PTFE pieno)
+LCF 1/4" (LCF14-50J);50;0.88;2.98;5.08;8.88;15.63;10.0;PE espanso (semirigido);YAEC (RFS), VF tipico (Cellflex LCF)
+Ultraflex 10;50;0.84;2.7;4.71;8.59;16.16;10.3;PE espanso;YAEC (messi.it / WiMo), VF tipico (PE espanso)
+50-7 low loss (SYV50-7);50;0.84;3.09;5.24;9.08;15.72;10.3;PE espanso;YAEC (szansy.com), VF tipico (PE espanso)
+RT5020;50;0.84;3.29;5.88;11.12;22.04;10.3;PE espanso;YAEC (Prospecta RT5020), VF tipico (PE espanso)
+RG-115 (PTFE, guaina in vetro);50;0.69;5.18;9.6;19.12;40.57;10.3;PTFE pieno;YAEC (R.F. elettronica), VF tipico (PTFE pieno)
+LCF 3/8" (LCF38-50J);50;0.88;2.42;4.14;7.3;13.04;11.2;PE espanso (semirigido);YAEC (RFS), VF tipico (Cellflex LCF)
+Hyperflex 13 = Ultraflex 13;50;0.84;2.02;3.53;6.44;12.12;12.7;PE espanso;YAEC (messi.it / WiMo), VF tipico (PE espanso)
+FSJ4-50B (Heliax Superflex 1/2") = HCAHY-50-9 (1/2" superflex);50;0.82;2.38;4.12;7.4;13.61;13.5;PE espanso (superflessibile);YAEC (CommScope / Symair), VF tipico (superflessibile)
+SCF 1/2" (SCF12-50J);50;0.82;2.28;3.91;6.91;12.38;13.7;PE espanso (superflessibile);YAEC (RFS), VF tipico (superflessibile)
+Ecoflex 15 Plus;50;0.84;1.84;3.2;5.8;10.82;14.6;PE espanso;YAEC (WiMo), VF tipico (PE espanso)
+LDF4-50A (Heliax 1/2") = LCF 1/2" (LCF12-50J), HCAAY-50-12 (1/2");50;0.88;1.51;2.6;4.63;8.39;15.7;PE espanso (semirigido);YAEC (CommScope / RFS / Symair), VF tipico (Heliax LDF)
+LCF 7/8" (LCF78-50JA) = LDF5-50A (Heliax 7/8");50;0.88;0.81;1.42;2.59;4.89;27.8;PE espanso (semirigido);YAEC (CommScope / RFS), VF tipico (Heliax LDF)
+LCF 1-1/4" (LCFS114-50JA);50;0.88;0.56;0.98;1.78;3.34;39.0;PE espanso (semirigido);YAEC (RFS), VF tipico (Cellflex LCF)
+LDF7-50A (Heliax 1-5/8");50;0.88;0.49;0.83;1.45;2.51;49.8;PE espanso (semirigido);YAEC (CommScope), VF tipico (Heliax LDF)
+LCF 1-5/8" (LCF158-50JA);50;0.88;0.47;0.8;1.4;2.47;50.2;PE espanso (semirigido);YAEC (RFS), VF tipico (Cellflex LCF)
+Airborne 5;50;0.84;6.68;11.33;19.63;34.0;5.0;PE espanso;YAEC (messi.it), VF tipico (PE espanso)
+Hyperflex 5;50;0.84;5.52;9.54;17.04;31.07;5.4;PE espanso;YAEC (messi.it), VF tipico (PE espanso)
+Airborne 10;50;0.84;2.4;4.19;7.61;14.22;10.3;PE espanso;YAEC (messi.it), VF tipico (PE espanso)
+Airborne 13;50;0.84;2.0;3.41;5.99;10.62;12.7;PE espanso;YAEC (messi.it), VF tipico (PE espanso)
+SeaTex 5 (ambienti marini);50;0.84;6.59;11.32;19.99;35.79;5.0;PE espanso;YAEC (ssb.de), VF tipico (PE espanso)
+SeaTex 7 (ambienti marini);50;0.84;4.47;7.67;13.55;24.25;7.3;PE espanso;YAEC (ssb.de), VF tipico (PE espanso)
+SeaTex 10 (ambienti marini);50;0.84;2.8;4.89;8.9;16.71;10.2;PE espanso;YAEC (ssb.de), VF tipico (PE espanso)
+SeaTex 15 (ambienti marini);50;0.84;1.99;3.43;6.08;10.98;14.6;PE espanso;YAEC (ssb.de), VF tipico (PE espanso)
+Aircom Premium;50;0.84;2.13;3.82;7.26;14.51;10.2;PE espanso;YAEC (ssb.de), VF tipico (PE espanso)
+RG-8/U (Belden 8237);50;0.66;4.27;7.64;14.41;28.5;10.2;PE pieno;YAEC (Belden), VF tipico (PE pieno)
+Belden 9913 (tipo RG-8);50;0.84;3.14;5.32;9.22;15.96;10.3;PE espanso;YAEC (Belden), VF tipico (PE espanso)
+RG 174 (Tasker);50;0.66;17.71;31.24;57.8;111.18;2.8;PE pieno;YAEC (Tasker), VF tipico (PE pieno)
+RG 58 C/U (Tasker) = RG 58 PUR (Tasker);50;0.66;9.7;17.05;31.37;59.84;5.0;PE pieno;YAEC (Tasker), VF tipico (PE pieno)
+RG 223 U (Tasker);50;0.66;9.04;15.95;29.55;56.92;5.4;PE pieno;YAEC (Tasker), VF tipico (PE pieno)
+C526 Low Loss (Tasker);50;0.84;5.14;8.83;15.66;28.21;6.1;PE espanso;YAEC (Tasker), VF tipico (PE espanso)
+C527 Low Loss (Tasker);50;0.84;6.34;10.77;18.65;32.3;6.1;PE espanso;YAEC (Tasker), VF tipico (PE espanso)
+C529 RF400T (Tasker);50;0.84;2.46;4.39;8.29;16.42;10.3;PE espanso;YAEC (Tasker), VF tipico (PE espanso)
+C538 Low Loss (Tasker);50;0.84;2.88;4.94;8.7;15.52;10.3;PE espanso;YAEC (Tasker), VF tipico (PE espanso)
+RG 213 U (Tasker);50;0.66;4.58;8.11;15.11;29.38;10.4;PE pieno;YAEC (Tasker), VF tipico (PE pieno)

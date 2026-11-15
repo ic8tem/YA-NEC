@@ -1,0 +1,252 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=2el-30-40
+CM YANEC DESCRIZIONE=2el-30-40
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=2el-30-40.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	9.9	m	mm	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***																									
+_13.391	_indut dip 40																													
+_9.03	_indut rifl 40																													
+_8.511	_indut rifl 30																													
+_3.487	_indut dip 30																													
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+	_rifl20																													
+	_=0	_=-5.55	_=0	_=0	_-4.65	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_-4.65	_=0	_=0	_-3.81	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_-3.81	_=0	_=0	_-2.97	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_-2.97	_=0	_=0	_=-1.83 - 0.3	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_=-1.83 - 0.3	_=0	_=0	_=-1.83	_=0	_=22	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_=-1.83	_=0	_=0	_=1.83	_=0	_=25.4	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_=1.83	_=0	_=0	_=1.83 + 0.3	_=0	_=22	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_=1.83 + 0.3	_=0	_=0	_2.97	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_2.97	_=0	_=0	_3.81	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_3.81	_=0	_=0	_4.65	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=0	_4.65	_=0	_=0	_=-C11	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_rifl17																													
+	_=1.016	_=-4.13	_=0	_=1.016	_-3.2	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.016	_-3.2	_=0	_=1.016	_=-1.83 - 0.53	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.016	_=-1.83 - 0.53	_=0	_=1.016	_=-1.83	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.016	_=-1.83	_=0	_=1.016	_=1.83	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.016	_=1.83	_=0	_=1.016	_=1.83 + 0.53	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.016	_=1.83 + 0.53	_=0	_=1.016	_3.2	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.016	_3.2	_=0	_=1.016	_=-C24	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_rfil15																													
+	_=1.473	_=-3.5	_=0	_=1.473	_=-1.83 - 0.83	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.473	_=-1.83 - 0.83	_=0	_=1.473	_=-1.83	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.473	_=-1.83	_=0	_=1.473	_=1.83	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.473	_=1.83	_=0	_=1.473	_=1.83 + 0.83	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=1.473	_=1.83 + 0.83	_=0	_=1.473	_=-C33	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_rifl12																													
+	_=2.21	_-3.14	_=0	_=2.21	_=-0.915 - 1.14	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=2.21	_=-0.915 - 1.14	_=0	_=2.21	_=-0.915	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=2.21	_=-0.915	_=0	_=2.21	_=0.915	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=2.21	_=0.915	_=0	_=2.21	_=0.915 + 1.14	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=2.21	_=0.915 + 1.14	_=0	_=2.21	_=-C40	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip-opsl-17																													
+	_3.004	_=-4.06	_=0	_=B47	_=-1.83 - 0.53 - 0.83	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B47	_=-1.83 - 0.53 - 0.83	_=0	_=B48	_=-1.83 - 0.53	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B48	_=-1.83 - 0.53	_=0	_=B49	_=-1.83	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B49	_=-1.83	_=0	_=B50	_=1.83	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B50	_=1.83	_=0	_=B51	_=1.83 + 0.53	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B51	_=1.83 + 0.53	_=0	_=B52	_=1.83 + 0.53 + 0.83	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B52	_=1.83 + 0.53 + 0.83	_=0	_=B53	_=-C47	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip-trans-20																													
+	_3.36	_=-4.95	_=0	_=B56	_-4.27	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B56	_-4.27	_=0	_=B57	_-3.43	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B57	_-3.43	_=0	_=B58	_-2.59	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B58	_-2.59	_=0	_=B59	_-1.75	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B59	_-1.75	_=0	_=B60	_-1.22	_=0	_=22	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B60	_-1.22	_=0	_=B61	_-0.5	_=0	_=25.4	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B61	_-0.5	_=0	_=B62	_0.5	_=0	_=25.4	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B61	_0.5	_=0	_=B63	_1.22	_=0	_=25.4	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B61	_1.22	_=0	_=B64	_1.75	_=0	_=22	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B64	_1.75	_=0	_=B65	_2.59	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B65	_2.59	_=0	_=B66	_3.43	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B66	_3.43	_=0	_=B67	_4.27	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B67	_4.27	_=0	_=B68	_=-C56	_=0	_=10	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip-os-15																													
+	_3.48	_-3.45	_=0	_=B71	_=-0.915 - 1.14	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B71	_=-0.915 - 1.14	_=0	_=B72	_=-0.915	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B72	_=-0.915	_=0	_=B73	_=0.915	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B73	_=0.915	_=0	_=B74	_=0.915 + 1.14	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B74	_=0.915 + 1.14	_=0	_=B75	_=-C71	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip-coax-12																													
+	_3.899	_-2.93	_=0	_=B78	_=-0.915 - 1.14	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B78	_=-0.915 - 1.14	_=0	_=B79	_=-0.915	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B79	_=-0.915	_=0	_=B80	_-0.3	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B80	_-0.3	_0	_=B81	_0.3	_0	_19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B81	_0.3	_0	_=B82	_=0.915	_=0	_19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B80	_=0.915	_=0	_=B83	_=0.915 + 1.14	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B83	_=0.915 + 1.14	_=0	_=B84	_=-C78	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip-os-10																													
+	_4.147	_=-2.534	_=0	_=B87	_-1.75	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B87	_-1.75	_=0	_=B88	_=-0.915	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B88	_=-0.915	_=0	_=B89	_=0.915	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B89	_=0.915	_=0	_=B90	_1.75	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B90	_1.75	_=0	_=B91	_=-C87	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dir-10																													
+	_5.385	_-2.242	_=0	_=B94	_-1.75	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B94	_-1.75	_=0	_=B95	_=-0.915	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B95	_=-0.915	_=0	_=B96	_=0.915	_=0	_=19	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B96	_=0.915	_=0	_=B97	_1.75	_=0	_=16	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B97	_1.75	_=0	_=B98	_=-C94	_=0	_=13	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_rifl 7mhz																													
+	_-0.3	_-5.6	_0	_=B101	_-2.8	_0	_20	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B101	_-2.8	_0	_=B102	_-1.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B102	_-1.8	_0	_=B103	_1.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B103	_1.8	_0	_=B104	_2.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B104	_2.8	_0	_=B105	_=-C101	_0	_20	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip 7mhz																													
+	_5.8	_-4.95	_0	_=B108	_-2.8	_0	_20	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B108	_-2.8	_0	_=B109	_-1.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B108	_-1.8	_0	_=B110	_-0.5	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B110	_-0.5	_0	_=B111	_0.5	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B111	_0.5	_0	_=B112	_1.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B112	_1.8	_0	_=B113	_2.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B112	_2.8	_0	_=B114	_=-C108	_0	_20	"_=CEILING(WireLen / WL * 20, 1)"																						
+																														
+	_dip 10mhz																													
+	_3.36	_-7.4	_-0.15	_=B117	_-2.8	_=D117	_15	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B117	_-2.8	_=D117	_=B118	_-1.8	_=D118	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B117	_-1.8	_=D118	_=B119	_-0.5	_=D119	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B119	_-0.5	_=D119	_=B120	_0.5	_=D120	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B120	_0.5	_=D120	_=B121	_1.8	_=D121	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B121	_1.8	_=D121	_=B122	_2.8	_=D122	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+	_=B121	_2.8	_=D122	_=B123	_=-C117	_=D123	_15	"_=CEILING(WireLen / WL * 20, 1)"																						
+_x																														
+	_rifl 10mhz																													
+_x	_2.4	_-5.6	_0	_=B126	_-2.8	_0	_20	"_=CEILING(WireLen / WL * 20, 1)"																						
+_x	_=B126	_-2.8	_0	_=B127	_-1.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+_x	_=B127	_-1.8	_0	_=B128	_1.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+_x	_=B128	_1.8	_0	_=B129	_2.8	_0	_30	"_=CEILING(WireLen / WL * 20, 1)"																						
+_x	_=B129	_2.8	_0	_=B130	_=-C126	_0	_20	"_=CEILING(WireLen / WL * 20, 1)"																						
+_57	_50	_1	_0	_V											_7.074		_A													
+_79	_50	_1	_0	_V								_x			_7.15		_B													
+_86	_50	_1	_0	_V								_x			_															
+															_															
+															_															
+															_															
+															_															
+															_															
+															_															
+																														
+															_0	_0.5														
+															_0	_0.5														
+															_1	_1.01														
+															_1	_99														
+															_0	_40														
+															_0	_40														
+																														
+															_	_														
+															_	_														
+																														
+															_															
+																														
+																														
+															TRUE															
+															3															
+															TRUE															
+															TRUE															
+															TRUE															
+															TRUE															
+																														
+_72	_50		_=B			_Ser	_Ser																							
+_74	_50		_=B			_Ser	_Ser																							
+_77	_50		_=A			_Ser	_Ser																							
+_81	_50		_=A			_Ser	_Ser																							
+_84	_50		_=E			_Ser	_Ser					_x																		
+_88	_50		_=E			_Ser	_Ser					_x																		
+_91	_50		_=D			_Ser	_Ser					_x																		
+_93	_50		_=D			_Ser	_Ser					_x																		
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+_57	_50	_42	_50	_0.5334	_450	_0.91	_N	_0	_0																					
+_79	_50	_86	_50	_1.25	_450	_0.91	_N	_0	_0			_x																		
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+Controls	FALSE	TRUE	0	1	2	1	0	1	50	0	0																FALSE	TRUE	_1	_0
+_Freq (MHz)																														
+_9.9																														
+_9.95																														
+_10																														
+_10.05																														
+_10.1																														
+_10.15																														
+_10.2																														
+_10.25																														
+9																														

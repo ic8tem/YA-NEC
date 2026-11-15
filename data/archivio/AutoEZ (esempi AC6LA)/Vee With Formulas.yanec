@@ -1,0 +1,162 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Vee With Formulas
+CM YANEC DESCRIZIONE=Vee With Formulas
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Vee With Formulas.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+_90	"_Apex angle, degrees"				
+
+		_New users:			
+		_Values for each variable are set by changing the entries in column C.			
+
+_33.94	"_Apex height, feet"	_See the Calculate sheet tab for an example of how the value for			
+		"_variable ""L"" can be automatically swept over a range."			
+
+
+_16.715	"_Leg length, feet"				
+
+
+
+
+
+
+
+
+
+
+
+
+	"_20m inverted vee, using formulas and variables"							
+	_0	_0	_=H	_0	_=L * SIN(RADIANS(A/2))	_=H - L *  COS(RADIANS(A/2))	_#12	"_=CEILING(WireLen / WL * 20, 1)"
+	_0	_0	_=H	_0	_=-L * SIN(RADIANS(A/2))	_=H - L *  COS(RADIANS(A/2))	_#12	"_=CEILING(WireLen / WL * 20, 1)"
+
+
+	_New users:							
+	"_This is model ""Vee With Formulas.weq"".  The model name is shown at the top of the Excel window."							
+	_To see what the antenna looks like first make sure EZNEC is already open in a separate window							
+	"_then click the AutoEZ ""View Ant"" button (above, top center).  The EZNEC View Antenna window"							
+	_will appear.  To return to AutoEZ click anywhere on the AutoEZ/Excel window or click the			
+	_AutoEZ/Excel icon in the taskbar.			
+
+	_This model is similar to EZNEC sample BYVEE.ez except that variables are used to control the 			
+	"_apex angle, the apex height, and the leg length.  For example, click on cell G11 to see how"			
+	"_""H"" (apex height), ""L"" (leg length), and ""A"" (apex angle) are used to define the Z coordinate"			
+	_for End 2 (the outer end) of Wire 1.			
+
+	"_The current values for ""H"", ""L"", and ""A"" are set on the Variables sheet tab."			
+_1	_0	_1	_0	_SI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	8	0	1	0	1	50	0	15	14	14	1	L	15	20	0.5									FALSE	TRUE	_1	_0
+_Freq (MHz)	_L																													
+_14	_15																													
+_14	_15.5																													
+_14	_16																													
+_14	_16.5																													
+_14	_17																													
+_14	_17.5																													
+_14	_18																													
+_14	_18.5																													
+_14	_19																													
+_14	_19.5																													
+_14	_20																													
+
+_New users:
+"_Make sure EZNEC is already open in a separate window then click the ""Calculate All Rows"" button."
+"_When the calculations finish, numeric results will appear above and new sheet tabs will be available showing various plotted results."
+
+"_To see an example of a variable sweep for ""A"" (apex angle) rather than ""L"" (leg length), open ""Vee_SweepVarA.weq"" using the ""Open Model File"" button."
+"_To see an example of a simple frequency sweep, open ""Vee_SweepFreq.weq""."
+
+_Note:  When entering comments such as this on the Calculate sheet be sure to leave at least one empty row below
+_the last test case row.  Empty rows are not necessary for comments on the Wires or Insr Objs sheets.
+22

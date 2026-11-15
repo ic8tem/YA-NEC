@@ -1,0 +1,38 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=spiderbeam_160m_vert_B
+CM YANEC DESCRIZIONE=Spiderbeam 160 m: verticale a filo su palo da 18 m (16 m uti
+CM YANEC CATEGORIA=Verticali multibanda
+CM YANEC FONTE=Modelli ricostruiti da YA-NEC per IC8TEM (Butternut, DX Commander, Spiderbeam)
+CM YANEC ORIGINALE=spiderbeam_160m_vert_B.maa
+CM YANEC CONTENUTO=maa
+Spiderbeam 160 m: verticale a filo su palo da 18 m (16 m uti
+*
+1.8300
+***Wires***
+9
+0.00000,	0.00000,	2.50000,	0.00000,	0.00000,	16.00000,	0.00050,	-1
+0.00000,	0.00000,	16.00000,	8.76700,	8.76700,	8.06500,	0.00050,	-1
+0.00000,	0.00000,	16.00000,	-8.76700,	8.76700,	8.06500,	0.00050,	-1
+0.00000,	0.00000,	16.00000,	-8.76700,	-8.76700,	8.06500,	0.00050,	-1
+0.00000,	0.00000,	16.00000,	8.76700,	-8.76700,	8.06500,	0.00050,	-1
+0.00000,	0.00000,	2.50000,	38.00000,	0.00000,	2.50000,	0.00050,	-1
+0.00000,	0.00000,	2.50000,	0.00000,	38.00000,	2.50000,	0.00050,	-1
+0.00000,	0.00000,	2.50000,	-38.00000,	0.00000,	2.50000,	0.00050,	-1
+0.00000,	0.00000,	2.50000,	-0.00000,	-38.00000,	2.50000,	0.00050,	-1
+***Source***
+1,	0
+w1b,	0.0,	1.0
+***Load***
+0,	0
+***Segmentation***
+800,	80,	2.0,	2
+***G/H/M/R/AzEl/X***
+2,	0.0,	0,	50.0,	120,	60,	0.0
+###Comment###
+Spiderbeam 160 m: verticale a filo su palo da 18 m (16 m utili), 4 fili di cappello
+ricostruzione YA-NEC dai dati del kit (filo verticale 20 m AWG18, 4 fili 62 m in tutto, ancoraggi a 25 m)
+variante B: 4 radiali da 38 m a 2.5 m, terreno medio di Sommerfeld (GN 2)
+cappello 14.72 m per filo; radiali sopraelevati lambda/4 (38 m: piu' grandi dell'area di 35 m del kit, solo per prova); con GN 0 nec2c da' R negativa (-3,6 ohm): serve il terreno di Sommerfeld
+riferimento nec2c: 1.800 MHz Z 5.34 -19.67j; 1.830 MHz Z 5.51 -6.38j; 1.840 MHz Z 5.57 -1.97j; 1.900 MHz Z 5.92 +24.21j; 2.000 MHz Z 6.55 +67.14j
+MMANA (MININEC): impedenza calcolata sempre su terreno perfetto; il terreno reale entra solo nel diagramma.
+ATTENZIONE: radiali a 2,5 m: in MMANA la Z non considera le perdite del terreno (nec2c GN 2 si).

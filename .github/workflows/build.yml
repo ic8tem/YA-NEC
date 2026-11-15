@@ -1,0 +1,106 @@
+# YA-NEC - compilazione e pacchetti per Windows, Linux e Mac.
+# Con un tag vX.Y (o avviandolo a mano): pacchetti di tutte le piattaforme e Release vX.Y (versione letta dal file VERSION).
+# A ogni push sul ramo main: solo una compilazione di controllo su Linux (Windows 7 compreso).
+# Nomi dei pacchetti: YA-NEC-<versione>-<rid>.zip e .zip.sha256, quelli che l'aggiornamento automatico cerca (src/Diag/Aggiornamento.cs).
+name: build
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  controllo:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+            8.0.x
+      - name: Compila (.NET 8)
+        run: dotnet build YA-NEC.csproj -c Release
+      - name: Compila per Windows 7 (.NET 6)
+        run: |
+          rm -rf /tmp/w7 && mkdir /tmp/w7 && git archive HEAD | tar -x -C /tmp/w7
+          dotnet build /tmp/w7/YA-NEC.csproj -c Release -p:Windows7=true
+
+  pacchetti:
+    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { rid: win-x64,          nome: win-x64,          w7: false, os: ubuntu-latest }
+          - { rid: win-x86,          nome: win-x86,          w7: false, os: ubuntu-latest }
+          - { rid: win-arm64,        nome: win-arm64,        w7: false, os: ubuntu-latest }
+          - { rid: win-x64,          nome: win7-x64,         w7: true,  os: ubuntu-latest }
+          - { rid: win-x86,          nome: win7-x86,         w7: true,  os: ubuntu-latest }
+          - { rid: linux-x64,        nome: linux-x64,        w7: false, os: ubuntu-latest }
+          - { rid: linux-arm64,      nome: linux-arm64,      w7: false, os: ubuntu-latest }
+          - { rid: linux-arm,        nome: linux-arm,        w7: false, os: ubuntu-latest }
+          - { rid: linux-musl-x64,   nome: linux-musl-x64,   w7: false, os: ubuntu-latest }
+          - { rid: linux-musl-arm64, nome: linux-musl-arm64, w7: false, os: ubuntu-latest }
+          - { rid: osx-arm64,        nome: osx-arm64,        w7: false, os: macos-latest }
+          - { rid: osx-x64,          nome: osx-x64,          w7: false, os: macos-latest }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+            8.0.x
+      - name: Versione
+        shell: bash
+        run: echo "VER=$(tr -d ' \r\n' < VERSION)" >> $GITHUB_ENV
+      - name: Compila
+        shell: bash
+        run: dotnet publish YA-NEC.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:Windows7=${{ matrix.w7 }} -p:Version=$VER -o pub/YA-NEC
+      - name: Pacchetto
+        shell: bash
+        run: |
+          rm -rf pub/YA-NEC/data/prove pub/YA-NEC/data/config.ini pub/YA-NEC/Registri
+          case "${{ matrix.rid }}" in win-*) ;; *) chmod +x pub/YA-NEC/YA-NEC ;; esac
+          if [[ "${{ matrix.rid }}" == osx-* ]]; then codesign --force -s - pub/YA-NEC/YA-NEC; for f in pub/YA-NEC/lib/*.dylib; do codesign --force -s - "$f" || true; done; fi
+          mkdir -p dist
+          Z="YA-NEC-$VER-${{ matrix.nome }}.zip"
+          (cd pub && zip -qr -y "../dist/$Z" YA-NEC)
+          (cd dist && shasum -a 256 "$Z" | awk -v n="$Z" '{print $1"  "n}' > "$Z.sha256")
+          ls -l dist
+      - name: Prova di avvio (autotest del motore)
+        if: matrix.rid == 'linux-x64'
+        run: timeout 600 ./pub/YA-NEC/YA-NEC --autotest 2>&1 | tail -40 || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.nome }}
+          path: dist/*
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [ pacchetti ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Versione
+        run: echo "VER=$(tr -d ' \r\n' < VERSION)" >> $GITHUB_ENV
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: YA-NEC ${{ env.VER }}
+          tag_name: ${{ github.ref_name }}
+          body_path: .github/release.md
+          files: dist/*

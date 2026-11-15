@@ -1,0 +1,16 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Dipolo 20 m a 10 m su terreno medio
+CM YANEC DESCRIZIONE=dipolo 20 m a 10 m su terreno medio
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Dipolo 20 m a 10 m su terreno medio.nec
+CM YANEC CONTENUTO=nec
+CM dipolo 20 m a 10 m su terreno medio
+CE
+GW 1 21 0 -5.2 10 0 5.2 10 0.001
+GE 1
+GN 0 0 0 0 13 0.005
+EX 0 1 11 0 1 0
+FR 0 1 0 0 14.2 0
+RP 0 2 1 1000 30 0 60 0
+EN

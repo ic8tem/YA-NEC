@@ -1,0 +1,141 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Vee_SweepVarA
+CM YANEC DESCRIZIONE=Vee_SweepVarA
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Vee_SweepVarA.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+_90	"_Apex angle, degrees"				
+
+
+
+
+_33.94	"_Apex height, feet"				
+
+
+
+_17.3	"_Leg length, feet"	_<<< Not the same as model BYVEE.ez.			
+
+
+
+
+
+
+
+
+
+
+
+
+	"_20m inverted vee, using formulas and variables"							
+	_0	_0	_=H	_0	_=L * SIN(RADIANS(A/2))	_=H - L *  COS(RADIANS(A/2))	_#12	"_=CEILING(WireLen / WL * 20, 1)"
+	_0	_0	_=H	_0	_=-L * SIN(RADIANS(A/2))	_=H - L *  COS(RADIANS(A/2))	_#12	"_=CEILING(WireLen / WL * 20, 1)"
+_1	_0	_1	_0	_SI				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	8	0	1	0	1	50	0	15	14	14	1	A	90	180	10									TRUE	FALSE	_1	_0
+_Freq (MHz)	_A																													
+_14	_90																													
+_14	_100																													
+_14	_110																													
+_14	_120																													
+_14	_130																													
+_14	_140																													
+_14	_150																													
+_14	_160																													
+_14	_170																													
+_14	_180																													
+
+_New users:
+"_To see an example of a simple frequency sweep, open model ""Vee_SweepFreq.weq""."
+
+"_To see how to automatically create the above test cases, click the ""Generate Test Cases"" button."
+16

@@ -1,0 +1,34 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg205ca2
+CM YANEC DESCRIZIONE=Hy-Gain 205CA, Phone Setting
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg205ca2.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 205CA, Phone Setting
+14.150 14.250 14.350 14.260 MHz
+5 elements, inches
+           4.0000    1.2500    1.1250    0.8750    0.6250    0.4375  
+  0.000    3.6250   41.8750   46.0000   50.5000   24.0000   54.1875  
+100.000    3.6250   32.3750   46.0000   50.5000   24.0000   52.2500  
+175.000    3.6250   32.3750   46.0000   50.5000   24.0000   48.2500  
+270.000    3.6250   14.1250   46.0000   50.5000   24.0000   48.0000  
+408.000    3.6250   14.1250   46.0000   50.5000   24.0000   35.5000  
+
+This setting of the 205CA is centered on 14.250 MHz
+for Phone operation.  It has a 2:1 VSWR band-width of
+400 KHz centered on 14.200.  Maximum gain is 6.5 dBd
+and maximum F/B is 30 dB.
+
+Beta rod length= 17 inches (measured from inside 
+tubing edge to outside edge of clamp).  Pigtail length= 
+7 inches.  Balun= Hy-Gain BN-86 (voltage type).
+
+Radiation patterns and VSWR were verified in July 
+1990. 9-23-91  RC
+
+
+
+
+
+

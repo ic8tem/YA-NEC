@@ -1,0 +1,253 @@
+// Aggiornamento automatico silenzioso dal GitHub (richiesta di IC8TEM del 14/11/2026 08:59, confermata alle 09:03:
+// "ti confermo per gli aggiornamenti automatici, eccetto per il debian, e lo spieghiamo nel readme e nel github").
+//
+// Come funziona:
+//  - ogni 30 minuti (e 2 minuti dopo l'avvio) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
+//    senza chiave (repository pubblico; 2 richieste l'ora, molto sotto il limite di 60 di GitHub);
+//  - se la versione e' piu' nuova si scarica in background il pacchetto della piattaforma "<programma>-<versione>-<rid>.zip"
+//    (rid = win-x64, linux-x64, osx-arm64...) e la sua impronta "<pacchetto>.sha256"; senza impronta, o con impronta diversa, non si
+//    installa niente;
+//  - i file nuovi si mettono al posto dei vecchi: un programma in uso non si puo' sovrascrivere, ma si puo' rinominare, quindi il file
+//    vecchio diventa "<nome>.old" e quello nuovo prende il suo posto; il programma che sta girando non cambia, la versione nuova parte
+//    al prossimo avvio, che cancella i .old e scrive nella barra di stato "aggiornato da ... a ...";
+//  - copia della versione precedente in data/aggiornamenti/precedente-<versione> (per tornare indietro a mano);
+//  - non si toccano data/config.ini, i registri e i modelli dell'utente che non sono nel pacchetto;
+//  - spento durante il collaudo e le prove automatiche (la versione non deve cambiare a meta' prova);
+//  - pacchetti Debian/Ubuntu (.deb) e .rpm: installati dal gestore dei pacchetti, con i permessi di amministratore, non si aggiornano
+//    da soli; il programma lo dice nelle Impostazioni (si aggiorna con apt / dnf). Si riconoscono dal file "installato-da-pacchetto"
+//    accanto al programma (messo dal pacchetto) o dalla cartella non scrivibile.
+// Ogni passo va nel registro (categoria AGGIORNAMENTO).
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace YaNec
+{
+    public static class Aggiornamento
+    {
+        public const int IntervalloMinuti = 30;
+        /// <summary>Repository GitHub "utente/nome" (scelto da IC8TEM il 14/11/2026: ic8tem/YA-NEC; si cambia nelle Impostazioni o in
+        /// data/config.ini, chiave aggiornamento_repo).</summary>
+        public const string RepoPredefinito = "ic8tem/YA-NEC";
+
+        public static string Stato { get; private set; } = "non ancora controllato";
+        public static event Action<string> Cambiato;
+        static Timer timer;
+        static Mutex unica;   // 0.5.0: tenuto vivo finche' la finestra e' aperta
+        static Config cfg;
+        static int inCorso;
+
+        // 0.4.19: un valore vuoto rimasto in config.ini dalle versioni precedenti vale come "repository predefinito"
+        public static string Repository { get { string r = cfg == null ? "" : (cfg.Get("aggiornamento_repo", RepoPredefinito) ?? "").Trim(); return r.Length == 0 ? RepoPredefinito : r; } }
+        public static bool Attivo { get { return cfg == null || cfg.Get("aggiornamento_auto", "1") != "0"; } }
+
+        static void ImpostaStato(string s, bool registro = true)
+        {
+            Stato = s;
+            if (registro) Registro.Scrivi("AGGIORNAMENTO", s);
+            try { Cambiato?.Invoke(s); } catch { }
+        }
+
+        /// <summary>Da chiamare all'avvio del programma (anche nelle prove): cancella i file .old e restituisce il messaggio
+        /// "aggiornato da ... a ..." se l'ultimo aggiornamento e' appena entrato in funzione, altrimenti null.</summary>
+        public static string PulisciDopoAvvio()
+        {
+            string msg = null;
+            try
+            {
+                foreach (string f in Directory.GetFiles(AppPaths.AppDir, "*.old", SearchOption.AllDirectories))
+                    try { File.Delete(f); } catch { }
+                string fatto = Path.Combine(AppPaths.DataDir, "aggiornamenti", "applicato.txt");
+                if (File.Exists(fatto))
+                {
+                    msg = File.ReadAllText(fatto).Trim();
+                    File.Delete(fatto);
+                    Registro.Scrivi("AGGIORNAMENTO", "in funzione: " + msg);
+                }
+            }
+            catch { }
+            return msg;
+        }
+
+        /// <summary>Installato da un pacchetto Debian/RPM (o cartella non scrivibile): niente aggiornamento automatico.</summary>
+        public static bool DaPacchetto(out string motivo)
+        {
+            motivo = null;
+            if (File.Exists(Path.Combine(AppPaths.AppDir, "installato-da-pacchetto")))
+            {
+                motivo = "installato con un pacchetto .deb o .rpm: si aggiorna con il gestore dei pacchetti (apt, dnf), non da solo";
+                return true;
+            }
+            try
+            {
+                string prova = Path.Combine(AppPaths.AppDir, ".prova_scrittura_" + Environment.ProcessId);
+                File.WriteAllText(prova, "");
+                File.Delete(prova);
+            }
+            catch
+            {
+                motivo = "la cartella del programma non e' scrivibile (installazione di sistema): aggiornare a mano o con il gestore dei pacchetti";
+                return true;
+            }
+            return false;
+        }
+
+        public static void Avvia(Config c)
+        {
+            cfg = c;
+            string motivo;
+            if (DaPacchetto(out motivo)) { ImpostaStato("spento: " + motivo); return; }
+            if (!Attivo) { ImpostaStato("spento nelle Impostazioni"); return; }
+            if (Repository.Length == 0) { ImpostaStato("repository GitHub non ancora scelto (Impostazioni > Aggiornamento)", false); }
+            // 0.5.0: con piu' finestre aperte insieme solo la prima controlla e installa gli aggiornamenti (due installazioni
+            // contemporanee sugli stessi file non devono succedere); le altre lo dicono nello stato
+            try
+            {
+                bool primo;
+                unica = new Mutex(true, "YA-NEC-aggiornamento-" + AppPaths.AppName, out primo);
+                if (!primo) { ImpostaStato("gestito da un'altra finestra di " + AppPaths.AppName + " gia' aperta"); return; }
+            }
+            catch { }
+            timer = new Timer(_ => { var t = Controlla(); }, null, TimeSpan.FromMinutes(2), TimeSpan.FromMinutes(IntervalloMinuti));
+        }
+
+        public static void Ferma() { try { timer?.Dispose(); } catch { } timer = null; }
+
+        static string Rid()
+        {
+#if WINDOWS7
+            // 0.5.3: la versione per Windows 7 (.NET 6) si aggiorna con il suo pacchetto, YA-NEC-<versione>-win7-x64.zip (o -win7-x86)
+            return RuntimeInformation.ProcessArchitecture == Architecture.X86 ? "win7-x86" : "win7-x64";
+#else
+            try { return RuntimeInformation.RuntimeIdentifier; } catch { return "win-x64"; }
+#endif
+        }
+
+        static Version Ver(string s)
+        {
+            s = (s ?? "").Trim().TrimStart('v', 'V');
+            int i = s.IndexOfAny(new[] { '-', '+' });
+            if (i > 0) s = s.Substring(0, i);
+            Version v;
+            return Version.TryParse(s, out v) ? v : null;
+        }
+
+        /// <summary>Un controllo (chiamato dal timer ogni 30 minuti; anche dal pulsante "Controlla adesso").</summary>
+        public static async Task Controlla()
+        {
+            if (MainWindow.ProveAutomatiche || !Attivo || cfg == null) return;
+            string repo = Repository;
+            if (repo.Length == 0 || repo.IndexOf('/') <= 0) { ImpostaStato("repository GitHub non ancora scelto (Impostazioni > Aggiornamento)", false); return; }
+            if (Interlocked.Exchange(ref inCorso, 1) == 1) return;
+            try
+            {
+                using (HttpClient http = new HttpClient { Timeout = TimeSpan.FromSeconds(60) })
+                {
+                    http.DefaultRequestHeaders.UserAgent.ParseAdd(AppPaths.AppName + "/" + AppPaths.Version);
+                    http.DefaultRequestHeaders.Accept.ParseAdd("application/vnd.github+json");
+                    string json = await http.GetStringAsync("https://api.github.com/repos/" + repo + "/releases/latest");
+                    string tag; List<KeyValuePair<string, string>> asset = new List<KeyValuePair<string, string>>();
+                    using (JsonDocument d = JsonDocument.Parse(json))
+                    {
+                        tag = d.RootElement.GetProperty("tag_name").GetString();
+                        foreach (JsonElement a in d.RootElement.GetProperty("assets").EnumerateArray())
+                            asset.Add(new KeyValuePair<string, string>(a.GetProperty("name").GetString(), a.GetProperty("browser_download_url").GetString()));
+                    }
+                    Version nuova = Ver(tag), attuale = Ver(AppPaths.Version);
+                    if (nuova == null || attuale == null) { ImpostaStato("versione pubblicata non leggibile: " + tag); return; }
+                    if (nuova <= attuale) { ImpostaStato("aggiornato: l'ultima versione pubblicata e' la " + nuova + " (" + DateTime.Now.ToString("HH:mm") + ")", false); return; }
+                    string nomeZip = AppPaths.AppName + "-" + nuova + "-" + Rid() + ".zip";
+                    string urlZip = null, urlSha = null;
+                    foreach (var a in asset)
+                    {
+                        if (a.Key.Equals(nomeZip, StringComparison.OrdinalIgnoreCase)) urlZip = a.Value;
+                        if (a.Key.Equals(nomeZip + ".sha256", StringComparison.OrdinalIgnoreCase)) urlSha = a.Value;
+                    }
+                    if (urlZip == null) { ImpostaStato("versione " + nuova + " pubblicata, ma senza il pacchetto " + nomeZip + " per questa piattaforma"); return; }
+                    if (urlSha == null) { ImpostaStato("versione " + nuova + ": manca l'impronta " + nomeZip + ".sha256, non si installa"); return; }
+                    string dir = Path.Combine(AppPaths.DataDir, "aggiornamenti");
+                    Directory.CreateDirectory(dir);
+                    string zip = Path.Combine(dir, nomeZip);
+                    ImpostaStato("scarico la versione " + nuova + " (" + nomeZip + ")");
+                    using (Stream s = await http.GetStreamAsync(urlZip)) using (FileStream fs = File.Create(zip)) await s.CopyToAsync(fs);
+                    string attesa = (await http.GetStringAsync(urlSha)).Trim().Split(' ', '\t', '\r', '\n')[0].ToLowerInvariant();
+                    string calcolata;
+                    using (FileStream fs = File.OpenRead(zip)) calcolata = Convert.ToHexString(SHA256.HashData(fs)).ToLowerInvariant();
+                    if (calcolata != attesa) { ImpostaStato("versione " + nuova + ": impronta SHA-256 diversa da quella pubblicata, pacchetto scartato"); try { File.Delete(zip); } catch { } return; }
+                    if (MainWindow.ProveAutomatiche) return;
+                    Installa(zip, attuale.ToString(), nuova.ToString());
+                }
+            }
+            // registro di IC8TEM del 14/11/2026 17:50: "404 (Not Found)" quando il repository non ha ancora una release pubblicata
+            // (o e' privato): non e' un errore del programma, lo si dice in chiaro
+            catch (System.Net.Http.HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+            { ImpostaStato("nessuna versione pubblicata su github.com/" + Repository + " (nessuna release, o repository privato): niente da aggiornare"); }
+            catch (Exception ex) { ImpostaStato("controllo non riuscito: " + ex.Message); }
+            finally { Interlocked.Exchange(ref inCorso, 0); }
+        }
+
+        static bool DaNonToccare(string rel)
+        {
+            string r = rel.Replace('\\', '/').ToLowerInvariant();
+            return r == "data/config.ini" || r.StartsWith("registri/") || r.StartsWith("data/aggiornamenti/") || r.StartsWith("data/collaudo_immagini/")
+                || r == "installato-da-pacchetto";
+        }
+
+        static void Installa(string zip, string vecchia, string nuova)
+        {
+            string dir = Path.GetDirectoryName(zip);
+            string est = Path.Combine(dir, nuova);
+            if (Directory.Exists(est)) Directory.Delete(est, true);
+            ZipFile.ExtractToDirectory(zip, est);
+            // se lo zip ha una sola cartella principale (YA-NEC/...), si parte da li'
+            string radice = est;
+            string[] dirs = Directory.GetDirectories(est), files = Directory.GetFiles(est);
+            if (files.Length == 0 && dirs.Length == 1) radice = dirs[0];
+            string precedente = Path.Combine(dir, "precedente-" + vecchia);
+            List<string> rinominati = new List<string>();
+            List<string> nuovi = new List<string>();
+            try
+            {
+                foreach (string f in Directory.GetFiles(radice, "*", SearchOption.AllDirectories))
+                {
+                    string rel = Path.GetRelativePath(radice, f);
+                    if (DaNonToccare(rel)) continue;
+                    string dest = Path.Combine(AppPaths.AppDir, rel);
+                    Directory.CreateDirectory(Path.GetDirectoryName(dest));
+                    if (File.Exists(dest))
+                    {
+                        string bk = Path.Combine(precedente, rel);
+                        Directory.CreateDirectory(Path.GetDirectoryName(bk));
+                        File.Copy(dest, bk, true);
+                        string old = dest + ".old";
+                        if (File.Exists(old)) File.Delete(old);
+                        File.Move(dest, old);
+                        rinominati.Add(dest);
+                    }
+                    else nuovi.Add(dest);
+                    File.Copy(f, dest, false);
+                }
+                File.WriteAllText(Path.Combine(dir, "applicato.txt"), "aggiornato da " + vecchia + " a " + nuova + " il " + DateTime.Now.ToString("dd/MM/yyyy HH:mm") +
+                    " (copia della " + vecchia + " in data/aggiornamenti/precedente-" + vecchia + ")");
+                ImpostaStato("versione " + nuova + " installata: entra in funzione al prossimo avvio del programma");
+                Ferma();
+            }
+            catch (Exception ex)
+            {
+                // si torna come prima: i file nuovi si tolgono, i vecchi riprendono il loro nome
+                foreach (string d in nuovi) try { File.Delete(d); } catch { }
+                foreach (string d in rinominati) try { if (File.Exists(d)) File.Delete(d); File.Move(d + ".old", d); } catch { }
+                ImpostaStato("installazione della " + nuova + " non riuscita, rimessa la " + vecchia + ": " + ex.Message);
+            }
+            finally { try { Directory.Delete(est, true); } catch { } }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg125ca
+CM YANEC DESCRIZIONE=Hy-Gain 125CA
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg125ca.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 125CA
+24.800 24.900 25.000 24.940 MHz
+5 elements, inches
+           1.0000    0.8750    0.5000    0.4375  
+  0.000    3.6250   78.1250    3.2500   40.1250  
+ 73.000    3.6250   66.1250    3.2500   43.8750  
+130.000    3.6250   66.1250    3.2500   42.0000  
+203.000    3.6250   66.1250    3.2500   36.0000  
+309.000    3.6250   66.1250    3.2500   32.1250  
+
+The 125CA is an optional setting for the 155CA yagi.
+It is centered on 24.940 MHz for CW and Phone
+operation.  VSWR is less than 1.5 over the entire
+band.  Maximum gain is 7.8 dBd and maximum F/B is 
+28 dB.
+
+Beta rod length= 11.625 inches (measured from tubing
+center to inside edge of clamp).  Pigtail length= 7 
+inches.  Balun= Hy-Gain BN-86  (voltage type).
+
+Radiation patterns and VSWR were verified in October
+1990.  9-20-91  RC
+
+

@@ -1,0 +1,79 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="YaNec.App"
+             RequestedThemeVariant="Light">
+  <Application.Styles>
+    <FluentTheme />
+    <Style Selector="Button.pill">
+      <Setter Property="CornerRadius" Value="14"/>
+      <Setter Property="Padding" Value="12,4"/>
+    </Style>
+    <Style Selector="ToggleButton.tab">
+      <Setter Property="CornerRadius" Value="14"/>
+      <Setter Property="Padding" Value="14,4"/>
+      <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <!-- tabelle in stile Excel (bozzetto approvato "Struttura divisa", 12/11/2026): griglia #D4D4D4, cella attiva #1D6FE0 -->
+    <Style Selector="TextBox.xl">
+      <Setter Property="MinHeight" Value="24"/>
+      <Setter Property="MinWidth" Value="0"/>
+      <Setter Property="Padding" Value="6,2"/>
+      <Setter Property="Margin" Value="0"/>
+      <Setter Property="CornerRadius" Value="0"/>
+      <Setter Property="BorderThickness" Value="0,0,1,1"/>
+      <Setter Property="BorderBrush" Value="#D4D4D4"/>
+      <Setter Property="Background" Value="#FFFFFF"/>
+      <Setter Property="Foreground" Value="#1F2A3A"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="TextAlignment" Value="Right"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="TextBox.xl.l">
+      <Setter Property="TextAlignment" Value="Left"/>
+    </Style>
+    <Style Selector="TextBox.xl /template/ Border#PART_BorderElement">
+      <Setter Property="CornerRadius" Value="0"/>
+      <Setter Property="MinHeight" Value="0"/>
+    </Style>
+    <Style Selector="TextBox.xl:pointerover /template/ Border#PART_BorderElement">
+      <Setter Property="BorderBrush" Value="#D4D4D4"/>
+      <Setter Property="Background" Value="#FFFFFF"/>
+    </Style>
+    <Style Selector="TextBox.xl:focus /template/ Border#PART_BorderElement">
+      <Setter Property="BorderBrush" Value="#1D6FE0"/>
+      <Setter Property="BorderThickness" Value="2"/>
+      <Setter Property="Background" Value="#EEF5FF"/>
+    </Style>
+    <Style Selector="TextBox.xl.ro">
+      <Setter Property="Foreground" Value="#6A7686"/>
+      <Setter Property="Background" Value="#F5F6F8"/>
+      <Setter Property="IsReadOnly" Value="True"/>
+      <Setter Property="Focusable" Value="False"/>
+    </Style>
+    <Style Selector="TextBox.xl.ro /template/ Border#PART_BorderElement, TextBox.xl.ro:pointerover /template/ Border#PART_BorderElement">
+      <Setter Property="Background" Value="#F5F6F8"/>
+    </Style>
+    <Style Selector="TextBox.xl.next">
+      <Setter Property="FontStyle" Value="Italic"/>
+      <Setter Property="TextAlignment" Value="Left"/>
+    </Style>
+    <Style Selector="Button.rb">
+      <Setter Property="Width" Value="26"/>
+      <Setter Property="Height" Value="24"/>
+      <Setter Property="Padding" Value="0"/>
+      <Setter Property="Margin" Value="2,0"/>
+      <Setter Property="CornerRadius" Value="5"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="BorderBrush" Value="#9FB9E6"/>
+      <Setter Property="Background" Value="#FFFFFF"/>
+      <Setter Property="Foreground" Value="#1D5FD1"/>
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Button.rb.del">
+      <Setter Property="BorderBrush" Value="#E3A7A7"/>
+      <Setter Property="Foreground" Value="#C0392B"/>
+    </Style>
+  </Application.Styles>
+</Application>

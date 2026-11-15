@@ -1,0 +1,48 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=butternut_hf2v
+CM YANEC DESCRIZIONE=Butternut HF2V
+CM YANEC CATEGORIA=Verticali multibanda
+CM YANEC FONTE=Modelli ricostruiti da YA-NEC per IC8TEM (Butternut, DX Commander, Spiderbeam)
+CM YANEC ORIGINALE=butternut_hf2v.maa
+CM YANEC CONTENUTO=maa
+Butternut HF2V
+*
+7.1500
+***Wires***
+16
+0.0000,	0.0000,	0.0000,	0.0000,	0.0000,	0.1200,	0.01588,	-1
+0.0000,	0.0000,	0.1200,	0.0000,	0.0000,	0.9850,	0.01588,	-1
+0.0000,	0.0000,	0.9850,	0.0000,	0.0000,	1.3360,	0.01588,	-1
+0.0000,	0.0000,	1.3860,	0.0000,	0.0000,	1.6350,	0.01588,	-1
+0.0000,	0.0000,	1.6350,	0.0000,	0.0000,	1.6900,	0.01588,	-1
+0.0000,	0.0000,	1.6900,	0.0000,	0.0000,	2.8330,	0.01429,	-1
+0.0000,	0.0000,	2.8330,	0.0000,	0.0000,	3.9760,	0.01270,	-1
+0.0000,	0.0000,	3.9760,	0.0000,	0.0000,	5.1190,	0.01111,	-1
+0.0000,	0.0000,	5.1190,	0.0000,	0.0000,	6.2620,	0.00952,	-1
+0.0000,	0.0000,	6.2620,	0.0000,	0.0000,	7.4050,	0.00794,	-1
+0.0000,	0.0000,	7.4050,	0.0000,	0.0000,	8.5480,	0.00635,	-1
+0.0000,	0.0000,	8.5480,	0.0000,	0.0000,	9.6910,	0.00476,	-1
+0.0000,	0.0000,	0.9850,	0.0450,	0.0000,	0.9850,	0.00300,	-1
+0.0450,	0.0000,	0.9850,	0.0450,	0.0000,	1.3610,	0.00300,	-1
+0.0450,	0.0000,	1.3610,	0.0450,	0.0000,	1.6350,	0.00300,	-1
+0.0450,	0.0000,	1.6350,	0.0000,	0.0000,	1.6350,	0.00300,	-1
+***Source***
+1,	0
+w1c,	0.0,	1.0
+***Load***
+2,	1
+w14c,	0,	5.8248,	200.0000,	0.0
+w15c,	0,	5.1227,	0.0000,	0.0
+***Segmentation***
+800,	80,	2.0,	2
+***G/H/M/R/AzEl/X***
+1,	0.0,	0,	50.0,	120,	60,	0.0
+###Comment###
+Ricostruzione YA-NEC (IC8TEM) dai manuali Butternut; induttanze tarate con nec2c
+terreno perfetto, carichi senza perdite (Q=0)
+L80 5.825 uH || C80 200 pF (valore ipotizzato, come la HF6V); L40 5.123 uH (4 spire in corto come da manuale)
+tubi dal manuale HF2V (48", altezza 32 ft), bobine tarate su 3,75 e 7,15 MHz (manuale)
+non modellati: bobina Q di base, cappello capacitivo opzionale, risonatori 30 m e 160 m
+nec2c, variante A:
+80 m 3.750 MHz: Z 7.9 -0.0j ohm, guadagno max 4.68 dBi
+40 m 7.150 MHz: Z 33.4 -0.0j ohm, guadagno max 4.89 dBi

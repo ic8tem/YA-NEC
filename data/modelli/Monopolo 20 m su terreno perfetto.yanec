@@ -1,0 +1,16 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Monopolo 20 m su terreno perfetto
+CM YANEC DESCRIZIONE=monopolo su terreno perfetto
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Monopolo 20 m su terreno perfetto.nec
+CM YANEC CONTENUTO=nec
+CM monopolo su terreno perfetto
+CE
+GW 1 15 0 0 0 0 0 5.25 0.005
+GE 1
+GN 1
+EX 0 1 1 0 1 0
+FR 0 1 0 0 14.2 0
+RP 0 1 1 1000 80 0 0 0
+EN

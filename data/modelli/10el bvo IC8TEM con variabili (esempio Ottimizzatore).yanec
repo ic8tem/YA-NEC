@@ -1,0 +1,32 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=10el bvo IC8TEM con variabili (esempio Ottimizzatore)
+CM YANEC DESCRIZIONE=10 elementi bvo per 144,3 MHz di IC8TEM (10elm-bvo.maa del 13/11/2026), con le variabili per l'esempio 4 del manuale
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=10el bvo IC8TEM con variabili (esempio Ottimizzatore).nec
+CM YANEC CONTENUTO=nec
+CM 10 elementi bvo per 144,3 MHz di IC8TEM (10elm-bvo.maa del 13/11/2026), con le variabili per l'esempio 4 del manuale
+CM Ottimizzatore: L1 riflettore, L2 radiatore, L3 e X3 primo direttore, L10 ultimo direttore (meta' lunghezze in mm)
+CM Prova con nec2c del 15/11/2026: di partenza 144,3 MHz 59,9 -j1,0 ohm, 15,72 dBi, F/B 18,4 dB
+CM YA-NEC Z0=50
+CM YA-NEC VAR L1: meta' lunghezza del riflettore (mm)
+CM YA-NEC VAR L2: meta' lunghezza del radiatore (mm)
+CM YA-NEC VAR L3: meta' lunghezza del primo direttore (mm)
+CM YA-NEC VAR X3: posizione del primo direttore sul boom (mm)
+CM YA-NEC VAR L10: meta' lunghezza dell'ultimo direttore (mm)
+CE
+SY L1=507*MM, L2=485*MM, L3=478.5*MM, X3=669*MM, L10=455*MM
+GW 1 21 0 -L1 0 0 L1 0 0.002
+GW 2 19 0.391 -L2 0 0.391 L2 0 0.004
+GW 3 21 X3 -L3 0 X3 L3 0 0.002
+GW 4 21 1.244 -0.468 0 1.244 0.468 0 0.002
+GW 5 21 2 -0.4595 0 2 0.4595 0 0.002
+GW 6 21 2.847 -0.454 0 2.847 0.454 0 0.002
+GW 7 21 3.734 -0.451 0 3.734 0.451 0 0.002
+GW 8 21 4.625 -0.4495 0 4.625 0.4495 0 0.002
+GW 9 21 5.503 -0.4475 0 5.503 0.4475 0 0.002
+GW 10 21 6.264 -L10 0 6.264 L10 0 0.002
+GE 0
+EX 0 2 10 0 1 0
+FR 0 1 0 0 144.3 0
+EN

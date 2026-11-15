@@ -1,0 +1,138 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Sample Quad A (d)
+CM YANEC DESCRIZIONE=Sample Quad A (d)
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Sample Quad A (d).weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+_14	"_Spacing, X axis"				
+_50	_Center height				
+_9	_Driver corner				
+_9.33	_Reflector corner				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	_(demo) Sample Quad								
+	_Driver loop								
+	_0	_=-D	_=B-D	_0	_=D	_=B-D	_#14	_3	_Src
+	_0	_=D	_=B-D	_0	_=D	_=B+D	_#14	_3	
+	_0	_=D	_=B+D	_0	_=-D	_=B+D	_#14	_3	
+	_0	_=-D	_=B+D	_0	_=-D	_=B-D	_#14	_3	
+	_Reflector loop								
+	_=-A	_=-E	_=B-E	_=-A	_=E	_=B-E	_#14	_3	
+	_=-A	_=E	_=B-E	_=-A	_=E	_=B+E	_#14	_3	
+	_=-A	_=E	_=B+E	_=-A	_=-E	_=B+E	_#14	_3
+	_=-A	_=-E	_=B+E	_=-A	_=-E	_=B-E	_#14	_3
+
+	"_This model will show EZNEC segmentation check warnings for the ""conservative"" level"							
+	_but meets the minimum recommended guidelines.							
+_1	_50	_1	_0	_V				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	4	1	1	0	1	50	0	15	14	14.35	0.05													TRUE	FALSE	_1	_0
+_Freq (MHz)
+_14
+2

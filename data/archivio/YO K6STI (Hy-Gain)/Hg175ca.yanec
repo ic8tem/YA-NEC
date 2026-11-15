@@ -1,0 +1,20 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg175ca
+CM YANEC DESCRIZIONE=Hy-Gain 175CA
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg175ca.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 175CA
+18.000 18.100 18.200 MHz
+5 elements, inches
+            5.0000    1.2500    1.1250    0.8750    0.6250    0.4375 
+  0.0000    3.6250   41.8750   46.0000   25.0000   24.0000   35.8750 
+ 88.6250    3.6250   32.3750   46.0000   25.0000   24.0000   31.2500 
+167.2500    3.6250   32.3750   46.0000   25.0000   24.0000   28.0000 
+249.1250    3.6250   14.1250   46.0000   25.0000   24.0000   37.2500 
+407.3750    3.6250   14.1250   46.0000   25.0000   24.0000   31.7500 
+
+    The pattern of this model comes within a couple
+dB of actual range measurements from 17.0 through
+18.6 MHz.

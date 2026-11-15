@@ -1,0 +1,28 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg204ba1
+CM YANEC DESCRIZIONE=Hy-Gain 204BA, CW Setting
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg204ba1.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 204BA, CW Setting
+14.000 14.100 14.200 MHz
+4 elements, inches
+           4.0000    1.2500    1.1250    0.8750    0.6250    0.4375  
+  0.000    3.6250   41.8750   46.0000   50.5000   24.0000   53.0000  
+122.875    3.6250   32.3750   46.0000   50.5000   24.0000   53.0000  
+211.625    3.6250   18.3750   46.0000   50.5000   24.0000   53.0000  
+307.250    3.6250   14.1250   46.0000   50.5000   24.0000   53.0000  
+
+    Effects of the element-to-boom clamp and boom
+have been modeled here by a cylindrical taper
+section 3.625" long and 4.0" diameter.  The clamp is
+7.25" long by 3.25" wide and passes the element
+through a 2"-diameter boom.
+
+
+
+
+
+
+

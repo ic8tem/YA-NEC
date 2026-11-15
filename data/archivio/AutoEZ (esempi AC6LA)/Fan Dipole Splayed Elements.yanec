@@ -1,0 +1,153 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Fan Dipole Splayed Elements
+CM YANEC DESCRIZIONE=Fan Dipole Splayed Elements
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Fan Dipole Splayed Elements.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	3.75	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***																										
+										_47	"_  End height (or wire angle), side A"		"_=IF(B>=3, IF(ISNUMBER(AA), ""   Side A angle is "" & FIXED(BS, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(BQ - BR * COS(RADIANS(BS)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							_0	"_  End height (or wire angle), side B"		"_=IF(B>=6, IF(ISNUMBER(AW), ""   Side B angle is "" & FIXED(CI, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(CF - CG * COS(RADIANS(CI)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							"_=IF(B>=3, IF(ISNUMBER(AA), DEGREES(ACOS((BQ - AA) / BR)), VALUE(SUBSTITUTE(AA, ""d"", """"))), 0)"	"_Angle off vertical, A"
+_4	"_  Number of elements, 1 to 6"									_47	"_  End height (or wire angle), side B"		"_=IF(B>=3, IF(ISNUMBER(AB), ""   Side B angle is "" & FIXED(BT, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(BQ - BR * COS(RADIANS(BT)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							_0	"_  CCW rotation in XY plane, side A"		"_=IF(B>=6, ""   Apex angle is "" & FIXED(CH + CI, 1) & "" degrees."", ""   n/a"")"							"_=IF(B>=3, IF(ISNUMBER(AB), DEGREES(ACOS((BQ - AB) / BR)), VALUE(SUBSTITUTE(AB, ""d"", """"))), 0)"	"_Angle off vertical, B"
+_0.25	"_  Separation between centers, must be greater than 0"									_0	"_  CCW rotation in XY plane, side A"		"_=IF(B>=3, ""   Apex angle is "" & FIXED(BS + BT, 1) & "" degrees."", ""   n/a"")"							_0	"_  CCW rotation in XY plane, side B"										
+_0.5	_  Segment length									_0	"_  CCW rotation in XY plane, side B"																			_=BG - 3 * D	"_Center section height, element 4"
+		"_To specify a wire angle append ""d"" for ""degrees"".  For example, a value of"																												_=AG/2 - 1.5 * E	_Side section length
+_          Element 1		"_=""""""60"""" means an end height of 60 "" & LOWER(UnitsXYZLong) & "" while """"60d"""" means an angle of 60 degrees"""								"_=IF(B>=4, ""          Element 4"", ""          Element 4 (NOT IN USE)"")"																				"_=IF(B>=4, IF(ISNUMBER(AH), DEGREES(ACOS((BV - AH) / BW)), VALUE(SUBSTITUTE(AH, ""d"", """"))), 0)"	"_Angle off vertical, A"
+_132	_  Total wire length	"_up from vertical.  Use of ""d"" not needed when setting CCW rotation angles."								_16.5	_  Total wire length																			"_=IF(B>=4, IF(ISNUMBER(AI), DEGREES(ACOS((BV - AI) / BW)), VALUE(SUBSTITUTE(AI, ""d"", """"))), 0)"	"_Angle off vertical, B"
+_50	_  Center height									_46	"_  End height (or wire angle), side A"		"_=IF(B>=4, IF(ISNUMBER(AH), ""   Side A angle is "" & FIXED(BX, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(BV - BW * COS(RADIANS(BX)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"																		
+_60	"_  End height (or wire angle), side A - see above"		"_=IF(ISNUMBER(K), ""   Side A angle is "" & FIXED(BI, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(BG - BH * COS(RADIANS(BI)), 3) & "" "" & LOWER(UnitsXYZLong) & ""."")"							_46	"_  End height (or wire angle), side B"		"_=IF(B>=4, IF(ISNUMBER(AI), ""   Side B angle is "" & FIXED(BY, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(BV - BW * COS(RADIANS(BY)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"																	_=BG - 4 * D	"_Center section height, element 5"
+_60	"_  End height (or wire angle), side B"		"_=IF(ISNUMBER(L), ""   Side B angle is "" & FIXED(BJ, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(BG - BH * COS(RADIANS(BJ)), 3) & "" "" & LOWER(UnitsXYZLong) & ""."")"							_0	"_  CCW rotation in XY plane, side A"		"_=IF(B>=4, ""   Apex angle is "" & FIXED(BX + BY, 1) & "" degrees."", ""   n/a"")"								_*****   Calculated values.   *****   Do not modify any variables below here.   *****									_=AN/2 - 1.5 * E	_Side section length
+_0	"_  CCW rotation in XY plane, side A"		"_=""   Apex angle is "" & FIXED(BI + BJ, 1) & "" degrees."""							_0	"_  CCW rotation in XY plane, side B"									_=J	"_Center section height, element 1"									"_=IF(B>=5, IF(ISNUMBER(AO), DEGREES(ACOS((CA - AO) / CB)), VALUE(SUBSTITUTE(AO, ""d"", """"))), 0)"	"_Angle off vertical, A"
+_0	"_  CCW rotation in XY plane, side B"																			_=I/2 - 1.5 * E	_Side section length									"_=IF(B>=5, IF(ISNUMBER(AP), DEGREES(ACOS((CA - AP) / CB)), VALUE(SUBSTITUTE(AP, ""d"", """"))), 0)"	"_Angle off vertical, B"
+										"_=IF(B>=5, ""          Element 5"", ""          Element 5 (NOT IN USE)"")"										"_=IF(ISNUMBER(K), DEGREES(ACOS((BG - K) / BH)), VALUE(SUBSTITUTE(K, ""d"", """")))"	"_Angle off vertical, A"										
+"_=IF(B>=2, ""          Element 2"", ""          Element 2 (NOT IN USE)"")"										_0	_  Total wire length									"_=IF(ISNUMBER(L), DEGREES(ACOS((BG - L) / BH)), VALUE(SUBSTITUTE(L, ""d"", """")))"	"_Angle off vertical, B"									_=BG - 5 * D	"_Center section height, element 6"
+_66	_  Total wire length									_0	"_  End height (or wire angle), side A"		"_=IF(B>=5, IF(ISNUMBER(AO), ""   Side A angle is "" & FIXED(CC, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(CA - CB * COS(RADIANS(CC)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"																	_=AU/2 - 1.5 * E	_Side section length
+_50	"_  End height (or wire angle), side A"		"_=IF(B>=2, IF(ISNUMBER(S), ""   Side A angle is "" & FIXED(BN, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(BL - BM * COS(RADIANS(BN)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							_0	"_  End height (or wire angle), side B"		"_=IF(B>=5, IF(ISNUMBER(AP), ""   Side B angle is "" & FIXED(CD, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(CA - CB * COS(RADIANS(CD)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							_=BG - 1 * D	"_Center section height, element 2"									"_=IF(B>=6, IF(ISNUMBER(AV), DEGREES(ACOS((CF - AV) / CG)), VALUE(SUBSTITUTE(AV, ""d"", """"))), 0)"	"_Angle off vertical, A"
+_50	"_  End height (or wire angle), side B"		"_=IF(B>=2, IF(ISNUMBER(T), ""   Side B angle is "" & FIXED(BO, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(BL - BM * COS(RADIANS(BO)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							_0	"_  CCW rotation in XY plane, side A"		"_=IF(B>=5, ""   Apex angle is "" & FIXED(CC + CD, 1) & "" degrees."", ""   n/a"")"							_=Q/2 - 1.5 * E	_Side section length									"_=IF(B>=6, IF(ISNUMBER(AW), DEGREES(ACOS((CF - AW) / CG)), VALUE(SUBSTITUTE(AW, ""d"", """"))), 0)"	"_Angle off vertical, B"
+_0	"_  CCW rotation in XY plane, side A"		"_=IF(B>=2, ""   Apex angle is "" & FIXED(BN + BO, 1) & "" degrees."", ""   n/a"")"							_0	"_  CCW rotation in XY plane, side B"									"_=IF(B>=2, IF(ISNUMBER(S), DEGREES(ACOS((BL - S) / BM)), VALUE(SUBSTITUTE(S, ""d"", """"))), 0)"	"_Angle off vertical, A"										
+_0	"_  CCW rotation in XY plane, side B"																			"_=IF(B>=2, IF(ISNUMBER(T), DEGREES(ACOS((BL - T) / BM)), VALUE(SUBSTITUTE(T, ""d"", """"))), 0)"	"_Angle off vertical, B"										
+										"_=IF(B>=6, ""          Element 6"", ""          Element 6 (NOT IN USE)"")"																					
+"_=IF(B>=3, ""          Element 3"", ""          Element 3 (NOT IN USE)"")"										_0	_  Total wire length									_=BG - 2 * D	"_Center section height, element 3"										
+_33	_  Total wire length									_0	"_  End height (or wire angle), side A"		"_=IF(B>=6, IF(ISNUMBER(AV), ""   Side A angle is "" & FIXED(CH, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(CF - CG * COS(RADIANS(CH)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"							_=Z/2 - 1.5 * E	_Side section length										
+	_Fan (Multiband) Dipole - Splayed Elements																														
+	"_See ""Collected Short Examples: Part 4"" on the AutoEZ web page."																														
+	_Element 1																														
+	"_=BH * SIN(RADIANS(BI)) * SIN(RADIANS(SUBSTITUTE(M,""d"","""")))"	"_=-BH * SIN(RADIANS(BI)) * COS(RADIANS(SUBSTITUTE(M,""d"",""""))) - 1.5 * E"	_=BG - BH * COS(RADIANS(BI))	_0	_=-1.5 * E	_=BG	_#12	"_=CEILING(WireLen / E, 1)"																							
+	_0	_=-1.5 * E	_=BG	_0	_=1.5 * E	_=BG	_#12	_3																							
+	_0	_=1.5 * E	_=BG	"_=-BH * SIN(RADIANS(BJ)) * SIN(RADIANS(SUBSTITUTE(N,""d"","""")))"	"_=BH * SIN(RADIANS(BJ)) * COS(RADIANS(SUBSTITUTE(N,""d"",""""))) + 1.5 * E"	_=BG - BH * COS(RADIANS(BJ))	_#12	"_=CEILING(WireLen / E, 1)"																							
+"_=IF(B>=2, """", ""X"")"	"_=IF(B>=2, ""Element 2"", ""Element 2 (NOT IN USE)"")"																														
+"_=IF(B>=2, """", ""X"")"	"_=BM * SIN(RADIANS(BN)) * SIN(RADIANS(SUBSTITUTE(U,""d"","""")))"	"_=-BM * SIN(RADIANS(BN)) * COS(RADIANS(SUBSTITUTE(U,""d"",""""))) - 1.5 * E"	_=BL - BM * COS(RADIANS(BN))	_0	_=-1.5 * E	_=BL	_#12	"_=CEILING(WireLen / E, 1)"																							
+"_=IF(B>=2, """", ""X"")"	_0	_=-1.5 * E	_=BL	_0	_=1.5 * E	_=BL	_#12	_3																							
+"_=IF(B>=2, """", ""X"")"	_0	_=1.5 * E	_=BL	"_=-BM * SIN(RADIANS(BO)) * SIN(RADIANS(SUBSTITUTE(V,""d"","""")))"	"_=BM * SIN(RADIANS(BO)) * COS(RADIANS(SUBSTITUTE(V,""d"",""""))) + 1.5 * E"	_=BL - BM * COS(RADIANS(BO))	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=3, """", ""X"")"	"_=IF(B>=3, ""Element 3"", ""Element 3 (NOT IN USE)"")"							
+"_=IF(B>=3, """", ""X"")"	"_=BR * SIN(RADIANS(BS)) * SIN(RADIANS(SUBSTITUTE(AC,""d"","""")))"	"_=-BR * SIN(RADIANS(BS)) * COS(RADIANS(SUBSTITUTE(AC,""d"",""""))) - 1.5 * E"	_=BQ - BR * COS(RADIANS(BS))	_0	_=-1.5 * E	_=BQ	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=3, """", ""X"")"	_0	_=-1.5 * E	_=BQ	_0	_=1.5 * E	_=BQ	_#12	_3
+"_=IF(B>=3, """", ""X"")"	_0	_=1.5 * E	_=BQ	"_=-BR * SIN(RADIANS(BT)) * SIN(RADIANS(SUBSTITUTE(AD,""d"","""")))"	"_=BR * SIN(RADIANS(BT)) * COS(RADIANS(SUBSTITUTE(AD,""d"",""""))) + 1.5 * E"	_=BQ - BR * COS(RADIANS(BT))	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=4, """", ""X"")"	"_=IF(B>=4, ""Element 4"", ""Element 4 (NOT IN USE)"")"							
+"_=IF(B>=4, """", ""X"")"	"_=BW * SIN(RADIANS(BX)) * SIN(RADIANS(SUBSTITUTE(AJ,""d"","""")))"	"_=-BW * SIN(RADIANS(BX)) * COS(RADIANS(SUBSTITUTE(AJ,""d"",""""))) - 1.5 * E"	_=BV - BW * COS(RADIANS(BX))	_0	_=-1.5 * E	_=BV	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=4, """", ""X"")"	_0	_=-1.5 * E	_=BV	_0	_=1.5 * E	_=BV	_#12	_3
+"_=IF(B>=4, """", ""X"")"	_0	_=1.5 * E	_=BV	"_=-BW * SIN(RADIANS(BY)) * SIN(RADIANS(SUBSTITUTE(AK,""d"","""")))"	"_=BW * SIN(RADIANS(BY)) * COS(RADIANS(SUBSTITUTE(AK,""d"",""""))) + 1.5 * E"	_=BV - BW * COS(RADIANS(BY))	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=5, """", ""X"")"	"_=IF(B>=5, ""Element 5"", ""Element 5 (NOT IN USE)"")"							
+"_=IF(B>=5, """", ""X"")"	"_=CB * SIN(RADIANS(CC)) * SIN(RADIANS(SUBSTITUTE(AQ,""d"","""")))"	"_=-CB * SIN(RADIANS(CC)) * COS(RADIANS(SUBSTITUTE(AQ,""d"",""""))) - 1.5 * E"	_=CA - CB * COS(RADIANS(CC))	_0	_=-1.5 * E	_=CA	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=5, """", ""X"")"	_0	_=-1.5 * E	_=CA	_0	_=1.5 * E	_=CA	_#12	_3
+"_=IF(B>=5, """", ""X"")"	_0	_=1.5 * E	_=CA	"_=-CB * SIN(RADIANS(CD)) * SIN(RADIANS(SUBSTITUTE(AR,""d"","""")))"	"_=CB * SIN(RADIANS(CD)) * COS(RADIANS(SUBSTITUTE(AR,""d"",""""))) + 1.5 * E"	_=CA - CB * COS(RADIANS(CD))	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=6, """", ""X"")"	"_=IF(B>=6, ""Element 6"", ""Element 6 (NOT IN USE)"")"							
+"_=IF(B>=6, """", ""X"")"	"_=CG * SIN(RADIANS(CH)) * SIN(RADIANS(SUBSTITUTE(AX,""d"","""")))"	"_=-CG * SIN(RADIANS(CH)) * COS(RADIANS(SUBSTITUTE(AX,""d"",""""))) - 1.5 * E"	_=CF - CG * COS(RADIANS(CH))	_0	_=-1.5 * E	_=CF	_#12	"_=CEILING(WireLen / E, 1)"
+"_=IF(B>=6, """", ""X"")"	_0	_=-1.5 * E	_=CF	_0	_=1.5 * E	_=CF	_#12	_3
+"_=IF(B>=6, """", ""X"")"	_0	_=1.5 * E	_=CF	"_=-CG * SIN(RADIANS(CI)) * SIN(RADIANS(SUBSTITUTE(AY,""d"","""")))"	"_=CG * SIN(RADIANS(CI)) * COS(RADIANS(SUBSTITUTE(AY,""d"",""""))) + 1.5 * E"	_=CF - CG * COS(RADIANS(CI))	_#12	"_=CEILING(WireLen / E, 1)"
+	"_=""Number of segments for each wire is set as """"E"""" "" & UnitsXYZ & "" per segment.  To reduce the number of segments"""							
+	"_use a larger value for ""E"".  Center wire for each element is exactly 3 segments, length 3 * E."							
+	_Add any additional wires below this row.							
+_Source on center of Element 1								
+_2	_50	_1	_0	_I				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_Transmission lines for element interconnects are no-loss with Len=1e-8 (may display as 0)												
+_2	_50	_5	_50	_0.00000001	_50	_1	_N	_0	_0			"_=IF(B>=2, """", ""X"")"
+_5	_50	_8	_50	_0.00000001	_50	_1	_N	_0	_0			"_=IF(B>=3, """", ""X"")"
+_8	_50	_11	_50	_0.00000001	_50	_1	_N	_0	_0			"_=IF(B>=4, """", ""X"")"
+_11	_50	_14	_50	_0.00000001	_50	_1	_N	_0	_0			"_=IF(B>=5, """", ""X"")"
+_14	_50	_17	_50	_0.00000001	_50	_1	_N	_0	_0			"_=IF(B>=6, """", ""X"")"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	4	1	1	0	1	50	0	15	14.175	14.175	1													TRUE	FALSE	_1	_0
+_Freq (MHz)																														
+_3.75
+2

@@ -1,0 +1,38 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Four-square 7 MHz ideale (terreno perfetto)
+CM YANEC DESCRIZIONE=Four-square 7,1 MHz - modello di principio IDEALE (IC8TEM / YA-NEC)
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Four-square 7 MHz ideale (terreno perfetto).nec
+CM YANEC CONTENUTO=nec
+CM Four-square 7,1 MHz - modello di principio IDEALE (IC8TEM / YA-NEC)
+CM 4 verticali lambda/4 (10,12 m, tubo 30 mm) ai vertici di un quadrato di lato
+CM lambda/4 (10,56 m),
+CM su terreno perfetto (= campo di radiali interrati ideale). Diagonale
+CM A(dietro)-D(davanti) lungo X:
+CM direzione del lobo +X (azimut 0).
+CM Correnti imposte: A 1/0 gradi, B e C 1/-90 gradi, D 1/-180 gradi
+CM (alimentazione "a corrente").
+CM Le tensioni EX sono quelle che danno esattamente queste correnti con questa
+CM geometria (calcolate con la
+CM matrice delle impedenze mutue): se si cambiano dimensioni o frequenza vanno
+CM ricalcolate.
+CM Impedenze di alimentazione risultanti: A -1,6 -j16,0  B e C 39,7 -j19,4  D
+CM 59,7 +j55,1 ohm
+CM (A ha resistenza negativa: restituisce potenza alla rete di alimentazione,
+CM tipico del four-square).
+CM YA-NEC Z0=50
+CE
+GW 1 21 -7.4643 0.0000 0 -7.4643 0.0000 10.12 0.015
+GW 2 21 0.0000 7.4643 0 0.0000 7.4643 10.12 0.015
+GW 3 21 0.0000 -7.4643 0 0.0000 -7.4643 10.12 0.015
+GW 4 21 7.4643 0.0000 0 7.4643 0.0000 10.12 0.015
+GE 1
+GN 1
+EX 0 1 1 0 -1.560057 -16.018929
+EX 0 2 1 0 -19.355553 -39.692520
+EX 0 3 1 0 -19.355553 -39.692520
+EX 0 4 1 0 -59.689671 -55.088901
+FR 0 1 0 0 7.1 0
+RP 0 91 361 1000 0 0 1 1
+EN

@@ -1,0 +1,132 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=4Square TL With Feed System (d)
+CM YANEC DESCRIZIONE=4Square TL With Feed System (d)
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=4Square TL With Feed System (d).weq
+CM YANEC CONTENUTO=weq
+MultiNEC	7.15	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	_(demo) 4-square array w/feed system							
+	_0	_0	_0	_0	_0	_32.88999	_1.5	_5
+	_0	_34.39101	_0	_0	_34.39101	_32.88999	_1.5	_5
+	_34.39101	_0	_0	_34.39101	_0	_32.88999	_1.5	_5
+	_34.39101	_34.39101	_0	_34.39101	_34.39101	_32.88999	_1.5	_5
+
+
+	_This is a modified version of '4Square TL ARRL Example.ez' by W7EL							
+_V1		_1	_0	_I				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_1	_0	_18	_0				_Ser
+_2	_0	_18	_0				_Ser
+_3	_0	_18	_0				_Ser
+_4	_0	_18	_0				_Ser
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"_Lines T1 and T2 are phasing lines.  Lines T3 - T6 are ""current forcing"" lines."									
+_V1		_V2		_7.491	_50.8	_0.807	_N	_0	_0
+_V1		_V3		_50.797	_50.8	_0.807	_N	_0	_0
+_V2		_1	_0	_27.753	_50.8	_0.807	_N	_0	_0
+_V2		_4	_0	_83.26	_50.8	_0.807	_N	_0	_0
+_V3		_2	_0	_27.753	_50.8	_0.807	_N	_0	_0
+_V3		_3	_0	_27.753	_50.8	_0.807	_N	_0	_0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	TRUE	FALSE	4	4	0	0	23	1	50	345	23	144	148	0.5													FALSE	TRUE	_1	_0
+_Freq (MHz)																														
+_7.15																														
+2																														

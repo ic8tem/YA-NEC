@@ -1,0 +1,47 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=dxcommander_B
+CM YANEC DESCRIZIONE=DX Commander (dxcommander.com): verticale multibanda a venta
+CM YANEC CATEGORIA=Verticali multibanda
+CM YANEC FONTE=Modelli ricostruiti da YA-NEC per IC8TEM (Butternut, DX Commander, Spiderbeam)
+CM YANEC ORIGINALE=dxcommander_B.maa
+CM YANEC CONTENUTO=maa
+DX Commander (dxcommander.com): verticale multibanda a venta
+*
+14.1500
+***Wires***
+19
+0.00000,	0.00000,	0.30000,	0.00000,	0.00000,	0.60000,	0.00050,	-1
+0.00000,	0.00000,	0.60000,	0.06000,	0.00000,	0.60000,	0.00050,	-1
+0.06000,	0.00000,	0.60000,	0.06000,	0.00000,	9.60000,	0.00050,	-1
+0.06000,	0.00000,	9.60000,	0.10800,	0.00000,	9.60000,	0.00050,	-1
+0.10800,	0.00000,	9.60000,	0.10800,	0.00000,	7.52832,	0.00050,	-1
+0.00000,	0.00000,	0.60000,	0.03000,	0.05196,	0.60000,	0.00050,	-1
+0.03000,	0.05196,	0.60000,	0.03000,	0.05196,	7.75320,	0.00050,	-1
+0.00000,	0.00000,	0.60000,	-0.03000,	0.05196,	0.60000,	0.00050,	-1
+-0.03000,	0.05196,	0.60000,	-0.03000,	0.05196,	5.73448,	0.00050,	-1
+0.00000,	0.00000,	0.60000,	-0.06000,	0.00000,	0.60000,	0.00050,	-1
+-0.06000,	0.00000,	0.60000,	-0.06000,	0.00000,	4.60089,	0.00050,	-1
+0.00000,	0.00000,	0.60000,	-0.03000,	-0.05196,	0.60000,	0.00050,	-1
+-0.03000,	-0.05196,	0.60000,	-0.03000,	-0.05196,	3.50269,	0.00050,	-1
+0.00000,	0.00000,	0.60000,	0.03000,	-0.05196,	0.60000,	0.00050,	-1
+0.03000,	-0.05196,	0.60000,	0.03000,	-0.05196,	2.95889,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	7.42462,	7.42462,	0.30000,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	-7.42462,	7.42462,	0.30000,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	-7.42462,	-7.42462,	0.30000,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	7.42462,	-7.42462,	0.30000,	0.00050,	-1
+***Source***
+1,	0
+w1b,	0.0,	1.0
+***Load***
+0,	0
+***Segmentation***
+800,	80,	2.0,	2
+***G/H/M/R/AzEl/X***
+2,	0.0,	0,	50.0,	120,	60,	0.0
+###Comment###
+DX Commander (dxcommander.com): verticale multibanda a ventaglio su palo da 10 m - modello di principio YA-NEC
+elementi 40/30/20/17/12/10 m a ventaglio a 6 cm dal palo, il 40 m ripiegato in cima; lunghezze tarate con nec2c
+variante B: 4 radiali da 10,5 m a 0,3 m, terreno medio di Sommerfeld (GN 2)
+riferimento nec2c: 40 m 7.100 MHz Z 30.0 -9.9j; 30 m 10.120 MHz Z 40.0 +105.5j; 20 m 14.150 MHz Z 550.9 -279.4j; 17 m 18.100 MHz Z 59.7 -102.3j; 12 m 24.940 MHz Z 77.2 +105.4j; 10 m 28.400 MHz Z 276.3 -375.8j
+MMANA (MININEC): impedenza calcolata sempre su terreno perfetto; il terreno reale entra solo nel diagramma.
+ATTENZIONE: radiali a 0,3 m: in MMANA la Z non considera le perdite del terreno (nec2c GN 2 si).

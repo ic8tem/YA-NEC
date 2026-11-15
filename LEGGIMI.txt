@@ -1,0 +1,129 @@
+YA-NEC 1.0 - a cura di Costantino IC8TEM
+Simulatore d'antenne a fili basato sul NEC2, per Windows, Linux e Mac (C#, .NET 8, Avalonia).
+YA-NEC (Yet Another NEC), sulla scia di YA-MS e YAEC.
+
+  La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità,
+  con le vostre scoperte e con le vostre certezze.
+
+COMPILAZIONE E COLLAUDO
+  Windows: doppio clic su compila.bat (Linux / Mac: ./compila.sh). Serve il .NET 8 SDK (o successivo); la prima
+  volta scarica i pacchetti Avalonia da internet. Se la compilazione non riesce, il resoconto completo e' in
+  compila_log.txt.
+    compila.bat                 compilazione veloce (usa il .NET installato): programma in build\win-x64\YA-NEC.exe
+    compila.bat /distribuzione  compilazione autonoma (gira anche senza .NET): pubblicazione\win-x64\YA-NEC.exe
+    compila.bat /completo       collaudo di tutto (senza /completo solo le prove brevi)
+    prova_mirata.bat            collaudo mirato con EZNEC: modelli delle schede dei Calcolatori e modelli d'archivio che si
+                                discostano da EZNEC (circa 20-25 minuti)
+    compila_win7.bat            pacchetti per Windows 7 SP1, 8 e 8.1: pubblicazione\YA-NEC-<versione>-win7-x64.zip e
+                                -win7-x86.zip con .sha256, .NET 6 autonomo (come YA-MS ed E-LAYER ANALYZER; .NET 8 non parte su Windows 7).
+                                Sul PC con Windows 7 servono SP1 e gli aggiornamenti KB2533623 e KB2999226; .NET non va installato
+    collaudo_rapido.bat         COLLAUDO RAPIDO SENZA PRESIDIO: solo le prove che servono quando cambia la correzione dei
+                                tubi telescopici (2A autotest, 2B tutte le procedure, 2J archivio, 2K-2L-2L bis gradini e taratura di Leeson)
+                                con i valori di EZNEC salvati (EZNEC non si apre), circa 20 minuti; alla fine ESITO.txt e, se superato,
+                                il pacchetto in pubblicazione\ (non pubblicato). Saltate: interfaccia, Butternut, pesanti, sensibili,
+                                calcolatori con EZNEC, varianti vicino al terreno
+    collaudo_automatico.bat     COLLAUDO SENZA PRESIDIO: come prova_tutto.bat ma non si ferma mai; alla fine ESITO.txt
+                                (anche nello zip) e, solo se superato, il pacchetto da pubblicare in pubblicazione\ (non pubblicato);
+                                con /spegni spegne il PC alla fine (circa un'ora e mezza)
+    prova_tutto.bat             UN SOLO BAT PER TUTTE LE PROVE: compila.bat /completo, tutte le fasi in coda fino al
+                                confronto con EZNEC; alla fine un solo file da mandare, yanec-collaudo-<versione>.zip (circa un'ora)
+
+COLLAUDO - 3 fasi, una sola pausa alla fine
+    1 compilazione: SDK, compilazione, avvisi del compilatore, file prodotti
+    2 collaudo, tutto di seguito:
+      2A autotest del motore (confronto con nec2c)
+      2B procedure delle funzioni senza finestra (atteso / ottenuto / esito OK, AVVISO, ERRORE)
+      2C prove dell'interfaccia: il programma si apre e si usa da solo e salva un'immagine a ogni passo in
+         data\collaudo_immagini. In questa parte (anche piu' di mezz'ora) non toccare mouse e tastiera.
+      2D la Butternut con 64 radiali: YA-NEC si riapre e la carica (1453 segmenti, confrontata con nec2c)
+      2E i 3 modelli piu' pesanti senza finestra: impedenza come nec2c, tempi di ogni fase del motore, memoria,
+         GFLOPS della fattorizzazione e prova di riferimento del processore (data\prove_pesanti.txt);
+         anche la LU a blocchi contro la LU classica sul Bowtie
+      2F i modelli sensibili e aggressivi: YA-NEC come nec2c, LU a blocchi come la classica, calibrazione con le
+         prove EZNEC di IC8TEM (data\prove_sensibili.txt)
+      2G i modelli di tutte le sottolinguette HF e VHF dei calcolatori in .nec e .ez, con il .ez riletto e ricalcolato
+         (data\eznec_calcolatori), anche il disco a centine della Parabola, 1,2 m a 1296 MHz, ideale e sfaccettato
+      2H EZNEC calcola i modelli della 2G con tools\eznec\confronta_eznec.ps1 (sempre in automatico; EZNEC si apre
+         da solo; senza EZNEC la fase dice "non eseguite"). Non usare mouse, tastiera e copia/incolla fino alla fine
+      2I EZNEC calcola i modelli d'archivio che non combaciano entro lo 0,1 % (data\prove\eznec_archivio)
+      2J YA-NEC rilegge quei .ez, li calcola e li confronta con EZNEC (YA-NEC.exe --confronta-archivio): classi
+         0,1 / 0,5 / 2 %; i modelli che EZNEC ferma per geometria devono essere segnalati anche da YA-NEC
+      2K ogni elemento a tubi telescopici dei modelli d'archivio si scrive da solo in un .ez (spazio libero, sorgente al
+         centro) e EZNEC lo calcola con la sua Stepped Diameter Correction (data\prove\eznec_gradini, circa 30 minuti)
+      2L YA-NEC confronta ogni elemento: Leeson com'e', Leeson forzato anche lontano dalla risonanza e senza correzione;
+         il verdetto dice quale dei tre fa EZNEC (YA-NEC.exe --prepara-gradini, --confronta-gradini)
+      2L bis taratura della correzione di Leeson sotto la risonanza (YA-NEC.exe --tara-gradini, taratura_gradini.txt)
+      in fondo al resoconto l'elenco dei passi con AVVISO o ERRORE
+    3 riepilogo: esito di ogni parte e durata
+  Alla fine resoconto, compila_log.txt e registri sono in yanec-collaudo-<versione>.zip: e' l'unico file da mandare. Avvii a mano:
+  YA-NEC.exe --autotest, --collaudo, --prove-interfaccia, --prove-butternut, --prove-pesanti, --prove-sensibili, --esporta-eznec [cartella],
+  --confronta-archivio [cartella], --prepara-gradini [archivio] [uscita], --confronta-gradini [uscita], --tara-gradini [uscita],
+  --registro (programma normale con il registro).
+
+USO
+  Apri modello...   file NEC2 (.nec) o MMANA (.maa); in "Esempi" ci sono alcuni modelli pronti.
+  Calcola           impedenza, ROS, guadagno, diagrammi, F/B, F/R, aperture, efficienza e AGT alla frequenza scelta.
+  Banda / Centro    bande da 2200 m a 3 cm (limiti IARU Regione 1): la scelta mette nella frequenza il centro operativo
+                    (frequenza del DX, di progetto in VHF e oltre) o aritmetico, e imposta lo span; "Libera" lascia
+                    frequenza e span a scelta. Una frequenza scritta a mano fuori dalla banda riporta la banda a "Libera".
+  Sweep             span in kHz centrato sulla frequenza di calcolo: grafici in frequenza (ROS, R/X, guadagno, F/B, F/R)
+                    e carta di Smith.
+  Z0, Terreno, Fili valgono subito per il modello aperto; "Segmenti per lambda" vale per i modelli MMANA
+  che si aprono dopo averlo cambiato.
+  Linguette: Struttura 3D (mouse: trascina = ruota, rotella = zoom, tasto destro = sposta, doppio clic = vista
+  iniziale), Oggetti inseriti, Calcolatori, Diagrammi, Rumore e G/T, Antenne riceventi, Frequenza, Smith, Correnti, Modello NEC
+  (schede modificabili), Variabili, Impostazioni, Avvisi, Autotest, Manuale, Crediti.
+  Tabella dei fili (sotto la Struttura 3D, la riga di separazione si trascina): una riga per filo con tag,
+  coordinate degli estremi in metri, raggio in mm, segmenti e lunghezza (le sorgenti si mettono nella tabella Sorgenti).
+  Le celle accettano numeri, variabili e formule. "Aggiungi filo" parte dall'estremo dell'ultimo filo,
+  il pulsante di copia duplica la riga, la x la elimina; "Applica e ricalcola" (o Invio) aggiorna modello e calcolo.
+  Il filo su cui si scrive viene evidenziato nella vista 3D. Le schede GA, GH, GM, GR, GX, GS e i fili
+  rastremati compaiono in sola lettura e si modificano nella linguetta Modello NEC.
+  About (in alto a destra): versione, autore, contatti, licenza; pulsante Ko-fi.
+
+MODELLI MMANA
+  La segmentazione di MMANA (rastremata, motore MININEC) non viene copiata: ogni filo viene risegmentato per il
+  NEC2 con segmento massimo lambda/40 (regolabile), segmento/raggio >= 4, numero dispari di segmenti sul filo
+  alimentato e segmenti di lunghezza simile alle giunzioni (rapporto massimo 1:2). La tabella dei fili
+  risegmentati e' nella linguetta Avvisi. Impedenza e guadagno possono differire leggermente da MMANA:
+  controllare l'AGT (test di convergenza) nei riquadri dei risultati.
+
+AGGIORNAMENTO AUTOMATICO
+  Ogni 30 minuti il programma controlla in silenzio l'ultima versione pubblicata sul GitHub (repository ic8tem/YA-NEC; si cambia in
+  Impostazioni > Aggiornamento o in data\config.ini alla voce aggiornamento_repo). Se e' piu' nuova la scarica, ne verifica l'impronta SHA-256 e
+  la installa: entra in funzione al prossimo avvio, con un messaggio nella barra di stato. La versione precedente resta in
+  data\aggiornamenti\precedente-<versione>; config.ini e i modelli dell'utente non si toccano. Si spegne con la casella nelle
+  Impostazioni ed e' sempre spento durante il collaudo. Ogni passo va nel registro (AGGIORNAMENTO).
+  ECCEZIONE: i pacchetti Debian/Ubuntu (.deb) e Fedora/openSUSE (.rpm) si installano con i permessi di amministratore e si
+  aggiornano solo con il gestore dei pacchetti (sudo apt update && sudo apt upgrade, oppure dnf / zypper): li' l'aggiornamento
+  automatico e' spento e le Impostazioni lo dicono.
+  Per pubblicare una versione: compila.bat /distribuzione prepara pubblicazione\YA-NEC-<versione>-win-x64.zip e il file .sha256;
+  sul GitHub si crea la release "v<versione>" e si allegano i due file (lo stesso per le altre piattaforme, con il loro nome:
+  linux-x64, linux-arm64, osx-arm64, osx-x64...).
+
+VARIABILI E FORMULE
+  Schede SY come in 4nec2 e xnec2c, per esempio:
+      SY L=1000*MM, H=L/2
+      SY R=2*MM, NS=ODD(20)
+      GW 1 NS 0 -H 0 0 H 0 R
+      EX 0 1 (NS+1)/2 0 1 0
+  Nella linguetta Variabili ogni variabile ha nome, espressione, valore calcolato e un passo: i pulsanti - e +
+  cambiano il valore (solo se l'espressione e' un numero) e ricalcolano subito. "Applica e ricalcola" vale per
+  le modifiche scritte a mano. Funzioni: SIN COS TAN ATN (in gradi), SQR, EXP, LOG, LOG10, ABS, SGN, INT, FIX,
+  MOD, MAX, MIN, ODD (intero dispari). Costanti: PI, MM, CM, IN, FT, PF, NF, UF, NH, UH, AWG_0 ... AWG_20.
+  Nelle schede le espressioni vanno scritte senza spazi (gli spazi separano i campi), tranne dentro le parentesi.
+  Nel file salvato le espressioni restano nelle schede di geometria; EX, LD, GN e FR vengono salvate come numeri.
+  Esempio pronto: "Dipolo 144 con variabili" in Esempi.
+
+MOTORE
+  Motore NEC2 tradotto da nec2c: fili (GW, GA, GH, GM, GR, GS, GX, GC), kernel normale ed esteso, spazio libero,
+  terreno perfetto, terreno reale col coefficiente di riflessione e di Sommerfeld, schermo di radiali (GN con NRADL),
+  carichi LD 0-5, sorgenti EX 0, reti NT e linee TL; correzione di Leeson dei tubi telescopici come EZNEC.
+  Non ci sono: superfici (SP/SM), campi vicini (NE/NH), onda piana (EX 1-4). I dettagli e le scelte di calcolo sono nel manuale.
+
+CARTELLE
+  Accanto a YA-NEC.exe: "data" (config.ini, modelli di esempio, manuale, autotest.txt), "Registri" (un registro di
+  testo per sessione e punteggio_funzioni.txt) e "lib" (librerie native: SkiaSharp, HarfBuzz, ANGLE). Niente AppData.
+
+LICENZA
+  GPL-3.0 (file COPYING), come nec2c e xnec2c da cui deriva il motore.

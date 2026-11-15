@@ -1,0 +1,42 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=dxcommander_A
+CM YANEC DESCRIZIONE=DX Commander (dxcommander.com): verticale multibanda a venta
+CM YANEC CATEGORIA=Verticali multibanda
+CM YANEC FONTE=Modelli ricostruiti da YA-NEC per IC8TEM (Butternut, DX Commander, Spiderbeam)
+CM YANEC ORIGINALE=dxcommander_A.maa
+CM YANEC CONTENUTO=maa
+DX Commander (dxcommander.com): verticale multibanda a venta
+*
+14.1500
+***Wires***
+15
+0.00000,	0.00000,	0.00000,	0.00000,	0.00000,	0.30000,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	0.06000,	0.00000,	0.30000,	0.00050,	-1
+0.06000,	0.00000,	0.30000,	0.06000,	0.00000,	9.30000,	0.00050,	-1
+0.06000,	0.00000,	9.30000,	0.10800,	0.00000,	9.30000,	0.00050,	-1
+0.10800,	0.00000,	9.30000,	0.10800,	0.00000,	7.22832,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	0.03000,	0.05196,	0.30000,	0.00050,	-1
+0.03000,	0.05196,	0.30000,	0.03000,	0.05196,	7.45320,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	-0.03000,	0.05196,	0.30000,	0.00050,	-1
+-0.03000,	0.05196,	0.30000,	-0.03000,	0.05196,	5.43448,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	-0.06000,	0.00000,	0.30000,	0.00050,	-1
+-0.06000,	0.00000,	0.30000,	-0.06000,	0.00000,	4.30089,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	-0.03000,	-0.05196,	0.30000,	0.00050,	-1
+-0.03000,	-0.05196,	0.30000,	-0.03000,	-0.05196,	3.20269,	0.00050,	-1
+0.00000,	0.00000,	0.30000,	0.03000,	-0.05196,	0.30000,	0.00050,	-1
+0.03000,	-0.05196,	0.30000,	0.03000,	-0.05196,	2.65889,	0.00050,	-1
+***Source***
+1,	0
+w1b,	0.0,	1.0
+***Load***
+0,	0
+***Segmentation***
+800,	80,	2.0,	2
+***G/H/M/R/AzEl/X***
+1,	0.0,	0,	50.0,	120,	60,	0.0
+###Comment###
+DX Commander (dxcommander.com): verticale multibanda a ventaglio su palo da 10 m - modello di principio YA-NEC
+elementi 40/30/20/17/12/10 m a ventaglio a 6 cm dal palo, il 40 m ripiegato in cima; lunghezze tarate con nec2c
+variante A: terreno perfetto, alimentazione alla base
+riferimento nec2c: 40 m 7.100 MHz Z 28.4 -3.3j; 30 m 10.120 MHz Z 26.6 -11.4j; 20 m 14.150 MHz Z 23.6 -0.7j; 17 m 18.100 MHz Z 17.1 -1.4j; 12 m 24.940 MHz Z 15.0 -13.2j; 10 m 28.400 MHz Z 111.0 -222.7j
+MMANA (MININEC): impedenza calcolata sempre su terreno perfetto; il terreno reale entra solo nel diagramma.

@@ -1,0 +1,28 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=spiderbeam_160m_vert_B
+CM YANEC DESCRIZIONE=Spiderbeam 160 m: verticale a filo su palo da 18 m (16 m utili), 4 fili di cappello
+CM YANEC CATEGORIA=Verticali multibanda
+CM YANEC FONTE=Modelli ricostruiti da YA-NEC per IC8TEM (Butternut, DX Commander, Spiderbeam)
+CM YANEC ORIGINALE=spiderbeam_160m_vert_B.nec
+CM YANEC CONTENUTO=nec
+CM Spiderbeam 160 m: verticale a filo su palo da 18 m (16 m utili), 4 fili di cappello
+CM ricostruzione YA-NEC dai dati del kit (filo verticale 20 m AWG18, 4 fili 62 m in tutto, ancoraggi a 25 m)
+CM variante B: 4 radiali da 38 m a 2.5 m, terreno medio di Sommerfeld (GN 2)
+CM cappello 14.72 m per filo; radiali sopraelevati lambda/4 (38 m: piu' grandi dell'area di 35 m del kit, solo per prova); con GN 0 nec2c da' R negativa (-3,6 ohm): serve il terreno di Sommerfeld
+CM riferimento nec2c: 1.800 MHz Z 5.34 -19.67j; 1.830 MHz Z 5.51 -6.38j; 1.840 MHz Z 5.57 -1.97j; 1.900 MHz Z 5.92 +24.21j; 2.000 MHz Z 6.55 +67.14j
+CE
+GW 1 15 0 0 2.500 0 0 16.000 0.0005
+GW 2 15 0 0 16.000 8.767 8.767 8.065 0.0005
+GW 3 15 0 0 16.000 -8.767 8.767 8.065 0.0005
+GW 4 15 0 0 16.000 -8.767 -8.767 8.065 0.0005
+GW 5 15 0 0 16.000 8.767 -8.767 8.065 0.0005
+GW 6 38 0 0 2.500 38.000 0.000 2.500 0.0005
+GW 7 38 0 0 2.500 0.000 38.000 2.500 0.0005
+GW 8 38 0 0 2.500 -38.000 0.000 2.500 0.0005
+GW 9 38 0 0 2.500 -0.000 -38.000 2.500 0.0005
+GE 1
+GN 2 0 0 0 13 0.005
+EX 0 1 1 0 1 0
+FR 0 41 0 0 1.8 0.005
+RP 0 1 1 1000 70 0 0 0
+EN

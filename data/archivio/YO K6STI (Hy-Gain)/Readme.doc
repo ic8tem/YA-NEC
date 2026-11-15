@@ -1,0 +1,46 @@
+Re: YO input data files
+
+From:  Roger Cox - Telex/Hy-Gain, Lincoln, NE  14 Apr 1998
+
+
+  The files on this disk are input data files meant to be
+used with the program - Yagi Optimizer by Brian Beezley K6STI.
+The files that end with "YAG" may be used with Yagi Optimizer
+Version 4, 5 or 6. 
+
+These files represent Hy-Gain single-band Yagi antennas
+for the 20,17,15,12, and 10 meter bands.  The "BA" antennas
+are older designs and the YO-models may or may not have been
+verified. The "CA" antennas have been designed using YO and
+have been completely verified on Hy-Gain's antenna test
+range.  The VSWR of our antennas have been measured using
+Hewlitt-Packard Network Analyzers models 8505 and 8752A. The
+radiation patterns were measured using an 80 foot rotating
+pole and Scientific Atlanta model 1530 polar recorder.(see
+page 46 February 1985 QST)
+
+   The numbers on the end of each file indicate the setting
+of each model, e.g. HG155CA1 indicates that this file is the
+Hy-Gain model 155CA setting number 1.  Usually, setting
+number 1 will be the lowest setting or the CW setting.
+
+   The YO input data files should be complete with
+information on all available settings as of this date.  The
+YS input data files represent one setting for each model.
+You may create the files for the other settings, if you wish.
+We have many more settings for these antennas that are
+considered experimental at this time.  That is, we have
+modeled the antennas with YO and YS, but we have not yet
+verified the performance on our range.  Some of these are
+maximum gain, maximum F/B and broad-band settings.  These
+experimental settings are not included om this disk, however
+if you are interested in trying one of these, please let me
+know.
+
+   The 105CA files were updated on July 26, 1993, as the 105BA-S 
+has been replaced now with the 105CA.  The 105CA contains the same
+parts as the 105BA-S, however it has 7 standard settings.
+
+  If you require additional information, call Roger Cox,
+WB0DGF, at Telex/Hy-Gain  Phone: 402-467-5321   or 402-465-7084 
+from 8 - 4 pm central time.

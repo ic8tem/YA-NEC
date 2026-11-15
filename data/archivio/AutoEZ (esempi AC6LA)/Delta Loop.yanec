@@ -1,0 +1,142 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Delta Loop
+CM YANEC DESCRIZIONE=Delta Loop
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Delta Loop.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14.175	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+_74	"_Loop circumference, ft"				
+_35	"_Base height, ft"				
+_20	_Segs per WL				
+_=A / (2 + 2 * SQRT(2))	"_±Y coordinate and base to apex, ft"				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	_Delta Loop							
+	_0	_=-E	_=B	_0	_=E	_=B	_#12	_=ODD(WireLen / WL * D)
+	_0	_=E	_=B	_0	_0	_=B+E	_#12	_=ODD(WireLen / WL * D)
+	_0	_0	_=B+E	_0	_=-E	_=B	_#12	_=ODD(WireLen / WL * D)
+_1	_50	_1	_0	_V				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	4	1	1	0	1	50	0	15	14.175	14.175	1													TRUE	FALSE	_1	_0
+_Freq (MHz)	_D																													
+_14.175	_10																													
+_14.175	_20																													
+_14.175	_30																													
+_14.175	_40																													
+_14.175	_50																													
+_14.175	_60																													
+_14.175	_70																													
+_14.175	_80																													
+_14.175	_90																													
+_14.175	_100
+_14.175	_110
+_14.175	_120
+_14.175	_130
+_14.175	_140
+_14.175	_150
+16	

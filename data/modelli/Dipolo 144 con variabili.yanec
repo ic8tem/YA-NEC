@@ -1,0 +1,24 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Dipolo 144 con variabili
+CM YANEC DESCRIZIONE=Dipolo a mezz'onda per 144,3 MHz costruito con le variabili (schede SY)
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Dipolo 144 con variabili.nec
+CM YANEC CONTENUTO=nec
+CM Dipolo a mezz'onda per 144,3 MHz costruito con le variabili (schede SY)
+CM Provare la linguetta Variabili: L = lunghezza totale, D = diametro del tubo
+CM YA-NEC Z0=50
+CM YA-NEC VAR L: lunghezza totale del dipolo (m)
+CM YA-NEC VAR H: meta' lunghezza, estremi del filo (m)
+CM YA-NEC VAR D: diametro del tubo (m)
+CM YA-NEC VAR R: raggio del tubo (m)
+CM YA-NEC VAR NS: numero di segmenti, dispari per avere il centro
+CE
+SY L=1000*MM, H=L/2
+SY D=4*MM, R=D/2
+SY NS=ODD(20)
+GW 1 NS 0 -H 0 0 H 0 R
+GE 0
+EX 0 1 (NS+1)/2 0 1 0
+FR 0 1 0 0 144.3 0
+EN

@@ -1,0 +1,184 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=OCF Dipole
+CM YANEC DESCRIZIONE=OCF Dipole
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=OCF Dipole.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	3.9	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***																
+
+_1	"_  Number of elements, 1 or 2"																				
+_4	"_  Feedpoint balun / transformer Port 2 Rel Z (eg ""4"" for a ""1:4"" balun)"										_Scroll down to see additional dependent variables.										
+_0.5	_  Segment length																				
+		"_To specify a wire angle append ""d"" for ""degrees"".  For example, a value of"																			
+_          Element 1		"_=""""""60"""" means an end height of 60 "" & LOWER(UnitsXYZLong) & "" while """"60d"""" means an angle of 60 degrees"""																			
+_135	_  Total wire length	"_up from vertical.  Use of ""d"" not needed when setting CCW rotation angles."																			
+_33	"_  Feedpoint percent offset from end (do not include ""%"")"																				
+_50	_  Feedpoint height																				
+_30	"_  End height (or wire angle), side A - see above"		"_=IF(ISNUMBER(L), ""   Side A angle is "" & FIXED(BJ, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(BG - BH * COS(RADIANS(BJ)), 3) & "" "" & LOWER(UnitsXYZLong) & ""."")"																		_*****   Calculated values.   *****   Do not modify any variables below here.   *****
+_30	"_  End height (or wire angle), side B"		"_=IF(ISNUMBER(M), ""   Side B angle is "" & FIXED(BK, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(BG - BI * COS(RADIANS(BK)), 3) & "" "" & LOWER(UnitsXYZLong) & ""."")"																	_=K	"_Feedpoint section height, element 1"
+_0	"_  CCW rotation in XY plane, side A"		"_=""   Apex angle is "" & FIXED(BJ + BK, 1) & "" degrees."""																	_=I * J/100 - 1.5 * E	_Side A section length
+_0	"_  CCW rotation in XY plane, side B"																			_=I * (1-J/100) - 1.5 * E	_Side B section length
+																				"_=IF(ISNUMBER(L), DEGREES(ACOS((BG - L) / BH)), VALUE(SUBSTITUTE(L, ""d"", """")))"	"_Angle off vertical, A"
+"_=IF(B>=2, ""          Element 2"", ""          Element 2 (NOT IN USE)"")"																				"_=IF(ISNUMBER(M), DEGREES(ACOS((BG - M) / BI)), VALUE(SUBSTITUTE(M, ""d"", """")))"	"_Angle off vertical, B"
+_0	_  Total wire length																				
+_0	"_  Feedpoint percent offset from end (do not include ""%"")"																			_=U	"_Feedpoint section height, element 2"
+_0	_  Feedpoint height (feedpoints must be separated by at least a small amount)																			_=S * T/100 - 1.5 * E	_Side A section length
+_0	"_  End height (or wire angle), side A"		"_=IF(B>=2, IF(ISNUMBER(V), ""   Side A angle is "" & FIXED(BP, 1) & "" degrees up from vertical."", ""   Side A end height is "" & FIXED(BM - BN * COS(RADIANS(BP)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"																	_=S * (1-T/100) - 1.5 * E	_Side B section length
+_0	"_  End height (or wire angle), side B"		"_=IF(B>=2, IF(ISNUMBER(X), ""   Side B angle is "" & FIXED(BQ, 1) & "" degrees up from vertical."", ""   Side B end height is "" & FIXED(BM - BO * COS(RADIANS(BQ)), 3) & "" "" & LOWER(UnitsXYZLong) & "".""), ""   n/a"")"																	"_=IF(B>=2, IF(ISNUMBER(V), DEGREES(ACOS((BM - V) / BN)), VALUE(SUBSTITUTE(V, ""d"", """"))), 0)"	"_Angle off vertical, A"
+_0	"_  CCW rotation in XY plane, side A"		"_=IF(B>=2, ""   Apex angle is "" & FIXED(BP + BQ, 1) & "" degrees."", ""   n/a"")"																	"_=IF(B>=2, IF(ISNUMBER(X), DEGREES(ACOS((BM - X) / BO)), VALUE(SUBSTITUTE(X, ""d"", """"))), 0)"	"_Angle off vertical, B"
+_0	"_  CCW rotation in XY plane, side B"																				
+	_OCF Dipole(s)																				
+	"_See ""Collected Short Examples: Part 4"" on the AutoEZ web page."																				
+	_Element 1																				
+	"_=BH * SIN(RADIANS(BJ)) * SIN(RADIANS(SUBSTITUTE(N,""d"","""")))"	"_=-BH * SIN(RADIANS(BJ)) * COS(RADIANS(SUBSTITUTE(N,""d"",""""))) - 1.5 * E"	_=BG - BH * COS(RADIANS(BJ))	_0	_=-1.5 * E	_=BG	_#12	"_=CEILING(WireLen / E, 1)"													
+	_0	_=-1.5 * E	_=BG	_0	_=1.5 * E	_=BG	_#12	_3													
+	_0	_=1.5 * E	_=BG	"_=-BI * SIN(RADIANS(BK)) * SIN(RADIANS(SUBSTITUTE(O,""d"","""")))"	"_=BI * SIN(RADIANS(BK)) * COS(RADIANS(SUBSTITUTE(O,""d"",""""))) + 1.5 * E"	_=BG - BI * COS(RADIANS(BK))	_#12	"_=CEILING(WireLen / E, 1)"													
+"_=IF(B>=2, """", ""X"")"	"_=IF(B>=2, ""Element 2"", ""Element 2 (NOT IN USE)"")"																				
+"_=IF(B>=2, """", ""X"")"	"_=BN * SIN(RADIANS(BP)) * SIN(RADIANS(SUBSTITUTE(Y,""d"","""")))"	"_=-BN * SIN(RADIANS(BP)) * COS(RADIANS(SUBSTITUTE(Y,""d"",""""))) - 1.5 * E"	_=BM - BN * COS(RADIANS(BP))	_0	_=-1.5 * E	_=BM	_#12	"_=CEILING(WireLen / E, 1)"													
+"_=IF(B>=2, """", ""X"")"	_0	_=-1.5 * E	_=BM	_0	_=1.5 * E	_=BM	_#12	_3													
+"_=IF(B>=2, """", ""X"")"	_0	_=1.5 * E	_=BM	"_=-BO * SIN(RADIANS(BQ)) * SIN(RADIANS(SUBSTITUTE(Z,""d"","""")))"	"_=BO * SIN(RADIANS(BQ)) * COS(RADIANS(SUBSTITUTE(Z,""d"",""""))) + 1.5 * E"	_=BM - BO * COS(RADIANS(BQ))	_#12	"_=CEILING(WireLen / E, 1)"																								
+	"_=""Number of segments for each wire is set as """"E"""" "" & UnitsXYZ & "" per segment.  To reduce the number of segments"""																															
+	"_use a larger value for ""E"".  Center wire for each element is exactly 3 segments, length 3 * E."																															
+	_Add any additional wires below this row.																															
+_Source on Port 1 side of balun / transformer																										_Balun / transformer on center of Element 1						
+_V1		_1	_0	_I																						_V1		_2	_50	_1	_=D	_N
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_Transmission line for element interconnect (if 2 elements) is no-loss with Len=1e-8 (may display as 0)												
+_2	_50	_5	_50	_0.00000001	_50	_1	_N	_0	_0			"_=IF(B>=2, """", ""X"")"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	4	1	1	0	1	50	0	15	14.175	14.175	1													TRUE	FALSE	_1	_0
+_Freq (MHz)																														
+_3.5
+_3.6
+_3.7
+_3.8
+_3.9
+_4
+_7
+_7.06
+_7.12
+_7.18
+_7.24
+_7.3
+_10.1
+_10.11
+_10.12
+_10.13
+_10.14
+_10.15
+_14
+_14.07
+_14.14
+_14.21
+_14.28
+_14.35
+_18.068
+_18.088
+_18.108
+_18.128
+_18.148
+_18.168
+_21
+_21.09
+_21.18
+_21.27
+_21.36
+_21.45
+_24.89
+_24.91
+_24.93
+_24.95
+_24.97
+_24.99
+_28
+_28.2
+_28.4
+_28.6
+_28.8
+_29
+49

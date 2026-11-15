@@ -1,0 +1,30 @@
+Butternut HF2V, HF6V-X, HF9V-X - modelli ricostruiti da YA-NEC (12/11/2026) per IC8TEM
+
+Cosa c'e'
+  *_A.nec  terreno perfetto, alimentazione 12 cm sopra il suolo (tubo A + isolatore), componenti senza perdite
+  *_B.nec  stessi componenti, 32 radiali da 10,67 m a 5 cm dal suolo (installazione di WB9DLC), terreno medio di
+           Sommerfeld (GN 2, eps 13, sigma 0,005): YA-NEC 0.3.5 non ha ancora Sommerfeld, servono nec2c/4nec2/EZNEC
+  *.maa    variante A per MMANA-GAL (carichi LC: L e C insieme = circuito parallelo come in MMANA; un L-C serie e'
+           scritto come due carichi su due fili)
+  Nei commenti di ogni file: valori dei componenti e impedenze/guadagni calcolati con nec2c per ogni banda.
+
+Da dove vengono le misure
+  Tubi (diametri, lunghezze, sovrapposizioni), quote delle bobine e del filo 15 m: manuali Butternut (HF2V inglese,
+  HF6V-X/HF9V-X italiano, HF6V e HF9V di Bencher/OK1IKE). Condensatori: 200 pF (80 m), 67 pF (40 m) dal manuale,
+  67 pF del gruppo 30 m da VK3IU. HF2V: il condensatore 80 m e' IPOTIZZATO 200 pF (non scritto nel manuale).
+  Altezze: HF6V-X/HF9V-X 26 ft dall'alimentazione alla punta (7,93 m), HF2V 32 ft.
+
+Cosa e' stato tarato (le induttanze non sono scritte da nessuna parte)
+  Come si fa con l'antenna vera: ogni regolazione del manuale porta la risonanza (X = 0) alla frequenza indicata:
+  L80 -> 3,70 MHz, L40 -> 7,15, ramo 30 m -> 10,12, presa sulle spire della L40 -> 14,15, filo 15 m -> 21,20,
+  tubo J -> 28,50, filo 6 m -> 50,10 (HF9V-X). HF2V: 3,75 e 7,15 MHz.
+  Valori ottenuti (HF6V-X): L80 6,23 uH, L40 2,53 uH (presa al 43 %), L30 1,37 uH, filo 15 m 3,58 m (manuale 3,43),
+  J 0,92 m fuori dal tubo I. HF2V: L80 5,82 uH, L40 5,12 uH. Valori HF9V-X nel file.
+
+Limiti da conoscere
+  - Kit A-17-12 (17 e 12 m) non modellato: mancano lunghezze delle piattine X/Z e spire delle bobine W/Y; con un
+    risonatore bobina + piattina di prova il NEC non da' l'adattamento promesso. Servono misure o foto.
+  - 20 m: il modello da' 170-200 ohm (terreno perfetto) e 220-260 ohm (radiali), Butternut dichiara circa 100 ohm.
+  - Non modellati: bobina Q di base, linea da 75 ohm (adattamento), perdite delle bobine (Q), condensatori reali.
+  - Zona delle bobine con segmenti uniformi di 3 cm: con segmenti piu' lunghi il NEC-2 sposta un polo spurio vicino
+    ai 40 m (lezione per gli avvisi di segmentazione, vedi Mining_manuali.md sezione C).

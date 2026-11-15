@@ -1,0 +1,160 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=TFD
+CM YANEC DESCRIZIONE=TFD
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=TFD.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	28.5	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+
+_1000	"_Applied (input) power, watts"				
+_#N/A	"_Load power, watts (calculated)"	_LoadPower = LoadAmps^2 * LoadR and			
+	"_   Note that ""D"" and ""J"" are"	_with a 1A source SrcPower = 1A^2 * SrcR = SrcR.			
+	"_   *calculated*, not set directly."	"_So load power at ""B"" watts input = LoadAmps^2 * LoadR * (B / SrcR)."			
+	_   See Calculate sheet for values.	_(Also see note below on row 29.)			
+	_   Will always show here as #N/A.				
+_#N/A	"_Load loss, dB (calculated)"	_ =-10 * LOG10(1 - (LoadPower / InputPower))			
+		"_Formulas to set ""D"" and ""J"" are on the Calculate sheet."			
+_89.24	"_Wire length, feet"				
+_7.8	"_Wire spacing, inches"				
+_15	"_Tilt angle, deg, down from horizontal"				
+_50	"_Height, feet, top wire (top end if tilted)"				
+
+_820	"_Load (terminating) resistor, ohms"				
+_16	_Transformer Port 2 Rel Z (Ratio 1:S)							
+
+		_Note:  As an alternative you could set the input power level via						
+		_EZNEC Options > Power Level and then *NOT* apply correction						
+		"_factor ""(B / SrcR)"" to the calculated load power since EZNEC will"						
+		_have adjusted the reported LoadAmps already.						
+
+	_Terminated Folded Dipole							
+	"_Wires are in over/under configuration, can be rotated down by any angle and elevated to any height."							
+	"_Top and bottom wires are ""L"" feet long, spacing between wires is ""M"" inches converted to feet."							
+	"_Start with wires oriented horizontally, top wire (#2, row 15) at Z=0."							
+_rx	_0	_0	_=-M/12	_0	_=L	_=-M/12	_#14	_=ODD(WireLen / 32.786 * 25)
+_rx	_0	_0	_0	_0	_=L	_0	_#14	_=ODD(WireLen / 32.786 * 25)
+_rx	_0	_0	_0	_0	_0	_=-M/12	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"
+_rx	_0	_=L	_0	_0	_=L	_=-M/12	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"
+	"_Rotate outside end down by ""N"" degrees."							
+_m	_=$B$14	"_=ROUND($C$14 * COS(RADIANS(-N)) - $D$14 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$14 * SIN(RADIANS(-N)) + $D$14 * COS(RADIANS(-N)), 9)"	_=$E$14	"_=ROUND($F$14 * COS(RADIANS(-N)) - $G$14 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$14 * SIN(RADIANS(-N)) + $G$14 * COS(RADIANS(-N)), 9)"	_#14	_=ODD(WireLen / 32.786 * 25)																								
+_m	_=$B$15	"_=ROUND($C$15 * COS(RADIANS(-N)) - $D$15 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$15 * SIN(RADIANS(-N)) + $D$15 * COS(RADIANS(-N)), 9)"	_=$E$15	"_=ROUND($F$15 * COS(RADIANS(-N)) - $G$15 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$15 * SIN(RADIANS(-N)) + $G$15 * COS(RADIANS(-N)), 9)"	_#14	_=ODD(WireLen / 32.786 * 25)																								
+_m	_=$B$16	"_=ROUND($C$16 * COS(RADIANS(-N)) - $D$16 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$16 * SIN(RADIANS(-N)) + $D$16 * COS(RADIANS(-N)), 9)"	_=$E$16	"_=ROUND($F$16 * COS(RADIANS(-N)) - $G$16 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$16 * SIN(RADIANS(-N)) + $G$16 * COS(RADIANS(-N)), 9)"	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+_m	_=$B$17	"_=ROUND($C$17 * COS(RADIANS(-N)) - $D$17 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$17 * SIN(RADIANS(-N)) + $D$17 * COS(RADIANS(-N)), 9)"	_=$E$17	"_=ROUND($F$17 * COS(RADIANS(-N)) - $G$17 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$17 * SIN(RADIANS(-N)) + $G$17 * COS(RADIANS(-N)), 9)"	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+	"_Move all wires up by ""O"" feet."																															
+	_=$B$19	_=$C$19	_=$D$19 + O	_=$E$19	_=$F$19	_=$G$19 + O	_#14	_=ODD(WireLen / 32.786 * 25)																								
+	_=$B$20	_=$C$20	_=$D$20 + O	_=$E$20	_=$F$20	_=$G$20 + O	_#14	_=ODD(WireLen / 32.786 * 25)																								
+	_=$B$21	_=$C$21	_=$D$21 + O	_=$E$21	_=$F$21	_=$G$21 + O	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+	_=$B$22	_=$C$22	_=$D$22 + O	_=$E$22	_=$F$22	_=$G$22 + O	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+
+	_Credit:  Initial values for variables L/M/Q/S per W4RNL																															
+_V1		_1	_0	_I																						_V1		_1	_50	_1	"_=MAX(1, S)"	_N
+																										"_Formula in cell H112 is ""=MAX(1, S)"" so that the value can never go below 1."						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_2	_50	"_=MAX(0, Q)"				_Ser	_Ser
+"_Formula in cell E40 is ""=MAX(0, Q)"" so that the value can never go below 0."							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	4	1	1	0	1	50	0	20																FALSE	TRUE	_1	_0
+_Freq (MHz)	_D	_J																												
+_3.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G11)"	_=-10 * LOG10(1 - ($C11 / B))																												
+_7.15	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G12)"	_=-10 * LOG10(1 - ($C12 / B))																												
+_10.125	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G13)"	_=-10 * LOG10(1 - ($C13 / B))																												
+_14.175	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G14)"	_=-10 * LOG10(1 - ($C14 / B))																												
+_18.118	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G15)"	_=-10 * LOG10(1 - ($C15 / B))																												
+_21.225	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G16)"	_=-10 * LOG10(1 - ($C16 / B))																												
+_24.94	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G17)"	_=-10 * LOG10(1 - ($C17 / B))																												
+_28.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G18)"	_=-10 * LOG10(1 - ($C18 / B))																												
+
+"_This model and the formulas used for variables ""D"" and ""J"" above are discussed at:"
+_http://ac6la.com/aecollection7.html
+_#N/A means that results are not available since calculations have not yet been done.
+"_To show values for ""D"" and ""J"" click ""Calculate All Rows""."
+"_To plot those values, on the Custom tab select ""Variable 1"" or ""Variable 2"" for the Y axis."
+"_Optionally, for the X axis select ""Frequency - Column"" instead of ""Frequency - Line""."
+
+"_To sweep over a continuous range from 3 to 30 MHz open ""TFD_Sweep3-30.weq""."
+18

@@ -1,0 +1,51 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Four-square 7 MHz con radiali (terreno medio)
+CM YANEC DESCRIZIONE=Four-square 7,1 MHz - modello di principio REALE (IC8TEM / YA-NEC)
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Four-square 7 MHz con radiali (terreno medio).nec
+CM YANEC CONTENUTO=nec
+CM Four-square 7,1 MHz - modello di principio REALE (IC8TEM / YA-NEC)
+CM 4 verticali (10,22 m) con 4 radiali sopraelevati ciascuna (10,4 m, a 2,5 m
+CM dal suolo, verso l'esterno)
+CM su terreno medio (13; 0,005 S/m). Lato del quadrato lambda/4 = 10,56 m, lobo
+CM verso +X.
+CM Correnti imposte: A 1/0, B e C 1/-90, D 1/-180 gradi; tensioni EX calcolate
+CM per questa geometria.
+CM Risultati di riferimento (nec2c): 5,55 dBi a 22 gradi di elevazione, F/B
+CM circa 20 dB;
+CM impedenze A 6,0 -j2,2  B e C 32,3 -j10,8  D 48,1 +j32,9 ohm.
+CM Nota: con verticali appoggiate al terreno reale il NEC2 (senza Sommerfeld)
+CM non e' affidabile:
+CM per questo il modello reale usa i radiali sopraelevati.
+CM YA-NEC Z0=50
+CE
+GW 1 21 -7.4643 0.0000 2.5 -7.4643 0.0000 12.7171 0.015
+GW 2 9 -7.4643 0.0000 2.5 -11.4442 9.6083 2.5 0.001
+GW 3 9 -7.4643 0.0000 2.5 -17.0726 3.9799 2.5 0.001
+GW 4 9 -7.4643 0.0000 2.5 -17.0726 -3.9799 2.5 0.001
+GW 5 9 -7.4643 0.0000 2.5 -11.4442 -9.6083 2.5 0.001
+GW 6 21 0.0000 7.4643 2.5 0.0000 7.4643 12.7171 0.015
+GW 7 9 0.0000 7.4643 2.5 9.6083 11.4442 2.5 0.001
+GW 8 9 0.0000 7.4643 2.5 3.9799 17.0726 2.5 0.001
+GW 9 9 0.0000 7.4643 2.5 -3.9799 17.0726 2.5 0.001
+GW 10 9 0.0000 7.4643 2.5 -9.6083 11.4442 2.5 0.001
+GW 11 21 0.0000 -7.4643 2.5 0.0000 -7.4643 12.7171 0.015
+GW 12 9 0.0000 -7.4643 2.5 -9.6083 -11.4442 2.5 0.001
+GW 13 9 0.0000 -7.4643 2.5 -3.9799 -17.0726 2.5 0.001
+GW 14 9 0.0000 -7.4643 2.5 3.9799 -17.0726 2.5 0.001
+GW 15 9 0.0000 -7.4643 2.5 9.6083 -11.4442 2.5 0.001
+GW 16 21 7.4643 0.0000 2.5 7.4643 0.0000 12.7171 0.015
+GW 17 9 7.4643 0.0000 2.5 11.4442 -9.6083 2.5 0.001
+GW 18 9 7.4643 0.0000 2.5 17.0726 -3.9799 2.5 0.001
+GW 19 9 7.4643 0.0000 2.5 17.0726 3.9799 2.5 0.001
+GW 20 9 7.4643 0.0000 2.5 11.4442 9.6083 2.5 0.001
+GE 0
+GN 0 0 0 0 13 0.005
+EX 0 1 1 0 6.00538 -2.24174
+EX 0 6 1 0 -10.82392 -32.33873
+EX 0 11 1 0 -10.82392 -32.33873
+EX 0 16 1 0 -48.06761 -32.86761
+FR 0 1 0 0 7.1 0
+RP 0 91 361 1000 0 0 1 1
+EN

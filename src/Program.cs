@@ -1,0 +1,191 @@
+// YA-NEC - avvio (Windows, Linux, Mac).
+// --autotest: confronto del motore con nec2c (data/autotest.txt) e termina.
+// --collaudo: tutte le procedure di collaudo senza finestra (data/collaudo.txt) e termina.
+// --prove-pesanti (0.4.18): i 3 modelli piu' pesanti senza finestra, tempi delle fasi del motore (data/prove_pesanti.txt) e termina.
+// --passi <resoconto> <uscita>: elenco dei passi con AVVISO o ERRORE del resoconto (per compila.bat).
+// --prove-sensibili (0.4.20): modelli sensibili e aggressivi, LU a blocchi contro classica, calibrazione con EZNEC (data/prove_sensibili.txt).
+// --confronta-eznec [cartella] (0.4.20): confronto dei risultati di EZNEC con il riferimento di YA-NEC (confronto_eznec.txt).
+// --confronta-archivio [cartella] (0.4.20): modelli d'archivio ancora oltre lo 0,1 % da EZNEC, riletti e ricalcolati (confronto_archivio.txt).
+// --esporta-eznec [cartella] (0.4.20): modelli dei calcolatori in .nec e .ez, riletti e ricalcolati, per le prove con EZNEC (compila.bat).
+// --prepara-gradini [archivio] [uscita], --confronta-gradini [uscita] (0.4.30): elementi a gradini uno per uno contro EZNEC (fasi 2K e 2L).
+// --tara-gradini [uscita] (0.5.3): taratura di Leeson sotto la risonanza sui valori di EZNEC (fase 2L bis).
+// --prepara-varianti [archivio] [uscita], --confronta-varianti [uscita] (0.4.30): varianti dei 7 modelli vicini al terreno contro EZNEC (2M e 2N).
+// --registro: avvia il programma normale scrivendo il registro anche in data/registro.txt (per compila.bat).
+// Dalla 0.4.2 il registro e' sempre attivo nella cartella Registri accanto al programma (Diag/Registro.cs) e le librerie
+// native (DLL, .so, .dylib) stanno nella sottocartella "lib" (Librerie.Prepara, prima di qualunque altra cosa).
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Avalonia;
+
+namespace YaNec
+{
+    internal static class Program
+    {
+        [STAThread]
+        public static int Main(string[] args)
+        {
+            // --passi <resoconto> <uscita>: elenco dei passi da guardare per compila.bat (senza finestra e senza registro)
+            if (args.Length >= 3 && args[0] == "--passi") return PassiDaGuardare.Scrivi(args[1], args[2]);
+            Librerie.Prepara();
+            List<string> la = new List<string>(args);
+            string copia = la.Contains("--registro") || la.Contains("--prove-interfaccia") || la.Contains("--prove-butternut") ? Path.Combine(AppPaths.DataDir, "registro.txt") : null;
+            string modo = la.Contains("--prepara-varianti") ? "varianti vicino al terreno per EZNEC" : la.Contains("--confronta-varianti") ? "varianti vicino al terreno contro EZNEC" : la.Contains("--prepara-gradini") ? "elementi a gradini per EZNEC" : la.Contains("--confronta-gradini") ? "elementi a gradini contro EZNEC" : la.Contains("--tara-gradini") ? "taratura di Leeson sugli elementi a gradini" : la.Contains("--confronta-archivio") ? "confronto d'archivio con EZNEC" : la.Contains("--confronta-eznec") ? "confronto con EZNEC" : la.Contains("--prove-sensibili") ? "modelli sensibili" : la.Contains("--esporta-eznec") ? "esportazione per EZNEC" : la.Contains("--prove-pesanti") ? "modelli pesanti" : la.Contains("--collaudo") ? "collaudo" : la.Contains("--autotest") ? "autotest" : la.Contains("--prove-interfaccia") ? "prove dell'interfaccia" :
+                la.Contains("--prove-butternut") ? "prova della Butternut" : "interfaccia grafica";
+            Registro.Avvia(copia, modo);
+            Registro.Scrivi("AVVIO", "librerie native: " + Librerie.Descrizione);
+            foreach (string a in args) if (a == "--solo-novita") Collaudo.SoloNovita = true;
+            // 0.4.30: le prove che confrontano con nec2c usano la sua velocita' della luce (299,8); quelle con EZNEC e il programma normale 299,792458
+            if (la.Contains("--collaudo") || la.Contains("--autotest") || la.Contains("--prove-pesanti") || la.Contains("--prove-sensibili") || la.Contains("--prove-interfaccia") || la.Contains("--prove-butternut"))
+            {
+                Engine.Nec2Engine.Cvel = Engine.Nec2Engine.CVEL_NEC2;
+                Engine.Nec2Engine.CvelBloccata = true;
+                Registro.Scrivi("AVVIO", "velocita' della luce del motore 299,8 (come nec2c) per le prove di confronto");
+            }
+            // 0.4.20: senza finestra (collaudo, modelli pesanti, autotest, esportazione) il calcolo usa tutti i processori
+            if (la.Contains("--collaudo") || la.Contains("--prove-pesanti") || la.Contains("--autotest") || la.Contains("--esporta-eznec") || la.Contains("--prove-sensibili") || la.Contains("--confronta-archivio") || la.Contains("--prepara-gradini") || la.Contains("--confronta-gradini") || la.Contains("--tara-gradini") || la.Contains("--prepara-varianti") || la.Contains("--confronta-varianti")) Engine.Processori.RiservaInterfaccia = false;
+            foreach (string a in args)
+            {
+                if (a == "--collaudo")
+                {
+                    int rc;
+                    using (Prestazioni.Misura("Collaudo completo")) rc = Collaudo.Esegui();
+                    Registro.Scrivi("FINE", "collaudo terminato, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                // 0.4.18 (richiesta di IC8TEM del 14/11/2026 09:17): i 3 modelli piu' pesanti, tempi delle fasi del motore (fase 2E di compila.bat)
+                if (a == "--prove-pesanti")
+                {
+                    int rc;
+                    using (Prestazioni.Misura("Collaudo dei modelli pesanti")) rc = ModelliPesanti.Esegui();
+                    Registro.Scrivi("FINE", "modelli pesanti terminati, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                // 0.4.20 (richiesta di IC8TEM del 14/11/2026 15:25): i modelli piu' sensibili e aggressivi, con la calibrazione EZNEC (fase 2F)
+                if (a == "--prove-sensibili")
+                {
+                    int rc;
+                    using (Prestazioni.Misura("Collaudo dei modelli sensibili")) rc = ProveSensibili.Esegui();
+                    Registro.Scrivi("FINE", "modelli sensibili terminati, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                // 0.4.20 (richiesta di IC8TEM del 14/11/2026 15:25): modelli dei calcolatori in .nec e .ez per la calibrazione con EZNEC
+                // 0.4.20 (IC8TEM 14/11/2026 18:54): i soli modelli d'archivio con scarti da EZNEC oltre lo 0,1 %
+                if (a == "--confronta-archivio")
+                {
+                    int i = la.IndexOf("--confronta-archivio");
+                    string cart = i + 1 < la.Count && !la[i + 1].StartsWith("--", StringComparison.Ordinal) ? la[i + 1] : null;
+                    int rc;
+                    using (Prestazioni.Misura("Confronto d'archivio con EZNEC")) rc = ConfrontoArchivio.Esegui(cart);
+                    Registro.Scrivi("FINE", "confronto d'archivio terminato, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                // 0.4.30 (IC8TEM 14/11/2026 23:13): varianti dei 7 modelli vicini al terreno contro EZNEC (quota, segmenti, terreno)
+                if (a == "--prepara-varianti" || a == "--confronta-varianti")
+                {
+                    int i = la.IndexOf(a);
+                    string c1 = i + 1 < la.Count && !la[i + 1].StartsWith("--", StringComparison.Ordinal) ? la[i + 1] : null;
+                    string c2 = i + 2 < la.Count && c1 != null && !la[i + 2].StartsWith("--", StringComparison.Ordinal) ? la[i + 2] : null;
+                    int rc;
+                    using (Prestazioni.Misura("Varianti vicino al terreno contro EZNEC"))
+                        rc = a == "--prepara-varianti" ? VariantiTerreno.Prepara(c1, c2) : VariantiTerreno.Confronta(c1);
+                    Registro.Scrivi("FINE", "varianti vicino al terreno terminate, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                // 0.4.30 (IC8TEM 14/11/2026 21:52): elementi a gradini uno per uno contro la Stepped Diameter Correction di EZNEC
+                if (a == "--prepara-gradini" || a == "--confronta-gradini")
+                {
+                    int i = la.IndexOf(a);
+                    string c1 = i + 1 < la.Count && !la[i + 1].StartsWith("--", StringComparison.Ordinal) ? la[i + 1] : null;
+                    string c2 = i + 2 < la.Count && c1 != null && !la[i + 2].StartsWith("--", StringComparison.Ordinal) ? la[i + 2] : null;
+                    int rc;
+                    using (Prestazioni.Misura("Elementi a gradini contro EZNEC"))
+                        rc = a == "--prepara-gradini" ? GradiniElementi.Prepara(c1, c2) : GradiniElementi.Confronta(c1);
+                    Registro.Scrivi("FINE", "elementi a gradini terminati, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                // 0.5.3 (modifica Leeson A/B, via di IC8TEM 15/11/2026 21:57): prova B, taratura sotto la risonanza sui valori di EZNEC
+                if (a == "--tara-gradini")
+                {
+                    int i = la.IndexOf(a);
+                    string c1 = i + 1 < la.Count && !la[i + 1].StartsWith("--", StringComparison.Ordinal) ? la[i + 1] : null;
+                    int rc;
+                    using (Prestazioni.Misura("Taratura di Leeson"))
+                        rc = TaraturaLeeson.Tara(c1);
+                    Registro.Scrivi("FINE", "taratura di Leeson terminata, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                if (a == "--confronta-eznec")
+                {
+                    int i = la.IndexOf("--confronta-eznec");
+                    string cart = i + 1 < la.Count && !la[i + 1].StartsWith("--", StringComparison.Ordinal) ? la[i + 1] : null;
+                    int rc = EsportaEznec.Confronta(cart);
+                    Registro.Scrivi("FINE", "confronto con EZNEC terminato, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                if (a == "--esporta-eznec")
+                {
+                    int i = la.IndexOf("--esporta-eznec");
+                    string cart = i + 1 < la.Count && !la[i + 1].StartsWith("--", StringComparison.Ordinal) ? la[i + 1] : null;
+                    int rc;
+                    using (Prestazioni.Misura("Esportazione dei calcolatori per EZNEC")) rc = EsportaEznec.Esegui(cart);
+                    Registro.Scrivi("FINE", "esportazione per EZNEC terminata, codice " + rc);
+                    Registro.Chiudi();
+                    return rc;
+                }
+                if (a == "--prove-interfaccia") MainWindow.ProveAutomatiche = true;   // le prove a mano eseguite dal programma stesso
+                // 0.4.17 (richiesta di IC8TEM del 14/11/2026 09:12): la Butternut da 7877 segmenti si prova per ultima, a parte (fase 2D di compila.bat)
+                if (a == "--prove-butternut") { MainWindow.ProveAutomatiche = true; MainWindow.ProveSoloButternut = true; }
+                // 0.4.13: solo le novita' dopo la 0.4.10 (compila.bat senza /completo)
+                if (a == "--solo-novita") { MainWindow.ProveSoloNovita = true; Collaudo.SoloNovita = true; }
+            }
+            foreach (string a in args)
+                if (a == "--autotest")
+                {
+                    int bad = 0;
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    List<Engine.SelfTest.Line> righe;
+                    using (Prestazioni.Misura("Autotest del motore")) righe = new List<Engine.SelfTest.Line>(Engine.SelfTest.Run());
+                    foreach (Engine.SelfTest.Line l in righe)
+                    {
+                        sb.AppendLine((l.Pass ? "OK     " : "ERRORE ") + l.Name + "  " + l.Detail);
+                        if (!l.Pass) bad++;
+                    }
+                    sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
+                    Console.Write(sb.ToString());
+                    // con OutputType WinExe la console di Windows non mostra nulla: il resoconto va anche in data/autotest.txt
+                    try { File.WriteAllText(Path.Combine(AppPaths.DataDir, "autotest.txt"), sb.ToString()); } catch { }
+                    Registro.Scrivi("FINE", "autotest terminato: " + (bad == 0 ? "superato" : bad + " prove non superate"));
+                    Registro.Chiudi();
+                    return bad == 0 ? 0 : 1;
+                }
+            Registro.Scrivi("AVVIO", "interfaccia grafica, argomenti: " + string.Join(" ", args));
+            try
+            {
+                BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+            }
+            catch (Exception ex)
+            {
+                Registro.Scrivi("ECCEZIONE", ex.ToString());
+                try { File.WriteAllText(Path.Combine(AppPaths.DataDir, "errore_avvio.txt"), ex.ToString()); } catch { }
+                throw;
+            }
+            Registro.Scrivi("FINE", "programma chiuso normalmente");
+            Registro.Chiudi();
+            return MainWindow.ProveAutomatiche ? (MainWindow.ProveFinite ? MainWindow.ProveFallite : 10000) : 0;
+        }
+
+        public static AppBuilder BuildAvaloniaApp()
+        {
+            return AppBuilder.Configure<App>().UsePlatformDetect().WithInterFont().LogToTrace();
+        }
+    }
+}

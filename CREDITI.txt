@@ -1,0 +1,416 @@
+YA-NEC - CREDITI E RINGRAZIAMENTI
+
+YA-NEC esiste grazie al lavoro di colleghi radioamatori e ricercatori che hanno reso pubblico il loro codice.
+Un ringraziamento sentito a ciascuno di loro.
+
+RINGRAZIAMENTI
+  Luis Mansutti IV3PRK (iv3prk.it), per le pubblicazioni gratuite sul suo sito: antenne riceventi, misure e modelli che YA-NEC
+  usa nella linguetta Antenne riceventi e nei confronti di RDF.
+
+ESEMPI YAGI 144 MHZ (MMANA)
+  I4GBZ (11 el), Rainer Bertelsmeier DJ9BV (BVO2-3WL, 10 el), Martin Steyer DK7ZB (7 el EME), Makoto Kasahara JN1GLB
+  (hexbeam 6 bande): modelli MMANA forniti da IC8TEM, distribuiti tra gli esempi.
+
+NEC2 - NUMERICAL ELECTROMAGNETICS CODE
+  Gerald J. Burke e Andrew J. Poggio, Lawrence Livermore National Laboratory (1981)
+  Il metodo dei momenti per antenne a fili su cui si basa tutto il calcolo di YA-NEC.
+  Licenza: di pubblico dominio
+
+NEC2C
+  Neoklis Kyriazis 5B4AZ (traduzione in C del NEC2); repository curato da Eric KJ7LNW
+  Il motore di YA-NEC è la traduzione in C# delle sue routine (geometria, matrice, campi, diagramma). L'autotest confronta YA-NEC con nec2c sugli stessi modelli.
+  github.com/KJ7LNW/nec2c
+  Licenza: GPL-3.0
+
+XNEC2C
+  Neoklis Kyriazis 5B4AZ (autore), Eric KJ7LNW (manutenzione e sviluppo attuale)
+  L'interfaccia grafica di riferimento: finestre della struttura, dei diagrammi e dei dati in frequenza, carta di Smith.
+  github.com/KJ7LNW/xnec2c - www.xnec2c.org
+  Licenza: GPL-3.0
+
+XNEC2C-OPTIMIZE
+  Eric KJ7LNW
+  L'ottimizzatore simplex delle geometrie d'antenna: base della funzione di ottimizzazione prevista nella fase 5.
+  github.com/KJ7LNW/xnec2c-optimize
+  Licenza: GPL-3.0
+
+XNECVIEW
+  Pieter-Tjerk de Boer PA3FWM
+  Il visualizzatore da cui xnec2c ha preso parte del codice e l'impostazione grafica.
+  Licenza: GPL
+
+AUTOEZ
+  Dan Maguire AC6LA
+  Ispirazione per le funzioni delle prossime fasi (variabili, sweep su variabili, Resonate, AutoSeg, linee e reti, snapshot, terreni tipici). Nessun codice di AutoEZ è usato in YA-NEC.
+  ac6la.com
+  Licenza: programma commerciale, solo idee dalla documentazione pubblica
+
+MMANA / MMANA-GAL
+  Makoto Mori JE3HHT (MMANA, titolare del copyright); Igor Gontcharenko DL2KQ e Alexandr Schewelev DL1PBD (MMANA-GAL,
+  ultima versione basic 2.5 del 20/07/2010, scritta insieme a JE3HHT)
+  Cosa YA-NEC prende da MMANA (richiesta di IC8TEM del 13/11/2026: menzione adeguata):
+  - il formato dei file .maa, che YA-NEC apre e risegmenta per il NEC2;
+  - i file .maa usati come esempi e casi di studio (data/modelli e doc/riferimenti/da_validare), che restano dei loro
+    autori citati nei file e nella pagina Fonti (DK7ZB, SQ9VPA, DL6MI, W8JK, DX Commander, Spiderbeam, OptiBeam, ...);
+  - una libera interpretazione dell'impostazione delle sue schede: la tabella dei fili sotto la struttura 3D, una riga per
+    filo con estremi, raggio e segmenti; la posizione di sorgenti e carichi indicata come filo e punto del filo
+    (notazione "w4c": filo 4, centro) e la loro elencazione accanto ai fili; dall'help anche ottimizzatore, stack,
+    Taper wire set e strumenti (vedi sotto, fonti tecniche).
+  YA-NEC non contiene codice di MMANA ne' di MMANA-GAL: il motore e' NEC-2 (nec2c), non MININEC.
+  Licenza: MMANA-GAL basic e' freeware, copyright di Makoto Mori JE3HHT; copia e distribuzione libere del programma non
+  modificato, riconoscendo il copyright (help di MMANA-GAL basic, hamsoft.ca). I programmi MM di JE3HHT rilasciati come
+  sorgente aperto (LGPL, 2013) sono MMTTY, MMVARI e MMSSTV, non MMANA.
+
+AVALONIA UI 11.2.3 E .NET 8
+  Team di Avalonia UI; Microsoft e .NET Foundation
+  L'interfaccia multipiattaforma (Windows, Linux, Mac) e l'ambiente di esecuzione.
+  github.com/AvaloniaUI/Avalonia - dotnet.microsoft.com
+  Licenza: MIT
+
+CARATTERE INTER
+  Rasmus Andersson
+  Il carattere dell'interfaccia.
+  rsms.me/inter
+  Licenza: SIL Open Font License 1.1
+
+FONTI DEI CALCOLATORI, DEI CASI DI PROVA E DELLO STUDIO DEI MANUALI
+(idee, formule pubbliche e numeri di confronto; nessun codice e nessun testo copiato)
+  L. B. Cebik W4RNL (SK) - formule di regressione MOXGEN per il Moxon (on5au.be/content/a10/moxon/moxgen.html)
+  DK7ZB (qsl.net/dk7zb) - Moxon a filo (tabella per 6-30 m, casi dell'autotest), Quad 5 bande e MK II, J-pole in
+    piattina Wireman, principi delle Yagi OWL / OWM / V-Yagi, adattamento 28 ohm con due linee da 75 ohm
+  Hartmut Kluever DG7YBN (dg7ybn.de) - linee di fase, trasformatori lambda/4, divisori per stack, baluns, misura
+    del fattore di velocita', calcolatori tecnici e coassiali/divisori online; manuale illustrato di TANT
+  Sinisa YT1NT / VE3EA - TANT (temperatura d'antenna e G/T)
+  Dan Maguire AC6LA (ac6la.com) - AutoEZ, XLGTa (G/Ta, correzione KF2YN), MoxGen
+  Roy Lewallen W7EL - EZNEC (help della versione 7), sistemi di alimentazione delle schiere fasate e four-square
+  ARRL Antenna Book, 19a edizione (2000) e 24a edizione - terreni, radiali, schiere fasate, Yagi K1FO, cavi, Smith
+  MMANA-GAL (JE3HHT, DL2KQ, DL1PBD) - help: ottimizzatore, stack, Taper wire set, strumenti
+  ARRL Antenna Book 24a ed. (2019): cap. 8 modellazione (Greg Ordy W8WWV, Steve Stearns K6OIK), tabella delle perdite dei
+    cavi di Frank Donovan W3LPL (calcolatore VK1OD), Yagi ad alte prestazioni e G/T di Justin Johnson G0KSC, Yagi WA5VJB,
+    antenne riceventi (da ON4UN 5a ed.), Dave Leeson W6NL (correzioni di diametro e morsetti), Rudy Severns N6LF (radiali)
+  Al Koblinski W7XA - Mini-Moxon 40 m
+  Force 12 - manuale della XR-5 (misure degli elementi e linea "jacketed")
+  Dave Leeson W6NL (ex W6QHS) - correzione dei diametri a gradini ("Physical Design of Yagi Antennas", ARRL 1992)
+  Rainer Bertelsmeier DJ9BV (Dubus 4/87) e Lionel VE7BQH - temperatura d'antenna, tabelle G/T a 50, 144 e 432 MHz
+    (pubblicate da EA6VQ su dxmaps.com, da DK7ZB e SM2CEW)
+  DL6WU - spaziatura di stack delle Yagi
+  RA6FOO (ra6foo.qrz.ru) - differenze MININEC/MMANA e NEC, confronto EZNEC/MMANA/FEKO (con UA9LIF, RN6MT, UA9TC)
+  G3PTO (delta loop, dati Cebik); Rick Westerman DJ0IP e John Young K8BA (OCFD 80 m); W8UA (T2FD, Silvercreek ARA);
+    B&W AC3-30; voce T2FD di Wikipedia (Countryman W3HH, Belrose VE2CV)
+  I0JFE (calcolatore di impedenza su ir3ip.net), VE3SQB (gamma match)
+  Jim Brown K9YC (choke di modo comune su ferrite), Steve Hunt G3TXQ (misure dei choke), Tom Rauch W8JI (balun)
+    - fonti previste per la linguetta Balun
+  DX Commander (dxcommander.com) - verticale multibanda a ventaglio (linguetta sperimentale)
+  Butternut / Bencher / DX Engineering - manuali HF2V, HF6V(-X), HF9V(-X) (versione italiana Marcucci, traduzione Studio
+    Tecnico Mauro); Klaus Illhardt VK3IU (valori dei condensatori della HF6V); WB9DLC (Butternut Notes, 32 radiali);
+    Giorgio I1YST (ARI Sanremo, robustezza della HF9V); Larry KE5KJD (modelli MMANA della HF2V/HF6V consultati)
+  Luis Mansutti IV3PRK - antenne riceventi in 160 m e valori di RDF (CQ Friul 2/2008); Tom Rauch W8JI - definizione
+    dell'RDF; Hi-Z Antennas - tabella RDF; Francesco Fucelli IK0XBX (ARI Perugia) - "Le mie antenne RX";
+    John Devoldere ON4UN - "Low-Band DXing" 4a ed. (ARRL 2005): RDF/DMF, Beverage, loop riceventi, verticali e radiali,
+    schiere fasate e four-square, adattamenti (con i contributi di W8JI, K3LC Christman, Brown-Lewis-Epstein, K1TD,
+    WA2WVL, K9AY, W2PV, Lahlum, Collins, DL1VU)
+  Al Koblinski W7XA - 40 m Mini-MOXON con carico elicoidale
+  MMANA-GAL basic help (DL1PBD, DL2KQ, JE3HHT) - carichi LC in parallelo, segmentazione
+  Progetti su GitHub esaminati per il calcolatore Moxon: ctdk/moxoncalc (Jeremy Bingham, MIT), jl1nie/Moxon
+    (Apache 2.0, modello DG7YBN 430+144), valentinvieriu/moxon-antenna-calculator e aaaaalbert/pymoxon (senza
+    licenza: solo consultati, nessun codice usato)
+  Fonti della 0.4.0 (mining Rothammel/Balanis, passaggio del 12/11/2026):
+    Karl Rothammel Y21BK e Alois Krischke DJ0TR - "Rothammels Antennenbuch" (DARC Verlag): diametri equivalenti, stack
+    Constantine A. Balanis - "Antenna Theory: Analysis and Design" (Wiley), cap. 11.4.3 (LPDA), schiere e MoM
+    Robert Carrel - progetto delle log-periodiche a dipoli (1961); P. C. Butson e G. T. Thompson - correzione delle curve di Carrel
+    Guenter Hoch DL6WU - Yagi lunghe, distanze di stack, correzione del boom
+    Peter Viezbicke - "Yagi Antenna Design" (NBS Technical Note 688)
+    D. K. Cheng e C. A. Chen - ottimizzazione delle Yagi
+    WA2PHW - controllo del guadagno atteso delle Yagi; DL4AKK - stack e misure
+    Martin Steyer DK7ZB (qsl.net/dk7zb) - "Longyagi construction principles", "Construction details" (montaggio isolato,
+      correzione del boom, adattamento a 28 ohm con due cavi da 75 ohm), "7-El. Yagi for 144 MHz, stacked" (caso di
+      studio 7 el. / 2x7 / 4x7 contro YO di K6STI), "Duoband-Yagis 2m/70cm principles" (risonanza a 3/2 lambda, open-sleeve)
+    Brian Beezley K6STI - YO (Yagi Optimizer), usato da DK7ZB per i progetti del caso di studio
+    K9AY (risonatori accoppiati), K5RR (forward stagger), Force 12 C-3, W3DZZ, W1FBY, W6NL,
+      N6BV e K1VR - Yagi multibanda (ARRL Antenna Book 24a, cap. 10.5, 11.5, 14.4) per la nota del manuale
+    SQ9OUB (sq9oub.pl.tl) - Yagi duobanda 2 m / 70 cm 10/19 elementi (caso di studio in doc/riferimenti/duobanda);
+      DK7ZB e SQ9VPA - duobanda 5+8 elementi (file MMANA)
+    L. B. Cebik W4RNL - "2-70", Yagi bibanda 2 m / 70 cm (antenna2.github.io/cebik)
+    YT1NT / VE3EA (TANT), Dan Maguire AC6LA (XLGTa), KF2YN (correzione del guadagno medio) - metodo della linguetta G/T
+
+  Fonti della 0.4.1:
+    G. J. Burke (LLNL) - SOMNEC; N. Kyriazis 5B4AZ - somnec.c / ground.c di nec2c (terreno di Sommerfeld, GN 2)
+    ARRL Antenna Book (dipolo, verticale, loop e quad, tabella dei radiali di Brown, Lewis ed Epstein, dipolo ripiegato, reti L/Pi/T)
+    W3DZZ (dipolo trappolato), Louis Varney G5RV, G. Countryman W3HH (T2FD), Windom/OCF
+    Ted Hart W5QJR (loop magnetica, antenna EH), AA5TB (loop magnetica)
+    Martin Steyer DK7ZB - HB9CV (150/f, 139/f, lambda/8, 4,15 dBd)
+    hamuniverse.com - "Hentenna" (lati lambda/2, larghezza lambda/6, alimentazione a lambda/10)
+    J. D. Kraus, C. A. Balanis - resistenza di radiazione del dipolo corto, del monopolo e del loop
+    Amidon (amidoncorp.com: AL delle ferriti 43 e 61; tabella iron powder di ok1dxd)
+    N4DJ (Beverage e BOG), K6SE (EWE), AA7JV / TX3A (DHDL), IV3PRK (RDF di riferimento), ITU-R P.372 (temperature di rumore),
+    VE7BQH (temperature di cielo e di terra: vecchio riferimento 200 K / 1000 K preimpostato in TANT, nuovo 290 K con terreno
+    1600 / 5400 / 14 550 K, tabelle su yu7ef.com/ve7bqh2.htm), DG7YBN (appendice al manuale di TANT, Dubus 2/2012: 432 MHz 20 K / 350 K)
+
+  Fonti approvate da IC8TEM il 13/11/2026 (elenco con l'uso in doc/Fonti_approvate_13-11-2026.md):
+    Help di EZNEC 7 - "Stepped Diameter Correction" (R. Lewallen W7EL)
+    W8JI - Receiving Directivity Factor (RDF), con la pagina di G. Ordy W8WWV
+    ON4UN (J. Devoldere), Low-Band DXing - Directivity Merit Figure (DMF); cap. 7 Tab. 7-22, 7-24, 7-25; cap. 9 Tab. 9-1, 9-3, 9-4 e misure DJ8WL
+    IV3PRK - "Panoramica sulle antenne per la ricezione in 160 metri" (CQ Friul, 2008)
+    IK0XBX - "Le mie antenne RX" (ARI Perugia, 2018)
+    ARRL Antenna Book 21a ed., cap. 4 - test di convergenza e del guadagno medio (Tab. 5 e 6)
+    K. Rothammel, Antennenbuch, cap. 24 - Tab. 24.1 (Yagi lunga DL6WU) e Bild 24.1.3
+    ARRL Antenna Book 24a ed. - formula di stack DL6WU con i limiti di validita'; capitolo LF/MF (137 e 472 kHz)
+    D. K. Cheng e C. A. Chen - ottimizzazione di Yagi a 6 elementi (IEEE Trans. AP 1973-1975, in Balanis Tab. 10.1-10.4)
+    P. P. Viezbicke - Yagi Antenna Design, NBS Technical Note 688 (1976)
+    R. L. Carrel (1961) con la correzione di P. C. Butson e G. T. Thompson (1976), in Balanis Fig. 11.13
+    C. A. Balanis, Antenna Theory, cap. 8 - impedenza propria e mutua tra dipoli
+    T. A. Milligan, Modern Antenna Design, 2a ed. - definizione di G/T
+    L. B. Cebik W4RNL - "NEC-4 vs. NEC-2 With Stepped-Diameter Correction", "The Nature and Adequacy of NEC Correctives",
+      "Tapering to Perfection", "Yagi Element Diameter" (antenna2.github.io/cebik)
+    VK2KU - "Effects of the boom" (correzione del boom, accanto a DL6WU/G3SEK)
+    IK0XBX - consigli di costruzione per Beverage e K9AY; IV3PRK - dati della Pennant
+    FreshPorts, FreeBSD Foundation, wiki FreeBSD .NET, piattaforme di Avalonia (pacchetto FreeBSD sperimentale)
+  Per la 0.4.2 (registro dei tempi e caso di studio XR-5):
+    J. Nielsen, "Usability Engineering" (1993), cap. 5, da R. B. Miller (1968) - soglie dei tempi di risposta 0,1 / 1 / 10 s
+    Microsoft, documentazione dei contatori di prestazioni (PDH, "GPU Engine", "GPU Process Memory") - GPU nel registro
+    Force 12 / T. Schiller N6BT, manuale XR-5 DW-Manual-XR5-007 (disegno dwxr5.007, 2002) - misure di fabbrica del caso di studio
+    A. Voors, 4nec2 (freeware): help 4Nec2.rtf (estensioni EX 6, LD 6, GN 3, SY), tabelle data/Ground.txt (terreni, fonte
+      pe2bz.philpem.me.uk) e data/Conduc.txt (alluminio 6063-T832); i 467 modelli della raccolta solo come prova nel collaudo
+      (non distribuiti con YA-NEC)
+    B. Beezley K6STI, ANTFILE.DOC (1995, formato .ANT di AO e NEC/Wires) e formato .YAG di YO 6.51; raccolta di file .YAG
+      di radioamatori indonesiani (YC1EME, YD1JZ e altri) nello zip YO651 - casi di prova degli importatori
+    YT1NT / VE3EA, TANT 1.2 (Readme e manuale v1.3): a 0 gradi Tpattern = (Tcielo + Tterreno) / 2 per diagrammi simmetrici
+  Velocita' e motore (0.4.2, approvati da IC8TEM il 13/11/2026):
+    E. K. Miller e G. J. Burke, "model-based parameter estimation" (MBPE): sweep rapido con funzioni razionali, punti
+      infittiti dove due stime non concordano (verificato con nec2c sui modelli di esempio)
+    NEC-2 (LLNL) e nec2c di N. Kyriazis 5B4AZ (cmset, factrs, solves): uso delle simmetrie GX e GR nella soluzione,
+      scritto in forma di gruppo (caratteri delle rotazioni e delle riflessioni)
+    A. Voors, help di 4nec2 ("Wire coating", LD 7) e L. B. Cebik W4RNL, amod83: filo isolato come induttanza distribuita
+      L = 2e-7 (er R/r)^(1/12) (1 - 1/er) ln(R/r)
+    Ottimizzatore: J. A. Nelder e R. Mead, "A simplex method for function minimization", Computer Journal 7 (1965); idee
+      dall'ottimizzatore di MMANA-GAL (obiettivi pesati con cursori, una variabile alla volta), da xnec2c-optimize e AutoEZ
+      (variabili SY); nessun codice preso da quei programmi
+    Scheda Loop: C. M. Butler, "The equivalent radius of a narrow conducting strip", IEEE Trans. AP-30 (1982) - raggio
+      equivalente di una fascia = larghezza/4; formule del calcolatore Loop magnetica (W5QJR, AA5TB) per il confronto
+    ARRL (N6BV), file 520-40H.YAG di zipyagi.zip (arrl.org/antenna-modeling-files, inviato da IC8TEM): formato .YAG
+      dell'ARRL e caso di prova della correzione Leeson con la tab. 8.6 dell'Antenna Book 24a
+    Dragoslav Dobricic YU7EF, EF0213 (yu7ef.com/ef0213.htm, inviata da IC8TEM): caso di prova del G/T come in TANT;
+      ha mostrato che la temperatura deve comprendere le perdite dei conduttori dell'antenna
+  Calcolatore "Parabola primo fuoco" (0.4.2, preparato da IC8TEM in un'altra chat; fonti della pagina Fonti):
+    W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 - feed cos^q, spillover, efficienza
+    GMRT/NCRA, Low Frequency Radio Astronomy, tab. 19.1; J. Baars, NRAO EDIR 57 - tabelle HPBW, lobi, taper (collaudo)
+    C.A. Balanis, Antenna Theory, tab. 12.2 - apertura circolare uniforme; DF3GJ (58 lambda/D)
+    P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6, app. 6A (FEEDPATT, PHASEPAT); Mesh Reflector Loss Calculations
+    Galt Telescope, arXiv 1607.06436; Lamb e Olver 1986 (arXiv 1609.09376) - blocco pesato con l'illuminazione
+    J. Ruze, Antenna Tolerance Theory (Proc. IEEE 1966), Feed Support Blockage Loss (Microwave J. 1968), fuori fuoco (1969);
+      Borkowski e Maciejewski 1987; NRAO ALMA memo 479; Y.T. Lo 1960 (spostamento laterale)
+    W.W. Mumford, Proc. IRE 49 (1961) - trasmissione della rete
+    I.E. Idelchik, Handbook of Hydraulic Resistance, diagr. 8-6; disco attuatore (Taylor); S.F. Hoerner, Fluid-Dynamic Drag - vento sulla rete
+    Bob Atkins (Dish Evaluation, off-axis gain loss, stressed dish, K2UYH); OE2IGL e DF3GJ (EME link budget, filling factor);
+      UA3AVR DUBUS 3/2016; DJ7FJ DUBUS 1/1995 - EME
+    OK1DFC (dischi da 10 m primo fuoco e 8 m offset), RF HamDesign (kit da 1,9 e 3 m) - costruzione a centine
+  Pagina "Feed" e calcolatore "Parabola offset" (0.4.12, preparati da IC8TEM in un'altra chat il 13-14/11/2026; fonti delle pagine Fonti):
+    P. Wade W1GHZ, Online Microwave Antenna Book, cap. 5 (offset) e 6 (trombe, NEC2), Septum Polarizers and Feeds, Septum Feeds -
+      Tolerances and Sensitivity, VE4MA and Chaparral feeds with Septum Polarizers - centro di fase, efficienza in funzione di f/D
+    W2IMU, Crawford Hill Technical Report n. 18 (1980), An Off-Set Fed Parabolic Reflector Antenna for 1296 MHz
+    OK1DFC, Construction of 8 m offset dish (EME Conference, Trenton 2024); OE5JFL, EME antenna e Ofs_calc_jfl;
+      OK2AQ, septum allungato per f/D 0,8; RW3BP (citato da N2OTO, 1999); Moon-Net, Deep or flat dishes? e Use of offset dishes
+    Bob Atkins, offset dish; OE2IGL, Reflector Antenna & Feed Basics; VA3RR, feed dual-mode al NEC2
+    A.W. Rudge e N.A. Adatia, Proc. IEEE 1978 e Electronics Letters 1975 - antenne offset, squint in polarizzazione circolare;
+      JPL TDA Progress Report 42-128 - squint; T.S. Chu e R.H. Turrin, IEEE Trans. AP 1973 - polarizzazione incrociata dell'offset
+    P.-S. Kildal, Foundations of Antennas - scomposizione dell'efficienza
+    OM6AA e M. Hazdra, feed a septum circolare; Pawlan e Galuscak, High Frequency Electronics 2010; N2UO, dual-mode con septum;
+      SM6FHZ, septum a 5 gradini (analisi del septum: solo nelle note tecniche, il septum non e' modellato al NEC)
+  Motore, controlli geometrici, terreni di EZNEC e centine (0.4.20, richieste di IC8TEM del 14/11/2026 12:55-15:25):
+    E. Anderson e altri, LAPACK Users' Guide, 3a ed., SIAM 1999, cap. 3.4 (fattorizzazione LU a blocchi, zgetrf) e G. H. Golub,
+      C. F. Van Loan, Matrix Computations, 4a ed., Johns Hopkins 2013, par. 3.2.11 - forma a blocchi della LU con pivot parziale;
+      riscritta da capo in C#, nessun codice copiato
+    Intel 64 and IA-32 Architectures Software Developer's Manual, vol. 2 - istruzioni VFMADDSUB e VPERMILPD per il prodotto di
+      numeri complessi a coppie (System.Runtime.Intrinsics di .NET)
+    Roy Lewallen W7EL, EZNEC Pro/2+ 7.0 - le sei regole del Geometry Check e i due terreni reali (MININEC e High Accuracy), letti
+      dalle finestre del programma nelle prove 5c, 6 e 7 di IC8TEM (solo il comportamento, nessun codice): 26 modelli fermati per
+      geometria su 601, tutti riconosciuti da YA-NEC 0.4.20; 32 modelli con il terreno MININEC tornati entro lo 0,5 %
+    A. Voors, 4nec2 - GN 3 ("MiniNec ground": correnti su terreno perfetto, diagramma con er e sigma), gia' in YA-NEC dalla 0.4.2
+    A. Rubinstein, F. Rachidi, M. Rubinstein, "On wire-grid representation of solid metallic surfaces", IEEE Trans. EMC 47, 2005 -
+      regola dell'area uguale per il raggio dei fili della griglia della parabola (gia' in NecGriglia); P. Wade W1GHZ cap. 12 e
+      Parab50.nec di 4nec2 - superfici a griglia di fili
+    Costantino Cerrotta IC8TEM - prove con EZNEC Pro/2+ 7.0 del 14/11/2026 (prove 5, 5c, 6, 7: 735 modelli) usate come
+      calibrazione nella fase 2F del collaudo
+  Hexbeam 20-10 m (0.4.30, via di IC8TEM del 14/11/2026 21:54):
+    Steve Hunt G3TXQ (SK) - broadband hexbeam (geometria a W e a U, alimentazione comune); misure 20-10 m dal modello MMANA
+      "6BandBBHEX" di Makoto Kasahara JN1GLB (2008, in data/modelli)
+    M0OXO, "The G3TXQ Broadband Hexagonal Beam" (m0oxo.com) - alimentazione in alto al 20 m, guadagni e F/B dei modelli di G3TXQ
+    Don Keith N4KC, "A Practical 5-Band Wire Beam" (K4KIO) - alimentatori collegati con spezzoni di coassiale lungo il palo
+    MM0OPX-Projects (GitHub, ScotHex) - distinta e misure di confronto (nessun file copiato)
+  Elica (0.4.30, barra Geometria, bozzetto 1 approvato il 14/11/2026 22:40):
+    J. D. Kraus, "Antennas" (modo assiale: Z = 140 C/lambda, D = 15 C^2 N S, rapporto assiale, apertura, banda 0,75-1,33 C/lambda)
+    D. T. Emerson, "The gain of the axial-mode helix antenna", NRAO 1995 (la formula di Kraus sovrastima il guadagno)
+    G1OJS, NECBOL (licenza MIT) - geometria dell'elica come poligono di fili diritti e rastremazione (taper_factor); nessun codice copiato
+  Verticale multibanda tipo DX Commander (0.4.30, bozzetto 10 approvato il 14/11/2026 22:41):
+    DX Commander (dxcommander.com) - elementi a ventaglio con alimentazione comune; modello dxcommander_A di IC8TEM
+    J. Devoldere ON4UN, "Low-Band DXing" - radiali e terreno delle verticali
+  Dipolo multibanda (0.4.30, modi approvati da IC8TEM il 14/11/2026 23:11, XR-5 alle 23:18):
+    Force 12 e T. Schiller N6BT, manuale XR-5 (DW-Manual-XR5-007): open sleeve a 3 bande, coassiale al radiatore 12 m, linea da
+      450 ohm al radiatore 20 m; tubi e posizioni dal modello "Force12 XR-5 misure di fabbrica" (data/modelli)
+    ARRL Antenna Book: dipoli multipli su una sola linea (bacchette parallele) e dipolo a manica aperta
+  Trappole e rastremazioni HF (0.4.30, richiesta di IC8TEM del 14/11/2026 23:40):
+    H. A. Wheeler, "Simple Inductance Formulas for Radio Coils", Proc. IRE 1928 - induttanza della bobina a un solo strato
+    R. G. Medhurst, "HF Resistance and Self-Capacitance of Single-Layer Solenoids", Wireless Engineer 1947 - capacita' propria (C = H D)
+    Tubi telescopici: tabella Rastremazioni (Taper wire set di MMANA, gia' citato) e algoritmo di D. Leeson W6NL (gia' citato)
+  Fonti aggiunte alle schede che ne erano prive (ricerca in rete, IC8TEM 15/11/2026 00:08):
+    L. G. Windom W8GZ, "Notes on Ethereal Adornments", QST settembre 1929, pp. 19-22 (Windom originale)
+    F. Spillner DJ2KY, "Die FD4-Windom-Antenne", QRV dicembre 1971, pp. 13-20 (OCF multibanda FD4)
+    Belrose e Bouliane, "The Off-Center-Fed Dipole Revisited: A Broadband, Multiband Antenna", QST agosto 1990, pp. 28-34
+    C. L. Buchanan W3DZZ, "The Multimatch Antenna System", QST marzo 1955, pp. 22-23 (dipolo trappolato)
+    Y. Someya JE1DEU, Hentenna (1972, Sagami club), secondo e.as76.net
+    C. E. Smith e E. M. Johnson, "Performance of Short Antennas", Proc. IRE ottobre 1947 (Z0 = 60 (ln(h/r) - 1), X = Z0 cot h)
+    R. Severns N6LF, "Some Ideas for Short 160 Meter Verticals", QEX maggio/giugno 2013 (Q della bobina ed efficienza)
+    G. Guanella, "Novel Matching Systems for High Frequencies", Brown-Boveri Review settembre 1944; W. K. Ruthroff, "Some Broad-Band
+      Transformers", Proc. IRE agosto 1959; J. Sevick, Transmission Line Transformers, 4ª ed., Noble Publishing 2001 (balun)
+    ARRL Antenna Book 19ª ed. (2000) e 24ª ed. (2019): spaziatura dei parassiti della Yagi a 2 elementi (doc/Spaziatura_parassiti_ARRL.md)
+  Antenne su PCB a 2,4 GHz (0.4.30, bozzetto 2 approvato il 14/11/2026 22:15, disegni quotati 1:1 approvati alle 22:42):
+    Texas Instruments AN043 (MIFA), DN007 (IFA), DN034 / SWRA350 (Yagi su PCB) - tipi e guadagni tipici (nessuna figura copiata)
+    WA5VJB, Kent Electronics - Yagi e Big Wheel su PCB (tipi; disegni e misure calcolati da YA-NEC)
+    W1FVY e W1IJD, Big Wheel (QST, 1961) - tre petali lunghi circa una lunghezza d'onda in parallelo, polarizzazione orizzontale
+    A. C. Ludwig, "Wire grid modeling of surfaces", IEEE Trans. AP-35 (1987) - regola dell'area uguale (raggio = maglia / 2 pi)
+      per il piano di massa a griglia, come NECBOL (thin sheet); pista larga w = filo di raggio w/4 (C. A. Balanis)
+    Formato DXF R12 (Autodesk) - entita' LINE e CIRCLE
+  Terzo riferimento numerico e confronti (0.4.30):
+    T. Molteno, necpp / nec2++ (github.com/tmolteno/necpp, GPL v2) - compilato a parte, solo i valori dei casi dell'autotest
+      (nessun codice copiato in YA-NEC)
+    L. B. Cebik W4RNL, "NEC-4 vs. NEC-2 With Stepped-Diameter Correction" (antenna2.github.io/cebik) - confronto nel manuale
+    A. I. Bauerle, "Accurate Modeling of Stepped-Radii Antennas", ACES Journal vol. 10 n. 2 (1995) - confronto nel manuale
+  Solo citazione (0.4.30): "Leeson's equation" (Wikipedia) e D. B. Leeson, "A Simple Model of Feedback Oscillator Noise Spectrum",
+    Proc. IEEE 1966 - omonimo, rumore di fase degli oscillatori: non e' la correzione dei tubi (nota nel manuale)
+  Schermo di radiali: G. J. Burke e A. J. Poggio, manuale NEC-2 (GN con NRADL, RP con I1 = 4) e nec2c; idea da cocoaNEC 3 di K. Chen W7AY
+  Fili nel terreno e gradini elemento per elemento (0.4.30): regola e parole di EZNEC (EZNEC Pro/2+ 7.0, R. Lewallen W7EL) ricavate
+    dal collaudo 0.4.23 di IC8TEM; Stepped Diameter Correction di EZNEC e algoritmo di D. Leeson W6NL (gia' citati)
+  Arcarecci diritti e dima delle centine della parabola (0.4.21, richieste di IC8TEM del 14/11/2026 18:11-18:21):
+    EN 755-2 (alluminio 6060 T6 e 6082 T6, Rp0,2 150 e 260 MPa); EN 1999-1-1, Eurocodice 9 (E = 70 GPa); EN 10025-2 (acciaio S235);
+      EN 13706-3 (profili pultrusi in vetroresina, classe E23: E >= 23 GPa, resistenza a flessione >= 240 MPa)
+    R. J. Roark e W. C. Young, Roark's Formulas for Stress and Strain, tab. 8.1 - trave appoggiata con carico uniforme
+      (momento qL^2/8, freccia 5qL^4/384EI)
+    Cd della rete a disco e del disco pieno come nel calcolo del vento gia' presente (Idelchik, Hoerner)
+    Formato DXF R12 (Autodesk, AutoCAD DXF Reference) - solo entita' LINE e TEXT
+  Trombe e illuminatori (0.4.19, scheda preparata da IC8TEM in un'altra chat il 14/11/2026; fonti della pagina Fonti):
+    P. Wade W1GHZ, Online Microwave Antenna Book cap. 6.3 (coffee-can), 6.5 (W2IMU), cap. 12 (modelli NEC2 dei feed, DIPROD.NEC,
+      FEEDPATT/PHASEPAT) e "VE4MA and Chaparral feeds with Septum Polarizers" (2006, misure di WD5AGO)
+    C. A. Balanis, Antenna Theory, par. 13.4.3 e 13.6 - tromba piramidale e conica ottime (esempio 13.6 nell'autotest)
+    P. D. Potter (1963) - tromba dual-mode; Silver / Chu - fattore di obliquita' della guida aperta
+    VA3RR - W2IMU modellata in 4nec2 per un offset da 60 cm
+  Fili vicini al terreno, BOG e modelli pesanti (0.4.18, richieste di IC8TEM del 14/11/2026 09:17-09:20):
+    I. Pellejero, "Notes on antenna simulation using NEC-2" (ipellejero.es/tecnico/nec-2/english.php) - quote minime dei fili
+      orizzontali (lambda/10 con il coefficiente di riflessione, lambda/1000 o lambda/200 con Sommerfeld), circa 30 fili per giunzione
+    L. B. Cebik W4RNL, "S-N, RCA, and MININEC Grounds" (amod99) e "A Ground Is Just a Ground" (amod11) - RCA non sotto 0,2 lambda,
+      fili interrati solo nel NEC-4, quota di piu' raggi del filo
+    R. Fry, "Using NEC to model vertical radiators near the earth" (radiodiscussions.com, 2012), dal NEC-2 User's Guide di
+      G. J. Burke e A. J. Poggio - limiti dei terreni del NEC-2, schermi di radiali appena sopra il suolo con Sommerfeld
+    G. J. Burke e A. J. Poggio, NEC-2 Part III User's Guide, sez. II "Structure Modeling Guidelines" (nec2.org/part_3/secii.html) -
+      segmenti tra circa 1e-3 e 0,1 lambda (avvisi della 0.4.20), lunghezza/raggio oltre 8 (2 con il nucleo esteso)
+    Roy Lewallen W7EL, EZNEC Pro/2+ 7.0 - finestre "Segmentation Check" e "Geometry Check" lette nelle prove 5c e 6 del 14/11/2026
+      (solo il comportamento: la Segmentation Check da' solo avvisi, il calcolo si ferma solo per le sei regole del Geometry Check,
+      riprese con le stesse parole negli avvisi di YA-NEC 0.4.20; terreno reale "MININEC": impedenza come su terreno perfetto)
+    K1FZ, note sul BOG (qsl.net/k1fz/bognotes.html) - terminazione 200-250 ohm, passi di 25 ohm, filo isolato contro il suolo
+    N4DJ (VF del BOG 0,5-0,77, gia' nella 0.4.3); IV3PRK (BOG 63 m, RDF 9,0 dB, gia' nella 0.4.3)
+    Larry KE5KJD - Butternut HF2V con 64 radiali (MMANA, 2010), modello corretto per il NEC-2 nella 0.4.18
+    Raccolta di 4nec2 (A. Voors): Bowtie Antennas Direct 91XG (Ken Nist, holl_ands) e 4x2SA13 con telai e cavi - modelli pesanti
+      della fase 2E; nec2c 1.3.1 (N. Kyriazis 5B4AZ) come riferimento delle impedenze
+  Idee dai progetti GitHub attorno a nec2c (0.4.2, mining del 13/11/2026, approvate da IC8TEM; solo idee riscritte da capo):
+    G. J. Burke e A. J. Poggio, NEC-2 Part III User's Guide (NTIS ADA956129) - esempi 1, 2 e 3 con i valori pubblicati, nel collaudo
+    R. Sutherland, hf-nec2c (github.com/sutherlandryan/hf-nec2c, BSD-2) - mazzi ricostruiti degli esempi, difetti di zint() (costanti cc5 e CN)
+    nec2c di N. Kyriazis 5B4AZ: qdsrc() (sorgente EX 5 a discontinuita' di pendenza della corrente) portata nel motore
+    E. Wheeler KJ7LNW (github.com/KJ7LNW/nec2c, GPL-3) - correzione di fbar() di somnec (gia' presente in YA-NEC)
+    E. S. Harriman AE6TY (github.com/ae6ty/nec2c-ae6ty, MIT) - idea della fattorizzazione LU in parallelo
+    N. Mladenov, nec2c_opt (github.com/rikvanriel/nec2c_opt, GPL) - distanza minima superficie-superficie 5 mm; evoluzione
+      differenziale, obiettivi come curve in frequenza e correzione AGT (approvati, da fare)
+    Dorin Custura, antsim (github.com/dcustura/antsim, senza licenza: solo idee) - estremi quasi coincidenti sotto 1 cm; catena di
+      alimentazione (approvata, da fare)
+    SA6MWA, nec2-gnuplot-average-power-gain (MIT) - efficienza di radiazione in funzione della frequenza
+    C. Hoover, tamago (github.com/charlieh0tel/tamago, GPL-3) - convergenza dei loop con la maglia uniforme, fascia = larghezza/4;
+      calcolatore eggbeater con le fonti ON6WG, F5VIF, K5OE (approvato, da fare)
+  Calcolatori per i satelliti (0.4.2, richiesti da IC8TEM il 13/11/2026):
+    Eggbeater: ON6WG / F5VIF, "Eggbeater Antenna VHF/UHF" parte 1 (perimetro 1005/f piedi, 8 radiali, 1/8 lambda, RG-62 lambda/4);
+      K5OE (eggbeater per i satelliti); tamago di C. Hoover (GPL-3): accordo in quadratura, maglia uniforme, avviso sull'impedenza
+    QFH: J. Coppens, calcolatore QFH (jcoppens.com/ant/qfh, qfhcalc.js, GPL-2) - formule e tabella del conduttore; geometria come
+      helix2nec (uuki.kapsi.fi/qha_simul.html) e QFH2nec di oceantrotter (GPL-3); Bolidozor (QFH per GRAVES 143,05 MHz)
+    olgierd, yagi_designer (github.com/olgierd/yagi_designer, senza licenza: solo idee) - rotella del mouse sulle celle
+  Fonti approvate il 13/11/2026 (ultime in sospeso, riporto della chat del mining dei libri):
+    D. Leeson W6NL, Physical Design of Yagi Antennas (ARRL 1992), cap. 8 (diametri a gradini) e cap. 9 (staffe), con il programma
+      SCALE / EFFLEN.FOR del CD dell'ARRL Antenna Book (algoritmo W6NL-Schelkunoff) - da reperire
+    ARRL Antenna Book 21a ed., cap. 4, Tab. 7 - Yagi 5 el. 20 m a 70 ft (520-40H) con e senza correzione Leeson (caso di prova)
+    ARRL Antenna Book 24a ed., cap. 8 - compensazione delle staffe (Leeson cap. 9)
+    G. H. Brown, R. F. Lewis, J. Epstein, "Ground Systems as a Factor in Antenna Efficiency", Proc. IRE vol. 25 n. 6
+      (giugno 1937), pp. 753-787 - reperito il 13/11/2026: Fig. 25, 28, 36, 37 confrontate con ON4UN Tab. 9-1
+      (doc/riferimenti/Brown_1937_verifica.md)
+    N6MW, "Brown, Lewis and Epstein's 1937 Antenna Ground System Paper - Theoretical Aspects" (2016) - avvertenza sulla parte teorica
+      di Brown nella scheda Verticale lambda/4 (approvato il 13/11/2026)
+    J. Sevick W2FMI, misure dei radiali riportate dall'ARRL Antenna Book (29-18-9-0 ohm con 4-8-16-infiniti radiali)
+    (Rothammels Antennenbuch, cap. 24, Tab. 24.2 - correzione del boom DL6WU misurata: SCARTATA da IC8TEM il 14/11/2026, stesse
+      misure di DL6WU gia' usate con la formula DL6WU/G3SEK)
+
+NOVITA' DELLA 0.4.3
+    Tom Rauch W8JI, "Detuning towers" (w8ji.com) - avviso per la torre TX vicina alle antenne riceventi (approvato il 13/11/2026)
+    Earl Cunningham K6SE (Pennant) e le pagine di WA1ION (qsl.net/wa1ion) - calcolatore Pennant (0.4.7)
+    G. J. Burke, "Numerical Electromagnetics Code - NEC-4, Method of Moments, Part II: Program Description - Theory", LLNL UCRL-MA-109338
+      (1992): gradini di raggio e giunzioni (cap. 3), confronto con la correzione di Leeson; K1GQ, pagina "NEC4" del manuale di cocoaNEC
+    G. J. Burke, "NEC-4.2 Numerical Electromagnetics Code - User's Manual", LLNL (2011), inviato da IC8TEM il 13/11/2026: controllo dei
+      segmenti di GE I2 (SEGCHK), terreno RCA e Sommerfeld, sorgenti di corrente EX 6, IS, tappi VC, esempi (doc/riferimenti/NEC42_Users_Manual_mining.md; approvato il 13/11/2026)
+    D. B. Leeson W6NL, "Physical Design of Yagi Antennas", ARRL 1992 (approvato il 13/11/2026): algoritmo del cilindro equivalente
+      all'elemento a gradini (sez. 8.4, da Schelkunoff) nella correzione dei tubi telescopici della 0.4.8; raggio equivalente delle staffe (9.1)
+    R. Severns N6LF, "Experimental Determination of Ground System Performance for HF Verticals", parte 4, QEX mag./giu. 2009
+      (approvato il 13/11/2026): miglioramento del segnale con il numero dei radiali, verifica dei radiali
+    M. Fartookzadeh, S. H. Mohseni Armaki, S. M. J. Razavi, J. Rashed-Mohassel, "Optimum Functions for Radial Wires of Monopole Antennas
+      with Arbitrary Elevation Angles", Radioengineering 25(1), 2016 (approvato il 13/11/2026): teoria dello schermo di radiali (GN)
+    Steve Hunt / AE6TY, hf-nec2c (sutherlandryan): costanti di zint() come nel manuale NEC-2 Part III (riabilitate il 13/11/2026)
+    A. Voors, nec2dxs (copie Jheengut e Levitator1): lettura per GN 3, LD 6 e LD 7 di 4nec2 (solo lettura, riabilitato il 13/11/2026)
+    T. Molteno, necpp; nec2c (5B4AZ): superfici SP/SM/SC (riabilitate il 13/11/2026); G1OJS NECBOL: vista con lo spessore dei fili
+    Luis Mansutti IV3PRK - "Double DHDL Broadside" (2013), "the TX3A DHDL" (2010), "the Waller Flag" (2007), "detuning the TX
+      antenna", "back to the W7IUV Flag", pagine bog-modeling, all-antennas e wf-construction di iv3prk.it: misure e valori di
+      confronto della DHDL, delle due DHDL broadside, della Flag W7IUV, della Waller Flag e del BOG
+    George AA7JV e la DXpedition TX3A (DHDL); Jose Carlos N4IS ("Receiver antennas for a small lot", SFDXA) e Doug Waller NX4D
+      (Waller Flag); Larry W7IUV ed Earl Cunningham K6SE (Flag); Tobias DH1TW (descrizione della DHDL, dh1tw.de)
+    Hanley Strappman AG7T, Ez2Nec (github.com/HanleyStrappman/Ez2Nec): struttura dei file .ez usata per leggerli e scriverli
+    Dan Maguire AC6LA, AutoEZ: formato .weq ricavato dai file d'esempio e dal file 16el di IC8TEM
+    Frank Lahlum W1MK e Roy Lewallen W7EL - rete L di sfasamento; ON4UN, Low-Band DXing cap. 11; MMANA-GAL (Taper wire set)
+    Archivio dei modelli (data/archivio, 0.4.6): file .YAG/.ANT/.NEC dell'ARRL Antenna Book (arrl.org/antenna-modeling-files, N6BV) e file
+      di modellistica EZNEC dell'ARRL; file .yag Hy-Gain della raccolta YO (K6STI); esempi di AutoEZ (Dan Maguire AC6LA); modelli
+      MMANA raccolti da IC8TEM (autori indicati nei file: JN1GLB, IU4TPQ/IK4MTL, IZ2LWE, DL2KQ/KE5KJD, F9FT, DK7ZB e altri)
+    Modelli d'esempio aggiunti (MMANA, inviati da IC8TEM il 13/11/2026): Hex beam 6 bande di Makoto Kasahara JN1GLB; Hexbeam G3TXQ di
+      Franco Beltrandi IU4TPQ e Claudio Beltrandi IK4MTL; 4 el Box Kite 144 MHz di IC8TEM; 12 el loop 1296 MHz (autore non indicato)
+
+Yagi lunga DL6WU e Quagi (0.5.0, richiesta di IC8TEM del 15/11/2026): G. Hoch DL6WU, "Extremely Long Yagi Antennas", VHF Communications
+  3/1982, e con PA0MS "Zelf ontwerpen en bouwen van VHF en UHF antennes" (VERON); programma BASIC di J. Haigwood KY4Z e B. Stein W6NBI
+  (1983-86) con le modifiche di I. White G3SEK (1986) e di DL6WU (1988), letto nella trascrizione in Python di R. Rodrigues
+  (github.com/ricardorodrigues-ca/yagi-antenna-calculator, licenza MIT; solo le formule, riscritte in C#); W. Overbeck N6NB (Quagi,
+  QST 4/1977 e 2/1978); L. B. Cebik W4RNL, "Quagi and Yagi on 2 Meters" (modello NEC del Handbook quagi), "Under the Limits: MININEC"
+  (amod2), "When MININEC is Superior to NEC" (amod56); G. Marcus W3PM, QST 1/1990 (tabelle delle quagi a 145,9 e 435 MHz); ARRL Antenna Book 24a ed., tab. 15.21-15.22
+  (quagi N6NB), sez. 15.3.5 e tab. 15.11 (Yagi ad alte prestazioni, J. Johnson G0KSC) e sez. 15.3.7
+  (loop Yagi 1296 MHz di C. Angle N6CA, fig. 15.47-15.48, dal progetto di M. Walters G3JVL);
+  J. Johnson G0KSC (LFA, misure del 6 el. 144 MHz pubblicate da palembangbadboys.blogspot.com); DG7YBN e M. Steyer DK7ZB ("Design
+  principles OWL", radiatore piegato); B. Beezley K6STI, ANTFILE.DOC (1995) per il lettore .ANT completo (0.4.41).
+Solai in calcestruzzo (0.5.0, proposte A e B approvate da IC8TEM il 15/11/2026): ITU-R P.2040 (tabella dei materiali da costruzione,
+  anche nella pagina buildingMaterialPermittivity di MathWorks); Perotoni, Vieira, dos Santos e Almeida,
+  "Electrical Characterization of Concrete Using the Parallel Plate Capacitor Method", ACES Journal 34(10), 2019.
+
+Controllo dei dati (0.5.1, richiesta di IC8TEM del 15/11/2026): W. W. Hansen e J. R. Woodyard, "A New Principle in Directional
+  Antenna Design", Proc. IRE 26(3), 1938 (direttivita' massima di una schiera end-fire, per il controllo r5); G. J. Burke e A. J. Poggio,
+  NEC-2 Part III, sez. II (limiti del filo sottile e dei segmenti); R. Lewallen W7EL, EZNEC (Geometry Check, AGT); R. L. Carrel
+  e Balanis fig. 11.13 (intervallo di tau e sigma delle LPDA); L. B. Cebik W4RNL (MOXGEN); M. Kasahara JN1GLB (hexbeam); ARRL Antenna
+  Book (spaziatura delle quad); G. Hoch DL6WU (distanze di stack); ITU / IARU Regione 1 (bande).
+
+Cavi, cambio d'impedenza e balun (0.5.3, richieste di IC8TEM del 15/11/2026): database dei cavi di YAEC (C. Cerrotta IC8TEM,
+  github.com/ic8tem/yaec: perdite dalle schede di SSB-Electronic, Messi & Paoloni, Times Microwave, CommScope Andrew, RFS, Belden,
+  Prospecta, Qaxial, Siva Cavi, Tasker, Caledonian MIL-C-17, qsl.net/sv1bsx, DD1US/EA5IP); tabelle dei coassiali di YB0EMJ
+  (qsl.net/yb0emj/coax.html) e W4ZT (w4zt.wa4dsy.com/coax.html); DX Engineering (linea bifilare LL300, misure a secco e bagnata);
+  Electronics World gen. 1965 via RF Cafe (perdita della piattina 300 ohm); KV5R (VF della linea a finestra); ARRL Antenna Book
+  (trasformatore a quarto d'onda, linea aperta); G. Guanella (Brown-Boveri Review 1944), W. K. Ruthroff (Proc. IRE 1959),
+  J. Sevick (Transmission Line Transformers); Amidon (amidoncorp.com, AL dei nuclei in ferrite, FT-240-31) e la tabella Amidon
+  dei nuclei in polvere di ferro di OK1DXD (qsl.net/ok1dxd/amidon.htm).
+
+Schemi di colore (0.5.3): i 18 di E-LAYER ANALYZER (pastelli di YAEC, Scia meteorica di YA-MS, temi di IP-TRX-CTRL, UI/Themes.cs; tutti di C. Cerrotta IC8TEM); sistema delle
+  lingue di YA-MS / E-LAYER ANALYZER (stesso autore).
+
+EZNEC è un marchio registrato di Roy W. Lewallen.
+
+Autore di YA-NEC: Costantino Cerrotta IC8TEM - ccerrotta@gmail.com - ic8tem@gmail.com - www.qrz.com/db/ic8tem - ko-fi.com/ic8tem
+
+Dati dei cavi coassiali (data/cavi.csv): schede tecniche Belden 1694A, CommScope LDF5-75A, Times Microwave LMR-400;
+tabelle di SV1BSX, YB0EMJ, W4ZT, RF Cafe, RF Parts, koax24. Valori tipici di catalogo.
+
+Terreno di Sommerfeld (0.4.38): la correzione della routine evlua e' stata trovata confrontando nec2c (N. Kyriazis 5B4AZ; versione
+KJ7LNW / E. Wheeler) con necpp di Tim Molteno (GPL v2), che segue il NEC-2 originale di G. J. Burke e A. J. Poggio (LLNL).

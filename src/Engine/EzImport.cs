@@ -1,0 +1,672 @@
+// YA-NEC - importazione dei modelli AutoEZ / MultiNEC (.weq, testo a colonne) ed EZNEC (.ez, binario).
+// I due formati non sono documentati: la lettura e' ricavata dai file di prova (12/11/2026) ed e' prudente:
+// tutto quello che non e' riconosciuto con certezza viene segnalato negli avvisi, mai indovinato in silenzio.
+// Segmentazione: quella del file (anche le formule di AutoEZ, come =ODD(WireLen / WL * 20)).
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Numerics;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace YaNec.Engine
+{
+    public static class EzImport
+    {
+        static readonly CultureInfo CI = CultureInfo.InvariantCulture;
+
+        static double UnitToMeters(string u, double fMHz)
+        {
+            switch ((u ?? "").Trim().ToLowerInvariant())
+            {
+                case "m": return 1;
+                case "mm": return 0.001;
+                case "cm": return 0.01;
+                case "ft": return 0.3048;
+                case "in": return 0.0254;
+                case "wl": return 299.792458 / fMHz;
+            }
+            return double.NaN;
+        }
+
+        static int SegOf(int segs, double pct)
+        {
+            int s = (int)Math.Floor(pct / 100.0 * segs) + 1;
+            return Math.Max(1, Math.Min(segs, s));
+        }
+
+        static void AddWire(NecModel m, int tag, int segs, double[] p, double radius)
+        {
+            m.Geometry.Add(new GeomCard { Id = "GW", I1 = tag, I2 = segs, F1 = p[0], F2 = p[1], F3 = p[2], F4 = p[3], F5 = p[4], F6 = p[5], F7 = radius });
+        }
+
+        // =============================================================================================
+        // AutoEZ / MultiNEC .weq
+        // riga 1: MultiNEC <tab> frequenza MHz <tab> unita' delle coordinate <tab> unita' del diametro ...
+        // righe dei fili: unita' (m, mm, ft, in, wl) <tab> X1 Y1 Z1 X2 Y2 Z2 diametro segmenti (numeri o formule Excel).
+        // Una riga senza unita' nella prima colonna usa l'unita' della prima riga del file (confermato da IC8TEM:
+        // nel file di prova i due blocchi sono due antenne una sopra l'altra).
+        // Sorgenti: filo <tab> % da E1 <tab> ampiezza <tab> fase <tab> V/I.
+        // Nel foglio la riga N del file corrisponde alla riga N-14 di Excel (verificato sui riferimenti $B$11...).
+        // =============================================================================================
+        const int WeqRowOffset = 14;
+
+        public static NecModel LoadWeq(string path)
+        {
+            string y = YanecFile.Sostituto(path);           // 0.4.30: .yanec
+            if (y != null) return YanecFile.Carica(y);
+            NecModel m = ParseWeq(File.ReadAllLines(path, Encoding.GetEncoding("ISO-8859-1")));
+            m.FileName = path;
+            return m;
+        }
+
+        // 0.4.7: le funzioni trigonometriche di Excel lavorano in radianti, quelle di YA-NEC (come 4nec2) in gradi
+        static string ExcelTrig(string e)
+        {
+            e = Regex.Replace(e, @"(?<![A-Za-z_])LOG\s*\(", "LOG10(", RegexOptions.IgnoreCase);   // in Excel LOG e' in base 10
+            e = Regex.Replace(e, @"(?<![A-Za-z_])LN\s*\(", "LOG(", RegexOptions.IgnoreCase);      // e LN e' il logaritmo naturale (LOG di YA-NEC)
+            return Regex.Replace(e, @"(?<![A-Za-z_])(SIN|COS|TAN|ATAN|ASIN|ACOS)\s*\(", mt => "X" + mt.Groups[1].Value.ToUpperInvariant() + "(", RegexOptions.IgnoreCase);
+        }
+
+        // 0.4.7: diametro AWG di EZNEC/AutoEZ ("#12"), in metri: d = 0,005 x 92^((36 - n)/39) pollici
+        static double Awg(string s)
+        {
+            int n;
+            if (!s.StartsWith("#") || !int.TryParse(s.Substring(1).Trim(), NumberStyles.Integer, CI, out n)) return double.NaN;
+            return 0.005 * Math.Pow(92, (36 - n) / 39.0) * 0.0254;
+        }
+
+        // 0.4.7: condizione di un IF di Excel con le variabili di AutoEZ (>, <, >=, <=, =, <>): vera o falsa
+        static bool CondizioneExcel(string cond, Dictionary<string, double> vars)
+        {
+            Match m = Regex.Match(cond, @"^(.+?)(>=|<=|<>|>|<|=)(.+)$");
+            if (!m.Success) throw new NecException("condizione non capita: " + cond);
+            Func<string, double> ev = t => Expr.Eval(Regex.Replace(ExcelTrig(t), @"\b([A-Z])\b(?!\s*\()", mt => { double vv; return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value; }), null);
+            double a = ev(m.Groups[1].Value), b = ev(m.Groups[3].Value);
+            switch (m.Groups[2].Value)
+            {
+                case ">": return a > b;
+                case "<": return a < b;
+                case ">=": return a >= b;
+                case "<=": return a <= b;
+                case "=": return Math.Abs(a - b) < 1e-12;
+                default: return Math.Abs(a - b) >= 1e-12;
+            }
+        }
+
+        static string Cell(string[] c, int i)
+        {
+            if (i >= c.Length) return "";
+            string s = c[i].Trim();
+            if (s.StartsWith("\"") && s.EndsWith("\"") && s.Length >= 2) s = s.Substring(1, s.Length - 2);
+            if (s.StartsWith("_")) s = s.Substring(1);
+            return s.Trim();
+        }
+
+        // Variabili di AutoEZ: nel .weq ci sono solo valore e commento (righe 2, 3, ... prima della tabella dei fili),
+        // senza la lettera. Le lettere di AutoEZ sono A..Z tranne C e R (nomi riservati di Excel) e le variabili vuote
+        // non vengono scritte. Regola (0.3.5): se le lettere usate nelle formule sono tante quante le righe delle
+        // variabili, si assegnano in ordine alfabetico; altrimenti A, B, D, E, ... in ordine, con un avviso.
+        // 0.4.8 (collaudo 0.4.7, 13/11/2026 21:25): le variabili di AutoEZ stanno nelle righe 2-23 del file e la lettera dipende dalla RIGA,
+        // non dall'ordine: A, B, D, E, G, H, I, J, K, L, M, N, O, P, Q, S, T, U, V, W, X, Y (niente C, F, R, Z). Ricavato dai file di AC6LA:
+        // "LPDA by Tau+Sigma" usa E = tau (riga 5) e G = sigma (riga 6); "Vee With Formulas" usa A (riga 2), H (riga 7) e L (riga 11);
+        // le righe vuote non spostano le lettere. Le variabili scritte come formula si risolvono in piu' passate (una puo' usare l'altra);
+        // UnitsFact = metri per unita' delle coordinate.
+        const string LettereWeq = "ABDEGHIJKLMNOPQSTUVWXY";
+
+        static Dictionary<string, double> WeqVariables(string[][] rows, NecModel m, double unitaM)
+        {
+            Dictionary<string, double> vars = new Dictionary<string, double>();
+            List<int> attese = new List<int>();
+            string[] nomi = new string[LettereWeq.Length], formule = new string[LettereWeq.Length];
+            for (int i = 0; i < LettereWeq.Length && i + 1 < rows.Length; i++)
+            {
+                string[] c = rows[i + 1];
+                string v = Cell(c, 0);
+                nomi[i] = Cell(c, 1);
+                if (v.Length == 0) continue;
+                double d;
+                string lt = LettereWeq[i].ToString();
+                if (double.TryParse(v, NumberStyles.Float, CI, out d)) vars[lt] = d;
+                else if (v.StartsWith("=")) { formule[i] = v.Substring(1); attese.Add(i); }
+            }
+            Func<string, string> sostituisci = e =>
+            {
+                e = ExcelTrig(e);
+                e = Regex.Replace(e, @"\bUnitsFact\b", "(" + unitaM.ToString("R", CI) + ")");
+                return Regex.Replace(e, @"\b([A-Z])\b(?!\s*\()", mt => { double vv; return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value; });
+            };
+            for (int giro = 0; giro < LettereWeq.Length && attese.Count > 0; giro++)
+            {
+                bool fatto = false;
+                foreach (int i in attese.ToArray())
+                {
+                    try { vars[LettereWeq[i].ToString()] = Expr.Eval(sostituisci(formule[i]), null); attese.Remove(i); fatto = true; }
+                    catch (Exception) { }
+                }
+                if (!fatto) break;
+            }
+            foreach (int i in attese)
+                m.Notes.Add("File .weq: la variabile " + LettereWeq[i] + (nomi[i].Length > 0 ? " (" + nomi[i] + ")" : "") + " e' la formula \"=" + formule[i] +
+                            "\" che YA-NEC non sa calcolare (testo, celle di altri fogli): non definita.");
+            if (vars.Count == 0) return vars;
+            string list = "";
+            for (int i = 0; i < LettereWeq.Length; i++)
+            {
+                double v;
+                if (!vars.TryGetValue(LettereWeq[i].ToString(), out v)) continue;
+                list += (list.Length > 0 ? ", " : "") + LettereWeq[i] + " = " + v.ToString("0.####", CI) + (nomi[i] != null && nomi[i].Length > 0 && !nomi[i].StartsWith("=") ? " (" + nomi[i] + ")" : "");
+            }
+            m.Notes.Add("Variabili di AutoEZ: " + list);
+            return vars;
+        }
+
+        public static NecModel ParseWeq(string[] lines)
+        {
+            NecModel m = new NecModel { SourceFormat = "AutoEZ" };
+            if (lines.Length == 0) throw new NecException("File .weq vuoto.");
+            string[] h = lines[0].Split('\t');
+            double f;
+            if (!double.TryParse(Cell(h, 1), NumberStyles.Float, CI, out f) || f <= 0)
+                throw new NecException("File .weq: frequenza non trovata nella prima riga.");
+            m.FreqMHz = f;
+            double cu = UnitToMeters(Cell(h, 2), f), du = UnitToMeters(Cell(h, 3), f);
+            if (double.IsNaN(cu)) { cu = 1; m.Warnings.Add("Unita' delle coordinate \"" + Cell(h, 2) + "\" non riconosciuta: usati i metri."); }
+            if (double.IsNaN(du)) { du = 0.001; m.Warnings.Add("Unita' del diametro \"" + Cell(h, 3) + "\" non riconosciuta: usati i millimetri."); }
+            m.Comments.Add("Importato da AutoEZ/MultiNEC (" + Cell(h, 0) + "), " + f.ToString("0.###", CI) + " MHz, coordinate in " + Cell(h, 2) + ", diametri in " + Cell(h, 3));
+
+            string[][] rows = new string[lines.Length][];
+            for (int i = 0; i < lines.Length; i++) rows[i] = lines[i].Split('\t');
+            Dictionary<string, double> cache = new Dictionary<string, double>();
+            Dictionary<string, double> vars = WeqVariables(rows, m, cu);
+            HashSet<string> busy = new HashSet<string>();
+            double wl = 299.792458 / f;   // in metri
+
+            // valore di una cella (riga e colonna di Excel), con le formule risolte
+            Func<int, int, double> value = null;
+            Func<string, int, double> evalText = null;
+            value = (xlRow, col) =>
+            {
+                string key = xlRow + ":" + col;
+                double v;
+                if (cache.TryGetValue(key, out v)) return v;
+                if (!busy.Add(key)) throw new NecException("riferimento circolare nella cella " + (char)('A' + col) + xlRow);
+                int li = xlRow + WeqRowOffset - 1;
+                if (li < 0 || li >= rows.Length) throw new NecException("la cella " + (char)('A' + col) + xlRow + " non e' nel file");
+                v = evalText(Cell(rows[li], col), xlRow);
+                busy.Remove(key);
+                cache[key] = v;
+                return v;
+            };
+            evalText = (s, xlRow) =>
+            {
+                if (s.Length == 0) throw new NecException("cella vuota");
+                double d;
+                if (double.TryParse(s, NumberStyles.Float, CI, out d)) return d;
+                if (!s.StartsWith("=")) throw new NecException("valore non numerico \"" + s + "\"");
+                string e = ExcelTrig(s.Substring(1));
+                // Excel: INT tronca verso il basso (in YA-NEC INT arrotonda), SQRT esiste gia'
+                e = Regex.Replace(e, @"\bINT\s*\(", "FLOOR(", RegexOptions.IgnoreCase);
+                e = Regex.Replace(e, @"\$?([A-Z])\$?(\d+)\b", mt =>
+                {
+                    int col = mt.Groups[1].Value[0] - 'A';
+                    int r = int.Parse(mt.Groups[2].Value, CI);
+                    return "(" + value(r, col).ToString("R", CI) + ")";
+                });
+                // variabili di AutoEZ (una lettera sola, senza numero di riga)
+                e = Regex.Replace(e, @"\b([A-Z])\b(?!\s*\()", mt =>
+                {
+                    double vv;
+                    return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value;
+                });
+                return Expr.Eval(e, null);
+            };
+
+            List<int> wireSegs = new List<int>();
+            int ignored = 0, esclusi = 0, tag = 0;
+            for (int li = 1; li < rows.Length; li++)
+            {
+                string[] c = rows[li];
+                if (c.Length < 9) continue;
+                // riga di un filo: colonne B..H numeriche o formule
+                bool wireRow = Cell(c, 1).Length > 0;
+                for (int k = 1; k <= 8 && wireRow; k++)
+                {
+                    string s = Cell(c, k);
+                    double d;
+                    if (!(s.StartsWith("=") || double.TryParse(s, NumberStyles.Float, CI, out d) || (k == 7 && !double.IsNaN(Awg(s))))) wireRow = false;
+                }
+                if (!wireRow) continue;
+                string unit = Cell(c, 0);
+                // prima colonna: "x" = filo escluso in AutoEZ; =IF(condizione, "", "X") = filo escluso se la condizione e' falsa (LPDA di AC6LA)
+                if (unit.StartsWith("="))
+                {
+                    Match mi = Regex.Match(unit, @"^=\s*IF\s*\((.+?),\s*""+\s*,\s*""+X""+\s*\)\s*$", RegexOptions.IgnoreCase);
+                    if (mi.Success)
+                    {
+                        bool incluso;
+                        try { incluso = CondizioneExcel(mi.Groups[1].Value, vars); }
+                        catch (NecException) { incluso = true; }
+                        if (!incluso) { esclusi++; continue; }
+                        unit = "";
+                    }
+                }
+                if (unit.Equals("x", StringComparison.OrdinalIgnoreCase)) { esclusi++; continue; }
+                double um = unit.Length == 0 ? cu : UnitToMeters(unit, f);
+                if (double.IsNaN(um)) { ignored++; continue; }
+                int xlRow = li + 1 - WeqRowOffset;
+                double[] p = new double[6];
+                double dia;
+                try
+                {
+                    for (int k = 0; k < 6; k++) p[k] = value(xlRow, k + 1) * um;
+                    double awg = Awg(Cell(c, 7));
+                    dia = double.IsNaN(awg) ? value(xlRow, 7) * du : awg;
+                }
+                catch (NecException ex)
+                {
+                    // celle nascoste del foglio Variables (BG, BH...) o nomi di AutoEZ (WireLen, VF...): non si possono ricostruire dal .weq
+                    Match mv = Regex.Match(ex.Message, @"Variabile sconosciuta: ([A-Za-z]{2,}\w*)");
+                    if (mv.Success) throw new NecException("File .weq, riga " + (li + 1) + ": la formula usa \"" + mv.Groups[1].Value + "\", una cella nascosta o un nome interno di AutoEZ: queste formule non sono ancora supportate in YA-NEC.");
+                    throw new NecException("File .weq, riga " + (li + 1) + ": " + ex.Message);
+                }
+                double len = Math.Sqrt((p[3] - p[0]) * (p[3] - p[0]) + (p[4] - p[1]) * (p[4] - p[1]) + (p[5] - p[2]) * (p[5] - p[2]));
+                string sg = Cell(c, 8);
+                int segs;
+                double sd;
+                if (double.TryParse(sg, NumberStyles.Float, CI, out sd)) segs = (int)Math.Round(sd);
+                else
+                {
+                    // formula dei segmenti di AutoEZ: WireLen e WL nella stessa unita' (il rapporto non dipende dall'unita')
+                    string e = sg.TrimStart('=');
+                    e = Regex.Replace(e, @"\bWireLen\b", "(" + len.ToString("R", CI) + ")", RegexOptions.IgnoreCase);
+                    e = Regex.Replace(e, @"\bWL\b", "(" + wl.ToString("R", CI) + ")", RegexOptions.IgnoreCase);
+                    e = Regex.Replace(e, @"\bINT\s*\(", "FLOOR(", RegexOptions.IgnoreCase);
+                    e = ExcelTrig(e);
+                    e = Regex.Replace(e, @"\b([A-Z])\b(?!\s*\()", mt => { double vv; return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value; });
+                    try { segs = (int)Math.Round(Expr.Eval(e, null)); }
+                    catch (NecException ex) { throw new NecException("File .weq, riga " + (li + 1) + ", segmenti \"" + sg + "\": " + ex.Message); }
+                }
+                if (segs < 1) segs = 1;
+                if (dia <= 0) throw new NecException("File .weq, riga " + (li + 1) + ": diametro nullo.");
+                tag++;
+                AddWire(m, tag, segs, p, dia / 2);
+                wireSegs.Add(segs);
+            }
+            if (tag == 0) throw new NecException("Nel file .weq non sono stati trovati fili.");
+            if (ignored > 0)
+                m.Warnings.Add(ignored + " righe di fili con un'unita' sconosciuta nella prima colonna non sono state importate.");
+            if (esclusi > 0)
+                m.Notes.Add(esclusi + " fili segnati come esclusi in AutoEZ (\"x\" nella prima colonna) non sono stati importati, come fa AutoEZ.");
+
+            int nCorr = 0, srcEsclusi = 0;
+            // sorgenti: filo, %, ampiezza, fase, tipo
+            for (int li = 1; li < rows.Length; li++)
+            {
+                string[] c = rows[li];
+                string typ = Cell(c, 4).ToUpperInvariant();
+                if (typ != "V" && typ != "I" && typ != "SV" && typ != "SI") continue;
+                if (Regex.IsMatch(Cell(c, 0), @"^V\d+$", RegexOptions.IgnoreCase))
+                    throw new NecException("File .weq: sorgente su un filo virtuale di EZNEC (" + Cell(c, 0) + "): i fili virtuali e le reti di linee tra loro non sono ancora supportate in YA-NEC.");
+                int w;
+                double pct, amp, ph;
+                // 0.4.16 (collaudo 0.4.14: LPDA di AC6LA, sorgente "=S" sull'ultimo elemento): le celle della sorgente possono essere formule
+                Func<int, double> cella = col =>
+                {
+                    string t = Cell(c, col);
+                    double dd;
+                    if (double.TryParse(t, NumberStyles.Float, CI, out dd)) return dd;
+                    if (t.StartsWith("=")) { try { return evalText(t, li + 1 - WeqRowOffset); } catch (Exception) { } }
+                    return double.NaN;
+                };
+                double wd = cella(0);
+                pct = cella(1); amp = cella(2); ph = cella(3);
+                if (double.IsNaN(wd) || double.IsNaN(pct) || double.IsNaN(amp) || double.IsNaN(ph)) continue;
+                w = (int)Math.Round(wd);
+                if (Cell(c, 13).Equals("x", StringComparison.OrdinalIgnoreCase)) { srcEsclusi++; continue; }   // sorgente esclusa in AutoEZ
+                if (w < 1 || w > wireSegs.Count) { m.Warnings.Add("Sorgente sul filo " + w + " inesistente: ignorata."); continue; }
+                double a = ph * Math.PI / 180;
+                m.Sources.Add(new SourceSpec { Tag = w, Seg = SegOf(wireSegs[w - 1], pct), V = new Complex(amp * Math.Cos(a), amp * Math.Sin(a)) });
+                if (typ == "I" || typ == "SI") nCorr++;
+            }
+            // frequenze di prova di AutoEZ ("_Freq (MHz)" in fondo): se sono diverse da quella del modello EZNEC si calcola alla prima
+            // (file di SQ9OUB del 13/11/2026: modello EZNEC a 432,5 MHz, sorgente sul radiatore dei 2 m, prove a 143,9 e 144 MHz)
+            for (int li = 0; li + 1 < rows.Length; li++)
+            {
+                if (Cell(rows[li], 0) != "Freq (MHz)") continue;
+                List<double> fp = new List<double>();
+                for (int k = li + 1; k < rows.Length; k++)
+                {
+                    double ff;
+                    string t = Cell(rows[k], 0);
+                    if (rows[k].Length > 0 && rows[k][0].Trim().StartsWith("_") && double.TryParse(t, NumberStyles.Float, CI, out ff) && ff > 0) fp.Add(ff); else break;
+                }
+                if (fp.Count > 0 && Math.Abs(fp[0] - m.FreqMHz) > 1e-6 * m.FreqMHz)
+                {
+                    m.Warnings.Add("File .weq: il modello EZNEC e' a " + m.FreqMHz.ToString("0.###", CI) + " MHz ma le frequenze di prova di AutoEZ sono " +
+                        string.Join(", ", fp.ConvertAll(q => q.ToString("0.###", CI))) + " MHz: calcolato a " + fp[0].ToString("0.###", CI) + " MHz (si cambia nella barra in alto).");
+                    m.FreqMHz = fp[0];
+                }
+                break;
+            }
+            // 0.4.4: sorgenti di corrente di EZNEC (I) come "Sorgenti a corrente" di YA-NEC, come nella lettura dei .ez
+            if (nCorr > 0 && nCorr == m.Sources.Count) m.CurrentSources = true;
+            else if (nCorr > 0) m.Warnings.Add("File .weq: sorgenti di corrente e di tensione insieme: YA-NEC non le mescola, tutte calcolate come sorgenti di tensione.");
+            if (srcEsclusi > 0) m.Notes.Add(srcEsclusi + " sorgenti segnate come escluse in AutoEZ (\"x\") non sono state importate.");
+            if (m.Sources.Count == 0) m.Warnings.Add("Nel file .weq non e' stata trovata nessuna sorgente.");
+            else if (m.Sources.Count == 1 && tag > 1)
+            {
+                // antenne ripetute (stack) con una sola sorgente: le altre risultano passive
+                List<double> zs = new List<double>();
+                foreach (GeomCard g in m.Geometry) { double z = Math.Round((g.F3 + g.F6) / 2, 3); if (!zs.Contains(z)) zs.Add(z); }
+                if (zs.Count > 1)
+                    m.Warnings.Add("Il modello ha fili a " + zs.Count + " quote diverse (antenne sovrapposte?) ma una sola sorgente: le antenne senza sorgente sono calcolate come passive.");
+            }
+            // 0.4.3: carichi e linee. Nei file di AutoEZ le sorgenti, i carichi e le linee sono tre blocchi di 30 righe che finiscono
+            // alla riga "Controls" (16el di IC8TEM, esempi 4Square TL, Fan Dipole, Diamond Quad).
+            int ci = -1;
+            for (int li = 0; li < rows.Length; li++) if (Cell(rows[li], 0) == "Controls") { ci = li; break; }
+            int nCar = 0, nLin = 0, carEsclusi = 0;
+            if (ci >= 60)
+            {
+                Func<int, int, double> num = (li, col) =>
+                {
+                    string t = Cell(rows[li], col);
+                    double dd;
+                    if (double.TryParse(t, NumberStyles.Float, CI, out dd)) return dd;
+                    return value(li + 1 - WeqRowOffset, col);
+                };
+                for (int li = ci - 60; li < ci - 30; li++)
+                {
+                    string[] c = rows[li];
+                    int w;
+                    if (!int.TryParse(Cell(c, 0), NumberStyles.Integer, CI, out w) || w < 1 || w > wireSegs.Count) continue;
+                    try
+                    {
+                        // 0.4.7 (registro 13/11 17:54, 2el-30-40.weq): "x" nella colonna N = carico escluso in AutoEZ; celle vuote = 0.
+                        // Colonna G compilata (Ser/Par) = carico RLC di EZNEC: R ohm, L uH, C pF (vuoto = assente); altrimenti R + jX con
+                        // il collegamento della colonna H. Le bobine "indut" di 2el-30-40 (13,4 uH) confermano L in microhenry.
+                        if (Cell(c, 13).Equals("x", StringComparison.OrdinalIgnoreCase)) { carEsclusi++; continue; }
+                        Func<int, double> nv = col => Cell(c, col).Length > 0 ? num(li, col) : 0;
+                        double pct = num(li, 1), r = nv(2);
+                        string rlc = Cell(c, 6), tipo = Cell(c, 7);
+                        int sg = SegOf(wireSegs[w - 1], pct);
+                        if (rlc.Length > 0 || Cell(c, 4).Length > 0)
+                        {
+                            bool par = rlc.StartsWith("Par", StringComparison.OrdinalIgnoreCase);
+                            double L = nv(3) * 1e-6, C = nv(4) * 1e-12;
+                            m.Loads.Add(new LoadSpec { Type = par ? 1 : 0, Tag = w, From = sg, To = sg, F1 = r, F2 = L, F3 = C });
+                        }
+                        else
+                        {
+                            double x = nv(3);
+                            if (tipo.StartsWith("Par", StringComparison.OrdinalIgnoreCase))
+                            {
+                                Complex zp = r == 0 ? new Complex(0, x) : x == 0 ? new Complex(r, 0) : 1 / (1 / new Complex(r, 0) + 1 / new Complex(0, x));
+                                m.Loads.Add(new LoadSpec { Type = 4, Tag = w, From = sg, To = sg, F1 = zp.Real, F2 = zp.Imaginary });
+                            }
+                            else m.Loads.Add(new LoadSpec { Type = 4, Tag = w, From = sg, To = sg, F1 = r, F2 = x });
+                        }
+                        nCar++;
+                    }
+                    catch (Exception ex) { m.Warnings.Add("Carico alla riga " + (li + 1) + " del .weq non letto: " + ex.Message); }
+                }
+                // 0.4.16 (LPDA di AC6LA): punto di un filo alla percentuale data, in metri (per la lunghezza "Actual dist" di AutoEZ)
+                Func<int, double, double[]> punto = (tg, pc) =>
+                {
+                    GeomCard gw = m.Geometry[tg - 1];
+                    double u = Math.Max(0, Math.Min(100, pc)) / 100;
+                    return new[] { gw.F1 + (gw.F4 - gw.F1) * u, gw.F2 + (gw.F5 - gw.F2) * u, gw.F3 + (gw.F6 - gw.F3) * u };
+                };
+                Func<int, double, int, double, double> distanza = (ta, pa, tb, pb) =>
+                {
+                    double[] a = punto(ta, pa), b = punto(tb, pb);
+                    return Math.Sqrt((a[0] - b[0]) * (a[0] - b[0]) + (a[1] - b[1]) * (a[1] - b[1]) + (a[2] - b[2]) * (a[2] - b[2]));
+                };
+                Func<string, int, double> numOFormula = (t, li2) =>
+                {
+                    double dd;
+                    if (double.TryParse(t, NumberStyles.Float, CI, out dd)) return dd;
+                    if (t.StartsWith("=")) return evalText(t, li2 + 1 - WeqRowOffset);
+                    throw new NecException("valore non numerico \"" + t + "\"");
+                };
+                NetworkSpec ultimaTl = null;
+                double ultimaP1 = 50, ultimaP2 = 50, ultimaVf = 1;
+                for (int li = ci - 30; li < ci; li++)
+                {
+                    string[] c = rows[li];
+                    // "LPDA repeat to <S>" di AutoEZ: la linea precedente (filo n -> n+1) si ripete fino al filo S, sempre tra fili vicini
+                    if (Cell(c, 0).IndexOf("LPDA repeat to", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        Match mr = Regex.Match(Cell(c, 0), @"&\s*([A-Z])\b");
+                        double sv;
+                        if (ultimaTl != null && mr.Success && vars.TryGetValue(mr.Groups[1].Value, out sv) && ultimaTl.Tag2 == ultimaTl.Tag1 + 1)
+                        {
+                            int fino = Math.Min((int)Math.Round(sv), wireSegs.Count), nRip = 0;
+                            for (int k = ultimaTl.Tag2; k < fino; k++)
+                            {
+                                double d = distanza(k, ultimaP1, k + 1, ultimaP2);
+                                m.Networks.Add(new NetworkSpec { IsTl = true, Tag1 = k, Seg1 = SegOf(wireSegs[k - 1], ultimaP1), Tag2 = k + 1, Seg2 = SegOf(wireSegs[k], ultimaP2),
+                                    F1 = ultimaTl.F1, F2 = ultimaVf > 0 ? d / ultimaVf : d });
+                                nLin++; nRip++;
+                            }
+                            m.Notes.Add("File .weq: \"LPDA repeat to " + fino + "\" di AutoEZ: la linea tra i fili " + ultimaTl.Tag1 + " e " + ultimaTl.Tag2 + " ripetuta " + nRip + " volte fino al filo " + fino + ".");
+                        }
+                        else m.Warnings.Add("Riga " + (li + 1) + " del .weq: \"LPDA repeat\" di AutoEZ non applicato (manca la linea tra due fili vicini o il numero di fili).");
+                        continue;
+                    }
+                    int w1, w2;
+                    double w1d;
+                    try { w1d = numOFormula(Cell(c, 0), li); } catch (Exception) { continue; }
+                    w1 = (int)Math.Round(w1d);
+                    if (w1 < 1 || w1 > wireSegs.Count) continue;
+                    // colonna N: "x" o =IF(condizione, "", "X") = linea esclusa in AutoEZ
+                    string esc = Cell(c, 13);
+                    if (esc.Equals("x", StringComparison.OrdinalIgnoreCase)) continue;
+                    Match mi = Regex.Match(esc, @"^=\s*IF\s*\((.+?),\s*""+\s*,\s*""+X""+\s*\)\s*$", RegexOptions.IgnoreCase);
+                    if (mi.Success) { bool inc; try { inc = CondizioneExcel(mi.Groups[1].Value, vars); } catch (NecException) { inc = true; } if (!inc) continue; }
+                    // stub in corto o aperto ("Short" / "Open" nella colonna del secondo filo): ammettenza in parallelo, come nella LPDA di YA-NEC
+                    string fine = Cell(c, 2);
+                    if (fine.Equals("Short", StringComparison.OrdinalIgnoreCase) || fine.Equals("Open", StringComparison.OrdinalIgnoreCase))
+                    {
+                        try
+                        {
+                            double p1s = numOFormula(Cell(c, 1), li), lens = numOFormula(Cell(c, 4), li), z0s = numOFormula(Cell(c, 5), li);
+                            double vfs = Cell(c, 6).Length > 0 ? numOFormula(Cell(c, 6), li) : 1;
+                            m.Stubs.Add(new Stub { Tag = w1, Seg = SegOf(wireSegs[w1 - 1], p1s), Z0 = Math.Abs(z0s), LenM = lens * cu, Vf = vfs > 0 ? vfs : 1, Corto = fine.StartsWith("S", StringComparison.OrdinalIgnoreCase) });
+                            nLin++;
+                        }
+                        catch (Exception ex) { m.Warnings.Add("Stub alla riga " + (li + 1) + " del .weq non letto: " + ex.Message); }
+                        continue;
+                    }
+                    if (!int.TryParse(fine, NumberStyles.Integer, CI, out w2) || w2 < 1 || w2 > wireSegs.Count)
+                    {
+                        m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq verso \"" + fine + "\" (filo virtuale): non importata.");
+                        continue;
+                    }
+                    try
+                    {
+                        double p1 = num(li, 1), p2 = num(li, 3), z0 = num(li, 5), vf = Cell(c, 6).Length > 0 ? num(li, 6) : 1;
+                        // "Actual dist" di AutoEZ: lunghezza = distanza vera tra i due punti di collegamento
+                        bool vera = Cell(c, 4).StartsWith("Actual", StringComparison.OrdinalIgnoreCase);
+                        double lenM = vera ? distanza(w1, p1, w2, p2) : num(li, 4) * cu;
+                        bool incr = Cell(c, 7).StartsWith("R", StringComparison.OrdinalIgnoreCase);
+                        NetworkSpec ns = new NetworkSpec { IsTl = true, Tag1 = w1, Seg1 = SegOf(wireSegs[w1 - 1], p1), Tag2 = w2, Seg2 = SegOf(wireSegs[w2 - 1], p2),
+                            F1 = incr ? -Math.Abs(z0) : Math.Abs(z0), F2 = lenM > 0 && vf > 0 ? lenM / vf : 0 };
+                        m.Networks.Add(ns);
+                        ultimaTl = ns; ultimaP1 = p1; ultimaP2 = p2; ultimaVf = vf;
+                        if (Cell(c, 8).Length > 0 && num(li, 8) != 0) m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq: perdita non usata (la scheda TL e' senza perdite).");
+                        nLin++;
+                    }
+                    catch (Exception ex) { m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq non letta: " + ex.Message); }
+                }
+            }
+            if (nCar + nLin > 0) m.Notes.Add("Dal .weq: " + nCar + " carichi e " + nLin + " linee.");
+            if (carEsclusi > 0) m.Notes.Add(carEsclusi + " carichi segnati come esclusi in AutoEZ (\"x\") non sono stati importati.");
+            m.Warnings.Add("Il terreno del file .weq non e' nel file (AutoEZ usa quello del modello EZNEC): controllare il menu Terreno.");
+            m.Notes.Add("Modello importato da AutoEZ (.weq) con la segmentazione del file.");
+            return m;
+        }
+
+        // =============================================================================================
+        // EZNEC .ez (binario, little endian). Struttura ricavata dal file di prova:
+        //   5: frequenza MHz (float)
+        //   0: numero dei fili (int16)  48: di nuovo il numero dei fili, 50: numero delle sorgenti (verificato su 40 file, 0.3.5)
+        //   18..47: titolo
+        //   186: tabella a righe di 170 byte; riga k = filo k + sorgente k:
+        //     +0  X1 Y1 Z1 X2 Y2 Z2 diametro (7 float, in metri anche se il modello e' in piedi)
+        //     +28 FF FF oppure il calibro AWG   +30 segmenti (int16)
+        //     +32 filo della sorgente (int16, 0 = nessuna)  +34 % da E1  +38 ampiezza  +42 fase (float)  +46 tipo ('V'/'I')
+        // =============================================================================================
+        const int EzTable = 186, EzRow = 170;
+
+        public static NecModel LoadEz(string path)
+        {
+            string y = YanecFile.Sostituto(path);           // 0.4.30: .yanec
+            if (y != null) return YanecFile.Carica(y);
+            NecModel m = ParseEz(File.ReadAllBytes(path));
+            m.FileName = path;
+            return m;
+        }
+
+        public static NecModel ParseEz(byte[] d)
+        {
+            // 0.4.3: struttura di Ez2Nec (AG7T, src/ez/read.rs; approvato il 13/11/2026): conteggi in testata (righe a 0x00,
+            // mezzi del terreno 0x02, fili 0x30, sorgenti 0x32, carichi 0x34, linee 0x78), byte di formato 5 a 0x40,
+            // righe di 170 byte con filo +0x00, sorgente +0x20, carico +0x2F (RLC +0x85), linea +0x6D; terreno 0x36 (F/P/R),
+            // modello 0x7B (M = MININEC, H = High Accuracy), mezzo 1 a 0xAA (sigma, er), resistivita' dei fili 0x62.
+            if (d.Length < EzTable + EzRow || d[0x40] != 5 && BitConverter.ToInt16(d, 48) != BitConverter.ToInt16(d, 0))
+                throw new NecException("Formato .ez non riconosciuto (versione di EZNEC diversa da quelle note). " +
+                                       "Da EZNEC: File > Save As NEC (.nec), poi aprire il file .nec.");
+            int nRec = BitConverter.ToInt16(d, 0);
+            int nWires = BitConverter.ToInt16(d, 0x30);
+            int nSrc = BitConverter.ToInt16(d, 0x32);
+            int nLoad = d[0x40] == 5 ? BitConverter.ToInt16(d, 0x34) : 0;
+            int nTl = d[0x40] == 5 ? BitConverter.ToInt16(d, 0x78) : 0;
+            if (nRec < 1 || nWires < 1 || nWires > nRec || EzTable + EzRow * nRec > d.Length)
+                throw new NecException("File .ez: numero di fili o di righe non valido (" + nWires + " fili, " + nRec + " righe).");
+            NecModel m = new NecModel { SourceFormat = "EZNEC" };
+            double f = BitConverter.ToSingle(d, 5);
+            if (!(f > 0.001 && f < 1e6)) throw new NecException("File .ez: frequenza non valida (" + f.ToString(CI) + ").");
+            m.FreqMHz = Math.Round(f, 4);
+            string title = Encoding.GetEncoding("ISO-8859-1").GetString(d, 0x12, 30).Trim('\0', ' ');
+            if (title.Length > 0) m.Comments.Add(title);
+            m.Comments.Add("Importato da EZNEC (.ez)");
+            List<int> segs = new List<int>();
+            for (int k = 0; k < nWires; k++)
+            {
+                int st = EzTable + EzRow * k;
+                int ns = BitConverter.ToInt16(d, st + 30);
+                if (ns < 1) throw new NecException("File .ez, filo " + (k + 1) + ": " + ns + " segmenti.");
+                double[] p = new double[6];
+                for (int j = 0; j < 6; j++) p[j] = BitConverter.ToSingle(d, st + 4 * j);
+                double dia = BitConverter.ToSingle(d, st + 24);
+                if (!(dia > 0 && dia < 10)) throw new NecException("File .ez, filo " + (k + 1) + ": diametro non valido.");
+                AddWire(m, k + 1, ns, p, dia / 2);
+                segs.Add(ns);
+            }
+            Func<int, string, bool> filoOk = (w, cosa) =>
+            {
+                if (w >= 1 && w <= segs.Count) return true;
+                m.Warnings.Add(cosa + " sul filo " + w + " inesistente: ignorato.");
+                return false;
+            };
+            for (int k = 0; k < Math.Min(nSrc, nRec); k++)
+            {
+                int st = EzTable + EzRow * k;
+                int w = BitConverter.ToInt16(d, st + 32);
+                if (!filoOk(w, "Sorgente")) continue;
+                double pct = BitConverter.ToSingle(d, st + 34), amp = BitConverter.ToSingle(d, st + 38), ph = BitConverter.ToSingle(d, st + 42);
+                char typ = (char)d[st + 46];
+                double a = ph * Math.PI / 180;
+                Complex v = new Complex(amp * Math.Cos(a), amp * Math.Sin(a));
+                int n = segs[w - 1];
+                if (typ == 'W' || typ == 'J')
+                {
+                    // sorgente divisa (split) di EZNEC: alimenta i due segmenti ai lati della giunzione piu' vicina (Ez2Nec, rules.rs)
+                    int jn = Math.Max(0, Math.Min(n, (int)Math.Floor(pct * n / 100.0 + 0.5)));
+                    if (jn >= 1 && jn < n) { m.Sources.Add(new SourceSpec { Tag = w, Seg = jn, V = v / 2 }); m.Sources.Add(new SourceSpec { Tag = w, Seg = jn + 1, V = v / 2 }); }
+                    else m.Sources.Add(new SourceSpec { Tag = w, Seg = SegOf(n, pct), V = v });
+                }
+                else m.Sources.Add(new SourceSpec { Tag = w, Seg = SegOf(n, pct), V = v });
+                if (typ == 'I' || typ == 'J') m.CurrentSources = true;
+            }
+            // carichi: tutti dello stesso tipo (0x75: Z = R+jX, R = RLC, L = Laplace)
+            char tipo = (char)d[0x75];
+            for (int k = 0; k < Math.Min(nLoad, nRec); k++)
+            {
+                int r = EzTable + EzRow * k;
+                int w = BitConverter.ToInt16(d, r + 0x2F);
+                if (!filoOk(w, "Carico")) continue;
+                int seg = SegOf(segs[w - 1], BitConverter.ToSingle(d, r + 0x31));
+                if (tipo == 'R')
+                {
+                    char forma = (char)d[r + 0x86];
+                    double rr = BitConverter.ToSingle(d, r + 0x87), l = BitConverter.ToSingle(d, r + 0x8B), c = BitConverter.ToSingle(d, r + 0x8F);
+                    if (forma == 'T') m.Warnings.Add("Carico trappola (T) di EZNEC sul filo " + w + ": calcolato come RLC parallelo.");
+                    m.Loads.Add(new LoadSpec { Type = forma == 'S' ? 0 : 1, Tag = w, From = seg, To = seg, F1 = rr, F2 = l, F3 = c });
+                }
+                else if (tipo == 'L') m.Warnings.Add("Carico di Laplace sul filo " + w + ": non importato (usare il .nec scritto da EZNEC).");
+                else m.Loads.Add(new LoadSpec { Type = 4, Tag = w, From = seg, To = seg, F1 = BitConverter.ToSingle(d, r + 0x35), F2 = BitConverter.ToSingle(d, r + 0x39) });
+            }
+            for (int k = 0; k < Math.Min(nTl, nRec); k++)
+            {
+                int r = EzTable + EzRow * k + 0x6D;
+                int wa = BitConverter.ToInt16(d, r), wb = BitConverter.ToInt16(d, r + 6);
+                double pa = BitConverter.ToSingle(d, r + 2), pb = BitConverter.ToSingle(d, r + 8), z0 = BitConverter.ToSingle(d, r + 12), len = BitConverter.ToSingle(d, r + 16), vf = BitConverter.ToSingle(d, r + 20);
+                if (!filoOk(wa, "Linea")) continue;
+                if (wb < 0) { m.Warnings.Add("Stub " + (wb == -1 ? "in corto" : "aperto") + " sul filo " + wa + ": non ancora importato."); continue; }
+                if (!filoOk(wb, "Linea")) continue;
+                double lnec = len > 0 && vf > 0 ? len / vf : 0;    // nel NEC la lunghezza della TL e' elettrica
+                if (len < 0)
+                {
+                    // lunghezza negativa: gradi elettrici (negli esempi ARRL di EZNEC, cardioide: -80,56 e -154,53)
+                    lnec = -len / 360.0 * 299.792458 / m.FreqMHz;
+                    m.Warnings.Add("Linea dal filo " + wa + ": lunghezza " + (-len).ToString("0.##", CI) + " gradi elettrici a " + m.FreqMHz.ToString("0.###", CI) + " MHz (" + lnec.ToString("0.###", CI) + " m nel NEC).");
+                }
+                else if (len == 0 && Math.Abs(vf - 1) > 1e-6) m.Warnings.Add("Linea dal filo " + wa + " senza lunghezza e con VF " + vf.ToString("0.##", CI) + ": usata la distanza tra i segmenti con VF 1.");
+                m.Networks.Add(new NetworkSpec { IsTl = true, Tag1 = wa, Seg1 = SegOf(segs[wa - 1], pa), Tag2 = wb, Seg2 = SegOf(segs[wb - 1], pb), F1 = z0, F2 = lnec });
+            }
+            if (d[0x40] == 5 && BitConverter.ToInt32(d, 0x9C) > 0) m.Warnings.Add("Reti L di EZNEC: non ancora importate.");
+            // terreno
+            char gnd = (char)d[0x36];
+            if (gnd == 'P') { m.Ground.Kind = GroundKind.Perfect; m.GroundFlag = 1; }
+            else if (gnd == 'R')
+            {
+                m.Ground.Kind = GroundKind.Real; m.GroundFlag = 1;
+                double sg = BitConverter.ToSingle(d, 0xAA), er = BitConverter.ToSingle(d, 0xAE);
+                if (sg > 0 && er > 0) { m.Ground.Sigma = sg; m.Ground.Epsr = er; }
+                m.Ground.Sommerfeld = d[0x7B] == 'H';
+                // 0.4.20 (prova 6 con EZNEC, 14/11/2026): il terreno reale "MININEC" di EZNEC calcola correnti e impedenza come su terreno
+                // perfetto e usa er e sigma solo per il diagramma (32 modelli su 32 tornano entro lo 0,5 % cosi'). In YA-NEC e' il GN 3
+                // ("MiniNec ground" di 4nec2), gia' presente: prima della 0.4.20 l'import lo trattava come GN 0 (coefficiente di riflessione)
+                // e l'impedenza differiva da EZNEC fino al 20 % (dipolo a 10 m: 74,2 +j10,7 contro 75,9 +j2,7 ohm).
+                m.Ground.MiniNec = !m.Ground.Sommerfeld;
+                if (m.Ground.MiniNec) m.Warnings.Add("Terreno reale \"MININEC\" di EZNEC: impedenza calcolata come su terreno perfetto, diagramma con er e sigma (GN 3, come EZNEC). " +
+                    "Per l'impedenza su terreno reale scegliere Sommerfeld (GN 2, in EZNEC \"High Accuracy\").");
+                if (BitConverter.ToInt16(d, 2) > 1) m.Warnings.Add("Terreno con piu' mezzi in EZNEC: importato solo il primo.");
+            }
+            double rho = BitConverter.ToSingle(d, 0x62);
+            if (rho > 0 && rho < 1) m.Loads.Add(new LoadSpec { Type = 5, Tag = 0, F1 = 1 / rho });
+            if (m.Sources.Count == 0) m.Warnings.Add("Nel file .ez non e' stata trovata nessuna sorgente.");
+            m.Warnings.Add("File .ez: lettura con la struttura di Ez2Nec (formato non documentato); unita' in metri. Controllare terreno e carichi.");
+            m.Notes.Add("Modello importato da EZNEC (.ez) con la segmentazione del file.");
+            // 0.4.22 (collaudo del 14/11/2026 20:39, fase 2J): sui 202 modelli d'archivio con diametri a gradini (Yagi a tubi telescopici
+            // dell'ARRL, Hy-Gain/K6STI...) YA-NEC che leggeva il .ez senza correzione differiva da EZNEC del 42 % (mediana), con la
+            // correzione di Leeson del 3 %: EZNEC li calcola con la sua Stepped Diameter Correction. Il .ez si legge quindi con Leeson acceso
+            // quando il modello ha catene di tubi a gradini.
+            try
+            {
+                if (Leeson.Trova(m).Count > 0)
+                {
+                    m.Leeson = true;
+                    m.Warnings.Add("Diametri a gradini: EZNEC li calcola con la sua Stepped Diameter Correction; YA-NEC applica la correzione di Leeson " +
+                        "(Impostazioni > Tubi telescopici). I due metodi danno risultati vicini ma non identici (nel collaudo circa il 3 %).");
+                }
+            }
+            catch { }
+            return m;
+        }
+    }
+}

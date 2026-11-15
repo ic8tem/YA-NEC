@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- 0.5.3 (richiesta di IC8TEM del 15/11/2026 22:21): pacchetti per Windows 7 SP1, 8 e 8.1 con .NET 6, come YA-MS ed E-LAYER ANALYZER
+         (.NET 8 non parte su Windows 7: manca GetSystemTimePreciseAsFileTime). compila_win7.bat: dotnet publish -p:Windows7=true -->
+    <TargetFramework Condition="'$(Windows7)' == 'true'">net6.0</TargetFramework>
+    <DefineConstants Condition="'$(Windows7)' == 'true'">$(DefineConstants);WINDOWS7</DefineConstants>
+    <CheckEolTargetFramework Condition="'$(Windows7)' == 'true'">false</CheckEolTargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>YaNec</RootNamespace>
+    <AssemblyName>YA-NEC</AssemblyName>
+    <Version Condition="'$(Version)' == ''">$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)/VERSION').Trim())</Version>
+    <Product>YA-NEC</Product>
+    <Authors>Costantino Cerrotta IC8TEM</Authors>
+    <Description>YA-NEC - simulatore d'antenne NEC2 (motore nec2c tradotto in C#) per Windows, Linux e Mac</Description>
+    <Copyright>GPL-3.0 - NEC2 (LLNL), nec2c e xnec2c (5B4AZ, KJ7LNW), YA-NEC (IC8TEM)</Copyright>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <SatelliteResourceLanguages>it;en</SatelliteResourceLanguages>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+    <!-- dalla 0.4.2: file unico (le librerie .NET dentro YA-NEC.exe), simboli dentro l'exe, librerie native nella cartella lib -->
+    <PublishSingleFile Condition="'$(RuntimeIdentifier)' != ''">true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>embedded</DebugType>
+    <NoWarn>$(NoWarn);CS0618;CS0168;CS0219;CS0414;CS0649;CS0169;CA1416</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data/**" Exclude="data/prove/4nec2zip.zip" CopyToOutputDirectory="PreserveNewest" LinkBase="data" ExcludeFromSingleFile="true" />  <!-- lo zip di 4nec2 serve solo al collaudo e non si distribuisce -->
+    <None Include="LEGGIMI.txt" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <None Include="COPYING" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <None Include="CREDITI.txt" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+  <!-- librerie native (SkiaSharp, HarfBuzzSharp, ANGLE, Avalonia Mac) nella sottocartella lib: il programma le ritrova con
+       src/Diag/Librerie.cs. Solo i nomi noti: le librerie del runtime .NET restano dove il programma le cerca. -->
+  <Target Name="SpostaLibrerieNative" AfterTargets="Publish">
+    <ItemGroup>
+      <_NativeYaNec Include="$(PublishDir)libSkiaSharp*;$(PublishDir)libHarfBuzzSharp*;$(PublishDir)av_libglesv2*;$(PublishDir)libAvaloniaNative*" />
+    </ItemGroup>
+    <MakeDir Directories="$(PublishDir)lib" />
+    <Move SourceFiles="@(_NativeYaNec)" DestinationFolder="$(PublishDir)lib" OverwriteReadOnlyFiles="true" />
+    <Message Importance="high" Text="Librerie native spostate in $(PublishDir)lib: @(_NativeYaNec->'%(Filename)%(Extension)')" />
+  </Target>
+</Project>

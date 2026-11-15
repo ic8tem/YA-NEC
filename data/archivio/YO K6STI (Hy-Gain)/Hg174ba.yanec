@@ -1,0 +1,21 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg174ba
+CM YANEC DESCRIZIONE=Hy-Gain 174BA
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg174ba.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 174BA
+18.100   MHz
+4 elements, inches
+          3.5000   1.2500   1.1250   0.8750   0.6250   0.4375  
+  0.000   3.6250  41.8750  46.0000  25.0000  24.0000  30.7500  
+ 97.500   3.6250  32.3750  46.0000  25.0000  24.0000  29.5000  
+168.000   3.6250  18.3750  46.0000  25.0000  24.0000  36.5000  
+244.000   3.6250  14.1250  46.0000  25.0000  24.0000  35.7500  
+
+    This design is a modification of the HG204BA.
+It was developed by Hy-Gain engineer Roger Cox using
+YO 3.0 (MININEC calibration).
+
+

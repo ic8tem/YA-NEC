@@ -1,0 +1,33 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=dxcommander_A
+CM YANEC DESCRIZIONE=DX Commander (dxcommander.com): verticale multibanda a ventaglio su palo da 10 m - modello di principio YA-NEC
+CM YANEC CATEGORIA=Verticali multibanda
+CM YANEC FONTE=Modelli ricostruiti da YA-NEC per IC8TEM (Butternut, DX Commander, Spiderbeam)
+CM YANEC ORIGINALE=dxcommander_A.nec
+CM YANEC CONTENUTO=nec
+CM DX Commander (dxcommander.com): verticale multibanda a ventaglio su palo da 10 m - modello di principio YA-NEC
+CM elementi 40/30/20/17/12/10 m a ventaglio a 6 cm dal palo, il 40 m ripiegato in cima; lunghezze tarate con nec2c
+CM variante A: terreno perfetto, alimentazione alla base
+CM riferimento nec2c: 40 m 7.100 MHz Z 28.4 -3.3j; 30 m 10.120 MHz Z 26.6 -11.4j; 20 m 14.150 MHz Z 23.6 -0.7j; 17 m 18.100 MHz Z 17.1 -1.4j; 12 m 24.940 MHz Z 15.0 -13.2j; 10 m 28.400 MHz Z 111.0 -222.7j
+CE
+GW 1 3 0 0 0 0 0 0.3 0.0005
+GW 2 1 0 0 0.3 0.06 0 0.3 0.0005
+GW 3 36 0.06 0 0.3 0.06 0 9.3 0.0005
+GW 4 1 0.06 0 9.3 0.108 0 9.3 0.0005
+GW 5 8 0.108 0 9.3 0.108 0 7.22832 0.0005
+GW 6 1 0 0 0.3 0.03 0.0519615 0.3 0.0005
+GW 7 36 0.03 0.0519615 0.3 0.03 0.0519615 7.4532 0.0005
+GW 8 1 0 0 0.3 -0.03 0.0519615 0.3 0.0005
+GW 9 26 -0.03 0.0519615 0.3 -0.03 0.0519615 5.43448 0.0005
+GW 10 1 0 0 0.3 -0.06 7.34788e-18 0.3 0.0005
+GW 11 20 -0.06 7.34788e-18 0.3 -0.06 7.34788e-18 4.30089 0.0005
+GW 12 1 0 0 0.3 -0.03 -0.0519615 0.3 0.0005
+GW 13 15 -0.03 -0.0519615 0.3 -0.03 -0.0519615 3.20269 0.0005
+GW 14 1 0 0 0.3 0.03 -0.0519615 0.3 0.0005
+GW 15 12 0.03 -0.0519615 0.3 0.03 -0.0519615 2.65889 0.0005
+GE 1
+GN 1
+EX 0 1 1 0 1 0
+FR 0 1 0 0 14.15 0
+RP 0 19 1 1000 0 0 5 0
+EN

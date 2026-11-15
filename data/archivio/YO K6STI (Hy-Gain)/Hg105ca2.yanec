@@ -1,0 +1,31 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg105ca2
+CM YANEC DESCRIZIONE=Hy-Gain 105CA Low Phone Setting
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg105ca2.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 105CA Low Phone Setting
+28.000 28.400 28.800 28.400 MHz
+5 elements, inches
+           1.0000    0.8750    0.6250    0.4375  
+  0.000    3.5000   41.5000   21.5000   41.5000  
+ 58.000    3.7500   21.5000   23.5000   53.3750  
+103.000    3.5000   21.5000   23.5000   52.7500  
+186.500    3.5000   21.5000   23.5000   51.0000  
+286.500    3.5000   21.5000   23.5000   47.2500  
+
+This setting of the 105CA is centered on 28.400 MHz
+for Low Phone operation.  It has a 2:1 VSWR band-
+width of 1100 KHz centered on 28.400.  Maximum gain
+is 8.22 dBd and maximum F/B is 27 dB.
+
+Beta rod length= 17 inches (measured from inside
+tubing edge to outside edge of clamp).  Pigtail
+length= 7 inches.  Balun= Hy-Gain BN-4000 (current
+type)
+
+Radiation patterns and VSWR were verified in September
+1991.  9-18-91  RC
+
+

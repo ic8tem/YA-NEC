@@ -1,0 +1,252 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=TFD_Sweep3-30
+CM YANEC DESCRIZIONE=TFD_Sweep3-30
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=TFD_Sweep3-30.weq
+CM YANEC CONTENUTO=weq
+MultiNEC	3	ft	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+
+_1000	"_Applied (input) power, watts"				
+_#N/A	"_Load power, watts (calculated)"	_LoadPower = LoadAmps^2 * LoadR and			
+	"_   Note that ""D"" and ""J"" are"	_with a 1A source SrcPower = 1A^2 * SrcR = SrcR.			
+	"_   *calculated*, not set directly."	"_So load power at ""B"" watts input = LoadAmps^2 * LoadR * (B / SrcR)."			
+	_   See Calculate sheet for values.	_(Also see note below on row 29.)			
+	_   Will always show here as #N/A.				
+_#N/A	"_Load loss, dB (calculated)"	_ =-10 * LOG10(1 - (LoadPower / InputPower))			
+		"_Formulas to set ""D"" and ""J"" are on the Calculate sheet."			
+_89.24	"_Wire length, feet"				
+_7.8	"_Wire spacing, inches"				
+_15	"_Tilt angle, deg, down from horizontal"				
+_50	"_Height, feet, top wire (top end if tilted)"				
+
+_820	"_Load (terminating) resistor, ohms"				
+_16	_Transformer Port 2 Rel Z (Ratio 1:S)							
+
+		_Note:  As an alternative you could set the input power level via						
+		_EZNEC Options > Power Level and then *NOT* apply correction						
+		"_factor ""(B / SrcR)"" to the calculated load power since EZNEC will"						
+		_have adjusted the reported LoadAmps already.						
+
+	_Terminated Folded Dipole		_(original per W4RNL)					
+	"_Wires are in over/under configuration, can be rotated down by any angle and elevated to any height."							
+	"_Top and bottom wires are ""L"" feet long, spacing between wires is ""M"" inches converted to feet."							
+	"_Start with wires oriented horizontally, top wire (#2, row 15) at Z=0."							
+_rx	_0	_0	_=-M/12	_0	_=L	_=-M/12	_#14	_=ODD(WireLen / 32.786 * 25)
+_rx	_0	_0	_0	_0	_=L	_0	_#14	_=ODD(WireLen / 32.786 * 25)
+_rx	_0	_0	_0	_0	_0	_=-M/12	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"
+_rx	_0	_=L	_0	_0	_=L	_=-M/12	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"
+	"_Rotate outside end down by ""N"" degrees."							
+_m	_=$B$14	"_=ROUND($C$14 * COS(RADIANS(-N)) - $D$14 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$14 * SIN(RADIANS(-N)) + $D$14 * COS(RADIANS(-N)), 9)"	_=$E$14	"_=ROUND($F$14 * COS(RADIANS(-N)) - $G$14 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$14 * SIN(RADIANS(-N)) + $G$14 * COS(RADIANS(-N)), 9)"	_#14	_=ODD(WireLen / 32.786 * 25)																								
+_m	_=$B$15	"_=ROUND($C$15 * COS(RADIANS(-N)) - $D$15 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$15 * SIN(RADIANS(-N)) + $D$15 * COS(RADIANS(-N)), 9)"	_=$E$15	"_=ROUND($F$15 * COS(RADIANS(-N)) - $G$15 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$15 * SIN(RADIANS(-N)) + $G$15 * COS(RADIANS(-N)), 9)"	_#14	_=ODD(WireLen / 32.786 * 25)																								
+_m	_=$B$16	"_=ROUND($C$16 * COS(RADIANS(-N)) - $D$16 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$16 * SIN(RADIANS(-N)) + $D$16 * COS(RADIANS(-N)), 9)"	_=$E$16	"_=ROUND($F$16 * COS(RADIANS(-N)) - $G$16 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$16 * SIN(RADIANS(-N)) + $G$16 * COS(RADIANS(-N)), 9)"	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+_m	_=$B$17	"_=ROUND($C$17 * COS(RADIANS(-N)) - $D$17 * SIN(RADIANS(-N)), 9)"	"_=ROUND($C$17 * SIN(RADIANS(-N)) + $D$17 * COS(RADIANS(-N)), 9)"	_=$E$17	"_=ROUND($F$17 * COS(RADIANS(-N)) - $G$17 * SIN(RADIANS(-N)), 9)"	"_=ROUND($F$17 * SIN(RADIANS(-N)) + $G$17 * COS(RADIANS(-N)), 9)"	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+	"_Move all wires up by ""O"" feet."																															
+	_=$B$19	_=$C$19	_=$D$19 + O	_=$E$19	_=$F$19	_=$G$19 + O	_#14	_=ODD(WireLen / 32.786 * 25)																								
+	_=$B$20	_=$C$20	_=$D$20 + O	_=$E$20	_=$F$20	_=$G$20 + O	_#14	_=ODD(WireLen / 32.786 * 25)																								
+	_=$B$21	_=$C$21	_=$D$21 + O	_=$E$21	_=$F$21	_=$G$21 + O	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+	_=$B$22	_=$C$22	_=$D$22 + O	_=$E$22	_=$F$22	_=$G$22 + O	_#14	"_=CEILING(WireLen / 32.786 * 50, 1)"																								
+
+	_Credit:  Initial values for variables L/M/Q/S per W4RNL																															
+_V1		_1	_0	_I																						_V1		_1	_50	_1	"_=MAX(1, S)"	_N
+																										"_Formula in cell H112 is ""=MAX(1, S)"" so that the value can never go below 1."						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_2	_50	"_=MAX(0, Q)"				_Ser	_Ser
+"_Formula in cell E40 is ""=MAX(0, Q)"" so that the value can never go below 0."							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	2	4	1	1	0	1	50	0	20																FALSE	TRUE	_1	_0
+_Freq (MHz)	_D	_J																												
+_3	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G11)"	_=-10 * LOG10(1 - ($C11 / B))																												
+_3.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G12)"	_=-10 * LOG10(1 - ($C12 / B))																												
+_3.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G13)"	_=-10 * LOG10(1 - ($C13 / B))																												
+_3.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G14)"	_=-10 * LOG10(1 - ($C14 / B))																												
+_4	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G15)"	_=-10 * LOG10(1 - ($C15 / B))																												
+_4.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G16)"	_=-10 * LOG10(1 - ($C16 / B))																												
+_4.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G17)"	_=-10 * LOG10(1 - ($C17 / B))																												
+_4.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G18)"	_=-10 * LOG10(1 - ($C18 / B))																												
+_5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G19)"	_=-10 * LOG10(1 - ($C19 / B))																												
+_5.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G20)"	_=-10 * LOG10(1 - ($C20 / B))
+_5.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G21)"	_=-10 * LOG10(1 - ($C21 / B))
+_5.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G22)"	_=-10 * LOG10(1 - ($C22 / B))
+_6	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G23)"	_=-10 * LOG10(1 - ($C23 / B))
+_6.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G24)"	_=-10 * LOG10(1 - ($C24 / B))
+_6.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G25)"	_=-10 * LOG10(1 - ($C25 / B))
+_6.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G26)"	_=-10 * LOG10(1 - ($C26 / B))
+_7	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G27)"	_=-10 * LOG10(1 - ($C27 / B))
+_7.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G28)"	_=-10 * LOG10(1 - ($C28 / B))
+_7.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G29)"	_=-10 * LOG10(1 - ($C29 / B))
+_7.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G30)"	_=-10 * LOG10(1 - ($C30 / B))
+_8	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G31)"	_=-10 * LOG10(1 - ($C31 / B))
+_8.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G32)"	_=-10 * LOG10(1 - ($C32 / B))
+_8.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G33)"	_=-10 * LOG10(1 - ($C33 / B))
+_8.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G34)"	_=-10 * LOG10(1 - ($C34 / B))
+_9	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G35)"	_=-10 * LOG10(1 - ($C35 / B))
+_9.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G36)"	_=-10 * LOG10(1 - ($C36 / B))
+_9.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G37)"	_=-10 * LOG10(1 - ($C37 / B))
+_9.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G38)"	_=-10 * LOG10(1 - ($C38 / B))
+_10	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G39)"	_=-10 * LOG10(1 - ($C39 / B))
+_10.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G40)"	_=-10 * LOG10(1 - ($C40 / B))
+_10.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G41)"	_=-10 * LOG10(1 - ($C41 / B))
+_10.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G42)"	_=-10 * LOG10(1 - ($C42 / B))
+_11	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G43)"	_=-10 * LOG10(1 - ($C43 / B))
+_11.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G44)"	_=-10 * LOG10(1 - ($C44 / B))
+_11.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G45)"	_=-10 * LOG10(1 - ($C45 / B))
+_11.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G46)"	_=-10 * LOG10(1 - ($C46 / B))
+_12	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G47)"	_=-10 * LOG10(1 - ($C47 / B))
+_12.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G48)"	_=-10 * LOG10(1 - ($C48 / B))
+_12.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G49)"	_=-10 * LOG10(1 - ($C49 / B))
+_12.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G50)"	_=-10 * LOG10(1 - ($C50 / B))
+_13	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G51)"	_=-10 * LOG10(1 - ($C51 / B))
+_13.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G52)"	_=-10 * LOG10(1 - ($C52 / B))
+_13.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G53)"	_=-10 * LOG10(1 - ($C53 / B))
+_13.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G54)"	_=-10 * LOG10(1 - ($C54 / B))
+_14	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G55)"	_=-10 * LOG10(1 - ($C55 / B))
+_14.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G56)"	_=-10 * LOG10(1 - ($C56 / B))
+_14.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G57)"	_=-10 * LOG10(1 - ($C57 / B))
+_14.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G58)"	_=-10 * LOG10(1 - ($C58 / B))
+_15	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G59)"	_=-10 * LOG10(1 - ($C59 / B))
+_15.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G60)"	_=-10 * LOG10(1 - ($C60 / B))
+_15.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G61)"	_=-10 * LOG10(1 - ($C61 / B))
+_15.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G62)"	_=-10 * LOG10(1 - ($C62 / B))
+_16	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G63)"	_=-10 * LOG10(1 - ($C63 / B))
+_16.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G64)"	_=-10 * LOG10(1 - ($C64 / B))
+_16.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G65)"	_=-10 * LOG10(1 - ($C65 / B))
+_16.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G66)"	_=-10 * LOG10(1 - ($C66 / B))
+_17	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G67)"	_=-10 * LOG10(1 - ($C67 / B))
+_17.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G68)"	_=-10 * LOG10(1 - ($C68 / B))
+_17.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G69)"	_=-10 * LOG10(1 - ($C69 / B))
+_17.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G70)"	_=-10 * LOG10(1 - ($C70 / B))
+_18	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G71)"	_=-10 * LOG10(1 - ($C71 / B))
+_18.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G72)"	_=-10 * LOG10(1 - ($C72 / B))
+_18.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G73)"	_=-10 * LOG10(1 - ($C73 / B))
+_18.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G74)"	_=-10 * LOG10(1 - ($C74 / B))
+_19	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G75)"	_=-10 * LOG10(1 - ($C75 / B))
+_19.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G76)"	_=-10 * LOG10(1 - ($C76 / B))
+_19.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G77)"	_=-10 * LOG10(1 - ($C77 / B))
+_19.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G78)"	_=-10 * LOG10(1 - ($C78 / B))
+_20	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G79)"	_=-10 * LOG10(1 - ($C79 / B))
+_20.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G80)"	_=-10 * LOG10(1 - ($C80 / B))
+_20.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G81)"	_=-10 * LOG10(1 - ($C81 / B))
+_20.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G82)"	_=-10 * LOG10(1 - ($C82 / B))
+_21	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G83)"	_=-10 * LOG10(1 - ($C83 / B))
+_21.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G84)"	_=-10 * LOG10(1 - ($C84 / B))
+_21.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G85)"	_=-10 * LOG10(1 - ($C85 / B))
+_21.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G86)"	_=-10 * LOG10(1 - ($C86 / B))
+_22	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G87)"	_=-10 * LOG10(1 - ($C87 / B))
+_22.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G88)"	_=-10 * LOG10(1 - ($C88 / B))
+_22.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G89)"	_=-10 * LOG10(1 - ($C89 / B))
+_22.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G90)"	_=-10 * LOG10(1 - ($C90 / B))
+_23	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G91)"	_=-10 * LOG10(1 - ($C91 / B))
+_23.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G92)"	_=-10 * LOG10(1 - ($C92 / B))
+_23.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G93)"	_=-10 * LOG10(1 - ($C93 / B))
+_23.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G94)"	_=-10 * LOG10(1 - ($C94 / B))
+_24	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G95)"	_=-10 * LOG10(1 - ($C95 / B))
+_24.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G96)"	_=-10 * LOG10(1 - ($C96 / B))
+_24.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G97)"	_=-10 * LOG10(1 - ($C97 / B))
+_24.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G98)"	_=-10 * LOG10(1 - ($C98 / B))
+_25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G99)"	_=-10 * LOG10(1 - ($C99 / B))
+_25.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G100)"	_=-10 * LOG10(1 - ($C100 / B))
+_25.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G101)"	_=-10 * LOG10(1 - ($C101 / B))
+_25.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G102)"	_=-10 * LOG10(1 - ($C102 / B))
+_26	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G103)"	_=-10 * LOG10(1 - ($C103 / B))
+_26.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G104)"	_=-10 * LOG10(1 - ($C104 / B))
+_26.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G105)"	_=-10 * LOG10(1 - ($C105 / B))
+_26.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G106)"	_=-10 * LOG10(1 - ($C106 / B))
+_27	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G107)"	_=-10 * LOG10(1 - ($C107 / B))
+_27.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G108)"	_=-10 * LOG10(1 - ($C108 / B))
+_27.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G109)"	_=-10 * LOG10(1 - ($C109 / B))
+_27.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G110)"	_=-10 * LOG10(1 - ($C110 / B))
+_28	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G111)"	_=-10 * LOG10(1 - ($C111 / B))
+_28.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G112)"	_=-10 * LOG10(1 - ($C112 / B))
+_28.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G113)"	_=-10 * LOG10(1 - ($C113 / B))
+_28.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G114)"	_=-10 * LOG10(1 - ($C114 / B))
+_29	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G115)"	_=-10 * LOG10(1 - ($C115 / B))
+_29.25	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G116)"	_=-10 * LOG10(1 - ($C116 / B))
+_29.5	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G117)"	_=-10 * LOG10(1 - ($C117 / B))
+_29.75	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G118)"	_=-10 * LOG10(1 - ($C118 / B))
+_30	"_=CurMag(2, 50, ROW()-10)^2 * Q * (B / $G119)"	_=-10 * LOG10(1 - ($C119 / B))
+110		

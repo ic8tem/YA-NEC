@@ -1,0 +1,355 @@
+# YA-NEC - English (en) translation of the user interface. UTF-8.
+# One entry per line: <Italian key><TAB><translation>. Keys are listed in chiavi.txt (same folder).
+# In both columns the two characters \n mean a line break. Keep the placeholders {0}, {1}, ...
+# Lines starting with # are comments. Missing entries are shown in Italian.
+(L - uH; C - pF; R/jX - ohm) LC = trappola, R+jX, RLC serie	(L - uH; C - pF; R/jX - ohm) LC = trap, R+jX, series RLC
+1-2-3 elementi, multibanda (DK7ZB)	1-2-3 elements, multiband (DK7ZB)
+1296 / 2320 / 5760 / 10368 MHz, meccanica, lobi, EME	1296 / 2320 / 5760 / 10368 MHz, mechanics, lobes, EME
+2 affiancate	2 side by side
+2 sovrapposte	2 stacked
+2 x 2	2 x 2
+2,4 GHZ COMMERCIALE	2.4 GHZ COMMERCIAL
+A (PULSE)	To (PULSE)
+AGT (test di convergenza)	AGT (convergence test)
+AGT, efficienza, segmenti	AGT, efficiency, segments
+AL, spire, banda	AL, turns, band
+AL, spire, impedenza	AL, turns, impedance
+Acciaio inox	Stainless steel
+Acqua di mare	Sea water
+Acqua dolce	Fresh water
+Acqua dolce 10 °C (fino a 100 MHz)	Fresh water 10 °C (up to 100 MHz)
+Acqua dolce 20 °C (fino a 100 MHz)	Fresh water 20 °C (up to 100 MHz)
+Alluminio puro	Pure aluminium
+Altezza dal suolo della riga in basso	Height above ground of the bottom row
+Altri dati	More data
+Alza a 10 m	Raise to 10 m
+Ampiezza dello sweep in kHz, centrata sulla frequenza di calcolo	Sweep width in kHz, centred on the calculation frequency
+Annulla	Cancel
+Annulla (torna al terreno di prima)	Cancel (back to the previous ground)
+Antenna EH	EH antenna
+Antenna su tetto (solaio)	Antenna on a roof (slab)
+Antenne	Antennas
+Antenne riceventi	Receiving antennas
+Antenne su PCB	PCB antennas
+Apertura a -3 dB	-3 dB beamwidth
+Applica e ricalcola	Apply and recalculate
+Apri "Antenna su tetto"	Open "Antenna on a roof"
+Apri come modello	Open as model
+Apri modello...	Open model...
+Apri prima un modello.	Open a model first.
+Apri senza salvare	Open without saving
+Autotest	Self-test
+Avvisi	Warnings
+Azimut	Azimuth
+Azimut ruotato di 90° (0° in alto)	Azimuth rotated by 90° (0° at the top)
+Balun	Balun
+Banda	Band
+Banda, centro, frequenza di calcolo, span e punti dello sweep (caselle e frecce)	Band, centre, calculation frequency, span and sweep points (boxes and arrows)
+Beverage On Ground, filo isolato a terra	Beverage On Ground, insulated wire on the ground
+Blu	Blue
+Calcola	Calculate
+Calcolatori	Calculators
+Calcolo dell'antenna base in spazio libero...	Calculating the base antenna in free space...
+Calotta polare	Polar ice cap
+Carichi	Loads
+Carichi LC (trappole), R+jX e RLC serie, come in MMANA.	LC loads (traps), R+jX and series RLC, as in MMANA.
+Cavi RG	RG cables
+Centro	Centre
+Chiaro	Light
+Chiaro (IP-TRX-CTRL)	Light (IP-TRX-CTRL)
+Chiudi senza salvare	Close without saving
+Cielo	Sky
+Citta' industriale	Industrial city
+Citta' industriale, attenuazione massima	Industrial city, maximum attenuation
+Citta' industriale, attenuazione media	Industrial city, medium attenuation
+Colori	Colours
+Continua con il solaio	Continue with the slab
+Controlla...	Check...
+Copie identiche della stessa antenna: distanze DL6WU dalle aperture dell'antenna base.	Identical copies of the same antenna: DL6WU spacings from the beamwidths of the base antenna.
+Corr. A	Curr. A
+Correnti	Currents
+Correzione KF2YN (guadagno medio del modello)	KF2YN correction (average gain of the model)
+Correzione del boom	Boom correction
+Cosa faccio prima di aprire l'esempio?	What should I do before opening the example?
+Cosa faccio prima di aprire un altro modello?	What should I do before opening another model?
+Cosa faccio prima di chiudere YA-NEC?	What should I do before closing YA-NEC?
+Cosa faccio prima di cominciare un modello nuovo?	What should I do before starting a new model?
+Crea il modello NEC e verificalo	Create the NEC model and check it
+Crea lo stack nel modello aperto	Create the stack in the open model
+Crediti	Credits
+Crediti e ringraziamenti	Credits and acknowledgements
+Da (PULSE)	From (PULSE)
+Da dove arriva il rumore	Where the noise comes from
+Dal modello	From the model
+Dati di ingresso	Input data
+Diagramma 3D	3D pattern
+Diagrammi	Patterns
+Dipoli	Dipoles
+Dipolo basso	Low dipole
+Dipolo multibanda	Multiband dipole
+Direzione del massimo	Direction of maximum
+Distanza orizzontale	Horizontal spacing
+Distanza verticale	Vertical spacing
+Distanze di stack DL6WU	DL6WU stacking distances
+Due DHDL broadside	Two broadside DHDLs
+Efficienza	Efficiency
+Efficienza di radiazione (potenza irradiata / potenza in ingresso)	Radiation efficiency (radiated power / input power)
+Elevazione	Elevation
+Esegui l'autotest del motore	Run the engine self-test
+Esempi...	Examples...
+FORME SEMPLICI	SIMPLE SHAPES
+Fasi delle sorgenti	Source phases
+Fertile	Rich soil
+Fili	Wires
+Fili a terra / bassi	Wires on / near the ground
+Fili colorati secondo la corrente (blu bassa, rosso alta), con la scala in basso.	Wires coloured by current (blue low, red high), with the scale at the bottom.
+Formule e fonti	Formulas and sources
+Frequenza	Frequency
+Frequenza MHz	Frequency MHz
+Frequenza e sweep	Frequency and sweep
+G/T antenna	Antenna G/T
+G/T sistema	System G/T
+G3TXQ, misure JN1GLB, accordo a 50 Ω	G3TXQ, JN1GLB measurements, 50 Ω match
+Ghiaccio marino	Sea ice
+Ghiaccio polare	Polar ice
+Guadagno	Gain
+Guadagno di stack	Stack gain
+Guadagno massimo	Maximum gain
+HEN (loop giapponese)	HEN (Japanese loop)
+HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda	HF and low VHF: multiband radiators + reflector or director per band
+Hi-Z 2-8 elementi	Hi-Z 2-8 elements
+IFA, MIFA, dipolo, Yagi, Big Wheel; disegno 1:1	IFA, MIFA, dipole, Yagi, Big Wheel; 1:1 drawing
+Impedenza	Impedance
+Impedenza (ohm)	Impedance (ohm)
+Impedenza di riferimento per il ROS (50 ohm il cavo, 28 ohm le Yagi DK7ZB, 75 ohm, ...).	Reference impedance for SWR (50 ohm coax, 28 ohm DK7ZB Yagis, 75 ohm, ...).
+Impostazioni	Settings
+Incrociata	Crossed
+K6SE, due verticali corte + filo	K6SE, two short verticals + wire
+Kernel esteso (EK)	Extended kernel (EK)
+L, Pi, T, con i valori	L, Pi, T, with the values
+LOG-PERIODICHE E SCHIERE	LOG-PERIODICS AND ARRAYS
+Le spaziature devono essere positive.	Spacings must be positive.
+Libera	Free
+Lineare in dB	Linear in dB
+Linee	Lines
+Linee di trasmissione tra due punti (scheda TL del NEC), anche incrociate.	Transmission lines between two points (NEC TL card), also crossed.
+Lingua	Language
+Lobo 3D	3D lobe
+Log-periodica (LPDA)	Log-periodic (LPDA)
+Logaritmica ARRL	ARRL logarithmic
+Loop magnetica	Magnetic loop
+Loop magnetico RX	RX magnetic loop
+Loop rettangolare	Rectangular loop
+Lungh. m (0 = distanza)	Length m (0 = distance)
+Manuale	Manual
+Mare 10 °C (fino a 1 GHz)	Sea 10 °C (up to 1 GHz)
+Mare 20 °C (fino a 1 GHz)	Sea 20 °C (up to 1 GHz)
+Materiale dei fili: aggiunge le perdite ohmiche (rame, alluminio, ottone, acciaio inox).	Wire material: adds ohmic losses (copper, aluminium, brass, stainless steel).
+Medio	Average
+Modello non salvato	Model not saved
+Molto buono	Very good
+Molto povero / citta'	Very poor / city
+Mostra o nasconde AGT, efficienza e numero di segmenti	Shows or hides AGT, efficiency and number of segments
+Mostra o nasconde la corrente sui fili.	Shows or hides the current on the wires.
+N6NB e Cebik, ottimizzazione a passi	N6NB and Cebik, step optimization
+Nero	Black
+Nero (IP-TRX-CTRL)	Black (IP-TRX-CTRL)
+Non mostrare piu' questo avviso (si riattiva da Impostazioni > Terreno)	Do not show this warning again (re-enable it in Settings > Ground)
+Notte	Night
+Notte (IP-TRX-CTRL)	Night (IP-TRX-CTRL)
+Nuovo	New
+Nuovo senza salvare	New without saving
+Oggetti del modello	Model objects
+Ottimizzatore	Optimizer
+Ottone	Brass
+PARABOLE	DISHES
+POLARIZZAZIONE CIRCOLARE (SATELLITI)	CIRCULAR POLARIZATION (SATELLITES)
+PULSE come in MMANA: w + filo + b/c/e (w14c); colonna grigia = segmento NEC	PULSE as in MMANA: w + wire + b/c/e (w14c); grey column = NEC segment
+Paludoso	Marshy
+Parabola offset	Offset dish
+Parabola primo fuoco	Prime-focus dish
+Pascolo	Pasture
+Pastello acquamarina	Pastel aquamarine
+Pastello arancione	Pastel orange
+Pastello azzurro	Pastel light blue
+Pastello indaco	Pastel indigo
+Pastello lilla	Pastel lilac
+Pastello marrone	Pastel brown
+Pastello rosa	Pastel pink
+Pastello verde	Pastel green
+Perdita del divisore	Splitter loss
+Perdite (linee, divisore)	Losses (lines, splitter)
+Perdite e ricevitore	Losses and receiver
+Perfetto	Perfect
+Personalizzato	Custom
+Phase dg	Phase dg
+Piccoli loop terminati	Small terminated loops
+Porta in risonanza (NEC)	Bring to resonance (NEC)
+Povero	Poor
+Preamplificatore NF	Preamplifier NF
+Prevista (bozzetto approvato), non ancora attiva in questa versione.	Planned (approved sketch), not yet active in this version.
+Pronto. Apri un modello NEC (.nec) o MMANA (.maa), oppure scegli un esempio.	Ready. Open a NEC (.nec) or MMANA (.maa) model, or choose an example.
+Punti	Points
+QFH (quadrifilare a elica)	QFH (quadrifilar helix)
+Quagi e quad a piu' elementi	Quagi and multi-element quad
+Quota	Height
+Quota non valida: scrivi i metri, per esempio 2,35.	Invalid height: type the metres, for example 2.35.
+Quota: la geometria non si costruisce (Controlla per i dettagli).	Height: the geometry cannot be built (Check for details).
+RLC serie	Series RLC
+Rame	Copper
+Rapporti F/B e F/R	F/B and F/R ratios
+Rastremazioni (tubi telescopici)	Tapering (telescopic tubes)
+Registro	Log
+Resistenza di radiazione	Radiation resistance
+Rete LC di adattamento	LC matching network
+Rete NT: si conserva com'e'.	NT network: kept as it is.
+Reti L (ramo serie e parallelo) e calcolatore Lewallen/Lahlum, ibrido di Collins.	L networks (series and shunt branch) and Lewallen/Lahlum calculator, Collins hybrid.
+Reti L e di sfasamento	L and phasing networks
+Ridimensiona antenna	Rescale antenna
+Riferimento	Reference
+Righe (in verticale) x colonne	Rows (vertical) x columns
+Ripristina dal modello	Restore from the model
+Rombo ripiegato	Folded rhombic
+Rumore/GT/Stack	Noise/GT/Stack
+STRUMENTI	TOOLS
+Sabbioso, secco	Sandy, dry
+Salva .nec...	Save .nec...
+Salva e poi apri	Save, then open
+Salva e poi chiudi	Save, then close
+Salva e poi nuovo	Save, then new
+Salva il modello (.nec / .yanec)	Save the model (.nec / .yanec)
+Salvataggio non fatto: il modello aperto resta com'e'.	Not saved: the open model stays as it is.
+Scala	Scale
+Schiere	Arrays
+Scia meteorica	Meteor trail
+Scrivo io la quota	I'll type the height
+Segmentazione...	Segmentation...
+Segmenti	Segments
+Segmenti per λ (MMANA)	Segments per λ (MMANA)
+Senza perdite	Lossless
+Serve almeno una sorgente.	At least one source is needed.
+Solaio in calcestruzzo	Concrete slab
+Sorgenti	Sources
+Sorgenti a corrente (schiere fasate): il programma ricava le tensioni	Current sources (phased arrays): the program derives the voltages
+Sorgenti di tensione o di corrente con la notazione MMANA (w4c).	Voltage or current sources with MMANA notation (w4c).
+Span kHz	Span kHz
+Spaziatura orizzontale	Horizontal spacing
+Spaziatura verticale	Vertical spacing
+Spazio libero	Free space
+Spazio libero: l'altezza dal suolo non si applica.	Free space: the height above ground does not apply.
+Stack	Stack
+Stack riconosciuto: distanze...	Stack recognised: spacings...
+Staffe di fissaggio	Mounting brackets
+Struttura 3D	3D structure
+T antenna	Antenna T
+T antenna in funzione dell'elevazione	Antenna T versus elevation
+T dal diagramma	T from the pattern
+T del cielo	Sky T
+T del terreno	Ground T
+T delle perdite	T of the losses
+T sistema	System T
+Tabella dei tubi telescopici come il Taper wire set di MMANA.	Table of telescopic tubes like the MMANA Taper wire set.
+Temperature tipiche	Typical temperatures
+Terra artica	Arctic land
+Terreno	Ground
+Terreno e quota	Ground and height
+Tipo	Type
+Torna allo spazio libero	Back to free space
+Toroidi ferrite (FT)	Ferrite toroids (FT)
+Toroidi iron powder (T)	Iron powder toroids (T)
+Totale	Total
+Totale + verticale + orizzontale	Total + vertical + horizontal
+Tracce	Traces
+Trascina per allargare o stringere l'elenco; doppio clic: larghezza iniziale.	Drag to widen or narrow the list; double-click: initial width.
+Trasformatori	Transformers
+Trasformatori ideali tra due punti (come in EZNEC).	Ideal transformers between two points (as in EZNEC).
+Trombe e illuminatori	Horns and feeds
+Usa i carichi	Use the loads
+Usa le distanze suggerite	Use the suggested spacings
+VHF e UHF: progetto DL6WU, quattro alimentazioni, ottimizzazione a passi	VHF and UHF: DL6WU design, four feeds, step optimization
+Vai a Distanze di stack DL6WU	Go to DL6WU stacking distances
+Variabili	Variables
+Verde	Green
+Verifica NEC (modello creato)	NEC check (model created)
+Verticale TX	TX vertical
+Verticale multibanda (DX Commander)	Multiband vertical (DX Commander)
+Verticali	Verticals
+Viola	Violet
+Vista:	View:
+Volt. V	Volt. V
+Yagi lunga DL6WU	DL6WU long Yagi
+Yagi multibanda	Multiband Yagi
+Z risultante	Resulting Z
+Z, G, efficienza dal motore	Z, G, efficiency from the engine
+Z0 (ohm) per il ROS	Z0 (ohm) for SWR
+a colori	in colour
+affiancate e in fase (IV3PRK 2013)	side by side and in phase (IV3PRK 2013)
+affiancate e sovrapposte	side by side and stacked
+apri un modello	open a model
+bacchette parallele, manica aperta, radiatori XR-5	parallel rods, open sleeve, XR-5 radiators
+cardioide, triangolo, cerchio	cardioid, triangle, circle
+coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC	coffee-can, VE4MA, Chaparral, W2IMU, conical, pyramidal; NEC model
+come VE7BQH	as VE7BQH
+con avviso sulle prestazioni	with a warning on performance
+copia la riga sopra	copy the row above
+costante	constant
+dal nostro abaco cavi	from our cable chart
+dall'alto	from above
+di fronte	from the front
+di lato	from the side
+diagramma + perdite	pattern + losses
+dipolo corto, monopolo, loop	short dipole, monopole, loop
+disco, cono, angolo	disc, cone, angle
+distanza tra i punti	distance between the points
+doppio mezzo delta loop (AA7JV, misure IV3PRK)	double half delta loop (AA7JV, IV3PRK measurements)
+due Flag end-fire con linee di fase (NX4D, N4IS, IV3PRK)	two end-fire Flags with phasing lines (NX4D, N4IS, IV3PRK)
+due elementi alimentati sfasati	two elements fed out of phase
+due spire incrociate, riflettore a radiali (F5VIF, tamago)	two crossed loops, radial reflector (F5VIF, tamago)
+elementi a ventaglio, terreno suo, verifica per banda	fan elements, own ground, check per band
+equilatera, schiacciata, angolo di alimentazione	equilateral, flattened, feed corner
+filo lungo terminato, 1-2 lambda	long terminated wire, 1-2 lambda
+geometria, dime, illuminazione asimmetrica, lobi H e V, EME	geometry, templates, asymmetric illumination, H and V lobes, EME
+gia' approvato (Cebik / DK7ZB)	already approved (Cebik / DK7ZB)
+il solaio	the slab
+il terreno	the ground
+in attesa	waiting
+l'antenna base resta una sola: le copie si spostano insieme	the base antenna stays a single one: the copies move together
+lambda/4 con radiali	lambda/4 with radials
+lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole	lambda/4 and 5/8, ground plane, radials, coil-loaded, J-pole
+lati e alimentazione	sides and feed
+linee ideali TL tra due punti; lunghezza 0 = distanza; Incrociata = Z0 negativa	ideal TL lines between two points; length 0 = distance; Crossed = negative Z0
+loop a terra con resistenza	ground loop with resistor
+m (al boom)	m (at the boom)
+mappa (galassia)	map (galaxy)
+metodo Carrel, linea incrociata	Carrel method, crossed line
+mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD	half-wave, inverted V, folded, trapped, OCF/Windom, G5RV, T2FD
+modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna	open model: real ground below the building or slab below the antenna
+nessun avviso	no warnings
+nessun modello	no model
+next – scrivi qui il primo punto per aggiungere una linea (es. w1c)	next – type the first point here to add a line (e.g. w1c)
+next – scrivi qui per aggiungere (es. w2c)	next – type here to add (e.g. w2c)
+next – scrivi qui per aggiungere (es. w3c)	next – type here to add (e.g. w3c)
+nuova riga sotto	new row below
+piastre al boom: compensazione e modello (ARRL, Leeson)	boom plates: compensation and model (ARRL, Leeson)
+piccolo loop con condensatore	small loop with capacitor
+quattro verticali sfasati (ON4UN)	four phased verticals (ON4UN)
+quello che si sente	what you actually hear
+rapporti e avvolgimenti	ratios and windings
+rettangolo terminato (W7IUV, IV3PRK)	terminated rectangle (W7IUV, IV3PRK)
+riferimento a lobo alto	high-angle reference
+rombo terminato e ripiegato	terminated, folded rhombic
+scala un modello a un'altra frequenza	scales a model to another frequency
+schermato, accordato o a larga banda	shielded, tuned or wideband
+scrivere w + numero del filo + b, c, e (es. w4c) oppure w4:7	type w + wire number + b, c, e (e.g. w4c) or w4:7
+singola	single
+solo curva	curve only
+spazio libero	free space
+spira grande e piccola a mezzo giro (Coppens)	large and small half-turn loop (Coppens)
+togli la riga	remove the row
+triangolo terminato (K6SE, WA1ION, IV3PRK)	terminated triangle (K6SE, WA1ION, IV3PRK)
+tutta ad anelli: N6CA (ARRL) e G3JVL, ottimizzazione a passi	all loops: N6CA (ARRL) and G3JVL, step optimization
+un clic sceglie la tabella qui sotto	one click chooses the table below
+verticali corte attive	short active verticals
+→ segmento NEC	→ NEC segment
+simulatore d'antenne NEC2	NEC2 antenna simulator
+a cura di Costantino IC8TEM	by Costantino IC8TEM

@@ -1,0 +1,32 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Hg105max
+CM YANEC DESCRIZIONE=Hy-Gain 105CA Max F/B Setting
+CM YANEC CATEGORIA=YO K6STI (Hy-Gain)
+CM YANEC FONTE=YO di Brian Beezley K6STI, modelli Hy-Gain
+CM YANEC ORIGINALE=Hg105max.yag
+CM YANEC CONTENUTO=yag
+Hy-Gain 105CA Max F/B Setting
+28.200 28.500 28.800 MHz
+5 elements, inches
+           1.0000    0.8750    0.6250   0.4375  
+  0.000    3.5000   41.5000   21.5000   41.500  
+ 58.000    3.7500   21.5000   23.5000   54.250  
+103.000    3.5000   21.5000   23.5000   52.500  
+186.500    3.5000   21.5000   23.5000   45.875  
+286.500    3.5000   21.5000   23.5000   38.250  
+
+This setting of the 105CA is centered on 28.500 MHz
+for Phone operation.  It features an extremely high
+Front-to-Back ratio. 2:1 VSWR band-width is 600 KHz,
+maximum gain is 7.56 dBd, and maximum F/B is 36 dB.
+
+Beta rod length= 10.375 inches (measured from inside
+tubing edge to outside edge of clamp).  Pigtail
+length= 7 inches.  Balun= Hy-Gain BN-4000 (current
+type).
+
+Radiation patterns and VSWR were verified in September
+1991.  9-18-91  RC
+
+
+

@@ -1,0 +1,134 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Stepped Dipole 2 (d)
+CM YANEC DESCRIZIONE=Stepped Dipole 2 (d)
+CM YANEC CATEGORIA=AutoEZ (esempi AC6LA)
+CM YANEC FONTE=AutoEZ di Dan Maguire AC6LA (esempi) e modelli forniti da IC8TEM
+CM YANEC ORIGINALE=Stepped Dipole 2 (d).weq
+CM YANEC CONTENUTO=weq
+MultiNEC	14.175	in	in	SLT30	*** DO NOT MAKE MANUAL EDITS TO THIS FILE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	_(demo) Dipole with stepped diameter sections starting in center							
+	_0	_-34.5	_456	_0	_34.5	_456	_0.875	_5
+	_0	_-34.5	_456	_0	_-56.5	_456	_0.75	_1
+	_0	_34.5	_456	_0	_56.5	_456	_0.75	_1
+	_0	_-56.5	_456	_0	_-90.49999	_456	_0.625	_3
+	_0	_56.5	_456	_0	_90.50001	_456	_0.625	_3
+	_0	_-90.49999	_456	_0	_-136.5	_456	_0.5	_3
+	_0	_90.50001	_456	_0	_136.5	_456	_0.5	_3
+	_0	_-136.5	_456	_0	_-207.375	_456	_0.375	_5
+	_0	_136.5	_456	_0	_207.375	_456	_0.375	_5
+_1	_50	_1	_0	_I				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Controls	FALSE	TRUE	0	0	2	0	0	1	50	0	0	14	29	1													TRUE	FALSE	_1	_0
+_Freq (MHz)																														
+_14.175																														
+2																														
