@@ -1,3 +1,5 @@
+**Italiano** · [English](README.en.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Português](README.pt.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
 # YA-NEC
 
 **Simulatore d'antenne a fili basato sul NEC-2**, per Windows, Linux e macOS (C#, .NET 8, Avalonia).
@@ -49,8 +51,3 @@ Serve il .NET 8 SDK. Windows: `compila.bat` (programma in `build\win-x64`), `com
 
 ic8tem@gmail.com · [QRZ](https://www.qrz.com/db/ic8tem) · [gruppo Facebook](https://www.facebook.com/groups/1675310160982493) · donazioni: [ko-fi.com/ic8tem](https://ko-fi.com/ic8tem)
 
----
-
-### English
-
-**YA-NEC** is a NEC-2 wire antenna simulator for Windows, Linux and macOS by Costantino Cerrotta IC8TEM (GPL-3.0). The engine is a C# translation of nec2c, checked against nec2c and EZNEC. It opens NEC, MMANA, AutoEZ, EZNEC and K6STI files. Download the zip for your platform from **Releases**, extract it to a writable folder and run `YA-NEC`. The program checks for updates every 30 minutes and installs them (SHA-256 verified) at the next start; this can be turned off in Settings. The interface is in Italian, with English partly available (Language menu, top right); more languages will follow.
