@@ -1,4 +1,4 @@
-[Italiano](Home) · [English](Home-en) · [Deutsch](Home-de) · [Nederlands](Home-nl) · [Français](Home-fr) · [Español](Home-es) · [Português](Home-pt) · [Português (Brasil)](Home-pt-br) · [Dansk](Home-da) · [Norsk](Home-nb) · [Svenska](Home-sv) · [Polski](Home-pl) · **Čeština** · [Slovenčina](Home-sk) · [日本語](Home-ja) · [한국어](Home-ko)
+[Italiano](Home) · [English](Home-en) · [Deutsch](Home-de) · [Nederlands](Home-nl) · [Français](Home-fr) · [Español](Home-es) · [Português](Home-pt) · [Português (Brasil)](Home-pt-br) · [Dansk](Home-da) · [Norsk](Home-nb) · [Svenska](Home-sv) · [Polski](Home-pl) · **Čeština** · [Slovenčina](Home-sk) · [Русский](Home-ru) · [Українська](Home-uk) · [日本語](Home-ja) · [한국어](Home-ko) · [中文](Home-zh) · [中文 (繁體)](Home-zh-tw)
 
 # YA-NEC
 
