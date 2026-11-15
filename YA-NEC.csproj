@@ -39,6 +39,8 @@
     <None Include="data/**" Exclude="data/prove/4nec2zip.zip" CopyToOutputDirectory="PreserveNewest" LinkBase="data" ExcludeFromSingleFile="true" />  <!-- lo zip di 4nec2 serve solo al collaudo e non si distribuisce -->
     <None Include="LEGGIMI.txt" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
     <None Include="COPYING" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <None Include="LICENSE" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <None Include="THIRD-PARTY-NOTICES.txt" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
     <None Include="CREDITI.txt" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
   <!-- librerie native (SkiaSharp, HarfBuzzSharp, ANGLE, Avalonia Mac) nella sottocartella lib: il programma le ritrova con

@@ -1,0 +1,88 @@
+YA-NEC - NOTE DI TERZE PARTI
+============================
+
+YA-NEC: Copyright (C) 2026 Costantino Cerrotta IC8TEM - GNU GPL 3.0 o successiva (file LICENSE).
+
+Questo programma include o deriva dai componenti di terze parti elencati qui sotto.
+L'elenco completo delle fonti, degli autori dei modelli di esempio e degli articoli usati
+e' in CREDITI.txt e nella linguetta Crediti del programma.
+
+---------------------------------------------------------
+CODICE DA CUI DERIVA IL MOTORE
+
+NEC-2 (Numerical Electromagnetics Code) - G. J. Burke e A. J. Poggio,
+Lawrence Livermore National Laboratory (1981) - pubblico dominio.
+
+nec2c - Neoklis Kyriazis 5B4AZ; repository curato da Eric KJ7LNW - GNU GPL 3.0
+https://github.com/KJ7LNW/nec2c
+Il motore di YA-NEC e' la traduzione in C# delle sue routine (geometria, matrice,
+campi, diagramma), modificata (fattorizzazione a blocchi, correzione delle tabelle
+di Sommerfeld, correzione di Leeson e altro: vedi il manuale).
+
+xnec2c - Neoklis Kyriazis 5B4AZ, Eric KJ7LNW - GNU GPL 3.0
+https://github.com/KJ7LNW/xnec2c
+Riferimento per l'interfaccia (struttura, diagrammi, dati in frequenza, Smith).
+
+xnec2c-optimize - Eric KJ7LNW - GNU GPL 3.0
+https://github.com/KJ7LNW/xnec2c-optimize
+Base dell'ottimizzatore simplex.
+
+xnecview - Pieter-Tjerk de Boer PA3FWM - GNU GPL
+Impostazione grafica ripresa da xnec2c.
+
+necpp (nec2++) - Tim Molteno - GNU GPL 2 o successiva
+https://github.com/tmolteno/necpp
+Usato solo come terzo riferimento numerico nelle prove: nessun codice incluso.
+
+---------------------------------------------------------
+LIBRERIE INCLUSE NEI PACCHETTI
+
+Avalonia 11.2.3 - licenza MIT - Copyright (c) AvaloniaUI OU e collaboratori
+https://github.com/AvaloniaUI/Avalonia
+(include SkiaSharp e HarfBuzzSharp - licenza MIT - Copyright (c) .NET Foundation
+e collaboratori; le librerie native Skia e HarfBuzz sono distribuite con licenze
+BSD-3-Clause e MIT, vedi https://github.com/mono/SkiaSharp; ANGLE su Windows,
+licenza BSD-3-Clause, https://chromium.googlesource.com/angle/angle)
+
+Inter (carattere, Avalonia.Fonts.Inter) - SIL Open Font License 1.1 -
+Copyright (c) The Inter Project Authors - https://github.com/rsms/inter
+
+.NET Runtime (8; 6 per i pacchetti Windows 7) - licenza MIT -
+Copyright (c) .NET Foundation e collaboratori - https://github.com/dotnet/runtime
+
+---------------------------------------------------------
+FORMATI DI ALTRI PROGRAMMI (nessun codice incluso)
+
+YA-NEC legge e scrive i formati di file di MMANA (Makoto Mori JE3HHT; MMANA-GAL di
+DL2KQ e DL1PBD), AutoEZ (Dan Maguire AC6LA), EZNEC (Roy Lewallen W7EL) e YO/AO
+(Brian Beezley K6STI). Sono programmi dei rispettivi autori; i nomi appartengono ai
+loro titolari. I modelli di esempio restano dei loro autori, citati nei file e in
+CREDITI.txt.
+
+---------------------------------------------------------
+Testo della licenza MIT (vale per tutti i componenti MIT elencati sopra)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---------------------------------------------------------
+SERVIZI DI RETE USATI
+
+api.github.com e github.com: controllo e download degli aggiornamenti dal repository
+ic8tem/YA-NEC (ogni 30 minuti; si spegne in Impostazioni > Aggiornamento). Non si
+invia nessun dato dell'utente.

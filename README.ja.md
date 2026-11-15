@@ -47,7 +47,7 @@
 
 ## クレジットとライセンス
 
-**GPL-3.0**（[COPYING](COPYING)）。エンジンの元になった nec2c と xnec2c と同じです。YA-NEC はアマチュア無線家と研究者の皆さんの仕事のおかげで生まれました。完全な一覧は [CREDITI.txt](CREDITI.txt) とプログラムの **クレジット** タブにあります。ウェブサイトでの無料公開に対し Luis IV3PRK に感謝します。
+**GPL-3.0**（[LICENSE](LICENSE)、[THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)）。エンジンの元になった nec2c と xnec2c と同じです。YA-NEC はアマチュア無線家と研究者の皆さんの仕事のおかげで生まれました。完全な一覧は [CREDITI.txt](CREDITI.txt) とプログラムの **クレジット** タブにあります。ウェブサイトでの無料公開に対し Luis IV3PRK に感謝します。
 
 ## 連絡先
 

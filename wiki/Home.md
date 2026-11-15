@@ -1,8 +1,12 @@
+**Italiano** · [English](Home-en) · [Français](Home-fr)
+
 # YA-NEC
 
 **Simulatore d'antenne a fili basato sul NEC-2**, per Windows, Linux e macOS. A cura di Costantino Cerrotta **IC8TEM**. Licenza GPL-3.0.
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
+
+<table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="Struttura 3D"></a><br><sub>Struttura 3D</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagrammi"></a><br><sub>Diagrammi</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Carta di Smith"></a><br><sub>Carta di Smith</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Rumore, G/T e stack"></a><br><sub>Rumore, G/T e stack</sub></td></tr></table>
 
 ## Pagine
 

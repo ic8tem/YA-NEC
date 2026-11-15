@@ -47,7 +47,7 @@ Every 30 minutes the program silently checks for a new version here. If there is
 
 ## Credits and license
 
-**GPL-3.0** ([COPYING](COPYING)), like nec2c and xnec2c from which the engine derives. YA-NEC exists thanks to the work of fellow radio amateurs and researchers: the full list is in [CREDITI.txt](CREDITI.txt) and in the **Credits** tab. Thanks to Luis IV3PRK for the free publications on his website.
+**GPL-3.0** ([LICENSE](LICENSE), [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)), like nec2c and xnec2c from which the engine derives. YA-NEC exists thanks to the work of fellow radio amateurs and researchers: the full list is in [CREDITI.txt](CREDITI.txt) and in the **Credits** tab. Thanks to Luis IV3PRK for the free publications on his website.
 
 ## Contacts
 
