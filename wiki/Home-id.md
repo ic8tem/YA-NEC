@@ -10,7 +10,7 @@
 
 ## Halaman
 
-- ▶ [Kursus video (Inggris dan Italia): tiga pelajaran langkah demi langkah](Videocorso-en)
+- ▶ [Kursus video (Inggris dan Italia)](Videocorso-en)
 - [Instalasi](Installazione-id): paket mana yang diunduh dan cara menjalankannya di Windows, Linux, Raspberry Pi, dan Mac
 - [Langkah pertama](Primi-passi-id): membuka model, menghitung, membaca hasil
 - [Kalkulator](Calcolatori-id): subtab yang merancang antena dan membuat model NEC-nya

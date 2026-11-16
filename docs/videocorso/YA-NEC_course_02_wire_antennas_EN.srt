@@ -1,0 +1,107 @@
+1
+00:00:00,000 --> 00:00:03,950
+YA-NEC video course - lesson 2: single-element wire antennas.
+
+2
+00:00:04,000 --> 00:00:11,483
+YA-NEC course, lesson 2: single-element wire antennas. Everything starts from the Calculators tab.
+
+3
+00:00:11,533 --> 00:00:21,179
+Dipoles, type Inverted V: here at 7.1 MHz, apex at 12 m, 120 degrees between the legs.
+
+4
+00:00:21,229 --> 00:00:30,912
+The real-time calculation below runs the NEC on every change: SWR 1.42, 5.36 dBi, maximum at 62 degrees - an NVIS-friendly antenna.
+
+5
+00:00:30,962 --> 00:00:38,979
+Delta loop, equilateral, apex up, fed in the centre of the bottom side. Frequency 14.150 MHz, base at 8 m.
+
+6
+00:00:39,029 --> 00:00:49,053
+'Bring to resonance (NEC)'.
+
+7
+00:00:49,103 --> 00:00:56,253
+Perimeter 22.63 m, sides 7.54 m. The NEC confirms about 120 ohm: SWR 2.4 on 50 ohm, too high.
+
+8
+00:00:56,303 --> 00:01:02,321
+Open as model: the delta goes into the 3D structure.
+
+9
+00:01:02,371 --> 00:01:07,321
+120.2 ohm, 7.19 dBi at 28 degrees, horizontal polarization.
+
+10
+00:01:07,371 --> 00:01:19,807
+The classic remedy: a quarter wave of 75 ohm coax. Calculators, RG cables, frequency 14.150 MHz.
+
+11
+00:01:19,857 --> 00:01:24,807
+'from model' takes the impedance of the open model: 120 ohm.
+
+12
+00:01:24,857 --> 00:01:33,007
+Ideal Z0 = sqrt(120 x 50) = 77.5 ohm: RG-59 is perfect. Cut length 3.50 m (VF 0.66), SWR 1.05, loss 0.16 dB.
+
+13
+00:01:33,057 --> 00:01:40,084
+'Put the line in the open model (TL)': the cable becomes a NEC transmission line.
+
+14
+00:01:40,134 --> 00:01:46,818
+Now the model, cable included, shows 46.8 ohm and SWR 1.07: the delta loop is matched.
+
+15
+00:01:46,868 --> 00:01:53,061
+Verticals: lambda/4 with radials on the ground, 7.1 MHz, 16 radials.
+
+16
+00:01:53,111 --> 00:02:02,395
+10.04 m radiator. With 16 radials the ground loss is about 15 ohm: efficiency 71 % (ON4UN table 9-1), impedance about 51 ohm.
+
+17
+00:02:02,445 --> 00:02:06,469
+5/8 wave for 145 MHz.
+
+18
+00:02:06,519 --> 00:02:13,135
+1.228 m whip and a 602 nH coil at the base: more gain at low angle than the lambda/4.
+
+19
+00:02:13,185 --> 00:02:17,210
+Coil-loaded vertical: 6 m whip for 3.6 MHz.
+
+20
+00:02:17,260 --> 00:02:25,343
+32 uH at the base, but only 13 % efficiency: a short vertical on 80 m pays a lot in coil and ground losses.
+
+21
+00:02:25,393 --> 00:02:30,943
+J-pole for 145 MHz: 147.3 cm and 49.1 cm, feed 32 mm from the bottom.
+
+22
+00:02:30,993 --> 00:02:36,943
+SWR 1.35. Warning: without a common-mode choke the coax radiates too.
+
+23
+00:02:36,993 --> 00:02:46,410
+Last one: the multiband vertical like the DX Commander. 'Check all bands' runs a sweep on every band with all elements present.
+
+24
+00:02:46,460 --> 00:03:51,304
+Each band is computed in the background, about ten seconds each: you can keep working in the other tabs.
+
+25
+00:03:51,354 --> 00:04:00,838
+The table: minimum SWR, frequency, gain at 10 degrees, efficiency, and which element 'steals' current from the one in resonance.
+
+26
+00:04:00,888 --> 00:04:07,838
+On 20 m, for example, the 30 m wire takes 35 % of the current: trim one element at a time.
+
+27
+00:04:07,888 --> 00:04:13,838
+Inverted V, delta loop with its quarter-wave transformer, verticals: all from the calculators. 73 de IC8TEM

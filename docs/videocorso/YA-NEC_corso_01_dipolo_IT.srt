@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:03,950
+Videocorso YA-NEC - lezione 1: dipolo 14 MHz, tre modi.
+
+2
+00:00:04,000 --> 00:00:11,017
+Lezione 1: un dipolo per i 14 MHz costruito in tre modi. Primo modo: il calcolatore Dipoli.
+
+3
+00:00:11,067 --> 00:00:17,158
+Linguetta Calcolatori, Dipoli, tipo mezz'onda.
+
+4
+00:00:17,208 --> 00:00:22,804
+Frequenza 14,150 MHz, filo da 2 mm, 10 m dal suolo.
+
+5
+00:00:22,854 --> 00:00:31,270
+La formula dà 10,08 m, ma il calcolo in tempo reale qui sotto mostra il ROS minimo a 14,52 MHz: il filo è corto.
+
+6
+00:00:31,320 --> 00:00:40,341
+'Porta in risonanza (NEC)' fa trovare al motore la lunghezza giusta.
+
+7
+00:00:40,391 --> 00:00:46,874
+10,36 m: la verifica NEC dà 72,7 + j0 ohm, 7,1 dBi. Fattore di accorciamento 0,978.
+
+8
+00:00:46,924 --> 00:00:53,408
+'Apri come modello': il dipolo va nella Struttura 3D, già sul terreno medio a 10 m.
+
+9
+00:00:53,458 --> 00:00:58,674
+72,7 + j0,01 ohm, ROS 1,45, 7,10 dBi a 29,5 gradi di elevazione.
+
+10
+00:00:58,724 --> 00:01:14,437
+Secondo modo: a mano, con i numeri. Nuovo, poi 'Nuovo senza salvare'.
+
+11
+00:01:14,487 --> 00:01:21,716
+Frequenza 14,150 MHz, Aggiungi filo: Y da -5,18 a +5,18 m, Z = 10 m, raggio 1 mm, 25 segmenti.
+
+12
+00:01:21,766 --> 00:01:33,745
+Applica, poi la sorgente al centro: w1c.
+
+13
+00:01:33,795 --> 00:01:39,678
+Senza terreno l'altezza non conta: questo è il dipolo nello spazio libero.
+
+14
+00:01:39,728 --> 00:01:47,037
+Terreno: Medio. Il filo è già a 10 m.
+
+15
+00:01:47,087 --> 00:01:52,409
+72,9 - j0,04 ohm, 7,09 dBi: lo stesso risultato del calcolatore.
+
+16
+00:01:52,459 --> 00:02:09,745
+Terzo modo: con le variabili. Linguetta Variabili: L = 10,36 (lunghezza) e H = 10 (altezza).
+
+17
+00:02:09,795 --> 00:02:25,289
+Nella tabella dei fili scriviamo formule: Y1 = -L/2, Z1 = H, Y2 = L/2, Z2 = H.
+
+18
+00:02:25,339 --> 00:02:31,022
+Stessa antenna, ma ora lunghezza e altezza sono due numeri da cambiare.
+
+19
+00:02:31,072 --> 00:02:40,407
+H = 5 e Applica: tutto il modello segue.
+
+20
+00:02:40,457 --> 00:02:51,915
+A 5 m: 82 + j29 ohm, 5,84 dBi, massimo a 69 gradi. Torniamo a H = 10.
+
+21
+00:02:51,965 --> 00:03:01,313
+Materiale del filo: finora 'Senza perdite'. Scegliamo Rame.
+
+22
+00:03:01,363 --> 00:03:13,784
+Rame: 73,8 ohm e 7,04 dBi, solo 0,05 dB in meno: un filo di rame da 2 mm spreca pochissimo.
+
+23
+00:03:13,834 --> 00:03:24,291
+Alluminio 6063: 74,1 ohm, 7,02 dBi. Torniamo a Senza perdite.
+
+24
+00:03:24,341 --> 00:03:30,758
+Kernel esteso (EK): una formula più esatta per fili grossi o segmenti molto corti.
+
+25
+00:03:30,808 --> 00:03:41,091
+Per un filo sottile non cambia nulla (72,9 - j0,04 ohm): l'EK serve per i tubi grossi, quando raggio e lunghezza del segmento si avvicinano.
+
+26
+00:03:41,141 --> 00:03:47,092
+Calcolatore, numeri o variabili: stesso dipolo, scegli il modo che ti è più comodo. 73 de IC8TEM

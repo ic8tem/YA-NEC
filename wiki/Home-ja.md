@@ -10,7 +10,7 @@
 
 ## ページ
 
-- ▶ [ビデオ講座（英語・イタリア語）：ステップごとの3つのレッスン](Videocorso-en)
+- ▶ [ビデオ講座（英語・イタリア語）](Videocorso-en)
 - [インストール](Installazione-ja)：どのパッケージをダウンロードし、Windows、Linux、Raspberry Pi、Mac でどう起動するか
 - [はじめに](Primi-passi-ja)：モデルを開く、計算する、結果を読む
 - [計算ツール](Calcolatori-ja)：アンテナを設計し NEC モデルを作るサブタブ

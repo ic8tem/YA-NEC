@@ -10,7 +10,7 @@
 
 ## Lehed
 
-- ▶ [Videokursus (inglise ja itaalia keeles): kolm tundi samm-sammult](Videocorso-en)
+- ▶ [Videokursus (inglise ja itaalia keeles)](Videocorso-en)
 - [Paigaldamine](Installazione-et): millise paketi alla laadida ja kuidas seda Windowsis, Linuxis, Raspberry Pi-l ja Macis käivitada
 - [Esimesed sammud](Primi-passi-et): mudeli avamine, arvutamine, tulemuste lugemine
 - [Kalkulaatorid](Calcolatori-et): alamsakid, mis kavandavad antenni ja loovad selle NEC-mudeli

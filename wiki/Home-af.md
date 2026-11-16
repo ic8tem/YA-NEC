@@ -10,7 +10,7 @@
 
 ## Bladsye
 
-- ▶ [Videokursus (Engels en Italiaans): drie lesse stap vir stap](Videocorso-en)
+- ▶ [Videokursus (Engels en Italiaans)](Videocorso-en)
 - [Installering](Installazione-af): watter pakket om af te laai en hoe om dit op Windows, Linux, Raspberry Pi en Mac te begin
 - [Eerste stappe](Primi-passi-af): 'n model oopmaak, bereken, die resultate lees
 - [Sakrekenaars](Calcolatori-af): die suboortjies wat 'n antenna ontwerp en sy NEC-model maak

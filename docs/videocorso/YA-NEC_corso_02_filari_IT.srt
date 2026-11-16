@@ -1,0 +1,107 @@
+1
+00:00:00,000 --> 00:00:03,950
+Videocorso YA-NEC - lezione 2: antenne filari a un elemento.
+
+2
+00:00:04,000 --> 00:00:11,750
+Corso YA-NEC, lezione 2: le antenne filari a un elemento. Si parte sempre dalla linguetta Calcolatori.
+
+3
+00:00:11,800 --> 00:00:21,436
+Dipoli, tipo V invertita: qui a 7,1 MHz, vertice a 12 m, 120 gradi tra i bracci.
+
+4
+00:00:21,486 --> 00:00:31,036
+Il calcolo in tempo reale qui sotto fa girare il NEC a ogni modifica: ROS 1,42, 5,36 dBi, massimo a 62 gradi: un'antenna da NVIS.
+
+5
+00:00:31,086 --> 00:00:39,370
+Delta loop equilatera, vertice in alto, alimentata al centro del lato basso. Frequenza 14,150 MHz, base a 8 m.
+
+6
+00:00:39,420 --> 00:00:49,441
+'Porta in risonanza (NEC)'.
+
+7
+00:00:49,491 --> 00:00:56,575
+Perimetro 22,63 m, lati da 7,54 m. Il NEC conferma circa 120 ohm: ROS 2,4 su 50 ohm, troppo.
+
+8
+00:00:56,625 --> 00:01:02,645
+Apri come modello: la delta va nella Struttura 3D.
+
+9
+00:01:02,695 --> 00:01:07,645
+120,2 ohm, 7,19 dBi a 28 gradi, polarizzazione orizzontale.
+
+10
+00:01:07,695 --> 00:01:20,128
+Il rimedio classico: un quarto d'onda di cavo da 75 ohm. Calcolatori, Cavi RG, frequenza 14,150 MHz.
+
+11
+00:01:20,178 --> 00:01:25,195
+'dal modello' prende l'impedenza del modello aperto: 120 ohm.
+
+12
+00:01:25,245 --> 00:01:34,262
+Z0 ideale = radice di 120 x 50 = 77,5 ohm: l'RG-59 va benissimo. Da tagliare 3,50 m (VF 0,66), ROS 1,05, perdita 0,16 dB.
+
+13
+00:01:34,312 --> 00:01:41,396
+'Metti la linea nel modello aperto (TL)': il cavo diventa una linea di trasmissione del NEC.
+
+14
+00:01:41,446 --> 00:01:47,547
+Ora il modello, cavo compreso, dà 46,8 ohm e ROS 1,07: la delta è adattata.
+
+15
+00:01:47,597 --> 00:01:53,784
+Verticali: lambda/4 con radiali a terra, 7,1 MHz, 16 radiali.
+
+16
+00:01:53,834 --> 00:02:03,451
+Radiatore da 10,04 m. Con 16 radiali la perdita di terra è circa 15 ohm: efficienza 71 % (ON4UN tab. 9-1), impedenza circa 51 ohm.
+
+17
+00:02:03,501 --> 00:02:07,515
+5/8 d'onda per i 145 MHz.
+
+18
+00:02:07,565 --> 00:02:14,516
+Stilo da 1,228 m e bobina da 602 nH alla base: più guadagno a basso angolo della lambda/4.
+
+19
+00:02:14,566 --> 00:02:19,382
+Verticale caricata con bobina: stilo da 6 m per i 3,6 MHz.
+
+20
+00:02:19,432 --> 00:02:28,516
+32 uH alla base, ma solo il 13 % di efficienza: una verticale corta sugli 80 m paga molto in perdite di bobina e di terra.
+
+21
+00:02:28,566 --> 00:02:33,916
+J-pole per i 145 MHz: 147,3 cm e 49,1 cm, presa a 32 mm dal fondo.
+
+22
+00:02:33,966 --> 00:02:40,783
+ROS 1,35. Attenzione: senza un'impedenza di modo comune irradia anche la calza del cavo.
+
+23
+00:02:40,833 --> 00:02:50,583
+Ultima: la verticale multibanda tipo DX Commander. 'Verifica tutte le bande' fa uno sweep per banda con tutti gli elementi presenti.
+
+24
+00:02:50,633 --> 00:04:18,493
+Ogni banda si calcola in sottofondo, una decina di secondi l'una: intanto si può lavorare nelle altre linguette.
+
+25
+00:04:18,543 --> 00:04:27,694
+La tabella: ROS minimo, frequenza, guadagno a 10 gradi, efficienza, e quale elemento 'ruba' corrente a quello in risonanza.
+
+26
+00:04:27,744 --> 00:04:35,696
+Sui 20 m, per esempio, il filo dei 30 m prende il 35 % della corrente: si ritocca un elemento alla volta.
+
+27
+00:04:35,746 --> 00:04:41,696
+V invertita, delta loop con il suo quarto d'onda, verticali: tutto dai calcolatori. 73 de IC8TEM

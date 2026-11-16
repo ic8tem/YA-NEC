@@ -10,7 +10,7 @@
 
 ## Pagine
 
-- ▶ [Videocorso (italiano e inglese): tre lezioni passo per passo](Videocorso)
+- ▶ [Videocorso (italiano e inglese)](Videocorso)
 - [[Installazione]]: quale pacchetto scaricare e come avviarlo su Windows, Linux, Raspberry Pi e Mac
 - [[Primi passi]]: aprire un modello, calcolare, leggere i risultati
 - [[Calcolatori]]: le sottolinguette che progettano un'antenna e ne creano il modello NEC

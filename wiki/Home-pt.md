@@ -10,7 +10,7 @@
 
 ## Páginas
 
-- ▶ [Curso em vídeo (inglês e italiano): três lições passo a passo](Videocorso-en)
+- ▶ [Curso em vídeo (inglês e italiano)](Videocorso-en)
 - [Instalação](Installazione-pt): que pacote transferir e como o arrancar em Windows, Linux, Raspberry Pi e Mac
 - [Primeiros passos](Primi-passi-pt): abrir um modelo, calcular, ler os resultados
 - [Calculadoras](Calcolatori-pt): os subseparadores que projetam uma antena e criam o seu modelo NEC

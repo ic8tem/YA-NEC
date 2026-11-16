@@ -10,7 +10,7 @@
 
 ## Puslapiai
 
-- ▶ [Vaizdo kursas (anglų ir italų k.): trys pamokos žingsnis po žingsnio](Videocorso-en)
+- ▶ [Vaizdo kursas (anglų ir italų k.)](Videocorso-en)
 - [Diegimas](Installazione-lt): kurį paketą atsisiųsti ir kaip jį paleisti Windows, Linux, Raspberry Pi ir Mac
 - [Pirmieji žingsniai](Primi-passi-lt): atidaryti modelį, skaičiuoti, skaityti rezultatus
 - [Skaičiuoklės](Calcolatori-lt): poskirtukai, kurie suprojektuoja anteną ir sukuria jos NEC modelį

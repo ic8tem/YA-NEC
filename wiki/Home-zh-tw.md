@@ -10,7 +10,7 @@
 
 ## 頁面
 
-- ▶ [影片教學（英語和義大利語）：三堂逐步課程](Videocorso-en)
+- ▶ [影片教學（英語和義大利語）](Videocorso-en)
 - [安裝](Installazione-zh-tw)：下載哪個軟體套件，以及如何在 Windows、Linux、樹莓派和 Mac 上啟動
 - [入門](Primi-passi-zh-tw)：打開模型、計算、閱讀結果
 - [計算器](Calcolatori-zh-tw)：設計天線並生成 NEC 模型的子分頁

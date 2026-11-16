@@ -10,7 +10,7 @@
 
 ## 页面
 
-- ▶ [视频教程（英语和意大利语）：三节分步课程](Videocorso-en)
+- ▶ [视频教程（英语和意大利语）](Videocorso-en)
 - [安装](Installazione-zh)：下载哪个软件包，以及如何在 Windows、Linux、树莓派和 Mac 上启动
 - [入门](Primi-passi-zh)：打开模型、计算、阅读结果
 - [计算器](Calcolatori-zh)：设计天线并生成 NEC 模型的子标签页

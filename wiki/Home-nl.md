@@ -10,7 +10,7 @@
 
 ## Pagina's
 
-- ▶ [Videocursus (Engels en Italiaans): drie lessen stap voor stap](Videocorso-en)
+- ▶ [Videocursus (Engels en Italiaans)](Videocorso-en)
 - [Installatie](Installazione-nl): welk pakket downloaden en hoe het te starten op Windows, Linux, Raspberry Pi en Mac
 - [Eerste stappen](Primi-passi-nl): een model openen, rekenen, de resultaten lezen
 - [Rekenhulpen](Calcolatori-nl): de subtabbladen die een antenne ontwerpen en het NEC-model maken
