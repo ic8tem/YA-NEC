@@ -203,7 +203,5 @@ Parabola primo fuoco da 3 m a 23 cm (30,4 dBi, efficienza 66 %, bilancio di spil
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.srt)
 
 </td></tr></table>
-## Prossime lezioni
-
 
 I file del modello si costruiscono seguendo il video; per provare subito, gli Esempi del programma contengono già molte antenne pronte. Fonti e progettisti citati nei video sono elencati anche nella linguetta Crediti del programma.

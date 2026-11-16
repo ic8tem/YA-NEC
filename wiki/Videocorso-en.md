@@ -203,7 +203,5 @@ F5VIF Eggbeater for 145.9 MHz (41.6 ohm, 1.99 dBic at the zenith, radial reflect
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_21_dishes_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_21_dishes_EN.srt)
 
 </td></tr></table>
-## Coming next
-
 
 Model files are built by following the video; to try right away, the program Examples already contain many ready antennas. Sources and designers named in the videos are also listed in the program Credits tab.
