@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 22 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later. Every video has burnt-in subtitles; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 22 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -176,9 +176,17 @@ The DK7ZB 10-element Yagi (example) in the Noise/GT/Stack tab: antenna temperatu
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_18_stack_gt_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_18_stack_gt_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_19_loop_yagi_1296_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_19.jpg" alt="Lesson 19 - Loop Yagi for 1296 MHz"></a></td><td>
+
+### Lesson 19 - Loop Yagi for 1296 MHz
+
+The N6CA (ARRL tables) / G3JVL 25-element loop Yagi on a 1.78 m boom: ARRL estimate and real time (18.6 dBi), 400-wire NEC model, frequency sweep and NEC step optimization of the driven loop only (SWR minimum 1.04 at 1296.8 MHz).
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_19_loop_yagi_1296_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_19_loop_yagi_1296_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **19** · Loop Yagi for 1296 MHz
 - **20** · Satellites: Eggbeater, QFH, Quagi
 - **21** · Dishes: prime focus, offset and horns
 

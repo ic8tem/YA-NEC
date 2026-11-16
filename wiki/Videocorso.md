@@ -176,9 +176,17 @@ La Yagi 10 elementi DK7ZB (esempio) nella linguetta Rumore/GT/Stack: temperatura
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_18_stack_gt_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_18_stack_gt_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_19_loop_yagi_1296_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_19.jpg" alt="Lezione 19 - Loop Yagi per i 1296 MHz"></a></td><td>
+
+### Lezione 19 - Loop Yagi per i 1296 MHz
+
+La loop Yagi N6CA (tabelle ARRL) / G3JVL a 25 elementi su 1,78 m: stima ARRL e tempo reale (18,6 dBi), modello NEC da 400 fili, sweep di frequenza e ottimizzazione NEC a passi del solo anello alimentato (ROS minimo 1,04 a 1296,8 MHz).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_19_loop_yagi_1296_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_19_loop_yagi_1296_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **19** · Loop Yagi per i 1296 MHz
 - **20** · Satelliti: Eggbeater, QFH, Quagi
 - **21** · Parabole: fuoco primario, offset e trombe
 

@@ -23,69 +23,69 @@ On the right: Ground, then at the very top Language and Colours.
 The fastest way to start: Examples. Here, a 20 m dipole at 10 m over average ground.
 
 7
-00:00:44,498 --> 00:00:51,581
+00:00:44,498 --> 00:00:51,818
 The cards show the main results: impedance, SWR, gain, direction, F/B, beamwidth, frequency.
 
 8
-00:00:51,631 --> 00:00:55,153
+00:00:51,868 --> 00:00:55,390
 The tabs below: Patterns...
 
 9
-00:00:55,203 --> 00:01:05,346
+00:00:55,440 --> 00:01:05,583
 ...Smith chart, Frequency (the sweep), back to the 3D structure.
 
 10
-00:01:05,396 --> 00:01:14,653
+00:01:05,633 --> 00:01:14,890
 Open model reads other programs' files too.
 
 11
-00:01:14,703 --> 00:01:24,187
+00:01:14,940 --> 00:01:26,478
 Formats: NEC2 (.nec), MMANA (.maa), AutoEZ/MultiNEC (.weq), EZNEC (.ez), K6STI YO (.yag) and AO (.ant), and YA-NEC's own .yanec.
 
 12
-00:01:24,237 --> 00:01:30,868
+00:01:26,528 --> 00:01:33,159
 An AutoEZ file: the Delta Loop sample by AC6LA.
 
 13
-00:01:30,918 --> 00:01:36,868
+00:01:33,209 --> 00:01:39,159
 AutoEZ variables and formulas are kept: the model opens ready to calculate.
 
 14
-00:01:36,918 --> 00:01:52,862
+00:01:39,209 --> 00:01:55,153
 Now an MMANA file: IC8TEM's 4-element Box Kite for 144 MHz.
 
 15
-00:01:52,912 --> 00:01:58,462
+00:01:55,203 --> 00:02:00,753
 MMANA notation, segmentation and sources are converted automatically.
 
 16
-00:01:58,512 --> 00:02:06,662
+00:02:00,803 --> 00:02:08,953
 Save writes a NEC2 file, readable by every NEC program; calculators also save .yanec with everything inside.
 
 17
-00:02:06,712 --> 00:02:12,798
+00:02:09,003 --> 00:02:15,089
 Settings: engine, ground, segmentation, patterns, losses.
 
 18
-00:02:12,848 --> 00:02:20,932
+00:02:15,139 --> 00:02:23,223
 Bottom right: automatic update from GitHub. New versions arrive by themselves and start at the next launch.
 
 19
-00:02:20,982 --> 00:02:32,599
+00:02:23,273 --> 00:02:34,890
 Colours: light, night, black, pastel... here Night, then back to Light.
 
 20
-00:02:32,649 --> 00:02:39,599
+00:02:34,940 --> 00:02:41,890
 The full manual is inside the program, in the Manual tab (and as a PDF in the doc folder).
 
 21
-00:02:39,649 --> 00:02:44,600
+00:02:41,940 --> 00:02:46,891
 Log records every operation: useful if something goes wrong.
 
 22
-00:02:44,650 --> 00:02:58,409
+00:02:46,941 --> 00:03:00,700
 Self-test compares the engine with the values computed by nec2c on the same models.
 
 23
-00:02:58,459 --> 00:03:04,409
+00:03:00,750 --> 00:03:11,677
 That is the program. From the next lesson we build antennas. YA-NEC is free: github.com/ic8tem/YA-NEC - 73 de IC8TEM

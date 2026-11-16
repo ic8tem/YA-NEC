@@ -1,103 +1,103 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,833
 YA-NEC video course - lesson 1: 14 MHz dipole, three ways.
 
 2
-00:00:04,000 --> 00:00:10,150
+00:00:04,883 --> 00:00:11,250
 Lesson 1: a 14 MHz dipole built three ways. First way: the Dipoles calculator.
 
 3
-00:00:10,200 --> 00:00:16,290
+00:00:11,300 --> 00:00:17,390
 Calculators tab, Dipoles, type half-wave.
 
 4
-00:00:16,340 --> 00:00:21,953
+00:00:17,440 --> 00:00:23,713
 Frequency 14.150 MHz, 2 mm wire, 10 m above ground.
 
 5
-00:00:22,003 --> 00:00:30,753
+00:00:23,763 --> 00:00:33,686
 The formula gives 10.08 m, but the real-time calculation below shows minimum SWR at 14.52 MHz: the wire is too short.
 
 6
-00:00:30,803 --> 00:00:39,829
+00:00:33,736 --> 00:00:42,762
 'Bring to resonance (NEC)' lets the engine find the right length.
 
 7
-00:00:39,879 --> 00:00:45,963
+00:00:42,812 --> 00:00:53,485
 10.36 m: the NEC check gives 72.7 + j0 ohm, 7.1 dBi. Shortening factor 0.978.
 
 8
-00:00:46,013 --> 00:00:53,096
+00:00:53,535 --> 00:01:00,618
 'Open as model': the dipole goes into the 3D structure, already over average ground at 10 m.
 
 9
-00:00:53,146 --> 00:00:58,496
+00:01:00,668 --> 00:01:10,912
 72.7 + j0.01 ohm, SWR 1.45, 7.10 dBi at 29.5 degrees of elevation.
 
 10
-00:00:58,546 --> 00:01:14,223
+00:01:10,962 --> 00:01:26,639
 Second way: by hand, with numbers. New, then 'New without saving'.
 
 11
-00:01:14,273 --> 00:01:21,401
+00:01:26,689 --> 00:01:38,649
 Frequency 14.150 MHz, Add wire: Y from -5.18 to +5.18 m, Z = 10 m, radius 1 mm, 25 segments.
 
 12
-00:01:21,451 --> 00:01:33,377
+00:01:38,699 --> 00:01:50,625
 Apply, then the source in the centre: w1c.
 
 13
-00:01:33,427 --> 00:01:39,244
+00:01:50,675 --> 00:01:56,492
 Without ground the height does not matter: this is the free-space dipole.
 
 14
-00:01:39,294 --> 00:01:46,588
+00:01:56,542 --> 00:02:03,836
 Ground: Average. The wire is already at 10 m.
 
 15
-00:01:46,638 --> 00:01:51,746
+00:02:03,886 --> 00:02:11,802
 72.9 - j0.04 ohm, 7.09 dBi: the same result as the calculator.
 
 16
-00:01:51,796 --> 00:02:08,893
+00:02:11,852 --> 00:02:28,949
 Third way: with variables. Variables tab: L = 10.36 (length) and H = 10 (height).
 
 17
-00:02:08,943 --> 00:02:24,280
+00:02:28,999 --> 00:02:44,336
 In the wire table we write formulas: Y1 = -L/2, Z1 = H, Y2 = L/2, Z2 = H.
 
 18
-00:02:24,330 --> 00:02:29,680
+00:02:44,386 --> 00:02:49,736
 Same antenna, but now length and height are two numbers to change.
 
 19
-00:02:29,730 --> 00:02:39,011
+00:02:49,786 --> 00:02:59,067
 H = 5 and Apply: the whole model follows.
 
 20
-00:02:39,061 --> 00:02:50,493
+00:02:59,117 --> 00:03:10,549
 At 5 m: 82 + j29 ohm, 5.84 dBi, maximum at 69 degrees. Back to H = 10.
 
 21
-00:02:50,543 --> 00:02:59,901
+00:03:10,599 --> 00:03:19,957
 Wire material: so far 'Lossless'. Let us choose Copper.
 
 22
-00:02:59,951 --> 00:03:12,377
+00:03:20,007 --> 00:03:32,433
 Copper: 73.8 ohm and 7.04 dBi, only 0.05 dB less: a 2 mm copper wire wastes very little.
 
 23
-00:03:12,427 --> 00:03:22,876
+00:03:32,483 --> 00:03:42,932
 Aluminium 6063: 74.1 ohm, 7.02 dBi. Back to Lossless.
 
 24
-00:03:22,926 --> 00:03:29,342
+00:03:42,982 --> 00:03:49,398
 Extended kernel (EK): a more exact formula for thick wires or very short segments.
 
 25
-00:03:29,392 --> 00:03:38,575
+00:03:49,448 --> 00:03:59,095
 For a thin wire nothing changes (72.9 - j0.04 ohm): EK is for thick tubes, when radius and segment length are similar.
 
 26
-00:03:38,625 --> 00:03:44,575
+00:03:59,145 --> 00:04:06,029
 Calculator, numbers or variables: same dipole, choose the way that suits you. 73 de IC8TEM

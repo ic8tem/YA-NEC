@@ -7,73 +7,73 @@ Lesson 10: receiving antennas - Beverage and EWE
 YA-NEC course, lesson 10: receiving antennas - Beverage and EWE. Receiving antennas tab.
 
 3
-00:00:10,867 --> 00:00:21,084
+00:00:10,867 --> 00:00:24,354
 Beverage (Harold Beverage, 1920s) for 160 m: 175 m of wire, 1.07 wavelengths, 2.5 m high, terminated with 500 ohm to a 20 ohm ground stake.
 
 4
-00:00:21,134 --> 00:00:32,017
+00:00:24,404 --> 00:00:36,364
 The calculator shows the length for best response at 20 degrees and the wire impedance over ground: about 524 ohm, so a 9:1 transformer to 50-75 ohm.
 
 5
-00:00:32,067 --> 00:01:03,096
+00:00:36,414 --> 00:01:07,443
 'Create the NEC model and compute the RDF': wires, down-leads, load and source, with the Sommerfeld ground.
 
 6
-00:01:03,146 --> 00:01:11,883
+00:01:07,493 --> 00:01:16,230
 The model opens: a long wire along X, lobe toward the termination end.
 
 7
-00:01:11,933 --> 00:01:21,883
+00:01:16,280 --> 00:01:31,062
 Back to the tab, the receiving figures: RDF 10.6 dB (IV3PRK measured 10.81), DMF 11.5 dB, F/B 23 dB, 5.5 dB better S/N than a vertical.
 
 8
-00:01:21,933 --> 00:01:30,483
+00:01:31,112 --> 00:01:40,279
 The absolute gain is -11.4 dBi: it does not matter for reception, as long as a 12 dB preamplifier makes up for it.
 
 9
-00:01:30,533 --> 00:01:47,109
+00:01:40,329 --> 00:01:56,905
 'Optimize for F/B' searches the termination resistor.
 
 10
-00:01:47,159 --> 00:01:53,843
+00:01:56,955 --> 00:02:06,523
 400 ohm: F/B from 23 to 38.5 dB, RDF 10.7 dB. The rear null is set by the termination.
 
 11
-00:01:53,893 --> 00:01:59,443
+00:02:06,573 --> 00:02:13,704
 Now a small one: the EWE by Floyd Koontz WA2WVL (QST, February 1995).
 
 12
-00:01:59,493 --> 00:02:06,310
+00:02:13,754 --> 00:02:21,684
 Two 3 m verticals and 9.1 m of wire - 0.06 wavelengths - with about 850 ohm termination.
 
 13
-00:02:06,360 --> 00:02:37,004
+00:02:21,734 --> 00:02:52,378
 'Create the NEC model and compute the RDF'.
 
 14
-00:02:37,054 --> 00:02:45,738
+00:02:52,428 --> 00:03:07,741
 RDF 7.7 dB, F/B 31.7 dB, impedance 847 - j536 ohm through a 16:1 transformer. In a garden instead of 175 m of field.
 
 15
-00:02:45,788 --> 00:02:50,071
+00:03:07,791 --> 00:03:13,497
 Gain -28 dBi: here a 20 dB preamplifier is needed.
 
 16
-00:02:50,121 --> 00:03:16,131
+00:03:13,547 --> 00:03:39,557
 'Optimize for F/B' on the EWE too.
 
 17
-00:03:16,181 --> 00:03:21,275
+00:03:39,607 --> 00:03:45,894
 800 ohm: F/B 34.2 dB, RDF 7.8 dB.
 
 18
-00:03:21,325 --> 00:03:29,541
+00:03:45,944 --> 00:03:54,718
 Below, the RDF ranking for 160 m: measured antennas (IV3PRK, Hi-Z) and, in orange, what YA-NEC just computed.
 
 19
-00:03:29,591 --> 00:03:38,941
+00:03:54,768 --> 00:04:04,772
 The long Beverages lead the ranking; the EWE sits next to the K9AY and the Flags. RDF compares receiving antennas fairly, whatever their gain.
 
 20
-00:03:38,991 --> 00:03:44,942
+00:04:04,822 --> 00:04:15,669
 Beverage and EWE: long or small, the RDF tells which one hears better. Next lesson: Four-square and the other receiving antennas. 73 de IC8TEM

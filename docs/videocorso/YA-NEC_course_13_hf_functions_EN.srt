@@ -3,77 +3,77 @@
 Lesson 13: the other functions for HF
 
 2
-00:00:04,000 --> 00:00:15,589
+00:00:04,000 --> 00:00:16,578
 YA-NEC course, lesson 13: the other functions for HF. Examples: the ARRL 520-40H, a 5-element Yagi for 20 m at 70 ft, from the ARRL Antenna Book.
 
 3
-00:00:15,639 --> 00:00:25,989
+00:00:16,628 --> 00:00:31,417
 65 wires of telescoping aluminium tubing, with the Leeson correction for the steps. The cards on top: 21.5 - j16.6 ohm, 15.06 dBi, F/B 28 dB.
 
 4
-00:00:26,039 --> 00:00:34,723
+00:00:31,467 --> 00:00:40,584
 SWR 2.64 on 50 ohm: the ARRL design needs its own match (hairpin or gamma). The model shows the bare driven element.
 
 5
-00:00:34,773 --> 00:00:41,790
+00:00:40,634 --> 00:00:47,651
 Patterns tab: azimuth at the elevation of the maximum, and elevation in the main direction.
 
 6
-00:00:41,840 --> 00:00:51,790
+00:00:47,701 --> 00:00:58,832
 Maximum at 13.2 degrees over average ground, -3 dB beamwidth 55.1 degrees in azimuth and 14.2 in elevation, the ARRL logarithmic scale.
 
 7
-00:00:51,840 --> 00:00:58,923
+00:00:58,882 --> 00:01:05,965
 'Azimuth rotated by 90 degrees': 0 degrees at the top or on the right, as in EZNEC or MMANA.
 
 8
-00:00:58,973 --> 00:01:06,657
+00:01:06,015 --> 00:01:13,699
 Same pattern, different habit.
 
 9
-00:01:06,707 --> 00:01:16,605
+00:01:13,749 --> 00:01:23,647
 Linear scale in dB: the rear lobes look much bigger, because the ARRL scale compresses the low levels.
 
 10
-00:01:16,655 --> 00:01:20,673
+00:01:23,697 --> 00:01:27,715
 Frequency tab: the sweep over the band.
 
 11
-00:01:20,723 --> 00:01:30,806
+00:01:27,765 --> 00:01:42,052
 SWR, gain in the main direction, impedance, F/B and F/R, radiation efficiency: across 14.0-14.4 MHz the F/B peaks at 35 dB near 14.1 MHz.
 
 12
-00:01:30,856 --> 00:01:33,873
+00:01:42,102 --> 00:01:45,119
 The 'More data' card.
 
 13
-00:01:33,923 --> 00:01:43,006
+00:01:45,169 --> 00:01:55,667
 Efficiency 98.5 % (losses in the aluminium), 145 segments. The AGT test only applies in free space or over perfect ground.
 
 14
-00:01:43,056 --> 00:01:47,072
+00:01:55,717 --> 00:01:59,733
 Smith chart.
 
 15
-00:01:47,122 --> 00:01:56,138
+00:01:59,783 --> 00:02:08,799
 The impedance from 14.0 (green) to 14.4 MHz (orange) with the SWR 2 circle: everything a matching network has to correct.
 
 16
-00:01:56,188 --> 00:02:00,339
+00:02:08,849 --> 00:02:13,000
 NEC tab: the NEC-2 cards of the model, editable.
 
 17
-00:02:00,389 --> 00:02:10,339
+00:02:13,050 --> 00:02:23,000
 Here you can read and change every card - GW, GE, GN, EX, LD, FR - then 'Apply and recalculate'. Comments keep the source of the model.
 
 18
-00:02:10,389 --> 00:02:15,472
+00:02:23,050 --> 00:02:28,566
 Noise/GT/Stack: the receive side, antenna temperature and G/T.
 
 19
-00:02:15,522 --> 00:02:24,872
+00:02:28,616 --> 00:02:38,969
 Below 28 MHz the program warns: external noise dominates, so G/T is only for comparison. It becomes useful in VHF - lesson 18.
 
 20
-00:02:24,922 --> 00:02:30,873
+00:02:39,019 --> 00:02:51,219
 Patterns, sweep, Smith, more data, NEC cards: the tools around the simulation. Next lesson: the DK7ZB 6-element Yagi with the designer's dimensions. 73 de IC8TEM

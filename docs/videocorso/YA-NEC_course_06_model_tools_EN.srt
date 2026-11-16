@@ -7,89 +7,89 @@ Lesson 6: the model tools
 YA-NEC course, lesson 6: the model tools. We start from an example: the 20 m dipole at 10 m over average ground.
 
 3
-00:00:14,641 --> 00:00:18,457
+00:00:14,641 --> 00:00:21,757
 74.2 + j10.7 ohm, 7.11 dBi at 29.5 degrees.
 
 4
-00:00:18,507 --> 00:00:25,732
+00:00:21,807 --> 00:00:29,032
 The Geometry bar works on the whole antenna or on the selected wires. 'Move': Z = 5 m.
 
 5
-00:00:25,782 --> 00:00:35,866
+00:00:29,082 --> 00:00:39,166
 The preview shows the antenna in its new place, and the box lists what changes in the wire table. Units are accepted too: 10cm, 6in, 2ft.
 
 6
-00:00:35,916 --> 00:00:42,999
+00:00:39,216 --> 00:00:46,299
 'Apply move'.
 
 7
-00:00:43,049 --> 00:00:53,399
+00:00:46,349 --> 00:01:00,848
 Now at 15 m: 74.2 + j30.1 ohm, 7.52 dBi, and the main lobe drops from 29.5 to 19.6 degrees. Sources and loads follow the wires by themselves.
 
 8
-00:00:53,449 --> 00:01:00,066
+00:01:00,898 --> 00:01:07,515
 Quick commands: 'horizontal <-> vertical' turns the dipole upright around its centre.
 
 9
-00:01:00,116 --> 00:01:08,933
+00:01:07,565 --> 00:01:19,735
 Vertical dipole, bottom end at 9.8 m: 76.5 + j22.7 ohm, 2.01 dBi. Average ground eats much more of a vertical antenna.
 
 10
-00:01:08,983 --> 00:01:17,063
+00:01:19,785 --> 00:01:27,865
 'Undo' twice: back to the starting dipole. Every geometry command can be undone and redone.
 
 11
-00:01:17,113 --> 00:01:20,064
+00:01:27,915 --> 00:01:32,239
 74.2 + j10.7 ohm again.
 
 12
-00:01:20,114 --> 00:01:28,106
+00:01:32,289 --> 00:01:40,281
 Now a classic mistake: only 3 segments on the 10.4 m wire.
 
 13
-00:01:28,156 --> 00:01:34,773
+00:01:40,331 --> 00:01:47,142
 The result still looks reasonable - 75.4 + j7.3 ohm - and that is exactly the danger.
 
 14
-00:01:34,823 --> 00:01:38,833
+00:01:47,192 --> 00:01:51,202
 The Warnings tab says why.
 
 15
-00:01:38,883 --> 00:01:48,433
+00:01:51,252 --> 00:02:02,085
 Segments longer than lambda/10 (2.11 m): 3.47 m. The NEC-2 guide advises against it; EZNEC flags it as 'segment length too long'.
 
 16
-00:01:48,483 --> 00:01:55,559
+00:02:02,135 --> 00:02:09,211
 'Check...' runs the data checks that need no calculation.
 
 17
-00:01:55,609 --> 00:02:02,768
+00:02:09,261 --> 00:02:16,420
 42 checks, all fine: the data are valid. Segment length is the job of the next tool.
 
 18
-00:02:02,818 --> 00:02:12,102
+00:02:16,470 --> 00:02:25,754
 'Segmentation...': segment length, segment/radius ratio, equal segments around sources and lines (rules from EZNEC and ARRL).
 
 19
-00:02:12,152 --> 00:02:19,435
+00:02:25,804 --> 00:02:35,735
 Wire 1: segment too long, 3.47 m against a minimum of 2.09 m. Target level: prudent, lambda/20.
 
 20
-00:02:19,485 --> 00:02:25,499
+00:02:35,785 --> 00:02:41,799
 'Preview' computes before and after without touching the model.
 
 21
-00:02:25,549 --> 00:02:30,566
+00:02:41,849 --> 00:02:46,866
 From 3 to 11 segments, odd so the source stays in the centre.
 
 22
-00:02:30,616 --> 00:02:37,629
+00:02:46,916 --> 00:02:53,929
 'Apply and recalculate'.
 
 23
-00:02:37,679 --> 00:02:45,630
+00:02:53,979 --> 00:03:01,930
 Fixed: no warnings left. With a long model, this window can also open by itself before every calculation.
 
 24
-00:02:45,680 --> 00:02:51,630
+00:03:01,980 --> 00:03:12,638
 Move, rotate, scale, undo, check, segment: the model stays clean. Next lesson: simple HF beams from the calculators. 73 de IC8TEM
