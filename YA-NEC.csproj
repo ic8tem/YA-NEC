@@ -27,6 +27,8 @@
     <PublishSingleFile Condition="'$(RuntimeIdentifier)' != ''">true</PublishSingleFile>
     <IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract>
     <DebugType>embedded</DebugType>
+    <!-- 1.0.5 (IC8TEM 16/11/2026 16:02, bozzetto C approvato): icona del programma (exe, finestra, installatori) -->
+    <ApplicationIcon>assets/ya-nec.ico</ApplicationIcon>
     <NoWarn>$(NoWarn);CS0618;CS0168;CS0219;CS0414;CS0649;CS0169;CA1416</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -34,6 +36,9 @@
     <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.3" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="assets/ya-nec-256.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data/**" Exclude="data/prove/4nec2zip.zip" CopyToOutputDirectory="PreserveNewest" LinkBase="data" ExcludeFromSingleFile="true" />  <!-- lo zip di 4nec2 serve solo al collaudo e non si distribuisce -->

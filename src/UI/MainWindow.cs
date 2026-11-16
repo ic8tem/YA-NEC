@@ -108,6 +108,9 @@ namespace YaNec
             // 0.4.30: velocita' della luce del motore (Impostazioni > Motore); 0 = 299,792458 come EZNEC (normale), 1 = 299,8 come nec2c
             if (!Engine.Nec2Engine.CvelBloccata) Engine.Nec2Engine.Cvel = c.GetD("cvel_nec2c", 0) > 0.5 ? Engine.Nec2Engine.CVEL_NEC2 : Engine.Nec2Engine.CVEL_FISICA;
             Title = AppPaths.Title;
+            // 1.0.5: icona della finestra (bozzetto C approvato da IC8TEM il 16/11/2026 16:02)
+            try { Icon = new WindowIcon(Avalonia.Platform.AssetLoader.Open(new Uri("avares://YA-NEC/assets/ya-nec-256.png"))); }
+            catch (Exception ex) { Registro.Scrivi("ERRORE", "icona della finestra: " + ex.Message); }
             Width = 1320;
             Height = 900;
             MinWidth = 900;

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=YA-NEC
+GenericName=NEC-2 antenna simulator
+GenericName[it]=Simulatore d'antenne NEC-2
+Comment=Wire antenna simulator based on NEC-2 (IC8TEM)
+Comment[it]=Simulatore d'antenne a fili basato sul NEC-2 (IC8TEM)
+Exec=/opt/YA-NEC/YA-NEC
+Icon=ya-nec
+Terminal=false
+Categories=HamRadio;Science;Engineering;
+Keywords=antenna;NEC;Yagi;dipole;ham;radio;

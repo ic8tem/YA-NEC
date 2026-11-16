@@ -83,7 +83,7 @@ namespace YaNec
             motivo = null;
             if (File.Exists(Path.Combine(AppPaths.AppDir, "installato-da-pacchetto")))
             {
-                motivo = "installato con un pacchetto .deb o .rpm: si aggiorna con il gestore dei pacchetti (apt, dnf), non da solo";
+                motivo = "installato con un pacchetto (.deb, .rpm o .dmg): si aggiorna con il gestore dei pacchetti (apt, dnf) o scaricando il nuovo .dmg, non da solo";
                 return true;
             }
             try

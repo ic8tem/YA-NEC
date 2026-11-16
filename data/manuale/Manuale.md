@@ -1356,6 +1356,59 @@ Il NEC-2 con diametri a gradini fa risuonare l'elemento piu' in basso della real
 
 **Pagina Feed**: quattro grafici. 1) ampiezza del feed nei piani E e H, con il triangolino a -3 dB, il tratteggio all'angolo di bordo e il punteggiato a -10 dB; 2) fase nei piani E e H corretta al centro di fase, quella riferita all'origine del modello in punteggiato, la fascia di +-22,5 gradi (limite di W1GHZ) e il residuo entro il bordo; 3) efficienza in funzione di f/D (la figura classica di W1GHZ): spillover, illuminazione, asimmetria E/H, fase, totale e totale senza fase tratteggiato, con il disco segnato; 4) efficienza in funzione della posizione del feed, asse in mm sotto e in lambda sopra, con la fascia entro -0,25 dB. Il piano a 45 gradi compare tratteggiato nei grafici 1 e 2 quando viene dal modello NEC: e' solo da vedere e non entra nel calcolo. Con il modello NEC la fase e' quella della componente lungo la polarizzazione del feed, riferita all'origine del modello (+ verso il disco).
 
+### Parabola: come si calcola l'efficienza
+
+Il guadagno di una parabola e' quello di un'apertura circolare uniforme moltiplicato per l'efficienza totale:
+
+G = (pi D / lambda)^2 x eta_totale, in dBi: G = 10 log10[(pi D / lambda)^2] + 10 log10(eta_totale)
+
+YA-NEC calcola eta_totale come prodotto di sei fattori, ognuno nella pagina Riepilogo con la sua perdita in dB:
+
+eta_totale = eta_apertura x eta_blocco x eta_superficie x eta_rete x eta_bordo x eta_varie
+
+**1. Apertura (illuminazione del feed): eta_apertura = eta_taper x eta_fase x eta_spillover x eta_pol.** Il feed illumina il disco con il suo diagramma; sulla superficie si aggiunge l'attenuazione spaziale (1 + cos theta)/2, perche' il bordo e' piu' lontano dal fuoco del centro (distanza 2F/(1 + cos theta)). Senza diagramma del feed, YA-NEC usa il feed cos^q(theta) e ricava q dal taper al bordo scritto (feed + attenuazione spaziale, 10 dB come consiglia W1GHZ): q = ln(10^(-taper/20) / s) / ln(cos psi0), con s = (1 + cos psi0)/2 e psi0 = 2 atan(1 / (4 f/D)) il semiangolo del bordo visto dal fuoco.
+
+| Fattore | Formula | Cosa misura |
+|---|---|---|
+| taper (illuminazione) | eta_taper = (integrale di E rho drho)^2 / [(a^2/2) x integrale di E^2 rho drho], a = raggio del disco | quanto l'illuminazione si allontana da quella uniforme: bordo troppo scuro = disco usato in parte |
+| spillover | feed cos^q: 1 - cos^(2q+1)(psi0); feed dal NEC o tabellato: potenza entro psi0 / potenza totale | la potenza del feed che passa oltre il bordo e non arriva al disco (e vede il terreno caldo) |
+| fase | modulo dell'integrale del campo complesso al quadrato / (integrale del modulo)^2 | il feed non ha un centro di fase unico: solo con la fase dal NEC o da file W1GHZ, altrimenti 1 |
+| polarizzazione | potenza del termine medio (E + H)/2 entro psi0 / potenza entro psi0 (Kildal 1985) | asimmetria tra i piani E e H del feed (polarizzazione incrociata): solo con i due piani, altrimenti 1 |
+
+Taper e spillover tirano in direzioni opposte: un bordo poco illuminato riduce lo spillover ma spreca il disco. Il massimo di eta_taper x eta_spillover si ha intorno a 10-12 dB di taper totale al bordo, circa 82 %: e' la figura della pagina Feed (efficienza in funzione di f/D).
+
+**2. Blocco: eta_blocco = |1 - b_c - b_p|^2.** Il feed e i puntoni fanno ombra sul disco. Il blocco non si conta come area tolta, ma come campo tolto pesato con l'illuminazione: b_c = campo sotto l'ombra del feed (raggio pari a meta' del suo diametro) diviso il campo totale; b_p = N puntoni x larghezza / (2 pi) x campo lungo l'ombra dei puntoni, dal bordo del feed al punto d'attacco sulle centine, diviso il campo totale. Il centro e' la zona piu' illuminata, per questo un feed piccolo pesa piu' della sua area (Galt Telescope; Lamb e Olver; Ruze per i puntoni).
+
+**3. Superficie (Ruze): eta_superficie = exp[-(4 pi sigma / lambda)^2].** sigma e' lo scostamento RMS della superficie dal paraboloide (centine, rete, montaggio). lambda/40 costa 0,4 dB, lambda/20 costa 1,7 dB, lambda/16 circa 2,7 dB. Con la casella "Aggiungi la sfaccettatura della rete piana" si somma (in quadratura) l'errore della rete tesa piatta tra due centine: freccia della corda k2 s^2/8 (s = corda tra le centine, k2 = curvatura del paraboloide in quel punto), RMS circa 0,298 volte la freccia, media pesata con l'illuminazione.
+
+**4. Rete (Mumford): eta_rete = 1 - T.** Una parte dell'onda passa attraverso i fori della rete: T = 1 / (1 + x^2), x = lambda / [2 s ln(s / (pi d))], con s = passo (foro + filo) e d = diametro del filo. La potenza trasmessa va dietro il disco e porta rumore del terreno (T x 290 K, pagina Riepilogo). Con "Superficie piena" il fattore vale 1.
+
+**5. Bordo a poligono: eta_bordo = N sin(2 pi / N) / (2 pi).** Solo con la sfaccettatura accesa: con la rete piana tra N centine il bordo e' un poligono, che ha meno area del cerchio (16 centine: 0,975, -0,11 dB).
+
+**6. Perdite varie: eta_varie = 10^(-L/10).** Una perdita fissa scritta a mano (di partenza 0,7 dB): ROS del feed, linea fino al punto di misura, polarizzazione incrociata, piccoli errori di fase e di montaggio. W1GHZ osserva che i dischi reali rendono almeno il 15 % meno del calcolo: questa casella serve a tenerne conto.
+
+**Esempio con i valori di partenza del calcolatore** (disco da 3 m, 1296,1 MHz, f/D 0,42, taper totale 10 dB, feed cos^q, ombra del feed 0,20 m, 3 puntoni da 20 mm attaccati al 65 % del raggio, rete 6 mm con filo 0,8 mm, errore RMS 3 mm, perdite varie 0,7 dB):
+
+| Passo | Valore | Fattore | Perdita |
+|---|---|---|---|
+| lambda, semiangolo del bordo psi0 | 231,3 mm, 61,5 gradi | | |
+| attenuazione spaziale al bordo, taper del solo feed, q | 2,63 dB, 7,37 dB, q = 1,14 | | |
+| taper (illuminazione) | | 90,3 % | -0,44 dB |
+| spillover | | 91,3 % | -0,40 dB |
+| apertura (taper x spillover; fase e polarizzazione = 1 con il feed cos^q) | | 82,4 % | -0,84 dB |
+| blocco (feed 0,75 % del campo, puntoni 1,05 %) | | 96,4 % | -0,16 dB |
+| superficie, 3 mm = lambda/77 (Ruze) | | 97,4 % | -0,12 dB |
+| rete 6 mm = lambda/38 (Mumford, T = 0,34 %) | | 99,7 % | -0,01 dB |
+| perdite varie | | 85,1 % | -0,70 dB |
+| **totale** | | **65,7 %** | **-1,83 dB** |
+| guadagno: apertura uniforme 32,20 dBi - 1,83 dB | **30,37 dBi** | | |
+
+Si vede che a 1296 MHz rete e superficie quasi non contano: pesano illuminazione e perdite varie. Alle bande alte i numeri cambiano: con la stessa rete e lo stesso errore RMS, a 10368 MHz (lambda 28,9 mm) la superficie da 3 mm (lambda/10) costa circa 7 dB e la rete 6 mm diventa trasparente per una parte importante della potenza; la pagina Bande ed EME fa lo stesso conto per le quattro bande.
+
+Con il diagramma del feed dal modello NEC (pulsante "Feed dal modello NEC") o da un file W1GHZ, taper e spillover si calcolano sul diagramma vero, anche diverso nei piani E e H; con la fase si aggiungono eta_fase ed eta_pol, e il centro di fase si cerca dove l'efficienza e' massima (criterio di W1GHZ).
+
+Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spillover, efficienza d'illuminazione); P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6 (taper ottimo, fase, efficienza reale); P.-S. Kildal, IEEE Trans. AP-33, 1985 (fattori dell'efficienza del feed); J. Ruze, Proc. IEEE 1966 (errori di superficie) e Microwave Journal 1968 (puntoni); W.W. Mumford, Proc. IRE 1961 (trasmissione della rete); Galt Telescope, arXiv 1607.06436, e Lamb e Olver (blocco pesato).
+
 ### Trombe e illuminatori: caselle e scelte
 
 Sottolinguetta dei Calcolatori preparata da IC8TEM (motore Engine/TrombaEngine.cs, 28 prove nell'autotest con i valori attesi controllati in Python). Tipi: coffee-can, VE4MA, Super-VE4MA, Chaparral, W2IMU dual-mode, tromba conica e piramidale, sulle quattro bande delle parabole o a frequenza libera. Pagine a pillola: **Misure** (quote interne in mm, sezione in scala, modi che si propagano in guida, posizione della sonda), **Diagramma** (piani E e H con le righe a -3 e -10 dB e il livello voluto al bordo del disco), **Sulla parabola** (efficienza in funzione di f/D e centro di fase rispetto alla bocca, con lo stesso motore della pagina Feed), **Modello NEC** (file .nec da salvare o da aprire in YA-NEC), **Fonti**.
