@@ -122,9 +122,17 @@ Loop magnetica da 1 m per i 40 m (efficienza 16 %, 52 A e 5,6 kV con 100 W) e l'
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_12_loop_toroidi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_12_loop_toroidi_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_13_funzioni_hf_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_13.jpg" alt="Lezione 13 - Le altre funzioni per l'HF"></a></td><td>
+
+### Lezione 13 - Le altre funzioni per l'HF
+
+Sulla ARRL 520-40H (5 elementi per i 20 m dall'ARRL Antenna Book): riquadri dei risultati, diagrammi con azimut ruotato e scala ARRL o lineare, sweep di frequenza, Altri dati (efficienza, AGT, segmenti), carta di Smith, schede NEC modificabili e la linguetta Rumore/GT/Stack.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_13_funzioni_hf_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_13_funzioni_hf_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **13** · Le altre funzioni per l'HF
 - **14** · Yagi 6 elementi DK7ZB con le misure del progettista
 - **15** · La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore, e una Yagi HF 3 elementi ottimizzata
 - **16** · VHF/UHF avanzato: Yagi lunga DL6WU, correzione del boom e staffe, tempo reale

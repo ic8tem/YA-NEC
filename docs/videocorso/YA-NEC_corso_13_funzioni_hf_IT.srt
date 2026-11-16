@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 13: le altre funzioni per l'HF
+
+2
+00:00:04,000 --> 00:00:15,588
+Corso YA-NEC, lezione 13: le altre funzioni per l'HF. Esempi: la ARRL 520-40H, Yagi 5 elementi per i 20 m a 70 piedi, dall'ARRL Antenna Book.
+
+3
+00:00:15,638 --> 00:00:26,188
+65 fili di tubi di alluminio telescopici, con la correzione di Leeson per i gradini. I riquadri in alto: 21,5 - j16,6 ohm, 15,06 dBi, F/B 28 dB.
+
+4
+00:00:26,238 --> 00:00:34,988
+ROS 2,64 su 50 ohm: il progetto ARRL vuole il suo adattamento (hairpin o gamma). Il modello mostra il radiatore nudo.
+
+5
+00:00:35,038 --> 00:00:42,455
+Linguetta Diagrammi: azimut all'elevazione del massimo, ed elevazione nella direzione principale.
+
+6
+00:00:42,505 --> 00:00:51,655
+Massimo a 13,2 gradi sul terreno medio, apertura a -3 dB 55,1 gradi in azimut e 14,2 in elevazione, scala logaritmica ARRL.
+
+7
+00:00:51,705 --> 00:00:57,788
+'Azimut ruotato di 90 gradi': lo 0 in alto o a destra, come in EZNEC o MMANA.
+
+8
+00:00:57,838 --> 00:01:05,519
+Stesso diagramma, abitudine diversa.
+
+9
+00:01:05,569 --> 00:01:15,480
+Scala lineare in dB: i lobi posteriori sembrano molto piu' grandi, perche' la scala ARRL comprime i livelli bassi.
+
+10
+00:01:15,530 --> 00:01:19,548
+Linguetta Frequenza: lo sweep sulla banda.
+
+11
+00:01:19,598 --> 00:01:30,748
+ROS, guadagno nella direzione principale, impedenza, F/B e F/R, efficienza di radiazione: tra 14,0 e 14,4 MHz il F/B ha il picco di 35 dB verso 14,1 MHz.
+
+12
+00:01:30,798 --> 00:01:33,832
+Il riquadro 'Altri dati'.
+
+13
+00:01:33,882 --> 00:01:43,099
+Efficienza 98,5 % (perdite nell'alluminio), 145 segmenti. La prova AGT vale solo nello spazio libero o sul terreno perfetto.
+
+14
+00:01:43,149 --> 00:01:47,172
+Carta di Smith.
+
+15
+00:01:47,222 --> 00:01:56,905
+L'impedenza da 14,0 (verde) a 14,4 MHz (arancio) con il cerchio del ROS 2: tutto quello che la rete di adattamento deve correggere.
+
+16
+00:01:56,955 --> 00:02:01,705
+Linguetta NEC: le schede NEC-2 del modello, modificabili.
+
+17
+00:02:01,755 --> 00:02:12,172
+Qui si leggono e si cambiano tutte le schede - GW, GE, GN, EX, LD, FR - poi 'Applica e ricalcola'. I commenti conservano la fonte del modello.
+
+18
+00:02:12,222 --> 00:02:17,439
+Rumore/GT/Stack: il lato ricezione, temperatura d'antenna e G/T.
+
+19
+00:02:17,489 --> 00:02:27,572
+Sotto i 28 MHz il programma avvisa: comanda il rumore esterno, quindi il G/T serve solo per confronto. Diventa utile in VHF - lezione 18.
+
+20
+00:02:27,622 --> 00:02:33,573
+Diagrammi, sweep, Smith, altri dati, schede NEC: gli strumenti attorno alla simulazione. Prossima lezione: la Yagi 6 elementi DK7ZB con le misure del progettista. 73 de IC8TEM
