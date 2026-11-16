@@ -132,7 +132,7 @@ namespace YaNec.Engine
                 }
             }
             // 1.0.10: dipoli 30 / 40 m lungo il W del 20 m e i bracci dell'esagono
-            int d34 = I("d34"), c30 = 0, c40 = 0;
+            int d34 = I("d34"), cd30 = 0, cd40 = 0;
             double R20 = Rj[0] * k, zd = h - Math.Max(0.02, P("dz"));
             foreach (int bd in new[] { 6, 7 })
             {
@@ -140,7 +140,7 @@ namespace YaNec.Engine
                 if (bd == 7 && d34 != 2 && d34 != 3) continue;
                 double Lh = bd == 6 ? L30(k) : L40(k), z = bd == 6 ? zd : zd - 0.10, segd = C0 / FreqB(bd) / 40;
                 int cn = d.W(1, 0, -Gap / 2, z, 0, Gap / 2, z, a);
-                if (bd == 6) c30 = cn; else c40 = cn;
+                if (bd == 6) cd30 = cn; else cd40 = cn;
                 double c3 = R20 * Math.Cos(Math.PI / 6), s3 = R20 * Math.Sin(Math.PI / 6);
                 for (int sg = 1; sg >= -1; sg -= 2)
                 {
@@ -159,17 +159,17 @@ namespace YaNec.Engine
             d.Ground(h > 0 ? 2 : 0);
             // linee lungo il palo: lunghezza fisica = dislivello; nel NEC la lunghezza della TL e' elettrica (fisica / VF)
             for (int i = 0; i < nb - 1; i++) d.Tl(cen[i], 1, cen[i + 1], 1, z0, Math.Max(0.01, zq[i] - zq[i + 1]) / vf);
-            if (banda == 6 && c30 > 0 || banda == 7 && c40 > 0)
+            if (banda == 6 && cd30 > 0 || banda == 7 && cd40 > 0)
             {
                 d.Ld(0, cen[0], 1, 1, 50, 0, 0);
-                if (banda == 6 && c40 > 0) d.Ld(0, c40, 1, 1, 50, 0, 0);
-                if (banda == 7 && c30 > 0) d.Ld(0, c30, 1, 1, 50, 0, 0);
-                d.Ex(banda == 6 ? c30 : c40, 1);
+                if (banda == 6 && cd40 > 0) d.Ld(0, cd40, 1, 1, 50, 0, 0);
+                if (banda == 7 && cd30 > 0) d.Ld(0, cd30, 1, 1, 50, 0, 0);
+                d.Ex(banda == 6 ? cd30 : cd40, 1);
             }
             else
             {
-                if (c30 > 0) d.Ld(0, c30, 1, 1, 50, 0, 0);
-                if (c40 > 0) d.Ld(0, c40, 1, 1, 50, 0, 0);
+                if (cd30 > 0) d.Ld(0, cd30, 1, 1, 50, 0, 0);
+                if (cd40 > 0) d.Ld(0, cd40, 1, 1, 50, 0, 0);
                 d.Ex(cen[0], 1);
             }
             return d.End(FreqB(banda));
