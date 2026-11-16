@@ -29,7 +29,14 @@ namespace YaNec.Engine
         static readonly double[] Rj = { 3.217, 2.529, 2.184, 1.845, 1.627 };
         static readonly double[] TdJ = { 0.7443, 0.7105, 0.7050, 0.7015, 0.6940 };
         static readonly double[] TrJ = { 0.1355, 0.1137, 0.1095, 0.1108, 0.1214 };
-        const double Gap = 0.02;      // spazio tra le due meta' al centro (morsetti), segmento della sorgente e delle linee
+        const double Gap = 0.02;
+        // 1.0.10 (IC8TEM 16/11/2026 22:32 "devo poter calcolare anche ... la hex in 50 MHz con 2 o 3 elementi"): il 6 m del modello di
+        // JN1GLB (6BandBBHEX, data/modelli), un livello sotto il 10 m (quota 0 contro 0,08 m): alimentato diritto 2 x 1,38 m, riflettore a U
+        // (lato posteriore a x = -1,19, braccia fino a (-0,48; +-1,075)), direttore a U (lato a x = 0,66 da -1,06 a 1,06, punte fino a
+        // (0,51; +-1,15)). "2 elementi" toglie il direttore. Prova con nec2c (scratchpad hex6/h6.py, coassiale 50 ohm VF 0,66, spazio
+        // libero, 50,15 MHz): 2 el 44,0 +j6,5 ohm ROS 1,21, 6,50 dBi, F/B 14,6 dB; 3 el 33,0 +j11,3 ohm ROS 1,65, 6,96 dBi, F/B 19,6 dB.
+        static readonly string[] NbTutte = { "20 m", "17 m", "15 m", "12 m", "10 m", "6 m" };
+        const double F6 = 50.150, Z6 = 0.0;      // spazio tra le due meta' al centro (morsetti), segmento della sorgente e delle linee
 
         // valori accordati con il pulsante "Risonanza" (null = misure di JN1GLB); valgono finche' non cambiano i dati della scheda
         double[] td, tr;
@@ -39,7 +46,8 @@ namespace YaNec.Engine
         public CalcHexbeam()
         {
             Key = "hexbeam"; Title = "Hexbeam 20-10 m"; Source = "G3TXQ (broadband hexbeam), misure del modello MMANA di JN1GLB (2008); M0OXO, N4KC/K4KIO, MM0OPX";
-            Params.Add(CalcParam.Scelta("b", "Banda nel NEC", 0, "La banda di cui il motore calcola impedenza e diagramma (il modello contiene sempre tutte e cinque le bande).", Nb));
+            Params.Add(CalcParam.Scelta("b", "Banda nel NEC", 0, "La banda di cui il motore calcola impedenza e diagramma (il modello contiene tutte le bande scelte).", NbTutte));
+            Params.Add(CalcParam.Scelta("e6", "6 m (50 MHz)", 0, "Il 6 m del modello di JN1GLB, sotto il 10 m: 2 elementi (riflettore e alimentato) o 3 elementi (con il direttore).", "nessuno", "2 elementi", "3 elementi"));
             Params.Add(new CalcParam("R", "Raggio delle punte del 20 m", 3.217, "m", "Distanza dall'asse del palo al vertice dell'esagono del 20 m (JN1GLB 3,217 m). Le altre bande seguono le proporzioni di JN1GLB."));
             Params.Add(new CalcParam("d", "Diametro del filo", 1.0, "mm"));
             Params.Add(CalcParam.Scelta("col", "Collegamento tra le bande", 0, "Linea che unisce i centri degli alimentati lungo il palo centrale, dall'alimentazione in alto (20 m) fino al 10 m.", "Coassiale (G3TXQ)", "Bacchetta a due conduttori"));
@@ -65,9 +73,11 @@ namespace YaNec.Engine
             double k = P("R") / Rj[0], a = Math.Max(0.05, P("d")) / 2000, h = P("h"), vf;
             double z0 = Z0Linea(out vf);
             double seg = C0 / Fb[4] / 40;
-            NecDeck d = new NecDeck(Title + " " + Nb[banda]);
-            int[] cen = new int[5];
-            double[] zq = new double[5];
+            int e6 = I("e6");
+            NecDeck d = new NecDeck(Title + " " + NbTutte[banda]);
+            int nb = e6 > 0 ? 6 : 5;
+            int[] cen = new int[nb];
+            double[] zq = new double[nb];
             for (int i = 0; i < 5; i++)
             {
                 double z = h + (Zj[i] - Zj[0]) * k, R = Rj[i] * k, c30 = R * Math.Cos(Math.PI / 6), s30 = R * Math.Sin(Math.PI / 6);
@@ -89,11 +99,26 @@ namespace YaNec.Engine
                     d.W(Math.Max(1, (int)Math.Ceiling(R * TrJ[i] / seg)), 0, sg * R, z, ex, ey, z, a);   // 0.4.34: segmenti fissi (vedi sopra)
                 }
             }
+            if (e6 > 0)
+            {
+                // 1.0.10: 6 m di JN1GLB (proporzioni scalate come le altre bande)
+                double z = h + (Z6 - Zj[0]) * k, seg6 = C0 / F6 / 40;
+                zq[5] = z;
+                cen[5] = d.W(1, 0, -Gap / 2, z, 0, Gap / 2, z, a);
+                for (int sg = 1; sg >= -1; sg -= 2) d.Ws(seg6, 0, sg * Gap / 2, z, 0, sg * 1.38 * k, z, a, false, 3);
+                d.Ws(seg6, -1.19 * k, -0.68 * k, z, -1.19 * k, 0.68 * k, z, a, false, 3);
+                for (int sg = 1; sg >= -1; sg -= 2) d.Ws(seg6, -1.19 * k, sg * 0.68 * k, z, -0.48 * k, sg * 1.075 * k, z, a, false, 3);
+                if (e6 == 2)
+                {
+                    d.Ws(seg6, 0.66 * k, -1.06 * k, z, 0.66 * k, 1.06 * k, z, a, false, 3);
+                    for (int sg = 1; sg >= -1; sg -= 2) d.Ws(seg6, 0.66 * k, sg * 1.06 * k, z, 0.51 * k, sg * 1.15 * k, z, a, false, 1);
+                }
+            }
             d.Ground(h > 0 ? 2 : 0);
             // linee lungo il palo: lunghezza fisica = dislivello; nel NEC la lunghezza della TL e' elettrica (fisica / VF)
-            for (int i = 0; i < 4; i++) d.Tl(cen[i], 1, cen[i + 1], 1, z0, Math.Max(0.01, zq[i] - zq[i + 1]) / vf);
+            for (int i = 0; i < nb - 1; i++) d.Tl(cen[i], 1, cen[i + 1], 1, z0, Math.Max(0.01, zq[i] - zq[i + 1]) / vf);
             d.Ex(cen[0], 1);
-            return d.End(Fb[banda]);
+            return d.End(banda == 5 ? F6 : Fb[banda]);
         }
 
         Complex Zin(double[] tdv, double[] trv, int banda)
@@ -101,7 +126,7 @@ namespace YaNec.Engine
             NecModel m = NecModel.Parse(Mazzo(tdv, trv, banda));
             SegmentGeometry g = m.BuildGeometry();
             Nec2Engine e = new Nec2Engine(g);
-            double f = Fb[banda];
+            double f = banda == 5 ? F6 : Fb[banda];
             e.Solve(f, Analysis.EffectiveSources(m, g, f), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(f));
             return e.Sources[0].Z;
         }
@@ -160,7 +185,8 @@ namespace YaNec.Engine
             if (firma != null && firma != Firma()) { td = tr = null; zAcc = null; firma = null; }
             bool acc = td != null;
             double[] tdv = acc ? td : TdJ, trv = acc ? tr : TrJ;
-            int banda = Math.Max(0, Math.Min(4, I("b")));
+            int banda = Math.Max(0, Math.Min(5, I("b")));
+            if (banda == 5 && I("e6") == 0) { banda = 0; o.Warnings.Add("Banda nel NEC 6 m senza il 6 m nel modello: scegliere 2 o 3 elementi nella riga \"6 m (50 MHz)\"; il calcolo resta sul 20 m."); }
             double k = P("R") / Rj[0], vf, z0 = Z0Linea(out vf);
             for (int i = 0; i < 5; i++)
             {
@@ -168,6 +194,14 @@ namespace YaNec.Engine
                 string sub = "riflettore " + Calcolatori.N(rifl, 3) + " m, tra le punte " + Calcolatori.N(spazio, 3) + " m, raggio " + Calcolatori.N(R, 3) + " m";
                 if (acc) sub += ", Z " + Calcolatori.Cx(zAcc[i]);
                 o.Card(Nb[i], "alim. 2 x " + Calcolatori.N(alim, 3) + " m", sub, i == banda);
+            }
+            if (I("e6") > 0)
+            {
+                double k6 = P("R") / Rj[0];
+                string s6 = "rifl. U " + Calcolatori.N((1.36 + 2 * Math.Sqrt(0.71 * 0.71 + 0.395 * 0.395)) * k6, 3) + " m";
+                o.Card("6 m (JN1GLB)", (I("e6") == 2 ? "3 el" : "2 el") + ", alim. 2 x " + Calcolatori.N(1.38 * k6, 3) + " m",
+                    s6 + ", " + Calcolatori.N((Zj[4] - Z6) * k6, 2) + " m sotto il 10 m" + (I("e6") == 2 ? ", direttore a U" : "") + "; nec2c: " + (I("e6") == 2 ? "33 +j11 Ω, 6,96 dBi, F/B 19,6 dB" : "44 +j6,5 Ω, 6,50 dBi, F/B 14,6 dB"), banda == 5);
+                o.Oks.Add("6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)");
             }
             double vs = (Zj[0] - Zj[4]) * k;
             o.Card("Collegamento", I("col") == 0 ? "coassiale " + Calcolatori.N(z0, 0) + " Ω" : "bacchetta " + Calcolatori.N(z0, 0) + " Ω",
@@ -192,7 +226,7 @@ namespace YaNec.Engine
             o.Chart = new CalcChart { Title = "Lunghezza di ogni meta' dell'alimentato per banda", XLabel = "MHz", YLabel = "m" };
             o.Chart.X = (double[])Fb.Clone(); o.Chart.Y = new double[5];
             for (int i = 0; i < 5; i++) o.Chart.Y[i] = Rj[i] * k * (1 + tdv[i]) + Gap / 2;
-            o.Chart.MarkX = Fb[banda]; o.Chart.MarkText = Nb[banda];
+            o.Chart.MarkX = banda == 5 ? Fb[4] : Fb[banda]; o.Chart.MarkText = NbTutte[banda];
             return o;
         }
     }
