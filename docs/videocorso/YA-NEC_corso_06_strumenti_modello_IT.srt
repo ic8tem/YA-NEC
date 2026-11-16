@@ -1,0 +1,95 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 6: gli strumenti del modello
+
+2
+00:00:04,000 --> 00:00:14,575
+Corso YA-NEC, lezione 6: gli strumenti del modello. Partiamo da un esempio: il dipolo dei 20 m a 10 m su terreno medio.
+
+3
+00:00:14,625 --> 00:00:18,242
+74,2 + j10,7 ohm, 7,11 dBi a 29,5 gradi.
+
+4
+00:00:18,292 --> 00:00:25,508
+La barra Geometria lavora su tutta l'antenna o sui fili selezionati. 'Sposta': Z = 5 m.
+
+5
+00:00:25,558 --> 00:00:36,575
+L'anteprima mostra l'antenna nella nuova posizione e il riquadro elenca cosa cambia nella tabella dei fili. Vanno bene anche le unita': 10cm, 6in, 2ft.
+
+6
+00:00:36,625 --> 00:00:43,715
+'Applica spostamento'.
+
+7
+00:00:43,765 --> 00:00:53,515
+Ora a 15 m: 74,2 + j30,1 ohm, 7,52 dBi, e il lobo principale scende da 29,5 a 19,6 gradi. Sorgenti e carichi seguono i fili da soli.
+
+8
+00:00:53,565 --> 00:01:00,248
+Comandi rapidi: 'orizzontale <-> verticale' raddrizza il dipolo attorno al suo centro.
+
+9
+00:01:00,298 --> 00:01:10,182
+Dipolo verticale, estremo basso a 9,8 m: 76,5 + j22,7 ohm, 2,01 dBi. Il terreno medio si mangia molto di piu' di un'antenna verticale.
+
+10
+00:01:10,232 --> 00:01:18,313
+'Annulla' due volte: si torna al dipolo di partenza. Ogni comando di geometria si annulla e si ripete.
+
+11
+00:01:18,363 --> 00:01:21,313
+Di nuovo 74,2 + j10,7 ohm.
+
+12
+00:01:21,363 --> 00:01:29,348
+Ora un errore classico: solo 3 segmenti sul filo da 10,4 m.
+
+13
+00:01:29,398 --> 00:01:36,482
+Il risultato sembra ancora ragionevole - 75,4 + j7,3 ohm - ed e' proprio questo il pericolo.
+
+14
+00:01:36,532 --> 00:01:40,547
+La linguetta Avvisi dice perche'.
+
+15
+00:01:40,597 --> 00:01:50,480
+Segmenti piu' lunghi di lambda/10 (2,11 m): 3,47 m. La guida del NEC-2 lo sconsiglia; EZNEC lo segnala come 'segment length too long'.
+
+16
+00:01:50,530 --> 00:01:57,617
+'Controlla...' fa i controlli dei dati che non richiedono calcolo.
+
+17
+00:01:57,667 --> 00:02:06,150
+42 controlli, tutto a posto: i dati sono validi. La lunghezza dei segmenti e' compito dello strumento successivo.
+
+18
+00:02:06,200 --> 00:02:16,350
+'Segmentazione...': lunghezza dei segmenti, rapporto segmento/raggio, segmenti uguali attorno a sorgenti e linee (regole di EZNEC e ARRL).
+
+19
+00:02:16,400 --> 00:02:24,684
+Filo 1: segmento troppo lungo, 3,47 m contro un minimo di 2,09 m. Livello da raggiungere: prudente, lambda/20.
+
+20
+00:02:24,734 --> 00:02:30,748
+'Anteprima' calcola prima e dopo senza toccare il modello.
+
+21
+00:02:30,798 --> 00:02:36,015
+Da 3 a 11 segmenti, dispari perche' la sorgente resti al centro.
+
+22
+00:02:36,065 --> 00:02:43,075
+'Applica e ricalcola'.
+
+23
+00:02:43,125 --> 00:02:51,542
+Corretto: nessun avviso. Con un modello lungo, questa finestra puo' anche aprirsi da sola prima di ogni calcolo.
+
+24
+00:02:51,592 --> 00:02:57,542
+Sposta, ruota, scala, annulla, controlla, segmenta: il modello resta pulito. Prossima lezione: le direttive HF semplici dai calcolatori. 73 de IC8TEM

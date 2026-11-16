@@ -58,10 +58,18 @@ Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappol
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_06.jpg" alt="Lezione 6 - Gli strumenti del modello"></a></td><td>
+
+### Lezione 6 - Gli strumenti del modello
+
+Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.srt)
+
+</td></tr></table>
 
 ## Prossime lezioni
 
-6. Gli strumenti del modello: barra Geometria, Controlla il modello, segmentazione e avvisi
 7. Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
 8. Direttiva HF con trappole e terreno
 9. Altre direttive HF: HB9CV, Quad 1-3 elementi e multibanda, Hexbeam, LPDA

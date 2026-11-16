@@ -58,10 +58,18 @@ The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator:
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_05_traps_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_05_traps_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_06.jpg" alt="Lesson 6 - The model tools"></a></td><td>
+
+### Lesson 6 - The model tools
+
+From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.srt)
+
+</td></tr></table>
 
 ## Coming next
 
-6. Model tools: Geometry bar, Check model, segmentation and warnings
 7. Simple HF beam from the calculators: 3-element Yagi and Moxon
 8. HF beam with traps and ground
 9. Other HF beams: HB9CV, 1-3 element and multiband Quad, Hexbeam, LPDA
