@@ -706,7 +706,9 @@ namespace YaNec
                     }
                 AggiornaRiconoscimentoStack();
             }
-            if (run != null && run.Geometry == geo)
+            // 1.0.8 (IC8TEM 16/11/2026 20:48 "si correggi"): con la correzione di Leeson (tubi telescopici) il calcolo usa una sua
+            // geometria (run.Geometry) diversa da geo: stessi segmenti, raggi equivalenti; prima le correnti non comparivano
+            if (run != null && run.Geometry != null && geo != null && (run.Geometry == geo || run.Geometry.N == geo.N))
             {
                 double[] c = new double[geo.N];
                 double mx = 0;
@@ -818,16 +820,18 @@ namespace YaNec
         void ShowCurrents()
         {
             if (txtCurrents == null) return;
-            if (run == null || geo == null || run.Geometry != geo) { txtCurrents.Text = "Nessun calcolo."; return; }
+            // 1.0.8: la tabella usa la geometria del calcolo (con Leeson e' un'altra geometria: prima si leggeva "Nessun calcolo.")
+            if (run == null || geo == null || run.Geometry == null) { txtCurrents.Text = "Nessun calcolo."; return; }
+            SegmentGeometry gc = run.Geometry;
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Correnti al centro dei segmenti a " + Fmt(run.FreqMHz, 3) + " MHz (1 V sulla sorgente, se non diverso nel modello)");
             sb.AppendLine();
             sb.AppendLine("  seg   tag        X (m)       Y (m)       Z (m)    lung. (mm)   |I| (mA)    fase (°)");
-            for (int i = 0; i < geo.N; i++)
+            for (int i = 0; i < gc.N; i++)
             {
                 Complex c = run.Engine.SegmentCurrent(i);
                 sb.AppendLine(string.Format(CultureInfo.CurrentCulture, "{0,5} {1,5} {2,12:0.0000} {3,11:0.0000} {4,11:0.0000} {5,12:0.00} {6,10:0.0000} {7,10:0.00}",
-                    i + 1, geo.Tag[i], geo.CenterX(i), geo.CenterY(i), geo.CenterZ(i), geo.Length(i) * 1000, Complex.Abs(c) * 1000, Math.Atan2(c.Imaginary, c.Real) * 180 / Math.PI));
+                    i + 1, gc.Tag[i], gc.CenterX(i), gc.CenterY(i), gc.CenterZ(i), gc.Length(i) * 1000, Complex.Abs(c) * 1000, Math.Atan2(c.Imaginary, c.Real) * 180 / Math.PI));
             }
             sb.AppendLine();
             sb.AppendLine("Sorgenti:");
