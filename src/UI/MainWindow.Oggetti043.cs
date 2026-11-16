@@ -400,7 +400,7 @@ namespace YaNec
             TextBox next = Cella("", 520, false, true);
             next.Classes.Add("next");
             next.Watermark = "next – scrivi qui la porta 1 per aggiungere un trasformatore (es. w9c)";
-            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { trRows.Add(new TrRow { P1 = next.Text.Trim() }); RidisegnaTabelle("trasformatori"); } };
+            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { trRows.Add(new TrRow { P1 = next.Text.Trim() }); next.Text = ""; RidisegnaTabelle("trasformatori"); } };
             nx.Children.Add(next);
             body.Children.Add(nx);
             Button ap = Btn("Applica e ricalcola", true);
@@ -491,7 +491,7 @@ namespace YaNec
             TextBox next = Cella("", 520, false, true);
             next.Classes.Add("next");
             next.Watermark = "next – scrivi qui la porta 1 per aggiungere una rete L (es. w9c)";
-            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { rlRows.Add(new RlRow { P1 = next.Text.Trim() }); RidisegnaTabelle("retil"); } };
+            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { rlRows.Add(new RlRow { P1 = next.Text.Trim() }); next.Text = ""; RidisegnaTabelle("retil"); } };
             nx.Children.Add(next);
             body.Children.Add(nx);
             Button ap = Btn("Applica e ricalcola", true);

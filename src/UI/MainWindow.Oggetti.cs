@@ -233,10 +233,26 @@ namespace YaNec
         }
 
         // le tabelle possono essere aperte in due posti (Oggetti inseriti e Struttura 3D): si ridisegnano entrambi
+        // 1.0.2: il ridisegno parte dopo l'evento in corso. Scrivendo nella riga "next" e cliccando subito "Applica e ricalcola", la
+        // perdita del fuoco ridisegnava la tabella tra la pressione e il rilascio del mouse: il pulsante veniva sostituito e il primo
+        // clic andava perso. Ora la riga entra subito nei dati, la tabella si ridisegna un attimo dopo e il clic arriva al pulsante.
+        readonly HashSet<string> ridisegniInAttesa = new HashSet<string>();
+        bool puntatoreGiu;
         void RidisegnaTabelle(string k)
         {
-            if (fasOggetti != null && fasOggetti.Current == k) MostraOggetto(k);
-            if (bassoCorrente == k) MostraBasso(k);
+            if (!ridisegniInAttesa.Add(k)) return;
+            DispatcherTimer tm = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(30) };
+            int giri = 0;
+            tm.Tick += (s, e) =>
+            {
+                // aspetta il rilascio del tasto del mouse (al massimo 3 s)
+                if (puntatoreGiu && ++giri < 100) return;
+                tm.Stop();
+                ridisegniInAttesa.Remove(k);
+                if (fasOggetti != null && fasOggetti.Current == k) MostraOggetto(k);
+                if (bassoCorrente == k) MostraBasso(k);
+            };
+            tm.Start();
         }
 
         static string FN(double v, int dec = 3) { return v.ToString("0." + new string('#', dec), CultureInfo.CurrentCulture); }
@@ -430,7 +446,7 @@ namespace YaNec
             TextBox next = Cella("", 560, false, true);
             next.Classes.Add("next");
             next.Watermark = "next – scrivi qui per aggiungere (es. w3c)";
-            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { srcRows.Add(new SrcRow { Pulse = next.Text.Trim() }); RidisegnaTabelle("sorgenti"); } };
+            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { srcRows.Add(new SrcRow { Pulse = next.Text.Trim() }); next.Text = ""; RidisegnaTabelle("sorgenti"); } };
             nx.Children.Add(next);
             body.Children.Add(nx);
 
@@ -540,7 +556,7 @@ namespace YaNec
             TextBox next = Cella("", 530, false, true);
             next.Classes.Add("next");
             next.Watermark = "next – scrivi qui per aggiungere (es. w2c)";
-            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { ldRows.Add(new LoadRow { Pulse = next.Text.Trim() }); RidisegnaTabelle("carichi"); } };
+            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { ldRows.Add(new LoadRow { Pulse = next.Text.Trim() }); next.Text = ""; RidisegnaTabelle("carichi"); } };
             nx.Children.Add(next);
             body.Children.Add(nx);
             CheckBox use = new CheckBox { Content = "Usa i carichi", IsChecked = model.UseLoads, Margin = new Thickness(0, 6, 0, 0) };
@@ -626,7 +642,7 @@ namespace YaNec
             TextBox next = Cella("", 550, false, true);
             next.Classes.Add("next");
             next.Watermark = "next – scrivi qui il primo punto per aggiungere una linea (es. w1c)";
-            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { tlRows.Add(new TlRow { P1 = next.Text.Trim() }); RidisegnaTabelle("linee"); } };
+            next.LostFocus += (s, e) => { if (!string.IsNullOrWhiteSpace(next.Text)) { tlRows.Add(new TlRow { P1 = next.Text.Trim() }); next.Text = ""; RidisegnaTabelle("linee"); } };
             nx.Children.Add(next);
             body.Children.Add(nx);
             Button ap = Btn("Applica e ricalcola", true);

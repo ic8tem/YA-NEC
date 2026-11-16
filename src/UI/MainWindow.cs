@@ -113,6 +113,9 @@ namespace YaNec
             MinWidth = 900;
             MinHeight = 560;
             BuildUi();
+            // 1.0.2: stato del tasto del mouse, per non ridisegnare le tabelle degli Oggetti a meta' di un clic (RidisegnaTabelle)
+            AddHandler(PointerPressedEvent, (s, e) => puntatoreGiu = true, Avalonia.Interactivity.RoutingStrategies.Tunnel, true);
+            AddHandler(PointerReleasedEvent, (s, e) => puntatoreGiu = false, Avalonia.Interactivity.RoutingStrategies.Tunnel, true);
             // 0.5.3 (IC8TEM 15/11/2026 21:24, "devi pensare pure alle correzioni se lo schermo è piccolo, tipo 768p"): la finestra non
             // supera lo schermo (1366 x 768: si apre ingrandita) e sotto gli 820 punti di altezza passa al formato compatto
             Opened += (s, e) => AdattaAlloSchermo();
