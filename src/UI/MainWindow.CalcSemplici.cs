@@ -505,6 +505,14 @@ namespace YaNec
                 // 0.4.20: il calcolo dell'antenna base gira in sottofondo; quando finisce la scheda si ridisegna (solo se e' a video)
                 CalcStackDl6wu.Pronto += () => Dispatcher.UIThread.Post(() => { if (aVideo && mostra != null) mostra(); });
             }
+            if (sc is CalcMoxon)
+            {
+                // 1.0.10: Moxon con E vincolata, il NEC ricalcola la forma in sottofondo; a calcolo finito la scheda si ridisegna
+                bool aVideoM = false;
+                root.AttachedToVisualTree += (s, e) => aVideoM = true;
+                root.DetachedFromVisualTree += (s, e) => aVideoM = false;
+                CalcMoxon.ProntoMoxon += () => Dispatcher.UIThread.Post(() => { if (aVideoM && mostra != null) mostra(); });
+            }
             root.DetachedFromVisualTree += (s, e) => { if (salvaCalcolatoreCorrente == salvaDaQui) salvaCalcolatoreCorrente = null; };
             bCar.Click += (s, e) =>
             {

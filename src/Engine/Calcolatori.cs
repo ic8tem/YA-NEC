@@ -764,6 +764,89 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("B", "B coda del radiatore (0 = MOXGEN)", 0, "m"));
             Params.Add(new CalcParam("C", "C spazio tra le code (0 = MOXGEN)", 0, "m"));
             Params.Add(new CalcParam("D", "D coda del riflettore (0 = MOXGEN)", 0, "m"));
+            // 1.0.10 (IC8TEM 16/11/2026 22:36 "mi devi permettere che io fissi la lettera E perche' sono vincolato e cosi' mi ricalcoli
+            // il moxon in diretta"; disegno con E e la casella "fissa A-E"): profondita' E vincolata; B, C, D (e A se non e' fissa) ricalcolati
+            // con il NEC in sottofondo per il F/B migliore con ROS sotto 1,5 su 50 ohm.
+            Params.Add(new CalcParam("E", "E profondita' (0 = MOXGEN)", 0, "m", "Profondita' vincolata (dal radiatore al riflettore). Con E scritta il programma ricalcola B, C e D (e A, se non e' fissa) con il NEC."));
+            Params.Add(CalcParam.Scelta("fae", "Fissa A ed E", 0, "Si': A (scritta o di MOXGEN) ed E restano fisse e il NEC ricalcola solo B, C e D.", "no", "si'"));
+        }
+
+        // ---- 1.0.10: adattamento con E (e A) vincolate, in sottofondo ----
+        public static event Action ProntoMoxon;
+        static readonly object fitLock = new object();
+        static readonly Dictionary<string, double[]> fitCache = new Dictionary<string, double[]>();
+        static readonly HashSet<string> fitInCorso = new HashSet<string>();
+
+        static double[] ProvaNec(double f, double a, double A, double B, double C, double D)
+        {
+            double lam = C0 / f, E = B + C + D, seg = lam / 60;
+            NecDeck d = new NecDeck("Moxon vincolato");
+            int td = d.Ws(seg, 0, -A / 2, 0, 0, A / 2, 0, a, true, 21);
+            int nd = d.LastN;
+            d.Ws(seg, 0, A / 2, 0, -B, A / 2, 0, a, false, 3);
+            d.Ws(seg, 0, -A / 2, 0, -B, -A / 2, 0, a, false, 3);
+            d.Ws(seg, -E, -A / 2, 0, -E, A / 2, 0, a, true, 21);
+            d.Ws(seg, -E, A / 2, 0, -E + D, A / 2, 0, a, false, 3);
+            d.Ws(seg, -E, -A / 2, 0, -E + D, -A / 2, 0, a, false, 3);
+            d.Ground(0);
+            d.Ex(td, (nd + 1) / 2);
+            NecModel m = NecModel.Parse(d.End(f));
+            SegmentGeometry g = m.BuildGeometry();
+            Nec2Engine e = new Nec2Engine(g);
+            e.Solve(f, Analysis.EffectiveSources(m, g, f), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(f));
+            double ga = e.GainLinear(90, 0), gb = e.GainLinear(90, 180);
+            System.Numerics.Complex z = e.Sources[0].Z;
+            return new[] { z.Real, z.Imaginary, 10 * Math.Log10(Math.Max(ga, 1e-12)), 10 * Math.Log10(Math.Max(ga, 1e-12) / Math.Max(gb, 1e-12)) };
+        }
+
+        /// <summary>A, B, C, D, R, X, G, F/B per E (e A) vincolate: griglia di partenza su A (se libera), B/E e C/E, poi sezione aurea
+        /// variabile per variabile. Obiettivo: F/B verso 45 dB, ROS su 50 ohm sotto 1,5, guadagno. Prova con nec2c (scratchpad hex6/mox.py,
+        /// 28,5 MHz, tubo 20 mm): E 1,0 m con A libera A 4,12 B 0,34 C 0,11 D 0,55 m, 30 -j2,7 ohm, 6,21 dBi, F/B 26,8 dB; E 1,7 m
+        /// A 3,60 m, F/B 35,7 dB; E 1,404 (MOXGEN) con A fissa ritrova la forma di MOXGEN (F/B 45,6 dB).</summary>
+        static double[] Adatta(double f, double a, double E, double Afix, double A0)
+        {
+            double lam = C0 / f;
+            Func<double, double, double, double> J = (A, B, C) =>
+            {
+                double D = E - B - C;
+                if (Math.Min(B, Math.Min(C, D)) < 0.004 * lam || 2 * B >= A || 2 * D >= A) return 1e9;
+                double[] r = ProvaNec(f, a, A, B, C, D);
+                System.Numerics.Complex z = new System.Numerics.Complex(r[0], r[1]);
+                double gm = ((z - 50) / (z + 50)).Magnitude, swr = gm >= 0.999 ? 999 : (1 + gm) / (1 - gm);
+                return Math.Max(0, swr - 1.5) * 2 + Math.Max(0, 45 - r[3]) / 10 - r[2] / 20;
+            };
+            bool libera = double.IsNaN(Afix);
+            double best = double.MaxValue, bA = libera ? A0 : Afix, bB = 0.36 * E, bC = 0.12 * E;
+            foreach (double fa in libera ? new[] { 0.95, 1.0, 1.05, 1.1, 1.15 } : new[] { 1.0 })
+                for (int bi = 0; bi < 9; bi++)
+                    for (int ci = 0; ci < 7; ci++)
+                    {
+                        double A = (libera ? A0 : Afix) * fa, B = E * (0.15 + 0.05 * bi), C = E * (0.04 + 0.04 * ci), j = J(A, B, C);
+                        if (j < best) { best = j; bA = A; bB = B; bC = C; }
+                    }
+            for (int giro = 0; giro < 4; giro++)
+            {
+                double A1 = bA, B1 = bB, C1 = bC;
+                if (libera) bA = Aurea(x => J(x, B1, C1), 0.95 * A1, 1.05 * A1);
+                double A2 = bA;
+                bB = Aurea(x => J(A2, x, C1), 0.85 * B1, Math.Min(1.15 * B1, E - C1 - 0.01));
+                double B2 = bB;
+                bC = Aurea(x => J(A2, B2, x), 0.75 * C1, Math.Min(1.25 * C1, E - B2 - 0.01));
+            }
+            double[] fin = ProvaNec(f, a, bA, bB, bC, E - bB - bC);
+            return new[] { bA, bB, bC, E - bB - bC, fin[0], fin[1], fin[2], fin[3] };
+        }
+
+        static double Aurea(Func<double, double> F, double lo, double hi)
+        {
+            if (hi <= lo) return lo;
+            double gr = (Math.Sqrt(5) - 1) / 2, x1 = hi - gr * (hi - lo), x2 = lo + gr * (hi - lo), f1 = F(x1), f2 = F(x2);
+            for (int i = 0; i < 10; i++)
+            {
+                if (f1 < f2) { hi = x2; x2 = x1; f2 = f1; x1 = hi - gr * (hi - lo); f1 = F(x1); }
+                else { lo = x1; x1 = x2; f1 = f2; x2 = lo + gr * (hi - lo); f2 = F(x2); }
+            }
+            return (lo + hi) / 2;
         }
         internal static double[] Dimensioni(double f, double dmm)
         {
@@ -786,6 +869,37 @@ namespace YaNec.Engine
             if (man[2]) Cg = P("C");
             if (man[3]) D = P("D");
             double E = B + Cg + D;
+            // 1.0.10: E vincolata (e A, con "Fissa A ed E")
+            bool fae = I("fae") == 1, vincolo = P("E") > 0 || fae;
+            double[] fit = null;
+            if (vincolo)
+            {
+                double Ev = P("E") > 0 ? P("E") : m[4], Afix = fae ? (P("A") > 0 ? P("A") : m[0]) : double.NaN;
+                string key = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0:R}|{1:R}|{2:R}|{3:R}", f, dmm, Ev, Afix);
+                bool parti = false;
+                lock (fitLock) { if (!fitCache.TryGetValue(key, out fit) && !fitInCorso.Contains(key)) { fitInCorso.Add(key); parti = true; } }
+                if (parti)
+                {
+                    double ff = f, aa = a, A0 = m[0];
+                    System.Threading.Tasks.Task.Run(() =>
+                    {
+                        double[] rr = null;
+                        try { rr = Adatta(ff, aa, Ev, Afix, A0); } catch (Exception) { }
+                        lock (fitLock) { fitInCorso.Remove(key); if (rr != null) fitCache[key] = rr; }
+                        Action pr = ProntoMoxon; if (pr != null) pr();
+                    });
+                }
+                if (fit != null) { A = fit[0]; B = fit[1]; Cg = fit[2]; D = fit[3]; E = Ev; man = new[] { !double.IsNaN(Afix), false, false, false }; }
+                else
+                {
+                    // in attesa del NEC: forma di MOXGEN scalata sulla profondita' vincolata
+                    double s = Ev / m[4];
+                    if (!double.IsNaN(Afix)) A = Afix;
+                    B = m[1] * s; Cg = m[2] * s; D = m[3] * s; E = Ev;
+                    o.Oks.Add("E vincolata: calcolo NEC di B, C e D in corso (qualche secondo); intanto la forma di MOXGEN scalata sulla profondita'");
+                }
+                if (man[1] || man[2] || man[3] || (P("A") > 0 && !fae)) o.Warnings.Add("Con E vincolata le caselle B, C e D (e A, se non e' fissa) non si usano: le ricalcola il NEC.");
+            }
             Func<int, double, string> sub = (k, v) => man[k] ? "a mano (MOXGEN " + Calcolatori.N(v, 3) + " m)" : "MOXGEN";
             o.Card("A (larghezza)", Calcolatori.N(A, 3) + " m", sub(0, m[0]), true);
             o.Card("B (coda del radiatore)", Calcolatori.N(B, 3) + " m", sub(1, m[1]));
@@ -793,7 +907,12 @@ namespace YaNec.Engine
             o.Card("D (coda del riflettore)", Calcolatori.N(D, 3) + " m", sub(3, m[3]));
             if (man[0] || man[1] || man[2] || man[3]) o.Oks.Add("forma modificata a mano: il calcolo in tempo reale e la verifica NEC usano le misure scritte");
             if (2 * B >= A || 2 * D >= A) o.Warnings.Add("Le code sono piu' lunghe di meta' della larghezza A: le punte si toccano o si incrociano.");
-            o.Card("E (profondita')", Calcolatori.N(E, 3) + " m", "B + C + D");
+            o.Card("E (profondita')", Calcolatori.N(E, 3) + " m", vincolo ? (fae ? "fissa, con A fissa" : "fissa (vincolo)") : "B + C + D", vincolo);
+            if (fit != null)
+            {
+                o.Card("Forma ricalcolata (NEC)", Calcolatori.N(fit[7], 1) + " dB F/B", Calcolatori.N(fit[4], 1) + (fit[5] < 0 ? " -j" : " +j") + Calcolatori.N(Math.Abs(fit[5]), 1) + " Ω, " + Calcolatori.N(fit[6], 2) + " dBi nello spazio libero (MOXGEN " + Calcolatori.N(m[4], 3) + " m di profondita')");
+                if (fit[7] < 10) o.Warnings.Add("Con questi vincoli il Moxon non funziona (F/B " + Calcolatori.N(fit[7], 1) + " dB): la profondita' e' troppo diversa da quella di MOXGEN (" + Calcolatori.N(m[4], 3) + " m)" + (fae ? "; provare a liberare A." : "."));
+            }
             o.Formula = "MOXGEN (Cebik): x = log10(d/lambda); A = -0,000857 x^2 - 0,00957 x + 0,33986; B = -0,00214 x^2 - 0,02036 x + 0,00829; C = 0,00181 x^2 + 0,01781 x + 0,05164; " +
                 "D = 0,001 x + 0,07179; E = B + C + D (in lambda, valide per x tra -5 e -2). Verifica DK7ZB 10 m: A 3,825 contro 3,86 m.";
             if (m[5] < -5 || m[5] > -2) o.Warnings.Add("Diametro fuori dall'intervallo delle formule (log10(d/lambda) tra -5 e -2).");
