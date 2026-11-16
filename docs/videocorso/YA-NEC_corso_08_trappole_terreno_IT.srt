@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 8: direttiva HF con trappole e terreno
+
+2
+00:00:04,000 --> 00:00:14,083
+Corso YA-NEC, lezione 8: una direttiva HF con trappole, sopra un terreno reale. Calcolatori, Yagi multibanda.
+
+3
+00:00:14,133 --> 00:00:23,884
+Ogni banda ha il suo dipolo alimentato e un riflettore o un direttore; i dipoli sono bacchette parallele, tutte su un'alimentazione.
+
+4
+00:00:23,934 --> 00:00:28,959
+'Proposta: 6 bande da 40/20/15/10 m'.
+
+5
+00:00:29,009 --> 00:00:39,692
+Quattro dipoli - 40, 20, 15, 10 m - piu' due trappole: sul dipolo dei 15 m per i 30, sul dipolo dei 10 m per i 17. Sei bande da quattro bacchette.
+
+6
+00:00:39,742 --> 00:00:46,826
+40, 20, 15 e 10 m hanno anche un riflettore; 30 e 17 m lavorano solo come dipoli trappolati.
+
+7
+00:00:46,876 --> 00:00:52,363
+Terreno medio (Sommerfeld) a 10 m: terreno vero, non spazio libero.
+
+8
+00:00:52,413 --> 00:01:00,029
+'Accorda e verifica': lunghezze, code delle trappole e distanze dei riflettori si accordano insieme.
+
+9
+00:01:00,079 --> 00:01:09,494
+Con 27 fili e 207 segmenti sul terreno di Sommerfeld ci vogliono circa quattro minuti - andiamo avanti.
+
+10
+00:01:09,544 --> 00:01:18,760
+Risultati per banda. ROS a centro banda tra 1,13 e 1,35 su tutte e sei: 40 m 9,2 dBi, 20 m 11,4 dBi, 15 m 6,9, 10 m 8,7 dBi.
+
+11
+00:01:18,810 --> 00:01:26,894
+F/B: 15 dB in 20 m, 14 in 15 m, 18 in 10 m, ma solo 8,4 dB in 40 m e quasi niente sui 30 e 17 m trappolati.
+
+12
+00:01:26,944 --> 00:01:36,227
+Gli estremi di banda dicono la verita': in 15 m ROS 7 e 3,9, in 10 m fino a 27. Troppi elementi interagiscono in poco spazio.
+
+13
+00:01:36,277 --> 00:01:45,561
+La colonna 'ruba' spiega perche': in 17 m il riflettore dei 10 porta il 180 % della corrente, in 30 m quello dei 15 il 137 %.
+
+14
+00:01:45,611 --> 00:01:54,620
+'Apri come modello' mette tutta la direttiva nella Struttura 3D, pronta per l'Ottimizzatore.
+
+15
+00:01:54,670 --> 00:02:01,954
+Sei bande su un boom si possono fare, ma il simulatore mostra i compromessi prima di costruire.
+
+16
+00:02:02,004 --> 00:02:07,954
+Trappole e terreno reale: la direttiva multibanda con tutti i suoi compromessi. Prossima lezione: altre direttive - HB9CV, Quad, Hexbeam, LPDA. 73 de IC8TEM

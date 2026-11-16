@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lesson 8: HF beam with traps and ground
+
+2
+00:00:04,000 --> 00:00:14,088
+YA-NEC course, lesson 8: an HF beam with traps, over real ground. Calculators, Multiband Yagi.
+
+3
+00:00:14,138 --> 00:00:22,888
+Each band has its own driven dipole and one reflector or director; the dipoles sit on parallel rods, all on one feed.
+
+4
+00:00:22,938 --> 00:00:27,952
+'Proposal: 6 bands from 40/20/15/10 m'.
+
+5
+00:00:28,002 --> 00:00:37,819
+Four dipoles - 40, 20, 15, 10 m - plus two traps: on the 15 m dipole for 30 m, on the 10 m dipole for 17 m. Six bands from four rods.
+
+6
+00:00:37,869 --> 00:00:44,353
+40, 20, 15 and 10 m also get a reflector; 30 and 17 m work as trapped dipoles only.
+
+7
+00:00:44,403 --> 00:00:49,896
+Average ground (Sommerfeld) at 10 m: real ground, not free space.
+
+8
+00:00:49,946 --> 00:00:57,096
+'Tune and verify': all lengths, the trap tails and the reflector spacings are tuned together.
+
+9
+00:00:57,146 --> 00:01:06,559
+With 27 wires and 207 segments over Sommerfeld ground this takes about four minutes - we skip ahead.
+
+10
+00:01:06,609 --> 00:01:15,626
+Results per band. Centre SWR between 1.13 and 1.35 on all six bands: 40 m 9.2 dBi, 20 m 11.4 dBi, 15 m 6.9, 10 m 8.7 dBi.
+
+11
+00:01:15,676 --> 00:01:24,226
+F/B: 15 dB on 20 m, 14 on 15 m, 18 on 10 m, but only 8.4 dB on 40 m and almost nothing on the trapped 30 and 17 m.
+
+12
+00:01:24,276 --> 00:01:32,959
+The band edges tell the truth: on 15 m SWR 7 and 3.9, on 10 m up to 27. Too many elements interact in a small space.
+
+13
+00:01:33,009 --> 00:01:42,026
+The 'steals' column shows why: on 17 m the 10 m reflector carries 180 % of the current, on 30 m the 15 m reflector 137 %.
+
+14
+00:01:42,076 --> 00:01:51,091
+'Open as model' puts the whole beam in the 3D structure, ready for the Optimizer.
+
+15
+00:01:51,141 --> 00:01:58,291
+Six bands on one boom are possible, but the simulator shows the compromises before you build.
+
+16
+00:01:58,341 --> 00:02:04,292
+Traps and real ground: the multiband beam with all its compromises. Next lesson: other beams - HB9CV, Quad, Hexbeam, LPDA. 73 de IC8TEM

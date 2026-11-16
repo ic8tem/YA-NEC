@@ -77,6 +77,15 @@ Moxon per i 20 m (Les Moxon G6XN, misure dal MOXGEN di L.B. Cebik): F/B 41 dB ne
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_07_moxon_yagi2_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_07_moxon_yagi2_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_08_trappole_terreno_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_08.jpg" alt="Lezione 8 - Direttiva HF con trappole e terreno"></a></td><td>
+
+### Lezione 8 - Direttiva HF con trappole e terreno
+
+Yagi multibanda a sei bande (40-30-20-17-15-10 m) dalla proposta del calcolatore: quattro dipoli a bacchette parallele, due trappole e i riflettori, accordati insieme su terreno medio a 10 m. ROS a centro banda 1,13-1,35, guadagno e F/B per banda, estremi di banda e la colonna 'ruba' che mostra i compromessi.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_08_trappole_terreno_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_08_trappole_terreno_IT.srt)
+
+</td></tr></table>
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_09.jpg" alt="Lezione 9 - Altre direttive"></a></td><td>
 
 ### Lezione 9 - Altre direttive
@@ -115,7 +124,6 @@ Loop magnetica da 1 m per i 40 m (efficienza 16 %, 52 A e 5,6 kV con 100 W) e l'
 </td></tr></table>
 ## Prossime lezioni
 
-- **8** · Direttiva HF con trappole e terreno
 - **13** · Le altre funzioni per l'HF
 - **14** · Yagi 6 elementi DK7ZB con le misure del progettista
 - **15** · La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore, e una Yagi HF 3 elementi ottimizzata

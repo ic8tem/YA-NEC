@@ -77,6 +77,15 @@ A 20 m Moxon (Les Moxon G6XN, dimensions from L.B. Cebik's MOXGEN): F/B 41 dB in
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_07_moxon_yagi2_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_07_moxon_yagi2_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_08_traps_ground_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_08.jpg" alt="Lesson 8 - HF beam with traps and ground"></a></td><td>
+
+### Lesson 8 - HF beam with traps and ground
+
+A six-band multiband Yagi (40-30-20-17-15-10 m) from the calculator's proposal: four parallel-rod dipoles, two traps and the reflectors, tuned together over average ground at 10 m. Centre SWR 1.13-1.35, gain and F/B per band, band edges and the 'steals' column showing the compromises.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_08_traps_ground_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_08_traps_ground_EN.srt)
+
+</td></tr></table>
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_09.jpg" alt="Lesson 9 - Other beams"></a></td><td>
 
 ### Lesson 9 - Other beams
@@ -115,7 +124,6 @@ A 1 m magnetic loop for 40 m (16 % efficiency, 52 A and 5.6 kV at 100 W) and the
 </td></tr></table>
 ## Coming next
 
-- **8** · HF beam with traps and ground
 - **13** · The other HF functions
 - **14** · DK7ZB 6-element Yagi with the designer's dimensions
 - **15** · The same 6 elements brought to 50 ohm with the Optimizer, and an optimized 3-element HF Yagi
