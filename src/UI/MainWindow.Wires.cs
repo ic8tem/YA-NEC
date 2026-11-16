@@ -184,14 +184,27 @@ namespace YaNec
             d.Children.Add(hs);
             // 1.0.11: maniglia di riempimento (come Excel); il riempimento si applica subito, Ctrl+Z lo toglie
             manigliaFili = new Maniglia(d, () => { List<TextBox[]> l = new List<TextBox[]>(); foreach (WireRow w in RigheModificabili()) l.Add(w.Cells); return l; },
-                celle => ApplyWires(),
+                celle =>
+                {
+                    // 1.0.12: il riempimento va nella storia di Annulla della barra Geometria (Ctrl+Z o il pulsante)
+                    NecModel prima = model;
+                    ApplyWires();
+                    if (model != null && prima != null && model != prima)
+                    {
+                        geoAnnulla.Add(prima);
+                        if (geoAnnulla.Count > 30) geoAnnulla.RemoveAt(0);
+                        geoRipeti.Clear();
+                        GeoAggiornaAnnulla();
+                    }
+                },
                 () =>
                 {
                     if (selFrom < 0 || selFrom == selTo) return null;
                     List<WireRow> ed = RigheModificabili();
                     int a = ed.IndexOf(wireRows[Math.Min(selFrom, selTo)]), b = ed.IndexOf(wireRows[Math.Max(selFrom, selTo)]);
                     return a >= 0 && b >= a ? new[] { a, b } : null;
-                });
+                },
+                () => { if (geoAnnulla.Count == 0) return false; GeoAnnulla(true); Status("Riempimento annullato."); return true; });
             RefreshWiresTable();
             return new Border
             {

@@ -33,9 +33,11 @@ namespace YaNec
         static readonly IBrush Segno = new SolidColorBrush(Color.Parse("#DBE7FB"));
         static readonly IBrush Blu = new SolidColorBrush(Color.Parse("#1D64C8"));
 
-        public Maniglia(Control contenitore, Func<List<TextBox[]>> righe, Action<List<TextBox>> dopo, Func<int[]> blocco = null)
+        readonly Func<bool> annullaEsterno;            // fili: il riempimento e' gia' applicato al modello, Ctrl+Z torna al modello di prima
+
+        public Maniglia(Control contenitore, Func<List<TextBox[]>> righe, Action<List<TextBox>> dopo, Func<int[]> blocco = null, Func<bool> annullaEsterno = null)
         {
-            this.righe = righe; this.dopo = dopo; this.blocco = blocco;
+            this.righe = righe; this.dopo = dopo; this.blocco = blocco; this.annullaEsterno = annullaEsterno;
             quad = new Border
             {
                 Width = 8, Height = 8, Background = Blu, BorderBrush = Brushes.White, BorderThickness = new Thickness(1),
@@ -48,20 +50,32 @@ namespace YaNec
             quad.PointerMoved += Mosso;
             quad.PointerReleased += Rilasciato;
             quad.PointerCaptureLost += (s, e) => { if (trascina) { trascina = false; Pulisci(); } };
-            // Ctrl+Z prima della TextBox (che ha il suo annulla): rimette i valori di prima del riempimento
-            contenitore.AddHandler(InputElement.KeyDownEvent, (s, e) =>
+            // Ctrl+Z prima della TextBox (che ha il suo annulla): rimette i valori di prima del riempimento. Si ascolta sulla finestra,
+            // perche' nei fili il ricalcolo ricostruisce le righe e il fuoco non resta nella tabella (1.0.12)
+            contenitore.AttachedToVisualTree += (s, e) =>
             {
-                if (annulla == null) return;
-                if (e.Key == Key.Z && (e.KeyModifiers & KeyModifiers.Control) != 0)
-                {
-                    List<TextBox> toccate = new List<TextBox>();
-                    foreach (KeyValuePair<TextBox, string> kv in annulla) { kv.Key.Text = kv.Value; Sincronizza(kv.Key); toccate.Add(kv.Key); }
-                    annulla = null;
-                    e.Handled = true;
-                    dopo?.Invoke(toccate);
-                }
-                else if (e.Key != Key.LeftCtrl && e.Key != Key.RightCtrl && e.Key != Key.LeftShift && e.Key != Key.RightShift) annulla = null;
-            }, RoutingStrategies.Tunnel);
+                TopLevel tl = TopLevel.GetTopLevel(contenitore);
+                if (tl == null || finestra == tl) return;
+                finestra = tl;
+                tl.AddHandler(InputElement.KeyDownEvent, TastoFinestra, RoutingStrategies.Tunnel);
+            };
+        }
+
+        TopLevel finestra;
+        void TastoFinestra(object s, KeyEventArgs e)
+        {
+            if (annulla == null) return;
+            if (e.Key == Key.Z && (e.KeyModifiers & KeyModifiers.Control) != 0)
+            {
+                List<KeyValuePair<TextBox, string>> a = annulla;
+                annulla = null;
+                e.Handled = true;
+                if (annullaEsterno != null && annullaEsterno()) return;
+                List<TextBox> toccate = new List<TextBox>();
+                foreach (KeyValuePair<TextBox, string> kv in a) { kv.Key.Text = kv.Value; Sincronizza(kv.Key); toccate.Add(kv.Key); }
+                dopo?.Invoke(toccate);
+            }
+            else if (e.Key != Key.LeftCtrl && e.Key != Key.RightCtrl && e.Key != Key.LeftShift && e.Key != Key.RightShift) annulla = null;
         }
 
         /// <summary>La cella che ha preso il fuoco: la maniglia va nel suo angolo.</summary>
