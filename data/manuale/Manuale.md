@@ -361,7 +361,7 @@ Sotto lambda/1000 l'impedenza sale senza limite (moltiplicata per 9 fra 20 cm e 
 
 ### Controllo dei dati
 
-YA-NEC controlla i dati con 45 controlli. Di questi, 42 sono controlli veri e propri, elencati nella tabella sotto. Gli altri tre sono il modo in cui i controlli si usano e si verificano: il pulsante, la procedura di collaudo e questo capitolo. Nessun controllo cambia il modello: dice cosa non va e come correggere.
+YA-NEC controlla i dati con 46 controlli. Di questi, 43 sono controlli veri e propri, elencati nella tabella sotto. Gli altri tre sono il modo in cui i controlli si usano e si verificano: il pulsante, la procedura di collaudo e questo capitolo. Nessun controllo cambia il modello: dice cosa non va e come correggere.
 
 **Dove compaiono.**
 
@@ -391,6 +391,7 @@ YA-NEC controlla i dati con 45 controlli. Di questi, 42 sono controlli veri e pr
 | k4 | stack: antenne che si toccano, o spaziatura sotto meta' della DL6WU | errore se si toccano; avviso sotto meta' della DL6WU | sotto meta' della distanza DL6WU le antenne si accoppiano: il guadagno scende e le impedenze cambiano | partire dalla distanza DL6WU (pulsante DL6WU) |
 | k5 | Moxon, Hexbeam, quad: proporzioni fuori dalle formule | avviso | Moxon: una misura scritta a mano che si scosta di oltre il 25 % da MOXGEN (Cebik). Hexbeam: raggio delle punte del 20 m oltre il 15 % dai 3,217 m di JN1GLB. Quad: spaziatura fuori da 0,1-0,25 lambda (ARRL: 0,14-0,2) | partire dalle formule e ritoccare poco alla volta guardando ROS e F/B |
 | k6 | parabola: f/D fuori da 0,25-0,8 o feed fuori fuoco | errore sotto 0,26 (il calcolo si ferma); avviso sopra 0,8 e con il feed fuori fuoco oltre la tolleranza di 0,25 dB | sotto 0,26 il fuoco e' dentro il disco e il modello del feed non vale; sopra 0,8 servirebbe un feed lunghissimo. Spesso e' il rapporto scritto al contrario | f/D = fuoco / diametro; feed nel fuoco |
+| k7 | manica aperta: elementi piu' vicini di 3 diametri | avviso sotto 3 diametri tra gli assi (almeno 2 cm); l'accordo automatico non scende sotto questa distanza (dalla 1.0.7) | con i tubi quasi a contatto il NEC-2 non e' affidabile: con tubi da 20 mm a 2,1 cm dava 10,6 dBi in 15 m, un valore impossibile | allontanare gli elementi o usare tubi piu' sottili |
 | r1 | efficienza sopra il 100 % o negativa | errore | il bilancio di potenza del NEC-2 non torna: di solito per segmenti fuori misura, fili vicini al terreno o carichi con resistenza negativa. Per le loop magnetiche ad alto Q YA-NEC ricalcola gia' l'efficienza dal campo lontano (capitolo 13) | guardare gli altri avvisi e la segmentazione |
 | r2 | AGT oltre +-0,5 dB | avviso | solo in spazio libero e senza perdite, dove l'AGT deve valere 0 dB; il collaudo accetta +-0,2 dB, sopra 0,5 dB impedenza e guadagno non sono affidabili (capitolo 13) | segmentazione e giunzioni tra diametri diversi |
 | r3 | resistenza negativa con una sola sorgente | errore | con piu' sorgenti sfasate (four-square) una puo' essere negativa; con una sola e' impossibile | fili troppo vicini al terreno (Sommerfeld), segmenti troppo corti, giunzioni sbagliate |
@@ -418,7 +419,7 @@ YA-NEC controlla i dati con 45 controlli. Di questi, 42 sono controlli veri e pr
 
 **Collaudo (procedura "controllo dei dati").** Per ogni codice il collaudo crea un modello con l'errore voluto e verifica che il controllo lo trovi. Per i risultati usa valori costruiti apposta (efficienza 120 %, AGT +1 dB, resistenza negativa, ROS 15, una Yagi con 30 dBi). Verifica anche il contrario: un dipolo giusto, una Yagi giusta, un riflettore a gradini giusto e una linea incrociata di lunghezza 0 (come nelle LPDA) non devono dare controlli. Infine fa i controlli su tutti i modelli di esempio e su tutti i Calcolatori con i valori iniziali. Un ERRORE trovato qui e' quasi certamente un falso allarme, quindi diventa un AVVISO del collaudo: va guardato e la soglia va corretta. Fa eccezione l'Hex beam 6 bande di JN1GLB (file MMANA originale): ha 5 coppie di fili paralleli che si toccano, EZNEC lo ferma ("parallel and contacting") e MMANA lo calcola; il controllo g1 e' giusto e il collaudo verifica che lo trovi.
 
-**Esito del collaudo.** Tutti i 42 controlli trovano il dato sbagliato messo apposta. Le soglie sono regolate per non dare falsi allarmi sui modelli giusti, in particolare c2 sull'elica della QFH, s2 sul filo di alimentazione della G5RV, u4 sulla loop Yagi a 1296 MHz di MMANA.
+**Esito del collaudo.** Tutti i 43 controlli trovano il dato sbagliato messo apposta. Le soglie sono regolate per non dare falsi allarmi sui modelli giusti, in particolare c2 sull'elica della QFH, s2 sul filo di alimentazione della G5RV, u4 sulla loop Yagi a 1296 MHz di MMANA.
 
 ## 12. Abaco dei cavi e linee di accordo
 

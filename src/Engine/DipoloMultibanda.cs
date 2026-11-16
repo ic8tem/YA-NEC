@@ -346,7 +346,30 @@ namespace YaNec.Engine
         {
             double o = 0;
             foreach (string b in TutteBande(s)) { double r = Ros(s, Banda(b).Operating, ct); o += (r - 1) * (r - 1); }
+            // 1.0.7: penalita' se due elementi della manica aperta sono piu' vicini della distanza minima (il NEC li calcolerebbe male)
+            if (s.Modo == 1)
+            {
+                double dm = DistanzaMinima(s), dd = DistanzaPiuVicina(s);
+                if (dd < dm) o += 100 * Math.Pow((dm - dd) / dm, 2) + 1;
+            }
             return o;
+        }
+
+        /// <summary>1.0.7 (IC8TEM 16/11/2026 19:12): distanza minima tra gli assi di due elementi della manica aperta: 3 diametri
+        /// (almeno 2 cm). Sotto, il NEC-2 non e' affidabile (tubi quasi a contatto: con 20 mm a 2,1 cm dava 10,6 dBi in 15 m).</summary>
+        public static double DistanzaMinima(DmSpec s) { return Math.Max(0.02, 3 * s.Diametro); }
+
+        /// <summary>Distanza piu' piccola tra gli assi di due elementi della manica aperta (m).</summary>
+        public static double DistanzaPiuVicina(DmSpec s)
+        {
+            double d = double.MaxValue;
+            for (int i = 0; i < s.Bande.Count; i++)
+                for (int j = i + 1; j < s.Bande.Count; j++)
+                {
+                    if (!s.S.ContainsKey(s.Bande[i]) && i > 0 || !s.S.ContainsKey(s.Bande[j])) continue;
+                    d = Math.Min(d, Math.Abs(XRadiatore(s, s.Bande[i]) - XRadiatore(s, s.Bande[j])));
+                }
+            return d;
         }
 
         public static double Aurea(Func<double, double> F, double a, double c, int it)
@@ -448,7 +471,7 @@ namespace YaNec.Engine
                 for (int k = 1; k < s.Bande.Count; k++)
                 {
                     string b = s.Bande[k];
-                    v.Add(Tuple.Create<string, Func<double>, Action<double>, double, double>("distanza " + b, () => s.S[b], x => s.S[b] = x, 0.02, Math.Max(0.3, 0.03 * Lam(b))));
+                    v.Add(Tuple.Create<string, Func<double>, Action<double>, double, double>("distanza " + b, () => s.S[b], x => s.S[b] = x, DistanzaMinima(s), Math.Max(0.3, 0.03 * Lam(b))));
                 }
             if (s.Modo == 2)
             {

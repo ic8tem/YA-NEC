@@ -93,6 +93,25 @@ namespace YaNec
                 ds.Trappole.Add(new DmTrappola { Dipolo = "40 m", Nuova = "15 m" });
                 ProvaCodice("k3", "trappola sul dipolo dei 40 m per i 15 m", ControlliDati.DipoloMb(ds), true);
             }
+            {
+                // 1.0.7: manica aperta 40-20-15-10 m con tubi da 20 mm e il 15 m a 2,1 cm (caso del videocorso, lezione 4)
+                DmSpec dm = new DmSpec { Modo = 1, Bande = new List<string> { "40 m", "20 m", "15 m", "10 m" }, Diametro = 0.02 };
+                dm.S["40 m"] = 0; dm.S["20 m"] = 0.16; dm.S["15 m"] = 0.021; dm.S["10 m"] = 0.10;
+                ProvaCodice("k7", "manica aperta con il 15 m a 2,1 cm (tubi da 20 mm)", ControlliDati.DipoloMb(dm), false);
+                dm.S["15 m"] = 0.10; dm.S["10 m"] = 0.30;
+                List<ControlloDato> lk7 = ControlliDati.DipoloMb(dm);
+                Passo("manica aperta con gli elementi a 10, 16 e 30 cm (tubi da 20 mm)", "nessun k7", Codici(lk7), !lk7.Exists(x => x.Codice == "k7"));
+            }
+            {
+                // 1.0.7: Segmentazione su un dipolo alimentato a uno dei due segmenti centrali di un filo pari: la sorgente torna al centro
+                NecModel ms = NecModel.Parse(Mazzo(gw1: "GW 1 4 0 -5.2 10 0 5.2 10 0.001", ctl: "EX 0 1 2 0 1 0", f: 14.2));
+                SegOptions so = new SegOptions();
+                List<SegIssue> iss = SegCheck.Check(ms, 14.2, so);
+                NecModel ms2 = SegCheck.Correct(ms, 14.2, so, iss);
+                int nseg = 0; foreach (GeomCard g in ms2.Geometry) if (g.Id == "GW" && g.I1 == 1) nseg = g.I2;
+                Passo("Segmentazione: dipolo da 4 segmenti alimentato al 2 (1.0.7)", "sorgente al segmento centrale del filo corretto",
+                    "filo da " + nseg + " segmenti, sorgente al " + ms2.Sources[0].Seg, nseg % 2 == 1 && ms2.Sources[0].Seg == (nseg + 1) / 2);
+            }
             ProvaCodice("k4", "stack a 0,5 m con la DL6WU a 2 m", ControlliDati.Stack(0.5, double.NaN, 2.0, double.NaN), false);
             {
                 // due quadrati verticali di 0,5 m uno sopra l'altro a 0,3 m: si toccano
@@ -224,7 +243,7 @@ namespace YaNec
                 List<ControlloDato> lg = CtrlNec(Mazzo(altri: "GW 2 1 1 0 -0.01 1 0 0.01 0.001\n", ctl: "EX 0 2 1 0 1 0\nTL 2 1 1 11 450 1 0 0 0 0"));
                 Passo("sorgente su un filo di alimentazione collegato a una linea (0.5.2)", "nessun s2", Codici(lg), !lg.Exists(x => x.Codice == "s2"));
             }
-            Passo("elenco dei controlli", "42 voci (45 approvate meno z1, z2, z3 che sono collaudo, manuale e pulsante)", ControlliDati.Elenco.Length + " voci", ControlliDati.Elenco.Length == 42);
+            Passo("elenco dei controlli", "43 voci (46 approvate meno z1, z2, z3 che sono collaudo, manuale e pulsante; k7 dalla 1.0.7)", ControlliDati.Elenco.Length + " voci", ControlliDati.Elenco.Length == 43);
         }
     }
 }

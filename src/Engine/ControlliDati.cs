@@ -51,6 +51,7 @@ namespace YaNec.Engine
             new[] { "k4", "Stack: antenne che si toccano o spaziatura sotto meta' della DL6WU" },
             new[] { "k5", "Moxon, Hexbeam, quad: proporzioni fuori dalle formule di partenza" },
             new[] { "k6", "Parabola: f/D fuori da 0,25-0,8 o feed fuori dal fuoco" },
+            new[] { "k7", "Manica aperta: elementi piu' vicini di 3 diametri (NEC poco affidabile)" },
             new[] { "r1", "Efficienza sopra il 100 % o negativa" },
             new[] { "r2", "AGT oltre +-0,5 dB (modello poco affidabile)" },
             new[] { "r3", "Resistenza negativa con una sola sorgente" },
@@ -960,7 +961,15 @@ namespace YaNec.Engine
         public static List<ControlloDato> DipoloMb(DmSpec s)
         {
             List<ControlloDato> l = new List<ControlloDato>();
-            if (s == null || s.Modo != 0) return l;
+            if (s == null) return l;
+            if (s.Modo == 1 && s.Bande.Count > 1)
+            {
+                double dm = DipoloMultibanda.DistanzaMinima(s), dd = DipoloMultibanda.DistanzaPiuVicina(s);
+                if (dd < dm - 1e-9)
+                    Add(l, "k7", false, "manica aperta: due elementi a " + Nn(dd * 100, 1) + " cm tra gli assi, meno di 3 diametri (" + Nn(dm * 100, 1) + " cm): il NEC-2 con tubi quasi a contatto non e' affidabile.",
+                        "allontanare gli elementi ad almeno " + Nn(dm * 100, 1) + " cm, oppure usare tubi piu' sottili.");
+            }
+            if (s.Modo != 0) return l;
             foreach (DmTrappola t in s.Trappole)
             {
                 Band bd = DipoloMultibanda.Banda(t.Dipolo), bn = DipoloMultibanda.Banda(t.Nuova);

@@ -208,7 +208,8 @@ namespace YaNec.Engine
                 if (TagCount(m, c.I1) > 1) continue;     // tag condiviso da piu' schede: non si tocca
                 int n = kv.Value;
                 bool centro = false;
-                foreach (SourceSpec s in m.Sources) if (s.Tag == c.I1 && 2 * s.Seg - 1 == c.I2) centro = true;
+                // 1.0.7: "al centro" anche con un numero pari di segmenti (sorgente su uno dei due segmenti centrali), come nel controllo sopra
+                foreach (SourceSpec s in m.Sources) if (s.Tag == c.I1 && AlCentro(s.Seg, c.I2)) centro = true;
                 if (o.Dispari && centro && n % 2 == 0) n++;
                 c.I2 = n;
                 if (c.Src != null && c.Src.Length > 1) c.Src[1] = null;
@@ -219,6 +220,9 @@ namespace YaNec.Engine
                 int a, b;
                 if (!prima.TryGetValue(tag, out a) || !dopo.TryGetValue(tag, out b) || a == b || seg <= 0) return seg;
                 if (a % 2 == 1 && b % 2 == 1 && seg == (a + 1) / 2) return (b + 1) / 2;
+                // 1.0.7 (IC8TEM 16/11/2026 19:12): da pari a dispari, la sorgente su uno dei due segmenti centrali torna al centro
+                // (prima 4 -> 11 segmenti la portava al 5 di 11: dipolo alimentato fuori centro, 80 ohm invece di 74)
+                if (a % 2 == 0 && b % 2 == 1 && AlCentro(seg, a)) return (b + 1) / 2;
                 int s = (int)Math.Round((seg - 0.5) * b / a + 0.5);
                 return Math.Max(1, Math.Min(b, s));
             };
@@ -233,6 +237,12 @@ namespace YaNec.Engine
             foreach (NetworkSpec n in m.Networks) { n.Seg1 = sposta(n.Tag1, n.Seg1); n.Seg2 = sposta(n.Tag2, n.Seg2); }
             m.FileName = src.FileName;
             return m;
+        }
+
+        /// <summary>Segmento al centro del filo di n segmenti: il centrale se n e' dispari, uno dei due centrali se n e' pari.</summary>
+        static bool AlCentro(int seg, int n)
+        {
+            return n > 0 && (n % 2 == 1 ? seg == (n + 1) / 2 : (seg == n / 2 || seg == n / 2 + 1));
         }
 
         static Dictionary<int, int> Conta(SegmentGeometry g)
