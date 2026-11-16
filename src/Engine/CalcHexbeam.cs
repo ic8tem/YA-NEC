@@ -46,6 +46,8 @@ namespace YaNec.Engine
         // 30 m meta' 7,31 m, 5,9 ohm, 3,48 dBi: piegati attorno a un esagono di 6,4 m le punte tornano verso il retro e la resistenza
         // di radiazione e' di pochi ohm, quindi serve un adattamento (lo dice la scheda).
         double l30 = double.NaN, l40 = double.NaN;
+        static readonly string[] Tr34 = { "1:1 (50 Ω)", "4:1 al contrario (12,5 Ω)", "9:1 al contrario (5,6 Ω)", "16:1 al contrario (3,1 Ω)" };
+        static readonly double[] Tr34n = { 1, 4, 9, 16 };
         Complex z30 = Complex.Zero, z40 = Complex.Zero;
         static double FreqB(int b) { return b == 5 ? F6 : b == 6 ? F30 : b == 7 ? F40 : Fb[b]; }      // spazio tra le due meta' al centro (morsetti), segmento della sorgente e delle linee
 
@@ -60,6 +62,10 @@ namespace YaNec.Engine
             Params.Add(CalcParam.Scelta("b", "Banda nel NEC", 0, "La banda di cui il motore calcola impedenza e diagramma (il modello contiene tutte le bande scelte).", NbTutte));
             Params.Add(CalcParam.Scelta("d34", "Dipoli 30 / 40 m", 0, "Dipoli con la loro alimentazione, paralleli all'alimentato del 20 m e lungo i bracci dell'esagono.", "nessuno", "30 m", "40 m", "30 e 40 m"));
             Params.Add(new CalcParam("dz", "Dipoli: distanza sotto il 20 m", 0.10, "m", "Quota del dipolo dei 30 m sotto il 20 m; il 40 m sta 0,10 m piu' in basso."));
+            // 1.0.10 (IC8TEM 16/11/2026 22:57 "puo' funzionare con un 1:4 al contrario?", 23:08 "i dipoli sono due separati"): un
+            // trasformatore per ogni dipolo (ognuno ha la sua discesa); il ROS del dipolo e' riferito a 50 ohm / rapporto
+            Params.Add(CalcParam.Scelta("t30", "Trasformatore del 30 m", 0, "Rapporto d'impedenza del balun/un-un del dipolo dei 30 m, verso l'antenna (4:1 al contrario = 50 -> 12,5 Ω).", Tr34));
+            Params.Add(CalcParam.Scelta("t40", "Trasformatore del 40 m", 0, "Rapporto d'impedenza del balun/un-un del dipolo dei 40 m, verso l'antenna (9:1 al contrario = 50 -> 5,6 Ω).", Tr34));
             Params.Add(CalcParam.Scelta("e6", "6 m (50 MHz)", 0, "Il 6 m del modello di JN1GLB, sotto il 10 m: 2 elementi (riflettore e alimentato) o 3 elementi (con il direttore).", "nessuno", "2 elementi", "3 elementi"));
             Params.Add(new CalcParam("R", "Raggio delle punte del 20 m", 3.217, "m", "Distanza dall'asse del palo al vertice dell'esagono del 20 m (JN1GLB 3,217 m). Le altre bande seguono le proporzioni di JN1GLB."));
             Params.Add(new CalcParam("d", "Diametro del filo", 1.0, "mm"));
@@ -71,7 +77,7 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("h", "Quota del 20 m (0 = spazio libero)", 0, "m", "Con quota maggiore di 0 il calcolo NEC usa il terreno medio (er 13, sigma 0,005 S/m)."));
         }
 
-        string Firma() { StringBuilder s = new StringBuilder(); foreach (CalcParam p in Params) if (p.Key != "b") s.Append(p.Key + "=" + p.Value + ";"); return s.ToString(); }
+        string Firma() { StringBuilder s = new StringBuilder(); foreach (CalcParam p in Params) if (p.Key != "b" && p.Key != "t30" && p.Key != "t40") s.Append(p.Key + "=" + p.Value + ";"); return s.ToString(); }
 
         double Z0Linea(out double vf)
         {
@@ -284,10 +290,13 @@ namespace YaNec.Engine
                     double lh = bd == 6 ? L30(k) : L40(k);
                     Complex zz = bd == 6 ? z30 : z40;
                     bool fatto = bd == 6 ? !double.IsNaN(l30) : !double.IsNaN(l40);
+                    double zt = 50 / Tr34n[Math.Max(0, Math.Min(3, I(bd == 6 ? "t30" : "t40")))];
+                    double gm = fatto ? ((zz - zt) / (zz + zt)).Magnitude : 0;
+                    string ros = fatto ? ", ROS " + Calcolatori.N(gm >= 0.999 ? 999 : (1 + gm) / (1 - gm), 2) + " su " + Calcolatori.N(zt, 1) + " Ω" : "";
                     o.Card("Dipolo " + NbTutte[bd], "2 x " + Calcolatori.N(lh, 3) + " m",
-                        (fatto ? "in risonanza, Z " + Calcolatori.Cx(zz) : "lunghezza di partenza (pulsante Risonanza per accordarlo)") + "; lungo il W del 20 m e i bracci, " + Calcolatori.N(P("dz") + (bd == 7 ? 0.10 : 0), 2) + " m sotto il 20 m", banda == bd);
+                        (fatto ? "in risonanza, Z " + Calcolatori.Cx(zz) + ros : "lunghezza di partenza (pulsante Risonanza per accordarlo)") + "; lungo il W del 20 m e i bracci, " + Calcolatori.N(P("dz") + (bd == 7 ? 0.10 : 0), 2) + " m sotto il 20 m", banda == bd);
                 }
-                o.Warnings.Add("Dipoli 30 / 40 m piegati attorno all'esagono: le punte tornano verso il retro e la resistenza di radiazione e' di pochi ohm (prova con nec2c: 40 m 3 Ω, 30 m 6 Ω), quindi serve un adattamento (balun o un-un a rapporto alto, o un gamma); il ROS su 50 Ω del calcolo lo mostra.");
+                o.Warnings.Add("Dipoli 30 / 40 m piegati attorno all'esagono: le punte tornano verso il retro e la resistenza di radiazione e' di pochi ohm (prova con nec2c: 40 m 3 Ω, 30 m 6 Ω), quindi serve un adattamento: scegliere il trasformatore di ogni dipolo (prova con nec2c, rame 1 mm: 30 m 7,7 Ω, ROS 1,7 con il 4:1 al contrario; 40 m 5,1 Ω, ROS 2,5 con il 4:1 e 1,4 con il 9:1, banda di poche decine di kHz). Con resistenze cosi' basse il filo perde molto: 40 m circa meta' della potenza con 1 mm di rame, meglio un conduttore grosso.");
             }
             double vs = (Zj[0] - Zj[4]) * k;
             o.Card("Collegamento", I("col") == 0 ? "coassiale " + Calcolatori.N(z0, 0) + " Ω" : "bacchetta " + Calcolatori.N(z0, 0) + " Ω",
