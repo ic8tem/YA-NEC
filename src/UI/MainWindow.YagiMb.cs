@@ -28,39 +28,38 @@ namespace YaNec
             Grid top = new Grid { ColumnDefinitions = new ColumnDefinitions("*,14,*") };
             StackPanel sx = new StackPanel { Spacing = 3 };
             sx.Children.Add(new TextBlock { Text = "Yagi multibanda", FontSize = 17, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
-            sx.Children.Add(Nota("Due elementi per banda: radiatori multibanda (bacchette con trappole e tubi rastremati, manica aperta o radiatori XR-5; bande da 80 m a 70 cm, anche per l'inizio di una Yagi VHF) e, per ogni banda, un riflettore (dietro) o un direttore (davanti). Il lobo e' sempre verso x positivo."));
+            sx.Children.Add(Nota("Due elementi per banda: radiatori multibanda (bacchette con trappole e tubi rastremati, manica aperta o radiatori XR-5; bande da 80 a 4 m) e, per ogni banda, un riflettore (dietro) o un direttore (davanti). Lobo verso x positivo."));
             StackPanel tabConf = new StackPanel { Spacing = 2 };
             Action aggiorna = null, costruisciConf = null;
             TextBlock tAv = Nota("");
             // 0.4.30 (IC8TEM 15/11/2026 00:06): radiatori modificabili qui (bande, trappole, rastremazioni), come nel Dipolo multibanda
             EditorRad ed = CreaEditorRadiatori(y.Rad, () => { if (aggiorna != null) aggiorna(); if (costruisciConf != null) costruisciConf(); }, m => tAv.Text = m);
-            StackPanel boxRad = new StackPanel();
-            boxRad.Children.Add(new TextBlock { Text = "Radiatori", FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
-            boxRad.Children.Add(ed.Vista);
-            sx.Children.Add(GeoBox(boxRad));
+            // 1.0.10 (bozzetto approvato il 16/11/2026 22:36): sezioni 1 Radiatori e 2 Trappole dall'editor, poi 3 Parassiti e 4 Accordo
+            sx.Children.Add(ed.Vista);
+            StackPanel s3 = new StackPanel { Spacing = 3 };
             StackPanel tutti = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
             Button bR = Btn("tutti riflettore-dipolo", false), bD = Btn("tutti dipolo-direttore", false);
             tutti.Children.Add(bR); tutti.Children.Add(bD);
-            StackPanel conf = new StackPanel { Spacing = 4 };
-            conf.Children.Add(tabConf); conf.Children.Add(tutti);
-            sx.Children.Add(RigaCalc("Configurazione per banda", conf));
+            s3.Children.Add(tabConf); s3.Children.Add(tutti);
             TextBox tDiam = Tb("20", 55), tFb = Tb("20", 55), tPeso = Tb("0,002", 70);
             StackPanel rp = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
-            rp.Children.Add(tDiam); rp.Children.Add(Lbl("mm (tubo dei parassiti)"));
-            sx.Children.Add(RigaCalc("Parassiti", rp));
+            rp.Children.Add(Lbl("ø")); rp.Children.Add(tDiam); rp.Children.Add(Lbl("mm"));
+            s3.Children.Add(RigaCalc("Tubo dei parassiti", rp));
+            StackPanel s4 = new StackPanel { Spacing = 3 };
             StackPanel ro = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
             ro.Children.Add(Lbl("F/B")); ro.Children.Add(tFb); ro.Children.Add(Lbl("dB  peso")); ro.Children.Add(tPeso);
-            sx.Children.Add(RigaCalc("Obiettivo dell'accordo", ro));
-            sx.Children.Add(Nota("L'accordo cerca insieme le misure dei radiatori e lunghezza e distanza di ogni parassita: somma su tutte le bande di (ROS al centro - 1)^2 " +
-                "piu' peso x (F/B obiettivo - F/B)^2 quando il F/B e' sotto l'obiettivo. Peso 0 = solo ROS. Partenza: riflettore 0,51 lambda a 0,15 lambda; direttore 0,45 lambda a 0,10 lambda."));
+            StackPanel ro2 = new StackPanel { Spacing = 1 };
+            ro2.Children.Add(ro);
+            ro2.Children.Add(Nota("Somma su tutte le bande di (ROS al centro - 1)^2 piu' peso x (F/B obiettivo - F/B)^2 quando il F/B e' sotto l'obiettivo; peso 0 = solo ROS. " +
+                "Partenza: riflettore 0,51 lambda a 0,15 lambda; direttore 0,45 lambda a 0,10 lambda."));
+            s4.Children.Add(RigaCalc("Obiettivo", ro2));
             // spaziatura consigliata dei parassiti (IC8TEM 15/11/2026 00:06: "devi anche citare quale sia la migliore spaziatura consigliata:
             // 0,1 0,12 0,2 lambda (fai il mining del manuale arrl, e citi)"); fonti in doc/Spaziatura_parassiti_ARRL.md
             StackPanel rsp = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
             double[] fisse = { 0, 0.10, 0.12, 0.15, 0.20 };
             rsp.Children.Add(Scelta(new[] { "accordata", "0,10 λ", "0,12 λ", "0,15 λ", "0,20 λ" }, 0, k => { y.PSFissa = fisse[k]; if (aggiorna != null) aggiorna(); }));
-            sx.Children.Add(RigaCalc("Distanza dei parassiti", rsp));
+            s3.Children.Add(RigaCalc("Distanza", rsp));
             StackPanel spz = new StackPanel { Spacing = 2 };
-            spz.Children.Add(new TextBlock { Text = "Spaziatura consigliata (ARRL Antenna Book)", FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
             spz.Children.Add(Nota("Riflettore: 0,15-0,20 λ (0,2 λ allarga banda e F/B; sotto 0,15 λ la resistenza scende e la banda si stringe). Direttore: 0,10-0,12 λ. " +
                 "Cosa dicono le fonti, con similitudini e differenze:"));
             spz.Children.Add(Nota("• ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi."));
@@ -68,15 +67,17 @@ namespace YaNec
             spz.Children.Add(Nota("• ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene."));
             spz.Children.Add(Nota("• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB."));
             spz.Children.Add(Nota("• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti."));
-            sx.Children.Add(GeoBox(spz));
+            s3.Children.Add(new Expander { Header = "Spaziatura consigliata (ARRL Antenna Book) e fonti", Content = spz, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 4, 0, 0) });
+            sx.Children.Add(SezioneCalc("3 · Parassiti", s3));
             ProgressBar pb = new ProgressBar { Minimum = 0, Maximum = 1, Height = 6, Margin = new Thickness(0, 4) };
-            sx.Children.Add(pb); sx.Children.Add(tAv);
-            WrapPanel bt = new WrapPanel { HorizontalAlignment = HorizontalAlignment.Right };
+            s4.Children.Add(pb); s4.Children.Add(tAv);
+            WrapPanel bt = new WrapPanel { HorizontalAlignment = HorizontalAlignment.Left };
             Button bApri = Btn("Apri come modello", false), bEsp = Btn("Esporta .nec", false), bVer = Btn("Verifica", false), bAcc = Btn("Accorda e verifica", true);
             foreach (Button b in new[] { bApri, bEsp, bVer }) b.Margin = new Thickness(0, 6, 8, 0);
             bAcc.Margin = new Thickness(0, 6, 0, 0);
             bt.Children.Add(bApri); bt.Children.Add(bEsp); bt.Children.Add(bVer); bt.Children.Add(bAcc);
-            sx.Children.Add(bt);
+            s4.Children.Add(bt);
+            sx.Children.Add(SezioneCalc("4 · Accordo", s4));
             top.Children.Add(Scheda(sx));
 
             StackPanel dx = new StackPanel();
@@ -146,7 +147,7 @@ namespace YaNec
                 {
                     string b = b0;
                     StackPanel r = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
-                    r.Children.Add(new TextBlock { Text = b, Width = 50, FontFamily = Pal.Mono, VerticalAlignment = VerticalAlignment.Center });
+                    r.Children.Add(new TextBlock { Text = b, Width = 50, FontWeight = FontWeight.Bold, FontSize = 15, Foreground = Pal.B(Pal.Fore), VerticalAlignment = VerticalAlignment.Center });
                     r.Children.Add(Scelta(new[] { "riflettore-dipolo", "dipolo-direttore" }, y.Direttore[b] ? 1 : 0, k => { y.Direttore[b] = k == 1; aggiorna(); }));
                     tabConf.Children.Add(r);
                 }

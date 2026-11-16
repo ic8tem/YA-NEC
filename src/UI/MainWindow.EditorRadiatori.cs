@@ -22,12 +22,25 @@ namespace YaNec
             public TextBlock NotaModo;
         }
 
-        static readonly string[] BandeEditor = { "80 m", "40 m", "30 m", "20 m", "17 m", "15 m", "12 m", "10 m", "6 m", "4 m", "2 m", "70 cm" };
+        // 1.0.10 (IC8TEM 16/11/2026 22:26 "dalla scelta bande togli 2mt 70cm metti 8m 4m"): bande da 80 a 4 m
+        static readonly string[] BandeEditor = { "80 m", "40 m", "30 m", "20 m", "17 m", "15 m", "12 m", "10 m", "8 m", "6 m", "4 m" };
+
+        /// <summary>1.0.10: sezione numerata della scheda (bozzetto della Yagi multibanda approvato il 16/11/2026 22:36).</summary>
+        Border SezioneCalc(string titolo, StackPanel corpo)
+        {
+            corpo.Children.Insert(0, new TextBlock { Text = titolo, FontWeight = FontWeight.Bold, FontSize = 14, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 4) });
+            Border b = GeoBox(corpo);
+            b.Margin = new Thickness(0, 8, 0, 0);
+            return b;
+        }
 
         EditorRad CreaEditorRadiatori(DmSpec spec, Action cambiato, Action<string> avviso)
         {
-            EditorRad ed = new EditorRad { Vista = new StackPanel { Spacing = 3 } };
-            StackPanel sx = ed.Vista;
+            // 1.0.10 (bozzetto approvato il 16/11/2026 22:36): la scheda in sezioni numerate, 1 Radiatori (modo, bande, conduttore,
+            // bacchette, tubi rastremati, terreno) e 2 Trappole; le sezioni 3 Parassiti e 4 Accordo sono nella Yagi multibanda
+            EditorRad ed = new EditorRad { Vista = new StackPanel { Spacing = 0 } };
+            StackPanel sx = new StackPanel { Spacing = 3 };
+            StackPanel sTrap = new StackPanel { Spacing = 4 };
             ed.NotaModo = Nota("");
             // 1.0.10 (IC8TEM 16/11/2026 22:22 "mettimi la scelta delle bande su due righe"): griglia di 6 colonne su due righe
             // (80-15 m e 12 m-70 cm), allineate; prima una riga sola che usciva dalla scheda
@@ -54,18 +67,20 @@ namespace YaNec
             DockPanel dBande = RigaCalc("Bande", wb);
             sx.Children.Add(dBande);
             StackPanel rc = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
-            rc.Children.Add(tD); rc.Children.Add(Lbl("mm"));
-            DockPanel dCond = RigaCalc("Diametro del conduttore", rc);
+            rc.Children.Add(Lbl("ø")); rc.Children.Add(tD); rc.Children.Add(Lbl("mm"));
+            DockPanel dCond = RigaCalc("Conduttore", rc);
             sx.Children.Add(dCond);
             StackPanel rd = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
-            rd.Children.Add(tDist); rd.Children.Add(Lbl("m tra un dipolo e l'altro (0,05-0,1 m con 4 dipoli HF)   morsetti")); rd.Children.Add(tGap); rd.Children.Add(Lbl("m"));
-            DockPanel dDist = RigaCalc("Bacchette", rd);
+            rd.Children.Add(Lbl("distanza")); rd.Children.Add(tDist); rd.Children.Add(Lbl("m   morsetti")); rd.Children.Add(tGap); rd.Children.Add(Lbl("m"));
+            StackPanel rd2 = new StackPanel { Spacing = 1 };
+            rd2.Children.Add(rd); rd2.Children.Add(Nota("0,05-0,1 m tra un dipolo e l'altro con 4 dipoli HF"));
+            DockPanel dDist = RigaCalc("Bacchette", rd2);
             sx.Children.Add(dDist);
-            CheckBox cRas = new CheckBox { Content = "Tubi rastremati", IsChecked = spec.Rastrema, VerticalAlignment = VerticalAlignment.Center };
+            CheckBox cRas = new CheckBox { Content = "attivi", IsChecked = spec.Rastrema, VerticalAlignment = VerticalAlignment.Center };
             TextBox tRas = Tb(spec.SchemaRastr, 250);
             tRas.FontFamily = Pal.Mono;
             ToolTip.SetTip(tRas, "Diametro in mm x lunghezza in m per lato, dal centro verso la punta; l'ultimo tubo arriva alla punta. Al posto del diametro del conduttore; correzione di Leeson accesa.");
-            DockPanel dRas = RigaCalc("Rastremazione", cRas, tRas);
+            DockPanel dRas = RigaCalc("Tubi rastremati", cRas, tRas);
             sx.Children.Add(dRas);
             StackPanel pTrap = new StackPanel { Spacing = 4 };
             Button bAddT = Btn("+ trappola", false), bSei = Btn("Proposta: 6 bande da 40/20/15/10 m", false);
@@ -75,12 +90,14 @@ namespace YaNec
             boxT.Children.Add(pTrap); boxT.Children.Add(rTb);
             boxT.Children.Add(Nota("Ogni trappola va in tutti e due i bracci del dipolo scelto, subito dopo la punta, con una coda per la banda in piu'. Sola bobina: risuona con la sua capacita' propria (Medhurst) " +
                 "e va bene solo per bande circa all'ottava (20 -> 40 m); bobina di carico: induttanza accordata, non isola la coda; trappola LC: bobina + condensatore (25 pF di partenza), per bande vicine (15 -> 17 m, 10 -> 12 m). L'accordo trova le code (e la bobina di carico) insieme alle lunghezze."));
-            DockPanel dTrap = RigaCalc("Trappole (bande in piu')", boxT);
-            sx.Children.Add(dTrap);
+            sTrap.Children.Add(boxT);
             StackPanel rt = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
             rt.Children.Add(Scelta(new[] { "spazio libero", "terreno medio (Sommerfeld)" }, terreno, k => { terreno = k; cambiato(); }));
             rt.Children.Add(Lbl("quota")); rt.Children.Add(tQ); rt.Children.Add(Lbl("m"));
             sx.Children.Add(RigaCalc("Terreno", rt));
+            ed.Vista.Children.Add(SezioneCalc("1 · Radiatori", sx));
+            Border dTrap = SezioneCalc("2 · Trappole (bande in piu')", sTrap);
+            ed.Vista.Children.Add(dTrap);
 
             ed.Leggi = () =>
             {
@@ -137,7 +154,7 @@ namespace YaNec
                     r.Children.Add(Lbl(" C")); r.Children.Add(tC); r.Children.Add(Lbl("pF  Q")); r.Children.Add(tQb);
                     r.Children.Add(Lbl("supporto Ø")); r.Children.Add(tSu); r.Children.Add(Lbl("mm  filo Ø")); r.Children.Add(tFi); r.Children.Add(Lbl("mm"));
                     r.Children.Add(bTogli);
-                    pTrap.Children.Add(new Border { Child = r, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1), Padding = new Thickness(0, 2) });
+                    pTrap.Children.Add(new Border { Child = r, Background = Pal.B(Pal.Panel), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(6), Padding = new Thickness(8, 4), Margin = new Thickness(0, 0, 0, 4) });
                 }
             };
             bAddT.Click += (s, e) =>
