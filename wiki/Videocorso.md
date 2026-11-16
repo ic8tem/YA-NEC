@@ -49,10 +49,18 @@ Bacchette parallele per 20, 15 e 10 m accordate insieme con "Accorda e verifica"
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_04_dipoli_paralleli_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_04_dipoli_paralleli_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_05.jpg" alt="Lezione 5 - Le trappole e il dipolo trappolato"></a></td><td>
+
+### Lezione 5 - Le trappole e il dipolo trappolato
+
+Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappola da 60 pF e 8,49 uH a 7,05 MHz, porta in risonanza, le trappole come carichi LC nel modello, sweep da 3,4 a 7,4 MHz con le perdite e l'efficienza, zoom sui 40 m.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.srt)
+
+</td></tr></table>
 
 ## Prossime lezioni
 
-5. Trappole e dipolo trappolato
 6. Gli strumenti del modello: barra Geometria, Controlla il modello, segmentazione e avvisi
 7. Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
 8. Direttiva HF con trappole e terreno

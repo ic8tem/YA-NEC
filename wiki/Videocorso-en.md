@@ -49,10 +49,18 @@ Parallel rods for 20, 15 and 10 m tuned together with "Tune and verify"; adding 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_04_parallel_dipoles_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_04_parallel_dipoles_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_05_traps_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_05.jpg" alt="Lesson 5 - Traps and the trapped dipole"></a></td><td>
+
+### Lesson 5 - Traps and the trapped dipole
+
+The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator: 60 pF and 8.49 uH trap at 7.05 MHz, bring to resonance, traps as LC loads in the model, sweep from 3.4 to 7.4 MHz with losses and efficiency, zoom on 40 m.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_05_traps_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_05_traps_EN.srt)
+
+</td></tr></table>
 
 ## Coming next
 
-5. Traps and the trapped dipole
 6. Model tools: Geometry bar, Check model, segmentation and warnings
 7. Simple HF beam from the calculators: 3-element Yagi and Moxon
 8. HF beam with traps and ground
