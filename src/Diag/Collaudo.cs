@@ -419,6 +419,16 @@ namespace YaNec
             Passo("rete L da 12 - j30 ohm a 50 ohm: verifica con i numeri complessi", "ROS 1,000", or.Cards[or.Cards.Count - 1].Sub, or.Oks.Count > 0);
             CalcTrappolato tr = new CalcTrappolato();
             CalcOutput ot = tr.Run();
+            {
+                // 1.0.11: modo a singola banda, bobina di carico (stima a linea; il NEC su questo caso da' 12,55 uH)
+                double xl = CalcTrappolato.ReattanzaCarico(7.1, 6.5, 0.5, 0.001), lu = xl / (2 * Math.PI * 7.1e6) * 1e6;
+                tr.Par("modo").Value = 1;
+                CalcOutput os = tr.Run();
+                tr.Par("modo").Value = 0;
+                Passo("dipolo trappolato a singola banda: 7,1 MHz, braccio 6,5 m, bobina al 50 %, filo 2 mm", "bobina circa 13,1 uH (NEC 12,55), modello NEC con 2 carichi LD 0",
+                    string.Format(CI, "{0:0.00} uH; schede LD 0: {1}", lu, os.Nec == null ? 0 : os.Nec.Split('\n').Count(l => l.StartsWith("LD 0"))),
+                    Math.Abs(lu - 13.14) < 0.05 && os.Nec != null && os.Nec.Split('\n').Count(l => l.StartsWith("LD 0")) == 2);
+            }
             // correzione dei tubi telescopici: riflettore 20 m dell'XR-5 (tubi 25,4 / 22 / 19 / 16 / 13 / 10 mm, meta' 5,55 m)
             {
                 System.Text.StringBuilder sx = new System.Text.StringBuilder("CM riflettore 20 m XR-5\nCE\n");
