@@ -140,9 +140,17 @@ The DK7ZB 6-element 2 m Yagi (28 ohm, 2.40 m boom, qsl.net/dk7zb) typed in with 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_14_dk7zb_6el_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_14_dk7zb_6el_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_15_optimizer_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_15.jpg" alt="Lesson 15 - The Optimizer"></a></td><td>
+
+### Lesson 15 - The Optimizer
+
+The DK7ZB 6-element Yagi of lesson 14 with variables, optimized for 50 ohm (SWR 1.23, 12.00 dBi, F/B 32.4 dB: 0.06 dB less gain); then a 3-element 20 m HF Yagi from rule-of-thumb dimensions, F/B from 21.6 to 35 dB with the impedance staying around 30 ohm.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_15_optimizer_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_15_optimizer_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **15** · The same 6 elements brought to 50 ohm with the Optimizer, and an optimized 3-element HF Yagi
 - **16** · Advanced VHF/UHF: DL6WU long Yagi, boom correction and brackets, real time
 - **17** · VHF antennas on a roof
 - **18** · VHF stacks of short (DK7ZB) and long (DL6WU) antennas, noise and G/T

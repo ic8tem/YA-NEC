@@ -140,9 +140,17 @@ La 6 elementi per i 2 m di DK7ZB (28 ohm, boom 2,40 m, qsl.net/dk7zb) inserita c
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_14_dk7zb_6el_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_14_dk7zb_6el_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_15_ottimizzatore_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_15.jpg" alt="Lezione 15 - L'Ottimizzatore"></a></td><td>
+
+### Lezione 15 - L'Ottimizzatore
+
+La 6 elementi DK7ZB della lezione 14 con variabili e ottimizzata per 50 ohm (ROS 1,23, 12,00 dBi, F/B 32,4 dB: 0,06 dB di guadagno in meno); poi una Yagi HF 3 elementi per i 20 m dalle misure di partenza, con il F/B da 21,6 a 35 dB e l'impedenza che resta sui 30 ohm.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_15_ottimizzatore_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_15_ottimizzatore_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **15** · La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore, e una Yagi HF 3 elementi ottimizzata
 - **16** · VHF/UHF avanzato: Yagi lunga DL6WU, correzione del boom e staffe, tempo reale
 - **17** · Antenne VHF su un tetto
 - **18** · Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T
