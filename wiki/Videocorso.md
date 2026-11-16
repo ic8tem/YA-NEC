@@ -77,11 +77,19 @@ HB9CV (Rudolf Baumgartner HB9CV) a 145 MHz con la linea di fase incrociata; Quad
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_10.jpg" alt="Lezione 10 - Antenne riceventi: Beverage ed EWE"></a></td><td>
+
+### Lezione 10 - Antenne riceventi: Beverage ed EWE
+
+Beverage da 175 m per i 160 m e la EWE di Floyd Koontz WA2WVL (QST febbraio 1995) nella linguetta Antenne riceventi: modello NEC su terreno di Sommerfeld, RDF e DMF, ottimizza per F/B sulla terminazione, preamplificatore consigliato e graduatoria RDF con le misure IV3PRK e Hi-Z.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
 - **7** · Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
 - **8** · Direttiva HF con trappole e terreno
-- **10** · Antenne riceventi: EWE e Beverage
 - **11** · Four-square e altre riceventi, classifica RDF
 - **12** · Loop caricato, toroidi, rete L-C e oggetti del modello (linee, trasformatori, balun, sorgenti a corrente)
 - **13** · Le altre funzioni per l'HF

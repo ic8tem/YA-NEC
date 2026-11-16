@@ -77,11 +77,19 @@ HB9CV (Rudolf Baumgartner HB9CV) at 145 MHz with its crossed phase line; 2 and 3
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_10.jpg" alt="Lesson 10 - Receiving antennas: Beverage and EWE"></a></td><td>
+
+### Lesson 10 - Receiving antennas: Beverage and EWE
+
+A 175 m Beverage for 160 m and the EWE by Floyd Koontz WA2WVL (QST February 1995) in the Receiving antennas tab: NEC model over Sommerfeld ground, RDF and DMF, optimize the termination for F/B, suggested preamplifier and the RDF ranking with the IV3PRK and Hi-Z measurements.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
 - **7** · Simple HF beam from the calculators: 3-element Yagi and Moxon
 - **8** · HF beam with traps and ground
-- **10** · Receiving antennas: EWE and Beverage
 - **11** · Four-square and other receiving antennas, RDF ranking
 - **12** · Loaded loop, toroids, L-C network and model objects (lines, transformers, baluns, current sources)
 - **13** · The other HF functions

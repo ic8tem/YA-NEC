@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 10: antenne riceventi - Beverage ed EWE
+
+2
+00:00:04,000 --> 00:00:11,017
+Corso YA-NEC, lezione 10: antenne riceventi - Beverage ed EWE. Linguetta Antenne riceventi.
+
+3
+00:00:11,067 --> 00:00:21,684
+Beverage (Harold Beverage, anni '20) per i 160 m: 175 m di filo, 1,07 lunghezze d'onda, a 2,5 m, terminata con 500 ohm su un picchetto da 20 ohm.
+
+4
+00:00:21,734 --> 00:00:33,284
+Il calcolatore mostra la lunghezza per la massima risposta a 20 gradi e l'impedenza del filo sul terreno: circa 524 ohm, quindi trasformatore 9:1 su 50-75 ohm.
+
+5
+00:00:33,334 --> 00:01:04,371
+'Crea il modello NEC e calcola l'RDF': fili, discese, carico e sorgente, con il terreno di Sommerfeld.
+
+6
+00:01:04,421 --> 00:01:13,160
+Il modello si apre: un filo lungo sull'asse X, lobo verso l'estremo terminato.
+
+7
+00:01:13,210 --> 00:01:23,894
+Tornati alla linguetta, i valori da ricezione: RDF 10,6 dB (IV3PRK misurava 10,81), DMF 11,5 dB, F/B 23 dB, 5,5 dB di S/N meglio di una verticale.
+
+8
+00:01:23,944 --> 00:01:31,160
+Il guadagno assoluto e' -11,4 dBi: in ricezione non conta, basta un preamplificatore da 12 dB.
+
+9
+00:01:31,210 --> 00:01:47,782
+'Ottimizza per F/B' cerca la resistenza di terminazione.
+
+10
+00:01:47,832 --> 00:01:54,715
+400 ohm: F/B da 23 a 38,5 dB, RDF 10,7 dB. Il nullo posteriore lo decide la terminazione.
+
+11
+00:01:54,765 --> 00:02:00,249
+Ora una piccola: la EWE di Floyd Koontz WA2WVL (QST, febbraio 1995).
+
+12
+00:02:00,299 --> 00:02:07,715
+Due verticali da 3 m e 9,1 m di filo - 0,06 lunghezze d'onda - con circa 850 ohm di terminazione.
+
+13
+00:02:07,765 --> 00:02:38,409
+'Crea il modello NEC e calcola l'RDF'.
+
+14
+00:02:38,459 --> 00:02:47,476
+RDF 7,7 dB, F/B 31,7 dB, impedenza 847 - j536 ohm con un trasformatore 16:1. In un giardino invece che in 175 m di campo.
+
+15
+00:02:47,526 --> 00:02:52,276
+Guadagno -28 dBi: qui serve un preamplificatore da 20 dB.
+
+16
+00:02:52,326 --> 00:03:18,346
+'Ottimizza per F/B' anche sulla EWE.
+
+17
+00:03:18,396 --> 00:03:23,494
+800 ohm: F/B 34,2 dB, RDF 7,8 dB.
+
+18
+00:03:23,544 --> 00:03:32,761
+Sotto, la graduatoria RDF dei 160 m: antenne misurate (IV3PRK, Hi-Z) e, in arancione, quello che YA-NEC ha appena calcolato.
+
+19
+00:03:32,811 --> 00:03:44,428
+Le Beverage lunghe guidano la graduatoria; la EWE sta vicino alla K9AY e alle Flag. L'RDF confronta le riceventi in modo onesto, qualunque sia il loro guadagno.
+
+20
+00:03:44,478 --> 00:03:50,428
+Beverage ed EWE: lunga o piccola, l'RDF dice quale sente meglio. Prossima lezione: Four-square e le altre riceventi. 73 de IC8TEM
