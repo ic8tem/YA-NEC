@@ -612,6 +612,15 @@ namespace YaNec
             catch (Exception ex) { Registro.Scrivi("ERRORE", "Aggiungi filo senza modello: " + ex.Message); }
         }
 
+        /// <summary>1.0.10: vero se il testo e' un conto di soli numeri (cifre, punto, + - * / e parentesi, almeno un operatore dopo il primo carattere).</summary>
+        static bool SoloConto(string t)
+        {
+            if (string.IsNullOrEmpty(t)) return false;
+            foreach (char ch in t) if (!(char.IsDigit(ch) || ch == '.' || ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '(' || ch == ')' || ch == 'e' || ch == 'E')) return false;
+            for (int i = 1; i < t.Length; i++) if ("+-*/".IndexOf(t[i]) >= 0 && t[i - 1] != 'e' && t[i - 1] != 'E') return true;
+            return t.StartsWith("(");
+        }
+
         void AddWireAfter(int idx)
         {
             if (TabellaFiliNonAttiva()) return;
@@ -686,6 +695,18 @@ namespace YaNec
                 {
                     c[k] = Expr.NormalizeDecimal((r.Cells[k].Text ?? "").Replace(" ", "").Replace("\t", ""));
                     if (c[k].Length == 0) { Status("Filo " + r.Num.Text + ": c'e' una cella vuota.", true); return; }
+                    // 1.0.10 (IC8TEM 16/11/2026 22:42 "mi devi permettere di fare le somme e sottrazioni"): come in Excel, un conto di soli
+                    // numeri (1.42+.26, 2*0.75-0.1) diventa il suo risultato nella cella; le formule con le variabili restano scritte
+                    if (k >= 1 && k <= 8 && SoloConto(c[k]))
+                    {
+                        try
+                        {
+                            double v = Expr.Eval(c[k], null);
+                            c[k] = k == 8 ? Math.Round(v).ToString(CultureInfo.InvariantCulture) : FormatVal(v);
+                            r.Cells[k].Text = c[k];
+                        }
+                        catch (Exception ex) { Status("Filo " + r.Num.Text + ": conto non valido (" + c[k] + "): " + ex.Message, true); return; }
+                    }
                 }
                 string[] orig = r.Card != null ? r.Card.Src : null;
                 // cella non toccata: si conserva il testo originale della scheda (variabili comprese)

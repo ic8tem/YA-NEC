@@ -62,6 +62,12 @@ namespace YaNec
             geoBtnAnnulla.Click += (s, e) => GeoAnnulla(true);
             geoBtnRipeti.Click += (s, e) => GeoAnnulla(false);
             bar.Children.Add(geoBtnAnnulla); bar.Children.Add(geoBtnRipeti);
+            // 1.0.10 (IC8TEM 16/11/2026 22:39 "help a comparsa per la lista delle variabili"; bozzetto approvato alle 22:42)
+            Button bVar = Btn("Variabili ▾", false);
+            bVar.Foreground = Pal.B(Pal.Orange); bVar.BorderBrush = Pal.B(Pal.Orange);
+            bVar.Margin = new Thickness(6, 0, 0, 0);
+            bVar.Click += (s, e) => MostraVariabili(bVar);
+            bar.Children.Add(bVar);
             GeoAggiornaAnnulla();
             return bar;
         }
