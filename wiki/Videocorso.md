@@ -149,9 +149,17 @@ La 6 elementi DK7ZB della lezione 14 con variabili e ottimizzata per 50 ohm (ROS
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_15_ottimizzatore_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_15_ottimizzatore_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_16_vhf_uhf_avanzato_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_16.jpg" alt="Lezione 16 - VHF/UHF avanzato"></a></td><td>
+
+### Lezione 16 - VHF/UHF avanzato
+
+Yagi lunga DL6WU (Günter Hoch DL6WU) 10 elementi per i 144 MHz: stima della formula, NEC in tempo reale e ottimizzazione a passi; correzione del boom (DL6WU/G3SEK confrontata con YU7EF, VE7BQH, K1FO, I0JXX, DJ9BV, DG7YBN); piastre di fissaggio nel modello e perche' serve la correzione di Leeson.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_16_vhf_uhf_avanzato_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_16_vhf_uhf_avanzato_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **16** · VHF/UHF avanzato: Yagi lunga DL6WU, correzione del boom e staffe, tempo reale
 - **17** · Antenne VHF su un tetto
 - **18** · Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T
 - **19** · Loop Yagi per i 1296 MHz
