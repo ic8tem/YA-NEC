@@ -29,12 +29,16 @@ namespace YaNec
             EditorRad ed = new EditorRad { Vista = new StackPanel { Spacing = 3 } };
             StackPanel sx = ed.Vista;
             ed.NotaModo = Nota("");
-            WrapPanel wb = new WrapPanel();
+            // 1.0.10 (IC8TEM 16/11/2026 22:22 "mettimi la scelta delle bande su due righe"): griglia di 6 colonne su due righe
+            // (80-15 m e 12 m-70 cm), allineate; prima una riga sola che usciva dalla scheda
+            Grid wb = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto,Auto,Auto,Auto"), RowDefinitions = new RowDefinitions("Auto,Auto") };
             List<CheckBox> cb = new List<CheckBox>();
-            foreach (string b in BandeEditor)
+            for (int i = 0; i < BandeEditor.Length; i++)
             {
-                CheckBox c = new CheckBox { Content = b, IsChecked = spec.Bande.Contains(b), Margin = new Thickness(0, 0, 10, 0) };
+                string b = BandeEditor[i];
+                CheckBox c = new CheckBox { Content = b, IsChecked = spec.Bande.Contains(b), Margin = new Thickness(0, 0, 14, 0), MinWidth = 70 };
                 c.IsCheckedChanged += (s, e) => { cambiato(); if (ed.Ricostruisci != null) ed.Ricostruisci(); };
+                Grid.SetColumn(c, i % 6); Grid.SetRow(c, i / 6);
                 cb.Add(c); wb.Children.Add(c);
             }
             TextBox tD = Tb(Fmt(spec.Diametro * 1000, 1), 55), tDist = Tb(Fmt(spec.Distanza, 2), 55), tGap = Tb(Fmt(spec.Gap, 3), 55), tQ = Tb(Fmt(spec.Quota, 1), 55);
