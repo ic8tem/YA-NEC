@@ -1,4 +1,4 @@
-[Italiano](Home) · [English](Home-en) · [Deutsch](Home-de) · [Nederlands](Home-nl) · **Français** · [Español](Home-es) · [Português](Home-pt) · [Português (Brasil)](Home-pt-br) · [Dansk](Home-da) · [Norsk](Home-nb) · [Svenska](Home-sv) · [Polski](Home-pl) · [Čeština](Home-cs) · [Slovenčina](Home-sk) · [Magyar](Home-hu) · [Română](Home-ro) · [Русский](Home-ru) · [Українська](Home-uk) · [Türkçe](Home-tr) · [日本語](Home-ja) · [한국어](Home-ko) · [中文](Home-zh) · [中文 (繁體)](Home-zh-tw)
+[Italiano](Home) · [English](Home-en) · [Deutsch](Home-de) · [Nederlands](Home-nl) · **Français** · [Español](Home-es) · [Português](Home-pt) · [Português (Brasil)](Home-pt-br) · [Dansk](Home-da) · [Norsk](Home-nb) · [Svenska](Home-sv) · [Polski](Home-pl) · [Čeština](Home-cs) · [Slovenčina](Home-sk) · [Magyar](Home-hu) · [Română](Home-ro) · [Ελληνικά](Home-el) · [Русский](Home-ru) · [Українська](Home-uk) · [Türkçe](Home-tr) · [Bahasa Indonesia](Home-id) · [Tagalog](Home-tl) · [日本語](Home-ja) · [한국어](Home-ko) · [中文](Home-zh) · [中文 (繁體)](Home-zh-tw)
 
 # YA-NEC
 
