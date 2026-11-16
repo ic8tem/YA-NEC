@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lesson 18: VHF stacks, noise and G/T
+
+2
+00:00:04,000 --> 00:00:15,656
+YA-NEC course, lesson 18: VHF stacks, noise and G/T. Examples: the DK7ZB 10-element Yagi for 144 MHz, 28 ohm.
+
+3
+00:00:15,706 --> 00:00:22,256
+In free space: 28.1 - j6.1 ohm, 15.41 dBi, F/B 26 dB, beamwidth 30.9 x 33.1 degrees.
+
+4
+00:00:22,306 --> 00:00:27,923
+Noise/GT/Stack tab: what the antenna hears, not only what it radiates.
+
+5
+00:00:27,973 --> 00:00:39,523
+Sky at 200 K, ground at 1000 K, antenna aimed 30 degrees up: antenna temperature 264 K, 93 % from the sky, 7 % from the ground through the side and rear lobes.
+
+6
+00:00:39,573 --> 00:00:48,590
+G/T of the antenna -8.81 dB, as in VE7BQH's tables; with cable loss and a 0.3 dB preamplifier the system G/T is -9.14 dB.
+
+7
+00:00:48,640 --> 00:01:03,840
+Stack: 2 stacked, 'use the suggested spacings' (DL6WU: 3.65 m), Calculate. The NEC computes the whole stack, coupling included.
+
+8
+00:01:03,890 --> 00:01:12,107
+18.41 dBi, stack gain +3.0 dB, ideal +3; G/T from -8.81 to -5.96 dB. The antenna temperature rises only 10 K.
+
+9
+00:01:12,157 --> 00:01:31,340
+Now 2 x 2.
+
+10
+00:01:31,390 --> 00:01:38,207
+21.44 dBi, +6.03 dB; G/T -2.86 dB, system -3.18 dB: almost 6 dB better than one antenna.
+
+11
+00:01:38,257 --> 00:01:58,086
+Now long Yagis: DL6WU calculator, 17 elements, open as model.
+
+12
+00:01:58,136 --> 00:02:17,238
+17 elements: 16.74 dBi in free space, 1.3 dB more than the 10-element short Yagi.
+
+13
+00:02:17,288 --> 00:02:47,819
+Back to Noise/GT/Stack: 2 x 2 with the suggested spacings.
+
+14
+00:02:47,869 --> 00:02:54,993
+22.54 dBi, stack gain +5.8 dB, G/T -1.89 dB (one antenna -7.47 dB).
+
+15
+00:02:55,043 --> 00:03:06,194
+Long Yagis have narrower beams: the DL6WU distances grow, and the stack gives slightly less than the ideal 6 dB. VE7BQH's G/T tables use the same method.
+
+16
+00:03:06,244 --> 00:03:12,196
+Short or long, single or 2 x 2: gain, temperature and G/T together. Next lesson: the loop Yagi for 1296 MHz. 73 de IC8TEM

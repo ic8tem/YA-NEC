@@ -167,9 +167,17 @@ La Yagi 7 elementi EME di DK7ZB (esempio MMANA) a 3 m sopra un solaio a 15 m: lo
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_17_vhf_tetto_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_17_vhf_tetto_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_18_stack_gt_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_18.jpg" alt="Lezione 18 - Stack VHF, rumore e G/T"></a></td><td>
+
+### Lezione 18 - Stack VHF, rumore e G/T
+
+La Yagi 10 elementi DK7ZB (esempio) nella linguetta Rumore/GT/Stack: temperatura d'antenna e G/T come VE7BQH, poi 2 sovrapposte (+3,0 dB) e 2 x 2 (+6,03 dB, G/T -2,86 dB) con le distanze DL6WU; infine una Yagi lunga DL6WU 17 elementi in 2 x 2 (22,54 dBi, +5,8 dB, G/T -1,89 dB).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_18_stack_gt_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_18_stack_gt_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **18** · Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T
 - **19** · Loop Yagi per i 1296 MHz
 - **20** · Satelliti: Eggbeater, QFH, Quagi
 - **21** · Parabole: fuoco primario, offset e trombe
