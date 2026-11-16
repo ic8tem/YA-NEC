@@ -7,53 +7,73 @@ Lesson 5: traps and the trapped dipole
 YA-NEC course, lesson 5: traps and the trapped dipole. Calculators, Dipoles, type 'trapped'.
 
 3
-00:00:16,711 --> 00:00:34,460
+00:00:16,711 --> 00:00:34,431
 The classic W3DZZ (C.L. Buchanan, QST 1955): one trap per arm, resonant at 7.05 MHz with 60 pF. The calculator finds 8.49 uH; W3DZZ used 8.2 uH.
 
 4
-00:00:34,510 --> 00:00:45,488
+00:00:34,481 --> 00:00:45,212
 On 40 m the trap is a high impedance: only the inner 10.11 m work. On 80 m it is a coil: the whole wire is shorter than a plain 38 m dipole.
 
 5
-00:00:45,538 --> 00:01:01,554
+00:00:45,262 --> 00:01:01,278
 The real-time SWR minimum is at 3.653 MHz, a bit low. 'Bring to resonance (NEC)' trims the outer sections.
 
 6
-00:01:01,604 --> 00:01:14,757
+00:01:01,328 --> 00:01:14,422
 Outer section 6.63 m, total 33.49 m. NEC check: 61.3 ohm at 3.75 MHz, SWR 1.23, efficiency 98 %.
 
 7
-00:01:14,807 --> 00:01:27,882
+00:01:14,472 --> 00:01:27,547
 'Create the NEC model', then the Loads table among the model objects.
 
 8
-00:01:27,932 --> 00:01:38,881
+00:01:27,597 --> 00:01:38,692
 The two traps are two LC loads: 8.494 uH, 60 pF, Q 150, at the end of the inner sections. Q sets the trap losses.
 
 9
-00:01:38,931 --> 00:02:04,758
+00:01:38,742 --> 00:02:04,569
 Frequency tab: one sweep from 3.4 to 7.4 MHz, 201 points.
 
 10
-00:02:04,808 --> 00:02:16,819
+00:02:04,619 --> 00:02:16,252
 Two dips: 80 m at 3.75 MHz and 40 m near 7.24 MHz. In between, the impedance peaks above 10 kohm near 5.3 MHz.
 
 11
-00:02:16,869 --> 00:02:28,286
+00:02:16,302 --> 00:02:27,719
 And the green curve: between the bands the current through the traps is huge and efficiency collapses. Nobody transmits there - but it shows what traps cost.
 
 12
-00:02:28,336 --> 00:02:46,317
+00:02:27,769 --> 00:02:45,750
 Zoom on 40 m: centre 7.15 MHz, span 500 kHz.
 
 13
-00:02:46,367 --> 00:02:58,029
+00:02:45,800 --> 00:02:57,142
 On 40 m: about 100 ohm at resonance, SWR 2 at 7.24 MHz, efficiency 88-90 %. The trap losses take about a tenth of the power.
 
 14
-00:02:58,079 --> 00:03:08,762
+00:02:57,192 --> 00:03:07,875
 To improve 40 m you move the trap resonance or the inner length; with lower-Q traps the loss grows. All of it in seconds, before cutting any wire.
 
 15
-00:03:08,812 --> 00:03:17,579
+00:03:07,925 --> 00:03:27,118
+New in 1.0.11: the trap dipole also has a single-band mode with a loading coil. Calculators, Dipoles, trapped, 'single band'.
+
+16
+00:03:27,168 --> 00:03:41,084
+You choose frequency, arm length and coil position as % of the arm from the centre. 7.1 MHz, 6.5 m arm, coil at 50 %: 13.1 uH, dipole 35 % shorter.
+
+17
+00:03:41,134 --> 00:03:50,047
+Coil at 30 % of the arm: a 9.4 uH coil is enough. Closer to the centre means a smaller coil, but lower efficiency.
+
+18
+00:03:50,097 --> 00:04:03,275
+The formula is the same line model as the W3DZZ, solved for the coil. 'Bring to resonance (NEC)' only adjusts the coil: 9.12 uH. The lengths stay as chosen.
+
+19
+00:04:03,325 --> 00:04:12,826
+NEC check: 40.3 ohm, SWR 1.24, 5.5 dBi, 90 % efficiency including the coil losses (Q 200).
+
+20
+00:04:12,876 --> 00:04:21,716
 Traps: a coil and a capacitor that decide where the antenna ends. Next lesson: the model tools. 73 de IC8TEM

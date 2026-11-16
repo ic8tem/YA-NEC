@@ -26,7 +26,7 @@ With the Dipoles calculator (bring to resonance: 10.36 m, 72.7 ohm, 7.10 dBi at 
 
 ### Lesson 2 - Single-element wire antennas
 
-Inverted V for 40 m; 20 m delta loop with its RG-59 quarter wave placed in the model as a TL line (from 120 to 47 ohm); lambda/4 vertical with radials, 5/8, coil-loaded, J-pole and a DX Commander-style multiband vertical checked band by band.
+Inverted V for 40 m; 20 m delta loop (1.0.11 card in sections, balun tiles with the polarization) with its RG-59 quarter wave placed in the model as a TL line (from 120 to 47 ohm); lambda/4 vertical with radials, 5/8, coil-loaded, J-pole and a DX Commander-style multiband vertical checked band by band.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_02_wire_antennas_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_02_wire_antennas_EN.srt)
 
@@ -53,7 +53,7 @@ Parallel rods for 20, 15 and 10 m tuned together with "Tune and verify"; adding 
 
 ### Lesson 5 - Traps and the trapped dipole
 
-The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator: 60 pF and 8.49 uH trap at 7.05 MHz, bring to resonance, traps as LC loads in the model, sweep from 3.4 to 7.4 MHz with losses and efficiency, zoom on 40 m.
+The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator: 60 pF and 8.49 uH trap at 7.05 MHz, bring to resonance, traps as LC loads in the model, sweep from 3.4 to 7.4 MHz with losses and efficiency, zoom on 40 m. Since 1.0.11 the single-band mode: 6.5 m arm with the loading coil at 50 % and 30 % (13.1 and 9.4 uH), NEC resonance on the coil only.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_05_traps_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_05_traps_EN.srt)
 

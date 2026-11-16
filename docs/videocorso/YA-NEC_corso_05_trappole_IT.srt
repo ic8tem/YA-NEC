@@ -55,5 +55,25 @@ In 40 m: circa 100 ohm in risonanza, ROS 2 a 7,24 MHz, efficienza 88-90 %. Le pe
 Per migliorare i 40 m si sposta la risonanza della trappola o la lunghezza interna; con trappole a Q piu' basso la perdita cresce. Tutto in pochi secondi, prima di tagliare un filo.
 
 15
-00:02:52,957 --> 00:02:58,907
+00:02:52,957 --> 00:03:12,154
+Novita' della 1.0.11: il dipolo trappolato ha anche il modo a singola banda, con la bobina di carico. Calcolatori, Dipoli, trappolato, 'singola banda'.
+
+16
+00:03:12,204 --> 00:03:24,754
+Si scelgono frequenza, lunghezza del braccio e posizione della bobina in % del braccio dal centro. 7,1 MHz, braccio 6,5 m, bobina al 50 %: 13,1 uH, dipolo il 35 % piu' corto.
+
+17
+00:03:24,804 --> 00:03:33,488
+Bobina al 30 % del braccio: basta una bobina da 9,4 uH. Piu' vicina al centro, piu' piccola, ma con meno efficienza.
+
+18
+00:03:33,538 --> 00:03:46,713
+La formula e' lo stesso modello a linea della W3DZZ, risolto per la bobina. 'Porta in risonanza (NEC)' ritocca solo la bobina: 9,12 uH. Le lunghezze restano quelle scelte.
+
+19
+00:03:46,763 --> 00:03:53,375
+Verifica NEC: 40,3 ohm, ROS 1,24, 5,5 dBi, efficienza 90 % con le perdite della bobina (Q 200).
+
+20
+00:03:54,424 --> 00:04:00,374
 Le trappole: una bobina e un condensatore che decidono dove finisce l'antenna. Prossima lezione: gli strumenti del modello. 73 de IC8TEM

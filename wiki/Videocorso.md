@@ -26,7 +26,7 @@ Con il calcolatore Dipoli (porta in risonanza: 10,36 m, 72,7 ohm, 7,10 dBi a 29,
 
 ### Lezione 2 - Antenne filari a un elemento
 
-V invertita per i 40 m; delta loop per i 20 m e il suo quarto d'onda di RG-59 messo nel modello come linea TL (da 120 a 47 ohm); verticali λ/4 con radiali, 5/8, caricata con bobina, J-pole e la multibanda tipo DX Commander con la verifica banda per banda.
+V invertita per i 40 m; delta loop per i 20 m (scheda in sezioni della 1.0.11, balun a tessere con la polarizzazione) e il suo quarto d'onda di RG-59 messo nel modello come linea TL (da 120 a 47 ohm); verticali λ/4 con radiali, 5/8, caricata con bobina, J-pole e la multibanda tipo DX Commander con la verifica banda per banda.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_02_filari_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_02_filari_IT.srt)
 
@@ -53,7 +53,7 @@ Bacchette parallele per 20, 15 e 10 m accordate insieme con "Accorda e verifica"
 
 ### Lezione 5 - Le trappole e il dipolo trappolato
 
-Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappola da 60 pF e 8,49 uH a 7,05 MHz, porta in risonanza, le trappole come carichi LC nel modello, sweep da 3,4 a 7,4 MHz con le perdite e l'efficienza, zoom sui 40 m.
+Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappola da 60 pF e 8,49 uH a 7,05 MHz, porta in risonanza, le trappole come carichi LC nel modello, sweep da 3,4 a 7,4 MHz con le perdite e l'efficienza, zoom sui 40 m. Dalla 1.0.11 il modo a singola banda: braccio da 6,5 m con bobina di carico al 50 % e al 30 % (13,1 e 9,4 uH), risonanza NEC sulla sola bobina.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_05_trappole_IT.srt)
 
