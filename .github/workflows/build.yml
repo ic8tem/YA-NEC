@@ -113,8 +113,8 @@ jobs:
             $z = "zip\YA-NEC-$ver-$n.zip"
             Expand-Archive $z -DestinationPath "x\$n" -Force
             $arch = ($n -split '-')[1]
-            $extra = @(); if ($n -like 'win7*') { $extra += '/DWin7' }
-            & $iscc "/DVer=$ver" "/DArch=$arch" "/DNome=$n" "/DSrc=$PWD\x\$n\YA-NEC" "/DOut=$PWD\dist" "/DIcona=$PWD\assets\ya-nec.ico" @extra installer\windows\ya-nec.iss
+            $extra = @(); if ($n -like 'win7*') { $extra += '/DYWin7' }
+            & $iscc "/DYVer=$ver" "/DYArch=$arch" "/DYNome=$n" "/DYSrc=$PWD\x\$n\YA-NEC" "/DYOut=$PWD\dist" "/DYIcona=$PWD\assets\ya-nec.ico" @extra installer\windows\ya-nec.iss
             if ($LASTEXITCODE -ne 0) { exit 1 }
           }
           Get-ChildItem dist | ForEach-Object { $h = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(); "$h  $($_.Name)" | Out-File -Encoding ascii "$($_.FullName).sha256" }
