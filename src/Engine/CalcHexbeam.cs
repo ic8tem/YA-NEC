@@ -35,8 +35,19 @@ namespace YaNec.Engine
         // (lato posteriore a x = -1,19, braccia fino a (-0,48; +-1,075)), direttore a U (lato a x = 0,66 da -1,06 a 1,06, punte fino a
         // (0,51; +-1,15)). "2 elementi" toglie il direttore. Prova con nec2c (scratchpad hex6/h6.py, coassiale 50 ohm VF 0,66, spazio
         // libero, 50,15 MHz): 2 el 44,0 +j6,5 ohm ROS 1,21, 6,50 dBi, F/B 14,6 dB; 3 el 33,0 +j11,3 ohm ROS 1,65, 6,96 dBi, F/B 19,6 dB.
-        static readonly string[] NbTutte = { "20 m", "17 m", "15 m", "12 m", "10 m", "6 m" };
-        const double F6 = 50.150, Z6 = 0.0;      // spazio tra le due meta' al centro (morsetti), segmento della sorgente e delle linee
+        static readonly string[] NbTutte = { "20 m", "17 m", "15 m", "12 m", "10 m", "6 m", "30 m", "40 m" };
+        const double F6 = 50.150, Z6 = 0.0, F30 = 10.125, F40 = 7.100;
+        // 1.0.10 (IC8TEM 16/11/2026 22:47 "va parallelo al dipolo dei 20mt", 22:48 "pero' segue comunque la prosecuzione della geometria
+        // dei bracci"): dipoli 30 e 40 m con la loro alimentazione (il kit ha il suo balun): ogni braccio parte dal centro, segue il W del
+        // 20 m (centro -> vertice a 30 gradi -> vertice a 90 gradi) e prosegue lungo l'esagono (vertice a 150 gradi, poi verso il retro) finche'
+        // la meta' del dipolo e' lunga quanto serve; quota sotto il 20 m (30 m a dz, 40 m a dz + 0,10 m). Quando si calcola un dipolo
+        // l'alimentazione della hex e l'altro dipolo hanno un carico di 50 ohm (il coassiale verso la radio), e viceversa.
+        // Prova con nec2c (scratchpad hex6/h34.py, R 3,217 m, dz 0,10 m, un dipolo per volta): 40 m meta' 10,36 m, 3,1 ohm, 2,97 dBi;
+        // 30 m meta' 7,31 m, 5,9 ohm, 3,48 dBi: piegati attorno a un esagono di 6,4 m le punte tornano verso il retro e la resistenza
+        // di radiazione e' di pochi ohm, quindi serve un adattamento (lo dice la scheda).
+        double l30 = double.NaN, l40 = double.NaN;
+        Complex z30 = Complex.Zero, z40 = Complex.Zero;
+        static double FreqB(int b) { return b == 5 ? F6 : b == 6 ? F30 : b == 7 ? F40 : Fb[b]; }      // spazio tra le due meta' al centro (morsetti), segmento della sorgente e delle linee
 
         // valori accordati con il pulsante "Risonanza" (null = misure di JN1GLB); valgono finche' non cambiano i dati della scheda
         double[] td, tr;
@@ -47,6 +58,8 @@ namespace YaNec.Engine
         {
             Key = "hexbeam"; Title = "Hexbeam 20-10 m"; Source = "G3TXQ (broadband hexbeam), misure del modello MMANA di JN1GLB (2008); M0OXO, N4KC/K4KIO, MM0OPX";
             Params.Add(CalcParam.Scelta("b", "Banda nel NEC", 0, "La banda di cui il motore calcola impedenza e diagramma (il modello contiene tutte le bande scelte).", NbTutte));
+            Params.Add(CalcParam.Scelta("d34", "Dipoli 30 / 40 m", 0, "Dipoli con la loro alimentazione, paralleli all'alimentato del 20 m e lungo i bracci dell'esagono.", "nessuno", "30 m", "40 m", "30 e 40 m"));
+            Params.Add(new CalcParam("dz", "Dipoli: distanza sotto il 20 m", 0.10, "m", "Quota del dipolo dei 30 m sotto il 20 m; il 40 m sta 0,10 m piu' in basso."));
             Params.Add(CalcParam.Scelta("e6", "6 m (50 MHz)", 0, "Il 6 m del modello di JN1GLB, sotto il 10 m: 2 elementi (riflettore e alimentato) o 3 elementi (con il direttore).", "nessuno", "2 elementi", "3 elementi"));
             Params.Add(new CalcParam("R", "Raggio delle punte del 20 m", 3.217, "m", "Distanza dall'asse del palo al vertice dell'esagono del 20 m (JN1GLB 3,217 m). Le altre bande seguono le proporzioni di JN1GLB."));
             Params.Add(new CalcParam("d", "Diametro del filo", 1.0, "mm"));
@@ -67,6 +80,10 @@ namespace YaNec.Engine
             double s = Math.Max(P("sb"), P("db") * 1.01), d = Math.Max(0.1, P("db"));
             return 120 * Math.Log(s / d + Math.Sqrt(s / d * (s / d) - 1));     // 120 acosh(s/d)
         }
+
+        // lunghezze di meta' dipolo: accordate dal pulsante Risonanza, altrimenti quelle della prova con nec2c scalate sul raggio
+        double L30(double k) { return !double.IsNaN(l30) ? l30 : 7.311 * k; }
+        double L40(double k) { return !double.IsNaN(l40) ? l40 : 10.358 * k; }
 
         string Mazzo(double[] tdv, double[] trv, int banda)
         {
@@ -114,11 +131,48 @@ namespace YaNec.Engine
                     for (int sg = 1; sg >= -1; sg -= 2) d.Ws(seg6, 0.66 * k, sg * 1.06 * k, z, 0.51 * k, sg * 1.15 * k, z, a, false, 1);
                 }
             }
+            // 1.0.10: dipoli 30 / 40 m lungo il W del 20 m e i bracci dell'esagono
+            int d34 = I("d34"), c30 = 0, c40 = 0;
+            double R20 = Rj[0] * k, zd = h - Math.Max(0.02, P("dz"));
+            foreach (int bd in new[] { 6, 7 })
+            {
+                if (bd == 6 && d34 != 1 && d34 != 3) continue;
+                if (bd == 7 && d34 != 2 && d34 != 3) continue;
+                double Lh = bd == 6 ? L30(k) : L40(k), z = bd == 6 ? zd : zd - 0.10, segd = C0 / FreqB(bd) / 40;
+                int cn = d.W(1, 0, -Gap / 2, z, 0, Gap / 2, z, a);
+                if (bd == 6) c30 = cn; else c40 = cn;
+                double c3 = R20 * Math.Cos(Math.PI / 6), s3 = R20 * Math.Sin(Math.PI / 6);
+                for (int sg = 1; sg >= -1; sg -= 2)
+                {
+                    double[][] pt = { new[] { 0, sg * Gap / 2 }, new[] { c3, sg * s3 }, new[] { 0, sg * R20 }, new[] { -c3, sg * s3 }, new[] { -R20 + 0.05, 0.0 } };
+                    double resto = Lh - Gap / 2;
+                    for (int i = 0; i < pt.Length - 1 && resto > 1e-4; i++)
+                    {
+                        double[] p0 = pt[i], q = pt[i + 1];
+                        double dd = Math.Sqrt((q[0] - p0[0]) * (q[0] - p0[0]) + (q[1] - p0[1]) * (q[1] - p0[1]));
+                        if (dd > resto) { q = new[] { p0[0] + (q[0] - p0[0]) * resto / dd, p0[1] + (q[1] - p0[1]) * resto / dd }; dd = resto; }
+                        d.Ws(segd, p0[0], p0[1], z, q[0], q[1], z, a, false, 2);
+                        resto -= dd;
+                    }
+                }
+            }
             d.Ground(h > 0 ? 2 : 0);
             // linee lungo il palo: lunghezza fisica = dislivello; nel NEC la lunghezza della TL e' elettrica (fisica / VF)
             for (int i = 0; i < nb - 1; i++) d.Tl(cen[i], 1, cen[i + 1], 1, z0, Math.Max(0.01, zq[i] - zq[i + 1]) / vf);
-            d.Ex(cen[0], 1);
-            return d.End(banda == 5 ? F6 : Fb[banda]);
+            if (banda == 6 && c30 > 0 || banda == 7 && c40 > 0)
+            {
+                d.Ld(0, cen[0], 1, 1, 50, 0, 0);
+                if (banda == 6 && c40 > 0) d.Ld(0, c40, 1, 1, 50, 0, 0);
+                if (banda == 7 && c30 > 0) d.Ld(0, c30, 1, 1, 50, 0, 0);
+                d.Ex(banda == 6 ? c30 : c40, 1);
+            }
+            else
+            {
+                if (c30 > 0) d.Ld(0, c30, 1, 1, 50, 0, 0);
+                if (c40 > 0) d.Ld(0, c40, 1, 1, 50, 0, 0);
+                d.Ex(cen[0], 1);
+            }
+            return d.End(FreqB(banda));
         }
 
         Complex Zin(double[] tdv, double[] trv, int banda)
@@ -126,7 +180,7 @@ namespace YaNec.Engine
             NecModel m = NecModel.Parse(Mazzo(tdv, trv, banda));
             SegmentGeometry g = m.BuildGeometry();
             Nec2Engine e = new Nec2Engine(g);
-            double f = banda == 5 ? F6 : Fb[banda];
+            double f = FreqB(banda);
             e.Solve(f, Analysis.EffectiveSources(m, g, f), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(f));
             return e.Sources[0].Z;
         }
@@ -176,16 +230,35 @@ namespace YaNec.Engine
             td = a; tr = b; firma = Firma();
             zAcc = new Complex[5];
             for (int i = 0; i < 5; i++) zAcc[i] = Zin(td, tr, i);
+            // 1.0.10: dipoli 30 / 40 m in risonanza (X = 0) cambiando la lunghezza, per bisezione
+            double kk = P("R") / Rj[0];
+            int d34 = I("d34");
+            for (int giro = 0; giro < 2; giro++)
+                foreach (int bd in new[] { 7, 6 })
+                {
+                    if (bd == 6 && d34 != 1 && d34 != 3 || bd == 7 && d34 != 2 && d34 != 3) continue;
+                    double l0 = bd == 6 ? L30(kk) : L40(kk), lo = l0 * 0.85, hi = l0 * 1.12;
+                    for (int it = 0; it < 22; it++)
+                    {
+                        double mid = (lo + hi) / 2;
+                        if (bd == 6) l30 = mid; else l40 = mid;
+                        if (Zin(td, tr, bd).Imaginary > 0) hi = mid; else lo = mid;
+                    }
+                }
+            if (d34 == 1 || d34 == 3) z30 = Zin(td, tr, 6);
+            if (d34 == 2 || d34 == 3) z40 = Zin(td, tr, 7);
             return 1;
         }
 
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
-            if (firma != null && firma != Firma()) { td = tr = null; zAcc = null; firma = null; }
+            if (firma != null && firma != Firma()) { td = tr = null; zAcc = null; firma = null; l30 = l40 = double.NaN; z30 = z40 = Complex.Zero; }
             bool acc = td != null;
             double[] tdv = acc ? td : TdJ, trv = acc ? tr : TrJ;
-            int banda = Math.Max(0, Math.Min(5, I("b")));
+            int banda = Math.Max(0, Math.Min(7, I("b")));
+            int d34c = I("d34");
+            if (banda == 6 && d34c != 1 && d34c != 3 || banda == 7 && d34c != 2 && d34c != 3) { banda = 0; o.Warnings.Add("Banda nel NEC " + NbTutte[I("b")] + " senza quel dipolo nel modello: sceglierlo nella riga \"Dipoli 30 / 40 m\"; il calcolo resta sul 20 m."); }
             if (banda == 5 && I("e6") == 0) { banda = 0; o.Warnings.Add("Banda nel NEC 6 m senza il 6 m nel modello: scegliere 2 o 3 elementi nella riga \"6 m (50 MHz)\"; il calcolo resta sul 20 m."); }
             double k = P("R") / Rj[0], vf, z0 = Z0Linea(out vf);
             for (int i = 0; i < 5; i++)
@@ -203,6 +276,19 @@ namespace YaNec.Engine
                     s6 + ", " + Calcolatori.N((Zj[4] - Z6) * k6, 2) + " m sotto il 10 m" + (I("e6") == 2 ? ", direttore a U" : "") + "; nec2c: " + (I("e6") == 2 ? "33 +j11 Ω, 6,96 dBi, F/B 19,6 dB" : "44 +j6,5 Ω, 6,50 dBi, F/B 14,6 dB"), banda == 5);
                 o.Oks.Add("6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)");
             }
+            if (d34c > 0)
+            {
+                foreach (int bd in new[] { 6, 7 })
+                {
+                    if (bd == 6 && d34c != 1 && d34c != 3 || bd == 7 && d34c != 2 && d34c != 3) continue;
+                    double lh = bd == 6 ? L30(k) : L40(k);
+                    Complex zz = bd == 6 ? z30 : z40;
+                    bool fatto = bd == 6 ? !double.IsNaN(l30) : !double.IsNaN(l40);
+                    o.Card("Dipolo " + NbTutte[bd], "2 x " + Calcolatori.N(lh, 3) + " m",
+                        (fatto ? "in risonanza, Z " + Calcolatori.Cx(zz) : "lunghezza di partenza (pulsante Risonanza per accordarlo)") + "; lungo il W del 20 m e i bracci, " + Calcolatori.N(P("dz") + (bd == 7 ? 0.10 : 0), 2) + " m sotto il 20 m", banda == bd);
+                }
+                o.Warnings.Add("Dipoli 30 / 40 m piegati attorno all'esagono: le punte tornano verso il retro e la resistenza di radiazione e' di pochi ohm (prova con nec2c: 40 m 3 Ω, 30 m 6 Ω), quindi serve un adattamento (balun o un-un a rapporto alto, o un gamma); il ROS su 50 Ω del calcolo lo mostra.");
+            }
             double vs = (Zj[0] - Zj[4]) * k;
             o.Card("Collegamento", I("col") == 0 ? "coassiale " + Calcolatori.N(z0, 0) + " Ω" : "bacchetta " + Calcolatori.N(z0, 0) + " Ω",
                 "spezzoni tra le quote: " + Calcolatori.N((Zj[0] - Zj[1]) * k, 2) + " / " + Calcolatori.N((Zj[1] - Zj[2]) * k, 2) + " / " + Calcolatori.N((Zj[2] - Zj[3]) * k, 2) + " / " + Calcolatori.N((Zj[3] - Zj[4]) * k, 2) + " m, VF " + Calcolatori.N(vf, 2));
@@ -212,7 +298,7 @@ namespace YaNec.Engine
             if (I("col") == 1 && z0 > 75)
                 o.Warnings.Add("Bacchetta da " + Calcolatori.N(z0, 0) + " Ω: la distribuzione funziona con una linea di circa 50 Ω (G3TXQ usa spezzoni di coassiale). Con una linea ad alta impedenza le bande alte non si adattano (prova con nec2c: ROS da 2 a 9 con 120-300 Ω).");
             if (Math.Abs(k - 1) > 0.1) o.Warnings.Add("Raggio molto diverso da JN1GLB: le proporzioni restano quelle del suo modello, conviene accordare con il pulsante Risonanza.");
-            o.Warnings.Add("Il kit 30/40 m e' separato, con il suo balun e la sua discesa: non e' in questo modello.");
+            if (d34c == 0) o.Warnings.Add("Il kit 30/40 m e' separato, con il suo balun e la sua discesa: si aggiunge con la riga \"Dipoli 30 / 40 m\".");
             o.Formula = "Geometria G3TXQ dal modello di JN1GLB: per ogni banda un esagono di raggio R; alimentato a W = R + td R per lato (dal centro al vertice a 30 gradi e lungo il lato), " +
                 "riflettore a U = 3 R + 2 tr R, spazio tra le punte (1 - td - tr) R. JN1GLB: td = 0,744 / 0,711 / 0,705 / 0,702 / 0,694, tr = 0,136 / 0,114 / 0,110 / 0,111 / 0,121. " +
                 "Bande collegate al centro con spezzoni di linea lungo il palo (TL nel NEC, lunghezza elettrica = dislivello / VF), alimentazione in alto al 20 m (M0OXO, N4KC). " +
@@ -226,7 +312,7 @@ namespace YaNec.Engine
             o.Chart = new CalcChart { Title = "Lunghezza di ogni meta' dell'alimentato per banda", XLabel = "MHz", YLabel = "m" };
             o.Chart.X = (double[])Fb.Clone(); o.Chart.Y = new double[5];
             for (int i = 0; i < 5; i++) o.Chart.Y[i] = Rj[i] * k * (1 + tdv[i]) + Gap / 2;
-            o.Chart.MarkX = banda == 5 ? Fb[4] : Fb[banda]; o.Chart.MarkText = NbTutte[banda];
+            o.Chart.MarkX = banda >= 5 ? (banda == 5 ? Fb[4] : Fb[0]) : Fb[banda]; o.Chart.MarkText = NbTutte[banda];
             return o;
         }
     }
