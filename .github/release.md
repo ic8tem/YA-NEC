@@ -2,8 +2,9 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novita' 1.0.7:** due correzioni (motore di calcolo invariato):
+**Novita' 1.0.7:** tre correzioni (motore di calcolo invariato):
 - Segmentazione: un filo alimentato al centro con un numero pari di segmenti, corretto a un numero dispari, ha di nuovo la sorgente sul segmento centrale (prima poteva finire un segmento fuori centro);
+- Loop magnetica: il modello NEC del calcolatore usa il materiale scelto (rame, alluminio, ottone) invece dei fili senza perdite, e il nuovo pulsante "Accorda il condensatore (NEC)" porta la loop in risonanza nel modello (prima la verifica dava efficienza 100 % e ROS oltre 500);
 - Dipolo multibanda, manica aperta: l'accordo non avvicina piu' gli elementi sotto 3 diametri (almeno 2 cm), e un nuovo controllo (k7) avvisa se la distanza scritta e' piu' piccola: con tubi quasi a contatto il NEC-2 non e' affidabile.
 
 **Dalla 1.0.6:** Cavi RG, il cambio d'impedenza segue la frequenza della scheda; tempo reale, angoli a -3 dB "omni" per le antenne omnidirezionali.

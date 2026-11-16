@@ -112,6 +112,21 @@ namespace YaNec
                 Passo("Segmentazione: dipolo da 4 segmenti alimentato al 2 (1.0.7)", "sorgente al segmento centrale del filo corretto",
                     "filo da " + nseg + " segmenti, sorgente al " + ms2.Sources[0].Seg, nseg % 2 == 1 && ms2.Sources[0].Seg == (nseg + 1) / 2);
             }
+            {
+                // 1.0.7: loop magnetica, materiale nel modello (LD 5) e condensatore accordato con il NEC
+                CalcLoopMagnetica lm = new CalcLoopMagnetica();
+                CalcOutput ol = lm.Compute();
+                bool ld5 = ol.Nec.Contains("LD 5 0 0 0");
+                lm.Tune(7.1);
+                NecModel ml = NecModel.Parse(lm.Compute().Nec);
+                SegmentGeometry gl = Analysis.GeometriaDiCalcolo(ml, 7.1);
+                Nec2Engine el = new Nec2Engine(gl);
+                el.Solve(7.1, Analysis.EffectiveSources(ml, gl, 7.1), ml.EffectiveLoads(), ml.Ground, ml.ExtendedKernel, ml.Rkh, ml.EffectiveNetworks(7.1));
+                System.Numerics.Complex zl = el.Sources[0].Z;
+                Passo("loop magnetica 1 m a 7,1 MHz: rame nel modello e C accordato (1.0.7)", "LD 5 nel modello; in risonanza R sul loop di accoppiamento oltre 5 ohm (prima 0,1 ohm)",
+                    (ld5 ? "LD 5 presente" : "LD 5 assente") + ", C x " + lm.Scale.ToString("0.0000", CI) + ", Z " + zl.Real.ToString("0.0", CI) + " " + zl.Imaginary.ToString("+0.0;-0.0", CI) + "j ohm",
+                    ld5 && zl.Real > 5);
+            }
             ProvaCodice("k4", "stack a 0,5 m con la DL6WU a 2 m", ControlliDati.Stack(0.5, double.NaN, 2.0, double.NaN), false);
             {
                 // due quadrati verticali di 0,5 m uno sopra l'altro a 0,3 m: si toccano

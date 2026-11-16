@@ -517,6 +517,7 @@ namespace YaNec.Engine
 
     public class CalcLoopMagnetica : SimpleCalc
     {
+        double cScaledFormula(double cap) { return cap * Scale; }
         static readonly double[] Sigma = { 5.8e7, 3.5e7, 1.5e7 };
         static readonly string[] Mat = { "tubo di rame", "tubo di alluminio", "tubo di ottone" };
         public CalcLoopMagnetica()
@@ -530,7 +531,42 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("p", "Potenza", 100, "W"));
             Params.Add(new CalcParam("h", "Quota", 3, "m", "Quota del centro per il calcolo con il terreno (0 = spazio libero)."));
             Params.Add(CalcParam.Scelta("acc", "Accoppiamento", 0, null, "loop di Faraday D/5", "gamma"));
-            CanTune = false;   // risonanza strettissima (Q di migliaia): il condensatore si ritocca a mano
+            // 1.0.7 (IC8TEM 16/11/2026 19:54 "procedi"): "Accorda il condensatore (NEC)" cerca il C che porta la loop in risonanza nel modello
+            // NEC (prima: CanTune = false e il C di formula lasciava la loop fuori risonanza, ROS 533 sul loop di accoppiamento)
+        }
+
+        public override string TuneLabel { get { return "Accorda il condensatore (NEC)"; } }
+
+        /// <summary>1.0.7: fattore del condensatore che porta in risonanza la loop principale: massimo della resistenza vista dal loop di
+        /// accoppiamento. Con Q di migliaia la risonanza e' larga circa 2/Q in C: prima una scansione fitta (passo 0,02 %) su +-4 %, poi la
+        /// sezione aurea attorno al massimo.</summary>
+        public override double Tune(double fmhz)
+        {
+            Func<double, double> rin = sc =>
+            {
+                Scale = sc;
+                CalcOutput o = Compute();
+                NecModel m = NecModel.Parse(o.Nec);
+                SegmentGeometry g = Analysis.GeometriaDiCalcolo(m, fmhz);
+                Nec2Engine e = new Nec2Engine(g);
+                e.Solve(fmhz, Analysis.EffectiveSources(m, g, fmhz), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(fmhz));
+                return e.Sources[0].Z.Real;
+            };
+            double best = 1, rb = double.MinValue;
+            for (int k = -200; k <= 200; k++)
+            {
+                double sc = 1 + k * 0.0002, r = rin(sc);
+                if (r > rb) { rb = r; best = sc; }
+            }
+            double a = best - 0.0002, c = best + 0.0002, gr = (Math.Sqrt(5) - 1) / 2;
+            double x1 = c - gr * (c - a), x2 = a + gr * (c - a), f1 = rin(x1), f2 = rin(x2);
+            for (int it = 0; it < 30; it++)
+            {
+                if (f1 > f2) { c = x2; x2 = x1; f2 = f1; x1 = c - gr * (c - a); f1 = rin(x1); }
+                else { a = x1; x1 = x2; f1 = f2; x2 = a + gr * (c - a); f2 = rin(x2); }
+            }
+            Scale = (a + c) / 2;
+            return Scale;
         }
 
         static void Forma(int forma, double D, out double A, out double per, out double Deq)
@@ -586,12 +622,13 @@ namespace YaNec.Engine
             o.Formula = "Formule: Rr = 31171 A²/λ⁴; Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, " +
                 "W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai " +
                 "valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare.";
+            if (Scale != 1) o.Card("C accordato (NEC)", Calcolatori.Farad(cScaledFormula(cap)), "risonanza nel modello, " + Calcolatori.N((Scale - 1) * 100, 2) + " % dalla formula");
             if (v > 1000) o.Warnings.Add(Calcolatori.N(v / 1000, 1) + " kV sul condensatore: serve un variabile a vuoto o con spaziatura adeguata.");
             if (bw < 10000) o.Warnings.Add("banda di " + Calcolatori.N(bw / 1000, 1) + " kHz: va riaccordato a ogni spostamento.");
             if (per < lam / 4) o.Oks.Add("circonferenza sotto 0,25 lambda: formule del piccolo loop valide.");
             else o.Warnings.Add("circonferenza oltre 0,25 lambda: le formule del piccolo loop non valgono piu', conta il NEC.");
             o.Oks.Add("Le giunzioni saldate o a vite aggiungono perdite (qui non contate).");
-            o.Oks.Add("Verifica NEC: con il C di formula la loop e' gia' vicina alla risonanza (prova nec2c a 7,1 MHz: picco tra 200 e 205 pF); con Q di migliaia pochi pF spostano Z, come nella realta'.");
+            o.Oks.Add("Verifica NEC: con il C di formula la loop e' vicina alla risonanza ma, con Q di migliaia, pochi decimi di pF spostano Z, come nella realta': \"Accorda il condensatore (NEC)\" trova il C esatto del modello (dalla 1.0.7).");
 
             o.Chart = new CalcChart { Title = "Efficienza al variare del diametro (" + Calcolatori.N(P("f"), 1) + " MHz, tubo " + Calcolatori.N(P("d"), 0) + " mm)", XLabel = "m", YLabel = "%" };
             o.Chart.X = Calcolatori.Lin(0.5, 2.5, 41); o.Chart.Y = new double[41];
@@ -642,6 +679,9 @@ namespace YaNec.Engine
             }
             dk.Ground(h > 0 ? 2 : 0);
             dk.Ld(0, capTag == 0 ? 1 : capTag, 1, 1, 0, 0, cScaled);
+            // 1.0.7: il materiale scelto entra nel modello (LD 5 su tutti i fili): prima i fili erano senza perdite e la verifica NEC dava
+            // efficienza 100 % e 5,6 dBi contro il 16 % delle formule
+            dk.Ld(5, 0, 0, 0, Sigma[mat], 0, 0);
             dk.Ex(feedTag, feedSeg);
             o.Nec = dk.End(P("f"));
             o.Plane = "xz";
