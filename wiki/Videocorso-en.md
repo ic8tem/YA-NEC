@@ -158,9 +158,17 @@ A 10-element DL6WU long Yagi (Günter Hoch DL6WU) for 144 MHz: formula estimate,
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_16_vhf_uhf_advanced_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_16_vhf_uhf_advanced_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_17_vhf_roof_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_17.jpg" alt="Lesson 17 - VHF antennas on a roof"></a></td><td>
+
+### Lesson 17 - VHF antennas on a roof
+
+The DK7ZB 7-element EME Yagi (MMANA example) 3 m above a slab at 15 m: the Antenna on a roof tool computes both cases, real ground under the building (19.28 dBi at 1.7 degrees) and an ITU-R P.2040 concrete slab (18.19 dBi at 9.1 degrees); then the elevation pattern over the slab.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_17_vhf_roof_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_17_vhf_roof_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **17** · VHF antennas on a roof
 - **18** · VHF stacks of short (DK7ZB) and long (DL6WU) antennas, noise and G/T
 - **19** · Loop Yagi for 1296 MHz
 - **20** · Satellites: Eggbeater, QFH, Quagi

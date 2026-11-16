@@ -158,9 +158,17 @@ Yagi lunga DL6WU (Günter Hoch DL6WU) 10 elementi per i 144 MHz: stima della for
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_16_vhf_uhf_avanzato_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_16_vhf_uhf_avanzato_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_17_vhf_tetto_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_17.jpg" alt="Lezione 17 - Antenne VHF su un tetto"></a></td><td>
+
+### Lezione 17 - Antenne VHF su un tetto
+
+La Yagi 7 elementi EME di DK7ZB (esempio MMANA) a 3 m sopra un solaio a 15 m: lo strumento Antenna su tetto calcola i due casi, terreno vero sotto il fabbricato (19,28 dBi a 1,7 gradi) e solaio in calcestruzzo ITU-R P.2040 (18,19 dBi a 9,1 gradi); poi il diagramma di elevazione sul solaio.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_17_vhf_tetto_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_17_vhf_tetto_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **17** · Antenne VHF su un tetto
 - **18** · Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T
 - **19** · Loop Yagi per i 1296 MHz
 - **20** · Satelliti: Eggbeater, QFH, Quagi

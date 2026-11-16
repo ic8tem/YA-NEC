@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 17: antenne VHF su un tetto
+
+2
+00:00:04,000 --> 00:00:15,608
+Corso YA-NEC, lezione 17: antenne VHF su un tetto. Esempi: la Yagi 7 elementi EME di DK7ZB per i 144 MHz, da un file MMANA.
+
+3
+00:00:15,658 --> 00:00:22,208
+Nello spazio libero: 28,2 + j0,8 ohm (un progetto a 28 ohm), 13,35 dBi, F/B 23,9 dB.
+
+4
+00:00:22,258 --> 00:00:36,416
+Calcolatori, Strumenti, 'Antenna su tetto (solaio)'.
+
+5
+00:00:36,466 --> 00:00:44,216
+Solaio a 15 m dal suolo. Il modello e' a z = 0, quindi lo strumento avvisa: l'antenna tocca il solaio.
+
+6
+00:00:44,266 --> 00:00:50,418
+'Quota da aggiungere al modello': 3 m sopra il solaio.
+
+7
+00:00:50,468 --> 00:00:55,418
+18 m dal suolo in tutto, 8,65 lunghezze d'onda.
+
+8
+00:00:55,468 --> 00:01:16,495
+'Calcola i due casi (NEC)'.
+
+9
+00:01:16,545 --> 00:01:29,495
+Caso HF, il terreno vero sotto il fabbricato a 18 m: 19,28 dBi a 1,7 gradi di elevazione. Caso VHF, il solaio in calcestruzzo sotto l'antenna (ITU-R P.2040): 18,19 dBi a 9,1 gradi.
+
+10
+00:01:29,545 --> 00:01:38,162
+L'impedenza quasi non cambia - 28,2 o 28,1 ohm - ma l'elevazione del lobo si': 1,7 o 9,1 gradi, e 1 dB di guadagno.
+
+11
+00:01:38,212 --> 00:01:48,362
+La realta' sta in mezzo: piu' la frequenza e' alta e il tetto grande, piu' vale il caso del solaio. Per l'EME al sorgere della Luna conta.
+
+12
+00:01:48,412 --> 00:02:05,564
+Caso 'VHF/UHF: solaio', 'Apri come modello', Diagrammi.
+
+13
+00:02:05,614 --> 00:02:13,231
+Elevazione sopra il solaio: il lobo si stacca dall'orizzonte, con i primi lobi di riflessione sopra.
+
+14
+00:02:13,281 --> 00:02:24,231
+Nel menu Terreno ci sono anche le due voci del solaio in calcestruzzo (VHF-UHF ITU-R P.2040, HF Perotoni 2019), con i valori che seguono la frequenza.
+
+15
+00:02:24,281 --> 00:02:30,231
+Un tetto non e' spazio libero e non e' terreno semplice: due casi, affiancati, con un clic. Prossima lezione: stack VHF, rumore e G/T. 73 de IC8TEM
