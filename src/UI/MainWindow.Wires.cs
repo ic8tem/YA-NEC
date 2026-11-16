@@ -92,6 +92,7 @@ namespace YaNec
         TextBox txtFx;
         WireRow activeRow;
         int activeCol = -1, selFrom = -1, selTo = -1;
+        Maniglia manigliaFili;
         bool fxSync;
 
         Control BuildWiresTable()
@@ -181,6 +182,16 @@ namespace YaNec
             inner.Children.Add(new ScrollViewer { Content = wiresPanel.Lista, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled });
             ScrollViewer hs = new ScrollViewer { Content = inner, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto, VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled };
             d.Children.Add(hs);
+            // 1.0.11: maniglia di riempimento (come Excel); il riempimento si applica subito, Ctrl+Z lo toglie
+            manigliaFili = new Maniglia(d, () => { List<TextBox[]> l = new List<TextBox[]>(); foreach (WireRow w in RigheModificabili()) l.Add(w.Cells); return l; },
+                celle => ApplyWires(),
+                () =>
+                {
+                    if (selFrom < 0 || selFrom == selTo) return null;
+                    List<WireRow> ed = RigheModificabili();
+                    int a = ed.IndexOf(wireRows[Math.Min(selFrom, selTo)]), b = ed.IndexOf(wireRows[Math.Max(selFrom, selTo)]);
+                    return a >= 0 && b >= a ? new[] { a, b } : null;
+                });
             RefreshWiresTable();
             return new Border
             {
@@ -498,7 +509,7 @@ namespace YaNec
                 TextBox tb = new TextBox { Text = shown[k], FontFamily = Pal.Mono };
                 tb.Classes.Add("xl");
                 tb.KeyDown += (s, e) => TastoCella(r, col, e);
-                tb.GotFocus += (s, e) => { tb.SelectAll(); AttivaCella(r, col); };
+                tb.GotFocus += (s, e) => { tb.SelectAll(); AttivaCella(r, col); if (col > 0) manigliaFili?.Attiva(tb); else manigliaFili?.Attiva(null); };
                 // rotella sulla cella attiva: cambia il numero e ricalcola (0.4.2, idea di yagi_designer, approvata il 13/11/2026);
                 // coordinate 1 mm, raggio 0,1 mm, segmenti 1 (Maiusc: x10)
                 tb.PointerWheelChanged += (s, e) =>

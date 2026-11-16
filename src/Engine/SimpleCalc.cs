@@ -18,11 +18,18 @@ namespace YaNec.Engine
         public string[] Choices;                 // scelta a pillole (fino a 4 voci) o a tendina: Value = indice
         public string Hint;                      // testo grigio dopo l'unita' (aggiornato da Compute)
         public bool Pillole;                     // 0.5.3: scelta sempre a pillole (anche oltre 4 voci, vanno a capo)
+        // 1.0.11 (bozzetti approvati da IC8TEM il 16/11/2026 23:48): schede in sezioni numerate
+        public string Sezione;                   // titolo della sezione che si apre con questo parametro ("2 · Braccio e bobina")
+        public Func<bool> Visibile;              // null = sempre; la sezione si vede se si vede il suo primo parametro
+        public bool StessaRiga;                  // scelta a pillole sulla stessa riga della scelta precedente
+        public double[][] Figure;                // scelta a tessere con figurina: per voce x,y del poligono (0..1) e per ultimo x,y del balun
+        public string[] Sotto;                   // riga piccola sotto la voce della tessera
         public CalcParam(string key, string label, double value, string unit, string tip = null) { Key = key; Label = label; Value = value; Unit = unit; Tip = tip; }
         public static CalcParam Scelta(string key, string label, int sel, string tip, params string[] voci)
         {
             return new CalcParam(key, label, sel, "", tip) { Choices = voci };
         }
+        public CalcParam ConSezione(string titolo) { Sezione = titolo; return this; }
     }
 
     /// <summary>Riquadro dei risultati (bozzetto approvato dei calcolatori delle forme semplici).</summary>
@@ -355,15 +362,24 @@ namespace YaNec.Engine
         public CalcDelta()
         {
             Key = "delta"; Title = "Delta loop"; Family = "Filari"; Source = "ARRL Antenna Book: perimetro 1005/f piedi = 306,3/f m; posizioni di alimentazione e polarizzazione (ARRL Antenna Book, Cebik W4RNL)";
-            Params.Add(new CalcParam("f", "Frequenza", 14.2, "MHz"));
-            Params.Add(CalcParam.Scelta("forma", "Forma", 0, null, "equilatera", "schiacciata", "allungata"));
-            Params.Add(CalcParam.Scelta("vert", "Vertice", 0, null, "in alto", "in basso"));
-            Params.Add(CalcParam.Scelta("ali", "Balun / alimentazione", 0, "Polarizzazione: orizzontale al centro del lato orizzontale o al vertice; verticale sul lato inclinato a lambda/4 dal centro del lato orizzontale; mista all'angolo.",
-                "centro del lato orizzontale", "al vertice", "all'angolo", "lato a lambda/4"));
+            // 1.0.11 (bozzetto approvato da IC8TEM il 16/11/2026 23:48): 1 Dimensioni, 2 Forma (forma e vertice sulla stessa riga),
+            // 3 Balun / alimentazione a tessere con la figurina (prima le figurine stavano nel disegno e si sovrapponevano)
+            Params.Add(new CalcParam("f", "Frequenza", 14.2, "MHz") { Sezione = "1 · Dimensioni" });
             Params.Add(new CalcParam("d", "Diametro del filo", 2, "mm"));
             Params.Add(new CalcParam("h", "Quota del punto piu' basso (0 = spazio libero)", 8, "m"));
             // 0.4.8 (IC8TEM 13/11/2026 23:53): altezza del triangolo fissata, con qualsiasi forma, vertice e alimentazione
             Params.Add(new CalcParam("H", "Altezza del triangolo (0 = dalla forma)", 0, "m", "Distanza tra il lato orizzontale e il vertice. Se e' data, la forma si ricava dal perimetro e da questa altezza."));
+            Params.Add(CalcParam.Scelta("forma", "Forma", 0, null, "equilatera", "schiacciata", "allungata").ConSezione("2 · Forma"));
+            CalcParam pv = CalcParam.Scelta("vert", "vertice", 0, null, "in alto", "in basso");
+            pv.StessaRiga = true;
+            Params.Add(pv);
+            CalcParam pa = CalcParam.Scelta("ali", "Balun / alimentazione", 0, "Polarizzazione: orizzontale al centro del lato orizzontale o al vertice; verticale sul lato inclinato a lambda/4 dal centro del lato orizzontale; mista all'angolo.",
+                "centro del lato orizzontale", "al vertice", "all'angolo", "lato a λ/4").ConSezione("3 · Balun / alimentazione (dà la polarizzazione)");
+            double[] tri = { 0.1, 0.9, 0.5, 0.1, 0.9, 0.9 };
+            Func<double, double, double[]> fig = (x, y) => new[] { tri[0], tri[1], tri[2], tri[3], tri[4], tri[5], x, y };
+            pa.Figure = new[] { fig(0.5, 0.9), fig(0.5, 0.1), fig(0.1, 0.9), fig(0.72, 0.52) };
+            pa.Sotto = new[] { "orizzontale", "orizzontale", "mista", "verticale" };
+            Params.Add(pa);
         }
         public override CalcOutput Compute()
         {
@@ -425,30 +441,13 @@ namespace YaNec.Engine
             if (pol == "orizzontale") o.Mark(2, cxm - b * 0.12, cym, "E", 1, cxm + b * 0.12, cym);
             else if (pol == "verticale") o.Mark(2, cxm, cym - ht * 0.15, "E", 1, cxm, cym + ht * 0.15);
             else o.Mark(2, cxm - b * 0.1, cym - ht * 0.1, "E", 1, cxm + b * 0.1, cym + ht * 0.1);
-            o.Mark(0, b / 2 + b * 0.05, zb + (giu ? ht * 0.05 : -ht * 0.08), "balun: " + Params[3].Choices[ali], 1);
+            // 1.0.11: didascalia sotto il triangolo, su due righe (prima a destra del balun, tagliata dal bordo); figurine passate ai pulsanti
+            double sotto = Math.Min(zb, za) - ht * 0.18;
+            o.Mark(0, -b / 2, sotto, "balun: " + Par("ali").Choices[ali], 1);
+            o.Mark(0, -b / 2, sotto - ht * 0.16, "polarizzazione " + pol, 3);
             // quota H dell'altezza del triangolo, a sinistra (disegno di IC8TEM 13/11/2026 23:53)
             o.Mark(7, -b / 2 - b * 0.12, Math.Min(zb, za), "H " + Calcolatori.N(ht, 2), 3, -b / 2 - b * 0.12, Math.Max(zb, za));
-            // figurine stilizzate delle configurazioni: quella scelta in arancio
-            {
-                double sz = b * 0.32, gy = Math.Min(zb, za) - ht * 0.45, passo = b * 0.62, x0 = -1.5 * passo;
-                string[] cap = { "base, vertice su: H", "vertice giu': H", "lato a λ/4: V", "angolo: mista" };
-                for (int f2 = 0; f2 < 4; f2++)
-                {
-                    bool sel = (f2 == 0 && ali == 0 && !giu) || (f2 == 1 && (ali == 1 || (ali == 0 && giu))) || (f2 == 2 && ali == 3) || (f2 == 3 && ali == 2);
-                    int col = sel ? 1 : 3;
-                    double cxm2 = x0 + f2 * passo, hh = sz * 0.87;
-                    bool down = f2 == 1;
-                    double ybase = down ? gy : gy - hh, yap = down ? gy - hh : gy;
-                    o.Mark(2, cxm2 - sz / 2, ybase, null, col, cxm2 + sz / 2, ybase);
-                    o.Mark(2, cxm2 + sz / 2, ybase, null, col, cxm2, yap);
-                    o.Mark(2, cxm2, yap, null, col, cxm2 - sz / 2, ybase);
-                    double fx = f2 == 0 ? cxm2 : f2 == 1 ? cxm2 : f2 == 2 ? cxm2 + sz * 0.35 : cxm2 + sz / 2;
-                    double fy = f2 == 0 ? ybase : f2 == 1 ? yap : f2 == 2 ? (ybase + yap) / 2 + hh * 0.1 : ybase;
-                    o.Mark(4, fx, fy, null, 1);
-                    o.Mark(0, cxm2 - sz / 2, Math.Min(ybase, yap) - hh * 0.25, cap[f2], col);
-                }
-                o.HideGround = true;
-            }
+            o.HideGround = true;
             if (ali == 3) o.Oks.Add("balun a lambda/4 (" + Calcolatori.N(lam / 4, 2) + " m) dal centro del lato orizzontale: massimo di corrente sui lati inclinati, polarizzazione verticale");
             if (h > 0 && h < 2) o.Warnings.Add("Il punto piu' basso e' sotto 2 m: perdite nel terreno e rischio di contatto.");
             return o;

@@ -193,17 +193,88 @@ namespace YaNec.Engine
 
     public class CalcTrappolato : SimpleCalc
     {
+        bool Singola { get { return I("modo") == 1; } }
         public CalcTrappolato()
         {
-            Key = "trappolato"; Title = "Dipolo trappolato (tipo W3DZZ)"; Source = "W3DZZ (trappole a 7,05 MHz, 60 pF / 8,2 uH); modello a linea del monopolo caricato; C. L. Buchanan W3DZZ, \"The Multimatch Antenna System\", QST marzo 1955 pp. 22-23";
-            Params.Add(new CalcParam("f1", "Banda alta (risonanza delle trappole)", 7.05, "MHz"));
-            Params.Add(new CalcParam("f2", "Banda bassa", 3.75, "MHz"));
-            Params.Add(new CalcParam("c", "Condensatore della trappola", 60, "pF"));
-            Params.Add(new CalcParam("q", "Q della trappola", 150, ""));
-            Params.Add(new CalcParam("d", "Diametro del filo", 2, "mm"));
+            Key = "trappolato"; Title = "Dipolo trappolato (tipo W3DZZ)"; Source = "W3DZZ (trappole a 7,05 MHz, 60 pF / 8,2 uH); modello a linea del monopolo caricato; C. L. Buchanan W3DZZ, \"The Multimatch Antenna System\", QST marzo 1955 pp. 22-23; " +
+                "bobina di carico: ARRL Antenna Book, antenne corte caricate (stesso modello a linea)";
+            // 1.0.11 (IC8TEM 16/11/2026 23:37, bozzetto approvato alle 23:48): modo a singola banda con la bobina di carico, la sua posizione
+            // in % del braccio e la lunghezza del braccio scelte da chi progetta
+            Params.Add(CalcParam.Scelta("modo", "Modo di calcolo", 0, "Due bande: trappole LC parallele (W3DZZ). Singola banda: dipolo accorciato con una bobina per braccio.",
+                "due bande (trappole W3DZZ)", "singola banda (bobina di carico)").ConSezione("1 · Modo di calcolo"));
+            Func<bool> due = () => !Singola, una = () => Singola;
+            Params.Add(new CalcParam("f1", "Banda alta (risonanza delle trappole)", 7.05, "MHz") { Sezione = "2 · Trappole", Visibile = due });
+            Params.Add(new CalcParam("f2", "Banda bassa", 3.75, "MHz") { Visibile = due });
+            Params.Add(new CalcParam("c", "Condensatore della trappola", 60, "pF") { Visibile = due });
+            Params.Add(new CalcParam("q", "Q della trappola", 150, "") { Visibile = due });
+            Params.Add(new CalcParam("fs", "Frequenza", 7.1, "MHz") { Sezione = "2 · Braccio e bobina", Visibile = una });
+            Params.Add(new CalcParam("A", "Lunghezza del braccio (centro → punta)", 6.5, "m", "Meta' del dipolo, dal centro alla punta. Deve essere piu' corta di un quarto d'onda: la bobina allunga elettricamente il braccio.") { Visibile = una });
+            Params.Add(new CalcParam("pb", "Posizione della bobina (% del braccio dal centro)", 50, "%", "0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).") { Visibile = una });
+            Params.Add(new CalcParam("qb", "Q della bobina", 200, "", "Perdita della bobina: R = X / Q. Bobine in aria ben fatte 200-400.") { Visibile = una });
+            Params.Add(new CalcParam("d", "Diametro del filo", 2, "mm") { Sezione = "3 · Filo e quota" });
             Params.Add(new CalcParam("h", "Quota (0 = spazio libero)", 15, "m"));
         }
-        public override CalcOutput Compute()
+        public override CalcOutput Compute() { return Singola ? ComputeSingola() : ComputeDue(); }
+
+        /// <summary>Reattanza della bobina di carico a una posizione del braccio (modello a linea): X = Z0 (cot(beta b) - tan(beta a)),
+        /// a = tratto interno, b = tratto esterno. Z0 del tratto esterno 60 (ln(b/r) - 1): con questa scelta la stima resta entro circa il 15 %
+        /// dal NEC tra il 20 e il 70 % del braccio (prove del 16/11/2026); il valore esatto lo da' "Porta in risonanza (NEC)".</summary>
+        public static double ReattanzaCarico(double fMHz, double braccio, double frazione, double raggio)
+        {
+            double beta = 2 * Math.PI * fMHz / C0, ai = braccio * frazione, bo = braccio - ai;
+            double z0 = 60 * (Math.Log(Math.Max(bo, 10 * raggio) / raggio) - 1);
+            return z0 * (1 / Math.Tan(beta * bo) - Math.Tan(beta * ai));
+        }
+
+        CalcOutput ComputeSingola()
+        {
+            CalcOutput o = new CalcOutput();
+            double f = P("fs"), A = Math.Max(0.1, P("A")), pc = Math.Max(1, Math.Min(95, P("pb"))) / 100, Q = Math.Max(10, P("qb")), a = P("d") / 2000, h = P("h");
+            double w = 2 * Math.PI * f * 1e6, lam = C0 / f;
+            double X = ReattanzaCarico(f, A, pc, a);
+            bool serve = X > 0;
+            double L = Math.Max(1e-9, X / w) * Scale;
+            double inner = A * pc, outer = A - inner, piena = 142.6 / f;
+            o.Card("Bobina di carico", serve ? Calcolatori.Henry(L) : "non serve", serve ? "+j" + Calcolatori.N(w * L, 0) + " Ω a " + Calcolatori.N(f, 3) + " MHz" : "braccio gia' lungo un quarto d'onda", true);
+            o.Card("Tratto interno", Calcolatori.N(inner, 2) + " m", "centro → bobina (" + Calcolatori.N(pc * 100, 0) + " %)");
+            o.Card("Tratto esterno", Calcolatori.N(outer, 2) + " m", "bobina → punta");
+            o.Card("Lunghezza totale", Calcolatori.N(2 * A, 2) + " m", "contro " + Calcolatori.N(piena, 1) + " m a grandezza piena (" + (2 * A < piena ? "−" : "+") + Calcolatori.N(Math.Abs(1 - 2 * A / piena) * 100, 0) + " %)");
+            o.Formula = "Formule (modello a linea del braccio caricato, lo stesso della W3DZZ risolto per la bobina): X = Z0 (cot(beta b) - tan(beta a)), " +
+                "a = tratto interno = p x braccio, b = tratto esterno, beta = 2 pi / lambda, Z0 = 60 (ln(b/r) - 1); L = X / (2 pi f); perdita R = X / Q. " +
+                "La stima di Z0 e' tarata sul NEC (entro circa il 15 % tra il 20 e il 70 % del braccio): \"Porta in risonanza (NEC)\" ritocca la bobina, non le lunghezze. " +
+                "Fonti: ARRL Antenna Book (antenne corte caricate); Buchanan W3DZZ, QST 1955 (stesso modello a linea, li' risolto per il tratto esterno).";
+            if (!serve) o.Warnings.Add("Il braccio (" + Calcolatori.N(A, 2) + " m) e' gia' lungo almeno un quarto d'onda (" + Calcolatori.N(lam / 4, 2) + " m): la bobina non serve, accorcia il braccio.");
+            if (pc > 0.8) o.Warnings.Add("Bobina oltre l'80 % del braccio: serve una bobina molto grande e la stima a linea perde precisione; usa \"Porta in risonanza (NEC)\".");
+            if (serve && 2 * A < piena * 0.4) o.Warnings.Add("Dipolo piu' corto del 40 % della grandezza piena: banda stretta e resistenza di radiazione bassa, le perdite della bobina contano molto.");
+            NecDeck d = new NecDeck("Dipolo caricato " + Calcolatori.N(f, 3) + " MHz, bobina al " + Calcolatori.N(pc * 100, 0) + " %");
+            double seg = lam / 60;
+            int tc = d.W(1, 0, -seg / 2, h, 0, seg / 2, h, a);
+            int ti1 = d.Ws(seg, 0, seg / 2, h, 0, Math.Max(inner, seg), h, a, false, 3);
+            int ni = d.LastN;
+            d.Ws(seg, 0, Math.Max(inner, seg), h, 0, A, h, a, false, 3);
+            int ti2 = d.Ws(seg, 0, -seg / 2, h, 0, -Math.Max(inner, seg), h, a, false, 3);
+            d.Ws(seg, 0, -Math.Max(inner, seg), h, 0, -A, h, a, false, 3);
+            d.Ground(h > 0 ? 2 : 0);
+            if (serve)
+            {
+                d.Ld(0, ti1, ni, ni, w * L / Q, L, 0);
+                d.Ld(0, ti2, ni, ni, w * L / Q, L, 0);
+            }
+            d.Ex(tc, 1);
+            o.Nec = d.End(f);
+            o.Plane = "yz";
+            double q = A * 0.12;
+            o.Mark(6, inner - A * 0.05, h, null, 2, inner + A * 0.05, h);
+            o.Mark(6, -inner - A * 0.05, h, null, 2, -inner + A * 0.05, h);
+            o.Mark(0, inner - A * 0.05, h + q * 0.9, "bobina", 2);
+            o.Mark(0, -inner - A * 0.05, h + q * 0.9, "bobina", 2);
+            o.Mark(7, 0, h - q, Calcolatori.N(inner, 2) + " m · " + Calcolatori.N(pc * 100, 0) + " %", 3, inner, h - q);
+            o.Mark(7, inner, h - q, Calcolatori.N(outer, 2) + " m", 3, A, h - q);
+            o.Mark(7, 0, h - 2.2 * q, "braccio " + Calcolatori.N(A, 2) + " m", 3, A, h - 2.2 * q);
+            return o;
+        }
+
+        CalcOutput ComputeDue()
         {
             CalcOutput o = new CalcOutput();
             double f1 = P("f1"), f2 = P("f2"), C = P("c") * 1e-12, Q = Math.Max(10, P("q")), a = P("d") / 2000, h = P("h");

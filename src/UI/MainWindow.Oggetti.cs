@@ -400,6 +400,7 @@ namespace YaNec
             hd.Children.Add(IntestRiga());
             body.Children.Add(hd);
             List<TextBox[]> cells = new List<TextBox[]>();
+            Maniglia man = new Maniglia(body, () => cells, null);     // 1.0.11: maniglia di riempimento
             for (int i = 0; i < srcRows.Count; i++)
             {
                 int r = i;
@@ -416,6 +417,8 @@ namespace YaNec
                 v.LostFocus += (s, e) => { sr.Mag = ParseNum(v.Text, sr.Mag); };
                 ph.LostFocus += (s, e) => { sr.Ph = ParseNum(ph.Text, sr.Ph); };
                 row.Children.Add(p); row.Children.Add(v); row.Children.Add(ph); row.Children.Add(ty); row.Children.Add(seg);
+                cells.Add(new[] { p, v, ph, ty });
+                foreach (TextBox tm in new[] { p, v, ph, ty }) { TextBox tmm = tm; tmm.GotFocus += (s, e) => man.Attiva(tmm); }
                 if (colZ)
                 {
                     string zt = "";
@@ -512,6 +515,8 @@ namespace YaNec
             hd.Children.Add(Intest("L uH / R / A0", 90)); hd.Children.Add(Intest("C pF / jX / B0", 90)); hd.Children.Add(Intest("Q / C pF (serie)", 90));
             hd.Children.Add(Intest("F MHz", 70)); hd.Children.Add(Intest("-> segmento NEC", 170)); hd.Children.Add(IntestRiga());
             body.Children.Add(hd);
+            List<TextBox[]> cellsL = new List<TextBox[]>();
+            Maniglia manL = new Maniglia(body, () => cellsL, null);     // 1.0.11: maniglia di riempimento
             for (int i = 0; i < ldRows.Count; i++)
             {
                 int ri = i;
@@ -543,6 +548,8 @@ namespace YaNec
                 q.LostFocus += (s, e) => { lr.Q = ParseNum(q.Text, 0); };
                 f.LostFocus += (s, e) => { lr.F = ParseNum(f.Text, 0); };
                 row.Children.Add(p); row.Children.Add(ty); row.Children.Add(a); row.Children.Add(b); row.Children.Add(q); row.Children.Add(f); row.Children.Add(seg);
+                cellsL.Add(new[] { p, null, a, b, q, f });
+                foreach (TextBox tm in new[] { p, a, b, q, f }) { TextBox tmm = tm; tmm.GotFocus += (s, e) => manL.Attiva(tmm); }
                 Button add = BtnRiga("+", "nuova riga sotto"), cp = BtnRiga("⤓", "copia la riga sopra"), del = BtnRiga("✕", "togli la riga", true);
                 add.Click += (s, e) => { ldRows.Insert(ri + 1, new LoadRow { Pulse = lr.Pulse }); RidisegnaTabelle("carichi"); };
                 cp.Click += (s, e) => { if (ri > 0) { LoadRow o = ldRows[ri - 1]; lr.Pulse = o.Pulse; lr.Type = o.Type; lr.A = o.A; lr.B = o.B; lr.Q = o.Q; lr.F = o.F; lr.Orig = null; RidisegnaTabelle("carichi"); } };
@@ -613,6 +620,8 @@ namespace YaNec
             hd.Children.Add(Intest("Z0 ohm", 70)); hd.Children.Add(Intest("Lungh. m (0 = distanza)", 110)); hd.Children.Add(Intest("Incrociata", 80));
             hd.Children.Add(Intest("distanza tra i punti", 130)); hd.Children.Add(IntestRiga());
             body.Children.Add(hd);
+            List<TextBox[]> cellsT = new List<TextBox[]>();
+            Maniglia manT = new Maniglia(body, () => cellsT, null);     // 1.0.11: maniglia di riempimento
             for (int i = 0; i < tlRows.Count; i++)
             {
                 int ri = i;
@@ -629,6 +638,8 @@ namespace YaNec
                 cr.IsCheckedChanged += (s, e) => { tr.Cross = cr.IsChecked == true; };
                 if (tr.Orig != null) { foreach (Control c in new Control[] { z, le, cr }) c.IsEnabled = false; ToolTip.SetTip(z, "Rete NT: si conserva com'e'."); }
                 row.Children.Add(p1); row.Children.Add(p2); row.Children.Add(z); row.Children.Add(le); row.Children.Add(cr); row.Children.Add(dist);
+                cellsT.Add(new[] { p1, p2, z, le });
+                foreach (TextBox tm in new[] { p1, p2, z, le }) { TextBox tmm = tm; tmm.GotFocus += (s, e) => manT.Attiva(tmm); }
                 Button add = BtnRiga("+", "nuova riga sotto"), cp = BtnRiga("⤓", "copia la riga sopra"), del = BtnRiga("✕", "togli la riga", true);
                 add.Click += (s, e) => { tlRows.Insert(ri + 1, new TlRow { P1 = tr.P2 }); RidisegnaTabelle("linee"); };
                 cp.Click += (s, e) => { if (ri > 0) { TlRow o = tlRows[ri - 1]; tr.Z0 = o.Z0; tr.Len = o.Len; tr.Cross = o.Cross; RidisegnaTabelle("linee"); } };

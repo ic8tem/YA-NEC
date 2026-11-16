@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Shapes;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Platform.Storage;
@@ -192,16 +193,49 @@ namespace YaNec
                 cbMod.IsCheckedChanged += (s, e) => { sc.UsaModello = cbMod.IsChecked == true; if (mostra != null) mostra(); };
                 left.Children.Add(cbMod);
             }
+            // 1.0.11 (bozzetti approvati da IC8TEM il 16/11/2026 23:48): schede in sezioni numerate, caselle su 2 colonne allineate,
+            // parametri che si vedono solo in un modo (dipolo trappolato), scelte sulla stessa riga, tessere con la figurina (delta loop)
+            bool sezioni = sc.Params.Exists(x => x.Sezione != null);
+            List<Action> visib = new List<Action>();
+            Grid griglia = null; int cellaGriglia = 0;
+            StackPanel ultimaRigaScelte = null;
             foreach (CalcParam p in sc.Params)
             {
                 CalcParam pp = p;
-                if (pp.Choices != null && pp.Choices.Length > 0 && (pp.Choices.Length <= 4 || pp.Pillole))
+                int nPrima = left.Children.Count;
+                Control cellaSez = null;
+                if (pp.Sezione != null)
                 {
-                    gruppo = null;
+                    gruppo = null; griglia = null; ultimaRigaScelte = null;
+                    TextBlock ts = new TextBlock { Text = pp.Sezione, FontWeight = FontWeight.Bold, FontSize = 13.5, Foreground = Pal.B(Pal.Accent), Margin = new Thickness(0, 8, 0, 2) };
+                    left.Children.Add(ts);
+                }
+                if (pp.Figure != null && pp.Choices != null)
+                {
+                    gruppo = null; griglia = null;
+                    left.Children.Add(TessereScelta(pp, () => { sc.Scale = 1; if (mostra != null) mostra(); }));
+                }
+                else if (pp.Choices != null && pp.Choices.Length > 0 && (pp.Choices.Length <= 4 || pp.Pillole))
+                {
+                    gruppo = null; griglia = null;
                     TextBlock h = Muto(pp.Hint);
                     StackPanel sp = Scelta(pp.Choices, (int)pp.Value, k => { pp.Value = k; sc.Scale = 1; if (mostra != null) mostra(); });
                     if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(sp, pp.Tip);
-                    if (pp.Pillole)
+                    if (sezioni && pp.StessaRiga && ultimaRigaScelte != null)
+                    {
+                        ultimaRigaScelte.Children.Add(new TextBlock { Text = pp.Label + ":", VerticalAlignment = VerticalAlignment.Center, FontSize = 14, Foreground = Pal.B(Pal.Muted), Margin = new Thickness(18, 0, 4, 0) });
+                        ultimaRigaScelte.Children.Add(sp);
+                        ultimaRigaScelte.Children.Add(h);
+                        cellaSez = sp;
+                    }
+                    else if (sezioni && pp.Sezione != null && !pp.Pillole)
+                    {
+                        StackPanel riga = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Margin = new Thickness(0, 2) };
+                        riga.Children.Add(sp); riga.Children.Add(h);
+                        left.Children.Add(riga);
+                        ultimaRigaScelte = riga;
+                    }
+                    else if (pp.Pillole)
                     {
                         // tante voci: pillole che vanno a capo
                         WrapPanel wp = new WrapPanel { Tag = "pillole-" + pp.Key };
@@ -214,7 +248,12 @@ namespace YaNec
                         riga.Children.Add(wp);
                         left.Children.Add(riga);
                     }
-                    else left.Children.Add(RigaCalc(pp.Label, sp, h));
+                    else
+                    {
+                        DockPanel rg = RigaCalc(pp.Label, sp, h);
+                        left.Children.Add(rg);
+                        ultimaRigaScelte = rg.Children[1] as StackPanel;
+                    }
                     aggiornaHint.Add(() => h.Text = pp.Hint ?? "");
                 }
                 else if (pp.Choices != null)
@@ -245,8 +284,26 @@ namespace YaNec
                     if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(t, pp.Tip);
                     TextBlock u = new TextBlock { Text = pp.Unit, VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(4, 0, 0, 0), MinWidth = 26 };
                     TextBlock h = new TextBlock { Text = pp.Hint ?? "", Foreground = Pal.B(Pal.Muted), FontSize = 11.5, TextWrapping = TextWrapping.Wrap, MaxWidth = 280, Margin = new Thickness(146, 0, 0, 0) };
-                    if (gruppo == null) { gruppo = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 2, 0, 2) }; left.Children.Add(gruppo); }
-                    gruppo.Children.Add(CellaCalc(pp.Label, pp.Tip, t, u, h));
+                    if (sezioni)
+                    {
+                        // due colonne allineate: etichetta (con la parte tra parentesi in piccolo sotto), casella, unita'
+                        if (griglia == null)
+                        {
+                            griglia = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*"), Margin = new Thickness(0, 2, 0, 2) };
+                            left.Children.Add(griglia); cellaGriglia = 0;
+                        }
+                        Control cg = CellaSezione(pp.Label, pp.Tip, t, u, h);
+                        if (cellaGriglia % 2 == 0) griglia.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                        Grid.SetRow(cg, cellaGriglia / 2); Grid.SetColumn(cg, cellaGriglia % 2);
+                        griglia.Children.Add(cg);
+                        cellaGriglia++;
+                        cellaSez = cg;
+                    }
+                    else
+                    {
+                        if (gruppo == null) { gruppo = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 2, 0, 2) }; left.Children.Add(gruppo); }
+                        gruppo.Children.Add(CellaCalc(pp.Label, pp.Tip, t, u, h));
+                    }
                     leggi.Add(() => pp.Value = ParseNum(t.Text, pp.Value));
                     aggiornaHint.Add(() => { h.Text = pp.Hint ?? ""; h.IsVisible = !string.IsNullOrEmpty(h.Text); });
                     t.LostFocus += (s, e) =>
@@ -261,7 +318,17 @@ namespace YaNec
                     };
                     t.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { pp.Value = ParseNum(t.Text, pp.Value); sc.Scale = 1; if (mostra != null) mostra(); } };
                 }
+                if (pp.Visibile != null)
+                {
+                    // tutto cio' che questo parametro ha aggiunto (titolo della sezione compreso) o la sua cella nella griglia
+                    List<Control> suoi = new List<Control>();
+                    for (int i = nPrima; i < left.Children.Count; i++) if (!(left.Children[i] is Grid gg && gg == griglia && cellaSez != null)) suoi.Add(left.Children[i]);
+                    if (cellaSez != null) suoi.Add(cellaSez);
+                    Func<bool> vis = pp.Visibile;
+                    visib.Add(() => { bool v = vis(); foreach (Control c in suoi) c.IsVisible = v; });
+                }
             }
+            foreach (Action a in visib) a();
             // 0.4.30 (IC8TEM 14/11/2026 23:40): rastremazione dei tubi nei progetti HF non filari
             if (sc.Tubolare)
             {
@@ -376,6 +443,7 @@ namespace YaNec
 
             mostra = () =>
             {
+                foreach (Action a in visib) a();
                 foreach (Action a in leggi) a();
                 sc.Model = model;
                 sc.MainFreqMHz = txtFreq != null ? ParseNum(txtFreq.Text, double.NaN) : double.NaN;
@@ -569,6 +637,82 @@ namespace YaNec
             suggerimento.IsVisible = !string.IsNullOrEmpty(suggerimento.Text);
             v.Children.Add(suggerimento);
             return v;
+        }
+
+        // 1.0.11: cella delle schede in sezioni (bozzetto approvato il 16/11/2026 23:48): etichetta larga 200 con la parte tra parentesi
+        // in piccolo sotto se l'etichetta e' lunga, casella, unita'
+        Control CellaSezione(string etichetta, string tip, TextBox t, TextBlock unita, TextBlock suggerimento)
+        {
+            string princ = etichetta, sotto = null;
+            int par = etichetta.IndexOf(" (");
+            if (par > 0 && etichetta.EndsWith(")") && etichetta.Length > 26) { princ = etichetta.Substring(0, par); sotto = etichetta.Substring(par + 2, etichetta.Length - par - 3); }
+            StackPanel v = new StackPanel { Margin = new Thickness(0, 3, 14, 3) };
+            Grid g = new Grid { ColumnDefinitions = new ColumnDefinitions("200,Auto,Auto") };
+            StackPanel et = new StackPanel { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
+            et.Children.Add(new TextBlock { Text = princ, TextWrapping = TextWrapping.Wrap, FontSize = 13.5, Foreground = Pal.B(Pal.Muted) });
+            if (sotto != null) et.Children.Add(new TextBlock { Text = sotto, TextWrapping = TextWrapping.Wrap, FontSize = 11.5, Foreground = Pal.B(Pal.Muted) });
+            if (!string.IsNullOrEmpty(tip)) ToolTip.SetTip(et, tip);
+            Grid.SetColumn(t, 1); Grid.SetColumn(unita, 2);
+            g.Children.Add(et); g.Children.Add(t); g.Children.Add(unita);
+            v.Children.Add(g);
+            suggerimento.Margin = new Thickness(208, 0, 0, 0);
+            suggerimento.IsVisible = !string.IsNullOrEmpty(suggerimento.Text);
+            v.Children.Add(suggerimento);
+            return v;
+        }
+
+        // 1.0.11: scelta a tessere con la figurina (delta loop: dove va il balun), la scelta in arancio con il bordo blu
+        Control TessereScelta(CalcParam pp, Action cambiato)
+        {
+            WrapPanel wp = new WrapPanel { Margin = new Thickness(0, 2, 0, 4) };
+            List<Border> bs = new List<Border>();
+            List<List<Shape>> figure = new List<List<Shape>>();
+            Action stile = () =>
+            {
+                for (int j = 0; j < bs.Count; j++)
+                {
+                    bool on = j == (int)pp.Value;
+                    bs[j].Background = Pal.B(on ? Pal.AccentSoft : Pal.Panel);
+                    bs[j].BorderBrush = Pal.B(on ? Pal.Accent : Pal.PillBorder);
+                    bs[j].BorderThickness = new Thickness(on ? 2 : 1);
+                    foreach (Shape sh in figure[j])
+                    {
+                        if (sh is Polygon) sh.Stroke = Pal.B(on ? Pal.Orange : Pal.Muted);
+                        else sh.Fill = Pal.B(on ? Pal.Orange : Pal.Muted);
+                    }
+                }
+            };
+            for (int i = 0; i < pp.Choices.Length; i++)
+            {
+                int k = i;
+                double[] fg = pp.Figure.Length > i ? pp.Figure[i] : null;
+                Canvas cv = new Canvas { Width = 44, Height = 34, HorizontalAlignment = HorizontalAlignment.Center };
+                List<Shape> mie = new List<Shape>();
+                if (fg != null && fg.Length >= 8)
+                {
+                    Polygon pg = new Polygon { StrokeThickness = 2 };
+                    var pts = new List<Point>();
+                    for (int q = 0; q + 3 < fg.Length; q += 2) pts.Add(new Point(fg[q] * 44, fg[q + 1] * 34));
+                    pg.Points = pts;
+                    Rectangle r = new Rectangle { Width = 8, Height = 8 };
+                    Canvas.SetLeft(r, fg[fg.Length - 2] * 44 - 4); Canvas.SetTop(r, fg[fg.Length - 1] * 34 - 4);
+                    cv.Children.Add(pg); cv.Children.Add(r);
+                    mie.Add(pg); mie.Add(r);
+                }
+                figure.Add(mie);
+                StackPanel sp = new StackPanel { Spacing = 2 };
+                sp.Children.Add(cv);
+                sp.Children.Add(new TextBlock { Text = pp.Choices[i], TextAlignment = TextAlignment.Center, TextWrapping = TextWrapping.Wrap, FontSize = 13, Foreground = Pal.B(Pal.Fore) });
+                if (pp.Sotto != null && pp.Sotto.Length > i)
+                    sp.Children.Add(new TextBlock { Text = pp.Sotto[i], TextAlignment = TextAlignment.Center, FontSize = 11.5, Foreground = Pal.B(Pal.Muted) });
+                Border b = new Border { Child = sp, Width = 132, Padding = new Thickness(6, 6), Margin = new Thickness(0, 0, 8, 6), CornerRadius = new CornerRadius(8), Cursor = new Avalonia.Input.Cursor(Avalonia.Input.StandardCursorType.Hand) };
+                if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(b, pp.Tip);
+                b.PointerPressed += (s, e) => { pp.Value = k; stile(); cambiato(); };
+                bs.Add(b);
+                wp.Children.Add(b);
+            }
+            stile();
+            return wp;
         }
 
         DockPanel RigaCalc(string etichetta, params Control[] c)
