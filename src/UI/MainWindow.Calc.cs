@@ -496,6 +496,14 @@ namespace YaNec
             {
                 lastError = ex.Message;
                 Status("Errore nel calcolo: " + ex.Message, true);
+                // 1.0.1: anche se il calcolo non riesce (per esempio un modello nuovo ancora senza sorgente) la Struttura 3D
+                // e gli Oggetti del modello si ridisegnano, altrimenti la tabella delle Sorgenti non compare e non si puo' aggiungere
+                // la sorgente che manca
+                if (m == model)
+                {
+                    run = null;
+                    try { RefreshAll(); } catch (Exception ex2) { Registro.Scrivi("ERRORE", "ridisegno dopo l'errore di calcolo: " + ex2.Message); }
+                }
                 UpdateNotes();
             }
             finally
