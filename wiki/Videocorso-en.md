@@ -86,11 +86,19 @@ A 175 m Beverage for 160 m and the EWE by Floyd Koontz WA2WVL (QST February 1995
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_11_foursquare_rx_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_11.jpg" alt="Lesson 11 - Four-square and other receiving antennas"></a></td><td>
+
+### Lesson 11 - Four-square and other receiving antennas
+
+A 40 m Four-square from the calculator (ON4UN): current sources at 0/-90/-90/-180 degrees and the resulting impedances; then the Flag (K6SE, W7IUV) with RDF 7.8 dB and optimize for F/B, the Waller Flag (NX4D, N4IS, IV3PRK model) with RDF 11.6 dB and the RDF ranking.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_11_foursquare_rx_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_11_foursquare_rx_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
 - **7** · Simple HF beam from the calculators: 3-element Yagi and Moxon
 - **8** · HF beam with traps and ground
-- **11** · Four-square and other receiving antennas, RDF ranking
 - **12** · Loaded loop, toroids, L-C network and model objects (lines, transformers, baluns, current sources)
 - **13** · The other HF functions
 - **14** · DK7ZB 6-element Yagi with the designer's dimensions

@@ -86,11 +86,19 @@ Beverage da 175 m per i 160 m e la EWE di Floyd Koontz WA2WVL (QST febbraio 1995
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_11_foursquare_riceventi_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_11.jpg" alt="Lezione 11 - Four-square e altre riceventi"></a></td><td>
+
+### Lezione 11 - Four-square e altre riceventi
+
+Four-square per i 40 m dal calcolatore (ON4UN): sorgenti di corrente a 0/-90/-90/-180 gradi e impedenze risultanti; poi la Flag (K6SE, W7IUV) con RDF 7,8 dB e ottimizza per F/B, la Waller Flag (NX4D, N4IS, modello IV3PRK) con RDF 11,6 dB e la graduatoria RDF.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_11_foursquare_riceventi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_11_foursquare_riceventi_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
 - **7** · Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
 - **8** · Direttiva HF con trappole e terreno
-- **11** · Four-square e altre riceventi, classifica RDF
 - **12** · Loop caricato, toroidi, rete L-C e oggetti del modello (linee, trasformatori, balun, sorgenti a corrente)
 - **13** · Le altre funzioni per l'HF
 - **14** · Yagi 6 elementi DK7ZB con le misure del progettista

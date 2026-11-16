@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lesson 11: Four-square and other receiving antennas
+
+2
+00:00:04,000 --> 00:00:20,445
+YA-NEC course, lesson 11: the Four-square and other receiving antennas. First the Four-square, in Calculators.
+
+3
+00:00:20,495 --> 00:00:28,579
+Four lambda/4 verticals for 7.1 MHz on the corners of a 10.56 m square, 4 raised radials each, as in ON4UN.
+
+4
+00:00:28,629 --> 00:00:40,445
+Fed with current sources: 0, -90, -90 and -180 degrees. 4.1 dBi over average ground, F/B 19.4 dB, beamwidth 100 degrees; the buttons 0-90-180-270 switch direction.
+
+5
+00:00:40,495 --> 00:00:49,979
+The table shows the resulting impedances: 22 to 56 ohm, all different. That is why a four-square needs a proper phasing network.
+
+6
+00:00:50,029 --> 00:00:58,109
+Back to the Receiving antennas tab: the Flag (K6SE, W7IUV).
+
+7
+00:00:58,159 --> 00:01:37,798
+A terminated rectangle 8.8 x 4.28 m, 937 ohm resistor, 16:1 transformer.
+
+8
+00:01:37,848 --> 00:01:45,798
+RDF 7.8 dB, just like the IV3PRK measurement (7.8-8.0); F/B 38.5 dB, gain -30 dBi: 20 dB of preamplifier.
+
+9
+00:01:45,848 --> 00:02:11,864
+'Optimize for F/B'.
+
+10
+00:02:11,914 --> 00:02:16,864
+950 ohm: F/B 39.2 dB. The Flag is already close to its best.
+
+11
+00:02:16,914 --> 00:02:23,731
+Waller Flag (NX4D, N4IS): two Flags 7.73 m apart, phased by lines - IV3PRK's 2007 model.
+
+12
+00:02:23,781 --> 00:03:14,434
+600 ohm loads, 100 ohm lines, the rear one crossed: the second Flag cancels what the first one still hears from behind.
+
+13
+00:03:14,484 --> 00:03:20,634
+RDF 11.6 dB (IV3PRK: 11.84) - better than a 175 m Beverage - in a 12 m garden.
+
+14
+00:03:20,684 --> 00:03:25,967
+The price is the signal: -58.5 dBi. Two preamplifiers are needed.
+
+15
+00:03:26,017 --> 00:03:31,701
+The ranking with the antennas computed in this lesson and the last one.
+
+16
+00:03:31,751 --> 00:03:41,767
+RDF from 5 dB of the vertical to over 13 dB of the long Beverages and Hi-Z arrays: choose by space, money and how much you want to hear.
+
+17
+00:03:41,817 --> 00:03:47,768
+Four-square, Flag, Waller Flag: receiving is a matter of RDF, not of gain. Next lesson: loaded loops, toroids and the model objects. 73 de IC8TEM
