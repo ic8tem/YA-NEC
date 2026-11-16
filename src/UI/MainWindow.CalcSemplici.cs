@@ -336,7 +336,7 @@ namespace YaNec
             CalcDrawing dr = new CalcDrawing { Height = conBalun ? 330 : 300, Margin = new Thickness(0) };
             Control destra = dr;
             Action<CalcOutput> mostraDestra = null;
-            if (conTrasf) destra = CostruisciTrasformatore(sc, campi, tendine, () => { if (mostra != null) mostra(); });
+            if (conTrasf) destra = CostruisciTrasformatore(sc, campi, tendine, () => { if (mostra != null) mostra(); }, out mostraDestra);
             else if (conBalun) destra = CostruisciDisegnoBalun(sc, dr, left, tendine, out mostraDestra, () => { if (mostra != null) mostra(); });
             Border colDestra = new Border { Child = destra, Margin = new Thickness(14, 0, 0, 0), Padding = new Thickness(14, 0, 0, 0), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1, 0, 0, 0) };
             Grid.SetColumn(left, 0);

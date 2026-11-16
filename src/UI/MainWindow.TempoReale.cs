@@ -154,8 +154,11 @@ namespace YaNec
                     if (es.F > 28.0)
                     {
                         double lam = 299.792458 / es.F;
-                        cards.Children.Add(Riquadretto("Angoli a -3 dB", FN(r.HpbwAz, 1) + "° / " + FN(r.HpbwEl, 1) + "°", "azimut / elevazione"));
-                        string st = r.HpbwAz > 0 && r.HpbwEl > 0 ? FN(StackDetect.Dl6wu(lam, r.HpbwAz), 2) + " / " + FN(StackDetect.Dl6wu(lam, r.HpbwEl), 2) + " m" : "-";
+                        // 1.0.6: con un diagramma omnidirezionale l'angolo non esiste (NaN): si scrive "omni" invece di "NaN°"
+                        bool okAz = !double.IsNaN(r.HpbwAz) && r.HpbwAz > 0, okEl = !double.IsNaN(r.HpbwEl) && r.HpbwEl > 0;
+                        cards.Children.Add(Riquadretto("Angoli a -3 dB", (okAz ? FN(r.HpbwAz, 1) + "°" : "omni") + " / " + (okEl ? FN(r.HpbwEl, 1) + "°" : "-"),
+                            okAz ? "azimut / elevazione" : "azimut / elevazione (omni: nessun calo di 3 dB in azimut)"));
+                        string st = okAz && okEl ? FN(StackDetect.Dl6wu(lam, r.HpbwAz), 2) + " / " + FN(StackDetect.Dl6wu(lam, r.HpbwEl), 2) + " m" : "-";
                         cards.Children.Add(Riquadretto("Distanze di stack DL6WU", st, "affiancate / sovrapposte (punto di partenza)"));
                     }
                     stato.Text = "aggiornato (" + FN((DateTime.Now - t0).TotalSeconds, 1) + " s) a " + FN(es.F, 3) + " MHz";

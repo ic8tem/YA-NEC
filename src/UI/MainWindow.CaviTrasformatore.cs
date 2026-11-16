@@ -24,8 +24,9 @@ namespace YaNec
     {
         static bool Bifilare(Cable c) { return c != null && (c.Dielectric ?? "").StartsWith("bifilare", StringComparison.OrdinalIgnoreCase); }
 
-        Control CostruisciTrasformatore(SimpleCalc sc, Dictionary<string, TextBox> campi, Dictionary<string, ComboBox> tendine, Action ricalcola)
+        Control CostruisciTrasformatore(SimpleCalc sc, Dictionary<string, TextBox> campi, Dictionary<string, ComboBox> tendine, Action ricalcola, out Action<CalcOutput> aggiornaDestra)
         {
+            aggiornaDestra = null;
             List<Cable> lista = CalcCavi.Lista;
             StackPanel root = new StackPanel { Spacing = 4 };
             StackPanel tit = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
@@ -80,7 +81,9 @@ namespace YaNec
             {
                 double f = 14.2;
                 CalcParam pf = sc.Params.Find(p => p.Key == "f");
-                if (pf != null) f = pf.Value;
+                double fm;
+                if (sc.DalModello != null && sc.DalModello.TryGetValue("f", out fm)) f = fm;
+                else if (pf != null) f = pf.Value;
                 if (f <= 0) f = 14.2;
                 double r = Math.Max(0.01, ParseNum(tR.Text, 100)), x = ParseNum(tX.Text, 0), zt = Math.Max(0.1, ParseNum(tZ.Text, 50));
                 Complex za = new Complex(r, x);
@@ -196,6 +199,8 @@ namespace YaNec
                 }
                 catch (Exception ex) { Status("Linea nel modello: " + ex.Message, true); }
             };
+            // 1.0.6: la colonna destra segue ogni ricalcolo della scheda a sinistra (prima restava sulla frequenza vecchia)
+            aggiornaDestra = o => { try { ricalcolaT(); } catch (Exception ex) { Registro.Scrivi("ERRORE", "cambio d'impedenza: " + ex.Message); } };
             ricalcolaT();
             return root;
         }
