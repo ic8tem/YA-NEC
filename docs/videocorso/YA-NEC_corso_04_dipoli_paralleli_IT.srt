@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 4: i dipoli paralleli
+
+2
+00:00:04,000 --> 00:00:13,077
+Corso YA-NEC, lezione 4: i dipoli paralleli - piu' bande su un solo coassiale. Calcolatori, Dipolo multibanda.
+
+3
+00:00:13,127 --> 00:00:24,611
+Modo 'bacchette parallele': un dipolo per banda, uno sotto l'altro, tutti sulla stessa alimentazione. Qui 20, 15 e 10 m, filo da 2 mm, a 10 cm, spazio libero.
+
+4
+00:00:24,661 --> 00:00:33,843
+'Accorda e verifica' accorda tutte le lunghezze insieme, perche' ogni dipolo sposta gli altri.
+
+5
+00:00:33,893 --> 00:00:41,843
+Risultati per banda: 20 m 10,27 m, ROS 1,21 a centro banda; 15 m 6,87 m, ROS 1,03; 10 m 5,01 m, ROS 1,19.
+
+6
+00:00:41,893 --> 00:00:53,377
+La colonna 'ruba': in 10 m il dipolo dei 15 porta il 72 % della corrente di quello dei 10. In 10 m gli estremi di banda arrivano a ROS 6: la banda si stringe.
+
+7
+00:00:53,427 --> 00:01:11,842
+Ora aggiungiamo i 40 m e riaccordiamo.
+
+8
+00:01:11,892 --> 00:01:22,575
+Ecco la trappola dei dipoli paralleli: in 15 m il dipolo dei 40 e' lungo tre mezze onde e risuona anche lui. Porta il 132 % della corrente del 15.
+
+9
+00:01:22,625 --> 00:01:33,309
+Il ROS in 15 m sale a 1,69 e gli estremi dei 10 m a 7,9. I rimedi classici: un altro angolo per il filo dei 15, piu' distanza, oppure niente 15 m.
+
+10
+00:01:33,359 --> 00:01:42,606
+Secondo modo: la manica aperta (open sleeve), come la descrive Tom Schiller N6BT.
+
+11
+00:01:42,656 --> 00:01:52,473
+Si alimenta solo il dipolo dei 20 m. Gli elementi dei 15 e dei 10 sono parassiti, vicinissimi, nello stesso piano: qui tubi da 20 mm.
+
+12
+00:01:52,523 --> 00:02:20,714
+'Accorda e verifica' ora cerca lunghezze e distanze delle maniche.
+
+13
+00:02:20,764 --> 00:02:29,114
+Maniche a 16 e 10 cm. ROS a centro banda: 20 m 1,50, 15 m 1,09, 10 m 1,14. Nessun cavo agli elementi parassiti.
+
+14
+00:02:29,164 --> 00:02:39,514
+Stessa regola di prima: le bande si influenzano, quindi il simulatore le accorda insieme, in pochi secondi invece che in pomeriggi sul tetto.
+
+15
+00:02:39,564 --> 00:02:45,514
+Dipoli paralleli e manica aperta: tutto da un solo calcolatore. Prossima lezione: le trappole e il dipolo trappolato. 73 de IC8TEM

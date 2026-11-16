@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lesson 4: parallel dipoles
+
+2
+00:00:04,000 --> 00:00:13,087
+YA-NEC course, lesson 4: parallel dipoles - several bands on one coax. Calculators, Multiband dipole.
+
+3
+00:00:13,137 --> 00:00:24,021
+Mode 'parallel rods': one dipole per band, one below the other, all on the same feed point. Here 20, 15 and 10 m, 2 mm wire, 10 cm apart, free space.
+
+4
+00:00:24,071 --> 00:00:33,253
+'Tune and verify' tunes all lengths together, because each dipole detunes the others.
+
+5
+00:00:33,303 --> 00:00:41,053
+Results per band: 20 m 10.27 m, SWR 1.21 at band centre; 15 m 6.87 m, SWR 1.03; 10 m 5.01 m, SWR 1.19.
+
+6
+00:00:41,103 --> 00:00:51,186
+The 'steals' column: on 10 m the 15 m dipole carries 72 % of the 10 m current. On 10 m the band edges reach SWR 6: the bandwidth shrinks.
+
+7
+00:00:51,236 --> 00:01:09,660
+Now add 40 m and tune again.
+
+8
+00:01:09,710 --> 00:01:20,194
+Here is the trap of parallel dipoles: on 15 m the 40 m dipole is three half waves long and resonates too. It carries 132 % of the 15 m current.
+
+9
+00:01:20,244 --> 00:01:30,594
+The 15 m SWR rises to 1.69 and the 10 m edges to 7.9. Classic remedies: a different angle for the 15 m wire, more spacing, or leave 15 m out.
+
+10
+00:01:30,644 --> 00:01:39,906
+Second mode: open sleeve, as described by Tom Schiller N6BT.
+
+11
+00:01:39,956 --> 00:01:48,707
+Only the 20 m dipole is fed. The 15 and 10 m elements are parasitic, very close, in the same plane: here 20 mm tubes.
+
+12
+00:01:48,757 --> 00:02:16,943
+'Tune and verify' now looks for lengths and distances of the sleeves.
+
+13
+00:02:16,993 --> 00:02:25,410
+Sleeves at 16 and 10 cm. SWR at band centre: 20 m 1.50, 15 m 1.09, 10 m 1.14. No coax to the parasitic elements.
+
+14
+00:02:25,460 --> 00:02:35,476
+Same rule as before: the bands influence each other, so the simulator tunes them together, in seconds instead of afternoons on the roof.
+
+15
+00:02:35,526 --> 00:02:41,477
+Parallel dipoles and open sleeve: both from one calculator. Next lesson: traps and the trapped dipole. 73 de IC8TEM

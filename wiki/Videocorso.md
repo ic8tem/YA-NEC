@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 22 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
+Un corso completo in 22 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -40,10 +40,18 @@ Ripiegato (circa 290 ohm), OCF/Windom (W8GZ) visto da 3 a 30 MHz su 200 ohm, G5R
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_03_dipoli_speciali_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_03_dipoli_speciali_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_04_dipoli_paralleli_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_04.jpg" alt="Lezione 4 - I dipoli paralleli"></a></td><td>
+
+### Lezione 4 - I dipoli paralleli
+
+Bacchette parallele per 20, 15 e 10 m accordate insieme con "Accorda e verifica"; aggiungendo i 40 m il dipolo dei 40 risuona sui 15 (tre mezze onde) e ruba corrente; poi la manica aperta (open sleeve) di N6BT, con i parassiti accordati in lunghezza e distanza.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_04_dipoli_paralleli_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_04_dipoli_paralleli_IT.srt)
+
+</td></tr></table>
 
 ## Prossime lezioni
 
-4. Dipoli paralleli
 5. Trappole e dipolo trappolato
 6. Gli strumenti del modello: barra Geometria, Controlla il modello, segmentazione e avvisi
 7. Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon

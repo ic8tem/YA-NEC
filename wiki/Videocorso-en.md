@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 22 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4. Every video has burnt-in subtitles; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 22 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later. Every video has burnt-in subtitles; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -40,10 +40,18 @@ Folded (about 290 ohm), OCF/Windom (W8GZ) seen from 3 to 30 MHz on 200 ohm, the 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_03_special_dipoles_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_03_special_dipoles_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_04_parallel_dipoles_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_04.jpg" alt="Lesson 4 - Parallel dipoles"></a></td><td>
+
+### Lesson 4 - Parallel dipoles
+
+Parallel rods for 20, 15 and 10 m tuned together with "Tune and verify"; adding 40 m, the 40 m dipole resonates on 15 m (three half waves) and steals current; then the N6BT open sleeve, with the parasitic elements tuned in length and spacing.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_04_parallel_dipoles_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_04_parallel_dipoles_EN.srt)
+
+</td></tr></table>
 
 ## Coming next
 
-4. Parallel dipoles
 5. Traps and the trapped dipole
 6. Model tools: Geometry bar, Check model, segmentation and warnings
 7. Simple HF beam from the calculators: 3-element Yagi and Moxon
