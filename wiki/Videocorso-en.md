@@ -185,9 +185,17 @@ The N6CA (ARRL tables) / G3JVL 25-element loop Yagi on a 1.78 m boom: ARRL estim
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_19_loop_yagi_1296_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_19_loop_yagi_1296_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_20_satellites_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_20.jpg" alt="Lesson 20 - Satellite antennas"></a></td><td>
+
+### Lesson 20 - Satellite antennas
+
+F5VIF Eggbeater for 145.9 MHz (41.6 ohm, 1.99 dBic at the zenith, radial reflector), QFH quadrifilar helix for 137.5 MHz weather satellites from Coppens' tables with its NEC model, 8-element N6NB Quagi for tracking (13.34 dBi).
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_20_satellites_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_20_satellites_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **20** · Satellites: Eggbeater, QFH, Quagi
 - **21** · Dishes: prime focus, offset and horns
 
 Model files are built by following the video; to try right away, the program Examples already contain many ready antennas. Sources and designers named in the videos are also listed in the program Credits tab.

@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 20: antenne per satelliti
+
+2
+00:00:04,000 --> 00:00:23,356
+Corso YA-NEC, lezione 20: antenne per satelliti - Eggbeater, QFH e Quagi. Calcolatori, polarizzazione circolare.
+
+3
+00:00:23,406 --> 00:00:35,890
+Eggbeater (progetto F5VIF, variante 'tamago') per 145,9 MHz: due spire incrociate da 2157 mm, alimentate in quadratura da una linea lambda/4 da 93 ohm, riflettore a radiali.
+
+4
+00:00:35,940 --> 00:00:47,690
+41,6 + j0,3 ohm, 1,99 dBic allo zenit, rapporto assiale 4 dB, circolare destra. Tempo reale: ROS 1,2 e un diagramma largo, quasi a semisfera, per i satelliti LEO.
+
+5
+00:00:47,740 --> 00:00:58,760
+QFH, l'elica quadrifilare, per i satelliti meteo a 137,5 MHz.
+
+6
+00:00:58,810 --> 00:01:09,160
+Spire grande e piccola da mezzo giro (tabelle di Coppens): alte 731 e 695 mm. Tempo reale: 4,81 dBi verso lo zenit, ROS 1,44 verso 135,6 MHz.
+
+7
+00:01:09,210 --> 00:01:22,224
+'Crea il modello NEC e verificalo'.
+
+8
+00:01:22,274 --> 00:01:32,226
+L'elica in 3D. L'avviso: il modello alimenta le due spire direttamente ai morsetti; nella realta' serve il balun a bobina di coassiale.
+
+9
+00:01:32,276 --> 00:01:47,363
+Per l'inseguimento: la Quagi di N6NB, radiatore e riflettore a quad piu' direttori a bacchetta.
+
+10
+00:01:47,413 --> 00:01:55,230
+8 elementi a 144,3 MHz su un boom di 4,2 m: ROS 1,03, 13,34 dBi, F/B 14,2 dB, apertura 39 x 43,5 gradi.
+
+11
+00:01:55,280 --> 00:02:07,297
+Una Quagi sta 0,3-0,6 dB sotto una Yagi DL6WU dello stesso boom (Cebik), ma si costruisce facilmente in legno. Due Quagi incrociate danno la polarizzazione circolare.
+
+12
+00:02:07,347 --> 00:02:13,297
+Eggbeater, QFH e Quagi: dall'omnidirezionale fissa alla direttiva che insegue. Ultima lezione: parabole, fuoco primario, offset e trombe. 73 de IC8TEM

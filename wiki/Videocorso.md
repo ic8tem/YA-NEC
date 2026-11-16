@@ -185,9 +185,17 @@ La loop Yagi N6CA (tabelle ARRL) / G3JVL a 25 elementi su 1,78 m: stima ARRL e t
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_19_loop_yagi_1296_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_19_loop_yagi_1296_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_20_satelliti_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_20.jpg" alt="Lezione 20 - Antenne per satelliti"></a></td><td>
+
+### Lezione 20 - Antenne per satelliti
+
+Eggbeater F5VIF per 145,9 MHz (41,6 ohm, 1,99 dBic allo zenit, riflettore a radiali), QFH elica quadrifilare per i satelliti meteo a 137,5 MHz con le tabelle di Coppens e il suo modello NEC, Quagi N6NB a 8 elementi per l'inseguimento (13,34 dBi).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_20_satelliti_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_20_satelliti_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **20** · Satelliti: Eggbeater, QFH, Quagi
 - **21** · Parabole: fuoco primario, offset e trombe
 
 I file del modello si costruiscono seguendo il video; per provare subito, gli Esempi del programma contengono già molte antenne pronte. Fonti e progettisti citati nei video sono elencati anche nella linguetta Crediti del programma.
