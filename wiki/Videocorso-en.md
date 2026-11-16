@@ -68,6 +68,15 @@ From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees
 
 </td></tr></table>
 
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_07_moxon_yagi2_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_07.jpg" alt="Lesson 7 - Simple HF beams: Moxon and 2-element Yagi"></a></td><td>
+
+### Lesson 7 - Simple HF beams: Moxon and 2-element Yagi
+
+A 20 m Moxon (Les Moxon G6XN, dimensions from L.B. Cebik's MOXGEN): F/B 41 dB in free space, 11 dBi at 12 m over average ground, 58 ohm straight on the coax; then the 2-element Yagi from the Multiband Yagi calculator, with a reflector (12.2 dBi, F/B 13.6 dB) and with a director (10.6 dBi, F/B 4.8 dB).
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_07_moxon_yagi2_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_07_moxon_yagi2_EN.srt)
+
+</td></tr></table>
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_09.jpg" alt="Lesson 9 - Other beams"></a></td><td>
 
 ### Lesson 9 - Other beams
@@ -106,7 +115,6 @@ A 1 m magnetic loop for 40 m (16 % efficiency, 52 A and 5.6 kV at 100 W) and the
 </td></tr></table>
 ## Coming next
 
-- **7** · Simple HF beam from the calculators: Moxon and 2-element Yagi
 - **8** · HF beam with traps and ground
 - **13** · The other HF functions
 - **14** · DK7ZB 6-element Yagi with the designer's dimensions

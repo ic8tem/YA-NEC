@@ -68,6 +68,15 @@ Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), or
 
 </td></tr></table>
 
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_07_moxon_yagi2_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_07.jpg" alt="Lezione 7 - Direttive HF semplici: Moxon e Yagi 2 elementi"></a></td><td>
+
+### Lezione 7 - Direttive HF semplici: Moxon e Yagi 2 elementi
+
+Moxon per i 20 m (Les Moxon G6XN, misure dal MOXGEN di L.B. Cebik): F/B 41 dB nello spazio libero, 11 dBi a 12 m su terreno medio, 58 ohm direttamente sul coassiale; poi la Yagi 2 elementi dal calcolatore Yagi multibanda, con riflettore (12,2 dBi, F/B 13,6 dB) e con direttore (10,6 dBi, F/B 4,8 dB).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_07_moxon_yagi2_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_07_moxon_yagi2_IT.srt)
+
+</td></tr></table>
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_09.jpg" alt="Lezione 9 - Altre direttive"></a></td><td>
 
 ### Lezione 9 - Altre direttive
@@ -106,7 +115,6 @@ Loop magnetica da 1 m per i 40 m (efficienza 16 %, 52 A e 5,6 kV con 100 W) e l'
 </td></tr></table>
 ## Prossime lezioni
 
-- **7** · Direttiva HF semplice dai calcolatori: Moxon e Yagi 2 elementi
 - **8** · Direttiva HF con trappole e terreno
 - **13** · Le altre funzioni per l'HF
 - **14** · Yagi 6 elementi DK7ZB con le misure del progettista
