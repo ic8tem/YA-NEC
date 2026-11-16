@@ -10,6 +10,7 @@
 
 ## Pagini
 
+- ▶ [Curs video (engleză și italiană): trei lecții pas cu pas](Videocorso-en)
 - [Instalare](Installazione-ro): ce pachet să descarci și cum îl pornești pe Windows, Linux, Raspberry Pi și Mac
 - [Primii pași](Primi-passi-ro): deschiderea unui model, calculul, citirea rezultatelor
 - [Calculatoare](Calcolatori-ro): subfilele care proiectează o antenă și creează modelul ei NEC

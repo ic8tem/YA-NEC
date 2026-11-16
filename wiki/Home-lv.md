@@ -10,6 +10,7 @@
 
 ## Lapas
 
+- ▶ [Video kurss (angļu un itāļu valodā): trīs nodarbības soli pa solim](Videocorso-en)
 - [Instalēšana](Installazione-lv): kuru pakotni lejupielādēt un kā to palaist Windows, Linux, Raspberry Pi un Mac
 - [Pirmie soļi](Primi-passi-lv): atvērt modeli, aprēķināt, lasīt rezultātus
 - [Kalkulatori](Calcolatori-lv): apakšcilnes, kas projektē antenu un izveido tās NEC modeli

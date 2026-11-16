@@ -10,6 +10,7 @@
 
 ## Sidor
 
+- ▶ [Videokurs (engelska och italienska): tre lektioner steg för steg](Videocorso-en)
 - [Installation](Installazione-sv): vilket paket du ska ladda ner och hur du startar det på Windows, Linux, Raspberry Pi och Mac
 - [Kom igång](Primi-passi-sv): öppna en modell, beräkna, läsa resultaten
 - [Kalkylatorer](Calcolatori-sv): underflikarna som konstruerar en antenn och skapar dess NEC-modell

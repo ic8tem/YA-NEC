@@ -10,6 +10,7 @@
 
 ## Oldalak
 
+- ▶ [Videótanfolyam (angol és olasz): három lecke lépésről lépésre](Videocorso-en)
 - [Telepítés](Installazione-hu): melyik csomagot kell letölteni, és hogyan indítható Windowson, Linuxon, Raspberry Pi-n és Macen
 - [Első lépések](Primi-passi-hu): modell megnyitása, számítás, az eredmények olvasása
 - [Kalkulátorok](Calcolatori-hu): az alfülek, amelyek megtervezik az antennát és elkészítik a NEC-modelljét

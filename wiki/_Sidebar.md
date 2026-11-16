@@ -1,5 +1,6 @@
 **YA-NEC**
 - [[Home]]
+- [[Videocorso]] · [Video course](Videocorso-en)
 - [[Installazione]]
 - [[Primi passi]]
 - [[Calcolatori]]

@@ -10,6 +10,7 @@
 
 ## Sayfalar
 
+- ▶ [Video kurs (İngilizce ve İtalyanca): adım adım üç ders](Videocorso-en)
 - [Kurulum](Installazione-tr): hangi paketi indirmeli ve Windows, Linux, Raspberry Pi ve Mac'te nasıl başlatmalı
 - [İlk adımlar](Primi-passi-tr): model açmak, hesaplamak, sonuçları okumak
 - [Hesaplayıcılar](Calcolatori-tr): anteni tasarlayıp NEC modelini oluşturan alt sekmeler

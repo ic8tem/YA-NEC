@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:11,284
+YA-NEC course, lesson 2: a 5-element VHF Yagi for 144 MHz. We model it in free space, optimize it, then check the lobes at 3 m above two different grounds.
+
+2
+00:00:11,334 --> 00:00:14,347
+New: an empty model.
+
+3
+00:00:14,397 --> 00:00:24,905
+Frequency 144.300 MHz, span 600 kHz: the weak-signal segment, 144.0 to 144.6 MHz.
+
+4
+00:00:24,955 --> 00:00:55,259
+First the Variables tab: every dimension gets a name, as in 4nec2. LR, LDE, LD1-LD3 are the half-lengths of reflector, driven element and directors.
+
+5
+00:00:55,309 --> 00:01:20,297
+XDE, XD1, XD2, XD3 are the positions along the boom, in metres from the reflector. Then Apply.
+
+6
+00:01:20,347 --> 00:01:29,164
+Back to the 3D structure. Each element is a wire across Y; in the cells we type the variable names instead of numbers.
+
+7
+00:01:29,214 --> 00:01:54,495
+Same for the driven element and the three directors: 6 mm tube (radius 3 mm), 21 segments each.
+
+8
+00:01:54,545 --> 00:01:59,095
+Apply and recalculate: the five elements appear in 3D.
+
+9
+00:01:59,145 --> 00:02:06,603
+Feed point: w2c, the centre of wire 2, the driven element.
+
+10
+00:02:06,653 --> 00:02:15,003
+Starting design: 9.67 dBi, F/B 12.9 dB, but 47 - j37 ohm and SWR 2.09. Not good enough: let the optimizer work.
+
+11
+00:02:15,053 --> 00:02:21,936
+Optimizer tab. On the left the goals: SWR, gain, F/B, each with its weight and threshold.
+
+12
+00:02:21,986 --> 00:02:28,603
+'All elements' puts all nine variables in the list, each free to move within +/- 3 %.
+
+13
+00:02:28,653 --> 00:02:37,070
+The frequencies to respect are the band edges and the centre: the antenna must be good across the whole segment.
+
+14
+00:02:37,120 --> 00:02:44,139
+Start.
+
+15
+00:02:44,189 --> 00:02:52,307
+Done in a couple of seconds, 159 steps: gain 10.16 dBi, F/B from 12.9 to 23.3 dB, SWR 1.32 across the band.
+
+16
+00:02:52,357 --> 00:02:58,441
+Apply to model: the new values go into the Variables.
+
+17
+00:02:58,491 --> 00:03:05,441
+Free space, optimized: 37.9 + j0.2 ohm, 10.16 dBi, F/B 23.3 dB, beamwidth 54 x 71 degrees.
+
+18
+00:03:05,491 --> 00:03:09,002
+Patterns in free space.
+
+19
+00:03:09,052 --> 00:03:17,569
+Clean main lobe, small rear lobe: this is the antenna by itself, without the ground.
+
+20
+00:03:17,619 --> 00:03:29,197
+Now at 3 m above Average ground (er 13, sigma 0.005): choose the ground and type the height.
+
+21
+00:03:29,247 --> 00:03:38,264
+At 3 m (about 1.4 wavelengths): 15.60 dBi at 9.6 degrees of elevation. Ground reflection adds over 5 dB in the main lobe.
+
+22
+00:03:38,314 --> 00:03:41,828
+Elevation pattern over Average ground.
+
+23
+00:03:41,878 --> 00:03:51,628
+The main lobe is low, 9.6 degrees, and above it the ground creates other lobes: typical of an antenna more than one wavelength high.
+
+24
+00:03:51,678 --> 00:03:58,450
+Second ground: Very good (er 20, sigma 0.0303). Same antenna, same height.
+
+25
+00:03:58,500 --> 00:04:06,251
+15.69 dBi at 9.6 degrees: almost identical. At 144 MHz and 3 m the type of ground changes very little.
+
+26
+00:04:06,301 --> 00:04:09,917
+Elevation pattern over Very good ground.
+
+27
+00:04:09,967 --> 00:04:19,584
+Same lobes: at VHF what counts is the height in wavelengths, not the soil. A 50 ohm match (hairpin or gamma) completes the design.
+
+28
+00:04:19,634 --> 00:04:25,584
+Variables, optimizer, ground: the full workflow in a few minutes. YA-NEC is free: github.com/ic8tem/YA-NEC - 73 de IC8TEM

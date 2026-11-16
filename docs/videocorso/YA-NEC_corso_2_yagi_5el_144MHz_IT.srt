@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:12,683
+Corso YA-NEC, lezione 2: una direttiva VHF a 5 elementi per i 144 MHz. La modelliamo nello spazio libero, la ottimizziamo, poi verifichiamo i lobi a 3 m su due terreni diversi.
+
+2
+00:00:12,733 --> 00:00:15,752
+Nuovo: un modello vuoto.
+
+3
+00:00:15,802 --> 00:00:26,336
+Frequenza 144,300 MHz, span 600 kHz: il segmento dei segnali deboli, da 144,0 a 144,6 MHz.
+
+4
+00:00:26,386 --> 00:00:56,695
+Prima la linguetta Variabili: ogni misura ha un nome, come in 4nec2. LR, LDE, LD1-LD3 sono le mezze lunghezze di riflettore, radiatore e direttori.
+
+5
+00:00:56,745 --> 00:01:21,659
+XDE, XD1, XD2, XD3 sono le posizioni sul boom, in metri dal riflettore. Poi Applica.
+
+6
+00:01:21,709 --> 00:01:30,926
+Torniamo alla Struttura 3D. Ogni elemento è un filo lungo Y; nelle celle scriviamo i nomi delle variabili invece dei numeri.
+
+7
+00:01:30,976 --> 00:01:56,284
+Lo stesso per radiatore e tre direttori: tubo da 6 mm (raggio 3 mm), 21 segmenti ciascuno.
+
+8
+00:01:56,334 --> 00:02:00,951
+Applica e ricalcola: i cinque elementi compaiono in 3D.
+
+9
+00:02:01,001 --> 00:02:08,479
+Alimentazione: w2c, il centro del filo 2, il radiatore.
+
+10
+00:02:08,529 --> 00:02:17,345
+Progetto di partenza: 9,67 dBi, F/B 12,9 dB, ma 47 - j37 ohm e ROS 2,09. Non basta: lasciamo lavorare l'ottimizzatore.
+
+11
+00:02:17,395 --> 00:02:25,679
+Linguetta Ottimizzatore. A sinistra gli obiettivi: ROS, guadagno, F/B, ognuno con il suo peso e la sua soglia.
+
+12
+00:02:25,729 --> 00:02:33,479
+'Tutti gli elementi' mette in elenco tutte e nove le variabili, ognuna libera di muoversi del +/- 3 %.
+
+13
+00:02:33,529 --> 00:02:42,079
+Le frequenze da rispettare sono i bordi e il centro del segmento: l'antenna deve andare bene su tutto il segmento.
+
+14
+00:02:42,129 --> 00:02:49,153
+Avvia.
+
+15
+00:02:49,203 --> 00:02:57,687
+Fatto in un paio di secondi, 159 passi: guadagno 10,16 dBi, F/B da 12,9 a 23,3 dB, ROS 1,32 su tutto il segmento.
+
+16
+00:02:57,737 --> 00:03:03,823
+Applica al modello: i nuovi valori vanno nelle Variabili.
+
+17
+00:03:03,873 --> 00:03:10,957
+Spazio libero, ottimizzata: 37,9 + j0,2 ohm, 10,16 dBi, F/B 23,3 dB, apertura 54 x 71 gradi.
+
+18
+00:03:11,007 --> 00:03:14,517
+Diagrammi nello spazio libero.
+
+19
+00:03:14,567 --> 00:03:23,080
+Lobo principale pulito, lobo posteriore piccolo: questa è l'antenna da sola, senza il terreno.
+
+20
+00:03:23,130 --> 00:03:34,711
+Ora a 3 m sopra un terreno Medio (er 13, sigma 0,005): scegliamo il terreno e scriviamo la quota.
+
+21
+00:03:34,761 --> 00:03:45,111
+A 3 m (circa 1,4 lunghezze d'onda): 15,60 dBi a 9,6 gradi di elevazione. La riflessione del terreno aggiunge più di 5 dB nel lobo principale.
+
+22
+00:03:45,161 --> 00:03:48,911
+Diagramma di elevazione sul terreno Medio.
+
+23
+00:03:48,961 --> 00:03:58,511
+Il lobo principale è basso, 9,6 gradi, e sopra il terreno crea altri lobi: tipico di un'antenna alta più di una lunghezza d'onda.
+
+24
+00:03:58,561 --> 00:04:05,333
+Secondo terreno: Molto buono (er 20, sigma 0,0303). Stessa antenna, stessa quota.
+
+25
+00:04:05,383 --> 00:04:12,466
+15,69 dBi a 9,6 gradi: quasi identico. A 144 MHz e 3 m il tipo di terreno cambia pochissimo.
+
+26
+00:04:12,516 --> 00:04:16,666
+Diagramma di elevazione sul terreno Molto buono.
+
+27
+00:04:16,716 --> 00:04:26,600
+Stessi lobi: in VHF conta l'altezza in lunghezze d'onda, non il suolo. Un adattamento a 50 ohm (hairpin o gamma) completa il progetto.
+
+28
+00:04:26,650 --> 00:04:32,601
+Variabili, ottimizzatore, terreno: tutto il percorso in pochi minuti. YA-NEC è gratuito: github.com/ic8tem/YA-NEC - 73 de IC8TEM

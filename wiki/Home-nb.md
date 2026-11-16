@@ -10,6 +10,7 @@
 
 ## Sider
 
+- ▶ [Videokurs (engelsk og italiensk): tre leksjoner steg for steg](Videocorso-en)
 - [Installasjon](Installazione-nb): hvilken pakke du skal laste ned, og hvordan du starter den på Windows, Linux, Raspberry Pi og Mac
 - [Kom i gang](Primi-passi-nb): åpne en modell, beregne, lese resultatene
 - [Kalkulatorer](Calcolatori-nb): underfanene som konstruerer en antenne og lager NEC-modellen

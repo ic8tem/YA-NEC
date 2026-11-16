@@ -10,6 +10,7 @@
 
 ## Páginas
 
+- ▶ [Curso em vídeo (inglês e italiano): três aulas passo a passo](Videocorso-en)
 - [Instalação](Installazione-pt-br): que pacote baixar e como o iniciar em Windows, Linux, Raspberry Pi e Mac
 - [Primeiros passos](Primi-passi-pt-br): abrir um modelo, calcular, ler os resultados
 - [Calculadoras](Calcolatori-pt-br): os subabas que projetam uma antena e criam o seu modelo NEC

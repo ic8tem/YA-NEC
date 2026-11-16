@@ -10,6 +10,7 @@
 
 ## Stránky
 
+- ▶ [Videokurz (angličtina a italština): tři lekce krok za krokem](Videocorso-en)
 - [Instalace](Installazione-cs): jaký balíček stáhnout a jak ho spustit ve Windows, Linuxu, na Raspberry Pi a Macu
 - [První kroky](Primi-passi-cs): otevřít model, spočítat, číst výsledky
 - [Kalkulátory](Calcolatori-cs): podzáložky, které navrhnou anténu a vytvoří její model NEC

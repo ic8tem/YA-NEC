@@ -10,6 +10,7 @@
 
 ## Mga pahina
 
+- ▶ [Video course (Ingles at Italyano): tatlong aralin hakbang-hakbang](Videocorso-en)
 - [Pag-install](Installazione-tl): aling package ang ida-download at paano ito patakbuhin sa Windows, Linux, Raspberry Pi at Mac
 - [Unang hakbang](Primi-passi-tl): magbukas ng model, magkalkula, basahin ang resulta
 - [Mga calculator](Calcolatori-tl): ang mga sub-tab na nagdidisenyo ng antenna at gumagawa ng NEC model nito

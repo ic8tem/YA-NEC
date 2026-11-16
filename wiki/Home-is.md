@@ -10,6 +10,7 @@
 
 ## Síður
 
+- ▶ [Myndbandanámskeið (enska og ítalska): þrjár kennslustundir skref fyrir skref](Videocorso-en)
 - [Uppsetning](Installazione-is): hvaða pakka á að sækja og hvernig á að ræsa hann í Windows, Linux, Raspberry Pi og Mac
 - [Fyrstu skref](Primi-passi-is): opna líkan, reikna, lesa niðurstöður
 - [Reiknivélar](Calcolatori-is): undirflipar sem hanna loftnet og búa til NEC-líkan þess

@@ -10,6 +10,7 @@
 
 ## Seiten
 
+- ▶ [Videokurs (Englisch und Italienisch): drei Lektionen Schritt für Schritt](Videocorso-en)
 - [Installation](Installazione-de): welches Paket herunterladen und wie man es unter Windows, Linux, Raspberry Pi und Mac startet
 - [Erste Schritte](Primi-passi-de): ein Modell öffnen, rechnen, die Ergebnisse lesen
 - [Rechner](Calcolatori-de): die Unterreiter, die eine Antenne entwerfen und ihr NEC-Modell erzeugen

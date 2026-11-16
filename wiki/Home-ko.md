@@ -10,6 +10,7 @@
 
 ## 페이지
 
+- ▶ [동영상 강좌(영어·이탈리아어): 단계별 3개 레슨](Videocorso-en)
 - [설치](Installazione-ko): 어떤 패키지를 받아 Windows, Linux, Raspberry Pi, Mac에서 어떻게 실행하는지
 - [시작하기](Primi-passi-ko): 모델 열기, 계산하기, 결과 읽기
 - [계산기](Calcolatori-ko): 안테나를 설계하고 NEC 모델을 만드는 하위 탭

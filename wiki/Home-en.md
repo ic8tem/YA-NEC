@@ -10,6 +10,7 @@
 
 ## Pages
 
+- ▶ [Video course (English and Italian): three step-by-step lessons](Videocorso-en)
 - [Installation](Installazione-en): which package to download and how to start it on Windows, Linux, Raspberry Pi and Mac
 - [Getting started](Primi-passi-en): opening a model, calculating, reading the results
 - [Calculators](Calcolatori-en): the sub-tabs that design an antenna and build its NEC model
