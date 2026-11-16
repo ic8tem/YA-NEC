@@ -593,10 +593,21 @@ namespace YaNec
             RefreshWiresTitle();
         }
 
+        async void NuovoEAggiungiFilo(int idx)
+        {
+            try
+            {
+                await NuovoModello();
+                if (model != null) AddWireAfter(idx);
+            }
+            catch (Exception ex) { Registro.Scrivi("ERRORE", "Aggiungi filo senza modello: " + ex.Message); }
+        }
+
         void AddWireAfter(int idx)
         {
             if (TabellaFiliNonAttiva()) return;
-            if (model == null) { Status("Apri prima un modello (anche uno degli esempi) o creane uno dalla linguetta Modello NEC.", true); return; }
+            // 1.0.8 (IC8TEM 16/11/2026 20:59): "Aggiungi filo" senza modello aperto equivale a "Nuovo" e poi aggiunge il filo
+            if (model == null) { NuovoEAggiungiFilo(idx); return; }
             WireRow r = MakeWireRow(null);
             // il nuovo filo parte dall'estremo del filo precedente (comodo per disegnare una linea spezzata)
             WireRow prev = null;
