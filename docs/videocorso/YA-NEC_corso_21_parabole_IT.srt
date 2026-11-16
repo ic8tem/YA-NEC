@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 21: parabole
+
+2
+00:00:05,000 --> 00:00:23,567
+Corso YA-NEC, lezione 21: le parabole. Primo fuoco, trombe e illuminatori, parabola offset: tre calcolatori della famiglia PARABOLE.
+
+3
+00:00:23,617 --> 00:00:31,967
+Parabola primo fuoco: 23 cm, disco da 3 m, f/D 0,42, taper al bordo 10 dB. Tutto si ricalcola mentre si scrive.
+
+4
+00:00:32,017 --> 00:00:44,367
+Riepilogo: 30,4 dBi, efficienza 66 %, fascio a -3 dB di 5,04 gradi. Il bilancio dice dove si perde: spillover 91 %, illuminazione 90 %, blocco del feed e dei puntoni 96 %.
+
+5
+00:00:44,417 --> 00:00:53,767
+Superficie con la formula di Ruze (3 mm RMS) e rete con Mumford: a 23 cm costano pochissimo. Le fonti sono nella pagina Fonti.
+
+6
+00:00:53,817 --> 00:01:03,791
+Proviamo f/D 0,38: il disco piu' profondo cambia spillover e illuminazione, e il guadagno si aggiorna subito.
+
+7
+00:01:03,841 --> 00:01:15,258
+Lobi: diagramma dall'integrazione d'apertura, con e senza il blocco del feed; sotto il confronto della larghezza del fascio con le formule della letteratura.
+
+8
+00:01:15,308 --> 00:01:26,525
+Meccanica: sezione in scala con fuoco, profondita' e angolo di bordo, poi pesi, baricentro e contrappeso. Negli avvisi, il vento e il ghiaccio sulla rete.
+
+9
+00:01:26,575 --> 00:01:37,125
+Bande ed EME: lo stesso disco su 23, 13, 6 e 3 cm. Oltre 40 dBi a 6 cm, ma a 3 cm la superficie da 3 mm non basta piu': lo dice la colonna Ruze.
+
+10
+00:01:37,175 --> 00:01:46,194
+Trombe e illuminatori: coffee-can, VE4MA, Chaparral, W2IMU, conica e piramidale. Qui la W2IMU dual-mode a 1296 MHz.
+
+11
+00:01:46,244 --> 00:01:56,261
+Diagramma: piani E e H, -10 dB a 54 gradi dall'asse, guadagno 10,5 dBi. Le righe tratteggiate sono il livello voluto al bordo del disco.
+
+12
+00:01:56,311 --> 00:02:07,461
+Sulla parabola: efficienza del feed in funzione di f/D. Con questa tromba il massimo e' intorno a f/D 0,50; il centro di fase dice dove mettere la bocca.
+
+13
+00:02:07,511 --> 00:02:17,661
+Dalla pagina Modello NEC la tromba diventa un file da aprire in YA-NEC, e la parabola puo' usarne il diagramma con "Feed dal modello NEC".
+
+14
+00:02:17,711 --> 00:02:26,730
+Parabola offset: spicchio di paraboloide con il feed fuori dal fascio. Niente blocco, ma illuminazione asimmetrica.
+
+15
+00:02:26,780 --> 00:02:35,263
+10 GHz, disco 1 x 1,1 m: 38,9 dBi, efficienza 65 %, fascio di 1,92 gradi. Blocco del feed 100 %: nessuna perdita.
+
+16
+00:02:35,313 --> 00:02:45,392
+Lobi nei piani H e V, e Geometria con le dime per costruire il disco: profilo e bordi rispetto al fuoco.
+
+17
+00:02:45,442 --> 00:02:55,992
+In polarizzazione circolare il fascio dell'offset si sposta (squint, Adatia e Rudge): a 10 GHz sono 0,15 gradi per verso, da considerare in EME.
+
+18
+00:02:56,042 --> 00:03:01,992
+Le parabole: primo fuoco, trombe e offset nello stesso motore, con fonti e avvisi. Fine del corso: buon lavoro e buone antenne!

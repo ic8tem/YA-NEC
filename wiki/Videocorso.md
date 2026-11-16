@@ -194,8 +194,16 @@ Eggbeater F5VIF per 145,9 MHz (41,6 ohm, 1,99 dBic allo zenit, riflettore a radi
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_20_satelliti_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_20_satelliti_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_21.jpg" alt="Lezione 21 - Parabole"></a></td><td>
+
+### Lezione 21 - Parabole
+
+Parabola primo fuoco da 3 m a 23 cm (30,4 dBi, efficienza 66 %, bilancio di spillover, illuminazione, blocco, Ruze e rete), lobi, meccanica, bande ed EME; trombe e illuminatori (W2IMU dual-mode: 10,5 dBi, -10 dB a 54 gradi, f/D migliore 0,50); parabola offset a 10 GHz (38,9 dBi, nessun blocco, squint in circolare).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **21** · Parabole: fuoco primario, offset e trombe
 
 I file del modello si costruiscono seguendo il video; per provare subito, gli Esempi del programma contengono già molte antenne pronte. Fonti e progettisti citati nei video sono elencati anche nella linguetta Crediti del programma.

@@ -194,8 +194,16 @@ F5VIF Eggbeater for 145.9 MHz (41.6 ohm, 1.99 dBic at the zenith, radial reflect
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_20_satellites_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_20_satellites_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_21_dishes_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_21.jpg" alt="Lesson 21 - Dishes"></a></td><td>
+
+### Lesson 21 - Dishes
+
+3 m prime-focus dish on 23 cm (30.4 dBi, 66 % efficiency, spillover, taper, blockage, Ruze and mesh balance), lobes, mechanics, bands and EME; horns and feeds (W2IMU dual-mode: 10.5 dBi, -10 dB at 54 degrees, best f/D 0.50); 10 GHz offset dish (38.9 dBi, no blockage, squint with circular polarization).
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_21_dishes_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_21_dishes_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **21** · Dishes: prime focus, offset and horns
 
 Model files are built by following the video; to try right away, the program Examples already contain many ready antennas. Sources and designers named in the videos are also listed in the program Credits tab.

@@ -268,9 +268,10 @@ namespace YaNec.Engine
             o.Mark(6, -inner - A * 0.05, h, null, 2, -inner + A * 0.05, h);
             o.Mark(0, inner - A * 0.05, h + q * 0.9, "bobina", 2);
             o.Mark(0, -inner - A * 0.05, h + q * 0.9, "bobina", 2);
-            o.Mark(7, 0, h - q, Calcolatori.N(inner, 2) + " m · " + Calcolatori.N(pc * 100, 0) + " %", 3, inner, h - q);
+            o.Mark(7, 0, h - q, Calcolatori.N(inner, 2) + " m", 3, inner, h - q);
             o.Mark(7, inner, h - q, Calcolatori.N(outer, 2) + " m", 3, A, h - q);
-            o.Mark(7, 0, h - 2.2 * q, "braccio " + Calcolatori.N(A, 2) + " m", 3, A, h - 2.2 * q);
+            o.Mark(7, 0, h - 2.2 * q, "braccio " + Calcolatori.N(A, 2) + " m, bobina al " + Calcolatori.N(pc * 100, 0) + " %", 3, A, h - 2.2 * q);
+            o.HideGround = true;   // 1.0.12: senza il terreno il dipolo occupa tutto il disegno e le quote non si sovrappongono
             return o;
         }
 

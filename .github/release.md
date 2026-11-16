@@ -1,8 +1,11 @@
-**YA-NEC 1.0.11** - simulatore d'antenne a fili basato sul NEC-2, a cura di Costantino IC8TEM.
+**YA-NEC 1.0.12** - simulatore d'antenne a fili basato sul NEC-2, a cura di Costantino IC8TEM.
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novita' 1.0.11:**
+**Novita' 1.0.12:**
+- Dipolo trappolato a singola banda: disegno piu' grande (senza il terreno) e quote che non si sovrappongono.
+
+**Dalla 1.0.11:**
 - Dipolo trappolato: nuovo modo "singola banda (bobina di carico)": scegli la lunghezza del braccio e la posizione della bobina in % del braccio, la scheda calcola la bobina; "Porta in risonanza (NEC)" ritocca la bobina;
 - Delta loop: scheda riordinata in sezioni (Dimensioni, Forma, Balun / alimentazione), alimentazione a tessere con la figurina, disegno senza sovrapposizioni;
 - tabelle di Fili, Sorgenti, Carichi e Linee: maniglia di riempimento come in Excel (trascina il quadratino blu per copiare il valore nelle celle vicine; Ctrl+Z annulla).
