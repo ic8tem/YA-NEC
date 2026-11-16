@@ -24,6 +24,10 @@ namespace YaNec
             public bool PiuSorgenti;
             public RunResult R;
             public double FronteLato = double.NaN;
+            // 1.0.9: aperture a -3 dB nello spazio libero, per le distanze di stack DL6WU (sopra un terreno l'apertura verticale e' quella
+            // del lobo di riflessione, 1-2 gradi, e la formula dava 60-77 m)
+            public double HpbwAzFs = double.NaN, HpbwElFs = double.NaN;
+            public bool ConTerreno;
         }
 
         static EsitoTempoReale CalcolaTempoReale(string nec, double z0, double da, double a, CancellationToken tok)
@@ -48,6 +52,24 @@ namespace YaNec
                         lato = Math.Max(lato, es.R.AzCut[k]);
                     }
                 es.FronteLato = lato <= -999 ? 99.9 : es.R.GmaxDbi - lato;
+            }
+            if (f > 28.0)
+            {
+                es.ConTerreno = m.Ground != null && m.Ground.Kind != GroundKind.FreeSpace;
+                if (!es.ConTerreno) { es.HpbwAzFs = es.R.HpbwAz; es.HpbwElFs = es.R.HpbwEl; }
+                else
+                {
+                    try
+                    {
+                        NecModel mfs = NecModel.Parse(nec);
+                        mfs.Z0 = z0;
+                        mfs.Ground = new GroundSpec { Kind = GroundKind.FreeSpace };
+                        RunResult rfs = Analysis.Run(mfs, mfs.BuildGeometry(), f, 2.0, tok);
+                        es.HpbwAzFs = rfs.HpbwAz; es.HpbwElFs = rfs.HpbwEl;
+                    }
+                    catch (OperationCanceledException) { throw; }
+                    catch (Exception) { }
+                }
             }
             if (es.PiuSorgenti) return es;
             // ROS: sweep di sola impedenza attorno alla frequenza (+-10 %, poi rifinitura attorno al minimo)
@@ -158,8 +180,9 @@ namespace YaNec
                         bool okAz = !double.IsNaN(r.HpbwAz) && r.HpbwAz > 0, okEl = !double.IsNaN(r.HpbwEl) && r.HpbwEl > 0;
                         cards.Children.Add(Riquadretto("Angoli a -3 dB", (okAz ? FN(r.HpbwAz, 1) + "°" : "omni") + " / " + (okEl ? FN(r.HpbwEl, 1) + "°" : "-"),
                             okAz ? "azimut / elevazione" : "azimut / elevazione (omni: nessun calo di 3 dB in azimut)"));
-                        string st = okAz && okEl ? FN(StackDetect.Dl6wu(lam, r.HpbwAz), 2) + " / " + FN(StackDetect.Dl6wu(lam, r.HpbwEl), 2) + " m" : "-";
-                        cards.Children.Add(Riquadretto("Distanze di stack DL6WU", st, "affiancate / sovrapposte (punto di partenza)"));
+                        bool okAzF = !double.IsNaN(es.HpbwAzFs) && es.HpbwAzFs > 0, okElF = !double.IsNaN(es.HpbwElFs) && es.HpbwElFs > 0;
+                        string st = okAzF && okElF ? FN(StackDetect.Dl6wu(lam, es.HpbwAzFs), 2) + " / " + FN(StackDetect.Dl6wu(lam, es.HpbwElFs), 2) + " m" : "-";
+                        cards.Children.Add(Riquadretto("Distanze di stack DL6WU", st, "affiancate / sovrapposte (punto di partenza)" + (es.ConTerreno ? ", aperture nello spazio libero" : "")));
                     }
                     stato.Text = "aggiornato (" + FN((DateTime.Now - t0).TotalSeconds, 1) + " s) a " + FN(es.F, 3) + " MHz";
                 }));

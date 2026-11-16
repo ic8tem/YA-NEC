@@ -311,7 +311,10 @@ namespace YaNec
                 {
                     if (v.Error != null || ottTolte.Contains(v.Name)) continue;
                     OttRigaVar vecchia = vecchie.Find(q => string.Equals(q.Nome, v.Name, StringComparison.OrdinalIgnoreCase));
-                    if (!tutte && vecchia != null) { ottVar.Add(vecchia); continue; }
+                    // 1.0.9 (IC8TEM 16/11/2026 21:36 "procedi"): la riga vecchia si tiene solo se il valore attuale sta ancora dentro il suo
+                    // intervallo; dopo "Nuovo" con variabili dallo stesso nome (LR, LDE...) restavano minimo e massimo del modello precedente
+                    // e l'ottimizzatore cercava fuori scala (0,2 - j1894 ohm)
+                    if (!tutte && vecchia != null && OttDentro(vecchia, v.Value)) { ottVar.Add(vecchia); continue; }
                     double val;
                     bool num = OttNumerica(v.Expr, out val);
                     string descr = string.IsNullOrWhiteSpace(v.Descr) ? model.DescribeUse(v.Name) : v.Descr;
@@ -332,6 +335,14 @@ namespace YaNec
                     ottVar.Add(r);
                 }
             OttDisegnaVariabili();
+        }
+
+        static bool OttDentro(OttRigaVar r, double v)
+        {
+            if (r.Formula) return true;
+            double mn = OttNumero(r.Min != null ? r.Min.Text : "", double.NaN), mx = OttNumero(r.Max != null ? r.Max.Text : "", double.NaN);
+            if (double.IsNaN(mn) || double.IsNaN(mx)) return true;
+            return v >= Math.Min(mn, mx) - 1e-12 && v <= Math.Max(mn, mx) + 1e-12;
         }
 
         TextBox OttCella(string t, bool attiva)

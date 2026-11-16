@@ -107,6 +107,11 @@ namespace YaNec
             bApply.Click += (s, e) => ApplyWires();
             bar.Children.Add(bAdd);
             bar.Children.Add(bApply);
+            // 1.0.9: elemento simmetrico (MainWindow.Simmetrico.cs)
+            Button bSim = Btn("Ins. elemento simmetrico", false);
+            bSim.Margin = new Thickness(6, 0, 0, 0);
+            ToolTip.SetTip(bSim, "Inserisce un filo diritto centrato sul boom: X, lunghezza totale, quota, raggio e segmenti; Y1 = -L/2, Y2 = +L/2.");
+            bar.Children.Add(bSim);
             bar.Children.Add(new TextBlock
             {
                 Text = "come in Excel: frecce e Tab, Invio applica, Ctrl+C / Ctrl+V anche su più righe, Canc svuota",
@@ -114,6 +119,10 @@ namespace YaNec
             });
             DockPanel.SetDock(bar, Dock.Top);
             d.Children.Add(bar);
+            Control pSim = BuildPannelloSimmetrico();
+            DockPanel.SetDock(pSim, Dock.Top);
+            d.Children.Add(pSim);
+            bSim.Click += (s, e) => { if (!simPannello.IsVisible) { simPannello.IsVisible = true; if (simPrecompila != null) simPrecompila(); } else simPannello.IsVisible = false; };
 
             // barra della formula: "riga 3, Y1 | fx | valore"
             Grid fx = new Grid { ColumnDefinitions = new ColumnDefinitions("90,34,*,Auto"), Margin = new Thickness(0, 0, 0, 6) };
