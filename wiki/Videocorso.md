@@ -68,22 +68,30 @@ Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), or
 
 </td></tr></table>
 
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_09.jpg" alt="Lezione 9 - Altre direttive"></a></td><td>
+
+### Lezione 9 - Altre direttive
+
+HB9CV (Rudolf Baumgartner HB9CV) a 145 MHz con la linea di fase incrociata; Quad 2 e 3 elementi per i 20 m e multibanda 20-10 m tipo DK7ZB; Hexbeam 20-10 m con le misure G3TXQ/JN1GLB; log-periodica 144-432 MHz col metodo Carrel e sweep NEC di tutta la banda.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_09_altre_direttive_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-7. Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
-8. Direttiva HF con trappole e terreno
-9. Altre direttive HF: HB9CV, Quad 1-3 elementi e multibanda, Hexbeam, LPDA
-10. Antenne riceventi: EWE e Beverage
-11. Four-square e altre riceventi, classifica RDF
-12. Loop caricato, toroidi, rete L-C e oggetti del modello (linee, trasformatori, balun, sorgenti a corrente)
-13. Le altre funzioni per l'HF
-14. Yagi 6 elementi DK7ZB con le misure del progettista
-15. La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore
-16. VHF/UHF avanzato: Yagi lunga DL6WU, correzione del boom e staffe, tempo reale
-17. Antenne VHF su un tetto
-18. Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T
-19. Loop Yagi per i 1296 MHz
-20. Satelliti: Eggbeater, QFH, Quagi
-21. Parabole: fuoco primario, offset e trombe
+- **7** · Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
+- **8** · Direttiva HF con trappole e terreno
+- **10** · Antenne riceventi: EWE e Beverage
+- **11** · Four-square e altre riceventi, classifica RDF
+- **12** · Loop caricato, toroidi, rete L-C e oggetti del modello (linee, trasformatori, balun, sorgenti a corrente)
+- **13** · Le altre funzioni per l'HF
+- **14** · Yagi 6 elementi DK7ZB con le misure del progettista
+- **15** · La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore
+- **16** · VHF/UHF avanzato: Yagi lunga DL6WU, correzione del boom e staffe, tempo reale
+- **17** · Antenne VHF su un tetto
+- **18** · Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T
+- **19** · Loop Yagi per i 1296 MHz
+- **20** · Satelliti: Eggbeater, QFH, Quagi
+- **21** · Parabole: fuoco primario, offset e trombe
 
 I file del modello si costruiscono seguendo il video; per provare subito, gli Esempi del programma contengono già molte antenne pronte. Fonti e progettisti citati nei video sono elencati anche nella linguetta Crediti del programma.

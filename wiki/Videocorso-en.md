@@ -68,22 +68,30 @@ From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees
 
 </td></tr></table>
 
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_09.jpg" alt="Lesson 9 - Other beams"></a></td><td>
+
+### Lesson 9 - Other beams
+
+HB9CV (Rudolf Baumgartner HB9CV) at 145 MHz with its crossed phase line; 2 and 3 element quads for 20 m and a DK7ZB-style 20-10 m multiband quad; Hexbeam 20-10 m with the G3TXQ/JN1GLB dimensions; 144-432 MHz log-periodic by the Carrel method with a NEC sweep of the whole band.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_09_other_beams_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-7. Simple HF beam from the calculators: 3-element Yagi and Moxon
-8. HF beam with traps and ground
-9. Other HF beams: HB9CV, 1-3 element and multiband Quad, Hexbeam, LPDA
-10. Receiving antennas: EWE and Beverage
-11. Four-square and other receiving antennas, RDF ranking
-12. Loaded loop, toroids, L-C network and model objects (lines, transformers, baluns, current sources)
-13. The other HF functions
-14. DK7ZB 6-element Yagi with the designer's dimensions
-15. The same 6 elements brought to 50 ohm with the Optimizer
-16. Advanced VHF/UHF: DL6WU long Yagi, boom correction and brackets, real time
-17. VHF antennas on a roof
-18. VHF stacks of short (DK7ZB) and long (DL6WU) antennas, noise and G/T
-19. Loop Yagi for 1296 MHz
-20. Satellites: Eggbeater, QFH, Quagi
-21. Dishes: prime focus, offset and horns
+- **7** · Simple HF beam from the calculators: 3-element Yagi and Moxon
+- **8** · HF beam with traps and ground
+- **10** · Receiving antennas: EWE and Beverage
+- **11** · Four-square and other receiving antennas, RDF ranking
+- **12** · Loaded loop, toroids, L-C network and model objects (lines, transformers, baluns, current sources)
+- **13** · The other HF functions
+- **14** · DK7ZB 6-element Yagi with the designer's dimensions
+- **15** · The same 6 elements brought to 50 ohm with the Optimizer
+- **16** · Advanced VHF/UHF: DL6WU long Yagi, boom correction and brackets, real time
+- **17** · VHF antennas on a roof
+- **18** · VHF stacks of short (DK7ZB) and long (DL6WU) antennas, noise and G/T
+- **19** · Loop Yagi for 1296 MHz
+- **20** · Satellites: Eggbeater, QFH, Quagi
+- **21** · Dishes: prime focus, offset and horns
 
 Model files are built by following the video; to try right away, the program Examples already contain many ready antennas. Sources and designers named in the videos are also listed in the program Credits tab.

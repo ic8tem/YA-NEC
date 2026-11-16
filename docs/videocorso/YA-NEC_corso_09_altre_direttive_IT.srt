@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 9: altre direttive
+
+2
+00:00:04,000 --> 00:00:14,083
+Corso YA-NEC, lezione 9: altre direttive - HB9CV, Quad, Hexbeam e log-periodica. Tutto dalla linguetta Calcolatori.
+
+3
+00:00:14,133 --> 00:00:24,216
+HB9CV di Rudolf Baumgartner HB9CV: due elementi alimentati, 103,4 e 95,9 cm a 145 MHz, a lambda/8, uniti da una linea di fase incrociata.
+
+4
+00:00:24,266 --> 00:00:34,217
+Tempo reale: 6,32 dBi e F/B 32,5 dB con due soli elementi. Il modello ha due sorgenti, per questo il riquadro ROS dice 'piu' sorgenti'.
+
+5
+00:00:34,267 --> 00:00:39,288
+Quad: anelli al posto dei dipoli. Due elementi per 14,2 MHz.
+
+6
+00:00:39,338 --> 00:00:45,688
+Radiatore 21,57 m, riflettore 22,08 m, a 3,17 m. ROS 1,17, 7,87 dBi, F/B 10,8 dB.
+
+7
+00:00:45,738 --> 00:00:50,750
+Tre elementi: si aggiunge un direttore.
+
+8
+00:00:50,800 --> 00:00:55,683
+Direttore 20,93 m: 9,16 dBi e F/B 16,5 dB, ROS sempre 1,19.
+
+9
+00:00:55,733 --> 00:01:02,083
+'Multibanda': la quad 2 elementi 20-10 m tipo DK7ZB, tutti gli anelli su un boom.
+
+10
+00:01:02,133 --> 00:01:11,283
+In 20 m: ROS 1,08, 6,84 dBi, F/B 15,5 dB. L'avviso lo ricorda: un solo boom vuol dire spaziatura ideale per una banda sola.
+
+11
+00:01:11,333 --> 00:01:17,353
+Hexbeam 20-10 m con le misure di G3TXQ e le misure di JN1GLB.
+
+12
+00:01:17,403 --> 00:01:28,553
+Elemento alimentato e riflettore piegati a W, bande collegate con coassiale. In 20 m: ROS 1,17, 5,83 dBi, F/B 17,6 dB, in un raggio di rotazione piccolo.
+
+13
+00:01:28,603 --> 00:01:38,995
+Ultima: la log-periodica a dipoli, metodo Carrel.
+
+14
+00:01:39,045 --> 00:01:47,795
+Progetto di partenza 144-432 MHz: tau 0,9, sigma 0,168, 16 elementi, boom 2,78 m. Tempo reale: 9,12 dBi, F/B 14,3 dB.
+
+15
+00:01:47,845 --> 00:02:29,431
+'Calcola con il NEC' fa lo sweep di tutta la banda.
+
+16
+00:02:29,481 --> 00:02:38,698
+ROS 1,2 a 144 e 1,1 a 432 MHz, guadagno da 7,4 a 10,4 dBi - ma un picco a ROS 4,3 verso 165 MHz e F/B fino a 4 dB a 252 MHz.
+
+17
+00:02:38,748 --> 00:02:47,098
+Le formule danno la partenza; lo sweep NEC mostra dove ritoccare. In HF lo stesso metodo da' boom da 10 a 27 m.
+
+18
+00:02:47,148 --> 00:02:53,098
+HB9CV, Quad, Hexbeam, LPDA: quattro famiglie di direttive in pochi clic. 73 de IC8TEM

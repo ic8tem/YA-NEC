@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lesson 9: other beams
+
+2
+00:00:04,000 --> 00:00:14,093
+YA-NEC course, lesson 9: other beams - HB9CV, Quad, Hexbeam and log-periodic. All from the Calculators tab.
+
+3
+00:00:14,143 --> 00:00:23,960
+HB9CV by Rudolf Baumgartner HB9CV: two driven elements, 103.4 and 95.9 cm at 145 MHz, lambda/8 apart, joined by a crossed phase line.
+
+4
+00:00:24,010 --> 00:00:33,760
+Real time: 6.32 dBi and F/B 32.5 dB with only two elements. The model has two sources, that is why the SWR card says 'more sources'.
+
+5
+00:00:33,810 --> 00:00:38,822
+Quad: loops instead of dipoles. Two elements for 14.2 MHz.
+
+6
+00:00:38,872 --> 00:00:45,356
+Radiator 21.57 m, reflector 22.08 m, 3.17 m apart. SWR 1.17, 7.87 dBi, F/B 10.8 dB.
+
+7
+00:00:45,406 --> 00:00:50,429
+Three elements: a director is added.
+
+8
+00:00:50,479 --> 00:00:55,362
+Director 20.93 m: 9.16 dBi and F/B 16.5 dB, SWR still 1.19.
+
+9
+00:00:55,412 --> 00:01:01,629
+'Multiband': the DK7ZB-style 2-element quad for 20-10 m, all loops on one boom.
+
+10
+00:01:01,679 --> 00:01:10,696
+On 20 m: SWR 1.08, 6.84 dBi, F/B 15.5 dB. The warning reminds you: one boom means the spacing is ideal for one band only.
+
+11
+00:01:10,746 --> 00:01:16,765
+Hexbeam 20-10 m with the G3TXQ dimensions and the JN1GLB measurements.
+
+12
+00:01:16,815 --> 00:01:26,698
+Driven element and reflector bent like a W, bands joined by coax. On 20 m: SWR 1.17, 5.83 dBi, F/B 17.6 dB, in a small turning radius.
+
+13
+00:01:26,748 --> 00:01:37,133
+Last: the log-periodic dipole array, Carrel method.
+
+14
+00:01:37,183 --> 00:01:45,400
+Default design 144-432 MHz: tau 0.9, sigma 0.168, 16 elements, 2.78 m boom. Real time: 9.12 dBi, F/B 14.3 dB.
+
+15
+00:01:45,450 --> 00:02:27,022
+'Calculate with the NEC' sweeps the whole band.
+
+16
+00:02:27,072 --> 00:02:36,423
+SWR 1.2 at 144 and 1.1 at 432 MHz, gain 7.4 to 10.4 dBi - but a spike to SWR 4.3 near 165 MHz and F/B down to 4 dB at 252 MHz.
+
+17
+00:02:36,473 --> 00:02:45,023
+The formulas give the start; the NEC sweep shows where to adjust. On HF the same method gives booms of 10 to 27 m.
+
+18
+00:02:45,073 --> 00:02:51,023
+HB9CV, Quad, Hexbeam, LPDA: four directional families in a few clicks. 73 de IC8TEM
