@@ -1,8 +1,14 @@
-**YA-NEC 1.0.9** - simulatore d'antenne a fili basato sul NEC-2, a cura di Costantino IC8TEM.
+**YA-NEC 1.0.10** - simulatore d'antenne a fili basato sul NEC-2, a cura di Costantino IC8TEM.
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novita' 1.0.9:**
+**Novita' 1.0.10:**
+- Hexbeam: anche il 6 m (50 MHz) del modello di JN1GLB, a 2 o 3 elementi, sotto il 10 m; si puo' scegliere come banda del calcolo NEC;
+- Moxon: profondita' E vincolata e "Fissa A ed E": il NEC ricalcola B, C e D (e A, se libera) in sottofondo per il F/B migliore con ROS sotto 1,5;
+- Yagi multibanda e Dipolo multibanda: scheda in sezioni numerate (Radiatori, Trappole, Parassiti, Accordo), bande da 80 a 4 m su due righe (con l'8 m);
+- tabella dei Fili: un conto di soli numeri in una cella (1.42+.26) diventa il risultato; barra Geometria: lista a comparsa delle variabili ("Variabili ▾").
+
+**Dalla 1.0.9:**
 - Fili: nuovo pulsante "Ins. elemento simmetrico": X sul boom, lunghezza totale, quota, raggio e segmenti, e il filo centrato (Y1 = -L/2, Y2 = +L/2, oppure verticale) va nella tabella; valgono anche variabili e formule;
 - Ottimizzazione: dopo "Nuovo" le variabili con lo stesso nome del modello precedente non tengono piu' minimo e massimo vecchi (davano risultati assurdi);
 - calcolo in tempo reale sopra 28 MHz: le distanze di stack DL6WU usano sempre le aperture nello spazio libero (sopra un terreno davano 60-77 m).
@@ -33,20 +39,20 @@
 
 | Sistema | Installatore | Zip (senza installare) |
 |---|---|---|
-| Windows 10/11 64 bit | [YA-NEC-1.0.9-win-x64-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win-x64-setup.exe) | [YA-NEC-1.0.9-win-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win-x64.zip) |
-| Windows 10/11 32 bit | [YA-NEC-1.0.9-win-x86-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win-x86-setup.exe) | [YA-NEC-1.0.9-win-x86.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win-x86.zip) |
-| Windows su ARM (Snapdragon) | [YA-NEC-1.0.9-win-arm64-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win-arm64-setup.exe) | [YA-NEC-1.0.9-win-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win-arm64.zip) |
-| Windows 7 SP1, 8, 8.1 - 64 bit | [YA-NEC-1.0.9-win7-x64-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win7-x64-setup.exe) | [YA-NEC-1.0.9-win7-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win7-x64.zip) |
-| Windows 7 SP1, 8, 8.1 - 32 bit | [YA-NEC-1.0.9-win7-x86-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win7-x86-setup.exe) | [YA-NEC-1.0.9-win7-x86.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-win7-x86.zip) |
-| macOS Apple Silicon (M1-M4) | [YA-NEC-1.0.9-osx-arm64.dmg](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-osx-arm64.dmg) | [YA-NEC-1.0.9-osx-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-osx-arm64.zip) |
-| macOS Intel | [YA-NEC-1.0.9-osx-x64.dmg](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-osx-x64.dmg) | [YA-NEC-1.0.9-osx-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-osx-x64.zip) |
-| Debian, Ubuntu, Mint (x86_64) | [ya-nec_1.0.9_amd64.deb](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/ya-nec_1.0.9_amd64.deb) | [YA-NEC-1.0.9-linux-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-x64.zip) |
-| Fedora, openSUSE (x86_64) | [ya-nec-1.0.9-1.x86_64.rpm](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/ya-nec-1.0.9-1.x86_64.rpm) | [YA-NEC-1.0.9-linux-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-x64.zip) |
-| Raspberry Pi OS 64 bit (e altri Linux ARM64) | [ya-nec_1.0.9_arm64.deb](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/ya-nec_1.0.9_arm64.deb) | [YA-NEC-1.0.9-linux-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-arm64.zip) |
-| Raspberry Pi OS 32 bit (armv7l) | [ya-nec_1.0.9_armhf.deb](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/ya-nec_1.0.9_armhf.deb) | [YA-NEC-1.0.9-linux-arm.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-arm.zip) |
-| Linux ARM64 rpm (Fedora ARM...) | [ya-nec-1.0.9-1.aarch64.rpm](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/ya-nec-1.0.9-1.aarch64.rpm) | [YA-NEC-1.0.9-linux-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-arm64.zip) |
-| Alpine / musl x64 | - | [YA-NEC-1.0.9-linux-musl-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-musl-x64.zip) |
-| Alpine / musl ARM64 | - | [YA-NEC-1.0.9-linux-musl-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.9/YA-NEC-1.0.9-linux-musl-arm64.zip) |
+| Windows 10/11 64 bit | [YA-NEC-1.0.10-win-x64-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win-x64-setup.exe) | [YA-NEC-1.0.10-win-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win-x64.zip) |
+| Windows 10/11 32 bit | [YA-NEC-1.0.10-win-x86-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win-x86-setup.exe) | [YA-NEC-1.0.10-win-x86.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win-x86.zip) |
+| Windows su ARM (Snapdragon) | [YA-NEC-1.0.10-win-arm64-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win-arm64-setup.exe) | [YA-NEC-1.0.10-win-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win-arm64.zip) |
+| Windows 7 SP1, 8, 8.1 - 64 bit | [YA-NEC-1.0.10-win7-x64-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win7-x64-setup.exe) | [YA-NEC-1.0.10-win7-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win7-x64.zip) |
+| Windows 7 SP1, 8, 8.1 - 32 bit | [YA-NEC-1.0.10-win7-x86-setup.exe](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win7-x86-setup.exe) | [YA-NEC-1.0.10-win7-x86.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-win7-x86.zip) |
+| macOS Apple Silicon (M1-M4) | [YA-NEC-1.0.10-osx-arm64.dmg](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-osx-arm64.dmg) | [YA-NEC-1.0.10-osx-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-osx-arm64.zip) |
+| macOS Intel | [YA-NEC-1.0.10-osx-x64.dmg](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-osx-x64.dmg) | [YA-NEC-1.0.10-osx-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-osx-x64.zip) |
+| Debian, Ubuntu, Mint (x86_64) | [ya-nec_1.0.10_amd64.deb](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/ya-nec_1.0.10_amd64.deb) | [YA-NEC-1.0.10-linux-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-x64.zip) |
+| Fedora, openSUSE (x86_64) | [ya-nec-1.0.10-1.x86_64.rpm](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/ya-nec-1.0.10-1.x86_64.rpm) | [YA-NEC-1.0.10-linux-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-x64.zip) |
+| Raspberry Pi OS 64 bit (e altri Linux ARM64) | [ya-nec_1.0.10_arm64.deb](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/ya-nec_1.0.10_arm64.deb) | [YA-NEC-1.0.10-linux-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-arm64.zip) |
+| Raspberry Pi OS 32 bit (armv7l) | [ya-nec_1.0.10_armhf.deb](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/ya-nec_1.0.10_armhf.deb) | [YA-NEC-1.0.10-linux-arm.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-arm.zip) |
+| Linux ARM64 rpm (Fedora ARM...) | [ya-nec-1.0.10-1.aarch64.rpm](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/ya-nec-1.0.10-1.aarch64.rpm) | [YA-NEC-1.0.10-linux-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-arm64.zip) |
+| Alpine / musl x64 | - | [YA-NEC-1.0.10-linux-musl-x64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-musl-x64.zip) |
+| Alpine / musl ARM64 | - | [YA-NEC-1.0.10-linux-musl-arm64.zip](https://github.com/ic8tem/YA-NEC/releases/download/v1.0.10/YA-NEC-1.0.10-linux-musl-arm64.zip) |
 
 **Installatori (nuovi dalla 1.0.7):** Windows `setup.exe` in `C:\YA-NEC` senza diritti di amministratore (menu Start, desktop, disinstallazione da App installate; impostazioni e modelli restano in `C:\YA-NEC\data`, l'aggiornamento automatico continua a funzionare); `.deb`/`.rpm` in `/opt/YA-NEC` con il comando `ya-nec` e la voce nel menu (si aggiorna con apt/dnf); `.dmg` per Mac: trascina la cartella YA-NEC in Applicazioni.
 Il setup non e' firmato: Windows puo' mostrare "PC protetto", si clicca "Ulteriori informazioni" e "Esegui comunque". Sul Mac la prima volta: tasto destro su YA-NEC.app > Apri.
