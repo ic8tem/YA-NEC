@@ -95,14 +95,22 @@ A 40 m Four-square from the calculator (ON4UN): current sources at 0/-90/-90/-18
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_11_foursquare_rx_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_11_foursquare_rx_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_12_loop_toroids_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_12.jpg" alt="Lesson 12 - Loaded loop, toroids, L-C network and model objects"></a></td><td>
+
+### Lesson 12 - Loaded loop, toroids, L-C network and model objects
+
+A 1 m magnetic loop for 40 m (16 % efficiency, 52 A and 5.6 kV at 100 W) and the effect of the wire material in the NEC; L-C network; iron powder and ferrite toroids; 4:1 Guanella balun on FT-240-43; the model objects: lines, transformers, L networks and current sources.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_12_loop_toroids_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_12_loop_toroids_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **7** · Simple HF beam from the calculators: 3-element Yagi and Moxon
+- **7** · Simple HF beam from the calculators: Moxon and 2-element Yagi
 - **8** · HF beam with traps and ground
-- **12** · Loaded loop, toroids, L-C network and model objects (lines, transformers, baluns, current sources)
 - **13** · The other HF functions
 - **14** · DK7ZB 6-element Yagi with the designer's dimensions
-- **15** · The same 6 elements brought to 50 ohm with the Optimizer
+- **15** · The same 6 elements brought to 50 ohm with the Optimizer, and an optimized 3-element HF Yagi
 - **16** · Advanced VHF/UHF: DL6WU long Yagi, boom correction and brackets, real time
 - **17** · VHF antennas on a roof
 - **18** · VHF stacks of short (DK7ZB) and long (DL6WU) antennas, noise and G/T

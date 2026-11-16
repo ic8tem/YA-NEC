@@ -95,14 +95,22 @@ Four-square per i 40 m dal calcolatore (ON4UN): sorgenti di corrente a 0/-90/-90
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_11_foursquare_riceventi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_11_foursquare_riceventi_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_12_loop_toroidi_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_12.jpg" alt="Lezione 12 - Loop caricato, toroidi, rete L-C e oggetti del modello"></a></td><td>
+
+### Lezione 12 - Loop caricato, toroidi, rete L-C e oggetti del modello
+
+Loop magnetica da 1 m per i 40 m (efficienza 16 %, 52 A e 5,6 kV con 100 W) e l'effetto del materiale dei fili nel NEC; rete L-C; toroidi in polvere di ferro e in ferrite; balun 4:1 Guanella su FT-240-43; gli oggetti del modello: linee, trasformatori, reti L e sorgenti a corrente.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_12_loop_toroidi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_12_loop_toroidi_IT.srt)
+
+</td></tr></table>
 ## Prossime lezioni
 
-- **7** · Direttiva HF semplice dai calcolatori: Yagi 3 elementi e Moxon
+- **7** · Direttiva HF semplice dai calcolatori: Moxon e Yagi 2 elementi
 - **8** · Direttiva HF con trappole e terreno
-- **12** · Loop caricato, toroidi, rete L-C e oggetti del modello (linee, trasformatori, balun, sorgenti a corrente)
 - **13** · Le altre funzioni per l'HF
 - **14** · Yagi 6 elementi DK7ZB con le misure del progettista
-- **15** · La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore
+- **15** · La stessa 6 elementi portata a 50 ohm con l'Ottimizzatore, e una Yagi HF 3 elementi ottimizzata
 - **16** · VHF/UHF avanzato: Yagi lunga DL6WU, correzione del boom e staffe, tempo reale
 - **17** · Antenne VHF su un tetto
 - **18** · Stack VHF di antenne corte (DK7ZB) e lunghe (DL6WU), rumore e G/T

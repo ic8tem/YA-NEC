@@ -1,0 +1,91 @@
+1
+00:00:00,000 --> 00:00:03,950
+Lezione 12: loop caricato, toroidi, rete L-C e oggetti del modello
+
+2
+00:00:04,000 --> 00:00:15,095
+Corso YA-NEC, lezione 12: il loop caricato, i toroidi, la rete L-C e gli oggetti del modello. Calcolatori, Loop magnetica.
+
+3
+00:00:15,145 --> 00:00:24,428
+Un loop da 1 m in tubo di rame da 22 mm per i 40 m: resistenza di radiazione 6 milliohm, resistenza di perdita 31,6 milliohm.
+
+4
+00:00:24,478 --> 00:00:32,028
+Quindi l'efficienza e' solo il 16 % (-7,9 dB). 2,45 uH accordati con 205 pF; Q 2900, banda 4,9 kHz.
+
+5
+00:00:32,078 --> 00:00:39,428
+E con 100 W: 52 A nel loop e 5,6 kV sul condensatore. Formule dall'ARRL Antenna Book e da W5QJR.
+
+6
+00:00:39,478 --> 00:00:50,499
+'Crea il modello NEC e verificalo'.
+
+7
+00:00:50,549 --> 00:01:01,432
+Il modello NEC e' alimentato direttamente nel loop, con i fili 'Senza perdite': 5,55 dBi sul terreno, efficienza 100 %. Troppo bello per essere vero.
+
+8
+00:01:01,482 --> 00:01:11,058
+Fili: Rame.
+
+9
+00:01:11,108 --> 00:01:22,992
+Con le perdite del rame il guadagno scende a -0,13 dBi: quasi 6 dB persi nel metallo, come diceva il calcolatore. Sui loop piccoli il materiale va sempre impostato.
+
+10
+00:01:23,042 --> 00:01:34,498
+Ora l'adattamento: il calcolatore Rete L-C.
+
+11
+00:01:34,548 --> 00:01:44,032
+Carico 12 - j30 ohm a 7,1 MHz su 50 ohm: bobina in serie 1,15 uH, condensatore in parallelo 798 pF; la verifica da' 50 + j0 ohm.
+
+12
+00:01:44,082 --> 00:01:49,091
+I toroidi: polvere di ferro (T).
+
+13
+00:01:49,141 --> 00:01:56,625
+Miscela 2 (rossa), nucleo T-68, 2,45 uH voluti: 21 spire, 2,51 uH, miscela buona da 0,25 a 10 MHz.
+
+14
+00:01:56,675 --> 00:02:01,686
+Toroidi di ferrite (FT).
+
+15
+00:02:01,736 --> 00:02:11,153
+FT-240 in miscela 43, 12 spire: 155 uH, 6,9 kohm a 7,1 MHz - una buona choke di modo comune. L'AL ha una tolleranza del +-25 %.
+
+16
+00:02:11,203 --> 00:02:16,353
+Balun e un-un: tutti i rapporti, con il disegno di costruzione.
+
+17
+00:02:16,403 --> 00:02:27,354
+Balun 4:1 in corrente (Guanella) su due FT-240-43: 2 x 3 spire bifilari, rame da 1 mm. L'avviso: sopra i 30 MHz la capacita' tra le spire lo peggiora.
+
+18
+00:02:27,404 --> 00:02:34,487
+Per finire: gli oggetti del modello, sotto la tabella dei fili della linguetta Struttura 3D.
+
+19
+00:02:34,537 --> 00:02:41,548
+Linee: schede TL del NEC, come nelle lezioni 2 e 3.
+
+20
+00:02:41,598 --> 00:02:49,348
+Trasformatori: un rapporto d'impedenza tra due punti del modello, per esempio l'1:6 della Waller Flag.
+
+21
+00:02:49,398 --> 00:02:56,987
+Reti L e reti di sfasamento: adattamento e sfasamento dentro il modello.
+
+22
+00:02:57,037 --> 00:03:06,321
+E le sorgenti: in tensione o in corrente. Con 'Sorgenti a corrente' il programma ricava le tensioni, come per la four-square.
+
+23
+00:03:06,371 --> 00:03:12,321
+Loop, toroidi, rete L-C, oggetti del modello: i componenti attorno all'antenna. Prossima lezione: le altre funzioni per l'HF. 73 de IC8TEM
