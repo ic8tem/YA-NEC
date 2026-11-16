@@ -1865,8 +1865,8 @@ ERRORE
 ERRORE  [
 ERRORE dei dati
 ERRORE: 
-EWE (K6SE)
-EWE di K6SE (QST 1995): a 160 m 9,1 m x 3 m, terminazione circa 850 ohm, trasformatore 16:1; il lobo si cerca con il NEC (la terminazione si regola per il F/B)
+EWE (WA2WVL)
+EWE di Floyd Koontz WA2WVL (QST, febbraio 1995): a 160 m 9,1 m x 3 m, terminazione circa 850 ohm, trasformatore 16:1; il lobo si cerca con il NEC (la terminazione si regola per il F/B)
 EX, con la riga CM YA-NEC CORRENTI=1
 EXP(
 EZNEC li segnala come avviso ("segment length too long", oltre circa 0,12 lambda in rosso). Servono piu' segmenti.
@@ -2460,7 +2460,7 @@ J. Ruze, Feed Support Blockage Loss, Microwave J. 1968; Borkowski & Maciejewski 
 Jose Carlos N4IS e Doug Waller NX4D (Waller Flag); Larry W7IUV e Earl Cunningham K6SE (Flag); Tobias DH1TW (descrizione della DHDL); 
 K della rete (Idelchik)
 K. Rothammel Y21BK e A. Krischke DJ0TR; C. A. Balanis; R. Carrel; Butson e Thompson; G. Hoch DL6WU; P. Viezbicke (NBS TN 688); Cheng e Chen; WA2PHW; DL4AKK
-K6SE, due verticali corte + filo
+WA2WVL, due verticali corte + filo
 K9AY (Hi-Z)
 KH 0 0 0 0 
 Kernel esteso (EK)
@@ -2812,7 +2812,7 @@ Mozzo + flangia
 MultiNEC
 N lati
 N. Mladenov (nec2c_opt); Dorin Custura (antsim); SA6MWA (nec2-gnuplot-average-power-gain); C. Hoover (tamago); olgierd (yagi_designer)
-N4DJ, K6SE, AA7JV, IV3PRK (antenne riceventi e RDF)
+N4DJ, WA2WVL, K6SE, AA7JV, IV3PRK (antenne riceventi e RDF)
 N6CA: 1/4" (6,35 mm) per 0,0325"; nel NEC il raggio equivalente e' larghezza/4 (Butler).
 N6CA: 6 piedi (1,83 m, circa 18 dBi) o 12 piedi (3,66 m, circa 20,5 dBi); dopo D6 i direttori sono tutti alla stessa distanza.
 N6NB e Cebik, ottimizzazione a passi

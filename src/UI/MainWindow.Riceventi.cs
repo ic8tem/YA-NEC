@@ -29,7 +29,7 @@ namespace YaNec
             fasRx.Voce("bog", "BOG", false, null, "Beverage On Ground, filo isolato a terra");
             fasRx.Voce("dipbasso", "Dipolo basso", true, null, "riferimento a lobo alto");
             fasRx.Famiglia("Piccoli loop terminati");
-            fasRx.Voce("ewe", "EWE", false, null, "K6SE, due verticali corte + filo");
+            fasRx.Voce("ewe", "EWE", false, null, "WA2WVL, due verticali corte + filo");
             fasRx.Voce("flag", "Flag", false, null, "rettangolo terminato (W7IUV, IV3PRK)");
             fasRx.Voce("pennant", "Pennant", false, null, "triangolo terminato (K6SE, WA1ION, IV3PRK)");
             fasRx.Voce("k9ay", "K9AY", true, null, "loop a terra con resistenza");
@@ -78,7 +78,7 @@ namespace YaNec
 
         Control BuildRxPanel(string k)
         {
-            string titolo = k == "beverage" ? "Beverage" : k == "bog" ? "BOG (Beverage On Ground)" : k == "ewe" ? "EWE (K6SE)" : k == "dhdl" ? "DHDL (AA7JV, IV3PRK)" : k == "looprx" ? "Loop magnetico RX" :
+            string titolo = k == "beverage" ? "Beverage" : k == "bog" ? "BOG (Beverage On Ground)" : k == "ewe" ? "EWE (WA2WVL)" : k == "dhdl" ? "DHDL (AA7JV, IV3PRK)" : k == "looprx" ? "Loop magnetico RX" :
                 k == "flag" ? "Flag (K6SE, W7IUV)" : k == "pennant" ? "Pennant (K6SE, WA1ION)" : k == "wf" ? "Waller Flag (NX4D, N4IS)" : k == "dhdl2" ? "Due DHDL broadside (IV3PRK)" : "Verticale TX di riferimento";
             bool anello = k == "flag" || k == "wf" || k == "pennant", dh = k == "dhdl" || k == "dhdl2";
             int banda = 0;
@@ -190,7 +190,7 @@ namespace YaNec
                     }
                     else righe.Add("Impedenza tipica del BOG 200-300 ohm: terminazione 160-300 ohm (picchetti in serie), trasformatore da 4:1 a 9:1 (N4DJ)");
                 }
-                if (k == "ewe") righe.Add("EWE di K6SE (QST 1995): a 160 m 9,1 m x 3 m, terminazione circa 850 ohm, trasformatore 16:1; il lobo si cerca con il NEC (la terminazione si regola per il F/B)");
+                if (k == "ewe") righe.Add("EWE di Floyd Koontz WA2WVL (QST, febbraio 1995): a 160 m 9,1 m x 3 m, terminazione circa 850 ohm, trasformatore 16:1; il lobo si cerca con il NEC (la terminazione si regola per il F/B)");
                 if (dh) righe.Add("DHDL di AA7JV (TX3A) e N4IS con le misure di IV3PRK (2013): verticali 6,5 m alle estremita', orizzontali 10 + 10 m a 2 m dal suolo, fili inclinati che si incrociano al centro senza toccarsi; " +
                     "carico 1250-1300 ohm (massimo F/B), Z circa 900 ohm: trasformatore 12:1 su 75 ohm (2:7 spire su BN73-202), 9:1 su 100 ohm in doppino (2:6). TX3A: -28 dB, F/B 33 dB, RDF 10 dB. YA-NEC (Sommerfeld, 13; 5 mS/m): -31,9 dBi, RDF 10,0 dB." +
                     (k == "dhdl2" ? " Due DHDL affiancate in fase con linee uguali: IV3PRK RDF 12,7 dB a 90 m (apertura 52 gradi, lobo pulito), 13,7 oltre 120 m con lobi laterali; YA-NEC 12,6 dB a 90 m." : ""));
@@ -306,13 +306,16 @@ namespace YaNec
                 bOtt.IsEnabled = false;
                 cardsW.Children.Clear();
                 card("Ottimizzazione", "in corso...", k == "bog" ? "terminazione da 100 a 4000 ohm per il F/B" : "terminazione da 200 a 1500 ohm per il F/B", false);
+                // 1.0.4: i parametri si leggono qui, nel thread dell'interfaccia; leggi() dentro Task.Run toccava le caselle da un altro
+                // thread e l'ottimizzazione finiva subito con "Call from invalid thread"
+                double rStart = p0.Rterm;
                 Task.Run(() =>
                 {
-                    double bestR = p0.Rterm, bestFb = double.MinValue;
+                    double bestR = rStart, bestFb = double.MinValue;
                     double rIni = k == "bog" ? 100 : 200, rFin = k == "bog" ? 4000 : 1500, rPas = k == "bog" ? 100 : 50;   // 0.4.18: il modello del BOG ha Z0 alta
                     for (double rr = rIni; rr <= rFin; rr += rPas)
                     {
-                        RxParams q = leggi();
+                        RxParams q = p0;
                         q.Rterm = rr;
                         NecModel m = NecModel.Parse(deck(q));
                         RunResult r = Analysis.Run(m, m.BuildGeometry(), q.F, 10.0);

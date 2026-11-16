@@ -6,7 +6,7 @@
 //    (onda sul filo e onda nello spazio sfasate di 90 gradi; N4DJ, "Beverage Design and Beverage Basics", 2023:
 //    VF 0,80 e 0 gradi -> 1 lambda = 540 piedi a 160 m; BOG VF 0,65 a 20 gradi -> 225 piedi);
 //  - impedenza del filo singolo sul terreno Z0 = 138 log10(4h/d) (linea filo-terreno; N4DJ: 400-600 ohm a 2 m, BOG 200-300 ohm);
-//  - EWE: K6SE (QST 1995); DHDL: AA7JV (TX3A) con le misure di IV3PRK; Flag W7IUV e Waller Flag (NX4D, N4IS) dai modelli di IV3PRK;
+//  - EWE: Floyd Koontz WA2WVL ("Is This EWE for You?", QST febbraio 1995); DHDL: AA7JV (TX3A) con le misure di IV3PRK; Flag W7IUV e Waller Flag (NX4D, N4IS) dai modelli di IV3PRK;
 //  - RDF = guadagno - guadagno medio (emisfero superiore / 4 pi), convenzione approvata, valori di confronto IV3PRK e Hi-Z.
 // Terreno: soluzione di Sommerfeld (GN 2), indispensabile per fili a pochi metri dal suolo. Verifica contro nec2c GN 2:
 // Beverage 175 m a 2,5 m, 520 ohm: Z 701,1 - j146,5, massimo -11,46 dBi a 35 gradi di elevazione verso il carico, RDF 10,55 dB
@@ -153,13 +153,13 @@ namespace YaNec.Engine
             return System.Numerics.Complex.Sqrt(zAperto * zCorto);
         }
 
-        /// <summary>EWE di K6SE: due verticali alte H unite da un filo lungo L; sorgente alla base di una, terminazione alla base dell'altra.</summary>
+        /// <summary>EWE di Floyd Koontz WA2WVL (QST, febbraio 1995): due verticali alte H unite da un filo lungo L; sorgente alla base di una, terminazione alla base dell'altra.</summary>
         public static string Ewe(RxParams p)
         {
             double r = p.WireMm / 2000;
             int nv = Math.Max(3, (int)Math.Ceiling(p.H / 0.5)), nh = Math.Max(5, (int)Math.Ceiling(p.L / 0.5));
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("CM EWE (K6SE) " + F(p.L) + " x " + F(p.H) + " m, " + F(p.F) + " MHz, terminazione " + F(p.Rterm) + " ohm (calcolatore antenne riceventi YA-NEC)");
+            sb.AppendLine("CM EWE (WA2WVL) " + F(p.L) + " x " + F(p.H) + " m, " + F(p.F) + " MHz, terminazione " + F(p.Rterm) + " ohm (calcolatore antenne riceventi YA-NEC)");
             sb.AppendLine("CM YA-NEC Z0=" + F(p.Rterm));
             sb.AppendLine("CE");
             sb.AppendLine(Gw(1, nv, 0, 0, 0, 0, 0, p.H, r, p.Dir));

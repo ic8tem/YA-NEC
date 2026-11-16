@@ -130,7 +130,7 @@ namespace YaNec
                 Who = "ARRL Antenna Book; W3DZZ; L. Varney G5RV; G. Countryman W3HH (T2FD); W5QJR e AA5TB (loop magnetica); " +
                       "Martin Steyer DK7ZB (HB9CV, quad); L. B. Cebik W4RNL (MOXGEN); hamuniverse.com (Hentenna); J. Kraus e C. A. Balanis " +
                       "(resistenza di radiazione); ON4UN (four-square); Amidon (AL dei toroidi, amidoncorp.com, tabella ok1dxd); " +
-                      "N4DJ, K6SE, AA7JV, IV3PRK (antenne riceventi e RDF)",
+                      "N4DJ, WA2WVL, K6SE, AA7JV, IV3PRK (antenne riceventi e RDF)",
                 What = "Formule, misure di partenza e casi di prova dei calcolatori e della linguetta Antenne riceventi; le fonti sono scritte in ogni calcolatore.",
                 Link = "",
                 License = "fonti citate"
