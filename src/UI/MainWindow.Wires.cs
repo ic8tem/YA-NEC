@@ -50,6 +50,24 @@ namespace YaNec
             }
             public void Clear() { Voci.Clear(); }
             public void Add(Control c) { Voci.Add(Involucro(c)); }
+            /// <summary>1.0.2: porta l'elenco delle righe a quello voluto senza svuotarlo. Svuotare e rimettere le stesse righe lasciava
+            /// vuote quelle gia' disegnate (il pannello virtualizzato non ridisegna un contenitore che gli torna dopo Clear): con
+            /// "Aggiungi filo" ripetuto si vedeva solo l'ultima riga.</summary>
+            public void Allinea(List<Control> righe)
+            {
+                List<Avalonia.Controls.Presenters.ContentPresenter> voluti = new List<Avalonia.Controls.Presenters.ContentPresenter>();
+                foreach (Control c in righe) voluti.Add(Involucro(c));
+                HashSet<Control> tieni = new HashSet<Control>(voluti);
+                for (int i = Voci.Count - 1; i >= 0; i--) if (!tieni.Contains(Voci[i])) Voci.RemoveAt(i);
+                for (int i = 0; i < voluti.Count; i++)
+                {
+                    if (i < Voci.Count && ReferenceEquals(Voci[i], voluti[i])) continue;
+                    int j = Voci.IndexOf(voluti[i]);
+                    if (j > i) Voci.Move(j, i);
+                    else Voci.Insert(i, voluti[i]);
+                }
+                while (Voci.Count > voluti.Count) Voci.RemoveAt(Voci.Count - 1);
+            }
             /// <summary>Porta la riga nella parte visibile (la crea se serve), poi esegue l'azione (di solito il fuoco su una cella).</summary>
             public void Mostra(Control c, Action poi)
             {
@@ -539,13 +557,13 @@ namespace YaNec
 
         void RenumberWires()
         {
-            wiresPanel.Clear();
+            List<Control> righe = new List<Control>();
             int n = 0;
             foreach (WireRow r in wireRows)
             {
                 if (!r.ReadOnly) n++;
                 r.Num.Text = r.ReadOnly ? "" : n.ToString(CultureInfo.InvariantCulture);
-                wiresPanel.Add(r.Row);
+                righe.Add(r.Row);
             }
             // riga "next": scrivendo qui si aggiunge un filo
             if (model != null)
@@ -567,10 +585,11 @@ namespace YaNec
                 Grid.SetColumn(next, 1);
                 Grid.SetColumnSpan(next, 10);
                 nx.Children.Add(next);
-                wiresPanel.Add(nx);
+                righe.Add(nx);
             }
             if (wireRows.Count == 0)
-                wiresPanel.Add(new TextBlock { Text = "Nessun filo: \"Aggiungi filo\" o scrivi nella riga next.", Foreground = Pal.B(Pal.Muted), Margin = new Thickness(4, 6) });
+                righe.Add(new TextBlock { Text = "Nessun filo: \"Aggiungi filo\" o scrivi nella riga next.", Foreground = Pal.B(Pal.Muted), Margin = new Thickness(4, 6) });
+            wiresPanel.Allinea(righe);
             RefreshWiresTitle();
         }
 

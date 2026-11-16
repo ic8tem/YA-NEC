@@ -72,6 +72,11 @@ namespace YaNec
             m.Ground = new GroundSpec { Kind = GroundKind.FreeSpace };
             m.Comments.Add("modello nuovo (YA-NEC)");
             SetModel(m, null);
+            // 1.0.2: il modello nuovo e' vuoto, quindi via anche la struttura, i risultati, le sorgenti e la quota del modello precedente
+            // (prima restavano a schermo finche' non si calcolava di nuovo)
+            geo = null;
+            try { RefreshAll(); AggiornaQuota(null, null); AggiornaOggetti(); }
+            catch (Exception ex) { Registro.Scrivi("ERRORE", "ridisegno del modello nuovo: " + ex.Message); }
             SegnaSalvato();
             Registro.Scrivi("AZIONE", "nuovo modello vuoto a " + f.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture) + " MHz");
             Status("Modello nuovo, vuoto: aggiungi i fili nella tabella dei Fili o con la barra Geometria, oppure parti da un calcolatore.");

@@ -266,7 +266,9 @@ namespace YaNec
             string t;
             if (!map.TryGetValue(testo, out t) || t == testo) return;
             inTraduzione = true;
-            try { o.SetValue(p, t); }
+            // 1.0.2: SetCurrentValue e non SetValue: il testo tradotto non stacca il collegamento (binding) della scritta, cosi' la casella
+            // di un menu a tendina (es. Terreno) segue la scelta successiva invece di restare ferma sulla prima voce tradotta
+            try { o.SetCurrentValue(p, t); }
             catch { }
             finally { inTraduzione = false; }
         }
