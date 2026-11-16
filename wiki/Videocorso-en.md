@@ -131,9 +131,17 @@ On the ARRL 520-40H (5 elements for 20 m from the ARRL Antenna Book): result car
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_13_hf_functions_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_13_hf_functions_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_14_dk7zb_6el_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_14.jpg" alt="Lesson 14 - DK7ZB 6-element Yagi with the designer's dimensions"></a></td><td>
+
+### Lesson 14 - DK7ZB 6-element Yagi with the designer's dimensions
+
+The DK7ZB 6-element 2 m Yagi (28 ohm, 2.40 m boom, qsl.net/dk7zb) typed in with the dimensions from his page, no variables: 30.2 - j3.5 ohm, 12.06 dBi = 9.91 dBd as stated, SWR 1.15 on 28 ohm, 2 MHz sweep and patterns.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_14_dk7zb_6el_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_14_dk7zb_6el_EN.srt)
+
+</td></tr></table>
 ## Coming next
 
-- **14** · DK7ZB 6-element Yagi with the designer's dimensions
 - **15** · The same 6 elements brought to 50 ohm with the Optimizer, and an optimized 3-element HF Yagi
 - **16** · Advanced VHF/UHF: DL6WU long Yagi, boom correction and brackets, real time
 - **17** · VHF antennas on a roof
