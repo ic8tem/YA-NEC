@@ -3467,3 +3467,8 @@ Zona	Bölge
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  adım
 Ω  (il cavo di discesa)	Ω  (iniş kablosu)
 → segmento NEC	→ NEC segmenti
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	İkisi de (DL6WU dışı)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU iki ölçüyü birbirine bağlar. "Eleman sayısı" ile bum boyu DL6WU aralıklarından hesaplanır; "Bom uzunluğu" ile bum aldığı sürece direktör eklenir. Gri alan yazılamaz: türetilen değeri gösterir. "İkisi de (DL6WU dışı)" ile ikisi de verilir ve aralıklar orantılı olarak uzar veya kısalır: yöntemin dışına çıkılır ve NEC optimizasyonu gerekir.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	0-3 adımları kullanılamaz: "İkisi de (DL6WU dışı)" ile optimizasyon zorunludur
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Diğer verilerden türetilen değer: yazılamaz (verilerin altındaki nota bakın).

@@ -3467,3 +3467,8 @@ Zona	구역
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0.75-1.33)  피치
 Ω  (il cavo di discesa)	Ω  (급전 케이블)
 → segmento NEC	→ NEC 세그먼트
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	둘 다 지정 (DL6WU 범위 밖)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU는 두 치수를 서로 묶습니다. "엘리먼트 수"을(를) 고르면 붐 길이가 DL6WU 간격으로 계산되고, "붐 길이"을(를) 고르면 붐에 들어가는 한 도파기가 추가됩니다. 회색 칸은 입력할 수 없으며 계산된 값을 보여 줍니다. "둘 다 지정 (DL6WU 범위 밖)"에서는 둘 다 주고 간격이 비례해서 늘어나거나 줄어듭니다. 방법의 범위를 벗어나므로 NEC 최적화가 필요합니다.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	0-3단계 사용 불가: "둘 다 지정 (DL6WU 범위 밖)"에서는 최적화가 필수입니다
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	다른 데이터에서 계산된 값: 입력할 수 없습니다(데이터 아래의 메모 참조).

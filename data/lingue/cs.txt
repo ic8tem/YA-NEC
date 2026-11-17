@@ -3467,3 +3467,8 @@ Zona	Zóna
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  stoupání
 Ω  (il cavo di discesa)	Ω  (napájecí kabel)
 → segmento NEC	→ segment NEC
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Obojí (mimo DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU váže oba rozměry. S "Počet prvků" se ráhno počítá z roztečí DL6WU; s "Délka ráhna" se direktory přidávají, dokud je ráhno pojme. Šedé pole nelze psát: ukazuje odvozenou hodnotu. S "Obojí (mimo DL6WU)" se zadá obojí a rozteče se úměrně prodlouží nebo zkrátí: vychází se z metody a je nutná optimalizace NEC.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	kroky 0-3 nejsou k dispozici: s "Obojí (mimo DL6WU)" je optimalizace povinná
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Hodnota odvozená z ostatních údajů: nelze ji psát (viz poznámka pod údaji).

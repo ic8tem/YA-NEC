@@ -3467,3 +3467,8 @@ Zona	क्षेत्र
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0.75-1.33)  पिच
 Ω  (il cavo di discesa)	Ω  (फ़ीड केबल)
 → segmento NEC	→ NEC खंड
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	दोनों (DL6WU से बाहर)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU दोनों मापों को जोड़ता है। "तत्वों की संख्या" के साथ बूम DL6WU की दूरियों से निकलता है; "बूम लंबाई" के साथ डायरेक्टर तब तक जुड़ते हैं जब तक बूम में जगह हो। धूसर खाना लिखा नहीं जाता: यह निकाला गया मान दिखाता है। "दोनों (DL6WU से बाहर)" के साथ दोनों दिए जाते हैं और दूरियाँ अनुपात में बढ़ती या घटती हैं: विधि से बाहर निकल जाते हैं और NEC अनुकूलन ज़रूरी है।
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	चरण 0-3 उपलब्ध नहीं: "दोनों (DL6WU से बाहर)" के साथ अनुकूलन अनिवार्य है
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	अन्य डेटा से निकाला गया मान: लिखा नहीं जाता (डेटा के नीचे की टिप्पणी देखें)।

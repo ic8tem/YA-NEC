@@ -3468,3 +3468,8 @@ z(r) = r^2 / 4F, misurata dal vertice verso il fuoco; l'arco serve per tagliare 
 Ω  (il cavo di discesa)	Ω  (the feed cable)
 λ  radiali	λ  radials
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0.75-1.33)  pitch
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Both (outside DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU links the two measures. With "Number of elements" the boom is calculated from the DL6WU spacings; with "Boom length" directors are added as long as the boom holds them. The grey field cannot be edited: it shows the derived value. With "Both (outside DL6WU)" you give both and the spacings are stretched or shortened in proportion: you leave the method and NEC optimisation is required.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	steps 0-3 not available: with "Both (outside DL6WU)" optimisation is mandatory
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Value derived from the other data: it cannot be edited (see the note below the data).

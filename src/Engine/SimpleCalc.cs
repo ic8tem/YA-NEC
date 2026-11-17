@@ -80,6 +80,7 @@ namespace YaNec.Engine
         public Complex[] WantedCurrents;
         public double TuneScale = 1;                             // fattore applicato alla lunghezza da "Risonanza"
         public void Add(string label, string value) { Lines.Add(new[] { label, value }); }
+        public string AvvisoDati;                                // 1.0.15: riquadro arancio sotto i dati (bozzetto DL6WU approvato da IC8TEM 17/11/2026 09:57)
     }
 
     public abstract class SimpleCalc
@@ -90,6 +91,9 @@ namespace YaNec.Engine
         public NecModel Model;                  // modello aperto, passato dall'interfaccia
         public double MainFreqMHz = double.NaN; // frequenza della barra in alto (finestra principale)
         public Dictionary<string, double> DalModello = new Dictionary<string, double>();
+        // 1.0.15 (bozzetto approvato da IC8TEM il 17/11/2026 09:57): campi ricavati dagli altri dati (grigi, non si scrivono, mostrano il valore)
+        public Dictionary<string, double> Calcolati = new Dictionary<string, double>();
+        public string NotaFissa;                // nota sempre visibile sotto i dati (fumetto fisso)
         public bool PuoUsareModello;            // la scheda sa prendere i dati dal modello aperto (casella "Prendi i dati dal modello")
         public bool UsaModello = true;          // stato della casella (IC8TEM 13/11/2026 18:19)
         public string Nome { get { return string.IsNullOrEmpty(Variant) ? Title : Variant; } }
@@ -151,6 +155,7 @@ namespace YaNec.Engine
         // riempie i riquadri dalle righe quando un calcolatore non li prepara da se'
         public CalcOutput Run()
         {
+            Calcolati.Clear();
             CalcOutput o = Compute();
             Rastremare(o);
             if (o.Cards.Count == 0) foreach (string[] l in o.Lines) o.Card(l[0], l[1]);

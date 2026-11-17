@@ -3467,3 +3467,8 @@ Zona	Svæði
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  stig
 Ω  (il cavo di discesa)	Ω  (fæðikapallinn)
 → segmento NEC	→ NEC-bútur
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Bæði (utan DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU tengir málin tvö saman. Með "Fjöldi staka" er bóman reiknuð út frá bilum DL6WU; með "Lengd bómunnar" er stýrieiningum bætt við meðan bóman rúmar þær. Gráa reitinn er ekki hægt að breyta: hann sýnir afleidda gildið. Með "Bæði (utan DL6WU)" eru bæði gefin og bilin lengd eða stytt hlutfallslega: þá er farið út fyrir aðferðina og NEC-bestun er nauðsynleg.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	skref 0-3 ekki í boði: með "Bæði (utan DL6WU)" er bestun skylda
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Gildi leitt af hinum gögnunum: ekki hægt að breyta (sjá athugasemdina undir gögnunum).

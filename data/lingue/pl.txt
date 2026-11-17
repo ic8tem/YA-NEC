@@ -3467,3 +3467,8 @@ Zona	Strefa
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  skok
 Ω  (il cavo di discesa)	Ω  (kabel zasilający)
 → segmento NEC	→ segment NEC
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Oba (poza DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU wiąże oba wymiary. Przy "Liczba elementów" długość wysięgnika wynika z odstępów DL6WU; przy "Długość wysięgnika" dodaje się direktory, dopóki mieszczą się na wysięgniku. Szarego pola nie można edytować: pokazuje wartość wyliczoną. Przy "Oba (poza DL6WU)" podaje się oba, a odstępy wydłużają się lub skracają proporcjonalnie: wychodzi się poza metodę i potrzebna jest optymalizacja NEC.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	kroki 0-3 niedostępne: przy "Oba (poza DL6WU)" optymalizacja jest obowiązkowa
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Wartość wyliczona z pozostałych danych: nie można jej edytować (patrz uwaga pod danymi).

@@ -3467,3 +3467,8 @@ Zona	Ζώνη
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  βήμα
 Ω  (il cavo di discesa)	Ω  (το καλώδιο τροφοδοσίας)
 → segmento NEC	→ τμήμα NEC
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Και τα δύο (εκτός DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Η DL6WU συνδέει τα δύο μεγέθη. Με "Αριθμός στοιχείων" το boom υπολογίζεται από τις αποστάσεις της DL6WU· με "Μήκος φορέα" προστίθενται κατευθυντήρες όσο χωρούν στο boom. Το γκρι πεδίο δεν γράφεται: δείχνει την παραγόμενη τιμή. Με "Και τα δύο (εκτός DL6WU)" δίνονται και τα δύο και οι αποστάσεις επιμηκύνονται ή βραχύνονται αναλογικά: βγαίνουμε από τη μέθοδο και χρειάζεται βελτιστοποίηση NEC.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	βήματα 0-3 μη διαθέσιμα: με "Και τα δύο (εκτός DL6WU)" η βελτιστοποίηση είναι υποχρεωτική
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Τιμή που προκύπτει από τα άλλα δεδομένα: δεν γράφεται (δείτε τη σημείωση κάτω από τα δεδομένα).

@@ -161,7 +161,7 @@ namespace YaNec.Engine
     {
         // parametri di ottimizzazione: sr distanza riflettore-radiatore, s1 distanza radiatore-D1, kr kd kdir fattori di lunghezza,
         // tap rastremazione dei direttori, fp grandezza propria dell'alimentazione
-        protected class Ott { public double sr, s1, kr = 1, kd = 1, kdir = 1, tap, fp; public Ott Copia() { return (Ott)MemberwiseClone(); } }
+        protected class Ott { public double sr, s1, kr = 1, kd = 1, kdir = 1, tap, fp, prog; public Ott Copia() { return (Ott)MemberwiseClone(); } }
         protected Ott ott;            // null = misure del metodo (DL6WU o N6NB/Cebik)
         protected string firma;
         protected List<string[]> passiFatti = new List<string[]>();
@@ -180,6 +180,8 @@ namespace YaNec.Engine
         protected abstract string Mazzo(Ott p, double f, out double zRif);
         protected abstract string NomeFp { get; }
         protected abstract double PassoFp { get; }
+        /// <summary>1.0.15: boom e numero di elementi dati tutti e due (fuori dal metodo): il passo 4 ottimizza anche la progressione delle spaziature.</summary>
+        protected virtual bool BoomFisso { get { return false; } }
 
         protected string Riassunto(PrestazioniBanda r)
         {
@@ -201,12 +203,14 @@ namespace YaNec.Engine
             Ott p = Partenza(pos, lens);
             double[] fr = Banda();
             int fino = Math.Max(0, Math.Min(4, I("passo")));
+            if (BoomFisso) fino = 4;   // fuori dal metodo l'ottimizzazione e' obbligatoria
             Obiettivo scelto = Obiettivo.Scelto(I("obj"));
             passiFatti = new List<string[]>();
             Func<Ott, PrestazioniBanda> val = q => { double z; string nec = Mazzo(q, P("f"), out z); return PrestazioniBanda.Calcola(nec, fr, z); };
             passiFatti.Add(new[] { "0 - misure del metodo", Riassunto(val(p)) });
             string[] nomi = { "", "1 - radiatore", "2 - riflettore", "3 - direttori", "4 - tutto insieme" };
-            string[][] chiavi = { null, new[] { "kd", "fp" }, new[] { "kr", "sr", "kd", "fp" }, new[] { "kdir", "tap", "kd", "fp" }, new[] { "kr", "sr", "kd", "s1", "kdir", "tap", "fp" } };
+            string[][] chiavi = { null, new[] { "kd", "fp" }, new[] { "kr", "sr", "kd", "fp" }, new[] { "kdir", "tap", "kd", "fp" },
+                BoomFisso ? new[] { "kr", "sr", "kd", "s1", "kdir", "tap", "prog", "fp" } : new[] { "kr", "sr", "kd", "s1", "kdir", "tap", "fp" } };
             int[] maxVal = { 0, 80, 150, 200, 400 };
             for (int passo = 1; passo <= fino; passo++)
             {
@@ -218,7 +222,7 @@ namespace YaNec.Engine
                 {
                     Ott q = base0.Copia();
                     for (int i = 0; i < k.Count; i++)
-                        switch (k[i]) { case "sr": q.sr = x[i]; break; case "s1": q.s1 = x[i]; break; case "kr": q.kr = x[i]; break; case "kd": q.kd = x[i]; break; case "kdir": q.kdir = x[i]; break; case "tap": q.tap = x[i]; break; case "fp": q.fp = x[i]; break; }
+                        switch (k[i]) { case "sr": q.sr = x[i]; break; case "s1": q.s1 = x[i]; break; case "kr": q.kr = x[i]; break; case "kd": q.kd = x[i]; break; case "kdir": q.kdir = x[i]; break; case "tap": q.tap = x[i]; break; case "prog": q.prog = x[i]; break; case "fp": q.fp = x[i]; break; }
                     return q;
                 };
                 double[] x0 = new double[k.Count], st = new double[k.Count];
@@ -228,13 +232,14 @@ namespace YaNec.Engine
                         case "sr": x0[i] = p.sr; st[i] = 0.02; break; case "s1": x0[i] = p.s1; st[i] = 0.01; break;
                         case "kr": x0[i] = p.kr; st[i] = 0.02; break; case "kd": x0[i] = p.kd; st[i] = 0.02; break;
                         case "kdir": x0[i] = p.kdir; st[i] = 0.015; break; case "tap": x0[i] = p.tap; st[i] = 0.04; break;
+                        case "prog": x0[i] = p.prog; st[i] = 0.15; break;
                         default: x0[i] = p.fp; st[i] = PassoFp; break;
                     }
                 int nv; double fm;
                 double[] xb = NelderMead.Minimo(x =>
                 {
                     Ott q = da(x);
-                    if (q.sr < 0.03 || q.s1 < 0.03 || q.kr < 0.8 || q.kd < 0.7 || q.kdir < 0.85 || q.kdir > 1.15 || Math.Abs(q.tap) > 0.3) return 1e3;
+                    if (q.sr < 0.03 || q.s1 < 0.03 || q.kr < 0.8 || q.kd < 0.7 || q.kdir < 0.85 || q.kdir > 1.15 || Math.Abs(q.tap) > 0.3 || q.prog < -0.5 || q.prog > 1.2) return 1e3;
                     try { return val(q).Costo(ob); } catch (NecException) { return 1e3; }
                 }, x0, st, maxVal[passo], out nv, out fm);
                 p = da(xb);
@@ -270,7 +275,7 @@ namespace YaNec.Engine
             Source = "G. Hoch DL6WU (VHF Communications 3/1982), programma BASIC di KY4Z e W6NBI con le modifiche di G3SEK (1986) e DL6WU (1988); G0KSC (LFA); DG7YBN e DK7ZB (radiatore piegato)";
             Params.Add(new CalcParam("f", "Frequenza di progetto", 144.3, "MHz"));
             Params.Add(new CalcParam("bw", "Banda da coprire (0 = solo la frequenza)", 600, "kHz", "L'ottimizzazione guarda la frequenza di progetto e i due bordi della banda."));
-            Params.Add(CalcParam.Scelta("modo", "Dimensione data da", 0, "Numero di elementi oppure lunghezza del boom (DL6WU mette i direttori finche' il boom li contiene).", "Numero di elementi", "Lunghezza del boom"));
+            Params.Add(CalcParam.Scelta("modo", "Dimensione data da", 0, "Numero di elementi oppure lunghezza del boom (DL6WU mette i direttori finche' il boom li contiene).", "Numero di elementi", "Lunghezza del boom", "Tutti e due (fuori DL6WU)"));
             Params.Add(new CalcParam("nel", "Numero di elementi", 10, "", "Riflettore, radiatore e direttori (da 3 a 60)."));
             Params.Add(new CalcParam("boom", "Lunghezza del boom", 4.5, "m", "Dal riflettore all'ultimo direttore; DL6WU vuole da 2,2 a 39 lambda."));
             Params.Add(new CalcParam("ed", "Diametro dei parassiti", 4, "mm", "DL6WU: da 0,001 a 0,02 lambda."));
@@ -281,7 +286,12 @@ namespace YaNec.Engine
             Params.Add(CalcParam.Scelta("obj", "Obiettivo dell'ottimizzazione", 1, "Guadagno: F/B almeno 20 dB; bilanciato: F/B 25 e F/R 20 dB; F/B alto: 28 e 22 dB. Sempre ROS sotto 1,2 sulla banda.", "Guadagno", "Bilanciato", "F/B alto"));
             Params.Add(CalcParam.Scelta("passo", "Ottimizza fino al passo", 4, "0 = misure DL6WU com'e'; 1 radiatore (adattamento); 2 riflettore (F/B); 3 direttori (guadagno); 4 tutto insieme.",
                 "0 - DL6WU com'e'", "1 - radiatore", "2 - riflettore", "3 - direttori", "4 - tutto insieme"));
+            // 1.0.15 (IC8TEM 17/11/2026 09:52, bozzetto approvato alle 09:57): fumetto fisso sul legame tra elementi e boom
+            NotaFissa = "DL6WU lega le due misure. Con \"Numero di elementi\" il boom si calcola dalle spaziature di DL6WU; con \"Lunghezza del boom\" i direttori si aggiungono finche' il boom li contiene. " +
+                "Il campo grigio non si scrive: mostra il valore ricavato. Con \"Tutti e due\" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.";
         }
+
+        protected override bool BoomFisso { get { return I("modo") == 2; } }
 
         static double Kdir(double ed, int n)
         {
@@ -313,9 +323,17 @@ namespace YaNec.Engine
             while (true)
             {
                 double s = Sp[Math.Min(n, 14) - 1];
-                if (I("modo") == 0) { if (pos.Count >= nel) break; }
+                if (I("modo") != 1) { if (pos.Count >= nel) break; }
                 else if (t + s > bl + 1e-9 || pos.Count >= 60) break;
                 t += s; pos.Add(t); n++;
+            }
+            // 1.0.15: tutti e due i dati -> spaziature dei direttori scalate in proporzione fino al boom dato (radiatore a 0,2 come DL6WU)
+            FattoreSpaziature = 1;
+            if (I("modo") == 2 && pos.Count >= 3)
+            {
+                double ultimo = pos[pos.Count - 1], k = (Math.Max(bl, 0.3) - 0.2) / (ultimo - 0.2);
+                FattoreSpaziature = k;
+                for (int i = 2; i < pos.Count; i++) pos[i] = 0.2 + (pos[i] - 0.2) * k;
             }
             double ed = ED, dd = DD;
             lens = new List<double>();
@@ -325,6 +343,7 @@ namespace YaNec.Engine
         }
 
         List<double> pos0, lens0;
+        double FattoreSpaziature = 1;
         protected override Ott Partenza(List<double> pos, List<double> lens)
         {
             pos0 = pos; lens0 = lens;
@@ -351,6 +370,20 @@ namespace YaNec.Engine
                 double w = fd == 2 ? p.fp : 0;
                 double d1 = pos[1] + w + p.s1 - pos[2];
                 for (int i = 2; i < n; i++) pos[i] += d1;
+                if (BoomFisso)
+                {
+                    // boom fisso: D1 dove lo mettono sr e s1, l'ultimo direttore in fondo al boom; in mezzo le frazioni di DL6WU
+                    // mescolate con quelle uniformi: prog 0 = proporzioni DL6WU, 1 = direttori equidistanti (come NBS TN 688), < 0 piu' progressive
+                    double fine = pos0[n - 1], p2 = pos[2], c0 = pos0[2];
+                    if (n == 3) pos[2] = fine;
+                    else
+                        for (int i = 2; i < n; i++)
+                        {
+                            double fr = (pos0[i] - c0) / (fine - c0), u = (double)(i - 2) / (n - 3);
+                            double fp2 = fr + p.prog * (u - fr);
+                            pos[i] = p2 + (fine - p2) * fp2;
+                        }
+                }
             }
             lens[0] *= p.kr; lens[1] *= p.kd;
             int m = n - 2;
@@ -412,7 +445,37 @@ namespace YaNec.Engine
             double boomL = ps[ps.Length - 1], gst = 9.2 + 3.39 * Math.Log(Math.Max(0.1, pos[pos.Count - 1]));
             o.Card("Elementi", ps.Length.ToString(), "riflettore, radiatore e " + (ps.Length - 2) + " direttori");
             o.Card("Boom", Calcolatori.N(boomL * lam, 3) + " m", Calcolatori.N(boomL, 2) + " lambda");
-            o.Card("Guadagno stimato DL6WU", Calcolatori.N(gst, 2) + " dBd", Calcolatori.N(gst + 2.15, 2) + " dBi (9,2 + 3,39 ln L)", true);
+            int modo = I("modo");
+            if (modo != 2) o.Card("Guadagno stimato DL6WU", Calcolatori.N(gst, 2) + " dBd", Calcolatori.N(gst + 2.15, 2) + " dBi (9,2 + 3,39 ln L)", true);
+            else o.Card("Guadagno stimato DL6WU", "non vale", "fuori dal metodo: lo da' il NEC dopo \"Ottimizza (NEC)\"", true);
+            // 1.0.15 (bozzetto approvato da IC8TEM il 17/11/2026 09:57): il dato che non si usa e' grigio e mostra il valore ricavato
+            Hint("nel", null); Hint("boom", null); Hint("passo", null);
+            if (modo == 0)
+            {
+                Calcolati["boom"] = boomL * lam;
+                Hint("boom", "calcolata da DL6WU (" + Calcolatori.N(boomL, 2) + " λ)");
+            }
+            else if (modo == 1)
+            {
+                Calcolati["nel"] = ps.Length;
+                Hint("nel", "calcolato: ci stanno " + ps.Length + " elementi (boom usato " + Calcolatori.N(boomL * lam, 3) + " m = " + Calcolatori.N(boomL, 2) + " λ)");
+            }
+            else
+            {
+                CalcParam pp = Par("passo"); if (pp != null) pp.Value = 4;
+                Hint("passo", "passi 0-3 non disponibili: con \"Tutti e due\" l'ottimizzazione e' obbligatoria");
+                int nel = ps.Length;
+                double nat = 0.2; for (int i = 1; i <= nel - 2; i++) nat += Sp[Math.Min(i, 14) - 1];
+                double k = FattoreSpaziature;
+                o.AvvisoDati = "Fuori dal metodo DL6WU: " + nel + " elementi stanno su " + Calcolatori.N(nat * lam, 3) + " m (" + Calcolatori.N(nat, 2) + " λ); su " +
+                    Calcolatori.N(P("boom"), 3) + " m (" + Calcolatori.N(P("boom") / lam, 2) + " λ) le spaziature dei direttori sono x" + Calcolatori.N(k, 2) + ". " +
+                    "Le lunghezze di DL6WU non valgono piu' e nemmeno il guadagno stimato 9,2 + 3,39 ln L: i numeri veri li da' il NEC dopo \"Ottimizza (NEC)\". " +
+                    "Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)" +
+                    (ott != null ? ": trovata " + Calcolatori.N(p.prog, 2) + " (0 = proporzioni DL6WU, 1 = direttori equidistanti)." : ".");
+                if (k > 1.3) o.Warnings.Add("Direttori molto radi (spaziature x" + Calcolatori.N(k, 2) + " rispetto a DL6WU): a parita' di boom servirebbero piu' elementi; di solito il NEC trova meno guadagno di una DL6WU dello stesso boom. Confronta col modo \"Lunghezza del boom\".");
+                else if (k < 0.7) o.Warnings.Add("Direttori molto fitti (spaziature x" + Calcolatori.N(k, 2) + " rispetto a DL6WU): a parita' di boom gli elementi in piu' danno poco guadagno (il guadagno dipende soprattutto dal boom) e stringono la banda.");
+                if (P("boom") / lam <= 0.3) o.Warnings.Add("Boom troppo corto per questi elementi: portato a 0,3 lambda.");
+            }
             o.Card("Alimentazione", Alim[fd], fd == 1 ? "200 Ω con balun 4:1" : "50 Ω");
             if (mont != 2) o.Card("Correzione del boom", "+" + Calcolatori.N(bc * lam * 1000, 1) + " mm", "per ogni elemento che attraversa il boom (G3SEK)");
             for (int i = 0; i < ps.Length; i++)
@@ -435,7 +498,12 @@ namespace YaNec.Engine
             o.Formula = "Spaziature DL6WU (lambda): R 0, A 0,2, poi 0,075 0,180 0,215 0,250 0,280 0,300 0,315 0,330 0,345 0,360 0,375 0,390 0,400 ... " +
                 "Direttore N: (K1 - K2 ln N)(1 - K3 e^-K4N), K dalla tabella sul diametro. Riflettore ((20 - 40)/(186,88 ln(2/d) - 320) + 1)/2, radiatore (0,4777 - 1,0522 d + 0,43363 d^-0,0149)/2 x 1,02. " +
                 "Boom (G3SEK): BD (733 BD (0,055 - BD) - 504 BD (0,03 - BD)). Guadagno 9,2 + 3,39 ln(L/lambda) dBd: ogni raddoppio del boom da' solo 2,35 dB. " +
-                "Ottimizzazione: simplesso di Nelder e Mead sul NEC (radiatore, riflettore, direttori, poi tutto). Fonti: " + Source + ".";
+                "Ottimizzazione: simplesso di Nelder e Mead sul NEC (radiatore, riflettore, direttori, poi tutto). " +
+                "Tutti e due i dati (1.0.15): spaziature dei direttori x k = (boom - 0,2) / (boom DL6WU - 0,2); al passo 4 la progressione p mescola le posizioni di DL6WU (p = 0) con direttori equidistanti (p = 1), con D1 e l'ultimo direttore fermi. " +
+                "Letteratura sul legame elementi-boom: DL6WU (1982) da' le spaziature che crescono fino a 0,4 lambda e fa dipendere il guadagno dal boom (9,2 + 3,39 ln L); " +
+                "NBS TN 688 (Viezbicke 1976) da' progetti ottimizzati per sei lunghezze di boom (da 0,4 a 4,2 lambda) con i direttori equidistanti: simile a DL6WU nel guadagno che cresce col boom, diverso perche' le spaziature non crescono lungo il boom (qui: progressione p = 1); " +
+                "Cheng e Chen (IEEE Trans. AP, 1973-75) ottimizzano insieme lunghezze e spaziature di una 6 elementi: come qui le spaziature diventano variabili, ma con un metodo a perturbazioni e senza vincolo sul boom. " +
+                "La regola comune (DL6WU, G3SEK) e' che il guadagno dipende soprattutto dalla lunghezza del boom e poco dal numero di elementi, purche' le spaziature siano ragionevoli. Fonti: " + Source + "; P. Viezbicke, NBS Technical Note 688 (1976); D. K. Cheng e C. A. Chen.";
             double z;
             o.Nec = Mazzo(p, f, out z);
             o.Plane = "xy";

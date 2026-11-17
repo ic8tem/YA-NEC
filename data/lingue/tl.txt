@@ -3467,3 +3467,8 @@ Zona	Sona
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0.75-1.33)  pitch
 Ω  (il cavo di discesa)	Ω  (ang feed na kable)
 → segmento NEC	→ segment ng NEC
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Pareho (labas sa DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Pinag-uugnay ng DL6WU ang dalawang sukat. Sa "Bilang ng elemento" kinukuwenta ang boom mula sa mga pagitan ng DL6WU; sa "Haba ng boom" nagdaragdag ng direktor hangga't kasya sa boom. Hindi masusulatan ang abong field: ipinapakita nito ang nakuhang halaga. Sa "Pareho (labas sa DL6WU)" ibinibigay ang dalawa at hinahaba o pinaiikli nang proporsyonal ang mga pagitan: lumalabas sa pamamaraan at kailangan ang NEC optimization.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	hindi magagamit ang hakbang 0-3: sa "Pareho (labas sa DL6WU)" sapilitan ang optimization
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Halagang nakuha mula sa ibang datos: hindi masusulatan (tingnan ang tala sa ilalim ng datos).

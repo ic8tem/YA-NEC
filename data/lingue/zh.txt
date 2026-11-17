@@ -3467,3 +3467,8 @@ Zona	区域
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0.75-1.33)  螺距
 Ω  (il cavo di discesa)	Ω  (馈电电缆)
 → segmento NEC	→ NEC 分段
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	两者都给（超出 DL6WU）
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU 把这两个尺寸联系在一起。选择“单元数”时，横梁长度由 DL6WU 间距算出；选择“横梁长度”时，只要横梁放得下就继续添加引向器。灰色字段不能填写：它显示推算出的数值。选择“两者都给（超出 DL6WU）”时两者都给定，间距按比例拉长或缩短：这就超出了该方法，必须进行 NEC 优化。
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	第 0-3 步不可用：选择“两者都给（超出 DL6WU）”时必须优化
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	由其他数据推算出的数值：不能填写（见数据下方的说明）。

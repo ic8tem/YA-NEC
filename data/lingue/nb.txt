@@ -3467,3 +3467,8 @@ Zona	Sone
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  stigning
 Ω  (il cavo di discesa)	Ω  (materkabelen)
 → segmento NEC	→ NEC-segment
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Begge (utenfor DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU knytter de to målene sammen. Med "Antall elementer" beregnes bommen fra DL6WU-avstandene; med "Bommens lengde" legges direktorer til så lenge bommen har plass. Det grå feltet kan ikke endres: det viser den avledede verdien. Med "Begge (utenfor DL6WU)" oppgir man begge, og avstandene strekkes eller forkortes forholdsmessig: man forlater metoden, og NEC-optimalisering er nødvendig.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	trinn 0-3 ikke tilgjengelig: med "Begge (utenfor DL6WU)" er optimalisering påkrevd
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Verdi avledet fra de andre dataene: kan ikke endres (se merknaden under dataene).

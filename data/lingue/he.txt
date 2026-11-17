@@ -3467,3 +3467,8 @@ Zona	אזור
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0.75-1.33)  פסיעה
 Ω  (il cavo di discesa)	Ω  (כבל ההורדה)
 → segmento NEC	→ מקטע NEC
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	שניהם (מחוץ ל-DL6WU)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU קושרת בין שתי המידות. עם "מספר האלמנטים" אורך הבום מחושב ממרווחי DL6WU; עם "אורך הבום" נוספים מכוונים כל עוד הבום מכיל אותם. השדה האפור אינו ניתן לעריכה: הוא מציג את הערך הנגזר. עם "שניהם (מחוץ ל-DL6WU)" נותנים את שניהם והמרווחים מתארכים או מתקצרים באופן יחסי: יוצאים מהשיטה ונדרשת אופטימיזציית NEC.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	שלבים 0-3 אינם זמינים: עם "שניהם (מחוץ ל-DL6WU)" האופטימיזציה היא חובה
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	ערך שנגזר משאר הנתונים: אינו ניתן לעריכה (ראו את ההערה מתחת לנתונים).

@@ -3467,3 +3467,8 @@ Zona	Tsoon
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  samm
 Ω  (il cavo di discesa)	Ω  (toitekaabel)
 → segmento NEC	→ NEC-segment
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Mõlemad (väljaspool DL6WU-d)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU seob kaks mõõtu. Valikuga "Elementide arv" arvutatakse poom DL6WU vahedest; valikuga "Poomi pikkus" lisatakse direktoreid, kuni need poomile mahuvad. Halli välja ei saa muuta: see näitab tuletatud väärtust. Valikuga "Mõlemad (väljaspool DL6WU-d)" antakse mõlemad ja vahed pikenevad või lühenevad proportsionaalselt: meetodist minnakse välja ja vaja on NEC-optimeerimist.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	sammud 0-3 pole saadaval: valikuga "Mõlemad (väljaspool DL6WU-d)" on optimeerimine kohustuslik
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Teistest andmetest tuletatud väärtus: ei saa muuta (vt märkust andmete all).

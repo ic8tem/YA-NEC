@@ -276,7 +276,7 @@ namespace YaNec
                     if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(cb, pp.Tip);
                     TextBlock h = Muto(pp.Hint);
                     left.Children.Add(RigaCalc(pp.Label, cb, h));
-                    aggiornaHint.Add(() => { carica(); h.Text = pp.Hint ?? ""; });
+                    aggiornaHint.Add(() => { carica(); int iv = Math.Max(0, Math.Min(pp.Choices.Length - 1, (int)pp.Value)); if (cb.SelectedIndex != iv) cb.SelectedIndex = iv; h.Text = pp.Hint ?? ""; });
                 }
                 else
                 {
@@ -306,7 +306,7 @@ namespace YaNec
                         if (gruppo == null) { gruppo = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 2, 0, 2) }; left.Children.Add(gruppo); }
                         gruppo.Children.Add(CellaCalc(pp.Label, pp.Tip, t, u, h));
                     }
-                    leggi.Add(() => pp.Value = ParseNum(t.Text, pp.Value));
+                    leggi.Add(() => { if (!t.IsReadOnly) pp.Value = ParseNum(t.Text, pp.Value); });
                     aggiornaHint.Add(() => { h.Text = pp.Hint ?? ""; h.IsVisible = !string.IsNullOrEmpty(h.Text); });
                     t.LostFocus += (s, e) =>
                     {
@@ -314,11 +314,11 @@ namespace YaNec
                         // e si salta se il campo non e' piu' nella finestra (evita AvaloniaInternalException, registro 13/11 17:58)
                         Avalonia.Threading.Dispatcher.UIThread.Post(() =>
                         {
-                            if (TopLevel.GetTopLevel(t) == null) return;
+                            if (TopLevel.GetTopLevel(t) == null || t.IsReadOnly) return;
                             double old = pp.Value; pp.Value = ParseNum(t.Text, pp.Value); if (old != pp.Value) sc.Scale = 1; if (mostra != null) mostra();
                         });
                     };
-                    t.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { pp.Value = ParseNum(t.Text, pp.Value); sc.Scale = 1; if (mostra != null) mostra(); } };
+                    t.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter && !t.IsReadOnly) { pp.Value = ParseNum(t.Text, pp.Value); sc.Scale = 1; if (mostra != null) mostra(); } };
                 }
                 if (pp.Visibile != null)
                 {
@@ -331,6 +331,32 @@ namespace YaNec
                 }
             }
             foreach (Action a in visib) a();
+            // 1.0.15 (bozzetto approvato da IC8TEM il 17/11/2026 09:57): nota fissa e avviso sui dati sotto i parametri
+            if (!string.IsNullOrEmpty(sc.NotaFissa))
+            {
+                left.Children.Add(new Border
+                {
+                    Background = Pal.B(Pal.WarnBg), BorderBrush = Pal.B(Pal.Yellow), BorderThickness = new Thickness(5, 1, 1, 1), CornerRadius = new CornerRadius(6),
+                    Padding = new Thickness(10, 7), Margin = new Thickness(0, 6, 0, 2),
+                    // l'icona a parte: il testo resta identico alla chiave e si traduce (Lang)
+                    Child = new DockPanel
+                    {
+                        Children =
+                        {
+                            new TextBlock { Text = "ⓘ", Foreground = Pal.B(Pal.Fore), FontSize = 12.5, Margin = new Thickness(0, 0, 6, 0), [DockPanel.DockProperty] = Dock.Left },
+                            new TextBlock { Text = sc.NotaFissa, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Fore), FontSize = 12.5 }
+                        }
+                    }
+                });
+                gruppo = null;
+            }
+            TextBlock avvDatiTesto = new TextBlock { TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Fore), FontSize = 12.5 };
+            Border avvDati = new Border
+            {
+                Background = Pal.B(Pal.A(40, Pal.Orange)), BorderBrush = Pal.B(Pal.Orange), BorderThickness = new Thickness(5, 1, 1, 1), CornerRadius = new CornerRadius(6),
+                Padding = new Thickness(10, 7), Margin = new Thickness(0, 4, 0, 2), IsVisible = false, Child = avvDatiTesto
+            };
+            left.Children.Add(avvDati);
             // 0.4.30 (IC8TEM 14/11/2026 23:40): rastremazione dei tubi nei progetti HF non filari
             if (sc.Tubolare)
             {
@@ -457,13 +483,20 @@ namespace YaNec
                     double vm;
                     bool dalModello = sc.DalModello.TryGetValue(kv.Key, out vm);
                     if (dalModello) kv.Value.Text = vm.ToString(kv.Key == "f" ? "0.###" : "0.##", CultureInfo.CurrentCulture);
-                    kv.Value.IsReadOnly = dalModello;
-                    kv.Value.Opacity = dalModello ? 0.75 : 1.0;
-                    string tipo = null;
-                    foreach (CalcParam cp in sc.Params) if (cp.Key == kv.Key) tipo = cp.Tip;
-                    ToolTip.SetTip(kv.Value, dalModello ? "Valore preso dal modello aperto nella finestra principale (si aggiorna da solo)." : (string.IsNullOrEmpty(tipo) ? null : tipo));
+                    double vc;
+                    bool calcolato = !dalModello && sc.Calcolati.TryGetValue(kv.Key, out vc);
+                    CalcParam cpar = sc.Par(kv.Key);
+                    if (calcolato) kv.Value.Text = vc.ToString(kv.Key == "nel" ? "0" : "0.###", CultureInfo.CurrentCulture);
+                    else if (kv.Value.IsReadOnly && !dalModello && cpar != null) kv.Value.Text = cpar.Value.ToString("0.####", CultureInfo.CurrentCulture);   // torna scrivibile: il valore dell'utente
+                    kv.Value.IsReadOnly = dalModello || calcolato;
+                    kv.Value.Opacity = dalModello ? 0.75 : calcolato ? 0.6 : 1.0;
+                    kv.Value.FontStyle = calcolato ? FontStyle.Italic : FontStyle.Normal;
+                    string tipo = cpar != null ? cpar.Tip : null;
+                    ToolTip.SetTip(kv.Value, dalModello ? "Valore preso dal modello aperto nella finestra principale (si aggiorna da solo)." : calcolato ? "Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati)." : (string.IsNullOrEmpty(tipo) ? null : tipo));
                 }
                 foreach (Action a in aggiornaHint) a();
+                avvDatiTesto.Text = string.IsNullOrEmpty(last.AvvisoDati) ? "" : "⚠ " + last.AvvisoDati;
+                avvDati.IsVisible = !string.IsNullOrEmpty(last.AvvisoDati);
                 formula.Text = last.Formula;
                 cards.Children.Clear();
                 foreach (CalcCard c in last.Cards) cards.Children.Add(Riquadretto(c.Title, c.Value, c.Sub, c.Hl));

@@ -3467,3 +3467,8 @@ Zona	Zóna
 λ (Kraus 0,75-1,33)  passo	λ (Kraus 0,75-1,33)  menetemelkedés
 Ω  (il cavo di discesa)	Ω  (a tápkábel)
 → segmento NEC	→ NEC szegmens
+# 1.0.15: Yagi lunga DL6WU, boom ed elementi
+Tutti e due (fuori DL6WU)	Mindkettő (DL6WU-n kívül)
+DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	A DL6WU összeköti a két méretet. "Elemek száma" esetén a tartócső hossza a DL6WU-távolságokból adódik; "Tartócső hossza" esetén addig kerülnek fel direktorok, amíg elférnek. A szürke mező nem írható: a származtatott értéket mutatja. "Mindkettő (DL6WU-n kívül)" esetén mindkettőt megadjuk, és a távolságok arányosan nyúlnak vagy rövidülnek: kilépünk a módszerből, és NEC-optimalizálás szükséges.
+passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	a 0-3. lépés nem érhető el: "Mindkettő (DL6WU-n kívül)" esetén az optimalizálás kötelező
+Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	A többi adatból származtatott érték: nem írható (lásd az adatok alatti megjegyzést).
