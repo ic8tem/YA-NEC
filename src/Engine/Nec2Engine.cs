@@ -154,6 +154,7 @@ namespace YaNec.Engine
                 x[i] = xm[i] * fr; y[i] = ym[i] * fr; z[i] = zm[i] * fr;
                 si[i] = sim[i] * fr; bi[i] = bim[i] * fr;
             }
+            PreparaGiunzioniNec4();   // 1.2.0: carica alle giunzioni come il NEC-4 (opzione, spenta di partenza)
 
             // carichi
             nload = loads == null ? 0 : loads.Count;

@@ -50,7 +50,7 @@ namespace YaNec.Engine
                     cdh = Math.Cos(d);
                     sd = 2.0 * sdh * cdh;
                     omc = Omc(d, cdh, sdh);
-                    aj = 1.0 / (Math.Log(1.0 / (PI * bi[jcoxx])) - .577215664);
+                    { double gx, gy, gz; EstremoSeg(ix, iend, out gx, out gy, out gz); aj = AjAt(jcoxx, gx, gy, gz); }   // 1.2.0: NEC-4 opzionale
                     pp -= omc / sd * aj;
 
                     if (jcox == iss)
@@ -99,8 +99,13 @@ namespace YaNec.Engine
             }
             else omc = 1.0 - cd;
 
-            ap = 1.0 / (Math.Log(1.0 / (PI * bi[ix])) - .577215664);
-            aj = ap;
+            if (qGiunz == null) { ap = AjLog(ix); aj = ap; }
+            else
+            {
+                double gx, gy, gz;
+                EstremoSeg(ix, 1, out gx, out gy, out gz); ap = AjAt(ix, gx, gy, gz);
+                EstremoSeg(ix, -1, out gx, out gy, out gz); aj = AjAt(ix, gx, gy, gz);
+            }
 
             if (njun1 == 0)
             {
@@ -220,7 +225,7 @@ namespace YaNec.Engine
                     cdh = Math.Cos(d);
                     sd = 2.0 * sdh * cdh;
                     omc = Omc(d, cdh, sdh);
-                    aj = 1.0 / (Math.Log(1.0 / (PI * bi[jcoxx])) - .577215664);
+                    { double gx, gy, gz; EstremoSeg(ix, iend, out gx, out gy, out gz); aj = AjAt(jcoxx, gx, gy, gz); }   // 1.2.0: NEC-4 opzionale
                     pp = pp - omc / sd * aj;
                     ax[jsnox] = aj / sd * sig;
                     bx[jsnox] = aj / (2.0 * cdh);
@@ -267,8 +272,13 @@ namespace YaNec.Engine
             }
             else omc = 1.0 - cd;
 
-            ap = 1.0 / (Math.Log(1.0 / (PI * bi[ix])) - .577215664);
-            aj = ap;
+            if (qGiunz == null) { ap = AjLog(ix); aj = ap; }
+            else
+            {
+                double gx, gy, gz;
+                EstremoSeg(ix, 1, out gx, out gy, out gz); ap = AjAt(ix, gx, gy, gz);
+                EstremoSeg(ix, -1, out gx, out gy, out gz); aj = AjAt(ix, gx, gy, gz);
+            }
 
             if (njun1 == 0)
             {

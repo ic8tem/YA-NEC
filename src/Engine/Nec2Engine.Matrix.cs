@@ -180,7 +180,7 @@ namespace YaNec.Engine
             {
                 ipr++;
                 int ij = i - j;
-                Efld(x[i], y[i], z[i], bi[i], ij);
+                Efld(x[i], y[i], z[i], GiunzioniNec4 ? db : bi[i], ij);   // 1.2.0: NEC-4, corrente sulla superficie della sorgente
                 double cabi = cab[i], sabi = sab[i], salpi = salp[i];
                 Complex etk = exk * cabi + eyk * sabi + ezk * salpi;
                 Complex ets = exs * cabi + eys * sabi + ezs * salpi;

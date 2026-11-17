@@ -25,6 +25,7 @@ namespace YaNec.Engine
         int calcestruzzoCm;   // 0.5.0: riga CM YA-NEC CALCESTRUZZO=k, applicata al terreno alla fine della lettura
         public bool ExtendedKernel;
         public bool Leeson;            // correzione dei tubi telescopici (diametri a gradini), ricalcolata a ogni frequenza
+        public bool GiunzioniNec4;     // 1.2.0: carica alle giunzioni e nucleo come il NEC-4 (opzione, Nec2Engine.Giunzioni.cs)
         public double Rkh = 1.0;
         // frequenze (FR): inizio, passo, numero, passo moltiplicativo
         public double FreqMHz = 144.3;
@@ -729,6 +730,7 @@ namespace YaNec.Engine
                 if (k == "CORRENTI") CurrentSources = d != 0;
                 if (k == "CARICHI") UseLoads = d != 0;
                 if (k == "LEESON") Leeson = d != 0;
+                if (k == "GIUNZIONI_NEC4") GiunzioniNec4 = d != 0;
                 if (k == "CALCESTRUZZO") calcestruzzoCm = (int)d;
             }
         }
@@ -763,6 +765,7 @@ namespace YaNec.Engine
             if (CurrentSources) sb.AppendLine("CM YA-NEC CORRENTI=1");
             if (!UseLoads) sb.AppendLine("CM YA-NEC CARICHI=0");
             if (Leeson) sb.AppendLine("CM YA-NEC LEESON=1");
+            if (GiunzioniNec4) sb.AppendLine("CM YA-NEC GIUNZIONI_NEC4=1");
             if (Ground.Kind == GroundKind.Real && Ground.Calcestruzzo > 0) sb.AppendLine("CM YA-NEC CALCESTRUZZO=" + Ground.Calcestruzzo);
             foreach (SyVar v in Variables)
                 if (!string.IsNullOrWhiteSpace(v.Descr)) sb.AppendLine("CM YA-NEC VAR " + v.Name + ": " + v.Descr.Replace("\r", " ").Replace("\n", " ").Trim());

@@ -129,7 +129,7 @@ namespace YaNec.Engine
             r.Z0 = model.Z0;
             // 0.4.18: limiti del NEC-2 per i fili vicini al terreno e per le giunzioni affollate (Butternut con 64 radiali, BOG)
             try { r.Warnings.AddRange(TerrenoVicino.Controlla(geo, model.Ground, fmhz)); } catch { }
-            Nec2Engine e = new Nec2Engine(geo);
+            Nec2Engine e = new Nec2Engine(geo) { GiunzioniNec4 = model.GiunzioniNec4 };
             e.Solve(fmhz, EffectiveSources(model, geo, fmhz), model.EffectiveLoads(), TerreniEdifici.Alla(model.Ground, fmhz), model.ExtendedKernel, model.Rkh, model.EffectiveNetworks(fmhz));
             if (e.PivotWarning != null) r.Warnings.Add(e.PivotWarning);
             r.Engine = e;
@@ -434,7 +434,7 @@ namespace YaNec.Engine
                         NecModel ml = Leeson.Applica(model, freqs[i], null);
                         if (!ReferenceEquals(ml, model)) gf = ml.BuildGeometry();
                     }
-                    Nec2Engine e = new Nec2Engine(gf);
+                    Nec2Engine e = new Nec2Engine(gf) { GiunzioniNec4 = model.GiunzioniNec4 };
                     e.Solve(freqs[i], EffectiveSources(model, gf, freqs[i]), model.EffectiveLoads(), TerreniEdifici.Alla(model.Ground, freqs[i]), model.ExtendedKernel, model.Rkh, model.EffectiveNetworks(freqs[i]));
                     sp.Z = e.Sources[0].Z;
                     sp.Swr = Swr(sp.Z, model.Z0);
