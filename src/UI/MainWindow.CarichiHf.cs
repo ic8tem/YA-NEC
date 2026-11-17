@@ -102,9 +102,11 @@ namespace YaNec
             cBlocca.SelectedItem = d.Blocca; cSotto.SelectedItem = d.Sotto;
             ComboBox cCavo = new ComboBox { ItemsSource = cavi, SelectedItem = d.Cavo, MinWidth = 110 };
             ComboBox cPasso = new ComboBox { ItemsSource = CarichiHf.Passi, SelectedIndex = 0 };
-            ComboBox cColl = new ComboBox { ItemsSource = new[] { "standard" }, SelectedIndex = 0 };
+            ComboBox cColl = new ComboBox { ItemsSource = CarichiHf.Collegamenti, SelectedIndex = 0 };
             ToolTip.SetTip(cColl, "Collegamento standard della trappola coassiale: il centrale all'inizio dell'avvolgimento si salda alla calza alla fine; " +
-                "i terminali della trappola sono la calza all'inizio e il centrale alla fine. La capacita' e' quella tra centrale e calza per tutta la lunghezza avvolta.");
+                "i terminali della trappola sono la calza all'inizio e il centrale alla fine. La capacita' e' quella tra centrale e calza per tutta la lunghezza avvolta. " +
+                "W8NX bassa impedenza (ARRL Antenna Book 24a ed., par. 10.2): l'uscita si prende sulle sole spire del centrale, meta' delle spire, e la trappola vale circa 1/4 dell'impedenza con la stessa risonanza; " +
+                "il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).");
             TextBox tForma = Tb("40", 56), tSpire = Tb("8,6", 56);
             TextBox tL = Tb("8,2", 60), tC = Tb("60", 60), tQL = Tb("200", 50), tQC = Tb("2000", 56);
             TextBox tDiam = Tb("50", 50), tFilo = Tb("2", 44), tPassoMm = Tb("4", 44), tSpB = Tb("20", 50), tF = Tb("3,650", 64), tPos = Tb("5", 50), tFiloEl = Tb("2", 44);
@@ -162,7 +164,7 @@ namespace YaNec
             Action leggi = () =>
             {
                 d.Blocca = cBlocca.SelectedItem as string ?? d.Blocca; d.Sotto = cSotto.SelectedItem as string ?? d.Sotto;
-                d.Cavo = cCavo.SelectedItem as Cable ?? d.Cavo; d.Passo = Math.Max(0, cPasso.SelectedIndex);
+                d.Cavo = cCavo.SelectedItem as Cable ?? d.Cavo; d.Passo = Math.Max(0, cPasso.SelectedIndex); d.Collegamento = Math.Max(0, cColl.SelectedIndex);
                 d.FormaMm = ParseNum(tForma.Text, d.FormaMm); d.Spire = Math.Max(0.5, ParseNum(tSpire.Text, d.Spire));
                 d.LuH = Math.Max(1e-3, ParseNum(tL.Text, d.LuH)); d.CpF = Math.Max(0.1, ParseNum(tC.Text, d.CpF));
                 d.QL = ParseNum(tQL.Text, d.QL); d.QC = ParseNum(tQC.Text, d.QC);
@@ -329,7 +331,7 @@ namespace YaNec
             fIns.Selected += k => { inserisci = k; };
             foreach (TextBox t in new[] { tBraccio, tForma, tSpire, tL, tC, tQL, tQC, tDiam, tFilo, tPassoMm, tSpB, tF, tPos, tFiloEl, tPiega, tDist, tFiloLl, tRaggi, tRaggio, tFiloCap, tAlt, tMisL, tMisQ, tMisF, tMisF0, tPot })
                 t.LostFocus += (s, e) => ricalcola();
-            foreach (ComboBox c in new[] { cBlocca, cSotto, cCavo, cPasso }) c.SelectionChanged += (s, e) => { if (datiCorpo.Children.Count > 0) { if (d.Tipo == 1) costruisciDati(); ricalcola(); } };
+            foreach (ComboBox c in new[] { cBlocca, cSotto, cCavo, cPasso, cColl }) c.SelectionChanged += (s, e) => { if (datiCorpo.Children.Count > 0) { if (d.Tipo == 1) costruisciDati(); ricalcola(); } };
             cAnello.IsCheckedChanged += (s, e) => ricalcola();
             bSpire.Click += (s, e) =>
             {

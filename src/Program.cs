@@ -314,6 +314,12 @@ namespace YaNec
                             bool okc = Math.Abs(rc.F0 / 1e6 - 7.1) < 0.005 && rc.Q0 > 80 && rc.Q0 < 400;
                             string r3 = string.Format(CI0, "Trappola coassiale RG-58 su forma 40 mm per 40 m: {0:0.00} spire, f0 {1:0.000} MHz, L {2:0.00} uH, C {3:0} pF, cavo {4:0.00} m, Q {5:0}", dc.Spire, rc.F0 / 1e6, rc.L * 1e6, rc.C * 1e12, rc.LungCavo, rc.Q0);
                             sb.AppendLine("       " + (okc ? "OK   " : "ERR  ") + r3); if (!okc) errPar.Add(r3);
+                            // trappola W8NX (ARRL Antenna Book 24a ed., par. 10.2): 8 3/4 spire di RG-59 (Belden 8241) su PVC da 2 3/8" (60,3 mm): 4 uH, 123 pF, 7,15 MHz
+                            var dw = new Engine.CarichiHf.Dati { Tipo = 1, FormaMm = 60.3, Spire = 8.75, Blocca = "40 m", Cavo = cavi.Find(c => c.Name.StartsWith("RG-59/U (Belden 8241)")) };
+                            var rw = Engine.CarichiHf.Calcola(dw);
+                            bool okw = dw.Cavo != null && Math.Abs(rw.F0 / 7.15e6 - 1) < 0.015 && Math.Abs(rw.L / 4e-6 - 1) < 0.03 && Math.Abs(rw.C / 123e-12 - 1) < 0.03;
+                            string r4 = string.Format(CI0, "Trappola W8NX (ARRL 24a ed.): 8,75 spire di RG-59 su PVC 60,3 mm: f0 {0:0.000} MHz (W8NX 7,15), L {1:0.00} uH (4), C {2:0} pF (123)", rw.F0 / 1e6, rw.L * 1e6, rw.C * 1e12);
+                            sb.AppendLine("       " + (okw ? "OK   " : "ERR  ") + r4); if (!okw) errPar.Add(r4);
                         }
                         catch (Exception ex) { errPar.Add("carichi HF: " + ex.Message); }
                     // 1.2.0: meccanica (bozzetto 9): trave a sbalzo a sezione costante contro le formule chiuse; coefficiente di esposizione NTC 2018

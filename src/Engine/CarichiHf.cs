@@ -24,6 +24,7 @@ namespace YaNec.Engine
         public const double Mu0 = 4e-7 * Math.PI, Eps0 = 8.854187817e-12, RhoCu = 1.72e-8, C0 = 299792458.0;
         public static readonly string[] Tipi = { "Trappola LC (componenti)", "Trappola coassiale", "Bobina di carico (autorisonanza)", "Linear loading", "Cappello capacitivo", "Bobina dalle misure (L, Q, f0)" };
         public static readonly string[] Passi = { "serrato", "1,5 × Ø", "2 × Ø" };
+        public static readonly string[] Collegamenti = { "standard", "W8NX bassa impedenza" };
 
         /// <summary>Tensione di lavoro (V efficaci) dei cavi piu' usati per le trappole; 0 = non nota.</summary>
         public static double TensioneLavoro(string cavo)
@@ -55,6 +56,7 @@ namespace YaNec.Engine
             public double FormaMm = 40, Spire = 8.6;
             public Cable Cavo;
             public int Passo;                           // 0 serrato, 1 1,5 x, 2 2 x il diametro
+            public int Collegamento;                    // 0 standard (uscita alta), 1 W8NX bassa impedenza (solo spire del centrale, Z/4)
             // bobina di carico
             public double DiamBobinaMm = 50, FiloMm = 2, PassoMm = 4, SpireBobina = 20;
             // linear loading
@@ -197,6 +199,13 @@ namespace YaNec.Engine
                         double qlb = w0 * L / rs(r.F0);
                         r.Q0 = 1 / (1 / qlb + tanD);
                         r.QAltra = 2 * Math.PI * fs * L / rs(fs); r.FAltra = fs;
+                        if (d.Collegamento == 1)
+                        {
+                            // W8NX (ARRL Antenna Book 24a ed. par. 10.2): uscita sulle sole spire del centrale, impedenza circa 1/4, stessa risonanza e stesso Q
+                            Func<double, Complex> zp = r.Z;
+                            r.Z = f => zp(f) / 4;
+                            r.L /= 4; r.C *= 4;
+                        }
                         Trappola(r, d, fb, fs, rFilo);
                         double vl = TensioneLavoro(d.Cavo != null ? d.Cavo.Name : "");
                         double vmax = 0; foreach (RigaBanda rb in r.Righe) vmax = Math.Max(vmax, rb.V);
