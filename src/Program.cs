@@ -316,6 +316,26 @@ namespace YaNec
                             sb.AppendLine("       " + (okc ? "OK   " : "ERR  ") + r3); if (!okc) errPar.Add(r3);
                         }
                         catch (Exception ex) { errPar.Add("carichi HF: " + ex.Message); }
+                    // 1.2.0: meccanica (bozzetto 9): trave a sbalzo a sezione costante contro le formule chiuse; coefficiente di esposizione NTC 2018
+                    using (Prestazioni.Misura("Autotest della meccanica"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var tubi = new List<Engine.Meccanica.Tubo> { new Engine.Meccanica.Tubo { Da = 0, A = 3, D = 0.030, S = 0.002 } };
+                            var es = Engine.Meccanica.Elemento(tubi, Engine.Meccanica.Leghe[0], 30, 0, true, 1.2);
+                            double w = Engine.Meccanica.Pressione(30) * 1.2 * 0.030, mw = w * 9 / 2;
+                            double di = 0.026, gq = Engine.Meccanica.G * Engine.Meccanica.DensAl * Math.PI * (0.030 * 0.030 - di * di) / 4;
+                            double fq = Engine.Meccanica.FrecciaChiusa(gq, 3, Engine.Meccanica.E * Engine.Meccanica.Inerzia(0.030, 0.002));
+                            double eM = Math.Abs(es.Mw[0] / mw - 1), eF = Math.Abs(es.Freccia[es.Freccia.Length - 1] / fq - 1);
+                            bool okm = eM < 0.01 && eF < 0.01;
+                            string r1 = string.Format(CI0, "Trave a sbalzo 30x2 mm lunga 3 m: momento al vincolo {0:0.0} N m (wL^2/2 = {1:0.0}), freccia in punta {2:0.00} mm (wL^4/8EI = {3:0.00}); scarti {4:0.00} % e {5:0.00} %", es.Mw[0], mw, es.Freccia[es.Freccia.Length - 1] * 1000, fq * 1000, eM * 100, eF * 100);
+                            sb.AppendLine("       " + (okm ? "OK   " : "ERR  ") + r1); if (!okm) errPar.Add(r1);
+                            double ce = Engine.Meccanica.Ce(1, 10);
+                            bool okc = Math.Abs(ce - 2.35) < 0.02;
+                            string r2 = string.Format(CI0, "NTC 2018: coefficiente di esposizione categoria II a 10 m = {0:0.000} (tabella: 2,35); zona 3 a 0 m: vb = {1:0.0} m/s", ce, Engine.Meccanica.Vb(Engine.Meccanica.Zone[2], 0));
+                            sb.AppendLine("       " + (okc ? "OK   " : "ERR  ") + r2); if (!okc) errPar.Add(r2);
+                        }
+                        catch (Exception ex) { errPar.Add("meccanica: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");

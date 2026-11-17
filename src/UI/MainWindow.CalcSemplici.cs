@@ -40,7 +40,7 @@ namespace YaNec
             { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "eggbeater", "qfh" } },
             { "Antenne riceventi", new string[0] },
-            { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
+            { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe", "meccanica" } },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
             { "2,4 GHz", new[] { "pcb24" } },
         };
@@ -99,6 +99,7 @@ namespace YaNec
             fasCalc.Voce("toroidiFT", "Toroidi ferrite (FT)", false, null, "AL, spire, impedenza", true);
             fasCalc.Voce("balun", "Balun / Un-Un", false, null, "rapporti e avvolgimenti", true);
             fasCalc.Voce("staffe", "Staffe di fissaggio", false, null, "piastre al boom: compensazione e modello (ARRL, Leeson)");   // 0.4.30
+            fasCalc.Voce("meccanica", "Meccanica", false, null, "alla YagiStress (K7NV): elementi, boom, tirante, mast; vento NTC 2018 + CNR-DT 207 / EC1");   // 1.2.0
             fasCalc.Voce("parabola", "Parabola primo fuoco", false, null, "1296 / 2320 / 5760 / 10368 MHz, meccanica, lobi, EME");
             fasCalc.Voce("offset", "Parabola offset", false, null, "geometria, dime, illuminazione asimmetrica, lobi H e V, EME");
             fasCalc.Voce("trombe", "Trombe e illuminatori", false, null, "coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC");   // 0.4.19
@@ -110,7 +111,7 @@ namespace YaNec
                 Control c;
                 if (!calcPages.TryGetValue(k, out c))
                 {
-                    c = k == "carichihf" ? BuildCarichiHfPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
+                    c = k == "carichihf" ? BuildCarichiHfPanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
                     calcPages[k] = c;
                 }
                 hostCalc.Content = c;
