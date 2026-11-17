@@ -356,6 +356,18 @@ namespace YaNec
                             sb.AppendLine("       " + (okv ? "OK   " : "ERR  ") + r2); if (!okv) errPar.Add(r2);
                         }
                         catch (Exception ex) { errPar.Add("ricezione RDF: " + ex.Message); }
+                    // 1.2.0: test AGT fatto dal programma (bozzetto 11 D): dipolo 20 m a 10 m, attesi 1,000 in spazio libero e 2,000 sul terreno perfetto
+                    using (Prestazioni.Misura("Autotest del test AGT"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var ma = Engine.NecModel.Parse("CM dipolo 20 m\nCE\nGW 1 21 0 -5.13 10 0 5.13 10 0.001\nGE 0\nGN 2 0 0 0 13 0.005\nLD 5 0 0 0 5.8e7\nEX 0 1 11 0 1 0\nFR 0 1 0 0 14.175 0\nEN\n");
+                            var la = Engine.AgtTest.Esegui(ma, System.Threading.CancellationToken.None);
+                            bool oka = la.Count == 3 && Math.Abs(la[0].Valore - 1) < 0.02 && Math.Abs(la[1].Valore - 2) < 0.04 && Math.Abs(la[2].Valore - 1) < 0.02;
+                            string ra = string.Format(CI0, "Test AGT del dipolo 20 m (rame, terreno medio tolti): spazio libero {0:0.000} (atteso 1,000), terreno perfetto {1:0.000} (atteso 2,000), segmenti raddoppiati {2:0.000}", la[0].Valore, la[1].Valore, la[2].Valore);
+                            sb.AppendLine("       " + (oka ? "OK   " : "ERR  ") + ra); if (!oka) errPar.Add(ra);
+                        }
+                        catch (Exception ex) { errPar.Add("test AGT: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");

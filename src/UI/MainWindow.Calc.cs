@@ -637,7 +637,7 @@ namespace YaNec
             SetCard("z", Fmt(z.Real, 2) + (z.Imaginary >= 0 ? " +j" : " -j") + Fmt(Math.Abs(z.Imaginary), 2), "a " + Fmt(run.FreqMHz, 3) + " MHz" + (run.Sources.Count > 1 ? " (sorgente 1 di " + run.Sources.Count + ")" : ""));
             Color swrCol = run.Swr <= 1.5 ? Pal.Green : (run.Swr <= 2.0 ? Pal.Fore : (run.Swr <= 3 ? Pal.Orange : Pal.Red));
             SetCard("swr", run.Swr >= 99 ? ">99" : Fmt(run.Swr, 2), "su Z0 = " + Fmt(run.Z0, 1) + " ohm", swrCol);
-            SetCard("g", Fmt(run.GmaxDbi, 2) + " dBi", Fmt(run.GmaxDbi - 2.15, 2) + " dBd");
+            { double gm = GuadagnoMostrato(run.GmaxDbi); SetCard("g", Fmt(gm, 2) + " dBi", Fmt(gm - 2.15, 2) + " dBd" + (gm != run.GmaxDbi ? " (corretto con l'AGT)" : "")); }
             SetCard("dir", "az " + Fmt(run.PhiMax, 1) + "°", "elevazione " + Fmt(run.ElevationOfMax, 1) + "°");
             SetCard("fb", Fmt(Nz(run.FrontBack), 2) + " dB", "avanti / dietro (180°)");
             SetCard("fr", Fmt(Nz(run.FrontRear), 2) + " dB", "avanti / peggiore posteriore");

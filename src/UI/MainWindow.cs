@@ -521,6 +521,7 @@ namespace YaNec
                 if (n == "Impostazioni") SincronizzaImpostazioni();
                 else if (n == "Rumore/GT/Stack") { if (fasGt == null || fasGt.Current == "gt") CalcolaGt(); }
                 else if (n == "Registro") AggiornaRegistro();
+                else if (n == "Avvisi" && model != null && agtModello != model && geo != null && geo.N <= 1500) EseguiAgt();
                 else if (n == "Ottimizzatore") OttSincronizza();
                 else if (n == "Calcolatori" && lpdaPrimoCalcolo != null && fasCalc != null && fasCalc.Current == "lpda")
                 {
@@ -767,7 +768,11 @@ namespace YaNec
         Control BuildNotesPage()
         {
             txtNotes = new SelectableTextBlock { FontSize = 13, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(12), TextWrapping = TextWrapping.Wrap };
-            return Riquadro(new ScrollViewer { Content = txtNotes });
+            // 1.2.0 (bozzetto 11 D): sopra gli avvisi il test del guadagno medio fatto dal programma
+            StackPanel sp = new StackPanel();
+            sp.Children.Add(BuildAgtPanel());
+            sp.Children.Add(Riquadro(txtNotes));
+            return new ScrollViewer { Content = sp };
         }
 
         Control BuildTestPage()
