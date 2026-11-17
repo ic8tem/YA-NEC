@@ -44,7 +44,8 @@ namespace YaNec
             };
             Func<string, bool> premi = testo =>
             {
-                Button b = this.GetVisualDescendants().OfType<Button>().FirstOrDefault(x => x.IsEffectivelyVisible && TestoDi(x.Content).Trim().StartsWith(testo));
+                Button b = this.GetVisualDescendants().OfType<Button>().LastOrDefault(x => x.IsEffectivelyVisible && x.IsEnabled && TestoDi(x.Content).Trim() == testo)
+                    ?? this.GetVisualDescendants().OfType<Button>().FirstOrDefault(x => x.IsEffectivelyVisible && TestoDi(x.Content).Trim().StartsWith(testo));
                 if (b == null) { PrRiga("pulsante non trovato: " + testo); return false; }
                 b.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                 return true;
@@ -73,6 +74,26 @@ namespace YaNec
                     if (premi("Avvia")) await Attendi(() => this.GetVisualDescendants().OfType<Button>().Any(x => x.IsEffectivelyVisible && TestoDi(x.Content).StartsWith("Avvia") && x.IsEnabled), 240000);
                     await Task.Delay(1500); await foto("tolleranze");
                     ApriVoceDiagrammi("Terreno reale"); terrEsito = null; await Attendi(() => terrEsito != null, 90000); await Task.Delay(2500); await foto("terreno-reale-vhf");
+                }
+                // VHF: Yagi 7 elementi DK7ZB: cavo e balun, Yagi incrociate, divisori, calcoli meccanici
+                if (await apri("7 el DK7ZB EME 144 MHz (MMANA).yanec"))
+                {
+                    SelectTab(IndiceLinguetta("Struttura 3D")); fasOggetti?.Select("cavobalun"); await Task.Delay(800);
+                    if (premi("Calcola il confronto")) await Task.Delay(45000);
+                    await foto("cavo-balun");
+                    ApriCalcolatore("yagiincr"); await Task.Delay(800);
+                    if (premi("Calcola")) await Task.Delay(60000);
+                    await foto("yagi-incrociate");
+                    ApriCalcolatore("divisori"); await Task.Delay(1200); await foto("divisori");
+                    SelectTab(IndiceLinguetta("Calcoli meccanici")); ApriVoceMeccanica("Vento"); await Task.Delay(1500); await foto("vento");
+                    ApriVoceMeccanica("Bilanciamento"); await Task.Delay(800); premi("Calcola"); await Task.Delay(1500); await foto("bilanciamento");
+                }
+                // stack 4 x 7 elementi con telaio a H
+                if (await apri("4x7el DK7ZB H-frame 3 m x 3 m.yanec"))
+                {
+                    SelectTab(IndiceLinguetta("Struttura 3D")); fasOggetti?.Select("stack"); await Task.Delay(1500);
+                    if (premi("Calcola confronto")) await Task.Delay(60000);
+                    await foto("telaio-stack");
                 }
             }
             catch (Exception ex) { PrRiga("interrotte: " + ex); }
