@@ -6514,3 +6514,24 @@ AGT in spazio libero, senza perdite
 AGT sul terreno perfetto (atteso 2,000)
 AGT dopo il cambio di segmentazione (segmenti raddoppiati)
 IMPOSTAZIONI
+Dipolo basso (riferimento)
+Schiera Hi-Z di verticali corte
+2 (cardioide)
+3 (triangolo)
+8 (cerchio)
+Base del loop
+Distanza, lato o diametro
+Apice (altezza del palo)
+Altezza delle verticali
+Base del loop dal suolo
+ottimizza la fase (RDF)
+Fase tra le file
+gradi (vuota = nullo posteriore, π + βd)
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.
+fase tra le file da 120 a 300 gradi per l'RDF
+nessuna fase con il lobo in avanti
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...

@@ -4551,3 +4551,24 @@ AGT in spazio libero, senza perdite	AGT in free space, lossless
 AGT sul terreno perfetto (atteso 2,000)	AGT over perfect ground (expected 2.000)
 AGT dopo il cambio di segmentazione (segmenti raddoppiati)	AGT after the segmentation change (doubled segments)
 IMPOSTAZIONI	SETTINGS
+Dipolo basso (riferimento)	Low dipole (reference)
+Schiera Hi-Z di verticali corte	Hi-Z array of short verticals
+2 (cardioide)	2 (cardioid)
+3 (triangolo)	3 (triangle)
+8 (cerchio)	8 (circle)
+Base del loop	Loop base
+Distanza, lato o diametro	Spacing, side or diameter
+Apice (altezza del palo)	Apex (mast height)
+Altezza delle verticali	Height of the verticals
+Base del loop dal suolo	Loop base above ground
+ottimizza la fase (RDF)	optimize the phase (RDF)
+Fase tra le file	Phase between rows
+gradi (vuota = nullo posteriore, π + βd)	degrees (empty = rear null, π + βd)
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Low horizontal dipole: less than lambda/4 above ground the lobe goes upwards. It is the "high-angle" reference of IV3PRK's ranking (RDF 7.3 dB): it is compared with the low-angle receiving antennas.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY by Gary Breed K9AY (QST, September 1997): two vertical loops at 90 degrees on the same mast, terminating resistor (390 ohm typical, adjusted for F/B), 9:1 transformer. Here a single loop, turned to the chosen direction, closed above ground as on the Reception (RDF) page. Hi-Z: RDF 7.2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Receiving 4-square: four short active verticals at the corners of a lambda/8 square, firing along the diagonal. Empty phase = exact rear null (pi + beta d between rows): it gives the highest theoretical directivity; real phasing networks (ON4UN, IV3PRK) use other phases and give a lower RDF (IV3PRK 9.4 dB). The button looks for the phase with the best RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Arrays of short active verticals like those of Hi-Z Antennas: 2 elements end-fire (cardioid, lambda/8), 3 in a triangle (side lambda/6, one vertex towards the chosen direction), 8 in a circle (diameter 0.37 lambda: the four towards the direction and the opposite one are used). Hi-Z: 8 in a circle RDF 13.4 dB with its own combiner; the simple two-row model stays lower. The button looks for the phase with the best RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ The verticals start from the real ground (GE 1 with the Sommerfeld ground): with NEC-2 a wire connected to real ground gives an impedance that depends on the source segment (NEC-2 guide, EZNEC). Pattern and RDF are indicative; the connection with elevated radials is planned for all the receiving antennas.
+fase tra le file da 120 a 300 gradi per l'RDF	phase between rows from 120 to 300 degrees for the RDF
+nessuna fase con il lobo in avanti	no phase with the lobe forward
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Phase between rows for the best RDF: {0} degrees (RDF {1} dB). Recalculating...

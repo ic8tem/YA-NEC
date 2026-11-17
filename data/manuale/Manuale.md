@@ -2070,3 +2070,42 @@ Un clic su un filo nella vista 3D lo sottolinea con un colore velato e porta la 
 | G. J. Burke, NEC-2 e NEC-4.2 (LLNL); 4nec2 (A. Voors); L. B. Cebik W4RNL | AGT, giunzioni NEC-4, confronti |
 | ARRL, TLW | linea e accordatore |
 | Abramowitz e Stegun, Handbook of Mathematical Functions | integrali di Fresnel |
+
+## 24. Novita' della 1.3
+
+### 24.1 Antenne riceventi: le voci nuove
+
+Nei **Calcolatori**, famiglia **Antenne riceventi**, si accendono quattro voci del bozzetto approvato (richiesta di IC8TEM del 18/11/2026). Ognuna crea il modello NEC, lo calcola con il terreno di Sommerfeld e da' le stesse cifre delle altre riceventi: guadagno, guadagno medio, **RDF**, DMF, F/B, apertura, impedenza, confronto con la verticale e posto nella graduatoria.
+
+| Voce | Caselle | Modello NEC | Confronto |
+|---|---|---|---|
+| Dipolo basso | lunghezza, altezza del filo, direzione, terreno | dipolo orizzontale alimentato al centro, perpendicolare alla direzione | IV3PRK: RDF 7,3 dB (riferimento "a lobo alto") |
+| K9AY | base del loop, apice (altezza del palo), base dal suolo, terminazione con "ottimizza per F/B" | un loop a delta chiuso sopra il suolo, sorgente a un angolo in basso e resistenza all'altro, rivolto verso la direzione scelta | Hi-Z: RDF 7,2 dB |
+| 4-square RX | lato del quadrato (lambda/8), altezza delle verticali, fase tra le file | quattro verticali corte attive, fuoco lungo la diagonale | IV3PRK: RDF 9,4 dB |
+| Hi-Z 2-8 elementi | 2 (cardioide, lambda/8), 3 (triangolo, lato lambda/6), 8 (cerchio, diametro 0,37 lambda); altezza; fase tra le file | verticali corte attive in file; nel cerchio si usano le quattro verso la direzione e quella opposta | Hi-Z: 8 in cerchio RDF 13,4 dB |
+
+**Fase tra le file.** Vuota = nullo posteriore esatto: la fila davanti e' sfasata di pi + beta d rispetto a quella dietro (d = distanza tra le file). Con file vicine (lambda/8) da' la direttivita' massima teorica, piu' alta di quella delle reti di fase reali: per questo il 4-square del modello supera i 9,4 dB di IV3PRK. Con le file del cerchio (0,34 lambda) la stessa regola manda il lobo di lato, quindi per l'8 in cerchio la fase di partenza e' 220 gradi. Il pulsante **ottimizza la fase (RDF)** prova le fasi da 120 a 300 gradi a passi di 10 e tiene quella con l'RDF piu' alto e il lobo entro 45 gradi dalla direzione scelta.
+
+**Collegamento a terra.** Le verticali partono dal terreno reale, come la Beverage e il BOG: con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Il fumetto giallo lo ricorda; diagramma e RDF restano indicativi. Il collegamento con radiali rialzate (lambda/4 a 0,15 m) e' in programma per tutte le riceventi insieme.
+
+**Il Rombo ripiegato** resta spento finche' non c'e' la fonte con le misure.
+
+Collaudo: ogni voce si apre e si calcola; il lobo del dipolo basso va sopra 45 gradi di elevazione, quello delle altre entro 45 gradi dalla direzione; l'RDF sta nel campo atteso.
+
+### 24.2 Correzioni
+
+- Con il cursore in un campo, il clic su un'altra voce dell'elenco a sinistra poteva chiudere il programma (registro del 13/11/2026, "Visual is attached to visual tree but root could not be found"): ora l'elenco e le pillole di Parabola e Trombe chiudono il campo prima di cambiare pagina, e quell'eccezione, se capita, si scrive nel registro senza chiudere il programma.
+- Le finestre larghe (Cavo e balun, telaio dello stack) prendono la larghezza della finestra: tabella e grafico non escono piu' a destra.
+- Ricezione (RDF), 8 verticali in cerchio: la fase tra le file e' 220 gradi; con la regola del nullo posteriore il lobo usciva a 50 gradi dalla direzione.
+- Le pagine della 1.2 hanno tutti i testi anche in inglese.
+
+### 24.3 Crediti delle fonti della 1.3
+
+| Fonte | Usata per |
+|---|---|
+| Gary Breed K9AY, The K9AY Terminated Loop, QST settembre 1997 | K9AY |
+| Hi-Z Antennas | schiere di verticali corte attive, RDF di confronto |
+| IV3PRK | graduatoria RDF: dipolo basso, 4-square RX |
+| ON4UN, Low-Band DXing | 4-square in ricezione |
+| G. J. Burke, guida del NEC-2; R. Lewallen W7EL, EZNEC | fili collegati al terreno reale |
+

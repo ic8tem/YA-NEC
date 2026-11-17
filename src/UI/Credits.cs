@@ -125,6 +125,14 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "1.3 - Antenne riceventi abilitate",
+                Who = "Gary Breed K9AY (The K9AY Terminated Loop, QST settembre 1997); Hi-Z Antennas (schiere di verticali corte attive, tabella RDF); IV3PRK (graduatoria RDF: dipolo basso 7,3 dB, 4-square RX 9,4 dB); ON4UN, Low-Band DXing (4-square in ricezione); G. J. Burke, guida del NEC-2, e R. Lewallen W7EL, EZNEC (fili collegati al terreno reale)",
+                What = "Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.",
+                Link = "",
+                License = "riferimenti bibliografici"
+            },
+            new CreditEntry
+            {
                 Title = "1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate",
                 Who = "NTC 2018 e Circolare 7/2019; CNR-DT 207 R1/2018; EN 1991-1-4; K5IU (flusso trasversale) e ARRL Antenna Book (appendici); W8NX (trappola coassiale a bassa impedenza); ON4UN (DMF, ghiaccio); DL6WU e ARRL (linee in tubo quadro); E. J. Wilkinson (IRE Trans. MTT, 1960); Wheeler e Medhurst (bobine); VE7BQH (TANT); ARRL TLW",
                 What = "Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.",
