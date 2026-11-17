@@ -790,6 +790,15 @@ namespace YaNec
             tLoc.KeyUp += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { quotaSito = double.NaN; terrAggiorna(); } else aggiornaLocatore(); };
             cSovr.IsCheckedChanged += (s, e) => { terrSovrapponi = cSovr.IsChecked == true; ShowPatterns(); };
             bCalc.Click += (s, e) => terrAggiorna();
+            // 1.3.0 (prova del videocorso, 18/11/2026): caselle, menu e campi del sito ricalcolano da soli, come la scelta della direzione
+            // (prima la scansione dell'altezza e le superfici restavano spente finche' non si cambiava direzione)
+            foreach (CheckBox c in new[] { cScan, cSuMare, cRug, cDiv, cDif, cRosa }) c.IsCheckedChanged += (s, e) => { if (terrAggiorna != null) terrAggiorna(); };
+            foreach (ComboBox c in new[] { cTerra, cMare }) c.SelectionChanged += (s, e) => { if (terrAggiorna != null) terrAggiorna(); };
+            foreach (TextBox t in new[] { tH, tAz, tDmax })
+            {
+                t.LostFocus += (s, e) => { if (terrAggiorna != null) terrAggiorna(); };
+                t.KeyUp += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter && terrAggiorna != null) terrAggiorna(); };
+            }
             bMappa.Click += async (s, e) =>
             {
                 string nuovo = await ScegliSullaMappa((tLoc.Text ?? "").Trim().ToUpperInvariant(), ParseNum(tH.Text, 10));

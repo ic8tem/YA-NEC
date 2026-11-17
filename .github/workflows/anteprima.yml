@@ -4,6 +4,11 @@ name: anteprima
 
 on:
   workflow_dispatch:
+    inputs:
+      prove:
+        description: "prove dell'interfaccia (circa 30 minuti)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -24,6 +29,7 @@ jobs:
           timeout 900 ./pub/YA-NEC/YA-NEC --autotest > autotest.txt 2>&1 || true
           tail -60 autotest.txt
       - name: Prove dell'interfaccia (tutte le linguette e sottolinguette, con il cursore in un campo prima di ogni cambio)
+        if: ${{ inputs.prove }}
         run: |
           sudo apt-get install -y xvfb fonts-dejavu-core > /dev/null
           timeout 1800 xvfb-run -s "-screen 0 1700x1100x24" ./pub/YA-NEC/YA-NEC --prove-interfaccia > /dev/null 2>&1 || true
@@ -41,5 +47,6 @@ jobs:
           if [ -z "$id" ]; then id=$(gh api repos/${{ github.repository }}/releases -X POST -f tag_name=anteprima -f name=anteprima -F draft=true -f target_commitish=${{ github.sha }} --jq .id); fi
           for a in $(gh api repos/${{ github.repository }}/releases/$id/assets --jq '.[].id'); do gh api -X DELETE repos/${{ github.repository }}/releases/assets/$a; done
           for f in anteprima-linux-x64.zip autotest.txt prove_interfaccia.txt; do
+            [ -f "$f" ] || continue
             curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @$f "https://uploads.github.com/repos/${{ github.repository }}/releases/$id/assets?name=$f"
           done
