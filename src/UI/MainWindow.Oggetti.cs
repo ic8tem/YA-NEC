@@ -801,7 +801,10 @@ namespace YaNec
                 bv.Click += (s, e) => { tv.Text = FN(dv, 3); upd(); };
                 bh.Click += (s, e) => { th.Text = FN(dh, 3); upd(); };
             }));
-            return Pannello("Stack", body, "l'antenna base resta una sola: le copie si spostano insieme");
+            StackPanel tutto = new StackPanel { Spacing = 10 };
+            tutto.Children.Add(Pannello("Stack", body, "l'antenna base resta una sola: le copie si spostano insieme"));
+            tutto.Children.Add(PannelloTelaio(si));   // 1.2.0: bozzetto VHF 4
+            return tutto;
         }
     }
 }
