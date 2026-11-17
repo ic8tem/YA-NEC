@@ -37,7 +37,7 @@ namespace YaNec
         public static readonly string[] CalcFamiglie = { "HF", "VHF", "Antenne riceventi", "Strumenti", "Dischi e illuminatori", "2,4 GHz" };
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
-            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone" } },
+            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "eggbeater", "qfh" } },
             { "Antenne riceventi", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
@@ -79,6 +79,7 @@ namespace YaNec
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
             fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
             fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
+            fasCalc.Voce("carichihf", "Carichi HF", false, null, "trappole LC e coassiali, bobine con autorisonanza, linear loading, cappelli; Q, tensioni e perdite per banda");   // 1.2.0
             fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
             fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
             fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
@@ -109,7 +110,7 @@ namespace YaNec
                 Control c;
                 if (!calcPages.TryGetValue(k, out c))
                 {
-                    c = k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
+                    c = k == "carichihf" ? BuildCarichiHfPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
                     calcPages[k] = c;
                 }
                 hostCalc.Content = c;

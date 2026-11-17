@@ -27,6 +27,8 @@ namespace YaNec
         public double YMinFixed = double.NaN, YMaxFixed = double.NaN;
         public double Y2MinFixed = double.NaN, Y2MaxFixed = double.NaN;
         public double MarkX = double.NaN;
+        public string MarkXLabel;            // 1.2.0: scritta accanto alla linea verticale (es. banda da bloccare)
+        public Color? MarkXColor;
         public double[] HLines = new double[0];
         public string EmptyText = "Esegui uno sweep in frequenza per vedere il grafico";   // linee orizzontali di riferimento (asse sinistro)
         double hoverX = double.NaN;
@@ -124,7 +126,10 @@ namespace YaNec
                 ctx.DrawLine(Pal.P(Pal.A(160, Pal.Red), 1, Pal.Dash), new Point(pr.Left, PY(h)), new Point(pr.Right, PY(h)));
             }
             if (!double.IsNaN(MarkX) && MarkX >= xmin && MarkX <= xmax)
-                ctx.DrawLine(Pal.P(Pal.A(150, Pal.Muted), 1, Pal.Dash), new Point(PX(MarkX), pr.Top), new Point(PX(MarkX), pr.Bottom));
+            {
+                ctx.DrawLine(Pal.P(MarkXColor ?? Pal.A(150, Pal.Muted), 1, Pal.Dash), new Point(PX(MarkX), pr.Top), new Point(PX(MarkX), pr.Bottom));
+                if (!string.IsNullOrEmpty(MarkXLabel)) Draw.Text(ctx, MarkXLabel, PX(MarkX) + 6, pr.Top + 28, 11, MarkXColor ?? Pal.Muted);
+            }
 
             using (ctx.PushClip(pr))
             {
