@@ -350,7 +350,7 @@ namespace YaNec
             Control c;
             if (model == null) c = Pannello("Oggetti del modello", Nota("Apri prima un modello."));
             else if (k == "carichi") c = PannelloCarichi();
-            else if (k == "linee") c = PannelloLinee();
+            else if (k == "linee") { StackPanel lp = new StackPanel(); lp.Children.Add(PannelloLinee()); lp.Children.Add(PannelloLineaAccordatore()); c = lp; }   // 1.2.0: bozzetto 11 B
             else if (k == "stack") c = PannelloStack();
             else if (k == "rastremazioni") c = PannelloRastremazioni();
             else if (k == "trasformatori") c = PannelloTrasformatori();
