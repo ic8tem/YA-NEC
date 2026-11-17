@@ -117,6 +117,22 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "1.2 - Terreno reale (DEM e mappe)",
+                Who = "N6BV R. D. Straw (HFTA, ARRL Antenna Book); INGV - Tarquini S., Isola I., Favalli M., Battistini A., Dotta G. (2023), TINITALY/1.1, doi 10.13127/tinitaly/1.1; NASA / USGS (SRTM1, mattonelle AWS Terrain Tiles di Mapzen); Esri World Imagery (Esri, Maxar, Earthstar Geographics e la comunita' GIS); OpenStreetMap e Nominatim (© i contributori di OpenStreetMap); ITU-R P.526, P.453; Ament (1953); Abramowitz e Stegun",
+                What = "Linguetta Diagrammi > Terreno reale: raggi riflessi tratto per tratto pesati con le zone di Fresnel, diffrazione sui crinali, direzioni di traffico; DEM dell'Italia e del mondo; finestra della mappa con la griglia dei locatori.",
+                Link = "tinitaly.pi.ingv.it",
+                License = "TINITALY CC BY 4.0; SRTM pubblico dominio; mattonelle Esri e OSM con attribuzione; ODbL"
+            },
+            new CreditEntry
+            {
+                Title = "1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate",
+                Who = "NTC 2018 e Circolare 7/2019; CNR-DT 207 R1/2018; EN 1991-1-4; K5IU (flusso trasversale) e ARRL Antenna Book (appendici); W8NX (trappola coassiale a bassa impedenza); ON4UN (DMF, ghiaccio); DL6WU e ARRL (linee in tubo quadro); E. J. Wilkinson (IRE Trans. MTT, 1960); Wheeler e Medhurst (bobine); VE7BQH (TANT); ARRL TLW",
+                What = "Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.",
+                Link = "",
+                License = "formule della letteratura, citate"
+            },
+            new CreditEntry
+            {
                 Title = "Terreno di Sommerfeld (GN 2)",
                 Who = "G. J. Burke (LLNL), programma SOMNEC; traduzione in C di N. Kyriazis 5B4AZ (nec2c: somnec.c, ground.c)",
                 What = "Integrali di Sommerfeld, griglie di interpolazione, onda di terra di Norton: tradotti in C# e verificati con nec2c " +

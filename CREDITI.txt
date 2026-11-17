@@ -445,3 +445,12 @@ tabelle di SV1BSX, YB0EMJ, W4ZT, RF Cafe, RF Parts, koax24. Valori tipici di cat
 
 Terreno di Sommerfeld (0.4.38): la correzione della routine evlua e' stata trovata confrontando nec2c (N. Kyriazis 5B4AZ; versione
 KJ7LNW / E. Wheeler) con necpp di Tim Molteno (GPL v2), che segue il NEC-2 originale di G. J. Burke e A. J. Poggio (LLNL).
+
+Novita' della 1.2 (17/11/2026): terreno reale alla HFTA di N6BV (R. D. Straw, ARRL Antenna Book); DEM TINITALY/1.1 dell'INGV
+  (Tarquini S., Isola I., Favalli M., Battistini A., Dotta G., 2023, doi 10.13127/tinitaly/1.1, licenza CC BY 4.0); SRTM1 (NASA / USGS,
+  pubblico dominio) dalle mattonelle AWS Terrain Tiles (Mapzen); Esri World Imagery (Esri, Maxar, Earthstar Geographics e la comunita' GIS);
+  OpenStreetMap e Nominatim (© i contributori di OpenStreetMap, ODbL); ITU-R P.526, P.453, P.372; Ament (1953); Abramowitz e Stegun
+  (integrali di Fresnel); NTC 2018 e Circolare 7/2019, CNR-DT 207 R1/2018, EN 1991-1-4 (vento); K5IU (flusso trasversale) e ARRL Antenna
+  Book (appendici sui carichi del vento); W8NX (trappola coassiale a bassa impedenza, ARRL Antenna Book 24a ed.); ON4UN (DMF, ghiaccio);
+  DL6WU e ARRL (linee in tubo quadro); E. J. Wilkinson (divisore, IRE Trans. MTT 1960); H. A. Wheeler e R. G. Medhurst (bobine);
+  VE7BQH (TANT); ARRL TLW (linea e accordatore); G. J. Burke, NEC-4.2 (teoria delle giunzioni, LLNL).
