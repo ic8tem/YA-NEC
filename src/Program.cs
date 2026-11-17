@@ -159,6 +159,12 @@ namespace YaNec
                         sb.AppendLine((l.Pass ? "OK     " : "ERRORE ") + l.Name + "  " + l.Detail);
                         if (!l.Pass) bad++;
                     }
+                    // 1.0.14: anche l'autotest del calcolatore Parabola (casi di Baars e Balanis); le prove fallite si ripetono in fondo
+                    var errPar = new List<string>();
+                    using (Prestazioni.Misura("Autotest della parabola"))
+                        Engine.ParabolaSelfTest.Esegui(r => { sb.AppendLine("       " + r); if (r.StartsWith("ERR", StringComparison.Ordinal)) errPar.Add(r); });
+                    foreach (string e in errPar) sb.AppendLine("ERRORE parabola: " + e);
+                    bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
                     Console.Write(sb.ToString());
                     // con OutputType WinExe la console di Windows non mostra nulla: il resoconto va anche in data/autotest.txt
