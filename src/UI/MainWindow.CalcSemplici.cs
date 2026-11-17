@@ -38,7 +38,7 @@ namespace YaNec
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
             { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone", "carichihf" } },
-            { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "eggbeater", "qfh" } },
+            { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh" } },
             { "Antenne riceventi", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
@@ -89,6 +89,7 @@ namespace YaNec
             fasCalc.Voce("loopyagi", "Loop Yagi 1296 MHz", false, null, "tutta ad anelli: N6CA (ARRL) e G3JVL, ottimizzazione a passi");   // 0.5.0
             fasCalc.Voce("boom", "Correzione del boom", false, null, "DL6WU/G3SEK, SM5BSZ, DG7YBN");
             fasCalc.Voce("divisori", "Divisori e cavi di fase", false, null, "λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1");   // 1.2.0 (bozzetto VHF 5)
+            fasCalc.Voce("yagiincr", "Yagi incrociate", false, null, "X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento");   // 1.2.0 (bozzetto VHF 6)
             fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
             fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
             fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "scala un modello a un'altra frequenza");
@@ -112,7 +113,7 @@ namespace YaNec
                 Control c;
                 if (!calcPages.TryGetValue(k, out c))
                 {
-                    c = k == "carichihf" ? BuildCarichiHfPanel() : k == "divisori" ? BuildDivisoriPanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
+                    c = k == "carichihf" ? BuildCarichiHfPanel() : k == "divisori" ? BuildDivisoriPanel() : k == "yagiincr" ? BuildYagiIncrociatePanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
                     calcPages[k] = c;
                 }
                 hostCalc.Content = c;
