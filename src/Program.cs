@@ -414,6 +414,20 @@ namespace YaNec
                             sb.AppendLine("       " + (okd ? "OK   " : "ERR  ") + r2); if (!okd) errPar.Add(r2);
                         }
                         catch (Exception ex) { errPar.Add("terreno reale: " + ex.Message); }
+                    // 1.2.0: vento (bozzetto VHF 8): zona NTC dal locatore (Capri = 9, 31 m/s), cf0 subcritico, forza con il flusso trasversale
+                    try
+                    {
+                        var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                        double laC, loC; Engine.Dem.DaLocatore("JN70CN82WE", out laC, out loC);
+                        int zc = Engine.MeccanicaVento.ZonaNtc(laC, loC), zn = Engine.MeccanicaVento.ZonaNtc(45.46, 9.19), zp = Engine.MeccanicaVento.ZonaNtc(38.12, 13.36), zcag = Engine.MeccanicaVento.ZonaNtc(39.22, 9.12);
+                        double vb = Engine.Meccanica.Vb(Engine.Meccanica.Zone[zc - 1], 62);
+                        var pe = new Engine.MeccanicaVento.Parte { Area = 1, Cf = 1.2, Asse = 0 };
+                        double f0 = Engine.MeccanicaVento.ForzaXY(pe, 1000, 0)[0], f45 = Engine.MeccanicaVento.ForzaXY(pe, 1000, 45)[0], f90 = Engine.MeccanicaVento.ForzaXY(pe, 1000, 90)[0];
+                        bool okv = zc == 9 && Math.Abs(vb - 31) < 1e-9 && zn == 1 && zp == 4 && zcag == 5 && Math.Abs(Engine.MeccanicaVento.Cf0Cilindro(0.008, 31) - 1.2) < 1e-9 && Math.Abs(f0 - 1200) < 1e-6 && Math.Abs(f45 - 600) < 1e-6 && Math.Abs(f90) < 1e-6;
+                        string rv = string.Format(CI0, "Vento: zona NTC da JN70CN82WE {0} (Capri, attesa 9), vb {1:0.0} m/s (31); Milano {2} (1), Palermo {3} (4), Cagliari {4} (5); elemento con vento a 0/45/90 gradi dal boom: {5:0}/{6:0}/{7:0} N (flusso trasversale: 1200/600/0)", zc, vb, zn, zp, zcag, f0, f45, f90);
+                        sb.AppendLine("       " + (okv ? "OK   " : "ERR  ") + rv); if (!okv) errPar.Add(rv);
+                    }
+                    catch (Exception ex) { errPar.Add("vento: " + ex.Message); }
                     // 1.2.0: tolleranze (bozzetto VHF 9): nomi degli elementi di una Yagi a 3 elementi; con tolleranze nulle ogni prova = nominale
                     using (Prestazioni.Misura("Autotest delle tolleranze"))
                         try

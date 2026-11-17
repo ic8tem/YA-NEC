@@ -431,7 +431,7 @@ namespace YaNec
             WrapPanel tabP = new WrapPanel { Orientation = Orientation.Horizontal };
             // 0.5.3 (IC8TEM 15/11/2026 20:19): ordine voluto "struttura 3d, frequenza, diagrammi, smith, rumore/gt/stack, correnti, nec, ottimizzatore,
             // calcolatori", poi le altre in fondo; "Oggetti inseriti" non e' piu' una linguetta (le tabelle sono in basso a destra nella Struttura 3D)
-            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Smith", "Rumore/GT/Stack", "Correnti", "NEC", "Ottimizzatore", "Calcolatori", "Variabili", "Avvisi", "Impostazioni", "Manuale", "Crediti", "Registro", "Autotest" };
+            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Smith", "Rumore/GT/Stack", "Correnti", "NEC", "Ottimizzatore", "Calcolatori", "Calcoli meccanici", "Variabili", "Avvisi", "Impostazioni", "Manuale", "Crediti", "Registro", "Autotest" };
             for (int i = 0; i < names.Length; i++)
             {
                 int idx = i;
@@ -453,6 +453,7 @@ namespace YaNec
             pag["Struttura 3D"] = BuildStructurePage();
             BuildOggettiPage();   // 0.5.3: il fascione degli oggetti resta (tabelle, conteggi, prove) ma non e' piu' una linguetta
             pag["Calcolatori"] = BuildCalcolatoriPage();
+            pag["Calcoli meccanici"] = BuildCalcoliMeccaniciPage();   // 1.2.0: bozzetti VHF 8 e 12
             pag["Diagrammi"] = DiagrammiConFascia(BuildPatternPage());   // 1.2.0: fascia Diagrammi / Tabelle / Terreno reale / Ricezione (RDF) / Tolleranze
             pag["Rumore/GT/Stack"] = BuildGtSopra();   // 1.1.0: sopralinguetta con tre voci
             // 1.1.0: "Antenne riceventi" e' una famiglia dei Calcolatori (la pagina si costruisce alla prima apertura)
