@@ -43,18 +43,19 @@ namespace YaNec
             fasCalc.Voce("yagimb", "Yagi multibanda", false, null, "HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda");   // 0.4.30
             fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole", true);
             fasCalc.Voce("vertmb", "Verticale multibanda (DX Commander)", false, null, "elementi a ventaglio, terreno suo, verifica per banda");   // 0.4.30
+            fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
+            fasCalc.Voce("looprett", "Loop rettangolare", false, null, "lati e alimentazione");
             fasCalc.Voce("loopmag", "Loop magnetica", false, null, "piccolo loop con condensatore");
-            fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
             fasCalc.Voce("quad", "Quad", false, null, "1-2-3 elementi, multibanda (DK7ZB)", true);
             fasCalc.Voce("eh", "Antenna EH", false, null, "con avviso sulle prestazioni", true);
             fasCalc.Voce("moxon", "Moxon", false, null, "gia' approvato (Cebik / DK7ZB)");
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
             fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
-            fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
-            fasCalc.Voce("looprett", "Loop rettangolare", false, null, "lati e alimentazione");
             fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
             fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
             fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
+            fasCalc.Famiglia("VHF");   // 1.0.17 (IC8TEM 17/11/2026 19:07: HB9CV spostata in VHF)
+            fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
             fasCalc.Famiglia("STRUMENTI");
             fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "scala un modello a un'altra frequenza");
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
