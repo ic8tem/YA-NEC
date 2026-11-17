@@ -40,7 +40,7 @@ namespace YaNec
             { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "eggbeater", "qfh" } },
             { "Antenne riceventi", new string[0] },
-            { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe", "meccanica" } },
+            { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
             { "2,4 GHz", new[] { "pcb24" } },
         };
@@ -99,7 +99,7 @@ namespace YaNec
             fasCalc.Voce("toroidiFT", "Toroidi ferrite (FT)", false, null, "AL, spire, impedenza", true);
             fasCalc.Voce("balun", "Balun / Un-Un", false, null, "rapporti e avvolgimenti", true);
             fasCalc.Voce("staffe", "Staffe di fissaggio", false, null, "piastre al boom: compensazione e modello (ARRL, Leeson)");   // 0.4.30
-            fasCalc.Voce("meccanica", "Meccanica", false, null, "alla YagiStress (K7NV): elementi, boom, tirante, mast; vento NTC 2018 + CNR-DT 207 / EC1");   // 1.2.0
+            // 1.2.0: la Meccanica alla YagiStress (bozzetto HF 9) andra' in Calcoli meccanici > Sollecitazioni elementi quando IC8TEM approva il bozzetto 13
             fasCalc.Voce("parabola", "Parabola primo fuoco", false, null, "1296 / 2320 / 5760 / 10368 MHz, meccanica, lobi, EME");
             fasCalc.Voce("offset", "Parabola offset", false, null, "geometria, dime, illuminazione asimmetrica, lobi H e V, EME");
             fasCalc.Voce("trombe", "Trombe e illuminatori", false, null, "coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC");   // 0.4.19

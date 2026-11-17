@@ -765,6 +765,7 @@ namespace YaNec
             }
             polAz.InvalidateVisual();
             polEl.InvalidateVisual();
+            AggiornaDiagrammi12();
         }
 
         void ShowSweep()
@@ -815,6 +816,7 @@ namespace YaNec
                 smith.MarkF = mark;
                 smith.InvalidateVisual();
             }
+            if (diagVoce == "Tabelle") MostraTabelle();
         }
 
         void ShowCurrents()

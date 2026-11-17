@@ -453,7 +453,7 @@ namespace YaNec
             pag["Struttura 3D"] = BuildStructurePage();
             BuildOggettiPage();   // 0.5.3: il fascione degli oggetti resta (tabelle, conteggi, prove) ma non e' piu' una linguetta
             pag["Calcolatori"] = BuildCalcolatoriPage();
-            pag["Diagrammi"] = BuildPatternPage();
+            pag["Diagrammi"] = DiagrammiConFascia(BuildPatternPage());   // 1.2.0: fascia Diagrammi / Tabelle / Terreno reale / Ricezione (RDF) / Tolleranze
             pag["Rumore/GT/Stack"] = BuildGtSopra();   // 1.1.0: sopralinguetta con tre voci
             // 1.1.0: "Antenne riceventi" e' una famiglia dei Calcolatori (la pagina si costruisce alla prima apertura)
             pag["Frequenza"] = BuildFreqPage();

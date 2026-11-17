@@ -30,6 +30,7 @@ namespace YaNec.Engine
         // direzione e valore del massimo (elevazione = 90 - theta)
         public double GmaxDbi, ThetaMax, PhiMax;
         public double FrontBack, FrontRear;
+        public double FrontRearMedio = double.NaN;   // 1.2.0: F/R medio sull'emisfero posteriore (azimut 90-270, elevazioni sopra 0)
         public double HpbwAz, HpbwEl;
         public double AgtDb;   // Average Gain Test (0 dB = modello corretto, senza perdite e spazio libero)
         public PatternGrid Grid;
@@ -45,6 +46,7 @@ namespace YaNec.Engine
         public double F;
         public Complex Z;
         public double Swr, GainFwd, FrontBack, FrontRear, Gmax, Efficiency;
+        public double FrontRearMedio = double.NaN;   // 1.2.0 (bozzetto 11 A): avanti meno media della potenza sull'emisfero posteriore
         public bool Ok;
         public bool Interpolato;   // sweep rapido: punto ricavato dai punti calcolati (MBPE), non da una soluzione
         public string Error;
@@ -52,6 +54,24 @@ namespace YaNec.Engine
 
     public static class Analysis
     {
+        /// <summary>1.2.0 (bozzetto 11 A): media della potenza (guadagno lineare) sull'emisfero posteriore rispetto alla direzione (theta, phi):
+        /// azimut da 90 a 270 gradi intorno a phi, elevazioni sopra 0 (pesate con il coseno dell'elevazione, angolo solido), passo 5 gradi. In dB.</summary>
+        public static double MediaPosteriore(Nec2Engine e, double phiFwd)
+        {
+            double s = 0, w = 0;
+            for (int el = 0; el <= 85; el += 5)
+            {
+                double c = Math.Cos((el + 2.5) * Math.PI / 180);
+                for (int k = 90; k <= 270; k += 5)
+                {
+                    double g = e.Gain(90 - (el + 2.5), Norm360(phiFwd + k)).GainTotal;
+                    double pk = (k == 90 || k == 270) ? 0.5 : 1;
+                    s += c * pk * (g < -900 ? 0 : Math.Pow(10, g / 10)); w += c * pk;
+                }
+            }
+            return s > 0 ? 10 * Math.Log10(s / w) : -999.99;
+        }
+
         public static double Swr(Complex z, double z0)
         {
             Complex g = (z - z0) / (z + z0);
@@ -215,6 +235,7 @@ namespace YaNec.Engine
                 if (v > worst) worst = v;
             }
             r.FrontRear = best - worst;
+            r.FrontRearMedio = best - MediaPosteriore(e, bp);
             r.HpbwAz = Beamwidth(a2 => e.Gain(bt, Norm360(bp + a2)).GainTotal, best);
             r.HpbwEl = Beamwidth(a2 =>
             {
@@ -437,6 +458,7 @@ namespace YaNec.Engine
                         for (int k = 90; k <= 270; k += 2) worst = Math.Max(worst, e.Gain(thetaFwd, Norm360(phiFwd + k)).GainTotal);
                     }
                     sp.FrontRear = sp.GainFwd - worst;
+                    sp.FrontRearMedio = sp.GainFwd - MediaPosteriore(e, phiFwd);
                     // massimo approssimato nell'intorno della direzione di riferimento
                     double gm = sp.GainFwd;
                     for (int a = -20; a <= 20; a += 4)
@@ -528,7 +550,7 @@ namespace YaNec.Engine
         static Complex[] Grandezze(SweepPoint p)
         {
             Func<double, Complex> lin = db => new Complex(db < -900 ? 0 : Math.Pow(10, db / 10), 0);
-            return new[] { p.Z, lin(p.GainFwd), lin(p.GainFwd - p.FrontBack), lin(p.GainFwd - p.FrontRear), lin(p.Gmax), new Complex(p.Efficiency, 0) };
+            return new[] { p.Z, lin(p.GainFwd), lin(p.GainFwd - p.FrontBack), lin(p.GainFwd - p.FrontRear), lin(p.Gmax), new Complex(p.Efficiency, 0), lin(double.IsNaN(p.FrontRearMedio) ? -999.99 : p.GainFwd - p.FrontRearMedio) };
         }
 
         /// <summary>Funzione razionale N(x)/D(x) di grado nd (D con termine noto 1) per minimi quadrati, valutata in f.</summary>
@@ -603,8 +625,8 @@ namespace YaNec.Engine
             vicini.Sort((u, v) => Math.Abs(freqs[u] - f).CompareTo(Math.Abs(freqs[v] - f)));
             vicini = vicini.GetRange(0, Math.Min(5, vicini.Count));
             vicini.Sort();
-            Complex[] v6 = new Complex[6];
-            for (int q = 0; q < 6; q++)
+            Complex[] v6 = new Complex[7];
+            for (int q = 0; q < 7; q++)
             {
                 List<double> fs = new List<double>(); List<Complex> zs = new List<Complex>();
                 foreach (int k in vicini) { fs.Add(freqs[k]); zs.Add(Grandezze(res[k])[q]); }
@@ -618,6 +640,7 @@ namespace YaNec.Engine
             sp.FrontRear = sp.GainFwd - db(v6[3]);
             sp.Gmax = db(v6[4]);
             sp.Efficiency = v6[5].Real;
+            sp.FrontRearMedio = v6[6].Real > 1e-30 ? sp.GainFwd - db(v6[6]) : double.NaN;
             return sp;
         }
     }

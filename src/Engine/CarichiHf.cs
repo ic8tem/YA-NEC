@@ -125,6 +125,7 @@ namespace YaNec.Engine
             double w = 2 * Math.PI * f;
             Complex y = 1 / new Complex(Rs, w * L);
             if (C > 0) y += new Complex(w * C * tanD, w * C);
+            if (y.Magnitude < 1e-15) return new Complex(1e15, 0);   // trappola ideale esattamente in risonanza: Z infinita
             return 1 / y;
         }
 

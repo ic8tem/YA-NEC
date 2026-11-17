@@ -336,6 +336,26 @@ namespace YaNec
                             sb.AppendLine("       " + (okc ? "OK   " : "ERR  ") + r2); if (!okc) errPar.Add(r2);
                         }
                         catch (Exception ex) { errPar.Add("meccanica: " + ex.Message); }
+                    // 1.2.0: ricezione RDF (bozzetto 3): antenna isotropa (dipolo corto ideale non serve: si usa un dipolo di Hertz in spazio libero,
+                    // RDF teorico 1,76 dB) e verticale lambda/4 con 4 radiali a 0,5 m su terreno medio (IV3PRK 5,07 dB, W8JI / ON4UN circa 4,8-5 dB)
+                    using (Prestazioni.Misura("Autotest della ricezione RDF"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var md = Engine.NecModel.Parse("CM dipolo corto\nCE\nGW 1 11 0 0 -0.5 0 0 0.5 0.001\nGE 0\nEX 0 1 6 0 1 0\nFR 0 1 0 0 10 0\nEN\n");
+                            var ed = Engine.Analysis.Run(md, md.BuildGeometry(), 10, 10).Engine;
+                            var rd = Engine.RdfRicezione.Calcola(ed, 10, 0, 0, 0, 0, 500, 0, 15, 10);
+                            bool okd = Math.Abs(rd.Rdf - 1.76) < 0.05;
+                            string r1 = string.Format(CI0, "RDF del dipolo corto in spazio libero: {0:0.00} dB (teorico 1,76 dB: direttivita' 1,5); un'antenna isotropa darebbe 0 dB", rd.Rdf);
+                            sb.AppendLine("       " + (okd ? "OK   " : "ERR  ") + r1); if (!okd) errPar.Add(r1);
+                            var mv = Engine.NecModel.Parse(Engine.RxAntennas.VerticaleRef(new Engine.RxParams { F = 1.83 }));
+                            var ev = Engine.Analysis.Run(mv, mv.BuildGeometry(), 1.83, 10).Engine;
+                            var rv = Engine.RdfRicezione.Calcola(ev, 1.83, 0, 20, 0, 0, 500, 0, 15, 10);
+                            bool okv = rv.Rdf > 4.6 && rv.Rdf < 5.4;
+                            string r2 = string.Format(CI0, "RDF della verticale lambda/4 (4 radiali a 0,5 m, terreno medio) a 20 gradi: {0:0.00} dB (IV3PRK 5,07; W8JI / ON4UN circa 4,8-5)", rv.Rdf);
+                            sb.AppendLine("       " + (okv ? "OK   " : "ERR  ") + r2); if (!okv) errPar.Add(r2);
+                        }
+                        catch (Exception ex) { errPar.Add("ricezione RDF: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");

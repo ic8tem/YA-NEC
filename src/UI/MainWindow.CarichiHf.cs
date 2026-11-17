@@ -233,7 +233,7 @@ namespace YaNec
                 grafico.InvalidateVisual();
                 // tabella
                 tab.Children.Clear(); tab.RowDefinitions.Clear();
-                tab.ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto,*,Auto,Auto");
+                tab.ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto,Auto,Auto,Auto");
                 string[] hh = { "Banda", "f (MHz)", trap ? "Z trappola (Ω)" : "Z carico (Ω)", "Si comporta da", "V", "Potenza persa" };
                 tab.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
                 for (int j = 0; j < hh.Length; j++)
@@ -267,7 +267,7 @@ namespace YaNec
                     string[] v = { rb.Banda, CarichiHf.Fmt(rb.FMHz, 3), zs(rb.Z), rb.Comportamento, double.IsNaN(rb.V) ? "-" : CarichiHf.Fmt(rb.V / 1000, 1) + " kV", double.IsNaN(rb.Perdita) ? "-" : CarichiHf.Fmt(rb.Perdita, rb.Perdita < 10 ? 1 : 0) + " W" };
                     for (int j = 0; j < v.Length; j++)
                     {
-                        TextBlock t = new TextBlock { Text = v[j], Foreground = Pal.B((j == 4 && vRossa) || (j == 5 && pRossa) ? Pal.Red : Pal.Fore), FontWeight = (j == 4 && vRossa) || (j == 5 && pRossa) ? FontWeight.Bold : FontWeight.Normal, TextWrapping = TextWrapping.Wrap };
+                        TextBlock t = new TextBlock { Text = v[j], Foreground = Pal.B((j == 4 && vRossa) || (j == 5 && pRossa) ? Pal.Red : Pal.Fore), FontWeight = (j == 4 && vRossa) || (j == 5 && pRossa) ? FontWeight.Bold : FontWeight.Normal, TextWrapping = TextWrapping.NoWrap };
                         Border cb = new Border { Child = t, Padding = new Thickness(6, 4), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 1, 1) };
                         Grid.SetColumn(cb, j); Grid.SetRow(cb, riga); tab.Children.Add(cb);
                     }
@@ -392,6 +392,7 @@ namespace YaNec
             fIns.Select("carico", false);
             fTipi.Select("coax", false);
             d.Tipo = 1;
+            try { d.Spire = CarichiHf.SpirePerF0(d, 7.1e6); tSpire.Text = CarichiHf.Fmt(d.Spire, 2); } catch { }
             costruisciDati();
             ricalcola();
             return new ScrollViewer { Content = g, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled };

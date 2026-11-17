@@ -55,6 +55,7 @@ namespace YaNec
             new[] { "ros", "ROS", "60", "≤ 1,3" },
             new[] { "g", "Guadagno", "80", "max" },
             new[] { "fb", "F/B", "70", "≥ 22 dB" },
+            new[] { "fr", "F/R medio (emisfero posteriore)", "0", "≥ 18 dB" },   // 1.2.0 (bozzetto 11 A)
             new[] { "el", "Elevazione", "0", "-" },
             new[] { "z", "Impedenza voluta", "40", "Z0 +j0" },
             new[] { "i", "Corrente in un punto", "0", "-" },
@@ -219,6 +220,7 @@ namespace YaNec
                 case "ros": return "ROS accettato, es. \"≤ 1,3\": sotto la soglia l'obiettivo e' raggiunto";
                 case "g": return "\"max\" = piu' guadagno possibile; oppure un valore in dBi, es. \"≥ 13,5\"";
                 case "fb": return "F/B accettato in dB, es. \"≥ 22 dB\"";
+                case "fr": return "F/R medio accettato in dB, es. \"≥ 18 dB\": guadagno avanti meno la media della potenza sull'emisfero posteriore (azimut 90-270 gradi, elevazioni sopra 0)";
                 case "el": return "Elevazione voluta del massimo in gradi, es. \"15\" (si calcola il diagramma completo alla frequenza principale)";
                 case "z": return "Impedenza voluta, es. \"28 +j0\" o \"Z0 +j0\" (Z0 della barra in alto)";
                 case "i": return "Punto in cui la corrente deve essere minima, notazione MMANA: w4c (filo 4, centro), w4b, w4e, w4:7";

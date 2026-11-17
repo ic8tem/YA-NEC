@@ -275,6 +275,12 @@ namespace YaNec.Engine
                 case "fb":
                     if (o.HaSoglia && p.FrontBack >= o.Soglia) return 1;
                     return 1 - Math.Exp(-Math.Max(0, p.FrontBack) / 15);
+                case "fr":   // 1.2.0 (bozzetto 11 A): F/R medio sull'emisfero posteriore
+                    {
+                        double fr = double.IsNaN(p.FrontRearMedio) ? 0 : p.FrontRearMedio;
+                        if (o.HaSoglia && fr >= o.Soglia) return 1;
+                        return 1 - Math.Exp(-Math.Max(0, fr) / 15);
+                    }
                 case "el":
                     if (rc == null || !o.HaSoglia) return 1;
                     { double q = (rc.ElevationOfMax - o.Soglia) / 10; return Math.Exp(-q * q); }
