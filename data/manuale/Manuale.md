@@ -988,12 +988,12 @@ Vedi il paragrafo dedicato piu' avanti in questo capitolo ("Yagi lunga DL6WU e Q
 |---|---|---|
 | Frequenza di progetto | MHz |  |
 | Banda da coprire (0 = solo la frequenza) | kHz | L'ottimizzazione guarda la frequenza di progetto e i due bordi della banda. |
-| Numero di elementi | - | Riflettore, radiatore e direttori (da 3 a 60). |
-| Lunghezza del boom | m | Dal riflettore all'ultimo direttore; DL6WU vuole da 2,2 a 39 lambda. |
+| Numero di elementi | - | Riflettore, radiatore e direttori (da 3 a 60). Con "Lunghezza del boom" la casella e' grigia, non si scrive e mostra quanti elementi ci stanno. |
+| Lunghezza del boom | m | Dal riflettore all'ultimo direttore; DL6WU vuole da 2,2 a 39 lambda. Con "Numero di elementi" la casella e' grigia, non si scrive e mostra il boom ricavato (in m e in lambda). |
 | Diametro dei parassiti | mm | DL6WU: da 0,001 a 0,02 lambda. |
 | Diametro del radiatore | mm |  |
 | Diametro del boom | mm | Serve solo con gli elementi attraverso il boom o isolati dentro (massimo 0,06 lambda). |
-| Dimensione data da | Numero di elementi / Lunghezza del boom | Numero di elementi oppure lunghezza del boom (DL6WU mette i direttori finche' il boom li contiene). |
+| Dimensione data da | Numero di elementi / Lunghezza del boom / Tutti e due (fuori DL6WU) | Numero di elementi oppure lunghezza del boom (DL6WU mette i direttori finche' il boom li contiene). Con "Tutti e due" si scrivono entrambi: le spaziature si allungano o si accorciano in proporzione e l'ottimizzazione NEC e' obbligatoria (paragrafo "Elementi e boom" piu' avanti). Sotto i dati una nota gialla fissa ricorda il legame tra le due misure. |
 | Montaggio degli elementi | Attraverso il boom / Isolati nel boom / Sopra il boom | Correzione del boom di G3SEK: piena per gli elementi che attraversano un boom metallico, meta' per quelli isolati dentro il boom, nessuna sopra il boom. |
 | Alimentazione | vedi le pillole | Dipolo aperto (50 ohm), dipolo chiuso / folded (200 ohm con balun 4:1), anello LFA di G0KSC (50 ohm), radiatore piegato di DG7YBN (50 ohm). |
 | Obiettivo dell'ottimizzazione | Guadagno / Bilanciato / F/B alto | Guadagno: F/B almeno 20 dB; bilanciato: F/B 25 e F/R 20 dB; F/B alto: 28 e 22 dB. Sempre ROS sotto 1,2 sulla banda. |
@@ -1125,6 +1125,19 @@ La routine di calcolo delle Yagi di DL6WU in una sottolinguetta, con i passi di 
 | 14 el., radiatore piegato DG7YBN (8 gradi) | 15,82 dBi, ROS 1,85-1,94 | 15,92 dBi, ROS 1,06-1,17; angolo finale -0,7 gradi |
 
 Nota sul radiatore piegato: sulle Yagi DL6WU l'ottimizzazione riporta l'angolo quasi a zero (da 8 a -0,7/-3,8 gradi), cioe' torna al dipolo diritto. Il motivo e' che la Yagi DL6WU ha gia' circa 50 ohm con il dipolo aperto: il radiatore piegato serve a portare a 50 ohm le Yagi a bassa impedenza (le 28 ohm di DK7ZB, le 12,5 ohm delle OWL), dove piegare i bracci alza la resistenza (DK7ZB: piu' angolo per un'impedenza di partenza piu' bassa). Sulle DL6WU la scelta resta utile per il F/R, non per l'adattamento. L'LFA invece da' il guadagno piu' alto di tutte le alimentazioni, ma di poco: +0,04-0,11 dB sul dipolo aperto ottimizzato con lo stesso numero di elementi (G0KSC ne dichiara anche la banda piu' larga, che queste prove su 600 kHz non misurano); il riflettore resta molto vicino all'anello (0,054-0,064 lambda dopo l'ottimizzazione).
+
+**Elementi e boom: uno ricavato dall'altro, oppure tutti e due (dalla 1.0.15).** Nel metodo DL6WU il numero di elementi e la lunghezza del boom non sono indipendenti: le spaziature sono fissate, quindi il numero di elementi da' il boom e il boom da' il numero di elementi. Esempio a 144,3 MHz: 7 elementi stanno su 2,493 m (1,20 lambda); su 3,5 m ci stanno 8 elementi, che occupano 3,116 m (1,50 lambda). La casella che il metodo non usa diventa grigia e mostra il valore ricavato. Con la terza pillola, "Tutti e due (fuori DL6WU)", si danno entrambi e si esce dal metodo: il riflettore resta a 0 e il radiatore a 0,2 lambda, le spaziature dei direttori si moltiplicano per k = (boom - 0,2) / (boom DL6WU - 0,2) (7 elementi su 3,5 m: k = 1,48). Le lunghezze di DL6WU non valgono piu' e nemmeno la stima del guadagno (la scheda scrive "non vale"): i numeri veri li da' il NEC, per questo il menu dei passi resta su "4 - tutto insieme". Al passo 4 si aggiunge la variabile "progressione delle spaziature" p, con il boom fisso: p = 0 tiene le proporzioni di DL6WU, p = 1 rende i direttori equidistanti, valori negativi (fino a -0,5) li rendono ancora piu' progressivi. Un riquadro arancio sotto i dati riporta k e, dopo l'ottimizzazione, il p trovato; sopra x1,3 (direttori radi) e sotto x0,7 (direttori fitti) compare un avviso.
+
+Cosa dice la letteratura sul legame tra elementi e boom:
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| G. Hoch DL6WU (VHF Communications 3/1982) | il guadagno dipende dalla lunghezza del boom: 9,2 + 3,39 ln(L/lambda) dBd | spaziature che crescono da 0,075 a 0,4 lambda: il numero di elementi segue dal boom |
+| P. Viezbicke, NBS Technical Note 688 (1976) | anche qui il guadagno cresce con il boom; progetti ottimizzati per sei lunghezze di boom, da 0,4 a 4,2 lambda | i direttori sono equidistanti (nella scheda: p = 1). Non usa meno elementi di DL6WU a parita' di boom: a 3,2 lambda sono 12 in tutte e due; la differenza vera e' che nella NBS le spaziature non crescono lungo il boom |
+| D. K. Cheng e C. A. Chen (IEEE Trans. AP, 1973-75) | lunghezze e spaziature ottimizzate insieme, come al passo 4 con "Tutti e due" | metodo a perturbazioni su una 6 elementi, senza vincolo sulla lunghezza del boom |
+| DL6WU e G3SEK, regola pratica | il guadagno dipende soprattutto dal boom e poco dal numero di elementi, purche' le spaziature siano ragionevoli | e' una regola, non un progetto: con direttori molto radi o molto fitti va verificata col NEC |
+
+In pratica: a parita' di boom, togliere elementi rispetto a DL6WU (direttori radi) di solito costa guadagno; aggiungerne (direttori fitti) porta poco e stringe la banda. Il confronto si fa con la stessa scheda: stesso boom in modo "Lunghezza del boom" e in modo "Tutti e due".
 
 **I passi.** 1) radiatore: lunghezza (e la grandezza propria dell'alimentazione: distanza dei conduttori del folded, larghezza dell'anello LFA, angolo dei bracci del radiatore piegato) per l'impedenza voluta; 2) riflettore: lunghezza e distanza per F/B e F/R; 3) direttori: fattore di lunghezza e rastremazione (i direttori si accorciano o si allungano tutti insieme, i primi piu' degli ultimi o al contrario) per il guadagno; 4) tutto insieme, compresa la distanza radiatore - primo direttore. Il metodo e' il simplesso di Nelder e Mead; il costo da rendere minimo e' meno il guadagno medio sulla banda piu' le penalita' per il ROS sopra 1,2 e per F/B e F/R sotto i limiti dell'obiettivo (guadagno: 20 e 18 dB; bilanciato: 25 e 20 dB; F/B alto: 28 e 22 dB). Il passo 2 usa sempre l'obiettivo F/B alto, gli altri quello scelto. Il pulsante e' "Ottimizza (NEC)"; la scheda elenca il risultato di ogni passo. Una Yagi da 10 lambda chiede qualche minuto.
 
@@ -1384,9 +1397,9 @@ eta_totale = eta_apertura x eta_blocco x eta_superficie x eta_rete x eta_bordo x
 
 Taper e spillover tirano in direzioni opposte: un bordo poco illuminato riduce lo spillover ma spreca il disco. Il massimo di eta_taper x eta_spillover si ha intorno a 10-12 dB di taper totale al bordo, circa 82 %: e' la figura della pagina Feed (efficienza in funzione di f/D).
 
-**2. Blocco: eta_blocco = |1 - b_c - b_p|^2.** Il feed e i puntoni fanno ombra sul disco. Il blocco non si conta come area tolta, ma come campo tolto pesato con l'illuminazione: b_c = campo sotto l'ombra del feed (raggio pari a meta' del suo diametro) diviso il campo totale; b_p = N puntoni x larghezza / (2 pi) x campo lungo l'ombra dei puntoni, dal bordo del feed al punto d'attacco sulle centine, diviso il campo totale. Il centro e' la zona piu' illuminata, per questo un feed piccolo pesa piu' della sua area (Galt Telescope; Lamb e Olver; Ruze per i puntoni).
+**2. Blocco: eta_blocco = |1 - b_c - b_p|^2.** Il feed e i puntoni fanno ombra sul disco. Il blocco non si conta come area tolta, ma come campo tolto pesato con l'illuminazione: b_c = campo sotto l'ombra del feed (raggio pari a meta' del suo diametro) diviso il campo totale; b_p = N puntoni x larghezza / (2 pi) x campo lungo l'ombra dei puntoni, dal bordo del feed al punto d'attacco sulle centine, diviso il campo totale. Il centro e' la zona piu' illuminata, per questo un feed piccolo pesa piu' della sua area (Galt Telescope; Lamb e Olver; Ruze per i puntoni). Dalla 1.0.14 b_p comprende anche l'ombra sull'onda sferica (Baars 2007, eq. 4.36c-f): l'onda che va dal fuoco al disco incontra i puntoni anche oltre il punto d'attacco, fino al bordo; per ogni raggio si trova dove taglia il puntone e l'ombra sul disco vale larghezza x (distanza fuoco-disco / distanza fuoco-puntone). Con i puntoni attaccati al 65 % del raggio questa parte e' la maggiore (esempio sotto: 1,45 % del campo contro 1,05 % dell'onda piana). La pagina Riepilogo la indica a parte.
 
-**3. Superficie (Ruze): eta_superficie = exp[-(4 pi sigma / lambda)^2].** sigma e' lo scostamento RMS della superficie dal paraboloide (centine, rete, montaggio). lambda/40 costa 0,4 dB, lambda/20 costa 1,7 dB, lambda/16 circa 2,7 dB. Con la casella "Aggiungi la sfaccettatura della rete piana" si somma (in quadratura) l'errore della rete tesa piatta tra due centine: freccia della corda k2 s^2/8 (s = corda tra le centine, k2 = curvatura del paraboloide in quel punto), RMS circa 0,298 volte la freccia, media pesata con l'illuminazione.
+**3. Superficie (Ruze): eta_superficie = exp[-(4 pi sigma / lambda)^2].** sigma e' lo scostamento RMS della superficie dal paraboloide (centine, rete, montaggio). lambda/40 costa 0,4 dB, lambda/20 costa 1,7 dB, lambda/16 circa 2,7 dB. Con la casella "Aggiungi la sfaccettatura della rete piana" si somma (in quadratura) l'errore della rete tesa piatta tra due centine: freccia della corda k2 s^2/8 (s = corda tra le centine, k2 = curvatura del paraboloide in quel punto), RMS circa 0,298 volte la freccia, media pesata con l'illuminazione. Dalla 1.0.14 conta solo la componente assiale dell'errore, eps_assiale = eps_normale / sqrt(1 + (r/2F)^2) (Baars, eq. 4.43): verso il bordo la superficie e' inclinata e lo stesso errore normale sposta meno la fase. La pagina Meccanica mostra tutti e due i valori.
 
 **4. Rete (Mumford): eta_rete = 1 - T.** Una parte dell'onda passa attraverso i fori della rete: T = 1 / (1 + x^2), x = lambda / [2 s ln(s / (pi d))], con s = passo (foro + filo) e d = diametro del filo. La potenza trasmessa va dietro il disco e porta rumore del terreno (T x 290 K, pagina Riepilogo). Con "Superficie piena" il fattore vale 1.
 
@@ -1403,18 +1416,31 @@ Taper e spillover tirano in direzioni opposte: un bordo poco illuminato riduce l
 | taper (illuminazione) | | 90,3 % | -0,44 dB |
 | spillover | | 91,3 % | -0,40 dB |
 | apertura (taper x spillover; fase e polarizzazione = 1 con il feed cos^q) | | 82,4 % | -0,84 dB |
-| blocco (feed 0,75 % del campo, puntoni 1,05 %) | | 96,4 % | -0,16 dB |
+| blocco (feed 0,75 % del campo, puntoni 1,05 % onda piana + 1,45 % onda sferica) | | 93,6 % | -0,29 dB |
 | superficie, 3 mm = lambda/77 (Ruze) | | 97,4 % | -0,12 dB |
 | rete 6 mm = lambda/38 (Mumford, T = 0,34 %) | | 99,7 % | -0,01 dB |
 | perdite varie | | 85,1 % | -0,70 dB |
-| **totale** | | **65,7 %** | **-1,83 dB** |
-| guadagno: apertura uniforme 32,20 dBi - 1,83 dB | **30,37 dBi** | | |
+| **totale** | | **63,8 %** | **-1,95 dB** |
+| guadagno: apertura uniforme 32,20 dBi - 1,95 dB | **30,25 dBi** | | |
 
 Si vede che a 1296 MHz rete e superficie quasi non contano: pesano illuminazione e perdite varie. Alle bande alte i numeri cambiano: con la stessa rete e lo stesso errore RMS, a 10368 MHz (lambda 28,9 mm) la superficie da 3 mm (lambda/10) costa circa 7 dB e la rete 6 mm diventa trasparente per una parte importante della potenza; la pagina Bande ed EME fa lo stesso conto per le quattro bande.
 
 Con il diagramma del feed dal modello NEC (pulsante "Feed dal modello NEC") o da un file W1GHZ, taper e spillover si calcolano sul diagramma vero, anche diverso nei piani E e H; con la fase si aggiungono eta_fase ed eta_pol, e il centro di fase si cerca dove l'efficienza e' massima (criterio di W1GHZ).
 
-Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spillover, efficienza d'illuminazione); P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6 (taper ottimo, fase, efficienza reale); P.-S. Kildal, IEEE Trans. AP-33, 1985 (fattori dell'efficienza del feed); J. Ruze, Proc. IEEE 1966 (errori di superficie) e Microwave Journal 1968 (puntoni); W.W. Mumford, Proc. IRE 1961 (trasmissione della rete); Galt Telescope, arXiv 1607.06436, e Lamb e Olver (blocco pesato).
+**Controlli di letteratura (dalla 1.0.14).** Accanto al calcolo, la scheda mostra i valori delle formule chiuse di Baars e Balanis, per vedere quanto il disco si scosta dai casi ideali:
+
+| Dove | Cosa | Formula e fonte | Somiglianze e differenze con il calcolo |
+|---|---|---|---|
+| pagina Feed, nota | free-space taper | Tf = 20 log[1 + (D/4f)^2] (Baars 4.3): 2,63 dB a f/D 0,42, 4,58 dB a f/D 0,3 | e' la stessa attenuazione spaziale gia' calcolata; la nota da' anche il taper totale al bordo |
+| pagina Feed, grafico 4 | guadagno contro fuori fuoco | eta = [sin(beta/2) / (beta/2)]^2, beta = 2 pi delta / lambda x (1 - cos psi0) (Baars 4.22) | Baars vale per l'apertura uniforme, il calcolo usa il feed vero: la curva tratteggiata e' un controllo, non la sostituisce. Il Riepilogo da' anche la perdita per l'apertura quadratica (Baars 4.23) |
+| Riepilogo, sotto la fase | limite inferiore dell'efficienza di fase | (1 - m^2/2)^2, m = scarto massimo di fase sull'apertura (Balanis cap. 15) | e' un minimo garantito: il valore calcolato sta sempre sopra. Serve la fase del feed |
+| Riepilogo | guadagno massimo con questa superficie | lambda_max = 4 pi sigma, G_max = 20 log10(D/sigma) - 16,38 dB + perdite non di superficie (Balanis 15-67...71) | oltre quella frequenza il guadagno cala anche se la frequenza sale; c'e' un avviso quando la frequenza scelta e' gia' oltre |
+| pagina Lobi, tabella | apertura a -3 dB e primo lobo | HPBW = b lambda/D, b = 1,269 - 0,566 t + 0,534 t^2 - 0,208 t^3; primo lobo -24,6 + 7,37 t dB; t = campo al bordo (feed + spazio) (Baars 4.13 e 4.14a) | distribuzione quadratica su piedistallo, senza blocco: il primo lobo calcolato con il blocco e' di solito piu' alto |
+| pagina Lobi, grafico | fascio d'errore | larghezza 1,06 lambda/c, potenza circa 1,1 (e^(s^2) - 1), s = 4 pi sigma / lambda, c = distanza tra le centine a 2/3 del raggio (Baars 4.44-4.46) | e' una stima (curva tratteggiata arancio), non un calcolo: dice dove va l'energia che Ruze toglie al lobo principale |
+
+L'autotest ha la sezione 10 con i casi della letteratura: feed cos^2...cos^8 a f/D 0,3, 0,42 e 0,6 contro l'integrale di Balanis (15-55), fatto con un integrale indipendente, e contro il motore; forma chiusa per cos^2 e massimo della curva (0,829); distribuzione quadratica a -12 dB (0,893, HPBW 66,3 gradi lambda/D); gaussiana a -12 dB (0,866); Tf 4,58 dB a f/D 0,3; fuori fuoco con beta = 1 (0,919); Ruze con sigma = lambda/20 (-1,71 dB). Le misure di PA0PLY a 10 GHz (disco da 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB di rapporto sole/rumore; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB) sono riportate come riferimento: il diagramma di quei feed non ha una formula e va calcolato col NEC.
+
+Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spillover, efficienza d'illuminazione); P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6 (taper ottimo, fase, efficienza reale); P.-S. Kildal, IEEE Trans. AP-33, 1985 (fattori dell'efficienza del feed); J. Ruze, Proc. IEEE 1966 (errori di superficie) e Microwave Journal 1968 (puntoni); W.W. Mumford, Proc. IRE 1961 (trasmissione della rete); Galt Telescope, arXiv 1607.06436, e Lamb e Olver (blocco pesato); J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4 (controlli, ombra sferica dei puntoni, componente assiale, fascio d'errore); C.A. Balanis, Antenna Theory, cap. 15 (feed cos^n, limite di fase, guadagno massimo); PA0PLY (misure di feed a 10 GHz).
 
 ### Trombe e illuminatori: caselle e scelte
 
