@@ -455,6 +455,22 @@ namespace YaNec
                         sb.AppendLine("       " + (okd2 ? "OK   " : "ERR  ") + rd2); if (!okd2) errPar.Add(rd2);
                     }
                     catch (Exception ex) { errPar.Add("divisori: " + ex.Message); }
+                    // 1.2.0: cavo e balun (bozzetto VHF 10 rev. 2): il manicotto lambda/4 e' un'alta impedenza a f0; senza balun la calza porta corrente, con il manicotto molto meno
+                    using (Prestazioni.Misura("Autotest di cavo e balun"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var md = Engine.NecModel.Parse("CM dipolo 144\nCE\nGW 1 21 0 -0.49 0 0 0.49 0 0.003\nGE 0\nEX 0 1 11 0 1 0\nFR 0 1 0 0 144.3 0\nEN\n");
+                            var gd = md.BuildGeometry(); var rd = Engine.Analysis.Run(md, gd, 144.3, 10);
+                            var pc = new Engine.CavoBalun.Percorso { LungoBoom = 0.3, DiscesaPalo = 2, PaloPresente = false };
+                            var e0 = Engine.CavoBalun.Valuta(md, gd, 144.3, 144.3, pc, "nessuno", rd.ThetaMax, rd.PhiMax, System.Threading.CancellationToken.None);
+                            var e1 = Engine.CavoBalun.Valuta(md, gd, 144.3, 144.3, pc, "manicotto", rd.ThetaMax, rd.PhiMax, System.Threading.CancellationToken.None);
+                            double zm = Engine.CavoBalun.Zcm("manicotto", 144.3, 144.3).Magnitude;
+                            bool okb = zm > 1000 && e0.CorrPerc > 3 * e1.CorrPerc && e1.CorrPerc < 15;
+                            string rb = string.Format(CI0, "Cavo e balun (dipolo 144 MHz, calza 0,3 + 2 m): |Z| del manicotto a f0 {0:0} ohm; corrente sulla calza senza balun {1:0.0} %, con il manicotto {2:0.0} %", zm, e0.CorrPerc, e1.CorrPerc);
+                            sb.AppendLine("       " + (okb ? "OK   " : "ERR  ") + rb); if (!okb) errPar.Add(rb);
+                        }
+                        catch (Exception ex) { errPar.Add("cavo e balun: " + ex.Message); }
                     // 1.2.0: tolleranze (bozzetto VHF 9): nomi degli elementi di una Yagi a 3 elementi; con tolleranze nulle ogni prova = nominale
                     using (Prestazioni.Misura("Autotest delle tolleranze"))
                         try

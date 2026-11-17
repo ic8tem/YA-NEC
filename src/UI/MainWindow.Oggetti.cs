@@ -215,6 +215,7 @@ namespace YaNec
             else if (k == "stack") c = PannelloStack();
             else if (k == "trasformatori") c = PannelloTrasformatori();
             else if (k == "retil") c = PannelloRetiL();
+            else if (k == "cavobalun") c = PannelloCavoBalun();
             else c = PannelloSorgenti(true);
             if (c is Border bc) bc.Margin = new Thickness(0);
             sp.Children.Add(c);
@@ -336,7 +337,7 @@ namespace YaNec
             fasOggetti.Voce("rastremazioni", "Rastremazioni (tubi telescopici)", false, "Tabella dei tubi telescopici come il Taper wire set di MMANA: nel raggio del filo -1, -2...");
             fasOggetti.Voce("trasformatori", "Trasformatori", false, "Trasformatori ideali tra due punti (come in EZNEC).");
             fasOggetti.Voce("retil", "Reti L e di sfasamento", false, "Reti L (ramo serie e parallelo) e calcolatore Lewallen/Lahlum, ibrido di Collins.");
-            fasOggetti.Voce("balun", "Balun", true);
+            fasOggetti.Voce("cavobalun", "Cavo e balun", false, "Calza del cavo e palo come fili NEC; confronto dei balun da 1,8 a 1296 MHz (corrente di modo comune, F/B, perdita).");   // 1.2.0: bozzetti VHF 10 rev. 2 e HF 5
             hostOggetti = new ContentControl();
             fasOggetti.Selected += k => MostraOggetto(k);
             DockPanel d = Fascione.Pagina(fasOggetti, hostOggetti);
