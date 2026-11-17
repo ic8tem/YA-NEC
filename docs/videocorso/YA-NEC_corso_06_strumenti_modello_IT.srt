@@ -91,5 +91,29 @@ Da 3 a 11 segmenti, dispari perche' la sorgente resti al centro.
 Corretto: nessun avviso. Con un modello lungo, questa finestra puo' anche aprirsi da sola prima di ogni calcolo.
 
 24
-00:02:51,592 --> 00:02:57,542
+00:02:51,592 --> 00:03:07,742
+Novita' della 1.0.11: la maniglia di riempimento, come in Excel. Apriamo un esempio con piu' fili: la Yagi 7 elementi EME di DK7ZB.
+
+25
+00:03:07,792 --> 00:03:14,038
+Nella tabella dei fili scriviamo 4 mm nel raggio del riflettore.
+
+26
+00:03:14,088 --> 00:03:24,171
+La cella attiva ha un quadratino blu nell'angolo in basso a destra: lo si trascina in giu' sulle altre righe, che si colorano di azzurro.
+
+27
+00:03:24,221 --> 00:03:33,371
+Al rilascio tutte le celle prendono lo stesso valore (vale anche per variabili e formule) e il modello si ricalcola subito.
+
+28
+00:03:33,421 --> 00:03:41,705
+Ctrl+Z subito dopo rimette i valori di prima: il riempimento e' nella storia di Annulla della barra Geometria.
+
+29
+00:03:41,755 --> 00:03:47,205
+La maniglia c'e' anche nelle tabelle di Sorgenti, Carichi e Linee. Con piu' righe scelte (Maiusc + frecce) si ripete il blocco; la colonna Tag non ha la maniglia.
+
+30
+00:03:48,158 --> 00:03:54,109
 Sposta, ruota, scala, annulla, controlla, segmenta: il modello resta pulito. Prossima lezione: le direttive HF semplici dai calcolatori. 73 de IC8TEM

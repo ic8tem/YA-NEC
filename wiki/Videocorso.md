@@ -62,7 +62,7 @@ Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappol
 
 ### Lezione 6 - Gli strumenti del modello
 
-Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica.
+Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica. Dalla 1.0.11 la maniglia di riempimento nella tabella dei fili (come in Excel), con Ctrl+Z.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.srt)
 

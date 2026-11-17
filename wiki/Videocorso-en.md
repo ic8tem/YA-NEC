@@ -62,7 +62,7 @@ The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator:
 
 ### Lesson 6 - The model tools
 
-From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix.
+From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix. Since 1.0.11 the fill handle in the wire table (as in Excel), with Ctrl+Z.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.srt)
 
