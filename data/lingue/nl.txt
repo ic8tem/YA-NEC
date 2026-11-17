@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Beide (buiten DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU koppelt de twee maten. Met "Aantal elementen" wordt de boom berekend uit de DL6WU-afstanden; met "Lengte van de boom" worden directors toegevoegd zolang de boom ze bevat. Het grijze veld is niet bewerkbaar: het toont de afgeleide waarde. Met "Beide (buiten DL6WU)" geeft u beide op en worden de afstanden naar verhouding verlengd of ingekort: u verlaat de methode en NEC-optimalisatie is nodig.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	stappen 0-3 niet beschikbaar: met "Beide (buiten DL6WU)" is optimalisatie verplicht
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Waarde afgeleid uit de andere gegevens: niet bewerkbaar (zie de opmerking onder de gegevens).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"Aanpassen (NEC)" stelt de zijde in op resonantie en de afstand op minimale SWR, en berekent daarna SWR en winst over +-5 % bandbreedte.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = in het midden (kleinere spoel, lager rendement), naar 100 % = naar de punt (steeds grotere spoel).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 antenne
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Connector onder de massadriehoek, de binnengeleider gaat naar de bovenste driehoek.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: controleer deze liniaal (afdrukken op 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: controleer deze liniaal (afdrukken op 100 %, niet passend maken op de pagina)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f voet (W7FB) = 306,3/f meter op de middenfrequentie van de laagste band. Wordt bijgewerkt als u de band wijzigt.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, volle of gaasreflector, belichter voor schotel
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, horizontale polarisatie, rondstralend; de twee niveaus en de drie dipolen
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. De stub verbindt de twee driehoeken parallel aan de connector: de lengte wordt afgeregeld op SWR (F1BKM: 152 mm op een auto of in een stack).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Isolatoren tussen de niveaus (F1BKM: stapel polystyreenplaten van 5 mm): de afstand dz moet voor alle armen gelijk zijn.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. De niveauwissel van elk blad ligt in het midden van de buitenzijde (huls van F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m met de maten van JN1GLB (niet afgestemd door de knop Resonantie, die op de banden 20-10 m werkt)
+Accoppiamento e distanza migliore (NEC)	Koppeling en beste afstand (NEC)
+Accoppiamento piu' forte	Sterkste koppeling
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	Bij stap 4 komt de variabele verloop van de afstanden erbij (hoe ze langs de boom groeien, met vaste boom)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Directe voeding met de coax in het midden, zonder balun (Marshall, OE2TZL, W6PQL): binnengeleider naar de ene kant, mantel naar de andere.
+Alla distanza DL6WU	Op de DL6WU-afstand
+Altezza dal suolo	Hoogte boven de grond
+Altezza dei bordi	Hoogte van de randen
+Altezza del riflettore	Hoogte van de reflector
+Angoli di partenza voluti	Gewenste afstraalhoeken
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Hoek tussen de twee armen van een blad (mal F1BKM: 100 graden, dus 20 graden tussen de armen van naburige bladen).
+Antenna singola	Enkele antenne
+Antenne una sopra l'altra	Antennes boven elkaar
+Apertura del petalo	Opening van het blad
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Opent de biquad als model in het hoofdvenster (element op z = 0, bundel naar +Z, polarisatie langs Y, zoals de hoornbelichters) en gaat naar de Primaire-focusschotel: daar neemt de knop "Belichter uit NEC-model" het berekende diagram over.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Auteurs en bronnen (MIT-licentie, volledige vermelding in Credits)\n
+Azimut / elevazione	Azimut / elevatie
+Baars 4.22 (apertura uniforme)	Baars 4.22 (uniforme apertuur)
+Banda dello stack	Band van de stack
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Werkband: de frequentie en alle maten in mm worden herschaald. "vrij" laat de frequentie invoeren.
+Banda piu' bassa	Laagste band
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel en drie dipolen (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: drie bladen van één golflengte, aan beide uiteinden gevoed, met de stub bij de naaf. Drie dipolen (W4RNL, WA1FXT): dipolen van ongeveer 50 ohm, in een driehoek of op een cirkel, bij de naaf in serie geschakeld en aangepast met een lambda/4.
+Biquad (2 quadrati)	Biquad (2 vierkanten)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad geopend als model: als de berekening klaar is, druk in de Primaire-focusschotel op "Belichter uit NEC-model".
+Biquad e doppia biquad	Biquad en dubbele biquad
+Biquad e doppia biquad (1.0.16)	Biquad en dubbele biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: twee vierkanten (8 draadzijden). Dubbele biquad: vier vierkanten op een rij (16 zijden), de draden kruisen elkaar zonder contact tussen het eerste en tweede vierkant van elke zijde.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Boom te kort voor deze elementen: op 0,3 lambda gezet.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Randen naar voren gebogen (naar het element). 2 zijden: de twee randen loodrecht op de polarisatie (boven en onder de rij vierkanten). Marshall: randen van 30 mm, achterlobben ongeveer 6 dB lager.
+Bordi rialzati	Opstaande randen
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4e druk, hfst. 15: rendement van cos^n-belichters (15-55, test met de curven), ondergrens van het faserendement (1 - m^2/2)^2, maximale winst bij lambda = 4 pi sigma (15-67..71). De fasegrens is een gegarandeerd minimum: de berekende waarde ligt er altijd boven
+Calcola accoppiamento e distanze (NEC)	Koppeling en afstanden berekenen (NEC)
+Calcola lo stack HF (NEC)	HF-stack berekenen (NEC)
+Calcola prima le distanze.	Bereken eerst de afstanden.
+Calcola tutte le bande (NEC)	Alle banden berekenen (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Berekening uit skynoise 0.2.2 van John C. Sager G8ONH (2025-2026, MIT-licentie), in YA-NEC overgezet naar C#.\n
+Cambiandola, le misure in mm si riscalano.	Bij wijzigen worden de maten in mm herschaald.
+Centro del lobo nel cielo	Midden van de lob aan de hemel
+Cielo (fuori dalla Via Lattea)	Hemel (buiten de Melkweg)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Klik op het diagram: cursor C1, de volgende klik C2; onder het diagram het niveau van elk, de hoek en het verschil tussen beide. Dubbelklik: verwijdert de cursors. De cursors blijven bij een frequentiewijziging.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Coax met de hoge SWR van de harmonische banden: het verlies groeit sterk (NT0Z, WB8IMY). Beter de tuner bij het voedingspunt, of ladderlijn.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Coax: handig maar met de hoge SWR van de harmonische banden verliest hij veel (NT0Z, WB8IMY). Ladderlijn: weinig verlies ook bij hoge SWR, vraagt een symmetrische tuner of een 4:1-balun bij de tuner.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Vergelijking: L. Edwards VE7BQH (G/T-tabellen bij 30 graden, stack van 4 op DL6WU-afstand, uniforme temperaturen); TANT van YT1NT en VE3EA (handleiding DG7YBN); correctie KF2YN.
+Controlli della 1.0.14 (Baars)	Controles van 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Controles van 1.0.14 (Balanis)
+Criterio della distanza migliore	Criterium voor de beste afstand
+Cursori	Cursors
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (horizontale loop, ladderlijn, symmetrische tuner); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (omtrek 1005/f voet)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Van draadmidden tot draadmidden, ongeveer lambda/4 (Marshall 30,5 mm bij 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Van punt tot punt (op een cirkel: langs de boog). Cebik: 34,3" als driehoek, 31,4" op een cirkel, bij 146 MHz met 1/2"-buis.
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Van de naaf (ongeveer 150 ohm in serie) naar 50 ohm: RG-62 van 93 ohm (Cebik), of 75 ohm als de impedantie onder 150 ligt.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Van naaf tot naaf langs de buis, ongeveer één golflengte (F1BKM 2050 mm bij 145 MHz; QST 80" bij 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Van het vlak van de vierkanten tot het reflectoroppervlak: dit is de SWR-afregeling (0,1-0,13 lambda in de bronnen).
+Data e ora (UTC)	Datum en tijd (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Ongeldige datum en tijd (dd/mm/jjjj uu:mm, UTC).
+Dettaglio del mozzo (PDF)	Detail van de naaf (PDF)
+Diametro del tubo	Buisdiameter
+Diametro della ruota	Diameter van het wiel
+Differenza dal cielo uniforme	Verschil met de uniforme hemel
+Dima 1:1 (PDF)	Mal 1:1 (PDF)
+Dima del petalo della Big Wheel	Mal van het Big Wheel-blad
+Dima della biquad	Mal van de biquad
+Dima di piegatura 1:1 (PDF)	Buigmal 1:1 (PDF)
+Direttori molto fitti (spaziature x	Directors zeer dicht (afstanden x
+Direttori molto radi (spaziature x	Directors zeer wijd (afstanden x
+Discesa	Voedingslijn
+Dischi e illuminatori	Schotels en belichters
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Tekening van de gebogen draad op schaal 1:1 op A4, met de buigpunten, de liniaal van 100 mm om de afdruk te controleren en de matentabel.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Afstand van het midden tot het voedingspunt van elke dipool (Cebik: 15,4" als driehoek, 15,5" op een cirkel, bij 146 MHz).
+Distanza dal riflettore	Afstand tot de reflector
+Distanza proposta	Voorgestelde afstand
+Distanza tra i due livelli	Afstand tussen de twee niveaus
+Distanze	Afstanden
+Distanze da provare	Te proberen afstanden
+Distanze di stack	Stackafstanden
+Distanze provate	Geprobeerde afstanden
+Distanze provate e diagramma in elevazione	Geprobeerde afstanden en elevatiediagram
+Doppia biquad (4)	Dubbele biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Dubbele biquad: waar de diagonalen kruisen raken de draden elkaar niet (ongeveer 1,5 mm tussenruimte).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Waar de armen aan de verbindingsdriehoeken vastzitten (F1BKM: driehoeken met zijden van 52 mm).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Twee antennes boven elkaar, in fase: Big Wheel op 5/8 lambda (QST en F1BKM: één ondersteboven met een halve golf kabel extra, in het model direct in fase), drie dipolen op 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Elevatie op de voorgestelde afstand (dBi boven de grond)
+F/B lungo l'asse (NEC)	V/A langs de as (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: aluminium 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Foutbundel, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Belichters voor 10 GHz, gemeten verschillen
+File MMANA senza la sezione ***Wires***.	MMANA-bestand zonder de sectie ***Wires***.
+Filo da tagliare	Te knippen draad
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Geïsoleerde draad: NEC-2 rekent hem als blank. De isolatie verkort het element: W6PQL gebruikt een zijde van 0,238 λ met geïsoleerde draad tegen 0,248 λ bij Marshall met blanke draad (ongeveer 4 % minder).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Bronnen: DL6WU (formule); ARRL Antenna Book 24e druk (grenzen van de formule, stacks van HF-yagi's en elevatiehoeken); L. Edwards VE7BQH (G/T als criterium voor EME-stacks); R. D. Straw N6BV (HFTA, stacks en terrein); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array van YO3IIU (koppelingsmatrix bij ontvangst, GPL-2 of later); G. Burke en A. Poggio, NEC-2-handleiding (kaart CP).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Ontwerpfrequentie. Met een gekozen band is ze grijs; met "vrij" voert u haar in. Bij wijzigen worden zijde, afstand en reflector herschaald.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Buiten 50-1300 MHz volstaat de schaling van de kaart met de exponent 2,56 niet (eronder: ionosferische absorptie en kunstmatige ruis; erboven: kosmische achtergrond en atmosfeer): de waarde is slechts indicatief.
+G max	G max
+G/T (da Rumore e G/T)	G/T (uit Ruis en G/T)
+G/T come VE7BQH	G/T zoals VE7BQH
+G/T con il cielo vero	G/T met de echte hemel
+G/T max	G/T max
+G/T migliore	Beste G/T
+Guadagno (NEC)	Winst (NEC)
+Guadagno all'orizzonte (NEC)	Winst aan de horizon (NEC)
+Guadagno e lobo laterale al variare della distanza	Winst en zijlob afhankelijk van de afstand
+Guadagno massimo con questa superficie	Maximale winst met dit oppervlak
+HF (sopra il terreno)	HF (boven de grond)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	De twee niveaus van de armen, de verbindingsdriehoeken, de stub en de connector, met maten.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: open golfpijp 13,5 dB tegen choke 15,2 dB (zonneruis); opgeschroefde choke -0,6 dB; LNB-kap -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 modelleert de isolatie niet: de berekende maten zijn die van blanke draad. Met geïsoleerde draad moet het element worden ingekort (W6PQL: zijde 0,238 lambda in plaats van 0,248, ongeveer 4 % minder).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	De bovenste arm van een blad en de onderste van het naburige blad staan 20 graden uit elkaar: samen vormen ze de λ/4-lijn die de hoge impedantie van het blad naar de naaf brengt.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Het grijze veld is niet in te vullen: het toont de afgeleide waarde. Met "Beide" geeft u beide op en de afstanden worden naar verhouding verlengd of verkort: u verlaat de methode en NEC-optimalisatie is nodig.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	De zijde is ongeveer λ/4 van draadmidden tot draadmidden; de afstand tot de reflector (0,1-0,13 λ in de bronnen) is de SWR-afregeling. Met gaas is de reflector een draadrooster met de echte maas (Mumford: maas onder λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Het geopende model is al een stack: open de enkele antenne.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Het model is in de vrije ruimte: voor de HF-stack wordt gemiddelde grond gebruikt (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Het blad op schaal 1:1 op A4-vellen om aan elkaar te plakken (10 mm overlap, kruisjes om de 50 mm, liniaal van 100 mm). Alleen voor de Big Wheel.
+Impedenza al mozzo (NEC)	Impedantie bij de naaf (NEC)
+Impedenza di riferimento	Referentie-impedantie
+Impedenza in serie al mozzo	Serie-impedantie bij de naaf
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, hfst. 4: vrije-ruimteafval 4.3, kwadratisch 4.8, Gauss 4.6, HPBW 4.13, eerste zijlob 4.14a, defocus 4.21-4.23, bolgolfschaduw van de steunen 4.36c-f, axiale foutcomponent 4.43, foutbundel 4.44-4.46. Gelijk aan de berekening: vrije-ruimteafval (= ruimtelijke verzwakking) en rendementen van de verdelingen. Anders: Baars gebruikt ideale verdelingen, hier wordt de echte belichter geïntegreerd; HPBW en zijlob van Baars dienen ter vergelijking en vervangen de berekening niet
+K sotto l'orizzonte (skynoise: 290 K)	K onder de horizon (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	De Big Wheel is kritisch: Cebik zelf (QST 3/2008) waarschuwt dat NEC de lijnen slecht berekent waar de stroom laag is en dat kleine bouwverschillen de impedantie verschuiven. De stub wordt altijd op de echte antenne afgeregeld.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	De band waarop de omtrek één volle golflengte is: daarboven werkt de loop op alle banden met de tuner.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	De mal en de naaf zijn voor de Big Wheel: kies het type Big Wheel.
+Larghezza del riflettore	Breedte van de reflector
+Lati	Zijden
+Lato del quadrato (centro filo)	Zijde van het vierkant (draadmidden)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Zijde langs de rij vierkanten (de polarisatie). Dubbele biquad: ongeveer 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Zijde loodrecht op de rij vierkanten (Marshall: 123 mm alleen, 110 mm als schotelbelichter).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Zijde, afstand tot de reflector, volle of gaasreflector en randen vergeleken tussen de bronnen; aanpassing met NEC, schotelbelichter, mal 1:1. Ontwerp goedgekeurd door IC8TEM op 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	De bronnen noemen winsten van 8 dBd tot 14 dBi op verschillende reflectoren: de NEC van de kaart zet ze op dezelfde basis.
+Linea a finestra 450 Ω	Vensterlijn 450 Ω
+Linea aperta 600 Ω	Open lijn 600 Ω
+Livelli	Niveaus
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Niveaus zeer dicht ten opzichte van de buis: de lijn van de armen heeft een zeer lage impedantie en het model zit aan de grens van NEC-2 (parallelle draden minder dan enkele stralen uit elkaar).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	De "faseverschuiving" van de geleiders: verticale afstand tussen de onderste armen (mantel) en de bovenste (binnengeleider). Geschat uit de plaatstapel van F1BKM: de bronnen vermelden haar niet.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Dezelfde berekening als Ruis en G/T: hemel en grond met uniforme temperatuur (VE7BQH, TANT). Hangt niet af van QTH of tijd.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Locator (JN70CN) of breedte en lengte in graden (40,55 14,21). Wordt opgeslagen in config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): alle banden, ladderlijn of coax, verlies van de voedingslijn
+Loop orizzontale multibanda	Horizontale multibandloop
+Loop orizzontale multibanda (1.0.17)	Horizontale multibandloop (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Horizontale multibandloop (Loop Skywire)
+Lunghezza del dipolo	Lengte van de dipool
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Draadlengte (langs de as, zonder het te solderen deel)
+Lunghezza della discesa	Lengte van de voedingslijn
+Lunghezza sviluppata del petalo	Ontwikkelde lengte van het blad
+Mappa del cielo	Hemelkaart
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Hemelkaarten: C. G. T. Haslam et al., kartering op 408 MHz (A&AS 47, 1982); herbewerking door M. Remazeilles et al. (MNRAS 451, 2015), van de LAMBDA-server van NASA; kaarten op 144 en 432 MHz gemaakt door G8ONH.\n
+Matrice delle porte singolare.	Singuliere poortmatrix.
+Matrice di accoppiamento alla distanza proposta	Koppelingsmatrix op de voorgestelde afstand
+Mostra il primo nullo	Eerste nulpunt tonen
+Mozzo - lato esterno	Naaf - buitenzijde
+Mozzo della Big Wheel	Naaf van de Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	NIEUW · hemelkaart, QTH, tijd, Maan (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	In 24 uur (echte hemel)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF en F... (Maignan, naar de versie van F1BKM): wiel van ongeveer 1,2 m, gevoelig voor wind en ijs, geen nieuwe maten.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Elke richting boven de horizon krijgt de temperatuur van de hemelkaart op dat punt, op het opgegeven tijdstip en vanaf het opgegeven QTH (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Elk blad is een volle golflengte, aan beide uiteinden gevoed: de armen bij de naaf zijn λ/4-lijnen op twee niveaus (blauw onder = mantel, rood boven = binnengeleider). De bovenste arm van een blad en de onderste van het naburige blad lopen 20 graden uit elkaar: dat paar vormt de lijn. De parallelle stub brengt de ongeveer 10 Ω naar 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Elk blad heeft een arm op het onderste en een op het bovenste niveau: de niveauwissel ligt in het midden van de buitenzijde (de huls van F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (schotel 3 m, f/D 0,3): open golfpijp 13,5 dB tegen choke 15,2 dB; opgeschroefde choke -0,6 dB; LNB-kap -0,5 dB. Alleen als referentie: het diagram van die belichters moet met NEC worden berekend
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Maaswijdte van de gaasdraden (W6PQL en G6GVI: gaas van 1/2 x 1 inch).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Om een stack te maken van één antenne: Ruis/GT/Stack > Stackafstanden, rijen en kolommen, knop "Stack maken in het geopende model" (sinds 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	Voor de SWR (50 ohm met de coax direct op het voedingspunt, zoals in alle bronnen).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Daarom gebruikt men ladderlijn met tuner, of coax met de tuner bij het voedingspunt. "Alle banden berekenen (NEC)" berekent elke band en het verlies van de voedingslijn.
+Perdita della discesa con il ROS di ogni banda (dB)	Verlies van de voedingslijn met de SWR van elke band (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Verlies van de voedingslijn onder 3 dB op alle banden.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Omtrek 1005/f voet, vier vormen, NEC-berekening van alle banden met het verlies van de voedingslijn (ladderlijn of coax) voor de SWR van elke band. Ontwerp goedgekeurd door IC8TEM op 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Bladen op twee niveaus met de stub, drie dipolen in serie met de lambda/4, buigmal 1:1 en detail van de naaf; MathWorks-gevallen (yagi met 6 elementen, helix) in de zelftest. Ontwerp goedgekeurd door IC8TEM op 17/11/2026.
+Petalo	Blad
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	Bochten van 90 graden in de punten P. Rode knooppunten: de binnengeleider van de coax aan de ene kant, de mantel aan de andere (geen balun).
+Pieno (lamiera, PCB)	Vol (plaat, printplaat)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Vol: plaat of printplaat, in NEC een dicht rooster (0,07 lambda, draadstraal met gelijke oppervlakte). Gaas: de echte maas met haar draad.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Horizontale polarisatie en rondstralend diagram: de winst aan de horizon hangt af van hoogte en stacking, niet van de vorm.
+Porta in adattamento (NEC)	Aanpassen (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Eerste zijlob, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Richten
+Punto di alimentazione	Voedingspunt
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Ongeldig QTH: voer de locator in (bijv. JN70CN) of breedte en lengte.
+Quota dell'antenna piu' bassa	Hoogte van de laagste antenne
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR op 50 Ω (na "Aanpassen")
+ROS a 50 Ω in banda	SWR op 50 Ω in de band
+ROS in banda	SWR in de band
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Paarse gestreepte stralen op de eerste minima aan weerszijden van de hoofdlob: hun afstand is de breedte tot het eerste nulpunt (FNBW), onder het diagram vermeld met de hoogste zijlob (SLL, binnen 100 graden van het maximum, zonder achterlob).
+Raggio al punto di alimentazione	Straal bij het voedingspunt
+Raggio del mozzo	Straal van de naaf
+Raggio delle curve (asse)	Buigstraal (as)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Straal van de twee bochten van het blad op de buisas (mal F1BKM: 140 mm binnenkant).
+Rame da 1,2-2 mm nelle fonti.	Koper van 1,2-2 mm in de bronnen.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Gaas te dicht voor de berekening (meer dan 1800 segmenten): in NEC is de reflector een rooster van 0,07 λ, alsof hij vol is. Met mazen onder λ/10 is het verschil klein.
+Rete: diametro del filo	Gaas: draaddiameter
+Rete: maglia lungo l'altezza	Gaas: maas in de hoogte
+Rete: maglia lungo la larghezza	Gaas: maas in de breedte
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Kleine reflector: de winst daalt en de achterlob groeit (Marshall: 123 mm bij 2,4 GHz, dus ongeveer 1 λ, voor de biquad alleen).
+Risultati del cielo vero copiati.	Resultaten van de echte hemel gekopieerd.
+Rumore dal cielo vero	Ruis van de echte hemel
+Rumore e G/T	Ruis en G/T
+Rumore, G/T e stack	Ruis, G/T en stack
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Mal opslaan
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Minstens 2 antennes nodig (rijen x kolommen in de kaart hierboven).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Vrije ruimte, of op een hoogte boven gemiddelde grond (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Ruimte tussen de twee voedingsknooppunten
+Stack alla distanza proposta	Stack op de voorgestelde afstand
+Stack, tutte in fase (BIP)	Stack, alle in fase (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Aluminiumstrip (F1BKM 20 x 2 mm): in NEC een draad met straal breedte/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	In een U gebogen strip tussen de twee niveaus, parallel aan de naaf (QST 1961: 5"; F1BKM 127 mm in de vrije ruimte, 152 mm op een auto of in een stack).
+Stub	Stub
+Stub: larghezza	Stub: breedte
+Stub: lunghezza sviluppata	Stub: ontwikkelde lengte
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman en Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb en Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Op sommige banden verliest de voedingslijn meer dan 3 dB (gemarkeerde vakken): kort de lijn in, schakel over op ladderlijn of zet de tuner bij de loop.
+T antenna (cielo vero)	Antenne-T (echte hemel)
+T antenna nelle 24 ore	Antenne-T in 24 uur
+T antenna nelle 24 ore (puntamento fisso)	Antenne-T in 24 uur (vaste richting)
+T del terreno (cielo vero)	Grond-T (echte hemel)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI en MW1FGQ; buildyourownantenna (dubbele biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI en MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (vergelijking)
+Tabella dello stack copiata.	Stacktabel gekopieerd.
+Temperature uniformi (VE7BQH)	Uniforme temperaturen (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Sterrentijd: G. H. Kaplan, USNO Circular 179 (2005). Frequentieschaling: T = (fkaart / f)^2,56 T (G8ONH). Maan: J. Meeus, Astronomical Algorithms, hfst. 47.\n
+Togli i cursori	Cursors verwijderen
+Tratto di lambda/4: impedenza	Lambda/4-stuk: impedantie
+Tratto di λ/4	λ/4-stuk
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Drie 50-Ω-kabels van gelijke (willekeurige) lengte naar de naaf, in serie geschakeld: ongeveer 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Drie dipolen op een cirkel (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Drie dipolen in een driehoek (W4RNL)
+Usa come feed della parabola	Als schotelbelichter gebruiken
+Usa la distanza proposta per lo stack	Voorgestelde afstand gebruiken voor de stack
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) en HF (boven de grond), koppeling, beste afstand
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (vrije ruimte, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: voor elke afstand (factor x de DL6WU-afstand) wordt de stack met NEC berekend: winst, hoogste zijlob in het vlak van de stack, G/T (temperaturen van Ruis en G/T) en koppeling tussen de poorten. HF: de DL6WU-formule geldt niet (de antennes staan boven de grond en de afstraalhoek telt): de stack wordt gekozen op de gewenste elevatiehoeken.
+Vai a Distanze di stack	Naar Stackafstanden
+Via Lattea (zone sopra 1000 K a 144 MHz)	Melkweg (gebieden boven 1000 K bij 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Bovenaanzicht (schaal 2:1): rode armen boven (binnengeleider), blauwe onder (mantel)
+Vista di lato (scala 2:1)	Zijaanzicht (schaal 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD en W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL en B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 en 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (vergelijkingen)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD en W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL en B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 en 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB voedt in een hoek; halverwege een zijde verandert de impedantie weinig maar verschuiven de lobben op de hoge banden.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: zo hoog mogelijk; onder λ/4 van de lage band straalt hij bijna alleen omhoog (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: vierkant. De cirkel (16-hoekige veelhoek) heeft het grootste oppervlak en iets meer winst; de driehoek dient bij drie steunen.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Ruis van de echte hemel (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks-yagi, maten geoptimaliseerd door MathWorks (gepubliceerd: 10,59 dBi, V/A 15,6 dB, openingshoeken 50 en 62 graden)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Serie-Z = som van de drie impedanties, na de λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| max dB
+° (dietro)	° (achter)
+Ω (barra in alto)	Ω (bovenbalk)
+λ, a passi di 0,125	λ, in stappen van 0,125
+a un'altezza dal suolo	op een hoogte boven de grond
+al massimo	in het maximum
+antenna base: il modello aperto	basisantenne: het geopende model
+antenna singola	enkele antenne
+azimut ed elevazione	azimut en elevatie
+blu: sotto (calza)	blauw: onder (mantel)
+calcolata da DL6WU (	berekend door DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	berekening van de HF-stack boven de grond bezig...
+calcolo in corso (spazio libero come VE7BQH	berekening bezig (vrije ruimte zoals VE7BQH
+cambio di livello (meta' del lato esterno)	niveauwissel (midden van de buitenzijde)
+cerchio (poligono)	cirkel (veelhoek)
+cielo piu' freddo	koudste hemel
+circolarita' +-	rondheid +-
+coassiale 50 Ω (RG-213)	coax 50 Ω (RG-213)
+come VE7BQH (stack di 4)	zoals VE7BQH (stack van 4)
+come prima: TANT, VE7BQH, KF2YN, stack	zoals voorheen: TANT, VE7BQH, KF2YN, stack
+con lo stub	met de stub
+controfase (BOP)	tegenfase (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: gesloten vorm van Balanis
+cos^2: massimo della curva di Balanis	cos^2: maximum van de Balanis-curve
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	diagonaal: misaanpassing van elke antenne met de andere afgesloten op Z0; buiten de diagonaal: vermogen dat van de ene poort naar de andere gaat
+distanza / distanza DL6WU	afstand / DL6WU-afstand
+doppia biquad	dubbele biquad
+elevazione (gradi)	elevatie (graden)
+fascio d'errore (Baars 4.44-4.46)	foutbundel (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	vrije-ruimteafval f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	buiten de methode: NEC geeft het na "Optimaliseren (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	buiten het bereik van de formule (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	defocus beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gauss -12 dB: Baars-formule 4.6
+gaussiana -12 dB: integrale numerico	Gauss -12 dB: numerieke integraal
+gradi · 30° come VE7BQH	graden · 30° zoals VE7BQH
+griglia 0,07 λ	rooster 0,07 λ
+guadagno con lobi sotto	winst met lobben onder
+guadagno dello stack (dBi)	winst van de stack (dBi)
+guadagno massimo	maximale winst
+guadagno max	max. winst
+larghezza x altezza (lungo la polarizzazione)	breedte x hoogte (langs de polarisatie)
+lobi laterali piu' bassi	laagste zijlobben
+lobi piu' bassi	laagste lobben
+lobo laterale dB	zijlob dB
+lobo laterale piu' alto (dB)	hoogste zijlob (dB)
+locator, oppure latitudine e longitudine	locator, of breedte en lengte
+lungo l'arco	langs de boog
+media voluta	gewenst gemiddelde
+meta' lato	midden van de zijde
+minimo / massimo	minimum / maximum
+mutua con la porta 2	wederzijds met poort 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	geen afstand met de lobben onder de drempel: laagste lobben
+non vale	geldt niet
+ore UTC	UTC-uren
+peso della Via Lattea qui e ora	gewicht van de Melkweg hier en nu
+premi "T antenna nelle 24 ore"	druk op "Antenne-T in 24 uur"
+proposta (Distanze di stack)	voorgesteld (Stackafstanden)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	kwadratisch -12 dB: HPBW (Baars 66,3 graden lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	kwadratisch -12 dB: rendement (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	kwadratisch -12 dB: Baars-formule 4.8
+quattro lati uguali	vier gelijke zijden
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	die van het model (in de vrije ruimte: gemiddelde grond 13 / 0,005, Sommerfeld)
+quota sopra	hoogte bovenste
+rete come superficie piena (maglia troppo fitta da calcolare)	gaas als vol oppervlak (maas te dicht om te berekenen)
+rete con la maglia vera	gaas met de echte maas
+rettangolo 2:1	rechthoek 2:1
+rosso: sopra (centrale)	rood: boven (binnengeleider)
+scala 450 Ω	ladderlijn 450 Ω
+scala 600 Ω	ladderlijn 600 Ω
+scelta proposta	voorgestelde keuze
+solo sopra	alleen boven
+solo sotto	alleen onder
+sotto calza (blu), sopra centrale (rosso)	onder mantel (blauw), boven binnengeleider (rood)
+sull'asse del tubo (F1BKM: 535 mm)	op de buisas (F1BKM: 535 mm)
+sulla singola	ten opzichte van de enkele
+superficie senza errore	foutloos oppervlak
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	temperaturen van hemel en grond en elevatie uit Ruis en G/T
+temperature uniformi: si confronta con le tabelle	uniforme temperaturen: vergelijkbaar met de tabellen
+triangolo di sopra: centrale del connettore	bovenste driehoek: binnengeleider van de connector
+triangolo di sotto: calza (massa, staffa del palo)	onderste driehoek: mantel (massa, mastbeugel)
+triangolo equilatero, tre sostegni	gelijkzijdige driehoek, drie steunen
+tutte in fase (BIP)	alle in fase (BIP)
+x la distanza DL6WU, a passi di 0,1	x de DL6WU-afstand, in stappen van 0,1
+RICEZIONE	ONTVANGST
+nessuno	geen
+adesso	nu
+rurale	landelijk
+residenziale	woonwijk

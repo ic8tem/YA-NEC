@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	দুটোই (DL6WU-এর বাইরে)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU দুটি মাপকে বেঁধে রাখে। "উপাদানের সংখ্যা" দিলে বুম DL6WU-এর ব্যবধান থেকে হিসাব হয়; "বুমের দৈর্ঘ্য" দিলে বুমে যতক্ষণ জায়গা থাকে ততক্ষণ ডিরেক্টর যোগ হয়। ধূসর ঘরে লেখা যায় না: এটি নির্ণীত মান দেখায়। "দুটোই (DL6WU-এর বাইরে)" দিলে দুটোই দেওয়া হয় এবং ব্যবধানগুলি আনুপাতিকভাবে বাড়ে বা কমে: পদ্ধতির বাইরে যাওয়া হয় এবং NEC অপ্টিমাইজেশন দরকার।
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	ধাপ 0-3 পাওয়া যায় না: "দুটোই (DL6WU-এর বাইরে)" দিলে অপ্টিমাইজেশন বাধ্যতামূলক
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	অন্যান্য তথ্য থেকে নির্ণীত মান: লেখা যায় না (তথ্যের নিচের নোট দেখুন)।
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"মিল করুন (NEC)" বাহুকে অনুনাদে এবং দূরত্বকে ন্যূনতম SWR-এ ঠিক করে, তারপর ব্যান্ডপ্রস্থের +-5 %-এ SWR ও গেইন গণনা করে।\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = কেন্দ্রে (ছোট কুণ্ডলী, কম দক্ষতা), 100 %-এর দিকে = প্রান্তের দিকে (ক্রমশ বড় কুণ্ডলী)।
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1টি অ্যান্টেনা
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. কানেক্টর গ্রাউন্ড ত্রিভুজের নিচে, কেন্দ্রীয় পরিবাহী উপরের ত্রিভুজে যায়।
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: এই মাপকাঠি যাচাই করুন (100 %-এ প্রিন্ট করুন)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: এই মাপকাঠি যাচাই করুন (100 %-এ প্রিন্ট করুন, পৃষ্ঠায় মানানো ছাড়া)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f ফুট (W7FB) = সর্বনিম্ন ব্যান্ডের কেন্দ্র কম্পাঙ্কে 306,3/f মিটার। ব্যান্ড বদলালে হালনাগাদ হয়।
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, নিরেট বা জাল প্রতিফলক, ডিশ ফিড
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, অনুভূমিক মেরুকরণ, সর্বমুখী; দুটি স্তর ও তিনটি ডাইপোল
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. স্টাব দুই ত্রিভুজকে কানেক্টরের সমান্তরালে যুক্ত করে: এর দৈর্ঘ্য SWR-এর জন্য ছাঁটা হয় (F1BKM: গাড়িতে বা স্ট্যাকে 152 mm)।
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. স্তরগুলোর মধ্যে অন্তরক (F1BKM: 5 mm পলিস্টাইরিন প্লেটের স্তূপ): ফাঁক dz সব বাহুর জন্য সমান হতে হবে।
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. প্রতিটি পাপড়ির স্তর পরিবর্তন বাইরের বাহুর মাঝখানে (F1BKM হাতা)।
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	JN1GLB মাপে 6 m (রেজোন্যান্স বোতাম দিয়ে টিউন হয় না, যা 20-10 m ব্যান্ডে কাজ করে)
+Accoppiamento e distanza migliore (NEC)	যুগলন ও সেরা দূরত্ব (NEC)
+Accoppiamento piu' forte	সবচেয়ে শক্তিশালী যুগলন
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	ধাপ 4-এ দূরত্ব-অগ্রগতি চলক যোগ হয় (বুম স্থির রেখে বুম বরাবর দূরত্ব কীভাবে বাড়ে)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	কেন্দ্রে কোঅ্যাক্স দিয়ে সরাসরি ফিড, বালুন ছাড়া (Marshall, OE2TZL, W6PQL): কেন্দ্রীয় পরিবাহী এক দিকে, শিল্ড অন্য দিকে।
+Alla distanza DL6WU	DL6WU দূরত্বে
+Altezza dal suolo	মাটি থেকে উচ্চতা
+Altezza dei bordi	কিনারার উচ্চতা
+Altezza del riflettore	প্রতিফলকের উচ্চতা
+Angoli di partenza voluti	কাঙ্ক্ষিত বিকিরণ কোণ
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	একটি পাপড়ির দুই বাহুর মধ্যে কোণ (F1BKM টেমপ্লেট: 100 ডিগ্রি, অর্থাৎ পাশের পাপড়ির বাহুগুলোর মধ্যে 20 ডিগ্রি)।
+Antenna singola	একক অ্যান্টেনা
+Antenne una sopra l'altra	একটির উপর আরেকটি অ্যান্টেনা
+Apertura del petalo	পাপড়ির খোলা
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	বাইকোয়াডকে প্রধান উইন্ডোতে মডেল হিসেবে খোলে (উপাদান z = 0-তে, বিম +Z-এর দিকে, মেরুকরণ Y বরাবর, হর্ন ফিডের মতো) এবং প্রাইম-ফোকাস ডিশ-এ যায়: সেখানে "NEC মডেল থেকে ফিড" বোতাম গণনা করা প্যাটার্ন নেয়।
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	লেখক ও উৎস (MIT লাইসেন্স, পূর্ণ বিজ্ঞপ্তি কৃতজ্ঞতা-য়)\n
+Azimut / elevazione	দিগংশ / উন্নতি
+Baars 4.22 (apertura uniforme)	Baars 4.22 (সমরূপ অ্যাপারচার)
+Banda dello stack	স্ট্যাক ব্যান্ড
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	কার্য ব্যান্ড: কম্পাঙ্ক ও mm-এ সব মাপ পুনরায় স্কেল হয়। "মুক্ত" দিয়ে কম্পাঙ্ক লেখা যায়।
+Banda piu' bassa	সর্বনিম্ন ব্যান্ড
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel ও তিনটি ডাইপোল (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: এক তরঙ্গদৈর্ঘ্যের তিনটি পাপড়ি, দুই প্রান্তে ফিড, স্টাব হাবে। তিনটি ডাইপোল (W4RNL, WA1FXT): প্রায় 50 ওহমের ডাইপোল, ত্রিভুজে বা বৃত্তে, হাবে শ্রেণিতে যুক্ত এবং lambda/4 দিয়ে মিলানো।
+Biquad (2 quadrati)	বাইকোয়াড (2টি বর্গ)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	বাইকোয়াড মডেল হিসেবে খোলা হয়েছে: গণনা শেষ হলে প্রাইম-ফোকাস ডিশ-এ "NEC মডেল থেকে ফিড" চাপুন।
+Biquad e doppia biquad	বাইকোয়াড ও ডাবল বাইকোয়াড
+Biquad e doppia biquad (1.0.16)	বাইকোয়াড ও ডাবল বাইকোয়াড (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	বাইকোয়াড: দুটি বর্গ (তারের 8 বাহু)। ডাবল বাইকোয়াড: সারিতে চারটি বর্গ (16 বাহু), প্রতিটি পাশের প্রথম ও দ্বিতীয় বর্গের মধ্যে তারগুলো না ছুঁয়ে আড়াআড়ি যায়।
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	এই উপাদানগুলোর জন্য বুম খুব ছোট: 0,3 lambda-তে সেট।
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	কিনারা সামনের দিকে (উপাদানের দিকে) বাঁকানো। 2 বাহু: মেরুকরণের লম্ব দুটি কিনারা (বর্গ সারির উপরে ও নিচে)। Marshall: 30 mm কিনারা, পেছনের লোব প্রায় 6 dB কম।
+Bordi rialzati	উঁচু কিনারা
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4র্থ সং., অধ্যায় 15: cos^n ফিডের দক্ষতা (15-55, বক্ররেখার সাথে পরীক্ষা), ফেজ দক্ষতার নিম্নসীমা (1 - m^2/2)^2, lambda = 4 pi sigma-তে সর্বোচ্চ গেইন (15-67..71)। ফেজ সীমা একটি নিশ্চিত ন্যূনতম: গণিত মান সর্বদা তার উপরে
+Calcola accoppiamento e distanze (NEC)	যুগলন ও দূরত্ব গণনা করুন (NEC)
+Calcola lo stack HF (NEC)	HF স্ট্যাক গণনা করুন (NEC)
+Calcola prima le distanze.	প্রথমে দূরত্ব গণনা করুন।
+Calcola tutte le bande (NEC)	সব ব্যান্ড গণনা করুন (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	John C. Sager G8ONH-এর skynoise 0.2.2 থেকে গণনা (2025-2026, MIT লাইসেন্স), YA-NEC-এ C#-এ পোর্ট করা।\n
+Cambiandola, le misure in mm si riscalano.	এটি বদলালে mm-এ মাপ পুনরায় স্কেল হয়।
+Centro del lobo nel cielo	আকাশে বিমের কেন্দ্র
+Cielo (fuori dalla Via Lattea)	আকাশ (ছায়াপথের বাইরে)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	প্যাটার্নে ক্লিক করুন: কার্সর C1, পরের ক্লিক C2; প্যাটার্নের নিচে প্রত্যেকের স্তর, কোণ ও দুটির পার্থক্য। ডাবল ক্লিক: কার্সর সরায়। কম্পাঙ্ক বদলালেও কার্সর থাকে।
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	হারমোনিক ব্যান্ডের উচ্চ SWR-সহ কোঅ্যাক্স: ক্ষতি অনেক বাড়ে (NT0Z, WB8IMY)। ফিড বিন্দুতে টিউনার, বা ল্যাডার লাইন ভালো।
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	কোঅ্যাক্স: সুবিধাজনক, কিন্তু হারমোনিক ব্যান্ডের উচ্চ SWR-এ অনেক হারায় (NT0Z, WB8IMY)। ল্যাডার লাইন: উচ্চ SWR-এও কম ক্ষতি, সুষম টিউনার বা টিউনারে 4:1 বালুন লাগে।
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	তুলনা: L. Edwards VE7BQH (30 ডিগ্রিতে G/T সারণি, DL6WU দূরত্বে 4টির স্ট্যাক, সমরূপ তাপমাত্রা); YT1NT ও VE3EA-এর TANT (DG7YBN নির্দেশিকা); KF2YN সংশোধন।
+Controlli della 1.0.14 (Baars)	1.0.14-এ যাচাই (Baars)
+Controlli della 1.0.14 (Balanis)	1.0.14-এ যাচাই (Balanis)
+Criterio della distanza migliore	সেরা দূরত্বের মানদণ্ড
+Cursori	কার্সর
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (অনুভূমিক লুপ, ল্যাডার লাইন, সুষম টিউনার); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (পরিধি 1005/f ফুট)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	তারের কেন্দ্র থেকে তারের কেন্দ্র, প্রায় lambda/4 (Marshall 2,4 GHz-এ 30,5 mm)।
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	প্রান্ত থেকে প্রান্ত (বৃত্তে: চাপ বরাবর)। Cebik: ত্রিভুজে 34,3", বৃত্তে 31,4", 146 MHz-এ 1/2" টিউব দিয়ে।
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	হাব (প্রায় 150 ওহম শ্রেণিতে) থেকে 50 ওহম: RG-62 93 ওহম (Cebik), বা প্রতিবন্ধক 150-এর নিচে হলে 75 ওহম।
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	টিউব বরাবর হাব থেকে হাব, প্রায় এক তরঙ্গদৈর্ঘ্য (F1BKM 145 MHz-এ 2050 mm; QST 146 MHz-এ 80")।
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	বর্গগুলোর তল থেকে প্রতিফলকের পৃষ্ঠ: এটাই SWR সমন্বয় (উৎসে 0,1-0,13 lambda)।
+Data e ora (UTC)	তারিখ ও সময় (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	অবৈধ তারিখ ও সময় (dd/mm/yyyy hh:mm, UTC)।
+Dettaglio del mozzo (PDF)	হাবের বিবরণ (PDF)
+Diametro del tubo	টিউবের ব্যাস
+Diametro della ruota	চাকার ব্যাস
+Differenza dal cielo uniforme	সমরূপ আকাশ থেকে পার্থক্য
+Dima 1:1 (PDF)	1:1 টেমপ্লেট (PDF)
+Dima del petalo della Big Wheel	Big Wheel পাপড়ি টেমপ্লেট
+Dima della biquad	বাইকোয়াড টেমপ্লেট
+Dima di piegatura 1:1 (PDF)	1:1 বাঁকানো টেমপ্লেট (PDF)
+Direttori molto fitti (spaziature x	ডিরেক্টর খুব কাছে (দূরত্ব x
+Direttori molto radi (spaziature x	ডিরেক্টর খুব দূরে (দূরত্ব x
+Discesa	ফিড লাইন
+Dischi e illuminatori	ডিশ ও ফিড
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	A4-এ 1:1 স্কেলে বাঁকানো তারের নকশা, বাঁকের বিন্দু, প্রিন্ট যাচাইয়ের 100 mm মাপকাঠি ও মাপের সারণিসহ।
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	কেন্দ্র থেকে প্রতিটি ডাইপোলের ফিড বিন্দুর দূরত্ব (Cebik: ত্রিভুজে 15,4", বৃত্তে 15,5", 146 MHz-এ)।
+Distanza dal riflettore	প্রতিফলক থেকে দূরত্ব
+Distanza proposta	প্রস্তাবিত দূরত্ব
+Distanza tra i due livelli	দুই স্তরের মধ্যে দূরত্ব
+Distanze	দূরত্ব
+Distanze da provare	চেষ্টা করার দূরত্ব
+Distanze di stack	স্ট্যাক দূরত্ব
+Distanze provate	চেষ্টা করা দূরত্ব
+Distanze provate e diagramma in elevazione	চেষ্টা করা দূরত্ব ও উন্নতি প্যাটার্ন
+Doppia biquad (4)	ডাবল বাইকোয়াড (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	ডাবল বাইকোয়াড: যেখানে কর্ণ কাটাকাটি করে সেখানে তার ছোঁয় না (প্রায় 1,5 mm ফাঁক)।
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	যেখানে বাহুগুলো সংযোগ ত্রিভুজে লাগানো হয় (F1BKM: 52 mm বাহুর ত্রিভুজ)।
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	একটির উপর আরেকটি দুটি অ্যান্টেনা, একই ফেজে: Big Wheel 5/8 lambda-তে (QST ও F1BKM: একটি উল্টো, বাড়তি অর্ধতরঙ্গ কেবলসহ; মডেলে সরাসরি ফেজে), তিনটি ডাইপোল 0,875 lambda-তে (Cebik)।
+Elevazione alla distanza proposta (dBi sul terreno)	প্রস্তাবিত দূরত্বে উন্নতি (মাটির উপরে dBi)
+F/B lungo l'asse (NEC)	অক্ষ বরাবর F/B (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: অ্যালুমিনিয়াম 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm)।
+Fascio d'errore, Baars 4.44-4.46	ত্রুটি বিম, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	10 GHz ফিড, পরিমাপিত পার্থক্য
+File MMANA senza la sezione ***Wires***.	***Wires*** অংশ ছাড়া MMANA ফাইল।
+Filo da tagliare	কাটার তার
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	অন্তরিত তার: NEC-2 এটিকে খালি হিসেবে গণনা করে। অন্তরণ উপাদানকে ছোট করে: W6PQL অন্তরিত তারে 0,238 λ বাহু নেন, Marshall খালি তারে 0,248 λ (প্রায় 4 % কম)।
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	উৎস: DL6WU (সূত্র); ARRL Antenna Book 24তম সং. (সূত্রের সীমা, HF Yagi স্ট্যাক ও উন্নতি কোণ); L. Edwards VE7BQH (EME স্ট্যাকের মানদণ্ড হিসেবে G/T); R. D. Straw N6BV (HFTA, স্ট্যাক ও ভূখণ্ড); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; YO3IIU-এর nec2-array (গ্রহণে যুগলন ম্যাট্রিক্স, GPL-2 বা পরবর্তী); G. Burke ও A. Poggio, NEC-2 নির্দেশিকা (CP কার্ড)।
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	নকশা কম্পাঙ্ক। ব্যান্ড বাছাই থাকলে এটি ধূসর; "মুক্ত" হলে লিখতে হয়। এটি বদলালে বাহু, দূরত্ব ও প্রতিফলক পুনরায় স্কেল হয়।
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	50-1300 MHz-এর বাইরে 2,56 সূচকে মানচিত্রের স্কেলিং যথেষ্ট নয় (নিচে: আয়নমণ্ডলীয় শোষণ ও মানবসৃষ্ট নয়েজ; উপরে: মহাজাগতিক পটভূমি ও বায়ুমণ্ডল): মানটি কেবল ইঙ্গিতমূলক।
+G max	G সর্বোচ্চ
+G/T (da Rumore e G/T)	G/T (নয়েজ ও G/T থেকে)
+G/T come VE7BQH	VE7BQH-এর মতো G/T
+G/T con il cielo vero	প্রকৃত আকাশসহ G/T
+G/T max	G/T সর্বোচ্চ
+G/T migliore	সেরা G/T
+Guadagno (NEC)	গেইন (NEC)
+Guadagno all'orizzonte (NEC)	দিগন্তে গেইন (NEC)
+Guadagno e lobo laterale al variare della distanza	দূরত্ব অনুযায়ী গেইন ও পার্শ্ব লোব
+Guadagno massimo con questa superficie	এই পৃষ্ঠে সর্বোচ্চ গেইন
+HF (sopra il terreno)	HF (মাটির উপরে)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	বাহুর দুই স্তর, সংযোগ ত্রিভুজ, স্টাব ও কানেক্টর, মাপসহ।
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: খোলা ওয়েভগাইড 13,5 dB বনাম choke 15,2 dB (সূর্যের নয়েজ); প্যাঁচানো choke -0,6 dB; LNB ঢাকনা -0,5 dB।
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 অন্তরণ মডেল করে না: গণিত মাপ খালি তারের। অন্তরিত তারে উপাদান ছোট করতে হবে (W6PQL: 0,248-এর বদলে 0,238 lambda বাহু, প্রায় 4 % কম)।
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	একটি পাপড়ির উপরের বাহু ও পাশের পাপড়ির নিচের বাহু 20 ডিগ্রি দূরে: একসাথে তারা λ/4 লাইন গঠন করে যা পাপড়ির উচ্চ প্রতিবন্ধক হাবে আনে।
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	ধূসর ক্ষেত্রে লেখা যায় না: এটি উদ্ভূত মান দেখায়। "উভয়" দিয়ে দুটোই দেওয়া হয় এবং দূরত্ব আনুপাতিকভাবে প্রসারিত বা সংকুচিত হয়: পদ্ধতির বাইরে যান এবং NEC অপ্টিমাইজেশন লাগে।
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	বাহু তারের কেন্দ্র থেকে তারের কেন্দ্র প্রায় λ/4; প্রতিফলক থেকে দূরত্ব (উৎসে 0,1-0,13 λ) হলো SWR সমন্বয়। জালের ক্ষেত্রে প্রতিফলক প্রকৃত ফাঁকসহ তারের গ্রিড (Mumford: ফাঁক λ/10-এর নিচে)।
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	খোলা মডেলটি ইতিমধ্যে স্ট্যাক: একক অ্যান্টেনা খুলুন।
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	মডেল মুক্ত স্থানে: HF স্ট্যাকের জন্য গড় মাটি ব্যবহৃত হয় (13 / 0,005 S/m, Sommerfeld)।
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	জোড়া দেওয়ার A4 পাতায় 1:1 স্কেলে পাপড়ি (10 mm ওভারল্যাপ, প্রতি 50 mm-এ ক্রস, 100 mm মাপকাঠি)। কেবল Big Wheel-এর জন্য।
+Impedenza al mozzo (NEC)	হাবে প্রতিবন্ধক (NEC)
+Impedenza di riferimento	রেফারেন্স প্রতিবন্ধক
+Impedenza in serie al mozzo	হাবে শ্রেণি প্রতিবন্ধক
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, অধ্যায় 4: মুক্ত-স্থান হ্রাস 4.3, দ্বিঘাত 4.8, গাউসীয় 4.6, HPBW 4.13, প্রথম পার্শ্ব লোব 4.14a, ডিফোকাস 4.21-4.23, গোলীয়-তরঙ্গ স্ট্রাট বাধা 4.36c-f, ত্রুটির অক্ষীয় উপাংশ 4.43, ত্রুটি বিম 4.44-4.46। গণনার মতো: মুক্ত-স্থান হ্রাস (= স্থানিক ক্ষয়) ও বণ্টনের দক্ষতা। ভিন্ন: Baars আদর্শ বণ্টন ব্যবহার করেন, এখানে প্রকৃত ফিডের সমাকলন হয়; Baars-এর HPBW ও পার্শ্ব লোব তুলনার জন্য, গণনার বিকল্প নয়
+K sotto l'orizzonte (skynoise: 290 K)	দিগন্তের নিচে K (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel সংবেদনশীল: Cebik নিজে (QST 3/2008) সতর্ক করেন যে কারেন্ট কম যেখানে NEC লাইন খারাপভাবে গণনা করে এবং ছোট নির্মাণ পার্থক্য প্রতিবন্ধক সরিয়ে দেয়। স্টাব সর্বদা প্রকৃত অ্যান্টেনায় ছাঁটা হয়।
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	যে ব্যান্ডে পরিধি একটি পূর্ণ তরঙ্গদৈর্ঘ্য: তার উপরে লুপ টিউনারসহ সব ব্যান্ডে কাজ করে।
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	টেমপ্লেট ও হাব Big Wheel-এর জন্য: Big Wheel ধরন বাছুন।
+Larghezza del riflettore	প্রতিফলকের প্রস্থ
+Lati	বাহু
+Lato del quadrato (centro filo)	বর্গের বাহু (তারের কেন্দ্র)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	বর্গ সারি বরাবর বাহু (মেরুকরণ)। ডাবল বাইকোয়াড: প্রায় 2,3 lambda।
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	বর্গ সারির লম্ব বাহু (Marshall: একা 123 mm, ডিশ ফিড হিসেবে 110 mm)।
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	বাহু, প্রতিফলক থেকে দূরত্ব, নিরেট বা জাল প্রতিফলক ও কিনারা উৎসগুলোর মধ্যে তুলনা; NEC মিলন, ডিশ ফিড, 1:1 টেমপ্লেট। IC8TEM 17/11/2026-এ খসড়া অনুমোদন করেছেন।
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	উৎসগুলো বিভিন্ন প্রতিফলকে 8 dBd থেকে 14 dBi গেইন দাবি করে: কার্ডের NEC সেগুলোকে একই ভিত্তিতে আনে।
+Linea a finestra 450 Ω	জানালা লাইন 450 Ω
+Linea aperta 600 Ω	খোলা লাইন 600 Ω
+Livelli	স্তর
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	টিউবের তুলনায় স্তর খুব কাছে: বাহুর লাইনের প্রতিবন্ধক খুব কম এবং মডেল NEC-2-এর সীমায় (কয়েক ব্যাসার্ধের কম দূরত্বে সমান্তরাল তার)।
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	পরিবাহীগুলোর "ফেজিং": নিচের বাহু (শিল্ড) ও উপরের (কেন্দ্র)-এর উল্লম্ব দূরত্ব। F1BKM প্লেট স্তূপ থেকে অনুমিত: উৎসে নেই।
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	নয়েজ ও G/T-এর মতো একই গণনা: সমরূপ তাপমাত্রায় আকাশ ও মাটি (VE7BQH, TANT)। QTH বা সময়ের উপর নির্ভর করে না।
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	লোকেটর (JN70CN) বা ডিগ্রিতে অক্ষাংশ ও দ্রাঘিমাংশ (40,55 14,21)। config.ini-তে সংরক্ষিত।
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): সব ব্যান্ড, ল্যাডার লাইন বা কোঅ্যাক্স, ফিড লাইন ক্ষতি
+Loop orizzontale multibanda	অনুভূমিক বহু-ব্যান্ড লুপ
+Loop orizzontale multibanda (1.0.17)	অনুভূমিক বহু-ব্যান্ড লুপ (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	অনুভূমিক বহু-ব্যান্ড লুপ (Loop Skywire)
+Lunghezza del dipolo	ডাইপোলের দৈর্ঘ্য
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	তারের দৈর্ঘ্য (অক্ষ বরাবর, ঝালাইয়ের অংশ ছাড়া)
+Lunghezza della discesa	ফিড লাইনের দৈর্ঘ্য
+Lunghezza sviluppata del petalo	পাপড়ির খোলা দৈর্ঘ্য
+Mappa del cielo	আকাশ মানচিত্র
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	আকাশ মানচিত্র: C. G. T. Haslam et al., 408 MHz জরিপ (A&AS 47, 1982); M. Remazeilles et al.-এর পুনঃপ্রক্রিয়াকরণ (MNRAS 451, 2015), NASA-র LAMBDA সার্ভার থেকে; 144 ও 432 MHz মানচিত্র G8ONH প্রস্তুত করেছেন।\n
+Matrice delle porte singolare.	অনন্য পোর্ট ম্যাট্রিক্স।
+Matrice di accoppiamento alla distanza proposta	প্রস্তাবিত দূরত্বে যুগলন ম্যাট্রিক্স
+Mostra il primo nullo	প্রথম শূন্য দেখান
+Mozzo - lato esterno	হাব - বাইরের বাহু
+Mozzo della Big Wheel	Big Wheel হাব
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	নতুন · আকাশ মানচিত্র, QTH, সময়, চাঁদ (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	24 ঘণ্টায় (প্রকৃত আকাশ)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF ও F... (Maignan, F1BKM সংস্করণ থেকে): প্রায় 1,2 m চাকা, বাতাস ও বরফে দুর্বল, নতুন মাপ নেই।
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	দিগন্তের উপরে প্রতিটি দিক প্রদত্ত সময় ও QTH-এ ওই বিন্দুতে আকাশ মানচিত্রের তাপমাত্রা পায় (skynoise, G8ONH)।
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	প্রতিটি পাপড়ি দুই প্রান্তে ফিড করা একটি পূর্ণ তরঙ্গদৈর্ঘ্য: হাবের কাছের বাহুগুলো দুই স্তরে λ/4 লাইন (নিচে নীল = শিল্ড, উপরে লাল = কেন্দ্র)। একটি পাপড়ির উপরের বাহু ও পাশেরটির নিচের বাহু 20 ডিগ্রি দূরে চলে: এই জোড়া লাইনের কাজ করে। সমান্তরাল স্টাব প্রায় 10 Ω-কে 50 Ω-এ আনে।
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	প্রতিটি পাপড়ির একটি বাহু নিচের স্তরে, একটি উপরের স্তরে: স্তর পরিবর্তন বাইরের বাহুর মাঝখানে (F1BKM হাতা)।
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (3 m ডিশ, f/D 0,3): খোলা ওয়েভগাইড 13,5 dB বনাম choke 15,2 dB; প্যাঁচানো choke -0,6 dB; LNB ঢাকনা -0,5 dB। কেবল রেফারেন্স: এই ফিডগুলোর প্যাটার্ন NEC দিয়ে গণনা করতে হবে
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	জালের তারের ব্যবধান (W6PQL ও G6GVI: 1/2 x 1 ইঞ্চি জাল)।
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	একক অ্যান্টেনা থেকে স্ট্যাক তৈরি করতে: নয়েজ/GT/স্ট্যাক > স্ট্যাক দূরত্ব, সারি ও কলাম, বোতাম "খোলা মডেলে স্ট্যাক তৈরি করুন" (0.4.20 থেকে)।
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	SWR-এর জন্য (50 ওহম, কোঅ্যাক্স সরাসরি ফিড বিন্দুতে, সব উৎসের মতো)।
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	তাই টিউনারসহ ল্যাডার লাইন, বা ফিড বিন্দুতে টিউনারসহ কোঅ্যাক্স ব্যবহৃত হয়। "সব ব্যান্ড গণনা করুন (NEC)" প্রতিটি ব্যান্ড ও ফিড লাইন ক্ষতি গণনা করে।
+Perdita della discesa con il ROS di ogni banda (dB)	প্রতিটি ব্যান্ডের SWR-সহ ফিড লাইন ক্ষতি (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	সব ব্যান্ডে ফিড লাইন ক্ষতি 3 dB-এর নিচে।
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	পরিধি 1005/f ফুট, চারটি আকৃতি, প্রতিটি ব্যান্ডের SWR-এর জন্য ফিড লাইন ক্ষতিসহ (ল্যাডার বা কোঅ্যাক্স) সব ব্যান্ডের NEC গণনা। IC8TEM 17/11/2026-এ খসড়া অনুমোদন করেছেন।
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	স্টাবসহ দুই-স্তরের পাপড়ি, lambda/4-সহ শ্রেণিতে তিনটি ডাইপোল, 1:1 বাঁকানো টেমপ্লেট ও হাবের বিবরণ; স্ব-পরীক্ষায় MathWorks উদাহরণ (6-উপাদান Yagi, হেলিক্স)। IC8TEM 17/11/2026-এ খসড়া অনুমোদন করেছেন।
+Petalo	পাপড়ি
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	P বিন্দুতে 90 ডিগ্রি বাঁক। লাল নোড: এক পাশে কোঅ্যাক্সের কেন্দ্র, অন্য পাশে শিল্ড (বালুন নেই)।
+Pieno (lamiera, PCB)	নিরেট (পাত, PCB)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	নিরেট: পাত বা PCB, NEC-এ ঘন গ্রিড (0,07 lambda, সমান ক্ষেত্রফলের তারের ব্যাসার্ধ)। জাল: নিজ তারসহ প্রকৃত ফাঁক।
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	অনুভূমিক মেরুকরণ ও সর্বমুখী প্যাটার্ন: দিগন্তে গেইন উচ্চতা ও স্ট্যাকিং-এর উপর নির্ভর করে, আকৃতির উপর নয়।
+Porta in adattamento (NEC)	মিল করুন (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	প্রথম পার্শ্ব লোব, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	দিকনির্দেশ
+Punto di alimentazione	ফিড বিন্দু
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	অবৈধ QTH: লোকেটর (যেমন JN70CN) বা অক্ষাংশ ও দ্রাঘিমাংশ লিখুন।
+Quota dell'antenna piu' bassa	সর্বনিম্ন অ্যান্টেনার উচ্চতা
+ROS a 50 Ω (dopo "Porta in adattamento")	50 Ω-এ SWR ("মিল করুন"-এর পরে)
+ROS a 50 Ω in banda	ব্যান্ডে 50 Ω-এ SWR
+ROS in banda	ব্যান্ডে SWR
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	প্রধান লোবের দুই পাশে প্রথম ন্যূনতমে বেগুনি ড্যাশ রশ্মি: তাদের দূরত্ব হলো প্রথম-শূন্য বিম প্রস্থ (FNBW), যা প্যাটার্নের নিচে সর্বোচ্চ পার্শ্ব লোবের সাথে লেখা থাকে (SLL, সর্বোচ্চ থেকে 100 ডিগ্রির মধ্যে, পেছনের লোব বাদে)।
+Raggio al punto di alimentazione	ফিড বিন্দুতে ব্যাসার্ধ
+Raggio del mozzo	হাবের ব্যাসার্ধ
+Raggio delle curve (asse)	বাঁকের ব্যাসার্ধ (অক্ষ)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	টিউব অক্ষে পাপড়ির দুই বাঁকের ব্যাসার্ধ (F1BKM টেমপ্লেট: ভেতরে 140 mm)।
+Rame da 1,2-2 mm nelle fonti.	উৎসে 1,2-2 mm তামা।
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	গণনার জন্য জাল খুব ঘন (1800-র বেশি খণ্ড): NEC-এ প্রতিফলক 0,07 λ গ্রিড, যেন নিরেট। λ/10-এর ছোট ফাঁকে পার্থক্য কম।
+Rete: diametro del filo	জাল: তারের ব্যাস
+Rete: maglia lungo l'altezza	জাল: উচ্চতায় ফাঁক
+Rete: maglia lungo la larghezza	জাল: প্রস্থে ফাঁক
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	ছোট প্রতিফলক: গেইন কমে ও পেছনের লোব বাড়ে (Marshall: 2,4 GHz-এ 123 mm, অর্থাৎ প্রায় 1 λ, শুধু বাইকোয়াডের জন্য)।
+Risultati del cielo vero copiati.	প্রকৃত আকাশের ফলাফল কপি হয়েছে।
+Rumore dal cielo vero	প্রকৃত আকাশের নয়েজ
+Rumore e G/T	নয়েজ ও G/T
+Rumore, G/T e stack	নয়েজ, G/T ও স্ট্যাক
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	টেমপ্লেট সংরক্ষণ করুন
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	অন্তত 2টি অ্যান্টেনা দরকার (উপরের কার্ডে সারি x কলাম)।
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	মুক্ত স্থান, বা গড় মাটির উপরে কোনো উচ্চতায় (Sommerfeld)।
+Spazio tra i due nodi di alimentazione	দুই ফিড নোডের মধ্যে ফাঁক
+Stack alla distanza proposta	প্রস্তাবিত দূরত্বে স্ট্যাক
+Stack, tutte in fase (BIP)	স্ট্যাক, সব একই ফেজে (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	অ্যালুমিনিয়াম পাত (F1BKM 20 x 2 mm): NEC-এ প্রস্থ/4 ব্যাসার্ধের তার।
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	দুই স্তরের মধ্যে U আকারে বাঁকানো পাত, হাবের সমান্তরালে (QST 1961: 5"; F1BKM মুক্ত স্থানে 127 mm, গাড়িতে বা স্ট্যাকে 152 mm)।
+Stub	স্টাব
+Stub: larghezza	স্টাব: প্রস্থ
+Stub: lunghezza sviluppata	স্টাব: খোলা দৈর্ঘ্য
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ও Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ও Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	কিছু ব্যান্ডে ফিড লাইন 3 dB-এর বেশি হারায় (চিহ্নিত ঘর): লাইন ছোট করুন, ল্যাডার লাইনে যান বা টিউনার লুপে রাখুন।
+T antenna (cielo vero)	অ্যান্টেনা T (প্রকৃত আকাশ)
+T antenna nelle 24 ore	24 ঘণ্টায় অ্যান্টেনা T
+T antenna nelle 24 ore (puntamento fisso)	24 ঘণ্টায় অ্যান্টেনা T (স্থির দিকনির্দেশ)
+T del terreno (cielo vero)	মাটি T (প্রকৃত আকাশ)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ও MW1FGQ; buildyourownantenna (ডাবল বাইকোয়াড, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ও MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (তুলনা)
+Tabella dello stack copiata.	স্ট্যাক সারণি কপি হয়েছে।
+Temperature uniformi (VE7BQH)	সমরূপ তাপমাত্রা (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	নাক্ষত্র সময়: G. H. Kaplan, USNO Circular 179 (2005)। কম্পাঙ্ক স্কেলিং: T = (fmap / f)^2,56 T (G8ONH)। চাঁদ: J. Meeus, Astronomical Algorithms, অধ্যায় 47।\n
+Togli i cursori	কার্সর সরান
+Tratto di lambda/4: impedenza	lambda/4 অংশ: প্রতিবন্ধক
+Tratto di λ/4	λ/4 অংশ
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	হাব পর্যন্ত একই (যেকোনো) দৈর্ঘ্যের তিনটি 50 Ω কেবল, শ্রেণিতে যুক্ত: প্রায় 150 Ω।
+Tre dipoli a cerchio (WA1FXT)	বৃত্তে তিনটি ডাইপোল (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	ত্রিভুজে তিনটি ডাইপোল (W4RNL)
+Usa come feed della parabola	ডিশ ফিড হিসেবে ব্যবহার করুন
+Usa la distanza proposta per lo stack	স্ট্যাকের জন্য প্রস্তাবিত দূরত্ব ব্যবহার করুন
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) ও HF (মাটির উপরে), যুগলন, সেরা দূরত্ব
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (মুক্ত স্থান, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: প্রতিটি দূরত্বের জন্য (গুণক x DL6WU দূরত্ব) স্ট্যাক NEC দিয়ে গণনা হয়: গেইন, স্ট্যাক তলে সর্বোচ্চ পার্শ্ব লোব, G/T (নয়েজ ও G/T-এর তাপমাত্রা) ও পোর্টগুলোর যুগলন। HF: DL6WU সূত্র প্রযোজ্য নয় (অ্যান্টেনা মাটির উপরে এবং বিকিরণ কোণ গুরুত্বপূর্ণ): কাঙ্ক্ষিত উন্নতি কোণ অনুযায়ী স্ট্যাক বাছাই হয়।
+Vai a Distanze di stack	স্ট্যাক দূরত্ব-এ যান
+Via Lattea (zone sopra 1000 K a 144 MHz)	ছায়াপথ (144 MHz-এ 1000 K-এর উপরের অঞ্চল)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	উপর থেকে দৃশ্য (স্কেল 2:1): লাল বাহু উপরে (কেন্দ্র), নীল নিচে (শিল্ড)
+Vista di lato (scala 2:1)	পাশ থেকে দৃশ্য (স্কেল 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD ও W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL ও B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 ও 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (তুলনা)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD ও W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL ও B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 ও 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB কোণে ফিড করেন; বাহুর মাঝখানে প্রতিবন্ধক সামান্য বদলায় কিন্তু উঁচু ব্যান্ডে লোব সরে যায়।
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: যত উঁচু সম্ভব; সর্বনিম্ন ব্যান্ডের λ/4-এর নিচে এটি প্রায় কেবল উপরের দিকে বিকিরণ করে (NVIS)।
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: বর্গ। বৃত্তের (16-বাহু বহুভুজ) ক্ষেত্রফল সবচেয়ে বড় ও গেইন একটু বেশি; ত্রিভুজ তিনটি খুঁটির জন্য।
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - প্রকৃত আকাশের নয়েজ (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks Yagi, MathWorks-এর অপ্টিমাইজ করা মাপ (প্রকাশিত: 10,59 dBi, F/B 15,6 dB, বিম প্রস্থ 50 ও 62 ডিগ্রি)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	শ্রেণি Z = তিন প্রতিবন্ধকের যোগফল, λ/4-এর পরে: Z = Zq^2 / Zseries (Cebik, antenneX 145)।\n
+|Sij| max dB	|Sij| সর্বোচ্চ dB
+° (dietro)	° (পেছন)
+Ω (barra in alto)	Ω (উপরের বার)
+λ, a passi di 0,125	λ, 0,125 ধাপে
+a un'altezza dal suolo	মাটির উপরে কোনো উচ্চতায়
+al massimo	সর্বোচ্চে
+antenna base: il modello aperto	মূল অ্যান্টেনা: খোলা মডেল
+antenna singola	একক অ্যান্টেনা
+azimut ed elevazione	দিগংশ ও উন্নতি
+blu: sotto (calza)	নীল: নিচে (শিল্ড)
+calcolata da DL6WU (	DL6WU অনুযায়ী গণিত (
+calcolo dello stack HF sopra il terreno in corso...	মাটির উপরে HF স্ট্যাক গণনা চলছে...
+calcolo in corso (spazio libero come VE7BQH	গণনা চলছে (VE7BQH-এর মতো মুক্ত স্থান
+cambio di livello (meta' del lato esterno)	স্তর পরিবর্তন (বাইরের বাহুর মাঝখান)
+cerchio (poligono)	বৃত্ত (বহুভুজ)
+cielo piu' freddo	সবচেয়ে ঠান্ডা আকাশ
+circolarita' +-	গোলাকারতা +-
+coassiale 50 Ω (RG-213)	কোঅ্যাক্স 50 Ω (RG-213)
+come VE7BQH (stack di 4)	VE7BQH-এর মতো (4টির স্ট্যাক)
+come prima: TANT, VE7BQH, KF2YN, stack	আগের মতো: TANT, VE7BQH, KF2YN, স্ট্যাক
+con lo stub	স্টাবসহ
+controfase (BOP)	বিপরীত ফেজে (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: Balanis বদ্ধ রূপ
+cos^2: massimo della curva di Balanis	cos^2: Balanis বক্ররেখার সর্বোচ্চ
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	কর্ণ: অন্যগুলো Z0-এ সমাপ্ত থাকলে প্রতিটি অ্যান্টেনার অমিল; কর্ণের বাইরে: এক পোর্ট থেকে অন্য পোর্টে যাওয়া শক্তি
+distanza / distanza DL6WU	দূরত্ব / DL6WU দূরত্ব
+doppia biquad	ডাবল বাইকোয়াড
+elevazione (gradi)	উন্নতি (ডিগ্রি)
+fascio d'errore (Baars 4.44-4.46)	ত্রুটি বিম (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	মুক্ত-স্থান হ্রাস f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	পদ্ধতির বাইরে: NEC এটি "অপ্টিমাইজ করুন (NEC)"-এর পরে দেয়
+fuori dall'intervallo della formula (0,1 < t < 1)	সূত্রের পরিসরের বাইরে (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	ডিফোকাস beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	গাউসীয় -12 dB: Baars সূত্র 4.6
+gaussiana -12 dB: integrale numerico	গাউসীয় -12 dB: সাংখ্যিক সমাকল
+gradi · 30° come VE7BQH	ডিগ্রি · 30° VE7BQH-এর মতো
+griglia 0,07 λ	0,07 λ গ্রিড
+guadagno con lobi sotto	নিচে লোবসহ গেইন
+guadagno dello stack (dBi)	স্ট্যাক গেইন (dBi)
+guadagno massimo	সর্বোচ্চ গেইন
+guadagno max	সর্বোচ্চ গেইন
+larghezza x altezza (lungo la polarizzazione)	প্রস্থ x উচ্চতা (মেরুকরণ বরাবর)
+lobi laterali piu' bassi	সর্বনিম্ন পার্শ্ব লোব
+lobi piu' bassi	সর্বনিম্ন লোব
+lobo laterale dB	পার্শ্ব লোব dB
+lobo laterale piu' alto (dB)	সর্বোচ্চ পার্শ্ব লোব (dB)
+locator, oppure latitudine e longitudine	লোকেটর, বা অক্ষাংশ ও দ্রাঘিমাংশ
+lungo l'arco	চাপ বরাবর
+media voluta	কাঙ্ক্ষিত গড়
+meta' lato	বাহুর মাঝখান
+minimo / massimo	ন্যূনতম / সর্বোচ্চ
+mutua con la porta 2	পোর্ট 2-এর সাথে পারস্পরিক
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	সীমার নিচে লোবসহ কোনো দূরত্ব নেই: সর্বনিম্ন লোব
+non vale	বৈধ নয়
+ore UTC	UTC ঘণ্টা
+peso della Via Lattea qui e ora	এখানে ও এখন ছায়াপথের ভার
+premi "T antenna nelle 24 ore"	"24 ঘণ্টায় অ্যান্টেনা T" চাপুন
+proposta (Distanze di stack)	প্রস্তাবিত (স্ট্যাক দূরত্ব)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	দ্বিঘাত -12 dB: HPBW (Baars 66,3 ডিগ্রি lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	দ্বিঘাত -12 dB: দক্ষতা (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	দ্বিঘাত -12 dB: Baars সূত্র 4.8
+quattro lati uguali	চারটি সমান বাহু
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	মডেলের (মুক্ত স্থানে হলে: গড় মাটি 13 / 0,005, Sommerfeld)
+quota sopra	উপরের উচ্চতা
+rete come superficie piena (maglia troppo fitta da calcolare)	জাল নিরেট পৃষ্ঠ হিসেবে (ফাঁক গণনার জন্য খুব ঘন)
+rete con la maglia vera	প্রকৃত ফাঁকসহ জাল
+rettangolo 2:1	আয়তক্ষেত্র 2:1
+rosso: sopra (centrale)	লাল: উপরে (কেন্দ্র)
+scala 450 Ω	ল্যাডার লাইন 450 Ω
+scala 600 Ω	ল্যাডার লাইন 600 Ω
+scelta proposta	প্রস্তাবিত পছন্দ
+solo sopra	শুধু উপরের
+solo sotto	শুধু নিচের
+sotto calza (blu), sopra centrale (rosso)	নিচে শিল্ড (নীল), উপরে কেন্দ্র (লাল)
+sull'asse del tubo (F1BKM: 535 mm)	টিউব অক্ষে (F1BKM: 535 mm)
+sulla singola	একক অ্যান্টেনার তুলনায়
+superficie senza errore	ত্রুটিহীন পৃষ্ঠ
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	নয়েজ ও G/T থেকে আকাশ ও মাটির তাপমাত্রা এবং উন্নতি
+temperature uniformi: si confronta con le tabelle	সমরূপ তাপমাত্রা: সারণির সাথে তুলনীয়
+triangolo di sopra: centrale del connettore	উপরের ত্রিভুজ: কানেক্টরের কেন্দ্র
+triangolo di sotto: calza (massa, staffa del palo)	নিচের ত্রিভুজ: শিল্ড (গ্রাউন্ড, মাস্ট ক্ল্যাম্প)
+triangolo equilatero, tre sostegni	সমবাহু ত্রিভুজ, তিনটি খুঁটি
+tutte in fase (BIP)	সব একই ফেজে (BIP)
+x la distanza DL6WU, a passi di 0,1	x DL6WU দূরত্ব, 0,1 ধাপে
+RICEZIONE	গ্রহণ
+nessuno	কিছু নেই
+adesso	এখন
+rurale	গ্রামীণ
+residenziale	আবাসিক

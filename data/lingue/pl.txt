@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Oba (poza DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU wiąże oba wymiary. Przy "Liczba elementów" długość wysięgnika wynika z odstępów DL6WU; przy "Długość wysięgnika" dodaje się direktory, dopóki mieszczą się na wysięgniku. Szarego pola nie można edytować: pokazuje wartość wyliczoną. Przy "Oba (poza DL6WU)" podaje się oba, a odstępy wydłużają się lub skracają proporcjonalnie: wychodzi się poza metodę i potrzebna jest optymalizacja NEC.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	kroki 0-3 niedostępne: przy "Oba (poza DL6WU)" optymalizacja jest obowiązkowa
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Wartość wyliczona z pozostałych danych: nie można jej edytować (patrz uwaga pod danymi).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"Dopasuj (NEC)" ustawia bok na rezonans i odstęp na minimalny SWR, następnie oblicza SWR i zysk w paśmie +-5 %.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = w środku (mniejsza cewka, niższa sprawność), w stronę 100 % = w stronę końca (coraz większa cewka).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 antena
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Złącze pod trójkątem masy, żyła środkowa idzie do górnego trójkąta.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: sprawdź tę linijkę (drukuj w 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: sprawdź tę linijkę (drukuj w 100 %, bez dopasowania do strony)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f stóp (W7FB) = 306,3/f metrów na częstotliwości środkowej najniższego pasma. Aktualizuje się przy zmianie pasma.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, reflektor pełny lub siatkowy, promiennik czaszy
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, polaryzacja pozioma, dookólna; dwa poziomy i trzy dipole
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Stub łączy oba trójkąty równolegle ze złączem: jego długość dostraja się na SWR (F1BKM: 152 mm na samochodzie lub w zestawie).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Izolatory między poziomami (F1BKM: stos płytek polistyrenowych 5 mm): odstęp dz musi być jednakowy dla wszystkich ramion.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Zmiana poziomu każdego płatka jest w połowie boku zewnętrznego (tuleja F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m z wymiarami JN1GLB (nie strojone przyciskiem Rezonans, który działa na pasmach 20-10 m)
+Accoppiamento e distanza migliore (NEC)	Sprzężenie i najlepszy odstęp (NEC)
+Accoppiamento piu' forte	Najsilniejsze sprzężenie
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	W kroku 4 dodawana jest zmienna progresja odstępów (jak odstępy rosną wzdłuż belki, przy stałej belce)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Zasilanie bezpośrednie kablem koncentrycznym w środku, bez balunu (Marshall, OE2TZL, W6PQL): żyła środkowa do jednej strony, ekran do drugiej.
+Alla distanza DL6WU	Przy odstępie DL6WU
+Altezza dal suolo	Wysokość nad ziemią
+Altezza dei bordi	Wysokość obrzeży
+Altezza del riflettore	Wysokość reflektora
+Angoli di partenza voluti	Pożądane kąty promieniowania
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Kąt między dwoma ramionami płatka (szablon F1BKM: 100 stopni, czyli 20 stopni między ramionami sąsiednich płatków).
+Antenna singola	Pojedyncza antena
+Antenne una sopra l'altra	Anteny jedna nad drugą
+Apertura del petalo	Rozwarcie płatka
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Otwiera biquad jako model w oknie głównym (element przy z = 0, wiązka w stronę +Z, polaryzacja wzdłuż Y, jak promienniki tubowe) i przechodzi do Czasza z ogniskiem pierwotnym: tam przycisk "Promiennik z modelu NEC" pobiera obliczoną charakterystykę.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Autorzy i źródła (licencja MIT, pełna informacja w Podziękowania)\n
+Azimut / elevazione	Azymut / elewacja
+Baars 4.22 (apertura uniforme)	Baars 4.22 (apertura jednorodna)
+Banda dello stack	Pasmo zestawu
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Pasmo pracy: częstotliwość i wszystkie wymiary w mm są przeskalowywane. "dowolne" pozwala wpisać częstotliwość.
+Banda piu' bassa	Najniższe pasmo
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel i trzy dipole (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: trzy płatki o długości jednej fali zasilane na obu końcach, ze stubem w piaście. Trzy dipole (W4RNL, WA1FXT): dipole około 50 omów, w trójkącie lub na okręgu, połączone szeregowo w piaście i dopasowane odcinkiem lambda/4.
+Biquad (2 quadrati)	Biquad (2 kwadraty)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad otwarty jako model: po zakończeniu obliczeń naciśnij "Promiennik z modelu NEC" w Czasza z ogniskiem pierwotnym.
+Biquad e doppia biquad	Biquad i podwójny biquad
+Biquad e doppia biquad (1.0.16)	Biquad i podwójny biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: dwa kwadraty (8 boków drutu). Podwójny biquad: cztery kwadraty w rzędzie (16 boków), druty krzyżują się bez stykania między pierwszym a drugim kwadratem każdej strony.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Belka za krótka dla tych elementów: ustawiono 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Obrzeża zagięte do przodu (w stronę elementu). 2 boki: dwa obrzeża prostopadłe do polaryzacji (góra i dół rzędu kwadratów). Marshall: obrzeża 30 mm, listki tylne około 6 dB niżej.
+Bordi rialzati	Podniesione obrzeża
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, wyd. 4, rozdz. 15: sprawność promienników cos^n (15-55, test z krzywymi), dolne ograniczenie sprawności fazowej (1 - m^2/2)^2, maksymalny zysk przy lambda = 4 pi sigma (15-67..71). Ograniczenie fazowe jest gwarantowanym minimum: obliczona wartość jest zawsze powyżej
+Calcola accoppiamento e distanze (NEC)	Oblicz sprzężenie i odstępy (NEC)
+Calcola lo stack HF (NEC)	Oblicz zestaw HF (NEC)
+Calcola prima le distanze.	Najpierw oblicz odstępy.
+Calcola tutte le bande (NEC)	Oblicz wszystkie pasma (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Obliczenia na podstawie skynoise 0.2.2 autorstwa John C. Sager G8ONH (2025-2026, licencja MIT), przeniesione do C# w YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	Przy jej zmianie wymiary w mm są przeskalowywane.
+Centro del lobo nel cielo	Środek wiązki na niebie
+Cielo (fuori dalla Via Lattea)	Niebo (poza Drogą Mleczną)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Kliknij na charakterystyce: kursor C1, następne kliknięcie C2; pod charakterystyką poziom każdego, kąt i różnica między nimi. Podwójne kliknięcie: usuwa kursory. Kursory pozostają po zmianie częstotliwości.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Kabel koncentryczny przy wysokim SWR pasm harmonicznych: straty bardzo rosną (NT0Z, WB8IMY). Lepiej skrzynka antenowa w punkcie zasilania lub linia drabinkowa.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Kabel koncentryczny: wygodny, ale przy wysokim SWR pasm harmonicznych dużo traci (NT0Z, WB8IMY). Linia drabinkowa: małe straty nawet przy wysokim SWR, wymaga symetrycznej skrzynki antenowej lub balunu 4:1 przy skrzynce.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Porównanie: L. Edwards VE7BQH (tabele G/T przy 30 stopniach, zestaw 4 anten w odstępie DL6WU, temperatury jednorodne); TANT autorstwa YT1NT i VE3EA (podręcznik DG7YBN); poprawka KF2YN.
+Controlli della 1.0.14 (Baars)	Kontrole w 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Kontrole w 1.0.14 (Balanis)
+Criterio della distanza migliore	Kryterium najlepszego odstępu
+Cursori	Kursory
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (pętla pozioma, linia drabinkowa, skrzynka symetryczna); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (obwód 1005/f stóp)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Od środka drutu do środka drutu, około lambda/4 (Marshall 30,5 mm przy 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Od końca do końca (na okręgu: po łuku). Cebik: 34,3" w trójkącie, 31,4" na okręgu, przy 146 MHz z rurką 1/2".
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Od piasty (około 150 omów szeregowo) do 50 omów: RG-62 93 omy (Cebik) lub 75 omów, jeśli impedancja jest poniżej 150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Od piasty do piasty wzdłuż rurki, około jednej długości fali (F1BKM 2050 mm przy 145 MHz; QST 80" przy 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Od płaszczyzny kwadratów do powierzchni reflektora: to regulacja SWR (0,1-0,13 lambda w źródłach).
+Data e ora (UTC)	Data i godzina (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Nieprawidłowa data i godzina (dd/mm/rrrr gg:mm, UTC).
+Dettaglio del mozzo (PDF)	Szczegół piasty (PDF)
+Diametro del tubo	Średnica rurki
+Diametro della ruota	Średnica koła
+Differenza dal cielo uniforme	Różnica względem jednorodnego nieba
+Dima 1:1 (PDF)	Szablon 1:1 (PDF)
+Dima del petalo della Big Wheel	Szablon płatka Big Wheel
+Dima della biquad	Szablon biquada
+Dima di piegatura 1:1 (PDF)	Szablon gięcia 1:1 (PDF)
+Direttori molto fitti (spaziature x	Direktory bardzo gęsto (odstępy x
+Direttori molto radi (spaziature x	Direktory bardzo rzadko (odstępy x
+Discesa	Linia zasilająca
+Dischi e illuminatori	Czasze i promienniki
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Rysunek giętego drutu w skali 1:1 na A4, z punktami gięcia, linijką 100 mm do sprawdzenia wydruku i tabelą wymiarów.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Odległość od środka do punktu zasilania każdego dipola (Cebik: 15,4" w trójkącie, 15,5" na okręgu, przy 146 MHz).
+Distanza dal riflettore	Odległość od reflektora
+Distanza proposta	Proponowany odstęp
+Distanza tra i due livelli	Odstęp między dwoma poziomami
+Distanze	Odstępy
+Distanze da provare	Odstępy do sprawdzenia
+Distanze di stack	Odstępy zestawu
+Distanze provate	Sprawdzone odstępy
+Distanze provate e diagramma in elevazione	Sprawdzone odstępy i charakterystyka w elewacji
+Doppia biquad (4)	Podwójny biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Podwójny biquad: tam gdzie przekątne się krzyżują, druty się nie stykają (około 1,5 mm odstępu).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Miejsce, gdzie ramiona mocuje się do trójkątów łączących (F1BKM: trójkąty o boku 52 mm).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Dwie anteny jedna nad drugą, w fazie: Big Wheel co 5/8 lambda (QST i F1BKM: jedna odwrócona z dodatkową półfalą kabla, w modelu bezpośrednio w fazie), trzy dipole co 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Elewacja przy proponowanym odstępie (dBi nad ziemią)
+F/B lungo l'asse (NEC)	F/B wzdłuż osi (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: aluminium 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Wiązka błędu, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Promienniki 10 GHz, zmierzone różnice
+File MMANA senza la sezione ***Wires***.	Plik MMANA bez sekcji ***Wires***.
+Filo da tagliare	Drut do przycięcia
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Drut izolowany: NEC-2 liczy go jak goły. Izolacja skraca element: W6PQL stosuje bok 0,238 λ z drutem izolowanym wobec 0,248 λ Marshalla z gołym drutem (około 4 % mniej).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Źródła: DL6WU (wzór); ARRL Antenna Book wyd. 24 (granice wzoru, zestawy Yagi HF i kąty elewacji); L. Edwards VE7BQH (G/T jako kryterium dla zestawów EME); R. D. Straw N6BV (HFTA, zestawy i teren); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array autorstwa YO3IIU (macierz sprzężeń przy odbiorze, GPL-2 lub nowsza); G. Burke i A. Poggio, podręcznik NEC-2 (karta CP).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Częstotliwość projektowa. Po wybraniu pasma jest szara; przy "dowolne" się ją wpisuje. Przy jej zmianie bok, odstęp i reflektor są przeskalowywane.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Poza 50-1300 MHz skalowanie mapy z wykładnikiem 2,56 nie wystarcza (poniżej: absorpcja jonosferyczna i szum przemysłowy; powyżej: tło kosmiczne i atmosfera): wartość jest tylko orientacyjna.
+G max	G maks.
+G/T (da Rumore e G/T)	G/T (z Szum i G/T)
+G/T come VE7BQH	G/T jak VE7BQH
+G/T con il cielo vero	G/T z rzeczywistym niebem
+G/T max	G/T maks.
+G/T migliore	Najlepsze G/T
+Guadagno (NEC)	Zysk (NEC)
+Guadagno all'orizzonte (NEC)	Zysk przy horyzoncie (NEC)
+Guadagno e lobo laterale al variare della distanza	Zysk i listek boczny w funkcji odstępu
+Guadagno massimo con questa superficie	Maksymalny zysk z tą powierzchnią
+HF (sopra il terreno)	HF (nad ziemią)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Dwa poziomy ramion, trójkąty łączące, stub i złącze, z wymiarami.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: otwarty falowód 13,5 dB wobec choke 15,2 dB (szum słońca); wkręcany choke -0,6 dB; nakładka LNB -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 nie modeluje izolacji: obliczone wymiary dotyczą gołego drutu. Z drutem izolowanym element trzeba skrócić (W6PQL: bok 0,238 lambda zamiast 0,248, około 4 % mniej).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Górne ramię płatka i dolne ramię sąsiedniego płatka są odległe o 20 stopni: razem tworzą linię λ/4, która przenosi wysoką impedancję płatka do piasty.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	W szarym polu nie można pisać: pokazuje wartość pochodną. Przy "Oba" podaje się obie i odstępy są proporcjonalnie rozciągane lub ściskane: wychodzi się poza metodę i potrzebna jest optymalizacja NEC.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Bok ma około λ/4 od środka drutu do środka drutu; odległość od reflektora (0,1-0,13 λ w źródłach) to regulacja SWR. Z siatką reflektor jest kratą drutów o rzeczywistym oczku (Mumford: oczko poniżej λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Otwarty model jest już zestawem: otwórz pojedynczą antenę.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Model jest w wolnej przestrzeni: dla zestawu HF używa się gruntu przeciętnego (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Płatek w skali 1:1 na łączonych arkuszach A4 (zakładka 10 mm, krzyżyki co 50 mm, linijka 100 mm). Tylko dla Big Wheel.
+Impedenza al mozzo (NEC)	Impedancja w piaście (NEC)
+Impedenza di riferimento	Impedancja odniesienia
+Impedenza in serie al mozzo	Impedancja szeregowa w piaście
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, rozdz. 4: spadek w wolnej przestrzeni 4.3, kwadratowy 4.8, gaussowski 4.6, HPBW 4.13, pierwszy listek boczny 4.14a, rozogniskowanie 4.21-4.23, przesłonięcie przez wsporniki fali sferycznej 4.36c-f, składowa osiowa błędu 4.43, wiązka błędu 4.44-4.46. Jak w obliczeniach: spadek w wolnej przestrzeni (= tłumienie przestrzenne) i sprawności rozkładów. Inaczej: Baars używa rozkładów idealnych, tu całkuje się rzeczywisty promiennik; HPBW i listek boczny Baarsa służą do porównania i nie zastępują obliczeń
+K sotto l'orizzonte (skynoise: 290 K)	K poniżej horyzontu (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel jest krytyczna: sam Cebik (QST 3/2008) ostrzega, że NEC źle liczy linie tam, gdzie prąd jest mały, i że niewielkie różnice konstrukcyjne przesuwają impedancję. Stub zawsze dostraja się na rzeczywistej antenie.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Pasmo, na którym obwód jest pełną długością fali: powyżej pętla pracuje na wszystkich pasmach ze skrzynką antenową.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Szablon i piasta dotyczą Big Wheel: wybierz typ Big Wheel.
+Larghezza del riflettore	Szerokość reflektora
+Lati	Boki
+Lato del quadrato (centro filo)	Bok kwadratu (środek drutu)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Bok wzdłuż rzędu kwadratów (polaryzacja). Podwójny biquad: około 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Bok prostopadły do rzędu kwadratów (Marshall: 123 mm sam, 110 mm jako promiennik czaszy).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Bok, odległość od reflektora, reflektor pełny lub siatkowy i obrzeża porównane między źródłami; dopasowanie NEC, promiennik czaszy, szablon 1:1. Projekt zatwierdzony przez IC8TEM 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Źródła podają zysk od 8 dBd do 14 dBi na różnych reflektorach: NEC karty sprowadza je do wspólnej podstawy.
+Linea a finestra 450 Ω	Linia okienkowa 450 Ω
+Linea aperta 600 Ω	Linia otwarta 600 Ω
+Livelli	Poziomy
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Poziomy bardzo blisko w stosunku do rurki: linia ramion ma bardzo niską impedancję, a model jest na granicy NEC-2 (równoległe druty w odległości mniejszej niż kilka promieni).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	"Fazowanie" przewodów: pionowa odległość między dolnymi ramionami (ekran) a górnymi (środek). Oszacowana ze stosu płytek F1BKM: źródła jej nie podają.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	To samo obliczenie co Szum i G/T: niebo i ziemia o jednorodnej temperaturze (VE7BQH, TANT). Nie zależy ani od QTH, ani od czasu.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Lokator (JN70CN) lub szerokość i długość w stopniach (40,55 14,21). Zapisywane w config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): wszystkie pasma, linia drabinkowa lub kabel koncentryczny, straty w linii zasilającej
+Loop orizzontale multibanda	Pozioma pętla wielopasmowa
+Loop orizzontale multibanda (1.0.17)	Pozioma pętla wielopasmowa (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Pozioma pętla wielopasmowa (Loop Skywire)
+Lunghezza del dipolo	Długość dipola
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Długość drutu (wzdłuż osi, bez części do lutowania)
+Lunghezza della discesa	Długość linii zasilającej
+Lunghezza sviluppata del petalo	Długość rozwinięta płatka
+Mappa del cielo	Mapa nieba
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Mapy nieba: C. G. T. Haslam i in., przegląd 408 MHz (A&AS 47, 1982); ponowne przetworzenie M. Remazeilles i in. (MNRAS 451, 2015), z serwera LAMBDA NASA; mapy 144 i 432 MHz przygotował G8ONH.\n
+Matrice delle porte singolare.	Osobliwa macierz portów.
+Matrice di accoppiamento alla distanza proposta	Macierz sprzężeń przy proponowanym odstępie
+Mostra il primo nullo	Pokaż pierwsze zero
+Mozzo - lato esterno	Piasta - bok zewnętrzny
+Mozzo della Big Wheel	Piasta Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	NOWE · mapa nieba, QTH, czas, Księżyc (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	W ciągu 24 godzin (rzeczywiste niebo)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF i F... (Maignan, wg wersji F1BKM): koło około 1,2 m, boi się wiatru i lodu, brak nowych wymiarów.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Każdy kierunek nad horyzontem otrzymuje temperaturę mapy nieba w tym punkcie, o podanym czasie i z podanego QTH (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Każdy płatek to pełna długość fali zasilana na obu końcach: ramiona przy piaście to linie λ/4 na dwóch poziomach (niebieskie na dole = ekran, czerwone na górze = środek). Górne ramię płatka i dolne ramię sąsiedniego biegną w odległości 20 stopni: ta para działa jako linia. Równoległy stub przekształca około 10 Ω na 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Każdy płatek ma jedno ramię na dolnym i jedno na górnym poziomie: zmiana poziomu jest w połowie boku zewnętrznego (tuleja F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (czasza 3 m, f/D 0,3): otwarty falowód 13,5 dB wobec choke 15,2 dB; wkręcany choke -0,6 dB; nakładka LNB -0,5 dB. Tylko jako odniesienie: charakterystykę tych promienników trzeba obliczyć w NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Raster drutów siatki (W6PQL i G6GVI: siatka 1/2 x 1 cala).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Aby utworzyć zestaw z pojedynczej anteny: Szum/GT/Zestaw > Odstępy zestawu, wiersze i kolumny, przycisk "Utwórz zestaw w otwartym modelu" (od 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	Dla SWR (50 omów z kablem koncentrycznym bezpośrednio w punkcie zasilania, jak we wszystkich źródłach).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Dlatego używa się linii drabinkowej ze skrzynką antenową lub kabla koncentrycznego ze skrzynką w punkcie zasilania. "Oblicz wszystkie pasma (NEC)" oblicza każde pasmo i straty w linii zasilającej.
+Perdita della discesa con il ROS di ogni banda (dB)	Straty w linii zasilającej przy SWR każdego pasma (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Straty w linii zasilającej poniżej 3 dB na wszystkich pasmach.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Obwód 1005/f stóp, cztery kształty, obliczenia NEC wszystkich pasm ze stratami w linii (drabinkowa lub koncentryczna) przy SWR każdego pasma. Projekt zatwierdzony przez IC8TEM 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Płatki dwupoziomowe ze stubem, trzy dipole szeregowo z lambda/4, szablon gięcia 1:1 i szczegół piasty; przypadki MathWorks (Yagi 6-elementowa, helisa) w autoteście. Projekt zatwierdzony przez IC8TEM 17/11/2026.
+Petalo	Płatek
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	Zagięcia 90 stopni w punktach P. Czerwone węzły: żyła kabla po jednej stronie, ekran po drugiej (bez balunu).
+Pieno (lamiera, PCB)	Pełny (blacha, płytka drukowana)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Pełny: blacha lub płytka drukowana, w NEC gęsta krata (0,07 lambda, promień drutu o równej powierzchni). Siatka: rzeczywiste oczko z jej drutem.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Polaryzacja pozioma i charakterystyka dookólna: zysk przy horyzoncie zależy od wysokości i zestawienia, nie od kształtu.
+Porta in adattamento (NEC)	Dopasuj (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Pierwszy listek boczny, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Kierunek
+Punto di alimentazione	Punkt zasilania
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Nieprawidłowe QTH: wpisz lokator (np. JN70CN) lub szerokość i długość.
+Quota dell'antenna piu' bassa	Wysokość najniższej anteny
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR przy 50 Ω (po "Dopasuj")
+ROS a 50 Ω in banda	SWR przy 50 Ω w paśmie
+ROS in banda	SWR w paśmie
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Fioletowe przerywane promienie na pierwszych minimach po obu stronach listka głównego: odległość między nimi to szerokość do pierwszego zera (FNBW), zapisana pod charakterystyką wraz z najwyższym listkiem bocznym (SLL, w zakresie 100 stopni od maksimum, z wyłączeniem listka tylnego).
+Raggio al punto di alimentazione	Promień w punkcie zasilania
+Raggio del mozzo	Promień piasty
+Raggio delle curve (asse)	Promień gięcia (oś)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Promień dwóch zagięć płatka na osi rurki (szablon F1BKM: 140 mm wewnątrz).
+Rame da 1,2-2 mm nelle fonti.	Miedź 1,2-2 mm w źródłach.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Siatka zbyt gęsta do obliczeń (ponad 1800 segmentów): w NEC reflektor jest kratą 0,07 λ, jakby był pełny. Przy oczkach poniżej λ/10 różnica jest mała.
+Rete: diametro del filo	Siatka: średnica drutu
+Rete: maglia lungo l'altezza	Siatka: oczko w pionie
+Rete: maglia lungo la larghezza	Siatka: oczko w poziomie
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Mały reflektor: zysk spada, a listek tylny rośnie (Marshall: 123 mm przy 2,4 GHz, czyli około 1 λ, dla samego biquada).
+Risultati del cielo vero copiati.	Wyniki rzeczywistego nieba skopiowane.
+Rumore dal cielo vero	Szum z rzeczywistego nieba
+Rumore e G/T	Szum i G/T
+Rumore, G/T e stack	Szum, G/T i zestaw
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Zapisz szablon
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Potrzebne są co najmniej 2 anteny (wiersze x kolumny w karcie powyżej).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Wolna przestrzeń lub na wysokości nad gruntem przeciętnym (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Odstęp między dwoma węzłami zasilania
+Stack alla distanza proposta	Zestaw przy proponowanym odstępie
+Stack, tutte in fase (BIP)	Zestaw, wszystkie w fazie (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Pasek aluminiowy (F1BKM 20 x 2 mm): w NEC drut o promieniu szerokość/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	Pasek wygięty w U między dwoma poziomami, równolegle do piasty (QST 1961: 5"; F1BKM 127 mm w wolnej przestrzeni, 152 mm na samochodzie lub w zestawie).
+Stub	Stub
+Stub: larghezza	Stub: szerokość
+Stub: lunghezza sviluppata	Stub: długość rozwinięta
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman i Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb i Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Na niektórych pasmach linia traci ponad 3 dB (wyróżnione pola): skróć linię, przejdź na linię drabinkową lub umieść skrzynkę przy pętli.
+T antenna (cielo vero)	T anteny (rzeczywiste niebo)
+T antenna nelle 24 ore	T anteny w ciągu 24 godzin
+T antenna nelle 24 ore (puntamento fisso)	T anteny w ciągu 24 godzin (stały kierunek)
+T del terreno (cielo vero)	T ziemi (rzeczywiste niebo)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI i MW1FGQ; buildyourownantenna (podwójny biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI i MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (porównanie)
+Tabella dello stack copiata.	Tabela zestawu skopiowana.
+Temperature uniformi (VE7BQH)	Temperatury jednorodne (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Czas gwiazdowy: G. H. Kaplan, USNO Circular 179 (2005). Skalowanie częstotliwości: T = (fmapa / f)^2,56 T (G8ONH). Księżyc: J. Meeus, Astronomical Algorithms, rozdz. 47.\n
+Togli i cursori	Usuń kursory
+Tratto di lambda/4: impedenza	Odcinek lambda/4: impedancja
+Tratto di λ/4	Odcinek λ/4
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Trzy kable 50 Ω tej samej (dowolnej) długości do piasty, połączone szeregowo: około 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Trzy dipole na okręgu (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Trzy dipole w trójkącie (W4RNL)
+Usa come feed della parabola	Użyj jako promiennika czaszy
+Usa la distanza proposta per lo stack	Użyj proponowanego odstępu dla zestawu
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) i HF (nad ziemią), sprzężenie, najlepszy odstęp
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (wolna przestrzeń, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: dla każdego odstępu (współczynnik x odstęp DL6WU) zestaw jest obliczany w NEC: zysk, najwyższy listek boczny w płaszczyźnie zestawu, G/T (temperatury z Szum i G/T) i sprzężenie między portami. HF: wzór DL6WU nie ma zastosowania (anteny są nad ziemią i liczy się kąt promieniowania): zestaw dobiera się według pożądanych kątów elewacji.
+Vai a Distanze di stack	Przejdź do Odstępy zestawu
+Via Lattea (zone sopra 1000 K a 144 MHz)	Droga Mleczna (obszary powyżej 1000 K przy 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Widok z góry (skala 2:1): czerwone ramiona na górze (środek), niebieskie na dole (ekran)
+Vista di lato (scala 2:1)	Widok z boku (skala 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD i W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL i B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 i 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (porównania)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD i W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL i B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 i 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB zasila w narożniku; w połowie boku impedancja zmienia się niewiele, ale listki przesuwają się na wyższych pasmach.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: jak najwyżej; poniżej λ/4 najniższego pasma promieniuje niemal wyłącznie w górę (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: kwadrat. Okrąg (16-kąt) ma największą powierzchnię i nieco większy zysk; trójkąt jest dla trzech podpór.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Szum z rzeczywistego nieba (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	Yagi MathWorks, wymiary zoptymalizowane przez MathWorks (opublikowane: 10,59 dBi, F/B 15,6 dB, szerokości wiązki 50 i 62 stopnie)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Z szeregowe = suma trzech impedancji, za λ/4: Z = Zq^2 / Zszer (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| maks. dB
+° (dietro)	° (tył)
+Ω (barra in alto)	Ω (górny pasek)
+λ, a passi di 0,125	λ, w krokach 0,125
+a un'altezza dal suolo	na wysokości nad ziemią
+al massimo	w maksimum
+antenna base: il modello aperto	antena bazowa: otwarty model
+antenna singola	pojedyncza antena
+azimut ed elevazione	azymut i elewacja
+blu: sotto (calza)	niebieski: na dole (ekran)
+calcolata da DL6WU (	obliczony przez DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	obliczanie zestawu HF nad ziemią...
+calcolo in corso (spazio libero come VE7BQH	obliczanie (wolna przestrzeń jak VE7BQH
+cambio di livello (meta' del lato esterno)	zmiana poziomu (w połowie boku zewnętrznego)
+cerchio (poligono)	okrąg (wielokąt)
+cielo piu' freddo	najzimniejsze niebo
+circolarita' +-	okrągłość +-
+coassiale 50 Ω (RG-213)	kabel koncentryczny 50 Ω (RG-213)
+come VE7BQH (stack di 4)	jak VE7BQH (zestaw 4 anten)
+come prima: TANT, VE7BQH, KF2YN, stack	jak wcześniej: TANT, VE7BQH, KF2YN, zestaw
+con lo stub	ze stubem
+controfase (BOP)	w przeciwfazie (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: postać zamknięta Balanisa
+cos^2: massimo della curva di Balanis	cos^2: maksimum krzywej Balanisa
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	przekątna: niedopasowanie każdej anteny przy pozostałych zakończonych Z0; poza przekątną: moc przechodząca z jednego portu do drugiego
+distanza / distanza DL6WU	odstęp / odstęp DL6WU
+doppia biquad	podwójny biquad
+elevazione (gradi)	elewacja (stopnie)
+fascio d'errore (Baars 4.44-4.46)	wiązka błędu (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	spadek w wolnej przestrzeni f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	poza metodą: NEC podaje to po "Optymalizuj (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	poza zakresem wzoru (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	rozogniskowanie beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	gaussowski -12 dB: wzór Baarsa 4.6
+gaussiana -12 dB: integrale numerico	gaussowski -12 dB: całka numeryczna
+gradi · 30° come VE7BQH	stopnie · 30° jak VE7BQH
+griglia 0,07 λ	krata 0,07 λ
+guadagno con lobi sotto	zysk z listkami poniżej
+guadagno dello stack (dBi)	zysk zestawu (dBi)
+guadagno massimo	maksymalny zysk
+guadagno max	maks. zysk
+larghezza x altezza (lungo la polarizzazione)	szerokość x wysokość (wzdłuż polaryzacji)
+lobi laterali piu' bassi	najniższe listki boczne
+lobi piu' bassi	najniższe listki
+lobo laterale dB	listek boczny dB
+lobo laterale piu' alto (dB)	najwyższy listek boczny (dB)
+locator, oppure latitudine e longitudine	lokator lub szerokość i długość
+lungo l'arco	po łuku
+media voluta	pożądana średnia
+meta' lato	w połowie boku
+minimo / massimo	minimum / maksimum
+mutua con la porta 2	wzajemne z portem 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	brak odstępu z listkami poniżej progu: najniższe listki
+non vale	nieważne
+ore UTC	godziny UTC
+peso della Via Lattea qui e ora	waga Drogi Mlecznej tu i teraz
+premi "T antenna nelle 24 ore"	naciśnij "T anteny w ciągu 24 godzin"
+proposta (Distanze di stack)	proponowany (Odstępy zestawu)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	kwadratowy -12 dB: HPBW (Baars 66,3 stopnia lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	kwadratowy -12 dB: sprawność (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	kwadratowy -12 dB: wzór Baarsa 4.8
+quattro lati uguali	cztery równe boki
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	z modelu (jeśli w wolnej przestrzeni: grunt przeciętny 13 / 0,005, Sommerfeld)
+quota sopra	wysokość górna
+rete come superficie piena (maglia troppo fitta da calcolare)	siatka jako powierzchnia pełna (oczko zbyt gęste do obliczeń)
+rete con la maglia vera	siatka z rzeczywistym oczkiem
+rettangolo 2:1	prostokąt 2:1
+rosso: sopra (centrale)	czerwony: na górze (środek)
+scala 450 Ω	linia drabinkowa 450 Ω
+scala 600 Ω	linia drabinkowa 600 Ω
+scelta proposta	proponowany wybór
+solo sopra	tylko górna
+solo sotto	tylko dolna
+sotto calza (blu), sopra centrale (rosso)	na dole ekran (niebieski), na górze środek (czerwony)
+sull'asse del tubo (F1BKM: 535 mm)	na osi rurki (F1BKM: 535 mm)
+sulla singola	względem pojedynczej
+superficie senza errore	powierzchnia bez błędów
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	temperatury nieba i ziemi oraz elewacja z Szum i G/T
+temperature uniformi: si confronta con le tabelle	temperatury jednorodne: porównywalne z tabelami
+triangolo di sopra: centrale del connettore	górny trójkąt: środek złącza
+triangolo di sotto: calza (massa, staffa del palo)	dolny trójkąt: ekran (masa, uchwyt masztowy)
+triangolo equilatero, tre sostegni	trójkąt równoboczny, trzy podpory
+tutte in fase (BIP)	wszystkie w fazie (BIP)
+x la distanza DL6WU, a passi di 0,1	x odstęp DL6WU, w krokach 0,1
+RICEZIONE	ODBIÓR
+nessuno	brak
+adesso	teraz
+rurale	wiejski
+residenziale	mieszkalny

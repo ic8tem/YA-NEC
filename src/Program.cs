@@ -247,7 +247,20 @@ namespace YaNec
                             double laz, lel; Engine.CieloVero.Luna(new DateTime(2026, 11, 17, 21, 0, 0, DateTimeKind.Utc), 40.55, 14.21, out laz, out lel);
                             sb.AppendLine(string.Format(CI0, "       INFO Luna da JN70CN il 17/11/2026 21:00 UTC: azimut {0:0.0}, elevazione {1:0.0} gradi (Meeus ridotto)", laz, lel));
                             // stack VHF: 2 Yagi MathWorks sovrapposte, alla distanza DL6WU (nec2c: |S21| -27,6 dB, 12,08 dBi)
-                            var my = Engine.NecModel.Parse(Engine.ConfrontiLetteratura.YagiMathWorks(new[] { 0.90846, 0.84596, 0.72096, 0.65846, 0.72096, 0.65846, 0.42008, 0.36338, 0.23838, 0.51673, 0.53236, 0.016118 }));
+                            // stessa Yagi di ConfrontiLetteratura ma con il lobo orizzontale (+Y), elementi lungo X: lo stack sovrapposto (Z) e' nel piano H
+                            double[] vy = { 0.90846, 0.84596, 0.72096, 0.65846, 0.72096, 0.65846, 0.42008, 0.36338, 0.23838, 0.51673, 0.53236, 0.016118 };
+                            double[] py = { 0, vy[6], vy[6] + vy[7], vy[6] + vy[7] + vy[8], vy[6] + vy[7] + vy[8] + vy[9], vy[6] + vy[7] + vy[8] + vy[9] + vy[10] };
+                            double[] ly = { vy[0], vy[1], vy[2], vy[3], vy[4], vy[5] };
+                            var dk = new System.Text.StringBuilder("CM Yagi MathWorks con il lobo orizzontale\nCE\n");
+                            Func<double, string> fq = x => x.ToString("R", CI0);
+                            dk.Append("GW 1 21 " + fq(-ly[0] / 2) + " 0 0 " + fq(ly[0] / 2) + " 0 0 0.00635\n");
+                            dk.Append("GW 2 21 " + fq(-ly[1] / 2) + " " + fq(py[1]) + " 0 " + fq(ly[1] / 2) + " " + fq(py[1]) + " 0 0.00635\n");
+                            dk.Append("GW 3 21 " + fq(-ly[1] / 2) + " " + fq(py[1]) + " " + fq(vy[11]) + " " + fq(ly[1] / 2) + " " + fq(py[1]) + " " + fq(vy[11]) + " 0.00635\n");
+                            dk.Append("GW 4 1 " + fq(-ly[1] / 2) + " " + fq(py[1]) + " 0 " + fq(-ly[1] / 2) + " " + fq(py[1]) + " " + fq(vy[11]) + " 0.00635\n");
+                            dk.Append("GW 5 1 " + fq(ly[1] / 2) + " " + fq(py[1]) + " 0 " + fq(ly[1] / 2) + " " + fq(py[1]) + " " + fq(vy[11]) + " 0.00635\n");
+                            for (int q = 2; q < 6; q++) dk.Append("GW " + (q + 4) + " 21 " + fq(-ly[q] / 2) + " " + fq(py[q]) + " 0 " + fq(ly[q] / 2) + " " + fq(py[q]) + " 0 0.00635\n");
+                            dk.Append("GE 0\nEX 0 2 11 0 1 0\nFR 0 1 0 0 165 0\nEN\n");
+                            var my = Engine.NecModel.Parse(dk.ToString());
                             var sv = Engine.StackStudio.Vhf(my, 165, 2, 1, 0.6, 1.0, 300, 3, -13, 200, 1000, 30, 5, System.Threading.CancellationToken.None);
                             var p1 = sv.Dl6wu ?? sv.Punti[sv.Punti.Count - 1];
                             bool oks = Math.Abs(p1.S21 + 27.6) < 1.5 && Math.Abs(p1.G - 12.08) < 0.6;

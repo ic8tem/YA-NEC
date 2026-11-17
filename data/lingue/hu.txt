@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Mindkettő (DL6WU-n kívül)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	A DL6WU összeköti a két méretet. "Elemek száma" esetén a tartócső hossza a DL6WU-távolságokból adódik; "Tartócső hossza" esetén addig kerülnek fel direktorok, amíg elférnek. A szürke mező nem írható: a származtatott értéket mutatja. "Mindkettő (DL6WU-n kívül)" esetén mindkettőt megadjuk, és a távolságok arányosan nyúlnak vagy rövidülnek: kilépünk a módszerből, és NEC-optimalizálás szükséges.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	a 0-3. lépés nem érhető el: "Mindkettő (DL6WU-n kívül)" esetén az optimalizálás kötelező
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	A többi adatból származtatott érték: nem írható (lásd az adatok alatti megjegyzést).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	Az "Illesztés (NEC)" az oldalt rezonanciára, a távolságot minimális SWR-re állítja, majd kiszámítja az SWR-t és a nyereséget a sávszélesség +-5 %-án.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = középen (kisebb tekercs, kisebb hatásfok), 100 % felé = a vég felé (egyre nagyobb tekercs).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 antenna
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Csatlakozó a földelt háromszög alatt, a középvezető a felső háromszögbe megy.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: ellenőrizze ezt a vonalzót (nyomtatás 100 %-on)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: ellenőrizze ezt a vonalzót (nyomtatás 100 %-on, oldalhoz igazítás nélkül)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f láb (W7FB) = 306,3/f méter a legalsó sáv középfrekvenciáján. Sávváltáskor frissül.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, tömör vagy hálós reflektor, parabola tápláló
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, vízszintes polarizáció, körsugárzó; a két szint és a három dipól
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. A csonk a két háromszöget a csatlakozóval párhuzamosan köti: hosszát SWR-re hangolják (F1BKM: 152 mm autón vagy stackben).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Szigetelők a szintek között (F1BKM: 5 mm-es polisztirol lapok oszlopa): a dz távolságnak minden karnál azonosnak kell lennie.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Minden szirom szintváltása a külső oldal közepén van (F1BKM hüvely).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m JN1GLB méretekkel (a Rezonancia gomb nem hangolja, az a 20-10 m-es sávokon dolgozik)
+Accoppiamento e distanza migliore (NEC)	Csatolás és legjobb távolság (NEC)
+Accoppiamento piu' forte	Legerősebb csatolás
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	A 4. lépésben hozzáadódik a távolság-progresszió változó (hogyan nőnek a távolságok a gém mentén, rögzített gémmel)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Közvetlen táplálás koaxszal középen, balun nélkül (Marshall, OE2TZL, W6PQL): középvezető az egyik oldalra, árnyékolás a másikra.
+Alla distanza DL6WU	DL6WU távolságnál
+Altezza dal suolo	Magasság a föld felett
+Altezza dei bordi	Peremek magassága
+Altezza del riflettore	Reflektor magassága
+Angoli di partenza voluti	Kívánt kisugárzási szögek
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	A szirom két karja közötti szög (F1BKM sablon: 100 fok, azaz 20 fok a szomszédos szirmok karjai között).
+Antenna singola	Egyetlen antenna
+Antenne una sopra l'altra	Antennák egymás felett
+Apertura del petalo	Szirom nyílása
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Megnyitja a biquadot modellként a főablakban (elem z = 0-nál, nyaláb +Z felé, polarizáció Y mentén, mint a tölcsértáplálóknál) és átvált a Primer fókuszú tükör nézetre: ott a "Tápláló a NEC modellből" gomb átveszi a számított iránykarakterisztikát.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Szerzők és források (MIT licenc, teljes közlemény a Köszönetnyilvánításban)\n
+Azimut / elevazione	Azimut / eleváció
+Baars 4.22 (apertura uniforme)	Baars 4.22 (egyenletes apertúra)
+Banda dello stack	Stack sávja
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Munkasáv: a frekvencia és minden mm-es méret átméreteződik. A "szabad" lehetővé teszi a frekvencia beírását.
+Banda piu' bassa	Legalsó sáv
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel és három dipól (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: három egy hullámhosszú szirom, mindkét végén táplálva, a csonkkal az agyban. Három dipól (W4RNL, WA1FXT): kb. 50 ohmos dipólok háromszögben vagy körön, az agyban sorba kötve és lambda/4-gyel illesztve.
+Biquad (2 quadrati)	Biquad (2 négyzet)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad modellként megnyitva: a számítás végén nyomja meg a "Tápláló a NEC modellből" gombot a Primer fókuszú tükör nézetben.
+Biquad e doppia biquad	Biquad és dupla biquad
+Biquad e doppia biquad (1.0.16)	Biquad és dupla biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: két négyzet (8 huzaloldal). Dupla biquad: négy négyzet sorban (16 oldal), a huzalok érintkezés nélkül keresztezik egymást mindkét oldal első és második négyzete között.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	A gém túl rövid ezekhez az elemekhez: 0,3 lambdára állítva.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Előre hajlított peremek (az elem felé). 2 oldal: a polarizációra merőleges két perem (a négyzetsor tetején és alján). Marshall: 30 mm-es peremek, a hátsó nyalábok kb. 6 dB-lel alacsonyabbak.
+Bordi rialzati	Felhajtott peremek
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4. kiad., 15. fej.: cos^n táplálók hatásfoka (15-55, teszt a görbékkel), a fázishatásfok alsó korlátja (1 - m^2/2)^2, maximális nyereség lambda = 4 pi sigma esetén (15-67..71). A fáziskorlát garantált minimum: a számított érték mindig felette van
+Calcola accoppiamento e distanze (NEC)	Csatolás és távolságok számítása (NEC)
+Calcola lo stack HF (NEC)	HF stack számítása (NEC)
+Calcola prima le distanze.	Először számítsa ki a távolságokat.
+Calcola tutte le bande (NEC)	Minden sáv számítása (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Számítás a skynoise 0.2.2 alapján, szerző John C. Sager G8ONH (2025-2026, MIT licenc), C#-ra átírva a YA-NEC-ben.\n
+Cambiandola, le misure in mm si riscalano.	Módosításakor a mm-es méretek átméreteződnek.
+Centro del lobo nel cielo	A nyaláb közepe az égen
+Cielo (fuori dalla Via Lattea)	Égbolt (a Tejúton kívül)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Kattintson az iránykarakterisztikára: C1 kurzor, a következő kattintás C2; alatta mindkettő szintje, szöge és a különbségük. Dupla kattintás: eltávolítja a kurzorokat. A kurzorok frekvenciaváltáskor megmaradnak.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Koax a harmonikus sávok magas SWR-jével: a veszteség nagyon megnő (NT0Z, WB8IMY). Jobb a hangoló a táppontnál, vagy létravezeték.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Koax: kényelmes, de a harmonikus sávok magas SWR-jével sokat veszít (NT0Z, WB8IMY). Létravezeték: kis veszteség magas SWR mellett is, szimmetrikus hangoló vagy 4:1 balun kell a hangolónál.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Összehasonlítás: L. Edwards VE7BQH (G/T táblázatok 30 foknál, 4-es stack DL6WU távolsággal, egyenletes hőmérsékletek); TANT, YT1NT és VE3EA (DG7YBN kézikönyv); KF2YN korrekció.
+Controlli della 1.0.14 (Baars)	Ellenőrzések az 1.0.14-ben (Baars)
+Controlli della 1.0.14 (Balanis)	Ellenőrzések az 1.0.14-ben (Balanis)
+Criterio della distanza migliore	A legjobb távolság kritériuma
+Cursori	Kurzorok
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (vízszintes hurok, létravezeték, szimmetrikus hangoló); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (kerület 1005/f láb)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Huzalközéptől huzalközépig, kb. lambda/4 (Marshall 30,5 mm 2,4 GHz-en).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Végtől végig (körön: az ív mentén). Cebik: 34,3" háromszögben, 31,4" körön, 146 MHz-en 1/2"-es csővel.
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Az agytól (kb. 150 ohm sorosan) 50 ohmra: RG-62 93 ohm (Cebik), vagy 75 ohm, ha az impedancia 150 alatti.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Agytól agyig a cső mentén, kb. egy hullámhossz (F1BKM 2050 mm 145 MHz-en; QST 80" 146 MHz-en).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	A négyzetek síkjától a reflektor felületéig: ez az SWR beállítása (a forrásokban 0,1-0,13 lambda).
+Data e ora (UTC)	Dátum és idő (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Érvénytelen dátum és idő (nn/hh/éééé óó:pp, UTC).
+Dettaglio del mozzo (PDF)	Agy részlete (PDF)
+Diametro del tubo	Csőátmérő
+Diametro della ruota	Kerék átmérője
+Differenza dal cielo uniforme	Eltérés az egyenletes égbolttól
+Dima 1:1 (PDF)	1:1 sablon (PDF)
+Dima del petalo della Big Wheel	Big Wheel szirom sablon
+Dima della biquad	Biquad sablon
+Dima di piegatura 1:1 (PDF)	1:1 hajlítósablon (PDF)
+Direttori molto fitti (spaziature x	Direktorok nagyon sűrűn (távolságok x
+Direttori molto radi (spaziature x	Direktorok nagyon ritkán (távolságok x
+Discesa	Tápvonal
+Dischi e illuminatori	Parabolák és táplálók
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	A hajlított huzal rajza 1:1 léptékben A4-en, a hajlítási pontokkal, a nyomtatás ellenőrzésére szolgáló 100 mm-es vonalzóval és a mérettáblázattal.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Távolság a középponttól az egyes dipólok táppontjáig (Cebik: 15,4" háromszögben, 15,5" körön, 146 MHz-en).
+Distanza dal riflettore	Távolság a reflektortól
+Distanza proposta	Javasolt távolság
+Distanza tra i due livelli	Távolság a két szint között
+Distanze	Távolságok
+Distanze da provare	Kipróbálandó távolságok
+Distanze di stack	Stack távolságok
+Distanze provate	Kipróbált távolságok
+Distanze provate e diagramma in elevazione	Kipróbált távolságok és elevációs iránykarakterisztika
+Doppia biquad (4)	Dupla biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Dupla biquad: ahol az átlók keresztezik egymást, a huzalok nem érintkeznek (kb. 1,5 mm hézag).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Ahol a karok a csatlakozó háromszögekhez rögzülnek (F1BKM: 52 mm oldalú háromszögek).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Két antenna egymás felett, fázisban: Big Wheel 5/8 lambdánként (QST és F1BKM: az egyik fejjel lefelé egy plusz félhullámú kábellel, a modellben közvetlenül fázisban), három dipól 0,875 lambdánként (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Eleváció a javasolt távolságnál (dBi a föld felett)
+F/B lungo l'asse (NEC)	F/B a tengely mentén (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: alumínium 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Hibanyaláb, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	10 GHz-es táplálók, mért különbségek
+File MMANA senza la sezione ***Wires***.	MMANA fájl a ***Wires*** szakasz nélkül.
+Filo da tagliare	Vágandó huzal
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Szigetelt huzal: a NEC-2 csupaszként számolja. A szigetelés rövidíti az elemet: W6PQL 0,238 λ oldalt használ szigetelt huzallal, szemben Marshall 0,248 λ-jával csupasz huzallal (kb. 4 %-kal kevesebb).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Források: DL6WU (képlet); ARRL Antenna Book 24. kiad. (a képlet korlátai, HF Yagi stackek és elevációs szögek); L. Edwards VE7BQH (G/T mint az EME stackek kritériuma); R. D. Straw N6BV (HFTA, stackek és terep); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; YO3IIU nec2-array (vételi csatolási mátrix, GPL-2 vagy újabb); G. Burke és A. Poggio, NEC-2 kézikönyv (CP kártya).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Tervezési frekvencia. Kiválasztott sávval szürke; "szabad" esetén be kell írni. Módosításakor az oldal, a távolság és a reflektor átméreteződik.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	50-1300 MHz-en kívül a térkép 2,56-os kitevőjű skálázása nem elég (alatta: ionoszférikus elnyelés és ember okozta zaj; felette: kozmikus háttér és légkör): az érték csak tájékoztató.
+G max	G max.
+G/T (da Rumore e G/T)	G/T (a Zaj és G/T-ből)
+G/T come VE7BQH	G/T mint VE7BQH
+G/T con il cielo vero	G/T valós égbolttal
+G/T max	G/T max.
+G/T migliore	Legjobb G/T
+Guadagno (NEC)	Nyereség (NEC)
+Guadagno all'orizzonte (NEC)	Nyereség a horizonton (NEC)
+Guadagno e lobo laterale al variare della distanza	Nyereség és melléknyaláb a távolság függvényében
+Guadagno massimo con questa superficie	Maximális nyereség ezzel a felülettel
+HF (sopra il terreno)	HF (föld felett)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	A karok két szintje, a csatlakozó háromszögek, a csonk és a csatlakozó, méretekkel.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: nyitott hullámvezető 13,5 dB a choke 15,2 dB-jével szemben (napzaj); csavaros choke -0,6 dB; LNB sapka -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	A NEC-2 nem modellezi a szigetelést: a számított méretek csupasz huzalra érvényesek. Szigetelt huzallal az elemet rövidíteni kell (W6PQL: oldal 0,238 lambda 0,248 helyett, kb. 4 %-kal kevesebb).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Egy szirom felső karja és a szomszédos szirom alsó karja 20 fokra van egymástól: együtt alkotják a λ/4 vonalat, amely a szirom nagy impedanciáját az agyhoz viszi.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	A szürke mezőbe nem lehet írni: a származtatott értéket mutatja. "Mindkettő" esetén mindkettőt megadja, és a távolságok arányosan nyúlnak vagy zsugorodnak: kilép a módszerből, NEC optimalizálás kell.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Az oldal huzalközéptől huzalközépig kb. λ/4; a reflektortól való távolság (a forrásokban 0,1-0,13 λ) az SWR beállítása. Hálóval a reflektor huzalrács a valós lyukmérettel (Mumford: lyukméret λ/10 alatt).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	A megnyitott modell már stack: nyissa meg az egyetlen antennát.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	A modell szabad térben van: a HF stackhez átlagos talajt használ (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	A szirom 1:1 léptékben összeillesztendő A4-es lapokon (10 mm átfedés, keresztek 50 mm-enként, 100 mm-es vonalzó). Csak Big Wheelhez.
+Impedenza al mozzo (NEC)	Impedancia az agynál (NEC)
+Impedenza di riferimento	Referencia impedancia
+Impedenza in serie al mozzo	Soros impedancia az agynál
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, 4. fej.: szabadtéri lecsengés 4.3, négyzetes 4.8, Gauss 4.6, HPBW 4.13, első melléknyaláb 4.14a, defókuszálás 4.21-4.23, tartók gömbhullámú árnyékolása 4.36c-f, a hiba tengelyirányú összetevője 4.43, hibanyaláb 4.44-4.46. Mint a számítás: szabadtéri lecsengés (= térbeli csillapítás) és az eloszlások hatásfokai. Eltérő: Baars ideális eloszlásokat használ, itt a valós táplálót integráljuk; Baars HPBW-je és melléknyalábja összehasonlításra szolgál, nem helyettesíti a számítást
+K sotto l'orizzonte (skynoise: 290 K)	K a horizont alatt (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	A Big Wheel kritikus: maga Cebik (QST 3/2008) figyelmeztet, hogy a NEC rosszul számolja a vonalakat ott, ahol kicsi az áram, és kis építési eltérések eltolják az impedanciát. A csonkot mindig a valódi antennán hangolják.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	A sáv, amelyen a kerület egy teljes hullámhossz: felette a hurok minden sávon működik a hangolóval.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	A sablon és az agy a Big Wheelre vonatkozik: válassza a Big Wheel típust.
+Larghezza del riflettore	Reflektor szélessége
+Lati	Oldalak
+Lato del quadrato (centro filo)	A négyzet oldala (huzalközép)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Oldal a négyzetsor mentén (a polarizáció). Dupla biquad: kb. 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Oldal a négyzetsorra merőlegesen (Marshall: 123 mm önmagában, 110 mm parabola táplálóként).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Oldal, reflektortávolság, tömör vagy hálós reflektor és peremek a források között összehasonlítva; NEC illesztés, parabola tápláló, 1:1 sablon. Vázlatot jóváhagyta IC8TEM 2026.11.17-én.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	A források 8 dBd és 14 dBi közötti nyereséget adnak meg különböző reflektorokon: a lap NEC-je közös alapra hozza őket.
+Linea a finestra 450 Ω	Ablakos vonal 450 Ω
+Linea aperta 600 Ω	Nyitott vonal 600 Ω
+Livelli	Szintek
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	A szintek a csőhöz képest nagyon közel: a karok vonalának nagyon kicsi az impedanciája, a modell a NEC-2 határán van (párhuzamos huzalok néhány sugárnál közelebb).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	A vezetők "fázisozása": függőleges távolság az alsó karok (árnyékolás) és a felsők (közép) között. Az F1BKM laposzlopból becsülve: a források nem adják meg.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Ugyanaz a számítás, mint a Zaj és G/T: ég és föld egyenletes hőmérsékleten (VE7BQH, TANT). Nem függ sem a QTH-tól, sem az időtől.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Lokátor (JN70CN) vagy szélesség és hosszúság fokban (40,55 14,21). A config.ini-be menti.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): minden sáv, létravezeték vagy koax, tápvonal veszteség
+Loop orizzontale multibanda	Vízszintes többsávos hurok
+Loop orizzontale multibanda (1.0.17)	Vízszintes többsávos hurok (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Vízszintes többsávos hurok (Loop Skywire)
+Lunghezza del dipolo	Dipól hossza
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Huzal hossza (a tengely mentén, a forrasztandó rész nélkül)
+Lunghezza della discesa	Tápvonal hossza
+Lunghezza sviluppata del petalo	A szirom kiterített hossza
+Mappa del cielo	Égtérkép
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Égtérképek: C. G. T. Haslam és mtsai, 408 MHz-es felmérés (A&AS 47, 1982); újrafeldolgozás M. Remazeilles és mtsai (MNRAS 451, 2015), a NASA LAMBDA szerveréről; a 144 és 432 MHz-es térképeket G8ONH készítette.\n
+Matrice delle porte singolare.	Szinguláris portmátrix.
+Matrice di accoppiamento alla distanza proposta	Csatolási mátrix a javasolt távolságnál
+Mostra il primo nullo	Első nulla megjelenítése
+Mozzo - lato esterno	Agy - külső oldal
+Mozzo della Big Wheel	Big Wheel agy
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	ÚJ · égtérkép, QTH, idő, Hold (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	24 óra alatt (valós égbolt)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF és F... (Maignan, az F1BKM változat alapján): kb. 1,2 m-es kerék, fél a széltől és a jégtől, nincsenek új méretek.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	A horizont feletti minden irány az égtérkép abban a pontban mért hőmérsékletét kapja, a megadott időben és QTH-ról (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Minden szirom egy teljes hullámhossz, mindkét végén táplálva: az agy melletti karok λ/4 vonalak két szinten (kék alul = árnyékolás, piros felül = közép). Egy szirom felső karja és a szomszédos szirom alsó karja 20 fokra fut egymástól: ez a pár működik vonalként. A párhuzamos csonk a kb. 10 Ω-ot 50 Ω-ra viszi.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Minden szirom egyik karja az alsó, másik a felső szinten van: a szintváltás a külső oldal közepén (F1BKM hüvely).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (3 m-es tükör, f/D 0,3): nyitott hullámvezető 13,5 dB a choke 15,2 dB-jével szemben; csavaros choke -0,6 dB; LNB sapka -0,5 dB. Csak tájékoztatásul: e táplálók iránykarakterisztikáját NEC-cel kell számolni
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Hálóhuzalok osztása (W6PQL és G6GVI: 1/2 x 1 hüvelykes háló).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Stack létrehozása egyetlen antennából: Zaj/GT/Stack > Stack távolságok, sorok és oszlopok, "Stack létrehozása a megnyitott modellben" gomb (0.4.20 óta).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	SWR-hez (50 ohm, a koax közvetlenül a táppontnál, mint minden forrásban).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Ezért létravezetéket használnak hangolóval, vagy koaxot hangolóval a táppontnál. A "Minden sáv számítása (NEC)" kiszámítja minden sávot és a tápvonal veszteségét.
+Perdita della discesa con il ROS di ogni banda (dB)	Tápvonal veszteség az egyes sávok SWR-jével (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Tápvonal veszteség 3 dB alatt minden sávon.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Kerület 1005/f láb, négy forma, minden sáv NEC számítása a tápvonal veszteségével (létravezeték vagy koax) az egyes sávok SWR-jéhez. Vázlatot jóváhagyta IC8TEM 2026.11.17-én.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Kétszintes szirmok a csonkkal, három sorba kötött dipól lambda/4-gyel, 1:1 hajlítósablon és agyrészlet; MathWorks esetek (6 elemes Yagi, hélix) az önellenőrzésben. Vázlatot jóváhagyta IC8TEM 2026.11.17-én.
+Petalo	Szirom
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	90 fokos hajlítások a P pontokban. Piros csomópontok: a koax közepe az egyik oldalon, az árnyékolás a másikon (balun nélkül).
+Pieno (lamiera, PCB)	Tömör (lemez, nyák)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Tömör: lemez vagy nyák, a NEC-ben sűrű rács (0,07 lambda, azonos felületű huzalsugár). Háló: a valós lyukméret a saját huzaljával.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Vízszintes polarizáció és körsugárzó iránykarakterisztika: a horizonton mért nyereség a magasságtól és a stackeléstől függ, nem a formától.
+Porta in adattamento (NEC)	Illesztés (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Első melléknyaláb, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Irányzás
+Punto di alimentazione	Táppont
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Érvénytelen QTH: írja be a lokátort (pl. JN70CN) vagy a szélességet és hosszúságot.
+Quota dell'antenna piu' bassa	A legalsó antenna magassága
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR 50 Ω-on ("Illesztés" után)
+ROS a 50 Ω in banda	SWR 50 Ω-on a sávban
+ROS in banda	SWR a sávban
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Lila szaggatott sugarak a főnyaláb két oldalán lévő első minimumokon: távolságuk az első nullák közötti szélesség (FNBW), az iránykarakterisztika alá írva a legmagasabb melléknyalábbal együtt (SLL, a maximumtól 100 fokon belül, a hátsó nyaláb kivételével).
+Raggio al punto di alimentazione	Sugár a táppontnál
+Raggio del mozzo	Agy sugara
+Raggio delle curve (asse)	Hajlítási sugár (tengely)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	A szirom két hajlításának sugara a cső tengelyén (F1BKM sablon: 140 mm belül).
+Rame da 1,2-2 mm nelle fonti.	Réz 1,2-2 mm a forrásokban.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	A háló túl sűrű a számításhoz (több mint 1800 szegmens): a NEC-ben a reflektor 0,07 λ-s rács, mintha tömör lenne. λ/10 alatti lyukakkal a különbség kicsi.
+Rete: diametro del filo	Háló: huzalátmérő
+Rete: maglia lungo l'altezza	Háló: lyukméret magasságban
+Rete: maglia lungo la larghezza	Háló: lyukméret szélességben
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Kis reflektor: a nyereség csökken, a hátsó nyaláb nő (Marshall: 123 mm 2,4 GHz-en, azaz kb. 1 λ, csak a biquadhoz).
+Risultati del cielo vero copiati.	Valós égbolt eredmények másolva.
+Rumore dal cielo vero	Valós égbolt zaja
+Rumore e G/T	Zaj és G/T
+Rumore, G/T e stack	Zaj, G/T és stack
+Ruze sigma = lambda/20 (dB)	Ruze szigma = lambda/20 (dB)
+Salva la dima	Sablon mentése
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Legalább 2 antenna kell (sorok x oszlopok a fenti lapon).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Szabad tér, vagy átlagos talaj feletti magasságban (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Hézag a két tápcsomópont között
+Stack alla distanza proposta	Stack a javasolt távolságnál
+Stack, tutte in fase (BIP)	Stack, mind fázisban (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Alumíniumszalag (F1BKM 20 x 2 mm): a NEC-ben szélesség/4 sugarú huzal.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	U alakúra hajlított szalag a két szint között, az aggyal párhuzamosan (QST 1961: 5"; F1BKM 127 mm szabad térben, 152 mm autón vagy stackben).
+Stub	Csonk
+Stub: larghezza	Csonk: szélesség
+Stub: lunghezza sviluppata	Csonk: kiterített hossz
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman és Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb és Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Néhány sávon a tápvonal 3 dB-nél többet veszít (kiemelt mezők): rövidítse a vonalat, váltson létravezetékre, vagy tegye a hangolót a hurokhoz.
+T antenna (cielo vero)	Antenna T (valós égbolt)
+T antenna nelle 24 ore	Antenna T 24 óra alatt
+T antenna nelle 24 ore (puntamento fisso)	Antenna T 24 óra alatt (rögzített irányzás)
+T del terreno (cielo vero)	Föld T (valós égbolt)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI és MW1FGQ; buildyourownantenna (dupla biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI és MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (összehasonlítás)
+Tabella dello stack copiata.	Stack táblázat másolva.
+Temperature uniformi (VE7BQH)	Egyenletes hőmérsékletek (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Csillagidő: G. H. Kaplan, USNO Circular 179 (2005). Frekvenciaskálázás: T = (ftérkép / f)^2,56 T (G8ONH). Hold: J. Meeus, Astronomical Algorithms, 47. fej.\n
+Togli i cursori	Kurzorok eltávolítása
+Tratto di lambda/4: impedenza	Lambda/4 szakasz: impedancia
+Tratto di λ/4	λ/4 szakasz
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Három azonos (tetszőleges) hosszúságú 50 Ω-os kábel az agyhoz, sorba kötve: kb. 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Három dipól körön (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Három dipól háromszögben (W4RNL)
+Usa come feed della parabola	Használat parabola táplálóként
+Usa la distanza proposta per lo stack	A javasolt távolság használata a stackhez
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) és HF (föld felett), csatolás, legjobb távolság
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (szabad tér, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: minden távolságra (tényező x DL6WU távolság) a stacket NEC-cel számolja: nyereség, legmagasabb melléknyaláb a stack síkjában, G/T (a Zaj és G/T hőmérsékletei) és a portok közötti csatolás. HF: a DL6WU képlet nem érvényes (az antennák a föld felett vannak, és a kisugárzási szög számít): a stacket a kívánt elevációs szögek alapján választják.
+Vai a Distanze di stack	Ugrás: Stack távolságok
+Via Lattea (zone sopra 1000 K a 144 MHz)	Tejút (1000 K feletti területek 144 MHz-en)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Felülnézet (2:1 lépték): piros karok felül (közép), kékek alul (árnyékolás)
+Vista di lato (scala 2:1)	Oldalnézet (2:1 lépték)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD és W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL és B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 és 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (összehasonlítások)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD és W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL és B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 és 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB sarokban táplál; az oldal közepén az impedancia kevéssé változik, de a magas sávokon a nyalábok elmozdulnak.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: a lehető legmagasabbra; a legalsó sáv λ/4-e alatt szinte csak felfelé sugároz (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: négyzet. A kör (16 szög) területe a legnagyobb és nyeresége kicsit nagyobb; a háromszög három tartóhoz való.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Valós égbolt zaja (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks Yagi, a méreteket a MathWorks optimalizálta (közzétett: 10,59 dBi, F/B 15,6 dB, nyalábszélességek 50 és 62 fok)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Soros Z = a három impedancia összege, a λ/4 után: Z = Zq^2 / Zsoros (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| max. dB
+° (dietro)	° (hátsó)
+Ω (barra in alto)	Ω (felső sáv)
+λ, a passi di 0,125	λ, 0,125-ös lépésekben
+a un'altezza dal suolo	föld feletti magasságban
+al massimo	a maximumnál
+antenna base: il modello aperto	alapantenna: a megnyitott modell
+antenna singola	egyetlen antenna
+azimut ed elevazione	azimut és eleváció
+blu: sotto (calza)	kék: alul (árnyékolás)
+calcolata da DL6WU (	DL6WU szerint számítva (
+calcolo dello stack HF sopra il terreno in corso...	HF stack számítása föld felett...
+calcolo in corso (spazio libero come VE7BQH	számítás (szabad tér, mint VE7BQH
+cambio di livello (meta' del lato esterno)	szintváltás (a külső oldal közepén)
+cerchio (poligono)	kör (sokszög)
+cielo piu' freddo	leghidegebb égbolt
+circolarita' +-	kerekség +-
+coassiale 50 Ω (RG-213)	koax 50 Ω (RG-213)
+come VE7BQH (stack di 4)	mint VE7BQH (4-es stack)
+come prima: TANT, VE7BQH, KF2YN, stack	mint korábban: TANT, VE7BQH, KF2YN, stack
+con lo stub	csonkkal
+controfase (BOP)	ellenfázisban (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: Balanis zárt alak
+cos^2: massimo della curva di Balanis	cos^2: a Balanis görbe maximuma
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	átló: az egyes antennák illesztetlensége a többit Z0-val lezárva; átlón kívül: az egyik portról a másikra jutó teljesítmény
+distanza / distanza DL6WU	távolság / DL6WU távolság
+doppia biquad	dupla biquad
+elevazione (gradi)	eleváció (fok)
+fascio d'errore (Baars 4.44-4.46)	hibanyaláb (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	szabadtéri lecsengés f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	a módszeren kívül: a NEC adja meg az "Optimalizálás (NEC)" után
+fuori dall'intervallo della formula (0,1 < t < 1)	a képlet tartományán kívül (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	defókuszálás beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gauss -12 dB: Baars 4.6 képlet
+gaussiana -12 dB: integrale numerico	Gauss -12 dB: numerikus integrál
+gradi · 30° come VE7BQH	fok · 30° mint VE7BQH
+griglia 0,07 λ	0,07 λ-s rács
+guadagno con lobi sotto	nyereség az alatta lévő nyalábokkal
+guadagno dello stack (dBi)	stack nyeresége (dBi)
+guadagno massimo	maximális nyereség
+guadagno max	max. nyereség
+larghezza x altezza (lungo la polarizzazione)	szélesség x magasság (a polarizáció mentén)
+lobi laterali piu' bassi	legalacsonyabb melléknyalábok
+lobi piu' bassi	legalacsonyabb nyalábok
+lobo laterale dB	melléknyaláb dB
+lobo laterale piu' alto (dB)	legmagasabb melléknyaláb (dB)
+locator, oppure latitudine e longitudine	lokátor, vagy szélesség és hosszúság
+lungo l'arco	az ív mentén
+media voluta	kívánt átlag
+meta' lato	oldal közepén
+minimo / massimo	minimum / maximum
+mutua con la porta 2	kölcsönös a 2. porttal
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	nincs olyan távolság, ahol a nyalábok a küszöb alatt vannak: legalacsonyabb nyalábok
+non vale	nem érvényes
+ore UTC	UTC órák
+peso della Via Lattea qui e ora	a Tejút súlya itt és most
+premi "T antenna nelle 24 ore"	nyomja meg az "Antenna T 24 óra alatt" gombot
+proposta (Distanze di stack)	javasolt (Stack távolságok)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	négyzetes -12 dB: HPBW (Baars 66,3 fok lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	négyzetes -12 dB: hatásfok (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	négyzetes -12 dB: Baars 4.8 képlet
+quattro lati uguali	négy egyenlő oldal
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	a modellé (szabad térben: átlagos talaj 13 / 0,005, Sommerfeld)
+quota sopra	felső magasság
+rete come superficie piena (maglia troppo fitta da calcolare)	háló tömör felületként (a lyukméret túl sűrű a számításhoz)
+rete con la maglia vera	háló a valós lyukmérettel
+rettangolo 2:1	téglalap 2:1
+rosso: sopra (centrale)	piros: felül (közép)
+scala 450 Ω	létravezeték 450 Ω
+scala 600 Ω	létravezeték 600 Ω
+scelta proposta	javasolt választás
+solo sopra	csak felső
+solo sotto	csak alsó
+sotto calza (blu), sopra centrale (rosso)	alul árnyékolás (kék), felül közép (piros)
+sull'asse del tubo (F1BKM: 535 mm)	a cső tengelyén (F1BKM: 535 mm)
+sulla singola	az egyetlenhez képest
+superficie senza errore	hibamentes felület
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	ég- és talajhőmérséklet és eleváció a Zaj és G/T-ből
+temperature uniformi: si confronta con le tabelle	egyenletes hőmérsékletek: összevethető a táblázatokkal
+triangolo di sopra: centrale del connettore	felső háromszög: a csatlakozó közepe
+triangolo di sotto: calza (massa, staffa del palo)	alsó háromszög: árnyékolás (föld, árbocbilincs)
+triangolo equilatero, tre sostegni	egyenlő oldalú háromszög, három tartó
+tutte in fase (BIP)	mind fázisban (BIP)
+x la distanza DL6WU, a passi di 0,1	x DL6WU távolság, 0,1-es lépésekben
+RICEZIONE	VÉTEL
+nessuno	nincs
+adesso	most
+rurale	vidéki
+residenziale	lakóövezeti

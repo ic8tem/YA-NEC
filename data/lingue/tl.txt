@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Pareho (labas sa DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Pinag-uugnay ng DL6WU ang dalawang sukat. Sa "Bilang ng elemento" kinukuwenta ang boom mula sa mga pagitan ng DL6WU; sa "Haba ng boom" nagdaragdag ng direktor hangga't kasya sa boom. Hindi masusulatan ang abong field: ipinapakita nito ang nakuhang halaga. Sa "Pareho (labas sa DL6WU)" ibinibigay ang dalawa at hinahaba o pinaiikli nang proporsyonal ang mga pagitan: lumalabas sa pamamaraan at kailangan ang NEC optimization.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	hindi magagamit ang hakbang 0-3: sa "Pareho (labas sa DL6WU)" sapilitan ang optimization
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Halagang nakuha mula sa ibang datos: hindi masusulatan (tingnan ang tala sa ilalim ng datos).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	Itinatakda ng "I-match (NEC)" ang gilid para sa resonance at ang pagitan para sa pinakamababang SWR, saka kinukuwenta ang SWR at gain sa +-5 % ng bandwidth.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = sa gitna (mas maliit na coil, mas mababang efficiency), patungong 100 % = patungo sa dulo (lalong lumalaking coil).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 antenna
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Konektor sa ilalim ng ground na tatsulok, ang gitnang konduktor ay papunta sa itaas na tatsulok.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: suriin ang ruler na ito (i-print sa 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: suriin ang ruler na ito (i-print sa 100 %, walang fit to page)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f talampakan (W7FB) = 306,3/f metro sa gitnang frequency ng pinakamababang band. Naa-update kapag pinalitan ang band.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, solid o mesh na reflector, feed ng dish
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, pahalang na polarisasyon, omnidirectional; ang dalawang antas at ang tatlong dipole
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Ikinokonekta ng stub ang dalawang tatsulok nang parallel sa konektor: tinatabas ang haba para sa SWR (F1BKM: 152 mm sa kotse o sa stack).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Mga insulator sa pagitan ng mga antas (F1BKM: patong ng 5 mm na polystyrene plate): ang pagitan na dz ay dapat pareho sa lahat ng braso.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Ang paglipat ng antas ng bawat talulot ay nasa gitna ng panlabas na gilid (manggas ng F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m na may sukat ng JN1GLB (hindi tinotono ng button na Resonance, na gumagana sa mga band na 20-10 m)
+Accoppiamento e distanza migliore (NEC)	Coupling at pinakamahusay na pagitan (NEC)
+Accoppiamento piu' forte	Pinakamalakas na coupling
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	Sa hakbang 4 idinadagdag ang variable na pag-usad ng pagitan (kung paano lumalaki ang mga pagitan sa boom, nang nakapirmi ang boom)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Direktang feed gamit ang coax sa gitna, walang balun (Marshall, OE2TZL, W6PQL): gitnang konduktor sa isang panig, shield sa kabila.
+Alla distanza DL6WU	Sa pagitan ng DL6WU
+Altezza dal suolo	Taas mula sa lupa
+Altezza dei bordi	Taas ng mga gilid na tiklop
+Altezza del riflettore	Taas ng reflector
+Angoli di partenza voluti	Nais na take-off angle
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Anggulo sa pagitan ng dalawang braso ng talulot (template ng F1BKM: 100 degree, kaya 20 degree sa pagitan ng mga braso ng magkatabing talulot).
+Antenna singola	Iisang antenna
+Antenne una sopra l'altra	Mga antenna na magkapatong
+Apertura del petalo	Bukas ng talulot
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Binubuksan ang biquad bilang modelo sa pangunahing window (elemento sa z = 0, beam patungong +Z, polarisasyon sa Y, gaya ng mga horn feed) at pumupunta sa Prime-focus na dish: doon kinukuha ng button na "Feed mula sa NEC model" ang nakuwentang pattern.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Mga may-akda at pinagmulan (lisensyang MIT, buong abiso sa Pasasalamat)\n
+Azimut / elevazione	Azimuth / elevation
+Baars 4.22 (apertura uniforme)	Baars 4.22 (pantay na aperture)
+Banda dello stack	Band ng stack
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Gumaganang band: ang frequency at lahat ng sukat sa mm ay muling isineskala. Pinapayagan ng "malaya" na i-type ang frequency.
+Banda piu' bassa	Pinakamababang band
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel at tatlong dipole (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: tatlong talulot na isang wavelength na pinapakain sa magkabilang dulo, may stub sa hub. Tatlong dipole (W4RNL, WA1FXT): mga dipole na mga 50 ohm, nakatatsulok o nasa bilog, naka-series sa hub at tinutugma ng lambda/4.
+Biquad (2 quadrati)	Biquad (2 parisukat)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Binuksan ang biquad bilang modelo: kapag tapos na ang kuwenta, pindutin ang "Feed mula sa NEC model" sa Prime-focus na dish.
+Biquad e doppia biquad	Biquad at dobleng biquad
+Biquad e doppia biquad (1.0.16)	Biquad at dobleng biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: dalawang parisukat (8 gilid ng wire). Dobleng biquad: apat na parisukat na magkakahanay (16 gilid), nagkukrus ang mga wire nang hindi nagdidikit sa pagitan ng una at ikalawang parisukat sa bawat panig.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Masyadong maikli ang boom para sa mga elementong ito: itinakda sa 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Mga gilid na itinupi pasulong (patungo sa elemento). 2 gilid: ang dalawang gilid na patayo sa polarisasyon (itaas at ibaba ng hanay ng mga parisukat). Marshall: 30 mm na gilid, mga likurang lobe mga 6 dB na mas mababa.
+Bordi rialzati	Nakataas na mga gilid
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, ika-4 na ed., kab. 15: efficiency ng mga cos^n feed (15-55, pagsubok gamit ang mga kurba), mababang hangganan ng phase efficiency (1 - m^2/2)^2, pinakamataas na gain sa lambda = 4 pi sigma (15-67..71). Ang phase bound ay garantisadong minimum: laging mas mataas ang nakuwentang halaga
+Calcola accoppiamento e distanze (NEC)	Kuwentahin ang coupling at mga pagitan (NEC)
+Calcola lo stack HF (NEC)	Kuwentahin ang HF stack (NEC)
+Calcola prima le distanze.	Kuwentahin muna ang mga pagitan.
+Calcola tutte le bande (NEC)	Kuwentahin ang lahat ng band (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Kuwenta mula sa skynoise 0.2.2 ni John C. Sager G8ONH (2025-2026, lisensyang MIT), isinalin sa C# sa YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	Kapag binago, muling isineskala ang mga sukat sa mm.
+Centro del lobo nel cielo	Gitna ng beam sa langit
+Cielo (fuori dalla Via Lattea)	Langit (labas ng Milky Way)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	I-click ang pattern: cursor C1, ang susunod na click ay C2; sa ilalim ng pattern ang antas ng bawat isa, ang anggulo at ang pagkakaiba nila. Double click: inaalis ang mga cursor. Nananatili ang mga cursor kapag nagbago ang frequency.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Coax sa mataas na SWR ng mga harmonic band: lubhang tumataas ang loss (NT0Z, WB8IMY). Mas mainam ang tuner sa feed point, o ladder line.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Coax: maginhawa pero sa mataas na SWR ng mga harmonic band ay malaki ang loss (NT0Z, WB8IMY). Ladder line: mababa ang loss kahit mataas ang SWR, kailangan ng balanced tuner o 4:1 balun sa tuner.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Paghahambing: L. Edwards VE7BQH (mga talahanayan ng G/T sa 30 degree, stack ng 4 sa pagitan ng DL6WU, pantay na temperatura); TANT ni YT1NT at VE3EA (manwal ng DG7YBN); pagwawasto ng KF2YN.
+Controlli della 1.0.14 (Baars)	Mga pagsusuri sa 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Mga pagsusuri sa 1.0.14 (Balanis)
+Criterio della distanza migliore	Pamantayan ng pinakamahusay na pagitan
+Cursori	Mga cursor
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (pahalang na loop, ladder line, balanced tuner); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f talampakan)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Mula gitna ng wire hanggang gitna ng wire, mga lambda/4 (Marshall 30,5 mm sa 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Dulo hanggang dulo (sa bilog: sa kahabaan ng arko). Cebik: 34,3" bilang tatsulok, 31,4" sa bilog, sa 146 MHz na may 1/2" na tubo.
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Mula sa hub (mga 150 ohm naka-series) papuntang 50 ohm: RG-62 na 93 ohm (Cebik), o 75 ohm kung ang impedance ay mas mababa sa 150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Mula hub hanggang hub sa kahabaan ng tubo, mga isang wavelength (F1BKM 2050 mm sa 145 MHz; QST 80" sa 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Mula sa plane ng mga parisukat hanggang sa ibabaw ng reflector: ito ang pag-aayos ng SWR (0,1-0,13 lambda sa mga pinagmulan).
+Data e ora (UTC)	Petsa at oras (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Di-wastong petsa at oras (dd/mm/yyyy hh:mm, UTC).
+Dettaglio del mozzo (PDF)	Detalye ng hub (PDF)
+Diametro del tubo	Diyametro ng tubo
+Diametro della ruota	Diyametro ng gulong
+Differenza dal cielo uniforme	Pagkakaiba sa pantay na langit
+Dima 1:1 (PDF)	Template 1:1 (PDF)
+Dima del petalo della Big Wheel	Template ng talulot ng Big Wheel
+Dima della biquad	Template ng biquad
+Dima di piegatura 1:1 (PDF)	Template ng pagbaluktot 1:1 (PDF)
+Direttori molto fitti (spaziature x	Masyadong dikit ang mga director (mga pagitan x
+Direttori molto radi (spaziature x	Masyadong layo ang mga director (mga pagitan x
+Discesa	Feed line
+Dischi e illuminatori	Mga dish at feed
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Guhit ng nakabaluktot na wire sa sukat na 1:1 sa A4, kasama ang mga punto ng baluktot, ang 100 mm na ruler para suriin ang print at ang talahanayan ng sukat.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Layo mula sa gitna hanggang sa feed point ng bawat dipole (Cebik: 15,4" bilang tatsulok, 15,5" sa bilog, sa 146 MHz).
+Distanza dal riflettore	Layo mula sa reflector
+Distanza proposta	Iminumungkahing pagitan
+Distanza tra i due livelli	Pagitan ng dalawang antas
+Distanze	Mga pagitan
+Distanze da provare	Mga pagitang susubukan
+Distanze di stack	Mga pagitan ng stack
+Distanze provate	Mga nasubukang pagitan
+Distanze provate e diagramma in elevazione	Mga nasubukang pagitan at elevation pattern
+Doppia biquad (4)	Dobleng biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Dobleng biquad: kung saan nagkukrus ang mga diagonal ay hindi nagdidikit ang mga wire (mga 1,5 mm ang layo).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Kung saan ikinakabit ang mga braso sa mga nag-uugnay na tatsulok (F1BKM: tatsulok na 52 mm ang gilid).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Dalawang antenna na magkapatong, magkasabay na phase: Big Wheel sa 5/8 lambda (QST at F1BKM: ang isa ay baligtad na may dagdag na kalahating alon ng kable, sa modelo ay direktang magkasabay), tatlong dipole sa 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Elevation sa iminumungkahing pagitan (dBi sa ibabaw ng lupa)
+F/B lungo l'asse (NEC)	F/B sa kahabaan ng axis (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: aluminyo 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Error beam, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Mga feed sa 10 GHz, nasukat na pagkakaiba
+File MMANA senza la sezione ***Wires***.	MMANA file na walang seksyong ***Wires***.
+Filo da tagliare	Wire na puputulin
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Wire na may insulation: kinukuwenta ito ng NEC-2 na parang hubad. Pinaiikli ng insulation ang elemento: gumagamit si W6PQL ng 0,238 λ na gilid na may insulated wire laban sa 0,248 λ ni Marshall na may hubad na wire (mga 4 % na mas maikli).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Mga pinagmulan: DL6WU (pormula); ARRL Antenna Book ika-24 na ed. (hangganan ng pormula, mga HF Yagi stack at elevation angle); L. Edwards VE7BQH (G/T bilang pamantayan para sa EME stack); R. D. Straw N6BV (HFTA, mga stack at lupain); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array ni YO3IIU (coupling matrix sa pagtanggap, GPL-2 o mas bago); G. Burke at A. Poggio, manwal ng NEC-2 (CP card).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Design frequency. Kapag may piniling band ito ay kulay-abo; sa "malaya" ito ay tina-type. Kapag binago, muling isineskala ang gilid, pagitan at reflector.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Sa labas ng 50-1300 MHz hindi sapat ang pag-iskala ng mapa gamit ang exponent na 2,56 (sa ibaba: ionospheric absorption at gawang-taong ingay; sa itaas: cosmic background at atmospera): pahiwatig lamang ang halaga.
+G max	G max
+G/T (da Rumore e G/T)	G/T (mula sa Ingay at G/T)
+G/T come VE7BQH	G/T gaya ng VE7BQH
+G/T con il cielo vero	G/T sa tunay na langit
+G/T max	G/T max
+G/T migliore	Pinakamahusay na G/T
+Guadagno (NEC)	Gain (NEC)
+Guadagno all'orizzonte (NEC)	Gain sa horizon (NEC)
+Guadagno e lobo laterale al variare della distanza	Gain at side lobe ayon sa pagitan
+Guadagno massimo con questa superficie	Pinakamataas na gain sa ibabaw na ito
+HF (sopra il terreno)	HF (sa ibabaw ng lupa)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Ang dalawang antas ng mga braso, ang mga nag-uugnay na tatsulok, ang stub at ang konektor, may sukat.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: bukas na waveguide 13,5 dB laban sa choke 15,2 dB (ingay ng araw); turnilyong choke -0,6 dB; takip ng LNB -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	Hindi minomodelo ng NEC-2 ang insulation: ang nakuwentang sukat ay para sa hubad na wire. Sa insulated wire kailangang paikliin ang elemento (W6PQL: gilid na 0,238 lambda sa halip na 0,248, mga 4 % na mas maikli).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Ang itaas na braso ng isang talulot at ang ibabang braso ng katabing talulot ay 20 degree ang layo: magkasama nilang binubuo ang λ/4 na linya na nagdadala ng mataas na impedance ng talulot sa hub.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Hindi mae-edit ang kulay-abong field: ipinapakita nito ang hinangong halaga. Sa "Pareho" ibinibigay ang dalawa at proporsyonal na hinahatak o pinipiga ang mga pagitan: lumalabas sa pamamaraan at kailangan ang NEC optimization.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Ang gilid ay mga λ/4 mula gitna ng wire hanggang gitna ng wire; ang layo mula sa reflector (0,1-0,13 λ sa mga pinagmulan) ang pag-aayos ng SWR. Sa mesh, ang reflector ay grid ng wire na may tunay na butas (Mumford: butas na mas mababa sa λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Stack na ang nakabukas na modelo: buksan ang iisang antenna.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Nasa free space ang modelo: para sa HF stack ginagamit ang karaniwang lupa (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Ang talulot sa sukat na 1:1 sa mga A4 na papel na pagdudugtungin (10 mm na overlap, krus bawat 50 mm, 100 mm na ruler). Para lamang sa Big Wheel.
+Impedenza al mozzo (NEC)	Impedance sa hub (NEC)
+Impedenza di riferimento	Reference impedance
+Impedenza in serie al mozzo	Series impedance sa hub
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, kab. 4: free-space taper 4.3, kuwadratiko 4.8, Gaussian 4.6, HPBW 4.13, unang side lobe 4.14a, defocus 4.21-4.23, harang ng strut sa spherical wave 4.36c-f, axial na bahagi ng error 4.43, error beam 4.44-4.46. Kapareho ng kuwenta: free-space taper (= spatial attenuation) at efficiency ng mga distribusyon. Naiiba: ideal na distribusyon ang gamit ni Baars, dito ini-integrate ang tunay na feed; ang HPBW at side lobe ni Baars ay pang-paghahambing, hindi pamalit sa kuwenta
+K sotto l'orizzonte (skynoise: 290 K)	K sa ilalim ng horizon (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Maselan ang Big Wheel: si Cebik mismo (QST 3/2008) ay nagbababala na hindi mahusay kuwentahin ng NEC ang mga linya kung saan mahina ang kuryente at na maliliit na pagkakaiba sa pagkakagawa ay naglilipat ng impedance. Laging tinatabas ang stub sa tunay na antenna.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Ang band kung saan ang perimetro ay isang buong wavelength: sa itaas nito gumagana ang loop sa lahat ng band gamit ang tuner.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Para sa Big Wheel ang template at ang hub: piliin ang uring Big Wheel.
+Larghezza del riflettore	Lapad ng reflector
+Lati	Mga gilid
+Lato del quadrato (centro filo)	Gilid ng parisukat (gitna ng wire)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Gilid sa kahabaan ng hanay ng mga parisukat (ang polarisasyon). Dobleng biquad: mga 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Gilid na patayo sa hanay ng mga parisukat (Marshall: 123 mm mag-isa, 110 mm bilang feed ng dish).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Gilid, layo mula sa reflector, solid o mesh na reflector at mga gilid na tiklop na pinaghambing sa mga pinagmulan; NEC matching, feed ng dish, template 1:1. Inaprubahan ni IC8TEM ang mockup noong 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Nag-uulat ang mga pinagmulan ng gain mula 8 dBd hanggang 14 dBi sa iba't ibang reflector: inilalagay sila ng NEC ng card sa iisang batayan.
+Linea a finestra 450 Ω	Window line 450 Ω
+Linea aperta 600 Ω	Open line 600 Ω
+Livelli	Mga antas
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Napakalapit ng mga antas kumpara sa tubo: napakababa ng impedance ng linya ng mga braso at nasa hangganan ng NEC-2 ang modelo (parallel na wire na mas malapit sa ilang radius).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	Ang "phasing" ng mga konduktor: patayong layo sa pagitan ng ibabang braso (shield) at itaas (gitna). Tinantiya mula sa patong ng plate ni F1BKM: hindi ito binabanggit ng mga pinagmulan.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Kaparehong kuwenta ng Ingay at G/T: langit at lupa sa pantay na temperatura (VE7BQH, TANT). Hindi nakadepende sa QTH o sa oras.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Locator (JN70CN) o latitude at longitude sa degree (40,55 14,21). Naka-save sa config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): lahat ng band, ladder line o coax, loss sa feed line
+Loop orizzontale multibanda	Pahalang na multiband loop
+Loop orizzontale multibanda (1.0.17)	Pahalang na multiband loop (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Pahalang na multiband loop (Loop Skywire)
+Lunghezza del dipolo	Haba ng dipole
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Haba ng wire (sa kahabaan ng axis, hindi kasama ang bahaging hihinangin)
+Lunghezza della discesa	Haba ng feed line
+Lunghezza sviluppata del petalo	Nakabukang haba ng talulot
+Mappa del cielo	Mapa ng langit
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Mga mapa ng langit: C. G. T. Haslam et al., survey sa 408 MHz (A&AS 47, 1982); muling pagproseso ni M. Remazeilles et al. (MNRAS 451, 2015), mula sa LAMBDA server ng NASA; inihanda ni G8ONH ang mga mapa sa 144 at 432 MHz.\n
+Matrice delle porte singolare.	Singular na port matrix.
+Matrice di accoppiamento alla distanza proposta	Coupling matrix sa iminumungkahing pagitan
+Mostra il primo nullo	Ipakita ang unang null
+Mozzo - lato esterno	Hub - panlabas na gilid
+Mozzo della Big Wheel	Hub ng Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	BAGO · mapa ng langit, QTH, oras, Buwan (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	Sa loob ng 24 oras (tunay na langit)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF at F... (Maignan, mula sa bersyon ni F1BKM): gulong na mga 1,2 m, sensitibo sa hangin at yelo, walang bagong sukat.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Bawat direksyon sa ibabaw ng horizon ay kumukuha ng temperatura ng mapa ng langit sa puntong iyon, sa ibinigay na oras at QTH (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Bawat talulot ay isang buong wavelength na pinapakain sa magkabilang dulo: ang mga braso malapit sa hub ay λ/4 na linya sa dalawang antas (asul sa ibaba = shield, pula sa itaas = gitna). Ang itaas na braso ng isang talulot at ang ibabang braso ng katabi ay tumatakbo nang 20 degree ang layo: ang pares na iyon ang nagsisilbing linya. Dinadala ng parallel na stub ang mga 10 Ω sa 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Bawat talulot ay may isang braso sa ibabang antas at isa sa itaas: ang paglipat ng antas ay nasa gitna ng panlabas na gilid (manggas ng F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (dish na 3 m, f/D 0,3): bukas na waveguide 13,5 dB laban sa choke 15,2 dB; turnilyong choke -0,6 dB; takip ng LNB -0,5 dB. Sanggunian lamang: ang pattern ng mga feed na iyon ay dapat kuwentahin gamit ang NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Pagitan ng mga wire ng mesh (W6PQL at G6GVI: mesh na 1/2 x 1 pulgada).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Para gumawa ng stack mula sa iisang antenna: Ingay/GT/Stack > Mga pagitan ng stack, mga hilera at kolum, button na "Gumawa ng stack sa bukas na modelo" (mula 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	Para sa SWR (50 ohm na direktang nakakabit ang coax sa feed point, gaya ng sa lahat ng pinagmulan).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Kaya ginagamit ang ladder line na may tuner, o coax na may tuner sa feed point. Kinukuwenta ng "Kuwentahin ang lahat ng band (NEC)" ang bawat band at ang loss sa feed line.
+Perdita della discesa con il ROS di ogni banda (dB)	Loss sa feed line sa SWR ng bawat band (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Loss sa feed line na mas mababa sa 3 dB sa lahat ng band.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Perimetro 1005/f talampakan, apat na hugis, NEC na kuwenta ng lahat ng band kasama ang loss sa feed line (ladder o coax) para sa SWR ng bawat band. Inaprubahan ni IC8TEM ang mockup noong 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Dalawang-antas na talulot na may stub, tatlong dipole na naka-series na may lambda/4, template ng pagbaluktot 1:1 at detalye ng hub; mga kaso ng MathWorks (6-elementong Yagi, helix) sa self-test. Inaprubahan ni IC8TEM ang mockup noong 17/11/2026.
+Petalo	Talulot
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	Baluktot na 90 degree sa mga puntong P. Pulang node: gitna ng coax sa isang panig, shield sa kabila (walang balun).
+Pieno (lamiera, PCB)	Solid (sheet, PCB)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Solid: sheet o PCB, sa NEC ay siksik na grid (0,07 lambda, radius ng wire na may katumbas na area). Mesh: ang tunay na butas kasama ang wire nito.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Pahalang na polarisasyon at omnidirectional na pattern: ang gain sa horizon ay nakadepende sa taas at pag-stack, hindi sa hugis.
+Porta in adattamento (NEC)	I-match (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Unang side lobe, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Pagtutok
+Punto di alimentazione	Feed point
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Di-wastong QTH: i-type ang locator (hal. JN70CN) o latitude at longitude.
+Quota dell'antenna piu' bassa	Taas ng pinakamababang antenna
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR sa 50 Ω (pagkatapos ng "I-match")
+ROS a 50 Ω in banda	SWR sa 50 Ω sa band
+ROS in banda	SWR sa band
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Lilang putol-putol na sinag sa unang minimum sa magkabilang panig ng main lobe: ang layo nila ang first-null beamwidth (FNBW), nakasulat sa ilalim ng pattern kasama ang pinakamataas na side lobe (SLL, sa loob ng 100 degree mula sa maximum, hindi kasama ang likurang lobe).
+Raggio al punto di alimentazione	Radius sa feed point
+Raggio del mozzo	Radius ng hub
+Raggio delle curve (asse)	Radius ng baluktot (axis)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Radius ng dalawang baluktot ng talulot sa axis ng tubo (template ng F1BKM: 140 mm sa loob).
+Rame da 1,2-2 mm nelle fonti.	Tanso na 1,2-2 mm sa mga pinagmulan.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Masyadong siksik ang mesh para kuwentahin (higit 1800 segment): sa NEC ang reflector ay grid na 0,07 λ, na parang solid. Sa butas na mas mababa sa λ/10 maliit ang pagkakaiba.
+Rete: diametro del filo	Mesh: diyametro ng wire
+Rete: maglia lungo l'altezza	Mesh: butas sa taas
+Rete: maglia lungo la larghezza	Mesh: butas sa lapad
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Maliit na reflector: bumababa ang gain at lumalaki ang likurang lobe (Marshall: 123 mm sa 2,4 GHz, ibig sabihin mga 1 λ, para sa biquad lang).
+Risultati del cielo vero copiati.	Nakopya ang mga resulta ng tunay na langit.
+Rumore dal cielo vero	Ingay mula sa tunay na langit
+Rumore e G/T	Ingay at G/T
+Rumore, G/T e stack	Ingay, G/T at stack
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	I-save ang template
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Kailangan ng hindi bababa sa 2 antenna (mga hilera x kolum sa card sa itaas).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Free space, o sa taas sa ibabaw ng karaniwang lupa (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Puwang sa pagitan ng dalawang feed node
+Stack alla distanza proposta	Stack sa iminumungkahing pagitan
+Stack, tutte in fase (BIP)	Stack, lahat magkasabay na phase (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Aluminyong strip (F1BKM 20 x 2 mm): sa NEC ay wire na may radius na lapad/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	Strip na binaluktot na hugis U sa pagitan ng dalawang antas, parallel sa hub (QST 1961: 5"; F1BKM 127 mm sa free space, 152 mm sa kotse o sa stack).
+Stub	Stub
+Stub: larghezza	Stub: lapad
+Stub: lunghezza sviluppata	Stub: nakabukang haba
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman at Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb at Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Sa ilang band, higit 3 dB ang loss ng feed line (mga naka-highlight na kahon): paikliin ang linya, lumipat sa ladder line o ilagay ang tuner sa loop.
+T antenna (cielo vero)	T ng antenna (tunay na langit)
+T antenna nelle 24 ore	T ng antenna sa loob ng 24 oras
+T antenna nelle 24 ore (puntamento fisso)	T ng antenna sa loob ng 24 oras (nakapirming pagtutok)
+T del terreno (cielo vero)	T ng lupa (tunay na langit)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI at MW1FGQ; buildyourownantenna (dobleng biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI at MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (paghahambing)
+Tabella dello stack copiata.	Nakopya ang talahanayan ng stack.
+Temperature uniformi (VE7BQH)	Pantay na temperatura (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Sidereal time: G. H. Kaplan, USNO Circular 179 (2005). Pag-iskala ng frequency: T = (fmap / f)^2,56 T (G8ONH). Buwan: J. Meeus, Astronomical Algorithms, kab. 47.\n
+Togli i cursori	Alisin ang mga cursor
+Tratto di lambda/4: impedenza	Seksyong lambda/4: impedance
+Tratto di λ/4	Seksyong λ/4
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Tatlong 50 Ω na kable na magkasinghaba (anumang haba) papunta sa hub, naka-series: mga 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Tatlong dipole sa bilog (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Tatlong dipole sa tatsulok (W4RNL)
+Usa come feed della parabola	Gamitin bilang feed ng dish
+Usa la distanza proposta per lo stack	Gamitin ang iminumungkahing pagitan para sa stack
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) at HF (sa ibabaw ng lupa), coupling, pinakamahusay na pagitan
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (free space, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: para sa bawat pagitan (factor x pagitan ng DL6WU) kinukuwenta ang stack gamit ang NEC: gain, pinakamataas na side lobe sa plane ng stack, G/T (temperatura mula sa Ingay at G/T) at coupling sa pagitan ng mga port. HF: hindi angkop ang pormula ng DL6WU (nasa ibabaw ng lupa ang mga antenna at mahalaga ang take-off angle): pinipili ang stack ayon sa nais na elevation angle.
+Vai a Distanze di stack	Pumunta sa Mga pagitan ng stack
+Via Lattea (zone sopra 1000 K a 144 MHz)	Milky Way (mga lugar na higit 1000 K sa 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Tanaw mula itaas (sukat 2:1): pulang braso sa itaas (gitna), asul sa ibaba (shield)
+Vista di lato (scala 2:1)	Tanaw mula gilid (sukat 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD at W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL at B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 at 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (mga paghahambing)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD at W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL at B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 at 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	Sa sulok nagpapakain si W7FB; sa gitna ng gilid kaunti ang pagbabago ng impedance pero gumagalaw ang mga lobe sa matataas na band.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: kasintaas hangga't maaari; sa ibaba ng λ/4 ng pinakamababang band halos pataas lang ito nagra-radiate (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: parisukat. Ang bilog (16-gilid na polygon) ang may pinakamalaking area at bahagyang mas mataas na gain; ang tatsulok ay para sa tatlong suporta.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Ingay mula sa tunay na langit (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	Yagi ng MathWorks, sukat na in-optimize ng MathWorks (inilathala: 10,59 dBi, F/B 15,6 dB, beamwidth 50 at 62 degree)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Series Z = kabuuan ng tatlong impedance, pagkatapos ng λ/4: Z = Zq^2 / Zseries (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| max dB
+° (dietro)	° (likod)
+Ω (barra in alto)	Ω (itaas na bar)
+λ, a passi di 0,125	λ, sa hakbang na 0,125
+a un'altezza dal suolo	sa taas sa ibabaw ng lupa
+al massimo	sa maximum
+antenna base: il modello aperto	batayang antenna: ang bukas na modelo
+antenna singola	iisang antenna
+azimut ed elevazione	azimuth at elevation
+blu: sotto (calza)	asul: ibaba (shield)
+calcolata da DL6WU (	kinuwenta ng DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	kinukuwenta ang HF stack sa ibabaw ng lupa...
+calcolo in corso (spazio libero come VE7BQH	kinukuwenta (free space gaya ng VE7BQH
+cambio di livello (meta' del lato esterno)	paglipat ng antas (gitna ng panlabas na gilid)
+cerchio (poligono)	bilog (polygon)
+cielo piu' freddo	pinakamalamig na langit
+circolarita' +-	pagkabilog +-
+coassiale 50 Ω (RG-213)	coax 50 Ω (RG-213)
+come VE7BQH (stack di 4)	gaya ng VE7BQH (stack ng 4)
+come prima: TANT, VE7BQH, KF2YN, stack	gaya ng dati: TANT, VE7BQH, KF2YN, stack
+con lo stub	may stub
+controfase (BOP)	magkasalungat na phase (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: closed form ni Balanis
+cos^2: massimo della curva di Balanis	cos^2: maximum ng kurba ni Balanis
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	diagonal: mismatch ng bawat antenna habang ang iba ay naka-terminate sa Z0; labas ng diagonal: power na lumilipat mula sa isang port papunta sa iba
+distanza / distanza DL6WU	pagitan / pagitan ng DL6WU
+doppia biquad	dobleng biquad
+elevazione (gradi)	elevation (degree)
+fascio d'errore (Baars 4.44-4.46)	error beam (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	free-space taper f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	labas sa pamamaraan: ibinibigay ito ng NEC pagkatapos ng "I-optimize (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	labas sa saklaw ng pormula (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	defocus beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gaussian -12 dB: pormula ni Baars 4.6
+gaussiana -12 dB: integrale numerico	Gaussian -12 dB: numerical integral
+gradi · 30° come VE7BQH	degree · 30° gaya ng VE7BQH
+griglia 0,07 λ	grid na 0,07 λ
+guadagno con lobi sotto	gain na may lobe sa ibaba ng
+guadagno dello stack (dBi)	gain ng stack (dBi)
+guadagno massimo	pinakamataas na gain
+guadagno max	max gain
+larghezza x altezza (lungo la polarizzazione)	lapad x taas (sa kahabaan ng polarisasyon)
+lobi laterali piu' bassi	pinakamababang side lobe
+lobi piu' bassi	pinakamababang lobe
+lobo laterale dB	side lobe dB
+lobo laterale piu' alto (dB)	pinakamataas na side lobe (dB)
+locator, oppure latitudine e longitudine	locator, o latitude at longitude
+lungo l'arco	sa kahabaan ng arko
+media voluta	nais na average
+meta' lato	gitna ng gilid
+minimo / massimo	minimum / maximum
+mutua con la porta 2	mutual sa port 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	walang pagitan na nasa ilalim ng threshold ang mga lobe: pinakamababang lobe
+non vale	hindi wasto
+ore UTC	oras UTC
+peso della Via Lattea qui e ora	bigat ng Milky Way dito at ngayon
+premi "T antenna nelle 24 ore"	pindutin ang "T ng antenna sa loob ng 24 oras"
+proposta (Distanze di stack)	iminumungkahi (Mga pagitan ng stack)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	kuwadratiko -12 dB: HPBW (Baars 66,3 degree lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	kuwadratiko -12 dB: efficiency (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	kuwadratiko -12 dB: pormula ni Baars 4.8
+quattro lati uguali	apat na pantay na gilid
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	sa modelo (kung nasa free space: karaniwang lupa 13 / 0,005, Sommerfeld)
+quota sopra	itaas na taas
+rete come superficie piena (maglia troppo fitta da calcolare)	mesh bilang solid na ibabaw (masyadong siksik ang butas para kuwentahin)
+rete con la maglia vera	mesh na may tunay na butas
+rettangolo 2:1	parihaba 2:1
+rosso: sopra (centrale)	pula: itaas (gitna)
+scala 450 Ω	ladder line 450 Ω
+scala 600 Ω	ladder line 600 Ω
+scelta proposta	iminumungkahing pagpili
+solo sopra	itaas lamang
+solo sotto	ibaba lamang
+sotto calza (blu), sopra centrale (rosso)	sa ibaba shield (asul), sa itaas gitna (pula)
+sull'asse del tubo (F1BKM: 535 mm)	sa axis ng tubo (F1BKM: 535 mm)
+sulla singola	kumpara sa iisa
+superficie senza errore	ibabaw na walang error
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	temperatura ng langit at lupa at elevation mula sa Ingay at G/T
+temperature uniformi: si confronta con le tabelle	pantay na temperatura: maihahambing sa mga talahanayan
+triangolo di sopra: centrale del connettore	itaas na tatsulok: gitna ng konektor
+triangolo di sotto: calza (massa, staffa del palo)	ibabang tatsulok: shield (ground, clamp ng palo)
+triangolo equilatero, tre sostegni	equilateral na tatsulok, tatlong suporta
+tutte in fase (BIP)	lahat magkasabay na phase (BIP)
+x la distanza DL6WU, a passi di 0,1	x pagitan ng DL6WU, sa hakbang na 0,1
+RICEZIONE	PAGTANGGAP
+nessuno	wala
+adesso	ngayon
+rurale	rural
+residenziale	residensyal

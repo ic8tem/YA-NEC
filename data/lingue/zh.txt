@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	两者都给（超出 DL6WU）
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU 把这两个尺寸联系在一起。选择“单元数”时，横梁长度由 DL6WU 间距算出；选择“横梁长度”时，只要横梁放得下就继续添加引向器。灰色字段不能填写：它显示推算出的数值。选择“两者都给（超出 DL6WU）”时两者都给定，间距按比例拉长或缩短：这就超出了该方法，必须进行 NEC 优化。
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	第 0-3 步不可用：选择“两者都给（超出 DL6WU）”时必须优化
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	由其他数据推算出的数值：不能填写（见数据下方的说明）。
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"匹配 (NEC)" 将边长调至谐振、间距调至最小 SWR，然后计算 +-5 % 带宽内的 SWR 和增益。\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = 在中心（线圈较小，效率较低），向 100 % = 向末端（线圈越来越大）。
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 副天线
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. 连接器在接地三角形下方，芯线接上三角形。
+100 mm: controlla questo righello (stampa al 100 %)	100 mm：检查此标尺（按 100 % 打印）
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm：检查此标尺（按 100 % 打印，不缩放至页面）
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f 英尺 (W7FB) = 最低波段中心频率处 306,3/f 米。更换波段时更新。
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz，实心或网状反射器，抛物面馈源
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz，水平极化，全向；两层与三根偶极子
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. 短截线把两个三角形与连接器并联：其长度按 SWR 修剪（F1BKM：车载或堆叠时 152 mm）。
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. 层间绝缘子（F1BKM：5 mm 聚苯乙烯片叠）：所有臂的间距 dz 必须相同。
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. 每个花瓣的换层位置在外侧边的中点（F1BKM 套管）。
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	按 JN1GLB 尺寸的 6 m（不由谐振按钮调谐，该按钮用于 20-10 m 波段）
+Accoppiamento e distanza migliore (NEC)	耦合与最佳间距 (NEC)
+Accoppiamento piu' forte	最强耦合
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	第 4 步加入间距递增变量（在横梁固定时间距沿横梁如何增大）
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	中心用同轴电缆直接馈电，无巴伦（Marshall、OE2TZL、W6PQL）：芯线接一侧，屏蔽接另一侧。
+Alla distanza DL6WU	在 DL6WU 间距
+Altezza dal suolo	离地高度
+Altezza dei bordi	边沿高度
+Altezza del riflettore	反射器高度
+Angoli di partenza voluti	期望的发射角
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	花瓣两臂之间的夹角（F1BKM 模板：100 度，即相邻花瓣的臂之间 20 度）。
+Antenna singola	单副天线
+Antenne una sopra l'altra	上下叠放的天线
+Apertura del petalo	花瓣张角
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	在主窗口中把双菱形作为模型打开（振子在 z = 0，波束朝 +Z，极化沿 Y，与喇叭馈源相同），并转到正馈抛物面：在那里"从 NEC 模型取馈源"按钮读取计算出的方向图。
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	作者与来源（MIT 许可证，完整声明见致谢）\n
+Azimut / elevazione	方位 / 仰角
+Baars 4.22 (apertura uniforme)	Baars 4.22（均匀口径）
+Banda dello stack	堆叠波段
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	工作波段：频率和所有以 mm 计的尺寸都会重新缩放。"自由" 可输入频率。
+Banda piu' bassa	最低波段
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel 与三偶极子 (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel：三片一个波长的花瓣，两端馈电，短截线位于轮毂。三偶极子 (W4RNL, WA1FXT)：约 50 Ω 的偶极子，三角形或圆形排列，在轮毂串联并用 lambda/4 匹配。
+Biquad (2 quadrati)	双菱形（2 个正方形）
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	双菱形已作为模型打开：计算完成后，在正馈抛物面中按"从 NEC 模型取馈源"。
+Biquad e doppia biquad	双菱形与双双菱形
+Biquad e doppia biquad (1.0.16)	双菱形与双双菱形 (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	双菱形：两个正方形（8 段导线边）。双双菱形：一排四个正方形（16 边），每侧第一与第二个正方形之间导线交叉而不接触。
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	横梁对这些振子太短：已设为 0,3 lambda。
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	向前（朝振子）折起的边沿。2 边：与极化垂直的两条边沿（正方形排的上、下方）。Marshall：30 mm 边沿，后瓣低约 6 dB。
+Bordi rialzati	翻起的边沿
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 第 4 版, 第 15 章：cos^n 馈源的效率（15-55，用曲线检验），相位效率下限 (1 - m^2/2)^2，lambda = 4 pi sigma 时的最大增益（15-67..71）。相位下限是保证的最小值：计算值总在其上
+Calcola accoppiamento e distanze (NEC)	计算耦合与间距 (NEC)
+Calcola lo stack HF (NEC)	计算 HF 堆叠 (NEC)
+Calcola prima le distanze.	请先计算间距。
+Calcola tutte le bande (NEC)	计算所有波段 (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	计算来自 John C. Sager G8ONH 的 skynoise 0.2.2（2025-2026，MIT 许可证），在 YA-NEC 中移植为 C#。\n
+Cambiandola, le misure in mm si riscalano.	更改后以 mm 计的尺寸会重新缩放。
+Centro del lobo nel cielo	波束中心在天空中的位置
+Cielo (fuori dalla Via Lattea)	天空（银河以外）
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	点击方向图：光标 C1，再点一次为 C2；方向图下方显示各自电平、角度及两者之差。双击：清除光标。更换频率时光标保留。
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	同轴电缆在谐波波段高 SWR 下：损耗大幅增加 (NT0Z, WB8IMY)。最好在馈电点放调谐器，或用梯形线。
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	同轴电缆：方便，但在谐波波段高 SWR 下损耗很大 (NT0Z, WB8IMY)。梯形线：即使高 SWR 也低损耗，需平衡调谐器或在调谐器处用 4:1 巴伦。
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	比较：L. Edwards VE7BQH（仰角 30 度的 G/T 表，DL6WU 间距的 4 副堆叠，均匀温度）；YT1NT 与 VE3EA 的 TANT（DG7YBN 手册）；KF2YN 修正。
+Controlli della 1.0.14 (Baars)	1.0.14 中的校验 (Baars)
+Controlli della 1.0.14 (Balanis)	1.0.14 中的校验 (Balanis)
+Criterio della distanza migliore	最佳间距准则
+Cursori	光标
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z（水平环、梯形线、平衡调谐器）; S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book（周长 1005/f 英尺）
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	导线中心到导线中心，约 lambda/4（Marshall：2,4 GHz 时 30,5 mm）。
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	端到端（圆形时沿弧）。Cebik：三角形 34,3"，圆形 31,4"，146 MHz，1/2" 管。
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	从轮毂（串联约 150 Ω）到 50 Ω：93 Ω 的 RG-62 (Cebik)，若阻抗低于 150 则用 75 Ω。
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	沿管从轮毂到轮毂，约一个波长（F1BKM：145 MHz 时 2050 mm；QST：146 MHz 时 80"）。
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	从正方形平面到反射器表面：这就是 SWR 调整（来源中为 0,1-0,13 lambda）。
+Data e ora (UTC)	日期和时间 (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	日期和时间无效 (dd/mm/yyyy hh:mm, UTC)。
+Dettaglio del mozzo (PDF)	轮毂细节 (PDF)
+Diametro del tubo	管径
+Diametro della ruota	轮径
+Differenza dal cielo uniforme	与均匀天空之差
+Dima 1:1 (PDF)	1:1 模板 (PDF)
+Dima del petalo della Big Wheel	Big Wheel 花瓣模板
+Dima della biquad	双菱形模板
+Dima di piegatura 1:1 (PDF)	1:1 弯折模板 (PDF)
+Direttori molto fitti (spaziature x	引向器过密（间距 x
+Direttori molto radi (spaziature x	引向器过疏（间距 x
+Discesa	馈线
+Dischi e illuminatori	抛物面与馈源
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	A4 纸上 1:1 的弯折导线图，含弯折点、检查打印用的 100 mm 标尺和尺寸表。
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	中心到每根偶极子馈电点的距离（Cebik：三角形 15,4"，圆形 15,5"，146 MHz）。
+Distanza dal riflettore	到反射器的距离
+Distanza proposta	建议间距
+Distanza tra i due livelli	两层之间的间距
+Distanze	间距
+Distanze da provare	待试间距
+Distanze di stack	堆叠间距
+Distanze provate	已试间距
+Distanze provate e diagramma in elevazione	已试间距与仰角方向图
+Doppia biquad (4)	双双菱形 (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	双双菱形：对角线交叉处导线不接触（间隔约 1,5 mm）。
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	臂与连接三角形的固定处（F1BKM：边长 52 mm 的三角形）。
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	上下两副，同相：Big Wheel 间距 5/8 lambda（QST 与 F1BKM：一副倒置并加半波长电缆，模型中直接同相），三偶极子间距 0,875 lambda (Cebik)。
+Elevazione alla distanza proposta (dBi sul terreno)	建议间距下的仰角（地面上 dBi）
+F/B lungo l'asse (NEC)	沿轴的 F/B (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM：铝 10 mm；QST 1961：3/8" (9,5 mm)；Cebik：1/2" (12,7 mm)。
+Fascio d'errore, Baars 4.44-4.46	误差波束，Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	10 GHz 馈源，实测差异
+File MMANA senza la sezione ***Wires***.	无 ***Wires*** 段的 MMANA 文件。
+Filo da tagliare	待剪导线
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	绝缘线：NEC-2 按裸线计算。绝缘层使振子变短：W6PQL 用绝缘线边长 0,238 λ，Marshall 用裸线 0,248 λ（约短 4 %）。
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	来源：DL6WU（公式）；ARRL Antenna Book 第 24 版（公式适用范围、HF 八木堆叠与仰角）；L. Edwards VE7BQH（G/T 作为 EME 堆叠准则）；R. D. Straw N6BV（HFTA、堆叠与地形）；ON4UN, Low-Band DXing；L. B. Cebik W4RNL；YO3IIU 的 nec2-array（接收耦合矩阵，GPL-2 或更新）；G. Burke 与 A. Poggio, NEC-2 手册（CP 卡）。
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	设计频率。选定波段时为灰色；"自由" 时可输入。更改后边长、间距与反射器重新缩放。
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	在 50-1300 MHz 以外，用指数 2,56 缩放天图不够（以下：电离层吸收与人为噪声；以上：宇宙背景与大气）：数值仅供参考。
+G max	G 最大
+G/T (da Rumore e G/T)	G/T（来自噪声与 G/T）
+G/T come VE7BQH	VE7BQH 式 G/T
+G/T con il cielo vero	真实天空下的 G/T
+G/T max	G/T 最大
+G/T migliore	最佳 G/T
+Guadagno (NEC)	增益 (NEC)
+Guadagno all'orizzonte (NEC)	地平线增益 (NEC)
+Guadagno e lobo laterale al variare della distanza	增益与旁瓣随间距变化
+Guadagno massimo con questa superficie	此表面的最大增益
+HF (sopra il terreno)	HF（地面上）
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	臂的两层、连接三角形、短截线与连接器，含尺寸。
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3：开口波导 13,5 dB 对 choke 15,2 dB（太阳噪声）；旋入式 choke -0,6 dB；LNB 帽 -0,5 dB。
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 不模拟绝缘层：计算尺寸为裸线尺寸。用绝缘线时须缩短振子（W6PQL：边长 0,238 lambda 而非 0,248，约短 4 %）。
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	一片花瓣的上臂与相邻花瓣的下臂相距 20 度：二者组成 λ/4 传输线，把花瓣的高阻抗带到轮毂。
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	灰色字段不可编辑：显示的是推导值。选"两者"时两者都给定，间距按比例拉伸或压缩：此时脱离该方法，需要 NEC 优化。
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	边长按导线中心约为 λ/4；到反射器的距离（来源中 0,1-0,13 λ）即 SWR 调整。网状时反射器为具有实际网孔的导线栅格（Mumford：网孔小于 λ/10）。
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	打开的模型已经是堆叠：请打开单副天线。
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	模型在自由空间：HF 堆叠使用平均地面（13 / 0,005 S/m，Sommerfeld）。
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	1:1 花瓣，印在拼接的 A4 纸上（重叠 10 mm，每 50 mm 一个十字，100 mm 标尺）。仅用于 Big Wheel。
+Impedenza al mozzo (NEC)	轮毂处阻抗 (NEC)
+Impedenza di riferimento	参考阻抗
+Impedenza in serie al mozzo	轮毂处串联阻抗
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, 第 4 章：自由空间锥削 4.3，二次分布 4.8，高斯 4.6，HPBW 4.13，第一旁瓣 4.14a，离焦 4.21-4.23，球面波支杆遮挡 4.36c-f，误差的轴向分量 4.43，误差波束 4.44-4.46。与本计算相同：自由空间锥削（= 空间衰减）与各分布的效率。不同：Baars 使用理想分布，此处对实际馈源积分；Baars 的 HPBW 和旁瓣仅供比较，不能替代计算
+K sotto l'orizzonte (skynoise: 290 K)	地平线以下 K (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel 很敏感：Cebik 本人 (QST 3/2008) 警告，在电流小的地方 NEC 对传输线的计算不准，小的制作差异会使阻抗偏移。短截线必须在实际天线上修剪。
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	周长恰为一个完整波长的波段：在其以上，环借助调谐器可在所有波段工作。
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	模板与轮毂适用于 Big Wheel：请选择 Big Wheel 类型。
+Larghezza del riflettore	反射器宽度
+Lati	边
+Lato del quadrato (centro filo)	正方形边长（导线中心）
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	沿正方形排的边（极化方向）。双双菱形：约 2,3 lambda。
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	垂直于正方形排的边（Marshall：单独 123 mm，作抛物面馈源 110 mm）。
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	边长、到反射器距离、实心或网状反射器及边沿在各来源间比较；NEC 匹配、抛物面馈源、1:1 模板。草图已由 IC8TEM 于 17/11/2026 批准。
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	各来源在不同反射器上给出 8 dBd 至 14 dBi 的增益：卡片的 NEC 把它们放到同一基准上。
+Linea a finestra 450 Ω	窗口线 450 Ω
+Linea aperta 600 Ω	明线 600 Ω
+Livelli	层
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	层间距相对管子过近：臂线阻抗很低，模型处于 NEC-2 的极限（平行导线间距小于几个半径）。
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	导体的"相位"：下臂（屏蔽）与上臂（芯线）之间的垂直距离。由 F1BKM 的片叠估计：来源未给出。
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	与噪声与 G/T 相同的计算：天空与地面温度均匀 (VE7BQH, TANT)。与 QTH 和时间都无关。
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	定位符 (JN70CN) 或以度为单位的纬度和经度 (40,55 14,21)。保存在 config.ini 中。
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z)：全波段，梯形线或同轴，馈线损耗
+Loop orizzontale multibanda	水平多波段环
+Loop orizzontale multibanda (1.0.17)	水平多波段环 (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	水平多波段环 (Loop Skywire)
+Lunghezza del dipolo	偶极子长度
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	导线长度（沿轴，不含焊接部分）
+Lunghezza della discesa	馈线长度
+Lunghezza sviluppata del petalo	花瓣展开长度
+Mappa del cielo	天图
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	天图：C. G. T. Haslam 等，408 MHz 巡天 (A&AS 47, 1982)；M. Remazeilles 等重新处理 (MNRAS 451, 2015)，来自 NASA 的 LAMBDA 服务器；144 和 432 MHz 天图由 G8ONH 制作。\n
+Matrice delle porte singolare.	端口矩阵奇异。
+Matrice di accoppiamento alla distanza proposta	建议间距下的耦合矩阵
+Mostra il primo nullo	显示第一零点
+Mozzo - lato esterno	轮毂 - 外侧边
+Mozzo della Big Wheel	Big Wheel 轮毂
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	新 · 天图、QTH、时间、月球 (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	24 小时内（真实天空）
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF 与 F...（Maignan，基于 F1BKM 版本）：约 1,2 m 的轮，怕风和结冰，无新尺寸。
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	地平线以上每个方向取给定时间、给定 QTH 下该点的天图温度 (skynoise, G8ONH)。
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	每片花瓣是两端馈电的一个完整波长：靠近轮毂的臂是两层的 λ/4 传输线（下层蓝 = 屏蔽，上层红 = 芯线）。花瓣的上臂与相邻花瓣的下臂相隔 20 度走线：这一对构成传输线。并联短截线把约 10 Ω 变为 50 Ω。
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	每片花瓣下层一臂、上层一臂：换层位置在外侧边中点（F1BKM 套管）。
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY（3 m 抛物面，f/D 0,3）：开口波导 13,5 dB 对 choke 15,2 dB；旋入式 choke -0,6 dB；LNB 帽 -0,5 dB。仅供参考：这些馈源的方向图须用 NEC 计算
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	网状导线间距（W6PQL 与 G6GVI：1/2 x 1 英寸网）。
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	由单副天线创建堆叠：噪声/GT/堆叠 > 堆叠间距，行与列，"在已打开的模型中创建堆叠"按钮（自 0.4.20 起）。
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	用于 SWR（与所有来源相同，同轴直接接馈电点，50 Ω）。
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	因此使用带调谐器的梯形线，或在馈电点放调谐器的同轴。"计算所有波段 (NEC)" 计算每个波段及馈线损耗。
+Perdita della discesa con il ROS di ogni banda (dB)	各波段 SWR 下的馈线损耗 (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	所有波段馈线损耗低于 3 dB。
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	周长 1005/f 英尺，四种形状，按各波段 SWR 计算含馈线损耗（梯形线或同轴）的全波段 NEC。草图已由 IC8TEM 于 17/11/2026 批准。
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	带短截线的两层花瓣，带 lambda/4 的串联三偶极子，1:1 弯折模板与轮毂细节；自检中的 MathWorks 算例（6 单元八木、螺旋）。草图已由 IC8TEM 于 17/11/2026 批准。
+Petalo	花瓣
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	在 P 点处 90 度弯折。红色节点：一侧接同轴芯线，另一侧接屏蔽（无巴伦）。
+Pieno (lamiera, PCB)	实心（板材、PCB）
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	实心：板材或 PCB，在 NEC 中为密栅格（0,07 lambda，等面积导线半径）。网状：实际网孔及其导线。
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	水平极化、全向方向图：地平线增益取决于高度和堆叠，而非形状。
+Porta in adattamento (NEC)	匹配 (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	第一旁瓣，Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	指向
+Punto di alimentazione	馈电点
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	QTH 无效：请输入定位符（如 JN70CN）或纬度和经度。
+Quota dell'antenna piu' bassa	最低天线的高度
+ROS a 50 Ω (dopo "Porta in adattamento")	50 Ω 下的 SWR（"匹配"后）
+ROS a 50 Ω in banda	波段内 50 Ω SWR
+ROS in banda	波段内 SWR
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	主瓣两侧第一极小处的紫色虚线：二者之间为第一零点波束宽度 (FNBW)，与最高旁瓣（SLL，距最大值 100 度内，不含后瓣）一起显示在方向图下方。
+Raggio al punto di alimentazione	馈电点半径
+Raggio del mozzo	轮毂半径
+Raggio delle curve (asse)	弯折半径（轴线）
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	花瓣两个弯在管轴上的半径（F1BKM 模板：内侧 140 mm）。
+Rame da 1,2-2 mm nelle fonti.	来源中为 1,2-2 mm 铜线。
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	网太密无法计算（超过 1800 段）：NEC 中反射器为 0,07 λ 栅格，视同实心。网孔小于 λ/10 时差别很小。
+Rete: diametro del filo	网：导线直径
+Rete: maglia lungo l'altezza	网：高度方向网孔
+Rete: maglia lungo la larghezza	网：宽度方向网孔
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	小反射器：增益下降、后瓣增大（Marshall：2,4 GHz 时 123 mm，即约 1 λ，仅双菱形）。
+Risultati del cielo vero copiati.	真实天空结果已复制。
+Rumore dal cielo vero	真实天空噪声
+Rumore e G/T	噪声与 G/T
+Rumore, G/T e stack	噪声、G/T 与堆叠
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	保存模板
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	至少需要 2 副天线（上方卡片中的行 x 列）。
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	自由空间，或在平均地面上方某高度 (Sommerfeld)。
+Spazio tra i due nodi di alimentazione	两个馈电节点之间的间隙
+Stack alla distanza proposta	建议间距下的堆叠
+Stack, tutte in fase (BIP)	堆叠，全部同相 (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	铝条（F1BKM 20 x 2 mm）：在 NEC 中为半径 = 宽度/4 的导线。
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	在两层之间弯成 U 形的铝条，与轮毂并联（QST 1961：5"；F1BKM：自由空间 127 mm，车载或堆叠时 152 mm）。
+Stub	短截线
+Stub: larghezza	短截线：宽度
+Stub: lunghezza sviluppata	短截线：展开长度
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman 与 Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb 与 Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	某些波段馈线损耗超过 3 dB（高亮格）：缩短馈线、改用梯形线或把调谐器放在环处。
+T antenna (cielo vero)	天线 T（真实天空）
+T antenna nelle 24 ore	24 小时天线 T
+T antenna nelle 24 ore (puntamento fisso)	24 小时天线 T（固定指向）
+T del terreno (cielo vero)	地面 T（真实天空）
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI 与 MW1FGQ; buildyourownantenna（双双菱形，2014）; nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI 与 MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox（比较）
+Tabella dello stack copiata.	堆叠表已复制。
+Temperature uniformi (VE7BQH)	均匀温度 (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	恒星时：G. H. Kaplan, USNO Circular 179 (2005)。频率缩放：T = (fmap / f)^2,56 T (G8ONH)。月球：J. Meeus, Astronomical Algorithms, 第 47 章。\n
+Togli i cursori	清除光标
+Tratto di lambda/4: impedenza	lambda/4 段：阻抗
+Tratto di λ/4	λ/4 段
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	三根相同（任意）长度的 50 Ω 电缆接到轮毂，串联：约 150 Ω。
+Tre dipoli a cerchio (WA1FXT)	圆形三偶极子 (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	三角形三偶极子 (W4RNL)
+Usa come feed della parabola	用作抛物面馈源
+Usa la distanza proposta per lo stack	将建议间距用于堆叠
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) 与 HF（地面上），耦合，最佳间距
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF（自由空间，DL6WU）
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF：对每个间距（系数 x DL6WU 间距）用 NEC 计算堆叠：增益、堆叠平面内最高旁瓣、G/T（噪声与 G/T 的温度）及端口间耦合。HF：DL6WU 公式不适用（天线在地面上，发射角很重要）：按期望仰角选择堆叠。
+Vai a Distanze di stack	转到堆叠间距
+Via Lattea (zone sopra 1000 K a 144 MHz)	银河（144 MHz 时高于 1000 K 的区域）
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	俯视图（比例 2:1）：红色臂在上（芯线），蓝色在下（屏蔽）
+Vista di lato (scala 2:1)	侧视图（比例 2:1）
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD 与 W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL 与 B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 与 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox（比较）
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD 与 W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL 与 B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 与 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB 在角上馈电；在边的中点阻抗变化不大，但高波段方向瓣会移动。
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB：越高越好；低于最低波段 λ/4 时几乎只向上辐射 (NVIS)。
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB：正方形。圆形（16 边形）面积最大、增益略高；三角形适合三根支撑。
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - 真实天空噪声 (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks 八木，由 MathWorks 优化尺寸（公布值：10,59 dBi，F/B 15,6 dB，波束宽度 50 和 62 度）
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	串联 Z = 三个阻抗之和，经 λ/4 后：Z = Zq^2 / Zseries (Cebik, antenneX 145)。\n
+|Sij| max dB	|Sij| 最大 dB
+° (dietro)	°（后向）
+Ω (barra in alto)	Ω（上方栏）
+λ, a passi di 0,125	λ，步长 0,125
+a un'altezza dal suolo	在地面上方某高度
+al massimo	在最大值处
+antenna base: il modello aperto	基础天线：已打开的模型
+antenna singola	单副天线
+azimut ed elevazione	方位与仰角
+blu: sotto (calza)	蓝：下（屏蔽）
+calcolata da DL6WU (	按 DL6WU 计算 (
+calcolo dello stack HF sopra il terreno in corso...	正在计算地面上的 HF 堆叠...
+calcolo in corso (spazio libero come VE7BQH	正在计算（与 VE7BQH 一样为自由空间
+cambio di livello (meta' del lato esterno)	换层（外侧边中点）
+cerchio (poligono)	圆（多边形）
+cielo piu' freddo	最冷天空
+circolarita' +-	圆度 +-
+coassiale 50 Ω (RG-213)	同轴 50 Ω (RG-213)
+come VE7BQH (stack di 4)	与 VE7BQH 相同（4 副堆叠）
+come prima: TANT, VE7BQH, KF2YN, stack	同前：TANT、VE7BQH、KF2YN、堆叠
+con lo stub	带短截线
+controfase (BOP)	反相 (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42：Balanis 闭式
+cos^2: massimo della curva di Balanis	cos^2：Balanis 曲线最大值
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	对角线：其余天线端接 Z0 时每副天线的失配；非对角线：从一个端口传到另一端口的功率
+distanza / distanza DL6WU	间距 / DL6WU 间距
+doppia biquad	双双菱形
+elevazione (gradi)	仰角（度）
+fascio d'errore (Baars 4.44-4.46)	误差波束 (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	自由空间锥削 f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	方法之外：NEC 在"优化 (NEC)"后给出
+fuori dall'intervallo della formula (0,1 < t < 1)	超出公式范围 (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	离焦 beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	高斯 -12 dB：Baars 公式 4.6
+gaussiana -12 dB: integrale numerico	高斯 -12 dB：数值积分
+gradi · 30° come VE7BQH	度 · 30° 与 VE7BQH 相同
+griglia 0,07 λ	0,07 λ 栅格
+guadagno con lobi sotto	旁瓣低于该值时的增益
+guadagno dello stack (dBi)	堆叠增益 (dBi)
+guadagno massimo	最大增益
+guadagno max	最大增益
+larghezza x altezza (lungo la polarizzazione)	宽 x 高（沿极化）
+lobi laterali piu' bassi	最低旁瓣
+lobi piu' bassi	最低波瓣
+lobo laterale dB	旁瓣 dB
+lobo laterale piu' alto (dB)	最高旁瓣 (dB)
+locator, oppure latitudine e longitudine	定位符，或纬度和经度
+lungo l'arco	沿弧
+media voluta	期望平均
+meta' lato	边中点
+minimo / massimo	最小 / 最大
+mutua con la porta 2	与端口 2 的互耦
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	没有使波瓣低于阈值的间距：最低波瓣
+non vale	无效
+ore UTC	UTC 小时
+peso della Via Lattea qui e ora	此时此地银河的权重
+premi "T antenna nelle 24 ore"	请按"24 小时天线 T"
+proposta (Distanze di stack)	建议值（堆叠间距）
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	二次分布 -12 dB：HPBW (Baars 66,3 度 lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	二次分布 -12 dB：效率 (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	二次分布 -12 dB：Baars 公式 4.8
+quattro lati uguali	四边相等
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	模型中的（若为自由空间：平均地面 13 / 0,005，Sommerfeld）
+quota sopra	上层高度
+rete come superficie piena (maglia troppo fitta da calcolare)	网作为实心表面（网孔太密无法计算）
+rete con la maglia vera	按实际网孔的网
+rettangolo 2:1	矩形 2:1
+rosso: sopra (centrale)	红：上（芯线）
+scala 450 Ω	梯形线 450 Ω
+scala 600 Ω	梯形线 600 Ω
+scelta proposta	建议选项
+solo sopra	仅上层
+solo sotto	仅下层
+sotto calza (blu), sopra centrale (rosso)	下为屏蔽（蓝），上为芯线（红）
+sull'asse del tubo (F1BKM: 535 mm)	在管轴上（F1BKM：535 mm）
+sulla singola	相对于单副
+superficie senza errore	无误差表面
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	来自噪声与 G/T 的天空和地面温度及仰角
+temperature uniformi: si confronta con le tabelle	均匀温度：可与表格对比
+triangolo di sopra: centrale del connettore	上三角形：连接器芯线
+triangolo di sotto: calza (massa, staffa del palo)	下三角形：屏蔽（接地、桅杆夹）
+triangolo equilatero, tre sostegni	等边三角形，三根支撑
+tutte in fase (BIP)	全部同相 (BIP)
+x la distanza DL6WU, a passi di 0,1	x DL6WU 间距，步长 0,1
+RICEZIONE	接收
+nessuno	无
+adesso	现在
+rurale	乡村
+residenziale	住宅区

@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Και τα δύο (εκτός DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Η DL6WU συνδέει τα δύο μεγέθη. Με "Αριθμός στοιχείων" το boom υπολογίζεται από τις αποστάσεις της DL6WU· με "Μήκος φορέα" προστίθενται κατευθυντήρες όσο χωρούν στο boom. Το γκρι πεδίο δεν γράφεται: δείχνει την παραγόμενη τιμή. Με "Και τα δύο (εκτός DL6WU)" δίνονται και τα δύο και οι αποστάσεις επιμηκύνονται ή βραχύνονται αναλογικά: βγαίνουμε από τη μέθοδο και χρειάζεται βελτιστοποίηση NEC.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	βήματα 0-3 μη διαθέσιμα: με "Και τα δύο (εκτός DL6WU)" η βελτιστοποίηση είναι υποχρεωτική
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Τιμή που προκύπτει από τα άλλα δεδομένα: δεν γράφεται (δείτε τη σημείωση κάτω από τα δεδομένα).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	Το "Προσαρμογή (NEC)" ρυθμίζει την πλευρά για συντονισμό και την απόσταση για ελάχιστο SWR, μετά υπολογίζει SWR και κέρδος σε +-5 % του εύρους ζώνης.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = στο κέντρο (μικρότερο πηνίο, χαμηλότερη απόδοση), προς 100 % = προς το άκρο (όλο και μεγαλύτερο πηνίο).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 κεραία
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Συνδετήρας κάτω από το τρίγωνο γείωσης, ο κεντρικός αγωγός πηγαίνει στο πάνω τρίγωνο.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: ελέγξτε αυτόν τον χάρακα (εκτύπωση στο 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: ελέγξτε αυτόν τον χάρακα (εκτύπωση στο 100 %, χωρίς προσαρμογή στη σελίδα)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f πόδια (W7FB) = 306,3/f μέτρα στην κεντρική συχνότητα της χαμηλότερης μπάντας. Ενημερώνεται όταν αλλάζετε μπάντα.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, συμπαγής ή δικτυωτός ανακλαστήρας, τροφοδότης πιάτου
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, οριζόντια πόλωση, πανκατευθυντική· τα δύο επίπεδα και τα τρία δίπολα
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Το stub συνδέει τα δύο τρίγωνα παράλληλα με τον συνδετήρα: το μήκος ρυθμίζεται για SWR (F1BKM: 152 mm σε αυτοκίνητο ή σε συστοιχία).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Μονωτήρες μεταξύ των επιπέδων (F1BKM: στοίβα πλακών πολυστερίνης 5 mm): η απόσταση dz πρέπει να είναι ίδια για όλους τους βραχίονες.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Η αλλαγή επιπέδου κάθε πετάλου είναι στη μέση της εξωτερικής πλευράς (χιτώνιο F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m με τις διαστάσεις JN1GLB (δεν συντονίζεται με το κουμπί Συντονισμός, που λειτουργεί στις μπάντες 20-10 m)
+Accoppiamento e distanza migliore (NEC)	Σύζευξη και βέλτιστη απόσταση (NEC)
+Accoppiamento piu' forte	Ισχυρότερη σύζευξη
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	Στο βήμα 4 προστίθεται η μεταβλητή προοδευτικότητα αποστάσεων (πώς μεγαλώνουν οι αποστάσεις κατά μήκος του boom, με σταθερό boom)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Άμεση τροφοδοσία με ομοαξονικό στο κέντρο, χωρίς balun (Marshall, OE2TZL, W6PQL): κεντρικός αγωγός στη μία πλευρά, θωράκιση στην άλλη.
+Alla distanza DL6WU	Στην απόσταση DL6WU
+Altezza dal suolo	Ύψος από το έδαφος
+Altezza dei bordi	Ύψος των χειλέων
+Altezza del riflettore	Ύψος ανακλαστήρα
+Angoli di partenza voluti	Επιθυμητές γωνίες εκπομπής
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Γωνία μεταξύ των δύο βραχιόνων ενός πετάλου (πρότυπο F1BKM: 100 μοίρες, δηλαδή 20 μοίρες μεταξύ βραχιόνων γειτονικών πετάλων).
+Antenna singola	Μεμονωμένη κεραία
+Antenne una sopra l'altra	Κεραίες η μία πάνω από την άλλη
+Apertura del petalo	Άνοιγμα πετάλου
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Ανοίγει το biquad ως μοντέλο στο κύριο παράθυρο (στοιχείο σε z = 0, δέσμη προς +Z, πόλωση κατά Y, όπως οι τροφοδότες χοάνης) και μεταβαίνει στο Πιάτο κύριας εστίας: εκεί το κουμπί "Τροφοδότης από μοντέλο NEC" παίρνει το υπολογισμένο διάγραμμα.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Συγγραφείς και πηγές (άδεια MIT, πλήρης σημείωση στις Ευχαριστίες)\n
+Azimut / elevazione	Αζιμούθιο / ανύψωση
+Baars 4.22 (apertura uniforme)	Baars 4.22 (ομοιόμορφο άνοιγμα)
+Banda dello stack	Μπάντα συστοιχίας
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Μπάντα εργασίας: η συχνότητα και όλες οι διαστάσεις σε mm ανακλιμακώνονται. Το "ελεύθερη" επιτρέπει την πληκτρολόγηση της συχνότητας.
+Banda piu' bassa	Χαμηλότερη μπάντα
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel και τρία δίπολα (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: τρία πέταλα ενός μήκους κύματος τροφοδοτούμενα και στα δύο άκρα, με το stub στην πλήμνη. Τρία δίπολα (W4RNL, WA1FXT): δίπολα περίπου 50 ohm, σε τρίγωνο ή σε κύκλο, σε σειρά στην πλήμνη και προσαρμοσμένα με ένα lambda/4.
+Biquad (2 quadrati)	Biquad (2 τετράγωνα)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Το biquad άνοιξε ως μοντέλο: όταν τελειώσει ο υπολογισμός, πατήστε "Τροφοδότης από μοντέλο NEC" στο Πιάτο κύριας εστίας.
+Biquad e doppia biquad	Biquad και διπλό biquad
+Biquad e doppia biquad (1.0.16)	Biquad και διπλό biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: δύο τετράγωνα (8 πλευρές σύρματος). Διπλό biquad: τέσσερα τετράγωνα στη σειρά (16 πλευρές), τα σύρματα διασταυρώνονται χωρίς να αγγίζονται μεταξύ πρώτου και δεύτερου τετραγώνου κάθε πλευράς.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Boom πολύ κοντό για αυτά τα στοιχεία: ορίστηκε 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Χείλη λυγισμένα προς τα εμπρός (προς το στοιχείο). 2 πλευρές: τα δύο χείλη κάθετα στην πόλωση (πάνω και κάτω στη σειρά τετραγώνων). Marshall: χείλη 30 mm, οπίσθιοι λοβοί περίπου 6 dB χαμηλότεροι.
+Bordi rialzati	Ανυψωμένα χείλη
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4η έκδ., κεφ. 15: απόδοση τροφοδοτών cos^n (15-55, έλεγχος με τις καμπύλες), κάτω όριο της απόδοσης φάσης (1 - m^2/2)^2, μέγιστο κέρδος για lambda = 4 pi sigma (15-67..71). Το όριο φάσης είναι εγγυημένο ελάχιστο: η υπολογισμένη τιμή είναι πάντα πάνω από αυτό
+Calcola accoppiamento e distanze (NEC)	Υπολογισμός σύζευξης και αποστάσεων (NEC)
+Calcola lo stack HF (NEC)	Υπολογισμός συστοιχίας HF (NEC)
+Calcola prima le distanze.	Υπολογίστε πρώτα τις αποστάσεις.
+Calcola tutte le bande (NEC)	Υπολογισμός όλων των μπαντών (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Υπολογισμός από το skynoise 0.2.2 του John C. Sager G8ONH (2025-2026, άδεια MIT), μεταφερμένο σε C# στο YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	Όταν αλλάζει, οι διαστάσεις σε mm ανακλιμακώνονται.
+Centro del lobo nel cielo	Κέντρο της δέσμης στον ουρανό
+Cielo (fuori dalla Via Lattea)	Ουρανός (εκτός Γαλαξία)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Κάντε κλικ στο διάγραμμα: δρομέας C1, το επόμενο κλικ C2· κάτω από το διάγραμμα η στάθμη του καθενός, η γωνία και η διαφορά τους. Διπλό κλικ: αφαιρεί τους δρομείς. Οι δρομείς παραμένουν όταν αλλάζει η συχνότητα.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Ομοαξονικό με το υψηλό SWR των αρμονικών μπαντών: οι απώλειες αυξάνονται πολύ (NT0Z, WB8IMY). Καλύτερα ο tuner στο σημείο τροφοδοσίας ή γραμμή σκάλας.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Ομοαξονικό: βολικό, αλλά με το υψηλό SWR των αρμονικών μπαντών χάνει πολύ (NT0Z, WB8IMY). Γραμμή σκάλας: μικρές απώλειες ακόμα και με υψηλό SWR, χρειάζεται συμμετρικό tuner ή balun 4:1 στον tuner.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Σύγκριση: L. Edwards VE7BQH (πίνακες G/T στις 30 μοίρες, συστοιχία 4 σε απόσταση DL6WU, ομοιόμορφες θερμοκρασίες)· TANT των YT1NT και VE3EA (εγχειρίδιο DG7YBN)· διόρθωση KF2YN.
+Controlli della 1.0.14 (Baars)	Έλεγχοι στην 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Έλεγχοι στην 1.0.14 (Balanis)
+Criterio della distanza migliore	Κριτήριο βέλτιστης απόστασης
+Cursori	Δρομείς
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire)· K. Kleinschmidt NT0Z· S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line)· ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985)· K. Kleinschmidt NT0Z (οριζόντιος βρόχος, γραμμή σκάλας, συμμετρικός tuner)· S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993)· ARRL Antenna Book (περίμετρος 1005/f πόδια)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Από κέντρο σύρματος σε κέντρο σύρματος, περίπου lambda/4 (Marshall 30,5 mm στα 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Από άκρο σε άκρο (σε κύκλο: κατά μήκος του τόξου). Cebik: 34,3" σε τρίγωνο, 31,4" σε κύκλο, στα 146 MHz με σωλήνα 1/2".
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Από την πλήμνη (περίπου 150 ohm σε σειρά) στα 50 ohm: RG-62 93 ohm (Cebik), ή 75 ohm αν η σύνθετη αντίσταση είναι κάτω από 150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Από πλήμνη σε πλήμνη κατά μήκος του σωλήνα, περίπου ένα μήκος κύματος (F1BKM 2050 mm στα 145 MHz· QST 80" στα 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Από το επίπεδο των τετραγώνων στην επιφάνεια του ανακλαστήρα: είναι η ρύθμιση του SWR (0,1-0,13 lambda στις πηγές).
+Data e ora (UTC)	Ημερομηνία και ώρα (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Μη έγκυρη ημερομηνία και ώρα (ηη/μμ/εεεε ωω:λλ, UTC).
+Dettaglio del mozzo (PDF)	Λεπτομέρεια πλήμνης (PDF)
+Diametro del tubo	Διάμετρος σωλήνα
+Diametro della ruota	Διάμετρος τροχού
+Differenza dal cielo uniforme	Διαφορά από τον ομοιόμορφο ουρανό
+Dima 1:1 (PDF)	Πρότυπο 1:1 (PDF)
+Dima del petalo della Big Wheel	Πρότυπο πετάλου Big Wheel
+Dima della biquad	Πρότυπο biquad
+Dima di piegatura 1:1 (PDF)	Πρότυπο κάμψης 1:1 (PDF)
+Direttori molto fitti (spaziature x	Κατευθυντήρες πολύ πυκνοί (αποστάσεις x
+Direttori molto radi (spaziature x	Κατευθυντήρες πολύ αραιοί (αποστάσεις x
+Discesa	Γραμμή τροφοδοσίας
+Dischi e illuminatori	Πιάτα και τροφοδότες
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Σχέδιο του λυγισμένου σύρματος σε κλίμακα 1:1 σε A4, με τα σημεία κάμψης, τον χάρακα 100 mm για έλεγχο της εκτύπωσης και τον πίνακα διαστάσεων.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Απόσταση από το κέντρο έως το σημείο τροφοδοσίας κάθε διπόλου (Cebik: 15,4" σε τρίγωνο, 15,5" σε κύκλο, στα 146 MHz).
+Distanza dal riflettore	Απόσταση από τον ανακλαστήρα
+Distanza proposta	Προτεινόμενη απόσταση
+Distanza tra i due livelli	Απόσταση μεταξύ των δύο επιπέδων
+Distanze	Αποστάσεις
+Distanze da provare	Αποστάσεις προς δοκιμή
+Distanze di stack	Αποστάσεις συστοιχίας
+Distanze provate	Δοκιμασμένες αποστάσεις
+Distanze provate e diagramma in elevazione	Δοκιμασμένες αποστάσεις και διάγραμμα ανύψωσης
+Doppia biquad (4)	Διπλό biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Διπλό biquad: όπου διασταυρώνονται οι διαγώνιοι τα σύρματα δεν αγγίζονται (περίπου 1,5 mm απόσταση).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Όπου οι βραχίονες στερεώνονται στα τρίγωνα σύνδεσης (F1BKM: τρίγωνα πλευράς 52 mm).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Δύο κεραίες η μία πάνω από την άλλη, σε φάση: Big Wheel στα 5/8 lambda (QST και F1BKM: η μία ανάποδα με επιπλέον μισό κύμα καλωδίου, στο μοντέλο απευθείας σε φάση), τρία δίπολα στα 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Ανύψωση στην προτεινόμενη απόσταση (dBi πάνω από το έδαφος)
+F/B lungo l'asse (NEC)	F/B κατά τον άξονα (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: αλουμίνιο 10 mm· QST 1961: 3/8" (9,5 mm)· Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Δέσμη σφάλματος, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Τροφοδότες 10 GHz, μετρημένες διαφορές
+File MMANA senza la sezione ***Wires***.	Αρχείο MMANA χωρίς την ενότητα ***Wires***.
+Filo da tagliare	Σύρμα για κόψιμο
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Μονωμένο σύρμα: το NEC-2 το υπολογίζει ως γυμνό. Η μόνωση κονταίνει το στοιχείο: ο W6PQL χρησιμοποιεί πλευρά 0,238 λ με μονωμένο σύρμα έναντι 0,248 λ του Marshall με γυμνό σύρμα (περίπου 4 % λιγότερο).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Πηγές: DL6WU (τύπος)· ARRL Antenna Book 24η έκδ. (όρια του τύπου, συστοιχίες Yagi HF και γωνίες ανύψωσης)· L. Edwards VE7BQH (G/T ως κριτήριο για συστοιχίες EME)· R. D. Straw N6BV (HFTA, συστοιχίες και έδαφος)· ON4UN, Low-Band DXing· L. B. Cebik W4RNL· nec2-array του YO3IIU (πίνακας σύζευξης στη λήψη, GPL-2 ή νεότερη)· G. Burke και A. Poggio, εγχειρίδιο NEC-2 (κάρτα CP).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Συχνότητα σχεδίασης. Με επιλεγμένη μπάντα είναι γκρι· με "ελεύθερη" πληκτρολογείται. Όταν αλλάζει, η πλευρά, η απόσταση και ο ανακλαστήρας ανακλιμακώνονται.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Εκτός 50-1300 MHz η κλιμάκωση του χάρτη με εκθέτη 2,56 δεν αρκεί (κάτω: ιονοσφαιρική απορρόφηση και ανθρωπογενής θόρυβος· πάνω: κοσμικό υπόβαθρο και ατμόσφαιρα): η τιμή είναι μόνο ενδεικτική.
+G max	G μέγ.
+G/T (da Rumore e G/T)	G/T (από Θόρυβος και G/T)
+G/T come VE7BQH	G/T όπως VE7BQH
+G/T con il cielo vero	G/T με τον πραγματικό ουρανό
+G/T max	G/T μέγ.
+G/T migliore	Βέλτιστο G/T
+Guadagno (NEC)	Κέρδος (NEC)
+Guadagno all'orizzonte (NEC)	Κέρδος στον ορίζοντα (NEC)
+Guadagno e lobo laterale al variare della distanza	Κέρδος και πλευρικός λοβός συναρτήσει της απόστασης
+Guadagno massimo con questa superficie	Μέγιστο κέρδος με αυτή την επιφάνεια
+HF (sopra il terreno)	HF (πάνω από το έδαφος)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Τα δύο επίπεδα των βραχιόνων, τα τρίγωνα σύνδεσης, το stub και ο συνδετήρας, με διαστάσεις.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: ανοιχτός κυματοδηγός 13,5 dB έναντι choke 15,2 dB (ηλιακός θόρυβος)· βιδωτό choke -0,6 dB· καπάκι LNB -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	Το NEC-2 δεν μοντελοποιεί τη μόνωση: οι υπολογισμένες διαστάσεις αφορούν γυμνό σύρμα. Με μονωμένο σύρμα το στοιχείο πρέπει να κονταίνει (W6PQL: πλευρά 0,238 lambda αντί 0,248, περίπου 4 % λιγότερο).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Ο πάνω βραχίονας ενός πετάλου και ο κάτω του γειτονικού απέχουν 20 μοίρες: μαζί σχηματίζουν τη γραμμή λ/4 που μεταφέρει την υψηλή σύνθετη αντίσταση του πετάλου στην πλήμνη.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Το γκρι πεδίο δεν επεξεργάζεται: δείχνει την παράγωγη τιμή. Με "Και τα δύο" δίνονται και τα δύο και οι αποστάσεις τεντώνονται ή συμπιέζονται αναλογικά: βγαίνετε από τη μέθοδο και χρειάζεται βελτιστοποίηση NEC.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Η πλευρά είναι περίπου λ/4 από κέντρο σε κέντρο σύρματος· η απόσταση από τον ανακλαστήρα (0,1-0,13 λ στις πηγές) είναι η ρύθμιση του SWR. Με πλέγμα ο ανακλαστήρας είναι συρμάτινο πλέγμα με το πραγματικό άνοιγμα (Mumford: άνοιγμα κάτω από λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Το ανοιχτό μοντέλο είναι ήδη συστοιχία: ανοίξτε τη μεμονωμένη κεραία.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Το μοντέλο είναι σε ελεύθερο χώρο: για τη συστοιχία HF χρησιμοποιείται μέσο έδαφος (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Το πέταλο σε κλίμακα 1:1 σε φύλλα A4 προς ένωση (επικάλυψη 10 mm, σταυροί ανά 50 mm, χάρακας 100 mm). Μόνο για το Big Wheel.
+Impedenza al mozzo (NEC)	Σύνθετη αντίσταση στην πλήμνη (NEC)
+Impedenza di riferimento	Σύνθετη αντίσταση αναφοράς
+Impedenza in serie al mozzo	Σύνθετη αντίσταση σειράς στην πλήμνη
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, κεφ. 4: εξασθένηση ελεύθερου χώρου 4.3, τετραγωνική 4.8, Gauss 4.6, HPBW 4.13, πρώτος πλευρικός λοβός 4.14a, αποεστίαση 4.21-4.23, σκίαση από στηρίγματα με σφαιρικό κύμα 4.36c-f, αξονική συνιστώσα του σφάλματος 4.43, δέσμη σφάλματος 4.44-4.46. Όπως ο υπολογισμός: εξασθένηση ελεύθερου χώρου (= χωρική εξασθένηση) και αποδόσεις των κατανομών. Διαφορετικά: ο Baars χρησιμοποιεί ιδανικές κατανομές, εδώ ολοκληρώνεται ο πραγματικός τροφοδότης· το HPBW και ο πλευρικός λοβός του Baars είναι για σύγκριση, δεν αντικαθιστούν τον υπολογισμό
+K sotto l'orizzonte (skynoise: 290 K)	K κάτω από τον ορίζοντα (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Το Big Wheel είναι κρίσιμο: ο ίδιος ο Cebik (QST 3/2008) προειδοποιεί ότι το NEC υπολογίζει άσχημα τις γραμμές όπου το ρεύμα είναι χαμηλό και ότι μικρές κατασκευαστικές διαφορές μετατοπίζουν τη σύνθετη αντίσταση. Το stub ρυθμίζεται πάντα στην πραγματική κεραία.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Η μπάντα στην οποία η περίμετρος είναι ένα ολόκληρο μήκος κύματος: πάνω από αυτήν ο βρόχος λειτουργεί σε όλες τις μπάντες με tuner.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Το πρότυπο και η πλήμνη αφορούν το Big Wheel: επιλέξτε τον τύπο Big Wheel.
+Larghezza del riflettore	Πλάτος ανακλαστήρα
+Lati	Πλευρές
+Lato del quadrato (centro filo)	Πλευρά τετραγώνου (κέντρο σύρματος)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Πλευρά κατά μήκος της σειράς τετραγώνων (η πόλωση). Διπλό biquad: περίπου 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Πλευρά κάθετη στη σειρά τετραγώνων (Marshall: 123 mm μόνο του, 110 mm ως τροφοδότης πιάτου).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Πλευρά, απόσταση από τον ανακλαστήρα, συμπαγής ή δικτυωτός ανακλαστήρας και χείλη συγκριτικά μεταξύ πηγών· προσαρμογή NEC, τροφοδότης πιάτου, πρότυπο 1:1. Σκίτσο εγκεκριμένο από IC8TEM στις 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Οι πηγές δηλώνουν κέρδη από 8 dBd έως 14 dBi σε διαφορετικούς ανακλαστήρες: το NEC της καρτέλας τα φέρνει στην ίδια βάση.
+Linea a finestra 450 Ω	Γραμμή με παράθυρα 450 Ω
+Linea aperta 600 Ω	Ανοιχτή γραμμή 600 Ω
+Livelli	Επίπεδα
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Επίπεδα πολύ κοντά σε σχέση με τον σωλήνα: η γραμμή των βραχιόνων έχει πολύ χαμηλή σύνθετη αντίσταση και το μοντέλο είναι στο όριο του NEC-2 (παράλληλα σύρματα σε απόσταση μικρότερη από λίγες ακτίνες).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	Η "φάση" των αγωγών: κατακόρυφη απόσταση μεταξύ κάτω βραχιόνων (θωράκιση) και πάνω (κέντρο). Εκτιμήθηκε από τη στοίβα πλακών του F1BKM: οι πηγές δεν τη δίνουν.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Ο ίδιος υπολογισμός με το Θόρυβος και G/T: ουρανός και έδαφος σε ομοιόμορφη θερμοκρασία (VE7BQH, TANT). Δεν εξαρτάται ούτε από το QTH ούτε από την ώρα.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Locator (JN70CN) ή πλάτος και μήκος σε μοίρες (40,55 14,21). Αποθηκεύεται στο config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): όλες οι μπάντες, γραμμή σκάλας ή ομοαξονικό, απώλειες γραμμής τροφοδοσίας
+Loop orizzontale multibanda	Οριζόντιος πολυζωνικός βρόχος
+Loop orizzontale multibanda (1.0.17)	Οριζόντιος πολυζωνικός βρόχος (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Οριζόντιος πολυζωνικός βρόχος (Loop Skywire)
+Lunghezza del dipolo	Μήκος διπόλου
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Μήκος σύρματος (κατά τον άξονα, χωρίς το τμήμα συγκόλλησης)
+Lunghezza della discesa	Μήκος γραμμής τροφοδοσίας
+Lunghezza sviluppata del petalo	Ανεπτυγμένο μήκος πετάλου
+Mappa del cielo	Χάρτης ουρανού
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Χάρτες ουρανού: C. G. T. Haslam et al., επισκόπηση 408 MHz (A&AS 47, 1982)· επανεπεξεργασία M. Remazeilles et al. (MNRAS 451, 2015), από τον διακομιστή LAMBDA της NASA· χάρτες 144 και 432 MHz από τον G8ONH.\n
+Matrice delle porte singolare.	Ιδιάζων πίνακας θυρών.
+Matrice di accoppiamento alla distanza proposta	Πίνακας σύζευξης στην προτεινόμενη απόσταση
+Mostra il primo nullo	Εμφάνιση του πρώτου μηδενισμού
+Mozzo - lato esterno	Πλήμνη - εξωτερική πλευρά
+Mozzo della Big Wheel	Πλήμνη Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	ΝΕΟ · χάρτης ουρανού, QTH, ώρα, Σελήνη (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	Σε 24 ώρες (πραγματικός ουρανός)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF και F... (Maignan, από την έκδοση F1BKM): τροχός περίπου 1,2 m, φοβάται αέρα και πάγο, καμία νέα διάσταση.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Κάθε κατεύθυνση πάνω από τον ορίζοντα παίρνει τη θερμοκρασία του χάρτη ουρανού σε εκείνο το σημείο, στη δεδομένη ώρα και από το δεδομένο QTH (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Κάθε πέταλο είναι ένα ολόκληρο μήκος κύματος τροφοδοτούμενο και στα δύο άκρα: οι βραχίονες κοντά στην πλήμνη είναι γραμμές λ/4 σε δύο επίπεδα (μπλε κάτω = θωράκιση, κόκκινο πάνω = κέντρο). Ο πάνω βραχίονας ενός πετάλου και ο κάτω του γειτονικού πηγαίνουν σε 20 μοίρες: αυτό το ζεύγος λειτουργεί ως γραμμή. Το παράλληλο stub φέρνει τα περίπου 10 Ω στα 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Κάθε πέταλο έχει έναν βραχίονα στο κάτω και έναν στο πάνω επίπεδο: η αλλαγή επιπέδου είναι στη μέση της εξωτερικής πλευράς (χιτώνιο F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (πιάτο 3 m, f/D 0,3): ανοιχτός κυματοδηγός 13,5 dB έναντι choke 15,2 dB· βιδωτό choke -0,6 dB· καπάκι LNB -0,5 dB. Μόνο αναφορά: το διάγραμμα αυτών των τροφοδοτών πρέπει να υπολογιστεί με NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Βήμα συρμάτων πλέγματος (W6PQL και G6GVI: πλέγμα 1/2 x 1 ίντσα).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Για να δημιουργήσετε συστοιχία από μία κεραία: Θόρυβος/GT/Συστοιχία > Αποστάσεις συστοιχίας, γραμμές και στήλες, κουμπί "Δημιουργία της συστοιχίας στο ανοιχτό μοντέλο" (από την 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	Για SWR (50 ohm με το ομοαξονικό απευθείας στο σημείο τροφοδοσίας, όπως σε όλες τις πηγές).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Γι' αυτό χρησιμοποιείται γραμμή σκάλας με tuner, ή ομοαξονικό με tuner στο σημείο τροφοδοσίας. Το "Υπολογισμός όλων των μπαντών (NEC)" υπολογίζει κάθε μπάντα και τις απώλειες της γραμμής.
+Perdita della discesa con il ROS di ogni banda (dB)	Απώλειες γραμμής τροφοδοσίας με το SWR κάθε μπάντας (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Απώλειες γραμμής τροφοδοσίας κάτω από 3 dB σε όλες τις μπάντες.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Περίμετρος 1005/f πόδια, τέσσερα σχήματα, υπολογισμός NEC όλων των μπαντών με τις απώλειες γραμμής (σκάλα ή ομοαξονικό) για το SWR κάθε μπάντας. Σκίτσο εγκεκριμένο από IC8TEM στις 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Πέταλα δύο επιπέδων με stub, τρία δίπολα σε σειρά με lambda/4, πρότυπο κάμψης 1:1 και λεπτομέρεια πλήμνης· περιπτώσεις MathWorks (Yagi 6 στοιχείων, έλικα) στον αυτοέλεγχο. Σκίτσο εγκεκριμένο από IC8TEM στις 17/11/2026.
+Petalo	Πέταλο
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	Κάμψεις 90 μοιρών στα σημεία P. Κόκκινοι κόμβοι: το κέντρο του ομοαξονικού στη μία πλευρά, η θωράκιση στην άλλη (χωρίς balun).
+Pieno (lamiera, PCB)	Συμπαγής (λαμαρίνα, πλακέτα)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Συμπαγής: λαμαρίνα ή πλακέτα, στο NEC πυκνό πλέγμα (0,07 lambda, ακτίνα σύρματος ίσης επιφάνειας). Πλέγμα: το πραγματικό άνοιγμα με το σύρμα του.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Οριζόντια πόλωση και πανκατευθυντικό διάγραμμα: το κέρδος στον ορίζοντα εξαρτάται από το ύψος και τη στοίβαξη, όχι από το σχήμα.
+Porta in adattamento (NEC)	Προσαρμογή (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Πρώτος πλευρικός λοβός, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Σκόπευση
+Punto di alimentazione	Σημείο τροφοδοσίας
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Μη έγκυρο QTH: πληκτρολογήστε locator (π.χ. JN70CN) ή πλάτος και μήκος.
+Quota dell'antenna piu' bassa	Ύψος της χαμηλότερης κεραίας
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR στα 50 Ω (μετά το "Προσαρμογή")
+ROS a 50 Ω in banda	SWR στα 50 Ω στη μπάντα
+ROS in banda	SWR στη μπάντα
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Μωβ διακεκομμένες ακτίνες στα πρώτα ελάχιστα εκατέρωθεν του κύριου λοβού: η απόστασή τους είναι το εύρος πρώτων μηδενισμών (FNBW), γραμμένο κάτω από το διάγραμμα μαζί με τον υψηλότερο πλευρικό λοβό (SLL, εντός 100 μοιρών από το μέγιστο, εκτός του οπίσθιου λοβού).
+Raggio al punto di alimentazione	Ακτίνα στο σημείο τροφοδοσίας
+Raggio del mozzo	Ακτίνα πλήμνης
+Raggio delle curve (asse)	Ακτίνα κάμψης (άξονας)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Ακτίνα των δύο κάμψεων του πετάλου στον άξονα του σωλήνα (πρότυπο F1BKM: 140 mm εσωτερικά).
+Rame da 1,2-2 mm nelle fonti.	Χαλκός 1,2-2 mm στις πηγές.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Πλέγμα πολύ πυκνό για τον υπολογισμό (πάνω από 1800 τμήματα): στο NEC ο ανακλαστήρας είναι πλέγμα 0,07 λ, σαν να ήταν συμπαγής. Με ανοίγματα κάτω από λ/10 η διαφορά είναι μικρή.
+Rete: diametro del filo	Πλέγμα: διάμετρος σύρματος
+Rete: maglia lungo l'altezza	Πλέγμα: άνοιγμα καθ' ύψος
+Rete: maglia lungo la larghezza	Πλέγμα: άνοιγμα κατά πλάτος
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Μικρός ανακλαστήρας: το κέρδος πέφτει και ο οπίσθιος λοβός μεγαλώνει (Marshall: 123 mm στα 2,4 GHz, δηλαδή περίπου 1 λ, για το biquad μόνο).
+Risultati del cielo vero copiati.	Τα αποτελέσματα πραγματικού ουρανού αντιγράφηκαν.
+Rumore dal cielo vero	Θόρυβος από τον πραγματικό ουρανό
+Rumore e G/T	Θόρυβος και G/T
+Rumore, G/T e stack	Θόρυβος, G/T και συστοιχία
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Αποθήκευση προτύπου
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Χρειάζονται τουλάχιστον 2 κεραίες (γραμμές x στήλες στην παραπάνω καρτέλα).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Ελεύθερος χώρος, ή σε ύψος πάνω από μέσο έδαφος (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Κενό μεταξύ των δύο κόμβων τροφοδοσίας
+Stack alla distanza proposta	Συστοιχία στην προτεινόμενη απόσταση
+Stack, tutte in fase (BIP)	Συστοιχία, όλες σε φάση (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Λωρίδα αλουμινίου (F1BKM 20 x 2 mm): στο NEC σύρμα ακτίνας πλάτος/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	Λωρίδα λυγισμένη σε U μεταξύ των δύο επιπέδων, παράλληλα με την πλήμνη (QST 1961: 5"· F1BKM 127 mm σε ελεύθερο χώρο, 152 mm σε αυτοκίνητο ή σε συστοιχία).
+Stub	Stub
+Stub: larghezza	Stub: πλάτος
+Stub: lunghezza sviluppata	Stub: ανεπτυγμένο μήκος
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman και Thiele· S. Sengupta· GMRT/NCRA· J. Baars· C.A. Balanis· P. Wade W1GHZ· PA0PLY· J. Ruze· W.W. Mumford· I.E. Idelchik· S.F. Hoerner· Lamb και Olver· Bob Atkins· OE2IGL· DF3GJ· UA3AVR· DJ7FJ· OK1DFC· RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Σε κάποια μπάντα η γραμμή χάνει πάνω από 3 dB (επισημασμένα πλαίσια): κονταίνετε τη γραμμή, περάστε σε γραμμή σκάλας ή βάλτε τον tuner στον βρόχο.
+T antenna (cielo vero)	T κεραίας (πραγματικός ουρανός)
+T antenna nelle 24 ore	T κεραίας σε 24 ώρες
+T antenna nelle 24 ore (puntamento fisso)	T κεραίας σε 24 ώρες (σταθερή σκόπευση)
+T del terreno (cielo vero)	T εδάφους (πραγματικός ουρανός)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001)· martybugs.net· W. Zwickel OE2TZL (QSP 10/93)· W6PQL· IK1ZYW· G6GVI και MW1FGQ· buildyourownantenna (διπλό biquad, 2014)· nec2.org· W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001)· martybugs.net· W. Zwickel OE2TZL (QSP 10/93)· W6PQL· IK1ZYW· G6GVI και MW1FGQ· buildyourownantenna· nec2.org· MathWorks Antenna Toolbox (σύγκριση)
+Tabella dello stack copiata.	Ο πίνακας συστοιχίας αντιγράφηκε.
+Temperature uniformi (VE7BQH)	Ομοιόμορφες θερμοκρασίες (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Αστρικός χρόνος: G. H. Kaplan, USNO Circular 179 (2005). Κλιμάκωση συχνότητας: T = (fχάρτη / f)^2,56 T (G8ONH). Σελήνη: J. Meeus, Astronomical Algorithms, κεφ. 47.\n
+Togli i cursori	Αφαίρεση δρομέων
+Tratto di lambda/4: impedenza	Τμήμα lambda/4: σύνθετη αντίσταση
+Tratto di λ/4	Τμήμα λ/4
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Τρία καλώδια 50 Ω ίδιου (οποιουδήποτε) μήκους έως την πλήμνη, σε σειρά: περίπου 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Τρία δίπολα σε κύκλο (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Τρία δίπολα σε τρίγωνο (W4RNL)
+Usa come feed della parabola	Χρήση ως τροφοδότη πιάτου
+Usa la distanza proposta per lo stack	Χρήση της προτεινόμενης απόστασης για τη συστοιχία
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) και HF (πάνω από το έδαφος), σύζευξη, βέλτιστη απόσταση
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (ελεύθερος χώρος, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: για κάθε απόσταση (συντελεστής x απόσταση DL6WU) η συστοιχία υπολογίζεται με NEC: κέρδος, υψηλότερος πλευρικός λοβός στο επίπεδο της συστοιχίας, G/T (θερμοκρασίες από Θόρυβος και G/T) και σύζευξη μεταξύ θυρών. HF: ο τύπος DL6WU δεν ισχύει (οι κεραίες είναι πάνω από το έδαφος και μετράει η γωνία εκπομπής): η συστοιχία επιλέγεται με βάση τις επιθυμητές γωνίες ανύψωσης.
+Vai a Distanze di stack	Μετάβαση στις Αποστάσεις συστοιχίας
+Via Lattea (zone sopra 1000 K a 144 MHz)	Γαλαξίας (περιοχές πάνω από 1000 K στα 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Κάτοψη (κλίμακα 2:1): κόκκινοι βραχίονες πάνω (κέντρο), μπλε κάτω (θωράκιση)
+Vista di lato (scala 2:1)	Πλάγια όψη (κλίμακα 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD και W1FVY (QST 1961)· A. Griffault F1BKM (Radio-REF 764)· L.B. Cebik W4RNL και B. Cerreto WA1FXT (QST 2008)· Cebik, antenneX 41 και 145· K. Rothammel DM2ABK· OfficinaHF· D. Maignan· MathWorks Antenna Toolbox (συγκρίσεις)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD και W1FVY (QST 9/1961)· A. Griffault F1BKM (Radio-REF 764, 2004)· L.B. Cebik W4RNL και B. Cerreto WA1FXT (QST 3/2008)· Cebik, antenneX 41 και 145· K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	Ο W7FB τροφοδοτεί σε γωνία· στη μέση της πλευράς η σύνθετη αντίσταση αλλάζει λίγο, αλλά οι λοβοί μετακινούνται στις υψηλές μπάντες.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: όσο πιο ψηλά γίνεται· κάτω από λ/4 της χαμηλότερης μπάντας ακτινοβολεί σχεδόν μόνο προς τα πάνω (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: τετράγωνο. Ο κύκλος (16γωνο) έχει το μεγαλύτερο εμβαδόν και λίγο μεγαλύτερο κέρδος· το τρίγωνο είναι για τρία στηρίγματα.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Θόρυβος από τον πραγματικό ουρανό (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	Yagi MathWorks, διαστάσεις βελτιστοποιημένες από τη MathWorks (δημοσιευμένα: 10,59 dBi, F/B 15,6 dB, εύρη δέσμης 50 και 62 μοίρες)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Z σειράς = άθροισμα των τριών σύνθετων αντιστάσεων, μετά το λ/4: Z = Zq^2 / Zσειράς (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| μέγ. dB
+° (dietro)	° (πίσω)
+Ω (barra in alto)	Ω (πάνω μπάρα)
+λ, a passi di 0,125	λ, σε βήματα 0,125
+a un'altezza dal suolo	σε ύψος πάνω από το έδαφος
+al massimo	στο μέγιστο
+antenna base: il modello aperto	βασική κεραία: το ανοιχτό μοντέλο
+antenna singola	μεμονωμένη κεραία
+azimut ed elevazione	αζιμούθιο και ανύψωση
+blu: sotto (calza)	μπλε: κάτω (θωράκιση)
+calcolata da DL6WU (	υπολογισμένη κατά DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	υπολογισμός συστοιχίας HF πάνω από το έδαφος...
+calcolo in corso (spazio libero come VE7BQH	υπολογισμός (ελεύθερος χώρος όπως VE7BQH
+cambio di livello (meta' del lato esterno)	αλλαγή επιπέδου (μέση της εξωτερικής πλευράς)
+cerchio (poligono)	κύκλος (πολύγωνο)
+cielo piu' freddo	ψυχρότερος ουρανός
+circolarita' +-	κυκλικότητα +-
+coassiale 50 Ω (RG-213)	ομοαξονικό 50 Ω (RG-213)
+come VE7BQH (stack di 4)	όπως VE7BQH (συστοιχία 4)
+come prima: TANT, VE7BQH, KF2YN, stack	όπως πριν: TANT, VE7BQH, KF2YN, συστοιχία
+con lo stub	με stub
+controfase (BOP)	σε αντιφάση (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: κλειστή μορφή Balanis
+cos^2: massimo della curva di Balanis	cos^2: μέγιστο της καμπύλης Balanis
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	διαγώνιος: αναντιστοιχία κάθε κεραίας με τις άλλες τερματισμένες σε Z0· εκτός διαγωνίου: ισχύς που περνά από μια θύρα σε άλλη
+distanza / distanza DL6WU	απόσταση / απόσταση DL6WU
+doppia biquad	διπλό biquad
+elevazione (gradi)	ανύψωση (μοίρες)
+fascio d'errore (Baars 4.44-4.46)	δέσμη σφάλματος (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	εξασθένηση ελεύθερου χώρου f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	εκτός μεθόδου: το NEC το δίνει μετά το "Βελτιστοποίηση (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	εκτός εύρους του τύπου (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	αποεστίαση beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gauss -12 dB: τύπος Baars 4.6
+gaussiana -12 dB: integrale numerico	Gauss -12 dB: αριθμητικό ολοκλήρωμα
+gradi · 30° come VE7BQH	μοίρες · 30° όπως VE7BQH
+griglia 0,07 λ	πλέγμα 0,07 λ
+guadagno con lobi sotto	κέρδος με λοβούς κάτω από
+guadagno dello stack (dBi)	κέρδος συστοιχίας (dBi)
+guadagno massimo	μέγιστο κέρδος
+guadagno max	μέγ. κέρδος
+larghezza x altezza (lungo la polarizzazione)	πλάτος x ύψος (κατά την πόλωση)
+lobi laterali piu' bassi	χαμηλότεροι πλευρικοί λοβοί
+lobi piu' bassi	χαμηλότεροι λοβοί
+lobo laterale dB	πλευρικός λοβός dB
+lobo laterale piu' alto (dB)	υψηλότερος πλευρικός λοβός (dB)
+locator, oppure latitudine e longitudine	locator ή πλάτος και μήκος
+lungo l'arco	κατά μήκος του τόξου
+media voluta	επιθυμητός μέσος όρος
+meta' lato	μέση πλευράς
+minimo / massimo	ελάχιστο / μέγιστο
+mutua con la porta 2	αμοιβαία με τη θύρα 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	καμία απόσταση με τους λοβούς κάτω από το κατώφλι: χαμηλότεροι λοβοί
+non vale	μη έγκυρο
+ore UTC	ώρες UTC
+peso della Via Lattea qui e ora	βάρος του Γαλαξία εδώ και τώρα
+premi "T antenna nelle 24 ore"	πατήστε "T κεραίας σε 24 ώρες"
+proposta (Distanze di stack)	προτεινόμενη (Αποστάσεις συστοιχίας)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	τετραγωνική -12 dB: HPBW (Baars 66,3 μοίρες lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	τετραγωνική -12 dB: απόδοση (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	τετραγωνική -12 dB: τύπος Baars 4.8
+quattro lati uguali	τέσσερις ίσες πλευρές
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	του μοντέλου (αν σε ελεύθερο χώρο: μέσο έδαφος 13 / 0,005, Sommerfeld)
+quota sopra	πάνω ύψος
+rete come superficie piena (maglia troppo fitta da calcolare)	πλέγμα ως συμπαγής επιφάνεια (άνοιγμα πολύ πυκνό για υπολογισμό)
+rete con la maglia vera	πλέγμα με το πραγματικό άνοιγμα
+rettangolo 2:1	ορθογώνιο 2:1
+rosso: sopra (centrale)	κόκκινο: πάνω (κέντρο)
+scala 450 Ω	γραμμή σκάλας 450 Ω
+scala 600 Ω	γραμμή σκάλας 600 Ω
+scelta proposta	προτεινόμενη επιλογή
+solo sopra	μόνο πάνω
+solo sotto	μόνο κάτω
+sotto calza (blu), sopra centrale (rosso)	κάτω θωράκιση (μπλε), πάνω κέντρο (κόκκινο)
+sull'asse del tubo (F1BKM: 535 mm)	στον άξονα του σωλήνα (F1BKM: 535 mm)
+sulla singola	σε σχέση με τη μεμονωμένη
+superficie senza errore	επιφάνεια χωρίς σφάλματα
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	θερμοκρασίες ουρανού και εδάφους και ανύψωση από Θόρυβος και G/T
+temperature uniformi: si confronta con le tabelle	ομοιόμορφες θερμοκρασίες: συγκρίσιμο με τους πίνακες
+triangolo di sopra: centrale del connettore	πάνω τρίγωνο: κέντρο συνδετήρα
+triangolo di sotto: calza (massa, staffa del palo)	κάτω τρίγωνο: θωράκιση (γείωση, στήριγμα ιστού)
+triangolo equilatero, tre sostegni	ισόπλευρο τρίγωνο, τρία στηρίγματα
+tutte in fase (BIP)	όλες σε φάση (BIP)
+x la distanza DL6WU, a passi di 0,1	x απόσταση DL6WU, σε βήματα 0,1
+RICEZIONE	ΛΗΨΗ
+nessuno	καμία
+adesso	τώρα
+rurale	αγροτική
+residenziale	οικιστική

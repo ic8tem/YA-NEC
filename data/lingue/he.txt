@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	שניהם (מחוץ ל-DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU קושרת בין שתי המידות. עם "מספר האלמנטים" אורך הבום מחושב ממרווחי DL6WU; עם "אורך הבום" נוספים מכוונים כל עוד הבום מכיל אותם. השדה האפור אינו ניתן לעריכה: הוא מציג את הערך הנגזר. עם "שניהם (מחוץ ל-DL6WU)" נותנים את שניהם והמרווחים מתארכים או מתקצרים באופן יחסי: יוצאים מהשיטה ונדרשת אופטימיזציית NEC.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	שלבים 0-3 אינם זמינים: עם "שניהם (מחוץ ל-DL6WU)" האופטימיזציה היא חובה
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	ערך שנגזר משאר הנתונים: אינו ניתן לעריכה (ראו את ההערה מתחת לנתונים).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"התאמה (NEC)" קובע את הצלע לתהודה ואת המרווח ל-SWR מינימלי, ואז מחשב SWR ושבח על פני +-5 % מרוחב הפס.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = במרכז (סליל קטן יותר, נצילות נמוכה יותר), לכיוון 100 % = לכיוון הקצה (סליל גדל והולך).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 אנטנה
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. המחבר מתחת למשולש ההארקה, המוליך המרכזי הולך למשולש העליון.
+100 mm: controlla questo righello (stampa al 100 %)	100 מ"מ: בדקו את הסרגל הזה (הדפסה ב-100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 מ"מ: בדקו את הסרגל הזה (הדפסה ב-100 %, ללא התאמה לעמוד)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f רגל (W7FB) = 306,3/f מטר בתדר המרכזי של הפס הנמוך ביותר. מתעדכן בעת החלפת פס.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, מחזיר מלא או רשת, מזין לצלחת
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, קיטוב אופקי, כלל-כיווני; שתי הרמות ושלושת הדיפולים
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. ה-stub מחבר את שני המשולשים במקביל למחבר: אורכו מכוון ל-SWR (F1BKM: 152 מ"מ על רכב או בערימה).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. מבדדים בין הרמות (F1BKM: ערימת לוחות פוליסטירן 5 מ"מ): המרווח dz חייב להיות זהה לכל הזרועות.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. החלפת הרמה של כל עלה נמצאת באמצע הצלע החיצונית (שרוול F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 מ' עם מידות JN1GLB (לא מכוון בכפתור תהודה, שעובד בפסים 20-10 מ')
+Accoppiamento e distanza migliore (NEC)	צימוד ומרווח מיטבי (NEC)
+Accoppiamento piu' forte	הצימוד החזק ביותר
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	בשלב 4 נוסף המשתנה התקדמות מרווחים (איך המרווחים גדלים לאורך הבום, עם בום קבוע)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	הזנה ישירה בכבל קואקסיאלי במרכז, ללא balun (Marshall, OE2TZL, W6PQL): המוליך המרכזי לצד אחד, הסיכוך לשני.
+Alla distanza DL6WU	במרווח DL6WU
+Altezza dal suolo	גובה מעל הקרקע
+Altezza dei bordi	גובה השוליים
+Altezza del riflettore	גובה המחזיר
+Angoli di partenza voluti	זוויות שיגור רצויות
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	הזווית בין שתי הזרועות של עלה (תבנית F1BKM: 100 מעלות, כלומר 20 מעלות בין זרועות עלים סמוכים).
+Antenna singola	אנטנה בודדת
+Antenne una sopra l'altra	אנטנות זו מעל זו
+Apertura del petalo	פתיחת העלה
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	פותח את ה-biquad כמודל בחלון הראשי (אלמנט ב-z = 0, אלומה לכיוון +Z, קיטוב לאורך Y, כמו מזיני הצופר) ועובר אל צלחת מוקד ראשי: שם הכפתור "מזין ממודל NEC" לוקח את הדיאגרמה המחושבת.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	מחברים ומקורות (רישיון MIT, הודעה מלאה בתודות)\n
+Azimut / elevazione	אזימוט / הגבהה
+Baars 4.22 (apertura uniforme)	Baars 4.22 (מפתח אחיד)
+Banda dello stack	פס הערימה
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	פס העבודה: התדר וכל המידות במ"מ משתנים בקנה מידה. "חופשי" מאפשר להקליד את התדר.
+Banda piu' bassa	הפס הנמוך ביותר
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel ושלושה דיפולים (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: שלושה עלים באורך גל אחד המוזנים בשני הקצוות, עם ה-stub ברכזת. שלושה דיפולים (W4RNL, WA1FXT): דיפולים של כ-50 אוהם, במשולש או על מעגל, מחוברים בטור ברכזת ומותאמים ב-lambda/4.
+Biquad (2 quadrati)	Biquad (2 ריבועים)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	ה-biquad נפתח כמודל: בסיום החישוב לחצו "מזין ממודל NEC" בצלחת מוקד ראשי.
+Biquad e doppia biquad	Biquad ו-biquad כפול
+Biquad e doppia biquad (1.0.16)	Biquad ו-biquad כפול (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: שני ריבועים (8 צלעות תיל). Biquad כפול: ארבעה ריבועים בשורה (16 צלעות), התילים מצטלבים בלי לגעת בין הריבוע הראשון לשני בכל צד.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	הבום קצר מדי לאלמנטים אלה: נקבע 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	שוליים כפופים קדימה (לכיוון האלמנט). 2 צלעות: שני השוליים הניצבים לקיטוב (למעלה ולמטה בשורת הריבועים). Marshall: שוליים 30 מ"מ, אונות אחוריות נמוכות בכ-6 dB.
+Bordi rialzati	שוליים מורמים
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, מהדורה 4, פרק 15: נצילות מזיני cos^n (15-55, בדיקה מול העקומות), חסם תחתון לנצילות הפאזה (1 - m^2/2)^2, שבח מרבי ב-lambda = 4 pi sigma (15-67..71). חסם הפאזה הוא מינימום מובטח: הערך המחושב תמיד מעליו
+Calcola accoppiamento e distanze (NEC)	חשב צימוד ומרווחים (NEC)
+Calcola lo stack HF (NEC)	חשב את ערימת ה-HF (NEC)
+Calcola prima le distanze.	חשבו קודם את המרווחים.
+Calcola tutte le bande (NEC)	חשב את כל הפסים (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	חישוב מתוך skynoise 0.2.2 מאת John C. Sager G8ONH (2025-2026, רישיון MIT), הועבר ל-C# ב-YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	כאשר משנים אותו, המידות במ"מ משתנות בקנה מידה.
+Centro del lobo nel cielo	מרכז האלומה בשמים
+Cielo (fuori dalla Via Lattea)	שמים (מחוץ לשביל החלב)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	לחצו על הדיאגרמה: סמן C1, הלחיצה הבאה C2; מתחת לדיאגרמה הרמה של כל אחד, הזווית וההפרש ביניהם. לחיצה כפולה: מסירה את הסמנים. הסמנים נשארים בעת שינוי התדר.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	קואקס עם ה-SWR הגבוה של הפסים ההרמוניים: ההפסד גדל מאוד (NT0Z, WB8IMY). עדיף טיונר בנקודת ההזנה, או קו סולם.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	קואקס: נוח, אך עם ה-SWR הגבוה של הפסים ההרמוניים מפסיד הרבה (NT0Z, WB8IMY). קו סולם: הפסד נמוך גם ב-SWR גבוה, דורש טיונר מאוזן או balun 4:1 בטיונר.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	השוואה: L. Edwards VE7BQH (טבלאות G/T ב-30 מעלות, ערימה של 4 במרווח DL6WU, טמפרטורות אחידות); TANT מאת YT1NT ו-VE3EA (מדריך DG7YBN); תיקון KF2YN.
+Controlli della 1.0.14 (Baars)	בדיקות ב-1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	בדיקות ב-1.0.14 (Balanis)
+Criterio della distanza migliore	קריטריון למרווח מיטבי
+Cursori	סמנים
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (לולאה אופקית, קו סולם, טיונר מאוזן); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (היקף 1005/f רגל)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	ממרכז תיל למרכז תיל, כ-lambda/4 (Marshall 30,5 מ"מ ב-2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	מקצה לקצה (על מעגל: לאורך הקשת). Cebik: 34,3" במשולש, 31,4" על מעגל, ב-146 MHz עם צינור 1/2".
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	מהרכזת (כ-150 אוהם בטור) ל-50 אוהם: RG-62 של 93 אוהם (Cebik), או 75 אוהם אם העכבה מתחת ל-150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	מרכזת לרכזת לאורך הצינור, כאורך גל אחד (F1BKM 2050 מ"מ ב-145 MHz; QST 80" ב-146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	ממישור הריבועים לפני המחזיר: זהו כיוון ה-SWR (0,1-0,13 lambda במקורות).
+Data e ora (UTC)	תאריך ושעה (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	תאריך ושעה לא תקינים (dd/mm/yyyy hh:mm, UTC).
+Dettaglio del mozzo (PDF)	פרט הרכזת (PDF)
+Diametro del tubo	קוטר הצינור
+Diametro della ruota	קוטר הגלגל
+Differenza dal cielo uniforme	הפרש מהשמים האחידים
+Dima 1:1 (PDF)	תבנית 1:1 (PDF)
+Dima del petalo della Big Wheel	תבנית עלה Big Wheel
+Dima della biquad	תבנית biquad
+Dima di piegatura 1:1 (PDF)	תבנית כיפוף 1:1 (PDF)
+Direttori molto fitti (spaziature x	מכוונים צפופים מאוד (מרווחים x
+Direttori molto radi (spaziature x	מכוונים דלילים מאוד (מרווחים x
+Discesa	קו הזנה
+Dischi e illuminatori	צלחות ומזינים
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	שרטוט התיל הכפוף בקנה מידה 1:1 על A4, עם נקודות הכיפוף, סרגל 100 מ"מ לבדיקת ההדפסה וטבלת המידות.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	המרחק מהמרכז לנקודת ההזנה של כל דיפול (Cebik: 15,4" במשולש, 15,5" על מעגל, ב-146 MHz).
+Distanza dal riflettore	מרחק מהמחזיר
+Distanza proposta	מרווח מוצע
+Distanza tra i due livelli	מרווח בין שתי הרמות
+Distanze	מרווחים
+Distanze da provare	מרווחים לניסיון
+Distanze di stack	מרווחי ערימה
+Distanze provate	מרווחים שנוסו
+Distanze provate e diagramma in elevazione	מרווחים שנוסו ודיאגרמת הגבהה
+Doppia biquad (4)	Biquad כפול (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Biquad כפול: היכן שהאלכסונים מצטלבים התילים אינם נוגעים (כ-1,5 מ"מ ביניהם).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	היכן שהזרועות מתחברות למשולשי החיבור (F1BKM: משולשים עם צלע 52 מ"מ).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	שתי אנטנות זו מעל זו, בפאזה: Big Wheel ב-5/8 lambda (QST ו-F1BKM: אחת הפוכה עם חצי גל כבל נוסף, במודל ישירות בפאזה), שלושה דיפולים ב-0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	הגבהה במרווח המוצע (dBi מעל הקרקע)
+F/B lungo l'asse (NEC)	F/B לאורך הציר (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: אלומיניום 10 מ"מ; QST 1961: 3/8" (9,5 מ"מ); Cebik: 1/2" (12,7 מ"מ).
+Fascio d'errore, Baars 4.44-4.46	אלומת שגיאה, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	מזינים ל-10 GHz, הבדלים שנמדדו
+File MMANA senza la sezione ***Wires***.	קובץ MMANA ללא הסעיף ***Wires***.
+Filo da tagliare	תיל לחיתוך
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	תיל מבודד: NEC-2 מחשב אותו כחשוף. הבידוד מקצר את האלמנט: W6PQL משתמש בצלע 0,238 λ עם תיל מבודד לעומת 0,248 λ של Marshall עם תיל חשוף (כ-4 % פחות).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	מקורות: DL6WU (נוסחה); ARRL Antenna Book מהדורה 24 (גבולות הנוסחה, ערימות Yagi ל-HF וזוויות הגבהה); L. Edwards VE7BQH (G/T כקריטריון לערימות EME); R. D. Straw N6BV (HFTA, ערימות ושטח); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array מאת YO3IIU (מטריצת צימוד בקליטה, GPL-2 ומעלה); G. Burke ו-A. Poggio, מדריך NEC-2 (כרטיס CP).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	תדר תכנון. כשנבחר פס הוא אפור; עם "חופשי" מקלידים אותו. כאשר משנים אותו, הצלע, המרווח והמחזיר משתנים בקנה מידה.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	מחוץ ל-50-1300 MHz קנה המידה של המפה עם המעריך 2,56 אינו מספיק (מתחת: בליעה יונוספרית ורעש מעשה אדם; מעל: רקע קוסמי ואטמוספרה): הערך הוא להתמצאות בלבד.
+G max	G מרבי
+G/T (da Rumore e G/T)	G/T (מתוך רעש ו-G/T)
+G/T come VE7BQH	G/T כמו VE7BQH
+G/T con il cielo vero	G/T עם השמים האמיתיים
+G/T max	G/T מרבי
+G/T migliore	G/T מיטבי
+Guadagno (NEC)	שבח (NEC)
+Guadagno all'orizzonte (NEC)	שבח באופק (NEC)
+Guadagno e lobo laterale al variare della distanza	שבח ואונת צד כתלות במרווח
+Guadagno massimo con questa superficie	שבח מרבי עם משטח זה
+HF (sopra il terreno)	HF (מעל הקרקע)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	שתי רמות הזרועות, משולשי החיבור, ה-stub והמחבר, עם מידות.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 מ', f/D 0,3: מוליך גל פתוח 13,5 dB לעומת choke 15,2 dB (רעש השמש); choke מוברג -0,6 dB; כיסוי LNB -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 אינו ממדל את הבידוד: המידות המחושבות הן לתיל חשוף. עם תיל מבודד יש לקצר את האלמנט (W6PQL: צלע 0,238 lambda במקום 0,248, כ-4 % פחות).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	הזרוע העליונה של עלה והזרוע התחתונה של העלה הסמוך רחוקות 20 מעלות זו מזו: יחד הן יוצרות את קו ה-λ/4 שמעביר את העכבה הגבוהה של העלה אל הרכזת.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	לא ניתן לערוך את השדה האפור: הוא מציג את הערך הנגזר. עם "שניהם" נותנים את שניהם והמרווחים נמתחים או מתכווצים באופן יחסי: יוצאים מהשיטה ונדרש מיטוב NEC.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	הצלע היא כ-λ/4 ממרכז תיל למרכז תיל; המרחק מהמחזיר (0,1-0,13 λ במקורות) הוא כיוון ה-SWR. עם רשת המחזיר הוא רשת תילים עם העין האמיתית (Mumford: עין מתחת ל-λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	המודל הפתוח כבר ערימה: פתחו את האנטנה הבודדת.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	המודל במרחב חופשי: לערימת HF משמשת קרקע ממוצעת (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	העלה בקנה מידה 1:1 על דפי A4 לחיבור (חפיפה 10 מ"מ, צלבים כל 50 מ"מ, סרגל 100 מ"מ). רק ל-Big Wheel.
+Impedenza al mozzo (NEC)	עכבה ברכזת (NEC)
+Impedenza di riferimento	עכבת ייחוס
+Impedenza in serie al mozzo	עכבה טורית ברכזת
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, פרק 4: דעיכת מרחב חופשי 4.3, ריבועית 4.8, גאוסית 4.6, HPBW 4.13, אונת צד ראשונה 4.14a, היסט מוקד 4.21-4.23, הסתרת תומכים בגל כדורי 4.36c-f, הרכיב הצירי של השגיאה 4.43, אלומת שגיאה 4.44-4.46. כמו בחישוב: דעיכת מרחב חופשי (= הנחתה מרחבית) ונצילויות ההתפלגויות. שונה: Baars משתמש בהתפלגויות אידיאליות, כאן מוכפל המזין האמיתי; ה-HPBW ואונת הצד של Baars הם להשוואה ואינם מחליפים את החישוב
+K sotto l'orizzonte (skynoise: 290 K)	K מתחת לאופק (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	ה-Big Wheel קריטית: Cebik עצמו (QST 3/2008) מזהיר ש-NEC מחשב רע את הקווים היכן שהזרם נמוך, ושהבדלי בנייה קטנים מזיזים את העכבה. ה-stub מכוון תמיד על האנטנה האמיתית.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	הפס שבו ההיקף הוא אורך גל שלם: מעליו הלולאה עובדת בכל הפסים עם הטיונר.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	התבנית והרכזת שייכות ל-Big Wheel: בחרו את הסוג Big Wheel.
+Larghezza del riflettore	רוחב המחזיר
+Lati	צלעות
+Lato del quadrato (centro filo)	צלע הריבוע (מרכז התיל)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	צלע לאורך שורת הריבועים (הקיטוב). Biquad כפול: כ-2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	צלע ניצבת לשורת הריבועים (Marshall: 123 מ"מ לבד, 110 מ"מ כמזין לצלחת).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	צלע, מרחק מהמחזיר, מחזיר מלא או רשת ושוליים בהשוואה בין המקורות; התאמת NEC, מזין לצלחת, תבנית 1:1. סקיצה אושרה על ידי IC8TEM ב-17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	המקורות מצהירים על שבח מ-8 dBd עד 14 dBi על מחזירים שונים: ה-NEC של הכרטיס מעמיד אותם על בסיס אחד.
+Linea a finestra 450 Ω	קו חלונות 450 Ω
+Linea aperta 600 Ω	קו פתוח 600 Ω
+Livelli	רמות
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	הרמות קרובות מאוד ביחס לצינור: לקו הזרועות עכבה נמוכה מאוד והמודל בגבול של NEC-2 (תילים מקבילים במרחק של פחות מכמה רדיוסים).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	"הפיזור" של המוליכים: המרחק האנכי בין הזרועות התחתונות (סיכוך) לעליונות (מרכז). הוערך מערימת הלוחות של F1BKM: המקורות אינם מציינים אותו.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	אותו חישוב כמו רעש ו-G/T: שמים וקרקע בטמפרטורה אחידה (VE7BQH, TANT). אינו תלוי ב-QTH ולא בשעה.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	לוקטור (JN70CN) או קו רוחב וקו אורך במעלות (40,55 14,21). נשמר ב-config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): כל הפסים, קו סולם או קואקס, הפסד קו ההזנה
+Loop orizzontale multibanda	לולאה אופקית רב-פסית
+Loop orizzontale multibanda (1.0.17)	לולאה אופקית רב-פסית (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	לולאה אופקית רב-פסית (Loop Skywire)
+Lunghezza del dipolo	אורך הדיפול
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	אורך התיל (לאורך הציר, ללא החלק להלחמה)
+Lunghezza della discesa	אורך קו ההזנה
+Lunghezza sviluppata del petalo	אורך פרוש של העלה
+Mappa del cielo	מפת שמים
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	מפות שמים: C. G. T. Haslam ועמיתים, סקר 408 MHz (A&AS 47, 1982); עיבוד מחדש M. Remazeilles ועמיתים (MNRAS 451, 2015), משרת LAMBDA של NASA; מפות 144 ו-432 MHz הוכנו על ידי G8ONH.\n
+Matrice delle porte singolare.	מטריצת שערים סינגולרית.
+Matrice di accoppiamento alla distanza proposta	מטריצת צימוד במרווח המוצע
+Mostra il primo nullo	הצג את האפס הראשון
+Mozzo - lato esterno	רכזת - צלע חיצונית
+Mozzo della Big Wheel	רכזת Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	חדש · מפת שמים, QTH, שעה, ירח (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	לאורך 24 שעות (שמים אמיתיים)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF ו-F... (Maignan, לפי גרסת F1BKM): גלגל של כ-1,2 מ', חושש מרוח וקרח, אין מידות חדשות.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	כל כיוון מעל האופק מקבל את טמפרטורת מפת השמים באותה נקודה, בשעה וב-QTH שניתנו (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	כל עלה הוא אורך גל שלם המוזן בשני הקצוות: הזרועות ליד הרכזת הן קווי λ/4 בשתי רמות (כחול למטה = סיכוך, אדום למעלה = מרכז). הזרוע העליונה של עלה והתחתונה של הסמוך רצות במרחק 20 מעלות: הזוג הזה פועל כקו. ה-stub במקביל מביא את ה-10 Ω בערך ל-50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	לכל עלה זרוע אחת ברמה התחתונה ואחת בעליונה: החלפת הרמה באמצע הצלע החיצונית (שרוול F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (צלחת 3 מ', f/D 0,3): מוליך גל פתוח 13,5 dB לעומת choke 15,2 dB; choke מוברג -0,6 dB; כיסוי LNB -0,5 dB. לעיון בלבד: את דיאגרמת המזינים האלה יש לחשב ב-NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	פסיעת תילי הרשת (W6PQL ו-G6GVI: רשת 1/2 x 1 אינץ').
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	ליצירת ערימה מאנטנה בודדת: רעש/GT/ערימה > מרווחי ערימה, שורות ועמודות, כפתור "צור את הערימה במודל הפתוח" (מאז 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	ל-SWR (50 אוהם עם הקואקס ישירות בנקודת ההזנה, כמו בכל המקורות).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	לכן משתמשים בקו סולם עם טיונר, או בקואקס עם הטיונר בנקודת ההזנה. "חשב את כל הפסים (NEC)" מחשב כל פס ואת הפסד קו ההזנה.
+Perdita della discesa con il ROS di ogni banda (dB)	הפסד קו ההזנה עם ה-SWR של כל פס (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	הפסד קו ההזנה מתחת ל-3 dB בכל הפסים.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	היקף 1005/f רגל, ארבע צורות, חישוב NEC של כל הפסים עם הפסד קו ההזנה (סולם או קואקס) עבור ה-SWR של כל פס. סקיצה אושרה על ידי IC8TEM ב-17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	עלים דו-רמתיים עם ה-stub, שלושה דיפולים בטור עם ה-lambda/4, תבנית כיפוף 1:1 ופרט הרכזת; מקרי MathWorks (Yagi בת 6 אלמנטים, סליל) בבדיקה העצמית. סקיצה אושרה על ידי IC8TEM ב-17/11/2026.
+Petalo	עלה
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	כיפופים של 90 מעלות בנקודות P. צמתים אדומים: מרכז הקואקס בצד אחד, הסיכוך בשני (ללא balun).
+Pieno (lamiera, PCB)	מלא (פח, מעגל מודפס)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	מלא: פח או מעגל מודפס, ב-NEC רשת צפופה (0,07 lambda, רדיוס תיל בשטח שווה). רשת: העין האמיתית עם התיל שלה.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	קיטוב אופקי ודיאגרמה כלל-כיוונית: השבח באופק תלוי בגובה ובהערמה, לא בצורה.
+Porta in adattamento (NEC)	התאמה (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	אונת צד ראשונה, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	הכוונה
+Punto di alimentazione	נקודת הזנה
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	QTH לא תקין: הקלידו את הלוקטור (למשל JN70CN) או קו רוחב וקו אורך.
+Quota dell'antenna piu' bassa	גובה האנטנה הנמוכה ביותר
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR ב-50 Ω (אחרי "התאמה")
+ROS a 50 Ω in banda	SWR ב-50 Ω בפס
+ROS in banda	SWR בפס
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	קרניים סגולות מקווקוות על המינימום הראשון משני צידי האונה הראשית: המרחק ביניהן הוא רוחב האלומה בין האפסים הראשונים (FNBW), הכתוב מתחת לדיאגרמה יחד עם אונת הצד הגבוהה ביותר (SLL, בתוך 100 מעלות מהמקסימום, ללא האונה האחורית).
+Raggio al punto di alimentazione	רדיוס בנקודת ההזנה
+Raggio del mozzo	רדיוס הרכזת
+Raggio delle curve (asse)	רדיוס כיפוף (ציר)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	רדיוס שני כיפופי העלה על ציר הצינור (תבנית F1BKM: 140 מ"מ מבפנים).
+Rame da 1,2-2 mm nelle fonti.	נחושת 1,2-2 מ"מ במקורות.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	רשת צפופה מדי לחישוב (מעל 1800 מקטעים): ב-NEC המחזיר הוא רשת 0,07 λ, כאילו היה מלא. עם עיניים מתחת ל-λ/10 ההבדל קטן.
+Rete: diametro del filo	רשת: קוטר התיל
+Rete: maglia lungo l'altezza	רשת: עין לגובה
+Rete: maglia lungo la larghezza	רשת: עין לרוחב
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	מחזיר קטן: השבח יורד והאונה האחורית גדלה (Marshall: 123 מ"מ ב-2,4 GHz, כלומר כ-1 λ, ל-biquad לבד).
+Risultati del cielo vero copiati.	תוצאות השמים האמיתיים הועתקו.
+Rumore dal cielo vero	רעש מהשמים האמיתיים
+Rumore e G/T	רעש ו-G/T
+Rumore, G/T e stack	רעש, G/T וערימה
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	שמור את התבנית
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	נדרשות לפחות 2 אנטנות (שורות x עמודות בכרטיס למעלה).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	מרחב חופשי, או בגובה מעל קרקע ממוצעת (Sommerfeld).
+Spazio tra i due nodi di alimentazione	מרווח בין שני צמתי ההזנה
+Stack alla distanza proposta	ערימה במרווח המוצע
+Stack, tutte in fase (BIP)	ערימה, כולן בפאזה (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	רצועת אלומיניום (F1BKM 20 x 2 מ"מ): ב-NEC תיל ברדיוס רוחב/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	רצועה כפופה ל-U בין שתי הרמות, במקביל לרכזת (QST 1961: 5"; F1BKM 127 מ"מ במרחב חופשי, 152 מ"מ על רכב או בערימה).
+Stub	Stub
+Stub: larghezza	Stub: רוחב
+Stub: lunghezza sviluppata	Stub: אורך פרוש
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ו-Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ו-Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	בחלק מהפסים קו ההזנה מפסיד יותר מ-3 dB (תאים מודגשים): קצרו את הקו, עברו לקו סולם או שימו את הטיונר בלולאה.
+T antenna (cielo vero)	T אנטנה (שמים אמיתיים)
+T antenna nelle 24 ore	T אנטנה לאורך 24 שעות
+T antenna nelle 24 ore (puntamento fisso)	T אנטנה לאורך 24 שעות (הכוונה קבועה)
+T del terreno (cielo vero)	T קרקע (שמים אמיתיים)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ו-MW1FGQ; buildyourownantenna (biquad כפול, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ו-MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (השוואה)
+Tabella dello stack copiata.	טבלת הערימה הועתקה.
+Temperature uniformi (VE7BQH)	טמפרטורות אחידות (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	זמן כוכבי: G. H. Kaplan, USNO Circular 179 (2005). קנה מידה בתדר: T = (fmap / f)^2,56 T (G8ONH). ירח: J. Meeus, Astronomical Algorithms, פרק 47.\n
+Togli i cursori	הסר את הסמנים
+Tratto di lambda/4: impedenza	מקטע lambda/4: עכבה
+Tratto di λ/4	מקטע λ/4
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	שלושה כבלי 50 Ω באותו אורך (כלשהו) עד הרכזת, מחוברים בטור: כ-150 Ω.
+Tre dipoli a cerchio (WA1FXT)	שלושה דיפולים על מעגל (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	שלושה דיפולים במשולש (W4RNL)
+Usa come feed della parabola	השתמש כמזין לצלחת
+Usa la distanza proposta per lo stack	השתמש במרווח המוצע לערימה
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) ו-HF (מעל הקרקע), צימוד, מרווח מיטבי
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (מרחב חופשי, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: לכל מרווח (מקדם x מרווח DL6WU) הערימה מחושבת ב-NEC: שבח, אונת הצד הגבוהה ביותר במישור הערימה, G/T (טמפרטורות מתוך רעש ו-G/T) וצימוד בין השערים. HF: נוסחת DL6WU אינה חלה (האנטנות מעל הקרקע וזווית השיגור חשובה): הערימה נבחרת לפי זוויות ההגבהה הרצויות.
+Vai a Distanze di stack	עבור אל מרווחי ערימה
+Via Lattea (zone sopra 1000 K a 144 MHz)	שביל החלב (אזורים מעל 1000 K ב-144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	מבט מלמעלה (קנה מידה 2:1): זרועות אדומות למעלה (מרכז), כחולות למטה (סיכוך)
+Vista di lato (scala 2:1)	מבט מהצד (קנה מידה 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD ו-W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL ו-B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 ו-145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (השוואות)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD ו-W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL ו-B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 ו-145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB מזין בפינה; באמצע הצלע העכבה משתנה מעט, אך האונות זזות בפסים הגבוהים.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: כמה שיותר גבוה; מתחת ל-λ/4 של הפס הנמוך היא קורנת כמעט רק כלפי מעלה (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: ריבוע. למעגל (מצולע בן 16 צלעות) השטח הגדול ביותר ושבח מעט גבוה יותר; המשולש מתאים לשלושה תומכים.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - רעש מהשמים האמיתיים (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	Yagi של MathWorks, מידות שמוטבו על ידי MathWorks (פורסם: 10,59 dBi, F/B 15,6 dB, רוחבי אלומה 50 ו-62 מעלות)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Z טורי = סכום שלוש העכבות, אחרי ה-λ/4: Z = Zq^2 / Zseries (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| מרבי dB
+° (dietro)	° (אחורה)
+Ω (barra in alto)	Ω (סרגל עליון)
+λ, a passi di 0,125	λ, בצעדים של 0,125
+a un'altezza dal suolo	בגובה מעל הקרקע
+al massimo	במקסימום
+antenna base: il modello aperto	אנטנת בסיס: המודל הפתוח
+antenna singola	אנטנה בודדת
+azimut ed elevazione	אזימוט והגבהה
+blu: sotto (calza)	כחול: למטה (סיכוך)
+calcolata da DL6WU (	מחושב לפי DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	מחשב את ערימת ה-HF מעל הקרקע...
+calcolo in corso (spazio libero come VE7BQH	מחשב (מרחב חופשי כמו VE7BQH
+cambio di livello (meta' del lato esterno)	החלפת רמה (אמצע הצלע החיצונית)
+cerchio (poligono)	מעגל (מצולע)
+cielo piu' freddo	השמים הקרים ביותר
+circolarita' +-	עגילות +-
+coassiale 50 Ω (RG-213)	קואקס 50 Ω (RG-213)
+come VE7BQH (stack di 4)	כמו VE7BQH (ערימה של 4)
+come prima: TANT, VE7BQH, KF2YN, stack	כמו קודם: TANT, VE7BQH, KF2YN, ערימה
+con lo stub	עם ה-stub
+controfase (BOP)	בפאזה הפוכה (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: הצורה הסגורה של Balanis
+cos^2: massimo della curva di Balanis	cos^2: מקסימום עקומת Balanis
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	אלכסון: אי-התאמה של כל אנטנה כשהאחרות מסתיימות ב-Z0; מחוץ לאלכסון: הספק העובר משער אחד לאחר
+distanza / distanza DL6WU	מרווח / מרווח DL6WU
+doppia biquad	biquad כפול
+elevazione (gradi)	הגבהה (מעלות)
+fascio d'errore (Baars 4.44-4.46)	אלומת שגיאה (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	דעיכת מרחב חופשי f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	מחוץ לשיטה: NEC נותן אותו אחרי "מטב (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	מחוץ לתחום הנוסחה (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	היסט מוקד beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	גאוסי -12 dB: נוסחת Baars 4.6
+gaussiana -12 dB: integrale numerico	גאוסי -12 dB: אינטגרל נומרי
+gradi · 30° come VE7BQH	מעלות · 30° כמו VE7BQH
+griglia 0,07 λ	רשת 0,07 λ
+guadagno con lobi sotto	שבח עם אונות מתחת ל-
+guadagno dello stack (dBi)	שבח הערימה (dBi)
+guadagno massimo	שבח מרבי
+guadagno max	שבח מרבי
+larghezza x altezza (lungo la polarizzazione)	רוחב x גובה (לאורך הקיטוב)
+lobi laterali piu' bassi	אונות הצד הנמוכות ביותר
+lobi piu' bassi	האונות הנמוכות ביותר
+lobo laterale dB	אונת צד dB
+lobo laterale piu' alto (dB)	אונת הצד הגבוהה ביותר (dB)
+locator, oppure latitudine e longitudine	לוקטור, או קו רוחב וקו אורך
+lungo l'arco	לאורך הקשת
+media voluta	ממוצע רצוי
+meta' lato	אמצע הצלע
+minimo / massimo	מינימום / מקסימום
+mutua con la porta 2	הדדי עם שער 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	אין מרווח שבו האונות מתחת לסף: האונות הנמוכות ביותר
+non vale	לא תקף
+ore UTC	שעות UTC
+peso della Via Lattea qui e ora	משקל שביל החלב כאן ועכשיו
+premi "T antenna nelle 24 ore"	לחצו "T אנטנה לאורך 24 שעות"
+proposta (Distanze di stack)	מוצע (מרווחי ערימה)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	ריבועית -12 dB: HPBW (Baars 66,3 מעלות lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	ריבועית -12 dB: נצילות (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	ריבועית -12 dB: נוסחת Baars 4.8
+quattro lati uguali	ארבע צלעות שוות
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	של המודל (אם במרחב חופשי: קרקע ממוצעת 13 / 0,005, Sommerfeld)
+quota sopra	גובה עליון
+rete come superficie piena (maglia troppo fitta da calcolare)	רשת כמשטח מלא (העין צפופה מדי לחישוב)
+rete con la maglia vera	רשת עם העין האמיתית
+rettangolo 2:1	מלבן 2:1
+rosso: sopra (centrale)	אדום: למעלה (מרכז)
+scala 450 Ω	קו סולם 450 Ω
+scala 600 Ω	קו סולם 600 Ω
+scelta proposta	בחירה מוצעת
+solo sopra	עליונה בלבד
+solo sotto	תחתונה בלבד
+sotto calza (blu), sopra centrale (rosso)	למטה סיכוך (כחול), למעלה מרכז (אדום)
+sull'asse del tubo (F1BKM: 535 mm)	על ציר הצינור (F1BKM: 535 מ"מ)
+sulla singola	ביחס לבודדת
+superficie senza errore	משטח ללא שגיאות
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	טמפרטורות השמים והקרקע וההגבהה מתוך רעש ו-G/T
+temperature uniformi: si confronta con le tabelle	טמפרטורות אחידות: בר-השוואה לטבלאות
+triangolo di sopra: centrale del connettore	משולש עליון: מרכז המחבר
+triangolo di sotto: calza (massa, staffa del palo)	משולש תחתון: סיכוך (הארקה, תפסנית תורן)
+triangolo equilatero, tre sostegni	משולש שווה צלעות, שלושה תומכים
+tutte in fase (BIP)	כולן בפאזה (BIP)
+x la distanza DL6WU, a passi di 0,1	x מרווח DL6WU, בצעדים של 0,1
+RICEZIONE	קליטה
+nessuno	אין
+adesso	עכשיו
+rurale	כפרי
+residenziale	מגורים

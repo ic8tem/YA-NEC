@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	İkisi de (DL6WU dışı)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU iki ölçüyü birbirine bağlar. "Eleman sayısı" ile bum boyu DL6WU aralıklarından hesaplanır; "Bom uzunluğu" ile bum aldığı sürece direktör eklenir. Gri alan yazılamaz: türetilen değeri gösterir. "İkisi de (DL6WU dışı)" ile ikisi de verilir ve aralıklar orantılı olarak uzar veya kısalır: yöntemin dışına çıkılır ve NEC optimizasyonu gerekir.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	0-3 adımları kullanılamaz: "İkisi de (DL6WU dışı)" ile optimizasyon zorunludur
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Diğer verilerden türetilen değer: yazılamaz (verilerin altındaki nota bakın).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"Uyumla (NEC)" kenarı rezonansa, aralığı en düşük DDO'ya ayarlar, ardından bant genişliğinin +-5 %'inde DDO ve kazancı hesaplar.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = merkezde (daha küçük bobin, daha düşük verim), 100 %'e doğru = uca doğru (giderek büyüyen bobin).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 anten
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Konnektör toprak üçgeninin altında, merkez iletken üst üçgene gider.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: bu cetveli kontrol edin (100 % yazdırın)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: bu cetveli kontrol edin (100 % yazdırın, sayfaya sığdırmadan)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f fit (W7FB) = en düşük bandın merkez frekansında 306,3/f metre. Bant değiştirildiğinde güncellenir.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, dolu veya tel örgü reflektör, çanak besleyicisi
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, yatay polarizasyon, her yöne; iki seviye ve üç dipol
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Stub iki üçgeni konnektörle paralel bağlar: uzunluğu DDO için ayarlanır (F1BKM: araçta veya istifte 152 mm).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Seviyeler arasında yalıtkanlar (F1BKM: 5 mm polistiren plaka yığını): dz aralığı tüm kollar için aynı olmalıdır.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Her yaprağın seviye değişimi dış kenarın ortasındadır (F1BKM kovanı).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	JN1GLB ölçüleriyle 6 m (20-10 m bantlarında çalışan Rezonans düğmesiyle ayarlanmaz)
+Accoppiamento e distanza migliore (NEC)	Kuplaj ve en iyi aralık (NEC)
+Accoppiamento piu' forte	En güçlü kuplaj
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	4. adımda aralık ilerlemesi değişkeni eklenir (bom sabitken aralıkların bom boyunca nasıl büyüdüğü)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Merkezde koaksiyelle doğrudan besleme, balun yok (Marshall, OE2TZL, W6PQL): merkez iletken bir tarafa, ekran diğerine.
+Alla distanza DL6WU	DL6WU aralığında
+Altezza dal suolo	Yerden yükseklik
+Altezza dei bordi	Kenarların yüksekliği
+Altezza del riflettore	Reflektör yüksekliği
+Angoli di partenza voluti	İstenen yayılım açıları
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Bir yaprağın iki kolu arasındaki açı (F1BKM şablonu: 100 derece, yani komşu yaprakların kolları arasında 20 derece).
+Antenna singola	Tek anten
+Antenne una sopra l'altra	Üst üste antenler
+Apertura del petalo	Yaprak açıklığı
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Biquad'ı ana pencerede model olarak açar (eleman z = 0'da, hüzme +Z yönünde, polarizasyon Y boyunca, horn besleyiciler gibi) ve Ana odaklı çanak'a geçer: orada "NEC modelinden besleyici" düğmesi hesaplanan diyagramı alır.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Yazarlar ve kaynaklar (MIT lisansı, tam bildirim Teşekkürler bölümünde)\n
+Azimut / elevazione	Azimut / elevasyon
+Baars 4.22 (apertura uniforme)	Baars 4.22 (düzgün açıklık)
+Banda dello stack	İstif bandı
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Çalışma bandı: frekans ve mm cinsinden tüm ölçüler yeniden ölçeklenir. "serbest" frekansı yazmanıza izin verir.
+Banda piu' bassa	En düşük bant
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel ve üç dipol (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: iki ucundan beslenen bir dalga boyunda üç yaprak, stub göbekte. Üç dipol (W4RNL, WA1FXT): yaklaşık 50 ohm'luk dipoller, üçgen veya çember üzerinde, göbekte seri bağlı ve bir lambda/4 ile uyumlanmış.
+Biquad (2 quadrati)	Biquad (2 kare)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad model olarak açıldı: hesaplama bitince Ana odaklı çanak'ta "NEC modelinden besleyici"ye basın.
+Biquad e doppia biquad	Biquad ve çift biquad
+Biquad e doppia biquad (1.0.16)	Biquad ve çift biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: iki kare (8 tel kenar). Çift biquad: sırada dört kare (16 kenar), teller her iki tarafın birinci ve ikinci karesi arasında değmeden çaprazlanır.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Bom bu elemanlar için çok kısa: 0,3 lambda olarak ayarlandı.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Öne (elemana doğru) bükülmüş kenarlar. 2 kenar: polarizasyona dik iki kenar (kare sırasının üstü ve altı). Marshall: 30 mm kenarlar, arka loblar yaklaşık 6 dB daha düşük.
+Bordi rialzati	Kaldırılmış kenarlar
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4. bas., böl. 15: cos^n besleyicilerin verimi (15-55, eğrilerle test), faz veriminin alt sınırı (1 - m^2/2)^2, lambda = 4 pi sigma'da maksimum kazanç (15-67..71). Faz sınırı garanti edilen bir minimumdur: hesaplanan değer her zaman üstündedir
+Calcola accoppiamento e distanze (NEC)	Kuplaj ve aralıkları hesapla (NEC)
+Calcola lo stack HF (NEC)	HF istifini hesapla (NEC)
+Calcola prima le distanze.	Önce aralıkları hesaplayın.
+Calcola tutte le bande (NEC)	Tüm bantları hesapla (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	John C. Sager G8ONH'nin skynoise 0.2.2 programından hesaplama (2025-2026, MIT lisansı), YA-NEC'te C#'a aktarıldı.\n
+Cambiandola, le misure in mm si riscalano.	Değiştirildiğinde mm cinsinden ölçüler yeniden ölçeklenir.
+Centro del lobo nel cielo	Gökyüzünde hüzmenin merkezi
+Cielo (fuori dalla Via Lattea)	Gökyüzü (Samanyolu dışı)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Diyagrama tıklayın: imleç C1, sonraki tıklama C2; diyagramın altında her birinin seviyesi, açısı ve aralarındaki fark. Çift tıklama: imleçleri kaldırır. İmleçler frekans değişince kalır.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Harmonik bantların yüksek DDO'su ile koaksiyel: kayıp çok artar (NT0Z, WB8IMY). Besleme noktasında tuner veya merdiven hat daha iyidir.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Koaksiyel: pratik ama harmonik bantların yüksek DDO'su ile çok kaybeder (NT0Z, WB8IMY). Merdiven hat: yüksek DDO'da bile düşük kayıp, simetrik tuner veya tunerde 4:1 balun gerektirir.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Karşılaştırma: L. Edwards VE7BQH (30 derecede G/T tabloları, DL6WU aralığında 4'lü istif, düzgün sıcaklıklar); YT1NT ve VE3EA'dan TANT (DG7YBN kılavuzu); KF2YN düzeltmesi.
+Controlli della 1.0.14 (Baars)	1.0.14 kontrolleri (Baars)
+Controlli della 1.0.14 (Balanis)	1.0.14 kontrolleri (Balanis)
+Criterio della distanza migliore	En iyi aralık ölçütü
+Cursori	İmleçler
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (yatay loop, merdiven hat, simetrik tuner); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (çevre 1005/f fit)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Tel ortasından tel ortasına, yaklaşık lambda/4 (Marshall 2,4 GHz'de 30,5 mm).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Uçtan uca (çemberde: yay boyunca). Cebik: üçgende 34,3", çemberde 31,4", 146 MHz'de 1/2" boruyla.
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Göbekten (yaklaşık 150 ohm seri) 50 ohm'a: RG-62 93 ohm (Cebik) veya empedans 150'nin altındaysa 75 ohm.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Boru boyunca göbekten göbeğe, yaklaşık bir dalga boyu (F1BKM 145 MHz'de 2050 mm; QST 146 MHz'de 80").
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Karelerin düzleminden reflektör yüzeyine: DDO ayarıdır (kaynaklarda 0,1-0,13 lambda).
+Data e ora (UTC)	Tarih ve saat (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Geçersiz tarih ve saat (gg/aa/yyyy ss:dd, UTC).
+Dettaglio del mozzo (PDF)	Göbek detayı (PDF)
+Diametro del tubo	Boru çapı
+Diametro della ruota	Tekerlek çapı
+Differenza dal cielo uniforme	Düzgün gökyüzüne göre fark
+Dima 1:1 (PDF)	1:1 şablon (PDF)
+Dima del petalo della Big Wheel	Big Wheel yaprak şablonu
+Dima della biquad	Biquad şablonu
+Dima di piegatura 1:1 (PDF)	1:1 bükme şablonu (PDF)
+Direttori molto fitti (spaziature x	Direktörler çok sık (aralıklar x
+Direttori molto radi (spaziature x	Direktörler çok seyrek (aralıklar x
+Discesa	Besleme hattı
+Dischi e illuminatori	Çanaklar ve besleyiciler
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Bükülmüş telin A4 üzerinde 1:1 ölçekli çizimi, bükme noktaları, baskıyı kontrol için 100 mm cetvel ve ölçü tablosuyla.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Merkezden her dipolün besleme noktasına uzaklık (Cebik: üçgende 15,4", çemberde 15,5", 146 MHz'de).
+Distanza dal riflettore	Reflektörden uzaklık
+Distanza proposta	Önerilen aralık
+Distanza tra i due livelli	İki seviye arasındaki aralık
+Distanze	Aralıklar
+Distanze da provare	Denenecek aralıklar
+Distanze di stack	İstif aralıkları
+Distanze provate	Denenen aralıklar
+Distanze provate e diagramma in elevazione	Denenen aralıklar ve elevasyon diyagramı
+Doppia biquad (4)	Çift biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Çift biquad: köşegenlerin kesiştiği yerde teller değmez (yaklaşık 1,5 mm boşluk).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Kolların bağlantı üçgenlerine tutturulduğu yer (F1BKM: 52 mm kenarlı üçgenler).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Üst üste iki anten, fazda: Big Wheel 5/8 lambda'da (QST ve F1BKM: biri ters, fazladan yarım dalga kabloyla; modelde doğrudan fazda), üç dipol 0,875 lambda'da (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Önerilen aralıkta elevasyon (yer üstünde dBi)
+F/B lungo l'asse (NEC)	Eksen boyunca F/B (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: alüminyum 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Hata hüzmesi, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	10 GHz besleyiciler, ölçülen farklar
+File MMANA senza la sezione ***Wires***.	***Wires*** bölümü olmayan MMANA dosyası.
+Filo da tagliare	Kesilecek tel
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Yalıtımlı tel: NEC-2 onu çıplak olarak hesaplar. Yalıtım elemanı kısaltır: W6PQL yalıtımlı telle 0,238 λ kenar kullanır, Marshall çıplak telle 0,248 λ (yaklaşık 4 % daha az).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Kaynaklar: DL6WU (formül); ARRL Antenna Book 24. bas. (formülün sınırları, HF Yagi istifleri ve elevasyon açıları); L. Edwards VE7BQH (EME istifleri için ölçüt olarak G/T); R. D. Straw N6BV (HFTA, istifler ve arazi); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; YO3IIU'nun nec2-array'i (alımda kuplaj matrisi, GPL-2 veya sonrası); G. Burke ve A. Poggio, NEC-2 kılavuzu (CP kartı).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Tasarım frekansı. Bir bant seçiliyken gridir; "serbest" ile yazılır. Değiştirildiğinde kenar, aralık ve reflektör yeniden ölçeklenir.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	50-1300 MHz dışında haritanın 2,56 üslü ölçeklemesi yetmez (altında: iyonosferik soğurma ve insan kaynaklı gürültü; üstünde: kozmik arka plan ve atmosfer): değer yalnızca yaklaşıktır.
+G max	G maks
+G/T (da Rumore e G/T)	G/T (Gürültü ve G/T'den)
+G/T come VE7BQH	VE7BQH gibi G/T
+G/T con il cielo vero	Gerçek gökyüzüyle G/T
+G/T max	G/T maks
+G/T migliore	En iyi G/T
+Guadagno (NEC)	Kazanç (NEC)
+Guadagno all'orizzonte (NEC)	Ufukta kazanç (NEC)
+Guadagno e lobo laterale al variare della distanza	Aralığa göre kazanç ve yan lob
+Guadagno massimo con questa superficie	Bu yüzeyle maksimum kazanç
+HF (sopra il terreno)	HF (yer üstünde)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Kolların iki seviyesi, bağlantı üçgenleri, stub ve konnektör, ölçüleriyle.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: açık dalga kılavuzu 13,5 dB'e karşı choke 15,2 dB (güneş gürültüsü); vidalı choke -0,6 dB; LNB kapağı -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 yalıtımı modellemez: hesaplanan ölçüler çıplak tel içindir. Yalıtımlı telle eleman kısaltılmalıdır (W6PQL: 0,248 yerine 0,238 lambda kenar, yaklaşık 4 % daha az).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Bir yaprağın üst kolu ile komşu yaprağın alt kolu 20 derece aralıklıdır: birlikte yaprağın yüksek empedansını göbeğe taşıyan λ/4 hattı oluştururlar.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Gri alana yazılamaz: türetilmiş değeri gösterir. "Her ikisi" ile ikisi de verilir ve aralıklar orantılı olarak uzatılır veya sıkıştırılır: yöntemin dışına çıkılır ve NEC optimizasyonu gerekir.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Kenar tel ortasından tel ortasına yaklaşık λ/4'tür; reflektörden uzaklık (kaynaklarda 0,1-0,13 λ) DDO ayarıdır. Tel örgüyle reflektör gerçek göz aralığına sahip bir tel ızgaradır (Mumford: göz λ/10'un altında).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Açık model zaten bir istif: tek anteni açın.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Model serbest uzayda: HF istifi için ortalama toprak kullanılır (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Birleştirilecek A4 sayfalarında 1:1 ölçekli yaprak (10 mm bindirme, her 50 mm'de artı işareti, 100 mm cetvel). Yalnızca Big Wheel için.
+Impedenza al mozzo (NEC)	Göbekte empedans (NEC)
+Impedenza di riferimento	Referans empedans
+Impedenza in serie al mozzo	Göbekte seri empedans
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, böl. 4: serbest uzay azalması 4.3, karesel 4.8, Gauss 4.6, HPBW 4.13, ilk yan lob 4.14a, odak kayması 4.21-4.23, küresel dalgada destek gölgelemesi 4.36c-f, hatanın eksenel bileşeni 4.43, hata hüzmesi 4.44-4.46. Hesaplamayla aynı: serbest uzay azalması (= uzaysal zayıflama) ve dağılımların verimleri. Farklı: Baars ideal dağılımlar kullanır, burada gerçek besleyici entegre edilir; Baars'ın HPBW ve yan lobu karşılaştırma içindir, hesaplamanın yerini tutmaz
+K sotto l'orizzonte (skynoise: 290 K)	Ufkun altında K (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel kritiktir: Cebik'in kendisi (QST 3/2008) NEC'in akımın düşük olduğu yerlerde hatları kötü hesapladığını ve küçük yapım farklarının empedansı kaydırdığını belirtir. Stub her zaman gerçek anten üzerinde ayarlanır.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Çevrenin tam bir dalga boyu olduğu bant: üstünde loop tuner ile tüm bantlarda çalışır.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Şablon ve göbek Big Wheel içindir: Big Wheel tipini seçin.
+Larghezza del riflettore	Reflektör genişliği
+Lati	Kenarlar
+Lato del quadrato (centro filo)	Kare kenarı (tel ortası)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Kare sırası boyunca kenar (polarizasyon). Çift biquad: yaklaşık 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Kare sırasına dik kenar (Marshall: tek başına 123 mm, çanak besleyicisi olarak 110 mm).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Kenar, reflektörden uzaklık, dolu veya tel örgü reflektör ve kenarlar kaynaklar arasında karşılaştırıldı; NEC uyumlama, çanak besleyicisi, 1:1 şablon. Taslak IC8TEM tarafından 17/11/2026'da onaylandı.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Kaynaklar farklı reflektörlerde 8 dBd ile 14 dBi arası kazanç bildirir: kartın NEC'i bunları aynı temele oturtur.
+Linea a finestra 450 Ω	Pencereli hat 450 Ω
+Linea aperta 600 Ω	Açık hat 600 Ω
+Livelli	Seviyeler
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Seviyeler boruya göre çok yakın: kolların hattı çok düşük empedanslıdır ve model NEC-2'nin sınırındadır (birkaç yarıçaptan yakın paralel teller).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	İletkenlerin "fazlanması": alt kollar (ekran) ile üst kollar (merkez) arasındaki dikey uzaklık. F1BKM plaka yığınından tahmin edildi: kaynaklar vermez.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Gürültü ve G/T ile aynı hesap: düzgün sıcaklıkta gökyüzü ve yer (VE7BQH, TANT). Ne QTH'ye ne saate bağlıdır.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Lokatör (JN70CN) veya derece cinsinden enlem ve boylam (40,55 14,21). config.ini'ye kaydedilir.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): tüm bantlar, merdiven hat veya koaksiyel, besleme hattı kaybı
+Loop orizzontale multibanda	Yatay çok bantlı loop
+Loop orizzontale multibanda (1.0.17)	Yatay çok bantlı loop (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Yatay çok bantlı loop (Loop Skywire)
+Lunghezza del dipolo	Dipol uzunluğu
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Tel uzunluğu (eksen boyunca, lehimlenecek kısım hariç)
+Lunghezza della discesa	Besleme hattı uzunluğu
+Lunghezza sviluppata del petalo	Yaprağın açılmış uzunluğu
+Mappa del cielo	Gökyüzü haritası
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Gökyüzü haritaları: C. G. T. Haslam vd., 408 MHz taraması (A&AS 47, 1982); M. Remazeilles vd. tarafından yeniden işleme (MNRAS 451, 2015), NASA'nın LAMBDA sunucusundan; 144 ve 432 MHz haritaları G8ONH tarafından hazırlandı.\n
+Matrice delle porte singolare.	Tekil port matrisi.
+Matrice di accoppiamento alla distanza proposta	Önerilen aralıkta kuplaj matrisi
+Mostra il primo nullo	İlk sıfırı göster
+Mozzo - lato esterno	Göbek - dış kenar
+Mozzo della Big Wheel	Big Wheel göbeği
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	YENİ · gökyüzü haritası, QTH, saat, Ay (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	24 saat boyunca (gerçek gökyüzü)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF ve F... (Maignan, F1BKM sürümünden): yaklaşık 1,2 m tekerlek, rüzgâr ve buzdan çekinir, yeni ölçü yok.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Ufkun üstündeki her yön, verilen saatte ve verilen QTH'den gökyüzü haritasının o noktadaki sıcaklığını alır (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Her yaprak iki ucundan beslenen tam bir dalga boyudur: göbeğe yakın kollar iki seviyede λ/4 hatlardır (altta mavi = ekran, üstte kırmızı = merkez). Bir yaprağın üst kolu ile komşu yaprağın alt kolu 20 derece aralıkla gider: bu çift hat görevi görür. Paralel stub yaklaşık 10 Ω'u 50 Ω'a getirir.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Her yaprağın bir kolu alt, bir kolu üst seviyededir: seviye değişimi dış kenarın ortasındadır (F1BKM kovanı).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (3 m çanak, f/D 0,3): açık dalga kılavuzu 13,5 dB'e karşı choke 15,2 dB; vidalı choke -0,6 dB; LNB kapağı -0,5 dB. Yalnızca referans: bu besleyicilerin diyagramı NEC ile hesaplanmalıdır
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Tel örgü tellerinin aralığı (W6PQL ve G6GVI: 1/2 x 1 inç tel örgü).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Tek antenden istif oluşturmak için: Gürültü/GT/İstif > İstif aralıkları, satırlar ve sütunlar, "Açık modelde istifi oluştur" düğmesi (0.4.20'den beri).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	DDO için (tüm kaynaklarda olduğu gibi koaksiyel doğrudan besleme noktasında, 50 ohm).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Bu yüzden tunerli merdiven hat veya besleme noktasında tunerli koaksiyel kullanılır. "Tüm bantları hesapla (NEC)" her bandı ve besleme hattı kaybını hesaplar.
+Perdita della discesa con il ROS di ogni banda (dB)	Her bandın DDO'su ile besleme hattı kaybı (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Tüm bantlarda besleme hattı kaybı 3 dB'in altında.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Çevre 1005/f fit, dört şekil, her bandın DDO'su için besleme hattı kaybıyla (merdiven veya koaksiyel) tüm bantların NEC hesabı. Taslak IC8TEM tarafından 17/11/2026'da onaylandı.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Stub'lı iki seviyeli yapraklar, lambda/4 ile seri üç dipol, 1:1 bükme şablonu ve göbek detayı; öz testte MathWorks durumları (6 elemanlı Yagi, helis). Taslak IC8TEM tarafından 17/11/2026'da onaylandı.
+Petalo	Yaprak
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	P noktalarında 90 derecelik bükümler. Kırmızı düğümler: bir tarafta koaksiyel merkezi, diğerinde ekran (balun yok).
+Pieno (lamiera, PCB)	Dolu (sac, baskı devre)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Dolu: sac veya baskı devre, NEC'te sık ızgara (0,07 lambda, eşit yüzeyli tel yarıçapı). Tel örgü: kendi teliyle gerçek göz aralığı.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Yatay polarizasyon ve her yöne diyagram: ufuktaki kazanç şekle değil yüksekliğe ve istiflemeye bağlıdır.
+Porta in adattamento (NEC)	Uyumla (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	İlk yan lob, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Yönlendirme
+Punto di alimentazione	Besleme noktası
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Geçersiz QTH: lokatörü (ör. JN70CN) veya enlem ve boylamı yazın.
+Quota dell'antenna piu' bassa	En alttaki antenin yüksekliği
+ROS a 50 Ω (dopo "Porta in adattamento")	50 Ω'da DDO ("Uyumla" sonrası)
+ROS a 50 Ω in banda	Bantta 50 Ω'da DDO
+ROS in banda	Bantta DDO
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Ana lobun her iki yanındaki ilk minimumlarda mor kesikli ışınlar: aralarındaki uzaklık ilk sıfırlar arası genişliktir (FNBW), diyagramın altına en yüksek yan lobla birlikte yazılır (SLL, maksimumdan 100 derece içinde, arka lob hariç).
+Raggio al punto di alimentazione	Besleme noktasında yarıçap
+Raggio del mozzo	Göbek yarıçapı
+Raggio delle curve (asse)	Bükme yarıçapı (eksen)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Yaprağın iki bükümünün boru ekseni üzerindeki yarıçapı (F1BKM şablonu: içte 140 mm).
+Rame da 1,2-2 mm nelle fonti.	Kaynaklarda 1,2-2 mm bakır.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Tel örgü hesap için çok sık (1800'den fazla segment): NEC'te reflektör, dolu gibi 0,07 λ ızgaradır. λ/10'un altındaki gözlerle fark küçüktür.
+Rete: diametro del filo	Tel örgü: tel çapı
+Rete: maglia lungo l'altezza	Tel örgü: yükseklikte göz
+Rete: maglia lungo la larghezza	Tel örgü: genişlikte göz
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Küçük reflektör: kazanç düşer ve arka lob büyür (Marshall: 2,4 GHz'de 123 mm, yani yaklaşık 1 λ, yalnız biquad için).
+Risultati del cielo vero copiati.	Gerçek gökyüzü sonuçları kopyalandı.
+Rumore dal cielo vero	Gerçek gökyüzü gürültüsü
+Rumore e G/T	Gürültü ve G/T
+Rumore, G/T e stack	Gürültü, G/T ve istif
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Şablonu kaydet
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	En az 2 anten gerekli (yukarıdaki kartta satırlar x sütunlar).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Serbest uzay veya ortalama toprak üzerinde bir yükseklikte (Sommerfeld).
+Spazio tra i due nodi di alimentazione	İki besleme düğümü arasındaki boşluk
+Stack alla distanza proposta	Önerilen aralıkta istif
+Stack, tutte in fase (BIP)	İstif, hepsi fazda (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Alüminyum şerit (F1BKM 20 x 2 mm): NEC'te yarıçapı genişlik/4 olan tel.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	İki seviye arasında U şeklinde bükülmüş şerit, göbeğe paralel (QST 1961: 5"; F1BKM serbest uzayda 127 mm, araçta veya istifte 152 mm).
+Stub	Stub
+Stub: larghezza	Stub: genişlik
+Stub: lunghezza sviluppata	Stub: açılmış uzunluk
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ve Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ve Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Bazı bantlarda hat 3 dB'den fazla kaybediyor (vurgulanan kutular): hattı kısaltın, merdiven hatta geçin veya tuneri loop'a koyun.
+T antenna (cielo vero)	Anten T (gerçek gökyüzü)
+T antenna nelle 24 ore	24 saat boyunca anten T
+T antenna nelle 24 ore (puntamento fisso)	24 saat boyunca anten T (sabit yönlendirme)
+T del terreno (cielo vero)	Yer T (gerçek gökyüzü)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ve MW1FGQ; buildyourownantenna (çift biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ve MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (karşılaştırma)
+Tabella dello stack copiata.	İstif tablosu kopyalandı.
+Temperature uniformi (VE7BQH)	Düzgün sıcaklıklar (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Yıldız zamanı: G. H. Kaplan, USNO Circular 179 (2005). Frekans ölçeklemesi: T = (fharita / f)^2,56 T (G8ONH). Ay: J. Meeus, Astronomical Algorithms, böl. 47.\n
+Togli i cursori	İmleçleri kaldır
+Tratto di lambda/4: impedenza	Lambda/4 parçası: empedans
+Tratto di λ/4	λ/4 parçası
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Göbeğe kadar aynı (herhangi) uzunlukta üç 50 Ω kablo, seri bağlı: yaklaşık 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Çember üzerinde üç dipol (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Üçgende üç dipol (W4RNL)
+Usa come feed della parabola	Çanak besleyicisi olarak kullan
+Usa la distanza proposta per lo stack	Önerilen aralığı istif için kullan
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) ve HF (yer üstünde), kuplaj, en iyi aralık
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (serbest uzay, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: her aralık için (katsayı x DL6WU aralığı) istif NEC ile hesaplanır: kazanç, istif düzlemindeki en yüksek yan lob, G/T (Gürültü ve G/T sıcaklıkları) ve portlar arası kuplaj. HF: DL6WU formülü geçerli değildir (antenler yer üstündedir ve yayılım açısı önemlidir): istif istenen elevasyon açılarına göre seçilir.
+Vai a Distanze di stack	İstif aralıklarına git
+Via Lattea (zone sopra 1000 K a 144 MHz)	Samanyolu (144 MHz'de 1000 K üzeri bölgeler)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Üstten görünüm (ölçek 2:1): kırmızı kollar üstte (merkez), mavi altta (ekran)
+Vista di lato (scala 2:1)	Yandan görünüm (ölçek 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD ve W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL ve B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 ve 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (karşılaştırmalar)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD ve W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL ve B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 ve 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB köşeden besler; kenar ortasında empedans az değişir ama yüksek bantlarda loblar kayar.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: olabildiğince yüksek; en düşük bandın λ/4'ünün altında neredeyse yalnızca yukarı yayar (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: kare. Çember (16 kenarlı çokgen) en büyük alana ve biraz daha yüksek kazanca sahiptir; üçgen üç destek içindir.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Gerçek gökyüzü gürültüsü (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks Yagi, ölçüler MathWorks tarafından optimize edildi (yayımlanan: 10,59 dBi, F/B 15,6 dB, hüzme genişlikleri 50 ve 62 derece)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Seri Z = üç empedansın toplamı, λ/4'ten sonra: Z = Zq^2 / Zseri (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| maks dB
+° (dietro)	° (arka)
+Ω (barra in alto)	Ω (üst çubuk)
+λ, a passi di 0,125	λ, 0,125 adımlarla
+a un'altezza dal suolo	yer üstünde bir yükseklikte
+al massimo	maksimumda
+antenna base: il modello aperto	temel anten: açık model
+antenna singola	tek anten
+azimut ed elevazione	azimut ve elevasyon
+blu: sotto (calza)	mavi: altta (ekran)
+calcolata da DL6WU (	DL6WU'ya göre hesaplandı (
+calcolo dello stack HF sopra il terreno in corso...	yer üstünde HF istifi hesaplanıyor...
+calcolo in corso (spazio libero come VE7BQH	hesaplanıyor (VE7BQH gibi serbest uzay
+cambio di livello (meta' del lato esterno)	seviye değişimi (dış kenarın ortası)
+cerchio (poligono)	çember (çokgen)
+cielo piu' freddo	en soğuk gökyüzü
+circolarita' +-	dairesellik +-
+coassiale 50 Ω (RG-213)	koaksiyel 50 Ω (RG-213)
+come VE7BQH (stack di 4)	VE7BQH gibi (4'lü istif)
+come prima: TANT, VE7BQH, KF2YN, stack	önceki gibi: TANT, VE7BQH, KF2YN, istif
+con lo stub	stub ile
+controfase (BOP)	ters fazda (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: Balanis kapalı formu
+cos^2: massimo della curva di Balanis	cos^2: Balanis eğrisinin maksimumu
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	köşegen: diğerleri Z0 ile sonlandırılmışken her antenin uyumsuzluğu; köşegen dışı: bir porttan diğerine geçen güç
+distanza / distanza DL6WU	aralık / DL6WU aralığı
+doppia biquad	çift biquad
+elevazione (gradi)	elevasyon (derece)
+fascio d'errore (Baars 4.44-4.46)	hata hüzmesi (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	serbest uzay azalması f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	yöntem dışı: NEC bunu "Optimize et (NEC)" sonrasında verir
+fuori dall'intervallo della formula (0,1 < t < 1)	formül aralığı dışında (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	odak kayması beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gauss -12 dB: Baars formülü 4.6
+gaussiana -12 dB: integrale numerico	Gauss -12 dB: sayısal integral
+gradi · 30° come VE7BQH	derece · 30° VE7BQH gibi
+griglia 0,07 λ	0,07 λ ızgara
+guadagno con lobi sotto	altındaki loblarla kazanç
+guadagno dello stack (dBi)	istif kazancı (dBi)
+guadagno massimo	maksimum kazanç
+guadagno max	maks kazanç
+larghezza x altezza (lungo la polarizzazione)	genişlik x yükseklik (polarizasyon boyunca)
+lobi laterali piu' bassi	en düşük yan loblar
+lobi piu' bassi	en düşük loblar
+lobo laterale dB	yan lob dB
+lobo laterale piu' alto (dB)	en yüksek yan lob (dB)
+locator, oppure latitudine e longitudine	lokatör veya enlem ve boylam
+lungo l'arco	yay boyunca
+media voluta	istenen ortalama
+meta' lato	kenar ortası
+minimo / massimo	minimum / maksimum
+mutua con la porta 2	port 2 ile karşılıklı
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	lobların eşiğin altında olduğu aralık yok: en düşük loblar
+non vale	geçersiz
+ore UTC	UTC saatleri
+peso della Via Lattea qui e ora	burada ve şimdi Samanyolu'nun ağırlığı
+premi "T antenna nelle 24 ore"	"24 saat boyunca anten T"ye basın
+proposta (Distanze di stack)	önerilen (İstif aralıkları)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	karesel -12 dB: HPBW (Baars 66,3 derece lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	karesel -12 dB: verim (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	karesel -12 dB: Baars formülü 4.8
+quattro lati uguali	dört eşit kenar
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	modelinki (serbest uzaydaysa: ortalama toprak 13 / 0,005, Sommerfeld)
+quota sopra	üst yükseklik
+rete come superficie piena (maglia troppo fitta da calcolare)	tel örgü dolu yüzey olarak (göz hesap için çok sık)
+rete con la maglia vera	gerçek gözle tel örgü
+rettangolo 2:1	dikdörtgen 2:1
+rosso: sopra (centrale)	kırmızı: üstte (merkez)
+scala 450 Ω	merdiven hat 450 Ω
+scala 600 Ω	merdiven hat 600 Ω
+scelta proposta	önerilen seçim
+solo sopra	yalnız üst
+solo sotto	yalnız alt
+sotto calza (blu), sopra centrale (rosso)	altta ekran (mavi), üstte merkez (kırmızı)
+sull'asse del tubo (F1BKM: 535 mm)	boru ekseninde (F1BKM: 535 mm)
+sulla singola	tek antene göre
+superficie senza errore	hatasız yüzey
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	Gürültü ve G/T'den gökyüzü ve yer sıcaklıkları ile elevasyon
+temperature uniformi: si confronta con le tabelle	düzgün sıcaklıklar: tablolarla karşılaştırılabilir
+triangolo di sopra: centrale del connettore	üst üçgen: konnektör merkezi
+triangolo di sotto: calza (massa, staffa del palo)	alt üçgen: ekran (toprak, direk kelepçesi)
+triangolo equilatero, tre sostegni	eşkenar üçgen, üç destek
+tutte in fase (BIP)	hepsi fazda (BIP)
+x la distanza DL6WU, a passi di 0,1	x DL6WU aralığı, 0,1 adımlarla
+RICEZIONE	ALIM
+nessuno	yok
+adesso	şimdi
+rurale	kırsal
+residenziale	yerleşim

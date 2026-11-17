@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Keduanya (di luar DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU mengikat kedua ukuran. Dengan "Jumlah elemen" boom dihitung dari jarak DL6WU; dengan "Panjang boom" direktor ditambahkan selama boom masih muat. Kolom abu-abu tidak dapat diisi: kolom itu menampilkan nilai turunan. Dengan "Keduanya (di luar DL6WU)" keduanya diberikan dan jarak diperpanjang atau diperpendek secara proporsional: keluar dari metode dan optimasi NEC diperlukan.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	langkah 0-3 tidak tersedia: dengan "Keduanya (di luar DL6WU)" optimasi wajib
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Nilai turunan dari data lain: tidak dapat diisi (lihat catatan di bawah data).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"Sesuaikan (NEC)" mengatur sisi untuk resonansi dan jarak untuk SWR minimum, lalu menghitung SWR dan gain pada +-5 % lebar pita.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = di tengah (kumparan lebih kecil, efisiensi lebih rendah), ke arah 100 % = ke arah ujung (kumparan makin besar).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 antena
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Konektor di bawah segitiga ground, konduktor tengah menuju segitiga atas.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: periksa penggaris ini (cetak 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: periksa penggaris ini (cetak 100 %, tanpa menyesuaikan ke halaman)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f kaki (W7FB) = 306,3/f meter pada frekuensi tengah pita terendah. Diperbarui saat pita diganti.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, reflektor pejal atau jaring, feed parabola
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, polarisasi horizontal, omnidirectional; dua tingkat dan tiga dipol
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Stub menghubungkan kedua segitiga paralel dengan konektor: panjangnya dipotong untuk SWR (F1BKM: 152 mm di mobil atau dalam tumpukan).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Isolator di antara tingkat (F1BKM: tumpukan pelat polistirena 5 mm): jarak dz harus sama untuk semua lengan.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Perpindahan tingkat setiap kelopak ada di tengah sisi luar (selongsong F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m dengan ukuran JN1GLB (tidak disetel oleh tombol Resonansi, yang bekerja pada pita 20-10 m)
+Accoppiamento e distanza migliore (NEC)	Kopling dan jarak terbaik (NEC)
+Accoppiamento piu' forte	Kopling terkuat
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	Pada langkah 4 ditambahkan variabel progresi jarak (bagaimana jarak bertambah sepanjang boom, dengan boom tetap)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Pencatuan langsung dengan koaks di tengah, tanpa balun (Marshall, OE2TZL, W6PQL): konduktor tengah ke satu sisi, pelindung ke sisi lain.
+Alla distanza DL6WU	Pada jarak DL6WU
+Altezza dal suolo	Tinggi di atas tanah
+Altezza dei bordi	Tinggi bibir
+Altezza del riflettore	Tinggi reflektor
+Angoli di partenza voluti	Sudut pancar yang diinginkan
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Sudut antara dua lengan kelopak (templat F1BKM: 100 derajat, jadi 20 derajat di antara lengan kelopak yang bersebelahan).
+Antenna singola	Antena tunggal
+Antenne una sopra l'altra	Antena bertumpuk vertikal
+Apertura del petalo	Bukaan kelopak
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Membuka biquad sebagai model di jendela utama (elemen di z = 0, berkas ke +Z, polarisasi sepanjang Y, seperti feed horn) lalu ke Parabola fokus utama: di sana tombol "Feed dari model NEC" mengambil pola yang dihitung.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Penulis dan sumber (lisensi MIT, pemberitahuan lengkap di Ucapan terima kasih)\n
+Azimut / elevazione	Azimut / elevasi
+Baars 4.22 (apertura uniforme)	Baars 4.22 (apertur seragam)
+Banda dello stack	Pita tumpukan
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Pita kerja: frekuensi dan semua ukuran dalam mm diskalakan ulang. "bebas" memungkinkan mengetik frekuensi.
+Banda piu' bassa	Pita terendah
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel dan tiga dipol (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: tiga kelopak satu panjang gelombang yang dicatu di kedua ujung, dengan stub di hub. Tiga dipol (W4RNL, WA1FXT): dipol sekitar 50 ohm, dalam segitiga atau pada lingkaran, dihubungkan seri di hub dan disesuaikan dengan lambda/4.
+Biquad (2 quadrati)	Biquad (2 persegi)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad dibuka sebagai model: setelah perhitungan selesai, tekan "Feed dari model NEC" di Parabola fokus utama.
+Biquad e doppia biquad	Biquad dan biquad ganda
+Biquad e doppia biquad (1.0.16)	Biquad dan biquad ganda (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: dua persegi (8 sisi kawat). Biquad ganda: empat persegi berderet (16 sisi), kawat bersilangan tanpa bersentuhan di antara persegi pertama dan kedua di tiap sisi.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Boom terlalu pendek untuk elemen ini: diatur ke 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Bibir dilipat ke depan (ke arah elemen). 2 sisi: dua bibir tegak lurus polarisasi (atas dan bawah deret persegi). Marshall: bibir 30 mm, lobus belakang sekitar 6 dB lebih rendah.
+Bordi rialzati	Bibir terangkat
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, ed. 4, bab 15: efisiensi feed cos^n (15-55, uji dengan kurva), batas bawah efisiensi fase (1 - m^2/2)^2, gain maksimum pada lambda = 4 pi sigma (15-67..71). Batas fase adalah minimum yang dijamin: nilai terhitung selalu di atasnya
+Calcola accoppiamento e distanze (NEC)	Hitung kopling dan jarak (NEC)
+Calcola lo stack HF (NEC)	Hitung tumpukan HF (NEC)
+Calcola prima le distanze.	Hitung jarak terlebih dahulu.
+Calcola tutte le bande (NEC)	Hitung semua pita (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Perhitungan dari skynoise 0.2.2 oleh John C. Sager G8ONH (2025-2026, lisensi MIT), diporting ke C# di YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	Jika diubah, ukuran dalam mm diskalakan ulang.
+Centro del lobo nel cielo	Pusat berkas di langit
+Cielo (fuori dalla Via Lattea)	Langit (di luar Bima Sakti)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Klik pada pola: kursor C1, klik berikutnya C2; di bawah pola tampil level masing-masing, sudut dan selisih keduanya. Klik ganda: menghapus kursor. Kursor tetap saat frekuensi berubah.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Koaks dengan SWR tinggi pada pita harmonik: rugi meningkat banyak (NT0Z, WB8IMY). Lebih baik tuner di titik catu, atau saluran tangga.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Koaks: praktis, tetapi dengan SWR tinggi pada pita harmonik ruginya besar (NT0Z, WB8IMY). Saluran tangga: rugi rendah bahkan dengan SWR tinggi, perlu tuner seimbang atau balun 4:1 di tuner.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Perbandingan: L. Edwards VE7BQH (tabel G/T pada 30 derajat, tumpukan 4 pada jarak DL6WU, suhu seragam); TANT oleh YT1NT dan VE3EA (manual DG7YBN); koreksi KF2YN.
+Controlli della 1.0.14 (Baars)	Pemeriksaan di 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Pemeriksaan di 1.0.14 (Balanis)
+Criterio della distanza migliore	Kriteria jarak terbaik
+Cursori	Kursor
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop horizontal, saluran tangga, tuner seimbang); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (keliling 1005/f kaki)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Dari tengah kawat ke tengah kawat, sekitar lambda/4 (Marshall 30,5 mm pada 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Ujung ke ujung (pada lingkaran: sepanjang busur). Cebik: 34,3" sebagai segitiga, 31,4" pada lingkaran, pada 146 MHz dengan pipa 1/2".
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Dari hub (sekitar 150 ohm seri) ke 50 ohm: RG-62 93 ohm (Cebik), atau 75 ohm bila impedansi di bawah 150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Dari hub ke hub sepanjang pipa, sekitar satu panjang gelombang (F1BKM 2050 mm pada 145 MHz; QST 80" pada 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Dari bidang persegi ke permukaan reflektor: inilah penyetelan SWR (0,1-0,13 lambda di sumber).
+Data e ora (UTC)	Tanggal dan waktu (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Tanggal dan waktu tidak valid (dd/mm/yyyy hh:mm, UTC).
+Dettaglio del mozzo (PDF)	Detail hub (PDF)
+Diametro del tubo	Diameter pipa
+Diametro della ruota	Diameter roda
+Differenza dal cielo uniforme	Selisih dari langit seragam
+Dima 1:1 (PDF)	Templat 1:1 (PDF)
+Dima del petalo della Big Wheel	Templat kelopak Big Wheel
+Dima della biquad	Templat biquad
+Dima di piegatura 1:1 (PDF)	Templat tekuk 1:1 (PDF)
+Direttori molto fitti (spaziature x	Direktor sangat rapat (jarak x
+Direttori molto radi (spaziature x	Direktor sangat jarang (jarak x
+Discesa	Saluran catu
+Dischi e illuminatori	Parabola dan feed
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Gambar kawat yang ditekuk skala 1:1 pada A4, dengan titik tekuk, penggaris 100 mm untuk memeriksa cetakan dan tabel ukuran.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Jarak dari tengah ke titik catu tiap dipol (Cebik: 15,4" sebagai segitiga, 15,5" pada lingkaran, pada 146 MHz).
+Distanza dal riflettore	Jarak dari reflektor
+Distanza proposta	Jarak usulan
+Distanza tra i due livelli	Jarak antara kedua tingkat
+Distanze	Jarak
+Distanze da provare	Jarak yang dicoba
+Distanze di stack	Jarak tumpukan
+Distanze provate	Jarak yang telah dicoba
+Distanze provate e diagramma in elevazione	Jarak yang telah dicoba dan pola elevasi
+Doppia biquad (4)	Biquad ganda (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Biquad ganda: di persilangan diagonal kawat tidak bersentuhan (sekitar 1,5 mm).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Tempat lengan dipasang ke segitiga penghubung (F1BKM: segitiga sisi 52 mm).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Dua antena bertumpuk, sefase: Big Wheel pada 5/8 lambda (QST dan F1BKM: satu terbalik dengan tambahan setengah gelombang kabel, di model langsung sefase), tiga dipol pada 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Elevasi pada jarak usulan (dBi di atas tanah)
+F/B lungo l'asse (NEC)	F/B sepanjang sumbu (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: aluminium 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Berkas galat, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Feed 10 GHz, selisih terukur
+File MMANA senza la sezione ***Wires***.	Berkas MMANA tanpa bagian ***Wires***.
+Filo da tagliare	Kawat yang dipotong
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Kawat berisolasi: NEC-2 menghitungnya sebagai kawat telanjang. Isolasi memendekkan elemen: W6PQL memakai sisi 0,238 λ dengan kawat berisolasi dibanding 0,248 λ milik Marshall dengan kawat telanjang (sekitar 4 % lebih pendek).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Sumber: DL6WU (rumus); ARRL Antenna Book ed. 24 (batas rumus, tumpukan Yagi HF dan sudut elevasi); L. Edwards VE7BQH (G/T sebagai kriteria tumpukan EME); R. D. Straw N6BV (HFTA, tumpukan dan medan); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array oleh YO3IIU (matriks kopling saat penerimaan, GPL-2 atau lebih baru); G. Burke dan A. Poggio, manual NEC-2 (kartu CP).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Frekuensi desain. Bila pita dipilih, abu-abu; dengan "bebas" diketik. Jika diubah, sisi, jarak dan reflektor diskalakan ulang.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Di luar 50-1300 MHz penskalaan peta dengan eksponen 2,56 tidak cukup (di bawah: penyerapan ionosfer dan derau buatan manusia; di atas: latar kosmik dan atmosfer): nilai hanya indikatif.
+G max	G maks
+G/T (da Rumore e G/T)	G/T (dari Derau dan G/T)
+G/T come VE7BQH	G/T seperti VE7BQH
+G/T con il cielo vero	G/T dengan langit nyata
+G/T max	G/T maks
+G/T migliore	G/T terbaik
+Guadagno (NEC)	Gain (NEC)
+Guadagno all'orizzonte (NEC)	Gain di cakrawala (NEC)
+Guadagno e lobo laterale al variare della distanza	Gain dan lobus samping terhadap jarak
+Guadagno massimo con questa superficie	Gain maksimum dengan permukaan ini
+HF (sopra il terreno)	HF (di atas tanah)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Dua tingkat lengan, segitiga penghubung, stub dan konektor, dengan ukuran.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: pandu gelombang terbuka 13,5 dB dibanding choke 15,2 dB (derau matahari); choke ulir -0,6 dB; tutup LNB -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 tidak memodelkan isolasi: ukuran terhitung adalah untuk kawat telanjang. Dengan kawat berisolasi elemen harus diperpendek (W6PQL: sisi 0,238 lambda, bukan 0,248, sekitar 4 % lebih pendek).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Lengan atas suatu kelopak dan lengan bawah kelopak sebelahnya berjarak 20 derajat: bersama-sama membentuk saluran λ/4 yang membawa impedansi tinggi kelopak ke hub.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Kolom abu-abu tidak dapat diedit: menampilkan nilai turunan. Dengan "Keduanya" keduanya diberikan dan jarak direntangkan atau dimampatkan secara proporsional: keluar dari metode dan perlu optimasi NEC.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Sisi sekitar λ/4 dari tengah kawat ke tengah kawat; jarak dari reflektor (0,1-0,13 λ di sumber) adalah penyetelan SWR. Dengan jaring, reflektor adalah kisi kawat dengan mata jaring nyata (Mumford: mata di bawah λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Model yang terbuka sudah berupa tumpukan: buka antena tunggal.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Model berada di ruang bebas: untuk tumpukan HF digunakan tanah rata-rata (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Kelopak skala 1:1 pada lembar A4 yang disambung (tumpang tindih 10 mm, tanda silang tiap 50 mm, penggaris 100 mm). Hanya untuk Big Wheel.
+Impedenza al mozzo (NEC)	Impedansi di hub (NEC)
+Impedenza di riferimento	Impedansi acuan
+Impedenza in serie al mozzo	Impedansi seri di hub
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, bab 4: penurunan ruang bebas 4.3, kuadratik 4.8, Gauss 4.6, HPBW 4.13, lobus samping pertama 4.14a, defokus 4.21-4.23, halangan penyangga gelombang bola 4.36c-f, komponen aksial galat 4.43, berkas galat 4.44-4.46. Sama dengan perhitungan: penurunan ruang bebas (= redaman spasial) dan efisiensi distribusi. Berbeda: Baars memakai distribusi ideal, di sini feed nyata diintegrasikan; HPBW dan lobus samping Baars untuk perbandingan, tidak menggantikan perhitungan
+K sotto l'orizzonte (skynoise: 290 K)	K di bawah cakrawala (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel sensitif: Cebik sendiri (QST 3/2008) memperingatkan bahwa NEC menghitung saluran dengan buruk di tempat arus rendah dan perbedaan kecil konstruksi menggeser impedansi. Stub selalu dipotong pada antena nyata.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Pita tempat keliling tepat satu panjang gelombang: di atasnya loop bekerja di semua pita dengan tuner.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Templat dan hub untuk Big Wheel: pilih tipe Big Wheel.
+Larghezza del riflettore	Lebar reflektor
+Lati	Sisi
+Lato del quadrato (centro filo)	Sisi persegi (tengah kawat)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Sisi sepanjang deret persegi (polarisasi). Biquad ganda: sekitar 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Sisi tegak lurus deret persegi (Marshall: 123 mm sendiri, 110 mm sebagai feed parabola).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Sisi, jarak dari reflektor, reflektor pejal atau jaring dan bibir dibandingkan antarsumber; penyesuaian NEC, feed parabola, templat 1:1. Sketsa disetujui IC8TEM pada 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Sumber menyebut gain dari 8 dBd hingga 14 dBi pada reflektor berbeda: NEC pada kartu menempatkannya pada dasar yang sama.
+Linea a finestra 450 Ω	Saluran berjendela 450 Ω
+Linea aperta 600 Ω	Saluran terbuka 600 Ω
+Livelli	Tingkat
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Tingkat sangat dekat dibanding pipa: saluran lengan berimpedansi sangat rendah dan model berada di batas NEC-2 (kawat sejajar berjarak kurang dari beberapa jari-jari).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	"Pemfasaan" konduktor: jarak vertikal antara lengan bawah (pelindung) dan atas (tengah). Diperkirakan dari tumpukan pelat F1BKM: sumber tidak menyebutkannya.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Perhitungan yang sama seperti Derau dan G/T: langit dan tanah pada suhu seragam (VE7BQH, TANT). Tidak bergantung pada QTH maupun waktu.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Locator (JN70CN) atau lintang dan bujur dalam derajat (40,55 14,21). Disimpan di config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): semua pita, saluran tangga atau koaks, rugi saluran catu
+Loop orizzontale multibanda	Loop horizontal multipita
+Loop orizzontale multibanda (1.0.17)	Loop horizontal multipita (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Loop horizontal multipita (Loop Skywire)
+Lunghezza del dipolo	Panjang dipol
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Panjang kawat (sepanjang sumbu, tanpa bagian yang disolder)
+Lunghezza della discesa	Panjang saluran catu
+Lunghezza sviluppata del petalo	Panjang bentangan kelopak
+Mappa del cielo	Peta langit
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Peta langit: C. G. T. Haslam dkk., survei 408 MHz (A&AS 47, 1982); pengolahan ulang oleh M. Remazeilles dkk. (MNRAS 451, 2015), dari server LAMBDA NASA; peta 144 dan 432 MHz disiapkan oleh G8ONH.\n
+Matrice delle porte singolare.	Matriks port singular.
+Matrice di accoppiamento alla distanza proposta	Matriks kopling pada jarak usulan
+Mostra il primo nullo	Tampilkan nol pertama
+Mozzo - lato esterno	Hub - sisi luar
+Mozzo della Big Wheel	Hub Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	BARU · peta langit, QTH, waktu, Bulan (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	Selama 24 jam (langit nyata)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF dan F... (Maignan, dari versi F1BKM): roda sekitar 1,2 m, rentan angin dan es, tidak ada ukuran baru.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Setiap arah di atas cakrawala mengambil suhu peta langit di titik itu, pada waktu dan QTH yang diberikan (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Setiap kelopak adalah satu panjang gelombang penuh yang dicatu di kedua ujung: lengan dekat hub adalah saluran λ/4 di dua tingkat (biru bawah = pelindung, merah atas = tengah). Lengan atas suatu kelopak dan lengan bawah kelopak sebelahnya berjalan dengan selisih 20 derajat: pasangan itu berfungsi sebagai saluran. Stub paralel membawa sekitar 10 Ω ke 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Setiap kelopak punya satu lengan di tingkat bawah dan satu di atas: perpindahan tingkat ada di tengah sisi luar (selongsong F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (parabola 3 m, f/D 0,3): pandu gelombang terbuka 13,5 dB dibanding choke 15,2 dB; choke ulir -0,6 dB; tutup LNB -0,5 dB. Hanya acuan: pola feed tersebut harus dihitung dengan NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Jarak antarkawat jaring (W6PQL dan G6GVI: jaring 1/2 x 1 inci).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Untuk membuat tumpukan dari antena tunggal: Derau/GT/Tumpukan > Jarak tumpukan, baris dan kolom, tombol "Buat tumpukan di model yang terbuka" (sejak 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	Untuk SWR (50 ohm dengan koaks langsung di titik catu, seperti di semua sumber).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Karena itu digunakan saluran tangga dengan tuner, atau koaks dengan tuner di titik catu. "Hitung semua pita (NEC)" menghitung tiap pita dan rugi saluran catu.
+Perdita della discesa con il ROS di ogni banda (dB)	Rugi saluran catu dengan SWR tiap pita (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Rugi saluran catu di bawah 3 dB di semua pita.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Keliling 1005/f kaki, empat bentuk, perhitungan NEC semua pita dengan rugi saluran catu (tangga atau koaks) untuk SWR tiap pita. Sketsa disetujui IC8TEM pada 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Kelopak dua tingkat dengan stub, tiga dipol seri dengan lambda/4, templat tekuk 1:1 dan detail hub; kasus MathWorks (Yagi 6 elemen, heliks) di uji mandiri. Sketsa disetujui IC8TEM pada 17/11/2026.
+Petalo	Kelopak
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	Tekukan 90 derajat di titik P. Simpul merah: tengah koaks di satu sisi, pelindung di sisi lain (tanpa balun).
+Pieno (lamiera, PCB)	Pejal (pelat, PCB)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Pejal: pelat atau PCB, di NEC kisi rapat (0,07 lambda, jari-jari kawat dengan luas setara). Jaring: mata jaring nyata dengan kawatnya.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Polarisasi horizontal dan pola omnidirectional: gain di cakrawala bergantung pada tinggi dan penumpukan, bukan pada bentuk.
+Porta in adattamento (NEC)	Sesuaikan (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Lobus samping pertama, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Arah
+Punto di alimentazione	Titik catu
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	QTH tidak valid: ketik locator (mis. JN70CN) atau lintang dan bujur.
+Quota dell'antenna piu' bassa	Tinggi antena terbawah
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR pada 50 Ω (setelah "Sesuaikan")
+ROS a 50 Ω in banda	SWR pada 50 Ω di pita
+ROS in banda	SWR di pita
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Sinar putus-putus ungu pada minimum pertama di kedua sisi lobus utama: jaraknya adalah lebar berkas nol pertama (FNBW), ditulis di bawah pola bersama lobus samping tertinggi (SLL, dalam 100 derajat dari maksimum, lobus belakang tidak termasuk).
+Raggio al punto di alimentazione	Jari-jari di titik catu
+Raggio del mozzo	Jari-jari hub
+Raggio delle curve (asse)	Jari-jari tekuk (sumbu)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Jari-jari dua tekukan kelopak pada sumbu pipa (templat F1BKM: 140 mm di dalam).
+Rame da 1,2-2 mm nelle fonti.	Tembaga 1,2-2 mm di sumber.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Jaring terlalu rapat untuk dihitung (lebih dari 1800 segmen): di NEC reflektor berupa kisi 0,07 λ, seolah pejal. Dengan mata di bawah λ/10 selisihnya kecil.
+Rete: diametro del filo	Jaring: diameter kawat
+Rete: maglia lungo l'altezza	Jaring: mata arah tinggi
+Rete: maglia lungo la larghezza	Jaring: mata arah lebar
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Reflektor kecil: gain turun dan lobus belakang membesar (Marshall: 123 mm pada 2,4 GHz, yakni sekitar 1 λ, untuk biquad saja).
+Risultati del cielo vero copiati.	Hasil langit nyata disalin.
+Rumore dal cielo vero	Derau dari langit nyata
+Rumore e G/T	Derau dan G/T
+Rumore, G/T e stack	Derau, G/T dan tumpukan
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Simpan templat
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Diperlukan minimal 2 antena (baris x kolom di kartu atas).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Ruang bebas, atau pada ketinggian di atas tanah rata-rata (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Celah antara dua simpul catu
+Stack alla distanza proposta	Tumpukan pada jarak usulan
+Stack, tutte in fase (BIP)	Tumpukan, semua sefase (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Pita aluminium (F1BKM 20 x 2 mm): di NEC kawat berjari-jari lebar/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	Pita ditekuk menjadi U di antara kedua tingkat, paralel dengan hub (QST 1961: 5"; F1BKM 127 mm di ruang bebas, 152 mm di mobil atau dalam tumpukan).
+Stub	Stub
+Stub: larghezza	Stub: lebar
+Stub: lunghezza sviluppata	Stub: panjang bentangan
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman dan Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb dan Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Pada beberapa pita saluran catu rugi lebih dari 3 dB (kotak disorot): perpendek saluran, beralih ke saluran tangga atau pasang tuner di loop.
+T antenna (cielo vero)	T antena (langit nyata)
+T antenna nelle 24 ore	T antena selama 24 jam
+T antenna nelle 24 ore (puntamento fisso)	T antena selama 24 jam (arah tetap)
+T del terreno (cielo vero)	T tanah (langit nyata)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI dan MW1FGQ; buildyourownantenna (biquad ganda, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI dan MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (perbandingan)
+Tabella dello stack copiata.	Tabel tumpukan disalin.
+Temperature uniformi (VE7BQH)	Suhu seragam (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Waktu sideris: G. H. Kaplan, USNO Circular 179 (2005). Penskalaan frekuensi: T = (fpeta / f)^2,56 T (G8ONH). Bulan: J. Meeus, Astronomical Algorithms, bab 47.\n
+Togli i cursori	Hapus kursor
+Tratto di lambda/4: impedenza	Bagian lambda/4: impedansi
+Tratto di λ/4	Bagian λ/4
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Tiga kabel 50 Ω dengan panjang sama (berapa pun) ke hub, dihubungkan seri: sekitar 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Tiga dipol pada lingkaran (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Tiga dipol dalam segitiga (W4RNL)
+Usa come feed della parabola	Gunakan sebagai feed parabola
+Usa la distanza proposta per lo stack	Gunakan jarak usulan untuk tumpukan
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) dan HF (di atas tanah), kopling, jarak terbaik
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (ruang bebas, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: untuk setiap jarak (faktor x jarak DL6WU) tumpukan dihitung dengan NEC: gain, lobus samping tertinggi di bidang tumpukan, G/T (suhu dari Derau dan G/T) dan kopling antarport. HF: rumus DL6WU tidak berlaku (antena berada di atas tanah dan sudut pancar penting): tumpukan dipilih berdasarkan sudut elevasi yang diinginkan.
+Vai a Distanze di stack	Ke Jarak tumpukan
+Via Lattea (zone sopra 1000 K a 144 MHz)	Bima Sakti (area di atas 1000 K pada 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Tampak atas (skala 2:1): lengan merah di atas (tengah), biru di bawah (pelindung)
+Vista di lato (scala 2:1)	Tampak samping (skala 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD dan W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL dan B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 dan 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (perbandingan)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD dan W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL dan B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 dan 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB mencatu di sudut; di tengah sisi impedansi sedikit berubah tetapi lobus bergeser pada pita tinggi.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: setinggi mungkin; di bawah λ/4 pita terendah ia memancar hampir hanya ke atas (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: persegi. Lingkaran (poligon 16 sisi) punya luas terbesar dan gain sedikit lebih tinggi; segitiga untuk tiga tiang.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Derau dari langit nyata (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	Yagi MathWorks, ukuran dioptimalkan oleh MathWorks (dipublikasikan: 10,59 dBi, F/B 15,6 dB, lebar berkas 50 dan 62 derajat)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Z seri = jumlah ketiga impedansi, setelah λ/4: Z = Zq^2 / Zseri (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| maks dB
+° (dietro)	° (belakang)
+Ω (barra in alto)	Ω (bilah atas)
+λ, a passi di 0,125	λ, langkah 0,125
+a un'altezza dal suolo	pada ketinggian di atas tanah
+al massimo	pada maksimum
+antenna base: il modello aperto	antena dasar: model yang terbuka
+antenna singola	antena tunggal
+azimut ed elevazione	azimut dan elevasi
+blu: sotto (calza)	biru: bawah (pelindung)
+calcolata da DL6WU (	dihitung oleh DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	menghitung tumpukan HF di atas tanah...
+calcolo in corso (spazio libero come VE7BQH	menghitung (ruang bebas seperti VE7BQH
+cambio di livello (meta' del lato esterno)	perpindahan tingkat (tengah sisi luar)
+cerchio (poligono)	lingkaran (poligon)
+cielo piu' freddo	langit terdingin
+circolarita' +-	kebulatan +-
+coassiale 50 Ω (RG-213)	koaks 50 Ω (RG-213)
+come VE7BQH (stack di 4)	seperti VE7BQH (tumpukan 4)
+come prima: TANT, VE7BQH, KF2YN, stack	seperti sebelumnya: TANT, VE7BQH, KF2YN, tumpukan
+con lo stub	dengan stub
+controfase (BOP)	berlawanan fase (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: bentuk tertutup Balanis
+cos^2: massimo della curva di Balanis	cos^2: maksimum kurva Balanis
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	diagonal: ketidaksesuaian tiap antena dengan yang lain diterminasi Z0; luar diagonal: daya yang berpindah dari satu port ke port lain
+distanza / distanza DL6WU	jarak / jarak DL6WU
+doppia biquad	biquad ganda
+elevazione (gradi)	elevasi (derajat)
+fascio d'errore (Baars 4.44-4.46)	berkas galat (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	penurunan ruang bebas f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	di luar metode: NEC memberikannya setelah "Optimalkan (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	di luar rentang rumus (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	defokus beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gauss -12 dB: rumus Baars 4.6
+gaussiana -12 dB: integrale numerico	Gauss -12 dB: integral numerik
+gradi · 30° come VE7BQH	derajat · 30° seperti VE7BQH
+griglia 0,07 λ	kisi 0,07 λ
+guadagno con lobi sotto	gain dengan lobus di bawah
+guadagno dello stack (dBi)	gain tumpukan (dBi)
+guadagno massimo	gain maksimum
+guadagno max	gain maks
+larghezza x altezza (lungo la polarizzazione)	lebar x tinggi (sepanjang polarisasi)
+lobi laterali piu' bassi	lobus samping terendah
+lobi piu' bassi	lobus terendah
+lobo laterale dB	lobus samping dB
+lobo laterale piu' alto (dB)	lobus samping tertinggi (dB)
+locator, oppure latitudine e longitudine	locator, atau lintang dan bujur
+lungo l'arco	sepanjang busur
+media voluta	rata-rata yang diinginkan
+meta' lato	tengah sisi
+minimo / massimo	minimum / maksimum
+mutua con la porta 2	timbal balik dengan port 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	tidak ada jarak dengan lobus di bawah ambang: lobus terendah
+non vale	tidak valid
+ore UTC	jam UTC
+peso della Via Lattea qui e ora	bobot Bima Sakti di sini dan sekarang
+premi "T antenna nelle 24 ore"	tekan "T antena selama 24 jam"
+proposta (Distanze di stack)	usulan (Jarak tumpukan)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	kuadratik -12 dB: HPBW (Baars 66,3 derajat lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	kuadratik -12 dB: efisiensi (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	kuadratik -12 dB: rumus Baars 4.8
+quattro lati uguali	empat sisi sama
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	milik model (jika di ruang bebas: tanah rata-rata 13 / 0,005, Sommerfeld)
+quota sopra	tinggi atas
+rete come superficie piena (maglia troppo fitta da calcolare)	jaring sebagai permukaan pejal (mata terlalu rapat untuk dihitung)
+rete con la maglia vera	jaring dengan mata nyata
+rettangolo 2:1	persegi panjang 2:1
+rosso: sopra (centrale)	merah: atas (tengah)
+scala 450 Ω	saluran tangga 450 Ω
+scala 600 Ω	saluran tangga 600 Ω
+scelta proposta	pilihan usulan
+solo sopra	hanya atas
+solo sotto	hanya bawah
+sotto calza (blu), sopra centrale (rosso)	bawah pelindung (biru), atas tengah (merah)
+sull'asse del tubo (F1BKM: 535 mm)	pada sumbu pipa (F1BKM: 535 mm)
+sulla singola	dibanding antena tunggal
+superficie senza errore	permukaan tanpa galat
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	suhu langit dan tanah serta elevasi dari Derau dan G/T
+temperature uniformi: si confronta con le tabelle	suhu seragam: sebanding dengan tabel
+triangolo di sopra: centrale del connettore	segitiga atas: tengah konektor
+triangolo di sotto: calza (massa, staffa del palo)	segitiga bawah: pelindung (ground, klem tiang)
+triangolo equilatero, tre sostegni	segitiga sama sisi, tiga tiang
+tutte in fase (BIP)	semua sefase (BIP)
+x la distanza DL6WU, a passi di 0,1	x jarak DL6WU, langkah 0,1
+RICEZIONE	PENERIMAAN
+nessuno	tidak ada
+adesso	sekarang
+rurale	pedesaan
+residenziale	permukiman

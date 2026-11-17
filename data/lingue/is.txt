@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Bæði (utan DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU tengir málin tvö saman. Með "Fjöldi staka" er bóman reiknuð út frá bilum DL6WU; með "Lengd bómunnar" er stýrieiningum bætt við meðan bóman rúmar þær. Gráa reitinn er ekki hægt að breyta: hann sýnir afleidda gildið. Með "Bæði (utan DL6WU)" eru bæði gefin og bilin lengd eða stytt hlutfallslega: þá er farið út fyrir aðferðina og NEC-bestun er nauðsynleg.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	skref 0-3 ekki í boði: með "Bæði (utan DL6WU)" er bestun skylda
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Gildi leitt af hinum gögnunum: ekki hægt að breyta (sjá athugasemdina undir gögnunum).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"Aðlaga (NEC)" stillir hliðina á ómun og bilið á lægsta SWR, reiknar síðan SWR og mögnun yfir +-5 % bandbreidd.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = í miðjunni (minni spóla, minni nýtni), í átt að 100 % = í átt að endanum (sífellt stærri spóla).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 loftnet
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Tengi undir jarðþríhyrningnum, miðleiðarinn fer í efri þríhyrninginn.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: athugaðu þessa reglustiku (prentaðu í 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: athugaðu þessa reglustiku (prentaðu í 100 %, án aðlögunar að síðu)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f fet (W7FB) = 306,3/f metrar á miðtíðni lægsta bandsins. Uppfærist þegar skipt er um band.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, heill eða netspegill, fæðing fyrir skál
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, lárétt skautun, alátta; hæðirnar tvær og tvípólarnir þrír
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Stubburinn tengir þríhyrningana tvo samhliða tenginu: lengdin er stillt fyrir SWR (F1BKM: 152 mm á bíl eða í stæðu).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Einangrarar milli hæða (F1BKM: stafli af 5 mm pólýstýrenplötum): bilið dz verður að vera eins fyrir alla arma.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Hæðarskipti hvers blaðs eru á miðri ytri hliðinni (hulsan hjá F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m með málum JN1GLB (ekki stillt með hnappnum Ómun, sem vinnur á 20-10 m böndunum)
+Accoppiamento e distanza migliore (NEC)	Tenging og besta bil (NEC)
+Accoppiamento piu' forte	Sterkasta tenging
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	Í skrefi 4 bætist við breytan bilaframvinda (hvernig bilin vaxa eftir bómunni, með fasta bómu)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Bein fæðing með kóax í miðjunni, án balúns (Marshall, OE2TZL, W6PQL): miðleiðari á aðra hliðina, hlíf á hina.
+Alla distanza DL6WU	Við DL6WU-bilið
+Altezza dal suolo	Hæð yfir jörðu
+Altezza dei bordi	Hæð brúnanna
+Altezza del riflettore	Hæð spegilsins
+Angoli di partenza voluti	Æskilegir útgeislunarhorn
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Hornið milli tveggja arma blaðs (sniðmát F1BKM: 100 gráður, þ.e. 20 gráður milli arma nágrannablaða).
+Antenna singola	Stakt loftnet
+Antenne una sopra l'altra	Loftnet hvert yfir öðru
+Apertura del petalo	Opnun blaðsins
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Opnar biquad sem líkan í aðalglugganum (eining við z = 0, geisli í átt að +Z, skautun eftir Y, eins og hornfæðingarnar) og fer í Frumbrennipunktsskál: þar tekur hnappurinn "Fæðing úr NEC-líkani" reiknaða mynstrið.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Höfundar og heimildir (MIT-leyfi, full tilkynning í Þakkir)\n
+Azimut / elevazione	Áttarhorn / hæðarhorn
+Baars 4.22 (apertura uniforme)	Baars 4.22 (jafnt op)
+Banda dello stack	Band stæðunnar
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Vinnuband: tíðninni og öllum málum í mm er endurskalað. "frjálst" leyfir að slá inn tíðnina.
+Banda piu' bassa	Lægsta band
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel og þrír tvípólar (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: þrjú blöð af einni bylgjulengd fædd í báðum endum, með stubbinn við miðstöðina. Þrír tvípólar (W4RNL, WA1FXT): tvípólar um 50 ohm, í þríhyrningi eða á hring, raðtengdir við miðstöðina og aðlagaðir með lambda/4.
+Biquad (2 quadrati)	Biquad (2 ferningar)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad opnað sem líkan: þegar útreikningi er lokið, ýttu á "Fæðing úr NEC-líkani" í Frumbrennipunktsskál.
+Biquad e doppia biquad	Biquad og tvöfalt biquad
+Biquad e doppia biquad (1.0.16)	Biquad og tvöfalt biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: tveir ferningar (8 vírhliðar). Tvöfalt biquad: fjórir ferningar í röð (16 hliðar), vírarnir krossast án snertingar milli fyrsta og annars fernings á hvorri hlið.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Bóman of stutt fyrir þessar einingar: stillt á 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Brúnir beygðar fram (að einingunni). 2 hliðar: brúnirnar tvær hornréttar á skautunina (efst og neðst í ferningaröðinni). Marshall: 30 mm brúnir, aftari geislar um 6 dB lægri.
+Bordi rialzati	Uppbrettar brúnir
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4. útg., kafli 15: nýtni cos^n-fæðinga (15-55, prófun með ferlunum), neðri mörk fasanýtni (1 - m^2/2)^2, hámarksmögnun við lambda = 4 pi sigma (15-67..71). Fasamörkin eru tryggt lágmark: reiknaða gildið er alltaf ofar
+Calcola accoppiamento e distanze (NEC)	Reikna tengingu og bil (NEC)
+Calcola lo stack HF (NEC)	Reikna HF-stæðuna (NEC)
+Calcola prima le distanze.	Reiknaðu fyrst bilin.
+Calcola tutte le bande (NEC)	Reikna öll bönd (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Útreikningur úr skynoise 0.2.2 eftir John C. Sager G8ONH (2025-2026, MIT-leyfi), fluttur yfir í C# í YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	Þegar henni er breytt eru mál í mm endursköluð.
+Centro del lobo nel cielo	Miðja geislans á himninum
+Cielo (fuori dalla Via Lattea)	Himinn (utan Vetrarbrautarinnar)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Smelltu á mynstrið: bendill C1, næsti smellur C2; undir mynstrinu stig hvors, hornið og munurinn á þeim. Tvísmellur: fjarlægir bendlana. Bendlarnir haldast þegar skipt er um tíðni.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Kóax með háu SWR á yfirtónaböndum: tapið eykst mikið (NT0Z, WB8IMY). Betra er stillirinn við fæðipunktinn, eða stigalína.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Kóax: þægilegt en með háu SWR á yfirtónaböndum tapar það miklu (NT0Z, WB8IMY). Stigalína: lítið tap jafnvel með háu SWR, krefst samhverfs stillis eða 4:1 balúns við stillinn.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Samanburður: L. Edwards VE7BQH (G/T-töflur við 30 gráður, stæða af 4 á DL6WU-bili, jafnt hitastig); TANT eftir YT1NT og VE3EA (handbók DG7YBN); leiðrétting KF2YN.
+Controlli della 1.0.14 (Baars)	Prófanir í 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Prófanir í 1.0.14 (Balanis)
+Criterio della distanza migliore	Viðmið fyrir besta bil
+Cursori	Bendlar
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (lárétt lykkja, stigalína, samhverfur stillir); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (ummál 1005/f fet)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Frá miðju vírs að miðju vírs, um lambda/4 (Marshall 30,5 mm við 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Frá enda til enda (á hring: eftir boganum). Cebik: 34,3" í þríhyrningi, 31,4" á hring, við 146 MHz með 1/2" röri.
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Frá miðstöðinni (um 150 ohm í röð) í 50 ohm: RG-62 93 ohm (Cebik), eða 75 ohm ef viðnámið er undir 150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Frá miðstöð til miðstöðvar eftir rörinu, um ein bylgjulengd (F1BKM 2050 mm við 145 MHz; QST 80" við 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Frá plani ferninganna að yfirborði spegilsins: það er SWR-stillingin (0,1-0,13 lambda í heimildunum).
+Data e ora (UTC)	Dagsetning og tími (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Ógild dagsetning og tími (dd/mm/áááá kk:mm, UTC).
+Dettaglio del mozzo (PDF)	Smáatriði miðstöðvar (PDF)
+Diametro del tubo	Þvermál rörs
+Diametro della ruota	Þvermál hjólsins
+Differenza dal cielo uniforme	Munur frá jöfnum himni
+Dima 1:1 (PDF)	Sniðmát 1:1 (PDF)
+Dima del petalo della Big Wheel	Sniðmát fyrir blað Big Wheel
+Dima della biquad	Sniðmát fyrir biquad
+Dima di piegatura 1:1 (PDF)	Beygjusniðmát 1:1 (PDF)
+Direttori molto fitti (spaziature x	Stýrieiningar mjög þéttar (bil x
+Direttori molto radi (spaziature x	Stýrieiningar mjög dreifðar (bil x
+Discesa	Fæðilína
+Dischi e illuminatori	Skálar og fæðingar
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Teikning af beygða vírnum í mælikvarða 1:1 á A4, með beygjupunktunum, 100 mm reglustikunni til að athuga prentunina og málatöflunni.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Fjarlægð frá miðju að fæðipunkti hvers tvípóls (Cebik: 15,4" í þríhyrningi, 15,5" á hring, við 146 MHz).
+Distanza dal riflettore	Fjarlægð frá speglinum
+Distanza proposta	Tillögubil
+Distanza tra i due livelli	Bil milli hæðanna tveggja
+Distanze	Bil
+Distanze da provare	Bil til að prófa
+Distanze di stack	Stæðubil
+Distanze provate	Prófuð bil
+Distanze provate e diagramma in elevazione	Prófuð bil og hæðarmynstur
+Doppia biquad (4)	Tvöfalt biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Tvöfalt biquad: þar sem skálínurnar krossast snertast vírarnir ekki (um 1,5 mm á milli).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Þar sem armarnir festast við tengiþríhyrningana (F1BKM: þríhyrningar með 52 mm hlið).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	Tvö loftnet hvort yfir öðru, í fasa: Big Wheel á 5/8 lambda (QST og F1BKM: annað á hvolfi með aukahálfbylgju af kapli, í líkaninu beint í fasa), þrír tvípólar á 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Hæðarhorn við tillögubil (dBi yfir jörðu)
+F/B lungo l'asse (NEC)	F/B eftir ásnum (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: ál 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Villugeisli, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Fæðingar fyrir 10 GHz, mældur munur
+File MMANA senza la sezione ***Wires***.	MMANA-skrá án hlutans ***Wires***.
+Filo da tagliare	Vír til að klippa
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Einangraður vír: NEC-2 reiknar hann sem beran. Einangrunin styttir eininguna: W6PQL notar 0,238 λ hlið með einangruðum vír á móti 0,248 λ Marshalls með berum vír (um 4 % minna).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Heimildir: DL6WU (formúla); ARRL Antenna Book 24. útg. (mörk formúlunnar, stæður HF-yagi og hæðarhorn); L. Edwards VE7BQH (G/T sem viðmið fyrir EME-stæður); R. D. Straw N6BV (HFTA, stæður og landslag); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array eftir YO3IIU (tengifylki við móttöku, GPL-2 eða síðar); G. Burke og A. Poggio, NEC-2-handbók (CP-spjald).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Hönnunartíðni. Með valið band er hún grá; með "frjálst" er hún slegin inn. Þegar henni er breytt eru hlið, bil og spegill endurskalaðir.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Utan 50-1300 MHz dugar skölun kortsins með veldisvísinum 2,56 ekki (fyrir neðan: jónhvolfsdeyfing og manngerður suð; fyrir ofan: geimbakgrunnur og lofthjúpur): gildið er aðeins leiðbeinandi.
+G max	G hám.
+G/T (da Rumore e G/T)	G/T (úr Suð og G/T)
+G/T come VE7BQH	G/T eins og VE7BQH
+G/T con il cielo vero	G/T með raunverulegum himni
+G/T max	G/T hám.
+G/T migliore	Besta G/T
+Guadagno (NEC)	Mögnun (NEC)
+Guadagno all'orizzonte (NEC)	Mögnun við sjóndeildarhring (NEC)
+Guadagno e lobo laterale al variare della distanza	Mögnun og hliðargeisli eftir bili
+Guadagno massimo con questa superficie	Hámarksmögnun með þessu yfirborði
+HF (sopra il terreno)	HF (yfir jörðu)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Hæðir armanna tvær, tengiþríhyrningarnir, stubburinn og tengið, með málum.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: opin bylgjuleiðari 13,5 dB á móti choke 15,2 dB (sólarsuð); skrúfuð choke -0,6 dB; LNB-hetta -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 líkir ekki eftir einangruninni: reiknuð mál eru fyrir beran vír. Með einangruðum vír verður að stytta eininguna (W6PQL: hlið 0,238 lambda í stað 0,248, um 4 % minna).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Efri armur blaðs og neðri armur nágrannablaðsins eru 20 gráður hvor frá öðrum: saman mynda þeir λ/4-línuna sem flytur hátt viðnám blaðsins að miðstöðinni.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Ekki er hægt að skrifa í gráa reitinn: hann sýnir afleidda gildið. Með "Bæði" eru bæði gefin og bilin teygð eða þjöppuð hlutfallslega: þá er farið út fyrir aðferðina og þörf er á NEC-bestun.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Hliðin er um λ/4 frá miðju vírs að miðju vírs; fjarlægðin frá speglinum (0,1-0,13 λ í heimildunum) er SWR-stillingin. Með neti er spegillinn vírgrind með raunverulegum möskva (Mumford: möskvi undir λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Opna líkanið er þegar stæða: opnaðu staka loftnetið.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Líkanið er í lausu rúmi: fyrir HF-stæðuna er notuð meðaljörð (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Blaðið í mælikvarða 1:1 á A4-blöðum sem eru sett saman (10 mm skörun, kross á 50 mm fresti, 100 mm reglustika). Aðeins fyrir Big Wheel.
+Impedenza al mozzo (NEC)	Viðnám við miðstöðina (NEC)
+Impedenza di riferimento	Viðmiðunarviðnám
+Impedenza in serie al mozzo	Raðviðnám við miðstöðina
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, kafli 4: lausrúmsdeyfing 4.3, ferningsdreifing 4.8, Gauss 4.6, HPBW 4.13, fyrsti hliðargeisli 4.14a, fókusvilla 4.21-4.23, kúlubylgjuskuggi stoðanna 4.36c-f, ásþáttur villunnar 4.43, villugeisli 4.44-4.46. Eins og útreikningurinn: lausrúmsdeyfing (= rúmfræðileg dempun) og nýtni dreifinganna. Ólíkt: Baars notar kjördreifingar, hér er raunveruleg fæðing heilduð; HPBW og hliðargeisli Baars eru til samanburðar og koma ekki í stað útreikningsins
+K sotto l'orizzonte (skynoise: 290 K)	K undir sjóndeildarhring (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel er viðkvæmt: Cebik sjálfur (QST 3/2008) varar við að NEC reikni línurnar illa þar sem straumurinn er lítill og að lítill munur í smíði færi viðnámið. Stubburinn er alltaf stilltur á raunverulega loftnetinu.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Bandið þar sem ummálið er heil bylgjulengd: fyrir ofan það vinnur lykkjan á öllum böndum með stillinum.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Sniðmátið og miðstöðin eiga við Big Wheel: veldu gerðina Big Wheel.
+Larghezza del riflettore	Breidd spegilsins
+Lati	Hliðar
+Lato del quadrato (centro filo)	Hlið fernings (miðja vírs)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Hlið eftir ferningaröðinni (skautunin). Tvöfalt biquad: um 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Hlið hornrétt á ferningaröðina (Marshall: 123 mm eitt sér, 110 mm sem skálarfæðing).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Hlið, fjarlægð frá speglinum, heill eða netspegill og brúnir bornar saman milli heimilda; aðlögun með NEC, skálarfæðing, sniðmát 1:1. Drög samþykkt af IC8TEM 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Heimildirnar gefa upp mögnun frá 8 dBd til 14 dBi á ólíkum speglum: NEC spjaldsins setur þær á sama grunn.
+Linea a finestra 450 Ω	Gluggalína 450 Ω
+Linea aperta 600 Ω	Opin lína 600 Ω
+Livelli	Hæðir
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Hæðirnar mjög nálægt miðað við rörið: lína armanna hefur mjög lágt viðnám og líkanið er á mörkum NEC-2 (samsíða vírar minna en nokkra radíusa í sundur).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	"Fasaskipting" leiðaranna: lóðrétt fjarlægð milli neðri arma (hlíf) og efri arma (miðja). Áætlað út frá plötustafla F1BKM: heimildirnar gefa hana ekki upp.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Sami útreikningur og Suð og G/T: himinn og jörð við jafnt hitastig (VE7BQH, TANT). Hann er hvorki háður QTH né tíma.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Staðsetningarkóði (JN70CN) eða breidd og lengd í gráðum (40,55 14,21). Vistað í config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): öll bönd, stigalína eða kóax, tap í fæðilínunni
+Loop orizzontale multibanda	Lárétt fjölbandalykkja
+Loop orizzontale multibanda (1.0.17)	Lárétt fjölbandalykkja (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Lárétt fjölbandalykkja (Loop Skywire)
+Lunghezza del dipolo	Lengd tvípólsins
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Lengd vírs (eftir ásnum, án hlutans sem á að lóða)
+Lunghezza della discesa	Lengd fæðilínu
+Lunghezza sviluppata del petalo	Útflött lengd blaðsins
+Mappa del cielo	Himinkort
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Himinkort: C. G. T. Haslam o.fl., kortlagning við 408 MHz (A&AS 47, 1982); endurvinnsla M. Remazeilles o.fl. (MNRAS 451, 2015), af LAMBDA-þjóni NASA; kort við 144 og 432 MHz útbúin af G8ONH.\n
+Matrice delle porte singolare.	Sérstætt gáttafylki.
+Matrice di accoppiamento alla distanza proposta	Tengifylki við tillögubil
+Mostra il primo nullo	Sýna fyrsta núllið
+Mozzo - lato esterno	Miðstöð - ytri hlið
+Mozzo della Big Wheel	Miðstöð Big Wheel
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	NÝTT · himinkort, QTH, tími, Tunglið (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	Yfir 24 klukkustundir (raunverulegur himinn)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF og F... (Maignan, eftir útgáfu F1BKM): hjól um 1,2 m, viðkvæmt fyrir vindi og ís, engin ný mál.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Hver stefna yfir sjóndeildarhring fær hitastig himinkortsins á þeim stað, á gefnum tíma og frá gefnu QTH (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Hvert blað er heil bylgjulengd fædd í báðum endum: armarnir nálægt miðstöðinni eru λ/4-línur á tveimur hæðum (blátt fyrir neðan = hlíf, rautt fyrir ofan = miðja). Efri armur blaðs og neðri armur nágrannablaðsins liggja 20 gráður hvor frá öðrum: það par myndar línuna. Stubburinn samhliða færir um 10 Ω í 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Hvert blað hefur einn arm á neðri hæð og einn á efri: hæðarskiptin eru á miðri ytri hliðinni (hulsan hjá F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (skál 3 m, f/D 0,3): opin bylgjuleiðari 13,5 dB á móti choke 15,2 dB; skrúfuð choke -0,6 dB; LNB-hetta -0,5 dB. Aðeins til viðmiðunar: mynstur þessara fæðinga þarf að reikna með NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Bil milli netvíra (W6PQL og G6GVI: net 1/2 x 1 tomma).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Til að búa til stæðu úr stöku loftneti: Suð/GT/Stæða > Stæðubil, raðir og dálkar, hnappurinn "Búa til stæðuna í opna líkaninu" (frá 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	Fyrir SWR (50 ohm með kóaxinu beint á fæðipunktinum, eins og í öllum heimildum).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Þess vegna er notuð stigalína með stilli, eða kóax með stillinn við fæðipunktinn. "Reikna öll bönd (NEC)" reiknar hvert band og tapið í fæðilínunni.
+Perdita della discesa con il ROS di ogni banda (dB)	Tap í fæðilínu með SWR hvers bands (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Tap í fæðilínu undir 3 dB á öllum böndum.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Ummál 1005/f fet, fjögur form, NEC-útreikningur allra banda með tapi í fæðilínunni (stigalína eða kóax) fyrir SWR hvers bands. Drög samþykkt af IC8TEM 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Blöð á tveimur hæðum með stubbnum, þrír tvípólar í röð með lambda/4, beygjusniðmát 1:1 og smáatriði miðstöðvar; MathWorks-tilvik (6 eininga yagi, helix) í sjálfsprófuninni. Drög samþykkt af IC8TEM 17/11/2026.
+Petalo	Blað
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	90 gráðu beygjur við punktana P. Rauðir hnútar: miðja kóaxins á annarri hliðinni, hlífin á hinni (enginn balún).
+Pieno (lamiera, PCB)	Heill (plata, prentplata)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Heill: plata eða prentplata, í NEC þétt grind (0,07 lambda, vírradíus með jöfnu flatarmáli). Net: raunverulegi möskvinn með sínum vír.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Lárétt skautun og alátta mynstur: mögnunin við sjóndeildarhring ræðst af hæð og stæðun, ekki af lögun.
+Porta in adattamento (NEC)	Aðlaga (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Fyrsti hliðargeisli, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Miðun
+Punto di alimentazione	Fæðipunktur
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Ógilt QTH: sláðu inn staðsetningarkóðann (t.d. JN70CN) eða breidd og lengd.
+Quota dell'antenna piu' bassa	Hæð neðsta loftnetsins
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR á 50 Ω (eftir "Aðlaga")
+ROS a 50 Ω in banda	SWR á 50 Ω á bandinu
+ROS in banda	SWR á bandinu
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Fjólubláir brotalínugeislar á fyrstu lágmörkunum hvorum megin aðalgeislans: fjarlægðin milli þeirra er breiddin að fyrsta núlli (FNBW), skrifuð undir mynstrinu ásamt hæsta hliðargeislanum (SLL, innan 100 gráða frá hámarkinu, aftari geisli undanskilinn).
+Raggio al punto di alimentazione	Radíus við fæðipunktinn
+Raggio del mozzo	Radíus miðstöðvar
+Raggio delle curve (asse)	Beygjuradíus (ás)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Radíus tveggja beygja blaðsins á ási rörsins (sniðmát F1BKM: 140 mm að innan).
+Rame da 1,2-2 mm nelle fonti.	Kopar 1,2-2 mm í heimildunum.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Netið of þétt fyrir útreikninginn (yfir 1800 bútar): í NEC er spegillinn 0,07 λ grind, eins og hann væri heill. Með möskva undir λ/10 er munurinn lítill.
+Rete: diametro del filo	Net: þvermál vírs
+Rete: maglia lungo l'altezza	Net: möskvi á hæð
+Rete: maglia lungo la larghezza	Net: möskvi á breidd
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Lítill spegill: mögnunin minnkar og aftari geislinn vex (Marshall: 123 mm við 2,4 GHz, þ.e. um 1 λ, fyrir biquad eitt sér).
+Risultati del cielo vero copiati.	Niðurstöður raunverulegs himins afritaðar.
+Rumore dal cielo vero	Suð frá raunverulegum himni
+Rumore e G/T	Suð og G/T
+Rumore, G/T e stack	Suð, G/T og stæða
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Vista sniðmátið
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Að minnsta kosti 2 loftnet þarf (raðir x dálkar í spjaldinu að ofan).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Laust rúm, eða í hæð yfir meðaljörð (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Bil milli fæðihnútanna tveggja
+Stack alla distanza proposta	Stæða við tillögubil
+Stack, tutte in fase (BIP)	Stæða, öll í fasa (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Álræma (F1BKM 20 x 2 mm): í NEC vír með radíus breidd/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	Ræma beygð í U milli hæðanna tveggja, samhliða miðstöðinni (QST 1961: 5"; F1BKM 127 mm í lausu rúmi, 152 mm á bíl eða í stæðu).
+Stub	Stubbur
+Stub: larghezza	Stubbur: breidd
+Stub: lunghezza sviluppata	Stubbur: útflött lengd
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman og Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb og Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Á sumum böndum tapar fæðilínan meira en 3 dB (merktir reitir): styttu línuna, skiptu yfir í stigalínu eða settu stillinn við lykkjuna.
+T antenna (cielo vero)	T loftnets (raunverulegur himinn)
+T antenna nelle 24 ore	T loftnets yfir 24 klukkustundir
+T antenna nelle 24 ore (puntamento fisso)	T loftnets yfir 24 klukkustundir (föst miðun)
+T del terreno (cielo vero)	T jarðar (raunverulegur himinn)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI og MW1FGQ; buildyourownantenna (tvöfalt biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI og MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (samanburður)
+Tabella dello stack copiata.	Stæðutaflan afrituð.
+Temperature uniformi (VE7BQH)	Jafnt hitastig (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Stjörnutími: G. H. Kaplan, USNO Circular 179 (2005). Tíðniskölun: T = (fkort / f)^2,56 T (G8ONH). Tunglið: J. Meeus, Astronomical Algorithms, kafli 47.\n
+Togli i cursori	Fjarlægja bendlana
+Tratto di lambda/4: impedenza	Lambda/4-bútur: viðnám
+Tratto di λ/4	λ/4-bútur
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Þrír 50 Ω kaplar af sömu (hvaða) lengd að miðstöðinni, raðtengdir: um 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Þrír tvípólar á hring (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Þrír tvípólar í þríhyrningi (W4RNL)
+Usa come feed della parabola	Nota sem skálarfæðingu
+Usa la distanza proposta per lo stack	Nota tillögubilið fyrir stæðuna
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) og HF (yfir jörðu), tenging, besta bil
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (laust rúm, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: fyrir hvert bil (stuðull x DL6WU-bilið) er stæðan reiknuð með NEC: mögnun, hæsti hliðargeisli í plani stæðunnar, G/T (hitastig úr Suð og G/T) og tenging milli gáttanna. HF: DL6WU-formúlan gildir ekki (loftnetin eru yfir jörðu og útgeislunarhornið skiptir máli): stæðan er valin eftir æskilegum hæðarhornum.
+Vai a Distanze di stack	Fara í Stæðubil
+Via Lattea (zone sopra 1000 K a 144 MHz)	Vetrarbrautin (svæði yfir 1000 K við 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Séð að ofan (mælikvarði 2:1): rauðir armar að ofan (miðja), bláir að neðan (hlíf)
+Vista di lato (scala 2:1)	Séð frá hlið (mælikvarði 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD og W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL og B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 og 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (samanburður)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD og W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL og B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 og 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB fæðir í horni; á miðri hlið breytist viðnámið lítið en geislarnir færast á háu böndunum.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: eins hátt og hægt er; undir λ/4 lægsta bandsins geislar hún nær eingöngu upp (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: ferningur. Hringurinn (16-hyrningur) hefur mest flatarmál og örlítið meiri mögnun; þríhyrningurinn hentar þremur stoðum.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Suð frá raunverulegum himni (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks-yagi, mál bestuð af MathWorks (birt: 10,59 dBi, F/B 15,6 dB, opnunarhorn 50 og 62 gráður)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Rað-Z = summa viðnámanna þriggja, eftir λ/4: Z = Zq^2 / Zröð (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| hám. dB
+° (dietro)	° (aftur)
+Ω (barra in alto)	Ω (efri stika)
+λ, a passi di 0,125	λ, í skrefum 0,125
+a un'altezza dal suolo	í hæð yfir jörðu
+al massimo	við hámarkið
+antenna base: il modello aperto	grunnloftnet: opna líkanið
+antenna singola	stakt loftnet
+azimut ed elevazione	áttarhorn og hæðarhorn
+blu: sotto (calza)	blátt: að neðan (hlíf)
+calcolata da DL6WU (	reiknað af DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	reiknar HF-stæðuna yfir jörðu...
+calcolo in corso (spazio libero come VE7BQH	reiknar (laust rúm eins og VE7BQH
+cambio di livello (meta' del lato esterno)	hæðarskipti (á miðri ytri hlið)
+cerchio (poligono)	hringur (marghyrningur)
+cielo piu' freddo	kaldasti himinn
+circolarita' +-	hringlögun +-
+coassiale 50 Ω (RG-213)	kóax 50 Ω (RG-213)
+come VE7BQH (stack di 4)	eins og VE7BQH (stæða af 4)
+come prima: TANT, VE7BQH, KF2YN, stack	eins og áður: TANT, VE7BQH, KF2YN, stæða
+con lo stub	með stubbnum
+controfase (BOP)	í mótfasa (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: lokuð form Balanis
+cos^2: massimo della curva di Balanis	cos^2: hámark ferils Balanis
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	hornalína: misaðlögun hvers loftnets með hin lokuð í Z0; utan hornalínu: afl sem fer frá einni gátt til annarrar
+distanza / distanza DL6WU	bil / DL6WU-bil
+doppia biquad	tvöfalt biquad
+elevazione (gradi)	hæðarhorn (gráður)
+fascio d'errore (Baars 4.44-4.46)	villugeisli (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	lausrúmsdeyfing f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	utan aðferðarinnar: NEC gefur það eftir "Besta (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	utan bils formúlunnar (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	fókusvilla beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	Gauss -12 dB: formúla Baars 4.6
+gaussiana -12 dB: integrale numerico	Gauss -12 dB: töluleg heildun
+gradi · 30° come VE7BQH	gráður · 30° eins og VE7BQH
+griglia 0,07 λ	grind 0,07 λ
+guadagno con lobi sotto	mögnun með geislum undir
+guadagno dello stack (dBi)	mögnun stæðunnar (dBi)
+guadagno massimo	hámarksmögnun
+guadagno max	hám. mögnun
+larghezza x altezza (lungo la polarizzazione)	breidd x hæð (eftir skautuninni)
+lobi laterali piu' bassi	lægstu hliðargeislar
+lobi piu' bassi	lægstu geislar
+lobo laterale dB	hliðargeisli dB
+lobo laterale piu' alto (dB)	hæsti hliðargeisli (dB)
+locator, oppure latitudine e longitudine	staðsetningarkóði, eða breidd og lengd
+lungo l'arco	eftir boganum
+media voluta	æskilegt meðaltal
+meta' lato	á miðri hlið
+minimo / massimo	lágmark / hámark
+mutua con la porta 2	gagnkvæmt við gátt 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	ekkert bil með geislana undir þröskuldi: lægstu geislar
+non vale	ógilt
+ore UTC	klukkustundir UTC
+peso della Via Lattea qui e ora	vægi Vetrarbrautarinnar hér og nú
+premi "T antenna nelle 24 ore"	ýttu á "T loftnets yfir 24 klukkustundir"
+proposta (Distanze di stack)	tillaga (Stæðubil)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	ferningsdreifing -12 dB: HPBW (Baars 66,3 gráður lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	ferningsdreifing -12 dB: nýtni (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	ferningsdreifing -12 dB: formúla Baars 4.8
+quattro lati uguali	fjórar jafnar hliðar
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	líkansins (ef í lausu rúmi: meðaljörð 13 / 0,005, Sommerfeld)
+quota sopra	efri hæð
+rete come superficie piena (maglia troppo fitta da calcolare)	net sem heilt yfirborð (möskvinn of þéttur til að reikna)
+rete con la maglia vera	net með raunverulegum möskva
+rettangolo 2:1	rétthyrningur 2:1
+rosso: sopra (centrale)	rautt: að ofan (miðja)
+scala 450 Ω	stigalína 450 Ω
+scala 600 Ω	stigalína 600 Ω
+scelta proposta	tillöguval
+solo sopra	aðeins efri
+solo sotto	aðeins neðri
+sotto calza (blu), sopra centrale (rosso)	að neðan hlíf (blátt), að ofan miðja (rautt)
+sull'asse del tubo (F1BKM: 535 mm)	á ási rörsins (F1BKM: 535 mm)
+sulla singola	miðað við staka
+superficie senza errore	villulaust yfirborð
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	hitastig himins og jarðar og hæðarhorn úr Suð og G/T
+temperature uniformi: si confronta con le tabelle	jafnt hitastig: sambærilegt við töflurnar
+triangolo di sopra: centrale del connettore	efri þríhyrningur: miðja tengisins
+triangolo di sotto: calza (massa, staffa del palo)	neðri þríhyrningur: hlíf (jörð, mastursfesting)
+triangolo equilatero, tre sostegni	jafnhliða þríhyrningur, þrjár stoðir
+tutte in fase (BIP)	öll í fasa (BIP)
+x la distanza DL6WU, a passi di 0,1	x DL6WU-bilið, í skrefum 0,1
+RICEZIONE	MÓTTAKA
+nessuno	engin
+adesso	núna
+rurale	dreifbýli
+residenziale	íbúðahverfi

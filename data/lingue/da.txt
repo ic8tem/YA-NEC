@@ -3472,3 +3472,347 @@ Tutti e due (fuori DL6WU)	Begge (uden for DL6WU)
 DL6WU lega le due misure. Con "Numero di elementi" il boom si calcola dalle spaziature di DL6WU; con "Lunghezza del boom" i direttori si aggiungono finche' il boom li contiene. Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	DL6WU forbinder de to mål. Med "Antal elementer" beregnes bommen ud fra DL6WU-afstandene; med "Bommens længde" tilføjes direktorer, så længe bommen kan rumme dem. Det grå felt kan ikke redigeres: det viser den afledte værdi. Med "Begge (uden for DL6WU)" angiver man begge, og afstandene strækkes eller forkortes forholdsmæssigt: man forlader metoden, og NEC-optimering er nødvendig.
 passi 0-3 non disponibili: con "Tutti e due" l'ottimizzazione e' obbligatoria	trin 0-3 ikke tilgængelige: med "Begge (uden for DL6WU)" er optimering obligatorisk
 Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati).	Værdi afledt af de øvrige data: kan ikke redigeres (se noten under dataene).
+"Porta in adattamento (NEC)" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n	"Tilpas (NEC)" indstiller siden for resonans og afstanden for laveste SWR, og beregner derefter SWR og forstærkning over +-5 % båndbredde.\n
+0 % = al centro (bobina piu' piccola, meno efficienza), verso 100 % = verso la punta (bobina sempre piu' grande).	0 % = i midten (mindre spole, lavere virkningsgrad), mod 100 % = mod spidsen (stadigt større spole).
+0,875 λ (Cebik)	0,875 λ (Cebik)
+1 antenna	1 antenne
+1. Connettore sotto il triangolo di massa, il centrale passa al triangolo di sopra.	1. Stik under stelpunktstrekanten, centerlederen går til den øverste trekant.
+100 mm: controlla questo righello (stampa al 100 %)	100 mm: kontrollér denne lineal (udskriv i 100 %)
+100 mm: controlla questo righello (stampa al 100 %, nessun adattamento alla pagina)	100 mm: kontrollér denne lineal (udskriv i 100 %, uden tilpasning til siden)
+1005/f piedi (W7FB) = 306,3/f metri alla frequenza di centro della banda piu' bassa. Si aggiorna quando cambi la banda.	1005/f fod (W7FB) = 306,3/f meter på midtfrekvensen i det laveste båndet. Opdateres, når du skifter bånd.
+1296-5760 MHz, riflettore pieno o a rete, feed per parabola	1296-5760 MHz, massiv eller netreflektor, fødning til parabol
+144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli	144-432 MHz, horisontal polarisation, rundstrålende; de to niveauerne og de tre dipolerne
+2. Lo stub collega i due triangoli in parallelo al connettore: si regola la lunghezza per il ROS (F1BKM: 152 mm su un'auto o in stack).	2. Stubben forbinder de to trekanterne parallelt med stikket: længden trimmes for SWR (F1BKM: 152 mm på en bil eller i en stak).
+3. Isolanti tra i livelli (F1BKM: pila di piastre di polistirene da 5 mm): la distanza dz va tenuta uguale per tutti i bracci.	3. Isolatorer mellem niveauerne (F1BKM: stak af 5 mm polystyrenplader): afstanden dz skal være ens for alle arme.
+4. Il cambio di livello di ogni petalo sta a meta' del lato esterno (manicotto di F1BKM).	4. Niveauskiftet for hvert blad ligger midt på ydersiden (muffen hos F1BKM).
+6 m con le misure di JN1GLB (non accordate dal pulsante Risonanza, che lavora sulle bande 20-10 m)	6 m med målene fra JN1GLB (ikke afstemt af knappen Resonans, som arbejder på båndene 20-10 m)
+Accoppiamento e distanza migliore (NEC)	Kobling og bedste afstand (NEC)
+Accoppiamento piu' forte	Stærkeste kobling
+Al passo 4 si aggiunge la variabile progressione delle spaziature (come crescono lungo il boom, con il boom fisso)	I trinn 4 tilføjes variablen afstandsprogression til (hvordan afstandene vokser langs bommen, med fast bom)
+Alimentazione diretta con il coassiale al centro, senza balun (Marshall, OE2TZL, W6PQL): il centrale va da un lato, la calza dall'altro.	Direkte fødning med koaksen i midten, uten balun (Marshall, OE2TZL, W6PQL): centerlederen til den ene siden, skærmen til den andre.
+Alla distanza DL6WU	Ved DL6WU-afstanden
+Altezza dal suolo	Højde over jorden
+Altezza dei bordi	Højde på kanterne
+Altezza del riflettore	Reflektorens højde
+Angoli di partenza voluti	Ønskede udstrålingsvinkler
+Angolo tra i due bracci di un petalo (dima F1BKM: 100 gradi, quindi 20 gradi tra i bracci di petali vicini).	Vinklen mellem de to armene på et blad (skabelon F1BKM: 100 grader, altså 20 grader mellem armene på nabobladene).
+Antenna singola	Enkelt antenne
+Antenne una sopra l'altra	Antenner over hinanden
+Apertura del petalo	Bladets åbning
+Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante "Feed dal modello NEC" prende il diagramma calcolato.	Åbner biquaden som model i hovedvinduet (element ved z = 0, lobe mod +Z, polarisation langs Y, som hornfødningerne) og går til Primærfokusparabolen: der tar knappen "Fødning fra NEC-modelen" det beregnede diagrammet.
+Autori e fonti (licenza MIT, nota completa in Crediti)\n	Ophavspersoner og kilder (MIT-licens, fuld meddelelse i Tak)\n
+Azimut / elevazione	Azimut / elevation
+Baars 4.22 (apertura uniforme)	Baars 4.22 (jævn apertur)
+Banda dello stack	Stakkens bånd
+Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. "libera" lascia scrivere la frequenza.	Arbeidsbånd: frekvensen og alle mål i mm omskaleres. "fri" lader dig skrive frekvensen.
+Banda piu' bassa	Laveste bånd
+Big Wheel (W1IJD-W1FVY, F1BKM)	Big Wheel (W1IJD-W1FVY, F1BKM)
+Big Wheel e tre dipoli (1.0.17)	Big Wheel og tre dipoler (1.0.17)
+Big Wheel: tre petali di un'onda alimentati ai due capi, con lo stub al mozzo. Tre dipoli (W4RNL, WA1FXT): dipoli quasi a 50 ohm, a triangolo o su un cerchio, collegati in serie al mozzo e adattati con un lambda/4.	Big Wheel: tre blad på én bølgelængde matet i begge ender, med stubben ved navet. Tre dipoler (W4RNL, WA1FXT): dipoler på omkring 50 ohm, i trekant eller på en cirkel, seriekoblet ved navet og tilpasset med en lambda/4.
+Biquad (2 quadrati)	Biquad (2 kvadrater)
+Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi "Feed dal modello NEC".	Biquad åbnet som model: når beregningen er færdig, tryk "Fødning fra NEC-modelen" i Primærfokusparabolen.
+Biquad e doppia biquad	Biquad og dobbelt biquad
+Biquad e doppia biquad (1.0.16)	Biquad og dobbelt biquad (1.0.16)
+Biquad: due quadrati (8 lati di filo). Doppia biquad: quattro quadrati in fila (16 lati), i fili si incrociano senza toccarsi tra il primo e il secondo quadrato di ogni lato.	Biquad: to kvadrater (8 trådsider). Dobbelt biquad: fire kvadrater på rad (16 sider), trådene krydser hinanden uden at røre mellem første og andre kvadrat på hver side.
+Boom troppo corto per questi elementi: portato a 0,3 lambda.	Bommen for kort for disse elementene: sat til 0,3 lambda.
+Bordi piegati in avanti (verso l'elemento). 2 lati: i due bordi perpendicolari alla polarizzazione (alto e basso della fila dei quadrati). Marshall: bordi di 30 mm, lobi posteriori circa 6 dB piu' bassi.	Kanter bøjet fremad (mod elementet). 2 sider: de to kanterne vinkelret på polarisationen (øverst og nederst på rækken af kvadrater). Marshall: kanter på 30 mm, bageste lober omkring 6 dB lavere.
+Bordi rialzati	Opbukkede kanter
+C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra	C.A. Balanis, Antenna Theory, 4. udg., kap. 15: virkningsgrad for cos^n-fødninger (15-55, test med kurverne), nederste grænse for fasevirkningsgrækken (1 - m^2/2)^2, maksimal forstærkning ved lambda = 4 pi sigma (15-67..71). Fasegrænsen er et garantert minimum: den beregnede værdien ligger altid over
+Calcola accoppiamento e distanze (NEC)	Beregn kobling og afstande (NEC)
+Calcola lo stack HF (NEC)	Beregn HF-stakken (NEC)
+Calcola prima le distanze.	Beregn afstandene først.
+Calcola tutte le bande (NEC)	Beregn alle bånd (NEC)
+Calcolo da skynoise 0.2.2 di John C. Sager G8ONH (2025-2026, licenza MIT), portato in C# in YA-NEC.\n	Beregning fra skynoise 0.2.2 af John C. Sager G8ONH (2025-2026, MIT-licens), overført til C# i YA-NEC.\n
+Cambiandola, le misure in mm si riscalano.	Når den ændres, skaleres målene i mm om.
+Centro del lobo nel cielo	Lobens midte på himlen
+Cielo (fuori dalla Via Lattea)	Himmel (uden for Mælkevejen)
+Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.	Klik på diagrammet: markør C1, næste klik C2; under diagrammet niveauet for hver, vinkelen og forskjellen mellem dem. Dobbeltklik: fjerner markørene. Markørene bliver stående ved frekvensskift.
+Coassiale con il ROS alto delle bande armoniche: la perdita cresce molto (NT0Z, WB8IMY). Meglio l'accordatore al punto di alimentazione, oppure la scala.	Koaks med den høje SWR på harmoniske bånd: tabet vokser meget (NT0Z, WB8IMY). Bedre med tuneren ved fødepunktet, eller stigeledning.
+Coassiale: comodo ma con il ROS alto delle bande armoniche perde molto (NT0Z, WB8IMY). Scala: perde poco anche con il ROS alto, vuole un accordatore bilanciato o un balun 4:1 all'accordatore.	Koaks: bekvemt, men med den høje SWR på harmoniske bånd taber den meget (NT0Z, WB8IMY). Stigeledning: lille tab selv med høj SWR, kræver en balansert tuner eller en 4:1-balun ved tuneren.
+Confronto: L. Edwards VE7BQH (tabelle G/T a 30 gradi, stack di 4 a distanza DL6WU, temperature uniformi); TANT di YT1NT e VE3EA (manuale DG7YBN); correzione KF2YN.	Sammenligning: L. Edwards VE7BQH (G/T-tabeller ved 30 grader, stak af 4 på DL6WU-afstand, jævne temperaturer); TANT af YT1NT og VE3EA (håndbog DG7YBN); korrektion KF2YN.
+Controlli della 1.0.14 (Baars)	Kontroller i 1.0.14 (Baars)
+Controlli della 1.0.14 (Balanis)	Kontroller i 1.0.14 (Balanis)
+Criterio della distanza migliore	Kriterium for bedste afstand
+Cursori	Markører
+D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book	D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book
+D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (loop orizzontale, linea a scala, accordatore bilanciato); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (perimetro 1005/f piedi)	D. Fischer W7FB, "The Loop Skywire" (QST 11/1985); K. Kleinschmidt NT0Z (horisontal loop, stigeledning, balansert tuner); S. Ford WB8IMY, "The Lure of the Ladder Line" (QST 12/1993); ARRL Antenna Book (omkreds 1005/f fod)
+Da centro filo a centro filo, circa lambda/4 (Marshall 30,5 mm a 2,4 GHz).	Fra trådmidte til trådmidte, omkring lambda/4 (Marshall 30,5 mm ved 2,4 GHz).
+Da punta a punta (a cerchio: lungo l'arco). Cebik: 34,3" a triangolo, 31,4" a cerchio, a 146 MHz con tubo da 1/2".	Fra spids til spids (på cirkel: langs buen). Cebik: 34,3" i trekant, 31,4" på cirkel, ved 146 MHz med 1/2"-rør.
+Dal mozzo (circa 150 ohm in serie) a 50 ohm: RG-62 da 93 ohm (Cebik), oppure 75 ohm se l'impedenza e' sotto 150.	Fra navet (omkring 150 ohm i serie) til 50 ohm: RG-62 på 93 ohm (Cebik), eller 75 ohm hvis impedansen er under 150.
+Dal mozzo al mozzo lungo il tubo, circa un'onda (F1BKM 2050 mm a 145 MHz; QST 80" a 146 MHz).	Fra nav til nav langs røret, omkring én bølgelængde (F1BKM 2050 mm ved 145 MHz; QST 80" ved 146 MHz).
+Dal piano dei quadrati alla superficie del riflettore: e' la regolazione del ROS (0,1-0,13 lambda nelle fonti).	Fra kvadratenes plan til reflektorfladen: det er SWR-justeringen (0,1-0,13 lambda i kilderne).
+Data e ora (UTC)	Dato og tid (UTC)
+Data e ora non valide (gg/mm/aaaa hh:mm, UTC).	Ugyldig dato og tid (dd/mm/åååå tt:mm, UTC).
+Dettaglio del mozzo (PDF)	Detalje af navet (PDF)
+Diametro del tubo	Rørdiameter
+Diametro della ruota	Hjulets diameter
+Differenza dal cielo uniforme	Forskjell fra jævn himmel
+Dima 1:1 (PDF)	Skabelon 1:1 (PDF)
+Dima del petalo della Big Wheel	Skabelon for Big Wheel-bladet
+Dima della biquad	Skabelon for biquaden
+Dima di piegatura 1:1 (PDF)	Bøjeskabelon 1:1 (PDF)
+Direttori molto fitti (spaziature x	Direktorer meget tætte (afstande x
+Direttori molto radi (spaziature x	Direktorer meget spredte (afstande x
+Discesa	Fødeledning
+Dischi e illuminatori	Paraboler og fødninger
+Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.	Tegning af den bøjete tråden i skala 1:1 på A4, med bøjepunkterne, 100 mm-linjalen for å kontrollere utskriften og måltabellen.
+Distanza dal centro al punto di alimentazione di ogni dipolo (Cebik: 15,4" a triangolo, 15,5" a cerchio, a 146 MHz).	Afstand fra midten til fødepunktet på hver dipol (Cebik: 15,4" i trekant, 15,5" på cirkel, ved 146 MHz).
+Distanza dal riflettore	Afstand til reflektoren
+Distanza proposta	Foreslået afstand
+Distanza tra i due livelli	Afstand mellem de to niveauerne
+Distanze	Afstande
+Distanze da provare	Afstande å prøve
+Distanze di stack	Stakafstande
+Distanze provate	Prøvede afstande
+Distanze provate e diagramma in elevazione	Prøvede afstande og elevationsdiagram
+Doppia biquad (4)	Dobbelt biquad (4)
+Doppia biquad: dove le diagonali si incrociano i fili non si toccano (circa 1,5 mm di distanza).	Dobbelt biquad: der diagonalerne krydser, rører trådene ikke hinanden (omkring 1,5 mm mellemrom).
+Dove i bracci si attaccano ai triangoli di collegamento (F1BKM: triangoli da 52 mm di lato).	Der armene fastgøres til forbindelsestrekanterne (F1BKM: trekanter med 52 mm side).
+Due antenne una sopra l'altra, in fase: Big Wheel a 5/8 lambda (QST e F1BKM: una capovolta con mezz'onda di cavo in piu', nel modello in fase diretta), tre dipoli a 0,875 lambda (Cebik).	To antenner over hinanden, i fase: Big Wheel på 5/8 lambda (QST og F1BKM: én på hovedet med en ekstra halvbølge kabel, i modelen direkte i fase), tre dipoler på 0,875 lambda (Cebik).
+Elevazione alla distanza proposta (dBi sul terreno)	Elevation ved foreslået afstand (dBi over jorden)
+F/B lungo l'asse (NEC)	F/B langs aksen (NEC)
+F1BKM: alluminio da 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).	F1BKM: aluminium 10 mm; QST 1961: 3/8" (9,5 mm); Cebik: 1/2" (12,7 mm).
+Fascio d'errore, Baars 4.44-4.46	Fejllobe, Baars 4.44-4.46
+Feed a 10 GHz, differenze misurate	Fødninger for 10 GHz, målte forskelle
+File MMANA senza la sezione ***Wires***.	MMANA-fil uden afsnittet ***Wires***.
+Filo da tagliare	Tråd der skal klippes
+Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).	Isoleret tråd: NEC-2 beregner den som nøgen. Isoleringen forkorter elementet: W6PQL bruger 0,238 λ side med isoleret tråd mod Marshalls 0,248 λ med nøgen tråd (omkring 4 % mindre).
+Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).	Kilder: DL6WU (formel); ARRL Antenna Book 24. udg. (formlens grænser, stakke af HF-yagier og elevationsvinkler); L. Edwards VE7BQH (G/T som kriterium for EME-stakke); R. D. Straw N6BV (HFTA, stakke og terræn); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array af YO3IIU (koblingsmatrix ved modtagelse, GPL-2 eller senere); G. Burke og A. Poggio, NEC-2-håndbog (kort CP).
+Frequenza di progetto. Con una banda scelta e' grigia; con "libera" si scrive. Cambiandola, lato, distanza e riflettore si riscalano.	Konstruktionsfrekvens. Med et valgt bånd er den grå; med "fri" indtastes den. Når den ændres, skaleres side, afstand og reflektor om.
+Fuori da 50-1300 MHz la scala della mappa con l'esponente 2,56 non basta (sotto: assorbimento ionosferico e rumore artificiale; sopra: fondo cosmico e atmosfera): il valore e' solo indicativo.	Uden for 50-1300 MHz rækker ikke skaleringen af kortet med eksponenten 2,56 (under: ionosfærisk absorption og menneskeskabt støj; over: kosmisk baggrund og atmosfære): værdien er kun vejledende.
+G max	G maks
+G/T (da Rumore e G/T)	G/T (fra Støj og G/T)
+G/T come VE7BQH	G/T som VE7BQH
+G/T con il cielo vero	G/T med den virkelige himlen
+G/T max	G/T maks
+G/T migliore	Bedste G/T
+Guadagno (NEC)	Forstærkning (NEC)
+Guadagno all'orizzonte (NEC)	Forstærkning ved horisonten (NEC)
+Guadagno e lobo laterale al variare della distanza	Forstærkning og sidelobe avhengig af afstanden
+Guadagno massimo con questa superficie	Maksimal forstærkning med denne flade
+HF (sopra il terreno)	HF (over jorden)
+I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.	Armenes to niveauer, forbindelsestrekanterne, stubben og stikket, med mål.
+INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.	INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: åben bølgeleder 13,5 dB mod choke 15,2 dB (solstøj); påskruet choke -0,6 dB; LNB-hætte -0,5 dB.
+Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 modelerer ikke isoleringen: de beregnede mål gælder nøgen tråd. Med isoleret tråd skal elementet afkortes (W6PQL: side 0,238 lambda i stedet for 0,248, omkring 4 % mindre).
+Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Den øverste armen på et blad og den nederste på nabobladet ligger 20 grader fra hinanden: sammen danner de λ/4-ledningen som fører bladets høje impedans til navet.
+Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Det grå felt kan ikke udfyldes: det viser den afledte værdi. Med "Begge" angiver man begge og afstandene strækkes eller trykes sammen proporsjonalt: man forlader metoden og har brug for NEC-optimering.
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Siden er omkring λ/4 fra trådmidte til trådmidte; afstanden til reflektoren (0,1-0,13 λ i kilderne) er SWR-justeringen. Med net er reflektoren et trådgitter med den virkelige maskevidde (Mumford: maske under λ/10).
+Il modello aperto e' gia' uno stack: apri l'antenna singola.	Den åbne modelen er allerede en stak: åbne den enkle antennen.
+Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Modellen er i frit rum: for HF-stakken bruges middel jord (13 / 0,005 S/m, Sommerfeld).
+Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Bladet i skala 1:1 på A4-ark der sættes sammen (10 mm overlapp, kryds hver 50. mm, 100 mm-linjal). Kun til Big Wheel.
+Impedenza al mozzo (NEC)	Impedans ved navet (NEC)
+Impedenza di riferimento	Referenceimpedans
+Impedenza in serie al mozzo	Serieimpedans ved navet
+J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo	J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, kap. 4: frirumsdæmpning 4.3, kvadratisk 4.8, gaussisk 4.6, HPBW 4.13, første sidelobe 4.14a, defokusering 4.21-4.23, sfærisk skygge fra stiverne 4.36c-f, aksial fejlkomponent 4.43, fejllobe 4.44-4.46. Som beregningen: frirumsdæmpning (= rumlig dæmpning) og fordelingernes virkningsgrader. Anderledes: Baars bruger ideelle fordelinger, her integreres den virkelige fødningen; Baars' HPBW og sidelobe er til sammenligning og erstatter ikke beregningen
+K sotto l'orizzonte (skynoise: 290 K)	K under horisonten (skynoise: 290 K)
+La Big Wheel e' critica: lo stesso Cebik (QST 3/2008) avverte che il NEC calcola male le linee dove la corrente e' bassa e che piccole differenze di costruzione spostano l'impedenza. Lo stub si regola sempre sull'antenna vera.	Big Wheel er kritisk: Cebik selv (QST 3/2008) advarer om, at NEC beregner ledningerne dårligt der strømmen er lav, og at små byggeforskelle flytter impedansen. Stubben trimmes altid på den virkelige antennen.
+La banda per cui il perimetro e' un'onda intera: sopra quella il loop lavora su tutte le bande con l'accordatore.	Båndet hvor omkredsen er en massiv bølgelængde: over det arbejder loopen på alle bånd med tuneren.
+La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.	Skabelonen og navet gælder Big Wheel: vælg typen Big Wheel.
+Larghezza del riflettore	Reflektorens bredde
+Lati	Sider
+Lato del quadrato (centro filo)	Kvadratets side (trådmidte)
+Lato lungo la fila dei quadrati (la polarizzazione). Doppia biquad: circa 2,3 lambda.	Side langs rækken af kvadrater (polarisationen). Dobbelt biquad: omkring 2,3 lambda.
+Lato perpendicolare alla fila dei quadrati (Marshall: 123 mm da sola, 110 mm come feed di una parabola).	Side vinkelret på rækken af kvadrater (Marshall: 123 mm alene, 110 mm som parabolfødning).
+Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026.	Side, afstand til reflektoren, massiv eller netreflektor og kanter sammenlignet mellem kilderne; tilpasning med NEC, parabolfødning, mal 1:1. Skitse godkendt af IC8TEM 17/11/2026.
+Le fonti dichiarano guadagni da 8 dBd a 14 dBi su riflettori diversi: il NEC della scheda li mette sullo stesso piano.	Kildene angiver forstærkninger fra 8 dBd til 14 dBi på forskellige reflektorer: kortets NEC sætter dem på samme grundlag.
+Linea a finestra 450 Ω	Vinduesledning 450 Ω
+Linea aperta 600 Ω	Åben ledning 600 Ω
+Livelli	Niveauer
+Livelli molto vicini rispetto al tubo: la linea dei bracci ha un'impedenza molto bassa e il modello e' al limite del NEC-2 (fili paralleli a meno di qualche raggio).	Niveauene meget tæt i forhold til røret: armenes ledning har meget lav impedans og modelen er på grænsen for NEC-2 (parallelle tråde mindre end nogle få radier fra hinanden).
+Lo "sfasamento" dei conduttori: distanza verticale tra i bracci sotto (calza) e sopra (centrale). Stimata dalla pila di piastre di F1BKM: le fonti non la scrivono.	Ledernes "faseforskydning": vertikal afstand mellem de nederste armene (skærm) og de øverste (centerleder). Anslået ud fra pladestakken hos F1BKM: kilderne angiver den ikke.
+Lo stesso calcolo di Rumore e G/T: cielo e terreno a temperatura uniforme (VE7BQH, TANT). Non dipende ne' dal QTH ne' dall'ora.	Samme beregning som Støj og G/T: himmel og jord med jævn temperatur (VE7BQH, TANT). Afhænger hverken af QTH eller tid.
+Locator (JN70CN) oppure latitudine e longitudine in gradi (40,55 14,21). Si salva in config.ini.	Lokator (JN70CN) eller breddegrad og længdegrad i grader (40,55 14,21). Gemmes i config.ini.
+Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa	Loop Skywire (W7FB, NT0Z): alle bånd, stigeledning eller koaks, tab i fødeledningen
+Loop orizzontale multibanda	Horisontal flerbåndsloop
+Loop orizzontale multibanda (1.0.17)	Horisontal flerbåndsloop (1.0.17)
+Loop orizzontale multibanda (Loop Skywire)	Horisontal flerbåndsloop (Loop Skywire)
+Lunghezza del dipolo	Dipolens længde
+Lunghezza del filo (lungo l'asse, senza la parte da saldare)	Trådlængde (langs aksen, uten den del, der skal loddes)
+Lunghezza della discesa	Fødeledningens længde
+Lunghezza sviluppata del petalo	Bladets udfoldede længde
+Mappa del cielo	Himmelkort
+Mappe del cielo: C. G. T. Haslam et al., rilievo a 408 MHz (A&AS 47, 1982); rielaborazione di M. Remazeilles et al. (MNRAS 451, 2015), dal server LAMBDA della NASA; mappe a 144 e 432 MHz preparate da G8ONH.\n	Himmelkort: C. G. T. Haslam et al., kortlægning ved 408 MHz (A&AS 47, 1982); bearbejdning af M. Remazeilles et al. (MNRAS 451, 2015), fra NASAs LAMBDA-server; kort ved 144 og 432 MHz lavet af G8ONH.\n
+Matrice delle porte singolare.	Singulær portmatrix.
+Matrice di accoppiamento alla distanza proposta	Koblingsmatrix ved foreslået afstand
+Mostra il primo nullo	Vis første nulpunkt
+Mozzo - lato esterno	Nav - yderside
+Mozzo della Big Wheel	Big Wheel-navet
+NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)	NYT · himmelkort, QTH, tid, Månen (skynoise, G8ONH)
+Nelle 24 ore (cielo vero)	Over 24 timer (virkelig himmel)
+OfficinaHF e F... (Maignan, dalla versione F1BKM): ruota di circa 1,2 m, teme vento e ghiaccio, nessuna misura nuova.	OfficinaHF og F... (Maignan, efter F1BKM-versjonen): hjul på omkring 1,2 m, udsat for vind og is, ingen nye mål.
+Ogni direzione sopra l'orizzonte prende la temperatura della mappa del cielo in quel punto, all'ora e dal QTH dati (skynoise, G8ONH).	Hver retning over horisonten får himmelkortets temperatur i det punktet, ved angivet tid og fra angivet QTH (skynoise, G8ONH).
+Ogni petalo e' un'onda intera alimentata ai due capi: i bracci vicino al mozzo sono linee di λ/4 a due livelli (blu sotto = calza, rosso sopra = centrale). Il braccio sopra di un petalo e quello sotto del petalo vicino corrono a 20 gradi: e' quella coppia a fare da linea. Lo stub in parallelo porta i circa 10 Ω a 50 Ω.	Hvert blad er en massiv bølgelængde matet i begge ender: armene nær navet er λ/4-ledninger på to niveauer (blå under = skærm, rød over = centerleder). Den øverste armen på et blad og den nederste på nabobladet går 20 grader fra hinanden: det par udgør ledningen. Stubben i parallel fører de omkring 10 Ω til 50 Ω.
+Ogni petalo ha un braccio sul livello di sotto e uno su quello di sopra: il cambio di livello sta a meta' del lato esterno (il manicotto di F1BKM).	Hvert blad har én arm på det nederste niveauet og én på det øverste: niveauskiftet ligger midt på ydersiden (muffen hos F1BKM).
+PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC	PA0PLY (parabol 3 m, f/D 0,3): åben bølgeleder 13,5 dB mod choke 15,2 dB; påskruet choke -0,6 dB; LNB-hætte -0,5 dB. Kun reference: diagrammet for disse fødningerne skal beregnes med NEC
+Passo dei fili della rete (W6PQL e G6GVI: rete da 1/2 x 1 pollice).	Trådafstand i nettet (W6PQL og G6GVI: net 1/2 x 1 tomme).
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	For at lave en stak af én antenne: Støj/GT/Stak > Stakafstande, rader og kolonner, knappen "Lav stakken i den åbne model" (siden 0.4.20).
+Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti).	For SWR (50 ohm med koaksen direkte på fødepunktet, som i alle kilder).
+Per questo si usa la scala con l'accordatore, o il coassiale con l'accordatore al punto di alimentazione. "Calcola tutte le bande (NEC)" calcola ogni banda e la perdita della discesa.	Derfor bruger man stigeledning med tuner, eller koaks med tuneren ved fødepunktet. "Beregn alle bånd (NEC)" beregner hvert bånd og tabet i fødeledningen.
+Perdita della discesa con il ROS di ogni banda (dB)	Tab i fødeledningen med SWR for hvert bånd (dB)
+Perdita della discesa sotto 3 dB su tutte le bande.	Tab i fødeledningen under 3 dB på alle bånd.
+Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026.	Omkreds 1005/f fod, fire former, NEC-beregning af alle bånd med tabet i fødeledningen (stigeledning eller koaks) for SWR på hvert bånd. Skitse godkendt af IC8TEM 17/11/2026.
+Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026.	Blade på to niveauer med stubben, tre dipoler i serie med lambda/4, bøjeskabelon 1:1 og detalj af navet; MathWorks-tilfeller (yagi med 6 elementer, helix) i selvtesten. Skitse godkendt af IC8TEM 17/11/2026.
+Petalo	Blad
+Pieghe a 90 gradi nei punti P. Nodi rossi: il centrale del coassiale da un lato, la calza dall'altro (nessun balun).	90-graders bøjninger ved punktene P. Røde knuder: koaksens centerleder på den ene side, skærmen på den anden (ingen balun).
+Pieno (lamiera, PCB)	Massiv (plade, printplade)
+Pieno: lamiera o PCB, nel NEC una griglia fitta (0,07 lambda, raggio dei fili con l'area uguale). Rete: la maglia vera con il suo filo.	Massiv: plade eller printplade, i NEC et tæt gitter (0,07 lambda, trådradius med lige flade). Net: den virkelige masken med sin tråd.
+Polarizzazione orizzontale e diagramma omnidirezionale: il guadagno all'orizzonte dipende dall'altezza e dallo stack, non dalla forma.	Horisontal polarisation og rundstrålende diagram: forstærkningen ved horisonten afhænger af højde og staking, ikke af formen.
+Porta in adattamento (NEC)	Tilpas (NEC)
+Primo lobo, Baars 4.14a (-24,6 + 7,37 t)	Første sidelobe, Baars 4.14a (-24,6 + 7,37 t)
+Puntamento	Retning
+Punto di alimentazione	Fødepunkt
+QTH non valido: scrivi il locator (es. JN70CN) oppure latitudine e longitudine.	Ugyldig QTH: skriv lokatoren (f.eks. JN70CN) eller breddegrad og længdegrad.
+Quota dell'antenna piu' bassa	Højde for den laveste antennen
+ROS a 50 Ω (dopo "Porta in adattamento")	SWR på 50 Ω (efter "Tilpas")
+ROS a 50 Ω in banda	SWR på 50 Ω i båndet
+ROS in banda	SWR i båndet
+Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).	Violette stiplede stråler på de første minimaene på hver side af hovedloben: afstanden mellem dem er bredden til første nulpunkt (FNBW), skrevet under diagrammet med den højeste sideloben (SLL, inden for 100 grader fra maksimum, baglobe udeladt).
+Raggio al punto di alimentazione	Radius ved fødepunktet
+Raggio del mozzo	Navets radius
+Raggio delle curve (asse)	Bøjeradius (akse)
+Raggio delle due curve del petalo sull'asse del tubo (dima F1BKM: 140 mm interno).	Radius for bladets to bøjninger på rørets akse (skabelon F1BKM: 140 mm indvendig).
+Rame da 1,2-2 mm nelle fonti.	Kobber 1,2-2 mm i kilderne.
+Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.	Neten for tæt til beregningen (over 1800 segmenter): i NEC er reflektoren et gitter på 0,07 λ, som om den var massiv. Med masker under λ/10 er forskjellen lille.
+Rete: diametro del filo	Net: tråddiameter
+Rete: maglia lungo l'altezza	Net: maske i højden
+Rete: maglia lungo la larghezza	Net: maske i bredden
+Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).	Lille reflektor: forstærkningen falder og bagloben vokser (Marshall: 123 mm ved 2,4 GHz, altså omkring 1 λ, for biquaden alene).
+Risultati del cielo vero copiati.	Resultater for virkelig himmel kopieret.
+Rumore dal cielo vero	Støj fra virkelig himmel
+Rumore e G/T	Støj og G/T
+Rumore, G/T e stack	Støj, G/T og stak
+Ruze sigma = lambda/20 (dB)	Ruze sigma = lambda/20 (dB)
+Salva la dima	Lagre skabelonen
+Servono almeno 2 antenne (righe x colonne nella scheda sopra).	Mindst 2 antenner kræves (rader x kolonner i kortet ovenfor).
+Spazio libero, oppure a un'altezza dal suolo medio (Sommerfeld).	Frit rum, eller i en højde over middel jord (Sommerfeld).
+Spazio tra i due nodi di alimentazione	Mellemrum mellem de to fødeknuderne
+Stack alla distanza proposta	Stak ved foreslået afstand
+Stack, tutte in fase (BIP)	Stak, alle i fase (BIP)
+Striscia di alluminio (F1BKM 20 x 2 mm): nel NEC un filo di raggio larghezza/4.	Aluminiumsstrimmel (F1BKM 20 x 2 mm): i NEC en tråd med radius bredde/4.
+Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1BKM 127 mm in spazio libero, 152 mm su un'auto o in stack).	Strimmel bøjet til et U mellem de to niveauerne, parallelt med navet (QST 1961: 5"; F1BKM 127 mm i frit rum, 152 mm på en bil eller i en stak).
+Stub	Stub
+Stub: larghezza	Stub: bredde
+Stub: lunghezza sviluppata	Stub: udfoldet længde
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman og Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb og Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	På nogle bånd taber fødeledningen mer end 3 dB (markerede felter): afkort ledningen, skift til stigeledning eller sæt tuneren ved loopen.
+T antenna (cielo vero)	Antenne-T (virkelig himmel)
+T antenna nelle 24 ore	Antenne-T over 24 timer
+T antenna nelle 24 ore (puntamento fisso)	Antenne-T over 24 timer (fast retning)
+T del terreno (cielo vero)	Jord-T (virkelig himmel)
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI og MW1FGQ; buildyourownantenna (dobbelt biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI og MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (sammenligning)
+Tabella dello stack copiata.	Staktabellen kopieret.
+Temperature uniformi (VE7BQH)	Jævne temperaturer (VE7BQH)
+Tempo siderale: G. H. Kaplan, USNO Circular 179 (2005). Scala in frequenza: T = (fmappa / f)^2,56 T (G8ONH). Luna: J. Meeus, Astronomical Algorithms, cap. 47.\n	Stjernetid: G. H. Kaplan, USNO Circular 179 (2005). Frekvensskalering: T = (fkart / f)^2,56 T (G8ONH). Månen: J. Meeus, Astronomical Algorithms, kap. 47.\n
+Togli i cursori	Fjern markørerne
+Tratto di lambda/4: impedenza	Lambda/4-stykke: impedans
+Tratto di λ/4	λ/4-stykke
+Tre cavi a 50 Ω della stessa lunghezza (qualsiasi) fino al mozzo, collegati in serie: circa 150 Ω.	Tre 50 Ω-kabler af samme (valgfri) længde til navet, seriekoblet: omkring 150 Ω.
+Tre dipoli a cerchio (WA1FXT)	Tre dipoler på cirkel (WA1FXT)
+Tre dipoli a triangolo (W4RNL)	Tre dipoler i trekant (W4RNL)
+Usa come feed della parabola	Brug som parabolfødning
+Usa la distanza proposta per lo stack	Brug den foreslåete afstanden for stakken
+VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore	VHF/UHF (DL6WU) og HF (over jorden), kobling, bedste afstand
+VHF/UHF (spazio libero, DL6WU)	VHF/UHF (frit rum, DL6WU)
+VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.	VHF/UHF: for hver afstand (faktor x DL6WU-afstanden) beregnes stakken med NEC: forstærkning, højeste sidelobe i stakkens plan, G/T (temperaturer fra Støj og G/T) og kobling mellem portene. HF: DL6WU-formlen gælder ikke (antennene står over jorden og udstrålingsvinklen tæller): stakken vælges efter de ønskede elevationsvinklene.
+Vai a Distanze di stack	Gå til Stakafstande
+Via Lattea (zone sopra 1000 K a 144 MHz)	Mælkevejen (områder over 1000 K ved 144 MHz)
+Vista dall'alto (scala 2:1): bracci rossi sopra (centrale), blu sotto (calza)	Set ovenfra (skala 2:1): røde arme over (centerleder), blå under (skærm)
+Vista di lato (scala 2:1)	Set fra siden (skala 2:1)
+W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)	W1IJD og W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL og B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 og 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (sammenligninger)
+W1IJD e W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK	W1IJD og W1FVY (QST 9/1961); A. Griffault F1BKM (Radio-REF 764, 2004); L.B. Cebik W4RNL og B. Cerreto WA1FXT (QST 3/2008); Cebik, antenneX 41 og 145; K. Rothammel DM2ABK
+W7FB alimenta in un angolo; a meta' lato cambia poco l'impedenza ma sposta i lobi sulle bande alte.	W7FB føder i et hjørne; midt på en side ændres impedansen lidt, men loberne flytter sig på de høje båndene.
+W7FB: il piu' alto possibile; sotto λ/4 della banda bassa irradia quasi solo verso l'alto (NVIS).	W7FB: så højt som muligt; under λ/4 for det laveste båndet stråler den næsten kun opad (NVIS).
+W7FB: quadrato. Il cerchio (poligono di 16 lati) ha l'area piu' grande e il guadagno un po' piu' alto; il triangolo serve con tre sostegni.	W7FB: kvadrat. Cirklen (16-kantet polygon) har størst flade og lidt højere forstærkning; trekanten passer til tre støtter.
+YA-NEC - Rumore dal cielo vero (skynoise, G8ONH)	YA-NEC - Støj fra virkelig himmel (skynoise, G8ONH)
+Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)	MathWorks-yagi, mål optimeret af MathWorks (offentliggjort: 10,59 dBi, F/B 15,6 dB, åbningsvinkler 50 og 62 grader)
+Z in serie = somma delle tre impedenze, dopo il λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n	Serie-Z = summen af de tre impedansene, efter λ/4: Z = Zq^2 / Zserie (Cebik, antenneX 145).\n
+|Sij| max dB	|Sij| maks dB
+° (dietro)	° (bag)
+Ω (barra in alto)	Ω (øverste linje)
+λ, a passi di 0,125	λ, i trin på 0,125
+a un'altezza dal suolo	i en højde over jorden
+al massimo	ved maksimum
+antenna base: il modello aperto	grundantenne: den åbne modelen
+antenna singola	enkelt antenne
+azimut ed elevazione	azimut og elevation
+blu: sotto (calza)	blå: under (skærm)
+calcolata da DL6WU (	beregnet af DL6WU (
+calcolo dello stack HF sopra il terreno in corso...	beregning af HF-stakken over jorden er i gang...
+calcolo in corso (spazio libero come VE7BQH	beregning er i gang (frit rum som VE7BQH
+cambio di livello (meta' del lato esterno)	niveauskifte (midt på ydersiden)
+cerchio (poligono)	cirkel (polygon)
+cielo piu' freddo	koldeste himmel
+circolarita' +-	rundhed +-
+coassiale 50 Ω (RG-213)	koaks 50 Ω (RG-213)
+come VE7BQH (stack di 4)	som VE7BQH (stak af 4)
+come prima: TANT, VE7BQH, KF2YN, stack	som før: TANT, VE7BQH, KF2YN, stak
+con lo stub	med stubben
+controfase (BOP)	modfase (BOP)
+cos^2 f/D 0,42: forma chiusa di Balanis	cos^2 f/D 0,42: Balanis' lukkede form
+cos^2: massimo della curva di Balanis	cos^2: maksimum for Balanis' kurve
+diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra	diagonal: fejltilpasning for hver antenne med de andre afsluttet i Z0; uden for diagonalen: effekt der går fra én port til en anden
+distanza / distanza DL6WU	afstand / DL6WU-afstand
+doppia biquad	dobbelt biquad
+elevazione (gradi)	elevation (grader)
+fascio d'errore (Baars 4.44-4.46)	fejllobe (Baars 4.44-4.46)
+free-space taper f/D 0,3 (Baars 4,58 dB)	frirumsdæmpning f/D 0,3 (Baars 4,58 dB)
+fuori dal metodo: lo da' il NEC dopo "Ottimizza (NEC)"	uden for metoden: NEC giver den efter "Optimer (NEC)"
+fuori dall'intervallo della formula (0,1 < t < 1)	uden for formlens intervall (0,1 < t < 1)
+fuori fuoco beta = 1 (Baars 0,919)	defokusering beta = 1 (Baars 0,919)
+gaussiana -12 dB: formula di Baars 4.6	gaussisk -12 dB: Baars' formel 4.6
+gaussiana -12 dB: integrale numerico	gaussisk -12 dB: numerisk integral
+gradi · 30° come VE7BQH	grader · 30° som VE7BQH
+griglia 0,07 λ	gitter 0,07 λ
+guadagno con lobi sotto	forstærkning med lober under
+guadagno dello stack (dBi)	stakkens forstærkning (dBi)
+guadagno massimo	maksimal forstærkning
+guadagno max	maks forstærkning
+larghezza x altezza (lungo la polarizzazione)	bredde x højde (langs polarisationen)
+lobi laterali piu' bassi	laveste sidelober
+lobi piu' bassi	laveste lober
+lobo laterale dB	sidelobe dB
+lobo laterale piu' alto (dB)	højeste sidelobe (dB)
+locator, oppure latitudine e longitudine	lokator, eller breddegrad og længdegrad
+lungo l'arco	langs buen
+media voluta	ønsket gennemsnit
+meta' lato	midt på siden
+minimo / massimo	minimum / maksimum
+mutua con la porta 2	gensidig med port 2
+nessuna distanza con i lobi sotto la soglia: lobi piu' bassi	ingen afstand med loberne under tærsklen: laveste lober
+non vale	gælder ikke
+ore UTC	UTC-timer
+peso della Via Lattea qui e ora	Mælkevejens vægt her og nå
+premi "T antenna nelle 24 ore"	tryk "Antenne-T over 24 timer"
+proposta (Distanze di stack)	foreslået (Stakafstande)
+quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)	kvadratisk -12 dB: HPBW (Baars 66,3 grader lambda/D)
+quadratica -12 dB: efficienza (Baars 0,893)	kvadratisk -12 dB: virkningsgrad (Baars 0,893)
+quadratica -12 dB: formula di Baars 4.8	kvadratisk -12 dB: Baars' formel 4.8
+quattro lati uguali	fire lige sider
+quello del modello (se e' in spazio libero: suolo medio 13 / 0,005, Sommerfeld)	modelens (i frit rum: middel jord 13 / 0,005, Sommerfeld)
+quota sopra	øverste højde
+rete come superficie piena (maglia troppo fitta da calcolare)	net som massiv flade (masken for tæt til at beregne)
+rete con la maglia vera	net med den virkelige masken
+rettangolo 2:1	rektangel 2:1
+rosso: sopra (centrale)	rød: over (centerleder)
+scala 450 Ω	stigeledning 450 Ω
+scala 600 Ω	stigeledning 600 Ω
+scelta proposta	foreslået valg
+solo sopra	kun øverste
+solo sotto	kun nederste
+sotto calza (blu), sopra centrale (rosso)	under skærm (blå), over centerleder (rød)
+sull'asse del tubo (F1BKM: 535 mm)	på rørets akse (F1BKM: 535 mm)
+sulla singola	i forhold til den enkelte
+superficie senza errore	fejlfri flade
+temperature del cielo e del terreno ed elevazione della voce Rumore e G/T	himmel- og jordtemperatur og elevation fra Støj og G/T
+temperature uniformi: si confronta con le tabelle	jævne temperaturer: sammenlignelig med tabellerne
+triangolo di sopra: centrale del connettore	øverste trekant: stikkets centerleder
+triangolo di sotto: calza (massa, staffa del palo)	nederste trekant: skærm (jord, mastebeslag)
+triangolo equilatero, tre sostegni	ligesidet trekant, tre støtter
+tutte in fase (BIP)	alle i fase (BIP)
+x la distanza DL6WU, a passi di 0,1	x DL6WU-afstanden, i trin på 0,1
+RICEZIONE	MODTAGELSE
+nessuno	ingen
+adesso	nu
+rurale	landligt
+residenziale	boligområde
