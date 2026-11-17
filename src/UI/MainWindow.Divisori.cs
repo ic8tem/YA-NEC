@@ -177,7 +177,7 @@ namespace YaNec
                 gRos.Series = tipo == "fase" ? new List<LineSeries>() : new List<LineSeries> { new LineSeries { Name = "ROS all'ingresso", Y = fs.Select(f => Analysis.Swr(Divisori.Zin(zl, z0, f0, f), zi)).ToArray(), Color = Color.Parse("#1D5FB0"), Width = 2.4, Decimals = 2 } };
                 gRos.EmptyText = tipo == "fase" ? "solo cavi di fase" : ""; gRos.InvalidateVisual();
                 // cavi di fase
-                tabF.Children.Clear(); tabF.RowDefinitions.Clear(); tabF.ColumnDefinitions = new ColumnDefinitions("*,Auto,Auto,Auto,Auto,Auto");
+                tabF.Children.Clear(); tabF.RowDefinitions.Clear(); tabF.ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,Auto,Auto,Auto");
                 r0 = 0;
                 Action<string[], bool> rf = (v, h) =>
                 {
