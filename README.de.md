@@ -11,7 +11,19 @@ Die Rechenmaschine ist eine C#-Übersetzung von **nec2c** (dem NEC-2 des Lawrenc
 
 Funktionen: Impedanz, SWR, Gewinn, 2D- und 3D-Diagramme, Frequenz-Sweep und Smith-Diagramm; Leeson-Korrektur für Teleskoprohre (gestufte Durchmesser) wie in EZNEC; Böden (ideal, Reflexionsfaktor, Sommerfeld, Radialnetz); Variablen, Formeln und Optimierer; mehr als 40 Rechner (Lang-Yagi DL6WU, Quagi, LPDA, Moxon, Hexbeam, Mehrband-Dipole und -Yagis, Four-Square, Vertikale, Parabolspiegel und Erreger, Elementhalterungen und mehr); Empfangsantennen und RDF; Rauschen, G/T und Gruppierung (Stack); Kabeltabelle, Anpassleitungen und Baluns; Prüfung der Eingabedaten. Jede Rechenentscheidung und jedes Kontrollkästchen wird im [Handbuch](doc/Manuale_d_uso.pdf) erklärt, das auch im Programm verfügbar ist (Reiter Handbuch). Mehr im [Wiki](https://github.com/ic8tem/YA-NEC/wiki).
 
-**Sprache:** Die Oberfläche ist italienisch, teilweise auch englisch (Menü Sprache, oben rechts). Das Handbuch ist italienisch. Weitere Sprachen folgen.
+**Sprache:** Die Oberfläche gibt es in 37 Sprachen (Menü Sprache, oben rechts), das Wiki ebenfalls. Das Handbuch ist italienisch.
+
+## Neu in 1.1
+
+> **Anmerkung des Autors.** In dieser Version habe ich lange über die Rauschtemperatur nachgedacht. Man hat mich auf MATLAB-Studien zur Stockung von Richtantennen aufmerksam gemacht, und ich wollte es sofort versuchen: den Nutzern von YA-NEC die Möglichkeit geben, über den Stockungsabstand nach DL6WU (die trigonometrische Formel) hinauszugehen, und sie, wenn sie möchten, bei der Wahl eines eigenen Stockungsabstands begleiten. Dazu eine gründliche Überarbeitung der Oberfläche. — *Costantino IC8TEM*
+
+- **Rauschen vom echten Himmel.** Neue Seite im Obertab **Rauschen/GT/Stock**: Das Diagramm der Antenne oder des Stocks wird über die echte Himmelskarte gelegt (408-MHz-Durchmusterung von Haslam, von Remazeilles neu bearbeitet, von G8ONH auf 144 und 432 MHz umgerechnet), vom eigenen QTH (Locator oder Koordinaten) zur gewählten Zeit, mit beliebiger Ausrichtung, auf den Mond oder auf die kälteste Himmelsstelle. Zwei G/T nebeneinander: mit gleichmäßigem Himmel, vergleichbar mit den Tabellen von VE7BQH (30 Grad, 2 x 2-Stock im DL6WU-Abstand), und mit dem echten Himmel, mit der Kurve der Antennentemperatur über 24 Stunden samt Minimum und Maximum. Die Rechnung ist **skynoise von John C. Sager G8ONH** (MIT-Lizenz), nach C# portiert.
+- **Stockungsabstand mit NEC gewählt.** Auf der Seite **Stockungsabstände** (aus den Rechnern verschoben) wird der Stock für eine Reihe von Abständen um den DL6WU-Abstand wirklich berechnet: Gewinn, höchste Nebenkeule, G/T und Kopplungsmatrix zwischen den Ports (S11, S21...). Ein Kriterium wählt den vorgeschlagenen Abstand (höchster Gewinn, niedrigste Nebenkeulen, bestes G/T oder Gewinn mit Nebenkeulen unter einer Schwelle), und eine Schaltfläche erstellt damit den Stock. Auf **KW** gilt die DL6WU-Formel nicht: Der Stock über Grund wird nach den gewünschten Abstrahlwinkeln gewählt, mit Elevationsdiagrammen gleichphasig (BIP), einzeln und gegenphasig (BOP).
+- **Rechner nach Familien.** Eine Leiste unter den Tabs teilt die Rechner in **KW**, **UKW**, **Empfangsantennen** (kein eigener Tab mehr), **Werkzeuge**, **Spiegel und Erreger** und **2,4 GHz**; die Liste links zeigt nur die gewählte Familie.
+- **Messungen im Diagramm.** Neben der -3-dB-Breite: Breite bis zur ersten Nullstelle (FNBW), höchste Nebenkeule (SLL) und zwei Cursor C1 und C2 per Klick, mit Pegel, Winkel und Differenz.
+- **V/R entlang der Achse** korrigiert für Freiraummodelle, deren Keule entlang der Z-Achse zeigt (wie die Yagi der MathWorks Antenna Toolbox).
+- **Neue Rechner**: Biquad und Doppel-Biquad (Spiegelerreger), Big Wheel und drei Dipole, horizontale Mehrband-Schleife (Skywire) mit Leitungsverlust auf jedem Band.
+- **Übersetzungen**: alle neuen Einträge in den 37 Sprachen des Programms. **Videokurs** mit Lektionen zu den neuen Themen aktualisiert.
 
 ## Herunterladen
 

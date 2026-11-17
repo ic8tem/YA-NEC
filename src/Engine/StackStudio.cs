@@ -121,7 +121,13 @@ namespace YaNec.Engine
                 if (ph < 0) ph += 360;
                 g[i] = e.Gain(th, ph).GainTotal; a[i] = -180 + 0.5 * i;
             }
-            int i0 = 360, r = i0, l = i0;
+            // il campionamento a 0,5 gradi puo' mettere il picco vero uno o due punti accanto alla direzione data: si sale prima fino al
+            // massimo locale, poi si scende dalle due parti (prima il picco accanto era preso per un lobo laterale a 0 dB)
+            int i0 = 360;
+            while (i0 < n - 1 && g[i0 + 1] > g[i0]) i0++;
+            while (i0 > 0 && g[i0 - 1] > g[i0]) i0--;
+            gm = Math.Max(gm, g[i0]);
+            int r = i0, l = i0;
             while (r < n - 1 && g[r + 1] <= g[r]) r++;
             while (l > 0 && g[l - 1] <= g[l]) l--;
             sll = -99; ang = double.NaN;

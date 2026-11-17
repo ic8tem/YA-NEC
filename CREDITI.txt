@@ -359,6 +359,21 @@ FONTI DEI CALCOLATORI, DEI CASI DI PROVA E DELLO STUDIO DEI MANUALI
     (Rothammels Antennenbuch, cap. 24, Tab. 24.2 - correzione del boom DL6WU misurata: SCARTATA da IC8TEM il 14/11/2026, stesse
       misure di DL6WU gia' usate con la formula DL6WU/G3SEK)
 
+  Rumore dal cielo vero (1.1, bozzetto approvato da IC8TEM il 17/11/2026 19:17):
+    John C. Sager G8ONH, skynoise 0.2.2 (2025-2026, licenza MIT): calcolo portato in C# e mappe a 144 e 432 MHz (data/cielo);
+    C. G. T. Haslam, C. J. Salter, H. Stoffel, W. E. Wilson, A&AS 47 (1982), survey a 408 MHz; M. Remazeilles, C. Dickinson,
+    A. J. Banday, M.-A. Bigot-Sazy, T. Ghosh, MNRAS 451 (2015), rielaborazione, dal server LAMBDA della NASA;
+    G. H. Kaplan, USNO Circular 179 (2005), tempo siderale; J. Meeus, Astronomical Algorithms, cap. 47 (Luna);
+    HEALPix (K. M. Gorski e collaboratori) con l'interpolazione di healpy; L. Edwards VE7BQH (tabelle G/T); TANT di YT1NT e VE3EA; KF2YN.
+
+  Distanze di stack: accoppiamento e distanza migliore (1.1):
+    G. Hoch DL6WU; YO3IIU, nec2-array (matrice di accoppiamento in ricezione, GPL-2 o successiva: solo il metodo);
+    G. J. Burke e A. J. Poggio, manuale NEC-2 (scheda CP); L. Edwards VE7BQH (G/T come criterio EME);
+    ARRL Antenna Book 24a ed. (stack HF); R. D. Straw N6BV, HFTA (BIP e BOP); ON4UN, Low-Band DXing; L. B. Cebik W4RNL.
+
+  Misure sui diagrammi (1.1): FNBW, lobo laterale piu' alto e cursori come nelle schede pattern del MathWorks Antenna Toolbox
+    (Yagi a 6 elementi usata come caso di prova, misure ottimizzate da MathWorks).
+
 NOVITA' DELLA 0.4.3
     Tom Rauch W8JI, "Detuning towers" (w8ji.com) - avviso per la torre TX vicina alle antenne riceventi (approvato il 13/11/2026)
     Earl Cunningham K6SE (Pennant) e le pagine di WA1ION (qsl.net/wa1ion) - calcolatore Pennant (0.4.7)

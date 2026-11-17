@@ -34,6 +34,16 @@ necpp (nec2++) - Tim Molteno - GNU GPL 2 o successiva
 https://github.com/tmolteno/necpp
 Usato solo come terzo riferimento numerico nelle prove: nessun codice incluso.
 
+skynoise 0.2.2 - John C. Sager G8ONH - licenza MIT - Copyright (c) 2026 John C Sager
+Il calcolo della temperatura d'antenna sul cielo vero (Rumore/GT/Stack > Rumore dal cielo
+vero) e' la traduzione in C# delle sue routine; le mappe data/cielo/SkyTemp144.fits e
+SkyTemp432.fits vengono dal suo pacchetto (ricavate dalla mappa a 408 MHz di Haslam et al.
+1982 rielaborata da Remazeilles et al. 2015, server LAMBDA della NASA).
+Avviso completo in data/cielo/LICENCE-skynoise.txt (testo MIT anche qui sotto).
+
+nec2-array - YO3IIU - GNU GPL 2 o successiva
+Riferimento del metodo per la matrice di accoppiamento tra le porte: nessun codice incluso.
+
 ---------------------------------------------------------
 LIBRERIE INCLUSE NEI PACCHETTI
 

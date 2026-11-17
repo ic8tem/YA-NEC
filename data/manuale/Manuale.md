@@ -162,6 +162,18 @@ Nella barra dei Diagrammi: il cursore **Caratteri** (dal 100 al 200 %) ingrandis
 
 L'apertura a -3 dB si vede sempre nei diagrammi 2D: due raggi tratteggiati dal centro ai punti a -3 dB, con l'arco e il valore (il "triangolo"). 
 
+**Misure sul diagramma (dalla 1.1).** Sotto ogni diagramma 2D, oltre all'apertura a -3 dB, ci sono altre due misure:
+
+| Misura | Come si legge | Come si calcola |
+|---|---|---|
+| FNBW, apertura al primo nullo | con la casella **Mostra il primo nullo** due raggi viola tratteggiati sui primi minimi ai due lati del lobo principale; il valore e' l'angolo tra i due | dal massimo si scende da una parte e dall'altra fino al primo punto dove il livello smette di calare (minimo locale) |
+| SLL, lobo laterale piu' alto | in dB sotto il massimo, con l'angolo dove si trova | il lobo piu' alto entro 100 gradi dal massimo, escluso il lobo posteriore (che ha gia' il suo F/B) |
+| Cursori C1 e C2 | con la casella **Cursori** accesa, un clic sul diagramma mette C1, il clic dopo C2 (raggi arancioni); sotto il diagramma il livello di ciascuno, l'angolo e la differenza tra i due in gradi e in dB | il livello e' quello del diagramma nell'angolo cliccato; il pulsante **Togli i cursori** o il doppio clic li toglie; restano quando cambia la frequenza |
+
+Le stesse misure sono quelle che danno i programmi di riferimento (la scheda "pattern" del MathWorks Antenna Toolbox, per esempio, riporta HPBW, FNBW e SLL della Yagi a 6 elementi: nel bozzetto la Yagi MathWorks con le sue misure ottimizzate da' 10,6 dBi come quelle pubblicate).
+
+**F/B lungo l'asse (dalla 1.1).** Per i modelli in spazio libero con il fascio lungo l'asse Z (per esempio la Yagi del MathWorks Antenna Toolbox, che ha gli elementi lungo X e il boom lungo Z), il F/B si cercava all'indietro nel piano orizzontale e veniva sbagliato. Ora, se il massimo e' a theta sotto 1 grado o sopra 179 gradi e non c'e' terreno, la direzione posteriore e' quella opposta lungo l'asse (180 - theta) e il F/R e' il peggiore dell'emisfero opposto. Con il terreno o con il fascio nel piano orizzontale non cambia niente.
+
 **Diagrammi**: azimut ed elevazione, scala logaritmica ARRL o lineare in dB, totale o totale + verticale + orizzontale. **Frequenza**: quattro grafici lungo lo sweep in una griglia 2 x 2: in alto ROS a sinistra e guadagno a destra, in basso impedenza (R, X, |Z|) a sinistra e rapporti F/B e F/R a destra; sotto, su tutta la larghezza, l'efficienza di radiazione. Passando il mouse si leggono i valori. **Smith**: impedenza lungo lo sweep sulla carta di Smith. **Correnti**: tabella delle correnti di ogni segmento.
 
 ![Figura 4 - Linguetta Frequenza](immagini/08_frequenza.png)
@@ -479,7 +491,18 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 
 ## 15. Calcolatori
 
-Fascione largo a sinistra con le voci descritte: **Forme semplici** (Dipoli, Verticali, Loop magnetica, HB9CV, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Big Wheel, Delta loop, Loop rettangolare, Loop orizzontale multibanda, HEN, Discone), **Strumenti** (Ridimensiona antenna, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T e FT, Balun / Un-Un) e **Log-periodiche e schiere** (LPDA, Four-square, Distanze di stack DL6WU). Le voci con la freccia hanno piu' varianti, scelte con le pillole "Tipo" in alto (per esempio i dipoli: mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD).
+**Le famiglie (dalla 1.1).** Sotto le linguette c'e' una fascia orizzontale con le famiglie dei calcolatori; la famiglia scelta e' arancione e il fascione a sinistra mostra solo le sue voci:
+
+| Famiglia | Voci |
+|---|---|
+| HF | Dipoli, Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), Discone |
+| VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Eggbeater, QFH |
+| Antenne riceventi | Beverage, BOG, EWE, DHDL, loop magnetica ricevente, verticale di riferimento (era una linguetta a parte) |
+| Strumenti | Ridimensiona antenna, Tetto, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T, Toroidi FT, Balun / Un-Un, Staffe |
+| Dischi e illuminatori | Parabola primo fuoco, Parabola offset, Trombe e illuminatori, Biquad |
+| 2,4 GHz | Antenne su PCB |
+
+La famiglia HF era "Forme semplici". Le **Distanze di stack** non sono piu' nei Calcolatori: stanno nella sopralinguetta **Rumore/GT/Stack** (capitolo 16), accanto al rumore e al G/T, perche' la scelta della distanza ora si fa anche sul G/T. Quando un'altra parte del programma apre un calcolatore (per esempio un collegamento negli Oggetti del modello), la famiglia giusta si sceglie da sola. Le voci con la freccia hanno piu' varianti, scelte con le pillole "Tipo" in alto (per esempio i dipoli: mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD).
 
 Tra l'elenco dei calcolatori e la scheda c'e' un **separatore mobile**: si trascina con il mouse per allargare o stringere l'elenco; la larghezza resta finche' il programma e' aperto, il doppio clic la riporta a quella iniziale. Lo stesso separatore c'e' nelle Antenne riceventi.
 
@@ -1261,7 +1284,87 @@ Il NEC da' 0,6-0,7 dB piu' dell'ARRL: il modello e' senza boom, senza perdite di
 
 **RDF**: guadagno medio = potenza dell'emisfero superiore / 4 pi (con il terreno) o media sulla sfera (spazio libero), come EZNEC e IV3PRK; RDF = guadagno - guadagno medio. Il grafico mostra RDF e guadagno lungo l'elevazione.
 
-**Rumore/GT/Stack** (come TANT e XLGTa): con il modello in spazio libero l'antenna viene puntata all'elevazione scelta; ogni direzione vede il cielo o il terreno. T dal diagramma, Tloss = 290 (1 - eta 10^(-L/10)) con L la perdita del cavo ed eta l'efficienza dell'antenna calcolata dal NEC (perdite dei conduttori come TANT, VE7BQH e YU7EF: verifica sulla EF0213 di YU7EF, Ta 223,8 K contro 223,6 K), T antenna, G/T antenna, T sistema con il preamplificatore e G/T di sistema; curva di T antenna con l'elevazione e ripartizione cielo/terreno; correzione KF2YN. Il diagramma 3D e' a 2 gradi (si riusa quello del calcolo, quasi istantaneo; scarto sotto 0,01 dB rispetto a 1 grado su una Yagi 10 el. e 0,03 dB su un gruppo con lobo di 10 gradi); 1 grado resta disponibile.
+Dalla 1.1 le Antenne riceventi sono una famiglia dei Calcolatori (fascia in alto), non piu' una linguetta.
+
+### Sopralinguetta Rumore/GT/Stack (dalla 1.1)
+
+La linguetta **Rumore/GT/Stack** ha a sinistra un fascione con tre voci: **Rumore e G/T** (la pagina di sempre, descritta qui sotto), **Rumore dal cielo vero** (nuova) e **Distanze di stack** (la scheda DL6WU che stava nei Calcolatori, con sotto lo studio dell'accoppiamento e della distanza migliore).
+
+**Rumore e G/T** (come TANT e XLGTa): con il modello in spazio libero l'antenna viene puntata all'elevazione scelta; ogni direzione vede il cielo o il terreno. T dal diagramma, Tloss = 290 (1 - eta 10^(-L/10)) con L la perdita del cavo ed eta l'efficienza dell'antenna calcolata dal NEC (perdite dei conduttori come TANT, VE7BQH e YU7EF: verifica sulla EF0213 di YU7EF, Ta 223,8 K contro 223,6 K), T antenna, G/T antenna, T sistema con il preamplificatore e G/T di sistema; curva di T antenna con l'elevazione e ripartizione cielo/terreno; correzione KF2YN. Il diagramma 3D e' a 2 gradi (si riusa quello del calcolo, quasi istantaneo; scarto sotto 0,01 dB rispetto a 1 grado su una Yagi 10 el. e 0,03 dB su un gruppo con lobo di 10 gradi); 1 grado resta disponibile.
+
+#### Rumore dal cielo vero
+
+**A cosa serve.** Rumore e G/T (come TANT e le tabelle di VE7BQH) mette il cielo a una temperatura uniforme: e' il modo giusto per confrontare le antenne tra loro, ma il cielo vero non e' uniforme. A 144 MHz va da circa 150-200 K nelle zone fredde a oltre 20 000 K verso il centro della Via Lattea, e cambia con l'ora, perche' il cielo gira sopra il QTH. Questa pagina mette il diagramma dell'antenna (o dello stack) sopra la mappa vera del cielo, nel punto dove la si punta, all'ora scelta.
+
+**Da dove viene.** Il calcolo e' quello di **skynoise 0.2.2 di John C. Sager G8ONH** (2025-2026, licenza MIT, in Python), portato in C# dentro YA-NEC. Le mappe sono quelle che G8ONH distribuisce con skynoise: la survey a 408 MHz di **C. G. T. Haslam e collaboratori** (A&AS 47, 1982) nella rielaborazione di **M. Remazeilles e collaboratori** (MNRAS 451, 2015), dal server LAMBDA della NASA, riportate da G8ONH a 144 e 432 MHz con l'indice spettrale 2,56. Il file `data/cielo/LICENCE-skynoise.txt` contiene la licenza; la nota completa e' nei Ringraziamenti e in CREDITI.txt.
+
+**Come si calcola.**
+
+| Passo | Cosa fa | Fonte |
+|---|---|---|
+| Mappa | HEALPix RING con nside 128 (196 608 pixel, circa 0,46 gradi), valori in kelvin; tra i pixel si interpola sui quattro vicini come fa healpy (get_interp_weights) | G8ONH, Haslam, Remazeilles |
+| Frequenza | si sceglie la mappa piu' vicina (144 o 432 MHz) e si scala con T = T_mappa (f_mappa / f)^2,56 | G8ONH |
+| Tempo siderale | tempo siderale medio locale dalla data UTC con l'espressione dell'USNO | G. H. Kaplan, USNO Circular 179 (2005) |
+| Coordinate | ogni direzione del diagramma (azimut, elevazione) diventa angolo orario e declinazione, poi ascensione retta | trigonometria sferica classica |
+| Luna | posizione della Luna con la teoria ridotta di Meeus, per puntarla | J. Meeus, Astronomical Algorithms, cap. 47 |
+| Sotto l'orizzonte | ogni direzione sotto l'orizzonte vede il terreno, 290 K come in skynoise (modificabile) | G8ONH |
+| T antenna | media della temperatura pesata sul diagramma di guadagno su tutta la sfera: T = somma(G T dOmega) / somma(G dOmega) | TANT, skynoise |
+
+**Dati.**
+
+| Dato | Spiegazione |
+|---|---|
+| QTH | locatore (JN70CN) oppure latitudine e longitudine in gradi; si salva in config.ini |
+| Data e ora (UTC) | il pulsante "adesso" mette l'ora attuale |
+| Puntamento | azimut ed elevazione; oppure **Luna** (azimut ed elevazione della Luna a quell'ora), oppure **cielo piu' freddo** (cerca la direzione sopra l'elevazione scelta con la T piu' bassa) |
+| Antenna o stack | antenna singola oppure stack righe x colonne del modello aperto; di partenza 2 x 2 come le tabelle di VE7BQH |
+| Distanze | DL6WU, quella proposta dalla pagina Distanze di stack, oppure scritta a mano |
+| Temperature uniformi | per il confronto: TANT, rurale, residenziale, citta' (le stesse di Rumore e G/T) |
+
+**Risultati.** Due G/T uno accanto all'altro: **G/T come VE7BQH** (cielo uniforme, 30 gradi di elevazione, stack 2 x 2 alla distanza DL6WU, spazio libero: confrontabile con le tabelle) e **G/T con il cielo vero** (QTH, ora, puntamento). Sotto, T antenna, T cielo e T terreno, la frazione del diagramma che vede il cielo e quella che vede il terreno, il peso della Via Lattea, il centro del fascio in ascensione retta e declinazione. Il pulsante **T antenna su 24 ore** calcola la curva con il puntamento fisso e ne riporta minimo e massimo: e' la differenza tra un'ora "fredda" e un'ora con la Via Lattea nel fascio.
+
+**Prove (autotest).** Mappa 144 MHz: punto freddo (RA 142, Dec 30) 165,7 K, centro galattico circa 22 000 K; tempo siderale all'epoca J2000 = 18,697 h come l'USNO; posizione della Luna stampata come INFO.
+
+> NOTA: Fuori da 50-1300 MHz la sola scala con l'indice 2,56 non basta: sotto i 50 MHz pesano l'assorbimento della ionosfera e il rumore artificiale, sopra 1-2 GHz il fondo cosmico a 2,7 K e l'atmosfera. La pagina lo scrive e il valore resta indicativo.
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| skynoise 0.2.2, G8ONH | stessa mappa, stessa interpolazione, stesso tempo siderale, stessa scala in frequenza e 290 K sotto l'orizzonte | skynoise usa un diagramma di Yagi da file o un modello gaussiano; qui il diagramma e' quello calcolato dal NEC del modello aperto o dello stack |
+| VE7BQH, tabelle G/T | stesso G/T a 30 gradi, stack di 4 alla distanza DL6WU | VE7BQH usa il cielo uniforme (200 K): e' il primo dei due G/T della pagina |
+| TANT (YT1NT, VE3EA; manuale DG7YBN) | temperatura dell'antenna dal diagramma pesato su cielo e terreno | TANT usa temperature uniformi e una legge di elevazione del cielo; non conosce l'ora ne' il QTH |
+| KF2YN | correzione sul rumore di terreno vicino all'orizzonte | resta nella pagina Rumore e G/T |
+
+#### Distanze di stack: accoppiamento e distanza migliore
+
+La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (formula di DL6WU sulle aperture a -3 dB, righe e colonne, pulsante "Crea lo stack nel modello aperto"). Sotto c'e' il riquadro nuovo **Accoppiamento e distanza migliore (NEC)**, con due modi.
+
+**VHF/UHF (spazio libero, DL6WU).** La formula di DL6WU da' la distanza per cui i lobi di due antenne si sovrappongono a -3 dB circa: e' un buon punto di partenza, non sempre il migliore. Qui lo stack si calcola davvero con il NEC per una serie di distanze, di partenza da 0,5 a 2,0 volte quella di DL6WU a passi di 0,1 (si possono cambiare), e per ognuna si danno:
+
+| Risultato | Spiegazione |
+|---|---|
+| Guadagno dello stack (dBi) | con tutte le antenne alimentate in fase con la stessa corrente |
+| Lobo laterale piu' alto (dB) | nel piano dello stack, dove la distanza fa crescere i lobi di griglia |
+| G/T | con le temperature di Rumore e G/T (cielo, terreno, elevazione): la distanza giusta per l'EME e' quella del G/T, non del guadagno (VE7BQH) |
+| abs(Sij) max (dB) | accoppiamento tra le porte: quanta potenza passa da un'antenna all'altra |
+
+La **matrice di accoppiamento** si fa come nec2-array di YO3IIU: si alimenta una porta alla volta (le altre con una sorgente quasi nulla, cioe' in cortocircuito), si leggono le correnti di tutte le porte e si ha la matrice delle ammettenze Y; poi Z = Y^-1 e S = (Z - Z0)(Z + Z0)^-1. Sulla diagonale c'e' il disadattamento di ogni antenna con le altre chiuse su Z0, fuori diagonale la potenza che passa da una porta all'altra.
+
+Il **criterio** sceglie la distanza proposta: guadagno massimo, lobi laterali piu' bassi, G/T migliore, oppure (di partenza) guadagno massimo con i lobi sotto una soglia (-13 dB); se nessuna distanza tiene i lobi sotto la soglia si prende quella con i lobi piu' bassi. Il pulsante **Usa la distanza proposta per lo stack** la mette nella scheda di sopra e nella pagina Rumore dal cielo vero.
+
+Prova (autotest): due Yagi a 6 elementi del MathWorks Antenna Toolbox (misure ottimizzate da MathWorks) una sopra l'altra alla distanza DL6WU: abs(S21) circa -27,6 dB e 12,08 dBi, come nec2c.
+
+**HF (sopra il terreno).** In HF la formula di DL6WU non vale: le antenne sono sopra il terreno, il diagramma in elevazione e' fatto dalle riflessioni sul suolo e quello che conta e' l'angolo di partenza verso le zone da collegare (ARRL Antenna Book, capitolo sugli stack HF; N6BV con HFTA). Si danno il numero di antenne, l'altezza della piu' bassa, le distanze da provare (in lambda, a passi di 0,125; di partenza 0,5-1,25) e gli **angoli di partenza voluti** (di partenza 5-15 gradi, il DX in 20 m). Il terreno e' quello del modello; se il modello e' in spazio libero si usa il terreno medio (13 / 0,005 S/m, Sommerfeld). Per ogni distanza si calcola il diagramma in elevazione con tutte le antenne in fase (BIP) nell'azimut del lobo; la distanza proposta e' quella con la media del guadagno piu' alta tra gli angoli voluti, e per quella si calcolano anche la superiore da sola, l'inferiore da sola e, con due antenne, la controfase (BOP), disegnate nello stesso grafico.
+
+Prova (autotest): due Yagi a 3 elementi per i 20 m, la piu' bassa a 15 m e la seconda 0,75 lambda sopra, terreno medio: BIP 15,63 dBi a 11 gradi, superiore da sola 13,28 dBi, inferiore da sola 12,88 dBi, come nec2c.
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| G. Hoch DL6WU | distanza dalle aperture a -3 dB, che resta il riferimento (fattore 1 nella tabella) | DL6WU da' una sola distanza; qui si prova una serie e si sceglie con un criterio |
+| L. Edwards VE7BQH | il G/T come criterio per gli stack EME; le sue tabelle mettono a confronto stack alla distanza DL6WU | VE7BQH usa distanze ottimizzate per il G/T con il suo metodo; qui il G/T e' quello di Rumore e G/T sul diagramma NEC |
+| nec2-array, YO3IIU (GPL-2 o successiva) | matrice di accoppiamento in ricezione con una sorgente per porta | qui scritta di nuovo in C# sul motore di YA-NEC, nessuna riga di codice copiata |
+| ARRL Antenna Book 24a ed. | stack HF: in fase, BIP/BOP, scelta sugli angoli di partenza; distanze tra 0,5 e 1 lambda con differenze di frazioni di dB | l'ARRL usa HFTA con il profilo del terreno vero; qui il terreno e' piatto (Sommerfeld) |
+| R. D. Straw N6BV, HFTA | BIP, BOP, antenna sola, statistiche degli angoli di arrivo | HFTA tiene conto del profilo del terreno; in YA-NEC il terreno con il profilo arrivera' in una sottolinguetta dedicata (prossimo sviluppo) |
+| ON4UN, Low-Band DXing; L. B. Cebik W4RNL | stack e angoli di partenza in HF | descrittivi, senza un metodo di scelta automatica |
 
 ## 17. Impostazioni
 

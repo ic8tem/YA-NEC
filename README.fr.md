@@ -11,7 +11,19 @@ Le moteur est une traduction en C# de **nec2c** (le NEC-2 du Lawrence Livermore 
 
 Fonctions : impédance, ROS, gain, diagrammes 2D et 3D, balayage en fréquence et abaque de Smith ; correction de Leeson des tubes télescopiques, comme EZNEC ; sols (parfait, coefficient de réflexion, Sommerfeld, radians) ; variables, formules et optimiseur ; plus de 40 calculateurs (Yagi longue DL6WU, Quagi, LPDA, Moxon, hexbeam, dipôles et Yagi multibandes, four-square, verticales, paraboles et sources, fixations des éléments, etc.) ; antennes de réception et RDF ; bruit, G/T et couplage (stack) ; abaque des câbles, lignes d'adaptation et baluns ; contrôle des données saisies. Chaque choix de calcul et chaque case à cocher sont expliqués dans le [manuel](doc/Manuale_d_uso.pdf), également disponible dans le programme (onglet Manuel). Plus d'informations dans le [Wiki](https://github.com/ic8tem/YA-NEC/wiki).
 
-**Langue :** l'interface est en italien, avec une partie en anglais (menu Langue, en haut à droite). Le manuel est en italien. D'autres langues suivront.
+**Langue :** l'interface est disponible en 37 langues (menu Langue, en haut à droite), le Wiki aussi. Le manuel est en italien.
+
+## Nouveautés de la 1.1
+
+> **Note de l'auteur.** Dans cette version, j'ai longuement réfléchi à la température de bruit. On m'a signalé des études sous MATLAB sur l'empilement des antennes directives, et j'ai voulu m'y essayer tout de suite : offrir à l'utilisateur de YA-NEC la possibilité d'aller au-delà de la distance d'empilement de DL6WU (la formule trigonométrique) et l'accompagner, s'il le souhaite, dans le choix de sa propre distance d'empilement. Et, avec cela, une profonde révision de l'interface. — *Costantino IC8TEM*
+
+- **Bruit du ciel réel.** Nouvelle page dans le super-onglet **Bruit/GT/Empilement** : le diagramme de l'antenne ou de l'empilement est posé sur la vraie carte du ciel (relevé à 408 MHz de Haslam, retraité par Remazeilles, porté à 144 et 432 MHz par G8ONH), depuis votre QTH (locator ou coordonnées) à l'heure choisie, en pointant où vous voulez, sur la Lune ou sur le point de ciel le plus froid. Deux G/T côte à côte : avec un ciel uniforme, comparable aux tableaux de VE7BQH (30 degrés, empilement 2 x 2 à la distance DL6WU), et avec le ciel réel, avec la courbe de température d'antenne sur 24 heures, son minimum et son maximum. Le calcul est celui de **skynoise de John C. Sager G8ONH** (licence MIT), porté en C#.
+- **Distance d'empilement choisie avec le NEC.** Dans la page **Distances d'empilement** (sortie des Calculateurs), l'empilement est réellement calculé pour une série de distances autour de celle de DL6WU : gain, lobe secondaire le plus haut, G/T et matrice de couplage entre les ports (S11, S21...). Un critère choisit la distance proposée (gain maximal, lobes les plus bas, meilleur G/T, ou gain avec les lobes sous un seuil) et un bouton l'utilise pour créer l'empilement. En **HF** la formule de DL6WU ne s'applique pas : l'empilement au-dessus du sol se choisit sur les angles de départ voulus, avec les diagrammes en élévation en phase (BIP), seules et en opposition de phase (BOP).
+- **Calculateurs par familles.** Une barre sous les onglets répartit les calculateurs en **HF**, **VHF**, **Antennes de réception** (qui n'est plus un onglet séparé), **Outils**, **Paraboles et sources** et **2,4 GHz** ; la liste de gauche ne montre que la famille choisie.
+- **Mesures sur les diagrammes.** En plus de l'ouverture à -3 dB : ouverture au premier zéro (FNBW), lobe secondaire le plus haut (SLL) et deux curseurs C1 et C2 posés d'un clic, avec niveau, angle et différence entre les deux.
+- **F/B le long de l'axe** corrigé pour les modèles en espace libre dont le faisceau suit l'axe Z (comme la Yagi du MathWorks Antenna Toolbox).
+- **Nouveaux calculateurs** : biquad et double biquad (sources de parabole), Big Wheel et trois dipôles, boucle horizontale multibande (Skywire) avec la perte de la ligne sur chaque bande.
+- **Traductions** : toutes les nouvelles entrées dans les 37 langues du programme. **Cours vidéo** mis à jour avec les leçons sur les nouveaux sujets.
 
 ## Téléchargement
 

@@ -11,7 +11,19 @@ El motor es una traducción a C# de **nec2c** (el NEC-2 del Lawrence Livermore N
 
 Funciones: impedancia, ROE, ganancia, diagramas 2D y 3D, barrido en frecuencia y carta de Smith; corrección de Leeson para tubos telescópicos, como EZNEC; suelos (perfecto, coeficiente de reflexión, Sommerfeld, radiales); variables, fórmulas y optimizador; más de 40 calculadoras (Yagi larga DL6WU, Quagi, LPDA, Moxon, hexbeam, dipolos y Yagis multibanda, four-square, verticales, parábolas e iluminadores, soportes de los elementos y más); antenas de recepción y RDF; ruido, G/T y agrupación (stack); tabla de cables, líneas de adaptación y baluns; control de los datos introducidos. Cada decisión de cálculo y cada casilla se explican en el [manual](doc/Manuale_d_uso.pdf), también dentro del programa (pestaña Manual). Más información en el [Wiki](https://github.com/ic8tem/YA-NEC/wiki).
 
-**Idioma:** la interfaz está en italiano, con parte en inglés (menú Idioma, arriba a la derecha). El manual está en italiano. Llegarán más idiomas.
+**Idioma:** la interfaz está disponible en 37 idiomas (menú Idioma, arriba a la derecha), y el Wiki también. El manual está en italiano.
+
+## Novedades de la 1.1
+
+> **Nota del autor.** En esta versión he reflexionado mucho sobre la temperatura de ruido. Me señalaron unos estudios en MATLAB sobre el apilamiento de antenas directivas y quise probarlo enseguida: ofrecer a quien usa YA-NEC la posibilidad de ir más allá de la distancia de apilamiento de DL6WU (la fórmula trigonométrica) y acompañarlo, si quiere, en la elección de su propia distancia de apilamiento. Y, con ello, una profunda revisión de la interfaz. — *Costantino IC8TEM*
+
+- **Ruido del cielo real.** Nueva página en la superpestaña **Ruido/GT/Apilamiento**: el diagrama de la antena o del apilamiento se coloca sobre el mapa real del cielo (relevamiento de 408 MHz de Haslam, reprocesado por Remazeilles, llevado a 144 y 432 MHz por G8ONH), desde su QTH (localizador o coordenadas) a la hora elegida, apuntando donde quiera, a la Luna o al punto de cielo más frío. Dos G/T lado a lado: con cielo uniforme, comparable con las tablas de VE7BQH (30 grados, apilamiento 2 x 2 a la distancia DL6WU), y con el cielo real, con la curva de temperatura de antena en 24 horas y su mínimo y máximo. El cálculo es el de **skynoise de John C. Sager G8ONH** (licencia MIT), portado a C#.
+- **Distancia de apilamiento elegida con NEC.** En la página **Distancias de apilamiento** (sacada de las Calculadoras) el apilamiento se calcula de verdad para una serie de distancias alrededor de la de DL6WU: ganancia, lóbulo lateral más alto, G/T y matriz de acoplamiento entre puertos (S11, S21...). Un criterio elige la distancia propuesta (ganancia máxima, lóbulos más bajos, mejor G/T, o ganancia con los lóbulos bajo un umbral) y un botón la usa para crear el apilamiento. En **HF** la fórmula de DL6WU no vale: el apilamiento sobre el suelo se elige según los ángulos de salida deseados, con diagramas de elevación en fase (BIP), solas y en contrafase (BOP).
+- **Calculadoras por familias.** Una barra bajo las pestañas divide las calculadoras en **HF**, **VHF**, **Antenas receptoras** (ya no es una pestaña aparte), **Herramientas**, **Parábolas y alimentadores** y **2,4 GHz**; la lista de la izquierda muestra solo la familia elegida.
+- **Medidas en los diagramas.** Además de la apertura a -3 dB: apertura al primer nulo (FNBW), lóbulo lateral más alto (SLL) y dos cursores C1 y C2 que se colocan con un clic, con nivel, ángulo y diferencia entre ambos.
+- **F/B a lo largo del eje** corregido para modelos en espacio libre con el haz a lo largo del eje Z (como la Yagi del MathWorks Antenna Toolbox).
+- **Nuevas calculadoras**: biquad y doble biquad (alimentadores de parábola), Big Wheel y tres dipolos, lazo horizontal multibanda (Skywire) con la pérdida de la línea en cada banda.
+- **Traducciones**: todas las entradas nuevas en los 37 idiomas del programa. **Videocurso** actualizado con lecciones sobre los nuevos temas.
 
 ## Descarga
 

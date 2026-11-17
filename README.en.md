@@ -11,7 +11,19 @@ The engine is a C# translation of **nec2c** (the NEC-2 of Lawrence Livermore Nat
 
 Features: impedance, SWR, gain, 2D and 3D patterns, frequency sweep and Smith chart; Leeson correction for telescopic (stepped-diameter) tubing, as in EZNEC; grounds (perfect, reflection coefficient, Sommerfeld, radial screen); variables, formulas and optimizer; more than 40 calculators (DL6WU long Yagi, Quagi, LPDA, Moxon, hexbeam, multiband dipoles and Yagis, four-square, verticals, dishes and feeds, element brackets and more); receiving antennas and RDF; noise, G/T and stacking; coax chart, matching lines and baluns; input data checks. Every calculation choice and every checkbox is explained in the [manual](doc/Manuale_d_uso.pdf), also available inside the program (Manual tab). More in the [Wiki](https://github.com/ic8tem/YA-NEC/wiki).
 
-**Language:** the interface is in Italian, with English partly available (Language menu, top right). The manual and the Wiki are in Italian. More languages will follow.
+**Language:** the interface is available in 37 languages (Language menu, top right); the Wiki too. The manual is in Italian.
+
+## What's new in 1.1
+
+> **Author's note.** In this version I thought long and hard about noise temperature. Some MATLAB studies on the stacking of directional antennas were brought to my attention, and I wanted to try it right away: to give YA-NEC users the chance to go beyond the DL6WU stacking distance (the trigonometric formula) and to guide them, if they wish, in choosing a stacking distance of their own. Together with this, a deep revision of the user interface. — *Costantino IC8TEM*
+
+- **Noise from the real sky.** New page in the **Noise/GT/Stack** super-tab: the pattern of the antenna or of the stack is laid over the real sky map (Haslam 408 MHz survey, reprocessed by Remazeilles, scaled to 144 and 432 MHz by G8ONH), from your QTH (locator or coordinates) at the chosen time, pointing wherever you want, at the Moon or at the coldest patch of sky. Two G/T values side by side: with a uniform sky, comparable with VE7BQH's tables (30 degrees, 2 x 2 stack at DL6WU spacing), and with the real sky, with the antenna temperature curve over 24 hours and its minimum and maximum. The calculation is **skynoise by John C. Sager G8ONH** (MIT license), ported to C#.
+- **Stacking distance chosen with NEC.** In the **Stack spacings** page (moved out of the Calculators) the stack is really computed for a range of spacings around the DL6WU one: gain, highest side lobe, G/T and the coupling matrix between the ports (S11, S21...). A criterion picks the proposed spacing (maximum gain, lowest lobes, best G/T, or gain with the lobes below a threshold) and a button uses it to build the stack. On **HF** the DL6WU formula does not apply: the stack above ground is chosen on the wanted take-off angles, with elevation patterns in phase (BIP), single antennas and out of phase (BOP).
+- **Calculators by family.** A bar under the tabs splits the calculators into **HF**, **VHF**, **Receiving antennas** (no longer a separate tab), **Tools**, **Dishes and feeds** and **2.4 GHz**; the list on the left shows only the chosen family.
+- **Pattern measurements.** Besides the -3 dB beamwidth: first-null beamwidth (FNBW), highest side lobe (SLL) and two cursors C1 and C2 placed with a click, with level, angle and the difference between them.
+- **F/B along the axis** fixed for free-space models whose beam points along the Z axis (like the MathWorks Antenna Toolbox Yagi).
+- **New calculators**: biquad and double biquad (dish feeds), Big Wheel and three dipoles, horizontal multiband loop (Skywire) with the feed line loss on every band.
+- **Translations**: all the new items in the 37 languages of the program. **Video course** updated with lessons on the new topics.
 
 ## Download
 

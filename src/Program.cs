@@ -263,7 +263,7 @@ namespace YaNec
                             var my = Engine.NecModel.Parse(dk.ToString());
                             var sv = Engine.StackStudio.Vhf(my, 165, 2, 1, 0.6, 1.0, 300, 3, -13, 200, 1000, 30, 5, System.Threading.CancellationToken.None);
                             var p1 = sv.Dl6wu ?? sv.Punti[sv.Punti.Count - 1];
-                            bool oks = Math.Abs(p1.S21 + 27.6) < 1.5 && Math.Abs(p1.G - 12.08) < 0.6;
+                            bool oks = Math.Abs(p1.S21 + 27.6) < 1.5 && Math.Abs(p1.G - 12.08) < 0.6 && p1.Sll < -3 && p1.Sll > -15;
                             string rs = string.Format(CI0, "Stack 2 Yagi MathWorks sovrapposte a distanza DL6WU ({0:0.000} m): |S21| {1:0.0} dB, G {2:0.00} dBi, lobo {3:0.0} dB (nec2c: -27,6 dB, 12,08 dBi, -8,3 dB); proposta {4:0.00} x DL6WU ({5})", p1.Dv, p1.S21, p1.G, p1.Sll, sv.Proposta.K, sv.Criterio);
                             sb.AppendLine("       " + (oks ? "OK   " : "ERR  ") + rs); if (!oks) errPar.Add(rs);
                             // stack HF: Yagi 3 elementi 20 m, la piu' bassa a 15 m, suolo medio (nec2c a 0,75 lambda: BIP 15,63 dBi a 11 gradi)

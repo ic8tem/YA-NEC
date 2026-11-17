@@ -365,6 +365,26 @@ namespace YaNec
                 Link = "github.com/ic8tem/yaec; qsl.net/yb0emj/coax.html; w4zt.wa4dsy.com/coax.html; dxengineering.com; qsl.net/ok1dxd/amidon.htm; amidoncorp.com",
                 License = "valori e formule pubblicati (citati); YAEC e' dello stesso autore di YA-NEC"
             },
+            new CreditEntry
+            {
+                Title = "Rumore dal cielo vero (1.1)",
+                Who = "John C. Sager G8ONH (skynoise 0.2.2, 2025-2026, licenza MIT: calcolo e mappe a 144 e 432 MHz); C. G. T. Haslam e collaboratori (survey a 408 MHz, A&AS 47, 1982); " +
+                      "M. Remazeilles e collaboratori (rielaborazione, MNRAS 451, 2015), dal server LAMBDA della NASA; G. H. Kaplan (USNO Circular 179, 2005: tempo siderale); " +
+                      "J. Meeus (Astronomical Algorithms, cap. 47: Luna); K. M. Gorski e collaboratori (HEALPix, interpolazione come healpy); L. Edwards VE7BQH (tabelle G/T); YT1NT e VE3EA (TANT); KF2YN",
+                What = "Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.",
+                Link = "lambda.gsfc.nasa.gov",
+                License = "MIT (Copyright (c) 2026 John C Sager): avviso completo in data/cielo/LICENCE-skynoise.txt e in THIRD-PARTY-NOTICES.txt"
+            },
+            new CreditEntry
+            {
+                Title = "Distanze di stack: accoppiamento e distanza migliore (1.1)",
+                Who = "G. Hoch DL6WU (formula delle distanze); YO3IIU (nec2-array: matrice di accoppiamento in ricezione, GPL-2 o successiva); G. J. Burke e A. J. Poggio (manuale NEC-2, scheda CP); " +
+                      "L. Edwards VE7BQH (G/T come criterio per gli stack EME); ARRL Antenna Book 24a ed. (stack HF, angoli di partenza); R. D. Straw N6BV (HFTA: BIP e BOP); ON4UN (Low-Band DXing); L. B. Cebik W4RNL; " +
+                      "MathWorks Antenna Toolbox (Yagi a 6 elementi usata come caso di prova, misure HPBW, FNBW e SLL dei diagrammi)",
+                What = "Studio dello stack VHF/UHF con guadagno, lobi laterali, G/T e matrice S tra le porte per una serie di distanze; stack HF sopra il terreno scelto sugli angoli di partenza; misure FNBW, SLL e cursori sui diagrammi.",
+                Link = "antenna2.github.io/cebik",
+                License = "formule e metodi pubblicati (citati); nec2-array letto come riferimento del metodo, nessun codice copiato"
+            },
         };
 
         public const string Intro =
