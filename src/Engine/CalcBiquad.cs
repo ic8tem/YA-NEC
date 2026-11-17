@@ -17,7 +17,7 @@ namespace YaNec.Engine
         public static readonly double[] Bande = { 1296.2, 2320.2, 2442, 3400.1, 5760.1 };
         double fPrec = double.NaN;
         // banda dopo "Porta in adattamento": ROS e guadagno
-        public double[] SweepF, SweepSwr, SweepG;
+        public double[] SweepF, SweepSwr, SweepG, SweepFb;
         string firmaSweep;
         public int UltimiSegmenti;
 
@@ -173,17 +173,17 @@ namespace YaNec.Engine
             o.Card("Riflettore", Calcolatori.N(rw * 1000, 0) + " x " + Calcolatori.N(rh * 1000, 0) + " mm", Calcolatori.N(rw / lam, 2) + " x " + Calcolatori.N(rh / lam, 2) + " λ");
             o.Card("Lunghezza d'onda", Calcolatori.N(lam * 1000, 1) + " mm", Calcolatori.N(f, 1) + " MHz");
             o.Card("Modello NEC", UltimiSegmenti + " segmenti", reteVera ? "rete con la maglia vera" : rete ? "rete come superficie piena (maglia troppo fitta da calcolare)" : "griglia 0,07 λ");
-            o.Add("Altezza dell'elemento (lungo la polarizzazione)", Calcolatori.N(estY * 2 * 1000 + a * 2000, 1) + " mm");
-            o.Add("Larghezza dell'elemento", Calcolatori.N(2 * h * 1000 + a * 2000, 1) + " mm");
+            o.Card("Elemento", Calcolatori.N(2 * h * 1000 + a * 2000, 0) + " x " + Calcolatori.N(estY * 2 * 1000 + a * 2000, 0) + " mm", "larghezza x altezza (lungo la polarizzazione)");
 
             // ---- banda dopo l'adattamento
             if (SweepF != null && firmaSweep == Firma())
             {
                 o.Chart = new CalcChart { Title = "ROS a " + Calcolatori.N(P("z0"), 0) + " Ω in banda (dopo \"Porta in adattamento\")", XLabel = "MHz", YLabel = "ROS", X = SweepF, Y = SweepSwr, MarkX = f, MarkText = Calcolatori.N(f, 1), YMin = 1 };
                 int c = SweepF.Length / 2;
-                o.Add("Guadagno in banda (NEC)", Calcolatori.N(SweepG[0], 1) + " / " + Calcolatori.N(SweepG[c], 1) + " / " + Calcolatori.N(SweepG[SweepG.Length - 1], 1) + " dBi (bordo basso / centro / bordo alto)");
+                o.Card("F/B lungo l'asse (NEC)", Calcolatori.N(SweepFb[c], 1) + " dB", "bordi della banda " + Calcolatori.N(SweepFb[0], 1) + " e " + Calcolatori.N(SweepFb[SweepFb.Length - 1], 1) + " dB");
+                o.Card("Guadagno (NEC)", Calcolatori.N(SweepG[c], 2) + " dBi", "bordi della banda " + Calcolatori.N(SweepG[0], 1) + " e " + Calcolatori.N(SweepG[SweepG.Length - 1], 1) + " dBi", true);
                 double smax = 0; foreach (double v in SweepSwr) smax = Math.Max(smax, v);
-                o.Add("ROS massimo in banda", Calcolatori.N(smax, 2) + " (" + Calcolatori.N(SweepF[0], 0) + "-" + Calcolatori.N(SweepF[SweepF.Length - 1], 0) + " MHz)");
+                o.Card("ROS in banda", "max " + Calcolatori.N(smax, 2), Calcolatori.N(SweepF[0], 0) + "-" + Calcolatori.N(SweepF[SweepF.Length - 1], 0) + " MHz, centro " + Calcolatori.N(SweepSwr[c], 2), true);
             }
 
             // ---- avvisi
@@ -259,6 +259,13 @@ namespace YaNec.Engine
             return gm;
         }
 
+        /// <summary>F/B lungo l'asse del feed: guadagno verso +Z (theta 0) contro -Z (theta 180). Il F/B generale di YA-NEC guarda l'orizzonte.</summary>
+        public static double FronteRetro(RunResult r)
+        {
+            if (r == null || r.Engine == null) return double.NaN;
+            return r.Engine.Gain(0, 0).GainTotal - r.Engine.Gain(180, 0).GainTotal;
+        }
+
         public override double Tune(double fmhz)
         {
             double f = Frequenza(), lam = C0 / f;
@@ -280,12 +287,12 @@ namespace YaNec.Engine
             }
             // banda +-5 %
             int n = 11;
-            SweepF = new double[n]; SweepSwr = new double[n]; SweepG = new double[n];
+            SweepF = new double[n]; SweepSwr = new double[n]; SweepG = new double[n]; SweepFb = new double[n];
             for (int i = 0; i < n; i++)
             {
                 double fi = f * (0.95 + 0.1 * i / (n - 1));
                 RunResult r = Calcola(fi);
-                SweepF[i] = fi; SweepSwr[i] = r.Swr; SweepG[i] = r.GmaxDbi;
+                SweepF[i] = fi; SweepSwr[i] = r.Swr; SweepG[i] = r.GmaxDbi; SweepFb[i] = FronteRetro(r);
             }
             firmaSweep = Firma();
             return Scale;

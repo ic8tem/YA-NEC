@@ -274,6 +274,10 @@ FONTI DEI CALCOLATORI, DEI CASI DI PROVA E DELLO STUDIO DEI MANUALI
     A. C. Ludwig, "Wire grid modeling of surfaces", IEEE Trans. AP-35 (1987) - regola dell'area uguale (raggio = maglia / 2 pi)
       per il piano di massa a griglia, come NECBOL (thin sheet); pista larga w = filo di raggio w/4 (C. A. Balanis)
     Formato DXF R12 (Autodesk) - entita' LINE e CIRCLE
+  Biquad e doppia biquad (1.0.16, bozzetto approvato il 17/11/2026 17:25):
+    T. Marshall, "Antennas Enhance WLAN Security", BYTE ottobre 2001, e trevormarshall.com; martybugs.net (biquad e doppia biquad);
+    W. Zwickel OE2TZL, Doppelquad (QSP 10/93); W6PQL, 23 cm double quad; IK1ZYW (2012); G6GVI e MW1FGQ; buildyourownantenna (2014);
+    nec2.org (biquad WLAN, riflettore a griglia); MathWorks Antenna Toolbox (biquad Yagi, solo come confronto)
   Terzo riferimento numerico e confronti (0.4.30):
     T. Molteno, necpp / nec2++ (github.com/tmolteno/necpp, GPL v2) - compilato a parte, solo i valori dei casi dell'autotest
       (nessun codice copiato in YA-NEC)

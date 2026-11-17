@@ -1098,6 +1098,37 @@ Fonti: J. Coppens, calcolatore QFH (jcoppens.com, qfhcalc.js); geometria come he
 
 IFA, MIFA, dipolo stampato, Yagi su PCB e Big Wheel per 2,4 GHz: disegno quotato che si stampa in scala 1:1 e la stessa antenna nel modello NEC con il piano di massa fatto a griglia di fili (equivalente in aria). Il modello aperto non viene toccato.
 
+**Biquad e doppia biquad (dalla 1.0.16)**
+
+Due (o quattro) quadrati di filo di lato circa lambda/4, a rombo lungo la polarizzazione, davanti a un riflettore pieno (lamiera, PCB) o a rete, con i bordi rialzati se si vuole. Bande 1296, 2320, 2442, 3400 e 5760 MHz o frequenza libera: cambiando la frequenza lato, distanza e riflettore si riscalano.
+
+| Dato | Unita' / scelte | Spiegazione |
+|---|---|---|
+| Banda, Frequenza | pillole, MHz | con una banda la frequenza e' grigia; con "libera" si scrive |
+| Tipo | Biquad (2 quadrati) / Doppia biquad (4) | nella doppia biquad, tra il primo e il secondo quadrato di ogni lato, i fili si incrociano senza toccarsi (nel modello un ponte di circa 1,5 mm) |
+| Lato del quadrato | mm | da centro filo a centro filo, circa lambda/4 |
+| Diametro del filo, Filo nudo / isolato | mm | il NEC-2 non modella l'isolante: con il filo isolato la scheda avvisa che l'elemento va accorciato di circa il 4 % (W6PQL contro Marshall) |
+| Distanza dal riflettore | mm | regola il ROS (0,1-0,13 lambda nelle fonti) |
+| Riflettore pieno / rete, larghezza e altezza | mm | pieno: griglia di 0,07 lambda con il raggio dell'area uguale; rete: maglia e filo veri (oltre 1800 segmenti la rete diventa una griglia piena, con un avviso) |
+| Bordi rialzati | nessuno / 2 lati / 4 lati, altezza | piegati verso l'elemento; "2 lati" sono i due bordi perpendicolari alla polarizzazione |
+| Impedenza di riferimento | ohm | 50: il coassiale va direttamente al centro, senza balun, come in tutte le fonti |
+
+"Porta in adattamento (NEC)" porta il lato alla risonanza (reattanza nulla) e cerca la distanza dal riflettore con il ROS piu' basso, due volte; poi calcola ROS, guadagno e F/B lungo l'asse su +-5 % di banda (riquadri e grafico del ROS). "Usa come feed della parabola" apre la biquad come modello (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come le trombe) e passa alla Parabola primo fuoco, dove si preme "Feed dal modello NEC". "Dima 1:1 (PDF)" stampa il filo piegato con i punti di piega, il righello di 100 mm e le misure.
+
+Verifica (autotest, 2442 MHz, adattamento NEC a 50 ohm): biquad con riflettore pieno 123 x 123 mm, lato 30,7 mm e distanza 15,2 mm, 10,54 dBi; doppia biquad con riflettore 132 x 282 mm, lato 30,5 mm e distanza 9,3 mm, 13,06 dBi.
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| T. Marshall (BYTE 10/2001) | lato 30,5 mm e 15 mm dal riflettore: il NEC della scheda trova 30,7 e 15,2 mm | dichiara 11 dBi, il NEC 10,5 dBi; bordi di 30 mm su due lati e riflettore di 110 mm come feed |
+| martybugs.net | 15-17 mm, PCB 123 mm, 11-12 dBi | filo da 1,6 mm invece di 1,2; doppia biquad circa 13 dBi (il NEC: 13,1) |
+| buildyourownantenna (2014, 4nec2) | doppia biquad con lato 30,9 mm | distanza 10-11 mm contro 9,3 del NEC della scheda; dichiara 13,6-14 dBi |
+| W. Zwickel OE2TZL (QSP 10/93) | 23 cm, lamiera, alimentazione diretta | lato 0,258-0,264 lambda e 0,131 lambda dal riflettore, piu' grandi delle altre fonti; 8 dBd |
+| W6PQL | 23 cm, alimentazione diretta, rete da 1/2 x 1 pollice | lato 0,238 lambda con filo isolato, 22 mm (0,095 lambda) dal riflettore |
+| IK1ZYW (2012, MMANA) | 1/8 lambda come riferimento | a 1/16 lambda circa -0,5 dB e -3 dB di F/B |
+| G6GVI e MW1FGQ | doppia biquad con rete | circa 12,5 dBi stimati a 3,4 GHz |
+| nec2.org (biquad WLAN) | riflettore a griglia di 0,05-0,1 lambda, come nella scheda | circa 11 dBi dichiarati |
+| MathWorks, Antenna Toolbox | biquad a 2,4 GHz | biquad Yagi con 4 direttori, solo grafici, nessun numero |
+
 **Parabola primo fuoco, Trombe e illuminatori, Parabola offset**
 
 Schede della famiglia PARABOLE: le caselle e le scelte sono descritte nel capitolo 21 (Parabola primo fuoco: caselle; Trombe e illuminatori; Parabola offset).

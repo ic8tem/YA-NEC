@@ -255,6 +255,12 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "Biquad e doppia biquad (1.0.16)",
+                Who = "T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)",
+                What = "Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026."
+            },
+            new CreditEntry
+            {
                 Title = "Elica, verticale e dipolo multibanda, antenne su PCB a 2,4 GHz (0.4.30)",
                 Who = "J. D. Kraus (Antennas); D. T. Emerson (NRAO, 1995); G1OJS (NECBOL, MIT); DX Commander (dxcommander.com); J. Devoldere ON4UN (Low-Band DXing); " +
                       "Force 12 e T. Schiller N6BT (manuale XR-5: open sleeve a 3 bande); ARRL Antenna Book (dipoli multipli, manica aperta); H. A. Wheeler (Proc. IRE 1928, bobine) e R. G. Medhurst (Wireless Engineer 1947, capacita' propria) per le trappole; Texas Instruments (AN043, DN007, DN034 / SWRA350); WA5VJB Kent Electronics; W1FVY e W1IJD (Big Wheel, QST 1961); A. C. Ludwig (IEEE Trans. AP-35, 1987); C. A. Balanis; Autodesk (DXF R12)",

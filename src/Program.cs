@@ -177,8 +177,8 @@ namespace YaNec
                                 var oq = bq.Compute();
                                 var rq = Engine.SimpleCalc.Solve(oq, 2442, 50);
                                 string nome = tipo == 0 ? "biquad" : "doppia biquad";
-                                string riga = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}: lato {1:0.0} mm, distanza {2:0.0} mm, Z {3:0.0} {4:+0.0;-0.0}j, ROS {5:0.00}, G {6:0.00} dBi, F/B {7:0.0} dB, {8} segmenti",
-                                    nome, bq.P("lato") * bq.Scale, bq.P("dist"), rq.Zin.Real, rq.Zin.Imaginary, rq.Swr, rq.GmaxDbi, rq.FrontBack, bq.UltimiSegmenti);
+                                string riga = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}: lato {1:0.0} mm, distanza {2:0.0} mm, Z {3:0.0} {4:+0.0;-0.0;+0.0}j, ROS {5:0.00}, G {6:0.00} dBi, F/B {7:0.0} dB, {8} segmenti",
+                                    nome, bq.P("lato") * bq.Scale, bq.P("dist"), rq.Zin.Real, rq.Zin.Imaginary, rq.Swr, rq.GmaxDbi, Engine.CalcBiquad.FronteRetro(rq), bq.UltimiSegmenti);
                                 bool ok = rq.Swr < 1.6 && rq.GmaxDbi > (tipo == 0 ? 9.5 : 11.5) && rq.GmaxDbi < (tipo == 0 ? 12.8 : 15.0);
                                 sb.AppendLine("       " + (ok ? "OK   " : "ERR  ") + riga);
                                 if (!ok) errPar.Add(riga);
