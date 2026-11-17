@@ -35,6 +35,21 @@ namespace YaNec
                 }
                 PrRiga("immagine " + nome + ".png");
             };
+            Func<Window, string, Task> fotoFin = async (w, nome) =>
+            {
+                await Task.Delay(600);
+                if (w == null) { PrRiga("finestra mancante: " + nome); return; }
+                PixelSize ps = new PixelSize(Math.Max(1, (int)w.Bounds.Width), Math.Max(1, (int)w.Bounds.Height));
+                using (RenderTargetBitmap bmp = new RenderTargetBitmap(ps, new Vector(96, 96))) { bmp.Render(w); bmp.Save(Path.Combine(dir, nome + ".png")); }
+                PrRiga("immagine " + nome + ".png");
+            };
+            Func<Window, string, bool> premiIn = (w, testo) =>
+            {
+                if (w == null) return false;
+                Button b = w.GetVisualDescendants().OfType<Button>().FirstOrDefault(x => x.IsEffectivelyVisible && x.IsEnabled && TestoDi(x.Content).Trim() == testo);
+                if (b == null) { PrRiga("pulsante non trovato nella finestra: " + testo); return false; }
+                b.RaiseEvent(new RoutedEventArgs(Button.ClickEvent)); return true;
+            };
             Func<string, Task<bool>> apri = async nome =>
             {
                 string f = Path.Combine(AppPaths.DataDir, "modelli", nome);
@@ -78,9 +93,8 @@ namespace YaNec
                 // VHF: Yagi 7 elementi DK7ZB: cavo e balun, Yagi incrociate, divisori, calcoli meccanici
                 if (await apri("7 el DK7ZB EME 144 MHz (MMANA).yanec"))
                 {
-                    SelectTab(IndiceLinguetta("Struttura 3D")); fasOggetti?.Select("cavobalun"); await Task.Delay(800);
-                    if (premi("Calcola il confronto")) await Task.Delay(45000);
-                    await foto("cavo-balun");
+                    SelectTab(IndiceLinguetta("Struttura 3D")); MostraBasso("cavobalun"); await Task.Delay(800);
+                    if (premi("Apri la scheda Cavo e balun")) { await Task.Delay(1500); if (premiIn(finestraGrande, "Calcola il confronto")) await Task.Delay(45000); await fotoFin(finestraGrande, "cavo-balun"); finestraGrande?.Close(); }
                     ApriCalcolatore("yagiincr"); await Task.Delay(800);
                     if (premi("Calcola")) await Task.Delay(60000);
                     await foto("yagi-incrociate");
@@ -91,9 +105,8 @@ namespace YaNec
                 // stack 4 x 7 elementi con telaio a H
                 if (await apri("4x7el DK7ZB H-frame 3 m x 3 m.yanec"))
                 {
-                    SelectTab(IndiceLinguetta("Struttura 3D")); fasOggetti?.Select("stack"); await Task.Delay(1500);
-                    if (premi("Calcola confronto")) await Task.Delay(60000);
-                    await foto("telaio-stack");
+                    SelectTab(IndiceLinguetta("Struttura 3D")); MostraBasso("stack"); await Task.Delay(1500);
+                    if (premi("Apri la scheda Telaio a H e palo nello stack")) { await Task.Delay(1500); if (premiIn(finestraGrande, "Calcola confronto")) await Task.Delay(90000); await fotoFin(finestraGrande, "telaio-stack"); finestraGrande?.Close(); }
                 }
             }
             catch (Exception ex) { PrRiga("interrotte: " + ex); }

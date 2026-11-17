@@ -187,5 +187,28 @@ namespace YaNec
             aggiornaBalun();
             return g;
         }
+
+        Window finestraGrande;   // ultima finestra grande aperta (per le immagini di --schermate)
+
+        /// <summary>Riquadro con descrizione e pulsante che apre una scheda larga in una finestra (dal riquadro stretto della Struttura 3D).</summary>
+        Control PannelloApriGrande(string titolo, string descrizione, Func<Control> crea)
+        {
+            StackPanel sp = new StackPanel { Spacing = 6 };
+            sp.Children.Add(Nota(descrizione));
+            Button b = Btn("Apri la scheda " + titolo, true);
+            b.Click += (s, e) => ApriFinestraGrande(titolo, crea());
+            sp.Children.Add(b);
+            return Pannello(titolo, sp);
+        }
+
+        void ApriFinestraGrande(string titolo, Control c)
+        {
+            Window w = new Window { Title = titolo + " - YA-NEC", Width = 1560, Height = 960, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = Pal.B(Pal.Back) };
+            w.Content = new ScrollViewer { Content = new Border { Padding = new Thickness(10), Child = c }, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto };
+            finestraGrande = w;
+            w.Closed += (s, e) => { if (finestraGrande == w) finestraGrande = null; };
+            Registro.Scrivi("AZIONE", "scheda in finestra: " + titolo);
+            w.Show(this);
+        }
     }
 }

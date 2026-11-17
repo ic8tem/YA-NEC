@@ -179,7 +179,7 @@ namespace YaNec
                 new[] { "rastremazioni", "Rastremazioni " + model.Rastremazioni.Count },
                 new[] { "trasformatori", "Trasformatori " + model.Trasformatori.Count },
                 new[] { "retil", "Reti L e di sfasamento " + model.RetiL.Count },
-                new[] { "balun", "Balun" } };
+                new[] { "cavobalun", "Cavo e balun" } };
             string[] fumetti = {
                 "Sorgenti di tensione o di corrente con la notazione MMANA (w4c).",
                 "Carichi LC (trappole), R+jX e RLC serie, come in MMANA.",
@@ -188,7 +188,7 @@ namespace YaNec
                 "Tabella dei tubi telescopici come il Taper wire set di MMANA.",
                 "Trasformatori ideali tra due punti (come in EZNEC).",
                 "Reti L (ramo serie e parallelo) e calcolatore Lewallen/Lahlum, ibrido di Collins.",
-                "Balun nel modello: non ancora disponibile (per costruirne uno: Calcolatori > Balun / Un-Un)." };
+                "Calza del cavo e palo come fili NEC; confronto dei balun da 1,8 a 1296 MHz (1.2)." };
             StackPanel tit = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
             tit.Children.Add(new TextBlock { Text = "Oggetti del modello", FontWeight = FontWeight.Bold, FontSize = 14, Foreground = Pal.B(Pal.Fore), VerticalAlignment = VerticalAlignment.Center });
             tit.Children.Add(new TextBlock { Text = "un clic sceglie la tabella qui sotto", FontSize = 12.5, Foreground = Pal.B(Pal.Muted), VerticalAlignment = VerticalAlignment.Center });
@@ -203,19 +203,18 @@ namespace YaNec
                 StileScelta(b, key == k);
                 b.Margin = new Thickness(0, 0, 5, 5);
                 ToolTip.SetTip(b, fumetti[i]);
-                if (key == "balun") b.IsEnabled = false;
-                else b.Click += (s, e) => MostraBasso(key);
+                b.Click += (s, e) => MostraBasso(key);
                 pil.Children.Add(b);
             }
             sp.Children.Add(pil);
             Control c;
             if (k == "carichi") c = PannelloCarichi(true);
-            else if (k == "linee") c = PannelloLinee(true);
+            else if (k == "linee") { StackPanel lp = new StackPanel { Spacing = 8 }; lp.Children.Add(PannelloLinee(true)); lp.Children.Add(PannelloLineaAccordatore()); c = lp; }   // 1.2.0: bozzetto 11 B
             else if (k == "rastremazioni") c = PannelloRastremazioni(true);
             else if (k == "stack") c = PannelloStack();
             else if (k == "trasformatori") c = PannelloTrasformatori();
             else if (k == "retil") c = PannelloRetiL();
-            else if (k == "cavobalun") c = PannelloCavoBalun();
+            else if (k == "cavobalun") c = PannelloApriGrande("Cavo e balun", "Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.", () => PannelloCavoBalun());
             else c = PannelloSorgenti(true);
             if (c is Border bc) bc.Margin = new Thickness(0);
             sp.Children.Add(c);
@@ -803,7 +802,7 @@ namespace YaNec
             }));
             StackPanel tutto = new StackPanel { Spacing = 10 };
             tutto.Children.Add(Pannello("Stack", body, "l'antenna base resta una sola: le copie si spostano insieme"));
-            tutto.Children.Add(PannelloTelaio(si));   // 1.2.0: bozzetto VHF 4
+            tutto.Children.Add(PannelloApriGrande("Telaio a H e palo nello stack", "Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).", () => PannelloTelaio(si)));   // 1.2.0: bozzetto VHF 4
             return tutto;
         }
     }
