@@ -1,0 +1,13 @@
+Mappe del cielo usate da Rumore/GT/Stack > Rumore dal cielo vero (YA-NEC 1.1.0)
+
+SkyTemp144.fits e SkyTemp432.fits vengono dal pacchetto skynoise 0.2.2 di John C. Sager G8ONH
+(licenza MIT, testo completo in LICENCE-skynoise.txt). Sono mappe HEALPix (NSIDE 128, ordine RING,
+coordinate ICRS) della temperatura del cielo a 144 e 432 MHz, ricavate da Sager dalla mappa a 408 MHz
+haslam408_ds_Remazeilles2014.fits con un indice spettrale fisso di 2,56.
+
+Fonti dei dati:
+- C. G. T. Haslam, C. J. Salter, H. Stoffel, W. E. Wilson, "A 408 MHz all-sky continuum survey. II",
+  Astronomy & Astrophysics Supplement Series 47, 1 (1982).
+- M. Remazeilles, C. Dickinson, A. J. Banday, M.-A. Bigot-Sazy, T. Ghosh, "An improved source-subtracted
+  and destriped 408-MHz all-sky map", Monthly Notices of the Royal Astronomical Society 451, 4311 (2015).
+  Distribuita dal server LAMBDA della NASA (lambda.gsfc.nasa.gov).

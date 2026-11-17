@@ -720,15 +720,11 @@ namespace YaNec
             {
                 body.Children.Add(Nota("Nel modello non ci sono copie identiche della stessa antenna. Il riconoscimento cerca fili elencati a gruppi uguali, " +
                     "ognuno uguale al primo ma spostato (stessi raggi e segmenti), come nei file di stack di MMANA, AutoEZ ed EZNEC.", Pal.Fore));
-                body.Children.Add(Nota("Per creare uno stack da un'antenna sola: Calcolatori > Distanze di stack DL6WU, righe e colonne, pulsante \"Crea lo stack nel modello aperto\" (dalla 0.4.20)."));
-                Button vai = Btn("Vai a Distanze di stack DL6WU", false);
+                body.Children.Add(Nota("Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante \"Crea lo stack nel modello aperto\" (dalla 0.4.20)."));
+                Button vai = Btn("Vai a Distanze di stack", false);
                 vai.Click += (s, e) =>
                 {
-                    int ti = -1;
-                    for (int i = 0; i < tabs.Count; i++) if ((tabs[i].Tag as string) == "Calcolatori") ti = i;
-                    if (ti < 0) return;
-                    SelectTab(ti);
-                    if (fasCalc != null) fasCalc.Select("stackdl6wu");
+                    ApriRumoreGt("stack");   // 1.1.0: Distanze di stack sta in Rumore/GT/Stack
                 };
                 body.Children.Add(vai);
                 return Pannello("Stack", body);

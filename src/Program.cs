@@ -230,6 +230,38 @@ namespace YaNec
                             }
                         }
                         catch (Exception ex) { errPar.Add("Loop Skywire: " + ex.Message); }
+                    // 1.1.0: cielo vero (mappa di G8ONH, tempo siderale, Luna) e studio degli stack (accoppiamento VHF, stack HF sopra il terreno)
+                    using (Prestazioni.Misura("Autotest del cielo vero e degli stack"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var mp = Engine.CieloVero.Mappa(System.IO.Path.Combine(AppPaths.DataDir, "cielo"), 144);
+                            double tFreddo = mp.Temperatura(142, 30), tCentro = mp.Temperatura(266.4, -28.94);
+                            bool okm = tFreddo > 140 && tFreddo < 200 && tCentro > 10000;
+                            string rm = string.Format(CI0, "Mappa del cielo 144 MHz (G8ONH): punto freddo RA 142 Dec 30 = {0:0.0} K (skynoise: media 190,7 K sul lobo), centro galattico = {1:0} K", tFreddo, tCentro);
+                            sb.AppendLine("       " + (okm ? "OK   " : "ERR  ") + rm); if (!okm) errPar.Add(rm);
+                            double lm = Engine.CieloVero.Lmst(new DateTime(2000, 1, 1, 12, 0, 0, DateTimeKind.Utc), 0);
+                            bool okl = Math.Abs(lm - 280.46) < 0.02;
+                            string rl = string.Format(CI0, "Tempo siderale a J2000 (Greenwich): {0:0.000} gradi (atteso 280,46)", lm);
+                            sb.AppendLine("       " + (okl ? "OK   " : "ERR  ") + rl); if (!okl) errPar.Add(rl);
+                            double laz, lel; Engine.CieloVero.Luna(new DateTime(2026, 11, 17, 21, 0, 0, DateTimeKind.Utc), 40.55, 14.21, out laz, out lel);
+                            sb.AppendLine(string.Format(CI0, "       INFO Luna da JN70CN il 17/11/2026 21:00 UTC: azimut {0:0.0}, elevazione {1:0.0} gradi (Meeus ridotto)", laz, lel));
+                            // stack VHF: 2 Yagi MathWorks sovrapposte, alla distanza DL6WU (nec2c: |S21| -27,6 dB, 12,08 dBi)
+                            var my = Engine.NecModel.Parse(Engine.ConfrontiLetteratura.YagiMathWorks(new[] { 0.90846, 0.84596, 0.72096, 0.65846, 0.72096, 0.65846, 0.42008, 0.36338, 0.23838, 0.51673, 0.53236, 0.016118 }));
+                            var sv = Engine.StackStudio.Vhf(my, 165, 2, 1, 0.6, 1.0, 300, 3, -13, 200, 1000, 30, 5, System.Threading.CancellationToken.None);
+                            var p1 = sv.Dl6wu ?? sv.Punti[sv.Punti.Count - 1];
+                            bool oks = Math.Abs(p1.S21 + 27.6) < 1.5 && Math.Abs(p1.G - 12.08) < 0.6;
+                            string rs = string.Format(CI0, "Stack 2 Yagi MathWorks sovrapposte a distanza DL6WU ({0:0.000} m): |S21| {1:0.0} dB, G {2:0.00} dBi, lobo {3:0.0} dB (nec2c: -27,6 dB, 12,08 dBi, -8,3 dB); proposta {4:0.00} x DL6WU ({5})", p1.Dv, p1.S21, p1.G, p1.Sll, sv.Proposta.K, sv.Criterio);
+                            sb.AppendLine("       " + (oks ? "OK   " : "ERR  ") + rs); if (!oks) errPar.Add(rs);
+                            // stack HF: Yagi 3 elementi 20 m, la piu' bassa a 15 m, suolo medio (nec2c a 0,75 lambda: BIP 15,63 dBi a 11 gradi)
+                            string y3 = "CM Yagi 3 el 20 m di prova\nCE\nGW 1 21 -3.17 -5.44 0 -3.17 5.44 0 0.0125\nGW 2 21 0 -5.13 0 0 5.13 0 0.0125\nGW 3 21 3.17 -4.81 0 3.17 4.81 0 0.0125\nGE 0\nEX 0 2 11 0 1 0\nFR 0 1 0 0 14.175 0\nEN\n";
+                            var sh = Engine.StackStudio.Hf(Engine.NecModel.Parse(y3), 14.175, 2, 15, 0.75, 0.75, 5, 15, System.Threading.CancellationToken.None);
+                            int ib = 0; for (int i = 1; i < sh.ElBip.Length; i++) if (sh.ElBip[i] > sh.ElBip[ib]) ib = i;
+                            bool okh = Math.Abs(sh.ElBip[ib] - 15.63) < 0.5 && Math.Abs(ib - 11) <= 1;
+                            string rh = string.Format(CI0, "Stack HF 2 Yagi 3 el 20 m (15 m + 0,75 lambda, suolo medio): BIP {0:0.00} dBi a {1} gradi, sopra da sola {2:0.00}, sotto da sola {3:0.00} dBi (nec2c: 15,63 a 11; 13,28; 12,88)", sh.ElBip[ib], ib, Max(sh.ElSopra), Max(sh.ElSotto));
+                            sb.AppendLine("       " + (okh ? "OK   " : "ERR  ") + rh); if (!okh) errPar.Add(rh);
+                        }
+                        catch (Exception ex) { errPar.Add("cielo vero / stack: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
@@ -260,5 +292,6 @@ namespace YaNec
         {
             return AppBuilder.Configure<App>().UsePlatformDetect().WithInterFont().LogToTrace();
         }
+            static double Max(double[] a) { double m = double.MinValue; foreach (double v in a) m = Math.Max(m, v); return m; }
     }
 }

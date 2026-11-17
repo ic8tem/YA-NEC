@@ -454,7 +454,7 @@ namespace YaNec
             BuildOggettiPage();   // 0.5.3: il fascione degli oggetti resta (tabelle, conteggi, prove) ma non e' piu' una linguetta
             pag["Calcolatori"] = BuildCalcolatoriPage();
             pag["Diagrammi"] = BuildPatternPage();
-            pag["Rumore/GT/Stack"] = BuildGtPage();
+            pag["Rumore/GT/Stack"] = BuildGtSopra();   // 1.1.0: sopralinguetta con tre voci
             // 1.1.0: "Antenne riceventi" e' una famiglia dei Calcolatori (la pagina si costruisce alla prima apertura)
             pag["Frequenza"] = BuildFreqPage();
             pag["Smith"] = BuildSmithPage();
@@ -519,7 +519,7 @@ namespace YaNec
             try
             {
                 if (n == "Impostazioni") SincronizzaImpostazioni();
-                else if (n == "Rumore/GT/Stack") CalcolaGt();
+                else if (n == "Rumore/GT/Stack") { if (fasGt == null || fasGt.Current == "gt") CalcolaGt(); }
                 else if (n == "Registro") AggiornaRegistro();
                 else if (n == "Ottimizzatore") OttSincronizza();
                 else if (n == "Calcolatori" && lpdaPrimoCalcolo != null && fasCalc != null && fasCalc.Current == "lpda")
