@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Avalonia;
 
 namespace YaNec
@@ -408,6 +409,24 @@ namespace YaNec
                             sb.AppendLine("       " + (okd ? "OK   " : "ERR  ") + r2); if (!okd) errPar.Add(r2);
                         }
                         catch (Exception ex) { errPar.Add("terreno reale: " + ex.Message); }
+                    // 1.2.0: tolleranze (bozzetto VHF 9): nomi degli elementi di una Yagi a 3 elementi; con tolleranze nulle ogni prova = nominale
+                    using (Prestazioni.Misura("Autotest delle tolleranze"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var my3 = Engine.NecModel.Parse("CM yagi 3 el 144\nCE\nGW 1 11 0 -0.515 0 0 0.515 0 0.003\nGW 2 11 0.28 -0.49 0 0.28 0.49 0 0.003\nGW 3 11 0.62 -0.47 0 0.62 0.47 0 0.003\nGE 0\nEX 0 2 6 0 1 0\nFR 0 1 0 0 144.3 0\nEN\n");
+                            var g3 = my3.BuildGeometry();
+                            int asse3; var el3 = Engine.Tolleranze.Elementi(my3, g3, out asse3);
+                            var r3 = Engine.Analysis.Run(my3, g3, 144.3, 5);
+                            var o3 = new Engine.Tolleranze.Opzioni { TolL = 0, TolP = 0, TolD = 0, Prove = 3, F1 = 144.0, F2 = 144.6 };
+                            var mc3 = Engine.Tolleranze.MonteCarlo(my3, g3, el3, asse3, o3, r3.ThetaMax, r3.PhiMax, null, System.Threading.CancellationToken.None);
+                            double scarto = mc3.Prove.Max(p => Math.Abs(p.Fb - mc3.Nominale.Fb));
+                            string nomi = string.Join(" ", el3.Select(e => e.Nome));
+                            bool ok3 = nomi == "R DR D1" && asse3 == 0 && scarto < 1e-6;
+                            string r3s = string.Format(CI0, "Tolleranze: elementi della Yagi a 3 elementi {0} (atteso R DR D1), asse del boom x; tolleranze nulle: scarto del F/B dal nominale {1:0.000000} dB", nomi, scarto);
+                            sb.AppendLine("       " + (ok3 ? "OK   " : "ERR  ") + r3s); if (!ok3) errPar.Add(r3s);
+                        }
+                        catch (Exception ex) { errPar.Add("tolleranze: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
