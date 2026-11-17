@@ -4,6 +4,8 @@
 
 **Drahtantennen-Simulator auf Basis von NEC-2** für Windows, Linux und macOS. Von Costantino Cerrotta **IC8TEM**. Lizenz GPL-3.0.
 
+> **[Neu in 1.1](Novita-1.1-de)**
+
 > *Die Geschichte dieses Programms schreibt ihr: mit euren Projekten, euren Ideen, eurer Genialität, euren Entdeckungen und euren Gewissheiten.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D-Struktur"></a><br><sub>3D-Struktur</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagramme"></a><br><sub>Diagramme</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith-Diagramm"></a><br><sub>Smith-Diagramm</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Rauschen, G/T und Gruppierung"></a><br><sub>Rauschen, G/T und Gruppierung</sub></td></tr></table>

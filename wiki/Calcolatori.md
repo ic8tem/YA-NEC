@@ -19,3 +19,5 @@ Quando il modello è un'approssimazione (per esempio fili molto vicini al terren
 - **Linee e trasformatori**: cavi RG e abaco dei cavi a 50 e 75 ohm, cambio d'impedenza con un tratto di cavo, toroidi iron powder e ferrite, balun e un-un.
 
 Le fonti di ogni scheda sono scritte sotto i dati e nella linguetta Crediti; dove le fonti non sono d'accordo, le misure discordi sono mostrate affiancate.
+
+> Dalla 1.1 le schede sono divise in famiglie (HF, VHF, Antenne riceventi, Strumenti, Dischi e illuminatori, 2,4 GHz) e le distanze di stack sono nella sopralinguetta Rumore/GT/Stack: [Novità della 1.1](Novita-1.1).

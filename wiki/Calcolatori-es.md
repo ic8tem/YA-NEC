@@ -19,3 +19,5 @@ Cuando el modelo es una aproximación (por ejemplo, hilos muy cerca del suelo) e
 - **Líneas y transformadores**: cables RG y tabla de cables de 50 y 75 ohmios, cambio de impedancia con un tramo de cable, toroides de polvo de hierro y de ferrita, baluns y ununs.
 
 Las fuentes de cada ficha están escritas debajo de los datos y en la pestaña Créditos; cuando las fuentes no coinciden, las medidas discordantes se muestran una al lado de otra.
+
+> 1.1: [Novedades de la 1.1](Novita-1.1-es).

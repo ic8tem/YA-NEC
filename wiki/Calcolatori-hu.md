@@ -19,3 +19,5 @@ Ha a modell csak közelítés (például a huzalok nagyon közel vannak a talajh
 - **Tápvonalak és transzformátorok**: RG kábelek és 50, 75 ohmos kábeltáblázat, impedancia-átalakítás kábeldarabbal, vaspor és ferrit toroidok, balunok és ununok.
 
 Minden lap forrásai az adatok alatt és a Köszönet fülön szerepelnek; ahol a források eltérnek, az eltérő méretek egymás mellett látszanak.
+
+> 1.1: [Újdonságok az 1.1-ben](Novita-1.1-hu).

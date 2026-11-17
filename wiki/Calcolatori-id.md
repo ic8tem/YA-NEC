@@ -19,3 +19,5 @@ Bila model hanyalah perkiraan (misalnya kawat sangat dekat dengan tanah), petunj
 - **Saluran dan transformator**: kabel RG dan tabel kabel 50 dan 75 ohm, perubahan impedansi dengan sepotong kabel, toroida serbuk besi dan ferit, balun dan unun.
 
 Sumber setiap lembar ditulis di bawah data dan di tab Terima kasih; bila sumber berbeda pendapat, ukuran yang berbeda ditampilkan berdampingan.
+
+> 1.1: [Yang baru di 1.1](Novita-1.1-id).

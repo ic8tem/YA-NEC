@@ -4,6 +4,8 @@
 
 **Симулятор дротових антен на основі NEC-2** для Windows, Linux і macOS. Автор: Costantino Cerrotta **IC8TEM**. Ліцензія GPL-3.0.
 
+> **[Що нового в 1.1](Novita-1.1-uk)**
+
 > *Історію цієї програми напишете ви: своїми проєктами, своїми ідеями, своєю винахідливістю, своїми відкриттями і своєю впевненістю.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D-структура"></a><br><sub>3D-структура</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Діаграми"></a><br><sub>Діаграми</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Діаграма Сміта"></a><br><sub>Діаграма Сміта</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Шум, G/T і стек"></a><br><sub>Шум, G/T і стек</sub></td></tr></table>

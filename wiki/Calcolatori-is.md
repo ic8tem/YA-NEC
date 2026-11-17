@@ -19,3 +19,5 @@ Flipinn **Reiknivélar** safnar saman blöðum sem hanna loftnet út frá birtum
 - **Línur og spennar**: RG-kaplar og kaplatafla fyrir 50 og 75 óm, viðnámsbreyting með kapalbút, járnduft- og ferrítkjarnar, balun og unun.
 
 Heimildir hvers blaðs eru skrifaðar undir gögnunum og í flipanum Þakkir; þar sem heimildir greinir á eru ólík mál sýnd hlið við hlið.
+
+> 1.1: [Nýtt í 1.1](Novita-1.1-is).

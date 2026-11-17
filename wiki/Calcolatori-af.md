@@ -19,3 +19,5 @@ Wanneer die model 'n benadering is (byvoorbeeld drade baie naby die grond), sê 
 - **Lyne en transformators**: RG-kabels en kabeltabel vir 50 en 75 ohm, impedansieverandering met 'n stuk kabel, ringkerne van ysterpoeier en ferriet, baluns en ununs.
 
 Die bronne van elke blad staan onder die data en in die oortjie Erkennings; waar bronne verskil, word die afwykende mates langs mekaar gewys.
+
+> 1.1: [Nuut in 1.1](Novita-1.1-af).

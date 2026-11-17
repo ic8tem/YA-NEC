@@ -4,6 +4,8 @@
 
 **NEC-2 पर आधारित तार एंटीना सिम्युलेटर**, Windows, Linux और macOS के लिए। लेखक: Costantino Cerrotta **IC8TEM**। लाइसेंस GPL-3.0।
 
+> **[1.1 में नया](Novita-1.1-hi)**
+
 > *इस प्रोग्राम का इतिहास आप लिखेंगे: अपनी परियोजनाओं से, अपने विचारों से, अपनी प्रतिभा से, अपनी खोजों से और अपने विश्वासों से।*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D संरचना"></a><br><sub>3D संरचना</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="आरेख"></a><br><sub>आरेख</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="स्मिथ चार्ट"></a><br><sub>स्मिथ चार्ट</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="शोर, G/T और स्टैक"></a><br><sub>शोर, G/T और स्टैक</sub></td></tr></table>

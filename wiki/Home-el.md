@@ -4,6 +4,8 @@
 
 **Προσομοιωτής συρμάτινων κεραιών βασισμένος στο NEC-2** για Windows, Linux και macOS. Από τον Costantino Cerrotta **IC8TEM**. Άδεια GPL-3.0.
 
+> **[Τι νέο στην 1.1](Novita-1.1-el)**
+
 > *Την ιστορία αυτού του προγράμματος θα τη γράψετε εσείς: με τα σχέδιά σας, τις ιδέες σας, την ευφυΐα σας, τις ανακαλύψεις σας και τις βεβαιότητές σας.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="Τρισδιάστατη δομή"></a><br><sub>Τρισδιάστατη δομή</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Διαγράμματα"></a><br><sub>Διαγράμματα</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Χάρτης Smith"></a><br><sub>Χάρτης Smith</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Θόρυβος, G/T και συστοιχίες"></a><br><sub>Θόρυβος, G/T και συστοιχίες</sub></td></tr></table>

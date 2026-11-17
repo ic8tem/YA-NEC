@@ -4,6 +4,8 @@
 
 **Simulátor drátových antén založený na NEC-2** pro Windows, Linux a macOS. Autor: Costantino Cerrotta **IC8TEM**. Licence GPL-3.0.
 
+> **[Novinky ve verzi 1.1](Novita-1.1-cs)**
+
 > *Historii tohoto programu napíšete vy: svými projekty, svými nápady, svou genialitou, svými objevy a svými jistotami.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D struktura"></a><br><sub>3D struktura</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagramy"></a><br><sub>Diagramy</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smithův diagram"></a><br><sub>Smithův diagram</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Šum, G/T a skládání"></a><br><sub>Šum, G/T a skládání</sub></td></tr></table>

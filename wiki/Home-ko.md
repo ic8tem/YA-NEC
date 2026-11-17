@@ -4,6 +4,8 @@
 
 **NEC-2 기반 와이어 안테나 시뮬레이터** (Windows, Linux, macOS). 제작: Costantino Cerrotta **IC8TEM**. 라이선스 GPL-3.0.
 
+> **[1.1의 새 기능](Novita-1.1-ko)**
+
 > *이 프로그램의 역사는 여러분이 만들어 갑니다. 여러분의 프로젝트, 아이디어, 재능, 발견, 그리고 확신으로.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D 구조"></a><br><sub>3D 구조</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="방사 패턴"></a><br><sub>방사 패턴</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="잡음, G/T, 스택"></a><br><sub>잡음, G/T, 스택</sub></td></tr></table>

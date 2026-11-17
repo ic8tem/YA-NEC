@@ -6,6 +6,8 @@
 
 **סימולטור אנטנות תיל המבוסס על NEC-2** עבור Windows, ‏Linux ו-macOS. מאת Costantino Cerrotta **IC8TEM**. רישיון GPL-3.0.
 
+> **[מה חדש ב-1.1](Novita-1.1-he)**
+
 > *את ההיסטוריה של התוכנה הזאת תכתבו אתם: בפרויקטים שלכם, ברעיונות שלכם, בגאונות שלכם, בתגליות שלכם ובוודאויות שלכם.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="מבנה תלת-ממדי"></a><br><sub>מבנה תלת-ממדי</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="דיאגרמות"></a><br><sub>דיאגרמות</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="תרשים סמית"></a><br><sub>תרשים סמית</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="רעש, G/T וערימה"></a><br><sub>רעש, G/T וערימה</sub></td></tr></table>

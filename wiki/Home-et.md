@@ -4,6 +4,8 @@
 
 **NEC-2-l põhinev traatantennide simulaator** Windowsile, Linuxile ja macOS-ile. Autor: Costantino Cerrotta **IC8TEM**. Litsents GPL-3.0.
 
+> **[Uut versioonis 1.1](Novita-1.1-et)**
+
 > *Selle programmi ajaloo kirjutate teie: oma projektide, ideede, nutikuse, avastuste ja kindlustega.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D-struktuur"></a><br><sub>3D-struktuur</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagrammid"></a><br><sub>Diagrammid</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smithi diagramm"></a><br><sub>Smithi diagramm</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Müra, G/T ja virnastamine"></a><br><sub>Müra, G/T ja virnastamine</sub></td></tr></table>

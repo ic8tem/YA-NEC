@@ -19,3 +19,5 @@ Când modelul este o aproximare (de exemplu fire foarte aproape de sol), un indi
 - **Linii și transformatoare**: cabluri RG și tabelul cablurilor de 50 și 75 ohmi, schimbarea impedanței cu o bucată de cablu, toroizi din pulbere de fier și ferită, balun și unun.
 
 Sursele fiecărei fișe sunt scrise sub date și în fila Mulțumiri; acolo unde sursele nu sunt de acord, dimensiunile diferite sunt afișate alăturat.
+
+> 1.1: [Noutățile versiunii 1.1](Novita-1.1-ro).

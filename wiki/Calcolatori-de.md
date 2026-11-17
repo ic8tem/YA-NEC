@@ -19,3 +19,5 @@ Ist das Modell eine Näherung (z. B. Drähte sehr nahe am Boden), sagt es ein ge
 - **Leitungen und Übertrager**: RG-Kabel und Kabeltabelle 50 und 75 Ohm, Impedanztransformation mit einem Kabelstück, Eisenpulver- und Ferritringkerne, Baluns und Ununs.
 
 Die Quellen jedes Blattes stehen unter den Daten und im Reiter Danksagung; wo Quellen sich widersprechen, werden die abweichenden Maße nebeneinander gezeigt.
+
+> 1.1: [Neu in 1.1](Novita-1.1-de).

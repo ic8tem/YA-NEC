@@ -4,6 +4,8 @@
 
 **NEC-2 ভিত্তিক তার অ্যান্টেনা সিমুলেটর**, Windows, Linux ও macOS-এর জন্য। প্রণেতা: Costantino Cerrotta **IC8TEM**। লাইসেন্স GPL-3.0।
 
+> **[1.1-এ নতুন](Novita-1.1-bn)**
+
 > *এই প্রোগ্রামের ইতিহাস লিখবেন আপনারাই: আপনাদের প্রকল্প, আপনাদের ভাবনা, আপনাদের প্রতিভা, আপনাদের আবিষ্কার আর আপনাদের দৃঢ় বিশ্বাস দিয়ে।*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D কাঠামো"></a><br><sub>3D কাঠামো</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="ডায়াগ্রাম"></a><br><sub>ডায়াগ্রাম</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="স্মিথ চার্ট"></a><br><sub>স্মিথ চার্ট</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="নয়েজ, G/T ও স্ট্যাক"></a><br><sub>নয়েজ, G/T ও স্ট্যাক</sub></td></tr></table>

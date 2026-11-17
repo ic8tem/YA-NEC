@@ -4,6 +4,8 @@
 
 **基於 NEC-2 的線天線模擬軟體**，適用於 Windows、Linux 和 macOS。作者：Costantino Cerrotta **IC8TEM**。授權條款 GPL-3.0。
 
+> **[1.1 新功能](Novita-1.1-zh-tw)**
+
 > *這個程式的歷史將由你們書寫：用你們的專案、你們的想法、你們的才智、你們的發現和你們的信念。*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D 結构"></a><br><sub>3D 結构</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="方向圖"></a><br><sub>方向圖</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="史密斯圓圖"></a><br><sub>史密斯圓圖</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="噪聲、G/T 與堆疊"></a><br><sub>噪聲、G/T 與堆疊</sub></td></tr></table>

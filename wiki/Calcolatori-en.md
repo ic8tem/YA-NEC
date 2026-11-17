@@ -19,3 +19,5 @@ When the model is an approximation (for example wires very close to the ground) 
 - **Lines and transformers**: RG cables and the 50 and 75 ohm coax chart, impedance change with a length of cable, iron powder and ferrite toroids, baluns and ununs.
 
 The sources of every sheet are written below the data and in the Credits tab; where sources disagree, the differing dimensions are shown side by side.
+
+> Since 1.1 the sheets are grouped in families (HF, VHF, Receiving antennas, Tools, Dishes and feeds, 2.4 GHz) and the stacking distances are in the Noise/GT/Stack super-tab: [What's new in 1.1](Novita-1.1-en).

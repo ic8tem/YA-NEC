@@ -19,3 +19,5 @@ Quand le modèle est une approximation (par exemple des fils très proches du so
 - **Lignes et transformateurs** : câbles RG et abaque des câbles 50 et 75 ohms, changement d'impédance par un tronçon de câble, tores en poudre de fer et en ferrite, baluns et ununs.
 
 Les sources de chaque fiche sont écrites sous les données et dans l'onglet Crédits ; quand les sources ne concordent pas, les dimensions divergentes sont affichées côte à côte.
+
+> 1.1: [Nouveautés de la 1.1](Novita-1.1-fr).

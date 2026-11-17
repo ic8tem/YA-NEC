@@ -19,3 +19,5 @@ Model bir yaklaşıksa (örneğin zemine çok yakın teller), düğmedeki sarı 
 - **Hatlar ve transformatörler**: RG kabloları ve 50 ile 75 ohm kablo tablosu, bir kablo parçasıyla empedans dönüşümü, demir tozu ve ferrit toroidler, balun ve unun.
 
 Her sayfanın kaynakları verilerin altında ve Teşekkürler sekmesinde yazılıdır; kaynaklar uyuşmadığında farklı ölçüler yan yana gösterilir.
+
+> 1.1: [1.1'deki yenilikler](Novita-1.1-tr).

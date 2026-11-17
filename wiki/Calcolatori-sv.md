@@ -19,3 +19,5 @@ När modellen är en approximation (till exempel trådar mycket nära marken) s�
 - **Ledningar och transformatorer**: RG-kablar och kabeltabell för 50 och 75 ohm, impedansändring med en kabelbit, ringkärnor av järnpulver och ferrit, baluner och ununer.
 
 Källorna till varje blad står under data och i fliken Tack; där källorna inte är överens visas de avvikande måtten sida vid sida.
+
+> 1.1: [Nytt i 1.1](Novita-1.1-sv).

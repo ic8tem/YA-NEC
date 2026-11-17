@@ -19,3 +19,5 @@ Když je model přiblížením (např. vodiče velmi blízko země), řekne to �
 - **Vedení a transformátory**: kabely RG a tabulka kabelů 50 a 75 ohmů, změna impedance úsekem kabelu, toroidy ze železného prášku a feritu, baluny a ununy.
 
 Zdroje každého listu jsou uvedeny pod daty a v záložce Poděkování; kde se zdroje neshodují, jsou rozdílné rozměry ukázány vedle sebe.
+
+> 1.1: [Novinky ve verzi 1.1](Novita-1.1-cs).

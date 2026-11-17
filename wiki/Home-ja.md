@@ -4,6 +4,8 @@
 
 **NEC-2 ベースのワイヤーアンテナ・シミュレーター**（Windows、Linux、macOS）。作者：Costantino Cerrotta **IC8TEM**。ライセンス GPL-3.0。
 
+> **[1.1 の新機能](Novita-1.1-ja)**
+
 > *このプログラムの歴史を作るのは皆さんです。皆さんのプロジェクト、アイデア、才能、発見、そして確信によって。*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D 構造"></a><br><sub>3D 構造</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="指向性パターン"></a><br><sub>指向性パターン</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="スミスチャート"></a><br><sub>スミスチャート</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="雑音、G/T、スタック"></a><br><sub>雑音、G/T、スタック</sub></td></tr></table>

@@ -4,6 +4,8 @@
 
 **Stieples antenu simulators, kas balstīts uz NEC-2**, sistēmām Windows, Linux un macOS. Autors: Costantino Cerrotta **IC8TEM**. Licence GPL-3.0.
 
+> **[Jaunumi 1.1 versijā](Novita-1.1-lv)**
+
 > *Šīs programmas vēsturi rakstīsiet jūs: ar saviem projektiem, savām idejām, savu atjautību, saviem atklājumiem un savām pārliecībām.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D struktūra"></a><br><sub>3D struktūra</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagrammas"></a><br><sub>Diagrammas</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smita diagramma"></a><br><sub>Smita diagramma</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Troksnis, G/T un sakraušana"></a><br><sub>Troksnis, G/T un sakraušana</sub></td></tr></table>

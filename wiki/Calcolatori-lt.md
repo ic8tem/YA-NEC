@@ -19,3 +19,5 @@ Kai modelis yra apytikslis (pvz., laidai labai arti žemės), tai pasako geltona
 - **Linijos ir transformatoriai**: RG kabeliai ir 50 bei 75 omų kabelių lentelė, impedanso keitimas kabelio atkarpa, geležies miltelių ir ferito toroidai, balunai ir ununai.
 
 Kiekvieno lapo šaltiniai nurodyti po duomenimis ir kortelėje Padėkos; kai šaltiniai nesutaria, skirtingi matmenys rodomi greta.
+
+> 1.1: [Kas naujo 1.1 versijoje](Novita-1.1-lt).

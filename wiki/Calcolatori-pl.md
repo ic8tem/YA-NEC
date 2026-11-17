@@ -19,3 +19,5 @@ Gdy model jest przybliżeniem (np. przewody bardzo blisko gruntu), przycisk ma �
 - **Linie i transformatory**: kable RG i tabela kabli 50 i 75 omów, zmiana impedancji odcinkiem kabla, rdzenie toroidalne proszkowe i ferrytowe, balun i unun.
 
 Źródła każdego arkusza są podane pod danymi i w zakładce Podziękowania; gdy źródła się różnią, rozbieżne wymiary są pokazane obok siebie.
+
+> 1.1: [Nowości w wersji 1.1](Novita-1.1-pl).

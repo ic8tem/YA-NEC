@@ -4,6 +4,8 @@
 
 **NEC-2 tabanlı tel anten simülatörü**; Windows, Linux ve macOS için. Hazırlayan: Costantino Cerrotta **IC8TEM**. Lisans GPL-3.0.
 
+> **[1.1'deki yenilikler](Novita-1.1-tr)**
+
 > *Bu programın tarihini siz yazacaksınız: projelerinizle, fikirlerinizle, dehanızla, keşiflerinizle ve kesinliklerinizle.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D yapı"></a><br><sub>3D yapı</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diyagramlar"></a><br><sub>Diyagramlar</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith abağı"></a><br><sub>Smith abağı</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Gürültü, G/T ve yığın"></a><br><sub>Gürültü, G/T ve yığın</sub></td></tr></table>

@@ -6,6 +6,8 @@
 
 **محاكي هوائيات سلكية مبني على NEC-2** لأنظمة Windows وLinux وmacOS. إعداد: Costantino Cerrotta **IC8TEM**. الترخيص GPL-3.0.
 
+> **[الجديد في 1.1](Novita-1.1-ar)**
+
 > *تاريخ هذا البرنامج ستكتبونه أنتم: بمشاريعكم، وأفكاركم، وعبقريتكم، واكتشافاتكم، ويقينكم.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="البنية ثلاثية الأبعاد"></a><br><sub>البنية ثلاثية الأبعاد</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="المخططات"></a><br><sub>المخططات</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="مخطط سميث"></a><br><sub>مخطط سميث</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="الضجيج وG/T والتكديس"></a><br><sub>الضجيج وG/T والتكديس</sub></td></tr></table>

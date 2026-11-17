@@ -4,6 +4,8 @@
 
 **Simulator antena kawat berbasis NEC-2** untuk Windows, Linux, dan macOS. Oleh Costantino Cerrotta **IC8TEM**. Lisensi GPL-3.0.
 
+> **[Yang baru di 1.1](Novita-1.1-id)**
+
 > *Sejarah program ini akan kalian tulis sendiri: dengan proyek kalian, ide kalian, kecerdikan kalian, penemuan kalian, dan keyakinan kalian.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="Struktur 3D"></a><br><sub>Struktur 3D</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagram"></a><br><sub>Diagram</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Diagram Smith"></a><br><sub>Diagram Smith</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Derau, G/T, dan penumpukan"></a><br><sub>Derau, G/T, dan penumpukan</sub></td></tr></table>

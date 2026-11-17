@@ -19,3 +19,5 @@ Quando o modelo é uma aproximação (por exemplo, fios muito perto do solo) o b
 - **Linhas e transformadores**: cabos RG e tabela de cabos de 50 e 75 ohms, mudança de impedância com um troço de cabo, toroides de pó de ferro e de ferrite, baluns e ununs.
 
 As fontes de cada ficha estão escritas por baixo dos dados e no separador Créditos; quando as fontes não coincidem, as medidas divergentes aparecem lado a lado.
+
+> 1.1: [Novidades da 1.1](Novita-1.1-pt).

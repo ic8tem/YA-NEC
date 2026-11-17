@@ -4,6 +4,8 @@
 
 **NEC-2 alapú huzalantenna-szimulátor** Windowsra, Linuxra és macOS-re. Készítette: Costantino Cerrotta **IC8TEM**. Licenc: GPL-3.0.
 
+> **[Újdonságok az 1.1-ben](Novita-1.1-hu)**
+
 > *Ennek a programnak a történetét ti írjátok meg: a terveitekkel, az ötleteitekkel, a zsenialitásotokkal, a felfedezéseitekkel és a bizonyosságaitokkal.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D szerkezet"></a><br><sub>3D szerkezet</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagramok"></a><br><sub>Diagramok</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith-diagram"></a><br><sub>Smith-diagram</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Zaj, G/T és csoportosítás"></a><br><sub>Zaj, G/T és csoportosítás</sub></td></tr></table>

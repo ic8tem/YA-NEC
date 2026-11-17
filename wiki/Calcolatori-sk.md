@@ -19,3 +19,5 @@ Keď je model priblížením (napr. vodiče veľmi blízko zeme), povie to žlt�
 - **Vedenia a transformátory**: káble RG a tabuľka káblov 50 a 75 ohmov, zmena impedancie úsekom kábla, toroidy zo železného prášku a feritu, baluny a ununy.
 
 Zdroje každého listu sú uvedené pod dátami a v záložke Poďakovanie; kde sa zdroje nezhodujú, sú rozdielne rozmery ukázané vedľa seba.
+
+> 1.1: [Novinky vo verzii 1.1](Novita-1.1-sk).

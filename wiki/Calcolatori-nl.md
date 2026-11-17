@@ -19,3 +19,5 @@ Is het model een benadering (bijvoorbeeld draden heel dicht bij de grond), dan z
 - **Lijnen en transformatoren**: RG-kabels en kabeltabel 50 en 75 ohm, impedantie-omzetting met een stuk kabel, ringkernen van ijzerpoeder en ferriet, baluns en ununs.
 
 De bronnen van elk blad staan onder de gegevens en in het tabblad Dankwoord; waar bronnen het oneens zijn, worden de afwijkende maten naast elkaar getoond.
+
+> 1.1: [Nieuw in 1.1](Novita-1.1-nl).

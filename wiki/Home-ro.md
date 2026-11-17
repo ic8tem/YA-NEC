@@ -4,6 +4,8 @@
 
 **Simulator de antene din fir bazat pe NEC-2** pentru Windows, Linux și macOS. Autor: Costantino Cerrotta **IC8TEM**. Licență GPL-3.0.
 
+> **[Noutățile versiunii 1.1](Novita-1.1-ro)**
+
 > *Istoria acestui program o veți scrie voi: cu proiectele voastre, cu ideile voastre, cu ingeniozitatea voastră, cu descoperirile voastre și cu certitudinile voastre.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="Structura 3D"></a><br><sub>Structura 3D</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagrame"></a><br><sub>Diagrame</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Diagrama Smith"></a><br><sub>Diagrama Smith</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Zgomot, G/T și grupare"></a><br><sub>Zgomot, G/T și grupare</sub></td></tr></table>

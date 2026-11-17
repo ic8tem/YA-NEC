@@ -4,6 +4,8 @@
 
 **Trådantennesimulator basert på NEC-2** for Windows, Linux og macOS. Av Costantino Cerrotta **IC8TEM**. Lisens GPL-3.0.
 
+> **[Nytt i 1.1](Novita-1.1-nb)**
+
 > *Historien til dette programmet skriver dere: med prosjektene deres, ideene deres, genialiteten deres, oppdagelsene deres og vissheten deres.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D-struktur"></a><br><sub>3D-struktur</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagrammer"></a><br><sub>Diagrammer</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith-diagram"></a><br><sub>Smith-diagram</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Støy, G/T og stabling"></a><br><sub>Støy, G/T og stabling</sub></td></tr></table>

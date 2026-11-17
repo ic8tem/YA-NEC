@@ -19,3 +19,5 @@ Kui mudel on ligikaudne (nt juhtmed väga maapinna lähedal), ütleb seda kollan
 - **Liinid ja trafod**: RG-kaablid ning 50 ja 75 oomi kaablitabel, impedantsi muutmine kaablijupiga, rauapulbri- ja ferriitrõngassüdamikud, balunid ja ununid.
 
 Iga lehe allikad on kirjas andmete all ja sakis Tänuavaldused; kus allikad ei ühti, näidatakse erinevaid mõõte kõrvuti.
+
+> 1.1: [Uut versioonis 1.1](Novita-1.1-et).

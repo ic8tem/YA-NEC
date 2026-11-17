@@ -1,5 +1,6 @@
 **YA-NEC**
 - [[Home]]
+- [Novità della 1.1](Novita-1.1) · [What's new](Novita-1.1-en)
 - [[Videocorso]] · [Video course](Videocorso-en)
 - [[Installazione]]
 - [[Primi passi]]

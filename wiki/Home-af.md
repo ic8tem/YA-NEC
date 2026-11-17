@@ -4,6 +4,8 @@
 
 **Draadantenna-simulator gebaseer op NEC-2** vir Windows, Linux en macOS. Deur Costantino Cerrotta **IC8TEM**. Lisensie GPL-3.0.
 
+> **[Nuut in 1.1](Novita-1.1-af)**
+
 > *Die geskiedenis van hierdie program sal julle skryf: met julle projekte, julle idees, julle vernuf, julle ontdekkings en julle sekerhede.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D-struktuur"></a><br><sub>3D-struktuur</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagramme"></a><br><sub>Diagramme</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith-kaart"></a><br><sub>Smith-kaart</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Geraas, G/T en stapeling"></a><br><sub>Geraas, G/T en stapeling</sub></td></tr></table>

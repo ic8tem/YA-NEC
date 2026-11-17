@@ -4,6 +4,8 @@
 
 **Simulador de antenas de fio baseado no NEC-2** para Windows, Linux e macOS. Por Costantino Cerrotta **IC8TEM**. Licença GPL-3.0.
 
+> **[Novidades da 1.1](Novita-1.1-pt)**
+
 > *A história deste programa serão vocês a escrevê-la: com os vossos projetos, as vossas ideias, a vossa genialidade, as vossas descobertas e as vossas certezas.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="Estrutura 3D"></a><br><sub>Estrutura 3D</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Diagramas"></a><br><sub>Diagramas</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Carta de Smith"></a><br><sub>Carta de Smith</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Ruído, G/T e agrupamento"></a><br><sub>Ruído, G/T e agrupamento</sub></td></tr></table>

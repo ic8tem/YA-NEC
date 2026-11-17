@@ -4,6 +4,8 @@
 
 **โปรแกรมจำลองสายอากาศแบบลวดที่ใช้ NEC-2** สำหรับ Windows, Linux และ macOS จัดทำโดย Costantino Cerrotta **IC8TEM** สัญญาอนุญาต GPL-3.0
 
+> **[มีอะไรใหม่ใน 1.1](Novita-1.1-th)**
+
 > *ประวัติศาสตร์ของโปรแกรมนี้ พวกคุณจะเป็นผู้เขียน: ด้วยโครงการของคุณ ความคิดของคุณ ความอัจฉริยะของคุณ การค้นพบของคุณ และความมั่นใจของคุณ*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="โครงสร้าง 3 มิติ"></a><br><sub>โครงสร้าง 3 มิติ</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="แผนภาพ"></a><br><sub>แผนภาพ</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="แผนภูมิสมิท"></a><br><sub>แผนภูมิสมิท</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="สัญญาณรบกวน, G/T และการซ้อน"></a><br><sub>สัญญาณรบกวน, G/T และการซ้อน</sub></td></tr></table>

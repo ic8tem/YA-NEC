@@ -4,6 +4,8 @@
 
 **NEC-2 wire antenna simulator** for Windows, Linux and macOS. By Costantino Cerrotta **IC8TEM**. GPL-3.0 license.
 
+> **[What's new in 1.1](Novita-1.1-en)**
+
 > *The story of this program will be written by you: with your projects, your ideas, your ingenuity, your discoveries and your certainties.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D structure"></a><br><sub>3D structure</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Patterns"></a><br><sub>Patterns</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith chart"></a><br><sub>Smith chart</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Noise, G/T and stacking"></a><br><sub>Noise, G/T and stacking</sub></td></tr></table>

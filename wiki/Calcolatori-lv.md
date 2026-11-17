@@ -19,3 +19,5 @@ Ja modelis ir tuvinājums (piemēram, vadi ļoti tuvu zemei), to pasaka dzeltens
 - **Līnijas un transformatori**: RG kabeļi un 50 un 75 omu kabeļu tabula, pretestības maiņa ar kabeļa gabalu, dzelzs pulvera un ferīta toroīdi, baluni un ununi.
 
 Katras lapas avoti ir norādīti zem datiem un cilnē Pateicības; ja avoti nesaskan, atšķirīgie izmēri parādīti blakus.
+
+> 1.1: [Jaunumi 1.1 versijā](Novita-1.1-lv).

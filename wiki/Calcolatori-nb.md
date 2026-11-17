@@ -19,3 +19,5 @@ Når modellen er en tilnærming (for eksempel tråder svært nær bakken), sier 
 - **Linjer og transformatorer**: RG-kabler og kabeltabell for 50 og 75 ohm, impedansendring med et kabelstykke, ringkjerner av jernpulver og ferritt, baluner og ununer.
 
 Kildene til hvert ark står under dataene og i fanen Takk; der kildene er uenige, vises de avvikende målene side om side.
+
+> 1.1: [Nytt i 1.1](Novita-1.1-nb).

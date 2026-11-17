@@ -4,6 +4,8 @@
 
 **Simulator ng wire antenna na batay sa NEC-2** para sa Windows, Linux at macOS. Gawa ni Costantino Cerrotta **IC8TEM**. Lisensya GPL-3.0.
 
+> **[Bago sa 1.1](Novita-1.1-tl)**
+
 > *Ang kasaysayan ng programang ito ay kayo ang susulat: sa inyong mga proyekto, sa inyong mga ideya, sa inyong talino, sa inyong mga tuklas at sa inyong mga katiyakan.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D na istruktura"></a><br><sub>3D na istruktura</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Mga diagram"></a><br><sub>Mga diagram</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Smith chart"></a><br><sub>Smith chart</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Ingay, G/T at stack"></a><br><sub>Ingay, G/T at stack</sub></td></tr></table>

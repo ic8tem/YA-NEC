@@ -19,3 +19,5 @@ Kapag tinatayang model lang ito (halimbawa, wire na napakalapit sa lupa), sinasa
 - **Mga linya at transformer**: RG cable at talahanayan ng cable na 50 at 75 ohm, pagbabago ng impedance gamit ang piraso ng cable, toroid na iron powder at ferrite, balun at unun.
 
 Nakasulat ang mga sanggunian ng bawat sheet sa ilalim ng datos at sa tab na Pasasalamat; kapag hindi nagkakasundo ang mga sanggunian, magkatabing ipinapakita ang magkakaibang sukat.
+
+> 1.1: [Bago sa 1.1](Novita-1.1-tl).

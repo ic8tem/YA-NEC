@@ -4,6 +4,8 @@
 
 **Symulator anten drutowych oparty na NEC-2** dla Windows, Linux i macOS. Autor: Costantino Cerrotta **IC8TEM**. Licencja GPL-3.0.
 
+> **[Nowości w wersji 1.1](Novita-1.1-pl)**
+
 > *Historię tego programu napiszecie wy: swoimi projektami, pomysłami, pomysłowością, odkryciami i pewnościami.*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="Struktura 3D"></a><br><sub>Struktura 3D</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="Charakterystyki"></a><br><sub>Charakterystyki</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="Wykres Smitha"></a><br><sub>Wykres Smitha</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="Szum, G/T i zestawianie"></a><br><sub>Szum, G/T i zestawianie</sub></td></tr></table>

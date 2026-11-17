@@ -6,6 +6,8 @@
 
 **NEC-2 پر مبنی تار اینٹینا سمیولیٹر**، Windows، Linux اور macOS کے لیے۔ تیار کردہ: Costantino Cerrotta **IC8TEM**۔ لائسنس GPL-3.0۔
 
+> **[1.1 میں نیا](Novita-1.1-ur)**
+
 > *اس پروگرام کی تاریخ آپ لکھیں گے: اپنے منصوبوں سے، اپنے خیالات سے، اپنی ذہانت سے، اپنی دریافتوں سے اور اپنے یقین سے۔*
 
 <table><tr><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/struttura-3d.png" alt="3D ساخت"></a><br><sub>3D ساخت</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/diagrammi.png" alt="ڈایاگرام"></a><br><sub>ڈایاگرام</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/smith.png" alt="اسمتھ چارٹ"></a><br><sub>اسمتھ چارٹ</sub></td><td width="25%" align="center"><a href="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/screenshots/rumore-gt.png" alt="شور، G/T اور اسٹیک"></a><br><sub>شور، G/T اور اسٹیک</sub></td></tr></table>
