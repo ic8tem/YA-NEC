@@ -300,7 +300,7 @@ namespace YaNec.Engine
                     Prova(log, "cos^2: massimo della curva di Balanis", mx, 0.8290, 2e-3);
                 }
                 // 10b. distribuzione quadratica su piedistallo a -12 dB (Baars 4.8 e 4.13)
-                double C = Math.Pow(10, -12.0 / 20.0), hp, sl, et;
+                double C = Math.Pow(10, -12.0 / 20.0);
                 Parabola.ProvaApertura(x => C + (1 - C) * (1 - x * x), out hp, out sl, out et);
                 Prova(log, "quadratica -12 dB: efficienza (Baars 0,893)", et, 0.8933, 3e-3);
                 Prova(log, "quadratica -12 dB: formula di Baars 4.8", Parabola.EtaQuadraticaBaars(C), 0.8933, 1e-4);
