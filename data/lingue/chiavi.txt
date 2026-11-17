@@ -5300,3 +5300,135 @@ verticale
 mista
 polarizzazione
 Trascina per copiare il valore nelle celle sotto, sopra o di lato (come la maniglia di Excel). Ctrl+Z subito dopo annulla.
+"max" = piu' guadagno possibile; oppure un valore in dBi, es. "≥ 13,5"
+ARRL Antenna Book 24a (K9AY, K5RR, Force 12, W3DZZ, W1FBY, W6NL, N6BV, K1VR); SQ9OUB; YT1NT/VE3EA (TANT); AC6LA (XLGTa); KF2YN; VE7BQH; DG7YBN
+Accorda il condensatore (NEC)
+Aggiornamento delle linguette dopo il calcolo
+AutoEZ usa il terreno del modello EZNEC aperto
+Autotest del motore
+Autotest in corso...
+Autotest superato.
+Avviso del solaio spento (si riattiva da Impostazioni > Terreno).
+Banda nel NEC 6 m senza il 6 m nel modello: scegliere 2 o 3 elementi nella riga "6 m (50 MHz)"; il calcolo resta sul 20 m.
+Bobina oltre l'80 % del braccio: serve una bobina molto grande e la stima a linea perde precisione; usa "Porta in risonanza (NEC)".
+C accordato (NEC)
+Calcola i due casi
+Calcolatore: calcolo in tempo reale
+Calcolatore: formule (
+Calcolatore: risonanza NEC (
+Calcolatore: verifica NEC (
+Caratteri
+Collaudo completo
+Collaudo dei modelli pesanti
+Collaudo dei modelli sensibili
+Colori della finestra: i 18 schemi comuni ai programmi di IC8TEM (Chiaro, Notte, Nero, otto pastelli, Scia meteorica, i temi di IP-TRX-CTRL, Blu, Viola, Verde). Si salva in config.ini.
+Con E vincolata le caselle B, C e D (e A, se non e' fissa) non si usano: le ricalcola il NEC.
+Confronto d'archivio con EZNEC
+Diagramma 3D (campo lontano)
+Dipolo piu' corto del 40 % della grandezza piena: banda stretta e resistenza di radiazione bassa, le perdite della bobina contano molto.
+Disegno della struttura 3D (un fotogramma)
+Divisione per zero
+Due bande: trappole LC parallele (W3DZZ). Singola banda: dipolo accorciato con una bobina per braccio.
+Due elementi per banda: radiatori multibanda (bacchette con trappole e tubi rastremati, manica aperta o radiatori XR-5; bande da 80 a 4 m) e, per ogni banda, un riflettore (dietro) o un direttore (davanti). Lobo verso x positivo.
+E vincolata: calcolo NEC di B, C e D in corso (qualche secondo); intanto la forma di MOXGEN scalata sulla profondita'
+Elementi a gradini contro EZNEC
+Elemento simmetrico inserito nella tabella dei Fili: "Applica e ricalcola" lo mette nel modello.
+Elevazione voluta del massimo in gradi, es. "15" (si calcola il diagramma completo alla frequenza principale)
+Elica: esito anticipato
+Esempi Yagi 144 MHz (MMANA)
+Esportazione dei calcolatori per EZNEC
+F/B accettato in dB, es. "≥ 22 dB"
+Feed a theta*
+Fonti: ARRL Antenna Book (antenne corte caricate); Buchanan W3DZZ, QST 1955 (stesso modello a linea, li' risolto per il tratto esterno).
+Forma ricalcolata (NEC)
+Four-square.nec
+Freq (MHz)
+I4GBZ (11 el), Rainer Bertelsmeier DJ9BV (BVO2-3WL, 10 el), Martin Steyer DK7ZB (7 el EME), Makoto Kasahara JN1GLB (hexbeam 6 bande)
+Il 6 m del modello di JN1GLB, sotto il 10 m: 2 elementi (riflettore e alimentato) o 3 elementi (con il direttore).
+Il braccio (
+Impedenza voluta, es. "28 +j0" o "Z0 +j0" (Z0 della barra in alto)
+Inserisce un filo diritto centrato sul boom: X, lunghezza totale, quota, raggio e segmenti; Y1 = -L/2, Y2 = +L/2.
+La banda di cui il motore calcola impedenza e diagramma (il modello contiene tutte le bande scelte).
+La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.
+Lettura del modello
+Lingua dell'interfaccia (37 lingue). Le scritte non ancora tradotte restano in italiano. Si salva in config.ini.
+Loop: esito anticipato
+Luis Mansutti IV3PRK
+Manica aperta: elementi piu' vicini di 3 diametri (NEC poco affidabile)
+Meta' del dipolo, dal centro alla punta. Deve essere piu' corta di un quarto d'onda: la bobina allunga elettricamente il braccio.
+MiniNec ground
+Modelli MMANA forniti da IC8TEM e distribuiti tra gli esempi di YA-NEC, nel formato originale dentro il .yanec.
+Modelli NEC, MMANA, AutoEZ, EZNEC, YO, AO
+Motore: fattorizzazione LU
+Motore: riempimento della matrice
+Moxon vincolato
+Nota del manuale sulle Yagi multibanda dai 28 MHz in su; metodo della linguetta Rumore/GT/Stack; temperature di riferimento delle tabelle G/T di VE7BQH (vecchio 200 K / 1000 K come TANT, nuovo 290 K con terreno 1600 / 5400 / 14 550 K; 432 MHz 20 K / 350 K da DG7YBN, Dubus 2/2012).
+Parabola: tagli E e H del feed
+Partenza: riflettore 0,51 lambda a 0,15 lambda; direttore 0,45 lambda a 0,10 lambda.
+Per le pubblicazioni gratuite sul suo sito (iv3prk.it): antenne riceventi, misure e modelli che YA-NEC usa nella linguetta Antenne riceventi e nei confronti di RDF.
+Perdita della bobina: R = X / Q. Bobine in aria ben fatte 200-400.
+Prendi i dati dal modello
+Preparazione del modello a video
+Profondita' vincolata (dal radiatore al riflettore). Con E scritta il programma ricalcola B, C e D (e A, se non e' fissa) con il NEC.
+Punto in cui la corrente deve essere minima, notazione MMANA: w4c (filo 4, centro), w4b, w4e, w4:7
+ROS accettato, es. "≤ 1,3": sotto la soglia l'obiettivo e' raggiunto
+Reattanza accettata in ohm, es. "≤ 5" ("-" = nessuna soglia: piu' vicino a zero e' meglio)
+Riempimento annullato.
+Ringraziamenti
+Risonanza
+Rumore e G/T: integrazione
+Rumore/GT/Stack: calcolo dello stack
+Rumore/GT/Stack: integrazione dello stack
+Rurale / residenziale / citta': cielo galattico medio e rumore artificiale dell'ambiente (ITU-R P.372). VE7BQH vecchio (preimpostato in TANT): 144 MHz cielo 200 K e terreno 1000 K; 432 MHz 20 K e 350 K; da 1296 MHz 10 K e 290 K. VE7BQH nuovo (144 MHz): cielo 290 K, terreno 1600 / 5400 / 14 550 K. Le tabelle G/T di VE7BQH sono calcolate a 30 gradi di elevazione.
+Salvataggio del modello
+Seleziona prima una cella della tabella dei fili, poi il nome della variabile.
+Semiangolo
+Semiangolo da illuminare theta*
+Si': A (scritta o di MOXGEN) ed E restano fisse e il NEC ricalcola solo B, C e D.
+Sweep in frequenza
+Tabella del boom copiata.
+Tabella delle staffe copiata.
+Taratura di Leeson
+VE7BQH nuovo, citta'
+VE7BQH nuovo, residenziale
+VE7BQH nuovo, rurale
+VE7BQH vecchio (TANT)
+Valgono numeri, variabili e formule (es. Lunghezza = LD2, X = XD2). Con una riga selezionata i campi partono dai suoi valori. Il filo va nella tabella: "Applica e ricalcola" lo mette nel modello.
+Varianti vicino al terreno contro EZNEC
+Verifica NEC: con il C di formula la loop e' vicina alla risonanza ma, con Q di migliaia, pochi decimi di pF spostano Z, come nella realta': "Accorda il condensatore (NEC)" trova il C esatto del modello (dalla 1.0.7).
+bobina di carico: ARRL Antenna Book, antenne corte caricate (stesso modello a linea)
+braccio gia' lungo un quarto d'onda
+carico su tutti i fili
+centro = origine
+centro = punto scelto
+centro → bobina (
+confronto con EZNEC
+confronto d'archivio con EZNEC
+dipolo-direttore
+elementi a gradini contro EZNEC
+elementi a gradini per EZNEC
+esportazione per EZNEC
+fili non collineari
+fissa (vincolo)
+fissa, con A fissa
+interfaccia grafica
+lunghezza nulla
+modelli degli autori, citati
+modelli pesanti
+modelli sensibili
+nessuna variabile
+numero negativo
+paralleli che si toccano
+piano del terreno
+prova della Butternut
+prove dell'interfaccia
+pubblicazioni gratuite dell'autore, citate
+punto-punto
+rame 5,8E7, alluminio 3,5E7 S/m.
+riflettore-dipolo
+solaio in calcestruzzo
+sotto il terreno
+taratura di Leeson sugli elementi a gradini
+tutti anelli
+varianti vicino al terreno contro EZNEC
+varianti vicino al terreno per EZNEC
