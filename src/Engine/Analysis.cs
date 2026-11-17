@@ -419,9 +419,23 @@ namespace YaNec.Engine
                     sp.Swr = Swr(sp.Z, model.Z0);
                     sp.Efficiency = e.InputPower > 0 ? 100.0 * (e.InputPower - e.StructureLoss) / e.InputPower : 0;
                     sp.GainFwd = e.Gain(thetaFwd, phiFwd).GainTotal;
-                    sp.FrontBack = sp.GainFwd - e.Gain(thetaFwd, Norm360(phiFwd + 180)).GainTotal;
+                    // 1.0.17 (IC8TEM 17/11/2026 18:44, correzione accettata): con il fascio sull'asse Z (theta < 1 o > 179 gradi, spazio libero)
+                    // la direzione a phi + 180 coincide con il davanti e il F/B valeva sempre 0: il dietro diventa la direzione opposta (theta 180 - theta)
+                    // e il F/R il peggiore dell'emisfero opposto. Negli altri casi resta come prima (stessa elevazione, azimut + 180).
+                    bool asse = (thetaFwd < 1 || thetaFwd > 179) && !e.HasGround;
                     double worst = -1e9;
-                    for (int k = 90; k <= 270; k += 2) worst = Math.Max(worst, e.Gain(thetaFwd, Norm360(phiFwd + k)).GainTotal);
+                    if (asse)
+                    {
+                        sp.FrontBack = sp.GainFwd - e.Gain(180 - thetaFwd, phiFwd).GainTotal;
+                        for (int t = 92; t <= 180; t += 4)
+                            for (int k = 0; k < 360; k += 45)
+                                worst = Math.Max(worst, e.Gain(thetaFwd < 90 ? t : 180 - t, k).GainTotal);
+                    }
+                    else
+                    {
+                        sp.FrontBack = sp.GainFwd - e.Gain(thetaFwd, Norm360(phiFwd + 180)).GainTotal;
+                        for (int k = 90; k <= 270; k += 2) worst = Math.Max(worst, e.Gain(thetaFwd, Norm360(phiFwd + k)).GainTotal);
+                    }
                     sp.FrontRear = sp.GainFwd - worst;
                     // massimo approssimato nell'intorno della direzione di riferimento
                     double gm = sp.GainFwd;
