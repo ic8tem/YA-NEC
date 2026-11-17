@@ -428,6 +428,21 @@ namespace YaNec
                         sb.AppendLine("       " + (okv ? "OK   " : "ERR  ") + rv); if (!okv) errPar.Add(rv);
                     }
                     catch (Exception ex) { errPar.Add("vento: " + ex.Message); }
+                    // 1.2.0: misure del VNA (bozzetto VHF 11): Touchstone RI / MA / DB e de-embedding del cavo (andata e ritorno)
+                    try
+                    {
+                        var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                        var t1 = Engine.MisureVna.LeggiTouchstone(new[] { "! prova", "# MHz S RI R 50", "144.0 0 0", "145.0 0.2 0.1" }, "a.s1p");
+                        var t2 = Engine.MisureVna.LeggiTouchstone(new[] { "# GHz S DB R 50", "0.1443 -20 0" }, "b.s1p");
+                        var zl = new System.Numerics.Complex[] { new System.Numerics.Complex(37, 22) };
+                        var zin = new[] { Engine.LineCalc.InputImpedance(zl[0], 50, 144.3, 0.85, 4.8, 18.4) };
+                        var back = Engine.MisureVna.TogliCavo(new[] { 144.3 }, zin, 50, 0.85, f => 4.8, 18.4);
+                        double g2 = (t2.Z[0] - 50).Magnitude / (t2.Z[0] + 50).Magnitude;
+                        bool okn = Math.Abs(t1.F[0] - 144) < 1e-12 && (t1.Z[0] - 50).Magnitude < 1e-9 && Math.Abs(g2 - 0.1) < 1e-9 && Math.Abs(t2.F[0] - 144.3) < 1e-9 && (back[0] - zl[0]).Magnitude < 1e-9;
+                        string rn = string.Format(CI0, "Misure VNA: Touchstone RI e DB letti (S11 0 -> 50 ohm, -20 dB -> |rho| {0:0.0000}); cavo tolto da 37+j22 ohm dietro 18,4 m di cavo: {1:0.000000}{2:+0.000000;-0.000000}j", g2, back[0].Real, back[0].Imaginary);
+                        sb.AppendLine("       " + (okn ? "OK   " : "ERR  ") + rn); if (!okn) errPar.Add(rn);
+                    }
+                    catch (Exception ex) { errPar.Add("misure VNA: " + ex.Message); }
                     // 1.2.0: tolleranze (bozzetto VHF 9): nomi degli elementi di una Yagi a 3 elementi; con tolleranze nulle ogni prova = nominale
                     using (Prestazioni.Misura("Autotest delle tolleranze"))
                         try

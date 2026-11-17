@@ -17,7 +17,7 @@ namespace YaNec
 {
     public partial class MainWindow
     {
-        public static readonly string[] DiagVoci = { "Diagrammi", "Tabelle", "Terreno reale", "Ricezione (RDF)", "Tolleranze" };
+        public static readonly string[] DiagVoci = { "Diagrammi", "Tabelle", "Misure VNA", "Terreno reale", "Ricezione (RDF)", "Tolleranze" };
         readonly Dictionary<string, Button> diagBtn = new Dictionary<string, Button>();
         readonly Dictionary<string, Control> diagPagine = new Dictionary<string, Control>();
         ContentControl diagCorpo;
@@ -59,7 +59,7 @@ namespace YaNec
             Control c;
             if (!diagPagine.TryGetValue(v, out c))
             {
-                c = v == "Tabelle" ? BuildTabellePage() : v == "Ricezione (RDF)" ? BuildRicezioneRdfPage() : v == "Terreno reale" ? BuildTerrenoRealePage() : v == "Tolleranze" ? BuildTolleranzePage() : new TextBlock();
+                c = v == "Tabelle" ? BuildTabellePage() : v == "Ricezione (RDF)" ? BuildRicezioneRdfPage() : v == "Terreno reale" ? BuildTerrenoRealePage() : v == "Tolleranze" ? BuildTolleranzePage() : v == "Misure VNA" ? BuildMisureVnaPage() : new TextBlock();
                 diagPagine[v] = c;
             }
             if (diagCorpo != null) diagCorpo.Content = c;
@@ -76,6 +76,7 @@ namespace YaNec
                 else if (diagVoce == "Ricezione (RDF)" && rdfAggiorna != null) rdfAggiorna(false);
                 else if (diagVoce == "Terreno reale" && terrAggiorna != null) terrAggiorna();
                 else if (diagVoce == "Tolleranze" && tollAggiorna != null) tollAggiorna();
+                else if (diagVoce == "Misure VNA" && vnaAggiorna != null) vnaAggiorna();
             }
             catch (Exception ex) { Status("Diagrammi: " + ex.Message, true); }
         }

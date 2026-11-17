@@ -15,6 +15,7 @@ namespace YaNec
         public double[] F = new double[0];
         public Complex[] Z = new Complex[0];
         public double MarkF = double.NaN;
+        public List<Tuple<Complex[], Color>> Altre = new List<Tuple<Complex[], Color>>();   // 1.2.0: curve aggiunte (misure del VNA)
         public string Title = "Carta di Smith";
         int hover = -1;
 
@@ -82,6 +83,14 @@ namespace YaNec
             }
             Draw.Text(ctx, "ROS 2", c.X + R / 3 + 3, c.Y - R / 3 - 4, 9.5, Pal.Green);
 
+            foreach (Tuple<Complex[], Color> a in Altre)
+            {
+                if (a.Item1 == null) continue;
+                IPen pa = Pal.P(a.Item2, 2);
+                using (ctx.PushGeometryClip(clip))
+                    for (int i = 1; i < a.Item1.Length; i++)
+                        ctx.DrawLine(pa, Map((a.Item1[i - 1] - Z0) / (a.Item1[i - 1] + Z0), c, R), Map((a.Item1[i] - Z0) / (a.Item1[i] + Z0), c, R));
+            }
             if (Z != null && Z.Length > 0)
             {
                 IPen pen = Pal.P(Pal.Accent, 2.2);
