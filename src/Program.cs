@@ -163,7 +163,29 @@ namespace YaNec
                     var errPar = new List<string>();
                     using (Prestazioni.Misura("Autotest della parabola"))
                         Engine.ParabolaSelfTest.Esegui(r => { sb.AppendLine("       " + r); if (r.StartsWith("ERR", StringComparison.Ordinal)) errPar.Add(r); });
-                    foreach (string e in errPar) sb.AppendLine("ERRORE parabola: " + e);
+                    // 1.0.16: biquad e doppia biquad a 2442 MHz, adattate col NEC: valori di controllo (fonti: 11-12 dBi la biquad, 13-14 la doppia)
+                    using (Prestazioni.Misura("Autotest della biquad"))
+                        foreach (int tipo in new[] { 0, 1 })
+                        {
+                            try
+                            {
+                                var bq = new Engine.CalcBiquad();
+                                bq.Par("tipo").Value = tipo;
+                                if (tipo == 1) { bq.Par("rw").Value = 132; bq.Par("rh").Value = 282; bq.Par("dist").Value = 11; bq.Par("lato").Value = 30.9; bq.Par("filo").Value = 1.5; }
+                                bq.Compute();
+                                bq.Tune(2442);
+                                var oq = bq.Compute();
+                                var rq = Engine.SimpleCalc.Solve(oq, 2442, 50);
+                                string nome = tipo == 0 ? "biquad" : "doppia biquad";
+                                string riga = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}: lato {1:0.0} mm, distanza {2:0.0} mm, Z {3:0.0} {4:+0.0;-0.0}j, ROS {5:0.00}, G {6:0.00} dBi, F/B {7:0.0} dB, {8} segmenti",
+                                    nome, bq.P("lato") * bq.Scale, bq.P("dist"), rq.Zin.Real, rq.Zin.Imaginary, rq.Swr, rq.GmaxDbi, rq.FrontBack, bq.UltimiSegmenti);
+                                bool ok = rq.Swr < 1.6 && rq.GmaxDbi > (tipo == 0 ? 9.5 : 11.5) && rq.GmaxDbi < (tipo == 0 ? 12.8 : 15.0);
+                                sb.AppendLine("       " + (ok ? "OK   " : "ERR  ") + riga);
+                                if (!ok) errPar.Add(riga);
+                            }
+                            catch (Exception ex) { errPar.Add("biquad: " + ex.Message); }
+                        }
+                    foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
                     Console.Write(sb.ToString());
