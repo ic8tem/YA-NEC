@@ -52,6 +52,7 @@ namespace YaNec
             fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
             fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
             fasCalc.Voce("looprett", "Loop rettangolare", false, null, "lati e alimentazione");
+            fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
             fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
             fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
             fasCalc.Famiglia("STRUMENTI");

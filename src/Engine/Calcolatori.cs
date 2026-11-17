@@ -93,6 +93,7 @@ namespace YaNec.Engine
             add(new CalcHexbeam(), "hexbeam", null);   // 0.4.30 (IC8TEM 14/11/2026 21:54)
             add(new CalcDelta(), "delta", null);
             add(new CalcLoopRett(), "looprett", null);
+            add(new CalcSkywire(), "skywire", null);   // 1.0.17 (bozzetto 3 approvato da IC8TEM 17/11/2026 18:28)
             add(new CalcHen(), "hen", null);
             add(new CalcDiscone(), "discone", null);
             add(new CalcFourSquare(), "4sq", null);

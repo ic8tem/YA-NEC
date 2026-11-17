@@ -212,6 +212,24 @@ namespace YaNec
                             }
                             catch (Exception ex) { errPar.Add("Big Wheel: " + ex.Message); }
                         }
+                    // 1.0.17: Loop Skywire 80 m, quadrato a 14 m, scala 450 ohm da 30 m: tutte le bande col NEC
+                    using (Prestazioni.Misura("Autotest del Loop Skywire"))
+                        try
+                        {
+                            var sk = new Engine.CalcSkywire();
+                            sk.Compute();
+                            sk.Tune(3.65);
+                            for (int k = 0; k < sk.BF.Length; k++)
+                            {
+                                string riga = string.Format(System.Globalization.CultureInfo.InvariantCulture, "Loop Skywire {0} ({1:0.000} MHz): Z {2}, ROS {3} sulla scala 450, perdita {4} dB, G {5} dBi a {6} gradi",
+                                    sk.Righe[k][0], sk.BF[k], sk.Righe[k][1], sk.Righe[k][2], sk.Righe[k][3], sk.Righe[k][4], sk.Righe[k][5]);
+                                bool okb = sk.BPerd[k] < 3 && sk.BG[k] > 2 && sk.BG[k] < 15;
+                                if (k == 0) okb &= sk.BRos[k] < 6;
+                                sb.AppendLine("       " + (okb ? "OK   " : "ERR  ") + riga);
+                                if (!okb) errPar.Add(riga);
+                            }
+                        }
+                        catch (Exception ex) { errPar.Add("Loop Skywire: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");

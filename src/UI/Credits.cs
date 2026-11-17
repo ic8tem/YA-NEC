@@ -255,6 +255,12 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "Loop orizzontale multibanda (1.0.17)",
+                Who = "D. Fischer W7FB (QST 11/1985, The Loop Skywire); K. Kleinschmidt NT0Z; S. Ford WB8IMY (QST 12/1993, The Lure of the Ladder Line); ARRL Antenna Book",
+                What = "Perimetro 1005/f piedi, quattro forme, calcolo NEC di tutte le bande con la perdita della discesa (scala o coassiale) per il ROS di ogni banda. Bozzetto approvato da IC8TEM il 17/11/2026."
+            },
+            new CreditEntry
+            {
                 Title = "Big Wheel e tre dipoli (1.0.17)",
                 Who = "W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)",
                 What = "Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026."

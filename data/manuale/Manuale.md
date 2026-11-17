@@ -479,7 +479,7 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 
 ## 15. Calcolatori
 
-Fascione largo a sinistra con le voci descritte: **Forme semplici** (Dipoli, Verticali, Loop magnetica, HB9CV, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Delta loop, Loop rettangolare, HEN, Discone), **Strumenti** (Ridimensiona antenna, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T e FT, Balun / Un-Un) e **Log-periodiche e schiere** (LPDA, Four-square, Distanze di stack DL6WU). Le voci con la freccia hanno piu' varianti, scelte con le pillole "Tipo" in alto (per esempio i dipoli: mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD).
+Fascione largo a sinistra con le voci descritte: **Forme semplici** (Dipoli, Verticali, Loop magnetica, HB9CV, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Big Wheel, Delta loop, Loop rettangolare, Loop orizzontale multibanda, HEN, Discone), **Strumenti** (Ridimensiona antenna, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T e FT, Balun / Un-Un) e **Log-periodiche e schiere** (LPDA, Four-square, Distanze di stack DL6WU). Le voci con la freccia hanno piu' varianti, scelte con le pillole "Tipo" in alto (per esempio i dipoli: mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD).
 
 Tra l'elenco dei calcolatori e la scheda c'e' un **separatore mobile**: si trascina con il mouse per allargare o stringere l'elenco; la larghezza resta finche' il programma e' aperto, il doppio clic la riporta a quella iniziale. Lo stesso separatore c'e' nelle Antenne riceventi.
 
@@ -820,6 +820,31 @@ Loop triangolare di un'onda: equilatera, schiacciata o allungata (oppure con l'a
 | Balun / alimentazione | centro del lato orizzontale / al vertice / all'angolo / lato a lambda/4 | Polarizzazione: orizzontale al centro del lato orizzontale o al vertice; verticale sul lato inclinato a lambda/4 dal centro del lato orizzontale; mista all'angolo. |
 
 Fonti: ARRL Antenna Book: perimetro 1005/f piedi = 306,3/f m; posizioni di alimentazione e polarizzazione (ARRL Antenna Book, Cebik W4RNL).
+
+**Loop orizzontale multibanda (Loop Skywire, dalla 1.0.17)**
+
+Loop di filo orizzontale, alto e grande: un'onda sulla banda piu' bassa (160, 80 o 40 m) e due, tre, quattro onde sulle altre, usato su tutte le bande con l'accordatore (D. Fischer W7FB, "The Loop Skywire", QST 11/1985). Forma quadrata come W7FB, oppure triangolo (tre sostegni), rettangolo 2:1 o cerchio (poligono di 16 lati, l'area piu' grande). Alimentazione in un angolo (W7FB) o a meta' di un lato. La nota gialla ricorda perche' serve l'accordatore: l'impedenza al loop cambia molto da banda a banda.
+
+| Dato | Unita' / scelte | Spiegazione |
+|---|---|---|
+| Banda piu' bassa | 160 / 80 / 40 | quella su cui il perimetro e' un'onda; cambiandola il perimetro torna a 1005/f piedi |
+| Forma | quadrato / triangolo / rettangolo 2:1 / cerchio (poligono) | |
+| Perimetro | m | 1005/f piedi = 306,3/f m al centro della banda piu' bassa (W7FB, ARRL) |
+| Altezza | m | sotto lambda/4 della banda bassa irradia soprattutto verso l'alto (NVIS) |
+| Diametro del filo | mm | |
+| Discesa | coassiale 50 ohm (RG-213) / scala 450 ohm / scala 600 ohm | perdite dall'abaco cavi (data/cavi.csv) |
+| Lunghezza della discesa | m | |
+| Punto di alimentazione | angolo / meta' lato | |
+
+"Calcola tutte le bande (NEC)" calcola il loop sopra il suolo medio (Sommerfeld) su ogni banda dalla piu' bassa ai 10 m: impedenza al loop, ROS sulla discesa, perdita della discesa, guadagno massimo ed elevazione. La perdita della discesa usa la formula della linea con perdite e disadattamento: potenza al carico / potenza in ingresso = (1 - |rho|^2) / (e^(2 alpha l) - |rho|^2 e^(-2 alpha l)). I riquadri con perdita oltre 3 dB sono evidenziati e il grafico mostra la perdita banda per banda.
+
+Verifica (autotest): quadrato di 83,9 m a 14 m, filo da 2 mm, scala 450 ohm da 30 m; a 3,65 MHz circa 123 -j17 ohm e 7,1 dBi (stesso modello in nec2c: 122,9 -j17,2 ohm).
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| D. Fischer W7FB, QST 11/1985 | perimetro 1005/f piedi, quadrato orizzontale alimentato in un angolo, tutte le bande con l'accordatore | W7FB scende col coassiale; la scheda lascia scegliere e mostra la perdita |
+| K. Kleinschmidt NT0Z | scala con accordatore bilanciato; con il ROS alto la scala perde molto meno del coassiale | NT0Z (Table 1) moltiplica la perdita adattata per un fattore del ROS; qui la formula esatta della linea |
+| S. Ford WB8IMY, QST 12/1993 | la linea a scala con l'accordatore per un'antenna su tante bande | |
 
 **Loop rettangolare**
 
