@@ -397,6 +397,10 @@ namespace YaNec
                             sb.AppendLine("       " + (okt ? "OK   " : "ERR  ") + r1); if (!okt) errPar.Add(r1);
                             double latL, lonL; Engine.Dem.DaLocatore("JN70CN82WE", out latL, out lonL);
                             double[,] att = { { 302, 7093 }, { 327, 10250 }, { 41, 9871 }, { 82, 15990 }, { 234, 9836 }, { 278, 7938 } };
+                            double fc1, fs1, fc5, fs5; Engine.TerrenoReale.FresnelCS(1, out fc1, out fs1); Engine.TerrenoReale.FresnelCS(5, out fc5, out fs5);
+                            bool okf = Math.Abs(fc1 - 0.7798934) < 1e-6 && Math.Abs(fs1 - 0.4382591) < 1e-6 && Math.Abs(fc5 - 0.5636312) < 1e-6 && Math.Abs(fs5 - 0.4991914) < 1e-6;
+                            string rf = string.Format(CI0, "Integrali di Fresnel: C(1) {0:0.0000000} S(1) {1:0.0000000} (Abramowitz-Stegun 0,7798934 / 0,4382591); C(5) {2:0.0000000} S(5) {3:0.0000000} (0,5636312 / 0,4991914)", fc1, fs1, fc5, fs5);
+                            sb.AppendLine("       " + (okf ? "OK   " : "ERR  ") + rf); if (!okf) errPar.Add(rf);
                             bool okd = Math.Abs(latL - 40.5508) < 0.0001 && Math.Abs(lonL - 14.2411) < 0.0001;
                             var sbd = new System.Text.StringBuilder();
                             for (int i = 0; i < 6; i++)

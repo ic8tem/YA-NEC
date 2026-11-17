@@ -53,17 +53,32 @@ namespace YaNec.Engine
             return new Complex(0.5, 0.5) * new Complex(0.5 - c, -(0.5 - s));
         }
 
-        static void FresnelCS(double x, out double c, out double s)
+        /// <summary>Integrali di Fresnel C(x), S(x): serie di potenze fino a |x| = 3, poi sviluppo asintotico (errore sotto 1e-6).</summary>
+        public static void FresnelCS(double x, out double c, out double s)
         {
-            // integrali di Fresnel C(x), S(x) per somma numerica (Simpson)
-            int n = Math.Max(200, (int)(Math.Abs(x) * 200));
-            double h = x / n, sc = 0, ss = 0;
-            for (int k = 0; k <= n; k++)
+            double ax = Math.Abs(x);
+            if (ax <= 3)
             {
-                double t = k * h, w = k == 0 || k == n ? 1 : (k % 2 == 1 ? 4 : 2);
-                sc += w * Math.Cos(Math.PI * t * t / 2); ss += w * Math.Sin(Math.PI * t * t / 2);
+                // C = sum (-1)^n (pi/2)^(2n) x^(4n+1) / ((2n)! (4n+1)),  S = sum (-1)^n (pi/2)^(2n+1) x^(4n+3) / ((2n+1)! (4n+3))
+                double z = Math.PI / 2 * ax * ax, t = ax, sc = 0, ss = 0;   // t = z^k x / k!
+                for (int k = 0; k < 80; k++)
+                {
+                    double term = t / (2 * k + 1);
+                    if ((k & 1) == 0) { if ((k & 2) == 0) sc += term; else sc -= term; }
+                    else { if ((k & 2) == 0) ss += term; else ss -= term; }
+                    t *= z / (k + 1);
+                    if (t < 1e-17 && k > 10) break;
+                }
+                c = sc; s = ss;
             }
-            c = sc * h / 3; s = ss * h / 3;
+            else
+            {
+                double px2 = Math.PI * ax * ax, u = 1 / (px2 * px2 / (ax * ax * ax * ax) * ax * ax * ax * ax);   // 1/(pi x^2)^2
+                double f = (1 - 3 * u + 105 * u * u) / (Math.PI * ax), g = (1 - 15 * u + 945 * u * u) / (Math.PI * px2 * ax);
+                double a = px2 / 2, sn = Math.Sin(a), cs = Math.Cos(a);
+                c = 0.5 + f * sn - g * cs; s = 0.5 - f * cs - g * sn;
+            }
+            if (x < 0) { c = -c; s = -s; }
         }
 
         /// <summary>Campo (theta, phi) diretto del NEC nella direzione di elevazione el (gradi, anche negativa) e azimut phi.</summary>
@@ -153,7 +168,22 @@ namespace YaNec.Engine
                         if (t <= 0) continue;
                         double px = ax + t * ca, pz = az + t * sa;
                         double u = ((px - x1) * tx + (pz - z1) * tz) / (tx * tx + tz * tz);
-                        if (u < 0 || u > 1 || px <= 0) continue;
+                        // 1.2.0: il tratto riflette solo la parte della prima zona di Fresnel che copre: fattore = integrale di Fresnel tra i suoi
+                        // estremi (riferiti al punto speculare) diviso per l'integrale su tutto il piano. Il primo tratto continua sotto l'antenna e
+                        // l'ultimo oltre il profilo; su un profilo piatto la somma dei fattori vale 1 (riflessione piena, come il NEC).
+                        double lt = Math.Sqrt(tx * tx + tz * tz), r1 = t;
+                        double kz = Math.Sin(psi) * Math.Sqrt(2 / (lam * Math.Max(r1, 1e-3)));
+                        double nu1 = i == 0 ? double.NegativeInfinity : (0 - u) * lt * kz, nu2 = i + 2 == m ? double.PositiveInfinity : (1 - u) * lt * kz;
+                        if (nu2 <= nu1) continue;
+                        double c1, s1, c2, s2;
+                        if (double.IsNegativeInfinity(nu1)) { c1 = -0.5; s1 = -0.5; } else FresnelCS(nu1, out c1, out s1);
+                        if (double.IsPositiveInfinity(nu2)) { c2 = 0.5; s2 = 0.5; } else FresnelCS(nu2, out c2, out s2);
+                        Complex zona = new Complex(c2 - c1, -(s2 - s1)) / new Complex(1, -1);
+                        if (zona.Magnitude < 1e-4) continue;
+                        // punto del tratto usato per la visibilita': il punto speculare riportato dentro il tratto
+                        double uc = Math.Max(0, Math.Min(1, u));
+                        px = x1 + uc * tx; pz = z1 + uc * tz;
+                        if (px <= 0) px = Math.Max(1e-3, x2 * 1e-3);
                         // il tratto vede l'antenna e il cielo nella direzione alfa?
                         bool libero = true;
                         for (int j = 1; j < m && libero; j++)
@@ -174,11 +204,11 @@ namespace YaNec.Engine
                         double fase = k * (ox * ca + oz * sa);
                         double beta = (2 * sig - a) * 180 / Math.PI;
                         Complex rth, rph; diretto(beta, phiL, out rth, out rph);
-                        Complex e = new Complex(Math.Cos(fase), Math.Sin(fase)) * fat;
+                        Complex e = new Complex(Math.Cos(fase), Math.Sin(fase)) * fat * zona;
                         // come ffld del NEC: componente orizzontale per rrh, verticale per -rrv
                         ph += rph * gh * e;
                         th += -rth * gv * e;
-                        if (lato == 0 && q > 0 && double.IsNaN(r.RiflessioneKm) && el >= 0.5) { r.RiflessioneKm = px / 1000; r.RiflessioneMare = mare; }
+                        if (lato == 0 && q > 0 && double.IsNaN(r.RiflessioneKm) && el >= 0.5 && u >= 0 && u <= 1) { r.RiflessioneKm = px / 1000; r.RiflessioneMare = mare; }
                     }
                     double gl = gcon * ((th * Complex.Conjugate(th)).Real + (ph * Complex.Conjugate(ph)).Real);
                     double gf = gcon * ((dth * Complex.Conjugate(dth)).Real + (dph * Complex.Conjugate(dph)).Real);

@@ -64,7 +64,7 @@ namespace YaNec
             try { if (File.Exists(FileTerreno)) { string s0 = File.ReadAllText(FileTerreno).Trim(); if (s0.Length >= 4) locIniz = s0; } } catch { }
 
             // ---------------- sinistra ----------------
-            StackPanel sx = new StackPanel { Width = 222, Spacing = 2 };
+            StackPanel sx = new StackPanel { Width = 236, Spacing = 2 };
             Func<string, TextBlock> fam = s => new TextBlock { Text = s, FontWeight = FontWeight.Bold, FontSize = 13, Foreground = new SolidColorBrush(Fascione.FamigliaTesto), Margin = new Thickness(2, 10, 0, 4) };
             sx.Children.Add(fam("POSIZIONE DELL'ANTENNA"));
             TextBox tLoc = Tb(locIniz, 120);
@@ -109,7 +109,7 @@ namespace YaNec
             sx.Children.Add(rigaAz);
 
             Fascione fDir = new Fascione(); fDir.Famiglia("DIREZIONE DI TRAFFICO");
-            for (int i = 0; i < Dem.DirezioniTraffico.Length; i++) fDir.Voce("d" + i, Dem.DirezioniTraffico[i].Nome);
+            for (int i = 0; i < Dem.DirezioniTraffico.Length; i++) { Border bv = fDir.Voce("d" + i, Dem.DirezioniTraffico[i].Nome); if (bv.Child is TextBlock tv0) tv0.FontSize = 13; bv.Padding = new Thickness(10, 3); }
             sx.Children.Add(fDir);
             sx.Children.Add(new TextBlock { Text = "Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).", FontSize = 11.5, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(2, 2, 0, 0) });
 
@@ -147,11 +147,11 @@ namespace YaNec
 
             // ---------------- centro ----------------
             TextBlock titProf = new TextBlock { FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), TextWrapping = TextWrapping.Wrap };
-            Disegno dProf = new Disegno { Height = 250 };
+            Disegno dProf = new Disegno { Height = 205 };
             StackPanel cProf = new StackPanel { Spacing = 4 }; cProf.Children.Add(titProf); cProf.Children.Add(dProf);
             Border pProf = new Border { Background = Pal.B(Pal.Panel), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(8), Padding = new Thickness(12, 10), Margin = new Thickness(0, 0, 0, 10), Child = cProf };
             TextBlock titLobo = new TextBlock { FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), TextWrapping = TextWrapping.Wrap };
-            Disegno dLobo = new Disegno { Height = 430 };
+            Disegno dLobo = new Disegno { Height = 380 };
             LineChart gCart = new LineChart { Height = 380, XLabel = "elevazione (gradi)", YLabel = "dBi", EmptyText = "premi Calcola", IsVisible = false };
             Disegno dRosa = new Disegno { Height = 320, IsVisible = false };
             StackPanel cLobo = new StackPanel { Spacing = 4 }; cLobo.Children.Add(titLobo); cLobo.Children.Add(dLobo); cLobo.Children.Add(gCart); cLobo.Children.Add(dRosa);
