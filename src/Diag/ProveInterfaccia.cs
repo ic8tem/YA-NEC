@@ -300,7 +300,8 @@ namespace YaNec
             PrTitolo("N5. Antenne riceventi > BOG con il modello approssimato (0.4.18)");
             try
             {
-                SelectTab(IndiceLinguetta("Antenne riceventi"));
+                SelectTab(IndiceLinguetta("Calcolatori"));
+                ApriFamigliaCalc("Antenne riceventi");
                 await Task.Delay(400);
                 fasRx.Select("bog");
                 await Task.Delay(800);
@@ -554,8 +555,8 @@ namespace YaNec
                     }
                     PrPasso("calcolatori delle forme semplici e four-square", "pannelli aperti senza eccezioni", "loop magnetica, dipoli, delta, Moxon, rete LC, four-square", true);
                 }
-                int tr = IndiceLinguetta("Antenne riceventi");
-                if (tr >= 0) { SelectTab(tr); await Task.Delay(500); PrImmagine("antenne_riceventi"); }
+                int tr = IndiceLinguetta("Calcolatori");
+                if (tr >= 0) { SelectTab(tr); ApriFamigliaCalc("Antenne riceventi"); await Task.Delay(500); PrImmagine("antenne_riceventi"); ApriFamigliaCalc("HF"); }
             }
 
             // 13 - banda, terreno, schemi
@@ -734,7 +735,7 @@ namespace YaNec
             PrPasso("modello per la prova delle linguette", "10el DK7ZB calcolato", okA ? "calcolato" : "non calcolato", okA);
             Dictionary<string, Fascione> sotto = new Dictionary<string, Fascione>
             {
-                { "Calcolatori", fasCalc }, { "Antenne riceventi", fasRx }
+                { "Calcolatori", fasCalc }
             };
             int nTab = 0, nSub = 0, errTab = 0;
             for (int i = 0; i < tabs.Count; i++)
@@ -756,10 +757,15 @@ namespace YaNec
                 PrPasso("linguetta \"" + nome + "\"", "si apre senza errori", ok ? "aperta" : esito, ok);
                 PrImmagine("L_" + Pulito(nome));
                 await ProvaPagina(nome);
-                Fascione f;
-                if (!sotto.TryGetValue(nome, out f) || f == null) continue;
+                Fascione f0;
+                if (!sotto.TryGetValue(nome, out f0) || f0 == null) continue;
+                // 1.1.0: nei Calcolatori anche la famiglia "Antenne riceventi" (ex linguetta), con il suo fascione
+                List<Fascione> elenco = new List<Fascione> { f0 };
+                if (nome == "Calcolatori") { ApriFamigliaCalc("Antenne riceventi"); if (fasRx != null) elenco.Add(fasRx); ApriFamigliaCalc("HF"); }
+                foreach (Fascione f in elenco)
                 foreach (string k in f.Chiavi())
                 {
+                    if (f == fasRx) ApriFamigliaCalc("Antenne riceventi");
                     string es = "";
                     bool ok2 = true;
                     try

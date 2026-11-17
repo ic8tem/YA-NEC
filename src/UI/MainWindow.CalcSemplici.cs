@@ -27,6 +27,29 @@ namespace YaNec
     {
         Fascione fasCalc;
         ContentControl hostCalc;
+        TextBlock calcTitolo;
+        ContentControl calcCorpo;
+        Control calcGriglia, calcRx;
+        string calcFam = "HF";
+        readonly Dictionary<string, Button> calcFamBtn = new Dictionary<string, Button>();
+        readonly Dictionary<string, string> calcUltima = new Dictionary<string, string>();
+        /// <summary>1.1.0: famiglie dei Calcolatori e loro voci, nell'ordine del bozzetto approvato.</summary>
+        public static readonly string[] CalcFamiglie = { "HF", "VHF", "Antenne riceventi", "Strumenti", "Dischi e illuminatori", "2,4 GHz" };
+        static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
+        {
+            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone" } },
+            { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "eggbeater", "qfh" } },
+            { "Antenne riceventi", new string[0] },
+            { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
+            { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
+            { "2,4 GHz", new[] { "pcb24" } },
+        };
+        /// <summary>Famiglia di una voce dei Calcolatori (null se non c'e').</summary>
+        public static string FamigliaDi(string voce)
+        {
+            foreach (KeyValuePair<string, string[]> kv in CalcVoci) if (Array.IndexOf(kv.Value, voce) >= 0) return kv.Key;
+            return null;
+        }
         readonly Dictionary<string, Control> calcPages = new Dictionary<string, Control>();
         List<SimpleCalc> simpleCalcs;
 
@@ -36,13 +59,17 @@ namespace YaNec
             try { CalcCavi.Lista = Cables.Load(Path.Combine(AppPaths.DataDir, "cavi.csv")); } catch { }
             calcPages.Clear();
             fasCalc = new Fascione();
-            fasCalc.Children.Add(new TextBlock { Text = "Calcolatori", FontSize = 18, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(2, 0, 0, 2) });
-            fasCalc.Famiglia("FORME SEMPLICI");
+            // 1.1.0 (bozzetto approvato da IC8TEM il 17/11/2026 19:17): le famiglie stanno in una fascia orizzontale sotto le linguette;
+            // il fascione mostra solo le voci della famiglia scelta. "Forme semplici" diventa "HF"; la linguetta "Antenne riceventi" diventa
+            // una famiglia; "Distanze di stack DL6WU" passa alla sopralinguetta Rumore/GT/Stack.
+            calcTitolo = new TextBlock { Text = "HF", FontSize = 18, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(2, 0, 0, 6) };
+            fasCalc.Children.Add(calcTitolo);
             fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD", true);
             fasCalc.Voce("dipmb", "Dipolo multibanda", false, null, "bacchette parallele, manica aperta, radiatori XR-5");   // 0.4.30
             fasCalc.Voce("yagimb", "Yagi multibanda", false, null, "HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda");   // 0.4.30
             fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole", true);
             fasCalc.Voce("vertmb", "Verticale multibanda (DX Commander)", false, null, "elementi a ventaglio, terreno suo, verifica per banda");   // 0.4.30
+            fasCalc.Voce("4sq", "Four-square", false, null, "quattro verticali sfasati (ON4UN)");
             fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
             fasCalc.Voce("looprett", "Loop rettangolare", false, null, "lati e alimentazione");
             fasCalc.Voce("loopmag", "Loop magnetica", false, null, "piccolo loop con condensatore");
@@ -50,13 +77,18 @@ namespace YaNec
             fasCalc.Voce("eh", "Antenna EH", false, null, "con avviso sulle prestazioni", true);
             fasCalc.Voce("moxon", "Moxon", false, null, "gia' approvato (Cebik / DK7ZB)");
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
-            fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
             fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
-            fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
             fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
-            fasCalc.Famiglia("VHF");   // 1.0.17 (IC8TEM 17/11/2026 19:07: HB9CV spostata in VHF)
             fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
-            fasCalc.Famiglia("STRUMENTI");
+            fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
+            fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
+            fasCalc.Voce("lpda", "Log-periodica (LPDA)", false, null, "metodo Carrel, linea incrociata");
+            fasCalc.Voce("yagidl6wu", "Yagi lunga DL6WU", false, null, "VHF e UHF: progetto DL6WU, quattro alimentazioni, ottimizzazione a passi");   // 0.5.0
+            fasCalc.Voce("quagi", "Quagi e quad a piu' elementi", false, null, "N6NB e Cebik, ottimizzazione a passi");   // 0.5.0
+            fasCalc.Voce("loopyagi", "Loop Yagi 1296 MHz", false, null, "tutta ad anelli: N6CA (ARRL) e G3JVL, ottimizzazione a passi");   // 0.5.0
+            fasCalc.Voce("boom", "Correzione del boom", false, null, "DL6WU/G3SEK, SM5BSZ, DG7YBN");
+            fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
+            fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
             fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "scala un modello a un'altra frequenza");
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
             fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");
@@ -65,25 +97,12 @@ namespace YaNec
             fasCalc.Voce("toroidiT", "Toroidi iron powder (T)", false, null, "AL, spire, banda", true);
             fasCalc.Voce("toroidiFT", "Toroidi ferrite (FT)", false, null, "AL, spire, impedenza", true);
             fasCalc.Voce("balun", "Balun / Un-Un", false, null, "rapporti e avvolgimenti", true);
-            fasCalc.Famiglia("LOG-PERIODICHE E SCHIERE");
-            fasCalc.Voce("lpda", "Log-periodica (LPDA)", false, null, "metodo Carrel, linea incrociata");
-            fasCalc.Voce("4sq", "Four-square", false, null, "quattro verticali sfasati (ON4UN)");
-            fasCalc.Voce("yagidl6wu", "Yagi lunga DL6WU", false, null, "VHF e UHF: progetto DL6WU, quattro alimentazioni, ottimizzazione a passi");   // 0.5.0
-            fasCalc.Voce("quagi", "Quagi e quad a piu' elementi", false, null, "N6NB e Cebik, ottimizzazione a passi");   // 0.5.0
-            fasCalc.Voce("loopyagi", "Loop Yagi 1296 MHz", false, null, "tutta ad anelli: N6CA (ARRL) e G3JVL, ottimizzazione a passi");   // 0.5.0
-            fasCalc.Voce("stackdl6wu", "Distanze di stack DL6WU", false, null, "affiancate e sovrapposte");
-            fasCalc.Voce("boom", "Correzione del boom", false, null, "DL6WU/G3SEK, SM5BSZ, DG7YBN");
             fasCalc.Voce("staffe", "Staffe di fissaggio", false, null, "piastre al boom: compensazione e modello (ARRL, Leeson)");   // 0.4.30
-            fasCalc.Famiglia("POLARIZZAZIONE CIRCOLARE (SATELLITI)");
-            fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
-            fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
-            fasCalc.Famiglia("2,4 GHZ COMMERCIALE");   // 0.4.30, bozzetto 2 approvato il 14/11/2026
-            fasCalc.Voce("pcb24", "Antenne su PCB", false, null, "IFA, MIFA, dipolo, Yagi, Big Wheel; disegno 1:1");
-            fasCalc.Voce("biquad", "Biquad e doppia biquad", false, null, "1296-5760 MHz, riflettore pieno o a rete, feed per parabola");   // 1.0.16
-            fasCalc.Famiglia("PARABOLE");
             fasCalc.Voce("parabola", "Parabola primo fuoco", false, null, "1296 / 2320 / 5760 / 10368 MHz, meccanica, lobi, EME");
-            fasCalc.Voce("trombe", "Trombe e illuminatori", false, null, "coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC");   // 0.4.19
             fasCalc.Voce("offset", "Parabola offset", false, null, "geometria, dime, illuminazione asimmetrica, lobi H e V, EME");
+            fasCalc.Voce("trombe", "Trombe e illuminatori", false, null, "coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC");   // 0.4.19
+            fasCalc.Voce("biquad", "Biquad e doppia biquad", false, null, "1296-5760 MHz, riflettore pieno o a rete, feed per parabola");   // 1.0.16
+            fasCalc.Voce("pcb24", "Antenne su PCB", false, null, "IFA, MIFA, dipolo, Yagi, Big Wheel; disegno 1:1");
             hostCalc = new ContentControl();
             fasCalc.Selected += k =>
             {
@@ -95,10 +114,58 @@ namespace YaNec
                 }
                 hostCalc.Content = c;
             };
+            fasCalc.Selected += k => { string f = FamigliaDi(k); if (f == null) return; calcUltima[f] = k; if (f != calcFam && calcCorpo != null) ApriFamigliaCalc(f, k); };
             // il fascione puo' arrivare al 30 % (IC8TEM): qui il 26 %
-            Grid page = Fascione.PaginaLarga(fasCalc, hostCalc, 26);
-            fasCalc.Select("loopmag");
-            return page;
+            calcGriglia = Fascione.PaginaLarga(fasCalc, hostCalc, 26);
+            // fascia delle famiglie: colore diverso dalle linguette, famiglia scelta in arancio (bozzetto approvato)
+            WrapPanel fp = new WrapPanel { Orientation = Orientation.Horizontal };
+            foreach (string fn in CalcFamiglie)
+            {
+                string nome = fn;
+                Button b = new Button { Content = nome, Tag = "famiglia:" + nome, Padding = new Thickness(14, 4), Margin = new Thickness(2, 2), CornerRadius = new CornerRadius(14), BorderThickness = new Thickness(1) };
+                b.Click += (s2, e2) => ApriFamigliaCalc(nome);
+                calcFamBtn[nome] = b;
+                fp.Children.Add(b);
+            }
+            Border fascia = new Border { Background = new SolidColorBrush(Color.Parse("#2F4A66")), BorderBrush = Pal.B(Pal.Accent), BorderThickness = new Thickness(0, 2, 0, 0), Padding = new Thickness(8, 4), Child = fp };
+            calcCorpo = new ContentControl();
+            DockPanel dp = new DockPanel();
+            DockPanel.SetDock(fascia, Dock.Top);
+            dp.Children.Add(fascia);
+            dp.Children.Add(calcCorpo);
+            calcUltima["HF"] = "loopmag";
+            ApriFamigliaCalc("HF");
+            return dp;
+        }
+
+        /// <summary>1.1.0: apre una famiglia dei Calcolatori (e una voce, se data). "Antenne riceventi" mostra la pagina delle riceventi.</summary>
+        public void ApriFamigliaCalc(string fam, string voce = null)
+        {
+            if (!CalcVoci.ContainsKey(fam)) return;
+            calcFam = fam;
+            foreach (KeyValuePair<string, Button> kv in calcFamBtn)
+            {
+                bool on = kv.Key == fam;
+                kv.Value.Background = new SolidColorBrush(on ? Color.Parse("#E08A00") : Color.Parse("#2F4A66"));
+                kv.Value.BorderBrush = new SolidColorBrush(on ? Color.Parse("#E08A00") : Color.Parse("#4A6787"));
+                kv.Value.Foreground = new SolidColorBrush(Color.Parse(on ? "#FFFFFF" : "#E6EDF5"));
+                kv.Value.FontWeight = on ? FontWeight.SemiBold : FontWeight.Normal;
+            }
+            if (fam == "Antenne riceventi")
+            {
+                if (calcRx == null) calcRx = BuildRiceventiPage();
+                calcCorpo.Content = calcRx;
+                if (voce != null && fasRx != null) fasRx.Select(voce);
+                return;
+            }
+            string[] l = CalcVoci[fam];
+            foreach (Control c in fasCalc.Children)
+                if (c is Border bv && bv.Tag is string k) bv.IsVisible = Array.IndexOf(l, k) >= 0;
+            calcTitolo.Text = fam;
+            calcCorpo.Content = calcGriglia;
+            string scelta = voce;
+            if (scelta == null || Array.IndexOf(l, scelta) < 0) { string u; scelta = calcUltima.TryGetValue(fam, out u) ? u : l[0]; }
+            if (fasCalc.Current != scelta) fasCalc.Select(scelta);
         }
 
         // voce del fascione con piu' varianti: pillole "Tipo" in alto e il calcolatore sotto
