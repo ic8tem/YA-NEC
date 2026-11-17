@@ -443,6 +443,18 @@ namespace YaNec
                         sb.AppendLine("       " + (okn ? "OK   " : "ERR  ") + rn); if (!okn) errPar.Add(rn);
                     }
                     catch (Exception ex) { errPar.Add("misure VNA: " + ex.Message); }
+                    // 1.2.0: divisori (bozzetto VHF 5): 4 antenne da 50 ohm su 50 ohm -> Z0 25 ohm; tubo quadro 20 mm -> d 14,2 mm; lambda/4 a 144,2 MHz 519,7 mm
+                    try
+                    {
+                        var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                        double zq = Engine.Divisori.Z0Richiesta(50, 50, 4), dq = Engine.Divisori.DQuadro(zq, 20, 1), lq = Engine.Divisori.QuartoMm(144.2, 1);
+                        double zback = Engine.Divisori.Z0Quadro(20, dq, 1);
+                        var zi = Engine.Divisori.Zin(12.5, 25, 144.2, 144.2);
+                        bool okd2 = Math.Abs(zq - 25) < 1e-9 && Math.Abs(dq - 14.2) < 0.05 && Math.Abs(lq - 519.75) < 0.05 && Math.Abs(zback - 25) < 1e-9 && (zi - 50).Magnitude < 1e-6;
+                        string rd2 = string.Format(CI0, "Divisore lambda/4 a 4 vie (50 ohm): Z0 {0:0.0} ohm, conduttore nel tubo quadro da 20 mm {1:0.00} mm (bozzetto 14,2), lambda/4 in aria {2:0.0} mm (519,7), ingresso a f0 {3:0.000} ohm", zq, dq, lq, zi.Real);
+                        sb.AppendLine("       " + (okd2 ? "OK   " : "ERR  ") + rd2); if (!okd2) errPar.Add(rd2);
+                    }
+                    catch (Exception ex) { errPar.Add("divisori: " + ex.Message); }
                     // 1.2.0: tolleranze (bozzetto VHF 9): nomi degli elementi di una Yagi a 3 elementi; con tolleranze nulle ogni prova = nominale
                     using (Prestazioni.Misura("Autotest delle tolleranze"))
                         try
