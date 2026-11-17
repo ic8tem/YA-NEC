@@ -148,7 +148,7 @@ namespace YaNec
                 carte.Children.Add(c4);
                 tab.Children.Clear(); tab.RowDefinitions.Clear(); tab.ColumnDefinitions = new ColumnDefinitions("*,Auto");
                 int r0 = 0;
-                Action<string, string, bool> rg = (a, b, h) =>
+                Action<string, string, bool> rg3 = (a, b, h) =>
                 {
                     tab.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
                     Border b1 = new Border { Child = new TextBlock { Text = a, FontWeight = h ? FontWeight.SemiBold : FontWeight.Normal }, Padding = new Thickness(8, 3), Background = h ? Pal.B(Pal.Panel2) : null, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
@@ -157,7 +157,8 @@ namespace YaNec
                 };
                 if (tipo != "fase")
                 {
-                    rg("Formula", "Valore", true);
+                    Action<string, string> rg = (a, b) => rg3(a, b, false);
+                    rg3("Formula", "Valore", true);
                     rg("Z carico in parallelo", FN(za, 0) + " / " + n + " = " + FN(zcar, 1) + " Ω");
                     if (tipo == "wilk") { rg("Rami λ/4: Z0 = Zin · √N", FN(zi, 0) + " · √" + n + " = " + FN(z0, 1) + " Ω"); rg("Resistenze a stella", n + " × " + FN(zi, 0) + " Ω, ciascuna fino a P/" + n + " se un'antenna si stacca"); rg("Isolamento tra le uscite", "ideale a f0; cala lontano da f0 (rami λ/4)"); }
                     else rg("Z0 = √(Zin · Zcarico)", "√(" + FN(zi, 0) + " · " + FN(zcar, 1) + ") = " + FN(Divisori.Z0Richiesta(zi, za, n), 1) + " Ω" + (tipo == "cavo" ? " (2 × 75 Ω = 37,5 Ω)" : ""));
