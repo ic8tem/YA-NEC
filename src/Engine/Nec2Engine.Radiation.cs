@@ -23,7 +23,11 @@ namespace YaNec.Engine
         }
 
         /// <summary>Campi lontani E(theta), E(phi), senza il fattore exp(jkr)/(r/lambda).</summary>
-        public void Ffld(double thet, double phi, out Complex eth, out Complex eph)
+        public void Ffld(double thet, double phi, out Complex eth, out Complex eph) { FfldK(thet, phi, ksymp, out eth, out eph); }
+        /// <summary>1.2.0: solo il campo diretto delle correnti (senza l'immagine nel suolo), per il terreno reale.</summary>
+        public void FfldDiretto(double thet, double phi, out Complex eth, out Complex eph) { FfldK(thet, phi, 1, out eth, out eph); }
+
+        void FfldK(double thet, double phi, int kmax, out Complex eth, out Complex eph)
         {
             double phx = -Math.Sin(phi);
             double phy = Math.Cos(phi);
@@ -41,7 +45,7 @@ namespace YaNec.Engine
             bool schermo = nradl != 0 && iperf != 1;
             double tthet = Math.Tan(thet);
 
-            for (int k = 0; k < ksymp; k++)
+            for (int k = 0; k < kmax; k++)
             {
                 if (k != 0)
                 {

@@ -118,6 +118,14 @@ namespace YaNec.Engine
                         if (clear > peggio) { peggio = clear; ip = i; }
                     }
                     Complex fdir = Complex.One;
+                    // solo un crinale vero (piu' alto dei punti vicini di almeno lambda/10) diffrange; il terreno piatto no
+                    if (ip > 0)
+                    {
+                        int w = Math.Max(1, m / 200);
+                        double vic = double.NegativeInfinity;
+                        for (int j = Math.Max(0, ip - 5 * w); j <= Math.Min(m - 1, ip + 5 * w); j++) if (Math.Abs(j - ip) >= w) vic = Math.Max(vic, Z[j]);
+                        if (ip == m - 1 || Z[ip] < vic + lam / 10) { if (peggio <= 0) ip = -1; }
+                    }
                     if (ip > 0 && peggio > -1e8)
                     {
                         double d1 = X[ip] / Math.Max(ca, 1e-6);

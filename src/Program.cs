@@ -374,6 +374,39 @@ namespace YaNec
                             sb.AppendLine("       " + (oka ? "OK   " : "ERR  ") + ra); if (!oka) errPar.Add(ra);
                         }
                         catch (Exception ex) { errPar.Add("test AGT: " + ex.Message); }
+                    // 1.2.0: terreno reale (bozzetti 1 HF e VHF): terreno piatto = NEC sul suolo piano entro 0,1 dB; direzioni di traffico da JN70CN82WE
+                    using (Prestazioni.Misura("Autotest del terreno reale"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var mt = Engine.NecModel.Parse("CM dipolo 20 m a 10 m\nCE\nGW 1 21 0 -5.13 10 0 5.13 10 0.001\nGE 1\nGN 2 0 0 0 13 0.005\nEX 0 1 11 0 1 0\nFR 0 1 0 0 14.175 0\nEN\n");
+                            var rt = Engine.Analysis.Run(mt, mt.BuildGeometry(), 14.175, 5);
+                            var eng = rt.Engine;
+                            var piatto = new Engine.Dem.Profilo { D = new double[401], H = new double[401], Mare = new bool[401] };
+                            for (int i = 0; i < 401; i++) piatto.D[i] = i * 10;
+                            var op = new Engine.TerrenoReale.Opzioni { EpsTerra = 13, SigmaTerra = 0.005, Mare = false };
+                            var et = Engine.TerrenoReale.Calcola((double el, double ph, out System.Numerics.Complex a, out System.Numerics.Complex b) => eng.FfldDiretto((90 - el) * Math.PI / 180, ph * Math.PI / 180, out a, out b),
+                                eng.GainConstant, 14.175, 0, piatto, null, 10, op, null);
+                            double dmax = 0;
+                            for (int q = 4; q <= 320; q += 4) dmax = Math.Max(dmax, Math.Abs(et.Reale[q] - eng.Gain(90 - et.El[q], 0).GainTotal));
+                            bool okt = dmax <= 0.1;
+                            string r1 = string.Format(CI0, "Terreno reale su profilo piatto (dipolo 20 m a 10 m, suolo 13 / 5 mS/m, 1-80 gradi): scarto massimo dal NEC {0:0.000} dB (tolleranza 0,1 dB)", dmax);
+                            sb.AppendLine("       " + (okt ? "OK   " : "ERR  ") + r1); if (!okt) errPar.Add(r1);
+                            double la, lo; Engine.Dem.DaLocatore("JN70CN82WE", out la, out lo);
+                            double[,] att = { { 302, 7093 }, { 327, 10250 }, { 41, 9871 }, { 82, 15990 }, { 234, 9836 }, { 278, 7938 } };
+                            bool okd = Math.Abs(la - 40.5508) < 0.0001 && Math.Abs(lo - 14.2411) < 0.0001;
+                            var sbd = new System.Text.StringBuilder();
+                            for (int i = 0; i < 6; i++)
+                            {
+                                var dd = Engine.Dem.DirezioniTraffico[i]; double az, km;
+                                Engine.Dem.Rotta(la, lo, dd.Lat, dd.Lon, out az, out km);
+                                if (Math.Abs(az - att[i, 0]) > 1 || Math.Abs(km - att[i, 1]) > 10) okd = false;
+                                sbd.Append(string.Format(CI0, "{0} {1:0}°/{2:0} km; ", dd.Nome, az, km));
+                            }
+                            string r2 = "Direzioni di traffico da JN70CN82WE (" + la.ToString("0.0000", CI0) + " N " + lo.ToString("0.0000", CI0) + " E): " + sbd.ToString();
+                            sb.AppendLine("       " + (okd ? "OK   " : "ERR  ") + r2); if (!okd) errPar.Add(r2);
+                        }
+                        catch (Exception ex) { errPar.Add("terreno reale: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
