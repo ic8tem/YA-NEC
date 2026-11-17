@@ -185,6 +185,9 @@ namespace YaNec
                             }
                             catch (Exception ex) { errPar.Add("biquad: " + ex.Message); }
                         }
+                    // 1.0.17: confronti con casi pubblicati (Yagi a 6 elementi ed elica di MathWorks)
+                    using (Prestazioni.Misura("Autotest dei confronti con la letteratura"))
+                        try { Engine.ConfrontiLetteratura.Esegui(l => sb.AppendLine("       " + l), errPar); } catch (Exception ex) { errPar.Add("confronti: " + ex.Message); }
                     // 1.0.17: Big Wheel (F1BKM) e tre dipoli (Cebik) adattati col NEC
                     using (Prestazioni.Misura("Autotest della Big Wheel"))
                         foreach (int tipo in new[] { 0, 1, 2 })
