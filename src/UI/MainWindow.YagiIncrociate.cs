@@ -54,7 +54,7 @@ namespace YaNec
             Grid destra = new Grid { ColumnDefinitions = new ColumnDefinitions("*,10,*"), RowDefinitions = new RowDefinitions("Auto,10,Auto") };
             Grid.SetColumn(pA, 2); Grid.SetRow(pF, 2); Grid.SetColumnSpan(pF, 3);
             destra.Children.Add(pP); destra.Children.Add(pA); destra.Children.Add(pF);
-            Grid corpo = new Grid { ColumnDefinitions = new ColumnDefinitions("0.8*,10,2*") };
+            Grid corpo = new Grid { ColumnDefinitions = new ColumnDefinitions("1*,10,2*") };
             corpo.Children.Add(pV); Grid.SetColumn(destra, 2); corpo.Children.Add(destra);
             StackPanel avv = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
             StackPanel dx = new StackPanel(); dx.Children.Add(corpo); dx.Children.Add(avv);
@@ -210,7 +210,7 @@ namespace YaNec
                     {
                         tab.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
                         TextBlock tb = new TextBlock { Text = b, FontWeight = h || col.HasValue ? FontWeight.SemiBold : FontWeight.Normal, HorizontalAlignment = HorizontalAlignment.Right }; if (col.HasValue) tb.Foreground = new SolidColorBrush(col.Value);
-                        Border b1 = new Border { Child = new TextBlock { Text = a, FontWeight = h ? FontWeight.SemiBold : FontWeight.Normal }, Padding = new Thickness(8, 3), Background = h ? Pal.B(Pal.Panel2) : null, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
+                        Border b1 = new Border { Child = new TextBlock { Text = a, TextWrapping = TextWrapping.Wrap, FontWeight = h ? FontWeight.SemiBold : FontWeight.Normal }, Padding = new Thickness(8, 3), Background = h ? Pal.B(Pal.Panel2) : null, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
                         Border b2 = new Border { Child = tb, Padding = new Thickness(8, 3), Background = h ? Pal.B(Pal.Panel2) : null, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
                         Grid.SetRow(b1, r0); Grid.SetRow(b2, r0); Grid.SetColumn(b2, 1); tab.Children.Add(b1); tab.Children.Add(b2); r0++;
                     };
@@ -218,11 +218,12 @@ namespace YaNec
                     rg("Risultato (" + nomeCo + ")", "", true, null);
                     rg("Guadagno", FN(res.gco, 1) + (circ ? " dBic" : " dBi"), false, null);
                     if (circ) { rg("Rapporto assiale in asse", FN(res.arAsse, 1) + " dB", false, res.arAsse < 1.5 ? (Color?)Color.Parse("#21A04A") : null); rg("Rapporto assiale a −3 dB", FN(res.ar3, 1) + " dB", false, null); }
-                    rg("Rifiuto " + nomeX + " in asse", FN(res.gco - res.gx, 1) + " dB", false, null);
+                    rg("Rifiuto " + nomeX + " in asse", res.gco - res.gx > 60 ? "> 60 dB" : FN(res.gco - res.gx, 1) + " dB", false, null);
                     rg("Z ingresso", FN(res.zi.Real, 1) + (res.zi.Imaginary >= 0 ? " + j" : " − j") + FN(Math.Abs(res.zi.Imaginary), 1), false, null);
-                    rg("Isolamento tra i due piani", FN(res.iso, 0) + " dB", false, null);
+                    rg("Isolamento tra i due piani", res.iso > 60 ? "> 60 dB" : FN(res.iso, 0) + " dB", false, null);
                     rg("Fase della rete sul piano B", FN(res.faseB, 0) + "°" + (res.faseB % 180 == 90 ? " (cavo di ritardo λ/4)" : res.faseB == 180 ? " (λ/2 in piu')" : ""), false, null);
                     avv.Children.Clear();
+                    if (res.iso > 60 || res.gco - res.gx > 60) avv.Children.Add(AvvisoGiallo("Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB."));
                     if (reali) avv.Children.Add(AvvisoGiallo("Perdita del cavo di ritardo e del relè incluse in modo approssimato (" + FN(10 * Math.Sqrt(run.FreqMHz / 144.0), 1) + " dB/100 m, 0,1 dB di relè): non cambiano il diagramma, solo la Z e il ROS."));
                     dVista.InvalidateVisual();
                     Status("Yagi incrociate: " + nomeCo + ", " + FN(res.gco, 1) + (circ ? " dBic" : " dBi"));

@@ -184,6 +184,14 @@ namespace YaNec
                 int copie = stackInfo != null ? stackInfo.Copies : 1;
                 double xMin = el.Count > 0 ? el.Min(e => e.Pos) : 0, xMax = el.Count > 0 ? el.Max(e => e.Pos) : 2;
                 double lBoom = xMax - xMin + 0.10, xRot = (xMin + xMax) / 2;
+                // staffa del rotore al baricentro del peso (elementi pieni + boom), come la posizione bilanciata del Bilanciamento
+                if (el.Count > 0)
+                {
+                    double lt0, st0; bool q0; BoomDati(cBoom.SelectedIndex, out lt0, out st0, out q0);
+                    double mb = (q0 ? 4 * lt0 * st0 : Math.PI * lt0 * st0) * lBoom, sm = mb, sx0 = mb * (xMin + xMax) / 2;
+                    foreach (var e in el) { double me = e.Diam * e.Diam * Math.PI / 4 * e.Lung; sm += me; sx0 += me * e.Pos; }
+                    xRot = sx0 / sm;
+                }
                 if (el.Count > 0)
                 {
                     double a = el.Sum(e => e.Lung * e.Diam), dm = el.Average(e => e.Diam), lm = el.Average(e => e.Lung);
@@ -257,7 +265,7 @@ namespace YaNec
                 fondo.Children.Clear();
                 MeccSeparaUnita(UF(r.FMax), out a1, out a2); Border f1 = MeccCarta(a1, a2, "forza massima (vento a " + FN(r.DirMax, 0) + "° dal boom)");
                 MeccSeparaUnita(UM(r.MFlettente), out a1, out a2); Border f2 = MeccCarta(a1, a2, "momento flettente alla staffa del rotore");
-                MeccSeparaUnita(UM(r.TMax), out a1, out a2); Border f3 = MeccCarta(a1, a2, "momento torcente sul rotore (antenne non bilanciate)");
+                MeccSeparaUnita(UM(r.TMax), out a1, out a2); Border f3 = MeccCarta(a1, a2, "momento torcente sul rotore con la staffa al baricentro del peso (" + FN(xRot - xMin, 2) + " m dal riflettore; vedi Bilanciamento)");
                 Border f4 = AvvisoGiallo("Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.");
                 Border[] fc = { f1, f2, f3, f4 };
                 for (int i = 0; i < 4; i++) { Grid.SetColumn(fc[i], 2 * i); fondo.Children.Add(fc[i]); }
