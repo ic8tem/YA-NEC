@@ -57,6 +57,7 @@ namespace YaNec
             List<Tuple<double, double>> rosa = null;
             Dem.Profilo ultimoProf = null; TerrenoReale.Esito ultimo = null; double ultimaH = 0, ultimoAz = 0, ultimaF = 0;
             string titDir = "";
+            NecModel modelloPrima = null; bool? vhfPrima = null;
             double hMigliore = double.NaN; List<Tuple<double, double>> scansione = null;
 
             string locIniz = "JN70CN82WE";
@@ -575,6 +576,14 @@ namespace YaNec
                     return;
                 }
                 double f = run.FreqMHz, az = azimutScelto();
+                // nuovo modello o passaggio HF <-> VHF: valori iniziali della banda e altezza dal modello
+                if (!ReferenceEquals(modelloPrima, run.Model))
+                {
+                    bool vhfOra = f >= 30;
+                    if (vhfPrima != vhfOra) { vhfPrima = vhfOra; cZoom.SelectedIndex = vhfOra ? 2 : 0; tDmax.Text = vhfOra ? "20" : "5"; }
+                    modelloPrima = run.Model;
+                    double zq = quotaModello(); if (zq > 0.5) tH.Text = FN(zq, 1);
+                }
                 double dmax = Math.Max(0.5, Math.Min(100, ParseNum(tDmax.Text, f < 30 ? 5 : 20)));
                 double hUser = Math.Max(0.1, ParseNum(tH.Text, 10));
                 double zMod = quotaModello();
@@ -809,8 +818,6 @@ namespace YaNec
             };
 
             // valori iniziali: in VHF zoom 0-15 e 20 km; altezza dal modello
-            if (run != null && run.FreqMHz >= 30) { cZoom.SelectedIndex = 2; tDmax.Text = "20"; }
-            if (run != null) { double z = quotaModello(); if (z > 0.5) tH.Text = FN(z, 1); }
             if (model != null && model.Ground.Kind == GroundKind.Real)
                 for (int i = 0; i < Grounds.Length; i++) if (Math.Abs(Grounds[i].Item2 - model.Ground.Epsr) < 1e-9 && Math.Abs(Grounds[i].Item3 - model.Ground.Sigma) < 1e-12) { cTerra.SelectedIndex = i; break; }
             fProf.Select("dem", false); fAz.Select("traffico", false); fDir.Select("d0", false); fVista.Select("polare", false);

@@ -55,7 +55,7 @@ namespace YaNec
             };
             Dispatcher.UIThread.Post(async () =>
             {
-                try { if (ProveSoloButternut) await ProveButternut(); else if (ProveSoloNovita) await ProveNovita(); else await ProveInterfaccia(); }
+                try { if (ProveSchermate) await Schermate(); else if (ProveSoloButternut) await ProveButternut(); else if (ProveSoloNovita) await ProveNovita(); else await ProveInterfaccia(); }
                 catch (Exception ex) { PrPasso("le prove si sono interrotte", "nessuna eccezione", ex.ToString(), false); }
                 PrFine();
                 ProveFallite = prErr;

@@ -1,0 +1,37 @@
+# YA-NEC - immagini della finestra per il README e la wiki: compila linux-x64, avvia --schermate sotto Xvfb (con la rete, per i DEM
+# e le mappe) e mette le immagini nella Release in bozza "schermate" (le bozze non sono pubbliche). Si avvia a mano.
+name: schermate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  schermate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Compila
+        run: dotnet publish YA-NEC.csproj -c Release -r linux-x64 --self-contained true -p:Version=$(tr -d ' \r\n' < VERSION) -o pub/YA-NEC
+      - name: Immagini
+        run: |
+          sudo apt-get install -y xvfb fonts-dejavu-core > /dev/null
+          chmod +x pub/YA-NEC/YA-NEC
+          timeout 900 xvfb-run -s "-screen 0 1700x1100x24" ./pub/YA-NEC/YA-NEC --schermate || true
+          ls -la pub/YA-NEC/data/schermate || true
+          cat pub/YA-NEC/data/schermate/schermate.txt || true
+      - name: Release in bozza
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id=$(gh api repos/${{ github.repository }}/releases --jq '.[] | select(.draft and .name=="schermate") | .id' | head -1)
+          if [ -z "$id" ]; then id=$(gh api repos/${{ github.repository }}/releases -X POST -f tag_name=schermate -f name=schermate -F draft=true -f target_commitish=${{ github.sha }} --jq .id); fi
+          for a in $(gh api repos/${{ github.repository }}/releases/$id/assets --jq '.[].id'); do gh api -X DELETE repos/${{ github.repository }}/releases/assets/$a; done
+          for f in pub/YA-NEC/data/schermate/*; do
+            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @$f "https://uploads.github.com/repos/${{ github.repository }}/releases/$id/assets?name=$(basename $f)" > /dev/null
+          done

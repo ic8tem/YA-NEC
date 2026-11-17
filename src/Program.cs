@@ -143,7 +143,8 @@ namespace YaNec
                     Registro.Chiudi();
                     return rc;
                 }
-                if (a == "--prove-interfaccia") MainWindow.ProveAutomatiche = true;   // le prove a mano eseguite dal programma stesso
+                if (a == "--prove-interfaccia") MainWindow.ProveAutomatiche = true;
+                if (a == "--schermate") { MainWindow.ProveAutomatiche = true; MainWindow.ProveSchermate = true; }   // 1.2.0: immagini della finestra per README e wiki (data/schermate)   // le prove a mano eseguite dal programma stesso
                 // 0.4.17 (richiesta di IC8TEM del 14/11/2026 09:12): la Butternut da 7877 segmenti si prova per ultima, a parte (fase 2D di compila.bat)
                 if (a == "--prove-butternut") { MainWindow.ProveAutomatiche = true; MainWindow.ProveSoloButternut = true; }
                 // 0.4.13: solo le novita' dopo la 0.4.10 (compila.bat senza /completo)
