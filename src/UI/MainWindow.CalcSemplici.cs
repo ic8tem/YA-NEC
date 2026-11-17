@@ -483,7 +483,7 @@ namespace YaNec
                     double vm;
                     bool dalModello = sc.DalModello.TryGetValue(kv.Key, out vm);
                     if (dalModello) kv.Value.Text = vm.ToString(kv.Key == "f" ? "0.###" : "0.##", CultureInfo.CurrentCulture);
-                    double vc;
+                    double vc = 0;
                     bool calcolato = !dalModello && sc.Calcolati.TryGetValue(kv.Key, out vc);
                     CalcParam cpar = sc.Par(kv.Key);
                     if (calcolato) kv.Value.Text = vc.ToString(kv.Key == "nel" ? "0" : "0.###", CultureInfo.CurrentCulture);
