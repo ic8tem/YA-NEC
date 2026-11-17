@@ -275,6 +275,47 @@ namespace YaNec
                             sb.AppendLine("       " + (okh ? "OK   " : "ERR  ") + rh); if (!okh) errPar.Add(rh);
                         }
                         catch (Exception ex) { errPar.Add("cielo vero / stack: " + ex.Message); }
+                    // 1.2.0: carichi HF (bozzetto 7): trappola LC ideale e confronto con il carico LD del NEC; trappola coassiale RG-58 per 40 m
+                    using (Prestazioni.Misura("Autotest dei carichi HF"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var di = new Engine.CarichiHf.Dati { Tipo = 0, LuH = 8.2, CpF = 60, QL = double.PositiveInfinity, QC = double.PositiveInfinity };
+                            var ri = Engine.CarichiHf.Calcola(di);
+                            double zf0 = ri.Z(ri.F0).Magnitude;
+                            bool oki = zf0 > 1e8;
+                            string r1 = string.Format(CI0, "Trappola LC ideale 8,2 uH / 60 pF: f0 {0:0.000} MHz, |Z(f0)| = {1:0.0e0} ohm (atteso: infinita)", ri.F0 / 1e6, zf0);
+                            sb.AppendLine("       " + (oki ? "OK   " : "ERR  ") + r1); if (!oki) errPar.Add(r1);
+                            // stessa trappola con Q 200 come carico LD 1 sul segmento della sorgente: Zin(con) - Zin(senza) = Z della trappola
+                            var dq = new Engine.CarichiHf.Dati { Tipo = 0, LuH = 8.2, CpF = 60, QL = 200, QC = double.PositiveInfinity };
+                            var rq = Engine.CarichiHf.Calcola(dq);
+                            string dip = "CM dipolo 40 m di prova\nCE\nGW 1 21 0 -10 10 0 10 10 0.001\nGE 0\nEX 0 1 11 0 1 0\nFR 0 1 0 0 7.1 0\nEN\n";
+                            double errMax = 0;
+                            foreach (double fp in new[] { 3.65, 6.9, 7.3 })
+                            {
+                                var m0 = Engine.NecModel.Parse(dip);
+                                var m1 = Engine.NecModel.Parse(dip);
+                                // nel carico NEC la R in parallelo e' fissa (Q x w0 L): il confronto usa la stessa trappola a Q costante
+                                double rp = rq.Q0 * 2 * Math.PI * rq.F0 * rq.L;
+                                m1.Loads.Add(new Engine.LoadSpec { Type = 1, Tag = 1, From = 11, To = 11, F1 = rp, F2 = rq.L, F3 = rq.C });
+                                var z0 = Engine.Analysis.Run(m0, m0.BuildGeometry(), fp, 10).Zin;
+                                var z1 = Engine.Analysis.Run(m1, m1.BuildGeometry(), fp, 10).Zin;
+                                double w = 2 * Math.PI * fp * 1e6;
+                                System.Numerics.Complex zt = 1 / (1 / rp + 1 / new System.Numerics.Complex(0, w * rq.L) + new System.Numerics.Complex(0, w * rq.C));
+                                errMax = Math.Max(errMax, ((z1 - z0) - zt).Magnitude / zt.Magnitude);
+                            }
+                            bool okl = errMax < 0.01;
+                            string r2 = string.Format(CI0, "Trappola come carico NEC (LD 1) sul segmento della sorgente, 3,65 / 6,9 / 7,3 MHz: scarto massimo {0:0.000} % (tolleranza 1 %)", errMax * 100);
+                            sb.AppendLine("       " + (okl ? "OK   " : "ERR  ") + r2); if (!okl) errPar.Add(r2);
+                            var cavi = Engine.Cables.Load(System.IO.Path.Combine(AppPaths.DataDir, "cavi.csv"));
+                            var dc = new Engine.CarichiHf.Dati { Tipo = 1, Cavo = cavi.Find(c => c.Name.StartsWith("RG-58")) };
+                            dc.Spire = Engine.CarichiHf.SpirePerF0(dc, 7.1e6);
+                            var rc = Engine.CarichiHf.Calcola(dc);
+                            bool okc = Math.Abs(rc.F0 / 1e6 - 7.1) < 0.005 && rc.Q0 > 80 && rc.Q0 < 400;
+                            string r3 = string.Format(CI0, "Trappola coassiale RG-58 su forma 40 mm per 40 m: {0:0.00} spire, f0 {1:0.000} MHz, L {2:0.00} uH, C {3:0} pF, cavo {4:0.00} m, Q {5:0}", dc.Spire, rc.F0 / 1e6, rc.L * 1e6, rc.C * 1e12, rc.LungCavo, rc.Q0);
+                            sb.AppendLine("       " + (okc ? "OK   " : "ERR  ") + r3); if (!okc) errPar.Add(r3);
+                        }
+                        catch (Exception ex) { errPar.Add("carichi HF: " + ex.Message); }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");

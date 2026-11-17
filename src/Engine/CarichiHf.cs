@@ -428,8 +428,8 @@ namespace YaNec.Engine
             }
             else if (d.Tipo == 3)
             {
-                foreach (SourceSpec s in m.Sources) if (s.Tag == tag) { note.Add("sul filo " + tag + " c'e' una sorgente: il linear loading va su un filo senza sorgenti."); return null; }
-                foreach (LoadSpec l in m.Loads) if (l.Tag == tag) { note.Add("sul filo " + tag + " c'e' un carico: il linear loading va su un filo senza carichi."); return null; }
+                foreach (SourceSpec so in m.Sources) if (so.Tag == tag) { note.Add("sul filo " + tag + " c'e' una sorgente: il linear loading va su un filo senza sorgenti."); return null; }
+                foreach (LoadSpec lo in m.Loads) if (lo.Tag == tag) { note.Add("sul filo " + tag + " c'e' un carico: il linear loading va su un filo senza carichi."); return null; }
                 foreach (NetworkSpec nw in m.Networks) if (nw.Tag1 == tag || nw.Tag2 == tag) { note.Add("sul filo " + tag + " c'e' una linea: scegline un altro."); return null; }
                 double s = d.DistanzaMm / 1000, l = d.PiegaM, ra = d.FiloLlMm / 2000;
                 double t = (seg - 0.5) / gc.I2 * len;
