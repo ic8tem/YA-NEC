@@ -1,0 +1,39 @@
+# YA-NEC - anteprima per le prove prima di una versione: solo linux-x64, autotest, zip caricato in una Release in bozza "anteprima"
+# (le bozze non sono pubbliche). Si avvia a mano.
+name: anteprima
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  anteprima:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Compila
+        run: dotnet publish YA-NEC.csproj -c Release -r linux-x64 --self-contained true -p:Version=$(tr -d ' \r\n' < VERSION) -o pub/YA-NEC
+      - name: Autotest
+        run: |
+          chmod +x pub/YA-NEC/YA-NEC
+          timeout 900 ./pub/YA-NEC/YA-NEC --autotest > autotest.txt 2>&1 || true
+          tail -60 autotest.txt
+      - name: Zip
+        run: |
+          rm -rf pub/YA-NEC/data/prove pub/YA-NEC/data/config.ini pub/YA-NEC/Registri
+          (cd pub && zip -qr -y ../anteprima-linux-x64.zip YA-NEC)
+      - name: Release in bozza
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id=$(gh api repos/${{ github.repository }}/releases --jq '.[] | select(.draft and .name=="anteprima") | .id' | head -1)
+          if [ -z "$id" ]; then id=$(gh api repos/${{ github.repository }}/releases -X POST -f tag_name=anteprima -f name=anteprima -F draft=true -f target_commitish=${{ github.sha }} --jq .id); fi
+          for a in $(gh api repos/${{ github.repository }}/releases/$id/assets --jq '.[].id'); do gh api -X DELETE repos/${{ github.repository }}/releases/assets/$a; done
+          for f in anteprima-linux-x64.zip autotest.txt; do
+            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @$f "https://uploads.github.com/repos/${{ github.repository }}/releases/$id/assets?name=$f"
+          done
