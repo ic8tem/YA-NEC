@@ -471,6 +471,36 @@ namespace YaNec
                             sb.AppendLine("       " + (okb ? "OK   " : "ERR  ") + rb); if (!okb) errPar.Add(rb);
                         }
                         catch (Exception ex) { errPar.Add("cavo e balun: " + ex.Message); }
+                    // 1.3.0 (IC8TEM 18/11/2026 00:41): antenne riceventi abilitate (dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8): il modello si apre,
+                    // si calcola, il lobo va dove deve (alto per il dipolo, avanti per le altre) e l'RDF sta in un campo ragionevole
+                    using (Prestazioni.Misura("Autotest delle antenne riceventi 1.3"))
+                        try
+                        {
+                            var CI0 = System.Globalization.CultureInfo.InvariantCulture;
+                            var gr = new Engine.GroundSpec { Kind = Engine.GroundKind.Real, Epsr = 13, Sigma = 0.005 };
+                            double f = 1.83, lam = 299.792458 / f;
+                            var casi = new System.Collections.Generic.List<Tuple<string, string, double, double, bool>>
+                            {
+                                Tuple.Create("dipolo basso 77,8 m a 15 m", Engine.RxAntennas.DipoloBasso(new Engine.RxParams { F = f, L = 77.8, H = 15, Ground = gr }), 6.0, 10.0, false),
+                                Tuple.Create("K9AY 7,6 / 9,2 / 1 m, 390 ohm", Engine.RdfRicezione.K9ay(new Engine.RxParams { F = f, Rterm = 390, Ground = gr }, true, 7.6, 4.6, 1.0), 5.5, 8.5, true),
+                                Tuple.Create("4-square RX lato lambda/8", Engine.RdfRicezione.FourSquareRx(new Engine.RxParams { F = f, Ground = gr }, false, lam / 8, 7.6), 7.0, 14.0, true),
+                                Tuple.Create("Hi-Z 2 elementi lambda/8", Engine.RdfRicezione.Cardioide2(new Engine.RxParams { F = f, Ground = gr }, false, lam / 8, 7.6), 6.0, 12.0, true),
+                                Tuple.Create("Hi-Z 3 a triangolo lambda/6", Engine.RdfRicezione.Triangolo3(new Engine.RxParams { F = f, Ground = gr }, false, lam / 6, 7.6), 6.0, 12.0, true),
+                                Tuple.Create("Hi-Z 8 in cerchio 0,37 lambda (fase 220 gradi)", Engine.RdfRicezione.Cerchio8(new Engine.RxParams { F = f, Ground = gr, Fase = 220 }, false, 0.37 * lam, 7.6), 6.0, 14.0, true),
+                            };
+                            foreach (var c in casi)
+                            {
+                                var mm = Engine.NecModel.Parse(c.Item2);
+                                var rr = Engine.Analysis.Run(mm, mm.BuildGeometry(), f, 5.0);
+                                var rd = Engine.NoiseGt.Rdf(rr.Grid, rr.ThetaMax, rr.PhiMax, rr.GmaxDbi, true);
+                                double dphi = Math.Abs(((rr.PhiMax % 360) + 540) % 360 - 180);
+                                bool lobo = c.Item5 ? dphi <= 45 : rr.ElevationOfMax >= 45;
+                                bool okr = lobo && rd.Rdf >= c.Item3 && rd.Rdf <= c.Item4;
+                                string rx = string.Format(CI0, "Ricevente {0}: RDF {1:0.00} dB (atteso {2:0.#}-{3:0.#}), massimo a {4:0} gradi di elevazione e {5:0} di azimut", c.Item1, rd.Rdf, c.Item3, c.Item4, rr.ElevationOfMax, rr.PhiMax);
+                                sb.AppendLine("       " + (okr ? "OK   " : "ERR  ") + rx); if (!okr) errPar.Add(rx);
+                            }
+                        }
+                        catch (Exception ex) { errPar.Add("antenne riceventi 1.3: " + ex.Message); }
                     // 1.2.0: tolleranze (bozzetto VHF 9): nomi degli elementi di una Yagi a 3 elementi; con tolleranze nulle ogni prova = nominale
                     using (Prestazioni.Misura("Autotest delle tolleranze"))
                         try

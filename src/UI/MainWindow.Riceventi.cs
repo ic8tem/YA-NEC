@@ -27,18 +27,18 @@ namespace YaNec
             fasRx.Famiglia("Fili a terra / bassi");
             fasRx.Voce("beverage", "Beverage", false, null, "filo lungo terminato, 1-2 lambda");
             fasRx.Voce("bog", "BOG", false, null, "Beverage On Ground, filo isolato a terra");
-            fasRx.Voce("dipbasso", "Dipolo basso", true, null, "riferimento a lobo alto");
+            fasRx.Voce("dipbasso", "Dipolo basso", false, null, "riferimento a lobo alto");
             fasRx.Famiglia("Piccoli loop terminati");
             fasRx.Voce("ewe", "EWE", false, null, "WA2WVL, due verticali corte + filo");
             fasRx.Voce("flag", "Flag", false, null, "rettangolo terminato (W7IUV, IV3PRK)");
             fasRx.Voce("pennant", "Pennant", false, null, "triangolo terminato (K6SE, WA1ION, IV3PRK)");
-            fasRx.Voce("k9ay", "K9AY", true, null, "loop a terra con resistenza");
+            fasRx.Voce("k9ay", "K9AY", false, null, "loop a terra con resistenza");
             fasRx.Voce("dhdl", "DHDL", false, null, "doppio mezzo delta loop (AA7JV, misure IV3PRK)");
             fasRx.Voce("rombo", "Rombo ripiegato", true, null, "rombo terminato e ripiegato");
             fasRx.Voce("looprx", "Loop magnetico RX", false, null, "schermato, accordato o a larga banda");
             fasRx.Famiglia("Schiere");
-            fasRx.Voce("4sqrx", "4-square RX", true, null, "verticali corte attive");
-            fasRx.Voce("hiz", "Hi-Z 2-8 elementi", true, null, "cardioide, triangolo, cerchio");
+            fasRx.Voce("4sqrx", "4-square RX", false, null, "verticali corte attive");
+            fasRx.Voce("hiz", "Hi-Z 2-8 elementi", false, null, "cardioide, triangolo, cerchio");
             fasRx.Voce("wf", "Waller Flag", false, null, "due Flag end-fire con linee di fase (NX4D, N4IS, IV3PRK)");
             fasRx.Voce("dhdl2", "Due DHDL broadside", false, null, "affiancate e in fase (IV3PRK 2013)");
             fasRx.Famiglia("Riferimento");
@@ -72,6 +72,11 @@ namespace YaNec
                 case "pennant": return new RxDefault { L = 8.84 * sc, H = 4.27 * sc, R = 950, H2 = 8 };
                 case "wf": return new RxDefault { L = 4.27 * sc, H = 2.0 * sc, R = 600, H2 = 11, D = 7.73 * sc };
                 case "looprx": return new RxDefault { D = 1.0, H2 = 1.5, R = 0 };
+                // 1.3.0 (IC8TEM 18/11/2026 00:41 "dovremmo abilitare le parti spente"): voci previste nel bozzetto approvato
+                case "dipbasso": return new RxDefault { L = 77.8 * sc, H = 15 * sc };
+                case "k9ay": return new RxDefault { L = 9.2, H = 7.6, H2 = 1.0, R = 390 };
+                case "4sqrx": return new RxDefault { L = 20.5 * sc, H = 7.6 };
+                case "hiz": return new RxDefault { L = 20.5 * sc, H = 7.6, D = 2 };
                 default: return new RxDefault { };
             }
         }
@@ -79,8 +84,11 @@ namespace YaNec
         Control BuildRxPanel(string k)
         {
             string titolo = k == "beverage" ? "Beverage" : k == "bog" ? "BOG (Beverage On Ground)" : k == "ewe" ? "EWE (WA2WVL)" : k == "dhdl" ? "DHDL (AA7JV, IV3PRK)" : k == "looprx" ? "Loop magnetico RX" :
-                k == "flag" ? "Flag (K6SE, W7IUV)" : k == "pennant" ? "Pennant (K6SE, WA1ION)" : k == "wf" ? "Waller Flag (NX4D, N4IS)" : k == "dhdl2" ? "Due DHDL broadside (IV3PRK)" : "Verticale TX di riferimento";
+                k == "flag" ? "Flag (K6SE, W7IUV)" : k == "dipbasso" ? "Dipolo basso (riferimento)" : k == "k9ay" ? "K9AY (K9AY, Hi-Z)" : k == "4sqrx" ? "4-square in ricezione" : k == "hiz" ? "Schiera Hi-Z di verticali corte" : k == "pennant" ? "Pennant (K6SE, WA1ION)" : k == "wf" ? "Waller Flag (NX4D, N4IS)" : k == "dhdl2" ? "Due DHDL broadside (IV3PRK)" : "Verticale TX di riferimento";
             bool anello = k == "flag" || k == "wf" || k == "pennant", dh = k == "dhdl" || k == "dhdl2";
+            bool schiera = k == "4sqrx" || k == "hiz";   // 1.3.0: verticali corte attive in schiera
+            int nEl = 2;                                  // 1.3.0: Hi-Z, 2 (cardioide), 3 (triangolo) o 8 (cerchio)
+            TextBox tPh = Tb("", 60);
             int banda = 0;
             double[] fb = { 1.83, 3.6, 7.05 };
             RxDefault d0 = RxDefaults(k, 0);
@@ -112,12 +120,28 @@ namespace YaNec
                 RxDefault d = RxDefaults(k, b);
                 tL.Text = FN(d.L, 2); tH.Text = FN(d.H, 2); tR.Text = FN(d.R, 0); tH2.Text = FN(d.H2, 2);
                 if (k == "wf" || k == "dhdl2") tD.Text = FN(d.D, 2);
+                if (k == "hiz") { double lb = 299.792458 / fb[b]; tL.Text = FN(nEl == 2 ? lb / 8 : nEl == 3 ? lb / 6 : 0.37 * lb, 1); }
+                if (schiera) tPh.Text = k == "hiz" && nEl == 8 ? "220" : "";
                 if (leggiBanda != null) leggiBanda();
             }), tf, new TextBlock { Text = "MHz", VerticalAlignment = VerticalAlignment.Center }));
             bool filo = k == "beverage" || k == "bog";
+            if (k == "hiz") inp.Children.Add(Riga("Elementi", Scelta(new[] { "2 (cardioide)", "3 (triangolo)", "8 (cerchio)" }, 0, b =>
+            {
+                nEl = b == 0 ? 2 : b == 1 ? 3 : 8;
+                double lam0 = 299.792458 / ParseNum(tf.Text, 1.83);
+                tL.Text = FN(nEl == 2 ? lam0 / 8 : nEl == 3 ? lam0 / 6 : 0.37 * lam0, 1);
+                tPh.Text = nEl == 8 ? "220" : "";   // 8 in cerchio: con pi + beta d (file a 0,34 lambda) il lobo non va avanti
+                if (leggiBanda != null) leggiBanda();
+            })));
             Func<string, TextBlock> um = t => new TextBlock { Text = t, VerticalAlignment = VerticalAlignment.Center };
-            if (k != "looprx" && k != "vert") inp.Children.Add(Riga(dh ? "Lunghezza totale (fili orizzontali 3 + 4)" : k == "pennant" ? "Lunghezza (filo alto)" : anello ? "Larghezza dell'anello" : "Lunghezza", tL, um("m"), lLam));
-            if (k == "beverage" || k == "ewe" || dh || anello) inp.Children.Add(Riga(dh ? "Verticali alle estremita' (fili 1 e 6)" : k == "pennant" ? "Altezza del lato verticale" : anello ? "Altezza dell'anello" : "Altezza del filo", tH, um("m")));
+            if (k != "looprx" && k != "vert") inp.Children.Add(Riga(dh ? "Lunghezza totale (fili orizzontali 3 + 4)" : k == "pennant" ? "Lunghezza (filo alto)" : anello ? "Larghezza dell'anello" :
+                k == "k9ay" ? "Base del loop" : k == "4sqrx" ? "Lato del quadrato" : k == "hiz" ? "Distanza, lato o diametro" : "Lunghezza", tL, um("m"), lLam));
+            if (k == "beverage" || k == "ewe" || dh || anello || k == "dipbasso" || k == "k9ay" || schiera)
+                inp.Children.Add(Riga(dh ? "Verticali alle estremita' (fili 1 e 6)" : k == "pennant" ? "Altezza del lato verticale" : anello ? "Altezza dell'anello" :
+                    k == "k9ay" ? "Apice (altezza del palo)" : schiera ? "Altezza delle verticali" : "Altezza del filo", tH, um("m")));
+            if (k == "k9ay") inp.Children.Add(Riga("Base del loop dal suolo", tH2, um("m")));
+            if (schiera) bOtt.Content = "ottimizza la fase (RDF)";
+            if (schiera) inp.Children.Add(Riga("Fase tra le file", tPh, um("gradi (vuota = nullo posteriore, π + βd)"), bOtt));
             TextBlock lQuotaBog = new TextBlock { VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Orange), TextWrapping = TextWrapping.Wrap, MaxWidth = 380 };
             if (k == "bog") inp.Children.Add(Riga("Quota del filo nel modello NEC", tH, um("m"), lQuotaBog));
             if (dh || anello || k == "looprx") inp.Children.Add(Riga(dh ? "Base (fili orizzontali) dal suolo" : k == "pennant" ? "Centro del triangolo dal suolo" : anello ? "Centro dell'anello dal suolo" : "Base della loop dal suolo", tH2, um("m")));
@@ -132,10 +156,10 @@ namespace YaNec
                 inp.Children.Add(Riga("Fattore di velocita' sul filo", tVf, new TextBlock { Text = filo && k == "bog" ? "(BOG 0,5-0,77 misurato; N4DJ)" : "(0,85-0,90 a 2 m; N4DJ)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
                 inp.Children.Add(Riga("Angolo di arrivo voluto", tAng, new TextBlock { Text = "gradi", VerticalAlignment = VerticalAlignment.Center }));
             }
-            if (k != "looprx" && k != "vert") inp.Children.Add(Riga("Terminazione", tR, new TextBlock { Text = "ohm", VerticalAlignment = VerticalAlignment.Center }, bOtt));
+            if (k != "looprx" && k != "vert" && k != "dipbasso" && !schiera) inp.Children.Add(Riga("Terminazione", tR, new TextBlock { Text = "ohm", VerticalAlignment = VerticalAlignment.Center }, bOtt));
             if (k != "vert") inp.Children.Add(Riga("Direzione", tDir, new TextBlock { Text = "gradi di azimut", VerticalAlignment = VerticalAlignment.Center }));
             inp.Children.Add(Riga("Terreno", cTer, new TextBlock { Text = "Sommerfeld (GN 2), come NEC-2 con il terreno esatto", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
-            if (k != "looprx" && k != "vert") inp.Children.Add(Riga("Picchetti di terra", tRod, new TextBlock { Text = "ohm", VerticalAlignment = VerticalAlignment.Center }));
+            if (k != "looprx" && k != "vert" && k != "dipbasso" && k != "k9ay" && !schiera) inp.Children.Add(Riga("Picchetti di terra", tRod, new TextBlock { Text = "ohm", VerticalAlignment = VerticalAlignment.Center }));
             inp.Children.Add(formule);
             StackPanel bb = new StackPanel { Orientation = Orientation.Horizontal };
             bb.Children.Add(bCalc); bb.Children.Add(bApri);   // 0.4.18: anche il BOG, con il modello approssimato
@@ -156,12 +180,15 @@ namespace YaNec
                     Vf = ParseNum(tVf.Text, d0.Vf), Angle = ParseNum(tAng.Text, d0.Ang),
                     Tl1 = ParseNum(tT1.Text, 4), Tl2 = ParseNum(tT2.Text, 3.25), Zl = ParseNum(tZl.Text, 100), Ratio = Math.Max(0.01, ParseNum(tRat.Text, 6)), VfLinea = Math.Max(0.05, ParseNum(tVfl.Text, 0.66))
                 };
+                if (schiera && !string.IsNullOrWhiteSpace(tPh.Text)) p.Fase = ParseNum(tPh.Text, double.NaN);
                 int gi = Math.Max(0, cTer.SelectedIndex);
                 p.Ground = new GroundSpec { Kind = GroundKind.Real, Epsr = Grounds[gi].Item2, Sigma = Grounds[gi].Item3 };
                 return p;
             };
             Func<RxParams, string> deck = p => k == "beverage" ? RxAntennas.Beverage(p) : k == "bog" ? RxAntennas.Bog(p) : k == "ewe" ? RxAntennas.Ewe(p) : k == "dhdl" ? RxAntennas.Dhdl(p) : k == "looprx" ? RxAntennas.LoopRx(p) :
-                k == "flag" ? RxAntennas.Flag(p) : k == "pennant" ? RxAntennas.Pennant(p) : k == "wf" ? RxAntennas.WallerFlag(p) : k == "dhdl2" ? RxAntennas.DhdlBroadside(p) : RxAntennas.VerticaleRef(p);
+                k == "flag" ? RxAntennas.Flag(p) : k == "pennant" ? RxAntennas.Pennant(p) : k == "wf" ? RxAntennas.WallerFlag(p) : k == "dhdl2" ? RxAntennas.DhdlBroadside(p) :
+                k == "dipbasso" ? RxAntennas.DipoloBasso(p) : k == "k9ay" ? RdfRicezione.K9ay(p, true, p.H, p.L / 2, p.H2) : k == "4sqrx" ? RdfRicezione.FourSquareRx(p, false, p.L, p.H) :
+                k == "hiz" ? (nEl == 2 ? RdfRicezione.Cardioide2(p, false, p.L, p.H) : nEl == 3 ? RdfRicezione.Triangolo3(p, false, p.L, p.H) : RdfRicezione.Cerchio8(p, false, p.L, p.H)) : RxAntennas.VerticaleRef(p);
             Action<string, string, string, bool> card = (t, v, s, hl) => cardsW.Children.Add(Riquadretto(t, v, s, hl));
 
             Action formuleAgg = () =>
@@ -203,10 +230,15 @@ namespace YaNec
                     double A = Math.PI * p.D * p.D / 4, rr = 31171 * A * A / Math.Pow(lam, 4), he = 2 * Math.PI * A / lam;
                     righe.Add("Loop piccolo: Rr = 31171 A^2/lambda^4 = " + FN(rr * 1000, 3) + " mohm; altezza efficace h = 2 pi A / lambda = " + FN(he * 100, 1) + " cm (segnale proporzionale ad A)");
                 }
+                if (k == "dipbasso") righe.Add("Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento \"a lobo alto\" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.");
+                if (k == "k9ay") righe.Add("K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.");
+                if (k == "4sqrx") righe.Add("4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.");
+                if (k == "hiz") righe.Add("Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.");
                 if (k == "vert") righe.Add("Verticale lambda/4 (71,3/f) con 4 radiali sopraelevati a 0,5 m: e' il riferimento della graduatoria (IV3PRK: RDF 5,06-5,07 dB con Sommerfeld).");
                 foreach (string r in righe) formule.Children.Add(Nota(r, Pal.Fore));
                 // 0.4.20 (IC8TEM 14/11/2026 16:01): fumetti gialli con gli avvisi e le approssimazioni del modello NEC
                 List<string> avR = AvvisiDelMazzo(deck(p));
+                if (schiera) avv.Children.Add(Nota("⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.", Pal.Orange));
                 string appr = k == "bog"
                     ? "il BOG reale e' un filo isolato appoggiato al suolo; il NEC-2 non tratta fili sul terreno, interrati o isolati e lo calcola come filo nudo alla quota lambda/1000 (" + FN(lam / 1000, 3) + " m). Lobo, direzione e RDF sono indicativi; impedenza e perdite non sono quelle del BOG reale (200-300 ohm misurati)."
                     : null;
@@ -215,7 +247,7 @@ namespace YaNec
                 if (k == "bog") FumettoConAvvisi(tH, "Quota del filo nel modello NEC (il BOG reale sta sul suolo).", null, appr);
             };
             leggiBanda = formuleAgg;
-            foreach (TextBox t in new[] { tf, tL, tH, tR, tVf, tAng, tH2, tD, tT1, tT2, tZl, tRat, tVfl }) t.LostFocus += (s, e) => formuleAgg();
+            foreach (TextBox t in new[] { tf, tL, tH, tR, tVf, tAng, tH2, tD, tT1, tT2, tZl, tRat, tVfl, tPh }) t.LostFocus += (s, e) => formuleAgg();
 
             Action<RxParams> calcola = null;
             calcola = p =>
@@ -246,8 +278,10 @@ namespace YaNec
                     if (t.IsFaulted) { card("Calcolo NEC", "errore", t.Exception.GetBaseException().Message, false); return; }
                     RunResult r = t.Result.Item1;
                     RdfResult rd = t.Result.Item2;
-                    double lit = k == "bog" ? 9.0 : k == "beverage" ? 10.81 : k == "vert" ? 5.07 : k == "dhdl" ? 10.0 : k == "dhdl2" ? 12.7 : k == "flag" ? 7.9 : k == "pennant" ? 7.8 : k == "wf" ? 11.84 : k == "ewe" ? 7.7 : double.NaN;
-                    string litS = k == "bog" ? "IV3PRK (BOG 63 m): 9,0" : k == "beverage" ? "IV3PRK (175 m): 10,81" : k == "vert" ? "IV3PRK: 5,07" : k == "dhdl" ? "IV3PRK/TX3A: 10" : k == "dhdl2" ? "IV3PRK (90 m): 12,7" : k == "flag" ? "IV3PRK: 7,8-8,0" : k == "pennant" ? "IV3PRK: 7,8" : k == "wf" ? "IV3PRK (TL2 3 m): 11,84" : k == "ewe" ? "graduatoria: 7,7" : "";
+                    double lit = k == "bog" ? 9.0 : k == "beverage" ? 10.81 : k == "vert" ? 5.07 : k == "dhdl" ? 10.0 : k == "dhdl2" ? 12.7 : k == "flag" ? 7.9 : k == "pennant" ? 7.8 : k == "wf" ? 11.84 : k == "ewe" ? 7.7 :
+                        k == "dipbasso" ? 7.3 : k == "k9ay" ? 7.2 : k == "4sqrx" ? 9.4 : k == "hiz" && nEl == 8 ? 13.4 : double.NaN;
+                    string litS = k == "bog" ? "IV3PRK (BOG 63 m): 9,0" : k == "beverage" ? "IV3PRK (175 m): 10,81" : k == "vert" ? "IV3PRK: 5,07" : k == "dhdl" ? "IV3PRK/TX3A: 10" : k == "dhdl2" ? "IV3PRK (90 m): 12,7" : k == "flag" ? "IV3PRK: 7,8-8,0" : k == "pennant" ? "IV3PRK: 7,8" : k == "wf" ? "IV3PRK (TL2 3 m): 11,84" : k == "ewe" ? "graduatoria: 7,7" :
+                        k == "dipbasso" ? "IV3PRK: 7,3" : k == "k9ay" ? "Hi-Z: 7,2" : k == "4sqrx" ? "IV3PRK: 9,4" : k == "hiz" && nEl == 8 ? "Hi-Z: 13,4" : "";
                     card("Guadagno", FN(r.GmaxDbi, 1) + " dBi", "a " + FN(r.ElevationOfMax, 0) + "°", false);
                     card("Guadagno medio", FN(rd.AvgGainDb, 1) + " dB", "su tutte le direzioni", false);
                     card("RDF", FN(rd.Rdf, 1) + " dB", litS, true);
@@ -302,6 +336,42 @@ namespace YaNec
             bApri.Click += (s, e) => { RxParams p = leggi(); ApriModelloCalcolatore(deck(p), titolo + ".nec"); };
             bOtt.Click += (s, e) =>
             {
+                if (schiera)
+                {
+                    // 1.3.0: per le schiere di verticali la fase tra le file con l'RDF migliore (lobo in avanti, entro 45 gradi dalla direzione)
+                    RxParams b0 = leggi();
+                    bOtt.IsEnabled = false;
+                    cardsW.Children.Clear();
+                    card("Ottimizzazione", "in corso...", "fase tra le file da 120 a 300 gradi per l'RDF", false);
+                    Task.Run(() =>
+                    {
+                        double bestF = double.NaN, bestR = double.MinValue;
+                        for (double ph = 120; ph <= 300; ph += 10)
+                        {
+                            RxParams q = b0.Copia(); q.Fase = ph;
+                            NecModel m = NecModel.Parse(deck(q));
+                            RunResult r = Analysis.Run(m, m.BuildGeometry(), q.F, 10.0);
+                            double dphi = Math.Abs(((r.PhiMax - q.Dir) % 360 + 540) % 360 - 180);
+                            if (dphi > 45) continue;
+                            RdfResult rd = NoiseGt.Rdf(r.Grid, r.ThetaMax, r.PhiMax, r.GmaxDbi, true);
+                            if (rd.Rdf > bestR) { bestR = rd.Rdf; bestF = ph; }
+                        }
+                        return Tuple.Create(bestF, bestR);
+                    }).ContinueWith(t => Dispatcher.UIThread.Post(() =>
+                    {
+                        bOtt.IsEnabled = true;
+                        if (t.IsFaulted || double.IsNaN(t.Result.Item1))
+                        {
+                            cardsW.Children.Clear();
+                            card("Ottimizzazione", "errore", t.IsFaulted ? t.Exception.GetBaseException().Message : "nessuna fase con il lobo in avanti", false);
+                            return;
+                        }
+                        tPh.Text = FN(t.Result.Item1, 0);
+                        Status(Lang.F("Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...", FN(t.Result.Item1, 0), FN(t.Result.Item2, 1)));
+                        calcola(leggi());
+                    }));
+                    return;
+                }
                 RxParams p0 = leggi();
                 bOtt.IsEnabled = false;
                 cardsW.Children.Clear();

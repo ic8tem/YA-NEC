@@ -33,9 +33,13 @@ namespace YaNec.Engine
 
         /// <summary>K9AY semplificata: un loop a delta verticale (apice 7,6 m, base 9,2 m a 1 m dal suolo), sorgente a un angolo in basso e
         /// resistenza (390 ohm) all'altro; la meta' del K9AY con i due loop a 90 gradi, quella rivolta verso la direzione voluta.</summary>
-        public static string K9ay(RxParams p, bool inverti)
+        public static string K9ay(RxParams p, bool inverti) { return K9ay(p, inverti, 7.6, 4.6, 1.0); }
+
+        /// <summary>1.3.0 (IC8TEM 18/11/2026 00:41, Calcolatori > Antenne riceventi): K9AY con le misure della scheda (apice h, mezza base b,
+        /// base a zb dal suolo). Il loop resta chiuso sopra il suolo, come nella pagina Ricezione (RDF).</summary>
+        public static string K9ay(RxParams p, bool inverti, double h, double b, double zb)
         {
-            double h = 7.6, b = 4.6, zb = 1.0, r = 0.0008, lam = C0 / p.F;
+            double r = 0.0008, lam = C0 / p.F;
             int nd = Math.Max(7, (int)Math.Ceiling(Math.Sqrt(b * b + (h - zb) * (h - zb)) / (lam / 80))), nb = Math.Max(9, (int)Math.Ceiling(2 * b / (lam / 80)));
             if (nb % 2 == 0) nb++;
             double s = inverti ? -1 : 1;
@@ -60,7 +64,7 @@ namespace YaNec.Engine
         {
             double lam = C0 / p.F, beta = 2 * Math.PI / lam, r = 0.006;
             int ns = Math.Max(5, (int)Math.Ceiling(hv / (lam / 80)));
-            double delta = (Math.PI + beta * passo) * (inverti ? -1 : 1);
+            double delta = (double.IsNaN(p.Fase) ? Math.PI + beta * passo : p.Fase * Math.PI / 180) * (inverti ? -1 : 1);   // 1.3.0: fase scelta nella scheda
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("CM " + nome + " " + F(p.F) + " MHz (verticali corte attive, fase per il nullo posteriore; YA-NEC, Ricezione RDF)");
             sb.AppendLine("CE");
@@ -80,24 +84,46 @@ namespace YaNec.Engine
         }
 
         /// <summary>4-square in ricezione: quadrato di lato lambda/8, verticali da 7,6 m, fuoco lungo la diagonale (fase dietro / lati / davanti).</summary>
-        public static string FourSquareRx(RxParams p, bool inverti)
+        public static string FourSquareRx(RxParams p, bool inverti) { return FourSquareRx(p, inverti, C0 / p.F / 8, 7.6); }
+
+        /// <summary>1.3.0: 4-square in ricezione con il lato e l'altezza delle verticali della scheda.</summary>
+        public static string FourSquareRx(RxParams p, bool inverti, double s, double hv)
         {
-            double s = C0 / p.F / 8, d = s / Math.Sqrt(2);
+            double d = s / Math.Sqrt(2);
             List<double[]> pos = new List<double[]> { new[] { -d, 0.0 }, new[] { 0.0, d }, new[] { 0.0, -d }, new[] { d, 0.0 } };
-            return Verticali(p, pos, d, 7.6, "4-square in ricezione, lato " + F(Math.Round(s, 1)) + " m", inverti);
+            return Verticali(p, pos, d, hv, "4-square in ricezione, lato " + F(Math.Round(s, 1)) + " m", inverti);
+        }
+
+        /// <summary>1.3.0: due verticali corte in end-fire (cardioide), distanza d lungo la direzione voluta, nullo posteriore esatto.</summary>
+        public static string Cardioide2(RxParams p, bool inverti, double d, double hv)
+        {
+            List<double[]> pos = new List<double[]> { new[] { -d / 2, 0.0 }, new[] { d / 2, 0.0 } };
+            return Verticali(p, pos, d, hv, "2 verticali in end-fire (cardioide), distanza " + F(Math.Round(d, 1)) + " m", inverti);
+        }
+
+        /// <summary>1.3.0: tre verticali corte ai vertici di un triangolo equilatero di lato s, un vertice verso la direzione voluta:
+        /// la coppia dietro in fase, il vertice davanti sfasato per il nullo posteriore.</summary>
+        public static string Triangolo3(RxParams p, bool inverti, double s, double hv)
+        {
+            double hgt = s * Math.Sqrt(3) / 2;
+            List<double[]> pos = new List<double[]> { new[] { -hgt / 3, s / 2 }, new[] { -hgt / 3, -s / 2 }, new[] { 2 * hgt / 3, 0.0 } };
+            return Verticali(p, pos, hgt, hv, "3 verticali a triangolo, lato " + F(Math.Round(s, 1)) + " m", inverti);
         }
 
         /// <summary>8 verticali in cerchio (diametro 0,37 lambda): le quattro verso la direzione voluta e quella opposta, coppie broadside in fase
         /// e coppie davanti / dietro in end-fire; le altre quattro non si mettono nel modello (amplificatori ad alta impedenza, scollegate).</summary>
-        public static string Cerchio8(RxParams p, bool inverti)
+        public static string Cerchio8(RxParams p, bool inverti) { return Cerchio8(p, inverti, 0.37 * C0 / p.F, 7.6); }
+
+        /// <summary>1.3.0: 8 verticali in cerchio con il diametro e l'altezza della scheda.</summary>
+        public static string Cerchio8(RxParams p, bool inverti, double diametro, double hv)
         {
-            double R = 0.37 * C0 / p.F / 2, a = 22.5 * Math.PI / 180;
+            double R = diametro / 2, a = 22.5 * Math.PI / 180;
             List<double[]> pos = new List<double[]>
             {
                 new[] { -R * Math.Cos(a), R * Math.Sin(a) }, new[] { -R * Math.Cos(a), -R * Math.Sin(a) },
                 new[] { R * Math.Cos(a), R * Math.Sin(a) }, new[] { R * Math.Cos(a), -R * Math.Sin(a) },
             };
-            return Verticali(p, pos, 2 * R * Math.Cos(a), 7.6, "8 verticali in cerchio, diametro " + F(Math.Round(2 * R, 1)) + " m", inverti);
+            return Verticali(p, pos, 2 * R * Math.Cos(a), hv, "8 verticali in cerchio, diametro " + F(Math.Round(2 * R, 1)) + " m", inverti);
         }
 
         // ------------------------------------------------------------------------------------------------

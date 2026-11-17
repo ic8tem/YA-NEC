@@ -23,6 +23,9 @@ namespace YaNec.Engine
         public double F = 1.83, L = 175, H = 2.5, Rterm = 500, Rrod = 20, Dir = 0, WireMm = 1.6, Vf = 0.85, Angle = 20, H2 = 1.5, D = 1;
         // Waller Flag: linee di fase (m), Z0 della linea, rapporto del trasformatore (impedenze), VF della linea
         public double Tl1 = 4.0, Tl2 = 3.25, Zl = 100, Ratio = 6, VfLinea = 0.66;
+        // 1.3.0: fase tra le file delle schiere di verticali in ricezione (gradi); NaN = nullo posteriore esatto, pi + beta d
+        public double Fase = double.NaN;
+        public RxParams Copia() { return (RxParams)MemberwiseClone(); }
         public GroundSpec Ground = new GroundSpec { Kind = GroundKind.Real, Epsr = 13, Sigma = 0.005 };
     }
 
@@ -355,6 +358,26 @@ namespace YaNec.Engine
             sb.AppendLine("GE 0");
             sb.AppendLine(Ground(p.Ground));
             sb.AppendLine("EX 0 1 1 0 1 0");
+            sb.AppendLine("FR 0 1 0 0 " + F(p.F) + " 0");
+            sb.AppendLine("EN");
+            return sb.ToString();
+        }
+
+        /// <summary>1.3.0 (IC8TEM 18/11/2026 00:41): dipolo orizzontale basso, riferimento a lobo alto della graduatoria (IV3PRK).
+        /// Lunghezza L, quota H, alimentato al centro, perpendicolare alla direzione scelta.</summary>
+        public static string DipoloBasso(RxParams p)
+        {
+            double lam = C0 / p.F, r = 0.001;
+            int n = Math.Max(21, (int)Math.Ceiling(p.L / (lam / 60)));
+            if (n % 2 == 0) n++;
+            double a = (p.Dir + 90) * Math.PI / 180, cx = Math.Cos(a) * p.L / 2, cy = Math.Sin(a) * p.L / 2;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("CM Dipolo basso " + F(p.L) + " m a " + F(p.H) + " m, " + F(p.F) + " MHz (calcolatore antenne riceventi YA-NEC)");
+            sb.AppendLine("CE");
+            sb.AppendLine("GW 1 " + n + " " + F(-cx) + " " + F(-cy) + " " + F(p.H) + " " + F(cx) + " " + F(cy) + " " + F(p.H) + " " + F(r));
+            sb.AppendLine("GE 0");
+            sb.AppendLine(Ground(p.Ground));
+            sb.AppendLine("EX 0 1 " + (n / 2 + 1) + " 0 1 0");
             sb.AppendLine("FR 0 1 0 0 " + F(p.F) + " 0");
             sb.AppendLine("EN");
             return sb.ToString();

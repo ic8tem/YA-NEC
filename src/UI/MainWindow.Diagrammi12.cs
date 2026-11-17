@@ -215,7 +215,7 @@ namespace YaNec
                     case "ewe": return RxAntennas.Ewe(p);
                     case "k9ay": p.Rterm = 390; p.Dir = az; return RdfRicezione.K9ay(p, inv);
                     case "4sq": p.Dir = az; return RdfRicezione.FourSquareRx(p, inv);
-                    case "8c": p.Dir = az; return RdfRicezione.Cerchio8(p, inv);
+                    case "8c": p.Dir = az; p.Fase = 220; return RdfRicezione.Cerchio8(p, inv);   // 1.3.0: con pi + beta d (file a 0,34 lambda) il lobo usciva a 50 gradi dalla direzione
                     default: p.Dir = 0; return RxAntennas.VerticaleRef(p);
                 }
             };
