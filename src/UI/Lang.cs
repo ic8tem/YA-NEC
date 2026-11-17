@@ -140,7 +140,9 @@ namespace YaNec
             Dictionary<string, string> m = new Dictionary<string, string>(StringComparer.Ordinal);
             if (code != "it")
             {
-                foreach (string file in new[] { FindFile(code) })
+                // 1.3.0 (IC8TEM 18/11/2026 00:58 "si'"): prima l'inglese, poi la lingua scelta; una voce che manca nella lingua scelta
+                // si mostra in inglese invece che in italiano
+                foreach (string file in code == "en" ? new[] { FindFile("en") } : new[] { FindFile("en"), FindFile(code) })
                 if (file != null)
                 {
                     try
