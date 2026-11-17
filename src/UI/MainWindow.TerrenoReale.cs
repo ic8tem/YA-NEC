@@ -582,7 +582,7 @@ namespace YaNec
                     bool vhfOra = f >= 30;
                     if (vhfPrima != vhfOra) { vhfPrima = vhfOra; cZoom.SelectedIndex = vhfOra ? 2 : 0; tDmax.Text = vhfOra ? "20" : "5"; }
                     modelloPrima = run.Model;
-                    double zq = quotaModello(); if (zq > 0.5) tH.Text = FN(zq, 1);
+                    double zq = quotaModello(); tH.Text = zq > 0.5 ? FN(zq, 1) : "10";
                 }
                 double dmax = Math.Max(0.5, Math.Min(100, ParseNum(tDmax.Text, f < 30 ? 5 : 20)));
                 double hUser = Math.Max(0.1, ParseNum(tH.Text, 10));

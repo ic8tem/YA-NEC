@@ -28,14 +28,14 @@ namespace YaNec
             CancellationTokenSource cts = null;
 
             // ---------------- sinistra ----------------
-            StackPanel sx = new StackPanel { Width = 230, Spacing = 2 };
+            StackPanel sx = new StackPanel { Width = 262, Spacing = 2 };
             Fascione fMet = new Fascione(); fMet.Famiglia("METODO");
             fMet.Voce("mc", "Monte Carlo"); fMet.Voce("sens", "Sensibilità rapida (un elemento alla volta)");
             sx.Children.Add(fMet);
             Func<string, TextBlock> fam = s => new TextBlock { Text = s, FontWeight = FontWeight.Bold, FontSize = 13, Foreground = new SolidColorBrush(Fascione.FamigliaTesto), Margin = new Thickness(2, 10, 0, 4) };
             Func<string, Control, string, Grid> riga = (et, c, um) =>
             {
-                Grid g0 = new Grid { ColumnDefinitions = new ColumnDefinitions("110,Auto,Auto"), Margin = new Thickness(2, 1) };
+                Grid g0 = new Grid { ColumnDefinitions = new ColumnDefinitions("100,Auto,Auto"), Margin = new Thickness(2, 1) };
                 g0.Children.Add(new TextBlock { Text = et, VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
                 Grid.SetColumn(c, 1); g0.Children.Add(c);
                 TextBlock u = new TextBlock { Text = um, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(4, 0, 0, 0) };
@@ -45,15 +45,15 @@ namespace YaNec
             sx.Children.Add(fam("TOLLERANZE DI COSTRUZIONE"));
             TextBox tL = Tb("1,0", 70), tP = Tb("2,0", 70), tD = Tb("0,1", 70);
             sx.Children.Add(riga("Lunghezza elementi", tL, "± mm")); sx.Children.Add(riga("Posizione sul boom", tP, "± mm")); sx.Children.Add(riga("Diametro", tD, "± mm"));
-            ComboBox cDist = new ComboBox { ItemsSource = new[] { "Uniforme", "Gaussiana (t = 2σ)" }, SelectedIndex = 0, Width = 105 };
+            ComboBox cDist = new ComboBox { ItemsSource = new[] { "Uniforme", "Gaussiana (t = 2σ)" }, SelectedIndex = 0, Width = 140 };
             sx.Children.Add(riga("Distribuzione", cDist, ""));
             CheckBox cFor = new CheckBox { Content = "Includi foratura del boom (posizione)", IsChecked = true, Margin = new Thickness(2, 0) };
             CheckBox cSta = new CheckBox { Content = "Includi errore della staffa (isolatori)", Margin = new Thickness(2, 0) };
             FumettoGiallo(cSta, "Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.", "la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.", "Tolleranze");
             sx.Children.Add(cFor); sx.Children.Add(cSta);
             sx.Children.Add(fam("PROVE"));
-            TextBox tN = Tb("500", 70), tF = Tb("", 110);
-            ComboBox cSeme = new ComboBox { ItemsSource = new[] { "fisso (ripetibile)", "nuovo a ogni avvio" }, SelectedIndex = 0, Width = 115 };
+            TextBox tN = Tb("500", 70), tF = Tb("", 100);
+            ComboBox cSeme = new ComboBox { ItemsSource = new[] { "fisso (ripetibile)", "nuovo a ogni avvio" }, SelectedIndex = 0, Width = 140 };
             sx.Children.Add(riga("Numero prove", tN, "")); sx.Children.Add(riga("Frequenze", tF, "MHz")); sx.Children.Add(riga("Seme casuale", cSeme, ""));
             sx.Children.Add(fam("OBIETTIVO LISTA DI TAGLIO"));
             TextBox tCalo = Tb("1,0", 70), tRos = Tb("1,3", 70);
@@ -194,7 +194,7 @@ namespace YaNec
                 }
                 avvisi.Children.Clear();
                 avvisi.Children.Add(AvvisoGiallo("Tolleranza ammessa: errore di lunghezza (in piu' o in meno) che da solo fa calare il F/B di " + FN(ParseNum(tCalo.Text, 1) / Math.Sqrt(Math.Max(1, el.Count(e => !e.Alimentato))), 2) +
-                    " dB (il calo massimo diviso per la radice del numero degli elementi: errori indipendenti) e non porta il ROS sopra " + FN(ParseNum(tRos.Text, 1.3), 2) + ". In rosso gli elementi che chiedono meno della tolleranza di costruzione."));
+                    " dB (il calo massimo diviso per la radice del numero degli elementi: errori indipendenti) e non porta il ROS sopra " + FN(Math.Max(ParseNum(tRos.Text, 1.3), double.IsNaN(esito.Nominale.Ros) ? 0 : esito.Nominale.Ros + 0.05), 2) + (esito.Nominale.Ros > ParseNum(tRos.Text, 1.3) ? " (il ROS nominale supera gia' l'obiettivo: conta solo l'aumento)" : "") + ". In rosso gli elementi che chiedono meno della tolleranza di costruzione."));
                 dIsto.InvalidateVisual(); dSens.InvalidateVisual();
             };
 

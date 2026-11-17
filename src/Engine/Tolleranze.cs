@@ -155,7 +155,9 @@ namespace YaNec.Engine
                 var c1 = calo(1.0);
                 e.Sens = Math.Max(0, c1.Item1);
                 // tolleranza ammessa: bisezione tra 0,1 e 10 mm sul calo del F/B (quota dell'elemento) e sul ROS massimo
-                Func<Tuple<double, double>, bool> ok = c => c.Item1 <= budget && (double.IsNaN(c.Item2) || c.Item2 <= o.RosMax);
+                // ROS: non oltre l'obiettivo; se il ROS nominale lo supera gia', conta solo l'aumento (al massimo 0,05)
+                double rosLim = double.IsNaN(nom.Ros) ? o.RosMax : Math.Max(o.RosMax, nom.Ros + 0.05);
+                Func<Tuple<double, double>, bool> ok = c => c.Item1 <= budget && (double.IsNaN(c.Item2) || c.Item2 <= rosLim);
                 double lo = 0, hi = 10;
                 if (ok(calo(hi))) e.TollAmmessa = hi;
                 else
