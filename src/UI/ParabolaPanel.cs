@@ -447,7 +447,8 @@ namespace YaNec
                 notaFeed.Text = (inp.FeedTabThetaDeg != null || inp.FeedPianiThetaDeg != null)
                     ? string.Format(IT, "Illuminatore: diagramma \"{0}\" (il taper qui sopra non si usa). Taper risultante al bordo {1:0.0} dB.", nomeFeedNec, res != null ? res.TaperBordoTab_dB : double.NaN)
                       + (res != null && res.FaseUsata ? string.Format(IT, " Centro di fase {0:+0.0;-0.0} mm dall'origine del modello (E {1:+0.0;-0.0}, H {2:+0.0;-0.0}; stima a -10 dB {3:+0.0;-0.0}).", res.CentroFase_mm, res.CentroFaseE_mm, res.CentroFaseH_mm, res.CentroFaseStima10_mm) : "")
-                    : (res != null && res.Errore == null ? string.Format(IT, "Feed cos^q con q = {0:0.00}: taper del feed {1:0.0} dB + attenuazione spaziale {2:0.0} dB; guadagno del feed {3:0.0} dBi.", res.Q, res.TaperFeed_dB, res.AttSpaziale_dB, res.GuadagnoFeed_dBi) : "");
+                    : (res != null && res.Errore == null ? string.Format(IT, "Feed cos^q con q = {0:0.00}: taper del feed {1:0.0} dB + attenuazione spaziale {2:0.0} dB; guadagno del feed {3:0.0} dBi.", res.Q, res.TaperFeed_dB, res.AttSpaziale_dB, res.GuadagnoFeed_dBi) : "")
+                      + (res != null && res.Errore == null ? string.Format(IT, " Free-space taper (Baars 4.3, 20 log[1 + (D/4f)^2]): {0:0.00} dB, taper totale al bordo {1:0.0} dB.", res.TfBaars_dB, res.TaperBordoTot_dB) : "");
             AggiornaAvvisi();
             MostraPagina();
         }
@@ -554,8 +555,9 @@ namespace YaNec
                 new[] { "Spillover (energia che esce dal bordo)", Pc(r.EtaSpill), Db(r.EtaSpill) },
                 new[] { "Illuminazione (taper)", Pc(r.EtaTaper), Db(r.EtaTaper) },
                 new[] { r.FaseUsata ? string.Format(IT, "Fase del feed (residuo max {0:0} gradi E, {1:0} gradi H)", r.FaseResiduaE_deg, r.FaseResiduaH_deg) : "Fase del feed (non disponibile)", Pc(r.EtaFase), Db(r.EtaFase) },
+                new[] { r.FaseUsata && !double.IsNaN(r.EtaFaseLimite) ? string.Format(IT, "   limite inferiore di Balanis (1 - m^2/2)^2, m = {0:0} gradi", r.FaseScartoMax_deg) : "   limite inferiore di Balanis (serve la fase del feed)", r.FaseUsata && !double.IsNaN(r.EtaFaseLimite) ? Pc(r.EtaFaseLimite) : "-", r.FaseUsata && !double.IsNaN(r.EtaFaseLimite) ? Db(r.EtaFaseLimite) : "" },
                 new[] { "Asimmetria dei piani E e H (polarizzazione incrociata)", Pc(r.EtaPol), Db(r.EtaPol) },
-                new[] { string.Format(IT, "Blocco: feed {0:0.0}% + puntoni {1:0.0}% dell'apertura pesata", r.BloccoCentrale_frac * 100, r.BloccoPuntoni_frac * 100), Pc(r.EtaBlocco), Db(r.EtaBlocco) },
+                new[] { string.Format(IT, "Blocco: feed {0:0.0}% + puntoni {1:0.0}% dell'apertura pesata (di cui {2:0.0}% onda sferica, Baars 4.36)", r.BloccoCentrale_frac * 100, r.BloccoPuntoni_frac * 100, r.BloccoSferico_frac * 100), Pc(r.EtaBlocco), Db(r.EtaBlocco) },
                 new[] { string.Format(IT, "Superficie (Ruze, {0:0.0} mm RMS = lambda/{1:0})", r.SigmaTot_mm, r.Lambda_mm / Math.Max(1e-9, r.SigmaTot_mm)), Pc(r.EtaRuze), Db(r.EtaRuze) },
                 new[] { inp.SuperficiePiena ? "Superficie piena" : string.Format(IT, "Rete {0:0.#} mm = lambda/{1:0.0} (Mumford)", inp.ReteForo_mm, r.Lambda_mm / inp.ReteForo_mm), Pc(r.EtaRete), Db(r.EtaRete) },
                 new[] { "Perdite varie (feed, cavo, fase)", Pc(r.EtaVarie), Db(r.EtaVarie) },
@@ -571,7 +573,8 @@ namespace YaNec
                 new[] { "Primo lobo laterale", D1(r.PrimoLobo_dB, "0.0") + " dB", string.Format(IT, "a {0:0.000} gradi; senza blocco {1:0.0} dB", r.PrimoLobo_deg, r.PrimoLoboSenzaBlocco_dB) },
                 new[] { "Rumore dalla rete (terreno dietro)", D1(r.RumoreRete_K, "0.0") + " K", "stima: trasmissione della rete x 290 K" },
                 new[] { "Rumore dallo spillover", D1(r.RumoreSpill_K, "0") + " K", "stima grezza (meta' dello spillover sul terreno); il calcolo vero e' TANT" },
-                new[] { "Fuori fuoco assiale per -0,25 dB", "+/-" + D1(r.TolleranzaAssiale025_mm, "0.0") + " mm", string.Format(IT, "con lo spostamento impostato: {0:0.00} dB", r.PerditaAssiale_dB) },
+                new[] { "Fuori fuoco assiale per -0,25 dB", "+/-" + D1(r.TolleranzaAssiale025_mm, "0.0") + " mm", string.Format(IT, "con lo spostamento impostato: {0:0.00} dB (Baars 4.22-4.23: apertura uniforme {1:0.00} dB, quadratica {2:0.00} dB)", r.PerditaAssiale_dB, r.DefocusBaarsUnif_dB, r.DefocusBaarsQuad_dB) },
+                new[] { "Guadagno massimo con questa superficie", double.IsNaN(r.GuadagnoMax_dBi) ? "-" : D1(r.GuadagnoMax_dBi, "0.0") + " dBi", double.IsNaN(r.LambdaMax_mm) ? "superficie senza errore" : string.Format(IT, "a lambda = 4 pi sigma = {0:0} mm ({1:0} MHz), Balanis 15-67..71", r.LambdaMax_mm, r.FreqGmax_MHz) },
                 new[] { "Beam Deviation Factor", D1(r.BDF, "0.000"), string.Format(IT, "spostamento laterale impostato -> fascio spostato di {0:0.000} gradi", r.Strabismo_deg) },
             }), "Prestazioni"));
             return sp;
@@ -646,7 +649,8 @@ namespace YaNec
                 TitoloX = "distanza del centro di fase dal fuoco, lungo l'asse (mm)", TitoloY = "%",
                 XMin = a.Dz_mm[0], XMax = a.Dz_mm[a.Dz_mm.Length - 1], FormatoX = "0", YMin = 0, YMax = ymax, PassoY = 10,
                 ScalaX2 = 1.0 / a.Lambda_mm, TitoloX2 = "λ", FormatoX2 = "0.00" };
-            g4.Serie_.Add(new ParabolaGrafico.Serie { X = a.Dz_mm, Y = a.EffDz, Colore = BLU });
+            g4.Serie_.Add(new ParabolaGrafico.Serie { X = a.Dz_mm, Y = a.EffDz, Colore = BLU, Nome = "calcolata" });
+            if (a.EffDzBaars != null) g4.Serie_.Add(new ParabolaGrafico.Serie { X = a.Dz_mm, Y = a.EffDzBaars, Colore = GR, Tratteggio = true, Spessore = 1.2, Nome = "Baars 4.22 (apertura uniforme)" });
             if (!double.IsNaN(a.TolMin_mm) && !double.IsNaN(a.TolMax_mm))
             {
                 g4.FasciaX1 = a.TolMin_mm; g4.FasciaX2 = a.TolMax_mm; g4.FasciaColore = VERDE; g4.AlfaFasciaX = 26;
@@ -681,6 +685,7 @@ namespace YaNec
             gr.FormatoX = xm < 2 ? "0.00" : xm < 10 ? "0.0" : "0";
             gr.Serie_.Add(new ParabolaGrafico.Serie { X = r.ThetaDeg, Y = r.PattDb, Specchia = true, Nome = "con il blocco del feed" });
             if (mostraSenzaBlocco) gr.Serie_.Add(new ParabolaGrafico.Serie { X = r.ThetaDeg, Y = r.PattDbSenzaBlocco, Specchia = true, Tratteggio = true, Spessore = 1.2, Colore = CGrigio, Nome = "senza blocco" });
+            if (r.PattErroreDb != null && r.PiccoErrore_dB > -50) gr.Serie_.Add(new ParabolaGrafico.Serie { X = r.ThetaDeg, Y = r.PattErroreDb, Specchia = true, Tratteggio = true, Spessore = 1.2, Colore = Pal.Orange, Nome = "fascio d'errore (Baars 4.44-4.46)" });
             var ros = Pal.Red;
             gr.LineeY.Add((-3.0, "-3 dB", ros));
             gr.LineeX.Add((-r.Hpbw_deg / 2, "", ros));
@@ -704,6 +709,9 @@ namespace YaNec
                 new[] { "Calcolato (integrazione d'apertura)", D1(r.Hpbw_deg, "0.000") + " gradi", string.Format(IT, "{0:0.000} lambda/D con l'illuminazione impostata", r.HpbwCoeff) },
                 new[] { "Apertura uniforme: 58,4 lambda/D", D1(r.Hpbw58_deg, "0.000") + " gradi", "Balanis tab. 12.2 (29,2 gradi / (a/lambda)); DF3GJ usa 58 lambda/D. Vale solo senza taper: sottostima il fascio reale" },
                 new[] { "Taper -10 dB (tabelle)", D1(1.14 * lD * 180 / Math.PI, "0.000") + " - " + D1(1.17 * lD * 180 / Math.PI, "0.000") + " gradi", "1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1" },
+                new[] { string.Format(IT, "Baars 4.13 (taper {0:0.0} dB)", r.TaperBordoTot_dB), r.HpbwBaars_deg > 0 ? D1(r.HpbwBaars_deg, "0.000") + " gradi" : "-", r.HpbwBaars_deg > 0 ? string.Format(IT, "{0:0.000} lambda/D, distribuzione quadratica con t = {1:0.00} al bordo (feed + spazio)", r.HpbwBaarsCoeff, r.TBaars) : "fuori dall'intervallo della formula (0,1 < t < 1)" },
+                new[] { "Primo lobo, Baars 4.14a (-24,6 + 7,37 t)", r.HpbwBaars_deg > 0 ? D1(r.PrimoLoboBaars_dB, "0.0") + " dB" : "-", string.Format(IT, "calcolato {0:0.0} dB (senza blocco {1:0.0} dB): la formula non conta il blocco", r.PrimoLobo_dB, r.PrimoLoboSenzaBlocco_dB) },
+                new[] { "Fascio d'errore, Baars 4.44-4.46", r.HpbwErrore_deg > 0 ? D1(r.HpbwErrore_deg, "0.00") + " gradi" : "-", r.HpbwErrore_deg > 0 ? string.Format(IT, "1,06 lambda/c con c = {0:0.00} m (distanza tra le centine); potenza 1,1 (e^s^2 - 1) = {1:0.0000}, picco {2:0.0} dB", r.ErroreC_m, r.PotenzaErrore, r.PiccoErrore_dB) : "superficie senza errore" },
                 new[] { "Regola pratica 70 lambda/D", D1(r.Hpbw70_deg, "0.000") + " gradi", "1,22 lambda/D: corrisponde a un taper forte (circa -14/-18 dB nelle tabelle)" },
                 new[] { "Guadagno dal fascio, 41253 / HPBW^2", D1(r.GuadagnoDaFascio_dBi, "0.0") + " dBi", string.Format(IT, "W1GHZ app. 6A: e' una direttivita' ottimista; il calcolo da' {0:0.0} dBi", r.Guadagno_dBi) },
             }), "Larghezza del fascio: confronto tra formule e fonti"));
@@ -711,7 +719,7 @@ namespace YaNec
                 + "Per le tolleranze di puntamento in EME si usa l'HPBW calcolato; con 58 lambda/D le tolleranze risulterebbero piu' strette del necessario.")));
             sp.Children.Add(Carta(Nota("Metodo: integrazione d'apertura con feed cos^q (o diagramma NEC del feed) e attenuazione spaziale; il blocco del feed e' sottratto al centro. "
                 + "I puntoni non sono nel diagramma (non hanno simmetria circolare): danno lobi a stella nei loro piani e sono contati solo nell'efficienza. "
-                + "Gli errori di superficie abbassano il guadagno (Ruze) e spargono l'energia in un fondo largo, non disegnato. "
+                + "Gli errori di superficie abbassano il guadagno (Ruze) e spargono l'energia in un fondo largo: la curva tratteggiata arancio e' la stima di Baars (fascio d'errore gaussiano), non un calcolo. "
                 + "Valido vicino all'asse (qualche decina di larghezze del fascio); spillover e lobi posteriori non sono nel diagramma.")));
             return sp;
         }
@@ -843,7 +851,7 @@ namespace YaNec
             sp.Children.Add(Carta(Tabella(new[]
             {
                 new[] { "Freccia della rete piana tra due centine, al bordo", D1(r.SfaccettaturaBordo_mm, "0.0") + " mm", string.Format(IT, "{0} centine", inp.NCentine) },
-                new[] { "Errore RMS equivalente (pesato con l'illuminazione)", D1(r.SigmaFacet_mm, "0.0") + " mm", inp.IncludiSfaccettatura ? "incluso nel calcolo" : "non incluso (rete sagomata)" },
+                new[] { "Errore RMS equivalente (pesato con l'illuminazione)", D1(r.SigmaFacet_mm, "0.0") + " mm", (inp.IncludiSfaccettatura ? "incluso nel calcolo" : "non incluso (rete sagomata)") + string.Format(IT, "; componente assiale (Baars 4.43), normale alla superficie {0:0.0} mm", r.SigmaFacetNormale_mm) },
                 new[] { "Bordo a poligono tra le punte delle centine (0.4.20)", D1(10 * Math.Log10(r.EtaBordoCentine), "0.00") + " dB", inp.IncludiSfaccettatura ? string.Format(IT, "area del poligono di {0} lati / cerchio; verifica NEC: 1,2 m -0,13 dB, 3 m -0,34 dB in tutto", inp.NCentine) : "non incluso (rete sagomata)" },
                 new[] { "Obiettivo lambda/20 / lambda/40", D1(r.Lambda_mm / 20, "0.0") + " / " + D1(r.Lambda_mm / 40, "0.0") + " mm", "" },
             }), "Sfaccettatura (stima geometrica)"));
@@ -903,6 +911,9 @@ namespace YaNec
                 new[] { "Disco pieno al vento", "Hoerner; rfessentials (Cd 1,2-1,4); dati di costruttori 1,5-1,65" },
                 new[] { "EME: puntamento, fascio e Luna", "Bob Atkins (off-axis gain loss); OE2IGL/DF3GJ EME link budget; DF3GJ Filling Factors; UA3AVR DUBUS 3/2016; DJ7FJ DUBUS 1/1995" },
                 new[] { "Costruzione: dischi a centine", "OK1DFC (10 m primo fuoco, rete 12,5 mm; 8 m offset, rete 6 x 0,8 mm, 36 centine, vento di progetto 130 km/h); RF HamDesign (3 m: 12 centine 20 mm, 4 anelli, rete 6 mm fino a 6 GHz, mozzo CNC 10 mm)" },
+                new[] { "Controlli della 1.0.14 (Baars)", "J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4: free-space taper 4.3, quadratica 4.8, gaussiana 4.6, HPBW 4.13, primo lobo 4.14a, fuori fuoco 4.21-4.23, ombra sferica dei puntoni 4.36c-f, componente assiale dell'errore 4.43, fascio d'errore 4.44-4.46. Uguale al calcolo: free-space taper (= attenuazione spaziale) ed efficienze delle distribuzioni. Diverso: Baars usa distribuzioni ideali, qui si integra il feed vero; HPBW e lobo di Baars sono di confronto, non sostituiscono il calcolo" },
+                new[] { "Controlli della 1.0.14 (Balanis)", "C.A. Balanis, Antenna Theory, 4a ed., cap. 15: efficienza dei feed cos^n (15-55, collaudo con le curve), limite inferiore dell'efficienza di fase (1 - m^2/2)^2, guadagno massimo a lambda = 4 pi sigma (15-67..71). Il limite di fase e' un minimo garantito: il valore calcolato sta sempre sopra" },
+                new[] { "Feed a 10 GHz, differenze misurate", "PA0PLY (disco 3 m, f/D 0,3): guida aperta 13,5 dB contro choke 15,2 dB; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB. Solo riferimento: il diagramma di quei feed va calcolato col NEC" },
                 new[] { "Costruzione: stressed dish", "Bob Atkins (dischi a centine tensionate, perdita tipica 1-2 dB; K2UYH)" },
             }, "Auto,*"), "Fonti (da riportare nei crediti di YA-NEC)");
         }

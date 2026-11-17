@@ -122,7 +122,7 @@ namespace YaNec.Engine
         public double Theta3E, Theta3H, Psi0_deg, Lambda_mm, CentroUsato_mm;
         public double[] Fds, Spill, Taper, Fase, Pol, Tot, TotSenzaFase;
         public double FdsMax, TotMax, TotAttuale, SpillAttuale;
-        public double[] Dz_mm, EffDz;
+        public double[] Dz_mm, EffDz, EffDzBaars;   // 1.0.14: EffDzBaars = Baars 4.22 (apertura uniforme), come controllo
         public double TolMin_mm, TolMax_mm, PerditaOrigine_dB;
         public bool ConFase;
         public string Descrizione;
@@ -163,6 +163,19 @@ namespace YaNec.Engine
         public double GuadagnoDaFascio_dBi;  // W1GHZ app. 6A: direttivita' ~ 41253 / (HPBW_E x HPBW_H)
         public double TaperBordoTab_dB = double.NaN;  // taper al bordo del feed tabellato (con l'attenuazione spaziale)
         public double RumoreRete_K, RumoreSpill_K;
+        // 1.0.14 (IC8TEM 17/11/2026 08:14 "si a tutto"): controlli indipendenti da Baars e Balanis
+        public double TaperBordoTot_dB = double.NaN;      // taper totale al bordo (feed + spazio), dal campo d'apertura
+        public double TBaars = double.NaN;                // t = 10^(-taper/20): livello di campo al bordo
+        public double HpbwBaars_deg = double.NaN, HpbwBaarsCoeff = double.NaN;   // Baars 4.13: b = 1,269 - 0,566t + 0,534t^2 - 0,208t^3
+        public double PrimoLoboBaars_dB = double.NaN;     // Baars 4.14a: -24,6 + 7,37 t
+        public double TfBaars_dB;                         // Baars 4.3: free-space taper 20 log[1 + (D/4f)^2]
+        public double EtaFaseLimite = double.NaN, FaseScartoMax_deg = double.NaN;   // Balanis 15-64/65: (1 - m^2/2)^2
+        public double BloccoSferico_frac;                 // Baars 4.36c: ombra dei puntoni sull'onda sferica (dall'attacco al bordo)
+        public double SigmaFacetNormale_mm;               // sfaccettatura prima della riduzione alla componente assiale (Baars 4.43)
+        public double LambdaMax_mm = double.NaN, FreqGmax_MHz = double.NaN, GuadagnoMax_dBi = double.NaN;   // Balanis 15-67..71
+        public double ErroreC_m = double.NaN, HpbwErrore_deg = double.NaN, PotenzaErrore = double.NaN, PiccoErrore_dB = double.NaN;   // Baars 4.44-4.46
+        public double[] PattErroreDb;
+        public double DefocusBeta = double.NaN, DefocusBaarsUnif_dB = double.NaN, DefocusBaarsQuad_dB = double.NaN;   // Baars 4.21-4.23
 
         // fuori fuoco
         public double PerditaAssiale_dB, TolleranzaAssiale025_mm, BDF, Strabismo_deg;
@@ -705,7 +718,7 @@ namespace YaNec.Engine
 
             // grafico 4: efficienza in funzione della distanza del centro di fase dal fuoco (centro di fase fisso, f/D attuale)
             int nz = 81;
-            a.Dz_mm = new double[nz]; a.EffDz = new double[nz];
+            a.Dz_mm = new double[nz]; a.EffDz = new double[nz]; a.EffDzBaars = new double[nz];
             double best = 0;
             for (int i = 0; i < nz; i++)
             {
@@ -713,6 +726,12 @@ namespace YaNec.Engine
                 a.Dz_mm[i] = z * 1000.0;
                 a.EffDz[i] = 100.0 * eff(p.FsuD, dUsato + z, true)[4];
                 best = Math.Max(best, a.EffDz[i]);
+            }
+            // 1.0.14: Baars 4.22, apertura uniforme: g = [sin(beta/2)/(beta/2)]^2, beta = (2 pi dz / lambda)(1 - cos psi0); scalata sul massimo.
+            // L'illuminazione rastremata e' meno sensibile (Baars 4.21): la curva di Baars sta sotto quella calcolata, e' un controllo.
+            {
+                double cps = Math.Cos(2.0 * Math.Atan(1.0 / (4.0 * p.FsuD)));
+                for (int i = 0; i < nz; i++) a.EffDzBaars[i] = best * DefocusUniforme(2.0 * Math.PI * (a.Dz_mm[i] / 1000.0) / lam * (1.0 - cps));
             }
             double lim = best * Math.Pow(10.0, -0.025);
             a.TolMin_mm = double.NaN; a.TolMax_mm = double.NaN;
@@ -863,6 +882,21 @@ namespace YaNec.Engine
             }
             r.EtaTaper = Ia * Ia / (a * a / 2.0 * I2);                     // solo ampiezza
             r.EtaFase = Ia > 0 ? (I1.Magnitude * I1.Magnitude) / (Ia * Ia) : 1.0;   // fase non uniforme sull'apertura
+            // 1.0.14: limite inferiore di Balanis 15-64/65, (1 - m^2/2)^2 con m = scarto massimo di fase dal valor medio sull'apertura
+            if (piani && fp.ConFase && I1.Magnitude > 0)
+            {
+                double fm = I1.Phase, m = 0;
+                for (int i = 0; i <= N; i++)
+                {
+                    if (E[i].Magnitude < 1e-6 * E[0].Magnitude) continue;
+                    double dph = E[i].Phase - fm;
+                    while (dph > Math.PI) dph -= 2.0 * Math.PI;
+                    while (dph < -Math.PI) dph += 2.0 * Math.PI;
+                    m = Math.Max(m, Math.Abs(dph));
+                }
+                r.FaseScartoMax_deg = m * 180.0 / Math.PI;
+                r.EtaFaseLimite = m < Math.Sqrt(2.0) ? Math.Pow(1.0 - m * m / 2.0, 2.0) : 0.0;
+            }
 
             // spillover
             if (!piani)
@@ -883,16 +917,41 @@ namespace YaNec.Engine
                 else if (rho[i] <= rs) Bs += w[i] * E[i];
             }
             Bs *= Math.Max(0, p.NPuntoni) * ws / (2.0 * Math.PI);
-            Complex bc = Bc / I1, bs = Bs / I1;
+            // 1.0.14 (Baars 4.36c-f): ombra dei puntoni sull'onda SFERICA. Il puntone va dal bordo del feed (rb, quota del fuoco) all'attacco
+            // (rs, zs): i raggi che partono dal fuoco verso il disco oltre l'attacco lo attraversano, e l'ombra si allarga con il rapporto delle
+            // distanze dal fuoco (punto del disco / punto d'incrocio). Con l'attacco al bordo l'ombra sferica e' nulla. L'illuminazione
+            // rastremata e' gia' nel campo E (correzioni 4.36e/f). L'ombra a onda piana (rb..rs, sopra) resta com'era.
+            Complex Bsf = Complex.Zero;
+            if (p.NPuntoni > 0 && rs < a - 1e-9)
+            {
+                double x1 = Math.Max(rb, 0.02 * a), z1 = F, x2 = rs, z2 = rs * rs / (4.0 * F);
+                for (int i = 0; i <= N; i++)
+                {
+                    if (rho[i] <= rs) continue;
+                    double xq = rho[i], zq = xq * xq / (4.0 * F);
+                    // raggio O(0,F) -> Q(xq,zq): O + s (Q - O); puntone P1 + t (P2 - P1); nel piano meridiano
+                    double dxr = xq, dzr = zq - F, dxs = x2 - x1, dzs = z2 - z1;
+                    double det = dxr * (-dzs) - dzr * (-dxs);
+                    if (Math.Abs(det) < 1e-15) continue;
+                    double rx = x1, rz = z1 - F;
+                    double s = (rx * (-dzs) - rz * (-dxs)) / det, t = (dxr * rz - dzr * rx) / det;
+                    if (s <= 0 || s >= 1 || t < 0 || t > 1) continue;
+                    double dC = s * Math.Sqrt(dxr * dxr + dzr * dzr), dQ = Math.Sqrt(dxr * dxr + dzr * dzr);
+                    Bsf += w[i] * E[i] * (ws * dQ / Math.Max(dC, 1e-9));
+                }
+                Bsf *= p.NPuntoni / (2.0 * Math.PI);
+            }
+            Complex bc = Bc / I1, bs = (Bs + Bsf) / I1;
             r.BloccoCentrale_frac = bc.Magnitude;
             r.BloccoPuntoni_frac = bs.Magnitude;
+            r.BloccoSferico_frac = (Bsf / I1).Magnitude;
             Complex resto = Complex.One - bc - bs;
             r.EtaBlocco = Math.Max(1e-6, resto.Magnitude * resto.Magnitude);
 
             // superficie: errore costruttivo + (facoltativo) sfaccettatura della rete piana tra le centine
             // curvatura circonferenziale del paraboloide: k2 = (1/2F)/sqrt(1+r^2/4F^2); freccia della corda s: k2 s^2/8;
             // RMS di una freccia parabolica attorno al suo valor medio: 0,298 x freccia (stima geometrica).
-            double facetW = 0, facetWsum = 0, facetMax = 0;
+            double facetW = 0, facetWn = 0, facetWsum = 0, facetMax = 0;
             if (p.NCentine > 0)
             {
                 for (int i = 1; i <= N; i++)
@@ -903,11 +962,15 @@ namespace YaNec.Engine
                     double fr = k2 * s * s / 8.0;
                     facetMax = Math.Max(facetMax, fr);
                     double rms = 0.298 * fr;
-                    facetW += w[i] * E[i].Magnitude * rr * rms * rms;
+                    // 1.0.14 (Baars 4.43): conta la componente assiale dell'errore normale, eps = eps_n / sqrt(1 + (r/2f)^2)
+                    double rmsAx = rms / Math.Sqrt(1.0 + rr * rr / (4.0 * F * F));
+                    facetWn += w[i] * E[i].Magnitude * rr * rms * rms;
+                    facetW += w[i] * E[i].Magnitude * rr * rmsAx * rmsAx;
                     facetWsum += w[i] * E[i].Magnitude * rr;
                 }
             }
             r.SigmaFacet_mm = facetWsum > 0 ? Math.Sqrt(facetW / facetWsum) * 1000.0 : 0;
+            r.SigmaFacetNormale_mm = facetWsum > 0 ? Math.Sqrt(facetWn / facetWsum) * 1000.0 : 0;
             r.SfaccettaturaBordo_mm = facetMax * 1000.0;
             double sig = p.ErroreRmsCostruttivo_mm;
             if (p.IncludiSfaccettatura) sig = Math.Sqrt(sig * sig + r.SigmaFacet_mm * r.SigmaFacet_mm);
@@ -932,6 +995,15 @@ namespace YaNec.Engine
             r.GuadagnoIdeale_dBi = Db10(gIdeale);
             r.Guadagno_dBi = Db10(gIdeale * r.EtaTotale);
             r.AreaEfficace_m2 = r.AreaApertura_m2 * r.EtaTotale;
+            // 1.0.14 (Balanis 15-67..71): con errore sigma il guadagno e' massimo a lambda = 4 pi sigma e vale
+            // Dmax(dB) = 20 log10(D/sigma) - 16,38 + 10 log10(eta_ap), eta_ap senza la perdita di Ruze.
+            if (r.SigmaTot_mm > 0)
+            {
+                r.LambdaMax_mm = 4.0 * Math.PI * r.SigmaTot_mm;
+                r.FreqGmax_MHz = C0 / (r.LambdaMax_mm / 1000.0) / 1e6;
+                double etaNoRuze = r.EtaTotale / Math.Max(1e-12, r.EtaRuze);
+                r.GuadagnoMax_dBi = 20.0 * Math.Log10(D * 1000.0 / r.SigmaTot_mm) - 16.38 + Db10(etaNoRuze);
+            }
 
             // ---------------- diagramma dei lobi
             int NT = 900;
@@ -968,11 +1040,44 @@ namespace YaNec.Engine
             r.GuadagnoDaFascio_dBi = Db10(41253.0 / (r.Hpbw_deg * r.Hpbw_deg));
             if (tab || piani) r.TaperBordoTab_dB = -20.0 * Math.Log10(Math.Max(1e-12, E[N].Magnitude / E[0].Magnitude));
 
+            // ---------------- 1.0.14: controlli di Baars (The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, 2007)
+            r.TfBaars_dB = 20.0 * Math.Log10(1.0 + (D / (4.0 * F)) * (D / (4.0 * F)));   // 4.3, uguale all'attenuazione spaziale
+            r.TaperBordoTot_dB = -20.0 * Math.Log10(Math.Max(1e-12, E[N].Magnitude / Math.Max(1e-12, E[0].Magnitude)));
+            r.TBaars = Math.Pow(10.0, -r.TaperBordoTot_dB / 20.0);
+            if (r.TBaars >= 0.1 && r.TBaars <= 1.0 + 1e-9)
+            {
+                double t = Math.Min(1.0, r.TBaars);
+                r.HpbwBaarsCoeff = 1.269 - 0.566 * t + 0.534 * t * t - 0.208 * t * t * t;      // 4.13, valida per 0,1 < t < 1
+                r.HpbwBaars_deg = r.HpbwBaarsCoeff * lam / D * 180.0 / Math.PI;
+                r.PrimoLoboBaars_dB = -24.6 + 7.37 * t;                                        // 4.14a
+            }
+            // fascio d'errore (4.44-4.46): larghezza 1,06 lambda/c, potenza rispetto al fascio principale ~ 1,1 (e^(s^2) - 1),
+            // s = 4 pi sigma / lambda; c = lunghezza di correlazione, qui la distanza tra le centine a 2/3 del raggio (pannelli tra due centine).
+            if (r.SigmaTot_mm > 0)
+            {
+                r.ErroreC_m = p.NCentine >= 3 ? 2.0 * Math.PI * (2.0 * a / 3.0) / p.NCentine : D / 10.0;
+                double s2 = Math.Pow(4.0 * Math.PI * r.SigmaTot_mm / lamMm, 2.0);
+                r.PotenzaErrore = 1.1 * (Math.Exp(s2) - 1.0);
+                r.HpbwErrore_deg = 1.06 * lam / r.ErroreC_m * 180.0 / Math.PI;
+                double rap = r.Hpbw_deg / r.HpbwErrore_deg;
+                r.PiccoErrore_dB = 10.0 * Math.Log10(Math.Max(1e-30, r.PotenzaErrore * rap * rap));
+                r.PattErroreDb = new double[NT + 1];
+                for (int j = 0; j <= NT; j++)
+                {
+                    double x = r.ThetaDeg[j] / r.HpbwErrore_deg;
+                    r.PattErroreDb[j] = r.PiccoErrore_dB - 10.0 * Math.Log10(Math.E) * 4.0 * Math.Log(2.0) * x * x;
+                }
+            }
+
             // ---------------- fuori fuoco assiale: fase -k dz cos(theta_f) (NRAO/ALMA memo 479, Ruze 1969)
             r.PerditaAssiale_dB = PerditaDefocus(p.FeedSpostAssiale_mm / 1000.0, k, E, w, rho, thf, N);
             double dz = 0, passoDz = lam / 400.0;
             while (dz < 2.0 * lam && PerditaDefocus(dz, k, E, w, rho, thf, N) < 0.25) dz += passoDz;
             r.TolleranzaAssiale025_mm = dz * 1000.0;
+            // 1.0.14: Baars 4.21-4.23 come controllo: beta = (2 pi delta / lambda)(1 - cos psi0); uniforme sinc^2(beta/2), quadratica ~ 1 - beta^2/18
+            r.DefocusBeta = 2.0 * Math.PI * (p.FeedSpostAssiale_mm / 1000.0) / lam * (1.0 - Math.Cos(psi0));
+            r.DefocusBaarsUnif_dB = -10.0 * Math.Log10(Math.Max(1e-12, DefocusUniforme(r.DefocusBeta)));
+            r.DefocusBaarsQuad_dB = -10.0 * Math.Log10(Math.Max(1e-12, 1.0 - r.DefocusBeta * r.DefocusBeta / 18.0));
 
             // ---------------- spostamento laterale: Beam Deviation Factor (Lo 1960; Ruze 1965)
             double g4 = (D / (4.0 * F)) * (D / (4.0 * F));
@@ -1155,6 +1260,41 @@ namespace YaNec.Engine
             if (dOttimo >= dMax - 1e-6) dOttimo = double.NaN;   // nessun massimo nell'intervallo
         }
 
+        /// <summary>Baars 4.22: guadagno relativo dell'apertura uniforme fuori fuoco, [sin(beta/2)/(beta/2)]^2.</summary>
+        public static double DefocusUniforme(double beta)
+        {
+            double x = beta / 2.0;
+            if (Math.Abs(x) < 1e-9) return 1.0;
+            double v = Math.Sin(x) / x;
+            return v * v;
+        }
+
+        /// <summary>Baars 4.8: efficienza d'illuminazione della distribuzione quadratica su piedistallo, t = livello di campo al bordo.</summary>
+        public static double EtaQuadraticaBaars(double t) { return 0.75 * (1 + t) * (1 + t) / (1 + t + t * t); }
+
+        /// <summary>Baars 4.6: efficienza d'illuminazione della distribuzione gaussiana troncata, taper al bordo in dB (positivo).</summary>
+        public static double EtaGaussianaBaars(double taperDb)
+        {
+            double aa = taperDb / 20.0 * Math.Log(10.0);
+            return 2.0 * Math.Pow(1.0 - Math.Exp(-aa), 2.0) / (aa * (1.0 - Math.Exp(-2.0 * aa)));
+        }
+
+        /// <summary>Balanis 15-55: efficienza d'apertura (spillover x taper) di un feed con diagramma di potenza G(theta) normalizzato
+        /// a 4 pi: cot^2(th0/2) |int_0^th0 sqrt(G) tan(th/2) dth|^2. Integrazione indipendente da quella d'apertura del motore.</summary>
+        public static double EtaAperturaBalanis(Func<double, double> potenza, double th0)
+        {
+            int n = 4000;
+            double h = Math.PI / n, norm = 0;
+            for (int i = 0; i <= n; i++) { double th = i * h; double wv = (i == 0 || i == n) ? 1 : (i % 2 == 1 ? 4 : 2); norm += wv * potenza(th) * Math.Sin(th); }
+            norm *= h / 3.0 * 2.0 * Math.PI;   // integrale sulla sfera
+            double k0 = 4.0 * Math.PI / norm;   // G normalizzato: int G dOmega = 4 pi
+            int m = 4000; double h2 = th0 / m, s = 0;
+            for (int i = 0; i <= m; i++) { double th = i * h2; double wv = (i == 0 || i == m) ? 1 : (i % 2 == 1 ? 4 : 2); s += wv * Math.Sqrt(k0 * potenza(th)) * Math.Tan(th / 2.0); }
+            s *= h2 / 3.0;
+            double ct = 1.0 / Math.Tan(th0 / 2.0);
+            return ct * ct * s * s;
+        }
+
         /// <summary>Collaudo del metodo: diagramma di un'apertura circolare con distribuzione E(rho/a) data.
         /// Ritorna HPBW in unita' lambda/D, primo lobo (dB) ed efficienza di taper.</summary>
         public static void ProvaApertura(Func<double, double> distr, out double hpbwCoeff, out double loboDb, out double etaT)
@@ -1293,6 +1433,9 @@ namespace YaNec.Engine
                 A.Add(new ParabolaAvviso(2, string.Format(CI, "EME: fascio {0:0.00} gradi contro una Luna di {1:0.00}: il disco 'vede' solo una parte della Luna (perdita sull'eco {2:0.0} dB rispetto alla stima a sorgente puntiforme). Puntare il centro del disco lunare, con la stessa cura all'altro capo.", r.Hpbw_deg, LunaDiametro_deg, r.PerditaEco_dB)));
             if (r.Hpbw_deg < 1.0)
                 A.Add(new ParabolaAvviso(2, string.Format(CI, "Puntamento: per perdere meno di 0,5 dB serve un errore entro {0:0.00} gradi (1 dB: {1:0.00}). Con {2:0.00} gradi d'errore si perdono {3:0.0} dB. Conviene ottimizzare col rumore lunare o solare.", r.Tolleranza05_deg, r.Tolleranza1_deg, p.ErrorePuntamento_deg, r.PerditaPuntamento_dB)));
+            // 1.0.14 (Balanis 15-67..71): oltre lambda = 4 pi sigma il guadagno scende anche se la frequenza sale
+            if (!double.IsNaN(r.LambdaMax_mm) && lam < r.LambdaMax_mm)
+                A.Add(new ParabolaAvviso(1, string.Format(CI, "Superficie: con {0:0.0} mm RMS il guadagno e' massimo a lambda = 4 pi sigma = {1:0} mm ({2:0} MHz), dove vale {3:0.0} dBi. A questa frequenza si e' gia' oltre: salendo ancora il guadagno cala.", r.SigmaTot_mm, r.LambdaMax_mm, r.FreqGmax_MHz, r.GuadagnoMax_dBi)));
             if (p.FreqMHz > 9000 && p.Diametro_m > 2.5)
                 A.Add(new ParabolaAvviso(1, "10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione."));
             if (r.FaseUsata)

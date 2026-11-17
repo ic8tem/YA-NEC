@@ -63,10 +63,11 @@ namespace YaNec.Engine
                 Prova(log, "q del feed", r.Q, 1.1448, 1e-3);
                 Prova(log, "spillover", r.EtaSpill, 0.9126, 1e-3);
                 Prova(log, "taper", r.EtaTaper, 0.9033, 1e-3);
-                Prova(log, "blocco", r.EtaBlocco, 0.9644, 1e-3);
+                // 1.0.14: il blocco comprende l'ombra dei puntoni sull'onda sferica (Baars 4.36c-f): 0,9644 -> 0,9359, guadagno -0,13 dB
+                Prova(log, "blocco", r.EtaBlocco, 0.9359, 1.5e-3);
                 Prova(log, "Ruze (3 mm)", r.EtaRuze, 0.9738, 1e-3);
                 Prova(log, "rete 6 mm / 0,8 mm", r.EtaRete, 0.9966, 1e-3);
-                Prova(log, "guadagno (dBi)", r.Guadagno_dBi, 30.375, 0.05);
+                Prova(log, "guadagno (dBi)", r.Guadagno_dBi, 30.246, 0.05);
                 Prova(log, "HPBW (gradi)", r.Hpbw_deg, 5.041, 0.02);
                 Prova(log, "primo lobo (dB)", r.PrimoLobo_dB, -23.30, 0.2);
                 Prova(log, "fuori fuoco per -0,25 dB (mm)", r.TolleranzaAssiale025_mm, 59.2, 1.0);
@@ -88,7 +89,7 @@ namespace YaNec.Engine
             if (r.Errore == null)
             {
                 Prova(log, "10 GHz: HPBW (gradi)", r.Hpbw_deg, 0.6304, 0.005);
-                Prova(log, "10 GHz: guadagno (dBi)", r.Guadagno_dBi, 40.323, 0.05);
+                Prova(log, "10 GHz: guadagno (dBi)", r.Guadagno_dBi, 40.194, 0.05);
                 Prova(log, "10 GHz: perdita eco Luna (dB)", r.PerditaEco_dB, 1.888, 0.03);
                 Prova(log, "10 GHz: errore ammesso per 0,5 dB (gradi)", r.Tolleranza05_deg, 0.1287, 0.002);
                 bool avv = r.Avvisi.Exists(a => a.Livello == 2);
@@ -117,7 +118,7 @@ namespace YaNec.Engine
                     Prova(log, "feed tabellato: spillover", rt.EtaSpill, 0.9126, 0.003);
                     Prova(log, "feed tabellato: taper", rt.EtaTaper, 0.9033, 0.003);
                     Prova(log, "feed tabellato: taper al bordo (dB)", rt.TaperBordoTab_dB, 10.0, 0.1);
-                    Prova(log, "feed tabellato: guadagno (dBi)", rt.Guadagno_dBi, 30.375, 0.06);
+                    Prova(log, "feed tabellato: guadagno (dBi)", rt.Guadagno_dBi, 30.246, 0.06);
                     Prova(log, "feed tabellato: HPBW (gradi)", rt.Hpbw_deg, 5.041, 0.03);
                 }
                 else { ko++; log("ERR  feed tabellato: " + rt.Errore); }
@@ -171,7 +172,7 @@ namespace YaNec.Engine
                 Prova(log, "T1 centro di fase piano H (mm)", r1.CentroFaseH_mm, 0.1 * lamMm, 0.05);
                 Prova(log, "T1 stima di W1GHZ a -10 dB (mm)", r1.CentroFaseStima10_mm, 0.1 * lamMm, 0.2);
                 Prova(log, "T1 efficienza di fase dopo la correzione", r1.EtaFase, 1.0, 1e-6);
-                Prova(log, "T1 guadagno (dBi, come il cos^q)", r1.Guadagno_dBi, 30.377, 0.06);
+                Prova(log, "T1 guadagno (dBi, come il cos^q)", r1.Guadagno_dBi, 30.248, 0.06);
                 bool fu = r1.FaseUsata; if (fu) ok++; else ko++;
                 log((fu ? "OK  " : "ERR ") + " T1 la fase risulta usata");
 
@@ -265,6 +266,57 @@ namespace YaNec.Engine
                 Prova(log, "Offset 1 m: squint in circolare (gradi)", o.Squint_deg, 0.1515, 1e-3);
                 var om = Parabola.CalcolaOffset(new ParabolaInput { Diametro_m = 1.0, FsuD = 0.6, FreqMHz = 10368.1, OffsetBordoInferiore_m = 0.05, TaperBordo_dB = 10.0, FeedDiametro_m = 0.0, OffsetMiraOttima = true }, false);
                 Prova(log, "Offset 1 m: efficienza con la mira ottima", om.EtaApertura, 0.8077, 2e-3);
+            }
+
+            // 10. 1.0.14: casi di letteratura (Balanis cap. 15, Baars 2007 cap. 4; valori attesi da verifica/riferimento_1014.py)
+            {
+                // 10a. feed cos^n (potenza): spillover x taper del motore contro Balanis 15-55, integrale indipendente
+                double[] fds = { 0.3, 0.42, 0.6 };
+                int[] ns = { 2, 4, 6, 8 };
+                double[,] attesi = { { 0.7383, 0.5277, 0.3949, 0.3124 }, { 0.8192, 0.7815, 0.6761, 0.5738 }, { 0.6371, 0.7793, 0.8167, 0.8011 } };
+                var thT = new double[181];
+                for (int a = 0; a <= 180; a++) thT[a] = a;
+                for (int i = 0; i < fds.Length; i++)
+                    for (int j = 0; j < ns.Length; j++)
+                    {
+                        int n = ns[j]; double fd = fds[i];
+                        var dbT = new double[181];
+                        for (int a = 0; a <= 180; a++) dbT[a] = a < 90 ? 10.0 * n * Math.Log10(Math.Cos(a * Math.PI / 180.0)) : -80.0;
+                        var rc = Parabola.Calcola(new ParabolaInput { FsuD = fd, FeedTabThetaDeg = thT, FeedTabDb = dbT }, false);
+                        double th0 = 2.0 * Math.Atan(1.0 / (4.0 * fd));
+                        double bal = Parabola.EtaAperturaBalanis(t => t < Math.PI / 2 ? Math.Pow(Math.Cos(t), n) : 0.0, th0);
+                        string tag = string.Format(CI, "cos^{0} f/D {1:0.00}", n, fd);
+                        Prova(log, tag + ": Balanis 15-55", bal, attesi[i, j], 2e-3);
+                        if (rc.Errore == null) Prova(log, tag + ": motore (spill x taper)", rc.EtaSpill * rc.EtaTaper, attesi[i, j], 5e-3);
+                        else { ko++; log("ERR  " + tag + ": " + rc.Errore); }
+                    }
+                // forma chiusa di Balanis per n = 2 e massimo delle curve (circa 0,82-0,83)
+                {
+                    double th0 = 2.0 * Math.Atan(1.0 / (4.0 * 0.42)), sh = Math.Sin(th0 / 2), ct = 1.0 / Math.Tan(th0 / 2);
+                    double chiusa = 24.0 * Math.Pow(sh * sh + Math.Log(Math.Cos(th0 / 2)), 2) * ct * ct;
+                    Prova(log, "cos^2 f/D 0,42: forma chiusa di Balanis", chiusa, 0.8192, 2e-3);
+                    double mx = 0;
+                    for (double d = 20; d <= 100; d += 0.5) mx = Math.Max(mx, Parabola.EtaAperturaBalanis(t => t < Math.PI / 2 ? Math.Pow(Math.Cos(t), 2) : 0.0, d * Math.PI / 180.0));
+                    Prova(log, "cos^2: massimo della curva di Balanis", mx, 0.8290, 2e-3);
+                }
+                // 10b. distribuzione quadratica su piedistallo a -12 dB (Baars 4.8 e 4.13)
+                double C = Math.Pow(10, -12.0 / 20.0), hp, sl, et;
+                Parabola.ProvaApertura(x => C + (1 - C) * (1 - x * x), out hp, out sl, out et);
+                Prova(log, "quadratica -12 dB: efficienza (Baars 0,893)", et, 0.8933, 3e-3);
+                Prova(log, "quadratica -12 dB: formula di Baars 4.8", Parabola.EtaQuadraticaBaars(C), 0.8933, 1e-4);
+                Prova(log, "quadratica -12 dB: HPBW (Baars 66,3 gradi lambda/D)", hp * 180.0 / Math.PI, 66.3, 0.7);
+                // 10c. gaussiana troncata a -12 dB (Baars 4.6)
+                double ag = 12.0 / 20.0 * Math.Log(10.0);
+                Parabola.ProvaApertura(x => Math.Exp(-ag * x * x), out hp, out sl, out et);
+                Prova(log, "gaussiana -12 dB: formula di Baars 4.6", Parabola.EtaGaussianaBaars(12.0), 0.8664, 1e-4);
+                Prova(log, "gaussiana -12 dB: integrale numerico", et, 0.8664, 3e-3);
+                // 10d. free-space taper a f/D 0,3 (Baars 4.3), fuori fuoco beta = 1 (Baars 4.22), Ruze a lambda/20
+                var rf = Parabola.Calcola(new ParabolaInput { FsuD = 0.3 }, false);
+                Prova(log, "free-space taper f/D 0,3 (Baars 4,58 dB)", rf.TfBaars_dB, 4.58, 0.01);
+                Prova(log, "fuori fuoco beta = 1 (Baars 0,919)", Parabola.DefocusUniforme(1.0), 0.9194, 1e-4);
+                Prova(log, "Ruze sigma = lambda/20 (dB)", 10.0 * Math.Log10(Math.Exp(-Math.Pow(4.0 * Math.PI / 20.0, 2))), -1.7145, 1e-3);
+                // 10e. PA0PLY (misure, 10 GHz, 3 m, f/D 0,3): solo riferimento, il diagramma della choke non e' analitico e va fatto col NEC
+                log("INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (sole/rumore); choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB.");
             }
 
             log(string.Format(CI, "=== Parabola: {0} prove superate, {1} fallite ===", ok, ko));

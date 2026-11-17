@@ -195,6 +195,10 @@ FONTI DEI CALCOLATORI, DEI CASI DI PROVA E DELLO STUDIO DEI MANUALI
     W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 - feed cos^q, spillover, efficienza
     GMRT/NCRA, Low Frequency Radio Astronomy, tab. 19.1; J. Baars, NRAO EDIR 57 - tabelle HPBW, lobi, taper (collaudo)
     C.A. Balanis, Antenna Theory, tab. 12.2 - apertura circolare uniforme; DF3GJ (58 lambda/D)
+    1.0.14: J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication (Springer 2007), cap. 4 -
+      free-space taper, HPBW e primo lobo della distribuzione quadratica, fuori fuoco, ombra sferica dei puntoni,
+      componente assiale dell'errore di superficie, fascio d'errore; C.A. Balanis, Antenna Theory, cap. 15 - feed cos^n
+      (collaudo), limite dell'efficienza di fase, guadagno massimo a lambda = 4 pi sigma; PA0PLY - misure di feed a 10 GHz
     P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6, app. 6A (FEEDPATT, PHASEPAT); Mesh Reflector Loss Calculations
     Galt Telescope, arXiv 1607.06436; Lamb e Olver 1986 (arXiv 1609.09376) - blocco pesato con l'illuminazione
     J. Ruze, Antenna Tolerance Theory (Proc. IEEE 1966), Feed Support Blockage Loss (Microwave J. 1968), fuori fuoco (1969);
