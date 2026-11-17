@@ -130,7 +130,7 @@ namespace YaNec.Engine
             }
         }
 
-        static readonly HttpClient Http = CreaHttp();
+        internal static readonly HttpClient Http = CreaHttp();
         static HttpClient CreaHttp()
         {
             HttpClient h = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };

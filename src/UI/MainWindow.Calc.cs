@@ -750,6 +750,7 @@ namespace YaNec
                     polEl.Traces.Add(new PolarTrace { Db = run.ElCutVert, Color = Pal.Series(1), Width = 1.4, Dashed = true, Name = "verticale" });
                     polEl.Traces.Add(new PolarTrace { Db = run.ElCutHor, Color = Pal.Series(2), Width = 1.4, Dashed = true, Name = "orizzontale" });
                 }
+                if (terrSovrapponi && terrEsito != null) polEl.Traces.Add(TerrTraccia());   // 1.2.0: lobo sul terreno reale
                 polAz.MarkAngle = run.PhiMax;
                 polEl.MarkAngle = run.ElevationOfMax;
                 polAz.Notes = new[]

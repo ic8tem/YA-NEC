@@ -29,6 +29,7 @@ namespace YaNec
             if (args.Length >= 3 && args[0] == "--passi") return PassiDaGuardare.Scrivi(args[1], args[2]);
             Librerie.Prepara();
             List<string> la = new List<string>(args);
+            Engine.Dem.Cartella = AppPaths.DataDir;   // 1.2.0: DEM scaricati in data/dem
             string copia = la.Contains("--registro") || la.Contains("--prove-interfaccia") || la.Contains("--prove-butternut") ? Path.Combine(AppPaths.DataDir, "registro.txt") : null;
             string modo = la.Contains("--prepara-varianti") ? "varianti vicino al terreno per EZNEC" : la.Contains("--confronta-varianti") ? "varianti vicino al terreno contro EZNEC" : la.Contains("--prepara-gradini") ? "elementi a gradini per EZNEC" : la.Contains("--confronta-gradini") ? "elementi a gradini contro EZNEC" : la.Contains("--tara-gradini") ? "taratura di Leeson sugli elementi a gradini" : la.Contains("--confronta-archivio") ? "confronto d'archivio con EZNEC" : la.Contains("--confronta-eznec") ? "confronto con EZNEC" : la.Contains("--prove-sensibili") ? "modelli sensibili" : la.Contains("--esporta-eznec") ? "esportazione per EZNEC" : la.Contains("--prove-pesanti") ? "modelli pesanti" : la.Contains("--collaudo") ? "collaudo" : la.Contains("--autotest") ? "autotest" : la.Contains("--prove-interfaccia") ? "prove dell'interfaccia" :
                 la.Contains("--prove-butternut") ? "prova della Butternut" : "interfaccia grafica";
@@ -392,18 +393,18 @@ namespace YaNec
                             bool okt = dmax <= 0.1;
                             string r1 = string.Format(CI0, "Terreno reale su profilo piatto (dipolo 20 m a 10 m, suolo 13 / 5 mS/m, 1-80 gradi): scarto massimo dal NEC {0:0.000} dB (tolleranza 0,1 dB)", dmax);
                             sb.AppendLine("       " + (okt ? "OK   " : "ERR  ") + r1); if (!okt) errPar.Add(r1);
-                            double la, lo; Engine.Dem.DaLocatore("JN70CN82WE", out la, out lo);
+                            double latL, lonL; Engine.Dem.DaLocatore("JN70CN82WE", out latL, out lonL);
                             double[,] att = { { 302, 7093 }, { 327, 10250 }, { 41, 9871 }, { 82, 15990 }, { 234, 9836 }, { 278, 7938 } };
-                            bool okd = Math.Abs(la - 40.5508) < 0.0001 && Math.Abs(lo - 14.2411) < 0.0001;
+                            bool okd = Math.Abs(latL - 40.5508) < 0.0001 && Math.Abs(lonL - 14.2411) < 0.0001;
                             var sbd = new System.Text.StringBuilder();
                             for (int i = 0; i < 6; i++)
                             {
                                 var dd = Engine.Dem.DirezioniTraffico[i]; double az, km;
-                                Engine.Dem.Rotta(la, lo, dd.Lat, dd.Lon, out az, out km);
+                                Engine.Dem.Rotta(latL, lonL, dd.Lat, dd.Lon, out az, out km);
                                 if (Math.Abs(az - att[i, 0]) > 1 || Math.Abs(km - att[i, 1]) > 10) okd = false;
                                 sbd.Append(string.Format(CI0, "{0} {1:0}°/{2:0} km; ", dd.Nome, az, km));
                             }
-                            string r2 = "Direzioni di traffico da JN70CN82WE (" + la.ToString("0.0000", CI0) + " N " + lo.ToString("0.0000", CI0) + " E): " + sbd.ToString();
+                            string r2 = "Direzioni di traffico da JN70CN82WE (" + latL.ToString("0.0000", CI0) + " N " + lonL.ToString("0.0000", CI0) + " E): " + sbd.ToString();
                             sb.AppendLine("       " + (okd ? "OK   " : "ERR  ") + r2); if (!okd) errPar.Add(r2);
                         }
                         catch (Exception ex) { errPar.Add("terreno reale: " + ex.Message); }
