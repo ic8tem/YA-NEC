@@ -1,0 +1,14 @@
+# YA-NEC - corregge le note delle versioni gia' pubblicate (tabella dei download). Si avvia a mano.
+name: note
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  note:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 installer/note/correggi_note.py
+        env:
+          GH_TOKEN: ${{ github.token }}

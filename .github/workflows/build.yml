@@ -190,6 +190,8 @@ jobs:
         run: |
           python3 installer/gestori/genera.py "$VER" dist gestori
           (cd gestori && zip -qr "../dist/YA-NEC-$VER-gestori-winget-scoop-chocolatey.zip" .)
+      - name: Note della versione (tabella dei download con la versione giusta)
+        run: sed -i "s/@VER@/$VER/g" .github/release.md
       - uses: softprops/action-gh-release@v2
         with:
           name: YA-NEC ${{ env.VER }}
