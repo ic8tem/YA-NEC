@@ -3886,3 +3886,16 @@ Distribuzione del F/B	התפלגות F/B
 Cavi di fase	כבלי פאזה
 COMMUTAZIONE	מיתוג
 RETE DI FASE	רשת פאזה
+Colore del filo scelto	צבע החוט הנבחר
+Velatura	כיסוי
+Arancio	כתום
+Giallo	צהוב
+Azzurro	תכלת
+Rosso	אדום
+leggera	קל
+media	בינוני
+forte	חזק
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	לחצו על חוט בתצוגת התלת־ממד (או על שורה בטבלת החוטים): החוט מסומן בקו בצבע זה, שקוף למחצה, והשורה שלו מודגשת.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	עד כמה הצבע מכסה: קל, בינוני או חזק. בשורת הטבלה הכיסוי קל יותר, כדי שהמספרים יהיו קריאים.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	חוט {0} נבחר בתצוגת התלת־ממד: שורה {1} בטבלה
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	חוט {0}: אינו בטבלת החוטים (כרטיס גאומטריה שאינו GW)

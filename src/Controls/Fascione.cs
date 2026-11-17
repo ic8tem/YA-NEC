@@ -112,9 +112,24 @@ namespace YaNec
             if (titoli.TryGetValue(key, out t)) t.Text = testo;
         }
 
+        /// <summary>1.2.0 (registro di IC8TEM, evento 1026 del 13/11/2026 17:58, AvaloniaInternalException "Visual is attached to visual tree
+        /// but root could not be found"): prima di cambiare pagina si toglie il fuoco dal campo in cui si sta scrivendo, mentre la pagina e'
+        /// ancora nella finestra. Cosi' il ricalcolo legato all'uscita dal campo avviene prima del cambio e non durante lo smontaggio della
+        /// pagina, quando aggiungere elementi a un pannello che sta uscendo dalla finestra chiudeva il programma.</summary>
+        public static void TogliFuoco(Visual v)
+        {
+            try
+            {
+                TopLevel tl = TopLevel.GetTopLevel(v);
+                if (tl != null && tl.FocusManager != null && tl.FocusManager.GetFocusedElement() is TextBox) tl.FocusManager.ClearFocus();
+            }
+            catch { }
+        }
+
         public void Select(string key, bool notify = true)
         {
             if (!voci.ContainsKey(key) || future.Contains(key)) return;
+            if (notify) TogliFuoco(this);
             Current = key;
             foreach (KeyValuePair<string, Border> kv in voci)
             {

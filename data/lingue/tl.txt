@@ -3886,3 +3886,16 @@ Distribuzione del F/B	Distribusyon ng F/B
 Cavi di fase	Mga phasing cable
 COMMUTAZIONE	PAGPAPALIT
 RETE DI FASE	PHASING NETWORK
+Colore del filo scelto	Kulay ng napiling wire
+Velatura	Kapal ng kulay
+Arancio	Kahel
+Giallo	Dilaw
+Azzurro	Mapusyaw na asul
+Rosso	Pula
+leggera	magaan
+media	katamtaman
+forte	malakas
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	I-click ang isang wire sa 3D view (o ang isang hilera ng talahanayan ng mga wire): sasalungguhitan ang wire ng kulay na ito, malabo-linaw, at mamarkahan ang hilera nito.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Gaano kakapal ang kulay: magaan, katamtaman o malakas. Sa hilera ng talahanayan mas magaan ang lambong para mabasa ang mga numero.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Wire {0} pinili sa 3D view: hilera {1} ng talahanayan
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Wire {0}: wala sa talahanayan ng mga wire (geometry card na hindi GW)

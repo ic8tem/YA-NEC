@@ -752,9 +752,9 @@ namespace YaNec
             view3d.InvalidateVisual();
             EvidenziaRigaFilo(tag);
             WireRow r = wireRows.Find(w => { int t; return w.Cells != null && int.TryParse(w.Cells[0].Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out t) ? t == tag : (w.Card != null && w.Card.I1 == tag); });
-            if (r == null) { Status("Filo " + tag + ": non e' nella tabella dei fili (scheda di geometria diversa da GW)"); return; }
+            if (r == null) { Status(Lang.F("Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)", tag)); return; }
             if (wiresPanel != null) wiresPanel.Mostra(r.Row, () => { if (r.Cells != null) r.Cells[0].Focus(); else AttivaCella(r, -1); });
-            Status("Filo " + tag + " scelto nella vista 3D: riga " + (wireRows.IndexOf(r) + 1) + " della tabella");
+            Status(Lang.F("Filo {0} scelto nella vista 3D: riga {1} della tabella", tag, wireRows.IndexOf(r) + 1));
         }
 
         // ---------------------------------------------------------------------------------------------

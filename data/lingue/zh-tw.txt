@@ -3886,3 +3886,16 @@ Distribuzione del F/B	F/B 分布
 Cavi di fase	相位電纜
 COMMUTAZIONE	切換
 RETE DI FASE	相位網路
+Colore del filo scelto	所選導線的顏色
+Velatura	遮罩強度
+Arancio	橙色
+Giallo	黃色
+Azzurro	天藍色
+Rosso	紅色
+leggera	淡
+media	中
+forte	濃
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	在三維視圖中點選一根導線（或導線表中的一列）：導線以此顏色半透明地加底線，其所在列反白顯示。
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	顏色的遮蓋程度：淡、中或濃。表格列上的遮罩較淡，以便讀取數字。
+Filo {0} scelto nella vista 3D: riga {1} della tabella	在三維視圖中選取導線 {0}：表格第 {1} 列
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	導線 {0}：不在導線表中（幾何卡不是 GW）

@@ -414,7 +414,7 @@ namespace YaNec
                 Child = t, Background = Pal.B(Pal.Pill), BorderBrush = new SolidColorBrush(CBordo), BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(14), Padding = new Thickness(12, 5), Margin = new Thickness(0, 0, 6, 4), Cursor = new Cursor(StandardCursorType.Hand)
             };
-            b.PointerPressed += (s, e) => Seleziona(key);
+            b.PointerPressed += (s, e) => { Fascione.TogliFuoco(b); Seleziona(key); };  // 1.2.0: fuoco tolto prima del cambio di pagina (registro 13/11 17:58)
             pillole[key] = b;
             return b;
         }

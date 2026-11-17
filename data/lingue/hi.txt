@@ -3886,3 +3886,16 @@ Distribuzione del F/B	F/B का वितरण
 Cavi di fase	फेज़ केबल
 COMMUTAZIONE	स्विचिंग
 RETE DI FASE	फेज़ नेटवर्क
+Colore del filo scelto	चुने गए तार का रंग
+Velatura	रंग की गहराई
+Arancio	नारंगी
+Giallo	पीला
+Azzurro	हल्का नीला
+Rosso	लाल
+leggera	हल्की
+media	मध्यम
+forte	गहरी
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	3D दृश्य में किसी तार पर (या तारों की तालिका की किसी पंक्ति पर) क्लिक करें: तार इस रंग से अर्ध-पारदर्शी रूप में रेखांकित होता है और उसकी पंक्ति हाइलाइट होती है।
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	रंग कितना गहरा हो: हल्की, मध्यम या गहरी। तालिका की पंक्ति पर परत हल्की रहती है ताकि संख्याएँ पढ़ी जा सकें।
+Filo {0} scelto nella vista 3D: riga {1} della tabella	तार {0} 3D दृश्य में चुना गया: तालिका की पंक्ति {1}
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	तार {0}: तारों की तालिका में नहीं है (GW के अलावा ज्यामिति कार्ड)

@@ -3886,3 +3886,16 @@ Distribuzione del F/B	F/B eloszlása
 Cavi di fase	Fázisvezetékek
 COMMUTAZIONE	KAPCSOLÁS
 RETE DI FASE	FÁZISHÁLÓZAT
+Colore del filo scelto	A kiválasztott huzal színe
+Velatura	Fedettség
+Arancio	Narancs
+Giallo	Sárga
+Azzurro	Világoskék
+Rosso	Piros
+leggera	enyhe
+media	közepes
+forte	erős
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Kattintson egy huzalra a 3D nézetben (vagy a huzaltáblázat egy sorára): a huzal ezzel a színnel, áttetszően alá lesz húzva, és a sora kiemelődik.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Mennyire fedő a szín: enyhe, közepes vagy erős. A táblázat során a fátyol halványabb, hogy a számok olvashatók maradjanak.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	{0}. huzal kiválasztva a 3D nézetben: a táblázat {1}. sora
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	{0}. huzal: nincs a huzaltáblázatban (a geometriakártya nem GW)

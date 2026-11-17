@@ -3887,3 +3887,16 @@ Distribuzione del F/B	F/B distribution
 Cavi di fase	Phasing lines
 COMMUTAZIONE	SWITCHING
 RETE DI FASE	PHASING NETWORK
+Colore del filo scelto	Selected wire colour
+Velatura	Tint
+Arancio	Orange
+Giallo	Yellow
+Azzurro	Light blue
+Rosso	Red
+leggera	light
+media	medium
+forte	strong
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Click a wire in the 3D view (or a row of the wire table): the wire is underlined with this colour as a translucent tint, and its row is highlighted.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	How opaque the colour is: light, medium or strong. On the table row the tint is lighter, so the numbers stay readable.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Wire {0} selected in the 3D view: row {1} of the table
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Wire {0}: not in the wire table (geometry card other than GW)

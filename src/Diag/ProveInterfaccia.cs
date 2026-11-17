@@ -770,6 +770,10 @@ namespace YaNec
                     bool ok2 = true;
                     try
                     {
+                        // 1.2.0 (registro di IC8TEM, 13/11/2026 17:58): come l'utente, prima di cambiare voce si lascia il cursore in un campo
+                        // della pagina che si sta per lasciare; il cambio di voce non deve dare eccezioni
+                        TextBox campo = page != null ? page.GetVisualDescendants().OfType<TextBox>().FirstOrDefault(t => t.IsEffectivelyVisible && t.IsEffectivelyEnabled && !t.IsReadOnly) : null;
+                        if (campo != null) { campo.Focus(); await Task.Delay(30); }
                         f.Select(k);
                         await Task.Delay(nome == "Calcolatori" ? 1200 : 600);   // i calcolatori fanno il calcolo in tempo reale
                         if (ultimoStatoErrore && ultimoStato.IndexOf("errore", StringComparison.OrdinalIgnoreCase) >= 0) { ok2 = false; es = "stato: " + ultimoStato; }

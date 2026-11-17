@@ -3886,3 +3886,16 @@ Distribuzione del F/B	Κατανομή F/B
 Cavi di fase	Καλώδια φάσης
 COMMUTAZIONE	ΜΕΤΑΓΩΓΗ
 RETE DI FASE	ΔΙΚΤΥΟ ΦΑΣΗΣ
+Colore del filo scelto	Χρώμα επιλεγμένου σύρματος
+Velatura	Κάλυψη
+Arancio	Πορτοκαλί
+Giallo	Κίτρινο
+Azzurro	Γαλάζιο
+Rosso	Κόκκινο
+leggera	ελαφριά
+media	μέτρια
+forte	έντονη
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Κάντε κλικ σε ένα σύρμα στην τρισδιάστατη προβολή (ή σε μια γραμμή του πίνακα συρμάτων): το σύρμα υπογραμμίζεται με αυτό το χρώμα, ημιδιαφανές, και η γραμμή του επισημαίνεται.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Πόσο καλυπτικό είναι το χρώμα: ελαφριά, μέτρια ή έντονη. Στη γραμμή του πίνακα το πέπλο είναι πιο ελαφρύ, για να διαβάζονται οι αριθμοί.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Σύρμα {0} επιλεγμένο στην τρισδιάστατη προβολή: γραμμή {1} του πίνακα
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Σύρμα {0}: δεν υπάρχει στον πίνακα συρμάτων (κάρτα γεωμετρίας διαφορετική από GW)

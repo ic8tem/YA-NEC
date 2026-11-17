@@ -3886,3 +3886,16 @@ Distribuzione del F/B	F/B の分布
 Cavi di fase	位相ケーブル
 COMMUTAZIONE	切り替え
 RETE DI FASE	位相回路
+Colore del filo scelto	選択したワイヤーの色
+Velatura	濃さ
+Arancio	オレンジ
+Giallo	黄
+Azzurro	水色
+Rosso	赤
+leggera	薄い
+media	中間
+forte	濃い
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	3D ビューでワイヤー（またはワイヤー表の行）をクリックすると、ワイヤーがこの色で半透明に強調され、その行がハイライトされます。
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	色の濃さ：薄い、中間、濃い。表の行では数値が読めるように、より薄く表示されます。
+Filo {0} scelto nella vista 3D: riga {1} della tabella	3D ビューでワイヤー {0} を選択：表の {1} 行目
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	ワイヤー {0}：ワイヤー表にありません（GW 以外のジオメトリカード）

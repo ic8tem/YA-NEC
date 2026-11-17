@@ -108,6 +108,17 @@ namespace YaNec
             // 0.4.30: velocita' della luce del motore (Impostazioni > Motore); 0 = 299,792458 come EZNEC (normale), 1 = 299,8 come nec2c
             if (!Engine.Nec2Engine.CvelBloccata) Engine.Nec2Engine.Cvel = c.GetD("cvel_nec2c", 0) > 0.5 ? Engine.Nec2Engine.CVEL_NEC2 : Engine.Nec2Engine.CVEL_FISICA;
             Title = AppPaths.Title;
+            // 1.2.0 (registro di IC8TEM, evento 1026 del 13/11/2026 17:58): l'eccezione interna di Avalonia "root could not be found", che nasce
+            // quando un pannello riceve elementi mentre la sua pagina sta uscendo dalla finestra, non chiude piu' il programma: si scrive nel
+            // registro e si continua (la pagina che la causa sta gia' sparendo). Le altre eccezioni restano come prima.
+            Avalonia.Threading.Dispatcher.UIThread.UnhandledException += (s, e) =>
+            {
+                if (e.Exception is Avalonia.AvaloniaInternalException && (e.Exception.Message ?? "").IndexOf("root could not be found", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    Registro.Scrivi("ECCEZIONE", "chiusura evitata (pagina in uscita dalla finestra): " + e.Exception);
+                    e.Handled = true;
+                }
+            };
             // 1.0.5: icona della finestra (bozzetto C approvato da IC8TEM il 16/11/2026 16:02)
             try { Icon = new WindowIcon(Avalonia.Platform.AssetLoader.Open(new Uri("avares://YA-NEC/assets/ya-nec-256.png"))); }
             catch (Exception ex) { Registro.Scrivi("ERRORE", "icona della finestra: " + ex.Message); }

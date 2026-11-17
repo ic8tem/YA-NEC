@@ -3886,3 +3886,16 @@ Distribuzione del F/B	F/B বণ্টন
 Cavi di fase	ফেজ কেবল
 COMMUTAZIONE	সুইচিং
 RETE DI FASE	ফেজ নেটওয়ার্ক
+Colore del filo scelto	নির্বাচিত তারের রং
+Velatura	রঙের গাঢ়তা
+Arancio	কমলা
+Giallo	হলুদ
+Azzurro	হালকা নীল
+Rosso	লাল
+leggera	হালকা
+media	মাঝারি
+forte	গাঢ়
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	3D দৃশ্যে কোনো তারে (বা তারের সারণির কোনো সারিতে) ক্লিক করুন: তারটি এই রঙে আধা-স্বচ্ছভাবে দাগানো হয় এবং তার সারিটি হাইলাইট হয়।
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	রং কতটা গাঢ় হবে: হালকা, মাঝারি বা গাঢ়। সারণির সারিতে আবরণ হালকা থাকে, যাতে সংখ্যা পড়া যায়।
+Filo {0} scelto nella vista 3D: riga {1} della tabella	তার {0} 3D দৃশ্যে নির্বাচিত: সারণির সারি {1}
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	তার {0}: তারের সারণিতে নেই (GW ছাড়া অন্য জ্যামিতি কার্ড)

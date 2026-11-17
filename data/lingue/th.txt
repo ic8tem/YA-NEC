@@ -3886,3 +3886,16 @@ Distribuzione del F/B	การกระจายของ F/B
 Cavi di fase	สายเฟส
 COMMUTAZIONE	การสลับ
 RETE DI FASE	วงจรเฟส
+Colore del filo scelto	สีของสายที่เลือก
+Velatura	ความเข้มของสี
+Arancio	สีส้ม
+Giallo	สีเหลือง
+Azzurro	สีฟ้า
+Rosso	สีแดง
+leggera	อ่อน
+media	ปานกลาง
+forte	เข้ม
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	คลิกที่สายในมุมมอง 3 มิติ (หรือที่แถวในตารางสาย): สายจะถูกขีดเส้นใต้ด้วยสีนี้แบบโปร่งแสง และแถวของสายจะถูกเน้น
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	สีทึบแค่ไหน: อ่อน ปานกลาง หรือเข้ม บนแถวของตารางชั้นสีจะอ่อนกว่า เพื่อให้อ่านตัวเลขได้
+Filo {0} scelto nella vista 3D: riga {1} della tabella	เลือกสาย {0} ในมุมมอง 3 มิติ: แถว {1} ของตาราง
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	สาย {0}: ไม่อยู่ในตารางสาย (การ์ดเรขาคณิตไม่ใช่ GW)

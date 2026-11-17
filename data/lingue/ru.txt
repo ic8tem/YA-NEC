@@ -3886,3 +3886,16 @@ Distribuzione del F/B	Распределение F/B
 Cavi di fase	Фазирующие кабели
 COMMUTAZIONE	ПЕРЕКЛЮЧЕНИЕ
 RETE DI FASE	ФАЗИРУЮЩАЯ ЦЕПЬ
+Colore del filo scelto	Цвет выбранного провода
+Velatura	Плотность заливки
+Arancio	Оранжевый
+Giallo	Жёлтый
+Azzurro	Голубой
+Rosso	Красный
+leggera	лёгкая
+media	средняя
+forte	сильная
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Щёлкните по проводу в 3D-виде (или по строке таблицы проводов): провод подчёркивается этим цветом, полупрозрачно, а его строка выделяется.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Насколько плотен цвет: лёгкая, средняя или сильная. В строке таблицы заливка светлее, чтобы читались числа.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Провод {0} выбран в 3D-виде: строка {1} таблицы
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Провод {0}: нет в таблице проводов (карта геометрии не GW)

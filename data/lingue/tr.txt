@@ -3886,3 +3886,16 @@ Distribuzione del F/B	F/B dağılımı
 Cavi di fase	Faz kabloları
 COMMUTAZIONE	ANAHTARLAMA
 RETE DI FASE	FAZ AĞI
+Colore del filo scelto	Seçilen telin rengi
+Velatura	Örtücülük
+Arancio	Turuncu
+Giallo	Sarı
+Azzurro	Açık mavi
+Rosso	Kırmızı
+leggera	hafif
+media	orta
+forte	güçlü
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	3B görünümde bir tele (veya tel tablosunun bir satırına) tıklayın: tel bu renkle, yarı saydam olarak altı çizilir ve satırı vurgulanır.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Rengin ne kadar örtücü olduğu: hafif, orta veya güçlü. Tablo satırında örtü daha hafiftir, sayılar okunabilsin diye.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Tel {0} 3B görünümde seçildi: tablonun {1}. satırı
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Tel {0}: tel tablosunda yok (GW dışında bir geometri kartı)

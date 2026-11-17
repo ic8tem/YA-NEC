@@ -5850,3 +5850,16 @@ Distribuzione del F/B
 Cavi di fase
 COMMUTAZIONE
 RETE DI FASE
+Colore del filo scelto
+Velatura
+Arancio
+Giallo
+Azzurro
+Rosso
+leggera
+media
+forte
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.
+Filo {0} scelto nella vista 3D: riga {1} della tabella
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)

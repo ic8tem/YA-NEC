@@ -3886,3 +3886,16 @@ Distribuzione del F/B	Розподіл F/B
 Cavi di fase	Фазувальні кабелі
 COMMUTAZIONE	ПЕРЕМИКАННЯ
 RETE DI FASE	ФАЗУВАЛЬНЕ КОЛО
+Colore del filo scelto	Колір вибраного проводу
+Velatura	Щільність заливки
+Arancio	Помаранчевий
+Giallo	Жовтий
+Azzurro	Блакитний
+Rosso	Червоний
+leggera	легка
+media	середня
+forte	сильна
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Клацніть на провід у 3D-виді (або на рядок таблиці проводів): провід підкреслюється цим кольором, напівпрозоро, а його рядок виділяється.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Наскільки щільний колір: легка, середня чи сильна. У рядку таблиці заливка світліша, щоб читалися числа.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Провід {0} вибрано у 3D-виді: рядок {1} таблиці
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Провід {0}: немає в таблиці проводів (карта геометрії не GW)

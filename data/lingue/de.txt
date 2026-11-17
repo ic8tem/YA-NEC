@@ -3887,3 +3887,16 @@ Distribuzione del F/B	Verteilung des F/B
 Cavi di fase	Phasenleitungen
 COMMUTAZIONE	UMSCHALTUNG
 RETE DI FASE	PHASENNETZWERK
+Colore del filo scelto	Farbe des gewählten Drahts
+Velatura	Deckkraft
+Arancio	Orange
+Giallo	Gelb
+Azzurro	Hellblau
+Rosso	Rot
+leggera	leicht
+media	mittel
+forte	stark
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Klick auf einen Draht in der 3D-Ansicht (oder auf eine Zeile der Drahttabelle): Der Draht wird in dieser Farbe halbtransparent unterlegt und seine Zeile hervorgehoben.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Wie deckend die Farbe ist: leicht, mittel oder stark. In der Tabellenzeile ist der Schleier heller, damit die Zahlen lesbar bleiben.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Draht {0} in der 3D-Ansicht gewählt: Zeile {1} der Tabelle
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Draht {0}: nicht in der Drahttabelle (Geometriekarte ist nicht GW)

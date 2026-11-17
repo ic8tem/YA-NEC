@@ -2048,7 +2048,11 @@ Risultati: tabella delle forze per parte con il vento lungo il boom (gli element
 
 Il NEC-4 tratta meglio le giunzioni tra fili di diametro diverso (carica alla giunzione calcolata con un piccolo sistema per ogni giunzione). YA-NEC la riproduce come opzione, spenta di partenza, scritta nel file del modello con la riga CM GIUNZIONI_NEC4=1; non e' nell'interfaccia finche' il confronto con gli esempi del manuale del NEC-4.2 non e' finito. Fonte: G. J. Burke, NEC-4.2 Method of Moments Code, parte II (teoria), LLNL.
 
-### 23.11 Crediti delle fonti della 1.2
+### 23.11 Filo scelto nella vista 3D
+
+Un clic su un filo nella vista 3D lo sottolinea con un colore velato e porta la tabella dei fili sulla sua riga, che si evidenzia con lo stesso colore (piu' leggero, per leggere i numeri). Vale anche al contrario: un clic su una riga della tabella sottolinea il filo nella vista 3D. Il colore (arancio, giallo, verde, azzurro, viola, rosso, blu) e la velatura (leggera, media, forte) si scelgono in **Impostazioni > Struttura 3D**. Con una scheda della barra Geometria aperta il clic continua a scegliere i fili da trasformare, come prima.
+
+### 23.12 Crediti delle fonti della 1.2
 
 | Fonte | Usata per |
 |---|---|

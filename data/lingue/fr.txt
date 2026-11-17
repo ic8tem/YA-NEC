@@ -3886,3 +3886,16 @@ Distribuzione del F/B	Distribution du F/B
 Cavi di fase	Câbles de phase
 COMMUTAZIONE	COMMUTATION
 RETE DI FASE	RÉSEAU DE PHASE
+Colore del filo scelto	Couleur du fil choisi
+Velatura	Voile
+Arancio	Orange
+Giallo	Jaune
+Azzurro	Bleu clair
+Rosso	Rouge
+leggera	léger
+media	moyen
+forte	fort
+Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia.	Clic sur un fil dans la vue 3D (ou sur une ligne du tableau des fils) : le fil est souligné de cette couleur, en transparence, et sa ligne est mise en évidence.
+Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Opacité de la couleur : léger, moyen ou fort. Sur la ligne du tableau le voile est plus léger, pour lire les chiffres.
+Filo {0} scelto nella vista 3D: riga {1} della tabella	Fil {0} choisi dans la vue 3D : ligne {1} du tableau
+Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Fil {0} : absent du tableau des fils (carte de géométrie autre que GW)
