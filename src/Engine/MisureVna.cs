@@ -57,7 +57,7 @@ namespace YaNec.Engine
                 f.Add(fr * mult / 1e6);
                 g.Add(par == "Z" ? v * z0 : par == "Y" ? 1 / (v / z0) : z0 * (1 + v) / (1 - v));
             }
-            if (f.Count < 2) throw new IOException("Il file Touchstone non contiene punti di S11.");
+            if (f.Count < 1) throw new IOException("Il file Touchstone non contiene punti di S11.");
             return new Misura { Nome = nome, Formato = fmt + " · Z0 " + z0.ToString("0", CI) + " Ω", Z0 = z0, F = f.ToArray(), Z = g.ToArray() };
         }
 
