@@ -31,7 +31,76 @@ namespace YaNec
         public bool ShowHalfPower = true;
         public double TextScale = 1;            // 0.5.3: grandezza di tutte le scritte del diagramma (cursore "Caratteri" dei Diagrammi, 100-200 %)       // apertura a -3 dB: due raggi tratteggiati, arco e valore (il "triangolo")
 
-        public PolarPlot() { ClipToBounds = true; }
+        // 1.1.0 (bozzetto 1 approvato da IC8TEM il 17/11/2026 19:17, dalla pagina MathWorks sul grafico polare): misure in piu' sotto il
+        // diagramma (apertura al primo nullo FNBW, lobo laterale piu' alto SLL) e due cursori C1 e C2 con l'angolo e la differenza tra loro
+        public bool ShowNulls = true;           // raggi viola tratteggiati sui primi nulli ai lati del lobo
+        public bool CursorsOn = true;           // clic sul diagramma: C1, poi C2; doppio clic: toglie i cursori
+        public double C1 = double.NaN, C2 = double.NaN;   // angoli del grafico (gradi, come gli indici della traccia)
+        int prossimo;
+        double lastCx, lastCy, lastR;
+        public double Fnbw = double.NaN, Sll = double.NaN, SllAng = double.NaN, NullA = double.NaN, NullB = double.NaN;
+
+        public PolarPlot()
+        {
+            ClipToBounds = true;
+            PointerPressed += (s, e) =>
+            {
+                if (!CursorsOn || lastR <= 0) return;
+                Point p = e.GetPosition(this);
+                if (e.ClickCount >= 2) { C1 = C2 = double.NaN; prossimo = 0; InvalidateVisual(); return; }
+                double ang = Math.Atan2(lastCy - p.Y, p.X - lastCx) * 180 / Math.PI - Rotate;
+                ang = ((ang % 360) + 360) % 360;
+                if (Elevation && GroundHalf && ang > 180) return;
+                ang = Math.Round(ang);
+                if (prossimo == 0) C1 = ang; else C2 = ang;
+                prossimo = 1 - prossimo;
+                InvalidateVisual();
+            };
+        }
+
+        /// <summary>Etichetta dell'angolo del grafico come sugli assi (elevazione: 0-90 avanti, poi verso dietro; azimut: gradi NEC).</summary>
+        public string Etichetta(double k)
+        {
+            if (!Elevation) return Draw.N(k, 0) + "°";
+            if (k <= 90) return Draw.N(k, 0) + "°";
+            if (k <= 180) return Draw.N(180 - k, 0) + "° (dietro)";
+            return "-" + Draw.N(k <= 270 ? k - 180 : 360 - k, 0) + "°";
+        }
+
+        double ValoreA(PolarTrace tr, double k)
+        {
+            int nn = tr.Db.Length;
+            int i = ((int)Math.Round(k) % nn + nn) % nn;
+            return tr.Db[i];
+        }
+
+        /// <summary>FNBW e lobo laterale piu' alto dalla traccia: nulli = primi minimi ai lati del massimo; laterali entro 100 gradi dal massimo.</summary>
+        void Misure(PolarTrace tr)
+        {
+            Fnbw = Sll = SllAng = NullA = NullB = double.NaN;
+            double[] d = tr.Db;
+            int nn = d.Length;
+            int count = Elevation && GroundHalf ? Math.Min(181, nn) : nn;
+            bool wrap = !(Elevation && GroundHalf);
+            if (count < 36) return;
+            int m = 0;
+            for (int k = 1; k < count; k++) if (d[k] > d[m]) m = k;
+            Func<int, double> V = k => wrap ? d[((k % nn) + nn) % nn] : (k < 0 || k >= count ? double.NaN : d[k]);
+            int a = m, b = m;
+            for (int s = 1; s < count / 2; s++) { double v0 = V(a), v1 = V(a - 1); if (double.IsNaN(v1) || v1 > v0) break; a--; }
+            for (int s = 1; s < count / 2; s++) { double v0 = V(b), v1 = V(b + 1); if (double.IsNaN(v1) || v1 > v0) break; b++; }
+            if (b - a <= 0 || b - a >= 359) return;
+            Fnbw = b - a; NullA = a; NullB = b;
+            double best = double.NegativeInfinity, ang = double.NaN;
+            for (int k = m - 100; k <= m + 100; k++)
+            {
+                if (k > a && k < b) continue;
+                double v = V(k), vp = V(k - 1), vn = V(k + 1);
+                if (double.IsNaN(v) || double.IsNaN(vp) || double.IsNaN(vn) || v < -900) continue;
+                if (v >= vp && v >= vn && v > best) { best = v; ang = k; }
+            }
+            if (!double.IsNegativeInfinity(best)) { Sll = best - d[m]; SllAng = ((ang % 360) + 360) % 360; }
+        }
 
         double Radius(double db, double R)
         {
@@ -46,7 +115,22 @@ namespace YaNec
             double W = Bounds.Width, H = Bounds.Height;
             ctx.DrawRectangle(Pal.B(Pal.ChartBg), null, new Rect(0, 0, W, H));
             double ks = Math.Max(0.5, TextScale);
-            double top = 12 + 18 * ks, bottom = 14 + 16 * ks + 16 * ks * Math.Max(1, Notes.Length);
+            List<string> righe = new List<string>(Notes);
+            if (Traces.Count > 0 && Traces[0].Db != null && Traces[0].Db.Length >= 36)
+            {
+                Misure(Traces[0]);
+                if (!double.IsNaN(Fnbw)) righe.Add("Apertura al primo nullo (FNBW): " + Draw.N(Fnbw, 0) + "°;  lobo laterale piu' alto: " + (double.IsNaN(Sll) ? "nessuno" : Draw.N(Sll, 1) + " dB a " + Etichetta(SllAng)));
+                if (!double.IsNaN(C1) || !double.IsNaN(C2))
+                {
+                    double g0 = RefDb;
+                    string t1 = double.IsNaN(C1) ? "" : "C1 " + Etichetta(C1) + ": " + Draw.N(ValoreA(Traces[0], C1) - g0, 1) + " dB";
+                    string t2 = double.IsNaN(C2) ? "" : "  C2 " + Etichetta(C2) + ": " + Draw.N(ValoreA(Traces[0], C2) - g0, 1) + " dB";
+                    string t3 = "";
+                    if (!double.IsNaN(C1) && !double.IsNaN(C2)) { double da = Math.Abs(((C2 - C1) % 360 + 540) % 360 - 180); t3 = ";  tra i due " + Draw.N(da, 0) + "° e " + Draw.N(Math.Abs(ValoreA(Traces[0], C2) - ValoreA(Traces[0], C1)), 1) + " dB"; }
+                    righe.Add(t1 + t2 + t3);
+                }
+            }
+            double top = 12 + 18 * ks, bottom = 14 + 16 * ks + 16 * ks * Math.Max(1, righe.Count);
             double cx = W / 2, cy;
             double R;
             if (Elevation && GroundHalf)
@@ -62,6 +146,7 @@ namespace YaNec
             if (R < 30) return;
             Draw.Text(ctx, Title, 10, 6, 14 * ks, Pal.Fore, FontWeight.SemiBold);
             Point c = new Point(cx, cy);
+            lastCx = cx; lastCy = cy; lastR = R;
             IPen grid = Pal.P(Pal.ChartGrid, 1);
             IPen grid2 = Pal.P(Pal.ChartGrid, 1, Pal.Dot);
 
@@ -122,9 +207,25 @@ namespace YaNec
                 double t = (MarkAngle + Rotate) * Math.PI / 180;
                 ctx.DrawLine(Pal.P(Pal.A(180, Pal.Red), 1, Pal.Dash), c, new Point(cx + R * Math.Cos(t), cy - R * Math.Sin(t)));
             }
+            // 1.1.0: primi nulli (viola tratteggiato) e cursori (arancio)
+            if (ShowNulls && !double.IsNaN(NullA))
+                foreach (double k in new[] { NullA, NullB })
+                {
+                    double t = (k + Rotate) * Math.PI / 180;
+                    ctx.DrawLine(Pal.P(Pal.Violet, 1.3, Pal.Dash), c, new Point(cx + (R + 4) * Math.Cos(t), cy - (R + 4) * Math.Sin(t)));
+                }
+            int nc = 0;
+            foreach (double k in new[] { C1, C2 })
+            {
+                nc++;
+                if (double.IsNaN(k)) continue;
+                double t = (k + Rotate) * Math.PI / 180;
+                ctx.DrawLine(Pal.P(Pal.Orange, 2), c, new Point(cx + (R + 6) * Math.Cos(t), cy - (R + 6) * Math.Sin(t)));
+                Draw.TextC(ctx, "C" + nc + " " + Etichetta(k), cx + (R * 0.72) * Math.Cos(t), cy - (R * 0.72) * Math.Sin(t) - 8 * ks, 11 * ks, Pal.Orange, FontWeight.SemiBold);
+            }
             // legenda e note
             double ly = H - bottom + 4;
-            foreach (string s in Notes)
+            foreach (string s in righe)
             {
                 Draw.Text(ctx, s, 12, ly, 12 * ks, Pal.ChartText);
                 ly += 16 * ks;

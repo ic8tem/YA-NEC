@@ -666,6 +666,17 @@ namespace YaNec
             CheckBox cRuota = new CheckBox { Content = "Azimut ruotato di 90° (0° in alto)", IsChecked = cfg.Get("diagrammi_azimut_90", "0") == "1", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(18, 0, 0, 0) };
             ToolTip.SetTip(cRuota, "Accesa: il diagramma azimutale e' ruotato di 90 gradi, 0 gradi in alto e il lobo che punta in su; i gradi restano quelli del NEC (antiorari: 90 gradi a sinistra). Spenta: 0 gradi a destra come nel NEC. Si salva in config.ini.");
             bar.Children.Add(carT); bar.Children.Add(carS); bar.Children.Add(cRuota);
+            // 1.1.0 (bozzetto 1 approvato): cursori e primo nullo
+            CheckBox cCur = new CheckBox { Content = "Cursori", IsChecked = true, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(18, 0, 0, 0) };
+            ToolTip.SetTip(cCur, "Clic sul diagramma: cursore C1, il clic dopo C2; sotto il diagramma il livello di ognuno, l'angolo e la differenza tra i due. Doppio clic: toglie i cursori. I cursori restano al cambio di frequenza.");
+            Button bTogli = Btn("Togli i cursori", false);
+            bTogli.Margin = new Thickness(8, 0, 0, 0);
+            CheckBox cNul = new CheckBox { Content = "Mostra il primo nullo", IsChecked = true, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0, 0, 0) };
+            ToolTip.SetTip(cNul, "Raggi viola tratteggiati sui primi minimi ai lati del lobo principale: la loro distanza e' l'apertura al primo nullo (FNBW), scritta sotto il diagramma con il lobo laterale piu' alto (SLL, entro 100 gradi dal massimo, escluso il lobo posteriore).");
+            cCur.IsCheckedChanged += (s, e) => { if (polAz != null) { polAz.CursorsOn = polEl.CursorsOn = cCur.IsChecked == true; } };
+            bTogli.Click += (s, e) => { if (polAz != null) { polAz.C1 = polAz.C2 = polEl.C1 = polEl.C2 = double.NaN; polAz.InvalidateVisual(); polEl.InvalidateVisual(); } };
+            cNul.IsCheckedChanged += (s, e) => { if (polAz != null) { polAz.ShowNulls = polEl.ShowNulls = cNul.IsChecked == true; polAz.InvalidateVisual(); polEl.InvalidateVisual(); } };
+            bar.Children.Add(cCur); bar.Children.Add(bTogli); bar.Children.Add(cNul);
             DockPanel.SetDock(bar, Dock.Top);
             d.Children.Add(bar);
             Grid g = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*") };
