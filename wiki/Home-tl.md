@@ -4,6 +4,8 @@
 
 **Simulator ng wire antenna na batay sa NEC-2** para sa Windows, Linux at macOS. Gawa ni Costantino Cerrotta **IC8TEM**. Lisensya GPL-3.0.
 
+> **[Bago sa 1.2](Novita-1.2-tl)**
+>
 > **[Bago sa 1.1](Novita-1.1-tl)**
 
 > *Ang kasaysayan ng programang ito ay kayo ang susulat: sa inyong mga proyekto, sa inyong mga ideya, sa inyong talino, sa inyong mga tuklas at sa inyong mga katiyakan.*

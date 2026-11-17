@@ -4,6 +4,8 @@
 
 **Simulador de antenas de hilo basado en NEC-2** para Windows, Linux y macOS. Por Costantino Cerrotta **IC8TEM**. Licencia GPL-3.0.
 
+> **[Novedades de la 1.2](Novita-1.2-es)**
+>
 > **[Novedades de la 1.1](Novita-1.1-es)**
 
 > *La historia de este programa la escribiréis vosotros: con vuestros proyectos, vuestras ideas, vuestro ingenio, vuestros descubrimientos y vuestras certezas.*

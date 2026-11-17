@@ -51,7 +51,7 @@ namespace YaNec
             StackPanel cT = new StackPanel(); cT.Children.Add(tab); cT.Children.Add(avv);
             LineChart gC = new LineChart { Height = 320, XLabel = "distanza dal punto di alimentazione (m)", YLabel = "corrente calza (%)", EmptyText = "premi Calcola il confronto" };
             StackPanel dxr = new StackPanel(); dxr.Children.Add(Pannello("Confronto dei balun", cT)); dxr.Children.Add(Pannello("Corrente lungo la calza, dal dipolo verso il basso", gC));
-            Grid corpo = new Grid { ColumnDefinitions = new ColumnDefinitions("*,10,1.3*") };
+            Grid corpo = new Grid { ColumnDefinitions = new ColumnDefinitions("0.7*,10,1.3*") };   // 1.2.0: piu' spazio alla tabella (schermata del 18/11 00:14)
             corpo.Children.Add(Pannello("Vista laterale: corrente sulla calza", dV)); Grid.SetColumn(dxr, 2); corpo.Children.Add(dxr);
             Grid g = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
             g.Children.Add(sx); Grid.SetColumn(corpo, 2); g.Children.Add(corpo);
@@ -148,7 +148,7 @@ namespace YaNec
                     Action<string, Func<CavoBalun.Esito, string>, Func<CavoBalun.Esito, Color?>> rg = (et, val, colr) =>
                     {
                         tab.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
-                        Border b0 = new Border { Child = new TextBlock { Text = et, FontWeight = r0 == 0 ? FontWeight.SemiBold : FontWeight.Normal }, Padding = new Thickness(8, 3), Background = r0 == 0 ? Pal.B(Pal.Panel2) : null, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
+                        Border b0 = new Border { Child = new TextBlock { Text = et, TextWrapping = TextWrapping.Wrap, FontWeight = r0 == 0 ? FontWeight.SemiBold : FontWeight.Normal }, Padding = new Thickness(8, 3), Background = r0 == 0 ? Pal.B(Pal.Panel2) : null, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
                         Grid.SetRow(b0, r0); tab.Children.Add(b0);
                         for (int j = 0; j < esiti.Count; j++)
                         {

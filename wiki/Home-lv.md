@@ -4,6 +4,8 @@
 
 **Stieples antenu simulators, kas balstīts uz NEC-2**, sistēmām Windows, Linux un macOS. Autors: Costantino Cerrotta **IC8TEM**. Licence GPL-3.0.
 
+> **[Jaunumi 1.2 versijā](Novita-1.2-lv)**
+>
 > **[Jaunumi 1.1 versijā](Novita-1.1-lv)**
 
 > *Šīs programmas vēsturi rakstīsiet jūs: ar saviem projektiem, savām idejām, savu atjautību, saviem atklājumiem un savām pārliecībām.*

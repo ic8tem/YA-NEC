@@ -4,6 +4,8 @@
 
 **Simulateur d'antennes filaires basé sur NEC-2** pour Windows, Linux et macOS. Par Costantino Cerrotta **IC8TEM**. Licence GPL-3.0.
 
+> **[Nouveautés de la 1.2](Novita-1.2-fr)**
+>
 > **[Nouveautés de la 1.1](Novita-1.1-fr)**
 
 > *L'histoire de ce programme, c'est vous qui l'écrirez : avec vos projets, vos idées, votre génie, vos découvertes et vos certitudes.*

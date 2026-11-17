@@ -1,0 +1,15 @@
+[Italiano](Novita-1.2) · [English](Novita-1.2-en) · [Deutsch](Novita-1.2-de) · [Nederlands](Novita-1.2-nl) · **Français** · [Español](Novita-1.2-es) · [Português](Novita-1.2-pt) · [Português (Brasil)](Novita-1.2-pt-br) · [Dansk](Novita-1.2-da) · [Norsk](Novita-1.2-nb) · [Svenska](Novita-1.2-sv) · [Íslenska](Novita-1.2-is) · [Eesti](Novita-1.2-et) · [Lietuvių](Novita-1.2-lt) · [Latviešu](Novita-1.2-lv) · [Polski](Novita-1.2-pl) · [Čeština](Novita-1.2-cs) · [Slovenčina](Novita-1.2-sk) · [Magyar](Novita-1.2-hu) · [Română](Novita-1.2-ro) · [Ελληνικά](Novita-1.2-el) · [Русский](Novita-1.2-ru) · [Українська](Novita-1.2-uk) · [Türkçe](Novita-1.2-tr) · [Afrikaans](Novita-1.2-af) · [العربية](Novita-1.2-ar) · [עברית](Novita-1.2-he) · [اردو](Novita-1.2-ur) · [हिन्दी](Novita-1.2-hi) · [বাংলা](Novita-1.2-bn) · [ไทย](Novita-1.2-th) · [Bahasa Indonesia](Novita-1.2-id) · [Tagalog](Novita-1.2-tl) · [日本語](Novita-1.2-ja) · [한국어](Novita-1.2-ko) · [中文](Novita-1.2-zh) · [中文 (繁體)](Novita-1.2-zh-tw)
+
+# Nouveautés de la 1.2
+
+- **Terrain réel** (comme HFTA de N6BV) : diagramme d'élévation sur le vrai profil du terrain, depuis le MNT **TINITALY** (Italie, 10 m) ou **SRTM1** (monde), un fichier HorizonProfiler ou un sol plat. Réflexions segment par segment pondérées par les zones de Fresnel, diffraction sur les crêtes, mer, Terre courbe ; directions de trafic depuis le locator (jusqu'à 12 caractères) et **carte** avec photo aérienne, OpenStreetMap et grille des locators. En VHF vue entière et zoom 0-15 degrés.
+- **Réception (RDF)** : RDF, DMF, F/R moyen, bruit d'antenne (UIT-R P.372) et marge du récepteur pour Beverage, BOG, K9AY, Flag, EWE, 4-square et 8 verticales en cercle.
+- **Mesures VNA** : fichiers .s1p et CSV superposés au calcul, câble retiré (de-embedding), abaque de Smith et correction proposée.
+- **Tolérances de construction** : Monte Carlo reproductible, sensibilité par élément et liste de coupe avec la tolérance admise.
+- **Calculs mécaniques** (nouvel onglet) : **vent** selon NTC 2018, CNR-DT 207 et EN 1991-1-4 (zone depuis le locator, écoulement transversal) et **équilibrage** sur le mât ; forces en N et kgf.
+- **Câble et balun** de 1,8 à 1296 MHz (la tresse devient un fil NEC), **cadre en H et mât** dans le groupement, **diviseurs** λ/4 et Wilkinson avec dessin 1:1, **Yagis croisées** (RHCP, LHCP, X-pol), **charges HF** (trappes coaxiales W8NX, bobines, linear loading), **F/R moyen** aussi dans l'optimiseur et **test AGT** automatique.
+- **Structure 3D** : un clic sur un fil le souligne d'une couleur translucide (couleur et voile dans les Réglages) et amène le tableau des fils sur sa ligne.
+- **Correction** : avec le curseur dans un champ, un clic sur un autre élément de la liste de gauche pouvait fermer le programme ; désormais le champ est validé avant le changement de page.
+- Tout est expliqué au chapitre 23 du manuel, avec les sources ; nouveaux éléments traduits dans les 37 langues.
+
+[doc/Manuale_d_uso.pdf](https://github.com/ic8tem/YA-NEC/blob/main/doc/Manuale_d_uso.pdf) (23)

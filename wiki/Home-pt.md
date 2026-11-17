@@ -4,6 +4,8 @@
 
 **Simulador de antenas de fio baseado no NEC-2** para Windows, Linux e macOS. Por Costantino Cerrotta **IC8TEM**. Licença GPL-3.0.
 
+> **[Novidades da 1.2](Novita-1.2-pt)**
+>
 > **[Novidades da 1.1](Novita-1.1-pt)**
 
 > *A história deste programa serão vocês a escrevê-la: com os vossos projetos, as vossas ideias, a vossa genialidade, as vossas descobertas e as vossas certezas.*

@@ -1,0 +1,15 @@
+[Italiano](Novita-1.2) · [English](Novita-1.2-en) · [Deutsch](Novita-1.2-de) · [Nederlands](Novita-1.2-nl) · [Français](Novita-1.2-fr) · [Español](Novita-1.2-es) · [Português](Novita-1.2-pt) · [Português (Brasil)](Novita-1.2-pt-br) · [Dansk](Novita-1.2-da) · [Norsk](Novita-1.2-nb) · [Svenska](Novita-1.2-sv) · [Íslenska](Novita-1.2-is) · [Eesti](Novita-1.2-et) · [Lietuvių](Novita-1.2-lt) · [Latviešu](Novita-1.2-lv) · [Polski](Novita-1.2-pl) · [Čeština](Novita-1.2-cs) · [Slovenčina](Novita-1.2-sk) · [Magyar](Novita-1.2-hu) · [Română](Novita-1.2-ro) · [Ελληνικά](Novita-1.2-el) · [Русский](Novita-1.2-ru) · [Українська](Novita-1.2-uk) · [Türkçe](Novita-1.2-tr) · [Afrikaans](Novita-1.2-af) · [العربية](Novita-1.2-ar) · [עברית](Novita-1.2-he) · [اردو](Novita-1.2-ur) · [हिन्दी](Novita-1.2-hi) · [বাংলা](Novita-1.2-bn) · [ไทย](Novita-1.2-th) · [Bahasa Indonesia](Novita-1.2-id) · **Tagalog** · [日本語](Novita-1.2-ja) · [한국어](Novita-1.2-ko) · [中文](Novita-1.2-zh) · [中文 (繁體)](Novita-1.2-zh-tw)
+
+# Ano ang bago sa 1.2
+
+- **Totoong lupain** (tulad ng HFTA ni N6BV): elevation pattern sa ibabaw ng totoong profile ng lupain, mula sa DEM na **TINITALY** (Italya, 10 m) o **SRTM1** (buong mundo), mula sa file ng HorizonProfiler o patag. Mga repleksiyon bawat bahagi na tinimbang ng mga Fresnel zone, diffraction sa mga tagaytay, dagat, kurbadang mundo; mga direksiyon ng trapiko mula sa locator (hanggang 12 karakter) at **mapa** na may aerial photo, OpenStreetMap at grid ng locator. Sa VHF buong view at zoom na 0-15 degree.
+- **Pagtanggap (RDF)**: RDF, DMF, karaniwang F/R, ingay ng antena (ITU-R P.372) at margin sa receiver para sa Beverage, BOG, K9AY, Flag, EWE, 4-square at 8 bertikal na nakabilog.
+- **Mga sukat ng VNA**: mga file na .s1p at CSV na nakapatong sa kalkulasyon, na inalis ang kable (de-embedding), Smith chart at mungkahing pagwawasto.
+- **Mga tolerance sa paggawa**: nauulit na Monte Carlo, sensitivity bawat elemento at listahan ng pagputol na may pinapayagang tolerance.
+- **Mga mekanikal na kalkulasyon** (bagong tab): **hangin** ayon sa NTC 2018, CNR-DT 207 at EN 1991-1-4 (zona mula sa locator, pahalang na daloy) at **balanse** sa palo; mga puwersa sa N at kgf.
+- **Kable at balun** mula 1.8 hanggang 1296 MHz (ang shield ay nagiging NEC wire), **H-frame at palo** sa stack, mga **divider** na λ/4 at Wilkinson na may 1:1 na guhit, **crossed Yagi** (RHCP, LHCP, X-pol), **HF loads** (W8NX coax trap, coil, linear loading), **karaniwang F/R** pati sa optimizer at awtomatikong **AGT test**.
+- **3D na istruktura**: ang pag-click sa isang wire ay sumasalungguhit dito ng malabo-linaw na kulay (kulay at kapal sa Mga Setting) at dinadala ang talahanayan ng mga wire sa hilera nito.
+- **Pagwawasto**: kapag nasa isang field ang cursor, ang pag-click sa ibang item ng listahan sa kaliwa ay maaaring magsara ng programa; ngayon tinatapos muna ang field bago magpalit ng pahina.
+- Lahat ay ipinaliwanag sa kabanata 23 ng manwal, kasama ang mga pinagmulan; ang mga bagong item ay isinalin sa 37 wika.
+
+[doc/Manuale_d_uso.pdf](https://github.com/ic8tem/YA-NEC/blob/main/doc/Manuale_d_uso.pdf) (23)

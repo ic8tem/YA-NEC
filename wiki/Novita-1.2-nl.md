@@ -1,0 +1,15 @@
+[Italiano](Novita-1.2) · [English](Novita-1.2-en) · [Deutsch](Novita-1.2-de) · **Nederlands** · [Français](Novita-1.2-fr) · [Español](Novita-1.2-es) · [Português](Novita-1.2-pt) · [Português (Brasil)](Novita-1.2-pt-br) · [Dansk](Novita-1.2-da) · [Norsk](Novita-1.2-nb) · [Svenska](Novita-1.2-sv) · [Íslenska](Novita-1.2-is) · [Eesti](Novita-1.2-et) · [Lietuvių](Novita-1.2-lt) · [Latviešu](Novita-1.2-lv) · [Polski](Novita-1.2-pl) · [Čeština](Novita-1.2-cs) · [Slovenčina](Novita-1.2-sk) · [Magyar](Novita-1.2-hu) · [Română](Novita-1.2-ro) · [Ελληνικά](Novita-1.2-el) · [Русский](Novita-1.2-ru) · [Українська](Novita-1.2-uk) · [Türkçe](Novita-1.2-tr) · [Afrikaans](Novita-1.2-af) · [العربية](Novita-1.2-ar) · [עברית](Novita-1.2-he) · [اردو](Novita-1.2-ur) · [हिन्दी](Novita-1.2-hi) · [বাংলা](Novita-1.2-bn) · [ไทย](Novita-1.2-th) · [Bahasa Indonesia](Novita-1.2-id) · [Tagalog](Novita-1.2-tl) · [日本語](Novita-1.2-ja) · [한국어](Novita-1.2-ko) · [中文](Novita-1.2-zh) · [中文 (繁體)](Novita-1.2-zh-tw)
+
+# Wat is er nieuw in 1.2
+
+- **Echt terrein** (zoals HFTA van N6BV): elevatiediagram over het werkelijke terreinprofiel, uit het **TINITALY**-DEM (Italië, 10 m) of **SRTM1** (wereldwijd), uit een HorizonProfiler-bestand of vlak. Reflecties per segment gewogen met de Fresnelzones, diffractie over bergkammen, zee, gekromde aarde; verkeersrichtingen vanuit de locator (tot 12 tekens) en een **kaart** met luchtfoto, OpenStreetMap en locatorraster. Op VHF volledig beeld en zoom van 0-15 graden.
+- **Ontvangst (RDF)**: RDF, DMF, gemiddelde F/R, antenneruis (ITU-R P.372) en marge op de ontvanger voor Beverage, BOG, K9AY, Flag, EWE, 4-square en 8 verticalen in een cirkel.
+- **VNA-metingen**: .s1p- en CSV-bestanden over de berekening gelegd, met de kabel eruit gerekend (de-embedding), Smith-diagram en een voorgestelde correctie.
+- **Bouwtoleranties**: herhaalbare Monte Carlo, gevoeligheid per element en een zaaglijst met de toegestane tolerantie.
+- **Mechanische berekeningen** (nieuw tabblad): **wind** volgens NTC 2018, CNR-DT 207 en EN 1991-1-4 (zone uit de locator, dwarsstroming) en **balans** op de mast; krachten in N en kgf.
+- **Kabel en balun** van 1,8 tot 1296 MHz (de mantel wordt een NEC-draad), **H-frame en mast** in de stack, λ/4- en Wilkinson-**splitters** met een tekening op ware grootte, **gekruiste Yagi's** (RHCP, LHCP, X-pol), **HF-belastingen** (W8NX-coaxtraps, spoelen, linear loading), **gemiddelde F/R** ook in de optimizer en een automatische **AGT-test**.
+- **3D-structuur**: een klik op een draad onderstreept hem met een doorschijnende kleur (kleur en dekking in Instellingen) en brengt de dradentabel naar zijn rij.
+- **Correctie**: met de cursor in een veld kon een klik op een ander item in de lijst links het programma sluiten; nu wordt het veld afgesloten vóór de paginawissel.
+- Alles uitgelegd in hoofdstuk 23 van de handleiding, met de bronnen; nieuwe items vertaald in de 37 talen.
+
+[doc/Manuale_d_uso.pdf](https://github.com/ic8tem/YA-NEC/blob/main/doc/Manuale_d_uso.pdf) (23)

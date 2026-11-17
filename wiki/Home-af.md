@@ -4,6 +4,8 @@
 
 **Draadantenna-simulator gebaseer op NEC-2** vir Windows, Linux en macOS. Deur Costantino Cerrotta **IC8TEM**. Lisensie GPL-3.0.
 
+> **[Nuut in 1.2](Novita-1.2-af)**
+>
 > **[Nuut in 1.1](Novita-1.1-af)**
 
 > *Die geskiedenis van hierdie program sal julle skryf: met julle projekte, julle idees, julle vernuf, julle ontdekkings en julle sekerhede.*

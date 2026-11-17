@@ -4,6 +4,8 @@
 
 **Vielinių antenų simuliatorius, paremtas NEC-2**, skirtas Windows, Linux ir macOS. Autorius: Costantino Cerrotta **IC8TEM**. Licencija GPL-3.0.
 
+> **[Kas naujo 1.2 versijoje](Novita-1.2-lt)**
+>
 > **[Kas naujo 1.1 versijoje](Novita-1.1-lt)**
 
 > *Šios programos istoriją parašysite jūs: savo projektais, idėjomis, išradingumu, atradimais ir įsitikinimais.*

@@ -4,6 +4,8 @@
 
 **Simulator antena kawat berbasis NEC-2** untuk Windows, Linux, dan macOS. Oleh Costantino Cerrotta **IC8TEM**. Lisensi GPL-3.0.
 
+> **[Yang baru di 1.2](Novita-1.2-id)**
+>
 > **[Yang baru di 1.1](Novita-1.1-id)**
 
 > *Sejarah program ini akan kalian tulis sendiri: dengan proyek kalian, ide kalian, kecerdikan kalian, penemuan kalian, dan keyakinan kalian.*

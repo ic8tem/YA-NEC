@@ -2,7 +2,17 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novita' @VER@:** vedi la pagina [Novità](https://github.com/ic8tem/YA-NEC/wiki) del wiki e il README.
+**Novità della 1.2** (spiegate nel capitolo 23 del manuale e nella pagina [Novità della 1.2](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.2) del wiki, con le fonti):
+- **Terreno reale** alla HFTA di N6BV: diagramma di elevazione sul profilo vero del terreno, dal DEM TINITALY (Italia, 10 m) o SRTM1 (mondo), da un file di HorizonProfiler o piatto; riflessioni tratto per tratto pesate con le zone di Fresnel, diffrazione sui crinali, mare, terra curva; direzioni di traffico dal locatore e mappa con foto aerea, OpenStreetMap e griglia dei locatori; in VHF vista intera e zoom 0-15 gradi;
+- **Ricezione (RDF)**: RDF, DMF, F/R medio, rumore d'antenna (ITU-R P.372) e margine sul ricevitore per Beverage, BOG, K9AY, Flag, EWE, 4-square e 8 verticali in cerchio;
+- **Misure VNA**: file .s1p e CSV sovrapposti al calcolo, con il cavo tolto (de-embedding), carta di Smith e proposta di correzione;
+- **Tolleranze costruttive**: Monte Carlo ripetibile, sensibilità per elemento e lista di taglio con la tolleranza ammessa;
+- **Calcoli meccanici** (nuova linguetta): vento con NTC 2018, CNR-DT 207 ed EN 1991-1-4 (zona dal locatore, flusso trasversale) e bilanciamento sul palo, forze in N e kgf;
+- **Cavo e balun** da 1,8 a 1296 MHz (la calza diventa un filo NEC), **telaio a H e palo** nello stack, **divisori** λ/4 e Wilkinson con disegno 1:1, **Yagi incrociate** (RHCP, LHCP, X-pol), **carichi HF** (trappole coassiali W8NX, bobine, linear loading), **F/R medio** anche nell'ottimizzatore, **test AGT** automatico;
+- **Struttura 3D**: un clic su un filo lo sottolinea con un colore velato (colore e velatura nelle Impostazioni) e porta la tabella dei fili sulla sua riga;
+- **Correzione**: con il cursore in un campo, il clic su un'altra voce dell'elenco a sinistra poteva chiudere il programma (registro del 13/11); ora il campo si chiude prima del cambio di pagina.
+
+**Dalla 1.1:** cielo vero, distanze di stack con il NEC, Calcolatori a famiglie: vedi [Novità della 1.1](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.1).
 
 **Dalla 1.0.13:**
 - inglese: tradotti altri 3049 testi dell'interfaccia (schede dei calcolatori, avvisi, fumetti, fonti): da circa 400 a circa 3460;
@@ -74,5 +84,5 @@ Il setup non e' firmato: Windows puo' mostrare "PC protetto", si clicca "Ulterio
 Si estrae lo zip in una cartella scrivibile e si avvia `YA-NEC` (Windows: `YA-NEC.exe`). Non serve installare .NET. Ogni zip ha accanto la sua impronta `.sha256` (elenco completo in fondo, sotto "Assets").
 macOS: dopo l'estrazione `xattr -dr com.apple.quarantine <cartella>`. Windows 7: servono gli aggiornamenti KB2533623 e KB2999226.
 
-Chi ha la 1.0 riceve la 1.0.4 da solo (aggiornamento automatico, attivo al riavvio; si spegne in Impostazioni > Aggiornamento).
+Chi ha una versione precedente riceve la @VER@ da solo (aggiornamento automatico, attivo al riavvio; si spegne in Impostazioni > Aggiornamento).
 Manuale completo in `doc/Manuale_d_uso.pdf` e nella linguetta Manuale. Licenza GPL-3.0.

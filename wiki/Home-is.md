@@ -4,6 +4,8 @@
 
 **Hermir fyrir vírloftnet byggður á NEC-2** fyrir Windows, Linux og macOS. Höfundur: Costantino Cerrotta **IC8TEM**. Leyfi GPL-3.0.
 
+> **[Nýtt í 1.2](Novita-1.2-is)**
+>
 > **[Nýtt í 1.1](Novita-1.1-is)**
 
 > *Sögu þessa forrits skrifið þið: með verkefnum ykkar, hugmyndum ykkar, snilli ykkar, uppgötvunum ykkar og vissu ykkar.*

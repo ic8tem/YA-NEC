@@ -23,9 +23,15 @@ jobs:
           chmod +x pub/YA-NEC/YA-NEC
           timeout 900 ./pub/YA-NEC/YA-NEC --autotest > autotest.txt 2>&1 || true
           tail -60 autotest.txt
+      - name: Prove dell'interfaccia (tutte le linguette e sottolinguette, con il cursore in un campo prima di ogni cambio)
+        run: |
+          sudo apt-get install -y xvfb fonts-dejavu-core > /dev/null
+          timeout 1800 xvfb-run -s "-screen 0 1700x1100x24" ./pub/YA-NEC/YA-NEC --prove-interfaccia > /dev/null 2>&1 || true
+          cp pub/YA-NEC/data/prove_interfaccia.txt . 2>/dev/null || echo "prove non concluse" > prove_interfaccia.txt
+          tail -8 prove_interfaccia.txt
       - name: Zip
         run: |
-          rm -rf pub/YA-NEC/data/prove pub/YA-NEC/data/config.ini pub/YA-NEC/Registri
+          rm -rf pub/YA-NEC/data/prove pub/YA-NEC/data/config.ini pub/YA-NEC/Registri pub/YA-NEC/data/collaudo_immagini pub/YA-NEC/data/prove_interfaccia.txt pub/YA-NEC/data/fumetti.txt pub/YA-NEC/data/registro.txt
           (cd pub && zip -qr -y ../anteprima-linux-x64.zip YA-NEC)
       - name: Release in bozza
         env:
@@ -34,6 +40,6 @@ jobs:
           id=$(gh api repos/${{ github.repository }}/releases --jq '.[] | select(.draft and .name=="anteprima") | .id' | head -1)
           if [ -z "$id" ]; then id=$(gh api repos/${{ github.repository }}/releases -X POST -f tag_name=anteprima -f name=anteprima -F draft=true -f target_commitish=${{ github.sha }} --jq .id); fi
           for a in $(gh api repos/${{ github.repository }}/releases/$id/assets --jq '.[].id'); do gh api -X DELETE repos/${{ github.repository }}/releases/assets/$a; done
-          for f in anteprima-linux-x64.zip autotest.txt; do
+          for f in anteprima-linux-x64.zip autotest.txt prove_interfaccia.txt; do
             curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @$f "https://uploads.github.com/repos/${{ github.repository }}/releases/$id/assets?name=$f"
           done
