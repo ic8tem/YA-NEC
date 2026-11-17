@@ -49,6 +49,7 @@ namespace YaNec
             fasCalc.Voce("eh", "Antenna EH", false, null, "con avviso sulle prestazioni", true);
             fasCalc.Voce("moxon", "Moxon", false, null, "gia' approvato (Cebik / DK7ZB)");
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
+            fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
             fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
             fasCalc.Voce("looprett", "Loop rettangolare", false, null, "lati e alimentazione");
             fasCalc.Voce("hen", "HEN (loop giapponese)", false, null, "loop a \"J\" di JA");
@@ -416,6 +417,29 @@ namespace YaNec
                     }
                     catch (Exception ex) { Status("Dima non salvata: " + ex.Message, true); }
                 };
+            }
+            // 1.0.17 (bozzetto Big Wheel approvato da IC8TEM il 17/11/2026 18:08): dima di piegatura 1:1 e dettaglio del mozzo
+            if (sc is CalcBigWheel bwh)
+            {
+                Button bDimaP = Btn("Dima di piegatura 1:1 (PDF)", false), bMozzo = Btn("Dettaglio del mozzo (PDF)", false);
+                foreach (Button b in new[] { bDimaP, bMozzo }) { b.Margin = new Thickness(0, 0, 8, 6); btns.Children.Add(b); }
+                ToolTip.SetTip(bDimaP, "Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.");
+                ToolTip.SetTip(bMozzo, "I due livelli dei bracci, i triangoli di collegamento, lo stub e il connettore, con le misure.");
+                Func<string, Action<Stream>, Task> salvaPdf = async (nome, scrivi) =>
+                {
+                    if (mostra != null) mostra();
+                    if (bwh.I("tipo") != 0) { Status("La dima e il mozzo servono alla Big Wheel: scegli il tipo Big Wheel.", true); return; }
+                    try
+                    {
+                        IStorageFile fl = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions { Title = "Salva", SuggestedFileName = nome, DefaultExtension = "pdf" });
+                        if (fl == null) return;
+                        using (Stream st = await fl.OpenWriteAsync()) scrivi(st);
+                        Status("Salvato: " + fl.Name);
+                    }
+                    catch (Exception ex) { Status("PDF non salvato: " + ex.Message, true); }
+                };
+                bDimaP.Click += async (s, e) => await salvaPdf("big_wheel_dima_1a1.pdf", st => BigWheelPdf.Dima(st, bwh));
+                bMozzo.Click += async (s, e) => await salvaPdf("big_wheel_mozzo.pdf", st => BigWheelPdf.Mozzo(st, bwh));
             }
             if (sc is CalcStackDl6wu sdl)
             {

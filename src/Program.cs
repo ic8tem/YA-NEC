@@ -185,6 +185,30 @@ namespace YaNec
                             }
                             catch (Exception ex) { errPar.Add("biquad: " + ex.Message); }
                         }
+                    // 1.0.17: Big Wheel (F1BKM) e tre dipoli (Cebik) adattati col NEC
+                    using (Prestazioni.Misura("Autotest della Big Wheel"))
+                        foreach (int tipo in new[] { 0, 1, 2 })
+                        {
+                            try
+                            {
+                                var bw = new Engine.CalcBigWheel();
+                                bw.Compute();
+                                bw.Par("tipo").Value = tipo;
+                                if (tipo > 0) bw.Par("f").Value = 146;
+                                bw.Compute();
+                                bw.Tune(bw.P("f"));
+                                int c = bw.SweepF.Length / 2;
+                                string nome = tipo == 0 ? "Big Wheel F1BKM" : tipo == 1 ? "tre dipoli a triangolo" : "tre dipoli a cerchio";
+                                string riga = string.Format(System.Globalization.CultureInfo.InvariantCulture,
+                                    "{0}: {1} {2:0.0} mm, {3} {4:0.0} mm, Z mozzo {5:0.0} {6:+0.0;-0.0;+0.0}j, ROS {7:0.00}, G orizzonte {8:0.00} dBi, circolarita' {9:0.00} dB",
+                                    nome, tipo == 0 ? "petalo" : "dipolo", tipo == 0 ? bw.P("lp") : bw.P("ld"), tipo == 0 ? "stub" : "raggio", tipo == 0 ? bw.P("ls") : bw.P("rd"),
+                                    bw.Zmozzo.Real, bw.Zmozzo.Imaginary, bw.SweepSwr[c], bw.Gorizz, bw.Circolarita);
+                                bool ok = bw.SweepSwr[c] < 2.0 && bw.Circolarita < 3.0 && bw.Gorizz > -2 && bw.Gorizz < 5;
+                                sb.AppendLine("       " + (ok ? "OK   " : "ERR  ") + riga);
+                                if (!ok) errPar.Add(riga);
+                            }
+                            catch (Exception ex) { errPar.Add("Big Wheel: " + ex.Message); }
+                        }
                     foreach (string e in errPar) sb.AppendLine("ERRORE: " + e);
                     bad += errPar.Count;
                     sb.AppendLine(bad == 0 ? "Autotest superato." : "Autotest: " + bad + " prove non superate.");
