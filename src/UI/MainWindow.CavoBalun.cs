@@ -204,7 +204,9 @@ namespace YaNec
         void ApriFinestraGrande(string titolo, Control c)
         {
             Window w = new Window { Title = titolo + " - YA-NEC", Width = 1560, Height = 960, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = Pal.B(Pal.Back) };
-            w.Content = new ScrollViewer { Content = new Border { Padding = new Thickness(10), Child = c }, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto };
+            // 1.2.0 (schermata del 17/11 23:52): senza scorrimento orizzontale la scheda prende la larghezza della finestra; con lo
+            // scorrimento le colonne a stella avevano larghezza infinita, l'avviso giallo restava su una riga e tabella e grafico uscivano a destra
+            w.Content = new ScrollViewer { Content = new Border { Padding = new Thickness(10), Child = c }, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled };
             finestraGrande = w;
             w.Closed += (s, e) => { if (finestraGrande == w) finestraGrande = null; };
             Registro.Scrivi("AZIONE", "scheda in finestra: " + titolo);
