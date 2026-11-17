@@ -42,10 +42,18 @@ namespace YaNec.Engine
             return s.ToString();
         }
 
+        // lobo lungo +Z: guadagno a theta 0, F/B contro theta 180, aperture a -3 dB nei piani XZ (phi 0) e YZ (phi 90)
+        static double Apertura(RunResult r, double phi)
+        {
+            double g0 = r.Engine.Gain(0, phi).GainTotal, a = 0;
+            for (double t = 0.25; t < 90; t += 0.25) { if (r.Engine.Gain(t, phi).GainTotal < g0 - 3) { a = t; break; } }
+            return 2 * a;
+        }
         static string Riga(string nome, RunResult r)
         {
-            return string.Format(CI, "{0}: G {1:0.00} dBi, F/B {2:0.0} dB, Z {3:0.0} {4:+0.0;-0.0;+0.0}j (ROS a 300 ohm {5:0.00}), aperture {6:0} e {7:0} gradi",
-                nome, r.GmaxDbi, r.FrontBack, r.Zin.Real, r.Zin.Imaginary, r.Swr, Math.Min(r.HpbwAz, r.HpbwEl), Math.Max(r.HpbwAz, r.HpbwEl));
+            double g = r.Engine.Gain(0, 0).GainTotal, fb = g - r.Engine.Gain(180, 0).GainTotal;
+            return string.Format(CI, "{0}: G verso +Z {1:0.00} dBi, F/B {2:0.0} dB, Z {3:0.0} {4:+0.0;-0.0;+0.0}j (ROS a 300 ohm {5:0.00}), aperture {6:0} (piano E) e {7:0} gradi (piano H)",
+                nome, g, fb, r.Zin.Real, r.Zin.Imaginary, r.Swr, Apertura(r, 0), Apertura(r, 90));
         }
 
         public static void Esegui(Action<string> log, List<string> errori)
@@ -56,14 +64,14 @@ namespace YaNec.Engine
             NecModel m = NecModel.Parse(YagiMathWorks(mw)); m.Z0 = 300;
             RunResult r = Analysis.Run(m, m.BuildGeometry(), 165, 2.0);
             string riga = Riga("Yagi MathWorks, misure ottimizzate da MathWorks (pubblicato: 10,59 dBi, F/B 15,6 dB, aperture 50 e 62 gradi)", r);
-            bool ok = Math.Abs(r.GmaxDbi - 10.59) < 0.8;
+            bool ok = Math.Abs(r.Engine.Gain(0, 0).GainTotal - 10.59) < 0.8;
             log((ok ? "OK   " : "ERR  ") + riga);
             if (!ok) errori.Add(riga);
             // 2) il nostro ottimizzatore dalla stessa partenza (lunghezze 0,5 lambda, spaziature 0,3 e 0,25 lambda) e con gli stessi limiti
             double[] p0 = { 0.5 * lam, 0.5 * lam, 0.5 * lam, 0.5 * lam, 0.5 * lam, 0.5 * lam, 0.3 * lam, 0.25 * lam, 0.25 * lam, 0.25 * lam, 0.25 * lam, lam / 60 };
             double[] mn = { 0.3, 0.45, 0.3, 0.3, 0.3, 0.3, 0.05, 0.05, 0.05, 0.05, 0.05, 0.004 }, mx = { 0.9, 0.6, 0.7, 0.7, 0.7, 0.7, 0.35, 0.2, 0.2, 0.3, 0.3, 0.009 };
             string[] nomi = { "LR", "LD", "L1", "L2", "L3", "L4", "SR", "S1", "S2", "S3", "S4", "FS" };
-            Ottimizzatore o = new Ottimizzatore { Partenza = NecModel.Parse(YagiMathWorks(p0)), Simplesso = true, MaxPassi = 500, Principale = 1 };
+            Ottimizzatore o = new Ottimizzatore { Partenza = NecModel.Parse(YagiMathWorks(p0)), Simplesso = true, MaxPassi = 500, Principale = 1, ThetaAvanti = 0, PhiAvanti = 0 };   // lobo verso +Z come MathWorks
             o.Partenza.Z0 = 300;
             for (int i = 0; i < nomi.Length; i++) o.Variabili.Add(new OttVariabile { Nome = nomi[i], Attiva = true, Valore = p0[i], Min = mn[i] * lam, Max = mx[i] * lam, Passo = 0.002 * lam });
             o.Frequenze.AddRange(new[] { 160.875, 165.0, 169.125 });
@@ -84,12 +92,12 @@ namespace YaNec.Engine
 
             // 3) elica MathWorks
             double lh = C0 / 1650, R = 0.028, sp = 2 * Math.PI * R * Math.Tan(11.2 * Math.PI / 180);
-            HelixSpec hs = new HelixSpec { Modo = 2, FreqMHz = 1650, Spire = 18, Circ = 2 * Math.PI * R / lh, Passo = sp / lh, Conduttore = 0.0006, Riflettore = 0, DiamRifl = 0.6 / lh, Radiali = 16, Gap = 0.003 };
+            HelixSpec hs = new HelixSpec { Modo = 2, FreqMHz = 1650, Spire = 18, Circ = 2 * Math.PI * R / lh, Passo = sp / lh, Conduttore = 0.0006, Riflettore = 1, Gap = 0.003 };   // piano perfetto: MathWorks usa un disco pieno di 600 mm (16 radiali su 3,3 lambda lasciano passare troppo)
             try
             {
                 NecModel hm;
                 HelixEsito he = HelixGen.Esito(hs, CancellationToken.None, out hm);
-                string rh = string.Format(CI, "Elica MathWorks (1,65 GHz, raggio 28 mm, passo 11,2 gradi = {0:0.0} mm, 18 spire invece di 17,5, piano di 600 mm a radiali): NEC {1:0.00} dBic, Kraus {2:0.00}, Emerson {3:0.00}; specifica MathWorks 13 +- 1,5 dBi",
+                string rh = string.Format(CI, "Elica MathWorks (1,65 GHz, raggio 28 mm, passo 11,2 gradi = {0:0.0} mm, 18 spire invece di 17,5, piano perfetto invece del disco di 600 mm): NEC {1:0.00} dBic, Kraus {2:0.00}, Emerson {3:0.00}; specifica MathWorks 13 +- 1,5 dBi",
                     sp * 1000, he.GdbicNec, he.GdbicKraus, he.GdbicEmerson);
                 bool okh = he.GdbicNec > 11.5 && he.GdbicNec < 14.5;
                 log((okh ? "OK   " : "ERR  ") + rh);

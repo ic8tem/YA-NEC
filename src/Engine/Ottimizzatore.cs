@@ -62,6 +62,9 @@ namespace YaNec.Engine
         public bool MantieniBoom;
         public bool Simplesso;                    // falso = una variabile alla volta (come MMANA)
         public int MaxPassi = 3000;
+        /// <summary>1.0.17: direzione "avanti" fissata (theta, phi in gradi); NaN = quella del massimo del modello di partenza (come prima).
+        /// Serve quando il modello di partenza non ha ancora il lobo dove lo si vuole (Yagi di MathWorks: tutti gli elementi a 0,5 lambda).</summary>
+        public double ThetaAvanti = double.NaN, PhiAvanti = double.NaN;
 
         public OttPasso Iniziale, Migliore;
         public readonly List<OttPasso> Registro = new List<OttPasso>();   // ultimi 128 passi che hanno migliorato o richiesto
@@ -92,7 +95,7 @@ namespace YaNec.Engine
             // direzione del massimo e guadagni di partenza
             SegmentGeometry g = Partenza.BuildGeometry();
             RunResult r0 = Analysis.Run(Partenza, g, Frequenze[Principale], 2.0, ct);
-            thFwd = r0.ThetaMax; phFwd = r0.PhiMax;
+            thFwd = double.IsNaN(ThetaAvanti) ? r0.ThetaMax : ThetaAvanti; phFwd = double.IsNaN(PhiAvanti) ? r0.PhiMax : PhiAvanti;
             List<SweepPoint> sp0 = Sweep(Partenza, g, ct);
             g0 = new double[Frequenze.Count];
             for (int i = 0; i < g0.Length; i++) g0[i] = sp0[i].Ok ? sp0[i].GainFwd : r0.GmaxDbi;

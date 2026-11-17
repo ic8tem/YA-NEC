@@ -255,6 +255,12 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "Big Wheel e tre dipoli (1.0.17)",
+                Who = "W1IJD e W1FVY (QST 1961); A. Griffault F1BKM (Radio-REF 764); L.B. Cebik W4RNL e B. Cerreto WA1FXT (QST 2008); Cebik, antenneX 41 e 145; K. Rothammel DM2ABK; OfficinaHF; D. Maignan; MathWorks Antenna Toolbox (confronti)",
+                What = "Petali a due livelli con lo stub, tre dipoli in serie con il lambda/4, dima di piegatura 1:1 e dettaglio del mozzo; casi di MathWorks (Yagi a 6 elementi, elica) nell'autotest. Bozzetto approvato da IC8TEM il 17/11/2026."
+            },
+            new CreditEntry
+            {
                 Title = "Biquad e doppia biquad (1.0.16)",
                 Who = "T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)",
                 What = "Lato, distanza dal riflettore, riflettore pieno o a rete e bordi a confronto tra le fonti; adattamento col NEC, feed per la parabola, dima 1:1. Bozzetto approvato da IC8TEM il 17/11/2026."

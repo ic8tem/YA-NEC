@@ -775,6 +775,36 @@ Hexbeam a larga banda di G3TXQ con le misure del modello di JN1GLB: per ogni ban
 
 Fonti: G3TXQ (broadband hexbeam), misure del modello MMANA di JN1GLB (2008); M0OXO, N4KC/K4KIO, MM0OPX.
 
+**Big Wheel e tre dipoli (dalla 1.0.17)**
+
+Antenna omnidirezionale a polarizzazione orizzontale per 144-432 MHz, in tre forme: la Big Wheel classica (W1IJD e W1FVY, QST 1961, misure di F1BKM) e i "tre dipoli" di W4RNL e WA1FXT (QST 2008), a triangolo o su un cerchio.
+
+**Lo sfasamento dei conduttori.** Ogni petalo della Big Wheel e' un'onda intera di tubo alimentata ai due capi. Vicino al mozzo i bracci stanno su due livelli: quelli di sotto vanno al triangolo di massa (calza), quelli di sopra al triangolo del centrale. Il braccio di sopra di un petalo e quello di sotto del petalo vicino corrono a 20 gradi l'uno dall'altro, a quote diverse: insieme fanno una linea di lambda/4 che porta l'alta impedenza dei capi del petalo al mozzo. Ogni petalo cambia livello a meta' del lato esterno (il manicotto di F1BKM). I tre petali in parallelo danno circa 10 ohm; lo stub a U tra i due triangoli, in parallelo al connettore, li porta a 50 ohm. Nel disegno della scheda i bracci rossi sono sopra, quelli blu sotto.
+
+| Dato | Unita' / scelte | Spiegazione |
+|---|---|---|
+| Tipo | Big Wheel / Tre dipoli a triangolo / Tre dipoli a cerchio | passando ai tre dipoli la scheda mette le misure di Cebik riscalate alla frequenza |
+| Frequenza, Diametro del tubo | MHz, mm | cambiando la frequenza le misure in mm si riscalano |
+| Lunghezza sviluppata, Apertura, Raggio delle curve | mm, gradi, mm | il petalo e' un triangolo arrotondato (dima di F1BKM: 2050 mm, 100 gradi, 140 mm interni); la distanza tra mozzo e lato esterno si trova dalla lunghezza |
+| Distanza tra i due livelli | mm | lo sfasamento dei conduttori; 30 mm e' una stima dalla pila di piastre di F1BKM: le fonti non la scrivono |
+| Raggio del mozzo | mm | dove i bracci si attaccano ai triangoli |
+| Stub: lunghezza e larghezza | mm | striscia a U, nel NEC un filo di raggio larghezza/4 |
+| Raggio al punto di alimentazione, Lunghezza del dipolo | mm | tre dipoli: diritti (triangolo) o ad arco (cerchio) |
+| Tratto di lambda/4 | ohm | tre dipoli: dalla serie al mozzo (circa 150 ohm) a 50 ohm, 93 ohm (RG-62) come Cebik |
+| Montaggio, Stack | spazio libero / altezza; 1 o 2 | stack a 5/8 lambda (Big Wheel) o 0,875 lambda (tre dipoli), nel modello in fase diretta |
+
+"Porta in adattamento (NEC)": Big Wheel, alternando tre volte la lunghezza dello stub e quella del petalo per il ROS piu' basso a 50 ohm; tre dipoli, la lunghezza dei dipoli per il ROS dopo il lambda/4. Poi ROS su +-2 % di banda, guadagno all'orizzonte e circolarita' (differenza tra massimo e minimo sull'azimut). I tre dipoli si calcolano con correnti uguali sui tre punti di alimentazione (cavi a 50 ohm uguali) e la serie al mozzo e' la somma delle tre impedenze (Cebik, antenneX 145). "Dima di piegatura 1:1 (PDF)" stampa il petalo su fogli A4 da unire; "Dettaglio del mozzo (PDF)" mostra i due livelli, i triangoli e lo stub.
+
+Verifica (autotest, spazio libero): Big Wheel a 145 MHz con tubo da 10 mm, petalo 1996 mm e stub 120 mm, 49,8 +j0,2 ohm, ROS 1,01, 1,5 dBi all'orizzonte, circolarita' 1,7 dB; tre dipoli a triangolo a 146 MHz, dipoli da 882 mm, serie 152 +j5 ohm, dopo il lambda/4 da 93 ohm ROS 1,14, circolarita' 0,24 dB; a cerchio 147 +j5 ohm, ROS 1,18, circolarita' 0,09 dB.
+
+| Fonte | Somiglianze con il calcolo | Differenze |
+|---|---|---|
+| W1IJD e W1FVY, QST 9/1961 | petali di circa un'onda (80" = 2032 mm), stub da 5" (127 mm), 10 ohm in parallelo portati a 50, diagramma entro +-2 dB (il NEC: +-0,9 dB) | non da' il guadagno assoluto; stack a 5/8 lambda con 1 lambda di RG-11 e una baia capovolta, +4 dB sul dipolo |
+| F1BKM, Radio-REF 764 (2004) | petalo da 2050 mm e stub da 127 mm: il NEC trova 1996 mm (-2,6 %) e 120 mm | dichiara circa 5 dB sui dipoli incrociati; stub da 152 mm su un'auto o in stack; stack a 1300 mm con le linee da 75 ohm di DM2ABK |
+| W4RNL e WA1FXT, QST 3/2008 | tre dipoli: serie al mozzo circa 150 ohm (il NEC: 152), circa 57 ohm dopo il lambda/4 di RG-62 (il NEC: ROS 1,14), circolarita' entro 0,3 dB (il NEC: 0,24) | avvertono che la Big Wheel e' critica e che il NEC calcola male le linee dove la corrente e' bassa: lo stub si regola sempre sull'antenna vera |
+| Cebik, antenneX 41 e 145 | sorgenti multiple con il verso dei fili coerente; linee in serie con correnti uguali | sono articoli di metodo, senza un'antenna da confrontare |
+| OfficinaHF, Maignan (F1BKM) | ruota di circa 1,2 m, stub regolabile | nessuna misura nuova; temono vento e ghiaccio |
+
 **Delta loop**
 
 Loop triangolare di un'onda: equilatera, schiacciata o allungata (oppure con l'altezza del triangolo data), vertice in alto o in basso. Dalla 1.0.11 la scheda e' in tre sezioni: **1 · Dimensioni** (frequenza, filo, quota, altezza del triangolo, su due colonne), **2 · Forma** (forma e vertice sulla stessa riga), **3 · Balun / alimentazione** con quattro tessere, ognuna con la sua figurina e la polarizzazione che ne viene (centro del lato orizzontale e vertice: orizzontale; angolo: mista; lato a lambda/4: verticale). Il disegno a destra mostra solo il triangolo, la quota H, la freccia del campo E e il balun, con la didascalia sotto su due righe (prima le figurine stavano nel disegno e si sovrapponevano). Il perimetro parte da 1005/f piedi = 306,3/f m; "Porta in risonanza" lo scala. Con la quota maggiore di 0 il modello usa il terreno di Sommerfeld. Sulle posizioni di alimentazione e la polarizzazione: ARRL Antenna Book e Cebik.

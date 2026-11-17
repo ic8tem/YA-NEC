@@ -274,6 +274,11 @@ FONTI DEI CALCOLATORI, DEI CASI DI PROVA E DELLO STUDIO DEI MANUALI
     A. C. Ludwig, "Wire grid modeling of surfaces", IEEE Trans. AP-35 (1987) - regola dell'area uguale (raggio = maglia / 2 pi)
       per il piano di massa a griglia, come NECBOL (thin sheet); pista larga w = filo di raggio w/4 (C. A. Balanis)
     Formato DXF R12 (Autodesk) - entita' LINE e CIRCLE
+  Big Wheel e tre dipoli (1.0.17, bozzetto approvato il 17/11/2026 18:08):
+    R. Mellen W1IJD e C. Milner W1FVY, "The Big Wheel on Two", QST settembre 1961; A. Griffault F1BKM, Radio-REF 764 (2004);
+    L. B. Cebik W4RNL e B. Cerreto WA1FXT, "A New Spin on the Big Wheel", QST marzo 2008; L. B. Cebik, antenneX 41 (sorgenti multiple)
+    e 145 (linee in serie); K. Rothammel DM2ABK (stack); OfficinaHF; D. Maignan
+  Confronti con casi pubblicati (1.0.17): MathWorks Antenna Toolbox, Yagi a 6 elementi (ricerca diretta) ed elica (1,65 GHz)
   Biquad e doppia biquad (1.0.16, bozzetto approvato il 17/11/2026 17:25):
     T. Marshall, "Antennas Enhance WLAN Security", BYTE ottobre 2001, e trevormarshall.com; martybugs.net (biquad e doppia biquad);
     W. Zwickel OE2TZL, Doppelquad (QSP 10/93); W6PQL, 23 cm double quad; IK1ZYW (2012); G6GVI e MW1FGQ; buildyourownantenna (2014);
