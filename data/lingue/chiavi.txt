@@ -5863,3 +5863,654 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.
 Filo {0} scelto nella vista 3D: riga {1} della tabella
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)
+terreno reale
+Locatore
+da 8 a 12 caratteri
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.
+Da HorizonProfiler (.csv / .hpr)
+DEM TINITALY / SRTM1
+Quota sito
+Altezza antenna
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.
+Distanza max
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).
+Acqua salata (εr 81, σ 5 S/m)
+Acqua dolce (εr 80, σ 0,003 S/m)
+Terra
+Rugosità mare (stato 2–3)
+Divergenza (terra curva, k = 4/3)
+Tutti gli azimut (rosa 0–360°)
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.
+Polare (come Verticale)
+Cartesiana dBi / gradi
+0–180° intero
+Zoom angolare
+Sovrapponi alla linguetta Verticale
+premi Calcola
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).
+Statistiche angoli ARRL (banda e regione)
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.
+locatore non valido
+Calcola prima il modello (pulsante Calcola in alto)
+distanza dall'antenna (km)
+sul mare
+sul terreno
+quota s.l.m. (m)
+profilo reale
+terreno piatto
+terreno piatto (NEC)
+orizzonte ostruito
+Intero 0–180° (come la linguetta Verticale)
+Zoom 0–
+° (scala angolare ×
+← dietro
+avanti →
+statistiche degli angoli di arrivo: non caricate
+rosa 0–360°: calcolo in corso…
+figura di merito rispetto al terreno piatto, per azimut (antenna rivolta verso ogni azimut)
+Scegli il file del profilo (clic su "Da HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).
+Profilo del terreno
+Lobo di elevazione
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.
+da file
+dal DEM
+rispetto alla stessa antenna su terreno piatto
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.
+Guadagno a 5° / 10°
+Guadagno a 1° / 3°
+Angoli coperti a -3 dB
+primo lobo sul profilo reale
+calcolo…
+attiva la scansione (sotto)
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.
+Elev.
+Piatto
+Reale
+Primo minimo
+Punto di riflessione
+Orizzonte
+Uso: rotte DX in HF (angoli bassi 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.
+Profilo del terreno (HorizonProfiler)
+Profili (csv, hpr, txt)
+Calcola prima il terreno reale
+Esporta il lobo sul terreno reale
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS
+© i contributori di OpenStreetMap
+Sfondo
+Foto aerea
+Solo griglia
+Griglia
+Cerca
+⌖ Centra sul locatore
+Quota del suolo (DEM)
+Punto scelto
+Coordinate
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.
+DEM TINITALY
+non disponibile
+Quota del suolo (DEM: serve la rete al primo uso)
+Lunghezza elementi
+± mm
+Posizione sul boom
+Uniforme
+Gaussiana (t = 2σ)
+Distribuzione
+Includi foratura del boom (posizione)
+Includi errore della staffa (isolatori)
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.
+fisso (ripetibile)
+nuovo a ogni avvio
+Numero prove
+Frequenze
+Seme casuale
+OBIETTIVO LISTA DI TAGLIO
+Calo F/B max
+ROS max
+Avvia (≈ 500 calcoli NEC)
+Ferma
+Sensibilità per elemento (calo di F/B per 1 mm di errore)
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.
+l'istogramma serve al Monte Carlo
+F/B (dB)
+5% peggiore
+ROS nominale (peggiore nella banda)
+elementi più critici (vedi sensibilità)
+Elem.
+Posizione mm
+Lunghezza mm
+Tolleranza ammessa
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.
+Avvia (sensibilità)
+Calcola prima il modello
+Tolleranze: servono almeno due elementi diritti (un filo per elemento)
+sensibilita'
+Tolleranze: fermato
+Diametro mm
+Tolleranza ammessa mm
+Avvia prima il calcolo
+Esporta la lista di taglio
+Lista di taglio
+Obiettivi
+Calo massimo del F/B
+ROS massimo
+Tolleranze di costruzione
+Stampa la lista di taglio (PDF)
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.
+Al quadro 20×2 mm
+Al quadro 25×2 mm
+Al quadro 30×2 mm
+Al quadro 40×2 mm
+Al tondo 25×1,5 mm
+Al tondo 30×2 mm
+Al tondo 40×2 mm
+Al tondo 50×2 mm
+TIA-222-H (testo non disponibile)
+Zona NTC
+Quota sito as
+Periodo ritorno
+Categoria esposiz.
+Coeff. topografia
+Antenna da terra
+Palo sopra rotore
+Ø palo
+Usa elementi e boom del modello
+Includi telaio, palo, cavi
+Scansione direzione del vento
+UNITÀ
+N e kgf affiancati
+solo N
+solo kgf
+Mostra
+1 kgf = 9,80665 N
+direzione del vento rispetto al boom (°)
+forza (N)
+Forze per parte (vento lungo il boom: elementi di fianco)
+locatore non valido: zona da scegliere a mano
+fuori dall'Italia: zona e vb da scegliere a mano (NTC vale in Italia)
+Telaio a H
+Cavi e divisore
+qr = ½ · ρ · vr² (ρ = 1,25 kg/m³)
+q = qr · ce · ct
+Parte
+Area m²
+F (kgf)
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.
+forza totale (N)
+momento torcente sul rotore (N·m)
+° dal boom)
+momento flettente alla staffa del rotore
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.
+Carico del vento (predimensionamento)
+Sito e norma
+Norma
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4
+Locatore / zona
+Forze per parte (vento lungo il boom)
+Area m2
+Risultati
+Forza massima
+Momento flettente alla staffa del rotore
+Momento torcente sul rotore
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.
+Relazione del vento (PDF)
+MASSE (DAL MODELLO)
+Al tondino pieno
+Al tubo (spessore tipico)
+Materiale elementi
+Staffe, isolatori
+g cad.
+Dipolo + scatola
+Cavo fino al palo
+STAFFA AL PALO
+Posizione attuale
+m dal riflettore
+kg a
+Massa / distanza
+Vento dalla linguetta Vento
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.
+posizione della staffa dal riflettore (m)
+Momenti in funzione della posizione della staffa
+Masse e aree per parte
+ultimo direttore
+Bilanciamento: calcola prima il modello (servono gli elementi)
+Staffe e isolatori
+Cavo sul boom
+Massa kg
+Baricentro m
+Area vento m²
+Centro area m
+momento del peso sul morsetto (N·m)
+momento torcente del vento sul rotore (N·m)
+bilanciamento del peso (baricentro)
+bilanciamento del vento (centro area)
+solo peso
+solo vento
+File Touchstone .s1p
+CSV (NanoVNA-Saver e simili)
+File
+Formato letto
+CAVO TRA VNA E ANTENNA
+Togli il cavo dalla misura (de-embedding)
+VF (vuoto = tabella)
+R e X separate
+Perdita di ritorno (dB)
+Banda con ROS <
+frequenza (MHz)
+apri una misura del VNA (.s1p o CSV)
+ROS: calcolato e misurato
+Confronto
+perdita di ritorno (dB)
+calcolato (NEC)
+misurato, cavo tolto
+misurato grezzo (con cavo)
+R calcolata
+X calcolata
+R misurata
+X misurata
+Calcolato
+Misurato
+Scarto
+Frequenza del ROS minimo
+ROS minimo
+, uguale su tutta la banda → probabile effetto di boom/staffe o dielettrico non modellato
+, in modo non uniforme → controlla adattamento, balun e cavo (la Z misurata ha una forma diversa)
+nessuna correzione: calcolo e misura coincidono.
+calcolo NEC sul campo della misura…
+Misura del VNA
+Tutti
+diagrammi:
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.
+Tabelle: F/B e F/R su tutta la banda
+Valori dello sweep
+F/B (un solo punto a 180°)
+F/R medio (emisfero posteriore)
+f (MHz)
+F/R peggiore (dB)
+F/R medio (dB)
+ANTENNE RICEVENTI
+Beverage a terra (BOG)
+Flag / Pennant
+4-square in ricezione
+8 verticali in cerchio
+Modello aperto
+Isotropo
+Dal piano (ITU-R P.372)
+Sorgente locale (azimut)
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.
+Mostra anche il riferimento (verticale λ/4)
+Mediana sugli angoli di arrivo (linguetta Terreno reale)
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.
+Direzione voluta
+Hz  rumore
+NF ricevitore
+dB  preamp
+sorgente locale az
+Cifre di merito in ricezione
+Basta il segnale?
+calcolo in corso…
+RDF in funzione della frequenza
+Calcola prima il modello aperto
+verticale λ/4
+° · dB relativi · arancio: -3 dB
+DMF (direttività media sul fronte)
+settore ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.
+capitolo 7 (Ricezione RDF)
+molto basso: serve un preamplificatore
+basso ma accettabile: vedi soglia
+come un'antenna trasmittente
+F/R medio sull'emisfero posteriore
+Rumore d'antenna ai morsetti
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.
+Margine sul ricevitore
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.
+: l'RDF e' indicativo, in tabella i valori di letteratura.
+RDF 1,8
+RDF 3,5
+Guadagno 1,8
+Spazio richiesto
+λ/4 in tubo quadro
+λ/4 in tubo tondo
+λ/4 in cavo (2 cavi 75 Ω in parallelo)
+Wilkinson (λ/4 in cavo o in linea + resistenze)
+Solo cavi di fase
+Aria
+PTFE (εr 2,1)
+Uscite
+Z antenne
+Z ingresso
+Tubo esterno (lato / Ø int.)
+Dielettrico
+Connettori
+Correggi accorciamento dei connettori
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.
+Divisori
+Collega allo Stack (cavi reali)
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.
+CAVI DI FASE
+Lunghezza minima
+Fase sfalsata per inclinare il lobo (tilt elettrico)
+Tilt
+° in su
+Passo verticale
+Disegno quotato (stampabile 1:1)
+ROS all'ingresso (carichi = impedenze attive dello Stack)
+solo cavi di fase: nessun trasformatore da costruire
+vista laterale (scala ridotta a schermo; in stampa 1:1)
+2 cavi da 75 Ω in parallelo = 37,5 Ω
+quadro, lato
+tondo, Ø
+Z0 dei rami (Zin · √N)
+Z0 richiesta
+Ø conduttore interno
+VF del cavo
+λ/4 in aria, mm
+da tagliare, mm
+Z carico in parallelo
+Rami λ/4: Z0 = Zin · √N
+Resistenze a stella
+Isolamento tra le uscite
+ideale a f0; cala lontano da f0 (rami λ/4)
+Z0 = √(Zin · Zcarico)
+Quadro/tondo: Z0 = 138 · log(1,0787 · D/d)
+Coassiale: Z0 = 138 · log(D/d)
+Perdita stimata
+Carico usato
+non potenza di 2
+ROS all'ingresso
+solo cavi di fase
+Uscita
+Lungh. elettrica
+Fisica mm
+Perdita dB
+° di fase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.
+Solo cavi di fase: nessun disegno da stampare
+Disegno 1:1 del divisore (PDF)
+Divisore
+50 mm di controllo
+GEOMETRIA
+λ/4 sul boom
+stesso piano
+Metallico, isolati
+Non metallico
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).
+Yagi di base
+Disposizione
+Sfasamento piani
+X-pol (2 ricevitori, EME)
+Cavo di ritardo λ/4
+Includi relè e cavi reali
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).
+angolo dall'asse (°)
+AR (dB)
+AR (dB) / ROS
+Vista frontale
+Componenti co-polare / cross-polare
+Rapporto assiale e ROS in frequenza
+piano A
+piano B
+vista dal davanti — boom al centro
+piani sfalsati di λ/4 lungo il boom
+piani sullo stesso punto del boom (ritardo con il cavo)
+Yagi incrociate: calcola prima il modello aperto (una Yagi)
+Yagi incrociate: serve una Yagi con una sola sorgente
+Yagi incrociate: calcolo in corso...
+piano A (orizz.)
+piano B (vert.)
+AR in asse (dB)
+Rapporto assiale in asse
+Rapporto assiale a −3 dB
+Isolamento tra i due piani
+Fase della rete sul piano B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda
+LINEA DI DISCESA
+Coassiale
+Linea aperta (HF)
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.
+Lungo il boom
+m → palo
+Discesa sul palo
+Fino alla stazione
+Calza a massa sul palo / traliccio
+Messa a terra all'ingresso stazione
+BALUN DA CONFRONTARE
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.
+10 perline in ferrite sulla calza.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.
+Caso mostrato
+distanza dal punto di alimentazione (m)
+corrente calza (%)
+premi Calcola il confronto
+Corrente lungo la calza, dal dipolo verso il basso
+Vista laterale: corrente sulla calza
+Cavo e balun: calcola prima il modello (una sola sorgente)
+Corrente sulla calza (% del dipolo)
+F/R medio
+Z / ROS
+Perdita nel balun
+Potenza dissipata nel balun a 1 kW
+Banda con calza < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.
+Includi palo sotto il telaio
+Cavi di fase lungo i montanti
+Rotore e controventi
+Prevista: rotore e controventi come fili (servono le misure del traliccio).
+Materiale
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.
+Confronto senza / con telaio
+Diagramma orizzontale sovrapposto
+Vista frontale (dal davanti dell'antenna)
+premi Calcola confronto
+Stack: calcola prima il modello
+Stack: calcolo senza e con telaio...
+Pezzo
+Ø mm
+Collegato
+Cavi
+Senza telaio
+Con telaio
+Lobo laterale peggiore (piano E)
+Z ingresso divisore
+Tant (elev. 10°, cielo 200 K, suolo 290 K)
+senza telaio
+con telaio
+Stack: confronto senza / con telaio fatto
+CARICHI HF
+INSERISCI NEL MODELLO
+Come carico (Z in frequenza)
+Come fili (linear loading, cappelli)
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.
+Inserisci nel modello
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.
+Trappola coassiale
+Impedenza della trappola (Q in frequenza, perdite per effetto pelle)
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).
+Calcola spire per f0
+Spire dell'avvolgimento (anche frazionarie).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.
+capitolo 15 (Carichi HF)
+Blocca
+dipolo con
+Filo Ø
+Calcola C per f0
+mm  Filo Ø
+mm  Passo
+mm  Spire
+MHz  dal centro
+m  Braccio
+m  Filo dell'elemento Ø
+Calcola spire per la risonanza
+Piega
+m  Distanza tra i fili
+Calcola la piega per la risonanza
+Raggi
+m  Filo Ø
+Verticale alto
+m  Frequenza
+MHz  Filo Ø
+Calcola i raggi per la risonanza
+L misurata
+MHz  Autorisonanza f0
+Cappello capacitivo in punta al verticale
+Bobina dalle misure
+Reattanza del cappello in frequenza
+Impedenza del carico (con l'autorisonanza e le perdite per effetto pelle)
+impedenza della trappola
+Z trappola (Ω)
+Z carico (Ω)
+Si comporta da
+Potenza persa
+Potenza del trasmettitore per le tensioni e le perdite della tabella.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.
+Risonanza propria f0
+Q ideale
+Q della trappola alla risonanza.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.
+Lunghezza di cavo
++ 10 cm per le saldature
+R in parallelo equivalente
+Q x w0 L: e' il carico LD che entra nel modello
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.
+Induttanza misurata
+dalla misura
+Autorisonanza
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.
+Q della bobina alla frequenza di lavoro.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.
+Reattanza della piega
+Z0 della linea
+Q della piega
+Capacita' del cappello
+Capacita' del cappello verso lo spazio.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.
+in punta al verticale
+Altezza per la risonanza
+tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale
+Carichi HF: apri un modello nella finestra principale.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".
+Il cappello capacitivo si inserisce come fili.
+RLC parallelo
+; Annulla nella barra Geometria lo toglie).
+Effetto sul dipolo
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.
+Mostra il guadagno corretto con l'AGT (scheda Guadagno massimo)
+Esegui il test
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).
+Test del guadagno medio (AGT)
+Controllo prima/dopo il calcolo
+Esito
+(premi "Esegui il test"; si fa da solo all'apertura degli Avvisi con i modelli fino a 1500 segmenti)
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).
+Tutti i controlli entro ±0,2 dB.
+Linea a finestra 450
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.
+Z al punto di alimentazione (Ω)
+Perdita nella linea
+Z all'accordatore (Ω)
+Perdita totale
+m  frequenze (MHz)
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.
+capitolo 14 (Linea aperta + accordatore)
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).
+Linea aperta + accordatore (alla TLW)
+USA costa est
+USA costa ovest
+Giappone
+Caraibi
+TINITALY: il servizio non ha restituito un GeoTIFF
+GeoTIFF compresso: non supportato
+GeoTIFF: tipo di dato non supportato
+Il file non contiene coppie distanza / quota.
+Nessuno
+Choke a spire di coax (HF)
+Toroide 1:1, mix 31/43 (HF)
+λ/2 coassiale 4:1 (VHF/UHF)
+Manicotto λ/4 (VHF/UHF)
+Ferriti a perline
+Pawsey stub
+Cavo e balun: segmento della sorgente non trovato.
+H (2 montanti)
+solo palo
+Acciaio zincato
+Alluminio
+Vetroresina
+Montante sx/dx
+al boom
+Traversa
+Traverse (per riga)
+Traliccio (Ø equivalente)
+Palo
+Cavi fase (calza)
+al dipolo
+N, femmina
+senza connettori
+rurale tranquillo
+Verticale λ/4
+λ/8 di lato
+0,37 λ di diametro
+Beverage 180 m
+Trappola LC (componenti)
+Bobina di carico (autorisonanza)
+Linear loading
+Cappello capacitivo
+Bobina dalle misure (L, Q, f0)
+W8NX bassa impedenza
+RG-213 o RG-400
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.
+blocco debole (|Z| sotto 1 kΩ)
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).
+il punto scelto e' troppo vicino all'estremo del filo.
+questo tipo entra nel modello come carico.
+Carichi HF:
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC
+Il file Touchstone non contiene punti di S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite
+AGT sul terreno perfetto (atteso 2,000)
+AGT dopo il cambio di segmentazione (segmenti raddoppiati)
+IMPOSTAZIONI

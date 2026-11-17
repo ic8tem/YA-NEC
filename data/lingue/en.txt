@@ -3900,3 +3900,654 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	How opaque the colour is: light, medium or strong. On the table row the tint is lighter, so the numbers stay readable.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Wire {0} selected in the 3D view: row {1} of the table
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Wire {0}: not in the wire table (geometry card other than GW)
+terreno reale	real terrain
+Locatore	Locator
+da 8 a 12 caratteri	8 to 12 characters
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	With 6 characters the point can be kilometres off: the terrain profile needs at least 8 characters.
+Da HorizonProfiler (.csv / .hpr)	From HorizonProfiler (.csv / .hpr)
+DEM TINITALY / SRTM1	DEM TINITALY / SRTM1
+Quota sito	Site height
+Altezza antenna	Antenna height
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Height of the antenna centre above ground. If it differs from the model's, the NEC pattern is raised or lowered with the same current distribution.
+Distanza max	Max distance
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimuth and distances recomputed at every locator change (great circle, 6371 km sphere).
+Acqua salata (εr 81, σ 5 S/m)	Salt water (εr 81, σ 5 S/m)
+Acqua dolce (εr 80, σ 0,003 S/m)	Fresh water (εr 80, σ 0.003 S/m)
+Terra	Land
+Rugosità mare (stato 2–3)	Sea roughness (state 2–3)
+Divergenza (terra curva, k = 4/3)	Divergence (curved earth, k = 4/3)
+Tutti gli azimut (rosa 0–360°)	All azimuths (0–360° rose)
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Reduces the sea reflection coefficient with the Ament factor for 0.25 m waves (standard deviation).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	statistical rough-surface model (Ament 1953): valid for grazing angles and a uniform sea.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Lowers the profile with the earth curvature (effective radius 4/3 for normal refraction) and reduces the distant reflected rays with the divergence factor.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standard atmosphere (k = 4/3); with ducts or inversions the apparent curvature changes.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	The highest ridge between the antenna and the departure direction attenuates the direct ray like an edge (Fresnel integral), as in HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	single knife edge: rounded ridges or several ridges in a row are approximated with the highest one.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Repeats the calculation every 10 degrees of azimuth (DEM only) and shows the figure of merit on the rose, with the antenna turned to each azimuth.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	with the antenna always turned to the profile azimuth: valid for a rotary antenna.
+Polare (come Verticale)	Polar (like Vertical)
+Cartesiana dBi / gradi	Cartesian dBi / degrees
+0–180° intero	0–180° full
+Zoom angolare	Angle zoom
+Sovrapponi alla linguetta Verticale	Overlay on the Vertical tab
+premi Calcola	press Calculate
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Repeats the calculation with the antenna from 6 to 30 m (HF) or from 2 to 30 m (VHF) and shows the height with the best figure of merit on the path.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	the currents stay those of the calculated model: the effect of the height on impedance and currents is not considered (as in HFTA).
+Statistiche angoli ARRL (banda e regione)	ARRL arrival-angle statistics (band and region)
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	The arrival-angle tables of the ARRL Antenna Book are needed (.PRN files per band and region): as soon as they are available this activates and shows the orange slices.
+locatore non valido	invalid locator
+Calcola prima il modello (pulsante Calcola in alto)	Calculate the model first (Calculate button at the top)
+distanza dall'antenna (km)	distance from the antenna (km)
+sul mare	on the sea
+sul terreno	on land
+quota s.l.m. (m)	height a.s.l. (m)
+profilo reale	real profile
+terreno piatto	flat ground
+terreno piatto (NEC)	flat ground (NEC)
+orizzonte ostruito	obstructed horizon
+Intero 0–180° (come la linguetta Verticale)	Full 0–180° (like the Vertical tab)
+Zoom 0–	Zoom 0–
+° (scala angolare ×	° (angle scale ×
+← dietro	← back
+avanti →	front →
+statistiche degli angoli di arrivo: non caricate	arrival-angle statistics: not loaded
+rosa 0–360°: calcolo in corso…	0–360° rose: calculating…
+figura di merito rispetto al terreno piatto, per azimut (antenna rivolta verso ogni azimut)	figure of merit relative to flat ground, by azimuth (antenna turned to each azimuth)
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Choose the profile file (click "From HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM not available: the network is needed on first use to download TINITALY or SRTM1 (then they stay in the data/dem folder).
+Profilo del terreno	Terrain profile
+Lobo di elevazione	Elevation lobe
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Calculate the model first (Calculate button at the top): the antenna pattern comes from NEC.
+da file	from file
+dal DEM	from the DEM
+rispetto alla stessa antenna su terreno piatto	relative to the same antenna over flat ground
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Difference between the lobe over the real profile and the lobe over flat ground, averaged over the useful angles.
+Guadagno a 5° / 10°	Gain at 5° / 10°
+Guadagno a 1° / 3°	Gain at 1° / 3°
+Angoli coperti a -3 dB	Angles covered at -3 dB
+primo lobo sul profilo reale	first lobe over the real profile
+calcolo…	calculating…
+attiva la scansione (sotto)	turn on the scan (below)
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Free-space model: the currents are those without ground, like the free-space pattern used by HFTA. To account for the nearby ground, calculate the model with real ground.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	The profile is valid for one azimuth only: a rotary antenna needs more directions ("All azimuths" box).
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Method as in HFTA (N6BV): direct ray + reflected rays on every facet of the profile + diffraction over the ridges. The antenna pattern comes from NEC; this calculation adds the terrain.
+Elev.	Elev.
+Piatto	Flat
+Reale	Real
+Primo minimo	First minimum
+Punto di riflessione	Reflection point
+Orizzonte	Horizon
+Uso: rotte DX in HF (angoli bassi 1–15°).	Use: HF DX paths (low angles 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Use: tropo and MS (0–5°), EME with the Moon low (ground gain at moonrise/moonset).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Height with the highest average gain over the useful angles of the path.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	currents of the calculated model moved in height: impedance and ground coupling stay those of the model.
+Profilo del terreno (HorizonProfiler)	Terrain profile (HorizonProfiler)
+Profili (csv, hpr, txt)	Profiles (csv, hpr, txt)
+Calcola prima il terreno reale	Calculate the real terrain first
+Esporta il lobo sul terreno reale	Export the lobe over real terrain
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Imagery: Esri, Maxar, Earthstar Geographics and the GIS user community
+© i contributori di OpenStreetMap	© OpenStreetMap contributors
+Sfondo	Background
+Foto aerea	Aerial photo
+Solo griglia	Grid only
+Griglia	Grid
+Cerca	Search
+⌖ Centra sul locatore	⌖ Centre on the locator
+Quota del suolo (DEM)	Ground height (DEM)
+Punto scelto	Chosen point
+Coordinate	Coordinates
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Click on the map = antenna point; drag = move; wheel = zoom (the grid goes from 6 to 8, 10, 12 characters). Thick border = 6-character square.
+DEM TINITALY	DEM TINITALY
+non disponibile	not available
+Quota del suolo (DEM: serve la rete al primo uso)	Ground height (DEM: the network is needed on first use)
+Lunghezza elementi	Element length
+± mm	± mm
+Posizione sul boom	Position on the boom
+Uniforme	Uniform
+Gaussiana (t = 2σ)	Gaussian (t = 2σ)
+Distribuzione	Distribution
+Includi foratura del boom (posizione)	Include boom drilling (position)
+Includi errore della staffa (isolatori)	Include clamp error (insulators)
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element mounted off centre on the clamp: shift along its own axis, with the position tolerance.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	the real clamp also changes the electrical length near the boom: for that use the Boom correction tab.
+fisso (ripetibile)	fixed (repeatable)
+nuovo a ogni avvio	new at every run
+Numero prove	Number of trials
+Frequenze	Frequencies
+Seme casuale	Random seed
+OBIETTIVO LISTA DI TAGLIO	CUTTING LIST TARGET
+Calo F/B max	Max F/B drop
+ROS max	Max SWR
+Avvia (≈ 500 calcoli NEC)	Start (≈ 500 NEC runs)
+Ferma	Stop
+Sensibilità per elemento (calo di F/B per 1 mm di errore)	Sensitivity per element (F/B drop per 1 mm of error)
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	The elements close to the driven element are usually the most critical; those at the end of the boom tolerate bigger errors.
+l'istogramma serve al Monte Carlo	the histogram is for the Monte Carlo
+F/B (dB)	F/B (dB)
+5% peggiore	worst 5%
+ROS nominale (peggiore nella banda)	Nominal SWR (worst in the band)
+elementi più critici (vedi sensibilità)	most critical elements (see sensitivity)
+Elem.	Elem.
+Posizione mm	Position mm
+Lunghezza mm	Length mm
+Tolleranza ammessa	Allowed tolerance
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. In red the elements that need less than the build tolerance.
+Avvia (sensibilità)	Start (sensitivity)
+Calcola prima il modello	Calculate the model first
+Tolleranze: servono almeno due elementi diritti (un filo per elemento)	Tolerances: at least two straight elements are needed (one wire per element)
+sensibilita'	sensitivity
+Tolleranze: fermato	Tolerances: stopped
+Diametro mm	Diameter mm
+Tolleranza ammessa mm	Allowed tolerance mm
+Avvia prima il calcolo	Run the calculation first
+Esporta la lista di taglio	Export the cutting list
+Lista di taglio	Cutting list
+Obiettivi	Targets
+Calo massimo del F/B	Maximum F/B drop
+ROS massimo	Maximum SWR
+Tolleranze di costruzione	Build tolerances
+Stampa la lista di taglio (PDF)	Print the cutting list (PDF)
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Planned (sketch 13, to be approved): not yet active in this version.
+Al quadro 20×2 mm	Al square 20×2 mm
+Al quadro 25×2 mm	Al square 25×2 mm
+Al quadro 30×2 mm	Al square 30×2 mm
+Al quadro 40×2 mm	Al square 40×2 mm
+Al tondo 25×1,5 mm	Al round 25×1.5 mm
+Al tondo 30×2 mm	Al round 30×2 mm
+Al tondo 40×2 mm	Al round 40×2 mm
+Al tondo 50×2 mm	Al round 50×2 mm
+TIA-222-H (testo non disponibile)	TIA-222-H (text not available)
+Zona NTC	NTC zone
+Quota sito as	Site altitude as
+Periodo ritorno	Return period
+Categoria esposiz.	Exposure category
+Coeff. topografia	Topography coeff.
+Antenna da terra	Antenna above ground
+Palo sopra rotore	Mast above rotator
+Ø palo	Mast Ø
+Usa elementi e boom del modello	Use elements and boom of the model
+Includi telaio, palo, cavi	Include frame, mast, cables
+Scansione direzione del vento	Wind direction scan
+UNITÀ	UNITS
+N e kgf affiancati	N and kgf side by side
+solo N	N only
+solo kgf	kgf only
+Mostra	Show
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+direzione del vento rispetto al boom (°)	wind direction relative to the boom (°)
+forza (N)	force (N)
+Forze per parte (vento lungo il boom: elementi di fianco)	Forces per part (wind along the boom: elements side-on)
+locatore non valido: zona da scegliere a mano	invalid locator: choose the zone by hand
+fuori dall'Italia: zona e vb da scegliere a mano (NTC vale in Italia)	outside Italy: choose zone and vb by hand (NTC applies in Italy)
+Telaio a H	H-frame
+Cavi e divisore	Cables and divider
+qr = ½ · ρ · vr² (ρ = 1,25 kg/m³)	qr = ½ · ρ · vr² (ρ = 1.25 kg/m³)
+q = qr · ce · ct	q = qr · ce · ct
+Parte	Part
+Area m²	Area m²
+F (kgf)	F (kgf)
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	With the wind across, the elements do not push (cross-flow, K5IU): the force on a tube goes with the square of the wind component perpendicular to its axis.
+forza totale (N)	total force (N)
+momento torcente sul rotore (N·m)	torque on the rotator (N·m)
+° dal boom)	° from the boom)
+momento flettente alla staffa del rotore	bending moment at the rotator clamp
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Preliminary sizing: it does not replace a check by an engineer for mast, tower and foundation. The base moment will go to the Mast and foundation sub-tab.
+Carico del vento (predimensionamento)	Wind load (preliminary sizing)
+Sito e norma	Site and standard
+Norma	Standard
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; coefficients CNR-DT 207 R1/2018 and EN 1991-1-4
+Locatore / zona	Locator / zone
+Forze per parte (vento lungo il boom)	Forces per part (wind along the boom)
+Area m2	Area m2
+Risultati	Results
+Forza massima	Maximum force
+Momento flettente alla staffa del rotore	Bending moment at the rotator clamp
+Momento torcente sul rotore	Torque on the rotator
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Preliminary sizing: it does not replace a check by a qualified engineer for mast, tower and foundation.
+Relazione del vento (PDF)	Wind report (PDF)
+MASSE (DAL MODELLO)	MASSES (FROM THE MODEL)
+Al tondino pieno	Al solid rod
+Al tubo (spessore tipico)	Al tube (typical wall)
+Materiale elementi	Element material
+Staffe, isolatori	Clamps, insulators
+g cad.	g each
+Dipolo + scatola	Dipole + box
+Cavo fino al palo	Cable to the mast
+STAFFA AL PALO	MAST CLAMP
+Posizione attuale	Current position
+m dal riflettore	m from the reflector
+kg a	kg at
+Massa / distanza	Mass / distance
+Vento dalla linguetta Vento	Wind from the Wind tab
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Uses the design pressure of the last calculation in the Wind sub-tab; without it, 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Moves the whole model along the boom so that the suggested clamp falls on the origin (where the mast and the stack frame attach). Undo in the 3D structure reverses it.
+posizione della staffa dal riflettore (m)	clamp position from the reflector (m)
+Momenti in funzione della posizione della staffa	Moments versus clamp position
+Masse e aree per parte	Masses and areas per part
+ultimo direttore	last director
+Bilanciamento: calcola prima il modello (servono gli elementi)	Balance: calculate the model first (the elements are needed)
+Staffe e isolatori	Clamps and insulators
+Cavo sul boom	Cable on the boom
+Massa kg	Mass kg
+Baricentro m	Centre of gravity m
+Area vento m²	Wind area m²
+Centro area m	Centre of area m
+momento del peso sul morsetto (N·m)	weight moment on the clamp (N·m)
+momento torcente del vento sul rotore (N·m)	wind torque on the rotator (N·m)
+bilanciamento del peso (baricentro)	weight balance (centre of gravity)
+bilanciamento del vento (centro area)	wind balance (centre of area)
+solo peso	weight only
+solo vento	wind only
+File Touchstone .s1p	Touchstone .s1p file
+CSV (NanoVNA-Saver e simili)	CSV (NanoVNA-Saver and similar)
+File	File
+Formato letto	Format read
+CAVO TRA VNA E ANTENNA	CABLE BETWEEN VNA AND ANTENNA
+Togli il cavo dalla misura (de-embedding)	Remove the cable from the measurement (de-embedding)
+VF (vuoto = tabella)	VF (empty = table)
+R e X separate	R and X separately
+Perdita di ritorno (dB)	Return loss (dB)
+Banda con ROS <	Band with SWR <
+frequenza (MHz)	frequency (MHz)
+apri una misura del VNA (.s1p o CSV)	open a VNA measurement (.s1p or CSV)
+ROS: calcolato e misurato	SWR: calculated and measured
+Confronto	Comparison
+perdita di ritorno (dB)	return loss (dB)
+calcolato (NEC)	calculated (NEC)
+misurato, cavo tolto	measured, cable removed
+misurato grezzo (con cavo)	measured raw (with cable)
+R calcolata	R calculated
+X calcolata	X calculated
+R misurata	R measured
+X misurata	X measured
+Calcolato	Calculated
+Misurato	Measured
+Scarto	Difference
+Frequenza del ROS minimo	Frequency of minimum SWR
+ROS minimo	Minimum SWR
+, uguale su tutta la banda → probabile effetto di boom/staffe o dielettrico non modellato	, the same over the whole band → probably boom/clamp effect or unmodelled dielectric
+, in modo non uniforme → controlla adattamento, balun e cavo (la Z misurata ha una forma diversa)	, not uniform → check matching, balun and cable (the measured Z has a different shape)
+nessuna correzione: calcolo e misura coincidono.	no correction: calculation and measurement agree.
+calcolo NEC sul campo della misura…	NEC calculation over the measurement range…
+Misura del VNA	VNA measurement
+Tutti	All
+diagrammi:	patterns:
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Run a sweep (Sweep button at the top) to see F/B and F/R over the whole band
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = forward gain minus the average power over the rear hemisphere (90-270° of azimuth, all elevations above 0°). It is also among the optimizer targets.
+Tabelle: F/B e F/R su tutta la banda	Tables: F/B and F/R over the whole band
+Valori dello sweep	Sweep values
+F/B (un solo punto a 180°)	F/B (a single point at 180°)
+F/R medio (emisfero posteriore)	Average F/R (rear hemisphere)
+f (MHz)	f (MHz)
+F/R peggiore (dB)	Worst F/R (dB)
+F/R medio (dB)	Average F/R (dB)
+ANTENNE RICEVENTI	RECEIVING ANTENNAS
+Beverage a terra (BOG)	Beverage on ground (BOG)
+Flag / Pennant	Flag / Pennant
+4-square in ricezione	4-square for receiving
+8 verticali in cerchio	8 verticals in a circle
+Modello aperto	Open model
+Isotropo	Isotropic
+Dal piano (ITU-R P.372)	From the horizon (ITU-R P.372)
+Sorgente locale (azimut)	Local source (azimuth)
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = gain in the wanted direction minus the average gain over the whole half-space: unlike gain, it does not depend on losses.
+Mostra anche il riferimento (verticale λ/4)	Also show the reference (λ/4 vertical)
+Mediana sugli angoli di arrivo (linguetta Terreno reale)	Median of the arrival angles (Real terrain tab)
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Uses the median arrival angle of the Real terrain tab as the wanted elevation (statistics per band and region). Without the ARRL statistics loaded, the elevation written here is kept.
+Direzione voluta	Wanted direction
+Hz  rumore	Hz  noise
+NF ricevitore	Receiver NF
+dB  preamp	dB  preamp
+sorgente locale az	local source az
+Cifre di merito in ricezione	Receiving figures of merit
+Basta il segnale?	Is the signal enough?
+calcolo in corso…	calculating…
+RDF in funzione della frequenza	RDF versus frequency
+Calcola prima il modello aperto	Calculate the open model first
+verticale λ/4	λ/4 vertical
+° · dB relativi · arancio: -3 dB	° · relative dB · orange: -3 dB
+DMF (direttività media sul fronte)	DMF (directivity merit figure)
+settore ±30° az, 10–40° el	sector ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Average gain over the front sector minus the average over the rear hemisphere.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN defines the DMF with the gain at 20 degrees only; here the average over the sketch's sector is used, so the values cannot be compared one to one with the book's.
+capitolo 7 (Ricezione RDF)	chapter 7 (Reception RDF)
+molto basso: serve un preamplificatore	very low: a preamplifier is needed
+basso ma accettabile: vedi soglia	low but acceptable: see threshold
+come un'antenna trasmittente	like a transmitting antenna
+F/R medio sull'emisfero posteriore	Average F/R over the rear hemisphere
+Rumore d'antenna ai morsetti	Antenna noise at the terminals
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	External noise power at the terminals: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + average gain weighted on where the noise comes from.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	noise from the horizon weighted exp(-el/10 degrees) in elevation: it represents distant man-made noise arriving low; the real distribution depends on the site.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	point source at 5 degrees elevation with the same power as the isotropic background.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotropic noise above ground; the ground adds no noise.
+Margine sul ricevitore	Receiver margin
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	The antenna noise exceeds the receiver noise by less than 6 dB: the receiver limits the sensitivity. More preamplification or a receiver with lower NF is needed.
+: l'RDF e' indicativo, in tabella i valori di letteratura.	: the RDF is indicative, literature values in the table.
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	Gain 1.8
+Spazio richiesto	Space needed
+λ/4 in tubo quadro	λ/4 in square tube
+λ/4 in tubo tondo	λ/4 in round tube
+λ/4 in cavo (2 cavi 75 Ω in parallelo)	λ/4 in cable (2 × 75 Ω cables in parallel)
+Wilkinson (λ/4 in cavo o in linea + resistenze)	Wilkinson (λ/4 in cable or line + resistors)
+Solo cavi di fase	Phasing lines only
+Aria	Air
+PTFE (εr 2,1)	PTFE (εr 2.1)
+Uscite	Outputs
+Z antenne	Antenna Z
+Z ingresso	Input Z
+Tubo esterno (lato / Ø int.)	Outer tube (side / inner Ø)
+Dielettrico	Dielectric
+Connettori	Connectors
+Correggi accorciamento dei connettori	Correct for connector shortening
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Removes from the length the part of line inside the connectors.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	estimate of 4 mm per end with N connectors (3 BNC, 1.5 SMA): it is best to trim with the VNA, shortening in 1 mm steps.
+Divisori	Dividers
+Collega allo Stack (cavi reali)	Connect to the Stack (real cables)
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Uses the active impedances of the antennas of the open stack (one source per antenna) and the spacings for the minimum length of the phasing lines.
+CAVI DI FASE	PHASING LINES
+Lunghezza minima	Minimum length
+Fase sfalsata per inclinare il lobo (tilt elettrico)	Phase offset to tilt the lobe (electrical tilt)
+Tilt	Tilt
+° in su	° up
+Passo verticale	Vertical spacing
+Disegno quotato (stampabile 1:1)	Dimensioned drawing (printable 1:1)
+ROS all'ingresso (carichi = impedenze attive dello Stack)	Input SWR (loads = active impedances of the Stack)
+solo cavi di fase: nessun trasformatore da costruire	phasing lines only: no transformer to build
+vista laterale (scala ridotta a schermo; in stampa 1:1)	side view (reduced scale on screen; 1:1 when printed)
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω cables in parallel = 37.5 Ω
+quadro, lato	square, side
+tondo, Ø	round, Ø
+Z0 dei rami (Zin · √N)	Z0 of the branches (Zin · √N)
+Z0 richiesta	Required Z0
+Ø conduttore interno	Inner conductor Ø
+VF del cavo	Cable VF
+λ/4 in aria, mm	λ/4 in air, mm
+da tagliare, mm	to cut, mm
+Z carico in parallelo	Load Z in parallel
+Rami λ/4: Z0 = Zin · √N	λ/4 branches: Z0 = Zin · √N
+Resistenze a stella	Star resistors
+Isolamento tra le uscite	Isolation between outputs
+ideale a f0; cala lontano da f0 (rami λ/4)	ideal at f0; drops away from f0 (λ/4 branches)
+Z0 = √(Zin · Zcarico)	Z0 = √(Zin · Zload)
+Quadro/tondo: Z0 = 138 · log(1,0787 · D/d)	Square/round: Z0 = 138 · log(1.0787 · D/d)
+Coassiale: Z0 = 138 · log(D/d)	Coaxial: Z0 = 138 · log(D/d)
+Perdita stimata	Estimated loss
+Carico usato	Load used
+non potenza di 2	not a power of 2
+ROS all'ingresso	Input SWR
+solo cavi di fase	phasing lines only
+Uscita	Output
+Lungh. elettrica	Electrical length
+Fisica mm	Physical mm
+Perdita dB	Loss dB
+° di fase).	° of phase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° upward); the impedance at the divider no longer repeats exactly.
+Solo cavi di fase: nessun disegno da stampare	Phasing lines only: no drawing to print
+Disegno 1:1 del divisore (PDF)	1:1 drawing of the divider (PDF)
+Divisore	Divider
+50 mm di controllo	50 mm check
+GEOMETRIA	GEOMETRY
+λ/4 sul boom	λ/4 on the boom
+stesso piano	same plane
+Metallico, isolati	Metal, insulated
+Non metallico	Non-metallic
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	The boom is not in the NEC model: with elements insulated from a metal boom the effect is small (boom correction in the Calculators).
+Yagi di base	Base Yagi
+Disposizione	Arrangement
+Sfasamento piani	Plane offset
+X-pol (2 ricevitori, EME)	X-pol (2 receivers, EME)
+Cavo di ritardo λ/4	λ/4 delay cable
+Includi relè e cavi reali	Include real relays and cables
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Adds the loss of the delay cable (VF 0.66, 10 dB/100 m at 144 MHz, scaled with the square root of the frequency) and 0.1 dB for the relay.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	typical values of a 75 ohm cable and of a coaxial relay; the program does not know yours.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	The same phasing network also works for a turnstile (dipoles crossed at 90°).
+angolo dall'asse (°)	angle from the axis (°)
+AR (dB)	AR (dB)
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Front view
+Componenti co-polare / cross-polare	Co-polar / cross-polar components
+Rapporto assiale e ROS in frequenza	Axial ratio and SWR versus frequency
+piano A	plane A
+piano B	plane B
+vista dal davanti — boom al centro	view from the front — boom in the centre
+piani sfalsati di λ/4 lungo il boom	planes offset by λ/4 along the boom
+piani sullo stesso punto del boom (ritardo con il cavo)	planes at the same point of the boom (delay with the cable)
+Yagi incrociate: calcola prima il modello aperto (una Yagi)	Crossed Yagis: calculate the open model first (one Yagi)
+Yagi incrociate: serve una Yagi con una sola sorgente	Crossed Yagis: a Yagi with a single source is needed
+Yagi incrociate: calcolo in corso...	Crossed Yagis: calculating...
+piano A (orizz.)	plane A (horiz.)
+piano B (vert.)	plane B (vert.)
+AR in asse (dB)	On-axis AR (dB)
+Rapporto assiale in asse	On-axis axial ratio
+Rapporto assiale a −3 dB	Axial ratio at −3 dB
+Isolamento tra i due piani	Isolation between the two planes
+Fase della rete sul piano B	Network phase on plane B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Perfectly orthogonal and symmetric planes: in the model the coupling and the opposite polarization are almost zero. In reality clamps, cables and small asymmetries limit them to about 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	from 1.8 MHz to 1296 MHz: the list of baluns changes with the band
+LINEA DI DISCESA	FEED LINE
+Coassiale	Coaxial
+Linea aperta (HF)	Open-wire line (HF)
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	With a balanced open-wire line there is no shield: common mode comes only from imbalances. The card computes the coaxial case; for the open-wire line use Lines (TL) with the tuner.
+Lungo il boom	Along the boom
+m → palo	m → mast
+Discesa sul palo	Down the mast
+Fino alla stazione	To the station
+Calza a massa sul palo / traliccio	Shield grounded to mast / tower
+Messa a terra all'ingresso stazione	Ground at the station entry
+BALUN DA CONFRONTARE	BALUNS TO COMPARE
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 turns of RG-213 on 110 mm: Wheeler inductance, Medhurst self-capacitance.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 and estimated self-capacitance: the real impedance of the choke has to be measured.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferrite toroid as a parallel RLC with low Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm at the peak (10 MHz with mix 31, 25 MHz with mix 43): typical values of 12 turns on 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	λ/2 coaxial 4:1: balanced feed, shields joined.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	residual common mode as 600 ohm resonant at f0 (Q 3): it depends on the mounting.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 sleeve: shorted λ/4 line between shield and sleeve, high impedance at f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Sleeve Z0 50 ohm and 0.08 dB loss over the quarter wave.
+10 perline in ferrite sulla calza.	10 ferrite beads on the shield.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm per bead at 144 MHz (mix 61), 100 ohm above 30 MHz with mix 43: typical catalogue values.
+Caso mostrato	Case shown
+distanza dal punto di alimentazione (m)	distance from the feed point (m)
+corrente calza (%)	shield current (%)
+premi Calcola il confronto	press Compute the comparison
+Corrente lungo la calza, dal dipolo verso il basso	Current along the shield, from the dipole downwards
+Vista laterale: corrente sulla calza	Side view: current on the shield
+Cavo e balun: calcola prima il modello (una sola sorgente)	Cable and balun: calculate the model first (one source only)
+Corrente sulla calza (% del dipolo)	Shield current (% of the dipole)
+F/R medio	Average F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Loss in the balun
+Potenza dissipata nel balun a 1 kW	Power dissipated in the balun at 1 kW
+Banda con calza < 5 %	Band with shield current < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	The greyed items are baluns for the other band; they become active when you choose the frequency. On HF the shield down to the station (grounded) counts too, on VHF/UHF the part on the boom and the mast. The shield is a wire attached to one side of the feed point, as in reality without a balun; the balun is a common-mode impedance on the first section.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Fibreglass does not conduct: the frame does not enter NEC, only the shields of the phasing lines remain.
+Includi palo sotto il telaio	Include mast below the frame
+Cavi di fase lungo i montanti	Phasing lines along the uprights
+Rotore e controventi	Rotator and guys
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Planned: rotator and guys as wires (the tower dimensions are needed).
+Materiale	Material
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	red = frame parts modelled as NEC wires · dashed = shield of the phasing lines
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horizontal polarization: the vertical uprights are weakly coupled; the horizontal cross-bar and the phasing lines are not.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertical polarization: the uprights and the mast are parallel to the elements and matter more; the horizontal cross-bar little.
+Confronto senza / con telaio	Comparison without / with frame
+Diagramma orizzontale sovrapposto	Overlaid horizontal pattern
+Vista frontale (dal davanti dell'antenna)	Front view (from the front of the antenna)
+premi Calcola confronto	press Compute comparison
+Stack: calcola prima il modello	Stack: calculate the model first
+Stack: calcolo senza e con telaio...	Stack: calculating without and with frame...
+Pezzo	Piece
+Ø mm	Ø mm
+Collegato	Connected
+Cavi	Cables
+Senza telaio	Without frame
+Con telaio	With frame
+Lobo laterale peggiore (piano E)	Worst side lobe (E plane)
+Z ingresso divisore	Divider input Z
+Tant (elev. 10°, cielo 200 K, suolo 290 K)	Tant (elev. 10°, sky 200 K, ground 290 K)
+senza telaio	without frame
+con telaio	with frame
+Stack: confronto senza / con telaio fatto	Stack: comparison without / with frame done
+CARICHI HF	HF LOADS
+INSERISCI NEL MODELLO	INSERT INTO THE MODEL
+Come carico (Z in frequenza)	As a load (Z versus frequency)
+Come fili (linear loading, cappelli)	As wires (linear loading, hats)
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	The hat goes at the end of the wire (b or e), the linear loading at the chosen point of the wire.
+Inserisci nel modello	Insert into the model
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Already approved in the Loads sketch: Q of L and C, f0, Z per band, voltage and current on the component. Here the construction types are added.
+Trappola coassiale	Coax trap
+Impedenza della trappola (Q in frequenza, perdite per effetto pelle)	Trap impedance (Q versus frequency, skin-effect losses)
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	the inner conductor is soldered to the start of the centre winding (reversing the ends lowers the resonance by about 50 kHz).
+Calcola spire per f0	Calculate turns for f0
+Spire dell'avvolgimento (anche frazionarie).	Turns of the winding (also fractional).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	the real f0 differs by a few percent: measure it with a dip meter or the VNA and correct the turns.
+capitolo 15 (Carichi HF)	chapter 15 (HF loads)
+Blocca	Blocks
+dipolo con	dipole with
+Filo Ø	Wire Ø
+Calcola C per f0	Calculate C for f0
+mm  Filo Ø	mm  Wire Ø
+mm  Passo	mm  Pitch
+mm  Spire	mm  Turns
+MHz  dal centro	MHz  from the centre
+m  Braccio	m  Arm
+m  Filo dell'elemento Ø	m  Element wire Ø
+Calcola spire per la risonanza	Calculate turns for resonance
+Piega	Fold
+m  Distanza tra i fili	m  Spacing between the wires
+Calcola la piega per la risonanza	Calculate the fold for resonance
+Raggi	Spokes
+m  Filo Ø	m  Wire Ø
+Verticale alto	Vertical height
+m  Frequenza	m  Frequency
+MHz  Filo Ø	MHz  Wire Ø
+Calcola i raggi per la risonanza	Calculate the spokes for resonance
+L misurata	Measured L
+MHz  Autorisonanza f0	MHz  Self-resonance f0
+Cappello capacitivo in punta al verticale	Capacitance hat at the top of the vertical
+Bobina dalle misure	Coil from measurements
+Reattanza del cappello in frequenza	Hat reactance versus frequency
+Impedenza del carico (con l'autorisonanza e le perdite per effetto pelle)	Load impedance (with self-resonance and skin-effect losses)
+impedenza della trappola	trap impedance
+Z trappola (Ω)	Trap Z (Ω)
+Z carico (Ω)	Load Z (Ω)
+Si comporta da	Behaves as
+Potenza persa	Power lost
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Transmitter power for the voltages and losses in the table.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	low band: current at the antinode sqrt(P/73) and at the trap I0 cos(beta a); blocked band: voltage at the tip of the inner dipole I0 Z0 shared between the trap and the radiation.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	current at the antinode sqrt(P/73) and at the load I0 cos(beta a), with a the distance from the centre.
+Risonanza propria f0	Self-resonance f0
+Q ideale	Ideal Q
+Q della trappola alla risonanza.	Q of the trap at resonance.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus the dielectric loss (tangent 3e-4 PE, 2e-4 PTFE). Measured coax traps usually have Q between 100 and 300.
+Lunghezza di cavo	Cable length
++ 10 cm per le saldature	+ 10 cm for the solder joints
+R in parallelo equivalente	Equivalent parallel R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: this is the LD load that goes into the model
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipole arm on the low band with the trap, compared with the full-size arm (71.3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC with the trap as a load gives the right length.
+Induttanza misurata	Measured inductance
+dalla misura	from the measurement
+Autorisonanza	Self-resonance
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frequency at which the coil resonates by itself with its own self-capacitance.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	self-capacitance from Medhurst's table as a function of length / diameter, valid for single-layer coils away from metal masses.
+Q della bobina alla frequenza di lavoro.	Q of the coil at the working frequency.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	wire resistance from skin effect times a proximity factor 1 + 2 (d/p)^2 (d wire, p pitch): Medhurst gives similar values for coils with length about equal to the diameter.
+Reattanza della piega	Fold reactance
+Z0 della linea	Line Z0
+Q della piega	Fold Q
+Capacita' del cappello	Hat capacitance
+Capacita' del cappello verso lo spazio.	Capacitance of the hat to space.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	sum of the spokes (thin wire, 2 pi eps0 l / (ln(2l/a) - 1)) and of the ring that saturates towards the solid disc (8 eps0 r): the spokes shield each other. Inserted as wires, NEC calculates it exactly.
+in punta al verticale	at the top of the vertical
+Altezza per la risonanza	Height for resonance
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	Effect on the vertical
+Carichi HF: apri un modello nella finestra principale.	HF loads: open a model in the main window.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading and the capacitance hat are inserted as wires: for the others choose "As a load".
+Il cappello capacitivo si inserisce come fili.	The capacitance hat is inserted as wires.
+RLC parallelo	Parallel RLC
+; Annulla nella barra Geometria lo toglie).	; Undo in the Geometry bar removes it).
+Effetto sul dipolo	Effect on the dipole
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Shortening of the arm compared with the full quarter wave (71.3 / f) with the load at that point.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	line model of the loaded arm X = Z0 (cot(beta b) - tan(beta a)), x 0.95 for the end effect.
+Mostra il guadagno corretto con l'AGT (scheda Guadagno massimo)	Show the gain corrected with the AGT (Maximum gain card)
+Esegui il test	Run the test
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	The gain can be shown corrected with the AGT (already provided in the optimizer).
+Test del guadagno medio (AGT)	Average gain test (AGT)
+Controllo prima/dopo il calcolo	Check before/after the calculation
+Esito	Result
+(premi "Esegui il test"; si fa da solo all'apertura degli Avvisi con i modelli fino a 1500 segmenti)	(press "Run the test"; it runs by itself when Warnings opens, for models up to 1500 segments)
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ One or more checks beyond ±0.2 dB: check the segmentation (3D structure > Segmentation... and Check segmentation).
+Tutti i controlli entro ±0,2 dB.	All checks within ±0.2 dB.
+Linea a finestra 450	450-ohm window line
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Press Calculate: NEC computes the impedance of the open model at each frequency.
+Z al punto di alimentazione (Ω)	Z at the feed point (Ω)
+Perdita nella linea	Loss in the line
+Z all'accordatore (Ω)	Z at the tuner (Ω)
+Perdita totale	Total loss
+m  frequenze (MHz)	m  frequencies (MHz)
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Type of tuner between the line and the transmitter (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	loss estimated from the loaded Q of the network (Qn = sqrt(Rmax/Rmin - 1), two sections for T and Pi) and from the coil Q; N6BV's TLW computes the components one by one and can differ by a few tenths of a dB.
+capitolo 14 (Linea aperta + accordatore)	chapter 14 (Open-wire line + tuner)
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Example: 2 × 20 m doublet (ZS6BKW/G5RV). Warning when the tuner sees less than 20 Ω: high losses, lengthening or shortening the line is suggested. Lossy line as in TLW (N6BV, ARRL).
+Linea aperta + accordatore (alla TLW)	Open-wire line + tuner (TLW style)
+USA costa est	USA east coast
+USA costa ovest	USA west coast
+Giappone	Japan
+Caraibi	Caribbean
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: the service did not return a GeoTIFF
+GeoTIFF compresso: non supportato	Compressed GeoTIFF: not supported
+GeoTIFF: tipo di dato non supportato	GeoTIFF: data type not supported
+Il file non contiene coppie distanza / quota.	The file contains no distance / height pairs.
+Nessuno	None
+Choke a spire di coax (HF)	Coax choke (HF)
+Toroide 1:1, mix 31/43 (HF)	1:1 toroid, mix 31/43 (HF)
+λ/2 coassiale 4:1 (VHF/UHF)	λ/2 coaxial 4:1 (VHF/UHF)
+Manicotto λ/4 (VHF/UHF)	λ/4 sleeve (VHF/UHF)
+Ferriti a perline	Ferrite beads
+Pawsey stub	Pawsey stub
+Cavo e balun: segmento della sorgente non trovato.	Cable and balun: source segment not found.
+H (2 montanti)	H (2 uprights)
+solo palo	mast only
+Acciaio zincato	Galvanized steel
+Alluminio	Aluminium
+Vetroresina	Fibreglass
+Montante sx/dx	Upright left/right
+al boom	to the boom
+Traversa	Cross-bar
+Traverse (per riga)	Cross-bars (per row)
+Traliccio (Ø equivalente)	Tower (equivalent Ø)
+Palo	Mast
+Cavi fase (calza)	Phasing lines (shield)
+al dipolo	to the dipole
+N, femmina	N, female
+senza connettori	no connectors
+rurale tranquillo	quiet rural
+Verticale λ/4	λ/4 vertical
+λ/8 di lato	λ/8 per side
+0,37 λ di diametro	0.37 λ diameter
+Beverage 180 m	Beverage 180 m
+Trappola LC (componenti)	LC trap (components)
+Bobina di carico (autorisonanza)	Loading coil (self-resonance)
+Linear loading	Linear loading
+Cappello capacitivo	Capacitance hat
+Bobina dalle misure (L, Q, f0)	Coil from measurements (L, Q, f0)
+W8NX bassa impedenza	W8NX low impedance
+RG-213 o RG-400	RG-213 or RG-400
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	a large PTFE-dielectric cable (RG-393) or an LC trap with a high-voltage capacitor
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	The fold is longer than lambda/8: the line no longer behaves as a constant inductance, check the resonance with NEC by inserting it as wires.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	The hat capacitance is an estimate (spokes shielding each other): for the exact value insert it as wires and calculate with NEC.
+blocco debole (|Z| sotto 1 kΩ)	weak blocking (|Z| below 1 kΩ)
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	The load position is beyond the quarter wave: move it closer to the centre.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	the hat goes at the end of the wire: choose the first (b) or last (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	the chosen point is too close to the end of the wire.
+questo tipo entra nel modello come carico.	this type goes into the model as a load.
+Carichi HF:	HF loads:
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF loads: wires added by the YA-NEC calculator
+Il file Touchstone non contiene punti di S11.	The Touchstone file contains no S11 points.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	The CSV contains no rows of frequency, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT in free space, lossless
+AGT sul terreno perfetto (atteso 2,000)	AGT over perfect ground (expected 2.000)
+AGT dopo il cambio di segmentazione (segmenti raddoppiati)	AGT after the segmentation change (doubled segments)
+IMPOSTAZIONI	SETTINGS
