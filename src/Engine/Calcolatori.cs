@@ -102,6 +102,7 @@ namespace YaNec.Engine
             add(new CalcQuagi(), "quagi", null);           // 0.5.0
             add(new CalcLoopYagi(), "loopyagi", null);     // 0.5.0 (IC8TEM 15/11/2026 15:42)
             add(new CalcStackDl6wu(), "stackdl6wu", null);
+            add(new CalcBiquad(), "biquad", null);   // 1.0.16 (bozzetto approvato da IC8TEM 17/11/2026 17:25)
             add(new CalcRidimensiona(), "ridim", null);
             add(new CalcTetto(), "tetto", null);   // 0.5.0 (IC8TEM 15/11/2026 15:32, proposta B)
             add(new CalcReteLC(), "retelc", null);

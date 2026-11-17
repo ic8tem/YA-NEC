@@ -76,6 +76,7 @@ namespace YaNec
             fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
             fasCalc.Famiglia("2,4 GHZ COMMERCIALE");   // 0.4.30, bozzetto 2 approvato il 14/11/2026
             fasCalc.Voce("pcb24", "Antenne su PCB", false, null, "IFA, MIFA, dipolo, Yagi, Big Wheel; disegno 1:1");
+            fasCalc.Voce("biquad", "Biquad e doppia biquad", false, null, "1296-5760 MHz, riflettore pieno o a rete, feed per parabola");   // 1.0.16
             fasCalc.Famiglia("PARABOLE");
             fasCalc.Voce("parabola", "Parabola primo fuoco", false, null, "1296 / 2320 / 5760 / 10368 MHz, meccanica, lobi, EME");
             fasCalc.Voce("trombe", "Trombe e illuminatori", false, null, "coffee-can, VE4MA, Chaparral, W2IMU, conica, piramidale; modello NEC");   // 0.4.19
@@ -387,6 +388,35 @@ namespace YaNec
             left.Children.Add(btns);
             // 0.4.20 (IC8TEM 14/11/2026 16:24, "creare lo stack"): dalla scheda DL6WU si crea lo stack nel modello aperto con le distanze calcolate;
             // se il modello e' gia' uno stack si applicano le distanze alle copie che ci sono
+            // 1.0.16 (bozzetto biquad approvato da IC8TEM il 17/11/2026 17:25): feed per la parabola e dima del filo a scala 1:1
+            if (sc is CalcBiquad bq)
+            {
+                Button bFeed = Btn("Usa come feed della parabola", false), bDima = Btn("Dima 1:1 (PDF)", false);
+                foreach (Button b in new[] { bFeed, bDima }) { b.Margin = new Thickness(0, 0, 8, 6); btns.Children.Add(b); }
+                ToolTip.SetTip(bFeed, "Apre la biquad come modello nella finestra principale (elemento a z = 0, fascio verso +Z, polarizzazione lungo Y, come i feed delle trombe) e passa alla Parabola primo fuoco: li' il pulsante \"Feed dal modello NEC\" prende il diagramma calcolato.");
+                ToolTip.SetTip(bDima, "Disegno del filo piegato a scala 1:1 su A4, con i punti di piega, il righello di 100 mm per controllare la stampa e la tabella delle misure.");
+                bFeed.Click += (s, e) =>
+                {
+                    if (mostra != null) mostra();
+                    CalcOutput ob = bq.Run();
+                    if (ob == null || ob.Nec == null) return;
+                    ApriModelloCalcolatore(ob.Nec, bq.Nome + " " + bq.P("f").ToString("0", CultureInfo.InvariantCulture) + " MHz.nec");
+                    if (fasCalc != null) fasCalc.Select("parabola");
+                    Status("Biquad aperta come modello: quando il calcolo e' finito, nella Parabola primo fuoco premi \"Feed dal modello NEC\".");
+                };
+                bDima.Click += async (s, e) =>
+                {
+                    if (mostra != null) mostra();
+                    try
+                    {
+                        IStorageFile fl = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions { Title = "Salva la dima", SuggestedFileName = "biquad_" + bq.P("f").ToString("0", CultureInfo.InvariantCulture) + "_1a1.pdf", DefaultExtension = "pdf" });
+                        if (fl == null) return;
+                        using (Stream st = await fl.OpenWriteAsync()) BiquadPdf.Scrivi(st, bq);
+                        Status("Salvato: " + fl.Name);
+                    }
+                    catch (Exception ex) { Status("Dima non salvata: " + ex.Message, true); }
+                };
+            }
             if (sc is CalcStackDl6wu sdl)
             {
                 Button bStack = Btn("Crea lo stack nel modello aperto", true);
