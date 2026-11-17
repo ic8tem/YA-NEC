@@ -13,6 +13,20 @@
 
 **言語：** 画面は 37 言語に対応しています（右上の言語メニュー）。Wiki も同様です。マニュアルはイタリア語です。
 
+## スクリーンショット
+
+<table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="電流とローブ付きの 3D 構造"></a><br><sub>電流とローブ付きの 3D 構造</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM プロファイル上の HFTA 方式の実地形"></a><br><sub>DEM プロファイル上の HFTA 方式の実地形</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="受信: RDF、DMF とノイズ"></a><br><sub>受信: RDF、DMF とノイズ</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="製作公差 (モンテカルロ)"></a><br><sub>製作公差 (モンテカルロ)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="ケーブルとバラン: コモンモード電流"></a><br><sub>ケーブルとバラン: コモンモード電流</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="クロス八木: RHCP、LHCP、軸比"></a><br><sub>クロス八木: RHCP、LHCP、軸比</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="機械計算: 風 (NTC 2018)"></a><br><sub>機械計算: 風 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="電力分配器と位相ケーブル"></a><br><sub>電力分配器と位相ケーブル</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 負荷: トラップとコイル"></a><br><sub>HF 負荷: トラップとコイル</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="スミスチャート"></a><br><sub>スミスチャート</sub></td></tr></table>
+
+## 1.2 の新機能
+
+- **実地形** (N6BV の HFTA と同様): 実際の地形プロファイル上の仰角パターン。DEM **TINITALY** (イタリア、10 m) または **SRTM1** (全世界)、HorizonProfiler のファイル、または平坦地から。区間ごとの反射をフレネルゾーンで重み付けし、尾根での回折、海、地球の曲率を考慮。ロケーター (最大 12 文字) からの交信方向、航空写真・OpenStreetMap・ロケーター格子の **地図**。VHF では全体表示と 0-15 度のズーム。
+- **受信 (RDF)**: Beverage、BOG、K9AY、Flag、EWE、4-square、円形 8 本バーチカルの RDF、DMF、平均 F/R、アンテナ雑音 (ITU-R P.372)、受信機の余裕。
+- **VNA 測定**: .s1p と CSV を計算に重ねて表示。ケーブルの除去 (デエンベディング)、スミスチャート、補正の提案。
+- **製作公差**: 再現可能なモンテカルロ、エレメントごとの感度、許容公差付きの切断表。
+- **機械計算** (新しいタブ): NTC 2018、CNR-DT 207、EN 1991-1-4 による **風** (ロケーターからの地域、横流れ) とマストでの **バランス**。力は N と kgf。
+- 1.8 ～ 1296 MHz の **ケーブルとバラン** (シールドが NEC ワイヤーになる)、スタックの **H フレームとマスト**、1:1 図面付きの λ/4 と Wilkinson **分配器**、**クロス八木** (RHCP、LHCP、X-pol)、**HF 負荷** (W8NX 同軸トラップ、コイル、リニアローディング)、オプティマイザーでも使える **平均 F/R**、自動 **AGT テスト**。
+- すべてマニュアル第 23 章で出典とともに説明。新しい項目は 37 言語に翻訳。
+
 ## 1.1 の新機能
 
 > **作者より。** このバージョンでは雑音温度について長く考えました。指向性アンテナのスタックに関する MATLAB の研究を教えてもらい、すぐに試してみたくなりました。YA-NEC の利用者が DL6WU のスタック間隔（三角関数の式）を超えて、望むなら自分だけのスタック間隔を選べるよう手助けすることです。あわせて、ユーザーインターフェースを大きく見直しました。 — *Costantino IC8TEM*

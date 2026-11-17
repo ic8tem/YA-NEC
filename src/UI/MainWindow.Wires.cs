@@ -24,6 +24,7 @@ namespace YaNec
             public Border NumBox;
             public TextBox Len;
             public Grid Row;
+            public Border Velo;          // 1.2.0: velo colorato sulla riga del filo scelto (clic nella vista 3D o nella tabella)
         }
 
         // 0.4.8 (14/11/2026: con un modello di 348 fili l'interfaccia restava ferma 7,1 s): la tabella e' virtualizzata,
@@ -554,6 +555,9 @@ namespace YaNec
             }
             Grid.SetColumn(r.Len, 10);
             r.Row.Children.Add(r.Len);
+            r.Velo = new Border { IsHitTestVisible = false, IsVisible = false };
+            Grid.SetColumn(r.Velo, 0); Grid.SetColumnSpan(r.Velo, 11);
+            r.Row.Children.Add(r.Velo);
             StackPanel btn = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(10, 1, 0, 1) };
             Button add = BtnRiga("+", "aggiungi riga sotto"), cp = BtnRiga("⤓", "copia la riga di sopra"), del = BtnRiga("✕", "elimina", true);
             add.Click += (s, e) => AddWireAfter(wireRows.IndexOf(r));
@@ -700,6 +704,57 @@ namespace YaNec
             int tag;
             view3d.HighlightTag = r.Cells != null && int.TryParse(r.Cells[0].Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out tag) ? tag : (r.Card != null ? r.Card.I1 : -1);
             view3d.InvalidateVisual();
+            EvidenziaRigaFilo(view3d.HighlightTag);
+        }
+
+        // 1.2.0 (IC8TEM 17/11/2026 23:46, "quando clicco su un filo me lo devi sottolineare, con un colore a scelta nelle impostazioni, velato,
+        // e mi evidenzi il rigo"): colore e velatura dalle Impostazioni; nella vista 3D un alone sotto il filo, nella tabella un velo sulla riga
+        static readonly string[] ColoriFiloNomi = { "Arancio", "Giallo", "Verde", "Azzurro", "Viola", "Rosso", "Blu" };
+        static readonly string[] ColoriFiloHex = { "#FF8C00", "#FFD000", "#2ECC40", "#1D9BF0", "#9B59B6", "#E74C3C", "#1D6FE0" };
+        static readonly string[] VelaturaNomi = { "leggera", "media", "forte" };
+        static readonly double[] VelaturaAlfa = { 0.35, 0.55, 0.75 };
+
+        Color ColoreFiloScelto(double fattore)
+        {
+            int i = Math.Max(0, Math.Min(ColoriFiloHex.Length - 1, (int)cfg.GetD("filo_scelto_colore", 0)));
+            int v = Math.Max(0, Math.Min(VelaturaAlfa.Length - 1, (int)cfg.GetD("filo_scelto_velatura", 1)));
+            Color c = Color.Parse(ColoriFiloHex[i]);
+            return Color.FromArgb((byte)Math.Round(255 * VelaturaAlfa[v] * fattore), c.R, c.G, c.B);
+        }
+
+        void ApplicaColoreFiloScelto()
+        {
+            if (view3d != null) { view3d.HighlightColor = ColoreFiloScelto(1); view3d.InvalidateVisual(); }
+            EvidenziaRigaFilo(view3d != null ? view3d.HighlightTag : -1);
+        }
+
+        void EvidenziaRigaFilo(int tag)
+        {
+            Color c = ColoreFiloScelto(0.6);
+            foreach (WireRow w in wireRows)
+            {
+                if (w.Velo == null) continue;
+                int t;
+                bool on = tag >= 0 && (w.Cells != null && int.TryParse(w.Cells[0].Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out t) ? t == tag : (w.Card != null && w.Card.I1 == tag));
+                w.Velo.IsVisible = on;
+                if (on) w.Velo.Background = new SolidColorBrush(c);
+            }
+        }
+
+        /// <summary>Clic su un filo nella vista 3D: con una scheda della barra Geometria aperta sceglie i fili da trasformare (come prima);
+        /// altrimenti evidenzia il filo e porta la tabella sulla sua riga, con la cella del tag attiva.</summary>
+        void FiloCliccato3D(int tag, bool ctrl)
+        {
+            if (geoScheda != null) { GeoFiloCliccato(tag, ctrl); return; }
+            if (view3d == null) return;
+            view3d.HighlightTag = tag;
+            view3d.HighlightColor = ColoreFiloScelto(1);
+            view3d.InvalidateVisual();
+            EvidenziaRigaFilo(tag);
+            WireRow r = wireRows.Find(w => { int t; return w.Cells != null && int.TryParse(w.Cells[0].Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out t) ? t == tag : (w.Card != null && w.Card.I1 == tag); });
+            if (r == null) { Status("Filo " + tag + ": non e' nella tabella dei fili (scheda di geometria diversa da GW)"); return; }
+            if (wiresPanel != null) wiresPanel.Mostra(r.Row, () => { if (r.Cells != null) r.Cells[0].Focus(); else AttivaCella(r, -1); });
+            Status("Filo " + tag + " scelto nella vista 3D: riga " + (wireRows.IndexOf(r) + 1) + " della tabella");
         }
 
         // ---------------------------------------------------------------------------------------------

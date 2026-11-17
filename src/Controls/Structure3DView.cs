@@ -33,6 +33,7 @@ namespace YaNec
         public double LobeAz = double.NaN, LobeEl = double.NaN;       // scritto sul terreno neutro (personalizzato)
         public string Info = "";
         public int HighlightTag = -1;      // filo selezionato nella tabella (evidenziato)
+        public Color? HighlightColor;      // 1.2.0 (IC8TEM 17/11/2026 23:46): colore velato del filo scelto, dalle Impostazioni (null = blu di prima)
         // barra Geometria (0.4.2, bozzetto approvato): fili scelti, anteprima tratteggiata arancione, centro della trasformazione
         public HashSet<int> SelectedTags = new HashSet<int>();
         public List<double[]> Preview;                  // segmenti x1 y1 z1 x2 y2 z2 dopo la trasformazione
@@ -311,7 +312,7 @@ namespace YaNec
                     if (Geo.Tag[i] != HighlightTag) continue;
                     Project(Geo.X1[i], Geo.Y1[i], Geo.Z1[i], cx, cy, sc, ox, oy, oz, out sx1, out sy1);
                     Project(Geo.X2[i], Geo.Y2[i], Geo.Z2[i], cx, cy, sc, ox, oy, oz, out sx2, out sy2);
-                    ctx.DrawLine(Pal.P(Pal.A(120, Pal.Accent), 8), new Point(sx1, sy1), new Point(sx2, sy2));
+                    ctx.DrawLine(Pal.P(HighlightColor ?? Pal.A(120, Pal.Accent), HighlightColor.HasValue ? 11 : 8), new Point(sx1, sy1), new Point(sx2, sy2));
                 }
             // fili scelti nella barra Geometria: alone blu
             if (SelectedTags.Count > 0)

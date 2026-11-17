@@ -598,7 +598,8 @@ namespace YaNec
             DockPanel.SetDock(barGeo, Dock.Top);
             d.Children.Insert(0, barGeo);
             view3d = new Structure3DView();
-            view3d.WireClicked += (tag, ctrl) => GeoFiloCliccato(tag, ctrl);
+            view3d.WireClicked += (tag, ctrl) => FiloCliccato3D(tag, ctrl);   // 1.2.0: senza la barra Geometria il clic sceglie il filo e la sua riga
+            view3d.HighlightColor = ColoreFiloScelto(1);
             // bozzetto approvato "Struttura divisa": a sinistra il modello disegnato, a destra le tabelle in stile Excel
             // (Fili sopra, Sorgenti sotto); le due righe di separazione si trascinano
             Grid split3d = new Grid { ColumnDefinitions = new ColumnDefinitions("46*,10,54*") };

@@ -13,6 +13,20 @@
 
 **언어:** 화면은 37개 언어를 지원합니다(오른쪽 위 언어 메뉴). 위키도 마찬가지입니다. 매뉴얼은 이탈리아어입니다.
 
+## 화면
+
+<table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
+
+## 1.2의 새 기능
+
+- **실제 지형** (N6BV의 HFTA와 같은 방식): 실제 지형 단면 위의 앙각 패턴. DEM **TINITALY** (이탈리아, 10 m) 또는 **SRTM1** (전 세계), HorizonProfiler 파일, 또는 평지에서. 구간별 반사를 프레넬 영역으로 가중하고 능선 회절, 바다, 지구 곡률을 반영. 로케이터 (최대 12자)에서 교신 방향, 항공 사진·OpenStreetMap·로케이터 격자가 있는 **지도**. VHF에서는 전체 보기와 0-15도 확대.
+- **수신 (RDF)**: Beverage, BOG, K9AY, Flag, EWE, 4-square, 원형 8 버티컬의 RDF, DMF, 평균 F/R, 안테나 잡음 (ITU-R P.372), 수신기 여유.
+- **VNA 측정**: .s1p와 CSV를 계산 위에 표시. 케이블 제거 (디임베딩), 스미스 차트, 보정 제안.
+- **제작 공차**: 반복 가능한 몬테카를로, 엘리먼트별 민감도, 허용 공차가 있는 절단 목록.
+- **기계 계산** (새 탭): NTC 2018, CNR-DT 207, EN 1991-1-4에 따른 **바람** (로케이터로 지역 결정, 횡류)과 마스트의 **균형**. 힘은 N과 kgf.
+- 1.8 ~ 1296 MHz **케이블과 발룬** (실드가 NEC 와이어가 됨), 스택의 **H 프레임과 마스트**, 1:1 도면이 있는 λ/4와 Wilkinson **분배기**, **교차 야기** (RHCP, LHCP, X-pol), **HF 부하** (W8NX 동축 트랩, 코일, 리니어 로딩), 최적화기에서도 쓰는 **평균 F/R**, 자동 **AGT 테스트**.
+- 모든 내용은 매뉴얼 23장에서 출처와 함께 설명. 새 항목은 37개 언어로 번역.
+
 ## 1.1의 새 기능
 
 > **저자의 말.** 이번 버전에서는 잡음 온도에 대해 오래 고민했습니다. 지향성 안테나의 스택에 관한 MATLAB 연구를 소개받았고, 바로 시도해 보고 싶었습니다. YA-NEC 사용자가 DL6WU의 스택 간격(삼각함수 공식)을 넘어서, 원한다면 자신만의 스택 간격을 고를 수 있도록 돕는 것입니다. 이와 함께 사용자 인터페이스를 크게 손보았습니다. — *Costantino IC8TEM*

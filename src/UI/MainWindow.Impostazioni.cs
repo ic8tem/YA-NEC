@@ -199,6 +199,16 @@ namespace YaNec
             dia.Children.Add(Casella("Campo vicino (schede NE/NH)", false, false, "Per la linguetta Campi EM."));
             c2.Children.Add(Pannello("Diagrammi e campo lontano", dia));
 
+            // ---- Struttura 3D (1.2.0, IC8TEM 17/11/2026 23:46) ----
+            StackPanel s3d = new StackPanel();
+            ComboBox cColF = new ComboBox { ItemsSource = ColoriFiloNomi, SelectedIndex = Math.Max(0, Math.Min(ColoriFiloNomi.Length - 1, (int)cfg.GetD("filo_scelto_colore", 0))), MinWidth = 120 };
+            ComboBox cVelF = new ComboBox { ItemsSource = VelaturaNomi, SelectedIndex = Math.Max(0, Math.Min(VelaturaNomi.Length - 1, (int)cfg.GetD("filo_scelto_velatura", 1))), MinWidth = 120 };
+            cColF.SelectionChanged += (s, e) => { cfg.Set("filo_scelto_colore", Math.Max(0, cColF.SelectedIndex).ToString(CultureInfo.InvariantCulture)); ApplicaColoreFiloScelto(); };
+            cVelF.SelectionChanged += (s, e) => { cfg.Set("filo_scelto_velatura", Math.Max(0, cVelF.SelectedIndex).ToString(CultureInfo.InvariantCulture)); ApplicaColoreFiloScelto(); };
+            s3d.Children.Add(RigaImp("Colore del filo scelto", cColF, null, "Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo si sottolinea con questo colore, velato, e la sua riga si evidenzia."));
+            s3d.Children.Add(RigaImp("Velatura", cVelF, null, "Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri."));
+            c2.Children.Add(Pannello("Struttura 3D", s3d));
+
             // ---- Stack ----
             StackPanel stk = new StackPanel();
             stk.Children.Add(RigaImp("Metodo", SceltaFutura(new[] { "completo NEC", "automatico", "fattore di schiera" }, 0, "Per ora sempre NEC completo (accoppiamento esatto). Metodo ibrido EEP approvato per gli stack grandi.")));
