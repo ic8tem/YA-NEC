@@ -2,6 +2,10 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.3.1:**
+- **Distanze di stack**: disegno dello stack visto da davanti accanto alla scheda DL6WU (palo, telaio H, antenne, quote, aperture a -3 dB); distanze provate a passi di 0,05 (passo modificabile); in tabella la riga dell'antenna singola, il F/R e la sua variazione; nuovo grafico "Rispetto alla singola antenna" con l'aumento di guadagno e la variazione del F/R su asse rovesciato (G/T con una casella); pulsanti "? Manuale" che aprono il paragrafo giusto del manuale;
+- **Distribuzione** come gli altri programmi di IC8TEM: nuovi pacchetti Arch Linux (e Arch Linux ARM), Slackware (x86_64 e ARM64), AppImage (x86_64 e aarch64), archivi tar.gz per Linux, Raspberry Pi e Alpine, zip "-app" per il Mac; nomi dei file come nella tabella qui sotto. L'aggiornamento automatico passa da solo ai nomi nuovi.
+
 **Novità della 1.3** (spiegate nel capitolo 24 del manuale e nella pagina [Novità della 1.3](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.3) del wiki, con le fonti):
 - **Antenne riceventi**: si accendono **Dipolo basso**, **K9AY** (terminazione con "ottimizza per F/B"), **4-square RX** e le schiere **Hi-Z** di 2, 3 e 8 verticali, con la fase tra le file e "ottimizza la fase (RDF)"; ogni voce crea il modello NEC e da' RDF, DMF, F/B e posto in graduatoria, con l'avviso sul collegamento a terra del NEC-2;
 - **Ricezione (RDF)**: le 8 verticali in cerchio con la fase a 220 gradi e il lobo in avanti;
