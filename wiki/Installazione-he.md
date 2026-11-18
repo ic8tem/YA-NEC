@@ -10,16 +10,16 @@
 
 | מערכת | חבילה |
 |---|---|
-| Windows 10/11 ‏64 סיביות | `YA-NEC-<גרסה>-win-x64.zip` |
-| Windows 10/11 ‏32 סיביות | `YA-NEC-<גרסה>-win-x86.zip` |
-| Windows על ARM ‏(Snapdragon) | `YA-NEC-<גרסה>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<גרסה>-win7-x64.zip` או `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<גרסה>-linux-x64.zip` |
-| Raspberry Pi OS ‏64 סיביות ו-Linux aarch64 אחרות | `YA-NEC-<גרסה>-linux-arm64.zip` |
-| Raspberry Pi OS ‏32 סיביות, armv7l | `YA-NEC-<גרסה>-linux-arm.zip` |
-| Alpine ו-Linux עם musl | `YA-NEC-<גרסה>-linux-musl-x64.zip` או `-linux-musl-arm64.zip` |
-| Mac Apple Silicon ‏(M1-M4) | `YA-NEC-<גרסה>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<גרסה>-osx-x64.zip` |
+| Windows 10/11 ‏64 סיביות | `YA-NEC-<גרסה>-windows-x64-portatile.zip` |
+| Windows 10/11 ‏32 סיביות | `YA-NEC-<גרסה>-windows-x86-portatile.zip` |
+| Windows על ARM ‏(Snapdragon) | `YA-NEC-<גרסה>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<גרסה>-windows7-x64-portatile.zip` או `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<גרסה>-linux-x64.tar.gz` |
+| Raspberry Pi OS ‏64 סיביות ו-Linux aarch64 אחרות | `YA-NEC-<גרסה>-linux-arm64.tar.gz` |
+| Raspberry Pi OS ‏32 סיביות, armv7l | `YA-NEC-<גרסה>-linux-armv7l.tar.gz` |
+| Alpine ו-Linux עם musl | `YA-NEC-<גרסה>-alpine-x64.tar.gz` או `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon ‏(M1-M4) | `YA-NEC-<גרסה>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<גרסה>-mac-intel-app.zip` |
 
 ליד כל zip נמצא סכום הביקורת `.sha256` לבדיקת ההורדה.
 
@@ -32,7 +32,7 @@
 ## Linux ו-Raspberry Pi
 
 ```
-unzip YA-NEC-<גרסה>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<גרסה>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -46,7 +46,7 @@ chmod +x YA-NEC
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## מסכים קטנים

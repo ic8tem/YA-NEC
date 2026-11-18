@@ -8,16 +8,16 @@
 
 | Σύστημα | Πακέτο |
 |---|---|
-| Windows 10/11 64 bit | `YA-NEC-<έκδοση>-win-x64.zip` |
-| Windows 10/11 32 bit | `YA-NEC-<έκδοση>-win-x86.zip` |
-| Windows σε ARM (Snapdragon) | `YA-NEC-<έκδοση>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<έκδοση>-win7-x64.zip` ή `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<έκδοση>-linux-x64.zip` |
-| Raspberry Pi OS 64 bit και άλλα Linux aarch64 | `YA-NEC-<έκδοση>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bit, armv7l | `YA-NEC-<έκδοση>-linux-arm.zip` |
-| Alpine και Linux με musl | `YA-NEC-<έκδοση>-linux-musl-x64.zip` ή `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<έκδοση>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<έκδοση>-osx-x64.zip` |
+| Windows 10/11 64 bit | `YA-NEC-<έκδοση>-windows-x64-portatile.zip` |
+| Windows 10/11 32 bit | `YA-NEC-<έκδοση>-windows-x86-portatile.zip` |
+| Windows σε ARM (Snapdragon) | `YA-NEC-<έκδοση>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<έκδοση>-windows7-x64-portatile.zip` ή `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<έκδοση>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bit και άλλα Linux aarch64 | `YA-NEC-<έκδοση>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bit, armv7l | `YA-NEC-<έκδοση>-linux-armv7l.tar.gz` |
+| Alpine και Linux με musl | `YA-NEC-<έκδοση>-alpine-x64.tar.gz` ή `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<έκδοση>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<έκδοση>-mac-intel-app.zip` |
 
 Δίπλα σε κάθε zip υπάρχει το άθροισμα ελέγχου `.sha256` για τον έλεγχο της λήψης.
 
@@ -30,7 +30,7 @@
 ## Linux και Raspberry Pi
 
 ```
-unzip YA-NEC-<έκδοση>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<έκδοση>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ chmod +x YA-NEC
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Μικρές οθόνες

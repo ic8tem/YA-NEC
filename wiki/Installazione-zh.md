@@ -8,16 +8,16 @@ YA-NEC 无需安装：解压后即可运行。不需要 .NET，它已包含在�
 
 | 系统 | 软件包 |
 |---|---|
-| Windows 10/11 64 位 | `YA-NEC-<版本>-win-x64.zip` |
-| Windows 10/11 32 位 | `YA-NEC-<版本>-win-x86.zip` |
-| ARM 版 Windows（骁龙） | `YA-NEC-<版本>-win-arm64.zip` |
-| Windows 7 SP1、8、8.1 | `YA-NEC-<版本>-win7-x64.zip` 或 `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<版本>-linux-x64.zip` |
-| 树莓派 OS 64 位及其他 aarch64 Linux | `YA-NEC-<版本>-linux-arm64.zip` |
-| 树莓派 OS 32 位、armv7l | `YA-NEC-<版本>-linux-arm.zip` |
-| Alpine 及 musl Linux | `YA-NEC-<版本>-linux-musl-x64.zip` 或 `-linux-musl-arm64.zip` |
-| Mac Apple Silicon（M1-M4） | `YA-NEC-<版本>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<版本>-osx-x64.zip` |
+| Windows 10/11 64 位 | `YA-NEC-<版本>-windows-x64-portatile.zip` |
+| Windows 10/11 32 位 | `YA-NEC-<版本>-windows-x86-portatile.zip` |
+| ARM 版 Windows（骁龙） | `YA-NEC-<版本>-windows-arm64-portatile.zip` |
+| Windows 7 SP1、8、8.1 | `YA-NEC-<版本>-windows7-x64-portatile.zip` 或 `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<版本>-linux-x64.tar.gz` |
+| 树莓派 OS 64 位及其他 aarch64 Linux | `YA-NEC-<版本>-linux-arm64.tar.gz` |
+| 树莓派 OS 32 位、armv7l | `YA-NEC-<版本>-linux-armv7l.tar.gz` |
+| Alpine 及 musl Linux | `YA-NEC-<版本>-alpine-x64.tar.gz` 或 `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon（M1-M4） | `YA-NEC-<版本>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<版本>-mac-intel-app.zip` |
 
 每个 zip 旁都有 `.sha256` 校验和，用于核对下载文件。
 
@@ -30,7 +30,7 @@ YA-NEC 无需安装：解压后即可运行。不需要 .NET，它已包含在�
 ## Linux 和树莓派
 
 ```
-unzip YA-NEC-<版本>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<版本>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ chmod +x YA-NEC
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## 小屏幕

@@ -8,16 +8,16 @@ Ze stránky [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Systém | Balíček |
 |---|---|
-| Windows 10/11 64bitové | `YA-NEC-<verze>-win-x64.zip` |
-| Windows 10/11 32bitové | `YA-NEC-<verze>-win-x86.zip` |
-| Windows na ARM (Snapdragon) | `YA-NEC-<verze>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<verze>-win7-x64.zip` nebo `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<verze>-linux-x64.zip` |
-| Raspberry Pi OS 64bitový a jiné Linuxy aarch64 | `YA-NEC-<verze>-linux-arm64.zip` |
-| Raspberry Pi OS 32bitový, armv7l | `YA-NEC-<verze>-linux-arm.zip` |
-| Alpine a Linuxy s musl | `YA-NEC-<verze>-linux-musl-x64.zip` nebo `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<verze>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<verze>-osx-x64.zip` |
+| Windows 10/11 64bitové | `YA-NEC-<verze>-windows-x64-portatile.zip` |
+| Windows 10/11 32bitové | `YA-NEC-<verze>-windows-x86-portatile.zip` |
+| Windows na ARM (Snapdragon) | `YA-NEC-<verze>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<verze>-windows7-x64-portatile.zip` nebo `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<verze>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64bitový a jiné Linuxy aarch64 | `YA-NEC-<verze>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32bitový, armv7l | `YA-NEC-<verze>-linux-armv7l.tar.gz` |
+| Alpine a Linuxy s musl | `YA-NEC-<verze>-alpine-x64.tar.gz` nebo `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<verze>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<verze>-mac-intel-app.zip` |
 
 Vedle každého zipu je kontrolní součet `.sha256` pro ověření stažení.
 
@@ -30,7 +30,7 @@ Rozbalte zip do složky s právem zápisu, např. `C:\YA-NEC` (ne do `C:\Program
 ## Linux a Raspberry Pi
 
 ```
-unzip YA-NEC-<verze>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<verze>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Rozbalte zip, např. do `~/YA-NEC`. Program není podepsán společností Apple,
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Malé obrazovky

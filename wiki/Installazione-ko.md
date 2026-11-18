@@ -8,16 +8,16 @@ YA-NEC는 설치하지 않습니다. 압축을 풀고 실행하면 됩니다. .N
 
 | 시스템 | 패키지 |
 |---|---|
-| Windows 10/11 64비트 | `YA-NEC-<버전>-win-x64.zip` |
-| Windows 10/11 32비트 | `YA-NEC-<버전>-win-x86.zip` |
-| ARM용 Windows(Snapdragon) | `YA-NEC-<버전>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<버전>-win7-x64.zip` 또는 `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<버전>-linux-x64.zip` |
-| Raspberry Pi OS 64비트 및 기타 aarch64 Linux | `YA-NEC-<버전>-linux-arm64.zip` |
-| Raspberry Pi OS 32비트, armv7l | `YA-NEC-<버전>-linux-arm.zip` |
-| Alpine 및 musl 기반 Linux | `YA-NEC-<버전>-linux-musl-x64.zip` 또는 `-linux-musl-arm64.zip` |
-| Mac Apple Silicon(M1~M4) | `YA-NEC-<버전>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<버전>-osx-x64.zip` |
+| Windows 10/11 64비트 | `YA-NEC-<버전>-windows-x64-portatile.zip` |
+| Windows 10/11 32비트 | `YA-NEC-<버전>-windows-x86-portatile.zip` |
+| ARM용 Windows(Snapdragon) | `YA-NEC-<버전>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<버전>-windows7-x64-portatile.zip` 또는 `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<버전>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64비트 및 기타 aarch64 Linux | `YA-NEC-<버전>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32비트, armv7l | `YA-NEC-<버전>-linux-armv7l.tar.gz` |
+| Alpine 및 musl 기반 Linux | `YA-NEC-<버전>-alpine-x64.tar.gz` 또는 `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon(M1~M4) | `YA-NEC-<버전>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<버전>-mac-intel-app.zip` |
 
 각 zip 옆에는 다운로드를 확인하는 `.sha256` 체크섬이 있습니다.
 
@@ -30,7 +30,7 @@ zip을 쓰기 가능한 폴더(예: `C:\YA-NEC`)에 풀고 `YA-NEC.exe`를 실�
 ## Linux와 Raspberry Pi
 
 ```
-unzip YA-NEC-<버전>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<버전>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ zip을 예를 들어 `~/YA-NEC`에 풉니다. Apple 서명이 없으므로 터�
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## 작은 화면

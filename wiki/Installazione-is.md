@@ -8,16 +8,16 @@ Af síðunni [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Kerfi | Pakki |
 |---|---|
-| Windows 10/11 64 bita | `YA-NEC-<útgáfa>-win-x64.zip` |
-| Windows 10/11 32 bita | `YA-NEC-<útgáfa>-win-x86.zip` |
-| Windows á ARM (Snapdragon) | `YA-NEC-<útgáfa>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<útgáfa>-win7-x64.zip` eða `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<útgáfa>-linux-x64.zip` |
-| Raspberry Pi OS 64 bita og önnur aarch64-Linux | `YA-NEC-<útgáfa>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bita, armv7l | `YA-NEC-<útgáfa>-linux-arm.zip` |
-| Alpine og musl-Linux | `YA-NEC-<útgáfa>-linux-musl-x64.zip` eða `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<útgáfa>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<útgáfa>-osx-x64.zip` |
+| Windows 10/11 64 bita | `YA-NEC-<útgáfa>-windows-x64-portatile.zip` |
+| Windows 10/11 32 bita | `YA-NEC-<útgáfa>-windows-x86-portatile.zip` |
+| Windows á ARM (Snapdragon) | `YA-NEC-<útgáfa>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<útgáfa>-windows7-x64-portatile.zip` eða `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<útgáfa>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bita og önnur aarch64-Linux | `YA-NEC-<útgáfa>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bita, armv7l | `YA-NEC-<útgáfa>-linux-armv7l.tar.gz` |
+| Alpine og musl-Linux | `YA-NEC-<útgáfa>-alpine-x64.tar.gz` eða `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<útgáfa>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<útgáfa>-mac-intel-app.zip` |
 
 Við hlið hverrar zip-skrár er gátsumman `.sha256` til að sannreyna niðurhalið.
 
@@ -30,7 +30,7 @@ Afþjappaðu zip-skrána í möppu með skrifaðgangi, t.d. `C:\YA-NEC` (ekki í
 ## Linux og Raspberry Pi
 
 ```
-unzip YA-NEC-<útgáfa>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<útgáfa>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Afþjappaðu zip-skrána, t.d. í `~/YA-NEC`. Forritið er ekki undirritað af A
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Litlir skjáir

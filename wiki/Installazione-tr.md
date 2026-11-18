@@ -8,16 +8,16 @@ YA-NEC kurulmaz: arşivden çıkarılır ve çalıştırılır. .NET gerekmez, p
 
 | Sistem | Paket |
 |---|---|
-| Windows 10/11 64 bit | `YA-NEC-<sürüm>-win-x64.zip` |
-| Windows 10/11 32 bit | `YA-NEC-<sürüm>-win-x86.zip` |
-| ARM üzerinde Windows (Snapdragon) | `YA-NEC-<sürüm>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<sürüm>-win7-x64.zip` veya `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<sürüm>-linux-x64.zip` |
-| Raspberry Pi OS 64 bit ve diğer aarch64 Linux | `YA-NEC-<sürüm>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bit, armv7l | `YA-NEC-<sürüm>-linux-arm.zip` |
-| Alpine ve musl Linux | `YA-NEC-<sürüm>-linux-musl-x64.zip` veya `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<sürüm>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<sürüm>-osx-x64.zip` |
+| Windows 10/11 64 bit | `YA-NEC-<sürüm>-windows-x64-portatile.zip` |
+| Windows 10/11 32 bit | `YA-NEC-<sürüm>-windows-x86-portatile.zip` |
+| ARM üzerinde Windows (Snapdragon) | `YA-NEC-<sürüm>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<sürüm>-windows7-x64-portatile.zip` veya `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<sürüm>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bit ve diğer aarch64 Linux | `YA-NEC-<sürüm>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bit, armv7l | `YA-NEC-<sürüm>-linux-armv7l.tar.gz` |
+| Alpine ve musl Linux | `YA-NEC-<sürüm>-alpine-x64.tar.gz` veya `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<sürüm>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<sürüm>-mac-intel-app.zip` |
 
 Her zip dosyasının yanında indirmeyi doğrulamak için `.sha256` sağlama toplamı bulunur.
 
@@ -30,7 +30,7 @@ Zip dosyasını yazılabilir bir klasöre, örneğin `C:\YA-NEC` içine çıkar�
 ## Linux ve Raspberry Pi
 
 ```
-unzip YA-NEC-<sürüm>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<sürüm>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Zip dosyasını örneğin `~/YA-NEC` içine çıkarın. Program Apple tarafında
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Küçük ekranlar

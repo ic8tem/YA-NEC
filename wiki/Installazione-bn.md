@@ -8,16 +8,16 @@ YA-NEC ইনস্টল করতে হয় না: আনজিপ কর�
 
 | সিস্টেম | প্যাকেজ |
 |---|---|
-| Windows 10/11 64-বিট | `YA-NEC-<সংস্করণ>-win-x64.zip` |
-| Windows 10/11 32-বিট | `YA-NEC-<সংস্করণ>-win-x86.zip` |
-| ARM-এ Windows (Snapdragon) | `YA-NEC-<সংস্করণ>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<সংস্করণ>-win7-x64.zip` বা `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<সংস্করণ>-linux-x64.zip` |
-| Raspberry Pi OS 64-বিট ও অন্যান্য aarch64 Linux | `YA-NEC-<সংস্করণ>-linux-arm64.zip` |
-| Raspberry Pi OS 32-বিট, armv7l | `YA-NEC-<সংস্করণ>-linux-arm.zip` |
-| Alpine ও musl Linux | `YA-NEC-<সংস্করণ>-linux-musl-x64.zip` বা `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<সংস্করণ>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<সংস্করণ>-osx-x64.zip` |
+| Windows 10/11 64-বিট | `YA-NEC-<সংস্করণ>-windows-x64-portatile.zip` |
+| Windows 10/11 32-বিট | `YA-NEC-<সংস্করণ>-windows-x86-portatile.zip` |
+| ARM-এ Windows (Snapdragon) | `YA-NEC-<সংস্করণ>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<সংস্করণ>-windows7-x64-portatile.zip` বা `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<সংস্করণ>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-বিট ও অন্যান্য aarch64 Linux | `YA-NEC-<সংস্করণ>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-বিট, armv7l | `YA-NEC-<সংস্করণ>-linux-armv7l.tar.gz` |
+| Alpine ও musl Linux | `YA-NEC-<সংস্করণ>-alpine-x64.tar.gz` বা `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<সংস্করণ>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<সংস্করণ>-mac-intel-app.zip` |
 
 প্রতিটি zip-এর পাশে ডাউনলোড যাচাইয়ের জন্য `.sha256` চেকসাম আছে।
 
@@ -30,7 +30,7 @@ zip-টি লেখার অনুমতি আছে এমন ফোল্�
 ## Linux ও Raspberry Pi
 
 ```
-unzip YA-NEC-<সংস্করণ>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<সংস্করণ>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ zip-টি আনজিপ করুন, যেমন `~/YA-NEC`-এ। প্�
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## ছোট পর্দা

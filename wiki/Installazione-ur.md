@@ -10,16 +10,16 @@ YA-NEC کو انسٹال نہیں کیا جاتا: اسے ان زِپ کریں �
 
 | سسٹم | پیکج |
 |---|---|
-| Windows 10/11 64 بٹ | `YA-NEC-<ورژن>-win-x64.zip` |
-| Windows 10/11 32 بٹ | `YA-NEC-<ورژن>-win-x86.zip` |
-| ARM پر Windows (Snapdragon) | `YA-NEC-<ورژن>-win-arm64.zip` |
-| Windows 7 SP1، 8، 8.1 | `YA-NEC-<ورژن>-win7-x64.zip` یا `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<ورژن>-linux-x64.zip` |
-| Raspberry Pi OS 64 بٹ اور دیگر aarch64 Linux | `YA-NEC-<ورژن>-linux-arm64.zip` |
-| Raspberry Pi OS 32 بٹ، armv7l | `YA-NEC-<ورژن>-linux-arm.zip` |
-| Alpine اور musl Linux | `YA-NEC-<ورژن>-linux-musl-x64.zip` یا `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<ورژن>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<ورژن>-osx-x64.zip` |
+| Windows 10/11 64 بٹ | `YA-NEC-<ورژن>-windows-x64-portatile.zip` |
+| Windows 10/11 32 بٹ | `YA-NEC-<ورژن>-windows-x86-portatile.zip` |
+| ARM پر Windows (Snapdragon) | `YA-NEC-<ورژن>-windows-arm64-portatile.zip` |
+| Windows 7 SP1، 8، 8.1 | `YA-NEC-<ورژن>-windows7-x64-portatile.zip` یا `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<ورژن>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 بٹ اور دیگر aarch64 Linux | `YA-NEC-<ورژن>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 بٹ، armv7l | `YA-NEC-<ورژن>-linux-armv7l.tar.gz` |
+| Alpine اور musl Linux | `YA-NEC-<ورژن>-alpine-x64.tar.gz` یا `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<ورژن>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<ورژن>-mac-intel-app.zip` |
 
 ہر zip کے ساتھ ڈاؤن لوڈ کی جانچ کے لیے `.sha256` چیک سم موجود ہے۔
 
@@ -32,7 +32,7 @@ zip کو کسی ایسے فولڈر میں ان زِپ کریں جس میں لک
 ## Linux اور Raspberry Pi
 
 ```
-unzip YA-NEC-<ورژن>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<ورژن>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -46,7 +46,7 @@ zip کو مثلاً `~/YA-NEC` میں ان زِپ کریں۔ پروگرام Appl
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## چھوٹی اسکرینیں

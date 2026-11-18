@@ -1,7 +1,10 @@
 # YA-NEC - compilazione e pacchetti per Windows, Linux e Mac.
 # Con un push sul ramo release, o un tag vX.Y (o avviandolo a mano): pacchetti di tutte le piattaforme e Release vX.Y (versione letta dal file VERSION).
 # A ogni push sul ramo main: solo una compilazione di controllo su Linux (Windows 7 compreso).
-# Nomi dei pacchetti: YA-NEC-<versione>-<rid>.zip e .zip.sha256, quelli che l'aggiornamento automatico cerca (src/Diag/Aggiornamento.cs).
+# Nomi dei pacchetti (1.3.1, armonizzati con l'elenco di YA-MS, richiesta di IC8TEM del 18/11/2026): -windows-x64-setup.exe e
+# -windows-x64-portatile.zip, -mac-apple-silicon.dmg e -app.zip, .deb, .rpm, Arch, Slackware, AppImage, -linux-x64.tar.gz,
+# -raspberry-pi-64bit/32bit.tar.gz, -alpine-x64.tar.gz..., tutti con il loro .sha256: l'aggiornamento automatico dalla 1.3.1 cerca
+# questi (src/Diag/Aggiornamento.cs). Restano anche gli zip YA-NEC-<versione>-<rid>.zip, che cercano le versioni fino alla 1.3.0.
 name: build
 
 on:
@@ -113,9 +116,11 @@ jobs:
             $z = "zip\YA-NEC-$ver-$n.zip"
             Expand-Archive $z -DestinationPath "x\$n" -Force
             $arch = ($n -split '-')[1]
+            $nuovo = $n -replace '^win7-','windows7-' -replace '^win-','windows-'
             $extra = @(); if ($n -like 'win7*') { $extra += '/DYWin7' }
-            & $iscc "/DYVer=$ver" "/DYArch=$arch" "/DYNome=$n" "/DYSrc=$PWD\x\$n\YA-NEC" "/DYOut=$PWD\dist" "/DYIcona=$PWD\assets\ya-nec.ico" @extra installer\windows\ya-nec.iss
+            & $iscc "/DYVer=$ver" "/DYArch=$arch" "/DYNome=$nuovo" "/DYSrc=$PWD\x\$n\YA-NEC" "/DYOut=$PWD\dist" "/DYIcona=$PWD\assets\ya-nec.ico" @extra installer\windows\ya-nec.iss
             if ($LASTEXITCODE -ne 0) { exit 1 }
+            Copy-Item $z "dist\YA-NEC-$ver-$nuovo-portatile.zip"
           }
           Get-ChildItem dist | ForEach-Object { $h = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(); "$h  $($_.Name)" | Out-File -Encoding ascii "$($_.FullName).sha256" }
           Get-ChildItem dist
@@ -124,10 +129,17 @@ jobs:
           name: installatori-windows
           path: dist/*
 
+  # 1.3.1: come YA-MS. Pacchetti per architettura, ciascuno sul suo runner (l'AppImage ARM64 si costruisce su un processore ARM).
   installatori-linux:
     if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/release' || github.event_name == 'workflow_dispatch'
     needs: [ pacchetti ]
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { gruppo: x64, os: ubuntu-latest }
+          - { gruppo: arm, os: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -135,19 +147,42 @@ jobs:
           path: zip
           pattern: linux-*
           merge-multiple: true
-      - name: .deb e .rpm
+      - name: .deb, .rpm, Arch, Slackware, AppImage e tar.gz
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq rpm
+          sudo apt-get update -qq && sudo apt-get install -y -qq rpm >/dev/null
           VER=$(tr -d ' \r\n' < VERSION)
-          for t in "linux-x64 amd64 x86_64" "linux-arm64 arm64 aarch64" "linux-arm armhf armv7hl"; do
-            set -- $t
-            rm -rf x && mkdir x && unzip -q "zip/YA-NEC-$VER-$1.zip" -d x
-            bash installer/linux/pacchetti.sh "$PWD/x/YA-NEC" "$VER" "$2" "$3" "$PWD/dist"
-          done
+          mkdir -p dist
+          estrai() { rm -rf "x-$1" && mkdir "x-$1" && unzip -q "zip/YA-NEC-$VER-$1.zip" -d "x-$1"; }
+          targz() {   # targz <rid> <nome1> [nome2]: tar.gz portatile con installa.sh e l'icona
+            rm -rf pkg && mkdir pkg && cp -a "x-$1/YA-NEC" pkg/YA-NEC
+            cp installer/linux/installa.sh pkg/YA-NEC/installa.sh; cp assets/ya-nec-256.png pkg/YA-NEC/ya-nec.png
+            chmod +x pkg/YA-NEC/installa.sh pkg/YA-NEC/YA-NEC
+            shift; for n in "$@"; do tar -C pkg -czf "dist/YA-NEC-$VER-$n.tar.gz" YA-NEC; done
+          }
+          if [ "${{ matrix.gruppo }}" = "x64" ]; then
+            # anche ARM a 32 bit (armhf / armv7hl) qui, come nella 1.3.0: rpmbuild --target armv7hl collaudato su x86_64
+            estrai linux-x64; estrai linux-musl-x64; estrai linux-arm
+            bash installer/linux/pacchetti.sh "$PWD/x-linux-x64/YA-NEC" "$VER" amd64 x86_64 "$PWD/dist"
+            bash installer/linux/pacchetti.sh "$PWD/x-linux-arm/YA-NEC" "$VER" armhf armv7hl "$PWD/dist"
+            bash installer/linux/make-txz.sh x86_64 "$VER" "dist/ya-nec_${VER}_amd64.deb" dist
+            bash installer/linux/make-arch.sh x86_64 "$VER" "dist/ya-nec_${VER}_amd64.deb" dist
+            bash installer/linux/make-appimage.sh x86_64 "$VER" "$PWD/x-linux-x64/YA-NEC" dist
+            targz linux-x64 linux-x64
+            targz linux-musl-x64 alpine-x64
+            targz linux-arm linux-armv7l raspberry-pi-32bit
+          else
+            estrai linux-arm64; estrai linux-musl-arm64
+            bash installer/linux/pacchetti.sh "$PWD/x-linux-arm64/YA-NEC" "$VER" arm64 aarch64 "$PWD/dist"
+            bash installer/linux/make-txz.sh aarch64 "$VER" "dist/ya-nec_${VER}_arm64.deb" dist
+            bash installer/linux/make-arch.sh aarch64 "$VER" "dist/ya-nec_${VER}_arm64.deb" dist
+            bash installer/linux/make-appimage.sh aarch64 "$VER" "$PWD/x-linux-arm64/YA-NEC" dist
+            targz linux-arm64 linux-arm64 raspberry-pi-64bit
+            targz linux-musl-arm64 alpine-arm64
+          fi
           (cd dist && for f in *; do sha256sum "$f" > "$f.sha256"; done; ls -l)
       - uses: actions/upload-artifact@v4
         with:
-          name: installatori-linux
+          name: installatori-linux-${{ matrix.gruppo }}
           path: dist/*
 
   installatori-mac:
@@ -164,11 +199,12 @@ jobs:
       - name: .dmg
         run: |
           VER=$(tr -d ' \r\n' < VERSION)
-          for n in osx-arm64 osx-x64; do
-            rm -rf x && mkdir x && ditto -x -k "zip/YA-NEC-$VER-$n.zip" x
-            bash installer/macos/dmg.sh "$PWD/x/YA-NEC" "$VER" "$n" "$PWD/dist"
+          for t in "osx-arm64 mac-apple-silicon" "osx-x64 mac-intel"; do
+            set -- $t
+            rm -rf x && mkdir x && ditto -x -k "zip/YA-NEC-$VER-$1.zip" x
+            bash installer/macos/dmg.sh "$PWD/x/YA-NEC" "$VER" "$2" "$PWD/dist"
           done
-          (cd dist && for f in *.dmg; do shasum -a 256 "$f" > "$f.sha256"; done; ls -l)
+          (cd dist && for f in *.dmg *-app.zip; do shasum -a 256 "$f" > "$f.sha256"; done; ls -l)
       - uses: actions/upload-artifact@v4
         with:
           name: installatori-mac

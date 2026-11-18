@@ -4,8 +4,9 @@
 // Come funziona:
 //  - ogni 30 minuti (e 2 minuti dopo l'avvio) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
 //    senza chiave (repository pubblico; 2 richieste l'ora, molto sotto il limite di 60 di GitHub);
-//  - se la versione e' piu' nuova si scarica in background il pacchetto della piattaforma "<programma>-<versione>-<rid>.zip"
-//    (rid = win-x64, linux-x64, osx-arm64...) e la sua impronta "<pacchetto>.sha256"; senza impronta, o con impronta diversa, non si
+//  - se la versione e' piu' nuova si scarica in background il pacchetto portatile della piattaforma (dalla 1.3.1 con i nomi dell'elenco
+//    di YA-MS: <programma>-<versione>-windows-x64-portatile.zip, -linux-x64.tar.gz, -alpine-x64.tar.gz...; fino alla 1.3.0
+//    "<programma>-<versione>-<rid>.zip", che le release continuano a pubblicare per le versioni vecchie) e la sua impronta "<pacchetto>.sha256"; senza impronta, o con impronta diversa, non si
 //    installa niente;
 //  - i file nuovi si mettono al posto dei vecchi: un programma in uso non si puo' sovrascrivere, ma si puo' rinominare, quindi il file
 //    vecchio diventa "<nome>.old" e quello nuovo prende il suo posto; il programma che sta girando non cambia, la versione nuova parte
@@ -83,7 +84,8 @@ namespace YaNec
             motivo = null;
             if (File.Exists(Path.Combine(AppPaths.AppDir, "installato-da-pacchetto")))
             {
-                motivo = "installato con un pacchetto (.deb, .rpm o .dmg): si aggiorna con il gestore dei pacchetti (apt, dnf) o scaricando il nuovo .dmg, non da solo";
+                motivo = "installato con un pacchetto (.deb, .rpm, Arch, Slackware, AppImage o .dmg): si aggiorna con il gestore dei pacchetti (apt, dnf, pacman, slackpkg) " +
+                    "o scaricando il nuovo AppImage o .dmg, non da solo";
                 return true;
             }
             try
@@ -131,6 +133,27 @@ namespace YaNec
 #endif
         }
 
+        /// <summary>1.3.1 (richiesta di IC8TEM del 18/11/2026 10:57, "armonizzi la distribuzione a questo elenco?", elenco di YA-MS):
+        /// nome del pacchetto portatile per questa piattaforma con i nomi nuovi; null sul Mac (si aggiorna con il nuovo .dmg).</summary>
+        static string NomePacchetto(Version v)
+        {
+            string p = AppPaths.AppName + "-" + v + "-";
+            switch (Rid())
+            {
+                case "win-x64": return p + "windows-x64-portatile.zip";
+                case "win-x86": return p + "windows-x86-portatile.zip";
+                case "win-arm64": return p + "windows-arm64-portatile.zip";
+                case "win7-x64": return p + "windows7-x64-portatile.zip";
+                case "win7-x86": return p + "windows7-x86-portatile.zip";
+                case "linux-x64": return p + "linux-x64.tar.gz";
+                case "linux-arm64": return p + "linux-arm64.tar.gz";
+                case "linux-arm": return p + "linux-armv7l.tar.gz";
+                case "linux-musl-x64": return p + "alpine-x64.tar.gz";
+                case "linux-musl-arm64": return p + "alpine-arm64.tar.gz";
+            }
+            return null;
+        }
+
         static Version Ver(string s)
         {
             s = (s ?? "").Trim().TrimStart('v', 'V');
@@ -164,7 +187,14 @@ namespace YaNec
                     Version nuova = Ver(tag), attuale = Ver(AppPaths.Version);
                     if (nuova == null || attuale == null) { ImpostaStato("versione pubblicata non leggibile: " + tag); return; }
                     if (nuova <= attuale) { ImpostaStato("aggiornato: l'ultima versione pubblicata e' la " + nuova + " (" + DateTime.Now.ToString("HH:mm") + ")", false); return; }
-                    string nomeZip = AppPaths.AppName + "-" + nuova + "-" + Rid() + ".zip";
+                    string nomeZip = NomePacchetto(nuova);
+                    if (nomeZip == null)
+                    {
+                        // Mac: dal 1.3.1 il pacchetto e' YA-NEC.app (nel .dmg o nello zip -app): non si sostituisce da solo
+                        ImpostaStato("versione " + nuova + " disponibile: scarica il .dmg (" + AppPaths.AppName + "-" + nuova + "-mac-" +
+                            (RuntimeInformation.ProcessArchitecture == Architecture.Arm64 ? "apple-silicon" : "intel") + ".dmg) da github.com/" + repo + "/releases");
+                        return;
+                    }
                     string urlZip = null, urlSha = null;
                     foreach (var a in asset)
                     {
@@ -206,7 +236,18 @@ namespace YaNec
             string dir = Path.GetDirectoryName(zip);
             string est = Path.Combine(dir, nuova);
             if (Directory.Exists(est)) Directory.Delete(est, true);
+#if WINDOWS7
             ZipFile.ExtractToDirectory(zip, est);
+#else
+            if (zip.EndsWith(".tar.gz", StringComparison.OrdinalIgnoreCase))
+            {
+                // Linux (1.3.1): tar.gz, che conserva i permessi di esecuzione
+                Directory.CreateDirectory(est);
+                using (FileStream fs = File.OpenRead(zip)) using (GZipStream gz = new GZipStream(fs, CompressionMode.Decompress))
+                    System.Formats.Tar.TarFile.ExtractToDirectory(gz, est, true);
+            }
+            else ZipFile.ExtractToDirectory(zip, est);
+#endif
             // se lo zip ha una sola cartella principale (YA-NEC/...), si parte da li'
             string radice = est;
             string[] dirs = Directory.GetDirectories(est), files = Directory.GetFiles(est);

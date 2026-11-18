@@ -8,16 +8,16 @@ De pe pagina [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistem | Pachet |
 |---|---|
-| Windows 10/11 pe 64 de biți | `YA-NEC-<versiune>-win-x64.zip` |
-| Windows 10/11 pe 32 de biți | `YA-NEC-<versiune>-win-x86.zip` |
-| Windows pe ARM (Snapdragon) | `YA-NEC-<versiune>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versiune>-win7-x64.zip` sau `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versiune>-linux-x64.zip` |
-| Raspberry Pi OS pe 64 de biți și alte Linux aarch64 | `YA-NEC-<versiune>-linux-arm64.zip` |
-| Raspberry Pi OS pe 32 de biți, armv7l | `YA-NEC-<versiune>-linux-arm.zip` |
-| Alpine și Linux cu musl | `YA-NEC-<versiune>-linux-musl-x64.zip` sau `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versiune>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versiune>-osx-x64.zip` |
+| Windows 10/11 pe 64 de biți | `YA-NEC-<versiune>-windows-x64-portatile.zip` |
+| Windows 10/11 pe 32 de biți | `YA-NEC-<versiune>-windows-x86-portatile.zip` |
+| Windows pe ARM (Snapdragon) | `YA-NEC-<versiune>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versiune>-windows7-x64-portatile.zip` sau `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versiune>-linux-x64.tar.gz` |
+| Raspberry Pi OS pe 64 de biți și alte Linux aarch64 | `YA-NEC-<versiune>-linux-arm64.tar.gz` |
+| Raspberry Pi OS pe 32 de biți, armv7l | `YA-NEC-<versiune>-linux-armv7l.tar.gz` |
+| Alpine și Linux cu musl | `YA-NEC-<versiune>-alpine-x64.tar.gz` sau `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versiune>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versiune>-mac-intel-app.zip` |
 
 Lângă fiecare zip se află suma de control `.sha256` pentru verificarea descărcării.
 
@@ -30,7 +30,7 @@ Dezarhivează zip-ul într-un dosar cu drept de scriere, de exemplu `C:\YA-NEC` 
 ## Linux și Raspberry Pi
 
 ```
-unzip YA-NEC-<versiune>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versiune>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Dezarhivează zip-ul, de exemplu în `~/YA-NEC`. Programul nu este semnat de App
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Ecrane mici

@@ -65,5 +65,6 @@ $(printf '%s\n' "$POST" | sed 1d)
 /usr/share/icons/hicolor/512x512/apps/ya-nec.png
 EOS
 rpmbuild --define "_topdir $T" --target "$RPM" -bb "$T/SPECS/ya-nec.spec" >/dev/null
-cp "$T"/RPMS/*/*.rpm "$OUT/"
+# 1.3.1: nome come in YA-MS (ya-nec-<versione>.<arch>.rpm, senza il "-1" del rilascio)
+cp "$T"/RPMS/*/*.rpm "$OUT/ya-nec-${VER}.${RPM}.rpm"
 ls -l "$OUT"

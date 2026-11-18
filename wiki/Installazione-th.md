@@ -8,16 +8,16 @@ YA-NEC ไม่ต้องติดตั้ง: แตกไฟล์แล�
 
 | ระบบ | แพ็กเกจ |
 |---|---|
-| Windows 10/11 64 บิต | `YA-NEC-<เวอร์ชัน>-win-x64.zip` |
-| Windows 10/11 32 บิต | `YA-NEC-<เวอร์ชัน>-win-x86.zip` |
-| Windows บน ARM (Snapdragon) | `YA-NEC-<เวอร์ชัน>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<เวอร์ชัน>-win7-x64.zip` หรือ `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<เวอร์ชัน>-linux-x64.zip` |
-| Raspberry Pi OS 64 บิต และ Linux aarch64 อื่น ๆ | `YA-NEC-<เวอร์ชัน>-linux-arm64.zip` |
-| Raspberry Pi OS 32 บิต, armv7l | `YA-NEC-<เวอร์ชัน>-linux-arm.zip` |
-| Alpine และ Linux ที่ใช้ musl | `YA-NEC-<เวอร์ชัน>-linux-musl-x64.zip` หรือ `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<เวอร์ชัน>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<เวอร์ชัน>-osx-x64.zip` |
+| Windows 10/11 64 บิต | `YA-NEC-<เวอร์ชัน>-windows-x64-portatile.zip` |
+| Windows 10/11 32 บิต | `YA-NEC-<เวอร์ชัน>-windows-x86-portatile.zip` |
+| Windows บน ARM (Snapdragon) | `YA-NEC-<เวอร์ชัน>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<เวอร์ชัน>-windows7-x64-portatile.zip` หรือ `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<เวอร์ชัน>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 บิต และ Linux aarch64 อื่น ๆ | `YA-NEC-<เวอร์ชัน>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 บิต, armv7l | `YA-NEC-<เวอร์ชัน>-linux-armv7l.tar.gz` |
+| Alpine และ Linux ที่ใช้ musl | `YA-NEC-<เวอร์ชัน>-alpine-x64.tar.gz` หรือ `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<เวอร์ชัน>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<เวอร์ชัน>-mac-intel-app.zip` |
 
 ข้าง ๆ zip แต่ละไฟล์มีค่าตรวจสอบ `.sha256` ไว้ตรวจไฟล์ที่ดาวน์โหลด
 
@@ -30,7 +30,7 @@ YA-NEC ไม่ต้องติดตั้ง: แตกไฟล์แล�
 ## Linux และ Raspberry Pi
 
 ```
-unzip YA-NEC-<เวอร์ชัน>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<เวอร์ชัน>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ chmod +x YA-NEC
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## หน้าจอขนาดเล็ก

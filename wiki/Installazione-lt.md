@@ -8,16 +8,16 @@ Iš puslapio [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistema | Paketas |
 |---|---|
-| Windows 10/11, 64 bitų | `YA-NEC-<versija>-win-x64.zip` |
-| Windows 10/11, 32 bitų | `YA-NEC-<versija>-win-x86.zip` |
-| Windows su ARM (Snapdragon) | `YA-NEC-<versija>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versija>-win7-x64.zip` arba `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versija>-linux-x64.zip` |
-| Raspberry Pi OS 64 bitų ir kitos aarch64 Linux | `YA-NEC-<versija>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bitų, armv7l | `YA-NEC-<versija>-linux-arm.zip` |
-| Alpine ir musl Linux | `YA-NEC-<versija>-linux-musl-x64.zip` arba `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versija>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versija>-osx-x64.zip` |
+| Windows 10/11, 64 bitų | `YA-NEC-<versija>-windows-x64-portatile.zip` |
+| Windows 10/11, 32 bitų | `YA-NEC-<versija>-windows-x86-portatile.zip` |
+| Windows su ARM (Snapdragon) | `YA-NEC-<versija>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versija>-windows7-x64-portatile.zip` arba `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versija>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bitų ir kitos aarch64 Linux | `YA-NEC-<versija>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bitų, armv7l | `YA-NEC-<versija>-linux-armv7l.tar.gz` |
+| Alpine ir musl Linux | `YA-NEC-<versija>-alpine-x64.tar.gz` arba `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versija>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versija>-mac-intel-app.zip` |
 
 Šalia kiekvieno zip yra kontrolinė suma `.sha256` atsisiuntimui patikrinti.
 
@@ -30,7 +30,7 @@ Išskleiskite zip į aplanką su rašymo teise, pvz., `C:\YA-NEC` (ne į `C:\Pro
 ## Linux ir Raspberry Pi
 
 ```
-unzip YA-NEC-<versija>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versija>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Išskleiskite zip, pvz., į `~/YA-NEC`. Programa nepasirašyta Apple, todėl kar
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Maži ekranai

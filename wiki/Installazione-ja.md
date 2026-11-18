@@ -8,16 +8,16 @@ YA-NEC はインストール不要です。展開して起動するだけです�
 
 | システム | パッケージ |
 |---|---|
-| Windows 10/11 64 ビット | `YA-NEC-<バージョン>-win-x64.zip` |
-| Windows 10/11 32 ビット | `YA-NEC-<バージョン>-win-x86.zip` |
-| ARM 版 Windows（Snapdragon） | `YA-NEC-<バージョン>-win-arm64.zip` |
-| Windows 7 SP1、8、8.1 | `YA-NEC-<バージョン>-win7-x64.zip` または `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<バージョン>-linux-x64.zip` |
-| Raspberry Pi OS 64 ビットとその他の aarch64 Linux | `YA-NEC-<バージョン>-linux-arm64.zip` |
-| Raspberry Pi OS 32 ビット、armv7l | `YA-NEC-<バージョン>-linux-arm.zip` |
-| Alpine と musl 系 Linux | `YA-NEC-<バージョン>-linux-musl-x64.zip` または `-linux-musl-arm64.zip` |
-| Mac Apple Silicon（M1〜M4） | `YA-NEC-<バージョン>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<バージョン>-osx-x64.zip` |
+| Windows 10/11 64 ビット | `YA-NEC-<バージョン>-windows-x64-portatile.zip` |
+| Windows 10/11 32 ビット | `YA-NEC-<バージョン>-windows-x86-portatile.zip` |
+| ARM 版 Windows（Snapdragon） | `YA-NEC-<バージョン>-windows-arm64-portatile.zip` |
+| Windows 7 SP1、8、8.1 | `YA-NEC-<バージョン>-windows7-x64-portatile.zip` または `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<バージョン>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 ビットとその他の aarch64 Linux | `YA-NEC-<バージョン>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 ビット、armv7l | `YA-NEC-<バージョン>-linux-armv7l.tar.gz` |
+| Alpine と musl 系 Linux | `YA-NEC-<バージョン>-alpine-x64.tar.gz` または `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon（M1〜M4） | `YA-NEC-<バージョン>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<バージョン>-mac-intel-app.zip` |
 
 各 zip の隣に、ダウンロードを確認するための `.sha256` チェックサムがあります。
 
@@ -30,7 +30,7 @@ zip を書き込み可能なフォルダー（例：`C:\YA-NEC`）に展開し�
 ## Linux と Raspberry Pi
 
 ```
-unzip YA-NEC-<バージョン>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<バージョン>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ zip を例えば `~/YA-NEC` に展開します。Apple の署名がないため�
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## 小さな画面

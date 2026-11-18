@@ -8,16 +8,16 @@ A [Releases](https://github.com/ic8tem/YA-NEC/releases) oldalról:
 
 | Rendszer | Csomag |
 |---|---|
-| Windows 10/11 64 bites | `YA-NEC-<verzió>-win-x64.zip` |
-| Windows 10/11 32 bites | `YA-NEC-<verzió>-win-x86.zip` |
-| Windows ARM-on (Snapdragon) | `YA-NEC-<verzió>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<verzió>-win7-x64.zip` vagy `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<verzió>-linux-x64.zip` |
-| Raspberry Pi OS 64 bites és más aarch64 Linux | `YA-NEC-<verzió>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bites, armv7l | `YA-NEC-<verzió>-linux-arm.zip` |
-| Alpine és musl alapú Linux | `YA-NEC-<verzió>-linux-musl-x64.zip` vagy `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<verzió>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<verzió>-osx-x64.zip` |
+| Windows 10/11 64 bites | `YA-NEC-<verzió>-windows-x64-portatile.zip` |
+| Windows 10/11 32 bites | `YA-NEC-<verzió>-windows-x86-portatile.zip` |
+| Windows ARM-on (Snapdragon) | `YA-NEC-<verzió>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<verzió>-windows7-x64-portatile.zip` vagy `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<verzió>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bites és más aarch64 Linux | `YA-NEC-<verzió>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bites, armv7l | `YA-NEC-<verzió>-linux-armv7l.tar.gz` |
+| Alpine és musl alapú Linux | `YA-NEC-<verzió>-alpine-x64.tar.gz` vagy `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<verzió>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<verzió>-mac-intel-app.zip` |
 
 Minden zip mellett ott van a `.sha256` ellenőrzőösszeg a letöltés ellenőrzéséhez.
 
@@ -30,7 +30,7 @@ Csomagold ki a zipet egy írható mappába, például `C:\YA-NEC` (ne a `C:\Prog
 ## Linux és Raspberry Pi
 
 ```
-unzip YA-NEC-<verzió>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<verzió>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Csomagold ki a zipet, például ide: `~/YA-NEC`. A programot nem írta alá az A
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Kis képernyők

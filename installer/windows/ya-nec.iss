@@ -9,7 +9,7 @@
   #define YArch "x64"
 #endif
 #ifndef YNome
-  #define YNome "win-" + YArch
+  #define YNome "windows-" + YArch
 #endif
 
 [Setup]

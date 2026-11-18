@@ -54,16 +54,16 @@
 
 | システム | パッケージ |
 |---|---|
-| Windows 10/11 64 ビット | `YA-NEC-<バージョン>-win-x64.zip` |
-| Windows 10/11 32 ビット | `YA-NEC-<バージョン>-win-x86.zip` |
-| ARM 版 Windows（Snapdragon） | `YA-NEC-<バージョン>-win-arm64.zip` |
-| Windows 7 SP1、8、8.1（.NET 6） | `YA-NEC-<バージョン>-win7-x64.zip`、`-win7-x86.zip`（更新プログラム KB2533623 と KB2999226 が必要） |
-| Linux x86_64 | `YA-NEC-<バージョン>-linux-x64.zip` |
-| Linux ARM64（Raspberry Pi OS 64 ビット、その他 aarch64） | `YA-NEC-<バージョン>-linux-arm64.zip` |
-| Linux ARM 32 ビット（Raspberry Pi OS 32 ビット、armv7l） | `YA-NEC-<バージョン>-linux-arm.zip` |
-| Alpine などの musl 系 Linux | `YA-NEC-<バージョン>-linux-musl-x64.zip`、`-linux-musl-arm64.zip` |
-| macOS Apple Silicon（M1〜M4） | `YA-NEC-<バージョン>-osx-arm64.zip` |
-| macOS Intel | `YA-NEC-<バージョン>-osx-x64.zip` |
+| Windows 10/11 64 ビット | `YA-NEC-<バージョン>-windows-x64-portatile.zip` |
+| Windows 10/11 32 ビット | `YA-NEC-<バージョン>-windows-x86-portatile.zip` |
+| ARM 版 Windows（Snapdragon） | `YA-NEC-<バージョン>-windows-arm64-portatile.zip` |
+| Windows 7 SP1、8、8.1（.NET 6） | `YA-NEC-<バージョン>-windows7-x64-portatile.zip`、`-windows7-x86-portatile.zip`（更新プログラム KB2533623 と KB2999226 が必要） |
+| Linux x86_64 | `YA-NEC-<バージョン>-linux-x64.tar.gz` |
+| Linux ARM64（Raspberry Pi OS 64 ビット、その他 aarch64） | `YA-NEC-<バージョン>-linux-arm64.tar.gz` |
+| Linux ARM 32 ビット（Raspberry Pi OS 32 ビット、armv7l） | `YA-NEC-<バージョン>-linux-armv7l.tar.gz` |
+| Alpine などの musl 系 Linux | `YA-NEC-<バージョン>-alpine-x64.tar.gz`、`-alpine-arm64.tar.gz` |
+| macOS Apple Silicon（M1〜M4） | `YA-NEC-<バージョン>-mac-apple-silicon-app.zip` |
+| macOS Intel | `YA-NEC-<バージョン>-mac-intel-app.zip` |
 
 各 zip には `.sha256` チェックサムが付いています。
 

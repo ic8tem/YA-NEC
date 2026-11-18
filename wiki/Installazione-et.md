@@ -8,16 +8,16 @@ Lehelt [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Süsteem | Pakett |
 |---|---|
-| Windows 10/11 64-bitine | `YA-NEC-<versioon>-win-x64.zip` |
-| Windows 10/11 32-bitine | `YA-NEC-<versioon>-win-x86.zip` |
-| Windows ARM-il (Snapdragon) | `YA-NEC-<versioon>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versioon>-win7-x64.zip` või `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versioon>-linux-x64.zip` |
-| Raspberry Pi OS 64-bitine ja muud aarch64 Linuxid | `YA-NEC-<versioon>-linux-arm64.zip` |
-| Raspberry Pi OS 32-bitine, armv7l | `YA-NEC-<versioon>-linux-arm.zip` |
-| Alpine ja musl-Linuxid | `YA-NEC-<versioon>-linux-musl-x64.zip` või `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versioon>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versioon>-osx-x64.zip` |
+| Windows 10/11 64-bitine | `YA-NEC-<versioon>-windows-x64-portatile.zip` |
+| Windows 10/11 32-bitine | `YA-NEC-<versioon>-windows-x86-portatile.zip` |
+| Windows ARM-il (Snapdragon) | `YA-NEC-<versioon>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versioon>-windows7-x64-portatile.zip` või `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versioon>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-bitine ja muud aarch64 Linuxid | `YA-NEC-<versioon>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-bitine, armv7l | `YA-NEC-<versioon>-linux-armv7l.tar.gz` |
+| Alpine ja musl-Linuxid | `YA-NEC-<versioon>-alpine-x64.tar.gz` või `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versioon>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versioon>-mac-intel-app.zip` |
 
 Iga zipi kõrval on kontrollsumma `.sha256` allalaadimise kontrollimiseks.
 
@@ -30,7 +30,7 @@ Pakkige zip lahti kirjutusõigusega kausta, nt `C:\YA-NEC` (mitte kausta `C:\Pro
 ## Linux ja Raspberry Pi
 
 ```
-unzip YA-NEC-<versioon>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versioon>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Pakkige zip lahti, nt kausta `~/YA-NEC`. Programm pole Apple'i allkirjastatud, s
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Väikesed ekraanid

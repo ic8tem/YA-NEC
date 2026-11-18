@@ -8,16 +8,16 @@ YA-NEC को इंस्टॉल नहीं किया जाता: उ�
 
 | सिस्टम | पैकेज |
 |---|---|
-| Windows 10/11 64-बिट | `YA-NEC-<संस्करण>-win-x64.zip` |
-| Windows 10/11 32-बिट | `YA-NEC-<संस्करण>-win-x86.zip` |
-| ARM पर Windows (Snapdragon) | `YA-NEC-<संस्करण>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<संस्करण>-win7-x64.zip` या `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<संस्करण>-linux-x64.zip` |
-| Raspberry Pi OS 64-बिट और अन्य aarch64 Linux | `YA-NEC-<संस्करण>-linux-arm64.zip` |
-| Raspberry Pi OS 32-बिट, armv7l | `YA-NEC-<संस्करण>-linux-arm.zip` |
-| Alpine और musl Linux | `YA-NEC-<संस्करण>-linux-musl-x64.zip` या `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<संस्करण>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<संस्करण>-osx-x64.zip` |
+| Windows 10/11 64-बिट | `YA-NEC-<संस्करण>-windows-x64-portatile.zip` |
+| Windows 10/11 32-बिट | `YA-NEC-<संस्करण>-windows-x86-portatile.zip` |
+| ARM पर Windows (Snapdragon) | `YA-NEC-<संस्करण>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<संस्करण>-windows7-x64-portatile.zip` या `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<संस्करण>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-बिट और अन्य aarch64 Linux | `YA-NEC-<संस्करण>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-बिट, armv7l | `YA-NEC-<संस्करण>-linux-armv7l.tar.gz` |
+| Alpine और musl Linux | `YA-NEC-<संस्करण>-alpine-x64.tar.gz` या `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<संस्करण>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<संस्करण>-mac-intel-app.zip` |
 
 हर zip के पास डाउनलोड जाँचने के लिए `.sha256` चेकसम है।
 
@@ -30,7 +30,7 @@ zip को किसी लिखने-योग्य फ़ोल्डर �
 ## Linux और Raspberry Pi
 
 ```
-unzip YA-NEC-<संस्करण>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<संस्करण>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ zip को, उदाहरण के लिए, `~/YA-NEC` में अनज�
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## छोटी स्क्रीन

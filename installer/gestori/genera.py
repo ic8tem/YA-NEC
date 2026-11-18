@@ -6,8 +6,8 @@ import hashlib, json, os, sys
 ver, dist, out = sys.argv[1], sys.argv[2], sys.argv[3]
 R = 'https://github.com/ic8tem/YA-NEC/releases/download/v%s/' % ver
 def sha(n): return hashlib.sha256(open(os.path.join(dist, n), 'rb').read()).hexdigest().upper()
-setup = {a: 'YA-NEC-%s-win-%s-setup.exe' % (ver, a) for a in ('x64', 'x86', 'arm64')}
-zipw = {a: 'YA-NEC-%s-win-%s.zip' % (ver, a) for a in ('x64', 'x86', 'arm64')}
+setup = {a: 'YA-NEC-%s-windows-%s-setup.exe' % (ver, a) for a in ('x64', 'x86', 'arm64')}   # nomi dalla 1.3.1
+zipw = {a: 'YA-NEC-%s-windows-%s-portatile.zip' % (ver, a) for a in ('x64', 'x86', 'arm64')}
 os.makedirs(out, exist_ok=True)
 desc_en = 'NEC-2 wire antenna simulator (C# translation of nec2c) with calculators, optimizer, receiving antennas and dish design. By Costantino Cerrotta IC8TEM.'
 # --- winget (manifest 1.6, tre file)
@@ -30,9 +30,9 @@ sc = {'version': ver, 'description': desc_en, 'homepage': 'https://github.com/ic
                        'arm64': {'url': R + zipw['arm64'], 'hash': sha(zipw['arm64']).lower()}},
       'extract_dir': 'YA-NEC', 'bin': 'YA-NEC.exe', 'shortcuts': [['YA-NEC.exe', 'YA-NEC']], 'persist': 'data',
       'checkver': 'github', 'autoupdate': {'architecture': {
-          '64bit': {'url': 'https://github.com/ic8tem/YA-NEC/releases/download/v$version/YA-NEC-$version-win-x64.zip'},
-          '32bit': {'url': 'https://github.com/ic8tem/YA-NEC/releases/download/v$version/YA-NEC-$version-win-x86.zip'},
-          'arm64': {'url': 'https://github.com/ic8tem/YA-NEC/releases/download/v$version/YA-NEC-$version-win-arm64.zip'}}}}
+          '64bit': {'url': 'https://github.com/ic8tem/YA-NEC/releases/download/v$version/YA-NEC-$version-windows-x64-portatile.zip'},
+          '32bit': {'url': 'https://github.com/ic8tem/YA-NEC/releases/download/v$version/YA-NEC-$version-windows-x86-portatile.zip'},
+          'arm64': {'url': 'https://github.com/ic8tem/YA-NEC/releases/download/v$version/YA-NEC-$version-windows-arm64-portatile.zip'}}}}
 os.makedirs(os.path.join(out, 'scoop'), exist_ok=True)
 json.dump(sc, open(os.path.join(out, 'scoop', 'ya-nec.json'), 'w'), indent=4)
 # --- Chocolatey (sorgenti del pacchetto: choco pack nella cartella)

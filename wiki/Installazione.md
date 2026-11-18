@@ -8,16 +8,16 @@ Dalla pagina [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistema | Pacchetto |
 |---|---|
-| Windows 10/11 a 64 bit | `YA-NEC-<versione>-win-x64.zip` |
-| Windows 10/11 a 32 bit | `YA-NEC-<versione>-win-x86.zip` |
-| Windows su ARM (Snapdragon) | `YA-NEC-<versione>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versione>-win7-x64.zip` o `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versione>-linux-x64.zip` |
-| Raspberry Pi OS 64 bit e altri Linux aarch64 | `YA-NEC-<versione>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bit, armv7l | `YA-NEC-<versione>-linux-arm.zip` |
-| Alpine e Linux con musl | `YA-NEC-<versione>-linux-musl-x64.zip` o `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versione>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versione>-osx-x64.zip` |
+| Windows 10/11 a 64 bit | `YA-NEC-<versione>-windows-x64-portatile.zip` |
+| Windows 10/11 a 32 bit | `YA-NEC-<versione>-windows-x86-portatile.zip` |
+| Windows su ARM (Snapdragon) | `YA-NEC-<versione>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versione>-windows7-x64-portatile.zip` o `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versione>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bit e altri Linux aarch64 | `YA-NEC-<versione>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bit, armv7l | `YA-NEC-<versione>-linux-armv7l.tar.gz` |
+| Alpine e Linux con musl | `YA-NEC-<versione>-alpine-x64.tar.gz` o `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versione>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versione>-mac-intel-app.zip` |
 
 Accanto a ogni zip c'è l'impronta `.sha256` per controllare il file scaricato.
 
@@ -30,7 +30,7 @@ Estrarre lo zip in una cartella scrivibile, per esempio `C:\YA-NEC` (non in `C:\
 ## Linux e Raspberry Pi
 
 ```
-unzip YA-NEC-<versione>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versione>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Estrarre lo zip, per esempio in `~/YA-NEC`. Il programma non è firmato da Apple
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Schermi piccoli

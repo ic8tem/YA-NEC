@@ -10,16 +10,16 @@
 
 | النظام | الحزمة |
 |---|---|
-| Windows 10/11 بنظام 64 بت | `YA-NEC-<الإصدار>-win-x64.zip` |
-| Windows 10/11 بنظام 32 بت | `YA-NEC-<الإصدار>-win-x86.zip` |
-| Windows على ARM (Snapdragon) | `YA-NEC-<الإصدار>-win-arm64.zip` |
-| Windows 7 SP1 و8 و8.1 | `YA-NEC-<الإصدار>-win7-x64.zip` أو `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<الإصدار>-linux-x64.zip` |
-| Raspberry Pi OS بنظام 64 بت وأنظمة Linux aarch64 الأخرى | `YA-NEC-<الإصدار>-linux-arm64.zip` |
-| Raspberry Pi OS بنظام 32 بت، armv7l | `YA-NEC-<الإصدار>-linux-arm.zip` |
-| Alpine وأنظمة Linux بمكتبة musl | `YA-NEC-<الإصدار>-linux-musl-x64.zip` أو `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<الإصدار>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<الإصدار>-osx-x64.zip` |
+| Windows 10/11 بنظام 64 بت | `YA-NEC-<الإصدار>-windows-x64-portatile.zip` |
+| Windows 10/11 بنظام 32 بت | `YA-NEC-<الإصدار>-windows-x86-portatile.zip` |
+| Windows على ARM (Snapdragon) | `YA-NEC-<الإصدار>-windows-arm64-portatile.zip` |
+| Windows 7 SP1 و8 و8.1 | `YA-NEC-<الإصدار>-windows7-x64-portatile.zip` أو `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<الإصدار>-linux-x64.tar.gz` |
+| Raspberry Pi OS بنظام 64 بت وأنظمة Linux aarch64 الأخرى | `YA-NEC-<الإصدار>-linux-arm64.tar.gz` |
+| Raspberry Pi OS بنظام 32 بت، armv7l | `YA-NEC-<الإصدار>-linux-armv7l.tar.gz` |
+| Alpine وأنظمة Linux بمكتبة musl | `YA-NEC-<الإصدار>-alpine-x64.tar.gz` أو `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<الإصدار>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<الإصدار>-mac-intel-app.zip` |
 
 بجانب كل ملف zip توجد بصمة `.sha256` للتحقق من التنزيل.
 
@@ -32,7 +32,7 @@
 ## Linux وRaspberry Pi
 
 ```
-unzip YA-NEC-<الإصدار>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<الإصدار>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -46,7 +46,7 @@ chmod +x YA-NEC
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## الشاشات الصغيرة

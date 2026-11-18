@@ -18,3 +18,11 @@
 ## 1.3.0 – Uscita (18/11/2026)
 - VERSION 1.3.0; manuale: 24.2 con le correzioni della notte e 24.2a Videocorso; PDF rigenerato (111 pagine).
 - .github/release.md con le novita' della 1.3; README in 8 lingue con la sezione 1.3; wiki Novita-1.3 in 37 lingue, Home e barra laterale.
+
+## 1.3.1 – Distribuzione armonizzata con l'elenco di YA-MS (18/11/2026, richiesta di IC8TEM delle 10:57)
+- Nomi dei pacchetti come YA-MS: -windows-x64/x86/arm64-setup.exe e -portatile.zip, -windows7-x64/x86-, -mac-apple-silicon.dmg / -mac-intel.dmg con lo zip -app (cartella YA-NEC con YA-NEC.app), ya-nec_<v>_amd64/arm64/armhf.deb, ya-nec-<v>.x86_64/aarch64/armv7hl.rpm (senza il "-1"), -linux-x64/-linux-arm64/-linux-armv7l.tar.gz, -raspberry-pi-64bit/32bit.tar.gz, -alpine-x64/arm64.tar.gz.
+- Nuovi pacchetti: Arch / Manjaro / EndeavourOS e Arch Linux ARM (.pkg.tar.zst), Slackware x86_64 e ARM64 (.txz), AppImage x86_64 e aarch64 (copia il programma in ~/YA-NEC al primo avvio). Script in installer/linux (make-arch.sh, make-txz.sh, make-appimage.sh, installa.sh per il tar.gz), ricavati da quelli di YA-MS; Arch e Slackware dal .deb, con /opt/YA-NEC/data scrivibile come nel .deb.
+- Workflow: installatori Linux su due runner (x86_64; ARM64 per l'AppImage aarch64); il .dmg produce anche lo zip -app; .sha256 per ogni file. Gli zip YA-NEC-<v>-<rid>.zip con i nomi vecchi restano nella release: li cercano le versioni fino alla 1.3.0 per l'aggiornamento automatico.
+- Aggiornamento automatico (src/Diag/Aggiornamento.cs): cerca i nomi nuovi (portatile.zip su Windows, tar.gz su Linux, estratto con System.Formats.Tar che conserva i permessi); sul Mac non sostituisce piu' i file (il pacchetto e' YA-NEC.app) e avvisa che c'e' il nuovo .dmg; Arch, Slackware e AppImage contano come pacchetti (file installato-da-pacchetto).
+- winget, Scoop e Chocolatey (installer/gestori/genera.py) e Inno Setup con i nomi nuovi; tabella dei download in .github/release.md con le 21 righe dell'elenco; nomi nuovi nella pagina Installazione del wiki (37 lingue) e nei README (comando tar per Linux, open YA-NEC.app per il Mac).
+- Non ancora compilato ne' pubblicato (si fa quando lo dice IC8TEM).

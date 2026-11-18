@@ -54,16 +54,16 @@
 
 | 시스템 | 패키지 |
 |---|---|
-| Windows 10/11 64비트 | `YA-NEC-<버전>-win-x64.zip` |
-| Windows 10/11 32비트 | `YA-NEC-<버전>-win-x86.zip` |
-| ARM용 Windows(Snapdragon) | `YA-NEC-<버전>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1(.NET 6) | `YA-NEC-<버전>-win7-x64.zip`, `-win7-x86.zip`(업데이트 KB2533623, KB2999226 필요) |
-| Linux x86_64 | `YA-NEC-<버전>-linux-x64.zip` |
-| Linux ARM64(Raspberry Pi OS 64비트, 기타 aarch64) | `YA-NEC-<버전>-linux-arm64.zip` |
-| Linux ARM 32비트(Raspberry Pi OS 32비트, armv7l) | `YA-NEC-<버전>-linux-arm.zip` |
-| Alpine 등 musl 기반 Linux | `YA-NEC-<버전>-linux-musl-x64.zip`, `-linux-musl-arm64.zip` |
-| macOS Apple Silicon(M1~M4) | `YA-NEC-<버전>-osx-arm64.zip` |
-| macOS Intel | `YA-NEC-<버전>-osx-x64.zip` |
+| Windows 10/11 64비트 | `YA-NEC-<버전>-windows-x64-portatile.zip` |
+| Windows 10/11 32비트 | `YA-NEC-<버전>-windows-x86-portatile.zip` |
+| ARM용 Windows(Snapdragon) | `YA-NEC-<버전>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1(.NET 6) | `YA-NEC-<버전>-windows7-x64-portatile.zip`, `-windows7-x86-portatile.zip`(업데이트 KB2533623, KB2999226 필요) |
+| Linux x86_64 | `YA-NEC-<버전>-linux-x64.tar.gz` |
+| Linux ARM64(Raspberry Pi OS 64비트, 기타 aarch64) | `YA-NEC-<버전>-linux-arm64.tar.gz` |
+| Linux ARM 32비트(Raspberry Pi OS 32비트, armv7l) | `YA-NEC-<버전>-linux-armv7l.tar.gz` |
+| Alpine 등 musl 기반 Linux | `YA-NEC-<버전>-alpine-x64.tar.gz`, `-alpine-arm64.tar.gz` |
+| macOS Apple Silicon(M1~M4) | `YA-NEC-<버전>-mac-apple-silicon-app.zip` |
+| macOS Intel | `YA-NEC-<버전>-mac-intel-app.zip` |
 
 각 zip에는 `.sha256` 체크섬이 함께 있습니다.
 

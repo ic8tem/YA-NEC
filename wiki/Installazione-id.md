@@ -8,16 +8,16 @@ Dari halaman [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistem | Paket |
 |---|---|
-| Windows 10/11 64-bit | `YA-NEC-<versi>-win-x64.zip` |
-| Windows 10/11 32-bit | `YA-NEC-<versi>-win-x86.zip` |
-| Windows di ARM (Snapdragon) | `YA-NEC-<versi>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versi>-win7-x64.zip` atau `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versi>-linux-x64.zip` |
-| Raspberry Pi OS 64-bit dan Linux aarch64 lain | `YA-NEC-<versi>-linux-arm64.zip` |
-| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<versi>-linux-arm.zip` |
-| Alpine dan Linux musl | `YA-NEC-<versi>-linux-musl-x64.zip` atau `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versi>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versi>-osx-x64.zip` |
+| Windows 10/11 64-bit | `YA-NEC-<versi>-windows-x64-portatile.zip` |
+| Windows 10/11 32-bit | `YA-NEC-<versi>-windows-x86-portatile.zip` |
+| Windows di ARM (Snapdragon) | `YA-NEC-<versi>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versi>-windows7-x64-portatile.zip` atau `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versi>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-bit dan Linux aarch64 lain | `YA-NEC-<versi>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<versi>-linux-armv7l.tar.gz` |
+| Alpine dan Linux musl | `YA-NEC-<versi>-alpine-x64.tar.gz` atau `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versi>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versi>-mac-intel-app.zip` |
 
 Di samping setiap zip ada checksum `.sha256` untuk memeriksa unduhan.
 
@@ -30,7 +30,7 @@ Ekstrak zip ke folder yang bisa ditulisi, misalnya `C:\YA-NEC` (jangan di `C:\Pr
 ## Linux dan Raspberry Pi
 
 ```
-unzip YA-NEC-<versi>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versi>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Ekstrak zip, misalnya ke `~/YA-NEC`. Program ini tidak ditandatangani oleh Apple
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Layar kecil

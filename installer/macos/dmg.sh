@@ -1,6 +1,8 @@
 #!/bin/bash
 # YA-NEC - immagine .dmg per macOS da un pacchetto zip gia' compilato (chiamato da .github/workflows/build.yml, su macOS).
-# Uso: dmg.sh <cartella YA-NEC estratta> <versione> <nome: osx-arm64|osx-x64> <cartella di uscita>
+# Uso: dmg.sh <cartella YA-NEC estratta> <versione> <nome: mac-apple-silicon|mac-intel> <cartella di uscita>
+# 1.3.1 (elenco di YA-MS): oltre al .dmg, YA-NEC-<versione>-<nome>-app.zip con la stessa cartella YA-NEC (YA-NEC.app + data)
+# da estrarre dove si vuole.
 # Dentro il .dmg c'e' la cartella "YA-NEC" (da trascinare in Applicazioni) con YA-NEC.app e, accanto, data/ e i documenti:
 # impostazioni e modelli restano accanto al programma come negli zip (niente Library/Application Support, scelta di IC8TEM);
 # il programma trova data/ accanto a YA-NEC.app (src/UI/AppPaths.cs). Firma ad hoc (nessun certificato Apple):
@@ -51,4 +53,5 @@ EN: drag the YA-NEC folder to Applications. First launch: right-click YA-NEC.app
 EOT
 mkdir -p "$OUT"
 hdiutil create -volname "YA-NEC $VER" -srcfolder "$W" -ov -format UDZO "$OUT/YA-NEC-$VER-$NOME.dmg"
+(cd "$W" && ditto -c -k --keepParent "YA-NEC" "$OUT/YA-NEC-$VER-$NOME-app.zip")
 ls -l "$OUT"

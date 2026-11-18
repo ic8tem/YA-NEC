@@ -8,16 +8,16 @@ Ze strony [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | System | Pakiet |
 |---|---|
-| Windows 10/11 64-bit | `YA-NEC-<wersja>-win-x64.zip` |
-| Windows 10/11 32-bit | `YA-NEC-<wersja>-win-x86.zip` |
-| Windows na ARM (Snapdragon) | `YA-NEC-<wersja>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<wersja>-win7-x64.zip` lub `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<wersja>-linux-x64.zip` |
-| Raspberry Pi OS 64-bit i inne Linuksy aarch64 | `YA-NEC-<wersja>-linux-arm64.zip` |
-| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<wersja>-linux-arm.zip` |
-| Alpine i Linuksy z musl | `YA-NEC-<wersja>-linux-musl-x64.zip` lub `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<wersja>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<wersja>-osx-x64.zip` |
+| Windows 10/11 64-bit | `YA-NEC-<wersja>-windows-x64-portatile.zip` |
+| Windows 10/11 32-bit | `YA-NEC-<wersja>-windows-x86-portatile.zip` |
+| Windows na ARM (Snapdragon) | `YA-NEC-<wersja>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<wersja>-windows7-x64-portatile.zip` lub `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<wersja>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-bit i inne Linuksy aarch64 | `YA-NEC-<wersja>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<wersja>-linux-armv7l.tar.gz` |
+| Alpine i Linuksy z musl | `YA-NEC-<wersja>-alpine-x64.tar.gz` lub `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<wersja>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<wersja>-mac-intel-app.zip` |
 
 Obok każdego zip jest suma kontrolna `.sha256` do sprawdzenia pobranego pliku.
 
@@ -30,7 +30,7 @@ Rozpakuj zip do folderu z prawem zapisu, np. `C:\YA-NEC` (nie do `C:\Program Fil
 ## Linux i Raspberry Pi
 
 ```
-unzip YA-NEC-<wersja>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<wersja>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Rozpakuj zip, np. do `~/YA-NEC`. Program nie jest podpisany przez Apple, więc t
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Małe ekrany

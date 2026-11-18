@@ -8,16 +8,16 @@ Mula sa pahinang [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistema | Package |
 |---|---|
-| Windows 10/11 64-bit | `YA-NEC-<bersyon>-win-x64.zip` |
-| Windows 10/11 32-bit | `YA-NEC-<bersyon>-win-x86.zip` |
-| Windows sa ARM (Snapdragon) | `YA-NEC-<bersyon>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<bersyon>-win7-x64.zip` o `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<bersyon>-linux-x64.zip` |
-| Raspberry Pi OS 64-bit at iba pang aarch64 Linux | `YA-NEC-<bersyon>-linux-arm64.zip` |
-| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<bersyon>-linux-arm.zip` |
-| Alpine at musl Linux | `YA-NEC-<bersyon>-linux-musl-x64.zip` o `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<bersyon>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<bersyon>-osx-x64.zip` |
+| Windows 10/11 64-bit | `YA-NEC-<bersyon>-windows-x64-portatile.zip` |
+| Windows 10/11 32-bit | `YA-NEC-<bersyon>-windows-x86-portatile.zip` |
+| Windows sa ARM (Snapdragon) | `YA-NEC-<bersyon>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<bersyon>-windows7-x64-portatile.zip` o `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<bersyon>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-bit at iba pang aarch64 Linux | `YA-NEC-<bersyon>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<bersyon>-linux-armv7l.tar.gz` |
+| Alpine at musl Linux | `YA-NEC-<bersyon>-alpine-x64.tar.gz` o `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<bersyon>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<bersyon>-mac-intel-app.zip` |
 
 Katabi ng bawat zip ang checksum na `.sha256` para masuri ang na-download.
 
@@ -30,7 +30,7 @@ I-extract ang zip sa folder na puwedeng sulatan, halimbawa `C:\YA-NEC` (hindi sa
 ## Linux at Raspberry Pi
 
 ```
-unzip YA-NEC-<bersyon>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<bersyon>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ I-extract ang zip, halimbawa sa `~/YA-NEC`. Hindi pinirmahan ng Apple ang progra
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Maliliit na screen

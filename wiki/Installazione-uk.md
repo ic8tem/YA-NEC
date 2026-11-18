@@ -8,16 +8,16 @@ YA-NEC не встановлюється: його розпаковують і �
 
 | Система | Пакет |
 |---|---|
-| Windows 10/11, 64 біти | `YA-NEC-<версія>-win-x64.zip` |
-| Windows 10/11, 32 біти | `YA-NEC-<версія>-win-x86.zip` |
-| Windows на ARM (Snapdragon) | `YA-NEC-<версія>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<версія>-win7-x64.zip` або `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<версія>-linux-x64.zip` |
-| Raspberry Pi OS 64 біти та інші Linux aarch64 | `YA-NEC-<версія>-linux-arm64.zip` |
-| Raspberry Pi OS 32 біти, armv7l | `YA-NEC-<версія>-linux-arm.zip` |
-| Alpine і Linux з musl | `YA-NEC-<версія>-linux-musl-x64.zip` або `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<версія>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<версія>-osx-x64.zip` |
+| Windows 10/11, 64 біти | `YA-NEC-<версія>-windows-x64-portatile.zip` |
+| Windows 10/11, 32 біти | `YA-NEC-<версія>-windows-x86-portatile.zip` |
+| Windows на ARM (Snapdragon) | `YA-NEC-<версія>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<версія>-windows7-x64-portatile.zip` або `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<версія>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 біти та інші Linux aarch64 | `YA-NEC-<версія>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 біти, armv7l | `YA-NEC-<версія>-linux-armv7l.tar.gz` |
+| Alpine і Linux з musl | `YA-NEC-<версія>-alpine-x64.tar.gz` або `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<версія>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<версія>-mac-intel-app.zip` |
 
 Поруч із кожним zip є контрольна сума `.sha256` для перевірки завантаження.
 
@@ -30,7 +30,7 @@ YA-NEC не встановлюється: його розпаковують і �
 ## Linux і Raspberry Pi
 
 ```
-unzip YA-NEC-<версія>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<версія>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ chmod +x YA-NEC
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Невеликі екрани

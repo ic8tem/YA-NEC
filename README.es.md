@@ -54,16 +54,16 @@ En la página **[Releases](https://github.com/ic8tem/YA-NEC/releases)** se desca
 
 | Sistema | Paquete |
 |---|---|
-| Windows 10/11 64 bits | `YA-NEC-<versión>-win-x64.zip` |
-| Windows 10/11 32 bits | `YA-NEC-<versión>-win-x86.zip` |
-| Windows en ARM (Snapdragon) | `YA-NEC-<versión>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 (.NET 6) | `YA-NEC-<versión>-win7-x64.zip`, `-win7-x86.zip` (requiere las actualizaciones KB2533623 y KB2999226) |
-| Linux x86_64 | `YA-NEC-<versión>-linux-x64.zip` |
-| Linux ARM64 (Raspberry Pi OS 64 bits, otros aarch64) | `YA-NEC-<versión>-linux-arm64.zip` |
-| Linux ARM 32 bits (Raspberry Pi OS 32 bits, armv7l) | `YA-NEC-<versión>-linux-arm.zip` |
-| Alpine y otros Linux con musl | `YA-NEC-<versión>-linux-musl-x64.zip`, `-linux-musl-arm64.zip` |
-| macOS Apple Silicon (M1-M4) | `YA-NEC-<versión>-osx-arm64.zip` |
-| macOS Intel | `YA-NEC-<versión>-osx-x64.zip` |
+| Windows 10/11 64 bits | `YA-NEC-<versión>-windows-x64-portatile.zip` |
+| Windows 10/11 32 bits | `YA-NEC-<versión>-windows-x86-portatile.zip` |
+| Windows en ARM (Snapdragon) | `YA-NEC-<versión>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 (.NET 6) | `YA-NEC-<versión>-windows7-x64-portatile.zip`, `-windows7-x86-portatile.zip` (requiere las actualizaciones KB2533623 y KB2999226) |
+| Linux x86_64 | `YA-NEC-<versión>-linux-x64.tar.gz` |
+| Linux ARM64 (Raspberry Pi OS 64 bits, otros aarch64) | `YA-NEC-<versión>-linux-arm64.tar.gz` |
+| Linux ARM 32 bits (Raspberry Pi OS 32 bits, armv7l) | `YA-NEC-<versión>-linux-armv7l.tar.gz` |
+| Alpine y otros Linux con musl | `YA-NEC-<versión>-alpine-x64.tar.gz`, `-alpine-arm64.tar.gz` |
+| macOS Apple Silicon (M1-M4) | `YA-NEC-<versión>-mac-apple-silicon-app.zip` |
+| macOS Intel | `YA-NEC-<versión>-mac-intel-app.zip` |
 
 Cada zip va acompañado de su huella `.sha256`.
 

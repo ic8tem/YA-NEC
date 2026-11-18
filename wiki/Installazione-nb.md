@@ -8,16 +8,16 @@ Fra siden [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | System | Pakke |
 |---|---|
-| Windows 10/11 64-bit | `YA-NEC-<versjon>-win-x64.zip` |
-| Windows 10/11 32-bit | `YA-NEC-<versjon>-win-x86.zip` |
-| Windows på ARM (Snapdragon) | `YA-NEC-<versjon>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versjon>-win7-x64.zip` eller `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versjon>-linux-x64.zip` |
-| Raspberry Pi OS 64-bit og andre aarch64-Linux | `YA-NEC-<versjon>-linux-arm64.zip` |
-| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<versjon>-linux-arm.zip` |
-| Alpine og musl-Linux | `YA-NEC-<versjon>-linux-musl-x64.zip` eller `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versjon>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versjon>-osx-x64.zip` |
+| Windows 10/11 64-bit | `YA-NEC-<versjon>-windows-x64-portatile.zip` |
+| Windows 10/11 32-bit | `YA-NEC-<versjon>-windows-x86-portatile.zip` |
+| Windows på ARM (Snapdragon) | `YA-NEC-<versjon>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versjon>-windows7-x64-portatile.zip` eller `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versjon>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-bit og andre aarch64-Linux | `YA-NEC-<versjon>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-bit, armv7l | `YA-NEC-<versjon>-linux-armv7l.tar.gz` |
+| Alpine og musl-Linux | `YA-NEC-<versjon>-alpine-x64.tar.gz` eller `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versjon>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versjon>-mac-intel-app.zip` |
 
 Ved siden av hver zip ligger kontrollsummen `.sha256` for å sjekke nedlastingen.
 
@@ -30,7 +30,7 @@ Pakk ut zip-filen i en mappe med skrivetilgang, for eksempel `C:\YA-NEC` (ikke i
 ## Linux og Raspberry Pi
 
 ```
-unzip YA-NEC-<versjon>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versjon>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Pakk ut zip-filen, for eksempel i `~/YA-NEC`. Programmet er ikke signert av Appl
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Små skjermer

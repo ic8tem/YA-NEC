@@ -8,16 +8,16 @@ No lapas [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistēma | Pakotne |
 |---|---|
-| Windows 10/11, 64 bitu | `YA-NEC-<versija>-win-x64.zip` |
-| Windows 10/11, 32 bitu | `YA-NEC-<versija>-win-x86.zip` |
-| Windows uz ARM (Snapdragon) | `YA-NEC-<versija>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versija>-win7-x64.zip` vai `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versija>-linux-x64.zip` |
-| Raspberry Pi OS 64 bitu un citas aarch64 Linux | `YA-NEC-<versija>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bitu, armv7l | `YA-NEC-<versija>-linux-arm.zip` |
-| Alpine un musl Linux | `YA-NEC-<versija>-linux-musl-x64.zip` vai `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versija>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versija>-osx-x64.zip` |
+| Windows 10/11, 64 bitu | `YA-NEC-<versija>-windows-x64-portatile.zip` |
+| Windows 10/11, 32 bitu | `YA-NEC-<versija>-windows-x86-portatile.zip` |
+| Windows uz ARM (Snapdragon) | `YA-NEC-<versija>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versija>-windows7-x64-portatile.zip` vai `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versija>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bitu un citas aarch64 Linux | `YA-NEC-<versija>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bitu, armv7l | `YA-NEC-<versija>-linux-armv7l.tar.gz` |
+| Alpine un musl Linux | `YA-NEC-<versija>-alpine-x64.tar.gz` vai `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versija>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versija>-mac-intel-app.zip` |
 
 Blakus katram zip ir kontrolsumma `.sha256` lejupielādes pārbaudei.
 
@@ -30,7 +30,7 @@ Izpakojiet zip mapē ar rakstīšanas tiesībām, piemēram, `C:\YA-NEC` (nevis 
 ## Linux un Raspberry Pi
 
 ```
-unzip YA-NEC-<versija>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versija>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Izpakojiet zip, piemēram, mapē `~/YA-NEC`. Programmu nav parakstījis Apple, t
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Mazi ekrāni

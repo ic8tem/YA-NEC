@@ -8,16 +8,16 @@ Na página [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Sistema | Pacote |
 |---|---|
-| Windows 10/11 64 bits | `YA-NEC-<versão>-win-x64.zip` |
-| Windows 10/11 32 bits | `YA-NEC-<versão>-win-x86.zip` |
-| Windows em ARM (Snapdragon) | `YA-NEC-<versão>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versão>-win7-x64.zip` ou `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<versão>-linux-x64.zip` |
-| Raspberry Pi OS 64 bits e outros Linux aarch64 | `YA-NEC-<versão>-linux-arm64.zip` |
-| Raspberry Pi OS 32 bits, armv7l | `YA-NEC-<versão>-linux-arm.zip` |
-| Alpine e Linux com musl | `YA-NEC-<versão>-linux-musl-x64.zip` ou `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<versão>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<versão>-osx-x64.zip` |
+| Windows 10/11 64 bits | `YA-NEC-<versão>-windows-x64-portatile.zip` |
+| Windows 10/11 32 bits | `YA-NEC-<versão>-windows-x86-portatile.zip` |
+| Windows em ARM (Snapdragon) | `YA-NEC-<versão>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<versão>-windows7-x64-portatile.zip` ou `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<versão>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64 bits e outros Linux aarch64 | `YA-NEC-<versão>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32 bits, armv7l | `YA-NEC-<versão>-linux-armv7l.tar.gz` |
+| Alpine e Linux com musl | `YA-NEC-<versão>-alpine-x64.tar.gz` ou `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<versão>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<versão>-mac-intel-app.zip` |
 
 Ao lado de cada zip está a impressão digital `.sha256` para verificar a download.
 
@@ -30,7 +30,7 @@ Extrair o zip para uma pasta com permissão de escrita, por exemplo `C:\YA-NEC` 
 ## Linux e Raspberry Pi
 
 ```
-unzip YA-NEC-<versão>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<versão>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Extrair o zip, por exemplo para `~/YA-NEC`. O programa não está assinado pela 
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Telas pequenos

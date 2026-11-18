@@ -8,16 +8,16 @@ Zo stránky [Releases](https://github.com/ic8tem/YA-NEC/releases):
 
 | Systém | Balík |
 |---|---|
-| Windows 10/11 64-bitové | `YA-NEC-<verzia>-win-x64.zip` |
-| Windows 10/11 32-bitové | `YA-NEC-<verzia>-win-x86.zip` |
-| Windows na ARM (Snapdragon) | `YA-NEC-<verzia>-win-arm64.zip` |
-| Windows 7 SP1, 8, 8.1 | `YA-NEC-<verzia>-win7-x64.zip` alebo `-win7-x86.zip` |
-| Linux x86_64 | `YA-NEC-<verzia>-linux-x64.zip` |
-| Raspberry Pi OS 64-bitový a iné Linuxy aarch64 | `YA-NEC-<verzia>-linux-arm64.zip` |
-| Raspberry Pi OS 32-bitový, armv7l | `YA-NEC-<verzia>-linux-arm.zip` |
-| Alpine a Linuxy s musl | `YA-NEC-<verzia>-linux-musl-x64.zip` alebo `-linux-musl-arm64.zip` |
-| Mac Apple Silicon (M1-M4) | `YA-NEC-<verzia>-osx-arm64.zip` |
-| Mac Intel | `YA-NEC-<verzia>-osx-x64.zip` |
+| Windows 10/11 64-bitové | `YA-NEC-<verzia>-windows-x64-portatile.zip` |
+| Windows 10/11 32-bitové | `YA-NEC-<verzia>-windows-x86-portatile.zip` |
+| Windows na ARM (Snapdragon) | `YA-NEC-<verzia>-windows-arm64-portatile.zip` |
+| Windows 7 SP1, 8, 8.1 | `YA-NEC-<verzia>-windows7-x64-portatile.zip` alebo `-windows7-x86-portatile.zip` |
+| Linux x86_64 | `YA-NEC-<verzia>-linux-x64.tar.gz` |
+| Raspberry Pi OS 64-bitový a iné Linuxy aarch64 | `YA-NEC-<verzia>-linux-arm64.tar.gz` |
+| Raspberry Pi OS 32-bitový, armv7l | `YA-NEC-<verzia>-linux-armv7l.tar.gz` |
+| Alpine a Linuxy s musl | `YA-NEC-<verzia>-alpine-x64.tar.gz` alebo `-alpine-arm64.tar.gz` |
+| Mac Apple Silicon (M1-M4) | `YA-NEC-<verzia>-mac-apple-silicon-app.zip` |
+| Mac Intel | `YA-NEC-<verzia>-mac-intel-app.zip` |
 
 Vedľa každého zipu je kontrolný súčet `.sha256` na overenie stiahnutia.
 
@@ -30,7 +30,7 @@ Rozbaľte zip do priečinka s právom zápisu, napr. `C:\YA-NEC` (nie do `C:\Pro
 ## Linux a Raspberry Pi
 
 ```
-unzip YA-NEC-<verzia>-linux-x64.zip -d ~
+tar -xzf YA-NEC-<verzia>-linux-x64.tar.gz -C ~
 cd ~/YA-NEC
 chmod +x YA-NEC
 ./YA-NEC
@@ -44,7 +44,7 @@ Rozbaľte zip, napr. do `~/YA-NEC`. Program nie je podpísaný spoločnosťou Ap
 
 ```
 xattr -dr com.apple.quarantine ~/YA-NEC
-~/YA-NEC/YA-NEC
+open ~/YA-NEC/YA-NEC.app
 ```
 
 ## Malé obrazovky
