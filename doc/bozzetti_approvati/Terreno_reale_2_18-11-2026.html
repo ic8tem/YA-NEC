@@ -1,0 +1,225 @@
+<title>Bozzetto Terreno reale 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC: Diagrammi > Terreno reale, versione 2: colonna di comandi a sinistra (sito, profilo, antenna, calcolo, statistiche), grafici a destra */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --selbg:#d9e6fb; --nota:#e8f0fd; --giallo:#fff4c2; --gialb:#d7a400; --nuovo:#e7f6ec; --nuovob:#2f9e55;
+  --c1:#1f6fd1; --c2:#d9531a; --c3:#13965a; --c4:#7c3aed; --flat:#7a8594; --terra:#a07a4a; --stat:#c9d6ea;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --giallo:#40360f; --gialb:#e0b52a; --nuovo:#16301f; --nuovob:#5cc983;
+  --c1:#5fa8ff; --c2:#ff9650; --c3:#3ddc84; --c4:#b496ff; --flat:#9aa6b4; --terra:#c39a68; --stat:#2c3b52; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --giallo:#40360f; --gialb:#e0b52a; --nuovo:#16301f; --nuovob:#5cc983;
+  --c1:#5fa8ff; --c2:#ff9650; --c3:#3ddc84; --c4:#b496ff; --flat:#9aa6b4; --terra:#c39a68; --stat:#2c3b52; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1400px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:118ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.fascia{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.corpo{display:grid;grid-template-columns:340px minmax(0,1fr)}
+@media (max-width:980px){.corpo{grid-template-columns:1fr}}
+.sx{border-right:1px solid var(--line);padding:10px 12px;display:grid;gap:10px;align-content:start}
+@media (max-width:980px){.sx{border-right:0;border-bottom:1px solid var(--line)}}
+.sez{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.sez h2{font-size:.88rem;margin:0 0 6px;display:flex;gap:6px;align-items:center}
+.nv{font-size:.68rem;font-weight:700;color:var(--nuovob);background:var(--nuovo);border:1px solid var(--nuovob);border-radius:999px;padding:0 6px}
+.riga{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}
+label,.mut{font-size:.82rem;color:var(--mut)}
+select,input[type=text]{font:inherit;font-size:.83rem;padding:2px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink)}
+.bt{font:inherit;font-size:.82rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:3px 9px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.pill{font:inherit;font-size:.8rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:2px 9px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.bt:focus-visible,.pill:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.giallo{background:var(--giallo);border-left:4px solid var(--gialb);padding:5px 8px;border-radius:4px;font-size:.8rem;line-height:1.4}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:5px 8px;border-radius:4px;font-size:.8rem;line-height:1.4}
+table.t{border-collapse:collapse;width:100%;font-size:.8rem}
+.t th,.t td{border:1px solid var(--line);padding:3px 6px;text-align:right;white-space:nowrap}
+.t th:first-child,.t td:first-child{text-align:left}
+.t thead th{background:var(--bg)}
+.dx{padding:10px 12px;display:grid;gap:12px;min-width:0}
+.g{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.g h3{font-size:.86rem;margin:0 0 4px}
+.due{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px}
+@media (max-width:760px){.due{grid-template-columns:1fr}}
+svg{display:block;width:100%;height:auto}
+svg text{font:10px var(--f);fill:var(--mut)}
+.ax{stroke:var(--line);fill:none}
+.k{display:inline-block;width:11px;height:3px;vertical-align:3px;margin-right:4px;border-radius:2px}
+.leg{display:flex;flex-wrap:wrap;gap:12px;font-size:.78rem;color:var(--mut)}
+.wrap{overflow-x:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 18px;line-height:1.5}
+.note h3{margin:4px 0 6px;font-size:1rem}
+.note li{margin:3px 0}
+.note table{margin:6px 0}
+</style>
+
+<main>
+  <h1>Bozzetto – Terreno reale 2 (YA-NEC 1.5)</h1>
+  <p class="sub">La pagina Diagrammi &gt; Terreno reale cresce con le idee del manuale di HFTA (N6BV) e di HFTA-X (EA5RA). Le novità hanno l'etichetta <span class="nv">NUOVO</span>. Esempio: la 4 el. 20 m del modello aperto da JN70CN verso il Giappone, due posizioni della torre, fino a quattro curve sovrapposte; i numeri sono indicativi. Le pillole si possono cliccare.</p>
+
+  <div class="app">
+    <div class="tabs"><span>Struttura 3D</span><span>Frequenza</span><span class="on">Diagrammi</span><span>Confronto</span><span>Smith</span><span>Rumore/GT/Stack</span><span>Correnti</span><span>NEC</span><span>Calcolatori</span></div>
+    <div class="fascia"><button class="pill" type="button">Diagrammi</button><button class="pill" type="button">Tabelle</button><button class="pill on" type="button">Terreno reale</button><button class="pill" type="button">Ricezione (RDF)</button><button class="pill" type="button">Tolleranze</button></div>
+    <div class="corpo">
+      <!-- comandi -->
+      <aside class="sx">
+        <div class="sez">
+          <h2>1 · Sito</h2>
+          <div class="riga"><label>Locatore</label><input type="text" value="JN70CN54LM" size="11"><button class="bt" type="button">Scegli sulla mappa</button></div>
+          <div class="riga"><label>DEM</label><select><option>TINITALY 1.1 (10 m)</option><option>SRTM1 (30 m)</option><option>Copernicus GLO-30</option><option>EU-DEM (25 m)</option></select> <span class="nv">NUOVO</span></div>
+          <div class="riga"><label>Quota della base: DEM</label><b>58,4 m</b><label>reale</label><input type="text" value="62" size="4"><label>m</label> <span class="nv">NUOVO</span></div>
+          <div class="giallo">Il DEM vede tetti e alberi: TINITALY e SRTM differiscono di 6,8 m nei primi 300 m verso il Giappone. <a href="#" style="color:inherit">Confronta i DEM</a></div>
+          <div class="riga"><label><input type="checkbox" checked> Seconda torre (T2)</label><input type="text" value="40" size="3"><label>m a</label><input type="text" value="221" size="3"><label>° · quote</label><input type="text" value="= T1" size="4"> <span class="nv">NUOVO</span></div>
+          <div class="mut">Avviso se T1 e T2 cadono nella stessa cella del DEM (la differenza sarebbe rumore).</div>
+        </div>
+        <div class="sez">
+          <h2>2 · Profilo</h2>
+          <div class="riga"><label>Distanza max</label><input type="text" value="5000" size="5"><label>m · passo</label><input type="text" value="10" size="3"><label>m</label></div>
+          <div class="riga"><label>Rotte</label><button class="pill" type="button">USA E</button><button class="pill" type="button">USA W</button><button class="pill on" type="button">Giappone 41°</button><button class="pill" type="button">VK4</button><button class="pill" type="button">PY5</button><button class="pill" type="button">Caraibi</button></div>
+          <div class="riga"><label>Oppure</label><select><option>da file .PRO (HFTA)</option><option>da HorizonProfiler (.csv/.hpr)</option></select> <span class="nv">NUOVO</span><label>unità</label><select><option>automatiche (piedi se senza intestazione)</option><option>metri</option></select></div>
+          <div class="riga"><button class="bt" type="button">Sposta la torre…</button><input type="text" value="40" size="3"><label>m indietro</label> <span class="nv">NUOVO</span></div>
+          <div class="riga"><label>Esporta .PRO</label><select><option>questa rotta</option><option>36 azimut (ogni 10°)</option><option>72 azimut (ogni 5°)</option><option>360 azimut</option></select><button class="bt" type="button">Esporta</button> <span class="nv">NUOVO</span></div>
+        </div>
+        <div class="sez">
+          <h2>3 · Antenna</h2>
+          <div class="riga"><label>Diagramma</label><b>NEC del modello aperto</b><span class="mut">(4 el. 20 m, 8,6 dBi in spazio libero)</span></div>
+          <div class="wrap"><table class="t">
+            <thead><tr><th>Curva</th><th>Terreno</th><th>Quote m</th><th>Fase</th></tr></thead>
+            <tbody>
+              <tr><td><span class="k" style="background:var(--c1)"></span>1</td><td>JN70CN · 41°</td><td>18</td><td>—</td></tr>
+              <tr><td><span class="k" style="background:var(--c2)"></span>2</td><td>JN70CN · 41°</td><td>27 / 18 / 9</td><td>0 / 0 / 0</td></tr>
+              <tr><td><span class="k" style="background:var(--c3)"></span>3</td><td>torre −40 m · 41°</td><td>18</td><td>—</td></tr>
+              <tr><td><span class="k" style="background:var(--flat)"></span>4</td><td>piatto (riferimento)</td><td>18</td><td>—</td></tr>
+            </tbody></table></div>
+          <div class="mut" style="margin-top:4px">Fino a 4 curve (terreno, quote, fase 0/180 per antenna, come «90*» di HFTA) <span class="nv">NUOVO</span>. Negli stack l'accoppiamento è calcolato dal NEC (HFTA non lo fa).</div>
+          <div class="riga"><label>Polarizzazione</label><select><option>dal modello (orizzontale)</option><option>verticale (sperimentale)</option></select> <span class="nv">NUOVO</span></div>
+          <div class="riga"><label>Raggi</label><select><option>avanti e indietro (dipolo, verticale)</option><option>solo avanti (come HFTA)</option></select> <span class="nv">NUOVO</span></div>
+        </div>
+        <div class="sez">
+          <h2>4 · Calcolo e statistiche</h2>
+          <div class="riga"><label>Diffrazione</label><select><option>su più creste</option><option>sulla cresta più alta</option><option>spenta</option></select> <span class="nv">NUOVO</span></div>
+          <div class="riga"><label>Suolo</label><select><option>medio 5 mS/m, εr 13</option></select><label>Mare</label><select><option>rugosità 0,25 m</option></select></div>
+          <div class="riga"><label><input type="checkbox" checked> Acqua lungo il profilo dalla mappa (OpenStreetMap)</label><label>mare sotto</label><input type="text" value="2" size="2"><label>m</label> <span class="nv">NUOVO</span></div>
+          <div class="riga"><button class="bt" type="button">+ tratto di suolo</button><span class="mut">da … a … m: mare, lago, palude</span> <span class="nv">NUOVO</span></div>
+          <div class="box">Verso il Giappone il mare comincia a 310 m: dal punto 31 in poi il suolo è acqua salata (5 S/m, εr 81).</div>
+          <div class="riga"><label>Statistiche</label><select><option>file .PRN dell'ARRL (W-MA-JA.PRN)</option><option>nessuna (media sul settore)</option></select> <span class="nv">NUOVO</span></div>
+          <div class="riga"><label>Settore della figura di merito</label><select><option>HFTA classico 1–34°</option><option>1–15°</option><option>0–45°</option><option>0–75° (salti corti: le statistiche ARRL arrivano a 70°)</option></select> <span class="nv">NUOVO</span></div>
+          <div class="riga"><label>Controllo artefatti</label><select><option>quota ±0,3 m (come N6BV con ±1 piede)</option><option>spento</option></select> <span class="nv">NUOVO</span></div>
+          <div class="riga"><button class="bt a" type="button">Calcola</button><button class="bt" type="button">Ottimizza la quota…</button><button class="bt" type="button">Ottimizza la coppia (stack di 2)…</button> <span class="nv">NUOVO</span></div>
+        </div>
+      </aside>
+
+      <!-- risultati -->
+      <section class="dx">
+        <div class="g">
+          <h3>Elevazione verso il Giappone, 14,2 MHz (dBi), con le statistiche degli angoli di arrivo (barre, %)</h3>
+          <svg viewBox="0 0 620 230" role="img" aria-label="diagramma di elevazione con quattro curve e le barre delle statistiche">
+            <rect class="ax" x="40" y="10" width="560" height="180"/>
+            <g class="ax"><line x1="40" y1="55" x2="600" y2="55"/><line x1="40" y1="100" x2="600" y2="100"/><line x1="40" y1="145" x2="600" y2="145"/></g>
+            <text x="8" y="14">15</text><text x="8" y="59">10</text><text x="12" y="104">5</text><text x="12" y="149">0</text><text x="8" y="194">−5</text>
+            <text x="38" y="204">0°</text><text x="195" y="204">10°</text><text x="358" y="204">20°</text><text x="522" y="204">30°</text><text x="560" y="218">elevazione</text>
+            <!-- barre statistiche (asse destro 0-15 %) -->
+            <g fill="var(--stat)">
+              <rect x="56" y="160" width="13" height="30"/><rect x="72" y="120" width="13" height="70"/><rect x="88" y="98" width="13" height="92"/><rect x="104" y="104" width="13" height="86"/><rect x="120" y="120" width="13" height="70"/><rect x="136" y="134" width="13" height="56"/><rect x="152" y="146" width="13" height="44"/><rect x="168" y="154" width="13" height="36"/><rect x="184" y="162" width="13" height="28"/><rect x="200" y="168" width="13" height="22"/><rect x="216" y="174" width="13" height="16"/><rect x="232" y="178" width="13" height="12"/><rect x="248" y="182" width="13" height="8"/><rect x="264" y="185" width="13" height="5"/>
+            </g>
+            <text x="604" y="14">15 %</text><text x="604" y="194">0</text>
+            <path d="M40 175 C70 110 100 55 140 40 C180 30 220 38 260 60 C300 85 340 110 380 128 C440 150 520 170 600 182" fill="none" stroke="var(--flat)" stroke-width="1.6" stroke-dasharray="5 3"/>
+            <path d="M40 160 C60 90 85 42 120 30 C160 24 200 40 240 70 C270 90 300 92 330 110 C380 140 470 160 600 176" fill="none" stroke="var(--c1)" stroke-width="2"/>
+            <path d="M40 150 C58 70 80 22 108 18 C140 16 160 60 180 92 C200 120 215 60 240 50 C270 44 300 100 330 140 C380 170 480 165 600 178" fill="none" stroke="var(--c2)" stroke-width="2"/>
+            <path d="M40 178 C70 120 100 64 140 46 C180 36 220 42 260 66 C300 88 340 112 380 130 C440 152 520 170 600 182" fill="none" stroke="var(--c3)" stroke-width="2"/>
+          </svg>
+          <div class="leg"><span><span class="k" style="background:var(--c1)"></span>1 · 18 m · FOM 9,8 dBi</span><span><span class="k" style="background:var(--c2)"></span>2 · stack 27/18/9 · FOM 11,6 dBi</span><span><span class="k" style="background:var(--c3)"></span>3 · torre −40 m · FOM 8,9 dBi</span><span><span class="k" style="background:var(--flat)"></span>4 · piatto 18 m · FOM 8,7 dBi</span><span><span class="k" style="background:var(--stat);height:9px;vertical-align:0"></span>% del tempo in cui la banda è aperta a quell'angolo</span></div>
+          <div class="box" style="margin-top:6px">FOM come HFTA: media del guadagno pesata con la percentuale di ogni angolo nel settore scelto. Controllo artefatti: la curva 2 cambia di 1,2 dB a 9° con ±0,3 m → segnata in giallo nella tabella.</div>
+        </div>
+
+        <div class="due">
+          <div class="g">
+            <h3>Profilo verso 41° (TINITALY) con la torre spostata</h3>
+            <svg viewBox="0 0 360 170" role="img" aria-label="profilo del terreno con la torre e lo spostamento">
+              <rect class="ax" x="30" y="10" width="320" height="130"/>
+              <path d="M30 70 L60 74 L90 90 L120 120 L150 128 L190 124 L230 110 L260 96 L290 104 L320 92 L350 88 L350 140 L30 140Z" fill="var(--terra)" fill-opacity=".35" stroke="var(--terra)"/>
+              <line x1="30" y1="70" x2="30" y2="30" stroke="var(--c1)" stroke-width="3"/><circle cx="30" cy="30" r="4" fill="var(--c1)"/>
+              <line x1="18" y1="70" x2="18" y2="30" stroke="var(--c3)" stroke-width="3" stroke-dasharray="3 2"/><circle cx="18" cy="30" r="4" fill="var(--c3)"/>
+              <path d="M30 30 L350 60" stroke="var(--mut)" stroke-dasharray="2 3"/>
+              <text x="40" y="26">antenna 18 m</text><text x="250" y="86">cresta 1,9 km</text><text x="34" y="156">0</text><text x="170" y="156">2,5 km</text><text x="320" y="156">5 km</text>
+            </svg>
+            <div class="mut">Cresta a 1,9 km: diffrazione su 2 creste (la seconda a 4,1 km, coperta).</div>
+          </div>
+          <div class="g">
+            <h3>Ottimizza la quota <span class="nv">NUOVO</span></h3>
+            <div class="wrap"><table class="t">
+              <thead><tr><th>Quota m</th><th>Giappone</th><th>USA E</th><th>VK4</th><th>Media</th></tr></thead>
+              <tbody>
+                <tr><td>12</td><td>9,1</td><td>8,4</td><td>7,9</td><td>8,5</td></tr>
+                <tr><td>15</td><td>9,6</td><td>9,0</td><td>8,8</td><td>9,1</td></tr>
+                <tr><td><b>18</b></td><td>9,8</td><td>9,3</td><td>9,4</td><td><b>9,5</b></td></tr>
+                <tr><td>21</td><td>9,9</td><td>9,1</td><td>9,5</td><td>9,5</td></tr>
+                <tr><td>24</td><td>9,7</td><td>8,8</td><td>9,6</td><td>9,4</td></tr>
+              </tbody></table></div>
+            <div class="mut" style="margin-top:4px">FOM in dBi per rotta; le rotte e il loro peso si scelgono. La quota consigliata è la più bassa entro 0,2 dB dalla migliore.</div>
+          </div>
+        </div>
+
+        <div class="g">
+          <h3>Uscite</h3>
+          <div class="riga">
+            <button class="bt" type="button">OUT.PRN (ogni 1°)</button>
+            <button class="bt" type="button">antenna.13 per VOACAP</button> <span class="nv">NUOVO</span>
+            <button class="bt" type="button">antenna.14 per VOACAP</button> <span class="nv">NUOVO</span>
+            <button class="bt" type="button">Esporta .PRO</button>
+            <button class="bt" type="button">Relazione PDF</button>
+            <button class="bt" type="button">CSV</button>
+            <button class="bt" type="button">Manda al Confronto</button>
+          </div>
+          <div class="mut">antenna.13 e .14: diagramma da 0 a 90° di elevazione per ogni azimut (rosa ogni 10° o ogni 5°), nel formato dei file antenna di VOACAP.</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>Da dove viene ogni novità</h3>
+    <table class="t">
+      <thead><tr><th>Novità</th><th>Fonte</th><th>Differenza in YA-NEC</th></tr></thead>
+      <tbody>
+        <tr><td>Lettura .PRO, piedi o metri, fino a 150 punti</td><td>manuale HFTA 1.04, app. A (N6BV); profili K5ZD per l'autotest</td><td>nessun limite di punti; esportazione anche in 360 azimut (idea di HFTA-X)</td></tr>
+        <tr><td>Statistiche .PRN e figura di merito pesata</td><td>manuale HFTA (W1-MA-EU.PRN, CD dell'ARRL Antenna Book 19ª-21ª)</td><td>servono i file .PRN; senza, resta la media sul settore</td></tr>
+        <tr><td>Settore della figura di merito a scelta</td><td>HFTA-X (EA5RA)</td><td>«HFTA classico» 1–34° di partenza</td></tr>
+        <tr><td>Fino a 4 curve sovrapposte, terreno piatto di riferimento, fase 0/180</td><td>manuale HFTA («FLAT.PRO», «90*»)</td><td>il diagramma e lo stack vengono dal NEC, con l'accoppiamento</td></tr>
+        <tr><td>Sposta la torre</td><td>manuale HFTA («Move Tower», idea di W1VT)</td><td>uguale</td></tr>
+        <tr><td>Diffrazione su più creste</td><td>ARRL Antenna Book 24ª, 14.21-14.28; manuale HFTA</td><td>prima solo la cresta più alta</td></tr>
+        <tr><td>Controllo artefatti a ±0,3 m</td><td>manuale HFTA (confronto a ±1 piede)</td><td>automatico, segnalato in giallo</td></tr>
+        <tr><td>DEM a scelta, quota reale della base</td><td>HFTA-X; manuale HFTA sul radar che vede gli alberi</td><td>per l'Italia TINITALY 10 m resta il primo</td></tr>
+        <tr><td>Ottimizza la quota su più rotte</td><td>HFTA-X</td><td>usa la scansione delle quote che YA-NEC ha già</td></tr>
+        <tr><td>antenna.13 / antenna.14</td><td>HFTASweep (N1FD), MAKEVOA, HFTA-X</td><td>dal diagramma NEC, non dal modello interno</td></tr>
+        <tr><td>Verticale (sperimentale), raggi anche indietro</td><td>HFTA-X (due raggi, NEC-2, Knight e Thoday); manuale HFTA (solo avanti)</td><td>da validare con le misure costiere: fonte da cercare</td></tr>
+        <tr><td>Seconda torre T2 con avviso «stessa cella del DEM»</td><td>HFTA-X</td><td>T2 va anche nella linguetta Confronto</td></tr>
+        <tr><td>Acqua lungo il profilo da OpenStreetMap, tratti di suolo</td><td>HFTA-X (idea di EA5RA)</td><td>per Capri conta molto: il mare a poche centinaia di metri; YA-NEC usa già la mappa OSM</td></tr>
+        <tr><td>Settore fino a 75°, coppia di quote per lo stack di 2</td><td>HFTA-X</td><td>la coppia usa il NEC con l'accoppiamento</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Precisione: N6BV dichiara ±3 dB per HFTA; lo scrivo nel manuale di calcolo accanto ai nostri casi di prova.</li>
+      <li>Statistiche: HFTA-X dice che l'installazione di HFTA 1.04 contiene le statistiche ARRL di 175 località (file .PRN). Servono quei file: YA-NEC sceglie la località più vicina e la regione dall'azimut. Non uso le statistiche ricalcolate da HFTA-X con VOACAP (nessuna licenza dichiarata).</li>
+      <li>Autotest: i profili K5ZD letti come .PRO devono dare lo stesso profilo; il terreno piatto deve coincidere con il NEC su terreno reale; collina di 200 piedi a 3 miglia = 0,76° (esempio N1FD).</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+document.querySelectorAll('.riga, .fascia').forEach(function(r){
+  var ps=r.querySelectorAll('.pill'); ps.forEach(function(p){p.addEventListener('click',function(){ps.forEach(function(x){x.classList.toggle('on',x===p)});});});
+});
+document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+</script>
