@@ -191,11 +191,14 @@ namespace YaNec.Engine
         // non vengono scritte. Regola (0.3.5): se le lettere usate nelle formule sono tante quante le righe delle
         // variabili, si assegnano in ordine alfabetico; altrimenti A, B, D, E, ... in ordine, con un avviso.
         // 0.4.8 (collaudo 0.4.7, 13/11/2026 21:25): le variabili di AutoEZ stanno nelle righe 2-23 del file e la lettera dipende dalla RIGA,
-        // non dall'ordine: A, B, D, E, G, H, I, J, K, L, M, N, O, P, Q, S, T, U, V, W, X, Y (niente C, F, R, Z). Ricavato dai file di AC6LA:
+        // non dall'ordine: A, B, D, E, G, H, I, J, K, L, M, N, O, P, Q, S, T, U, V, W, X, Y (niente C, F, R, Z; dalla 1.5 niente C, F, R, W: vedi sotto). Ricavato dai file di AC6LA:
         // "LPDA by Tau+Sigma" usa E = tau (riga 5) e G = sigma (riga 6); "Vee With Formulas" usa A (riga 2), H (riga 7) e L (riga 11);
         // le righe vuote non spostano le lettere. Le variabili scritte come formula si risolvono in piu' passate (una puo' usare l'altra);
         // UnitsFact = metri per unita' delle coordinate.
-        const string LettereWeq = "ABDEGHIJKLMNOPQSTUVWXY";
+        // 1.5 (prova .weq di IC8TEM, 18/11/2026): anche la W manca. OCF Dipole di AC6LA usa V per la riga 20 e X per la riga 21, Fan Dipole
+        // Parallel Y per la riga 22 e Fan Dipole Splayed Z per la riga 23; il blocco seguente del foglio comincia da AA. Prima le righe
+        // 21-23 diventavano W, X, Y (una lettera indietro).
+        const string LettereWeq = "ABDEGHIJKLMNOPQSTUVXYZ";
 
         static Dictionary<string, double> WeqVariables(string[][] rows, NecModel m, double unitaM)
         {
