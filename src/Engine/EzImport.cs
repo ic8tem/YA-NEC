@@ -95,6 +95,88 @@ namespace YaNec.Engine
             }
         }
 
+        /// <summary>1.5: condizione di Excel con AND(...), OR(...), NOT(...) e confronti; "Freq" = frequenza di calcolo (chiave FREQ).</summary>
+        static bool CondizioneComposta(string cond, Dictionary<string, double> vars)
+        {
+            cond = cond.Trim();
+            Match f = Regex.Match(cond, @"^(AND|OR|NOT)\s*\((.*)\)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            if (f.Success)
+            {
+                List<string> parti = new List<string>(); int liv = 0, ini = 0; string corpo = f.Groups[2].Value;
+                for (int i = 0; i < corpo.Length; i++)
+                {
+                    if (corpo[i] == '(') liv++; else if (corpo[i] == ')') liv--;
+                    else if (corpo[i] == ',' && liv == 0) { parti.Add(corpo.Substring(ini, i - ini)); ini = i + 1; }
+                }
+                parti.Add(corpo.Substring(ini));
+                string op = f.Groups[1].Value.ToUpperInvariant();
+                if (op == "NOT") return !CondizioneComposta(parti[0], vars);
+                bool and = op == "AND";
+                foreach (string p in parti) { bool v = CondizioneComposta(p, vars); if (and && !v) return false; if (!and && v) return true; }
+                return and;
+            }
+            double fr;
+            string c2 = vars.TryGetValue("FREQ", out fr) ? Regex.Replace(cond, @"\bFreq\b", "(" + fr.ToString("R", CI) + ")", RegexOptions.IgnoreCase) : cond;
+            return CondizioneExcel(c2, vars);
+        }
+
+        /// <summary>1.5 (prova .weq di IC8TEM, 18/11/2026: OCF Dipole e Fan Dipole di AC6LA): funzioni di testo di Excel usate da AutoEZ
+        /// per le variabili scritte come "45d" (angolo) invece che come numero. IF(ISNUMBER(X), a, b) sceglie il ramo guardando se la
+        /// variabile X e' un numero; SUBSTITUTE(X, "d", "") e VALUE(...) ricavano il numero dal testo della variabile.</summary>
+        static string ExcelTesto(string e, Dictionary<string, string> testo, Dictionary<string, double> vars)
+        {
+            e = e.Replace("\"\"", "\"");
+            // TLParms(cella, Zo, VF, k1, k2, k3, ..., "Ro"|"VF"|"dB", ...) di AutoEZ (linee coassiali e bifilari con le perdite): YA-NEC
+            // usa Zo e VF nominali (la scheda TL e' senza perdite); "dB" = 0
+            e = Regex.Replace(e, @"TLParms\s*\(([^()]*)\)", mt =>
+            {
+                string[] a = mt.Groups[1].Value.Split(',');
+                string q = "";
+                foreach (string x in a) if (x.Trim().StartsWith("\"")) q = x.Trim().Trim('"');
+                if (a.Length < 3) return mt.Value;
+                if (q.Equals("Ro", StringComparison.OrdinalIgnoreCase)) return "(" + a[1].Trim() + ")";
+                if (q.Equals("VF", StringComparison.OrdinalIgnoreCase)) return "(" + a[2].Trim() + ")";
+                return "(0)";
+            }, RegexOptions.IgnoreCase);
+            for (int giro = 0; giro < 20; giro++)
+            {
+                Match mi = Regex.Match(e, @"IF\s*\(\s*ISNUMBER\s*\(\s*([A-Z]{1,2})\s*\)\s*,", RegexOptions.IgnoreCase);
+                if (!mi.Success) break;
+                List<string> parti = new List<string>(); int liv = 0, ini = mi.Index + mi.Length, fine = -1;
+                for (int i = ini; i < e.Length; i++)
+                {
+                    char ch = e[i];
+                    if (ch == '"') { int j = e.IndexOf('"', i + 1); if (j < 0) break; i = j; continue; }
+                    if (ch == '(') liv++;
+                    else if (ch == ')') { if (liv == 0) { parti.Add(e.Substring(ini, i - ini)); fine = i; break; } liv--; }
+                    else if (ch == ',' && liv == 0) { parti.Add(e.Substring(ini, i - ini)); ini = i + 1; }
+                }
+                if (fine < 0 || parti.Count < 1) break;
+                bool numero = vars.ContainsKey(mi.Groups[1].Value.ToUpperInvariant());
+                string ramo = numero ? parti[0] : (parti.Count > 1 ? parti[1] : "0");
+                e = e.Substring(0, mi.Index) + "(" + ramo.Trim() + ")" + e.Substring(fine + 1);
+            }
+            e = Regex.Replace(e, @"SUBSTITUTE\s*\(\s*([A-Z]{1,2})\s*,\s*""([^""]*)""\s*,\s*""([^""]*)""\s*\)", mt =>
+            {
+                string n = mt.Groups[1].Value.ToUpperInvariant(), t;
+                double v;
+                if (vars.TryGetValue(n, out v)) return "(" + v.ToString("R", CI) + ")";
+                if (!testo.TryGetValue(n, out t)) throw new NecException("SUBSTITUTE su " + n + ": variabile vuota");
+                t = mt.Groups[2].Value.Length > 0 ? t.Replace(mt.Groups[2].Value, mt.Groups[3].Value) : t;
+                if (!double.TryParse(t.Trim(), NumberStyles.Float, CI, out v)) throw new NecException("SUBSTITUTE su " + n + ": \"" + t + "\" non e' un numero");
+                return "(" + v.ToString("R", CI) + ")";
+            }, RegexOptions.IgnoreCase);
+            return Regex.Replace(e, @"(?<![A-Za-z_])VALUE\s*\(", "(", RegexOptions.IgnoreCase);
+        }
+
+        /// <summary>Nome della colonna di Excel (1 = A, 27 = AA, 59 = BG).</summary>
+        static string Colonna(int n)
+        {
+            string r = "";
+            while (n > 0) { int k = (n - 1) % 26; r = (char)('A' + k) + r; n = (n - 1) / 26; }
+            return r;
+        }
+
         static string Cell(string[] c, int i)
         {
             if (i >= c.Length) return "";
@@ -180,6 +262,48 @@ namespace YaNec.Engine
             for (int i = 0; i < lines.Length; i++) rows[i] = lines[i].Split('\t');
             Dictionary<string, double> cache = new Dictionary<string, double>();
             Dictionary<string, double> vars = WeqVariables(rows, m, cu);
+            // testo delle variabili (per SUBSTITUTE: "45d" = angolo in gradi)
+            Dictionary<string, string> testoVar = new Dictionary<string, string>();
+            for (int i = 0; i < LettereWeq.Length && i + 1 < rows.Length; i++) { string t = Cell(rows[i + 1], 0); if (t.Length > 0 && !t.StartsWith("=")) testoVar[LettereWeq[i].ToString()] = t; }
+            // 1.5: celle nascoste di AutoEZ ("Calculated values. Do not modify", colonna U del foglio Variables): la cella della riga n si
+            // chiama come la colonna 47 + n di Excel (riga 12 = BG, 13 = BH, ...), ricavato dalle formule di OCF Dipole e Fan Dipole di AC6LA
+            // (BG = altezza del punto di alimentazione =K, BH/BI = lati, BJ/BK = angoli che usano BG, BH, BI)
+            {
+                Dictionary<string, string> nascoste = new Dictionary<string, string>();
+                for (int li = 1; li < rows.Length && li < 60; li++)
+                {
+                    string t = Cell(rows[li], 20);
+                    if (t.Length == 0 || Cell(rows[li], 0) == "Controls") continue;
+                    double dd;
+                    if (t.StartsWith("=") || double.TryParse(t, NumberStyles.Float, CI, out dd)) nascoste[Colonna(47 + li + 1)] = t;
+                }
+                List<string> attese = new List<string>(nascoste.Keys);
+                for (int giro = 0; giro < 40 && attese.Count > 0; giro++)
+                {
+                    bool fatto = false;
+                    foreach (string n in attese.ToArray())
+                    {
+                        try
+                        {
+                            string t = nascoste[n];
+                            double dd;
+                            if (!double.TryParse(t, NumberStyles.Float, CI, out dd))
+                            {
+                                string e = ExcelTrig(ExcelTesto(t.Substring(1), testoVar, vars));
+                                e = Regex.Replace(e, @"\bUnitsFact\b", "(" + cu.ToString("R", CI) + ")");
+                                e = Regex.Replace(e, @"\b([A-Z]{1,2})\b(?!\s*\()", mt => { double vv; return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value; });
+                                dd = Expr.Eval(e, null);
+                            }
+                            vars[n] = dd; attese.Remove(n); fatto = true;
+                        }
+                        catch (Exception) { }
+                    }
+                    if (!fatto) break;
+                }
+                if (nascoste.Count - attese.Count > 0)
+                    m.Notes.Add("File .weq: " + (nascoste.Count - attese.Count) + " celle calcolate di AutoEZ (colonna nascosta del foglio Variables) ricostruite" +
+                        (attese.Count > 0 ? "; non calcolate: " + string.Join(", ", attese) : "") + ".");
+            }
             HashSet<string> busy = new HashSet<string>();
             double wl = 299.792458 / f;   // in metri
 
@@ -205,7 +329,7 @@ namespace YaNec.Engine
                 double d;
                 if (double.TryParse(s, NumberStyles.Float, CI, out d)) return d;
                 if (!s.StartsWith("=")) throw new NecException("valore non numerico \"" + s + "\"");
-                string e = ExcelTrig(s.Substring(1));
+                string e = ExcelTrig(ExcelTesto(s.Substring(1), testoVar, vars));
                 // Excel: INT tronca verso il basso (in YA-NEC INT arrotonda), SQRT esiste gia'
                 e = Regex.Replace(e, @"\bINT\s*\(", "FLOOR(", RegexOptions.IgnoreCase);
                 e = Regex.Replace(e, @"\$?([A-Z])\$?(\d+)\b", mt =>
@@ -214,8 +338,8 @@ namespace YaNec.Engine
                     int r = int.Parse(mt.Groups[2].Value, CI);
                     return "(" + value(r, col).ToString("R", CI) + ")";
                 });
-                // variabili di AutoEZ (una lettera sola, senza numero di riga)
-                e = Regex.Replace(e, @"\b([A-Z])\b(?!\s*\()", mt =>
+                // variabili di AutoEZ (una lettera sola, senza numero di riga) e celle nascoste (due lettere, 1.5)
+                e = Regex.Replace(e, @"\b([A-Z]{1,2})\b(?!\s*\()", mt =>
                 {
                     double vv;
                     return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value;
@@ -295,20 +419,64 @@ namespace YaNec.Engine
                 wireSegs.Add(segs);
             }
             if (tag == 0) throw new NecException("Nel file .weq non sono stati trovati fili.");
+            int fisici = tag;
+            // 1.5 (prova .weq di IC8TEM, 18/11/2026: 4Square TL, W5TX, TFD di AC6LA): fili virtuali di EZNEC (V1, V2...), punti di
+            // collegamento senza struttura per sorgenti, linee e trasformatori. Ogni filo virtuale diventa un filo di 1 segmento (lungo
+            // 0,02 lambda, sopra l'antenna e fuori dal suo ingombro) con 1 Mohm di reattanza in serie: la porta e' praticamente aperta
+            // (errore sotto 1/10000 sulle ammettenze delle linee) e il filo non porta corrente, quindi non irradia e non accoppia.
+            Dictionary<string, int> virtuali = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+            {
+                SortedSet<int> nv = new SortedSet<int>();
+                foreach (string[] c in rows)
+                    foreach (int col in new[] { 0, 2, 26, 28 })
+                    {
+                        Match mv = Regex.Match(Cell(c, col), @"^V(\d+)$", RegexOptions.IgnoreCase);
+                        if (mv.Success) nv.Add(int.Parse(mv.Groups[1].Value, CI));
+                    }
+                if (nv.Count > 0)
+                {
+                    double xmax = double.MinValue, zmax = double.MinValue, ymin = double.MaxValue, ymax = double.MinValue;
+                    foreach (GeomCard g in m.Geometry)
+                    {
+                        xmax = Math.Max(xmax, Math.Max(g.F1, g.F4)); zmax = Math.Max(zmax, Math.Max(g.F3, g.F6));
+                        ymin = Math.Min(ymin, Math.Min(g.F2, g.F5)); ymax = Math.Max(ymax, Math.Max(g.F2, g.F5));
+                    }
+                    double lv = 0.02 * wl, yc = (ymin + ymax) / 2, zc = Math.Max(zmax + 0.1 * wl, 0.1 * wl);
+                    int k = 0;
+                    foreach (int n in nv)
+                    {
+                        double x = xmax + 0.1 * wl + 0.05 * wl * k++;
+                        tag++;
+                        AddWire(m, tag, 1, new[] { x, yc - lv / 2, zc, x, yc + lv / 2, zc }, lv / 200);
+                        wireSegs.Add(1);
+                        virtuali["V" + n] = tag;
+                        m.Loads.Add(new LoadSpec { Type = 4, Tag = tag, From = 1, To = 1, F1 = 0, F2 = 1e6 });
+                    }
+                    m.Notes.Add("File .weq: " + nv.Count + " fili virtuali di EZNEC (" + string.Join(", ", virtuali.Keys) + ") come fili " + (fisici + 1) + "-" + tag +
+                        " di 1 segmento sopra l'antenna, con 1 Mohm di reattanza in serie: la porta resta aperta e il filo non irradia (non spegnere \"Usa i carichi\").");
+                }
+            }
+            // filo (numero o filo virtuale V1, V2...) di una cella; 0 = nessuno
+            Func<string, int> filo = t =>
+            {
+                int tv;
+                if (virtuali.TryGetValue(t.Trim(), out tv)) return tv;
+                double dd;
+                if (double.TryParse(t, NumberStyles.Float, CI, out dd)) return (int)Math.Round(dd);
+                return 0;
+            };
             if (ignored > 0)
                 m.Warnings.Add(ignored + " righe di fili con un'unita' sconosciuta nella prima colonna non sono state importate.");
             if (esclusi > 0)
                 m.Notes.Add(esclusi + " fili segnati come esclusi in AutoEZ (\"x\" nella prima colonna) non sono stati importati, come fa AutoEZ.");
 
-            int nCorr = 0, srcEsclusi = 0;
+            int nCorr = 0, srcEsclusi = 0, nMark = 0;
             // sorgenti: filo, %, ampiezza, fase, tipo
             for (int li = 1; li < rows.Length; li++)
             {
                 string[] c = rows[li];
                 string typ = Cell(c, 4).ToUpperInvariant();
                 if (typ != "V" && typ != "I" && typ != "SV" && typ != "SI") continue;
-                if (Regex.IsMatch(Cell(c, 0), @"^V\d+$", RegexOptions.IgnoreCase))
-                    throw new NecException("File .weq: sorgente su un filo virtuale di EZNEC (" + Cell(c, 0) + "): i fili virtuali e le reti di linee tra loro non sono ancora supportate in YA-NEC.");
                 int w;
                 double pct, amp, ph;
                 // 0.4.16 (collaudo 0.4.14: LPDA di AC6LA, sorgente "=S" sull'ultimo elemento): le celle della sorgente possono essere formule
@@ -320,14 +488,30 @@ namespace YaNec.Engine
                     if (t.StartsWith("=")) { try { return evalText(t, li + 1 - WeqRowOffset); } catch (Exception) { } }
                     return double.NaN;
                 };
-                double wd = cella(0);
-                pct = cella(1); amp = cella(2); ph = cella(3);
+                bool sv = virtuali.ContainsKey(Cell(c, 0));
+                double wd = sv ? virtuali[Cell(c, 0)] : cella(0);
+                pct = sv && Cell(c, 1).Length == 0 ? 50 : cella(1); amp = cella(2); ph = cella(3);
                 if (double.IsNaN(wd) || double.IsNaN(pct) || double.IsNaN(amp) || double.IsNaN(ph)) continue;
                 w = (int)Math.Round(wd);
                 if (Cell(c, 13).Equals("x", StringComparison.OrdinalIgnoreCase)) { srcEsclusi++; continue; }   // sorgente esclusa in AutoEZ
+                // 1.5 (prova .weq di IC8TEM, 18/11/2026: quad pentabanda di AC6LA): =IF(condizione su Freq, "", "X") = sorgente accesa solo dove la
+                // condizione e' vera; prima era ignorata e le cinque sorgenti restavano accese insieme
+                Func<double, bool> attivaA = null; string attivaTesto = null;
+                {
+                    Match mo = Regex.Match(Cell(c, 13), @"^=\s*IF\s*\((.+),\s*""+\s*,\s*""+X""+\s*\)\s*$", RegexOptions.IgnoreCase);
+                    if (mo.Success)
+                    {
+                        string cond = mo.Groups[1].Value;
+                        Dictionary<string, double> vv = new Dictionary<string, double>(vars);
+                        attivaTesto = cond;
+                        attivaA = fq => { vv["FREQ"] = fq; return CondizioneComposta(cond, vv); };
+                        try { attivaA(m.FreqMHz); } catch (Exception) { attivaA = null; m.Warnings.Add("Condizione della sorgente non capita (\"" + cond + "\"): sorgente sempre accesa."); }
+                    }
+                }
                 if (w < 1 || w > wireSegs.Count) { m.Warnings.Add("Sorgente sul filo " + w + " inesistente: ignorata."); continue; }
                 double a = ph * Math.PI / 180;
-                m.Sources.Add(new SourceSpec { Tag = w, Seg = SegOf(wireSegs[w - 1], pct), V = new Complex(amp * Math.Cos(a), amp * Math.Sin(a)) });
+                m.Sources.Add(new SourceSpec { Tag = w, Seg = SegOf(wireSegs[w - 1], pct), V = new Complex(amp * Math.Cos(a), amp * Math.Sin(a)), AttivaA = attivaA, AttivaTesto = attivaTesto });
+                if (attivaA != null) nMark++;
                 if (typ == "I" || typ == "SI") nCorr++;
             }
             // frequenze di prova di AutoEZ ("_Freq (MHz)" in fondo): se sono diverse da quella del modello EZNEC si calcola alla prima
@@ -354,12 +538,13 @@ namespace YaNec.Engine
             if (nCorr > 0 && nCorr == m.Sources.Count) m.CurrentSources = true;
             else if (nCorr > 0) m.Warnings.Add("File .weq: sorgenti di corrente e di tensione insieme: YA-NEC non le mescola, tutte calcolate come sorgenti di tensione.");
             if (srcEsclusi > 0) m.Notes.Add(srcEsclusi + " sorgenti segnate come escluse in AutoEZ (\"x\") non sono state importate.");
+            if (nMark > 0) m.Notes.Add(nMark + " sorgenti accese solo in certe bande (formule «mark out» di AutoEZ): a ogni frequenza si calcolano solo quelle accese; le altre sono filo continuo, come in EZNEC.");
             if (m.Sources.Count == 0) m.Warnings.Add("Nel file .weq non e' stata trovata nessuna sorgente.");
-            else if (m.Sources.Count == 1 && tag > 1)
+            else if (m.Sources.Count == 1 && fisici > 1)
             {
                 // antenne ripetute (stack) con una sola sorgente: le altre risultano passive
                 List<double> zs = new List<double>();
-                foreach (GeomCard g in m.Geometry) { double z = Math.Round((g.F3 + g.F6) / 2, 3); if (!zs.Contains(z)) zs.Add(z); }
+                foreach (GeomCard g in m.Geometry) { if (g.I1 > fisici) continue; double z = Math.Round((g.F3 + g.F6) / 2, 3); if (!zs.Contains(z)) zs.Add(z); }
                 if (zs.Count > 1)
                     m.Warnings.Add("Il modello ha fili a " + zs.Count + " quote diverse (antenne sovrapposte?) ma una sola sorgente: le antenne senza sorgente sono calcolate come passive.");
             }
@@ -458,7 +643,8 @@ namespace YaNec.Engine
                     }
                     int w1, w2;
                     double w1d;
-                    try { w1d = numOFormula(Cell(c, 0), li); } catch (Exception) { continue; }
+                    if (virtuali.ContainsKey(Cell(c, 0))) w1d = virtuali[Cell(c, 0)];
+                    else try { w1d = numOFormula(Cell(c, 0), li); } catch (Exception) { continue; }
                     w1 = (int)Math.Round(w1d);
                     if (w1 < 1 || w1 > wireSegs.Count) continue;
                     // colonna N: "x" o =IF(condizione, "", "X") = linea esclusa in AutoEZ
@@ -480,14 +666,16 @@ namespace YaNec.Engine
                         catch (Exception ex) { m.Warnings.Add("Stub alla riga " + (li + 1) + " del .weq non letto: " + ex.Message); }
                         continue;
                     }
-                    if (!int.TryParse(fine, NumberStyles.Integer, CI, out w2) || w2 < 1 || w2 > wireSegs.Count)
+                    w2 = filo(fine);
+                    if (w2 < 1 || w2 > wireSegs.Count)
                     {
                         m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq verso \"" + fine + "\" (filo virtuale): non importata.");
                         continue;
                     }
                     try
                     {
-                        double p1 = num(li, 1), p2 = num(li, 3), z0 = num(li, 5), vf = Cell(c, 6).Length > 0 ? num(li, 6) : 1;
+                        double p1 = Cell(c, 1).Length == 0 && w1 > fisici ? 50 : num(li, 1), p2 = Cell(c, 3).Length == 0 && w2 > fisici ? 50 : num(li, 3);
+                        double z0 = num(li, 5), vf = Cell(c, 6).Length > 0 ? num(li, 6) : 1;
                         // "Actual dist" di AutoEZ: lunghezza = distanza vera tra i due punti di collegamento
                         bool vera = Cell(c, 4).StartsWith("Actual", StringComparison.OrdinalIgnoreCase);
                         double lenM = vera ? distanza(w1, p1, w2, p2) : num(li, 4) * cu;
@@ -496,12 +684,50 @@ namespace YaNec.Engine
                             F1 = incr ? -Math.Abs(z0) : Math.Abs(z0), F2 = lenM > 0 && vf > 0 ? lenM / vf : 0 };
                         m.Networks.Add(ns);
                         ultimaTl = ns; ultimaP1 = p1; ultimaP2 = p2; ultimaVf = vf;
-                        if (Cell(c, 8).Length > 0 && num(li, 8) != 0) m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq: perdita non usata (la scheda TL e' senza perdite).");
+                        if (Cell(c, 8).Length > 0 && Cell(c, 8).IndexOf("TLParms", StringComparison.OrdinalIgnoreCase) < 0 && num(li, 8) != 0) m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq: perdita non usata (la scheda TL e' senza perdite).");
                         nLin++;
                     }
                     catch (Exception ex) { m.Warnings.Add("Linea alla riga " + (li + 1) + " del .weq non letta: " + ex.Message); }
                 }
             }
+            int nTr = 0;
+            if (ci >= 90)
+            {
+                // 1.5: tabella dei trasformatori di EZNEC (colonne AA..AG del blocco delle sorgenti): porta 1 filo e %, porta 2 filo e %,
+                // Rel Z della porta 1 e della porta 2, N/R (TFD di AC6LA: V1 -> filo 1 al 50 %, 1 : S; Complete Feed System: V2 -> V3, 25 : 100)
+                for (int li = ci - 90; li < ci - 60; li++)
+                {
+                    string[] c = rows[li];
+                    int ta = filo(Cell(c, 26)), tb = filo(Cell(c, 28));
+                    if (ta < 1 || tb < 1 || ta > wireSegs.Count || tb > wireSegs.Count) continue;
+                    try
+                    {
+                        int riga = li;
+                        Func<int, double, double> pc = (col, def) =>
+                        {
+                            string tx = Cell(c, col);
+                            double dd;
+                            if (tx.Length == 0) return def;
+                            if (double.TryParse(tx, NumberStyles.Float, CI, out dd)) return dd;
+                            return value(riga + 1 - WeqRowOffset, col);
+                        };
+                        double pa = pc(27, 50), pb = pc(29, 50), z1 = pc(30, 1), z2 = pc(31, 1);
+                        if (z1 <= 0 || z2 <= 0) throw new NecException("Rel Z non positiva");
+                        m.Trasformatori.Add(new Trasformatore { Tag1 = ta, Seg1 = SegOf(wireSegs[ta - 1], pa), Tag2 = tb, Seg2 = SegOf(wireSegs[tb - 1], pb),
+                            Z1 = 50, Z2 = 50 * z2 / z1, Inv = Cell(c, 32).StartsWith("R", StringComparison.OrdinalIgnoreCase) });
+                        nTr++;
+                    }
+                    catch (Exception ex) { m.Warnings.Add("Trasformatore alla riga " + (li + 1) + " del .weq non letto: " + ex.Message); }
+                }
+                // tabella delle reti L di EZNEC (stesse colonne nel blocco dei carichi): con AutoEZ le scrive Zmatch con formule del foglio
+                // Calculate, che non e' nel .weq
+                for (int li = ci - 60; li < ci - 30; li++)
+                    if (filo(Cell(rows[li], 26)) > 0)
+                        throw new NecException("File .weq: rete di adattamento (tabella «L Networks» di EZNEC, riga " + (li + 1) + ") scritta da AutoEZ con formule del foglio Calculate, che non e' nel .weq: non importabile.");
+            }
+            if (nTr > 0) m.Notes.Add("Dal .weq: " + nTr + " trasformatori ideali di EZNEC (rapporto delle impedenze dalla Rel Z delle due porte).");
+            if (lines.Length > 0 && Array.Exists(lines, l => l.IndexOf("TLParms", StringComparison.OrdinalIgnoreCase) >= 0))
+                m.Notes.Add("File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.");
             if (nCar + nLin > 0) m.Notes.Add("Dal .weq: " + nCar + " carichi e " + nLin + " linee.");
             if (carEsclusi > 0) m.Notes.Add(carEsclusi + " carichi segnati come esclusi in AutoEZ (\"x\") non sono stati importati.");
             m.Warnings.Add("Il terreno del file .weq non e' nel file (AutoEZ usa quello del modello EZNEC): controllare il menu Terreno.");

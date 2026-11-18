@@ -83,6 +83,18 @@ namespace YaNec.Engine
         /// <summary>Sorgenti da usare a questa frequenza: con le sorgenti a corrente si ricavano le tensioni (V = Z I).</summary>
         public static IList<SourceSpec> EffectiveSources(NecModel model, SegmentGeometry geo, double fmhz)
         {
+            // 1.5: sorgenti accese solo in certe bande (AutoEZ «mark out»): alla frequenza f restano solo quelle accese (se nessuna, tutte)
+            if (model.Sources.Exists(s => s.AttivaA != null))
+            {
+                List<SourceSpec> att = model.Sources.FindAll(s => s.Attiva(fmhz));
+                if (att.Count > 0 && att.Count < model.Sources.Count)
+                {
+                    NecModel mm = model.Clone();
+                    mm.Sources = att.ConvertAll(s => s.Clone());
+                    foreach (SourceSpec s in mm.Sources) s.AttivaA = null;
+                    return EffectiveSources(mm, geo, fmhz);
+                }
+            }
             if (!model.CurrentSources || model.Sources.Count == 0) return model.Sources;
             Complex[] want = new Complex[model.Sources.Count];
             for (int k = 0; k < want.Length; k++) want[k] = model.Sources[k].V;

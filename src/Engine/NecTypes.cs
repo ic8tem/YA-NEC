@@ -80,6 +80,11 @@ namespace YaNec.Engine
         public int Tag, Seg;
         public Complex V = Complex.One;
         public bool Qds;     // EX 5: sorgente di tensione a discontinuita' di pendenza della corrente (qdsrc di NEC-2), dalla 0.4.2
+        /// <summary>1.5 (prova .weq di IC8TEM, 18/11/2026): sorgente accesa solo alle frequenze per cui la condizione e' vera (formule «mark out»
+        /// di AutoEZ, es. =IF(AND(Freq>=14, Freq<=14.35), "", "X")); null = sempre accesa. Una sorgente spenta e' filo continuo, come in EZNEC.</summary>
+        public Func<double, bool> AttivaA;
+        public string AttivaTesto;
+        public bool Attiva(double fmhz) { try { return AttivaA == null || AttivaA(fmhz); } catch { return true; } }
         public SourceSpec Clone() { return (SourceSpec)MemberwiseClone(); }
     }
 
