@@ -35,7 +35,8 @@ namespace YaNec
             fasGt.Famiglia("RICEZIONE");
             fasGt.Voce("gt", "Rumore e G/T", false, null, "come prima: TANT, VE7BQH, KF2YN, stack");
             fasGt.Voce("cielo", "Rumore dal cielo vero", false, null, "NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)");
-            fasGt.Voce("stack", "Distanze di stack", false, null, "VHF/UHF (DL6WU) e HF (sopra il terreno), accoppiamento, distanza migliore");
+            fasGt.Voce("stack", "Distanze di stack", false, null, "VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze");
+            fasGt.Voce("stackhf", "Distanze di stack HF", false, null, "NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti");   // 1.5 (IC8TEM 18/11/2026 21:29)
             hostGt = new ContentControl();
             gtPagine["gt"] = BuildGtPage();
             fasGt.Selected += k =>
@@ -43,7 +44,8 @@ namespace YaNec
                 Control c;
                 if (!gtPagine.TryGetValue(k, out c))
                 {
-                    c = k == "cielo" ? BuildCieloPage() : BuildStackStudioPage();
+                    if (k == "stackhf") { if (!gtPagine.ContainsKey("stack")) gtPagine["stack"] = BuildStackStudioPage(); c = ssPaginaHf; }
+                    else c = k == "cielo" ? BuildCieloPage() : BuildStackStudioPage();
                     gtPagine[k] = c;
                 }
                 hostGt.Content = c;
@@ -308,7 +310,9 @@ namespace YaNec
         TextBox ssF1, ssF2;
         TextBox ssKmin, ssKmax, ssPasso, ssRosMax, ssZ0, ssSoglia, ssH, ssDmin, ssDmax, ssAmin, ssAmax;
         StackPanel ssVhfBox, ssHfBox, ssRis;
-        TextBlock ssStato;
+        TextBlock ssStato, ssStatoHf;
+        StackPanel ssRisHf;   // 1.5 (IC8TEM 18/11/2026 21:29): lo stack HF ha la sua voce "Distanze di stack HF" nel fascione
+        TextBlock StatoStack(StackStudioRisultato r) { return r != null && !double.IsNaN(r.QuotaBase) && ssStatoHf != null ? ssStatoHf : ssStato; }
         StackStudioRisultato ssUltimo;
         CancellationTokenSource ssCts;
         CalcStackDl6wu ssCalc;
@@ -324,7 +328,7 @@ namespace YaNec
                 else all.Children.Add(p);
             }
             StackPanel sez = new StackPanel { Spacing = 3 };
-            sez.Children.Add(Riga("Banda dello stack", Scelta(new[] { "VHF/UHF (spazio libero, DL6WU)", "HF (sopra il terreno)" }, 0, k => { ssModo = k; ssVhfBox.IsVisible = k == 0; ssHfBox.IsVisible = k == 1; })));
+            // 1.5 (IC8TEM 18/11/2026 21:29): niente piu' scelta VHF/HF qui; lo stack HF ha la sua voce nel fascione
             sez.Children.Add(new TestoAdattato { Child = Nota("VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.") });
             // VHF/UHF
             ssVhfBox = new StackPanel { Spacing = 3 };
@@ -351,7 +355,7 @@ namespace YaNec
             foreach (Button b in new[] { bv, bu, bc }) { b.Margin = new Thickness(0, 4, 8, 0); w1.Children.Add(b); }
             ssVhfBox.Children.Add(w1);
             // HF
-            ssHfBox = new StackPanel { Spacing = 3, IsVisible = false };
+            ssHfBox = new StackPanel { Spacing = 3 };
             ssH = Tb("15", 50); ssDmin = Tb("0,5", 50); ssDmax = Tb("1,25", 50); ssAmin = Tb("5", 45); ssAmax = Tb("15", 45);
             ssHfBox.Children.Add(Riga("Antenne una sopra l'altra", Scelta(new[] { "2", "3" }, 0, k => ssN = k + 2), new TextBlock { Text = "antenna base: il modello aperto", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             ssHfBox.Children.Add(Riga("Quota dell'antenna piu' bassa", ssH, new TextBlock { Text = "m", VerticalAlignment = VerticalAlignment.Center }));
@@ -366,23 +370,33 @@ namespace YaNec
             foreach (Button b in new[] { bh, bhc, bhx }) { b.Margin = new Thickness(0, 4, 8, 0); w2.Children.Add(b); }
             ssHfBox.Children.Add(w2);
             sez.Children.Add(ssVhfBox);
-            sez.Children.Add(ssHfBox);
             ssStato = new TextBlock { Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap };
             sez.Children.Add(ssStato);
             ssRis = new StackPanel { Spacing = 6 };
             sez.Children.Add(ssRis);
             sez.Children.Add(new TestoAdattato { Child = Nota("Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).") });
             all.Children.Add(Pannello("Accoppiamento e distanza migliore (NEC)", sez, null, "Distanze di stack: accoppiamento e distanza migliore"));
+            // 1.5: pagina HF a parte (voce "Distanze di stack HF")
+            StackPanel hfp = new StackPanel { Spacing = 3 };
+            hfp.Children.Add(ssHfBox);
+            ssStatoHf = new TextBlock { Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap };
+            hfp.Children.Add(ssStatoHf);
+            ssRisHf = new StackPanel { Spacing = 6 };
+            hfp.Children.Add(ssRisHf);
+            ssPaginaHf = new ScrollViewer { Content = new StackPanel { Spacing = 8, Children = { Pannello("Stack HF sopra il terreno (NEC)", hfp, null, "Distanze di stack: accoppiamento e distanza migliore") } }, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
             return new ScrollViewer { Content = all, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         }
+        Control ssPaginaHf;
 
         void StudioStack(bool hf)
         {
-            if (model == null || run == null) { ssStato.Text = "Calcola prima un modello."; return; }
-            if (StackDetect.Detect(model) != null) { ssStato.Text = "Il modello aperto e' gia' uno stack: apri l'antenna singola."; return; }
+            TextBlock st = hf ? ssStatoHf : ssStato;
+            StackPanel ris = hf ? ssRisHf : ssRis;
+            if (model == null || run == null) { st.Text = "Calcola prima un modello."; return; }
+            if (StackDetect.Detect(model) != null) { st.Text = "Il modello aperto e' gia' uno stack: apri l'antenna singola."; return; }
             NecModel m0 = model; double f = run.FreqMHz;
             int righe = ssCalc != null ? Math.Max(1, Math.Min(8, ssCalc.I("righe"))) : 2, col = ssCalc != null ? Math.Max(1, Math.Min(8, ssCalc.I("col"))) : 1;
-            if (!hf && righe * col < 2) { ssStato.Text = "Servono almeno 2 antenne (righe x colonne nella scheda sopra)."; return; }
+            if (!hf && righe * col < 2) { st.Text = "Servono almeno 2 antenne (righe x colonne nella scheda sopra)."; return; }
             double kmin = ParseNum(ssKmin.Text, 0.5), kmax = ParseNum(ssKmax.Text, 2.5), passo = Math.Max(0.01, ParseNum(ssPasso.Text, 0.05)), rosMax = Math.Max(1.01, ParseNum(ssRosMax.Text, 1.5)), z0 = ParseNum(ssZ0.Text, m0.Z0), soglia = ParseNum(ssSoglia.Text, -13);
             double tsky = gtSky != null ? ParseNum(gtSky.Text, 200) : 200, tg = gtGround != null ? ParseNum(gtGround.Text, 1000) : 1000, el = gtElev != null ? ParseNum(gtElev.Text, 30) : 30;
             double h = ParseNum(ssH.Text, 15), dmin = ParseNum(ssDmin.Text, 0.5), dmax = ParseNum(ssDmax.Text, 1.25), amin = ParseNum(ssAmin.Text, 5), amax = ParseNum(ssAmax.Text, 15);
@@ -390,12 +404,12 @@ namespace YaNec
             if (ssCts != null) ssCts.Cancel();
             ssCts = new CancellationTokenSource();
             CancellationToken ct = ssCts.Token;
-            ssStato.Text = hf ? "calcolo dello stack HF sopra il terreno in corso..." : "calcolo di " + (righe * col) + " antenne a tutte le distanze in corso (una soluzione NEC per porta)...";
-            ssRis.Children.Clear();
+            st.Text = hf ? "calcolo dello stack HF sopra il terreno in corso..." : "calcolo di " + (righe * col) + " antenne a tutte le distanze in corso (una soluzione NEC per porta)...";
+            ris.Children.Clear();
             bool due = !hf && ssFreqN == 2; bool media = ssComb == 1;
             double f1 = due ? ParseNum(ssF1.Text, f) : f, f2 = due ? ParseNum(ssF2.Text, f) : f;
-            if (due && (!(f1 > 0) || !(f2 > 0) || Math.Abs(f1 - f2) < 1e-6)) { ssStato.Text = "Scrivi due frequenze diverse."; return; }
-            if (due) ssStato.Text = "calcolo di " + (righe * col) + " antenne a tutte le distanze, a " + FN(f1, 3) + " e poi a " + FN(f2, 3) + " MHz...";
+            if (due && (!(f1 > 0) || !(f2 > 0) || Math.Abs(f1 - f2) < 1e-6)) { st.Text = "Scrivi due frequenze diverse."; return; }
+            if (due) st.Text = "calcolo di " + (righe * col) + " antenne a tutte le distanze, a " + FN(f1, 3) + " e poi a " + FN(f2, 3) + " MHz...";
             Func<StackStudioRisultato> studio = () =>
             {
                 if (hf) return StackStudio.Hf(m0, f, n, h, Math.Min(dmin, dmax), Math.Max(dmin, dmax), Math.Min(amin, amax), Math.Max(amin, amax), ct);
@@ -410,10 +424,10 @@ namespace YaNec
                 .ContinueWith(t => Dispatcher.UIThread.Post(() =>
                 {
                     if (t.IsCanceled) return;
-                    if (t.IsFaulted) { ssStato.Text = "Errore: " + t.Exception.GetBaseException().Message; return; }
+                    if (t.IsFaulted) { st.Text = "Errore: " + t.Exception.GetBaseException().Message; return; }
                     ssUltimo = t.Result;
                     ssUltimo.QuotaBase = hf ? h : double.NaN;
-                    ssStato.Text = "Criterio: " + ssUltimo.Criterio + ".";
+                    st.Text = "Criterio: " + ssUltimo.Criterio + ".";
                     if (hf) MostraStackHf(ssUltimo, righe); else MostraStackVhf(ssUltimo, righe, col, z0);
                 }));
         }
@@ -571,7 +585,7 @@ namespace YaNec
 
         void MostraStackHf(StackStudioRisultato r, int righe)
         {
-            ssRis.Children.Clear();
+            ssRisHf.Children.Clear();
             StackPunto p = r.Proposta;
             WrapPanel cards = new WrapPanel();
             cards.Children.Add(Riquadretto("Distanza proposta", FN(p.Dv, 2) + " m = " + FN(p.K, 3) + " λ", "sopra a " + FN(r.QuotaBase + p.Dv * (ssN - 1), 1) + " m · " + r.Criterio, true));
@@ -579,8 +593,8 @@ namespace YaNec
             cards.Children.Add(Riquadretto("Stack, tutte in fase (BIP)", FN(r.ElBip[ib], 2) + " dBi a " + ib + "°", "a 5°: " + FN(r.ElBip[5], 1) + " dBi, a 15°: " + FN(r.ElBip[15], 1) + " dBi"));
             double gs = r.GSingola;
             cards.Children.Add(Riquadretto("Rispetto alla singola a " + FN(r.QuotaBase, 1) + " m", (r.ElBip[ib] - gs >= 0 ? "+" : "") + FN(r.ElBip[ib] - gs, 2) + " dB", "al massimo"));
-            ssRis.Children.Add(cards);
-            foreach (string nn in r.Note) ssRis.Children.Add(Nota(nn, Pal.Orange));
+            ssRisHf.Children.Add(cards);
+            foreach (string nn in r.Note) ssRisHf.Children.Add(Nota(nn, Pal.Orange));
             List<string[]> rows = new List<string[]> { new[] { "distanza", "", "quota sopra", "G max", "a", "5°", "10°", "15°", "20°", "media voluta" } };
             int ie = -1;
             for (int i = 0; i < r.Punti.Count; i++)
@@ -603,13 +617,13 @@ namespace YaNec
             Control tb = Tabella(rows, ie);
             Grid.SetColumn(tb, 0); Grid.SetColumn(ch, 2);
             tg.Children.Add(tb); tg.Children.Add(ch);
-            ssRis.Children.Add(Pannello("Distanze provate e diagramma in elevazione", tg));
+            ssRisHf.Children.Add(Pannello("Distanze provate e diagramma in elevazione", tg));
         }
 
         void UsaPropostaStack()
         {
             StackStudioRisultato r = ssUltimo;
-            if (r == null || r.Proposta == null || model == null || run == null) { ssStato.Text = "Calcola prima le distanze."; return; }
+            if (r == null || r.Proposta == null || model == null || run == null) { StatoStack(r).Text = "Calcola prima le distanze."; return; }
             try
             {
                 bool hf = !double.IsNaN(r.QuotaBase);
@@ -630,7 +644,7 @@ namespace YaNec
                 Status(string.Join(" ", note) + " Il file su disco non e' cambiato.");
                 Calculate(true);
             }
-            catch (Exception ex) { ssStato.Text = "Stack non creato: " + ex.Message; }
+            catch (Exception ex) { StatoStack(r).Text = "Stack non creato: " + ex.Message; }
         }
 
         string TestoStack()

@@ -1,0 +1,221 @@
+<title>Bozzetto Tabella da immagine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC: finestra "Importa tabella da immagine (OCR)" in tre passi affiancati: sorgente, tabella letta, destinazione */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --selbg:#d9e6fb; --nota:#e8f0fd; --giallo:#fff4c2; --gialb:#d7a400; --rosso:#fde2e0; --verde:#e3f5e8; --verb:#2f9e55;
+  --carta:#f7f3ea; --cartaink:#2a2620;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --giallo:#40360f; --gialb:#e0b52a; --rosso:#45201d; --verde:#16301f; --verb:#5cc983;
+  --carta:#d9d3c4; --cartaink:#2a2620; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --giallo:#40360f; --gialb:#e0b52a; --rosso:#45201d; --verde:#16301f; --verb:#5cc983;
+  --carta:#d9d3c4; --cartaink:#2a2620; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1380px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:110ch}
+.win{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.tit{background:var(--bar);color:var(--barink);padding:8px 14px;font-weight:600;display:flex;justify-content:space-between}
+.tit span{opacity:.7;font-weight:400}
+.passi{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.15fr) minmax(0,.9fr);gap:0}
+@media (max-width:1050px){.passi{grid-template-columns:1fr}}
+.col{padding:12px 14px;border-right:1px solid var(--line);min-width:0}
+.col:last-child{border-right:0}
+@media (max-width:1050px){.col{border-right:0;border-bottom:1px solid var(--line)}}
+.col h2{font-size:.95rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--blu);color:#fff;font-size:.8rem}
+.riga{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+.bt{font:inherit;font-size:.86rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.bt:focus-visible,.pill:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.pill{font:inherit;font-size:.84rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:3px 11px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+label{font-size:.85rem;color:var(--mut)}
+select,input[type=text]{font:inherit;font-size:.85rem;padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink)}
+.mut{color:var(--mut);font-size:.82rem;line-height:1.4}
+/* finta scansione */
+.scan{position:relative;background:var(--carta);color:var(--cartaink);border:1px solid var(--line);border-radius:4px;padding:16px 14px 18px;margin:8px 0;overflow:hidden}
+.scan .foglio{transform:rotate(-1.6deg);font-family:Georgia,"Times New Roman",serif;font-size:.84rem}
+.scan .foglio p{margin:0 0 6px;font-style:italic}
+.scan table{border-collapse:collapse;width:100%}
+.scan td,.scan th{border-bottom:1px solid #8a8070;padding:2px 5px;text-align:right}
+.scan th{text-align:right;font-weight:700}
+.scan td:first-child,.scan th:first-child{text-align:left}
+.ritaglio{position:absolute;inset:34px 8px 10px 8px;border:2px dashed var(--blu);border-radius:3px;pointer-events:none}
+.ritaglio::after{content:"area della tabella (si trascina)";position:absolute;top:-20px;left:0;font:600 .72rem var(--f);color:var(--blu);background:var(--card);padding:0 4px;border-radius:3px}
+/* tabella letta */
+.wrap{overflow-x:auto}
+table.g{border-collapse:collapse;width:100%;font-size:.84rem}
+.g th,.g td{border:1px solid var(--line);padding:3px 6px;text-align:right;white-space:nowrap}
+.g td:first-child,.g th:first-child{text-align:left}
+.g thead th{background:var(--bg);font-weight:600}
+.g thead tr.ruolo th{background:var(--nota);font-weight:400}
+.g td[contenteditable]{outline:none}
+.g td[contenteditable]:focus{box-shadow:inset 0 0 0 2px var(--blu)}
+.g td.inc{background:var(--giallo);box-shadow:inset 0 -2px 0 var(--gialb)}
+.g td.err{background:var(--rosso)}
+.leg{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;font-size:.8rem;color:var(--mut)}
+.leg i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:4px}
+/* destinazione */
+.dest{display:none}.dest.on{display:block}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;margin:8px 0;font-size:.84rem;line-height:1.45}
+.box.ok{border-color:var(--verb);background:var(--verde)}
+.box.gi{border-color:var(--gialb);background:var(--giallo)}
+svg{display:block;width:100%;height:auto;margin:6px 0}
+.piede{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;padding:10px 14px;border-top:1px solid var(--line);background:var(--bg)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 18px;line-height:1.5}
+.note h3{margin:4px 0 6px;font-size:1rem}
+.note li{margin:3px 0}
+</style>
+
+<main>
+  <h1>Bozzetto – Importa tabella da immagine (OCR)</h1>
+  <p class="sub">Nuova voce <b>Importa tabella da immagine…</b> nel menu File (e pulsante nella tabella dei Fili). Si apre questa finestra in tre passi affiancati: la sorgente (scansione, PDF, foto o schermata), la tabella letta da correggere, e dove mandarla (modello nuovo, tabella dei fili o calcolatore). I numeri della tabella sono di esempio. Le pillole e i menu del passo 3 si possono cliccare.</p>
+
+  <div class="win">
+    <div class="tit">Importa tabella da immagine (OCR) <span>YA-NEC 1.5</span></div>
+    <div class="passi">
+
+      <!-- 1. sorgente -->
+      <section class="col">
+        <h2><span class="n">1</span>Sorgente</h2>
+        <div class="riga">
+          <button class="bt a" type="button">Apri immagine o PDF…</button>
+          <button class="bt" type="button">Incolla (Ctrl+V)</button>
+          <button class="bt" type="button">Cattura schermo</button>
+        </div>
+        <div class="mut">Formati: PNG, JPG, TIFF, BMP, PDF (pagina scelta). Un PDF con testo vero si legge senza OCR, senza errori.</div>
+        <div class="riga"><label>Pagina</label><select><option>87 di 412</option></select><label>Lingua</label><select><option>italiano</option><option>inglese</option><option>tedesco</option><option>russo</option><option>giapponese</option><option>francese</option><option>portoghese</option><option>spagnolo</option></select></div>
+        <div class="scan">
+          <div class="foglio">
+            <p>Tab. 4 – Yagi 10 elementi per 144 MHz (misure in mm)</p>
+            <table>
+              <tr><th>Elem.</th><th>Posiz.</th><th>Lungh.</th><th>Ø</th></tr>
+              <tr><td>R</td><td>0</td><td>1032</td><td>6</td></tr>
+              <tr><td>DR</td><td>410</td><td>966</td><td>6</td></tr>
+              <tr><td>D1</td><td>565</td><td>941</td><td>6</td></tr>
+              <tr><td>D2</td><td>890</td><td>931</td><td>6</td></tr>
+              <tr><td>D3</td><td>1310</td><td>922</td><td>6</td></tr>
+              <tr><td>D4</td><td>1790</td><td>914</td><td>6</td></tr>
+              <tr><td>D5</td><td>2310</td><td>908</td><td>6</td></tr>
+              <tr><td>D6</td><td>2860</td><td>902</td><td>6</td></tr>
+              <tr><td>D7</td><td>3420</td><td>897</td><td>6</td></tr>
+              <tr><td>D8</td><td>3990</td><td>888</td><td>6</td></tr>
+            </table>
+          </div>
+          <div class="ritaglio"></div>
+        </div>
+        <div class="riga">
+          <label>Raddrizza</label><select><option>automatico (−1,6°)</option><option>manuale</option></select>
+          <label>Contrasto</label><select><option>automatico</option><option>forte (foto)</option></select>
+        </div>
+        <div class="riga"><button class="bt a" type="button">Leggi la tabella</button><span class="mut">10 righe × 4 colonne, 1,2 s</span></div>
+      </section>
+
+      <!-- 2. tabella letta -->
+      <section class="col">
+        <h2><span class="n">2</span>Tabella letta (si corregge qui)</h2>
+        <div class="wrap">
+          <table class="g">
+            <thead>
+              <tr class="ruolo">
+                <th><select aria-label="ruolo colonna 1"><option>Nome</option></select></th>
+                <th><select aria-label="ruolo colonna 2"><option>Posizione sul boom</option><option>Distanza dal precedente</option></select></th>
+                <th><select aria-label="ruolo colonna 3"><option>Lunghezza totale</option><option>Semielemento</option></select></th>
+                <th><select aria-label="ruolo colonna 4"><option>Diametro</option><option>Raggio</option><option>(ignora)</option></select></th>
+              </tr>
+              <tr><th>Elem.</th><th>Posiz.</th><th>Lungh.</th><th>Ø</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>R</td><td contenteditable>0</td><td contenteditable>1032</td><td contenteditable>6</td></tr>
+              <tr><td>DR</td><td contenteditable>410</td><td contenteditable>966</td><td contenteditable>6</td></tr>
+              <tr><td>D1</td><td contenteditable>565</td><td contenteditable class="inc" title="letto 94l: corretto in 941 (l → 1), confidenza 62 %">941</td><td contenteditable>6</td></tr>
+              <tr><td>D2</td><td contenteditable>890</td><td contenteditable>931</td><td contenteditable>6</td></tr>
+              <tr><td>D3</td><td contenteditable class="inc" title="letto 131O: corretto in 1310 (O → 0)">1310</td><td contenteditable>922</td><td contenteditable>6</td></tr>
+              <tr><td>D4</td><td contenteditable>1790</td><td contenteditable>914</td><td contenteditable>6</td></tr>
+              <tr><td>D5</td><td contenteditable>2310</td><td contenteditable>908</td><td contenteditable>6</td></tr>
+              <tr><td>D6</td><td contenteditable>2860</td><td contenteditable>902</td><td contenteditable>6</td></tr>
+              <tr><td>D7</td><td contenteditable>3420</td><td contenteditable class="err" title="897 fuori dall'ordine atteso? I direttori di solito si accorciano: controlla">897</td><td contenteditable>6</td></tr>
+              <tr><td>D8</td><td contenteditable>3990</td><td contenteditable>888</td><td contenteditable>6</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="leg"><span><i style="background:var(--giallo);box-shadow:inset 0 -2px 0 var(--gialb)"></i>letto con poca sicurezza (il fumetto dice cosa ha letto)</span><span><i style="background:var(--rosso)"></i>valore da controllare</span></div>
+        <div class="riga" style="margin-top:10px">
+          <label>Unità</label><select><option>mm (dal titolo)</option><option>cm</option><option>m</option><option>pollici</option><option>lambda</option></select>
+          <label>Decimali</label><select><option>virgola</option><option>punto</option></select>
+        </div>
+        <div class="riga"><button class="bt" type="button">+ riga</button><button class="bt" type="button">− riga</button><button class="bt" type="button">Unisci colonne</button><button class="bt" type="button">Dividi colonna</button><button class="bt" type="button">Copia (per Excel)</button></div>
+        <div class="box gi">D7 è segnato rosso solo come controllo di plausibilità: nei direttori la lunghezza di solito cala andando avanti. Se è giusto si lascia così.</div>
+      </section>
+
+      <!-- 3. destinazione -->
+      <section class="col">
+        <h2><span class="n">3</span>Dove la mando</h2>
+        <div class="riga" role="group" aria-label="destinazione">
+          <button class="pill on" type="button" data-d="mod">Modello nuovo</button>
+          <button class="pill" type="button" data-d="fili">Tabella dei fili</button>
+          <button class="pill" type="button" data-d="calc">Calcolatore</button>
+        </div>
+
+        <div class="dest on" id="d-mod">
+          <div class="riga"><label>Tipo</label><select><option>Yagi (elementi lungo il boom)</option><option>Quad / loop</option><option>Verticale con radiali</option><option>Fili liberi (X1 Y1 Z1 X2 Y2 Z2)</option></select></div>
+          <div class="riga"><label>Frequenza</label><input type="text" value="144,300" size="7"><label>MHz</label><label>Polarizzazione</label><select><option>orizzontale</option><option>verticale</option></select></div>
+          <div class="riga"><label>Alimentato</label><select><option>DR (secondo elemento)</option><option>R</option></select><label>Segmenti</label><select><option>automatici (λ/20)</option></select></div>
+          <svg viewBox="0 0 300 120" role="img" aria-label="anteprima della Yagi vista dall'alto">
+            <line x1="15" y1="60" x2="285" y2="60" stroke="currentColor" stroke-opacity=".45" stroke-width="2"/>
+            <g stroke="var(--blu)" stroke-width="2.4" stroke-linecap="round">
+              <line x1="15" y1="11" x2="15" y2="109"/><line x1="42" y1="14" x2="42" y2="106"/><line x1="52" y1="15" x2="52" y2="105"/>
+              <line x1="74" y1="16" x2="74" y2="104"/><line x1="102" y1="16" x2="102" y2="104"/><line x1="133" y1="17" x2="133" y2="103"/>
+              <line x1="168" y1="17" x2="168" y2="103"/><line x1="204" y1="17" x2="204" y2="103"/><line x1="241" y1="18" x2="241" y2="102"/><line x1="279" y1="18" x2="279" y2="102"/>
+            </g>
+            <circle cx="42" cy="60" r="4" fill="var(--gialb)"/>
+          </svg>
+          <div class="box ok">10 elementi, boom 3,99 m, 190 segmenti. Dopo «Crea» si calcola subito: guadagno, F/B e ROS compaiono come per un modello aperto.</div>
+          <label><input type="checkbox" checked> correzione di Leeson se gli elementi sono a tubi telescopici</label>
+        </div>
+
+        <div class="dest" id="d-fili">
+          <div class="riga"><label>Inserisci</label><select><option>in fondo alla tabella dei Fili</option><option>al posto dei fili scelti</option></select></div>
+          <div class="box">Ogni riga diventa un filo (estremi simmetrici sull'asse Y, alla posizione X sul boom). Si annulla con Ctrl+Z come le altre modifiche della tabella. Con «Fili liberi» le colonne X1…Z2, raggio e segmenti si copiano così come sono.</div>
+        </div>
+
+        <div class="dest" id="d-calc">
+          <div class="riga"><label>Calcolatore</label><select><option>Yagi lunga DL6WU (confronto)</option><option>Tubi telescopici (rastremazioni)</option><option>Quad / loop</option></select></div>
+          <div class="box">Le misure lette vanno accanto a quelle calcolate dal calcolatore, colonna per colonna, con la differenza in mm: serve a confrontare un progetto pubblicato con il calcolo.</div>
+        </div>
+
+        <div class="box">Si salvano insieme al modello l'immagine ritagliata e la tabella corretta (riga CM con la fonte: titolo, pagina), così si sa sempre da dove vengono le misure.</div>
+      </section>
+    </div>
+    <div class="piede"><button class="bt" type="button">Annulla</button><button class="bt a" type="button">Crea</button></div>
+  </div>
+
+  <div class="note">
+    <h3>Come funziona e cosa serve</h3>
+    <ul>
+      <li><b>OCR</b>: Tesseract (licenza Apache 2.0) con i dati di otto lingue (italiano, inglese, tedesco, russo, giapponese, francese, portoghese, spagnolo; le cifre si leggono in tutte), su Windows, Linux e Mac. Con i dati «veloci» di Tesseract il pacchetto cresce di circa 25-30 MB; il giapponese e' il piu' pesante. La lingua si sceglie nella finestra; di partenza quella dell'interfaccia. Tutto avviene sul PC, senza rete.</li>
+      <li><b>PDF</b>: se la pagina ha testo vero si legge direttamente; se è una scansione si passa all'OCR.</li>
+      <li><b>Tabella</b>: righe e colonne dalle posizioni delle parole, o dalle linee della griglia se ci sono. Le cifre incerte (O/0, l/1, S/5, B/8) si correggono da sole e restano gialle con il fumetto di cosa è stato letto.</li>
+      <li><b>Controlli</b>: unità dal titolo (mm, cm, pollici), posizioni in ordine crescente, lunghezze plausibili per la frequenza (λ/2 ± 15 %); quello che non torna è rosso ma non blocca.</li>
+      <li><b>Prova (autotest)</b>: immagini di tabelle note, anche storte e a bassa risoluzione, che devono dare i numeri giusti.</li>
+      <li>Fonte da citare nel documento Citazioni: Tesseract OCR (R. Smith, Google; licenza Apache 2.0).</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+document.querySelectorAll('.pill[data-d]').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.pill[data-d]').forEach(function(x){x.classList.toggle('on',x===b)});
+    document.querySelectorAll('.dest').forEach(function(d){d.classList.toggle('on',d.id==='d-'+b.dataset.d)});
+  });
+});
+</script>
