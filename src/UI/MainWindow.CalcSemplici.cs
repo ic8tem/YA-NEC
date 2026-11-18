@@ -654,7 +654,8 @@ namespace YaNec
                     chart.X = last.Chart.X;
                     chart.XLabel = last.Chart.XLabel;
                     chart.YLabel = last.Chart.YLabel;
-                    chart.Series = new List<LineSeries> { new LineSeries { Name = last.Chart.YLabel, Y = last.Chart.Y, Color = Pal.Accent } };
+                    chart.Series = new List<LineSeries> { new LineSeries { Name = last.Chart.Nome1 ?? last.Chart.YLabel, Y = last.Chart.Y, Color = Pal.Accent } };
+                    if (last.Chart.Y2 != null) chart.Series.Add(new LineSeries { Name = last.Chart.Nome2 ?? "", Y = last.Chart.Y2, Color = Pal.Orange });
                     chart.MarkX = last.Chart.MarkX;
                     chart.YMinFixed = last.Chart.YMin;
                     chartPanel.IsVisible = true;

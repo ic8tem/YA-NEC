@@ -53,6 +53,9 @@ namespace YaNec.Engine
         public double MarkX = double.NaN;
         public string MarkText;
         public double YMin = double.NaN, YMax = double.NaN;
+        // 1.5 (bozzetto AEH a3, approvato 18/11/2026 23:16): seconda curva facoltativa (es. R e X del dipolo ripiegato)
+        public double[] Y2;
+        public string Nome1, Nome2;
     }
 
     public class CalcOutput
@@ -538,7 +541,7 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("passo", "Passo tra le spire (asse-asse)", 66, "mm", "Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato)."));
             Params.Add(new CalcParam("p", "Potenza", 100, "W"));
             Params.Add(new CalcParam("h", "Quota", 3, "m", "Quota del centro per il calcolo con il terreno (0 = spazio libero)."));
-            Params.Add(CalcParam.Scelta("acc", "Accoppiamento", 0, null, "loop di Faraday D/5", "gamma"));
+            Params.Add(CalcParam.Scelta("acc", "Accoppiamento", 0, null, "loop di Faraday D/5", "gamma", "capacitivo (C1 serie, C2 parallelo)"));   // 1.5 a7: terza voce
             // 1.0.7 (IC8TEM 16/11/2026 19:54 "procedi"): "Accorda il condensatore (NEC)" cerca il C che porta la loop in risonanza nel modello
             // NEC (prima: CanTune = false e il C di formula lasciava la loop fuori risonanza, ROS 533 sul loop di accoppiamento)
         }
@@ -576,6 +579,8 @@ namespace YaNec.Engine
             Scale = (a + c) / 2;
             return Scale;
         }
+
+        const double Z0Rif = 50;   // 1.5 (a7): impedenza della linea per l'accoppiamento capacitivo
 
         static void Forma(int forma, double D, out double A, out double per, out double Deq)
         {
@@ -620,7 +625,7 @@ namespace YaNec.Engine
             Hint("D", "circonferenza " + Calcolatori.N(per, 2) + " m = " + Calcolatori.N(per / lam, 3) + " lambda");
             Hint("h", "(per il calcolo con il terreno)");
             double dc = D / 5;
-            Hint("acc", I("acc") == 0 ? "anello da " + Calcolatori.N(dc, 2) + " m" : "presa a gamma sul lato basso");
+            Hint("acc", I("acc") == 0 ? "anello da " + Calcolatori.N(dc, 2) + " m" : I("acc") == 1 ? "presa a gamma sul lato basso" : "due condensatori sul lato basso");
             o.Card("Resistenza di radiazione", Calcolatori.Ohm(rr), Calcolatori.N(rr, 5) + " ohm");
             o.Card("Resistenza di perdita", Calcolatori.Ohm(rl), Mat[mat].Replace("tubo di ", "") + ", effetto pelle" + (nsp > 1 ? " (" + nsp + " spire)" : ""));
             if (nsp > 1)
@@ -638,6 +643,17 @@ namespace YaNec.Engine
             o.Formula = "Formule: Rr = 31171 (N·A)²/λ⁴ (N spire); Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, " +
                 "W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai " +
                 "valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare.";
+            if (I("acc") == 2)
+            {
+                // 1.5 (a7, bozzetto AEH approvato 18/11/2026 23:16): accoppiamento capacitivo, AEH 4a ed. eq. 5-20 e 5-21 (Smith): C2 in parallelo
+                // all'ingresso da 50 ohm, C1 in serie alla loop (fa anche da condensatore d'accordo)
+                double r0 = Z0Rif, qm = Math.Sqrt(Math.Max(0, r0 / rt - 1));
+                double c2 = qm / (w * r0), x1 = xl - Math.Sqrt(Math.Max(0, rt * (r0 - rt))), c1 = x1 > 0 ? 1 / (w * x1) : double.NaN;
+                o.Card("C1 in serie con la loop", double.IsNaN(c1) ? "-" : Calcolatori.Farad(c1), Calcolatori.N(i * x1 / 1000, 1) + " kV con " + Calcolatori.N(pw, 0) + " W", true);
+                o.Card("C2 in parallelo all'ingresso", Calcolatori.Farad(c2), Calcolatori.N(Math.Sqrt(pw * r0), 0) + " V", true);
+                o.Formula += " Accoppiamento capacitivo (AEH 4a ed., eq. 5-20 e 5-21): C2 = sqrt(R0/R - 1)/(w R0), C1 = 1/(w (wL - sqrt(R (R0 - R)))).";
+                o.Oks.Add("Accoppiamento capacitivo: il modello NEC ha la sorgente sul lato basso con C1 in serie; C2 non e' nel modello, la Z a 50 Ω si ottiene mettendo C2 in parallelo alla Z calcolata.");
+            }
             if (Scale != 1) o.Card("C accordato (NEC)", Calcolatori.Farad(cScaledFormula(cap)), "risonanza nel modello, " + Calcolatori.N((Scale - 1) * 100, 2) + " % dalla formula");
             if (v > 1000) o.Warnings.Add(Calcolatori.N(v / 1000, 1) + " kV sul condensatore: serve un variabile a vuoto o con spaziatura adeguata.");
             if (bw < 10000) o.Warnings.Add("banda di " + Calcolatori.N(bw / 1000, 1) + " kHz: va riaccordato a ogni spostamento.");
@@ -687,6 +703,12 @@ namespace YaNec.Engine
                 o.Mark(1, 0, zcc, "loop di accoppiamento " + Calcolatori.N(dc, 2) + " m", 1, 0, 0, rc);
                 o.Mark(2, 0, zcc - rc, "coassiale 50 ohm", 3, 0, zcc - rc - R * 0.35);
             }
+            else if (I("acc") == 2)
+            {
+                // 1.5 (a7): capacitivo, sorgente sul lato basso; C1 (= condensatore d'accordo) sullo stesso segmento, niente C in alto
+                feedTag = gamTag == 0 ? 1 : gamTag;
+                o.Mark(3, -R * 0.18, zc - R * 1.08, "C1 serie, C2 parallelo", 1, R * 0.18, zc - R * 1.08);
+            }
             else
             {
                 // gamma: presa sul lato basso (sorgente nel segmento del lato basso, stima)
@@ -694,7 +716,12 @@ namespace YaNec.Engine
                 o.Mark(2, 0, zc - R, "gamma (stima)", 1, R * 0.4, zc - R * 0.8);
             }
             dk.Ground(h > 0 ? 2 : 0);
-            dk.Ld(0, capTag == 0 ? 1 : capTag, 1, 1, 0, 0, cScaled);
+            if (I("acc") == 2)
+            {
+                double xc1 = xl - Math.Sqrt(Math.Max(0, rt * (Z0Rif - rt)));
+                dk.Ld(0, feedTag, 1, 1, 0, 0, xc1 > 0 ? Scale / (w * xc1) : cScaled);
+            }
+            else dk.Ld(0, capTag == 0 ? 1 : capTag, 1, 1, 0, 0, cScaled);
             // 1.0.7: il materiale scelto entra nel modello (LD 5 su tutti i fili): prima i fili erano senza perdite e la verifica NEC dava
             // efficienza 100 % e 5,6 dBi contro il 16 % delle formule
             dk.Ld(5, 0, 0, 0, Sigma[mat], 0, 0);

@@ -159,6 +159,8 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("d2", "Diametro dell'altro conduttore", 2, "mm"));
             Params.Add(new CalcParam("s", "Distanza tra i conduttori (centro-centro)", 100, "mm"));
             Params.Add(new CalcParam("h", "Quota (0 = spazio libero)", 10, "m"));
+            // 1.5 (a3, bozzetto AEH approvato 18/11/2026 23:16): impedenza in frequenza con la formula completa di Uda e Mushiake (AEH 4a eq. 4-11)
+            Params.Add(new CalcParam("sc", "Scansione", 8, "%", "Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza."));
         }
         public override CalcOutput Compute()
         {
@@ -187,11 +189,32 @@ namespace YaNec.Engine
             o.Plane = "yz";
             o.Mark(7, -L / 2, z - s - L * 0.04, "L = " + Calcolatori.N(L, 2) + " m", 3, L / 2, z - s - L * 0.04);
             o.Mark(0, L / 2 + L * 0.02, z + s, "s = " + Calcolatori.N(s * 1000, 0) + " mm", 3);
-            o.Chart = new CalcChart { Title = "Rapporto di salita al variare del diametro dell'altro conduttore", XLabel = "mm", YLabel = "rapporto" };
-            o.Chart.X = Calcolatori.Lin(0.5, 20, 40);
-            o.Chart.Y = new double[40];
-            for (int i = 0; i < 40; i++) o.Chart.Y[i] = Math.Pow(1 + Math.Log(2 * s / d1) / Math.Log(2 * s / (o.Chart.X[i] / 1000)), 2);
-            o.Chart.MarkX = d2 * 1000; o.Chart.MarkText = Calcolatori.N(k, 2);
+            // 1.5 (a3): Z del ripiegato in frequenza (AEH 4a ed., cap. 4, Tai e Long; Uda e Mushiake): modo simmetrico = dipolo con il raggio
+            // equivalente dei due conduttori (eq. 4-9), modo asimmetrico = linea in corto lunga l (eq. 4-10), Z = 2(1+a)^2 Zr Zf / ((1+a)^2 Zr + 2 Zf) (eq. 4-11)
+            double r1 = d1 / 2, r2 = d2 / 2, mu = r2 / r1, nu = s / r1;
+            double re = Math.Exp(Math.Log(r1) + (mu * mu * Math.Log(mu) + 2 * mu * Math.Log(nu)) / ((1 + mu) * (1 + mu)));
+            double aG = Math.Log(s / r1) / Math.Log(s / r2), k2 = (1 + aG) * (1 + aG);
+            double argZ0 = (s * s - r1 * r1 - r2 * r2) / (2 * r1 * r2);
+            double z0f = 60 * Math.Log(argZ0 + Math.Sqrt(Math.Max(0, argZ0 * argZ0 - 1)));    // linea di due conduttori diversi
+            double ell = L / 2;
+            Func<double, System.Numerics.Complex> zf = fr =>
+            {
+                double kl = 2 * Math.PI * fr / C0 * ell;
+                System.Numerics.Complex zr = CalcRr.ZDipoloTai(kl, ell / re);
+                System.Numerics.Complex zs = new System.Numerics.Complex(0, z0f * Math.Tan(kl));
+                return 2 * k2 * zr * zs / (k2 * zr + 2 * zs);
+            };
+            double sc = Math.Max(1, Math.Min(30, P("sc"))) / 100;
+            o.Card("Raggio equivalente dei due conduttori", Calcolatori.N(re * 1000, 1) + " mm", "AEH eq. 4-9");
+            o.Card("Z0 della linea dei due conduttori", Calcolatori.N(z0f, 0) + " Ω", "modo asimmetrico (eq. 4-10)");
+            System.Numerics.Complex zc = zf(f);
+            o.Card("Z alla frequenza (AEH eq. 4-11)", Calcolatori.N(zc.Real, 0) + (zc.Imaginary >= 0 ? " + j" : " − j") + Calcolatori.N(Math.Abs(zc.Imaginary), 0) + " Ω", "il dipolo equivalente, piu' grosso, ha meno di 73 Ω");
+            o.Formula += " Impedenza in frequenza (AEH 4a ed. eq. 4-9 - 4-11, Uda e Mushiake): Zr = dipolo con il raggio equivalente dei due conduttori, Zf = j Z0 tan kl, Z = 2(1+a)^2 Zr Zf / ((1+a)^2 Zr + 2 Zf), a = ln(s/r1)/ln(s/r2) (Guertler, uguale al rapporto ARRL). Stima in spazio libero; oltre kl = pi/2 i polinomi di Tai sono prolungati.";
+            o.Chart = new CalcChart { Title = "Impedenza in frequenza (AEH eq. 4-11)", XLabel = "MHz", YLabel = "Ω", Nome1 = "R", Nome2 = "X" };
+            o.Chart.X = Calcolatori.Lin(f * (1 - sc), f * (1 + sc), 41);
+            o.Chart.Y = new double[41]; o.Chart.Y2 = new double[41];
+            for (int i = 0; i < 41; i++) { System.Numerics.Complex zz = zf(o.Chart.X[i]); o.Chart.Y[i] = zz.Real; o.Chart.Y2[i] = zz.Imaginary; }
+            o.Chart.MarkX = f; o.Chart.MarkText = Calcolatori.N(zc.Real, 0) + (zc.Imaginary >= 0 ? " + j" : " − j") + Calcolatori.N(Math.Abs(zc.Imaginary), 0) + " Ω";
             return o;
         }
     }
@@ -1401,7 +1424,18 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("l", "Lunghezza / altezza / diametro", 10, "m"));
             Params.Add(new CalcParam("n", "Spire (loop)", 1, ""));
             Params.Add(new CalcParam("rp", "Resistenza di perdita", 2, "Ω"));
+            // 1.5 (a2, bozzetto AEH approvato 18/11/2026 23:16): diametro per la reattanza di dipolo e monopolo (AEH 4a eq. 4-1, 4-2)
+            Params.Add(new CalcParam("dc", "Diametro del conduttore", 2, "mm", "Serve solo per la reattanza (dipolo e monopolo)."));
             CanTune = false;
+        }
+
+        /// <summary>AEH 4a ed. eq. 4-1 (Tai, f.e.m. indotta): Z = R(kl) - j[120(ln(l/a) - 1) cot kl - X(kl)] del dipolo lungo 2l, raggio a,
+        /// con i polinomi di R(kl) e X(kl) (entro 0,5 ohm dalla Tab. 4-1) per kl fino a pi/2. Il monopolo e' la meta'.</summary>
+        public static System.Numerics.Complex ZDipoloTai(double kl, double lSuA)
+        {
+            double R = -0.4787 + 7.3246 * kl + 0.3963 * kl * kl + 15.6131 * kl * kl * kl;
+            double Xk = -0.4456 + 17.0082 * kl - 8.6793 * kl * kl + 9.6031 * kl * kl * kl;
+            return new System.Numerics.Complex(Math.Max(0, R), -(120 * (Math.Log(lSuA) - 1) / Math.Tan(kl) - Xk));
         }
         public override CalcOutput Compute()
         {
@@ -1415,8 +1449,24 @@ namespace YaNec.Engine
             double eff = rr / (rr + rp);
             o.Card("Resistenza di radiazione", Calcolatori.Ohm(rr), Calcolatori.N(l / lam, 4) + " lambda", true);
             o.Card("Efficienza", Calcolatori.N(eff * 100, 1) + " %", Calcolatori.N(10 * Math.Log10(eff), 1) + " dB con " + Calcolatori.Ohm(rp) + " di perdita", true);
+            if (tipo != 2)
+            {
+                // 1.5 (a2): reattanza con l'AEH 4a eq. 4-1 e 4-2; per il monopolo meta' del dipolo lungo il doppio
+                double ell = tipo == 0 ? l / 2 : l, a = Math.Max(1e-6, P("dc") / 2000), kl = 2 * Math.PI * ell / lam, fz = tipo == 0 ? 1 : 0.5;
+                if (kl <= Math.PI / 2 && ell / a > 7.5)
+                {
+                    System.Numerics.Complex z = ZDipoloTai(kl, ell / a) * fz;
+                    double xs = -120 * (Math.Log(ell / a) - 1) / kl * fz;
+                    o.Card("Resistenza con la Tab. 4-1 (AEH)", Calcolatori.Ohm(z.Real), "corrente sinusoidale");
+                    o.Card("Reattanza (AEH eq. 4-1)", Calcolatori.N(z.Imaginary, 0) + " Ω", "eq. 4-2 «antenna corta»: " + Calcolatori.N(xs, 0) + " Ω");
+                    if (z.Imaginary < 0)
+                        o.Card("Bobina di carico per la risonanza", Calcolatori.N(-z.Imaginary / (2 * Math.PI * f * 1e6) * 1e6, 1) + " µH", tipo == 0 ? "al centro" : "alla base");
+                }
+                else o.Warnings.Add("Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.");
+            }
             o.Formula = "Formule (corrente triangolare per dipolo e monopolo corti, uniforme nel loop): dipolo Rr = 20 pi^2 (l/lambda)^2; monopolo Rr = 40 pi^2 (h/lambda)^2 = 395 (h/lambda)^2; " +
                 "loop Rr = 31171 (N A / lambda^2)^2 con A = pi D^2/4. Valide per l, h e la circonferenza molto piu' piccole di lambda.";
+            if (tipo != 2) o.Formula += " Reattanza: Z = R(kl) - j[120 (ln(l/a) - 1) cot kl - X(kl)], l = meta' lunghezza (dipolo), a = raggio; R(kl) e X(kl) con i polinomi dell'AEH 4a ed. (eq. 4-1, Tai), valida fino a kl = pi/2; monopolo = meta' del dipolo.";
             bool fuori = tipo == 2 ? Math.PI * l > lam / 4 : (tipo == 0 ? l > lam / 5 : l > lam / 10);
             if (fuori) o.Warnings.Add("Antenna non piu' \"corta\": la formula sottostima o sovrastima, usa il NEC.");
             else o.Oks.Add("antenna corta rispetto a lambda: formula valida");
