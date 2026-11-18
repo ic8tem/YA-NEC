@@ -749,7 +749,7 @@ namespace YaNec.Engine
             if (soloCebik) met = 2;
             double pArrl = 306.3 / f;
             double[] cb = Cebik(P("d") / 1000 / lam);
-            double pCeb = cb[0] * lam, base = met == 1 ? pArrl : pCeb;
+            double pCeb = cb[0] * lam, perBase = met == 1 ? pArrl : pCeb;
             string metodo = met == 1 ? "ARRL" : (met == 2 ? "Cebik" : "Cebik, poi NEC");
             if (met == 3)
             {
@@ -768,10 +768,10 @@ namespace YaNec.Engine
                         Action ev = ProntoQuad; if (ev != null) ev();
                     });
                 }
-                if (pronto) { base = pCeb * sc; o.Oks.Add("perimetro trovato dal motore NEC (risonanza della spira alimentata): " + Calcolatori.N((sc - 1) * 100, 1) + " % rispetto a Cebik"); }
+                if (pronto) { perBase = pCeb * sc; o.Oks.Add("perimetro trovato dal motore NEC (risonanza della spira alimentata): " + Calcolatori.N((sc - 1) * 100, 1) + " % rispetto a Cebik"); }
                 else o.Oks.Add("ricerca della risonanza con il NEC in corso (qualche secondo); intanto il perimetro di Cebik");
             }
-            double pd = base * Scale, pr = pd * 1030.0 / 1005.0, pdir = pd * 975.0 / 1005.0;
+            double pd = perBase * Scale, pr = pd * 1030.0 / 1005.0, pdir = pd * 975.0 / 1005.0;
             o.Card("Radiatore", Calcolatori.N(pd, 2) + " m", "lato " + Calcolatori.N(pd / 4, 3) + " m (" + metodo + ")", true);
             if (ne >= 2) o.Card("Riflettore", Calcolatori.N(pr, 2) + " m", "lato " + Calcolatori.N(pr / 4, 3) + " m");
             if (ne >= 3) o.Card("Direttore", Calcolatori.N(pdir, 2) + " m", "lato " + Calcolatori.N(pdir / 4, 3) + " m");

@@ -35,6 +35,7 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C30 | J. Meeus, Astronomical Algorithms | cap. 47 (Luna) | Rumore dal cielo vero (calcolo 8) |
 | C31 | J. Nielsen, Usability Engineering (1993) | cap. 5 (soglie 0,1 / 1 / 10 s, da R. B. Miller 1968) | Registro delle operazioni e tempi |
 | C32 | P. Wade W1GHZ, Online Microwave Antenna Book | cap. 4, 5, 6 (6.3, 6.5), 12; app. 6A | Parabola, Parabola offset, Trombe e illuminatori |
+| C37 | L. B. Cebik W4RNL, Cubical Quad Notes, vol. 1-3 (antenneX) | vol. 2 cap. 2: perimetro della spira risonante in funzione di log10(d/λ), programma GW-Basic e Tab. 2-2; vol. 3: conclusioni (quad oltre 4 elementi, multibanda) | Calcolatori: Quad, metodo Cebik e avviso (calcolo 5) |
 
 ## Articoli e riviste
 
@@ -64,6 +65,8 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C61 | D. T. Emerson, "The gain of the axial-mode helix antenna", NRAO (1995) | guadagno dell'elica | Calcolatori: elica (calcolo 6) |
 | C62 | VK2KU, "Effects of the boom"; G3SEK | correzione del boom | Yagi (calcolo 5) |
 | C63 | L. G. Windom W8GZ, QST settembre 1929; F. Spillner DJ2KY, QRV dicembre 1971; Belrose e Bouliane, QST agosto 1990; C. L. Buchanan W3DZZ, QST marzo 1955 | dipoli alimentati fuori centro e trappolati | Calcolatori: dipoli (calcolo 6) |
+| C38 | L. B. Cebik W4RNL, "Antenna Options" n. 1-3 e 12-13 (QEX); "The Moxon Rectangle on 2 Meters"; "Some J-Poles That I Have Known"; "What Is a Slim Jim?" | Yagi a 3 elementi e adattamento a forcina; NVIS (altezza 0,175 λ, schermo, 9 fili); Moxon 2 m Tab. 1-2; J-pole standard e non standard (2,46 e 2,56 dBi dopo l'AGT); Slim Jim | Calcolatori: Forcina, NVIS, J-pole / Slim Jim (calcolo 5, 6) |
+| C39 | R. D. Straw N6BV, "What's the Deal About NVIS?", QST dicembre 2005 | dipolo NVIS e antenne molto basse | Calcolatori: NVIS (calcolo 6) |
 
 ## Norme e rapporti
 

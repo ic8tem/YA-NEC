@@ -233,11 +233,15 @@ Yagi 520-40H dell'ARRL (5 el. 20 m a 70 ft) con e senza correzione, dalla Tab. 7
 |---|---|---|
 | Moxon | regressioni di MOXGEN | Cebik [C33]; casi DK7ZB [C80] |
 | quad e delta | perimetro 1005/f piedi | ARRL [C12] |
+| quad (dalla 1.4.2) | perimetro = 8 · (0,0001386 D1⁴ + 0,0026779 D1³ + 0,0195541 D1² + 0,0654053 D1 + 0,2164538) λ, D1 = log10(d/λ), valido da 1E-6 a 1E-2 λ; Automatico: Cebik fino a 30 MHz, sopra risonanza cercata dal NEC | Cebik [C37] |
+| forcina (beta / hairpin) | Xc = √(R(Z0−R)), XL = Z0·√(R/(Z0−R)), Z0f = 120·arccosh(s/d), lunghezza = arctan(XL/Z0f)/β | Cebik [C38] |
 | hexbeam | geometria a W e a U di G3TXQ | G3TXQ, M0OXO (nel manuale d'uso) |
 
 ### 5.3 Casi di prova
 
 Moxon a filo di DK7ZB per i 6, 10, 12, 15, 17, 20 e 30 m (filo nudo da 1 mm, spazio libero): YA-NEC come nec2c. Delta loop a 14,2 MHz con vertice a 37 gradi: 49,2 - j127 ohm.
+
+Quad di Cebik (dalla 1.4.2): la formula ridà la Tab. 2-2 di [C37] (filo #12: 1,0542 λ a 14,1 MHz, 1,0812 λ a 146 MHz); rispetto all'ARRL il perimetro esce piu' lungo del 3 % in HF e fino al 10,8 % a 144 MHz con tubo da 12 mm, per questo sopra i 30 MHz il metodo Automatico passa al NEC. Moxon da 2 m di Cebik [C38] con nec2c: elementi da 1/4" e 1/2" come la sua Tab. 2 (6,1 e 6,0 dBi, F/B 30 e 36 dB, 48 - j2 e 51 - j2 ohm a 146 MHz); con 1" il NEC-2 non converge (segmenti troppo corti rispetto al raggio).
 
 ## 6. Calcolatori: dipoli, verticali, loop
 
@@ -252,6 +256,8 @@ Moxon a filo di DK7ZB per i 6, 10, 12, 15, 17, 20 e 30 m (filo nudo da 1 mm, spa
 | radiali | resistenza di terra dalla Tab. 9-1 di ON4UN (da Brown-Lewis-Epstein) | [C18], [C41], [C42] |
 
 Casi di prova: ground plane a 4 radiali e monopolo su terreno perfetto come nec2c [C1]; verticale λ/4 con 16 radiali: Tab. 9-1 circa 14,9 ohm di terra (efficienza 71 %), Sevick circa 9 ohm (80 %) [[Calcolo: 3.5 Radiali a terra: confronto delle fonti]].
+
+NVIS (dalla 1.4.2) [C38], [C39]: dipolo a 3,6 MHz su terreno medio con nec2c, guadagno allo zenit 1,23 dBi a 0,05 λ, 6,57 dBi a 0,175 λ (massimo), 6,10 dBi a 0,25 λ; schermo 1 λ x 1 λ: +1,9 dB su terreno molto povero (3 / 0,001), +0,7 dB su terreno medio, +0,2 dB su terreno molto buono, come Cebik. J-pole standard di Cebik (146 MHz, tubo 3/8") con nec2c: 2,45 dBi (Cebik 2,46 dopo l'AGT); Slim Jim: nessun guadagno in piu' [C38].
 
 ## 7. Ricezione, RDF e DMF
 
