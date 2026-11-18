@@ -4581,3 +4581,14 @@ lobo reale sopra il piatto fino a	real lobe above flat up to
 Profilo verso	Profile towards
 Lobo verticale e angoli di arrivo a	Vertical lobe and arrival angles at
 piatto:	flat:
+Cos'e' l'RDF	What the RDF is
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = gain in the wanted direction - average gain over all directions (W8JI; formerly called SNIF, in the '60s). It measures how much the antenna improves the signal-to-noise ratio if noise arrives evenly from every direction; absolute gain does not count (a preamp recovers it). Averaged as in EZNEC: upper hemisphere divided by the whole sphere (4 pi). With this convention the results agree with IV3PRK and W8JI/Hi-Z (vertical 5.07 against 5.06 and 4.9; Beverage 350 m 13.5 against 13.66). Limit: real noise is not uniform (power lines, local QRM): that is why F/B and the shape of the lobe matter too. For transmitting antennas the RDF makes no sense: that is why it is calculated only in this tab. DMF (Directivity Merit Figure, ON4UN): gain at 20 degrees elevation in the forward direction minus the average gain of the rear half-space (azimuth beyond 90 degrees, above ground, weighted by the cosine for the area): it tells how much the antenna rejects noise arriving from behind. ON4UN warns not to compare DMF and RDF with each other. Sources: W8JI and W8WWV (RDF), ON4UN Low-Band DXing ch. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevation
+azimut	azimuth
+azimut a {0}°	azimuth at {0}°
+totale	total
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	First-null beamwidth (FNBW): {0}°;  highest side lobe: {1}
+{0} dB a {1}	{0} dB at {1}
+scala lineare in dB ({0} dB)	linear dB scale ({0} dB)
+Didascalie {0} %	Labels {0} %
+ROS	SWR

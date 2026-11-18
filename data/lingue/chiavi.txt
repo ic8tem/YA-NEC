@@ -1,5 +1,5 @@
 # YA-NEC - testi italiani dell'interfaccia da tradurre (chiavi). Un testo per riga; \n = a capo.
-# Le traduzioni stanno in <codice>.txt nella stessa cartella: <chiave italiana><TAB><traduzione>. Le voci mancanti restano in italiano.
+# Le traduzioni stanno in <codice>.txt nella stessa cartella: <chiave italiana><TAB><traduzione>. Le voci mancanti si mostrano in inglese (dalla 1.3; in en.txt restano in italiano).
 # Stesso sistema di YA-MS, E-LAYER ANALYZER e LIVETROPOVHF. Elenco ricavato dal codice (0.5.3): alcune voci sono pezzi di frasi composte.
         come correggere: 
    (filo rastremato, con GC)
@@ -6544,3 +6544,13 @@ lobo reale sopra il piatto fino a
 Profilo verso
 Lobo verticale e angoli di arrivo a
 piatto:
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione
+azimut
+azimut a {0}°
+totale
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}
+{0} dB a {1}
+scala lineare in dB ({0} dB)
+Didascalie {0} %
+ROS

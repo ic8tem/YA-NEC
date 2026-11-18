@@ -241,7 +241,7 @@ namespace YaNec
             StackPanel leg = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Margin = new Thickness(0, 0, 12, 0), VerticalAlignment = VerticalAlignment.Center };
             double legv = Math.Max(90, Math.Min(250, cfg.GetD("didascalie", 100)));
             Draw.LegendScale = legv / 100.0;
-            TextBlock legT = new TextBlock { Text = "Didascalie " + legv.ToString("0", CI) + " %", FontSize = 12, Foreground = Pal.B(Pal.BarMuted), VerticalAlignment = VerticalAlignment.Center, Width = 110 };
+            TextBlock legT = new TextBlock { Text = Lang.F("Didascalie {0} %", legv.ToString("0", CI)), FontSize = 12, Foreground = Pal.B(Pal.BarMuted), VerticalAlignment = VerticalAlignment.Center, Width = 110 };
             Slider legS = new Slider { Minimum = 90, Maximum = 250, Value = legv, Width = 130, VerticalAlignment = VerticalAlignment.Center, SmallChange = 10, LargeChange = 20 };
             ToolTip.SetTip(legS, "Grandezza delle didascalie (legende) di tutti i grafici, dal 90 al 250 %. Si salva in config.ini.");
             legS.PropertyChanged += (s, e) =>
@@ -249,7 +249,7 @@ namespace YaNec
                 if (e.Property != Slider.ValueProperty) return;
                 double v = Math.Round(legS.Value / 10) * 10;
                 Draw.LegendScale = v / 100.0;
-                legT.Text = "Didascalie " + v.ToString("0", CI) + " %";
+                legT.Text = Lang.F("Didascalie {0} %", v.ToString("0", CI));
                 cfg.SetD("didascalie", v);
                 foreach (Control c in new Control[] { chSwr, chZ, chGain, chFb, chEff, polAz, polEl, smith }) if (c != null) c.InvalidateVisual();
             };

@@ -119,7 +119,7 @@ namespace YaNec
             if (Traces.Count > 0 && Traces[0].Db != null && Traces[0].Db.Length >= 36)
             {
                 Misure(Traces[0]);
-                if (!double.IsNaN(Fnbw)) righe.Add("Apertura al primo nullo (FNBW): " + Draw.N(Fnbw, 0) + "°;  lobo laterale piu' alto: " + (double.IsNaN(Sll) ? "nessuno" : Draw.N(Sll, 1) + " dB a " + Etichetta(SllAng)));
+                if (!double.IsNaN(Fnbw)) righe.Add(Lang.F("Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}", Draw.N(Fnbw, 0), double.IsNaN(Sll) ? Lang.T("nessuno") : Lang.F("{0} dB a {1}", Draw.N(Sll, 1), Etichetta(SllAng))));
                 if (!double.IsNaN(C1) || !double.IsNaN(C2))
                 {
                     double g0 = RefDb;
@@ -144,7 +144,7 @@ namespace YaNec
                 cy = top + 10 + R + 4;
             }
             if (R < 30) return;
-            Draw.Text(ctx, Title, 10, 6, 14 * ks, Pal.Fore, FontWeight.SemiBold);
+            Draw.Text(ctx, Lang.T(Title), 10, 6, 14 * ks, Pal.Fore, FontWeight.SemiBold);
             Point c = new Point(cx, cy);
             lastCx = cx; lastCy = cy; lastR = R;
             IPen grid = Pal.P(Pal.ChartGrid, 1);
@@ -236,14 +236,14 @@ namespace YaNec
                 PolarTrace tr = Traces[i];
                 if (string.IsNullOrEmpty(tr.Name)) continue;
                 double ls = Draw.LegendScale;
-                FormattedText ft = Draw.Ft(tr.Name, 11.5 * ls, Pal.ChartText);
+                FormattedText ft = Draw.Ft(Lang.T(tr.Name), 11.5 * ls, Pal.ChartText);
                 lx -= ft.Width;
                 ctx.DrawText(ft, new Point(lx, 8));
                 double legY = 8 + ft.Height / 2;
                 ctx.DrawLine(tr.Dashed ? Pal.P(tr.Color, 2, Pal.Dash) : Pal.P(tr.Color, 2), new Point(lx - 22 * ls, legY), new Point(lx - 4, legY));
                 lx -= 34 * ls;
             }
-            Draw.TextR(ctx, ArrlScale ? "scala log ARRL, dB rispetto al massimo" : "scala lineare in dB (" + LinRange.ToString("0") + " dB)", W - 12, H - 8 - 12 * ks, 10.5 * ks, Pal.Muted);
+            Draw.TextR(ctx, ArrlScale ? Lang.T("scala log ARRL, dB rispetto al massimo") : Lang.F("scala lineare in dB ({0} dB)", LinRange.ToString("0")), W - 12, H - 8 - 12 * ks, 10.5 * ks, Pal.Muted);
         }
 
         void DrawHalfPower(DrawingContext ctx, Point c, double R, PolarTrace tr)

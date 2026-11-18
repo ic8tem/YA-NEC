@@ -317,7 +317,7 @@ namespace YaNec
                     pEl.Traces = new List<PolarTrace> { new PolarTrace { Db = r.ElCut, Color = Pal.Accent, Name = "totale" } };
                     pEl.RefDb = r.GmaxDbi; pEl.MarkAngle = r.ElevationOfMax; pEl.Title = "elevazione";
                     pAz.Traces = new List<PolarTrace> { new PolarTrace { Db = r.AzCut, Color = Pal.Accent, Name = "totale" } };
-                    pAz.RefDb = r.GmaxDbi; pAz.MarkAngle = r.PhiMax; pAz.Title = "azimut a " + FN(r.ElevationOfMax, 0) + "°";
+                    pAz.RefDb = r.GmaxDbi; pAz.MarkAngle = r.PhiMax; pAz.Title = Lang.F("azimut a {0}°", FN(r.ElevationOfMax, 0));
                     pEl.InvalidateVisual(); pAz.InvalidateVisual();
                     List<BarItem> it = new List<BarItem>();
                     bool messo = false;
