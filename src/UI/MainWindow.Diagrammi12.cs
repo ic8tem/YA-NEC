@@ -248,7 +248,7 @@ namespace YaNec
                 if (k == "modello" && run == null) { titPol.Text = "Calcola prima il modello aperto"; return; }
                 if (k == "modello") f = run.FreqMHz;
                 string nomeAnt = Array.Find(antenne, a => a[0] == k)[1];
-                titPol.Text = "Azimut a " + FN(el, 0) + "° · " + FN(f, 3) + " MHz";
+                titPol.Text = Lang.F("Azimut a {0}° · {1} MHz", FN(el, 0), FN(f, 3));
                 notaPol.Text = "calcolo in corso…";
                 try
                 {

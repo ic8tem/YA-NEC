@@ -330,12 +330,12 @@ namespace YaNec
                     bars.Items = it;
                     bars.InvalidateVisual();
                     if (!double.IsNaN(lit) && Math.Abs(rd.Rdf - lit) > 1.0)
-                        avv.Children.Add(Ris(Nota("⚠ RDF " + FN(rd.Rdf, 1) + " dB contro " + FN(lit, 2) + " della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).", Pal.Orange)));
+                        avv.Children.Add(Ris(Nota(Lang.F("⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).", FN(rd.Rdf, 1), FN(lit, 2)), Pal.Orange)));
                 }));
             };
             // 13/11/2026 18:10: il modello creato si vede anche nella Struttura 3D (le schede RDF restano qui, calcolate in sottofondo)
-            bCalc.Click += (s, e) => { formuleAgg(); RxParams p = leggi(); calcola(p); ApriModelloCalcolatore(deck(p), titolo + ".nec"); };
-            bApri.Click += (s, e) => { RxParams p = leggi(); ApriModelloCalcolatore(deck(p), titolo + ".nec"); };
+            bCalc.Click += (s, e) => { formuleAgg(); RxParams p = leggi(); calcola(p); ApriModelloCalcolatore(deck(p), Lang.T(titolo) + ".nec"); };
+            bApri.Click += (s, e) => { RxParams p = leggi(); ApriModelloCalcolatore(deck(p), Lang.T(titolo) + ".nec"); };
             bOtt.Click += (s, e) =>
             {
                 if (schiera)

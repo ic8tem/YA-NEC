@@ -4592,3 +4592,7 @@ Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	First-null 
 scala lineare in dB ({0} dB)	linear dB scale ({0} dB)
 Didascalie {0} %	Labels {0} %
 ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB against {1} from the source: check dimensions, termination and ground (the source may use a different ground or geometry).
+Azimut a {0}° · {1} MHz	Azimuth at {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimuth at {0}° elevation
+RUMORE	NOISE

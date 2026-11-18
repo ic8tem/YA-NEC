@@ -1071,7 +1071,7 @@ namespace YaNec
                     cards.Children.Insert(3, Riquadretto("F/B", FN(r.FrontBack, 1) + " dB", "a " + FN(r.ElevationOfMax, 0) + "° di elevazione"));
                     cards.Children.Insert(4, Riquadretto("Apertura a -3 dB", FN(r.HpbwAz, 0) + "° / " + FN(r.HpbwEl, 0) + "°", "orizzontale / verticale"));
                     pAz.Traces = new List<PolarTrace> { new PolarTrace { Db = r.AzCut, Color = Pal.Accent, Name = "totale" } };
-                    pAz.RefDb = r.GmaxDbi; pAz.MarkAngle = r.PhiMax; pAz.Title = "Azimut a " + FN(r.ElevationOfMax, 0) + "° di elevazione";
+                    pAz.RefDb = r.GmaxDbi; pAz.MarkAngle = r.PhiMax; pAz.Title = Lang.F("Azimut a {0}° di elevazione", FN(r.ElevationOfMax, 0));
                     pEl.Traces = new List<PolarTrace> { new PolarTrace { Db = r.ElCut, Color = Pal.Orange, Name = "totale" } };
                     pEl.RefDb = r.GmaxDbi; pEl.MarkAngle = r.ElevationOfMax; pEl.Title = "Elevazione (piano az " + FN(r.PhiMax, 0) + "°)";
                     pAz.InvalidateVisual(); pEl.InvalidateVisual();
