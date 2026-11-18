@@ -1976,3 +1976,5 @@ Le fonti di questa versione sono nel documento **Citazioni**, con le pagine usat
 **Distanze di stack: ROS attivo.** Colonne **ROS attivo** e **G realizzato**, casella **ROS attivo massimo** (di partenza 1,5): le distanze sopra la soglia sono "da non scegliere" e non entrano nella scelta proposta. Distanze provate di partenza da 0,5 a 2,5 x DL6WU. Vedi [[Uso: Distanze di stack: accoppiamento e distanza migliore]] e [[Calcolo: 9.3 ROS attivo e guadagno realizzato]].
 
 **Chiusura del programma.** Alla chiusura una finestra chiede conferma e ringrazia (Sì / No; Invio = Sì, Esc = No). Con modifiche non salvate resta la finestra "Modello non salvato".
+
+**Aggiornamento automatico (1.4.1).** Il primo controllo e' 10 secondi dopo l'avvio, poi ogni 3 minuti. Quando la versione nuova e' installata si apre un avviso senza pulsanti che conta 10 secondi e riavvia YA-NEC: il modello aperto si riapre da solo (se non era salvato, se ne salva prima una copia in data/aggiornamenti e resta da salvare).

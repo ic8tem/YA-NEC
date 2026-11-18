@@ -2,7 +2,10 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.4:**
+**Novità della 1.4.1:**
+- **Aggiornamento automatico** più rapido: primo controllo 10 secondi dopo l'avvio, poi ogni 3 minuti (prima 2 minuti e 30 minuti). Quando la versione nuova è installata compare un avviso che conta 10 secondi e riavvia YA-NEC da solo, riaprendo il modello aperto (se non era salvato, prima se ne salva una copia in data/aggiornamenti).
+
+**Dalla 1.4:**
 - **Documenti tecnici**: la linguetta Manuale diventa *Documenti tecnici* con tre documenti, ognuno con il suo indice e il suo PDF: **Manuale d'uso**, nuovo **Manuale di calcolo e delle fonti** (15 capitoli con formule, ipotesi, limiti, fonti con somiglianze e differenze e casi di prova) e **Citazioni** (bibliografia unica numerata, con le pagine usate e dove si usa in YA-NEC). Ricerca in tutti e tre, rimandi [C..] e tra i documenti cliccabili;
 - **Distanze di stack**: colonne **ROS attivo** (con tutte le antenne alimentate insieme) e **G realizzato**; le distanze con ROS attivo sopra la soglia (casella, di partenza 1,5) sono segnate "da non scegliere" e restano fuori dalla scelta proposta; distanze provate da 0,5 a 2,5 volte quella di DL6WU;
 - **Chiusura**: finestra di conferma con il ringraziamento (Sì / No).

@@ -67,3 +67,6 @@
 - La finestra non ha piu' pulsanti ne' la x: conta 10 secondi con una barra e riavvia YA-NEC (sul Mac avvisa del .dmg e si chiude dopo 20 s). Sostituisce Riavvia adesso / Piu' tardi della voce precedente.
 - Prima del riavvio: il modello salvato si annota in data/aggiornamenti/riapri.txt; quello non salvato si copia in data/aggiornamenti/"modello non salvato <data>.nec". All'avvio successivo RiapriDopoRiavvio lo riapre (il non salvato resta da salvare, con il nome di prima).
 - Testi aggiornati (Impostazioni, manuale, README, voci inglesi).
+
+## 1.4.1 – Uscita (18/11/2026, "pubblica" di IC8TEM alle 18:34)
+- VERSION 1.4.1; novita' in .github/release.md e nel capitolo 25 del manuale; PDF rigenerati.
