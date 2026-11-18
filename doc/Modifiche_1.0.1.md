@@ -33,3 +33,13 @@
 - Tabella delle distanze: prima riga con l'antenna singola, colonne F/R e ΔF/R, segno "F/R max". Nuovo grafico "Rispetto alla singola antenna": aumento di guadagno da 0 in su (con le N antenne ideali), variazione del F/R su asse rovesciato con lo 0 in alto; G/T solo con la casella.
 - Pulsante "? Manuale" sulla scheda DL6WU e sui riquadri Accoppiamento, Matrice e Distanze provate: apre il manuale al paragrafo "Distanze di stack: accoppiamento e distanza migliore" (i titoli #### ora si impaginano come paragrafi).
 - Prova con nec2c (10 el. BVO IC8TEM, 2 x 2, 0,5-2,0 a passi di 0,05): guadagno, |Sij| e lobi coincidono con la tabella di YA-NEC 1.3.0 entro 0,1-0,3 dB.
+
+## 1.3.2 – Distanze di stack: ROS attivo e righe "da non scegliere" (18/11/2026, richieste di IC8TEM delle 14:40-14:47)
+- StackStudio.RosAttivo: per ogni distanza Γatt,i = somma della riga i della matrice S (alimentazione uguale e in fase), ROS attivo della porta peggiore, perdita per riflessione e G realizzato; per la singola dalla Zin.
+- Tabella: colonne "ROS attivo" e "G realizzato"; segni "riflessi minimi" e "ROS attivo alto: da non scegliere". Le righe escluse non entrano nella scelta proposta (se lo sono tutte, si sceglie fra tutte).
+- Casella "ROS attivo massimo" (di partenza 1,5); distanze di partenza da 0,5 a 2,5 x DL6WU (prima 2,0).
+- Manuale, cap. 16: ROS attivo, G realizzato e la spiegazione delle aree di cattura di DL6WU (Ae = Gλ²/4π contro Dv x Dh, lobi di griglia a sinθ = λ/d).
+
+## 1.3.2 – Finestra di chiusura come LIVETROPOVHF (18/11/2026, richiesta di IC8TEM delle 14:47)
+- Nuovo MainWindow.Chiusura.cs: icona, "Vuoi chiudere YA-NEC?", "Grazie per avermi usato: spero di esserti stato utile." in corsivo, barra grigia con Sì e No (Invio = Sì, Esc = No), come AskClose di LIVETROPOVHF.
+- Si apre alla chiusura quando il modello e' salvato; con modifiche non salvate resta la finestra "Modello non salvato". Saltata nelle prove automatiche. Voci inglesi in en.txt.

@@ -162,6 +162,13 @@ namespace YaNec
                     if (await ChiediSeNonSalvato("Cosa faccio prima di chiudere YA-NEC?", "chiudi")) { chiusuraConfermata = true; Close(); }
                     return;
                 }
+                // 1.3.2 (IC8TEM 18/11/2026 14:47): conferma con il ringraziamento, come LIVETROPOVHF
+                if (!chiusuraConfermata && !ProveAutomatiche)
+                {
+                    e.Cancel = true;
+                    if (await ChiediChiusura()) { chiusuraConfermata = true; Close(); }
+                    return;
+                }
                 Aggiornamento.Ferma();
             };
         }

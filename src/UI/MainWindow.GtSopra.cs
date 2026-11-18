@@ -304,7 +304,7 @@ namespace YaNec
         // Distanze di stack: scheda di prima + accoppiamento e distanza migliore (NEC)
         // =====================================================================================================
         int ssModo, ssCrit = 3, ssN = 2;
-        TextBox ssKmin, ssKmax, ssPasso, ssZ0, ssSoglia, ssH, ssDmin, ssDmax, ssAmin, ssAmax;
+        TextBox ssKmin, ssKmax, ssPasso, ssRosMax, ssZ0, ssSoglia, ssH, ssDmin, ssDmax, ssAmin, ssAmax;
         StackPanel ssVhfBox, ssHfBox, ssRis;
         TextBlock ssStato;
         StackStudioRisultato ssUltimo;
@@ -326,11 +326,13 @@ namespace YaNec
             sez.Children.Add(new TestoAdattato { Child = Nota("VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.") });
             // VHF/UHF
             ssVhfBox = new StackPanel { Spacing = 3 };
-            ssKmin = Tb("0,5", 50); ssKmax = Tb("2,0", 50); ssZ0 = Tb(model != null ? FN(model.Z0, 0) : "50", 55); ssSoglia = Tb("-13", 50);
+            ssKmin = Tb("0,5", 50); ssKmax = Tb("2,5", 50); ssZ0 = Tb(model != null ? FN(model.Z0, 0) : "50", 55); ssSoglia = Tb("-13", 50);   // 1.3.2: di partenza fino a 2,5 (IC8TEM 18/11/2026 14:48)
             ssPasso = Tb("0,05", 50);   // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): passo scelto, di partenza 0,05
             ssVhfBox.Children.Add(Riga("Distanze da provare", ssKmin, new TextBlock { Text = "-", VerticalAlignment = VerticalAlignment.Center }, ssKmax, new TextBlock { Text = "x la distanza DL6WU, a passi di", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }, ssPasso));
             ssVhfBox.Children.Add(Riga("Impedenza di riferimento", ssZ0, new TextBlock { Text = "Ω (barra in alto)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             ssVhfBox.Children.Add(Riga("Criterio della distanza migliore", Scelta(new[] { "guadagno massimo", "lobi laterali piu' bassi", "G/T migliore", "guadagno con lobi sotto" }, 3, k => ssCrit = k), ssSoglia, new TextBlock { Text = "dB", VerticalAlignment = VerticalAlignment.Center }));
+            ssRosMax = Tb("1,5", 50);   // 1.3.2 (IC8TEM 18/11/2026 14:47): oltre questo ROS attivo la distanza e' "da non scegliere"
+            ssVhfBox.Children.Add(Riga("ROS attivo massimo", ssRosMax, new TextBlock { Text = "oltre: \"ROS attivo alto: da non scegliere\" (escluse dalla scelta proposta)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 520 }));
             ssVhfBox.Children.Add(Riga("G/T (da Rumore e G/T)", new TextBlock { Text = "temperature del cielo e del terreno ed elevazione della voce Rumore e G/T", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 420 }));
             Button bv = Btn("Calcola accoppiamento e distanze (NEC)", true), bu = Btn("Usa la distanza proposta per lo stack", false), bc = Btn("Copia", false);
             bv.Click += (s, e) => StudioStack(false);
@@ -372,7 +374,7 @@ namespace YaNec
             NecModel m0 = model; double f = run.FreqMHz;
             int righe = ssCalc != null ? Math.Max(1, Math.Min(8, ssCalc.I("righe"))) : 2, col = ssCalc != null ? Math.Max(1, Math.Min(8, ssCalc.I("col"))) : 1;
             if (!hf && righe * col < 2) { ssStato.Text = "Servono almeno 2 antenne (righe x colonne nella scheda sopra)."; return; }
-            double kmin = ParseNum(ssKmin.Text, 0.5), kmax = ParseNum(ssKmax.Text, 2), passo = Math.Max(0.01, ParseNum(ssPasso.Text, 0.05)), z0 = ParseNum(ssZ0.Text, m0.Z0), soglia = ParseNum(ssSoglia.Text, -13);
+            double kmin = ParseNum(ssKmin.Text, 0.5), kmax = ParseNum(ssKmax.Text, 2.5), passo = Math.Max(0.01, ParseNum(ssPasso.Text, 0.05)), rosMax = Math.Max(1.01, ParseNum(ssRosMax.Text, 1.5)), z0 = ParseNum(ssZ0.Text, m0.Z0), soglia = ParseNum(ssSoglia.Text, -13);
             double tsky = gtSky != null ? ParseNum(gtSky.Text, 200) : 200, tg = gtGround != null ? ParseNum(gtGround.Text, 1000) : 1000, el = gtElev != null ? ParseNum(gtElev.Text, 30) : 30;
             double h = ParseNum(ssH.Text, 15), dmin = ParseNum(ssDmin.Text, 0.5), dmax = ParseNum(ssDmax.Text, 1.25), amin = ParseNum(ssAmin.Text, 5), amax = ParseNum(ssAmax.Text, 15);
             int crit = ssCrit, n = ssN;
@@ -382,7 +384,7 @@ namespace YaNec
             ssStato.Text = hf ? "calcolo dello stack HF sopra il terreno in corso..." : "calcolo di " + (righe * col) + " antenne a tutte le distanze in corso (una soluzione NEC per porta)...";
             ssRis.Children.Clear();
             Task.Run(() => hf ? StackStudio.Hf(m0, f, n, h, Math.Min(dmin, dmax), Math.Max(dmin, dmax), Math.Min(amin, amax), Math.Max(amin, amax), ct)
-                              : StackStudio.Vhf(m0, f, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo), ct)
+                              : StackStudio.Vhf(m0, f, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo, rosMax), ct)
                 .ContinueWith(t => Dispatcher.UIThread.Post(() =>
                 {
                     if (t.IsCanceled) return;
@@ -449,8 +451,8 @@ namespace YaNec
             wm.Children.Add(m1); wm.Children.Add(Tabella(zt));
             ssRis.Children.Add(Pannello("Matrice di accoppiamento alla distanza proposta", wm, "diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra", "Distanze di stack: accoppiamento e distanza migliore"));
             // tabella delle distanze (1.3.1, bozzetto approvato da IC8TEM il 18/11/2026 13:04: riga della singola, F/R e variazione del F/R)
-            List<string[]> rows = new List<string[]> { new[] { "x DL6WU", "distanza", "", "|Sij| max dB", "G dBi", "sulla singola", "lobo laterale dB", "F/R dB", "ΔF/R", "G/T dB/K", "" } };
-            rows.Add(new[] { Lang.T("singola"), "-", "", "-", FN(r.GSingola, 2), "0", FN(r.SllSingola, 1), FN(r.FrSingola, 1), "0", FN(r.GtSingola, 2), Lang.T("riferimento") });
+            List<string[]> rows = new List<string[]> { new[] { "x DL6WU", "distanza", "", "|Sij| max dB", "ROS attivo", "G dBi", "G realizzato", "sulla singola", "lobo laterale dB", "F/R dB", "ΔF/R", "G/T dB/K", "" } };
+            rows.Add(new[] { Lang.T("singola"), "-", "", "-", FN(r.RosSingola, 2), FN(r.GSingola, 2), FN(r.GSingola - r.PerditaSingola, 2), "0", FN(r.SllSingola, 1), FN(r.FrSingola, 1), "0", FN(r.GtSingola, 2), Lang.T("riferimento") });
             int ie = -1, id = -1;
             for (int i = 0; i < r.Punti.Count; i++)
             {
@@ -462,8 +464,10 @@ namespace YaNec
                 if (q == r.Punti.OrderByDescending(x => x.Fr).First()) tag.Add(Lang.T("F/R max"));
                 if (q == r.GtMax) tag.Add(Lang.T("G/T max"));
                 if (q == r.Proposta) { tag.Add(Lang.T("scelta proposta")); ie = i + 2; }
+                if (q == r.RifMin) tag.Add(Lang.T("riflessi minimi"));
+                if (q.Escluso) tag.Add(Lang.T("ROS attivo alto: da non scegliere"));
                 double dd = righe > 1 ? q.Dv : q.Dh;
-                rows.Add(new[] { FN(q.K, 2), FN(dd, 3) + " m", FN(dd / r.Lambda, 2) + " λ", FN(q.S21, 1), FN(q.G, 2), FN(q.G - r.GSingola, 2), FN(q.Sll, 1), FN(q.Fr, 1), FN(q.Fr - r.FrSingola, 1), FN(q.Gt, 2), string.Join(", ", tag) });
+                rows.Add(new[] { FN(q.K, 2), FN(dd, 3) + " m", FN(dd / r.Lambda, 2) + " λ", FN(q.S21, 1), FN(q.RosAtt, 2), FN(q.G, 2), FN(q.Greal, 2), FN(q.G - r.GSingola, 2), FN(q.Sll, 1), FN(q.Fr, 1), FN(q.Fr - r.FrSingola, 1), FN(q.Gt, 2), string.Join(", ", tag) });
             }
             LineChart ch = new LineChart { Title = "", XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "dBi", Y2Label = "dB", Height = 260 };
             ch.X = r.Punti.Select(q => q.K).ToArray();

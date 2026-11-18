@@ -19,6 +19,8 @@ namespace YaNec.Engine
     public class StackPunto
     {
         public double K, Dv, Dh, G, Sll, SllAng, Gt, Tant, S21, Gmedia, Fr;   // Fr: F/R medio (1.3.1)
+        public double RosAtt = double.NaN, PerditaRifl, Greal;   // 1.3.2: ROS attivo (porta peggiore), perdita per riflessione, guadagno realizzato
+        public bool Escluso;                                     // 1.3.2: ROS attivo sopra la soglia: da non scegliere
         public double[] GAng;   // HF: guadagno agli angoli 5, 10, 15, 20
     }
 
@@ -26,7 +28,8 @@ namespace YaNec.Engine
     {
         public List<StackPunto> Punti = new List<StackPunto>();
         public StackPunto Proposta, Dl6wu, GMax, SllMin, GtMax;
-        public double GSingola, SllSingola, GtSingola, FrSingola, Dv0, Dh0, Lambda;
+        public double GSingola, SllSingola, GtSingola, FrSingola, RosSingola, PerditaSingola, Dv0, Dh0, Lambda, RosMax = 1.5;
+        public StackPunto RifMin;   // 1.3.2: distanza con il ROS attivo piu' basso
         public Complex[,] Z; public double[,] SdB;   // alla distanza proposta (VHF)
         public string Criterio = "";
         // HF
@@ -80,6 +83,27 @@ namespace YaNec.Engine
             for (int r = 0; r < n; r++) for (int c = 0; c < n; c++) o[r, c] = a[r, n + c];
             return o;
         }
+
+        /// <summary>1.3.2 (richiesta di IC8TEM del 18/11/2026 14:30): ROS attivo della porta peggiore con tutte le porte alimentate uguali
+        /// e in fase: Γ_att,i = somma della riga i della matrice S (S = (Z - Z0)(Z + Z0)^-1), ROS = (1 + |Γ|)/(1 - |Γ|).</summary>
+        public static double RosAttivo(Complex[,] z, double z0, out double gammaMax)
+        {
+            int n = z.GetLength(0);
+            Complex[,] zm = new Complex[n, n], zp = new Complex[n, n];
+            for (int r = 0; r < n; r++) for (int c = 0; c < n; c++) { zm[r, c] = z[r, c] - (r == c ? z0 : 0); zp[r, c] = z[r, c] + (r == c ? z0 : 0); }
+            Complex[,] ip = Inversa(zp);
+            gammaMax = 0;
+            for (int r = 0; r < n; r++)
+            {
+                Complex g = Complex.Zero;
+                for (int c = 0; c < n; c++) for (int k = 0; k < n; k++) g += zm[r, k] * ip[k, c];
+                gammaMax = Math.Max(gammaMax, g.Magnitude);
+            }
+            double gm = Math.Min(gammaMax, 0.999999);
+            return (1 + gm) / (1 - gm);
+        }
+
+        static double PerditaDb(double gamma) { return -10 * Math.Log10(Math.Max(1e-12, 1 - Math.Min(gamma * gamma, 0.999999))); }
 
         /// <summary>|S| in dB dalla matrice Z con l'impedenza di riferimento z0.</summary>
         public static double[,] SdB(Complex[,] z, double z0)
@@ -141,7 +165,7 @@ namespace YaNec.Engine
 
         /// <summary>Studio VHF/UHF in spazio libero. criterio: 0 guadagno massimo, 1 lobi piu' bassi, 2 G/T migliore, 3 guadagno con lobi sotto la soglia.</summary>
         public static StackStudioRisultato Vhf(NecModel base0, double f, int righe, int colonne, double kMin, double kMax, double z0,
-            int criterio, double sogliaSll, double tsky, double tground, double elev, int passiGriglia, CancellationToken ct, double passo = 0.05)
+            int criterio, double sogliaSll, double tsky, double tground, double elev, int passiGriglia, CancellationToken ct, double passo = 0.05, double rosMax = 1.5)
         {
             StackStudioRisultato res = new StackStudioRisultato { Lambda = 299.792458 / f };
             NecModel mf = base0.Clone();
@@ -155,6 +179,12 @@ namespace YaNec.Engine
             LoboLaterale(r1.Engine, r1.ThetaMax, r1.PhiMax, righe > 1, out sl, out sa);
             res.SllSingola = sl;
             res.FrSingola = r1.FrontRearMedio;
+            res.RosMax = rosMax > 1 ? rosMax : 1.5;
+            {
+                double g1 = ((r1.Zin - z0) / (r1.Zin + z0)).Magnitude;
+                res.RosSingola = (1 + Math.Min(g1, 0.999999)) / (1 - Math.Min(g1, 0.999999));
+                res.PerditaSingola = PerditaDb(g1);
+            }
             res.GtSingola = NoiseGt.Gt(Griglia(r1, passiGriglia), r1.ThetaMax, r1.PhiMax, r1.GmaxDbi, elev, tsky, tground, 0, 0, true).GtAnt;
             // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): passo scelto, di partenza 0,05 (prima fisso 0,1)
             if (!(passo >= 0.01)) passo = 0.05;
@@ -177,11 +207,21 @@ namespace YaNec.Engine
                 double smax = -999;
                 for (int a = 0; a < s.GetLength(0); a++) for (int b = 0; b < s.GetLength(0); b++) if (a != b) smax = Math.Max(smax, s[a, b]);
                 p.S21 = smax;
+                double gam;
+                p.RosAtt = RosAttivo(z, z0, out gam);
+                p.PerditaRifl = PerditaDb(gam);
+                p.Greal = p.G - p.PerditaRifl;
+                p.Escluso = p.RosAtt > res.RosMax;
                 res.Punti.Add(p);
                 if (Math.Abs(k - 1) < 1e-6) res.Dl6wu = p;
             }
-            res.GMax = res.Punti[0]; res.SllMin = res.Punti[0]; res.GtMax = res.Punti[0];
-            foreach (StackPunto p in res.Punti)
+            // 1.3.2 (IC8TEM 18/11/2026 14:47): le distanze con ROS attivo sopra la soglia non entrano nella scelta (se lo sono tutte, si usano tutte)
+            List<StackPunto> scegli = res.Punti.FindAll(x => !x.Escluso);
+            if (scegli.Count == 0) scegli = res.Punti;
+            res.RifMin = res.Punti[0];
+            foreach (StackPunto p in res.Punti) if (p.RosAtt < res.RifMin.RosAtt) res.RifMin = p;
+            res.GMax = scegli[0]; res.SllMin = scegli[0]; res.GtMax = scegli[0];
+            foreach (StackPunto p in scegli)
             {
                 if (p.G > res.GMax.G) res.GMax = p;
                 if (p.Sll < res.SllMin.Sll) res.SllMin = p;
@@ -193,7 +233,7 @@ namespace YaNec.Engine
             else
             {
                 StackPunto best = null;
-                foreach (StackPunto p in res.Punti) if (p.Sll <= sogliaSll && (best == null || p.G > best.G)) best = p;
+                foreach (StackPunto p in scegli) if (p.Sll <= sogliaSll && (best == null || p.G > best.G)) best = p;
                 res.Proposta = best ?? res.SllMin;
                 res.Criterio = best != null ? "guadagno con lobi sotto " + sogliaSll.ToString("0", System.Globalization.CultureInfo.CurrentCulture) + " dB" : "nessuna distanza con i lobi sotto la soglia: lobi piu' bassi";
             }
