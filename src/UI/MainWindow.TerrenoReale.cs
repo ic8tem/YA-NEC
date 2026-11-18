@@ -198,7 +198,7 @@ namespace YaNec
                 {
                     Dem.Direzione d = Dem.DirezioniTraffico[i]; double az, km;
                     Dem.Rotta(la, lo, d.Lat, d.Lon, out az, out km);
-                    fDir.SetCount("d" + i, d.Nome + " · " + FN(az, 0) + "° · " + FN(Math.Round(km / 10) * 10, 0) + " km");
+                    fDir.SetCount("d" + i, Lang.T(d.Nome) + " · " + FN(az, 0) + "° · " + FN(Math.Round(km / 10) * 10, 0) + " km");
                 }
                 try { File.WriteAllText(FileTerreno, s); } catch { }
                 return true;
@@ -293,7 +293,7 @@ namespace YaNec
                 double za = p.QuotaBase + ultimaH;
                 ctx.DrawLine(new Pen(new SolidColorBrush(Color.Parse("#2B3440")), 2.4), new Point(X(0) + 1, Y(p.QuotaBase)), new Point(X(0) + 1, Y(za)));
                 ctx.DrawEllipse(new SolidColorBrush(TerrRosso), null, new Point(X(0) + 1, Y(za)), 4.5, 4.5);
-                Draw.Text(ctx, "antenna " + FN(ultimaH, 1) + " m sul suolo (" + FN(za, 0) + " m s.l.m.)", X(0) + 10, Y(za) - 18, 11.5, Pal.Fore);
+                Draw.Text(ctx, Lang.F("antenna {0} m sul suolo ({1} m s.l.m.)", FN(ultimaH, 1), FN(za, 0)), X(0) + 10, Y(za) - 18, 11.5, Pal.Fore);
                 // orizzonte
                 if (ultimo != null)
                 {
@@ -303,7 +303,7 @@ namespace YaNec
                         double xo = xmax, zo = za + xo * 1000 * Math.Tan(o * Math.PI / 180);
                         Pen pd = new Pen(new SolidColorBrush(TerrSuoloBordo), 1.2, new DashStyle(new double[] { 2, 3 }, 0));
                         ctx.DrawLine(pd, new Point(X(0), Y(za)), new Point(X(xo), Y(Math.Min(zmax, zo))));
-                        Draw.TextR(ctx, "linea d'orizzonte " + FN(o, 2) + "°", R - 4, Y(Math.Min(zmax, zo)) - 16, 11.5, TerrSuoloBordo);
+                        Draw.TextR(ctx, Lang.T("linea d'orizzonte") + " " + FN(o, 2) + "°", R - 4, Y(Math.Min(zmax, zo)) - 16, 11.5, TerrSuoloBordo);
                     }
                     if (!double.IsNaN(ultimo.RiflessioneKm) && ultimo.RiflessioneKm < xmax)
                     {
@@ -470,14 +470,14 @@ namespace YaNec
                         var lb = primoLobo(r.El, r.Reale); var lp = primoLobo(r.El, r.Piatto);
                         double x = corpo.X + corpo.Width * 0.64, y = corpo.Y + 40;
                         Action<string, Color, FontWeight> rg = (s, col, w) => { Draw.Text(ctx, s, x, y, 12, col, w); y += 19; };
-                        rg("scala angolare " + (zm < 90 ? "×" + FN(90 / zm, 0) + " (0–" + FN(zm, 0) + "°)" : "normale"), Pal.Muted, FontWeight.Normal);
+                        rg(Lang.T("scala angolare") + " " + (zm < 90 ? "×" + FN(90 / zm, 0) + " (0–" + FN(zm, 0) + "°)" : "normale"), Pal.Muted, FontWeight.Normal);
                         rg(titDir + " · " + FN(ultimaF, 3) + " MHz", Pal.Fore, FontWeight.SemiBold);
-                        if (lb.Item1 > 0) rg("primo lobo reale: " + FN(r.El[lb.Item1], 1) + "°", Pal.Fore, FontWeight.Normal);
-                        if (lp.Item1 > 0) rg("primo lobo piatto: " + FN(r.El[lp.Item1], 1) + "°", Pal.Fore, FontWeight.Normal);
+                        if (lb.Item1 > 0) rg(Lang.T("primo lobo reale:") + " " + FN(r.El[lb.Item1], 1) + "°", Pal.Fore, FontWeight.Normal);
+                        if (lp.Item1 > 0) rg(Lang.T("primo lobo piatto:") + " " + FN(r.El[lp.Item1], 1) + "°", Pal.Fore, FontWeight.Normal);
                         if (lb.Item1 > 0) rg("-3 dB da " + FN(lb.Item2, 1) + "° a " + FN(lb.Item3, 1) + "°", TerrBlu, FontWeight.Normal);
                         double fino = double.NaN;
                         for (int i = 1; i < r.El.Length && r.El[i] <= 45; i++) if (r.Reale[i] > r.Piatto[i]) fino = r.El[i]; else if (!double.IsNaN(fino)) break;
-                        if (!double.IsNaN(fino)) rg("lobo reale sopra il piatto fino a " + FN(fino, 1) + "°", Color.Parse("#21A04A"), FontWeight.Normal);
+                        if (!double.IsNaN(fino)) rg(Lang.T("lobo reale sopra il piatto fino a") + " " + FN(fino, 1) + "°", Color.Parse("#21A04A"), FontWeight.Normal);
                         rg("statistiche degli angoli di arrivo: non caricate", Pal.Muted, FontWeight.Normal);
                     }
                 }
@@ -596,10 +596,10 @@ namespace YaNec
                     EpsMare = cMare.SelectedIndex == 0 ? 81 : 80, SigmaMare = cMare.SelectedIndex == 0 ? 5 : 0.003,
                     Mare = cSuMare.IsChecked == true, Rugosita = cRug.IsChecked == true, Divergenza = cDiv.IsChecked == true, Diffrazione = cDif.IsChecked == true
                 };
-                titDir = modoAz == "traffico" && !double.IsNaN(lat) ? Dem.DirezioniTraffico[dirTr].Nome + " (" + FN(az, 0) + "°)" : "azimut " + FN(az, 0) + "° (" + nomeDir(az) + ")";
+                titDir = modoAz == "traffico" && !double.IsNaN(lat) ? Lang.T(Dem.DirezioniTraffico[dirTr].Nome) + " (" + FN(az, 0) + "°)" : "azimut " + FN(az, 0) + "° (" + nomeDir(az) + ")";
                 string fonte = prof == "file" ? "da file" : prof == "piatto" ? "piatto" : "dal DEM";
-                titProf.Text = "Profilo verso " + titDir + ", " + fonte + " · calcolo in corso…";
-                titLobo.Text = "Lobo verticale e angoli di arrivo a " + FN(az, 0) + "° · " + FN(f, 3) + " MHz";
+                titProf.Text = Lang.T("Profilo verso") + " " + titDir + ", " + fonte + " · calcolo in corso…";
+                titLobo.Text = Lang.T("Lobo verticale e angoli di arrivo a") + " " + FN(az, 0) + "° · " + FN(f, 3) + " MHz";
                 Nec2Engine eng = run.Engine;
                 double gcon = eng.GainConstant, lam = 299.792458 / f, kk = 2 * Math.PI / lam;
                 bool scan = cScan.IsChecked == true, fareRosa = cRosa.IsChecked == true && prof == "dem" && !double.IsNaN(lat);
@@ -639,7 +639,7 @@ namespace YaNec
                     if (ct.IsCancellationRequested) return;
                     ultimo = esito; ultimoProf = pr.Item1; ultimaH = hUser; ultimoAz = az; ultimaF = f;
                     terrEsito = esito;
-                    titProf.Text = "Profilo verso " + titDir + ", " + (prof == "dem" ? pr.Item1.Fonte : prof == "file" ? "da " + pr.Item1.Fonte : "piatto");
+                    titProf.Text = Lang.T("Profilo verso") + " " + titDir + ", " + (prof == "dem" ? pr.Item1.Fonte : prof == "file" ? "da " + pr.Item1.Fonte : "piatto");
                     dProf.InvalidateVisual(); ridisegnaLobo();
                     // risultati
                     double fom = figuraMerito(esito, f);
@@ -648,9 +648,9 @@ namespace YaNec
                         "senza le statistiche ARRL degli angoli di arrivo la media e' uniforme su " + (f < 30 ? "1–15°" : "0,5–5°") + " di elevazione; HFTA la pesa con la percentuale dei tempi di apertura.", "Terreno reale");
                     carte.Children.Add(cF);
                     carte.Children.Add(carta(f < 30 ? "Guadagno a 5° / 10°" : "Guadagno a 1° / 3°", FN(valoreA(esito.El, esito.Reale, f < 30 ? 5 : 1), 1) + " / " + FN(valoreA(esito.El, esito.Reale, f < 30 ? 10 : 3), 1) + " dBi",
-                        "piatto: " + FN(valoreA(esito.El, esito.Piatto, f < 30 ? 5 : 1), 1) + " / " + FN(valoreA(esito.El, esito.Piatto, f < 30 ? 10 : 3), 1) + " dBi", false));
+                        Lang.T("piatto:") + " " + FN(valoreA(esito.El, esito.Piatto, f < 30 ? 5 : 1), 1) + " / " + FN(valoreA(esito.El, esito.Piatto, f < 30 ? 10 : 3), 1) + " dBi", false));
                     var lb = primoLobo(esito.El, esito.Reale); var lp = primoLobo(esito.El, esito.Piatto);
-                    carte.Children.Add(carta("Primo massimo", lb.Item1 > 0 ? FN(esito.El[lb.Item1], 1) + "°" : "-", "piatto: " + (lp.Item1 > 0 ? FN(esito.El[lp.Item1], 1) + "°" : "-"), false));
+                    carte.Children.Add(carta("Primo massimo", lb.Item1 > 0 ? FN(esito.El[lb.Item1], 1) + "°" : "-", Lang.T("piatto:") + " " + (lp.Item1 > 0 ? FN(esito.El[lp.Item1], 1) + "°" : "-"), false));
                     carte.Children.Add(carta("Angoli coperti a -3 dB", lb.Item1 > 0 ? FN(lb.Item2, 1) + "° – " + FN(lb.Item3, 1) + "°" : "-", "primo lobo sul profilo reale", false));
                     Border cAlt = carta("Altezza migliore per la rotta", scan ? "calcolo…" : "-", scan ? "scansione " + (f < 30 ? "6–30" : "2–30") + " m" : "attiva la scansione (sotto)", false);
                     carte.Children.Add(cAlt);
