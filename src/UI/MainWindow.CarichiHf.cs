@@ -34,7 +34,7 @@ namespace YaNec
             {
                 Background = new SolidColorBrush(Color.FromRgb(255, 243, 196)), BorderBrush = new SolidColorBrush(Color.FromRgb(214, 168, 0)), BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(6), Padding = new Thickness(8, 6), Margin = new Thickness(0, 6, 0, 0),
-                Child = new TextBlock { TextWrapping = TextWrapping.Wrap, Foreground = new SolidColorBrush(Color.FromRgb(90, 60, 0)), FontSize = 12.5, Text = "⚠ " + testo }
+                Child = new TextBlock { TextWrapping = TextWrapping.Wrap, Foreground = new SolidColorBrush(Color.FromRgb(90, 60, 0)), FontSize = 12.5, Text = "⚠ " + Lang.T(testo) }
             };
         }
 

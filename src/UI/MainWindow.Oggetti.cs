@@ -174,13 +174,13 @@ namespace YaNec
             StackPanel sp = new StackPanel { Spacing = 6 };
             if (model == null) { hostBasso.Content = PannelloTesta("Oggetti del modello", null, "apri un modello", new TextBlock()); return; }
             string[][] voci = {
-                new[] { "sorgenti", "Sorgenti " + model.Sources.Count },
-                new[] { "carichi", "Carichi " + model.Loads.Count },
-                new[] { "linee", "Linee " + model.Networks.Count },
+                new[] { "sorgenti", Lang.T("Sorgenti") + " " + model.Sources.Count },
+                new[] { "carichi", Lang.T("Carichi") + " " + model.Loads.Count },
+                new[] { "linee", Lang.T("Linee") + " " + model.Networks.Count },
                 new[] { "stack", "Stack " + (stackInfo != null ? stackInfo.Copies.ToString(CultureInfo.InvariantCulture) : "0") },
-                new[] { "rastremazioni", "Rastremazioni " + model.Rastremazioni.Count },
-                new[] { "trasformatori", "Trasformatori " + model.Trasformatori.Count },
-                new[] { "retil", "Reti L e di sfasamento " + model.RetiL.Count },
+                new[] { "rastremazioni", Lang.T("Rastremazioni") + " " + model.Rastremazioni.Count },
+                new[] { "trasformatori", Lang.T("Trasformatori") + " " + model.Trasformatori.Count },
+                new[] { "retil", Lang.T("Reti L e di sfasamento") + " " + model.RetiL.Count },
                 new[] { "cavobalun", "Cavo e balun" } };
             string[] fumetti = {
                 "Sorgenti di tensione o di corrente con la notazione MMANA (w4c).",
@@ -367,12 +367,12 @@ namespace YaNec
             if (fasOggetti == null) return;
             if (model != null)
             {
-                fasOggetti.SetCount("sorgenti", "Sorgenti   " + model.Sources.Count);
-                fasOggetti.SetCount("carichi", "Carichi   " + model.Loads.Count);
-                fasOggetti.SetCount("linee", "Linee   " + model.Networks.Count);
-                fasOggetti.SetCount("rastremazioni", "Rastremazioni (tubi telescopici)   " + model.Rastremazioni.Count);
-                fasOggetti.SetCount("trasformatori", "Trasformatori   " + model.Trasformatori.Count);
-                fasOggetti.SetCount("retil", "Reti L e di sfasamento   " + model.RetiL.Count);
+                fasOggetti.SetCount("sorgenti", Lang.T("Sorgenti") + "   " + model.Sources.Count);
+                fasOggetti.SetCount("carichi", Lang.T("Carichi") + "   " + model.Loads.Count);
+                fasOggetti.SetCount("linee", Lang.T("Linee") + "   " + model.Networks.Count);
+                fasOggetti.SetCount("rastremazioni", Lang.T("Rastremazioni (tubi telescopici)") + "   " + model.Rastremazioni.Count);
+                fasOggetti.SetCount("trasformatori", Lang.T("Trasformatori") + "   " + model.Trasformatori.Count);
+                fasOggetti.SetCount("retil", Lang.T("Reti L e di sfasamento") + "   " + model.RetiL.Count);
                 fasOggetti.SetCount("stack", "Stack   " + (stackInfo != null ? stackInfo.Copies.ToString(CultureInfo.InvariantCulture) : "0"));
             }
 
@@ -477,7 +477,7 @@ namespace YaNec
             if (!compatto)
                 body.Children.Add(Nota("PULSE come in MMANA: w + numero del filo + b inizio, c centro, e fine (es. w4c); w4:7 = segmento 7. La colonna grigia mostra il segmento NEC calcolato; " +
                     "sui fili con la sorgente al centro i segmenti diventano dispari da soli. Con le sorgenti a corrente i valori sono correnti (schiere fasate, four-square)."));
-            return PannelloTesta("Sorgenti " + srcRows.Count, ap, "PULSE come in MMANA: w + filo + b/c/e (w14c); colonna grigia = segmento NEC", body);
+            return PannelloTesta(Lang.T("Sorgenti") + " " + srcRows.Count, ap, "PULSE come in MMANA: w + filo + b/c/e (w14c); colonna grigia = segmento NEC", body);
         }
         NecModel srcModel, ldModel, tlModel;
 
@@ -598,7 +598,7 @@ namespace YaNec
             if (!compatto)
                 body.Children.Add(Nota("Type come in MMANA: LC = trappola L e C in parallelo (L in uH, C in pF, Q della bobina, F = frequenza di risonanza; con la F indicata, cambiando L il programma ricalcola C); " +
                 "R+jX = impedenza fissa (ohm); RLC serie = R ohm, L uH, C pF in serie. S (Laplace) nella prossima versione. Il carico sta al centro del segmento indicato."));
-            return PannelloTesta("Carichi " + ldRows.Count, ap, "(L - uH; C - pF; R/jX - ohm) LC = trappola, R+jX, RLC serie", body);
+            return PannelloTesta(Lang.T("Carichi") + " " + ldRows.Count, ap, "(L - uH; C - pF; R/jX - ohm) LC = trappola, R+jX, RLC serie", body);
         }
 
         // ------------------------------------------------------------------------------------------------
@@ -677,7 +677,7 @@ namespace YaNec
             if (!compatto)
                 body.Children.Add(Nota("Linee ideali senza perdite (scheda TL del NEC-2): lunghezza 0 = distanza tra i centri dei due segmenti; 'Incrociata' = Z0 negativa (linea a fase invertita, come nelle LPDA). " +
                 "Una linea piu' corta della distanza tra i punti non e' fisica: il programma la calcola ma conviene controllare. Perdite, fattore di velocita' e catalogo dei cavi nella prossima versione."));
-            return PannelloTesta("Linee " + tlRows.Count, ap, "linee ideali TL tra due punti; lunghezza 0 = distanza; Incrociata = Z0 negativa", body);
+            return PannelloTesta(Lang.T("Linee") + " " + tlRows.Count, ap, "linee ideali TL tra due punti; lunghezza 0 = distanza; Incrociata = Z0 negativa", body);
         }
 
         string DistanzaPunti(string a, string b)

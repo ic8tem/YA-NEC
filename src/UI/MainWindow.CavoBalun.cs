@@ -102,7 +102,7 @@ namespace YaNec
                 {
                     for (int i = 0; i < 100; i++) { double t = i / 99.0; ctx.FillRectangle(new SolidColorBrush(Color.FromRgb((byte)(70 + 170 * t), (byte)(110 - 60 * t), (byte)(220 - 180 * t))), new Rect(30 + i * 1.9, rr.Height - 34, 2, 12)); }
                     Draw.Text(ctx, "0 %", 30, rr.Height - 50, 11, Pal.Muted); Draw.TextR(ctx, FN(cmax, 0) + " %", 30 + 190, rr.Height - 50, 11, Pal.Muted);
-                    Draw.Text(ctx, "caso mostrato: " + es.Nome, 30, rr.Height - 18, 11.5, Pal.Muted);
+                    Draw.Text(ctx, Lang.F("caso mostrato: {0}", Lang.T(es.Nome)), 30, rr.Height - 18, 11.5, Pal.Muted);
                 }
             };
             Action calcola = async () =>
@@ -195,7 +195,7 @@ namespace YaNec
         {
             StackPanel sp = new StackPanel { Spacing = 6 };
             sp.Children.Add(Nota(descrizione));
-            Button b = Btn("Apri la scheda " + titolo, true);
+            Button b = Btn(Lang.F("Apri la scheda {0}", Lang.T(titolo)), true);
             b.Click += (s, e) => ApriFinestraGrande(titolo, crea());
             sp.Children.Add(b);
             return Pannello(titolo, sp);

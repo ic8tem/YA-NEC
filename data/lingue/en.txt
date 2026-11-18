@@ -4596,3 +4596,11 @@ ROS	SWR
 Azimut a {0}° · {1} MHz	Azimuth at {0}° · {1} MHz
 Azimut a {0}° di elevazione	Azimuth at {0}° elevation
 RUMORE	NOISE
+Apri la scheda {0}	Open the {0} sheet
+caso mostrato: {0}	case shown: {0}
+Rastremazioni	Tapers
+BANDA	BAND
+λ/2 coassiale 4:1	λ/2 coaxial 4:1
+Manicotto λ/4	λ/4 sleeve
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Cable shield and mast as NEC wires; balun comparison (common-mode current, F/B, average F/R, loss, power at 1 kW) from 1.8 to 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Uprights, crossbar, mast and phasing-line shields as NEC wires: comparison without / with frame (gain, F/B, average F/R, lobes, divider Z, Tant and G/T).
