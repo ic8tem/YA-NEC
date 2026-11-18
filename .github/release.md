@@ -2,7 +2,13 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.4.2:**
+**Novità della 1.5** (capitolo 26 del manuale):
+- **Calcolatori**: la famiglia **Calcoli meccanici** entra nei Calcolatori (Sollecitazioni elementi accesa); **Resistenza di radiazione** con la reattanza del dipolo e del monopolo corti e la bobina di risonanza; **Dipolo ripiegato** con R e X in frequenza; **Loop magnetica** a più spire e con l'accoppiamento **capacitivo** (due condensatori); formule dell'Antenna Engineering Handbook, 4ª ed.;
+- **Distanze di stack HF** in una voce a sé, accanto a quella VHF/UHF;
+- **Modelli di AutoEZ, MultiNEC ed EZNEC**: sorgenti «mark out» accese solo nella loro banda, fili virtuali con linee e trasformatori, TLParms, celle calcolate e variabili oltre la Y, WL di MultiNEC, righe escluse con "x";
+- **Salva con nome in .nec**: le sorgenti di corrente di EZNEC diventano le tensioni calcolate, così nec2c e 4nec2 danno lo stesso risultato.
+
+**Dalla 1.4.2:**
 - **Calcolatori**: nuovi **NVIS** (dipolo, V invertito, loop 1 λ; altezza 0,175 λ e scansione NEC; schermo, 9 fili o filo riflettore a terra, da Cebik) e **Forcina** (adattamento beta / hairpin); **Quad** con la scelta del metodo (Cebik in HF, risonanza cercata dal NEC in VHF, ARRL); **J-pole** con la variante **Slim Jim**;
 - **Ottimizzatore**: riquadro **Monte Carlo** (partenze a caso e controllo dei migliori candidati con le tolleranze di costruzione);
 - **Distanze di stack** valutate su **due frequenze** (caso peggiore o media);

@@ -64,6 +64,14 @@ YA-NEC calcola con il NEC-2 (nec2c) e non ha un motore MININEC. I due metodi ris
 
 **Scelta di YA-NEC.** Il motore resta il NEC-2; le sue debolezze si coprono come fa EZNEC: correzione di Leeson per i tubi telescopici, avvisi sulle giunzioni e sui fili vicini, verifica della segmentazione, AGT. Il "terreno MININEC" (GN 3, capitolo 3) c'e' solo per leggere e confrontare i file di EZNEC con quel terreno: le correnti restano quelle del NEC-2. I file MMANA si leggono risegmentati per il NEC-2 (manuale d'uso, capitolo 10).
 
+### 1.6 Modelli di altri programmi: lettura e prova (dalla 1.5)
+
+**AutoEZ e MultiNEC (.weq).** Il foglio Variables di AutoEZ è una griglia di blocchi di 22 righe (righe 2-23 del file). Il blocco 0 sono le lettere A, B, D, E, G, ..., V, X, Y, Z (mancano C, F, R e W: ricavato dalle formule di OCF Dipole e Fan Dipole di AC6LA). Dal blocco 1 i nomi seguono le colonne di Excel (AA dal blocco 1, AW dal blocco 2, BS dal blocco 3) e contengono anche le «celle calcolate». Nelle formule valgono le funzioni di testo usate da AutoEZ (IF(ISNUMBER(..)), SUBSTITUTE, VALUE per gli angoli scritti «45d»), WL (lunghezza d'onda nell'unità delle coordinate, MultiNEC) e TLParms (Zo e VF nominali; la scheda TL è senza perdite). La 13ª colonna delle tabelle di sorgenti, carichi e linee è la colonna «mark out»: "x" esclude la riga, =IF(condizione su Freq, "", "X") accende la sorgente solo dove la condizione è vera (a ogni frequenza si calcolano solo le sorgenti accese, le altre sono filo continuo, come in EZNEC). I fili virtuali di EZNEC (V1, V2...) diventano fili di 1 segmento (0,02 λ) sopra l'antenna con 1 MΩ di reattanza in serie: la porta resta aperta e il filo non porta corrente. Verifica con nec2c a 14 MHz: dipolo alimentato da 5 m di linea a 50 Ω da un filo virtuale, 30,033 − j14,724 Ω contro 30,032 − j14,723 Ω della formula della linea. La tabella dei trasformatori di EZNEC diventa un trasformatore ideale di YA-NEC con il rapporto delle Rel Z. Restano fuori le reti L scritte da Zmatch (formule nel foglio Calculate, che non è nel .weq) e gli stub con «Open/Short» nella prima colonna senza una linea sullo stesso segmento (avviso).
+
+**.nec per gli altri programmi.** Il NEC-2 non ha le sorgenti di corrente di EZNEC né le sorgenti «mark out»: «Salva con nome» in .nec scrive le tensioni che YA-NEC ricava alla frequenza del modello (V = Z·I) e solo le sorgenti accese, con due righe CM che lo dicono. Il .yanec resta com'era.
+
+**Prova di lettura (riga di comando «YA-NEC --converti <cartella> <uscita>»).** Ogni modello si legge, si calcola con YA-NEC, si scrive in .nec e si ricalcola con nec2c. Novembre 2026: 61 .weq di IC8TEM, 198 modelli degli archivi (AutoEZ, MultiNEC, MMANA, Modeling, mynec4pc) e 116 .yag (zipyagi, Hy-Gain). Entro lo 0,5 % da nec2c tranne: le Yagi con impedenza di pochi ohm (scarti di 0,03-0,07 Ω), i modelli con la correzione dei tubi a gradini (YA-NEC applica Leeson, nec2c no) e i modelli su terreno di Sommerfeld (1,35-2 %; con terreno perfetto, coefficiente di riflessione o spazio libero gli stessi modelli stanno entro lo 0,14 %, quindi la differenza è nel calcolo di Sommerfeld, da studiare).
+
 ## 2. Segmentazione, AGT, convergenza
 
 ### 2.1 Limiti della guida del NEC-2
@@ -254,10 +262,15 @@ Quad di Cebik (dalla 1.4.2): la formula ridà la Tab. 2-2 di [C37] (filo #12: 1,
 | elica in modo assiale | Z = 140 C/λ; D = 15 C² N S / λ³ (sovrastima: Emerson) | Kraus [C19], Emerson [C61] |
 | OCF, Windom, trappolati | punto di alimentazione e lunghezze dalle fonti originali | [C63] |
 | radiali | resistenza di terra dalla Tab. 9-1 di ON4UN (da Brown-Lewis-Epstein) | [C18], [C41], [C42] |
+| reattanza del dipolo e del monopolo corti (dalla 1.5) | Z = R(kl) − j[120 (ln(l/a) − 1) cot kl − X(kl)], R(kl) e X(kl) con i polinomi di Tai (entro 0,5 Ω dalla Tab. 4-1), kl fino a π/2; monopolo = metà | AEH 4ª eq. 4-1, 4-2 [C40] |
+| dipolo ripiegato in frequenza (dalla 1.5) | raggio equivalente dei due conduttori (eq. 4-9); a = ln(s/r1)/ln(s/r2) (Guertler, uguale al rapporto ARRL); Zf = j Z0 tan kl; Z = 2(1+a)² Zr Zf / ((1+a)² Zr + 2 Zf) | AEH 4ª eq. 4-9 – 4-11 (Uda e Mushiake) [C40] |
+| loop magnetica, accoppiamento capacitivo (dalla 1.5) | C2 = √(R0/R − 1)/(ω R0) in parallelo all'ingresso; C1 = 1/(ω(ωL − √(R(R0 − R)))) in serie alla loop | AEH 4ª eq. 5-20, 5-21 (Smith) [C40] |
 
 Casi di prova: ground plane a 4 radiali e monopolo su terreno perfetto come nec2c [C1]; verticale λ/4 con 16 radiali: Tab. 9-1 circa 14,9 ohm di terra (efficienza 71 %), Sevick circa 9 ohm (80 %) [[Calcolo: 3.5 Radiali a terra: confronto delle fonti]].
 
 NVIS (dalla 1.4.2) [C38], [C39]: dipolo a 3,6 MHz su terreno medio con nec2c, guadagno allo zenit 1,23 dBi a 0,05 λ, 6,57 dBi a 0,175 λ (massimo), 6,10 dBi a 0,25 λ; schermo 1 λ x 1 λ: +1,9 dB su terreno molto povero (3 / 0,001), +0,7 dB su terreno medio, +0,2 dB su terreno molto buono, come Cebik. J-pole standard di Cebik (146 MHz, tubo 3/8") con nec2c: 2,45 dBi (Cebik 2,46 dopo l'AGT); Slim Jim: nessun guadagno in piu' [C38].
+
+Somiglianze e differenze (dalla 1.5): la resistenza del dipolo corto dell'AEH (eq. 4-2, 20(kl)²) è la stessa formula di Kraus e Balanis che usavamo; l'AEH aggiunge la reattanza e la resistenza con la corrente sinusoidale (3,18 Ω contro 2,85 Ω per un dipolo di 10 m a 3,6 MHz). Il rapporto del ripiegato di Guertler coincide con quello ARRL; l'AEH aggiunge la formula fuori risonanza, che a risonanza dà meno di 73 Ω × rapporto perché il dipolo equivalente è più grosso. L'accoppiamento capacitivo della loop è la rete L a due condensatori: concorda con le formule di W5QJR e ARRL per L, R e Q, e si aggiunge al loop di Faraday e al gamma.
 
 ## 7. Ricezione, RDF e DMF
 

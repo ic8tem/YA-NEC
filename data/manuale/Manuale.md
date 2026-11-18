@@ -2010,3 +2010,39 @@ Le fonti di questa versione sono nel documento **Citazioni**, con le pagine usat
 - **Distanze di stack su due frequenze.** Nella scheda VHF, **Frequenze: due** calcola le distanze a due frequenze (per esempio 144,1 e 145 MHz) con le stesse distanze in metri; la **Distanza proposta** si sceglie sul caso peggiore o sulla media delle due. Un pannello in piu' mostra le due tabelle e le due curve del guadagno.
 - **Ottimizzatore: Monte Carlo.** Riquadro **Monte Carlo**: l'ottimizzatore parte anche da punti scelti a caso (di partenza 8) e alla fine controlla i migliori candidati (3) con copie del modello (50) in cui lunghezza, posizione e diametro di ogni elemento sono spostati a caso entro le tolleranze della linguetta Tolleranze. Propone il candidato che regge meglio gli errori di costruzione (percentuale di copie entro le soglie, caso peggiore o voto medio); cliccando una riga della tabella si riprende un altro candidato. Il tempo cresce di circa (partenze + 1) volte; con 0 partenze e 0 candidati l'ottimizzatore lavora come prima.
 
+
+## 26. Novita' della 1.5
+
+**Calcoli meccanici dentro i Calcolatori.** La linguetta Calcoli meccanici diventa la famiglia **Calcoli meccanici** dei Calcolatori (tra Strumenti e Dischi), con la sua fascia Vento / Bilanciamento / Boom e tirante / Palo e plinto / Sollecitazioni elementi. **Sollecitazioni elementi** si accende; Boom e tirante e Palo e plinto restano spente per ora.
+
+**Distanze di stack HF.** Nel fascione Rumore, G/T e stack la voce **Distanze di stack** resta per VHF e UHF; lo stack HF sopra il terreno ha la sua voce **Distanze di stack HF**, con la sua pagina e i suoi risultati.
+
+**Loop magnetica.**
+- Campi **Numero di spire** e **Passo tra le spire**: la resistenza di radiazione cresce con (N·A)², la perdita con N e l'induttanza con N². L'effetto di prossimita' tra spire vicine non e' calcolato: un avviso lo ricorda (esempio dell'ARRL 15ª: 8 spire, 10 % calcolato, 3 % misurato).
+- Terza scelta di **Accoppiamento**: **capacitivo**, con C1 in serie alla loop e C2 in parallelo all'ingresso da 50 Ω (AEH 4ª, eq. 5-20 e 5-21). La scheda da' i due condensatori e la tensione su ognuno. Il modello NEC ha la sorgente sul lato basso con C1; C2 si aggiunge alla Z calcolata.
+
+**Resistenza di radiazione.** Nuovo campo **Diametro del conduttore**. Per dipolo e monopolo corti la scheda da' anche:
+- la resistenza con la corrente sinusoidale (Tab. 4-1 dell'AEH);
+- la **reattanza** (eq. 4-1, e la forma «antenna corta» eq. 4-2);
+- la bobina che porta in risonanza.
+
+Vale fino a mezz'onda (kl = π/2). Vedi [[Calcolo: 6. Calcolatori: dipoli, verticali, loop]].
+
+**Dipolo ripiegato.** Il grafico mostra R e X in frequenza (campo **Scansione**, ±8 %) con la formula completa di Uda e Mushiake (AEH 4ª eq. 4-11). La scheda aggiunge:
+- il raggio equivalente dei due conduttori;
+- la Z0 della loro linea;
+- la Z alla frequenza.
+
+A risonanza la Z resta sotto 73 Ω × rapporto, perche' il dipolo equivalente e' piu' grosso.
+
+**Modelli di AutoEZ, MultiNEC ed EZNEC.**
+- **Formule «mark out».** Le sorgenti accese solo in certe bande (per esempio le quad pentabanda di AC6LA) si calcolano solo dove sono accese.
+- **Fili virtuali di EZNEC** (V1, V2...): con le linee e i **trasformatori** collegati.
+- **Linee con TLParms**: si usano Zo e VF nominali, senza perdite.
+- **Celle calcolate e variabili oltre la Y** (AA, AB, ... BG...), con IF(ISNUMBER), SUBSTITUTE e VALUE.
+- **WL** dei file di MultiNEC.
+- **Righe escluse con "x"**: ora lette davvero.
+
+Restano fuori le reti di adattamento di Zmatch: un messaggio lo dice.
+
+**Salva con nome in .nec.** Per i modelli con sorgenti di corrente (EZNEC) o «mark out» si scrivono le tensioni calcolate alla frequenza del modello e solo le sorgenti accese, con due righe CM che lo dicono: cosi' nec2c, 4nec2 e xnec2c danno lo stesso risultato di YA-NEC. Vedi [[Calcolo: 1.6 Modelli di altri programmi: lettura e prova (dalla 1.5)]].
