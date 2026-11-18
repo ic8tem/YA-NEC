@@ -1,0 +1,228 @@
+<title>Bozzetto calcolatori 1.5</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC, linguetta Calcolatori: cinque pannelli (Loop magnetica, Quad, J-pole, Forcina, NVIS) scelti con le pillole in alto; parametri a sinistra, risultati e avvisi a destra */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --nota:#e8f0fd; --giallo:#fff4d6; --giallob:#c99a06; --nuovo:#e3f5e8; --nuovob:#2f9e55;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1200px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:110ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.fam{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.pill{font:inherit;font-size:.86rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 13px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.pill:focus-visible,select:focus-visible,input:focus-visible,.bt:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.pan{display:none;grid-template-columns:380px minmax(0,1fr)}
+.pan.on{display:grid}
+@media (max-width:860px){.pan.on{grid-template-columns:1fr}}
+.sx{border-right:1px solid var(--line);padding:12px;display:grid;gap:6px;align-content:start}
+@media (max-width:860px){.sx{border-right:0;border-bottom:1px solid var(--line)}}
+.dx{padding:12px 14px;display:grid;gap:12px;align-content:start;min-width:0}
+h2{font-size:.95rem;margin:0}
+.fonte{font-size:.8rem;color:var(--mut)}
+.p{display:grid;grid-template-columns:minmax(0,1fr) 110px 40px;gap:8px;align-items:center;padding:3px 6px;border-radius:5px}
+.p label{font-size:.86rem}
+.p.n{background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob)}
+.p small{grid-column:1/-1;color:var(--mut);font-size:.76rem;margin-top:-2px}
+input,select{font:inherit;font-size:.84rem;padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink);width:100%;font-family:var(--mono)}
+select{font-family:var(--f)}
+.u{color:var(--mut);font-size:.8rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.bt{font:inherit;font-size:.84rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.84rem}
+th,td{border:1px solid var(--line);padding:4px 8px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--bg)}
+tr.n td{background:var(--nuovo)}
+.avv{border-left:4px solid var(--giallob);background:var(--giallo);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.leg{font-size:.8rem;color:var(--mut)}
+.leg i{display:inline-block;width:12px;height:12px;background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob);vertical-align:-2px;margin-right:4px}
+.fig{border:1px solid var(--line);border-radius:8px;padding:8px}
+svg text{fill:var(--mut);font-size:11px;font-family:var(--f)}
+</style>
+
+<main>
+  <h1>Bozzetto – Calcolatori nuovi e modificati (1.5)</h1>
+  <p class="sub">Cinque pannelli della linguetta Calcolatori per le proposte approvate l1, q1, j2, y1 e n1. Scegli il pannello con le pillole. In verde le righe nuove; gli altri campi esistono già. I numeri sono esempi per far vedere l'aspetto, non calcoli definitivi (tranne dove è indicata la fonte).</p>
+  <p class="leg"><i></i>riga nuova</p>
+
+  <div class="app">
+    <div class="tabs"><span>Modello</span><span>Calcolo</span><span>Diagrammi</span><span class="on">Calcolatori</span><span>Stack</span><span>Terreno reale</span><span>Documenti tecnici</span></div>
+    <div class="fam" role="tablist" id="fam">
+      <button class="pill on" data-p="loop" type="button">Loop magnetica</button>
+      <button class="pill" data-p="quad" type="button">Quad</button>
+      <button class="pill" data-p="jpole" type="button">J-pole / Slim Jim</button>
+      <button class="pill" data-p="forc" type="button">Forcina (nuovo)</button>
+      <button class="pill" data-p="nvis" type="button">NVIS (nuovo)</button>
+    </div>
+
+    <!-- LOOP -->
+    <section class="pan on" id="p-loop">
+      <div class="sx">
+        <h2>Loop magnetica (piccolo loop trasmittente)</h2>
+        <div class="fonte">ARRL Antenna Book, W5QJR, AA5TB; prossimità: G. S. Smith (1972) tramite ARRL 15ª</div>
+        <div class="p"><label>Frequenza</label><input value="7,100"><span class="u">MHz</span></div>
+        <div class="p"><label>Forma</label><select><option>cerchio</option></select><span></span></div>
+        <div class="p"><label>Diametro</label><input value="1,00"><span class="u">m</span></div>
+        <div class="p"><label>Conduttore</label><select><option>rame</option></select><span></span></div>
+        <div class="p"><label>ø del conduttore</label><input value="22"><span class="u">mm</span></div>
+        <div class="p n"><label>Numero di spire</label><input value="2"><span class="u"></span><small>1 = come oggi. Con più spire la resistenza di radiazione cresce con N².</small></div>
+        <div class="p n"><label>Passo tra le spire (asse–asse)</label><input value="66"><span class="u">mm</span><small>Minimo: il diametro del conduttore (spire a contatto). Si attiva con 2 o più spire.</small></div>
+        <div class="p"><label>Potenza</label><input value="100"><span class="u">W</span></div>
+        <div class="p"><label>Accoppiamento</label><select><option>loop di Faraday D/5</option></select><span></span></div>
+        <div class="btns"><button class="bt a" type="button">Crea il modello NEC e verificalo</button><button class="bt" type="button">Salva il modello</button></div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Risultato</th><th>1 spira</th><th>2 spire</th></tr></thead>
+          <tbody>
+            <tr><td>Resistenza di radiazione</td><td>0,016 Ω</td><td>0,064 Ω</td></tr>
+            <tr><td>Perdita per effetto pelle</td><td>0,045 Ω</td><td>0,090 Ω</td></tr>
+            <tr class="n"><td>Fattore di prossimità Rp/R0</td><td>—</td><td>0,15</td></tr>
+            <tr class="n"><td>Perdita totale (pelle × (1 + Rp/R0))</td><td>0,045 Ω</td><td>0,104 Ω</td></tr>
+            <tr><td>Rendimento</td><td>26 %</td><td>38 %</td></tr>
+            <tr class="n"><td>Rendimento senza prossimità</td><td>—</td><td>42 %</td></tr>
+            <tr><td>Banda a −3 dB</td><td>8,1 kHz</td><td>4,9 kHz</td></tr>
+            <tr><td>Tensione sul condensatore</td><td>4,1 kV</td><td>7,6 kV</td></tr>
+          </tbody></table></div>
+        <div class="avv">Spire vicine (passo sotto 2 diametri del conduttore): la corrente si addensa sulle facce affacciate e la perdita cresce oltre l'effetto pelle. Esempio dell'ARRL: 8 spire, rendimento 10% secondo l'effetto pelle, 3% reale. Allarga il passo.</div>
+        <div class="box">Nel modello NEC le spire sono un'elica; il NEC non vede la prossimità (fili sottili), quindi il rendimento del NEC sarà più alto di quello di questa tabella: lo scrivo sotto il confronto.</div>
+      </div>
+    </section>
+
+    <!-- QUAD -->
+    <section class="pan" id="p-quad">
+      <div class="sx">
+        <h2>Quad</h2>
+        <div class="fonte">ARRL Antenna Book; Cebik W4RNL, Cubical Quad Notes vol. 2</div>
+        <div class="p"><label>Frequenza</label><input value="14,175"><span class="u">MHz</span></div>
+        <div class="p"><label>Elementi</label><input value="2"><span class="u"></span></div>
+        <div class="p"><label>ø del conduttore</label><input value="2,0"><span class="u">mm</span></div>
+        <div class="p n"><label>Metodo</label><select><option>Automatico</option><option>ARRL (1005/f)</option><option>Cebik (dipende dal diametro)</option><option>NEC: risonanza cercata dal motore</option></select><span></span><small>Automatico: Cebik fino a 30 MHz; sopra i 30 MHz il motore cerca la risonanza sul modello vero, partendo da Cebik.</small></div>
+        <div class="btns"><button class="bt a" type="button">Crea il modello NEC e verificalo</button><button class="bt" type="button">Porta in risonanza (NEC)</button></div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Spira</th><th>ARRL</th><th>Cebik</th><th>Usato</th></tr></thead>
+          <tbody>
+            <tr><td>Pilotata, perimetro</td><td>21,61 m</td><td>22,26 m</td><td>22,26 m (Cebik)</td></tr>
+            <tr><td>Riflettore, perimetro</td><td>22,17 m</td><td>22,83 m</td><td>22,83 m (Cebik)</td></tr>
+            <tr class="n"><td>Differenza</td><td colspan="3">+3,0 % rispetto all'ARRL</td></tr>
+          </tbody></table></div>
+        <div class="box">A 144 MHz con tubo da 12 mm il metodo Automatico passa al motore: la regressione di Cebik lì darebbe +10,8 % sull'ARRL, fuori dal campo per cui è stata ricavata (fili sottili in HF).</div>
+        <div class="avv" id="q2">Sopra 4 elementi la quad perde il vantaggio di guadagno su una Yagi con lo stesso boom (Cebik, Quad Notes vol. 3).</div>
+      </div>
+    </section>
+
+    <!-- JPOLE -->
+    <section class="pan" id="p-jpole">
+      <div class="sx">
+        <h2>J-pole</h2>
+        <div class="fonte">ARRL Antenna Book; Cebik W4RNL, «Some J-Poles» e «What Is a Slim Jim?»</div>
+        <div class="p n"><label>Tipo</label><select><option>J-pole</option><option selected>Slim Jim (filo ripiegato)</option></select><span></span><small>La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso.</small></div>
+        <div class="p"><label>Frequenza</label><input value="145,000"><span class="u">MHz</span></div>
+        <div class="p"><label>ø del tubo</label><input value="9,5"><span class="u">mm</span></div>
+        <div class="p"><label>Interasse</label><input value="30"><span class="u">mm</span></div>
+        <div class="btns"><button class="bt a" type="button">Crea il modello NEC e verificalo</button></div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Misura</th><th>J-pole</th><th>Slim Jim</th></tr></thead>
+          <tbody>
+            <tr><td>Radiatore</td><td>0,98 m</td><td>0,98 m (ripiegato)</td></tr>
+            <tr><td>Sezione di adattamento</td><td>0,50 m</td><td>0,50 m</td></tr>
+            <tr><td>Presa dal fondo</td><td>41 mm</td><td>41 mm</td></tr>
+            <tr class="n"><td>Guadagno (Cebik, spazio libero)</td><td>circa 2,5 dBi</td><td>uguale entro 0,1–0,2 dB</td></tr>
+          </tbody></table></div>
+        <div class="box">Cebik: il filo ripiegato non dà guadagno in più rispetto a un filo singolo; le versioni a due fili stanno entro 0,08 dB e la migliore guadagna 0,23 dB.</div>
+        <div class="avv">Senza un'impedenza di modo comune sul cavo la J-pole irradia anche dalla calza: il lobo si alza. (Avviso già presente.)</div>
+      </div>
+    </section>
+
+    <!-- FORCINA -->
+    <section class="pan" id="p-forc">
+      <div class="sx">
+        <h2>Forcina (beta / hairpin match)</h2>
+        <div class="fonte">Cebik W4RNL, «Antenna Options» n. 1–3 (QEX)</div>
+        <div class="p n"><label>Prendi R e X dal modello aperto</label><input type="checkbox" checked style="width:auto"><span></span></div>
+        <div class="p n"><label>Frequenza</label><input value="14,150"><span class="u">MHz</span></div>
+        <div class="p n"><label>R del pilotato</label><input value="25,0"><span class="u">Ω</span></div>
+        <div class="p n"><label>X del pilotato</label><input value="0,0"><span class="u">Ω</span><small>Se X è positiva il pilotato va accorciato: lo dice il risultato.</small></div>
+        <div class="p n"><label>Impedenza del cavo</label><input value="50"><span class="u">Ω</span></div>
+        <div class="p n"><label>ø dei conduttori della forcina</label><input value="6"><span class="u">mm</span></div>
+        <div class="p n"><label>Interasse della forcina</label><input value="50"><span class="u">mm</span></div>
+        <div class="btns"><button class="bt a" type="button">Applica al modello e verifica</button></div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Risultato</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr class="n"><td>Reattanza capacitiva richiesta al pilotato</td><td>−j25,0 Ω</td></tr>
+            <tr class="n"><td>Reattanza induttiva della forcina</td><td>+j50,0 Ω</td></tr>
+            <tr class="n"><td>Z0 della forcina (linea a due fili)</td><td>337 Ω</td></tr>
+            <tr class="n"><td>Lunghezza della forcina</td><td>496 mm</td></tr>
+            <tr class="n"><td>Accorciamento del pilotato (stima, poi verifica NEC)</td><td>−2,1 %</td></tr>
+          </tbody></table></div>
+        <div class="box">Formule: Xc = √(R·(Z0 − R)), XL = Z0·√(R/(Z0 − R)); forcina come linea in corto lunga arctan(XL/Z0f)/β. La verifica finale la fa il motore sul modello con la forcina.</div>
+        <div class="avv">Funziona solo con R del pilotato minore dell'impedenza del cavo; altrimenti usa il gamma o un trasformatore.</div>
+      </div>
+    </section>
+
+    <!-- NVIS -->
+    <section class="pan" id="p-nvis">
+      <div class="sx">
+        <h2>NVIS</h2>
+        <div class="fonte">Cebik W4RNL, «Antenna Options» n. 12–13 (QEX); N6BV, QST dic. 2005</div>
+        <div class="p n"><label>Antenna</label><select><option>Dipolo</option><option>V invertito</option><option>Loop orizzontale di 1 λ</option></select><span></span></div>
+        <div class="p n"><label>Frequenza</label><input value="3,600"><span class="u">MHz</span></div>
+        <div class="p n"><label>Altezza</label><input value="14,6"><span class="u">m</span><small>Proposta: 0,175 λ. Bene tra 0,125 e 0,225 λ (10,4–18,8 m).</small></div>
+        <div class="p n"><label>Terreno</label><select><option>medio</option><option>molto povero</option><option>molto buono</option><option>mare</option></select><span></span></div>
+        <div class="p n"><label>Sotto l'antenna</label><select><option>niente</option><option>schermo 1 λ × 1 λ</option><option>9 fili a 0,1 λ</option><option>un filo riflettore</option></select><span></span></div>
+        <div class="btns"><button class="bt a" type="button">Crea il modello NEC e verificalo</button><button class="bt" type="button">Altezza ottima (scansione)</button></div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Configurazione</th><th>Guadagno allo zenit</th><th>Larghezza fascio (lato / testa)</th></tr></thead>
+          <tbody>
+            <tr><td>Terreno nudo</td><td>6,1 dBi</td><td>98° / 140°</td></tr>
+            <tr class="n"><td>Con schermo</td><td>6,9 dBi</td><td>94° / 140°</td></tr>
+          </tbody></table></div>
+        <div class="fig">
+          <svg viewBox="0 0 520 170" width="100%" role="img" aria-label="Guadagno allo zenit in funzione dell'altezza: massimo a 0,175 lambda">
+            <line x1="40" y1="140" x2="500" y2="140" stroke="currentColor" opacity=".3"/><line x1="40" y1="20" x2="40" y2="140" stroke="currentColor" opacity=".3"/>
+            <rect x="133" y="20" width="184" height="120" fill="var(--nuovo)"/>
+            <path d="M40,135 C90,90 140,45 225,32 C300,30 380,55 500,95" fill="none" stroke="var(--blu)" stroke-width="2"/>
+            <line x1="225" y1="20" x2="225" y2="140" stroke="var(--blu)" stroke-dasharray="4 3"/>
+            <text x="40" y="158">0,05 λ</text><text x="208" y="158">0,175 λ</text><text x="470" y="158">0,25 λ</text>
+            <text x="140" y="34">zona buona</text><text x="44" y="16">guadagno allo zenit</text>
+          </svg>
+        </div>
+        <div class="avv">Sotto 0,1 λ il guadagno cala: l'antenna bassissima non guadagna, contrariamente a un mito diffuso (Cebik, con NEC-4 e Sommerfeld).</div>
+        <div class="box">Lo schermo rende di più sui terreni poveri (quasi 2 dB) e poco su quelli buoni (0,2 dB). Il filo riflettore singolo serve poco.</div>
+      </div>
+    </section>
+  </div>
+</main>
+<script>
+document.querySelectorAll('#fam .pill').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#fam .pill').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.pan').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.p));
+}));
+</script>

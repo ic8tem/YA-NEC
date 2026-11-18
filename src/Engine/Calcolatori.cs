@@ -691,27 +691,84 @@ namespace YaNec.Engine
 
     public class CalcQuad : SimpleCalc
     {
+        // 1.5 (proposta q1 approvata da IC8TEM il 18/11/2026 19:23, bozzetto Calcolatori 1.5 approvato alle 19:30):
+        // metodo del perimetro. Cebik W4RNL, Cubical Quad Notes vol. 2, cap. 2: perimetro della spira risonante in funzione di
+        // D1 = log10(d/lambda), polinomio di 4 grado (programma GW-Basic, righe 190-250), valido per d tra 1E-6 e 1E-2 lambda.
+        // IC8TEM: "si ma solo per HF, per VHF usi altro metodo": sopra i 30 MHz (Automatico) il motore cerca la risonanza
+        // sul modello vero partendo da Cebik. Riflettore e direttore restano nei rapporti ARRL (1030/1005 e 975/1005).
+        public static event Action ProntoQuad;
+        static readonly object nlLock = new object();
+        static readonly Dictionary<string, double> nlCache = new Dictionary<string, double>();
+        static readonly HashSet<string> nlInCorso = new HashSet<string>();
+        bool soloCebik;   // istanza interna della ricerca NEC: niente ricerca annidata
+
         public CalcQuad()
         {
-            Key = "quad"; Title = "Quad"; Source = "ARRL Antenna Book: perimetri 1005/f (radiatore), 1030/f (riflettore), 975/f (direttore) piedi";
+            Key = "quad"; Title = "Quad"; Source = "ARRL Antenna Book: perimetri 1005/f (radiatore), 1030/f (riflettore), 975/f (direttore) piedi; Cebik W4RNL, Cubical Quad Notes vol. 2 (perimetro in funzione del diametro)";
             Params.Add(new CalcParam("f", "Frequenza", 14.2, "MHz"));
             Params.Add(CalcParam.Scelta("n", "Elementi", 1, null, "1", "2", "3"));
             Params.Add(new CalcParam("s", "Spaziatura", 0.15, "lambda"));
             Params.Add(new CalcParam("d", "Diametro del filo", 2, "mm"));
             Params.Add(new CalcParam("h", "Quota del centro (0 = spazio libero)", 0, "m"));
+            Params.Add(CalcParam.Scelta("met", "Metodo", 0, "Automatico: Cebik fino a 30 MHz; sopra i 30 MHz il motore cerca la risonanza sul modello vero, partendo da Cebik.",
+                "Automatico", "ARRL (1005/f)", "Cebik (dipende dal diametro)", "NEC: risonanza cercata dal motore"));
         }
+
+        /// <summary>Cebik, Cubical Quad Notes vol. 2: perimetro della spira quadrata risonante (in lambda) e resistenza alla risonanza (ohm).</summary>
+        public static double[] Cebik(double dSuLambda)
+        {
+            double d1 = Math.Log10(dSuLambda);
+            double l1 = 0.0001386272922 * Math.Pow(d1, 4) + 0.002677872933 * Math.Pow(d1, 3) + 0.01955406057 * d1 * d1 + 0.06540532144 * d1 + 0.2164538128;
+            double l2 = 0.3131933 * Math.Pow(d1, 4) + 5.694978593 * Math.Pow(d1, 3) + 38.65184274 * d1 * d1 + 118.05237 * d1 + 262.9477727;
+            return new[] { l1 * 8, l2, d1 };
+        }
+
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
             double f = P("f"), a = P("d") / 2000, h = P("h"), lam = C0 / f, sp = P("s") * lam;
-            int ne = I("n") + 1;
-            double pd = 306.3 / f * Scale, pr = 313.6 / f * Scale, pdir = 297.2 / f * Scale;
-            o.Card("Radiatore", Calcolatori.N(pd, 2) + " m", "lato " + Calcolatori.N(pd / 4, 3) + " m", true);
+            int ne = I("n") + 1, met = I("met");
+            if (met == 0) met = f <= 30 ? 2 : 3;
+            if (soloCebik) met = 2;
+            double pArrl = 306.3 / f;
+            double[] cb = Cebik(P("d") / 1000 / lam);
+            double pCeb = cb[0] * lam, base = met == 1 ? pArrl : pCeb;
+            string metodo = met == 1 ? "ARRL" : (met == 2 ? "Cebik" : "Cebik, poi NEC");
+            if (met == 3)
+            {
+                string key = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0:R}|{1:R}|{2}|{3:R}|{4:R}", f, P("d"), ne, P("s"), h);
+                double sc; bool parti = false, pronto;
+                lock (nlLock) { pronto = nlCache.TryGetValue(key, out sc); if (!pronto && !nlInCorso.Contains(key)) { nlInCorso.Add(key); parti = true; } }
+                if (parti)
+                {
+                    CalcQuad q = new CalcQuad { soloCebik = true };
+                    foreach (CalcParam cp in Params) foreach (CalcParam qp in q.Params) if (qp.Key == cp.Key) qp.Value = cp.Value;
+                    System.Threading.Tasks.Task.Run(() =>
+                    {
+                        double r = double.NaN;
+                        try { r = q.Tune(f); } catch (Exception) { }
+                        lock (nlLock) { nlInCorso.Remove(key); if (!double.IsNaN(r) && r > 0.8 && r < 1.2) nlCache[key] = r; }
+                        Action ev = ProntoQuad; if (ev != null) ev();
+                    });
+                }
+                if (pronto) { base = pCeb * sc; o.Oks.Add("perimetro trovato dal motore NEC (risonanza della spira alimentata): " + Calcolatori.N((sc - 1) * 100, 1) + " % rispetto a Cebik"); }
+                else o.Oks.Add("ricerca della risonanza con il NEC in corso (qualche secondo); intanto il perimetro di Cebik");
+            }
+            double pd = base * Scale, pr = pd * 1030.0 / 1005.0, pdir = pd * 975.0 / 1005.0;
+            o.Card("Radiatore", Calcolatori.N(pd, 2) + " m", "lato " + Calcolatori.N(pd / 4, 3) + " m (" + metodo + ")", true);
             if (ne >= 2) o.Card("Riflettore", Calcolatori.N(pr, 2) + " m", "lato " + Calcolatori.N(pr / 4, 3) + " m");
             if (ne >= 3) o.Card("Direttore", Calcolatori.N(pdir, 2) + " m", "lato " + Calcolatori.N(pdir / 4, 3) + " m");
             o.Card("Spaziatura", Calcolatori.N(sp, 2) + " m", Calcolatori.N(P("s"), 2) + " lambda");
-            o.Card("Impedenza tipica", ne == 1 ? "circa 120 Ω" : (ne == 2 ? "50-75 Ω" : "40-60 Ω"), ne == 1 ? "quarto d'onda da 75 Ω" : "");
-            o.Formula = "Formule (ARRL): perimetro del radiatore 306,3/f m, riflettore 313,6/f m, direttore 297,2/f m; spaziatura 0,14-0,2 lambda; alimentazione al centro del lato basso = polarizzazione orizzontale.";
+            o.Card("Impedenza tipica", ne == 1 ? "circa " + Calcolatori.N(cb[1], 0) + " Ω" : (ne == 2 ? "50-75 Ω" : "40-60 Ω"), ne == 1 ? "Cebik; quarto d'onda da 75 Ω" : "");
+            o.Add("Perimetro ARRL (1005/f)", Calcolatori.N(pArrl, 3) + " m");
+            o.Add("Perimetro Cebik", Calcolatori.N(pCeb, 3) + " m (" + (pCeb >= pArrl ? "+" : "") + Calcolatori.N((pCeb / pArrl - 1) * 100, 1) + " %)");
+            o.Formula = "Formule: ARRL, perimetro del radiatore 306,3/f m, riflettore 313,6/f m, direttore 297,2/f m. Cebik (Cubical Quad Notes vol. 2): D1 = log10(d/lambda), " +
+                "perimetro = 8 x (0,0001386 D1^4 + 0,0026779 D1^3 + 0,0195541 D1^2 + 0,0654053 D1 + 0,2164538) lambda, valido per d tra 1E-6 e 1E-2 lambda; " +
+                "riflettore e direttore nei rapporti ARRL. Automatico: Cebik fino a 30 MHz, sopra il motore NEC cerca la risonanza. Spaziatura 0,14-0,2 lambda; alimentazione al centro del lato basso = polarizzazione orizzontale.";
+            if (cb[2] < -6 || cb[2] > -2) o.Warnings.Add("Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).");
+            if (met == 2 && f > 30) o.Warnings.Add("Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.");
+            // 1.5 (proposta q2): Cebik, Cubical Quad Notes vol. 3, conclusioni
+            o.Formula += " Cebik (Quad Notes vol. 3): oltre circa 4 elementi la quad perde il vantaggio di guadagno su una Yagi con lo stesso boom.";
             NecDeck d = new NecDeck(Title + " " + ne + " el. " + Calcolatori.N(f, 3) + " MHz");
             double seg = lam / 40, zc = h;
             int feedTag = 0, feedSeg = 0;

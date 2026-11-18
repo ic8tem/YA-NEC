@@ -746,6 +746,14 @@ namespace YaNec
                 root.DetachedFromVisualTree += (s, e) => aVideoM = false;
                 CalcMoxon.ProntoMoxon += () => Dispatcher.UIThread.Post(() => { if (aVideoM && mostra != null) mostra(); });
             }
+            if (sc is CalcQuad)
+            {
+                // 1.5: Quad sopra i 30 MHz (metodo Automatico o NEC), il motore cerca la risonanza in sottofondo; a calcolo finito la scheda si ridisegna
+                bool aVideoQ = false;
+                root.AttachedToVisualTree += (s, e) => aVideoQ = true;
+                root.DetachedFromVisualTree += (s, e) => aVideoQ = false;
+                CalcQuad.ProntoQuad += () => Dispatcher.UIThread.Post(() => { if (aVideoQ && mostra != null) mostra(); });
+            }
             root.DetachedFromVisualTree += (s, e) => { if (salvaCalcolatoreCorrente == salvaDaQui) salvaCalcolatoreCorrente = null; };
             bCar.Click += (s, e) =>
             {
