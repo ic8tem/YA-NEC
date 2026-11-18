@@ -2,7 +2,7 @@
 // "ti confermo per gli aggiornamenti automatici, eccetto per il debian, e lo spieghiamo nel readme e nel github").
 //
 // Come funziona:
-//  - ogni 30 minuti (e 2 minuti dopo l'avvio) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
+//  - ogni 5 minuti (e 10 secondi dopo l'avvio; fino alla 1.4.0 ogni 30 minuti, il primo dopo 2) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
 //    senza chiave (repository pubblico; 2 richieste l'ora, molto sotto il limite di 60 di GitHub);
 //  - se la versione e' piu' nuova si scarica in background il pacchetto portatile della piattaforma (dalla 1.3.1 con i nomi dell'elenco
 //    di YA-MS: <programma>-<versione>-windows-x64-portatile.zip, -linux-x64.tar.gz, -alpine-x64.tar.gz...; fino alla 1.3.0
@@ -34,13 +34,16 @@ namespace YaNec
 {
     public static class Aggiornamento
     {
-        public const int IntervalloMinuti = 30;
+        public const int IntervalloMinuti = 5;   // 1.4.1 (IC8TEM 18/11/2026 16:18, "ogni 5min deve controllare"; prima 30)
         /// <summary>Repository GitHub "utente/nome" (scelto da IC8TEM il 14/11/2026: ic8tem/YA-NEC; si cambia nelle Impostazioni o in
         /// data/config.ini, chiave aggiornamento_repo).</summary>
         public const string RepoPredefinito = "ic8tem/YA-NEC";
 
         public static string Stato { get; private set; } = "non ancora controllato";
         public static event Action<string> Cambiato;
+        /// <summary>1.4.1 (IC8TEM 18/11/2026 16:18, "poi con un popup avvisa"): versione nuova installata (true) o solo disponibile (Mac, false).</summary>
+        public static event Action<string, bool> Pronta;
+        static string avvisata = "";
         static Timer timer;
         static Mutex unica;   // 0.5.0: tenuto vivo finche' la finestra e' aperta
         static Config cfg;
@@ -118,10 +121,27 @@ namespace YaNec
                 if (!primo) { ImpostaStato("gestito da un'altra finestra di " + AppPaths.AppName + " gia' aperta"); return; }
             }
             catch { }
-            timer = new Timer(_ => { var t = Controlla(); }, null, TimeSpan.FromMinutes(2), TimeSpan.FromMinutes(IntervalloMinuti));
+            // 1.4.1: primo controllo 10 secondi dopo l'avvio (prima 2 minuti: con le aperture brevi non partiva mai), poi ogni 5 minuti
+            timer = new Timer(_ => { var t = Controlla(); }, null, TimeSpan.FromSeconds(10), TimeSpan.FromMinutes(IntervalloMinuti));
         }
 
         public static void Ferma() { try { timer?.Dispose(); } catch { } timer = null; }
+
+        /// <summary>1.4.1: prima di riavviare il programma si libera il controllo degli aggiornamenti, cosi' lo prende la finestra nuova.</summary>
+        public static void Rilascia()
+        {
+            Ferma();
+            try { unica?.ReleaseMutex(); } catch { }
+            try { unica?.Dispose(); } catch { }
+            unica = null;
+        }
+
+        static void AvvisaPronta(string nuova, bool installata)
+        {
+            if (avvisata == nuova) return;
+            avvisata = nuova;
+            try { Pronta?.Invoke(nuova, installata); } catch { }
+        }
 
         static string Rid()
         {
@@ -163,7 +183,7 @@ namespace YaNec
             return Version.TryParse(s, out v) ? v : null;
         }
 
-        /// <summary>Un controllo (chiamato dal timer ogni 30 minuti; anche dal pulsante "Controlla adesso").</summary>
+        /// <summary>Un controllo (chiamato dal timer ogni 5 minuti; anche dal pulsante "Controlla adesso").</summary>
         public static async Task Controlla()
         {
             if (MainWindow.ProveAutomatiche || !Attivo || cfg == null) return;
@@ -193,6 +213,7 @@ namespace YaNec
                         // Mac: dal 1.3.1 il pacchetto e' YA-NEC.app (nel .dmg o nello zip -app): non si sostituisce da solo
                         ImpostaStato("versione " + nuova + " disponibile: scarica il .dmg (" + AppPaths.AppName + "-" + nuova + "-mac-" +
                             (RuntimeInformation.ProcessArchitecture == Architecture.Arm64 ? "apple-silicon" : "intel") + ".dmg) da github.com/" + repo + "/releases");
+                        AvvisaPronta(nuova.ToString(), false);
                         return;
                     }
                     string urlZip = null, urlSha = null;
@@ -280,6 +301,7 @@ namespace YaNec
                     " (copia della " + vecchia + " in data/aggiornamenti/precedente-" + vecchia + ")");
                 ImpostaStato("versione " + nuova + " installata: entra in funzione al prossimo avvio del programma");
                 Ferma();
+                AvvisaPronta(nuova, true);
             }
             catch (Exception ex)
             {

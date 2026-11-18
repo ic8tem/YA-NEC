@@ -1577,8 +1577,8 @@ Contributo
 Controlla adesso
 Controlla il modello senza calcolare: frequenza, fili, terreno, sorgenti, carichi, linee, unita' di misura e variabili (manuale, capitolo 11).
 Controlla il modello...
-Controlla ogni 30 minuti l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 
-Controlla subito se c'e' una versione nuova (senza aspettare i 30 minuti).
+Controlla ogni 5 minuti (la prima volta 10 secondi dopo l'avvio) l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 
+Controlla subito se c'e' una versione nuova (senza aspettare i 5 minuti).
 Controlla...
 Controlli geometrici prima del calcolo (incroci, fili vicini, sorgenti, radiali)
 Controllo
@@ -6614,3 +6614,9 @@ Primi {0} risultati per «{1}»
 {0} risultati per «{1}»
 Apre la citazione {0}
 Manuale di calcolo
+È pronta la versione {0} di YA-NEC
+È già scaricata e installata: entra in funzione quando riavvii il programma.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.
+Riavvia adesso
+Più tardi
+Apri la pagina delle versioni

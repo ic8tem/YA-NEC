@@ -259,8 +259,8 @@ namespace YaNec
             string motivoPacchetto;
             bool pacchetto = Aggiornamento.DaPacchetto(out motivoPacchetto);
             CheckBox chkAgg = Casella("Aggiornamento automatico dal GitHub (ogni " + Aggiornamento.IntervalloMinuti + " minuti)", Aggiornamento.Attivo && !pacchetto, !pacchetto,
-                "Controlla ogni 30 minuti l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 " +
-                "e la installa: entra in funzione al prossimo avvio (copia della versione precedente in data/aggiornamenti). Non tocca config.ini ne' i modelli. " +
+                "Controlla ogni 5 minuti (la prima volta 10 secondi dopo l'avvio) l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 " +
+                "e la installa: entra in funzione al prossimo avvio, e una finestra propone di riavviare subito (copia della versione precedente in data/aggiornamenti). Non tocca config.ini ne' i modelli. " +
                 "Spento durante il collaudo. Non vale per i pacchetti .deb e .rpm, che si aggiornano con il gestore dei pacchetti.");
             chkAgg.Click += (s, e) => { cfg.Set("aggiornamento_auto", chkAgg.IsChecked == true ? "1" : "0"); if (chkAgg.IsChecked == true) Aggiornamento.Avvia(cfg); else Aggiornamento.Ferma(); };
             ag.Children.Add(chkAgg);
@@ -269,7 +269,7 @@ namespace YaNec
             tbRepo.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); Status("Repository dell'aggiornamento: " + (tbRepo.Text ?? "").Trim()); } };
             ag.Children.Add(RigaImp("Repository", tbRepo));
             Button bOra = Btn("Controlla adesso", false);
-            ToolTip.SetTip(bOra, "Controlla subito se c'e' una versione nuova (senza aspettare i 30 minuti).");
+            ToolTip.SetTip(bOra, "Controlla subito se c'e' una versione nuova (senza aspettare i 5 minuti).");
             bOra.IsEnabled = !pacchetto;
             bOra.Click += async (s, e) => { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); await Aggiornamento.Controlla(); };
             ag.Children.Add(bOra);

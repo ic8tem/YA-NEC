@@ -889,7 +889,7 @@ Contributo	Contribution
 Controlla adesso	Check now
 Controlla il modello senza calcolare: frequenza, fili, terreno, sorgenti, carichi, linee, unita' di misura e variabili (manuale, capitolo 11).	Checks the model without calculating: frequency, wires, ground, sources, loads, lines, units and variables (manual, chapter 11).
 Controlla il modello...	Check the model...
-Controlla subito se c'e' una versione nuova (senza aspettare i 30 minuti).	Checks right away for a new version (without waiting 30 minutes).
+Controlla subito se c'e' una versione nuova (senza aspettare i 5 minuti).	Checks right away for a new version (without waiting 5 minutes).
 Controlli geometrici prima del calcolo (incroci, fili vicini, sorgenti, radiali)	Geometric checks before the calculation (crossings, close wires, sources, radials)
 Controllo	Check
 Controllo dei dati	Data check
@@ -4652,3 +4652,10 @@ Primi {0} risultati per «{1}»	First {0} results for «{1}»
 {0} risultati per «{1}»	{0} results for «{1}»
 Apre la citazione {0}	Opens citation {0}
 Manuale di calcolo	Calculation manual
+È pronta la versione {0} di YA-NEC	YA-NEC version {0} is ready
+È già scaricata e installata: entra in funzione quando riavvii il programma.	It is already downloaded and installed: it takes effect when you restart the program.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	On the Mac it does not install itself: download the new .dmg from the releases page on GitHub.
+Riavvia adesso	Restart now
+Più tardi	Later
+Apri la pagina delle versioni	Open the releases page
+Aggiornamento di YA-NEC	YA-NEC update

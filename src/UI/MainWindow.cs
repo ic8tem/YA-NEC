@@ -140,7 +140,7 @@ namespace YaNec
                 Interfaccia.AvviaGuardia();
                 Registro.Scrivi("COMPUTER", "disegno dell'interfaccia: " + Prestazioni.Disegno());
                 if (ProveAutomatiche) AvviaProveInterfaccia();
-                // 0.4.15: aggiornamento automatico dal GitHub ogni 30 minuti (spento durante le prove)
+                // 0.4.15: aggiornamento automatico dal GitHub (1.4.1: ogni 5 minuti, il primo dopo 10 secondi) (spento durante le prove)
                 string agg = Aggiornamento.PulisciDopoAvvio();
                 if (!ProveAutomatiche)
                 {
@@ -149,6 +149,8 @@ namespace YaNec
                         if (lblAggiornamento != null) lblAggiornamento.Text = "Stato: " + st;
                         if (st.StartsWith("versione ") && st.Contains("installata")) Status(st);
                     });
+                    // 1.4.1: finestra quando la versione nuova e' pronta
+                    Aggiornamento.Pronta += (v, inst) => Avalonia.Threading.Dispatcher.UIThread.Post(() => AvvisoAggiornamento(v, inst));
                     Aggiornamento.Avvia(cfg);
                     if (agg != null) Status(agg.Substring(0, 1).ToUpperInvariant() + agg.Substring(1) + ".");
                 }

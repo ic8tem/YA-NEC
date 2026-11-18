@@ -55,3 +55,9 @@
 
 ## 1.4.0 – Uscita (18/11/2026, "una sola versione 1.4.0 ... vai diretto con tutte le novita'" di IC8TEM alle 15:09)
 - VERSION 1.4.0; novita' in .github/release.md; PDF dei tre documenti rigenerati con la versione 1.4.0.
+
+## 1.4.1 – Aggiornamento ogni 5 minuti e finestra "Riavvia adesso" (18/11/2026, richiesta di IC8TEM delle 16:18: "ogni 5min deve controllare. poi con un popup avvisa")
+- Dai registri dei due PC: l'aggiornamento funzionava, ma il primo controllo partiva 2 minuti dopo l'avvio e poi ogni 30; con aperture di pochi secondi (1.0.15: 18 s, 79 s, 7 s, 6 s) non partiva mai.
+- Aggiornamento.cs: primo controllo 10 secondi dopo l'avvio, poi ogni 5 minuti (IntervalloMinuti 5); evento Pronta(versione, installata), una volta per versione; Rilascia() libera il timer e il mutex prima del riavvio.
+- MainWindow.Chiusura.cs: finestra "È pronta la versione X di YA-NEC" con la grafica della finestra di chiusura: Riavvia adesso / Più tardi (Mac: Apri la pagina delle versioni / Più tardi). Riavvia: chiede del modello non salvato, avvia di nuovo il programma e chiude senza la conferma di chiusura.
+- Testi aggiornati (Impostazioni, manuale cap. 21, README, CREDITI no), voci inglesi.
