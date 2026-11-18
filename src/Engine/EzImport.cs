@@ -265,18 +265,23 @@ namespace YaNec.Engine
             // testo delle variabili (per SUBSTITUTE: "45d" = angolo in gradi)
             Dictionary<string, string> testoVar = new Dictionary<string, string>();
             for (int i = 0; i < LettereWeq.Length && i + 1 < rows.Length; i++) { string t = Cell(rows[i + 1], 0); if (t.Length > 0 && !t.StartsWith("=")) testoVar[LettereWeq[i].ToString()] = t; }
-            // 1.5: celle nascoste di AutoEZ ("Calculated values. Do not modify", colonna U del foglio Variables): la cella della riga n si
-            // chiama come la colonna 47 + n di Excel (riga 12 = BG, 13 = BH, ...), ricavato dalle formule di OCF Dipole e Fan Dipole di AC6LA
-            // (BG = altezza del punto di alimentazione =K, BH/BI = lati, BJ/BK = angoli che usano BG, BH, BI)
+            // 1.5: il foglio Variables di AutoEZ e' una griglia di blocchi di 22 righe (righe 2-23 del file): blocco k con il valore nella
+            // colonna 10k e il commento nella 10k+1. Il blocco 0 sono le lettere A..Y (WeqVariables); dal blocco 1 i nomi seguono le colonne
+            // di Excel: riga n del blocco k = colonna 3 + 22k + n (blocco 1 da AA, blocco 2 da AW, blocco 3 da BS). Dentro i blocchi stanno
+            // anche le celle calcolate («Calculated values. Do not modify»). Ricavato da OCF Dipole e Fan Dipole di AC6LA (prova di IC8TEM,
+            // 18/11/2026): AC = rotazione dell'elemento 3, AG = lunghezza dell'elemento 4, BG = altezza del centro (=J), BV = centro dell'elemento 4.
             {
                 Dictionary<string, string> nascoste = new Dictionary<string, string>();
-                for (int li = 1; li < rows.Length && li < 60; li++)
-                {
-                    string t = Cell(rows[li], 20);
-                    if (t.Length == 0 || Cell(rows[li], 0) == "Controls") continue;
-                    double dd;
-                    if (t.StartsWith("=") || double.TryParse(t, NumberStyles.Float, CI, out dd)) nascoste[Colonna(47 + li + 1)] = t;
-                }
+                for (int li = 1; li <= 22 && li < rows.Length; li++)
+                    for (int k = 1; 10 * k < rows[li].Length; k++)
+                    {
+                        string t = Cell(rows[li], 10 * k);
+                        if (t.Length == 0) continue;
+                        string nome = Colonna(3 + 22 * k + li + 1);
+                        double dd;
+                        if (t.StartsWith("=") || double.TryParse(t, NumberStyles.Float, CI, out dd)) nascoste[nome] = t;
+                        else testoVar[nome] = t;
+                    }
                 List<string> attese = new List<string>(nascoste.Keys);
                 for (int giro = 0; giro < 40 && attese.Count > 0; giro++)
                 {
@@ -300,8 +305,10 @@ namespace YaNec.Engine
                     }
                     if (!fatto) break;
                 }
+                // le formule che scrivono testo (titoli «Element 3 (NOT IN USE)») non sono numeri: non si segnalano
+                attese.RemoveAll(n => nascoste[n].Contains("\"\"") && nascoste[n].IndexOf("SUBSTITUTE", StringComparison.OrdinalIgnoreCase) < 0);
                 if (nascoste.Count - attese.Count > 0)
-                    m.Notes.Add("File .weq: " + (nascoste.Count - attese.Count) + " celle calcolate di AutoEZ (colonna nascosta del foglio Variables) ricostruite" +
+                    m.Notes.Add("File .weq: " + (nascoste.Count - attese.Count) + " variabili e celle calcolate di AutoEZ oltre la prima colonna del foglio Variables (AA, AB, ... BG, ...) ricostruite" +
                         (attese.Count > 0 ? "; non calcolate: " + string.Join(", ", attese) : "") + ".");
             }
             HashSet<string> busy = new HashSet<string>();
