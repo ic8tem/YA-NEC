@@ -1,0 +1,221 @@
+<title>Bozzetto Confronto modelli</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC: nuova linguetta "Confronto" con elenco dei modelli a sinistra, condizioni comuni, tabella delle cifre e grafici sovrapposti */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --selbg:#d9e6fb; --nota:#e8f0fd; --meglio:#e3f5e8; --megliob:#2f9e55; --peggio:#fde7e4;
+  --c1:#1f6fd1; --c2:#d9531a; --c3:#13965a; --c4:#7c3aed;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --meglio:#16301f; --megliob:#5cc983; --peggio:#3d2220;
+  --c1:#5fa8ff; --c2:#ff9650; --c3:#3ddc84; --c4:#b496ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --meglio:#16301f; --megliob:#5cc983; --peggio:#3d2220;
+  --c1:#5fa8ff; --c2:#ff9650; --c3:#3ddc84; --c4:#b496ff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1400px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:115ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.corpo{display:grid;grid-template-columns:270px minmax(0,1fr)}
+@media (max-width:900px){.corpo{grid-template-columns:1fr}}
+.sx{border-right:1px solid var(--line);padding:12px;display:grid;gap:12px;align-content:start}
+@media (max-width:900px){.sx{border-right:0;border-bottom:1px solid var(--line)}}
+.sx h2,.dx h2{font-size:.92rem;margin:0 0 6px}
+.mod{display:grid;grid-template-columns:auto 14px minmax(0,1fr);gap:8px;align-items:start;padding:7px 8px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:.85rem;line-height:1.3}
+.mod.off{opacity:.45}
+.mod b{display:block}
+.mod small{color:var(--mut)}
+.sw{width:14px;height:14px;border-radius:3px;margin-top:2px}
+.bt{font:inherit;font-size:.85rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.bt:focus-visible,.pill:focus-visible,input:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.riga{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}
+label{font-size:.84rem;color:var(--mut)}
+select,input[type=text]{font:inherit;font-size:.84rem;padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink)}
+.pill{font:inherit;font-size:.84rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:3px 11px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;font-size:.82rem;line-height:1.45}
+.dx{padding:12px 14px;display:grid;gap:14px;min-width:0}
+.wrap{overflow-x:auto}
+table.t{border-collapse:collapse;width:100%;font-size:.84rem}
+.t th,.t td{border:1px solid var(--line);padding:4px 8px;text-align:right;white-space:nowrap}
+.t th:first-child,.t td:first-child{text-align:left}
+.t thead th{background:var(--bg)}
+.t td.m{background:var(--meglio);box-shadow:inset 0 -2px 0 var(--megliob);font-weight:600}
+.t td.p{background:var(--peggio)}
+.t .d{color:var(--mut);font-size:.78rem;margin-left:4px}
+.k{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:0}
+.graf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:1100px){.graf{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.graf{grid-template-columns:1fr}}
+.g{border:1px solid var(--line);border-radius:8px;padding:8px}
+.g h3{font-size:.85rem;margin:0 0 4px}
+svg{display:block;width:100%;height:auto}
+svg text{font:10px var(--f);fill:var(--mut)}
+.ax{stroke:var(--line);fill:none}
+.leg{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--mut)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 18px;line-height:1.5}
+.note h3{margin:4px 0 6px;font-size:1rem}
+.note li{margin:3px 0}
+</style>
+
+<main>
+  <h1>Bozzetto – Confronto tra modelli</h1>
+  <p class="sub">Nuova linguetta <b>Confronto</b> (dopo Diagrammi). Si mettono a confronto da 2 a 6 modelli: file, il modello aperto, una sua «istantanea» prima e dopo una modifica, o un modello di un calcolatore. Tutti si calcolano <b>alle stesse condizioni</b> e i risultati si leggono in una tabella con le differenze e in grafici sovrapposti. Il caso d'esempio: quattro Yagi a 144 MHz; i numeri sono indicativi. Le caselle dei modelli si possono spegnere e riaccendere.</p>
+
+  <div class="app">
+    <div class="tabs"><span>Struttura 3D</span><span>Frequenza</span><span>Diagrammi</span><span class="on">Confronto</span><span>Smith</span><span>Rumore/GT/Stack</span><span>Correnti</span><span>NEC</span><span>Ottimizzatore</span><span>Calcolatori</span><span>Calcoli meccanici</span><span>Variabili</span><span>Avvisi</span><span>Impostazioni</span><span>Documenti tecnici</span></div>
+    <div class="corpo">
+      <!-- sinistra: modelli e condizioni -->
+      <aside class="sx">
+        <div>
+          <h2>Modelli (fino a 6)</h2>
+          <label class="mod" data-i="1"><input type="checkbox" checked><span class="sw" style="background:var(--c1)"></span><span><b>10 el. BVO DJ9BV</b><small>modello aperto · 185 segmenti · riferimento</small></span></label>
+          <label class="mod" data-i="2"><input type="checkbox" checked><span class="sw" style="background:var(--c2)"></span><span><b>10 el. BVO – istantanea 16:42</b><small>prima di allungare D8 di 6 mm</small></span></label>
+          <label class="mod" data-i="3"><input type="checkbox" checked><span class="sw" style="background:var(--c3)"></span><span><b>11 el. I4GBZ</b><small>file .yanec · 197 segmenti</small></span></label>
+          <label class="mod" data-i="4"><input type="checkbox" checked><span class="sw" style="background:var(--c4)"></span><span><b>Yagi lunga DL6WU 10 el.</b><small>dal calcolatore · boom 4,0 m</small></span></label>
+          <div class="riga">
+            <button class="bt" type="button">+ File…</button>
+            <button class="bt" type="button">+ Modello aperto</button>
+            <button class="bt" type="button">+ Istantanea</button>
+            <button class="bt" type="button">+ Dal calcolatore</button>
+          </div>
+          <div class="riga"><label>Riferimento</label><select><option>10 el. BVO DJ9BV</option><option>il migliore per riga</option></select></div>
+        </div>
+        <div>
+          <h2>Condizioni comuni</h2>
+          <div class="riga"><label>Frequenza</label><input type="text" value="144,300" size="7"><label>MHz</label></div>
+          <div class="riga"><label>Sweep</label><input type="text" value="143,8" size="5"><label>–</label><input type="text" value="144,8" size="5"><label>MHz</label></div>
+          <div class="riga"><label>Terreno</label><select><option>spazio libero (per tutti)</option><option>quello di ogni modello</option><option>medio, a quota uguale</option></select></div>
+          <div class="riga"><label>Quota</label><input type="text" value="10" size="4"><label>m (con il terreno)</label></div>
+          <div class="riga"><label>Z0</label><select><option>50 ohm per tutti</option><option>quella di ogni modello</option></select></div>
+          <div class="riga"><label>Segmenti</label><select><option>come sono</option><option>uguali per lambda (20/λ)</option></select></div>
+          <div class="riga"><label>Normalizza</label><select><option>niente</option><option>per lunghezza del boom (dBi/λ)</option></select></div>
+          <div class="box">Le condizioni diverse da quelle salvate nei file si segnano con un fumetto giallo sul nome del modello.</div>
+        </div>
+        <div class="riga"><button class="bt a" type="button">Calcola il confronto</button></div>
+        <div class="riga"><button class="bt" type="button">Relazione PDF</button><button class="bt" type="button">Esporta CSV</button></div>
+      </aside>
+
+      <!-- destra: tabella e grafici -->
+      <section class="dx">
+        <div>
+          <h2>Cifre a 144,300 MHz <span style="font-weight:400;color:var(--mut)">(in verde il migliore; tra parentesi la differenza dal riferimento)</span></h2>
+          <div class="wrap">
+            <table class="t">
+              <thead><tr><th>Grandezza</th>
+                <th data-i="1"><span class="k" style="background:var(--c1)"></span>BVO DJ9BV</th>
+                <th data-i="2"><span class="k" style="background:var(--c2)"></span>BVO 16:42</th>
+                <th data-i="3"><span class="k" style="background:var(--c3)"></span>11 el. I4GBZ</th>
+                <th data-i="4"><span class="k" style="background:var(--c4)"></span>DL6WU 10 el.</th></tr></thead>
+              <tbody>
+                <tr><td>Guadagno dBi</td><td data-i="1">15,72</td><td data-i="2">15,68<span class="d">(−0,04)</span></td><td data-i="3" class="m">15,94<span class="d">(+0,22)</span></td><td data-i="4">15,51<span class="d">(−0,21)</span></td></tr>
+                <tr><td>F/B dB</td><td data-i="1">19,0</td><td data-i="2" class="m">22,4<span class="d">(+3,4)</span></td><td data-i="3">17,2<span class="d">(−1,8)</span></td><td data-i="4">20,1<span class="d">(+1,1)</span></td></tr>
+                <tr><td>F/R medio dB</td><td data-i="1">26,4</td><td data-i="2">27,1<span class="d">(+0,7)</span></td><td data-i="3">23,9<span class="d">(−2,5)</span></td><td data-i="4" class="m">27,6<span class="d">(+1,2)</span></td></tr>
+                <tr><td>Apertura −3 dB E / H °</td><td data-i="1">33 / 36</td><td data-i="2">33 / 36</td><td data-i="3">32 / 35</td><td data-i="4">34 / 37</td></tr>
+                <tr><td>Lobo laterale dB</td><td data-i="1">−17,8</td><td data-i="2">−17,6</td><td data-i="3">−15,9</td><td data-i="4" class="m">−18,9</td></tr>
+                <tr><td>Z ohm</td><td data-i="1">56,9 −j2,0</td><td data-i="2">55,2 −j6,1</td><td data-i="3">48,7 +j3,4</td><td data-i="4">50,6 +j0,8</td></tr>
+                <tr><td>ROS su 50 ohm</td><td data-i="1">1,14</td><td data-i="2">1,17</td><td data-i="3">1,08</td><td data-i="4" class="m">1,02</td></tr>
+                <tr><td>Banda con ROS &lt; 1,5 kHz</td><td data-i="1" class="m">&gt; 1000</td><td data-i="2">&gt; 1000</td><td data-i="3">880</td><td data-i="4">940</td></tr>
+                <tr><td>G/T dB/K (30°, VE7BQH)</td><td data-i="1">−8,62</td><td data-i="2">−8,55</td><td data-i="3" class="m">−8,49</td><td data-i="4">−8,71</td></tr>
+                <tr><td>Boom m / λ</td><td data-i="1">4,30 / 2,07</td><td data-i="2">4,30 / 2,07</td><td data-i="3">4,92 / 2,37</td><td data-i="4">4,00 / 1,92</td></tr>
+                <tr><td>Efficienza % · AGT dB</td><td data-i="1">99,6 · 0,00</td><td data-i="2">99,6 · 0,00</td><td data-i="3">99,5 · −0,01</td><td data-i="4">99,6 · 0,00</td></tr>
+                <tr><td>Distanza DL6WU 2×2 m</td><td data-i="1">2,07 × 1,92</td><td data-i="2">2,07 × 1,92</td><td data-i="3">2,13 × 1,99</td><td data-i="4">2,02 × 1,87</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="graf">
+          <div class="g">
+            <h3>Diagramma orizzontale (dBi)</h3>
+            <svg viewBox="0 0 200 200" role="img" aria-label="diagrammi orizzontali sovrapposti dei quattro modelli">
+              <circle class="ax" cx="100" cy="100" r="90"/><circle class="ax" cx="100" cy="100" r="60"/><circle class="ax" cx="100" cy="100" r="30"/>
+              <line class="ax" x1="10" y1="100" x2="190" y2="100"/><line class="ax" x1="100" y1="10" x2="100" y2="190"/>
+              <path data-i="1" d="M100 10 C130 12 138 52 128 82 C140 100 120 108 108 112 C112 130 104 150 100 156 C96 150 88 130 92 112 C80 108 60 100 72 82 C62 52 70 12 100 10Z" fill="none" stroke="var(--c1)" stroke-width="1.6"/>
+              <path data-i="2" d="M100 11 C129 13 137 53 127 83 C138 100 119 107 107 111 C110 126 103 143 100 146 C97 143 90 126 93 111 C81 107 62 100 73 83 C63 53 71 13 100 11Z" fill="none" stroke="var(--c2)" stroke-width="1.6"/>
+              <path data-i="3" d="M100 8 C128 10 136 50 127 80 C142 100 122 110 110 114 C115 134 106 158 100 165 C94 158 85 134 90 114 C78 110 58 100 73 80 C64 50 72 10 100 8Z" fill="none" stroke="var(--c3)" stroke-width="1.6"/>
+              <path data-i="4" d="M100 12 C132 14 140 54 129 84 C139 100 120 106 107 110 C109 124 103 140 100 144 C97 140 91 124 93 110 C80 106 61 100 71 84 C60 54 68 14 100 12Z" fill="none" stroke="var(--c4)" stroke-width="1.6" stroke-dasharray="4 2"/>
+              <text x="104" y="18">0°</text><text x="104" y="198">180°</text>
+            </svg>
+          </div>
+          <div class="g">
+            <h3>ROS in frequenza</h3>
+            <svg viewBox="0 0 240 150" role="img" aria-label="ROS in frequenza dei quattro modelli">
+              <rect class="ax" x="30" y="10" width="200" height="110"/>
+              <line class="ax" x1="30" y1="65" x2="230" y2="65"/><line class="ax" x1="130" y1="10" x2="130" y2="120"/>
+              <text x="2" y="14">2,0</text><text x="2" y="69">1,5</text><text x="2" y="122">1,0</text>
+              <text x="26" y="134">143,8</text><text x="118" y="134">144,3</text><text x="204" y="134">144,8</text>
+              <path data-i="1" d="M30 100 Q130 110 230 92" fill="none" stroke="var(--c1)" stroke-width="1.6"/>
+              <path data-i="2" d="M30 96 Q130 108 230 86" fill="none" stroke="var(--c2)" stroke-width="1.6"/>
+              <path data-i="3" d="M30 60 Q130 126 230 70" fill="none" stroke="var(--c3)" stroke-width="1.6"/>
+              <path data-i="4" d="M30 78 Q130 130 230 74" fill="none" stroke="var(--c4)" stroke-width="1.6" stroke-dasharray="4 2"/>
+            </svg>
+          </div>
+          <div class="g">
+            <h3>Guadagno in frequenza (dBi)</h3>
+            <svg viewBox="0 0 240 150" role="img" aria-label="guadagno e F/B in frequenza">
+              <rect class="ax" x="30" y="10" width="200" height="110"/>
+              <text x="2" y="14">16,0</text><text x="2" y="122">15,0</text><text x="26" y="134">143,8</text><text x="204" y="134">144,8</text>
+              <path data-i="1" d="M30 50 L130 40 L230 32" fill="none" stroke="var(--c1)" stroke-width="1.6"/>
+              <path data-i="2" d="M30 52 L130 43 L230 36" fill="none" stroke="var(--c2)" stroke-width="1.6"/>
+              <path data-i="3" d="M30 30 L130 18 L230 14" fill="none" stroke="var(--c3)" stroke-width="1.6"/>
+              <path data-i="4" d="M30 62 L130 54 L230 46" fill="none" stroke="var(--c4)" stroke-width="1.6" stroke-dasharray="4 2"/>
+              <text x="120" y="112">grandezza scelta con le pillole</text>
+            </svg>
+            <div class="riga"><button class="pill on" type="button">Guadagno</button><button class="pill" type="button">F/B</button><button class="pill" type="button">F/R</button><button class="pill" type="button">G/T</button></div>
+          </div>
+        </div>
+        <div class="leg"><span><span class="k" style="background:var(--c1)"></span>BVO DJ9BV (riferimento)</span><span><span class="k" style="background:var(--c2)"></span>BVO istantanea 16:42</span><span><span class="k" style="background:var(--c3)"></span>11 el. I4GBZ</span><span><span class="k" style="background:var(--c4)"></span>DL6WU 10 el. (tratteggio: dal calcolatore)</span></div>
+
+        <div class="g">
+          <h3>Viste dall'alto alla stessa scala</h3>
+          <svg viewBox="0 0 640 110" role="img" aria-label="le quattro Yagi viste dall'alto alla stessa scala">
+            <g stroke-linecap="round" stroke-width="2">
+              <g data-i="1" stroke="var(--c1)"><line x1="10" y1="16" x2="290" y2="16" stroke-opacity=".35"/><line x1="10" y1="8" x2="10" y2="24"/><line x1="40" y1="9" x2="40" y2="23"/><line x1="58" y1="10" x2="58" y2="22"/><line x1="90" y1="10" x2="90" y2="22"/><line x1="128" y1="10" x2="128" y2="22"/><line x1="168" y1="10" x2="168" y2="22"/><line x1="208" y1="11" x2="208" y2="21"/><line x1="245" y1="11" x2="245" y2="21"/><line x1="270" y1="11" x2="270" y2="21"/><line x1="290" y1="11" x2="290" y2="21"/></g>
+              <g data-i="2" stroke="var(--c2)"><line x1="10" y1="42" x2="290" y2="42" stroke-opacity=".35"/><line x1="10" y1="34" x2="10" y2="50"/><line x1="40" y1="35" x2="40" y2="49"/><line x1="58" y1="36" x2="58" y2="48"/><line x1="90" y1="36" x2="90" y2="48"/><line x1="128" y1="36" x2="128" y2="48"/><line x1="168" y1="36" x2="168" y2="48"/><line x1="208" y1="37" x2="208" y2="47"/><line x1="245" y1="37" x2="245" y2="47"/><line x1="270" y1="37" x2="270" y2="47"/><line x1="290" y1="36" x2="290" y2="48"/></g>
+              <g data-i="3" stroke="var(--c3)"><line x1="10" y1="68" x2="330" y2="68" stroke-opacity=".35"/><line x1="10" y1="60" x2="10" y2="76"/><line x1="38" y1="61" x2="38" y2="75"/><line x1="55" y1="62" x2="55" y2="74"/><line x1="85" y1="62" x2="85" y2="74"/><line x1="120" y1="62" x2="120" y2="74"/><line x1="158" y1="62" x2="158" y2="74"/><line x1="196" y1="63" x2="196" y2="73"/><line x1="234" y1="63" x2="234" y2="73"/><line x1="270" y1="63" x2="270" y2="73"/><line x1="302" y1="63" x2="302" y2="73"/><line x1="330" y1="63" x2="330" y2="73"/></g>
+              <g data-i="4" stroke="var(--c4)"><line x1="10" y1="94" x2="270" y2="94" stroke-opacity=".35"/><line x1="10" y1="86" x2="10" y2="102"/><line x1="37" y1="87" x2="37" y2="101"/><line x1="47" y1="88" x2="47" y2="100"/><line x1="68" y1="88" x2="68" y2="100"/><line x1="96" y1="88" x2="96" y2="100"/><line x1="127" y1="88" x2="127" y2="100"/><line x1="161" y1="89" x2="161" y2="99"/><line x1="197" y1="89" x2="197" y2="99"/><line x1="233" y1="89" x2="233" y2="99"/><line x1="270" y1="89" x2="270" y2="99"/></g>
+            </g>
+            <text x="350" y="20">BVO 4,30 m</text><text x="350" y="46">BVO 16:42 · D8 +6 mm</text><text x="350" y="72">I4GBZ 4,92 m</text><text x="350" y="98">DL6WU 4,00 m</text>
+          </svg>
+          <div class="riga"><label>Differenze elemento per elemento (solo tra modelli dello stesso tipo)</label><button class="bt" type="button">Mostra tabella dei fili a confronto</button></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>Come funziona</h3>
+    <ul>
+      <li><b>Modelli</b>: file di ogni formato che YA-NEC apre (.yanec, .nec, .maa, .ez, .weq, .yag), il modello aperto, le <b>istantanee</b> (copia del modello aperto in un momento, per vedere l'effetto di una modifica) e i modelli dei calcolatori. Massimo 6, per leggere i grafici.</li>
+      <li><b>Stesse condizioni</b>: frequenza, sweep, terreno, quota, Z0 e segmentazione si possono imporre a tutti. Se si lasciano quelli di ogni modello, la tabella lo dice con un fumetto giallo: altrimenti il confronto inganna.</li>
+      <li><b>Tabella</b>: in verde il migliore di ogni riga, tra parentesi la differenza dal modello di riferimento. Le stesse grandezze delle altre linguette (Diagrammi, Rumore/GT, Stack), quindi nessun calcolo nuovo: è il motore di sempre lanciato su più modelli, in parallelo.</li>
+      <li><b>Grafici</b>: diagramma orizzontale e verticale (pillole), ROS, guadagno, F/B, F/R e G/T in frequenza, sovrapposti con i colori dei modelli; viste dall'alto alla stessa scala.</li>
+      <li><b>Uscite</b>: relazione PDF (tabella più grafici) ed esportazione CSV. Il confronto si salva come file .yanec-confronto con i riferimenti ai modelli e alle istantanee.</li>
+      <li><b>Prova (autotest)</b>: lo stesso modello due volte deve dare differenze nulle; due modelli noti devono dare le cifre già controllate nell'autotest.</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+document.querySelectorAll('.mod input').forEach(function(cb){
+  cb.addEventListener('change',function(){
+    var i=cb.closest('.mod').dataset.i;
+    cb.closest('.mod').classList.toggle('off',!cb.checked);
+    document.querySelectorAll('[data-i="'+i+'"]').forEach(function(el){ if(!el.classList.contains('mod')) el.style.display=cb.checked?'':'none'; });
+  });
+});
+document.querySelectorAll('.riga').forEach(function(r){
+  var ps=r.querySelectorAll('.pill'); ps.forEach(function(p){p.addEventListener('click',function(){ps.forEach(function(x){x.classList.toggle('on',x===p)});});});
+});
+</script>

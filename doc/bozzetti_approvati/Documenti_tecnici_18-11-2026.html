@@ -1,0 +1,143 @@
+<title>Bozzetto Documenti tecnici</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: finto programma YA-NEC (barra linguette) con la linguetta Documenti tecnici: pillole dei tre documenti, indice a sinistra, testo a destra */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --selbg:#d9e6fb; --nota:#e8f0fd; --att:#fff1e0; --attb:#d9822b;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --att:#3a2c1c; --attb:#e0954a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --selbg:#22324a; --nota:#1d2a3d; --att:#3a2c1c; --attb:#e0954a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px}
+main{max-width:1320px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:100ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line)}
+.pill{font:inherit;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:5px 14px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.pill:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.cerca{margin-left:auto;display:flex;gap:6px;align-items:center}
+.cerca input{font:inherit;padding:4px 8px;border:1px solid var(--line);border-radius:6px;width:220px;background:var(--card);color:var(--ink)}
+.bt{font:inherit;border:1px solid var(--blu);color:var(--blu);background:transparent;border-radius:999px;padding:3px 12px}
+.corpo{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:560px}
+@media (max-width:760px){.corpo{grid-template-columns:1fr}.cerca{margin-left:0}}
+.indice{border-right:1px solid var(--line);padding:10px 0;font-size:.88rem}
+.indice b{display:block;padding:0 14px 6px}
+.indice div{padding:4px 14px;cursor:default}
+.indice div.on{background:var(--selbg);font-weight:600}
+.indice div.s{padding-left:28px;color:var(--mut)}
+.testo{padding:16px 22px;min-width:0;line-height:1.55;max-width:960px}
+.testo h2{font-size:1.15rem;color:var(--blu);border-bottom:2px solid var(--line);padding-bottom:4px;margin:0 0 10px}
+.testo h3{font-size:1rem;margin:14px 0 4px}
+.testo p{margin:6px 0}
+code,.f{font-family:var(--mono);font-size:.86rem}
+.f{display:block;background:var(--nota);padding:6px 10px;border-radius:4px;margin:6px 0}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;margin:8px 0}
+.box.att{border-color:var(--attb);background:var(--att)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{border:1px solid var(--line);padding:4px 8px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+a.rim{color:var(--blu);text-decoration:none;border-bottom:1px dotted var(--blu)}
+.doc{display:none}.doc.on{display:block}
+.note{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;line-height:1.5}
+.note li{margin:3px 0}
+</style>
+
+<main>
+  <h1>Bozzetto – linguetta Documenti tecnici (YA-NEC 1.4)</h1>
+  <p class="sub">La linguetta Manuale diventa <b>Documenti tecnici</b> e contiene i tre documenti: il manuale d'uso di sempre, il nuovo manuale di calcolo e delle fonti e il documento delle citazioni. Clicca le pillole per vedere i tre documenti. I testi sono un esempio, preso dal capitolo sulle distanze di stack.</p>
+
+  <div class="app">
+    <div class="tabs"><span>Struttura 3D</span><span>Frequenza</span><span>Diagrammi</span><span>Smith</span><span>Rumore/GT/Stack</span><span>Correnti</span><span>NEC</span><span>Ottimizzatore</span><span>Calcolatori</span><span>Calcoli meccanici</span><span>Variabili</span><span>Avvisi</span><span>Impostazioni</span><span class="on">Documenti tecnici</span><span>Crediti</span><span>Registro</span><span>Autotest</span></div>
+    <div class="pill-row">
+      <button class="pill on" type="button" data-d="uso">Manuale d'uso</button>
+      <button class="pill" type="button" data-d="calc">Manuale di calcolo e delle fonti</button>
+      <button class="pill" type="button" data-d="cit">Citazioni</button>
+      <div class="cerca"><input id="q" placeholder="Cerca in tutti i documenti"><button class="bt" type="button">Apri il PDF</button></div>
+    </div>
+
+    <!-- manuale d'uso -->
+    <div class="doc on" id="d-uso"><div class="corpo">
+      <div class="indice"><b>Indice</b><div>1. Che cos'e' YA-NEC</div><div>3. La finestra principale</div><div>11. Terreni</div><div>15. Calcolatori</div><div class="on">16. Antenne riceventi e Rumore/GT/Stack</div><div class="s">Distanze di stack</div><div>17. Impostazioni</div><div>21. Caselle e scelte</div></div>
+      <div class="testo">
+        <h2>16. Antenne riceventi e Rumore/GT/Stack</h2>
+        <h3>Distanze di stack: accoppiamento e distanza migliore</h3>
+        <p>In alto la scheda <b>Distanze di stack DL6WU</b>: righe, colonne e il disegno dello stack visto da davanti. Sotto, <b>Accoppiamento e distanza migliore (NEC)</b>: scegli le distanze da provare (di partenza da 0,5 a 2,0 volte la distanza DL6WU, a passi di 0,05), il criterio e premi <b>Calcola accoppiamento e distanze (NEC)</b>.</p>
+        <p>Nella tabella: la singola antenna come riferimento, poi per ogni distanza guadagno, lobo laterale, F/R, G/T e accoppiamento. Il grafico «Rispetto alla singola antenna» mostra l'aumento di guadagno e la variazione del F/R.</p>
+        <div class="box">Come si calcolano guadagno, lobo laterale, F/R, G/T e matrice di accoppiamento: <a class="rim" href="#" data-vai="calc">Manuale di calcolo, capitolo 9 «Stack VHF/UHF»</a>.</div>
+      </div>
+    </div></div>
+
+    <!-- manuale di calcolo -->
+    <div class="doc" id="d-calc"><div class="corpo">
+      <div class="indice"><b>Indice</b><div>1. Il motore NEC-2</div><div>2. Segmentazione, AGT, convergenza</div><div>3. Terreni e terreno reale</div><div>4. Correzione di Leeson</div><div>5. Calcolatori: Yagi e quad</div><div>6. Calcolatori: dipoli, verticali, loop</div><div>7. Ricezione, RDF e DMF</div><div>8. Rumore e G/T</div><div class="on">9. Stack VHF/UHF</div><div class="s">9.1 Distanza DL6WU</div><div class="s">9.2 Matrice di accoppiamento</div><div class="s">9.3 F/R medio</div><div class="s">9.4 Caso di prova</div><div>10. Stack HF sopra il terreno</div><div>11. Tolleranze</div><div>12. Vento, bilanciamento, palo</div><div>13. Divisori, cavo e balun</div><div>14. Carichi HF, linea aperta</div></div>
+      <div class="testo">
+        <h2>9. Stack VHF/UHF</h2>
+        <h3>9.1 Distanza DL6WU</h3>
+        <span class="f">D = λ / (2 · sin(B/2))</span>
+        <p>B è l'apertura a −3 dB nel piano dello stack, presa dal diagramma NEC dell'antenna singola in spazio libero.</p>
+        <p><b>Ipotesi:</b> lobi che si toccano a −3 dB. <b>Limiti:</b> nel piano E vale per boom oltre circa 0,7 λ, nel piano H oltre 2 λ <a class="rim" href="#" data-vai="cit">[C12]</a>.</p>
+        <h3>9.2 Matrice di accoppiamento</h3>
+        <p>Si alimenta una porta alla volta con 1 V, con le altre in corto, e si leggono le correnti: è la colonna della matrice Y. Poi:</p>
+        <span class="f">Z = Y⁻¹ &nbsp;&nbsp;&nbsp; S = (Z − Z0·I)(Z + Z0·I)⁻¹</span>
+        <p>È la scheda CP del NEC-2 <a class="rim" href="#" data-vai="cit">[C3]</a> e il metodo di nec2-array di YO3IIU <a class="rim" href="#" data-vai="cit">[C27]</a>.</p>
+        <h3>Fonti: somiglianze e differenze</h3>
+        <div class="wrap"><table><tr><th>Fonte</th><th>Somiglianze</th><th>Differenze</th></tr>
+          <tr><td>DL6WU <a class="rim" href="#" data-vai="cit">[C11]</a></td><td>distanza dalle aperture a −3 dB (fattore 1 nella tabella)</td><td>una sola distanza; qui una serie e un criterio</td></tr>
+          <tr><td>AEH Tab. 29-2 <a class="rim" href="#" data-vai="cit">[C40]</a></td><td>spaziature tipiche 1,0-2,0 λ per 4-18 elementi</td><td>valori tipici, non calcolati sull'antenna</td></tr></table></div>
+        <h3>9.4 Caso di prova (autotest)</h3>
+        <p>10 el. BVO di IC8TEM, 144,3 MHz, stack 2 × 2: a 1,0 × DL6WU 21,69 dBi e |S|max −34,9 dB, come nec2c.</p>
+        <div class="box att">Nel manuale d'uso restano solo i passi da fare e un rimando qui. Formule, tabelle delle fonti e casi di prova stanno in questo documento.</div>
+      </div>
+    </div></div>
+
+    <!-- citazioni -->
+    <div class="doc" id="d-cit"><div class="corpo">
+      <div class="indice"><b>Indice</b><div class="on">Libri</div><div>Articoli e riviste</div><div>Norme</div><div>Programmi e codice</div><div>Siti e misure</div><div>Fonti scartate</div></div>
+      <div class="testo">
+        <h2>Citazioni</h2>
+        <p>Una riga per fonte: chi, cosa, quali pagine sono state usate e dove compaiono in YA-NEC. Il numero [C..] è quello dei rimandi nei due manuali.</p>
+        <div class="wrap"><table>
+          <tr><th>N.</th><th>Fonte</th><th>Pagine usate</th><th>Dove si usa in YA-NEC</th></tr>
+          <tr><td>C3</td><td>G. Burke, A. Poggio, <i>NEC-2 Method of Moments Code</i>, LLNL 1981</td><td>parte III, scheda CP</td><td>motore; matrice di accoppiamento (calcolo 9.2)</td></tr>
+          <tr><td>C11</td><td>G. Hoch DL6WU, distanza di stack</td><td>formula</td><td>scheda DL6WU (calcolo 9.1)</td></tr>
+          <tr><td>C12</td><td>ARRL Antenna Book, 24ª ed., 2019</td><td>14.21-14.28; 11.9-11.11; 24.46-24.50; 26.65-26.68</td><td>terreno reale, bilanciamento, balun, vento (calcolo 3, 12, 13)</td></tr>
+          <tr><td>C14</td><td>C. Balanis, <i>Antenna Theory</i>, 4ª ed., 2016</td><td>par. 2.18; 4.8.4 (eq. 4-134, 4-137); 9.8.3</td><td>G/T con la linea, divergenza, rugosità, balun</td></tr>
+          <tr><td>C18</td><td>J. Devoldere ON4UN, <i>Low-Band DXing</i>, 5ª ed.</td><td>cap. 7 (DMF); 8-11/8-12</td><td>ricezione, bobina di carico (calcolo 7, 14)</td></tr>
+          <tr><td>C27</td><td>YO3IIU, nec2-array (GPL-2 o successiva)</td><td>codice, solo il metodo</td><td>matrice di accoppiamento (riscritta in C#, nessuna riga copiata)</td></tr>
+          <tr><td>C40</td><td>J. Volakis (a cura di), <i>Antenna Engineering Handbook</i>, 4ª ed., 2007</td><td>cap. 29 (Tab. 29-2); 52.3-52.7; 54</td><td>stack, Yagi incrociate, divisori, balun, sgombero di Fresnel</td></tr>
+        </table></div>
+        <div class="box">I crediti del software (librerie e licenze) restano nella linguetta Crediti, che rimanda qui per le fonti tecniche.</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="note">
+    <b>Cosa cambia</b>
+    <ul>
+      <li>La linguetta <b>Manuale</b> si chiama <b>Documenti tecnici</b>. In alto tre pillole, una per documento, ognuno con il suo indice. La casella <b>Cerca</b> cerca in tutti e tre e <b>Apri il PDF</b> apre il PDF del documento scelto: escono tre PDF separati.</li>
+      <li><b>Manuale d'uso</b>: resta com'è. Formule lunghe, tabelle delle fonti e casi di prova passano nel manuale di calcolo, e al loro posto c'è un rimando che apre il capitolo giusto.</li>
+      <li><b>Manuale di calcolo e delle fonti</b>: per ogni calcolo formule, ipotesi, limiti, fonti con somiglianze e differenze e il caso di prova dell'autotest. I rimandi [C..] aprono la citazione.</li>
+      <li><b>Citazioni</b>: bibliografia unica con le pagine usate e dove si usano in YA-NEC, divisa in libri, articoli, norme, programmi e codice, siti e misure, e fonti scartate (con il motivo).</li>
+      <li>I pulsanti <b>? Manuale</b> della 1.3.1 continuano a funzionare e aprono il manuale d'uso al paragrafo.</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+const pills=[...document.querySelectorAll('.pill')];
+function apri(d){pills.forEach(p=>p.classList.toggle('on',p.dataset.d===d));document.querySelectorAll('.doc').forEach(x=>x.classList.toggle('on',x.id==='d-'+d));}
+pills.forEach(p=>p.addEventListener('click',()=>apri(p.dataset.d)));
+document.querySelectorAll('a.rim').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();apri(a.dataset.vai);}));
+</script>
