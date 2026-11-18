@@ -128,7 +128,7 @@ namespace YaNec
                 if (cStack.IsChecked == true && run != null && run.Sources.Count == n && Math.Abs(run.FreqMHz - f0) / f0 < 0.05)
                 {
                     Complex y = Complex.Zero; foreach (var s in run.Sources) y += 1 / s.Z;
-                    zl = 1 / y; fonteZ = "impedenze attive delle " + n + " antenne dello stack in parallelo";
+                    zl = 1 / y; fonteZ = Lang.F("impedenze attive delle {0} antenne dello stack in parallelo", n);
                 }
                 double soglia = 1.1, fa, fb;
                 if (tipo == "fase") { fa = fb = double.NaN; }
@@ -164,7 +164,7 @@ namespace YaNec
                     else rg("Z0 = √(Zin · Zcarico)", "√(" + FN(zi, 0) + " · " + FN(zcar, 1) + ") = " + FN(Divisori.Z0Richiesta(zi, za, n), 1) + " Ω" + (tipo == "cavo" ? " (2 × 75 Ω = 37,5 Ω)" : ""));
                     if (tipo == "quadro") rg("Quadro/tondo: Z0 = 138 · log(1,0787 · D/d)", "D/d = " + FN(lato / dInt, 3));
                     if (tipo == "tondo") rg("Coassiale: Z0 = 138 · log(D/d)", "D/d = " + FN(lato / dInt, 3));
-                    rg("Banda con ROS < " + FN(soglia, 1), double.IsNaN(fa) ? "-" : FN(fa, 1) + " – " + FN(fb, 1) + " MHz");
+                    rg(Lang.F("Banda con ROS < {0}", FN(soglia, 1)), double.IsNaN(fa) ? "-" : FN(fa, 1) + " – " + FN(fb, 1) + " MHz");
                     rg("Perdita stimata" + (tipo == "quadro" || tipo == "tondo" ? " (Al, aria)" : " (cavo)"), double.IsNaN(perdita) ? "-" : FN(perdita, 3) + " dB");
                     rg("Carico usato", fonteZ);
                 }
@@ -209,7 +209,7 @@ namespace YaNec
                         rf(new[] { nome, cv.Name, FN(cv.Vf, 2), cf.Mezze + " · λ/2" + (extra > 0 ? " + " + FN(extra, 0) + " mm" : ""), FN(cf.FisicaMm, 0), FN(cf.PerditaDb, 2) }, false);
                     }
                     double tolFase = 360 * 5 / (Divisori.C / f0 * cv.Vf);
-                    notaF.Text = "Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± " + FN(tolFase, 1) + "° di fase)." +
+                    notaF.Text = Lang.F("Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).", FN(tolFase, 1)) +
                         (cTilt.IsChecked == true ? " Tilt: ogni riga piu' in alto ha il cavo piu' lungo di " + FN(Divisori.ExtraTilt(f0, cv.Vf, ParseNum(tDv.Text, 2), ParseNum(tTilt.Text, 2)), 0) + " mm (lobo inclinato di " + FN(ParseNum(tTilt.Text, 2), 1) + "° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente." : "");
                 }
                 dDis.InvalidateVisual();

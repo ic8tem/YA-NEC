@@ -4604,3 +4604,11 @@ BANDA	BAND
 Manicotto λ/4	λ/4 sleeve
 Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Cable shield and mast as NEC wires; balun comparison (common-mode current, F/B, average F/R, loss, power at 1 kW) from 1.8 to 1296 MHz.
 Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Uprights, crossbar, mast and phasing-line shields as NEC wires: comparison without / with frame (gain, F/B, average F/R, lobes, divider Z, Tant and G/T).
+TIPO	TYPE
+DATI	DATA
+TELAIO	FRAME
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 in square or round tube, in cable, Wilkinson; phasing lines, tilt; 1:1 drawing
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X or +, planes offset by λ/4; H, V, RHCP, LHCP, X-pol; axial ratio and isolation
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Equal lengths → equal phase. Multiples of λ/2 → the active impedance repeats at the divider. Recommended tolerance ± 5 mm (= ± {0}° of phase).
+impedenze attive delle {0} antenne dello stack in parallelo	active impedances of the {0} stack antennas in parallel
+Banda con ROS < {0}	Band with SWR < {0}
