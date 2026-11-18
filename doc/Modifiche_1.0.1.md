@@ -61,3 +61,9 @@
 - Aggiornamento.cs: primo controllo 10 secondi dopo l'avvio, poi ogni 5 minuti (IntervalloMinuti 5); evento Pronta(versione, installata), una volta per versione; Rilascia() libera il timer e il mutex prima del riavvio.
 - MainWindow.Chiusura.cs: finestra "È pronta la versione X di YA-NEC" con la grafica della finestra di chiusura: Riavvia adesso / Più tardi (Mac: Apri la pagina delle versioni / Più tardi). Riavvia: chiede del modello non salvato, avvia di nuovo il programma e chiude senza la conferma di chiusura.
 - Testi aggiornati (Impostazioni, manuale cap. 21, README), voci inglesi.
+
+## 1.4.1 – Ogni 3 minuti e riavvio da solo (18/11/2026, IC8TEM alle 16:27: "aggiornamento ogni 3 minuti, con popup di avviso. l'utente non potra' interagire"; alla domanda: "Solo avviso, poi riavvio")
+- IntervalloMinuti 3 (primo controllo dopo 10 s).
+- La finestra non ha piu' pulsanti ne' la x: conta 10 secondi con una barra e riavvia YA-NEC (sul Mac avvisa del .dmg e si chiude dopo 20 s). Sostituisce Riavvia adesso / Piu' tardi della voce precedente.
+- Prima del riavvio: il modello salvato si annota in data/aggiornamenti/riapri.txt; quello non salvato si copia in data/aggiornamenti/"modello non salvato <data>.nec". All'avvio successivo RiapriDopoRiavvio lo riapre (il non salvato resta da salvare, con il nome di prima).
+- Testi aggiornati (Impostazioni, manuale, README, voci inglesi).

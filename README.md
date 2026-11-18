@@ -76,7 +76,7 @@ Ogni zip ha accanto la sua impronta `.sha256`.
 
 ## Aggiornamento automatico
 
-Il programma controlla 10 secondi dopo l'avvio e poi ogni 5 minuti se qui c'è una versione nuova. Se c'è, scarica lo zip della sua piattaforma, ne verifica l'impronta SHA-256 e lo installa: la versione nuova entra in funzione **al prossimo avvio**, e una finestra propone di riavviare subito. La versione precedente resta in `data/aggiornamenti/precedente-<versione>`; le impostazioni (`data/config.ini`) e i modelli dell'utente non si toccano. Senza impronta, o con un'impronta diversa, non si installa niente. L'aggiornamento si spegne in **Impostazioni > Aggiornamento**.
+Il programma controlla 10 secondi dopo l'avvio e poi ogni 3 minuti se qui c'è una versione nuova. Se c'è, scarica lo zip della sua piattaforma, ne verifica l'impronta SHA-256 e lo installa: la versione nuova entra in funzione **al prossimo avvio**, una finestra lo avvisa e il programma si riavvia da solo dopo 10 secondi, riaprendo il modello. La versione precedente resta in `data/aggiornamenti/precedente-<versione>`; le impostazioni (`data/config.ini`) e i modelli dell'utente non si toccano. Senza impronta, o con un'impronta diversa, non si installa niente. L'aggiornamento si spegne in **Impostazioni > Aggiornamento**.
 
 **Eccezione: pacchetti Debian/Ubuntu (.deb) e Fedora/openSUSE (.rpm).** Quando ci saranno, si installeranno nelle cartelle di sistema con i permessi di amministratore: il programma non può (e non deve) cambiarsi da solo, quindi si aggiorneranno con il gestore dei pacchetti (`sudo apt update && sudo apt upgrade`, `sudo dnf upgrade`, `sudo zypper update`). In quei pacchetti l'aggiornamento automatico è spento e le Impostazioni lo dicono.
 

@@ -2,7 +2,7 @@
 // "ti confermo per gli aggiornamenti automatici, eccetto per il debian, e lo spieghiamo nel readme e nel github").
 //
 // Come funziona:
-//  - ogni 5 minuti (e 10 secondi dopo l'avvio; fino alla 1.4.0 ogni 30 minuti, il primo dopo 2) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
+//  - ogni 3 minuti (e 10 secondi dopo l'avvio; fino alla 1.4.0 ogni 30 minuti, il primo dopo 2) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
 //    senza chiave (repository pubblico; 2 richieste l'ora, molto sotto il limite di 60 di GitHub);
 //  - se la versione e' piu' nuova si scarica in background il pacchetto portatile della piattaforma (dalla 1.3.1 con i nomi dell'elenco
 //    di YA-MS: <programma>-<versione>-windows-x64-portatile.zip, -linux-x64.tar.gz, -alpine-x64.tar.gz...; fino alla 1.3.0
@@ -34,7 +34,7 @@ namespace YaNec
 {
     public static class Aggiornamento
     {
-        public const int IntervalloMinuti = 5;   // 1.4.1 (IC8TEM 18/11/2026 16:18, "ogni 5min deve controllare"; prima 30)
+        public const int IntervalloMinuti = 3;   // 1.4.1 (IC8TEM 18/11/2026 16:27, "aggiornamento ogni 3 minuti"; prima 30)
         /// <summary>Repository GitHub "utente/nome" (scelto da IC8TEM il 14/11/2026: ic8tem/YA-NEC; si cambia nelle Impostazioni o in
         /// data/config.ini, chiave aggiornamento_repo).</summary>
         public const string RepoPredefinito = "ic8tem/YA-NEC";
@@ -121,7 +121,7 @@ namespace YaNec
                 if (!primo) { ImpostaStato("gestito da un'altra finestra di " + AppPaths.AppName + " gia' aperta"); return; }
             }
             catch { }
-            // 1.4.1: primo controllo 10 secondi dopo l'avvio (prima 2 minuti: con le aperture brevi non partiva mai), poi ogni 5 minuti
+            // 1.4.1: primo controllo 10 secondi dopo l'avvio (prima 2 minuti: con le aperture brevi non partiva mai), poi ogni 3 minuti
             timer = new Timer(_ => { var t = Controlla(); }, null, TimeSpan.FromSeconds(10), TimeSpan.FromMinutes(IntervalloMinuti));
         }
 
@@ -183,7 +183,7 @@ namespace YaNec
             return Version.TryParse(s, out v) ? v : null;
         }
 
-        /// <summary>Un controllo (chiamato dal timer ogni 5 minuti; anche dal pulsante "Controlla adesso").</summary>
+        /// <summary>Un controllo (chiamato dal timer ogni 3 minuti; anche dal pulsante "Controlla adesso").</summary>
         public static async Task Controlla()
         {
             if (MainWindow.ProveAutomatiche || !Attivo || cfg == null) return;

@@ -1577,8 +1577,8 @@ Contributo
 Controlla adesso
 Controlla il modello senza calcolare: frequenza, fili, terreno, sorgenti, carichi, linee, unita' di misura e variabili (manuale, capitolo 11).
 Controlla il modello...
-Controlla ogni 5 minuti (la prima volta 10 secondi dopo l'avvio) l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 
-Controlla subito se c'e' una versione nuova (senza aspettare i 5 minuti).
+Controlla ogni 3 minuti (la prima volta 10 secondi dopo l'avvio) l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).
 Controlla...
 Controlli geometrici prima del calcolo (incroci, fili vicini, sorgenti, radiali)
 Controllo
@@ -6620,3 +6620,8 @@ Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versio
 Riavvia adesso
 Più tardi
 Apri la pagina delle versioni
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.
+Riavvio tra {0} s
+Questo avviso si chiude tra {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.
