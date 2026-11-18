@@ -4,6 +4,8 @@
 
 **NEC-2-l põhinev traatantennide simulaator** Windowsile, Linuxile ja macOS-ile. Autor: Costantino Cerrotta **IC8TEM**. Litsents GPL-3.0.
 
+> **[Uut versioonis 1.3](Novita-1.3-et)**
+>
 > **[Uut versioonis 1.2](Novita-1.2-et)**
 >
 > **[Uut versioonis 1.1](Novita-1.1-et)**

@@ -4,6 +4,8 @@
 
 **Simulatore d'antenne a fili basato sul NEC-2**, per Windows, Linux e macOS. A cura di Costantino Cerrotta **IC8TEM**. Licenza GPL-3.0.
 
+> **[Novità della 1.3](Novita-1.3)**
+>
 > **[Novità della 1.2](Novita-1.2)**
 >
 > **[Novità della 1.1](Novita-1.1)**

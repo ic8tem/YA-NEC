@@ -14,3 +14,7 @@
 ## 1.3.0 – Carichi HF: crash passando da Trappola coassiale a Bobina di carico (18/11/2026)
 - Trovato registrando il videocorso: "The control TextBox already has a visual parent WrapPanel". I campi comuni (Blocca, dipolo con, Filo Ø, pulsante) restavano figli delle righe vecchie dopo datiCorpo.Children.Clear().
 - Correzione: rigaW stacca ogni controllo dal pannello precedente prima di aggiungerlo alla riga nuova.
+
+## 1.3.0 – Uscita (18/11/2026)
+- VERSION 1.3.0; manuale: 24.2 con le correzioni della notte e 24.2a Videocorso; PDF rigenerato (111 pagine).
+- .github/release.md con le novita' della 1.3; README in 8 lingue con la sezione 1.3; wiki Novita-1.3 in 37 lingue, Home e barra laterale.

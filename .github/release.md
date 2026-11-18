@@ -2,15 +2,14 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.2** (spiegate nel capitolo 23 del manuale e nella pagina [Novità della 1.2](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.2) del wiki, con le fonti):
-- **Terreno reale** alla HFTA di N6BV: diagramma di elevazione sul profilo vero del terreno, dal DEM TINITALY (Italia, 10 m) o SRTM1 (mondo), da un file di HorizonProfiler o piatto; riflessioni tratto per tratto pesate con le zone di Fresnel, diffrazione sui crinali, mare, terra curva; direzioni di traffico dal locatore e mappa con foto aerea, OpenStreetMap e griglia dei locatori; in VHF vista intera e zoom 0-15 gradi;
-- **Ricezione (RDF)**: RDF, DMF, F/R medio, rumore d'antenna (ITU-R P.372) e margine sul ricevitore per Beverage, BOG, K9AY, Flag, EWE, 4-square e 8 verticali in cerchio;
-- **Misure VNA**: file .s1p e CSV sovrapposti al calcolo, con il cavo tolto (de-embedding), carta di Smith e proposta di correzione;
-- **Tolleranze costruttive**: Monte Carlo ripetibile, sensibilità per elemento e lista di taglio con la tolleranza ammessa;
-- **Calcoli meccanici** (nuova linguetta): vento con NTC 2018, CNR-DT 207 ed EN 1991-1-4 (zona dal locatore, flusso trasversale) e bilanciamento sul palo, forze in N e kgf;
-- **Cavo e balun** da 1,8 a 1296 MHz (la calza diventa un filo NEC), **telaio a H e palo** nello stack, **divisori** λ/4 e Wilkinson con disegno 1:1, **Yagi incrociate** (RHCP, LHCP, X-pol), **carichi HF** (trappole coassiali W8NX, bobine, linear loading), **F/R medio** anche nell'ottimizzatore, **test AGT** automatico;
-- **Struttura 3D**: un clic su un filo lo sottolinea con un colore velato (colore e velatura nelle Impostazioni) e porta la tabella dei fili sulla sua riga;
-- **Correzione**: con il cursore in un campo, il clic su un'altra voce dell'elenco a sinistra poteva chiudere il programma (registro del 13/11); ora il campo si chiude prima del cambio di pagina.
+**Novità della 1.3** (spiegate nel capitolo 24 del manuale e nella pagina [Novità della 1.3](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.3) del wiki, con le fonti):
+- **Antenne riceventi**: si accendono **Dipolo basso**, **K9AY** (terminazione con "ottimizza per F/B"), **4-square RX** e le schiere **Hi-Z** di 2, 3 e 8 verticali, con la fase tra le file e "ottimizza la fase (RDF)"; ogni voce crea il modello NEC e da' RDF, DMF, F/B e posto in graduatoria, con l'avviso sul collegamento a terra del NEC-2;
+- **Ricezione (RDF)**: le 8 verticali in cerchio con la fase a 220 gradi e il lobo in avanti;
+- **Videocorso**: lezioni 22-25 (Terreno reale, Antenne riceventi, Strumenti VHF, Calcoli meccanici e Carichi HF) in italiano e in inglese con la voce;
+- **Lingue**: i testi non ancora tradotti si mostrano in inglese invece che in italiano; altre pagine della 1.2 tradotte in inglese;
+- **Correzioni**: Carichi HF non si chiude piu' passando a "Bobina di carico"; gli avvisi delle antenne riceventi non si accumulano; le finestre larghe non escono piu' a destra.
+
+**Dalla 1.2:** terreno reale alla HFTA, Ricezione (RDF), misure VNA, tolleranze, calcoli meccanici, cavo e balun, telaio a H, divisori, Yagi incrociate, carichi HF: vedi [Novità della 1.2](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.2).
 
 **Dalla 1.1:** cielo vero, distanze di stack con il NEC, Calcolatori a famiglie: vedi [Novità della 1.1](https://github.com/ic8tem/YA-NEC/wiki/Novita-1.1).
 

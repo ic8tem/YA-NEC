@@ -2098,6 +2098,13 @@ Collaudo: ogni voce si apre e si calcola; il lobo del dipolo basso va sopra 45 g
 - Le finestre larghe (Cavo e balun, telaio dello stack) prendono la larghezza della finestra: tabella e grafico non escono piu' a destra.
 - Ricezione (RDF), 8 verticali in cerchio: la fase tra le file e' 220 gradi; con la regola del nullo posteriore il lobo usciva a 50 gradi dalla direzione.
 - Le pagine della 1.2 hanno tutti i testi anche in inglese.
+- Carichi HF: passando da "Trappola coassiale" a "Bobina di carico" il programma si chiudeva ("already has a visual parent"); ora i campi comuni si staccano dalla riga precedente prima di essere rimessi.
+- Antenne riceventi: dopo "Crea il modello" e "ottimizza la fase" l'avviso giallo "RDF ... contro ... della fonte" compariva due volte; ora gli avvisi del calcolo precedente si tolgono a ogni nuovo calcolo.
+- Lingue: le voci non ancora tradotte si mostrano in inglese invece che in italiano. Tradotti in inglese i diagrammi polari (titolo, tracce, FNBW, scala), gli oggetti del modello con il conteggio, Cavo e balun, Telaio a H, Divisori, gli avvisi gialli e la pagina delle antenne riceventi.
+
+### 24.2a Videocorso
+
+Quattro lezioni nuove, in italiano e in inglese con la voce (wiki, pagina Videocorso): 22 Terreno reale, 23 Antenne riceventi (K9AY, 4-square RX, Hi-Z, Ricezione RDF), 24 Strumenti VHF (Tolleranze, Cavo e balun, Yagi incrociate, Divisori, Telaio a H), 25 Calcoli meccanici e Carichi HF (Vento, Bilanciamento, trappole e bobine, Tabelle F/B e F/R). Dalla 1.2 i calcolatori sono divisi in famiglie: nei video delle lezioni precedenti alcune voci possono trovarsi in una famiglia diversa.
 
 ### 24.3 Crediti delle fonti della 1.3
 

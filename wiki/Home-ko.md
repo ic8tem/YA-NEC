@@ -4,6 +4,8 @@
 
 **NEC-2 기반 와이어 안테나 시뮬레이터** (Windows, Linux, macOS). 제작: Costantino Cerrotta **IC8TEM**. 라이선스 GPL-3.0.
 
+> **[1.3의 새 기능](Novita-1.3-ko)**
+>
 > **[1.2의 새 기능](Novita-1.2-ko)**
 >
 > **[1.1의 새 기능](Novita-1.1-ko)**

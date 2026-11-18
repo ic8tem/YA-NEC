@@ -4,6 +4,8 @@
 
 **NEC-2 tabanlı tel anten simülatörü**; Windows, Linux ve macOS için. Hazırlayan: Costantino Cerrotta **IC8TEM**. Lisans GPL-3.0.
 
+> **[1.3'deki yenilikler](Novita-1.3-tr)**
+>
 > **[1.2'deki yenilikler](Novita-1.2-tr)**
 >
 > **[1.1'deki yenilikler](Novita-1.1-tr)**

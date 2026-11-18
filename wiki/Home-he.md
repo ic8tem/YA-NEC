@@ -6,6 +6,8 @@
 
 **סימולטור אנטנות תיל המבוסס על NEC-2** עבור Windows, ‏Linux ו-macOS. מאת Costantino Cerrotta **IC8TEM**. רישיון GPL-3.0.
 
+> **[מה חדש ב-1.3](Novita-1.3-he)**
+>
 > **[מה חדש ב-1.2](Novita-1.2-he)**
 >
 > **[מה חדש ב-1.1](Novita-1.1-he)**

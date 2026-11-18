@@ -17,6 +17,15 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.3의 새 기능
+
+- **수신 안테나**: 계산기에서 **낮은 다이폴**, **K9AY**("F/B 최적화" 종단 저항), **4-square RX**, 그리고 수직 2·3·8개의 **Hi-Z** 어레이가 활성화되었습니다. **행 사이 위상**과 "위상 최적화 (RDF)" 버튼이 있습니다. 각 항목은 NEC 모델을 만들고 RDF, DMF, F/B와 순위를 보여 줍니다. 노란 경고는 실제 지면에 연결된 선에서 NEC-2의 한계를 알려 줍니다.
+- **수신 (RDF)**: 원형 8개 수직은 220도 위상을 쓰며 로브가 앞쪽을 향합니다.
+- **동영상 강좌**: 22강(실제 지형), 23강(수신 안테나), 24강(VHF 도구), 25강(기계 계산과 HF 부하)을 이탈리아어와 영어 음성으로 제공합니다.
+- **언어**: 아직 번역되지 않은 문장은 이탈리아어 대신 영어로 표시됩니다.
+- **수정**: HF 부하에서 "로딩 코일"로 바꿔도 더 이상 닫히지 않습니다. 필드에 커서가 있을 때 다른 항목을 클릭해도 프로그램이 닫히지 않습니다. 수신 안테나 경고가 더 이상 쌓이지 않습니다. 넓은 창이 더 이상 오른쪽으로 넘치지 않습니다.
+- 모든 내용은 설명서 24장에 출처와 함께 있습니다(K9AY, Hi-Z Antennas, IV3PRK, ON4UN, W7EL).
+
 ## 1.2의 새 기능
 
 - **실제 지형** (N6BV의 HFTA와 같은 방식): 실제 지형 단면 위의 앙각 패턴. DEM **TINITALY** (이탈리아, 10 m) 또는 **SRTM1** (전 세계), HorizonProfiler 파일, 또는 평지에서. 구간별 반사를 프레넬 영역으로 가중하고 능선 회절, 바다, 지구 곡률을 반영. 로케이터 (최대 12자)에서 교신 방향, 항공 사진·OpenStreetMap·로케이터 격자가 있는 **지도**. VHF에서는 전체 보기와 0-15도 확대.

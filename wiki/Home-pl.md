@@ -4,6 +4,8 @@
 
 **Symulator anten drutowych oparty na NEC-2** dla Windows, Linux i macOS. Autor: Costantino Cerrotta **IC8TEM**. Licencja GPL-3.0.
 
+> **[Nowości w wersji 1.3](Novita-1.3-pl)**
+>
 > **[Nowości w wersji 1.2](Novita-1.2-pl)**
 >
 > **[Nowości w wersji 1.1](Novita-1.1-pl)**

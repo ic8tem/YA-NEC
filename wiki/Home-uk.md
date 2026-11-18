@@ -4,6 +4,8 @@
 
 **Симулятор дротових антен на основі NEC-2** для Windows, Linux і macOS. Автор: Costantino Cerrotta **IC8TEM**. Ліцензія GPL-3.0.
 
+> **[Що нового в 1.3](Novita-1.3-uk)**
+>
 > **[Що нового в 1.2](Novita-1.2-uk)**
 >
 > **[Що нового в 1.1](Novita-1.1-uk)**

@@ -4,6 +4,8 @@
 
 **Simulátor drátových antén založený na NEC-2** pro Windows, Linux a macOS. Autor: Costantino Cerrotta **IC8TEM**. Licence GPL-3.0.
 
+> **[Novinky ve verzi 1.3](Novita-1.3-cs)**
+>
 > **[Novinky ve verzi 1.2](Novita-1.2-cs)**
 >
 > **[Novinky ve verzi 1.1](Novita-1.1-cs)**

@@ -4,6 +4,8 @@
 
 **基于 NEC-2 的线天线仿真软件**，适用于 Windows、Linux 和 macOS。作者：Costantino Cerrotta **IC8TEM**。许可证 GPL-3.0。
 
+> **[1.3 新功能](Novita-1.3-zh)**
+>
 > **[1.2 新功能](Novita-1.2-zh)**
 >
 > **[1.1 新功能](Novita-1.1-zh)**

@@ -4,6 +4,8 @@
 
 **Drahtantennen-Simulator auf Basis von NEC-2** für Windows, Linux und macOS. Von Costantino Cerrotta **IC8TEM**. Lizenz GPL-3.0.
 
+> **[Neu in 1.3](Novita-1.3-de)**
+>
 > **[Neu in 1.2](Novita-1.2-de)**
 >
 > **[Neu in 1.1](Novita-1.1-de)**

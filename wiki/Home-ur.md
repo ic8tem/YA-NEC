@@ -6,6 +6,8 @@
 
 **NEC-2 پر مبنی تار اینٹینا سمیولیٹر**، Windows، Linux اور macOS کے لیے۔ تیار کردہ: Costantino Cerrotta **IC8TEM**۔ لائسنس GPL-3.0۔
 
+> **[1.3 میں نیا](Novita-1.3-ur)**
+>
 > **[1.2 میں نیا](Novita-1.2-ur)**
 >
 > **[1.1 میں نیا](Novita-1.1-ur)**

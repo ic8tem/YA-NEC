@@ -4,6 +4,8 @@
 
 **Simulator de antene din fir bazat pe NEC-2** pentru Windows, Linux și macOS. Autor: Costantino Cerrotta **IC8TEM**. Licență GPL-3.0.
 
+> **[Noutățile versiunii 1.3](Novita-1.3-ro)**
+>
 > **[Noutățile versiunii 1.2](Novita-1.2-ro)**
 >
 > **[Noutățile versiunii 1.1](Novita-1.1-ro)**

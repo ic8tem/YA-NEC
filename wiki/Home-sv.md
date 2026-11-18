@@ -4,6 +4,8 @@
 
 **Trådantennsimulator baserad på NEC-2** för Windows, Linux och macOS. Av Costantino Cerrotta **IC8TEM**. Licens GPL-3.0.
 
+> **[Nytt i 1.3](Novita-1.3-sv)**
+>
 > **[Nytt i 1.2](Novita-1.2-sv)**
 >
 > **[Nytt i 1.1](Novita-1.1-sv)**
