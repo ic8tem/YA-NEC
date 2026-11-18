@@ -42,9 +42,11 @@ namespace YaNec
             WrapPanel fascia = new WrapPanel { Margin = new Thickness(8, 6) };
             foreach (string v in MeccVoci)
             {
-                bool futura = v != "Vento" && v != "Bilanciamento";
+                // 1.5: Sollecitazioni elementi accesa (bozzetto 13 approvato il 18/11/2026 21:28: e' la pagina Meccanica alla YagiStress);
+                // Boom e tirante approvato ma ancora da fare; Palo e plinto lo prepara IC8TEM
+                bool futura = v != "Vento" && v != "Bilanciamento" && v != "Sollecitazioni elementi (HF)";
                 Button b = new Button { Content = v, Margin = new Thickness(0, 0, 6, 0), Padding = new Thickness(14, 4), CornerRadius = new CornerRadius(14), BorderThickness = new Thickness(1), IsEnabled = !futura };
-                if (futura) ToolTip.SetTip(b, "Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.");
+                if (futura) ToolTip.SetTip(b, v == "Palo e plinto" ? "La prepara IC8TEM: non ancora attiva." : "Approvata, in preparazione: non ancora attiva in questa versione.");
                 string k = v; b.Click += (s, e) => ApriVoceMeccanica(k);
                 meccBtn[v] = b; fascia.Children.Add(b);
             }
@@ -67,7 +69,7 @@ namespace YaNec
                 kv.Value.FontWeight = on ? FontWeight.SemiBold : FontWeight.Normal;
             }
             Control c;
-            if (!meccPagine.TryGetValue(v, out c)) { c = v == "Vento" ? BuildVentoPage() : v == "Bilanciamento" ? BuildBilanciamentoPage() : new TextBlock(); meccPagine[v] = c; }
+            if (!meccPagine.TryGetValue(v, out c)) { c = v == "Vento" ? BuildVentoPage() : v == "Bilanciamento" ? BuildBilanciamentoPage() : v == "Sollecitazioni elementi (HF)" ? BuildMeccanicaPanel() : new TextBlock(); meccPagine[v] = c; }
             meccCorpo.Content = c;
             Registro.Scrivi("AZIONE", "calcoli meccanici: " + v);
             if (v == "Vento") meccAggiornaVento?.Invoke(); else if (v == "Bilanciamento") meccAggiornaBil?.Invoke();

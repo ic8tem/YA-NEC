@@ -34,13 +34,15 @@ namespace YaNec
         readonly Dictionary<string, Button> calcFamBtn = new Dictionary<string, Button>();
         readonly Dictionary<string, string> calcUltima = new Dictionary<string, string>();
         /// <summary>1.1.0: famiglie dei Calcolatori e loro voci, nell'ordine del bozzetto approvato.</summary>
-        public static readonly string[] CalcFamiglie = { "HF", "VHF", "Antenne riceventi", "Strumenti", "Dischi e illuminatori", "2,4 GHz" };
+        public static readonly string[] CalcFamiglie = { "HF", "VHF", "Antenne riceventi", "Strumenti", "Calcoli meccanici", "Dischi e illuminatori", "2,4 GHz" };
+        Control calcMeccPagina;   // 1.5: la pagina dei Calcoli meccanici (prima linguetta principale) dentro i Calcolatori
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
             { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "discone", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh" } },
             { "Antenne riceventi", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
+            { "Calcoli meccanici", new string[0] },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
             { "2,4 GHz", new[] { "pcb24" } },
         };
@@ -156,6 +158,12 @@ namespace YaNec
                 kv.Value.BorderBrush = new SolidColorBrush(on ? Color.Parse("#E08A00") : Color.Parse("#4A6787"));
                 kv.Value.Foreground = new SolidColorBrush(Color.Parse(on ? "#FFFFFF" : "#E6EDF5"));
                 kv.Value.FontWeight = on ? FontWeight.SemiBold : FontWeight.Normal;
+            }
+            if (fam == "Calcoli meccanici")
+            {
+                calcCorpo.Content = calcMeccPagina;
+                if (voce != null) ApriVoceMeccanica(voce);
+                return;
             }
             if (fam == "Antenne riceventi")
             {

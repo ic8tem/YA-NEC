@@ -99,7 +99,7 @@ namespace YaNec
                     if (premi("Calcola")) await Task.Delay(60000);
                     await foto("yagi-incrociate");
                     ApriCalcolatore("divisori"); await Task.Delay(1200); await foto("divisori");
-                    SelectTab(IndiceLinguetta("Calcoli meccanici")); ApriVoceMeccanica("Vento"); await Task.Delay(1500); await foto("vento");
+                    SelectTab(IndiceLinguetta("Calcolatori")); ApriFamigliaCalc("Calcoli meccanici", "Vento"); await Task.Delay(1500); await foto("vento");
                     ApriVoceMeccanica("Bilanciamento"); await Task.Delay(800); premi("Calcola"); await Task.Delay(1500); await foto("bilanciamento");
                 }
                 // stack 4 x 7 elementi con telaio a H
