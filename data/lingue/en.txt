@@ -4612,3 +4612,19 @@ X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isola
 Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Equal lengths → equal phase. Multiples of λ/2 → the active impedance repeats at the divider. Recommended tolerance ± 5 mm (= ± {0}° of phase).
 impedenze attive delle {0} antenne dello stack in parallelo	active impedances of the {0} stack antennas in parallel
 Banda con ROS < {0}	Band with SWR < {0}
+? Manuale	? Manual
+Apre la spiegazione nel manuale	Opens the explanation in the manual
+riferimento	reference
+F/R max	F/R max
+Rispetto alla singola antenna	Compared with the single antenna
+mostra anche il G/T (variazione sulla singola, asse di sinistra)	also show G/T (change over the single antenna, left axis)
+aumento di guadagno sulla singola (dB)	gain increase over the single antenna (dB)
+{0} antenne ideali	{0} ideal antennas
+variazione del F/R sulla singola (0 in alto, scende se migliora)	F/R change over the single antenna (0 at the top, goes down when it improves)
+G/T sulla singola (dB)	G/T over the single antenna (dB)
+x la distanza DL6WU, a passi di	x the DL6WU spacing, in steps of
+F/R dB	F/R dB
+ΔF/R	ΔF/R
+x DL6WU	x DL6WU
+G/T dB/K	G/T dB/K
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Left axis: stack G - single G, from 0 upwards. Right axis: stack F/R - single F/R, inverted, with 0 at the top: where the stack improves the F/R the curve goes down, and the lowest point is the largest improvement. G/T stays in the table.

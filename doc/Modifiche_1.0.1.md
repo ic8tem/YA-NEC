@@ -26,3 +26,10 @@
 - Aggiornamento automatico (src/Diag/Aggiornamento.cs): cerca i nomi nuovi (portatile.zip su Windows, tar.gz su Linux, estratto con System.Formats.Tar che conserva i permessi); sul Mac non sostituisce piu' i file (il pacchetto e' YA-NEC.app) e avvisa che c'e' il nuovo .dmg; Arch, Slackware e AppImage contano come pacchetti (file installato-da-pacchetto).
 - winget, Scoop e Chocolatey (installer/gestori/genera.py) e Inno Setup con i nomi nuovi; tabella dei download in .github/release.md con le 21 righe dell'elenco; nomi nuovi nella pagina Installazione del wiki (37 lingue) e nei README (comando tar per Linux, open YA-NEC.app per il Mac).
 - Non ancora compilato ne' pubblicato (si fa quando lo dice IC8TEM).
+
+## 1.3.1 – Distanze di stack: disegno, passi di 0,05, grafico rispetto alla singola, pulsanti del manuale (18/11/2026, bozzetto approvato da IC8TEM alle 13:04)
+- Scheda Distanze di stack DL6WU: a destra il disegno dello stack visto da davanti (palo, telaio H, antenne con elemento e boom, quote in m e lambda, aperture a -3 dB tratteggiate; polarizzazione dal modello); la scheda "Stack da creare" diventa "Antenne" (righe x colonne), cosi' le schede sono piu' strette. CalcDrawing: cerchio tratteggiato.
+- Accoppiamento e distanza migliore (NEC): passo delle distanze scelto con una casella, di partenza 0,05 (prima fisso 0,1); StackStudio.Vhf calcola anche il F/R medio della singola e di ogni distanza.
+- Tabella delle distanze: prima riga con l'antenna singola, colonne F/R e ΔF/R, segno "F/R max". Nuovo grafico "Rispetto alla singola antenna": aumento di guadagno da 0 in su (con le N antenne ideali), variazione del F/R su asse rovesciato con lo 0 in alto; G/T solo con la casella.
+- Pulsante "? Manuale" sulla scheda DL6WU e sui riquadri Accoppiamento, Matrice e Distanze provate: apre il manuale al paragrafo "Distanze di stack: accoppiamento e distanza migliore" (i titoli #### ora si impaginano come paragrafi).
+- Prova con nec2c (10 el. BVO IC8TEM, 2 x 2, 0,5-2,0 a passi di 0,05): guadagno, |Sij| e lobi coincidono con la tabella di YA-NEC 1.3.0 entro 0,1-0,3 dB.

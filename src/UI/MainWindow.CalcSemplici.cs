@@ -247,9 +247,12 @@ namespace YaNec
             // risultati sotto i pulsanti nella stessa scheda, disegno ridotto a destra; per Cavi RG a destra il cambio d'impedenza, per il
             // Balun il disegno di costruzione con i passi
             bool conTrasf = sc.Key == "cavi", conBalun = sc.Key == "balun";
-            Grid top = new Grid { ColumnDefinitions = new ColumnDefinitions(conTrasf ? "10*,12*" : (conBalun ? "10*,11*" : "*,330")) };
+            Grid top = new Grid { ColumnDefinitions = new ColumnDefinitions(conTrasf ? "10*,12*" : (conBalun ? "10*,11*" : (sc is CalcStackDl6wu ? "10*,9*" : "*,330"))) };   // 1.3.1: stack, disegno largo a destra
             StackPanel left = new StackPanel { Spacing = 4 };
-            left.Children.Add(new TextBlock { Text = sc.Title, FontSize = 17, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6) });
+            TextBlock titoloCalc = new TextBlock { Text = sc.Title, FontSize = 17, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), VerticalAlignment = VerticalAlignment.Center };
+            if (sc is CalcStackDl6wu)   // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): pulsante "? Manuale"
+                left.Children.Add(new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 6), Children = { titoloCalc, BtnManuale("Distanze di stack: accoppiamento e distanza migliore") } });
+            else { titoloCalc.Margin = new Thickness(0, 0, 0, 6); left.Children.Add(titoloCalc); }
             if (pilloleTipo != null || !string.IsNullOrEmpty(sc.Variant))
             {
                 ContentControl posto = new ContentControl { Tag = "posto-tipo", Content = pilloleTipo };

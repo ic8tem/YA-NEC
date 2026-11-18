@@ -28,11 +28,12 @@ namespace YaNec
         // ------------------------------------------------------------------------------------------------
         // piccoli costruttori comuni alle nuove linguette
         // ------------------------------------------------------------------------------------------------
-        Border Pannello(string titolo, Control corpo, string sottotitolo = null)
+        Border Pannello(string titolo, Control corpo, string sottotitolo = null, string manuale = null)
         {
             StackPanel sp = new StackPanel { Spacing = 6 };
             StackPanel head = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
             head.Children.Add(new TextBlock { Text = titolo, FontSize = 16, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
+            if (!string.IsNullOrEmpty(manuale)) head.Children.Add(BtnManuale(manuale));   // 1.3.1: "? Manuale" accanto al titolo
             if (!string.IsNullOrEmpty(sottotitolo))
                 head.Children.Add(new TextBlock { Text = sottotitolo, FontSize = 12.5, Foreground = Pal.B(Pal.Muted), VerticalAlignment = VerticalAlignment.Bottom });
             sp.Children.Add(head);

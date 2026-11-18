@@ -1336,9 +1336,9 @@ La linguetta **Rumore/GT/Stack** ha a sinistra un fascione con tre voci: **Rumor
 
 #### Distanze di stack: accoppiamento e distanza migliore
 
-La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (formula di DL6WU sulle aperture a -3 dB, righe e colonne, pulsante "Crea lo stack nel modello aperto"). Sotto c'e' il riquadro nuovo **Accoppiamento e distanza migliore (NEC)**, con due modi.
+La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (formula di DL6WU sulle aperture a -3 dB, righe e colonne, pulsante "Crea lo stack nel modello aperto"). A destra della scheda c'e' il **disegno dello stack visto da davanti** (dalla 1.3.1): palo, telaio H, le antenne con l'elemento e il boom di punta, le quote verticale e orizzontale in metri e in lambda e, tratteggiate, le aperture a -3 dB, che alla distanza DL6WU si toccano. La polarizzazione (elementi orizzontali o verticali) viene dal modello aperto. Il pulsante **? Manuale**, accanto ai titoli della scheda e dei riquadri, apre questo paragrafo. Sotto c'e' il riquadro nuovo **Accoppiamento e distanza migliore (NEC)**, con due modi.
 
-**VHF/UHF (spazio libero, DL6WU).** La formula di DL6WU da' la distanza per cui i lobi di due antenne si sovrappongono a -3 dB circa: e' un buon punto di partenza, non sempre il migliore. Qui lo stack si calcola davvero con il NEC per una serie di distanze, di partenza da 0,5 a 2,0 volte quella di DL6WU a passi di 0,1 (si possono cambiare), e per ognuna si danno:
+**VHF/UHF (spazio libero, DL6WU).** La formula di DL6WU da' la distanza per cui i lobi di due antenne si sovrappongono a -3 dB circa: e' un buon punto di partenza, non sempre il migliore. Qui lo stack si calcola davvero con il NEC per una serie di distanze, di partenza da 0,5 a 2,0 volte quella di DL6WU a passi di 0,05 (dalla 1.3.1; prima 0,1: il doppio dei calcoli, circa il doppio del tempo; inizio, fine e passo si possono cambiare), e per ognuna si danno:
 
 | Risultato | Spiegazione |
 |---|---|
@@ -1346,6 +1346,11 @@ La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (f
 | Lobo laterale piu' alto (dB) | nel piano dello stack, dove la distanza fa crescere i lobi di griglia |
 | G/T | con le temperature di Rumore e G/T (cielo, terreno, elevazione): la distanza giusta per l'EME e' quella del G/T, non del guadagno (VE7BQH) |
 | abs(Sij) max (dB) | accoppiamento tra le porte: quanta potenza passa da un'antenna all'altra |
+| F/R (dB) e ΔF/R | F/R medio sull'emisfero posteriore e la sua variazione rispetto all'antenna singola (dalla 1.3.1) |
+
+La prima riga della tabella e' l'**antenna singola** (riferimento): guadagno, lobo laterale, F/R e G/T. Accanto alla tabella ci sono due grafici. Il primo e' quello di prima: guadagno e lobo laterale al variare della distanza. Il secondo, **Rispetto alla singola antenna** (dalla 1.3.1, richiesta e criterio di IC8TEM del 18/11/2026), e' adimensionale: a sinistra l'aumento di guadagno sulla singola, da 0 in su, con la linea tratteggiata delle N antenne ideali (+3 dB per 2, +6,02 dB per 4); a destra la variazione del F/R sulla singola su un asse rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Cosi' il criterio di scelta si legge sul grafico senza il G/T, oppure sulla tabella con il G/T. Il G/T non e' disegnato: si accende con la casella sotto il grafico (variazione sulla singola, asse di sinistra).
+
+Esempio (10 el. BVO di IC8TEM a 144,3 MHz, stack 2 x 2, nec2c): singola 15,72 dBi, F/R 26,4 dB; il F/R migliora di piu' a 0,90 x DL6WU (33,9 dB, +7,4 dB), con un secondo minimo a 1,40 (+7,1 dB); il guadagno e' gia' a +6 dB da 1,0 in poi, massimo 21,90 dBi a 1,35; lobi laterali piu' bassi a 0,85 (-14,4 dB).
 
 La **matrice di accoppiamento** si fa come nec2-array di YO3IIU: si alimenta una porta alla volta (le altre con una sorgente quasi nulla, cioe' in cortocircuito), si leggono le correnti di tutte le porte e si ha la matrice delle ammettenze Y; poi Z = Y^-1 e S = (Z - Z0)(Z + Z0)^-1. Sulla diagonale c'e' il disadattamento di ogni antenna con le altre chiuse su Z0, fuori diagonale la potenza che passa da una porta all'altra.
 

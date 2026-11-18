@@ -12,6 +12,7 @@ using Avalonia.Controls.Documents;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Threading;
 
 namespace YaNec
 {
@@ -20,6 +21,28 @@ namespace YaNec
         internal readonly List<KeyValuePair<string, Control>> manualChapters = new List<KeyValuePair<string, Control>>();
 
         public static string ManualPath { get { return Path.Combine(AppPaths.DataDir, "manuale", "Manuale.md"); } }
+
+        Action<string> manualeVai;
+
+        /// <summary>1.3.1: apre la linguetta Manuale al paragrafo con questo titolo (senza i cancelletti).</summary>
+        void ApriManuale(string titolo)
+        {
+            for (int i = 0; i < tabs.Count; i++) if ((tabs[i].Tag as string) == "Manuale") { SelectTab(i); break; }
+            manualeVai?.Invoke(titolo);
+        }
+
+        /// <summary>1.3.1: pulsantino "? Manuale" accanto al titolo di un riquadro.</summary>
+        Button BtnManuale(string titolo)
+        {
+            Button b = new Button
+            {
+                Content = Lang.T("? Manuale"), FontSize = 12, Padding = new Thickness(9, 1), Margin = new Thickness(8, 0, 0, 0), CornerRadius = new CornerRadius(10),
+                Background = Brushes.Transparent, BorderBrush = Pal.B(Pal.Accent), BorderThickness = new Thickness(1), Foreground = Pal.B(Pal.Accent), VerticalAlignment = VerticalAlignment.Center
+            };
+            ToolTip.SetTip(b, Lang.T("Apre la spiegazione nel manuale"));
+            b.Click += (s, e) => ApriManuale(titolo);
+            return b;
+        }
 
         Control BuildManualPage()
         {
@@ -66,8 +89,10 @@ namespace YaNec
                         TextBlock t = new TextBlock { Text = l.Substring(3), FontSize = 20, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Accent), TextWrapping = TextWrapping.Wrap };
                         cb.Children.Add(new Border { BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 2), Padding = new Thickness(0, 0, 0, 4), Margin = new Thickness(0, 6, 0, 2), Child = t });
                     }
+                    else if (l.StartsWith("#### "))   // 1.3.1: paragrafi (prima finivano nel testo con i cancelletti); Tag per il pulsante "? Manuale"
+                        cb.Children.Add(new TextBlock { Text = l.Substring(5), Tag = l.Substring(5), FontSize = 14.5, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 8, 0, 0), TextWrapping = TextWrapping.Wrap });
                     else if (l.StartsWith("### "))
-                        cb.Children.Add(new TextBlock { Text = l.Substring(4), FontSize = 16, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 10, 0, 0), TextWrapping = TextWrapping.Wrap });
+                        cb.Children.Add(new TextBlock { Tag = l.Substring(4), Text = l.Substring(4), FontSize = 16, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 10, 0, 0), TextWrapping = TextWrapping.Wrap });
                     else if (l.StartsWith("> NOTA: ")) cb.Children.Add(Box(l.Substring(8), Pal.Accent));
                     else if (l.StartsWith("> ATTENZIONE: ")) cb.Children.Add(Box(l.Substring(14), Pal.Orange));
                     else if (l.StartsWith("!["))
@@ -127,6 +152,20 @@ namespace YaNec
                 body.Children.Add(capitolo(k));
                 sv.Offset = new Vector(0, 0);
                 if (idx.SelectedIndex != k) idx.SelectedIndex = k;
+            };
+            // 1.3.1 (bozzetto Stack approvato da IC8TEM il 18/11/2026 13:04): pulsante "? Manuale" che apre il paragrafo giusto
+            manualeVai = titolo =>
+            {
+                int li = Array.FindIndex(lines, x => x.StartsWith("#") && x.TrimStart('#').Trim() == titolo);
+                if (li < 0) return;
+                int k = inizi.FindLastIndex(x => x <= li);
+                if (k < 0) return;
+                mostra(k);
+                Dispatcher.UIThread.Post(() =>
+                {
+                    if (fatti.TryGetValue(k, out Control cc) && cc is StackPanel spc)
+                        foreach (Control x in spc.Children) if (Equals(x.Tag, titolo)) { x.BringIntoView(); break; }
+                }, DispatcherPriority.Loaded);
             };
             foreach (KeyValuePair<string, Control> c in manualChapters) idx.Items.Add(new ListBoxItem { Content = c.Key, FontSize = 13, Padding = new Thickness(10, 5) });
             idx.SelectionChanged += (s, e) => { if (idx.SelectedIndex >= 0) mostra(idx.SelectedIndex); };

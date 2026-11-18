@@ -297,7 +297,7 @@ namespace YaNec
                         Draw.Text(ctx, m.Text, p.X, p.Y - 9, 12.5, c, FontWeight.SemiBold);
                         break;
                     case 1:
-                        ctx.DrawEllipse(null, Pal.P(c, 3), p, m.R * sc, m.R * sc);
+                        ctx.DrawEllipse(null, m.Dash ? Pal.P(c, 1.4, Pal.Dash) : Pal.P(c, 3), p, m.R * sc, m.R * sc);   // 1.3.1: cerchio tratteggiato (aperture dello stack)
                         if (!string.IsNullOrEmpty(m.Text)) Draw.Text(ctx, m.Text, p.X + m.R * sc + 6, p.Y - 9, 12.5, c, FontWeight.SemiBold);
                         break;
                     case 2:

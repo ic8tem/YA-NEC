@@ -778,6 +778,44 @@ namespace YaNec.Engine
 
         // 13/11/2026 18:17 (IC8TEM): non e' un calcolo indipendente; con un modello aperto frequenza, aperture e boom vengono dal modello
         // della finestra principale (antenna base dello stack, se c'e', sempre in spazio libero come vuole la formula).
+        /// <summary>1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): lo stack visto da davanti, con palo, telaio H, antenne
+        /// (elemento e boom di punta), quote verticale e orizzontale e aperture a -3 dB (con DL6WU si toccano). Polarizzazione dal modello.</summary>
+        void DisegnoStack(CalcOutput o, double lam, int nr, int nc, double dv, double dh)
+        {
+            bool vert = false;
+            if (UsaModello && Model != null)
+            {
+                double sz = 0, sxy = 0;
+                foreach (GeomCard g in Model.Geometry) if (g.Id == "GW") { sz += Math.Abs(g.F6 - g.F3); sxy += Math.Abs(g.F4 - g.F1) + Math.Abs(g.F5 - g.F2); }
+                vert = sz > sxy;
+            }
+            o.Plane = "yz"; o.HideWires = true;
+            double h = 0.24 * lam, rb = 0.025 * lam;
+            double y0 = -(nc - 1) / 2.0 * dh, z0 = (nr - 1) / 2.0 * dv;
+            double ytop = z0 + Math.Max(dv, dh) * 0.55, ybot = -z0 - Math.Max(dv, dh) * 0.75;
+            // palo e telaio
+            o.Mark(2, 0, ybot, null, 3, 0, ytop);
+            if (nc > 1)
+            {
+                o.Mark(2, y0, 0, null, 3, -y0, 0);
+                for (int j = 0; j < nc; j++) o.Mark(2, y0 + j * dh, -z0 - 0.15 * lam, null, 3, y0 + j * dh, z0 + 0.15 * lam);
+            }
+            double ra = Math.Min(nr > 1 ? dv : double.MaxValue, nc > 1 ? dh : double.MaxValue) / 2;
+            if (double.IsInfinity(ra) || ra > 1e6) ra = Math.Max(dv, dh) / 2;
+            int n = 0;
+            for (int i = 0; i < nr; i++)
+                for (int j = 0; j < nc; j++)
+                {
+                    double y = y0 + j * dh, z = z0 - i * dv;
+                    o.Mark(1, y, z, null, 1, 0, 0, ra, true);
+                    if (vert) o.Mark(2, y, z - h, null, 0, y, z + h); else o.Mark(2, y - h, z, null, 0, y + h, z);
+                    o.Mark(1, y, z, null, 0, 0, 0, rb);
+                    o.Mark(0, y + rb * 1.6, z + rb * 2.2, "A" + (++n), 0);
+                }
+            if (nr > 1) o.Mark(7, y0 - ra - 0.15 * lam, z0, N(dv, 3) + " m = " + N(dv / lam, 2) + " λ", 3, y0 - ra - 0.15 * lam, z0 - dv);
+            if (nc > 1) o.Mark(7, y0, -z0 - ra - 0.15 * lam, N(dh, 3) + " m = " + N(dh / lam, 2) + " λ", 3, y0 + dh, -z0 - ra - 0.15 * lam);
+        }
+
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
@@ -818,9 +856,11 @@ namespace YaNec.Engine
             UltimaDv = dv; UltimaDh = dh;
             o.Add("Lunghezza d'onda", N(lam, 3) + " m");
             int nr = Math.Max(1, Math.Min(8, I("righe"))), nc = Math.Max(1, Math.Min(8, I("col")));
-            o.Add("Stack da creare (pulsante sotto)", nr + " x " + nc + " = " + (nr * nc) + " antenne" + (nr > 1 ? ", verticale " + N(dv, 3) + " m" : "") + (nc > 1 ? ", orizzontale " + N(dh, 3) + " m" : ""));
+            // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): schede piu' strette (le distanze stanno nel disegno a destra)
+            o.Add("Antenne", nr + " × " + nc + " = " + (nr * nc));
             o.Add("Affiancate (usa l'apertura orizzontale)", N(dh, 3) + " m = " + N(dh / lam, 2) + " lambda");
             o.Add("Sovrapposte (usa l'apertura verticale)", N(dv, 3) + " m = " + N(dv / lam, 2) + " lambda");
+            DisegnoStack(o, lam, nr, nc, dv, dh);
             o.Formula = "Formula DL6WU: D = lambda / (2 sin(B/2)), B = apertura a -3 dB nel piano dello stack (ARRL 24a ed., Rothammel cap. 24, DG7YBN). " +
                 "Limiti (ARRL 24a ed.): approssimata; vale nel piano E per boom oltre circa 0,7 lambda e nel piano H oltre 2 lambda; \"piu' sicura\" con boom di almeno 2 lambda.";
             if (origine != null) o.Oks.Add("valori presi dal " + origine + " (frequenza dalla barra in alto; le caselle si aggiornano da sole)");

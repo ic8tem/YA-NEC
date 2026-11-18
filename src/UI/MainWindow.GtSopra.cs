@@ -304,7 +304,7 @@ namespace YaNec
         // Distanze di stack: scheda di prima + accoppiamento e distanza migliore (NEC)
         // =====================================================================================================
         int ssModo, ssCrit = 3, ssN = 2;
-        TextBox ssKmin, ssKmax, ssZ0, ssSoglia, ssH, ssDmin, ssDmax, ssAmin, ssAmax;
+        TextBox ssKmin, ssKmax, ssPasso, ssZ0, ssSoglia, ssH, ssDmin, ssDmax, ssAmin, ssAmax;
         StackPanel ssVhfBox, ssHfBox, ssRis;
         TextBlock ssStato;
         StackStudioRisultato ssUltimo;
@@ -327,7 +327,8 @@ namespace YaNec
             // VHF/UHF
             ssVhfBox = new StackPanel { Spacing = 3 };
             ssKmin = Tb("0,5", 50); ssKmax = Tb("2,0", 50); ssZ0 = Tb(model != null ? FN(model.Z0, 0) : "50", 55); ssSoglia = Tb("-13", 50);
-            ssVhfBox.Children.Add(Riga("Distanze da provare", ssKmin, new TextBlock { Text = "-", VerticalAlignment = VerticalAlignment.Center }, ssKmax, new TextBlock { Text = "x la distanza DL6WU, a passi di 0,1", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
+            ssPasso = Tb("0,05", 50);   // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): passo scelto, di partenza 0,05
+            ssVhfBox.Children.Add(Riga("Distanze da provare", ssKmin, new TextBlock { Text = "-", VerticalAlignment = VerticalAlignment.Center }, ssKmax, new TextBlock { Text = "x la distanza DL6WU, a passi di", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }, ssPasso));
             ssVhfBox.Children.Add(Riga("Impedenza di riferimento", ssZ0, new TextBlock { Text = "Ω (barra in alto)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             ssVhfBox.Children.Add(Riga("Criterio della distanza migliore", Scelta(new[] { "guadagno massimo", "lobi laterali piu' bassi", "G/T migliore", "guadagno con lobi sotto" }, 3, k => ssCrit = k), ssSoglia, new TextBlock { Text = "dB", VerticalAlignment = VerticalAlignment.Center }));
             ssVhfBox.Children.Add(Riga("G/T (da Rumore e G/T)", new TextBlock { Text = "temperature del cielo e del terreno ed elevazione della voce Rumore e G/T", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 420 }));
@@ -360,7 +361,7 @@ namespace YaNec
             ssRis = new StackPanel { Spacing = 6 };
             sez.Children.Add(ssRis);
             sez.Children.Add(new TestoAdattato { Child = Nota("Fonti: DL6WU (formula); ARRL Antenna Book 24a ed. (limiti della formula, stack di Yagi HF e angoli di elevazione); L. Edwards VE7BQH (G/T come criterio per gli stack EME); R. D. Straw N6BV (HFTA, stack e terreno); ON4UN, Low-Band DXing; L. B. Cebik W4RNL; nec2-array di YO3IIU (matrice di accoppiamento in ricezione, GPL-2 o successive); G. Burke e A. Poggio, manuale NEC-2 (scheda CP).") });
-            all.Children.Add(Pannello("Accoppiamento e distanza migliore (NEC)", sez));
+            all.Children.Add(Pannello("Accoppiamento e distanza migliore (NEC)", sez, null, "Distanze di stack: accoppiamento e distanza migliore"));
             return new ScrollViewer { Content = all, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         }
 
@@ -371,7 +372,7 @@ namespace YaNec
             NecModel m0 = model; double f = run.FreqMHz;
             int righe = ssCalc != null ? Math.Max(1, Math.Min(8, ssCalc.I("righe"))) : 2, col = ssCalc != null ? Math.Max(1, Math.Min(8, ssCalc.I("col"))) : 1;
             if (!hf && righe * col < 2) { ssStato.Text = "Servono almeno 2 antenne (righe x colonne nella scheda sopra)."; return; }
-            double kmin = ParseNum(ssKmin.Text, 0.5), kmax = ParseNum(ssKmax.Text, 2), z0 = ParseNum(ssZ0.Text, m0.Z0), soglia = ParseNum(ssSoglia.Text, -13);
+            double kmin = ParseNum(ssKmin.Text, 0.5), kmax = ParseNum(ssKmax.Text, 2), passo = Math.Max(0.01, ParseNum(ssPasso.Text, 0.05)), z0 = ParseNum(ssZ0.Text, m0.Z0), soglia = ParseNum(ssSoglia.Text, -13);
             double tsky = gtSky != null ? ParseNum(gtSky.Text, 200) : 200, tg = gtGround != null ? ParseNum(gtGround.Text, 1000) : 1000, el = gtElev != null ? ParseNum(gtElev.Text, 30) : 30;
             double h = ParseNum(ssH.Text, 15), dmin = ParseNum(ssDmin.Text, 0.5), dmax = ParseNum(ssDmax.Text, 1.25), amin = ParseNum(ssAmin.Text, 5), amax = ParseNum(ssAmax.Text, 15);
             int crit = ssCrit, n = ssN;
@@ -381,7 +382,7 @@ namespace YaNec
             ssStato.Text = hf ? "calcolo dello stack HF sopra il terreno in corso..." : "calcolo di " + (righe * col) + " antenne a tutte le distanze in corso (una soluzione NEC per porta)...";
             ssRis.Children.Clear();
             Task.Run(() => hf ? StackStudio.Hf(m0, f, n, h, Math.Min(dmin, dmax), Math.Max(dmin, dmax), Math.Min(amin, amax), Math.Max(amin, amax), ct)
-                              : StackStudio.Vhf(m0, f, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct), ct)
+                              : StackStudio.Vhf(m0, f, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo), ct)
                 .ContinueWith(t => Dispatcher.UIThread.Post(() =>
                 {
                     if (t.IsCanceled) return;
@@ -446,35 +447,66 @@ namespace YaNec
             WrapPanel wm = new WrapPanel();
             Control m1 = Tabella(mt); m1.Margin = new Thickness(0, 0, 14, 6);
             wm.Children.Add(m1); wm.Children.Add(Tabella(zt));
-            ssRis.Children.Add(Pannello("Matrice di accoppiamento alla distanza proposta", wm, "diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra"));
-            // tabella delle distanze
-            List<string[]> rows = new List<string[]> { new[] { "x DL6WU", "distanza", "", "|Sij| max dB", "G dBi", "sulla singola", "lobo laterale dB", "G/T dB/K", "" } };
+            ssRis.Children.Add(Pannello("Matrice di accoppiamento alla distanza proposta", wm, "diagonale: disadattamento di ogni antenna con le altre chiuse su Z0; fuori diagonale: potenza che passa da una porta all'altra", "Distanze di stack: accoppiamento e distanza migliore"));
+            // tabella delle distanze (1.3.1, bozzetto approvato da IC8TEM il 18/11/2026 13:04: riga della singola, F/R e variazione del F/R)
+            List<string[]> rows = new List<string[]> { new[] { "x DL6WU", "distanza", "", "|Sij| max dB", "G dBi", "sulla singola", "lobo laterale dB", "F/R dB", "ΔF/R", "G/T dB/K", "" } };
+            rows.Add(new[] { Lang.T("singola"), "-", "", "-", FN(r.GSingola, 2), "0", FN(r.SllSingola, 1), FN(r.FrSingola, 1), "0", FN(r.GtSingola, 2), Lang.T("riferimento") });
             int ie = -1, id = -1;
             for (int i = 0; i < r.Punti.Count; i++)
             {
                 StackPunto q = r.Punti[i];
                 List<string> tag = new List<string>();
-                if (q == r.Dl6wu) { tag.Add("DL6WU"); id = i + 1; }
-                if (q == r.GMax) tag.Add("guadagno max");
-                if (q == r.SllMin) tag.Add("lobi piu' bassi");
-                if (q == r.GtMax) tag.Add("G/T max");
-                if (q == r.Proposta) { tag.Add("scelta proposta"); ie = i + 1; }
+                if (q == r.Dl6wu) { tag.Add("DL6WU"); id = i + 2; }
+                if (q == r.GMax) tag.Add(Lang.T("guadagno max"));
+                if (q == r.SllMin) tag.Add(Lang.T("lobi piu' bassi"));
+                if (q == r.Punti.OrderByDescending(x => x.Fr).First()) tag.Add(Lang.T("F/R max"));
+                if (q == r.GtMax) tag.Add(Lang.T("G/T max"));
+                if (q == r.Proposta) { tag.Add(Lang.T("scelta proposta")); ie = i + 2; }
                 double dd = righe > 1 ? q.Dv : q.Dh;
-                rows.Add(new[] { FN(q.K, 2), FN(dd, 3) + " m", FN(dd / r.Lambda, 2) + " λ", FN(q.S21, 1), FN(q.G, 2), FN(q.G - r.GSingola, 2), FN(q.Sll, 1), FN(q.Gt, 2), string.Join(", ", tag) });
+                rows.Add(new[] { FN(q.K, 2), FN(dd, 3) + " m", FN(dd / r.Lambda, 2) + " λ", FN(q.S21, 1), FN(q.G, 2), FN(q.G - r.GSingola, 2), FN(q.Sll, 1), FN(q.Fr, 1), FN(q.Fr - r.FrSingola, 1), FN(q.Gt, 2), string.Join(", ", tag) });
             }
-            LineChart ch = new LineChart { Title = "Guadagno e lobo laterale al variare della distanza", XLabel = "distanza / distanza DL6WU", YLabel = "dBi", Y2Label = "dB", Height = 260 };
+            LineChart ch = new LineChart { Title = Lang.T("Guadagno e lobo laterale al variare della distanza"), XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "dBi", Y2Label = "dB", Height = 260 };
             ch.X = r.Punti.Select(q => q.K).ToArray();
             ch.Series = new List<LineSeries>
             {
-                new LineSeries { Name = "guadagno dello stack (dBi)", Y = r.Punti.Select(q => q.G).ToArray(), Color = Pal.Accent },
-                new LineSeries { Name = "lobo laterale piu' alto (dB)", Y = r.Punti.Select(q => q.Sll).ToArray(), Color = Pal.Orange, Right = true, Decimals = 1 },
+                new LineSeries { Name = Lang.T("guadagno dello stack (dBi)"), Y = r.Punti.Select(q => q.G).ToArray(), Color = Pal.Accent },
+                new LineSeries { Name = Lang.T("lobo laterale piu' alto (dB)"), Y = r.Punti.Select(q => q.Sll).ToArray(), Color = Pal.Orange, Right = true, Decimals = 1 },
             };
             ch.MarkX = p.K;
+            // grafico rispetto alla singola: a sinistra l'aumento di guadagno da 0 in su, a destra la variazione del F/R rovesciata
+            // (0 in alto: dove lo stack migliora il F/R la curva scende); G/T solo con la casella
+            int nAnt = righe * col;
+            double ideale = 10 * Math.Log10(Math.Max(1, nAnt));
+            double[] dfrInv = r.Punti.Select(q => -(q.Fr - r.FrSingola)).ToArray();
+            LineChart ch2 = new LineChart { Title = Lang.T("Rispetto alla singola antenna"), XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "ΔG dB", Y2Label = "ΔF/R dB", Height = 280 };
+            ch2.X = ch.X;
+            ch2.YMinFixed = 0; ch2.YMaxFixed = Math.Ceiling(Math.Max(ideale, r.Punti.Max(q => q.G - r.GSingola)) + 1);
+            ch2.Y2MaxFixed = Math.Max(1.5, Math.Ceiling(dfrInv.Max() + 0.5)); ch2.Y2MinFixed = Math.Floor(Math.Min(-1, dfrInv.Min()) - 0.5);
+            ch2.MarkX = p.K;
+            CheckBox cbGt = new CheckBox { Content = Lang.T("mostra anche il G/T (variazione sulla singola, asse di sinistra)"), IsChecked = false, Margin = new Thickness(0, 4, 0, 0) };
+            Action serie2 = () =>
+            {
+                ch2.Series = new List<LineSeries>
+                {
+                    new LineSeries { Name = Lang.T("aumento di guadagno sulla singola (dB)"), Y = r.Punti.Select(q => q.G - r.GSingola).ToArray(), Color = Pal.Accent },
+                    new LineSeries { Name = Lang.F("{0} antenne ideali", nAnt) + " +" + FN(ideale, 2) + " dB", Y = r.Punti.Select(q => ideale).ToArray(), Color = Pal.Muted, Dashed = true },
+                    new LineSeries { Name = Lang.T("variazione del F/R sulla singola (0 in alto, scende se migliora)"), Y = dfrInv, Color = Pal.Orange, Right = true, Decimals = 1 },
+                };
+                if (cbGt.IsChecked == true) ch2.Series.Add(new LineSeries { Name = Lang.T("G/T sulla singola (dB)"), Y = r.Punti.Select(q => q.Gt - r.GtSingola).ToArray(), Color = Pal.Green });
+                ch2.InvalidateVisual();
+            };
+            serie2();
+            cbGt.IsCheckedChanged += (s2, e2) => serie2();
+            StackPanel grafici = new StackPanel { Spacing = 10 };
+            grafici.Children.Add(ch);
+            grafici.Children.Add(ch2);
+            grafici.Children.Add(cbGt);
+            grafici.Children.Add(new TextBlock { Text = Lang.T("Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella."), TextWrapping = TextWrapping.Wrap, FontSize = 12, Foreground = Pal.B(Pal.Muted) });
             Grid tg = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
             Control tb = Tabella(rows, ie, id);
-            Grid.SetColumn(tb, 0); Grid.SetColumn(ch, 2);
-            tg.Children.Add(tb); tg.Children.Add(ch);
-            ssRis.Children.Add(Pannello("Distanze provate", tg));
+            Grid.SetColumn(tb, 0); Grid.SetColumn(grafici, 2);
+            tg.Children.Add(tb); tg.Children.Add(grafici);
+            ssRis.Children.Add(Pannello("Distanze provate", tg, null, "Distanze di stack: accoppiamento e distanza migliore"));
         }
 
         void MostraStackHf(StackStudioRisultato r, int righe)

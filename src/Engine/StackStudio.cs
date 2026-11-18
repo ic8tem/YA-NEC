@@ -18,7 +18,7 @@ namespace YaNec.Engine
 {
     public class StackPunto
     {
-        public double K, Dv, Dh, G, Sll, SllAng, Gt, Tant, S21, Gmedia;
+        public double K, Dv, Dh, G, Sll, SllAng, Gt, Tant, S21, Gmedia, Fr;   // Fr: F/R medio (1.3.1)
         public double[] GAng;   // HF: guadagno agli angoli 5, 10, 15, 20
     }
 
@@ -26,7 +26,7 @@ namespace YaNec.Engine
     {
         public List<StackPunto> Punti = new List<StackPunto>();
         public StackPunto Proposta, Dl6wu, GMax, SllMin, GtMax;
-        public double GSingola, SllSingola, GtSingola, Dv0, Dh0, Lambda;
+        public double GSingola, SllSingola, GtSingola, FrSingola, Dv0, Dh0, Lambda;
         public Complex[,] Z; public double[,] SdB;   // alla distanza proposta (VHF)
         public string Criterio = "";
         // HF
@@ -141,7 +141,7 @@ namespace YaNec.Engine
 
         /// <summary>Studio VHF/UHF in spazio libero. criterio: 0 guadagno massimo, 1 lobi piu' bassi, 2 G/T migliore, 3 guadagno con lobi sotto la soglia.</summary>
         public static StackStudioRisultato Vhf(NecModel base0, double f, int righe, int colonne, double kMin, double kMax, double z0,
-            int criterio, double sogliaSll, double tsky, double tground, double elev, int passiGriglia, CancellationToken ct)
+            int criterio, double sogliaSll, double tsky, double tground, double elev, int passiGriglia, CancellationToken ct, double passo = 0.05)
         {
             StackStudioRisultato res = new StackStudioRisultato { Lambda = 299.792458 / f };
             NecModel mf = base0.Clone();
@@ -154,8 +154,11 @@ namespace YaNec.Engine
             double sl, sa;
             LoboLaterale(r1.Engine, r1.ThetaMax, r1.PhiMax, righe > 1, out sl, out sa);
             res.SllSingola = sl;
+            res.FrSingola = r1.FrontRearMedio;
             res.GtSingola = NoiseGt.Gt(Griglia(r1, passiGriglia), r1.ThetaMax, r1.PhiMax, r1.GmaxDbi, elev, tsky, tground, 0, 0, true).GtAnt;
-            int nk = Math.Max(2, (int)Math.Round((kMax - kMin) / 0.1)) + 1;
+            // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): passo scelto, di partenza 0,05 (prima fisso 0,1)
+            if (!(passo >= 0.01)) passo = 0.05;
+            int nk = Math.Max(2, (int)Math.Round((kMax - kMin) / passo)) + 1;
             for (int i = 0; i < nk; i++)
             {
                 ct.ThrowIfCancellationRequested();
@@ -166,6 +169,7 @@ namespace YaNec.Engine
                 RunResult rs = Analysis.Run(ms, gs, f, 2.0, ct);
                 p.G = rs.Engine.Gain(r1.ThetaMax, r1.PhiMax).GainTotal;
                 LoboLaterale(rs.Engine, r1.ThetaMax, r1.PhiMax, righe > 1, out p.Sll, out p.SllAng);
+                p.Fr = rs.FrontRearMedio;
                 GtResult gt = NoiseGt.Gt(Griglia(rs, passiGriglia), r1.ThetaMax, r1.PhiMax, rs.GmaxDbi, elev, tsky, tground, 0, 0, true);
                 p.Gt = gt.GtAnt; p.Tant = gt.Tant;
                 Complex[,] z = MatriceZ(ms, gs, f);
