@@ -1,4 +1,4 @@
-// YA-NEC 1.3.2 - finestra di chiusura come in LIVETROPOVHF (richiesta di IC8TEM del 18/11/2026 14:47, "inseriamo anche questo"):
+// YA-NEC 1.4 - finestra di chiusura come in LIVETROPOVHF (richiesta di IC8TEM del 18/11/2026 14:47, "inseriamo anche questo"):
 // icona, domanda, ringraziamento in corsivo, barra grigia con Si' e No. Invio = Si', Esc = No.
 using System.Threading.Tasks;
 using Avalonia;

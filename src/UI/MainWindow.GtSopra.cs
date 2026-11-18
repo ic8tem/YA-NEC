@@ -326,12 +326,12 @@ namespace YaNec
             sez.Children.Add(new TestoAdattato { Child = Nota("VHF/UHF: per ogni distanza (fattore x la distanza DL6WU) lo stack si calcola col NEC: guadagno, lobo laterale piu' alto nel piano dello stack, G/T (temperature di Rumore e G/T) e accoppiamento tra le porte. HF: la formula DL6WU non vale (le antenne stanno sopra il terreno e conta l'angolo di partenza): lo stack si sceglie sugli angoli di elevazione voluti.") });
             // VHF/UHF
             ssVhfBox = new StackPanel { Spacing = 3 };
-            ssKmin = Tb("0,5", 50); ssKmax = Tb("2,5", 50); ssZ0 = Tb(model != null ? FN(model.Z0, 0) : "50", 55); ssSoglia = Tb("-13", 50);   // 1.3.2: di partenza fino a 2,5 (IC8TEM 18/11/2026 14:48)
+            ssKmin = Tb("0,5", 50); ssKmax = Tb("2,5", 50); ssZ0 = Tb(model != null ? FN(model.Z0, 0) : "50", 55); ssSoglia = Tb("-13", 50);   // 1.4: di partenza fino a 2,5 (IC8TEM 18/11/2026 14:48)
             ssPasso = Tb("0,05", 50);   // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): passo scelto, di partenza 0,05
             ssVhfBox.Children.Add(Riga("Distanze da provare", ssKmin, new TextBlock { Text = "-", VerticalAlignment = VerticalAlignment.Center }, ssKmax, new TextBlock { Text = "x la distanza DL6WU, a passi di", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }, ssPasso));
             ssVhfBox.Children.Add(Riga("Impedenza di riferimento", ssZ0, new TextBlock { Text = "Ω (barra in alto)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             ssVhfBox.Children.Add(Riga("Criterio della distanza migliore", Scelta(new[] { "guadagno massimo", "lobi laterali piu' bassi", "G/T migliore", "guadagno con lobi sotto" }, 3, k => ssCrit = k), ssSoglia, new TextBlock { Text = "dB", VerticalAlignment = VerticalAlignment.Center }));
-            ssRosMax = Tb("1,5", 50);   // 1.3.2 (IC8TEM 18/11/2026 14:47): oltre questo ROS attivo la distanza e' "da non scegliere"
+            ssRosMax = Tb("1,5", 50);   // 1.4 (IC8TEM 18/11/2026 14:47): oltre questo ROS attivo la distanza e' "da non scegliere"
             ssVhfBox.Children.Add(Riga("ROS attivo massimo", ssRosMax, new TextBlock { Text = "oltre: \"ROS attivo alto: da non scegliere\" (escluse dalla scelta proposta)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 520 }));
             ssVhfBox.Children.Add(Riga("G/T (da Rumore e G/T)", new TextBlock { Text = "temperature del cielo e del terreno ed elevazione della voce Rumore e G/T", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 420 }));
             Button bv = Btn("Calcola accoppiamento e distanze (NEC)", true), bu = Btn("Usa la distanza proposta per lo stack", false), bc = Btn("Copia", false);

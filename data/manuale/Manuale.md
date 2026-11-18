@@ -1282,7 +1282,7 @@ Somiglianze e differenze con skynoise, VE7BQH, TANT e KF2YN: [[Calcolo: 8.3 Rumo
 
 La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (formula di DL6WU sulle aperture a -3 dB, righe e colonne, pulsante "Crea lo stack nel modello aperto"). A destra della scheda c'e' il **disegno dello stack visto da davanti** (dalla 1.3.1): palo, telaio H, le antenne con l'elemento e il boom di punta, le quote verticale e orizzontale in metri e in lambda e, tratteggiate, le aperture a -3 dB, che alla distanza DL6WU si toccano. La polarizzazione (elementi orizzontali o verticali) viene dal modello aperto. Il pulsante **? Manuale**, accanto ai titoli della scheda e dei riquadri, apre questo paragrafo. Sotto c'e' il riquadro nuovo **Accoppiamento e distanza migliore (NEC)**, con due modi.
 
-**VHF/UHF (spazio libero, DL6WU).** La formula di DL6WU da' la distanza per cui i lobi di due antenne si sovrappongono a -3 dB circa: e' un buon punto di partenza, non sempre il migliore. Qui lo stack si calcola davvero con il NEC per una serie di distanze, di partenza da 0,5 a 2,5 volte quella di DL6WU (dalla 1.3.2; prima fino a 2,0) a passi di 0,05 (dalla 1.3.1; prima 0,1: il doppio dei calcoli, circa il doppio del tempo; inizio, fine e passo si possono cambiare), e per ognuna si danno:
+**VHF/UHF (spazio libero, DL6WU).** La formula di DL6WU da' la distanza per cui i lobi di due antenne si sovrappongono a -3 dB circa: e' un buon punto di partenza, non sempre il migliore. Qui lo stack si calcola davvero con il NEC per una serie di distanze, di partenza da 0,5 a 2,5 volte quella di DL6WU (dalla 1.4; prima fino a 2,0) a passi di 0,05 (dalla 1.3.1; prima 0,1: il doppio dei calcoli, circa il doppio del tempo; inizio, fine e passo si possono cambiare), e per ognuna si danno:
 
 | Risultato | Spiegazione |
 |---|---|
@@ -1291,8 +1291,8 @@ La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (f
 | G/T | con le temperature di Rumore e G/T (cielo, terreno, elevazione): la distanza giusta per l'EME e' quella del G/T, non del guadagno (VE7BQH) |
 | abs(Sij) max (dB) | accoppiamento tra le porte: quanta potenza passa da un'antenna all'altra |
 | F/R (dB) e ΔF/R | F/R medio sull'emisfero posteriore e la sua variazione rispetto all'antenna singola (dalla 1.3.1) |
-| ROS attivo | dalla 1.3.2: il ROS che ogni antenna vede davvero quando tutte sono alimentate insieme (la peggiore delle porte) |
-| G realizzato (dBi) | dalla 1.3.2: il guadagno meno la perdita per riflessione dovuta al ROS attivo |
+| ROS attivo | dalla 1.4: il ROS che ogni antenna vede davvero quando tutte sono alimentate insieme (la peggiore delle porte) |
+| G realizzato (dBi) | dalla 1.4: il guadagno meno la perdita per riflessione dovuta al ROS attivo |
 
 La prima riga della tabella e' l'**antenna singola** (riferimento): guadagno, lobo laterale, F/R e G/T. Accanto alla tabella ci sono due grafici. Il primo e' quello di prima: guadagno e lobo laterale al variare della distanza. Il secondo, **Rispetto alla singola antenna** (dalla 1.3.1, richiesta e criterio di IC8TEM del 18/11/2026), e' adimensionale: a sinistra l'aumento di guadagno sulla singola, da 0 in su, con la linea tratteggiata delle N antenne ideali (+3 dB per 2, +6,02 dB per 4); a destra la variazione del F/R sulla singola su un asse rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Cosi' il criterio di scelta si legge sul grafico senza il G/T, oppure sulla tabella con il G/T. Il G/T non e' disegnato: si accende con la casella sotto il grafico (variazione sulla singola, asse di sinistra).
 
@@ -1300,7 +1300,7 @@ Esempio con i numeri e caso di prova: [[Calcolo: 9.5 Casi di prova]].
 
 La **matrice di accoppiamento** (matrice S tra le porte dello stack) si calcola come nec2-array di YO3IIU [C27]: [[Calcolo: 9.2 Matrice di accoppiamento]].
 
-**ROS attivo e "da non scegliere"** (dalla 1.3.2). Le distanze con ROS attivo sopra la casella **ROS attivo massimo** (di partenza 1,5) hanno il commento **"ROS attivo alto: da non scegliere"** e restano fuori dalla scelta proposta (se lo fossero tutte, si sceglie fra tutte); la riga con il ROS attivo piu' basso e' segnata **"riflessi minimi"**. Come si calcolano ROS attivo e G realizzato, e perche' DL6WU parla di aree di cattura che si toccano: [[Calcolo: 9.3 ROS attivo e guadagno realizzato]].
+**ROS attivo e "da non scegliere"** (dalla 1.4). Le distanze con ROS attivo sopra la casella **ROS attivo massimo** (di partenza 1,5) hanno il commento **"ROS attivo alto: da non scegliere"** e restano fuori dalla scelta proposta (se lo fossero tutte, si sceglie fra tutte); la riga con il ROS attivo piu' basso e' segnata **"riflessi minimi"**. Come si calcolano ROS attivo e G realizzato, e perche' DL6WU parla di aree di cattura che si toccano: [[Calcolo: 9.3 ROS attivo e guadagno realizzato]].
 
 Il **criterio** sceglie la distanza proposta: guadagno massimo, lobi laterali piu' bassi, G/T migliore, oppure (di partenza) guadagno massimo con i lobi sotto una soglia (-13 dB); se nessuna distanza tiene i lobi sotto la soglia si prende quella con i lobi piu' bassi. Il pulsante **Usa la distanza proposta per lo stack** la mette nella scheda di sopra e nella pagina Rumore dal cielo vero.
 
@@ -1968,3 +1968,11 @@ Quattro lezioni nuove, in italiano e in inglese con la voce (wiki, pagina Videoc
 ### 24.3 Crediti delle fonti della 1.3
 
 Le fonti di questa versione sono nel documento **Citazioni**, con le pagine usate e il posto in cui si usano (per esempio N6BV e HFTA [C8], TINITALY e SRTM [C85], ITU-R [C70], K9AY [C46]).
+
+## 25. Novita' della 1.4
+
+**Documenti tecnici.** La linguetta Manuale si chiama ora **Documenti tecnici** e contiene tre documenti: questo **manuale d'uso**, il **Manuale di calcolo e delle fonti** (per ogni calcolo formule, ipotesi, limiti, fonti con somiglianze e differenze e casi di prova) e le **Citazioni** (tutte le fonti numerate, con le pagine usate e dove si usano in YA-NEC). In alto le tre pillole, la casella **Cerca** (cerca in tutti e tre; si clicca un risultato per andarci) e **Apri il PDF** (il PDF del documento scelto). I rimandi come [C12] aprono la citazione; quelli come [[Calcolo: 9.2 Matrice di accoppiamento]] aprono l'altro documento al paragrafo.
+
+**Distanze di stack: ROS attivo.** Colonne **ROS attivo** e **G realizzato**, casella **ROS attivo massimo** (di partenza 1,5): le distanze sopra la soglia sono "da non scegliere" e non entrano nella scelta proposta. Distanze provate di partenza da 0,5 a 2,5 x DL6WU. Vedi [[Uso: Distanze di stack: accoppiamento e distanza migliore]] e [[Calcolo: 9.3 ROS attivo e guadagno realizzato]].
+
+**Chiusura del programma.** Alla chiusura una finestra chiede conferma e ringrazia (Sì / No; Invio = Sì, Esc = No). Con modifiche non salvate resta la finestra "Modello non salvato".

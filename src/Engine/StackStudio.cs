@@ -19,8 +19,8 @@ namespace YaNec.Engine
     public class StackPunto
     {
         public double K, Dv, Dh, G, Sll, SllAng, Gt, Tant, S21, Gmedia, Fr;   // Fr: F/R medio (1.3.1)
-        public double RosAtt = double.NaN, PerditaRifl, Greal;   // 1.3.2: ROS attivo (porta peggiore), perdita per riflessione, guadagno realizzato
-        public bool Escluso;                                     // 1.3.2: ROS attivo sopra la soglia: da non scegliere
+        public double RosAtt = double.NaN, PerditaRifl, Greal;   // 1.4: ROS attivo (porta peggiore), perdita per riflessione, guadagno realizzato
+        public bool Escluso;                                     // 1.4: ROS attivo sopra la soglia: da non scegliere
         public double[] GAng;   // HF: guadagno agli angoli 5, 10, 15, 20
     }
 
@@ -29,7 +29,7 @@ namespace YaNec.Engine
         public List<StackPunto> Punti = new List<StackPunto>();
         public StackPunto Proposta, Dl6wu, GMax, SllMin, GtMax;
         public double GSingola, SllSingola, GtSingola, FrSingola, RosSingola, PerditaSingola, Dv0, Dh0, Lambda, RosMax = 1.5;
-        public StackPunto RifMin;   // 1.3.2: distanza con il ROS attivo piu' basso
+        public StackPunto RifMin;   // 1.4: distanza con il ROS attivo piu' basso
         public Complex[,] Z; public double[,] SdB;   // alla distanza proposta (VHF)
         public string Criterio = "";
         // HF
@@ -84,7 +84,7 @@ namespace YaNec.Engine
             return o;
         }
 
-        /// <summary>1.3.2 (richiesta di IC8TEM del 18/11/2026 14:30): ROS attivo della porta peggiore con tutte le porte alimentate uguali
+        /// <summary>1.4 (richiesta di IC8TEM del 18/11/2026 14:30): ROS attivo della porta peggiore con tutte le porte alimentate uguali
         /// e in fase: Γ_att,i = somma della riga i della matrice S (S = (Z - Z0)(Z + Z0)^-1), ROS = (1 + |Γ|)/(1 - |Γ|).</summary>
         public static double RosAttivo(Complex[,] z, double z0, out double gammaMax)
         {
@@ -215,7 +215,7 @@ namespace YaNec.Engine
                 res.Punti.Add(p);
                 if (Math.Abs(k - 1) < 1e-6) res.Dl6wu = p;
             }
-            // 1.3.2 (IC8TEM 18/11/2026 14:47): le distanze con ROS attivo sopra la soglia non entrano nella scelta (se lo sono tutte, si usano tutte)
+            // 1.4 (IC8TEM 18/11/2026 14:47): le distanze con ROS attivo sopra la soglia non entrano nella scelta (se lo sono tutte, si usano tutte)
             List<StackPunto> scegli = res.Punti.FindAll(x => !x.Escluso);
             if (scegli.Count == 0) scegli = res.Punti;
             res.RifMin = res.Punti[0];

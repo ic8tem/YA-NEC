@@ -2,7 +2,12 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.3.1:**
+**Novità della 1.4:**
+- **Documenti tecnici**: la linguetta Manuale diventa *Documenti tecnici* con tre documenti, ognuno con il suo indice e il suo PDF: **Manuale d'uso**, nuovo **Manuale di calcolo e delle fonti** (15 capitoli con formule, ipotesi, limiti, fonti con somiglianze e differenze e casi di prova) e **Citazioni** (bibliografia unica numerata, con le pagine usate e dove si usa in YA-NEC). Ricerca in tutti e tre, rimandi [C..] e tra i documenti cliccabili;
+- **Distanze di stack**: colonne **ROS attivo** (con tutte le antenne alimentate insieme) e **G realizzato**; le distanze con ROS attivo sopra la soglia (casella, di partenza 1,5) sono segnate "da non scegliere" e restano fuori dalla scelta proposta; distanze provate da 0,5 a 2,5 volte quella di DL6WU;
+- **Chiusura**: finestra di conferma con il ringraziamento (Sì / No).
+
+**Dalla 1.3.1:**
 - **Distanze di stack**: disegno dello stack visto da davanti accanto alla scheda DL6WU (palo, telaio H, antenne, quote, aperture a -3 dB); distanze provate a passi di 0,05 (passo modificabile); in tabella la riga dell'antenna singola, il F/R e la sua variazione; nuovo grafico "Rispetto alla singola antenna" con l'aumento di guadagno e la variazione del F/R su asse rovesciato (G/T con una casella); pulsanti "? Manuale" che aprono il paragrafo giusto del manuale;
 - **Distribuzione** come gli altri programmi di IC8TEM: nuovi pacchetti Arch Linux (e Arch Linux ARM), Slackware (x86_64 e ARM64), AppImage (x86_64 e aarch64), archivi tar.gz per Linux, Raspberry Pi e Alpine, zip "-app" per il Mac; nomi dei file come nella tabella qui sotto. L'aggiornamento automatico passa da solo ai nomi nuovi.
 
