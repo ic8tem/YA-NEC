@@ -281,6 +281,7 @@ namespace YaNec
             lblAggiornamento = new TextBlock { Text = "Stato: " + (pacchetto ? "spento: " + motivoPacchetto : Aggiornamento.Stato), TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Muted), FontSize = 12, Margin = new Thickness(0, 4, 0, 0) };
             ag.Children.Add(lblAggiornamento);
             c3.Children.Add(Pannello("Aggiornamento", ag));
+            c3.Children.Add(Pannello("Segnala un problema", PannelloSegnalazione()));   // 1.5 (bozzetto approvato da IC8TEM il 18/11/2026 19:35)
 
             Grid.SetColumn(c1, 0); Grid.SetColumn(c2, 2); Grid.SetColumn(c3, 4);
             g.Children.Add(c1); g.Children.Add(c2); g.Children.Add(c3);
