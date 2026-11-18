@@ -60,4 +60,4 @@
 - Dai registri dei due PC: l'aggiornamento funzionava, ma il primo controllo partiva 2 minuti dopo l'avvio e poi ogni 30; con aperture di pochi secondi (1.0.15: 18 s, 79 s, 7 s, 6 s) non partiva mai.
 - Aggiornamento.cs: primo controllo 10 secondi dopo l'avvio, poi ogni 5 minuti (IntervalloMinuti 5); evento Pronta(versione, installata), una volta per versione; Rilascia() libera il timer e il mutex prima del riavvio.
 - MainWindow.Chiusura.cs: finestra "È pronta la versione X di YA-NEC" con la grafica della finestra di chiusura: Riavvia adesso / Più tardi (Mac: Apri la pagina delle versioni / Più tardi). Riavvia: chiede del modello non salvato, avvia di nuovo il programma e chiude senza la conferma di chiusura.
-- Testi aggiornati (Impostazioni, manuale cap. 21, README, CREDITI no), voci inglesi.
+- Testi aggiornati (Impostazioni, manuale cap. 21, README), voci inglesi.
