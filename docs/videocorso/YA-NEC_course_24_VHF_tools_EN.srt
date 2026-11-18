@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:05,749
+Lesson 24: tolerances, cable and balun, crossed Yagis, dividers and H-frame
+
+2
+00:00:05,799 --> 00:00:17,376
+YA-NEC course, lesson 24: the VHF tools of 1.2. From the Examples we open the 10-element DJ9BV Yagi for 144 MHz.
+
+3
+00:00:17,426 --> 00:00:28,698
+Patterns, Tolerances item: construction errors on element length, position on the boom and diameter, with the Monte Carlo method.
+
+4
+00:00:28,748 --> 00:00:36,972
+We set the trials to 100 and press Start: each trial is a Yagi with random errors, calculated with NEC.
+
+5
+00:00:37,022 --> 00:00:48,349
+The result: nominal F/B 19 dB, 18.1 in the worst 5% of cases. SWR below 1.52 in 95% of the trials.
+
+6
+00:00:48,399 --> 00:00:59,216
+On the right the sensitivity per element; below the cutting list with the allowed tolerance: in red the critical elements, to be cut more carefully.
+
+7
+00:00:59,266 --> 00:01:20,060
+Now the 7-element DK7ZB Yagi. In the 3D structure, among the model objects, Cable and balun: a large sheet opens.
+
+8
+00:01:20,110 --> 00:01:27,670
+The cable shield and the mast become NEC wires. Calculate the comparison between no balun and the VHF baluns.
+
+9
+00:01:27,720 --> 00:01:39,775
+Without balun 15% of the dipole current flows on the shield and the F/B drops to 19.6 dB. With the lambda/4 sleeve: 3% and 23.8 dB.
+
+10
+00:01:39,825 --> 00:01:48,308
+Ferrites work, but at 1 kW they dissipate about 31 W: the chart shows the current along the shield for each case.
+
+11
+00:01:48,358 --> 00:01:59,567
+Calculators, VHF, Crossed Yagis: two identical Yagis in X or +, with the planes offset by lambda/4 on the boom.
+
+12
+00:01:59,617 --> 00:02:07,749
+Switching: horizontal, vertical, right or left circular, X-pol for EME. We press Calculate with right-hand circular.
+
+13
+00:02:07,799 --> 00:02:19,599
+RHCP 13.3 dBic, axial ratio 0 dB on axis and 0.3 dB at -3 dB; below, axial ratio and SWR versus frequency.
+
+14
+00:02:19,649 --> 00:02:36,290
+Last example: the stack of 4 DK7ZB Yagis on an H-frame. Calculators, Dividers and phasing lines.
+
+15
+00:02:36,340 --> 00:02:48,962
+Lambda/4 divider in square tube: Z0 25 ohm, inner conductor 14.2 mm, about 512 mm to cut. Dimensioned drawing, printable 1:1.
+
+16
+00:02:49,012 --> 00:02:58,829
+Connected to the Stack, the input SWR uses the active impedances of the four antennas; on the right the phasing lines, equal lengths.
+
+17
+00:02:58,879 --> 00:03:12,695
+3D structure, Stack object: at the bottom, H-frame and mast in the stack.
+
+18
+00:03:12,745 --> 00:03:20,552
+Uprights, crossbar, mast and phasing-line shields enter the calculation as NEC wires. Calculate comparison.
+
+19
+00:03:20,602 --> 00:03:34,315
+With the frame: gain -0.4 dB, average F/R -3.8 dB, G/T -0.5 dB/K. With horizontal polarization the crossbar and the phasing lines matter.
+
+20
+00:03:34,365 --> 00:03:45,227
+Sources: DL6WU, DK7ZB, W8NX, ON4UN, ARRL Antenna Book, VE7BQH. All in the manual, chapter 23.

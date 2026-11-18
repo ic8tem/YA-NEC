@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 22 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 26 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 22-25 with 1.3). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -203,5 +203,44 @@ F5VIF Eggbeater for 145.9 MHz (41.6 ohm, 1.99 dBic at the zenith, radial reflect
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_21_dishes_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_21_dishes_EN.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_22_real_terrain_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_22.jpg" alt="Lesson 22 - Real terrain (1.2)"></a></td><td>
+
+### Lesson 22 - Real terrain (1.2)
+
+Patterns > Real terrain in the style of N6BV's HFTA: locator and map with the locator grid, DEM profile (TINITALY/SRTM1), traffic directions to the USA and Japan with figure of merit and arrival angles, height scan (ARRL 5-element 20 m Yagi from Capri).
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_22_real_terrain_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_22_real_terrain_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_23_receiving_antennas_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_23.jpg" alt="Lesson 23 - Receiving antennas of 1.3"></a></td><td>
+
+### Lesson 23 - Receiving antennas of 1.3
+
+K9AY (termination optimized for F/B), 4-square for receiving (phase between rows optimized for RDF: 200 degrees, 12.4 dB), Hi-Z arrays of 2/3/8 verticals and the Reception (RDF) page, with the warnings against the source values.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_23_receiving_antennas_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_23_receiving_antennas_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_24_VHF_tools_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_24.jpg" alt="Lesson 24 - VHF tools (1.2)"></a></td><td>
+
+### Lesson 24 - VHF tools (1.2)
+
+Monte Carlo tolerances with the cutting list (DJ9BV 10 elements), Cable and balun (shield current, lambda/4 sleeve, ferrites), crossed Yagis in RHCP, lambda/4 dividers and phasing lines, H-frame and mast in the 4 x 7-element DK7ZB stack.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_24_VHF_tools_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_24_VHF_tools_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_25_mechanics_loads_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_25.jpg" alt="Lesson 25 - Mechanical calculations and HF loads (1.2)"></a></td><td>
+
+### Lesson 25 - Mechanical calculations and HF loads (1.2)
+
+Wind with NTC 2018 / CNR-DT 207 from the locator, balance with the recommended clamp, HF loads (coaxial trap, loading coil with self-resonance) and the F/B and average F/R tables over the whole band.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_25_mechanics_loads_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_25_mechanics_loads_EN.srt)
+
+</td></tr></table>
+
+From 1.2 the calculators are grouped in families (HF, VHF, Receiving antennas, Tools, Dishes and feeds, 2.4 GHz): in the videos of earlier lessons some items may sit in a different family from the one shown.
+
 
 Model files are built by following the video; to try right away, the program Examples already contain many ready antennas. Sources and designers named in the videos are also listed in the program Credits tab.

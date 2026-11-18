@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 25: vento, bilanciamento, carichi HF e tabelle F/B e F/R
+
+2
+00:00:05,000 --> 00:00:15,593
+Corso YA-NEC, lezione 25: calcoli meccanici, carichi HF e tabelle della 1.2. Apriamo la Yagi 7 elementi DK7ZB.
+
+3
+00:00:15,643 --> 00:00:26,993
+Linguetta Calcoli meccanici, voce Vento: norma NTC 2018 con CNR-DT 207. Dal locatore la zona 9; con quota e categoria la pressione di progetto e' 1560 N/m2.
+
+4
+00:00:27,043 --> 00:00:37,527
+Le forze per parte usano gli elementi e il boom del modello. Forza massima 392 N con il vento a 90 gradi dal boom, momento alla staffa 980 N·m.
+
+5
+00:00:37,577 --> 00:00:47,787
+Bilanciamento: baricentro, centro di spinta del vento e staffa nella vista laterale. Qui la staffa e' a 1,63 m dal riflettore.
+
+6
+00:00:47,837 --> 00:00:58,230
+Calcola: la posizione consigliata e' 1,39 m, tra baricentro e centro di spinta. Il pulsante Sposta staffa nel modello la applica.
+
+7
+00:00:58,280 --> 00:01:10,751
+Calcolatori, HF, Carichi HF: trappole LC e coassiali, bobine, linear loading e cappelli capacitivi.
+
+8
+00:01:10,801 --> 00:01:22,217
+Trappola coassiale per 40 m in RG-58: risonanza propria 7,10 MHz, Q 216, accorcia il dipolo di 0,6 m per braccio. In tabella tensione e potenza persa a 1 kW.
+
+9
+00:01:22,267 --> 00:01:33,127
+Bobina di carico: 9,6 uH, autorisonanza a 33,6 MHz con la formula di Medhurst, Q 583. Il dipolo per gli 80 m si accorcia di 3,3 m per braccio.
+
+10
+00:01:33,177 --> 00:01:41,594
+Inserisci nel modello aggiunge il carico come impedenza in frequenza, o come fili per linear loading e cappelli.
+
+11
+00:01:41,644 --> 00:01:51,303
+Diagrammi, voce Tabelle: F/B e F/R medio su tutta la banda dello sweep.
+
+12
+00:01:51,353 --> 00:02:01,637
+Il F/B in un solo punto a 180 gradi ha un picco stretto; il F/R medio sull'emisfero posteriore e' piu' stabile. Sotto, i valori dello sweep.
+
+13
+00:02:01,687 --> 00:02:06,638
+Fonti: NTC 2018, CNR-DT 207, EN 1991-1-4, K5IU, W8NX, Medhurst, ARRL Antenna Book. Tutto nel manuale, capitolo 23.

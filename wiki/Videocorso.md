@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 22 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
+Un corso completo in 26 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 22-25 con la 1.3). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -203,5 +203,44 @@ Parabola primo fuoco da 3 m a 23 cm (30,4 dBi, efficienza 66 %, bilancio di spil
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_21_parabole_IT.srt)
 
 </td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_22_terreno_reale_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_22.jpg" alt="Lezione 22 - Terreno reale (1.2)"></a></td><td>
+
+### Lezione 22 - Terreno reale (1.2)
+
+Linguetta Diagrammi > Terreno reale alla HFTA di N6BV: locatore e mappa con la griglia dei locatori, profilo dal DEM (TINITALY/SRTM1), direzioni di traffico verso USA e Giappone con figura di merito e angoli di arrivo, scansione dell'altezza (Yagi ARRL 5 elementi per i 20 m da Capri).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_22_terreno_reale_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_22_terreno_reale_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_23_antenne_riceventi_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_23.jpg" alt="Lezione 23 - Antenne riceventi della 1.3"></a></td><td>
+
+### Lezione 23 - Antenne riceventi della 1.3
+
+K9AY (ottimizzazione della terminazione per il F/B), 4-square in ricezione (fase tra le file ottimizzata per l'RDF: 200 gradi, 12,4 dB), schiere Hi-Z di 2/3/8 verticali e la pagina Ricezione (RDF), con gli avvisi sui valori delle fonti.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_23_antenne_riceventi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_23_antenne_riceventi_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_24_strumenti_VHF_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_24.jpg" alt="Lezione 24 - Strumenti VHF (1.2)"></a></td><td>
+
+### Lezione 24 - Strumenti VHF (1.2)
+
+Tolleranze Monte Carlo con la lista di taglio (DJ9BV 10 elementi), Cavo e balun (corrente sulla calza, manicotto lambda/4, ferriti), Yagi incrociate in RHCP, divisori lambda/4 e cavi di fase, telaio a H e palo nello stack 4 x 7 elementi DK7ZB.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_24_strumenti_VHF_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_24_strumenti_VHF_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_25_meccanica_carichi_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_25.jpg" alt="Lezione 25 - Calcoli meccanici e carichi HF (1.2)"></a></td><td>
+
+### Lezione 25 - Calcoli meccanici e carichi HF (1.2)
+
+Vento con NTC 2018 / CNR-DT 207 dal locatore, bilanciamento con la staffa consigliata, Carichi HF (trappola coassiale, bobina di carico con autorisonanza) e le tabelle F/B e F/R medio su tutta la banda.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_25_meccanica_carichi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_25_meccanica_carichi_IT.srt)
+
+</td></tr></table>
+
+Dalla 1.2 i calcolatori sono divisi in famiglie (HF, VHF, Antenne riceventi, Strumenti, Dischi e illuminatori, 2,4 GHz): nei video delle lezioni precedenti alcune voci possono trovarsi in una famiglia diversa da quella mostrata.
+
 
 I file del modello si costruiscono seguendo il video; per provare subito, gli Esempi del programma contengono già molte antenne pronte. Fonti e progettisti citati nei video sono elencati anche nella linguetta Crediti del programma.

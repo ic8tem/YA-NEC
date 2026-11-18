@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:06,767
+Lesson 23: K9AY, 4-square for receiving, Hi-Z arrays and the Reception (RDF) page
+
+2
+00:00:06,817 --> 00:00:15,134
+YA-NEC course, lesson 23: the new receiving antennas of 1.3. Calculators tab, Receiving antennas family.
+
+3
+00:00:15,184 --> 00:00:25,696
+From 1.3 Low dipole, K9AY, 4-square RX and the Hi-Z arrays are enabled too. The folded rhombic stays grey: it will come with its sources.
+
+4
+00:00:25,746 --> 00:00:39,634
+K9AY by Gary Breed (QST, September 1997): a vertical loop on the mast, closed on a resistor. Typical values: base 9.2 m, apex 7.6 m, 390 ohm.
+
+5
+00:00:39,684 --> 00:00:48,034
+Create the NEC model and calculate the RDF: the model opens in the 3D structure, with the lobe and the heights.
+
+6
+00:00:48,084 --> 00:00:58,167
+Back in the Calculators the figures: RDF 6.8 dB against Hi-Z's 7.2, F/B only 4.3 dB with 390 ohm.
+
+7
+00:00:58,217 --> 00:01:09,956
+Optimize for F/B: the termination goes up to 1400 ohm, F/B almost 30 dB and RDF 7.8 dB.
+
+8
+00:01:10,006 --> 00:01:22,541
+Careful: real K9AYs use 390-560 ohm. The model is a single loop closed above the ground: the right resistor is adjusted in the field, listening to the F/B.
+
+9
+00:01:22,591 --> 00:01:30,742
+4-square for receiving: four short verticals at the corners of a lambda/8 square, firing along the diagonal.
+
+10
+00:01:30,792 --> 00:01:42,540
+The 3D structure shows the phases of the four sources and the lobe towards the chosen direction.
+
+11
+00:01:42,590 --> 00:01:57,672
+Optimize the phase (RDF): it tries the phase between rows from 120 to 300 degrees and keeps only lobes within 45 degrees of the direction.
+
+12
+00:01:57,722 --> 00:02:09,427
+Result: 200 degrees, RDF 12.4 dB, F/B 27.5 dB. An empty phase instead uses the exact rear null, pi + beta times d.
+
+13
+00:02:09,477 --> 00:02:22,294
+The yellow warnings: verticals on real ground in NEC-2, so the values are indicative; and an RDF above IV3PRK's 9.4 dB, because real phasing networks don't reach the ideal phase.
+
+14
+00:02:22,344 --> 00:02:33,028
+Hi-Z array: 2 elements in cardioid, 3 in a triangle, 8 in a circle. With 8 elements the phase starts at 220 degrees, which sends the lobe forward.
+
+15
+00:02:33,078 --> 00:02:52,955
+RDF 9.1 dB against Hi-Z's 13.4: the simple model uses two rows and has no real combiner. The yellow warning says so.
+
+16
+00:02:53,005 --> 00:03:07,340
+Patterns, Reception (RDF) page: here too the 8 verticals in a circle now have the lobe forward.
+
+17
+00:03:07,390 --> 00:03:15,468
+Below, the RDF versus frequency and the table of receiving antennas, with the space each one needs.
+
+18
+00:03:15,518 --> 00:03:26,947
+Sources: K9AY (QST 1997), Hi-Z Antennas, IV3PRK, ON4UN and W8JI. All in the manual, chapter 24.
