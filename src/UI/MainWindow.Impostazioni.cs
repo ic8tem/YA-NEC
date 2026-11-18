@@ -42,7 +42,8 @@ namespace YaNec
         CheckBox Casella(string testo, bool val, bool attiva, string fumetto)
         {
             CheckBox c = new CheckBox { Content = testo, IsChecked = val, IsEnabled = attiva, Margin = new Thickness(0, 1) };
-            ToolTip.SetTip(c, (attiva ? "" : "In arrivo (bozzetto approvato). ") + fumetto);
+            // 1.4.2 (IC8TEM 18/11/2026 18:55: "mica ho capito perche' alcune di queste opzioni sono grigie"): il fumetto dice quale dei tre casi e'
+            ToolTip.SetTip(c, (attiva ? "" : val ? "Sempre attiva: non si spegne. " : "Non ancora disponibile: arriva in una prossima versione. ") + fumetto);
             return c;
         }
 
@@ -50,7 +51,7 @@ namespace YaNec
         {
             StackPanel sp = Scelta(voci, sel, k => { });
             for (int i = 0; i < sp.Children.Count; i++) if (i != sel) sp.Children[i].IsEnabled = false;
-            ToolTip.SetTip(sp, fumetto);
+            ToolTip.SetTip(sp, "Scelta fissa: oggi c'e' solo la voce evidenziata. " + fumetto);
             return sp;
         }
 
@@ -105,7 +106,7 @@ namespace YaNec
             ToolTip.SetTip(impCurr, "Come EZNEC e ARRL: i valori delle sorgenti sono correnti e il programma ricava le tensioni a ogni frequenza (V = Z I). Si imposta anche negli Struttura 3D > Oggetti del modello > Sorgenti.");
             impCurr.IsCheckedChanged += (s, e) => { if (!impSync && model != null) { model.CurrentSources = impCurr.IsChecked == true; ApplicaERicalcola("sorgenti a corrente"); } };
             mot.Children.Add(impCurr);
-            mot.Children.Add(Casella("Schiere fasate: proponi sorgenti a corrente", true, false, "Avviso automatico quando ci sono piu' sorgenti sfasate (EZNEC, ARRL)."));
+            mot.Children.Add(Casella("Schiere fasate: proponi sorgenti a corrente", false, false, "Avviso automatico quando ci sono piu' sorgenti sfasate (EZNEC, ARRL)."));
             impZ0 = Num(1, 10000, 50, 1, 1, 70);
             impZ0.ValueChanged += (s, e) => { if (!impSync && numZ0 != null && impZ0.Value.HasValue) numZ0.Value = impZ0.Value; };
             mot.Children.Add(RigaImp("Riferimento ROS (Z0)", impZ0, null, "Impedenza di riferimento per il ROS e la carta di Smith (come Z0 nella barra in alto)."));
@@ -125,9 +126,9 @@ namespace YaNec
                 bCd.Click += async (s, e) => await ApriControlloDati();
                 seg.Children.Add(RigaImp("Controllo dei dati", bCd, null, "Tutti i controlli dei dati senza calcolare (anche dalla barra in alto, pulsante Controlla). Manuale, capitolo 11."));
             }
-            seg.Children.Add(Casella("Segmenti piu' corti vicino alle giunzioni (come EZNEC)", true, false, "Rastrematura della segmentazione alle giunzioni."));
-            seg.Children.Add(Casella("Rispetta il rapporto segmento/raggio (livello prudente)", true, false, "Controllo segmento/raggio >= 4 (prudente) o >= 2 (minimo)."));
-            seg.Children.Add(Casella("Rastrematura stile MMANA all'importazione (no: ricalcolo NEC)", false, false, "Per ora i file MMANA si risegmentano sempre con il NEC."));
+            seg.Children.Add(Casella("Segmenti piu' corti vicino alle giunzioni (come EZNEC)", true, false, "La fa la finestra Verifica della segmentazione (pulsante sopra)."));
+            seg.Children.Add(Casella("Rispetta il rapporto segmento/raggio (livello prudente)", true, false, "Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso)."));
+            seg.Children.Add(Casella("Rastrematura stile MMANA all'importazione (no: ricalcolo NEC)", false, false, "I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10)."));
             seg.Children.Add(RigaImp("Diametro di sezioni non tonde", SceltaFutura(new[] { "raggio equivalente (Balanis)", "massima estensione (Rothammel)" }, 0, "Convertitore del raggio nella tabella dei fili: prossima versione.")));
             {
                 StackPanel scLee = Scelta(new[] { "nessuna", "correzione Leeson", "Leeson + confronto senza" }, model != null && model.Leeson ? (Analysis.ConfrontoLeeson ? 2 : 1) : 0, k =>
@@ -149,11 +150,11 @@ namespace YaNec
 
             // ---- Convergenza ----
             StackPanel conv = new StackPanel();
-            conv.Children.Add(Casella("AGT (test del guadagno medio) a ogni calcolo", true, false, "Gia' attivo: riquadro AGT (vale in spazio libero e su terreno perfetto)."));
-            conv.Children.Add(Casella("Prova di convergenza: rifai con segmenti raddoppiati (avviso se dG > 0,2 dB o dZ > 2%)", true, false, "ARRL 24a, 4nec2: prossima versione."));
-            conv.Children.Add(Casella("Controlli geometrici prima del calcolo (incroci, fili vicini, sorgenti, radiali)", true, false, "Prossima versione, risultati nella linguetta Avvisi."));
-            conv.Children.Add(Casella("Spia guadagno Yagi (WA2PHW): avviso se > +0,5 dB sull'atteso", true, false, "Prossima versione."));
-            conv.Children.Add(Casella("Stack: avviso se lobi della singola > -15 dB (DL6WU)", true, false, "Prossima versione."));
+            conv.Children.Add(Casella("AGT (test del guadagno medio) a ogni calcolo", true, false, "Riquadro AGT a ogni calcolo (vale in spazio libero e su terreno perfetto); la prova completa e' negli Avvisi (test AGT)."));
+            conv.Children.Add(Casella("Prova di convergenza: rifai con segmenti raddoppiati (avviso se dG > 0,2 dB o dZ > 2%)", true, false, "Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2)."));
+            conv.Children.Add(Casella("Controlli geometrici prima del calcolo (incroci, fili vicini, sorgenti, radiali)", true, false, "Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi."));
+            conv.Children.Add(Casella("Spia guadagno Yagi (WA2PHW): avviso se > +0,5 dB sull'atteso", true, false, "In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom."));
+            conv.Children.Add(Casella("Stack: avviso se lobi della singola > -15 dB (DL6WU)", false, false, "I lobi si leggono nella tabella delle distanze di stack."));
             c1.Children.Add(Pannello("Convergenza e controlli", conv));
 
             // ---- Terreno ----
@@ -183,11 +184,11 @@ namespace YaNec
                 chkSol.Click += (s, e) => cfg.Set("avviso_solaio", chkSol.IsChecked == true ? "1" : "0");
                 ter.Children.Add(chkSol);
             }
-            ter.Children.Add(Casella("Secondo terreno (solo campo lontano)", false, false, "Distanza e tipo del secondo terreno: prossima versione."));
+            ter.Children.Add(Casella("Secondo terreno (solo campo lontano)", false, false, "Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2)."));
             ter.Children.Add(new TextBlock { Text = "Campo lontano a bassa elevazione (sotto 5 gradi)", FontWeight = FontWeight.Bold, Margin = new Thickness(0, 6, 0, 2), Foreground = Pal.B(Pal.Fore) });
-            ter.Children.Add(Casella("Terreno/mare lontano per le basse elevazioni (solo diagramma)", true, false, "Riflessione sul mare con fattore di divergenza e rugosita'."));
-            ter.Children.Add(Casella("Fattore di divergenza D = [1 + 2 d1 d2 / (a d sin psi)]^-1/2 (raggio 4/3)", true, false, "Curvatura terrestre."));
-            ter.Children.Add(Casella("Rugosita' R = R0 exp[-2 (k h sin psi)^2] (onda del mare)", true, false, "Altezza rms dell'onda e quota dell'antenna sul mare."));
+            ter.Children.Add(Casella("Terreno/mare lontano per le basse elevazioni (solo diagramma)", true, false, "Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'."));
+            ter.Children.Add(Casella("Fattore di divergenza D = [1 + 2 d1 d2 / (a d sin psi)]^-1/2 (raggio 4/3)", true, false, "Curvatura terrestre, in Diagrammi > Terreno reale."));
+            ter.Children.Add(Casella("Rugosita' R = R0 exp[-2 (k h sin psi)^2] (onda del mare)", true, false, "Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale."));
             c2.Children.Add(Pannello("Terreno", ter));
 
             // ---- Diagrammi ----
@@ -213,8 +214,8 @@ namespace YaNec
             StackPanel stk = new StackPanel();
             stk.Children.Add(RigaImp("Metodo", SceltaFutura(new[] { "completo NEC", "automatico", "fattore di schiera" }, 0, "Per ora sempre NEC completo (accoppiamento esatto). Metodo ibrido EEP approvato per gli stack grandi.")));
             stk.Children.Add(RigaImp("Formula DL6WU", SceltaFutura(new[] { "lambda/(2 sin a/2)", "57,3 lambda/a" }, 0, "a = apertura dell'antenna base in spazio libero: stack verticale -> apertura verticale; affiancato -> orizzontale (si scambiano con la polarizzazione).")));
-            stk.Children.Add(Casella("Mostra l'impedenza attiva di ogni antenna", true, false, "Colonna 'impedenza attiva' approvata."));
-            stk.Children.Add(Casella("Confronto NEC completo / fattore di schiera sugli stack piccoli", true, false, "Prossima versione."));
+            stk.Children.Add(Casella("Mostra l'impedenza attiva di ogni antenna", true, false, "Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori)."));
+            stk.Children.Add(Casella("Confronto NEC completo / fattore di schiera sugli stack piccoli", false, false, ""));
             c3.Children.Add(Pannello("Stack e schiere", stk));
 
             // ---- Perdite ----
@@ -225,7 +226,7 @@ namespace YaNec
             impLoads = new CheckBox { Content = "Usa i carichi del modello", Margin = new Thickness(0, 1) };
             impLoads.IsCheckedChanged += (s, e) => { if (!impSync && model != null) { model.UseLoads = impLoads.IsChecked == true; ApplicaERicalcola("usa i carichi"); } };
             per.Children.Add(impLoads);
-            per.Children.Add(Casella("Perdite dei cavi negli Oggetti del modello", true, false, "Le linee TL del NEC-2 sono ideali; le perdite arrivano con il catalogo dei cavi."));
+            per.Children.Add(Casella("Perdite dei cavi negli Oggetti del modello", true, false, "Le linee TL del NEC-2 sono senza perdite; le perdite si calcolano negli Oggetti Linea e accordatore e Cavo e balun."));
             per.Children.Add(Casella("Verticali: perdita nel terreno sempre calcolata", true, false, "Con Sommerfeld e i radiali."));
             c3.Children.Add(Pannello("Perdite", per));
 
@@ -251,7 +252,7 @@ namespace YaNec
             bb.Children.Add(bAp); bb.Children.Add(bSave); bb.Children.Add(bRes);
             dv.Children.Add(bb);
             dv.Children.Add(new Border { Background = Pal.B(Pal.OkBg), BorderBrush = Pal.B(Pal.Green), BorderThickness = new Thickness(3, 0, 0, 0), Padding = new Thickness(8, 4),
-                Child = new TextBlock { Text = "Ogni casella ha il suo fumetto con la spiegazione e la fonte; quelle in grigio arrivano nelle prossime versioni.", TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Fore) } });
+                Child = new TextBlock { Text = "Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.", TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Fore) } });
             c3.Children.Add(Pannello("Dove valgono", dv));
 
             // ---- Aggiornamento (0.4.15, richiesta di IC8TEM del 14/11/2026 08:59, confermata alle 09:03) ----

@@ -1671,7 +1671,13 @@ l'Ottimizzatore lavora su qualunque modello e con qualunque obiettivo, ma le var
 
 **Velocita' della luce.** Due scelte: 299,792458 m/us (come EZNEC, normale) e 299,8 (come il NEC-2 originale e nec2c). Il motore la usa per la lunghezza d'onda e per i carichi. La differenza e' di 2,5 parti su 100000: sposta l'impedenza di circa lo 0,15 % (lo scarto di fondo che si vedeva con EZNEC) e, sulle loop magnetiche ad alto Q, anche del 2-10 %, perche' la reattanza della struttura si sposta rispetto a quella del condensatore, che e' esatta. Scelta di calcolo: normale come EZNEC; il collaudo usa 299,8 nelle prove che confrontano con nec2c, cosi' i valori di riferimento restano quelli di nec2c. La segmentazione dei file MMANA si calcola sempre con 299,8, per non cambiare i modelli importati.
 
-Opzioni a caselle in tre colonne. Le caselle attive cambiano il calcolo; quelle in grigio sono funzioni approvate che arrivano nelle prossime versioni (il fumetto dice cosa faranno): restano visibili per mostrare cosa e' gia' previsto.
+Opzioni a caselle in tre colonne. **Perche' alcune caselle sono grigie.** Una casella o una scelta grigia non si puo' cambiare, per uno di tre motivi, scritti nella colonna Stato della tabella qui sotto e nel fumetto:
+
+| Grigia e spuntata | Grigia e non spuntata | Scelta a pillole con le altre voci grigie |
+|---|---|---|
+| **sempre attiva**: la funzione c'e' e lavora sempre, spesso in un'altra linguetta (scritta nella tabella); non si puo' spegnere | **non ancora disponibile**: funzione approvata, arriva in una prossima versione | **scelta fissa**: oggi c'e' una sola possibilita', quella evidenziata |
+
+Le caselle nere (attive) cambiano il calcolo o la grafica e si possono accendere e spegnere.
 
 | Casella o scelta | Stato | Cosa fa e perche' |
 |---|---|---|
@@ -1686,17 +1692,32 @@ Opzioni a caselle in tre colonne. Le caselle attive cambiano il calcolo; quelle 
 | Usa i carichi del modello | attiva | come negli Oggetti del modello |
 | Diagrammi: Caratteri 100-200 % e Azimut ruotato di 90° | attiva | sono nella barra della linguetta Diagrammi (capitolo 7): grandezza delle scritte dei due diagrammi e azimut con 0 gradi in alto; si salvano in config.ini |
 | Mostra l'angolo a -3 dB | attiva | il triangolo nei diagrammi 2D |
-| Schiere fasate: proponi sorgenti a corrente | in arrivo | avviso automatico quando ci sono piu' sorgenti sfasate |
-| Segmenti piu' corti vicino alle giunzioni / rapporto segmento-raggio / rastrematura stile MMANA | in arrivo | regole automatiche di segmentazione all'importazione |
-| AGT a ogni calcolo | gia' attivo nel riquadro AGT | |
-| Prova di convergenza con segmenti raddoppiati | in arrivo | avviso se il guadagno cambia piu' di 0,2 dB o l'impedenza piu' del 2 % |
-| Controlli geometrici prima del calcolo | attivi come avvisi | le sei regole del Geometry Check di EZNEC (capitolo 11), a ogni calcolo fino a 4000 segmenti; le regole SEGCHK del NEC-4.2 sulle sorgenti e i radiali arriveranno dopo |
-| Spia guadagno Yagi (WA2PHW) / avviso lobi nello stack (DL6WU) | in arrivo | confronto con il guadagno atteso per la lunghezza del boom; lobi della singola sopra -15 dB |
-| Secondo terreno, mare lontano, divergenza, rugosita' | in arrivo | campo lontano a bassa elevazione |
-| Campo vicino (NE/NH) | in arrivo | |
+| Schiere fasate: proponi sorgenti a corrente | grigia, **non ancora disponibile** | l'avviso automatico non c'e' ancora: le sorgenti a corrente si accendono a mano con la casella sopra o negli Oggetti del modello |
+| Segmenti piu' corti vicino alle giunzioni | grigia, **sempre attiva** nella verifica | la fa la finestra Verifica della segmentazione (pulsante sopra), non il calcolo da solo |
+| Rispetta il rapporto segmento/raggio | grigia, **sempre attiva** come controllo | la verifica della segmentazione e gli Avvisi lo controllano sempre (8 con il kernel normale, 2 con il kernel esteso) |
+| Rastrematura stile MMANA all'importazione | grigia, spenta, **scelta fissa** | i file MMANA si risegmentano sempre per il NEC-2 (capitolo 10): l'altra strada non c'e' |
+| AGT a ogni calcolo | grigia, **sempre attiva** | il riquadro AGT si calcola a ogni calcolo; la prova AGT completa e' negli Avvisi (test AGT) |
+| Prova di convergenza con segmenti raddoppiati | grigia, **non ancora automatica** | si fa a mano: pulsante del test AGT negli Avvisi; manuale di calcolo, capitolo 2 |
+| Controlli geometrici prima del calcolo | grigia, **sempre attiva** | le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi (capitolo 11) |
+| Spia guadagno Yagi (WA2PHW) | grigia, **sempre attiva** in un'altra forma | il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom |
+| Stack: avviso se i lobi della singola superano -15 dB | grigia, **non ancora disponibile** | i lobi si leggono nella tabella delle distanze di stack |
+| Diametro di sezioni non tonde | scelta grigia, **fissa** su «raggio equivalente» | il convertitore sezione -> raggio equivalente e' nella tabella dei Fili; la «massima estensione» di Rothammel non e' una scelta |
+| Guadagno mostrato in dBi / dBd / tutti e due | scelta grigia, **fissa** | i riquadri mostrano gia' dBi e, sotto, dBd |
+| Calcolo NEC-2 / doppia precisione | scelta grigia, **fissa** | il motore e' uno solo: NEC-2 di nec2c in doppia precisione |
+| Secondo terreno (solo campo lontano) | grigia, **non ancora disponibile** | approvato per la 1.5 (Terreno reale 2) |
+| Terreno/mare lontano, fattore di divergenza, rugosita' | grigie, **sempre attive nel Terreno reale** | si usano in Diagrammi > Terreno reale (capitolo 23.2), non nei diagrammi normali |
+| Passo degli angoli 0,5 / 1 / 2 / 5 | scelta grigia, **fissa** a 2 gradi | il diagramma 3D si calcola a 2 gradi con l'affinamento del massimo |
+| Polarizzazione totale / oriz. / vert. / circolari | scelta grigia, **fissa** su totale qui | orizzontale e verticale si scelgono nella linguetta Diagrammi; le circolari nel calcolatore Yagi incrociate |
+| F/R: settore posteriore | informazione | 180 gradi (90-270) come EZNEC |
+| Campo vicino (NE/NH) | grigia, **non ancora disponibile** | |
 | Aggiornamento automatico dal GitHub (ogni 3 minuti) | attiva, accesa di partenza | controlla in silenzio l'ultima versione pubblicata nel repository scritto sotto (di partenza ic8tem/YA-NEC); se e' piu' nuova la scarica, ne verifica l'impronta SHA-256 e la installa per il prossimo avvio (copia della precedente in data/aggiornamenti). Il primo controllo e' 10 secondi dopo l'avvio; quando la versione nuova e' pronta si apre una finestra senza pulsanti che conta 10 secondi e riavvia YA-NEC: il modello aperto si riapre da solo, e se non era salvato se ne fa prima una copia in data/aggiornamenti (resta da salvare). Sul Mac la finestra avvisa del nuovo .dmg e si chiude dopo 20 secondi (dalla 1.4.1). Spenta durante il collaudo perche' la versione non deve cambiare a meta' prova; spenta e grigia per i pacchetti .deb e .rpm, che si aggiornano con il gestore dei pacchetti (servono i permessi di amministratore). Il pulsante Controlla adesso non aspetta i 3 minuti |
-| Impedenza attiva nello stack, confronto NEC / fattore di schiera | in arrivo | |
-| Perdite dei cavi, perdita nel terreno delle verticali | in arrivo | |
+| Stack: metodo completo NEC / automatico / fattore di schiera | scelta grigia, **fissa** su «completo NEC» | lo stack si calcola sempre con il NEC completo (accoppiamento esatto) |
+| Stack: formula DL6WU | scelta grigia, **fissa** sulla prima | lambda/(2 sin a/2): manuale di calcolo, capitolo 9 |
+| Mostra l'impedenza attiva di ogni antenna | grigia, **sempre attiva** | nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori) |
+| Confronto NEC completo / fattore di schiera | grigia, **non ancora disponibile** | |
+| Perdite dei cavi negli Oggetti del modello | grigia, **sempre attiva dove c'e' il cavo** | le linee TL del NEC-2 sono senza perdite; le perdite si calcolano negli Oggetti Linea e accordatore e Cavo e balun (capitolo 23.7) |
+| Verticali: perdita nel terreno sempre calcolata | grigia, **sempre attiva** | con il terreno di Sommerfeld e i radiali la perdita nel terreno entra sempre nel calcolo |
+| Queste impostazioni valgono: solo questo modello / predefinite per tutti | scelta grigia, **fissa** | Z0, terreno e materiale si salvano nel modello; «Salva come predefinite» scrive Z0 e segmenti per lambda in config.ini |
 
 ### Formati e Salva con nome: caselle
 

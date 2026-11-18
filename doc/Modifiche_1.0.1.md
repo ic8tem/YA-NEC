@@ -70,3 +70,7 @@
 
 ## 1.4.1 – Uscita (18/11/2026, "pubblica" di IC8TEM alle 18:34)
 - VERSION 1.4.1; novita' in .github/release.md e nel capitolo 25 del manuale; PDF rigenerati.
+
+## 1.4.2 – Impostazioni: perche' alcune caselle sono grigie (18/11/2026, IC8TEM alle 18:55: "mica ho capito perche' alcune di queste opzioni sono grigie. serve scriverlo nei manuali")
+- Manuale, capitolo 21 "Impostazioni: ogni casella": spiegati i tre casi (grigia e spuntata = sempre attiva; grigia non spuntata = non ancora disponibile; pillole grigie = scelta fissa) e rifatta la tabella, voce per voce, con dove la funzione si trova davvero.
+- Impostazioni: il fumetto di ogni casella grigia comincia con il suo caso; corretti i fumetti rimasti a "prossima versione" per funzioni gia' presenti (controlli geometrici, AGT, verifica della segmentazione, impedenza attiva, mare lontano nel Terreno reale, perdite dei cavi); la nota verde in fondo spiega i tre casi. Tre caselle non disponibili ora appaiono non spuntate (proponi sorgenti a corrente, avviso lobi dello stack, confronto NEC / fattore di schiera). Solo testi, nessun cambiamento di impaginazione.

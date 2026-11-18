@@ -4664,3 +4664,7 @@ Riavvio tra {0} s	Restarting in {0} s
 Questo avviso si chiude tra {0} s	This notice closes in {0} s
 Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Reopened after the update the model that was not saved: save it when you like (copy in data/aggiornamenti).
 Riaperto dopo l'aggiornamento il modello che era aperto.	Reopened after the update the model that was open.
+Sempre attiva: non si spegne. 	Always on: it cannot be switched off. 
+Non ancora disponibile: arriva in una prossima versione. 	Not available yet: it comes in a future version. 
+Scelta fissa: oggi c'e' solo la voce evidenziata. 	Fixed choice: today only the highlighted item exists. 
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Every box has its tooltip with the explanation and the source. Grey: ticked = always on (cannot be switched off); not ticked = not available yet; pill choices = fixed choice. Manual, chapter 21.
