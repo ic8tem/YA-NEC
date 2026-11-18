@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.4의 새 기능
+
+- **기술 문서**: 사용 설명서, 새 계산 및 출처 설명서, 번호가 매겨진 인용 문헌(각각 목차와 PDF, 세 문서 통합 검색, 문서는 이탈리아어).
+- **스택 간격**: 액티브 SWR과 실현 이득; 액티브 SWR이 높은 간격은 "선택하지 말 것"으로 표시.
+- **종료**: 감사 인사가 있는 확인 창.
+
 ## 1.3의 새 기능
 
 - **수신 안테나**: 계산기에서 **낮은 다이폴**, **K9AY**("F/B 최적화" 종단 저항), **4-square RX**, 그리고 수직 2·3·8개의 **Hi-Z** 어레이가 활성화되었습니다. **행 사이 위상**과 "위상 최적화 (RDF)" 버튼이 있습니다. 각 항목은 NEC 모델을 만들고 RDF, DMF, F/B와 순위를 보여 줍니다. 노란 경고는 실제 지면에 연결된 선에서 NEC-2의 한계를 알려 줍니다.
