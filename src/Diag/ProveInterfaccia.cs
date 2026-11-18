@@ -279,7 +279,7 @@ namespace YaNec
 
             // N3. manuale un capitolo alla volta
             PrTitolo("N3. Manuale un capitolo alla volta");
-            int tm = IndiceLinguetta("Manuale");
+            int tm = IndiceLinguetta("Documenti tecnici");
             Stopwatch swm = Stopwatch.StartNew();
             if (tm >= 0) SelectTab(tm);
             await Task.Delay(100);
@@ -287,7 +287,7 @@ namespace YaNec
             await Task.Delay(700);
             PrPasso("linguetta Manuale", "indice con almeno 20 capitoli, un capitolo alla volta", manualChapters.Count + " capitoli, risposta in " + msM + " ms", manualChapters.Count >= 20);
             PrImmagine("N3_manuale");
-            await ProvaFumetti(page, "Manuale");
+            await ProvaFumetti(page, "Documenti tecnici");
 
             // N4. modelli toccati dalle novita'
             SelectTab(0);
@@ -590,7 +590,7 @@ namespace YaNec
             PrImmagine("weq_16el");
 
             PrTitolo("H. Manuale");
-            SelectTab(IndiceLinguetta("Manuale"));
+            SelectTab(IndiceLinguetta("Documenti tecnici"));
             await Task.Delay(800);
             PrPasso("linguetta Manuale", "indice con 16 capitoli e testo con le figure", manualChapters.Count + " capitoli", manualChapters.Count >= 16);
             PrImmagine("manuale");
@@ -746,7 +746,7 @@ namespace YaNec
                 try
                 {
                     SelectTab(i);
-                    await Task.Delay(nome == "Manuale" || nome == "Autotest" ? 900 : 450);
+                    await Task.Delay(nome == "Documenti tecnici" || nome == "Autotest" ? 900 : 450);
                     ok = page != null && page.Content != null;
                     if (!ok) esito = "pagina vuota";
                     if (ultimoStatoErrore && ultimoStato.IndexOf("errore", StringComparison.OrdinalIgnoreCase) >= 0) { ok = false; esito = "stato: " + ultimoStato; }

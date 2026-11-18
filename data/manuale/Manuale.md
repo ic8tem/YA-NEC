@@ -8,26 +8,11 @@ YA-NEC ("Yet Another NEC") e' un simulatore di antenne a fili basato sul NEC2, i
 
 Le idee di alcune funzioni (variabili, oggetti inseriti, test di convergenza, terreni tipici) vengono da AutoEZ di Dan Maguire AC6LA: sono state riprese le idee, non il codice.
 
+**Documenti tecnici** (dalla 1.4). Questo e' il **manuale d'uso**: spiega cosa fare, casella per casella. Formule, ipotesi, limiti, fonti con somiglianze e differenze e casi di prova sono nel **Manuale di calcolo e delle fonti**; tutte le fonti con le pagine usate sono nel documento **Citazioni**. I tre documenti sono nella linguetta **Documenti tecnici**, con un indice ciascuno, la ricerca in tutti e tre e il loro PDF. I rimandi come [C12] aprono la citazione, quelli come [[Calcolo: 1. Il motore NEC-2]] il capitolo del manuale di calcolo.
+
 ### MININEC e NEC-2: commento dall'analisi delle fonti
 
-YA-NEC calcola con il NEC-2 (nec2c) e non ha un motore MININEC. I due metodi risolvono lo stesso problema (correnti su fili sottili, metodo dei momenti) in modo diverso, e molti programmi da radioamatore usano il MININEC (MMANA e MMANA-GAL, ELNEC, il motore MININEC di EZNEC, AO, NEC4WIN). Confronto delle fonti:
-
-| Aspetto | MININEC (J. C. Logan e J. W. Rockway, NOSC, dal 1982) | NEC-2 (G. J. Burke e A. J. Poggio, LLNL, 1981) | Fonte |
-|---|---|---|---|
-| Dove si calcola la corrente | impulsi di corrente sulle giunzioni tra due segmenti; sorgenti e carichi stanno sulle giunzioni (dipolo alimentato al centro: segmenti pari) | al centro di ogni segmento, con tre termini (costante, seno, coseno); sorgenti e carichi sul segmento (dipolo: segmenti dispari) | Cebik, "Under the Limits: MININEC" (amod2); guida del NEC-2 |
-| Terreno reale | impedenza e correnti come su terreno perfetto; costante dielettrica e conducibilita' servono solo al diagramma | Sommerfeld-Norton (GN 2): l'impedenza sente il terreno; radiali anche a pochi cm | Cebik amod2 e amod99 |
-| Fili bassi | inaffidabile per fili orizzontali o inclinati sotto circa 0,2 lambda | affidabile molto piu' in basso (limiti al capitolo 11) | Cebik amod2, amod56 |
-| Segmentazione | almeno 10 segmenti per mezza lunghezza d'onda, il doppio per antenne complesse; agli angoli servono molti segmenti o la rastremazione (MMANA la fa da se') | segmenti tra lambda/1000 e lambda/10, simili alle giunzioni | Cebik amod2; guida del NEC-2 |
-| Frequenza | con il MININEC 3.13 originale la risonanza si sposta verso l'alto con la frequenza (circa 150 kHz, lo 0,5 %, a 28,5 MHz), corretto nelle versioni piu' recenti | riferimento del confronto | Cebik amod2 |
-| Diametri a gradini | risultati accurati senza correzioni | serve la correzione di Leeson (YA-NEC la fa come EZNEC, capitolo 21) | Cebik, "When MININEC is Superior to NEC" (amod56) |
-| Fili vicini di diametro diverso, giunzioni ad angolo tra diametri diversi | meglio del NEC-2 (folded dipole a salire: MININEC 530 ohm, come atteso; NEC-2 375 ohm) | errori frequenti; YA-NEC li segnala negli avvisi | Cebik amod56 |
-| Dimensione dei modelli | storicamente 128-256 impulsi | migliaia di segmenti, superfici (patch), linee e reti (TL, NT), terreni a radiali (GN con NRADL) | Cebik amod2; guida del NEC-2 |
-
-**Somiglianze.** Per una grande classe di antenne (Yagi monobanda alte, dipoli, verticali su terreno perfetto) i due metodi danno gli stessi risultati entro le tolleranze di costruzione: per Cebik "both NEC and MININEC are equally apt". Tutti e due chiedono fili sottili, segmenti non troppo corti e una prova di convergenza.
-
-**Differenze che contano per YA-NEC.** Il MININEC e' piu' robusto dove il NEC-2 e' debole (diametri a gradini, diametri diversi vicini o ad angolo), ma non sa calcolare l'impedenza su terreno reale: per le verticali, i radiali, le antenne basse e le Beverage il NEC-2 con Sommerfeld e' l'unico dei due che risponde. Il NEC-2 ha poi i modelli grandi (parabole a superfici, stack, LPDA con le linee), le reti e il codice pubblico (nec2c).
-
-**Scelta di YA-NEC.** Il motore resta il NEC-2; le sue debolezze si coprono come fa EZNEC: correzione di Leeson per i tubi telescopici, avvisi sulle giunzioni e sui fili vicini, verifica della segmentazione, AGT. Il "terreno MININEC" (GN 3, capitolo 11) c'e' solo per leggere e confrontare i file di EZNEC con quel terreno: le correnti restano quelle del NEC-2. I file MMANA si leggono risegmentati per il NEC-2 (capitolo 10).
+Questo paragrafo e' nel **Manuale di calcolo e delle fonti**: [[Calcolo: 1.5 MININEC e NEC-2: commento dall'analisi delle fonti]].
 
 ## 2. Compilazione e collaudo
 
@@ -86,7 +71,7 @@ Dall'alto in basso: barra del titolo (nome del modello, pulsante About), barra d
 
 Ordine delle linguette: **Struttura 3D, Frequenza, Diagrammi, Smith, Rumore/GT/Stack, Correnti, NEC, Ottimizzatore, Calcolatori**, poi Antenne riceventi, Variabili, Avvisi, Impostazioni, Manuale, Crediti, Registro e Autotest. La linguetta "Oggetti inseriti" non c'e' piu': sorgenti, carichi, linee, stack, rastremazioni, trasformatori e reti sono nella zona in basso a destra della Struttura 3D (capitolo 14). "Modello NEC" si chiama ora **NEC**.
 
-Questo manuale e' anche dentro il programma, nella linguetta **Manuale**: a sinistra l'indice dei capitoli, a destra un capitolo alla volta con le figure e, in fondo, i pulsanti per il capitolo precedente e seguente (il capitolo si impagina quando lo si apre, cosi' la linguetta si apre subito). Lo stesso testo e' in doc\Manuale_d_uso.pdf per la stampa.
+Questo manuale e' anche dentro il programma, nella linguetta **Documenti tecnici**: a sinistra l'indice dei capitoli, a destra un capitolo alla volta con le figure e, in fondo, i pulsanti per il capitolo precedente e seguente (il capitolo si impagina quando lo si apre, cosi' la linguetta si apre subito). Lo stesso testo e' in doc\Manuale_d_uso.pdf per la stampa.
 
 **Piu' finestre di YA-NEC aperte insieme.** Si possono aprire piu' istanze di YA-NEC (per esempio per confrontare due modelli affiancati); ognuna calcola per conto suo e usa i suoi processori. Regole: le impostazioni (data/config.ini) sono in comune e vince l'ultima scelta fatta in una qualsiasi finestra (una finestra rilegge il file prima di salvare, cosi' non cancella le scelte delle altre); ogni finestra scrive il suo registro (nel nome c'e' anche il numero del processo); l'aggiornamento automatico da GitHub lo fa solo la prima finestra aperta, le altre lo dicono in Impostazioni > Aggiornamento. Prima di installare un aggiornamento conviene chiudere le altre finestre. Due finestre che salvano lo stesso file di modello: vale l'ultimo salvataggio. Con molte finestre che calcolano insieme i tempi si allungano, perche' i processori sono gli stessi.
 
@@ -339,16 +324,7 @@ Verifica (prova con EZNEC, testo della finestra letto dallo script su 735 modell
 
 ### Radiali a terra: confronto delle fonti
 
-La scheda "Verticale lambda/4 con radiali a terra" usa la Tab. 9-1 di ON4UN; le altre fonti si mostrano accanto per giudicarne l'attendibilita'.
-
-| Fonte | Che cosa e' | Somiglianze | Differenze |
-|---|---|---|---|
-| G. H. Brown, R. F. Lewis, J. Epstein, "Ground Systems as a Factor in Antenna Efficiency", Proc. IRE, 1937 (RCA) | misure originali: campo a distanza fissa con 2-113 radiali interrati, lunghezze circa 0,14-0,41 lambda, circa 3 MHz, un solo terreno | e' la base comune: ON4UN e la scheda di YA-NEC ne derivano | un solo terreno e una sola frequenza; la parte teorica (rapporto tra corrente nel terreno e nei radiali) non concorda con i calcoli moderni (N6MW, 2016); le misure restano valide |
-| ON4UN, Low-Band DXing, cap. 9, Tab. 9-1 e 9-3 | resistenza equivalente di terra per numero e lunghezza dei radiali; lunghezza ottima per numero | ricavata dalla Fig. 25 di Brown-Lewis-Epstein: verificata alla fonte, a 88 gradi coincide entro 0,2 ohm con 15 e 60 radiali (incertezza di lettura 2-4 ohm) | forma tabellare, valori interpolati da YA-NEC; Tab. 9-3 e' una regola pratica (0,10 lambda con 4 radiali ... 0,50 lambda con 120) |
-| J. Sevick W2FMI (ARRL, misure su verticali in HF) | resistenza di terra con radiali sul suolo: circa 29 / 18 / 9 / 0 ohm con 4 / 8 / 16 / infiniti radiali | stessa tendenza: la resistenza cala con il numero di radiali e si stabilizza oltre qualche decina | con 16 radiali da 0,25 lambda da' circa 9 ohm, la Tab. 9-1 circa 15 ohm: altro terreno, altra frequenza, radiali sul suolo invece che interrati. Per questo la scheda la mostra solo come confronto |
-| DJ8WL (misure riportate da ON4UN) | verticale con 8 radiali: "50 ohm perfetti" ma efficienza sotto il 50 % | conferma la Tab. 9-1: con pochi radiali la resistenza di terra e' grande quanto quella di radiazione | non e' una tabella: e' un caso misurato, usato nell'avviso della scheda |
-
-Esempio con i numeri della scheda (16 radiali da 0,25 lambda, 36 ohm di radiazione): Tab. 9-1 circa 14,9 ohm, efficienza 71 %; Sevick circa 9 ohm, efficienza 80 %. La differenza (circa 1 dB) e' il margine da aspettarsi tra terreni diversi. Scelta di calcolo: YA-NEC usa la fonte con le misure originali verificabili (Brown-Lewis-Epstein attraverso ON4UN) e mostra Sevick accanto; il NEC-2 non tratta i radiali interrati (serve il NEC-4), quindi il modello NEC usa il terreno perfetto con la resistenza di terra in serie.
+Questo paragrafo e' nel **Manuale di calcolo e delle fonti**: [[Calcolo: 3.5 Radiali a terra: confronto delle fonti]].
 
 ### Antenne a terra: il BOG e i fili vicini al suolo
 
@@ -457,24 +433,7 @@ L'AGT (Average Gain Test) e' il guadagno medio su tutta la sfera: in spazio libe
 
 ### Modelli tipicamente critici: analisi delle fonti
 
-Quali modelli mettono in difficolta' il NEC-2 (e in genere i programmi a fili), cosa dicono le fonti e cosa fa YA-NEC. Gli scarti citati vengono dai confronti con EZNEC del collaudo.
-
-| Tipo di modello | Perche' e' critico | Cosa fa YA-NEC | Fonti |
-|---|---|---|---|
-| Elementi a tubi telescopici (diametri a gradini): Yagi HF, verticali a tubi | il NEC-2 fa risuonare l'elemento piu' in basso del vero (circa il 2 % sul riflettore 20 m della Force 12 XR-5); senza correzione il diagramma di una Yagi puo' rovesciarsi | correzione di Leeson come EZNEC (capitolo 21); senza, lo scarto mediano da EZNEC delle Yagi a gradini e' del 52,8 %, con la correzione lo 0,32 % sugli elementi | Leeson, Physical Design of Yagi Antennas (ARRL 1992), sez. 8.4; Cebik, "NEC Correctives" e "Tapering to Perfection"; EZNEC (Stepped Diameter Correction) |
-| Fili molto vicini al terreno, radiali sul suolo, Beverage | sotto circa lambda/100 il NEC-2 perde precisione; con il terreno a coefficiente di riflessione (GN 0) l'impedenza delle antenne basse e' sbagliata; il MININEC sotto 0,2 lambda e' inaffidabile | avvisi automatici (capitolo 11), Sommerfeld consigliato; nel collaudo i soli modelli d'archivio ancora lontani da EZNEC (2-6 %) hanno fili entro lambda/100 dal suolo | guida del NEC-2 (Burke e Poggio); Cebik, "S-N, RCA, and MININEC Grounds" (amod99) e "Under the Limits: MININEC" (amod2) |
-| Fili a 0,2-1 lambda su terreni molto conduttivi (mare) con Sommerfeld | il difetto di nec2c (corretto in YA-NEC) sbaglia proprio questa zona delle tabelle di Sommerfeld (fino al 5 % sull'impedenza) | evlua come il NEC-2 originale; 6 prove fisse contro necpp | doc/Sommerfeld_difetto_nec2c.md; necpp (T. Molteno) |
-| Giunzioni ad angolo tra fili di diametro diverso; fili paralleli vicini di diametro diverso (folded dipole a salire, open-sleeve, hairpin, gamma) | il NEC-2 sbaglia spesso questi casi: folded dipole a salire 375 ohm contro 530 attesi; il MININEC li tratta meglio | avvisi delle giunzioni e dei fili vicini; verifica della segmentazione; con fili vicini segmenti allineati | Cebik, "When MININEC is Superior to NEC" (amod56); EZNEC, Geometry Check |
-| Angoli acuti e loop (delta, quad, V invertite, Moxon) | agli angoli i centri dei segmenti si avvicinano all'altro filo; servono segmenti piu' corti vicino al vertice | regole del Geometry Check di EZNEC (centri dei segmenti dentro l'altro filo); la correzione di Leeson esclude gli elementi con fili attaccati alla punta | guida del NEC-2; EZNEC; Cebik amod2 (MININEC: angoli, rastremazione) |
-| Segmenti troppo corti o troppo lunghi, rapporto lunghezza/raggio basso, segmenti diversi ai lati della sorgente | fuori da lambda/1000 - lambda/10 e con lunghezza/raggio sotto 8 (2 con il kernel esteso) il calcolo perde precisione; un segmento della sorgente piu' corto dei vicini cambia la resistenza (dipolo con la piastra centrale: circa 5 ohm) | verifica della segmentazione con correzione; kernel esteso a scelta | guida del NEC-2; prove del collaudo (staffe) |
-| Piccoli loop magnetici e antenne molto corte ad alto Q | il bilancio di potenza del NEC-2 (ingresso meno perdite) diventa la differenza di due numeri quasi uguali | efficienza dal campo lontano quando il bilancio non torna, con un avviso; AGT | guida del NEC-2 (AGT); scelta di YA-NEC (capitolo 13) |
-| Multibanda con elementi intercalati o con un solo punto di alimentazione | gli elementi delle altre bande disturbano; piu' generatori uguali danno resistenze negative su alcuni radiatori | modellare tutti gli elementi; una sorgente per banda o il collegamento vero (linea TL); trappole come carichi | ARRL Antenna Book 24a, 11.5; casi di studio del capitolo 18 |
-| Trappole e carichi validi a una sola frequenza (trappole RLC e carichi di Laplace di AO, impedenze LD 4) | il valore e' giusto solo alla frequenza a cui e' stato calcolato | avviso all'importazione; negli sweep va rifatto il carico o usato l'RLC | ANTFILE.DOC (K6STI); guida del NEC-2 (LD) |
-| Modelli molto grandi (stack, parabole a superfici, migliaia di segmenti) | tempi di calcolo e memoria; convergenza da verificare | LU a blocchi con le istruzioni vettoriali, AGT e prova di convergenza, collaudo dei modelli pesanti | guida del NEC-2; collaudo (fase 2E) |
-
-**Somiglianze tra le fonti.** Tutte indicano gli stessi punti deboli dei programmi a fili sottili: salti di diametro, giunzioni, fili vicini tra loro o al suolo, segmentazione. Tutte chiedono una prova di convergenza (raddoppiare i segmenti) e l'AGT prima di fidarsi del risultato.
-
-**Differenze.** La guida del NEC-2 da' limiti numerici generali (segmenti, raggi, kernel). Cebik confronta i motori sugli stessi modelli e mostra che il MININEC e' migliore sui salti di diametro e sulle giunzioni, il NEC-2 sul terreno reale. EZNEC traduce questi limiti in controlli automatici (Geometry Check, Segmentation Check), senza numeri sugli scarti. Il collaudo di YA-NEC aggiunge gli scarti misurati contro EZNEC sui modelli d'archivio.
+Questo paragrafo e' nel **Manuale di calcolo e delle fonti**: [[Calcolo: 2.5 Modelli tipicamente critici: analisi delle fonti]].
 
 ## 14. Oggetti del modello (Struttura 3D, in basso a destra)
 
@@ -1298,17 +1257,7 @@ La linguetta **Rumore/GT/Stack** ha a sinistra un fascione con tre voci: **Rumor
 
 **Da dove viene.** Il calcolo e' quello di **skynoise 0.2.2 di John C. Sager G8ONH** (2025-2026, licenza MIT, in Python), portato in C# dentro YA-NEC. Le mappe sono quelle che G8ONH distribuisce con skynoise: la survey a 408 MHz di **C. G. T. Haslam e collaboratori** (A&AS 47, 1982) nella rielaborazione di **M. Remazeilles e collaboratori** (MNRAS 451, 2015), dal server LAMBDA della NASA, riportate da G8ONH a 144 e 432 MHz con l'indice spettrale 2,56. Il file `data/cielo/LICENCE-skynoise.txt` contiene la licenza; la nota completa e' nei Ringraziamenti e in CREDITI.txt.
 
-**Come si calcola.**
-
-| Passo | Cosa fa | Fonte |
-|---|---|---|
-| Mappa | HEALPix RING con nside 128 (196 608 pixel, circa 0,46 gradi), valori in kelvin; tra i pixel si interpola sui quattro vicini come fa healpy (get_interp_weights) | G8ONH, Haslam, Remazeilles |
-| Frequenza | si sceglie la mappa piu' vicina (144 o 432 MHz) e si scala con T = T_mappa (f_mappa / f)^2,56 | G8ONH |
-| Tempo siderale | tempo siderale medio locale dalla data UTC con l'espressione dell'USNO | G. H. Kaplan, USNO Circular 179 (2005) |
-| Coordinate | ogni direzione del diagramma (azimut, elevazione) diventa angolo orario e declinazione, poi ascensione retta | trigonometria sferica classica |
-| Luna | posizione della Luna con la teoria ridotta di Meeus, per puntarla | J. Meeus, Astronomical Algorithms, cap. 47 |
-| Sotto l'orizzonte | ogni direzione sotto l'orizzonte vede il terreno, 290 K come in skynoise (modificabile) | G8ONH |
-| T antenna | media della temperatura pesata sul diagramma di guadagno su tutta la sfera: T = somma(G T dOmega) / somma(G dOmega) | TANT, skynoise |
+**Come si calcola.** Mappa HEALPix del cielo a 408 MHz scalata in frequenza, tempo siderale, coordinate, Luna e media pesata sul diagramma: passi, formule e fonti in [[Calcolo: 8.3 Rumore dal cielo vero]].
 
 **Dati.**
 
@@ -1327,12 +1276,7 @@ La linguetta **Rumore/GT/Stack** ha a sinistra un fascione con tre voci: **Rumor
 
 > NOTA: Fuori da 50-1300 MHz la sola scala con l'indice 2,56 non basta: sotto i 50 MHz pesano l'assorbimento della ionosfera e il rumore artificiale, sopra 1-2 GHz il fondo cosmico a 2,7 K e l'atmosfera. La pagina lo scrive e il valore resta indicativo.
 
-| Fonte | Somiglianze | Differenze |
-|---|---|---|
-| skynoise 0.2.2, G8ONH | stessa mappa, stessa interpolazione, stesso tempo siderale, stessa scala in frequenza e 290 K sotto l'orizzonte | skynoise usa un diagramma di Yagi da file o un modello gaussiano; qui il diagramma e' quello calcolato dal NEC del modello aperto o dello stack |
-| VE7BQH, tabelle G/T | stesso G/T a 30 gradi, stack di 4 alla distanza DL6WU | VE7BQH usa il cielo uniforme (200 K): e' il primo dei due G/T della pagina |
-| TANT (YT1NT, VE3EA; manuale DG7YBN) | temperatura dell'antenna dal diagramma pesato su cielo e terreno | TANT usa temperature uniformi e una legge di elevazione del cielo; non conosce l'ora ne' il QTH |
-| KF2YN | correzione sul rumore di terreno vicino all'orizzonte | resta nella pagina Rumore e G/T |
+Somiglianze e differenze con skynoise, VE7BQH, TANT e KF2YN: [[Calcolo: 8.3 Rumore dal cielo vero]].
 
 #### Distanze di stack: accoppiamento e distanza migliore
 
@@ -1352,17 +1296,15 @@ La parte alta della pagina e' la scheda **Distanze di stack DL6WU** di sempre (f
 
 La prima riga della tabella e' l'**antenna singola** (riferimento): guadagno, lobo laterale, F/R e G/T. Accanto alla tabella ci sono due grafici. Il primo e' quello di prima: guadagno e lobo laterale al variare della distanza. Il secondo, **Rispetto alla singola antenna** (dalla 1.3.1, richiesta e criterio di IC8TEM del 18/11/2026), e' adimensionale: a sinistra l'aumento di guadagno sulla singola, da 0 in su, con la linea tratteggiata delle N antenne ideali (+3 dB per 2, +6,02 dB per 4); a destra la variazione del F/R sulla singola su un asse rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Cosi' il criterio di scelta si legge sul grafico senza il G/T, oppure sulla tabella con il G/T. Il G/T non e' disegnato: si accende con la casella sotto il grafico (variazione sulla singola, asse di sinistra).
 
-Esempio (10 el. BVO di IC8TEM a 144,3 MHz, stack 2 x 2, nec2c): singola 15,72 dBi, F/R 26,4 dB; il F/R migliora di piu' a 0,90 x DL6WU (33,9 dB, +7,4 dB), con un secondo minimo a 1,40 (+7,1 dB); il guadagno e' gia' a +6 dB da 1,0 in poi, massimo 21,90 dBi a 1,35; lobi laterali piu' bassi a 0,85 (-14,4 dB).
+Esempio con i numeri e caso di prova: [[Calcolo: 9.5 Casi di prova]].
 
-La **matrice di accoppiamento** si fa come nec2-array di YO3IIU: si alimenta una porta alla volta (le altre con una sorgente quasi nulla, cioe' in cortocircuito), si leggono le correnti di tutte le porte e si ha la matrice delle ammettenze Y; poi Z = Y^-1 e S = (Z - Z0)(Z + Z0)^-1. Sulla diagonale c'e' il disadattamento di ogni antenna con le altre chiuse su Z0, fuori diagonale la potenza che passa da una porta all'altra.
+La **matrice di accoppiamento** (matrice S tra le porte dello stack) si calcola come nec2-array di YO3IIU [C27]: [[Calcolo: 9.2 Matrice di accoppiamento]].
 
-**ROS attivo e "da non scegliere"** (dalla 1.3.2, richiesta di IC8TEM del 18/11/2026). Con le antenne alimentate tutte insieme, in fase e con la stessa ampiezza, la potenza riflessa su ogni porta non e' solo il suo S11: e' la somma della riga della matrice, Γatt,i = Si1 + Si2 + ... + SiN. Il **ROS attivo** e' (1 + |Γatt|)/(1 - |Γatt|) della porta peggiore; il **G realizzato** toglie al guadagno la perdita per riflessione -10 log(1 - |Γatt|²). Per l'antenna singola si usa la sua impedenza d'ingresso. Le distanze con ROS attivo sopra la soglia della casella **ROS attivo massimo** (di partenza 1,5) hanno il commento **"ROS attivo alto: da non scegliere"** e restano fuori dalla scelta proposta (se lo fossero tutte, si sceglie fra tutte); la riga con il ROS attivo piu' basso e' segnata **"riflessi minimi"**.
-
-Perche' DL6WU parla di aree di cattura che si toccano. L'area efficace di un'antenna e' Ae = Gλ²/4π (per la 10 el. BVO a 144,3 MHz circa 12,8 m²). La "piastrella" di DL6WU, Dv x Dh, vale circa λ²/(Bv·Bh) con le larghezze a -3 dB in radianti: per la stessa antenna circa 15,3 m², quasi la stessa area. Alla distanza DL6WU le aree di cattura sono quindi affiancate: lo stack raccoglie quasi tutta l'energia senza che due antenne si contendano lo stesso fronte d'onda. Piu' vicino le aree si sovrappongono (il guadagno cresce meno di +3 dB per raddoppio e l'accoppiamento sale, quindi il ROS attivo); piu' lontano compaiono i lobi di griglia, a sinθ = λ/d. La regola di DL6WU dice quindi soprattutto dove non stare; il ROS attivo segna in tabella il lato delle distanze troppo corte.
+**ROS attivo e "da non scegliere"** (dalla 1.3.2). Le distanze con ROS attivo sopra la casella **ROS attivo massimo** (di partenza 1,5) hanno il commento **"ROS attivo alto: da non scegliere"** e restano fuori dalla scelta proposta (se lo fossero tutte, si sceglie fra tutte); la riga con il ROS attivo piu' basso e' segnata **"riflessi minimi"**. Come si calcolano ROS attivo e G realizzato, e perche' DL6WU parla di aree di cattura che si toccano: [[Calcolo: 9.3 ROS attivo e guadagno realizzato]].
 
 Il **criterio** sceglie la distanza proposta: guadagno massimo, lobi laterali piu' bassi, G/T migliore, oppure (di partenza) guadagno massimo con i lobi sotto una soglia (-13 dB); se nessuna distanza tiene i lobi sotto la soglia si prende quella con i lobi piu' bassi. Il pulsante **Usa la distanza proposta per lo stack** la mette nella scheda di sopra e nella pagina Rumore dal cielo vero.
 
-Prova (autotest): due Yagi a 6 elementi del MathWorks Antenna Toolbox (misure ottimizzate da MathWorks) una sopra l'altra alla distanza DL6WU: abs(S21) circa -27,6 dB e 12,08 dBi, come nec2c.
+
 
 **HF (sopra il terreno).** In HF la formula di DL6WU non vale: le antenne sono sopra il terreno, il diagramma in elevazione e' fatto dalle riflessioni sul suolo e quello che conta e' l'angolo di partenza verso le zone da collegare (ARRL Antenna Book, capitolo sugli stack HF; N6BV con HFTA). Si danno il numero di antenne, l'altezza della piu' bassa, le distanze da provare (in lambda, a passi di 0,125; di partenza 0,5-1,25) e gli **angoli di partenza voluti** (di partenza 5-15 gradi, il DX in 20 m). Il terreno e' quello del modello; se il modello e' in spazio libero si usa il terreno medio (13 / 0,005 S/m, Sommerfeld). Per ogni distanza si calcola il diagramma in elevazione con tutte le antenne in fase (BIP) nell'azimut del lobo; la distanza proposta e' quella con la media del guadagno piu' alta tra gli angoli voluti, e per quella si calcolano anche la superiore da sola, l'inferiore da sola e, con due antenne, la controfase (BOP), disegnate nello stesso grafico.
 
@@ -1538,24 +1480,7 @@ La scheda mostra sopra la tabella il percorso a tre riquadri del verso scelto e,
 
 ### Tubi telescopici: perche' l'algoritmo del libro di Leeson
 
-**Regole della correzione (Cebik, "NEC Correctives", amod82).** La correzione si applica solo a fili diritti, simmetrici rispetto al centro, con le punte libere (un filo attaccato a una punta, come le code della Moxon o i lati di un delta, esclude l'elemento), con sorgenti e carichi sul segmento centrale, entro circa il 15 % dalla risonanza; EZNEC e NEC-Win Plus non la applicano se l'elemento non rispetta una delle condizioni. Eccezione: il monopolo verticale con la base a terra e la sorgente accanto al suolo, che YA-NEC corregge come meta' di elemento (l'immagine nel terreno fa l'altra meta'). **Segmentazione dell'elemento sostituito (scelta di calcolo).** Ogni filo dell'elemento tiene il suo numero di segmenti e le sue giunzioni, avvicinate al centro dello stesso fattore k = l'/l (per il monopolo il centro e' la base); tutti i fili prendono il diametro equivalente. E' quello che fa EZNEC: su 543 elementi a gradini lo scarto mediano da EZNEC e' dello 0,32 %, contro il 3,86 % con tutti i segmenti resi uguali (entro lo 0,5 %: 468 elementi contro 55; ARRL 0,34 % contro 3,94 %, Hy-Gain 0,26 % contro 1,84 %). Cebik ricorda che il risultato dipende dalla segmentazione: con i segmenti uguali la resistenza viene circa il 4 % piu' alta di EZNEC negli elementi ARRL con molti tubi corti. Conseguenza da sapere: un segmento della sorgente piu' corto dei vicini (per esempio la piastra centrale) cambia la resistenza anche di qualche ohm, esattamente come in EZNEC; e' un effetto del NEC-2, non della correzione.
-
-**Linee di fase.** Un elemento con una linea (TL o NT) sul segmento centrale si corregge, come in EZNEC (XR-5 di fabbrica a 14,175 MHz: 61,3 +j42,8 ohm, EZNEC 61,2 +j42,6; senza correggere quell'elemento 81,1 +j73,8). Restano esclusi gli elementi con linee, sorgenti o carichi fuori dal centro. Nota sul nome: l'"equazione di Leeson" che si trova in rete (per esempio su Wikipedia) e' un'altra cosa, il rumore di fase degli oscillatori (D. B. Leeson, Proc. IEEE 1966); la correzione dei tubi viene dal libro di D. Leeson W6NL sulle Yagi (ARRL 1992).
-
-**NEC-4 al posto della correzione?** Il NEC-4 di Burke (LLNL, 1992) tratta i salti di diametro direttamente, senza sostituire l'elemento. Confronto delle fonti:
-
-| Fonte | Somiglianze | Differenze |
-|---|---|---|
-| L. B. Cebik W4RNL, "NEC-4 vs. NEC-2 With Stepped-Diameter Correction" | NEC-4 e NEC-2 con la correzione danno risultati ragionevoli; NEC-2 senza correzione e' inaffidabile (come nel nostro confronto d'archivio: mediana 52,8 % senza, 2,7 % con Leeson) | il NEC-4 converge male con salti grandi dove la corrente e' alta: 40 m 2 el. 6,23 contro 7,13 dBi, 20 m 3 el. 7,74 contro 10,23 dBi; servono modelli molto grandi |
-| A. I. Bauerle, "Accurate Modeling of Stepped-Radii Antennas", ACES Journal 1995 (LP8 10-30 MHz) | NEC-2 con lunghezze equivalenti e NEC-4 diretto concordano entrambi con il ROS misurato | per il NEC-2 le lunghezze equivalenti venivano da un altro programma (ELNEC); nessun numero dell'errore nel riassunto |
-| D. Leeson W6NL (1992), EZNEC (Stepped Diameter Correction) | e' la correzione che YA-NEC applica, la stessa di EZNEC, il nostro riferimento | lavora sul singolo elemento e solo vicino alla risonanza; le fasi 2K e 2L del collaudo ne verificano le regole |
-
-Scelta: il codice del NEC-4 non e' pubblico (licenza LLNL) e, secondo Cebik, sui salti di diametro grandi non e' piu' affidabile della correzione. YA-NEC resta con il NEC-2 e la correzione di Leeson come EZNEC; la teoria R9 e' chiusa con questo confronto.
-
-
-Il limite di correzione e' una variabile del motore. Cebik indica per EZNEC il 15 % dalla risonanza, ma le prove del collaudo (617 elementi a gradini calcolati da soli in EZNEC con la Stepped Diameter Correction, fasi 2K/2L) mostrano che EZNEC corregge anche molto piu' lontano, almeno fino a f/fs = 0,58: per gli elementi tra 0,58 e 0,85 la correzione porta lo scarto mediano dal 9,8 % al 3,0 % (410-14H dell'ARRL dal 30,8 % al 2,9 %, radiatori XR-5 dal 10,6 % all'1,9 %). **Scelta di calcolo:** sotto la risonanza la correzione si applica sempre, a qualunque distanza; sopra la risonanza il limite e' il 45 % (fino a f/fs 1,45). Motivo: gli elementi sotto f/fs 0,55 non corretti scartano da EZNEC fino al 14,4 %, corretti al massimo il 2,8 %, e nessun elemento peggiora; sopra la risonanza non ci sono dati (nessun elemento oltre f/fs 1,05) e l'XR-5 intera a 24,9 e 28,5 MHz, con i radiatori dei 20 m non corretti, coincide con EZNEC. La differenza sistematica sulla resistenza negli elementi ARRL e Hy-Gain con molti tubi si spiega con la segmentazione (vedi sopra, "Segmentazione dell'elemento sostituito"). **Taratura sotto la risonanza.** Tra f/fs 0,55 e 0,9 EZNEC corregge un po' diversamente dal libro di Leeson. Con s = 1 - f/fs (nulla alla risonanza, crescente sotto) YA-NEC corregge la lunghezza equivalente: k' = 1 - (1 - k)(1 + a s); il diametro si potrebbe correggere con D' = D exp(g s). La fase 2L bis del collaudo (`YA-NEC.exe --tara-gradini`) cerca a e g sui valori di EZNEC e scrive la proposta in taratura_gradini.txt. **Scelta di calcolo (IC8TEM):** a = 0,05 sulla lunghezza, nessuna correzione del diametro (g = 0). Sui 508 elementi sotto la risonanza lo scarto medio da EZNEC scende da 0,41 a 0,37 %, la mediana da 0,36 a 0,29 % e gli elementi oltre lo 0,5 % da 118 a 67 (oltre il 2 %: da 6 a 9). Con anche il diametro (a = g = 0,10) 30 elementi peggioravano di oltre 0,3 punti. La 520-40H a 14,0 MHz va piu' vicina a EZNEC (0,14 % invece di 0,26 %), l'XR-5 a 14,175 MHz un po' meno (0,66 % invece di 0,59 %).
-
-Il NEC-2 con diametri a gradini fa risuonare l'elemento piu' in basso della realta'. YA-NEC usa l'algoritmo del libro di D. Leeson W6NL (Physical Design of Yagi Antennas, ARRL 1992, sez. 8.4): per ogni elemento si calcolano il logaritmo del raggio medio pesato sulle lunghezze, le somme AN, AM, AN', AM' sulle sezioni, poi Ka = 120 (ln 2l - ln ae - 1), Xo, Zo, il rapporto r = 1 - 2 (Xo - Xo') / (pi Zo), la lunghezza equivalente l' = l / r e il diametro equivalente d' = 4 l' e^-(Ka'/120 + 1). Prova: esempio del libro 95,70" / 0,594"; riflettore 20 m della XR-5 5,3234 m e 18,58 mm contro EZNEC 5,3243 m e 18,60 mm. Nel confronto con EZNEC su 916 modelli l'algoritmo del libro sta entro il 2 % in 51 casi contro 37 di un fattore fisso 1,075 sul raggio medio (errore mediano 3,0 % contro 4,2 %): EZNEC usa proprio questo algoritmo.
+Questo paragrafo e' nel **Manuale di calcolo e delle fonti**: [[Calcolo: 4.3 Tubi telescopici: perche' l'algoritmo del libro di Leeson]].
 
 ### Parabola primo fuoco: caselle
 
@@ -1578,69 +1503,7 @@ Il NEC-2 con diametri a gradini fa risuonare l'elemento piu' in basso della real
 
 ### Parabola: come si calcola l'efficienza
 
-Il guadagno di una parabola e' quello di un'apertura circolare uniforme moltiplicato per l'efficienza totale:
-
-G = (pi D / lambda)^2 x eta_totale, in dBi: G = 10 log10[(pi D / lambda)^2] + 10 log10(eta_totale)
-
-YA-NEC calcola eta_totale come prodotto di sei fattori, ognuno nella pagina Riepilogo con la sua perdita in dB:
-
-eta_totale = eta_apertura x eta_blocco x eta_superficie x eta_rete x eta_bordo x eta_varie
-
-**1. Apertura (illuminazione del feed): eta_apertura = eta_taper x eta_fase x eta_spillover x eta_pol.** Il feed illumina il disco con il suo diagramma; sulla superficie si aggiunge l'attenuazione spaziale (1 + cos theta)/2, perche' il bordo e' piu' lontano dal fuoco del centro (distanza 2F/(1 + cos theta)). Senza diagramma del feed, YA-NEC usa il feed cos^q(theta) e ricava q dal taper al bordo scritto (feed + attenuazione spaziale, 10 dB come consiglia W1GHZ): q = ln(10^(-taper/20) / s) / ln(cos psi0), con s = (1 + cos psi0)/2 e psi0 = 2 atan(1 / (4 f/D)) il semiangolo del bordo visto dal fuoco.
-
-| Fattore | Formula | Cosa misura |
-|---|---|---|
-| taper (illuminazione) | eta_taper = (integrale di E rho drho)^2 / [(a^2/2) x integrale di E^2 rho drho], a = raggio del disco | quanto l'illuminazione si allontana da quella uniforme: bordo troppo scuro = disco usato in parte |
-| spillover | feed cos^q: 1 - cos^(2q+1)(psi0); feed dal NEC o tabellato: potenza entro psi0 / potenza totale | la potenza del feed che passa oltre il bordo e non arriva al disco (e vede il terreno caldo) |
-| fase | modulo dell'integrale del campo complesso al quadrato / (integrale del modulo)^2 | il feed non ha un centro di fase unico: solo con la fase dal NEC o da file W1GHZ, altrimenti 1 |
-| polarizzazione | potenza del termine medio (E + H)/2 entro psi0 / potenza entro psi0 (Kildal 1985) | asimmetria tra i piani E e H del feed (polarizzazione incrociata): solo con i due piani, altrimenti 1 |
-
-Taper e spillover tirano in direzioni opposte: un bordo poco illuminato riduce lo spillover ma spreca il disco. Il massimo di eta_taper x eta_spillover si ha intorno a 10-12 dB di taper totale al bordo, circa 82 %: e' la figura della pagina Feed (efficienza in funzione di f/D).
-
-**2. Blocco: eta_blocco = |1 - b_c - b_p|^2.** Il feed e i puntoni fanno ombra sul disco. Il blocco non si conta come area tolta, ma come campo tolto pesato con l'illuminazione: b_c = campo sotto l'ombra del feed (raggio pari a meta' del suo diametro) diviso il campo totale; b_p = N puntoni x larghezza / (2 pi) x campo lungo l'ombra dei puntoni, dal bordo del feed al punto d'attacco sulle centine, diviso il campo totale. Il centro e' la zona piu' illuminata, per questo un feed piccolo pesa piu' della sua area (Galt Telescope; Lamb e Olver; Ruze per i puntoni). Dalla 1.0.14 b_p comprende anche l'ombra sull'onda sferica (Baars 2007, eq. 4.36c-f): l'onda che va dal fuoco al disco incontra i puntoni anche oltre il punto d'attacco, fino al bordo; per ogni raggio si trova dove taglia il puntone e l'ombra sul disco vale larghezza x (distanza fuoco-disco / distanza fuoco-puntone). Con i puntoni attaccati al 65 % del raggio questa parte e' la maggiore (esempio sotto: 1,45 % del campo contro 1,05 % dell'onda piana). La pagina Riepilogo la indica a parte.
-
-**3. Superficie (Ruze): eta_superficie = exp[-(4 pi sigma / lambda)^2].** sigma e' lo scostamento RMS della superficie dal paraboloide (centine, rete, montaggio). lambda/40 costa 0,4 dB, lambda/20 costa 1,7 dB, lambda/16 circa 2,7 dB. Con la casella "Aggiungi la sfaccettatura della rete piana" si somma (in quadratura) l'errore della rete tesa piatta tra due centine: freccia della corda k2 s^2/8 (s = corda tra le centine, k2 = curvatura del paraboloide in quel punto), RMS circa 0,298 volte la freccia, media pesata con l'illuminazione. Dalla 1.0.14 conta solo la componente assiale dell'errore, eps_assiale = eps_normale / sqrt(1 + (r/2F)^2) (Baars, eq. 4.43): verso il bordo la superficie e' inclinata e lo stesso errore normale sposta meno la fase. La pagina Meccanica mostra tutti e due i valori.
-
-**4. Rete (Mumford): eta_rete = 1 - T.** Una parte dell'onda passa attraverso i fori della rete: T = 1 / (1 + x^2), x = lambda / [2 s ln(s / (pi d))], con s = passo (foro + filo) e d = diametro del filo. La potenza trasmessa va dietro il disco e porta rumore del terreno (T x 290 K, pagina Riepilogo). Con "Superficie piena" il fattore vale 1.
-
-**5. Bordo a poligono: eta_bordo = N sin(2 pi / N) / (2 pi).** Solo con la sfaccettatura accesa: con la rete piana tra N centine il bordo e' un poligono, che ha meno area del cerchio (16 centine: 0,975, -0,11 dB).
-
-**6. Perdite varie: eta_varie = 10^(-L/10).** Una perdita fissa scritta a mano (di partenza 0,7 dB): ROS del feed, linea fino al punto di misura, polarizzazione incrociata, piccoli errori di fase e di montaggio. W1GHZ osserva che i dischi reali rendono almeno il 15 % meno del calcolo: questa casella serve a tenerne conto.
-
-**Esempio con i valori di partenza del calcolatore** (disco da 3 m, 1296,1 MHz, f/D 0,42, taper totale 10 dB, feed cos^q, ombra del feed 0,20 m, 3 puntoni da 20 mm attaccati al 65 % del raggio, rete 6 mm con filo 0,8 mm, errore RMS 3 mm, perdite varie 0,7 dB):
-
-| Passo | Valore | Fattore | Perdita |
-|---|---|---|---|
-| lambda, semiangolo del bordo psi0 | 231,3 mm, 61,5 gradi | | |
-| attenuazione spaziale al bordo, taper del solo feed, q | 2,63 dB, 7,37 dB, q = 1,14 | | |
-| taper (illuminazione) | | 90,3 % | -0,44 dB |
-| spillover | | 91,3 % | -0,40 dB |
-| apertura (taper x spillover; fase e polarizzazione = 1 con il feed cos^q) | | 82,4 % | -0,84 dB |
-| blocco (feed 0,75 % del campo, puntoni 1,05 % onda piana + 1,45 % onda sferica) | | 93,6 % | -0,29 dB |
-| superficie, 3 mm = lambda/77 (Ruze) | | 97,4 % | -0,12 dB |
-| rete 6 mm = lambda/38 (Mumford, T = 0,34 %) | | 99,7 % | -0,01 dB |
-| perdite varie | | 85,1 % | -0,70 dB |
-| **totale** | | **63,8 %** | **-1,95 dB** |
-| guadagno: apertura uniforme 32,20 dBi - 1,95 dB | **30,25 dBi** | | |
-
-Si vede che a 1296 MHz rete e superficie quasi non contano: pesano illuminazione e perdite varie. Alle bande alte i numeri cambiano: con la stessa rete e lo stesso errore RMS, a 10368 MHz (lambda 28,9 mm) la superficie da 3 mm (lambda/10) costa circa 7 dB e la rete 6 mm diventa trasparente per una parte importante della potenza; la pagina Bande ed EME fa lo stesso conto per le quattro bande.
-
-Con il diagramma del feed dal modello NEC (pulsante "Feed dal modello NEC") o da un file W1GHZ, taper e spillover si calcolano sul diagramma vero, anche diverso nei piani E e H; con la fase si aggiungono eta_fase ed eta_pol, e il centro di fase si cerca dove l'efficienza e' massima (criterio di W1GHZ).
-
-**Controlli di letteratura (dalla 1.0.14).** Accanto al calcolo, la scheda mostra i valori delle formule chiuse di Baars e Balanis, per vedere quanto il disco si scosta dai casi ideali:
-
-| Dove | Cosa | Formula e fonte | Somiglianze e differenze con il calcolo |
-|---|---|---|---|
-| pagina Feed, nota | free-space taper | Tf = 20 log[1 + (D/4f)^2] (Baars 4.3): 2,63 dB a f/D 0,42, 4,58 dB a f/D 0,3 | e' la stessa attenuazione spaziale gia' calcolata; la nota da' anche il taper totale al bordo |
-| pagina Feed, grafico 4 | guadagno contro fuori fuoco | eta = [sin(beta/2) / (beta/2)]^2, beta = 2 pi delta / lambda x (1 - cos psi0) (Baars 4.22) | Baars vale per l'apertura uniforme, il calcolo usa il feed vero: la curva tratteggiata e' un controllo, non la sostituisce. Il Riepilogo da' anche la perdita per l'apertura quadratica (Baars 4.23) |
-| Riepilogo, sotto la fase | limite inferiore dell'efficienza di fase | (1 - m^2/2)^2, m = scarto massimo di fase sull'apertura (Balanis cap. 15) | e' un minimo garantito: il valore calcolato sta sempre sopra. Serve la fase del feed |
-| Riepilogo | guadagno massimo con questa superficie | lambda_max = 4 pi sigma, G_max = 20 log10(D/sigma) - 16,38 dB + perdite non di superficie (Balanis 15-67...71) | oltre quella frequenza il guadagno cala anche se la frequenza sale; c'e' un avviso quando la frequenza scelta e' gia' oltre |
-| pagina Lobi, tabella | apertura a -3 dB e primo lobo | HPBW = b lambda/D, b = 1,269 - 0,566 t + 0,534 t^2 - 0,208 t^3; primo lobo -24,6 + 7,37 t dB; t = campo al bordo (feed + spazio) (Baars 4.13 e 4.14a) | distribuzione quadratica su piedistallo, senza blocco: il primo lobo calcolato con il blocco e' di solito piu' alto |
-| pagina Lobi, grafico | fascio d'errore | larghezza 1,06 lambda/c, potenza circa 1,1 (e^(s^2) - 1), s = 4 pi sigma / lambda, c = distanza tra le centine a 2/3 del raggio (Baars 4.44-4.46) | e' una stima (curva tratteggiata arancio), non un calcolo: dice dove va l'energia che Ruze toglie al lobo principale |
-
-L'autotest ha la sezione 10 con i casi della letteratura: feed cos^2...cos^8 a f/D 0,3, 0,42 e 0,6 contro l'integrale di Balanis (15-55), fatto con un integrale indipendente, e contro il motore; forma chiusa per cos^2 e massimo della curva (0,829); distribuzione quadratica a -12 dB (0,893, HPBW 66,3 gradi lambda/D); gaussiana a -12 dB (0,866); Tf 4,58 dB a f/D 0,3; fuori fuoco con beta = 1 (0,919); Ruze con sigma = lambda/20 (-1,71 dB). Le misure di PA0PLY a 10 GHz (disco da 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB di rapporto sole/rumore; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB) sono riportate come riferimento: il diagramma di quei feed non ha una formula e va calcolato col NEC.
-
-Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spillover, efficienza d'illuminazione); P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6 (taper ottimo, fase, efficienza reale); P.-S. Kildal, IEEE Trans. AP-33, 1985 (fattori dell'efficienza del feed); J. Ruze, Proc. IEEE 1966 (errori di superficie) e Microwave Journal 1968 (puntoni); W.W. Mumford, Proc. IRE 1961 (trasmissione della rete); Galt Telescope, arXiv 1607.06436, e Lamb e Olver (blocco pesato); J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4 (controlli, ombra sferica dei puntoni, componente assiale, fascio d'errore); C.A. Balanis, Antenna Theory, cap. 15 (feed cos^n, limite di fase, guadagno massimo); PA0PLY (misure di feed a 10 GHz).
+Questo paragrafo e' nel **Manuale di calcolo e delle fonti**: [[Calcolo: 15.1 Parabola: come si calcola l'efficienza]].
 
 ### Trombe e illuminatori: caselle e scelte
 
@@ -2065,22 +1928,7 @@ Un clic su un filo nella vista 3D lo sottolinea con un colore velato e porta la 
 
 ### 23.12 Crediti delle fonti della 1.2
 
-| Fonte | Usata per |
-|---|---|
-| N6BV (R. D. Straw), HFTA, ARRL Antenna Book | metodo del terreno reale, direzioni di traffico, figura di merito |
-| TINITALY 1.1, INGV: Tarquini S., Isola I., Favalli M., Battistini A., Dotta G. (2023), doi 10.13127/tinitaly/1.1, licenza CC BY 4.0 | DEM dell'Italia |
-| SRTM1 (NASA / USGS), mattonelle "skadi" di AWS Terrain Tiles (Mapzen) | DEM del mondo |
-| Esri World Imagery (Esri, Maxar, Earthstar Geographics e la comunita' GIS); OpenStreetMap (© i contributori di OpenStreetMap, ODbL) e Nominatim | sfondi della mappa e ricerca delle localita' |
-| ITU-R P.526, P.372, P.453; Ament (1953) | diffrazione, rumore, raggio efficace, rugosita' |
-| ON4UN, Low-Band DXing; W8JI; IV3PRK | RDF, DMF, antenne riceventi, ghiaccio |
-| W8NX, ARRL Antenna Book 24a ed. | trappola coassiale a bassa impedenza |
-| K5IU (flusso trasversale); ARRL Antenna Book, appendici A e B | vento sui tubi |
-| NTC 2018 e Circolare 7/2019; CNR-DT 207 R1/2018; EN 1991-1-4 | vento |
-| DL6WU, ARRL (linee in tubo quadro); Wilkinson (1960) | divisori |
-| VE7BQH (TANT), KF2YN | Tant e G/T nel confronto del telaio |
-| G. J. Burke, NEC-2 e NEC-4.2 (LLNL); 4nec2 (A. Voors); L. B. Cebik W4RNL | AGT, giunzioni NEC-4, confronti |
-| ARRL, TLW | linea e accordatore |
-| Abramowitz e Stegun, Handbook of Mathematical Functions | integrali di Fresnel |
+Le fonti di questa versione sono nel documento **Citazioni**, con le pagine usate e il posto in cui si usano (per esempio N6BV e HFTA [C8], TINITALY e SRTM [C85], ITU-R [C70], K9AY [C46]).
 
 ## 24. Novita' della 1.3
 
@@ -2119,11 +1967,4 @@ Quattro lezioni nuove, in italiano e in inglese con la voce (wiki, pagina Videoc
 
 ### 24.3 Crediti delle fonti della 1.3
 
-| Fonte | Usata per |
-|---|---|
-| Gary Breed K9AY, The K9AY Terminated Loop, QST settembre 1997 | K9AY |
-| Hi-Z Antennas | schiere di verticali corte attive, RDF di confronto |
-| IV3PRK | graduatoria RDF: dipolo basso, 4-square RX |
-| ON4UN, Low-Band DXing | 4-square in ricezione |
-| G. J. Burke, guida del NEC-2; R. Lewallen W7EL, EZNEC | fili collegati al terreno reale |
-
+Le fonti di questa versione sono nel documento **Citazioni**, con le pagine usate e il posto in cui si usano (per esempio N6BV e HFTA [C8], TINITALY e SRTM [C85], ITU-R [C70], K9AY [C46]).

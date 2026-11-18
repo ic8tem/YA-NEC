@@ -43,3 +43,12 @@
 ## 1.3.2 – Finestra di chiusura come LIVETROPOVHF (18/11/2026, richiesta di IC8TEM delle 14:47)
 - Nuovo MainWindow.Chiusura.cs: icona, "Vuoi chiudere YA-NEC?", "Grazie per avermi usato: spero di esserti stato utile." in corsivo, barra grigia con Sì e No (Invio = Sì, Esc = No), come AskClose di LIVETROPOVHF.
 - Si apre alla chiusura quando il modello e' salvato; con modifiche non salvate resta la finestra "Modello non salvato". Saltata nelle prove automatiche. Voci inglesi in en.txt.
+
+## 1.4 – Documenti tecnici (18/11/2026, bozzetto approvato da IC8TEM alle 14:54)
+- La linguetta Manuale diventa **Documenti tecnici**: tre pillole (Manuale d'uso, Manuale di calcolo e delle fonti, Citazioni), ognuna con il suo indice; casella Cerca su tutti e tre i documenti (risultati cliccabili, fino a 60); Apri il PDF del documento scelto (quello in data/manuale se c'e', altrimenti doc/ su GitHub). I pulsanti "? Manuale" della 1.3.1 aprono il manuale d'uso al paragrafo.
+- MainWindow.Manual.cs: BuildDocumento generico; nuove righe "> FORMULA:"; rimandi [C12] cliccabili verso le Citazioni; rimandi [[Calcolo: titolo]] / [[Uso: titolo]] cliccabili tra i documenti; le celle della prima colonna delle tabelle hanno il Tag (si arriva alla riga della citazione, evidenziata per 2 secondi).
+- Nuovo data/manuale/Calcolo.md (15 capitoli: motore, segmentazione e AGT, terreni, Leeson, Yagi e quad, dipoli e verticali, RDF, rumore e G/T, stack VHF/UHF, stack HF, tolleranze, vento, divisori e balun, carichi HF, parabole). Il capitolo 15 Parabole e illuminatori e' in piu' rispetto al bozzetto.
+- Nuovo data/manuale/Citazioni.md: bibliografia unica numerata [C..] in libri, articoli, norme, programmi, siti, fonti scartate (con il motivo), con le pagine usate e il posto in YA-NEC; i numeri non cambiano tra le versioni.
+- Manuale d'uso: spostate nel manuale di calcolo le sezioni MININEC e NEC-2, Modelli tipicamente critici, Radiali a terra, Tubi telescopici (Leeson), Parabola: efficienza, le tabelle di calcolo e delle fonti del Rumore dal cielo vero, matrice di accoppiamento, ROS attivo, aree di cattura ed esempi dello stack; al loro posto un rimando cliccabile. Le tabelle dei crediti 1.2 e 1.3 rimandano alle Citazioni.
+- Tre PDF separati in doc/: Manuale_d_uso.pdf (102 pagine), Manuale_di_calcolo_e_delle_fonti.pdf (23), Citazioni.pdf (7). Generatore md2html.py con #### , FORMULA e rimandi.
+- Voci inglesi in en.txt; prove dell'interfaccia sulla linguetta "Documenti tecnici".

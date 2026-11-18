@@ -449,7 +449,7 @@ namespace YaNec
             WrapPanel tabP = new WrapPanel { Orientation = Orientation.Horizontal };
             // 0.5.3 (IC8TEM 15/11/2026 20:19): ordine voluto "struttura 3d, frequenza, diagrammi, smith, rumore/gt/stack, correnti, nec, ottimizzatore,
             // calcolatori", poi le altre in fondo; "Oggetti inseriti" non e' piu' una linguetta (le tabelle sono in basso a destra nella Struttura 3D)
-            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Smith", "Rumore/GT/Stack", "Correnti", "NEC", "Ottimizzatore", "Calcolatori", "Calcoli meccanici", "Variabili", "Avvisi", "Impostazioni", "Manuale", "Crediti", "Registro", "Autotest" };
+            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Smith", "Rumore/GT/Stack", "Correnti", "NEC", "Ottimizzatore", "Calcolatori", "Calcoli meccanici", "Variabili", "Avvisi", "Impostazioni", "Documenti tecnici", "Crediti", "Registro", "Autotest" };
             for (int i = 0; i < names.Length; i++)
             {
                 int idx = i;
@@ -484,7 +484,7 @@ namespace YaNec
             pag["Impostazioni"] = BuildImpostazioniPage();
             pag["Avvisi"] = BuildNotesPage();
             pag["Autotest"] = BuildTestPage();
-            pag["Manuale"] = BuildManualPage();
+            pag["Documenti tecnici"] = BuildManualPage();   // 1.4: prima "Manuale"
             pag["Crediti"] = BuildCreditsPage();
             pag["Registro"] = BuildRegistroPage();
             foreach (string nm in names) pages.Add(pag[nm]);
