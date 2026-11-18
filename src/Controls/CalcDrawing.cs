@@ -294,7 +294,7 @@ namespace YaNec
                 switch (m.Kind)
                 {
                     case 0:
-                        Draw.Text(ctx, m.Text, p.X, p.Y - 9, 12.5, c, FontWeight.SemiBold);
+                        if (!string.IsNullOrEmpty(m.Text)) Draw.Text(ctx, m.Text, p.X, p.Y - 9, 12.5, c, FontWeight.SemiBold);
                         break;
                     case 1:
                         ctx.DrawEllipse(null, m.Dash ? Pal.P(c, 1.4, Pal.Dash) : Pal.P(c, 3), p, m.R * sc, m.R * sc);   // 1.3.1: cerchio tratteggiato (aperture dello stack)
@@ -363,7 +363,7 @@ namespace YaNec
                             double nx = -dy / L * 5, ny = dx / L * 5;
                             ctx.DrawLine(qp, new Point(p.X + nx, p.Y + ny), new Point(p.X - nx, p.Y - ny));
                             ctx.DrawLine(qp, new Point(p2.X + nx, p2.Y + ny), new Point(p2.X - nx, p2.Y - ny));
-                            Draw.TextC(ctx, m.Text, (p.X + p2.X) / 2 - dy / L * 12, (p.Y + p2.Y) / 2 + dx / L * 12, 12, Pal.Muted);
+                            if (!string.IsNullOrEmpty(m.Text)) Draw.TextC(ctx, m.Text, (p.X + p2.X) / 2 - dy / L * 12, (p.Y + p2.Y) / 2 + dx / L * 12, 12, Pal.Muted);
                         }
                         break;
                     case 8:

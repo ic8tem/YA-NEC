@@ -792,16 +792,16 @@ namespace YaNec.Engine
             o.Plane = "yz"; o.HideWires = true;
             double h = 0.24 * lam, rb = 0.025 * lam;
             double y0 = -(nc - 1) / 2.0 * dh, z0 = (nr - 1) / 2.0 * dv;
-            double ytop = z0 + Math.Max(dv, dh) * 0.55, ybot = -z0 - Math.Max(dv, dh) * 0.75;
-            // palo e telaio
+            double ra = Math.Min(nr > 1 ? dv : double.MaxValue, nc > 1 ? dh : double.MaxValue) / 2;
+            if (double.IsInfinity(ra) || ra > 1e6) ra = Math.Max(dv, dh) / 2;
+            double ytop = z0 + ra + 0.2 * lam, ybot = -z0 - ra - 0.1 * lam;
+            // palo e telaio (il palo finisce sopra la quota orizzontale, cosi' la scritta resta libera)
             o.Mark(2, 0, ybot, null, 3, 0, ytop);
             if (nc > 1)
             {
                 o.Mark(2, y0, 0, null, 3, -y0, 0);
                 for (int j = 0; j < nc; j++) o.Mark(2, y0 + j * dh, -z0 - 0.15 * lam, null, 3, y0 + j * dh, z0 + 0.15 * lam);
             }
-            double ra = Math.Min(nr > 1 ? dv : double.MaxValue, nc > 1 ? dh : double.MaxValue) / 2;
-            if (double.IsInfinity(ra) || ra > 1e6) ra = Math.Max(dv, dh) / 2;
             int n = 0;
             for (int i = 0; i < nr; i++)
                 for (int j = 0; j < nc; j++)
@@ -810,10 +810,18 @@ namespace YaNec.Engine
                     o.Mark(1, y, z, null, 1, 0, 0, ra, true);
                     if (vert) o.Mark(2, y, z - h, null, 0, y, z + h); else o.Mark(2, y - h, z, null, 0, y + h, z);
                     o.Mark(1, y, z, null, 0, 0, 0, rb);
-                    o.Mark(0, y + rb * 1.6, z + rb * 2.2, "A" + (++n), 0);
+                    o.Mark(0, y + 0.12 * lam, z + 0.42 * ra, "A" + (++n), 0);
                 }
-            if (nr > 1) o.Mark(7, y0 - ra - 0.15 * lam, z0, N(dv, 3) + " m = " + N(dv / lam, 2) + " λ", 3, y0 - ra - 0.15 * lam, z0 - dv);
-            if (nc > 1) o.Mark(7, y0, -z0 - ra - 0.15 * lam, N(dh, 3) + " m = " + N(dh / lam, 2) + " λ", 3, y0 + dh, -z0 - ra - 0.15 * lam);
+            // quote: verticale a destra (testo a destra della linea), orizzontale sotto
+            double qx = -y0 + ra + 0.3 * lam;
+            if (nr > 1)
+            {
+                o.Mark(7, qx, z0, "", 3, qx, z0 - dv);
+                o.Mark(0, qx + 0.15 * lam, z0 - dv / 2 + 0.05 * lam, N(dv, 3) + " m = " + N(dv / lam, 2) + " λ", 3);
+            }
+            if (nc > 1) o.Mark(7, y0, ybot - 0.25 * lam, N(dh, 3) + " m = " + N(dh / lam, 2) + " λ", 3, y0 + dh, ybot - 0.25 * lam);
+            // spazio a destra per la scritta della quota verticale
+            o.Mark(0, qx + 2.2 * lam, z0, "", 3);
         }
 
         public override CalcOutput Compute()

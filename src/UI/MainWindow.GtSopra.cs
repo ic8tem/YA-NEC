@@ -465,7 +465,7 @@ namespace YaNec
                 double dd = righe > 1 ? q.Dv : q.Dh;
                 rows.Add(new[] { FN(q.K, 2), FN(dd, 3) + " m", FN(dd / r.Lambda, 2) + " λ", FN(q.S21, 1), FN(q.G, 2), FN(q.G - r.GSingola, 2), FN(q.Sll, 1), FN(q.Fr, 1), FN(q.Fr - r.FrSingola, 1), FN(q.Gt, 2), string.Join(", ", tag) });
             }
-            LineChart ch = new LineChart { Title = Lang.T("Guadagno e lobo laterale al variare della distanza"), XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "dBi", Y2Label = "dB", Height = 260 };
+            LineChart ch = new LineChart { Title = "", XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "dBi", Y2Label = "dB", Height = 260 };
             ch.X = r.Punti.Select(q => q.K).ToArray();
             ch.Series = new List<LineSeries>
             {
@@ -478,7 +478,7 @@ namespace YaNec
             int nAnt = righe * col;
             double ideale = 10 * Math.Log10(Math.Max(1, nAnt));
             double[] dfrInv = r.Punti.Select(q => -(q.Fr - r.FrSingola)).ToArray();
-            LineChart ch2 = new LineChart { Title = Lang.T("Rispetto alla singola antenna"), XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "ΔG dB", Y2Label = "ΔF/R dB", Height = 280 };
+            LineChart ch2 = new LineChart { Title = "", XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "ΔG dB", Y2Label = "ΔF/R dB", Height = 280 };
             ch2.X = ch.X;
             ch2.YMinFixed = 0; ch2.YMaxFixed = Math.Ceiling(Math.Max(ideale, r.Punti.Max(q => q.G - r.GSingola)) + 1);
             ch2.Y2MaxFixed = Math.Max(1.5, Math.Ceiling(dfrInv.Max() + 0.5)); ch2.Y2MinFixed = Math.Floor(Math.Min(-1, dfrInv.Min()) - 0.5);
@@ -488,17 +488,20 @@ namespace YaNec
             {
                 ch2.Series = new List<LineSeries>
                 {
-                    new LineSeries { Name = Lang.T("aumento di guadagno sulla singola (dB)"), Y = r.Punti.Select(q => q.G - r.GSingola).ToArray(), Color = Pal.Accent },
+                    new LineSeries { Name = Lang.T("ΔG sulla singola"), Y = r.Punti.Select(q => q.G - r.GSingola).ToArray(), Color = Pal.Accent },
                     new LineSeries { Name = Lang.F("{0} antenne ideali", nAnt) + " +" + FN(ideale, 2) + " dB", Y = r.Punti.Select(q => ideale).ToArray(), Color = Pal.Muted, Dashed = true },
-                    new LineSeries { Name = Lang.T("variazione del F/R sulla singola (0 in alto, scende se migliora)"), Y = dfrInv, Color = Pal.Orange, Right = true, Decimals = 1 },
+                    new LineSeries { Name = Lang.T("ΔF/R (0 in alto)"), Y = dfrInv, Color = Pal.Orange, Right = true, Decimals = 1 },
                 };
-                if (cbGt.IsChecked == true) ch2.Series.Add(new LineSeries { Name = Lang.T("G/T sulla singola (dB)"), Y = r.Punti.Select(q => q.Gt - r.GtSingola).ToArray(), Color = Pal.Green });
+                if (cbGt.IsChecked == true) ch2.Series.Add(new LineSeries { Name = Lang.T("ΔG/T"), Y = r.Punti.Select(q => q.Gt - r.GtSingola).ToArray(), Color = Pal.Green });
                 ch2.InvalidateVisual();
             };
             serie2();
             cbGt.IsCheckedChanged += (s2, e2) => serie2();
             StackPanel grafici = new StackPanel { Spacing = 10 };
+            // titoli fuori dai grafici: dentro si sovrapponevano alla legenda
+            grafici.Children.Add(new TextBlock { Text = Lang.T("Guadagno e lobo laterale al variare della distanza"), FontSize = 14, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore) });
             grafici.Children.Add(ch);
+            grafici.Children.Add(new TextBlock { Text = Lang.T("Rispetto alla singola antenna"), FontSize = 14, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore) });
             grafici.Children.Add(ch2);
             grafici.Children.Add(cbGt);
             grafici.Children.Add(new TextBlock { Text = Lang.T("Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella."), TextWrapping = TextWrapping.Wrap, FontSize = 12, Foreground = Pal.B(Pal.Muted) });

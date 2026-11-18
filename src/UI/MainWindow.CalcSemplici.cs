@@ -558,7 +558,7 @@ namespace YaNec
 
             WrapPanel cards = new WrapPanel { Margin = new Thickness(0, 6, 0, 0) };
             left.Children.Add(cards);
-            CalcDrawing dr = new CalcDrawing { Height = conBalun ? 330 : 300, Margin = new Thickness(0) };
+            CalcDrawing dr = new CalcDrawing { Height = conBalun ? 330 : (sc is CalcStackDl6wu ? 420 : 300), Margin = new Thickness(0) };   // 1.3.1: stack piu' alto
             Control destra = dr;
             Action<CalcOutput> mostraDestra = null;
             if (conTrasf) destra = CostruisciTrasformatore(sc, campi, tendine, () => { if (mostra != null) mostra(); }, out mostraDestra);
