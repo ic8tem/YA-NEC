@@ -94,6 +94,7 @@ namespace YaNec.Engine
             add(new CalcDelta(), "delta", null);
             add(new CalcLoopRett(), "looprett", null);
             add(new CalcSkywire(), "skywire", null);   // 1.0.17 (bozzetto 3 approvato da IC8TEM 17/11/2026 18:28)
+            add(new CalcNvis(), "nvis", null);         // 1.5 (bozzetto Calcolatori 1.5 approvato da IC8TEM 18/11/2026 19:30)
             add(new CalcHen(), "hen", null);
             add(new CalcDiscone(), "discone", null);
             add(new CalcFourSquare(), "4sq", null);
@@ -108,6 +109,7 @@ namespace YaNec.Engine
             add(new CalcRidimensiona(), "ridim", null);
             add(new CalcTetto(), "tetto", null);   // 0.5.0 (IC8TEM 15/11/2026 15:32, proposta B)
             add(new CalcReteLC(), "retelc", null);
+            add(new CalcForcina(), "forcina", null);   // 1.5
             add(new CalcRr(), "rrad", null);
             add(new CalcCavi(), "cavi", null);
             add(new CalcToroidiT(), "toroidiT", null);

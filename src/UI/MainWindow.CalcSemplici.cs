@@ -37,10 +37,10 @@ namespace YaNec
         public static readonly string[] CalcFamiglie = { "HF", "VHF", "Antenne riceventi", "Strumenti", "Dischi e illuminatori", "2,4 GHz" };
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
-            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "discone", "carichihf" } },
+            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "discone", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh" } },
             { "Antenne riceventi", new string[0] },
-            { "Strumenti", new[] { "ridim", "tetto", "retelc", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
+            { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
             { "2,4 GHz", new[] { "pcb24" } },
         };
@@ -78,6 +78,7 @@ namespace YaNec
             fasCalc.Voce("moxon", "Moxon", false, null, "gia' approvato (Cebik / DK7ZB)");
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
             fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
+            fasCalc.Voce("nvis", "NVIS", false, null, "dipolo, V invertito, loop 1 λ; altezza ottima, schermo o 9 fili a terra (Cebik)");   // 1.5
             fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
             fasCalc.Voce("carichihf", "Carichi HF", false, null, "trappole LC e coassiali, bobine con autorisonanza, linear loading, cappelli; Q, tensioni e perdite per banda");   // 1.2.0
             fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
@@ -95,6 +96,7 @@ namespace YaNec
             fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "scala un modello a un'altra frequenza");
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
             fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");
+            fasCalc.Voce("forcina", "Forcina (beta / hairpin)", false, null, "adattamento simmetrico del pilotato a 50 Ω (Cebik)");   // 1.5
             fasCalc.Voce("rrad", "Resistenza di radiazione", false, null, "dipolo corto, monopolo, loop", true);
             fasCalc.Voce("cavi", "Cavi RG", false, null, "dal nostro abaco cavi");
             fasCalc.Voce("toroidiT", "Toroidi iron powder (T)", false, null, "AL, spire, banda", true);
