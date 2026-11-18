@@ -164,7 +164,13 @@ namespace YaNec
                 Dispatcher.UIThread.Post(() =>
                 {
                     if (fatti.TryGetValue(k, out Control cc) && cc is StackPanel spc)
-                        foreach (Control x in spc.Children) if (Equals(x.Tag, titolo)) { x.BringIntoView(); break; }
+                        foreach (Control x in spc.Children) if (Equals(x.Tag, titolo))
+                        {
+                            // il paragrafo in cima alla pagina (BringIntoView lo lasciava in fondo)
+                            Point? pt = x.TranslatePoint(new Point(0, 0), body);
+                            if (pt.HasValue) sv.Offset = new Vector(0, Math.Max(0, pt.Value.Y - 8)); else x.BringIntoView();
+                            break;
+                        }
                 }, DispatcherPriority.Loaded);
             };
             foreach (KeyValuePair<string, Control> c in manualChapters) idx.Items.Add(new ListBoxItem { Content = c.Key, FontSize = 13, Padding = new Thickness(10, 5) });
