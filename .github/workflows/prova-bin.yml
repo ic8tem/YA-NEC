@@ -1,0 +1,21 @@
+# YA-NEC: compilazione linux-x64 per le prove fatte da Claude nella sessione (si lancia a mano); il binario va nel ramo prova-bin.
+name: prova-bin
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  bin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet publish YA-NEC.csproj -c Release -r linux-x64 --self-contained true -o pub/YA-NEC
+      - run: |
+          cd pub && tar czf ../ya-nec-linux-x64.tar.gz YA-NEC && cd .. && mkdir out && mv ya-nec-linux-x64.tar.gz out/ && cd out
+          split -b 40m ya-nec-linux-x64.tar.gz parte- && rm ya-nec-linux-x64.tar.gz
+          git init -q -b prova-bin && git config user.name "ya-nec-prova" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -q -m "binario di prova ${{ github.sha }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" prova-bin

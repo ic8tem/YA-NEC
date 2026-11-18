@@ -28,6 +28,8 @@ namespace YaNec
         {
             // --passi <resoconto> <uscita>: elenco dei passi da guardare per compila.bat (senza finestra e senza registro)
             if (args.Length >= 3 && args[0] == "--passi") return PassiDaGuardare.Scrivi(args[1], args[2]);
+            // 1.5: prova d'importazione dei modelli senza finestra (IC8TEM 18/11/2026)
+            if (args.Length >= 3 && args[0] == "--converti") { Librerie.Prepara(); return ConvertiModelli.Esegui(args[1], args[2]); }
             Librerie.Prepara();
             List<string> la = new List<string>(args);
             Engine.Dem.Cartella = AppPaths.DataDir;   // 1.2.0: DEM scaricati in data/dem
