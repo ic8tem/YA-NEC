@@ -2,7 +2,13 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.4.1:**
+**Novità della 1.4.2:**
+- **Calcolatori**: nuovi **NVIS** (dipolo, V invertito, loop 1 λ; altezza 0,175 λ e scansione NEC; schermo, 9 fili o filo riflettore a terra, da Cebik) e **Forcina** (adattamento beta / hairpin); **Quad** con la scelta del metodo (Cebik in HF, risonanza cercata dal NEC in VHF, ARRL); **J-pole** con la variante **Slim Jim**;
+- **Ottimizzatore**: riquadro **Monte Carlo** (partenze a caso e controllo dei migliori candidati con le tolleranze di costruzione);
+- **Distanze di stack** valutate su **due frequenze** (caso peggiore o media);
+- **Impostazioni**: **Forza l'aggiornamento** e **Reinstalla la versione attuale**; **Segnala un problema** (zip locale e pagina di GitHub, niente invio automatico); spiegate le caselle grigie.
+
+**Dalla 1.4.1:**
 - **Aggiornamento automatico** più rapido: primo controllo 10 secondi dopo l'avvio, poi ogni 3 minuti (prima 2 minuti e 30 minuti). Quando la versione nuova è installata compare un avviso che conta 10 secondi e riavvia YA-NEC da solo, riaprendo il modello aperto (se non era salvato, prima se ne salva una copia in data/aggiornamenti).
 
 **Dalla 1.4:**
