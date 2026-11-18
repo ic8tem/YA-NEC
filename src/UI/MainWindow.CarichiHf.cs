@@ -120,7 +120,8 @@ namespace YaNec
                 "la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.", "capitolo 15 (Carichi HF)");
 
             Func<string, Control[], WrapPanel> rigaW = null;
-            rigaW = (s, cs) => { WrapPanel w = new WrapPanel(); foreach (Control c in cs) w.Children.Add(c); return w; };
+            // 1.3.0: i campi riusati tra un tipo e l'altro si staccano dalla riga precedente (prima: crash "already has a visual parent" passando a Bobina di carico)
+            rigaW = (s, cs) => { WrapPanel w = new WrapPanel(); foreach (Control c in cs) { if (c.Parent is Panel vecchio) vecchio.Children.Remove(c); w.Children.Add(c); } return w; };
 
             Action ricalcola = null;
             Action costruisciDati = () =>
