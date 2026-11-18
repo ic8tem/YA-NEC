@@ -304,6 +304,8 @@ namespace YaNec
         // Distanze di stack: scheda di prima + accoppiamento e distanza migliore (NEC)
         // =====================================================================================================
         int ssModo, ssCrit = 3, ssN = 2;
+        int ssFreqN = 1, ssComb;           // 1.5: una o due frequenze; proposta sul caso peggiore (0) o sulla media (1)
+        TextBox ssF1, ssF2;
         TextBox ssKmin, ssKmax, ssPasso, ssRosMax, ssZ0, ssSoglia, ssH, ssDmin, ssDmax, ssAmin, ssAmax;
         StackPanel ssVhfBox, ssHfBox, ssRis;
         TextBlock ssStato;
@@ -332,6 +334,13 @@ namespace YaNec
             ssVhfBox.Children.Add(Riga("Impedenza di riferimento", ssZ0, new TextBlock { Text = "Ω (barra in alto)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             ssVhfBox.Children.Add(Riga("Criterio della distanza migliore", Scelta(new[] { "guadagno massimo", "lobi laterali piu' bassi", "G/T migliore", "guadagno con lobi sotto" }, 3, k => ssCrit = k), ssSoglia, new TextBlock { Text = "dB", VerticalAlignment = VerticalAlignment.Center }));
             ssRosMax = Tb("1,5", 50);   // 1.4 (IC8TEM 18/11/2026 14:47): oltre questo ROS attivo la distanza e' "da non scegliere"
+            // 1.5 (bozzetto approvato da IC8TEM il 18/11/2026 19:35): distanza valutata su due frequenze
+            ssF1 = Tb(run != null ? FN(run.FreqMHz, 3) : "144,100", 70); ssF2 = Tb("145,000", 70);
+            ssF1.IsEnabled = ssF2.IsEnabled = false;
+            ssVhfBox.Children.Add(Riga("Frequenze", Scelta(new[] { "una (barra in alto)", "due" }, 0, k => { ssFreqN = k + 1; ssF1.IsEnabled = ssF2.IsEnabled = k == 1; }), ssF1, ssF2,
+                new TextBlock { Text = "MHz (per esempio inizio e fine del tratto usato, oppure 144,1 e 145)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
+            ssVhfBox.Children.Add(Riga("Distanza proposta", Scelta(new[] { "caso peggiore delle due", "media delle due" }, 0, k => ssComb = k),
+                new TextBlock { Text = "caso peggiore: la distanza che rispetta il criterio a entrambe le frequenze; le due frequenze si calcolano una dopo l'altra (tempo doppio)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 520 }));
             ssVhfBox.Children.Add(Riga("ROS attivo massimo", ssRosMax, new TextBlock { Text = "oltre: \"ROS attivo alto: da non scegliere\" (escluse dalla scelta proposta)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 520 }));
             ssVhfBox.Children.Add(Riga("G/T (da Rumore e G/T)", new TextBlock { Text = "temperature del cielo e del terreno ed elevazione della voce Rumore e G/T", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 420 }));
             Button bv = Btn("Calcola accoppiamento e distanze (NEC)", true), bu = Btn("Usa la distanza proposta per lo stack", false), bc = Btn("Copia", false);
@@ -383,8 +392,21 @@ namespace YaNec
             CancellationToken ct = ssCts.Token;
             ssStato.Text = hf ? "calcolo dello stack HF sopra il terreno in corso..." : "calcolo di " + (righe * col) + " antenne a tutte le distanze in corso (una soluzione NEC per porta)...";
             ssRis.Children.Clear();
-            Task.Run(() => hf ? StackStudio.Hf(m0, f, n, h, Math.Min(dmin, dmax), Math.Max(dmin, dmax), Math.Min(amin, amax), Math.Max(amin, amax), ct)
-                              : StackStudio.Vhf(m0, f, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo, rosMax), ct)
+            bool due = !hf && ssFreqN == 2; bool media = ssComb == 1;
+            double f1 = due ? ParseNum(ssF1.Text, f) : f, f2 = due ? ParseNum(ssF2.Text, f) : f;
+            if (due && (!(f1 > 0) || !(f2 > 0) || Math.Abs(f1 - f2) < 1e-6)) { ssStato.Text = "Scrivi due frequenze diverse."; return; }
+            if (due) ssStato.Text = "calcolo di " + (righe * col) + " antenne a tutte le distanze, a " + FN(f1, 3) + " e poi a " + FN(f2, 3) + " MHz...";
+            Func<StackStudioRisultato> studio = () =>
+            {
+                if (hf) return StackStudio.Hf(m0, f, n, h, Math.Min(dmin, dmax), Math.Max(dmin, dmax), Math.Min(amin, amax), Math.Max(amin, amax), ct);
+                if (!due) return StackStudio.Vhf(m0, f, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo, rosMax);
+                StackStudioRisultato a = StackStudio.Vhf(m0, f1, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo, rosMax);
+                StackStudioRisultato b = StackStudio.Vhf(m0, f2, righe, col, Math.Min(kmin, kmax), Math.Max(kmin, kmax), z0, crit, soglia, tsky, tg, el, 2, ct, passo, rosMax, a.Dv0, a.Dh0);
+                StackStudioRisultato c = StackStudio.DueFrequenze(a, b, media, crit, soglia);
+                StackStudio.Matrice(c, m0, f1, righe, col, z0);
+                return c;
+            };
+            Task.Run(studio, ct)
                 .ContinueWith(t => Dispatcher.UIThread.Post(() =>
                 {
                     if (t.IsCanceled) return;
@@ -513,7 +535,38 @@ namespace YaNec
             Control tb = Tabella(rows, ie, id);
             Grid.SetColumn(tb, 0); Grid.SetColumn(grafici, 2);
             tg.Children.Add(tb); tg.Children.Add(grafici);
-            ssRis.Children.Add(Pannello("Distanze provate", tg, null, "Distanze di stack: accoppiamento e distanza migliore"));
+            ssRis.Children.Add(Pannello(r.Prima != null ? "Distanze provate (" + (r.Media ? "media" : "caso peggiore") + " delle due frequenze)" : "Distanze provate", tg, null, "Distanze di stack: accoppiamento e distanza migliore"));
+            if (r.Prima != null) ssRis.Children.Add(DueFrequenzePannello(r, righe));
+        }
+
+        /// <summary>1.5: tabella e grafico per le due frequenze, con la riga proposta (bozzetto approvato da IC8TEM il 18/11/2026 19:35).</summary>
+        Control DueFrequenzePannello(StackStudioRisultato r, int righe)
+        {
+            StackStudioRisultato a = r.Prima, b = r.Seconda;
+            string fa = FN(a.FreqMHz, 3), fb = FN(b.FreqMHz, 3);
+            List<string[]> rows = new List<string[]> { new[] { "distanza", "G " + fa, "lobi " + fa, "ROS att. " + fa, "G " + fb, "lobi " + fb, "ROS att. " + fb, "esito" } };
+            int ie = -1;
+            for (int i = 0; i < r.Punti.Count && i < a.Punti.Count && i < b.Punti.Count; i++)
+            {
+                StackPunto p = a.Punti[i], q = b.Punti[i], c = r.Punti[i];
+                string esito = c == r.Proposta ? Lang.T("scelta proposta") : (c.Escluso ? Lang.T("ROS attivo alto: da non scegliere") : "");
+                if (c == r.Proposta) ie = i + 1;
+                double dd = righe > 1 ? c.Dv : c.Dh;
+                rows.Add(new[] { FN(dd, 3) + " m", FN(p.G, 2), FN(p.Sll, 1), FN(p.RosAtt, 2), FN(q.G, 2), FN(q.Sll, 1), FN(q.RosAtt, 2), esito });
+            }
+            LineChart ch = new LineChart { Title = "", XLabel = Lang.T("distanza / distanza DL6WU"), YLabel = "dBi", Height = 260 };
+            ch.X = r.Punti.Select(q => q.K).ToArray();
+            ch.Series = new List<LineSeries>
+            {
+                new LineSeries { Name = "G " + fa + " MHz", Y = a.Punti.Take(r.Punti.Count).Select(q => q.G).ToArray(), Color = Pal.Accent },
+                new LineSeries { Name = "G " + fb + " MHz", Y = b.Punti.Take(r.Punti.Count).Select(q => q.G).ToArray(), Color = Pal.Orange, Dashed = true },
+            };
+            ch.MarkX = r.Proposta.K;
+            Grid tg = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
+            Control tb = Tabella(rows, ie);
+            Grid.SetColumn(tb, 0); Grid.SetColumn(ch, 2);
+            tg.Children.Add(tb); tg.Children.Add(ch);
+            return Pannello("Due frequenze: " + fa + " e " + fb + " MHz", tg, "stesse distanze in metri alle due frequenze; la riga verde e' quella proposta", "Distanze di stack: accoppiamento e distanza migliore");
         }
 
         void MostraStackHf(StackStudioRisultato r, int righe)

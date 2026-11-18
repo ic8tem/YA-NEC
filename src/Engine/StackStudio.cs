@@ -28,6 +28,9 @@ namespace YaNec.Engine
     {
         public List<StackPunto> Punti = new List<StackPunto>();
         public StackPunto Proposta, Dl6wu, GMax, SllMin, GtMax;
+        public double FreqMHz, PhiMax;                                  // 1.5: frequenza dello studio e azimut del massimo della singola
+        public StackStudioRisultato Prima, Seconda;                     // 1.5: studio su due frequenze (null con una sola)
+        public bool Media;
         public double GSingola, SllSingola, GtSingola, FrSingola, RosSingola, PerditaSingola, Dv0, Dh0, Lambda, RosMax = 1.5;
         public StackPunto RifMin;   // 1.4: distanza con il ROS attivo piu' basso
         public Complex[,] Z; public double[,] SdB;   // alla distanza proposta (VHF)
@@ -165,16 +168,21 @@ namespace YaNec.Engine
 
         /// <summary>Studio VHF/UHF in spazio libero. criterio: 0 guadagno massimo, 1 lobi piu' bassi, 2 G/T migliore, 3 guadagno con lobi sotto la soglia.</summary>
         public static StackStudioRisultato Vhf(NecModel base0, double f, int righe, int colonne, double kMin, double kMax, double z0,
-            int criterio, double sogliaSll, double tsky, double tground, double elev, int passiGriglia, CancellationToken ct, double passo = 0.05, double rosMax = 1.5)
+            int criterio, double sogliaSll, double tsky, double tground, double elev, int passiGriglia, CancellationToken ct, double passo = 0.05, double rosMax = 1.5,
+            double dv0Fisso = double.NaN, double dh0Fisso = double.NaN)
         {
-            StackStudioRisultato res = new StackStudioRisultato { Lambda = 299.792458 / f };
+            StackStudioRisultato res = new StackStudioRisultato { Lambda = 299.792458 / f, FreqMHz = f };
             NecModel mf = base0.Clone();
             mf.Ground = new GroundSpec { Kind = GroundKind.FreeSpace };
             mf.GroundFlag = 0;
             RunResult r1 = Analysis.Run(mf, mf.BuildGeometry(), f, 2.0, ct);
             res.Dv0 = StackDetect.Dl6wu(res.Lambda, r1.HpbwEl);
             res.Dh0 = StackDetect.Dl6wu(res.Lambda, r1.HpbwAz);
-            res.GSingola = r1.Engine.Gain(r1.ThetaMax, r1.PhiMax).GainTotal;
+            // 1.5 (stack su due frequenze, bozzetto approvato da IC8TEM il 18/11/2026 19:35): alla seconda frequenza le distanze in metri
+            // restano quelle della prima, cosi' le righe delle due tabelle sono le stesse distanze
+            if (dv0Fisso > 0) res.Dv0 = dv0Fisso;
+            if (dh0Fisso > 0) res.Dh0 = dh0Fisso;
+            res.PhiMax = r1.PhiMax;            res.GSingola = r1.Engine.Gain(r1.ThetaMax, r1.PhiMax).GainTotal;
             double sl, sa;
             LoboLaterale(r1.Engine, r1.ThetaMax, r1.PhiMax, righe > 1, out sl, out sa);
             res.SllSingola = sl;
@@ -215,6 +223,25 @@ namespace YaNec.Engine
                 res.Punti.Add(p);
                 if (Math.Abs(k - 1) < 1e-6) res.Dl6wu = p;
             }
+            Scegli(res, criterio, sogliaSll);
+            Matrice(res, base0, f, righe, colonne, z0);
+            return res;
+        }
+
+        /// <summary>Matrice completa (Z e |S|) alla distanza proposta, alla frequenza f.</summary>
+        public static void Matrice(StackStudioRisultato res, NecModel base0, double f, int righe, int colonne, double z0)
+        {
+            NecModel mf = base0.Clone();
+            mf.Ground = new GroundSpec { Kind = GroundKind.FreeSpace };
+            mf.GroundFlag = 0;
+            NecModel mp = StackDetect.Crea(mf, righe, colonne, res.Proposta.Dv, res.Proposta.Dh, res.PhiMax, null);
+            res.Z = MatriceZ(mp, mp.BuildGeometry(), f);
+            res.SdB = SdB(res.Z, z0);
+        }
+
+        /// <summary>Scelta della distanza proposta secondo il criterio (le distanze escluse per ROS attivo non entrano, se ne resta qualcuna).</summary>
+        public static void Scegli(StackStudioRisultato res, int criterio, double sogliaSll)
+        {
             // 1.4 (IC8TEM 18/11/2026 14:47): le distanze con ROS attivo sopra la soglia non entrano nella scelta (se lo sono tutte, si usano tutte)
             List<StackPunto> scegli = res.Punti.FindAll(x => !x.Escluso);
             if (scegli.Count == 0) scegli = res.Punti;
@@ -237,11 +264,39 @@ namespace YaNec.Engine
                 res.Proposta = best ?? res.SllMin;
                 res.Criterio = best != null ? "guadagno con lobi sotto " + sogliaSll.ToString("0", System.Globalization.CultureInfo.CurrentCulture) + " dB" : "nessuna distanza con i lobi sotto la soglia: lobi piu' bassi";
             }
-            // matrice completa alla distanza proposta
-            NecModel mp = StackDetect.Crea(mf, righe, colonne, res.Proposta.Dv, res.Proposta.Dh, r1.PhiMax, null);
-            res.Z = MatriceZ(mp, mp.BuildGeometry(), f);
-            res.SdB = SdB(res.Z, z0);
-            return res;
+        }
+
+        /// <summary>1.5: due frequenze. Ogni distanza prende il caso peggiore (o la media) delle due; la scelta si rifa' sui valori combinati.
+        /// a e b devono avere le stesse distanze (b calcolato con le distanze DL6WU di a).</summary>
+        public static StackStudioRisultato DueFrequenze(StackStudioRisultato a, StackStudioRisultato b, bool media, int criterio, double sogliaSll)
+        {
+            StackStudioRisultato c = new StackStudioRisultato
+            {
+                Lambda = a.Lambda, FreqMHz = a.FreqMHz, Dv0 = a.Dv0, Dh0 = a.Dh0, RosMax = a.RosMax, PhiMax = a.PhiMax, QuotaBase = a.QuotaBase,
+                GSingola = media ? (a.GSingola + b.GSingola) / 2 : Math.Min(a.GSingola, b.GSingola),
+                SllSingola = media ? (a.SllSingola + b.SllSingola) / 2 : Math.Max(a.SllSingola, b.SllSingola),
+                GtSingola = media ? (a.GtSingola + b.GtSingola) / 2 : Math.Min(a.GtSingola, b.GtSingola),
+                FrSingola = media ? (a.FrSingola + b.FrSingola) / 2 : Math.Min(a.FrSingola, b.FrSingola),
+                RosSingola = Math.Max(a.RosSingola, b.RosSingola), PerditaSingola = Math.Max(a.PerditaSingola, b.PerditaSingola),
+                Prima = a, Seconda = b, Media = media
+            };
+            int n = Math.Min(a.Punti.Count, b.Punti.Count);
+            for (int i = 0; i < n; i++)
+            {
+                StackPunto p = a.Punti[i], q = b.Punti[i];
+                Func<double, double, bool, double> v = (x, y, alto) => media ? (x + y) / 2 : (alto ? Math.Max(x, y) : Math.Min(x, y));
+                StackPunto r = new StackPunto
+                {
+                    K = p.K, Dv = p.Dv, Dh = p.Dh, G = v(p.G, q.G, false), Sll = v(p.Sll, q.Sll, true), SllAng = p.SllAng, Gt = v(p.Gt, q.Gt, false), Tant = Math.Max(p.Tant, q.Tant),
+                    S21 = Math.Max(p.S21, q.S21), Fr = v(p.Fr, q.Fr, false), RosAtt = Math.Max(p.RosAtt, q.RosAtt), PerditaRifl = Math.Max(p.PerditaRifl, q.PerditaRifl),
+                    Greal = v(p.Greal, q.Greal, false), Escluso = p.Escluso || q.Escluso
+                };
+                c.Punti.Add(r);
+                if (p == a.Dl6wu) c.Dl6wu = r;
+            }
+            Scegli(c, criterio, sogliaSll);
+            c.Criterio = c.Criterio + (media ? " (media delle due frequenze)" : " (caso peggiore delle due frequenze)");
+            return c;
         }
 
         static PatternGrid Griglia(RunResult r, int step)
