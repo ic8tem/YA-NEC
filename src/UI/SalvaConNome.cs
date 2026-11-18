@@ -292,7 +292,7 @@ namespace YaNec
                 else if (formato == 3) testo = FormatiExport.Weq(model, segmenti == 0, perso);
                 else
                 {
-                    testo = model.ToNec();
+                    testo = formato == 1 ? FormatiExport.NecPerAltri(model, perso) : model.ToNec();
                     if (cFormule.IsChecked == true && model.Variables.Count > 0)
                     {
                         System.Text.StringBuilder sb = new System.Text.StringBuilder();

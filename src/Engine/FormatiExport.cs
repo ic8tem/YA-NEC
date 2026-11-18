@@ -64,6 +64,30 @@ namespace YaNec.Engine
 
         // ------------------------------------------------------------------------------------------- .weq
         /// <summary>Testo .weq. segYaNec = false: segmenti con la formula di AutoEZ =ODD(WireLen / WL * 20).</summary>
+        /// <summary>1.5 (z5, IC8TEM 18/11/2026 23:01): .nec per gli altri programmi (nec2c, 4nec2, xnec2c). Le sorgenti di corrente di
+        /// EZNEC e le sorgenti accese solo in certe bande (AutoEZ «mark out») non esistono nel NEC-2: si scrivono le tensioni che YA-NEC
+        /// ricava alla frequenza del modello (V = Z I, Analysis.EffectiveSources) e solo le sorgenti accese, con una riga CM che lo dice.
+        /// Prima la corrente voluta finiva in EX 0 come tensione e nec2c dava un altro risultato con piu' sorgenti (fino al 93 %).</summary>
+        public static string NecPerAltri(NecModel m, List<string> perso)
+        {
+            bool mark = m.Sources.Exists(s => s.AttivaA != null);
+            if ((!m.CurrentSources && !mark) || m.Sources.Count == 0 || m.Geometry.Count == 0) return m.ToNec();
+            NecModel c = m.Clone();
+            SegmentGeometry g = Analysis.GeometriaDiCalcolo(c, c.FreqMHz);
+            List<SourceSpec> ss = new List<SourceSpec>();
+            foreach (SourceSpec s in Analysis.EffectiveSources(c, g, c.FreqMHz)) { SourceSpec k = s.Clone(); k.AttivaA = null; k.AttivaTesto = null; ss.Add(k); }
+            c.Sources = ss;
+            bool corr = c.CurrentSources;
+            c.CurrentSources = false;
+            string f = c.FreqMHz.ToString("0.######", CultureInfo.InvariantCulture);
+            // righe CM sotto gli 80 caratteri (nec2c legge 80 colonne)
+            string nota = corr ? "CM YA-NEC: sorgenti di corrente scritte come tensioni" + Environment.NewLine + "CM risolte a " + f + " MHz: valgono solo a questa frequenza"
+                               : "CM YA-NEC: solo le sorgenti accese a " + f + " MHz (mark out di AutoEZ)";
+            if (corr) perso.Add("Sorgenti di corrente: il NEC-2 non le ha, scritte come tensioni calcolate a " + f + " MHz (cambiando frequenza vanno ricalcolate in YA-NEC).");
+            if (mark) perso.Add("Sorgenti accese solo in certe bande: scritte solo quelle accese a " + f + " MHz.");
+            return nota + Environment.NewLine + c.ToNec();
+        }
+
         public static string Weq(NecModel m, bool segYaNec, List<string> perso)
         {
             SegmentGeometry g = m.BuildGeometry();

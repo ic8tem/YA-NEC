@@ -230,6 +230,9 @@ namespace YaNec.Engine
             {
                 e = ExcelTrig(e);
                 e = Regex.Replace(e, @"\bUnitsFact\b", "(" + unitaM.ToString("R", CI) + ")");
+                // 1.5 (z2, IC8TEM 18/11/2026 23:01): nei file di MultiNEC le variabili usano WL, la lunghezza d'onda nell'unita' delle coordinate
+                // (es. RightAngleDelta: E = WL*A / (2 + 2*SQRT(2)), G = WL*B); prima la variabile restava non definita e il file era rifiutato
+                if (m.FreqMHz > 0 && unitaM > 0) e = Regex.Replace(e, @"\bWL\b", "(" + (299.792458 / m.FreqMHz / unitaM).ToString("R", CI) + ")");
                 return Regex.Replace(e, @"\b([A-Z])\b(?!\s*\()", mt => { double vv; return vars.TryGetValue(mt.Groups[1].Value, out vv) ? "(" + vv.ToString("R", CI) + ")" : mt.Value; });
             };
             for (int giro = 0; giro < LettereWeq.Length && attese.Count > 0; giro++)
@@ -350,6 +353,8 @@ namespace YaNec.Engine
                 if (double.TryParse(s, NumberStyles.Float, CI, out d)) return d;
                 if (!s.StartsWith("=")) throw new NecException("valore non numerico \"" + s + "\"");
                 string e = ExcelTrig(ExcelTesto(s.Substring(1), testoVar, vars));
+                // 1.5 (z2): WL di MultiNEC/AutoEZ = lunghezza d'onda nell'unita' delle coordinate (Example3 di MultiNEC la usa nei fili)
+                e = Regex.Replace(e, @"\bWL\b", "(" + (wl / cu).ToString("R", CI) + ")");
                 // Excel: INT tronca verso il basso (in YA-NEC INT arrotonda), SQRT esiste gia'
                 e = Regex.Replace(e, @"\bINT\s*\(", "FLOOR(", RegexOptions.IgnoreCase);
                 e = Regex.Replace(e, @"\$?([A-Z])\$?(\d+)\b", mt =>

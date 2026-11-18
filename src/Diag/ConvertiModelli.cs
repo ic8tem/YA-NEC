@@ -30,7 +30,7 @@ namespace YaNec
                     else if (ext == ".yag") m = K6stiImport.LoadYag(f);
                     else if (ext == ".ant") m = K6stiImport.LoadAnt(f);
                     else m = NecModel.Load(f);
-                    File.WriteAllText(Path.Combine(dirOut, Path.GetFileNameWithoutExtension(f) + ".nec"), m.ToNec());
+                    File.WriteAllText(Path.Combine(dirOut, Path.GetFileNameWithoutExtension(f) + ".nec"), FormatiExport.NecPerAltri(m, new System.Collections.Generic.List<string>()));
                     SegmentGeometry g = m.BuildGeometry();
                     RunResult r = Analysis.Run(m, g, m.FreqMHz, 5.0);
                     csv.AppendLine(string.Join(";", nome, "ok", m.SourceFormat, m.Geometry.Count.ToString(ci), g.N.ToString(ci), m.Sources.Count.ToString(ci), m.Loads.Count.ToString(ci),
