@@ -609,11 +609,13 @@ namespace YaNec.Engine
     {
         public CalcJpole()
         {
-            Key = "jpole"; Title = "J-pole"; Source = "ARRL Antenna Book (J-pole: 3/4 lambda + 1/4 lambda, presa a circa 0,02 lambda)";
+            Key = "jpole"; Title = "J-pole"; Source = "ARRL Antenna Book (J-pole: 3/4 lambda + 1/4 lambda, presa a circa 0,02 lambda); Cebik W4RNL, Some J-Poles That I Have Known e What Is a Slim Jim?";
             Params.Add(new CalcParam("f", "Frequenza", 145, "MHz"));
             Params.Add(new CalcParam("d", "Diametro dei tubi", 12, "mm"));
             Params.Add(new CalcParam("s", "Distanza tra i tubi", 40, "mm"));
-            Params.Add(new CalcParam("t", "Presa del cavo dal fondo", 32, "mm", "Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm."));
+            Params.Add(new CalcParam("t", "Presa del cavo dal fondo", 32, "mm", "Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm."));
+            // 1.5 (proposta j2 e bozzetto Calcolatori 1.5 approvati da IC8TEM il 18/11/2026): Slim Jim, Cebik W4RNL "What Is a Slim Jim?"
+            Params.Insert(0, CalcParam.Scelta("tipo", "Tipo", 0, "La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.", "J-pole", "Slim Jim (filo ripiegato)"));
         }
         public override CalcOutput Compute()
         {
@@ -626,6 +628,14 @@ namespace YaNec.Engine
             o.Card("Presa del cavo", Calcolatori.N(tp * 1000, 0) + " mm", "dal fondo, da regolare per il ROS");
             o.Formula = "Formule: elemento lungo 0,75 lambda x 0,95, stub 0,25 lambda x 0,95, distanza circa 0,02 lambda, presa a circa 0,02 lambda dal ponticello: si sposta per il minimo ROS (il NEC lo mostra).";
             o.Warnings.Add("Senza un'impedenza di modo comune sul cavo la J-pole irradia anche dalla calza: il lobo si alza.");
+            bool slim = I("tipo") == 1;
+            double gap = 0.012 * lam;
+            if (slim)
+            {
+                o.Card("Filo ripiegato", Calcolatori.N((Ll - Lc - gap) * 100, 1) + " cm", "dalla cima fino a " + Calcolatori.N(gap * 1000, 0) + " mm sopra lo stub (0,012 lambda)");
+                o.Formula += " Slim Jim: il radiatore si chiude in cima e torna giu' parallelo, a " + Calcolatori.N(s * 1000, 0) + " mm, fino a 0,012 lambda sopra lo stub; la presa va piu' in alto (prova nec2c a 145 MHz, tubi 12 mm a 40 mm: 50 mm -> 48 + j7 ohm).";
+            }
+            o.Oks.Add("Cebik W4RNL: guadagno circa 2,5 dBi in spazio libero (J-pole standard: 2,46 dBi dopo il test AGT); la Slim Jim non guadagna di piu': le versioni a due fili stanno entro 0,08 dB, la migliore +0,23 dB");
             NecDeck d = new NecDeck(Title + " " + Calcolatori.N(f, 3) + " MHz");
             double seg = lam / 80;
             int tb = d.W(1, 0, 0, 0, s, 0, 0, a);
@@ -634,6 +644,11 @@ namespace YaNec.Engine
             int tc1 = d.Ws(seg, s, 0, 0, s, 0, tp, a);
             int tc2 = d.Ws(seg, s, 0, tp, s, 0, Lc, a, false, 3);
             int tf = d.W(1, 0, 0, tp, s, 0, tp, a);
+            if (slim)
+            {
+                d.W(1, 0, 0, Ll, s, 0, Ll, a);
+                d.Ws(seg, s, 0, Ll, s, 0, Lc + gap, a, false, 5);
+            }
             d.Ground(0);
             d.Ex(tf, 1);
             o.Nec = d.End(f);

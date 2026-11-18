@@ -1,0 +1,103 @@
+<title>Bozzetto Monte Carlo ottimizzatore</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC, linguetta Ottimizzatore: comandi di oggi in alto, nuovo riquadro "Monte Carlo" a sinistra, tabella dei candidati e istogramma a destra */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --nota:#e8f0fd; --giallo:#fff4d6; --giallob:#c99a06; --nuovo:#e3f5e8; --nuovob:#2f9e55;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1200px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:110ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.fam{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.pill{font:inherit;font-size:.86rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 13px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.pill:focus-visible,select:focus-visible,input:focus-visible,.bt:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.pan{display:none;grid-template-columns:380px minmax(0,1fr)}
+.pan.on{display:grid}
+@media (max-width:860px){.pan.on{grid-template-columns:1fr}}
+.sx{border-right:1px solid var(--line);padding:12px;display:grid;gap:6px;align-content:start}
+@media (max-width:860px){.sx{border-right:0;border-bottom:1px solid var(--line)}}
+.dx{padding:12px 14px;display:grid;gap:12px;align-content:start;min-width:0}
+h2{font-size:.95rem;margin:0}
+.fonte{font-size:.8rem;color:var(--mut)}
+.p{display:grid;grid-template-columns:minmax(0,1fr) 110px 40px;gap:8px;align-items:center;padding:3px 6px;border-radius:5px}
+.p label{font-size:.86rem}
+.p.n{background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob)}
+.p small{grid-column:1/-1;color:var(--mut);font-size:.76rem;margin-top:-2px}
+input,select{font:inherit;font-size:.84rem;padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink);width:100%;font-family:var(--mono)}
+select{font-family:var(--f)}
+.u{color:var(--mut);font-size:.8rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.bt{font:inherit;font-size:.84rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.84rem}
+th,td{border:1px solid var(--line);padding:4px 8px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--bg)}
+tr.n td{background:var(--nuovo)}
+.avv{border-left:4px solid var(--giallob);background:var(--giallo);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.leg{font-size:.8rem;color:var(--mut)}
+.leg i{display:inline-block;width:12px;height:12px;background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob);vertical-align:-2px;margin-right:4px}
+.fig{border:1px solid var(--line);border-radius:8px;padding:8px}
+svg text{fill:var(--mut);font-size:11px;font-family:var(--f)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+.rossa td{background:var(--giallo)}
+.ok{color:var(--nuovob);font-weight:600}
+.mono{font-family:var(--mono);font-size:.8rem;white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px}
+</style>
+<main>
+  <h1>Bozzetto – Monte Carlo nell'Ottimizzatore (versione leggera)</h1>
+  <p class="sub">Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da più punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati e il risultato finale. In verde le parti nuove; i numeri sono esempi.</p>
+  <p class="leg"><i></i>riga nuova</p>
+  <div class="app">
+    <div class="tabs"><span>Modello</span><span>Variabili</span><span class="on">Ottimizzatore</span><span>Tolleranze</span><span>Calcolatori</span></div>
+    <div class="fam"><button class="bt" type="button">+ aggiungi variabile</button><button class="bt" type="button">metodo: simplesso (Nelder-Mead) ▾</button><button class="bt a" type="button">▶ Avvia</button><button class="bt" type="button">■ Ferma</button><button class="bt" type="button">Applica al modello</button></div>
+    <section class="pan on">
+      <div class="sx">
+        <h2>Monte Carlo</h2>
+        <div class="p n"><label>Partenze a caso</label><input value="8"><span class="u">punti</span><small>Oltre al modello aperto, 8 partenze scelte a caso tra minimo e massimo di ogni variabile. 1 = come oggi.</small></div>
+        <div class="p n"><label>Candidati da controllare</label><input value="3"><span class="u">migliori</span><small>Dopo l'ottimizzazione, i 3 risultati migliori passano al controllo con le tolleranze.</small></div>
+        <div class="p n"><label>Copie per candidato</label><input value="50"><span class="u">copie</span><small>Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).</small></div>
+        <div class="p n"><label>Scegli il candidato con</label><select><option>la percentuale migliore di copie che rispettano le soglie</option><option>il caso peggiore migliore</option><option>il voto medio migliore</option></select><span></span></div>
+        <div class="p n"><label>Seme del caso</label><input value="1234"><span class="u"></span><small>Con lo stesso seme la prova si ripete uguale.</small></div>
+        <div class="box">Tempo stimato: 8 partenze × 4 min + 3 × 50 copie ≈ 34 min (oggi: 4 min).</div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Candidato</th><th>Voto nominale</th><th>G</th><th>F/B</th><th>ROS</th><th>Copie entro le soglie</th><th>F/B peggiore</th><th>Scelta</th></tr></thead>
+          <tbody>
+            <tr><td>partenza 3</td><td>94</td><td>13,9</td><td>27,8</td><td>1,08</td><td>58 %</td><td>17,9</td><td></td></tr>
+            <tr class="n"><td>partenza 6</td><td>92</td><td>13,8</td><td>25,1</td><td>1,10</td><td>91 %</td><td>21,4</td><td><b>proposta</b></td></tr>
+            <tr><td>modello aperto</td><td>89</td><td>13,7</td><td>24,0</td><td>1,15</td><td>86 %</td><td>20,2</td><td></td></tr>
+          </tbody></table></div>
+        <div class="fig">
+          <svg viewBox="0 0 520 170" width="100%" role="img" aria-label="Istogramma del F/B delle 50 copie per i due candidati migliori">
+            <line x1="40" y1="140" x2="500" y2="140" stroke="currentColor" opacity=".3"/>
+            <g fill="var(--blu)" opacity=".55"><rect x="60" y="120" width="22" height="20"/><rect x="86" y="105" width="22" height="35"/><rect x="112" y="80" width="22" height="60"/><rect x="138" y="60" width="22" height="80"/><rect x="164" y="70" width="22" height="70"/><rect x="190" y="95" width="22" height="45"/><rect x="216" y="115" width="22" height="25"/></g>
+            <g fill="var(--nuovob)" opacity=".7"><rect x="250" y="110" width="22" height="30"/><rect x="276" y="70" width="22" height="70"/><rect x="302" y="40" width="22" height="100"/><rect x="328" y="55" width="22" height="85"/><rect x="354" y="100" width="22" height="40"/></g>
+            <line x1="245" y1="20" x2="245" y2="140" stroke="#d9531a" stroke-dasharray="4 3"/><text x="249" y="30">soglia F/B 20 dB</text>
+            <text x="60" y="158">F/B delle 50 copie: partenza 3 (blu), partenza 6 (verde)</text>
+          </svg>
+        </div>
+        <div class="box">La partenza 3 ha il voto più alto ma regge male gli errori di costruzione; la 6 perde 2,7 dB di F/B nominale e resta sopra i 20 dB nel 91 % delle copie: la proposta è la 6. «Applica al modello» usa la riga scelta (si può cliccare un'altra riga).</div>
+        <div class="avv">Il controllo usa le tolleranze della linguetta Tolleranze: se lì sono vuote, valgono quelle predefinite (1 / 2 / 0,1 mm).</div>
+      </div>
+    </section>
+  </div>
+</main>
