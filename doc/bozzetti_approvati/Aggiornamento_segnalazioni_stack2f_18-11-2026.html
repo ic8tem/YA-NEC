@@ -1,0 +1,159 @@
+<title>Bozzetto aggiornamento, segnalazioni, stack 2 f</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC: tre pannelli (Aggiornamento, Segnala un problema, Stack su due frequenze) scelti con le pillole; dati a sinistra, risultati a destra */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --nota:#e8f0fd; --giallo:#fff4d6; --giallob:#c99a06; --nuovo:#e3f5e8; --nuovob:#2f9e55;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1200px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:110ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.fam{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.pill{font:inherit;font-size:.86rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 13px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.pill:focus-visible,select:focus-visible,input:focus-visible,.bt:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.pan{display:none;grid-template-columns:380px minmax(0,1fr)}
+.pan.on{display:grid}
+@media (max-width:860px){.pan.on{grid-template-columns:1fr}}
+.sx{border-right:1px solid var(--line);padding:12px;display:grid;gap:6px;align-content:start}
+@media (max-width:860px){.sx{border-right:0;border-bottom:1px solid var(--line)}}
+.dx{padding:12px 14px;display:grid;gap:12px;align-content:start;min-width:0}
+h2{font-size:.95rem;margin:0}
+.fonte{font-size:.8rem;color:var(--mut)}
+.p{display:grid;grid-template-columns:minmax(0,1fr) 110px 40px;gap:8px;align-items:center;padding:3px 6px;border-radius:5px}
+.p label{font-size:.86rem}
+.p.n{background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob)}
+.p small{grid-column:1/-1;color:var(--mut);font-size:.76rem;margin-top:-2px}
+input,select{font:inherit;font-size:.84rem;padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink);width:100%;font-family:var(--mono)}
+select{font-family:var(--f)}
+.u{color:var(--mut);font-size:.8rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.bt{font:inherit;font-size:.84rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.84rem}
+th,td{border:1px solid var(--line);padding:4px 8px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--bg)}
+tr.n td{background:var(--nuovo)}
+.avv{border-left:4px solid var(--giallob);background:var(--giallo);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.leg{font-size:.8rem;color:var(--mut)}
+.leg i{display:inline-block;width:12px;height:12px;background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob);vertical-align:-2px;margin-right:4px}
+.fig{border:1px solid var(--line);border-radius:8px;padding:8px}
+svg text{fill:var(--mut);font-size:11px;font-family:var(--f)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+.rossa td{background:var(--giallo)}
+.ok{color:var(--nuovob);font-weight:600}
+.mono{font-family:var(--mono);font-size:.8rem;white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px}
+</style>
+<main>
+  <h1>Bozzetto – Aggiornamento a richiesta, segnalazione dei problemi, stack su due frequenze</h1>
+  <p class="sub">Tre pannelli per i punti 6 e 7 della lista. In verde le righe nuove. I numeri sono esempi per far vedere l'aspetto.</p>
+  <p class="leg"><i></i>riga nuova</p>
+  <div class="app">
+    <div class="tabs"><span>Modello</span><span>Calcolo</span><span>Calcolatori</span><span class="on" id="tabn">Impostazioni</span><span>Documenti tecnici</span></div>
+    <div class="fam" id="fam">
+      <button class="pill on" data-p="agg" data-t="Impostazioni" type="button">Forza l'aggiornamento</button>
+      <button class="pill" data-p="err" data-t="Impostazioni" type="button">Segnala un problema</button>
+      <button class="pill" data-p="stk" data-t="Rumore, G/T e stack" type="button">Stack su due frequenze</button>
+    </div>
+
+    <section class="pan on" id="p-agg">
+      <div class="sx">
+        <h2>Impostazioni › Aggiornamento</h2>
+        <div class="p"><label>Versione installata</label><span class="mono" style="padding:2px 6px">1.4.1</span><span></span></div>
+        <div class="p"><label>Ultimo controllo</label><span>19:31 (ogni 3 minuti)</span><span></span></div>
+        <div class="p n"><label>Controlla adesso</label><button class="bt a" type="button">Forza l'aggiornamento</button><span></span><small>Controlla subito su GitHub senza aspettare i 3 minuti. Se c'è una versione nuova la scarica, avvisa e riavvia come oggi (10 s, il modello si riapre).</small></div>
+        <div class="p n"><label>Reinstalla la versione attuale</label><input type="checkbox" style="width:auto"><span></span><small>Riscarica e reinstalla anche se la versione è la stessa: utile se un file del programma si è rovinato.</small></div>
+      </div>
+      <div class="dx">
+        <h2>Esiti possibili (riga di stato sotto il pulsante)</h2>
+        <div class="wrap"><table><thead><tr><th>Caso</th><th>Cosa scrive</th></tr></thead><tbody>
+          <tr class="n"><td>Nessuna versione nuova</td><td>«Hai già l'ultima versione (1.4.1).» <span class="ok">✓</span></td></tr>
+          <tr class="n"><td>Versione nuova</td><td>«Trovata la 1.4.2: scarico…» poi il popup di riavvio di oggi</td></tr>
+          <tr class="n"><td>Niente rete o GitHub non risponde</td><td>«GitHub non risponde: riprovo da solo fra 3 minuti.»</td></tr>
+          <tr class="n"><td>Pacchetto Debian</td><td>«Su Debian l'aggiornamento passa da apt.» (pulsante grigio)</td></tr>
+        </tbody></table></div>
+        <div class="box">Il pulsante usa lo stesso aggiornamento automatico che c'è già: non aggiunge nulla di nuovo in rete e non manda dati.</div>
+      </div>
+    </section>
+
+    <section class="pan" id="p-err">
+      <div class="sx">
+        <h2>Impostazioni › Segnala un problema</h2>
+        <div class="p n"><label>Cosa è successo</label><span></span><span></span><small>Scrivi in poche righe cosa facevi e cosa ti aspettavi.</small></div>
+        <textarea style="width:100%;min-height:90px;font:inherit;font-size:.84rem;border:1px solid var(--line);border-radius:6px;padding:6px;background:var(--card);color:var(--ink)">Apro il modello e il diagramma 3D resta vuoto.</textarea>
+        <div class="p n"><label>Allega il modello aperto</label><input type="checkbox" checked style="width:auto"><span></span></div>
+        <div class="p n"><label>Allega i registri di oggi</label><input type="checkbox" checked style="width:auto"><span></span></div>
+        <div class="btns"><button class="bt a" type="button">Prepara la segnalazione</button><button class="bt" type="button">Apri la cartella</button></div>
+      </div>
+      <div class="dx">
+        <h2>Cosa fa</h2>
+        <div class="box">Crea nella cartella <b>data/segnalazioni</b> un file zip con la descrizione, la versione, il sistema operativo, il modello e i registri; poi apre la pagina «Nuova segnalazione» del GitHub di YA-NEC con il testo già scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.</div>
+        <div class="mono">segnalazione-1.4.1-2026-11-18-1931.zip
+  descrizione.txt     testo scritto sopra
+  sistema.txt         YA-NEC 1.4.1, Windows 10 22H2, .NET 8, RAM 16 GB
+  modello.nec         modello aperto (se spuntato)
+  registro-oggi.txt   registro del giorno (se spuntato)</div>
+        <div class="avv">Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale viene sostituito con «~». Senza account GitHub puoi mandare lo zip come preferisci.</div>
+      </div>
+    </section>
+
+    <section class="pan" id="p-stk">
+      <div class="sx">
+        <h2>Distanze di stack › Accoppiamento e distanza migliore (NEC)</h2>
+        <div class="p"><label>Distanze da provare</label><input value="0,5 – 2,5"><span class="u">× DL6WU</span></div>
+        <div class="p n"><label>Frequenze</label><select><option>una (barra in alto)</option><option selected>due</option></select><span></span></div>
+        <div class="p n"><label>Prima frequenza</label><input value="144,100"><span class="u">MHz</span></div>
+        <div class="p n"><label>Seconda frequenza</label><input value="145,000"><span class="u">MHz</span><small>Per esempio inizio e fine del tratto usato, oppure 144,1 e 145.</small></div>
+        <div class="p"><label>Criterio</label><select><option>guadagno con lobi sotto −13 dB</option></select><span></span></div>
+        <div class="p"><label>ROS attivo massimo</label><input value="1,5"><span></span></div>
+        <div class="p n"><label>Distanza proposta</label><select><option>caso peggiore delle due</option><option>media delle due</option></select><span></span><small>Caso peggiore: la distanza che rispetta il criterio a entrambe le frequenze.</small></div>
+        <div class="btns"><button class="bt a" type="button">Calcola</button></div>
+      </div>
+      <div class="dx">
+        <div class="wrap"><table>
+          <thead><tr><th>Distanza</th><th>G 144,1</th><th>Lobi 144,1</th><th>ROS att. 144,1</th><th>G 145,0</th><th>Lobi 145,0</th><th>ROS att. 145,0</th><th>Esito</th></tr></thead>
+          <tbody>
+            <tr><td>2,40 m</td><td>20,1</td><td>−16,2</td><td>1,22</td><td>20,2</td><td>−15,8</td><td>1,25</td><td>ok</td></tr>
+            <tr class="n"><td>2,70 m</td><td>20,4</td><td>−14,1</td><td>1,18</td><td>20,5</td><td>−13,2</td><td>1,20</td><td><b>proposta</b></td></tr>
+            <tr><td>2,95 m</td><td>20,6</td><td>−13,4</td><td>1,15</td><td>20,7</td><td>−12,1</td><td>1,17</td><td>lobi alti a 145,0</td></tr>
+            <tr class="rossa"><td>1,20 m</td><td>18,3</td><td>−19,0</td><td>1,71</td><td>18,1</td><td>−19,4</td><td>1,78</td><td>ROS attivo alto: da non scegliere</td></tr>
+          </tbody></table></div>
+        <div class="fig">
+          <svg viewBox="0 0 520 170" width="100%" role="img" aria-label="Guadagno in funzione della distanza alle due frequenze">
+            <line x1="40" y1="140" x2="500" y2="140" stroke="currentColor" opacity=".3"/><line x1="40" y1="20" x2="40" y2="140" stroke="currentColor" opacity=".3"/>
+            <path d="M40,120 C140,70 240,40 330,36 C400,36 450,50 500,70" fill="none" stroke="var(--blu)" stroke-width="2"/>
+            <path d="M40,124 C140,76 240,44 320,40 C390,42 440,60 500,84" fill="none" stroke="#d9531a" stroke-width="2" stroke-dasharray="6 3"/>
+            <line x1="300" y1="20" x2="300" y2="140" stroke="var(--nuovob)" stroke-dasharray="4 3"/>
+            <text x="304" y="30">proposta (caso peggiore)</text><text x="44" y="16">guadagno, dBi</text>
+            <text x="360" y="160">— 144,1 MHz   - - 145,0 MHz</text>
+          </svg>
+        </div>
+        <div class="box">Le due frequenze si calcolano una dopo l'altra: il tempo raddoppia. La riga verde è quella che va bene a tutte e due.</div>
+      </div>
+    </section>
+  </div>
+</main>
+<script>
+document.querySelectorAll('#fam .pill').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#fam .pill').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.pan').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.p));
+  document.getElementById('tabn').textContent=b.dataset.t;
+}));
+</script>

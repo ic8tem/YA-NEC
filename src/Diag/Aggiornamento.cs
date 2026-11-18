@@ -184,9 +184,13 @@ namespace YaNec
         }
 
         /// <summary>Un controllo (chiamato dal timer ogni 3 minuti; anche dal pulsante "Controlla adesso").</summary>
-        public static async Task Controlla()
+        public static async Task Controlla() { await Controlla(false, false); }
+
+        /// <summary>1.5: a mano = dal pulsante "Forza l'aggiornamento" (vale anche con l'automatico spento); reinstalla = anche la stessa versione.</summary>
+        public static async Task Controlla(bool aMano, bool reinstalla)
         {
-            if (MainWindow.ProveAutomatiche || !Attivo || cfg == null) return;
+            if (MainWindow.ProveAutomatiche || (!Attivo && !aMano) || cfg == null) return;
+            if (aMano) { string mp; if (DaPacchetto(out mp)) { ImpostaStato("installato con un pacchetto: si aggiorna con il gestore dei pacchetti (su Debian con apt)", false); return; } }
             string repo = Repository;
             if (repo.Length == 0 || repo.IndexOf('/') <= 0) { ImpostaStato("repository GitHub non ancora scelto (Impostazioni > Aggiornamento)", false); return; }
             if (Interlocked.Exchange(ref inCorso, 1) == 1) return;
@@ -206,7 +210,12 @@ namespace YaNec
                     }
                     Version nuova = Ver(tag), attuale = Ver(AppPaths.Version);
                     if (nuova == null || attuale == null) { ImpostaStato("versione pubblicata non leggibile: " + tag); return; }
-                    if (nuova <= attuale) { ImpostaStato("aggiornato: l'ultima versione pubblicata e' la " + nuova + " (" + DateTime.Now.ToString("HH:mm") + ")", false); return; }
+                    if (nuova < attuale || (nuova == attuale && !reinstalla))
+                    {
+                        ImpostaStato(aMano ? "hai gia' l'ultima versione (" + attuale + ")" : "aggiornato: l'ultima versione pubblicata e' la " + nuova + " (" + DateTime.Now.ToString("HH:mm") + ")", false);
+                        return;
+                    }
+                    if (nuova == attuale) ImpostaStato("reinstallo la versione " + nuova);
                     string nomeZip = NomePacchetto(nuova);
                     if (nomeZip == null)
                     {
@@ -241,7 +250,7 @@ namespace YaNec
             // (o e' privato): non e' un errore del programma, lo si dice in chiaro
             catch (System.Net.Http.HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
             { ImpostaStato("nessuna versione pubblicata su github.com/" + Repository + " (nessuna release, o repository privato): niente da aggiornare"); }
-            catch (Exception ex) { ImpostaStato("controllo non riuscito: " + ex.Message); }
+            catch (Exception ex) { ImpostaStato("controllo non riuscito: " + ex.Message + (aMano && Attivo ? " (riprovo da solo fra " + IntervalloMinuti + " minuti)" : "")); }
             finally { Interlocked.Exchange(ref inCorso, 0); }
         }
 

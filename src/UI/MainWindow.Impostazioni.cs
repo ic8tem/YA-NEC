@@ -269,11 +269,15 @@ namespace YaNec
             ToolTip.SetTip(tbRepo, "Repository GitHub da cui si aggiorna il programma, scritto come utente/nome (per esempio IC8TEM/YA-NEC). Invio per salvarlo in config.ini.");
             tbRepo.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); Status("Repository dell'aggiornamento: " + (tbRepo.Text ?? "").Trim()); } };
             ag.Children.Add(RigaImp("Repository", tbRepo));
-            Button bOra = Btn("Controlla adesso", false);
-            ToolTip.SetTip(bOra, "Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).");
+            // 1.5 (bozzetto approvato da IC8TEM il 18/11/2026 19:35): "Forza l'aggiornamento" e "Reinstalla la versione attuale"
+            Button bOra = Btn("Forza l'aggiornamento", true);
+            ToolTip.SetTip(bOra, "Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.");
             bOra.IsEnabled = !pacchetto;
-            bOra.Click += async (s, e) => { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); await Aggiornamento.Controlla(); };
+            CheckBox chkReinst = new CheckBox { Content = "Reinstalla la versione attuale", IsChecked = false, IsEnabled = !pacchetto, Margin = new Thickness(0, 2, 0, 0) };
+            ToolTip.SetTip(chkReinst, "Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.");
+            bOra.Click += async (s, e) => { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); await Aggiornamento.Controlla(true, chkReinst.IsChecked == true); };
             ag.Children.Add(bOra);
+            ag.Children.Add(chkReinst);
             lblAggiornamento = new TextBlock { Text = "Stato: " + (pacchetto ? "spento: " + motivoPacchetto : Aggiornamento.Stato), TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Muted), FontSize = 12, Margin = new Thickness(0, 4, 0, 0) };
             ag.Children.Add(lblAggiornamento);
             c3.Children.Add(Pannello("Aggiornamento", ag));
