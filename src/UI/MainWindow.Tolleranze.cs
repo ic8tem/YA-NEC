@@ -46,6 +46,7 @@ namespace YaNec
             TextBox tL = Tb("1,0", 70), tP = Tb("2,0", 70), tD = Tb("0,1", 70);
             sx.Children.Add(riga("Lunghezza elementi", tL, "± mm")); sx.Children.Add(riga("Posizione sul boom", tP, "± mm")); sx.Children.Add(riga("Diametro", tD, "± mm"));
             ComboBox cDist = new ComboBox { ItemsSource = new[] { "Uniforme", "Gaussiana (t = 2σ)" }, SelectedIndex = 0, Width = 140 };
+            tolTbL = tL; tolTbP = tP; tolTbD = tD; tolCbDist = cDist;   // 1.5: lette anche dal Monte Carlo dell'Ottimizzatore
             sx.Children.Add(riga("Distribuzione", cDist, ""));
             CheckBox cFor = new CheckBox { Content = "Includi foratura del boom (posizione)", IsChecked = true, Margin = new Thickness(2, 0) };
             CheckBox cSta = new CheckBox { Content = "Includi errore della staffa (isolatori)", Margin = new Thickness(2, 0) };

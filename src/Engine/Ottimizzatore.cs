@@ -50,6 +50,17 @@ namespace YaNec.Engine
         public Complex Z;               // alla frequenza principale
         public bool Valido;
         public string Errore;
+        public bool Rispetta = true;    // 1.5: tutte le soglie rispettate a tutte le frequenze
+    }
+
+    /// <summary>1.5 (bozzetto "Monte Carlo nell'Ottimizzatore" approvato da IC8TEM il 18/11/2026 19:36): un candidato controllato con le tolleranze.</summary>
+    public class OttCandidato
+    {
+        public string Nome = "";
+        public OttPasso Passo;
+        public double Percentuale = double.NaN, VotoPeggiore = double.NaN, VotoMedio = double.NaN, FbPeggiore = double.NaN, GPeggiore = double.NaN, RosPeggiore = double.NaN;
+        public List<double> FbCopie = new List<double>();
+        public bool Proposto;
     }
 
     public class Ottimizzatore
@@ -65,6 +76,15 @@ namespace YaNec.Engine
         /// <summary>1.0.17: direzione "avanti" fissata (theta, phi in gradi); NaN = quella del massimo del modello di partenza (come prima).
         /// Serve quando il modello di partenza non ha ancora il lobo dove lo si vuole (Yagi di MathWorks: tutti gli elementi a 0,5 lambda).</summary>
         public double ThetaAvanti = double.NaN, PhiAvanti = double.NaN;
+
+        // 1.5: Monte Carlo (versione leggera): partenze a caso e controllo dei migliori con le tolleranze di costruzione
+        public int PartenzeCaso = 0;              // partenze a caso oltre al modello aperto (0 = come prima)
+        public int NumCandidati = 0, Copie = 50, SceltaMc;   // SceltaMc: 0 percentuale entro le soglie, 1 caso peggiore, 2 voto medio
+        public int Seme = 1234;
+        public double TolL = 1.0, TolP = 2.0, TolD = 0.1;    // mm, dalla linguetta Tolleranze
+        public bool Gauss;
+        public readonly List<OttCandidato> Candidati = new List<OttCandidato>();
+        public event Action<string> Fase;                    // testo della fase in corso (partenza n di N, controllo...)
 
         public OttPasso Iniziale, Migliore;
         public readonly List<OttPasso> Registro = new List<OttPasso>();   // ultimi 128 passi che hanno migliorato o richiesto
@@ -106,8 +126,82 @@ namespace YaNec.Engine
             if (!Iniziale.Valido) throw new NecException("Il modello di partenza non si calcola: " + Iniziale.Errore);
             Migliore = Iniziale;
             Annota(Iniziale, true);
-            if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct);
+            Candidati.Clear();
+            if (PartenzeCaso <= 0 && NumCandidati <= 0) { if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct); return; }
+            Random rnd = new Random(Seme);
+            List<OttCandidato> fine = new List<OttCandidato>();
+            int maxTot = MaxPassi;
+            for (int k = 0; k <= Math.Max(0, PartenzeCaso) && !ct.IsCancellationRequested; k++)
+            {
+                if (k > 0)
+                {
+                    double[] xr = new double[att.Count];
+                    for (int i = 0; i < xr.Length; i++) xr[i] = att[i].Min + rnd.NextDouble() * (att[i].Max - att[i].Min);
+                    OttPasso p0 = Prova(xr, ct);
+                    if (!p0.Valido) continue;
+                    Migliore = p0;
+                }
+                Fase?.Invoke(k == 0 ? "partenza dal modello aperto" : "partenza a caso " + k + " di " + PartenzeCaso);
+                MaxPassi = Passi + maxTot;
+                if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct);
+                fine.Add(new OttCandidato { Nome = k == 0 ? "modello aperto" : "partenza " + k, Passo = Migliore });
+            }
+            MaxPassi = maxTot;
+            fine.Sort((a, b) => b.Passo.Voto.CompareTo(a.Passo.Voto));
+            // doppioni (due partenze finite nello stesso punto): si tiene il primo
+            List<OttCandidato> unici = new List<OttCandidato>();
+            foreach (OttCandidato c in fine) if (!unici.Exists(u => u.Passo == c.Passo)) unici.Add(c);
+            for (int i = 0; i < unici.Count && i < Math.Max(1, NumCandidati) && !ct.IsCancellationRequested; i++)
+            {
+                Fase?.Invoke("controllo con le tolleranze: candidato " + (i + 1) + " di " + Math.Min(unici.Count, Math.Max(1, NumCandidati)));
+                ControlloTolleranze(unici[i], rnd, ct);
+                Candidati.Add(unici[i]);
+            }
+            if (Candidati.Count == 0) return;
+            OttCandidato best = Candidati[0];
+            foreach (OttCandidato c in Candidati)
+            {
+                if (double.IsNaN(c.Percentuale)) continue;
+                if (SceltaMc == 0 && (c.Percentuale > best.Percentuale + 1e-9 || (Math.Abs(c.Percentuale - best.Percentuale) < 1e-9 && c.Passo.Voto > best.Passo.Voto))) best = c;
+                else if (SceltaMc == 1 && c.VotoPeggiore > best.VotoPeggiore) best = c;
+                else if (SceltaMc == 2 && c.VotoMedio > best.VotoMedio) best = c;
+            }
+            best.Proposto = true;
+            Migliore = best.Passo;
+            Annota(Migliore, true);
         }
+
+        /// <summary>Copie del candidato con le misure spostate a caso entro le tolleranze (lunghezza, posizione sul boom, diametro di ogni elemento).</summary>
+        void ControlloTolleranze(OttCandidato c, Random rnd, CancellationToken ct)
+        {
+            NecModel m = Modello(c.Passo.Valori);
+            SegmentGeometry g0 = m.BuildGeometry();
+            int asse;
+            List<Tolleranze.Elemento> el = Tolleranze.Elementi(m, g0, out asse);
+            int ok = 0, n = 0; double somma = 0, peggiore = double.MaxValue, fbP = double.MaxValue, gP = double.MaxValue, rosP = 0;
+            for (int i = 0; i < Math.Max(1, Copie) && !ct.IsCancellationRequested; i++)
+            {
+                SegmentGeometry g = Tolleranze.Copia(g0);
+                foreach (Tolleranze.Elemento e in el)
+                    Tolleranze.Applica(g, e, asse, Tolleranze.Errore(rnd, TolL, Gauss) / 1000, Tolleranze.Errore(rnd, TolP, Gauss) / 1000, Tolleranze.Errore(rnd, TolD, Gauss) / 1000, 0);
+                OttPasso r = new OttPasso { Valori = c.Passo.Valori, N = -1 };
+                try { Calcola(m, g, r, ct); }
+                catch (OperationCanceledException) { throw; }
+                catch (Exception ex) { r.Valido = false; r.Errore = ex.Message; }
+                if (!r.Valido) continue;
+                n++;
+                bool rispetta = HaSoglie() ? r.Rispetta : r.Voto >= c.Passo.Voto - 5;
+                if (rispetta) ok++;
+                somma += r.Voto; peggiore = Math.Min(peggiore, r.Voto);
+                fbP = Math.Min(fbP, r.FB); gP = Math.Min(gP, r.G); rosP = Math.Max(rosP, r.RosPeggiore);
+                c.FbCopie.Add(r.FB);
+            }
+            if (n == 0) return;
+            c.Percentuale = 100.0 * ok / n; c.VotoMedio = somma / n; c.VotoPeggiore = peggiore;
+            c.FbPeggiore = fbP; c.GPeggiore = gP; c.RosPeggiore = rosP;
+        }
+
+        bool HaSoglie() { return Obiettivi.Exists(o => o.Peso > 0 && o.HaSoglia && o.Chiave != "el" && o.Chiave != "z" && o.Chiave != "i"); }
 
         // ---------------------------------------------------------------------------------------------
         // metodi
@@ -229,6 +323,19 @@ namespace YaNec.Engine
                 NecModel m = Modello(y);
                 SegmentGeometry g = m.BuildGeometry();
                 if (MantieniBoom && Math.Abs(Boom(m, g) - boom0) > 5e-4) throw new NecException("lunghezza del boom cambiata");
+                Calcola(m, g, r, ct);
+            }
+            catch (OperationCanceledException) { throw; }
+            catch (Exception ex) { r.Valido = false; r.Errore = ex.Message; }
+            cache[k.ToString()] = r;
+            if (PassoFatto != null) PassoFatto(r, false);
+            return r;
+        }
+
+        /// <summary>Voto e risultati di un modello gia' costruito (anche con la geometria spostata dal Monte Carlo). Rispetta: tutte le soglie a tutte le frequenze.</summary>
+        void Calcola(NecModel m, SegmentGeometry g, OttPasso r, CancellationToken ct)
+        {
+            {
                 List<SweepPoint> sp = Sweep(m, g, ct);
                 RunResult rc = null;
                 foreach (OttObiettivo o in Obiettivi)
@@ -244,6 +351,7 @@ namespace YaNec.Engine
                         if (o.Peso <= 0) continue;
                         double s = Punteggio(o, p, fi, rc, m.Z0);
                         voto += o.Peso * s; pesi += o.Peso;
+                        if (o.HaSoglia && o.Chiave != "el" && o.Chiave != "z" && o.Chiave != "i" && s < 1) r.Rispetta = false;
                     }
                 }
                 SweepPoint pp = sp[Principale];
@@ -252,11 +360,6 @@ namespace YaNec.Engine
                 r.Elev = rc != null ? rc.ElevationOfMax : 90 - thFwd;
                 r.Valido = true;
             }
-            catch (OperationCanceledException) { throw; }
-            catch (Exception ex) { r.Valido = false; r.Errore = ex.Message; }
-            cache[k.ToString()] = r;
-            if (PassoFatto != null) PassoFatto(r, false);
-            return r;
         }
 
         double Punteggio(OttObiettivo o, SweepPoint p, int fi, RunResult rc, double z0)

@@ -169,8 +169,34 @@ namespace YaNec
             ottRegPanel = new StackPanel { Spacing = 0 };
             rp.Children.Add(ottRegPanel);
             rp.Children.Add(Nota("Il voto migliore non e' sempre quello che preferisci: qui tieni gli ultimi 128 passi, li confronti e scegli tu (per esempio un passo con guadagno piu' alto e F/B un po' piu' basso)."));
+            // 1.5 (bozzetto "Monte Carlo nell'Ottimizzatore" approvato da IC8TEM il 18/11/2026 19:36)
+            StackPanel mc = new StackPanel { Spacing = 3 };
+            ottMcPart = Tb("8", 50); ottMcCand = Tb("3", 50); ottMcCopie = Tb("50", 50); ottMcSeme = Tb("1234", 70);
+            ToolTip.SetTip(ottMcPart, "Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.");
+            ToolTip.SetTip(ottMcCand, "Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.");
+            ToolTip.SetTip(ottMcCopie, "Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).");
+            ToolTip.SetTip(ottMcSeme, "Con lo stesso seme la prova si ripete uguale.");
+            Func<string, Control, string, Control> rmc = (et, c, um) =>
+            {
+                WrapPanel w = new WrapPanel { Margin = new Thickness(0, 1) };
+                w.Children.Add(new TextBlock { Text = et, Width = 170, VerticalAlignment = VerticalAlignment.Center });
+                w.Children.Add(c);
+                w.Children.Add(new TextBlock { Text = um, Margin = new Thickness(6, 0, 0, 0), VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) });
+                return w;
+            };
+            mc.Children.Add(rmc("Partenze a caso", ottMcPart, "punti"));
+            mc.Children.Add(rmc("Candidati da controllare", ottMcCand, "migliori"));
+            mc.Children.Add(rmc("Copie per candidato", ottMcCopie, "copie"));
+            ottMcScelta = new ComboBox { ItemsSource = new[] { "la percentuale migliore di copie entro le soglie", "il caso peggiore migliore", "il voto medio migliore" }, SelectedIndex = 0, MinWidth = 260 };
+            mc.Children.Add(rmc("Scegli il candidato con", ottMcScelta, ""));
+            mc.Children.Add(rmc("Seme del caso", ottMcSeme, ""));
+            mc.Children.Add(Nota("Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. " +
+                                 "Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli."));
+            ottMcRis = new StackPanel { Spacing = 4 };
+            mc.Children.Add(ottMcRis);
             StackPanel c2s = new StackPanel();
             c2s.Children.Add(Pannello("2. Variabili che l'ottimizzatore puo' cambiare", vp));
+            c2s.Children.Add(Pannello("Monte Carlo", mc));
             c2s.Children.Add(Pannello("3. Registro dei passi - clic su una riga per riprenderla", rp));
             Control c2 = new ScrollViewer { Content = c2s, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(8, 0) };
 
@@ -479,6 +505,12 @@ namespace YaNec
         // ------------------------------------------------------------------------------------------------
         // comandi
         // ------------------------------------------------------------------------------------------------
+        TextBox ottMcPart, ottMcCand, ottMcCopie, ottMcSeme;
+        TextBox tolTbL, tolTbP, tolTbD;   // dalla linguetta Tolleranze (null finche' non e' stata aperta)
+        ComboBox tolCbDist;
+        ComboBox ottMcScelta;
+        StackPanel ottMcRis;
+
         async void OttAvvia()
         {
             if (model == null) { Status("Apri prima un modello.", true); return; }
@@ -498,6 +530,15 @@ namespace YaNec
                 }
             }
             o.Partenza = partenza;
+            // 1.5: Monte Carlo
+            o.PartenzeCaso = Math.Max(0, (int)Math.Round(ParseNum(ottMcPart.Text, 0)));
+            o.NumCandidati = Math.Max(0, (int)Math.Round(ParseNum(ottMcCand.Text, 3)));
+            o.Copie = Math.Max(1, (int)Math.Round(ParseNum(ottMcCopie.Text, 50)));
+            o.Seme = (int)Math.Round(ParseNum(ottMcSeme.Text, 1234));
+            o.SceltaMc = Math.Max(0, ottMcScelta.SelectedIndex);
+            if (tolTbL != null) { o.TolL = ParseNum(tolTbL.Text, 1); o.TolP = ParseNum(tolTbP.Text, 2); o.TolD = ParseNum(tolTbD.Text, 0.1); o.Gauss = tolCbDist.SelectedIndex == 1; }
+            ottMcRis.Children.Clear();
+            o.Fase += t => Dispatcher.UIThread.Post(() => Status("Ottimizzatore: " + t));
             ott = o;
             ottScelto = null;
             ottSerieMigliore.Clear(); ottSeriePasso.Clear();
@@ -528,9 +569,42 @@ namespace YaNec
             ottAvvia.IsEnabled = true; ottFerma.IsEnabled = false;
             ottScelto = o.Migliore;
             OttAggiorna(true, esito);
+            OttMostraCandidati(o);
             if (o.Migliore != null && o.Iniziale != null)
                 Registro.Scrivi("CALCOLO", string.Format(CultureInfo.InvariantCulture, "ottimizzatore {0}: {1} passi, voto {2:0.0} -> {3:0.0}", esito, o.Passi, o.Iniziale.Voto, o.Migliore.Voto));
             await OttDiagrammi();
+        }
+
+        /// <summary>1.5: tabella dei candidati controllati con le tolleranze; clic su una riga = riprendi quel candidato.</summary>
+        void OttMostraCandidati(Ottimizzatore o)
+        {
+            ottMcRis.Children.Clear();
+            if (o.Candidati.Count == 0) return;
+            Grid g = new Grid();
+            string[] h = { "candidato", "voto", "G", "F/B", "ROS", "copie entro le soglie", "F/B peggiore", "scelta" };
+            for (int c = 0; c < h.Length; c++) g.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
+            for (int r = 0; r <= o.Candidati.Count; r++)
+            {
+                g.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                OttCandidato k = r == 0 ? null : o.Candidati[r - 1];
+                string[] v = k == null ? h : new[] { k.Nome, FN(k.Passo.Voto, 1), FN(k.Passo.G, 2), FN(k.Passo.FB, 1), FN(k.Passo.RosPeggiore, 2),
+                    double.IsNaN(k.Percentuale) ? "-" : FN(k.Percentuale, 0) + " %", FN(k.FbPeggiore, 1), k.Proposto ? "proposta" : "" };
+                for (int c = 0; c < h.Length; c++)
+                {
+                    Border b = new Border { BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0.5), Padding = new Thickness(6, 2),
+                        Background = Pal.B(r == 0 ? Pal.Panel2 : (k.Proposto ? Pal.A(60, Pal.Green) : Pal.Panel)),
+                        Child = new TextBlock { Text = v[c], FontWeight = r == 0 || (k != null && k.Proposto) ? FontWeight.SemiBold : FontWeight.Normal, Foreground = Pal.B(Pal.Fore) } };
+                    if (k != null)
+                    {
+                        OttCandidato kk = k;
+                        b.PointerPressed += (s, e) => { ottScelto = kk.Passo; OttAggiorna(true); _ = OttDiagrammi(); };
+                        b.Cursor = new Avalonia.Input.Cursor(Avalonia.Input.StandardCursorType.Hand);
+                    }
+                    Grid.SetRow(b, r); Grid.SetColumn(b, c); g.Children.Add(b);
+                }
+            }
+            ottMcRis.Children.Add(new TextBlock { Text = "Candidati controllati con le tolleranze (clic su una riga per riprenderla; «Applica al modello» usa la riga scelta)", FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore), TextWrapping = TextWrapping.Wrap });
+            ottMcRis.Children.Add(new ScrollViewer { Content = g, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled });
         }
 
         void OttAggiorna(bool fine, string esito = null)

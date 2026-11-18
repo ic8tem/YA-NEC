@@ -88,7 +88,7 @@ namespace YaNec.Engine
             return l;
         }
 
-        static SegmentGeometry Copia(SegmentGeometry g)
+        internal static SegmentGeometry Copia(SegmentGeometry g)
         {
             SegmentGeometry c = (SegmentGeometry)typeof(SegmentGeometry).GetMethod("MemberwiseClone", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(g, null);
             c.X1 = (double[])g.X1.Clone(); c.Y1 = (double[])g.Y1.Clone(); c.Z1 = (double[])g.Z1.Clone();
@@ -99,7 +99,7 @@ namespace YaNec.Engine
         }
 
         /// <summary>Applica a un elemento: dL allungamento totale, dP spostamento lungo il boom, dD variazione del diametro, dC spostamento lungo il filo (m).</summary>
-        static void Applica(SegmentGeometry g, Elemento e, int asse, double dL, double dP, double dD, double dC)
+        internal static void Applica(SegmentGeometry g, Elemento e, int asse, double dL, double dP, double dD, double dC)
         {
             double cx = 0, cy = 0, cz = 0; int n = 0;
             for (int i = 0; i < g.N; i++) if (g.Tag[i] == e.Tag) { cx += g.X1[i] + g.X2[i]; cy += g.Y1[i] + g.Y2[i]; cz += g.Z1[i] + g.Z2[i]; n += 2; }
@@ -129,7 +129,7 @@ namespace YaNec.Engine
         static double Gauss(Random r) { double u1 = 1 - r.NextDouble(), u2 = r.NextDouble(); return Math.Sqrt(-2 * Math.Log(u1)) * Math.Cos(2 * Math.PI * u2); }
 
         /// <summary>Errore casuale con tolleranza t: uniforme in [-t, t] oppure gaussiano con t = 2 sigma.</summary>
-        static double Errore(Random r, double t, bool gauss) { return gauss ? Gauss(r) * t / 2 : (2 * r.NextDouble() - 1) * t; }
+        internal static double Errore(Random r, double t, bool gauss) { return gauss ? Gauss(r) * t / 2 : (2 * r.NextDouble() - 1) * t; }
 
         /// <summary>Sensibilita' (dB di calo del F/B per mm) e tolleranza ammessa di ogni elemento. Il budget di calo del F/B e' diviso
         /// tra gli elementi come somma quadratica (errori indipendenti): ogni elemento puo' far calare il F/B di CaloFbMax / radice(N).</summary>
