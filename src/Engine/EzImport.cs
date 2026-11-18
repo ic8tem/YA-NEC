@@ -177,6 +177,16 @@ namespace YaNec.Engine
             return r;
         }
 
+        /// <summary>1.5 (prova .weq di IC8TEM, 18/11/2026): colonna «mark out» di AutoEZ ("x" o =IF(...)) delle tabelle di sorgenti, carichi e
+        /// linee. Nel .weq e' la 13a colonna (indice 12): la 0.4.7 leggeva la 14a, vuota, e i "x" di 2el-30-40 e le formule delle quad
+        /// pentabanda di AC6LA non venivano mai letti. Si guarda la 13a e, se vuota, la 14a.</summary>
+        static string Marca(string[] c)
+        {
+            string t = Cell(c, 12);
+            if (t.Length == 0) t = Cell(c, 13);
+            return t.Equals("x", StringComparison.OrdinalIgnoreCase) || t.StartsWith("=") ? t : "";
+        }
+
         static string Cell(string[] c, int i)
         {
             if (i >= c.Length) return "";
@@ -503,12 +513,12 @@ namespace YaNec.Engine
                 pct = sv && Cell(c, 1).Length == 0 ? 50 : cella(1); amp = cella(2); ph = cella(3);
                 if (double.IsNaN(wd) || double.IsNaN(pct) || double.IsNaN(amp) || double.IsNaN(ph)) continue;
                 w = (int)Math.Round(wd);
-                if (Cell(c, 13).Equals("x", StringComparison.OrdinalIgnoreCase)) { srcEsclusi++; continue; }   // sorgente esclusa in AutoEZ
+                if (Marca(c).Equals("x", StringComparison.OrdinalIgnoreCase)) { srcEsclusi++; continue; }   // sorgente esclusa in AutoEZ
                 // 1.5 (prova .weq di IC8TEM, 18/11/2026: quad pentabanda di AC6LA): =IF(condizione su Freq, "", "X") = sorgente accesa solo dove la
                 // condizione e' vera; prima era ignorata e le cinque sorgenti restavano accese insieme
                 Func<double, bool> attivaA = null; string attivaTesto = null;
                 {
-                    Match mo = Regex.Match(Cell(c, 13), @"^=\s*IF\s*\((.+),\s*""+\s*,\s*""+X""+\s*\)\s*$", RegexOptions.IgnoreCase);
+                    Match mo = Regex.Match(Marca(c), @"^=\s*IF\s*\((.+),\s*""+\s*,\s*""+X""+\s*\)\s*$", RegexOptions.IgnoreCase);
                     if (mo.Success)
                     {
                         string cond = mo.Groups[1].Value;
@@ -582,7 +592,7 @@ namespace YaNec.Engine
                         // 0.4.7 (registro 13/11 17:54, 2el-30-40.weq): "x" nella colonna N = carico escluso in AutoEZ; celle vuote = 0.
                         // Colonna G compilata (Ser/Par) = carico RLC di EZNEC: R ohm, L uH, C pF (vuoto = assente); altrimenti R + jX con
                         // il collegamento della colonna H. Le bobine "indut" di 2el-30-40 (13,4 uH) confermano L in microhenry.
-                        if (Cell(c, 13).Equals("x", StringComparison.OrdinalIgnoreCase)) { carEsclusi++; continue; }
+                        if (Marca(c).Equals("x", StringComparison.OrdinalIgnoreCase)) { carEsclusi++; continue; }
                         Func<int, double> nv = col => Cell(c, col).Length > 0 ? num(li, col) : 0;
                         double pct = num(li, 1), r = nv(2);
                         string rlc = Cell(c, 6), tipo = Cell(c, 7);
@@ -653,12 +663,20 @@ namespace YaNec.Engine
                     }
                     int w1, w2;
                     double w1d;
+                    // 1.5: stub con "Open"/"Short" nella prima colonna e il filo nella terza (quad pentabanda di AC6LA): lo stub di YA-NEC si
+                    // appoggia a una linea TL sullo stesso segmento; qui non ce n'e', quindi resta fuori con un avviso
+                    if (Cell(c, 0).Equals("Open", StringComparison.OrdinalIgnoreCase) || Cell(c, 0).Equals("Short", StringComparison.OrdinalIgnoreCase))
+                    {
+                        m.Warnings.Add("Riga " + (li + 1) + " del .weq: stub " + (Cell(c, 0).StartsWith("O", StringComparison.OrdinalIgnoreCase) ? "aperto" : "in corto") + " sul filo " + Cell(c, 2) +
+                            (Marca(c).Length > 0 ? " (acceso solo in certe bande)" : "") + " senza una linea sullo stesso segmento: non importato (YA-NEC non ha ancora gli stub a una porta).");
+                        continue;
+                    }
                     if (virtuali.ContainsKey(Cell(c, 0))) w1d = virtuali[Cell(c, 0)];
                     else try { w1d = numOFormula(Cell(c, 0), li); } catch (Exception) { continue; }
                     w1 = (int)Math.Round(w1d);
                     if (w1 < 1 || w1 > wireSegs.Count) continue;
                     // colonna N: "x" o =IF(condizione, "", "X") = linea esclusa in AutoEZ
-                    string esc = Cell(c, 13);
+                    string esc = Marca(c);
                     if (esc.Equals("x", StringComparison.OrdinalIgnoreCase)) continue;
                     Match mi = Regex.Match(esc, @"^=\s*IF\s*\((.+?),\s*""+\s*,\s*""+X""+\s*\)\s*$", RegexOptions.IgnoreCase);
                     if (mi.Success) { bool inc; try { inc = CondizioneExcel(mi.Groups[1].Value, vars); } catch (NecException) { inc = true; } if (!inc) continue; }
