@@ -96,3 +96,13 @@ SERVIZI DI RETE USATI
 api.github.com e github.com: controllo e download degli aggiornamenti dal repository
 ic8tem/YA-NEC (ogni 30 minuti; si spegne in Impostazioni > Aggiornamento). Non si
 invia nessun dato dell'utente.
+
+---------------------------------------------------------
+ANGOLI DI ARRIVO (tools/angoli, dalla 1.5)
+
+Metodo di W7IV, HFTA Stack Planner (core/aoa_gen.py), https://github.com/W7IV/hfta-stack-planner
+MIT License - Copyright (c) 2026 W7IV. Lo script di YA-NEC e' riscritto (origini italiane,
+regioni viste dall'Italia, un file per livello solare) seguendo quel metodo.
+voacapl - J. A. Watson, https://github.com/jawatson/voacapl (modifiche CC0); VOACAP di NTIA/ITS,
+opera del governo USA non soggetta a copyright. Usato solo per calcolare le tabelle .PRN; i file
+COPYING e AUTHORS di voacapl accompagnano le tabelle.
