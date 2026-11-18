@@ -532,6 +532,10 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("D", "Diametro", 1.0, "m", "Per il quadrato: il lato; per l'ottagono: il diametro tra due vertici opposti."));
             Params.Add(new CalcParam("mat", "Conduttore", 0, "") { Choices = Mat });
             Params.Add(new CalcParam("d", "ø del conduttore", 22, "mm"));
+            // 1.5 (proposta l1 e bozzetto Calcolatori 1.5 approvati da IC8TEM il 18/11/2026; fattore di prossimita' di Smith non usato, risposta NO
+            // delle 21:22): piu' spire con il solo effetto pelle e l'avviso sulla prossimita'
+            Params.Add(new CalcParam("n", "Numero di spire", 1, "", "1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N."));
+            Params.Add(new CalcParam("passo", "Passo tra le spire (asse-asse)", 66, "mm", "Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato)."));
             Params.Add(new CalcParam("p", "Potenza", 100, "W"));
             Params.Add(new CalcParam("h", "Quota", 3, "m", "Quota del centro per il calcolo con il terreno (0 = spazio libero)."));
             Params.Add(CalcParam.Scelta("acc", "Accoppiamento", 0, null, "loop di Faraday D/5", "gamma"));
@@ -581,14 +585,14 @@ namespace YaNec.Engine
             Deq = Math.Sqrt(4 * A / Math.PI);
         }
 
-        static double Eff(int forma, double D, double dt, double f, double sigma)
+        static double Eff(int forma, double D, double dt, double f, double sigma, int nsp = 1)
         {
             double A, per, Deq;
             Forma(forma, D, out A, out per, out Deq);
             double lam = C0 / (f / 1e6);
-            double rr = 31171 * Math.Pow(A / (lam * lam), 2);
+            double rr = 31171 * Math.Pow(nsp * A / (lam * lam), 2);
             double rs = Math.Sqrt(Math.PI * f * 4e-7 * Math.PI / sigma);
-            double rl = rs * per / (Math.PI * dt);
+            double rl = nsp * rs * per / (Math.PI * dt);
             return rr / (rr + rl);
         }
 
@@ -600,10 +604,11 @@ namespace YaNec.Engine
             double lam = C0 / P("f");
             double A, per, Deq;
             Forma(forma, D, out A, out per, out Deq);
-            double rr = 31171 * Math.Pow(A / (lam * lam), 2);
+            int nsp = Math.Max(1, Math.Min(20, I("n")));
+            double rr = 31171 * Math.Pow(nsp * A / (lam * lam), 2);
             double mu0 = 4e-7 * Math.PI, rs = Math.Sqrt(Math.PI * f * mu0 / Sigma[mat]);
-            double rl = rs * per / (Math.PI * dt);
-            double L = forma == 2 ? 2 * mu0 * D / Math.PI * (Math.Log(D / (dt / 2)) - 0.774) : mu0 * Deq / 2 * (Math.Log(8 * Deq / dt) - 2);
+            double rl = nsp * rs * per / (Math.PI * dt);
+            double L = nsp * nsp * (forma == 2 ? 2 * mu0 * D / Math.PI * (Math.Log(D / (dt / 2)) - 0.774) : mu0 * Deq / 2 * (Math.Log(8 * Deq / dt) - 2));
             double w = 2 * Math.PI * f, xl = w * L;
             double cap = 1 / (w * w * L);
             double rt = rr + rl, q = xl / rt, ql = q / 2;
@@ -617,13 +622,20 @@ namespace YaNec.Engine
             double dc = D / 5;
             Hint("acc", I("acc") == 0 ? "anello da " + Calcolatori.N(dc, 2) + " m" : "presa a gamma sul lato basso");
             o.Card("Resistenza di radiazione", Calcolatori.Ohm(rr), Calcolatori.N(rr, 5) + " ohm");
-            o.Card("Resistenza di perdita", Calcolatori.Ohm(rl), Mat[mat].Replace("tubo di ", "") + ", effetto pelle");
+            o.Card("Resistenza di perdita", Calcolatori.Ohm(rl), Mat[mat].Replace("tubo di ", "") + ", effetto pelle" + (nsp > 1 ? " (" + nsp + " spire)" : ""));
+            if (nsp > 1)
+            {
+                double pas = P("passo");
+                o.Warnings.Add("Con " + nsp + " spire la perdita e' solo quella dell'effetto pelle: l'effetto di prossimita' tra le spire vicine non e' calcolato, quindi il rendimento vero e' piu' basso (ARRL Antenna Book 15ª: 8 spire, 10 % calcolato, 3 % reale)." +
+                    (pas > 0 && pas < 2 * P("d") ? " Passo di " + Calcolatori.N(pas, 0) + " mm, sotto 2 diametri del conduttore: allarga il passo." : ""));
+                o.Oks.Add("Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.");
+            }
             o.Card("Efficienza", Calcolatori.N(eff * 100, 0) + " %", Calcolatori.N(10 * Math.Log10(eff), 1) + " dB", true);
             o.Card("Guadagno", Calcolatori.N(10 * Math.Log10(eff) + 1.76, 1) + " dBi", "spazio libero");
             o.Card("Induttanza / C", Calcolatori.Henry(L).Replace("µH", "uH"), "C di accordo " + Calcolatori.Farad(cap));
             o.Card("Q / banda", Calcolatori.N(Math.Round(q / 100) * 100, 0) + " / " + Calcolatori.N(bw / 1000, 1) + " kHz", "Q caricato " + Calcolatori.N(Math.Round(ql / 10) * 10, 0));
             o.Card("Corrente / tensione su C", Calcolatori.N(i, 0) + " A / " + Calcolatori.N(v / 1000, 1) + " kV", "con " + Calcolatori.N(pw, 0) + " W");
-            o.Formula = "Formule: Rr = 31171 A²/λ⁴; Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, " +
+            o.Formula = "Formule: Rr = 31171 (N·A)²/λ⁴ (N spire); Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, " +
                 "W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai " +
                 "valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare.";
             if (Scale != 1) o.Card("C accordato (NEC)", Calcolatori.Farad(cScaledFormula(cap)), "risonanza nel modello, " + Calcolatori.N((Scale - 1) * 100, 2) + " % dalla formula");
@@ -636,7 +648,7 @@ namespace YaNec.Engine
 
             o.Chart = new CalcChart { Title = "Efficienza al variare del diametro (" + Calcolatori.N(P("f"), 1) + " MHz, tubo " + Calcolatori.N(P("d"), 0) + " mm)", XLabel = "m", YLabel = "%" };
             o.Chart.X = Calcolatori.Lin(0.5, 2.5, 41); o.Chart.Y = new double[41];
-            for (int k = 0; k < 41; k++) o.Chart.Y[k] = 100 * Eff(forma, o.Chart.X[k], dt, f, Sigma[mat]);
+            for (int k = 0; k < 41; k++) o.Chart.Y[k] = 100 * Eff(forma, o.Chart.X[k], dt, f, Sigma[mat], nsp);
             o.Chart.MarkX = D; o.Chart.MarkText = Calcolatori.N(D, 1) + " m: " + Calcolatori.N(eff * 100, 0) + " %";
             o.Chart.YMin = 0;
 
