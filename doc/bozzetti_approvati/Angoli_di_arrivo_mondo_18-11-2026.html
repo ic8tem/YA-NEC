@@ -1,0 +1,90 @@
+<title>Bozzetto angoli di arrivo nel mondo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Finto YA-NEC: riquadro "Angoli di arrivo" del Terreno reale HFTA per tutto il mondo: a sinistra locatore, calcolo VOACAP e scelte; a destra le regioni a caselle e la mappa */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#1b2430; --mut:#5d6878; --line:#d6dce4; --bar:#1d2a3a; --barink:#e7edf5;
+  --blu:#2f6fd6; --nota:#e8f0fd; --giallo:#fff4d6; --giallob:#c99a06; --nuovo:#e3f5e8; --nuovob:#2f9e55;
+  --f:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif; --mono:ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --card:#1c222a; --ink:#e3e8ee; --mut:#9aa6b4; --line:#2e3846; --bar:#0d131a; --barink:#d8e0ea;
+  --blu:#6f9fee; --nota:#1d2a3d; --giallo:#3a3018; --giallob:#e2b93b; --nuovo:#16301f; --nuovob:#5cc983; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1200px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mut);margin:0;line-height:1.45;max-width:110ch}
+.app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tabs{background:var(--bar);display:flex;gap:4px;padding:6px 8px;overflow-x:auto}
+.tabs span{color:var(--barink);padding:4px 10px;border-radius:999px;white-space:nowrap;font-size:.86rem}
+.tabs span.on{background:var(--blu);color:#fff;font-weight:600}
+.fam{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.pill{font:inherit;font-size:.86rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 13px;cursor:pointer}
+.pill.on{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.pill:focus-visible,select:focus-visible,input:focus-visible,.bt:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+.pan{display:none;grid-template-columns:380px minmax(0,1fr)}
+.pan.on{display:grid}
+@media (max-width:860px){.pan.on{grid-template-columns:1fr}}
+.sx{border-right:1px solid var(--line);padding:12px;display:grid;gap:6px;align-content:start}
+@media (max-width:860px){.sx{border-right:0;border-bottom:1px solid var(--line)}}
+.dx{padding:12px 14px;display:grid;gap:12px;align-content:start;min-width:0}
+h2{font-size:.95rem;margin:0}
+.fonte{font-size:.8rem;color:var(--mut)}
+.p{display:grid;grid-template-columns:minmax(0,1fr) 110px 40px;gap:8px;align-items:center;padding:3px 6px;border-radius:5px}
+.p label{font-size:.86rem}
+.p.n{background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob)}
+.p small{grid-column:1/-1;color:var(--mut);font-size:.76rem;margin-top:-2px}
+input,select{font:inherit;font-size:.84rem;padding:3px 6px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink);width:100%;font-family:var(--mono)}
+select{font-family:var(--f)}
+.u{color:var(--mut);font-size:.8rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.bt{font:inherit;font-size:.84rem;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.bt.a{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.84rem}
+th,td{border:1px solid var(--line);padding:4px 8px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--bg)}
+tr.n td{background:var(--nuovo)}
+.avv{border-left:4px solid var(--giallob);background:var(--giallo);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.box{border-left:4px solid var(--blu);background:var(--nota);padding:6px 10px;border-radius:4px;font-size:.84rem;line-height:1.45}
+.leg{font-size:.8rem;color:var(--mut)}
+.leg i{display:inline-block;width:12px;height:12px;background:var(--nuovo);box-shadow:inset 3px 0 0 var(--nuovob);vertical-align:-2px;margin-right:4px}
+.fig{border:1px solid var(--line);border-radius:8px;padding:8px}
+svg text{fill:var(--mut);font-size:11px;font-family:var(--f)}
+.reg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px}.reg label{display:flex;gap:6px;align-items:center;font-size:.84rem;padding:4px 8px;border:1px solid var(--line);border-radius:6px}.reg label.off{opacity:.45}.reg input{width:auto}.map{border:1px solid var(--line);border-radius:8px;padding:6px}svg text{font-size:10px}
+</style>
+<main>
+<h1>Bozzetto – Angoli di arrivo per tutto il mondo (Terreno reale HFTA)</h1>
+<p class="sub">Riquadro «4 · Angoli di arrivo» nella colonna di sinistra del Terreno reale HFTA (bozzetto rev. 2 approvato). voacapl e' dentro YA-NEC: le tabelle del tuo locatore si calcolano sul tuo PC e restano in data/angoli. In verde le righe nuove; i numeri sono esempi.</p>
+<p class="leg"><i></i>riga nuova</p>
+<div class="app"><div class="tabs"><span>Diagrammi</span><span>Tabelle</span><span class="on">Terreno reale HFTA</span><span>Ricezione (RDF)</span><span>Tolleranze</span></div>
+<section class="pan on"><div class="sx">
+<h2>4 · Angoli di arrivo</h2><div class="fonte">VOACAP (voacapl, J. A. Watson, CC0); metodo W7IV; formato .PRN di HFTA</div>
+<div class="p n"><label>Origine</label><input value="JN70CN (dal Sito)"><span></span><small>Si prende il locatore del riquadro 1 · Sito.</small></div>
+<div class="p n"><label>Tabelle</label><input value="calcolate il 18/11/2026 · 21 s"><span></span></div>
+<div class="p n"><label>Attivita' solare</label><select><option>tutte (SSN 10/70/150)</option><option>bassa (10)</option><option>media (70)</option><option>alta (150)</option></select><span></span></div>
+<div class="p n"><label>Mesi</label><select><option>tutto l'anno</option><option>inverno (dic-feb)</option><option>primavera</option><option>estate</option><option>autunno</option><option>scegli i mesi…</option></select><span></span></div>
+<div class="p n"><label>Ore UTC</label><select><option>tutte</option><option>scegli l'intervallo…</option></select><span></span></div>
+<div class="p n"><label>Oppure file .PRN</label><input value="dal CD ARRL (facoltativo)"><span></span></div>
+<div class="btns"><button class="bt a" type="button">Calcola le tabelle (VOACAP)</button><button class="bt" type="button">Esporta .PRN</button></div>
+<div class="box">Il primo calcolo per un locatore dura da 15 a 60 secondi a seconda del PC; i cambi di mesi, ore e attivita' solare usano le stesse corse e sono subito pronti.</div>
+</div>
+<div class="dx">
+<h2>Regioni (piu' punti per regione, come l'ARRL)</h2>
+<div class="reg"><label class="off"><input type="checkbox" disabled>Europa ovest (EA, F, G, I, DL) · e' la tua: esclusa</label><label><input type="checkbox" checked>Europa nord (OH, SM, LA, OZ, TF)</label><label><input type="checkbox" checked>Europa est (SP, UA europea, YO, LZ)</label><label><input type="checkbox" checked>USA est (W1-W4, W8)</label><label><input type="checkbox" checked>USA centro (W5, W9, W0)</label><label><input type="checkbox" checked>USA ovest (W6, W7)</label><label><input type="checkbox" checked>Canada (VE)</label><label><input type="checkbox" checked>Caraibi e America centrale</label><label><input type="checkbox" checked>Sud America nord (PY nord, HK, YV)</label><label><input type="checkbox" checked>Sud America sud (PY sud, LU, CE)</label><label><input type="checkbox" checked>Africa nord e Medio Oriente</label><label><input type="checkbox" checked>Africa centro-sud (ZS, 5R, 9J)</label><label><input type="checkbox" checked>Asia sud (VU, 4S, 9M)</label><label><input type="checkbox" checked>Asia est (BY, HL, BV)</label><label><input type="checkbox" checked>Giappone (JA)</label><label><input type="checkbox" checked>Russia asiatica (UA9, UA0)</label><label><input type="checkbox" checked>Oceania (VK, ZL)</label><label><input type="checkbox" checked>Pacifico (KH6, FO, 3D2)</label></div>
+<div class="p n"><label>Punto sulla mappa</label><input value="clic sulla mappa: 3B8 Mauritius (−20,2; 57,5)"><span></span></div>
+<div class="map"><svg viewBox="0 0 520 220" role="img" aria-label="mappa del mondo schematica con le regioni e il punto scelto">
+<rect x="0" y="0" width="520" height="220" fill="var(--nota)"/>
+<g fill="var(--line)"><ellipse cx="110" cy="70" rx="70" ry="40"/><ellipse cx="150" cy="160" rx="35" ry="45"/><ellipse cx="270" cy="60" rx="45" ry="28"/><ellipse cx="285" cy="130" rx="40" ry="55"/><ellipse cx="370" cy="70" rx="90" ry="40"/><ellipse cx="440" cy="165" rx="40" ry="22"/></g>
+<circle cx="276" cy="78" r="5" fill="#e08a00"/><text x="284" y="76">JN70CN</text>
+<circle cx="345" cy="152" r="5" fill="var(--blu)"/><text x="353" y="150">3B8</text>
+<path d="M276 78 Q 300 120 345 152" fill="none" stroke="var(--blu)" stroke-dasharray="4 3"/>
+</svg></div>
+<div class="avv">VOACAP e' una previsione statistica: gli angoli di arrivo veri cambiano con l'ora, la stagione e il ciclo solare. Sotto 7 MHz e sopra 30 MHz le tabelle sono meno affidabili (W7IV).</div>
+</div></section></div>
+</main>
