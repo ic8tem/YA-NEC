@@ -253,6 +253,8 @@ namespace YaNec
             calcola = p =>
             {
                 cardsW.Children.Clear();
+                // 1.3.0: gli avvisi del calcolo precedente si tolgono (prima restavano e si accumulavano)
+                for (int ia = avv.Children.Count - 1; ia >= 0; ia--) if (Equals(avv.Children[ia].Tag, "ris")) avv.Children.RemoveAt(ia);
                 card("Calcolo NEC", "in corso...", "diagramma 3D a passo 5°", false);
                 bCalc.IsEnabled = bOtt.IsEnabled = false;
                 string nec = deck(p);
@@ -306,10 +308,10 @@ namespace YaNec
                             double z0r = bz[0], z0i = bz[1], diff = bz[2];
                             card("Z0 del filo nel modello", FN(z0r, 0) + (z0i >= 0 ? " +j" : " -j") + FN(Math.Abs(z0i), 0), "radice(Z aperto x Z corto); BOG reale 200-300 ohm", false);
                             if (diff < 0.05)
-                                avv.Children.Add(Nota("⚠ Z aperto e Z in corto differiscono meno del 5%: nel modello l'onda si spegne prima dell'estremo lontano, la terminazione non conta e il F/B non si regola. " +
-                                    "E' il segno che il filo e' troppo vicino al terreno per il NEC-2: alzare la quota verso lambda/200 per vedere l'andamento.", Pal.Orange));
+                                avv.Children.Add(Ris(Nota("⚠ Z aperto e Z in corto differiscono meno del 5%: nel modello l'onda si spegne prima dell'estremo lontano, la terminazione non conta e il F/B non si regola. " +
+                                    "E' il segno che il filo e' troppo vicino al terreno per il NEC-2: alzare la quota verso lambda/200 per vedere l'andamento.", Pal.Orange)));
                         }
-                        avv.Children.Add(Nota("⚠ Modello approssimato (NEC-2): filo nudo a " + FN(p.H, 2) + " m invece che isolato sul suolo. Lobo, direzione e RDF indicativi; impedenza, perdite e guadagno assoluto no.", Pal.Orange));
+                        avv.Children.Add(Ris(Nota("⚠ Modello approssimato (NEC-2): filo nudo a " + FN(p.H, 2) + " m invece che isolato sul suolo. Lobo, direzione e RDF indicativi; impedenza, perdite e guadagno assoluto no.", Pal.Orange)));
                     }
                     card("Rispetto alla verticale", (rd.Rdf - 5.07 >= 0 ? "+" : "") + FN(rd.Rdf - 5.07, 1) + " dB S/N", "preampli consigliato " + (r.GmaxDbi < -20 ? "+20 dB" : (r.GmaxDbi < -10 ? "+12 dB" : "non serve")), false);
                     pEl.Traces = new List<PolarTrace> { new PolarTrace { Db = r.ElCut, Color = Pal.Accent, Name = "totale" } };
@@ -328,7 +330,7 @@ namespace YaNec
                     bars.Items = it;
                     bars.InvalidateVisual();
                     if (!double.IsNaN(lit) && Math.Abs(rd.Rdf - lit) > 1.0)
-                        avv.Children.Add(Nota("⚠ RDF " + FN(rd.Rdf, 1) + " dB contro " + FN(lit, 2) + " della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).", Pal.Orange));
+                        avv.Children.Add(Ris(Nota("⚠ RDF " + FN(rd.Rdf, 1) + " dB contro " + FN(lit, 2) + " della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).", Pal.Orange)));
                 }));
             };
             // 13/11/2026 18:10: il modello creato si vede anche nella Struttura 3D (le schede RDF restano qui, calcolate in sottofondo)

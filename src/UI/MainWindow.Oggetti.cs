@@ -56,6 +56,8 @@ namespace YaNec
             return d;
         }
 
+        // 1.3.0: avviso legato al risultato di un calcolo, da togliere al calcolo successivo
+        static TextBlock Ris(TextBlock t) { t.Tag = "ris"; return t; }
         TextBlock Nota(string s, Color? c = null)
         {
             return new TextBlock { Text = s, TextWrapping = TextWrapping.Wrap, FontSize = 12.5, Foreground = Pal.B(c ?? Pal.Muted), Margin = new Thickness(0, 4, 0, 0) };
