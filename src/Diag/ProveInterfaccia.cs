@@ -581,11 +581,8 @@ namespace YaNec
             await Task.Delay(300);
             PrImmagine("struttura_terreno");
 
-            PrTitolo("G. Importazione AutoEZ");
-            ok = await Apri(Path.Combine(AppPaths.DataDir, "prove", "fissi", "16el I0JXX mod IC8TEM (AutoEZ).weq"));   // 0.4.30: tolto dagli esempi, resta per il collaudo
-            PrPasso("apri 16el I0JXX (AutoEZ .weq)", "32 fili, Z = 32,349 +8,549j", wireRows.FindAll(w => !w.ReadOnly).Count + " fili, " + Zs(run.Zin),
-                ok && wireRows.FindAll(w => !w.ReadOnly).Count == 32 && Vicino(run.Zin, 32.349, 8.549, 0.06));
-            PrImmagine("weq_16el");
+            // 1.5.2 (IC8TEM 20/11/2026: «puoi scartare per futuro»): tolta la prova «G. Importazione AutoEZ» col 16el I0JXX, file che non sta
+            // nel repository e quindi mancava nelle prove su GitHub; l'importazione AutoEZ resta provata dai modelli dell'archivio (esempi AC6LA).
 
             PrTitolo("H. Manuale");
             SelectTab(IndiceLinguetta("Documenti tecnici"));
