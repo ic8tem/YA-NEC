@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	a hely magassága kézzel megadva {0} m
 quota sito a mano {0} m (DEM {1} m)	a hely magassága kézzel megadva {0} m (DEM {1} m)
 Torna al valore del DEM	Vissza a DEM értékére
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	A talaj magassága az antenna alatt. Üres = DEM-érték (szürke). Írd be a valódi magasságot, ha a DEM téved: a profil innen indul, a terep többi része a DEM-ből marad. ↺ DEM visszaáll a DEM értékére.
+4. Misure al millimetro	4. Méretek milliméterre
+al millimetro	milliméterre
+diametri commerciali	kereskedelmi átmérők
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	a legközelebbi kereskedelmi cső (alumínium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); 6 mm alatt a legközelebbi metrikus vagy AWG huzal. A negatív sugár (a Teleszkópos táblázat sora) változatlan marad.
+solo quelli scelti nella tabella	csak a táblázatban kiválasztottak
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	a két huzal közös pontjai összekötve maradnak (a pontot kerekítjük, nem a huzalt)
+Arrotonda e verifica (NEC)	Kerekítés és ellenőrzés (NEC)
+Copia la lista di taglio	Vágólista másolása
+Lista di taglio copiata.	Vágólista másolva.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Az ellenőrzés kiszámítja a modellt előtte és utána a betartandó frekvenciákon (1. keret), és összehasonlítja. A «Modellre alkalmaz» a Geometria sáv Visszavonás előzményeibe kerül.
+Scegli prima i fili nella tabella della Struttura 3D.	Először válaszd ki a huzalokat a 3D szerkezet táblázatában.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nincs mit kerekíteni: a méretek már milliméterre vannak ({0} mező képlet vagy változó, és változatlan marad).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nincs mit kerekíteni: a méretek már milliméterre vannak.
+Misure al millimetro: 	Méretek milliméterre: 
+Z prima	Z előtte
+Z dopo	Z utána
+ROS prima	SWR előtte
+ROS dopo	SWR utána
+G dBi prima	G dBi előtte
+G dopo	G utána
+F/B prima	F/B előtte
+F/B dopo	F/B utána
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	A modell megváltozott az ellenőrzés közben: ismételd meg a «Kerekítés és ellenőrzés» lépést.
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Az eredmény küszöbei: Z {0} %-on belül, nyereség {1} dB-en belül, F/B {2} dB-en belül (jobb gombbal módosítható). Felette: narancs, a legtöbbet elmozduló huzallal.
+Misure cambiate	Megváltozott méretek
+Campo	Mező
+Prima (m)	Előtte (m)
+Dopo (m)	Utána (m)
+diametro (mm)	átmérő (mm)
+tubo commerciale	kereskedelmi cső
+filo metrico	metrikus huzal
+(qui le prime {0})	(itt az első {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Összesen: {0} méret változott {1} huzalon, legnagyobb elmozdulás {2} mm, az elemek teljes hossza {3} mm-rel változott.
+{0} campi sono formule o variabili e restano come sono.	{0} mező képlet vagy változó, és változatlan marad.
+Segmentazione dopo l'arrotondamento:	Szegmentálás a kerekítés után:
+Soglie dell'esito	Az eredmény küszöbei
+Usa queste soglie	Ezeket a küszöböket használd
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Méretek milliméterre alkalmazva a modellre ({0} méret). A Geometria sáv "Visszavonás" gombja visszalép.
+giunto	illesztés
+Bande nei grafici di frequenza	Sávok a frekvenciagrafikonokon
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Sáv a Frekvencia fül grafikonjainak hátterében ott, ahol az amatőrsávok vannak (IARU 1. régió, 136 kHz-től 10 GHz-ig), fent a sáv nevével. Sötét témában a szín világosabb; a görbék felül maradnak.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL vonalak (szaggatott lila ív, ✕ = keresztezett), R, L, C terhelések (narancs keret), hálózatok, transzformátorok és csonkok (kékeszöld keret), EZNEC virtuális huzalok (szürke). Kattintás egy jelre: megnyitja a táblázatát.
+Linee, carichi e reti	Vonalak, terhelések és hálózatok
+Riga {0} della tabella qui sotto a destra.	A jobb alsó táblázat {0}. sora.
+ambra	borostyán
+azzurro ghiaccio	jégkék
+verde salvia	zsályazöld
+aperto	nyitott
+rete L	L-hálózat
+antenna a {0} m	antenna {0} m-en
+quote {0} m	magasságok {0} m
+terreno {0} (εr {1}, σ {2} S/m)	talaj: {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} szegmens, {1} huzal, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} szegmens, {1} geometriakártya, {2}
+personalizzato	egyéni
+centra	középre
+alta	magas

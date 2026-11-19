@@ -4951,3 +4951,60 @@ quota sito a mano {0} m	Standorthöhe von Hand {0} m
 quota sito a mano {0} m (DEM {1} m)	Standorthöhe von Hand {0} m (DEM {1} m)
 Torna al valore del DEM	Zurück zum DEM-Wert
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Geländehöhe unter der Antenne. Leer = DEM-Wert (grau). Gib die echte Höhe ein, wenn das DEM falsch ist: Das Profil beginnt hier, der Rest des Geländes bleibt aus dem DEM. ↺ DEM kehrt zum DEM-Wert zurück.
+4. Misure al millimetro	4. Maße auf den Millimeter
+al millimetro	auf den Millimeter
+diametri commerciali	handelsübliche Durchmesser
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	das nächstgelegene handelsübliche Rohr (Aluminium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); unter 6 mm der nächste metrische oder AWG-Draht. Ein negativer Radius (Zeile der Tabelle Konizitäten) bleibt, wie er ist.
+solo quelli scelti nella tabella	nur die in der Tabelle gewählten
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	gemeinsame Punkte zweier Drähte bleiben verbunden (gerundet wird der Punkt, nicht der Draht)
+Arrotonda e verifica (NEC)	Runden und prüfen (NEC)
+Copia la lista di taglio	Zuschnittliste kopieren
+Lista di taglio copiata.	Zuschnittliste kopiert.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Die Prüfung berechnet das Modell vorher und nachher bei den einzuhaltenden Frequenzen (Feld 1) und vergleicht. «Auf das Modell anwenden» kommt in den Rückgängig-Verlauf der Geometrieleiste.
+Scegli prima i fili nella tabella della Struttura 3D.	Wähle zuerst die Drähte in der Tabelle der 3D-Struktur.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nichts zu runden: Die Maße sind schon auf den Millimeter ({0} Felder sind Formeln oder Variablen und bleiben, wie sie sind).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nichts zu runden: Die Maße sind schon auf den Millimeter.
+Misure al millimetro: 	Maße auf den Millimeter: 
+Z prima	Z vorher
+Z dopo	Z nachher
+ROS prima	SWR vorher
+ROS dopo	SWR nachher
+G dBi prima	G dBi vorher
+G dopo	G nachher
+F/B prima	F/B vorher
+F/B dopo	F/B nachher
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Das Modell hat sich während der Prüfung geändert: «Runden und prüfen» wiederholen.
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Schwellen des Ergebnisses: Z innerhalb {0} %, Gewinn innerhalb {1} dB, F/B innerhalb {2} dB (mit der rechten Maustaste änderbar). Darüber: orange, mit dem Draht, der sich am meisten verschiebt.
+Misure cambiate	Geänderte Maße
+Campo	Feld
+Prima (m)	Vorher (m)
+Dopo (m)	Nachher (m)
+diametro (mm)	Durchmesser (mm)
+tubo commerciale	handelsübliches Rohr
+filo metrico	metrischer Draht
+(qui le prime {0})	(hier die ersten {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Insgesamt: {0} Maße an {1} Drähten geändert, größte Verschiebung {2} mm, Gesamtlänge der Elemente geändert um {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} Felder sind Formeln oder Variablen und bleiben, wie sie sind.
+Segmentazione dopo l'arrotondamento:	Segmentierung nach dem Runden:
+Soglie dell'esito	Schwellen des Ergebnisses
+Usa queste soglie	Diese Schwellen verwenden
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Maße auf den Millimeter auf das Modell angewendet ({0} Maße). "Rückgängig" in der Geometrieleiste geht zurück.
+giunto	Verbindung
+Bande nei grafici di frequenza	Bänder in den Frequenzdiagrammen
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Band im Hintergrund der Diagramme der Registerkarte Frequenz, wo die Amateurfunkbänder liegen (IARU Region 1, von 136 kHz bis 10 GHz), mit dem Bandnamen oben. Im dunklen Design ist die Farbe heller; die Kurven bleiben darüber.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL-Leitungen (violetter gestrichelter Bogen, ✕ = gekreuzt), Lasten R, L, C (oranges Kästchen), Netzwerke, Transformatoren und Stubs (türkisfarbenes Kästchen), virtuelle EZNEC-Drähte (grau). Klick auf ein Symbol: öffnet seine Tabelle.
+Linee, carichi e reti	Leitungen, Lasten und Netzwerke
+Riga {0} della tabella qui sotto a destra.	Zeile {0} der Tabelle unten rechts.
+ambra	Bernstein
+azzurro ghiaccio	Eisblau
+verde salvia	Salbeigrün
+aperto	offen
+rete L	L-Netzwerk
+antenna a {0} m	Antenne auf {0} m
+quote {0} m	Höhen {0} m
+terreno {0} (εr {1}, σ {2} S/m)	Boden {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} Segmente, {1} Drähte, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} Segmente, {1} Geometriekarten, {2}
+personalizzato	benutzerdefiniert
+centra	zentrieren
+alta	hoch

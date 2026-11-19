@@ -654,7 +654,9 @@ namespace YaNec
                 dRosa.IsVisible = fareRosa; rosa = null;
                 // 1.5.2: avviso subito nella barra in basso e Calcola disattivato finche' il calcolo non finisce
                 bCalc.IsEnabled = false;
-                Status("Terreno reale: " + "calcolo in corso…");
+                // la barra in basso solo con la pagina davanti: dopo un calcolo del modello il ricalcolo del terreno in sottofondo non deve coprire «Calcolato a ...»
+                bool aVista = TopLevel.GetTopLevel(g) != null && g.IsEffectivelyVisible;
+                if (aVista) Status("Terreno reale: " + "calcolo in corso…");
                 bool riuscito = false;
                 try
                 {
@@ -814,7 +816,7 @@ namespace YaNec
                     if (!ct.IsCancellationRequested)
                     {
                         bCalc.IsEnabled = true;
-                        if (riuscito) Status("Terreno reale: " + "calcolo finito");
+                        if (riuscito && aVista) Status("Terreno reale: " + "calcolo finito");
                     }
                 }
             };

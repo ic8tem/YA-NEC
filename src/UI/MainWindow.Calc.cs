@@ -755,9 +755,10 @@ namespace YaNec
                     groundLegend.SelectedKey = model.Ground.Kind == GroundKind.FreeSpace ? "" : gs.Key;
                     groundLegend.InvalidateVisual();
                 }
-                string gtxt = model.Ground.Kind == GroundKind.FreeSpace ? "spazio libero" : (model.Ground.Kind == GroundKind.Perfect ? "terreno perfetto" :
-                    "terreno " + (gs == GroundPainter.Neutral ? "personalizzato" : gs.Name) + " (εr " + Fmt(model.Ground.Epsr, 0) + ", σ " + Fmt(model.Ground.Sigma, 4) + " S/m)");
-                view3d.Info = geo.N + " segmenti, " + model.Geometry.Count + " schede di geometria, " + gtxt;
+                // 1.5.2: riga tradotta (prima restava in italiano nelle altre lingue; visto preparando la lezione 28 inglese)
+                string gtxt = model.Ground.Kind == GroundKind.FreeSpace ? Lang.T("spazio libero") : (model.Ground.Kind == GroundKind.Perfect ? Lang.T("terreno perfetto") :
+                    Lang.F("terreno {0} (εr {1}, σ {2} S/m)", Lang.T(gs == GroundPainter.Neutral ? "personalizzato" : gs.Name), Fmt(model.Ground.Epsr, 0), Fmt(model.Ground.Sigma, 4)));
+                view3d.Info = Lang.F("{0} segmenti, {1} schede di geometria, {2}", geo.N, model.Geometry.Count, gtxt);
                 // etichette delle sorgenti (A 1∠0°, ...) quando ce n'e' piu' di una
                 view3d.SourceLabels = new List<KeyValuePair<int, string>>();
                 if (model.Sources.Count > 1)

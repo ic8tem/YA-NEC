@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	지점 고도 직접 입력 {0} m
 quota sito a mano {0} m (DEM {1} m)	지점 고도 직접 입력 {0} m (DEM {1} m)
 Torna al valore del DEM	DEM 값으로 되돌리기
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	안테나 아래 지면 고도. 비움 = DEM 값(회색). DEM이 틀리면 실제 고도를 입력하세요: 단면은 여기서 시작하고 나머지 지형은 DEM 그대로입니다. ↺ DEM은 DEM 값으로 되돌립니다.
+4. Misure al millimetro	4. 밀리미터 단위 치수
+al millimetro	밀리미터 단위
+diametri commerciali	시판 직경
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	가장 가까운 시판 파이프 (알루미늄: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); 6 mm 미만은 가장 가까운 미터 선재 또는 AWG 선재. 음의 반지름 (테이퍼 표의 행)은 그대로 둡니다.
+solo quelli scelti nella tabella	표에서 선택한 것만
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	두 와이어의 공통점은 연결된 채로 유지 (와이어가 아니라 점을 반올림)
+Arrotonda e verifica (NEC)	반올림 후 확인 (NEC)
+Copia la lista di taglio	절단 목록 복사
+Lista di taglio copiata.	절단 목록을 복사했습니다.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	확인은 지켜야 할 주파수 (상자 1)에서 모델을 이전과 이후로 계산해 비교합니다. «모델에 적용»은 지오메트리 막대의 실행 취소 기록에 들어갑니다.
+Scegli prima i fili nella tabella della Struttura 3D.	먼저 3D 구조 표에서 와이어를 선택하세요.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	반올림할 것이 없습니다: 치수가 이미 밀리미터 단위입니다 ({0}개 칸은 수식 또는 변수라 그대로입니다).
+Niente da arrotondare: le misure sono gia' al millimetro.	반올림할 것이 없습니다: 치수가 이미 밀리미터 단위입니다.
+Misure al millimetro: 	밀리미터 단위 치수: 
+Z prima	Z 이전
+Z dopo	Z 이후
+ROS prima	SWR 이전
+ROS dopo	SWR 이후
+G dBi prima	G dBi 이전
+G dopo	G 이후
+F/B prima	F/B 이전
+F/B dopo	F/B 이후
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	확인 중에 모델이 바뀌었습니다: «반올림 후 확인»을 다시 하세요.
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	결과 기준: Z {0} % 이내, 이득 {1} dB 이내, F/B {2} dB 이내 (오른쪽 버튼으로 변경). 넘으면: 주황색, 가장 많이 움직인 와이어와 함께.
+Misure cambiate	바뀐 치수
+Campo	칸
+Prima (m)	이전 (m)
+Dopo (m)	이후 (m)
+diametro (mm)	직경 (mm)
+tubo commerciale	시판 파이프
+filo metrico	미터 선재
+(qui le prime {0})	(여기서는 처음 {0}개)
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	합계: 와이어 {1}개에서 치수 {0}개 변경, 최대 이동 {2} mm, 소자 전체 길이 {3} mm 변경.
+{0} campi sono formule o variabili e restano come sono.	{0}개 칸은 수식 또는 변수라 그대로입니다.
+Segmentazione dopo l'arrotondamento:	반올림 후 세그먼트 분할:
+Soglie dell'esito	결과 기준
+Usa queste soglie	이 기준 사용
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	밀리미터 단위 치수를 모델에 적용했습니다 ({0}개). 지오메트리 막대의 "실행 취소"로 되돌립니다.
+giunto	이음부
+Bande nei grafici di frequenza	주파수 그래프의 밴드
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	주파수 탭 그래프 배경에서 아마추어 밴드가 있는 곳에 띠 표시 (IARU 1지역, 136 kHz부터 10 GHz까지), 위에 밴드 이름. 어두운 테마에서는 색이 더 밝고 곡선은 위에 남습니다.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL 선로 (보라색 점선 호, ✕ = 교차), R, L, C 부하 (주황 상자), 회로망·변압기·스터브 (청록 상자), EZNEC 가상 와이어 (회색). 기호 클릭: 해당 표를 엽니다.
+Linee, carichi e reti	선로, 부하, 회로망
+Riga {0} della tabella qui sotto a destra.	오른쪽 아래 표의 {0}행.
+ambra	호박색
+azzurro ghiaccio	아이스 블루
+verde salvia	세이지 그린
+aperto	개방
+rete L	L 회로망
+antenna a {0} m	안테나 높이 {0} m
+quote {0} m	높이 {0} m
+terreno {0} (εr {1}, σ {2} S/m)	대지 {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	세그먼트 {0}개, 와이어 {1}개, {2}
+{0} segmenti, {1} schede di geometria, {2}	세그먼트 {0}개, 지오메트리 카드 {1}개, {2}
+personalizzato	사용자 지정
+centra	가운데로
+alta	높음

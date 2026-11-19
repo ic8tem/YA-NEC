@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	hæð staðar slegin inn handvirkt {0} m
 quota sito a mano {0} m (DEM {1} m)	hæð staðar slegin inn handvirkt {0} m (DEM {1} m)
 Torna al valore del DEM	Aftur í DEM-gildið
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Landhæð undir loftnetinu. Autt = DEM-gildi (grátt). Sláðu inn rétta hæð ef DEM er rangt: sniðið byrjar hér, restin af landslaginu helst úr DEM. ↺ DEM fer aftur í DEM-gildið.
+4. Misure al millimetro	4. Mál upp á millimetra
+al millimetro	upp á millimetra
+diametri commerciali	staðlaðir þvermálar
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	næsta staðlaða rör (ál: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); undir 6 mm næsti metrski vír eða AWG-vír. Neikvæður radíus (lína í töflunni Sjónaukarör) helst óbreyttur.
+solo quelli scelti nella tabella	aðeins þeir sem valdir eru í töflunni
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	punktar sem tveir vírar deila haldast saman (punkturinn er námundaður, ekki vírinn)
+Arrotonda e verifica (NEC)	Námunda og athuga (NEC)
+Copia la lista di taglio	Afrita skurðarlistann
+Lista di taglio copiata.	Skurðarlisti afritaður.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Athugunin reiknar líkanið fyrir og eftir á tíðnunum sem á að virða (reitur 1) og ber saman. «Beita á líkanið» fer í Afturkalla-söguna á Rúmfræði-stikunni.
+Scegli prima i fili nella tabella della Struttura 3D.	Veldu fyrst vírana í töflu 3D-byggingarinnar.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Ekkert að námunda: málin eru þegar upp á millimetra ({0} reitir eru formúlur eða breytur og haldast óbreyttir).
+Niente da arrotondare: le misure sono gia' al millimetro.	Ekkert að námunda: málin eru þegar upp á millimetra.
+Misure al millimetro: 	Mál upp á millimetra: 
+Z prima	Z fyrir
+Z dopo	Z eftir
+ROS prima	SWR fyrir
+ROS dopo	SWR eftir
+G dBi prima	G dBi fyrir
+G dopo	G eftir
+F/B prima	F/B fyrir
+F/B dopo	F/B eftir
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Líkanið breyttist meðan á athuguninni stóð: endurtaktu «Námunda og athuga».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Mörk niðurstöðunnar: Z innan {0} %, ávinningur innan {1} dB, F/B innan {2} dB (breytt með hægri hnappi). Þar yfir: appelsínugult, með vírnum sem færist mest.
+Misure cambiate	Breytt mál
+Campo	Reitur
+Prima (m)	Fyrir (m)
+Dopo (m)	Eftir (m)
+diametro (mm)	þvermál (mm)
+tubo commerciale	staðlað rör
+filo metrico	metrskur vír
+(qui le prime {0})	(hér fyrstu {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Alls: {0} mál breytt á {1} vírum, mesta tilfærsla {2} mm, heildarlengd einingunna breytt um {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} reitir eru formúlur eða breytur og haldast óbreyttir.
+Segmentazione dopo l'arrotondamento:	Skipting eftir námundun:
+Soglie dell'esito	Mörk niðurstöðunnar
+Usa queste soglie	Nota þessi mörk
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Mál upp á millimetra beitt á líkanið ({0} mál). "Afturkalla" á Rúmfræði-stikunni fer til baka.
+giunto	samskeyti
+Bande nei grafici di frequenza	Bönd í tíðnigröfum
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Borði í bakgrunni grafanna í flipanum Tíðni þar sem radíóamatörböndin liggja (IARU svæði 1, frá 136 kHz til 10 GHz), með heiti bandsins efst. Liturinn er ljósari í dökka þemanu; ferlarnir haldast ofan á.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL-línur (strikaður fjólublár bogi, ✕ = krossuð), álag R, L, C (appelsínugulur reitur), net, spennar og stubbar (blágrænn reitur), sýndarvírar EZNEC (gráir). Smelltu á tákn: opnar töflu þess.
+Linee, carichi e reti	Línur, álag og net
+Riga {0} della tabella qui sotto a destra.	Lína {0} í töflunni neðst til hægri.
+ambra	raf
+azzurro ghiaccio	ísblár
+verde salvia	salvíugrænn
+aperto	opinn
+rete L	L-net
+antenna a {0} m	loftnet í {0} m
+quote {0} m	hæðir {0} m
+terreno {0} (εr {1}, σ {2} S/m)	jörð {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} bútar, {1} vírar, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} bútar, {1} rúmfræðispjöld, {2}
+personalizzato	sérsniðið
+centra	miðja
+alta	hár

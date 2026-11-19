@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	υψόμετρο θέσης με το χέρι {0} m
 quota sito a mano {0} m (DEM {1} m)	υψόμετρο θέσης με το χέρι {0} m (DEM {1} m)
 Torna al valore del DEM	Επιστροφή στην τιμή του DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Υψόμετρο εδάφους κάτω από την κεραία. Κενό = τιμή του DEM (γκρι). Γράψτε το πραγματικό υψόμετρο αν το DEM κάνει λάθος: το προφίλ ξεκινά από εδώ, το υπόλοιπο έδαφος μένει του DEM. ↺ DEM επιστρέφει στην τιμή του DEM.
+4. Misure al millimetro	4. Διαστάσεις στο χιλιοστό
+al millimetro	στο χιλιοστό
+diametri commerciali	εμπορικές διάμετροι
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	ο πλησιέστερος εμπορικός σωλήνας (αλουμίνιο: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...)· κάτω από 6 mm το πλησιέστερο μετρικό σύρμα ή AWG. Η αρνητική ακτίνα (γραμμή του πίνακα Τηλεσκοπικοί) μένει ως έχει.
+solo quelli scelti nella tabella	μόνο όσα επιλέχθηκαν στον πίνακα
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	τα κοινά σημεία δύο συρμάτων μένουν ενωμένα (στρογγυλεύεται το σημείο, όχι το σύρμα)
+Arrotonda e verifica (NEC)	Στρογγύλευση και έλεγχος (NEC)
+Copia la lista di taglio	Αντιγραφή λίστας κοπής
+Lista di taglio copiata.	Η λίστα κοπής αντιγράφηκε.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Ο έλεγχος υπολογίζει το μοντέλο πριν και μετά στις συχνότητες που πρέπει να τηρηθούν (πλαίσιο 1) και συγκρίνει. Το «Εφαρμογή στο μοντέλο» μπαίνει στο ιστορικό Αναίρεσης της γραμμής Γεωμετρία.
+Scegli prima i fili nella tabella della Struttura 3D.	Επιλέξτε πρώτα τα σύρματα στον πίνακα της Τρισδιάστατης δομής.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Τίποτα για στρογγύλευση: οι διαστάσεις είναι ήδη στο χιλιοστό ({0} πεδία είναι τύποι ή μεταβλητές και μένουν ως έχουν).
+Niente da arrotondare: le misure sono gia' al millimetro.	Τίποτα για στρογγύλευση: οι διαστάσεις είναι ήδη στο χιλιοστό.
+Misure al millimetro: 	Διαστάσεις στο χιλιοστό: 
+Z prima	Z πριν
+Z dopo	Z μετά
+ROS prima	SWR πριν
+ROS dopo	SWR μετά
+G dBi prima	G dBi πριν
+G dopo	G μετά
+F/B prima	F/B πριν
+F/B dopo	F/B μετά
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Το μοντέλο άλλαξε κατά τον έλεγχο: επαναλάβετε «Στρογγύλευση και έλεγχος».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Όρια του αποτελέσματος: Z εντός {0} %, κέρδος εντός {1} dB, F/B εντός {2} dB (αλλάζουν με το δεξί κουμπί). Πάνω από αυτά: πορτοκαλί, με το σύρμα που μετακινείται περισσότερο.
+Misure cambiate	Διαστάσεις που άλλαξαν
+Campo	Πεδίο
+Prima (m)	Πριν (m)
+Dopo (m)	Μετά (m)
+diametro (mm)	διάμετρος (mm)
+tubo commerciale	εμπορικός σωλήνας
+filo metrico	μετρικό σύρμα
+(qui le prime {0})	(εδώ τα πρώτα {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Συνολικά: {0} διαστάσεις άλλαξαν σε {1} σύρματα, μέγιστη μετατόπιση {2} mm, συνολικό μήκος στοιχείων άλλαξε κατά {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} πεδία είναι τύποι ή μεταβλητές και μένουν ως έχουν.
+Segmentazione dopo l'arrotondamento:	Τμηματοποίηση μετά τη στρογγύλευση:
+Soglie dell'esito	Όρια του αποτελέσματος
+Usa queste soglie	Χρήση αυτών των ορίων
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Διαστάσεις στο χιλιοστό εφαρμόστηκαν στο μοντέλο ({0} διαστάσεις). Η "Αναίρεση" της γραμμής Γεωμετρία επιστρέφει.
+giunto	σύνδεση
+Bande nei grafici di frequenza	Ζώνες στα γραφήματα συχνότητας
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Λωρίδα στο φόντο των γραφημάτων της καρτέλας Συχνότητα όπου πέφτουν οι ερασιτεχνικές ζώνες (IARU Περιοχή 1, από 136 kHz έως 10 GHz), με το όνομα της ζώνης επάνω. Στο σκοτεινό θέμα το χρώμα είναι πιο ανοιχτό· οι καμπύλες μένουν από πάνω.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Γραμμές TL (διακεκομμένο ιώδες τόξο, ✕ = διασταυρωμένη), φορτία R, L, C (πορτοκαλί πλαίσιο), δίκτυα, μετασχηματιστές και stubs (γαλαζοπράσινο πλαίσιο), εικονικά σύρματα EZNEC (γκρι). Κλικ σε σύμβολο: ανοίγει τον πίνακά του.
+Linee, carichi e reti	Γραμμές, φορτία και δίκτυα
+Riga {0} della tabella qui sotto a destra.	Γραμμή {0} του πίνακα κάτω δεξιά.
+ambra	κεχριμπαρί
+azzurro ghiaccio	γαλάζιο του πάγου
+verde salvia	πράσινο φασκόμηλου
+aperto	ανοιχτό
+rete L	δίκτυο L
+antenna a {0} m	κεραία στα {0} m
+quote {0} m	ύψη {0} m
+terreno {0} (εr {1}, σ {2} S/m)	έδαφος {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} τμήματα, {1} σύρματα, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} τμήματα, {1} κάρτες γεωμετρίας, {2}
+personalizzato	προσαρμοσμένο
+centra	κεντράρισμα
+alta	υψηλή

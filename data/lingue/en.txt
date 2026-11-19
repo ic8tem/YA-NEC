@@ -6920,3 +6920,60 @@ quota sito a mano {0} m	site height entered by hand {0} m
 quota sito a mano {0} m (DEM {1} m)	site height entered by hand {0} m (DEM {1} m)
 Torna al valore del DEM	Back to the DEM value
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Ground height under the antenna. Empty = DEM value (grey). Type the real height if the DEM is wrong: the profile starts here, the rest of the terrain stays the DEM's. ↺ DEM goes back to the DEM value.
+4. Misure al millimetro	4. Measurements to the millimetre
+al millimetro	to the millimetre
+diametri commerciali	commercial diameters
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	the nearest commercial tube (aluminium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); below 6 mm the nearest metric or AWG wire. A negative radius (row of the Tapers table) stays as it is.
+solo quelli scelti nella tabella	only those chosen in the table
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	points shared by two wires stay joined (the point is rounded, not the wire)
+Arrotonda e verifica (NEC)	Round and check (NEC)
+Copia la lista di taglio	Copy the cutting list
+Lista di taglio copiata.	Cutting list copied.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	The check calculates the model before and after at the frequencies to meet (box 1) and compares them. «Apply to the model» goes into the Undo history of the Geometry bar.
+Scegli prima i fili nella tabella della Struttura 3D.	First choose the wires in the table of the 3D structure.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nothing to round: the measurements are already to the millimetre ({0} fields are formulas or variables and stay as they are).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nothing to round: the measurements are already to the millimetre.
+Misure al millimetro: 	Measurements to the millimetre: 
+Z prima	Z before
+Z dopo	Z after
+ROS prima	SWR before
+ROS dopo	SWR after
+G dBi prima	G dBi before
+G dopo	G after
+F/B prima	F/B before
+F/B dopo	F/B after
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	The model changed during the check: repeat «Round and check».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Result thresholds: Z within {0} %, gain within {1} dB, F/B within {2} dB (change them with the right button). Beyond: orange, with the wire that moves most.
+Misure cambiate	Measurements changed
+Campo	Field
+Prima (m)	Before (m)
+Dopo (m)	After (m)
+diametro (mm)	diameter (mm)
+tubo commerciale	commercial tube
+filo metrico	metric wire
+(qui le prime {0})	(the first {0} here)
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	In all: {0} measurements changed on {1} wires, largest shift {2} mm, total length of the elements changed by {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} fields are formulas or variables and stay as they are.
+Segmentazione dopo l'arrotondamento:	Segmentation after rounding:
+Soglie dell'esito	Result thresholds
+Usa queste soglie	Use these thresholds
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Measurements to the millimetre applied to the model ({0} measurements). "Undo" on the Geometry bar goes back.
+giunto	joint
+Bande nei grafici di frequenza	Bands in the frequency charts
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Band on the background of the Frequency tab charts where the amateur bands fall (IARU Region 1, from 136 kHz to 10 GHz), with the band name at the top. The colour is lighter in the dark theme; the curves stay on top.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL lines (dashed violet arc, ✕ = crossed), R, L, C loads (orange box), networks, transformers and stubs (teal box), EZNEC virtual wires (grey). Click a symbol: opens its table.
+Linee, carichi e reti	Lines, loads and networks
+Riga {0} della tabella qui sotto a destra.	Row {0} of the table below on the right.
+ambra	amber
+azzurro ghiaccio	ice blue
+verde salvia	sage green
+aperto	open
+rete L	L network
+antenna a {0} m	antenna at {0} m
+quote {0} m	heights {0} m
+terreno {0} (εr {1}, σ {2} S/m)	{0} ground (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segments, {1} wires, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segments, {1} geometry cards, {2}
+personalizzato	custom
+centra	centre
+alta	high

@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	altitudinea locului scrisă de mână {0} m
 quota sito a mano {0} m (DEM {1} m)	altitudinea locului scrisă de mână {0} m (DEM {1} m)
 Torna al valore del DEM	Înapoi la valoarea DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Altitudinea solului sub antenă. Gol = valoarea DEM (gri). Scrie altitudinea reală dacă DEM-ul greșește: profilul pornește de aici, restul terenului rămâne cel din DEM. ↺ DEM revine la valoarea DEM.
+4. Misure al millimetro	4. Măsuri la milimetru
+al millimetro	la milimetru
+diametri commerciali	diametre comerciale
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	cea mai apropiată țeavă comercială (aluminiu: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sub 6 mm cel mai apropiat fir metric sau AWG. Raza negativă (rând din tabelul Telescopice) rămâne cum este.
+solo quelli scelti nella tabella	doar cele alese în tabel
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	punctele comune a două fire rămân unite (se rotunjește punctul, nu firul)
+Arrotonda e verifica (NEC)	Rotunjește și verifică (NEC)
+Copia la lista di taglio	Copiază lista de tăiere
+Lista di taglio copiata.	Lista de tăiere copiată.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Verificarea calculează modelul înainte și după la frecvențele de respectat (caseta 1) și compară. «Aplică modelului» intră în istoricul Anulare al barei Geometrie.
+Scegli prima i fili nella tabella della Struttura 3D.	Alege mai întâi firele din tabelul Structurii 3D.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nimic de rotunjit: măsurile sunt deja la milimetru ({0} câmpuri sunt formule sau variabile și rămân cum sunt).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nimic de rotunjit: măsurile sunt deja la milimetru.
+Misure al millimetro: 	Măsuri la milimetru: 
+Z prima	Z înainte
+Z dopo	Z după
+ROS prima	SWR înainte
+ROS dopo	SWR după
+G dBi prima	G dBi înainte
+G dopo	G după
+F/B prima	F/B înainte
+F/B dopo	F/B după
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Modelul s-a schimbat în timpul verificării: repetă «Rotunjește și verifică».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Pragurile rezultatului: Z în {0} %, câștig în {1} dB, F/B în {2} dB (se schimbă cu butonul drept). Peste: portocaliu, cu firul care se mută cel mai mult.
+Misure cambiate	Măsuri schimbate
+Campo	Câmp
+Prima (m)	Înainte (m)
+Dopo (m)	După (m)
+diametro (mm)	diametru (mm)
+tubo commerciale	țeavă comercială
+filo metrico	fir metric
+(qui le prime {0})	(aici primele {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	În total: {0} măsuri schimbate pe {1} fire, deplasare maximă {2} mm, lungimea totală a elementelor schimbată cu {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} câmpuri sunt formule sau variabile și rămân cum sunt.
+Segmentazione dopo l'arrotondamento:	Segmentarea după rotunjire:
+Soglie dell'esito	Pragurile rezultatului
+Usa queste soglie	Folosește aceste praguri
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Măsuri la milimetru aplicate modelului ({0} măsuri). "Anulare" din bara Geometrie revine.
+giunto	îmbinare
+Bande nei grafici di frequenza	Benzi în graficele de frecvență
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Fâșie pe fundalul graficelor din fila Frecvență acolo unde cad benzile de radioamatori (IARU Regiunea 1, de la 136 kHz la 10 GHz), cu numele benzii sus. În tema întunecată culoarea e mai deschisă; curbele rămân deasupra.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Linii TL (arc violet punctat, ✕ = încrucișată), sarcini R, L, C (casetă portocalie), rețele, transformatoare și stuburi (casetă verde-albastră), fire virtuale EZNEC (gri). Clic pe un simbol: îi deschide tabelul.
+Linee, carichi e reti	Linii, sarcini și rețele
+Riga {0} della tabella qui sotto a destra.	Rândul {0} din tabelul din dreapta jos.
+ambra	chihlimbar
+azzurro ghiaccio	albastru gheață
+verde salvia	verde salvie
+aperto	deschis
+rete L	rețea L
+antenna a {0} m	antenă la {0} m
+quote {0} m	înălțimi {0} m
+terreno {0} (εr {1}, σ {2} S/m)	sol {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmente, {1} fire, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmente, {1} cartele de geometrie, {2}
+personalizzato	personalizat
+centra	centrează
+alta	înaltă

@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	vietos aukštis įvestas ranka {0} m
 quota sito a mano {0} m (DEM {1} m)	vietos aukštis įvestas ranka {0} m (DEM {1} m)
 Torna al valore del DEM	Grįžti į DEM reikšmę
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Žemės aukštis po antena. Tuščia = DEM reikšmė (pilka). Įrašykite tikrąjį aukštį, jei DEM klysta: profilis prasideda čia, likęs reljefas lieka iš DEM. ↺ DEM grąžina DEM reikšmę.
+4. Misure al millimetro	4. Matmenys milimetro tikslumu
+al millimetro	milimetro tikslumu
+diametri commerciali	prekybiniai skersmenys
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	artimiausias prekybinis vamzdis (aliuminis: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); mažiau nei 6 mm – artimiausia metrinė arba AWG viela. Neigiamas spindulys (lentelės Teleskopiniai eilutė) lieka koks yra.
+solo quelli scelti nella tabella	tik lentelėje pasirinkti
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	dviejų laidų bendri taškai lieka sujungti (apvalinamas taškas, ne laidas)
+Arrotonda e verifica (NEC)	Apvalinti ir patikrinti (NEC)
+Copia la lista di taglio	Kopijuoti pjovimo sąrašą
+Lista di taglio copiata.	Pjovimo sąrašas nukopijuotas.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Patikra apskaičiuoja modelį prieš ir po privalomais dažniais (1 langelis) ir palygina. «Taikyti modeliui» patenka į Geometrijos juostos atšaukimo istoriją.
+Scegli prima i fili nella tabella della Struttura 3D.	Pirmiausia pasirinkite laidus 3D struktūros lentelėje.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nėra ką apvalinti: matmenys jau milimetro tikslumu ({0} laukai yra formulės ar kintamieji ir lieka kokie yra).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nėra ką apvalinti: matmenys jau milimetro tikslumu.
+Misure al millimetro: 	Matmenys milimetro tikslumu: 
+Z prima	Z prieš
+Z dopo	Z po
+ROS prima	SWR prieš
+ROS dopo	SWR po
+G dBi prima	G dBi prieš
+G dopo	G po
+F/B prima	F/B prieš
+F/B dopo	F/B po
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Modelis pasikeitė patikros metu: pakartokite «Apvalinti ir patikrinti».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Rezultato ribos: Z per {0} %, stiprinimas per {1} dB, F/B per {2} dB (keičiama dešiniuoju mygtuku). Viršijus: oranžinė, nurodant labiausiai pasislinkusį laidą.
+Misure cambiate	Pakeisti matmenys
+Campo	Laukas
+Prima (m)	Prieš (m)
+Dopo (m)	Po (m)
+diametro (mm)	skersmuo (mm)
+tubo commerciale	prekybinis vamzdis
+filo metrico	metrinė viela
+(qui le prime {0})	(čia pirmieji {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Iš viso: pakeista {0} matmenų {1} laiduose, didžiausias poslinkis {2} mm, bendras elementų ilgis pakito {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} laukai yra formulės ar kintamieji ir lieka kokie yra.
+Segmentazione dopo l'arrotondamento:	Segmentavimas po apvalinimo:
+Soglie dell'esito	Rezultato ribos
+Usa queste soglie	Naudoti šias ribas
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Matmenys milimetro tikslumu pritaikyti modeliui ({0} matmenų). Geometrijos juostos "Atšaukti" grąžina atgal.
+giunto	jungtis
+Bande nei grafici di frequenza	Ruožai dažnio grafikuose
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Juosta dažnio kortelės grafikų fone ten, kur yra radijo mėgėjų ruožai (IARU 1 regionas, nuo 136 kHz iki 10 GHz), su ruožo pavadinimu viršuje. Tamsioje temoje spalva šviesesnė; kreivės lieka viršuje.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL linijos (punktyrinis violetinis lankas, ✕ = sukryžiuota), apkrovos R, L, C (oranžinis langelis), tinklai, transformatoriai ir šleifai (žalsvai mėlynas langelis), EZNEC virtualūs laidai (pilki). Spustelėkite simbolį: atveria jo lentelę.
+Linee, carichi e reti	Linijos, apkrovos ir tinklai
+Riga {0} della tabella qui sotto a destra.	Lentelės apačioje dešinėje {0} eilutė.
+ambra	gintarinė
+azzurro ghiaccio	ledo mėlyna
+verde salvia	šalavijų žalia
+aperto	atviras
+rete L	L tinklas
+antenna a {0} m	antena {0} m aukštyje
+quote {0} m	aukščiai {0} m
+terreno {0} (εr {1}, σ {2} S/m)	gruntas {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmentai, {1} laidai, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmentai, {1} geometrijos kortelės, {2}
+personalizzato	pasirinktinis
+centra	centruoti
+alta	aukšta

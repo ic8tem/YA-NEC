@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	yer yüksekliği elle girildi {0} m
 quota sito a mano {0} m (DEM {1} m)	yer yüksekliği elle girildi {0} m (DEM {1} m)
 Torna al valore del DEM	DEM değerine dön
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Antenin altındaki zemin yüksekliği. Boş = DEM değeri (gri). DEM yanlışsa gerçek yüksekliği yazın: profil buradan başlar, arazinin geri kalanı DEM'den kalır. ↺ DEM, DEM değerine döner.
+4. Misure al millimetro	4. Milimetre hassasiyetinde ölçüler
+al millimetro	milimetre hassasiyetinde
+diametri commerciali	ticari çaplar
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	en yakın ticari boru (alüminyum: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); 6 mm'nin altında en yakın metrik veya AWG tel. Negatif yarıçap (Teleskopik tablosunun satırı) olduğu gibi kalır.
+solo quelli scelti nella tabella	yalnızca tabloda seçilenler
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	iki telin ortak noktaları bağlı kalır (tel değil nokta yuvarlanır)
+Arrotonda e verifica (NEC)	Yuvarla ve doğrula (NEC)
+Copia la lista di taglio	Kesim listesini kopyala
+Lista di taglio copiata.	Kesim listesi kopyalandı.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Doğrulama modeli uyulacak frekanslarda (kutu 1) önce ve sonra hesaplar ve karşılaştırır. «Modele uygula» Geometri çubuğunun Geri al geçmişine girer.
+Scegli prima i fili nella tabella della Struttura 3D.	Önce 3D yapı tablosunda telleri seçin.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Yuvarlanacak bir şey yok: ölçüler zaten milimetre hassasiyetinde ({0} alan formül veya değişkendir ve olduğu gibi kalır).
+Niente da arrotondare: le misure sono gia' al millimetro.	Yuvarlanacak bir şey yok: ölçüler zaten milimetre hassasiyetinde.
+Misure al millimetro: 	Milimetre hassasiyetinde ölçüler: 
+Z prima	Z önce
+Z dopo	Z sonra
+ROS prima	DDO önce
+ROS dopo	DDO sonra
+G dBi prima	G dBi önce
+G dopo	G sonra
+F/B prima	F/B önce
+F/B dopo	F/B sonra
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Doğrulama sırasında model değişti: «Yuvarla ve doğrula» işlemini tekrarlayın.
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Sonuç eşikleri: Z %{0} içinde, kazanç {1} dB içinde, F/B {2} dB içinde (sağ tuşla değiştirilir). Üstü: turuncu, en çok kayan tel ile birlikte.
+Misure cambiate	Değişen ölçüler
+Campo	Alan
+Prima (m)	Önce (m)
+Dopo (m)	Sonra (m)
+diametro (mm)	çap (mm)
+tubo commerciale	ticari boru
+filo metrico	metrik tel
+(qui le prime {0})	(burada ilk {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Toplam: {1} telde {0} ölçü değişti, en büyük kayma {2} mm, elemanların toplam uzunluğu {3} mm değişti.
+{0} campi sono formule o variabili e restano come sono.	{0} alan formül veya değişkendir ve olduğu gibi kalır.
+Segmentazione dopo l'arrotondamento:	Yuvarlamadan sonra segmentasyon:
+Soglie dell'esito	Sonuç eşikleri
+Usa queste soglie	Bu eşikleri kullan
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Milimetre hassasiyetinde ölçüler modele uygulandı ({0} ölçü). Geometri çubuğundaki "Geri al" geri döner.
+giunto	ek yeri
+Bande nei grafici di frequenza	Frekans grafiklerinde bantlar
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Frekans sekmesi grafiklerinin arka planında amatör bantların düştüğü şerit (IARU 1. Bölge, 136 kHz ile 10 GHz arası), üstte bant adıyla. Koyu temada renk daha açıktır; eğriler üstte kalır.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL hatları (kesikli mor yay, ✕ = çapraz), R, L, C yükleri (turuncu kutu), ağlar, transformatörler ve stub'lar (camgöbeği kutu), EZNEC sanal telleri (gri). Bir simgeye tıklayın: tablosunu açar.
+Linee, carichi e reti	Hatlar, yükler ve ağlar
+Riga {0} della tabella qui sotto a destra.	Sağ alttaki tablonun {0}. satırı.
+ambra	kehribar
+azzurro ghiaccio	buz mavisi
+verde salvia	adaçayı yeşili
+aperto	açık
+rete L	L ağı
+antenna a {0} m	{0} m'de anten
+quote {0} m	yükseklikler {0} m
+terreno {0} (εr {1}, σ {2} S/m)	zemin {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segment, {1} tel, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segment, {1} geometri kartı, {2}
+personalizzato	özel
+centra	ortala
+alta	yüksek

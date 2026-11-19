@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	vietas augstums ievadīts ar roku {0} m
 quota sito a mano {0} m (DEM {1} m)	vietas augstums ievadīts ar roku {0} m (DEM {1} m)
 Torna al valore del DEM	Atpakaļ uz DEM vērtību
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Zemes augstums zem antenas. Tukšs = DEM vērtība (pelēka). Ieraksti īsto augstumu, ja DEM kļūdās: profils sākas šeit, pārējais reljefs paliek no DEM. ↺ DEM atgriežas pie DEM vērtības.
+4. Misure al millimetro	4. Izmēri ar milimetra precizitāti
+al millimetro	ar milimetra precizitāti
+diametri commerciali	tirdzniecības diametri
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	tuvākā tirdzniecības caurule (alumīnijs: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); zem 6 mm tuvākā metriskā vai AWG stieple. Negatīvs rādiuss (tabulas Teleskopiskie rinda) paliek nemainīgs.
+solo quelli scelti nella tabella	tikai tabulā izvēlētie
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	divu stiepļu kopīgie punkti paliek savienoti (noapaļo punktu, nevis stiepli)
+Arrotonda e verifica (NEC)	Noapaļot un pārbaudīt (NEC)
+Copia la lista di taglio	Kopēt griešanas sarakstu
+Lista di taglio copiata.	Griešanas saraksts nokopēts.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Pārbaude aprēķina modeli pirms un pēc ievērojamajās frekvencēs (1. lodziņš) un salīdzina. «Lietot modelim» nonāk Ģeometrijas joslas atsaukšanas vēsturē.
+Scegli prima i fili nella tabella della Struttura 3D.	Vispirms izvēlies stieples 3D struktūras tabulā.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nav ko noapaļot: izmēri jau ir ar milimetra precizitāti ({0} lauki ir formulas vai mainīgie un paliek nemainīgi).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nav ko noapaļot: izmēri jau ir ar milimetra precizitāti.
+Misure al millimetro: 	Izmēri ar milimetra precizitāti: 
+Z prima	Z pirms
+Z dopo	Z pēc
+ROS prima	SWR pirms
+ROS dopo	SWR pēc
+G dBi prima	G dBi pirms
+G dopo	G pēc
+F/B prima	F/B pirms
+F/B dopo	F/B pēc
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Modelis pārbaudes laikā mainījās: atkārto «Noapaļot un pārbaudīt».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Rezultāta sliekšņi: Z {0} % robežās, pastiprinājums {1} dB robežās, F/B {2} dB robežās (maina ar labo pogu). Virs tiem: oranžs, ar stiepli, kas pārvietojas visvairāk.
+Misure cambiate	Mainītie izmēri
+Campo	Lauks
+Prima (m)	Pirms (m)
+Dopo (m)	Pēc (m)
+diametro (mm)	diametrs (mm)
+tubo commerciale	tirdzniecības caurule
+filo metrico	metriskā stieple
+(qui le prime {0})	(šeit pirmie {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Kopā: {0} izmēri mainīti {1} stieplēm, lielākā nobīde {2} mm, elementu kopgarums mainījies par {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} lauki ir formulas vai mainīgie un paliek nemainīgi.
+Segmentazione dopo l'arrotondamento:	Segmentācija pēc noapaļošanas:
+Soglie dell'esito	Rezultāta sliekšņi
+Usa queste soglie	Izmantot šos sliekšņus
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Izmēri ar milimetra precizitāti piemēroti modelim ({0} izmēri). Ģeometrijas joslas "Atsaukt" atgriež atpakaļ.
+giunto	savienojums
+Bande nei grafici di frequenza	Joslas frekvenču grafikos
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Josla cilnes Frekvence grafiku fonā, kur atrodas radioamatieru diapazoni (IARU 1. reģions, no 136 kHz līdz 10 GHz), ar diapazona nosaukumu augšā. Tumšajā motīvā krāsa ir gaišāka; līknes paliek virspusē.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL līnijas (svītrots violets loks, ✕ = krustota), slodzes R, L, C (oranžs lodziņš), tīkli, transformatori un stubi (zilganzaļš lodziņš), EZNEC virtuālās stieples (pelēkas). Klikšķis uz simbola: atver tā tabulu.
+Linee, carichi e reti	Līnijas, slodzes un tīkli
+Riga {0} della tabella qui sotto a destra.	Tabulas {0}. rinda apakšā pa labi.
+ambra	dzintara
+azzurro ghiaccio	ledus zila
+verde salvia	salvijas zaļa
+aperto	atvērts
+rete L	L tīkls
+antenna a {0} m	antena {0} m augstumā
+quote {0} m	augstumi {0} m
+terreno {0} (εr {1}, σ {2} S/m)	grunts {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmenti, {1} stieples, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmenti, {1} ģeometrijas kartes, {2}
+personalizzato	pielāgots
+centra	centrēt
+alta	augsta

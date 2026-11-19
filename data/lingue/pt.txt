@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	cota do local escrita à mão {0} m
 quota sito a mano {0} m (DEM {1} m)	cota do local escrita à mão {0} m (DEM {1} m)
 Torna al valore del DEM	Voltar ao valor do DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Cota do solo sob a antena. Vazio = valor do DEM (cinzento). Escreva a cota real se o DEM estiver errado: o perfil começa aqui, o resto do terreno continua a ser o do DEM. ↺ DEM volta ao valor do DEM.
+4. Misure al millimetro	4. Medidas ao milímetro
+al millimetro	ao milímetro
+diametri commerciali	diâmetros comerciais
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	o tubo comercial mais próximo (alumínio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); abaixo de 6 mm o fio métrico ou AWG mais próximo. O raio negativo (linha da tabela Telescópicos) fica como está.
+solo quelli scelti nella tabella	só os escolhidos na tabela
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	os pontos comuns a dois fios continuam unidos (arredonda-se o ponto, não o fio)
+Arrotonda e verifica (NEC)	Arredondar e verificar (NEC)
+Copia la lista di taglio	Copiar a lista de corte
+Lista di taglio copiata.	Lista de corte copiada.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	A verificação calcula o modelo antes e depois nas frequências a respeitar (quadro 1) e compara. «Aplicar ao modelo» entra no histórico de Anular da barra Geometria.
+Scegli prima i fili nella tabella della Struttura 3D.	Escolha primeiro os fios na tabela da Estrutura 3D.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nada a arredondar: as medidas já estão ao milímetro ({0} campos são fórmulas ou variáveis e ficam como estão).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nada a arredondar: as medidas já estão ao milímetro.
+Misure al millimetro: 	Medidas ao milímetro: 
+Z prima	Z antes
+Z dopo	Z depois
+ROS prima	ROE antes
+ROS dopo	ROE depois
+G dBi prima	G dBi antes
+G dopo	G depois
+F/B prima	F/B antes
+F/B dopo	F/B depois
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	O modelo mudou durante a verificação: repita «Arredondar e verificar».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Limiares do resultado: Z dentro de {0} %, ganho dentro de {1} dB, F/B dentro de {2} dB (mudam-se com o botão direito). Acima: laranja, com o fio que mais se desloca.
+Misure cambiate	Medidas alteradas
+Campo	Campo
+Prima (m)	Antes (m)
+Dopo (m)	Depois (m)
+diametro (mm)	diâmetro (mm)
+tubo commerciale	tubo comercial
+filo metrico	fio métrico
+(qui le prime {0})	(aqui as primeiras {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	No total: {0} medidas alteradas em {1} fios, deslocamento máximo {2} mm, comprimento total dos elementos alterado em {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} campos são fórmulas ou variáveis e ficam como estão.
+Segmentazione dopo l'arrotondamento:	Segmentação depois do arredondamento:
+Soglie dell'esito	Limiares do resultado
+Usa queste soglie	Usar estes limiares
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Medidas ao milímetro aplicadas ao modelo ({0} medidas). "Anular" da barra Geometria volta atrás.
+giunto	junta
+Bande nei grafici di frequenza	Bandas nos gráficos de frequência
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Faixa no fundo dos gráficos do separador Frequência onde caem as bandas de radioamador (IARU Região 1, de 136 kHz a 10 GHz), com o nome da banda em cima. A cor é mais clara no tema escuro; as curvas ficam por cima.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Linhas TL (arco violeta tracejado, ✕ = cruzada), cargas R, L, C (quadro laranja), redes, transformadores e stubs (quadro verde-água), fios virtuais do EZNEC (cinzentos). Clique num símbolo: abre a sua tabela.
+Linee, carichi e reti	Linhas, cargas e redes
+Riga {0} della tabella qui sotto a destra.	Linha {0} da tabela em baixo à direita.
+ambra	âmbar
+azzurro ghiaccio	azul gelo
+verde salvia	verde salva
+aperto	aberto
+rete L	rede L
+antenna a {0} m	antena a {0} m
+quote {0} m	alturas {0} m
+terreno {0} (εr {1}, σ {2} S/m)	terreno {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmentos, {1} fios, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmentos, {1} cartões de geometria, {2}
+personalizzato	personalizado
+centra	centrar
+alta	alta

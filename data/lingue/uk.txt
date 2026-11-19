@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	висота майданчика введена вру�
 quota sito a mano {0} m (DEM {1} m)	висота майданчика введена вручну {0} m (DEM {1} m)
 Torna al valore del DEM	Повернути значення DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Висота землі під антеною. Порожньо = значення DEM (сіре). Введіть справжню висоту, якщо DEM помиляється: профіль починається звідси, решта рельєфу лишається з DEM. ↺ DEM повертає значення DEM.
+4. Misure al millimetro	4. Розміри з точністю до міліметра
+al millimetro	до міліметра
+diametri commerciali	стандартні діаметри
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	найближча стандартна труба (алюміній: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 мм...); менше 6 мм — найближчий метричний дріт або AWG. Від'ємний радіус (рядок таблиці Телескопічні) залишається як є.
+solo quelli scelti nella tabella	лише вибрані в таблиці
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	спільні точки двох дротів залишаються з'єднаними (округлюється точка, а не дріт)
+Arrotonda e verifica (NEC)	Округлити й перевірити (NEC)
+Copia la lista di taglio	Копіювати список розкрою
+Lista di taglio copiata.	Список розкрою скопійовано.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Перевірка розраховує модель до і після на обов'язкових частотах (блок 1) і порівнює. «Застосувати до моделі» потрапляє в історію скасування панелі Геометрія.
+Scegli prima i fili nella tabella della Struttura 3D.	Спершу виберіть дроти в таблиці 3D-структури.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Нічого округлювати: розміри вже з точністю до міліметра ({0} полів — формули або змінні, вони залишаються як є).
+Niente da arrotondare: le misure sono gia' al millimetro.	Нічого округлювати: розміри вже з точністю до міліметра.
+Misure al millimetro: 	Розміри з точністю до міліметра: 
+Z prima	Z до
+Z dopo	Z після
+ROS prima	КСХ до
+ROS dopo	КСХ після
+G dBi prima	G дБі до
+G dopo	G після
+F/B prima	F/B до
+F/B dopo	F/B після
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Модель змінилася під час перевірки: повторіть «Округлити й перевірити».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Пороги результату: Z у межах {0} %, підсилення в межах {1} дБ, F/B у межах {2} дБ (змінюються правою кнопкою). Вище: помаранчевим, з дротом, який зміщується найбільше.
+Misure cambiate	Змінені розміри
+Campo	Поле
+Prima (m)	До (м)
+Dopo (m)	Після (м)
+diametro (mm)	діаметр (мм)
+tubo commerciale	стандартна труба
+filo metrico	метричний дріт
+(qui le prime {0})	(тут перші {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Усього: змінено {0} розмірів на {1} дротах, найбільше зміщення {2} мм, загальна довжина елементів змінилася на {3} мм.
+{0} campi sono formule o variabili e restano come sono.	{0} полів — формули або змінні, вони залишаються як є.
+Segmentazione dopo l'arrotondamento:	Сегментація після округлення:
+Soglie dell'esito	Пороги результату
+Usa queste soglie	Використати ці пороги
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Розміри з точністю до міліметра застосовано до моделі ({0} розмірів). «Скасувати» на панелі Геометрія повертає назад.
+giunto	стик
+Bande nei grafici di frequenza	Діапазони на графіках частоти
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Смуга на тлі графіків вкладки Частота там, де лежать аматорські діапазони (IARU, район 1, від 136 кГц до 10 ГГц), з назвою діапазону вгорі. У темній темі колір світліший; криві залишаються зверху.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Лінії TL (фіолетова пунктирна дуга, ✕ = перехрещена), навантаження R, L, C (помаранчева рамка), кола, трансформатори та шлейфи (бірюзова рамка), віртуальні дроти EZNEC (сірі). Клацання по символу: відкриває його таблицю.
+Linee, carichi e reti	Лінії, навантаження й кола
+Riga {0} della tabella qui sotto a destra.	Рядок {0} таблиці праворуч унизу.
+ambra	бурштиновий
+azzurro ghiaccio	крижаний блакитний
+verde salvia	шавлієвий зелений
+aperto	розімкнений
+rete L	Г-коло
+antenna a {0} m	антена на {0} м
+quote {0} m	висоти {0} м
+terreno {0} (εr {1}, σ {2} S/m)	ґрунт {0} (εr {1}, σ {2} См/м)
+{0} segmenti, {1} fili, {2}	{0} сегментів, {1} дротів, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} сегментів, {1} карт геометрії, {2}
+personalizzato	власний
+centra	по центру
+alta	високий

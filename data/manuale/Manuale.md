@@ -2064,3 +2064,32 @@ C'e' anche **Quota di tutta l'antenna (Z)**. Il riquadro di conferma mostra nome
 - Calcoli meccanici: il Vento conta gli elementi del modello gia' alla prima apertura.
 
 **Traduzioni.** L'inglese ha le voci nuove della 1.3-1.5 e i pezzi dei testi composti con i numeri (risultati, schede, note). Le altre lingue, dove manca la loro traduzione, mostrano l'inglese.
+
+### 26.2 Dalla 1.5.2
+
+**Linee, carichi e reti nella Struttura 3D.** La casella nuova **Linee, carichi e reti** (accesa di partenza) disegna sui fili gli oggetti che prima stavano solo nelle tabelle in basso a destra:
+- **linee TL**: arco viola tratteggiato tra i due segmenti, con l'etichetta (TL1 e Z0), anche tra elementi alimentati (LPDA, stack, four-square); con la croce se la linea e' incrociata;
+- **carichi** LD 0-4: riquadro arancio sul segmento con il simbolo (resistenza, bobina, condensatore, trappola LC) e il valore; il materiale dei fili (LD 5) resta nella nota in alto;
+- **reti** NT, trasformatori, reti L e stub: riquadro verde acqua con il simbolo e una linea sottile tra le due porte.
+
+Oltre 40 oggetti le etichette si nascondono e resta il simbolo, per non coprire il disegno.
+
+**Bande nei grafici di frequenza.** Nella linguetta Frequenza le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz) sono una fascia colorata sul fondo dei grafici, con il nome della banda in alto; le curve restano sopra. Il colore si sceglie nelle **Impostazioni**, riga «Bande nei grafici di frequenza»: verde salvia, ambra, azzurro ghiaccio oppure nessuna. Nel tema scuro la fascia e' piu' chiara.
+
+**Terreno reale.**
+- Quando parte il calcolo la barra in basso scrive «Terreno reale: calcolo in corso…» e il pulsante Calcola resta spento fino alla fine («calcolo finito», oppure l'errore). Prima l'unico segno era nel titolo del profilo, che non si vede se la pagina e' scorsa in basso.
+- **Quota del sito a mano.** Nel riquadro SITO la «Quota sito» si puo' scrivere quando il DEM sbaglia (vuoto = la quota del DEM, in grigio nel campo). Con la quota scritta il campo ha il bordo ocra, sotto c'e' «scritta a mano: DEM 48 m (+14 m)» e il pulsante **↺ DEM** torna al DEM. Il primo punto del profilo prende la quota scritta, il resto del terreno resta quello del DEM; vale anche per il terreno piatto di confronto. Con il profilo da HorizonProfiler vale la quota del file. La quota si ricorda insieme al locatore e si azzera cambiandolo. Titolo, disegno del profilo e CSV esportato dicono «quota sito a mano».
+- Il punto del profilo e' il centro del quadratino del locatore: con 10 caratteri circa 30 × 20 m. Se il profilo mostra un rilievo che non c'e', conviene prima mettere il punto esatto con «Scegli sulla mappa».
+
+**Ottimizzatore: 4. Misure al millimetro.** Riquadro nuovo sotto il registro dei passi, per gli elementi gia' divisi in piu' fili (tubi telescopici) o con misure nate in pollici o uscite da un'ottimizzazione (-5,575300 m, 0,8381947 m):
+- **Coordinate al millimetro**: si arrotondano i campi dei fili scritti come numero; formule, variabili e righe delle Rastremazioni (raggio negativo) restano come sono, i segmenti non cambiano.
+- **Diametri commerciali** (a scelta): il tubo d'alluminio piu' vicino della serie dei Calcoli meccanici (6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 22, 25, 28, 30... mm), sotto i 6 mm il filo metrico o AWG piu' vicino.
+- **Fili**: tutti, o solo quelli scelti nella tabella della Struttura 3D. Si arrotondano i punti, non i fili: un giunto tra due fili diventa lo stesso numero in entrambi (anche se uno dei due non e' tra quelli scelti), cosi' i fili restano collegati.
+- **Arrotonda e verifica (NEC)** calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e mostra Z, ROS, guadagno e F/B prima e dopo. Esito verde «uguale» entro le soglie (Z 2 %, guadagno 0,05 dB, F/B 0,5 dB; clic destro sulla tabella per cambiarle), arancio oltre, con il filo che si sposta di piu'. Sotto: le misure cambiate (un giunto in una riga sola, «1–2, Y2 / Y1 (giunto)»), il riepilogo e gli avvisi nuovi della segmentazione.
+- **Applica al modello** entra nella storia di Annulla della barra Geometria; **Copia la lista di taglio** copia per ogni filo la lunghezza al millimetro, il diametro e le posizioni sul boom, per l'officina.
+
+**Correzioni.**
+- Correzione del boom: nel disegno i nomi degli elementi vicini (riflettore, radiatore, D1) non si accavallano piu' (due righe alternate) e non coprono la nota «differenza esagerata per vederla».
+- Dopo Nuovo, e aprendo un file con Apri modello, la tendina Esempi torna a «Esempi...».
+
+**Traduzioni.** Le voci della 1.5.2 sono tradotte in tutte le 36 lingue.

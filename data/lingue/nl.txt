@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	hoogte van de locatie met de hand {0} m
 quota sito a mano {0} m (DEM {1} m)	hoogte van de locatie met de hand {0} m (DEM {1} m)
 Torna al valore del DEM	Terug naar de DEM-waarde
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Terreinhoogte onder de antenne. Leeg = DEM-waarde (grijs). Vul de echte hoogte in als het DEM fout zit: het profiel begint hier, de rest van het terrein blijft uit het DEM. ↺ DEM gaat terug naar de DEM-waarde.
+4. Misure al millimetro	4. Maten op de millimeter
+al millimetro	op de millimeter
+diametri commerciali	handelsdiameters
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	de dichtstbijzijnde handelsbuis (aluminium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); onder 6 mm de dichtstbijzijnde metrische of AWG-draad. Een negatieve straal (rij van de tabel Telescopisch) blijft zoals hij is.
+solo quelli scelti nella tabella	alleen die in de tabel gekozen
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	punten die twee draden delen blijven verbonden (het punt wordt afgerond, niet de draad)
+Arrotonda e verifica (NEC)	Afronden en controleren (NEC)
+Copia la lista di taglio	Zaaglijst kopiëren
+Lista di taglio copiata.	Zaaglijst gekopieerd.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	De controle berekent het model ervoor en erna op de na te leven frequenties (vak 1) en vergelijkt. «Toepassen op het model» gaat in de Ongedaan-maken-geschiedenis van de Geometriebalk.
+Scegli prima i fili nella tabella della Struttura 3D.	Kies eerst de draden in de tabel van de 3D-structuur.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Niets af te ronden: de maten zijn al op de millimeter ({0} velden zijn formules of variabelen en blijven zoals ze zijn).
+Niente da arrotondare: le misure sono gia' al millimetro.	Niets af te ronden: de maten zijn al op de millimeter.
+Misure al millimetro: 	Maten op de millimeter: 
+Z prima	Z ervoor
+Z dopo	Z erna
+ROS prima	SWR ervoor
+ROS dopo	SWR erna
+G dBi prima	G dBi ervoor
+G dopo	G erna
+F/B prima	F/B ervoor
+F/B dopo	F/B erna
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Het model is tijdens de controle veranderd: herhaal «Afronden en controleren».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Drempels van het resultaat: Z binnen {0} %, winst binnen {1} dB, F/B binnen {2} dB (te wijzigen met de rechterknop). Erboven: oranje, met de draad die het meest verschuift.
+Misure cambiate	Gewijzigde maten
+Campo	Veld
+Prima (m)	Ervoor (m)
+Dopo (m)	Erna (m)
+diametro (mm)	diameter (mm)
+tubo commerciale	handelsbuis
+filo metrico	metrische draad
+(qui le prime {0})	(hier de eerste {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	In totaal: {0} maten gewijzigd op {1} draden, grootste verschuiving {2} mm, totale lengte van de elementen gewijzigd met {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} velden zijn formules of variabelen en blijven zoals ze zijn.
+Segmentazione dopo l'arrotondamento:	Segmentatie na het afronden:
+Soglie dell'esito	Drempels van het resultaat
+Usa queste soglie	Deze drempels gebruiken
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Maten op de millimeter toegepast op het model ({0} maten). "Ongedaan maken" op de Geometriebalk gaat terug.
+giunto	verbinding
+Bande nei grafici di frequenza	Banden in de frequentiegrafieken
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Strook op de achtergrond van de grafieken van het tabblad Frequentie waar de amateurbanden liggen (IARU Regio 1, van 136 kHz tot 10 GHz), met de bandnaam bovenaan. De kleur is lichter in het donkere thema; de curven blijven erboven.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL-lijnen (gestippelde paarse boog, ✕ = gekruist), belastingen R, L, C (oranje vak), netwerken, transformatoren en stubs (blauwgroen vak), virtuele draden van EZNEC (grijs). Klik op een symbool: opent zijn tabel.
+Linee, carichi e reti	Lijnen, belastingen en netwerken
+Riga {0} della tabella qui sotto a destra.	Rij {0} van de tabel rechtsonder.
+ambra	amber
+azzurro ghiaccio	ijsblauw
+verde salvia	saliegroen
+aperto	open
+rete L	L-netwerk
+antenna a {0} m	antenne op {0} m
+quote {0} m	hoogtes {0} m
+terreno {0} (εr {1}, σ {2} S/m)	grond {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmenten, {1} draden, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmenten, {1} geometriekaarten, {2}
+personalizzato	aangepast
+centra	centreren
+alta	hoog

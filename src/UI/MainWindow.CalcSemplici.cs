@@ -1086,7 +1086,7 @@ namespace YaNec
                     v3.CurrentNorm = cn;
                     v3.Pattern = r.Grid; v3.PatternMax = r.GmaxDbi;
                     v3.LobeAz = r.PhiMax; v3.LobeEl = r.ElevationOfMax;
-                    v3.Info = geo.N + " segmenti, " + m.Geometry.Count + " fili, " + (m.Ground.Kind == GroundKind.Perfect ? "terreno perfetto" : "terreno medio (εr 13, σ 0,005 S/m, Sommerfeld)");
+                    v3.Info = Lang.F("{0} segmenti, {1} fili, {2}", geo.N, m.Geometry.Count, Lang.T(m.Ground.Kind == GroundKind.Perfect ? "terreno perfetto" : "terreno medio (εr 13, σ 0,005 S/m, Sommerfeld)"));
                     v3.InvalidateVisual();
                     Complex za = r.Sources.Count > 0 ? r.Sources[0].Z : Complex.Zero;
                     cards.Children.Insert(0, Riquadretto("Impedenza A (dietro)", FN(za.Real, 1) + (za.Imaginary >= 0 ? " +j" : " -j") + FN(Math.Abs(za.Imaginary), 1), "4 sorgenti: vedi tabella"));

@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	wysokość miejsca wpisana ręcznie {0} m
 quota sito a mano {0} m (DEM {1} m)	wysokość miejsca wpisana ręcznie {0} m (DEM {1} m)
 Torna al valore del DEM	Powrót do wartości DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Wysokość terenu pod anteną. Puste = wartość DEM (szara). Wpisz prawdziwą wysokość, jeśli DEM się myli: profil zaczyna się tutaj, reszta terenu pozostaje z DEM. ↺ DEM wraca do wartości DEM.
+4. Misure al millimetro	4. Wymiary z dokładnością do milimetra
+al millimetro	z dokładnością do milimetra
+diametri commerciali	średnice handlowe
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	najbliższa rura handlowa (aluminium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); poniżej 6 mm najbliższy drut metryczny lub AWG. Ujemny promień (wiersz tabeli Teleskopowe) zostaje bez zmian.
+solo quelli scelti nella tabella	tylko wybrane w tabeli
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	punkty wspólne dwóch drutów pozostają połączone (zaokrągla się punkt, nie drut)
+Arrotonda e verifica (NEC)	Zaokrąglij i sprawdź (NEC)
+Copia la lista di taglio	Kopiuj listę cięcia
+Lista di taglio copiata.	Lista cięcia skopiowana.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Sprawdzenie liczy model przed i po na wymaganych częstotliwościach (ramka 1) i porównuje. «Zastosuj do modelu» trafia do historii Cofnij paska Geometria.
+Scegli prima i fili nella tabella della Struttura 3D.	Najpierw wybierz druty w tabeli Struktury 3D.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nic do zaokrąglenia: wymiary są już z dokładnością do milimetra ({0} pól to wzory lub zmienne i zostają bez zmian).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nic do zaokrąglenia: wymiary są już z dokładnością do milimetra.
+Misure al millimetro: 	Wymiary z dokładnością do milimetra: 
+Z prima	Z przed
+Z dopo	Z po
+ROS prima	SWR przed
+ROS dopo	SWR po
+G dBi prima	G dBi przed
+G dopo	G po
+F/B prima	F/B przed
+F/B dopo	F/B po
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Model zmienił się podczas sprawdzania: powtórz «Zaokrąglij i sprawdź».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Progi wyniku: Z w granicach {0} %, zysk w granicach {1} dB, F/B w granicach {2} dB (zmienia się prawym przyciskiem). Powyżej: pomarańczowy, z drutem, który przesuwa się najbardziej.
+Misure cambiate	Zmienione wymiary
+Campo	Pole
+Prima (m)	Przed (m)
+Dopo (m)	Po (m)
+diametro (mm)	średnica (mm)
+tubo commerciale	rura handlowa
+filo metrico	drut metryczny
+(qui le prime {0})	(tu pierwsze {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Razem: {0} wymiarów zmienionych na {1} drutach, największe przesunięcie {2} mm, całkowita długość elementów zmieniona o {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} pól to wzory lub zmienne i zostają bez zmian.
+Segmentazione dopo l'arrotondamento:	Segmentacja po zaokrągleniu:
+Soglie dell'esito	Progi wyniku
+Usa queste soglie	Użyj tych progów
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Wymiary z dokładnością do milimetra zastosowane do modelu ({0} wymiarów). "Cofnij" na pasku Geometria wraca.
+giunto	złącze
+Bande nei grafici di frequenza	Pasma na wykresach częstotliwości
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Pas w tle wykresów karty Częstotliwość tam, gdzie leżą pasma krótkofalarskie (IARU Region 1, od 136 kHz do 10 GHz), z nazwą pasma u góry. W ciemnym motywie kolor jest jaśniejszy; krzywe pozostają na wierzchu.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Linie TL (fioletowy łuk przerywany, ✕ = skrzyżowana), obciążenia R, L, C (pomarańczowa ramka), sieci, transformatory i stuby (morska ramka), wirtualne druty EZNEC (szare). Kliknięcie symbolu: otwiera jego tabelę.
+Linee, carichi e reti	Linie, obciążenia i sieci
+Riga {0} della tabella qui sotto a destra.	Wiersz {0} tabeli na dole po prawej.
+ambra	bursztynowy
+azzurro ghiaccio	lodowy błękit
+verde salvia	szałwiowa zieleń
+aperto	otwarty
+rete L	sieć L
+antenna a {0} m	antena na {0} m
+quote {0} m	wysokości {0} m
+terreno {0} (εr {1}, σ {2} S/m)	grunt {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmentów, {1} drutów, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmentów, {1} kart geometrii, {2}
+personalizzato	własny
+centra	wyśrodkuj
+alta	wysoki

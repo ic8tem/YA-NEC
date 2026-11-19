@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	ความสูงของที่ตั้งก�
 quota sito a mano {0} m (DEM {1} m)	ความสูงของที่ตั้งกรอกเอง {0} m (DEM {1} m)
 Torna al valore del DEM	กลับไปใช้ค่า DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	ความสูงของพื้นใต้สายอากาศ ว่าง = ค่า DEM (สีเทา) กรอกความสูงจริงหาก DEM ผิด: โปรไฟล์เริ่มจากตรงนี้ ส่วนที่เหลือของภูมิประเทศยังเป็นของ DEM ↺ DEM กลับไปใช้ค่า DEM
+4. Misure al millimetro	4. ขนาดละเอียดถึงมิลลิเมตร
+al millimetro	ละเอียดถึงมิลลิเมตร
+diametri commerciali	เส้นผ่านศูนย์กลางมาตรฐานท้องตลาด
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	ท่อมาตรฐานที่ใกล้ที่สุด (อะลูมิเนียม: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...) ต่ำกว่า 6 mm ใช้ลวดเมตริกหรือ AWG ที่ใกล้ที่สุด รัศมีติดลบ (แถวของตารางทาเปอร์) คงเดิม
+solo quelli scelti nella tabella	เฉพาะที่เลือกในตาราง
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	จุดร่วมของลวดสองเส้นยังต่อกันอยู่ (ปัดเศษที่จุด ไม่ใช่ที่ลวด)
+Arrotonda e verifica (NEC)	ปัดเศษและตรวจสอบ (NEC)
+Copia la lista di taglio	คัดลอกรายการตัด
+Lista di taglio copiata.	คัดลอกรายการตัดแล้ว
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	การตรวจสอบคำนวณแบบจำลองก่อนและหลังที่ความถี่ที่ต้องรักษา (กรอบ 1) แล้วเปรียบเทียบ «ใช้กับแบบจำลอง» จะเข้าไปในประวัติการเลิกทำของแถบรูปทรง
+Scegli prima i fili nella tabella della Struttura 3D.	เลือกลวดในตารางโครงสร้าง 3D ก่อน
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	ไม่มีอะไรต้องปัดเศษ: ขนาดละเอียดถึงมิลลิเมตรอยู่แล้ว ({0} ช่องเป็นสูตรหรือตัวแปรและคงเดิม)
+Niente da arrotondare: le misure sono gia' al millimetro.	ไม่มีอะไรต้องปัดเศษ: ขนาดละเอียดถึงมิลลิเมตรอยู่แล้ว
+Misure al millimetro: 	ขนาดละเอียดถึงมิลลิเมตร: 
+Z prima	Z ก่อน
+Z dopo	Z หลัง
+ROS prima	SWR ก่อน
+ROS dopo	SWR หลัง
+G dBi prima	G dBi ก่อน
+G dopo	G หลัง
+F/B prima	F/B ก่อน
+F/B dopo	F/B หลัง
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	แบบจำลองเปลี่ยนระหว่างการตรวจสอบ: ทำ «ปัดเศษและตรวจสอบ» อีกครั้ง
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	เกณฑ์ของผลลัพธ์: Z ภายใน {0} %, อัตราขยายภายใน {1} dB, F/B ภายใน {2} dB (เปลี่ยนด้วยปุ่มขวา) เกินกว่านั้น: สีส้ม พร้อมลวดที่ขยับมากที่สุด
+Misure cambiate	ขนาดที่เปลี่ยน
+Campo	ช่อง
+Prima (m)	ก่อน (m)
+Dopo (m)	หลัง (m)
+diametro (mm)	เส้นผ่านศูนย์กลาง (mm)
+tubo commerciale	ท่อมาตรฐาน
+filo metrico	ลวดเมตริก
+(qui le prime {0})	(ที่นี่ {0} รายการแรก)
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	รวม: เปลี่ยน {0} ขนาดบนลวด {1} เส้น ขยับมากที่สุด {2} mm ความยาวรวมขององค์ประกอบเปลี่ยน {3} mm
+{0} campi sono formule o variabili e restano come sono.	{0} ช่องเป็นสูตรหรือตัวแปรและคงเดิม
+Segmentazione dopo l'arrotondamento:	การแบ่งเซกเมนต์หลังปัดเศษ:
+Soglie dell'esito	เกณฑ์ของผลลัพธ์
+Usa queste soglie	ใช้เกณฑ์เหล่านี้
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	ใช้ขนาดละเอียดถึงมิลลิเมตรกับแบบจำลองแล้ว ({0} ขนาด) "เลิกทำ" ของแถบรูปทรงจะย้อนกลับ
+giunto	รอยต่อ
+Bande nei grafici di frequenza	ย่านความถี่ในกราฟความถี่
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	แถบบนพื้นหลังของกราฟในแท็บความถี่ตรงที่ย่านความถี่วิทยุสมัครเล่นอยู่ (IARU ภูมิภาค 1 ตั้งแต่ 136 kHz ถึง 10 GHz) พร้อมชื่อย่านด้านบน ในธีมมืดสีจะอ่อนกว่า เส้นโค้งยังอยู่ด้านบน
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	สาย TL (ส่วนโค้งสีม่วงเส้นประ ✕ = ไขว้) โหลด R, L, C (กรอบสีส้ม) เครือข่าย หม้อแปลง และสตับ (กรอบสีเขียวน้ำทะเล) ลวดเสมือนของ EZNEC (สีเทา) คลิกที่สัญลักษณ์: เปิดตารางของมัน
+Linee, carichi e reti	สาย โหลด และเครือข่าย
+Riga {0} della tabella qui sotto a destra.	แถว {0} ของตารางด้านล่างขวา
+ambra	อำพัน
+azzurro ghiaccio	ฟ้าน้ำแข็ง
+verde salvia	เขียวเสจ
+aperto	เปิด
+rete L	เครือข่าย L
+antenna a {0} m	สายอากาศที่ {0} m
+quote {0} m	ความสูง {0} m
+terreno {0} (εr {1}, σ {2} S/m)	พื้นดิน {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} เซกเมนต์, {1} ลวด, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} เซกเมนต์, {1} การ์ดรูปทรง, {2}
+personalizzato	กำหนดเอง
+centra	จัดกึ่งกลาง
+alta	สูง

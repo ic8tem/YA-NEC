@@ -1,0 +1,76 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Misure al millimetro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Bozzetto per IC8TEM: riquadro nuovo nell'Ottimizzatore che arrotonda al millimetro le misure dei fili gia' segmentati dall'utente e ricalcola l'antenna */
+:root{ --bg:#eef1f5; --card:#ffffff; --fg:#1b2633; --muted:#5d6b7c; --line:#d5dce5; --accent:#1f6fd6; --tag:#e08a00; --tagsoft:#fff3df; --ok:#2f8a4c; --warn:#c2410c; --chg:#fff3df;
+  --f-ui:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48; --accent:#5aa0ff; --tag:#ffad33; --tagsoft:#3a2c14; --ok:#5cc47e; --warn:#ff8a4c; --chg:#3a2c14; color-scheme:dark }}
+:root[data-theme="dark"]{ --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48; --accent:#5aa0ff; --tag:#ffad33; --tagsoft:#3a2c14; --ok:#5cc47e; --warn:#ff8a4c; --chg:#3a2c14; color-scheme:dark }
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+main{max-width:1100px;margin:0 auto;display:grid;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance} h2{font-size:1.05rem;margin:0}
+p{margin:0;max-width:80ch} .muted{color:var(--muted)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--tag);background:var(--tagsoft);border-radius:4px;padding:1px 7px;justify-self:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:10px;min-width:0}
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-size:.92rem}
+.pill{border:1px solid var(--accent);color:var(--accent);border-radius:16px;padding:2px 11px;font-size:.88rem}
+.pill.on{background:var(--accent);color:#fff}
+.b{border:1px solid var(--accent);color:var(--accent);border-radius:16px;padding:3px 12px;font-size:.9rem}
+.b.pri{background:var(--accent);color:#fff}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right;white-space:nowrap}
+th{color:var(--muted);font-weight:500;font-size:.78rem} td:first-child,th:first-child{text-align:left}
+td.m{font-family:var(--f-mono)} td.c{background:var(--chg)}
+.ok{color:var(--ok);font-weight:600}.w{color:var(--warn);font-weight:600}
+ul{margin:0;padding-left:20px;display:grid;gap:4px;max-width:85ch}
+</style>
+<main>
+  <span class="tag">bozzetto da approvare · 19/11/2026</span>
+  <h1>Ottimizzatore: misure al millimetro e nuova verifica</h1>
+  <span class="tag">versione 2 · coordinate al millimetro, diametri commerciali</span>
+  <p class="muted">Richiesta di IC8TEM (19/11, 08:47): quando l'utente ha gia' diviso gli elementi in piu' fili (tubi telescopici, per esempio la Yagi da 66 fili con -5,575300 e -4,648200 m, misure nate in pollici), un riquadro che riporti le misure al millimetro e verifichi di nuovo l'antenna.</p>
+
+  <section class="card">
+    <h2>4. Misure al millimetro</h2>
+    <div class="row"><span>Coordinate</span><span class="pill on">al millimetro</span><span class="muted">(revisione del 19/11, 08:50: solo il millimetro)</span></div>
+    <div class="row"><span>Diametri</span><span class="pill on">diametri commerciali</span><span class="muted">il tubo o il tondo commerciale piu' vicino della tabella Rastremazioni (Al 6060/6061: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...; per il filo i diametri AWG e metrici)</span></div>
+    <div class="row"><span>Fili</span><span class="pill on">tutti</span><span class="pill">solo quelli scelti nella tabella</span><span class="muted">i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)</span></div>
+    <div class="row"><span class="b pri">Arrotonda e verifica (NEC)</span><span class="b">Applica al modello</span><span class="b">Copia la lista di taglio</span></div>
+    <p class="muted" style="font-size:.86rem">La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.</p>
+
+    <div class="tw"><table>
+      <tr><th>Frequenza</th><th>Z prima</th><th>Z dopo</th><th>ROS prima</th><th>ROS dopo</th><th>G dBi prima</th><th>G dopo</th><th>F/B prima</th><th>F/B dopo</th><th>esito</th></tr>
+      <tr><td>14,050 MHz</td><td class="m">22,4 −j18,1</td><td class="m">22,5 −j17,9</td><td class="m">2,64</td><td class="m">2,62</td><td class="m">7,91</td><td class="m">7,91</td><td class="m">23,0</td><td class="m">22,9</td><td class="ok">uguale</td></tr>
+      <tr><td>14,200 MHz</td><td class="m">21,5 −j16,6</td><td class="m">21,6 −j16,4</td><td class="m">2,64</td><td class="m">2,61</td><td class="m">7,95</td><td class="m">7,95</td><td class="m">28,0</td><td class="m">27,6</td><td class="ok">uguale</td></tr>
+      <tr><td>14,350 MHz</td><td class="m">20,9 −j15,0</td><td class="m">21,0 −j14,8</td><td class="m">2,61</td><td class="m">2,59</td><td class="m">8,01</td><td class="m">8,01</td><td class="m">21,7</td><td class="m">21,1</td><td class="w">F/B −0,6 dB</td></tr>
+    </table></div>
+    <p class="muted" style="font-size:.86rem">Soglie dell'esito: Z entro il 2 %, guadagno entro 0,05 dB, F/B entro 0,5 dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.</p>
+
+    <h2 style="margin-top:6px">Misure cambiate</h2>
+    <div class="tw"><table>
+      <tr><th>Filo</th><th>Campo</th><th>Prima (m)</th><th>Dopo (m)</th><th>Δ mm</th></tr>
+      <tr><td>1</td><td>Y1</td><td class="m">-5,575300</td><td class="m c">-5,575</td><td class="m">+0,30</td></tr>
+      <tr><td>1–2</td><td>Y2 / Y1 (giunto)</td><td class="m">-4,648200</td><td class="m c">-4,648</td><td class="m">+0,20</td></tr>
+      <tr><td>5–6</td><td>Y2 / Y1 (giunto)</td><td class="m">-1,828800</td><td class="m c">-1,829</td><td class="m">−0,20</td></tr>
+      <tr><td>12</td><td>Y1</td><td class="m">-4,283075</td><td class="m c">-4,283</td><td class="m">+0,08</td></tr>
+      <tr><td>12</td><td>diametro (mm)</td><td class="m">9,525 (3/8")</td><td class="m c">10 (tubo commerciale)</td><td class="m">+0,475</td></tr>
+    </table></div>
+    <p class="muted" style="font-size:.86rem">In fondo: 214 misure cambiate su 66 fili, spostamento massimo 0,49 mm, lunghezza totale degli elementi cambiata di +0,3 mm.</p>
+  </section>
+
+  <section class="card">
+    <h2>Cosa fa</h2>
+    <ul>
+      <li>Riquadro nuovo «4. Misure al millimetro» nell'Ottimizzatore, sotto il registro dei passi; vale anche dopo un'ottimizzazione (misure come 0,8381947 m tornano costruibili).</li>
+      <li>Si arrotondano i punti, non i fili: un estremo in comune a due fili (giunto di un tubo telescopico) diventa lo stesso numero in entrambi, cosi' i fili restano collegati.</li>
+      <li>Le formule e le variabili non si toccano: si arrotondano solo i campi scritti come numero (le variabili si arrotondano nella loro riga dell'elenco).</li>
+      <li>Il numero dei segmenti non cambia; dopo l'arrotondamento parte la verifica della segmentazione (avvisi se un tratto diventa troppo corto).</li>
+      <li>Nella stessa scheda «Copia la lista di taglio»: lunghezze dei tubi gia' al millimetro, per l'officina.</li>
+    </ul>
+  </section>
+</main>
+
+</body></html>

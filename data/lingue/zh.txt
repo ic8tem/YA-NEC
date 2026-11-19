@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	手动输入的站点海拔 {0} m
 quota sito a mano {0} m (DEM {1} m)	手动输入的站点海拔 {0} m (DEM {1} m)
 Torna al valore del DEM	恢复 DEM 数值
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	天线下方地面的海拔。空白 = DEM 数值（灰色）。DEM 有误时请输入实际海拔：剖面从这里开始，其余地形仍取自 DEM。↺ DEM 恢复 DEM 数值。
+4. Misure al millimetro	4. 精确到毫米的尺寸
+al millimetro	精确到毫米
+diametri commerciali	市售直径
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	最接近的市售管材 (铝: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...)；6 mm 以下取最接近的公制线或 AWG 线。负半径 (伸缩管表中的一行) 保持不变。
+solo quelli scelti nella tabella	仅表中选中的
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	两根导线的公共点保持相连 (取整的是点，不是导线)
+Arrotonda e verifica (NEC)	取整并验证 (NEC)
+Copia la lista di taglio	复制下料清单
+Lista di taglio copiata.	已复制下料清单。
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	验证在须满足的频率 (框 1) 上计算模型取整前后并比较。「应用到模型」进入几何栏的撤销历史。
+Scegli prima i fili nella tabella della Struttura 3D.	请先在 3D 结构的表格中选择导线。
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	无需取整：尺寸已精确到毫米 ({0} 个字段是公式或变量，保持不变)。
+Niente da arrotondare: le misure sono gia' al millimetro.	无需取整：尺寸已精确到毫米。
+Misure al millimetro: 	精确到毫米的尺寸： 
+Z prima	Z 之前
+Z dopo	Z 之后
+ROS prima	SWR 之前
+ROS dopo	SWR 之后
+G dBi prima	G dBi 之前
+G dopo	G 之后
+F/B prima	F/B 之前
+F/B dopo	F/B 之后
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	验证期间模型已改变：请重新「取整并验证」。
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	结果阈值：Z 在 {0} % 以内，增益在 {1} dB 以内，F/B 在 {2} dB 以内 (右键修改)。超出：橙色，并标出移动最大的导线。
+Misure cambiate	改变的尺寸
+Campo	字段
+Prima (m)	之前 (m)
+Dopo (m)	之后 (m)
+diametro (mm)	直径 (mm)
+tubo commerciale	市售管材
+filo metrico	公制线
+(qui le prime {0})	(这里列出前 {0} 项)
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	合计：{1} 根导线上改变了 {0} 个尺寸，最大移动 {2} mm，振子总长改变 {3} mm。
+{0} campi sono formule o variabili e restano come sono.	{0} 个字段是公式或变量，保持不变。
+Segmentazione dopo l'arrotondamento:	取整后的分段：
+Soglie dell'esito	结果阈值
+Usa queste soglie	使用这些阈值
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	已将精确到毫米的尺寸应用到模型 ({0} 个)。几何栏的「撤销」可退回。
+giunto	接头
+Bande nei grafici di frequenza	频率图中的波段
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	在频率选项卡图表的背景上，业余波段所在处显示色带 (IARU 第 1 区，136 kHz 至 10 GHz)，波段名称在上方。深色主题下颜色更浅；曲线保持在上层。
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL 传输线 (紫色虚线弧，✕ = 交叉)，R、L、C 负载 (橙色框)，网络、变压器和短截线 (青绿色框)，EZNEC 虚拟导线 (灰色)。单击符号：打开其表格。
+Linee, carichi e reti	传输线、负载和网络
+Riga {0} della tabella qui sotto a destra.	右下表格的第 {0} 行。
+ambra	琥珀色
+azzurro ghiaccio	冰蓝色
+verde salvia	鼠尾草绿
+aperto	开路
+rete L	L 型网络
+antenna a {0} m	天线高 {0} m
+quote {0} m	高度 {0} m
+terreno {0} (εr {1}, σ {2} S/m)	地面 {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} 个分段，{1} 根导线，{2}
+{0} segmenti, {1} schede di geometria, {2}	{0} 个分段，{1} 张几何卡，{2}
+personalizzato	自定义
+centra	居中
+alta	高

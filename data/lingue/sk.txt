@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	výška stanovišťa zadaná ručne {0} m
 quota sito a mano {0} m (DEM {1} m)	výška stanovišťa zadaná ručne {0} m (DEM {1} m)
 Torna al valore del DEM	Späť na hodnotu DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Výška terénu pod anténou. Prázdne = hodnota DEM (sivá). Zadajte skutočnú výšku, ak sa DEM mýli: profil začína tu, zvyšok terénu zostáva z DEM. ↺ DEM vráti hodnotu DEM.
+4. Misure al millimetro	4. Rozmery na milimeter
+al millimetro	na milimeter
+diametri commerciali	obchodné priemery
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	najbližšia obchodná rúrka (hliník: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); pod 6 mm najbližší metrický alebo AWG drôt. Záporný polomer (riadok tabuľky Teleskopické) zostáva, ako je.
+solo quelli scelti nella tabella	len tie vybrané v tabuľke
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	body spoločné dvom drôtom zostávajú spojené (zaokrúhľuje sa bod, nie drôt)
+Arrotonda e verifica (NEC)	Zaokrúhliť a overiť (NEC)
+Copia la lista di taglio	Kopírovať zoznam rezov
+Lista di taglio copiata.	Zoznam rezov skopírovaný.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Overenie vypočíta model pred a po na dodržiavaných frekvenciách (rámček 1) a porovná. «Použiť na model» ide do histórie Späť v lište Geometria.
+Scegli prima i fili nella tabella della Struttura 3D.	Najprv vyberte drôty v tabuľke 3D štruktúry.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Nie je čo zaokrúhliť: rozmery už sú na milimeter ({0} polí sú vzorce alebo premenné a zostávajú, ako sú).
+Niente da arrotondare: le misure sono gia' al millimetro.	Nie je čo zaokrúhliť: rozmery už sú na milimeter.
+Misure al millimetro: 	Rozmery na milimeter: 
+Z prima	Z pred
+Z dopo	Z po
+ROS prima	SWR pred
+ROS dopo	SWR po
+G dBi prima	G dBi pred
+G dopo	G po
+F/B prima	F/B pred
+F/B dopo	F/B po
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Model sa počas overenia zmenil: zopakujte «Zaokrúhliť a overiť».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Prahy výsledku: Z do {0} %, zisk do {1} dB, F/B do {2} dB (menia sa pravým tlačidlom). Nad nimi: oranžovo, s drôtom, ktorý sa posunie najviac.
+Misure cambiate	Zmenené rozmery
+Campo	Pole
+Prima (m)	Pred (m)
+Dopo (m)	Po (m)
+diametro (mm)	priemer (mm)
+tubo commerciale	obchodná rúrka
+filo metrico	metrický drôt
+(qui le prime {0})	(tu prvých {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Spolu: {0} rozmerov zmenených na {1} drôtoch, najväčší posun {2} mm, celková dĺžka prvkov zmenená o {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} polí sú vzorce alebo premenné a zostávajú, ako sú.
+Segmentazione dopo l'arrotondamento:	Segmentácia po zaokrúhlení:
+Soglie dell'esito	Prahy výsledku
+Usa queste soglie	Použiť tieto prahy
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Rozmery na milimeter použité na model ({0} rozmerov). "Späť" v lište Geometria vráti späť.
+giunto	spoj
+Bande nei grafici di frequenza	Pásma v grafoch frekvencie
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Pruh na pozadí grafov karty Frekvencia tam, kde ležia rádioamatérske pásma (IARU Región 1, od 136 kHz do 10 GHz), s názvom pásma hore. V tmavom motíve je farba svetlejšia; krivky zostávajú navrchu.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Vedenia TL (fialový čiarkovaný oblúk, ✕ = prekrížené), záťaže R, L, C (oranžový rámček), siete, transformátory a pahýly (tyrkysový rámček), virtuálne drôty EZNEC (sivé). Kliknutie na symbol: otvorí jeho tabuľku.
+Linee, carichi e reti	Vedenia, záťaže a siete
+Riga {0} della tabella qui sotto a destra.	Riadok {0} tabuľky vpravo dole.
+ambra	jantárová
+azzurro ghiaccio	ľadovo modrá
+verde salvia	šalviovo zelená
+aperto	otvorený
+rete L	sieť L
+antenna a {0} m	anténa vo {0} m
+quote {0} m	výšky {0} m
+terreno {0} (εr {1}, σ {2} S/m)	pôda {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmentov, {1} drôtov, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmentov, {1} kariet geometrie, {2}
+personalizzato	vlastné
+centra	vycentrovať
+alta	vysoká

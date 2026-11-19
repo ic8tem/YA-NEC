@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	koha kõrgus käsitsi {0} m
 quota sito a mano {0} m (DEM {1} m)	koha kõrgus käsitsi {0} m (DEM {1} m)
 Torna al valore del DEM	Tagasi DEM-i väärtusele
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Maapinna kõrgus antenni all. Tühi = DEM-i väärtus (hall). Kirjuta tegelik kõrgus, kui DEM eksib: profiil algab siit, ülejäänud maastik jääb DEM-ist. ↺ DEM naaseb DEM-i väärtusele.
+4. Misure al millimetro	4. Mõõdud millimeetri täpsusega
+al millimetro	millimeetri täpsusega
+diametri commerciali	kaubanduslikud läbimõõdud
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	lähim kaubanduslik toru (alumiinium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); alla 6 mm lähim meetriline või AWG traat. Negatiivne raadius (tabeli Teleskoopilised rida) jääb samaks.
+solo quelli scelti nella tabella	ainult tabelis valitud
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	kahe traadi ühised punktid jäävad ühendatuks (ümardatakse punkti, mitte traati)
+Arrotonda e verifica (NEC)	Ümarda ja kontrolli (NEC)
+Copia la lista di taglio	Kopeeri lõikeloend
+Lista di taglio copiata.	Lõikeloend kopeeritud.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Kontroll arvutab mudeli enne ja pärast täidetavatel sagedustel (kast 1) ja võrdleb. «Rakenda mudelile» läheb Geomeetria riba Võta tagasi ajalukku.
+Scegli prima i fili nella tabella della Struttura 3D.	Vali kõigepealt traadid 3D-struktuuri tabelis.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Pole midagi ümardada: mõõdud on juba millimeetri täpsusega ({0} välja on valemid või muutujad ja jäävad samaks).
+Niente da arrotondare: le misure sono gia' al millimetro.	Pole midagi ümardada: mõõdud on juba millimeetri täpsusega.
+Misure al millimetro: 	Mõõdud millimeetri täpsusega: 
+Z prima	Z enne
+Z dopo	Z pärast
+ROS prima	SWR enne
+ROS dopo	SWR pärast
+G dBi prima	G dBi enne
+G dopo	G pärast
+F/B prima	F/B enne
+F/B dopo	F/B pärast
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Mudel muutus kontrolli ajal: korda «Ümarda ja kontrolli».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Tulemuse lävendid: Z {0} % piires, võimendus {1} dB piires, F/B {2} dB piires (muudetakse parema nupuga). Üle selle: oranž, koos kõige rohkem nihkuva traadiga.
+Misure cambiate	Muudetud mõõdud
+Campo	Väli
+Prima (m)	Enne (m)
+Dopo (m)	Pärast (m)
+diametro (mm)	läbimõõt (mm)
+tubo commerciale	kaubanduslik toru
+filo metrico	meetriline traat
+(qui le prime {0})	(siin esimesed {0})
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Kokku: {0} mõõtu muudetud {1} traadil, suurim nihe {2} mm, elementide kogupikkus muutus {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} välja on valemid või muutujad ja jäävad samaks.
+Segmentazione dopo l'arrotondamento:	Segmenteerimine pärast ümardamist:
+Soglie dell'esito	Tulemuse lävendid
+Usa queste soglie	Kasuta neid lävendeid
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Mõõdud millimeetri täpsusega rakendatud mudelile ({0} mõõtu). Geomeetria riba "Võta tagasi" läheb tagasi.
+giunto	liitekoht
+Bande nei grafici di frequenza	Sagedusalad sagedusgraafikutel
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Riba sageduse vahekaardi graafikute taustal, kus asuvad raadioamatööride sagedusalad (IARU 1. regioon, 136 kHz kuni 10 GHz), sagedusala nimega ülal. Tumedas teemas on värv heledam; kõverad jäävad peale.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL-liinid (punktiirne lilla kaar, ✕ = ristatud), koormused R, L, C (oranž kast), võrgud, trafod ja stubid (sinakasroheline kast), EZNEC-i virtuaalsed traadid (hallid). Klõps sümbolil: avab selle tabeli.
+Linee, carichi e reti	Liinid, koormused ja võrgud
+Riga {0} della tabella qui sotto a destra.	Tabeli {0}. rida all paremal.
+ambra	merevaik
+azzurro ghiaccio	jääsinine
+verde salvia	salveiroheline
+aperto	avatud
+rete L	L-võrk
+antenna a {0} m	antenn {0} m kõrgusel
+quote {0} m	kõrgused {0} m
+terreno {0} (εr {1}, σ {2} S/m)	pinnas {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmenti, {1} traati, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmenti, {1} geomeetriakaarti, {2}
+personalizzato	kohandatud
+centra	tsentreeri
+alta	kõrge

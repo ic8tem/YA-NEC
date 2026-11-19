@@ -201,6 +201,8 @@ namespace YaNec
             c2s.Children.Add(Pannello("2. Variabili che l'ottimizzatore puo' cambiare", vp));
             c2s.Children.Add(Pannello("Monte Carlo", mc));
             c2s.Children.Add(Pannello("3. Registro dei passi - clic su una riga per riprenderla", rp));
+            // 1.5.2: misure al millimetro (bozzetto v2 approvato da IC8TEM il 19/11/2026 14:37)
+            c2s.Children.Add(Pannello("4. Misure al millimetro", MillimetroPannello()));
             Control c2 = new ScrollViewer { Content = c2s, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(8, 0) };
 
             // ---- destra: andamento, comandi, diagramma ----

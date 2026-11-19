@@ -543,10 +543,10 @@ namespace YaNec
         static string HeightText(List<double> lv)
         {
             if (lv.Count == 0) return "";
-            if (lv.Count == 1) return "antenna a " + Draw.N(lv[0], 2) + " m";
+            if (lv.Count == 1) return Lang.F("antenna a {0} m", Draw.N(lv[0], 2));
             List<string> t = new List<string>();
             foreach (double v in lv) t.Add(Draw.N(v, 2));
-            return "quote " + string.Join(" / ", t) + " m";
+            return Lang.F("quote {0} m", string.Join(" / ", t));
         }
 
         void Arrow(DrawingContext ctx, Point tip, bool up, Color c)

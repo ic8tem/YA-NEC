@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	ketinggian lokasi diisi manual {0} m
 quota sito a mano {0} m (DEM {1} m)	ketinggian lokasi diisi manual {0} m (DEM {1} m)
 Torna al valore del DEM	Kembali ke nilai DEM
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Ketinggian tanah di bawah antena. Kosong = nilai DEM (abu-abu). Tulis ketinggian sebenarnya jika DEM salah: profil dimulai dari sini, sisa medan tetap dari DEM. ↺ DEM kembali ke nilai DEM.
+4. Misure al millimetro	4. Ukuran hingga milimeter
+al millimetro	hingga milimeter
+diametri commerciali	diameter komersial
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	pipa komersial terdekat (aluminium: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); di bawah 6 mm kawat metrik atau AWG terdekat. Jari-jari negatif (baris tabel Teleskopik) tetap seperti adanya.
+solo quelli scelti nella tabella	hanya yang dipilih di tabel
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	titik yang dipakai bersama dua kawat tetap tersambung (yang dibulatkan titiknya, bukan kawatnya)
+Arrotonda e verifica (NEC)	Bulatkan dan periksa (NEC)
+Copia la lista di taglio	Salin daftar potong
+Lista di taglio copiata.	Daftar potong disalin.
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	Pemeriksaan menghitung model sebelum dan sesudah pada frekuensi yang harus dipenuhi (kotak 1) lalu membandingkan. «Terapkan ke model» masuk ke riwayat Urungkan di bilah Geometri.
+Scegli prima i fili nella tabella della Struttura 3D.	Pilih dulu kawat di tabel Struktur 3D.
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	Tidak ada yang perlu dibulatkan: ukuran sudah hingga milimeter ({0} isian berupa rumus atau variabel dan tetap seperti adanya).
+Niente da arrotondare: le misure sono gia' al millimetro.	Tidak ada yang perlu dibulatkan: ukuran sudah hingga milimeter.
+Misure al millimetro: 	Ukuran hingga milimeter: 
+Z prima	Z sebelum
+Z dopo	Z sesudah
+ROS prima	SWR sebelum
+ROS dopo	SWR sesudah
+G dBi prima	G dBi sebelum
+G dopo	G sesudah
+F/B prima	F/B sebelum
+F/B dopo	F/B sesudah
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	Model berubah selama pemeriksaan: ulangi «Bulatkan dan periksa».
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	Ambang hasil: Z dalam {0} %, penguatan dalam {1} dB, F/B dalam {2} dB (diubah dengan tombol kanan). Di atasnya: oranye, dengan kawat yang paling bergeser.
+Misure cambiate	Ukuran yang berubah
+Campo	Isian
+Prima (m)	Sebelum (m)
+Dopo (m)	Sesudah (m)
+diametro (mm)	diameter (mm)
+tubo commerciale	pipa komersial
+filo metrico	kawat metrik
+(qui le prime {0})	(di sini {0} yang pertama)
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	Total: {0} ukuran berubah pada {1} kawat, pergeseran terbesar {2} mm, panjang total elemen berubah {3} mm.
+{0} campi sono formule o variabili e restano come sono.	{0} isian berupa rumus atau variabel dan tetap seperti adanya.
+Segmentazione dopo l'arrotondamento:	Segmentasi setelah pembulatan:
+Soglie dell'esito	Ambang hasil
+Usa queste soglie	Gunakan ambang ini
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	Ukuran hingga milimeter diterapkan ke model ({0} ukuran). "Urungkan" di bilah Geometri kembali.
+giunto	sambungan
+Bande nei grafici di frequenza	Pita di grafik frekuensi
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	Lajur di latar grafik tab Frekuensi tempat pita amatir berada (IARU Region 1, dari 136 kHz sampai 10 GHz), dengan nama pita di atas. Warnanya lebih terang di tema gelap; kurva tetap di atas.
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	Saluran TL (busur ungu putus-putus, ✕ = bersilang), beban R, L, C (kotak oranye), jaringan, transformator, dan stub (kotak hijau toska), kawat virtual EZNEC (abu-abu). Klik simbol: membuka tabelnya.
+Linee, carichi e reti	Saluran, beban, dan jaringan
+Riga {0} della tabella qui sotto a destra.	Baris {0} tabel di kanan bawah.
+ambra	amber
+azzurro ghiaccio	biru es
+verde salvia	hijau sage
+aperto	terbuka
+rete L	jaringan L
+antenna a {0} m	antena di {0} m
+quote {0} m	ketinggian {0} m
+terreno {0} (εr {1}, σ {2} S/m)	tanah {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0} segmen, {1} kawat, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0} segmen, {1} kartu geometri, {2}
+personalizzato	khusus
+centra	tengahkan
+alta	tinggi

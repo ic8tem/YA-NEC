@@ -4948,3 +4948,60 @@ quota sito a mano {0} m	স্থানের উচ্চতা হাতে �
 quota sito a mano {0} m (DEM {1} m)	স্থানের উচ্চতা হাতে লেখা {0} m (DEM {1} m)
 Torna al valore del DEM	DEM-এর মানে ফিরুন
 Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	অ্যান্টেনার নিচে মাটির উচ্চতা। খালি = DEM-এর মান (ধূসর)। DEM ভুল হলে আসল উচ্চতা লিখুন: প্রোফাইল এখান থেকে শুরু হয়, বাকি ভূমি DEM-এরই থাকে। ↺ DEM, DEM-এর মানে ফিরিয়ে দেয়।
+4. Misure al millimetro	4. মিলিমিটার পর্যন্ত মাপ
+al millimetro	মিলিমিটার পর্যন্ত
+diametri commerciali	বাণিজ্যিক ব্যাস
+il tubo commerciale piu' vicino (alluminio: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); sotto i 6 mm il filo metrico o AWG piu' vicino. Il raggio negativo (riga delle Rastremazioni) resta com'e'.	নিকটতম বাণিজ্যিক টিউব (অ্যালুমিনিয়াম: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30 mm...); 6 mm-এর নিচে নিকটতম মেট্রিক বা AWG তার। ঋণাত্মক ব্যাসার্ধ (টেপার সারণির সারি) যেমন আছে তেমনই থাকে।
+solo quelli scelti nella tabella	শুধু সারণিতে বেছে নেওয়াগুলো
+i punti in comune tra due fili restano uniti (si arrotonda il punto, non il filo)	দুটি তারের সাধারণ বিন্দু যুক্ত থাকে (বিন্দু গোল করা হয়, তার নয়)
+Arrotonda e verifica (NEC)	গোল করুন ও যাচাই করুন (NEC)
+Copia la lista di taglio	কাটার তালিকা কপি করুন
+Lista di taglio copiata.	কাটার তালিকা কপি হয়েছে।
+La verifica calcola il modello prima e dopo alle frequenze da rispettare (riquadro 1) e confronta. «Applica al modello» va nella storia di Annulla della barra Geometria.	যাচাই মেনে চলার কম্পাঙ্কগুলোতে (বাক্স 1) মডেলটি আগে ও পরে গণনা করে তুলনা করে। «মডেলে প্রয়োগ করুন» জ্যামিতি বারের পূর্বাবস্থার ইতিহাসে যায়।
+Scegli prima i fili nella tabella della Struttura 3D.	প্রথমে 3D কাঠামোর সারণিতে তারগুলো বেছে নিন।
+Niente da arrotondare: le misure sono gia' al millimetro ({0} campi sono formule o variabili e restano come sono).	গোল করার কিছু নেই: মাপগুলো ইতিমধ্যে মিলিমিটার পর্যন্ত ({0}টি ঘর সূত্র বা চলক এবং যেমন আছে তেমনই থাকে)।
+Niente da arrotondare: le misure sono gia' al millimetro.	গোল করার কিছু নেই: মাপগুলো ইতিমধ্যে মিলিমিটার পর্যন্ত।
+Misure al millimetro: 	মিলিমিটার পর্যন্ত মাপ: 
+Z prima	Z আগে
+Z dopo	Z পরে
+ROS prima	SWR আগে
+ROS dopo	SWR পরে
+G dBi prima	G dBi আগে
+G dopo	G পরে
+F/B prima	F/B আগে
+F/B dopo	F/B পরে
+Il modello e' cambiato durante la verifica: ripeti «Arrotonda e verifica».	যাচাইয়ের সময় মডেল বদলেছে: «গোল করুন ও যাচাই করুন» আবার করুন।
+Soglie dell'esito: Z entro il {0} %, guadagno entro {1} dB, F/B entro {2} dB (si cambiano col tasto destro). Oltre: arancio, con il filo che sposta di piu'.	ফলাফলের সীমা: Z {0} %-এর মধ্যে, লাভ {1} dB-এর মধ্যে, F/B {2} dB-এর মধ্যে (ডান বোতাম দিয়ে বদলান)। এর বেশি: কমলা, সবচেয়ে বেশি সরা তারসহ।
+Misure cambiate	বদলানো মাপ
+Campo	ঘর
+Prima (m)	আগে (m)
+Dopo (m)	পরে (m)
+diametro (mm)	ব্যাস (mm)
+tubo commerciale	বাণিজ্যিক টিউব
+filo metrico	মেট্রিক তার
+(qui le prime {0})	(এখানে প্রথম {0}টি)
+In tutto: {0} misure cambiate su {1} fili, spostamento massimo {2} mm, lunghezza totale degli elementi cambiata di {3} mm.	মোট: {1}টি তারে {0}টি মাপ বদলেছে, সবচেয়ে বড় সরণ {2} mm, উপাদানগুলোর মোট দৈর্ঘ্য {3} mm বদলেছে।
+{0} campi sono formule o variabili e restano come sono.	{0}টি ঘর সূত্র বা চলক এবং যেমন আছে তেমনই থাকে।
+Segmentazione dopo l'arrotondamento:	গোল করার পরে খণ্ডীকরণ:
+Soglie dell'esito	ফলাফলের সীমা
+Usa queste soglie	এই সীমাগুলো ব্যবহার করুন
+Misure al millimetro applicate al modello ({0} misure). "Annulla" della barra Geometria torna indietro.	মিলিমিটার পর্যন্ত মাপ মডেলে প্রয়োগ হয়েছে ({0}টি মাপ)। জ্যামিতি বারের "পূর্বাবস্থায় ফেরান" পেছনে নিয়ে যায়।
+giunto	জোড়
+Bande nei grafici di frequenza	কম্পাঙ্ক গ্রাফে ব্যান্ড
+Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.	কম্পাঙ্ক ট্যাবের গ্রাফের পটভূমিতে যেখানে অপেশাদার ব্যান্ড পড়ে সেখানে একটি ফালি (IARU অঞ্চল 1, 136 kHz থেকে 10 GHz), ওপরে ব্যান্ডের নামসহ। গাঢ় থিমে রং হালকা; বক্ররেখাগুলো ওপরে থাকে।
+Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.	TL লাইন (বিন্দুযুক্ত বেগুনি চাপ, ✕ = ক্রস), R, L, C লোড (কমলা বাক্স), নেটওয়ার্ক, ট্রান্সফরমার ও স্টাব (সবুজাভ নীল বাক্স), EZNEC-এর ভার্চুয়াল তার (ধূসর)। কোনো প্রতীকে ক্লিক: তার সারণি খোলে।
+Linee, carichi e reti	লাইন, লোড ও নেটওয়ার্ক
+Riga {0} della tabella qui sotto a destra.	নিচে ডানের সারণির {0} নম্বর সারি।
+ambra	অ্যাম্বার
+azzurro ghiaccio	বরফ নীল
+verde salvia	সেজ সবুজ
+aperto	খোলা
+rete L	L নেটওয়ার্ক
+antenna a {0} m	{0} m উচ্চতায় অ্যান্টেনা
+quote {0} m	উচ্চতা {0} m
+terreno {0} (εr {1}, σ {2} S/m)	মাটি {0} (εr {1}, σ {2} S/m)
+{0} segmenti, {1} fili, {2}	{0}টি খণ্ড, {1}টি তার, {2}
+{0} segmenti, {1} schede di geometria, {2}	{0}টি খণ্ড, {1}টি জ্যামিতি কার্ড, {2}
+personalizzato	কাস্টম
+centra	কেন্দ্রে
+alta	উচ্চ
