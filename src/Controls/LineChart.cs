@@ -34,6 +34,16 @@ namespace YaNec
         double hoverX = double.NaN;
 
         public LineChart() { ClipToBounds = true; }
+        // 1.5.2 (bozzetto «Linguetta Frequenza: bande radioamatoriali ombreggiate», approvato da IC8TEM il 19/11/2026 08:44, con la scelta
+        // del colore): fascia dietro griglia e curve dove cadono le bande (Bands.All), nome della banda in alto
+        public bool MostraBande;
+        public static int ColoreBande;   // 0 verde salvia, 1 ambra, 2 azzurro ghiaccio, 3 nessuna (Impostazioni)
+        static readonly string[][] TintaBande = { new[] { "#2F9E6B", "#5FD39B" }, new[] { "#E0A100", "#FFC94D" }, new[] { "#3AA0D8", "#7CC6F0" } };
+        public static Color? ColoreBanda()
+        {
+            if (ColoreBande < 0 || ColoreBande > 2) return null;
+            return Color.Parse(TintaBande[ColoreBande][Pal.Dark ? 1 : 0]);
+        }
 
         protected override void OnPointerMoved(PointerEventArgs e)
         {
@@ -98,6 +108,22 @@ namespace YaNec
             Func<double, double> PY = q => pr.Bottom - (q - ylo) / (yhi - ylo) * pr.Height;
             Func<double, double> PY2 = q => pr.Bottom - (q - y2lo) / (y2hi - y2lo) * pr.Height;
             IPen grid = Pal.P(Pal.ChartGrid, 1);
+            Color? cb = MostraBande ? ColoreBanda() : null;
+            if (cb.HasValue && XLabel == "MHz")
+            {
+                byte af = (byte)(Pal.Dark ? 36 : 31), ab = (byte)(Pal.Dark ? 102 : 90);
+                foreach (YaNec.Engine.Band b in YaNec.Engine.Bands.All)
+                {
+                    if (b.High < xmin || b.Low > xmax) continue;
+                    double xa = PX(Math.Max(b.Low, xmin)), xb = Math.Max(PX(Math.Min(b.High, xmax)), xa + 3);
+                    ctx.DrawRectangle(new SolidColorBrush(Color.FromArgb(af, cb.Value.R, cb.Value.G, cb.Value.B)), null, new Rect(xa, pr.Top, xb - xa, pr.Height));
+                    IPen pb = new Pen(new SolidColorBrush(Color.FromArgb(ab, cb.Value.R, cb.Value.G, cb.Value.B)), 1);
+                    if (b.Low >= xmin) ctx.DrawLine(pb, new Point(xa, pr.Top), new Point(xa, pr.Bottom));
+                    if (b.High <= xmax) ctx.DrawLine(pb, new Point(xb, pr.Top), new Point(xb, pr.Bottom));
+                    if (xb - xa >= 14 || (xmax - xmin) < 3 * (b.High - b.Low) + 1)
+                        Draw.TextC(ctx, b.Name, (xa + xb) / 2, pr.Top + 2, 9.5, cb.Value, FontWeight.SemiBold);
+                }
+            }
 
             for (double v = ylo; v <= yhi + ys * 0.01; v += ys)
             {

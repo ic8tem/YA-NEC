@@ -40,6 +40,22 @@ namespace YaNec
         // (X1, Y1, ... raggio); pieno = la usa direttamente, tratteggiato = attraverso un'altra variabile
         public Dictionary<int, List<string>> OcraDiretti, OcraIndiretti;
         public static readonly Color Ocra = Color.Parse("#C98A12");
+        // 1.5.2 (bozzetto «Struttura 3D: linee, carichi e reti nel disegno», approvato da IC8TEM il 19/11/2026 08:36)
+        public class Oggetto
+        {
+            public int Tipo;            // 0 linea TL, 1 carico, 2 rete / trasformatore / rete L, 3 stub
+            public int Seg1 = -1, Seg2 = -1;   // segmenti (0 = primo)
+            public string Etichetta = "";
+            public bool Incrociata;
+            public int Simbolo;         // carichi: 0 R, 1 L, 2 C, 3 RLC serie, 4 LC parallelo, 5 R+jX
+            public int Riga;            // riga nella sua tabella
+        }
+        public List<Oggetto> Oggetti = new List<Oggetto>();
+        public HashSet<int> SegVirtuali = new HashSet<int>();
+        public bool ShowObjects = true;
+        public event Action<int, int> OggettoCliccato;   // tipo, riga
+        readonly List<Tuple<Point, int, int>> zoneOggetti = new List<Tuple<Point, int, int>>();
+        static readonly Color ColTl = Color.Parse("#8A3FFC"), ColCarico = Color.Parse("#C2410C"), ColRete = Color.Parse("#0F766E");
         public List<double[]> Preview;                  // segmenti x1 y1 z1 x2 y2 z2 dopo la trasformazione
         public double[] PreviewCenter;                  // punto arancione
         public string PreviewLabel = "", PreviewCenterText = "";
@@ -107,6 +123,11 @@ namespace YaNec
         {
             base.OnPointerReleased(e);
             Point rp = e.GetPosition(this);
+            if (rotating && OggettoCliccato != null && Math.Abs(rp.X - pressAt.X) + Math.Abs(rp.Y - pressAt.Y) < 4)
+            {
+                foreach (Tuple<Point, int, int> z in zoneOggetti)
+                    if (Math.Abs(z.Item1.X - rp.X) < 14 && Math.Abs(z.Item1.Y - rp.Y) < 14) { OggettoCliccato(z.Item2, z.Item3); rotating = panning = false; e.Pointer.Capture(null); return; }
+            }
             if (rotating && WireClicked != null && Geo != null && Math.Abs(rp.X - pressAt.X) + Math.Abs(rp.Y - pressAt.Y) < 4)
             {
                 // filo piu' vicino al punto cliccato (entro 7 pixel)
@@ -431,6 +452,7 @@ namespace YaNec
                     Project(Geo.X1[i], Geo.Y1[i], Geo.Z1[i], cx, cy, sc, ox, oy, oz, out sx1, out sy1);
                     ctx.DrawEllipse(Pal.B(Pal.A(160, Pal.Muted)), null, new Point(sx1, sy1), 1.2, 1.2);
                 }
+            if (ShowObjects) DisegnaOggetti(ctx, cx, cy, sc, ox, oy, oz);
             foreach (int s in SourceSegs)
             {
                 if (s < 0 || s >= Geo.N) continue;
@@ -666,6 +688,118 @@ namespace YaNec
                 }
             }
         }
+        // 1.5.2: linee TL (arco viola tratteggiato), carichi (riquadro arancio col simbolo), reti/trasformatori/stub (riquadro verde acqua),
+        // fili virtuali di EZNEC (grigi). Le etichette si nascondono oltre 40 oggetti.
+        void DisegnaOggetti(DrawingContext ctx, double cx, double cy, double sc, double ox, double oy, double oz)
+        {
+            zoneOggetti.Clear();
+            Func<int, Point> centro = sg => { double px, py; Project(Geo.CenterX(sg), Geo.CenterY(sg), Geo.CenterZ(sg), cx, cy, sc, ox, oy, oz, out px, out py); return new Point(px, py); };
+            Func<int, Point> dirSeg = sg =>
+            {
+                double ax, ay, bx, by;
+                Project(Geo.X1[sg], Geo.Y1[sg], Geo.Z1[sg], cx, cy, sc, ox, oy, oz, out ax, out ay);
+                Project(Geo.X2[sg], Geo.Y2[sg], Geo.Z2[sg], cx, cy, sc, ox, oy, oz, out bx, out by);
+                double l = Math.Sqrt((bx - ax) * (bx - ax) + (by - ay) * (by - ay));
+                return l < 1e-6 ? new Point(1, 0) : new Point((bx - ax) / l, (by - ay) / l);
+            };
+            // fili virtuali: grigi e sottili, con la sigla
+            foreach (int sg in SegVirtuali)
+            {
+                if (sg < 0 || sg >= Geo.N) continue;
+                double ax, ay, bx, by;
+                Project(Geo.X1[sg], Geo.Y1[sg], Geo.Z1[sg], cx, cy, sc, ox, oy, oz, out ax, out ay);
+                Project(Geo.X2[sg], Geo.Y2[sg], Geo.Z2[sg], cx, cy, sc, ox, oy, oz, out bx, out by);
+                ctx.DrawLine(Pal.P(Pal.Panel, 4), new Point(ax, ay), new Point(bx, by));
+                ctx.DrawLine(Pal.P(Pal.Muted, 1.2), new Point(ax, ay), new Point(bx, by));
+            }
+            if (Oggetti == null || Oggetti.Count == 0) return;
+            bool etichette = Oggetti.Count <= 40;
+            IBrush fondo = Pal.B(Pal.Panel);
+            foreach (Oggetto o in Oggetti)
+            {
+                if (o.Seg1 < 0 || o.Seg1 >= Geo.N) continue;
+                Point p1 = centro(o.Seg1);
+                bool due = o.Seg2 >= 0 && o.Seg2 < Geo.N && o.Seg2 != o.Seg1;
+                Point p2 = due ? centro(o.Seg2) : p1;
+                if (o.Tipo == 0)
+                {
+                    // arco tra i due segmenti, gonfio verso l'alto dello schermo
+                    double dx = p2.X - p1.X, dy = p2.Y - p1.Y, d = Math.Sqrt(dx * dx + dy * dy);
+                    double h = Math.Max(18, 0.35 * d);
+                    Point c1 = new Point(p1.X + dx * 0.15, Math.Min(p1.Y, p2.Y) - h), c2 = new Point(p2.X - dx * 0.15, Math.Min(p1.Y, p2.Y) - h);
+                    StreamGeometry g = new StreamGeometry();
+                    using (StreamGeometryContext gc = g.Open()) { gc.BeginFigure(p1, false); gc.CubicBezierTo(c1, c2, p2); gc.EndFigure(false); }
+                    Pen pt = new Pen(new SolidColorBrush(ColTl), 3) { DashStyle = new DashStyle(new double[] { 3, 1.7 }, 0) };
+                    ctx.DrawGeometry(null, pt, g);
+                    ctx.DrawEllipse(new SolidColorBrush(ColTl), null, p1, 3.5, 3.5);
+                    ctx.DrawEllipse(new SolidColorBrush(ColTl), null, p2, 3.5, 3.5);
+                    // punto medio della curva di Bezier (t = 0,5)
+                    Point pm = new Point(0.125 * p1.X + 0.375 * c1.X + 0.375 * c2.X + 0.125 * p2.X, 0.125 * p1.Y + 0.375 * c1.Y + 0.375 * c2.Y + 0.125 * p2.Y);
+                    zoneOggetti.Add(Tuple.Create(pm, 0, o.Riga));
+                    if (etichette) Etichetta(ctx, o.Etichetta + (o.Incrociata ? " ✕" : ""), pm, ColTl, fondo);
+                }
+                else if (o.Tipo == 1)
+                {
+                    Point u = dirSeg(o.Seg1);
+                    double ang = Math.Atan2(u.Y, u.X);
+                    using (ctx.PushTransform(Matrix.CreateRotation(ang) * Matrix.CreateTranslation(p1.X, p1.Y)))
+                    {
+                        IPen pc = new Pen(new SolidColorBrush(ColCarico), 2);
+                        IPen ps = new Pen(new SolidColorBrush(ColCarico), 1.6);
+                        ctx.DrawRectangle(fondo, pc, new Rect(-15, -9, 30, 18), 3, 3);
+                        Simbolo(ctx, ps, o.Simbolo);
+                    }
+                    zoneOggetti.Add(Tuple.Create(p1, 1, o.Riga));
+                    if (etichette) Draw.Text(ctx, o.Etichetta, p1.X + 18, p1.Y - 24, 12, ColCarico, FontWeight.SemiBold);
+                }
+                else
+                {
+                    IPen pr = new Pen(new SolidColorBrush(ColRete), 2);
+                    if (due) ctx.DrawLine(new Pen(new SolidColorBrush(ColRete), 1.2) { DashStyle = new DashStyle(new double[] { 2, 2 }, 0) }, p1, p2);
+                    Point pq = due ? new Point((p1.X + p2.X) / 2, (p1.Y + p2.Y) / 2) : p1;
+                    ctx.DrawRectangle(fondo, pr, new Rect(pq.X - 13, pq.Y - 13, 26, 26), 4, 4);
+                    if (o.Tipo == 3) ctx.DrawLine(pr, new Point(pq.X - 6, pq.Y + 6), new Point(pq.X + 6, pq.Y - 6));
+                    else { ctx.DrawEllipse(null, new Pen(new SolidColorBrush(ColRete), 1.6), new Point(pq.X - 4, pq.Y), 5, 5); ctx.DrawEllipse(null, new Pen(new SolidColorBrush(ColRete), 1.6), new Point(pq.X + 4, pq.Y), 5, 5); }
+                    zoneOggetti.Add(Tuple.Create(pq, o.Tipo, o.Riga));
+                    if (etichette) Draw.Text(ctx, o.Etichetta, pq.X + 17, pq.Y - 20, 12, ColRete, FontWeight.SemiBold);
+                }
+            }
+        }
+
+        static void Etichetta(DrawingContext ctx, string t, Point p, Color c, IBrush fondo)
+        {
+            double w = 8 + 7.2 * t.Length;
+            ctx.DrawRectangle(fondo, new Pen(new SolidColorBrush(c), 1), new Rect(p.X - w / 2, p.Y - 11, w, 20), 4, 4);
+            Draw.TextC(ctx, t, p.X, p.Y - 9, 12, c, FontWeight.SemiBold);
+        }
+
+        static void Simbolo(DrawingContext ctx, IPen p, int k)
+        {
+            if (k == 0 || k == 5)
+            {
+                // resistenza (zig-zag); R+jX: zig-zag e una barra
+                ctx.DrawLine(p, new Point(-11, 0), new Point(-8, -4)); ctx.DrawLine(p, new Point(-8, -4), new Point(-4, 4)); ctx.DrawLine(p, new Point(-4, 4), new Point(0, -4));
+                ctx.DrawLine(p, new Point(0, -4), new Point(4, 4)); ctx.DrawLine(p, new Point(4, 4), new Point(8, -4)); ctx.DrawLine(p, new Point(8, -4), new Point(11, 0));
+                if (k == 5) ctx.DrawLine(p, new Point(-11, 6), new Point(11, 6));
+            }
+            else if (k == 1)
+            {
+                for (int i = 0; i < 4; i++) ctx.DrawEllipse(null, p, new Point(-7.5 + 5 * i, 0), 2.5, 4);
+            }
+            else if (k == 2)
+            {
+                ctx.DrawLine(p, new Point(-11, 0), new Point(-2, 0)); ctx.DrawLine(p, new Point(2, 0), new Point(11, 0));
+                ctx.DrawLine(p, new Point(-2, -6), new Point(-2, 6)); ctx.DrawLine(p, new Point(2, -6), new Point(2, 6));
+            }
+            else
+            {
+                // RLC serie (k 3) o LC parallelo (k 4): bobina e condensatore
+                for (int i = 0; i < 3; i++) ctx.DrawEllipse(null, p, new Point(-9 + 4 * i, 0), 2, 3.5);
+                ctx.DrawLine(p, new Point(5, -5), new Point(5, 5)); ctx.DrawLine(p, new Point(8, -5), new Point(8, 5));
+                if (k == 4) { ctx.DrawLine(p, new Point(-12, -7), new Point(12, -7)); }
+            }
+        }
+
         void DrawPhasesAndLobe(DrawingContext ctx, double cx, double cy, double sc, double ox, double oy, double oz, double R)
         {
             foreach (KeyValuePair<int, string> kv in SourceLabels)

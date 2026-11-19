@@ -1,0 +1,63 @@
+<title>Bande nei grafici di frequenza</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Bozzetto per IC8TEM: il grafico del ROS della linguetta Frequenza con le bande radioamatoriali ombreggiate, tre colori a confronto in tema chiaro e scuro */
+:root{ --bg:#eef1f5; --card:#ffffff; --fg:#1b2633; --muted:#5d6b7c; --line:#d5dce5; --tag:#e08a00; --tagsoft:#fff3df; --f-ui:"Inter",system-ui,sans-serif }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48; --tag:#ffad33; --tagsoft:#3a2c14; color-scheme:dark }}
+:root[data-theme="dark"]{ --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48; --tag:#ffad33; --tagsoft:#3a2c14; color-scheme:dark }
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+main{max-width:1200px;margin:0 auto;display:grid;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance} h2{font-size:1.05rem;margin:0}
+p{margin:0;max-width:80ch} .muted{color:var(--muted)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--tag);background:var(--tagsoft);border-radius:4px;padding:1px 7px;justify-self:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+.card{border-radius:8px;padding:10px 12px;display:grid;gap:6px;min-width:0;border:1px solid var(--line)}
+.chiaro{background:#ffffff;color:#1b2633}.scuro{background:#1b222b;color:#e6edf5}
+.card b{font-size:.92rem}
+svg{width:100%;height:auto;display:block}
+.op{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:10px}
+ul{margin:0;padding-left:20px;display:grid;gap:4px;max-width:85ch}
+</style>
+<main>
+  <span class="tag">bozzetto da approvare · 19/11/2026</span>
+  <h1>Linguetta Frequenza: bande radioamatoriali ombreggiate</h1>
+  <p class="muted">Richiesta di IC8TEM (19/11, 08:39): sul fondo dei quattro grafici (ROS, Guadagno, Impedenza, F/B e F/R) una fascia colorata dove cadono le bande, che si veda nel tema chiaro e nello scuro senza coprire le curve. Esempio: sweep 13-30 MHz, bande 20, 17, 15, 12 e 10 m (Regione 1). Tre colori da scegliere: A, B o C.</p>
+  <div id="opz"></div>
+  <section class="op">
+    <h2>Come funziona</h2>
+    <ul>
+      <li>Fasce dietro la griglia e le curve, con il bordo appena piu' scuro; in alto, dentro la fascia, il nome della banda (20 m, 17 m...) in piccolo.</li>
+      <li>Bande della Regione IARU scelta nelle Impostazioni (di partenza Regione 1, piano IARU con i 60 m e i 4 m come in Italia); da 136 kHz a 10 GHz.</li>
+      <li>Stesso colore nei quattro grafici della linguetta Frequenza e nella Carta di Smith (archi della banda piu' spessi); casella «Bande» nella barra della linguetta per spegnerle.</li>
+      <li>Nel tema scuro il colore e' lo stesso, piu' chiaro e un po' piu' trasparente: la fascia resta visibile e le curve restano sopra.</li>
+    </ul>
+  </section>
+</main>
+<script>
+const B=[[14,14.35,"20 m"],[18.068,18.168,"17 m"],[21,21.45,"15 m"],[24.89,24.99,"12 m"],[28,29.7,"10 m"]];
+const swr=[[13,10],[13.3,4],[13.6,2.4],[14,2.1],[14.4,2.3],[15,2.8],[16,3.3],[16.5,4],[17,6.5],[17.4,8.8],[17.7,10],[18.2,8.6],[18.4,2.7],[18.8,10],[20,10],[20.3,2],[20.7,5.4],[21,10],[22.6,10],[23.2,8.4],[23.8,4.5],[24.4,2.7],[25,1.5],[26,2],[27,2.3],[28,2],[28.6,1.6],[29.2,1.6],[29.6,2.6],[30,5.8]];
+const OPZ=[
+ {k:"A",nome:"verde salvia",l:["#2f9e6b",0.12,0.35],d:["#5fd39b",0.14,0.4]},
+ {k:"B",nome:"ambra",l:["#e0a100",0.14,0.4],d:["#ffc94d",0.12,0.4]},
+ {k:"C",nome:"azzurro ghiaccio",l:["#3aa0d8",0.12,0.35],d:["#7cc6f0",0.13,0.4]}];
+function chart(o,dark){
+  const W=520,H=240,x0=42,x1=W-10,y0=24,y1=H-34;
+  const X=f=>x0+(f-13)/(30-13)*(x1-x0), Y=v=>y1-(Math.min(v,10))/10*(y1-y0);
+  const c=dark?o.d:o.l, fg=dark?"#c9d4e0":"#5d6b7c", grid=dark?"#2c3644":"#e3e8ef", cur=dark?"#5aa0ff":"#1f6fd6";
+  let s="";
+  B.forEach(([a,b,n])=>{const xa=X(a),xb=Math.max(X(b),xa+3);
+    s+=`<rect x="${xa}" y="${y0}" width="${xb-xa}" height="${y1-y0}" fill="${c[0]}" fill-opacity="${c[1]}"/>`;
+    s+=`<line x1="${xa}" y1="${y0}" x2="${xa}" y2="${y1}" stroke="${c[0]}" stroke-opacity="${c[2]}"/><line x1="${xb}" y1="${y0}" x2="${xb}" y2="${y1}" stroke="${c[0]}" stroke-opacity="${c[2]}"/>`;
+    s+=`<text x="${(xa+xb)/2}" y="${y0+11}" text-anchor="middle" font-size="9.5" fill="${c[0]}" font-family="Inter,sans-serif" font-weight="600">${n}</text>`;});
+  for(let v=0;v<=10;v+=2){s+=`<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="${grid}"/><text x="${x0-6}" y="${Y(v)+3}" text-anchor="end" font-size="10" fill="${fg}" font-family="Inter,sans-serif">${v}</text>`;}
+  [15,18,20,22,25,28].forEach(f=>s+=`<text x="${X(f)}" y="${y1+14}" text-anchor="middle" font-size="10" fill="${fg}" font-family="Inter,sans-serif">${f}</text>`);
+  s+=`<line x1="${x0}" x2="${x1}" y1="${Y(2)}" y2="${Y(2)}" stroke="#d0021b" stroke-dasharray="3 3" stroke-opacity=".7"/><line x1="${x0}" x2="${x1}" y1="${Y(1.5)}" y2="${Y(1.5)}" stroke="#d0021b" stroke-dasharray="3 3" stroke-opacity=".5"/>`;
+  s+=`<polyline points="${swr.map(p=>X(p[0])+","+Y(p[1])).join(" ")}" fill="none" stroke="${cur}" stroke-width="2"/>`;
+  s+=`<rect x="${x0}" y="${y0}" width="${x1-x0}" height="${y1-y0}" fill="none" stroke="${grid}"/>`;
+  s+=`<text x="${x0}" y="14" font-size="12" font-weight="600" fill="${dark?'#e6edf5':'#1b2633'}" font-family="Inter,sans-serif">ROS su Z0 = 50,0 ohm</text>`;
+  s+=`<text x="${(x0+x1)/2}" y="${H-6}" text-anchor="middle" font-size="10" fill="${fg}" font-family="Inter,sans-serif">MHz</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="ROS con le bande ombreggiate, opzione ${o.k}">${s}</svg>`;
+}
+document.getElementById('opz').innerHTML=OPZ.map(o=>`<section class="op"><h2>${o.k} · ${o.nome}</h2><div class="grid"><div class="card chiaro"><b>tema chiaro</b>${chart(o,false)}</div><div class="card scuro"><b>tema scuro</b>${chart(o,true)}</div></div></section>`).join("");
+</script>

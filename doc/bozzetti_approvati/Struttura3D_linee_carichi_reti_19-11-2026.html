@@ -1,0 +1,101 @@
+<title>Oggetti nella Struttura 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Bozzetto per IC8TEM: la Struttura 3D com'e' nel programma, con disegnati linee, carichi, reti e trasformatori */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --fg:#1b2633; --muted:#5d6b7c; --line:#d5dce5; --accent:#1f6fd6;
+  --wire:#2f49c9; --tl:#8a3ffc; --load:#c2410c; --net:#0f766e; --src:#d0021b; --tag:#e08a00; --tagsoft:#fff3df;
+  --f-ui:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48; --accent:#5aa0ff;
+  --wire:#7d93ff; --tl:#b98aff; --load:#ff8a4c; --net:#3cc4b5; --src:#ff5a6a; --tag:#ffad33; --tagsoft:#3a2c14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48; --accent:#5aa0ff;
+  --wire:#7d93ff; --tl:#b98aff; --load:#ff8a4c; --net:#3cc4b5; --src:#ff5a6a; --tag:#ffad33; --tagsoft:#3a2c14; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+main{max-width:1150px;margin:0 auto;display:grid;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}
+h2{font-size:1.05rem;margin:0}
+p{margin:0;max-width:78ch}
+.muted{color:var(--muted)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--tag);background:var(--tagsoft);border-radius:4px;padding:1px 7px;justify-self:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:10px;min-width:0}
+.bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:.9rem}
+.bar label{display:flex;gap:6px;align-items:center}
+.new{outline:2px solid var(--tag);outline-offset:3px;border-radius:4px;padding:0 4px}
+svg{width:100%;height:auto;display:block}
+.leg{display:flex;flex-wrap:wrap;gap:16px;font-size:.84rem}
+.leg span{display:flex;gap:6px;align-items:center}
+table{border-collapse:collapse;font-size:.88rem;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:.8rem}
+.tw{overflow-x:auto}
+.si{color:#2f8a4c;font-weight:600}.no{color:var(--load);font-weight:600}
+</style>
+<main>
+  <span class="tag">bozzetto da approvare · 19/11/2026</span>
+  <h1>Struttura 3D: linee, carichi e reti nel disegno</h1>
+  <p class="muted">Richiesta di IC8TEM (19/11, 08:35): segnalare nella Struttura 3D le linee bifilari tra elementi alimentati e gli elementi R, L, C. Esempio: LPDA con la linea da 450 Ω tra w54c e w41c, e una trappola su un altro filo.</p>
+
+  <section class="card">
+    <div class="bar">
+      <label><input type="checkbox" checked> Correnti</label>
+      <label><input type="checkbox" checked> Lobo 3D</label>
+      <label><input type="checkbox" checked> Terreno e quota</label>
+      <label><input type="checkbox" checked> Fasi delle sorgenti</label>
+      <label class="new"><input type="checkbox" checked> Linee, carichi e reti</label>
+    </div>
+    <svg viewBox="0 0 900 380" role="img" aria-label="Disegno di esempio: fili, linea bifilare tra due fili, carico e trasformatore">
+      <defs><marker id="pt" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6"><circle cx="3" cy="3" r="2.6" fill="var(--tl)"/></marker></defs>
+      <g stroke="var(--wire)" stroke-width="2.4">
+        <line x1="120" y1="300" x2="560" y2="60"/>
+        <line x1="190" y1="320" x2="620" y2="85"/>
+        <line x1="260" y1="335" x2="680" y2="105"/>
+        <line x1="330" y1="345" x2="740" y2="120"/>
+        <line x1="420" y1="350" x2="800" y2="140"/>
+      </g>
+      <!-- linea bifilare tra il centro del filo 2 e del filo 4 -->
+      <path d="M405 202 C 430 150, 520 160, 535 232" fill="none" stroke="var(--tl)" stroke-width="3" stroke-dasharray="9 5" marker-start="url(#pt)" marker-end="url(#pt)"/>
+      <rect x="430" y="140" width="94" height="22" rx="4" fill="var(--card)" stroke="var(--tl)"/>
+      <text x="477" y="156" text-anchor="middle" font-size="12" fill="var(--tl)" font-family="JetBrains Mono,monospace">TL1 450 Ω</text>
+      <!-- seconda linea incrociata -->
+      <path d="M535 232 C 560 190, 620 190, 637 248" fill="none" stroke="var(--tl)" stroke-width="3" stroke-dasharray="9 5"/>
+      <text x="586" y="200" text-anchor="middle" font-size="12" fill="var(--tl)" font-family="JetBrains Mono,monospace">TL2 ✕</text>
+      <!-- sorgente -->
+      <circle cx="637" cy="248" r="6" fill="var(--src)"/>
+      <text x="650" y="268" font-size="12" fill="var(--src)" font-family="Inter,sans-serif">1 V 0°</text>
+      <!-- carico: trappola LC parallelo sul filo 1 -->
+      <g transform="translate(250,229) rotate(-28.6)">
+        <rect x="-15" y="-9" width="30" height="18" rx="3" fill="var(--card)" stroke="var(--load)" stroke-width="2"/>
+        <path d="M-10 0 q2.5 -6 5 0 q2.5 -6 5 0 q2.5 -6 5 0" fill="none" stroke="var(--load)" stroke-width="1.8"/>
+        <line x1="8" y1="-5" x2="8" y2="5" stroke="var(--load)" stroke-width="1.8"/><line x1="11" y1="-5" x2="11" y2="5" stroke="var(--load)" stroke-width="1.8"/>
+      </g>
+      <text x="200" y="214" font-size="12" fill="var(--load)" font-family="JetBrains Mono,monospace">LC ∥ 7,1 MHz</text>
+      <!-- trasformatore tra filo 5 punta e un filo virtuale -->
+      <g transform="translate(790,146)"><rect x="-13" y="-13" width="26" height="26" rx="4" fill="var(--card)" stroke="var(--net)" stroke-width="2"/><circle cx="-4" cy="0" r="5" fill="none" stroke="var(--net)" stroke-width="1.8"/><circle cx="4" cy="0" r="5" fill="none" stroke="var(--net)" stroke-width="1.8"/></g>
+      <text x="810" y="140" font-size="12" fill="var(--net)" font-family="JetBrains Mono,monospace">1:4</text>
+    </svg>
+    <div class="leg">
+      <span><svg width="34" height="10" viewBox="0 0 34 10"><line x1="2" y1="5" x2="32" y2="5" stroke="var(--tl)" stroke-width="3" stroke-dasharray="7 4"/></svg>linea TL (✕ = incrociata, Z0 negativa)</span>
+      <span><svg width="22" height="16" viewBox="0 0 22 16"><rect x="1" y="2" width="20" height="12" rx="3" fill="none" stroke="var(--load)" stroke-width="2"/></svg>carico (R, L, C, RLC, R+jX)</span>
+      <span><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="1" width="16" height="16" rx="3" fill="none" stroke="var(--net)" stroke-width="2"/></svg>rete NT, trasformatore, rete L, stub</span>
+      <span><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="var(--src)"/></svg>sorgente</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Cosa c'e' oggi e cosa si aggiunge</h2>
+    <div class="tw"><table>
+      <tr><th>Oggetto</th><th>Nel disegno oggi</th><th>Proposta</th></tr>
+      <tr><td>Sorgenti (EX)</td><td class="si">si': punto rosso, ampiezza e fase</td><td>resta com'e'</td></tr>
+      <tr><td>Linee TL (anche bifilari tra elementi alimentati, LPDA, stack, four-square)</td><td class="no">no</td><td>arco viola tratteggiato tra i due segmenti, etichetta TL1 + Z0; ✕ se incrociata; con un clic sull'arco si apre la riga della tabella Linee</td></tr>
+      <tr><td>Carichi LD 0-4 (R, L, C, RLC serie o parallelo, R+jX)</td><td class="no">no</td><td>riquadro arancio sul segmento con il simbolo (resistenza, bobina, condensatore, trappola LC ∥); etichetta col valore; LD 5 (materiale) solo nella nota in alto</td></tr>
+      <tr><td>Reti NT, trasformatori, reti L, stub</td><td class="no">no</td><td>riquadro verde acqua con il simbolo, etichetta (1:4, rete L, stub λ/4) e linea sottile tra le due porte</td></tr>
+      <tr><td>Fili virtuali di EZNEC</td><td>disegnati come fili</td><td>grigi e sottili, con «V1» accanto</td></tr>
+    </table></div>
+    <p class="muted" style="font-size:.86rem">La casella «Linee, carichi e reti» e' nuova, accesa di partenza; vale anche nella vista dei calcolatori. Le etichette si nascondono oltre 40 oggetti (resta il simbolo) per non coprire il disegno.</p>
+  </section>
+</main>

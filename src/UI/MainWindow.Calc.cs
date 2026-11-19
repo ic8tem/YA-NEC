@@ -664,6 +664,72 @@ namespace YaNec
             return GroundPainter.Neutral;
         }
 
+        /// <summary>1.5.2: linee, carichi, reti, trasformatori, reti L e stub del modello per la Struttura 3D; fili virtuali (1 segmento con LD 4 da 1 Mohm).</summary>
+        internal static List<Structure3DView.Oggetto> OggettiPer3D(NecModel m, SegmentGeometry g, out HashSet<int> virt)
+        {
+            List<Structure3DView.Oggetto> l = new List<Structure3DView.Oggetto>();
+            virt = new HashSet<int>();
+            if (m == null || g == null) return l;
+            Func<int, int, int> seg = (tag, s) => { try { return g.SegNo(tag, s) - 1; } catch { return -1; } };
+            Func<int, int> centroFilo = tag =>
+            {
+                int a = -1, b = -1;
+                for (int i = 0; i < g.N; i++) if (g.Tag[i] == tag) { if (a < 0) a = i; b = i; }
+                return a < 0 ? -1 : (a + b) / 2;
+            };
+            CultureInfo ci = CultureInfo.CurrentCulture;
+            Func<double, string> n3 = v => (Math.Abs(v) >= 100 ? v.ToString("0", ci) : Math.Abs(v) >= 10 ? v.ToString("0.#", ci) : v.ToString("0.##", ci));
+            int ntl = 0;
+            for (int i = 0; i < m.Networks.Count; i++)
+            {
+                NetworkSpec nw = m.Networks[i];
+                Structure3DView.Oggetto o = new Structure3DView.Oggetto { Seg1 = seg(nw.Tag1, nw.Seg1), Seg2 = seg(nw.Tag2, nw.Seg2), Riga = i };
+                if (nw.IsTl) { o.Tipo = 0; o.Etichetta = "TL" + (++ntl) + " " + n3(Math.Abs(nw.F1)) + " Ω"; o.Incrociata = nw.F1 < 0; }
+                else { o.Tipo = 2; o.Etichetta = "NT"; }
+                l.Add(o);
+            }
+            for (int i = 0; i < m.Loads.Count; i++)
+            {
+                LoadSpec ld = m.Loads[i];
+                if (ld.Type == 5 || ld.Type == 7 || ld.Tag <= 0) continue;
+                int sg = ld.From > 0 ? seg(ld.Tag, (ld.From + Math.Max(ld.From, ld.To)) / 2) : centroFilo(ld.Tag);
+                if (sg < 0) continue;
+                // filo virtuale di EZNEC: un segmento solo con 1 Mohm di reattanza
+                int nseg = 0; for (int k = 0; k < g.N; k++) if (g.Tag[k] == ld.Tag) nseg++;
+                if (ld.Type == 4 && nseg == 1 && Math.Abs(ld.F2) >= 1e5) { virt.Add(sg); continue; }
+                Structure3DView.Oggetto o = new Structure3DView.Oggetto { Tipo = 1, Seg1 = sg, Riga = i };
+                if (ld.Type == 4) { o.Simbolo = 5; o.Etichetta = n3(ld.F1) + (ld.F2 < 0 ? " -j" : " +j") + n3(Math.Abs(ld.F2)) + " Ω"; }
+                else
+                {
+                    List<string> p = new List<string>();
+                    if (ld.F1 != 0) p.Add("R " + n3(ld.F1) + " Ω");
+                    if (ld.F2 != 0) p.Add("L " + n3(ld.F2 * 1e6) + " µH");
+                    if (ld.F3 != 0) p.Add("C " + n3(ld.F3 * 1e12) + " pF");
+                    int cnt = (ld.F1 != 0 ? 1 : 0) + (ld.F2 != 0 ? 1 : 0) + (ld.F3 != 0 ? 1 : 0);
+                    bool par = ld.Type == 1 || ld.Type == 3;
+                    o.Simbolo = cnt == 1 ? (ld.F1 != 0 ? 0 : ld.F2 != 0 ? 1 : 2) : (par ? 4 : 3);
+                    o.Etichetta = (par && cnt > 1 ? "∥ " : "") + string.Join(", ", p);
+                }
+                l.Add(o);
+            }
+            for (int i = 0; i < m.Trasformatori.Count; i++)
+            {
+                Trasformatore t = m.Trasformatori[i];
+                l.Add(new Structure3DView.Oggetto { Tipo = 2, Seg1 = seg(t.Tag1, t.Seg1), Seg2 = seg(t.Tag2, t.Seg2), Riga = i, Etichetta = "1:" + n3(t.Z2 / Math.Max(1e-9, t.Z1)) + (t.Inv ? " inv." : "") });
+            }
+            for (int i = 0; i < m.RetiL.Count; i++)
+            {
+                ReteL r = m.RetiL[i];
+                l.Add(new Structure3DView.Oggetto { Tipo = 2, Seg1 = seg(r.Tag1, r.Seg1), Seg2 = seg(r.Tag2, r.Seg2), Riga = i, Etichetta = Lang.T("rete L") });
+            }
+            for (int i = 0; i < m.Stubs.Count; i++)
+            {
+                Stub st = m.Stubs[i];
+                l.Add(new Structure3DView.Oggetto { Tipo = 3, Seg1 = seg(st.Tag, st.Seg), Riga = i, Etichetta = "stub " + n3(st.Z0) + " Ω" + (st.Corto ? "" : " " + Lang.T("aperto")) });
+            }
+            return l;
+        }
+
         void ShowStructure()
         {
             if (view3d == null) return;
@@ -706,6 +772,8 @@ namespace YaNec
                         catch { }
                     }
                 AggiornaRiconoscimentoStack();
+                view3d.Oggetti = OggettiPer3D(model, geo, out HashSet<int> virt);
+                view3d.SegVirtuali = virt;
             }
             // 1.0.8 (IC8TEM 16/11/2026 20:48 "si correggi"): con la correzione di Leeson (tubi telescopici) il calcolo usa una sua
             // geometria (run.Geometry) diversa da geo: stessi segmenti, raggi equivalenti; prima le correnti non comparivano

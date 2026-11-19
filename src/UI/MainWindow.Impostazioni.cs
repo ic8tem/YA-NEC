@@ -198,6 +198,18 @@ namespace YaNec
             dia.Children.Add(RigaImp("F/R: settore posteriore", new TextBlock { Text = "180 gradi (90-270)", Foreground = Pal.B(Pal.Fore), VerticalAlignment = VerticalAlignment.Center }, "come EZNEC", "Il settore di 120 gradi come MMANA arriva con la prossima versione."));
             dia.Children.Add(Casella("Mostra l'angolo a -3 dB (triangolo nei diagrammi 2D)", true, true, "Gia' attivo dalla 0.4.0: raggi tratteggiati, arco e valore. Il cono nel 3D arriva dopo."));
             dia.Children.Add(Casella("Campo vicino (schede NE/NH)", false, false, "Per la linguetta Campi EM."));
+            {
+                // 1.5.2 (bozzetto «Linguetta Frequenza: bande radioamatoriali ombreggiate», approvato da IC8TEM il 19/11/2026 08:44: «tutte con scelta colorazione»)
+                StackPanel scB = Scelta(new[] { "verde salvia", "ambra", "azzurro ghiaccio", "nessuna" }, LineChart.ColoreBande, k =>
+                {
+                    LineChart.ColoreBande = k;
+                    cfg.SetD("colore_bande", k);
+                    Registro.Scrivi("IMPOSTAZIONI", "colore delle bande nei grafici: " + k);
+                    foreach (LineChart lc in new[] { chSwr, chGain, chZ, chFb, chEff }) lc?.InvalidateVisual();
+                });
+                ToolTip.SetTip(scB, "Fascia sul fondo dei grafici della linguetta Frequenza dove cadono le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz), con il nome della banda in alto. Il colore e' piu' chiaro nel tema scuro; le curve restano sopra.");
+                dia.Children.Add(RigaImp("Bande nei grafici di frequenza", scB));
+            }
             c2.Children.Add(Pannello("Diagrammi e campo lontano", dia));
 
             // ---- Struttura 3D (1.2.0, IC8TEM 17/11/2026 23:46) ----

@@ -3900,3 +3900,1046 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Wie deckend die Farbe ist: leicht, mittel oder stark. In der Tabellenzeile ist der Schleier heller, damit die Zahlen lesbar bleiben.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Draht {0} in der 3D-Ansicht gewählt: Zeile {1} der Tabelle
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Draht {0}: nicht in der Drahttabelle (Geometriekarte ist nicht GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Prüft sofort, ob es eine neue Version gibt (ohne 3 Minuten zu warten).
+terreno reale	reales Gelände
+Locatore	Locator
+da 8 a 12 caratteri	8 bis 12 Zeichen
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Mit 6 Zeichen kann der Punkt Kilometer daneben liegen: das Geländeprofil braucht mindestens 8 Zeichen.
+Quota sito	Standorthöhe
+Altezza antenna	Antennenhöhe
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Höhe der Antennenmitte über Grund. Weicht sie vom Modell ab, wird das NEC-Diagramm mit derselben Stromverteilung angehoben oder abgesenkt.
+Distanza max	Max. Entfernung
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimut und Entfernungen werden bei jeder Locator-Änderung neu berechnet (Großkreis, Kugel 6371 km).
+Terra	Land
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Verringert den Reflexionsfaktor des Meeres mit dem Ament-Faktor für 0,25-m-Wellen (Standardabweichung).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	statistisches Modell der rauen Oberfläche (Ament 1953): gültig für flache Winkel und gleichmäßiges Meer.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Senkt das Profil mit der Erdkrümmung ab (effektiver Radius 4/3 bei normaler Brechung) und verringert die fernen reflektierten Strahlen mit dem Divergenzfaktor.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	Standardatmosphäre (k = 4/3); bei Ducts oder Inversionen ändert sich die scheinbare Krümmung.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Der höchste Kamm zwischen Antenne und Abstrahlrichtung dämpft den direkten Strahl wie eine Kante (Fresnel-Integral), wie in HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	einzelne Schneide: abgerundete Kämme oder mehrere Kämme hintereinander werden durch den höchsten angenähert.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Wiederholt die Rechnung alle 10 Grad Azimut (nur DEM) und zeigt die Gütezahl in der Rose, mit der Antenne in jede Richtung gedreht.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	mit der Antenne immer in Richtung des Profils gedreht: gültig für eine Drehantenne.
+Cartesiana dBi / gradi	Kartesisch dBi / Grad
+0–180° intero	0–180° vollständig
+Zoom angolare	Winkel-Zoom
+Sovrapponi alla linguetta Verticale	Über die Registerkarte Vertikal legen
+premi Calcola	Berechnen drücken
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Wiederholt die Rechnung mit der Antenne von 6 bis 30 m (KW) oder von 2 bis 30 m (UKW) und zeigt die Höhe mit der besten Gütezahl auf dem Pfad.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	die Ströme bleiben die des berechneten Modells: der Einfluss der Höhe auf Impedanz und Ströme wird nicht berücksichtigt (wie in HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Es werden die Ankunftswinkel-Tabellen des ARRL Antenna Book benötigt (.PRN-Dateien je Band und Region): sobald sie vorhanden sind, wird dies aktiv und zeigt die orangen Streifen.
+locatore non valido	ungültiger Locator
+sul mare	über dem Meer
+sul terreno	über Land
+profilo reale	reales Profil
+terreno piatto	ebener Boden
+orizzonte ostruito	verdeckter Horizont
+° (scala angolare ×	° (Winkelmaßstab ×
+← dietro	← hinten
+avanti →	vorne →
+statistiche degli angoli di arrivo: non caricate	Ankunftswinkel-Statistik: nicht geladen
+rosa 0–360°: calcolo in corso…	Rose 0–360°: Berechnung läuft…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Profildatei wählen (auf „Aus HorizonProfiler“ klicken).
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM nicht verfügbar: beim ersten Mal wird das Netz gebraucht, um TINITALY oder SRTM1 herunterzuladen (danach bleiben sie im Ordner data/dem).
+Profilo del terreno	Geländeprofil
+Lobo di elevazione	Elevationskeule
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Zuerst das Modell berechnen (Knopf Berechnen oben): das Antennendiagramm kommt aus NEC.
+da file	aus Datei
+dal DEM	aus dem DEM
+rispetto alla stessa antenna su terreno piatto	bezogen auf dieselbe Antenne über ebenem Boden
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Differenz zwischen der Keule über dem realen Profil und der Keule über ebenem Boden, gemittelt über die nützlichen Winkel.
+Guadagno a 5° / 10°	Gewinn bei 5° / 10°
+Guadagno a 1° / 3°	Gewinn bei 1° / 3°
+Angoli coperti a -3 dB	Bei -3 dB abgedeckte Winkel
+primo lobo sul profilo reale	erste Keule über dem realen Profil
+calcolo…	Berechnung läuft…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Freiraummodell: die Ströme sind die ohne Boden, wie das Freiraumdiagramm von HFTA. Um den nahen Boden zu berücksichtigen, das Modell mit realem Boden berechnen.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Das Profil gilt nur für einen Azimut: eine Drehantenne braucht mehrere Richtungen (Kästchen „Alle Azimute“).
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Methode wie in HFTA (N6BV): direkter Strahl + reflektierte Strahlen an jeder Facette des Profils + Beugung an den Kämmen. Das Antennendiagramm kommt aus NEC; diese Rechnung fügt das Gelände hinzu.
+Piatto	Eben
+Reale	Real
+Primo minimo	Erstes Minimum
+Punto di riflessione	Reflexionspunkt
+Orizzonte	Horizont
+Uso: rotte DX in HF (angoli bassi 1–15°).	Einsatz: KW-DX-Pfade (flache Winkel 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Einsatz: Tropo und MS (0–5°), EME mit tiefem Mond (Bodengewinn bei Mondauf- und -untergang).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Höhe mit dem höchsten mittleren Gewinn über die nützlichen Winkel des Pfads.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	Ströme des berechneten Modells in der Höhe verschoben: Impedanz und Bodenkopplung bleiben die des Modells.
+Calcola prima il terreno reale	Zuerst das reale Gelände berechnen
+Esporta il lobo sul terreno reale	Keule über realem Gelände exportieren
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Bilder: Esri, Maxar, Earthstar Geographics und die GIS-Nutzergemeinschaft
+© i contributori di OpenStreetMap	© OpenStreetMap-Mitwirkende
+Sfondo	Hintergrund
+Foto aerea	Luftbild
+Solo griglia	Nur Gitter
+Griglia	Gitter
+Cerca	Suchen
+⌖ Centra sul locatore	⌖ Auf den Locator zentrieren
+Punto scelto	Gewählter Punkt
+Coordinate	Koordinaten
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klick auf die Karte = Antennenpunkt; Ziehen = verschieben; Rad = Zoom (das Gitter geht von 6 auf 8, 10, 12 Zeichen). Dicker Rand = 6-stelliges Feld.
+non disponibile	nicht verfügbar
+Lunghezza elementi	Elementlänge
+Posizione sul boom	Position auf dem Boom
+Uniforme	Gleichmäßig
+Distribuzione	Verteilung
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element außermittig in der Halterung: Verschiebung entlang der eigenen Achse, mit der Positionstoleranz.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	die reale Halterung ändert auch die elektrische Länge nahe dem Boom: dafür die Registerkarte Boom-Korrektur verwenden.
+nuovo a ogni avvio	bei jedem Lauf neu
+Numero prove	Anzahl der Versuche
+Frequenze	Frequenzen
+Seme casuale	Zufallsstartwert
+OBIETTIVO LISTA DI TAGLIO	ZIEL DER ZUSCHNITTLISTE
+Calo F/B max	Max. F/B-Abfall
+ROS max	Max. SWR
+Ferma	Stopp
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Die Elemente nahe dem Strahler sind meist die kritischsten; die am Boomende vertragen größere Fehler.
+l'istogramma serve al Monte Carlo	das Histogramm gehört zum Monte Carlo
+5% peggiore	schlechteste 5 %
+Posizione mm	Position mm
+Lunghezza mm	Länge mm
+Tolleranza ammessa	Zulässige Toleranz
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. In Rot die Elemente, die weniger als die Bautoleranz brauchen.
+Calcola prima il modello	Zuerst das Modell berechnen
+sensibilita'	Empfindlichkeit
+Tolleranze: fermato	Toleranzen: angehalten
+Diametro mm	Durchmesser mm
+Tolleranza ammessa mm	Zulässige Toleranz mm
+Avvia prima il calcolo	Zuerst die Rechnung starten
+Esporta la lista di taglio	Zuschnittliste exportieren
+Lista di taglio	Zuschnittliste
+Obiettivi	Ziele
+Calo massimo del F/B	Maximaler F/B-Abfall
+ROS massimo	Maximales SWR
+Tolleranze di costruzione	Bautoleranzen
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Geplant (Entwurf 13, zu genehmigen): in dieser Version noch nicht aktiv.
+Al quadro 20×2 mm	Al quadratisch 20×2 mm
+Al quadro 25×2 mm	Al quadratisch 25×2 mm
+Al quadro 30×2 mm	Al quadratisch 30×2 mm
+Al quadro 40×2 mm	Al quadratisch 40×2 mm
+Al tondo 25×1,5 mm	Al rund 25×1,5 mm
+Al tondo 30×2 mm	Al rund 30×2 mm
+Al tondo 40×2 mm	Al rund 40×2 mm
+Al tondo 50×2 mm	Al rund 50×2 mm
+Zona NTC	NTC-Zone
+Quota sito as	Standorthöhe as
+Periodo ritorno	Wiederkehrperiode
+Categoria esposiz.	Expositionskategorie
+Coeff. topografia	Topografiekoeff.
+Antenna da terra	Antenne über Grund
+Palo sopra rotore	Mast über dem Rotor
+Ø palo	Mast Ø
+Usa elementi e boom del modello	Elemente und Boom des Modells verwenden
+Includi telaio, palo, cavi	Rahmen, Mast, Kabel einbeziehen
+Scansione direzione del vento	Windrichtungs-Abtastung
+UNITÀ	EINHEITEN
+N e kgf affiancati	N und kgf nebeneinander
+solo N	nur N
+solo kgf	nur kgf
+Mostra	Anzeigen
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	ungültiger Locator: Zone von Hand wählen
+Telaio a H	H-Rahmen
+Cavi e divisore	Kabel und Teiler
+Parte	Teil
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Bei Querwind drücken die Elemente nicht (Querströmung, K5IU): die Kraft auf ein Rohr geht mit dem Quadrat der Windkomponente senkrecht zu seiner Achse.
+momento flettente alla staffa del rotore	Biegemoment an der Rotorschelle
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Vorbemessung: sie ersetzt nicht die Prüfung durch einen Ingenieur für Mast, Turm und Fundament. Das Fußmoment geht in die Unterkarte Mast und Fundament.
+Sito e norma	Standort und Norm
+Norma	Norm
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; Beiwerte CNR-DT 207 R1/2018 und EN 1991-1-4
+Locatore / zona	Locator / Zone
+Risultati	Ergebnisse
+Forza massima	Maximale Kraft
+Momento flettente alla staffa del rotore	Biegemoment an der Rotorschelle
+Momento torcente sul rotore	Drehmoment am Rotor
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Vorbemessung: sie ersetzt nicht die Prüfung durch einen befähigten Ingenieur für Mast, Turm und Fundament.
+Al tondino pieno	Al-Vollstab
+Materiale elementi	Elementmaterial
+Staffe, isolatori	Schellen, Isolatoren
+g cad.	g je Stück
+Dipolo + scatola	Dipol + Box
+Cavo fino al palo	Kabel bis zum Mast
+STAFFA AL PALO	MASTSCHELLE
+Posizione attuale	Aktuelle Position
+m dal riflettore	m vom Reflektor
+Massa / distanza	Masse / Abstand
+Vento dalla linguetta Vento	Wind aus der Registerkarte Wind
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Verwendet den Bemessungsdruck der letzten Rechnung in der Unterkarte Wind; ohne sie 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Verschiebt das ganze Modell entlang des Booms, sodass die empfohlene Schelle im Ursprung liegt (wo Mast und Stackrahmen angreifen). Rückgängig in der 3D-Struktur macht es ungeschehen.
+Momenti in funzione della posizione della staffa	Momente in Abhängigkeit von der Schellenposition
+Masse e aree per parte	Massen und Flächen je Teil
+ultimo direttore	letzter Direktor
+Staffe e isolatori	Schellen und Isolatoren
+Cavo sul boom	Kabel auf dem Boom
+Massa kg	Masse kg
+Baricentro m	Schwerpunkt m
+Area vento m²	Windfläche m²
+Centro area m	Flächenschwerpunkt m
+solo peso	nur Gewicht
+solo vento	nur Wind
+File Touchstone .s1p	Touchstone-Datei .s1p
+Formato letto	Gelesenes Format
+CAVO TRA VNA E ANTENNA	KABEL ZWISCHEN VNA UND ANTENNE
+R e X separate	R und X getrennt
+Banda con ROS <	Band mit SWR <
+ROS: calcolato e misurato	SWR: berechnet und gemessen
+Confronto	Vergleich
+misurato, cavo tolto	gemessen, Kabel herausgerechnet
+R calcolata	R berechnet
+X calcolata	X berechnet
+R misurata	R gemessen
+X misurata	X gemessen
+Calcolato	Berechnet
+Misurato	Gemessen
+Scarto	Differenz
+Frequenza del ROS minimo	Frequenz des minimalen SWR
+ROS minimo	Minimales SWR
+nessuna correzione: calcolo e misura coincidono.	keine Korrektur: Rechnung und Messung stimmen überein.
+calcolo NEC sul campo della misura…	NEC-Rechnung über den Messbereich…
+Misura del VNA	VNA-Messung
+Tutti	Alle
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Einen Sweep starten (Knopf Sweep oben), um F/B und F/R über das ganze Band zu sehen
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = Vorwärtsgewinn minus mittlere Leistung im hinteren Halbraum (90-270° Azimut, alle Elevationen über 0°). Es ist auch eines der Ziele des Optimierers.
+Tabelle: F/B e F/R su tutta la banda	Tabellen: F/B und F/R über das ganze Band
+Valori dello sweep	Sweep-Werte
+ANTENNE RICEVENTI	EMPFANGSANTENNEN
+4-square in ricezione	4-Square für Empfang
+8 verticali in cerchio	8 Vertikale im Kreis
+Modello aperto	Offenes Modell
+Isotropo	Isotrop
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = Gewinn in der gewünschten Richtung minus mittlerer Gewinn über den ganzen Halbraum: anders als der Gewinn hängt er nicht von den Verlusten ab.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Verwendet den mittleren Ankunftswinkel der Registerkarte Reales Gelände als gewünschte Elevation (Statistik je Band und Region). Ohne geladene ARRL-Statistik bleibt die hier eingetragene Elevation.
+Direzione voluta	Gewünschte Richtung
+Hz  rumore	Hz  Rauschen
+NF ricevitore	Empfänger-NF
+sorgente locale az	lokale Quelle az
+Cifre di merito in ricezione	Empfangs-Gütezahlen
+Basta il segnale?	Reicht das Signal?
+calcolo in corso…	Berechnung läuft…
+RDF in funzione della frequenza	RDF über der Frequenz
+Calcola prima il modello aperto	Zuerst das offene Modell berechnen
+verticale λ/4	λ/4-Vertikal
+° · dB relativi · arancio: -3 dB	° · relative dB · orange: -3 dB
+settore ±30° az, 10–40° el	Sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Mittlerer Gewinn im vorderen Sektor minus Mittel im hinteren Halbraum.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definiert den DMF nur mit dem Gewinn bei 20 Grad; hier wird das Mittel über den Sektor des Entwurfs verwendet, daher sind die Werte nicht eins zu eins mit denen des Buchs vergleichbar.
+molto basso: serve un preamplificatore	sehr niedrig: ein Vorverstärker wird gebraucht
+basso ma accettabile: vedi soglia	niedrig, aber annehmbar: siehe Schwelle
+come un'antenna trasmittente	wie eine Sendeantenne
+F/R medio sull'emisfero posteriore	Mittleres F/R im hinteren Halbraum
+Rumore d'antenna ai morsetti	Antennenrauschen an den Klemmen
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Externe Rauschleistung an den Klemmen: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + mittlerer Gewinn gewichtet nach der Herkunft des Rauschens.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	Rauschen vom Horizont, in der Elevation gewichtet mit exp(-el/10 Grad): es stellt fernes, flach einfallendes Störrauschen dar; die reale Verteilung hängt vom Standort ab.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	Punktquelle bei 5 Grad Elevation mit derselben Leistung wie der isotrope Untergrund.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotropes Rauschen über dem Boden; der Boden fügt kein Rauschen hinzu.
+Margine sul ricevitore	Empfängerreserve
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Das Antennenrauschen übersteigt das Empfängerrauschen um weniger als 6 dB: der Empfänger begrenzt die Empfindlichkeit. Mehr Vorverstärkung oder ein Empfänger mit niedrigerer NF wird gebraucht.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Gewinn 1,8
+Spazio richiesto	Platzbedarf
+λ/4 in tubo quadro	λ/4 im Vierkantrohr
+λ/4 in tubo tondo	λ/4 im Rundrohr
+Solo cavi di fase	Nur Phasenleitungen
+Aria	Luft
+Uscite	Ausgänge
+Z antenne	Z Antenne
+Z ingresso	Z Eingang
+Dielettrico	Dielektrikum
+Connettori	Steckverbinder
+Correggi accorciamento dei connettori	Steckerverkürzung berücksichtigen
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Zieht von der Länge den Leitungsteil in den Steckern ab.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	Schätzung 4 mm je Ende mit N-Steckern (3 BNC, 1,5 SMA): am besten mit dem VNA abgleichen und in 1-mm-Schritten kürzen.
+Divisori	Teiler
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Verwendet die aktiven Impedanzen der Antennen des offenen Stacks (eine Quelle je Antenne) und die Abstände für die Mindestlänge der Phasenleitungen.
+CAVI DI FASE	PHASENLEITUNGEN
+Lunghezza minima	Mindestlänge
+Passo verticale	Vertikaler Abstand
+solo cavi di fase: nessun trasformatore da costruire	nur Phasenleitungen: kein Transformator zu bauen
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75-Ω-Kabel parallel = 37,5 Ω
+quadro, lato	quadratisch, Seite
+tondo, Ø	rund, Ø
+Z0 richiesta	Benötigte Z0
+Ø conduttore interno	Innenleiter Ø
+VF del cavo	Kabel-VF
+λ/4 in aria, mm	λ/4 in Luft, mm
+da tagliare, mm	zuzuschneiden, mm
+Z carico in parallelo	Last-Z parallel
+Rami λ/4: Z0 = Zin · √N	λ/4-Zweige: Z0 = Zin · √N
+Resistenze a stella	Sternwiderstände
+Isolamento tra le uscite	Isolation zwischen den Ausgängen
+Perdita stimata	Geschätzter Verlust
+Carico usato	Verwendete Last
+non potenza di 2	keine Zweierpotenz
+ROS all'ingresso	Eingangs-SWR
+solo cavi di fase	nur Phasenleitungen
+Uscita	Ausgang
+Lungh. elettrica	Elektrische Länge
+Fisica mm	Physisch mm
+Perdita dB	Verlust dB
+° di fase).	° Phase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° nach oben); die Impedanz am Teiler wiederholt sich nicht mehr genau.
+Solo cavi di fase: nessun disegno da stampare	Nur Phasenleitungen: keine Zeichnung zu drucken
+Divisore	Teiler
+50 mm di controllo	Kontrolle 50 mm
+GEOMETRIA	GEOMETRIE
+λ/4 sul boom	λ/4 auf dem Boom
+stesso piano	gleiche Ebene
+Metallico, isolati	Metall, isoliert
+Non metallico	Nichtmetallisch
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Der Boom ist nicht im NEC-Modell: mit vom Metallboom isolierten Elementen ist der Effekt klein (Boom-Korrektur in den Rechnern).
+Yagi di base	Basis-Yagi
+Disposizione	Anordnung
+Sfasamento piani	Ebenenversatz
+Cavo di ritardo λ/4	λ/4-Verzögerungskabel
+Includi relè e cavi reali	Reale Relais und Kabel einbeziehen
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Fügt den Verlust des Verzögerungskabels (VF 0,66, 10 dB/100 m bei 144 MHz, mit der Wurzel der Frequenz skaliert) und 0,1 dB für das Relais hinzu.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	typische Werte eines 75-Ohm-Kabels und eines Koaxrelais; das Programm kennt Ihre nicht.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Dasselbe Phasennetz funktioniert auch für ein Drehkreuz (um 90° gekreuzte Dipole).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Vorderansicht
+Componenti co-polare / cross-polare	Ko- und Kreuzpolarkomponenten
+Rapporto assiale e ROS in frequenza	Achsenverhältnis und SWR über der Frequenz
+piano A	Ebene A
+piano B	Ebene B
+vista dal davanti — boom al centro	Ansicht von vorne — Boom in der Mitte
+piani sfalsati di λ/4 lungo il boom	Ebenen um λ/4 entlang des Booms versetzt
+Yagi incrociate: serve una Yagi con una sola sorgente	Gekreuzte Yagis: eine Yagi mit einer einzigen Quelle wird gebraucht
+Yagi incrociate: calcolo in corso...	Gekreuzte Yagis: Berechnung läuft...
+Rapporto assiale in asse	Achsenverhältnis auf der Achse
+Rapporto assiale a −3 dB	Achsenverhältnis bei −3 dB
+Isolamento tra i due piani	Isolation zwischen den beiden Ebenen
+Fase della rete sul piano B	Phase des Netzes auf Ebene B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Vollkommen orthogonale und symmetrische Ebenen: im Modell sind Kopplung und Gegenpolarisation fast null. In der Praxis begrenzen Schellen, Kabel und kleine Asymmetrien sie auf etwa 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	von 1,8 MHz bis 1296 MHz: die Liste der Baluns ändert sich mit dem Band
+LINEA DI DISCESA	SPEISELEITUNG
+Coassiale	Koaxial
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Mit einer symmetrischen Hühnerleiter gibt es keine Abschirmung: Gleichtakt kommt nur von Unsymmetrien. Die Karte rechnet den Koaxialfall; für die Hühnerleiter Leitungen (TL) mit dem Tuner verwenden.
+Lungo il boom	Entlang des Booms
+m → palo	m → Mast
+Discesa sul palo	Den Mast hinunter
+Fino alla stazione	Zur Station
+Calza a massa sul palo / traliccio	Schirm am Mast / Turm geerdet
+Messa a terra all'ingresso stazione	Erdung am Stationseingang
+BALUN DA CONFRONTARE	ZU VERGLEICHENDE BALUNS
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 Windungen RG-213 auf 110 mm: Wheeler-Induktivität, Medhurst-Eigenkapazität.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 und geschätzte Eigenkapazität: die reale Impedanz der Drossel muss gemessen werden.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1-Ferritringkern als Parallel-RLC mit niedrigem Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm im Maximum (10 MHz mit Mischung 31, 25 MHz mit Mischung 43): typische Werte von 12 Windungen auf 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	λ/2-Koax 4:1: symmetrische Speisung, Schirme verbunden.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	restlicher Gleichtakt als 600 Ohm, resonant bei f0 (Q 3): hängt vom Aufbau ab.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4-Sperrtopf: kurzgeschlossene λ/4-Leitung zwischen Schirm und Hülse, hohe Impedanz bei f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Hülse Z0 50 Ohm und 0,08 dB Verlust über die Viertelwelle.
+10 perline in ferrite sulla calza.	10 Ferritperlen auf dem Schirm.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 Ohm je Perle bei 144 MHz (Mischung 61), 100 Ohm über 30 MHz mit Mischung 43: typische Katalogwerte.
+Caso mostrato	Gezeigter Fall
+premi Calcola il confronto	Vergleich berechnen drücken
+Corrente lungo la calza, dal dipolo verso il basso	Strom entlang des Schirms, vom Dipol nach unten
+Vista laterale: corrente sulla calza	Seitenansicht: Strom auf dem Schirm
+F/R medio	Mittleres F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Verlust im Balun
+Potenza dissipata nel balun a 1 kW	Im Balun verlorene Leistung bei 1 kW
+Banda con calza < 5 %	Band mit Schirmstrom < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Die grauen Einträge sind Baluns für das andere Band; sie werden aktiv, wenn Sie die Frequenz wählen. Auf KW zählt auch der Schirm bis zur Station (geerdet), auf UKW/UHF der Teil auf Boom und Mast. Der Schirm ist ein Draht, der an einer Seite des Speisepunkts hängt, wie in der Praxis ohne Balun; der Balun ist eine Gleichtaktimpedanz auf dem ersten Abschnitt.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Glasfaser leitet nicht: der Rahmen geht nicht in NEC ein, nur die Schirme der Phasenleitungen bleiben.
+Includi palo sotto il telaio	Mast unter dem Rahmen einbeziehen
+Cavi di fase lungo i montanti	Phasenleitungen entlang der Stützen
+Rotore e controventi	Rotor und Abspannungen
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Geplant: Rotor und Abspannungen als Drähte (die Turmmaße werden gebraucht).
+Materiale	Material
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	rot = als NEC-Drähte modellierte Rahmenteile · gestrichelt = Schirm der Phasenleitungen
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horizontale Polarisation: die senkrechten Stützen sind schwach gekoppelt; der waagrechte Querträger und die Phasenleitungen nicht.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertikale Polarisation: Stützen und Mast liegen parallel zu den Elementen und zählen mehr; der waagrechte Querträger wenig.
+Confronto senza / con telaio	Vergleich ohne / mit Rahmen
+Diagramma orizzontale sovrapposto	Überlagertes horizontales Diagramm
+premi Calcola confronto	Vergleich berechnen drücken
+Stack: calcola prima il modello	Stack: zuerst das Modell berechnen
+Stack: calcolo senza e con telaio...	Stack: Berechnung ohne und mit Rahmen...
+Pezzo	Teil
+Collegato	Verbunden
+Cavi	Kabel
+Senza telaio	Ohne Rahmen
+Con telaio	Mit Rahmen
+Z ingresso divisore	Teiler-Eingangs-Z
+senza telaio	ohne Rahmen
+con telaio	mit Rahmen
+Stack: confronto senza / con telaio fatto	Stack: Vergleich ohne / mit Rahmen fertig
+CARICHI HF	KW-LASTEN
+INSERISCI NEL MODELLO	INS MODELL EINFÜGEN
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Der Hut kommt ans Drahtende (b oder e), die Linear-Loading an den gewählten Punkt des Drahts.
+Inserisci nel modello	Ins Modell einfügen
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Schon im Lasten-Entwurf genehmigt: Q von L und C, f0, Z je Band, Spannung und Strom am Bauteil. Hier kommen die Bauarten hinzu.
+Trappola coassiale	Koax-Trap
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	der Innenleiter wird an den Anfang der mittleren Wicklung gelötet (Vertauschen der Enden senkt die Resonanz um etwa 50 kHz).
+Calcola spire per f0	Windungen für f0 berechnen
+Spire dell'avvolgimento (anche frazionarie).	Windungen der Wicklung (auch gebrochen).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	das reale f0 weicht um einige Prozent ab: mit Dipmeter oder VNA messen und die Windungen korrigieren.
+Blocca	Sperrt
+dipolo con	Dipol mit
+Filo Ø	Draht Ø
+Calcola C per f0	C für f0 berechnen
+mm  Filo Ø	mm  Draht Ø
+mm  Passo	mm  Steigung
+mm  Spire	mm  Windungen
+MHz  dal centro	MHz  von der Mitte
+m  Braccio	m  Arm
+m  Filo dell'elemento Ø	m  Elementdraht Ø
+Calcola spire per la risonanza	Windungen für Resonanz berechnen
+Piega	Faltung
+m  Distanza tra i fili	m  Abstand zwischen den Drähten
+Calcola la piega per la risonanza	Faltung für Resonanz berechnen
+Raggi	Speichen
+m  Filo Ø	m  Draht Ø
+Verticale alto	Vertikale Höhe
+m  Frequenza	m  Frequenz
+MHz  Filo Ø	MHz  Draht Ø
+Calcola i raggi per la risonanza	Speichen für Resonanz berechnen
+L misurata	Gemessene L
+MHz  Autorisonanza f0	MHz  Eigenresonanz f0
+Cappello capacitivo in punta al verticale	Kapazitätshut oben auf der Vertikal
+Bobina dalle misure	Spule aus Messungen
+Reattanza del cappello in frequenza	Hut-Reaktanz über der Frequenz
+impedenza della trappola	Trap-Impedanz
+Si comporta da	Verhält sich wie
+Potenza persa	Verlustleistung
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Senderleistung für die Spannungen und Verluste in der Tabelle.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	unteres Band: Strom im Bauch sqrt(P/73) und an der Trap I0 cos(beta a); gesperrtes Band: Spannung an der Spitze des inneren Dipols I0 Z0, aufgeteilt zwischen Trap und Abstrahlung.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	Strom im Bauch sqrt(P/73) und an der Last I0 cos(beta a), mit a Abstand von der Mitte.
+Risonanza propria f0	Eigenresonanz f0
+Q ideale	Ideales Q
+Q della trappola alla risonanza.	Q der Trap bei Resonanz.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus dielektrische Verluste (tan 3e-4 PE, 2e-4 PTFE). Gemessene Koax-Traps haben meist Q zwischen 100 und 300.
+Lunghezza di cavo	Kabellänge
++ 10 cm per le saldature	+ 10 cm für die Lötstellen
+R in parallelo equivalente	Äquivalenter Parallel-R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: das ist die LD-Last, die ins Modell geht
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipolarm im unteren Band mit der Trap, verglichen mit dem Arm voller Länge (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC mit der Trap als Last liefert die richtige Länge.
+Induttanza misurata	Gemessene Induktivität
+dalla misura	aus der Messung
+Autorisonanza	Eigenresonanz
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frequenz, bei der die Spule allein mit ihrer Eigenkapazität resoniert.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	Eigenkapazität aus der Medhurst-Tabelle in Abhängigkeit von Länge / Durchmesser, gültig für einlagige Spulen fern von Metallmassen.
+Q della bobina alla frequenza di lavoro.	Q der Spule bei der Arbeitsfrequenz.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	Drahtwiderstand aus dem Skineffekt mal Proximity-Faktor 1 + 2 (d/p)^2 (d Draht, p Steigung): Medhurst gibt ähnliche Werte für Spulen mit Länge etwa gleich dem Durchmesser.
+Reattanza della piega	Reaktanz der Faltung
+Z0 della linea	Leitungs-Z0
+Q della piega	Q der Faltung
+Capacita' del cappello	Hutkapazität
+Capacita' del cappello verso lo spazio.	Kapazität des Huts gegen den Raum.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	Summe der Speichen (dünner Draht, 2 pi eps0 l / (ln(2l/a) - 1)) und des Rings, die zur vollen Scheibe (8 eps0 r) sättigt: die Speichen schirmen sich gegenseitig ab. Als Drähte eingefügt rechnet NEC sie exakt.
+in punta al verticale	oben auf der Vertikal
+Altezza per la risonanza	Höhe für Resonanz
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Wirkung auf die Vertikal
+Carichi HF: apri un modello nella finestra principale.	KW-Lasten: ein Modell im Hauptfenster öffnen.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear-Loading und Kapazitätshut werden als Drähte eingefügt: für die anderen „Als Last“ wählen.
+Il cappello capacitivo si inserisce come fili.	Der Kapazitätshut wird als Drähte eingefügt.
+RLC parallelo	Parallel-RLC
+Effetto sul dipolo	Wirkung auf den Dipol
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Verkürzung des Arms gegenüber der vollen Viertelwelle (71,3 / f) mit der Last an dieser Stelle.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	Leitungsmodell des belasteten Arms X = Z0 (cot(beta b) - tan(beta a)), x 0,95 für den Endeffekt.
+Esegui il test	Test starten
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Der Gewinn kann mit dem AGT korrigiert gezeigt werden (im Optimierer schon vorgesehen).
+Controllo prima/dopo il calcolo	Prüfung vor/nach der Rechnung
+Esito	Ergebnis
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Eine oder mehrere Prüfungen über ±0,2 dB: die Segmentierung prüfen (3D-Struktur > Segmentierung... und Segmentierung prüfen).
+Tutti i controlli entro ±0,2 dB.	Alle Prüfungen innerhalb ±0,2 dB.
+Linea a finestra 450	450-Ohm-Fensterleitung
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Berechnen drücken: NEC rechnet die Impedanz des offenen Modells bei jeder Frequenz.
+Perdita nella linea	Verlust in der Leitung
+Perdita totale	Gesamtverlust
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Tunertyp zwischen Leitung und Sender (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	Verlust geschätzt aus dem belasteten Q des Netzwerks (Qn = sqrt(Rmax/Rmin - 1), zwei Abschnitte für T und Pi) und aus dem Spulen-Q; TLW von N6BV rechnet die Bauteile einzeln und kann um einige Zehntel dB abweichen.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Beispiel: Doublet 2 × 20 m (ZS6BKW/G5RV). Warnung, wenn der Tuner weniger als 20 Ω sieht: hohe Verluste, Verlängern oder Kürzen der Leitung wird vorgeschlagen. Verlustbehaftete Leitung wie in TLW (N6BV, ARRL).
+USA costa est	USA-Ostküste
+USA costa ovest	USA-Westküste
+Giappone	Japan
+Caraibi	Karibik
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: der Dienst hat kein GeoTIFF geliefert
+GeoTIFF compresso: non supportato	Komprimiertes GeoTIFF: nicht unterstützt
+GeoTIFF: tipo di dato non supportato	GeoTIFF: Datentyp nicht unterstützt
+Il file non contiene coppie distanza / quota.	Die Datei enthält keine Paare Entfernung / Höhe.
+Nessuno	Keiner
+Ferriti a perline	Ferritperlen
+Cavo e balun: segmento della sorgente non trovato.	Kabel und Balun: Quellsegment nicht gefunden.
+solo palo	nur Mast
+Acciaio zincato	Feuerverzinkter Stahl
+Alluminio	Aluminium
+Vetroresina	Glasfaser
+Montante sx/dx	Stütze links/rechts
+al boom	zum Boom
+Traversa	Querträger
+Palo	Mast
+al dipolo	zum Dipol
+N, femmina	N, Buchse
+senza connettori	keine Stecker
+rurale tranquillo	ruhig ländlich
+Verticale λ/4	λ/4-Vertikal
+λ/8 di lato	λ/8 je Seite
+0,37 λ di diametro	0,37 λ Durchmesser
+Cappello capacitivo	Kapazitätshut
+W8NX bassa impedenza	W8NX niederohmig
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	ein dickes Kabel mit PTFE-Dielektrikum (RG-393) oder eine LC-Trap mit Hochspannungskondensator
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Die Faltung ist länger als lambda/8: die Leitung verhält sich nicht mehr wie eine konstante Induktivität, die Resonanz mit NEC prüfen, indem man sie als Drähte einfügt.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Die Hutkapazität ist eine Schätzung (Speichen schirmen sich gegenseitig ab): für den exakten Wert als Drähte einfügen und mit NEC rechnen.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Die Lastposition liegt jenseits der Viertelwelle: näher zur Mitte schieben.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	der Hut kommt ans Drahtende: das erste (b) oder letzte (e) Segment wählen.
+il punto scelto e' troppo vicino all'estremo del filo.	der gewählte Punkt liegt zu nah am Drahtende.
+questo tipo entra nel modello come carico.	dieser Typ geht als Last ins Modell.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	KW-Lasten: vom YA-NEC-Rechner hinzugefügte Drähte
+Il file Touchstone non contiene punti di S11.	Die Touchstone-Datei enthält keine S11-Punkte.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	Die CSV enthält keine Zeilen mit Frequenz, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT im freien Raum, verlustlos
+IMPOSTAZIONI	EINSTELLUNGEN
+Schiera Hi-Z di verticali corte	Hi-Z-Gruppe kurzer Vertikale
+Base del loop	Loop-Basis
+Distanza, lato o diametro	Abstand, Seite oder Durchmesser
+Altezza delle verticali	Höhe der Vertikale
+Base del loop dal suolo	Loop-Basis über Grund
+Fase tra le file	Phase zwischen den Reihen
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Niedriger horizontaler Dipol: unter lambda/4 über Grund geht die Keule nach oben. Er ist die „Steilstrahl“-Referenz der Rangliste von IV3PRK (RDF 7,3 dB): er wird mit den Flachstrahl-Empfangsantennen verglichen.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY von Gary Breed K9AY (QST, September 1997): zwei senkrechte Loops um 90 Grad am selben Mast, Abschlusswiderstand (typisch 390 Ohm, auf F/B abgeglichen), Übertrager 9:1. Hier eine einzelne Loop, in die gewählte Richtung gedreht, über Grund geschlossen wie auf der Seite Empfang (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-Square für Empfang: vier kurze aktive Vertikale an den Ecken eines Quadrats von lambda/8, Strahlung entlang der Diagonale. Leere Phase = exaktes hinteres Null (pi + beta d zwischen den Reihen): ergibt die höchste theoretische Richtwirkung; reale Phasennetze (ON4UN, IV3PRK) verwenden andere Phasen und geben einen niedrigeren RDF (IV3PRK 9,4 dB). Der Knopf sucht die Phase mit dem besten RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Gruppen kurzer aktiver Vertikale wie die von Hi-Z Antennas: 2 Elemente End-Fire (Kardioide, lambda/8), 3 im Dreieck (Seite lambda/6, eine Ecke in die gewählte Richtung), 8 im Kreis (Durchmesser 0,37 lambda: die vier zur Richtung und die gegenüberliegende werden verwendet). Hi-Z: 8 im Kreis RDF 13,4 dB mit eigenem Kombinierer; das einfache Zwei-Reihen-Modell bleibt niedriger. Der Knopf sucht die Phase mit dem besten RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Die Vertikale starten vom realen Boden (GE 1 mit Sommerfeld-Boden): mit NEC-2 ergibt ein mit realem Boden verbundener Draht eine vom Quellsegment abhängige Impedanz (NEC-2-Handbuch, EZNEC). Diagramm und RDF sind Richtwerte; die Verbindung mit erhöhten Radials ist für alle Empfangsantennen geplant.
+fase tra le file da 120 a 300 gradi per l'RDF	Phase zwischen den Reihen von 120 bis 300 Grad für den RDF
+nessuna fase con il lobo in avanti	keine Phase mit der Keule nach vorne
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Phase zwischen den Reihen für den besten RDF: {0} Grad (RDF {1} dB). Neuberechnung...
+linea d'orizzonte	Horizontlinie
+scala angolare	Winkelmaßstab
+lobo reale sopra il piatto fino a	reale Keule über eben bis
+Profilo verso	Profil in Richtung
+Lobo verticale e angoli di arrivo a	Vertikale Keule und Ankunftswinkel bei
+Cos'e' l'RDF	Was der RDF ist
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = Gewinn in der gewünschten Richtung - mittlerer Gewinn über alle Richtungen (W8JI; früher, in den 60er-Jahren, SNIF genannt). Er misst, wie sehr die Antenne den Rauschabstand verbessert, wenn das Rauschen gleichmäßig aus allen Richtungen kommt; der absolute Gewinn zählt nicht (ein Vorverstärker holt ihn zurück). Gemittelt wie in EZNEC: obere Halbkugel geteilt durch die ganze Kugel (4 pi). Mit dieser Konvention stimmen die Ergebnisse mit IV3PRK und W8JI/Hi-Z überein (Vertikal 5,07 gegen 5,06 und 4,9; Beverage 350 m 13,5 gegen 13,66). Grenze: das reale Rauschen ist nicht gleichmäßig (Stromleitungen, lokales QRM): deshalb zählen auch F/B und die Form der Keule. Für Sendeantennen hat der RDF keinen Sinn: deshalb wird er nur in dieser Registerkarte berechnet. DMF (Directivity Merit Figure, ON4UN): Gewinn bei 20 Grad Elevation in Vorwärtsrichtung minus mittlerer Gewinn des hinteren Halbraums (Azimut über 90 Grad, über Grund, mit dem Kosinus für die Fläche gewichtet): er sagt, wie sehr die Antenne von hinten kommendes Rauschen unterdrückt. ON4UN warnt davor, DMF und RDF miteinander zu vergleichen. Quellen: W8JI und W8WWV (RDF), ON4UN Low-Band DXing Kap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	Elevation
+azimut	Azimut
+azimut a {0}°	Azimut bei {0}°
+totale	gesamt
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Halbwertsbreite bis zum ersten Null (FNBW): {0}°;  höchste Nebenkeule: {1}
+Didascalie {0} %	Beschriftungen {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB gegen {1} aus der Quelle: Maße, Abschluss und Boden prüfen (die Quelle kann einen anderen Boden oder eine andere Geometrie verwenden).
+Azimut a {0}° · {1} MHz	Azimut bei {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimut bei {0}° Elevation
+RUMORE	RAUSCHEN
+Apri la scheda {0}	Das Blatt {0} öffnen
+caso mostrato: {0}	gezeigter Fall: {0}
+Rastremazioni	Konizitäten
+BANDA	BAND
+λ/2 coassiale 4:1	λ/2-Koax 4:1
+Manicotto λ/4	λ/4-Sperrtopf
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kabelschirm und Mast als NEC-Drähte; Balun-Vergleich (Gleichtaktstrom, F/B, mittleres F/R, Verlust, Leistung bei 1 kW) von 1,8 bis 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Stützen, Querträger, Mast und Schirme der Phasenleitungen als NEC-Drähte: Vergleich ohne / mit Rahmen (Gewinn, F/B, mittleres F/R, Nebenkeulen, Teiler-Z, Tant und G/T).
+TIPO	TYP
+DATI	DATEN
+TELAIO	RAHMEN
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 im Vierkant- oder Rundrohr, im Kabel, Wilkinson; Phasenleitungen, Tilt; Zeichnung 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X oder +, Ebenen um λ/4 versetzt; H, V, RHCP, LHCP, X-Pol; Achsenverhältnis und Isolation
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Gleiche Längen → gleiche Phase. Vielfache von λ/2 → die aktive Impedanz wiederholt sich am Teiler. Empfohlene Toleranz ± 5 mm (= ± {0}° Phase).
+impedenze attive delle {0} antenne dello stack in parallelo	aktive Impedanzen der {0} Stack-Antennen parallel
+Banda con ROS < {0}	Band mit SWR < {0}
+? Manuale	? Handbuch
+Apre la spiegazione nel manuale	Öffnet die Erklärung im Handbuch
+riferimento	Referenz
+Rispetto alla singola antenna	Verglichen mit der Einzelantenne
+{0} antenne ideali	{0} ideale Antennen
+x la distanza DL6WU, a passi di	x der DL6WU-Abstand, in Schritten von
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Linke Achse: G Stack - G Einzelantenne, von 0 aufwärts. Rechte Achse: F/R Stack - F/R Einzelantenne, umgekehrt, mit 0 oben: wo der Stack das F/R verbessert, sinkt die Kurve, und der tiefste Punkt ist die größte Verbesserung. G/T bleibt in der Tabelle.
+ΔG sulla singola	ΔG gegenüber der Einzelantenne
+Chiusura del programma	Programm schließen
+Vuoi chiudere YA-NEC?	Möchten Sie YA-NEC schließen?
+Grazie per avermi usato: spero di esserti stato utile.	Danke, dass Sie mich benutzt haben: ich hoffe, ich war Ihnen nützlich.
+Sì	Ja
+ROS attivo	Aktives SWR
+G realizzato	Realisierter G
+ROS attivo massimo	Maximales aktives SWR
+riflessi minimi	minimale Reflexionen
+ROS attivo alto: da non scegliere	hohes aktives SWR: nicht wählen
+Documenti tecnici	Technische Dokumente
+Manuale d'uso	Bedienungshandbuch
+Manuale di calcolo e delle fonti	Handbuch der Berechnungen und Quellen
+Citazioni	Zitate
+Cerca in tutti i documenti	In allen Dokumenten suchen
+Apri il PDF	PDF öffnen
+Nessun risultato per «{0}»	Keine Ergebnisse für «{0}»
+Primi {0} risultati per «{1}»	Erste {0} Ergebnisse für «{1}»
+{0} risultati per «{1}»	{0} Ergebnisse für «{1}»
+Apre la citazione {0}	Öffnet das Zitat {0}
+Manuale di calcolo	Berechnungshandbuch
+È pronta la versione {0} di YA-NEC	YA-NEC Version {0} ist bereit
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Sie ist bereits heruntergeladen und installiert: sie wird beim Neustart des Programms wirksam.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Auf dem Mac installiert sie sich nicht selbst: die neue .dmg von der Releases-Seite auf GitHub herunterladen.
+Riavvia adesso	Jetzt neu starten
+Più tardi	Später
+Apri la pagina delle versioni	Releases-Seite öffnen
+Aggiornamento di YA-NEC	YA-NEC-Aktualisierung
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Sie ist bereits heruntergeladen und installiert. Das Programm startet von selbst neu und öffnet das offene Modell wieder.
+Riavvio tra {0} s	Neustart in {0} s
+Questo avviso si chiude tra {0} s	Dieser Hinweis schließt in {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Nach der Aktualisierung wurde das nicht gespeicherte Modell wieder geöffnet: speichern Sie es, wann Sie möchten (Kopie in data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Nach der Aktualisierung wurde das offene Modell wieder geöffnet.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Jedes Kästchen hat seinen Tooltip mit Erklärung und Quelle. Grau: angehakt = immer an (nicht abschaltbar); nicht angehakt = noch nicht verfügbar; Pillenauswahl = feste Wahl. Handbuch, Kapitel 21.
+"): sorgente sempre accesa.	"): Quelle immer an.
+' non da' un numero valido.	' ist keine gültige Zahl.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik wie es ist
+0 - misure del metodo	0 - Maße der Methode
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = Standard-WR-Hohlleiter des Bands (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = gleicher Spiegel am anderen Ende (eigenes Echo).
+0 = stesso disco all'altro capo.	0 = gleicher Spiegel am anderen Ende.
+0 gradi a destra	0 Grad nach rechts
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = ein Drittel von der Spitze: Impedanz 200-300 Ohm, Balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: weg vom Rand, wo die Durchbiegung den Feed aus dem Fokus schieben würde.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 Vollpolyethylen (RG-58, RG-213), 0,8-0,85 Schaumdielektrikum.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 Vollpolyethylen, 0,8-0,85 Schaum, 0,9-0,97 Hühnerleiter.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 Hohlleiter-lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - gespeiste Schleife
+1 - radiatore	1 - Strahler
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = eine Windung (wie vorher). Mit mehr Windungen wächst Rr mit N², der Skineffektverlust mit N.
+1 cavo	1 Kabel
+1-2-3 elementi	1-2-3 Elemente
+1. Obiettivi e pesi	1. Ziele und Gewichte
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Wind, Ausgleich, Teiler, Baluns, gekreuzte Yagis
+1.3 - Antenne riceventi abilitate	1.3 - Empfangsantennen aktiviert
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz mit großem Spiegel: außer Oberfläche und Ausrichtung zählen die Verformung durch Wärme und Wind (ATA: 0,7 mm RMS nachts, 3 mm tags in der Sonne), die Biegung der Streben und die Libration.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: mit 100 % drucken, ohne „an Seite anpassen“
+1005/f piedi	1005/f Fuß
+144 isol.	144 isol.
+2 - riflettore	2 - Reflektor
+2 - riflettori	2 - Reflektoren
+2 in parallelo	2 parallel
+2 lati	2 Seiten
+2. Variabili che l'ottimizzatore puo' cambiare	2. Variablen, die der Optimierer ändern darf
+200 Ω con balun 4:1	200 Ω mit Balun 4:1
+25 tondo	25 rund
+3 - direttori	3 - Direktoren
+3 gruppi	3 Gruppen
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 oder 4. Mit 2 gibt es keine Steifigkeit außerhalb ihrer Ebene.
+3. Registro dei passi - clic su una riga per riprenderla	3. Schrittprotokoll - Klick auf eine Zeile, um sie zurückzuholen
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω oder Balun 4:1
+36 Ω + terra	36 Ω + Erde
+4 - tutto insieme	4 - alles zusammen
+4 lati	4 Seiten
+4 sorgenti: vedi tabella	4 Quellen: siehe Tabelle
+432 isol.	432 isol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 Datenprüfungen, von IC8TEM am 15/11/2026 genehmigt: Schwellen und Erklärungen im Handbuch, Kapitel 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 Fuß etwa 18 dBi, 12 Fuß etwa 20,5 dBi
+75 ohm ideale	75 Ohm ideal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8-mal länger als der Radius. Mit dicken Drähten oder kurzen Segmenten (dicke Rohre bei UHF, nahe Elemente,\n
+9 fili	9 Drähte
+9 fili a 0,1 λ	9 Drähte bei 0,1 λ
+Accorciamento del pilotato	Verkürzung des Strahlers
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Verkürzung über 8 %: die lineare Schätzung ist nicht zuverlässig, mit NEC prüfen.
+Allega il modello aperto	Das offene Modell anhängen
+Allega il registro di oggi	Das heutige Protokoll anhängen
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Effektive Wellenhöhe und Antennenhöhe über dem Meer, in Diagramme > Reales Gelände.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Breite des Sweeps um die Frequenz, für das Impedanzdiagramm.
+Antenna a	Antenne bei
+Applica la freccia al modello NEC	Durchhang ins NEC-Modell übernehmen
+Approvata, in preparazione: non ancora attiva in questa versione.	Genehmigt, in Vorbereitung: in dieser Version noch nicht aktiv.
+Apri la cartella	Ordner öffnen
+Apri un modello nella finestra principale	Ein Modell im Hauptfenster öffnen
+Apro il modello e il diagramma 3D resta vuoto.	Ich öffne das Modell und die 3D-Ansicht bleibt leer.
+Area al vento dell'antenna	Windfläche der Antenne
+Area al vento totale	Gesamte Windfläche
+Area al vento totale e lista di taglio	Gesamte Windfläche und Zuschnittliste
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Achtung: nicht bei Drähten verwenden, die sich im Winkel treffen oder an der Verbindung verschiedene Durchmesser haben.\n
+Bobina di carico per la risonanza	Verlängerungsspule für Resonanz
+Boom con il tirante	Boom mit Abspannung
+C1 in serie con la loop	C1 in Reihe zur Loop
+C1 serie, C2 parallelo	C1 Reihe, C2 parallel
+C2 in parallelo all'ingresso	C2 parallel zum Eingang
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Rechner > Empfangsantennen: niedriger Dipol, K9AY, 4-Square RX, Hi-Z 2/3/8 Elemente, mit der für den RDF optimierten Phase zwischen den Reihen und der Warnung zur Erdverbindung.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mechanische Berechnungen (Wind und Ausgleich), Rechner > Teiler und gekreuzte Yagis, Objekte > Kabel und Balun und Stackrahmen, KW-Lasten.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Vorbemessung: für die Installation gilt die Planung eines befähigten Fachmanns.
+Candidati da controllare	Zu prüfende Kandidaten
+Categoria	Kategorie
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Expositionskategorie des Standorts (NTC 2018, Tab. 3.3.II und Abb. 3.3.2): sie hängt von der Rauigkeitsklasse des Geländes (A Stadtzentren ... D hindernisfreie Gebiete, Meer) und vom Abstand zur Küste ab. I = offene Küste oder Meer, V = Stadtzentrum.
+Cebik, poi NEC	Cebik, dann NEC
+Centro della banda scelta:\n	Mitte des gewählten Bands:\n
+Con ghiaccio	Mit Eis
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Mit Eis: Wind auf das 0,6-fache verringert und radiales Eis aus dem Feld rechts (vereinfachte Kombination ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Mit demselben Startwert wiederholt sich der Test genau gleich.
+Condizione della sorgente non capita ("	Quellbedingung nicht verstanden ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Prüft sofort auf GitHub, ohne die 3 Minuten abzuwarten. Gibt es eine neue Version, wird sie heruntergeladen, gemeldet und neu gestartet wie bei der automatischen Aktualisierung (10 Sekunden, das Modell öffnet sich wieder). Funktioniert auch bei ausgeschalteter automatischer Aktualisierung.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Immer von der Segmentierungsprüfung und in den Warnungen geprüft (8 mit normalem Kernel, 2 mit erweitertem Kernel).
+Copie per candidato	Kopien je Kandidat
+Coppia sulla staffa boom-mast	Drehmoment an der Boom-Mast-Schelle
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Erstellt das Zip in data/segnalazioni und öffnet die GitHub-Seite «New issue» mit dem schon geschriebenen Text. Das Zip hängen Sie selbst an, von Hand: das Programm sendet nichts von selbst.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Erdkrümmung, in Diagramme > Reales Gelände.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Durchmesser außerhalb des Bereichs der Cebik-Formeln (von 1E-6 bis 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Abstand und Art des zweiten Bodens: für 1.5 genehmigt (Reales Gelände 2).
+Distanze di stack HF	KW-Stockungsabstände
+Distanze di stack: accoppiamento e distanza migliore	Stockungsabstände: Kopplung und bester Abstand
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Nach der Optimierung die besten Ergebnisse, die zur Toleranzprüfung gehen. 0 = keine Prüfung.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Sehr niedrige Enden: Vorsicht bei Menschen und Tieren (hohe Spannungen an den Spitzen).
+F/B peggiore	Schlechtestes F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq-Datei: Leitungen mit TLParms von AutoEZ (verlustbehaftete Kabel) verwenden Nenn-Zo und -VF und keinen Verlust: die NEC-TL-Karte ist verlustlos.
+Filo riflettore	Reflektordraht
+Filo ripiegato	Gefalteter Draht
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Lange Haarnadel (über 0,2 lambda): besser den Abstand verringern oder dickere Leiter verwenden.
+Forza del vento di progetto	Bemessungs-Windkraft
+Forza l'aggiornamento	Aktualisierung erzwingen
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Sehnendurchhang: wie weit das Netz auf dem geraden Stück in Feldmitte unter dem Paraboloid bleibt (geht in die Facettierung ein). Gesamtmasse der Pfetten {4:0.00} kg{5}.
+Freccia tolta dal modello.	Durchhang aus dem Modell entfernt.
+Ghiaccio radiale	Radiales Eis
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA-Dateien werden für NEC-2 immer neu segmentiert (Handbuch, Kapitel 10).
+I lobi si leggono nella tabella delle distanze di stack.	Die Nebenkeulen liest man in der Tabelle der Stockungsabstände.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (runden), FIX (abschneiden), MOD, MAX, MIN, ODD (ungerade ganze Zahl: nützlich für die Segmente des gespeisten Drahts).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Das normale NEC2 behandelt jeden Draht als dünne Linie: das geht, solange das Segment mindestens\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Ein einzelner Reflektordraht bringt eine sehr kleine Verbesserung (Cebik): besser der Schirm oder die 9 Drähte.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Der Mast überschreitet die Streckgrenze: dickerer Mast oder kürzerer Überstand.
+Impedenza del cavo	Kabelimpedanz
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	In anderer Form: die Prüfung r5 der Datenprüfungen meldet einen Gewinn über dem physikalischen Maximum für die Boomlänge.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktivität mit N² (enge Windungen) und NEC-Modell mit einer Windung: NEC prüft hier nur die Geometrie der einzelnen Windung.
+Interasse della forcina	Abstand der Haarnadel
+Isole (tranne Sicilia e Sardegna) e mare aperto	Inseln (außer Sizilien und Sardinien) und offenes Meer
+Kernel esteso del NEC2 (scheda EK).\n	Erweiterter NEC2-Kernel (Karte EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Der Abstand der Haarnadel muss größer sein als der Leiterdurchmesser.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Die Slim Jim schließt den Strahler oben mit einem nach unten gefalteten Draht, bis knapp über den Stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Das erledigt das Fenster Segmentierung prüfen (Knopf oben).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Die Haarnadel ist symmetrisch: sie verzerrt das Diagramm nicht wie das Gamma. Ein Balun oder eine Drossel am Speisepunkt ist trotzdem nötig.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Die Haarnadel funktioniert nur mit einem R des Strahlers unter der Kabelimpedanz: für ein größeres R das Gamma oder einen Übertrager verwenden.
+La prepara IC8TEM: non ancora attiva.	IC8TEM bereitet sie vor: noch nicht aktiv.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Die sechs Regeln des Geometry Check von EZNEC, bei jeder Rechnung, in der Registerkarte Warnungen.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: ohne Korrektur Z = {0:0.0} {1}j{2:0.0} Ohm (mit Korrektur {3:0.0} {4}j{5:0.0} Ohm).
+Località	Ort
+Loop orizzontale di 1 λ	Horizontale Loop 1 λ
+Lunghezza del pilotato	Länge des Strahlers
+Lunghezza della forcina	Länge der Haarnadel
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Legt das offene Modell (.nec) ins Zip, auch wenn es nicht gespeichert ist.
+Mette nello zip il registro di oggi della cartella registri.	Legt das heutige Protokoll aus dem Protokollordner ins Zip.
+Momenti al mast	Momente am Mast
+Momento al cuscinetto	Moment am Lager
+NEC: risonanza cercata dal motore	NEC: vom Rechenkern gesuchte Resonanz
+NOTE SU QUESTA VERSIONE (fase 0)\n	HINWEISE ZU DIESER VERSION (Phase 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NEU · über Grund: Höhen, Abstände, gewünschte Abstrahlwinkel
+Nel modello non ci sono elementi orizzontali diritti	Das Modell hat keine geraden waagrechten Elemente
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	In der Stack-Tabelle und in den Objekten des Modells (Stackrahmen, Teiler).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	In Geometriekarten Ausdrücke ohne Leerzeichen schreiben, zum Beispiel:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Kein Abstand vorgeschlagen
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Kein Abstand vorgeschlagen: alle überschreiten das maximale aktive SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Keine IP-Adresse, keine E-Mail, keine Benutzernamen in den Dateien: der Pfad des Benutzerordners wird zu «~». Ohne GitHub-Konto können Sie das Zip schicken, wie Sie wollen.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Noch nicht automatisch: von Hand mit dem AGT-Test in den Warnungen (ARRL 24., 4nec2).
+Numero di spire	Anzahl der Windungen
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Jede Kopie hat ihre Maße zufällig innerhalb der Toleranzen der Registerkarte Toleranzen verschoben (Vorgabe: Länge ±1 mm, Position ±2 mm, Durchmesser ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Zusätzlich zum offenen Modell zufällig gewählte Starts zwischen Minimum und Maximum jeder Variable. 0 = wie bisher.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Seite Echtes Himmelsrauschen der Registerkarte Rauschen/GT/Stack: die skynoise-Rechnung nach C# portiert (Lesen der HEALPix-Karten, Interpolation, Sternzeit, Koordinaten, Mond) und die zwei Karten von G8ONH in data/cielo.
+Partenze a caso	Zufällige Starts
+Perimetro Cebik	Umfang nach Cebik
+Peso del boom	Boomgewicht
+Pi-greco	Pi-Filter
+Prepara la segnalazione	Meldung vorbereiten
+Proposta	Vorschlag
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c-Test bei 145 MHz (Rohre 12 mm auf 40 mm): 30 mm -> 45 + j23 Ohm, 35 mm -> 60 + j24 Ohm. Slim Jim: 50 mm -> 48 + j7 Ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Wann es nötig ist: Verhältnis Segment/Radius zwischen etwa 2 und 8 (unter 2 ist keiner der beiden zuverlässig).\n
+Quota s.l.m.	Höhe ü. NN
+R del pilotato	R des Strahlers
+ROS attivo minimo {0}	Minimales aktives SWR {0}
+Raggio equivalente dei due conduttori	Äquivalenter Radius der beiden Leiter
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Reaktanz des Strahlers jetzt: ist sie positiv, muss der Strahler noch mehr gekürzt werden.
+Reattanza della forcina	Reaktanz der Haarnadel
+Reattanza voluta del pilotato	Gewünschte Reaktanz des Strahlers
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktanz: jenseits kl = pi/2 (oder bei zu dickem Leiter) gilt die AEH-Formel nicht, NEC verwenden.
+Reinstalla la versione attuale	Aktuelle Version neu installieren
+Rel Z non positiva	Re Z nicht positiv
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Widerstand des Strahlers bei Resonanz, aus dem Modell oder der NEC-Rechnung.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Neustart fehlgeschlagen: YA-NEC von Hand schließen und wieder öffnen.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Lädt herunter und installiert neu, auch bei gleicher Version: nützlich, wenn eine Programmdatei beschädigt ist.
+Scansione	Abtastung
+Scegli il candidato con	Kandidaten wählen mit
+Schermo	Schirm
+Scrivi due frequenze diverse.	Zwei verschiedene Frequenzen eingeben.
+Segnala un problema	Ein Problem melden
+Seme del caso	Zufallsstartwert
+Serve solo per la reattanza (dipolo e monopolo).	Nur für die Reaktanz nötig (Dipol und Monopol).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Bei 2 oder mehr Windungen: unter 2 Leiterdurchmessern wächst der reale Verlust durch den Proximity-Effekt (nicht berechnet).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Wird in Diagramme > Reales Gelände verwendet: Meeresreflexion mit Divergenzfaktor und Rauigkeit.
+Sicilia e provincia di Reggio Calabria	Sizilien und Provinz Reggio Calabria
+Sollecitazione	Spannung
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Über 0,25 λ wird die Keule flacher: weniger geeignet für NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Über 30 MHz wird die Cebik-Regression außerhalb ihres hier vorgesehenen Bereichs (KW-Drähte) verwendet: besser Automatisch oder NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Unter 0,1 λ sinkt der Gewinn nach oben (Cebik): eine sehr niedrige Antenne gewinnt nichts.
+Sotto l'antenna	Unter der Antenne
+Spina (tubo o tondo) dentro il giunto telescopico.	Einsteckrohr (Rohr oder Stab) im Teleskopstoß.
+Spina interna nei giunti	Inneres Einsteckrohr in den Stößen
+Stack con il ROS attivo piu' basso	Stack mit dem niedrigsten aktiven SWR
+Staffe e mast	Schellen und Mast
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Zeit: etwa (Starts + 1) mal die heutige, plus Kandidaten x Kopien Rechnungen.
+Tensione nel mast al cuscinetto	Spannung im Mast am Lager
+Tiro del tirante	Zug der Abspannung
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Rohre aus der Tabelle Konizitäten: die Maße sind dieselben wie im NEC-Modell.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Alle Abstände überschreiten das maximale aktive SWR ({0}): kein Abstand vorgeschlagen. Das maximale aktive SWR erhöhen, die eigene Bezugsimpedanz der Antenne versuchen oder die Einzelantenne abstimmen. Matrix und Diagramm gelten für den Abstand mit dem niedrigsten aktiven SWR.
+V invertito	Inverted V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	UKW/UHF (DL6WU), Kopplung, aktives SWR, bester Abstand, zwei Frequenzen
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Spitzengeschwindigkeit am Standort: vb sqrt(ce), mit vb = vb,0 ca (NTC 2018, Wiederkehrperiode 50 Jahre) und ce(z) der Expositionskategorie in Antennenhöhe.
+Velocità	Geschwindigkeit
+Velocità a mano	Geschwindigkeit von Hand
+Vento di sopravvivenza	Überlebenswind
+Vento di sopravvivenza del boom	Überlebenswind des Booms
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Wind senkrecht zum Element, bei dem der erste Punkt die Streckgrenze erreicht (Eigengewicht und Eis eingeschlossen).
+X da aggiungere al pilotato	Dem Strahler hinzuzufügendes X
+X del pilotato	X des Strahlers
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Die Endkontrolle macht der NEC-Rechenkern am Modell mit der Haarnadel.
+Z0 della forcina	Z0 der Haarnadel
+Z0 della linea dei due conduttori	Z0 der Zweidrahtleitung
+Zona buona	Gute Zone
+al centro	in der Mitte
+caso peggiore	schlechtester Fall
+caso peggiore delle due	schlechtester Fall der beiden
+cerca...	suchen...
+copie entro le soglie	Kopien innerhalb der Schwellen
+corrente sinusoidale	sinusförmiger Strom
+distanza dal boom	Abstand vom Boom
+distanza dall'inizio del boom	Abstand vom Boomanfang
+due condensatori sul lato basso	zwei Kondensatoren an der Unterseite
+effetto: calcolo in corso…	Wirkung: Berechnung läuft…
+forza del vento x sbalzo	Windkraft x Überstand
+il caso peggiore migliore	der beste schlechteste Fall
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	der äquivalente Dipol, dicker, hat weniger als 73 Ω
+il voto medio migliore	die beste mittlere Note
+induttiva, in parallelo	induktiv, parallel
+la percentuale migliore di copie entro le soglie	der beste Anteil an Kopien innerhalb der Schwellen
+linea a due fili	Zweidrahtleitung
+m  mast a	m  Mast bei
+m dal suolo	m über Grund
+m sopra il boom, attacco al	m über dem Boom, befestigt bei
+media delle due	Mittel der beiden
+mm  lungo	mm  lang
+mm, acciaio	mm, Stahl
+molto buono	sehr gut
+molto povero	sehr schlecht
+nessun rinforzo	keine Verstärkung
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	kein handelsübliches Rohr bis +12 mm reicht: die Konizität überarbeiten
+nessuna distanza sotto il ROS attivo massimo	kein Abstand unter dem maximalen aktiven SWR
+partenza dal modello aperto	Start vom offenen Modell
+per lato, teso per annullare il momento verticale al mast	je Seite, gespannt, um das vertikale Moment am Mast aufzuheben
+primo cedimento: tubo Ø	erstes Versagen: Rohr Ø
+regge il vento di progetto con il 20 % di margine	hält den Bemessungswind mit 20 % Reserve aus
+riferimenti bibliografici	Literaturangaben
+sbalzo sopra il cuscinetto	Überstand über dem Lager
+schermo 1 λ x 1 λ	Schirm 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	dichte Segmente) verwendet der erweiterte Kernel eine genauere Formel und das Ergebnis ist zuverlässiger.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	ohne Einsteckrohr liegt das Innenrohr auf der Kante des äußeren und auf die Spannung in den ersten 5 cm wird ein Faktor 1,25 angesetzt: eine Schätzung, Schellen und Schlitze ändern das Ergebnis stark.
+sollecitazione / snervamento	Spannung / Streckgrenze
+tubo piu' grosso	dickeres Rohr
+un filo riflettore	ein Reflektordraht
+zona di cedimento	Versagenszone
+ø dei conduttori della forcina	ø der Haarnadelleiter
+ø del filo	Draht ø
+ø del pilotato	Strahler ø
+accordata	abgestimmt
+accordate	abgestimmt
+alimentazione	Speisung
+alluminio	Aluminium
+allungata	verlängert
+altro	anderes
+anello	Schleife
+angolo	Winkel
+antiorario	gegen den Uhrzeigersinn
+aritmetico	arithmetisch
+automatico	automatisch
+banda	Band
+bande	Bänder
+bordi	Ränder
+buono	gut
+capacitiva	kapazitiv
+carichi	Lasten
+carico	Last
+cartesiana	kartesisch
+cavi	Kabel
+cavo	Kabel
+centimetri	Zentimeter
+centina	Spant
+cerchio	Kreis
+condensatore	Kondensator
+corrente	Strom
+destra	rechts
+diagramma	Diagramm
+diametro	Durchmesser
+differenza	Differenz
+dipoli	Dipole
+dipolo	Dipol
+diretta	direkt
+diritto	gerade
+due	zwei
+elementi	Elemente
+elemento	Element
+elimina	löschen
+equilatera	gleichseitig
+esito	Ergebnis
+esperimenti	Versuche
+esponenziale	exponentiell
+fase	Phase
+ferriti	Ferrite
+fili	Drähte
+filo	Draht
+forcina	Haarnadel
+forma	Form
+formule	Formeln
+frequenza	Frequenz
+geometria	Geometrie
+ghiaccio	Eis
+giudizio	Bewertung
+gradi	Grad
+griglia	Gitter
+guadagno	Gewinn
+incrociata	gekreuzt
+larghezza	Breite
+lato	Seite
+lega	Legierung
+libera	frei
+libero	frei
+linea	Leitung
+lineare	linear
+linee	Leitungen
+lobi	Nebenkeulen
+locale	lokal
+mai	nie
+manicotto	Hülse
+mano	von Hand
+meccanica	Mechanik
+mezzaonda	Halbwelle
+millimetri	Millimeter
+misure	Messungen
+modello	Modell
+modo	Modus
+nessuna	keine
+nota	Notiz
+nuovo	neu
+operativo	Betrieb
+orario	im Uhrzeigersinn
+ottagono	Achteck
+palo	Mast
+parabola	Spiegel
+passo	Steigung
+perdite	Verluste
+perfetto	perfekt
+piano	Ebene
+piatto	flach
+piedi	Fuß
+polare	polar
+pollici	Zoll
+propria	eigen
+punto	Punkt
+quadrato	quadratisch
+quadro	quadratisch
+quota	Höhe
+radiali	Radials
+radiatore	Strahler
+raggio	Radius
+rame	Kupfer
+ramo	Zweig
+rapidi	schnell
+rastremazioni	Konizitäten
+rete	Netzwerk
+rettangolo	Rechteck
+riepilogo	Übersicht
+riflettore	Reflektor
+riga	Zeile
+rombo	Raute
+scarso	schlecht
+scarto	Abweichung
+schiacciata	abgeflacht
+sempre	immer
+senso	Richtung
+si'	ja
+sinistra	links
+soglia	Schwelle
+sorgenti	Quellen
+sotto	unten
+spire	Windungen
+staffe	Schellen
+stato	Status
+sufficiente	ausreichend
+tetto	Dach
+tipo	Typ
+tirante	Abspannung
+togli	entfernen
+tondo	rund
+traffico	Verkehr
+trasformatori	Übertrager
+trombe	Hörner
+tubi	Rohre
+tubo	Rohr
+tutti	alle
+uguale	gleich
+uguali	gleich
+uso	Verwendung
+a {0} x DL6WU; tutte sopra il massimo {1}	bei {0} x DL6WU; alle über dem Maximum {1}
+% del mezzo boom	% des halben Booms
++ aggiungi	+ hinzufügen
++ aggiungi variabile	+ Variable hinzufügen
++ correzione del boom	+ Boom-Korrektur
++ nuova	+ neu
++ trappola	+ Trap
++ verso il disco.	+ zum Spiegel hin.
++90 gradi Z	+90 Grad Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- arithmetisch: genau die Mitte zwischen den IARU-Grenzen des Bands (zum Beispiel 145,000 MHz auf 2 m),\n
+- correzione del boom	- Boom-Korrektur
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- Betrieb: die Frequenz, auf der man wirklich arbeitet (zum Beispiel 144,300 MHz auf 2 m, 432,200 auf 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (schwarz) 10-100 MHz
+-10 nero	-10 schwarz
+-2 (rosso) 0,25-10 MHz	-2 (rot) 0,25-10 MHz
+-2 rosso	-2 rot
+-6 (giallo) 3-40 MHz	-6 (gelb) 3-40 MHz
+-6 giallo	-6 gelb
+-90 gradi Z	-90 Grad Z
+-> segmento NEC	-> NEC-Segment
+. "Annulla" torna indietro.	. „Rückgängig“ geht zurück.
+. Antenna base: fili 1-	. Basisantenne: Drähte 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Bei so hohem Q muss der Sweep nur wenige kHz umfassen.
+. Salvalo con Salva con nome.	. Mit Speichern unter speichern.
+. Trascina per ruotare, rotella per ingrandire.	. Ziehen zum Drehen, Rad zum Zoomen.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Dünneren Draht, einen größeren Kern oder zwei gestapelte Kerne verwenden.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (über Sengupta 2021) und GMRT Tab. 19.1
+12 (errore / HPBW)^2	12 (Fehler / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passiver Ring: Umfang {0:0.000} lambda, keine Quelle und kein Kondensator; die Wirkung zeigt sich im vollständigen Modell (Direktor oder Reflektor).
+Automatico	Automatisch
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, wie nec2c und xnec2c: der Quellcode liegt dem Programm bei (Datei COPYING).\n
+Provincia di Trieste	Provinz Triest
+\nnonsalvato\n	\nnichtgespeichert\n
+\nsalvato\n	\ngespeichert\n
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	und in C# für YA-NEC. Referenzoberfläche: xnec2c von 5B4AZ und Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	Wirkungsgrad aus dem Fernfeld, Prad / (Prad + Verluste) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	Impedanz und Verluste werden immer unzuverlässiger, je tiefer der Draht liegt (siehe BOG im Handbuch). Für ein sicheres Ergebnis: mindestens lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	er wird bis {3:0.00} m Durchmesser erzeugt; die Aperturrechnung daneben gilt für jeden Durchmesser und berücksichtigt bereits die Spanten (Kästchen oben).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} Segmente: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} auf {5} Ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, Wirkungsgrad {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° Elevation
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. Aufl., Kap. 18 (2-m-Yagi von W9PE): drei Elemente bei 0,2 λ, etwa 7 dBi und F/B über 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Übereinstimmung von YA-NEC mit nec2c (Stäbe 20/15/10 m): Reflektoren bei 0,185 / 0,197 / 0,222 λ, Direktoren bei 0,095 / 0,116 / 0,114 λ: innerhalb der Bereiche der Quellen.
+↶ Annulla	↶ Rückgängig
+↷ Ripeti	↷ Wiederholen
+■ Ferma	■ Stopp
+▶ Avvia	▶ Start
+☐ mantieni lunghezza del boom	☐ Boomlänge beibehalten
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ keine Warnungen: die Segmentierung erfüllt die gewählte Stufe
+✓ nessun errore e nessun avviso	✓ keine Fehler und keine Warnungen
+variabili del modello	Variablen des Modells
+nuova variabile dal modello	neue Variable aus dem Modell
+Scrivi una variabile nella linguetta Variabili…	Eine Variable in der Registerkarte Variablen schreiben…
+Elemento diritto	Gerades Element
+Elemento piegato	Gebogenes Element
+Variabile nuova	Neue Variable
+Minimo / massimo	Minimum / Maximum
+Cosa cambia	Was sich ändert
+in ocra: dove agisce la variabile	in Ocker: wo die Variable wirkt
+Crea la variabile	Variable erstellen
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Variable {0} erstellt: die Geometrie ändert sich nicht. „Rückgängig“ in der Geometrieleiste entfernt sie.
+Struttura 3D: dove agisce la variabile ▾	3D-Struktur: wo die Variable wirkt ▾
+Struttura 3D ▸	3D-Struktur ▸
+Clic: nasconde o mostra la struttura	Klick: blendet die Struktur aus oder ein
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	Ocker durchgezogen: verwendet die Variable · Ocker gestrichelt: verwendet sie über eine andere Variable
+attraverso {0}: fili {1}	über {0}: Drähte {1}

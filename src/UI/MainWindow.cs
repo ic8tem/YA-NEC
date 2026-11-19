@@ -106,6 +106,7 @@ namespace YaNec
         {
             cfg = c;
             // 0.4.30: velocita' della luce del motore (Impostazioni > Motore); 0 = 299,792458 come EZNEC (normale), 1 = 299,8 come nec2c
+            LineChart.ColoreBande = (int)Math.Round(c.GetD("colore_bande", 0));   // 1.5.2: bande nei grafici di frequenza
             if (!Engine.Nec2Engine.CvelBloccata) Engine.Nec2Engine.Cvel = c.GetD("cvel_nec2c", 0) > 0.5 ? Engine.Nec2Engine.CVEL_NEC2 : Engine.Nec2Engine.CVEL_FISICA;
             Title = AppPaths.Title;
             // 1.2.0 (registro di IC8TEM, evento 1026 del 13/11/2026 17:58): l'eccezione interna di Avalonia "root could not be found", che nasce
@@ -590,6 +591,10 @@ namespace YaNec
             CheckBox chkFasi = new CheckBox { Content = "Fasi delle sorgenti", IsChecked = true, Margin = new Thickness(4, 0) };
             chkFasi.IsCheckedChanged += (s, e) => { view3d.ShowPhases = chkFasi.IsChecked == true; view3d.InvalidateVisual(); };
             ToolTip.SetTip(chkFasi, "Con piu' sorgenti (schiere, four-square): ampiezza e fase scritte su ogni elemento e freccia del lobo.");
+            // 1.5.2 (bozzetto «Struttura 3D: linee, carichi e reti nel disegno», approvato da IC8TEM il 19/11/2026 08:36)
+            CheckBox chkOgg = new CheckBox { Content = "Linee, carichi e reti", IsChecked = true, Margin = new Thickness(4, 0) };
+            chkOgg.IsCheckedChanged += (s, e) => { view3d.ShowObjects = chkOgg.IsChecked == true; view3d.InvalidateVisual(); };
+            ToolTip.SetTip(chkOgg, "Linee TL (arco viola tratteggiato, ✕ = incrociata), carichi R, L, C (riquadro arancio), reti, trasformatori e stub (riquadro verde acqua), fili virtuali di EZNEC (grigi). Clic su un simbolo: apre la sua tabella.");
             ToolTip.SetTip(chkCur, "Mostra o nasconde la corrente sui fili.");
             ToolTip.SetTip(rbColori, "Fili colorati secondo la corrente (blu bassa, rosso alta), con la scala in basso.");
             ToolTip.SetTip(rbCurva, "Fili nel colore normale con sopra la distribuzione della corrente come curva (zero agli estremi liberi).");
@@ -599,7 +604,7 @@ namespace YaNec
             bar.Children.Add(rbCurva);
             bar.Children.Add(chkPat);
             bar.Children.Add(chkQuota);
-            bar.Children.Add(chkFasi);
+            bar.Children.Add(chkFasi); bar.Children.Add(chkOgg);
             btnStackAvviso = Btn("Stack riconosciuto: distanze...", true);
             btnStackAvviso.IsVisible = false;
             btnStackAvviso.Click += (s, e) => ApriStack();
@@ -620,7 +625,13 @@ namespace YaNec
             DockPanel.SetDock(barGeo, Dock.Top);
             d.Children.Insert(0, barGeo);
             view3d = new Structure3DView();
-            view3d.WireClicked += (tag, ctrl) => FiloCliccato3D(tag, ctrl);   // 1.2.0: senza la barra Geometria il clic sceglie il filo e la sua riga
+            view3d.WireClicked += (tag, ctrl) => FiloCliccato3D(tag, ctrl);
+            view3d.OggettoCliccato += (tipo, riga) =>
+            {
+                string k = tipo == 0 ? "linee" : tipo == 1 ? "carichi" : "trasformatori";
+                MostraBasso(k);
+                Status(Lang.F("Riga {0} della tabella qui sotto a destra.", riga + 1));
+            };   // 1.2.0: senza la barra Geometria il clic sceglie il filo e la sua riga
             view3d.HighlightColor = ColoreFiloScelto(1);
             // bozzetto approvato "Struttura divisa": a sinistra il modello disegnato, a destra le tabelle in stile Excel
             // (Fili sopra, Sorgenti sotto); le due righe di separazione si trascinano
@@ -738,12 +749,12 @@ namespace YaNec
             // 0.4.40 (bozzetto di IC8TEM del 15/11/2026 14:32-14:33, "correggi secondo le modifiche al bozzetto"): griglia 2 x 2,
             // ROS | guadagno sopra, impedenza | F/B e F/R sotto; l'efficienza (0.4.2) resta su tutta la larghezza in fondo.
             Grid g = new Grid { RowDefinitions = new RowDefinitions("*,*,0.7*"), ColumnDefinitions = new ColumnDefinitions("*,*") };
-            chSwr = new LineChart { Title = "ROS", YLabel = "ROS" };
-            chGain = new LineChart { Title = "Guadagno", YLabel = "dBi" };
-            chZ = new LineChart { Title = "Impedenza", YLabel = "ohm" };
-            chFb = new LineChart { Title = "Rapporti F/B e F/R", YLabel = "dB" };
+            chSwr = new LineChart { MostraBande = true, Title = "ROS", YLabel = "ROS" };
+            chGain = new LineChart { MostraBande = true, Title = "Guadagno", YLabel = "dBi" };
+            chZ = new LineChart { MostraBande = true, Title = "Impedenza", YLabel = "ohm" };
+            chFb = new LineChart { MostraBande = true, Title = "Rapporti F/B e F/R", YLabel = "dB" };
             // efficienza di radiazione in funzione della frequenza (0.4.2, idea di sa6mwa, approvata da IC8TEM il 13/11/2026)
-            chEff = new LineChart { Title = "Efficienza di radiazione (potenza irradiata / potenza in ingresso)", YLabel = "%" };
+            chEff = new LineChart { MostraBande = true, Title = "Efficienza di radiazione (potenza irradiata / potenza in ingresso)", YLabel = "%" };
             Control[] cc = { Riquadro(chSwr), Riquadro(chGain), Riquadro(chZ), Riquadro(chFb), Riquadro(chEff) };
             for (int i = 0; i < cc.Length; i++)
             {
