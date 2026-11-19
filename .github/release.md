@@ -2,7 +2,17 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.1** (capitolo 26.1 del manuale):
+**Novità della 1.5.2** (capitolo 26.2 del manuale):
+- **Linguette riordinate** (da 16 a 13): la carta di **Smith** è l'ultima voce della fascia dei Diagrammi; **NEC/correnti** (sottolinguette NEC e Correnti); **Variabili e ottimizzazione** (sottolinguette Variabili e Ottimizzatore); in Rumore/GT/Stack **Distanze di stack VHF** e **Distanze di stack HF + HFTA**; famiglie dei Calcolatori nell'ordine HF, Antenne riceventi, VHF, Strumenti, Dischi e illuminatori, 2,4 GHz, Calcoli meccanici;
+- **Struttura 3D**: casella **Linee, carichi e reti** (linee TL, carichi LD, reti NT, trasformatori e stub disegnati sui fili); la legenda dei terreni si apre dal pulsante **Mostra terreno** nella barra di stato; ogni errore della barra di stato è in grassetto e compare anche in una finestra con **OK**;
+- **Frequenza**: le bande radioamatoriali (IARU Regione 1) sul fondo dei grafici, colore nelle Impostazioni;
+- **Terreno reale**: «calcolo in corso… / calcolo finito» nella barra di stato; **quota del sito a mano** quando il DEM sbaglia;
+- **Ottimizzatore**: riquadro **4. Misure al millimetro** (coordinate al millimetro, diametri commerciali, verifica NEC prima e dopo, lista di taglio);
+- **Traduzioni**: titoli e righe dei diagrammi, grafici della Frequenza, carta di Smith, riquadri, Terreno reale e Ottimizzatore tradotti in tutte le 36 lingue; un testo già tradotto non viene più ritradotto a pezzi;
+- **Correzioni**: Variabili mostra la struttura anche senza variabili; disegno della Correzione del boom; menu Esempi dopo Nuovo e Apri modello;
+- **Videocorso**: lezione 28 nuova e lezioni 0, 1, 13, 15, 22 e 27 rigirate con la 1.5.2, in italiano e in inglese.
+
+**Dalla 1.5.1:**
 - **Ottimizzatore**: «+ aggiungi variabile» crea una variabile dal modello quando non ce ne sono: lunghezza (o perimetro dei loop), posizione e raggio di ogni elemento, quota dell'antenna; il riquadro di conferma mostra in ocra dove agisce. Vale per qualunque antenna di fili: Yagi, Quagi, quad, loop;
 - **Variabili**: a destra la struttura 3D con in ocra i fili su cui agisce la variabile scelta;
 - **Correzioni**: loop magnetica capacitiva (etichetta del condensatore), distanze di stack senza distanze valide (nessuna proposta), Vento alla prima apertura dei Calcoli meccanici;

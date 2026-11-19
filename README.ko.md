@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.5.2의 새 기능
+
+- **탭 재정리**(16→13): 스미스 차트는 다이어그램 띠로, **NEC/전류**, **변수와 최적화**; 스택 간격 VHF 및 HF + HFTA; 계산기 그룹의 새 순서.
+- **3D 구조**: 전송선·부하·회로망을 와이어 위에 표시; 지면 범례는 상태 표시줄의 **지면 보기**로 열림; 모든 오류는 굵게, OK 창에도 표시. **주파수**: 그래프 배경에 아마추어 밴드.
+- **실제 지형**: 계산 상태와 사이트 고도 수동 입력. **최적화기**: **밀리미터 치수**(좌표와 시판 직경, NEC 검증, 절단 목록). 다이어그램·그래프·카드 36개 언어 번역.
+
 ## 1.5.1의 새 기능
 
 - **최적화기**: "+ 변수 추가"로 모델에서 변수를 만듭니다(각 소자의 길이 또는 둘레, 위치, 반지름, 루프 포함; 안테나 높이). 황토색 미리보기.
