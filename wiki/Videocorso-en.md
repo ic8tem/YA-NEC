@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 28 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 22-25 with 1.3, 26 and 27 with 1.5). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 29 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 22-25 with 1.3, 26 and 27 with 1.5, 28 with 1.5.2). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -255,6 +255,15 @@ Multi-turn loop, radiation resistance and reactance (Tai, AEH) with the loading 
 Stacking distances on two frequencies with the reference impedance and active SWR (DK7ZB 7 elements), HF stacking over ground with two and three ARRL 520-40H and how to read the elevation chart (in phase, top only, bottom only, out of phase), Monte Carlo in the Optimizer, forced update and Report a problem.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_28_survey_boom_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_28.jpg" alt="Lesson 28 - Survey and the boom correction in reverse"></a></td><td>
+
+### Lesson 28 - Survey and the boom correction in reverse
+
+What to measure on an antenna that is already built (tip-to-tip lengths, positions on the boom from the reflector, diameters with a caliper, boom and element mounting) and how to write it in the Wires table. Example: the 10-element bvo by IC8TEM on a 30 mm round boom. The survey calculated as it is resonates at 145.97 MHz (SWR 7.6 at 144.3): Calculators > VHF > Boom correction in the sense «survey → electrical model for the NEC» takes 9.5 mm off reflector and directors, «Compare the two» and «Create the electrical model for the NEC» bring the antenna back to 144.33 MHz, SWR 1.15, 15.7 dBi. Sources: DL6WU, G3SEK, SM5BSZ, DG7YBN.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_28_survey_boom_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_28_survey_boom_EN.srt)
 
 </td></tr></table>
 

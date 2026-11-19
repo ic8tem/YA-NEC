@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:05,124
+Lesson 28: surveying a built antenna and the boom correction in reverse
+
+2
+00:00:05,174 --> 00:00:18,751
+YA-NEC course, lesson 28: the survey of an antenna that is already built, and the boom correction applied in reverse.
+
+3
+00:00:18,801 --> 00:00:30,818
+The survey, on the real antenna: the length of every element tip to tip, its position along the boom starting from the reflector, the element diameter with a caliper.
+
+4
+00:00:30,868 --> 00:00:45,151
+Then the boom: round or square, and its size. And how the elements are mounted: through the boom in contact, through it insulated, or above it. For the radiator: whether it is insulated from the boom.
+
+5
+00:00:45,201 --> 00:00:58,885
+Example: the 10-element bvo by IC8TEM built on a 30 mm round boom, 4 mm elements through the boom in contact, 8 mm radiator insulated. These are the measurements you would read with the tape.
+
+6
+00:00:58,935 --> 00:01:22,909
+New, and in the Wires table one row per element: X is the position on the boom, Y1 and Y2 half the length, then the radius in mm, that is half the measured diameter, and the segments.
+
+7
+00:01:22,959 --> 00:01:43,763
+Ten rows like these, one per element. Apply and recalculate, then the source at the centre of the radiator: w2c.
+
+8
+00:01:43,813 --> 00:01:55,933
+Calculated as it is, the survey gives 11.9 − j44.6 Ω, SWR 7.6 and F/B 10.5 dB: this is not the antenna that works on the roof.
+
+9
+00:01:55,983 --> 00:02:06,733
+The reason: NEC does not see the boom. An element that goes through a metal boom behaves like a shorter element: in the model it must be shortened.
+
+10
+00:02:06,783 --> 00:02:27,565
+Calculators, VHF, Boom correction. 30 mm round boom, 4 mm elements, mounted through the boom in contact.
+
+11
+00:02:27,615 --> 00:02:36,965
+Apply to: all but the radiator, because the radiator is insulated from the boom. Sense: survey → electrical model for the NEC.
+
+12
+00:02:37,015 --> 00:02:48,407
+The DL6WU / G3SEK formula gives 9.5 mm over the whole element: the table removes the correction from reflector and directors, the radiator stays as it is.
+
+13
+00:02:48,457 --> 00:02:53,072
+Compare the two calculates both the survey as it is and the electrical model.
+
+14
+00:02:53,122 --> 00:03:12,144
+Survey: resonance at 145.97 MHz, SWR 7.62 at 144.3, not acceptable. Electrical model: 144.33 MHz, SWR 1.15, 15.7 dBi and F/R 19 dB.
+
+15
+00:03:12,194 --> 00:03:21,769
+Create the electrical model for the NEC: it opens as a new file, with the correction in the name; the survey file is not touched.
+
+16
+00:03:21,819 --> 00:03:41,175
+Calculate: 57.3 + j0.7 Ω, SWR 1.15, 15.7 dBi, F/B 19 dB: it is the design antenna again. From here you simulate and optimize on this model; to build, the correction goes back in the sense NEC design → elements to build.
+
+17
+00:03:41,225 --> 00:03:58,021
+Note: the formula holds up to 0.055 λ of boom; insulated through-boom mounting about half the correction, conductive bracket above the boom about 0.65. Sources: DL6WU, G3SEK, SM5BSZ, DG7YBN.

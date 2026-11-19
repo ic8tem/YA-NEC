@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 28 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 22-25 con la 1.3, la 26 e la 27 con la 1.5). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
+Un corso completo in 29 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 22-25 con la 1.3, la 26 e la 27 con la 1.5, la 28 con la 1.5.2). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -255,6 +255,15 @@ Loop a più spire, resistenza di radiazione e reattanza (Tai, AEH) con la bobina
 Distanze di stack su due frequenze con l'impedenza di riferimento e il ROS attivo (DK7ZB 7 elementi), stack HF sopra il terreno con due e tre ARRL 520-40H e la lettura del diagramma in elevazione (in fase, solo sopra, solo sotto, controfase), Monte Carlo nell'Ottimizzatore, aggiornamento forzato e Segnala un problema.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_27_stack_montecarlo_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_27_stack_montecarlo_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_28_rilievo_boom_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_28.jpg" alt="Lezione 28 - Il rilievo e la correzione del boom al contrario"></a></td><td>
+
+### Lezione 28 - Il rilievo e la correzione del boom al contrario
+
+Cosa misurare sull'antenna gia' costruita (lunghezze da punta a punta, posizioni sul boom dal riflettore, diametri col calibro, boom e montaggio degli elementi) e come scriverlo nella tabella dei Fili. Esempio: la 10el bvo di IC8TEM su boom tondo da 30 mm. Il rilievo calcolato cosi' com'e' risuona a 145,97 MHz (ROS 7,6 a 144,3): Calcolatori > VHF > Correzione del boom nel verso «rilievo → modello elettrico per il NEC» toglie 9,5 mm a riflettore e direttori, «Confronta i due» e «Crea il modello elettrico per il NEC» riportano l'antenna a 144,33 MHz, ROS 1,15, 15,7 dBi. Fonti: DL6WU, G3SEK, SM5BSZ, DG7YBN.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_28_rilievo_boom_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_28_rilievo_boom_IT.srt)
 
 </td></tr></table>
 
