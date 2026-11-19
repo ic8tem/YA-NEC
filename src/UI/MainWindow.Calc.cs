@@ -735,7 +735,7 @@ namespace YaNec
         {
             if (view3d == null) return;
             view3d.Geo = geo;
-            if (varView != null && varScelta != null) VarMostraDove(varScelta);   // 1.5.1: linguetta Variabili
+            if (varView != null) VarMostraDove(varScelta);   // 1.5.1: linguetta Variabili (1.5.2: anche senza variabile scelta)
             view3d.Ground = model != null && model.Ground.Kind != GroundKind.FreeSpace;
             view3d.SourceSegs = new HashSet<int>();
             view3d.CurrentNorm = null;

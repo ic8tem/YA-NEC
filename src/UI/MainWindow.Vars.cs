@@ -119,6 +119,9 @@ namespace YaNec
                     Text = model == null ? "Nessun modello aperto." : "Il modello non ha variabili: \"Aggiungi variabile\" per crearne una.",
                     Foreground = Pal.B(Pal.Muted), Margin = new Thickness(4, 8)
                 });
+                // 1.5.2 (difetto visto preparando la lezione 1, IC8TEM «Si', correggi e gira»): senza variabili la struttura a destra
+                // restava vuota con «Apri un modello»; ora si vede il modello, grigio, senza fili in ocra
+                if (varView != null) VarMostraDove(null);
                 return;
             }
             foreach (SyVar v in model.Variables) AddVarRow(v, false);
