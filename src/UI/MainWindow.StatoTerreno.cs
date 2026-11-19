@@ -58,12 +58,14 @@ namespace YaNec
                     sp.Children.Add(new TextBlock { Text = "Errore", FontSize = 16, FontWeight = FontWeight.Bold, Foreground = new SolidColorBrush(Color.Parse("#D23C3C")), Margin = new Thickness(0, 0, 0, 8) });
                     sp.Children.Add(finErroreTesto);
                     sp.Children.Add(ok);
-                    Window w = new Window { Title = "YA-NEC", Content = sp, SizeToContent = SizeToContent.WidthAndHeight, CanResize = false, MinWidth = 320,
+                    Border cornice = new Border { Child = sp, BorderBrush = new SolidColorBrush(Color.Parse("#D23C3C")), BorderThickness = new Thickness(0, 4, 0, 0) };   // 1.5.2: striscia rossa in alto, si vede anche senza la cornice della finestra
+                    Window w = new Window { Title = "YA-NEC", Content = cornice, SizeToContent = SizeToContent.WidthAndHeight, CanResize = false, MinWidth = 320,
                         WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = Pal.B(Pal.Panel), ShowInTaskbar = false };
                     ok.Click += (s, e) => w.Close();
                     w.KeyDown += (s, e) => { if (e.Key == Key.Escape || e.Key == Key.Enter) w.Close(); };
                     w.Closed += (s, e) => { finErrore = null; finErroreTesto = null; };
                     finErrore = w;
+                    w.Opened += (s, e) => ok.Focus();   // Invio o Esc chiudono subito
                     w.Show(this);
                 }
                 catch { finErrore = null; }
