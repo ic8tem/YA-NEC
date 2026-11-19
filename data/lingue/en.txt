@@ -5136,3 +5136,1779 @@ uguale	equal
 uguali	equal
 uso	use
 a {0} x DL6WU; tutte sopra il massimo {1}	at {0} x DL6WU; all above the maximum {1}
+# 1.5.1: frammenti dei testi composti (prima parte)
+        come correggere: 	        how to fix: 
+   (filo rastremato, con GC)	   (tapered wire, with GC)
+   -   pagina 	   -   page 
+   - si modifica nella linguetta Modello NEC	   - it is changed in the NEC model tab
+   limite inferiore di Balanis (serve la fase del feed)	   Balanis lower limit (the feed phase is needed)
+  (formato 	  (format 
+  (rispettata)	  (met)
+  Confronto dopo la riapertura: Z 	  Comparison after reopening: Z 
+  Confronto non riuscito: 	  Comparison failed: 
+  EZNEC e' un marchio registrato di Roy W. Lewallen.\n	  EZNEC is a registered trademark of Roy W. Lewallen.\n
+  Il motore e' verificato con l'autotest sugli stessi modelli calcolati con nec2c. Corretto un errore di nec2c\n	  The engine is verified by the self-test on the same models calculated with nec2c. Fixed an error of nec2c\n
+  Impostazioni ed esempi: 	  Settings and examples: 
+  filo   lunghezza (m)   raggio (mm)   segmenti NEC   segmento (mm)   segmento/raggio   alimentato	  wire   length (m)   radius (mm)   NEC segments   segment (mm)   segment/radius   fed
+  nell'impedenza interna dei fili (routine zint, carichi LD 5 sotto x = 110), riportando le formule del NEC2 originale.\n	  in the internal impedance of the wires (zint routine, LD 5 loads below x = 110), restoring the formulas of the original NEC2.\n
+  seg   tag        X (m)       Y (m)       Z (m)    lung. (mm)   |I| (mA)    fase (°)	  seg   tag        X (m)       Y (m)       Z (m)    len. (mm)   |I| (mA)    phase (°)
+  utile per le antenne che devono coprire tutta la banda (FM, ripetitori, satelliti).\n	  useful for antennas that must cover the whole band (FM, repeaters, satellites).\n
+  · il migliore	  · the best
+  ⚠ Il boom supera 0,055 lambda: la formula non vale.	  ⚠ The boom exceeds 0.055 lambda: the formula does not hold.
+ % (Struttura 3D > Scala) e ricalcolare. Il programma non cambia nulla da solo.	 % (3D structure > Scale) and recalculate. The program changes nothing on its own.
+ % dalla formula	 % from the formula
+ % dello snervamento dell'acciaio	 % of the steel yield strength
+ % rispetto a Cebik	 % compared to Cebik
+ % sulla formula	 % on the formula
+ %): le altre bande seguono le proporzioni e si spostano tutte.	 %): the other bands follow the proportions and all move.
+ %: fuori da 0-100 %, il calcolo non e' affidabile.	 %: outside 0-100 %, the calculation is not reliable.
+ (0 = proporzioni DL6WU, 1 = direttori equidistanti).	 (0 = DL6WU proportions, 1 = equally spaced directors).
+ (2 cavi)	 (2 cables)
+ (AA7JV/N4IS, misure IV3PRK): lunghezza 	 (AA7JV/N4IS, IV3PRK measurements): length 
+ (Al, aria)	 (Al, air)
+ (Medhurst)	 (Medhurst)
+ (Nominatim, © OpenStreetMap)	 (Nominatim, © OpenStreetMap)
+ (acceso solo in certe bande)	 (on only in some bands)
+ (adattato dal NEC)	 (adapted from NEC)
+ (almeno uno per tubo): i numeri dei segmenti del filo cambiano.	 (at least one per tube): the segment numbers of the wire change.
+ (alto dx)	 (top right)
+ (alto sx)	 (top left)
+ (anello o asta piu' piccoli: D/8-D/10 nella prova con nec2c) o regola con l'ottimizzatore.	 (smaller loop or rod: D/8-D/10 in the nec2c test) or adjust with the optimizer.
+ (basso dx)	 (bottom right)
+ (basso sx)	 (bottom left)
+ (calcolatore YA-NEC)	 (YA-NEC calculator)
+ (calcolatore YA-NEC)\nCE\n	 (YA-NEC calculator)\nCE\n
+ (cambiata la variabile 	 (variable changed 
+ (caso peggiore delle due frequenze)	 (worst case of the two frequencies)
+ (cavo di ritardo λ/4)	 (λ/4 delay cable)
+ (cavo)	 (cable)
+ (centro diritto 	 (straight centre 
+ (componenti)	 (components)
+ (corretto con l'AGT)	 (corrected with the AGT)
+ (correzione KF2YN applicata)	 (KF2YN correction applied)
+ (dal cavo)	 (from the cable)
+ (dal modello)	 (from the model)
+ (dalla f0 misurata)	 (from the measured f0)
+ (diametri a gradini di MMANA) non ancora supportato: usato 1 mm.	 (MMANA stepped diameters) not supported yet: 1 mm used.
+ (dipolo 	 (dipole 
+ (elettrico, boom -	 (electrical, boom -
+ (equivalente 	 (equivalent 
+ (ferrite)	 (ferrite)
+ (fili 	 (wires 
+ (filo 	 (wire 
+ (folded, conduttori a 	 (folded, conductors at 
+ (gradi)	 (degrees)
+ (il ROS nominale supera gia' l'obiettivo: conta solo l'aumento)	 (the nominal SWR already exceeds the target: only the increase counts)
+ (il piu' grosso 	 (the thickest 
+ (in rosso: 	 (in red: 
+ (la scheda considera un cavo solo: con 2 in parallelo vale la Z0 dimezzata)	 (the card considers one cable only: with 2 in parallel the halved Z0 applies)
+ (le bobine vere 50-500).	 (real coils 50-500).
+ (linea bifilare: serve un balun)	 (two-wire line: a balun is needed)
+ (media delle due frequenze)	 (average of the two frequencies)
+ (monopolo a terra)	 (ground monopole)
+ (non aperta: 	 (not open: 
+ (non conforme)	 (not compliant)
+ (non usata: casella spenta)	 (not used: box off)
+ (ognuna aspetta l'altra e nessuna ha un valore).	 (each waits for the other and none has a value).
+ (onda piana o dipolo elementare) non ancora supportata: ignorata.	 (plane wave or elementary dipole) not supported yet: ignored.
+ (piano di massa a griglia di fili)	 (ground plane made of a wire grid)
+ (piatto 	 (flat 
+ (polvere di ferro)	 (iron powder)
+ (predefinita: calcola il Vento per usare quella del sito)	 (default: calculate the Wind to use the site value)
+ (pulsante Controlla per i dettagli)	 (Check button for details)
+ (questo calcolo, 	 (this calculation, 
+ (radiatore)	 (radiator)
+ (rilievi)	 (terrain features)
+ (risonanza 	 (resonance 
+ (scansione NEC)	 (NEC scan)
+ (segmento 	 (segment 
+ (senza correzione)	 (without correction)
+ (senza: 	 (without: 
+ (si puo' continuare a lavorare nelle altre linguette)	 (you can keep working in the other tabs)
+ (si sceglie anche al centimetro nella casella Quota).	 (it can also be chosen to the centimetre in the Height box).
+ (sorgente 1 di 	 (source 1 of 
+ (sovrapposizione 10 mm, crocette ogni 50 mm)	 (10 mm overlap, crosses every 50 mm)
+ (spazio libero, come TANT)	 (free space, like TANT)
+ (sviluppo L 	 (development L 
+ (tubo 	 (tube 
+ (tutta l'antenna)	 (the whole antenna)
+ (un loop a delta chiuso in basso, 390 ohm)	 (a delta loop closed at the bottom, 390 ohm)
+ (uno resta alla finestra)	 (one stays at the window)
+ (verticali corte alimentate con la fase del nullo posteriore, amplificatori ideali)	 (short verticals fed with the phase of the rear null, ideal amplifiers)
+ (voto 	 (score 
+ (λ/2 in piu')	 (λ/2 more)
+ +j0 Ω al centro banda (disegno aggiornato).	 +j0 Ω at mid-band (drawing updated).
+ - Big Wheel 	 - Big Wheel 
+ - Costantino Cerrotta IC8TEM	 - Costantino Cerrotta IC8TEM
+ - SPECCHIATO (trasferimento del toner)	 - MIRRORED (toner transfer)
+ - Yagi multibanda HF (Calcolatori > Yagi multibanda HF), radiatori: 	 - HF multiband Yagi (Calculators > HF multiband Yagi), radiators: 
+ - clic su un nome: lo scrive nella cella attiva della tabella dei fili	 - click a name: it is written into the active cell of the wire table
+ - radiatore multibanda per Yagi HF (Calcolatori > Dipolo multibanda), 	 - multiband radiator for HF Yagis (Calculators > Multiband dipole), 
+ - scelti: tag 	 - chosen: tag 
+ -> diametro uniforme 	 -> uniform diameter 
+ -> errore: 	 -> error: 
+ -> filo 	 -> wire 
+ / zona 	 / zone 
+ 10 GHz: compare almeno un avviso critico	 10 GHz: at least one critical warning appears
+ 2,4 GHz - unita' mm, scala 1:1	 2.4 GHz - units mm, scale 1:1
+ : 1): per la polarizzazione circolare servirebbe una linea di fase da circa 	 : 1): circular polarization would need a phasing line of about 
+ = centro dell'antenna	 = centre of the antenna
+ Accoppiamento capacitivo (AEH 4a ed., eq. 5-20 e 5-21): C2 = sqrt(R0/R - 1)/(w R0), C1 = 1/(w (wL - sqrt(R (R0 - R)))).	 Capacitive coupling (AEH 4th ed., eq. 5-20 and 5-21): C2 = sqrt(R0/R - 1)/(w R0), C1 = 1/(w (wL - sqrt(R (R0 - R)))).
+ CSV di YA-NEC con intestazione: terza colonna = piano H	 YA-NEC CSV with header: third column = H plane
+ Cebik (Quad Notes vol. 3): oltre circa 4 elementi la quad perde il vantaggio di guadagno su una Yagi con lo stesso boom.	 Cebik (Quad Notes vol. 3): beyond about 4 elements the quad loses its gain advantage over a Yagi with the same boom.
+ Come correggere: 	 How to fix: 
+ Feed: analisi presente con fase, 31 punti in f/D e 81 in posizione	 Feed: analysis present with phase, 31 points in f/D and 81 in position
+ Hz, rumore 	 Hz, noise 
+ Il diagramma ruota di conseguenza: con 90 gradi attorno a Z il massimo passa da 0 a 90 gradi di azimut.	 The pattern rotates accordingly: with 90 degrees around Z the maximum moves from 0 to 90 degrees of azimuth.
+ Il file su disco non e' cambiato.	 The file on disk has not changed.
+ K, citta' 	 K, city 
+ K, residenziale 	 K, residential 
+ La formula ITU-R P.2040 e' tarata da 1 a 100 GHz: qui e' estrapolata.	 The ITU-R P.2040 formula is calibrated from 1 to 100 GHz: here it is extrapolated.
+ Le misure di Perotoni arrivano a 2 MHz: qui sono estrapolate.	 Perotoni's measurements reach 2 MHz: here they are extrapolated.
+ MB contro 	 MB versus 
+ MB disponibili.	 MB available.
+ MB): calcolo lento.	 MB): slow calculation.
+ MB, piu' di 4 decimi della memoria disponibile (	 MB, more than 4 tenths of the available memory (
+ MHz (1 V sulla sorgente, se non diverso nel modello)	 MHz (1 V on the source, unless different in the model)
+ MHz (K6SE/W7IUV, misure IV3PRK)	 MHz (K6SE/W7IUV, IV3PRK measurements)
+ MHz (avanti in alto, scala 30 dB)	 MHz (forward at the top, 30 dB scale)
+ MHz (banda da bloccare)	 MHz (band to block)
+ MHz (bobina di carico)	 MHz (loading coil)
+ MHz (calcolatore antenne riceventi YA-NEC)	 MHz (YA-NEC receiving antenna calculator)
+ MHz (calcolatore).nec	 MHz (calculator).nec
+ MHz (cambiando frequenza vanno ricalcolate in YA-NEC).	 MHz (when the frequency changes they must be recalculated in YA-NEC).
+ MHz (effetto pelle)	 MHz (skin effect)
+ MHz (lambda 	 MHz (lambda 
+ MHz (lavoro)	 MHz (operating)
+ MHz (le bobine vere stanno tra 50 e 500).	 MHz (real coils are between 50 and 500).
+ MHz (mark out di AutoEZ)	 MHz (AutoEZ mark out)
+ MHz (poco sopra la minima): per la banda intera usa lo sweep della linguetta Frequenza.	 MHz (just above the minimum): for the whole band use the sweep of the Frequency tab.
+ MHz (quella della scheda a sinistra). Cavo: 	 MHz (that of the card on the left). Cable: 
+ MHz (span 	 MHz (span 
+ MHz (vale solo a questa frequenza).	 MHz (valid only at this frequency).
+ MHz fuori dall'intervallo 0,01-30 000 MHz.	 MHz outside the range 0.01-30 000 MHz.
+ MHz il balun puo' peggiorare. Meno spire o un nucleo con AL piu' alto.	 MHz the balun may get worse. Fewer turns or a core with a higher AL.
+ MHz l'accordatore vede 	 MHz the tuner sees 
+ MHz non e' in una banda radioamatoriale.	 MHz is not in an amateur band.
+ MHz sarebbe 	 MHz it would be 
+ MHz sono 	 MHz are 
+ MHz) che deve isolare.	 MHz) that it must isolate.
+ MHz) e' lontana piu' del 5 % dalla banda da bloccare: usa "Calcola" per le spire o i componenti giusti.	 MHz) is more than 5 % away from the band to block: use "Calculate" for the right turns or components.
+ MHz). La formula vale fino a 0,055 lambda: 	 MHz). The formula holds up to 0.055 lambda: 
+ MHz): per la banda alta cambia la frequenza nella barra in alto dopo averlo aperto.	 MHz): for the high band change the frequency in the top bar after opening it.
+ MHz, bobina al 	 MHz, coil at 
+ MHz, centro 	 MHz, centre 
+ MHz, diagramma a 	 MHz, pattern at 
+ MHz, lontano da tutte le bande.	 MHz, far from all the bands.
+ MHz, lontano dalla banda del dipolo (	 MHz, far from the dipole band (
+ MHz, meno di 3 volte la frequenza di lavoro: la reattanza cresce piu' del previsto e le perdite pure. Allunga la bobina o usa un diametro piu' piccolo con piu' spire distanziate.	 MHz, less than 3 times the operating frequency: the reactance grows more than expected and so do the losses. Lengthen the coil or use a smaller diameter with more spaced turns.
+ MHz, meno di 3 volte la frequenza di lavoro: la reattanza effettiva e' molto piu' alta di w L.	 MHz, less than 3 times the operating frequency: the effective reactance is much higher than w L.
+ MHz, oltre 3 volte la frequenza di lavoro: va bene.	 MHz, more than 3 times the operating frequency: fine.
+ MHz, resistenza 	 MHz, resistance 
+ MHz, terminazione 	 MHz, termination 
+ MHz, tubo 	 MHz, tube 
+ MHz. Il modello non e' stato cambiato.	 MHz. The model has not been changed.
+ MHz.nec	 MHz.nec
+ MHz.pdf	 MHz.pdf
+ MHz: cielo (galattico) 	 MHz: sky (galactic) 
+ MHz: provare tau piu' alto o 'Ottimizza...'.	 MHz: try a higher tau or 'Optimize...'.
+ MHz: sopra i 	 MHz: above 
+ MHz: valgono solo a questa frequenza	 MHz: valid only at this frequency
+ MHz\nAntenna: 	 MHz\nAntenna: 
+ N m (vento)	 N m (wind)
+ NEC: schede GE, RP (phi 90, 0, 45) ed EN presenti	 NEC: GE, RP (phi 90, 0, 45) and EN cards present
+ Pa, forza massima 	 Pa, maximum force 
+ Passo di 	 Step of 
+ S/m (coefficiente di riflessione, come il NEC-2 di NEC-Wires).	 S/m (reflection coefficient, like the NEC-2 of NEC-Wires).
+ S/m: oltre 10 000 S/m e' un metallo, non un terreno.	 S/m: above 10 000 S/m it is a metal, not a ground.
+ Slim Jim: il radiatore si chiude in cima e torna giu' parallelo, a 	 Slim Jim: the radiator closes at the top and comes back down in parallel, at 
+ T1 la fase risulta usata	 T1 the phase turns out used
+ TANT da 1296 MHz: cielo 10 K, terreno 290 K.	 TANT for 1296 MHz: sky 10 K, ground 290 K.
+ Tilt: ogni riga piu' in alto ha il cavo piu' lungo di 	 Tilt: each higher row has a longer cable by 
+ UTC, azimut 	 UTC, azimuth 
+ VE7BQH 432 (DG7YBN): cielo 20 K, terreno 350 K.	 VE7BQH 432 (DG7YBN): sky 20 K, ground 350 K.
+ W in SSB (meno in FT8/RTTY): oltre si scalda. Usa un nucleo piu' grande o due nuclei sovrapposti.	 W in SSB (less in FT8/RTTY): beyond that it heats up. Use a bigger core or two stacked cores.
+ a 2,4 GHz (Calcolatori > 2,4 GHz commerciale)\n	 at 2.4 GHz (Calculators > 2.4 GHz commercial)\n
+ ai bordi)	 at the edges)
+ al boom	 to the boom
+ al filo 	 to the wire 
+ al segmento 	 to the segment 
+ al variare della frequenza	 as the frequency changes
+ all'estremo del filo 	 at the end of the wire 
+ alla frequenza del file)	 at the frequency of the file)
+ altre schede	 other cards
+ anni: cr 	 years: cr 
+ antenne	 antennas
+ antenne a tutte le distanze in corso (una soluzione NEC per porta)...	 antennas at all distances in progress (one NEC solution per port)...
+ antenne a tutte le distanze, a 	 antennas at all distances, at 
+ antenne identiche (	 identical antennas (
+ antenne: distanze...	 antennas: distances...
+ applicata. "Annulla" torna indietro.	 applied. "Undo" goes back.
+ avvisi	 warnings
+ avvisi a 	 warnings at 
+ avvisi: 	 warnings: 
+ bacchette	 rods
+ bande	 bands
+ bande.	 bands.
+ bifilari	 two-wire
+ blocchi di 	 blocks of 
+ c'e' un carico: il linear loading va su un filo senza carichi.	 there is a load: linear loading goes on a wire without loads.
+ c'e' una linea: scegline un altro.	 there is a line: choose another one.
+ c'e' una sorgente: il linear loading va su un filo senza sorgenti.	 there is a source: linear loading goes on a wire without sources.
+ calcoli NEC)	 NEC calculations)
+ calcoli)	 calculations)
+ carichi e 	 loads and 
+ carichi segnati come esclusi in AutoEZ ("x") non sono stati importati.	 loads marked as excluded in AutoEZ ("x") were not imported.
+ carichi: i valori di L e C non sono stati scalati.	 loads: the L and C values were not scaled.
+ cm (segnale proporzionale ad A)	 cm (signal proportional to A)
+ cm tra gli assi, meno di 3 diametri (	 cm between the axes, less than 3 diameters (
+ cm): il NEC-2 con tubi quasi a contatto non e' affidabile.	 cm): NEC-2 with tubes almost touching is not reliable.
+ cm, oppure usare tubi piu' sottili.	 cm, or use thinner tubes.
+ collegata a un segmento inesistente.	 connected to a non-existent segment.
+ colonna 	 column 
+ con anello	 with ring
+ con errori	 with errors
+ con i tubi del riflettore 20 m della XR-5 (esempio da modificare).	 with the reflector tubes of the 20 m XR-5 (example to modify).
+ con il terreno	 with the ground
+ con impedenza 	 with impedance 
+ con impedenza zero.	 with zero impedance.
+ con l'anello (poligono tra le punte dei raggi)	 with the ring (polygon between the spoke tips)
+ con la fase	 with the phase
+ con la rastremazione 	 with the taper 
+ con radiali a 	 with radials at 
+ contando dal lato massa.	 counting from the ground side.
+ controlli che si fanno senza calcolare.	 checks done without calculating.
+ copiati nella linguetta Variabili. Per tenere anche il modello di partenza salvalo prima con un altro nome.	 copied into the Variables tab. To keep the starting model too, save it first under another name.
+ copie	 copies
+ dB (il calo massimo diviso per la radice del numero degli elementi: errori indipendenti) e non porta il ROS sopra 	 dB (the maximum drop divided by the square root of the number of elements: independent errors) and does not bring the SWR above 
+ dB (minimo 	 dB (minimum 
+ dB (prima 	 dB (before 
+ dB (un modello senza perdite in spazio libero dovrebbe dare 0 dB entro +-0,2): impedenza e guadagno poco affidabili.	 dB (a lossless model in free space should give 0 dB within +-0.2): impedance and gain not very reliable.
+ dB con 	 dB with 
+ dB intorno a 	 dB around 
+ dB sulla verticale λ/4	 dB over the λ/4 vertical
+ dB). Ricalcolo...	 dB). Recalculation...
+ dB): la profondita' e' troppo diversa da quella di MOXGEN (	 dB): the depth is too different from MOXGEN's (
+ dB, 5% peggiore 	 dB, worst 5% 
+ dB, ROS massimo 	 dB, max SWR 
+ dB, antenna 	 dB, antenna 
+ dB/100 m, 0,1 dB di relè): non cambiano il diagramma, solo la Z e il ROS.	 dB/100 m, 0.1 dB of relay): they do not change the pattern, only Z and SWR.
+ dB\nZ0 ideale: 	 dB\nideal Z0: 
+ dBd, elevazione 	 dBd, elevation 
+ dBi nello spazio libero (MOXGEN 	 dBi in free space (MOXGEN 
+ dBi, apertura orizzontale 	 dBi, horizontal beamwidth 
+ dBi, boom 	 dBi, boom 
+ dBi, eff. 	 dBi, eff. 
+ dal filo 	 from the wire 
+ del .weq non letta: 	 of the .weq not read: 
+ del .weq non letto: 	 of the .weq not read: 
+ del .weq verso "	 of the .weq to "
+ del .weq: "LPDA repeat" di AutoEZ non applicato (manca la linea tra due fili vicini o il numero di fili).	 of the .weq: AutoEZ "LPDA repeat" not applied (missing line between two nearby wires or the number of wires).
+ del .weq: perdita non usata (la scheda TL e' senza perdite).	 of the .weq: loss not used (the TL card is lossless).
+ del .weq: stub 	 of the .weq: stub 
+ del file MMANA incompleto.	 of the MMANA file incomplete.
+ delle due frequenze)	 of the two frequencies)
+ di 1 segmento sopra l'antenna, con 1 Mohm di reattanza in serie: la porta resta aperta e il filo non irradia (non spegnere "Usa i carichi").	 of 1 segment above the antenna, with 1 Mohm of series reactance: the port stays open and the wire does not radiate (do not turn off "Use the loads").
+ di antenne (	 of antennas (
+ di lunghezza nulla.	 of zero length.
+ di lunghezza zero tra due punti coincidenti: la linea non c'e'.	 of zero length between two coincident points: there is no line.
+ di perdita	 of loss
+ dipende da altre variabili: si cambia regolando quelle, oppure modificando l'espressione.	 depends on other variables: change it by adjusting those, or by editing the expression.
+ direttori	 directors
+ disponibile (Mac)	 available (Mac)
+ diversi	 different
+ e filo 	 and wire 
+ e il filo 	 and the wire 
+ e poi a 	 and then at 
+ e posizione 	 and position 
+ e' gia' piu' lungo.	 is already longer.
+ e' la formula "=	 is the formula "=
+ e' usata da qualche filo: cambiare prima il raggio di quei fili.	 is used by some wire: change the radius of those wires first.
+ elementi	 elements
+ elementi (boom 	 elements (boom 
+ elementi (boom usato 	 elements (boom used 
+ elementi - L = 	 elements - L = 
+ elementi a tubi uniti in un filo con la rastremazione.	 elements with tubes joined into one wire with the taper.
+ elementi accorciati di 	 elements shortened by 
+ elementi stanno su 	 elements are on 
+ elementi): 	 elements): 
+ elementi, alimentato il secondo	 elements, second one fed
+ elementi, linea incrociata)...	 elements, crossed line)...
+ errori e 	 errors and 
+ errori, 	 errors, 
+ esempio DF3GJ: 6 righe (commento in coda compreso), attenuazione riconosciuta	 DF3GJ example: 6 rows (trailing comment included), attenuation recognized
+ espressioni corrette	 correct expressions
+ feed da CSV con la virgola decimale	 feed from CSV with decimal comma
+ file W1GHZ a 3 colonne: la terza e' la fase, non il piano H	 W1GHZ file with 3 columns: the third is the phase, not the H plane
+ fili GW, 	 GW wires, 
+ fili a lunghezza zero (per esempio il filo 	 zero-length wires (for example wire 
+ fili affiancati) 	 side-by-side wires) 
+ fili ciascuna	 wires each
+ fili con il diametro piu' grande della lunghezza (per esempio il filo 	 wires with a diameter larger than the length (for example wire 
+ fili con il diametro sopra lambda/10 = 	 wires with a diameter above lambda/10 = 
+ fili con il diametro sotto 0,01 mm (il piu' sottile 	 wires with a diameter below 0.01 mm (the thinnest 
+ fili con un diametro che sembra scritto in m dove servono i mm (per esempio 	 wires with a diameter that looks written in m where mm are needed (for example 
+ fili con un diametro che sembra scritto in mm dove servono i metri (per esempio 	 wires with a diameter that looks written in mm where metres are needed (for example 
+ fili segnati come esclusi in AutoEZ ("x" nella prima colonna) non sono stati importati, come fa AutoEZ.	 wires marked as excluded in AutoEZ ("x" in the first column) were not imported, as AutoEZ does.
+ fili virtuali di EZNEC (	 EZNEC virtual wires (
+ fili).	 wires).
+ fili): 	 wires): 
+ fili, 	 wires, 
+ finiti in 	 ended in 
+ fino alla punta	 to the tip
+ frequenze	 frequencies
+ frequenze, 	 frequencies, 
+ frequenze, metodo 	 frequencies, method 
+ ft² (per la scheda del rotore)	 ft² (for the rotator data sheet)
+ fuori da 0,3-1.	 outside 0.3-1.
+ fuori dall'intervallo di Carrel (0,04-0,22).	 outside Carrel's range (0.04-0.22).
+ fuori dall'intervallo di Carrel (0,78-0,98).	 outside Carrel's range (0.78-0.98).
+ giace nel piano di simmetria.	 lies in the symmetry plane.
+ giace sul piano del terreno: con il terreno l'antenna va messa sopra lo zero (quote Z maggiori di 0, per esempio con l'altezza dal suolo).	 lies on the ground plane: with ground the antenna must be above zero (Z heights greater than 0, for example with the height above ground).
+ gradi	 degrees
+ gradi - Bar = 	 degrees - Bar = 
+ gradi -> DL6WU: sovrapposte 	 degrees -> DL6WU: overlapping 
+ gradi dal boom	 degrees from the boom
+ gradi di elevazione	 degrees of elevation
+ gradi)	 degrees)
+ gradi) viene dal perimetro e dall'altezza, i pulsanti della forma non contano	 degrees) comes from the perimeter and the height, the shape buttons do not count
+ gradi).	 degrees).
+ gradi): misure di formula.	 degrees): formula dimensions.
+ gradi, azimut 	 degrees, azimuth 
+ gradi, curve di 	 degrees, curves of 
+ gradi, verticale 	 degrees, vertical 
+ gradi: L = lambda / (4 (1/VF - cos theta)) = 	 degrees: L = lambda / (4 (1/VF - cos theta)) = 
+ ha lunghezza nulla.	 has zero length.
+ ha modifiche non salvate (fili, sorgenti, carichi, linee, variabili o terreno cambiati dopo l'apertura o l'ultimo salvataggio).	 has unsaved changes (wires, sources, loads, lines, variables or ground changed after opening or the last save).
+ ha raggio 0 ma manca la scheda GC.	 has radius 0 but the GC card is missing.
+ ha tubi che si allargano andando verso la punta.	 has tubes that get wider towards the tip.
+ ha una coordinata o il raggio senza valore (formula impossibile).	 has a coordinate or the radius without a value (impossible formula).
+ il radiatore di 	 the radiator of 
+ in asse	 on axis
+ in data/segnalazioni. Allegala alla pagina di GitHub che si e' aperta (o mandala come preferisci).	 in data/segnalazioni. Attach it to the GitHub page that opened (or send it however you like).
+ in parallelo	 in parallel
+ in tutto, quelli sui risultati dopo Calcola).	 in all, those on the results after Calculate).
+ incompleto.	 incomplete.
+ inesistente: ignorata.	 non-existent: ignored.
+ inesistente: ignorato.	 non-existent: ignored.
+ interno 	 internal 
+ kHz, guadagno 	 kHz, gain 
+ kHz: va riaccordato a ogni spostamento.	 kHz: it must be retuned at every move.
+ kV con 	 kV with 
+ kV contro 	 kV versus 
+ kV sul condensatore: serve un variabile a vuoto o con spaziatura adeguata.	 kV on the capacitor: a vacuum variable or one with adequate spacing is needed.
+ kV): proposto 	 kV): proposed 
+ kg (lista di taglio)	 kg (cutting list)
+ kg (senza boom, staffe e sovrapposizioni dei tubi).	 kg (without boom, clamps and tube overlaps).
+ kgf m)	 kgf m)
+ kgf), vento a 	 kgf), wind at 
+ kgf. Centro area = punto dove il vento laterale non fa ruotare l'antenna. * Gli elementi non contano per il torcente: con il vento di traverso sono paralleli al vento (flusso trasversale, K5IU). Pressione del vento 	 kgf. Centre of area = point where the side wind does not turn the antenna. * The elements do not count for the torque: with the wind across they are parallel to the wind (cross-flow, K5IU). Wind pressure 
+ kgf/m²	 kgf/m²
+ kgf/m²)	 kgf/m²)
+ kgf·m	 kgf·m
+ l'EFHW regge indicativamente 	 the EFHW roughly handles 
+ lambda	 lambda
+ lambda 	 lambda 
+ lambda (	 lambda (
+ lambda (lambda/4 = 	 lambda (lambda/4 = 
+ lambda dal suolo: oltre 10 lambda il terreno cambia solo i lobi a bassa elevazione.	 lambda above ground: beyond 10 lambda the ground only changes the low-elevation lobes.
+ lambda fuori da 0,1-0,25 lambda (ARRL: 0,14-0,2).	 lambda outside 0.1-0.25 lambda (ARRL: 0.14-0.2).
+ lambda)	 lambda)
+ lambda), affiancate 	 lambda), side by side 
+ lambda).	 lambda).
+ lambda, a 	 lambda, at 
+ lambda, cioe' a mezz'onda.	 lambda, that is at half wave.
+ lambda, non e' fitta: il terreno perfetto esagera il riflesso.	 lambda, it is not dense: perfect ground exaggerates the reflection.
+ lambda.	 lambda.
+ lati	 sides
+ lati + spazio al centro di 	 sides + centre gap of 
+ lati nel modello	 sides in the model
+ linea di trasmissione	 transmission line
+ linee di trasmissione	 transmission lines
+ linee.	 lines.
+ lontano dalla risonanza (	 far from resonance (
+ lunga 	 long 
+ m (DL6WU, apertura H 	 m (DL6WU, H beamwidth 
+ m (DL6WU, apertura V 	 m (DL6WU, V beamwidth 
+ m (categoria 	 m (category 
+ m (guadagno medio su 	 m (average gain over 
+ m (lambda/1000 = 	 m (lambda/1000 = 
+ m (massimo circa 	 m (maximum about 
+ m (rosso/nero e blu/bianco).	 m (red/black and blue/white).
+ m (spostata di 	 m (moved by 
+ m a 0,001 λ dal suolo	 m at 0.001 λ above ground
+ m a grandezza piena (	 m full size (
+ m dal basso	 m from the bottom
+ m dal boom	 m from the boom
+ m dal centro, poi 	 m from the centre, then 
+ m dal riflettore) e' ora nell'origine.	 m from the reflector) is now at the origin.
+ m dall'inizio del boom	 m from the start of the boom
+ m del modello: il diagramma del NEC e' spostato in quota con le stesse correnti (l'impedenza e l'accoppiamento col suolo non cambiano).	 m of the model: the NEC pattern is moved in height with the same currents (impedance and ground coupling do not change).
+ m di profondita')	 m deep)
+ m e avvolgi 	 m and wind 
+ m e avvolgili affiancati per 	 m and wind them side by side for 
+ m fino alla punta	 m to the tip
+ m invece dei 	 m instead of 
+ m senza trappole	 m without traps
+ m sopra 	 m above 
+ m sotto il 10 m	 m below the 10 m
+ m su terreno medio.	 m over average ground.
+ m troppo grande per il perimetro di 	 m too large for the perimeter of 
+ m) dal centro del lato orizzontale: massimo di corrente sui lati inclinati, polarizzazione verticale	 m) from the centre of the horizontal side: current maximum on the slanted sides, vertical polarization
+ m) distribuite su tutto il nucleo.	 m) spread over the whole core.
+ m) e vento di progetto → 	 m) and design wind → 
+ m) e' gia' lungo almeno un quarto d'onda (	 m) is already at least a quarter wave long (
+ m) il loop irradia soprattutto verso l'alto: buono per i contatti vicini (NVIS), meno per il DX.	 m) the loop radiates mostly upwards: good for nearby contacts (NVIS), less for DX.
+ m) per portare la Z sopra 20 Ω.	 m) to bring Z above 20 Ω.
+ m), maglie da 0,1 λ, filo da 1", a 0,001 λ dal suolo	 m), 0.1 λ mesh, 1" wire, at 0.001 λ above ground
+ m): la bobina non serve, accorcia il braccio.	 m): the coil is not needed, shorten the arm.
+ m): risonanza del modello a linee 	 m): resonance of the line model 
+ m): usata la forma scelta.	 m): chosen shape used.
+ m, a 0,001 λ dal suolo	 m, at 0.001 λ above ground
+ m, base a 	 m, base at 
+ m, bobina al 	 m, coil at 
+ m, boom 	 m, boom 
+ m, carico 	 m, load 
+ m, centro a 	 m, centre at 
+ m, centro area 	 m, centre of area 
+ m, coassiale al 12 m	 m, coax at 12 m
+ m, esterno 	 m, outer 
+ m, fili a 	 m, wires at 
+ m, orizzontale 	 m, horizontal 
+ m, perdita adattata 	 m, matched loss 
+ m, raggio 	 m, radius 
+ m, tra le punte 	 m, between the tips 
+ m, verticali 	 m, verticals 
+ m: ROS sulla linea	 m: SWR on the line
+ m: con il terreno va messa sopra il suolo. Quota proposta: 	 m: with ground it must be placed above the ground. Proposed height: 
+ m: fuori dal campo del NEC-2 (impedenza non attendibile)	 m: outside the range of NEC-2 (impedance not reliable)
+ ma i due punti distano 	 but the two points are 
+ manca l'operatore: scrivere 	 operator missing: write 
+ mantieni lunghezza del boom	 keep boom length
+ meno accorciamento connettori	 minus connector shortening
+ millesimi di lambda	 thousandths of lambda
+ minore dell'altezza di un'antenna (	 smaller than the height of an antenna (
+ minore della larghezza di un'antenna (	 smaller than the width of an antenna (
+ minuti)	 minutes)
+ mm (formula), boom 	 mm (formula), boom 
+ mm (lato 	 mm (side 
+ mm (lobo inclinato di 	 mm (lobe tilted by 
+ mm (per lato 	 mm (per side 
+ mm (peso proprio + ghiaccio 	 mm (own weight + ice 
+ mm (striscia 	 mm (strip 
+ mm a U tra i livelli	 mm U between the levels
+ mm con i fori a 3,2 mm dalle punte), diametro 	 mm with holes 3.2 mm from the tips), diameter 
+ mm in tutto, poi verifica NEC	 mm in all, then NEC check
+ mm l'uno dall'altro: tutti i petali nello stesso verso.	 mm from each other: all petals in the same direction.
+ mm nel modello). Riflettore: griglia di fili a z = -d, passo 0,07 λ e raggio con l'area uguale (2 pi a = passo, Rubinstein 2005) se pieno, 	 mm in the model). Reflector: wire grid at z = -d, 0.07 λ pitch and radius with equal area (2 pi a = pitch, Rubinstein 2005) if solid, 
+ mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare. Il programma non cambia nulla da solo.	 mm per side, or turn on the boom correction (Calculators > Boom correction) and recalculate. The program changes nothing on its own.
+ mm rame	 mm copper
+ mm sopra il riflettore	 mm above the reflector
+ mm sopra lo stub (0,012 lambda)	 mm above the stub (0.012 lambda)
+ mm sull'asse).	 mm on the axis).
+ mm sull'asse, 	 mm on the axis, 
+ mm tolti a 	 mm removed at 
+ mm).nec	 mm).nec
+ mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): part of the power goes behind (Mumford). NEC calculates it with the real mesh.
+ mm): raggio 	 mm): radius 
+ mm, alimentato al centro del lato posteriore	 mm, fed at the centre of the rear side
+ mm, bracci piegati in avanti di 	 mm, arms bent forward by 
+ mm, circonferenza 	 mm, circumference 
+ mm, diametro ± 	 mm, diameter ± 
+ mm, filo 	 mm, wire 
+ mm, inserita nel filo 	 mm, inserted in the wire 
+ mm, lati lunghi 	 mm, long sides 
+ mm, lunghezza 	 mm, length 
+ mm, posizione ± 	 mm, position ± 
+ mm, sopra λ/10 (	 mm, above λ/10 (
+ mm, sotto 2 diametri del conduttore: allarga il passo.	 mm, below 2 conductor diameters: widen the pitch.
+ nH/spira²	 nH/turn²
+ nH/spira² (	 nH/turn² (
+ ne stanno circa 	 about 
+ ne usa 	 it uses 
+ nel modello): converti prima la geometria in fili.	 in the model): convert the geometry to wires first.
+ nella cella attiva della tabella dei fili	 in the active cell of the wire table
+ nella tabella delle variabili (prima di 	 in the variable table (before 
+ nella tabella delle variabili o correggere il nome.	 in the variable table or correct the name.
+ non applicata.	 not applied.
+ non c'e' nella tabella Rastremazioni (Oggetti del modello).	 is not in the Tapers table (model Objects).
+ non c'e'.	 is not there.
+ non corretto (	 not corrected (
+ non e' al centro, l'alimentazione e' spostata di mezzo segmento.	 is not at the centre, the feed is moved by half a segment.
+ non e' nel file	 is not in the file
+ non esiste (	 does not exist (
+ non esiste (fili GW: 	 does not exist (GW wires: 
+ non esiste (fili: 	 does not exist (wires: 
+ non esiste nella miscela -10 della tabella: scegli T-37...T-80.	 does not exist in the -10 mix of the table: choose T-37...T-80.
+ non ha tratti.	 has no sections.
+ non ha un valore (radice di un numero negativo, logaritmo di zero o di un negativo, numero troppo grande).	 has no value (square root of a negative number, logarithm of zero or of a negative, number too large).
+ non ha un'espressione.	 has no expression.
+ non nota: controlla la scheda del costruttore (a 1 kW la trappola vede 	 unknown: check the manufacturer's data sheet (at 1 kW the trap sees 
+ non riconosciuto: fili senza perdite, scegliere il materiale nelle impostazioni del modello.	 not recognized: lossless wires, choose the material in the model settings.
+ non supportata: ignorata.	 not supported: ignored.
+ non trovata: messa sul filo 1.	 not found: put on wire 1.
+ non trovata: non scritta.	 not found: not written.
+ non trovato: messo sul filo 1.	 not found: put on wire 1.
+ non trovato: non scritto.	 not found: not written.
+ o diametro	 or diameter
+ ohm (F/B 	 ohm (F/B 
+ ohm (YA-NEC)	 ohm (YA-NEC)
+ ohm (YA-NEC, Ricezione RDF)	 ohm (YA-NEC, RDF reception)
+ ohm (calcolatore antenne riceventi YA-NEC)	 ohm (YA-NEC receiving antenna calculator)
+ ohm (riga CM YA-NEC)	 ohm (YA-NEC CM line)
+ ohm (riga Controls)	 ohm (Controls line)
+ ohm - sigma' = 	 ohm - sigma' = 
+ ohm -> interasse 	 ohm -> spacing 
+ ohm -> terminazione circa 	 ohm -> termination about 
+ ohm VF 	 ohm VF 
+ ohm a 	 ohm at 
+ ohm alla frequenza di progetto (	 ohm at the design frequency (
+ ohm) con una sola sorgente: fisicamente impossibile.	 ohm) with a single source: physically impossible.
+ ohm): XL = Z0 -> L = 	 ohm): XL = Z0 -> L = 
+ ohm): un carico passivo non genera potenza.	 ohm): a passive load does not generate power.
+ ohm, L 	 ohm, L 
+ ohm, guadagno e F/R. Il modello aperto non cambia.	 ohm, gain and F/R. The open model does not change.
+ ohm, linee 	 ohm, lines 
+ ohm, lunghezza NEC 	 ohm, NEC length 
+ ohm, oppure abbassare il riflettore finche' la spira scende verso 	 ohm, or lower the reflector until the loop goes down towards 
+ ohm, trasformatore 	 ohm, transformer 
+ ohm.	 ohm.
+ ohm: fuori dai valori costruibili (5-2000 ohm).	 ohm: outside buildable values (5-2000 ohm).
+ oltre il numero dei segmenti (	 beyond the number of segments (
+ oltre la retta dell'ottimo (	 beyond the optimum line (
+ orizzontali	 horizontal
+ pF (allunga il dipolo)	 pF (lengthens the dipole)
+ pF (ceramico, 2-3 kV) in parallelo al primario: migliora il ROS sulle bande alte.	 pF (ceramic, 2-3 kV) in parallel with the primary: improves the SWR on the high bands.
+ pF verso lo spazio	 pF to space
+ passi, stessa partenza e stessi limiti)	 steps, same start and same limits)
+ per 16:1 (	 for 16:1 (
+ per 4:1 (	 for 4:1 (
+ per 9:1 (	 for 9:1 (
+ per la banda nuova 	 for the new band 
+ prima della fine della geometria (GE).	 before the end of the geometry (GE).
+ pronta, riavvio tra 	 ready, restart in 
+ proposta dal locatore (confini approssimati: verifica sulla tabella 3.3.I delle NTC)	 proposed from the locator (approximate borders: check on table 3.3.I of the NTC)
+ prove	 trials
+ prove Monte Carlo	 Monte Carlo trials
+ prove non superate (dettagli nella linguetta Autotest).	 tests not passed (details in the Self-test tab).
+ prove non superate.	 tests not passed.
+ punte 	 tips 
+ punte di filo quasi coincidenti con un altro filo ma non unite (per esempio filo 	 wire tips almost coinciding with another wire but not joined (for example wire 
+ punti	 points
+ punti su 	 points over 
+ punti)	 points)
+ punti...	 points...
+ quote diverse (antenne sovrapposte?) ma una sola sorgente: le antenne senza sorgente sono calcolate come passive.	 different heights (stacked antennas?) but a single source: antennas without a source are calculated as passive.
+ radiali	 radials
+ radiali da 	 radials of 
+ radiatore-direttore	 radiator-director
+ raggi da 	 spokes of 
+ rami λ/4 da 	 λ/4 branches of 
+ resistenze da 	 resistors of 
+ reti L (riga YA-NEC RETEL) non scritte.	 L networks (YA-NEC RETEL line) not written.
+ riflettore-radiatore	 reflector-radiator
+ righe della tabella dei fili.	 rows of the wire table.
+ righe di fili con un'unita' sconosciuta nella prima colonna non sono state importate.	 wire rows with an unknown unit in the first column were not imported.
+ righe).	 rows).
+ righe: Invio o 'Applica e ricalcola' per calcolare.	 rows: Enter or 'Apply and recalculate' to calculate.
+ ripetuta 	 repeated 
+ rispetto a DL6WU): a parita' di boom gli elementi in piu' danno poco guadagno (il guadagno dipende soprattutto dal boom) e stringono la banda.	 compared to DL6WU): for the same boom the extra elements give little gain (gain depends mostly on the boom) and narrow the bandwidth.
+ s: misure accordate a 	 s: dimensions tuned to 
+ sarebbe 	 would be 
+ scalata a 	 scaled to 
+ scalato.nec	 scaled.nec
+ scende sotto il terreno.	 goes below ground.
+ schede	 cards
+ schede di geometria	 geometry cards
+ schede di geometria, 	 geometry cards, 
+ schede di geometria: oltre 	 geometry cards: beyond 
+ schede)	 cards)
+ scritto come R+jX a 	 written as R+jX at 
+ scritto come RLC serie valido a 	 written as series RLC valid at 
+ se un'antenna si stacca	 if an antenna comes loose
+ seg. 	 seg. 
+ seg.)	 seg.)
+ segm.	 segm.
+ segmenti	 segments
+ segmenti 	 segments 
+ segmenti (numero pari): il segmento 	 segments (even number): segment 
+ segmenti invece di 	 segments instead of 
+ segmenti): il calcolo richiede qualche secondo.	 segments): the calculation takes a few seconds.
+ segmenti, 	 segments, 
+ segmenti.	 segments.
+ segmenti. Il file su disco non e' cambiato: salvalo se vuoi tenerla.	 segments. The file on disk has not changed: save it if you want to keep it.
+ segmenti. Trascina per ruotare, rotella per ingrandire.	 segments. Drag to rotate, wheel to zoom.
+ segmenti...	 segments...
+ segmenti: la matrice chiede 	 segments: the matrix needs 
+ segmenti: la matrice del NEC-2 chiede 	 segments: the NEC-2 matrix needs 
+ segmento 	 segment 
+ sembra in Hz.	 looks like Hz.
+ sembra in kHz: l'antenna e' grande 	 looks like kHz: the antenna is large 
+ senza lunghezza e con VF 	 without length and with VF 
+ senza lunghezza.	 without length.
+ senza risonanza calcolabile.	 without a calculable resonance.
+ senza salvare	 without saving
+ senza una linea sullo stesso segmento: non importato (YA-NEC non ha ancora gli stub a una porta).	 without a line on the same segment: not imported (YA-NEC does not have one-port stubs yet).
+ si scosta di 	 deviates by 
+ si usa la ferrite 43 (FT-140-43, FT-240-43).	 ferrite 43 is used (FT-140-43, FT-240-43).
+ sopra 	 above 
+ sorgenti	 sources
+ sorgenti segnate come escluse in AutoEZ ("x") non sono state importate.	 sources marked as excluded in AutoEZ ("x") were not imported.
+ sotto meta' della DL6WU (	 below half of DL6WU (
+ spire	 turns
+ spire 	 turns 
+ spire (filo smaltato o in PTFE da 	 turns (enamelled or PTFE wire of 
+ spire attorcigliate sopra le prime 	 twisted turns over the first ones 
+ spire del secondario, dal lato massa (autotrasformatore).	 secondary turns, from the ground side (autotransformer).
+ spire di coassiale sottile in PTFE (RG-303, RG-400) sullo stesso nucleo.	 turns of thin PTFE coax (RG-303, RG-400) on the same core.
+ spire la capacita' tra le spire risuona verso 	 turns the capacitance between turns resonates towards 
+ spire la perdita e' solo quella dell'effetto pelle: l'effetto di prossimita' tra le spire vicine non e' calcolato, quindi il rendimento vero e' piu' basso (ARRL Antenna Book 15ª: 8 spire, 10 % calcolato, 3 % reale).	 turns the loss is only the skin-effect one: the proximity effect between close turns is not calculated, so the real efficiency is lower (ARRL Antenna Book 15th: 8 turns, 10 % calculated, 3 % real).
+ spire su tutto il nucleo.	 turns over the whole core.
+ spire sul nucleo (ogni passaggio nel foro e' una spira).	 turns on the core (each pass through the hole is a turn).
+ spire)	 turns)
+ spire, 	 turns, 
+ spire, sul suo nucleo (	 turns, on its core (
+ spire.	 turns.
+ spostandola	 moving it
+ stack 	 stack 
+ su 50-75 ohm	 on 50-75 ohm
+ su un filo (tag 	 on a wire (tag 
+ sul filo 	 on the wire 
+ sulla linea · perdita 	 on the line · loss 
+ sulla trappola supera la tensione di lavoro (	 on the trap exceeds the working voltage (
+ tra il filo 	 between wire 
+ trasformatori (riga YA-NEC TRASF) non scritti.	 transformers (YA-NEC TRASF line) not written.
+ trasformatori ideali di EZNEC (rapporto delle impedenze dalla Rel Z delle due porte).	 EZNEC ideal transformers (impedance ratio from the Re Z of the two ports).
+ tratti della rastremazione -	 taper sections -
+ trifilari	 trifilar
+ tubi telescopici	 telescopic tubes
+ tubo	 tube
+ uno dall'altro (praticamente nella stessa posizione sul boom).	 from each other (practically in the same position on the boom).
+ uscite serve Z0 = 	 outputs Z0 is needed = 
+ variabili diventano numeri: le formule restano solo nel .yanec e nel .nec.	 variables become numbers: the formulas remain only in the .yanec and the .nec.
+ variabili e celle calcolate di AutoEZ oltre la prima colonna del foglio Variables (AA, AB, ... BG, ...) ricostruite	 AutoEZ variables and computed cells beyond the first column of the Variables sheet (AA, AB, ... BG, ...) rebuilt
+ variabili, 	 variables, 
+ verticali	 verticals
+ vie. Il Wilkinson isola le uscite: utile anche in 144 MHz quando un'antenna dello stack si guasta o si stacca.	 ways. The Wilkinson isolates the outputs: also useful at 144 MHz when an antenna of the stack fails or comes loose.
+ volte fino al filo 	 times to the wire 
+ vuole 	 wants 
+ vuole almeno un argomento.	 wants at least one argument.
+ | MathWorks: LR 0,9085, LD 0,8460, L1 0,7210, L2 0,6585, L3 0,7210, L4 0,6585, SR 0,4201, S1 0,3634, S2 0,2384, S3 0,5167, S4 0,5324, FS 0,0161	 | MathWorks: LR 0.9085, LD 0.8460, L1 0.7210, L2 0.6585, L3 0.7210, L4 0.6585, SR 0.4201, S1 0.3634, S2 0.2384, S3 0.5167, S4 0.5324, FS 0.0161
+ µH (accorcia il dipolo)	 µH (shortens the dipole)
+ µH/100 spire	 µH/100 turns
+ · 5% peggiore 	 · worst 5% 
+ · calcolo in corso…	 · calculating…
+ · controllo alla frequenza più alta dello sweep: 	 · check at the highest frequency of the sweep: 
+ · metà (	 · half (
+ · profilo U: calcolo numerico	 · U profile: numerical calculation
+ · quota DEM 	 · DEM height 
+ Ω (lunghezza per il fattore di velocita') verso la discesa a 50 Ω.	 Ω (length times the velocity factor) towards the 50 Ω feed line.
+ Ω (stima, poi il NEC)	 Ω (estimate, then NEC)
+ Ω (verifica con i numeri complessi)	 Ω (check with complex numbers)
+ Ω a stella	 Ω star
+ Ω con l'autorisonanza	 Ω with self-resonance
+ Ω di terra	 Ω of ground
+ Ω e calcola ROS e guadagno.	 Ω and calculates SWR and gain.
+ Ω in banda (dopo "Porta in adattamento")	 Ω in band (after "Bring to match")
+ Ω lunga 	 Ω long 
+ Ω), con un commutatore o un morsetto.	 Ω), with a switch or a terminal.
+ Ω, ciascuna fino a P/	 Ω, each up to P/
+ Ω, linea 	 Ω, line 
+ Ω: due cavi da 75 Ω in parallelo (37,5 Ω) vanno bene solo per 2 uscite da 50 Ω (35,4 Ω).	 Ω: two 75 Ω cables in parallel (37.5 Ω) are fine only for 2 outputs at 50 Ω (35.4 Ω).
+ Ω: la distribuzione funziona con una linea di circa 50 Ω (G3TXQ usa spezzoni di coassiale). Con una linea ad alta impedenza le bande alte non si adattano (prova con nec2c: ROS da 2 a 9 con 120-300 Ω).	 Ω: the distribution works with a line of about 50 Ω (G3TXQ uses coax sections). With a high-impedance line the high bands do not match (nec2c test: SWR from 2 to 9 with 120-300 Ω).
+ Ω: perdite alte. Allunga o accorcia la linea (prova 	 Ω: high losses. Lengthen or shorten the line (try 
+ λ sulla banda bassa	 λ on the low band
+ λ sviluppati	 λ developed
+ λ) le spaziature dei direttori sono x	 λ) the director spacings are x
+ λ, centro filo	 λ, wire centre
+ λ, nessuna sorgente	 λ, no source
+ λ: le fonti stanno fra 0,09 e 0,13 λ. IK1ZYW: da 1/8 a 1/16 λ si perdono circa 0,5 dB di guadagno e 3 dB di F/B.	 λ: the sources lie between 0.09 and 0.13 λ. IK1ZYW: from 1/8 to 1/16 λ about 0.5 dB of gain and 3 dB of F/B are lost.
+ λ: le fonti stanno fra 0,238 (W6PQL, filo isolato) e 0,264 λ (OE2TZL).	 λ: the sources lie between 0.238 (W6PQL, insulated wire) and 0.264 λ (OE2TZL).
+" di AutoEZ: la linea tra i fili 	" of AutoEZ: the line between the wires 
+" non valido: 	" not valid: 
+".\n\nRicorda di creare prima il modello NEC dai valori della scheda: 	".\n\nRemember to create the NEC model from the card values first: 
+"solo modelli leggeri" (normale): oltre 	"light models only" (normal): beyond 
+% del mezzo boom	% of the half boom
+' ignorata: a sinistra c'e' un'espressione, che vale gia' 	' ignored: on the left there is an expression, which already has a value 
+' non e' un nome di variabile e vale 	' is not a variable name and is 
+(alzando, si allarga di piu' il lato del dipolo). Sotto 0,1 λ il guadagno cala: l'antenna bassissima non guadagna, era un errore dei vecchi programmi con il terreno semplificato. 	(raising it, the dipole side widens more). Below 0.1 λ the gain drops: a very low antenna gains nothing, it was an error of old programs with simplified ground. 
+(il disco da 3 m a 1296 MHz ha 30566 segmenti, 16,5 GB e decine di minuti). Le prestazioni di questo disco sono nel calcolo d'apertura qui a fianco, 	(the 3 m dish at 1296 MHz has 30566 segments, 16.5 GB and tens of minutes). The performance of this dish is in the aperture calculation alongside, 
+(immagine non trovata: 	(image not found: 
+(segue 	(follows 
+) che non c'e'.	) which does not exist.
+) come fili 	) as wires 
+) con valori negativi: R 	) with negative values: R 
+) e' piu' grosso di quello prima (	) is thicker than the one before (
+) ha raggio nullo o negativo.	) has zero or negative radius.
+) non ancora calcolati: scheda ignorata.	) not calculated yet: card ignored.
+) non supportato.	) not supported.
+) o correggere il nome.	) or correct the name.
+) scritta da AutoEZ con formule del foglio Calculate, che non e' nel .weq: non importabile.	) written by AutoEZ with formulas of the Calculate sheet, which is not in the .weq: cannot be imported.
+) – formule Balanis	) – Balanis formulas
+), coda 	), tail 
+), ramo parallelo Xp = 	), parallel branch Xp = 
+), un solo piano	), a single plane
+). Verifica sulla tab. 11-1 di ON4UN (n 2, 75 ohm, 41 -j19,3, k 1, -90 gradi, 3,8 MHz): Xs 68,60, Xp -46,64.	). Check on ON4UN tab. 11-1 (n 2, 75 ohm, 41 -j19.3, k 1, -90 degrees, 3.8 MHz): Xs 68.60, Xp -46.64.
+): boom piu' lungo senza guadagno in piu'.	): longer boom without extra gain.
+): chiudi e riapri YA-NEC a mano.	): close and reopen YA-NEC by hand.
+): controllare Z0 della linea e lo stub.	): check the line Z0 and the stub.
+): copie spostate alle distanze DL6WU.	): copies moved to the DL6WU distances.
+): estremi coincidenti.	): coincident ends.
+): fuori dall'approssimazione del filo sottile.	): outside the thin-wire approximation.
+): i tubi si allargano verso la punta.	): the tubes widen towards the tip.
+): il NEC-2 le tratta come staccate.	): NEC-2 treats them as separate.
+): il NEC-2 tiene solo l'ultima.	): NEC-2 keeps only the last one.
+): il divisore λ/4 a stella non da' una Z0 standard → il programma propone due trasformatori in cascata o il Wilkinson a 	): the λ/4 star divider does not give a standard Z0 → the program proposes two cascaded transformers or the Wilkinson at 
+): la corrente in una punta libera e' quasi zero e l'impedenza diventa altissima e poco precisa.	): the current at a free tip is almost zero and the impedance becomes very high and imprecise.
+): le antenne si accoppiano, il guadagno scende e le impedenze cambiano.	): the antennas couple, the gain drops and the impedances change.
+): le antenne si toccano.	): the antennas touch.
+): lo stesso conduttore descritto due volte.	): the same conductor described twice.
+): misure di formula.	): formula dimensions.
+): per Pi e T alza il Q sopra il minimo richiesto da R.	): for Pi and T raise the Q above the minimum required by R.
+): per il NEC-2 un filo e' sottile e lungo.	): for NEC-2 a wire is thin and long.
+): sembra 1000 volte troppo grande, come i mm scritti al posto dei metri.	): looks 1000 times too large, like mm written instead of metres.
+): sembra 1000 volte troppo piccola, come i metri scritti al posto dei mm.	): looks 1000 times too small, like metres written instead of mm.
+): uso i valori scritti nelle caselle.	): I use the values written in the boxes.
+)\nLunghezza: 	)\nLength: 
+)\nPerdita: 	)\nLoss: 
++ aggiungi	+ add
++ aggiungi variabile	+ add variable
++ altezza dell'antenna sul suolo: 	+ antenna height above ground: 
++ correzione del boom	+ boom correction
++ nuova	+ new
++ trappola	+ trap
++ verso il disco.	+ towards the dish.
++90 gradi Z	+90 degrees Z
+, F/B nominale 	, nominal F/B 
+, High Accuracy	, High Accuracy
+, Sommerfeld (GN 2)	, Sommerfeld (GN 2)
+, alim. 2 x 	, feed 2 x 
+, alimentato al centro del lato basso (polarizzazione orizzontale)	, fed at the centre of the lower side (horizontal polarization)
+, aperture nello spazio libero	, beamwidths in free space
+, bifilare	, two-wire
+, bordi di 	, edges of 
+, calcolato in spazio libero a 	, calculated in free space at 
+, calza all'inizio dell'avvolgimento (massa).	, braid at the start of the winding (ground).
+, centro 	, centre 
+, che e' definita dopo: le variabili si calcolano dall'alto in basso.	, which is defined later: variables are calculated from top to bottom.
+, che ha un errore	, which has an error
+, che non e' definita.	, which is not defined.
+, coda 	, tail 
+, con ghiaccio	, with ice
+, con la fase	, with the phase
+, diametri in 	, diameters in 
+, direttore a U	, U director
+, divisore 	, divider 
+, elevazione 	, elevation 
+, estremo E1\nprima: 	, end E1\nbefore: 
+, fase B 	, phase B 
+, filo 	, wire 
+, ghiaccio escluso	, ice excluded
+, incrociata	, crossed
+, lambda nel cavo 	, lambda in the cable 
+, linea bifilare	, two-wire line
+, lontano dai 3,217 m di JN1GLB (	, far from the 3.217 m of JN1GLB (
+, massimo 	, maximum 
+, orizzontale 	, horizontal 
+, parassiti vicini nello stesso piano	, nearby parasitics in the same plane
+, pol. H	, H pol.
+, pol. V	, V pol.
+, pol. mista	, mixed pol.
+, punte allungate di 	, tips lengthened by 
+, quota 0 (le Z sono gia' assolute)	, height 0 (the Z values are already absolute)
+, seg. 	, seg. 
+, segmenti "	, segments "
+, segmento 	, segment 
+, sigma 	, sigma 
+, specchiato	, mirrored
+, trasformatori 	, transformers 
+, tratto 	, section 
+, usata nel peso e nel contrappeso	, used in the weight and in the counterweight
+, variabile 	, variable 
+, vento perpendicolare al boom, pesi degli elementi	, wind perpendicular to the boom, element weights
+, vento perpendicolare all'elemento	, wind perpendicular to the element
+- - modello elettrico per il NEC (senza boom)	- - electrical model for NEC (without boom)
+- - progetto elettrico (fili NEC, senza boom)	- - electrical design (NEC wires, without boom)
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- arithmetic: exactly halfway between the IARU limits of the band (for example 145.000 MHz on 2 m),\n
+- correzione del boom	- boom correction
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- operating: the frequency where you actually work (for example 144.300 MHz on 2 m, 432.200 on 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (black) 10-100 MHz
+-10 nero	-10 black
+-2 (rosso) 0,25-10 MHz	-2 (red) 0.25-10 MHz
+-2 rosso	-2 red
+-6 (giallo) 3-40 MHz	-6 (yellow) 3-40 MHz
+-6 giallo	-6 yellow
+-90 gradi Z	-90 degrees Z
+-> segmento NEC	-> NEC segment
+. "Annulla" torna indietro.	. "Undo" goes back.
+. Antenna base: fili 1-	. Base antenna: wires 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. With such a high Q the sweep must span only a few kHz.
+. Salvalo con Salva con nome.	. Save it with Save as.
+. Trascina per ruotare, rotella per ingrandire.	. Drag to rotate, wheel to zoom.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Use thinner wire, a bigger core or two stacked cores.
+1 - 2^-(Dluna/HPBW)^2 (DF3GJ, UA3AVR)	1 - 2^-(Dmoon/HPBW)^2 (DF3GJ, UA3AVR)
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (via Sengupta 2021) and GMRT tab. 19.1
+10 caratteri · quadrato di 	10 characters · square of 
+1005/f piedi: 	1005/f feet: 
+12 (errore / HPBW)^2	12 (error / HPBW)^2
+120 acosh(s/d), fili a 	120 acosh(s/d), wires at 
+139 / f (verso il lobo)	139 / f (towards the lobe)
+16 lati da 	16 sides of 
+2 verticali in end-fire (cardioide), distanza 	2 verticals in end-fire (cardioid), spacing 
+299,792458 (come EZNEC)	299.792458 (as EZNEC)
+299,8 (come nec2c)	299.8 (as nec2c)
+299,8 (nec2c)	299.8 (nec2c)
+3 verticali a triangolo, lato 	3 verticals in a triangle, side 
+4-square in ricezione, lato 	4-square for receiving, side 
+4. Efficienza in funzione della posizione del feed (f/D 	4. Efficiency versus feed position (f/D 
+57,3 lambda/a	57.3 lambda/a
+8 verticali in cerchio, diametro 	8 verticals in a circle, diameter 
+: 1 (impedenze, 600/100 = 6)	: 1 (impedances, 600/100 = 6)
+: Balanis 15-55	: Balanis 15-55
+: EZNEC non ha le reti a due porte generiche, non scritta.	: EZNEC has no generic two-port networks, not written.
+: GN 3 di 4nec2 (MiniNec ground): impedenza su terreno perfetto, diagramma con er 	: GN 3 of 4nec2 (MiniNec ground): impedance over perfect ground, pattern with er 
+: HPBW (lambda/D)	: HPBW (lambda/D)
+: LD 7 con costante dielettrica <= 1 o raggio nullo: nessun effetto, il filo e' nudo.	: LD 7 with dielectric constant <= 1 or zero radius: no effect, the wire is bare.
+: MMANA non la gestisce, va persa.	: MMANA does not handle it, it is lost.
+: Q della bobina 	: coil Q 
+: Z0 deve essere positiva (per incrociarla usare la casella).	: Z0 must be positive (to cross it use the box).
+: c'e' una cella vuota.	: there is an empty cell.
+: calcolato come RLC parallelo.	: calculated as parallel RLC.
+: campi vicini (	: near fields (
+: carico parallelo (LD 1) con R, L e C tutti zero.	: parallel load (LD 1) with R, L and C all zero.
+: carico serie (LD 0) con R, L e C tutti zero, non fa niente.	: series load (LD 0) with R, L and C all zero, it does nothing.
+: conducibilita' del filo (LD 5) 	: wire conductivity (LD 5) 
+: conto non valido (	: invalid count (
+: controlla valore, minimo, massimo e passo (passo > 0, massimo > minimo)	: check value, minimum, maximum and step (step > 0, maximum > minimum)
+: dal progetto elettrico agli elementi da realizzare	: from the electrical design to the elements to build
+: dal rilievo scritto nel NEC al modello elettrico	: from the survey written in NEC to the electrical model
+: diametro non valido.	: invalid diameter.
+: diametro nullo.	: zero diameter.
+: diversi (vedi gli avvisi del formato).	: different (see the format warnings).
+: diviso per 1000 sarebbe 	: divided by 1000 it would be 
+: eccitazione EX tipo 	: EX excitation type 
+: efficienza di taper	: taper efficiency
+: estremi non trovati, non scritta.	: ends not found, not written.
+: estremi non trovati.	: ends not found.
+: fattore di velocita' 	: velocity factor 
+: file non trovato (	: file not found (
+: fili 	: wires 
+: ignorata.	: ignored.
+: il centro non e' su un filo solo lungo almeno la piastra, nessuna modifica.	: the centre is not on a single wire at least as long as the plate, no change.
+: il filo e' piu' lungo della rastremazione -	: the wire is longer than the taper -
+: il filo finisce prima, dei 	: the wire ends earlier, of 
+: il filo non esiste.	: the wire does not exist.
+: il numero di segmenti deve essere almeno 1.	: the number of segments must be at least 1.
+: il salvataggio crea un file nuovo.	: saving creates a new file.
+: il tratto 	: section 
+: impedenza 	: impedance 
+: impedenza (LD 4) con resistenza negativa (	: impedance (LD 4) with negative resistance (
+: impedenza caratteristica nulla.	: zero characteristic impedance.
+: in EZNEC su un solo segmento (	: in EZNEC on a single segment (
+: in MMANA come R+jX valido a 	: in MMANA as R+jX valid at 
+: in MMANA va al centro del filo 	: in MMANA it goes to the centre of the wire 
+: l'ultimo tratto e' allungato di 	: the last section is lengthened by 
+: la banda nuova deve essere piu' bassa (dipolo piu' lungo), ma il dipolo dei 	: the new band must be lower (longer dipole), but the dipole of 
+: la bobina ha Q = 	: the coil has Q = 
+: la formula usa "	: the formula uses "
+: la rastremazione -	: the taper -
+: la riga -	: the row -
+: le ammettenze di chiusura della scheda TL non esistono in EZNEC, non scritte.	: the termination admittances of the TL card do not exist in EZNEC, not written.
+: le due estremita' sono sullo stesso segmento.	: the two ends are on the same segment.
+: le due porte devono essere su segmenti diversi.	: the two ports must be on different segments.
+: le impedenze devono essere positive.	: the impedances must be positive.
+: lo spostamento dal punto indicato non e' gestito, la sorgente va al punto 	: the offset from the given point is not handled, the source goes to the point 
+: lunghezza 	: length 
+: lunghezza multipla di mezz'onda, la rete non e' definita.	: length a multiple of half a wave, the network is not defined.
+: moltiplicato per 1000 sarebbe 	: multiplied by 1000 it would be 
+: motore (spill x taper)	: engine (spill x taper)
+: nessun tratto.	: no section.
+: non ancora importato.	: not imported yet.
+: non esiste in AutoEZ, non scritta.	: does not exist in AutoEZ, not written.
+: non importato (usare il .nec scritto da EZNEC).	: not imported (use the .nec written by EZNEC).
+: non importato.	: not imported.
+: non modificato (	: not changed (
+: non orizzontale, lasciato diritto.	: not horizontal, left straight.
+: piastra 	: plate 
+: piastra non piu' grossa del tubo centrale, nessuna modifica.	: plate not thicker than the centre tube, no change.
+: primo lobo (dB)	: first sidelobe (dB)
+: raggio 	: radius 
+: riferimenti circolari tra i fili.	: circular references between wires.
+: riferimento a un filo inesistente (	: reference to a non-existent wire (
+: riferimento al centro di un filo (	: reference to the centre of a wire (
+: risuona a 	: resonates at 
+: scheda 	: card 
+: scheda sconosciuta 	: unknown card 
+: schermo di radiali (GN con NRADL) valido solo con il terreno a coefficiente di riflessione (GN 0) e con lunghezza e raggio maggiori di zero: ignorato (come nec2c con Sommerfeld).	: radial screen (GN with NRADL) valid only with reflection-coefficient ground (GN 0) and with length and radius greater than zero: ignored (as nec2c with Sommerfeld).
+: scritta come impedenza a 	: written as impedance at 
+: scritto come impedenza 	: written as impedance 
+: servono lunghezza (o "resto") e 	: length (or "rest") and are needed 
+: si conserva com'e'.	: kept as it is.
+: sorgenti, carichi o linee fuori dal centro del filo centrale, nessuna modifica.	: sources, loads or lines off the centre of the centre wire, no change.
+: sotto 1 non esiste (l'aria vale 1).	: below 1 it does not exist (air is 1).
+: sposta le impedenze	: shifts the impedances
+: tipo non disponibile in EZNEC, non scritto.	: type not available in EZNEC, not written.
+: tipo non disponibile in MMANA, non scritto.	: type not available in MMANA, not written.
+: tipo non scritto nel .weq.	: type not written in the .weq.
+: trappola LC che risuona a 	: LC trap resonating at 
+: trovata 	: found 
+: tubi non trovati nel file.	: tubes not found in the file.
+: uguali.	: equal.
+: una linea vera non puo' essere piu' corta della distanza.	: a real line cannot be shorter than the distance.
+: variabile vuota	: empty variable
+: verticale 	: vertical 
+:1 su 75 ohm	:1 on 75 ohm
+= apertura D	= aperture D
+=== Parabola primo fuoco: autotest ===	=== Prime-focus dish: self-test ===
+=== Trombe e illuminatori: autotest ===	=== Horns and feeds: self-test ===
+Aggiornamento automatico dal GitHub (ogni 	Automatic update from GitHub (every 
+Altezza 	Height 
+Alza a 	Raise to 
+Anelli fatti a poligono di 	Rings made as polygons of 
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passive ring: perimeter {0:0.000} lambda, no source and no capacitor; the effect is seen in the complete model (director or reflector).
+Antenna a 	Antenna at 
+Antenna base in spazio libero a 	Base antenna in free space at 
+Antenna su PCB: 	PCB antenna: 
+Antenna su tetto, caso HF: terreno vero alla quota totale (solaio 	Antenna on a roof, HF case: real ground at the total height (floor 
+Antenna: alla fine dell'avvolgimento (spira 	Antenna: at the end of the winding (turn 
+Antenna: presa 	Antenna: tap 
+Apertura a -3 dB: 	-3 dB beamwidth: 
+Apertura non riuscita: 	Opening failed: 
+Attenzione: il modello ha 	Warning: the model has 
+AutoEZ / MultiNEC	AutoEZ / MultiNEC
+Automatico	Automatic
+Autotest: 	Self-test: 
+Avvia (≈ 	Start (≈ 
+Avvolgi il secondario: 	Wind the secondary: 
+Avvolgi ogni coppia affiancata, 	Wind each pair side by side, 
+Avvolgili affiancati per 	Wind them side by side for 
+Azimut all'elevazione di 	Azimuth at elevation 
+Bacchetta da 	Rod of 
+Banda 	Band 
+Banda con ROS < 	Band with SWR < 
+Bande collegate al centro con spezzoni di linea lungo il palo (TL nel NEC, lunghezza elettrica = dislivello / VF), alimentazione in alto al 20 m (M0OXO, N4KC). 	Bands connected at the centre with line sections along the mast (TL in NEC, electrical length = height difference / VF), fed at the top at 20 m (M0OXO, N4KC). 
+Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. 	Beverage 350 m 13.5 versus 13.66). Limit: real noise is not uniform (power lines, local QRM): this is why F/B and the lobe shape also count. 
+Big Wheel: petalo a triangolo arrotondato (bracci a 	Big Wheel: rounded triangle petal (arms at 
+Bilanciamento: 	Balance: 
+Bilancio di potenza del NEC-2 non affidabile (ingresso {0:0.###E0} W, perdite {1:0.###E0} W: efficienza {2:0.0} %), tipico dei piccoli loop ad alto Q: 	NEC-2 power balance not reliable (input {0:0.###E0} W, losses {1:0.###E0} W: efficiency {2:0.0} %), typical of small high-Q loops: 
+Bobina di carico a 	Loading coil at 
+Bobina di carico: l'autorisonanza (Medhurst) e' a 	Loading coil: self-resonance (Medhurst) is at 
+Boom 	Boom 
+Boom (	Boom (
+Boom (G3SEK): BD (733 BD (0,055 - BD) - 504 BD (0,03 - BD)). Guadagno 9,2 + 3,39 ln(L/lambda) dBd: ogni raddoppio del boom da' solo 2,35 dB. 	Boom (G3SEK): BD (733 BD (0.055 - BD) - 504 BD (0.03 - BD)). Gain 9.2 + 3.39 ln(L/lambda) dBd: each doubling of the boom gives only 2.35 dB. 
+Bracci fissati ai triangoli a 	Arms fixed to the triangles at 
+Calcola il rilievo cosi' com'e' e il modello elettrico: risonanza (ricerca entro +-10 %), ROS su Z0 = 	Calculates the survey as it is and the electrical model: resonance (search within +-10 %), SWR on Z0 = 
+Calcola spire per f0 = 	Calculate turns for f0 = 
+Calcolo a 	Calculation at 
+Calcolo finito in 	Calculation finished in 
+Cambio d'impedenza con un tratto di cavo (YA-NEC)\nFrequenza: 	Impedance change with a cable section (YA-NEC)\nFrequency: 
+Caratteri 	Characters 
+Carichi (	Loads (
+Carichi HF inseriti come fili (Annulla nella barra Geometria li toglie): 	HF loads inserted as wires (Undo in the Geometry bar removes them): 
+Carichi HF: 	HF loads: 
+Carichi HF: nessuna soluzione nell'intervallo (	HF loads: no solution in the range (
+Carico 	Load 
+Carico LD 	LD load 
+Carico MMANA di tipo S (Laplace) sul filo 	MMANA S-type (Laplace) load on wire 
+Carico MMANA non riconosciuto: 	MMANA load not recognized: 
+Carico NEC 	NEC load 
+Carico R+jX sul filo 	R+jX load on wire 
+Carico RLC serie sul filo 	Series RLC load on wire 
+Carico RLC sul filo 	RLC load on wire 
+Carico alla riga 	Load at row 
+Carico di Laplace di AO sul filo 	AO Laplace load on wire 
+Carico di Laplace sul filo 	Laplace load on wire 
+Carico inserito nel modello (LD 	Load inserted in the model (LD 
+Carico su un filo inesistente: 	Load on a non-existent wire: 
+Carico sul filo 	Load on wire 
+Carico trappola (T) di EZNEC sul filo 	EZNEC trap (T) load on wire 
+Cartella dei registri: 	Logs folder: 
+Cartella: 	Folder: 
+Caso HF: modello alzato di (quota del solaio + quota aggiunta), terreno vero con Sommerfeld. Caso VHF/UHF: modello alzato della sola quota aggiunta, solaio come terreno 	HF case: model raised by (floor height + added height), real ground with Sommerfeld. VHF/UHF case: model raised by the added height only, floor as ground 
+Caso di prova approvato: verticale lambda/4 a 1,83 MHz con 4 radiali a 0,5 m e con 32 radiali a 5 cm su terreno medio di Sommerfeld: RDF 5,07 dB in 	Approved test case: λ/4 vertical at 1.83 MHz with 4 radials at 0.5 m and with 32 radials at 5 cm over Sommerfeld average ground: RDF 5.07 dB in 
+Cavo e balun: 	Cable and balun: 
+Cavo: 	Cable: 
+Cebik	Cebik
+Cheng e Chen (IEEE Trans. AP, 1973-75) ottimizzano insieme lunghezze e spaziature di una 6 elementi: come qui le spaziature diventano variabili, ma con un metodo a perturbazioni e senza vincolo sul boom. 	Cheng and Chen (IEEE Trans. AP, 1973-75) optimize lengths and spacings of a 6-element together: as here the spacings become variables, but with a perturbation method and no boom constraint. 
+Coassiale: centrale alla presa 	Coax: centre conductor at the tap 
+Come costruirlo: 	How to build it: 
+Con il tipo "corrente" il programma calcola da solo le tensioni che danno esattamente queste correnti (matrice delle impedenze mutue). 	With the "current" type the program itself calculates the voltages that give exactly these currents (mutual impedance matrix). 
+Con la correzione Leeson attiva (Impostazioni, tubi telescopici) l'elemento entro il 15 % della risonanza e' sostituito da un tubo equivalente ricalcolato a ogni frequenza, 	With the Leeson correction on (Settings, telescopic tubes) the element within 15 % of resonance is replaced by an equivalent tube recalculated at every frequency, 
+Con la reattanza dell'antenna diversa da 0 la Z ottenuta e il ROS tengono conto anche di X. "libera": qualunque lunghezza (cosa si vede in fondo al cavo). 	With an antenna reactance other than 0 the resulting Z and SWR also account for X. "free": any length (what is seen at the end of the cable). 
+Con la spunta, quando aggiungi le piastre al modello le punte di ogni elemento si allungano della compensazione calcolata (meta' per lato), 	With the tick, when you add the plates to the model the tips of each element are lengthened by the calculated compensation (half per side), 
+Con questi vincoli il Moxon non funziona (F/B 	With these constraints the Moxon does not work (F/B 
+Condensatore da circa 	Capacitor of about 
+Confronto non riuscito: 	Comparison failed: 
+Confronto: Sevick (ARRL) circa 29 / 18 / 9 / 0 Ω con 4 / 8 / 16 / infiniti radiali. La Tab. 9-1 viene dalle misure di Brown, Lewis ed Epstein (Proc. IRE 1937, circa 3 MHz, un solo terreno, Fig. 25): 	Comparison: Sevick (ARRL) about 29 / 18 / 9 / 0 Ω with 4 / 8 / 16 / infinite radials. Tab. 9-1 comes from the measurements of Brown, Lewis and Epstein (Proc. IRE 1937, about 3 MHz, a single ground, Fig. 25): 
+Controllo dei dati - 	Data check - 
+Controllo dei dati interrotto: 	Data check interrupted: 
+Copia non riuscita: 	Copy failed: 
+Corrente in un punto: 	Current at a point: 
+Correnti al centro dei segmenti a 	Currents at the centre of the segments at 
+Correzione approvata: la formula DL6WU D = lambda / (2 sin(a/2)) si applica con le aperture dell'antenna base in spazio libero calcolate dal programma. 	Approved correction: the DL6WU formula D = lambda / (2 sin(a/2)) is applied with the beamwidths of the base antenna in free space calculated by the program. 
+Cosa cambia nella tabella dei fili (con "Angolo come variabile" le coordinate diventano formule con 	What changes in the wire table (with "Angle as variable" the coordinates become formulas with 
+Cosa entra nel file 	What goes into the file 
+Cosa succede quando apri un modello o lo cambi. "sempre": calcolo alla frequenza centrale e subito dopo lo sweep (come fino alla 0.4.19). 	What happens when you open or change a model. "always": calculation at the centre frequency and right after the sweep (as up to 0.4.19). 
+Crea il disco come griglia di fili (maglia circa lambda/10, centine, rete ideale o piana tra le centine secondo la casella sopra) 	Creates the dish as a wire grid (mesh about lambda/10, ribs, ideal or flat mesh between the ribs according to the box above) 
+Crea una scheda PDF con i dati del boom (diametro, forma, montaggio, correzione) e la tabella degli elementi del modello aperto 	Creates a PDF sheet with the boom data (diameter, shape, mounting, correction) and the element table of the open model 
+Criterio: 	Criterion: 
+D = L / (2 (1 + sqrt(1/k^2 + (N pi)^2))), H = D / k. Le due spire sono in parallelo sui morsetti in alto: la grande e' induttiva, la piccola capacitiva, 	D = L / (2 (1 + sqrt(1/k^2 + (N pi)^2))), H = D / k. The two loops are in parallel at the terminals at the top: the large one is inductive, the small one capacitive, 
+DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, 	DMF (Directivity Merit Figure, ON4UN): gain at 20 degrees of elevation in the forward direction minus the average gain of the rear hemisphere (azimuth beyond 90 degrees, 
+Dal .weq: 	From the .weq: 
+Dal mozzo un tratto di λ/4 di cavo da 	From the hub a λ/4 section of cable of 
+Dalla 0.4.20 il calcolo (matrice, fattorizzazione, sweep, diagramma) lascia libero un processore logico per la finestra, 	Since 0.4.20 the calculation (matrix, factorization, sweep, pattern) leaves one logical processor free for the window, 
+Diagramma del feed non disponibile: 	Feed pattern not available: 
+Diagramma dell'ottimizzatore: 	Optimizer pattern: 
+Diagrammi: 	Patterns: 
+Dima non salvata: 	Template not saved: 
+Dipolo caricato 	Loaded dipole 
+Dipolo multibanda: 	Multiband dipole: 
+Direttore N: (K1 - K2 ln N)(1 - K3 e^-K4N), K dalla tabella sul diametro. Riflettore ((20 - 40)/(186,88 ln(2/d) - 320) + 1)/2, radiatore (0,4777 - 1,0522 d + 0,43363 d^-0,0149)/2 x 1,02. 	Director N: (K1 - K2 ln N)(1 - K3 e^-K4N), K from the table by diameter. Reflector ((20 - 40)/(186.88 ln(2/d) - 320) + 1)/2, radiator (0.4777 - 1.0522 d + 0.43363 d^-0.0149)/2 x 1.02. 
+Disegno 1:1 del divisore: 	1:1 drawing of the divider: 
+Disegno PDF: 	PDF drawing: 
+Distanza dal riflettore di 	Distance from the reflector of 
+Distanze provate (	Distances tried (
+Distribuzione del F/B sulle 	F/B distribution over the 
+Divisore 	Divider 
+Divisori: 	Dividers: 
+Dove va il carico: w + numero del filo + b (inizio), c (centro), e (fine), oppure w4:7 (segmento 7 del filo 4). 	Where the load goes: w + wire number + b (start), c (centre), e (end), or w4:7 (segment 7 of wire 4). 
+Due DHDL broadside a 	Two broadside DHDLs at 
+Due frequenze: 	Two frequencies: 
+EFHW con polvere di ferro: la permeabilita' bassa richiede molte spire e il primario da 	EFHW with iron powder: the low permeability needs many turns and the primary of 
+ERR  calcolo: 	ERR  calculation: 
+ERR  feed tabellato: 	ERR  tabulated feed: 
+EZNEC lo rifiuta ("One or more wires extend into or are lying on the ground"). Alzare il filo almeno di un raggio sopra il suolo (radiali: qualche centimetro), 	EZNEC rejects it ("One or more wires extend into or are lying on the ground"). Raise the wire at least one radius above ground (radials: a few centimetres), 
+Effetto sul dipolo 	Effect on the dipole 
+Eggbeater: perimetro 1005/f piedi, riflettore a radiali a 1/8 lambda, linea di fase lambda/4, spire accordate in quadratura col NEC e 	Eggbeater: perimeter 1005/f feet, reflector of radials at 1/8 lambda, λ/4 phasing line, turns tuned in quadrature with NEC and 
+Elementi (	Elements (
+Elementi a diametri a gradini (tubi telescopici): per il calcolo diventano un elemento di diametro uniforme con lunghezza corretta, 	Stepped-diameter elements (telescopic tubes): for the calculation they become an element of uniform diameter with corrected length, 
+Elementi a tubi telescopici: per un risultato come YO, EZNEC e ARRL attiva la correzione Leeson (Impostazioni > Tubi telescopici). 	Telescopic-tube elements: for a result like YO, EZNEC and ARRL turn on the Leeson correction (Settings > Telescopic tubes). 
+Elementi di 	Elements of 
+Elemento 	Element 
+Elemento simmetrico: 	Symmetric element: 
+Elevazione 	Elevation 
+Elevazione (piano az 	Elevation (az plane 
+Elevazione nel piano di azimut 	Elevation in the azimuth plane 
+Elica 	Helix 
+Elica: 	Helix: 
+Emerson 	Emerson 
+Errore NEC: 	NEC error: 
+Errore nel calcolo: 	Calculation error: 
+Errore nel modello del calcolatore: 	Error in the calculator model: 
+Errore nel modello elettrico: 	Error in the electrical model: 
+Errore nel modello: 	Error in the model: 
+Errore nel salvataggio: 	Save error: 
+Errore nell'apertura: 	Open error: 
+Errore nella geometria: 	Geometry error: 
+Errore nella linguetta 	Error in the tab 
+Errore nella scheda PDF: 	Error in the PDF sheet: 
+Errore nelle schede NEC: 	Error in the NEC cards: 
+Errore nelle variabili: 	Error in the variables: 
+Errore nello sweep: 	Sweep error: 
+Errore: 	Error: 
+Esporta CSV: 	Export CSV: 
+Esportazione non riuscita: 	Export failed: 
+F/B scende a 	F/B drops to 
+F/B: nominale 	F/B: nominal 
+Fai le prese spellando il filo alla spira 	Make the taps by stripping the wire at turn 
+File .ANT: asse non valido in 	.ANT file: invalid axis in 
+File .ANT: carico di Laplace con denominatore nullo a 	.ANT file: Laplace load with zero denominator at 
+File .ANT: espressione incompleta: 	.ANT file: incomplete expression: 
+File .ANT: espressione non valida: 	.ANT file: invalid expression: 
+File .ANT: filo 	.ANT file: wire 
+File .ANT: il file finisce prima del filo 	.ANT file: the file ends before wire 
+File .ANT: il filo 	.ANT file: wire 
+File .ANT: linea senza Z= o D= e S=: 	.ANT file: line without Z= or D= and S=: 
+File .ANT: linea senza i due estremi: 	.ANT file: line without the two ends: 
+File .ANT: numero di segmenti non valido: 	.ANT file: invalid number of segments: 
+File .ANT: posizione non riconosciuta: 	.ANT file: position not recognized: 
+File .ANT: simbolo non definito: 	.ANT file: undefined symbol: 
+File .ANT: valore non valido in 	.ANT file: invalid value in 
+File .YAG: elemento 	.YAG file: element 
+File .YAG: il file finisce prima dell'elemento 	.YAG file: the file ends before element 
+File .ez, filo 	.ez file, wire 
+File .weq, riga 	.weq file, row 
+File .weq: 	.weq file: 
+File .weq: "LPDA repeat to 	.weq file: "LPDA repeat to 
+File .weq: il modello EZNEC e' a 	.weq file: the EZNEC model is at 
+File .weq: la variabile 	.weq file: the variable 
+File .weq: rete di adattamento (tabella «L Networks» di EZNEC, riga 	.weq file: matching network (EZNEC «L Networks» table, row 
+Fili 	Wires 
+Fili (	Wires (
+Filo 	Wire 
+Filo con tag 	Wire with tag 
+Fonti: 	Sources: 
+Fonti: R. Lewallen W7EL (rete L con le linee lambda/4 "current forcing"), F. Lahlum W1MK (formule), ON4UN Low-Band DXing cap. 11 (tab. 11-1...11-5), ARRL Antenna Book (ibrido di Collins). 	Sources: R. Lewallen W7EL (L network with λ/4 "current forcing" lines), F. Lahlum W1MK (formulas), ON4UN Low-Band DXing ch. 11 (tab. 11-1...11-5), ARRL Antenna Book (Collins hybrid). 
+Formato .ez non riconosciuto (versione di EZNEC diversa da quelle note). 	.ez format not recognized (EZNEC version different from the known ones). 
+Formula DL6WU: D = lambda / (2 sin(B/2)), B = apertura a -3 dB nel piano dello stack (ARRL 24a ed., Rothammel cap. 24, DG7YBN). 	DL6WU formula: D = lambda / (2 sin(B/2)), B = -3 dB beamwidth in the stacking plane (ARRL 24th ed., Rothammel ch. 24, DG7YBN). 
+Formule (ON4UN): verticali lambda/4 ai vertici di un quadrato di lato lambda/4, correnti uguali sfasate 0 (dietro), -90 (lati), -180 gradi (davanti). 	Formulas (ON4UN): λ/4 verticals at the corners of a square with λ/4 side, equal currents phased 0 (rear), -90 (sides), -180 degrees (front). 
+Formule (modello a linea del braccio caricato, lo stesso della W3DZZ risolto per la bobina): X = Z0 (cot(beta b) - tan(beta a)), 	Formulas (line model of the loaded arm, the same as the W3DZZ solved for the coil): X = Z0 (cot(beta b) - tan(beta a)), 
+Formule: ARRL, perimetro del radiatore 306,3/f m, riflettore 313,6/f m, direttore 297,2/f m. Cebik (Cubical Quad Notes vol. 2): D1 = log10(d/lambda), 	Formulas: ARRL, radiator perimeter 306.3/f m, reflector 313.6/f m, director 297.2/f m. Cebik (Cubical Quad Notes vol. 2): D1 = log10(d/lambda), 
+Formule: per ogni banda radiatore 306,3/f e riflettore 313,6/f (ARRL), anelli concentrici sulle stesse crociere e un solo boom: la spaziatura in lambda cambia da banda a banda. 	Formulas: for each band radiator 306.3/f and reflector 313.6/f (ARRL), concentric loops on the same spreaders and a single boom: the spacing in lambda changes from band to band. 
+Four-square 	Four-square 
+Freccia applicata al modello (Annulla nella barra Geometria la toglie). 	Sag applied to the model (Undo in the Geometry bar removes it). 
+Frequenza 	Frequency 
+Frequenza fuori dalla banda consigliata per la miscela 	Frequency outside the recommended band for the mix 
+Funzione sconosciuta: 	Unknown function: 
+Fuori dal metodo DL6WU: 	Outside the DL6WU method: 
+G/T come VE7BQH: 	G/T as VE7BQH: 
+G6GVI (da MW1FGQ): doppia biquad, alluminio piu' rete da 1/2 x 1 pollice, circa 12,5 dBi stimati a 3,4 GHz. 	G6GVI (from MW1FGQ): double biquad, aluminium plus 1/2 x 1 inch mesh, about 12.5 dBi estimated at 3.4 GHz. 
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, like nec2c and xnec2c: the source code comes with the program (COPYING file).\n
+GX: il segmento 	GX: segment 
+Geometria: 	Geometry: 
+Geometria: quadrati di lato s (circa λ/4 da centro filo a centro filo) disposti a rombo lungo la polarizzazione, alimentati al centro tra due nodi distanti 	Geometry: squares of side s (about λ/4 from wire centre to wire centre) arranged as a diamond along the polarization, fed at the centre between two nodes spaced 
+Giunzione, fili 	Junction, wires 
+Giunzioni di 3 o piu' segmenti: 	Junctions of 3 or more segments: 
+Gli angoli devono essere crescenti (dato n. 	The angles must be increasing (data n. 
+Gli errori di superficie abbassano il guadagno (Ruze) e spargono l'energia in un fondo largo: la curva tratteggiata arancio e' la stima di Baars (fascio d'errore gaussiano), non un calcolo. 	Surface errors lower the gain (Ruze) and scatter energy into a wide floor: the dashed orange curve is Baars' estimate (Gaussian error beam), not a calculation. 
+Guadagno medio = potenza irradiata nell'emisfero superiore / 4 pi (con il terreno) oppure media su tutta la sfera in spazio libero, 	Average gain = power radiated into the upper hemisphere / 4 pi (with ground) or average over the whole sphere in free space, 
+Guadagno medio del modello = 	Average gain of the model = 
+Guanella 4:1: due linee bifilari da 2 Zcoassiale, ingressi in parallelo e uscite in serie. Ruthroff: tensione sommata (9:1 = tre fili in serie). 	Guanella 4:1: two two-wire lines of 2 Zcoax, inputs in parallel and outputs in series. Ruthroff: added voltage (9:1 = three wires in series). 
+Hexbeam: raggio delle punte del 20 m 	Hexbeam: radius of the 20 m tips 
+I puntoni non sono nel diagramma (non hanno simmetria circolare): danno lobi a stella nei loro piani e sono contati solo nell'efficienza. 	The struts are not in the pattern (they have no circular symmetry): they give star lobes in their planes and are counted only in the efficiency. 
+IK1ZYW (2012, MMANA): da 1/8 λ a 15 mm (1/16 λ) circa -0,5 dB e -3 dB di F/B. 	IK1ZYW (2012, MMANA): from 1/8 λ to 15 mm (1/16 λ) about -0.5 dB and -3 dB of F/B. 
+INFO misure trovate (m): 	INFO dimensions found (m): 
+INFO ottimizzatore sulla Yagi MathWorks non concluso: 	INFO optimizer on the MathWorks Yagi not completed: 
+Ibrido di Collins (90 gradi, Z0 	Collins hybrid (90 degrees, Z0 
+Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. 	The Monte Carlo is not in every step: it starts the optimizer from several random points and checks only the best candidates with the building tolerances. 
+Il NEC-2 originale e nec2c usano c = 299,8 m/us, EZNEC il valore esatto 299,792458. La differenza (2,5 parti su 100000) sposta l'impedenza 	The original NEC-2 and nec2c use c = 299.8 m/us, EZNEC the exact value 299.792458. The difference (2.5 parts in 100000) shifts the impedance 
+Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo). 	The measured minimum SWR is higher than calculated: the resistive part does not match (matching, balun or cable losses). 
+Il calcolo cresce con il cubo dei segmenti: un disco da 1,2 m a 1296 MHz ha circa 7000 segmenti (0,8 GB, alcuni minuti). 	The calculation grows with the cube of the segments: a 1.2 m dish at 1296 MHz has about 7000 segments (0.8 GB, a few minutes). 
+Il fascio dipende dal diametro e dall'illuminazione, non dalle perdite: un disco sovrailluminato ha il fascio piu' stretto ma rende meno (W1GHZ, app. 6A). 	The beam depends on the diameter and the illumination, not on the losses: an over-illuminated dish has a narrower beam but performs worse (W1GHZ, app. 6A). 
+Il filo resta uno nella tabella (comodo da modificare e da ottimizzare). Per il calcolo diventa un tubo per tratto, con lo stesso tag e lo stesso numero 	The wire stays one row in the table (easy to edit and optimize). For the calculation it becomes one tube per section, with the same tag and the same number 
+Il loop e' un'onda intera sulla banda piu' bassa e 2, 3, 4... onde sulle altre: l'impedenza al loop cambia molto da banda a banda. 	The loop is one wavelength on the lowest band and 2, 3, 4... wavelengths on the others: the impedance at the loop changes a lot from band to band. 
+Il modello NEC a fili e' calcolato a 	The NEC wire model is calculated at 
+Il modello aperto viene copiato con tutte le misure moltiplicate per k (scheda GS): con "diametri uguali" i raggi restano quelli di prima. 	The open model is copied with all dimensions multiplied by k (GS card): with "equal diameters" the radii stay as before. 
+Il modello di partenza non si calcola: 	The starting model cannot be calculated: 
+Il modello ha 	The model has 
+Il modello ha fili a 	The model has wires at 
+Il motore di YA-NEC e' la traduzione in C# delle sue routine (geometria, matrice, campi, diagramma). 	The YA-NEC engine is the C# translation of its routines (geometry, matrix, fields, pattern). 
+Il nucleo 	The core 
+Il piano verticale e' asimmetrico perche' l'illuminazione e' piu' forte verso il bordo inferiore (piu' vicino al fuoco): i lobi dalla parte del bordo inferiore sono piu' alti. 	The vertical plane is asymmetric because the illumination is stronger towards the lower rim (closer to the focus): the sidelobes on the lower-rim side are higher. 
+Il primario: 	The primary: 
+Il registro e' sempre attivo: un file di testo per sessione nella cartella Registri accanto al programma, con ogni azione, i tempi di risposta, 	The log is always on: one text file per session in the Logs folder next to the program, with every action and the response times, 
+Il segmento 	Segment 
+Il septum non e' nel modello: il polarizzatore non cambia il diagramma (W1GHZ). Bocca nel piano z = 0: il centro di fase che YA-NEC calcola e' riferito alla bocca. 	The septum is not in the model: the polarizer does not change the pattern (W1GHZ). Mouth in the z = 0 plane: the phase centre YA-NEC calculates is referred to the mouth. 
+Il voto e' la somma sulle frequenze: tiene buona l'antenna anche ai bordi della banda. Si possono mettere bande diverse (antenne multibanda). 	The score is the sum over the frequencies: it keeps the antenna good at the band edges too. Different bands can be set (multiband antennas). 
+Impedenza del filo sul terreno Z0 = 138 log10(4h/d) = 	Impedance of the wire over ground Z0 = 138 log10(4h/d) = 
+Importato da YO (.YAG): alimentato il secondo elemento (convenzione di YO), 	Imported from YO (.YAG): second element fed (YO convention), 
+In alternativa: 	Alternatively: 
+Incollate 	Pasted 
+Induttanza con 	Inductance with 
+Integrali di Sommerfeld, griglie di interpolazione, onda di terra di Norton: tradotti in C# e verificati con nec2c 	Sommerfeld integrals, interpolation grids, Norton ground wave: translated to C# and verified with nec2c 
+Interpretazione: la misura e' spostata 	Interpretation: the measurement is shifted 
+Inv. = polarita' invertita. Nel calcolo diventa una scheda NT (reattanza magnetizzante 10000 volte Z1): per collegarlo a una linea si usa un filo corto lontano ("filo virtuale"). 	Inv. = inverted polarity. In the calculation it becomes an NT card (magnetizing reactance 10000 times Z1): to connect it to a line a short distant wire is used ("virtual wire"). 
+Ispirazione per le funzioni delle prossime fasi (variabili, sweep su variabili, Resonate, AutoSeg, linee e reti, 	Inspiration for the functions of the next phases (variables, sweep over variables, Resonate, AutoSeg, lines and networks, 
+L'antenna e' a quota 	The antenna is at height 
+L'efficienza e' integrata su tutta l'apertura (griglia 240 x 240) con il campo F(theta')/rho del feed: spillover, illuminazione e fase escono dallo stesso integrale. 	The efficiency is integrated over the whole aperture (240 x 240 grid) with the feed field F(theta')/rho: spillover, illumination and phase come out of the same integral. 
+L'impedenza di ogni spira dipende molto dalla distanza dal riflettore (tamago: da 62 a 143 ohm tra 0,03 e 0,12 lambda di distanza della base): 	The impedance of each loop depends strongly on the distance from the reflector (tamago: from 62 to 143 ohm between 0.03 and 0.12 lambda of base distance): 
+LD 7 di 4nec2 non convertito: 	4nec2 LD 7 not converted: 
+LPDA: sigma 	LPDA: sigma 
+LPDA: tau 	LPDA: tau 
+La Luna e' sotto l'orizzonte a quell'ora (elevazione 	The Moon is below the horizon at that time (elevation 
+La bobina misurata risuona a 	The measured coil resonates at 
+La formula non tiene conto del diametro degli elementi, della distanza dalle estremita' del boom ne' della segmentazione del modello (DG7YBN). 	The formula does not account for the element diameter, the distance from the boom ends or the model segmentation (DG7YBN). 
+La funzione 	The function 
+La piastra al centro dell'elemento e' un tratto corto e grosso: un gradino in piu' del tubo. Diametro equivalente della sezione 	The plate at the element centre is a short thick section: one more step of the tube. Equivalent diameter of the section 
+La regola comune (DL6WU, G3SEK) e' che il guadagno dipende soprattutto dalla lunghezza del boom e poco dal numero di elementi, purche' le spaziature siano ragionevoli. Fonti: 	The common rule (DL6WU, G3SEK) is that gain depends mostly on the boom length and little on the number of elements, provided the spacings are reasonable. Sources: 
+La risonanza della trappola (	The trap resonance (
+La stima di Z0 e' tarata sul NEC (entro circa il 15 % tra il 20 e il 70 % del braccio): "Porta in risonanza (NEC)" ritocca la bobina, non le lunghezze. 	The Z0 estimate is calibrated on NEC (within about 15 % between 20 and 70 % of the arm): "Bring to resonance (NEC)" adjusts the coil, not the lengths. 
+La variabile 	The variable 
+La verifica non torna (ROS 	The check does not match (SWR 
+Lato (a 	Side (a 
+Lato di 	Side of 
+Le lunghezze di DL6WU non valgono piu' e nemmeno il guadagno stimato 9,2 + 3,39 ln L: i numeri veri li da' il NEC dopo "Ottimizza (NEC)". 	The DL6WU lengths no longer apply, nor does the estimated gain 9.2 + 3.39 ln L: the real numbers come from NEC after "Optimize (NEC)". 
+Le prestazioni dichiarate per l'antenna EH ("come un dipolo") non sono confermate dalle misure indipendenti: e' un dipolo corto, e il NEC lo mostra. 	The performance claimed for the EH antenna ("like a dipole") is not confirmed by independent measurements: it is a short dipole, and NEC shows it. 
+Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). 	The variables come from the Variables tab (lengths, spacings, height, loads, source phases, stacking distance...). 
+Leeson: 	Leeson: 
+Lettura non riuscita: 	Read failed: 
+Linea 	Line 
+Linea alla riga 	Line at row 
+Linea dal filo 	Line from wire 
+Linea di adattamento (YA-NEC, cambio d'impedenza): TL Z0 	Matching line (YA-NEC, impedance change): TL Z0 
+Linea messa nel modello: TL da 	Line put in the model: TL from 
+Linea nel modello: 	Line in the model: 
+Linea o rete 	Line or network 
+Linea, primo punto 	Line, first point 
+Linea, secondo punto 	Line, second point 
+Linear loading a 	Linear loading at 
+Lista di taglio esportata: 	Cutting list exported: 
+Lista di taglio in PDF: 	Cutting list in PDF: 
+Lista di taglio: 	Cutting list: 
+Lo stack si crea solo da modelli fatti di fili GW (scheda 	The stack is created only from models made of GW wires (card 
+Lobo esportato: 	Lobe exported: 
+Localita' non trovata: 	Location not found: 
+Loop 	Loop 
+Loop magnetica 	Magnetic loop 
+Loop piccolo: Rr = 31171 A^2/lambda^4 = 	Small loop: Rr = 31171 A^2/lambda^4 = 
+Loop: 	Loop: 
+Lunghezza per la massima risposta a 	Length for maximum response at 
+MMANA non le gestisce: 	MMANA does not handle them: 
+Maglia della rete di 	Mesh of the net of 
+Manca ')' dopo gli argomenti di 	Missing ')' after the arguments of 
+Mappa del cielo non in ordine RING: 	Sky map not in RING order: 
+Mappa del cielo non valida: 	Invalid sky map: 
+Massimo 	Maximum 
+Massimo a 	Maximum at 
+MathWorks (Antenna Toolbox): biquad Yagi a 2,4 GHz con 4 direttori biquad, solo grafici. 	MathWorks (Antenna Toolbox): biquad Yagi at 2.4 GHz with 4 biquad directors, charts only. 
+Metodo: integrazione del diagramma 3D per angoli solidi finiti (somma = 4 pi esatta, come XLGTa di AC6LA), scansione dell'elevazione come TANT di YT1NT/VE3EA, 	Method: integration of the 3D pattern over finite solid angles (sum = exactly 4 pi, like AC6LA's XLGTa), elevation scan like TANT by YT1NT/VE3EA, 
+Misura del VNA: 	VNA measurement: 
+Misure VNA: 	VNA measurements: 
+Misure di partenza: "Calcola questa antenna" accorda col NEC a 	Starting dimensions: "Calculate this antenna" tunes with NEC at 
+Modello NEC: 	NEC model: 
+Modello caricato: 	Model loaded: 
+Modello con 	Model with 
+Modello d'apertura: valido nel lobo principale, dove serve per illuminare il disco. Non vede le correnti esterne, il bordo e gli anelli: per i lobi posteriori, i feed con choke e il confronto finale serve il NEC. 	Aperture model: valid in the main lobe, where it is needed to illuminate the dish. It does not see the outer currents, the rim and the rings: for the rear lobes, choke feeds and the final comparison NEC is needed. 
+Modello del calcolatore aperto: 	Calculator model opened: 
+Modello pesante (	Heavy model (
+Modello salvato: 	Model saved: 
+Modello semplificato di 	Simplified model of 
+Modello spostato: la staffa consigliata (	Model moved: the suggested clamp (
+Modo simmetrico di AO ("Free Space Symmetric") con la sola meta' +Y nel file: l'altra meta' e' l'immagine speculare sul piano X-Z, 	AO symmetric mode ("Free Space Symmetric") with only the +Y half in the file: the other half is the mirror image on the X-Z plane, 
+Modo simmetrico: la linea tra i fili 	Symmetric mode: the line between the wires 
+Modo simmetrico: sorgente o carico sul filo 	Symmetric mode: source or load on wire 
+Monta i bracci di sotto sul triangolo di massa (calza) e quelli di sopra sul triangolo del centrale, a 	Mount the lower arms on the ground triangle (braid) and the upper ones on the centre-conductor triangle, at 
+Moxon: la misura 	Moxon: the dimension 
+NEC2 di G. J. Burke e A. J. Poggio (LLNL), tradotto in C da Neoklis Kyriazis 5B4AZ (nec2c) 	NEC2 by G. J. Burke and A. J. Poggio (LLNL), translated to C by Neoklis Kyriazis 5B4AZ (nec2c) 
+Nel NEC-2 la scheda non c'e': si usa la permittivita' efficace (er+1)/2 sulle lunghezze (il NEC risolve la geometria vera a f x √eeff) 	In NEC-2 there is no such card: the effective permittivity (er+1)/2 is used on the lengths (NEC solves the real geometry at f x √eeff) 
+Nel modello non ci sono copie identiche della stessa antenna. Il riconoscimento cerca fili elencati a gruppi uguali, 	The model has no identical copies of the same antenna. The detection looks for wires listed in equal groups, 
+Nelle 24 ore: minimo 	Over 24 hours: minimum 
+Nessun problema trovato nei 	No problem found in the 
+Nessun segmento con tag 	No segment with tag 
+Nessun segmento ha il tag 	No segment has tag 
+Nessuna banda libera sotto il 	No free band below the 
+Note del file .YAG: 	.YAG file notes: 
+Numero 	Number 
+ON4UN Tab. 9-3 per 	ON4UN Tab. 9-3 for 
+Ogni anello e' fatto di tratti di tubo diritti da centina a centina. Il calcolo sceglie per ogni anello il tubo piu' leggero che regge vento e peso 	Each ring is made of straight tube sections from rib to rib. The calculation chooses for each ring the lightest tube that withstands wind and weight 
+Ogni trappola va in tutti e due i bracci del dipolo scelto, subito dopo la punta, con una coda per la banda in piu'. Sola bobina: risuona con la sua capacita' propria (Medhurst) 	Each trap goes in both arms of the chosen dipole, right after the tip, with a tail for the extra band. Coil only: it resonates with its own capacitance (Medhurst) 
+# 1.5.1: frammenti dei testi composti (seconda parte) e voci della variabile nuova
+Operatori: + - * / ^ e parentesi.  Funzioni: SIN, COS, TAN (in gradi), ATN (in gradi), SQR, EXP, LOG, LOG10, ABS, SGN, 	Operators: + - * / ^ and brackets.  Functions: SIN, COS, TAN (in degrees), ATN (in degrees), SQR, EXP, LOG, LOG10, ABS, SGN, 
+Ottimizzatore: 	Optimizer: 
+Ottimizzazione: simplesso di Nelder e Mead sul NEC (radiatore, riflettore, direttori, poi tutto). 	Optimization: Nelder and Mead simplex on NEC (radiator, reflector, directors, then everything). 
+PDF non salvato: 	PDF not saved: 
+Passante conduttivo: C = (25,195 B - 229 B^2) x diametro del boom, B = diametro del boom in lunghezze d'onda (DL6WU, fit di G3SEK), valida fino a B = 0,055. 	Conductive feedthrough: C = (25.195 B - 229 B^2) x boom diameter, B = boom diameter in wavelengths (DL6WU, G3SEK fit), valid up to B = 0.055. 
+Passante isolato: meta'. Boom quadro: lato x 1,18 (SM5BSZ). Sopra il boom con staffa conduttiva: circa 0,65 (DG7YBN on-boom). 	Insulated feedthrough: half. Square boom: side x 1.18 (SM5BSZ). Above the boom with a conductive clamp: about 0.65 (DG7YBN on-boom). 
+Passo 	Step 
+Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. 	For transmitting antennas the RDF makes no sense: this is why it is calculated only in this tab. 
+Perdita del cavo di ritardo e del relè incluse in modo approssimato (	Delay cable and relay losses included approximately (
+Perdita della discesa: formula della linea con perdite e disadattamento, P al carico / P in ingresso = (1 - |ρ|²) / (e^(2αl) - |ρ|² e^(-2αl)), 	Feed line loss: lossy line formula with mismatch, P at the load / P at the input = (1 - |ρ|²) / (e^(2αl) - |ρ|² e^(-2αl)), 
+Perdita di 	Loss of 
+Perdita nell'accordatore (	Loss in the tuner (
+Peso dei tubi di tutti i fili (alluminio, parete 1,25 mm): circa 	Weight of the tubes of all the wires (aluminium, 1.25 mm wall): about 
+Peso: 	Weight: 
+Petalo 	Petal 
+Piastre non aggiunte: 	Plates not added: 
+Piega i tre petali uguali sulla dima (triangolo arrotondato, bracci a 	Bend the three equal petals on the template (rounded triangle, arms at 
+Pivot molto piccolo alla riga 	Very small pivot at row 
+Porta, fili 	Port, wires 
+Posizione della sorgente non riconosciuta: 	Source position not recognized: 
+Potenza: con 	Power: with 
+Profilo caricato: 	Profile loaded: 
+Profilo: 	Profile: 
+Pronta: 	Ready: 
+Proposta: 	Proposal: 
+Provincia di Trieste	Province of Trieste
+Puntamento azimut 	Azimuth pointing 
+Q caricato 	Loaded Q 
+Quad: direttori ad anello con perimetro 0,975 x alimentato x D/D1. Ottimizzazione come la Yagi DL6WU. Fonti: 	Quad: ring directors with perimeter 0.975 x driven x D/D1. Optimization like the DL6WU Yagi. Sources: 
+Quad: spaziatura 	Quad: spacing 
+Quadratura non raggiunta (scarto 	Quadrature not reached (deviation 
+Quagi N6NB: anello riflettore e anello alimentato, direttori a bacchetta. Proporzioni dal modello NEC di Cebik (144,5 MHz): riflettore 1,0548 lambda di perimetro, 	N6NB Quagi: reflector loop and driven loop, rod directors. Proportions from Cebik's NEC model (144.5 MHz): reflector 1.0548 lambda of perimeter, 
+Quota del suolo (	Ground height (
+Quota: 	Height: 
+Quota: il punto piu' basso dell'antenna e' a 	Height: the lowest point of the antenna is at 
+ROS att. 	act. SWR. 
+ROS nella banda: 95% delle prove sotto 	SWR in the band: 95% of the trials below 
+ROS oltre 2 in banda (max 	SWR above 2 in band (max 
+Raggio da sezione (riga 	Radius from section (row 
+Raggio equivalente della striscia = larghezza/4. Ottimizzazione come la Yagi DL6WU (riflettori insieme, alimentato, direttori). Fonti: 	Equivalent radius of the strip = width/4. Optimization like the DL6WU Yagi (reflectors together, driven, directors). Sources: 
+Rastremazione non applicata: 	Taper not applied: 
+Rastremazioni 	Tapers 
+Reattanza a 	Reactance at 
+Reattanza al variare delle spire a 	Reactance versus turns at 
+Registro di questa sessione: 	Log of this session: 
+Registro non leggibile: 	Log not readable: 
+Regole della correzione dei diametri a gradini, RDF e DMF, tabelle delle antenne riceventi e delle verticali, test di convergenza e del guadagno medio, 	Rules of the stepped-diameter correction, RDF and DMF, tables of receiving antennas and verticals, convergence and average-gain tests, 
+Relazione PDF: 	PDF report: 
+Relazione del vento: 	Wind report: 
+Repository dell'aggiornamento: 	Update repository: 
+Rete L di Lewallen (formule di Lahlum, ON4UN eq. 11-3...11-8): ramo serie Xs = 	Lewallen L network (Lahlum formulas, ON4UN eq. 11-3...11-8): series branch Xs = 
+Rete L, porta 1 	L network, port 1 
+Rete L, porta 2 	L network, port 2 
+Rete NT dal filo 	NT network from wire 
+Rete elettrosaldata tipica a maglie di 20 cm: a 	Typical welded mesh with 20 cm cells: at 
+Reti L 	L networks 
+Riavvio non riuscito (	Restart failed (
+Ricavati: alfa = 	Derived: alpha = 
+Ricerca: 	Search: 
+Riconosciute 	Recognized 
+Riferimento al filo 	Reference to wire 
+Rifiuto 	Rejected 
+Riga 	Row 
+Riga RASTRFILO per il tag 	RASTRFILO row for tag 
+Riga di rastremazione non valida: 	Invalid taper row: 
+Riga di stub non valida: 	Invalid stub row: 
+Riga non valida: 	Invalid row: 
+Risonanza: modello a linee del filo selezionato da solo (Schelkunoff, come la correzione Leeson). Unisci: i fili in linea di diametro diverso (da .ez, .weq, .nec) 	Resonance: line model of the selected wire alone (Schelkunoff, like the Leeson correction). Join: in-line wires of different diameter (from .ez, .weq, .nec) 
+Risorse adesso: 	Resources now: 
+Rispetto alla singola a 	Compared to the single antenna at 
+Risultato (	Result (
+Rothammel (massima estensione 	Rothammel (maximum extent 
+SBF - errore di connessione del segmento 	SBF - segment connection error 
+Salva 	Save 
+Salva e poi 	Save and then 
+Salvataggio non riuscito: 	Save failed: 
+Salvato: 	Saved: 
+Scheda 	Card 
+Scheda GC con raggio nullo (tag 	GC card with zero radius (tag 
+Scheda LD: nessun segmento con tag 	LD card: no segment with tag 
+Scheda PDF del boom creata: 	Boom PDF sheet created: 
+Scheda di geometria sconosciuta: 	Unknown geometry card: 
+Scrive 	Writes 
+Se λ/4 e' troppo corto per arrivare al punto di alimentazione si sceglie 3λ/4 o 5λ/4: stessa Z, banda piu' stretta e piu' perdita. Le linee bifilari vanno usate con un balun. 	If λ/4 is too short to reach the feed point, 3λ/4 or 5λ/4 is chosen: same Z, narrower band and more loss. Two-wire lines must be used with a balun. 
+Segmentazione MMANA originale (DM1, DM2, SC, EC): 	Original MMANA segmentation (DM1, DM2, SC, EC): 
+Segmentazione corretta: 	Segmentation corrected: 
+Segnalazione non preparata: 	Report not prepared: 
+Sevick: circa 	Sevick: about 
+Si parte da un'antenna gia' costruita o comprata: le misure reali (rilievo) si scrivono nei fili del modello NEC. Cosi' com'e' il calcolo non e' conforme, perche' il NEC non vede il boom. 	You start from an antenna already built or bought: the real dimensions (survey) are written into the wires of the NEC model. As it is, the calculation is not compliant, because NEC does not see the boom. 
+Similitudini: W1GHZ, OE5JFL e Atkins descrivono la stessa geometria (sezione del paraboloide madre, feed sulla bisettrice dei bordi). 	Similarities: W1GHZ, OE5JFL and Atkins describe the same geometry (section of the parent paraboloid, feed on the bisector of the edges). 
+Sollecitazione a 	Stress at 
+Sollecitazione del boom a 	Boom stress at 
+Solo il modello di questa scheda (il modello aperto non si usa). ROS riferito a 	Only the model of this card (the open model is not used). SWR referred to 
+Somiglianze: stesso petalo di circa un'onda e stesso stub da 127 mm. Differenze: F1BKM dichiara circa 5 dB sui dipoli incrociati, il QST non da' un guadagno assoluto. 	Similarities: same petal of about one wavelength and same 127 mm stub. Differences: F1BKM claims about 5 dB over crossed dipoles, QST gives no absolute gain. 
+Sorgente 	Source 
+Sorgente su un filo inesistente: 	Source on a non-existent wire: 
+Sorgente su un segmento inesistente: 	Source on a non-existent segment: 
+Sorgente sul filo 	Source on wire 
+Sorgente/carico sul filo 	Source/load on wire 
+Sorgenti (	Sources (
+Sorgenti accese solo in certe bande: scritte solo quelle accese a 	Sources on only in some bands: only those on are written at 
+Sorgenti di corrente: il NEC-2 non le ha, scritte come tensioni calcolate a 	Current sources: NEC-2 does not have them, written as voltages calculated at 
+Sotto λ/4 sulla banda piu' bassa (	Below λ/4 on the lowest band (
+Spaziature DL6WU (lambda): R 0, A 0,2, poi 0,075 0,180 0,215 0,250 0,280 0,300 0,315 0,330 0,345 0,360 0,375 0,390 0,400 ... 	DL6WU spacings (lambda): R 0, A 0.2, then 0.075 0.180 0.215 0.250 0.280 0.300 0.315 0.330 0.345 0.360 0.375 0.390 0.400 ... 
+Spiegazione nel manuale, 	Explanation in the manual, 
+Stack 	Stack 
+Stack   	Stack   
+Stack di 	Stack of 
+Stack non creato: 	Stack not created: 
+Stack ridisposto: verticale 	Stack rearranged: vertical 
+Staffe e mast · forza del vento 	Clamps and mast · wind force 
+Stato: 	Status: 
+Stub 	Stub 
+Stub alla riga 	Stub at row 
+Stub da 	Stub of 
+Superfici come griglia di fili da un segmento per lato, come i modelli NEC2 di W1GHZ (coffee-can, W2IMU, trombe coniche) e di VA3RR. 	Surfaces as a wire grid with one segment per side, like the NEC2 models of W1GHZ (coffee-can, W2IMU, conical horns) and of VA3RR. 
+Sweep da 	Sweep from 
+T. Marshall (BYTE 10/2001): 2,4 GHz, lato 30,5 mm (0,248 λ), filo 1,2 mm, 15 mm (0,122 λ), riflettore 123 mm (110 mm come feed), bordi di 30 mm su due lati, 11 dBi. 	T. Marshall (BYTE 10/2001): 2.4 GHz, side 30.5 mm (0.248 λ), 1.2 mm wire, 15 mm (0.122 λ), reflector 123 mm (110 mm as feed), 30 mm edges on two sides, 11 dBi. 
+TBF - errore di connessione del segmento 	TBF - segment connection error 
+TRIO - errore di connessione del segmento 	TRIO - segment connection error 
+Tabella del boom esportata: 	Boom table exported: 
+Tabella esportata in 	Table exported to 
+Taglia 2 coppie di filo da 	Cut 2 pairs of wire of 
+Taglia 2 fili (rosso e nero) da 	Cut 2 wires (red and black) of 
+Taglia 2 fili uguali (rosso e nero) da 	Cut 2 equal wires (red and black) of 
+Taglia 3 fili (rosso, nero, blu) da 	Cut 3 wires (red, black, blue) of 
+Taglia un filo da 	Cut one wire of 
+Telaio: 	Frame: 
+Tensione di lavoro del 	Working voltage of the 
+Terminazione per il massimo F/B: 	Termination for maximum F/B: 
+Terreno di AO: er 	AO ground: er 
+Terreno reale "MININEC" di EZNEC: impedenza calcolata come su terreno perfetto, diagramma con er e sigma (GN 3, come EZNEC). 	EZNEC "MININEC" real ground: impedance calculated as over perfect ground, pattern with er and sigma (GN 3, like EZNEC). 
+Terreno reale: 	Real ground: 
+Terreno reale: MMANA usa i propri parametri del terreno (impostali in MMANA: er 	Real ground: MMANA uses its own ground parameters (set them in MMANA: er 
+Terreno: AutoEZ lo prende dal modello EZNEC aperto (impostarlo in EZNEC: er 	Ground: AutoEZ takes it from the open EZNEC model (set it in EZNEC: er 
+Terreno: {0}, er {1:0.##} e sigma {2:0.#####} S/m a {3:0.###} MHz.{4} Il NEC-2 lo tratta come terreno omogeneo e infinito: 	Ground: {0}, er {1:0.##} and sigma {2:0.#####} S/m at {3:0.###} MHz.{4} NEC-2 treats it as homogeneous and infinite ground: 
+Test AGT non riuscito: 	AGT test failed: 
+Tipo di carico LD non valido: 	Invalid LD load type: 
+Tolleranza ammessa: errore di lunghezza (in piu' o in meno) che da solo fa calare il F/B di 	Allowed tolerance: length error (plus or minus) that alone makes the F/B drop by 
+Tolleranze: 	Tolerances: 
+Trappola LC per 	LC trap for 
+Trappola RLC di AO sul filo 	AO RLC trap on wire 
+Trappola coassiale per 	Coax trap for 
+Trasformatore 	Transformer 
+Trasformatore alla riga 	Transformer at row 
+Trasformatore, porta 1 	Transformer, port 1 
+Trasformatore, porta 2 	Transformer, port 2 
+Trasformatori 	Transformers 
+Tre dipoli uguali a 120 gradi, con il punto di alimentazione a 	Three equal dipoles at 120 degrees, with the feed point at 
+Trovato: 	Found: 
+Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il "collegamento" di MMANA, gia' coperto dalle formule. 	A variable written as a formula (LDE = LR*0,985) follows the others by itself: it is the MMANA "link", already covered by the formulas. 
+Unita' di misura non riconosciuta: 	Unit of measurement not recognized: 
+Valore non valido nel file .ANT: 	Invalid value in the .ANT file: 
+Valori del passo 	Step values 
+Variabile 	Variable 
+Variabile definita due volte: 	Variable defined twice: 
+Variabile sconosciuta: 	Unknown variable: 
+Variabili di AutoEZ: 	AutoEZ variables: 
+Vento di progetto (	Design wind (
+Vento: 	Wind: 
+Verifica finita: 	Check finished: 
+Verticale multibanda: 	Multiband vertical: 
+Voto del passo 	Step score 
+W. Zwickel OE2TZL (QSP 10/93): 23 cm, lato 61 mm (0,258 λ a 1270 MHz), filo 2 mm, 31 mm (0,131 λ), lamiera, 8 dBd, ROS sotto 1,6 in banda. 	W. Zwickel OE2TZL (QSP 10/93): 23 cm, side 61 mm (0.258 λ at 1270 MHz), 2 mm wire, 31 mm (0.131 λ), sheet metal, 8 dBd, SWR below 1.6 in band. 
+W3DZZ (7,05 MHz, 60 pF): L calcolata 	W3DZZ (7.05 MHz, 60 pF): L calculated 
+W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai 	W5QJR, AA5TB. Each calculator creates the NEC model with the calculated dimensions (here the capacitor as a C load) and checks it with the engine: next to the 
+W6PQL: 23 cm, lato 55 mm (0,238 λ) con filo #12 isolato, 22 mm (0,095 λ), rete da 1/2 x 1 pollice di circa 20 x 25 cm, circa 9 dBi, 60 gradi, F/B oltre 25 dB. 	W6PQL: 23 cm, side 55 mm (0.238 λ) with insulated #12 wire, 22 mm (0.095 λ), 1/2 x 1 inch mesh of about 20 x 25 cm, about 9 dBi, 60 degrees, F/B over 25 dB. 
+Wheeler, bobina lunga 	Wheeler, long coil 
+YA-NEC - Distanze di stack (	YA-NEC - Stacking distances (
+YA-NEC - Yagi multibanda HF, due elementi per banda: 	YA-NEC - HF multiband Yagi, two elements per band: 
+YA-NEC correzione del boom (-): 	YA-NEC boom correction (-): 
+YA-NEC esiste grazie al lavoro di colleghi radioamatori e ricercatori che hanno reso pubblico il loro codice. 	YA-NEC exists thanks to the work of fellow radio amateurs and researchers who made their code public. 
+YA-NEC lo calcola come filo nudo alla quota minima che il terreno di Sommerfeld accetta, lambda/1000 (16 cm a 160 m, 8 cm a 80 m, 4 cm a 40 m). 	YA-NEC calculates it as a bare wire at the minimum height that the Sommerfeld ground accepts, lambda/1000 (16 cm at 160 m, 8 cm at 80 m, 4 cm at 40 m). 
+Yagi MathWorks, nostro ottimizzatore (simplesso, 	MathWorks Yagi, our optimizer (simplex, 
+Yagi incrociate: 	Crossed Yagis: 
+Yagi multibanda: 	Multiband Yagi: 
+Z al loop 	Z at the loop 
+Z antenne / 	Antenna Z / 
+Z ottenuta: 	Resulting Z: 
+Zona 	Zone 
+Zoom su 	Zoom on 
+\n(allegare lo zip della segnalazione preparato da YA-NEC)	\n(attach the report zip prepared by YA-NEC)
+\nDa ottenere: 	\nTo obtain: 
+\ndopo:  	\nafter:  
+\nformule: 	\nformulas: 
+\nnonsalvato\n	\nnotsaved\n
+\nsalvato\n	\nsaved\n
+a mano (MOXGEN 	by hand (MOXGEN 
+accorciamento per braccio dovuto alla trappola (interno 	shortening per arm due to the trap (inner 
+accordo e 	tuning and 
+accordo, passo 	tuning, step 
+aggiornato (	updated (
+alim. 2 x 	feed 2 x 
+allontanare gli elementi ad almeno 	move the elements to at least 
+altezza efficace 	effective height 
+altezza fissata: la forma (angolo al vertice 	height fixed: the shape (apex angle 
+anello da 	ring of 
+angolo al vertice 	apex angle 
+angolo di bordo 	edge angle 
+angolo di rotazione attorno a 	rotation angle around 
+antenna a 	antenna at 
+antinduttiva, almeno 	non-inductive, at least 
+apertura Kraus 	Kraus beamwidth 
+arancio: 	orange: 
+area efficace 	effective area 
+auto: 	auto: 
+autotrasformatore per EFHW, rapporto spire 	autotransformer for EFHW, turns ratio 
+avviso sull'impedenza delle spire che dipende dall'altezza sul riflettore. QFH: formule e tabella del conduttore di Coppens, geometria 	warning on the loop impedance depending on the height above the reflector. QFH: formulas and Coppens conductor table, geometry 
+avviso: versione 	warning: version 
+azimut 	azimuth 
+bacchetta 	rod 
+balun: 	balun: 
+banda di 	band of 
+baricentro 	centre of gravity 
+base delle spire 	base of the loops 
+bobina 	coil 
+boom 	boom 
+boom fino a 0,055 lambda = 	boom up to 0.055 lambda = 
+bordi della banda 	band edges 
+braccio 	arm 
+buildyourownantenna (2014, 4nec2): doppia biquad a 2450 MHz, lato 30,9 mm, 11 mm, riflettore 132 x 282 mm con bordi di 28,5 mm, circa 14 dBi. 	buildyourownantenna (2014, 4nec2): double biquad at 2450 MHz, side 30.9 mm, 11 mm, reflector 132 x 282 mm with 28.5 mm edges, about 14 dBi. 
+cala a 	drops to 
+calcolato: ci stanno 	calculated: there is room for 
+calcolo di 	calculation of 
+calcolo in corso: antenna singola e 	calculating: single antenna and 
+capacita' 	capacitance 
+capacita' propria 	self-capacitance 
+cappello: 	hat: 
+categoria 	category 
+cavo 	cable 
+ce alla quota z = 	ce at height z = 
+centro 	centre 
+centro di spinta del vento 	wind centre of pressure 
+cercati tra 	searched between 
+circa 	about 
+circa 0,02 lambda = 	about 0.02 lambda = 
+circonferenza 	circumference 
+coassiale 	coax 
+coda 	tail 
+come EZNEC e IV3PRK (convenzione approvata il 12/11/2026). RDF = guadagno nella direzione voluta - guadagno medio (dB). 	as EZNEC and IV3PRK (convention approved on 12/11/2026). RDF = gain in the wanted direction - average gain (dB). 
+come correggere: 	how to fix: 
+come una bobina da 	like a coil of 
+con preamp 	with preamp 
+con un dipolo e riflettore nel fuoco, e lo apre nella finestra principale. Verificato con EZNEC: disco da 1,2 m a 1296 MHz, scarto 0,06 %. 	with a dipole and reflector at the focus, and opens it in the main window. Checked with EZNEC: 1.2 m dish at 1296 MHz, deviation 0.06 %. 
+condizione non capita: 	condition not understood: 
+conducibilita' del terreno 	ground conductivity 
+conduttore tondo d = 	round conductor d = 
+consigliata 	suggested 
+contro 	versus 
+controllo con le tolleranze: candidato 	tolerance check: candidate 
+costante dielettrica del terreno 	ground dielectric constant 
+cuscinetto / rotore (sbalzo 	bearing / rotator (overhang 
+dal 20 m al 10 m 	from 20 m to 10 m 
+dalla cima fino a 	from the top down to 
+definire 	define 
+di segmenti in totale, distribuiti in proporzione alle lunghezze (almeno uno per tubo): le sorgenti e i carichi restano sugli stessi segmenti. 	segments in total, spread in proportion to the lengths (at least one per tube): sources and loads stay on the same segments. 
+dipende da 	depends on 
+dipolo corto 	short dipole 
+dir. 	dir. 
+direttore 	director 
+distanza 	distance 
+distanza del 	distance of 
+dopo il λ/4: ROS 	after the λ/4: SWR 
+due cavi da 	two cables of 
+due elementi paralleli a 	two parallel elements at 
+due sorgenti sullo stesso segmento (filo 	two sources on the same segment (wire 
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	and in C# for YA-NEC. Reference interface: xnec2c by 5B4AZ and Eric KJ7LNW.\n
+e la installa: entra in funzione al prossimo avvio, una finestra lo avvisa e il programma si riavvia da solo dopo 10 secondi, riaprendo il modello (copia della versione precedente in data/aggiornamenti). Non tocca config.ini ne' i modelli. 	and installs it: it takes effect at the next start, a window warns and the program restarts by itself after 10 seconds, reopening the model (copy of the previous version in data/aggiornamenti). It does not touch config.ini or the mod. 
+e' piu' corto del raggio del tubo e il punto di calcolo cade dentro il conduttore. EZNEC lo rifiuta (Geometry Error: "center of end segment within wire"). 	is shorter than the tube radius and the calculation point falls inside the conductor. EZNEC rejects it (Geometry Error: "center of end segment within wire"). 
+effetto non calcolato: 	effect not calculated: 
+effetto: risonanza 	effect: resonance 
+efficienza 	efficiency 
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	efficiency calculated from the far field, Prad / (Prad + losses) = {3:0.0} %.
+elementi 	elements 
+elemento 	element 
+elevazione 	elevation 
+elica MathWorks: 	MathWorks helix: 
+entro −0,25 dB: da 	within −0.25 dB: from 
+eq. 4-2 «antenna corta»: 	eq. 4-2 «short antenna»: 
+equilibrio delle aree al vento: 	balance of the wind areas: 
+errore: 	error: 
+estremi a 	ends at 
+fattore di velocita' 	velocity factor 
+fili 	wires 
+fili non collegati troppo vicini (superficie-superficie 	unconnected wires too close (surface to surface 
+filo 	wire 
+filo usato 	wire used 
+formule circolari: 	circular formulas: 
+forza massima (vento a 	maximum force (wind at 
+freccia in punta 	sag at the tip 
+frequenza di calcolo 	calculation frequency 
+griglia della coda 	tail grid 
+guadagno con lobi sotto 	gain with sidelobes below 
+guadagno: nominale 	gain: nominal 
+i terminali della trappola sono la calza all'inizio e il centrale alla fine. La capacita' e' quella tra centrale e calza per tutta la lunghezza avvolta. 	the trap terminals are the braid at the start and the centre conductor at the end. The capacitance is the one between centre conductor and braid over the whole wound length. 
+il filo 	the wire 
+il filo con l'etichetta 	the wire with label 
+il punto piu' basso dell'antenna e' a 	the lowest point of the antenna is at 
+induttanza 	inductance 
+induttanza di Wheeler sul diametro medio (forma + cavo) e capacita' del cavo per la lunghezza avvolta: 	Wheeler inductance on the mean diameter (form + cable) and cable capacitance for the wound length: 
+ingombro 	size 
+isolato in PTFE, 	PTFE insulated, 
+l'antenna e' grande 	the antenna is large 
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedance and losses become less and less reliable as the wire goes down (see BOG in the manual). For a safe result: at least lambda/200 = {3:0.###} m.
+la cella 	the cell 
+la durata delle funzioni, CPU, GPU, RAM e disco. Per segnalare una lentezza basta mandare il file della sessione. 	the duration of the functions, CPU, GPU, RAM and disk. To report a slowness just send the session file. 
+la frequenza 	the frequency 
+la frequenza di calcolo 	the calculation frequency 
+la geometria non si costruisce: 	the geometry cannot be built: 
+la rete calcolata riporta il carico a 	the calculated network brings the load to 
+la scheda 	the card 
+la variabile 	the variable 
+lambda/1000 = 	lambda/1000 = 
+lambda/4 x 	lambda/4 x 
+lato 	side 
+licenza: 	licence: 
+linea 	line 
+linea 450 Ω 	450 Ω line 
+linea tra i fili 	line between the wires 
+linea tra il filo 	line between wire 
+linear loading: piega di 	linear loading: fold of 
+lobi 	sidelobes 
+lobo 	lobe 
+lobo (az 	lobe (az 
+loop di accoppiamento 	coupling loop 
+lunghezza 	length 
+lunghezza ± 	length ± 
+manica aperta: due elementi a 	open sleeve: two elements at 
+mare (riflessione con εr 	sea (reflection with εr 
+margine 	margin 
+martybugs.net: filo 1,6 mm, 15-17 mm, PCB 123 mm, 11-12 dBi, doppia biquad circa 13 dBi, apertura 50 gradi. 	martybugs.net: 1.6 mm wire, 15-17 mm, PCB 123 mm, 11-12 dBi, double biquad about 13 dBi, 50 degree beamwidth. 
+massa 	mass 
+massimo 	maximum 
+media migliore tra 	best average between 
+min 2,5 diametri: max 	min 2.5 diameters: max 
+minima 	minimum 
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), Z0 = 60 (ln(2h/a) - 1), x 0,95 per l'effetto di estremita': 	line model of the loaded arm X = Z0 (cot(beta b) - tan(beta a)), Z0 = 60 (ln(2h/a) - 1), x 0.95 for the end effect: 
+momento torcente sul rotore con la staffa al baricentro del peso (	torque on the rotator with the clamp at the centre of gravity of the weight (
+nel file importato l'elemento piu' lungo e' 	in the imported file the longest element is 
+non entrano in un solo strato: nel foro di 	they do not fit in a single layer: in the hole of 
+nucleo 	core 
+obiettivo 	target 
+ogni antenna ha la sua sorgente, uguale in ampiezza e fase (cavi uguali e divisore ideale). Se il modello e' gia' uno stack, sposta le copie alle distanze DL6WU. 	each antenna has its own source, equal in amplitude and phase (equal cables and ideal divider). If the model is already a stack, it moves the copies to the DL6WU distances. 
+ogni braccio 	each arm 
+oltre 	beyond 
+origine del modello nel fuoco: 	model origin at the focus: 
+parte dell'antenna e' sotto il suolo (fino a 	part of the antenna is below ground (down to 
+parte dell'antenna e' sotto il suolo o distesa sul suolo: 	part of the antenna is below ground or lying on the ground: 
+partenza 	start 
+partenza a caso 	random start 
+passo 	step 
+peggiore in banda 	worst in band 
+per braccio: carico a 	per arm: load at 
+percentuale 	percentage 
+perimetro 	perimeter 
+perimetro trovato dal motore NEC (risonanza della spira alimentata): 	perimeter found by the NEC engine (resonance of the fed loop): 
+peso 	weight 
+polarizzazione 	polarization 
+porta 	port 
+posizione 	position 
+posizione consigliata della staffa (	suggested clamp position (
+preampli consigliato 	recommended preamp 
+presa 	tap 
+pressione 	pressure 
+progetto: 	design: 
+puntamento entro 	pointing within 
+punte 	tips 
+punto piu' basso, 	lowest point, 
+punto piu' sollecitato a 	most stressed point at 
+punto: 	point: 
+quadratura NEC: 	NEC quadrature: 
+quota 	height 
+quote 	heights 
+rad. 	rad. 
+radiali sul terreno: 	radials on the ground: 
+radiatore multibanda 	multiband radiator 
+radiatori (	radiators (
+raggio 	radius 
+raggio = d / 2 = 	radius = d / 2 = 
+raggio equivalente = 0,25 × larghezza = 	equivalent radius = 0.25 × width = 
+raggio equivalente = 0,59 × 	equivalent radius = 0.59 × 
+raggio equivalente ≈ 0,2 (a + b) = 	equivalent radius ≈ 0.2 (a + b) = 
+rame: pista e piano di massa · punto rosso: alimentazione · cerchio: corto a massa / foro · pista 	copper: track and ground plane · red dot: feed · circle: short to ground / hole · track 
+rapporto 	ratio 
+rapporto assiale 	axial ratio 
+rastremazione 	taper 
+reale (er 	real (er 
+reattanza 	reactance 
+residuo entro il bordo: E 	residual within the edge: E 
+resistenza della calza e del centrale per effetto pelle con un fattore 3 per la treccia e fino a 3 per la vicinanza delle spire, 	resistance of braid and centre conductor from skin effect with a factor 3 for the braid and up to 3 for the proximity of the turns, 
+rettangolare W x t: 2 x 0,2235 (W + t) (Balanis). Compensazione: allungamento delle punte che riporta la risonanza del modello a linee di Schelkunoff 	rectangular W x t: 2 x 0.2235 (W + t) (Balanis). Compensation: lengthening of the tips that brings back the resonance of Schelkunoff's line model 
+ricalcolata a ogni frequenza, come la Stepped Diameter Correction di EZNEC. Solo elementi diritti e simmetrici, con sorgenti/carichi/linee al centro, 	recalculated at every frequency, like EZNEC's Stepped Diameter Correction. Only straight symmetric elements, with sources/loads/lines at the centre, 
+ricerca iniziale 	initial search 
+riferimento circolare nella cella 	circular reference in the cell 
+rifl. 	refl. 
+rifl. U 	U refl. 
+riflessione 	reflection 
+riflessione GX nei piani 	GX reflection in the planes 
+riflettore 	reflector 
+riflettore a U = 3 R + 2 tr R, spazio tra le punte (1 - td - tr) R. JN1GLB: td = 0,744 / 0,711 / 0,705 / 0,702 / 0,694, tr = 0,136 / 0,114 / 0,110 / 0,111 / 0,121. 	U reflector = 3 R + 2 tr R, gap between the tips (1 - td - tr) R. JN1GLB: td = 0.744 / 0.711 / 0.705 / 0.702 / 0.694, tr = 0.136 / 0.114 / 0.110 / 0.111 / 0.121. 
+riga 	row 
+risonanza a 	resonance at 
+risonanza nel modello, 	resonance in the model, 
+rispetto al quarto d'onda pieno (	compared to the full quarter wave (
+risuona a 	resonates at 
+rotazione GR, 	GR rotation, 
+salva e poi 	save and then 
+scala x 	scale x 
+scalare il modello del 	scale the model of 
+scansione 	scan 
+schede 	cards 
+scrivere 	write 
+se l'antenna non e' fatta cosi', riaprire il file con l'unita' giusta o scalare la geometria (barra Geometria, Scala: 	if the antenna is not made like this, reopen the file with the right unit or scale the geometry (Geometry bar, Scale: 
+segmenti per λ: 	segments per λ: 
+segmenti: 	segments: 
+segmento 	segment 
+senza le statistiche ARRL degli angoli di arrivo la media e' uniforme su 	without the ARRL arrival-angle statistics the average is uniform over 
+senza: 	without: 
+serve a calcolare 	used to calculate 
+sezione: tubo 	section: tube 
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	it is created up to {3:0.00} m in diameter; the aperture calculation alongside applies to any diameter and already accounts for the ribs (box above).
+sigma ottimo = 0,243 tau - 0,051 = 	optimum sigma = 0.243 tau - 0.051 = 
+simmetria, 	symmetry, 
+singola 	single 
+sola bobina 	coil only 
+sopra a 	above at 
+sopravvivenza 	survival 
+sorgente sul filo 	source on wire 
+sorgente sul segmento 	source on segment 
+sorgente sul segmento di punta del filo 	source on the tip segment of wire 
+sotto 	below 
+spazio disco-cono 	dish-cone gap 
+specchia nel piano 	mirror in the plane 
+spento: 	off: 
+spezzoni tra le quote: 	sections between the heights: 
+spira circa 	turn about 
+spostare 	move 
+stack (singola 	stack (single 
+stack: spaziatura orizzontale 	stack: horizontal spacing 
+stack: spaziatura verticale 	stack: vertical spacing 
+staffa attuale 	current clamp 
+stima: 	estimate: 
+striscia da 	strip of 
+stub a U: 	U stub: 
+stub sul filo 	stub on wire 
+suggerita 	suggested 
+sul filo 	on the wire 
+tabella di Coppens per 	Coppens table for 
+tacche degli anelli (arcarecci), dell'attacco dei puntoni e ogni 100 mm di raggio. Il PDF va stampato al 100 % (senza "adatta alla pagina"): 	notches of the rings (purlins), of the strut attachment and every 100 mm of radius. The PDF must be printed at 100 % (without "fit to page"): 
+tempo siderale locale 	local sidereal time 
+terreno 	ground 
+tolleranza su d: ± 0,2 mm (± 	tolerance on d: ± 0.2 mm (± 
+torcente sul rotore con la staffa attuale (	torque on the rotator with the current clamp (
+trappola LC sul dipolo dei 	LC trap on the dipole of 
+trappola sul dipolo dei 	trap on the dipole of 
+trasformatore 	transformer 
+tubi di lega 	alloy tubes 
+un cavo da 	a cable of 
+un elemento lungo 	a long element 
+un filo da 	a wire of 
+una libera interpretazione delle schede di MMANA: tabella dei fili sotto la struttura 3D (una riga per filo), posizione di sorgenti e carichi 	a free interpretation of the MMANA cards: wire table under the 3D structure (one row per wire), position of sources and loads 
+uniforme 	uniform 
+valide fino a B = 0,055 lambda (DL6WU, fit di G3SEK). Boom quadro: lato x 1,18 (SM5BSZ). Staffa conduttiva sopra il boom: circa 0,65 (DG7YBN on-boom). 	valid up to B = 0.055 lambda (DL6WU, G3SEK fit). Square boom: side x 1.18 (SM5BSZ). Conductive clamp above the boom: about 0.65 (DG7YBN on-boom). 
+valori presi dal 	values taken from 
+variabili definite e mai usate: 	variables defined and never used: 
+vb = vb,0 · ca · cr (zona 	vb = vb,0 · ca · cr (zone 
+verde: 	green: 
+verifica di 	check of 
+verificata alla fonte, a 88 gradi coincide entro 0,2 Ω per 15 e 60 radiali, incertezza 2-4 Ω. Avvertenza (N6MW, 2016): la parte teorica di Brown 	checked at the source, at 88 degrees it agrees within 0.2 Ω for 15 and 60 radials, uncertainty 2-4 Ω. Caveat (N6MW, 2016): the theoretical part of Brown 
+versione 	version 
+vista dall'alto: alimentato solo il 	top view: only the 
+yagi multibanda 	multiband yagi 
+zona 	zone 
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segments: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} on {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficiency {10:0.00} %, AGT {11:0.00} dB
+|rho| = 	|rho| = 
+° di elevazione	° of elevation
+°, elevazione 	°, elevation 
+— alimentati    - - parassiti / code    ■ trappole    ● alimentazione (non in scala)	— fed    - - parasitics / tails    ■ traps    ● feed (not to scale)
+— elementi da realizzare (con il boom)	— elements to build (with the boom)
+— rilievo (misure reali, con il boom)	— survey (real dimensions, with the boom)
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19th ed., ch. 18 (W9PE 2 m Yagi): three elements at 0.2 λ, about 7 dBi and F/B over 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Agreement of YA-NEC with nec2c (20/15/10 m rods): reflectors at 0.185 / 0.197 / 0.222 λ, directors at 0.095 / 0.116 / 0.114 λ: within the ranges of the sources.
+↶ Annulla	↶ Undo
+↷ Ripeti	↷ Redo
+■ Ferma	■ Stop
+▶ Avvia	▶ Start
+● aggiornato in 	● updated in 
+☐ mantieni lunghezza del boom	☐ keep boom length
+⚠ APPROSSIMAZIONE. Il BOG e' un filo isolato appoggiato al suolo: il NEC-2 non tratta fili sul terreno, interrati o isolati (serve il NEC-4). 	⚠ APPROXIMATION. The BOG is an insulated wire lying on the ground: NEC-2 does not handle wires on the ground, buried or insulated (NEC-4 is needed). 
+⚠ Le piastre si aggiungono al modello aperto, che resta quello caricato (non si apre un modello nuovo): Annulla nella barra Geometria toglie la modifica. 	⚠ The plates are added to the open model, which stays the loaded one (no new model is opened): Undo in the Geometry bar removes the change. 
+⚠ Modello approssimato (NEC-2): filo nudo a 	⚠ Approximate model (NEC-2): bare wire at 
+⚠ Z aperto e Z in corto differiscono meno del 5%: nel modello l'onda si spegne prima dell'estremo lontano, la terminazione non conta e il F/B non si regola. 	⚠ Open Z and shorted Z differ by less than 5%: in the model the wave dies out before the far end, the termination does not count and the F/B cannot be adjusted. 
+⚠ modello NEC: 	⚠ NEC model: 
+⚠ sotto lambda/1000 = 	⚠ below lambda/1000 = 
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ no warnings: the segmentation meets the chosen level
+✓ nessun errore e nessun avviso	✓ no errors and no warnings
+variabili del modello	model variables
+nuova variabile dal modello	new variable from the model
+(nessuna: il modello non ha schede SY)	(none: the model has no SY cards)
+(tutte le variabili sono gia' nell'elenco)	(all the variables are already in the list)
+Quota di tutta l'antenna (Z)	Height of the whole antenna (Z)
+Scrivi una variabile nella linguetta Variabili…	Write a variable in the Variables tab…
+Elemento diritto	Straight element
+Elemento piegato	Bent element
+lunghezza (ora {0} m)	length (now {0} m)
+perimetro (ora {0} m)	perimeter (now {0} m)
+lunghezza sviluppata (ora {0} m)	developed length (now {0} m)
+posizione lungo l'asse (ora {0} m)	position along the axis (now {0} m)
+raggio (ora {0} mm)	radius (now {0} mm)
+Variabile nuova	New variable
+Minimo / massimo	Minimum / maximum
+Cosa cambia	What changes
+(±3 %, si cambiano dopo nell'elenco)	(±3 %, they can be changed later in the list)
+in ocra: dove agisce la variabile	in ochre: where the variable acts
+Crea la variabile	Create the variable
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Variable {0} created: the geometry does not change. "Undo" in the Geometry bar removes it.
+Struttura 3D: dove agisce la variabile ▾	3D structure: where the variable acts ▾
+Struttura 3D ▸	3D structure ▸
+Clic: nasconde o mostra la struttura	Click: hides or shows the structure
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	solid ochre: uses the variable · dashed ochre: uses it through another variable
+non tocca la geometria (nessun filo la usa direttamente)	does not touch the geometry (no wire uses it directly)
+attraverso {0}: fili {1}	through {0}: wires {1}
+ e Z2 di tutti i fili (	 and Z2 of all wires (
+Z1 e Z2 di tutti i fili (	Z1 and Z2 of all wires (
+lunghezza (filo 	length (wire 
+perimetro (fili 	perimeter (wires 
+raggio in mm (	radius in mm (
+posizione lungo l'asse 	position along the axis 
+quota aggiunta a tutta l'antenna (m)	height added to the whole antenna (m)

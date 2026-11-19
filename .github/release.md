@@ -2,6 +2,12 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.5.1** (capitolo 26.1 del manuale):
+- **Ottimizzatore**: «+ aggiungi variabile» crea una variabile dal modello quando non ce ne sono: lunghezza (o perimetro dei loop), posizione e raggio di ogni elemento, quota dell'antenna; il riquadro di conferma mostra in ocra dove agisce. Vale per qualunque antenna di fili: Yagi, Quagi, quad, loop;
+- **Variabili**: a destra la struttura 3D con in ocra i fili su cui agisce la variabile scelta;
+- **Correzioni**: loop magnetica capacitiva (etichetta del condensatore), distanze di stack senza distanze valide (nessuna proposta), Vento alla prima apertura dei Calcoli meccanici;
+- **Traduzione inglese** completata, anche nei testi composti con i numeri.
+
 **Novità della 1.5** (capitolo 26 del manuale):
 - **Calcolatori**: la famiglia **Calcoli meccanici** entra nei Calcolatori (Sollecitazioni elementi accesa); **Resistenza di radiazione** con la reattanza del dipolo e del monopolo corti e la bobina di risonanza; **Dipolo ripiegato** con R e X in frequenza; **Loop magnetica** a più spire e con l'accoppiamento **capacitivo** (due condensatori); formule dell'Antenna Engineering Handbook, 4ª ed.;
 - **Distanze di stack HF** in una voce a sé, accanto a quella VHF/UHF;

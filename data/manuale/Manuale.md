@@ -2046,3 +2046,21 @@ A risonanza la Z resta sotto 73 Ω × rapporto, perche' il dipolo equivalente e'
 Restano fuori le reti di adattamento di Zmatch: un messaggio lo dice.
 
 **Salva con nome in .nec.** Per i modelli con sorgenti di corrente (EZNEC) o «mark out» si scrivono le tensioni calcolate alla frequenza del modello e solo le sorgenti accese, con due righe CM che lo dicono: cosi' nec2c, 4nec2 e xnec2c danno lo stesso risultato di YA-NEC. Vedi [[Calcolo: 1.6 Modelli di altri programmi: lettura e prova (dalla 1.5)]].
+
+### 26.1 Dalla 1.5.1
+
+**Variabile nuova dall'Ottimizzatore.** Se il modello non ha variabili (o ne servono altre), «+ aggiungi variabile» propone **nuova variabile dal modello**: un elenco degli elementi, cioe' dei gruppi di fili collegati tra loro (un filo diritto, un loop chiuso fatto di piu' fili, un elemento piegato). Per ogni elemento:
+- **lunghezza** (per un loop **perimetro**): tutti i vertici si allargano o si stringono attorno al centro dell'elemento, la forma resta uguale;
+- **posizione lungo l'asse** dell'antenna (il boom, quando c'e');
+- **raggio**, in mm.
+
+C'e' anche **Quota di tutta l'antenna (Z)**. Il riquadro di conferma mostra nome (L, P o R con il numero del filo: L3, P3, R3; H per la quota), valore, minimo e massimo (±3 %), le coordinate che cambiano e la struttura con in ocra il filo toccato. «Crea la variabile» scrive la scheda SY, mette le formule nei fili, controlla che la geometria resti identica e aggiunge la variabile all'elenco; «Annulla» della barra Geometria la toglie. Vale per qualunque antenna fatta di fili GW: Yagi, Quagi, quad, loop, verticali.
+
+**Dove agisce la variabile.** Nella linguetta **Variabili**, a destra, la struttura 3D evidenzia in ocra i fili su cui agisce la variabile scelta (clic sulla riga): ocra pieno = la usa direttamente, tratteggiato = attraverso un'altra variabile; le frecce dicono se cambia la lunghezza, la posizione o la quota. Sotto il disegno: «filo 3: Y1, Y2». Clic sul titolo: nasconde il riquadro.
+
+**Correzioni.**
+- Loop magnetica con accoppiamento capacitivo: il disegno non mostra piu' l'etichetta del condensatore in alto.
+- Distanze di stack: se tutte le distanze superano il ROS attivo massimo, nessuna distanza e' proposta (riquadro «Nessuna distanza proposta» e avviso con cosa fare).
+- Calcoli meccanici: il Vento conta gli elementi del modello gia' alla prima apertura.
+
+**Traduzioni.** L'inglese ha le voci nuove della 1.3-1.5 e i pezzi dei testi composti con i numeri (risultati, schede, note). Le altre lingue, dove manca la loro traduzione, mostrano l'inglese.
