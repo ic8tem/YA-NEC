@@ -755,25 +755,25 @@ namespace YaNec
             if (ottCards == null) return;
             if (ott == null || ott.Iniziale == null)
             {
-                OttScheda("stato", ottInCorso ? "in preparazione" : "pronto", ottInCorso ? "calcolo del modello di partenza" : "premi Avvia", ottInCorso ? Pal.Green : (Color?)null);
+                OttScheda("stato", ottInCorso ? "in preparazione" : Lang.T("pronto"), ottInCorso ? "calcolo del modello di partenza" : "premi Avvia", ottInCorso ? Pal.Green : (Color?)null);
                 foreach (string k in new[] { "voto", "g", "fb", "ros", "z" }) OttScheda(k, "-", " ");
                 return;
             }
             TimeSpan t = DateTime.Now - ottT0;
             string tempo = t.TotalMinutes >= 1 ? string.Format(CultureInfo.CurrentCulture, "{0} min {1} s", (int)t.TotalMinutes, t.Seconds) : string.Format(CultureInfo.CurrentCulture, "{0} s", (int)t.TotalSeconds);
-            OttScheda("stato", ottInCorso ? "in corso" : (esito ?? "fermo"), "passo " + ott.Passi + " - " + tempo, ottInCorso ? Pal.Green : (Color?)null);
+            OttScheda("stato", ottInCorso ? "in corso" : Lang.T(esito ?? "fermo"), Lang.F("passo {0} - {1}", ott.Passi, tempo), ottInCorso ? Pal.Green : (Color?)null);
             OttPasso b = ottScelto ?? ott.Migliore, p0 = ott.Iniziale;
             if (b == null) return;
             bool ripreso = ottScelto != null && ottScelto != ott.Migliore;
             ottCard["voto"][0].Text = ripreso ? "Voto del passo " + b.N : "Voto migliore";
-            OttScheda("voto", Fmt(b.Voto, 1), "partenza " + Fmt(p0.Voto, 1));
-            OttScheda("g", Fmt(b.G, 2) + " dBi", "partenza " + Fmt(p0.G, 2));
-            OttScheda("fb", Fmt(b.FB, 1) + " dB", "partenza " + Fmt(p0.FB, 1));
+            OttScheda("voto", Fmt(b.Voto, 1), Lang.F("partenza {0}", Fmt(p0.Voto, 1)));   // 1.5.2: tradotti (lezione 15 EN)
+            OttScheda("g", Fmt(b.G, 2) + " dBi", Lang.F("partenza {0}", Fmt(p0.G, 2)));
+            OttScheda("fb", Fmt(b.FB, 1) + " dB", Lang.F("partenza {0}", Fmt(p0.FB, 1)));
             ottCard["ros"][0].Text = "ROS (" + Fmt(model != null ? model.Z0 : 50, 1) + " ohm)";
             double ros = Analysis.Swr(b.Z, model != null ? model.Z0 : 50);
-            OttScheda("ros", Fmt(ros, 2), "peggiore in banda " + Fmt(b.RosPeggiore, 2), ros <= 1.5 ? Pal.Green : (Color?)null);
+            OttScheda("ros", Fmt(ros, 2), Lang.F("peggiore in banda {0}", Fmt(b.RosPeggiore, 2)), ros <= 1.5 ? Pal.Green : (Color?)null);
             OttRigaObiettivo zo = ottOb.Find(q => q.Chiave == "z");
-            OttScheda("z", Fmt(b.Z.Real, 1) + " " + (b.Z.Imaginary < 0 ? "-" : "+") + "j" + Fmt(Math.Abs(b.Z.Imaginary), 1), zo != null && zo.Peso.Value > 0 ? "obiettivo " + zo.Soglia.Text : " ");
+            OttScheda("z", Fmt(b.Z.Real, 1) + " " + (b.Z.Imaginary < 0 ? "-" : "+") + "j" + Fmt(Math.Abs(b.Z.Imaginary), 1), zo != null && zo.Peso.Value > 0 ? Lang.F("obiettivo {0}", zo.Soglia.Text) : " ");
         }
 
         void OttRegistro()
