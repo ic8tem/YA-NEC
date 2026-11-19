@@ -121,7 +121,7 @@ namespace YaNec
                     lines.Add("");
                     lines.Add(Lang.F(hover >= 0 ? "punto: {0} MHz" : "progetto: {0} MHz", Draw.N(F[show], 3)));
                     lines.Add("Z = " + Draw.N(z.Real, 2) + (z.Imaginary >= 0 ? " +j" : " -j") + Draw.N(Math.Abs(z.Imaginary), 2) + " ohm");
-                    lines.Add("ROS = " + Draw.N(YaNec.Engine.Analysis.Swr(z, Z0), 2));
+                    lines.Add(Lang.T("ROS") + " = " + Draw.N(YaNec.Engine.Analysis.Swr(z, Z0), 2));
                     Complex g = (z - Z0) / (z + Z0);
                     lines.Add("|rho| = " + Draw.N(Complex.Abs(g), 3) + "  RL = " + Draw.N(-20 * Math.Log10(Math.Max(1e-9, Complex.Abs(g))), 1) + " dB");
                     if (hover >= 0) ctx.DrawEllipse(null, Pal.P(Pal.Fore, 2), Map(g, c, R), 7, 7);
