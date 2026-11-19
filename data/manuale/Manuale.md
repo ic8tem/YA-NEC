@@ -2098,6 +2098,8 @@ Oltre 40 oggetti le etichette si nascondono e resta il simbolo, per non coprire 
 - Correzione del boom: nel disegno i nomi degli elementi vicini (riflettore, radiatore, D1) non si accavallano piu' (due righe alternate) e non coprono la nota «differenza esagerata per vederla».
 - Dopo Nuovo, e aprendo un file con Apri modello, la tendina Esempi torna a «Esempi...».
 
+**Terreno a scomparsa e barra di stato.** La legenda «Come viene disegnato ogni terreno» non sta piu' sotto il disegno della Struttura 3D (che guadagna spazio): si apre con il pulsante **Mostra terreno** a sinistra della barra di stato, in basso, e si chiude con lo stesso pulsante o con Esc. Ogni errore scritto nella barra di stato e' in grassetto e compare anche in una finestra con **OK**; se arriva un altro errore mentre la finestra e' aperta, il testo si aggiorna nella stessa finestra.
+
 **Linguette riordinate (IC8TEM 19/11/2026).** Le linguette principali passano da 16 a 13:
 - **Smith** e' l'ultima voce della fascia dei **Diagrammi**;
 - **NEC/correnti** unisce NEC e Correnti (sottolinguette NEC e Correnti);

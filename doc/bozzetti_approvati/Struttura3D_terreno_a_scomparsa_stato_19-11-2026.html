@@ -1,0 +1,71 @@
+<title>Terreno e barra di stato</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#eef1f5;--card:#fff;--ink:#1b2430;--mut:#5d6878;--line:#c9d1dc;--bar:#1d2a3a;--barink:#e7edf5;--blu:#2f6fd6;--ora:#e08a00;--rosso:#d23c3c;--nota:#fff3df;--f:"Segoe UI",Inter,system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14181e;--card:#1c222a;--ink:#e3e8ee;--mut:#9aa6b4;--line:#34404f;--bar:#0d131a;--barink:#d8e0ea;--blu:#6f9fee;--ora:#ffad33;--rosso:#ff6b6b;--nota:#3a2c14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14181e;--card:#1c222a;--ink:#e3e8ee;--mut:#9aa6b4;--line:#34404f;--bar:#0d131a;--barink:#d8e0ea;--blu:#6f9fee;--ora:#ffad33;--rosso:#ff6b6b;--nota:#3a2c14;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1200px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:1.3rem;margin:0 0 4px;text-wrap:balance}
+h2{font-size:1rem;margin:26px 0 8px}
+.sub{color:var(--mut);margin:0 0 14px;max-width:100ch;line-height:1.45}
+.fin{position:relative;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vista{height:250px;position:relative;background:linear-gradient(180deg,var(--card),var(--bg))}
+.vista .str{position:absolute;left:12%;top:30%;width:46%;height:3px;background:linear-gradient(90deg,#3a6ee8,#2fb36b,#f2c12e,#e8463a);transform:rotate(-22deg);border-radius:2px}
+.vista .aiuto{position:absolute;right:12px;bottom:8px;font-size:.75rem;color:var(--mut)}
+.vista .leg{position:absolute;left:12px;bottom:8px;font-size:.75rem;color:var(--mut)}
+.stato{display:flex;align-items:center;gap:10px;background:var(--bar);color:var(--barink);padding:5px 10px;font-size:.85rem;min-height:32px}
+.btn{border:1px solid #4a6787;background:#2f4a66;color:#fff;border-radius:14px;padding:3px 12px;font:inherit;font-size:.8rem;cursor:pointer;white-space:nowrap}
+.btn.on{background:var(--ora);border-color:var(--ora)}
+.err{color:#ff8a8a;font-weight:700}
+.tendina{position:absolute;left:8px;bottom:40px;width:min(760px,calc(100% - 16px));background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.25);padding:10px 12px}
+.tendina h3{margin:0 0 8px;font-size:.88rem}
+.griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:6px 8px}
+.t{font-size:.72rem;color:var(--ink)}
+.t i{display:block;height:16px;border-radius:2px;border:1px solid var(--line);margin-bottom:2px}
+.nuovo{outline:2px dashed var(--ora);outline-offset:3px}
+.modale{position:absolute;inset:0;background:rgba(10,15,22,.45);display:flex;align-items:center;justify-content:center}
+.dlg{background:var(--card);border-radius:10px;border:1px solid var(--line);width:min(440px,90%);padding:16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.dlg h3{margin:0 0 8px;color:var(--rosso);font-size:1rem}
+.dlg p{margin:0 0 14px;line-height:1.4}
+.dlg .ok{float:right;background:var(--blu);color:#fff;border:0;border-radius:6px;padding:5px 22px;font:inherit;cursor:pointer}
+.dlg:after{content:"";display:block;clear:both}
+.note{background:var(--nota);border:1px solid var(--ora);border-radius:6px;padding:8px 12px;font-size:.85rem;line-height:1.45;margin-top:10px;max-width:100ch}
+.tag{font-size:.72rem;color:var(--ora);font-weight:600;margin-left:6px}
+</style>
+<main>
+<h1>Struttura 3D · terreno a scomparsa e barra di stato</h1>
+<p class="sub">Bozzetto per YA-NEC 1.5.2, dalla richiesta di IC8TEM del 19/11/2026 19:38. Il riquadro «Come viene disegnato ogni terreno» lascia la Struttura 3D: il disegno 3D guadagna circa 190 px in altezza. In basso a sinistra c'è un pulsante «Mostra terreno»; accanto continua la barra di stato. Nelle tre viste qui sotto i pulsanti sono veri: prova a cliccarli.</p>
+
+<h2>1 · Normale <span class="tag">la legenda del terreno non occupa più spazio</span></h2>
+<div class="fin" id="f1">
+  <div class="vista"><div class="str"></div><div class="leg">corrente: bassa → alta</div><div class="aiuto">trascina: ruota | rotella: zoom | tasto destro: sposta | doppio clic: vista iniziale</div></div>
+  <div class="stato"><button class="btn nuovo" data-t="f1">Mostra terreno ▴</button><span>Sweep completato in 0,3 s: 41 punti.</span></div>
+</div>
+
+<h2>2 · Pulsante premuto <span class="tag">la tendina si apre sopra la barra, un altro clic o Esc la chiude</span></h2>
+<div class="fin" id="f2">
+  <div class="vista"><div class="str"></div><div class="aiuto">trascina: ruota | rotella: zoom | tasto destro: sposta | doppio clic: vista iniziale</div></div>
+  <div class="tendina" id="td2">
+    <h3>Come viene disegnato ogni terreno (il colore segue il tipo scelto nel menu Terreno)</h3>
+    <div class="griglia" id="gr"></div>
+  </div>
+  <div class="stato"><button class="btn on" data-t="f2">Nascondi terreno ▾</button><span>Sweep completato in 0,3 s: 41 punti.</span></div>
+</div>
+
+<h2>3 · Errore <span class="tag">grassetto nella barra e finestra con OK</span></h2>
+<div class="fin" id="f3">
+  <div class="vista"><div class="str"></div></div>
+  <div class="stato"><button class="btn" data-t="f3">Mostra terreno ▴</button><span class="err">Errore nel calcolo: il modello non ha sorgenti (scheda EX).</span></div>
+  <div class="modale" id="m3"><div class="dlg"><h3>Errore</h3><p>Errore nel calcolo: il modello non ha sorgenti (scheda EX).</p><button class="ok" id="ok3">OK</button></div></div>
+</div>
+<p class="note">Questa finestra con OK compare per <b>ogni</b> errore che va nella barra di stato, come hai chiesto: calcolo, sweep, terreno reale, ottimizzatore, lettura dei file. Un caso da valutare: mentre si scrive un modello a mano (lezione 1) la finestra «il modello non ha sorgenti» compare dopo il primo filo, prima di aver messo la sorgente. Se preferisci la tolgo solo per quell'avviso; altrimenti la lascio per tutti.</p>
+</main>
+<script>
+const T=[["Perfetto","repeating-linear-gradient(90deg,#8ea3c8 0 6px,#6f86b3 6px 7px)"],["Medio","#c8a476"],["Povero","#d9bb93"],["Citta'","#a8a8a8"],["Sabbia secca","#e9d9a6"],["Pascolo","#9fcf6d"],["Palude","#3f8a55"],["Fertile","#8a5a38"],["Molto buono","#6aa84f"],["Acqua dolce","#9cc9f0"],["Mare","#3b7dd8"],["Acqua dolce 10°","#a9d2f3"],["Acqua dolce 20°","#a2cdf1"],["Mare 10°","#3576d0"],["Mare 20°","#3a7ad5"],["Ghiaccio marino","#d9e8f3"],["Ghiaccio polare","#e3eef6"],["Calotta polare","#eef4f9"],["Terra artica","#bfc7bd"],["Citta' ind.","#9a9a9a"],["Citta' ind. media","#b3b3b3"],["Citta' ind. max","#8f8f8f"],["Personalizzato","#cfcfcf"]];
+document.getElementById('gr').innerHTML=T.map(t=>`<div class="t"><i style="background:${t[1]}"></i>${t[0]}</div>`).join('');
+function tendina(f,apri){let d=f.querySelector('.tendina');if(apri&&!d){d=document.getElementById('td2').cloneNode(true);d.id='';f.insertBefore(d,f.querySelector('.stato'));}if(d)d.hidden=!apri;const b=f.querySelector('.btn');b.classList.toggle('on',apri);b.textContent=apri?'Nascondi terreno ▾':'Mostra terreno ▴';}
+document.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>{const f=document.getElementById(b.dataset.t);const d=f.querySelector('.tendina');tendina(f,!(d&&!d.hidden));}));
+document.getElementById('ok3').addEventListener('click',()=>{document.getElementById('m3').hidden=true;});
+</script>

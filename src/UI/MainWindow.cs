@@ -502,6 +502,7 @@ namespace YaNec
             // --- barra di stato ---
             Border st = new Border { Background = Pal.B(Pal.Track), Padding = new Thickness(10, 4) };
             DockPanel sp = new DockPanel();
+            sp.Children.Add(PulsanteTerreno());   // 1.5.2: a sinistra della scritta di stato
             prog = new ProgressBar { Width = 220, Minimum = 0, Maximum = 100, IsVisible = false, Margin = new Thickness(8, 0, 0, 0) };
             DockPanel.SetDock(prog, Dock.Right);
             sp.Children.Add(prog);
@@ -585,7 +586,6 @@ namespace YaNec
             chkQuota.IsCheckedChanged += (s, e) =>
             {
                 view3d.ShowGroundAndHeight = chkQuota.IsChecked == true;
-                if (groundLegend != null) groundLegend.IsVisible = chkQuota.IsChecked == true;
                 view3d.InvalidateVisual();
             };
             CheckBox chkFasi = new CheckBox { Content = "Fasi delle sorgenti", IsChecked = true, Margin = new Thickness(4, 0) };
@@ -636,10 +636,10 @@ namespace YaNec
             // bozzetto approvato "Struttura divisa": a sinistra il modello disegnato, a destra le tabelle in stile Excel
             // (Fili sopra, Sorgenti sotto); le due righe di separazione si trascinano
             Grid split3d = new Grid { ColumnDefinitions = new ColumnDefinitions("46*,10,54*") };
-            groundLegend = new GroundLegend();
+            // 1.5.2 (bozzetto «Struttura 3D · terreno a scomparsa e barra di stato», approvato da IC8TEM il 19/11/2026 19:41): la legenda
+            // dei terreni non sta piu' sotto il disegno ma in una tendina che si apre dal pulsante «Mostra terreno» della barra di stato
+            groundLegend = new GroundLegend { Width = 760 };
             DockPanel dock3d = new DockPanel();
-            DockPanel.SetDock(groundLegend, Dock.Bottom);
-            dock3d.Children.Add(groundLegend);
             dock3d.Children.Add(view3d);
             Control pane3d = Riquadro(dock3d);
             Grid.SetColumn(pane3d, 0);
@@ -1095,6 +1095,8 @@ namespace YaNec
             if (lblStatus == null) return;
             lblStatus.Text = s;
             lblStatus.Foreground = Pal.B(error ? Pal.Rgb(255, 140, 120) : Pal.BarFore);
+            lblStatus.FontWeight = error ? FontWeight.Bold : FontWeight.Normal;   // 1.5.2: errore in grassetto e finestra con OK
+            if (error) FinestraErrore(s);
         }
     }
 }
