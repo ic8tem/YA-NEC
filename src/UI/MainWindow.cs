@@ -345,9 +345,9 @@ namespace YaNec
             numZ0 = Num(1, 10000, model != null ? (decimal)model.Z0 : 50, 1, 1, 70);
             numZ0.ValueChanged += (s, e) => { if (!building && model != null) { model.Z0 = (double)(numZ0.Value ?? 50); Registro.Scrivi("AZIONE", "Z0 = " + model.Z0 + " ohm"); RefreshAfterZ0(); } };
             cmd.Children.Add(Lbl("Terreno"));
-            List<string> gl = new List<string> { "Spazio libero", "Perfetto", "Dal modello" };
-            foreach (Tuple<string, double, double> g in Grounds) gl.Add(g.Item1 + string.Format(CultureInfo.CurrentCulture, " ({0:0.##}; {1:0.####})", g.Item2, g.Item3));
-            gl.Add("Personalizzato");
+            List<string> gl = new List<string> { Lang.T("Spazio libero"), Lang.T("Perfetto"), Lang.T("Dal modello") };   // 1.5.2: voci della tendina tradotte
+            foreach (Tuple<string, double, double> g in Grounds) gl.Add(Lang.T(g.Item1) + string.Format(CultureInfo.CurrentCulture, " ({0:0.##}; {1:0.####})", g.Item2, g.Item3));
+            gl.Add(Lang.T("Personalizzato"));
             cmbGround = new ComboBox { ItemsSource = gl, Width = 200, Margin = new Thickness(4, 3), VerticalAlignment = VerticalAlignment.Center };
             cmbGround.SelectionChanged += (s, e) => { if (!building) ApplyGroundChoice(); };
             cmd.Children.Add(cmbGround);

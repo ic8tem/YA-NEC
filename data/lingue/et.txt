@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	HF virna vahekaugused + HFTA
 Vai a Distanze di stack VHF	Mine: Virna vahekaugused VHF
 proposta (Distanze di stack VHF)	pakutud (Virna vahekaugused VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Üksikust antennist virna loomiseks: Müra/GT/Virn > Virna vahekaugused VHF, read ja veerud, nupp "Loo virn avatud mudelisse" (alates 0.4.20).
+Azimut all'elevazione di {0}°	Asimuut {0}° kõrgusel
+Elevazione nel piano di azimut {0}°	Kõrgusnurk · Asimuut {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	Maksimum {0} dBi · Asimuut {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	Avanemisnurk -3 dB juures: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	Maksimum: Kõrgusnurk {0}°;  Avanemisnurk -3 dB juures: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	Võimendus maksimumi suunas (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B ja F/R suhe (az {0}°, el {1}°)
+verde: {0} MHz	Roheline: {0} MHz
+arancio: {0} MHz	Oranž: {0} MHz
+punto: {0} MHz	punkt: {0} MHz
+progetto: {0} MHz	Sagedus: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (Allikas 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} punktid{2}.
+, {0} con errori	, {0} ⚠

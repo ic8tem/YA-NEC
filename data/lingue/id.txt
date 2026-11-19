@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	Jarak tumpukan HF + HFTA
 Vai a Distanze di stack VHF	Ke Jarak tumpukan VHF
 proposta (Distanze di stack VHF)	usulan (Jarak tumpukan VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Untuk membuat tumpukan dari antena tunggal: Derau/GT/Tumpukan > Jarak tumpukan VHF, baris dan kolom, tombol "Buat tumpukan di model yang terbuka" (sejak 0.4.20).
+Azimut all'elevazione di {0}°	Azimut pada elevasi {0}°
+Elevazione nel piano di azimut {0}°	Elevasi · Azimut {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	Maksimum {0} dBi · Azimut {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	Lebar berkas -3 dB: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	Maksimum: Elevasi {0}°;  Lebar berkas -3 dB: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	Gain ke arah maksimum (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	Rasio F/B dan F/R (az {0}°, el {1}°)
+verde: {0} MHz	Hijau: {0} MHz
+arancio: {0} MHz	Oranye: {0} MHz
+punto: {0} MHz	titik: {0} MHz
+progetto: {0} MHz	Frekuensi: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (Sumber 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} titik{2}.
+, {0} con errori	, {0} ⚠

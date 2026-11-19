@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	Рознесення КХ-збірок + HFTA
 Vai a Distanze di stack VHF	Перейти до Відстані збірки VHF
 proposta (Distanze di stack VHF)	запропонована (Відстані збірки VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Щоб створити збірку з одиночної антени: Шум/GT/Збірка > Відстані збірки VHF, рядки і стовпці, кнопка "Створити збірку у відкритій моделі" (з 0.4.20).
+Azimut all'elevazione di {0}°	Азимут при куті місця {0}°
+Elevazione nel piano di azimut {0}°	Кут місця · Азимут {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	Максимум {0} dBi · Азимут {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	Ширина променя по -3 дБ: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	Максимум: Кут місця {0}°;  Ширина променя по -3 дБ: {1}°
+ROS su Z0 = {0} ohm	КСХ · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	Підсилення в напрямку максимуму (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	Відношення F/B і F/R (az {0}°, el {1}°)
+verde: {0} MHz	Зелена: {0} MHz
+arancio: {0} MHz	Помаранчевий: {0} MHz
+punto: {0} MHz	точка: {0} MHz
+progetto: {0} MHz	Частота: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (Джерело 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} точки{2}.
+, {0} con errori	, {0} ⚠

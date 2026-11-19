@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	HF 스택 간격 + HFTA
 Vai a Distanze di stack VHF	스택 간격으로 이동 VHF
 proposta (Distanze di stack VHF)	제안 (스택 간격 VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	단일 안테나로 스택을 만들려면: 잡음/GT/스택 > 스택 간격 VHF, 행과 열, "열린 모델에 스택 만들기" 버튼 (0.4.20부터).
+Azimut all'elevazione di {0}°	앙각 {0}°에서의 방위
+Elevazione nel piano di azimut {0}°	앙각 · 방위 {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	최대 {0} dBi · 방위 {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB 빔폭: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	최대: 앙각 {0}°;  -3 dB 빔폭: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	최대 방향의 이득 (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B와 F/R 비 (az {0}°, el {1}°)
+verde: {0} MHz	그린: {0} MHz
+arancio: {0} MHz	주황: {0} MHz
+punto: {0} MHz	점: {0} MHz
+progetto: {0} MHz	주파수: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (급전원 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} 점{2}.
+, {0} con errori	, {0} ⚠

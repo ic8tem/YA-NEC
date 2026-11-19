@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	Mga pagitan ng HF stack + HFTA
 Vai a Distanze di stack VHF	Pumunta sa Mga pagitan ng stack VHF
 proposta (Distanze di stack VHF)	iminumungkahi (Mga pagitan ng stack VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Para gumawa ng stack mula sa iisang antenna: Ingay/GT/Stack > Mga pagitan ng stack VHF, mga hilera at kolum, button na "Gumawa ng stack sa bukas na modelo" (mula 0.4.20).
+Azimut all'elevazione di {0}°	Azimuth sa {0}° na elevation
+Elevazione nel piano di azimut {0}°	Elevasyon · Azimuth {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	Maksimum {0} dBi · Azimuth {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB na beamwidth: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	Maksimum: Elevasyon {0}°;  -3 dB na beamwidth: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	Gain sa direksyon ng maksimum (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	Mga ratio na F/B at F/R (az {0}°, el {1}°)
+verde: {0} MHz	Berde: {0} MHz
+arancio: {0} MHz	Kahel: {0} MHz
+punto: {0} MHz	punto: {0} MHz
+progetto: {0} MHz	Frequency: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (Source 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} mga punto{2}.
+, {0} con errori	, {0} ⚠

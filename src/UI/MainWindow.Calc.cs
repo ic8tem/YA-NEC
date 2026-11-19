@@ -587,8 +587,8 @@ namespace YaNec
                 if (m != model || tok.IsCancellationRequested) return;
                 sweep = res;
                 int bad = res.Count(p => !p.Ok);
-                Status(string.Format(CultureInfo.CurrentCulture, "Sweep completato in {0:0.0} s: {1} punti{2}.", (DateTime.Now - t0).TotalSeconds, res.Count,
-                    bad > 0 ? ", " + bad + " con errori" : ""), bad > 0);
+                Status(Lang.F("Sweep completato in {0} s: {1} punti{2}.", ((DateTime.Now - t0).TotalSeconds).ToString("0.0", CultureInfo.CurrentCulture), res.Count,
+                    bad > 0 ? Lang.F(", {0} con errori", bad) : ""), bad > 0);
                 ShowSweep();
                 nSweep++;
             }
@@ -635,9 +635,9 @@ namespace YaNec
                 return;
             }
             Complex z = run.Zin;
-            SetCard("z", Fmt(z.Real, 2) + (z.Imaginary >= 0 ? " +j" : " -j") + Fmt(Math.Abs(z.Imaginary), 2), "a " + Fmt(run.FreqMHz, 3) + " MHz" + (run.Sources.Count > 1 ? " (sorgente 1 di " + run.Sources.Count + ")" : ""));
+            SetCard("z", Fmt(z.Real, 2) + (z.Imaginary >= 0 ? " +j" : " -j") + Fmt(Math.Abs(z.Imaginary), 2), Lang.F("a {0} MHz", Fmt(run.FreqMHz, 3)) + (run.Sources.Count > 1 ? Lang.F(" (sorgente 1 di {0})", run.Sources.Count) : ""));
             Color swrCol = run.Swr <= 1.5 ? Pal.Green : (run.Swr <= 2.0 ? Pal.Fore : (run.Swr <= 3 ? Pal.Orange : Pal.Red));
-            SetCard("swr", run.Swr >= 99 ? ">99" : Fmt(run.Swr, 2), "su Z0 = " + Fmt(run.Z0, 1) + " ohm", swrCol);
+            SetCard("swr", run.Swr >= 99 ? ">99" : Fmt(run.Swr, 2), Lang.F("su Z0 = {0} ohm", Fmt(run.Z0, 1)), swrCol);
             { double gm = GuadagnoMostrato(run.GmaxDbi); SetCard("g", Fmt(gm, 2) + " dBi", Fmt(gm - 2.15, 2) + " dBd" + (gm != run.GmaxDbi ? " (corretto con l'AGT)" : "")); }
             SetCard("dir", "az " + Fmt(run.PhiMax, 1) + "°", "elevazione " + Fmt(run.ElevationOfMax, 1) + "°");
             SetCard("fb", Fmt(Nz(run.FrontBack), 2) + " dB", "avanti / dietro (180°)");
@@ -809,8 +809,8 @@ namespace YaNec
             {
                 bool vh = cmbPol != null && cmbPol.SelectedIndex == 1;
                 polAz.RefDb = polEl.RefDb = run.GmaxDbi;
-                polAz.Title = "Azimut all'elevazione di " + Fmt(run.ElevationOfMax, 1) + "°";
-                polEl.Title = "Elevazione nel piano di azimut " + Fmt(run.PhiMax, 1) + "°";
+                polAz.Title = Lang.F("Azimut all'elevazione di {0}°", Fmt(run.ElevationOfMax, 1));   // 1.5.2: tradotto (lezione 13 EN)
+                polEl.Title = Lang.F("Elevazione nel piano di azimut {0}°", Fmt(run.PhiMax, 1));
                 polEl.GroundHalf = model.Ground.Kind != GroundKind.FreeSpace;
                 polAz.Traces.Add(new PolarTrace { Db = run.AzCut, Color = Pal.Series(0), Width = 2.4, Name = "totale" });
                 polEl.Traces.Add(new PolarTrace { Db = run.ElCut, Color = Pal.Series(0), Width = 2.4, Name = "totale" });
@@ -826,12 +826,12 @@ namespace YaNec
                 polEl.MarkAngle = run.ElevationOfMax;
                 polAz.Notes = new[]
                 {
-                    "Massimo " + Fmt(run.GmaxDbi, 2) + " dBi a " + Fmt(run.PhiMax, 1) + "°;  F/B " + Fmt(run.FrontBack, 2) + " dB;  F/R " + Fmt(run.FrontRear, 2) + " dB",
-                    "Apertura a -3 dB: " + Fmt(run.HpbwAz, 1) + "°;  " + Fmt(run.FreqMHz, 3) + " MHz"
+                    Lang.F("Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB", Fmt(run.GmaxDbi, 2), Fmt(run.PhiMax, 1), Fmt(run.FrontBack, 2), Fmt(run.FrontRear, 2)),
+                    Lang.F("Apertura a -3 dB: {0}°;  {1} MHz", Fmt(run.HpbwAz, 1), Fmt(run.FreqMHz, 3))
                 };
                 polEl.Notes = new[]
                 {
-                    "Massimo a " + Fmt(run.ElevationOfMax, 1) + "° di elevazione;  apertura a -3 dB: " + Fmt(run.HpbwEl, 1) + "°",
+                    Lang.F("Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°", Fmt(run.ElevationOfMax, 1), Fmt(run.HpbwEl, 1)),
                     polEl.GroundHalf ? "Con il terreno solo la semisfera superiore" : "Spazio libero: 0° avanti, 180° dietro, sotto l'orizzonte in basso"
                 };
             }
@@ -853,7 +853,7 @@ namespace YaNec
             if (ok.Count > 1)
             {
                 double z0 = model != null ? model.Z0 : 50;
-                chSwr.Title = "ROS su Z0 = " + Fmt(z0, 1) + " ohm";
+                chSwr.Title = Lang.F("ROS su Z0 = {0} ohm", Fmt(z0, 1));
                 chSwr.Series.Add(new LineSeries { Name = "ROS", Y = ok.Select(p => Math.Min(p.Swr, 10)).ToArray(), Color = Pal.Series(0), Width = 2.4 });
                 chSwr.YMinFixed = 1;
                 double mx = ok.Max(p => Math.Min(p.Swr, 10));
@@ -863,9 +863,8 @@ namespace YaNec
                 chZ.Series.Add(new LineSeries { Name = "X", Y = ok.Select(p => p.Z.Imaginary).ToArray(), Color = Pal.Series(1), Width = 2.2 });
                 chZ.Series.Add(new LineSeries { Name = "|Z|", Y = ok.Select(p => Complex.Abs(p.Z)).ToArray(), Color = Pal.Series(2), Width = 1.4, Dashed = true });
                 chZ.HLines = new double[] { 0 };
-                string dirTxt = run != null ? " (az " + Fmt(run.PhiMax, 0) + "°, el " + Fmt(run.ElevationOfMax, 0) + "°)" : "";
-                chGain.Title = "Guadagno nella direzione del massimo" + dirTxt;
-                chFb.Title = "Rapporti F/B e F/R" + dirTxt;
+                chGain.Title = run != null ? Lang.F("Guadagno nella direzione del massimo (az {0}°, el {1}°)", Fmt(run.PhiMax, 0), Fmt(run.ElevationOfMax, 0)) : "Guadagno nella direzione del massimo";
+                chFb.Title = run != null ? Lang.F("Rapporti F/B e F/R (az {0}°, el {1}°)", Fmt(run.PhiMax, 0), Fmt(run.ElevationOfMax, 0)) : "Rapporti F/B e F/R";
                 chGain.Series.Add(new LineSeries { Name = "Guadagno dBi", Y = ok.Select(p => p.GainFwd).ToArray(), Color = Pal.Series(0), Width = 2.4 });
                 chFb.Series.Add(new LineSeries { Name = "F/B", Y = ok.Select(p => p.FrontBack).ToArray(), Color = Pal.Series(1), Width = 2.2, Decimals = 1 });
                 chFb.Series.Add(new LineSeries { Name = "F/R", Y = ok.Select(p => p.FrontRear).ToArray(), Color = Pal.Series(3), Width = 1.8, Dashed = true, Decimals = 1 });

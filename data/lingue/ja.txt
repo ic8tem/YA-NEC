@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	HF のスタック間隔 + HFTA
 Vai a Distanze di stack VHF	スタック間隔へ移動 VHF
 proposta (Distanze di stack VHF)	提案 (スタック間隔 VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	単体アンテナからスタックを作るには: 雑音/GT/スタック > スタック間隔 VHF、行と列、「開いているモデルにスタックを作成」ボタン (0.4.20 以降)。
+Azimut all'elevazione di {0}°	仰角 {0}° での方位
+Elevazione nel piano di azimut {0}°	仰角 · 方位 {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	最大 {0} dBi · 方位 {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB ビーム幅: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	最大: 仰角 {0}°;  -3 dB ビーム幅: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	最大方向の利得 (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B と F/R の比 (az {0}°, el {1}°)
+verde: {0} MHz	グリーン: {0} MHz
+arancio: {0} MHz	オレンジ: {0} MHz
+punto: {0} MHz	点: {0} MHz
+progetto: {0} MHz	周波数: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (給電源 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} 点{2}.
+, {0} con errori	, {0} ⚠

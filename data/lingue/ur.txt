@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	HF اسٹیکنگ فاصلے + HFTA
 Vai a Distanze di stack VHF	اسٹیک فاصلے پر جائیں VHF
 proposta (Distanze di stack VHF)	تجویز کردہ (اسٹیک فاصلے VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	واحد اینٹینا سے اسٹیک بنانے کے لیے: شور/GT/اسٹیک > اسٹیک فاصلے VHF، قطاریں اور کالم، بٹن "کھلے ماڈل میں اسٹیک بنائیں" (0.4.20 سے)۔
+Azimut all'elevazione di {0}°	{0}° بلندی پر سمت
+Elevazione nel piano di azimut {0}°	بلندی · ایزیمتھ {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	زیادہ سے زیادہ {0} dBi · ایزیمتھ {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB بیم چوڑائی: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	زیادہ سے زیادہ: بلندی {0}°;  -3 dB بیم چوڑائی: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	زیادہ سے زیادہ کی سمت میں گین (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B اور F/R تناسبات (az {0}°, el {1}°)
+verde: {0} MHz	سبز: {0} MHz
+arancio: {0} MHz	نارنجی: {0} MHz
+punto: {0} MHz	نقطہ: {0} MHz
+progetto: {0} MHz	فریکوئنسی: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (ماخذ 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} نقاط{2}.
+, {0} con errori	, {0} ⚠

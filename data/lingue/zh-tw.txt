@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	HF 堆疊間距 + HFTA
 Vai a Distanze di stack VHF	轉到堆疊間距 VHF
 proposta (Distanze di stack VHF)	建議值（堆疊間距 VHF）
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	由單副天線創建堆疊：噪聲/GT/堆疊 > 堆疊間距 VHF，行與列，"在已開啟的模型中創建堆疊"按鈕（自 0.4.20 起）。
+Azimut all'elevazione di {0}°	仰角 {0}° 處的方位
+Elevazione nel piano di azimut {0}°	仰角 · 方位角 {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	最大 {0} dBi · 方位角 {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB 波束寬度: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	最大: 仰角 {0}°;  -3 dB 波束寬度: {1}°
+ROS su Z0 = {0} ohm	SWR · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	最大方向的增益 (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B 和 F/R 比 (az {0}°, el {1}°)
+verde: {0} MHz	綠色: {0} MHz
+arancio: {0} MHz	橙色: {0} MHz
+punto: {0} MHz	點: {0} MHz
+progetto: {0} MHz	頻率: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (激勵源 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} 點{2}.
+, {0} con errori	, {0} ⚠

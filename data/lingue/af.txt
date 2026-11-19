@@ -5012,3 +5012,20 @@ Distanze di stack HF + HFTA	HF-stapelspasiërings + HFTA
 Vai a Distanze di stack VHF	Gaan na Stapelspasiërings VHF
 proposta (Distanze di stack VHF)	voorgestel (Stapelspasiërings VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Om 'n stapel uit 'n enkele antenna te skep: Geraas/GT/Stapel > Stapelspasiërings VHF, rye en kolomme, knoppie "Skep die stapel in die oop model" (sedert 0.4.20).
+Azimut all'elevazione di {0}°	Asimut by {0}° hoogte
+Elevazione nel piano di azimut {0}°	Elevasie · Asimut {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	Maksimum {0} dBi · Asimut {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB-bundelwydte: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	Maksimum: Elevasie {0}°;  -3 dB-bundelwydte: {1}°
+ROS su Z0 = {0} ohm	SGV · Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	Wins in die rigting van maksimum (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B- en F/R-verhoudings (az {0}°, el {1}°)
+verde: {0} MHz	Groen: {0} MHz
+arancio: {0} MHz	Oranje: {0} MHz
+punto: {0} MHz	punt: {0} MHz
+progetto: {0} MHz	Frekwensie: {0} MHz
+a {0} MHz	{0} MHz
+ (sorgente 1 di {0})	 (Bron 1/{0})
+su Z0 = {0} ohm	Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep: {0} s, {1} punte{2}.
+, {0} con errori	, {0} ⚠

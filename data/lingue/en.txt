@@ -6984,3 +6984,20 @@ Distanze di stack HF + HFTA	HF stacking distances + HFTA
 Vai a Distanze di stack VHF	Go to Stack spacings VHF
 proposta (Distanze di stack VHF)	proposed (Stack spacings VHF)
 Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	To create a stack from a single antenna: Noise/GT/Stack > Stack spacings VHF, rows and columns, button "Create the stack in the open model" (since 0.4.20).
+Azimut all'elevazione di {0}°	Azimuth at {0}° elevation
+Elevazione nel piano di azimut {0}°	Elevation in the azimuth plane {0}°
+Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB	Maximum {0} dBi at {1}°;  F/B {2} dB;  F/R {3} dB
+Apertura a -3 dB: {0}°;  {1} MHz	-3 dB beamwidth: {0}°;  {1} MHz
+Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°	Maximum at {0}° elevation;  -3 dB beamwidth: {1}°
+ROS su Z0 = {0} ohm	SWR on Z0 = {0} ohm
+Guadagno nella direzione del massimo (az {0}°, el {1}°)	Gain in the direction of maximum (az {0}°, el {1}°)
+Rapporti F/B e F/R (az {0}°, el {1}°)	F/B and F/R ratios (az {0}°, el {1}°)
+verde: {0} MHz	green: {0} MHz
+arancio: {0} MHz	orange: {0} MHz
+punto: {0} MHz	point: {0} MHz
+progetto: {0} MHz	design: {0} MHz
+a {0} MHz	at {0} MHz
+ (sorgente 1 di {0})	 (source 1 of {0})
+su Z0 = {0} ohm	on Z0 = {0} ohm
+Sweep completato in {0} s: {1} punti{2}.	Sweep completed in {0} s: {1} points{2}.
+, {0} con errori	, {0} with errors

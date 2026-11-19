@@ -50,7 +50,7 @@ namespace YaNec
         {
             double W = Bounds.Width, H = Bounds.Height;
             ctx.DrawRectangle(Pal.B(Pal.ChartBg), null, new Rect(0, 0, W, H));
-            Draw.Text(ctx, Title + " (Z0 = " + Draw.N(Z0, 1) + " ohm)", 10, 6, 14, Pal.Fore, FontWeight.SemiBold);
+            Draw.Text(ctx, Lang.T(Title) + " (Z0 = " + Draw.N(Z0, 1) + " ohm)", 10, 6, 14, Pal.Fore, FontWeight.SemiBold);
             Point c; double R;
             GetLayout(out c, out R);
             IPen grid = Pal.P(Pal.ChartGrid, 1);
@@ -112,14 +112,14 @@ namespace YaNec
                 // riquadro dei valori
                 double bx = c.X + R + 24, by = 44;
                 List<string> lines = new List<string>();
-                lines.Add("verde: " + Draw.N(F[0], 3) + " MHz");
-                lines.Add("arancio: " + Draw.N(F[F.Length - 1], 3) + " MHz");
+                lines.Add(Lang.F("verde: {0} MHz", Draw.N(F[0], 3)));   // 1.5.2: tradotti
+                lines.Add(Lang.F("arancio: {0} MHz", Draw.N(F[F.Length - 1], 3)));
                 int show = hover >= 0 ? hover : im;
                 if (show >= 0 && show < Z.Length)
                 {
                     Complex z = Z[show];
                     lines.Add("");
-                    lines.Add((hover >= 0 ? "punto: " : "progetto: ") + Draw.N(F[show], 3) + " MHz");
+                    lines.Add(Lang.F(hover >= 0 ? "punto: {0} MHz" : "progetto: {0} MHz", Draw.N(F[show], 3)));
                     lines.Add("Z = " + Draw.N(z.Real, 2) + (z.Imaginary >= 0 ? " +j" : " -j") + Draw.N(Math.Abs(z.Imaginary), 2) + " ohm");
                     lines.Add("ROS = " + Draw.N(YaNec.Engine.Analysis.Swr(z, Z0), 2));
                     Complex g = (z - Z0) / (z + Z0);
