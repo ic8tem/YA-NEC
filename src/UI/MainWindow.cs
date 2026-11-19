@@ -453,7 +453,9 @@ namespace YaNec
             WrapPanel tabP = new WrapPanel { Orientation = Orientation.Horizontal };
             // 0.5.3 (IC8TEM 15/11/2026 20:19): ordine voluto "struttura 3d, frequenza, diagrammi, smith, rumore/gt/stack, correnti, nec, ottimizzatore,
             // calcolatori", poi le altre in fondo; "Oggetti inseriti" non e' piu' una linguetta (le tabelle sono in basso a destra nella Struttura 3D)
-            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Smith", "Rumore/GT/Stack", "Correnti", "NEC", "Ottimizzatore", "Calcolatori", "Variabili", "Avvisi", "Impostazioni", "Documenti tecnici", "Crediti", "Registro", "Autotest" };
+            // 1.5.2 (IC8TEM 19/11/2026 17:06-17:11, schema approvato): Smith dentro Diagrammi; NEC e Correnti in "NEC/correnti";
+            // Variabili e Ottimizzatore in "Variabili e ottimizzazione" (al posto dell'Ottimizzatore). Da 16 a 13 linguette.
+            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Rumore/GT/Stack", LinNecCorr, LinVarOtt, "Calcolatori", "Avvisi", "Impostazioni", "Documenti tecnici", "Crediti", "Registro", "Autotest" };
             for (int i = 0; i < names.Length; i++)
             {
                 int idx = i;
@@ -481,11 +483,11 @@ namespace YaNec
             pag["Rumore/GT/Stack"] = BuildGtSopra();   // 1.1.0: sopralinguetta con tre voci
             // 1.1.0: "Antenne riceventi" e' una famiglia dei Calcolatori (la pagina si costruisce alla prima apertura)
             pag["Frequenza"] = BuildFreqPage();
-            pag["Smith"] = BuildSmithPage();
-            pag["Correnti"] = BuildCurrentsPage();
-            pag["NEC"] = BuildNecPage();
-            pag["Variabili"] = BuildVarsPage();
-            pag["Ottimizzatore"] = BuildOttimizzatorePage();
+            diagPagine["Smith"] = BuildSmithPage();   // 1.5.2: voce della fascia dei Diagrammi
+            Control pCorr = BuildCurrentsPage();
+            pag[LinNecCorr] = CostruisciNecCorrenti(BuildNecPage(), pCorr);
+            Control pVar = BuildVarsPage();
+            pag[LinVarOtt] = CostruisciVarOtt(pVar, BuildOttimizzatorePage());
             pag["Impostazioni"] = BuildImpostazioniPage();
             pag["Avvisi"] = BuildNotesPage();
             pag["Autotest"] = BuildTestPage();
@@ -528,9 +530,7 @@ namespace YaNec
                 tabs[k].FontWeight = on ? FontWeight.SemiBold : FontWeight.Normal;
             }
             if (page != null && i >= 0 && i < pages.Count) page.Content = pages[i];
-            bool ottAperto = i >= 0 && i < tabs.Count && (tabs[i].Tag as string) == "Ottimizzatore";
-            if (resCards != null) resCards.IsVisible = !ottAperto;
-            if (ottCards != null) ottCards.IsVisible = ottAperto;
+            AggiornaSchedeOtt();
             AggiornaLinguetta();
         }
 
@@ -546,7 +546,7 @@ namespace YaNec
                 else if (n == "Rumore/GT/Stack") { if (fasGt == null || fasGt.Current == "gt") CalcolaGt(); }
                 else if (n == "Registro") AggiornaRegistro();
                 else if (n == "Avvisi" && model != null && agtModello != model && geo != null && geo.N <= 1500) EseguiAgt();
-                else if (n == "Ottimizzatore") OttSincronizza();
+                else if (n == LinVarOtt && OttimizzatoreAperto()) OttSincronizza();
                 else if (n == "Calcolatori" && lpdaPrimoCalcolo != null && fasCalc != null && fasCalc.Current == "lpda")
                 {
                     Action a = lpdaPrimoCalcolo;

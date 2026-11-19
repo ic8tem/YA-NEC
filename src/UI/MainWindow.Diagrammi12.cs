@@ -17,7 +17,7 @@ namespace YaNec
 {
     public partial class MainWindow
     {
-        public static readonly string[] DiagVoci = { "Diagrammi", "Tabelle", "Misure VNA", "Terreno reale", "Ricezione (RDF)", "Tolleranze" };
+        public static readonly string[] DiagVoci = { "Diagrammi", "Tabelle", "Misure VNA", "Terreno reale", "Ricezione (RDF)", "Tolleranze", "Smith" };   // 1.5.2: Smith (era una linguetta)
         readonly Dictionary<string, Button> diagBtn = new Dictionary<string, Button>();
         readonly Dictionary<string, Control> diagPagine = new Dictionary<string, Control>();
         ContentControl diagCorpo;

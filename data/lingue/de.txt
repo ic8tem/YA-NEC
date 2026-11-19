@@ -5008,3 +5008,10 @@ terreno {0} (εr {1}, σ {2} S/m)	Boden {0} (εr {1}, σ {2} S/m)
 personalizzato	benutzerdefiniert
 centra	zentrieren
 alta	hoch
+NEC/correnti	NEC/Ströme
+Variabili e ottimizzazione	Variablen und Optimierung
+Distanze di stack VHF	Stockabstände VHF
+Distanze di stack HF + HFTA	KW-Stockungsabstände + HFTA
+Vai a Distanze di stack VHF	Zu den Stockabständen VHF
+proposta (Distanze di stack VHF)	vorgeschlagen (Stockabstände VHF)
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Um einen Stock aus einer einzelnen Antenne zu erzeugen: Rauschen/GT/Stock > Stockabstände VHF, Zeilen und Spalten, Taste "Stock im geöffneten Modell erstellen" (seit 0.4.20).

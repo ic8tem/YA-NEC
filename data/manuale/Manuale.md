@@ -69,7 +69,7 @@ Schermi piccoli: se lo schermo utile e' piu' basso di 860 punti o piu' stretto d
 
 Dall'alto in basso: barra del titolo (nome del modello, pulsante About), barra dei comandi, riquadri dei risultati, linguette, pagina della linguetta scelta, barra di stato (messaggi e avanzamento).
 
-Ordine delle linguette: **Struttura 3D, Frequenza, Diagrammi, Smith, Rumore/GT/Stack, Correnti, NEC, Ottimizzatore, Calcolatori**, poi Antenne riceventi, Variabili, Avvisi, Impostazioni, Manuale, Crediti, Registro e Autotest. La linguetta "Oggetti inseriti" non c'e' piu': sorgenti, carichi, linee, stack, rastremazioni, trasformatori e reti sono nella zona in basso a destra della Struttura 3D (capitolo 14). "Modello NEC" si chiama ora **NEC**.
+Ordine delle linguette (dalla 1.5.2): **Struttura 3D, Frequenza, Diagrammi, Rumore/GT/Stack, NEC/correnti, Variabili e ottimizzazione, Calcolatori**, poi Avvisi, Impostazioni, Documenti tecnici, Crediti, Registro e Autotest. La **Smith** e' una voce della fascia dei Diagrammi; **NEC/correnti** ha le sottolinguette NEC e Correnti; **Variabili e ottimizzazione** ha le sottolinguette Variabili e Ottimizzatore. La linguetta "Oggetti inseriti" non c'e' piu': sorgenti, carichi, linee, stack, rastremazioni, trasformatori e reti sono nella zona in basso a destra della Struttura 3D (capitolo 14). "Modello NEC" si chiama ora **NEC**.
 
 Questo manuale e' anche dentro il programma, nella linguetta **Documenti tecnici**: a sinistra l'indice dei capitoli, a destra un capitolo alla volta con le figure e, in fondo, i pulsanti per il capitolo precedente e seguente (il capitolo si impagina quando lo si apre, cosi' la linguetta si apre subito). Lo stesso testo e' in doc\Manuale_d_uso.pdf per la stampa.
 
@@ -141,6 +141,8 @@ Vista: trascinare = ruota, rotella = zoom, tasto destro = sposta, doppio clic = 
 
 ## 7. Diagrammi, Frequenza, Smith, Correnti
 
+Dalla 1.5.2 la carta di **Smith** e' l'ultima voce della fascia dei Diagrammi (dopo Tolleranze) e **Correnti** e' la seconda sottolinguetta di **NEC/correnti**.
+
 ![Figura 3 - Diagrammi di azimut e di elevazione (scala ARRL) della DK7ZB 10 elementi](immagini/07_diagrammi.png)
 
 Nella barra dei Diagrammi: il cursore **Caratteri** (dal 100 al 200 %) ingrandisce tutte le scritte dei due diagrammi (titolo, gradi, anelli in dB, valori sotto e apertura a -3 dB); la casella **Azimut ruotato di 90° (0° in alto)** gira il diagramma azimutale di 90 gradi, con il lobo che punta in su come nei calcolatori: i gradi restano quelli del NEC (antiorari, 90 gradi a sinistra). Tutti e due si salvano in config.ini; il diagramma di elevazione non ruota. Il cursore "Didascalie" in alto a destra resta per le sole legende di tutti i grafici.
@@ -167,11 +169,15 @@ Le stesse misure sono quelle che danno i programmi di riferimento (la scheda "pa
 
 ## 8. NEC (modello NEC)
 
+Dalla 1.5.2 e' la prima sottolinguetta di **NEC/correnti**.
+
 ![Figura 6 - Le schede NEC del modello (modificabili)](immagini/05_modello_nec.png)
 
 Le schede del modello si possono modificare a mano e applicare. Schede gestite: GW, GA, GH, GM, GR, GS, GX, GC, GE, EK, KH, LD 0-5, EX 0, TL, NT, FR, GN 0/1 (GN 2 calcolato come GN 0), SY. Le impostazioni di YA-NEC stanno nei commenti (`CM YA-NEC Z0=..`, `CM YA-NEC VAR nome: descrizione`, `CM YA-NEC CORRENTI=1` per le sorgenti a corrente, `CM YA-NEC CARICHI=0`), cosi' il file resta leggibile da 4nec2 e xnec2c.
 
 ## 9. Variabili e formule
+
+Dalla 1.5.2 la linguetta Variabili e l'Ottimizzatore sono le due sottolinguette di **Variabili e ottimizzazione** (Variabili per prima).
 
 ![Figura 7 - Linguetta Variabili: nome, descrizione, espressione, valore, passo, pulsanti - e +](immagini/02_variabili.png)
 
@@ -193,7 +199,7 @@ Le schede SY sono le stesse di 4nec2 e xnec2c: `SY L=1000*MM, H=L/2`. Nelle sche
 
 > ATTENZIONE: Nel file salvato le espressioni restano nelle schede di geometria; nelle schede EX, LD, GN e FR vengono salvate come numeri.
 
-**Ottimizzatore** (linguetta dopo Variabili): a sinistra gli **obiettivi** con un cursore di peso (a sinistra = ignora, a destra = conta di piu') e una soglia: jX, ROS (es. "&le; 1,3"), guadagno ("max" o un valore in dBi), F/B (es. "&ge; 22 dB"), elevazione voluta del massimo, impedenza voluta (es. "28 +j0" o "Z0 +j0"), corrente minima in un punto (notazione MMANA, es. w4c). Raggiunta la soglia, quell'obiettivo smette di pesare. Sotto, le **frequenze da rispettare**: il voto e' la media su tutte (clic = frequenza principale in grassetto, clic destro = la toglie, "+ aggiungi" per altre, anche di bande diverse). Al centro le **variabili** della linguetta Variabili con valore, minimo, massimo e passo (anche "1 mm"); quelle scritte come formula seguono le altre da sole; "tutti gli elementi" le rimette tutte, clic destro sul nome per spostarla in alto (provata prima) o toglierla; "mantieni lunghezza del boom" scarta le prove che cambiano il boom; metodo "una variabile alla volta" (come MMANA: passo che si dimezza fino al passo dato) o "simplesso" (Nelder e Mead, tutte insieme). Il **voto** va da 0 a 100: per ogni frequenza e obiettivo un punteggio da 0 a 1 (ROS e impedenza come potenza adattata, guadagno rispetto alla partenza, F/B 1 - e^(-F/B/15 dB)), media pesata. Il **registro dei passi** tiene gli ultimi 128 miglioramenti: clic su una riga per riprenderla (schede, diagramma e "Avvia" ripartono da li'). A destra l'andamento del voto, Avvia / Ferma, **Applica al modello** (copia i valori nella linguetta Variabili mantenendo le unita' scritte, es. 1018MM) e Annulla tutto; sotto il diagramma di azimut della partenza (tratteggiato) e del passo scelto. Mentre la linguetta e' aperta, le schede in alto mostrano stato, voto, guadagno, F/B, ROS (con il peggiore in banda) e impedenza.
+**Ottimizzatore** (sottolinguetta dopo Variabili, nella linguetta Variabili e ottimizzazione): a sinistra gli **obiettivi** con un cursore di peso (a sinistra = ignora, a destra = conta di piu') e una soglia: jX, ROS (es. "&le; 1,3"), guadagno ("max" o un valore in dBi), F/B (es. "&ge; 22 dB"), elevazione voluta del massimo, impedenza voluta (es. "28 +j0" o "Z0 +j0"), corrente minima in un punto (notazione MMANA, es. w4c). Raggiunta la soglia, quell'obiettivo smette di pesare. Sotto, le **frequenze da rispettare**: il voto e' la media su tutte (clic = frequenza principale in grassetto, clic destro = la toglie, "+ aggiungi" per altre, anche di bande diverse). Al centro le **variabili** della linguetta Variabili con valore, minimo, massimo e passo (anche "1 mm"); quelle scritte come formula seguono le altre da sole; "tutti gli elementi" le rimette tutte, clic destro sul nome per spostarla in alto (provata prima) o toglierla; "mantieni lunghezza del boom" scarta le prove che cambiano il boom; metodo "una variabile alla volta" (come MMANA: passo che si dimezza fino al passo dato) o "simplesso" (Nelder e Mead, tutte insieme). Il **voto** va da 0 a 100: per ogni frequenza e obiettivo un punteggio da 0 a 1 (ROS e impedenza come potenza adattata, guadagno rispetto alla partenza, F/B 1 - e^(-F/B/15 dB)), media pesata. Il **registro dei passi** tiene gli ultimi 128 miglioramenti: clic su una riga per riprenderla (schede, diagramma e "Avvia" ripartono da li'). A destra l'andamento del voto, Avvia / Ferma, **Applica al modello** (copia i valori nella linguetta Variabili mantenendo le unita' scritte, es. 1018MM) e Annulla tutto; sotto il diagramma di azimut della partenza (tratteggiato) e del passo scelto. Mentre la linguetta e' aperta, le schede in alto mostrano stato, voto, guadagno, F/B, ROS (con il peggiore in banda) e impedenza.
 
 ## 10. Formati di file
 
@@ -455,8 +461,8 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 | Famiglia | Voci |
 |---|---|
 | HF | Dipoli, Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), Discone |
-| VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Eggbeater, QFH |
 | Antenne riceventi | Beverage, BOG, EWE, DHDL, loop magnetica ricevente, verticale di riferimento (era una linguetta a parte) |
+| VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Eggbeater, QFH |
 | Strumenti | Ridimensiona antenna, Tetto, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T, Toroidi FT, Balun / Un-Un, Staffe |
 | Dischi e illuminatori | Parabola primo fuoco, Parabola offset, Trombe e illuminatori, Biquad |
 | 2,4 GHz | Antenne su PCB |
@@ -1247,7 +1253,7 @@ Dalla 1.1 le Antenne riceventi sono una famiglia dei Calcolatori (fascia in alto
 
 ### Sopralinguetta Rumore/GT/Stack (dalla 1.1)
 
-La linguetta **Rumore/GT/Stack** ha a sinistra un fascione con tre voci: **Rumore e G/T** (la pagina di sempre, descritta qui sotto), **Rumore dal cielo vero** (nuova) e **Distanze di stack** (la scheda DL6WU che stava nei Calcolatori, con sotto lo studio dell'accoppiamento e della distanza migliore).
+La linguetta **Rumore/GT/Stack** ha a sinistra un fascione con tre voci: **Rumore e G/T** (la pagina di sempre, descritta qui sotto), **Rumore dal cielo vero** (nuova) e **Distanze di stack VHF** (la scheda DL6WU che stava nei Calcolatori, con sotto lo studio dell'accoppiamento e della distanza migliore).
 
 **Rumore e G/T** (come TANT e XLGTa): con il modello in spazio libero l'antenna viene puntata all'elevazione scelta; ogni direzione vede il cielo o il terreno. T dal diagramma, Tloss = 290 (1 - eta 10^(-L/10)) con L la perdita del cavo ed eta l'efficienza dell'antenna calcolata dal NEC (perdite dei conduttori come TANT, VE7BQH e YU7EF: verifica sulla EF0213 di YU7EF, Ta 223,8 K contro 223,6 K), T antenna, G/T antenna, T sistema con il preamplificatore e G/T di sistema; curva di T antenna con l'elevazione e ripartizione cielo/terreno; correzione KF2YN. Il diagramma 3D e' a 2 gradi (si riusa quello del calcolo, quasi istantaneo; scarto sotto 0,01 dB rispetto a 1 grado su una Yagi 10 el. e 0,03 dB su un gruppo con lobo di 10 gradi); 1 grado resta disponibile.
 
@@ -1637,7 +1643,7 @@ correzione di Leeson).
 **Esempio 3 - lo stesso lavoro con l'Ottimizzatore generale, sul modello esportato**
 
 1. Dall'esempio 1, Esporta .nec e aprilo (Apri modello). Nella linguetta **Variabili** scrivi, per esempio per il 20 m, RL = 10,66 (lunghezza del riflettore) e RS = 3,91 (distanza); nella tabella dei fili sostituisci le coordinate del riflettore del 20 m con le formule: X = -RS, Y1 = -RL/2, Y2 = RL/2.
-2. Linguetta **Ottimizzatore**: obiettivi ROS "<= 1,3" (peso alto), F/B ">= 15 dB" (peso medio), guadagno "max" (peso basso). Frequenze da rispettare: 14,0 / 14,175 / 14,35 MHz (piu' quelle di 15 e 10 m se si vuole proteggere anche le altre bande).
+2. Sottolinguetta **Ottimizzatore** (in Variabili e ottimizzazione): obiettivi ROS "<= 1,3" (peso alto), F/B ">= 15 dB" (peso medio), guadagno "max" (peso basso). Frequenze da rispettare: 14,0 / 14,175 / 14,35 MHz (piu' quelle di 15 e 10 m se si vuole proteggere anche le altre bande).
 3. Variabili: RL da 10,3 a 11,0 m passo 1 cm, RS da 2,5 a 4,5 m passo 5 cm. Metodo **simplesso** (due variabili che si influenzano) oppure **una variabile alla volta** se si vuole seguire il percorso.
 4. **Avvia**: il voto sale; il registro dei passi tiene gli ultimi 128 miglioramenti, un clic su una riga la riprende. Con le soglie raggiunte un obiettivo smette di pesare: il ROS gia' buono non toglie guadagno.
 5. **Applica al modello** copia i valori nella linguetta Variabili; Annulla tutto torna alla partenza. Se il voto non sale, allargare i limiti delle variabili o togliere un obiettivo troppo stretto.
@@ -1650,7 +1656,7 @@ Si parte dal 10elm-bvo.maa di IC8TEM, gia' preparato con le variabili: modello *
    lunghezza e posizione del primo direttore, 478,5 e 669 mm), L10 (meta' ultimo direttore, 455 mm). Gli altri elementi restano fissi.
 2. Calcola: a 144,0 / 144,3 / 144,6 MHz la prova con nec2c da' ROS 1,07 / 1,20 / 1,65, guadagno 15,7 dBi, F/B 22,3 / 18,4 / 15,5 dB.
    Il guadagno e' gia' quello del progetto; da migliorare sono il F/B e il ROS in alto.
-3. Linguetta **Ottimizzatore**: obiettivi ROS "<= 1,3" (peso alto), F/B ">= 22 dB" (peso medio), guadagno "max" (peso basso);
+3. Sottolinguetta **Ottimizzatore** (in Variabili e ottimizzazione): obiettivi ROS "<= 1,3" (peso alto), F/B ">= 22 dB" (peso medio), guadagno "max" (peso basso);
    frequenze da rispettare 144,0, 144,3 (principale) e 144,6 MHz.
 4. Variabili e limiti: L1 da 490 a 530 mm, L2 da 470 a 500 mm, L3 da 465 a 490 mm, X3 da 550 a 800 mm, L10 da 430 a 470 mm; passo 0,5 mm
    (X3: 1 mm). Spunta "mantieni lunghezza del boom" (X3 resta dentro il boom). Metodo **una variabile alla volta**: si vede quale
@@ -2015,7 +2021,7 @@ Le fonti di questa versione sono nel documento **Citazioni**, con le pagine usat
 
 **Calcoli meccanici dentro i Calcolatori.** La linguetta Calcoli meccanici diventa la famiglia **Calcoli meccanici** dei Calcolatori (tra Strumenti e Dischi), con la sua fascia Vento / Bilanciamento / Boom e tirante / Palo e plinto / Sollecitazioni elementi. **Sollecitazioni elementi** si accende; Boom e tirante e Palo e plinto restano spente per ora.
 
-**Distanze di stack HF.** Nel fascione Rumore, G/T e stack la voce **Distanze di stack** resta per VHF e UHF; lo stack HF sopra il terreno ha la sua voce **Distanze di stack HF**, con la sua pagina e i suoi risultati.
+**Distanze di stack HF.** Nel fascione Rumore, G/T e stack la voce **Distanze di stack** resta per VHF e UHF; lo stack HF sopra il terreno ha la sua voce **Distanze di stack HF**, con la sua pagina e i suoi risultati. Dalla 1.5.2 le due voci si chiamano **Distanze di stack VHF** e **Distanze di stack HF + HFTA** (il metodo sopra il terreno e' quello di HFTA, N6BV).
 
 **Loop magnetica.**
 - Campi **Numero di spire** e **Passo tra le spire**: la resistenza di radiazione cresce con (N·A)², la perdita con N e l'induttanza con N². L'effetto di prossimita' tra spire vicine non e' calcolato: un avviso lo ricorda (esempio dell'ARRL 15ª: 8 spire, 10 % calcolato, 3 % misurato).
@@ -2091,5 +2097,14 @@ Oltre 40 oggetti le etichette si nascondono e resta il simbolo, per non coprire 
 **Correzioni.**
 - Correzione del boom: nel disegno i nomi degli elementi vicini (riflettore, radiatore, D1) non si accavallano piu' (due righe alternate) e non coprono la nota «differenza esagerata per vederla».
 - Dopo Nuovo, e aprendo un file con Apri modello, la tendina Esempi torna a «Esempi...».
+
+**Linguette riordinate (IC8TEM 19/11/2026).** Le linguette principali passano da 16 a 13:
+- **Smith** e' l'ultima voce della fascia dei **Diagrammi**;
+- **NEC/correnti** unisce NEC e Correnti (sottolinguette NEC e Correnti);
+- **Variabili e ottimizzazione** unisce Variabili e Ottimizzatore (sottolinguette Variabili e Ottimizzatore); le schede dell'ottimizzatore in alto compaiono con la sottolinguetta Ottimizzatore;
+- in **Rumore/GT/Stack** le voci si chiamano **Distanze di stack VHF** e **Distanze di stack HF + HFTA**;
+- le famiglie dei **Calcolatori** sono nell'ordine HF, Antenne riceventi, VHF, Strumenti, Dischi e illuminatori, 2,4 GHz, Calcoli meccanici.
+
+I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Variabili…» dell'ottimizzatore) aprono la sottolinguetta giusta.
 
 **Traduzioni.** Le voci della 1.5.2 sono tradotte in tutte le 36 lingue.

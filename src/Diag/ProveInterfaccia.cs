@@ -418,7 +418,7 @@ namespace YaNec
 
             // 2 - linguetta Variabili
             PrTitolo("B. Linguetta Variabili");
-            SelectTab(IndiceLinguetta("Variabili"));
+            ApriLinguetta("Variabili");
             await Task.Delay(300);
             string vals = "";
             foreach (VarRow r in varRows) vals += r.Name.Text + "=" + r.Value.Text + "  ";
@@ -508,7 +508,7 @@ namespace YaNec
 
             // 10 - Modello NEC
             PrTitolo("D. Modello NEC, salvataggio e riapertura");
-            SelectTab(IndiceLinguetta("NEC"));
+            ApriLinguetta("NEC");
             await Task.Delay(300);
             string nec = txtNec != null ? (txtNec.Text ?? "") : "";
             PrPasso("linguetta Modello NEC", "righe SY e \"GW 1 NS 0 -H 0 0 H 0 R\"", nec.Contains("SY ") && nec.Contains("GW 1 NS 0 -H 0 0 H 0 R") ? "presenti" : "mancanti",
@@ -535,9 +535,7 @@ namespace YaNec
             PrImmagine("struttura_dk7zb");
             foreach (string t in new[] { "Diagrammi", "Frequenza", "Smith", "Correnti", "Avvisi" })
             {
-                int ti = IndiceLinguetta(t);
-                if (ti < 0) { PrPasso("linguetta " + t, "presente", "mancante", false); continue; }
-                SelectTab(ti);
+                if (!ApriLinguetta(t)) { PrPasso("linguetta " + t, "presente", "mancante", false); continue; }   // 1.5.2: Smith e Correnti sono sottolinguette
                 await Task.Delay(400);
                 PrImmagine(t.ToLowerInvariant());
             }
@@ -757,6 +755,23 @@ namespace YaNec
                 PrPasso("linguetta \"" + nome + "\"", "si apre senza errori", ok ? "aperta" : esito, ok);
                 PrImmagine("L_" + Pulito(nome));
                 await ProvaPagina(nome);
+                // 1.5.2: le linguette di prima diventate sottolinguette (Smith in Diagrammi, Correnti, Ottimizzatore)
+                string[] exLin = nome == LinNecCorr ? new[] { "Correnti", "NEC" } : nome == LinVarOtt ? new[] { "Ottimizzatore", "Variabili" } : nome == "Diagrammi" ? new[] { "Smith", "Diagrammi" } : new string[0];
+                for (int q = 0; q + 1 < exLin.Length; q++)
+                {
+                    string v = exLin[q];
+                    bool ok3 = true; string es3 = "";
+                    try
+                    {
+                        if (nome == "Diagrammi") ApriVoceDiagrammi(v); else ApriLinguetta(v);
+                        await Task.Delay(450);
+                        if (ultimoStatoErrore && ultimoStato.IndexOf("errore", StringComparison.OrdinalIgnoreCase) >= 0) { ok3 = false; es3 = "stato: " + ultimoStato; }
+                    }
+                    catch (Exception ex) { ok3 = false; es3 = ex.GetType().Name + ": " + ex.Message; }
+                    PrPasso("sottolinguetta \"" + nome + " > " + v + "\"", "si apre senza errori", ok3 ? "aperta" : es3, ok3);
+                    PrImmagine("L_" + Pulito(v));
+                    if (nome == "Diagrammi") ApriVoceDiagrammi(exLin[exLin.Length - 1]); else ApriLinguetta(exLin[exLin.Length - 1]);
+                }
                 Fascione f0;
                 if (!sotto.TryGetValue(nome, out f0) || f0 == null) continue;
                 // 1.1.0: nei Calcolatori anche la famiglia "Antenne riceventi" (ex linguetta), con il suo fascione

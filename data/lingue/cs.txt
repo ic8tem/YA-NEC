@@ -5005,3 +5005,10 @@ terreno {0} (εr {1}, σ {2} S/m)	půda {0} (εr {1}, σ {2} S/m)
 personalizzato	vlastní
 centra	vystředit
 alta	vysoká
+NEC/correnti	NEC/proudy
+Variabili e ottimizzazione	Proměnné a optimalizace
+Distanze di stack VHF	Rozteče soustavy VHF
+Distanze di stack HF + HFTA	Rozteče KV soustav + HFTA
+Vai a Distanze di stack VHF	Přejít na Rozteče soustavy VHF
+proposta (Distanze di stack VHF)	navržená (Rozteče soustavy VHF)
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Pro vytvoření soustavy z jedné antény: Šum/GT/Soustava > Rozteče soustavy VHF, řádky a sloupce, tlačítko "Vytvořit soustavu v otevřeném modelu" (od 0.4.20).

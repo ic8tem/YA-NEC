@@ -1,0 +1,135 @@
+<title>Albero delle linguette</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#eef1f5;--card:#fff;--ink:#1b2430;--mut:#5d6878;--line:#c9d1dc;--bar:#1d2a3a;--barink:#e7edf5;--blu:#2f6fd6;--blus:#e8f0fd;--fam:#3b4254;--nuovo:#c77a10;--nuovos:#fff3df;--spento:#9aa5b4;--f:"Segoe UI",Inter,system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14181e;--card:#1c222a;--ink:#e3e8ee;--mut:#9aa6b4;--line:#34404f;--bar:#0d131a;--barink:#d8e0ea;--blu:#6f9fee;--blus:#1d2a3d;--fam:#c3cad6;--nuovo:#ffad33;--nuovos:#3a2c14;--spento:#6b7584;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14181e;--card:#1c222a;--ink:#e3e8ee;--mut:#9aa6b4;--line:#34404f;--bar:#0d131a;--barink:#d8e0ea;--blu:#6f9fee;--blus:#1d2a3d;--fam:#c3cad6;--nuovo:#ffad33;--nuovos:#3a2c14;--spento:#6b7584;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1500px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:1.35rem;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--mut);margin:0 0 14px;max-width:110ch;line-height:1.45}
+.leg{display:flex;flex-wrap:wrap;gap:14px;font-size:.82rem;color:var(--mut);margin-bottom:14px}
+.leg span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px;border:2px solid}
+.barra{background:var(--bar);color:var(--barink);border-radius:8px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.85rem;margin-bottom:16px}
+.barra b{color:#fff}
+.griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;align-items:start}
+.lin{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.lin h2{font-size:.98rem;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.lin h2 .n{font-size:.72rem;color:var(--mut);font-weight:400}
+.lin.foglia h2{margin:0}
+.lin .nota{font-size:.78rem;color:var(--mut);margin-top:2px}
+ul.t{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--line)}
+ul.t ul.t{margin-left:4px}
+ul.t li{position:relative;padding:2px 0 2px 10px;line-height:1.35}
+ul.t li::before{content:"";position:absolute;left:-14px;top:12px;width:20px;border-top:2px solid var(--line)}
+ul.t ul.t li::before{left:-14px}
+.fam{font-weight:700;color:var(--fam);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding-top:6px}
+.nuovo{color:var(--nuovo);font-weight:700}
+.nuovo .tag{display:inline-block;background:var(--nuovos);border:1px solid var(--nuovo);border-radius:4px;font-size:.7rem;padding:0 5px;margin-left:4px;font-weight:600;letter-spacing:.02em}
+.n152{color:var(--blu)}
+.n152 .tag{display:inline-block;background:var(--blus);border:1px solid var(--blu);border-radius:4px;font-size:.7rem;padding:0 5px;margin-left:4px;font-weight:600}
+.spento{color:var(--spento)}
+.big{grid-column:span 2}
+.prop{border:2px dashed var(--nuovo)}
+.ptag{font-size:.7rem;font-weight:600;color:var(--nuovo);border:1px solid var(--nuovo);background:var(--nuovos);border-radius:4px;padding:0 5px}
+@media (max-width:640px){.big{grid-column:auto}}
+.cols2{columns:2;column-gap:18px}
+@media (max-width:640px){.cols2{columns:1}}
+.cols2>li{break-inside:avoid}
+</style>
+<main>
+  <h1>YA-NEC 1.5.2 · albero delle linguette</h1>
+  <p class="sub">Linguette principali (nell'ordine della barra), sottolinguette e famiglie, come sono nel codice al 19/11/2026 (commit 1adb9cc). In arancio la sottolinguetta nuova approvata oggi, «Da immagine (OCR)», prima voce di Calcolatori › Strumenti. Famiglie dei Calcolatori nel nuovo ordine chiesto alle 17:06. Riquadri tratteggiati: proposte da approvare (17:07): Variabili dentro la nuova linguetta «Variabili e ottimizzazione», Smith dentro Diagrammi; (17:09) NEC e Correnti unite in «NEC/correnti». (17:10) In Rumore/GT/Stack: «Distanze di stack VHF» e «Distanze di stack HF + HFTA». Le linguette principali passano da 16 a 13.</p>
+  <div class="leg">
+    <span><i class="sw" style="border-color:var(--nuovo);background:var(--nuovos)"></i>nuova, approvata il 19/11 (da realizzare)</span>
+    <span><i class="sw" style="border-color:var(--blu);background:var(--blus)"></i>novita' della 1.5.2 gia' nel codice</span>
+    <span><i class="sw" style="border-color:var(--spento)"></i>spenta per ora</span>
+    <span><i class="sw" style="border-color:var(--nuovo);border-style:dashed"></i>proposta da approvare</span>
+  </div>
+  <div class="barra"><b>Barra in alto:</b> Nuovo · Apri modello… · Salva .nec… · Esempi… · Calcola · Sweep · Segmentazione… · Controlla… · Terreno · Fili · Kernel esteso · Segmenti per λ</div>
+
+  <div class="griglia">
+    <section class="lin">
+      <h2>Struttura 3D <span class="n">1</span></h2>
+      <ul class="t">
+        <li class="fam">Barra Geometria</li>
+        <li>Sposta · Ruota · Scala · Specchia · Copia · Loop · Elica · rapidi · Annulla / Ripeti · Variabili</li>
+        <li class="fam">Vista</li>
+        <li>Correnti · Lobo 3D · Terreno e quota · Fasi delle sorgenti · <span class="n152">Linee, carichi e reti<span class="tag">1.5.2</span></span></li>
+        <li class="fam">Tabella dei Fili</li>
+        <li>Aggiungi filo · Applica e ricalcola · Ins. elemento simmetrico</li>
+        <li class="fam">Oggetti del modello</li>
+        <li>Sorgenti · Carichi · Linee · Stack · Rastremazioni · Trasformatori · Reti L e di sfasamento · Cavo e balun</li>
+      </ul>
+    </section>
+
+    <section class="lin foglia"><h2>Frequenza <span class="n">2</span></h2><div class="nota">ROS · Guadagno · Impedenza · F/B e F/R · Efficienza; <span class="n152">bande ombreggiate<span class="tag">1.5.2</span></span></div></section>
+
+    <section class="lin prop">
+      <h2>Diagrammi <span class="n">3</span><span class="ptag">proposta</span></h2>
+      <ul class="t">
+        <li>Diagrammi</li><li>Tabelle</li><li>Misure VNA</li>
+        <li>Terreno reale <span class="n152"><span class="tag">1.5.2: stato del calcolo, quota a mano</span></span></li>
+        <li>Ricezione (RDF)</li><li>Tolleranze</li>
+        <li class="nuovo">Smith<span class="tag">proposta · da linguetta 4</span></li>
+      </ul>
+    </section>
+
+
+    <section class="lin">
+      <h2>Rumore/GT/Stack <span class="n">4</span></h2>
+      <ul class="t"><li>Rumore e G/T</li><li>Rumore dal cielo vero</li><li class="nuovo">Distanze di stack VHF<span class="tag">proposta · era «Distanze di stack»</span></li><li class="nuovo">Distanze di stack HF + HFTA<span class="tag">proposta · era «Distanze di stack HF»</span></li></ul>
+    </section>
+
+    <section class="lin prop">
+      <h2>NEC/correnti <span class="n">5</span><span class="ptag">proposta</span></h2>
+      <ul class="t"><li class="nuovo">NEC<span class="tag">da linguetta 7</span></li><li class="nuovo">Correnti<span class="tag">da linguetta 6</span></li></ul>
+    </section>
+
+    <section class="lin prop">
+      <h2>Variabili e ottimizzazione <span class="n">6</span><span class="ptag">proposta</span></h2>
+      <ul class="t">
+        <li class="nuovo">Variabili<span class="tag">da linguetta 10</span>
+          <ul class="t"><li>elenco e, a destra, dove agisce la variabile (1.5.1)</li></ul></li>
+        <li>Ottimizzatore
+          <ul class="t">
+            <li>1. Obiettivi e pesi · frequenze da rispettare</li>
+            <li>2. Variabili che l'ottimizzatore puo' cambiare</li>
+            <li>Monte Carlo</li>
+            <li>3. Registro dei passi</li>
+            <li class="n152">4. Misure al millimetro<span class="tag">1.5.2</span></li>
+            <li>Andamento · comandi · diagramma partenza / migliore</li>
+          </ul></li>
+      </ul>
+    </section>
+
+    <section class="lin big">
+      <h2>Calcolatori <span class="n">7</span></h2>
+      <ul class="t cols2">
+        <li><span class="fam">HF</span>
+          <ul class="t"><li>Dipoli</li><li>Dipolo multibanda</li><li>Yagi multibanda</li><li>Verticali</li><li>Verticale multibanda (DX Commander)</li><li>Four-square</li><li>Delta loop</li><li>Loop rettangolare</li><li>Loop magnetica</li><li>Quad</li><li>Antenna EH</li><li>Moxon</li><li>Hexbeam 20-10 m</li><li>Loop orizzontale multibanda</li><li>NVIS</li><li>Discone</li><li>Carichi HF</li></ul></li>
+        <li><span class="fam">Antenne riceventi</span>
+          <ul class="t"><li><i>Fili a terra / bassi:</i> Beverage · BOG · Dipolo basso</li><li><i>Piccoli loop terminati:</i> EWE · Flag · Pennant · K9AY · DHDL · Rombo ripiegato · Loop magnetico RX</li><li><i>Schiere:</i> 4-square RX · Hi-Z 2-8 elementi · Waller Flag · Due DHDL broadside</li><li><i>Riferimento:</i> Verticale TX</li></ul></li>
+        <li><span class="fam">VHF</span>
+          <ul class="t"><li>HB9CV</li><li>Big Wheel</li><li>HEN (loop giapponese)</li><li>Log-periodica (LPDA)</li><li>Yagi lunga DL6WU</li><li>Quagi e quad a piu' elementi</li><li>Loop Yagi 1296 MHz</li><li>Correzione del boom</li><li>Divisori e cavi di fase</li><li>Yagi incrociate</li><li>Eggbeater</li><li>QFH (quadrifilare a elica)</li></ul></li>
+        <li><span class="fam">Strumenti</span>
+          <ul class="t"><li class="nuovo">Da immagine (OCR)<span class="tag">nuova · approvata 19/11</span></li><li>Ridimensiona antenna</li><li>Antenna su tetto (solaio)</li><li>Rete LC di adattamento</li><li>Forcina (beta / hairpin)</li><li>Resistenza di radiazione</li><li>Cavi RG</li><li>Toroidi iron powder (T)</li><li>Toroidi ferrite (FT)</li><li>Balun / Un-Un</li><li>Staffe di fissaggio</li></ul></li>
+        <li><span class="fam">Dischi e illuminatori</span>
+          <ul class="t"><li>Parabola primo fuoco</li><li>Parabola offset</li><li>Trombe e illuminatori</li><li>Biquad e doppia biquad</li></ul></li>
+        <li><span class="fam">2,4 GHz</span>
+          <ul class="t"><li>Antenne su PCB</li></ul></li>
+        <li><span class="fam">Calcoli meccanici</span>
+          <ul class="t"><li>Vento</li><li>Bilanciamento</li><li class="spento">Boom e tirante (spenta)</li><li class="spento">Palo e plinto (spenta)</li><li>Sollecitazioni elementi</li></ul></li>
+      </ul>
+    </section>
+
+    <section class="lin foglia"><h2>Avvisi <span class="n">8</span></h2></section>
+    <section class="lin foglia"><h2>Impostazioni <span class="n">9</span></h2><div class="nota"><span class="n152">Bande nei grafici di frequenza<span class="tag">1.5.2</span></span></div></section>
+    <section class="lin foglia"><h2>Documenti tecnici <span class="n">10</span></h2></section>
+    <section class="lin foglia"><h2>Crediti <span class="n">11</span></h2></section>
+    <section class="lin foglia"><h2>Registro <span class="n">12</span></h2></section>
+    <section class="lin foglia"><h2>Autotest <span class="n">13</span></h2></section>
+  </div>
+</main>

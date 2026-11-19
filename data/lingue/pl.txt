@@ -5005,3 +5005,10 @@ terreno {0} (εr {1}, σ {2} S/m)	grunt {0} (εr {1}, σ {2} S/m)
 personalizzato	własny
 centra	wyśrodkuj
 alta	wysoki
+NEC/correnti	NEC/prądy
+Variabili e ottimizzazione	Zmienne i optymalizacja
+Distanze di stack VHF	Odstępy zestawu VHF
+Distanze di stack HF + HFTA	Odstępy zestawów KF + HFTA
+Vai a Distanze di stack VHF	Przejdź do Odstępy zestawu VHF
+proposta (Distanze di stack VHF)	proponowany (Odstępy zestawu VHF)
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	Aby utworzyć zestaw z pojedynczej anteny: Szum/GT/Zestaw > Odstępy zestawu VHF, wiersze i kolumny, przycisk "Utwórz zestaw w otwartym modelu" (od 0.4.20).

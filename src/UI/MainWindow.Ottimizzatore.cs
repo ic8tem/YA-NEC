@@ -475,7 +475,7 @@ namespace YaNec
             }
             f.Items.Add(new MenuItem { Header = "altro", IsEnabled = false, FontSize = 11 });
             MenuItem mv = new MenuItem { Header = "Scrivi una variabile nella linguetta Variabili…" };
-            mv.Click += (s, e) => SelectTab(9);
+            mv.Click += (s, e) => ApriLinguetta("Variabili");   // 1.5.2: era SelectTab(9)
             f.Items.Add(mv);
             f.ShowAt(dove);
         }

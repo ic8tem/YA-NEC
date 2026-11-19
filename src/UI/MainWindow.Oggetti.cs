@@ -723,8 +723,8 @@ namespace YaNec
             {
                 body.Children.Add(Nota("Nel modello non ci sono copie identiche della stessa antenna. Il riconoscimento cerca fili elencati a gruppi uguali, " +
                     "ognuno uguale al primo ma spostato (stessi raggi e segmenti), come nei file di stack di MMANA, AutoEZ ed EZNEC.", Pal.Fore));
-                body.Children.Add(Nota("Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack, righe e colonne, pulsante \"Crea lo stack nel modello aperto\" (dalla 0.4.20)."));
-                Button vai = Btn("Vai a Distanze di stack", false);
+                body.Children.Add(Nota("Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante \"Crea lo stack nel modello aperto\" (dalla 0.4.20)."));
+                Button vai = Btn("Vai a Distanze di stack VHF", false);
                 vai.Click += (s, e) =>
                 {
                     ApriRumoreGt("stack");   // 1.1.0: Distanze di stack sta in Rumore/GT/Stack

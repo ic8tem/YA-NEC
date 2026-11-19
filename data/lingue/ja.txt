@@ -5005,3 +5005,10 @@ terreno {0} (εr {1}, σ {2} S/m)	大地 {0} (εr {1}, σ {2} S/m)
 personalizzato	カスタム
 centra	中央へ
 alta	高
+NEC/correnti	NEC/電流
+Variabili e ottimizzazione	変数と最適化
+Distanze di stack VHF	スタック間隔 VHF
+Distanze di stack HF + HFTA	HF のスタック間隔 + HFTA
+Vai a Distanze di stack VHF	スタック間隔へ移動 VHF
+proposta (Distanze di stack VHF)	提案 (スタック間隔 VHF)
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	単体アンテナからスタックを作るには: 雑音/GT/スタック > スタック間隔 VHF、行と列、「開いているモデルにスタックを作成」ボタン (0.4.20 以降)。

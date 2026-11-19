@@ -35,8 +35,8 @@ namespace YaNec
             fasGt.Famiglia("RICEZIONE");
             fasGt.Voce("gt", "Rumore e G/T", false, null, "come prima: TANT, VE7BQH, KF2YN, stack");
             fasGt.Voce("cielo", "Rumore dal cielo vero", false, null, "NUOVO · mappa del cielo, QTH, ora, Luna (skynoise, G8ONH)");
-            fasGt.Voce("stack", "Distanze di stack", false, null, "VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze");
-            fasGt.Voce("stackhf", "Distanze di stack HF", false, null, "NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti");   // 1.5 (IC8TEM 18/11/2026 21:29)
+            fasGt.Voce("stack", "Distanze di stack VHF", false, null, "VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze");
+            fasGt.Voce("stackhf", "Distanze di stack HF + HFTA", false, null, "NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti");   // 1.5 (IC8TEM 18/11/2026 21:29)
             hostGt = new ContentControl();
             gtPagine["gt"] = BuildGtPage();
             fasGt.Selected += k =>
@@ -93,7 +93,7 @@ namespace YaNec
             inp.Children.Add(Riga("Azimut / elevazione", cvAz, cvEl, new TextBlock { Text = "gradi · 30° come VE7BQH", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             inp.Children.Add(Riga("Antenne", Scelta(new[] { "singola", "2 affiancate", "2 sovrapposte", "2 x 2" }, 3, k => cvStack = k), new TextBlock { Text = "come VE7BQH (stack di 4)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
             cvDv = Tb("", 60); cvDh = Tb("", 60);
-            inp.Children.Add(Riga("Distanze", Scelta(new[] { "DL6WU", "proposta (Distanze di stack)", "a mano" }, 0, k => { cvDist = k; cvDv.IsEnabled = k == 2; cvDh.IsEnabled = k == 2; }), cvDv, cvDh, new TextBlock { Text = "m (V, H)", VerticalAlignment = VerticalAlignment.Center }));
+            inp.Children.Add(Riga("Distanze", Scelta(new[] { "DL6WU", "proposta (Distanze di stack VHF)", "a mano" }, 0, k => { cvDist = k; cvDv.IsEnabled = k == 2; cvDh.IsEnabled = k == 2; }), cvDv, cvDh, new TextBlock { Text = "m (V, H)", VerticalAlignment = VerticalAlignment.Center }));
             cvDv.IsEnabled = cvDh.IsEnabled = false;
             cvTsky = Tb("200", 55); cvTgu = Tb("1000", 55);
             inp.Children.Add(Riga("Temperature uniformi (VE7BQH)", cvTsky, cvTgu, Scelta(new[] { "TANT", "rurale", "residenziale", "citta'" }, 0, k =>

@@ -74,7 +74,7 @@ namespace YaNec
                     SelectTab(IndiceLinguetta("Diagrammi")); ApriVoceDiagrammi("Diagrammi"); await foto("diagrammi");
                     ApriVoceDiagrammi("Terreno reale"); await Attendi(() => terrEsito != null, 90000); await Task.Delay(2500); await foto("terreno-reale");
                     ApriVoceDiagrammi("Tabelle"); await foto("tabelle-fb-fr");
-                    SelectTab(IndiceLinguetta("Smith")); await foto("smith");
+                    ApriLinguetta("Smith"); await foto("smith");
                     SelectTab(IndiceLinguetta("Avvisi")); await Task.Delay(4000); await foto("avvisi-agt");
                 }
                 SelectTab(IndiceLinguetta("Diagrammi")); ApriVoceDiagrammi("Ricezione (RDF)"); await Task.Delay(20000); await foto("ricezione-rdf");

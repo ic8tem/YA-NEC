@@ -5005,3 +5005,10 @@ terreno {0} (εr {1}, σ {2} S/m)	พื้นดิน {0} (εr {1}, σ {2} S/m
 personalizzato	กำหนดเอง
 centra	จัดกึ่งกลาง
 alta	สูง
+NEC/correnti	NEC/กระแส
+Variabili e ottimizzazione	ตัวแปรและการหาค่าเหมาะที่สุด
+Distanze di stack VHF	ระยะห่างสแตก VHF
+Distanze di stack HF + HFTA	ระยะสแตก HF + HFTA
+Vai a Distanze di stack VHF	ไปที่ระยะห่างสแตก VHF
+proposta (Distanze di stack VHF)	ที่เสนอ (ระยะห่างสแตก VHF)
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	การสร้างสแตกจากสายอากาศเดี่ยว: สัญญาณรบกวน/GT/สแตก > ระยะห่างสแตก VHF, แถวและคอลัมน์, ปุ่ม "สร้างสแตกในแบบจำลองที่เปิดอยู่" (ตั้งแต่ 0.4.20)

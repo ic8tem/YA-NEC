@@ -5005,3 +5005,10 @@ terreno {0} (εr {1}, σ {2} S/m)	地面 {0} (εr {1}, σ {2} S/m)
 personalizzato	自訂
 centra	置中
 alta	高
+NEC/correnti	NEC/電流
+Variabili e ottimizzazione	變數與最佳化
+Distanze di stack VHF	堆疊間距 VHF
+Distanze di stack HF + HFTA	HF 堆疊間距 + HFTA
+Vai a Distanze di stack VHF	轉到堆疊間距 VHF
+proposta (Distanze di stack VHF)	建議值（堆疊間距 VHF）
+Per creare uno stack da un'antenna sola: Rumore/GT/Stack > Distanze di stack VHF, righe e colonne, pulsante "Crea lo stack nel modello aperto" (dalla 0.4.20).	由單副天線創建堆疊：噪聲/GT/堆疊 > 堆疊間距 VHF，行與列，"在已開啟的模型中創建堆疊"按鈕（自 0.4.20 起）。

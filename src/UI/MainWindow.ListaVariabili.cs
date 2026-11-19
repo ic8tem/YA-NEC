@@ -76,7 +76,7 @@ namespace YaNec
             cerca.TextChanged += (s, e) => disegna();
             Button vai = Btn("Apri la linguetta Variabili →", false);
             vai.HorizontalAlignment = HorizontalAlignment.Left;
-            vai.Click += (s, e) => { fl.Hide(); SelectTab(IndiceLinguetta("Variabili")); };
+            vai.Click += (s, e) => { fl.Hide(); ApriLinguetta("Variabili"); };
             sp.Children.Add(vai);
             disegna();
             fl.ShowAt(dove);

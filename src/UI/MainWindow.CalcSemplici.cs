@@ -33,8 +33,9 @@ namespace YaNec
         string calcFam = "HF";
         readonly Dictionary<string, Button> calcFamBtn = new Dictionary<string, Button>();
         readonly Dictionary<string, string> calcUltima = new Dictionary<string, string>();
-        /// <summary>1.1.0: famiglie dei Calcolatori e loro voci, nell'ordine del bozzetto approvato.</summary>
-        public static readonly string[] CalcFamiglie = { "HF", "VHF", "Antenne riceventi", "Strumenti", "Calcoli meccanici", "Dischi e illuminatori", "2,4 GHz" };
+        /// <summary>1.1.0: famiglie dei Calcolatori e loro voci. 1.5.2: nuovo ordine chiesto da IC8TEM il 19/11/2026 17:06
+        /// (schema numerato 1-7 sull'albero delle linguette): HF, Antenne riceventi, VHF, Strumenti, Dischi e illuminatori, 2,4 GHz, Calcoli meccanici.</summary>
+        public static readonly string[] CalcFamiglie = { "HF", "Antenne riceventi", "VHF", "Strumenti", "Dischi e illuminatori", "2,4 GHz", "Calcoli meccanici" };
         Control calcMeccPagina;   // 1.5: la pagina dei Calcoli meccanici (prima linguetta principale) dentro i Calcolatori
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
