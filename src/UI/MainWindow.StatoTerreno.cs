@@ -15,6 +15,7 @@ namespace YaNec
     public partial class MainWindow
     {
         Window finErrore;
+        Popup popTerreno;
         TextBlock finErroreTesto;
 
         Control PulsanteTerreno()
@@ -23,16 +24,23 @@ namespace YaNec
                 FontSize = 12, Background = new SolidColorBrush(Color.Parse("#2F4A66")), Foreground = Brushes.White, BorderBrush = new SolidColorBrush(Color.Parse("#4A6787")),
                 BorderThickness = new Thickness(1), VerticalAlignment = VerticalAlignment.Center };
             ToolTip.SetTip(b, "Come viene disegnato ogni terreno (il colore segue il tipo scelto nel menu Terreno):");
-            Flyout fl = new Flyout
+            // Popup e non Flyout: il FlyoutPresenter limita la larghezza (la legenda veniva tagliata); niente chiusura al clic fuori
+            // (il clic sul pulsante la riaprirebbe): si chiude con lo stesso pulsante o con Esc
+            Popup pp = new Popup
             {
-                Content = new Border { Padding = new Thickness(4), Child = groundLegend ?? new GroundLegend { Width = 760 } },
-                Placement = PlacementMode.TopEdgeAlignedLeft
+                Child = new Border { Padding = new Thickness(8), Background = Pal.B(Pal.Panel), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(6),
+                    Child = groundLegend ?? new GroundLegend { Width = 760 } },
+                PlacementTarget = b, Placement = PlacementMode.TopEdgeAlignedLeft, IsLightDismissEnabled = false, VerticalOffset = -4
             };
-            fl.Opened += (s, e) => { b.Content = "Nascondi terreno ▾"; b.Background = new SolidColorBrush(Color.Parse("#E08A00")); b.BorderBrush = b.Background; };
-            fl.Closed += (s, e) => { b.Content = "Mostra terreno ▴"; b.Background = new SolidColorBrush(Color.Parse("#2F4A66")); b.BorderBrush = new SolidColorBrush(Color.Parse("#4A6787")); };
-            b.Click += (s, e) => { if (fl.IsOpen) fl.Hide(); else fl.ShowAt(b); };
-            DockPanel.SetDock(b, Dock.Left);
-            return b;
+            pp.Opened += (s, e) => { b.Content = "Nascondi terreno ▾"; b.Background = new SolidColorBrush(Color.Parse("#E08A00")); b.BorderBrush = b.Background; };
+            pp.Closed += (s, e) => { b.Content = "Mostra terreno ▴"; b.Background = new SolidColorBrush(Color.Parse("#2F4A66")); b.BorderBrush = new SolidColorBrush(Color.Parse("#4A6787")); };
+            b.Click += (s, e) => pp.IsOpen = !pp.IsOpen;
+            AddHandler(KeyDownEvent, (s, e) => { if (e.Key == Key.Escape && pp.IsOpen) { pp.IsOpen = false; e.Handled = true; } }, Avalonia.Interactivity.RoutingStrategies.Tunnel);
+            popTerreno = pp;
+            StackPanel sb = new StackPanel { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Center };
+            sb.Children.Add(b); sb.Children.Add(pp);
+            DockPanel.SetDock(sb, Dock.Left);
+            return sb;
         }
 
         void FinestraErrore(string testo)
