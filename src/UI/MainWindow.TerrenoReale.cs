@@ -355,10 +355,11 @@ namespace YaNec
                         Pen po = new Pen(new SolidColorBrush(TerrArancio), 1.3, new DashStyle(new double[] { 4, 3 }, 0));
                         ctx.DrawLine(po, new Point(X(0), Y(za)), new Point(X(xr), Y(zr)));
                         ctx.DrawLine(po, new Point(X(xr), Y(zr)), new Point(X(Math.Min(xmax, 2 * xr)), Y(Math.Min(zmax, zr + (za - p.QuotaBase)))));
-                        Draw.Text(ctx, "riflessione " + (ultimo.RiflessioneMare ? "sul mare" : "sul terreno") + " (" + FN(xr, 1) + " km)", X(xr) + 4, Y(zr) - 18, 11.5, TerrArancio);
+                        Draw.Text(ctx, Lang.F(ultimo.RiflessioneMare ? "riflessione sul mare ({0} km)" : "riflessione sul terreno ({0} km)", FN(xr, 1)),   // 1.5.2: tradotti (lezione 22 EN)
+                             X(xr) + 4, Y(zr) - 18, 11.5, TerrArancio);
                     }
                 }
-                if (p.Mare.Any(m => m)) Draw.TextR(ctx, "mare (riflessione con εr " + (cMare.SelectedIndex == 0 ? "81, σ 5 S/m" : "80, σ 0,003 S/m") + ")", R - 4, Y(0) - 24, 11.5, TerrBlu);
+                if (p.Mare.Any(m => m)) Draw.TextR(ctx, Lang.F("mare (riflessione con εr {0})", cMare.SelectedIndex == 0 ? "81, σ 5 S/m" : "80, σ 0,003 S/m"), R - 4, Y(0) - 24, 11.5, TerrBlu);
                 // asse y
                 FormattedText fy = Draw.Ft("quota s.l.m. (m)", 11.5, Pal.Muted);
                 using (ctx.PushTransform(Matrix.CreateRotation(-Math.PI / 2) * Matrix.CreateTranslation(12, (T + B) / 2 + fy.Width / 2))) ctx.DrawText(fy, new Point(0, 0));
@@ -517,7 +518,7 @@ namespace YaNec
                         rg(titDir + " · " + FN(ultimaF, 3) + " MHz", Pal.Fore, FontWeight.SemiBold);
                         if (lb.Item1 > 0) rg(Lang.T("primo lobo reale:") + " " + FN(r.El[lb.Item1], 1) + "°", Pal.Fore, FontWeight.Normal);
                         if (lp.Item1 > 0) rg(Lang.T("primo lobo piatto:") + " " + FN(r.El[lp.Item1], 1) + "°", Pal.Fore, FontWeight.Normal);
-                        if (lb.Item1 > 0) rg("-3 dB da " + FN(lb.Item2, 1) + "° a " + FN(lb.Item3, 1) + "°", TerrBlu, FontWeight.Normal);
+                        if (lb.Item1 > 0) rg(Lang.F("-3 dB da {0}° a {1}°", FN(lb.Item2, 1), FN(lb.Item3, 1)), TerrBlu, FontWeight.Normal);
                         double fino = double.NaN;
                         for (int i = 1; i < r.El.Length && r.El[i] <= 45; i++) if (r.Reale[i] > r.Piatto[i]) fino = r.El[i]; else if (!double.IsNaN(fino)) break;
                         if (!double.IsNaN(fino)) rg(Lang.T("lobo reale sopra il piatto fino a") + " " + FN(fino, 1) + "°", Color.Parse("#21A04A"), FontWeight.Normal);
@@ -646,7 +647,7 @@ namespace YaNec
                 };
                 titDir = modoAz == "traffico" && !double.IsNaN(lat) ? Lang.T(Dem.DirezioniTraffico[dirTr].Nome) + " (" + FN(az, 0) + "°)" : "azimut " + FN(az, 0) + "° (" + nomeDir(az) + ")";
                 string fonte = prof == "file" ? "da file" : prof == "piatto" ? "piatto" : "dal DEM";
-                titProf.Text = Lang.T("Profilo verso") + " " + titDir + ", " + fonte + " · calcolo in corso…";
+                titProf.Text = Lang.T("Profilo verso") + " " + titDir + ", " + fonte + " · " + Lang.T("calcolo in corso…");
                 titLobo.Text = Lang.T("Lobo verticale e angoli di arrivo a") + " " + FN(az, 0) + "° · " + FN(f, 3) + " MHz";
                 Nec2Engine eng = run.Engine;
                 double gcon = eng.GainConstant, lam = 299.792458 / f, kk = 2 * Math.PI / lam;
@@ -656,7 +657,7 @@ namespace YaNec
                 bCalc.IsEnabled = false;
                 // la barra in basso solo con la pagina davanti: dopo un calcolo del modello il ricalcolo del terreno in sottofondo non deve coprire «Calcolato a ...»
                 bool aVista = TopLevel.GetTopLevel(g) != null && g.IsEffectivelyVisible;
-                if (aVista) Status("Terreno reale: " + "calcolo in corso…");
+                if (aVista) Status(Lang.T("Terreno reale") + ": " + Lang.T("calcolo in corso…"));
                 bool riuscito = false;
                 try
                 {
@@ -741,14 +742,14 @@ namespace YaNec
                     Action<string, string> rl = (a, b) =>
                     {
                         TextBlock t = new TextBlock { TextWrapping = TextWrapping.Wrap };
-                        t.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = a + ": ", FontWeight = FontWeight.Bold });
+                        t.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = Lang.T(a) + ": ", FontWeight = FontWeight.Bold });   // 1.5.2: le Run non si traducono da sole
                         t.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = b });
                         righe.Children.Add(t);
                     };
-                    rl("Primo lobo", (lb.Item1 > 0 ? FN(esito.El[lb.Item1], 1) + "°" : "-") + " (piatto " + (lp.Item1 > 0 ? FN(esito.El[lp.Item1], 1) + "°" : "-") + ")");
+                    rl("Primo lobo del profilo", (lb.Item1 > 0 ? FN(esito.El[lb.Item1], 1) + "°" : "-") + " (" + Lang.T("piatto") + " " + (lp.Item1 > 0 ? FN(esito.El[lp.Item1], 1) + "°" : "-") + ")");
                     rl("Primo minimo", lb.Item4 > 0 ? FN(esito.El[lb.Item4], 1) + "°" : "-");
-                    rl("Punto di riflessione", double.IsNaN(esito.RiflessioneKm) ? "-" : FN(esito.RiflessioneKm, 1) + " km, " + (esito.RiflessioneMare ? "sul mare" : "sul terreno"));
-                    rl("Orizzonte", FN(esito.OrizzonteAvanti, 2) + "°" + (esito.OrizzonteAvanti > 0 ? " (rilievi)" : ""));
+                    rl("Punto di riflessione", double.IsNaN(esito.RiflessioneKm) ? "-" : FN(esito.RiflessioneKm, 1) + " km, " + Lang.T(esito.RiflessioneMare ? "sul mare" : "sul terreno"));
+                    rl("Orizzonte", FN(esito.OrizzonteAvanti, 2) + "°" + (esito.OrizzonteAvanti > 0 ? Lang.T(" (rilievi)") : ""));
                     righe.Children.Add(new TextBlock { Text = f < 30 ? "Uso: rotte DX in HF (angoli bassi 1–15°)." : "Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).", FontSize = 12, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 6, 0, 0) });
                     Registro.Scrivi("AZIONE", "terreno reale: " + titDir + ", " + FN(f, 3) + " MHz, FOM " + FN(fom, 2) + " dB");
                     // scansione dell'altezza
@@ -816,7 +817,7 @@ namespace YaNec
                     if (!ct.IsCancellationRequested)
                     {
                         bCalc.IsEnabled = true;
-                        if (riuscito && aVista) Status("Terreno reale: " + "calcolo finito");
+                        if (riuscito && aVista) Status(Lang.T("Terreno reale") + ": " + Lang.T("calcolo finito"));
                     }
                 }
             };
