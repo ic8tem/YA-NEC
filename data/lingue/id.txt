@@ -4940,3 +4940,11 @@ Struttura 3D ▸	Struktur 3D ▸
 Clic: nasconde o mostra la struttura	Klik: menyembunyikan atau menampilkan struktur
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	oker utuh: memakai variabel · oker putus-putus: memakainya melalui variabel lain
 attraverso {0}: fili {1}	melalui {0}: kawat {1}
+calcolo finito	perhitungan selesai
+scritta a mano	diisi manual
+scritta a mano: DEM {0} m ({1} m)	diisi manual: DEM {0} m ({1} m)
+quota sito a mano	ketinggian lokasi diisi manual
+quota sito a mano {0} m	ketinggian lokasi diisi manual {0} m
+quota sito a mano {0} m (DEM {1} m)	ketinggian lokasi diisi manual {0} m (DEM {1} m)
+Torna al valore del DEM	Kembali ke nilai DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Ketinggian tanah di bawah antena. Kosong = nilai DEM (abu-abu). Tulis ketinggian sebenarnya jika DEM salah: profil dimulai dari sini, sisa medan tetap dari DEM. ↺ DEM kembali ke nilai DEM.

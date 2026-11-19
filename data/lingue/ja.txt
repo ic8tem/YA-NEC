@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D 構造 ▸
 Clic: nasconde o mostra la struttura	クリック: 構造を隠すまたは表示
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	黄土色の実線: 変数を使用 · 黄土色の破線: 別の変数を通して使用
 attraverso {0}: fili {1}	{0} を通して: ワイヤー {1}
+calcolo finito	計算完了
+scritta a mano	手入力
+scritta a mano: DEM {0} m ({1} m)	手入力: DEM {0} m ({1} m)
+quota sito a mano	地点の標高を手入力
+quota sito a mano {0} m	地点の標高を手入力 {0} m
+quota sito a mano {0} m (DEM {1} m)	地点の標高を手入力 {0} m (DEM {1} m)
+Torna al valore del DEM	DEM の値に戻す
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	アンテナ直下の地面の標高。空欄 = DEM の値 (灰色)。DEM が誤っている場合は実際の標高を入力: 断面はここから始まり、残りの地形は DEM のままです。↺ DEM で DEM の値に戻ります。

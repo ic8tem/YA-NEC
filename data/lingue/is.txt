@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D-bygging ▸
 Clic: nasconde o mostra la struttura	Smelltu: felur eða sýnir bygginguna
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	heilt okkurgult: notar breytuna · strikað okkurgult: notar hana í gegnum aðra breytu
 attraverso {0}: fili {1}	í gegnum {0}: vírar {1}
+calcolo finito	útreikningi lokið
+scritta a mano	slegið inn handvirkt
+scritta a mano: DEM {0} m ({1} m)	slegið inn handvirkt: DEM {0} m ({1} m)
+quota sito a mano	hæð staðar slegin inn handvirkt
+quota sito a mano {0} m	hæð staðar slegin inn handvirkt {0} m
+quota sito a mano {0} m (DEM {1} m)	hæð staðar slegin inn handvirkt {0} m (DEM {1} m)
+Torna al valore del DEM	Aftur í DEM-gildið
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Landhæð undir loftnetinu. Autt = DEM-gildi (grátt). Sláðu inn rétta hæð ef DEM er rangt: sniðið byrjar hér, restin af landslaginu helst úr DEM. ↺ DEM fer aftur í DEM-gildið.

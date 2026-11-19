@@ -6625,3 +6625,11 @@ Riavvio tra {0} s
 Questo avviso si chiude tra {0} s
 Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).
 Riaperto dopo l'aggiornamento il modello che era aperto.
+calcolo finito
+scritta a mano
+scritta a mano: DEM {0} m ({1} m)
+quota sito a mano
+quota sito a mano {0} m
+quota sito a mano {0} m (DEM {1} m)
+Torna al valore del DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.

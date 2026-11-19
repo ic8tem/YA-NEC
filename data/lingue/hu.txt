@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D szerkezet ▸
 Clic: nasconde o mostra la struttura	Kattintás: elrejti vagy megmutatja a szerkezetet
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	folytonos okker: használja a változót · szaggatott okker: egy másik változón keresztül használja
 attraverso {0}: fili {1}	ezen keresztül: {0}: huzalok {1}
+calcolo finito	számítás kész
+scritta a mano	kézzel megadva
+scritta a mano: DEM {0} m ({1} m)	kézzel megadva: DEM {0} m ({1} m)
+quota sito a mano	a hely magassága kézzel megadva
+quota sito a mano {0} m	a hely magassága kézzel megadva {0} m
+quota sito a mano {0} m (DEM {1} m)	a hely magassága kézzel megadva {0} m (DEM {1} m)
+Torna al valore del DEM	Vissza a DEM értékére
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	A talaj magassága az antenna alatt. Üres = DEM-érték (szürke). Írd be a valódi magasságot, ha a DEM téved: a profil innen indul, a terep többi része a DEM-ből marad. ↺ DEM visszaáll a DEM értékére.

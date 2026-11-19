@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D štruktúra ▸
 Clic: nasconde o mostra la struttura	Klik: skryje alebo zobrazí štruktúru
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	plná okrová: používa premennú · čiarkovaná okrová: používa ju cez inú premennú
 attraverso {0}: fili {1}	cez {0}: vodiče {1}
+calcolo finito	výpočet hotový
+scritta a mano	zadané ručne
+scritta a mano: DEM {0} m ({1} m)	zadané ručne: DEM {0} m ({1} m)
+quota sito a mano	výška stanovišťa zadaná ručne
+quota sito a mano {0} m	výška stanovišťa zadaná ručne {0} m
+quota sito a mano {0} m (DEM {1} m)	výška stanovišťa zadaná ručne {0} m (DEM {1} m)
+Torna al valore del DEM	Späť na hodnotu DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Výška terénu pod anténou. Prázdne = hodnota DEM (sivá). Zadajte skutočnú výšku, ak sa DEM mýli: profil začína tu, zvyšok terénu zostáva z DEM. ↺ DEM vráti hodnotu DEM.

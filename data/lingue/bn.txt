@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D কাঠামো ▸
 Clic: nasconde o mostra la struttura	ক্লিক: কাঠামো লুকান বা দেখান
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	গাঢ় গেরুয়া: চলক ব্যবহার করে · ড্যাশ গেরুয়া: অন্য চলকের মাধ্যমে ব্যবহার করে
 attraverso {0}: fili {1}	{0}-এর মাধ্যমে: তার {1}
+calcolo finito	গণনা শেষ
+scritta a mano	হাতে লেখা
+scritta a mano: DEM {0} m ({1} m)	হাতে লেখা: DEM {0} m ({1} m)
+quota sito a mano	স্থানের উচ্চতা হাতে লেখা
+quota sito a mano {0} m	স্থানের উচ্চতা হাতে লেখা {0} m
+quota sito a mano {0} m (DEM {1} m)	স্থানের উচ্চতা হাতে লেখা {0} m (DEM {1} m)
+Torna al valore del DEM	DEM-এর মানে ফিরুন
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	অ্যান্টেনার নিচে মাটির উচ্চতা। খালি = DEM-এর মান (ধূসর)। DEM ভুল হলে আসল উচ্চতা লিখুন: প্রোফাইল এখান থেকে শুরু হয়, বাকি ভূমি DEM-এরই থাকে। ↺ DEM, DEM-এর মানে ফিরিয়ে দেয়।

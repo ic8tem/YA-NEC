@@ -4940,3 +4940,11 @@ Struttura 3D ▸	מבנה תלת-ממדי ▸
 Clic: nasconde o mostra la struttura	לחיצה: מסתיר או מציג את המבנה
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	אוקר מלא: משתמש במשתנה · אוקר מקווקו: משתמש בו דרך משתנה אחר
 attraverso {0}: fili {1}	דרך {0}: חוטים {1}
+calcolo finito	החישוב הסתיים
+scritta a mano	הוזן ידנית
+scritta a mano: DEM {0} m ({1} m)	הוזן ידנית: DEM {0} m ({1} m)
+quota sito a mano	גובה האתר הוזן ידנית
+quota sito a mano {0} m	גובה האתר הוזן ידנית {0} m
+quota sito a mano {0} m (DEM {1} m)	גובה האתר הוזן ידנית {0} m (DEM {1} m)
+Torna al valore del DEM	חזרה לערך ה-DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	גובה הקרקע מתחת לאנטנה. ריק = ערך ה-DEM (אפור). הקלד את הגובה האמיתי אם ה-DEM שגוי: הפרופיל מתחיל כאן, ושאר השטח נשאר מה-DEM. ↺ DEM מחזיר לערך ה-DEM.

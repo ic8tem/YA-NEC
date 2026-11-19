@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D-struktur ▸
 Clic: nasconde o mostra la struttura	Klikk: skjuler eller viser strukturen
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	heltrukken oker: bruker variabelen · stiplet oker: bruker den via en annen variabel
 attraverso {0}: fili {1}	via {0}: tråder {1}
+calcolo finito	beregning ferdig
+scritta a mano	skrevet inn manuelt
+scritta a mano: DEM {0} m ({1} m)	skrevet inn manuelt: DEM {0} m ({1} m)
+quota sito a mano	stedets høyde skrevet inn manuelt
+quota sito a mano {0} m	stedets høyde skrevet inn manuelt {0} m
+quota sito a mano {0} m (DEM {1} m)	stedets høyde skrevet inn manuelt {0} m (DEM {1} m)
+Torna al valore del DEM	Tilbake til DEM-verdien
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Terrenghøyde under antennen. Tom = DEM-verdi (grå). Skriv inn riktig høyde hvis DEM-en tar feil: profilen starter her, resten av terrenget forblir DEM-ens. ↺ DEM går tilbake til DEM-verdien.

@@ -4942,3 +4942,11 @@ Struttura 3D ▸	Structure 3D ▸
 Clic: nasconde o mostra la struttura	Clic : masque ou affiche la structure
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ocre plein : utilise la variable · ocre en tirets : l'utilise via une autre variable
 attraverso {0}: fili {1}	via {0} : fils {1}
+calcolo finito	calcul terminé
+scritta a mano	saisie à la main
+scritta a mano: DEM {0} m ({1} m)	saisie à la main: DEM {0} m ({1} m)
+quota sito a mano	altitude du site saisie à la main
+quota sito a mano {0} m	altitude du site saisie à la main {0} m
+quota sito a mano {0} m (DEM {1} m)	altitude du site saisie à la main {0} m (DEM {1} m)
+Torna al valore del DEM	Revenir à la valeur du MNT
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Altitude du sol sous l'antenne. Vide = valeur du MNT (en gris). Saisissez l'altitude réelle si le MNT se trompe : le profil part d'ici, le reste du terrain reste celui du MNT. ↺ DEM revient à la valeur du MNT.

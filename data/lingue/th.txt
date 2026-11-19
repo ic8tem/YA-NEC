@@ -4940,3 +4940,11 @@ Struttura 3D ▸	โครงสร้าง 3D ▸
 Clic: nasconde o mostra la struttura	คลิก: ซ่อนหรือแสดงโครงสร้าง
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	เส้นทึบสีเหลืองดิน: ใช้ตัวแปร · เส้นประสีเหลืองดิน: ใช้ผ่านตัวแปรอื่น
 attraverso {0}: fili {1}	ผ่าน {0}: สาย {1}
+calcolo finito	คำนวณเสร็จแล้ว
+scritta a mano	กรอกเอง
+scritta a mano: DEM {0} m ({1} m)	กรอกเอง: DEM {0} m ({1} m)
+quota sito a mano	ความสูงของที่ตั้งกรอกเอง
+quota sito a mano {0} m	ความสูงของที่ตั้งกรอกเอง {0} m
+quota sito a mano {0} m (DEM {1} m)	ความสูงของที่ตั้งกรอกเอง {0} m (DEM {1} m)
+Torna al valore del DEM	กลับไปใช้ค่า DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	ความสูงของพื้นใต้สายอากาศ ว่าง = ค่า DEM (สีเทา) กรอกความสูงจริงหาก DEM ผิด: โปรไฟล์เริ่มจากตรงนี้ ส่วนที่เหลือของภูมิประเทศยังเป็นของ DEM ↺ DEM กลับไปใช้ค่า DEM

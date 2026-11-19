@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D 結構 ▸
 Clic: nasconde o mostra la struttura	點擊：隱藏或顯示結構
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	赭色實線：使用該變量 · 赭色虛線：通過另一變量使用它
 attraverso {0}: fili {1}	通過 {0}：導線 {1}
+calcolo finito	計算完成
+scritta a mano	手動輸入
+scritta a mano: DEM {0} m ({1} m)	手動輸入: DEM {0} m ({1} m)
+quota sito a mano	手動輸入的站點海拔
+quota sito a mano {0} m	手動輸入的站點海拔 {0} m
+quota sito a mano {0} m (DEM {1} m)	手動輸入的站點海拔 {0} m (DEM {1} m)
+Torna al valore del DEM	恢復 DEM 數值
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	天線下方地面的海拔。空白 = DEM 數值（灰色）。DEM 有誤時請輸入實際海拔：剖面從這裡開始，其餘地形仍取自 DEM。↺ DEM 恢復 DEM 數值。

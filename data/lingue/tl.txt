@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D na istruktura ▸
 Clic: nasconde o mostra la struttura	Click: itinatago o ipinapakita ang istruktura
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	buong ocher: ginagamit ang variable · putol-putol na ocher: ginagamit ito sa pamamagitan ng ibang variable
 attraverso {0}: fili {1}	sa pamamagitan ng {0}: mga wire {1}
+calcolo finito	tapos na ang kalkulasyon
+scritta a mano	isinulat nang mano-mano
+scritta a mano: DEM {0} m ({1} m)	isinulat nang mano-mano: DEM {0} m ({1} m)
+quota sito a mano	taas ng lugar na isinulat nang mano-mano
+quota sito a mano {0} m	taas ng lugar na isinulat nang mano-mano {0} m
+quota sito a mano {0} m (DEM {1} m)	taas ng lugar na isinulat nang mano-mano {0} m (DEM {1} m)
+Torna al valore del DEM	Bumalik sa halaga ng DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Taas ng lupa sa ilalim ng antena. Walang laman = halaga ng DEM (kulay abo). Isulat ang tunay na taas kung mali ang DEM: dito nagsisimula ang profile, ang natitirang lupain ay mula pa rin sa DEM. ↺ DEM ay bumabalik sa halaga ng DEM.

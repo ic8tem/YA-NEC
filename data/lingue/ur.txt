@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D ڈھانچہ ▸
 Clic: nasconde o mostra la struttura	کلک: ڈھانچہ چھپائیں یا دکھائیں
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ٹھوس گیروا: متغیر استعمال کرتا ہے · ڈیش گیروا: دوسرے متغیر کے ذریعے استعمال کرتا ہے
 attraverso {0}: fili {1}	{0} کے ذریعے: تار {1}
+calcolo finito	حساب مکمل
+scritta a mano	ہاتھ سے لکھا
+scritta a mano: DEM {0} m ({1} m)	ہاتھ سے لکھا: DEM {0} m ({1} m)
+quota sito a mano	مقام کی بلندی ہاتھ سے لکھی
+quota sito a mano {0} m	مقام کی بلندی ہاتھ سے لکھی {0} m
+quota sito a mano {0} m (DEM {1} m)	مقام کی بلندی ہاتھ سے لکھی {0} m (DEM {1} m)
+Torna al valore del DEM	DEM کی قدر پر واپس
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	اینٹینا کے نیچے زمین کی بلندی۔ خالی = DEM کی قدر (سرمئی)۔ اگر DEM غلط ہو تو اصل بلندی لکھیں: پروفائل یہیں سے شروع ہوتا ہے، باقی زمین DEM کی رہتی ہے۔ ↺ DEM، DEM کی قدر پر واپس لاتا ہے۔

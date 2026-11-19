@@ -4940,3 +4940,11 @@ Struttura 3D ▸	Τρισδιάστατη δομή ▸
 Clic: nasconde o mostra la struttura	Κλικ: αποκρύπτει ή εμφανίζει τη δομή
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	συνεχής ώχρα: χρησιμοποιεί τη μεταβλητή · διακεκομμένη ώχρα: τη χρησιμοποιεί μέσω άλλης μεταβλητής
 attraverso {0}: fili {1}	μέσω {0}: σύρματα {1}
+calcolo finito	ο υπολογισμός ολοκληρώθηκε
+scritta a mano	γραμμένο με το χέρι
+scritta a mano: DEM {0} m ({1} m)	γραμμένο με το χέρι: DEM {0} m ({1} m)
+quota sito a mano	υψόμετρο θέσης με το χέρι
+quota sito a mano {0} m	υψόμετρο θέσης με το χέρι {0} m
+quota sito a mano {0} m (DEM {1} m)	υψόμετρο θέσης με το χέρι {0} m (DEM {1} m)
+Torna al valore del DEM	Επιστροφή στην τιμή του DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Υψόμετρο εδάφους κάτω από την κεραία. Κενό = τιμή του DEM (γκρι). Γράψτε το πραγματικό υψόμετρο αν το DEM κάνει λάθος: το προφίλ ξεκινά από εδώ, το υπόλοιπο έδαφος μένει του DEM. ↺ DEM επιστρέφει στην τιμή του DEM.

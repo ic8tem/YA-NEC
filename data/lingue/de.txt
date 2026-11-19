@@ -4943,3 +4943,11 @@ Struttura 3D ▸	3D-Struktur ▸
 Clic: nasconde o mostra la struttura	Klick: blendet die Struktur aus oder ein
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	Ocker durchgezogen: verwendet die Variable · Ocker gestrichelt: verwendet sie über eine andere Variable
 attraverso {0}: fili {1}	über {0}: Drähte {1}
+calcolo finito	Berechnung fertig
+scritta a mano	von Hand eingegeben
+scritta a mano: DEM {0} m ({1} m)	von Hand eingegeben: DEM {0} m ({1} m)
+quota sito a mano	Standorthöhe von Hand
+quota sito a mano {0} m	Standorthöhe von Hand {0} m
+quota sito a mano {0} m (DEM {1} m)	Standorthöhe von Hand {0} m (DEM {1} m)
+Torna al valore del DEM	Zurück zum DEM-Wert
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Geländehöhe unter der Antenne. Leer = DEM-Wert (grau). Gib die echte Höhe ein, wenn das DEM falsch ist: Das Profil beginnt hier, der Rest des Geländes bleibt aus dem DEM. ↺ DEM kehrt zum DEM-Wert zurück.

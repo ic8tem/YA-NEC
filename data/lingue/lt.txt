@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D struktūra ▸
 Clic: nasconde o mostra la struttura	Spustelėjimas: paslepia arba rodo struktūrą
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ištisinė ochra: naudoja kintamąjį · brūkšninė ochra: naudoja jį per kitą kintamąjį
 attraverso {0}: fili {1}	per {0}: laidai {1}
+calcolo finito	skaičiavimas baigtas
+scritta a mano	įvesta ranka
+scritta a mano: DEM {0} m ({1} m)	įvesta ranka: DEM {0} m ({1} m)
+quota sito a mano	vietos aukštis įvestas ranka
+quota sito a mano {0} m	vietos aukštis įvestas ranka {0} m
+quota sito a mano {0} m (DEM {1} m)	vietos aukštis įvestas ranka {0} m (DEM {1} m)
+Torna al valore del DEM	Grįžti į DEM reikšmę
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Žemės aukštis po antena. Tuščia = DEM reikšmė (pilka). Įrašykite tikrąjį aukštį, jei DEM klysta: profilis prasideda čia, likęs reljefas lieka iš DEM. ↺ DEM grąžina DEM reikšmę.

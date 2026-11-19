@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D-struktuur ▸
 Clic: nasconde o mostra la struttura	Klõps: peidab või näitab struktuuri
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	pidev ooker: kasutab muutujat · katkendlik ooker: kasutab seda teise muutuja kaudu
 attraverso {0}: fili {1}	läbi {0}: traadid {1}
+calcolo finito	arvutus valmis
+scritta a mano	käsitsi sisestatud
+scritta a mano: DEM {0} m ({1} m)	käsitsi sisestatud: DEM {0} m ({1} m)
+quota sito a mano	koha kõrgus käsitsi
+quota sito a mano {0} m	koha kõrgus käsitsi {0} m
+quota sito a mano {0} m (DEM {1} m)	koha kõrgus käsitsi {0} m (DEM {1} m)
+Torna al valore del DEM	Tagasi DEM-i väärtusele
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Maapinna kõrgus antenni all. Tühi = DEM-i väärtus (hall). Kirjuta tegelik kõrgus, kui DEM eksib: profiil algab siit, ülejäänud maastik jääb DEM-ist. ↺ DEM naaseb DEM-i väärtusele.

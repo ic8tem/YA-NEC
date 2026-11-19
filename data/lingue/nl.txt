@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D-structuur ▸
 Clic: nasconde o mostra la struttura	Klik: verbergt of toont de structuur
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	massief oker: gebruikt de variabele · gestreept oker: gebruikt haar via een andere variabele
 attraverso {0}: fili {1}	via {0}: draden {1}
+calcolo finito	berekening klaar
+scritta a mano	met de hand ingevuld
+scritta a mano: DEM {0} m ({1} m)	met de hand ingevuld: DEM {0} m ({1} m)
+quota sito a mano	hoogte van de locatie met de hand
+quota sito a mano {0} m	hoogte van de locatie met de hand {0} m
+quota sito a mano {0} m (DEM {1} m)	hoogte van de locatie met de hand {0} m (DEM {1} m)
+Torna al valore del DEM	Terug naar de DEM-waarde
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Terreinhoogte onder de antenne. Leeg = DEM-waarde (grijs). Vul de echte hoogte in als het DEM fout zit: het profiel begint hier, de rest van het terrein blijft uit het DEM. ↺ DEM gaat terug naar de DEM-waarde.

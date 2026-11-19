@@ -4940,3 +4940,11 @@ Struttura 3D ▸	Structură 3D ▸
 Clic: nasconde o mostra la struttura	Clic: ascunde sau arată structura
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ocru continuu: folosește variabila · ocru întrerupt: o folosește prin altă variabilă
 attraverso {0}: fili {1}	prin {0}: fire {1}
+calcolo finito	calcul terminat
+scritta a mano	scrisă de mână
+scritta a mano: DEM {0} m ({1} m)	scrisă de mână: DEM {0} m ({1} m)
+quota sito a mano	altitudinea locului scrisă de mână
+quota sito a mano {0} m	altitudinea locului scrisă de mână {0} m
+quota sito a mano {0} m (DEM {1} m)	altitudinea locului scrisă de mână {0} m (DEM {1} m)
+Torna al valore del DEM	Înapoi la valoarea DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Altitudinea solului sub antenă. Gol = valoarea DEM (gri). Scrie altitudinea reală dacă DEM-ul greșește: profilul pornește de aici, restul terenului rămâne cel din DEM. ↺ DEM revine la valoarea DEM.

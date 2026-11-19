@@ -28,7 +28,8 @@ namespace YaNec
         bool terrSovrapponi;
 
         static readonly Color TerrBlu = Color.Parse("#1D6FE0"), TerrArancio = Color.Parse("#E08A00"), TerrGrigio = Color.Parse("#9AA5B4"),
-            TerrSuolo = Color.Parse("#D8C8A0"), TerrSuoloBordo = Color.Parse("#8B6B3E"), TerrMare = Color.Parse("#BFDDF2"), TerrRosso = Color.Parse("#D0342C");
+            TerrSuolo = Color.Parse("#D8C8A0"), TerrSuoloBordo = Color.Parse("#8B6B3E"), TerrMare = Color.Parse("#BFDDF2"), TerrRosso = Color.Parse("#D0342C"),
+            QuotaOcra = Color.Parse("#C77A10");
 
         /// <summary>Traccia del lobo sul terreno reale per il diagramma della linguetta Verticale (un valore per grado di elevazione 0..180).</summary>
         PolarTrace TerrTraccia()
@@ -53,6 +54,8 @@ namespace YaNec
             int dirTr = 0;
             Dem.Profilo profFile = null;
             double lat = double.NaN, lon = double.NaN, quotaSito = double.NaN;
+            // 1.5.2: quota del sito scritta a mano (NaN = quella del DEM), legata al locatore per cui e' stata scritta
+            double quotaMano = double.NaN, ultimaQuotaDem = double.NaN; string locQuota = null;
             CancellationTokenSource cts = null;
             List<Tuple<double, double>> rosa = null;
             Dem.Profilo ultimoProf = null; TerrenoReale.Esito ultimo = null; double ultimaH = 0, ultimoAz = 0, ultimaF = 0;
@@ -61,7 +64,17 @@ namespace YaNec
             double hMigliore = double.NaN; List<Tuple<double, double>> scansione = null;
 
             string locIniz = "JN70CN82WE";
-            try { if (File.Exists(FileTerreno)) { string s0 = File.ReadAllText(FileTerreno).Trim(); if (s0.Length >= 4) locIniz = s0; } } catch { }
+            try
+            {
+                if (File.Exists(FileTerreno))
+                {
+                    string[] s0 = File.ReadAllText(FileTerreno).Trim().Split(';');
+                    if (s0[0].Trim().Length >= 4) locIniz = s0[0].Trim();
+                    double q0; if (s0.Length > 1 && double.TryParse(s0[1].Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out q0)) quotaMano = q0;
+                }
+            }
+            catch { }
+            locQuota = locIniz.ToUpperInvariant();
 
             // ---------------- sinistra ----------------
             StackPanel sx = new StackPanel { Width = 236, Spacing = 2 };
@@ -96,8 +109,31 @@ namespace YaNec
                 Grid.SetColumn(u, 2); g0.Children.Add(u);
                 return g0;
             };
-            TextBlock quotaTb = new TextBlock { Text = "-", VerticalAlignment = VerticalAlignment.Center };
-            sx.Children.Add(rigaSito("Quota sito", quotaTb, "m s.l.m."));
+            // 1.5.2 (bozzetto approvato da IC8TEM il 19/11/2026): la quota del sito si puo' scrivere a mano quando il DEM sbaglia
+            TextBox tQuota = Tb(double.IsNaN(quotaMano) ? "" : FN(quotaMano, 0), 60);
+            sx.Children.Add(rigaSito("Quota sito", tQuota, "m s.l.m."));
+            ToolTip.SetTip(tQuota, "Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.");
+            TextBlock notaQuota = new TextBlock { FontSize = 11.5, Foreground = new SolidColorBrush(QuotaOcra), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap };
+            Button bQuotaDem = Btn("↺ DEM", false); bQuotaDem.Padding = new Thickness(8, 1); bQuotaDem.FontSize = 12;
+            ToolTip.SetTip(bQuotaDem, "Torna al valore del DEM");
+            Grid rigaNotaQuota = new Grid { ColumnDefinitions = new ColumnDefinitions("*,Auto"), Margin = new Thickness(2, 0, 2, 2) };
+            rigaNotaQuota.Children.Add(notaQuota); Grid.SetColumn(bQuotaDem, 1); rigaNotaQuota.Children.Add(bQuotaDem);
+            sx.Children.Add(rigaNotaQuota);
+            Action aggiornaQuota = () =>
+            {
+                // con il profilo da HorizonProfiler vale la quota del file: il campo la mostra in grigio e non si scrive
+                bool daFile = prof == "file";
+                bool mano = !double.IsNaN(quotaMano) && !daFile;
+                double qv = daFile ? (profFile != null ? profFile.QuotaBase : double.NaN) : quotaSito;
+                tQuota.IsEnabled = !daFile;
+                tQuota.Watermark = double.IsNaN(qv) ? "-" : FN(qv, 0);
+                if (mano) tQuota.BorderBrush = new SolidColorBrush(QuotaOcra); else tQuota.ClearValue(TextBox.BorderBrushProperty);
+                tQuota.FontWeight = mano ? FontWeight.Bold : FontWeight.Normal;
+                rigaNotaQuota.IsVisible = mano;
+                notaQuota.Text = !mano ? "" : double.IsNaN(quotaSito) ? Lang.T("scritta a mano") :
+                    Lang.F("scritta a mano: DEM {0} m ({1} m)", FN(quotaSito, 0), (quotaMano - quotaSito >= 0 ? "+" : "") + FN(quotaMano - quotaSito, 0));
+            };
+            aggiornaQuota();
             sx.Children.Add(rigaSito("Altezza antenna", tH, "m"));
             ToolTip.SetTip(tH, "Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.");
             sx.Children.Add(rigaSito("Distanza max", tDmax, "km"));
@@ -200,7 +236,8 @@ namespace YaNec
                     Dem.Rotta(la, lo, d.Lat, d.Lon, out az, out km);
                     fDir.SetCount("d" + i, Lang.T(d.Nome) + " · " + FN(az, 0) + "° · " + FN(Math.Round(km / 10) * 10, 0) + " km");
                 }
-                try { File.WriteAllText(FileTerreno, s); } catch { }
+                if (locQuota != s) { locQuota = s; if (!double.IsNaN(quotaMano)) { quotaMano = double.NaN; tQuota.Text = ""; aggiornaQuota(); } }
+                try { File.WriteAllText(FileTerreno, s + (double.IsNaN(quotaMano) ? "" : ";" + quotaMano.ToString("0.#", CultureInfo.InvariantCulture))); } catch { }
                 return true;
             };
             Func<double> azimutScelto = () =>
@@ -294,6 +331,12 @@ namespace YaNec
                 ctx.DrawLine(new Pen(new SolidColorBrush(Color.Parse("#2B3440")), 2.4), new Point(X(0) + 1, Y(p.QuotaBase)), new Point(X(0) + 1, Y(za)));
                 ctx.DrawEllipse(new SolidColorBrush(TerrRosso), null, new Point(X(0) + 1, Y(za)), 4.5, 4.5);
                 Draw.Text(ctx, Lang.F("antenna {0} m sul suolo ({1} m s.l.m.)", FN(ultimaH, 1), FN(za, 0)), X(0) + 10, Y(za) - 18, 11.5, Pal.Fore);
+                if (prof != "file" && !double.IsNaN(quotaMano))
+                {
+                    if (!double.IsNaN(quotaSito)) ctx.DrawLine(new Pen(new SolidColorBrush(QuotaOcra), 1.2, new DashStyle(new double[] { 2, 2 }, 0)), new Point(X(0), Y(quotaSito)), new Point(X(0) + 14, Y(quotaSito)));
+                    Draw.Text(ctx, double.IsNaN(quotaSito) ? Lang.F("quota sito a mano {0} m", FN(quotaMano, 0)) : Lang.F("quota sito a mano {0} m (DEM {1} m)", FN(quotaMano, 0), FN(quotaSito, 0)),
+                        X(0) + 18, B - 16, 11, QuotaOcra);
+                }
                 // orizzonte
                 if (ultimo != null)
                 {
@@ -528,7 +571,8 @@ namespace YaNec
                 {
                     int n = (int)(dmax * 1000 / passo) + 1;
                     Dem.Profilo pp = new Dem.Profilo { D = new double[n], H = new double[n], Mare = new bool[n], Fonte = "piatto" };
-                    for (int i = 0; i < n; i++) { pp.D[i] = i * passo; pp.H[i] = double.IsNaN(quotaSito) ? 0 : quotaSito; }
+                    double qp = !double.IsNaN(quotaMano) ? quotaMano : double.IsNaN(quotaSito) ? 0 : quotaSito;
+                    for (int i = 0; i < n; i++) { pp.D[i] = i * passo; pp.H[i] = qp; }
                     pp.QuotaBase = pp.H[0];
                     return Tuple.Create(pp, pp);
                 }
@@ -560,13 +604,17 @@ namespace YaNec
                 if (gr.Count == 0) throw new IOException("DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).");
                 Dem.Profilo pa = Dem.Campiona(lat, lon, az, dmax, passo, gr);
                 Dem.Profilo pdd = Dem.Campiona(lat, lon, (az + 180) % 360, dmax, passo, gr);
+                if (pa.Fonte.Length > 0) ultimaQuotaDem = pa.QuotaBase;
+                // 1.5.2: quota del sito scritta a mano: il primo punto dei due profili prende quella quota, il resto resta il DEM
+                if (!double.IsNaN(quotaMano))
+                    foreach (Dem.Profilo pq in new[] { pa, pdd }) { pq.H[0] = Math.Max(0, quotaMano); pq.Mare[0] = false; pq.QuotaBase = pq.H[0]; }
                 return Tuple.Create(pa, pdd);
             };
 
             terrAggiorna = async () =>
             {
                 cts?.Cancel(); cts = new CancellationTokenSource(); CancellationToken ct = cts.Token;
-                aggiornaLocatore();
+                aggiornaLocatore(); aggiornaQuota();
                 carte.Children.Clear(); avvisi.Children.Clear();
                 if (run == null || run.Engine == null)
                 {
@@ -604,13 +652,17 @@ namespace YaNec
                 double gcon = eng.GainConstant, lam = 299.792458 / f, kk = 2 * Math.PI / lam;
                 bool scan = cScan.IsChecked == true, fareRosa = cRosa.IsChecked == true && prof == "dem" && !double.IsNaN(lat);
                 dRosa.IsVisible = fareRosa; rosa = null;
+                // 1.5.2: avviso subito nella barra in basso e Calcola disattivato finche' il calcolo non finisce
+                bCalc.IsEnabled = false;
+                Status("Terreno reale: " + "calcolo in corso…");
+                bool riuscito = false;
                 try
                 {
                     double passo = Math.Max(1, dmax * 1000 / 400);
                     var pr = await profili(az, dmax, passo, ct);
                     if (ct.IsCancellationRequested) return;
-                    if (prof == "dem" && pr.Item1.Fonte.Length > 0) { quotaSito = pr.Item1.QuotaBase; aggiornaLocatore(); }
-                    quotaTb.Text = FN(pr.Item1.QuotaBase, 0);
+                    if (prof == "dem" && pr.Item1.Fonte.Length > 0) { quotaSito = ultimaQuotaDem; aggiornaLocatore(); }
+                    aggiornaQuota();
                     Func<double, TerrenoReale.CampoDiretto> campo = sposta => (double el, double ph, out Complex a, out Complex b) =>
                     {
                         eng.FfldDiretto((90 - el) * Math.PI / 180, ph * Math.PI / 180, out a, out b);
@@ -639,7 +691,7 @@ namespace YaNec
                     if (ct.IsCancellationRequested) return;
                     ultimo = esito; ultimoProf = pr.Item1; ultimaH = hUser; ultimoAz = az; ultimaF = f;
                     terrEsito = esito;
-                    titProf.Text = Lang.T("Profilo verso") + " " + titDir + ", " + (prof == "dem" ? pr.Item1.Fonte : prof == "file" ? "da " + pr.Item1.Fonte : "piatto");
+                    titProf.Text = Lang.T("Profilo verso") + " " + titDir + ", " + (prof == "dem" ? pr.Item1.Fonte : prof == "file" ? "da " + pr.Item1.Fonte : "piatto") + (prof != "file" && !double.IsNaN(quotaMano) ? " · " + Lang.T("quota sito a mano") : "");
                     dProf.InvalidateVisual(); ridisegnaLobo();
                     // risultati
                     double fom = figuraMerito(esito, f);
@@ -747,6 +799,7 @@ namespace YaNec
                         }
                     }
                     if (terrSovrapponi) ShowPatterns();
+                    riuscito = true;
                 }
                 catch (OperationCanceledException) { }
                 catch (Exception ex)
@@ -754,6 +807,15 @@ namespace YaNec
                     titProf.Text = "Profilo: " + ex.Message;
                     carte.Children.Add(AvvisoGiallo(ex.Message));
                     Status("Terreno reale: " + ex.Message, true);
+                }
+                finally
+                {
+                    // se un calcolo piu' recente ha annullato questo, il pulsante lo riattiva quello
+                    if (!ct.IsCancellationRequested)
+                    {
+                        bCalc.IsEnabled = true;
+                        if (riuscito) Status("Terreno reale: " + "calcolo finito");
+                    }
                 }
             };
 
@@ -787,6 +849,18 @@ namespace YaNec
             fVista.Selected += k => { vista = k; ridisegnaLobo(); };
             cZoom.SelectionChanged += (s, e) => ridisegnaLobo();
             tLoc.LostFocus += (s, e) => { quotaSito = double.NaN; terrAggiorna(); };
+            Action leggiQuota = () =>
+            {
+                string q = (tQuota.Text ?? "").Trim();
+                double v = q.Length == 0 ? double.NaN : ParseNum(q, double.NaN);
+                if (!double.IsNaN(v) && (v < -50 || v > 9000)) v = double.NaN;
+                if (v.Equals(quotaMano) || (double.IsNaN(v) && double.IsNaN(quotaMano))) return;
+                quotaMano = v; if (double.IsNaN(v)) tQuota.Text = "";
+                aggiornaQuota(); terrAggiorna();
+            };
+            tQuota.LostFocus += (s, e) => leggiQuota();
+            tQuota.KeyUp += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) leggiQuota(); };
+            bQuotaDem.Click += (s, e) => { tQuota.Text = ""; leggiQuota(); };
             tLoc.KeyUp += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { quotaSito = double.NaN; terrAggiorna(); } else aggiornaLocatore(); };
             cSovr.IsCheckedChanged += (s, e) => { terrSovrapponi = cSovr.IsChecked == true; ShowPatterns(); };
             bCalc.Click += (s, e) => terrAggiorna();
@@ -816,7 +890,8 @@ namespace YaNec
                     });
                     if (fl == null) return;
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    sb.AppendLine("# YA-NEC terreno reale; " + titDir + "; " + ultimaF.ToString("0.000", CI) + " MHz; antenna " + ultimaH.ToString("0.0", CI) + " m");
+                    sb.AppendLine("# YA-NEC terreno reale; " + titDir + "; " + ultimaF.ToString("0.000", CI) + " MHz; antenna " + ultimaH.ToString("0.0", CI) + " m" +
+                        (prof != "file" && !double.IsNaN(quotaMano) ? "; quota sito a mano " + quotaMano.ToString("0", CI) + " m" + (double.IsNaN(quotaSito) ? "" : " (DEM " + quotaSito.ToString("0", CI) + " m)") : ""));
                     sb.AppendLine("elevazione_gradi;reale_dBi;piatto_dBi;spazio_libero_dBi");
                     for (int i = 0; i < ultimo.El.Length; i++)
                         sb.AppendLine(ultimo.El[i].ToString("0.00", CI) + ";" + ultimo.Reale[i].ToString("0.00", CI) + ";" + ultimo.Piatto[i].ToString("0.00", CI) + ";" + ultimo.Libero[i].ToString("0.00", CI));

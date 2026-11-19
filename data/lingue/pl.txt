@@ -4940,3 +4940,11 @@ Struttura 3D ▸	Struktura 3D ▸
 Clic: nasconde o mostra la struttura	Kliknięcie: ukrywa lub pokazuje strukturę
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ochra ciągła: używa zmiennej · ochra przerywana: używa jej przez inną zmienną
 attraverso {0}: fili {1}	przez {0}: przewody {1}
+calcolo finito	obliczenia zakończone
+scritta a mano	wpisana ręcznie
+scritta a mano: DEM {0} m ({1} m)	wpisana ręcznie: DEM {0} m ({1} m)
+quota sito a mano	wysokość miejsca wpisana ręcznie
+quota sito a mano {0} m	wysokość miejsca wpisana ręcznie {0} m
+quota sito a mano {0} m (DEM {1} m)	wysokość miejsca wpisana ręcznie {0} m (DEM {1} m)
+Torna al valore del DEM	Powrót do wartości DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Wysokość terenu pod anteną. Puste = wartość DEM (szara). Wpisz prawdziwą wysokość, jeśli DEM się myli: profil zaczyna się tutaj, reszta terenu pozostaje z DEM. ↺ DEM wraca do wartości DEM.

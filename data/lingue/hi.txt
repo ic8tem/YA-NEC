@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D संरचना ▸
 Clic: nasconde o mostra la struttura	क्लिक: संरचना छिपाएँ या दिखाएँ
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ठोस गेरुआ: चर उपयोग करता है · डैश गेरुआ: दूसरे चर के माध्यम से उपयोग करता है
 attraverso {0}: fili {1}	{0} के माध्यम से: तार {1}
+calcolo finito	गणना पूरी
+scritta a mano	हाथ से लिखा
+scritta a mano: DEM {0} m ({1} m)	हाथ से लिखा: DEM {0} m ({1} m)
+quota sito a mano	स्थल की ऊँचाई हाथ से लिखी
+quota sito a mano {0} m	स्थल की ऊँचाई हाथ से लिखी {0} m
+quota sito a mano {0} m (DEM {1} m)	स्थल की ऊँचाई हाथ से लिखी {0} m (DEM {1} m)
+Torna al valore del DEM	DEM के मान पर लौटें
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	एंटीना के नीचे ज़मीन की ऊँचाई। खाली = DEM का मान (धूसर)। DEM गलत हो तो असली ऊँचाई लिखें: प्रोफ़ाइल यहीं से शुरू होती है, बाकी भूभाग DEM का ही रहता है। ↺ DEM, DEM के मान पर लौटाता है।

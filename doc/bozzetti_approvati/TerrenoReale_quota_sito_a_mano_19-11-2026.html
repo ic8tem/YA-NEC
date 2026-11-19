@@ -1,0 +1,113 @@
+<title>Quota del sito</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#eef0f3;--card:#fff;--fore:#1d2433;--muted:#6b7385;--line:#d5d9e0;--blu:#1f6fd8;--blu2:#e8f0fd;--ocra:#c77a10;--ocraBg:#fdf3e3;--rosso:#d23a2a;--fam:#3b4254;--navy:#1e2a3d;--terra:#d9c49b;--terraL:#7a5b2e;--mare:#bfe0f3;color-scheme:light}
+body{background:var(--bg);color:var(--fore);font:14px/1.45 "Segoe UI",Inter,system-ui,sans-serif;padding-block:20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:20px;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.wrap{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
+.col{flex:1 1 430px;min-width:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:8px}
+.prima{background:#e3e6eb;color:var(--fam)}.dopo{background:var(--blu);color:#fff}
+.app{display:flex;gap:10px;background:#f4f5f7;border:1px solid var(--line);border-radius:10px;padding:10px;overflow-x:auto}
+.sx{width:236px;flex:none}
+.fam{font-weight:700;font-size:13px;color:var(--fam);margin:8px 2px 4px}
+.row{display:flex;align-items:center;gap:6px;margin:3px 2px}
+.lab{width:96px;flex:none}
+.tb{border:1px solid #b9bfca;border-radius:4px;background:#fff;padding:3px 7px;width:62px;font:inherit}
+.tb.man{border-color:var(--ocra);box-shadow:0 0 0 2px var(--ocraBg);font-weight:700}
+.tb.ph{color:var(--muted)}
+.small{font-size:11.5px;color:var(--muted);margin:0 2px 2px 2px}
+.ocra{color:var(--ocra)}
+.btnU{border:1px solid var(--line);background:#fff;border-radius:12px;padding:1px 8px;font-size:12px;color:var(--blu);white-space:nowrap}
+.loc{border:1px solid #b9bfca;border-radius:4px;background:#fff;padding:3px 7px;width:110px}
+.mappa{display:block;text-align:center;background:var(--blu);color:#fff;border-radius:12px;padding:4px;font-weight:600;margin:6px 2px}
+.pill{border:1px solid var(--line);border-radius:12px;background:#fff;padding:5px 12px;margin:4px 2px;color:var(--blu)}
+.pill.on{background:var(--blu);color:#fff;font-weight:700;border-color:var(--blu)}
+.chart{flex:1;min-width:300px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}
+.chart h3{font-size:14px;margin:0 0 4px}
+.tip{margin-top:8px;background:#fffbe6;border:1px solid #e9d58b;border-radius:6px;padding:8px 10px;font-size:12.5px}
+.note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-top:20px;max-width:900px}
+.note h2{font-size:16px;margin:0 0 8px}
+.note li{margin:4px 0}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:12.5px;background:#eef0f3;padding:0 4px;border-radius:3px}
+</style>
+
+<h1>YA-NEC 1.5.2 · Terreno reale: quota del sito corretta a mano</h1>
+<p class="sub">Bozzetto. Il riquadro SITO ha già la riga «Quota sito» con il valore del DEM, ma solo da leggere: diventa un campo che si può scrivere. Esempio: JN70CN83CL, DEM 48 m, quota vera 62 m.</p>
+
+<div class="wrap">
+  <div class="col">
+    <span class="tag prima">Oggi (1.5.1)</span>
+    <div class="app">
+      <div class="sx">
+        <div class="fam">POSIZIONE DELL'ANTENNA</div>
+        <div class="row">Locatore <span class="loc">JN70CN83CL</span> <span style="color:#21A04A;font-weight:700">✓</span></div>
+        <div class="small">da 8 a 12 caratteri</div>
+        <div style="font-size:12.5px;margin:2px">40.5562° N · 14.2342° E · quota DEM 48 m</div>
+        <span class="mappa">Scegli sulla mappa</span>
+        <div class="fam">SITO</div>
+        <div class="row"><span class="lab">Quota sito</span> 48 &nbsp;m s.l.m.</div>
+        <div class="row"><span class="lab">Altezza antenna</span><span class="tb">10</span> m</div>
+        <div class="row"><span class="lab">Distanza max</span><span class="tb">5</span> km</div>
+      </div>
+      <div class="chart">
+        <h3>Profilo verso Giappone (41°), TINITALY 1.1 + SRTM1</h3>
+        <svg viewBox="0 0 340 150" width="100%" role="img" aria-label="profilo con antenna a 58 m">
+          <line x1="30" y1="130" x2="335" y2="130" stroke="#999"/><line x1="30" y1="10" x2="30" y2="130" stroke="#999"/>
+          <text x="2" y="134" font-size="9" fill="#6b7385">0</text><text x="2" y="84" font-size="9" fill="#6b7385">50</text><text x="0" y="34" font-size="9" fill="#6b7385">100</text>
+          <path d="M30 101 L40 108 L52 118 L60 126 L68 112 L78 128 L86 112 L92 108 L100 120 L106 116 L112 38 L190 130 L30 130 Z" fill="var(--terra)" stroke="var(--terraL)"/>
+          <rect x="190" y="126" width="145" height="4" fill="var(--mare)"/>
+          <circle cx="30" cy="92" r="4" fill="var(--rosso)"/>
+          <text x="38" y="88" font-size="9.5">antenna 10 m sul suolo (58 m s.l.m.)</text>
+          <line x1="30" y1="92" x2="335" y2="55" stroke="#9a6b2b" stroke-dasharray="2 3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <span class="tag dopo">Proposta</span>
+    <div class="app">
+      <div class="sx">
+        <div class="fam">POSIZIONE DELL'ANTENNA</div>
+        <div class="row">Locatore <span class="loc">JN70CN83CL</span> <span style="color:#21A04A;font-weight:700">✓</span></div>
+        <div class="small">da 8 a 12 caratteri</div>
+        <div style="font-size:12.5px;margin:2px">40.5562° N · 14.2342° E · quota DEM 48 m</div>
+        <span class="mappa">Scegli sulla mappa</span>
+        <div class="fam">SITO</div>
+        <div class="row"><span class="lab">Quota sito</span><span class="tb man">62</span> m s.l.m.</div>
+        <div class="row small ocra" style="justify-content:space-between">scritta a mano: DEM 48 m (+14 m) <span class="btnU" title="Torna al valore del DEM">↺ DEM</span></div>
+        <div class="row"><span class="lab">Altezza antenna</span><span class="tb">10</span> m</div>
+        <div class="row"><span class="lab">Distanza max</span><span class="tb">5</span> km</div>
+        <div class="tip"><b>Fumetto della Quota sito:</b> quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.</div>
+      </div>
+      <div class="chart">
+        <h3>Profilo verso Giappone (41°), TINITALY 1.1 + SRTM1 · quota sito a mano</h3>
+        <svg viewBox="0 0 340 150" width="100%" role="img" aria-label="profilo con antenna a 72 m">
+          <line x1="30" y1="130" x2="335" y2="130" stroke="#999"/><line x1="30" y1="10" x2="30" y2="130" stroke="#999"/>
+          <text x="2" y="134" font-size="9" fill="#6b7385">0</text><text x="2" y="84" font-size="9" fill="#6b7385">50</text><text x="0" y="34" font-size="9" fill="#6b7385">100</text>
+          <path d="M30 87 L34 87 L40 108 L52 118 L60 126 L68 112 L78 128 L86 112 L92 108 L100 120 L106 116 L112 38 L190 130 L30 130 Z" fill="var(--terra)" stroke="var(--terraL)"/>
+          <line x1="30" y1="101" x2="36" y2="101" stroke="var(--ocra)" stroke-dasharray="2 2"/>
+          <rect x="190" y="126" width="145" height="4" fill="var(--mare)"/>
+          <circle cx="30" cy="78" r="4" fill="var(--rosso)"/>
+          <text x="38" y="74" font-size="9.5">antenna 10 m sul suolo (72 m s.l.m.)</text>
+          <text x="200" y="118" font-size="9" fill="var(--ocra)">quota sito a mano 62 m (DEM 48 m)</text>
+          <line x1="30" y1="78" x2="335" y2="45" stroke="#9a6b2b" stroke-dasharray="2 3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <h2>Come funziona</h2>
+  <ul>
+    <li><b>Campo vuoto</b> (o dopo <code>↺ DEM</code>): si usa il DEM come oggi, il numero del DEM si vede in grigio nel campo.</li>
+    <li><b>Quota scritta</b>: bordo e nota in ocra («scritta a mano: DEM 48 m (+14 m)»). Il primo punto del profilo prende quella quota; l'antenna sta a quota sito + altezza antenna. Il resto del profilo resta quello del DEM.</li>
+    <li>Vale anche con «Terreno piatto (confronto)», che oggi usa la quota del DEM. Con un profilo da HorizonProfiler resta la quota del file.</li>
+    <li>La quota si ricorda insieme al locatore (stesso file in <code>data</code>); se cambi locatore o scegli un punto sulla mappa torna vuota, perché vale per quel punto.</li>
+    <li>Titolo del profilo con «· quota sito a mano» e la stessa indicazione nel CSV esportato, così si sa sempre che il profilo è corretto.</li>
+  </ul>
+  <p class="small" style="font-size:12.5px">Non corregge i rilievi lontani: se il DEM sbaglia un crinale, resta il profilo da HorizonProfiler (.csv / .hpr), che si può modificare.</p>
+</div>

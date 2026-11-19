@@ -4940,3 +4940,11 @@ Struttura 3D ▸	البنية ثلاثية الأبعاد ▸
 Clic: nasconde o mostra la struttura	انقر: إخفاء البنية أو إظهارها
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	مغرة متصلة: يستخدم المتغير · مغرة متقطعة: يستخدمه عبر متغير آخر
 attraverso {0}: fili {1}	عبر {0}: الأسلاك {1}
+calcolo finito	اكتمل الحساب
+scritta a mano	مُدخل يدويًا
+scritta a mano: DEM {0} m ({1} m)	مُدخل يدويًا: DEM {0} m ({1} m)
+quota sito a mano	ارتفاع الموقع مُدخل يدويًا
+quota sito a mano {0} m	ارتفاع الموقع مُدخل يدويًا {0} m
+quota sito a mano {0} m (DEM {1} m)	ارتفاع الموقع مُدخل يدويًا {0} m (DEM {1} m)
+Torna al valore del DEM	العودة إلى قيمة DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	ارتفاع الأرض تحت الهوائي. فارغ = قيمة DEM (رمادي). اكتب الارتفاع الحقيقي إذا أخطأ DEM: يبدأ المقطع من هنا، ويبقى باقي التضاريس من DEM. ↺ DEM يعيد قيمة DEM.

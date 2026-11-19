@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D yapı ▸
 Clic: nasconde o mostra la struttura	Tıklama: yapıyı gizler veya gösterir
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	düz koyu sarı: değişkeni kullanır · kesikli koyu sarı: onu başka bir değişken üzerinden kullanır
 attraverso {0}: fili {1}	{0} üzerinden: teller {1}
+calcolo finito	hesaplama tamamlandı
+scritta a mano	elle girildi
+scritta a mano: DEM {0} m ({1} m)	elle girildi: DEM {0} m ({1} m)
+quota sito a mano	yer yüksekliği elle girildi
+quota sito a mano {0} m	yer yüksekliği elle girildi {0} m
+quota sito a mano {0} m (DEM {1} m)	yer yüksekliği elle girildi {0} m (DEM {1} m)
+Torna al valore del DEM	DEM değerine dön
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Antenin altındaki zemin yüksekliği. Boş = DEM değeri (gri). DEM yanlışsa gerçek yüksekliği yazın: profil buradan başlar, arazinin geri kalanı DEM'den kalır. ↺ DEM, DEM değerine döner.

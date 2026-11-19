@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D-struktur ▸
 Clic: nasconde o mostra la struttura	Klick: döljer eller visar strukturen
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	heldragen ockra: använder variabeln · streckad ockra: använder den via en annan variabel
 attraverso {0}: fili {1}	via {0}: trådar {1}
+calcolo finito	beräkning klar
+scritta a mano	inskriven för hand
+scritta a mano: DEM {0} m ({1} m)	inskriven för hand: DEM {0} m ({1} m)
+quota sito a mano	platsens höjd inskriven för hand
+quota sito a mano {0} m	platsens höjd inskriven för hand {0} m
+quota sito a mano {0} m (DEM {1} m)	platsens höjd inskriven för hand {0} m (DEM {1} m)
+Torna al valore del DEM	Tillbaka till DEM-värdet
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Markhöjd under antennen. Tom = DEM-värde (grått). Skriv in den verkliga höjden om DEM:en har fel: profilen börjar här, resten av terrängen förblir DEM:ens. ↺ DEM går tillbaka till DEM-värdet.

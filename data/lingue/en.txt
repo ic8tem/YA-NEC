@@ -6912,3 +6912,11 @@ perimetro (fili 	perimeter (wires
 raggio in mm (	radius in mm (
 posizione lungo l'asse 	position along the axis 
 quota aggiunta a tutta l'antenna (m)	height added to the whole antenna (m)
+calcolo finito	calculation done
+scritta a mano	entered by hand
+scritta a mano: DEM {0} m ({1} m)	entered by hand: DEM {0} m ({1} m)
+quota sito a mano	site height entered by hand
+quota sito a mano {0} m	site height entered by hand {0} m
+quota sito a mano {0} m (DEM {1} m)	site height entered by hand {0} m (DEM {1} m)
+Torna al valore del DEM	Back to the DEM value
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Ground height under the antenna. Empty = DEM value (grey). Type the real height if the DEM is wrong: the profile starts here, the rest of the terrain stays the DEM's. ↺ DEM goes back to the DEM value.

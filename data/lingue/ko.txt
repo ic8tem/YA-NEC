@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D 구조 ▸
 Clic: nasconde o mostra la struttura	클릭: 구조 숨기기 또는 보이기
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	황토색 실선: 변수 사용 · 황토색 점선: 다른 변수를 통해 사용
 attraverso {0}: fili {1}	{0}을(를) 통해: 와이어 {1}
+calcolo finito	계산 완료
+scritta a mano	직접 입력
+scritta a mano: DEM {0} m ({1} m)	직접 입력: DEM {0} m ({1} m)
+quota sito a mano	지점 고도 직접 입력
+quota sito a mano {0} m	지점 고도 직접 입력 {0} m
+quota sito a mano {0} m (DEM {1} m)	지점 고도 직접 입력 {0} m (DEM {1} m)
+Torna al valore del DEM	DEM 값으로 되돌리기
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	안테나 아래 지면 고도. 비움 = DEM 값(회색). DEM이 틀리면 실제 고도를 입력하세요: 단면은 여기서 시작하고 나머지 지형은 DEM 그대로입니다. ↺ DEM은 DEM 값으로 되돌립니다.

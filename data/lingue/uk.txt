@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D-структура ▸
 Clic: nasconde o mostra la struttura	Клацання: приховує або показує структуру
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	суцільна вохра: використовує змінну · пунктирна вохра: використовує її через іншу змінну
 attraverso {0}: fili {1}	через {0}: проводи {1}
+calcolo finito	розрахунок завершено
+scritta a mano	введено вручну
+scritta a mano: DEM {0} m ({1} m)	введено вручну: DEM {0} m ({1} m)
+quota sito a mano	висота майданчика введена вручну
+quota sito a mano {0} m	висота майданчика введена вручну {0} m
+quota sito a mano {0} m (DEM {1} m)	висота майданчика введена вручну {0} m (DEM {1} m)
+Torna al valore del DEM	Повернути значення DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Висота землі під антеною. Порожньо = значення DEM (сіре). Введіть справжню висоту, якщо DEM помиляється: профіль починається звідси, решта рельєфу лишається з DEM. ↺ DEM повертає значення DEM.

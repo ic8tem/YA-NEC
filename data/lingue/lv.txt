@@ -4940,3 +4940,11 @@ Struttura 3D ▸	3D struktūra ▸
 Clic: nasconde o mostra la struttura	Klikšķis: paslēpj vai parāda struktūru
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	nepārtraukts okers: izmanto mainīgo · svītrots okers: izmanto to caur citu mainīgo
 attraverso {0}: fili {1}	caur {0}: vadi {1}
+calcolo finito	aprēķins pabeigts
+scritta a mano	ievadīts ar roku
+scritta a mano: DEM {0} m ({1} m)	ievadīts ar roku: DEM {0} m ({1} m)
+quota sito a mano	vietas augstums ievadīts ar roku
+quota sito a mano {0} m	vietas augstums ievadīts ar roku {0} m
+quota sito a mano {0} m (DEM {1} m)	vietas augstums ievadīts ar roku {0} m (DEM {1} m)
+Torna al valore del DEM	Atpakaļ uz DEM vērtību
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Zemes augstums zem antenas. Tukšs = DEM vērtība (pelēka). Ieraksti īsto augstumu, ja DEM kļūdās: profils sākas šeit, pārējais reljefs paliek no DEM. ↺ DEM atgriežas pie DEM vērtības.

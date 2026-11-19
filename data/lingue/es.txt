@@ -4940,3 +4940,11 @@ Struttura 3D ▸	Estructura 3D ▸
 Clic: nasconde o mostra la struttura	Clic: oculta o muestra la estructura
 ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ocre continuo: usa la variable · ocre discontinuo: la usa a través de otra variable
 attraverso {0}: fili {1}	a través de {0}: hilos {1}
+calcolo finito	cálculo terminado
+scritta a mano	escrita a mano
+scritta a mano: DEM {0} m ({1} m)	escrita a mano: DEM {0} m ({1} m)
+quota sito a mano	cota del sitio escrita a mano
+quota sito a mano {0} m	cota del sitio escrita a mano {0} m
+quota sito a mano {0} m (DEM {1} m)	cota del sitio escrita a mano {0} m (DEM {1} m)
+Torna al valore del DEM	Volver al valor del DEM
+Quota del suolo sotto l'antenna. Vuoto = valore del DEM (grigio). Scrivi la quota vera se il DEM sbaglia: il profilo parte da qui, il resto del terreno resta quello del DEM. ↺ DEM torna al valore del DEM.	Cota del suelo bajo la antena. Vacío = valor del DEM (gris). Escribe la cota real si el DEM se equivoca: el perfil empieza aquí, el resto del terreno sigue siendo el del DEM. ↺ DEM vuelve al valor del DEM.
