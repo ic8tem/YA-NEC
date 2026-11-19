@@ -1,67 +1,67 @@
 1
-00:00:00,000 --> 00:00:06,360
-Lesson 22: real terrain, DEM profile, locator map, traffic directions and height scan
+00:00:00,000 --> 00:00:04,950
+Lesson 22: real terrain
 
 2
-00:00:06,410 --> 00:00:18,915
+00:00:05,000 --> 00:00:17,593
 YA-NEC course, lesson 22: real terrain, in the style of N6BV's HFTA. From the Examples we open the ARRL 5-element Yagi for 20 m, at 21 m over average ground.
 
 3
-00:00:18,965 --> 00:00:30,409
-Patterns tab: since 1.2 the band at the top has six items. We choose Real terrain.
+00:00:17,643 --> 00:00:31,033
+Patterns tab: the band at the top has seven items, since 1.5.2 also the Smith chart. We choose Real terrain.
 
 4
-00:00:30,459 --> 00:00:40,972
+00:00:31,083 --> 00:00:41,857
 On the left the antenna position: a locator of 8 to 12 characters, here JN70CN82WE. Below: latitude, longitude and ground height from the DEM.
 
 5
-00:00:41,022 --> 00:00:51,682
+00:00:41,907 --> 00:00:52,558
 Pick on the map: aerial photo with the locator grid, which gets finer as you zoom in.
 
 6
-00:00:51,732 --> 00:00:59,482
+00:00:52,608 --> 00:01:00,358
 A click picks the point; on the right the 10-character locator, the coordinates and the ground height.
 
 7
-00:00:59,532 --> 00:01:06,557
+00:01:00,408 --> 00:01:07,585
 Use this point: back to the page with the new locator.
 
 8
-00:01:06,607 --> 00:01:17,091
+00:01:07,635 --> 00:01:18,163
 Terrain profile from the DEM: INGV's TINITALY, 10 m cells; outside Italy SRTM1. It is downloaded on first use and stays in the data/dem folder.
 
 9
-00:01:17,141 --> 00:01:25,624
+00:01:18,213 --> 00:01:26,696
 By traffic direction: six paths, with azimuth and distance recomputed from the locator. First the USA east coast.
 
 10
-00:01:25,674 --> 00:01:36,691
+00:01:26,746 --> 00:01:37,763
 At the top the profile towards the USA, with the reflection point. Below the vertical lobe: blue over the real terrain, dashed orange over flat ground.
 
 11
-00:01:36,741 --> 00:01:51,028
+00:01:37,813 --> 00:01:52,245
 On the right the HFTA-style results. Figure of merit on the path: -0.8 dB compared with flat ground. But at low angles the real terrain gives more than 10 dB extra: the coast drops towards the sea.
 
 12
-00:01:51,078 --> 00:01:59,409
+00:01:52,295 --> 00:02:03,490
 Now Japan: another profile. Figure of merit +1.9 dB, first maximum at 2 degrees instead of 13.
 
 13
-00:01:59,459 --> 00:02:06,343
+00:02:03,540 --> 00:02:10,426
 Antenna height scan: the calculation is repeated from 6 to 30 m. Meanwhile, how it works.
 
 14
-00:02:06,393 --> 00:02:20,079
+00:02:10,476 --> 00:02:24,159
 The antenna pattern comes from NEC; each facet of the profile reflects with the Fresnel coefficients, weighted by the part of the Fresnel zone it covers; over the ridges there is diffraction.
 
 15
-00:02:20,129 --> 00:02:26,711
+00:02:24,209 --> 00:02:30,779
 Self-test: over a flat profile the result matches NEC within 0.1 dB.
 
 16
-00:02:26,761 --> 00:02:36,578
+00:02:30,829 --> 00:02:40,646
 Here is the result of the scan: for Japan the best height is 14 m, with the average gain over the useful angles from 1 to 15 degrees.
 
 17
-00:02:36,628 --> 00:02:48,821
+00:02:40,696 --> 00:02:52,787
 The terrain matters as much as the antenna. Everything is explained in chapter 23 of the manual. Next lesson: reception, tables and tolerances. 73 de IC8TEM

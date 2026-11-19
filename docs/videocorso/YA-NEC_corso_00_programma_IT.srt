@@ -3,89 +3,93 @@
 Videocorso YA-NEC - lezione 0: il programma in 5 minuti.
 
 2
-00:00:05,000 --> 00:00:16,950
+00:00:05,000 --> 00:00:13,950
 Installazione: scarica lo zip del tuo sistema da Releases, estrailo in una cartella scrivibile e avvia YA-NEC.
 
 3
-00:00:17,000 --> 00:00:23,217
+00:00:14,155 --> 00:00:20,371
 Corso YA-NEC, lezione 0. All'avvio il programma è vuoto: nessun modello aperto.
 
 4
-00:00:23,267 --> 00:00:30,200
+00:00:20,421 --> 00:00:27,357
 Barra in alto: Nuovo, Apri modello, Salva, Esempi, poi Calcola e Sweep.
 
 5
-00:00:30,250 --> 00:00:34,889
+00:00:27,407 --> 00:00:32,064
 A destra: Terreno, e in cima Lingua e Colori.
 
 6
-00:00:34,939 --> 00:00:44,077
+00:00:32,114 --> 00:00:41,405
 Il modo più rapido per cominciare: Esempi. Qui un dipolo per i 20 m a 10 m su terreno medio.
 
 7
-00:00:44,127 --> 00:00:52,144
+00:00:41,455 --> 00:00:49,472
 I riquadri mostrano i risultati principali: impedenza, ROS, guadagno, direzione, F/B, apertura, frequenza.
 
 8
-00:00:52,194 --> 00:00:55,707
-Le linguette sotto: Diagrammi...
+00:00:49,522 --> 00:00:54,405
+Le linguette sotto: Diagrammi, con la sua fascia di voci...
 
 9
-00:00:55,757 --> 00:01:05,900
-...carta di Smith, Frequenza (lo sweep), e di nuovo la Struttura 3D.
+00:00:54,455 --> 00:01:10,657
+...tra cui la carta di Smith; poi Frequenza (lo sweep), e di nuovo la Struttura 3D.
 
 10
-00:01:05,950 --> 00:01:15,229
-Apri modello legge anche i file degli altri programmi.
+00:01:10,707 --> 00:01:18,110
+In basso a sinistra, Mostra terreno: i colori con cui viene disegnato ogni terreno.
 
 11
-00:01:15,279 --> 00:01:24,696
-Formati: NEC2 (.nec), MMANA (.maa), AutoEZ/MultiNEC (.weq), EZNEC (.ez), YO (.yag) e AO (.ant) di K6STI, e il .yanec di YA-NEC.
+00:01:18,160 --> 00:01:27,532
+Apri modello legge anche i file degli altri programmi.
 
 12
-00:01:24,746 --> 00:01:31,380
-Un file AutoEZ: l'esempio Delta Loop di AC6LA.
+00:01:27,582 --> 00:01:36,999
+Formati: NEC2 (.nec), MMANA (.maa), AutoEZ/MultiNEC (.weq), EZNEC (.ez), YO (.yag) e AO (.ant) di K6STI, e il .yanec di YA-NEC.
 
 13
-00:01:31,430 --> 00:01:37,713
-Variabili e formule di AutoEZ restano: il modello si apre pronto per il calcolo.
+00:01:37,049 --> 00:01:43,838
+Un file AutoEZ: l'esempio Delta Loop di AC6LA.
 
 14
-00:01:37,763 --> 00:01:53,710
-Ora un file MMANA: la Box Kite 4 elementi per i 144 MHz di IC8TEM.
+00:01:43,888 --> 00:01:50,171
+Variabili e formule di AutoEZ restano: il modello si apre pronto per il calcolo.
 
 15
-00:01:53,760 --> 00:01:59,310
-Notazione MMANA, segmentazione e sorgenti vengono convertite da sole.
+00:01:50,221 --> 00:02:06,307
+Ora un file MMANA: la Box Kite 4 elementi per i 144 MHz di IC8TEM.
 
 16
-00:01:59,360 --> 00:02:08,177
-Salva scrive un file NEC2, leggibile da tutti i programmi NEC; i calcolatori salvano anche il .yanec con tutto dentro.
+00:02:06,357 --> 00:02:11,907
+Notazione MMANA, segmentazione e sorgenti vengono convertite da sole.
 
 17
-00:02:08,227 --> 00:02:14,308
-Impostazioni: motore, terreno, segmentazione, diagrammi, perdite.
+00:02:11,957 --> 00:02:20,774
+Salva scrive un file NEC2, leggibile da tutti i programmi NEC; i calcolatori salvano anche il .yanec con tutto dentro.
 
 18
-00:02:14,358 --> 00:02:22,775
-In basso a destra: aggiornamento automatico dal GitHub. Le nuove versioni arrivano da sole e partono al riavvio.
+00:02:20,824 --> 00:02:27,625
+Impostazioni: motore, terreno, segmentazione, diagrammi, perdite.
 
 19
-00:02:22,825 --> 00:02:34,437
-Colori: chiaro, notte, nero, pastello... qui Notte, poi di nuovo Chiaro.
+00:02:27,675 --> 00:02:35,492
+A destra: aggiornamento automatico dal GitHub. Le nuove versioni arrivano da sole e partono al riavvio.
 
 20
-00:02:34,487 --> 00:02:41,903
-Il manuale completo è dentro il programma, nella linguetta Manuale (e in PDF nella cartella doc).
+00:02:35,542 --> 00:02:47,433
+Colori: chiaro, notte, nero, pastello... qui Notte, poi di nuovo Chiaro.
 
 21
-00:02:41,953 --> 00:02:47,170
-Il Registro annota ogni operazione: utile se qualcosa va storto.
+00:02:47,483 --> 00:02:55,566
+Il manuale completo è dentro il programma, nella linguetta Documenti tecnici (e in PDF nella cartella doc).
 
 22
-00:02:47,220 --> 00:03:00,972
-L'Autotest confronta il motore con i valori calcolati da nec2c sugli stessi modelli.
+00:02:55,616 --> 00:03:00,833
+Il Registro annota ogni operazione: utile se qualcosa va storto.
 
 23
-00:03:01,022 --> 00:03:06,973
+00:03:00,883 --> 00:03:15,134
+L'Autotest confronta il motore con i valori calcolati da nec2c sugli stessi modelli.
+
+24
+00:03:15,184 --> 00:03:21,134
 Questo è il programma. Dalla prossima lezione costruiamo antenne. YA-NEC è gratuito: github.com/ic8tem/YA-NEC - 73 de IC8TEM

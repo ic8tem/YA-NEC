@@ -2,13 +2,13 @@
 
 # Video course
 
-A complete course in 29 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 22-25 with 1.3, 26 and 27 with 1.5, 28 with 1.5.2). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 29 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 23-25 with 1.3, 26 with 1.5; 0, 1, 13, 15, 22, 27 and 28 with 1.5.2, with the reorganised tabs). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
 ### Lesson 0 - The program in 5 minutes
 
-Installation, the top bar, the result cards and the tabs. Examples, the file formats it opens (NEC2, MMANA, AutoEZ/MultiNEC, EZNEC, K6STI YO and AO, .yanec) with an AutoEZ file by AC6LA and an MMANA file by IC8TEM. Settings, automatic update, colours, Manual, Log and Self-test.
+Installation, the top bar, the result cards and the tabs. Examples, the file formats it opens (NEC2, MMANA, AutoEZ/MultiNEC, EZNEC, K6STI YO and AO, .yanec) with an AutoEZ file by AC6LA and an MMANA file by IC8TEM. The tabs (Smith in the Patterns band) and the Show ground button in the status bar. Settings, automatic update, colours, Technical documents, Log and Self-test.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_00_program_EN.srt)
 
@@ -126,7 +126,7 @@ A 1 m magnetic loop for 40 m (16 % efficiency, 52 A and 5.6 kV at 100 W) and the
 
 ### Lesson 13 - The other functions for HF
 
-On the ARRL 520-40H (5 elements for 20 m from the ARRL Antenna Book): result cards, patterns with rotated azimuth and ARRL or linear scale, frequency sweep, More data (efficiency, AGT, segments), Smith chart, editable NEC cards and the Noise/GT/Stack tab.
+On the ARRL 520-40H (5 elements for 20 m from the ARRL Antenna Book): result cards, patterns with rotated azimuth and ARRL or linear scale, frequency sweep, More data (efficiency, AGT, segments), Smith chart (in the Patterns band), editable NEC cards (NEC/currents tab) and the Noise/GT/Stack tab.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_13_hf_functions_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_13_hf_functions_EN.srt)
 
@@ -144,7 +144,7 @@ The DK7ZB 6-element 2 m Yagi (28 ohm, 2.40 m boom, qsl.net/dk7zb) typed in with 
 
 ### Lesson 15 - The Optimizer
 
-The DK7ZB 6-element Yagi of lesson 14 with variables, optimized for 50 ohm (SWR 1.23, 12.00 dBi, F/B 32.4 dB: 0.06 dB less gain); then a 3-element 20 m HF Yagi from rule-of-thumb dimensions, F/B from 21.6 to 35 dB with the impedance staying around 30 ohm.
+The DK7ZB 6-element Yagi of lesson 14 with variables, optimized for 50 ohm with Monte Carlo and tolerances (SWR 1.24, 11.99 dBi, F/B 33.6 dB: 0.07 dB less gain); then a 3-element 20 m HF Yagi from rule-of-thumb dimensions, F/B from 21.6 to 32.8 dB with the impedance staying around 33 ohm. Variables and optimization tab.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_15_optimizer_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_15_optimizer_EN.srt)
 
@@ -252,7 +252,7 @@ Multi-turn loop, radiation resistance and reactance (Tai, AEH) with the loading 
 
 ### Lesson 27 - Stacking, Monte Carlo, updates (1.5)
 
-Stacking distances on two frequencies with the reference impedance and active SWR (DK7ZB 7 elements), HF stacking over ground with two and three ARRL 520-40H and how to read the elevation chart (in phase, top only, bottom only, out of phase), Monte Carlo in the Optimizer, forced update and Report a problem.
+VHF stack spacings on two frequencies with the reference impedance and active SWR (DK7ZB 7 elements), HF stacking distances + HFTA: stacking over ground with two and three ARRL 520-40H and how to read the elevation chart (in phase, top only, bottom only, out of phase), Monte Carlo in the Optimizer, forced update and Report a problem.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.srt)
 

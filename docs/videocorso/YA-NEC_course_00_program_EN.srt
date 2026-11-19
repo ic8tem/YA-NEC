@@ -3,89 +3,93 @@
 YA-NEC video course - lesson 0: the program in 5 minutes.
 
 2
-00:00:05,000 --> 00:00:16,950
+00:00:05,000 --> 00:00:13,950
 Installation: download the zip for your system from Releases, extract it to a writable folder and start YA-NEC.
 
 3
-00:00:17,000 --> 00:00:23,017
+00:00:14,117 --> 00:00:20,134
 YA-NEC course, lesson 0. When the program starts it is empty: no model open.
 
 4
-00:00:23,067 --> 00:00:29,981
+00:00:20,184 --> 00:00:27,107
 Top bar: New, Open model, Save, Examples, then Calculate and Sweep.
 
 5
-00:00:30,031 --> 00:00:35,247
+00:00:27,157 --> 00:00:32,374
 On the right: Ground, then at the very top Language and Colours.
 
 6
-00:00:35,297 --> 00:00:44,448
+00:00:32,424 --> 00:00:41,714
 The fastest way to start: Examples. Here, a 20 m dipole at 10 m over average ground.
 
 7
-00:00:44,498 --> 00:00:51,818
+00:00:41,764 --> 00:00:48,895
 The cards show the main results: impedance, SWR, gain, direction, F/B, beamwidth, frequency.
 
 8
-00:00:51,868 --> 00:00:55,390
-The tabs below: Patterns...
+00:00:48,945 --> 00:00:53,378
+The tabs below: Patterns, with its band of items...
 
 9
-00:00:55,440 --> 00:01:05,583
-...Smith chart, Frequency (the sweep), back to the 3D structure.
+00:00:53,428 --> 00:01:09,680
+...including the Smith chart; then Frequency (the sweep), back to the 3D structure.
 
 10
-00:01:05,633 --> 00:01:14,890
-Open model reads other programs' files too.
+00:01:09,730 --> 00:01:17,128
+Bottom left, Show ground: the colours used to draw every ground type.
 
 11
-00:01:14,940 --> 00:01:26,478
-Formats: NEC2 (.nec), MMANA (.maa), AutoEZ/MultiNEC (.weq), EZNEC (.ez), K6STI YO (.yag) and AO (.ant), and YA-NEC's own .yanec.
+00:01:17,178 --> 00:01:26,561
+Open model reads other programs' files too.
 
 12
-00:01:26,528 --> 00:01:33,159
-An AutoEZ file: the Delta Loop sample by AC6LA.
+00:01:26,611 --> 00:01:37,945
+Formats: NEC2 (.nec), MMANA (.maa), AutoEZ/MultiNEC (.weq), EZNEC (.ez), K6STI YO (.yag) and AO (.ant), and YA-NEC's own .yanec.
 
 13
-00:01:33,209 --> 00:01:39,159
-AutoEZ variables and formulas are kept: the model opens ready to calculate.
+00:01:37,995 --> 00:01:44,789
+An AutoEZ file: the Delta Loop sample by AC6LA.
 
 14
-00:01:39,209 --> 00:01:55,153
-Now an MMANA file: IC8TEM's 4-element Box Kite for 144 MHz.
+00:01:44,839 --> 00:01:50,789
+AutoEZ variables and formulas are kept: the model opens ready to calculate.
 
 15
-00:01:55,203 --> 00:02:00,753
-MMANA notation, segmentation and sources are converted automatically.
+00:01:50,839 --> 00:02:06,906
+Now an MMANA file: IC8TEM's 4-element Box Kite for 144 MHz.
 
 16
-00:02:00,803 --> 00:02:08,953
-Save writes a NEC2 file, readable by every NEC program; calculators also save .yanec with everything inside.
+00:02:06,956 --> 00:02:12,506
+MMANA notation, segmentation and sources are converted automatically.
 
 17
-00:02:09,003 --> 00:02:15,089
-Settings: engine, ground, segmentation, patterns, losses.
+00:02:12,556 --> 00:02:20,706
+Save writes a NEC2 file, readable by every NEC program; calculators also save .yanec with everything inside.
 
 18
-00:02:15,139 --> 00:02:23,223
-Bottom right: automatic update from GitHub. New versions arrive by themselves and start at the next launch.
+00:02:20,756 --> 00:02:27,503
+Settings: engine, ground, segmentation, patterns, losses.
 
 19
-00:02:23,273 --> 00:02:34,890
-Colours: light, night, black, pastel... here Night, then back to Light.
+00:02:27,553 --> 00:02:35,637
+On the right: automatic update from GitHub. New versions arrive by themselves and start at the next launch.
 
 20
-00:02:34,940 --> 00:02:41,890
-The full manual is inside the program, in the Manual tab (and as a PDF in the doc folder).
+00:02:35,687 --> 00:02:47,631
+Colours: light, night, black, pastel... here Night, then back to Light.
 
 21
-00:02:41,940 --> 00:02:46,891
-Log records every operation: useful if something goes wrong.
+00:02:47,681 --> 00:02:55,497
+The full manual is inside the program, in the Technical documents tab (and as a PDF in the doc folder).
 
 22
-00:02:46,941 --> 00:03:00,700
-Self-test compares the engine with the values computed by nec2c on the same models.
+00:02:55,547 --> 00:03:00,498
+Log records every operation: useful if something goes wrong.
 
 23
-00:03:00,750 --> 00:03:11,677
+00:03:00,548 --> 00:03:14,844
+Self-test compares the engine with the values computed by nec2c on the same models.
+
+24
+00:03:14,894 --> 00:03:25,909
 That is the program. From the next lesson we build antennas. YA-NEC is free: github.com/ic8tem/YA-NEC - 73 de IC8TEM
