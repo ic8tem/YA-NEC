@@ -198,9 +198,9 @@ namespace YaNec
                 double xx = PX(X[best]);
                 ctx.DrawLine(Pal.P(Pal.A(200, Pal.Fore), 1), new Point(xx, pr.Top), new Point(xx, pr.Bottom));
                 List<string> lines = new List<string>();
-                lines.Add(Draw.N(X[best], 3) + " " + XLabel);
+                lines.Add(Draw.N(X[best], 3) + " " + Lang.T(XLabel));   // 1.5.2: fumetto tradotto
                 foreach (LineSeries s in Series)
-                    if (s.Y != null && best < s.Y.Length) lines.Add(s.Name + ": " + Draw.N(s.Y[best], s.Decimals));
+                    if (s.Y != null && best < s.Y.Length) lines.Add(Lang.T(s.Name) + ": " + Draw.N(s.Y[best], s.Decimals));
                 double bw = 0;
                 foreach (string l in lines) bw = Math.Max(bw, Draw.Ft(l, 11.5, Pal.Fore).Width);
                 double bx = xx + 10, by = pr.Top + 8, bh = lines.Count * 16 + 8;

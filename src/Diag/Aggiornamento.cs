@@ -212,7 +212,7 @@ namespace YaNec
                     if (nuova == null || attuale == null) { ImpostaStato("versione pubblicata non leggibile: " + tag); return; }
                     if (nuova < attuale || (nuova == attuale && !reinstalla))
                     {
-                        ImpostaStato(aMano ? "hai gia' l'ultima versione (" + attuale + ")" : "aggiornato: l'ultima versione pubblicata e' la " + nuova + " (" + DateTime.Now.ToString("HH:mm") + ")", false);
+                        ImpostaStato(aMano ? Lang.F("hai gia' l'ultima versione ({0})", attuale) : Lang.F("aggiornato: l'ultima versione pubblicata e' la {0} ({1})", nuova, DateTime.Now.ToString("HH:mm")), false);   // 1.5.2: tradotti
                         return;
                     }
                     if (nuova == attuale) ImpostaStato("reinstallo la versione " + nuova);

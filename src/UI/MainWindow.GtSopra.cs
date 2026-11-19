@@ -483,16 +483,16 @@ namespace YaNec
             int np = r.SdB.GetLength(0);
             List<string[]> mt = new List<string[]>();
             string[] h0 = new string[np + 1]; h0[0] = "|S| dB a " + FN(z0, 0) + " Ω";
-            for (int c = 0; c < np; c++) h0[c + 1] = "porta " + (c + 1);
+            for (int c = 0; c < np; c++) h0[c + 1] = Lang.F("porta {0}", c + 1);
             mt.Add(h0);
             for (int a = 0; a < np; a++)
             {
-                string[] rr = new string[np + 1]; rr[0] = "porta " + (a + 1);
+                string[] rr = new string[np + 1]; rr[0] = Lang.F("porta {0}", a + 1);
                 for (int c = 0; c < np; c++) rr[c + 1] = FN(r.SdB[a, c], 1);
                 mt.Add(rr);
             }
             List<string[]> zt = new List<string[]> { new[] { "Z (Ω)", "propria", "mutua con la porta 2" } };
-            zt.Add(new[] { "porta 1", FN(r.Z[0, 0].Real, 1) + (r.Z[0, 0].Imaginary < 0 ? " -j" : " +j") + FN(Math.Abs(r.Z[0, 0].Imaginary), 1), np > 1 ? FN(r.Z[0, 1].Real, 1) + (r.Z[0, 1].Imaginary < 0 ? " -j" : " +j") + FN(Math.Abs(r.Z[0, 1].Imaginary), 1) : "-" });
+            zt.Add(new[] { Lang.F("porta {0}", 1), FN(r.Z[0, 0].Real, 1) + (r.Z[0, 0].Imaginary < 0 ? " -j" : " +j") + FN(Math.Abs(r.Z[0, 0].Imaginary), 1), np > 1 ? FN(r.Z[0, 1].Real, 1) + (r.Z[0, 1].Imaginary < 0 ? " -j" : " +j") + FN(Math.Abs(r.Z[0, 1].Imaginary), 1) : "-" });
             WrapPanel wm = new WrapPanel();
             Control m1 = Tabella(mt); m1.Margin = new Thickness(0, 0, 14, 6);
             wm.Children.Add(m1); wm.Children.Add(Tabella(zt));

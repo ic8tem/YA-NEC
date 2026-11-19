@@ -164,6 +164,7 @@ namespace YaNec
                 }
             }
             map = m;
+            valori = new HashSet<string>(m.Values, StringComparer.Ordinal);   // 1.5.2
             // 1.5.1: frammenti = voci che nel codice si attaccano a numeri o ad altri testi (iniziano o finiscono con uno spazio o con
             // ( : , ; · =). Se un testo intero non e' una chiave, si traducono i frammenti che contiene, dal piu' lungo al piu' corto.
             List<KeyValuePair<string, string>> fr = new List<KeyValuePair<string, string>>();
@@ -176,6 +177,8 @@ namespace YaNec
         }
 
         static KeyValuePair<string, string>[] frammenti = new KeyValuePair<string, string>[0];
+        // 1.5.2: testi gia' tradotti (valori dei file delle lingue): non si ritraducono a frammenti (es. "copies" -> "copiess" con il frammento " copie")
+        static HashSet<string> valori = new HashSet<string>(StringComparer.Ordinal);
         static System.Collections.Concurrent.ConcurrentDictionary<string, string> cacheFr = new System.Collections.Concurrent.ConcurrentDictionary<string, string>(StringComparer.Ordinal);
         static bool Bordo(char c) { return c == ' ' || c == '(' || c == ')' || c == ':' || c == ',' || c == ';' || c == '·' || c == '='; }
         static bool ConLettere(string s) { int n = 0; foreach (char c in s) { if (char.IsLetter(c)) { if (++n >= 3) return true; } else n = 0; } return false; }
@@ -309,7 +312,7 @@ namespace YaNec
         {
             if (inTraduzione || string.IsNullOrEmpty(testo) || !Attiva) return;
             string t;
-            if (!map.TryGetValue(testo, out t)) t = Frammenti(testo);   // 1.5.1: testi composti
+            if (!map.TryGetValue(testo, out t)) t = valori.Contains(testo) ? null : Frammenti(testo);   // 1.5.1: testi composti (1.5.2: non quelli gia' tradotti)
             if (t == null || t == testo) return;
             inTraduzione = true;
             // 1.0.2: SetCurrentValue e non SetValue: il testo tradotto non stacca il collegamento (binding) della scritta, cosi' la casella

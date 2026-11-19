@@ -5047,3 +5047,11 @@ antenna {0} m sul suolo ({1} m s.l.m.)	เสาอากาศ {0} m ({1} m)
 piatto:	แบน:
 primo lobo piatto:	กลีบแรก (แบน):
 primo lobo reale:	กลีบแรก (จริง):
+punti	จุด
+migliori	อันดับต้น
+copie	สำเนา
+porta {0}	พอร์ต {0}
+hai gia' l'ultima versione ({0})	คุณมีเวอร์ชันล่าสุดแล้ว ({0})
+aggiornato: l'ultima versione pubblicata e' la {0} ({1})	ล่าสุด: เวอร์ชันที่เผยแพร่ล่าสุดคือ {0} ({1})
+caso peggiore: la distanza che rispetta il criterio a entrambe le frequenze; le due frequenze si calcolano una dopo l'altra (tempo doppio)	กรณีแย่ที่สุด: ระยะห่างที่ผ่านเกณฑ์ทั้งสองความถี่ คำนวณสองความถี่ต่อกัน (ใช้เวลาสองเท่า)
+Candidati controllati con le tolleranze (clic su una riga per riprenderla; «Applica al modello» usa la riga scelta)	ผู้สมัครที่ตรวจด้วยค่าคลาดเคลื่อน (คลิกแถวเพื่อนำกลับมา «นำไปใช้กับโมเดล» ใช้แถวที่เลือก)

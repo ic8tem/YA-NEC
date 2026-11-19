@@ -5047,3 +5047,11 @@ antenna {0} m sul suolo ({1} m s.l.m.)	Антенна {0} m ({1} m)
 piatto:	плоский:
 primo lobo piatto:	первый лепесток (плоский):
 primo lobo reale:	первый лепесток (реальная):
+punti	точек
+migliori	лучших
+copie	копий
+porta {0}	порт {0}
+hai gia' l'ultima versione ({0})	у вас уже последняя версия ({0})
+aggiornato: l'ultima versione pubblicata e' la {0} ({1})	актуально: последняя опубликованная версия {0} ({1})
+caso peggiore: la distanza che rispetta il criterio a entrambe le frequenze; le due frequenze si calcolano una dopo l'altra (tempo doppio)	худший случай: расстояние, удовлетворяющее критерию на обеих частотах; обе частоты считаются по очереди (двойное время)
+Candidati controllati con le tolleranze (clic su una riga per riprenderla; «Applica al modello» usa la riga scelta)	Кандидаты, проверенные с допусками (щелчок по строке возвращает её; «Применить к модели» использует выбранную строку)

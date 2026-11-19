@@ -290,7 +290,7 @@ namespace YaNec
             bOra.Click += async (s, e) => { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); await Aggiornamento.Controlla(true, chkReinst.IsChecked == true); };
             ag.Children.Add(bOra);
             ag.Children.Add(chkReinst);
-            lblAggiornamento = new TextBlock { Text = "Stato: " + (pacchetto ? "spento: " + motivoPacchetto : Aggiornamento.Stato), TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Muted), FontSize = 12, Margin = new Thickness(0, 4, 0, 0) };
+            lblAggiornamento = new TextBlock { Text = Lang.T("Stato") + ": " + (pacchetto ? "spento: " + motivoPacchetto : Aggiornamento.Stato), TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Muted), FontSize = 12, Margin = new Thickness(0, 4, 0, 0) };
             ag.Children.Add(lblAggiornamento);
             c3.Children.Add(Pannello("Aggiornamento", ag));
             c3.Children.Add(Pannello("Segnala un problema", PannelloSegnalazione()));   // 1.5 (bozzetto approvato da IC8TEM il 18/11/2026 19:35)

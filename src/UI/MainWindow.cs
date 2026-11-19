@@ -147,7 +147,7 @@ namespace YaNec
                 {
                     Aggiornamento.Cambiato += st => Avalonia.Threading.Dispatcher.UIThread.Post(() =>
                     {
-                        if (lblAggiornamento != null) lblAggiornamento.Text = "Stato: " + st;
+                        if (lblAggiornamento != null) lblAggiornamento.Text = Lang.T("Stato") + ": " + st;
                         if (st.StartsWith("versione ") && st.Contains("installata")) Status(st);
                     });
                     // 1.4.1: finestra quando la versione nuova e' pronta
