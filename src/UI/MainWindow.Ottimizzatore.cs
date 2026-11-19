@@ -207,7 +207,7 @@ namespace YaNec
 
             // ---- destra: andamento, comandi, diagramma ----
             StackPanel c3s = new StackPanel();
-            ottChart = new LineChart { Title = "", XLabel = "passo", YLabel = "voto", Height = 260, EmptyText = "Avvia l'ottimizzatore per vedere l'andamento del voto" };
+            ottChart = new LineChart { Title = "", XLabel = "passi", YLabel = "voto", Height = 260, EmptyText = "Avvia l'ottimizzatore per vedere l'andamento del voto" };
             c3s.Children.Add(Pannello("Andamento", Riquadro(ottChart)));
             StackPanel cmd = new StackPanel { Spacing = 6 };
             WrapPanel cb = new WrapPanel { HorizontalAlignment = HorizontalAlignment.Center };
@@ -713,7 +713,7 @@ namespace YaNec
             {
                 g.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
                 OttCandidato k = r == 0 ? null : o.Candidati[r - 1];
-                string[] v = k == null ? h : new[] { k.Nome, FN(k.Passo.Voto, 1), FN(k.Passo.G, 2), FN(k.Passo.FB, 1), FN(k.Passo.RosPeggiore, 2),
+                string[] v = k == null ? h : new[] { k.Nome.StartsWith("partenza ") ? Lang.F("partenza {0}", k.Nome.Substring(9)) : k.Nome, FN(k.Passo.Voto, 1), FN(k.Passo.G, 2), FN(k.Passo.FB, 1), FN(k.Passo.RosPeggiore, 2),
                     double.IsNaN(k.Percentuale) ? "-" : FN(k.Percentuale, 0) + " %", FN(k.FbPeggiore, 1), k.Proposto ? "proposta" : "" };
                 for (int c = 0; c < h.Length; c++)
                 {

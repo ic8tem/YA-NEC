@@ -5055,3 +5055,11 @@ hai gia' l'ultima versione ({0})	すでに最新版です（{0}）
 aggiornato: l'ultima versione pubblicata e' la {0} ({1})	最新: 公開中の最新版は {0} です（{1}）
 caso peggiore: la distanza che rispetta il criterio a entrambe le frequenze; le due frequenze si calcolano una dopo l'altra (tempo doppio)	最悪ケース: 両方の周波数で基準を満たす間隔。2つの周波数は順に計算します（時間は2倍）
 Candidati controllati con le tolleranze (clic su una riga per riprenderla; «Applica al modello» usa la riga scelta)	許容差で確認した候補（行をクリックで呼び戻し、「モデルに適用」は選んだ行を使います）
+voto	スコア
+candidato	候補
+scelta	選択
+proposta	推奨
+migliore	最良
+partenza	開始
+passi	ステップ
+modello aperto	開いているモデル
