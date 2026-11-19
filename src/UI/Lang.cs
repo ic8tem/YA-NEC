@@ -164,7 +164,50 @@ namespace YaNec
                 }
             }
             map = m;
+            // 1.5.1: frammenti = voci che nel codice si attaccano a numeri o ad altri testi (iniziano o finiscono con uno spazio o con
+            // ( : , ; · =). Se un testo intero non e' una chiave, si traducono i frammenti che contiene, dal piu' lungo al piu' corto.
+            List<KeyValuePair<string, string>> fr = new List<KeyValuePair<string, string>>();
+            foreach (KeyValuePair<string, string> kv in m)
+                if (kv.Key.Length >= 4 && kv.Value != kv.Key && (Bordo(kv.Key[0]) || Bordo(kv.Key[kv.Key.Length - 1])) && ConLettere(kv.Key)) fr.Add(kv);
+            fr.Sort((a, b) => b.Key.Length.CompareTo(a.Key.Length));
+            frammenti = fr.ToArray();
+            cacheFr = new System.Collections.Concurrent.ConcurrentDictionary<string, string>(StringComparer.Ordinal);
             Code = code;
+        }
+
+        static KeyValuePair<string, string>[] frammenti = new KeyValuePair<string, string>[0];
+        static System.Collections.Concurrent.ConcurrentDictionary<string, string> cacheFr = new System.Collections.Concurrent.ConcurrentDictionary<string, string>(StringComparer.Ordinal);
+        static bool Bordo(char c) { return c == ' ' || c == '(' || c == ')' || c == ':' || c == ',' || c == ';' || c == '·' || c == '='; }
+        static bool ConLettere(string s) { int n = 0; foreach (char c in s) { if (char.IsLetter(c)) { if (++n >= 3) return true; } else n = 0; } return false; }
+
+        /// <summary>1.5.1: testo composto (frammenti di codice piu' numeri): sostituisce i frammenti noti, dal piu' lungo; null se non cambia nulla.</summary>
+        public static string Frammenti(string testo)
+        {
+            KeyValuePair<string, string>[] fr = frammenti;
+            if (fr.Length == 0 || testo.Length < 4 || testo.Length > 4000 || !ConLettere(testo)) return null;
+            string r;
+            if (cacheFr.TryGetValue(testo, out r)) return r;
+            string t = testo;
+            // le parti gia' tradotte non si toccano piu': si segnano con \u0001 ... \u0002 e si tolgono alla fine
+            bool cambiato = false;
+            foreach (KeyValuePair<string, string> kv in fr)
+            {
+                if (kv.Key.Length > t.Length) continue;
+                int i = t.IndexOf(kv.Key, StringComparison.Ordinal);
+                while (i >= 0)
+                {
+                    // non dentro una parte gia' tradotta
+                    int a = t.LastIndexOf('\u0001', i), b = t.LastIndexOf('\u0002', i);
+                    if (a > b) { i = t.IndexOf(kv.Key, i + 1, StringComparison.Ordinal); continue; }
+                    string v = "\u0001" + kv.Value + "\u0002";
+                    t = t.Substring(0, i) + v + t.Substring(i + kv.Key.Length);
+                    cambiato = true;
+                    i = t.IndexOf(kv.Key, i + v.Length, StringComparison.Ordinal);
+                }
+            }
+            r = cambiato ? t.Replace("\u0001", "").Replace("\u0002", "") : null;
+            if (cacheFr.Count < 50000) cacheFr[testo] = r;
+            return r;
         }
 
         static string FindFile(string code)
@@ -266,7 +309,8 @@ namespace YaNec
         {
             if (inTraduzione || string.IsNullOrEmpty(testo) || !Attiva) return;
             string t;
-            if (!map.TryGetValue(testo, out t) || t == testo) return;
+            if (!map.TryGetValue(testo, out t)) t = Frammenti(testo);   // 1.5.1: testi composti
+            if (t == null || t == testo) return;
             inTraduzione = true;
             // 1.0.2: SetCurrentValue e non SetValue: il testo tradotto non stacca il collegamento (binding) della scritta, cosi' la casella
             // di un menu a tendina (es. Terreno) segue la scelta successiva invece di restare ferma sulla prima voce tradotta

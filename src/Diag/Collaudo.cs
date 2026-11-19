@@ -802,11 +802,53 @@ namespace YaNec
                 string.Format(CI, "{0:0.00} {1:+0.00;-0.00}j ohm, {2:0.00} dBi", ra.Zin.Real, ra.Zin.Imaginary, ra.GmaxDbi),
                 Math.Abs(ra.Zin.Real - 18.49) < 0.3 && Math.Abs(ra.Zin.Imaginary + 22.71) < 0.3 && Math.Abs(ra.GmaxDbi - 7.43) < 0.05);
             ImportK6sti0441();
+            VariabiliNuove151();
         }
 
         // 0.5.0 (IC8TEM 15/11/2026 14:34: "trattiamo i files di k6sti? se si allora si devono poter aprire"): tutte le funzioni di
         // ANTFILE.DOC, con gli esempi del documento (V invertita con Shift e Rotate, quad con i simboli, three-square con le espressioni,
         // carichi di Laplace, materiali, modo simmetrico con la sola meta' +Y)
+        // 1.5.1: variabile nuova dal modello (Ottimizzatore): la geometria e l'impedenza non cambiano; la variabile cambia davvero la misura
+        static void VariabiliNuove151()
+        {
+            try
+            {
+                // Yagi 3 elementi e un loop quadrato (Quagi in piccolo)
+                string nec = "GW 1 11 -0.1 -0.52 0 -0.1 0.52 0 0.005\nGW 2 11 0.3 -0.49 0 0.3 0.49 0 0.005\nGW 3 11 0.6 -0.46 0 0.6 0.46 0 0.005\n" +
+                             "GW 4 5 0.9 -0.25 -0.25 0.9 0.25 -0.25 0.002\nGW 5 5 0.9 0.25 -0.25 0.9 0.25 0.25 0.002\nGW 6 5 0.9 0.25 0.25 0.9 -0.25 0.25 0.002\nGW 7 5 0.9 -0.25 0.25 0.9 -0.25 -0.25 0.002\n" +
+                             "GE 0\nEX 0 2 6 0 1 0\nFR 0 1 0 0 144 0\nEN";
+                NecModel m = NecModel.Parse(nec.Replace("\\n", "\n"));
+                int asse;
+                List<VariabileNuova.Gruppo> gs = VariabileNuova.Gruppi(m, out asse);
+                Complex z0 = Calcola(m, 144).Zin;
+                bool ok = gs.Count == 4 && asse == 0 && gs[3].Chiuso && Math.Abs(gs[3].Misura - 2.0) < 1e-9;
+                string ris = gs.Count + " elementi, asse " + asse + (gs.Count == 4 ? ", loop " + (gs[3].Chiuso ? "chiuso" : "aperto") + " " + gs[3].Misura.ToString("0.###", CI) + " m" : "");
+                foreach (int tipo in new[] { VariabileNuova.Lunghezza, VariabileNuova.Posizione, VariabileNuova.Raggio })
+                    foreach (int gi in new[] { 1, 3 })
+                    {
+                        VariabileNuova.Proposta p = VariabileNuova.Prepara(m, gi, tipo, "V" + tipo + gi);
+                        if (p.Modello == null) { ok = false; ris += "; " + p.Errore; continue; }
+                        Complex z1 = Calcola(p.Modello, 144).Zin;
+                        ok &= Complex.Abs(z1 - z0) < 1e-6 * Complex.Abs(z0);
+                        // la variabile cambia la misura: +1 %
+                        SyVar v = p.Modello.Variables.Find(q => q.Name == "V" + tipo + gi);
+                        NecModel m2 = p.Modello.Clone();
+                        m2.Variables.Find(q => q.Name == v.Name).Expr = (v.Value * 1.01 + (tipo == VariabileNuova.Posizione ? 0.01 : 0)).ToString("R", CI);
+                        m2.Reevaluate();
+                        int asse2; List<VariabileNuova.Gruppo> g2 = VariabileNuova.Gruppi(m2, out asse2);
+                        double atteso = tipo == VariabileNuova.Lunghezza ? gs[gi].Misura * 1.01 : tipo == VariabileNuova.Posizione ? gs[gi].Pos * 1.01 + 0.01 : gs[gi].Misura;
+                        double letto = tipo == VariabileNuova.Lunghezza ? g2[gi].Misura : tipo == VariabileNuova.Posizione ? g2[gi].Pos : g2[gi].Misura;
+                        ok &= Math.Abs(letto - atteso) < 1e-6;
+                        if (tipo == VariabileNuova.Raggio) ok &= Math.Abs(m2.Geometry[g2[gi].Schede[0]].F7 - m.Geometry[gs[gi].Schede[0]].F7 * 1.01) < 1e-9;
+                    }
+                VariabileNuova.Proposta ph = VariabileNuova.Prepara(m, -1, VariabileNuova.Altezza, "H");
+                ok &= ph.Modello != null;
+                Passo("Variabile nuova dal modello (Ottimizzatore, 1.5.1)", "4 elementi (3 fili diritti e un loop da 2 m), asse X; lunghezza, posizione e raggio del pilotato e del loop: stessa Z, misura +1 % quando cambia la variabile; quota di tutta l'antenna",
+                    ris + (ok ? "; Z uguale e misure giuste" : ""), ok);
+            }
+            catch (Exception ex) { Passo("Variabile nuova dal modello", "nessuna eccezione", ex.GetType().Name + ": " + ex.Message, false); }
+        }
+
         static void ImportK6sti0441()
         {
             Func<NecModel, int, string> gw = (m, k) => { GeomCard g = m.Geometry[k]; return string.Format(CI, "{0:0.0000} {1:0.0000} {2:0.0000} -> {3:0.0000} {4:0.0000} {5:0.0000}", g.F1, g.F2, g.F3, g.F4, g.F5, g.F6); };

@@ -164,6 +164,9 @@ namespace YaNec
             };
             vb.Children.Add(bAgg); vb.Children.Add(bTutti); vb.Children.Add(ottBoomBtn); vb.Children.Add(ottMetodo);
             vp.Children.Add(vb);
+            ottNuovaCorpo = new StackPanel { Spacing = 4 };
+            ottNuovaBox = new Border { Child = ottNuovaCorpo, IsVisible = false, BorderBrush = new SolidColorBrush(Structure3DView.Ocra), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(8), Padding = new Thickness(10, 8), Margin = new Thickness(0, 6, 0, 0) };
+            vp.Children.Add(ottNuovaBox);
 
             StackPanel rp = new StackPanel { Spacing = 2 };
             ottRegPanel = new StackPanel { Spacing = 0 };
@@ -423,6 +426,8 @@ namespace YaNec
         void OttMenuAggiungi(Control dove)
         {
             MenuFlyout f = new MenuFlyout();
+            f.Items.Add(new MenuItem { Header = "variabili del modello", IsEnabled = false, FontSize = 11 });
+            int nv = 0;
             if (model != null)
                 foreach (SyVar v in model.Variables)
                 {
@@ -430,10 +435,129 @@ namespace YaNec
                     SyVar vv = v;
                     MenuItem mi = new MenuItem { Header = v.Name + (string.IsNullOrWhiteSpace(v.Descr) ? "" : "  -  " + v.Descr) };
                     mi.Click += (s, e) => { ottTolte.Remove(vv.Name); OttCaricaVariabili(false); };
-                    f.Items.Add(mi);
+                    f.Items.Add(mi); nv++;
                 }
-            if (f.Items.Count == 0) f.Items.Add(new MenuItem { Header = "(tutte le variabili sono gia' nell'elenco; nuove variabili nella linguetta Variabili)", IsEnabled = false });
+            if (nv == 0) f.Items.Add(new MenuItem { Header = model != null && model.Variables.Count == 0 ? "(nessuna: il modello non ha schede SY)" : "(tutte le variabili sono gia' nell'elenco)", IsEnabled = false });
+            // 1.5.1 (bozzetto «Ottimizzatore: creare una variabile quando il modello non ne ha», approvato da IC8TEM il 19/11/2026 08:10;
+            // 08:14: una variabile per ogni elemento, nomi neutri L/P/R + filo, qualunque antenna: fili diritti e loop)
+            if (model != null)
+            {
+                f.Items.Add(new MenuItem { Header = "nuova variabile dal modello", IsEnabled = false, FontSize = 11 });
+                int asse;
+                List<VariabileNuova.Gruppo> gs = VariabileNuova.Gruppi(model, out asse);
+                for (int gi = 0; gi < gs.Count && gi < 60; gi++)
+                {
+                    VariabileNuova.Gruppo gr = gs[gi];
+                    int gix = gi;
+                    MenuItem me = new MenuItem { Header = Lang.T(gr.Nome.Substring(0, gr.Nome.IndexOf(" (", StringComparison.Ordinal))) + gr.Nome.Substring(gr.Nome.IndexOf(" (", StringComparison.Ordinal)) };
+                    string dim = gr.Diritto ? "lunghezza" : gr.Chiuso ? "perimetro" : "lunghezza sviluppata";
+                    List<Tuple<int, string, string>> voci = new List<Tuple<int, string, string>>
+                    {
+                        Tuple.Create(VariabileNuova.Lunghezza, Lang.F(dim + " (ora {0} m)", FormatVal(gr.Misura)), "L"),
+                    };
+                    if (asse >= 0 && gr.SuAsse) voci.Add(Tuple.Create(VariabileNuova.Posizione, Lang.F("posizione lungo l'asse (ora {0} m)", FormatVal(gr.Pos)), "P"));
+                    voci.Add(Tuple.Create(VariabileNuova.Raggio, Lang.F("raggio (ora {0} mm)", FormatVal(model.Geometry[gr.Schede[0]].F7 * 1000)), "R"));
+                    foreach (Tuple<int, string, string> vo in voci)
+                    {
+                        Tuple<int, string, string> v2 = vo;
+                        MenuItem mi = new MenuItem { Header = vo.Item2 };
+                        mi.Click += (s, e) => OttNuovaVariabile(gix, v2.Item1, VariabileNuova.NomeLibero(model, v2.Item3 + gr.Primo));
+                        mi.PointerEntered += (s, e) => { if (ottNuovaBox != null && ottNuovaBox.IsVisible) OttNuovaVariabile(gix, v2.Item1, VariabileNuova.NomeLibero(model, v2.Item3 + gr.Primo)); };
+                        me.Items.Add(mi);
+                    }
+                    f.Items.Add(me);
+                }
+                MenuItem mh = new MenuItem { Header = "Quota di tutta l'antenna (Z)" };
+                mh.Click += (s, e) => OttNuovaVariabile(-1, VariabileNuova.Altezza, VariabileNuova.NomeLibero(model, "H"));
+                f.Items.Add(mh);
+            }
+            f.Items.Add(new MenuItem { Header = "altro", IsEnabled = false, FontSize = 11 });
+            MenuItem mv = new MenuItem { Header = "Scrivi una variabile nella linguetta Variabili…" };
+            mv.Click += (s, e) => SelectTab(9);
+            f.Items.Add(mv);
             f.ShowAt(dove);
+        }
+
+        // 1.5.1: riquadro di conferma della variabile nuova (nome, valore, minimo e massimo, cosa cambia, struttura con l'ocra)
+        Border ottNuovaBox;
+        StackPanel ottNuovaCorpo;
+
+        void OttNuovaVariabile(int gruppo, int tipo, string nome)
+        {
+            if (model == null || ottNuovaBox == null) return;
+            ottNuovaCorpo.Children.Clear();
+            ottNuovaBox.IsVisible = true;
+            TextBox tNome = Tb(nome, 110); tNome.FontFamily = Pal.Mono;
+            TextBlock tVal = new TextBlock { FontFamily = Pal.Mono, VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) };
+            TextBox tMin = Tb("", 90), tMax = Tb("", 90);
+            TextBlock tCosa = new TextBlock { TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Muted), VerticalAlignment = VerticalAlignment.Center, MaxWidth = 520 };
+            TextBlock tErr = new TextBlock { TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Red) };
+            Structure3DView v3 = new Structure3DView { Height = 200, ShowPattern = false, ShowGroundAndHeight = false, ShowPhases = false, ShowCurrents = false };
+            VariabileNuova.Proposta pr = null;
+            Action prepara = () =>
+            {
+                pr = VariabileNuova.Prepara(model, gruppo, tipo, (tNome.Text ?? "").Trim());
+                tErr.Text = pr.Errore ?? "";
+                if (pr.Errore != null) { tVal.Text = "-"; tCosa.Text = ""; v3.OcraDiretti = null; v3.InvalidateVisual(); return; }
+                tVal.Text = FormatVal(pr.Valore) + " " + pr.Unita;
+                double lo = pr.Valore - Math.Abs(pr.Valore) * 0.03, hi = pr.Valore + Math.Abs(pr.Valore) * 0.03;
+                if (tipo == VariabileNuova.Altezza) { lo = 0; hi = 10; }
+                tMin.Text = FormatVal(lo); tMax.Text = FormatVal(hi);
+                tCosa.Text = pr.Elemento + " · " + pr.Cosa;
+                try
+                {
+                    v3.Geo = pr.Modello.BuildGeometry();
+                    Dictionary<int, List<string>> dir, ind; List<string> tr;
+                    VariabileNuova.DoveAgisce(pr.Modello, pr.Nome, out dir, out ind, out tr);
+                    v3.OcraDiretti = dir; v3.OcraIndiretti = ind;
+                }
+                catch { v3.Geo = geo; }
+                v3.InvalidateVisual();
+            };
+            tNome.LostFocus += (s, e) => prepara();
+            tNome.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) prepara(); };
+            Func<string, Control, Control> riga = (et, c) =>
+            {
+                WrapPanel w = new WrapPanel { Margin = new Thickness(0, 1) };
+                w.Children.Add(new TextBlock { Text = et, Width = 150, VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) });
+                w.Children.Add(c);
+                return w;
+            };
+            StackPanel mm = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6 };
+            mm.Children.Add(tMin); mm.Children.Add(new TextBlock { Text = "–", VerticalAlignment = VerticalAlignment.Center }); mm.Children.Add(tMax);
+            mm.Children.Add(new TextBlock { Text = "(±3 %, si cambiano dopo nell'elenco)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) });
+            ottNuovaCorpo.Children.Add(new TextBlock { Text = "Variabile nuova", FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
+            ottNuovaCorpo.Children.Add(riga("Nome", tNome));
+            ottNuovaCorpo.Children.Add(riga("Valore", tVal));
+            ottNuovaCorpo.Children.Add(riga("Minimo / massimo", mm));
+            ottNuovaCorpo.Children.Add(riga("Cosa cambia", tCosa));
+            ottNuovaCorpo.Children.Add(v3);
+            ottNuovaCorpo.Children.Add(new TextBlock { Text = "in ocra: dove agisce la variabile", FontSize = 11, Foreground = Pal.B(Pal.Muted) });
+            ottNuovaCorpo.Children.Add(tErr);
+            Button bCrea = Btn("Crea la variabile", true), bAnn = Btn("Annulla", false);
+            bAnn.Click += (s, e) => { ottNuovaBox.IsVisible = false; ottNuovaCorpo.Children.Clear(); };
+            bCrea.Click += (s, e) =>
+            {
+                prepara();
+                if (pr == null || pr.Modello == null) return;
+                string n = pr.Nome, smin = tMin.Text, smax = tMax.Text;
+                Registro.Scrivi("AZIONE", "ottimizzatore: variabile nuova " + n + " (" + pr.Cosa + ")");
+                ottNuovaBox.IsVisible = false; ottNuovaCorpo.Children.Clear();
+                ottTolte.Remove(n);
+                GeoMetti(pr.Modello, true);   // storia di Annulla, tabelle, variabili, ricalcolo
+                OttCaricaVariabili(false);
+                OttRigaVar r = ottVar.Find(q => string.Equals(q.Nome, n, StringComparison.OrdinalIgnoreCase));
+                if (r != null)
+                {
+                    r.Min.Text = smin; r.Max.Text = smax;
+                    if (r.Usa != null) r.Usa.IsChecked = true;
+                }
+                Status(Lang.F("Variabile {0} creata: la geometria non cambia. \"Annulla\" della barra Geometria la toglie.", n));
+            };
+            StackPanel bb = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
+            bb.Children.Add(bCrea); bb.Children.Add(bAnn);
+            ottNuovaCorpo.Children.Add(bb);
+            prepara();
         }
 
         // ------------------------------------------------------------------------------------------------

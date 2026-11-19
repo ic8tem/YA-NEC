@@ -20,6 +20,9 @@ namespace YaNec
         }
 
         StackPanel varsPanel;
+        Structure3DView varView;
+        SelectableTextBlock varInfo;
+        string varScelta;
         int rotellaScatti;
         readonly List<VarRow> varRows = new List<VarRow>();
 
@@ -55,7 +58,31 @@ namespace YaNec
             d.Children.Add(help);
 
             varsPanel = new StackPanel { Spacing = 4, Margin = new Thickness(10) };
-            d.Children.Add(Riquadro(new ScrollViewer { Content = varsPanel }));
+            // 1.5.1 (bozzetto «Linguetta Variabili: dove agisce la variabile», approvato da IC8TEM il 19/11/2026 08:12): a destra la
+            // struttura 3D con in ocra i fili su cui agisce la variabile scelta (clic sulla riga); clic sul titolo: nasconde il riquadro
+            Grid gv = new Grid { ColumnDefinitions = new ColumnDefinitions("*,8,0.8*") };
+            Border sx = Riquadro(new ScrollViewer { Content = varsPanel, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto });
+            Grid.SetColumn(sx, 0); gv.Children.Add(sx);
+            varView = new Structure3DView { ShowPattern = false, ShowGroundAndHeight = false, ShowPhases = false, ShowCurrents = false, MinHeight = 260 };
+            varInfo = new SelectableTextBlock { TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Fore), FontSize = 12, Margin = new Thickness(0, 6, 0, 0) };
+            Button tit = new Button { Content = "Struttura 3D: dove agisce la variabile ▾", Background = Brushes.Transparent, BorderThickness = new Thickness(0), FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore), Padding = new Thickness(0) };
+            ToolTip.SetTip(tit, "Clic: nasconde o mostra la struttura");
+            DockPanel dv = new DockPanel();
+            DockPanel.SetDock(tit, Dock.Top); dv.Children.Add(tit);
+            TextBlock leg = new TextBlock { Text = "ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile", FontSize = 11, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap };
+            DockPanel.SetDock(leg, Dock.Bottom); dv.Children.Add(leg);
+            DockPanel.SetDock(varInfo, Dock.Bottom); dv.Children.Add(varInfo);
+            dv.Children.Add(varView);
+            Border sd = Riquadro(dv);
+            Grid.SetColumn(sd, 2); gv.Children.Add(sd);
+            tit.Click += (s, e) =>
+            {
+                bool vis = varView.IsVisible;
+                varView.IsVisible = varInfo.IsVisible = leg.IsVisible = !vis;
+                gv.ColumnDefinitions[2].Width = vis ? GridLength.Auto : new GridLength(0.8, GridUnitType.Star);
+                tit.Content = vis ? "Struttura 3D ▸" : "Struttura 3D: dove agisce la variabile ▾";
+            };
+            d.Children.Add(gv);
             RefreshVarsPanel();
             return d;
         }
@@ -95,6 +122,7 @@ namespace YaNec
                 return;
             }
             foreach (SyVar v in model.Variables) AddVarRow(v, false);
+            if (varView != null) VarMostraDove(varScelta != null && model.Variables.Exists(q => string.Equals(q.Name, varScelta, StringComparison.OrdinalIgnoreCase)) ? varScelta : model.Variables[0].Name);
         }
 
         static Grid VarGrid()
@@ -147,6 +175,30 @@ namespace YaNec
             for (int i = 0; i < cells.Length; i++) { Grid.SetColumn(cells[i], i); g.Children.Add(cells[i]); }
             varRows.Add(r);
             varsPanel.Children.Add(g);
+            // 1.5.1: clic sulla riga (o fuoco su una sua casella) = mostra dove agisce
+            g.AddHandler(Avalonia.Input.InputElement.PointerPressedEvent, (s, e) => VarMostraDove(r.Name.Text), Avalonia.Interactivity.RoutingStrategies.Tunnel);
+            r.Name.GotFocus += (s, e) => VarMostraDove(r.Name.Text);
+            r.Expr.GotFocus += (s, e) => VarMostraDove(r.Name.Text);
+        }
+
+        /// <summary>1.5.1: struttura a destra con in ocra i fili su cui agisce la variabile.</summary>
+        void VarMostraDove(string nome)
+        {
+            if (varView == null) return;
+            varScelta = nome;
+            varView.Geo = geo;
+            varView.Ground = false;
+            varView.OcraDiretti = varView.OcraIndiretti = null;
+            if (model == null || geo == null || string.IsNullOrWhiteSpace(nome)) { varInfo.Text = model == null ? Lang.T("Nessun modello aperto.") : ""; varView.InvalidateVisual(); return; }
+            Dictionary<int, List<string>> dir, ind; List<string> tramite;
+            VariabileNuova.DoveAgisce(model, nome.Trim(), out dir, out ind, out tramite);
+            varView.OcraDiretti = dir; varView.OcraIndiretti = ind;
+            List<string> righe = new List<string>();
+            foreach (KeyValuePair<int, List<string>> kv in dir) righe.Add(Lang.T("filo") + " " + kv.Key + ": " + string.Join(", ", kv.Value));
+            string t = nome.Trim() + (righe.Count > 0 ? ": " + string.Join(" · ", righe) : ": " + Lang.T("non tocca la geometria (nessun filo la usa direttamente)"));
+            if (ind.Count > 0) t += "\n" + Lang.F("attraverso {0}: fili {1}", string.Join(", ", tramite), string.Join(", ", ind.Keys));
+            varInfo.Text = t;
+            varView.InvalidateVisual();
         }
 
         void SetRowState(VarRow r, SyVar v)

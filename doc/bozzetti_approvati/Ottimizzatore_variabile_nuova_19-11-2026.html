@@ -1,0 +1,125 @@
+<title>Variabili dall'Ottimizzatore</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Bozzetto per IC8TEM: colonna del pannello Ottimizzatore com'e' nel programma, poi i tre passi della proposta */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --fg:#1b2633; --muted:#5d6b7c; --line:#d5dce5;
+  --accent:#1f6fd6; --accent-soft:#e3eefc; --new:#e08a00; --new-soft:#fff3df; --ok:#2f8a4c;
+  --f-ui:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48;
+  --accent:#5aa0ff; --accent-soft:#1f3350; --new:#ffad33; --new-soft:#3a2c14; --ok:#5cc47e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48;
+  --accent:#5aa0ff; --accent-soft:#1f3350; --new:#ffad33; --new-soft:#3a2c14; --ok:#5cc47e; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+main{max-width:1100px;margin:0 auto;display:grid;gap:22px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}
+h2{font-size:1.05rem;margin:0 0 6px}
+p{margin:0;max-width:72ch}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:10px;min-width:0}
+.passi{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--new);background:var(--new-soft);border-radius:4px;padding:1px 7px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.card{align-content:start}
+svg{width:100%;height:auto;display:block}
+.leg{font-size:.8rem;color:var(--muted)}
+.sw{display:inline-block;width:24px;border-top:4px solid var(--new);vertical-align:middle;margin-right:6px}
+.b{border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:16px;padding:3px 12px;font:inherit;font-size:.9rem}
+.b.on{outline:3px solid var(--new);outline-offset:2px}
+.menu{border:1px solid var(--line);border-radius:6px;background:var(--card);box-shadow:0 6px 18px rgba(0,0,0,.12);font-size:.9rem;max-width:420px}
+.menu div{padding:5px 12px;border-bottom:1px solid var(--line)}
+.menu div:last-child{border-bottom:0}
+.menu .h{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--bg)}
+.menu .sel{background:var(--accent-soft)}
+.menu .sub{padding-left:28px}
+.dis{color:var(--muted)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-size:.85rem;font-variant-numeric:tabular-nums;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:4px 8px;text-align:left;white-space:nowrap}
+th{color:var(--muted);font-weight:500}
+td.m{font-family:var(--f-mono)}
+td.n{background:var(--new-soft);color:var(--fg)}
+.form{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:center;font-size:.9rem}
+.in{border:1px solid var(--line);border-radius:4px;padding:2px 8px;font-family:var(--f-mono);background:var(--bg)}
+ul{margin:0;padding-left:20px;display:grid;gap:4px;max-width:80ch}
+.nota{border-left:3px solid var(--new);padding:6px 10px;background:var(--new-soft);border-radius:0 6px 6px 0;font-size:.9rem}
+</style>
+<main>
+  <header style="display:grid;gap:6px">
+    <span class="tag">bozzetto da approvare · 19/11/2026</span>
+    <h1>Ottimizzatore: creare una variabile quando il modello non ne ha</h1>
+    <p class="muted">Richiesta di IC8TEM (19/11, 08:08): «se non ho variabili impostate, da qua ne imposto una». Oggi «+ aggiungi variabile» con un modello senza variabili mostra solo «nuove variabili nella linguetta Variabili».</p>
+  </header>
+
+  <section class="passi">
+    <div class="card">
+      <h2>1 · Il menu di «+ aggiungi variabile»</h2>
+      <div class="btns"><span class="b on">+ aggiungi variabile</span><span class="b">tutti gli elementi</span><span class="b">☐ mantieni lunghezza del boom</span></div>
+      <div class="menu">
+        <div class="h">variabili del modello</div>
+        <div class="dis">(nessuna: il modello non ha schede SY)</div>
+        <div class="h">nuova variabile dal modello</div>
+        <div>Riflettore (filo 1) ▸</div>
+        <div class="sel">Pilotato (filo 2) ▸</div>
+        <div class="sub sel">lunghezza (ora 0,998 m)</div>
+        <div class="sub">posizione sul boom (ora 0,412 m)</div>
+        <div class="sub">raggio (ora 5 mm)</div>
+        <div>Direttore 1 (filo 3) ▸</div>
+        <div>… un elemento per filo diritto</div>
+        <div>Altezza di tutta l'antenna (Z)</div>
+        <div class="h">altro</div>
+        <div>Scrivi una variabile nella linguetta Variabili…</div>
+      </div>
+      <p class="muted" style="font-size:.85rem">Gli elementi sono quelli che YA-NEC riconosce gia' per Tolleranze e Calcoli meccanici: un filo diritto per elemento, nel piano del boom. Gli elementi gia' governati da una variabile non compaiono.</p>
+    </div>
+
+    <div class="card">
+      <h2>2 · La conferma, nel pannello</h2>
+      <div class="form">
+        <span>Nome</span><span class="in">L2</span>
+        <span>Valore</span><span class="in">0,998 m</span>
+        <span>Minimo / massimo</span><span><span class="in">0,968</span> – <span class="in">1,028</span> <span class="muted">(±3 %, si cambiano dopo nell'elenco)</span></span>
+        <span>Cosa cambia</span><span class="muted">filo 2: Y1 = −L2/2, Y2 = L2/2</span>
+      </div>
+      <svg viewBox="0 0 420 170" role="img" aria-label="Yagi vista dall'alto con il pilotato evidenziato in ocra">
+        <line x1="30" y1="85" x2="400" y2="85" stroke="var(--muted)" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+        <line x1="50" y1="22" x2="50" y2="148" stroke="var(--fg)" stroke-width="2.5"/>
+        <line x1="120" y1="25" x2="120" y2="145" stroke="var(--new)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M114 21 L120 9 L126 21 Z M114 149 L120 161 L126 149 Z" fill="var(--new)"/>
+        <line x1="190" y1="27" x2="190" y2="143" stroke="var(--fg)" stroke-width="2.5"/>
+        <line x1="260" y1="28" x2="260" y2="142" stroke="var(--fg)" stroke-width="2.5"/>
+        <line x1="325" y1="29" x2="325" y2="141" stroke="var(--fg)" stroke-width="2.5"/>
+        <line x1="385" y1="30" x2="385" y2="140" stroke="var(--fg)" stroke-width="2.5"/>
+        <text x="132" y="40" font-size="12" fill="var(--new)" font-family="Inter,sans-serif">L2 · filo 2</text>
+      </svg>
+      <div class="leg"><span class="sw"></span>dove agisce la variabile (vista della Struttura 3D, si aggiorna mentre scegli nel menu)</div>
+      <div class="btns"><span class="b" style="background:var(--accent);color:#fff">Crea la variabile</span><span class="b">Annulla</span></div>
+      <p class="muted" style="font-size:.85rem">Il nome proposto e' L (lunghezza), P (posizione) o R (raggio) con il numero del filo; si puo' cambiare. Se il nome esiste gia', avviso e niente modifica.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3 · Il risultato</h2>
+    <p>La variabile entra nella linguetta Variabili (scheda SY), le coordinate del filo diventano formule e la riga compare nell'elenco dell'Ottimizzatore. Il modello si ricalcola e deve dare lo stesso risultato di prima.</p>
+    <div class="tw"><table>
+      <tr><th>Variabile</th><th>Valore ora</th><th>Minimo</th><th>Massimo</th><th>Passo</th><th>Note</th></tr>
+      <tr><td class="m n">L2</td><td class="m">0,998</td><td class="m">0,968</td><td class="m">1,028</td><td class="m">0,005</td><td>lunghezza del pilotato (filo 2), creata qui</td></tr>
+    </table></div>
+    <div class="tw"><table>
+      <tr><th>Tag</th><th>X1 (m)</th><th>Y1 (m)</th><th>Z1 (m)</th><th>X2 (m)</th><th>Y2 (m)</th><th>Z2 (m)</th><th>Raggio mm</th><th>Segm.</th></tr>
+      <tr><td>2</td><td class="m">0,412</td><td class="m n">-L2/2</td><td class="m">0</td><td class="m">0,412</td><td class="m n">L2/2</td><td class="m">0</td><td class="m">5</td><td class="m">21</td></tr>
+    </table></div>
+    <ul>
+      <li><b>Posizione</b>: X1 = X2 = P2. <b>Raggio</b>: raggio = R2. <b>Altezza</b>: Z di tutti i fili diventa «valore + H», con H = 0 all'inizio.</li>
+      <li>«Annulla» della barra Geometria toglie la variabile e rimette i numeri.</li>
+      <li>Con le rastremazioni (tubi a gradini) la lunghezza si applica all'elemento intero e le sezioni si scalano in proporzione, come fa gia' «Scala».</li>
+      <li>Salvando, la variabile resta nel file (.yanec e .nec con SY).</li>
+    </ul>
+    <p class="nota">Non cambia il motore di calcolo: cambia solo come si scrivono le misure nel modello. Il controllo «stesso risultato prima e dopo» si aggiunge all'autotest.</p>
+  </section>
+</main>

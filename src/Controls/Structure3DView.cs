@@ -36,6 +36,10 @@ namespace YaNec
         public Color? HighlightColor;      // 1.2.0 (IC8TEM 17/11/2026 23:46): colore velato del filo scelto, dalle Impostazioni (null = blu di prima)
         // barra Geometria (0.4.2, bozzetto approvato): fili scelti, anteprima tratteggiata arancione, centro della trasformazione
         public HashSet<int> SelectedTags = new HashSet<int>();
+        // 1.5.1 (bozzetti approvati da IC8TEM il 19/11/2026 08:10 e 08:12): dove agisce una variabile, in ocra. Valore: campi toccati
+        // (X1, Y1, ... raggio); pieno = la usa direttamente, tratteggiato = attraverso un'altra variabile
+        public Dictionary<int, List<string>> OcraDiretti, OcraIndiretti;
+        public static readonly Color Ocra = Color.Parse("#C98A12");
         public List<double[]> Preview;                  // segmenti x1 y1 z1 x2 y2 z2 dopo la trasformazione
         public double[] PreviewCenter;                  // punto arancione
         public string PreviewLabel = "", PreviewCenterText = "";
@@ -314,6 +318,63 @@ namespace YaNec
                     Project(Geo.X2[i], Geo.Y2[i], Geo.Z2[i], cx, cy, sc, ox, oy, oz, out sx2, out sy2);
                     ctx.DrawLine(Pal.P(HighlightColor ?? Pal.A(120, Pal.Accent), HighlightColor.HasValue ? 11 : 8), new Point(sx1, sy1), new Point(sx2, sy2));
                 }
+            // 1.5.1: dove agisce la variabile (ocra)
+            if (OcraDiretti != null || OcraIndiretti != null)
+            {
+                Pen pd = new Pen(new SolidColorBrush(Ocra), 7) { LineCap = PenLineCap.Round };
+                Pen pi = new Pen(new SolidColorBrush(Ocra), 5) { DashStyle = new DashStyle(new double[] { 2, 1.5 }, 0) };
+                Pen pf = new Pen(new SolidColorBrush(Ocra), 2.5) { LineCap = PenLineCap.Round };
+                Dictionary<int, int[]> primoUltimo = new Dictionary<int, int[]>();
+                for (int i = 0; i < Geo.N; i++)
+                {
+                    int t = Geo.Tag[i];
+                    bool d = OcraDiretti != null && OcraDiretti.ContainsKey(t), ind = !d && OcraIndiretti != null && OcraIndiretti.ContainsKey(t);
+                    if (!d && !ind) continue;
+                    Project(Geo.X1[i], Geo.Y1[i], Geo.Z1[i], cx, cy, sc, ox, oy, oz, out sx1, out sy1);
+                    Project(Geo.X2[i], Geo.Y2[i], Geo.Z2[i], cx, cy, sc, ox, oy, oz, out sx2, out sy2);
+                    ctx.DrawLine(d ? pd : pi, new Point(sx1, sy1), new Point(sx2, sy2));
+                    if (d) { int[] pu; if (!primoUltimo.TryGetValue(t, out pu)) primoUltimo[t] = new[] { i, i }; else pu[1] = i; }
+                }
+                // frecce: lunghezza (alle punte, lungo il filo), posizione o quota (lungo l'asse della coordinata)
+                foreach (KeyValuePair<int, int[]> kv in primoUltimo)
+                {
+                    List<string> campi = OcraDiretti[kv.Key];
+                    int a = kv.Value[0], b = kv.Value[1];
+                    double ex = Geo.X2[b] - Geo.X1[a], ey = Geo.Y2[b] - Geo.Y1[a], ez = Geo.Z2[b] - Geo.Z1[a], L = Math.Sqrt(ex * ex + ey * ey + ez * ez);
+                    if (L < 1e-9) continue;
+                    double[] dir = { ex / L, ey / L, ez / L };
+                    double ax, ay, bx, by;
+                    Project(Geo.X1[a], Geo.Y1[a], Geo.Z1[a], cx, cy, sc, ox, oy, oz, out ax, out ay);
+                    Project(Geo.X2[b], Geo.Y2[b], Geo.Z2[b], cx, cy, sc, ox, oy, oz, out bx, out by);
+                    foreach (string c in campi)
+                    {
+                        if (c.Length != 2) continue;
+                        int k = "XYZ".IndexOf(c[0]); if (k < 0) continue;
+                        if (Math.Abs(dir[k]) > 0.7)
+                        {
+                            // lunghezza: prolunga le due punte
+                            double ux = bx - ax, uy = by - ay, ul = Math.Sqrt(ux * ux + uy * uy); if (ul < 1) continue;
+                            ux /= ul; uy /= ul;
+                            ctx.DrawLine(pf, new Point(bx, by), new Point(bx + 12 * ux, by + 12 * uy));
+                            ctx.DrawLine(pf, new Point(ax, ay), new Point(ax - 12 * ux, ay - 12 * uy));
+                        }
+                        else
+                        {
+                            double px0, py0, px1, py1;
+                            Project(Geo.X2[b], Geo.Y2[b], Geo.Z2[b], cx, cy, sc, ox, oy, oz, out px0, out py0);
+                            double[] q = { Geo.X2[b], Geo.Y2[b], Geo.Z2[b] }; q[k] += 0.05 * Math.Max(L, 0.1);
+                            Project(q[0], q[1], q[2], cx, cy, sc, ox, oy, oz, out px1, out py1);
+                            double vx = px1 - px0, vy = py1 - py0, vl = Math.Sqrt(vx * vx + vy * vy); if (vl < 0.5) continue;
+                            vx /= vl; vy /= vl;
+                            Point p0 = new Point(px0 + 6 * vx, py0 + 6 * vy), p1 = new Point(px0 + 22 * vx, py0 + 22 * vy);
+                            ctx.DrawLine(pf, p0, p1);
+                            ctx.DrawLine(pf, p1, new Point(p1.X - 6 * vx + 4 * vy, p1.Y - 6 * vy - 4 * vx));
+                            ctx.DrawLine(pf, p1, new Point(p1.X - 6 * vx - 4 * vy, p1.Y - 6 * vy + 4 * vx));
+                        }
+                        break;
+                    }
+                }
+            }
             // fili scelti nella barra Geometria: alone blu
             if (SelectedTags.Count > 0)
                 for (int i = 0; i < Geo.N; i++)

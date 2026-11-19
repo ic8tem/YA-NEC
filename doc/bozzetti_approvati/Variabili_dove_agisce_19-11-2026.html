@@ -1,0 +1,128 @@
+<title>Variabili nella struttura 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Bozzetto per IC8TEM: la linguetta Variabili come nel programma, con a destra la struttura 3D che evidenzia in ocra dove agisce la variabile scelta */
+:root{
+  --bg:#eef1f5; --card:#ffffff; --fg:#1b2633; --muted:#5d6b7c; --line:#d5dce5;
+  --accent:#1f6fd6; --accent-soft:#e3eefc; --wire:#3b4a5c; --ocra:#c98a12; --ocra-soft:#fbefd6; --boom:#9aa6b4;
+  --f-ui:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48;
+  --accent:#5aa0ff; --accent-soft:#1f3350; --wire:#b7c3d1; --ocra:#f0b23c; --ocra-soft:#3a2c14; --boom:#5d6b7c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a22; --card:#1d2530; --fg:#e6edf5; --muted:#9aa8b8; --line:#2f3a48;
+  --accent:#5aa0ff; --accent-soft:#1f3350; --wire:#b7c3d1; --ocra:#f0b23c; --ocra-soft:#3a2c14; --boom:#5d6b7c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+main{max-width:1200px;margin:0 auto;display:grid;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}
+p{margin:0;max-width:75ch}
+.muted{color:var(--muted)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--ocra);background:var(--ocra-soft);border-radius:4px;padding:1px 7px;justify-self:start}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem}
+.b{border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:16px;padding:3px 12px;font:inherit;font-size:.9rem;cursor:pointer}
+.b.pri{background:var(--accent);color:#fff}
+.split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:12px}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px;min-width:0;align-content:start}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:left;white-space:nowrap}
+th{color:var(--muted);font-weight:500;font-size:.78rem}
+td.m{font-family:var(--f-mono)}
+tr.r{cursor:pointer}
+tr.r:hover td{background:var(--accent-soft)}
+tr.sel td{background:var(--ocra-soft)}
+tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--ocra)}
+.h3d{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.h3d b{font-size:.95rem}
+svg{width:100%;height:auto;max-width:100%;display:block}
+.leg{display:flex;flex-wrap:wrap;gap:14px;font-size:.82rem;color:var(--muted)}
+.sw{display:inline-block;width:26px;height:0;border-top:4px solid var(--ocra);vertical-align:middle;margin-right:6px}
+.sw.d{border-top-style:dashed}
+.info{font-size:.86rem;border-left:3px solid var(--ocra);background:var(--ocra-soft);padding:6px 10px;border-radius:0 6px 6px 0}
+ul{margin:0;padding-left:20px;display:grid;gap:4px;max-width:85ch}
+</style>
+<main>
+  <span class="tag">bozzetto da approvare · 19/11/2026</span>
+  <h1>Linguetta Variabili: dove agisce la variabile</h1>
+  <p class="muted">Richiesta di IC8TEM (19/11, 08:10): a destra della tabella, la struttura 3D dell'antenna con evidenziato in ocra il punto in cui interviene la variabile scelta. Clicca le righe: il disegno qui sotto si aggiorna come farebbe il programma (esempio: Yagi 6 elementi con variabili).</p>
+
+  <div class="bar"><span class="b">Aggiungi variabile</span><span class="b pri">Applica e ricalcola</span><span class="muted">Le variabili si usano nelle schede di geometria (linguetta Modello NEC) al posto dei numeri.</span></div>
+
+  <div class="split">
+    <section class="card">
+      <div class="tw"><table id="t">
+        <thead><tr><th>Nome</th><th>Descrizione</th><th>Espressione</th><th>Valore</th><th>Stato</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <p class="muted" style="font-size:.82rem">Clic su una riga (o sulla sua casella Nome): la struttura a destra mostra dove agisce. Clic di nuovo: toglie l'evidenziazione.</p>
+    </section>
+
+    <section class="card">
+      <div class="h3d"><b>Struttura 3D</b><span class="muted" style="font-size:.82rem">trascina per ruotare, rotella per ingrandire (come in Struttura 3D)</span></div>
+      <svg id="v" viewBox="0 0 520 300" role="img" aria-label="Yagi vista dall'alto con evidenziati i fili della variabile scelta"></svg>
+      <div class="leg"><span><span class="sw"></span>usa la variabile</span><span><span class="sw d"></span>la usa attraverso un'altra variabile</span></div>
+      <div class="info" id="info"></div>
+    </section>
+  </div>
+
+  <section class="card">
+    <b>Cosa fa</b>
+    <ul>
+      <li>Il riquadro a destra e' la stessa vista della Struttura 3D (stesse viste 3D / dall'alto / di lato / di fronte), piu' piccola e senza correnti.</li>
+      <li>Ocra pieno: i fili che hanno la variabile in una coordinata o nel raggio. Ocra tratteggiato: i fili che la usano attraverso un'altra variabile (per esempio LD1 = LR*0,92 segue LR).</li>
+      <li>Sui fili evidenziati una freccia corta indica cosa cambia: lunghezza (frecce alle punte), posizione sul boom (freccia lungo il boom), quota (freccia verticale), raggio (filo piu' spesso).</li>
+      <li>Sotto il disegno: l'elenco dei fili e delle colonne toccate (per esempio «filo 3: Y1, Y2»).</li>
+      <li>Variabili che non toccano la geometria (fase di una sorgente, valore di un carico, distanza di stack): la riga lo dice, e si evidenzia il segmento della sorgente o del carico.</li>
+      <li>Il riquadro si nasconde con un clic sul suo titolo, per chi vuole tutta la larghezza per la tabella.</li>
+    </ul>
+  </section>
+</main>
+<script>
+const V=[
+ {n:"LR",d:"lunghezza riflettore",e:"1.048",v:"1,048",w:{1:"Y1, Y2"},ind:{}},
+ {n:"LP",d:"lunghezza pilotato",e:"0.994",v:"0,994",w:{2:"Y1, Y2"},ind:{}},
+ {n:"LD1",d:"primo direttore",e:"LR*0.92",v:"0,964",w:{3:"Y1, Y2"},ind:{}},
+ {n:"LDE",d:"altri direttori",e:"LD1*0.985",v:"0,950",w:{4:"Y1, Y2",5:"Y1, Y2",6:"Y1, Y2"},ind:{}},
+ {n:"SP",d:"spaziatura direttori",e:"0.31",v:"0,310",w:{4:"X1, X2",5:"X1, X2",6:"X1, X2"},ind:{}},
+ {n:"H",d:"altezza dal suolo",e:"12",v:"12,000",w:{1:"Z1, Z2",2:"Z1, Z2",3:"Z1, Z2",4:"Z1, Z2",5:"Z1, Z2",6:"Z1, Z2"},ind:{}}
+];
+// dipendenze indirette: LR -> LD1 -> LDE
+const dip={LR:["LD1","LDE"],LD1:["LDE"]};
+const X=[0,0.42,0.6,0.92,1.23,1.54], L=[1.048,0.994,0.964,0.950,0.936,0.922];
+const svg=document.getElementById('v'), info=document.getElementById('info'), tb=document.querySelector('#t tbody');
+let sel="LR";
+function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+function draw(){
+  const v=V.find(q=>q.n===sel);
+  const ind=new Set(); (dip[sel]||[]).forEach(k=>Object.keys(V.find(q=>q.n===k).w).forEach(f=>ind.add(+f)));
+  const dir=v?new Set(Object.keys(v.w).map(Number)):new Set();
+  const ox=60, sx=250, cy=150, sy=120;
+  let s=`<line x1="${ox-20}" y1="${cy}" x2="${ox+X[5]*sx+30}" y2="${cy}" stroke="${css('--boom')}" stroke-width="6" stroke-linecap="round"/>`;
+  X.forEach((x,i)=>{
+    const f=i+1, px=ox+x*sx, h=L[i]/2*sy;
+    const d=dir.has(f), id=!d&&ind.has(f);
+    const col=(d||id)?css('--ocra'):css('--wire');
+    s+=`<line x1="${px}" y1="${cy-h}" x2="${px}" y2="${cy+h}" stroke="${col}" stroke-width="${d?5:(id?4:2.5)}" ${id?'stroke-dasharray="7 5"':''} stroke-linecap="round"/>`;
+    s+=`<text x="${px}" y="${cy+h+18}" text-anchor="middle" font-size="12" fill="${css('--muted')}" font-family="Inter,sans-serif">${f}</text>`;
+    if(d && v.w[f].includes('Y')){ s+=`<path d="M${px-6} ${cy-h-4} L${px} ${cy-h-14} L${px+6} ${cy-h-4} Z M${px-6} ${cy+h+4-0} L${px} ${cy+h+14} L${px+6} ${cy+h+4} Z" fill="${css('--ocra')}" transform="translate(0,0)"/>`;}
+    if(d && v.w[f].includes('X')){ s+=`<path d="M${px+10} ${cy-h+8} l14 0 m-5 -5 l5 5 l-5 5" stroke="${css('--ocra')}" stroke-width="2.5" fill="none"/>`;}
+    if(d && v.w[f].includes('Z')){ s+=`<path d="M${px+9} ${cy-h-2} l0 -16 m-5 5 l5 -5 l5 5" stroke="${css('--ocra')}" stroke-width="2.5" fill="none"/>`;}
+  });
+  s+=`<text x="${ox+X[1]*sx}" y="24" text-anchor="middle" font-size="11" fill="${css('--muted')}" font-family="Inter,sans-serif">vista dall'alto · filo 2 alimentato</text>`;
+  svg.innerHTML=s;
+  if(!v){info.textContent="Nessuna variabile scelta.";return}
+  const dd=Object.entries(v.w).map(([f,c])=>`filo ${f}: ${c}`).join(" · ");
+  const ii=[...ind].filter(f=>!dir.has(f));
+  info.innerHTML=`<b>${v.n}</b> = ${v.e}: ${dd}`+(ii.length?`<br>attraverso ${dip[sel].join(", ")}: fili ${ii.join(", ")}`:"");
+}
+function rows(){
+  tb.innerHTML=V.map(v=>`<tr class="r${v.n===sel?' sel':''}" data-n="${v.n}"><td class="m">${v.n}</td><td>${v.d}</td><td class="m">${v.e}</td><td class="m">${v.v}</td><td>ok</td></tr>`).join("");
+  tb.querySelectorAll('tr').forEach(tr=>tr.onclick=()=>{sel=sel===tr.dataset.n?null:tr.dataset.n;rows();draw()});
+}
+rows();draw();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+</script>
