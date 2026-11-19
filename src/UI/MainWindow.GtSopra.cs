@@ -461,13 +461,24 @@ namespace YaNec
             StackPunto p = r.Proposta, d = r.Dl6wu ?? r.Punti[0];
             WrapPanel cards = new WrapPanel();
             string dist = (righe > 1 ? "V " + FN(p.Dv, 3) + " m (" + FN(p.Dv / r.Lambda, 2) + " λ)" : "") + (righe > 1 && col > 1 ? ", " : "") + (col > 1 ? "H " + FN(p.Dh, 3) + " m (" + FN(p.Dh / r.Lambda, 2) + " λ)" : "");
-            cards.Children.Add(Riquadretto("Distanza proposta", FN(p.K, 2) + " x DL6WU", dist, true));
-            cards.Children.Add(Riquadretto("Stack alla distanza proposta", FN(p.G, 2) + " dBi", "lobi " + FN(p.Sll, 1) + " dB, G/T " + FN(p.Gt, 2) + " dB/K"));
+            if (r.TutteEscluse)
+            {
+                // 1.5.1: nessuna distanza sotto il ROS attivo massimo: nessuna proposta, si mostra la distanza con il ROS attivo piu' basso
+                cards.Children.Add(Riquadretto("Nessuna distanza proposta", Lang.F("ROS attivo minimo {0}", FN(p.RosAtt, 2)), Lang.F("a {0} x DL6WU; tutte sopra il massimo {1}", FN(p.K, 2), FN(r.RosMax, 2)), true));
+                cards.Children.Add(Riquadretto("Stack con il ROS attivo piu' basso", FN(p.G, 2) + " dBi", Lang.T("lobi") + " " + FN(p.Sll, 1) + " dB, G/T " + FN(p.Gt, 2) + " dB/K"));
+            }
+            else
+            {
+                cards.Children.Add(Riquadretto("Distanza proposta", FN(p.K, 2) + " x DL6WU", dist, true));
+                cards.Children.Add(Riquadretto("Stack alla distanza proposta", FN(p.G, 2) + " dBi", Lang.T("lobi") + " " + FN(p.Sll, 1) + " dB, G/T " + FN(p.Gt, 2) + " dB/K"));
+            }
             cards.Children.Add(Riquadretto("Alla distanza DL6WU", FN(d.G, 2) + " dBi", "lobi " + FN(d.Sll, 1) + " dB, G/T " + FN(d.Gt, 2) + " dB/K"));
             StackPunto smax = r.Punti.OrderByDescending(x => x.S21).First();
             cards.Children.Add(Riquadretto("Accoppiamento piu' forte", FN(smax.S21, 1) + " dB", "a " + FN(smax.K, 2) + " x DL6WU" + (smax.S21 > -20 ? ": sposta le impedenze" : "")));
             cards.Children.Add(Riquadretto("Antenna singola", FN(r.GSingola, 2) + " dBi", "lobo " + FN(r.SllSingola, 1) + " dB, G/T " + FN(r.GtSingola, 2) + " dB/K"));
             ssRis.Children.Add(cards);
+            if (r.TutteEscluse)
+                ssRis.Children.Add(Nota(Lang.F("Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.", FN(r.RosMax, 2)), Pal.Orange));
             // matrice alla distanza proposta
             int np = r.SdB.GetLength(0);
             List<string[]> mt = new List<string[]>();
@@ -499,7 +510,7 @@ namespace YaNec
                 if (q == r.SllMin) tag.Add(Lang.T("lobi piu' bassi"));
                 if (q == r.Punti.OrderByDescending(x => x.Fr).First()) tag.Add(Lang.T("F/R max"));
                 if (q == r.GtMax) tag.Add(Lang.T("G/T max"));
-                if (q == r.Proposta) { tag.Add(Lang.T("scelta proposta")); ie = i + 2; }
+                if (q == r.Proposta) { if (!r.TutteEscluse) tag.Add(Lang.T("scelta proposta")); ie = i + 2; }
                 if (q == r.RifMin) tag.Add(Lang.T("riflessi minimi"));
                 if (q.Escluso) tag.Add(Lang.T("ROS attivo alto: da non scegliere"));
                 double dd = righe > 1 ? q.Dv : q.Dh;
@@ -563,7 +574,7 @@ namespace YaNec
             for (int i = 0; i < r.Punti.Count && i < a.Punti.Count && i < b.Punti.Count; i++)
             {
                 StackPunto p = a.Punti[i], q = b.Punti[i], c = r.Punti[i];
-                string esito = c == r.Proposta ? Lang.T("scelta proposta") : (c.Escluso ? Lang.T("ROS attivo alto: da non scegliere") : "");
+                string esito = c == r.Proposta && !r.TutteEscluse ? Lang.T("scelta proposta") : (c.Escluso ? Lang.T("ROS attivo alto: da non scegliere") : "");
                 if (c == r.Proposta) ie = i + 1;
                 double dd = righe > 1 ? c.Dv : c.Dh;
                 rows.Add(new[] { FN(dd, 3) + " m", FN(p.G, 2), FN(p.Sll, 1), FN(p.RosAtt, 2), FN(q.G, 2), FN(q.Sll, 1), FN(q.RosAtt, 2), esito });
@@ -624,6 +635,7 @@ namespace YaNec
         {
             StackStudioRisultato r = ssUltimo;
             if (r == null || r.Proposta == null || model == null || run == null) { StatoStack(r).Text = "Calcola prima le distanze."; return; }
+            if (r.TutteEscluse) { StatoStack(r).Text = Lang.T("Nessuna distanza proposta: tutte superano il ROS attivo massimo."); return; }
             try
             {
                 bool hf = !double.IsNaN(r.QuotaBase);

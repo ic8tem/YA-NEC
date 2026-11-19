@@ -162,7 +162,9 @@ namespace YaNec
             if (fam == "Calcoli meccanici")
             {
                 calcCorpo.Content = calcMeccPagina;
-                if (voce != null) ApriVoceMeccanica(voce);
+                // 1.5.1 (difetto trovato registrando la lezione 25): la pagina nasce all'avvio, prima del modello; aprendo la famiglia si
+                // ricalcola la voce attiva, altrimenti il Vento restava senza gli elementi del modello finche' non si cliccava di nuovo
+                ApriVoceMeccanica(voce ?? meccVoceAttiva);
                 return;
             }
             if (fam == "Antenne riceventi")

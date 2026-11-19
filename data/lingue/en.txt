@@ -4668,3 +4668,471 @@ Sempre attiva: non si spegne. 	Always on: it cannot be switched off.
 Non ancora disponibile: arriva in una prossima versione. 	Not available yet: it comes in a future version. 
 Scelta fissa: oggi c'e' solo la voce evidenziata. 	Fixed choice: today only the highlighted item exists. 
 Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Every box has its tooltip with the explanation and the source. Grey: ticked = always on (cannot be switched off); not ticked = not available yet; pill choices = fixed choice. Manual, chapter 21.
+# 1.5.1: voci nuove della 1.3-1.5
+"): sorgente sempre accesa.	"): source always on.
+' non da' un numero valido.	' is not a valid number.
+0 (non scelto)	0 (not chosen)
+0 (radiatore)	0 (radiator)
+0 - DL6WU com'e'	0 - DL6WU as is
+0 - N6CA com'e'	0 - N6CA as is
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik as is
+0 - misure del metodo	0 - method measurements
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = standard WR waveguide of the band (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = same dish at the other end (own echo).
+0 = stesso disco all'altro capo.	0 = same dish at the other end.
+0 gradi a destra	0 degrees to the right
+0,125 – 0,225 λ (Cebik)	0.125 – 0.225 λ (Cebik)
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = one third from the tip: impedance 200-300 ohm, 4:1 balun
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: away from the rim, where bending would move the feed out of focus.
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 solid polyethylene (RG-58, RG-213), 0.8-0.85 foam dielectric.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 solid polyethylene, 0.8-0.85 foam, 0.9-0.97 open-wire line.
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 guide lambda
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - driven loop
+1 - radiatore	1 - radiator
+1 : 2 (largo)	1 : 2 (wide)
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = one turn (as before). With more turns Rr grows with N², the skin-effect loss with N.
+1 cavo	1 cable
+1,22 lambda/D: corrisponde a un taper forte (circa -14/-18 dB nelle tabelle)	1.22 lambda/D: corresponds to a strong taper (about -14/-18 dB in the tables)
+1,25 lambda guida (W1GHZ: oltre una lambda guida, non critica)	1.25 guide lambda (W1GHZ: beyond one guide lambda, not critical)
+1-2-3 elementi	1-2-3 elements
+1. Diagramma del feed (ampiezza)	1. Feed pattern (amplitude)
+1. Obiettivi e pesi	1. Goals and weights
+1.2 - Terreno reale (DEM e mappe)	1.2 - Real ground (DEM and maps)
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Wind, balance, dividers, baluns, crossed Yagis
+1.3 - Antenne riceventi abilitate	1.3 - Receiving antennas enabled
+1/4 lambda x 0,95 (stub)	1/4 lambda x 0.95 (stub)
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz with a large dish: besides surface and pointing, thermal and wind deformation count (ATA: 0.7 mm RMS at night, 3 mm by day in the sun), as do strut bending and libration spreading.
+10 GHz: HPBW (gradi)	10 GHz: HPBW (degrees)
+10 GHz: errore ammesso per 0,5 dB (gradi)	10 GHz: allowed error for 0.5 dB (degrees)
+10 GHz: guadagno (dBi)	10 GHz: gain (dBi)
+10 GHz: perdita eco Luna (dB)	10 GHz: Moon echo loss (dB)
+100 mm: controlla questo righello prima di incidere (stampa al 100 %, nessun adattamento alla pagina)	100 mm: check this ruler before etching (print at 100 %, no fit to page)
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: print at 100 %, without "fit to page"
+1005/f piedi	1005/f feet
+144 cond.	144 cond.
+144 isol.	144 insul.
+180 gradi (90-270)	180 degrees (90-270)
+2 - riflettore	2 - reflector
+2 - riflettori	2 - reflectors
+2 : 1 (alto)	2 : 1 (tall)
+2 in parallelo	2 in parallel
+2 lati	2 sides
+2. Fase del feed (copolare)	2. Feed phase (co-polar)
+2. Variabili che l'ottimizzatore puo' cambiare	2. Variables the optimizer may change
+200 Ω con balun 4:1	200 Ω with a 4:1 balun
+25 tondo	25 round
+3 - direttori	3 - directors
+3 gruppi	3 groups
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 or 4. With 2 there is no stiffness out of their plane.
+3. Efficienza in funzione di f/D (centro di fase fisso)	3. Efficiency versus f/D (fixed phase centre)
+3. Registro dei passi - clic su una riga per riprenderla	3. Step log - click a row to take it back
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω or 4:1 balun
+36 Ω + terra	36 Ω + ground
+4 - tutto insieme	4 - all together
+4 lati	4 sides
+4 sorgenti: vedi tabella	4 sources: see table
+4-square RX	4-square RX
+4-square RX (IV3PRK)	4-square RX (IV3PRK)
+4-square crossfire (IV3PRK)	4-square crossfire (IV3PRK)
+43 (1-50 MHz, choke)	43 (1-50 MHz, choke)
+432 cond.	432 cond.
+432 isol.	432 insul.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 data checks approved by IC8TEM on 15/11/2026: thresholds and explanations in the manual, chapter 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 feet about 18 dBi, 12 feet about 20.5 dBi
+61 (trasformatori fino a 100 MHz)	61 (transformers up to 100 MHz)
+73 Ω x rapporto (spazio libero)	73 Ω x ratio (free space)
+75 ohm ideale	75 ohm ideal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 times longer than the radius. With thick wires or short segments (thick tubes at UHF, close elements,\n
+9 fili	9 wires
+9 fili a 0,1 λ	9 wires at 0.1 λ
+About	About
+Accorciamento del pilotato	Driven element shortening
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Shortening over 8%: the linear estimate is not reliable, check with NEC.
+Allega il modello aperto	Attach the open model
+Allega il registro di oggi	Attach today's log
+Altezza (0 = 0,175 λ)	Height (0 = 0.175 λ)
+Altezza ottima (scansione)	Best height (scan)
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	RMS wave height and antenna height above the sea, in Patterns > Real ground.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Scan width around the frequency, for the impedance chart.
+Antenna a	Antenna at
+Applica la freccia al modello NEC	Apply the sag to the NEC model
+Approvata, in preparazione: non ancora attiva in questa versione.	Approved, in preparation: not yet active in this version.
+Apri la cartella	Open the folder
+Apri un modello nella finestra principale	Open a model in the main window
+Apro il modello e il diagramma 3D resta vuoto.	I open the model and the 3D view stays empty.
+Area al vento (per il rotore)	Wind area (for the rotator)
+Area al vento dell'antenna	Wind area of the antenna
+Area al vento totale	Total wind area
+Area al vento totale e lista di taglio	Total wind area and cutting list
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Warning: not to be used with wires meeting at an angle or with different diameters at the junction.\n
+BOG (Beverage On Ground)	BOG (Beverage On Ground)
+Bobina di carico per la risonanza	Loading coil for resonance
+Boom con il tirante	Boom with truss
+Boom Ø	Boom Ø
+C1 in serie con la loop	C1 in series with the loop
+C1 serie, C2 parallelo	C1 series, C2 parallel
+C2 in parallelo all'ingresso	C2 in parallel with the input
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Calculators > Receiving antennas: low dipole, K9AY, 4-square RX, Hi-Z 2/3/8 elements, with the phase between rows optimized for RDF and the warning on the ground connection.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mechanical calculations (Wind and Balance), Calculators > Dividers and crossed Yagis, Objects > Cable and balun and stack frame, HF loads.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Preliminary sizing: the installation needs a design by a qualified engineer.
+Candidati da controllare	Candidates to check
+Categoria	Category
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Site exposure category (NTC 2018, tab. 3.3.II and fig. 3.3.2): it depends on the terrain roughness class (A urban centres ... D areas without obstacles, sea) and on the distance from the coast. I = open coast or sea, V = city centre.
+Cebik (dipende dal diametro)	Cebik (depends on the diameter)
+Cebik, poi NEC	Cebik, then NEC
+Centro della banda scelta:\n	Centre of the chosen band:\n
+Con ghiaccio	With ice
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	With ice: wind reduced to 0.6 times and radial ice from the box on the right (simplified ISO 12494 combination).
+Con lo stesso seme la prova si ripete uguale.	With the same seed the test repeats identically.
+Condizione della sorgente non capita ("	Source condition not understood ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Checks GitHub right away without waiting for the 3 minutes. If there is a new version it downloads it, warns and restarts like the automatic update (10 seconds, the model reopens). It also works with the automatic update turned off.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Always checked by the segmentation check and in the Warnings (8 with the normal kernel, 2 with the extended kernel).
+Copie per candidato	Copies per candidate
+Coppia sulla staffa boom-mast	Torque on the boom-mast clamp
+Cosa e' successo (cosa facevi e cosa ti aspettavi)	What happened (what you were doing and what you expected)
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Creates the zip in data/segnalazioni and opens the GitHub «New issue» page with the text already written. You attach the zip yourself, by hand: the program sends nothing on its own.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Earth curvature, in Patterns > Real ground.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diameter outside the range of Cebik's formulas (from 1E-6 to 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Distance and type of the second ground: approved for 1.5 (Real ground 2).
+Distanze di stack HF	HF stacking distances
+Distanze di stack: accoppiamento e distanza migliore	Stacking distances: coupling and best distance
+Distanze di stack: accoppiamento e distanza migliore (1.1)	Stacking distances: coupling and best distance (1.1)
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	After the optimization, the best results that go on to the tolerance check. 0 = no check.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Very low ends: beware of people and animals (high voltages at the tips).
+F/B peggiore	Worst F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq file: lines with AutoEZ TLParms (lossy cables) use nominal Zo and VF and no loss: the NEC TL card is lossless.
+Filo riflettore	Reflector wire
+Filo ripiegato	Folded wire
+Forcina (beta / hairpin match)	Hairpin (beta / hairpin match)
+Forcina (beta / hairpin)	Hairpin (beta / hairpin)
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Long hairpin (over 0.2 lambda): better to reduce the spacing or use thicker conductors.
+Forza del vento di progetto	Design wind force
+Forza l'aggiornamento	Force update
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Chord sag: how far the mesh on the straight run stays below the paraboloid at mid-span (it enters the faceting). Total mass of the purlins {4:0.00} kg{5}.
+Freccia tolta dal modello.	Sag removed from the model.
+Ghiaccio radiale	Radial ice
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA files are always re-segmented for NEC-2 (manual, chapter 10).
+I lobi si leggono nella tabella delle distanze di stack.	Sidelobes are read in the table of stacking distances.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (round), FIX (truncate), MOD, MAX, MIN, ODD (odd integer: useful for the segments of the fed wire).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Normal NEC2 treats each wire as a thin line: this is fine as long as the segment is at least\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	A single reflector wire gives a very small improvement (Cebik): the screen or the 9 wires are better.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	The mast exceeds yield: thicker mast or shorter overhang.
+Impedenza del cavo	Cable impedance
+Impedenza in frequenza (AEH eq. 4-11)	Impedance versus frequency (AEH eq. 4-11)
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	In another form: check r5 of the Data checks flags gain above the physical maximum for the boom length.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Inductance with N² (close turns) and a one-turn NEC model: here NEC only checks the geometry of the single turn.
+Interasse della forcina	Hairpin spacing
+Isole (tranne Sicilia e Sardegna) e mare aperto	Islands (except Sicily and Sardinia) and open sea
+Kernel esteso del NEC2 (scheda EK).\n	Extended NEC2 kernel (EK card).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	The hairpin spacing must be larger than the conductor diameter.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	The Slim Jim closes the radiator at the top with a wire folded downwards, down to just above the stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	It is done by the Segmentation check window (button above).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	The hairpin is symmetrical: it does not skew the pattern like the gamma. A balun or choke at the feed point is still needed.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	The hairpin works only with a driven element R lower than the cable impedance: for a larger R use the gamma or a transformer.
+La prepara IC8TEM: non ancora attiva.	IC8TEM is preparing it: not yet active.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	The six rules of the EZNEC Geometry Check, at every calculation, in the Warnings tab.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: without correction Z = {0:0.0} {1}j{2:0.0} ohm (with the correction {3:0.0} {4}j{5:0.0} ohm).
+Località	Location
+Loop orizzontale di 1 λ	Horizontal 1 λ loop
+Lunghezza del pilotato	Driven element length
+Lunghezza della forcina	Hairpin length
+MHz (per esempio inizio e fine del tratto usato, oppure 144,1 e 145)	MHz (for example start and end of the segment used, or 144.1 and 145)
+Mast Ø	Mast Ø
+Meccanica: elementi piegati dalla freccia sotto il peso (YA-NEC)	Mechanics: elements bent by the sag under their weight (YA-NEC)
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Puts the open model (.nec) in the zip, even if it is not saved.
+Mette nello zip il registro di oggi della cartella registri.	Puts today's log from the logs folder in the zip.
+Momenti al mast	Moments on the mast
+Momento al cuscinetto	Moment at the bearing
+NEC: risonanza cercata dal motore	NEC: resonance searched by the engine
+NOTE SU QUESTA VERSIONE (fase 0)\n	NOTES ON THIS VERSION (phase 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NEW · over ground: heights, distances, wanted take-off angles
+Nel modello non ci sono elementi orizzontali diritti	The model has no straight horizontal elements
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	In the stack table and in the model Objects (stack frame, dividers).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	In geometry cards write expressions without spaces, for example:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	No distance proposed
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	No distance proposed: all exceed the maximum active SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	No IP address, no e-mail, no user names in the files: the path of the home folder becomes «~». Without a GitHub account you can send the zip however you like.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Not yet automatic: it is done by hand with the AGT test in the Warnings (ARRL 24th, 4nec2).
+Numero di spire	Number of turns
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Each copy has its dimensions moved at random within the tolerances of the Tolerances tab (default: length ±1 mm, position ±2 mm, diameter ±0.1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Besides the open model, starts chosen at random between the minimum and maximum of each variable. 0 = as before.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Real sky noise page of the Noise/GT/Stack tab: the skynoise calculation ported to C# (reading the HEALPix maps, interpolation, sidereal time, coordinates, Moon) and the two G8ONH maps in data/cielo.
+Partenze a caso	Random starts
+Passo tra le spire (asse-asse)	Turn spacing (centre to centre)
+Perimetro ARRL (1005/f)	ARRL perimeter (1005/f)
+Perimetro Cebik	Cebik perimeter
+Peso del boom	Boom weight
+Pi-greco	Pi network
+Prepara la segnalazione	Prepare the report
+Proposta	Proposal
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c test at 145 MHz (12 mm tubes at 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	When it is needed: segment/radius ratio between about 2 and 8 (below 2 neither is reliable).\n
+Quota s.l.m.	Altitude a.s.l.
+R del pilotato	Driven element R
+ROS attivo minimo {0}	Minimum active SWR {0}
+Raggio equivalente dei due conduttori	Equivalent radius of the two conductors
+Reattanza (AEH eq. 4-1)	Reactance (AEH eq. 4-1)
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Driven element reactance now: if it is positive the driven element must be shortened more.
+Reattanza della forcina	Hairpin reactance
+Reattanza voluta del pilotato	Wanted driven element reactance
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reactance: beyond kl = pi/2 (or with a too thick conductor) the AEH formula does not hold, use NEC.
+Reinstalla la versione attuale	Reinstall the current version
+Rel Z non positiva	Re Z not positive
+Resistenza con la Tab. 4-1 (AEH)	Resistance from Tab. 4-1 (AEH)
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Driven element resistance at resonance, from the model or the NEC calculation.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Restart failed: close and reopen YA-NEC by hand.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Downloads and reinstalls even if the version is the same: useful if a program file got damaged.
+Risultati (alla YagiStress, K7NV)	Results (as in YagiStress, K7NV)
+Rumore dal cielo vero (1.1)	Real sky noise (1.1)
+Sardegna (a occidente della retta tra Capo Teulada e l'Isola di Maddalena)	Sardinia (west of the line between Capo Teulada and the island of Maddalena)
+Sardegna (a oriente della retta tra Capo Teulada e l'Isola di Maddalena)	Sardinia (east of the line between Capo Teulada and the island of Maddalena)
+Scansione	Scan
+Scegli il candidato con	Choose the candidate with
+Schermo	Screen
+Scrivi due frequenze diverse.	Write two different frequencies.
+Segmenti:	Segments:
+Segnala un problema	Report a problem
+Seme del caso	Random seed
+Serve solo per la reattanza (dipolo e monopolo).	Only needed for the reactance (dipole and monopole).
+Short	Short
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Used with 2 or more turns: below 2 conductor diameters the real loss grows because of the proximity effect (not calculated).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Used in Patterns > Real ground: sea reflection with divergence factor and roughness.
+Sicilia e provincia di Reggio Calabria	Sicily and the province of Reggio Calabria
+Slim Jim (filo ripiegato)	Slim Jim (folded wire)
+Sollecitazione	Stress
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Above 0.25 λ the lobe starts to get lower: less suited to NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Above 30 MHz Cebik's regression is used outside the range it is offered for here (HF wires): Automatic or NEC is better.
+Sorgenti:	Sources:
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Below 0.1 λ the upward gain drops (Cebik): a very low antenna gains nothing.
+Sotto l'antenna	Below the antenna
+Spessori dei tubi dal boom (mm)	Tube wall thicknesses from the boom (mm)
+Spina (tubo o tondo) dentro il giunto telescopico.	Plug (tube or rod) inside the telescopic joint.
+Spina interna nei giunti	Inner plug in the joints
+Stack HF sopra il terreno (NEC)	HF stacking over ground (NEC)
+Stack con il ROS attivo piu' basso	Stack with the lowest active SWR
+Staffe e mast	Clamps and mast
+T (passa-alto)	T (high-pass)
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Time: about (starts + 1) times today's, plus candidates x copies calculations.
+Tensione nel mast al cuscinetto	Stress in the mast at the bearing
+Tirante del boom (truss)	Boom truss
+Tiro del tirante	Truss tension
+Toscana, Marche, Umbria, Lazio, Abruzzo, Molise, Puglia, Campania, Basilicata, Calabria (tranne Reggio Calabria)	Tuscany, Marche, Umbria, Lazio, Abruzzo, Molise, Apulia, Campania, Basilicata, Calabria (except Reggio Calabria)
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Tubes taken from the Tapers table: the dimensions are the same as in the NEC model.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	All distances exceed the maximum active SWR ({0}): no distance proposed. Raise the maximum active SWR, try the antenna's own reference impedance or tune the single antenna. Matrix and chart are at the distance with the lowest active SWR.
+V invertito	Inverted V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), coupling, active SWR, best distance, two frequencies
+Valle d'Aosta, Piemonte, Lombardia, Trentino-Alto Adige, Veneto, Friuli-Venezia Giulia (tranne Trieste)	Aosta Valley, Piedmont, Lombardy, Trentino-Alto Adige, Veneto, Friuli-Venezia Giulia (except Trieste)
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Peak velocity at the site: vb sqrt(ce), with vb = vb,0 ca (NTC 2018, 50-year return period) and ce(z) of the exposure category at the antenna height.
+Velocità	Speed
+Velocità a mano	Speed by hand
+Vento di sopravvivenza	Survival wind
+Vento di sopravvivenza del boom	Boom survival wind
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Wind perpendicular to the element at which the first point reaches yield (own weight and ice included).
+X da aggiungere al pilotato	X to add to the driven element
+X del pilotato	Driven element X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). The final check is done by the NEC engine on the model with the hairpin.
+Z alla frequenza (AEH eq. 4-11)	Z versus frequency (AEH eq. 4-11)
+Z0 della forcina	Hairpin Z0
+Z0 della linea dei due conduttori	Z0 of the two-conductor line
+Zona buona	Good zone
+adattamento simmetrico del pilotato a 50 Ω (Cebik)	symmetrical match of the driven element to 50 Ω (Cebik)
+al centro	at the centre
+capacitivo (C1 serie, C2 parallelo)	capacitive (C1 series, C2 parallel)
+capitolo 15 (Meccanica)	chapter 15 (Mechanics)
+caso peggiore	worst case
+caso peggiore delle due	worst case of the two
+cerca...	search...
+compatto (finestra bassa)	compact (short window)
+copie entro le soglie	copies within the thresholds
+corrente sinusoidale	sinusoidal current
+distanza dal boom	distance from the boom
+distanza dall'inizio del boom	distance from the start of the boom
+due condensatori sul lato basso	two capacitors on the lower side
+effetto: calcolo in corso…	effect: calculating…
+fili a 0,001 λ dal suolo con il terreno di Sommerfeld, come nei modelli di Cebik (girano anche con il NEC-2)	wires at 0.001 λ above ground with Sommerfeld ground, as in Cebik's models (they also run with NEC-2)
+forza del vento x sbalzo	wind force x overhang
+il caso peggiore migliore	the best worst case
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	the equivalent dipole, thicker, has less than 73 Ω
+il voto medio migliore	the best average score
+induttiva, in parallelo	inductive, in parallel
+la percentuale migliore di copie entro le soglie	the best percentage of copies within the thresholds
+linea a due fili	two-wire line
+m  mast a	m  mast at
+m dal suolo	m above ground
+m sopra il boom, attacco al	m above the boom, attached at
+media delle due	average of the two
+mm  lungo	mm  long
+mm, acciaio	mm, steel
+modo asimmetrico (eq. 4-10)	asymmetric mode (eq. 4-10)
+molto buono	very good
+molto povero	very poor
+nessun rinforzo	no reinforcement
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	no commercial tube up to +12 mm is enough: review the taper
+nessuna distanza sotto il ROS attivo massimo	no distance below the maximum active SWR
+partenza dal modello aperto	start from the open model
+per lato, teso per annullare il momento verticale al mast	per side, tensioned to cancel the vertical moment on the mast
+peso (kg)	weight (kg)
+primo cedimento: tubo Ø	first failure: tube Ø
+regge il vento di progetto con il 20 % di margine	withstands the design wind with a 20 % margin
+riferimenti bibliografici	bibliographic references
+sbalzo sopra il cuscinetto	overhang above the bearing
+schermo 1 λ x 1 λ	screen 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	dense segments) the extended kernel uses a more exact formula and the result is more reliable.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	without a plug the inner tube bears on the edge of the outer one and a factor of 1.25 is applied to the stress in the first 5 cm: an estimate, clamps and slots change the result a lot.
+sollecitazione / snervamento	stress / yield
+tubo piu' grosso	thicker tube
+un filo riflettore	one reflector wire
+una (barra in alto)	one (top bar)
+zona di cedimento	failure zone
+ø dei conduttori della forcina	ø of the hairpin conductors
+ø del filo	wire ø
+ø del pilotato	driven element ø
+accordata	tuned
+accordate	tuned
+alimentazione	feed
+alluminio	aluminium
+allungata	lengthened
+altro	other
+anello	loop
+angolo	angle
+antenna	antenna
+antiorario	anticlockwise
+area	area
+aritmetico	arithmetic
+automatico	automatic
+banda	band
+bande	bands
+bordi	edges
+buono	good
+capacitiva	capacitive
+carichi	loads
+carico	load
+cartesiana	cartesian
+cavi	cables
+cavo	cable
+centimetri	centimetres
+centina	rib
+cerchio	circle
+condensatore	capacitor
+corrente	current
+destra	right
+diagramma	pattern
+diametro	diameter
+differenza	difference
+dipoli	dipoles
+dipolo	dipole
+diretta	direct
+diritto	straight
+due	two
+elementi	elements
+elemento	element
+elimina	delete
+equilatera	equilateral
+esito	result
+esperimenti	experiments
+esponenziale	exponential
+fase	phase
+ferriti	ferrites
+fili	wires
+filo	wire
+forcina	hairpin
+forma	shape
+formule	formulas
+frequenza	frequency
+geometria	geometry
+ghiaccio	ice
+giudizio	rating
+gradi	degrees
+griglia	grid
+guadagno	gain
+incrociata	crossed
+larghezza	width
+lato	side
+lega	alloy
+libera	free
+libero	free
+linea	line
+lineare	linear
+linee	lines
+lobi	sidelobes
+locale	local
+mai	never
+manicotto	sleeve
+mano	by hand
+meccanica	mechanics
+mezzaonda	half-wave
+millimetri	millimetres
+misure	measurements
+modello	model
+modo	mode
+nessuna	none
+nota	note
+nuovo	new
+operativo	operating
+orario	clockwise
+ottagono	octagon
+palo	mast
+parabola	dish
+passo	pitch
+perdite	losses
+perfetto	perfect
+piano	plane
+piatto	flat
+piedi	feet
+polare	polar
+pollici	inches
+propria	own
+punto	point
+quadrato	square
+quadro	square
+quota	height
+radiali	radials
+radiatore	radiator
+raggio	radius
+rame	copper
+ramo	branch
+rapidi	fast
+rastremazioni	tapers
+rete	network
+rettangolo	rectangle
+riepilogo	summary
+riflettore	reflector
+riga	row
+rombo	rhombus
+scarso	poor
+scarto	deviation
+schiacciata	flattened
+sempre	always
+senso	direction
+si'	yes
+sinistra	left
+soglia	threshold
+sorgenti	sources
+sotto	below
+spire	turns
+staffe	clamps
+stato	status
+sufficiente	sufficient
+tetto	roof
+tipo	type
+tirante	truss
+togli	remove
+tondo	round
+traffico	traffic
+trasformatori	transformers
+trombe	horns
+tubi	tubes
+tubo	tube
+tutti	all
+uguale	equal
+uguali	equal
+uso	use
+a {0} x DL6WU; tutte sopra il massimo {1}	at {0} x DL6WU; all above the maximum {1}

@@ -729,7 +729,9 @@ namespace YaNec.Engine
             o.Nec = dk.End(P("f"));
             o.Plane = "xz";
             o.HideGround = true;
-            o.Mark(3, -R * 0.18, zc + R * 1.0, "C " + Calcolatori.N(cap * 1e12, 0) + " pF, " + Calcolatori.N(v / 1000, 1) + " kV", 2, R * 0.18, zc + R * 1.0);
+            // 1.5.1: con l'accoppiamento capacitivo non c'e' il condensatore in alto (C1 sta sul lato basso): niente etichetta in alto
+            if (I("acc") != 2)
+                o.Mark(3, -R * 0.18, zc + R * 1.0, "C " + Calcolatori.N(cap * 1e12, 0) + " pF, " + Calcolatori.N(v / 1000, 1) + " kV", 2, R * 0.18, zc + R * 1.0);
             o.Mark(0, -R * 1.55, zc, "ø " + Calcolatori.N(D, 2) + " m", 0);
             return o;
         }

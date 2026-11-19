@@ -24,6 +24,7 @@ namespace YaNec
         int meccUnita;                 // 0 = N e kgf affiancati, 1 = solo N, 2 = solo kgf
         double meccQ = double.NaN;     // pressione di progetto dell'ultimo calcolo del Vento (Pa), per il Bilanciamento
         Action meccAggiornaVento, meccAggiornaBil;
+        string meccVoceAttiva = "Vento";   // 1.5.1: voce mostrata (per ricalcolarla quando si riapre la famiglia)
 
         /// <summary>Forza in N e/o kgf secondo la scelta "Mostra".</summary>
         string UF(double n, int dec = 0)
@@ -71,6 +72,7 @@ namespace YaNec
             Control c;
             if (!meccPagine.TryGetValue(v, out c)) { c = v == "Vento" ? BuildVentoPage() : v == "Bilanciamento" ? BuildBilanciamentoPage() : v == "Sollecitazioni elementi (HF)" ? BuildMeccanicaPanel() : new TextBlock(); meccPagine[v] = c; }
             meccCorpo.Content = c;
+            meccVoceAttiva = v;
             Registro.Scrivi("AZIONE", "calcoli meccanici: " + v);
             if (v == "Vento") meccAggiornaVento?.Invoke(); else if (v == "Bilanciamento") meccAggiornaBil?.Invoke();
         }

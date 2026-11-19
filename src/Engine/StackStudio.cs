@@ -33,6 +33,7 @@ namespace YaNec.Engine
         public bool Media;
         public double GSingola, SllSingola, GtSingola, FrSingola, RosSingola, PerditaSingola, Dv0, Dh0, Lambda, RosMax = 1.5;
         public StackPunto RifMin;   // 1.4: distanza con il ROS attivo piu' basso
+        public bool TutteEscluse;   // 1.5.1: tutte le distanze sopra il ROS attivo massimo: nessuna distanza proposta (matrice e grafici alla RifMin)
         public Complex[,] Z; public double[,] SdB;   // alla distanza proposta (VHF)
         public string Criterio = "";
         // HF
@@ -244,9 +245,12 @@ namespace YaNec.Engine
         {
             // 1.4 (IC8TEM 18/11/2026 14:47): le distanze con ROS attivo sopra la soglia non entrano nella scelta (se lo sono tutte, si usano tutte)
             List<StackPunto> scegli = res.Punti.FindAll(x => !x.Escluso);
-            if (scegli.Count == 0) scegli = res.Punti;
             res.RifMin = res.Punti[0];
             foreach (StackPunto p in res.Punti) if (p.RosAtt < res.RifMin.RosAtt) res.RifMin = p;
+            // 1.5.1 (difetto trovato registrando la lezione 27): se tutte le distanze superano il ROS attivo massimo non si propone nessuna
+            // distanza; i massimi della tabella restano calcolati su tutte, la matrice e i grafici vanno alla distanza con il ROS attivo piu' basso
+            res.TutteEscluse = scegli.Count == 0;
+            if (res.TutteEscluse) scegli = res.Punti;
             res.GMax = scegli[0]; res.SllMin = scegli[0]; res.GtMax = scegli[0];
             foreach (StackPunto p in scegli)
             {
@@ -264,6 +268,7 @@ namespace YaNec.Engine
                 res.Proposta = best ?? res.SllMin;
                 res.Criterio = best != null ? "guadagno con lobi sotto " + sogliaSll.ToString("0", System.Globalization.CultureInfo.CurrentCulture) + " dB" : "nessuna distanza con i lobi sotto la soglia: lobi piu' bassi";
             }
+            if (res.TutteEscluse) { res.Proposta = res.RifMin; res.Criterio = "nessuna distanza sotto il ROS attivo massimo"; }
         }
 
         /// <summary>1.5: due frequenze. Ogni distanza prende il caso peggiore (o la media) delle due; la scelta si rifa' sui valori combinati.
@@ -295,7 +300,7 @@ namespace YaNec.Engine
                 if (p == a.Dl6wu) c.Dl6wu = r;
             }
             Scegli(c, criterio, sogliaSll);
-            c.Criterio = c.Criterio + (media ? " (media delle due frequenze)" : " (caso peggiore delle due frequenze)");
+            if (!c.TutteEscluse) c.Criterio = c.Criterio + (media ? " (media delle due frequenze)" : " (caso peggiore delle due frequenze)");
             return c;
         }
 
