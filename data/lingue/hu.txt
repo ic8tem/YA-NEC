@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Mennyire fedő a szín: enyhe, közepes vagy erős. A táblázat során a fátyol halványabb, hogy a számok olvashatók maradjanak.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	{0}. huzal kiválasztva a 3D nézetben: a táblázat {1}. sora
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	{0}. huzal: nincs a huzaltáblázatban (a geometriakártya nem GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Azonnal ellenőrzi, van-e új verzió (3 perc várakozás nélkül).
+terreno reale	valós terep
+Locatore	Lokátor
+da 8 a 12 caratteri	8–12 karakter
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	6 karakterrel a pont kilométerekkel mellé eshet: a terepprofilhoz legalább 8 karakter kell.
+Quota sito	A hely magassága
+Altezza antenna	Antennamagasság
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Az antenna középpontjának magassága a talaj felett. Ha eltér a modellétől, a NEC-iránykarakterisztika ugyanazzal az áramelosztással feljebb vagy lejjebb kerül.
+Distanza max	Max. távolság
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Az azimut és a távolságok minden lokátorváltáskor újraszámolódnak (főkör, 6371 km-es gömb).
+Terra	Szárazföld
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Csökkenti a tenger reflexiós tényezőjét az Ament-tényezővel 0,25 m-es hullámokra (szórás).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	érdes felület statisztikai modellje (Ament 1953): súroló szögekre és egyenletes tengerre érvényes.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Lesüllyeszti a profilt a Föld görbülete szerint (effektív sugár 4/3 normál refrakciónál), és a távoli visszavert sugarakat a divergenciatényezővel csökkenti.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standard légkör (k = 4/3); csatornák vagy inverziók esetén a látszólagos görbület változik.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Az antenna és a kisugárzási irány közötti legmagasabb gerinc élként csillapítja a közvetlen sugarat (Fresnel-integrál), mint a HFTA-ban.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	egyetlen késél: a lekerekített gerinceket vagy több egymás utáni gerincet a legmagasabbal közelíti.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	10 fokos azimutlépésenként megismétli a számítást (csak DEM), és a rózsán mutatja a jósági mutatót, az antennát minden azimut felé fordítva.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	az antenna mindig a profil azimutja felé fordítva: forgatható antennára érvényes.
+Cartesiana dBi / gradi	Derékszögű dBi / fok
+0–180° intero	0–180° teljes
+Zoom angolare	Szögnagyítás
+Sovrapponi alla linguetta Verticale	Ráhelyezés a Függőleges fülre
+premi Calcola	nyomd meg a Számítás gombot
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Megismétli a számítást az antennával 6-tól 30 m-ig (HF) vagy 2-től 30 m-ig (VHF), és megmutatja a legjobb jósági mutatót adó magasságot az útvonalon.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	az áramok a kiszámított modell áramai maradnak: a magasság hatása az impedanciára és az áramokra nincs figyelembe véve (mint a HFTA-ban).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Az ARRL Antenna Book érkezési szög táblázatai kellenek (.PRN fájlok sávonként és régiónként): amint elérhetők, ez bekapcsol és megmutatja a narancssárga sávokat.
+locatore non valido	érvénytelen lokátor
+sul mare	tenger felett
+sul terreno	szárazföld felett
+profilo reale	valós profil
+terreno piatto	sík terep
+orizzonte ostruito	takart horizont
+° (scala angolare ×	° (szögskála ×
+← dietro	← hátra
+avanti →	előre →
+statistiche degli angoli di arrivo: non caricate	érkezési szög statisztika: nincs betöltve
+rosa 0–360°: calcolo in corso…	rózsa 0–360°: számítás…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Válaszd ki a profilfájlt (kattints a "HorizonProfilerből" gombra).
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM nem érhető el: első használatkor hálózat kell a TINITALY vagy SRTM1 letöltéséhez (utána a data/dem mappában maradnak).
+Profilo del terreno	Terepprofil
+Lobo di elevazione	Elevációs nyaláb
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Előbb számítsd ki a modellt (Számítás gomb fent): az antenna iránykarakterisztikája a NEC-ből jön.
+da file	fájlból
+dal DEM	DEM-ből
+rispetto alla stessa antenna su terreno piatto	ugyanahhoz az antennához képest sík terep felett
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	A valós profil feletti és a sík terep feletti nyaláb különbsége, a hasznos szögekre átlagolva.
+Guadagno a 5° / 10°	Nyereség 5°-nál / 10°-nál
+Guadagno a 1° / 3°	Nyereség 1°-nál / 3°-nál
+Angoli coperti a -3 dB	-3 dB-nél lefedett szögek
+primo lobo sul profilo reale	első nyaláb a valós profil felett
+calcolo…	számítás…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Szabadtéri modell: az áramok talaj nélküliek, mint a HFTA által használt szabadtéri iránykarakterisztika. A közeli talaj figyelembevételéhez számítsd ki a modellt valós talajjal.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	A profil csak egy azimutra érvényes: forgatható antennához több irány kell ("Minden azimut" mező).
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Módszer, mint a HFTA-ban (N6BV): közvetlen sugár + visszavert sugarak a profil minden lapján + diffrakció a gerinceken. Az antenna iránykarakterisztikája a NEC-ből jön; ez a számítás hozzáadja a terepet.
+Piatto	Sík
+Reale	Valós
+Primo minimo	Első minimum
+Punto di riflessione	Visszaverődési pont
+Orizzonte	Horizont
+Uso: rotte DX in HF (angoli bassi 1–15°).	Felhasználás: HF DX útvonalak (alacsony szögek 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Felhasználás: tropo és MS (0–5°), EME alacsony Holddal (talajnyereség holdkeltekor/-nyugtakor).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	A magasság, amelynél az útvonal hasznos szögeiben a legnagyobb az átlagos nyereség.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	a kiszámított modell áramai magasságban eltolva: az impedancia és a talajcsatolás a modellé marad.
+Calcola prima il terreno reale	Előbb számítsd ki a valós terepet
+Esporta il lobo sul terreno reale	A valós terep feletti nyaláb exportálása
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Képek: Esri, Maxar, Earthstar Geographics és a GIS felhasználói közösség
+© i contributori di OpenStreetMap	© OpenStreetMap közreműködők
+Sfondo	Háttér
+Foto aerea	Légifotó
+Solo griglia	Csak rács
+Griglia	Rács
+Cerca	Keresés
+⌖ Centra sul locatore	⌖ Középre a lokátorra
+Punto scelto	Kiválasztott pont
+Coordinate	Koordináták
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Kattintás a térképen = antennapont; húzás = mozgatás; görgő = nagyítás (a rács 6-ról 8, 10, 12 karakterre vált). Vastag keret = 6 karakteres négyzet.
+non disponibile	nem érhető el
+Lunghezza elementi	Elemhossz
+Posizione sul boom	Pozíció a tartócsövön
+Uniforme	Egyenletes
+Distribuzione	Eloszlás
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	A bilincsben nem középen rögzített elem: eltolás a saját tengelye mentén, a pozíciótűréssel.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	a valódi bilincs a tartócső közelében az elektromos hosszt is megváltoztatja: ehhez használd a Tartócső-korrekció fület.
+nuovo a ogni avvio	minden futtatáskor új
+Numero prove	Próbák száma
+Frequenze	Frekvenciák
+Seme casuale	Véletlen mag
+OBIETTIVO LISTA DI TAGLIO	VÁGÁSI LISTA CÉLJA
+Calo F/B max	Max. F/B csökkenés
+ROS max	Max. SWR
+Ferma	Leállítás
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	A táplált elemhez közeli elemek általában a legkritikusabbak; a tartócső végén lévők nagyobb hibát is elviselnek.
+l'istogramma serve al Monte Carlo	a hisztogram a Monte Carlo-ra vonatkozik
+5% peggiore	legrosszabb 5%
+Posizione mm	Pozíció mm
+Lunghezza mm	Hossz mm
+Tolleranza ammessa	Megengedett tűrés
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Pirossal az elemek, amelyeknek a gyártási tűrésnél kevesebb kell.
+Calcola prima il modello	Előbb számítsd ki a modellt
+sensibilita'	érzékenység
+Tolleranze: fermato	Tűrések: leállítva
+Diametro mm	Átmérő mm
+Tolleranza ammessa mm	Megengedett tűrés mm
+Avvia prima il calcolo	Előbb futtasd a számítást
+Esporta la lista di taglio	Vágási lista exportálása
+Lista di taglio	Vágási lista
+Obiettivi	Célok
+Calo massimo del F/B	Maximális F/B csökkenés
+ROS massimo	Maximális SWR
+Tolleranze di costruzione	Gyártási tűrések
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Tervezett (13. vázlat, jóváhagyásra vár): ebben a verzióban még nem aktív.
+Al quadro 20×2 mm	Al négyzet 20×2 mm
+Al quadro 25×2 mm	Al négyzet 25×2 mm
+Al quadro 30×2 mm	Al négyzet 30×2 mm
+Al quadro 40×2 mm	Al négyzet 40×2 mm
+Al tondo 25×1,5 mm	Al kör 25×1,5 mm
+Al tondo 30×2 mm	Al kör 30×2 mm
+Al tondo 40×2 mm	Al kör 40×2 mm
+Al tondo 50×2 mm	Al kör 50×2 mm
+Zona NTC	NTC zóna
+Quota sito as	A hely magassága mint
+Periodo ritorno	Visszatérési idő
+Categoria esposiz.	Kitettségi kategória
+Coeff. topografia	Domborzati tényező
+Antenna da terra	Antenna a talaj felett
+Palo sopra rotore	Árboc a rotor felett
+Ø palo	Árboc Ø
+Usa elementi e boom del modello	A modell elemeinek és tartócsövének használata
+Includi telaio, palo, cavi	Keret, árboc, kábelek bevonása
+Scansione direzione del vento	Szélirány-pásztázás
+UNITÀ	MÉRTÉKEGYSÉGEK
+N e kgf affiancati	N és kgf egymás mellett
+solo N	csak N
+solo kgf	csak kgf
+Mostra	Megjelenítés
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	érvénytelen lokátor: válaszd ki a zónát kézzel
+Telaio a H	H-keret
+Cavi e divisore	Kábelek és osztó
+Parte	Alkatrész
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Keresztirányú szélnél az elemek nem nyomnak (cross-flow, K5IU): a csőre ható erő a tengelyére merőleges szélkomponens négyzetével nő.
+momento flettente alla staffa del rotore	hajlítónyomaték a rotorbilincsnél
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Előzetes méretezés: nem helyettesíti az árboc, a torony és az alap mérnöki ellenőrzését. A talpnyomaték az Árboc és alap alfülre kerül majd.
+Sito e norma	Helyszín és szabvány
+Norma	Szabvány
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; tényezők CNR-DT 207 R1/2018 és EN 1991-1-4
+Locatore / zona	Lokátor / zóna
+Risultati	Eredmények
+Forza massima	Maximális erő
+Momento flettente alla staffa del rotore	Hajlítónyomaték a rotorbilincsnél
+Momento torcente sul rotore	Csavarónyomaték a rotoron
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Előzetes méretezés: nem helyettesíti az árboc, a torony és az alap jogosult mérnök általi ellenőrzését.
+Al tondino pieno	Al tömör rúd
+Materiale elementi	Elemek anyaga
+Staffe, isolatori	Bilincsek, szigetelők
+g cad.	g darabonként
+Dipolo + scatola	Dipól + doboz
+Cavo fino al palo	Kábel az árbocig
+STAFFA AL PALO	ÁRBOCBILINCS
+Posizione attuale	Jelenlegi pozíció
+m dal riflettore	m a reflektortól
+Massa / distanza	Tömeg / távolság
+Vento dalla linguetta Vento	Szél a Szél fülről
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	A Szél alfül utolsó számításának tervezési nyomását használja; anélkül 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Az egész modellt a tartócső mentén úgy tolja el, hogy a javasolt bilincs az origóba essen (ahol az árboc és a stack kerete csatlakozik). A 3D szerkezetben a Visszavonás visszaállítja.
+Momenti in funzione della posizione della staffa	Nyomatékok a bilincs pozíciója szerint
+Masse e aree per parte	Tömegek és felületek alkatrészenként
+ultimo direttore	utolsó direktor
+Staffe e isolatori	Bilincsek és szigetelők
+Cavo sul boom	Kábel a tartócsövön
+Massa kg	Tömeg kg
+Baricentro m	Súlypont m
+Area vento m²	Szélfelület m²
+Centro area m	Felületi középpont m
+solo peso	csak súly
+solo vento	csak szél
+File Touchstone .s1p	Touchstone fájl .s1p
+Formato letto	Beolvasott formátum
+CAVO TRA VNA E ANTENNA	KÁBEL A VNA ÉS AZ ANTENNA KÖZÖTT
+R e X separate	R és X külön
+Banda con ROS <	Sáv SWR < mellett
+ROS: calcolato e misurato	SWR: számított és mért
+Confronto	Összehasonlítás
+misurato, cavo tolto	mért, kábel levonva
+R calcolata	R számított
+X calcolata	X számított
+R misurata	R mért
+X misurata	X mért
+Calcolato	Számított
+Misurato	Mért
+Scarto	Különbség
+Frequenza del ROS minimo	Minimális SWR frekvenciája
+ROS minimo	Minimális SWR
+nessuna correzione: calcolo e misura coincidono.	nincs korrekció: a számítás és a mérés egyezik.
+calcolo NEC sul campo della misura…	NEC-számítás a mérési tartományban…
+Misura del VNA	VNA-mérés
+Tutti	Mind
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Futtass pásztázást (fent a Sweep gomb), hogy lásd az F/B-t és az F/R-t az egész sávban
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = előre irányuló nyereség mínusz az átlagos teljesítmény a hátsó félgömbben (90-270° azimut, minden 0° feletti eleváció). Az optimalizáló céljai között is szerepel.
+Tabelle: F/B e F/R su tutta la banda	Táblázatok: F/B és F/R az egész sávban
+Valori dello sweep	Pásztázási értékek
+ANTENNE RICEVENTI	VEVŐANTENNÁK
+4-square in ricezione	4-square vételre
+8 verticali in cerchio	8 vertikál körben
+Modello aperto	Modell megnyitása
+Isotropo	Izotróp
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = nyereség a kívánt irányban mínusz az átlagos nyereség az egész féltérben: a nyereséggel ellentétben nem függ a veszteségektől.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	A Valós terep fül érkezési szögének mediánját használja kívánt elevációként (statisztika sávonként és régiónként). Betöltött ARRL-statisztika nélkül az itt beírt eleváció marad.
+Direzione voluta	Kívánt irány
+Hz  rumore	Hz  zaj
+NF ricevitore	Vevő NF
+sorgente locale az	helyi forrás az
+Cifre di merito in ricezione	Vételi jósági mutatók
+Basta il segnale?	Elég a jel?
+calcolo in corso…	számítás…
+RDF in funzione della frequenza	RDF a frekvencia függvényében
+Calcola prima il modello aperto	Előbb számítsd ki a megnyitott modellt
+verticale λ/4	λ/4 vertikál
+° · dB relativi · arancio: -3 dB	° · relatív dB · narancs: -3 dB
+settore ±30° az, 10–40° el	szektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Átlagos nyereség az elülső szektorban mínusz az átlag a hátsó félgömbben.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN a DMF-et csak a 20 fokos nyereséggel definiálja; itt a vázlat szektorának átlagát használjuk, így az értékek nem hasonlíthatók össze egy az egyben a könyvével.
+molto basso: serve un preamplificatore	nagyon alacsony: előerősítő kell
+basso ma accettabile: vedi soglia	alacsony, de elfogadható: lásd küszöb
+come un'antenna trasmittente	mint egy adóantenna
+F/R medio sull'emisfero posteriore	Átlagos F/R a hátsó félgömbben
+Rumore d'antenna ai morsetti	Antennazaj a kapcsokon
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Külső zajteljesítmény a kapcsokon: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + átlagos nyereség, a zaj érkezési iránya szerint súlyozva.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	a horizontról érkező zaj exp(-el/10 fok) szerint súlyozva elevációban: a messziről alacsonyan érkező ipari zajt képviseli; a valós eloszlás a helyszíntől függ.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	pontforrás 5 fokos elevációban az izotróp háttérrel azonos teljesítménnyel.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	izotróp zaj a talaj felett; a talaj nem ad hozzá zajt.
+Margine sul ricevitore	Vevő tartaléka
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Az antennazaj kevesebb mint 6 dB-lel haladja meg a vevő zaját: a vevő korlátozza az érzékenységet. Több előerősítés vagy alacsonyabb NF-ű vevő kell.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Nyereség 1,8
+Spazio richiesto	Helyigény
+λ/4 in tubo quadro	λ/4 négyzetes csőben
+λ/4 in tubo tondo	λ/4 kör keresztmetszetű csőben
+Solo cavi di fase	Csak fázisvonalak
+Aria	Levegő
+Uscite	Kimenetek
+Z antenne	Antenna Z
+Z ingresso	Bemeneti Z
+Dielettrico	Dielektrikum
+Connettori	Csatlakozók
+Correggi accorciamento dei connettori	Csatlakozók általi rövidülés korrekciója
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Levonja a hosszból a csatlakozókon belüli vonalszakaszt.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	becslés: végenként 4 mm N-csatlakozókkal (3 BNC, 1,5 SMA): a legjobb VNA-val hangolni, 1 mm-es lépésekben rövidítve.
+Divisori	Osztók
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	A megnyitott stack antennáinak aktív impedanciáit (antennánként egy forrás) és a távolságokat használja a fázisvonalak minimális hosszához.
+CAVI DI FASE	FÁZISVONALAK
+Lunghezza minima	Minimális hossz
+Passo verticale	Függőleges távolság
+solo cavi di fase: nessun trasformatore da costruire	csak fázisvonalak: nem kell transzformátort építeni
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 db 75 Ω-os kábel párhuzamosan = 37,5 Ω
+quadro, lato	négyzet, oldal
+tondo, Ø	kör, Ø
+Z0 richiesta	Szükséges Z0
+Ø conduttore interno	Belső vezető Ø
+VF del cavo	Kábel VF
+λ/4 in aria, mm	λ/4 levegőben, mm
+da tagliare, mm	vágandó, mm
+Z carico in parallelo	Terhelés Z párhuzamosan
+Rami λ/4: Z0 = Zin · √N	λ/4 ágak: Z0 = Zin · √N
+Resistenze a stella	Csillag ellenállások
+Isolamento tra le uscite	Szigetelés a kimenetek között
+Perdita stimata	Becsült veszteség
+Carico usato	Használt terhelés
+non potenza di 2	nem 2 hatványa
+ROS all'ingresso	Bemeneti SWR
+solo cavi di fase	csak fázisvonalak
+Uscita	Kimenet
+Lungh. elettrica	Elektromos hossz
+Fisica mm	Fizikai mm
+Perdita dB	Veszteség dB
+° di fase).	° fázis).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° felfelé); az impedancia az osztónál már nem ismétlődik pontosan.
+Solo cavi di fase: nessun disegno da stampare	Csak fázisvonalak: nincs nyomtatandó rajz
+Divisore	Osztó
+50 mm di controllo	50 mm-es ellenőrzés
+GEOMETRIA	GEOMETRIA
+λ/4 sul boom	λ/4 a tartócsövön
+stesso piano	azonos sík
+Metallico, isolati	Fém, szigetelt
+Non metallico	Nem fém
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	A tartócső nincs a NEC-modellben: fém tartócsőtől szigetelt elemekkel a hatás kicsi (tartócső-korrekció a Kalkulátorokban).
+Yagi di base	Alap Yagi
+Disposizione	Elrendezés
+Sfasamento piani	Síkok eltolása
+Cavo di ritardo λ/4	λ/4 késleltető kábel
+Includi relè e cavi reali	Valós relék és kábelek bevonása
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Hozzáadja a késleltető kábel veszteségét (VF 0,66, 10 dB/100 m 144 MHz-en, a frekvencia négyzetgyökével skálázva) és 0,1 dB-t a relére.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75 ohmos kábel és koaxiális relé tipikus értékei; a program nem ismeri a tiédet.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Ugyanez a fázisháló turnstile-hoz is működik (90°-ban keresztezett dipólok).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Elölnézet
+Componenti co-polare / cross-polare	Kopoláris / keresztpoláris összetevők
+Rapporto assiale e ROS in frequenza	Tengelyarány és SWR a frekvencia függvényében
+piano A	A sík
+piano B	B sík
+vista dal davanti — boom al centro	elölnézet — tartócső középen
+piani sfalsati di λ/4 lungo il boom	síkok λ/4-del eltolva a tartócső mentén
+Yagi incrociate: serve una Yagi con una sola sorgente	Keresztezett Yagik: egyforrású Yagi kell
+Yagi incrociate: calcolo in corso...	Keresztezett Yagik: számítás...
+Rapporto assiale in asse	Tengelyarány a tengelyen
+Rapporto assiale a −3 dB	Tengelyarány −3 dB-nél
+Isolamento tra i due piani	Szigetelés a két sík között
+Fase della rete sul piano B	A hálózat fázisa a B síkon
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Tökéletesen ortogonális és szimmetrikus síkok: a modellben a csatolás és az ellentétes polarizáció közel nulla. A valóságban a bilincsek, kábelek és kis aszimmetriák kb. 25-35 dB-re korlátozzák őket.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	1,8 MHz-től 1296 MHz-ig: a balunok listája a sávval változik
+LINEA DI DISCESA	TÁPVONAL
+Coassiale	Koaxiális
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Szimmetrikus nyitott vonalnál nincs árnyékolás: a közös módusú áram csak aszimmetriából ered. A kártya a koaxiális esetet számolja; nyitott vonalhoz használd a Vonalak (TL) részt az illesztővel.
+Lungo il boom	A tartócső mentén
+m → palo	m → árboc
+Discesa sul palo	Le az árbocon
+Fino alla stazione	Az állomásig
+Calza a massa sul palo / traliccio	Árnyékolás földelve az árbocon / tornyon
+Messa a terra all'ingresso stazione	Földelés az állomás bejáratánál
+BALUN DA CONFRONTARE	ÖSSZEHASONLÍTANDÓ BALUNOK
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 menet RG-213 110 mm-en: induktivitás Wheeler szerint, sajátkapacitás Medhurst szerint.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 és becsült sajátkapacitás: a fojtó valós impedanciáját meg kell mérni.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferrit toroid párhuzamos, alacsony Q-jú RLC-ként.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm a csúcsban (10 MHz 31-es keverékkel, 25 MHz 43-as keverékkel): 12 menet tipikus értékei 2 x FT-240-en.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaxiális λ/2 4:1: szimmetrikus táplálás, árnyékolások összekötve.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	maradék közös módus 600 ohmos rezonanciaként f0-n (Q 3): a szereléstől függ.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 hüvely: rövidre zárt λ/4 vonal az árnyékolás és a hüvely között, nagy impedancia f0-n.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	A hüvely Z0-ja 50 ohm és 0,08 dB veszteség a negyedhullámon.
+10 perline in ferrite sulla calza.	10 ferritgyöngy az árnyékoláson.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm gyöngyönként 144 MHz-en (61-es keverék), 100 ohm 30 MHz felett 43-as keverékkel: tipikus katalógusértékek.
+Caso mostrato	Mutatott eset
+premi Calcola il confronto	nyomd meg az Összehasonlítás számítása gombot
+Corrente lungo la calza, dal dipolo verso il basso	Áram az árnyékolás mentén, a dipóltól lefelé
+Vista laterale: corrente sulla calza	Oldalnézet: áram az árnyékoláson
+F/R medio	Átlagos F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Veszteség a balunban
+Potenza dissipata nel balun a 1 kW	A balunban disszipált teljesítmény 1 kW-nál
+Banda con calza < 5 %	Sáv, ahol az árnyékolás árama < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	A szürke tételek a másik sáv balunjai; a frekvencia kiválasztásakor lesznek aktívak. HF-en az állomásig tartó árnyékolás is számít (földelve), VHF/UHF-en a tartócsövön és az árbocon lévő rész. Az árnyékolás a tápponti egyik oldalhoz kötött huzal, mint a valóságban balun nélkül; a balun közös módusú impedancia az első szakaszban.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Az üvegszál nem vezet: a keret nem kerül a NEC-be, csak a fázisvonalak árnyékolása marad.
+Includi palo sotto il telaio	Az árboc bevonása a keret alatt
+Cavi di fase lungo i montanti	Fázisvonalak az oszlopok mentén
+Rotore e controventi	Rotor és kikötések
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Tervezett: rotor és kikötések huzalként (a torony méretei kellenek).
+Materiale	Anyag
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	piros = NEC-huzalként modellezett keretrészek · szaggatott = a fázisvonalak árnyékolása
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Vízszintes polarizáció: a függőleges oszlopok gyengén csatoltak; a vízszintes keresztrúd és a fázisvonalak nem.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Függőleges polarizáció: az oszlopok és az árboc párhuzamosak az elemekkel és többet számítanak; a vízszintes keresztrúd keveset.
+Confronto senza / con telaio	Összehasonlítás keret nélkül / kerettel
+Diagramma orizzontale sovrapposto	Vízszintes iránykarakterisztika ráhelyezve
+premi Calcola confronto	nyomd meg az Összehasonlítás számítása gombot
+Stack: calcola prima il modello	Stack: előbb számítsd ki a modellt
+Stack: calcolo senza e con telaio...	Stack: számítás keret nélkül és kerettel...
+Pezzo	Alkatrész
+Collegato	Csatlakoztatva
+Cavi	Kábelek
+Senza telaio	Keret nélkül
+Con telaio	Kerettel
+Z ingresso divisore	Az osztó bemeneti Z-je
+senza telaio	keret nélkül
+con telaio	kerettel
+Stack: confronto senza / con telaio fatto	Stack: összehasonlítás keret nélkül / kerettel kész
+CARICHI HF	HF TERHELÉSEK
+INSERISCI NEL MODELLO	BEILLESZTÉS A MODELLBE
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	A kalap a huzal végére kerül (b vagy e), a linear loading a huzal kiválasztott pontjára.
+Inserisci nel modello	Beillesztés a modellbe
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Már jóváhagyva a Terhelések vázlatban: L és C Q-ja, f0, Z sávonként, feszültség és áram az alkatrészben. Itt jönnek hozzá a szerkezeti típusok.
+Trappola coassiale	Koaxiális csapda
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	a belső eret a középső tekercs elejére forrasztják (a végek felcserélése kb. 50 kHz-cel csökkenti a rezonanciát).
+Calcola spire per f0	Menetek számítása f0-hoz
+Spire dell'avvolgimento (anche frazionarie).	A tekercs menetei (tört is).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	a valós f0 néhány százalékkal eltér: mérd meg dipméterrel vagy VNA-val, és javítsd a meneteket.
+Blocca	Lezár
+dipolo con	dipól ezzel:
+Filo Ø	Huzal Ø
+Calcola C per f0	C számítása f0-hoz
+mm  Filo Ø	mm  Huzal Ø
+mm  Passo	mm  Menetemelkedés
+mm  Spire	mm  Menetek
+MHz  dal centro	MHz  a középponttól
+m  Braccio	m  Kar
+m  Filo dell'elemento Ø	m  Elemhuzal Ø
+Calcola spire per la risonanza	Menetek számítása rezonanciához
+Piega	Hajtás
+m  Distanza tra i fili	m  Huzalok távolsága
+Calcola la piega per la risonanza	A hajtás számítása rezonanciához
+Raggi	Küllők
+m  Filo Ø	m  Huzal Ø
+Verticale alto	A vertikál magassága
+m  Frequenza	m  Frekvencia
+MHz  Filo Ø	MHz  Huzal Ø
+Calcola i raggi per la risonanza	A küllők számítása rezonanciához
+L misurata	Mért L
+MHz  Autorisonanza f0	MHz  Önrezonancia f0
+Cappello capacitivo in punta al verticale	Kapacitív kalap a vertikál tetején
+Bobina dalle misure	Tekercs méretekből
+Reattanza del cappello in frequenza	A kalap reaktanciája a frekvencia függvényében
+impedenza della trappola	csapdaimpedancia
+Si comporta da	Úgy viselkedik, mint
+Potenza persa	Elvesző teljesítmény
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Adóteljesítmény a táblázat feszültségeihez és veszteségeihez.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	alsó sáv: áram a duzzadóhelyen sqrt(P/73) és a csapdában I0 cos(beta a); lezárt sáv: feszültség a belső dipól végén I0 Z0, megosztva a csapda és a sugárzás között.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	áram a duzzadóhelyen sqrt(P/73) és a terhelésben I0 cos(beta a), ahol a a középponttól mért távolság.
+Risonanza propria f0	Önrezonancia f0
+Q ideale	Ideális Q
+Q della trappola alla risonanza.	A csapda Q-ja rezonanciában.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plusz dielektromos veszteség (tangens 3e-4 PE, 2e-4 PTFE). A mért koaxiális csapdák Q-ja általában 100 és 300 között van.
+Lunghezza di cavo	Kábelhossz
++ 10 cm per le saldature	+ 10 cm a forrasztásokhoz
+R in parallelo equivalente	Egyenértékű párhuzamos R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: ez az LD-terhelés, amely a modellbe kerül
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	A dipól karja az alsó sávon a csapdával, összevetve a teljes méretű karral (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	A NEC a csapdával mint terheléssel a helyes hosszt adja.
+Induttanza misurata	Mért induktivitás
+dalla misura	a mérésből
+Autorisonanza	Önrezonancia
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	A frekvencia, amelyen a tekercs magában rezonál a sajátkapacitásával.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	sajátkapacitás Medhurst táblázatából hossz / átmérő szerint, fémtömegektől távoli egyrétegű tekercsekre érvényes.
+Q della bobina alla frequenza di lavoro.	A tekercs Q-ja a munkafrekvencián.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	a huzal ellenállása a skin-hatás miatt szorozva az 1 + 2 (d/p)^2 közelségi tényezővel (d huzal, p menetemelkedés): Medhurst hasonló értékeket ad az átmérőhöz hasonló hosszúságú tekercsekre.
+Reattanza della piega	A hajtás reaktanciája
+Z0 della linea	A vonal Z0-ja
+Q della piega	A hajtás Q-ja
+Capacita' del cappello	A kalap kapacitása
+Capacita' del cappello verso lo spazio.	A kalap kapacitása a térhez képest.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	a küllők összege (vékony huzal, 2 pi eps0 l / (ln(2l/a) - 1)) és a teli korong felé telítődő gyűrű (8 eps0 r): a küllők árnyékolják egymást. Huzalként beillesztve a NEC pontosan kiszámítja.
+in punta al verticale	a vertikál tetején
+Altezza per la risonanza	Magasság a rezonanciához
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Hatás a vertikálra
+Carichi HF: apri un modello nella finestra principale.	HF terhelések: nyiss meg egy modellt a főablakban.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	A linear loading és a kapacitív kalap huzalként kerül be: a többihez válaszd a «Terhelésként» lehetőséget.
+Il cappello capacitivo si inserisce come fili.	A kapacitív kalap huzalként kerül be.
+RLC parallelo	Párhuzamos RLC
+Effetto sul dipolo	Hatás a dipólra
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	A kar rövidülése a teljes negyedhullámhoz (71,3 / f) képest, a terheléssel az adott pontban.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	a terhelt kar vonalmodellje X = Z0 (cot(beta b) - tan(beta a)), x 0,95 a véghatás miatt.
+Esegui il test	Teszt futtatása
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	A nyereség AGT-vel korrigálva is megjeleníthető (az optimalizálóban már tervezve).
+Controllo prima/dopo il calcolo	Ellenőrzés a számítás előtt/után
+Esito	Eredmény
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Egy vagy több ellenőrzés ±0,2 dB-en kívül: nézd át a szegmentálást (3D szerkezet > Szegmentálás... és Szegmentálás ellenőrzése).
+Tutti i controlli entro ±0,2 dB.	Minden ellenőrzés ±0,2 dB-en belül.
+Linea a finestra 450	450 ohmos ablakos vonal
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Nyomd meg a Számítás gombot: a NEC minden frekvencián kiszámítja a megnyitott modell impedanciáját.
+Perdita nella linea	Vonalveszteség
+Perdita totale	Teljes veszteség
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Az illesztő típusa a vonal és az adó között (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	a veszteség a hálózat terhelt Q-jából (Qn = sqrt(Rmax/Rmin - 1), T-hez és Pi-hez két szakasz) és a tekercs Q-jából becsülve; N6BV TLW-je egyenként számolja az alkatrészeket, és néhány tized dB-lel eltérhet.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Példa: dublett 2 × 20 m (ZS6BKW/G5RV). Figyelmeztetés, ha az illesztő 20 Ω-nál kevesebbet lát: nagy veszteségek, a vonal hosszabbítása vagy rövidítése javasolt. Veszteséges vonal, mint a TLW-ben (N6BV, ARRL).
+USA costa est	USA keleti partja
+USA costa ovest	USA nyugati partja
+Giappone	Japán
+Caraibi	Karib-térség
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: a szolgáltatás nem adott vissza GeoTIFF-et
+GeoTIFF compresso: non supportato	Tömörített GeoTIFF: nem támogatott
+GeoTIFF: tipo di dato non supportato	GeoTIFF: nem támogatott adattípus
+Il file non contiene coppie distanza / quota.	A fájl nem tartalmaz távolság / magasság párokat.
+Nessuno	Nincs
+Ferriti a perline	Ferritgyöngyök
+Cavo e balun: segmento della sorgente non trovato.	Kábel és balun: a forrás szegmense nem található.
+solo palo	csak árboc
+Acciaio zincato	Horganyzott acél
+Alluminio	Alumínium
+Vetroresina	Üvegszál
+Montante sx/dx	Bal/jobb oszlop
+al boom	a tartócső felé
+Traversa	Keresztrúd
+Palo	Árboc
+al dipolo	a dipól felé
+N, femmina	N, aljzat
+senza connettori	csatlakozók nélkül
+rurale tranquillo	csendes vidéki
+Verticale λ/4	λ/4 vertikál
+λ/8 di lato	oldalanként λ/8
+0,37 λ di diametro	0,37 λ átmérő
+Cappello capacitivo	Kapacitív kalap
+W8NX bassa impedenza	W8NX alacsony impedancia
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	vastag, PTFE-dielektrikumos kábel (RG-393) vagy nagyfeszültségű kondenzátoros LC-csapda
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	A hajtás hosszabb, mint lambda/8: a vonal már nem viselkedik állandó induktivitásként, ellenőrizd a rezonanciát NEC-cel, huzalként beillesztve.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	A kalap kapacitása becslés (egymást árnyékoló küllők): pontos értékhez illeszd be huzalként és számolj NEC-cel.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	A terhelés pozíciója túl van a negyedhullámon: vidd közelebb a középhez.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	a kalap a huzal végére kerül: válaszd az első (b) vagy az utolsó (e) szegmenst.
+il punto scelto e' troppo vicino all'estremo del filo.	a kiválasztott pont túl közel van a huzal végéhez.
+questo tipo entra nel modello come carico.	ez a típus terhelésként kerül a modellbe.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF terhelések: a YA-NEC kalkulátor által hozzáadott huzalok
+Il file Touchstone non contiene punti di S11.	A Touchstone fájl nem tartalmaz S11-pontokat.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	A CSV nem tartalmaz frekvencia, Re(S11), Im(S11) sorokat.
+AGT in spazio libero, senza perdite	AGT szabad térben, veszteségmentesen
+IMPOSTAZIONI	BEÁLLÍTÁSOK
+Schiera Hi-Z di verticali corte	Rövid vertikálok Hi-Z csoportja
+Base del loop	A hurok alapja
+Distanza, lato o diametro	Távolság, oldal vagy átmérő
+Altezza delle verticali	A vertikálok magassága
+Base del loop dal suolo	A hurok alapja a talaj felett
+Fase tra le file	Sorok közötti fázis
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Alacsony vízszintes dipól: a talajhoz lambda/4-nél közelebb a nyaláb felfelé áll. Ez a «nagy szög» referenciája IV3PRK rangsorában (RDF 7,3 dB): az alacsony szögű vevőantennákkal hasonlítják össze.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY Gary Breed K9AY-től (QST, 1997. szeptember): két függőleges hurok 90 fokban ugyanazon az árbocon, lezáró ellenállás (tipikusan 390 ohm, F/B-re állítva), 9:1 transzformátor. Itt egyetlen hurok, a választott irányba fordítva, a talaj felett zárva, mint a Vétel (RDF) oldalon. Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Vételi 4-square: négy rövid aktív vertikál egy lambda/8 oldalú négyzet sarkain, az átló mentén sugározva. Üres fázis = pontos hátsó nulla (pi + beta d a sorok között): a legnagyobb elméleti irányítottságot adja; a valós fázishálózatok (ON4UN, IV3PRK) más fázisokat használnak és alacsonyabb RDF-et adnak (IV3PRK 9,4 dB). A gomb a legjobb RDF-et adó fázist keresi.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Rövid aktív vertikálok csoportjai, mint a Hi-Z Antennas-éi: 2 elem end-fire (kardioid, lambda/8), 3 háromszögben (oldal lambda/6, egy csúcs a választott irányba), 8 körben (átmérő 0,37 lambda: az irány felé eső négyet és a szemközti négyet használja). Hi-Z: 8 körben RDF 13,4 dB a saját összegzőjével; az egyszerű kétsoros modell alacsonyabb marad. A gomb a legjobb RDF-et adó fázist keresi.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ A vertikálok a valós talajból indulnak (GE 1 Sommerfeld-talajjal): NEC-2-vel a valós talajhoz kötött huzal impedanciája a forrás szegmensétől függ (NEC-2 kézikönyv, EZNEC). Az iránykarakterisztika és az RDF tájékoztató jellegű; a megemelt radiálos csatlakozás minden vevőantennára tervezett.
+fase tra le file da 120 a 300 gradi per l'RDF	sorok közötti fázis 120 és 300 fok között az RDF-hez
+nessuna fase con il lobo in avanti	egyik fázis sem ad előre irányuló nyalábot
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Sorok közötti fázis a legjobb RDF-hez: {0} fok (RDF {1} dB). Újraszámítás...
+linea d'orizzonte	horizontvonal
+scala angolare	szögskála
+lobo reale sopra il piatto fino a	valós nyaláb sík felett eddig:
+Profilo verso	Profil irányban
+Lobo verticale e angoli di arrivo a	Függőleges nyaláb és érkezési szögek itt:
+Cos'e' l'RDF	Mi az RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = nyereség a kívánt irányban - átlagos nyereség minden irányban (W8JI; korábban SNIF néven, a 60-as években). Azt méri, mennyit javít az antenna a jel/zaj viszonyon, ha a zaj minden irányból egyformán érkezik; az abszolút nyereség nem számít (előerősítő pótolja). Átlagolás, mint az EZNEC-ben: a felső félgömb osztva az egész gömbbel (4 pi). Ezzel a konvencióval az eredmények egyeznek IV3PRK és W8JI/Hi-Z értékeivel (vertikál 5,07 kontra 5,06 és 4,9; Beverage 350 m 13,5 kontra 13,66). Korlát: a valós zaj nem egyenletes (villanyvezetékek, helyi QRM): ezért az F/B és a nyaláb alakja is számít. Adóantennáknál az RDF-nek nincs értelme: ezért csak ezen a fülön számolódik. DMF (Directivity Merit Figure, ON4UN): a 20 fokos elevációjú előre irányuló nyereség mínusz a hátsó féltér átlagos nyeresége (90 fokon túli azimut, a talaj felett, koszinusszal területre súlyozva): megmutatja, mennyire nyomja el az antenna a hátulról érkező zajt. ON4UN óv a DMF és az RDF egymással való összevetésétől. Források: W8JI és W8WWV (RDF), ON4UN Low-Band DXing 7. fej. (DMF, 7-22, 7-24, 7-25 táblázat), IV3PRK, IK0XBX.
+elevazione	eleváció
+azimut	azimut
+azimut a {0}°	azimut {0}°-nál
+totale	összesen
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Nyílás az első nulláig (FNBW): {0}°;  legmagasabb oldalnyaláb: {1}
+Didascalie {0} %	Feliratok {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB a forrás {1} értékével szemben: ellenőrizd a méreteket, a lezárást és a talajt (a forrás más talajt vagy geometriát használhat).
+Azimut a {0}° · {1} MHz	Azimut {0}°-nál · {1} MHz
+Azimut a {0}° di elevazione	Azimut {0}° elevációnál
+RUMORE	ZAJ
+Apri la scheda {0}	A(z) {0} kártya megnyitása
+caso mostrato: {0}	mutatott eset: {0}
+Rastremazioni	Teleszkópos
+BANDA	SÁV
+λ/2 coassiale 4:1	koaxiális λ/2 4:1
+Manicotto λ/4	λ/4 hüvely
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kábelárnyékolás és árboc NEC-huzalként; balunok összehasonlítása (közös módusú áram, F/B, átlagos F/R, veszteség, teljesítmény 1 kW-nál) 1,8 és 1296 MHz között.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Oszlopok, keresztrúd, árboc és a fázisvonalak árnyékolása NEC-huzalként: összehasonlítás keret nélkül / kerettel (nyereség, F/B, átlagos F/R, nyalábok, az osztó Z-je, Tant és G/T).
+TIPO	TÍPUS
+DATI	ADATOK
+TELAIO	KERET
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 négyzetes vagy kör keresztmetszetű csőben, kábelben, Wilkinson; fázisvonalak, döntés; rajz 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X vagy +, síkok λ/4-del eltolva; H, V, RHCP, LHCP, X-pol; tengelyarány és szigetelés
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Egyenlő hosszak → egyenlő fázis. λ/2 többszörösei → az aktív impedancia megismétlődik az osztónál. Javasolt tűrés ± 5 mm (= ± {0}° fázis).
+impedenze attive delle {0} antenne dello stack in parallelo	a stack {0} antennájának aktív impedanciái párhuzamosan
+Banda con ROS < {0}	Sáv SWR < {0} mellett
+? Manuale	? Kézikönyv
+Apre la spiegazione nel manuale	Megnyitja a magyarázatot a kézikönyvben
+riferimento	referencia
+Rispetto alla singola antenna	Az egyedi antennához képest
+{0} antenne ideali	{0} ideális antenna
+x la distanza DL6WU, a passi di	x a DL6WU-távolság, lépésköz:
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Bal tengely: a stack G-je - az egyedi antenna G-je, 0-tól felfelé. Jobb tengely: a stack F/R-je - az egyedi antenna F/R-je, fordítva, 0 felül: ahol a stack javítja az F/R-t, a görbe lefelé megy, és a legalsó pont a legnagyobb javulás. A G/T a táblázatban marad.
+ΔG sulla singola	ΔG az egyedi antennához képest
+Chiusura del programma	A program bezárása
+Vuoi chiudere YA-NEC?	Be akarod zárni a YA-NEC-et?
+Grazie per avermi usato: spero di esserti stato utile.	Köszönöm, hogy használtál: remélem, hasznos voltam.
+Sì	Igen
+ROS attivo	Aktív SWR
+G realizzato	Megvalósult G
+ROS attivo massimo	Maximális aktív SWR
+riflessi minimi	minimális reflexiók
+ROS attivo alto: da non scegliere	magas aktív SWR: ne válaszd
+Documenti tecnici	Műszaki dokumentumok
+Manuale d'uso	Felhasználói kézikönyv
+Manuale di calcolo e delle fonti	Számítási és forráskézikönyv
+Citazioni	Idézetek
+Cerca in tutti i documenti	Keresés minden dokumentumban
+Apri il PDF	PDF megnyitása
+Nessun risultato per «{0}»	Nincs találat erre: «{0}»
+Primi {0} risultati per «{1}»	Az első {0} találat erre: «{1}»
+{0} risultati per «{1}»	{0} találat erre: «{1}»
+Apre la citazione {0}	Megnyitja a(z) {0} idézetet
+Manuale di calcolo	Számítási kézikönyv
+È pronta la versione {0} di YA-NEC	A YA-NEC {0} verziója kész
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Már le van töltve és telepítve: a program újraindításakor lép életbe.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Macen nem települ magától: töltsd le az új .dmg-t a GitHub kiadási oldaláról.
+Riavvia adesso	Újraindítás most
+Più tardi	Később
+Apri la pagina delle versioni	A kiadási oldal megnyitása
+Aggiornamento di YA-NEC	YA-NEC frissítés
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Már le van töltve és telepítve. A program magától újraindul és újra megnyitja a megnyitott modellt.
+Riavvio tra {0} s	Újraindítás {0} mp múlva
+Questo avviso si chiude tra {0} s	Ez az értesítés {0} mp múlva bezárul
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	A frissítés után újra megnyílt a mentetlen modell: mentsd el, amikor akarod (másolat a data/aggiornamenti mappában).
+Riaperto dopo l'aggiornamento il modello che era aperto.	A frissítés után újra megnyílt a korábban megnyitott modell.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Minden mezőnek megvan a súgója magyarázattal és forrással. Szürke: bejelölve = mindig aktív (nem kapcsolható ki); nincs bejelölve = még nem elérhető; választás gombokkal = rögzített választás. Kézikönyv, 21. fejezet.
+"): sorgente sempre accesa.	"): a forrás mindig aktív.
+' non da' un numero valido.	' nem érvényes szám.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik változatlanul
+0 - misure del metodo	0 - a módszer méretei
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = a sáv szabványos WR hullámvezetője (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = ugyanaz a parabola a másik végén (saját visszhang).
+0 = stesso disco all'altro capo.	0 = ugyanaz a parabola a másik végén.
+0 gradi a destra	0 fok jobbra
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = harmad a végtől: impedancia 200-300 ohm, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: távol a peremtől, ahol a lehajlás kivinné a tápot a fókuszból.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 tömör polietilén (RG-58, RG-213), 0,8-0,85 habosított dielektrikum.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 tömör polietilén, 0,8-0,85 habosított, 0,9-0,97 nyitott vonal.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 vezetett lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - táplált hurok
+1 - radiatore	1 - sugárzó
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = egy menet (mint korábban). Több menettel Rr N²-tel, a skin-veszteség N-nel nő.
+1 cavo	1 kábel
+1-2-3 elementi	1-2-3 elem
+1. Obiettivi e pesi	1. Célok és súlyok
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Szél, kiegyensúlyozás, osztók, balunok, keresztezett Yagik
+1.3 - Antenne riceventi abilitate	1.3 - Vevőantennák bekapcsolva
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz nagy parabolával: a felület és az irányzás mellett számít a hő- és szél okozta deformáció (ATA: éjjel 0,7 mm RMS, nappal napon 3 mm), a tartók lehajlása és a libráció okozta szórás.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: 100 %-on nyomtass, «oldalhoz igazítás» nélkül
+1005/f piedi	1005/f láb
+144 isol.	144 szig.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektorok
+2 in parallelo	2 párhuzamosan
+2 lati	2 oldal
+2. Variabili che l'ottimizzatore puo' cambiare	2. Változók, amelyeket az optimalizáló módosíthat
+200 Ω con balun 4:1	200 Ω 4:1 balunnal
+25 tondo	25 kör
+3 - direttori	3 - direktorok
+3 gruppi	3 csoport
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 vagy 4. 2-vel nincs merevség a síkjukon kívül.
+3. Registro dei passi - clic su una riga per riprenderla	3. Lépésnapló - kattints egy sorra a visszaállításához
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω vagy 4:1 balun
+36 Ω + terra	36 Ω + föld
+4 - tutto insieme	4 - mind együtt
+4 lati	4 oldal
+4 sorgenti: vedi tabella	4 forrás: lásd a táblázatot
+432 isol.	432 szig.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 adatellenőrzés, IC8TEM jóváhagyta 2026.11.15-én: küszöbök és magyarázatok a kézikönyv 11. fejezetében.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 láb kb. 18 dBi, 12 láb kb. 20,5 dBi
+75 ohm ideale	75 ohm ideális
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8-szor hosszabb a sugárnál. Vastag huzaloknál vagy rövid szegmenseknél (vastag csövek UHF-en, közeli elemek,\n
+9 fili	9 huzal
+9 fili a 0,1 λ	9 huzal 0,1 λ-nál
+Accorciamento del pilotato	A táplált elem rövidülése
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	8 % feletti rövidülés: a lineáris becslés nem megbízható, ellenőrizd NEC-cel.
+Allega il modello aperto	A megnyitott modell csatolása
+Allega il registro di oggi	A mai napló csatolása
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	A hullámok RMS-magassága és az antenna tengerszint feletti magassága, a Iránykarakterisztikák > Valós terep alatt.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	A pásztázás szélessége a frekvencia körül, az impedanciagrafikonhoz.
+Antenna a	Antenna itt:
+Applica la freccia al modello NEC	A belógás alkalmazása a NEC-modellre
+Approvata, in preparazione: non ancora attiva in questa versione.	Jóváhagyva, előkészítés alatt: ebben a verzióban még nem aktív.
+Apri la cartella	Mappa megnyitása
+Apri un modello nella finestra principale	Nyiss meg egy modellt a főablakban
+Apro il modello e il diagramma 3D resta vuoto.	Megnyitom a modellt, és a 3D nézet üres marad.
+Area al vento dell'antenna	Az antenna szélfelülete
+Area al vento totale	Teljes szélfelület
+Area al vento totale e lista di taglio	Teljes szélfelület és vágási lista
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Figyelem: ne használd szögben csatlakozó vagy a csatlakozásnál eltérő átmérőjű huzalokkal.\n
+Bobina di carico per la risonanza	Hosszabbító tekercs a rezonanciához
+Boom con il tirante	Tartócső merevítővel
+C1 in serie con la loop	C1 sorosan a hurokkal
+C1 serie, C2 parallelo	C1 soros, C2 párhuzamos
+C2 in parallelo all'ingresso	C2 párhuzamosan a bemenettel
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Kalkulátorok > Vevőantennák: alacsony dipól, K9AY, 4-square RX, Hi-Z 2/3/8 elem, az RDF-re optimalizált sorok közötti fázissal és a földcsatlakozásra vonatkozó figyelmeztetéssel.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mechanikai számítások (Szél és Kiegyensúlyozás), Kalkulátorok > Osztók és keresztezett Yagik, Objektumok > Kábel és balun és stack keret, HF terhelések.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Előzetes méretezés: a telepítéshez jogosult szakember terve érvényes.
+Candidati da controllare	Ellenőrzendő jelöltek
+Categoria	Kategória
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	A hely kitettségi kategóriája (NTC 2018, 3.3.II táblázat és 3.3.2 ábra): a terep érdességi osztályától (A városközpontok ... D akadálymentes területek, tenger) és a parttól való távolságtól függ. I = nyílt part vagy tenger, V = városközpont.
+Cebik, poi NEC	Cebik, utána NEC
+Centro della banda scelta:\n	A választott sáv közepe:\n
+Con ghiaccio	Jéggel
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Jéggel: a szél 0,6-szorosára csökkentve és a jobb oldali mező radiális jege (egyszerűsített kombináció, ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Ugyanazzal a maggal a teszt ugyanúgy ismétlődik.
+Condizione della sorgente non capita ("	A forrás feltétele nem értelmezhető ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Azonnal ellenőrzi a GitHubot, a 3 percet nem várva meg. Ha van új verzió, letölti, értesít és újraindít, mint az automatikus frissítés (10 másodperc, a modell újra megnyílik). Kikapcsolt automatikus frissítéssel is működik.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Mindig ellenőrzi a szegmentálás-ellenőrzés és a Figyelmeztetések (8 normál maggal, 2 kibővített maggal).
+Copie per candidato	Másolatok jelöltenként
+Coppia sulla staffa boom-mast	Csavarónyomaték a tartócső-árboc bilincsben
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Létrehozza a zipet a data/segnalazioni mappában, és megnyitja a GitHub «New issue» oldalát a már megírt szöveggel. A zipet te csatolod, kézzel: a program magától nem küld semmit.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Földgörbület, a Iránykarakterisztikák > Valós terep alatt.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Az átmérő kívül esik Cebik képleteinek tartományán (1E-6 és 1E-2 lambda között).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	A második talaj távolsága és típusa: jóváhagyva az 1.5-höz (Valós terep 2).
+Distanze di stack HF	HF stack-távolságok
+Distanze di stack: accoppiamento e distanza migliore	Stack-távolságok: csatolás és legjobb távolság
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Az optimalizálás után a legjobb eredmények a tűrésekkel végzett ellenőrzésre kerülnek. 0 = nincs ellenőrzés.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Nagyon alacsony végek: vigyázz az emberekre és állatokra (nagy feszültség a végeken).
+F/B peggiore	Legrosszabb F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq fájl: az AutoEZ TLParms-os vonalai (veszteséges kábelek) névleges Zo-t és VF-et használnak veszteség nélkül: a NEC TL-kártyája veszteségmentes.
+Filo riflettore	Reflektorhuzal
+Filo ripiegato	Hajtott huzal
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Hosszú hairpin (több mint 0,2 lambda): jobb csökkenteni a távolságot vagy vastagabb vezetőket használni.
+Forza del vento di progetto	Tervezési szélerő
+Forza l'aggiornamento	Frissítés kényszerítése
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	A húr belógása: mennyivel van az egyenes szakasz hálója a paraboloid alatt a fesztáv közepén (a fazettázásba beszámít). A szíjak teljes tömege {4:0.00} kg{5}.
+Freccia tolta dal modello.	A belógás eltávolítva a modellből.
+Ghiaccio radiale	Radiális jég
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Az MMANA fájlok mindig újraszegmentálódnak a NEC-2-höz (kézikönyv, 10. fejezet).
+I lobi si leggono nella tabella delle distanze di stack.	A nyalábok a stack-távolságok táblázatában olvashatók.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (kerekít), FIX (csonkol), MOD, MAX, MIN, ODD (páratlan egész: hasznos a táplált huzal szegmenseihez).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	A normál NEC2 minden huzalt vékony vonalként kezel: ez addig érvényes, amíg a szegmens legalább\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Egyetlen reflektorhuzal nagyon kis javulást ad (Cebik): jobb az ernyő vagy a 9 huzal.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Az árboc túllépi a folyáshatárt: vastagabb árboc vagy rövidebb kinyúlás.
+Impedenza del cavo	Kábelimpedancia
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Más formában: az Adatellenőrzések r5 ellenőrzése jelzi, ha a nyereség meghaladja a tartócső hosszához tartozó fizikai maximumot.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktivitás N²-tel (szoros menetek) és egymenetes NEC-modell: itt a NEC csak ennek az egy menetnek a geometriáját ellenőrzi.
+Interasse della forcina	Hairpin távolság
+Isole (tranne Sicilia e Sardegna) e mare aperto	Szigetek (Szicília és Szardínia kivételével) és nyílt tenger
+Kernel esteso del NEC2 (scheda EK).\n	Kibővített NEC2 mag (EK kártya).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	A hairpin távolságának nagyobbnak kell lennie a vezető átmérőjénél.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	A Slim Jim a sugárzót felül lefelé hajtott huzallal zárja, egészen közvetlenül a stub fölé.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Ezt a Szegmentálás ellenőrzése ablak végzi (a fenti gomb).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	A hairpin szimmetrikus: nem torzítja az iránykarakterisztikát, mint a gamma. A táppontnál továbbra is kell balun vagy fojtó.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	A hairpin csak akkor működik, ha a táplált elem R-je kisebb a kábel impedanciájánál: nagyobb R-hez használj gammát vagy transzformátort.
+La prepara IC8TEM: non ancora attiva.	IC8TEM készíti: még nem aktív.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Az EZNEC Geometry Check hat szabálya, minden számításnál, a Figyelmeztetések fülön.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: korrekció nélkül Z = {0:0.0} {1}j{2:0.0} ohm (korrekcióval {3:0.0} {4}j{5:0.0} ohm).
+Località	Helyszín
+Loop orizzontale di 1 λ	Vízszintes 1 λ hurok
+Lunghezza del pilotato	A táplált elem hossza
+Lunghezza della forcina	A hairpin hossza
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	A zipbe teszi a megnyitott modellt (.nec), akkor is, ha nincs mentve.
+Mette nello zip il registro di oggi della cartella registri.	A zipbe teszi a mai naplót a logs mappából.
+Momenti al mast	Nyomatékok az árbocon
+Momento al cuscinetto	Nyomaték a csapágynál
+NEC: risonanza cercata dal motore	NEC: a rezonanciát a motor keresi
+NOTE SU QUESTA VERSIONE (fase 0)\n	MEGJEGYZÉSEK ERRŐL A VERZIÓRÓL (0. fázis)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	ÚJ · talaj felett: magasságok, távolságok, kívánt kisugárzási szögek
+Nel modello non ci sono elementi orizzontali diritti	A modellnek nincsenek egyenes vízszintes elemei
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	A stack táblázatában és a modell Objektumaiban (stack keret, osztók).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	A geometriakártyákba szóközök nélkül írd a kifejezéseket, például:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Nincs javasolt távolság
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Nincs javasolt távolság: mind meghaladja a maximális aktív SWR-t.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	A fájlokban nincs IP-cím, e-mail, felhasználónév: a saját mappa útvonala «~» lesz. GitHub-fiók nélkül a zipet úgy küldöd el, ahogy akarod.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Még nem automatikus: kézzel végezhető az AGT-teszttel a Figyelmeztetésekben (ARRL 24., 4nec2).
+Numero di spire	Menetszám
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Minden másolat méretei véletlenszerűen eltolva a Tűrések fül tűrésein belül (alapértelmezés: hossz ±1 mm, pozíció ±2 mm, átmérő ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	A megnyitott modell mellett véletlenszerűen választott indulások minden változó minimuma és maximuma között. 0 = mint korábban.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	A Zaj/GT/Stack fül Valós égbolt zaja oldala: a skynoise számítás C#-ra portolva (HEALPix térképek olvasása, interpoláció, csillagidő, koordináták, Hold) és G8ONH két térképe a data/cielo mappában.
+Partenze a caso	Véletlen indulások
+Perimetro Cebik	Cebik-féle kerület
+Peso del boom	A tartócső tömege
+Pi-greco	Pi-tag
+Prepara la segnalazione	Jelentés előkészítése
+Proposta	Javaslat
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c teszt 145 MHz-en (12 mm-es csövek 40 mm-re): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Mikor kell: szegmens/sugár arány nagyjából 2 és 8 között (2 alatt egyik sem megbízható).\n
+Quota s.l.m.	Tszf. magasság
+R del pilotato	A táplált elem R-je
+ROS attivo minimo {0}	Minimális aktív SWR {0}
+Raggio equivalente dei due conduttori	A két vezető egyenértékű sugara
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	A táplált elem jelenlegi reaktanciája: ha pozitív, a táplált elemet tovább kell rövidíteni.
+Reattanza della forcina	A hairpin reaktanciája
+Reattanza voluta del pilotato	A táplált elem kívánt reaktanciája
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktancia: kl = pi/2 felett (vagy túl vastag vezetővel) az AEH-képlet nem érvényes, használj NEC-et.
+Reinstalla la versione attuale	A jelenlegi verzió újratelepítése
+Rel Z non positiva	Re Z nem pozitív
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	A táplált elem ellenállása rezonanciában, a modellből vagy a NEC-számításból.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Az újraindítás nem sikerült: zárd be és nyisd meg újra kézzel a YA-NEC-et.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Letölti és újratelepíti akkor is, ha a verzió ugyanaz: hasznos, ha egy programfájl megsérült.
+Scansione	Pásztázás
+Scegli il candidato con	A jelölt kiválasztása eszerint:
+Schermo	Ernyő
+Scrivi due frequenze diverse.	Írj be két különböző frekvenciát.
+Segnala un problema	Probléma jelentése
+Seme del caso	Véletlen mag
+Serve solo per la reattanza (dipolo e monopolo).	Csak a reaktanciához kell (dipól és monopól).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	2 vagy több menetnél használt: 2 vezetőátmérő alatt a valós veszteség a közelségi hatás miatt nő (nincs számolva).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	A Iránykarakterisztikák > Valós terep részben használt: tengeri visszaverődés divergenciatényezővel és érdességgel.
+Sicilia e provincia di Reggio Calabria	Szicília és Reggio Calabria megye
+Sollecitazione	Feszültség
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	0,25 λ felett a nyaláb süllyedni kezd: kevésbé alkalmas NVIS-re.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	30 MHz felett Cebik regresszióját azon a tartományon kívül használjuk, amelyre itt kínáljuk (HF-huzalok): jobb az Automatikus vagy a NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	0,1 λ alatt a felfelé irányuló nyereség csökken (Cebik): egy nagyon alacsony antenna nem nyer semmit.
+Sotto l'antenna	Az antenna alatt
+Spina (tubo o tondo) dentro il giunto telescopico.	Dugó (cső vagy rúd) a teleszkópos illesztésen belül.
+Spina interna nei giunti	Belső dugó az illesztésekben
+Stack con il ROS attivo piu' basso	Stack a legalacsonyabb aktív SWR-rel
+Staffe e mast	Bilincsek és árboc
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Idő: kb. (indulások + 1)-szerese a mostaninak, plusz jelöltek x másolatok számítás.
+Tensione nel mast al cuscinetto	Feszültség az árbocban a csapágynál
+Tiro del tirante	A merevítő húzóereje
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	A csövek az Elvékonyítás táblázatból: a méretek ugyanazok, mint a NEC-modellben.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Minden távolság meghaladja a maximális aktív SWR-t ({0}): nincs javasolt távolság. Emeld a maximális aktív SWR-t, próbáld az antenna saját referenciaimpedanciáját, vagy hangold az egyedi antennát. A mátrix és a grafikon a legalacsonyabb aktív SWR-ű távolságra vonatkozik.
+V invertito	Fordított V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), csatolás, aktív SWR, legjobb távolság, két frekvencia
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Csúcs-szélsebesség a helyszínen: vb sqrt(ce), ahol vb = vb,0 ca (NTC 2018, 50 éves visszatérési idő) és ce(z) a kitettségi kategóriából az antenna magasságában.
+Velocità	Sebesség
+Velocità a mano	Sebesség kézzel
+Vento di sopravvivenza	Túlélési szél
+Vento di sopravvivenza del boom	A tartócső túlélési szele
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Az elemre merőleges szél, amelynél az első pont eléri a folyáshatárt (önsúllyal és jéggel együtt).
+X da aggiungere al pilotato	A táplált elemhez adandó X
+X del pilotato	A táplált elem X-e
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). A végső ellenőrzést a NEC-motor végzi a hairpines modellen.
+Z0 della forcina	A hairpin Z0-ja
+Z0 della linea dei due conduttori	A kétvezetékes vonal Z0-ja
+Zona buona	Jó zóna
+al centro	középen
+caso peggiore	legrosszabb eset
+caso peggiore delle due	a kettő közül a rosszabb
+cerca...	keresés...
+copie entro le soglie	másolatok a küszöbökön belül
+corrente sinusoidale	szinuszos áram
+distanza dal boom	távolság a tartócsőtől
+distanza dall'inizio del boom	távolság a tartócső elejétől
+due condensatori sul lato basso	két kondenzátor az alsó oldalon
+effetto: calcolo in corso…	hatás: számítás…
+forza del vento x sbalzo	szélerő x kinyúlás
+il caso peggiore migliore	a legjobb legrosszabb eset
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	az egyenértékű, vastagabb dipólnak kevesebb mint 73 Ω-ja van
+il voto medio migliore	a legjobb átlagpontszám
+induttiva, in parallelo	induktív, párhuzamosan
+la percentuale migliore di copie entro le soglie	a küszöbökön belüli másolatok legjobb aránya
+linea a due fili	kétvezetékes vonal
+m  mast a	m  árboc itt:
+m dal suolo	m a talaj felett
+m sopra il boom, attacco al	m a tartócső felett, rögzítve itt:
+media delle due	a kettő átlaga
+mm  lungo	mm  hosszú
+mm, acciaio	mm, acél
+molto buono	nagyon jó
+molto povero	nagyon gyenge
+nessun rinforzo	merevítés nélkül
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	+12 mm-ig egyetlen kereskedelmi cső sem elég: nézd át az elvékonyítást
+nessuna distanza sotto il ROS attivo massimo	nincs távolság a maximális aktív SWR alatt
+partenza dal modello aperto	indulás a megnyitott modellből
+per lato, teso per annullare il momento verticale al mast	oldalanként, megfeszítve, hogy kioltsa az árbocon a függőleges nyomatékot
+primo cedimento: tubo Ø	első tönkremenetel: cső Ø
+regge il vento di progetto con il 20 % di margine	20 % tartalékkal bírja a tervezési szelet
+riferimenti bibliografici	irodalmi hivatkozások
+sbalzo sopra il cuscinetto	kinyúlás a csapágy felett
+schermo 1 λ x 1 λ	ernyő 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	sűrű szegmensek) a kibővített mag pontosabb képletet használ, és az eredmény megbízhatóbb.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	dugó nélkül a belső cső a külső peremére támaszkodik, és az első 5 cm feszültségére 1,25-ös tényező vonatkozik: becslés, a bilincsek és rések sokat változtatnak az eredményen.
+sollecitazione / snervamento	feszültség / folyáshatár
+tubo piu' grosso	vastagabb cső
+un filo riflettore	egy reflektorhuzal
+zona di cedimento	tönkremeneteli zóna
+ø dei conduttori della forcina	a hairpin vezetőinek ø-je
+ø del filo	huzal ø
+ø del pilotato	a táplált elem ø-je
+accordata	hangolt
+accordate	hangolt
+alimentazione	táplálás
+alluminio	alumínium
+allungata	meghosszabbított
+altro	egyéb
+anello	hurok
+angolo	szög
+antiorario	óramutatóval ellentétes
+aritmetico	számtani
+automatico	automatikus
+banda	sáv
+bande	sávok
+bordi	peremek
+buono	jó
+capacitiva	kapacitív
+carichi	terhelések
+carico	terhelés
+cartesiana	derékszögű
+cavi	kábelek
+cavo	kábel
+centimetri	centiméter
+centina	borda
+cerchio	kör
+condensatore	kondenzátor
+corrente	áram
+destra	jobb
+diagramma	iránykarakterisztika
+diametro	átmérő
+differenza	különbség
+dipoli	dipólok
+dipolo	dipól
+diretta	közvetlen
+diritto	egyenes
+due	kettő
+elementi	elemek
+elemento	elem
+elimina	törlés
+equilatera	egyenlő oldalú
+esito	eredmény
+esperimenti	kísérletek
+esponenziale	exponenciális
+fase	fázis
+ferriti	ferritek
+fili	huzalok
+filo	huzal
+forcina	hairpin
+forma	alak
+formule	képletek
+frequenza	frekvencia
+geometria	geometria
+ghiaccio	jég
+giudizio	értékelés
+gradi	fok
+griglia	rács
+guadagno	nyereség
+incrociata	keresztezett
+larghezza	szélesség
+lato	oldal
+lega	ötvözet
+libera	szabad
+libero	szabad
+linea	vonal
+lineare	lineáris
+linee	vonalak
+lobi	oldalnyalábok
+locale	helyi
+mai	soha
+manicotto	hüvely
+mano	kézzel
+meccanica	mechanika
+mezzaonda	félhullám
+millimetri	milliméter
+misure	méretek
+modello	modell
+modo	mód
+nessuna	nincs
+nota	megjegyzés
+nuovo	új
+operativo	üzemi
+orario	óramutatóval megegyező
+ottagono	nyolcszög
+palo	árboc
+parabola	parabola
+passo	menetemelkedés
+perdite	veszteségek
+perfetto	tökéletes
+piano	sík
+piatto	lapos
+piedi	láb
+polare	poláris
+pollici	hüvelyk
+propria	saját
+punto	pont
+quadrato	négyzetes
+quadro	négyzetes
+quota	magasság
+radiali	radiálok
+radiatore	sugárzó
+raggio	sugár
+rame	réz
+ramo	ág
+rapidi	gyors
+rastremazioni	elvékonyítások
+rete	hálózat
+rettangolo	téglalap
+riepilogo	összefoglaló
+riflettore	reflektor
+riga	sor
+rombo	rombusz
+scarso	gyenge
+scarto	eltérés
+schiacciata	lapított
+sempre	mindig
+senso	irány
+si'	igen
+sinistra	bal
+soglia	küszöb
+sorgenti	források
+sotto	alatt
+spire	menetek
+staffe	bilincsek
+stato	állapot
+sufficiente	elegendő
+tetto	tető
+tipo	típus
+tirante	merevítő
+togli	eltávolítás
+tondo	kör
+traffico	forgalom
+trasformatori	transzformátorok
+trombe	tölcsérek
+tubi	csövek
+tubo	cső
+tutti	mind
+uguale	egyenlő
+uguali	egyenlők
+uso	használd
+a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU-nál; mind a maximum felett: {1}
+% del mezzo boom	a fél tartócső %-a
++ aggiungi	+ hozzáadás
++ aggiungi variabile	+ változó hozzáadása
++ correzione del boom	+ tartócső-korrekció
++ nuova	+ új
++ trappola	+ csapda
++ verso il disco.	+ a parabola felé.
++90 gradi Z	+90 fok Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- számtani: pontosan félúton a sáv IARU-határai között (például 145,000 MHz a 2 m-en),\n
+- correzione del boom	- tartócső-korrekció
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- üzemi: a frekvencia, ahol valóban forgalmazol (például 144,300 MHz a 2 m-en, 432,200 a 70 cm-en),\n
+-10 (nero) 10-100 MHz	-10 (fekete) 10-100 MHz
+-10 nero	-10 fekete
+-2 (rosso) 0,25-10 MHz	-2 (piros) 0,25-10 MHz
+-2 rosso	-2 piros
+-6 (giallo) 3-40 MHz	-6 (sárga) 3-40 MHz
+-6 giallo	-6 sárga
+-90 gradi Z	-90 fok Z
+-> segmento NEC	-> NEC-szegmens
+. "Annulla" torna indietro.	. A «Visszavonás» visszalép.
+. Antenna base: fili 1-	. Alapantenna: huzalok 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Ilyen nagy Q-nál a pásztázás csak néhány kHz-et fedhet le.
+. Salvalo con Salva con nome.	. Mentsd a Mentés másként paranccsal.
+. Trascina per ruotare, rotella per ingrandire.	. Húzd a forgatáshoz, görgő a nagyításhoz.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Használj vékonyabb huzalt, nagyobb magot vagy két egymásra helyezett magot.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (Sengupta 2021 nyomán) és GMRT 19.1 táblázat
+12 (errore / HPBW)^2	12 (hiba / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passzív gyűrű: kerület {0:0.000} lambda, forrás és kondenzátor nélkül; a hatás a teljes modellben látszik (direktor vagy reflektor).
+Automatico	Automatikus
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, mint a nec2c és az xnec2c: a forráskód a programmal együtt jár (COPYING fájl).\n
+Provincia di Trieste	Trieszt megye
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	és C#-ban a YA-NEC-hez. Referencia-felület: xnec2c, 5B4AZ és Eric KJ7LNW munkája.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	hatásfok a távoli térből számolva, Prad / (Prad + veszteségek) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	az impedancia és a veszteségek egyre kevésbé megbízhatók, ahogy a huzal lejjebb kerül (lásd BOG a kézikönyvben). Biztos eredményhez: legalább lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	{3:0.00} m átmérőig hozható létre; a mellette lévő apertúra-számítás bármilyen átmérőre érvényes, és már figyelembe veszi a bordákat (fenti mező).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} szegmens: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} ennyi ohmon: {5}, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, hatásfok {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° eleváció
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. kiadás, 18. fejezet (W9PE 2 m-es Yagija): három elem 0,2 λ-nyira, kb. 7 dBi és 15 dB feletti F/B.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• A YA-NEC egyezése a nec2c-vel (20/15/10 m-es rudak): reflektorok 0,185 / 0,197 / 0,222 λ-nál, direktorok 0,095 / 0,116 / 0,114 λ-nál: a források tartományain belül.
+↶ Annulla	↶ Visszavonás
+↷ Ripeti	↷ Mégis
+■ Ferma	■ Leállítás
+▶ Avvia	▶ Indítás
+☐ mantieni lunghezza del boom	☐ a tartócső hosszának megtartása
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ nincs figyelmeztetés: a szegmentálás megfelel a választott szintnek
+✓ nessun errore e nessun avviso	✓ nincs hiba és nincs figyelmeztetés
+variabili del modello	a modell változói
+nuova variabile dal modello	új változó a modellből
+Scrivi una variabile nella linguetta Variabili…	Változó írása a Változók fülön…
+Elemento diritto	Egyenes elem
+Elemento piegato	Hajlított elem
+Variabile nuova	Új változó
+Minimo / massimo	Minimum / maximum
+Cosa cambia	Mi változik
+in ocra: dove agisce la variabile	okkersárgával: ahol a változó hat
+Crea la variabile	Változó létrehozása
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	A(z) {0} változó létrejött: a geometria nem változik. A Geometria sáv «Visszavonás» gombja eltávolítja.
+Struttura 3D: dove agisce la variabile ▾	3D szerkezet: ahol a változó hat ▾
+Struttura 3D ▸	3D szerkezet ▸
+Clic: nasconde o mostra la struttura	Kattintás: elrejti vagy megmutatja a szerkezetet
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	folytonos okker: használja a változót · szaggatott okker: egy másik változón keresztül használja
+attraverso {0}: fili {1}	ezen keresztül: {0}: huzalok {1}

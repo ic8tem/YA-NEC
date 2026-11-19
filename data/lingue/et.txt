@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Kui kattev on värv: kerge, keskmine või tugev. Tabeli real on loor kergem, et numbreid saaks lugeda.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Traat {0} valitud 3D-vaates: tabeli rida {1}
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Traat {0}: pole traaditabelis (geomeetriakaart pole GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Kontrollib kohe uut versiooni (ootamata 3 minutit).
+terreno reale	tegelik maastik
+Locatore	Lokaator
+da 8 a 12 caratteri	8 kuni 12 märki
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	6 märgiga võib punkt olla kilomeetreid mööda: maastikuprofiil vajab vähemalt 8 märki.
+Quota sito	Asukoha kõrgus
+Altezza antenna	Antenni kõrgus
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Antenni keskpunkti kõrgus maapinnast. Kui see erineb mudeli omast, tõstetakse või langetatakse NEC-i diagrammi sama voolujaotusega.
+Distanza max	Max kaugus
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Asimuut ja kaugused arvutatakse uuesti iga lokaatori muutusega (suurring, 6371 km sfäär).
+Terra	Maa
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Vähendab mere peegeldustegurit Amenti teguriga 0,25 m lainete jaoks (standardhälve).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	kareda pinna statistiline mudel (Ament 1953): kehtib libisevate nurkade ja ühtlase mere korral.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Langetab profiili Maa kõverusega (efektiivne raadius 4/3 normaalse refraktsiooni korral) ja vähendab kaugeid peegeldunud kiiri hajumisteguriga.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standardatmosfäär (k = 4/3); juhtekanalite või inversioonide korral näiv kõverus muutub.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Kõrgeim seljak antenni ja väljumissuuna vahel nõrgendab otsekiirt nagu serv (Fresneli integraal), nagu HFTA-s.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	üksik noaserv: ümarad seljakud või mitu järjestikust seljakut lähendatakse kõrgeimaga.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Kordab arvutust iga 10 asimuudikraadi järel (ainult DEM) ja näitab headusarvu roosil, antenn pööratud igale asimuudile.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	antenn alati pööratud profiili asimuudile: kehtib pööratava antenni korral.
+Cartesiana dBi / gradi	Ristkoordinaadid dBi / kraadid
+0–180° intero	0–180° täis
+Zoom angolare	Nurga suum
+Sovrapponi alla linguetta Verticale	Kata vahekaardile Vertikaalne
+premi Calcola	vajuta Arvuta
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Kordab arvutust antenniga 6 kuni 30 m (HF) või 2 kuni 30 m (VHF) ja näitab kõrgust, mille headusarv teekonnal on parim.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	voolud jäävad arvutatud mudeli omadeks: kõrguse mõju takistusele ja vooludele ei arvestata (nagu HFTA-s).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Vaja on ARRL Antenna Booki saabumisnurkade tabeleid (.PRN-failid riba ja piirkonna kaupa): niipea kui need on olemas, aktiveerub see ja näitab oranže ribasid.
+locatore non valido	vigane lokaator
+sul mare	mere kohal
+sul terreno	maismaa kohal
+profilo reale	tegelik profiil
+terreno piatto	tasane maa
+orizzonte ostruito	varjatud horisont
+° (scala angolare ×	° (nurgaskaala ×
+← dietro	← taha
+avanti →	ette →
+statistiche degli angoli di arrivo: non caricate	saabumisnurkade statistika: laadimata
+rosa 0–360°: calcolo in corso…	roos 0–360°: arvutan…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Vali profiilifail (klõpsa "HorizonProfilerist").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM pole saadaval: esmakasutusel on TINITALY või SRTM1 allalaadimiseks vaja võrku (siis jäävad need kausta data/dem).
+Profilo del terreno	Maastikuprofiil
+Lobo di elevazione	Kõrgussagar
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Arvuta esmalt mudel (nupp Arvuta üleval): antenni diagramm tuleb NEC-ist.
+da file	failist
+dal DEM	DEM-ist
+rispetto alla stessa antenna su terreno piatto	sama antenni suhtes tasase maa kohal
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Erinevus tegeliku profiili kohal oleva sagara ja tasase maa kohal oleva sagara vahel, keskmiselt kasulike nurkade üle.
+Guadagno a 5° / 10°	Võimendus 5° / 10° juures
+Guadagno a 1° / 3°	Võimendus 1° / 3° juures
+Angoli coperti a -3 dB	-3 dB juures kaetud nurgad
+primo lobo sul profilo reale	esimene sagar tegeliku profiili kohal
+calcolo…	arvutan…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Vaba ruumi mudel: voolud on maata, nagu HFTA kasutatav vaba ruumi diagramm. Lähedase maa arvestamiseks arvuta mudel tegeliku maaga.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profiil kehtib ainult ühe asimuudi kohta: pööratav antenn vajab rohkem suundi (kast "Kõik asimuudid").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Meetod nagu HFTA-s (N6BV): otsekiir + peegeldunud kiired profiili igal tahul + difraktsioon üle seljakute. Antenni diagramm tuleb NEC-ist; see arvutus lisab maastiku.
+Piatto	Tasane
+Reale	Tegelik
+Primo minimo	Esimene miinimum
+Punto di riflessione	Peegelduspunkt
+Orizzonte	Horisont
+Uso: rotte DX in HF (angoli bassi 1–15°).	Kasutus: HF DX-teekonnad (madalad nurgad 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Kasutus: tropo ja MS (0–5°), EME madala Kuuga (maavõimendus Kuu tõusul/loojangul).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Kõrgus, mille keskmine võimendus teekonna kasulikel nurkadel on suurim.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	arvutatud mudeli voolud nihutatud kõrguses: takistus ja maaga sidestus jäävad mudeli omadeks.
+Calcola prima il terreno reale	Arvuta esmalt tegelik maastik
+Esporta il lobo sul terreno reale	Ekspordi sagar tegeliku maastiku kohal
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Pildid: Esri, Maxar, Earthstar Geographics ja GIS-kasutajate kogukond
+© i contributori di OpenStreetMap	© OpenStreetMapi kaastöötajad
+Sfondo	Taust
+Foto aerea	Aerofoto
+Solo griglia	Ainult ruudustik
+Griglia	Ruudustik
+Cerca	Otsi
+⌖ Centra sul locatore	⌖ Tsentreeri lokaatorile
+Punto scelto	Valitud punkt
+Coordinate	Koordinaadid
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klõps kaardil = antenni punkt; lohista = liiguta; ratas = suum (ruudustik läheb 6-lt 8, 10, 12 märgile). Paks raam = 6-märgiline ruut.
+non disponibile	pole saadaval
+Lunghezza elementi	Elemendi pikkus
+Posizione sul boom	Asend poomil
+Uniforme	Ühtlane
+Distribuzione	Jaotus
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element kinnitatud klambrisse keskelt nihkes: nihe piki oma telge, asenditolerantsiga.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	tegelik klamber muudab ka elektrilist pikkust poomi juures: selleks kasuta vahekaarti Poomi parandus.
+nuovo a ogni avvio	uus igal käivitusel
+Numero prove	Katsete arv
+Frequenze	Sagedused
+Seme casuale	Juhuseeme
+OBIETTIVO LISTA DI TAGLIO	LÕIKENIMEKIRJA EESMÄRK
+Calo F/B max	Max F/B langus
+ROS max	Max SWR
+Ferma	Peata
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Toidetud elemendi lähedased elemendid on tavaliselt kõige kriitilisemad; poomi lõpus olevad taluvad suuremaid vigu.
+l'istogramma serve al Monte Carlo	histogramm on Monte Carlo jaoks
+5% peggiore	halvim 5%
+Posizione mm	Asend mm
+Lunghezza mm	Pikkus mm
+Tolleranza ammessa	Lubatud tolerants
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Punasega elemendid, mis vajavad ehitustolerantsist väiksemat.
+Calcola prima il modello	Arvuta esmalt mudel
+sensibilita'	tundlikkus
+Tolleranze: fermato	Tolerantsid: peatatud
+Diametro mm	Läbimõõt mm
+Tolleranza ammessa mm	Lubatud tolerants mm
+Avvia prima il calcolo	Käivita esmalt arvutus
+Esporta la lista di taglio	Ekspordi lõikenimekiri
+Lista di taglio	Lõikenimekiri
+Obiettivi	Eesmärgid
+Calo massimo del F/B	Maksimaalne F/B langus
+ROS massimo	Maksimaalne SWR
+Tolleranze di costruzione	Ehitustolerantsid
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Kavandatud (eskiis 13, kinnitamisel): selles versioonis veel aktiivne pole.
+Al quadro 20×2 mm	Al kandiline 20×2 mm
+Al quadro 25×2 mm	Al kandiline 25×2 mm
+Al quadro 30×2 mm	Al kandiline 30×2 mm
+Al quadro 40×2 mm	Al kandiline 40×2 mm
+Al tondo 25×1,5 mm	Al ümar 25×1,5 mm
+Al tondo 30×2 mm	Al ümar 30×2 mm
+Al tondo 40×2 mm	Al ümar 40×2 mm
+Al tondo 50×2 mm	Al ümar 50×2 mm
+Zona NTC	NTC tsoon
+Quota sito as	Asukoha kõrgus kui
+Periodo ritorno	Kordumisperiood
+Categoria esposiz.	Avatuse kategooria
+Coeff. topografia	Topograafiategur
+Antenna da terra	Antenn maapinnast kõrgemal
+Palo sopra rotore	Mast rootorist kõrgemal
+Ø palo	Masti Ø
+Usa elementi e boom del modello	Kasuta mudeli elemente ja poomi
+Includi telaio, palo, cavi	Kaasa raam, mast, kaablid
+Scansione direzione del vento	Tuule suuna skaneerimine
+UNITÀ	ÜHIKUD
+N e kgf affiancati	N ja kgf kõrvuti
+solo N	ainult N
+solo kgf	ainult kgf
+Mostra	Näita
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	vigane lokaator: vali tsoon käsitsi
+Telaio a H	H-raam
+Cavi e divisore	Kaablid ja jagur
+Parte	Osa
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Risti tuule korral elemendid ei suru (cross-flow, K5IU): jõud torule kasvab tema teljega risti oleva tuulekomponendi ruuduga.
+momento flettente alla staffa del rotore	paindemoment rootori klambris
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Esialgne dimensioneerimine: ei asenda inseneri kontrolli mastile, tornile ja vundamendile. Aluse moment läheb alamvahekaardile Mast ja vundament.
+Sito e norma	Asukoht ja standard
+Norma	Standard
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; tegurid CNR-DT 207 R1/2018 ja EN 1991-1-4
+Locatore / zona	Lokaator / tsoon
+Risultati	Tulemused
+Forza massima	Maksimaalne jõud
+Momento flettente alla staffa del rotore	Paindemoment rootori klambris
+Momento torcente sul rotore	Pöördemoment rootorile
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Esialgne dimensioneerimine: ei asenda pädeva inseneri kontrolli mastile, tornile ja vundamendile.
+Al tondino pieno	Al täisvarras
+Materiale elementi	Elementide materjal
+Staffe, isolatori	Klambrid, isolaatorid
+g cad.	g tk
+Dipolo + scatola	Dipool + karp
+Cavo fino al palo	Kaabel mastini
+STAFFA AL PALO	MASTI KLAMBER
+Posizione attuale	Praegune asend
+m dal riflettore	m reflektorist
+Massa / distanza	Mass / kaugus
+Vento dalla linguetta Vento	Tuul vahekaardilt Tuul
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Kasutab alamvahekaardi Tuul viimase arvutuse arvutuslikku rõhku; selle puudumisel 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Nihutab kogu mudelit piki poomi nii, et soovitatud klamber satub koordinaatide alguspunkti (kuhu kinnituvad mast ja virna raam). 3D-struktuuris Võta tagasi tühistab selle.
+Momenti in funzione della posizione della staffa	Momendid sõltuvalt klambri asendist
+Masse e aree per parte	Massid ja pindalad osade kaupa
+ultimo direttore	viimane direktor
+Staffe e isolatori	Klambrid ja isolaatorid
+Cavo sul boom	Kaabel poomil
+Massa kg	Mass kg
+Baricentro m	Raskuskese m
+Area vento m²	Tuulepind m²
+Centro area m	Pinna keskpunkt m
+solo peso	ainult kaal
+solo vento	ainult tuul
+File Touchstone .s1p	Touchstone'i fail .s1p
+Formato letto	Loetud vorming
+CAVO TRA VNA E ANTENNA	KAABEL VNA JA ANTENNI VAHEL
+R e X separate	R ja X eraldi
+Banda con ROS <	Riba, kus SWR <
+ROS: calcolato e misurato	SWR: arvutatud ja mõõdetud
+Confronto	Võrdlus
+misurato, cavo tolto	mõõdetud, kaabel eemaldatud
+R calcolata	R arvutatud
+X calcolata	X arvutatud
+R misurata	R mõõdetud
+X misurata	X mõõdetud
+Calcolato	Arvutatud
+Misurato	Mõõdetud
+Scarto	Erinevus
+Frequenza del ROS minimo	Minimaalse SWR-i sagedus
+ROS minimo	Minimaalne SWR
+nessuna correzione: calcolo e misura coincidono.	parandust pole: arvutus ja mõõtmine ühtivad.
+calcolo NEC sul campo della misura…	NEC-i arvutus mõõtevahemikus…
+Misura del VNA	VNA mõõtmine
+Tutti	Kõik
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Käivita pühkimine (nupp Pühkimine üleval), et näha F/B ja F/R kogu ribal
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = võimendus ette miinus keskmine võimsus tagumisel poolsfääril (asimuut 90-270°, kõik kõrgused üle 0°). See on ka optimeerija eesmärkide hulgas.
+Tabelle: F/B e F/R su tutta la banda	Tabelid: F/B ja F/R kogu ribal
+Valori dello sweep	Pühkimise väärtused
+ANTENNE RICEVENTI	VASTUVÕTUANTENNID
+4-square in ricezione	4-square vastuvõtuks
+8 verticali in cerchio	8 vertikaali ringis
+Modello aperto	Ava mudel
+Isotropo	Isotroopne
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = võimendus soovitud suunas miinus keskmine võimendus kogu poolruumis: erinevalt võimendusest ei sõltu see kadudest.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Kasutab vahekaardi Tegelik maastik mediaanset saabumisnurka soovitud kõrgusena (statistika riba ja piirkonna kaupa). Laadimata ARRL-i statistika korral jääb siia kirjutatud kõrgus.
+Direzione voluta	Soovitud suund
+Hz  rumore	Hz  müra
+NF ricevitore	Vastuvõtja NF
+sorgente locale az	kohalik allikas az
+Cifre di merito in ricezione	Vastuvõtu headusarvud
+Basta il segnale?	Kas signaalist piisab?
+calcolo in corso…	arvutan…
+RDF in funzione della frequenza	RDF sõltuvalt sagedusest
+Calcola prima il modello aperto	Arvuta esmalt avatud mudel
+verticale λ/4	λ/4 vertikaal
+° · dB relativi · arancio: -3 dB	° · suhtelised dB · oranž: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Keskmine võimendus eesmises sektoris miinus keskmine tagumisel poolsfääril.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN defineerib DMF-i ainult võimendusega 20 kraadi juures; siin kasutatakse keskmist eskiisi sektoris, seega pole väärtused raamatu omadega üks-ühele võrreldavad.
+molto basso: serve un preamplificatore	väga madal: vaja on eelvõimendit
+basso ma accettabile: vedi soglia	madal, kuid vastuvõetav: vt lävi
+come un'antenna trasmittente	nagu saateantenn
+F/R medio sull'emisfero posteriore	Keskmine F/R tagumisel poolsfääril
+Rumore d'antenna ai morsetti	Antenni müra klemmidel
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Väline müravõimsus klemmidel: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + keskmine võimendus kaalutuna müra päritolu järgi.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	horisondi müra kaalutud exp(-el/10 kraadi) kõrguses: esindab kaugelt madalalt saabuvat inimtekkelist müra; tegelik jaotus sõltub asukohast.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	punktallikas 5-kraadisel kõrgusel sama võimsusega kui isotroopne taust.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotroopne müra maapinna kohal; maa müra ei lisa.
+Margine sul ricevitore	Vastuvõtja varu
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Antenni müra ületab vastuvõtja müra vähem kui 6 dB: vastuvõtja piirab tundlikkust. Vaja on rohkem eelvõimendust või madalama NF-iga vastuvõtjat.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Võimendus 1,8
+Spazio richiesto	Vajalik ruum
+λ/4 in tubo quadro	λ/4 kandilises torus
+λ/4 in tubo tondo	λ/4 ümaras torus
+Solo cavi di fase	Ainult faasiliinid
+Aria	Õhk
+Uscite	Väljundid
+Z antenne	Antenni Z
+Z ingresso	Sisend-Z
+Dielettrico	Dielektrik
+Connettori	Pistikud
+Correggi accorciamento dei connettori	Korrigeeri pistikute lühenemist
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Lahutab pikkusest pistikute sisse jääva liiniosa.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	hinnang 4 mm otsa kohta N-pistikutega (3 BNC, 1,5 SMA): kõige parem on häälestada VNA-ga, lühendades 1 mm kaupa.
+Divisori	Jagurid
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Kasutab avatud virna antennide aktiivseid takistusi (üks allikas antenni kohta) ja vahekaugusi faasiliinide minimaalse pikkuse jaoks.
+CAVI DI FASE	FAASILIINID
+Lunghezza minima	Minimaalne pikkus
+Passo verticale	Vertikaalne vahekaugus
+solo cavi di fase: nessun trasformatore da costruire	ainult faasiliinid: trafot pole vaja ehitada
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω kaablit paralleelselt = 37,5 Ω
+quadro, lato	kandiline, külg
+tondo, Ø	ümar, Ø
+Z0 richiesta	Vajalik Z0
+Ø conduttore interno	Sisejuhi Ø
+VF del cavo	Kaabli VF
+λ/4 in aria, mm	λ/4 õhus, mm
+da tagliare, mm	lõigata, mm
+Z carico in parallelo	Koormuse Z paralleelselt
+Rami λ/4: Z0 = Zin · √N	λ/4 harud: Z0 = Zin · √N
+Resistenze a stella	Tähttakistid
+Isolamento tra le uscite	Isolatsioon väljundite vahel
+Perdita stimata	Hinnanguline kadu
+Carico usato	Kasutatud koormus
+non potenza di 2	pole 2 aste
+ROS all'ingresso	Sisend-SWR
+solo cavi di fase	ainult faasiliinid
+Uscita	Väljund
+Lungh. elettrica	Elektriline pikkus
+Fisica mm	Füüsilised mm
+Perdita dB	Kadu dB
+° di fase).	° faasi).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° üles); takistus jaguri juures ei kordu enam täpselt.
+Solo cavi di fase: nessun disegno da stampare	Ainult faasiliinid: pole joonist, mida printida
+Divisore	Jagur
+50 mm di controllo	Kontroll 50 mm
+GEOMETRIA	GEOMEETRIA
+λ/4 sul boom	λ/4 poomil
+stesso piano	sama tasand
+Metallico, isolati	Metall, isoleeritud
+Non metallico	Mittemetalne
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Poomi pole NEC-i mudelis: metallpoomist isoleeritud elementidega on mõju väike (poomi parandus Kalkulaatorites).
+Yagi di base	Baas-Yagi
+Disposizione	Paigutus
+Sfasamento piani	Tasandite nihe
+Cavo di ritardo λ/4	λ/4 viivituskaabel
+Includi relè e cavi reali	Kaasa tegelikud releed ja kaablid
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Lisab viivituskaabli kao (VF 0,66, 10 dB/100 m 144 MHz juures, skaleeritud sageduse ruutjuurega) ja 0,1 dB relee jaoks.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75-oomise kaabli ja koaksiaalrelee tüüpilised väärtused; programm sinu omi ei tea.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Sama faasivõrk töötab ka turnstile'i jaoks (90° ristatud dipoolid).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Eestvaade
+Componenti co-polare / cross-polare	Kopolaarsed / ristpolaarsed komponendid
+Rapporto assiale e ROS in frequenza	Teljesuhe ja SWR sõltuvalt sagedusest
+piano A	tasand A
+piano B	tasand B
+vista dal davanti — boom al centro	vaade eest — poom keskel
+piani sfalsati di λ/4 lungo il boom	tasandid nihutatud λ/4 piki poomi
+Yagi incrociate: serve una Yagi con una sola sorgente	Ristatud Yagid: vaja on ühe allikaga Yagit
+Yagi incrociate: calcolo in corso...	Ristatud Yagid: arvutan...
+Rapporto assiale in asse	Teljesuhe teljel
+Rapporto assiale a −3 dB	Teljesuhe −3 dB juures
+Isolamento tra i due piani	Isolatsioon kahe tasandi vahel
+Fase della rete sul piano B	Võrgu faas tasandil B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Täiesti ortogonaalsed ja sümmeetrilised tasandid: mudelis on sidestus ja vastupidine polarisatsioon peaaegu null. Tegelikkuses piiravad klambrid, kaablid ja väikesed asümmeetriad need umbes 25-35 dB-ni.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	1,8 MHz kuni 1296 MHz: balunite loend muutub ribaga
+LINEA DI DISCESA	TOITELIIN
+Coassiale	Koaksiaal
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Tasakaalustatud avatud liini korral pole ekraani: ühismood tuleb ainult tasakaalustamatusest. Kaart arvutab koaksiaalse juhtumi; avatud liini jaoks kasuta Liinid (TL) koos sobitajaga.
+Lungo il boom	Piki poomi
+m → palo	m → mast
+Discesa sul palo	Mööda masti alla
+Fino alla stazione	Jaamani
+Calza a massa sul palo / traliccio	Ekraan maandatud mastile / tornile
+Messa a terra all'ingresso stazione	Maandus jaama sisendis
+BALUN DA CONFRONTARE	VÕRRELDAVAD BALUNID
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 keerdu RG-213 110 mm peal: induktiivsus Wheeleri järgi, omamahtuvus Medhursti järgi.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 ja hinnanguline omamahtuvus: drosseli tegelikku takistust tuleb mõõta.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferriittoroid paralleelse madala Q-ga RLC-na.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm tipus (10 MHz seguga 31, 25 MHz seguga 43): 12 keeru tüüpilised väärtused 2 x FT-240 peal.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksiaalne λ/2 4:1: tasakaalustatud toide, ekraanid ühendatud.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	jääk-ühismood kui 600-oomine resonants f0 juures (Q 3): sõltub paigaldusest.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 hülss: lühistatud λ/4 liin ekraani ja hülsi vahel, kõrge takistus f0 juures.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Hülsi Z0 50 oomi ja 0,08 dB kadu veerandlainel.
+10 perline in ferrite sulla calza.	10 ferriitpärlit ekraani peal.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 oomi pärli kohta 144 MHz juures (segu 61), 100 oomi üle 30 MHz seguga 43: tüüpilised kataloogiväärtused.
+Caso mostrato	Näidatud juhtum
+premi Calcola il confronto	vajuta Arvuta võrdlus
+Corrente lungo la calza, dal dipolo verso il basso	Vool piki ekraani, dipoolist allapoole
+Vista laterale: corrente sulla calza	Külgvaade: vool ekraanil
+F/R medio	Keskmine F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Kadu balunis
+Potenza dissipata nel balun a 1 kW	Balunis hajuv võimsus 1 kW juures
+Banda con calza < 5 %	Riba, kus ekraani vool < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Hallid kirjed on teise riba balunid; need aktiveeruvad sageduse valimisel. HF-il loeb ka ekraan jaamani (maandatud), VHF/UHF-il osa poomil ja mastis. Ekraan on traat, mis on ühendatud toitepunkti ühe küljega, nagu tegelikkuses ilma balunita; balun on ühismoodi takistus esimeses lõigus.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Klaaskiud ei juhi: raam ei lähe NEC-i, alles jäävad ainult faasiliinide ekraanid.
+Includi palo sotto il telaio	Kaasa mast raami all
+Cavi di fase lungo i montanti	Faasiliinid piki poste
+Rotore e controventi	Rootor ja vantid
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Kavandatud: rootor ja vantid traatidena (vaja on torni mõõte).
+Materiale	Materjal
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	punane = raami osad NEC-i traatidena · katkendjoon = faasiliinide ekraan
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horisontaalne polarisatsioon: vertikaalsed postid on nõrgalt sidestatud; horisontaalne risttala ja faasiliinid mitte.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertikaalne polarisatsioon: postid ja mast on elementidega paralleelsed ja loevad rohkem; horisontaalne risttala vähe.
+Confronto senza / con telaio	Võrdlus ilma / koos raamiga
+Diagramma orizzontale sovrapposto	Horisontaalne diagramm kattes
+premi Calcola confronto	vajuta Arvuta võrdlus
+Stack: calcola prima il modello	Virn: arvuta esmalt mudel
+Stack: calcolo senza e con telaio...	Virn: arvutan ilma ja koos raamiga...
+Pezzo	Osa
+Collegato	Ühendatud
+Cavi	Kaablid
+Senza telaio	Ilma raamita
+Con telaio	Raamiga
+Z ingresso divisore	Jaguri sisend-Z
+senza telaio	ilma raamita
+con telaio	raamiga
+Stack: confronto senza / con telaio fatto	Virn: võrdlus ilma / koos raamiga valmis
+CARICHI HF	HF KOORMUSED
+INSERISCI NEL MODELLO	LISA MUDELISSE
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Müts läheb traadi otsa (b või e), linear loading traadi valitud punkti.
+Inserisci nel modello	Lisa mudelisse
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Juba kinnitatud eskiisis Koormused: L-i ja C Q, f0, Z riba kaupa, pinge ja vool komponendis. Siin lisanduvad ehitustüübid.
+Trappola coassiale	Koaksiaallõks
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	sisejuht joodetakse keskmise mähise algusesse (otste vahetamine langetab resonantsi umbes 50 kHz).
+Calcola spire per f0	Arvuta keerud f0 jaoks
+Spire dell'avvolgimento (anche frazionarie).	Mähise keerud (ka murdosad).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	tegelik f0 erineb mõne protsendi: mõõda see dipmeetri või VNA-ga ja paranda keerde.
+Blocca	Blokeerib
+dipolo con	dipool koos
+Filo Ø	Traat Ø
+Calcola C per f0	Arvuta C f0 jaoks
+mm  Filo Ø	mm  Traat Ø
+mm  Passo	mm  Samm
+mm  Spire	mm  Keerud
+MHz  dal centro	MHz  keskelt
+m  Braccio	m  Haru
+m  Filo dell'elemento Ø	m  Elemendi traat Ø
+Calcola spire per la risonanza	Arvuta keerud resonantsi jaoks
+Piega	Volt
+m  Distanza tra i fili	m  Traatide vahekaugus
+Calcola la piega per la risonanza	Arvuta volt resonantsi jaoks
+Raggi	Kodarad
+m  Filo Ø	m  Traat Ø
+Verticale alto	Vertikaali kõrgus
+m  Frequenza	m  Sagedus
+MHz  Filo Ø	MHz  Traat Ø
+Calcola i raggi per la risonanza	Arvuta kodarad resonantsi jaoks
+L misurata	Mõõdetud L
+MHz  Autorisonanza f0	MHz  Omaresonants f0
+Cappello capacitivo in punta al verticale	Mahtuvuslik müts vertikaali tipus
+Bobina dalle misure	Pool mõõtudest
+Reattanza del cappello in frequenza	Mütsi reaktants sõltuvalt sagedusest
+impedenza della trappola	lõksu takistus
+Si comporta da	Käitub nagu
+Potenza persa	Kaotatud võimsus
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Saatja võimsus tabeli pingete ja kadude jaoks.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	madal riba: vool kõhus sqrt(P/73) ja lõksus I0 cos(beta a); blokeeritud riba: pinge sisemise dipooli otsas I0 Z0 jagatud lõksu ja kiirguse vahel.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	vool kõhus sqrt(P/73) ja koormuses I0 cos(beta a), kus a on kaugus keskelt.
+Risonanza propria f0	Omaresonants f0
+Q ideale	Ideaalne Q
+Q della trappola alla risonanza.	Lõksu Q resonantsil.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	pluss dielektriline kadu (tangens 3e-4 PE, 2e-4 PTFE). Mõõdetud koaksiaallõksude Q on tavaliselt 100 kuni 300.
+Lunghezza di cavo	Kaabli pikkus
++ 10 cm per le saldature	+ 10 cm jootmiseks
+R in parallelo equivalente	Ekvivalentne paralleel-R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: see on LD-koormus, mis läheb mudelisse
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipooli haru madalal ribal lõksuga, võrreldes täispikkuses haruga (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC lõksuga koormusena annab õige pikkuse.
+Induttanza misurata	Mõõdetud induktiivsus
+dalla misura	mõõtmisest
+Autorisonanza	Omaresonants
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Sagedus, millel pool resoneerib üksi oma omamahtuvusega.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	omamahtuvus Medhursti tabelist pikkuse / läbimõõdu järgi, kehtib metallmassidest kaugel olevatele ühekihilistele poolidele.
+Q della bobina alla frequenza di lavoro.	Pooli Q töösagedusel.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	traadi takistus nahaefekti tõttu korrutatuna lähedusteguriga 1 + 2 (d/p)^2 (d traat, p samm): Medhurst annab sarnased väärtused poolidele, mille pikkus on läbimõõduga sarnane.
+Reattanza della piega	Voldi reaktants
+Z0 della linea	Liini Z0
+Q della piega	Voldi Q
+Capacita' del cappello	Mütsi mahtuvus
+Capacita' del cappello verso lo spazio.	Mütsi mahtuvus ruumi suhtes.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	kodarate summa (peenike traat, 2 pi eps0 l / (ln(2l/a) - 1)) ja täisketta suunas küllastuv rõngas (8 eps0 r): kodarad varjestavad üksteist. Traatidena lisatuna arvutab NEC selle täpselt.
+in punta al verticale	vertikaali tipus
+Altezza per la risonanza	Kõrgus resonantsi jaoks
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Mõju vertikaalile
+Carichi HF: apri un modello nella finestra principale.	HF koormused: ava mudel peaaknas.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading ja mahtuvuslik müts lisatakse traatidena: teiste jaoks vali «Koormusena».
+Il cappello capacitivo si inserisce come fili.	Mahtuvuslik müts lisatakse traatidena.
+RLC parallelo	Paralleelne RLC
+Effetto sul dipolo	Mõju dipoolile
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Haru lühenemine täisveerandlaine (71,3 / f) suhtes, koormus selles punktis.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	koormatud haru liinimudel X = Z0 (cot(beta b) - tan(beta a)), x 0,95 otsaefekti tõttu.
+Esegui il test	Käivita test
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Võimendust saab näidata AGT-ga korrigeerituna (optimeerijas juba kavandatud).
+Controllo prima/dopo il calcolo	Kontroll enne/pärast arvutust
+Esito	Tulemus
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Üks või mitu kontrolli väljaspool ±0,2 dB: vaata segmentatsioon üle (3D-struktuur > Segmenteerimine... ja Kontrolli segmentatsiooni).
+Tutti i controlli entro ±0,2 dB.	Kõik kontrollid ±0,2 dB piires.
+Linea a finestra 450	Aknaliin 450 oomi
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Vajuta Arvuta: NEC arvutab avatud mudeli takistuse igal sagedusel.
+Perdita nella linea	Liini kadu
+Perdita totale	Kogukadu
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Sobitaja tüüp liini ja saatja vahel (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	kadu hinnatud võrgu koormatud Q-st (Qn = sqrt(Rmax/Rmin - 1), T ja Pi jaoks kaks sektsiooni) ja pooli Q-st; N6BV TLW arvutab komponendid ükshaaval ja võib erineda mõne kümnendiku dB võrra.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Näide: dublett 2 × 20 m (ZS6BKW/G5RV). Hoiatus, kui sobitaja näeb alla 20 Ω: suured kaod, soovitatakse liini pikendada või lühendada. Kadudega liin nagu TLW-s (N6BV, ARRL).
+USA costa est	USA idarannik
+USA costa ovest	USA läänerannik
+Giappone	Jaapan
+Caraibi	Kariibi meri
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: teenus ei tagastanud GeoTIFF-i
+GeoTIFF compresso: non supportato	Pakitud GeoTIFF: pole toetatud
+GeoTIFF: tipo di dato non supportato	GeoTIFF: andmetüüp pole toetatud
+Il file non contiene coppie distanza / quota.	Fail ei sisalda paare kaugus / kõrgus.
+Nessuno	Puudub
+Ferriti a perline	Ferriitpärlid
+Cavo e balun: segmento della sorgente non trovato.	Kaabel ja balun: allika segmenti ei leitud.
+solo palo	ainult mast
+Acciaio zincato	Tsingitud teras
+Alluminio	Alumiinium
+Vetroresina	Klaaskiud
+Montante sx/dx	Vasak/parem post
+al boom	poomi poole
+Traversa	Risttala
+Palo	Mast
+al dipolo	dipooli poole
+N, femmina	N, ema
+senza connettori	pistikuteta
+rurale tranquillo	vaikne maapiirkond
+Verticale λ/4	λ/4 vertikaal
+λ/8 di lato	λ/8 külje kohta
+0,37 λ di diametro	0,37 λ läbimõõt
+Cappello capacitivo	Mahtuvuslik müts
+W8NX bassa impedenza	W8NX madal takistus
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	jäme PTFE-dielektrikuga kaabel (RG-393) või kõrgepingekondensaatoriga LC-lõks
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Volt on pikem kui lambda/8: liin ei käitu enam konstantse induktiivsusena, kontrolli resonantsi NEC-iga, lisades selle traatidena.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Mütsi mahtuvus on hinnang (üksteist varjestavad kodarad): täpse väärtuse saamiseks lisa see traatidena ja arvuta NEC-iga.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Koormuse asend on veerandlainest kaugemal: too see keskele lähemale.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	müts läheb traadi otsa: vali esimene (b) või viimane (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	valitud punkt on traadi otsale liiga lähedal.
+questo tipo entra nel modello come carico.	see tüüp läheb mudelisse koormusena.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF koormused: YA-NEC kalkulaatori lisatud traadid
+Il file Touchstone non contiene punti di S11.	Touchstone'i fail ei sisalda S11 punkte.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV ei sisalda ridu sagedus, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT vabas ruumis, kadudeta
+IMPOSTAZIONI	SEADED
+Schiera Hi-Z di verticali corte	Lühikeste vertikaalide Hi-Z rühm
+Base del loop	Silmuse alus
+Distanza, lato o diametro	Vahekaugus, külg või läbimõõt
+Altezza delle verticali	Vertikaalide kõrgus
+Base del loop dal suolo	Silmuse alus maapinnast kõrgemal
+Fase tra le file	Faas ridade vahel
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Madal horisontaalne dipool: maapinnale lähemal kui lambda/4 läheb sagar üles. See on IV3PRK pingerea «kõrge nurga» võrdlus (RDF 7,3 dB): võrreldakse madala nurga vastuvõtuantennidega.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY, autor Gary Breed K9AY (QST, september 1997): kaks vertikaalset silmust 90 kraadi all samal mastil, lõputakisti (tüüpiliselt 390 oomi, häälestatud F/B jaoks), trafo 9:1. Siin üks silmus, pööratud valitud suunda, suletud maapinna kohal nagu leheküljel Vastuvõtt (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Vastuvõtu 4-square: neli lühikest aktiivset vertikaali lambda/8 ruudu nurkades, kiirgavad piki diagonaali. Tühi faas = täpne tagumine null (pi + beta d ridade vahel): annab suurima teoreetilise suunatavuse; tegelikud faasivõrgud (ON4UN, IV3PRK) kasutavad teisi faase ja annavad madalama RDF-i (IV3PRK 9,4 dB). Nupp otsib parima RDF-iga faasi.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Lühikeste aktiivsete vertikaalide rühmad nagu Hi-Z Antennase omad: 2 elementi end-fire (kardioid, lambda/8), 3 kolmnurgas (külg lambda/6, üks nurk valitud suunas), 8 ringis (läbimõõt 0,37 lambda: kasutatakse nelja suuna poole ja vastasolevaid). Hi-Z: 8 ringis RDF 13,4 dB oma kombineerijaga; lihtne kahe reaga mudel jääb madalamaks. Nupp otsib parima RDF-iga faasi.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikaalid algavad tegelikust maapinnast (GE 1 Sommerfeldi maaga): NEC-2 korral annab tegeliku maaga ühendatud traat takistuse, mis sõltub allika segmendist (NEC-2 juhend, EZNEC). Diagramm ja RDF on soovituslikud; tõstetud radiaalidega ühendus on kavandatud kõigile vastuvõtuantennidele.
+fase tra le file da 120 a 300 gradi per l'RDF	faas ridade vahel 120 kuni 300 kraadi RDF-i jaoks
+nessuna fase con il lobo in avanti	ükski faas ei anna sagarat ette
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Faas ridade vahel parima RDF-i jaoks: {0} kraadi (RDF {1} dB). Arvutan uuesti...
+linea d'orizzonte	horisondijoon
+scala angolare	nurgaskaala
+lobo reale sopra il piatto fino a	tegelik sagar tasase kohal kuni
+Profilo verso	Profiil suunas
+Lobo verticale e angoli di arrivo a	Vertikaalne sagar ja saabumisnurgad
+Cos'e' l'RDF	Mis on RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = võimendus soovitud suunas - keskmine võimendus kõigis suundades (W8JI; varem nimetati SNIF, 60-ndatel). See mõõdab, kui palju antenn parandab signaali-müra suhet, kui müra tuleb kõigist suundadest võrdselt; absoluutne võimendus ei loe (eelvõimendi teeb selle tasa). Keskmistatud nagu EZNEC-is: ülemine poolsfäär jagatud kogu sfääriga (4 pi). Selle kokkuleppega ühtivad tulemused IV3PRK ja W8JI/Hi-Z omadega (vertikaal 5,07 vs 5,06 ja 4,9; Beverage 350 m 13,5 vs 13,66). Piirang: tegelik müra pole ühtlane (elektriliinid, kohalik QRM): seetõttu loevad ka F/B ja sagara kuju. Saateantennide jaoks pole RDF-il mõtet: seepärast arvutatakse seda ainult sellel vahekaardil. DMF (Directivity Merit Figure, ON4UN): võimendus 20-kraadisel kõrgusel ette miinus tagumise poolruumi keskmine võimendus (asimuut üle 90 kraadi, maapinna kohal, kaalutud koosinusega pindala järgi): näitab, kui palju antenn summutab tagant tulevat müra. ON4UN hoiatab DMF-i ja RDF-i omavahel võrdlemast. Allikad: W8JI ja W8WWV (RDF), ON4UN Low-Band DXing ptk 7 (DMF, tabelid 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	kõrgus
+azimut	asimuut
+azimut a {0}°	asimuut {0}° juures
+totale	kokku
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Ava esimese nullini (FNBW): {0}°;  kõrgeim külgsagar: {1}
+Didascalie {0} %	Sildid {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB vs allika {1}: kontrolli mõõte, lõpetust ja maad (allikas võib kasutada teist maad või geomeetriat).
+Azimut a {0}° · {1} MHz	Asimuut {0}° juures · {1} MHz
+Azimut a {0}° di elevazione	Asimuut {0}° kõrgusel
+RUMORE	MÜRA
+Apri la scheda {0}	Ava kaart {0}
+caso mostrato: {0}	näidatud juhtum: {0}
+Rastremazioni	Teleskoopilised
+BANDA	RIBA
+λ/2 coassiale 4:1	koaksiaalne λ/2 4:1
+Manicotto λ/4	λ/4 hülss
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kaabli ekraan ja mast NEC-i traatidena; balunite võrdlus (ühismoodi vool, F/B, keskmine F/R, kadu, võimsus 1 kW juures) 1,8 kuni 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Postid, risttala, mast ja faasiliinide ekraanid NEC-i traatidena: võrdlus ilma / koos raamiga (võimendus, F/B, keskmine F/R, sagarad, jaguri Z, Tant ja G/T).
+TIPO	TÜÜP
+DATI	ANDMED
+TELAIO	RAAM
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 kandilises või ümaras torus, kaablis, Wilkinson; faasiliinid, kalle; joonis 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X või +, tasandid nihutatud λ/4; H, V, RHCP, LHCP, X-pol; teljesuhe ja isolatsioon
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Võrdsed pikkused → võrdne faas. λ/2 kordsed → aktiivne takistus kordub jaguri juures. Soovitatav tolerants ± 5 mm (= ± {0}° faasi).
+impedenze attive delle {0} antenne dello stack in parallelo	virna {0} antenni aktiivsed takistused paralleelselt
+Banda con ROS < {0}	Riba, kus SWR < {0}
+? Manuale	? Juhend
+Apre la spiegazione nel manuale	Avab selgituse juhendis
+riferimento	võrdlus
+Rispetto alla singola antenna	Üksiku antenni suhtes
+{0} antenne ideali	{0} ideaalset antenni
+x la distanza DL6WU, a passi di	x DL6WU vahekaugus, sammuga
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Vasak telg: virna G - üksiku antenni G, 0-st ülespoole. Parem telg: virna F/R - üksiku antenni F/R, pööratud, 0 üleval: kus virn parandab F/R-i, läheb kõver alla ja madalaim punkt on suurim parandus. G/T jääb tabelisse.
+ΔG sulla singola	ΔG üle üksiku antenni
+Chiusura del programma	Programmi sulgemine
+Vuoi chiudere YA-NEC?	Kas soovid YA-NEC-i sulgeda?
+Grazie per avermi usato: spero di esserti stato utile.	Aitäh, et mind kasutasid: loodan, et olin abiks.
+Sì	Jah
+ROS attivo	Aktiivne SWR
+G realizzato	Realiseeritud G
+ROS attivo massimo	Maksimaalne aktiivne SWR
+riflessi minimi	minimaalsed peegeldused
+ROS attivo alto: da non scegliere	kõrge aktiivne SWR: ära vali
+Documenti tecnici	Tehnilised dokumendid
+Manuale d'uso	Kasutusjuhend
+Manuale di calcolo e delle fonti	Arvutuste ja allikate juhend
+Citazioni	Tsitaadid
+Cerca in tutti i documenti	Otsi kõigist dokumentidest
+Apri il PDF	Ava PDF
+Nessun risultato per «{0}»	Tulemusi «{0}» jaoks pole
+Primi {0} risultati per «{1}»	Esimesed {0} tulemust «{1}» jaoks
+{0} risultati per «{1}»	{0} tulemust «{1}» jaoks
+Apre la citazione {0}	Avab tsitaadi {0}
+Manuale di calcolo	Arvutusjuhend
+È pronta la versione {0} di YA-NEC	YA-NEC-i versioon {0} on valmis
+È già scaricata e installata: entra in funzione quando riavvii il programma.	See on juba alla laaditud ja paigaldatud: hakkab kehtima programmi taaskäivitamisel.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Macis ei paigaldu see ise: laadi uus .dmg GitHubi versioonide lehelt alla.
+Riavvia adesso	Taaskäivita kohe
+Più tardi	Hiljem
+Apri la pagina delle versioni	Ava versioonide leht
+Aggiornamento di YA-NEC	YA-NEC-i uuendus
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	See on juba alla laaditud ja paigaldatud. Programm taaskäivitub ise ja avab avatud mudeli uuesti.
+Riavvio tra {0} s	Taaskäivitus {0} s pärast
+Questo avviso si chiude tra {0} s	See teade sulgub {0} s pärast
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Pärast uuendust avati salvestamata mudel uuesti: salvesta see, millal soovid (koopia kaustas data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Pärast uuendust avati uuesti mudel, mis oli avatud.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Igal kastil on oma abi koos selgituse ja allikaga. Hall: märgitud = alati aktiivne (ei lülitu välja); märkimata = veel pole saadaval; tablettidega valik = fikseeritud valik. Juhend, peatükk 21.
+"): sorgente sempre accesa.	"): allikas alati aktiivne.
+' non da' un numero valido.	' ei ole kehtiv arv.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik nii nagu on
+0 - misure del metodo	0 - meetodi mõõdud
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = riba standardne WR-lainejuht (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = sama taldrik teises otsas (oma kaja).
+0 = stesso disco all'altro capo.	0 = sama taldrik teises otsas.
+0 gradi a destra	0 kraadi paremale
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = kolmandik tipust: takistus 200-300 oomi, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: servast kaugel, kus läbipaine viiks kiiritaja fookusest välja.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 täispolüetüleen (RG-58, RG-213), 0,8-0,85 vahtdielektrik.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 täispolüetüleen, 0,8-0,85 vaht, 0,9-0,97 avatud liin.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 juhitud lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - toidetud silmus
+1 - radiatore	1 - kiirgur
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = üks keerd (nagu enne). Rohkemate keerdudega kasvab Rr N²-ga, nahaefekti kadu N-iga.
+1 cavo	1 kaabel
+1-2-3 elementi	1-2-3 elementi
+1. Obiettivi e pesi	1. Eesmärgid ja kaalud
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Tuul, tasakaalustamine, jagurid, balunid, ristatud Yagid
+1.3 - Antenne riceventi abilitate	1.3 - Vastuvõtuantennid aktiveeritud
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz suure taldrikuga: lisaks pinnale ja suunamisele loevad termiline ja tuulest tingitud deformatsioon (ATA: öösel 0,7 mm RMS, päeval päikese käes 3 mm), tugede läbipaine ja libratsioonist tingitud hajumine.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: prindi 100 %, ilma «sobita lehele»
+1005/f piedi	1005/f jalga
+144 isol.	144 isol.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektorid
+2 in parallelo	2 paralleelselt
+2 lati	2 külge
+2. Variabili che l'ottimizzatore puo' cambiare	2. Muutujad, mida optimeerija võib muuta
+200 Ω con balun 4:1	200 Ω baluniga 4:1
+25 tondo	25 ümar
+3 - direttori	3 - direktorid
+3 gruppi	3 rühma
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 või 4. Kahega pole jäikust väljaspool nende tasandit.
+3. Registro dei passi - clic su una riga per riprenderla	3. Sammude logi - klõpsa real, et see taastada
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω või balun 4:1
+36 Ω + terra	36 Ω + maa
+4 - tutto insieme	4 - kõik koos
+4 lati	4 külge
+4 sorgenti: vedi tabella	4 allikat: vt tabelit
+432 isol.	432 isol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 andmekontrolli, mille IC8TEM kinnitas 15/11/2026: läved ja selgitused juhendis, peatükk 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 jalga umbes 18 dBi, 12 jalga umbes 20,5 dBi
+75 ohm ideale	75 oomi ideaalne
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 korda pikem kui raadius. Jämedate traatide või lühikeste segmentidega (jämedad torud UHF-il, lähestikku elemendid,\n
+9 fili	9 traati
+9 fili a 0,1 λ	9 traati 0,1 λ peal
+Accorciamento del pilotato	Toidetud elemendi lühenemine
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Lühenemine üle 8 %: lineaarne hinnang pole usaldusväärne, kontrolli NEC-iga.
+Allega il modello aperto	Lisa avatud mudel
+Allega il registro di oggi	Lisa tänane logi
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Lainete RMS-kõrgus ja antenni kõrgus merest, jaotises Diagrammid > Tegelik maastik.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Pühkimise laius sageduse ümber, takistuse graafiku jaoks.
+Antenna a	Antenn
+Applica la freccia al modello NEC	Rakenda läbivajumine NEC-i mudelile
+Approvata, in preparazione: non ancora attiva in questa versione.	Kinnitatud, ettevalmistamisel: selles versioonis veel aktiivne pole.
+Apri la cartella	Ava kaust
+Apri un modello nella finestra principale	Ava mudel peaaknas
+Apro il modello e il diagramma 3D resta vuoto.	Avan mudeli ja 3D-vaade jääb tühjaks.
+Area al vento dell'antenna	Antenni tuulepind
+Area al vento totale	Kogu tuulepind
+Area al vento totale e lista di taglio	Kogu tuulepind ja lõikenimekiri
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Tähelepanu: ära kasuta traatidega, mis ühinevad nurga all või erinevate läbimõõtudega ühenduskohas.\n
+Bobina di carico per la risonanza	Pikenduspool resonantsiks
+Boom con il tirante	Poom tõmmitsaga
+C1 in serie con la loop	C1 jadamisi silmusega
+C1 serie, C2 parallelo	C1 jada, C2 paralleel
+C2 in parallelo all'ingresso	C2 paralleelselt sisendiga
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Kalkulaatorid > Vastuvõtuantennid: madal dipool, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, ridade vahelise faasiga optimeeritud RDF-i jaoks ja hoiatusega maandusühenduse kohta.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mehaanilised arvutused (Tuul ja Tasakaalustamine), Kalkulaatorid > Jagurid ja ristatud Yagid, Objektid > Kaabel ja balun ja virna raam, HF koormused.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Esialgne dimensioneerimine: paigalduse jaoks kehtib pädeva tehniku projekt.
+Candidati da controllare	Kontrollitavad kandidaadid
+Categoria	Kategooria
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Asukoha avatuse kategooria (NTC 2018, tabel 3.3.II ja joonis 3.3.2): sõltub maastiku kareduse klassist (A linnasüdamed ... D takistusteta alad, meri) ja kaugusest rannikust. I = avatud rannik või meri, V = kesklinn.
+Cebik, poi NEC	Cebik, siis NEC
+Centro della banda scelta:\n	Valitud riba keskpunkt:\n
+Con ghiaccio	Jääga
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Jääga: tuul vähendatud 0,6-kordseks ja radiaalne jää paremal olevast kastist (lihtsustatud kombinatsioon ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Sama seemnega kordub test samamoodi.
+Condizione della sorgente non capita ("	Allika tingimust ei mõistetud ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Kontrollib kohe GitHubi, ootamata 3 minutit. Kui on uus versioon, laadib selle alla, teavitab ja taaskäivitab nagu automaatne uuendus (10 sekundit, mudel avaneb uuesti). Töötab ka väljalülitatud automaatse uuendusega.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Alati kontrollitud segmentatsiooni kontrolli ja Hoiatuste poolt (8 tavalise tuumaga, 2 laiendatud tuumaga).
+Copie per candidato	Koopiaid kandidaadi kohta
+Coppia sulla staffa boom-mast	Pöördemoment poomi-masti klambris
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Loob zip-faili kausta data/segnalazioni ja avab GitHubi lehe «New issue» juba kirjutatud tekstiga. Zip-faili lisad sina, käsitsi: programm ei saada ise midagi.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Maa kõverus, jaotises Diagrammid > Tegelik maastik.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Läbimõõt väljaspool Cebiki valemite vahemikku (1E-6 kuni 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Teise maa kaugus ja tüüp: kinnitatud 1.5 jaoks (Tegelik maastik 2).
+Distanze di stack HF	HF virna vahekaugused
+Distanze di stack: accoppiamento e distanza migliore	Virna vahekaugused: sidestus ja parim vahekaugus
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Pärast optimeerimist lähevad parimad tulemused tolerantsidega kontrolli. 0 = kontrolli pole.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Väga madalad otsad: ettevaatust inimeste ja loomadega (kõrged pinged otstes).
+F/B peggiore	Halvim F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq-fail: AutoEZ TLParms-iga liinid (kadudega kaablid) kasutavad nimiväärtusi Zo ja VF ning kadu pole: NEC-i TL-kaart on kadudeta.
+Filo riflettore	Reflektortraat
+Filo ripiegato	Volditud traat
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Pikk hairpin (üle 0,2 lambda): parem on vähendada vahekaugust või kasutada jämedamaid juhte.
+Forza del vento di progetto	Arvutuslik tuulejõud
+Forza l'aggiornamento	Sunni uuendus
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Kõõlu läbivajumine: kui palju sirge lõigu võrk jääb paraboloidist allapoole sildeava keskel (läheb tahkudesse). Rihmade kogumass {4:0.00} kg{5}.
+Freccia tolta dal modello.	Läbivajumine mudelist eemaldatud.
+Ghiaccio radiale	Radiaalne jää
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA-failid segmenteeritakse NEC-2 jaoks alati uuesti (juhend, peatükk 10).
+I lobi si leggono nella tabella delle distanze di stack.	Sagarad loetakse virna vahekauguste tabelist.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (ümardab), FIX (kärbib), MOD, MAX, MIN, ODD (paaritu täisarv: kasulik toidetud traadi segmentide jaoks).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Tavaline NEC2 käsitleb iga traati peenikese joonena: see kehtib seni, kuni segment on vähemalt\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Üks reflektortraat annab väga väikese paranduse (Cebik): parem ekraan või 9 traati.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Mast ületab voolavuspiiri: jämedam mast või lühem konsool.
+Impedenza del cavo	Kaabli takistus
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Teisel kujul: Andmekontrollide kontroll r5 märgib võimenduse, mis ületab poomi pikkuse füüsilise maksimumi.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktiivsus N²-ga (tihedad keerud) ja ühe keeruga NEC-i mudel: siin kontrollib NEC ainult selle ühe keeru geomeetriat.
+Interasse della forcina	Hairpini vahekaugus
+Isole (tranne Sicilia e Sardegna) e mare aperto	Saared (v.a Sitsiilia ja Sardiinia) ja avameri
+Kernel esteso del NEC2 (scheda EK).\n	Laiendatud NEC2 tuum (EK-kaart).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Hairpini vahekaugus peab olema suurem kui juhi läbimõõt.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim sulgeb kiirguri ülalt allapoole volditud traadiga, kuni veidi üle stubi.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Seda teeb aken Segmentatsiooni kontroll (nupp ülal).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin on sümmeetriline: see ei moonuta diagrammi nagu gamma. Toitepunktis on ikkagi vaja balunit või drosselit.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin töötab ainult siis, kui toidetud elemendi R on kaabli takistusest väiksem: suurema R korral kasuta gammat või trafot.
+La prepara IC8TEM: non ancora attiva.	IC8TEM valmistab seda ette: veel pole aktiivne.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	EZNEC-i Geometry Checki kuus reeglit, igal arvutusel, vahekaardil Hoiatused.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: ilma paranduseta Z = {0:0.0} {1}j{2:0.0} ohm (parandusega {3:0.0} {4}j{5:0.0} ohm).
+Località	Asukoht
+Loop orizzontale di 1 λ	Horisontaalne 1 λ silmus
+Lunghezza del pilotato	Toidetud elemendi pikkus
+Lunghezza della forcina	Hairpini pikkus
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Paneb zip-faili avatud mudeli (.nec), isegi kui see pole salvestatud.
+Mette nello zip il registro di oggi della cartella registri.	Paneb zip-faili tänase logi kaustast logs.
+Momenti al mast	Momendid mastil
+Momento al cuscinetto	Moment laagris
+NEC: risonanza cercata dal motore	NEC: resonantsi otsib mootor
+NOTE SU QUESTA VERSIONE (fase 0)\n	MÄRKUSED SELLE VERSIOONI KOHTA (faas 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	UUS · maapinna kohal: kõrgused, vahekaugused, soovitud väljumisnurgad
+Nel modello non ci sono elementi orizzontali diritti	Mudelil pole sirgeid horisontaalseid elemente
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Virna tabelis ja mudeli Objektides (virna raam, jagurid).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Kirjuta geomeetriakaartidesse avaldised tühikuteta, näiteks:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Vahekaugust pole pakutud
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Vahekaugust pole pakutud: kõik ületavad maksimaalse aktiivse SWR-i.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Failides pole IP-aadressi, e-posti ega kasutajanimesid: kodukausta tee muutub «~»-ks. Ilma GitHubi kontota võid zip-faili saata, kuidas soovid.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Veel pole automaatne: seda tehakse käsitsi Hoiatuste AGT-testiga (ARRL 24., 4nec2).
+Numero di spire	Keerdude arv
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Igal koopial on mõõdud juhuslikult nihutatud vahekaardi Tolerantsid tolerantside piires (vaikimisi: pikkus ±1 mm, asend ±2 mm, läbimõõt ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Lisaks avatud mudelile juhuslikult valitud algused iga muutuja miinimumi ja maksimumi vahel. 0 = nagu enne.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Vahekaardi Müra/GT/Virn leht Tegeliku taeva müra: skynoise'i arvutus porditud C#-i (HEALPixi kaartide lugemine, interpolatsioon, täheaeg, koordinaadid, Kuu) ja G8ONH kaks kaarti kaustas data/cielo.
+Partenze a caso	Juhuslikud algused
+Perimetro Cebik	Cebiki ümbermõõt
+Peso del boom	Poomi kaal
+Pi-greco	Pi-võrk
+Prepara la segnalazione	Valmista aruanne
+Proposta	Ettepanek
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c test 145 MHz juures (12 mm torud 40 mm vahega): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Millal vaja: segmendi/raadiuse suhe umbes 2 ja 8 vahel (alla 2 pole kumbki usaldusväärne).\n
+Quota s.l.m.	Kõrgus ü.m.p.
+R del pilotato	Toidetud elemendi R
+ROS attivo minimo {0}	Minimaalne aktiivne SWR {0}
+Raggio equivalente dei due conduttori	Kahe juhi ekvivalentne raadius
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Toidetud elemendi praegune reaktants: kui see on positiivne, tuleb toidetud elementi rohkem lühendada.
+Reattanza della forcina	Hairpini reaktants
+Reattanza voluta del pilotato	Toidetud elemendi soovitud reaktants
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktants: üle kl = pi/2 (või liiga jämeda juhiga) AEH valem ei kehti, kasuta NEC-i.
+Reinstalla la versione attuale	Paigalda praegune versioon uuesti
+Rel Z non positiva	Re Z pole positiivne
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Toidetud elemendi takistus resonantsil, mudelist või NEC-i arvutusest.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Taaskäivitus ebaõnnestus: sulge ja ava YA-NEC käsitsi uuesti.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Laadib alla ja paigaldab uuesti isegi siis, kui versioon on sama: kasulik, kui mõni programmifail on kahjustatud.
+Scansione	Pühkimine
+Scegli il candidato con	Vali kandidaat, millel on
+Schermo	Ekraan
+Scrivi due frequenze diverse.	Kirjuta kaks erinevat sagedust.
+Segnala un problema	Teata probleemist
+Seme del caso	Juhuseeme
+Serve solo per la reattanza (dipolo e monopolo).	Vaja ainult reaktantsi jaoks (dipool ja monopool).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Kasutatakse 2 või enama keeruga: alla 2 juhi läbimõõdu kasvab tegelik kadu lähedusefekti tõttu (ei arvutata).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Kasutatakse jaotises Diagrammid > Tegelik maastik: mere peegeldus hajumisteguri ja karedusega.
+Sicilia e provincia di Reggio Calabria	Sitsiilia ja Reggio Calabria provints
+Sollecitazione	Pinge
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Üle 0,25 λ hakkab sagar langema: NVIS-iks vähem sobiv.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Üle 30 MHz kasutatakse Cebiki regressiooni väljaspool vahemikku, mille jaoks seda siin pakutakse (HF traadid): parem on Automaatne või NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Alla 0,1 λ langeb võimendus ülespoole (Cebik): väga madal antenn ei võida midagi.
+Sotto l'antenna	Antenni all
+Spina (tubo o tondo) dentro il giunto telescopico.	Kork (toru või varras) teleskoopühenduse sees.
+Spina interna nei giunti	Sisemine kork ühendustes
+Stack con il ROS attivo piu' basso	Virn madalaima aktiivse SWR-iga
+Staffe e mast	Klambrid ja mast
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Aeg: umbes (algused + 1) korda praegune, pluss kandidaadid x koopiad arvutust.
+Tensione nel mast al cuscinetto	Pinge mastis laagri juures
+Tiro del tirante	Tõmmitsa pinge
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Torud võetud tabelist Kitsendused: mõõdud on samad mis NEC-i mudelis.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Kõik vahekaugused ületavad maksimaalse aktiivse SWR-i ({0}): vahekaugust pole pakutud. Tõsta maksimaalset aktiivset SWR-i, proovi antenni enda võrdlustakistust või häälesta üksik antenn. Maatriks ja graafik on madalaima aktiivse SWR-iga vahekaugusel.
+V invertito	Ümberpööratud V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), sidestus, aktiivne SWR, parim vahekaugus, kaks sagedust
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Tippkiirus asukohas: vb sqrt(ce), kus vb = vb,0 ca (NTC 2018, kordumisperiood 50 aastat) ja ce(z) avatuse kategooriast antenni kõrgusel.
+Velocità	Kiirus
+Velocità a mano	Kiirus käsitsi
+Vento di sopravvivenza	Ellujäämistuul
+Vento di sopravvivenza del boom	Poomi ellujäämistuul
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Elemendiga risti olev tuul, mille juures esimene punkt jõuab voolavuspiirini (omakaal ja jää arvestatud).
+X da aggiungere al pilotato	Toidetud elemendile lisatav X
+X del pilotato	Toidetud elemendi X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Lõppkontrolli teeb NEC-i mootor hairpiniga mudelil.
+Z0 della forcina	Hairpini Z0
+Z0 della linea dei due conduttori	Kahejuhtmelise liini Z0
+Zona buona	Hea tsoon
+al centro	keskel
+caso peggiore	halvim juhtum
+caso peggiore delle due	kahest halvim
+cerca...	otsi...
+copie entro le soglie	koopiad lävede piires
+corrente sinusoidale	siinuseline vool
+distanza dal boom	kaugus poomist
+distanza dall'inizio del boom	kaugus poomi algusest
+due condensatori sul lato basso	kaks kondensaatorit alumisel küljel
+effetto: calcolo in corso…	mõju: arvutan…
+forza del vento x sbalzo	tuulejõud x konsool
+il caso peggiore migliore	parim halvim juhtum
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ekvivalentsel dipoolil, jämedamal, on alla 73 Ω
+il voto medio migliore	parim keskmine skoor
+induttiva, in parallelo	induktiivne, paralleelselt
+la percentuale migliore di copie entro le soglie	parim koopiate osakaal lävede piires
+linea a due fili	kahejuhtmeline liin
+m  mast a	m  mast
+m dal suolo	m maapinnast
+m sopra il boom, attacco al	m poomist kõrgemal, kinnitatud
+media delle due	kahe keskmine
+mm  lungo	mm  pikk
+mm, acciaio	mm, teras
+molto buono	väga hea
+molto povero	väga kehv
+nessun rinforzo	tugevduseta
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	ükski kaubanduslik toru kuni +12 mm ei piisa: vaata kitsendus üle
+nessuna distanza sotto il ROS attivo massimo	pole vahekaugust alla maksimaalse aktiivse SWR-i
+partenza dal modello aperto	alusta avatud mudelist
+per lato, teso per annullare il momento verticale al mast	külje kohta, pingutatud masti vertikaalse momendi tühistamiseks
+primo cedimento: tubo Ø	esimene purunemine: toru Ø
+regge il vento di progetto con il 20 % di margine	peab vastu arvutuslikule tuulele 20 % varuga
+riferimenti bibliografici	kirjandusviited
+sbalzo sopra il cuscinetto	konsool laagri kohal
+schermo 1 λ x 1 λ	ekraan 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	tihedad segmendid) kasutab laiendatud tuum täpsemat valemit ja tulemus on usaldusväärsem.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	korgita toetub sisetoru välistoru servale ja esimese 5 cm pingele rakendatakse tegurit 1,25: hinnang, klambrid ja pilud muudavad tulemust palju.
+sollecitazione / snervamento	pinge / voolavuspiir
+tubo piu' grosso	jämedam toru
+un filo riflettore	üks reflektortraat
+zona di cedimento	purunemistsoon
+ø dei conduttori della forcina	hairpini juhtide ø
+ø del filo	traadi ø
+ø del pilotato	toidetud elemendi ø
+accordata	häälestatud
+accordate	häälestatud
+alimentazione	toide
+alluminio	alumiinium
+allungata	pikendatud
+altro	muu
+anello	silmus
+angolo	nurk
+antiorario	vastupäeva
+aritmetico	aritmeetiline
+automatico	automaatne
+banda	riba
+bande	ribad
+bordi	servad
+buono	hea
+capacitiva	mahtuvuslik
+carichi	koormused
+carico	koormus
+cartesiana	ristkoordinaatne
+cavi	kaablid
+cavo	kaabel
+centimetri	sentimeetrid
+centina	roie
+cerchio	ring
+condensatore	kondensaator
+corrente	vool
+destra	parem
+diagramma	diagramm
+diametro	läbimõõt
+differenza	erinevus
+dipoli	dipoolid
+dipolo	dipool
+diretta	otsene
+diritto	sirge
+due	kaks
+elementi	elemendid
+elemento	element
+elimina	kustuta
+equilatera	võrdkülgne
+esito	tulemus
+esperimenti	katsed
+esponenziale	eksponentsiaalne
+fase	faas
+ferriti	ferriidid
+fili	traadid
+filo	traat
+forcina	hairpin
+forma	kuju
+formule	valemid
+frequenza	sagedus
+geometria	geomeetria
+ghiaccio	jää
+giudizio	hinnang
+gradi	kraadid
+griglia	ruudustik
+guadagno	võimendus
+incrociata	ristatud
+larghezza	laius
+lato	külg
+lega	sulam
+libera	vaba
+libero	vaba
+linea	liin
+lineare	lineaarne
+linee	liinid
+lobi	külgsagarad
+locale	kohalik
+mai	mitte kunagi
+manicotto	hülss
+mano	käsitsi
+meccanica	mehaanika
+mezzaonda	poollaine
+millimetri	millimeetrid
+misure	mõõdud
+modello	mudel
+modo	režiim
+nessuna	puudub
+nota	märkus
+nuovo	uus
+operativo	töö-
+orario	päripäeva
+ottagono	kaheksanurk
+palo	mast
+parabola	taldrik
+passo	samm
+perdite	kaod
+perfetto	täiuslik
+piano	tasand
+piatto	lame
+piedi	jalad
+polare	polaarne
+pollici	tollid
+propria	oma
+punto	punkt
+quadrato	ruudukujuline
+quadro	ruudukujuline
+quota	kõrgus
+radiali	radiaalid
+radiatore	kiirgur
+raggio	raadius
+rame	vask
+ramo	haru
+rapidi	kiire
+rastremazioni	kitsendused
+rete	võrk
+rettangolo	ristkülik
+riepilogo	kokkuvõte
+riflettore	reflektor
+riga	rida
+rombo	romb
+scarso	kehv
+scarto	hälve
+schiacciata	lapik
+sempre	alati
+senso	suund
+si'	jah
+sinistra	vasak
+soglia	lävi
+sorgenti	allikad
+sotto	all
+spire	keerud
+staffe	klambrid
+stato	olek
+sufficiente	piisav
+tetto	katus
+tipo	tüüp
+tirante	tõmmits
+togli	eemalda
+tondo	ümar
+traffico	liiklus
+trasformatori	trafod
+trombe	sarvantennid
+tubi	torud
+tubo	toru
+tutti	kõik
+uguale	võrdne
+uguali	võrdsed
+uso	kasuta
+a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU juures; kõik üle maksimumi {1}
+% del mezzo boom	% poolest poomist
++ aggiungi	+ lisa
++ aggiungi variabile	+ lisa muutuja
++ correzione del boom	+ poomi parandus
++ nuova	+ uus
++ trappola	+ lõks
++ verso il disco.	+ taldriku poole.
++90 gradi Z	+90 kraadi Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmeetiline: täpselt riba IARU piiride keskel (näiteks 145,000 MHz 2 m-l),\n
+- correzione del boom	- poomi parandus
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- töö-: sagedus, millel tegelikult töötad (näiteks 144,300 MHz 2 m-l, 432,200 70 cm-l),\n
+-10 (nero) 10-100 MHz	-10 (must) 10-100 MHz
+-10 nero	-10 must
+-2 (rosso) 0,25-10 MHz	-2 (punane) 0,25-10 MHz
+-2 rosso	-2 punane
+-6 (giallo) 3-40 MHz	-6 (kollane) 3-40 MHz
+-6 giallo	-6 kollane
+-90 gradi Z	-90 kraadi Z
+-> segmento NEC	-> NEC-i segment
+. "Annulla" torna indietro.	. «Võta tagasi» läheb tagasi.
+. Antenna base: fili 1-	. Baasantenn: traadid 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Nii kõrge Q korral peab pühkimine hõlmama vaid mõnda kHz.
+. Salvalo con Salva con nome.	. Salvesta see käsuga Salvesta nimega.
+. Trascina per ruotare, rotella per ingrandire.	. Lohista pööramiseks, ratas suumimiseks.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Kasuta peenemat traati, suuremat südamikku või kahte virnastatud südamikku.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (Sengupta 2021 kaudu) ja GMRT tabel 19.1
+12 (errore / HPBW)^2	12 (viga / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passiivne rõngas: ümbermõõt {0:0.000} lambda, ilma allika ja kondensaatorita; mõju on näha täielikus mudelis (direktor või reflektor).
+Automatico	Automaatne
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, nagu nec2c ja xnec2c: lähtekood on programmiga kaasas (fail COPYING).\n
+Provincia di Trieste	Trieste provints
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	ja C#-is YA-NEC-i jaoks. Viideliides: xnec2c, autorid 5B4AZ ja Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	kasutegur arvutatud kaugväljast, Prad / (Prad + kaod) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	takistus ja kaod muutuvad traadi madalamale jõudes üha vähem usaldusväärseks (vt BOG juhendis). Kindla tulemuse jaoks: vähemalt lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	see luuakse kuni {3:0.00} m läbimõõduni; kõrvalolev apertuuri arvutus kehtib iga läbimõõdu kohta ja arvestab juba roideid (kast ülal).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} {5} oomi juures, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, kasutegur {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° kõrgust
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. tr, ptk 18 (W9PE 2 m Yagi): kolm elementi 0,2 λ vahega, umbes 7 dBi ja F/B üle 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC-i kokkulangevus nec2c-ga (20/15/10 m vardad): reflektorid 0,185 / 0,197 / 0,222 λ, direktorid 0,095 / 0,116 / 0,114 λ: allikate vahemike piires.
+↶ Annulla	↶ Võta tagasi
+↷ Ripeti	↷ Tee uuesti
+■ Ferma	■ Peata
+▶ Avvia	▶ Alusta
+☐ mantieni lunghezza del boom	☐ säilita poomi pikkus
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ hoiatusi pole: segmentatsioon vastab valitud tasemele
+✓ nessun errore e nessun avviso	✓ vigu ja hoiatusi pole
+variabili del modello	mudeli muutujad
+nuova variabile dal modello	uus muutuja mudelist
+Scrivi una variabile nella linguetta Variabili…	Kirjuta muutuja vahekaardile Muutujad…
+Elemento diritto	Sirge element
+Elemento piegato	Painutatud element
+Variabile nuova	Uus muutuja
+Minimo / massimo	Miinimum / maksimum
+Cosa cambia	Mis muutub
+in ocra: dove agisce la variabile	ookerkollasega: kus muutuja toimib
+Crea la variabile	Loo muutuja
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Muutuja {0} loodud: geomeetria ei muutu. Geomeetria riba «Võta tagasi» eemaldab selle.
+Struttura 3D: dove agisce la variabile ▾	3D-struktuur: kus muutuja toimib ▾
+Struttura 3D ▸	3D-struktuur ▸
+Clic: nasconde o mostra la struttura	Klõps: peidab või näitab struktuuri
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	pidev ooker: kasutab muutujat · katkendlik ooker: kasutab seda teise muutuja kaudu
+attraverso {0}: fili {1}	läbi {0}: traadid {1}

@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Hoe dekkend die kleur is: lig, medium of sterk. Op die tabelry is die waas ligter, sodat die getalle leesbaar bly.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Draad {0} gekies in die 3D-aansig: ry {1} van die tabel
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Draad {0}: nie in die draadtabel nie (geometriekaart anders as GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Kyk dadelik vir 'n nuwe weergawe (sonder om 3 minute te wag).
+terreno reale	werklike terrein
+Locatore	Lokator
+da 8 a 12 caratteri	8 tot 12 karakters
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Met 6 karakters kan die punt kilometers ver af wees: die terreinprofiel het minstens 8 karakters nodig.
+Quota sito	Hoogte van die terrein
+Altezza antenna	Antennahoogte
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Hoogte van die antenna se middelpunt bo die grond. As dit van die model s'n verskil, word die NEC-patroon met dieselfde stroomverspreiding gelig of laat sak.
+Distanza max	Maks. afstand
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Asimut en afstande word by elke lokatorverandering herbereken (grootsirkel, sfeer van 6371 km).
+Terra	Land
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Verminder die see se weerkaatsingskoëffisiënt met die Ament-faktor vir golwe van 0,25 m (standaardafwyking).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	statistiese model van 'n growwe oppervlak (Ament 1953): geldig vir skrams hoeke en 'n eenvormige see.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Laat die profiel sak met die aarde se kromming (effektiewe radius 4/3 by normale refraksie) en verminder die verre weerkaatste strale met die divergensiefaktor.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standaardatmosfeer (k = 4/3); met kanale of inversies verander die skynbare kromming.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Die hoogste rif tussen die antenna en die vertrekrigting verswak die direkte straal soos 'n rand (Fresnel-integraal), soos in HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	enkele meskant: geronde riwwe of verskeie riwwe agter mekaar word met die hoogste benader.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Herhaal die berekening elke 10 grade asimut (slegs DEM) en wys die meriete-syfer op die roos, met die antenna na elke asimut gedraai.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	met die antenna altyd na die profiel se asimut gedraai: geldig vir 'n draaibare antenna.
+Cartesiana dBi / gradi	Cartesiaans dBi / grade
+0–180° intero	0–180° volledig
+Zoom angolare	Hoekzoem
+Sovrapponi alla linguetta Verticale	Oorlê op die oortjie Vertikaal
+premi Calcola	druk Bereken
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Herhaal die berekening met die antenna van 6 tot 30 m (HF) of van 2 tot 30 m (VHF) en wys die hoogte met die beste meriete-syfer op die roete.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	die strome bly dié van die berekende model: die uitwerking van hoogte op impedansie en strome word nie in ag geneem nie (soos in HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Die aankomshoektabelle van die ARRL Antenna Book is nodig (.PRN-lêers per band en streek): sodra hulle beskikbaar is, word dit aktief en wys die oranje stroke.
+locatore non valido	ongeldige lokator
+sul mare	oor die see
+sul terreno	oor land
+profilo reale	werklike profiel
+terreno piatto	plat terrein
+orizzonte ostruito	belemmerde horison
+° (scala angolare ×	° (hoekskaal ×
+← dietro	← agter
+avanti →	voor →
+statistiche degli angoli di arrivo: non caricate	aankomshoekstatistiek: nie gelaai nie
+rosa 0–360°: calcolo in corso…	roos 0–360°: bereken…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Kies die profiellêer (klik "Van HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM nie beskikbaar nie: by eerste gebruik is 'n netwerk nodig om TINITALY of SRTM1 af te laai (daarna bly hulle in die vouer data/dem).
+Profilo del terreno	Terreinprofiel
+Lobo di elevazione	Hoogtelob
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Bereken eers die model (knoppie Bereken bo): die antennapatroon kom van NEC.
+da file	uit lêer
+dal DEM	uit die DEM
+rispetto alla stessa antenna su terreno piatto	relatief tot dieselfde antenna oor plat terrein
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Verskil tussen die lob oor die werklike profiel en die lob oor plat terrein, gemiddeld oor die bruikbare hoeke.
+Guadagno a 5° / 10°	Wins by 5° / 10°
+Guadagno a 1° / 3°	Wins by 1° / 3°
+Angoli coperti a -3 dB	Hoeke gedek by -3 dB
+primo lobo sul profilo reale	eerste lob oor die werklike profiel
+calcolo…	bereken…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Vryeruimte-model: die strome is dié sonder grond, soos die vryeruimte-patroon wat HFTA gebruik. Om die nabye grond in ag te neem, bereken die model met werklike grond.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Die profiel geld slegs vir een asimut: 'n draaibare antenna het meer rigtings nodig (blokkie "Alle asimute").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metode soos in HFTA (N6BV): direkte straal + weerkaatste strale op elke faset van die profiel + diffraksie oor die riwwe. Die antennapatroon kom van NEC; hierdie berekening voeg die terrein by.
+Piatto	Plat
+Reale	Werklik
+Primo minimo	Eerste minimum
+Punto di riflessione	Weerkaatsingspunt
+Orizzonte	Horison
+Uso: rotte DX in HF (angoli bassi 1–15°).	Gebruik: HF-DX-roetes (lae hoeke 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Gebruik: tropo en MS (0–5°), EME met lae maan (grondwins by maanopkoms/-ondergang).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Hoogte met die hoogste gemiddelde wins oor die roete se bruikbare hoeke.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	strome van die berekende model in hoogte verskuif: impedansie en grondkoppeling bly dié van die model.
+Calcola prima il terreno reale	Bereken eers die werklike terrein
+Esporta il lobo sul terreno reale	Voer die lob oor werklike terrein uit
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Beelde: Esri, Maxar, Earthstar Geographics en die GIS-gebruikersgemeenskap
+© i contributori di OpenStreetMap	© OpenStreetMap-bydraers
+Sfondo	Agtergrond
+Foto aerea	Lugfoto
+Solo griglia	Slegs rooster
+Griglia	Rooster
+Cerca	Soek
+⌖ Centra sul locatore	⌖ Sentreer op die lokator
+Punto scelto	Gekose punt
+Coordinate	Koördinate
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klik op die kaart = antennapunt; sleep = skuif; wiel = zoem (die rooster gaan van 6 na 8, 10, 12 karakters). Dik raam = vierkant van 6 karakters.
+non disponibile	nie beskikbaar nie
+Lunghezza elementi	Elementlengte
+Posizione sul boom	Posisie op die boom
+Uniforme	Eenvormig
+Distribuzione	Verspreiding
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element nie gesentreer in die klamp gemonteer nie: verskuiwing langs sy eie as, met die posisietoleransie.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	die werklike klamp verander ook die elektriese lengte naby die boom: gebruik daarvoor die oortjie Boomkorreksie.
+nuovo a ogni avvio	nuut by elke lopie
+Numero prove	Aantal proewe
+Frequenze	Frekwensies
+Seme casuale	Ewekansige saad
+OBIETTIVO LISTA DI TAGLIO	DOEL VAN DIE SNYLYS
+Calo F/B max	Maks. F/B-daling
+ROS max	Maks. SGV
+Ferma	Stop
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Die elemente naby die gevoerde element is gewoonlik die mees kritieke; dié aan die einde van die boom verdra groter foute.
+l'istogramma serve al Monte Carlo	die histogram is vir die Monte Carlo
+5% peggiore	slegste 5%
+Posizione mm	Posisie mm
+Lunghezza mm	Lengte mm
+Tolleranza ammessa	Toegelate toleransie
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. In rooi die elemente wat minder nodig het as die boutoleransie.
+Calcola prima il modello	Bereken eers die model
+sensibilita'	sensitiwiteit
+Tolleranze: fermato	Toleransies: gestop
+Diametro mm	Deursnee mm
+Tolleranza ammessa mm	Toegelate toleransie mm
+Avvia prima il calcolo	Voer eers die berekening uit
+Esporta la lista di taglio	Voer die snylys uit
+Lista di taglio	Snylys
+Obiettivi	Doelwitte
+Calo massimo del F/B	Maksimum F/B-daling
+ROS massimo	Maksimum SGV
+Tolleranze di costruzione	Boutoleransies
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Beplan (skets 13, moet goedgekeur word): nog nie aktief in hierdie weergawe nie.
+Al quadro 20×2 mm	Al vierkantig 20×2 mm
+Al quadro 25×2 mm	Al vierkantig 25×2 mm
+Al quadro 30×2 mm	Al vierkantig 30×2 mm
+Al quadro 40×2 mm	Al vierkantig 40×2 mm
+Al tondo 25×1,5 mm	Al rond 25×1,5 mm
+Al tondo 30×2 mm	Al rond 30×2 mm
+Al tondo 40×2 mm	Al rond 40×2 mm
+Al tondo 50×2 mm	Al rond 50×2 mm
+Zona NTC	NTC-sone
+Quota sito as	Hoogte van die terrein as
+Periodo ritorno	Herhalingstydperk
+Categoria esposiz.	Blootstellingskategorie
+Coeff. topografia	Topografie-koëff.
+Antenna da terra	Antenna bo die grond
+Palo sopra rotore	Mas bo die rotor
+Ø palo	Mas Ø
+Usa elementi e boom del modello	Gebruik die model se elemente en boom
+Includi telaio, palo, cavi	Sluit raam, mas, kabels in
+Scansione direzione del vento	Skandering van windrigting
+UNITÀ	EENHEDE
+N e kgf affiancati	N en kgf langs mekaar
+solo N	slegs N
+solo kgf	slegs kgf
+Mostra	Wys
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	ongeldige lokator: kies die sone met die hand
+Telaio a H	H-raam
+Cavi e divisore	Kabels en verdeler
+Parte	Onderdeel
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Met dwarswind druk die elemente nie (cross-flow, K5IU): die krag op 'n buis gaan met die kwadraat van die windkomponent loodreg op sy as.
+momento flettente alla staffa del rotore	buigmoment by die rotorklamp
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Voorlopige dimensionering: vervang nie 'n ingenieur se kontrole van mas, toring en fondament nie. Die voetmoment sal na die suboortjie Mas en fondament gaan.
+Sito e norma	Terrein en standaard
+Norma	Standaard
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; koëffisiënte CNR-DT 207 R1/2018 en EN 1991-1-4
+Locatore / zona	Lokator / sone
+Risultati	Resultate
+Forza massima	Maksimum krag
+Momento flettente alla staffa del rotore	Buigmoment by die rotorklamp
+Momento torcente sul rotore	Wringkrag op die rotor
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Voorlopige dimensionering: vervang nie 'n bevoegde ingenieur se kontrole van mas, toring en fondament nie.
+Al tondino pieno	Al soliede staaf
+Materiale elementi	Elementmateriaal
+Staffe, isolatori	Klampe, isolators
+g cad.	g elk
+Dipolo + scatola	Dipool + kassie
+Cavo fino al palo	Kabel na die mas
+STAFFA AL PALO	MASKLAMP
+Posizione attuale	Huidige posisie
+m dal riflettore	m vanaf die reflektor
+Massa / distanza	Massa / afstand
+Vento dalla linguetta Vento	Wind uit die oortjie Wind
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Gebruik die ontwerpdruk van die laaste berekening in die suboortjie Wind; daarsonder 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Skuif die hele model langs die boom sodat die voorgestelde klamp op die oorsprong val (waar die mas en die stapelraam vasgemaak word). Ontdoen in die 3D-struktuur draai dit terug.
+Momenti in funzione della posizione della staffa	Momente teen klampposisie
+Masse e aree per parte	Massas en oppervlakke per onderdeel
+ultimo direttore	laaste direkteur
+Staffe e isolatori	Klampe en isolators
+Cavo sul boom	Kabel op die boom
+Massa kg	Massa kg
+Baricentro m	Swaartepunt m
+Area vento m²	Windoppervlak m²
+Centro area m	Oppervlaksentrum m
+solo peso	slegs gewig
+solo vento	slegs wind
+File Touchstone .s1p	Touchstone-lêer .s1p
+Formato letto	Gelese formaat
+CAVO TRA VNA E ANTENNA	KABEL TUSSEN VNA EN ANTENNA
+R e X separate	R en X afsonderlik
+Banda con ROS <	Band met SGV <
+ROS: calcolato e misurato	SGV: bereken en gemeet
+Confronto	Vergelyking
+misurato, cavo tolto	gemeet, kabel verwyder
+R calcolata	R bereken
+X calcolata	X bereken
+R misurata	R gemeet
+X misurata	X gemeet
+Calcolato	Bereken
+Misurato	Gemeet
+Scarto	Verskil
+Frequenza del ROS minimo	Frekwensie van minimum SGV
+ROS minimo	Minimum SGV
+nessuna correzione: calcolo e misura coincidono.	geen korreksie: berekening en meting stem ooreen.
+calcolo NEC sul campo della misura…	NEC-berekening oor die meetbereik…
+Misura del VNA	VNA-meting
+Tutti	Alles
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Voer 'n sweep uit (knoppie Sweep bo) om F/B en F/R oor die hele band te sien
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = voorwaartse wins minus die gemiddelde drywing oor die agterste halfsfeer (90-270° asimut, alle hoogtes bo 0°). Dit is ook onder die optimeerder se doelwitte.
+Tabelle: F/B e F/R su tutta la banda	Tabelle: F/B en F/R oor die hele band
+Valori dello sweep	Sweepwaardes
+ANTENNE RICEVENTI	ONTVANGSANTENNAS
+4-square in ricezione	4-square vir ontvangs
+8 verticali in cerchio	8 vertikale in 'n sirkel
+Modello aperto	Maak die model oop
+Isotropo	Isotroop
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = wins in die gewenste rigting minus die gemiddelde wins oor die hele halfruimte: anders as wins hang dit nie van verliese af nie.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Gebruik die mediaan-aankomshoek van die oortjie Werklike terrein as gewenste hoogte (statistiek per band en streek). Sonder gelaaide ARRL-statistiek bly die hoogte wat hier geskryf is.
+Direzione voluta	Gewenste rigting
+Hz  rumore	Hz  geraas
+NF ricevitore	Ontvanger se NF
+sorgente locale az	plaaslike bron az
+Cifre di merito in ricezione	Meriete-syfers by ontvangs
+Basta il segnale?	Is die sein genoeg?
+calcolo in corso…	bereken…
+RDF in funzione della frequenza	RDF teen frekwensie
+Calcola prima il modello aperto	Bereken eers die oop model
+verticale λ/4	λ/4-vertikaal
+° · dB relativi · arancio: -3 dB	° · relatiewe dB · oranje: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Gemiddelde wins oor die voorste sektor minus die gemiddelde oor die agterste halfsfeer.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definieer DMF slegs met die wins by 20 grade; hier word die gemiddelde oor die skets se sektor gebruik, dus is die waardes nie een-tot-een met die boek s'n vergelykbaar nie.
+molto basso: serve un preamplificatore	baie laag: 'n voorversterker is nodig
+basso ma accettabile: vedi soglia	laag maar aanvaarbaar: sien drempel
+come un'antenna trasmittente	soos 'n sendantenna
+F/R medio sull'emisfero posteriore	Gemiddelde F/R oor die agterste halfsfeer
+Rumore d'antenna ai morsetti	Antennageraas by die terminale
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Eksterne geraasdrywing by die terminale: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + gemiddelde wins geweeg na waar die geraas vandaan kom.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	geraas van die horison geweeg exp(-el/10 grade) in hoogte: verteenwoordig verre mensgemaakte geraas wat laag inkom; die werklike verspreiding hang van die terrein af.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	puntbron by 5 grade hoogte met dieselfde drywing as die isotrope agtergrond.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotrope geraas bo die grond; die grond voeg geen geraas by nie.
+Margine sul ricevitore	Ontvanger se marge
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Die antennageraas oorskry die ontvanger se geraas met minder as 6 dB: die ontvanger beperk die sensitiwiteit. Meer voorversterking of 'n ontvanger met laer NF is nodig.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Wins 1,8
+Spazio richiesto	Ruimte benodig
+λ/4 in tubo quadro	λ/4 in vierkantige buis
+λ/4 in tubo tondo	λ/4 in ronde buis
+Solo cavi di fase	Slegs faselyne
+Aria	Lug
+Uscite	Uitsette
+Z antenne	Antenna-Z
+Z ingresso	Inset-Z
+Dielettrico	Diëlektrikum
+Connettori	Koppelstukke
+Correggi accorciamento dei connettori	Korrigeer vir verkorting deur koppelstukke
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Trek die stuk lyn binne die koppelstukke van die lengte af.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	skatting van 4 mm per punt met N-koppelstukke (3 BNC, 1,5 SMA): dit is die beste om met die VNA te stel deur in stappe van 1 mm te verkort.
+Divisori	Verdelers
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Gebruik die aktiewe impedansies van die oop stapel se antennas (een bron per antenna) en die spasiërings vir die minimum lengte van die faselyne.
+CAVI DI FASE	FASELYNE
+Lunghezza minima	Minimum lengte
+Passo verticale	Vertikale spasiëring
+solo cavi di fase: nessun trasformatore da costruire	slegs faselyne: geen transformator om te bou nie
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω-kabels in parallel = 37,5 Ω
+quadro, lato	vierkantig, sy
+tondo, Ø	rond, Ø
+Z0 richiesta	Vereiste Z0
+Ø conduttore interno	Binnegeleier Ø
+VF del cavo	Kabel se VF
+λ/4 in aria, mm	λ/4 in lug, mm
+da tagliare, mm	om te sny, mm
+Z carico in parallelo	Las-Z in parallel
+Rami λ/4: Z0 = Zin · √N	λ/4-takke: Z0 = Zin · √N
+Resistenze a stella	Stergeskakelde weerstande
+Isolamento tra le uscite	Isolasie tussen uitsette
+Perdita stimata	Geskatte verlies
+Carico usato	Gebruikte las
+non potenza di 2	nie 'n mag van 2 nie
+ROS all'ingresso	Inset-SGV
+solo cavi di fase	slegs faselyne
+Uscita	Uitset
+Lungh. elettrica	Elektriese lengte
+Fisica mm	Fisiese mm
+Perdita dB	Verlies dB
+° di fase).	° fase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° opwaarts); die impedansie by die verdeler herhaal nie meer presies nie.
+Solo cavi di fase: nessun disegno da stampare	Slegs faselyne: geen tekening om te druk nie
+Divisore	Verdeler
+50 mm di controllo	Kontrole 50 mm
+GEOMETRIA	GEOMETRIE
+λ/4 sul boom	λ/4 op die boom
+stesso piano	selfde vlak
+Metallico, isolati	Metaal, geïsoleer
+Non metallico	Nie-metaal
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Die boom is nie in die NEC-model nie: met elemente geïsoleer van 'n metaalboom is die uitwerking klein (boomkorreksie in die Sakrekenaars).
+Yagi di base	Basis-Yagi
+Disposizione	Uitleg
+Sfasamento piani	Vlakverskuiwing
+Cavo di ritardo λ/4	λ/4-vertragingskabel
+Includi relè e cavi reali	Sluit werklike relais en kabels in
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Voeg die verlies van die vertragingskabel by (VF 0,66, 10 dB/100 m by 144 MHz, geskaal met die vierkantswortel van die frekwensie) en 0,1 dB vir die relais.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	tipiese waardes van 'n 75 ohm-kabel en 'n koaksiale relais; die program ken nie joune nie.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Dieselfde fasenetwerk werk ook vir 'n turnstile (dipole gekruis teen 90°).
+AR (dB) / ROS	AR (dB) / SGV
+Vista frontale	Vooraansig
+Componenti co-polare / cross-polare	Ko- / kruispolêre komponente
+Rapporto assiale e ROS in frequenza	Asverhouding en SGV teen frekwensie
+piano A	vlak A
+piano B	vlak B
+vista dal davanti — boom al centro	aansig van voor — boom in die middel
+piani sfalsati di λ/4 lungo il boom	vlakke λ/4 langs die boom verskuif
+Yagi incrociate: serve una Yagi con una sola sorgente	Gekruiste Yagi's: 'n Yagi met een bron is nodig
+Yagi incrociate: calcolo in corso...	Gekruiste Yagi's: bereken...
+Rapporto assiale in asse	Asverhouding op die as
+Rapporto assiale a −3 dB	Asverhouding by −3 dB
+Isolamento tra i due piani	Isolasie tussen die twee vlakke
+Fase della rete sul piano B	Netwerkfase op vlak B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Volmaak ortogonale en simmetriese vlakke: in die model is die koppeling en die teenoorgestelde polarisasie byna nul. In werklikheid beperk klampe, kabels en klein asimmetrieë dit tot omtrent 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	van 1,8 MHz tot 1296 MHz: die lys baluns verander met die band
+LINEA DI DISCESA	VOERLYN
+Coassiale	Koaksiaal
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Met 'n gebalanseerde oop lyn is daar geen skerm nie: gemeenskaplike modus kom slegs van wanbalans. Die kaart bereken die koaksiale geval; vir die oop lyn gebruik Lyne (TL) met die tuner.
+Lungo il boom	Langs die boom
+m → palo	m → mas
+Discesa sul palo	Teen die mas af
+Fino alla stazione	Na die stasie
+Calza a massa sul palo / traliccio	Skerm geaard aan mas / toring
+Messa a terra all'ingresso stazione	Aarde by die stasie se ingang
+BALUN DA CONFRONTARE	BALUNS OM TE VERGELYK
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 windings RG-213 op 110 mm: induktansie volgens Wheeler, eiekapasitansie volgens Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 en geskatte eiekapasitansie: die werklike impedansie van die smoorspoel moet gemeet word.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1-ferriettoroïed as parallelle RLC met lae Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm by die piek (10 MHz met mengsel 31, 25 MHz met mengsel 43): tipiese waardes van 12 windings op 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksiaal λ/2 4:1: gebalanseerde voer, skerms verbind.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	oorblywende gemeenskaplike modus as 600 ohm resonant by f0 (Q 3): hang af van die montering.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4-mou: kortgeslote λ/4-lyn tussen skerm en mou, hoë impedansie by f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Mou se Z0 50 ohm en 0,08 dB verlies oor die kwartgolf.
+10 perline in ferrite sulla calza.	10 ferrietkrale oor die skerm.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm per kraal by 144 MHz (mengsel 61), 100 ohm bo 30 MHz met mengsel 43: tipiese kataloguswaardes.
+Caso mostrato	Getoonde geval
+premi Calcola il confronto	druk Bereken die vergelyking
+Corrente lungo la calza, dal dipolo verso il basso	Stroom langs die skerm, van die dipool af ondertoe
+Vista laterale: corrente sulla calza	Syaansig: stroom op die skerm
+F/R medio	Gemiddelde F/R
+Z / ROS	Z / SGV
+Perdita nel balun	Verlies in die balun
+Potenza dissipata nel balun a 1 kW	Drywing wat in die balun verlore gaan by 1 kW
+Banda con calza < 5 %	Band met skermstroom < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Die grys items is baluns vir die ander band; hulle word aktief wanneer die frekwensie gekies word. Op HF tel die skerm tot by die stasie ook (geaard), op VHF/UHF die deel op die boom en die mas. Die skerm is 'n draad wat aan een kant van die voerpunt gekoppel is, soos in werklikheid sonder balun; die balun is 'n gemeenskaplike-modus-impedansie in die eerste stuk.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Veselglas gelei nie: die raam gaan nie in NEC in nie, slegs die faselyne se skerms bly oor.
+Includi palo sotto il telaio	Sluit die mas onder die raam in
+Cavi di fase lungo i montanti	Faselyne langs die staanders
+Rotore e controventi	Rotor en ankerdrade
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Beplan: rotor en ankerdrade as drade (die toring se mate is nodig).
+Materiale	Materiaal
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	rooi = raamdele as NEC-drade gemodelleer · gestippel = skerm van die faselyne
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horisontale polarisasie: die vertikale staanders is swak gekoppel; die horisontale dwarsbalk en die faselyne nie.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertikale polarisasie: die staanders en die mas is parallel met die elemente en tel meer; die horisontale dwarsbalk min.
+Confronto senza / con telaio	Vergelyking sonder / met raam
+Diagramma orizzontale sovrapposto	Horisontale patroon oorgelê
+premi Calcola confronto	druk Bereken die vergelyking
+Stack: calcola prima il modello	Stapel: bereken eers die model
+Stack: calcolo senza e con telaio...	Stapel: bereken sonder en met raam...
+Pezzo	Onderdeel
+Collegato	Gekoppel
+Cavi	Kabels
+Senza telaio	Sonder raam
+Con telaio	Met raam
+Z ingresso divisore	Verdeler se inset-Z
+senza telaio	sonder raam
+con telaio	met raam
+Stack: confronto senza / con telaio fatto	Stapel: vergelyking sonder / met raam voltooi
+CARICHI HF	HF-LASTE
+INSERISCI NEL MODELLO	VOEG IN DIE MODEL IN
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Die hoed gaan aan die einde van die draad (b of e), die linear loading by die gekose punt van die draad.
+Inserisci nel modello	Voeg in die model in
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Reeds goedgekeur in die skets Laste: Q van L en C, f0, Z per band, spanning en stroom in die komponent. Hier word die konstruksietipes bygevoeg.
+Trappola coassiale	Koaksiale lokval
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	die middelgeleier word aan die begin van die middelste wikkeling gesoldeer (om die punte om te ruil verlaag die resonansie met omtrent 50 kHz).
+Calcola spire per f0	Bereken windings vir f0
+Spire dell'avvolgimento (anche frazionarie).	Windings van die wikkeling (ook breukdele).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	die werklike f0 verskil met 'n paar persent: meet dit met die dipmeter of die VNA en korrigeer die windings.
+Blocca	Blokkeer
+dipolo con	dipool met
+Filo Ø	Draad Ø
+Calcola C per f0	Bereken C vir f0
+mm  Filo Ø	mm  Draad Ø
+mm  Passo	mm  Steek
+mm  Spire	mm  Windings
+MHz  dal centro	MHz  vanaf die middel
+m  Braccio	m  Arm
+m  Filo dell'elemento Ø	m  Elementdraad Ø
+Calcola spire per la risonanza	Bereken windings vir resonansie
+Piega	Vou
+m  Distanza tra i fili	m  Spasiëring tussen die drade
+Calcola la piega per la risonanza	Bereken die vou vir resonansie
+Raggi	Speke
+m  Filo Ø	m  Draad Ø
+Verticale alto	Vertikaal se hoogte
+m  Frequenza	m  Frekwensie
+MHz  Filo Ø	MHz  Draad Ø
+Calcola i raggi per la risonanza	Bereken die speke vir resonansie
+L misurata	Gemete L
+MHz  Autorisonanza f0	MHz  Eieresonansie f0
+Cappello capacitivo in punta al verticale	Kapasitiewe hoed bo-op die vertikaal
+Bobina dalle misure	Spoel uit mate
+Reattanza del cappello in frequenza	Hoed se reaktansie teen frekwensie
+impedenza della trappola	lokval-impedansie
+Si comporta da	Gedra hom soos
+Potenza persa	Verlore drywing
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Senderdrywing vir die spannings en verliese in die tabel.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	lae band: stroom by die buik sqrt(P/73) en in die lokval I0 cos(beta a); geblokkeerde band: spanning by die punt van die binneste dipool I0 Z0 verdeel tussen lokval en straling.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	stroom by die buik sqrt(P/73) en in die las I0 cos(beta a), met a die afstand vanaf die middel.
+Risonanza propria f0	Eieresonansie f0
+Q ideale	Ideale Q
+Q della trappola alla risonanza.	Lokval se Q by resonansie.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus die diëlektriese verlies (tangens 3e-4 PE, 2e-4 PTFE). Gemete koaksiale lokvalle het gewoonlik 'n Q tussen 100 en 300.
+Lunghezza di cavo	Kabellengte
++ 10 cm per le saldature	+ 10 cm vir die soldeerwerk
+R in parallelo equivalente	Ekwivalente parallelle R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: dit is die LD-las wat in die model gaan
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipoolarm op die lae band met die lokval, vergelyk met die volgrootte arm (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC met die lokval as las gee die korrekte lengte.
+Induttanza misurata	Gemete induktansie
+dalla misura	uit die meting
+Autorisonanza	Eieresonansie
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frekwensie waarby die spoel op sy eie resoneer met sy eiekapasitansie.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	eiekapasitansie uit Medhurst se tabel volgens lengte / deursnee, geldig vir enkellaagspoele ver van metaalmassas.
+Q della bobina alla frequenza di lavoro.	Spoel se Q by die werksfrekwensie.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	draadweerstand deur die huideffek maal 'n nabyheidsfaktor 1 + 2 (d/p)^2 (d draad, p steek): Medhurst gee soortgelyke waardes vir spoele met 'n lengte soortgelyk aan die deursnee.
+Reattanza della piega	Vou se reaktansie
+Z0 della linea	Lyn se Z0
+Q della piega	Vou se Q
+Capacita' del cappello	Hoed se kapasitansie
+Capacita' del cappello verso lo spazio.	Hoed se kapasitansie teenoor die ruimte.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	som van die speke (dun draad, 2 pi eps0 l / (ln(2l/a) - 1)) en die ring wat na die vol skyf versadig (8 eps0 r): die speke skerm mekaar af. As drade ingevoeg bereken NEC dit presies.
+in punta al verticale	bo-op die vertikaal
+Altezza per la risonanza	Hoogte vir resonansie
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Uitwerking op die vertikaal
+Carichi HF: apri un modello nella finestra principale.	HF-laste: maak 'n model in die hoofvenster oop.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading en die kapasitiewe hoed word as drade ingevoeg: kies vir die ander «As las».
+Il cappello capacitivo si inserisce come fili.	Die kapasitiewe hoed word as drade ingevoeg.
+RLC parallelo	Parallelle RLC
+Effetto sul dipolo	Uitwerking op die dipool
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Verkorting van die arm teenoor die volle kwartgolf (71,3 / f) met die las by daardie punt.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	lynmodel van die belaste arm X = Z0 (cot(beta b) - tan(beta a)), x 0,95 vir die eindeffek.
+Esegui il test	Voer die toets uit
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Die wins kan met die AGT gekorrigeer gewys word (reeds in die optimeerder beplan).
+Controllo prima/dopo il calcolo	Kontrole voor/na die berekening
+Esito	Resultaat
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Een of meer kontroles buite ±0,2 dB: hersien die segmentering (3D-struktuur > Segmentering... en Kontroleer segmentering).
+Tutti i controlli entro ±0,2 dB.	Alle kontroles binne ±0,2 dB.
+Linea a finestra 450	Vensterlyn 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Druk Bereken: NEC bereken die oop model se impedansie by elke frekwensie.
+Perdita nella linea	Lynverlies
+Perdita totale	Totale verlies
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Tipe tuner tussen die lyn en die sender (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	verlies geskat uit die netwerk se belaste Q (Qn = sqrt(Rmax/Rmin - 1), twee seksies vir T en Pi) en die spoel se Q; TLW van N6BV bereken die komponente een vir een en kan 'n paar tiendes dB verskil.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Voorbeeld: doublet 2 × 20 m (ZS6BKW/G5RV). Waarskuwing wanneer die tuner minder as 20 Ω sien: hoë verliese, dit word voorgestel om die lyn te verleng of te verkort. Lyn met verliese soos in TLW (N6BV, ARRL).
+USA costa est	VSA-ooskus
+USA costa ovest	VSA-weskus
+Giappone	Japan
+Caraibi	Karibiese gebied
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: die diens het geen GeoTIFF teruggestuur nie
+GeoTIFF compresso: non supportato	Saamgeperste GeoTIFF: nie ondersteun nie
+GeoTIFF: tipo di dato non supportato	GeoTIFF: datatipe nie ondersteun nie
+Il file non contiene coppie distanza / quota.	Die lêer bevat geen pare afstand / hoogte nie.
+Nessuno	Geen
+Ferriti a perline	Ferrietkrale
+Cavo e balun: segmento della sorgente non trovato.	Kabel en balun: bronsegment nie gevind nie.
+solo palo	slegs mas
+Acciaio zincato	Gegalvaniseerde staal
+Alluminio	Aluminium
+Vetroresina	Veselglas
+Montante sx/dx	Linker/regter staander
+al boom	na die boom
+Traversa	Dwarsbalk
+Palo	Mas
+al dipolo	na die dipool
+N, femmina	N, vroulik
+senza connettori	sonder koppelstukke
+rurale tranquillo	stil platteland
+Verticale λ/4	λ/4-vertikaal
+λ/8 di lato	λ/8 per kant
+0,37 λ di diametro	0,37 λ deursnee
+Cappello capacitivo	Kapasitiewe hoed
+W8NX bassa impedenza	W8NX lae impedansie
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	'n dik kabel met PTFE-diëlektrikum (RG-393) of 'n LC-lokval met 'n hoogspanningskapasitor
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Die vou is langer as lambda/8: die lyn gedra hom nie meer soos 'n konstante induktansie nie, kontroleer die resonansie met NEC deur dit as drade in te voeg.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Die hoed se kapasitansie is 'n skatting (speke wat mekaar afskerm): vir die presiese waarde voeg dit as drade in en bereken met NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Die las se posisie is verby die kwartgolf: skuif dit nader aan die middel.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	die hoed gaan aan die einde van die draad: kies die eerste (b) of laaste (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	die gekose punt is te naby aan die einde van die draad.
+questo tipo entra nel modello come carico.	hierdie tipe gaan as las in die model.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF-laste: drade bygevoeg deur die YA-NEC-sakrekenaar
+Il file Touchstone non contiene punti di S11.	Die Touchstone-lêer bevat geen S11-punte nie.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	Die CSV bevat geen reëls frekwensie, Re(S11), Im(S11) nie.
+AGT in spazio libero, senza perdite	AGT in vrye ruimte, verliesvry
+IMPOSTAZIONI	INSTELLINGS
+Schiera Hi-Z di verticali corte	Hi-Z-groep kort vertikale
+Base del loop	Basis van die lus
+Distanza, lato o diametro	Spasiëring, sy of deursnee
+Altezza delle verticali	Hoogte van die vertikale
+Base del loop dal suolo	Basis van die lus bo die grond
+Fase tra le file	Fase tussen rye
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Lae horisontale dipool: nader as lambda/4 aan die grond gaan die lob opwaarts. Dit is die «hoë hoek»-verwysing in die rangorde van IV3PRK (RDF 7,3 dB): dit word vergelyk met die ontvangsantennas vir lae hoeke.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY deur Gary Breed K9AY (QST, September 1997): twee vertikale lusse teen 90 grade op dieselfde mas, afsluitweerstand (tipies 390 ohm, gestel vir F/B), transformator 9:1. Hier een lus, na die gekose rigting gedraai, oor die grond gesluit soos op die bladsy Ontvangs (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Ontvangs-4-square: vier kort aktiewe vertikale op die hoeke van 'n vierkant van lambda/8, wat langs die diagonaal straal. Leë fase = presiese nul agtertoe (pi + beta d tussen rye): gee die hoogste teoretiese rigtingsgevoeligheid; werklike fasenetwerke (ON4UN, IV3PRK) gebruik ander fases en gee 'n laer RDF (IV3PRK 9,4 dB). Die knoppie soek die fase met die beste RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Groepe kort aktiewe vertikale soos dié van Hi-Z Antennas: 2 elemente end-fire (kardioïed, lambda/8), 3 in 'n driehoek (sy lambda/6, een hoek na die gekose rigting), 8 in 'n sirkel (deursnee 0,37 lambda: die vier na die rigting en die teenoorgestelde word gebruik). Hi-Z: 8 in 'n sirkel RDF 13,4 dB met hul kombineerder; die eenvoudige model met twee rye bly laer. Die knoppie soek die fase met die beste RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Die vertikale begin vanaf werklike grond (GE 1 met Sommerfeld-grond): met NEC-2 gee 'n draad wat aan werklike grond gekoppel is 'n impedansie wat van die bronsegment afhang (NEC-2-handleiding, EZNEC). Patroon en RDF is aanduidend; die koppeling met verhoogde radiale word vir alle ontvangsantennas beplan.
+fase tra le file da 120 a 300 gradi per l'RDF	fase tussen rye van 120 tot 300 grade vir die RDF
+nessuna fase con il lobo in avanti	geen fase met die lob voorwaarts nie
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fase tussen rye vir die beste RDF: {0} grade (RDF {1} dB). Herbereken...
+linea d'orizzonte	horisonlyn
+scala angolare	hoekskaal
+lobo reale sopra il piatto fino a	werklike lob oor plat tot
+Profilo verso	Profiel na
+Lobo verticale e angoli di arrivo a	Vertikale lob en aankomshoeke by
+Cos'e' l'RDF	Wat is RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = wins in die gewenste rigting - gemiddelde wins in alle rigtings (W8JI; vroeër SNIF genoem, in die 60's). Dit meet hoeveel die antenna die sein-tot-geraas-verhouding verbeter as die geraas eweredig uit alle rigtings kom; die absolute wins tel nie ('n voorversterker maak dit op). Gemiddeld soos in EZNEC: boonste halfsfeer gedeel deur die hele sfeer (4 pi). Met hierdie konvensie stem die resultate ooreen met IV3PRK en W8JI/Hi-Z (vertikaal 5,07 teen 5,06 en 4,9; Beverage 350 m 13,5 teen 13,66). Beperking: werklike geraas is nie eenvormig nie (kraglyne, plaaslike QRM): daarom tel F/B en die lob se vorm ook. Vir sendantennas het RDF geen sin nie: daarom word dit slegs in hierdie oortjie bereken. DMF (Directivity Merit Figure, ON4UN): wins by 20 grade hoogte voorwaarts minus die gemiddelde wins van die agterste halfruimte (asimut verby 90 grade, bo die grond, met die kosinus volgens oppervlak geweeg): wys hoeveel die antenna geraas van agter onderdruk. ON4UN waarsku om DMF en RDF nie met mekaar te vergelyk nie. Bronne: W8JI en W8WWV (RDF), ON4UN Low-Band DXing hfst. 7 (DMF, tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	hoogte
+azimut	asimut
+azimut a {0}°	asimut by {0}°
+totale	totaal
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Opening tot die eerste nul (FNBW): {0}°;  hoogste sylob: {1}
+Didascalie {0} %	Etikette {0} %
+ROS	SGV
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB teen {1} van die bron: kontroleer mate, afsluiting en grond (die bron kan ander grond of geometrie gebruik).
+Azimut a {0}° · {1} MHz	Asimut by {0}° · {1} MHz
+Azimut a {0}° di elevazione	Asimut by {0}° hoogte
+RUMORE	GERAAS
+Apri la scheda {0}	Maak die kaart {0} oop
+caso mostrato: {0}	getoonde geval: {0}
+Rastremazioni	Teleskopies
+BANDA	BAND
+λ/2 coassiale 4:1	koaksiaal λ/2 4:1
+Manicotto λ/4	λ/4-mou
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kabelskerm en mas as NEC-drade; vergelyking van baluns (gemeenskaplike-modus-stroom, F/B, gemiddelde F/R, verlies, drywing by 1 kW) van 1,8 tot 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Staanders, dwarsbalk, mas en skerms van die faselyne as NEC-drade: vergelyking sonder / met raam (wins, F/B, gemiddelde F/R, lobbe, verdeler se Z, Tant en G/T).
+TIPO	TIPE
+DATI	DATA
+TELAIO	RAAM
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 in vierkantige of ronde buis, in kabel, Wilkinson; faselyne, kanteling; tekening 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X of +, vlakke λ/4 verskuif; H, V, RHCP, LHCP, X-pol; asverhouding en isolasie
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Gelyke lengtes → gelyke fase. Veelvoude van λ/2 → die aktiewe impedansie herhaal by die verdeler. Aanbevole toleransie ± 5 mm (= ± {0}° fase).
+impedenze attive delle {0} antenne dello stack in parallelo	aktiewe impedansies van die stapel se {0} antennas in parallel
+Banda con ROS < {0}	Band met SGV < {0}
+? Manuale	? Handleiding
+Apre la spiegazione nel manuale	Maak die verduideliking in die handleiding oop
+riferimento	verwysing
+Rispetto alla singola antenna	Relatief tot die enkele antenna
+{0} antenne ideali	{0} ideale antennas
+x la distanza DL6WU, a passi di	x die DL6WU-spasiëring, in stappe van
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Linkeras: stapel se G - enkele antenna se G, van 0 opwaarts. Regteras: stapel se F/R - enkele antenna se F/R, omgekeer, met 0 bo: waar die stapel die F/R verbeter gaan die kurwe af, en die laagste punt is die grootste verbetering. G/T bly in die tabel.
+ΔG sulla singola	ΔG bo die enkele antenna
+Chiusura del programma	Program afsluit
+Vuoi chiudere YA-NEC?	Wil jy YA-NEC toemaak?
+Grazie per avermi usato: spero di esserti stato utile.	Dankie dat jy my gebruik het: ek hoop ek was nuttig.
+Sì	Ja
+ROS attivo	Aktiewe SGV
+G realizzato	Gerealiseerde G
+ROS attivo massimo	Maksimum aktiewe SGV
+riflessi minimi	minimum weerkaatsings
+ROS attivo alto: da non scegliere	hoë aktiewe SGV: moenie kies nie
+Documenti tecnici	Tegniese dokumente
+Manuale d'uso	Gebruikershandleiding
+Manuale di calcolo e delle fonti	Handleiding vir berekeninge en bronne
+Citazioni	Aanhalings
+Cerca in tutti i documenti	Soek in alle dokumente
+Apri il PDF	Maak die PDF oop
+Nessun risultato per «{0}»	Geen resultate vir «{0}» nie
+Primi {0} risultati per «{1}»	Eerste {0} resultate vir «{1}»
+{0} risultati per «{1}»	{0} resultate vir «{1}»
+Apre la citazione {0}	Maak aanhaling {0} oop
+Manuale di calcolo	Berekeningshandleiding
+È pronta la versione {0} di YA-NEC	Weergawe {0} van YA-NEC is gereed
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Dit is reeds afgelaai en geïnstalleer: dit tree in werking wanneer die program herbegin word.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Op die Mac installeer dit nie vanself nie: laai die nuwe .dmg van die weergawebladsy op GitHub af.
+Riavvia adesso	Herbegin nou
+Più tardi	Later
+Apri la pagina delle versioni	Maak die weergawebladsy oop
+Aggiornamento di YA-NEC	YA-NEC-opdatering
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Dit is reeds afgelaai en geïnstalleer. Die program herbegin vanself en maak die oop model weer oop.
+Riavvio tra {0} s	Herbegin oor {0} s
+Questo avviso si chiude tra {0} s	Hierdie kennisgewing sluit oor {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Na die opdatering is die ongestoorde model weer oopgemaak: stoor dit wanneer jy wil (kopie in data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Na die opdatering is die model wat oop was weer oopgemaak.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Elke blokkie het sy eie hulp met verduideliking en bron. Grys: gemerk = altyd aktief (skakel nie af nie); ongemerk = nog nie beskikbaar nie; keuse met pille = vaste keuse. Handleiding, hoofstuk 21.
+"): sorgente sempre accesa.	"): bron altyd aktief.
+' non da' un numero valido.	' is nie 'n geldige getal nie.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik soos dit is
+0 - misure del metodo	0 - mate van die metode
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = standaard WR-golfgeleier van die band (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = dieselfde skottel aan die ander kant (eie eggo).
+0 = stesso disco all'altro capo.	0 = dieselfde skottel aan die ander kant.
+0 gradi a destra	0 grade na regs
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = 'n derde vanaf die punt: impedansie 200-300 ohm, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: ver van die rand, waar buiging die voer uit die fokus sou haal.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 soliede poliëtileen (RG-58, RG-213), 0,8-0,85 skuimdiëlektrikum.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 soliede poliëtileen, 0,8-0,85 skuim, 0,9-0,97 oop lyn.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 geleide lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - gevoerde lus
+1 - radiatore	1 - straler
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = een winding (soos voorheen). Met meer windings groei Rr met N², die huideffekverlies met N.
+1 cavo	1 kabel
+1-2-3 elementi	1-2-3 elemente
+1. Obiettivi e pesi	1. Doelwitte en gewigte
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Wind, balansering, verdelers, baluns, gekruiste Yagi's
+1.3 - Antenne riceventi abilitate	1.3 - Ontvangsantennas geaktiveer
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz met 'n groot skottel: buiten oppervlak en rigting tel termiese en windvervorming (ATA: 0,7 mm RMS snags, 3 mm bedags in die son), die steune se buiging en verspreiding weens librasie.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: druk op 100 %, sonder «pas op bladsy»
+1005/f piedi	1005/f voet
+144 isol.	144 isol.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektors
+2 in parallelo	2 in parallel
+2 lati	2 kante
+2. Variabili che l'ottimizzatore puo' cambiare	2. Veranderlikes wat die optimeerder mag verander
+200 Ω con balun 4:1	200 Ω met balun 4:1
+25 tondo	25 rond
+3 - direttori	3 - direkteure
+3 gruppi	3 groepe
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 of 4. Met 2 is daar geen styfheid buite hul vlak nie.
+3. Registro dei passi - clic su una riga per riprenderla	3. Staplog - klik op 'n reël om dit terug te haal
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω of balun 4:1
+36 Ω + terra	36 Ω + aarde
+4 - tutto insieme	4 - alles saam
+4 lati	4 kante
+4 sorgenti: vedi tabella	4 bronne: sien die tabel
+432 isol.	432 isol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 datakontroles goedgekeur deur IC8TEM op 15/11/2026: drempels en verduidelikings in die handleiding, hoofstuk 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 voet omtrent 18 dBi, 12 voet omtrent 20,5 dBi
+75 ohm ideale	75 ohm ideaal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 keer langer as die radius. Met dik drade of kort segmente (dik buise op UHF, elemente naby mekaar,\n
+9 fili	9 drade
+9 fili a 0,1 λ	9 drade op 0,1 λ
+Accorciamento del pilotato	Verkorting van die gevoerde element
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Verkorting bo 8 %: die lineêre skatting is nie betroubaar nie, kontroleer met NEC.
+Allega il modello aperto	Heg die oop model aan
+Allega il registro di oggi	Heg vandag se log aan
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	RMS-golfhoogte en antenna se hoogte bo die see, in Patrone > Werklike terrein.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Breedte van die sweep rondom die frekwensie, vir die impedansiegrafiek.
+Antenna a	Antenna by
+Applica la freccia al modello NEC	Pas die deurhang op die NEC-model toe
+Approvata, in preparazione: non ancora attiva in questa versione.	Goedgekeur, in voorbereiding: nog nie aktief in hierdie weergawe nie.
+Apri la cartella	Maak die vouer oop
+Apri un modello nella finestra principale	Maak 'n model in die hoofvenster oop
+Apro il modello e il diagramma 3D resta vuoto.	Ek maak die model oop en die 3D-aansig bly leeg.
+Area al vento dell'antenna	Antenna se windoppervlak
+Area al vento totale	Totale windoppervlak
+Area al vento totale e lista di taglio	Totale windoppervlak en snylys
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Let op: moenie gebruik met drade wat teen 'n hoek saamkom of met verskillende deursneë by die las nie.\n
+Bobina di carico per la risonanza	Laaispoel vir resonansie
+Boom con il tirante	Boom met stut
+C1 in serie con la loop	C1 in serie met die lus
+C1 serie, C2 parallelo	C1 serie, C2 parallel
+C2 in parallelo all'ingresso	C2 parallel met die inset
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Sakrekenaars > Ontvangsantennas: lae dipool, K9AY, 4-square RX, Hi-Z 2/3/8 elemente, met die fase tussen rye vir die RDF geoptimeer en die waarskuwing oor die grondverbinding.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Meganiese berekeninge (Wind en Balansering), Sakrekenaars > Verdelers en gekruiste Yagi's, Objekte > Kabel en balun en stapelraam, HF-laste.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Voorlopige dimensionering: vir die installasie geld die ontwerp van 'n bevoegde tegnikus.
+Candidati da controllare	Kandidate om te kontroleer
+Categoria	Kategorie
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Blootstellingskategorie van die terrein (NTC 2018, tab. 3.3.II en fig. 3.3.2): hang af van die terrein se grofheidsklas (A middestede ... D gebiede sonder hindernisse, see) en die afstand van die kus. I = oop kus of see, V = middestad.
+Cebik, poi NEC	Cebik, dan NEC
+Centro della banda scelta:\n	Middel van die gekose band:\n
+Con ghiaccio	Met ys
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Met ys: wind verminder tot 0,6 keer en radiale ys uit die blokkie regs (vereenvoudigde kombinasie ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Met dieselfde saad herhaal die toets presies.
+Condizione della sorgente non capita ("	Bronvoorwaarde nie verstaan nie ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Kyk dadelik op GitHub sonder om die 3 minute te wag. As daar 'n nuwe weergawe is, laai dit af, gee kennis en herbegin soos die outomatiese opdatering (10 sekondes, die model gaan weer oop). Werk ook met die outomatiese opdatering af.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Altyd gekontroleer deur die segmenteringskontrole en in die Waarskuwings (8 met die normale kern, 2 met die uitgebreide kern).
+Copie per candidato	Kopieë per kandidaat
+Coppia sulla staffa boom-mast	Wringkrag in die boom-mas-klamp
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Skep die zip in data/segnalazioni en maak die GitHub-bladsy «New issue» oop met die teks reeds geskryf. Die zip heg jy self aan, met die hand: die program stuur niks vanself nie.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Aardkromming, in Patrone > Werklike terrein.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Deursnee buite die bereik van Cebik se formules (van 1E-6 tot 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Afstand en tipe van die tweede grond: goedgekeur vir 1.5 (Werklike terrein 2).
+Distanze di stack HF	HF-stapelspasiërings
+Distanze di stack: accoppiamento e distanza migliore	Stapelspasiërings: koppeling en beste spasiëring
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Na die optimering gaan die beste resultate na die kontrole met die toleransies. 0 = geen kontrole nie.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Baie lae punte: pas op vir mense en diere (hoë spannings by die punte).
+F/B peggiore	Slegste F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq-lêer: lyne met TLParms uit AutoEZ (kabels met verlies) gebruik nominale Zo en VF en geen verlies nie: NEC se TL-kaart is verliesvry.
+Filo riflettore	Reflektordraad
+Filo ripiegato	Gevoude draad
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Lang hairpin (meer as 0,2 lambda): dit is beter om die spasiëring te verminder of dikker geleiers te gebruik.
+Forza del vento di progetto	Ontwerpwindkrag
+Forza l'aggiornamento	Dwing opdatering af
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Koord se deurhang: hoeveel die net van die reguit stuk halfpad onder die paraboloïed bly (gaan in die fasettering in). Totale massa van die bande {4:0.00} kg{5}.
+Freccia tolta dal modello.	Deurhang uit die model verwyder.
+Ghiaccio radiale	Radiale ys
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA-lêers word altyd weer vir NEC-2 gesegmenteer (handleiding, hoofstuk 10).
+I lobi si leggono nella tabella delle distanze di stack.	Die lobbe word in die tabel van stapelspasiërings gelees.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (rond af), FIX (kap af), MOD, MAX, MIN, ODD (onewe heelgetal: nuttig vir die segmente van die gevoerde draad).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Normale NEC2 hanteer elke draad as 'n dun lyn: dit geld solank die segment minstens\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Een reflektordraad gee 'n baie klein verbetering (Cebik): beter die skerm of die 9 drade.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Die mas oorskry die vloeigrens: dikker mas of korter uitsteek.
+Impedenza del cavo	Kabelimpedansie
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	In 'n ander vorm: kontrole r5 van die Datakontroles merk wins bo die fisiese maksimum vir die boomlengte.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktansie met N² (digte windings) en 'n NEC-model met een winding: hier kontroleer NEC slegs die geometrie van die enkele winding.
+Interasse della forcina	Hairpin-spasiëring
+Isole (tranne Sicilia e Sardegna) e mare aperto	Eilande (behalwe Sicilië en Sardinië) en oop see
+Kernel esteso del NEC2 (scheda EK).\n	Uitgebreide NEC2-kern (EK-kaart).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Die hairpin-spasiëring moet groter as die geleierdeursnee wees.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Die Slim Jim sluit die straler bo met 'n draad wat afwaarts gevou is, tot net bo die stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Dit word deur die venster Segmenteringskontrole gedoen (knoppie hierbo).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Die hairpin is simmetries: dit skeeftrek nie die patroon soos die gamma nie. 'n Balun of smoorspoel by die voerpunt is steeds nodig.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Die hairpin werk slegs met 'n gevoerde element se R laer as die kabelimpedansie: gebruik vir 'n groter R die gamma of 'n transformator.
+La prepara IC8TEM: non ancora attiva.	IC8TEM berei dit voor: nog nie aktief nie.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Die ses reëls van die EZNEC Geometry Check, by elke berekening, in die oortjie Waarskuwings.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: sonder korreksie Z = {0:0.0} {1}j{2:0.0} ohm (met die korreksie {3:0.0} {4}j{5:0.0} ohm).
+Località	Ligging
+Loop orizzontale di 1 λ	Horisontale lus van 1 λ
+Lunghezza del pilotato	Lengte van die gevoerde element
+Lunghezza della forcina	Lengte van die hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Sit die oop model (.nec) in die zip, selfs as dit nie gestoor is nie.
+Mette nello zip il registro di oggi della cartella registri.	Sit vandag se log uit die vouer logs in die zip.
+Momenti al mast	Momente op die mas
+Momento al cuscinetto	Moment by die laer
+NEC: risonanza cercata dal motore	NEC: resonansie deur die enjin gesoek
+NOTE SU QUESTA VERSIONE (fase 0)\n	NOTAS OOR HIERDIE WEERGAWE (fase 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NUUT · bo die grond: hoogtes, spasiërings, gewenste afstraalhoeke
+Nel modello non ci sono elementi orizzontali diritti	Die model het geen reguit horisontale elemente nie
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	In die stapeltabel en in die model se Objekte (stapelraam, verdelers).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Skryf uitdrukkings sonder spasies in geometriekaarte, byvoorbeeld:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Geen spasiëring voorgestel nie
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Geen spasiëring voorgestel nie: almal oorskry die maksimum aktiewe SGV.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Geen IP-adres, geen e-pos, geen gebruikersname in die lêers nie: die tuisvouer se pad word «~». Sonder 'n GitHub-rekening kan jy die zip stuur hoe jy wil.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Nog nie outomaties nie: dit word met die hand gedoen met die AGT-toets in die Waarskuwings (ARRL 24ste, 4nec2).
+Numero di spire	Aantal windings
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Elke kopie het sy mate ewekansig verskuif binne die toleransies van die oortjie Toleransies (verstek: lengte ±1 mm, posisie ±2 mm, deursnee ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Benewens die oop model, aanvange ewekansig gekies tussen die minimum en maksimum van elke veranderlike. 0 = soos voorheen.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Bladsy Geraas van die werklike hemel van die oortjie Geraas/GT/Stapel: die skynoise-berekening na C# oorgedra (lees van die HEALPix-kaarte, interpolasie, sterretyd, koördinate, Maan) en die twee kaarte van G8ONH in data/cielo.
+Partenze a caso	Ewekansige aanvange
+Perimetro Cebik	Cebik-omtrek
+Peso del boom	Boom se gewig
+Pi-greco	Pi-netwerk
+Prepara la segnalazione	Berei die verslag voor
+Proposta	Voorstel
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c-toets by 145 MHz (buise van 12 mm op 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Wanneer nodig: segment/radius-verhouding tussen ongeveer 2 en 8 (onder 2 is geeneen betroubaar nie).\n
+Quota s.l.m.	Hoogte b.s.
+R del pilotato	Gevoerde element se R
+ROS attivo minimo {0}	Minimum aktiewe SGV {0}
+Raggio equivalente dei due conduttori	Ekwivalente radius van die twee geleiers
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Gevoerde element se huidige reaktansie: as dit positief is, moet die gevoerde element meer verkort word.
+Reattanza della forcina	Hairpin se reaktansie
+Reattanza voluta del pilotato	Gewenste reaktansie van die gevoerde element
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktansie: verby kl = pi/2 (of met 'n te dik geleier) geld die AEH-formule nie, gebruik NEC.
+Reinstalla la versione attuale	Herinstalleer die huidige weergawe
+Rel Z non positiva	Re Z nie positief nie
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Gevoerde element se weerstand by resonansie, uit die model of die NEC-berekening.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Herbegin het misluk: maak YA-NEC met die hand toe en weer oop.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Laai af en herinstalleer selfs as die weergawe dieselfde is: nuttig as 'n programlêer beskadig is.
+Scansione	Skandering
+Scegli il candidato con	Kies die kandidaat met
+Schermo	Skerm
+Scrivi due frequenze diverse.	Skryf twee verskillende frekwensies.
+Segnala un problema	Rapporteer 'n probleem
+Seme del caso	Ewekansige saad
+Serve solo per la reattanza (dipolo e monopolo).	Slegs nodig vir die reaktansie (dipool en monopool).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Gebruik met 2 of meer windings: onder 2 geleierdeursneë groei die werklike verlies deur die nabyheidseffek (nie bereken nie).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Gebruik in Patrone > Werklike terrein: seeweerkaatsing met divergensiefaktor en grofheid.
+Sicilia e provincia di Reggio Calabria	Sicilië en die provinsie Reggio Calabria
+Sollecitazione	Spanning
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Bo 0,25 λ begin die lob daal: minder geskik vir NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Bo 30 MHz word Cebik se regressie buite die bereik gebruik waarvoor dit hier aangebied word (HF-drade): Outomaties of NEC is beter.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Onder 0,1 λ daal die wins opwaarts (Cebik): 'n baie lae antenna wen niks nie.
+Sotto l'antenna	Onder die antenna
+Spina (tubo o tondo) dentro il giunto telescopico.	Prop (buis of staaf) binne die teleskopiese las.
+Spina interna nei giunti	Binneprop in die lasse
+Stack con il ROS attivo piu' basso	Stapel met die laagste aktiewe SGV
+Staffe e mast	Klampe en mas
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Tyd: omtrent (aanvange + 1) keer die huidige, plus kandidate x kopieë berekeninge.
+Tensione nel mast al cuscinetto	Spanning in die mas by die laer
+Tiro del tirante	Stut se trekkrag
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Buise uit die tabel Tapsheid geneem: die mate is dieselfde as in die NEC-model.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Alle spasiërings oorskry die maksimum aktiewe SGV ({0}): geen spasiëring voorgestel nie. Verhoog die maksimum aktiewe SGV, probeer die antenna se eie verwysingsimpedansie of stel die enkele antenna in. Matriks en grafiek is by die spasiëring met die laagste aktiewe SGV.
+V invertito	Omgekeerde V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), koppeling, aktiewe SGV, beste spasiëring, twee frekwensies
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Piekwindspoed by die terrein: vb sqrt(ce), met vb = vb,0 ca (NTC 2018, herhalingstydperk 50 jaar) en ce(z) van die blootstellingskategorie by antennahoogte.
+Velocità	Spoed
+Velocità a mano	Spoed met die hand
+Vento di sopravvivenza	Oorlewingswind
+Vento di sopravvivenza del boom	Boom se oorlewingswind
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Wind loodreg op die element waarby die eerste punt die vloeigrens bereik (eie gewig en ys ingesluit).
+X da aggiungere al pilotato	X om by die gevoerde element te voeg
+X del pilotato	Gevoerde element se X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Die finale kontrole word deur die NEC-enjin op die model met die hairpin gedoen.
+Z0 della forcina	Hairpin se Z0
+Z0 della linea dei due conduttori	Tweegeleierlyn se Z0
+Zona buona	Goeie sone
+al centro	in die middel
+caso peggiore	slegste geval
+caso peggiore delle due	slegste geval van die twee
+cerca...	soek...
+copie entro le soglie	kopieë binne die drempels
+corrente sinusoidale	sinusvormige stroom
+distanza dal boom	afstand vanaf die boom
+distanza dall'inizio del boom	afstand vanaf die begin van die boom
+due condensatori sul lato basso	twee kapasitors aan die onderkant
+effetto: calcolo in corso…	uitwerking: bereken…
+forza del vento x sbalzo	windkrag x uitsteek
+il caso peggiore migliore	die beste slegste geval
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	die ekwivalente dipool, dikker, het minder as 73 Ω
+il voto medio migliore	die beste gemiddelde telling
+induttiva, in parallelo	induktief, in parallel
+la percentuale migliore di copie entro le soglie	die beste persentasie kopieë binne die drempels
+linea a due fili	tweedraadlyn
+m  mast a	m  mas by
+m dal suolo	m bo die grond
+m sopra il boom, attacco al	m bo die boom, vasgemaak by
+media delle due	gemiddeld van die twee
+mm  lungo	mm  lank
+mm, acciaio	mm, staal
+molto buono	baie goed
+molto povero	baie swak
+nessun rinforzo	geen versterking nie
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	geen handelsbuis tot +12 mm is genoeg nie: hersien die tapsheid
+nessuna distanza sotto il ROS attivo massimo	geen spasiëring onder die maksimum aktiewe SGV nie
+partenza dal modello aperto	begin vanaf die oop model
+per lato, teso per annullare il momento verticale al mast	per kant, gespan om die vertikale moment op die mas uit te kanselleer
+primo cedimento: tubo Ø	eerste faling: buis Ø
+regge il vento di progetto con il 20 % di margine	weerstaan die ontwerpwind met 'n marge van 20 %
+riferimenti bibliografici	bibliografiese verwysings
+sbalzo sopra il cuscinetto	uitsteek bo die laer
+schermo 1 λ x 1 λ	skerm 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	digte segmente) gebruik die uitgebreide kern 'n meer presiese formule en is die resultaat meer betroubaar.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	sonder prop rus die binnebuis op die rand van die buitebuis en word 'n faktor van 1,25 op die spanning in die eerste 5 cm toegepas: 'n skatting, klampe en gleuwe verander die resultaat baie.
+sollecitazione / snervamento	spanning / vloeigrens
+tubo piu' grosso	dikker buis
+un filo riflettore	een reflektordraad
+zona di cedimento	falingsone
+ø dei conduttori della forcina	ø van die hairpin-geleiers
+ø del filo	draad-ø
+ø del pilotato	gevoerde element se ø
+accordata	ingestem
+accordate	ingestem
+alimentazione	voer
+alluminio	aluminium
+allungata	verleng
+altro	ander
+anello	lus
+angolo	hoek
+antiorario	antikloksgewys
+aritmetico	rekenkundig
+automatico	outomaties
+banda	band
+bande	bande
+bordi	rande
+buono	goed
+capacitiva	kapasitief
+carichi	laste
+carico	las
+cartesiana	Cartesiaans
+cavi	kabels
+cavo	kabel
+centimetri	sentimeter
+centina	rib
+cerchio	sirkel
+condensatore	kapasitor
+corrente	stroom
+destra	regs
+diagramma	patroon
+diametro	deursnee
+differenza	verskil
+dipoli	dipole
+dipolo	dipool
+diretta	direk
+diritto	reguit
+due	twee
+elementi	elemente
+elemento	element
+elimina	skrap
+equilatera	gelyksydig
+esito	resultaat
+esperimenti	eksperimente
+esponenziale	eksponensieel
+fase	fase
+ferriti	ferriete
+fili	drade
+filo	draad
+forcina	hairpin
+forma	vorm
+formule	formules
+frequenza	frekwensie
+geometria	geometrie
+ghiaccio	ys
+giudizio	gradering
+gradi	grade
+griglia	rooster
+guadagno	wins
+incrociata	gekruis
+larghezza	breedte
+lato	sy
+lega	allooi
+libera	vry
+libero	vry
+linea	lyn
+lineare	lineêr
+linee	lyne
+lobi	sylobbe
+locale	plaaslik
+mai	nooit
+manicotto	mou
+mano	met die hand
+meccanica	meganika
+mezzaonda	halfgolf
+millimetri	millimeter
+misure	mate
+modello	model
+modo	modus
+nessuna	geen
+nota	nota
+nuovo	nuut
+operativo	werks
+orario	kloksgewys
+ottagono	agthoek
+palo	mas
+parabola	skottel
+passo	steek
+perdite	verliese
+perfetto	perfek
+piano	vlak
+piatto	plat
+piedi	voet
+polare	polêr
+pollici	duim
+propria	eie
+punto	punt
+quadrato	vierkantig
+quadro	vierkantig
+quota	hoogte
+radiali	radiale
+radiatore	straler
+raggio	radius
+rame	koper
+ramo	tak
+rapidi	vinnig
+rastremazioni	tapsheid
+rete	netwerk
+rettangolo	reghoek
+riepilogo	opsomming
+riflettore	reflektor
+riga	ry
+rombo	ruit
+scarso	swak
+scarto	afwyking
+schiacciata	afgeplat
+sempre	altyd
+senso	rigting
+si'	ja
+sinistra	links
+soglia	drempel
+sorgenti	bronne
+sotto	onder
+spire	windings
+staffe	klampe
+stato	status
+sufficiente	voldoende
+tetto	dak
+tipo	tipe
+tirante	stut
+togli	verwyder
+tondo	rond
+traffico	verkeer
+trasformatori	transformators
+trombe	horings
+tubi	buise
+tubo	buis
+tutti	alle
+uguale	gelyk
+uguali	gelyk
+uso	gebruik
+a {0} x DL6WU; tutte sopra il massimo {1}	by {0} x DL6WU; almal bo die maksimum {1}
+% del mezzo boom	% van die halwe boom
++ aggiungi	+ voeg by
++ aggiungi variabile	+ voeg veranderlike by
++ correzione del boom	+ boomkorreksie
++ nuova	+ nuut
++ trappola	+ lokval
++ verso il disco.	+ na die skottel.
++90 gradi Z	+90 grade Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- rekenkundig: presies halfpad tussen die band se IARU-grense (byvoorbeeld 145,000 MHz op 2 m),\n
+- correzione del boom	- boomkorreksie
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- werks: die frekwensie waarop jy werklik werk (byvoorbeeld 144,300 MHz op 2 m, 432,200 op 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (swart) 10-100 MHz
+-10 nero	-10 swart
+-2 (rosso) 0,25-10 MHz	-2 (rooi) 0,25-10 MHz
+-2 rosso	-2 rooi
+-6 (giallo) 3-40 MHz	-6 (geel) 3-40 MHz
+-6 giallo	-6 geel
+-90 gradi Z	-90 grade Z
+-> segmento NEC	-> NEC-segment
+. "Annulla" torna indietro.	. «Ontdoen» gaan terug.
+. Antenna base: fili 1-	. Basisantenna: drade 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Met so 'n hoë Q moet die sweep slegs 'n paar kHz dek.
+. Salvalo con Salva con nome.	. Stoor dit met Stoor as.
+. Trascina per ruotare, rotella per ingrandire.	. Sleep om te draai, wiel om te zoem.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Gebruik dunner draad, 'n groter kern of twee gestapelde kerne.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) en GMRT tab. 19.1
+12 (errore / HPBW)^2	12 (fout / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passiewe ring: omtrek {0:0.000} lambda, sonder bron en sonder kapasitor; die uitwerking word in die volledige model gesien (direkteur of reflektor).
+Automatico	Outomaties
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, soos nec2c en xnec2c: die bronkode kom saam met die program (lêer COPYING).\n
+Provincia di Trieste	Provinsie Triëst
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	en in C# vir YA-NEC. Verwysingskoppelvlak: xnec2c deur 5B4AZ en Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	doeltreffendheid uit die vergeleë veld bereken, Prad / (Prad + verliese) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedansie en verliese word al hoe minder betroubaar namate die draad laer sak (sien BOG in die handleiding). Vir 'n veilige resultaat: minstens lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	dit word tot {3:0.00} m deursnee geskep; die apertuurberekening langsaan geld vir enige deursnee en hou reeds rekening met die ribbes (blokkie hierbo).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmente: Z = {2:0.000} {3:+0.000;-0.000}j, SGV {4:0.00} op {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, doeltreffendheid {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° hoogte
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19de uitg., hfst. 18 (W9PE se 2 m-Yagi): drie elemente op 0,2 λ, omtrent 7 dBi en F/B bo 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Ooreenstemming van YA-NEC met nec2c (stawe 20/15/10 m): reflektors op 0,185 / 0,197 / 0,222 λ, direkteure op 0,095 / 0,116 / 0,114 λ: binne die bronne se bereike.
+↶ Annulla	↶ Ontdoen
+↷ Ripeti	↷ Herdoen
+■ Ferma	■ Stop
+▶ Avvia	▶ Begin
+☐ mantieni lunghezza del boom	☐ behou die boomlengte
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ geen waarskuwings nie: die segmentering voldoen aan die gekose vlak
+✓ nessun errore e nessun avviso	✓ geen foute en geen waarskuwings nie
+variabili del modello	model se veranderlikes
+nuova variabile dal modello	nuwe veranderlike uit die model
+Scrivi una variabile nella linguetta Variabili…	Skryf 'n veranderlike in die oortjie Veranderlikes…
+Elemento diritto	Reguit element
+Elemento piegato	Gebuigde element
+Variabile nuova	Nuwe veranderlike
+Minimo / massimo	Minimum / maksimum
+Cosa cambia	Wat verander
+in ocra: dove agisce la variabile	in oker: waar die veranderlike werk
+Crea la variabile	Skep die veranderlike
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Veranderlike {0} geskep: die geometrie verander nie. «Ontdoen» in die Geometrie-balk verwyder dit.
+Struttura 3D: dove agisce la variabile ▾	3D-struktuur: waar die veranderlike werk ▾
+Struttura 3D ▸	3D-struktuur ▸
+Clic: nasconde o mostra la struttura	Klik: versteek of wys die struktuur
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	soliede oker: gebruik die veranderlike · gestippelde oker: gebruik dit via 'n ander veranderlike
+attraverso {0}: fili {1}	via {0}: drade {1}

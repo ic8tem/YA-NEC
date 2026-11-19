@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Cik necaurspīdīga ir krāsa: viegls, vidējs vai stiprs. Tabulas rindā plīvurs ir vieglāks, lai skaitļi būtu salasāmi.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Vads {0} izvēlēts 3D skatā: tabulas rinda {1}
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Vads {0}: nav vadu tabulā (ģeometrijas karte nav GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Uzreiz pārbauda, vai ir jauna versija (negaidot 3 minūtes).
+terreno reale	reālais reljefs
+Locatore	Lokators
+da 8 a 12 caratteri	8 līdz 12 rakstzīmes
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Ar 6 rakstzīmēm punkts var būt kilometriem tālu: reljefa profilam vajag vismaz 8 rakstzīmes.
+Quota sito	Vietas augstums
+Altezza antenna	Antenas augstums
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Antenas centra augstums virs zemes. Ja tas atšķiras no modeļa, NEC diagramma tiek pacelta vai nolaista ar to pašu strāvas sadalījumu.
+Distanza max	Maks. attālums
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimuts un attālumi tiek pārrēķināti pie katras lokatora maiņas (lielais loks, 6371 km sfēra).
+Terra	Sauszeme
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Samazina jūras atstarošanas koeficientu ar Amenta koeficientu 0,25 m viļņiem (standartnovirze).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	raupjas virsmas statistiskais modelis (Ament 1953): derīgs slīdošiem leņķiem un vienmērīgai jūrai.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Pazemina profilu ar Zemes izliekumu (efektīvais rādiuss 4/3 pie normālas refrakcijas) un samazina tālos atstarotos starus ar diverģences koeficientu.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standarta atmosfēra (k = 4/3); ar kanāliem vai inversijām šķietamais izliekums mainās.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Augstākā kore starp antenu un izejas virzienu vājina tiešo staru kā mala (Frenela integrālis), kā HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	viena naža mala: noapaļotas kores vai vairākas kores pēc kārtas tiek aproksimētas ar augstāko.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Atkārto aprēķinu ik pēc 10 azimuta grādiem (tikai DEM) un rāda labuma koeficientu uz rozes, antenu pagriežot uz katru azimutu.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	ar antenu vienmēr pagrieztu uz profila azimutu: derīgs grozāmai antenai.
+Cartesiana dBi / gradi	Dekarta dBi / grādi
+0–180° intero	0–180° pilns
+Zoom angolare	Leņķa tālummaiņa
+Sovrapponi alla linguetta Verticale	Uzklāt uz cilnes Vertikālā
+premi Calcola	nospied Aprēķināt
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Atkārto aprēķinu ar antenu no 6 līdz 30 m (HF) vai no 2 līdz 30 m (VHF) un rāda augstumu ar labāko labuma koeficientu trasē.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	strāvas paliek aprēķinātā modeļa strāvas: augstuma ietekme uz pretestību un strāvām netiek ņemta vērā (kā HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Vajadzīgas ARRL Antenna Book pienākšanas leņķu tabulas (.PRN faili pa joslām un reģioniem): tiklīdz tās būs pieejamas, šis aktivizēsies un rādīs oranžās joslas.
+locatore non valido	nederīgs lokators
+sul mare	virs jūras
+sul terreno	virs sauszemes
+profilo reale	reālais profils
+terreno piatto	līdzens reljefs
+orizzonte ostruito	aizsegts horizonts
+° (scala angolare ×	° (leņķu skala ×
+← dietro	← atpakaļ
+avanti →	priekšā →
+statistiche degli angoli di arrivo: non caricate	pienākšanas leņķu statistika: nav ielādēta
+rosa 0–360°: calcolo in corso…	roze 0–360°: aprēķina…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Izvēlies profila failu (noklikšķini "No HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM nav pieejams: pirmajā lietošanas reizē vajadzīgs tīkls, lai lejupielādētu TINITALY vai SRTM1 (pēc tam tie paliek mapē data/dem).
+Profilo del terreno	Reljefa profils
+Lobo di elevazione	Elevācijas daiva
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Vispirms aprēķini modeli (poga Aprēķināt augšā): antenas diagramma nāk no NEC.
+da file	no faila
+dal DEM	no DEM
+rispetto alla stessa antenna su terreno piatto	attiecībā pret to pašu antenu virs līdzena reljefa
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Starpība starp daivu virs reālā profila un daivu virs līdzena reljefa, vidēji noderīgajos leņķos.
+Guadagno a 5° / 10°	Pastiprinājums pie 5° / 10°
+Guadagno a 1° / 3°	Pastiprinājums pie 1° / 3°
+Angoli coperti a -3 dB	Leņķi, kas pārklāti pie -3 dB
+primo lobo sul profilo reale	pirmā daiva virs reālā profila
+calcolo…	aprēķina…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Brīvās telpas modelis: strāvas ir bez zemes, kā HFTA izmantotā brīvās telpas diagramma. Lai ņemtu vērā tuvo zemi, aprēķini modeli ar reālu zemi.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profils ir derīgs tikai vienam azimutam: grozāmai antenai vajag vairāk virzienu (lodziņš "Visi azimuti").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metode kā HFTA (N6BV): tiešais stars + atstarotie stari uz katras profila šķautnes + difrakcija pār korēm. Antenas diagramma nāk no NEC; šis aprēķins pievieno reljefu.
+Piatto	Līdzens
+Reale	Reāls
+Primo minimo	Pirmais minimums
+Punto di riflessione	Atstarošanas punkts
+Orizzonte	Horizonts
+Uso: rotte DX in HF (angoli bassi 1–15°).	Lietojums: HF DX trases (zemi leņķi 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Lietojums: tropo un MS (0–5°), EME ar zemu Mēnesi (zemes pastiprinājums Mēness lēktā/rietā).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Augstums ar lielāko vidējo pastiprinājumu trases noderīgajos leņķos.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	aprēķinātā modeļa strāvas pārvietotas augstumā: pretestība un saite ar zemi paliek modeļa.
+Calcola prima il terreno reale	Vispirms aprēķini reālo reljefu
+Esporta il lobo sul terreno reale	Eksportēt daivu virs reālā reljefa
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Attēli: Esri, Maxar, Earthstar Geographics un GIS lietotāju kopiena
+© i contributori di OpenStreetMap	© OpenStreetMap līdzautori
+Sfondo	Fons
+Foto aerea	Aerofoto
+Solo griglia	Tikai režģis
+Griglia	Režģis
+Cerca	Meklēt
+⌖ Centra sul locatore	⌖ Centrēt uz lokatoru
+Punto scelto	Izvēlētais punkts
+Coordinate	Koordinātas
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klikšķis kartē = antenas punkts; vilkt = pārvietot; ritenis = tālummaiņa (režģis iet no 6 uz 8, 10, 12 rakstzīmēm). Biezs rāmis = 6 rakstzīmju kvadrāts.
+non disponibile	nav pieejams
+Lunghezza elementi	Elementa garums
+Posizione sul boom	Novietojums uz traversas
+Uniforme	Vienmērīgs
+Distribuzione	Sadalījums
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Elements uzstādīts skavā ārpus centra: nobīde pa savu asi, ar novietojuma pielaidi.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	īstā skava maina arī elektrisko garumu pie traversas: tam izmanto cilni Traversas korekcija.
+nuovo a ogni avvio	jauns katrā palaišanā
+Numero prove	Mēģinājumu skaits
+Frequenze	Frekvences
+Seme casuale	Nejaušības sēkla
+OBIETTIVO LISTA DI TAGLIO	GRIEŠANAS SARAKSTA MĒRĶIS
+Calo F/B max	Maks. F/B kritums
+ROS max	Maks. SWR
+Ferma	Apturēt
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Elementi tuvu barotajam elementam parasti ir viskritiskākie; tie traversas galā pacieš lielākas kļūdas.
+l'istogramma serve al Monte Carlo	histogramma ir Monte Carlo
+5% peggiore	sliktākie 5%
+Posizione mm	Novietojums mm
+Lunghezza mm	Garums mm
+Tolleranza ammessa	Pieļaujamā pielaide
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Sarkanā krāsā elementi, kam vajag mazāk par būvniecības pielaidi.
+Calcola prima il modello	Vispirms aprēķini modeli
+sensibilita'	jutība
+Tolleranze: fermato	Pielaides: apturēts
+Diametro mm	Diametrs mm
+Tolleranza ammessa mm	Pieļaujamā pielaide mm
+Avvia prima il calcolo	Vispirms palaid aprēķinu
+Esporta la lista di taglio	Eksportēt griešanas sarakstu
+Lista di taglio	Griešanas saraksts
+Obiettivi	Mērķi
+Calo massimo del F/B	Maksimālais F/B kritums
+ROS massimo	Maksimālais SWR
+Tolleranze di costruzione	Būvniecības pielaides
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Plānots (skice 13, jāapstiprina): šajā versijā vēl nav aktīvs.
+Al quadro 20×2 mm	Al kvadrāts 20×2 mm
+Al quadro 25×2 mm	Al kvadrāts 25×2 mm
+Al quadro 30×2 mm	Al kvadrāts 30×2 mm
+Al quadro 40×2 mm	Al kvadrāts 40×2 mm
+Al tondo 25×1,5 mm	Al apaļš 25×1,5 mm
+Al tondo 30×2 mm	Al apaļš 30×2 mm
+Al tondo 40×2 mm	Al apaļš 40×2 mm
+Al tondo 50×2 mm	Al apaļš 50×2 mm
+Zona NTC	NTC zona
+Quota sito as	Vietas augstums kā
+Periodo ritorno	Atkārtošanās periods
+Categoria esposiz.	Atklātības kategorija
+Coeff. topografia	Topogrāfijas koef.
+Antenna da terra	Antena virs zemes
+Palo sopra rotore	Masts virs rotora
+Ø palo	Masta Ø
+Usa elementi e boom del modello	Izmantot modeļa elementus un traversu
+Includi telaio, palo, cavi	Iekļaut rāmi, mastu, kabeļus
+Scansione direzione del vento	Vēja virziena skenēšana
+UNITÀ	MĒRVIENĪBAS
+N e kgf affiancati	N un kgf blakus
+solo N	tikai N
+solo kgf	tikai kgf
+Mostra	Rādīt
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	nederīgs lokators: izvēlies zonu manuāli
+Telaio a H	H rāmis
+Cavi e divisore	Kabeļi un dalītājs
+Parte	Daļa
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Ar vēju šķērsām elementi nespiež (cross-flow, K5IU): spēks uz cauruli aug ar perpendikulārās vēja komponentes kvadrātu.
+momento flettente alla staffa del rotore	lieces moments pie rotora skavas
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Provizorisks dimensionējums: neaizstāj inženiera pārbaudi mastam, tornim un pamatam. Pamatnes moments nonāks apakšcilnē Masts un pamats.
+Sito e norma	Vieta un standarts
+Norma	Standarts
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; koeficienti CNR-DT 207 R1/2018 un EN 1991-1-4
+Locatore / zona	Lokators / zona
+Risultati	Rezultāti
+Forza massima	Maksimālais spēks
+Momento flettente alla staffa del rotore	Lieces moments pie rotora skavas
+Momento torcente sul rotore	Griezes moments uz rotoru
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Provizorisks dimensionējums: neaizstāj kvalificēta inženiera pārbaudi mastam, tornim un pamatam.
+Al tondino pieno	Al pilns stienis
+Materiale elementi	Elementu materiāls
+Staffe, isolatori	Skavas, izolatori
+g cad.	g katrs
+Dipolo + scatola	Dipols + kārba
+Cavo fino al palo	Kabelis līdz mastam
+STAFFA AL PALO	MASTA SKAVA
+Posizione attuale	Pašreizējais novietojums
+m dal riflettore	m no reflektora
+Massa / distanza	Masa / attālums
+Vento dalla linguetta Vento	Vējš no cilnes Vējš
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Izmanto apakšcilnes Vējš pēdējā aprēķina aprēķina spiedienu; bez tā 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Pārvieto visu modeli pa traversu tā, lai ieteiktā skava nonāktu koordinātu sākumpunktā (kur piestiprinās masts un stāva rāmis). Atsaukt 3D struktūrā to atceļ.
+Momenti in funzione della posizione della staffa	Momenti atkarībā no skavas novietojuma
+Masse e aree per parte	Masas un laukumi pa daļām
+ultimo direttore	pēdējais direktors
+Staffe e isolatori	Skavas un izolatori
+Cavo sul boom	Kabelis uz traversas
+Massa kg	Masa kg
+Baricentro m	Smaguma centrs m
+Area vento m²	Vēja laukums m²
+Centro area m	Laukuma centrs m
+solo peso	tikai svars
+solo vento	tikai vējš
+File Touchstone .s1p	Touchstone fails .s1p
+Formato letto	Nolasītais formāts
+CAVO TRA VNA E ANTENNA	KABELIS STARP VNA UN ANTENU
+R e X separate	R un X atsevišķi
+Banda con ROS <	Josla ar SWR <
+ROS: calcolato e misurato	SWR: aprēķinātais un izmērītais
+Confronto	Salīdzinājums
+misurato, cavo tolto	izmērīts, kabelis noņemts
+R calcolata	R aprēķinātā
+X calcolata	X aprēķinātā
+R misurata	R izmērītā
+X misurata	X izmērītā
+Calcolato	Aprēķinātais
+Misurato	Izmērītais
+Scarto	Starpība
+Frequenza del ROS minimo	Minimālā SWR frekvence
+ROS minimo	Minimālais SWR
+nessuna correzione: calcolo e misura coincidono.	korekcijas nav: aprēķins un mērījums sakrīt.
+calcolo NEC sul campo della misura…	NEC aprēķins mērījuma diapazonā…
+Misura del VNA	VNA mērījums
+Tutti	Visi
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Palaid slaucīšanu (poga Slaucīšana augšā), lai redzētu F/B un F/R visā joslā
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = pastiprinājums uz priekšu mīnus vidējā jauda aizmugurējā puslodē (azimuts 90-270°, visi elevācijas leņķi virs 0°). Tas ir arī starp optimizatora mērķiem.
+Tabelle: F/B e F/R su tutta la banda	Tabulas: F/B un F/R visā joslā
+Valori dello sweep	Slaucīšanas vērtības
+ANTENNE RICEVENTI	UZTVEROŠĀS ANTENAS
+4-square in ricezione	4-square uztveršanai
+8 verticali in cerchio	8 vertikāļi aplī
+Modello aperto	Atvērt modeli
+Isotropo	Izotrops
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = pastiprinājums vēlamajā virzienā mīnus vidējais pastiprinājums visā pustelpā: atšķirībā no pastiprinājuma tas nav atkarīgs no zudumiem.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Izmanto cilnes Reālais reljefs pienākšanas leņķa mediānu kā vēlamo elevāciju (statistika pa joslām un reģioniem). Bez ielādētas ARRL statistikas paliek šeit ierakstītā elevācija.
+Direzione voluta	Vēlamais virziens
+Hz  rumore	Hz  troksnis
+NF ricevitore	Uztvērēja NF
+sorgente locale az	lokāls avots az
+Cifre di merito in ricezione	Uztveršanas labuma koeficienti
+Basta il segnale?	Vai signāla pietiek?
+calcolo in corso…	aprēķina…
+RDF in funzione della frequenza	RDF atkarībā no frekvences
+Calcola prima il modello aperto	Vispirms aprēķini atvērto modeli
+verticale λ/4	λ/4 vertikālis
+° · dB relativi · arancio: -3 dB	° · relatīvie dB · oranžs: -3 dB
+settore ±30° az, 10–40° el	sektors ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Vidējais pastiprinājums priekšējā sektorā mīnus vidējais aizmugurējā puslodē.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definē DMF tikai ar pastiprinājumu pie 20 grādiem; šeit izmanto vidējo skices sektorā, tāpēc vērtības nav salīdzināmas viens pret vienu ar grāmatas vērtībām.
+molto basso: serve un preamplificatore	ļoti zems: vajadzīgs priekšpastiprinātājs
+basso ma accettabile: vedi soglia	zems, bet pieņemams: skat. slieksni
+come un'antenna trasmittente	kā raidošā antena
+F/R medio sull'emisfero posteriore	Vidējais F/R aizmugurējā puslodē
+Rumore d'antenna ai morsetti	Antenas troksnis spailēs
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Ārējā trokšņa jauda spailēs: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + vidējais pastiprinājums, svērts pēc trokšņa izcelsmes.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	troksnis no horizonta, svērts exp(-el/10 grādi) elevācijā: atspoguļo tālu cilvēka radītu troksni, kas pienāk zemu; reālais sadalījums atkarīgs no vietas.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	punktveida avots 5 grādu elevācijā ar tādu pašu jaudu kā izotropais fons.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	izotrops troksnis virs zemes; zeme troksni nepievieno.
+Margine sul ricevitore	Uztvērēja rezerve
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Antenas troksnis pārsniedz uztvērēja troksni mazāk nekā par 6 dB: uztvērējs ierobežo jutību. Vajag vairāk priekšpastiprinājuma vai uztvērēju ar zemāku NF.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Pastiprinājums 1,8
+Spazio richiesto	Vajadzīgā vieta
+λ/4 in tubo quadro	λ/4 kvadrātveida caurulē
+λ/4 in tubo tondo	λ/4 apaļā caurulē
+Solo cavi di fase	Tikai fāzes līnijas
+Aria	Gaiss
+Uscite	Izejas
+Z antenne	Antenas Z
+Z ingresso	Ieejas Z
+Dielettrico	Dielektriķis
+Connettori	Savienotāji
+Correggi accorciamento dei connettori	Koriģēt savienotāju saīsinājumu
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Atņem no garuma līnijas daļu savienotāju iekšpusē.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	novērtējums 4 mm uz galu ar N savienotājiem (3 BNC, 1,5 SMA): vislabāk regulēt ar VNA, saīsinot pa 1 mm.
+Divisori	Dalītāji
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Izmanto atvērtā stāva antenu aktīvās pretestības (viens avots uz antenu) un attālumus fāzes līniju minimālajam garumam.
+CAVI DI FASE	FĀZES LĪNIJAS
+Lunghezza minima	Minimālais garums
+Passo verticale	Vertikālais attālums
+solo cavi di fase: nessun trasformatore da costruire	tikai fāzes līnijas: nav jābūvē transformators
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω kabeļi paralēli = 37,5 Ω
+quadro, lato	kvadrāts, mala
+tondo, Ø	apaļš, Ø
+Z0 richiesta	Vajadzīgā Z0
+Ø conduttore interno	Iekšējā vadītāja Ø
+VF del cavo	Kabeļa VF
+λ/4 in aria, mm	λ/4 gaisā, mm
+da tagliare, mm	griezt, mm
+Z carico in parallelo	Slodzes Z paralēli
+Rami λ/4: Z0 = Zin · √N	λ/4 zari: Z0 = Zin · √N
+Resistenze a stella	Zvaigznes rezistori
+Isolamento tra le uscite	Izolācija starp izejām
+Perdita stimata	Aplēstie zudumi
+Carico usato	Izmantotā slodze
+non potenza di 2	nav 2 pakāpe
+ROS all'ingresso	Ieejas SWR
+solo cavi di fase	tikai fāzes līnijas
+Uscita	Izeja
+Lungh. elettrica	Elektriskais garums
+Fisica mm	Fiziskie mm
+Perdita dB	Zudumi dB
+° di fase).	° fāzes).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° uz augšu); pretestība pie dalītāja vairs precīzi neatkārtojas.
+Solo cavi di fase: nessun disegno da stampare	Tikai fāzes līnijas: nav zīmējuma, ko drukāt
+Divisore	Dalītājs
+50 mm di controllo	Pārbaude 50 mm
+GEOMETRIA	ĢEOMETRIJA
+λ/4 sul boom	λ/4 uz traversas
+stesso piano	tā pati plakne
+Metallico, isolati	Metāls, izolēti
+Non metallico	Nemetālisks
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Traversas nav NEC modelī: ar elementiem, kas izolēti no metāla traversas, ietekme ir maza (traversas korekcija Kalkulatoros).
+Yagi di base	Bāzes Yagi
+Disposizione	Izvietojums
+Sfasamento piani	Plakņu nobīde
+Cavo di ritardo λ/4	λ/4 aiztures kabelis
+Includi relè e cavi reali	Iekļaut reālos relejus un kabeļus
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Pievieno aiztures kabeļa zudumus (VF 0,66, 10 dB/100 m pie 144 MHz, mērogots ar frekvences kvadrātsakni) un 0,1 dB relejam.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75 omu kabeļa un koaksiālā releja tipiskās vērtības; programma tavējās nezina.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Tas pats fāzēšanas tīkls der arī turnstile antenai (dipoli krustoti 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Skats no priekšas
+Componenti co-polare / cross-polare	Kopolārās / krustpolārās komponentes
+Rapporto assiale e ROS in frequenza	Ass attiecība un SWR atkarībā no frekvences
+piano A	plakne A
+piano B	plakne B
+vista dal davanti — boom al centro	skats no priekšas — traversa centrā
+piani sfalsati di λ/4 lungo il boom	plaknes nobīdītas par λ/4 pa traversu
+Yagi incrociate: serve una Yagi con una sola sorgente	Krustotās Yagi: vajadzīga Yagi ar vienu avotu
+Yagi incrociate: calcolo in corso...	Krustotās Yagi: aprēķina...
+Rapporto assiale in asse	Ass attiecība uz ass
+Rapporto assiale a −3 dB	Ass attiecība pie −3 dB
+Isolamento tra i due piani	Izolācija starp abām plaknēm
+Fase della rete sul piano B	Tīkla fāze plaknē B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Pilnīgi ortogonālas un simetriskas plaknes: modelī saite un pretējā polarizācija ir gandrīz nulle. Realitātē skavas, kabeļi un nelielas asimetrijas tās ierobežo līdz aptuveni 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	no 1,8 MHz līdz 1296 MHz: balunu saraksts mainās ar joslu
+LINEA DI DISCESA	BAROŠANAS LĪNIJA
+Coassiale	Koaksiālā
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Ar simetrisku atvērtu līniju nav ekrāna: kopējais režīms rodas tikai no nesimetrijas. Kartīte aprēķina koaksiālo gadījumu; atvērtajai līnijai izmanto Līnijas (TL) ar skaņotāju.
+Lungo il boom	Pa traversu
+m → palo	m → masts
+Discesa sul palo	Lejup pa mastu
+Fino alla stazione	Līdz stacijai
+Calza a massa sul palo / traliccio	Ekrāns sazemēts pie masta / torņa
+Messa a terra all'ingresso stazione	Zemējums pie stacijas ieejas
+BALUN DA CONFRONTARE	SALĪDZINĀMIE BALUNI
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 vijumi RG-213 uz 110 mm: induktivitāte pēc Vīlera, paškapacitāte pēc Medhērsta.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 un aplēstā paškapacitāte: droseles reālā pretestība jāizmēra.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferīta toroīds kā paralēla RLC ar zemu Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm maksimumā (10 MHz ar maisījumu 31, 25 MHz ar maisījumu 43): 12 vijumu uz 2 x FT-240 tipiskās vērtības.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksiālais λ/2 4:1: simetriska barošana, ekrāni savienoti.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	atlikušais kopējais režīms kā 600 omu rezonanse pie f0 (Q 3): atkarīgs no montāžas.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 uzmava: īsslēgta λ/4 līnija starp ekrānu un uzmavu, augsta pretestība pie f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Uzmavas Z0 50 omi un 0,08 dB zudumi ceturtdaļvilnī.
+10 perline in ferrite sulla calza.	10 ferīta pērles uz ekrāna.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 omi uz pērli pie 144 MHz (maisījums 61), 100 omi virs 30 MHz ar maisījumu 43: tipiskas kataloga vērtības.
+Caso mostrato	Parādītais gadījums
+premi Calcola il confronto	nospied Aprēķināt salīdzinājumu
+Corrente lungo la calza, dal dipolo verso il basso	Strāva pa ekrānu, no dipola uz leju
+Vista laterale: corrente sulla calza	Sānskats: strāva uz ekrāna
+F/R medio	Vidējais F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Zudumi balunā
+Potenza dissipata nel balun a 1 kW	Jauda, kas izkliedējas balunā pie 1 kW
+Banda con calza < 5 %	Josla ar ekrāna strāvu < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Pelēkie ieraksti ir baluni otrai joslai; tie aktivizējas, izvēloties frekvenci. HF diapazonā skaitās arī ekrāns līdz stacijai (sazemēts), VHF/UHF daļa uz traversas un masta. Ekrāns ir vads, kas savienots ar vienu barošanas punkta pusi, kā realitātē bez baluna; baluns ir kopējā režīma pretestība pirmajā posmā.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Stikla šķiedra nevada: rāmis neiet NEC, paliek tikai fāzes līniju ekrāni.
+Includi palo sotto il telaio	Iekļaut mastu zem rāmja
+Cavi di fase lungo i montanti	Fāzes līnijas gar statņiem
+Rotore e controventi	Rotors un atsaites
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Plānots: rotors un atsaites kā vadi (vajadzīgi torņa izmēri).
+Materiale	Materiāls
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	sarkans = rāmja daļas, modelētas kā NEC vadi · svītrots = fāzes līniju ekrāns
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horizontālā polarizācija: vertikālie statņi ir vāji saistīti; horizontālā šķērssija un fāzes līnijas nē.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertikālā polarizācija: statņi un masts ir paralēli elementiem un nozīmē vairāk; horizontālā šķērssija maz.
+Confronto senza / con telaio	Salīdzinājums bez / ar rāmi
+Diagramma orizzontale sovrapposto	Horizontālā diagramma pārklājumā
+premi Calcola confronto	nospied Aprēķināt salīdzinājumu
+Stack: calcola prima il modello	Stāvs: vispirms aprēķini modeli
+Stack: calcolo senza e con telaio...	Stāvs: aprēķina bez un ar rāmi...
+Pezzo	Daļa
+Collegato	Savienots
+Cavi	Kabeļi
+Senza telaio	Bez rāmja
+Con telaio	Ar rāmi
+Z ingresso divisore	Dalītāja ieejas Z
+senza telaio	bez rāmja
+con telaio	ar rāmi
+Stack: confronto senza / con telaio fatto	Stāvs: salīdzinājums bez / ar rāmi pabeigts
+CARICHI HF	HF SLODZES
+INSERISCI NEL MODELLO	IEVIETOT MODELĪ
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Cepure iet vada galā (b vai e), linear loading izvēlētajā vada punktā.
+Inserisci nel modello	Ievietot modelī
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Jau apstiprināts skicē Slodzes: L un C Q, f0, Z pa joslām, spriegums un strāva komponentē. Šeit pievienojas konstrukcijas tipi.
+Trappola coassiale	Koaksiālais slazds
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	centrālā dzīsla tiek pielodēta vidējā tinuma sākumam (galu apmainīšana pazemina rezonansi par aptuveni 50 kHz).
+Calcola spire per f0	Aprēķināt vijumus f0
+Spire dell'avvolgimento (anche frazionarie).	Tinuma vijumi (arī daļskaitļos).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	reālā f0 atšķiras par dažiem procentiem: izmēri to ar dipmetru vai VNA un izlabo vijumus.
+Blocca	Bloķē
+dipolo con	dipols ar
+Filo Ø	Vads Ø
+Calcola C per f0	Aprēķināt C f0
+mm  Filo Ø	mm  Vads Ø
+mm  Passo	mm  Solis
+mm  Spire	mm  Vijumi
+MHz  dal centro	MHz  no centra
+m  Braccio	m  Plecs
+m  Filo dell'elemento Ø	m  Elementa vads Ø
+Calcola spire per la risonanza	Aprēķināt vijumus rezonansei
+Piega	Locījums
+m  Distanza tra i fili	m  Attālums starp vadiem
+Calcola la piega per la risonanza	Aprēķināt locījumu rezonansei
+Raggi	Spieķi
+m  Filo Ø	m  Vads Ø
+Verticale alto	Vertikāļa augstums
+m  Frequenza	m  Frekvence
+MHz  Filo Ø	MHz  Vads Ø
+Calcola i raggi per la risonanza	Aprēķināt spieķus rezonansei
+L misurata	Izmērītā L
+MHz  Autorisonanza f0	MHz  Pašrezonanse f0
+Cappello capacitivo in punta al verticale	Kapacitatīva cepure vertikāļa augšā
+Bobina dalle misure	Spole pēc izmēriem
+Reattanza del cappello in frequenza	Cepures reaktance atkarībā no frekvences
+impedenza della trappola	slazda pretestība
+Si comporta da	Uzvedas kā
+Potenza persa	Zaudētā jauda
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Raidītāja jauda tabulas spriegumiem un zudumiem.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	zemā josla: strāva kušķī sqrt(P/73) un slazdā I0 cos(beta a); bloķētā josla: spriegums iekšējā dipola galā I0 Z0, sadalīts starp slazdu un starojumu.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	strāva kušķī sqrt(P/73) un slodzē I0 cos(beta a), kur a ir attālums no centra.
+Risonanza propria f0	Pašrezonanse f0
+Q ideale	Ideālais Q
+Q della trappola alla risonanza.	Slazda Q rezonansē.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus dielektriskie zudumi (tangenss 3e-4 PE, 2e-4 PTFE). Izmērītiem koaksiālajiem slazdiem Q parasti ir no 100 līdz 300.
+Lunghezza di cavo	Kabeļa garums
++ 10 cm per le saldature	+ 10 cm lodējumiem
+R in parallelo equivalente	Ekvivalentā paralēlā R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: tā ir LD slodze, kas nonāk modelī
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipola plecs zemajā joslā ar slazdu, salīdzinot ar pilna izmēra plecu (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC ar slazdu kā slodzi dod pareizo garumu.
+Induttanza misurata	Izmērītā induktivitāte
+dalla misura	no mērījuma
+Autorisonanza	Pašrezonanse
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frekvence, kurā spole pati rezonē ar savu paškapacitāti.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	paškapacitāte no Medhērsta tabulas pēc garuma / diametra, derīga vienslāņa spolēm tālu no metāla masām.
+Q della bobina alla frequenza di lavoro.	Spoles Q darba frekvencē.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	vada pretestība skinefekta dēļ, reizināta ar tuvuma koeficientu 1 + 2 (d/p)^2 (d vads, p solis): Medhērsts dod līdzīgas vērtības spolēm, kuru garums līdzīgs diametram.
+Reattanza della piega	Locījuma reaktance
+Z0 della linea	Līnijas Z0
+Q della piega	Locījuma Q
+Capacita' del cappello	Cepures kapacitāte
+Capacita' del cappello verso lo spazio.	Cepures kapacitāte pret telpu.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	spieķu summa (tievs vads, 2 pi eps0 l / (ln(2l/a) - 1)) un gredzens, kas piesātinās uz pilnu disku (8 eps0 r): spieķi cits citu ekranē. Ievietotu kā vadus, NEC to aprēķina precīzi.
+in punta al verticale	vertikāļa augšā
+Altezza per la risonanza	Augstums rezonansei
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Ietekme uz vertikāli
+Carichi HF: apri un modello nella finestra principale.	HF slodzes: atver modeli galvenajā logā.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading un kapacitatīvā cepure tiek ievietotas kā vadi: pārējiem izvēlies «Kā slodzi».
+Il cappello capacitivo si inserisce come fili.	Kapacitatīvā cepure tiek ievietota kā vadi.
+RLC parallelo	Paralēlā RLC
+Effetto sul dipolo	Ietekme uz dipolu
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Pleca saīsinājums attiecībā pret pilnu ceturtdaļvilni (71,3 / f) ar slodzi šajā punktā.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	noslogotā pleca līnijas modelis X = Z0 (cot(beta b) - tan(beta a)), x 0,95 gala efekta dēļ.
+Esegui il test	Palaist testu
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Pastiprinājumu var rādīt koriģētu ar AGT (jau paredzēts optimizatorā).
+Controllo prima/dopo il calcolo	Pārbaude pirms/pēc aprēķina
+Esito	Rezultāts
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Viena vai vairākas pārbaudes ārpus ±0,2 dB: pārskati segmentāciju (3D struktūra > Segmentācija... un Pārbaudīt segmentāciju).
+Tutti i controlli entro ±0,2 dB.	Visas pārbaudes ±0,2 dB robežās.
+Linea a finestra 450	Logu līnija 450 omi
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Nospied Aprēķināt: NEC aprēķina atvērtā modeļa pretestību katrā frekvencē.
+Perdita nella linea	Līnijas zudumi
+Perdita totale	Kopējie zudumi
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Skaņotāja tips starp līniju un raidītāju (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	zudumi aplēsti no tīkla noslogotā Q (Qn = sqrt(Rmax/Rmin - 1), divas sekcijas T un Pi) un spoles Q; N6BV TLW aprēķina komponentes pa vienai un var atšķirties par dažām dB desmitdaļām.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Piemērs: dublets 2 × 20 m (ZS6BKW/G5RV). Brīdinājums, ja skaņotājs redz mazāk par 20 Ω: lieli zudumi, ieteicams pagarināt vai saīsināt līniju. Līnija ar zudumiem kā TLW (N6BV, ARRL).
+USA costa est	ASV austrumkrasts
+USA costa ovest	ASV rietumkrasts
+Giappone	Japāna
+Caraibi	Karību jūra
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: pakalpojums neatgrieza GeoTIFF
+GeoTIFF compresso: non supportato	Saspiests GeoTIFF: netiek atbalstīts
+GeoTIFF: tipo di dato non supportato	GeoTIFF: datu tips netiek atbalstīts
+Il file non contiene coppie distanza / quota.	Failā nav pāru attālums / augstums.
+Nessuno	Nav
+Ferriti a perline	Ferīta pērles
+Cavo e balun: segmento della sorgente non trovato.	Kabelis un baluns: avota segments nav atrasts.
+solo palo	tikai masts
+Acciaio zincato	Cinkots tērauds
+Alluminio	Alumīnijs
+Vetroresina	Stikla šķiedra
+Montante sx/dx	Kreisais/labais statnis
+al boom	uz traversu
+Traversa	Šķērssija
+Palo	Masts
+al dipolo	uz dipolu
+N, femmina	N, mātīte
+senza connettori	bez savienotājiem
+rurale tranquillo	klusa lauku vide
+Verticale λ/4	λ/4 vertikālis
+λ/8 di lato	λ/8 katrā pusē
+0,37 λ di diametro	0,37 λ diametrs
+Cappello capacitivo	Kapacitatīva cepure
+W8NX bassa impedenza	W8NX zema pretestība
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	biezs kabelis ar PTFE dielektriķi (RG-393) vai LC slazds ar augstsprieguma kondensatoru
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Locījums ir garāks par lambda/8: līnija vairs neuzvedas kā konstanta induktivitāte, pārbaudi rezonansi ar NEC, ievietojot to kā vadus.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Cepures kapacitāte ir novērtējums (spieķi, kas cits citu ekranē): precīzai vērtībai ievieto to kā vadus un aprēķini ar NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Slodzes novietojums ir aiz ceturtdaļviļņa: pārvieto to tuvāk centram.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	cepure iet vada galā: izvēlies pirmo (b) vai pēdējo (e) segmentu.
+il punto scelto e' troppo vicino all'estremo del filo.	izvēlētais punkts ir pārāk tuvu vada galam.
+questo tipo entra nel modello come carico.	šis tips nonāk modelī kā slodze.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF slodzes: YA-NEC kalkulatora pievienotie vadi
+Il file Touchstone non contiene punti di S11.	Touchstone failā nav S11 punktu.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV failā nav rindu frekvence, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT brīvā telpā, bez zudumiem
+IMPOSTAZIONI	IESTATĪJUMI
+Schiera Hi-Z di verticali corte	Īsu vertikāļu Hi-Z grupa
+Base del loop	Cilpas pamats
+Distanza, lato o diametro	Attālums, mala vai diametrs
+Altezza delle verticali	Vertikāļu augstums
+Base del loop dal suolo	Cilpas pamats virs zemes
+Fase tra le file	Fāze starp rindām
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Zems horizontāls dipols: tuvāk zemei nekā lambda/4 daiva iet uz augšu. Tā ir «augstā leņķa» atsauce IV3PRK klasifikācijā (RDF 7,3 dB): to salīdzina ar zemā leņķa uztverošajām antenām.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY, autors Gary Breed K9AY (QST, 1997. gada septembris): divas vertikālas cilpas 90 grādu leņķī uz viena masta, nobeiguma rezistors (tipiski 390 omi, regulēts F/B), transformators 9:1. Šeit viena cilpa, pagriezta uz izvēlēto virzienu, noslēgta virs zemes kā lapā Uztveršana (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Uztveršanas 4-square: četri īsi aktīvi vertikāļi lambda/8 kvadrāta stūros, starojot pa diagonāli. Tukša fāze = precīza aizmugures nulle (pi + beta d starp rindām): dod augstāko teorētisko virzīgumu; reālie fāzēšanas tīkli (ON4UN, IV3PRK) izmanto citas fāzes un dod zemāku RDF (IV3PRK 9,4 dB). Poga meklē fāzi ar labāko RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Īsu aktīvu vertikāļu grupas kā Hi-Z Antennas: 2 elementi end-fire (kardioīda, lambda/8), 3 trijstūrī (mala lambda/6, viens stūris uz izvēlēto virzienu), 8 aplī (diametrs 0,37 lambda: izmanto četrus uz virzienu un pretējos). Hi-Z: 8 aplī RDF 13,4 dB ar savu kombinētāju; vienkāršais divu rindu modelis paliek zemāks. Poga meklē fāzi ar labāko RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikāļi sākas no reālas zemes (GE 1 ar Zommerfelda zemi): ar NEC-2 vads, kas savienots ar reālu zemi, dod pretestību, kas atkarīga no avota segmenta (NEC-2 rokasgrāmata, EZNEC). Diagramma un RDF ir orientējoši; savienojums ar paceltiem radiāļiem paredzēts visām uztverošajām antenām.
+fase tra le file da 120 a 300 gradi per l'RDF	fāze starp rindām no 120 līdz 300 grādiem RDF
+nessuna fase con il lobo in avanti	neviena fāze ar daivu uz priekšu
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fāze starp rindām labākajam RDF: {0} grādi (RDF {1} dB). Pārrēķina...
+linea d'orizzonte	horizonta līnija
+scala angolare	leņķu skala
+lobo reale sopra il piatto fino a	reālā daiva virs līdzena līdz
+Profilo verso	Profils virzienā
+Lobo verticale e angoli di arrivo a	Vertikālā daiva un pienākšanas leņķi pie
+Cos'e' l'RDF	Kas ir RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = pastiprinājums vēlamajā virzienā - vidējais pastiprinājums visos virzienos (W8JI; agrāk saukts SNIF, 60. gados). Tas mēra, cik antena uzlabo signāla/trokšņa attiecību, ja troksnis nāk vienādi no visiem virzieniem; absolūtais pastiprinājums neskaitās (priekšpastiprinātājs to atgūst). Vidējots kā EZNEC: augšējā puslode dalīta ar visu sfēru (4 pi). Ar šo vienošanos rezultāti sakrīt ar IV3PRK un W8JI/Hi-Z (vertikālis 5,07 pret 5,06 un 4,9; Beverage 350 m 13,5 pret 13,66). Ierobežojums: reālais troksnis nav vienmērīgs (elektrolīnijas, lokāls QRM): tāpēc skaitās arī F/B un daivas forma. Raidošām antenām RDF nav jēgas: tāpēc to aprēķina tikai šajā cilnē. DMF (Directivity Merit Figure, ON4UN): pastiprinājums uz priekšu 20 grādu elevācijā mīnus aizmugurējās pustelpas vidējais pastiprinājums (azimuts aiz 90 grādiem, virs zemes, svērts ar kosinusu pēc laukuma): rāda, cik antena noraida troksni no aizmugures. ON4UN brīdina nesalīdzināt DMF un RDF savā starpā. Avoti: W8JI un W8WWV (RDF), ON4UN Low-Band DXing 7. nod. (DMF, tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevācija
+azimut	azimuts
+azimut a {0}°	azimuts pie {0}°
+totale	kopā
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Atvērums līdz pirmajai nullei (FNBW): {0}°;  augstākā sānu daiva: {1}
+Didascalie {0} %	Etiķetes {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB pret avota {1}: pārbaudi izmērus, nobeigumu un zemi (avots var izmantot citu zemi vai ģeometriju).
+Azimut a {0}° · {1} MHz	Azimuts pie {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimuts pie {0}° elevācijas
+RUMORE	TROKSNIS
+Apri la scheda {0}	Atvērt kartīti {0}
+caso mostrato: {0}	parādītais gadījums: {0}
+Rastremazioni	Teleskopiskie
+BANDA	JOSLA
+λ/2 coassiale 4:1	koaksiālais λ/2 4:1
+Manicotto λ/4	λ/4 uzmava
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kabeļa ekrāns un masts kā NEC vadi; balunu salīdzinājums (kopējā režīma strāva, F/B, vidējais F/R, zudumi, jauda pie 1 kW) no 1,8 līdz 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Statņi, šķērssija, masts un fāzes līniju ekrāni kā NEC vadi: salīdzinājums bez / ar rāmi (pastiprinājums, F/B, vidējais F/R, daivas, dalītāja Z, Tant un G/T).
+TIPO	TIPS
+DATI	DATI
+TELAIO	RĀMIS
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 kvadrātveida vai apaļā caurulē, kabelī, Wilkinson; fāzes līnijas, slīpums; zīmējums 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X vai +, plaknes nobīdītas par λ/4; H, V, RHCP, LHCP, X-pol; ass attiecība un izolācija
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Vienādi garumi → vienāda fāze. λ/2 daudzkārtņi → aktīvā pretestība atkārtojas pie dalītāja. Ieteicamā pielaide ± 5 mm (= ± {0}° fāzes).
+impedenze attive delle {0} antenne dello stack in parallelo	stāva {0} antenu aktīvās pretestības paralēli
+Banda con ROS < {0}	Josla ar SWR < {0}
+? Manuale	? Rokasgrāmata
+Apre la spiegazione nel manuale	Atver skaidrojumu rokasgrāmatā
+riferimento	atsauce
+Rispetto alla singola antenna	Attiecībā pret atsevišķu antenu
+{0} antenne ideali	{0} ideālas antenas
+x la distanza DL6WU, a passi di	x DL6WU attālums, ar soli
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Kreisā ass: stāva G - atsevišķas antenas G, no 0 uz augšu. Labā ass: stāva F/R - atsevišķas antenas F/R, apgriezta, ar 0 augšā: kur stāvs uzlabo F/R, līkne iet uz leju, un zemākais punkts ir lielākais uzlabojums. G/T paliek tabulā.
+ΔG sulla singola	ΔG virs atsevišķas antenas
+Chiusura del programma	Programmas aizvēršana
+Vuoi chiudere YA-NEC?	Vai vēlies aizvērt YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Paldies, ka mani izmantoji: ceru, ka biju noderīgs.
+Sì	Jā
+ROS attivo	Aktīvais SWR
+G realizzato	Realizētais G
+ROS attivo massimo	Maksimālais aktīvais SWR
+riflessi minimi	minimālās atstarošanās
+ROS attivo alto: da non scegliere	augsts aktīvais SWR: neizvēlēties
+Documenti tecnici	Tehniskie dokumenti
+Manuale d'uso	Lietošanas rokasgrāmata
+Manuale di calcolo e delle fonti	Aprēķinu un avotu rokasgrāmata
+Citazioni	Citāti
+Cerca in tutti i documenti	Meklēt visos dokumentos
+Apri il PDF	Atvērt PDF
+Nessun risultato per «{0}»	Nav rezultātu vaicājumam «{0}»
+Primi {0} risultati per «{1}»	Pirmie {0} rezultāti vaicājumam «{1}»
+{0} risultati per «{1}»	{0} rezultāti vaicājumam «{1}»
+Apre la citazione {0}	Atver citātu {0}
+Manuale di calcolo	Aprēķinu rokasgrāmata
+È pronta la versione {0} di YA-NEC	YA-NEC versija {0} ir gatava
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Tā jau ir lejupielādēta un instalēta: tā stāsies spēkā, restartējot programmu.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Mac datorā tā neinstalējas pati: lejupielādē jauno .dmg no versiju lapas GitHub.
+Riavvia adesso	Restartēt tagad
+Più tardi	Vēlāk
+Apri la pagina delle versioni	Atvērt versiju lapu
+Aggiornamento di YA-NEC	YA-NEC atjauninājums
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Tā jau ir lejupielādēta un instalēta. Programma restartējas pati un atkal atver atvērto modeli.
+Riavvio tra {0} s	Restartēšana pēc {0} s
+Questo avviso si chiude tra {0} s	Šis paziņojums aizvērsies pēc {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Pēc atjaunināšanas atkārtoti atvērts nesaglabātais modelis: saglabā to, kad vēlies (kopija mapē data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Pēc atjaunināšanas atkārtoti atvērts modelis, kas bija atvērts.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Katram lodziņam ir sava palīdzība ar skaidrojumu un avotu. Pelēks: atzīmēts = vienmēr aktīvs (neizslēdzas); neatzīmēts = vēl nav pieejams; izvēle ar tabletēm = fiksēta izvēle. Rokasgrāmata, 21. nodaļa.
+"): sorgente sempre accesa.	"): avots vienmēr aktīvs.
+' non da' un numero valido.	' nav derīgs skaitlis.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik, kā ir
+0 - misure del metodo	0 - metodes izmēri
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = joslas standarta WR viļņvads (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = tas pats šķīvis otrā galā (paša atbalss).
+0 = stesso disco all'altro capo.	0 = tas pats šķīvis otrā galā.
+0 gradi a destra	0 grādi pa labi
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = trešdaļa no gala: pretestība 200-300 omi, baluns 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: tālu no malas, kur liece izvirzītu apstarotāju no fokusa.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 pilns polietilēns (RG-58, RG-213), 0,8-0,85 putu dielektriķis.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 pilns polietilēns, 0,8-0,85 putas, 0,9-0,97 atvērta līnija.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 vadītā lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - barotā cilpa
+1 - radiatore	1 - starotājs
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = viens vijums (kā iepriekš). Ar vairāk vijumiem Rr aug ar N², skinefekta zudumi ar N.
+1 cavo	1 kabelis
+1-2-3 elementi	1-2-3 elementi
+1. Obiettivi e pesi	1. Mērķi un svari
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vējš, līdzsvarošana, dalītāji, baluni, krustotās Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Uztverošās antenas aktivizētas
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz ar lielu šķīvi: papildus virsmai un vēršanai skaitās termiskā un vēja deformācija (ATA: 0,7 mm RMS naktī, 3 mm dienā saulē), balstu liece un izkliede librācijas dēļ.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: drukāt 100 %, bez «ietilpināt lapā»
+1005/f piedi	1005/f pēdas
+144 isol.	144 izol.
+2 - riflettore	2 - reflektors
+2 - riflettori	2 - reflektori
+2 in parallelo	2 paralēli
+2 lati	2 malas
+2. Variabili che l'ottimizzatore puo' cambiare	2. Mainīgie, ko optimizators var mainīt
+200 Ω con balun 4:1	200 Ω ar balunu 4:1
+25 tondo	25 apaļš
+3 - direttori	3 - direktori
+3 gruppi	3 grupas
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 vai 4. Ar 2 nav stinguma ārpus to plaknes.
+3. Registro dei passi - clic su una riga per riprenderla	3. Soļu žurnāls - noklikšķini uz rindas, lai to atjaunotu
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω vai baluns 4:1
+36 Ω + terra	36 Ω + zeme
+4 - tutto insieme	4 - viss kopā
+4 lati	4 malas
+4 sorgenti: vedi tabella	4 avoti: skat. tabulu
+432 isol.	432 izol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 datu pārbaudes, ko IC8TEM apstiprināja 15/11/2026: sliekšņi un skaidrojumi rokasgrāmatā, 11. nodaļā.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 pēdas ap 18 dBi, 12 pēdas ap 20,5 dBi
+75 ohm ideale	75 omi ideāli
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 reizes garāks par rādiusu. Ar bieziem vadiem vai īsiem segmentiem (biezas caurules UHF, tuvi elementi,\n
+9 fili	9 vadi
+9 fili a 0,1 λ	9 vadi pie 0,1 λ
+Accorciamento del pilotato	Barotā elementa saīsinājums
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Saīsinājums virs 8 %: lineārais novērtējums nav uzticams, pārbaudi ar NEC.
+Allega il modello aperto	Pievienot atvērto modeli
+Allega il registro di oggi	Pievienot šodienas žurnālu
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Viļņu RMS augstums un antenas augstums virs jūras, sadaļā Diagrammas > Reālais reljefs.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Slaucīšanas platums ap frekvenci, pretestības grafikam.
+Antenna a	Antena pie
+Applica la freccia al modello NEC	Piemērot nokari NEC modelim
+Approvata, in preparazione: non ancora attiva in questa versione.	Apstiprināts, gatavošanā: šajā versijā vēl nav aktīvs.
+Apri la cartella	Atvērt mapi
+Apri un modello nella finestra principale	Atver modeli galvenajā logā
+Apro il modello e il diagramma 3D resta vuoto.	Es atveru modeli, un 3D skats paliek tukšs.
+Area al vento dell'antenna	Antenas vēja laukums
+Area al vento totale	Kopējais vēja laukums
+Area al vento totale e lista di taglio	Kopējais vēja laukums un griešanas saraksts
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Uzmanību: neizmantot ar vadiem, kas savienojas leņķī vai ar dažādiem diametriem savienojumā.\n
+Bobina di carico per la risonanza	Pagarinājuma spole rezonansei
+Boom con il tirante	Traversa ar atsaiti
+C1 in serie con la loop	C1 virknē ar cilpu
+C1 serie, C2 parallelo	C1 virknē, C2 paralēli
+C2 in parallelo all'ingresso	C2 paralēli ieejai
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Kalkulatori > Uztverošās antenas: zems dipols, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, ar fāzi starp rindām, optimizētu RDF, un brīdinājumu par zemējuma savienojumu.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mehāniskie aprēķini (Vējš un Līdzsvarošana), Kalkulatori > Dalītāji un krustotās Yagi, Objekti > Kabelis un baluns un stāva rāmis, HF slodzes.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Provizorisks dimensionējums: uzstādīšanai ir spēkā kvalificēta tehniķa projekts.
+Candidati da controllare	Pārbaudāmie kandidāti
+Categoria	Kategorija
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Vietas atklātības kategorija (NTC 2018, tab. 3.3.II un att. 3.3.2): atkarīga no reljefa raupjuma klases (A pilsētu centri ... D apvidi bez šķēršļiem, jūra) un attāluma līdz krastam. I = atklāts krasts vai jūra, V = pilsētas centrs.
+Cebik, poi NEC	Cebik, tad NEC
+Centro della banda scelta:\n	Izvēlētās joslas centrs:\n
+Con ghiaccio	Ar ledu
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Ar ledu: vējš samazināts līdz 0,6 reizēm un radiālais ledus no lodziņa labajā pusē (vienkāršota kombinācija ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Ar to pašu sēklu tests atkārtojas vienādi.
+Condizione della sorgente non capita ("	Avota nosacījums nav saprasts ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Uzreiz pārbauda GitHub, negaidot 3 minūtes. Ja ir jauna versija, to lejupielādē, paziņo un restartē kā automātiskais atjauninājums (10 sekundes, modelis atveras atkal). Darbojas arī ar izslēgtu automātisko atjaunināšanu.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Vienmēr pārbaudīts ar segmentācijas pārbaudi un Brīdinājumos (8 ar parasto kodolu, 2 ar paplašināto kodolu).
+Copie per candidato	Kopijas uz kandidātu
+Coppia sulla staffa boom-mast	Griezes moments traversas-masta skavā
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Izveido zip failu mapē data/segnalazioni un atver GitHub lapu «New issue» ar jau uzrakstītu tekstu. Zip failu pievieno tu pats, manuāli: programma pati neko nesūta.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Zemes izliekums, sadaļā Diagrammas > Reālais reljefs.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diametrs ārpus Cebika formulu diapazona (no 1E-6 līdz 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Otrās zemes attālums un tips: apstiprināts 1.5 versijai (Reālais reljefs 2).
+Distanze di stack HF	HF stāva attālumi
+Distanze di stack: accoppiamento e distanza migliore	Stāva attālumi: saite un labākais attālums
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Pēc optimizācijas labākie rezultāti nonāk pārbaudē ar pielaidēm. 0 = bez pārbaudes.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Ļoti zemi gali: uzmanies no cilvēkiem un dzīvniekiem (augsti spriegumi galos).
+F/B peggiore	Sliktākais F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq fails: līnijas ar AutoEZ TLParms (kabeļi ar zudumiem) izmanto nominālos Zo un VF un bez zudumiem: NEC TL kartīte ir bez zudumiem.
+Filo riflettore	Reflektora vads
+Filo ripiegato	Salocīts vads
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Garš hairpin (vairāk nekā 0,2 lambda): labāk samazināt attālumu vai izmantot biezākus vadītājus.
+Forza del vento di progetto	Aprēķina vēja spēks
+Forza l'aggiornamento	Piespiedu atjaunināšana
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Hordas nokare: cik daudz taisnā posma tīkls ir zem paraboloīda laiduma vidū (ietilpst šķautņošanā). Siksnu kopējā masa {4:0.00} kg{5}.
+Freccia tolta dal modello.	Nokare noņemta no modeļa.
+Ghiaccio radiale	Radiālais ledus
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA faili vienmēr tiek pārsegmentēti NEC-2 vajadzībām (rokasgrāmata, 10. nodaļa).
+I lobi si leggono nella tabella delle distanze di stack.	Daivas nolasa stāva attālumu tabulā.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (noapaļo), FIX (nogriež), MOD, MAX, MIN, ODD (nepāra vesels skaitlis: noderīgs barotā vada segmentiem).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Parastais NEC2 apstrādā katru vadu kā tievu līniju: tas ir derīgi, kamēr segments ir vismaz\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Viens reflektora vads dod ļoti mazu uzlabojumu (Cebik): labāk ekrāns vai 9 vadi.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Masts pārsniedz tecēšanas robežu: biezāks masts vai īsāka konsole.
+Impedenza del cavo	Kabeļa pretestība
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Citā veidā: Datu pārbaužu pārbaude r5 atzīmē pastiprinājumu virs fiziskā maksimuma traversas garumam.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktivitāte ar N² (cieši vijumi) un viena vijuma NEC modelis: šeit NEC pārbauda tikai šī viena vijuma ģeometriju.
+Interasse della forcina	Hairpin attālums
+Isole (tranne Sicilia e Sardegna) e mare aperto	Salas (izņemot Sicīliju un Sardīniju) un atklāta jūra
+Kernel esteso del NEC2 (scheda EK).\n	Paplašinātais NEC2 kodols (EK kartīte).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Hairpin attālumam jābūt lielākam par vadītāja diametru.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim noslēdz starotāju augšā ar uz leju salocītu vadu, līdz tieši virs šleifa.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	To dara logs Segmentācijas pārbaude (poga augšā).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin ir simetrisks: tas nekropļo diagrammu kā gamma. Barošanas punktā joprojām vajag balunu vai droseli.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin darbojas tikai, ja barotā elementa R ir mazāka par kabeļa pretestību: lielākai R izmanto gammu vai transformatoru.
+La prepara IC8TEM: non ancora attiva.	IC8TEM to gatavo: vēl nav aktīvs.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	EZNEC Geometry Check sešas kārtulas, katrā aprēķinā, cilnē Brīdinājumi.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: bez korekcijas Z = {0:0.0} {1}j{2:0.0} ohm (ar korekciju {3:0.0} {4}j{5:0.0} ohm).
+Località	Vieta
+Loop orizzontale di 1 λ	Horizontāla 1 λ cilpa
+Lunghezza del pilotato	Barotā elementa garums
+Lunghezza della forcina	Hairpin garums
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Ievieto zip failā atvērto modeli (.nec), pat ja tas nav saglabāts.
+Mette nello zip il registro di oggi della cartella registri.	Ievieto zip failā šodienas žurnālu no mapes logs.
+Momenti al mast	Momenti uz masta
+Momento al cuscinetto	Moments pie gultņa
+NEC: risonanza cercata dal motore	NEC: rezonansi meklē dzinējs
+NOTE SU QUESTA VERSIONE (fase 0)\n	PIEZĪMES PAR ŠO VERSIJU (fāze 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	JAUNS · virs zemes: augstumi, attālumi, vēlamie izstarošanas leņķi
+Nel modello non ci sono elementi orizzontali diritti	Modelim nav taisnu horizontālu elementu
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Stāva tabulā un modeļa Objektos (stāva rāmis, dalītāji).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Ģeometrijas kartītēs raksti izteiksmes bez atstarpēm, piemēram:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Nav ieteikta attāluma
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Nav ieteikta attāluma: visi pārsniedz maksimālo aktīvo SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Failos nav IP adreses, e-pasta, lietotājvārdu: mājas mapes ceļš kļūst par «~». Bez GitHub konta zip failu vari nosūtīt, kā vēlies.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Vēl nav automātiski: to dara manuāli ar AGT testu Brīdinājumos (ARRL 24., 4nec2).
+Numero di spire	Vijumu skaits
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Katrai kopijai izmēri nejauši nobīdīti cilnes Pielaides pielaižu robežās (pēc noklusējuma: garums ±1 mm, novietojums ±2 mm, diametrs ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Papildus atvērtajam modelim starti, kas nejauši izvēlēti starp katra mainīgā minimumu un maksimumu. 0 = kā iepriekš.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Cilnes Troksnis/GT/Stāvs lapa Reālās debess troksnis: skynoise aprēķins pārnests uz C# (HEALPix karšu nolasīšana, interpolācija, zvaigžņu laiks, koordinātas, Mēness) un divas G8ONH kartes mapē data/cielo.
+Partenze a caso	Nejauši starti
+Perimetro Cebik	Cebika perimetrs
+Peso del boom	Traversas svars
+Pi-greco	Pi tīkls
+Prepara la segnalazione	Sagatavot ziņojumu
+Proposta	Priekšlikums
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c tests pie 145 MHz (12 mm caurules ar 40 mm attālumu): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Kad vajadzīgs: segmenta/rādiusa attiecība apmēram starp 2 un 8 (zem 2 neviens nav uzticams).\n
+Quota s.l.m.	Augstums v.j.l.
+R del pilotato	Barotā elementa R
+ROS attivo minimo {0}	Minimālais aktīvais SWR {0}
+Raggio equivalente dei due conduttori	Abu vadītāju ekvivalentais rādiuss
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Barotā elementa pašreizējā reaktance: ja tā ir pozitīva, barotais elements jāsaīsina vairāk.
+Reattanza della forcina	Hairpin reaktance
+Reattanza voluta del pilotato	Vēlamā barotā elementa reaktance
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktance: aiz kl = pi/2 (vai ar pārāk biezu vadītāju) AEH formula nav derīga, izmanto NEC.
+Reinstalla la versione attuale	Pārinstalēt pašreizējo versiju
+Rel Z non positiva	Re Z nav pozitīva
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Barotā elementa pretestība rezonansē, no modeļa vai NEC aprēķina.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Restartēšana neizdevās: aizver un atkal atver YA-NEC manuāli.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Lejupielādē un pārinstalē pat tad, ja versija ir tā pati: noderīgi, ja programmas fails ir bojāts.
+Scansione	Slaucīšana
+Scegli il candidato con	Izvēlēties kandidātu ar
+Schermo	Ekrāns
+Scrivi due frequenze diverse.	Ieraksti divas dažādas frekvences.
+Segnala un problema	Ziņot par problēmu
+Seme del caso	Nejaušības sēkla
+Serve solo per la reattanza (dipolo e monopolo).	Vajadzīgs tikai reaktancei (dipols un monopols).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Izmanto ar 2 vai vairāk vijumiem: zem 2 vadītāja diametriem reālie zudumi aug tuvuma efekta dēļ (netiek aprēķināti).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Izmanto sadaļā Diagrammas > Reālais reljefs: jūras atstarošana ar diverģences koeficientu un raupjumu.
+Sicilia e provincia di Reggio Calabria	Sicīlija un Redžo di Kalabrijas province
+Sollecitazione	Spriegums
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Virs 0,25 λ daiva sāk pazemināties: mazāk piemērota NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Virs 30 MHz Cebika regresija tiek izmantota ārpus diapazona, kuram tā šeit piedāvāta (HF vadi): labāk Automātiski vai NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Zem 0,1 λ pastiprinājums uz augšu krītas (Cebik): ļoti zema antena neko neiegūst.
+Sotto l'antenna	Zem antenas
+Spina (tubo o tondo) dentro il giunto telescopico.	Aizbāznis (caurule vai stienis) teleskopiskā savienojuma iekšpusē.
+Spina interna nei giunti	Iekšējais aizbāznis savienojumos
+Stack con il ROS attivo piu' basso	Stāvs ar zemāko aktīvo SWR
+Staffe e mast	Skavas un masts
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Laiks: apmēram (starti + 1) reizes pašreizējais, plus kandidāti x kopijas aprēķini.
+Tensione nel mast al cuscinetto	Spriegums mastā pie gultņa
+Tiro del tirante	Atsaites stiepe
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Caurules ņemtas no tabulas Sašaurinājumi: izmēri ir tie paši, kas NEC modelī.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Visi attālumi pārsniedz maksimālo aktīvo SWR ({0}): nav ieteikta attāluma. Paaugstini maksimālo aktīvo SWR, izmēģini pašas antenas atsauces pretestību vai noregulē atsevišķo antenu. Matrica un grafiks ir attālumam ar zemāko aktīvo SWR.
+V invertito	Apgriezts V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), saite, aktīvais SWR, labākais attālums, divas frekvences
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Maksimālais vēja ātrums vietā: vb sqrt(ce), kur vb = vb,0 ca (NTC 2018, atkārtošanās periods 50 gadi) un ce(z) no atklātības kategorijas antenas augstumā.
+Velocità	Ātrums
+Velocità a mano	Ātrums manuāli
+Vento di sopravvivenza	Izdzīvošanas vējš
+Vento di sopravvivenza del boom	Traversas izdzīvošanas vējš
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Vējš perpendikulāri elementam, pie kura pirmais punkts sasniedz tecēšanas robežu (ieskaitot pašsvaru un ledu).
+X da aggiungere al pilotato	X, kas jāpievieno barotajam elementam
+X del pilotato	Barotā elementa X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Gala pārbaudi veic NEC dzinējs modelim ar hairpin.
+Z0 della forcina	Hairpin Z0
+Z0 della linea dei due conduttori	Divvadu līnijas Z0
+Zona buona	Laba zona
+al centro	centrā
+caso peggiore	sliktākais gadījums
+caso peggiore delle due	sliktākais no abiem
+cerca...	meklēt...
+copie entro le soglie	kopijas sliekšņu robežās
+corrente sinusoidale	sinusoidāla strāva
+distanza dal boom	attālums no traversas
+distanza dall'inizio del boom	attālums no traversas sākuma
+due condensatori sul lato basso	divi kondensatori apakšpusē
+effetto: calcolo in corso…	ietekme: aprēķina…
+forza del vento x sbalzo	vēja spēks x konsole
+il caso peggiore migliore	labākais sliktākais gadījums
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ekvivalentajam dipolam, biezākam, ir mazāk par 73 Ω
+il voto medio migliore	labākais vidējais vērtējums
+induttiva, in parallelo	induktīvs, paralēli
+la percentuale migliore di copie entro le soglie	labākā kopiju daļa sliekšņu robežās
+linea a due fili	divvadu līnija
+m  mast a	m  masts pie
+m dal suolo	m virs zemes
+m sopra il boom, attacco al	m virs traversas, piestiprināts pie
+media delle due	abu vidējais
+mm  lungo	mm  garš
+mm, acciaio	mm, tērauds
+molto buono	ļoti labs
+molto povero	ļoti vājš
+nessun rinforzo	bez pastiprinājuma
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	neviena tirdzniecības caurule līdz +12 mm nepietiek: pārskati sašaurinājumu
+nessuna distanza sotto il ROS attivo massimo	nav attāluma zem maksimālā aktīvā SWR
+partenza dal modello aperto	sākt no atvērtā modeļa
+per lato, teso per annullare il momento verticale al mast	katrā pusē, nostiepts, lai novērstu vertikālo momentu uz masta
+primo cedimento: tubo Ø	pirmais lūzums: caurule Ø
+regge il vento di progetto con il 20 % di margine	iztur aprēķina vēju ar 20 % rezervi
+riferimenti bibliografici	literatūras atsauces
+sbalzo sopra il cuscinetto	konsole virs gultņa
+schermo 1 λ x 1 λ	ekrāns 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	blīvi segmenti) paplašinātais kodols izmanto precīzāku formulu un rezultāts ir uzticamāks.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	bez aizbāžņa iekšējā caurule balstās uz ārējās caurules malas, un pirmo 5 cm spriegumam piemēro koeficientu 1,25: novērtējums, skavas un šķēlumi rezultātu ļoti maina.
+sollecitazione / snervamento	spriegums / tecēšanas robeža
+tubo piu' grosso	biezāka caurule
+un filo riflettore	viens reflektora vads
+zona di cedimento	lūzuma zona
+ø dei conduttori della forcina	hairpin vadītāju ø
+ø del filo	vada ø
+ø del pilotato	barotā elementa ø
+accordata	noskaņots
+accordate	noskaņota
+alimentazione	barošana
+alluminio	alumīnijs
+allungata	pagarināts
+altro	cits
+anello	cilpa
+angolo	leņķis
+antiorario	pretēji pulksteņrādītājam
+aritmetico	aritmētisks
+automatico	automātiski
+banda	josla
+bande	joslas
+bordi	malas
+buono	labs
+capacitiva	kapacitatīvs
+carichi	slodzes
+carico	slodze
+cartesiana	Dekarta
+cavi	kabeļi
+cavo	kabelis
+centimetri	centimetri
+centina	riba
+cerchio	aplis
+condensatore	kondensators
+corrente	strāva
+destra	labā
+diagramma	diagramma
+diametro	diametrs
+differenza	starpība
+dipoli	dipoli
+dipolo	dipols
+diretta	tiešs
+diritto	taisns
+due	divi
+elementi	elementi
+elemento	elements
+elimina	dzēst
+equilatera	vienādmalu
+esito	rezultāts
+esperimenti	eksperimenti
+esponenziale	eksponenciāls
+fase	fāze
+ferriti	ferīti
+fili	vadi
+filo	vads
+forcina	hairpin
+forma	forma
+formule	formulas
+frequenza	frekvence
+geometria	ģeometrija
+ghiaccio	ledus
+giudizio	vērtējums
+gradi	grādi
+griglia	režģis
+guadagno	pastiprinājums
+incrociata	krustoti
+larghezza	platums
+lato	mala
+lega	sakausējums
+libera	brīvs
+libero	brīva
+linea	līnija
+lineare	lineārs
+linee	līnijas
+lobi	sānu daivas
+locale	lokāls
+mai	nekad
+manicotto	uzmava
+mano	manuāli
+meccanica	mehānika
+mezzaonda	pusvilnis
+millimetri	milimetri
+misure	izmēri
+modello	modelis
+modo	režīms
+nessuna	nav
+nota	piezīme
+nuovo	jauns
+operativo	darba
+orario	pulksteņrādītāja virzienā
+ottagono	astoņstūris
+palo	masts
+parabola	šķīvis
+passo	solis
+perdite	zudumi
+perfetto	ideāls
+piano	plakne
+piatto	plakans
+piedi	pēdas
+polare	polārs
+pollici	collas
+propria	pašu
+punto	punkts
+quadrato	kvadrātveida
+quadro	kvadrātveida
+quota	augstums
+radiali	radiāļi
+radiatore	starotājs
+raggio	rādiuss
+rame	varš
+ramo	zars
+rapidi	ātrs
+rastremazioni	sašaurinājumi
+rete	tīkls
+rettangolo	taisnstūris
+riepilogo	kopsavilkums
+riflettore	reflektors
+riga	rinda
+rombo	rombs
+scarso	vājš
+scarto	novirze
+schiacciata	saplacināts
+sempre	vienmēr
+senso	virziens
+si'	jā
+sinistra	kreisā
+soglia	slieksnis
+sorgenti	avoti
+sotto	zem
+spire	vijumi
+staffe	skavas
+stato	statuss
+sufficiente	pietiekams
+tetto	jumts
+tipo	tips
+tirante	atsaite
+togli	noņemt
+tondo	apaļš
+traffico	satiksme
+trasformatori	transformatori
+trombe	taures
+tubi	caurules
+tubo	caurule
+tutti	visi
+uguale	vienāds
+uguali	vienādi
+uso	izmantot
+a {0} x DL6WU; tutte sopra il massimo {1}	pie {0} x DL6WU; visi virs maksimuma {1}
+% del mezzo boom	% no pustraversas
++ aggiungi	+ pievienot
++ aggiungi variabile	+ pievienot mainīgo
++ correzione del boom	+ traversas korekcija
++ nuova	+ jauns
++ trappola	+ slazds
++ verso il disco.	+ uz šķīvi.
++90 gradi Z	+90 grādi Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmētiskā: tieši pa vidu starp joslas IARU robežām (piemēram, 145,000 MHz 2 m joslā),\n
+- correzione del boom	- traversas korekcija
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- darba: frekvence, kurā tu patiešām strādā (piemēram, 144,300 MHz 2 m joslā, 432,200 70 cm joslā),\n
+-10 (nero) 10-100 MHz	-10 (melns) 10-100 MHz
+-10 nero	-10 melns
+-2 (rosso) 0,25-10 MHz	-2 (sarkans) 0,25-10 MHz
+-2 rosso	-2 sarkans
+-6 (giallo) 3-40 MHz	-6 (dzeltens) 3-40 MHz
+-6 giallo	-6 dzeltens
+-90 gradi Z	-90 grādi Z
+-> segmento NEC	-> NEC segments
+. "Annulla" torna indietro.	. «Atsaukt» iet atpakaļ.
+. Antenna base: fili 1-	. Bāzes antena: vadi 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Ar tik augstu Q slaucīšanai jāaptver tikai daži kHz.
+. Salvalo con Salva con nome.	. Saglabā to ar Saglabāt kā.
+. Trascina per ruotare, rotella per ingrandire.	. Velc, lai pagrieztu, ritenis tālummaiņai.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Izmanto tievāku vadu, lielāku serdi vai divas sakrautas serdes.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (caur Sengupta 2021) un GMRT tab. 19.1
+12 (errore / HPBW)^2	12 (kļūda / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasīvs gredzens: perimetrs {0:0.000} lambda, bez avota un bez kondensatora; ietekme redzama pilnajā modelī (direktors vai reflektors).
+Automatico	Automātiski
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, kā nec2c un xnec2c: pirmkods ir pievienots programmai (fails COPYING).\n
+Provincia di Trieste	Triestes province
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	un C# valodā YA-NEC vajadzībām. Atsauces saskarne: xnec2c, autori 5B4AZ un Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	efektivitāte aprēķināta no tālā lauka, Prad / (Prad + zudumi) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	pretestība un zudumi kļūst arvien mazāk uzticami, vadam nolaižoties (skat. BOG rokasgrāmatā). Drošam rezultātam: vismaz lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	to izveido līdz {3:0.00} m diametram; blakus esošais apertūras aprēķins der jebkuram diametram un jau ņem vērā ribas (lodziņš augšā).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} pie {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efektivitāte {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° elevācijas
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. izd., 18. nod. (W9PE 2 m Yagi): trīs elementi ar 0,2 λ, ap 7 dBi un F/B virs 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC sakritība ar nec2c (stieņi 20/15/10 m): reflektori pie 0,185 / 0,197 / 0,222 λ, direktori pie 0,095 / 0,116 / 0,114 λ: avotu diapazonos.
+↶ Annulla	↶ Atsaukt
+↷ Ripeti	↷ Atcelt atsaukšanu
+■ Ferma	■ Apturēt
+▶ Avvia	▶ Sākt
+☐ mantieni lunghezza del boom	☐ saglabāt traversas garumu
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ nav brīdinājumu: segmentācija atbilst izvēlētajam līmenim
+✓ nessun errore e nessun avviso	✓ nav kļūdu un brīdinājumu
+variabili del modello	modeļa mainīgie
+nuova variabile dal modello	jauns mainīgais no modeļa
+Scrivi una variabile nella linguetta Variabili…	Ierakstīt mainīgo cilnē Mainīgie…
+Elemento diritto	Taisns elements
+Elemento piegato	Saliekts elements
+Variabile nuova	Jauns mainīgais
+Minimo / massimo	Minimums / maksimums
+Cosa cambia	Kas mainās
+in ocra: dove agisce la variabile	okera krāsā: kur darbojas mainīgais
+Crea la variabile	Izveidot mainīgo
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Mainīgais {0} izveidots: ģeometrija nemainās. «Atsaukt» Ģeometrijas joslā to noņem.
+Struttura 3D: dove agisce la variabile ▾	3D struktūra: kur darbojas mainīgais ▾
+Struttura 3D ▸	3D struktūra ▸
+Clic: nasconde o mostra la struttura	Klikšķis: paslēpj vai parāda struktūru
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	nepārtraukts okers: izmanto mainīgo · svītrots okers: izmanto to caur citu mainīgo
+attraverso {0}: fili {1}	caur {0}: vadi {1}

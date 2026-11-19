@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Gaano kakapal ang kulay: magaan, katamtaman o malakas. Sa hilera ng talahanayan mas magaan ang lambong para mabasa ang mga numero.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Wire {0} pinili sa 3D view: hilera {1} ng talahanayan
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Wire {0}: wala sa talahanayan ng mga wire (geometry card na hindi GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Agad na sinusuri kung may bagong bersyon (nang hindi naghihintay ng 3 minuto).
+terreno reale	totoong lupain
+Locatore	Locator
+da 8 a 12 caratteri	8 hanggang 12 character
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Sa 6 na character, maaaring malayo nang ilang kilometro ang punto: kailangan ng terrain profile ang hindi bababa sa 8 character.
+Quota sito	Taas ng lugar
+Altezza antenna	Taas ng antenna
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Taas ng gitna ng antenna mula sa lupa. Kung iba ito sa modelo, itinataas o ibinababa ang pattern ng NEC na may parehong distribusyon ng current.
+Distanza max	Pinakamalayong distansya
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Muling kinakalkula ang azimuth at mga distansya sa bawat pagbabago ng locator (great circle, globo na 6371 km).
+Terra	Lupa
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Binabawasan ang reflection coefficient ng dagat gamit ang Ament factor para sa mga alon na 0.25 m (standard deviation).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	istatistikal na modelo ng magaspang na ibabaw (Ament 1953): may bisa sa mga grazing angle at pantay na dagat.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Ibinababa ang profile ayon sa kurbada ng Daigdig (effective radius 4/3 sa normal na refraction) at binabawasan ang malalayong naaninag na sinag gamit ang divergence factor.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standard na atmospera (k = 4/3); kapag may duct o inversion, nagbabago ang nakikitang kurbada.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Ang pinakamataas na tagaytay sa pagitan ng antenna at direksyon ng paglabas ay nagpapahina sa direktang sinag gaya ng isang gilid (Fresnel integral), tulad sa HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	iisang knife edge: ang mga bilugang tagaytay o ilang magkakasunod na tagaytay ay tinatantya gamit ang pinakamataas.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Inuulit ang kalkulasyon bawat 10 degree ng azimuth (DEM lamang) at ipinapakita ang figure of merit sa rosas, nakaharap ang antenna sa bawat azimuth.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	laging nakaharap ang antenna sa azimuth ng profile: may bisa para sa umiikot na antenna.
+Cartesiana dBi / gradi	Cartesian dBi / degree
+0–180° intero	0–180° buo
+Zoom angolare	Zoom ng anggulo
+Sovrapponi alla linguetta Verticale	Ipatong sa tab na Vertical
+premi Calcola	pindutin ang Kalkulahin
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Inuulit ang kalkulasyon na ang antenna ay mula 6 hanggang 30 m (HF) o mula 2 hanggang 30 m (VHF) at ipinapakita ang taas na may pinakamahusay na figure of merit sa ruta.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	nananatili ang mga current ng nakalkulang modelo: hindi isinasaalang-alang ang epekto ng taas sa impedance at current (tulad sa HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Kailangan ang mga talaan ng arrival angle mula sa ARRL Antenna Book (mga .PRN file bawat band at rehiyon): sa sandaling magamit ang mga ito, mag-a-activate ito at ipapakita ang mga kahel na hiwa.
+locatore non valido	hindi wastong locator
+sul mare	sa ibabaw ng dagat
+sul terreno	sa ibabaw ng lupa
+profilo reale	totoong profile
+terreno piatto	patag na lupa
+orizzonte ostruito	nahaharangang abot-tanaw
+° (scala angolare ×	° (iskala ng anggulo ×
+← dietro	← likod
+avanti →	harap →
+statistiche degli angoli di arrivo: non caricate	istatistika ng arrival angle: hindi naka-load
+rosa 0–360°: calcolo in corso…	rosas 0–360°: kinakalkula…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Piliin ang profile file (i-click ang "Mula sa HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	Hindi magagamit ang DEM: sa unang paggamit kailangan ng network para ma-download ang TINITALY o SRTM1 (pagkatapos ay nananatili sila sa folder na data/dem).
+Profilo del terreno	Profile ng lupain
+Lobo di elevazione	Elevation lobe
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Kalkulahin muna ang modelo (button na Kalkulahin sa itaas): galing sa NEC ang pattern ng antenna.
+da file	mula sa file
+dal DEM	mula sa DEM
+rispetto alla stessa antenna su terreno piatto	kumpara sa parehong antenna sa patag na lupa
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Pagkakaiba ng lobe sa totoong profile at ng lobe sa patag na lupa, karaniwan sa mga kapaki-pakinabang na anggulo.
+Guadagno a 5° / 10°	Gain sa 5° / 10°
+Guadagno a 1° / 3°	Gain sa 1° / 3°
+Angoli coperti a -3 dB	Mga anggulong sakop sa -3 dB
+primo lobo sul profilo reale	unang lobe sa ibabaw ng totoong profile
+calcolo…	kinakalkula…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Modelong free space: walang lupa ang mga current, gaya ng free-space pattern na ginagamit ng HFTA. Para isaalang-alang ang kalapit na lupa, kalkulahin ang modelo na may totoong lupa.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	May bisa lamang ang profile sa isang azimuth: kailangan ng umiikot na antenna ang mas maraming direksyon (kahon na "Lahat ng azimuth").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Paraan gaya ng sa HFTA (N6BV): direktang sinag + naaninag na sinag sa bawat facet ng profile + diffraction sa ibabaw ng mga tagaytay. Galing sa NEC ang pattern ng antenna; idinadagdag ng kalkulasyong ito ang lupain.
+Piatto	Patag
+Reale	Totoo
+Primo minimo	Unang minimum
+Punto di riflessione	Punto ng pag-aninag
+Orizzonte	Abot-tanaw
+Uso: rotte DX in HF (angoli bassi 1–15°).	Gamit: mga rutang HF DX (mababang anggulo 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Gamit: tropo at MS (0–5°), EME na mababa ang Buwan (ground gain sa pagsikat/paglubog ng Buwan).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Taas na may pinakamataas na karaniwang gain sa mga kapaki-pakinabang na anggulo ng ruta.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	inilipat sa taas ang mga current ng nakalkulang modelo: nananatili ang impedance at ground coupling ng modelo.
+Calcola prima il terreno reale	Kalkulahin muna ang totoong lupain
+Esporta il lobo sul terreno reale	I-export ang lobe sa totoong lupain
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Imahe: Esri, Maxar, Earthstar Geographics at ang komunidad ng mga gumagamit ng GIS
+© i contributori di OpenStreetMap	© mga kontribyutor ng OpenStreetMap
+Sfondo	Background
+Foto aerea	Aerial na larawan
+Solo griglia	Grid lamang
+Griglia	Grid
+Cerca	Hanapin
+⌖ Centra sul locatore	⌖ Igitna sa locator
+Punto scelto	Napiling punto
+Coordinate	Mga coordinate
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Click sa mapa = punto ng antenna; i-drag = ilipat; gulong = zoom (lumilipat ang grid mula 6 hanggang 8, 10, 12 character). Makapal na frame = parisukat na 6 character.
+non disponibile	hindi magagamit
+Lunghezza elementi	Haba ng element
+Posizione sul boom	Posisyon sa boom
+Uniforme	Pantay
+Distribuzione	Distribusyon
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element na nakakabit nang hindi nakagitna sa clamp: paglipat sa sarili nitong axis, gamit ang tolerance ng posisyon.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	binabago rin ng totoong clamp ang electrical length malapit sa boom: para doon gamitin ang tab na Koreksyon ng boom.
+nuovo a ogni avvio	bago sa bawat takbo
+Numero prove	Bilang ng pagsubok
+Frequenze	Mga frequency
+Seme casuale	Random seed
+OBIETTIVO LISTA DI TAGLIO	TARGET NG CUTTING LIST
+Calo F/B max	Pinakamalaking pagbaba ng F/B
+ROS max	Pinakamataas na SWR
+Ferma	Itigil
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Karaniwang pinakakritikal ang mga element na malapit sa driven element; mas malalaking pagkakamali ang kaya ng nasa dulo ng boom.
+l'istogramma serve al Monte Carlo	para sa Monte Carlo ang histogram
+5% peggiore	pinakamasamang 5%
+Posizione mm	Posisyon mm
+Lunghezza mm	Haba mm
+Tolleranza ammessa	Pinahihintulutang tolerance
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Pula ang mga element na nangangailangan ng mas maliit sa tolerance ng paggawa.
+Calcola prima il modello	Kalkulahin muna ang modelo
+sensibilita'	sensitivity
+Tolleranze: fermato	Mga tolerance: itinigil
+Diametro mm	Diyametro mm
+Tolleranza ammessa mm	Pinahihintulutang tolerance mm
+Avvia prima il calcolo	Patakbuhin muna ang kalkulasyon
+Esporta la lista di taglio	I-export ang cutting list
+Lista di taglio	Cutting list
+Obiettivi	Mga target
+Calo massimo del F/B	Pinakamalaking pagbaba ng F/B
+ROS massimo	Pinakamataas na SWR
+Tolleranze di costruzione	Mga tolerance sa paggawa
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Nakaplano (sketch 13, aaprubahan pa): hindi pa aktibo sa bersyong ito.
+Al quadro 20×2 mm	Al parisukat 20×2 mm
+Al quadro 25×2 mm	Al parisukat 25×2 mm
+Al quadro 30×2 mm	Al parisukat 30×2 mm
+Al quadro 40×2 mm	Al parisukat 40×2 mm
+Al tondo 25×1,5 mm	Al bilog 25×1.5 mm
+Al tondo 30×2 mm	Al bilog 30×2 mm
+Al tondo 40×2 mm	Al bilog 40×2 mm
+Al tondo 50×2 mm	Al bilog 50×2 mm
+Zona NTC	NTC zone
+Quota sito as	Taas ng lugar bilang
+Periodo ritorno	Return period
+Categoria esposiz.	Kategorya ng exposure
+Coeff. topografia	Coeff. ng topograpiya
+Antenna da terra	Antenna sa ibabaw ng lupa
+Palo sopra rotore	Mast sa ibabaw ng rotator
+Ø palo	Ø ng mast
+Usa elementi e boom del modello	Gamitin ang mga element at boom ng modelo
+Includi telaio, palo, cavi	Isama ang frame, mast, mga kable
+Scansione direzione del vento	Scan ng direksyon ng hangin
+UNITÀ	MGA YUNIT
+N e kgf affiancati	N at kgf magkatabi
+solo N	N lamang
+solo kgf	kgf lamang
+Mostra	Ipakita
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	hindi wastong locator: piliin ang zone nang mano-mano
+Telaio a H	H-frame
+Cavi e divisore	Mga kable at divider
+Parte	Bahagi
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Kapag pahalang ang hangin, hindi tumutulak ang mga element (cross-flow, K5IU): lumalaki ang puwersa sa tubo ayon sa square ng bahagi ng hangin na patayo sa axis nito.
+momento flettente alla staffa del rotore	bending moment sa clamp ng rotator
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Paunang pagsusukat: hindi pinapalitan ang pagsusuri ng isang inhinyero sa mast, tore at pundasyon. Ang moment sa base ay mapupunta sa sub-tab na Mast at pundasyon.
+Sito e norma	Lugar at pamantayan
+Norma	Pamantayan
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; mga coefficient CNR-DT 207 R1/2018 at EN 1991-1-4
+Locatore / zona	Locator / zone
+Risultati	Mga resulta
+Forza massima	Pinakamalaking puwersa
+Momento flettente alla staffa del rotore	Bending moment sa clamp ng rotator
+Momento torcente sul rotore	Torque sa rotator
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Paunang pagsusukat: hindi pinapalitan ang pagsusuri ng isang lisensyadong inhinyero sa mast, tore at pundasyon.
+Al tondino pieno	Al buong baras
+Materiale elementi	Materyal ng element
+Staffe, isolatori	Mga clamp, insulator
+g cad.	g bawat isa
+Dipolo + scatola	Dipole + kahon
+Cavo fino al palo	Kable hanggang sa mast
+STAFFA AL PALO	CLAMP NG MAST
+Posizione attuale	Kasalukuyang posisyon
+m dal riflettore	m mula sa reflector
+Massa / distanza	Masa / distansya
+Vento dalla linguetta Vento	Hangin mula sa tab na Hangin
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Ginagamit ang design pressure ng huling kalkulasyon sa sub-tab na Hangin; kung wala, 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Inililipat ang buong modelo sa kahabaan ng boom para pumatak ang iminumungkahing clamp sa origin (kung saan nakakabit ang mast at ang stack frame). Ibinabalik ito ng I-undo sa 3D na istruktura.
+Momenti in funzione della posizione della staffa	Mga moment ayon sa posisyon ng clamp
+Masse e aree per parte	Mga masa at sukat ng ibabaw bawat bahagi
+ultimo direttore	huling director
+Staffe e isolatori	Mga clamp at insulator
+Cavo sul boom	Kable sa boom
+Massa kg	Masa kg
+Baricentro m	Sentro ng bigat m
+Area vento m²	Ibabaw na tinatamaan ng hangin m²
+Centro area m	Sentro ng ibabaw m
+solo peso	bigat lamang
+solo vento	hangin lamang
+File Touchstone .s1p	Touchstone na file .s1p
+Formato letto	Nabasang format
+CAVO TRA VNA E ANTENNA	KABLE SA PAGITAN NG VNA AT ANTENNA
+R e X separate	R at X magkahiwalay
+Banda con ROS <	Band na may SWR <
+ROS: calcolato e misurato	SWR: kinalkula at sinukat
+Confronto	Paghahambing
+misurato, cavo tolto	sinukat, inalis ang kable
+R calcolata	R kinalkula
+X calcolata	X kinalkula
+R misurata	R sinukat
+X misurata	X sinukat
+Calcolato	Kinalkula
+Misurato	Sinukat
+Scarto	Pagkakaiba
+Frequenza del ROS minimo	Frequency ng pinakamababang SWR
+ROS minimo	Pinakamababang SWR
+nessuna correzione: calcolo e misura coincidono.	walang koreksyon: magkatugma ang kalkulasyon at sukat.
+calcolo NEC sul campo della misura…	Kalkulasyon ng NEC sa saklaw ng sukat…
+Misura del VNA	Sukat ng VNA
+Tutti	Lahat
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Magpatakbo ng sweep (button na Sweep sa itaas) para makita ang F/B at F/R sa buong band
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = gain pasulong bawas ang karaniwang power sa likurang hemisphere (azimuth 90-270°, lahat ng elevation na higit sa 0°). Kabilang din ito sa mga target ng optimizer.
+Tabelle: F/B e F/R su tutta la banda	Mga talaan: F/B at F/R sa buong band
+Valori dello sweep	Mga halaga ng sweep
+ANTENNE RICEVENTI	MGA RECEIVING ANTENNA
+4-square in ricezione	4-square para sa pagtanggap
+8 verticali in cerchio	8 vertical na nakabilog
+Modello aperto	Buksan ang modelo
+Isotropo	Isotropic
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = gain sa nais na direksyon bawas ang karaniwang gain sa buong half-space: hindi tulad ng gain, hindi ito nakadepende sa mga loss.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Ginagamit ang median na arrival angle ng tab na Totoong lupain bilang nais na elevation (istatistika bawat band at rehiyon). Kung walang naka-load na istatistika ng ARRL, nananatili ang elevation na nakasulat dito.
+Direzione voluta	Nais na direksyon
+Hz  rumore	Hz  ingay
+NF ricevitore	NF ng receiver
+sorgente locale az	lokal na pinagmulan az
+Cifre di merito in ricezione	Mga figure of merit sa pagtanggap
+Basta il segnale?	Sapat ba ang signal?
+calcolo in corso…	kinakalkula…
+RDF in funzione della frequenza	RDF ayon sa frequency
+Calcola prima il modello aperto	Kalkulahin muna ang bukas na modelo
+verticale λ/4	vertical na λ/4
+° · dB relativi · arancio: -3 dB	° · relatibong dB · kahel: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Karaniwang gain sa harapang sektor bawas ang karaniwan sa likurang hemisphere.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	Tinutukoy ng ON4UN ang DMF gamit lamang ang gain sa 20 degree; dito ginagamit ang karaniwan sa sektor ng sketch, kaya hindi maihahambing nang isa-isa ang mga halaga sa nasa libro.
+molto basso: serve un preamplificatore	napakababa: kailangan ng preamplifier
+basso ma accettabile: vedi soglia	mababa pero katanggap-tanggap: tingnan ang threshold
+come un'antenna trasmittente	gaya ng transmitting antenna
+F/R medio sull'emisfero posteriore	Karaniwang F/R sa likurang hemisphere
+Rumore d'antenna ai morsetti	Ingay ng antenna sa mga terminal
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Power ng panlabas na ingay sa mga terminal: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + karaniwang gain na tinimbang ayon sa pinanggagalingan ng ingay.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	ingay mula sa abot-tanaw na tinimbang ng exp(-el/10 degree) sa elevation: kumakatawan sa malayong gawa-ng-tao na ingay na dumarating nang mababa; nakadepende sa lugar ang totoong distribusyon.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	point source sa 5 degree na elevation na may parehong power gaya ng isotropic na background.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotropic na ingay sa ibabaw ng lupa; hindi nagdaragdag ng ingay ang lupa.
+Margine sul ricevitore	Margin ng receiver
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Lumalampas ang ingay ng antenna sa ingay ng receiver nang mas mababa sa 6 dB: ang receiver ang naglilimita sa sensitivity. Kailangan ng mas maraming preamplification o receiver na mas mababa ang NF.
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	Gain 1.8
+Spazio richiesto	Kailangang espasyo
+λ/4 in tubo quadro	λ/4 sa parisukat na tubo
+λ/4 in tubo tondo	λ/4 sa bilog na tubo
+Solo cavi di fase	Mga phasing line lamang
+Aria	Hangin
+Uscite	Mga output
+Z antenne	Z ng antenna
+Z ingresso	Z ng input
+Dielettrico	Dielectric
+Connettori	Mga connector
+Correggi accorciamento dei connettori	Itama ang pag-ikli dahil sa mga connector
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Ibinabawas sa haba ang bahagi ng linya sa loob ng mga connector.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	tantiyang 4 mm bawat dulo gamit ang N connector (3 BNC, 1.5 SMA): pinakamainam na i-trim gamit ang VNA, paikliin nang 1 mm bawat hakbang.
+Divisori	Mga divider
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Ginagamit ang mga active impedance ng mga antenna ng bukas na stack (isang source bawat antenna) at ang mga pagitan para sa pinakamaikling haba ng mga phasing line.
+CAVI DI FASE	MGA PHASING LINE
+Lunghezza minima	Pinakamaikling haba
+Passo verticale	Patayong pagitan
+solo cavi di fase: nessun trasformatore da costruire	mga phasing line lamang: walang transformer na gagawin
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω na kable na parallel = 37.5 Ω
+quadro, lato	parisukat, gilid
+tondo, Ø	bilog, Ø
+Z0 richiesta	Kailangang Z0
+Ø conduttore interno	Ø ng inner conductor
+VF del cavo	VF ng kable
+λ/4 in aria, mm	λ/4 sa hangin, mm
+da tagliare, mm	puputulin, mm
+Z carico in parallelo	Z ng load na parallel
+Rami λ/4: Z0 = Zin · √N	mga sangang λ/4: Z0 = Zin · √N
+Resistenze a stella	Mga resistor na naka-star
+Isolamento tra le uscite	Isolation sa pagitan ng mga output
+Perdita stimata	Tinatayang loss
+Carico usato	Ginamit na load
+non potenza di 2	hindi power ng 2
+ROS all'ingresso	SWR ng input
+solo cavi di fase	mga phasing line lamang
+Uscita	Output
+Lungh. elettrica	Electrical length
+Fisica mm	Pisikal na mm
+Perdita dB	Loss dB
+° di fase).	° ng phase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° pataas); hindi na eksaktong umuulit ang impedance sa divider.
+Solo cavi di fase: nessun disegno da stampare	Mga phasing line lamang: walang guhit na ipi-print
+Divisore	Divider
+50 mm di controllo	Pagsusuri 50 mm
+GEOMETRIA	GEOMETRY
+λ/4 sul boom	λ/4 sa boom
+stesso piano	parehong plane
+Metallico, isolati	Metal, may insulasyon
+Non metallico	Hindi metal
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Wala ang boom sa modelong NEC: kung naka-insulate ang mga element mula sa metal na boom, maliit ang epekto (koreksyon ng boom sa Mga Calculator).
+Yagi di base	Batayang Yagi
+Disposizione	Ayos
+Sfasamento piani	Pag-urong ng mga plane
+Cavo di ritardo λ/4	Delay cable na λ/4
+Includi relè e cavi reali	Isama ang totoong relay at kable
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Idinadagdag ang loss ng delay cable (VF 0.66, 10 dB/100 m sa 144 MHz, ini-scale ayon sa square root ng frequency) at 0.1 dB para sa relay.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	karaniwang halaga ng 75 ohm na kable at coaxial relay; hindi alam ng programa ang sa iyo.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Gumagana rin ang parehong phasing network para sa turnstile (mga dipole na nagkakrus sa 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Tanaw mula sa harap
+Componenti co-polare / cross-polare	Mga co-polar / cross-polar na bahagi
+Rapporto assiale e ROS in frequenza	Axial ratio at SWR ayon sa frequency
+piano A	plane A
+piano B	plane B
+vista dal davanti — boom al centro	tanaw mula sa harap — nasa gitna ang boom
+piani sfalsati di λ/4 lungo il boom	mga plane na inurong ng λ/4 sa kahabaan ng boom
+Yagi incrociate: serve una Yagi con una sola sorgente	Crossed Yagi: kailangan ng Yagi na may iisang source
+Yagi incrociate: calcolo in corso...	Crossed Yagi: kinakalkula...
+Rapporto assiale in asse	Axial ratio sa axis
+Rapporto assiale a −3 dB	Axial ratio sa −3 dB
+Isolamento tra i due piani	Isolation sa pagitan ng dalawang plane
+Fase della rete sul piano B	Phase ng network sa plane B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Ganap na orthogonal at simetrikong mga plane: sa modelo halos zero ang coupling at ang kabaligtarang polarization. Sa totoo, nililimitahan ito ng mga clamp, kable at maliliit na asymmetry sa mga 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	mula 1.8 MHz hanggang 1296 MHz: nagbabago ang listahan ng balun ayon sa band
+LINEA DI DISCESA	FEED LINE
+Coassiale	Coaxial
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Sa balanseng open line walang shield: ang common mode ay galing lamang sa kawalan ng balanse. Kinakalkula ng card ang kasong coaxial; para sa open line gamitin ang Mga linya (TL) kasama ang tuner.
+Lungo il boom	Sa kahabaan ng boom
+m → palo	m → mast
+Discesa sul palo	Pababa sa mast
+Fino alla stazione	Hanggang sa istasyon
+Calza a massa sul palo / traliccio	Shield na naka-ground sa mast / tore
+Messa a terra all'ingresso stazione	Ground sa pasukan ng istasyon
+BALUN DA CONFRONTARE	MGA BALUN NA IHAHAMBING
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 ikot ng RG-213 sa 110 mm: inductance ayon kay Wheeler, self-capacitance ayon kay Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 at tinatayang self-capacitance: kailangang sukatin ang totoong impedance ng choke.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 na ferrite toroid bilang parallel RLC na mababa ang Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm sa rurok (10 MHz na may mix 31, 25 MHz na may mix 43): karaniwang halaga ng 12 ikot sa 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	coaxial λ/2 4:1: balanseng feed, magkakabit ang mga shield.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	natitirang common mode bilang 600 ohm na resonant sa f0 (Q 3): nakadepende sa pagkakabit.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	sleeve na λ/4: short-circuited na λ/4 line sa pagitan ng shield at sleeve, mataas na impedance sa f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 ng sleeve 50 ohm at 0.08 dB na loss sa quarter-wave.
+10 perline in ferrite sulla calza.	10 ferrite bead sa ibabaw ng shield.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm bawat bead sa 144 MHz (mix 61), 100 ohm sa itaas ng 30 MHz na may mix 43: karaniwang halaga sa katalogo.
+Caso mostrato	Ipinapakitang kaso
+premi Calcola il confronto	pindutin ang Kalkulahin ang paghahambing
+Corrente lungo la calza, dal dipolo verso il basso	Current sa kahabaan ng shield, mula sa dipole pababa
+Vista laterale: corrente sulla calza	Tanaw sa gilid: current sa shield
+F/R medio	Karaniwang F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Loss sa balun
+Potenza dissipata nel balun a 1 kW	Power na nasasayang sa balun sa 1 kW
+Banda con calza < 5 %	Band na may current sa shield < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Ang mga abong item ay mga balun para sa kabilang band; nag-a-activate sila kapag pinili ang frequency. Sa HF, kasama rin ang shield hanggang sa istasyon (naka-ground), sa VHF/UHF ang bahagi sa boom at mast. Ang shield ay isang wire na nakakabit sa isang panig ng feed point, gaya ng totoo kapag walang balun; ang balun ay isang common-mode impedance sa unang bahagi.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Hindi dumadaloy ang kuryente sa fiberglass: hindi pumapasok sa NEC ang frame, ang mga shield lamang ng phasing line ang natitira.
+Includi palo sotto il telaio	Isama ang mast sa ilalim ng frame
+Cavi di fase lungo i montanti	Mga phasing line sa kahabaan ng mga poste
+Rotore e controventi	Rotator at mga guy wire
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Nakaplano: rotator at mga guy wire bilang wire (kailangan ang mga sukat ng tore).
+Materiale	Materyal
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	pula = mga bahagi ng frame na ginawang NEC wire · putol-putol = shield ng mga phasing line
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Pahalang na polarization: mahina ang coupling ng mga patayong poste; hindi ang pahalang na crossbar at mga phasing line.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Patayong polarization: parallel sa mga element ang mga poste at mast at mas mahalaga; kaunti ang pahalang na crossbar.
+Confronto senza / con telaio	Paghahambing nang walang / may frame
+Diagramma orizzontale sovrapposto	Pahalang na pattern na nakapatong
+premi Calcola confronto	pindutin ang Kalkulahin ang paghahambing
+Stack: calcola prima il modello	Stack: kalkulahin muna ang modelo
+Stack: calcolo senza e con telaio...	Stack: kinakalkula nang walang at may frame...
+Pezzo	Bahagi
+Collegato	Nakakabit
+Cavi	Mga kable
+Senza telaio	Walang frame
+Con telaio	May frame
+Z ingresso divisore	Input Z ng divider
+senza telaio	walang frame
+con telaio	may frame
+Stack: confronto senza / con telaio fatto	Stack: tapos na ang paghahambing nang walang / may frame
+CARICHI HF	MGA HF LOAD
+INSERISCI NEL MODELLO	IPASOK SA MODELO
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Sa dulo ng wire inilalagay ang sombrero (b o e), ang linear loading sa napiling punto ng wire.
+Inserisci nel modello	Ipasok sa modelo
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Naaprubahan na sa sketch na Mga load: Q ng L at C, f0, Z bawat band, boltahe at current sa bahagi. Dito idinadagdag ang mga uri ng konstruksyon.
+Trappola coassiale	Coaxial trap
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	hinihinang ang gitnang konduktor sa simula ng gitnang ikid (ang pagbaligtad ng mga dulo ay nagpapababa ng resonance nang mga 50 kHz).
+Calcola spire per f0	Kalkulahin ang mga ikot para sa f0
+Spire dell'avvolgimento (anche frazionarie).	Mga ikot ng ikid (pati fractional).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	iba nang ilang porsiyento ang totoong f0: sukatin ito gamit ang dip-meter o VNA at itama ang mga ikot.
+Blocca	Hinaharangan
+dipolo con	dipole na may
+Filo Ø	Wire Ø
+Calcola C per f0	Kalkulahin ang C para sa f0
+mm  Filo Ø	mm  Wire Ø
+mm  Passo	mm  Pitch
+mm  Spire	mm  Mga ikot
+MHz  dal centro	MHz  mula sa gitna
+m  Braccio	m  Braso
+m  Filo dell'elemento Ø	m  Wire ng element Ø
+Calcola spire per la risonanza	Kalkulahin ang mga ikot para sa resonance
+Piega	Tupi
+m  Distanza tra i fili	m  Pagitan ng mga wire
+Calcola la piega per la risonanza	Kalkulahin ang tupi para sa resonance
+Raggi	Mga rayos
+m  Filo Ø	m  Wire Ø
+Verticale alto	Taas ng vertical
+m  Frequenza	m  Frequency
+MHz  Filo Ø	MHz  Wire Ø
+Calcola i raggi per la risonanza	Kalkulahin ang mga rayos para sa resonance
+L misurata	Sinukat na L
+MHz  Autorisonanza f0	MHz  Self-resonance f0
+Cappello capacitivo in punta al verticale	Capacitive na sombrero sa tuktok ng vertical
+Bobina dalle misure	Coil mula sa mga sukat
+Reattanza del cappello in frequenza	Reactance ng sombrero ayon sa frequency
+impedenza della trappola	impedance ng trap
+Si comporta da	Kumikilos bilang
+Potenza persa	Nawalang power
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Power ng transmitter para sa mga boltahe at loss sa talaan.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	mababang band: current sa antinode sqrt(P/73) at sa trap I0 cos(beta a); naharangang band: boltahe sa dulo ng panloob na dipole I0 Z0 na hinati sa trap at radiation.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	current sa antinode sqrt(P/73) at sa load I0 cos(beta a), kung saan ang a ay ang layo mula sa gitna.
+Risonanza propria f0	Self-resonance f0
+Q ideale	Ideal na Q
+Q della trappola alla risonanza.	Q ng trap sa resonance.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	dagdag ang dielectric loss (tangent 3e-4 PE, 2e-4 PTFE). Karaniwang may Q na 100 hanggang 300 ang mga nasukat na coaxial trap.
+Lunghezza di cavo	Haba ng kable
++ 10 cm per le saldature	+ 10 cm para sa mga hinang
+R in parallelo equivalente	Katumbas na parallel R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: ito ang LD load na pumapasok sa modelo
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Braso ng dipole sa mababang band na may trap, kumpara sa full-size na braso (71.3 / f).
+il NEC con la trappola come carico da' la misura giusta.	Ibinibigay ng NEC na may trap bilang load ang tamang haba.
+Induttanza misurata	Sinukat na inductance
+dalla misura	mula sa sukat
+Autorisonanza	Self-resonance
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frequency kung saan nagre-resonate ang coil nang mag-isa kasama ang self-capacitance nito.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	self-capacitance mula sa talaan ni Medhurst ayon sa haba / diyametro, may bisa sa single-layer coil na malayo sa mga masang metal.
+Q della bobina alla frequenza di lavoro.	Q ng coil sa working frequency.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	resistance ng wire dahil sa skin effect na pinarami ng proximity factor 1 + 2 (d/p)^2 (d wire, p pitch): magkahawig na halaga ang ibinibigay ni Medhurst para sa coil na ang haba ay malapit sa diyametro.
+Reattanza della piega	Reactance ng tupi
+Z0 della linea	Z0 ng linya
+Q della piega	Q ng tupi
+Capacita' del cappello	Capacitance ng sombrero
+Capacita' del cappello verso lo spazio.	Capacitance ng sombrero kaugnay ng espasyo.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	kabuuan ng mga rayos (manipis na wire, 2 pi eps0 l / (ln(2l/a) - 1)) at ng singsing na sumasaturate patungo sa buong disk (8 eps0 r): nagsasanggalang ang mga rayos sa isa't isa. Kapag ipinasok bilang wire, eksaktong kinakalkula ito ng NEC.
+in punta al verticale	sa tuktok ng vertical
+Altezza per la risonanza	Taas para sa resonance
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	Epekto sa vertical
+Carichi HF: apri un modello nella finestra principale.	Mga HF load: magbukas ng modelo sa pangunahing window.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Ipinapasok bilang wire ang linear loading at ang capacitive na sombrero: para sa iba piliin ang «Bilang load».
+Il cappello capacitivo si inserisce come fili.	Ipinapasok bilang wire ang capacitive na sombrero.
+RLC parallelo	Parallel RLC
+Effetto sul dipolo	Epekto sa dipole
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Pag-ikli ng braso kumpara sa buong quarter-wave (71.3 / f) na may load sa puntong iyon.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	line model ng may-load na braso X = Z0 (cot(beta b) - tan(beta a)), x 0.95 para sa end effect.
+Esegui il test	Patakbuhin ang test
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Maipapakita ang gain na itinama ng AGT (nakaplano na sa optimizer).
+Controllo prima/dopo il calcolo	Pagsusuri bago/pagkatapos ng kalkulasyon
+Esito	Resulta
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Isa o higit pang pagsusuri ang lampas sa ±0.2 dB: suriin ang segmentation (3D na istruktura > Segmentation... at Suriin ang segmentation).
+Tutti i controlli entro ±0,2 dB.	Lahat ng pagsusuri ay nasa loob ng ±0.2 dB.
+Linea a finestra 450	Window line na 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Pindutin ang Kalkulahin: kinakalkula ng NEC ang impedance ng bukas na modelo sa bawat frequency.
+Perdita nella linea	Loss sa linya
+Perdita totale	Kabuuang loss
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Uri ng tuner sa pagitan ng linya at transmitter (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	loss na tinantya mula sa loaded Q ng network (Qn = sqrt(Rmax/Rmin - 1), dalawang seksyon para sa T at Pi) at sa Q ng coil; kinakalkula ng TLW ni N6BV ang mga bahagi isa-isa at maaaring magkaiba nang ilang ikasampu ng dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Halimbawa: doublet 2 × 20 m (ZS6BKW/G5RV). Babala kapag mas mababa sa 20 Ω ang nakikita ng tuner: mataas na loss, iminumungkahing pahabain o paikliin ang linya. Linyang may loss gaya sa TLW (N6BV, ARRL).
+USA costa est	Silangang baybayin ng US
+USA costa ovest	Kanlurang baybayin ng US
+Giappone	Japan
+Caraibi	Caribbean
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: hindi nagbalik ng GeoTIFF ang serbisyo
+GeoTIFF compresso: non supportato	Naka-compress na GeoTIFF: hindi suportado
+GeoTIFF: tipo di dato non supportato	GeoTIFF: hindi suportado ang uri ng data
+Il file non contiene coppie distanza / quota.	Walang pares na distansya / taas ang file.
+Nessuno	Wala
+Ferriti a perline	Mga ferrite bead
+Cavo e balun: segmento della sorgente non trovato.	Kable at balun: hindi nahanap ang segment ng source.
+solo palo	mast lamang
+Acciaio zincato	Galvanized na bakal
+Alluminio	Aluminyo
+Vetroresina	Fiberglass
+Montante sx/dx	Kaliwa/kanang poste
+al boom	patungo sa boom
+Traversa	Crossbar
+Palo	Mast
+al dipolo	patungo sa dipole
+N, femmina	N, female
+senza connettori	walang connector
+rurale tranquillo	tahimik na probinsya
+Verticale λ/4	vertical na λ/4
+λ/8 di lato	λ/8 bawat gilid
+0,37 λ di diametro	0.37 λ na diyametro
+Cappello capacitivo	Capacitive na sombrero
+W8NX bassa impedenza	W8NX mababang impedance
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	makapal na kable na may PTFE na dielectric (RG-393) o LC trap na may high-voltage na capacitor
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Mas mahaba ang tupi kaysa lambda/8: hindi na kumikilos ang linya bilang pare-parehong inductance, suriin ang resonance sa NEC sa pagpasok nito bilang wire.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Tantiya ang capacitance ng sombrero (mga rayos na nagsasanggalang sa isa't isa): para sa eksaktong halaga ipasok ito bilang wire at kalkulahin sa NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Lampas sa quarter-wave ang posisyon ng load: ilapit ito sa gitna.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	sa dulo ng wire inilalagay ang sombrero: piliin ang una (b) o huling (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	masyadong malapit sa dulo ng wire ang napiling punto.
+questo tipo entra nel modello come carico.	pumapasok sa modelo ang uring ito bilang load.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	Mga HF load: mga wire na idinagdag ng calculator ng YA-NEC
+Il file Touchstone non contiene punti di S11.	Walang S11 point ang Touchstone file.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	Walang hanay ng frequency, Re(S11), Im(S11) ang CSV.
+AGT in spazio libero, senza perdite	AGT sa free space, walang loss
+IMPOSTAZIONI	MGA SETTING
+Schiera Hi-Z di verticali corte	Hi-Z na grupo ng maiikling vertical
+Base del loop	Base ng loop
+Distanza, lato o diametro	Pagitan, gilid o diyametro
+Altezza delle verticali	Taas ng mga vertical
+Base del loop dal suolo	Base ng loop sa ibabaw ng lupa
+Fase tra le file	Phase sa pagitan ng mga hanay
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Mababang pahalang na dipole: kapag mas malapit sa lupa kaysa lambda/4, pataas ang lobe. Ito ang sanggunian ng «mataas na anggulo» sa ranking ni IV3PRK (RDF 7.3 dB): inihahambing sa mga receiving antenna na mababa ang anggulo.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY ni Gary Breed K9AY (QST, Setyembre 1997): dalawang patayong loop na nasa 90 degree sa iisang mast, terminating resistor (karaniwang 390 ohm, inayos para sa F/B), transformer 9:1. Dito isang loop lamang, nakaharap sa napiling direksyon, sarado sa ibabaw ng lupa gaya sa pahinang Pagtanggap (RDF). Hi-Z: RDF 7.2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square na pantanggap: apat na maiikling aktibong vertical sa mga sulok ng parisukat na lambda/8, nagra-radiate sa kahabaan ng diagonal. Walang laman na phase = eksaktong null sa likod (pi + beta d sa pagitan ng mga hanay): nagbibigay ng pinakamataas na teoretikal na directivity; gumagamit ang totoong phasing network (ON4UN, IV3PRK) ng ibang phase at mas mababang RDF ang ibinibigay (IV3PRK 9.4 dB). Hinahanap ng button ang phase na may pinakamahusay na RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Mga grupo ng maiikling aktibong vertical gaya ng sa Hi-Z Antennas: 2 element na end-fire (cardioid, lambda/8), 3 sa tatsulok (gilid lambda/6, isang sulok patungo sa napiling direksyon), 8 na nakabilog (diyametro 0.37 lambda: ginagamit ang apat patungo sa direksyon at ang mga kabaligtaran). Hi-Z: 8 na nakabilog RDF 13.4 dB kasama ang kanilang combiner; mas mababa ang simpleng modelong may dalawang hanay. Hinahanap ng button ang phase na may pinakamahusay na RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Nagsisimula ang mga vertical sa totoong lupa (GE 1 na may Sommerfeld ground): sa NEC-2, ang wire na nakakabit sa totoong lupa ay nagbibigay ng impedance na nakadepende sa segment ng source (gabay ng NEC-2, EZNEC). Gabay lamang ang pattern at RDF; nakaplano para sa lahat ng receiving antenna ang koneksyon sa nakaangat na radial.
+fase tra le file da 120 a 300 gradi per l'RDF	phase sa pagitan ng mga hanay mula 120 hanggang 300 degree para sa RDF
+nessuna fase con il lobo in avanti	walang phase na may lobe pasulong
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Phase sa pagitan ng mga hanay para sa pinakamahusay na RDF: {0} degree (RDF {1} dB). Muling kinakalkula...
+linea d'orizzonte	linya ng abot-tanaw
+scala angolare	iskala ng anggulo
+lobo reale sopra il piatto fino a	totoong lobe sa patag hanggang
+Profilo verso	Profile patungo sa
+Lobo verticale e angoli di arrivo a	Patayong lobe at mga arrival angle sa
+Cos'e' l'RDF	Ano ang RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = gain sa nais na direksyon - karaniwang gain sa lahat ng direksyon (W8JI; dating tinatawag na SNIF, noong dekada 60). Sinusukat nito kung gaano pinapabuti ng antenna ang signal-to-noise ratio kung pantay na dumarating ang ingay mula sa lahat ng direksyon; hindi binibilang ang absolute gain (nababawi ito ng preamplifier). Karaniwan gaya sa EZNEC: itaas na hemisphere na hinati sa buong globo (4 pi). Sa kumbensyong ito, tugma ang mga resulta sa IV3PRK at W8JI/Hi-Z (vertical 5.07 laban sa 5.06 at 4.9; Beverage 350 m 13.5 laban sa 13.66). Limitasyon: hindi pantay ang totoong ingay (mga linya ng kuryente, lokal na QRM): kaya mahalaga rin ang F/B at hugis ng lobe. Para sa transmitting antenna walang saysay ang RDF: kaya sa tab na ito lamang ito kinakalkula. DMF (Directivity Merit Figure, ON4UN): gain sa 20 degree na elevation pasulong bawas ang karaniwang gain ng likurang half-space (azimuth na lampas sa 90 degree, sa ibabaw ng lupa, tinimbang ng cosine ayon sa sukat): ipinapakita kung gaano tinatanggihan ng antenna ang ingay mula sa likod. Nagbababala si ON4UN na huwag paghambingin ang DMF at RDF. Mga pinagmulan: W8JI at W8WWV (RDF), ON4UN Low-Band DXing kab. 7 (DMF, talaan 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevation
+azimut	azimuth
+azimut a {0}°	azimuth sa {0}°
+totale	kabuuan
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Bukas hanggang unang null (FNBW): {0}°;  pinakamataas na side lobe: {1}
+Didascalie {0} %	Mga label {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB laban sa {1} ng pinagmulan: suriin ang mga sukat, termination at lupa (maaaring ibang lupa o geometry ang gamit ng pinagmulan).
+Azimut a {0}° · {1} MHz	Azimuth sa {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimuth sa {0}° na elevation
+RUMORE	INGAY
+Apri la scheda {0}	Buksan ang card na {0}
+caso mostrato: {0}	ipinapakitang kaso: {0}
+Rastremazioni	Teleskopiko
+BANDA	BAND
+λ/2 coassiale 4:1	coaxial λ/2 4:1
+Manicotto λ/4	sleeve na λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Shield ng kable at mast bilang NEC wire; paghahambing ng balun (common-mode current, F/B, karaniwang F/R, loss, power sa 1 kW) mula 1.8 hanggang 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Mga poste, crossbar, mast at shield ng mga phasing line bilang NEC wire: paghahambing nang walang / may frame (gain, F/B, karaniwang F/R, mga lobe, Z ng divider, Tant at G/T).
+TIPO	URI
+DATI	DATA
+TELAIO	FRAME
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 sa parisukat o bilog na tubo, sa kable, Wilkinson; mga phasing line, tilt; guhit 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X o +, mga plane na inurong ng λ/4; H, V, RHCP, LHCP, X-pol; axial ratio at isolation
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Pantay na haba → pantay na phase. Multiples ng λ/2 → umuulit ang active impedance sa divider. Iminumungkahing tolerance ± 5 mm (= ± {0}° ng phase).
+impedenze attive delle {0} antenne dello stack in parallelo	mga active impedance ng {0} antenna ng stack na parallel
+Banda con ROS < {0}	Band na may SWR < {0}
+? Manuale	? Manwal
+Apre la spiegazione nel manuale	Binubuksan ang paliwanag sa manwal
+riferimento	sanggunian
+Rispetto alla singola antenna	Kumpara sa iisang antenna
+{0} antenne ideali	{0} ideal na antenna
+x la distanza DL6WU, a passi di	x ang pagitan ng DL6WU, sa hakbang na
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Kaliwang axis: G ng stack - G ng iisang antenna, mula 0 pataas. Kanang axis: F/R ng stack - F/R ng iisang antenna, baligtad, na 0 sa itaas: kung saan pinapabuti ng stack ang F/R bumababa ang kurba, at ang pinakamababang punto ang pinakamalaking pagbuti. Nananatili ang G/T sa talaan.
+ΔG sulla singola	ΔG sa ibabaw ng iisang antenna
+Chiusura del programma	Pagsara ng programa
+Vuoi chiudere YA-NEC?	Gusto mo bang isara ang YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Salamat sa paggamit sa akin: sana ay nakatulong ako.
+Sì	Oo
+ROS attivo	Active SWR
+G realizzato	Natamong G
+ROS attivo massimo	Pinakamataas na active SWR
+riflessi minimi	pinakakaunting reflection
+ROS attivo alto: da non scegliere	mataas na active SWR: huwag piliin
+Documenti tecnici	Mga teknikal na dokumento
+Manuale d'uso	Manwal ng paggamit
+Manuale di calcolo e delle fonti	Manwal ng kalkulasyon at mga pinagmulan
+Citazioni	Mga sipi
+Cerca in tutti i documenti	Hanapin sa lahat ng dokumento
+Apri il PDF	Buksan ang PDF
+Nessun risultato per «{0}»	Walang resulta para sa «{0}»
+Primi {0} risultati per «{1}»	Unang {0} resulta para sa «{1}»
+{0} risultati per «{1}»	{0} resulta para sa «{1}»
+Apre la citazione {0}	Binubuksan ang sipi {0}
+Manuale di calcolo	Manwal ng kalkulasyon
+È pronta la versione {0} di YA-NEC	Handa na ang bersyon {0} ng YA-NEC
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Na-download at na-install na ito: magkakabisa kapag nag-restart ang programa.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Sa Mac hindi ito kusang nai-install: i-download ang bagong .dmg mula sa pahina ng mga release sa GitHub.
+Riavvia adesso	I-restart ngayon
+Più tardi	Mamaya
+Apri la pagina delle versioni	Buksan ang pahina ng mga release
+Aggiornamento di YA-NEC	Update ng YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Na-download at na-install na ito. Kusang magre-restart ang programa at bubuksan muli ang bukas na modelo.
+Riavvio tra {0} s	Magre-restart sa loob ng {0} s
+Questo avviso si chiude tra {0} s	Magsasara ang abisong ito sa loob ng {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Pagkatapos ng update, muling binuksan ang hindi na-save na modelo: i-save ito kahit kailan (kopya sa data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Pagkatapos ng update, muling binuksan ang modelong nakabukas.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Bawat kahon ay may sariling tulong na may paliwanag at pinagmulan. Abo: may tsek = laging aktibo (hindi napapatay); walang tsek = hindi pa magagamit; pagpili gamit ang mga pill = nakapirming pagpili. Manwal, kabanata 21.
+"): sorgente sempre accesa.	"): laging aktibo ang pinagmulan.
+' non da' un numero valido.	' ay hindi wastong numero.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik kung ano ito
+0 - misure del metodo	0 - mga sukat ng pamamaraan
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = standard na WR waveguide ng band (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = parehong dish sa kabilang dulo (sariling echo).
+0 = stesso disco all'altro capo.	0 = parehong dish sa kabilang dulo.
+0 gradi a destra	0 degree pakanan
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = ikatlo mula sa dulo: impedance 200-300 ohm, balun 4:1
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: malayo sa gilid, kung saan aalisin ng pagbaluktot ang feed sa focus.
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 solidong polyethylene (RG-58, RG-213), 0.8-0.85 foam na dielectric.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 solidong polyethylene, 0.8-0.85 foam, 0.9-0.97 open line.
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 guided lambda
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - loop na pinapakain
+1 - radiatore	1 - radiator
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = isang ikot (gaya ng dati). Sa mas maraming ikot lumalaki ang Rr ayon sa N², ang skin-effect loss ayon sa N.
+1 cavo	1 kable
+1-2-3 elementi	1-2-3 element
+1. Obiettivi e pesi	1. Mga target at bigat
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Hangin, balancing, mga divider, mga balun, crossed Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Na-activate ang mga receiving antenna
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz na may malaking dish: bukod sa ibabaw at pagtutok, mahalaga ang thermal at wind deformation (ATA: 0.7 mm RMS sa gabi, 3 mm sa araw sa ilalim ng araw), pagbaluktot ng mga suporta at pagkalat dahil sa libration.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: i-print sa 100 %, walang «ipagkasya sa pahina»
+1005/f piedi	1005/f talampakan
+144 isol.	144 insul.
+2 - riflettore	2 - reflector
+2 - riflettori	2 - mga reflector
+2 in parallelo	2 na parallel
+2 lati	2 gilid
+2. Variabili che l'ottimizzatore puo' cambiare	2. Mga variable na maaaring baguhin ng optimizer
+200 Ω con balun 4:1	200 Ω na may balun 4:1
+25 tondo	25 bilog
+3 - direttori	3 - mga director
+3 gruppi	3 grupo
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 o 4. Sa 2 walang tigas sa labas ng kanilang plane.
+3. Registro dei passi - clic su una riga per riprenderla	3. Log ng mga hakbang - i-click ang isang hanay para maibalik ito
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω o balun 4:1
+36 Ω + terra	36 Ω + ground
+4 - tutto insieme	4 - lahat nang sabay
+4 lati	4 gilid
+4 sorgenti: vedi tabella	4 source: tingnan ang talaan
+432 isol.	432 insul.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 pagsusuri ng data na inaprubahan ni IC8TEM noong 15/11/2026: mga threshold at paliwanag sa manwal, kabanata 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 talampakan mga 18 dBi, 12 talampakan mga 20.5 dBi
+75 ohm ideale	75 ohm ideal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 beses na mas mahaba kaysa sa radius. Sa makakapal na wire o maiikling segment (makakapal na tubo sa UHF, magkakalapit na element,\n
+9 fili	9 wire
+9 fili a 0,1 λ	9 wire sa 0.1 λ
+Accorciamento del pilotato	Pag-ikli ng driven element
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Pag-ikli na higit sa 8 %: hindi maaasahan ang linear na tantiya, suriin sa NEC.
+Allega il modello aperto	Ilakip ang bukas na modelo
+Allega il registro di oggi	Ilakip ang log ngayong araw
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	RMS na taas ng alon at taas ng antenna sa ibabaw ng dagat, sa Mga pattern > Totoong lupain.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Lapad ng sweep sa paligid ng frequency, para sa graph ng impedance.
+Antenna a	Antenna sa
+Applica la freccia al modello NEC	Ilapat ang lawlaw sa modelong NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	Naaprubahan, inihahanda: hindi pa aktibo sa bersyong ito.
+Apri la cartella	Buksan ang folder
+Apri un modello nella finestra principale	Magbukas ng modelo sa pangunahing window
+Apro il modello e il diagramma 3D resta vuoto.	Binuksan ko ang modelo at nananatiling walang laman ang 3D view.
+Area al vento dell'antenna	Ibabaw ng antenna na tinatamaan ng hangin
+Area al vento totale	Kabuuang ibabaw na tinatamaan ng hangin
+Area al vento totale e lista di taglio	Kabuuang ibabaw na tinatamaan ng hangin at cutting list
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Pansin: huwag gamitin sa mga wire na nagtatagpo nang pahilis o may magkaibang diyametro sa dugtungan.\n
+Bobina di carico per la risonanza	Loading coil para sa resonance
+Boom con il tirante	Boom na may brace
+C1 in serie con la loop	C1 na serye sa loop
+C1 serie, C2 parallelo	C1 serye, C2 parallel
+C2 in parallelo all'ingresso	C2 na parallel sa input
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Mga Calculator > Mga receiving antenna: mababang dipole, K9AY, 4-square RX, Hi-Z 2/3/8 element, na may phase sa pagitan ng mga hanay na in-optimize para sa RDF at babala tungkol sa koneksyon sa lupa.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mga mekanikal na kalkulasyon (Hangin at Balancing), Mga Calculator > Mga divider at crossed Yagi, Mga bagay > Kable at balun at stack frame, Mga HF load.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Paunang pagsusukat: sa pag-install, ang proyekto ng lisensyadong tekniko ang may bisa.
+Candidati da controllare	Mga kandidatong susuriin
+Categoria	Kategorya
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Kategorya ng exposure ng lugar (NTC 2018, talaan 3.3.II at larawan 3.3.2): nakadepende sa roughness class ng lupain (A mga sentro ng lungsod ... D mga lugar na walang hadlang, dagat) at sa layo mula sa baybayin. I = bukas na baybayin o dagat, V = sentro ng lungsod.
+Cebik, poi NEC	Cebik, pagkatapos NEC
+Centro della banda scelta:\n	Gitna ng napiling band:\n
+Con ghiaccio	May yelo
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	May yelo: binawasan ang hangin sa 0.6 beses at radial na yelo mula sa kahon sa kanan (pinasimpleng kombinasyon ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Sa parehong seed, pareho ang pag-uulit ng test.
+Condizione della sorgente non capita ("	Hindi naunawaan ang kondisyon ng pinagmulan ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Agad na sinusuri ang GitHub nang hindi hinihintay ang 3 minuto. Kung may bagong bersyon, dina-download ito, nagbabala at nagre-restart gaya ng awtomatikong update (10 segundo, muling bumubukas ang modelo). Gumagana rin kahit naka-off ang awtomatikong update.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Laging sinusuri ng pagsusuri ng segmentation at sa Mga Babala (8 sa normal na kernel, 2 sa extended kernel).
+Copie per candidato	Mga kopya bawat kandidato
+Coppia sulla staffa boom-mast	Torque sa clamp ng boom-mast
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Gumagawa ng zip sa data/segnalazioni at binubuksan ang pahinang «New issue» ng GitHub na may nakasulat nang teksto. Ikaw ang maglalakip ng zip, nang mano-mano: walang kusang ipinapadala ang programa.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Kurbada ng Daigdig, sa Mga pattern > Totoong lupain.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diyametro na labas sa saklaw ng mga formula ni Cebik (mula 1E-6 hanggang 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Distansya at uri ng ikalawang lupa: inaprubahan para sa 1.5 (Totoong lupain 2).
+Distanze di stack HF	Mga pagitan ng HF stack
+Distanze di stack: accoppiamento e distanza migliore	Mga pagitan ng stack: coupling at pinakamahusay na pagitan
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Pagkatapos ng optimization, ang pinakamahusay na resulta ay dumaraan sa pagsusuri gamit ang mga tolerance. 0 = walang pagsusuri.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Napakababang dulo: mag-ingat sa tao at hayop (mataas na boltahe sa mga dulo).
+F/B peggiore	Pinakamasamang F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq na file: ang mga linyang may TLParms mula sa AutoEZ (mga kableng may loss) ay gumagamit ng nominal na Zo at VF at walang loss: lossless ang TL card ng NEC.
+Filo riflettore	Wire ng reflector
+Filo ripiegato	Natuping wire
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Mahabang hairpin (higit sa 0.2 lambda): mas mabuting bawasan ang pagitan o gumamit ng mas makakapal na konduktor.
+Forza del vento di progetto	Design na puwersa ng hangin
+Forza l'aggiornamento	Pilitin ang update
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Lawlaw ng chord: gaano kababa ang mesh ng tuwid na bahagi sa ilalim ng paraboloid sa gitna ng span (kasama sa faceting). Kabuuang masa ng mga strap {4:0.00} kg{5}.
+Freccia tolta dal modello.	Inalis ang lawlaw sa modelo.
+Ghiaccio radiale	Radial na yelo
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Laging nire-resegment ang mga MMANA file para sa NEC-2 (manwal, kabanata 10).
+I lobi si leggono nella tabella delle distanze di stack.	Binabasa ang mga lobe sa talaan ng mga pagitan ng stack.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (nira-round), FIX (pinuputol), MOD, MAX, MIN, ODD (odd integer: kapaki-pakinabang sa mga segment ng pinapakaing wire).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Itinuturing ng normal na NEC2 ang bawat wire bilang manipis na linya: may bisa ito hangga't ang segment ay hindi bababa sa\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Napakaliit na pagbuti ang ibinibigay ng iisang wire ng reflector (Cebik): mas mainam ang screen o ang 9 na wire.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Lumalampas ang mast sa yield: mas makapal na mast o mas maikling overhang.
+Impedenza del cavo	Impedance ng kable
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Sa ibang anyo: minamarkahan ng pagsusuring r5 ng Mga pagsusuri ng data ang gain na lampas sa pisikal na maximum para sa haba ng boom.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Inductance na may N² (masikip na ikot) at modelong NEC na may isang ikot: dito sinusuri lamang ng NEC ang geometry ng iisang ikot.
+Interasse della forcina	Pagitan ng hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	Mga isla (maliban sa Sicily at Sardinia) at bukas na dagat
+Kernel esteso del NEC2 (scheda EK).\n	Extended na NEC2 kernel (EK card).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Dapat mas malaki ang pagitan ng hairpin kaysa sa diyametro ng konduktor.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Isinasara ng Slim Jim ang radiator sa itaas gamit ang wire na tiniklop pababa, hanggang bahagyang nasa itaas ng stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Ginagawa ito ng window na Pagsusuri ng segmentation (button sa itaas).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Simetriko ang hairpin: hindi nito binabaluktot ang pattern gaya ng gamma. Kailangan pa rin ng balun o choke sa feed point.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Gumagana lamang ang hairpin kapag mas mababa ang R ng driven element kaysa sa impedance ng kable: para sa mas malaking R gamitin ang gamma o transformer.
+La prepara IC8TEM: non ancora attiva.	Inihahanda ito ni IC8TEM: hindi pa aktibo.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Ang anim na tuntunin ng Geometry Check ng EZNEC, sa bawat kalkulasyon, sa tab na Mga Babala.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: walang koreksyon Z = {0:0.0} {1}j{2:0.0} ohm (may koreksyon {3:0.0} {4}j{5:0.0} ohm).
+Località	Lokasyon
+Loop orizzontale di 1 λ	Pahalang na loop na 1 λ
+Lunghezza del pilotato	Haba ng driven element
+Lunghezza della forcina	Haba ng hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Inilalagay sa zip ang bukas na modelo (.nec), kahit hindi pa naka-save.
+Mette nello zip il registro di oggi della cartella registri.	Inilalagay sa zip ang log ngayong araw mula sa folder na logs.
+Momenti al mast	Mga moment sa mast
+Momento al cuscinetto	Moment sa bearing
+NEC: risonanza cercata dal motore	NEC: resonance na hinahanap ng engine
+NOTE SU QUESTA VERSIONE (fase 0)\n	MGA TALA SA BERSYONG ITO (phase 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	BAGO · sa ibabaw ng lupa: mga taas, pagitan, nais na take-off angle
+Nel modello non ci sono elementi orizzontali diritti	Walang tuwid na pahalang na element ang modelo
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Sa talaan ng stack at sa Mga bagay ng modelo (stack frame, mga divider).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Sa mga geometry card isulat ang mga expression nang walang espasyo, halimbawa:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Walang iminungkahing pagitan
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Walang iminungkahing pagitan: lahat ay lumalampas sa pinakamataas na active SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Walang IP address, email o username sa mga file: nagiging «~» ang path ng home folder. Kung walang GitHub account, maipapadala mo ang zip sa paraang gusto mo.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Hindi pa awtomatiko: ginagawa ito nang mano-mano gamit ang AGT test sa Mga Babala (ARRL ika-24, 4nec2).
+Numero di spire	Bilang ng ikot
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Bawat kopya ay may mga sukat na inilipat nang random sa loob ng mga tolerance ng tab na Mga tolerance (default: haba ±1 mm, posisyon ±2 mm, diyametro ±0.1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Bukod sa bukas na modelo, mga simulang pinili nang random sa pagitan ng minimum at maximum ng bawat variable. 0 = gaya ng dati.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Pahinang Ingay ng totoong langit ng tab na Ingay/GT/Stack: ang kalkulasyong skynoise na inilipat sa C# (pagbasa ng mga HEALPix map, interpolation, sidereal time, mga coordinate, Buwan) at ang dalawang mapa ni G8ONH sa data/cielo.
+Partenze a caso	Mga random na simula
+Perimetro Cebik	Perimeter ni Cebik
+Peso del boom	Bigat ng boom
+Pi-greco	Pi network
+Prepara la segnalazione	Ihanda ang ulat
+Proposta	Mungkahi
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	test ng nec2c sa 145 MHz (12 mm na tubo sa 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Kailan kailangan: ratio ng segment/radius na nasa mga 2 hanggang 8 (sa ilalim ng 2 walang maaasahan).\n
+Quota s.l.m.	Taas mula sa dagat
+R del pilotato	R ng driven element
+ROS attivo minimo {0}	Pinakamababang active SWR {0}
+Raggio equivalente dei due conduttori	Katumbas na radius ng dalawang konduktor
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Kasalukuyang reactance ng driven element: kung positibo, kailangang paikliin pa ang driven element.
+Reattanza della forcina	Reactance ng hairpin
+Reattanza voluta del pilotato	Nais na reactance ng driven element
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reactance: lampas sa kl = pi/2 (o kung masyadong makapal ang konduktor) hindi na may bisa ang formula ng AEH, gamitin ang NEC.
+Reinstalla la versione attuale	I-reinstall ang kasalukuyang bersyon
+Rel Z non positiva	Re Z hindi positibo
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Resistance ng driven element sa resonance, mula sa modelo o sa kalkulasyon ng NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Nabigo ang pag-restart: isara at buksan muli nang mano-mano ang YA-NEC.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Nagda-download at nagre-reinstall kahit pareho ang bersyon: kapaki-pakinabang kung nasira ang isang file ng programa.
+Scansione	Scan
+Scegli il candidato con	Piliin ang kandidatong may
+Schermo	Screen
+Scrivi due frequenze diverse.	Sumulat ng dalawang magkaibang frequency.
+Segnala un problema	Mag-ulat ng problema
+Seme del caso	Random seed
+Serve solo per la reattanza (dipolo e monopolo).	Kailangan lamang para sa reactance (dipole at monopole).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Ginagamit kapag 2 o higit pang ikot: sa ilalim ng 2 diyametro ng konduktor lumalaki ang totoong loss dahil sa proximity effect (hindi kinakalkula).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Ginagamit sa Mga pattern > Totoong lupain: pag-aninag sa dagat na may divergence factor at kagaspangan.
+Sicilia e provincia di Reggio Calabria	Sicily at lalawigan ng Reggio Calabria
+Sollecitazione	Stress
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Sa itaas ng 0.25 λ nagsisimulang bumaba ang lobe: hindi gaanong angkop sa NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Sa itaas ng 30 MHz ginagamit ang regression ni Cebik sa labas ng saklaw kung saan ito iniaalok dito (mga HF wire): mas mainam ang Awtomatiko o NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Sa ilalim ng 0.1 λ bumababa ang gain pataas (Cebik): walang nakukuha ang napakababang antenna.
+Sotto l'antenna	Sa ilalim ng antenna
+Spina (tubo o tondo) dentro il giunto telescopico.	Pansara (tubo o baras) sa loob ng teleskopikong dugtungan.
+Spina interna nei giunti	Panloob na pansara sa mga dugtungan
+Stack con il ROS attivo piu' basso	Stack na may pinakamababang active SWR
+Staffe e mast	Mga clamp at mast
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Oras: mga (simula + 1) beses ng kasalukuyan, dagdag ang kandidato x kopya na kalkulasyon.
+Tensione nel mast al cuscinetto	Stress sa mast sa bearing
+Tiro del tirante	Hila ng brace
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Mga tubong kinuha sa talaang Taper: pareho ang sukat sa modelong NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Lahat ng pagitan ay lumalampas sa pinakamataas na active SWR ({0}): walang iminungkahing pagitan. Itaas ang pinakamataas na active SWR, subukan ang sariling reference impedance ng antenna o i-tune ang iisang antenna. Ang matrix at graph ay nasa pagitang may pinakamababang active SWR.
+V invertito	Inverted V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), coupling, active SWR, pinakamahusay na pagitan, dalawang frequency
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Peak na bilis ng hangin sa lugar: vb sqrt(ce), kung saan vb = vb,0 ca (NTC 2018, return period na 50 taon) at ce(z) ng kategorya ng exposure sa taas ng antenna.
+Velocità	Bilis
+Velocità a mano	Bilis nang mano-mano
+Vento di sopravvivenza	Survival na hangin
+Vento di sopravvivenza del boom	Survival na hangin ng boom
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Hanging patayo sa element kung saan umaabot sa yield ang unang punto (kasama ang sariling bigat at yelo).
+X da aggiungere al pilotato	X na idaragdag sa driven element
+X del pilotato	X ng driven element
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Ang engine ng NEC ang gumagawa ng huling pagsusuri sa modelong may hairpin.
+Z0 della forcina	Z0 ng hairpin
+Z0 della linea dei due conduttori	Z0 ng linyang may dalawang konduktor
+Zona buona	Mabuting zone
+al centro	sa gitna
+caso peggiore	pinakamasamang kaso
+caso peggiore delle due	pinakamasama sa dalawa
+cerca...	hanapin...
+copie entro le soglie	mga kopya sa loob ng mga threshold
+corrente sinusoidale	sinusoidal na current
+distanza dal boom	layo mula sa boom
+distanza dall'inizio del boom	layo mula sa simula ng boom
+due condensatori sul lato basso	dalawang capacitor sa ibabang bahagi
+effetto: calcolo in corso…	epekto: kinakalkula…
+forza del vento x sbalzo	puwersa ng hangin x overhang
+il caso peggiore migliore	ang pinakamahusay na pinakamasamang kaso
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ang katumbas na dipole, mas makapal, ay may mas mababa sa 73 Ω
+il voto medio migliore	pinakamahusay na karaniwang marka
+induttiva, in parallelo	inductive, parallel
+la percentuale migliore di copie entro le soglie	pinakamahusay na porsiyento ng mga kopya sa loob ng mga threshold
+linea a due fili	two-wire line
+m  mast a	m  mast sa
+m dal suolo	m sa ibabaw ng lupa
+m sopra il boom, attacco al	m sa ibabaw ng boom, nakakabit sa
+media delle due	karaniwan ng dalawa
+mm  lungo	mm  ang haba
+mm, acciaio	mm, bakal
+molto buono	napakahusay
+molto povero	napakahina
+nessun rinforzo	walang pampatibay
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	walang komersyal na tubo hanggang +12 mm ang sapat: suriin ang taper
+nessuna distanza sotto il ROS attivo massimo	walang pagitan sa ilalim ng pinakamataas na active SWR
+partenza dal modello aperto	magsimula sa bukas na modelo
+per lato, teso per annullare il momento verticale al mast	bawat gilid, hinigpitan para kanselahin ang patayong moment sa mast
+primo cedimento: tubo Ø	unang pagkasira: tubo Ø
+regge il vento di progetto con il 20 % di margine	kayang tiisin ang design na hangin na may margin na 20 %
+riferimenti bibliografici	mga sangguniang bibliograpiko
+sbalzo sopra il cuscinetto	overhang sa ibabaw ng bearing
+schermo 1 λ x 1 λ	screen 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	siksik na segment) gumagamit ang extended kernel ng mas eksaktong formula at mas maaasahan ang resulta.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	kapag walang pansara, nakasandal ang panloob na tubo sa gilid ng panlabas at nilalapatan ng factor na 1.25 ang stress sa unang 5 cm: tantiya ito, malaki ang binabago ng mga clamp at puwang sa resulta.
+sollecitazione / snervamento	stress / yield
+tubo piu' grosso	mas makapal na tubo
+un filo riflettore	isang wire ng reflector
+zona di cedimento	zone ng pagkasira
+ø dei conduttori della forcina	ø ng mga konduktor ng hairpin
+ø del filo	ø ng wire
+ø del pilotato	ø ng driven element
+accordata	naka-tune
+accordate	naka-tune
+alimentazione	feed
+alluminio	aluminyo
+allungata	pinahaba
+altro	iba pa
+anello	loop
+angolo	anggulo
+antiorario	pakaliwa
+aritmetico	aritmetiko
+automatico	awtomatiko
+banda	band
+bande	mga band
+bordi	mga gilid
+buono	mabuti
+capacitiva	capacitive
+carichi	mga load
+carico	load
+cartesiana	cartesian
+cavi	mga kable
+cavo	kable
+centimetri	sentimetro
+centina	tadyang
+cerchio	bilog
+condensatore	capacitor
+corrente	current
+destra	kanan
+diagramma	pattern
+diametro	diyametro
+differenza	pagkakaiba
+dipoli	mga dipole
+dipolo	dipole
+diretta	direkta
+diritto	tuwid
+due	dalawa
+elementi	mga element
+elemento	element
+elimina	burahin
+equilatera	equilateral
+esito	resulta
+esperimenti	mga eksperimento
+esponenziale	exponential
+fase	phase
+ferriti	mga ferrite
+fili	mga wire
+filo	wire
+forcina	hairpin
+forma	hugis
+formule	mga formula
+frequenza	frequency
+geometria	geometry
+ghiaccio	yelo
+giudizio	marka
+gradi	degree
+griglia	grid
+guadagno	gain
+incrociata	nagkakrus
+larghezza	lapad
+lato	gilid
+lega	haluang metal
+libera	malaya
+libero	malaya
+linea	linya
+lineare	linear
+linee	mga linya
+lobi	mga side lobe
+locale	lokal
+mai	hindi kailanman
+manicotto	sleeve
+mano	mano-mano
+meccanica	mekanika
+mezzaonda	half-wave
+millimetri	milimetro
+misure	mga sukat
+modello	modelo
+modo	mode
+nessuna	wala
+nota	tala
+nuovo	bago
+operativo	gumagana
+orario	pakanan
+ottagono	oktagon
+palo	mast
+parabola	dish
+passo	pitch
+perdite	mga loss
+perfetto	perpekto
+piano	plane
+piatto	patag
+piedi	talampakan
+polare	polar
+pollici	pulgada
+propria	sarili
+punto	punto
+quadrato	parisukat
+quadro	parisukat
+quota	taas
+radiali	mga radial
+radiatore	radiator
+raggio	radius
+rame	tanso
+ramo	sanga
+rapidi	mabilis
+rastremazioni	mga taper
+rete	network
+rettangolo	parihaba
+riepilogo	buod
+riflettore	reflector
+riga	hanay
+rombo	rhombus
+scarso	mahina
+scarto	paglihis
+schiacciata	pinapatag
+sempre	palagi
+senso	direksyon
+si'	oo
+sinistra	kaliwa
+soglia	threshold
+sorgenti	mga pinagmulan
+sotto	sa ilalim
+spire	mga ikot
+staffe	mga clamp
+stato	katayuan
+sufficiente	sapat
+tetto	bubong
+tipo	uri
+tirante	brace
+togli	alisin
+tondo	bilog
+traffico	trapiko
+trasformatori	mga transformer
+trombe	mga horn
+tubi	mga tubo
+tubo	tubo
+tutti	lahat
+uguale	pantay
+uguali	pantay
+uso	gamitin
+a {0} x DL6WU; tutte sopra il massimo {1}	sa {0} x DL6WU; lahat ay lampas sa maximum na {1}
+% del mezzo boom	% ng kalahating boom
++ aggiungi	+ magdagdag
++ aggiungi variabile	+ magdagdag ng variable
++ correzione del boom	+ koreksyon ng boom
++ nuova	+ bago
++ trappola	+ trap
++ verso il disco.	+ patungo sa dish.
++90 gradi Z	+90 degree Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetiko: eksaktong nasa gitna ng mga hangganan ng IARU ng band (halimbawa 145.000 MHz sa 2 m),\n
+- correzione del boom	- koreksyon ng boom
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- gumagana: ang frequency kung saan ka talagang nag-o-operate (halimbawa 144.300 MHz sa 2 m, 432.200 sa 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (itim) 10-100 MHz
+-10 nero	-10 itim
+-2 (rosso) 0,25-10 MHz	-2 (pula) 0.25-10 MHz
+-2 rosso	-2 pula
+-6 (giallo) 3-40 MHz	-6 (dilaw) 3-40 MHz
+-6 giallo	-6 dilaw
+-90 gradi Z	-90 degree Z
+-> segmento NEC	-> NEC segment
+. "Annulla" torna indietro.	. Bumabalik ang «I-undo».
+. Antenna base: fili 1-	. Batayang antenna: mga wire 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Sa ganoon kataas na Q, iilang kHz lamang dapat saklawin ng sweep.
+. Salvalo con Salva con nome.	. I-save ito gamit ang I-save bilang.
+. Trascina per ruotare, rotella per ingrandire.	. I-drag para iikot, gulong para mag-zoom.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Gumamit ng mas manipis na wire, mas malaking core o dalawang nakapatong na core.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (sa pamamagitan ng Sengupta 2021) at GMRT talaan 19.1
+12 (errore / HPBW)^2	12 (error / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passive na singsing: perimeter {0:0.000} lambda, walang source at walang capacitor; makikita ang epekto sa buong modelo (director o reflector).
+Automatico	Awtomatiko
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, gaya ng nec2c at xnec2c: kasama ng programa ang source code (file na COPYING).\n
+Provincia di Trieste	Lalawigan ng Trieste
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	at sa C# para sa YA-NEC. Sangguniang interface: xnec2c nina 5B4AZ at Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	efficiency na kinalkula mula sa far field, Prad / (Prad + mga loss) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	pababa nang pababa ang pagiging maaasahan ng impedance at mga loss habang bumababa ang wire (tingnan ang BOG sa manwal). Para sa ligtas na resulta: hindi bababa sa lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	nalilikha ito hanggang {3:0.00} m na diyametro; may bisa sa anumang diyametro ang kalkulasyon ng aperture sa tabi at isinasaalang-alang na nito ang mga tadyang (kahon sa itaas).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segment: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} sa {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficiency {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° ng elevation
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL ika-19 na ed., kab. 18 (2 m Yagi ni W9PE): tatlong element sa 0.2 λ, mga 7 dBi at F/B na higit sa 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Pagkakatugma ng YA-NEC sa nec2c (mga baras 20/15/10 m): mga reflector sa 0.185 / 0.197 / 0.222 λ, mga director sa 0.095 / 0.116 / 0.114 λ: nasa loob ng mga saklaw ng mga pinagmulan.
+↶ Annulla	↶ I-undo
+↷ Ripeti	↷ I-redo
+■ Ferma	■ Itigil
+▶ Avvia	▶ Simulan
+☐ mantieni lunghezza del boom	☐ panatilihin ang haba ng boom
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ walang babala: tumutugon ang segmentation sa napiling antas
+✓ nessun errore e nessun avviso	✓ walang error at walang babala
+variabili del modello	mga variable ng modelo
+nuova variabile dal modello	bagong variable mula sa modelo
+Scrivi una variabile nella linguetta Variabili…	Sumulat ng variable sa tab na Mga Variable…
+Elemento diritto	Tuwid na element
+Elemento piegato	Baluktot na element
+Variabile nuova	Bagong variable
+Minimo / massimo	Minimum / maximum
+Cosa cambia	Ano ang nagbabago
+in ocra: dove agisce la variabile	naka-ocher: kung saan kumikilos ang variable
+Crea la variabile	Likhain ang variable
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Nalikha ang variable na {0}: hindi nagbabago ang geometry. Inaalis ito ng «I-undo» sa bar na Geometry.
+Struttura 3D: dove agisce la variabile ▾	3D na istruktura: kung saan kumikilos ang variable ▾
+Struttura 3D ▸	3D na istruktura ▸
+Clic: nasconde o mostra la struttura	Click: itinatago o ipinapakita ang istruktura
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	buong ocher: ginagamit ang variable · putol-putol na ocher: ginagamit ito sa pamamagitan ng ibang variable
+attraverso {0}: fili {1}	sa pamamagitan ng {0}: mga wire {1}

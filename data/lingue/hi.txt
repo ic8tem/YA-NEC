@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	रंग कितना गहरा हो: हल्की, मध्यम या गहरी। तालिका की पंक्ति पर परत हल्की रहती है ताकि संख्याएँ पढ़ी जा सकें।
 Filo {0} scelto nella vista 3D: riga {1} della tabella	तार {0} 3D दृश्य में चुना गया: तालिका की पंक्ति {1}
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	तार {0}: तारों की तालिका में नहीं है (GW के अलावा ज्यामिति कार्ड)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	नए संस्करण की तुरंत जाँच करता है (3 मिनट रुके बिना)।
+terreno reale	वास्तविक भू-भाग
+Locatore	लोकेटर
+da 8 a 12 caratteri	8 से 12 अक्षर
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	6 अक्षरों के साथ बिंदु कई किलोमीटर दूर हो सकता है: भू-भाग प्रोफ़ाइल को कम से कम 8 अक्षर चाहिए।
+Quota sito	स्थल की ऊँचाई
+Altezza antenna	एंटीना की ऊँचाई
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	ज़मीन से एंटीना के केंद्र की ऊँचाई। यदि यह मॉडल से अलग है, तो NEC पैटर्न उसी धारा वितरण के साथ ऊपर या नीचे किया जाता है।
+Distanza max	अधिकतम दूरी
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	हर लोकेटर बदलाव पर दिगंश और दूरियाँ फिर से गणना (बृहत् वृत्त, 6371 km गोला)।
+Terra	भूमि
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	0.25 m लहरों (मानक विचलन) के लिए Ament गुणक से समुद्री परावर्तन गुणांक घटाता है।
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	खुरदरी सतह का सांख्यिकीय मॉडल (Ament 1953): तिरछे कोणों और समान समुद्र के लिए मान्य।
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	पृथ्वी की वक्रता से प्रोफ़ाइल को नीचे करता है (सामान्य अपवर्तन में समतुल्य त्रिज्या 4/3) और दूर की परावर्तित किरणों को अपसरण गुणक से घटाता है।
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	मानक वायुमंडल (k = 4/3); डक्ट या उत्क्रमण होने पर प्रतीत वक्रता बदलती है।
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	एंटीना और प्रस्थान दिशा के बीच की सबसे ऊँची चोटी सीधी किरण को एक धार की तरह क्षीण करती है (फ्रेनेल समाकल), जैसे HFTA में।
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	एकल चाकू-धार: गोल चोटियाँ या लगातार कई चोटियाँ सबसे ऊँची से अनुमानित।
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	हर 10 डिग्री दिगंश पर गणना दोहराता है (केवल DEM) और गुलाब चित्र पर गुणवत्ता अंक दिखाता है, एंटीना को हर दिगंश की ओर घुमाकर।
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	एंटीना हमेशा प्रोफ़ाइल के दिगंश की ओर: घूमने वाले एंटीना के लिए मान्य।
+Cartesiana dBi / gradi	कार्तीय dBi / डिग्री
+0–180° intero	0–180° पूरा
+Zoom angolare	कोण ज़ूम
+Sovrapponi alla linguetta Verticale	ऊर्ध्वाधर टैब पर ओवरले
+premi Calcola	गणना करें दबाएँ
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	एंटीना को 6 से 30 m (HF) या 2 से 30 m (VHF) पर रखकर गणना दोहराता है और पथ पर सबसे अच्छे गुणवत्ता अंक वाली ऊँचाई दिखाता है।
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	धाराएँ गणना किए गए मॉडल की ही रहती हैं: ऊँचाई का प्रतिबाधा और धाराओं पर प्रभाव नहीं माना जाता (जैसे HFTA में)।
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	ARRL Antenna Book की आगमन-कोण तालिकाएँ चाहिए (बैंड और क्षेत्र के अनुसार .PRN फ़ाइलें): उपलब्ध होते ही यह सुविधा चालू होगी और नारंगी खंड दिखाएगी।
+locatore non valido	अमान्य लोकेटर
+sul mare	समुद्र पर
+sul terreno	भूमि पर
+profilo reale	वास्तविक प्रोफ़ाइल
+terreno piatto	समतल ज़मीन
+orizzonte ostruito	बाधित क्षितिज
+° (scala angolare ×	° (कोण पैमाना ×
+← dietro	← पीछे
+avanti →	आगे →
+statistiche degli angoli di arrivo: non caricate	आगमन-कोण आँकड़े: लोड नहीं
+rosa 0–360°: calcolo in corso…	0–360° गुलाब: गणना हो रही है…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	प्रोफ़ाइल फ़ाइल चुनें ("HorizonProfiler से" पर क्लिक करें)।
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM उपलब्ध नहीं: पहली बार TINITALY या SRTM1 डाउनलोड करने के लिए नेटवर्क चाहिए (फिर वे data/dem फ़ोल्डर में रहते हैं)।
+Profilo del terreno	भू-भाग प्रोफ़ाइल
+Lobo di elevazione	उन्नयन लोब
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	पहले मॉडल की गणना करें (ऊपर गणना करें बटन): एंटीना पैटर्न NEC से आता है।
+da file	फ़ाइल से
+dal DEM	DEM से
+rispetto alla stessa antenna su terreno piatto	समतल ज़मीन पर उसी एंटीना की तुलना में
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	वास्तविक प्रोफ़ाइल पर लोब और समतल ज़मीन पर लोब का अंतर, उपयोगी कोणों पर औसत।
+Guadagno a 5° / 10°	5° / 10° पर गेन
+Guadagno a 1° / 3°	1° / 3° पर गेन
+Angoli coperti a -3 dB	-3 dB पर ढके कोण
+primo lobo sul profilo reale	वास्तविक प्रोफ़ाइल पर पहला लोब
+calcolo…	गणना हो रही है…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	मुक्त-आकाश मॉडल: धाराएँ बिना ज़मीन वाली हैं, HFTA के मुक्त-आकाश पैटर्न की तरह। पास की ज़मीन को गिनने के लिए वास्तविक ज़मीन के साथ मॉडल की गणना करें।
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	प्रोफ़ाइल केवल एक दिगंश के लिए मान्य है: घूमने वाले एंटीना को अधिक दिशाएँ चाहिए ("सभी दिगंश" बॉक्स)।
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	HFTA (N6BV) जैसी विधि: सीधी किरण + प्रोफ़ाइल के हर फलक पर परावर्तित किरणें + चोटियों पर विवर्तन। एंटीना पैटर्न NEC से आता है; यह गणना भू-भाग जोड़ती है।
+Piatto	समतल
+Reale	वास्तविक
+Primo minimo	पहला न्यूनतम
+Punto di riflessione	परावर्तन बिंदु
+Orizzonte	क्षितिज
+Uso: rotte DX in HF (angoli bassi 1–15°).	उपयोग: HF DX पथ (कम कोण 1–15°)।
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	उपयोग: ट्रोपो और MS (0–5°), नीचे चंद्रमा के साथ EME (चंद्रोदय/चंद्रास्त पर ज़मीन का गेन)।
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	पथ के उपयोगी कोणों पर सबसे अधिक औसत गेन वाली ऊँचाई।
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	गणना किए गए मॉडल की धाराएँ ऊँचाई में खिसकाई गईं: प्रतिबाधा और ज़मीन युग्मन मॉडल वाले ही रहते हैं।
+Calcola prima il terreno reale	पहले वास्तविक भू-भाग की गणना करें
+Esporta il lobo sul terreno reale	वास्तविक भू-भाग पर लोब निर्यात करें
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	छवियाँ: Esri, Maxar, Earthstar Geographics और GIS उपयोगकर्ता समुदाय
+© i contributori di OpenStreetMap	© OpenStreetMap योगदानकर्ता
+Sfondo	पृष्ठभूमि
+Foto aerea	हवाई फ़ोटो
+Solo griglia	केवल ग्रिड
+Griglia	ग्रिड
+Cerca	खोजें
+⌖ Centra sul locatore	⌖ लोकेटर पर केंद्रित करें
+Punto scelto	चुना हुआ बिंदु
+Coordinate	निर्देशांक
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	मानचित्र पर क्लिक = एंटीना बिंदु; खींचना = खिसकाना; पहिया = ज़ूम (ग्रिड 6 से 8, 10, 12 अक्षर तक)। मोटा किनारा = 6-अक्षर वर्ग।
+non disponibile	उपलब्ध नहीं
+Lunghezza elementi	तत्व की लंबाई
+Posizione sul boom	बूम पर स्थिति
+Uniforme	समान
+Distribuzione	वितरण
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	क्लैंप में केंद्र से हटकर लगा तत्व: अपने अक्ष पर खिसकाव, स्थिति सहनशीलता के साथ।
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	वास्तविक क्लैंप बूम के पास विद्युत लंबाई भी बदलता है: उसके लिए "बूम सुधार" टैब का उपयोग करें।
+nuovo a ogni avvio	हर रन पर नया
+Numero prove	प्रयासों की संख्या
+Frequenze	आवृत्तियाँ
+Seme casuale	यादृच्छिक बीज
+OBIETTIVO LISTA DI TAGLIO	कटिंग सूची का लक्ष्य
+Calo F/B max	F/B में अधिकतम गिरावट
+ROS max	अधिकतम SWR
+Ferma	रोकें
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	फ़ीड तत्व के पास के तत्व आमतौर पर सबसे संवेदनशील होते हैं; बूम के अंत वाले बड़ी त्रुटियाँ सह लेते हैं।
+l'istogramma serve al Monte Carlo	हिस्टोग्राम मोंटे कार्लो के लिए है
+5% peggiore	सबसे खराब 5%
+Posizione mm	स्थिति mm
+Lunghezza mm	लंबाई mm
+Tolleranza ammessa	अनुमत सहनशीलता
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	। लाल में वे तत्व जिन्हें निर्माण सहनशीलता से कम सहनशीलता चाहिए।
+Calcola prima il modello	पहले मॉडल की गणना करें
+sensibilita'	संवेदनशीलता
+Tolleranze: fermato	सहनशीलताएँ: रोका गया
+Diametro mm	व्यास mm
+Tolleranza ammessa mm	अनुमत सहनशीलता mm
+Avvia prima il calcolo	पहले गणना चलाएँ
+Esporta la lista di taglio	कटिंग सूची निर्यात करें
+Lista di taglio	कटिंग सूची
+Obiettivi	लक्ष्य
+Calo massimo del F/B	F/B में अधिकतम गिरावट
+ROS massimo	अधिकतम SWR
+Tolleranze di costruzione	निर्माण सहनशीलताएँ
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	योजनाबद्ध (स्केच 13, स्वीकृति लंबित): इस संस्करण में अभी सक्रिय नहीं।
+Al quadro 20×2 mm	Al चौकोर 20×2 mm
+Al quadro 25×2 mm	Al चौकोर 25×2 mm
+Al quadro 30×2 mm	Al चौकोर 30×2 mm
+Al quadro 40×2 mm	Al चौकोर 40×2 mm
+Al tondo 25×1,5 mm	Al गोल 25×1.5 mm
+Al tondo 30×2 mm	Al गोल 30×2 mm
+Al tondo 40×2 mm	Al गोल 40×2 mm
+Al tondo 50×2 mm	Al गोल 50×2 mm
+Zona NTC	NTC क्षेत्र
+Quota sito as	स्थल की ऊँचाई के रूप में
+Periodo ritorno	वापसी अवधि
+Categoria esposiz.	अनावरण श्रेणी
+Coeff. topografia	स्थलाकृति गुणांक
+Antenna da terra	ज़मीन से ऊपर एंटीना
+Palo sopra rotore	रोटेटर के ऊपर मस्तूल
+Ø palo	मस्तूल Ø
+Usa elementi e boom del modello	मॉडल के तत्व और बूम उपयोग करें
+Includi telaio, palo, cavi	फ़्रेम, मस्तूल, केबल शामिल करें
+Scansione direzione del vento	हवा की दिशा स्कैन
+UNITÀ	इकाइयाँ
+N e kgf affiancati	N और kgf साथ-साथ
+solo N	केवल N
+solo kgf	केवल kgf
+Mostra	दिखाएँ
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	अमान्य लोकेटर: क्षेत्र हाथ से चुनें
+Telaio a H	H-फ़्रेम
+Cavi e divisore	केबल और डिवाइडर
+Parte	भाग
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	आड़ी हवा में तत्व नहीं धकेलते (cross-flow, K5IU): नली पर बल उसके अक्ष के लंबवत हवा घटक के वर्ग के अनुसार होता है।
+momento flettente alla staffa del rotore	रोटेटर क्लैंप पर बंकन आघूर्ण
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	प्रारंभिक आकार निर्धारण: मस्तूल, टावर और नींव की इंजीनियर द्वारा जाँच का स्थान नहीं लेता। आधार आघूर्ण "मस्तूल और नींव" उप-टैब में जाएगा।
+Sito e norma	स्थल और मानक
+Norma	मानक
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; गुणांक CNR-DT 207 R1/2018 और EN 1991-1-4
+Locatore / zona	लोकेटर / क्षेत्र
+Risultati	परिणाम
+Forza massima	अधिकतम बल
+Momento flettente alla staffa del rotore	रोटेटर क्लैंप पर बंकन आघूर्ण
+Momento torcente sul rotore	रोटेटर पर टॉर्क
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	प्रारंभिक आकार निर्धारण: मस्तूल, टावर और नींव की योग्य इंजीनियर द्वारा जाँच का स्थान नहीं लेता।
+Al tondino pieno	Al ठोस छड़
+Materiale elementi	तत्व सामग्री
+Staffe, isolatori	क्लैंप, इन्सुलेटर
+g cad.	g प्रत्येक
+Dipolo + scatola	द्विध्रुव + बॉक्स
+Cavo fino al palo	मस्तूल तक केबल
+STAFFA AL PALO	मस्तूल क्लैंप
+Posizione attuale	वर्तमान स्थिति
+m dal riflettore	m रिफ्लेक्टर से
+Massa / distanza	द्रव्यमान / दूरी
+Vento dalla linguetta Vento	हवा टैब से हवा
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	"हवा" उप-टैब की अंतिम गणना का डिज़ाइन दबाव उपयोग करता है; उसके बिना 600 N/m²।
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	पूरे मॉडल को बूम पर खिसकाता है ताकि सुझाया गया क्लैंप मूल बिंदु पर आए (जहाँ मस्तूल और स्टैक फ़्रेम जुड़ते हैं)। 3D संरचना में "पूर्ववत करें" इसे लौटाता है।
+Momenti in funzione della posizione della staffa	क्लैंप स्थिति के अनुसार आघूर्ण
+Masse e aree per parte	भाग के अनुसार द्रव्यमान और क्षेत्रफल
+ultimo direttore	अंतिम डायरेक्टर
+Staffe e isolatori	क्लैंप और इन्सुलेटर
+Cavo sul boom	बूम पर केबल
+Massa kg	द्रव्यमान kg
+Baricentro m	गुरुत्व केंद्र m
+Area vento m²	हवा क्षेत्रफल m²
+Centro area m	क्षेत्रफल केंद्र m
+solo peso	केवल भार
+solo vento	केवल हवा
+File Touchstone .s1p	Touchstone .s1p फ़ाइल
+Formato letto	पढ़ा गया प्रारूप
+CAVO TRA VNA E ANTENNA	VNA और एंटीना के बीच केबल
+R e X separate	R और X अलग-अलग
+Banda con ROS <	SWR < वाला बैंड
+ROS: calcolato e misurato	SWR: गणना और मापा गया
+Confronto	तुलना
+misurato, cavo tolto	मापा गया, केबल हटाई गई
+R calcolata	R गणना
+X calcolata	X गणना
+R misurata	R मापा
+X misurata	X मापा
+Calcolato	गणना
+Misurato	मापा
+Scarto	अंतर
+Frequenza del ROS minimo	न्यूनतम SWR की आवृत्ति
+ROS minimo	न्यूनतम SWR
+nessuna correzione: calcolo e misura coincidono.	कोई सुधार नहीं: गणना और माप सहमत हैं।
+calcolo NEC sul campo della misura…	माप सीमा पर NEC गणना…
+Misura del VNA	VNA माप
+Tutti	सभी
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	पूरे बैंड पर F/B और F/R देखने के लिए स्वीप चलाएँ (ऊपर स्वीप बटन)
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = आगे का गेन घटा पिछले गोलार्ध पर औसत शक्ति (90-270° दिगंश, 0° से ऊपर सभी उन्नयन)। यह अनुकूलक के लक्ष्यों में भी है।
+Tabelle: F/B e F/R su tutta la banda	तालिकाएँ: पूरे बैंड पर F/B और F/R
+Valori dello sweep	स्वीप मान
+ANTENNE RICEVENTI	प्राप्ति एंटीना
+4-square in ricezione	प्राप्ति के लिए 4-square
+8 verticali in cerchio	वृत्त में 8 ऊर्ध्वाधर
+Modello aperto	मॉडल खोलें
+Isotropo	समदैशिक
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = वांछित दिशा में गेन घटा पूरे अर्ध-अंतरिक्ष पर औसत गेन: गेन के विपरीत, यह हानियों पर निर्भर नहीं करता।
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	"वास्तविक भू-भाग" टैब के आगमन-कोण की माध्यिका को वांछित उन्नयन के रूप में लेता है (बैंड और क्षेत्र के अनुसार आँकड़े)। ARRL आँकड़े लोड न हों तो यहाँ लिखा उन्नयन रहता है।
+Direzione voluta	वांछित दिशा
+Hz  rumore	Hz  शोर
+NF ricevitore	रिसीवर NF
+sorgente locale az	स्थानीय स्रोत az
+Cifre di merito in ricezione	प्राप्ति गुणवत्ता अंक
+Basta il segnale?	क्या सिग्नल पर्याप्त है?
+calcolo in corso…	गणना हो रही है…
+RDF in funzione della frequenza	आवृत्ति के अनुसार RDF
+Calcola prima il modello aperto	पहले खुले मॉडल की गणना करें
+verticale λ/4	λ/4 ऊर्ध्वाधर
+° · dB relativi · arancio: -3 dB	° · सापेक्ष dB · नारंगी: -3 dB
+settore ±30° az, 10–40° el	सेक्टर ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	आगे के सेक्टर पर औसत गेन घटा पिछले गोलार्ध पर औसत।
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN DMF को केवल 20 डिग्री के गेन से परिभाषित करते हैं; यहाँ स्केच के सेक्टर का औसत लिया गया है, इसलिए मानों की पुस्तक से एक-एक तुलना नहीं हो सकती।
+molto basso: serve un preamplificatore	बहुत कम: प्रीएम्प्लीफ़ायर चाहिए
+basso ma accettabile: vedi soglia	कम पर स्वीकार्य: सीमा देखें
+come un'antenna trasmittente	प्रेषण एंटीना जैसा
+F/R medio sull'emisfero posteriore	पिछले गोलार्ध पर औसत F/R
+Rumore d'antenna ai morsetti	टर्मिनलों पर एंटीना शोर
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	टर्मिनलों पर बाहरी शोर शक्ति: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + शोर कहाँ से आता है उसके अनुसार भारित औसत गेन।
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	क्षितिज से शोर, उन्नयन में exp(-el/10 डिग्री) भारित: नीचे से आने वाले दूर के मानव-निर्मित शोर को दर्शाता है; वास्तविक वितरण स्थल पर निर्भर है।
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	5 डिग्री उन्नयन पर बिंदु स्रोत, समदैशिक पृष्ठभूमि जितनी शक्ति के साथ।
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	ज़मीन के ऊपर समदैशिक शोर; ज़मीन शोर नहीं जोड़ती।
+Margine sul ricevitore	रिसीवर मार्जिन
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	एंटीना शोर रिसीवर शोर से 6 dB से कम अधिक है: संवेदनशीलता रिसीवर से सीमित है। अधिक प्रीएम्प्लीफ़िकेशन या कम NF वाला रिसीवर चाहिए।
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	गेन 1.8
+Spazio richiesto	आवश्यक स्थान
+λ/4 in tubo quadro	चौकोर नली में λ/4
+λ/4 in tubo tondo	गोल नली में λ/4
+Solo cavi di fase	केवल फ़ेज़िंग लाइनें
+Aria	हवा
+Uscite	आउटपुट
+Z antenne	एंटीना Z
+Z ingresso	इनपुट Z
+Dielettrico	परावैद्युत
+Connettori	कनेक्टर
+Correggi accorciamento dei connettori	कनेक्टर से छोटा होना सुधारें
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	कनेक्टरों के अंदर वाले लाइन भाग को लंबाई से घटाता है।
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	N कनेक्टरों के साथ प्रति सिरा 4 mm का अनुमान (BNC 3, SMA 1.5): VNA से 1 mm कदमों में छोटा करते हुए ट्रिम करना सबसे अच्छा है।
+Divisori	डिवाइडर
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	खुले स्टैक के एंटीनाओं की सक्रिय प्रतिबाधाएँ (प्रति एंटीना एक स्रोत) और दूरियाँ फ़ेज़िंग लाइनों की न्यूनतम लंबाई के लिए उपयोग करता है।
+CAVI DI FASE	फ़ेज़िंग लाइनें
+Lunghezza minima	न्यूनतम लंबाई
+Passo verticale	ऊर्ध्वाधर दूरी
+solo cavi di fase: nessun trasformatore da costruire	केवल फ़ेज़िंग लाइनें: बनाने को कोई ट्रांसफ़ॉर्मर नहीं
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω केबल समानांतर = 37.5 Ω
+quadro, lato	चौकोर, भुजा
+tondo, Ø	गोल, Ø
+Z0 richiesta	आवश्यक Z0
+Ø conduttore interno	भीतरी चालक Ø
+VF del cavo	केबल VF
+λ/4 in aria, mm	हवा में λ/4, mm
+da tagliare, mm	काटना, mm
+Z carico in parallelo	समानांतर लोड Z
+Rami λ/4: Z0 = Zin · √N	λ/4 शाखाएँ: Z0 = Zin · √N
+Resistenze a stella	स्टार प्रतिरोधक
+Isolamento tra le uscite	आउटपुट के बीच पृथक्करण
+Perdita stimata	अनुमानित हानि
+Carico usato	प्रयुक्त लोड
+non potenza di 2	2 की घात नहीं
+ROS all'ingresso	इनपुट SWR
+solo cavi di fase	केवल फ़ेज़िंग लाइनें
+Uscita	आउटपुट
+Lungh. elettrica	विद्युत लंबाई
+Fisica mm	भौतिक mm
+Perdita dB	हानि dB
+° di fase).	° कला)।
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° ऊपर); डिवाइडर पर प्रतिबाधा अब सटीक नहीं दोहराती।
+Solo cavi di fase: nessun disegno da stampare	केवल फ़ेज़िंग लाइनें: छापने को कोई चित्र नहीं
+Divisore	डिवाइडर
+50 mm di controllo	50 mm जाँच
+GEOMETRIA	ज्यामिति
+λ/4 sul boom	बूम पर λ/4
+stesso piano	एक ही तल
+Metallico, isolati	धातु, विद्युतरोधित
+Non metallico	अधात्विक
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	बूम NEC मॉडल में नहीं है: धातु बूम से विद्युतरोधित तत्वों के साथ प्रभाव छोटा है (कैलकुलेटर में बूम सुधार)।
+Yagi di base	आधार यागी
+Disposizione	व्यवस्था
+Sfasamento piani	तल ऑफ़सेट
+Cavo di ritardo λ/4	λ/4 विलंब केबल
+Includi relè e cavi reali	वास्तविक रिले और केबल शामिल करें
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	विलंब केबल की हानि (VF 0.66, 144 MHz पर 10 dB/100 m, आवृत्ति के वर्गमूल से अनुमापित) और रिले के लिए 0.1 dB जोड़ता है।
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75 Ω केबल और समाक्षीय रिले के सामान्य मान; प्रोग्राम आपके घटक नहीं जानता।
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	वही फ़ेज़िंग नेटवर्क टर्नस्टाइल (90° पर क्रॉस द्विध्रुव) के लिए भी काम करता है।
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	सामने का दृश्य
+Componenti co-polare / cross-polare	सह-ध्रुवीय / क्रॉस-ध्रुवीय घटक
+Rapporto assiale e ROS in frequenza	आवृत्ति के अनुसार अक्षीय अनुपात और SWR
+piano A	तल A
+piano B	तल B
+vista dal davanti — boom al centro	सामने से दृश्य — बूम केंद्र में
+piani sfalsati di λ/4 lungo il boom	बूम पर λ/4 ऑफ़सेट तल
+Yagi incrociate: serve una Yagi con una sola sorgente	क्रॉस यागी: एकल स्रोत वाला यागी चाहिए
+Yagi incrociate: calcolo in corso...	क्रॉस यागी: गणना हो रही है...
+Rapporto assiale in asse	अक्ष पर अक्षीय अनुपात
+Rapporto assiale a −3 dB	−3 dB पर अक्षीय अनुपात
+Isolamento tra i due piani	दोनों तलों के बीच पृथक्करण
+Fase della rete sul piano B	तल B पर नेटवर्क कला
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	पूर्णतः लंबवत और सममित तल: मॉडल में युग्मन और विपरीत ध्रुवण लगभग शून्य हैं। वास्तविकता में क्लैंप, केबल और छोटी विषमताएँ इन्हें लगभग 25-35 dB तक सीमित करती हैं।
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	1.8 MHz से 1296 MHz तक: बालन सूची बैंड के साथ बदलती है
+LINEA DI DISCESA	फ़ीड लाइन
+Coassiale	समाक्षीय
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	संतुलित सीढ़ी लाइन में शील्ड नहीं होती: कॉमन मोड केवल असंतुलन से आता है। यह कार्ड समाक्षीय स्थिति की गणना करता है; सीढ़ी लाइन के लिए ट्यूनर के साथ "लाइनें (TL)" उपयोग करें।
+Lungo il boom	बूम के साथ
+m → palo	m → मस्तूल
+Discesa sul palo	मस्तूल से नीचे
+Fino alla stazione	स्टेशन तक
+Calza a massa sul palo / traliccio	शील्ड मस्तूल / टावर पर अर्थ
+Messa a terra all'ingresso stazione	स्टेशन प्रवेश पर अर्थ
+BALUN DA CONFRONTARE	तुलना के लिए बालन
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	110 mm पर RG-213 के 8 फेरे: Wheeler प्रेरकत्व, Medhurst स्व-धारिता।
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 और अनुमानित स्व-धारिता: चोक की वास्तविक प्रतिबाधा मापनी होगी।
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 फ़ेराइट टोरॉइड, कम Q वाले समानांतर RLC के रूप में।
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	शिखर पर 5 kOhm (मिश्रण 31 के साथ 10 MHz, मिश्रण 43 के साथ 25 MHz): 2 x FT-240 पर 12 फेरों के सामान्य मान।
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	समाक्षीय λ/2 4:1: संतुलित फ़ीड, शील्ड जुड़ी।
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	अवशिष्ट कॉमन मोड f0 पर 600 Ω अनुनादी (Q 3) के रूप में: लगाने के ढंग पर निर्भर।
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 स्लीव: शील्ड और स्लीव के बीच शॉर्ट की गई λ/4 लाइन, f0 पर उच्च प्रतिबाधा।
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	स्लीव Z0 50 Ω और चौथाई तरंग पर 0.08 dB हानि।
+10 perline in ferrite sulla calza.	शील्ड पर 10 फ़ेराइट मनके।
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	144 MHz पर प्रति मनका 40 Ω (मिश्रण 61), मिश्रण 43 के साथ 30 MHz से ऊपर 100 Ω: सामान्य कैटलॉग मान।
+Caso mostrato	दिखाई गई स्थिति
+premi Calcola il confronto	तुलना की गणना करें दबाएँ
+Corrente lungo la calza, dal dipolo verso il basso	शील्ड के साथ धारा, द्विध्रुव से नीचे की ओर
+Vista laterale: corrente sulla calza	पार्श्व दृश्य: शील्ड पर धारा
+F/R medio	औसत F/R
+Z / ROS	Z / SWR
+Perdita nel balun	बालन में हानि
+Potenza dissipata nel balun a 1 kW	1 kW पर बालन में व्यय शक्ति
+Banda con calza < 5 %	शील्ड धारा < 5 % वाला बैंड
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	धूसर वस्तुएँ दूसरे बैंड के बालन हैं; आवृत्ति चुनने पर सक्रिय होती हैं। HF पर स्टेशन तक जाती (अर्थ की गई) शील्ड भी गिनी जाती है, VHF/UHF पर बूम और मस्तूल वाला भाग। शील्ड फ़ीड बिंदु के एक ओर जुड़ा तार है, जैसे बिना बालन के वास्तविकता में; बालन पहले खंड पर कॉमन-मोड प्रतिबाधा है।
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	फ़ाइबरग्लास चालक नहीं है: फ़्रेम NEC में नहीं जाता, केवल फ़ेज़िंग लाइनों की शील्ड रहती हैं।
+Includi palo sotto il telaio	फ़्रेम के नीचे मस्तूल शामिल करें
+Cavi di fase lungo i montanti	खंभों के साथ फ़ेज़िंग लाइनें
+Rotore e controventi	रोटेटर और गाय-तार
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	योजनाबद्ध: रोटेटर और गाय-तार तारों के रूप में (टावर के माप चाहिए)।
+Materiale	सामग्री
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	लाल = NEC तारों के रूप में बने फ़्रेम भाग · डैश = फ़ेज़िंग लाइनों की शील्ड
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	क्षैतिज ध्रुवण: ऊर्ध्वाधर खंभे कमज़ोर युग्मित; क्षैतिज क्रॉस-बार और फ़ेज़िंग लाइनें युग्मित नहीं।
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	ऊर्ध्वाधर ध्रुवण: खंभे और मस्तूल तत्वों के समानांतर हैं और अधिक मायने रखते हैं; क्षैतिज क्रॉस-बार कम।
+Confronto senza / con telaio	बिना / साथ फ़्रेम तुलना
+Diagramma orizzontale sovrapposto	ओवरले क्षैतिज पैटर्न
+premi Calcola confronto	तुलना की गणना करें दबाएँ
+Stack: calcola prima il modello	स्टैक: पहले मॉडल की गणना करें
+Stack: calcolo senza e con telaio...	स्टैक: बिना और साथ फ़्रेम गणना हो रही है...
+Pezzo	टुकड़ा
+Collegato	जुड़ा
+Cavi	केबल
+Senza telaio	बिना फ़्रेम
+Con telaio	फ़्रेम के साथ
+Z ingresso divisore	डिवाइडर इनपुट Z
+senza telaio	बिना फ़्रेम
+con telaio	फ़्रेम के साथ
+Stack: confronto senza / con telaio fatto	स्टैक: बिना / साथ फ़्रेम तुलना पूरी
+CARICHI HF	HF लोड
+INSERISCI NEL MODELLO	मॉडल में डालें
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	हैट तार के सिरे (b या e) पर जाता है, रैखिक लोडिंग तार के चुने बिंदु पर।
+Inserisci nel modello	मॉडल में डालें
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	लोड स्केच में पहले ही स्वीकृत: L और C का Q, f0, प्रति बैंड Z, घटक पर वोल्टेज और धारा। यहाँ निर्माण प्रकार जोड़े जाते हैं।
+Trappola coassiale	समाक्षीय ट्रैप
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	भीतरी चालक बीच की वाइंडिंग की शुरुआत से सोल्डर होता है (सिरे उलटने से अनुनाद लगभग 50 kHz घटता है)।
+Calcola spire per f0	f0 के लिए फेरे गणना करें
+Spire dell'avvolgimento (anche frazionarie).	वाइंडिंग के फेरे (भिन्नात्मक भी)।
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	वास्तविक f0 कुछ प्रतिशत अलग होती है: डिप मीटर या VNA से मापें और फेरे सुधारें।
+Blocca	ब्लॉक
+dipolo con	द्विध्रुव के साथ
+Filo Ø	तार Ø
+Calcola C per f0	f0 के लिए C गणना करें
+mm  Filo Ø	mm  तार Ø
+mm  Passo	mm  पिच
+mm  Spire	mm  फेरे
+MHz  dal centro	MHz  केंद्र से
+m  Braccio	m  भुजा
+m  Filo dell'elemento Ø	m  तत्व तार Ø
+Calcola spire per la risonanza	अनुनाद के लिए फेरे गणना करें
+Piega	मोड़
+m  Distanza tra i fili	m  तारों के बीच दूरी
+Calcola la piega per la risonanza	अनुनाद के लिए मोड़ गणना करें
+Raggi	तीलियाँ
+m  Filo Ø	m  तार Ø
+Verticale alto	ऊर्ध्वाधर की ऊँचाई
+m  Frequenza	m  आवृत्ति
+MHz  Filo Ø	MHz  तार Ø
+Calcola i raggi per la risonanza	अनुनाद के लिए तीलियाँ गणना करें
+L misurata	मापा L
+MHz  Autorisonanza f0	MHz  स्व-अनुनाद f0
+Cappello capacitivo in punta al verticale	ऊर्ध्वाधर के शीर्ष पर धारिता हैट
+Bobina dalle misure	माप से कुंडली
+Reattanza del cappello in frequenza	आवृत्ति के अनुसार हैट प्रतिघात
+impedenza della trappola	ट्रैप प्रतिबाधा
+Si comporta da	व्यवहार
+Potenza persa	खोई शक्ति
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	तालिका के वोल्टेज और हानियों के लिए ट्रांसमीटर शक्ति।
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	निचला बैंड: प्रस्पंद पर धारा sqrt(P/73) और ट्रैप पर I0 cos(beta a); अवरुद्ध बैंड: भीतरी द्विध्रुव के सिरे का वोल्टेज I0 Z0 ट्रैप और विकिरण में बँटता है।
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	प्रस्पंद पर धारा sqrt(P/73) और लोड पर I0 cos(beta a), जहाँ a केंद्र से दूरी है।
+Risonanza propria f0	स्व-अनुनाद f0
+Q ideale	आदर्श Q
+Q della trappola alla risonanza.	अनुनाद पर ट्रैप का Q।
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	साथ में परावैद्युत हानि (स्पर्शज्या 3e-4 PE, 2e-4 PTFE)। मापे गए समाक्षीय ट्रैप का Q आमतौर पर 100 और 300 के बीच होता है।
+Lunghezza di cavo	केबल लंबाई
++ 10 cm per le saldature	+ सोल्डर जोड़ों के लिए 10 cm
+R in parallelo equivalente	समतुल्य समानांतर R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: यह मॉडल में जाने वाला LD लोड है
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	ट्रैप के साथ निचले बैंड पर द्विध्रुव भुजा, पूर्ण आकार भुजा (71.3 / f) की तुलना में।
+il NEC con la trappola come carico da' la misura giusta.	ट्रैप को लोड मानकर NEC सही लंबाई देता है।
+Induttanza misurata	मापा प्रेरकत्व
+dalla misura	माप से
+Autorisonanza	स्व-अनुनाद
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	वह आवृत्ति जिस पर कुंडली अपनी स्व-धारिता के साथ स्वयं अनुनाद करती है।
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	Medhurst की तालिका से लंबाई / व्यास के फलन के रूप में स्व-धारिता, धातु पिंडों से दूर एकल-परत कुंडलियों के लिए मान्य।
+Q della bobina alla frequenza di lavoro.	कार्य आवृत्ति पर कुंडली का Q।
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	त्वचा प्रभाव से तार प्रतिरोध गुणा निकटता गुणक 1 + 2 (d/p)^2 (d तार, p पिच): लंबाई लगभग व्यास के बराबर वाली कुंडलियों के लिए Medhurst समान मान देते हैं।
+Reattanza della piega	मोड़ प्रतिघात
+Z0 della linea	लाइन Z0
+Q della piega	मोड़ Q
+Capacita' del cappello	हैट धारिता
+Capacita' del cappello verso lo spazio.	हैट की अंतरिक्ष के प्रति धारिता।
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	तीलियों (पतला तार, 2 pi eps0 l / (ln(2l/a) - 1)) और ठोस डिस्क (8 eps0 r) की ओर संतृप्त होते वलय का योग: तीलियाँ एक-दूसरे को ढकती हैं। तारों के रूप में डालने पर NEC इसे सटीक गणना करता है।
+in punta al verticale	ऊर्ध्वाधर के शीर्ष पर
+Altezza per la risonanza	अनुनाद के लिए ऊँचाई
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	ऊर्ध्वाधर पर प्रभाव
+Carichi HF: apri un modello nella finestra principale.	HF लोड: मुख्य विंडो में मॉडल खोलें।
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	रैखिक लोडिंग और धारिता हैट तारों के रूप में डाले जाते हैं: बाकी के लिए "लोड के रूप में" चुनें।
+Il cappello capacitivo si inserisce come fili.	धारिता हैट तारों के रूप में डाला जाता है।
+RLC parallelo	समानांतर RLC
+Effetto sul dipolo	द्विध्रुव पर प्रभाव
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	उस बिंदु पर लोड के साथ पूर्ण चौथाई तरंग (71.3 / f) की तुलना में भुजा का छोटा होना।
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	लोड वाली भुजा का लाइन मॉडल X = Z0 (cot(beta b) - tan(beta a)), सिरा प्रभाव के लिए x 0.95।
+Esegui il test	परीक्षण चलाएँ
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	गेन को AGT से सुधारकर दिखाया जा सकता है (अनुकूलक में पहले से है)।
+Controllo prima/dopo il calcolo	गणना से पहले/बाद जाँच
+Esito	परिणाम
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ एक या अधिक जाँच ±0.2 dB से बाहर: खंडीकरण जाँचें (3D संरचना > खंडीकरण... और खंडीकरण जाँचें)।
+Tutti i controlli entro ±0,2 dB.	सभी जाँच ±0.2 dB के भीतर।
+Linea a finestra 450	450 Ω विंडो लाइन
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	गणना करें दबाएँ: NEC हर आवृत्ति पर खुले मॉडल की प्रतिबाधा की गणना करता है।
+Perdita nella linea	लाइन में हानि
+Perdita totale	कुल हानि
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	लाइन और ट्रांसमीटर (50 Ω) के बीच ट्यूनर का प्रकार।
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	नेटवर्क के लोडेड Q (Qn = sqrt(Rmax/Rmin - 1), T और Pi के लिए दो खंड) और कुंडली के Q से अनुमानित हानि; N6BV का TLW घटकों की एक-एक कर गणना करता है और dB के कुछ दसवें भाग से भिन्न हो सकता है।
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	उदाहरण: 2 × 20 m डबलेट (ZS6BKW/G5RV)। ट्यूनर को 20 Ω से कम दिखने पर चेतावनी: अधिक हानि, लाइन बढ़ाने या घटाने का सुझाव। हानिपूर्ण लाइन TLW (N6BV, ARRL) की तरह।
+USA costa est	अमेरिका का पूर्वी तट
+USA costa ovest	अमेरिका का पश्चिमी तट
+Giappone	जापान
+Caraibi	कैरिबियन
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: सेवा ने GeoTIFF नहीं लौटाया
+GeoTIFF compresso: non supportato	संपीड़ित GeoTIFF: समर्थित नहीं
+GeoTIFF: tipo di dato non supportato	GeoTIFF: डेटा प्रकार समर्थित नहीं
+Il file non contiene coppie distanza / quota.	फ़ाइल में दूरी / ऊँचाई के जोड़े नहीं हैं।
+Nessuno	कोई नहीं
+Ferriti a perline	फ़ेराइट मनके
+Cavo e balun: segmento della sorgente non trovato.	केबल और बालन: स्रोत खंड नहीं मिला।
+solo palo	केवल मस्तूल
+Acciaio zincato	जस्तीकृत इस्पात
+Alluminio	एल्युमिनियम
+Vetroresina	फ़ाइबरग्लास
+Montante sx/dx	खंभा बायाँ/दायाँ
+al boom	बूम तक
+Traversa	क्रॉस-बार
+Palo	मस्तूल
+al dipolo	द्विध्रुव तक
+N, femmina	N, फ़ीमेल
+senza connettori	कोई कनेक्टर नहीं
+rurale tranquillo	शांत ग्रामीण
+Verticale λ/4	λ/4 ऊर्ध्वाधर
+λ/8 di lato	प्रति ओर λ/8
+0,37 λ di diametro	0.37 λ व्यास
+Cappello capacitivo	धारिता हैट
+W8NX bassa impedenza	W8NX निम्न प्रतिबाधा
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	बड़ी PTFE-परावैद्युत केबल (RG-393) या उच्च-वोल्टेज संधारित्र वाला LC ट्रैप
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	मोड़ lambda/8 से लंबा है: लाइन अब स्थिर प्रेरकत्व की तरह व्यवहार नहीं करती, तारों के रूप में डालकर NEC से अनुनाद जाँचें।
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	हैट धारिता एक अनुमान है (तीलियाँ एक-दूसरे को ढकती हैं): सटीक मान के लिए तारों के रूप में डालें और NEC से गणना करें।
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	लोड स्थिति चौथाई तरंग से आगे है: इसे केंद्र के पास लाएँ।
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	हैट तार के सिरे पर जाता है: पहला (b) या अंतिम (e) खंड चुनें।
+il punto scelto e' troppo vicino all'estremo del filo.	चुना बिंदु तार के सिरे के बहुत पास है।
+questo tipo entra nel modello come carico.	यह प्रकार मॉडल में लोड के रूप में जाता है।
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF लोड: YA-NEC कैलकुलेटर द्वारा जोड़े गए तार
+Il file Touchstone non contiene punti di S11.	Touchstone फ़ाइल में S11 बिंदु नहीं हैं।
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV में आवृत्ति, Re(S11), Im(S11) की पंक्तियाँ नहीं हैं।
+AGT in spazio libero, senza perdite	मुक्त आकाश में AGT, बिना हानि
+IMPOSTAZIONI	सेटिंग्स
+Schiera Hi-Z di verticali corte	छोटे ऊर्ध्वाधरों का Hi-Z ऐरे
+Base del loop	लूप आधार
+Distanza, lato o diametro	दूरी, भुजा या व्यास
+Altezza delle verticali	ऊर्ध्वाधरों की ऊँचाई
+Base del loop dal suolo	ज़मीन के ऊपर लूप आधार
+Fase tra le file	पंक्तियों के बीच कला
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	नीचा क्षैतिज द्विध्रुव: ज़मीन से lambda/4 से कम पर लोब ऊपर की ओर जाता है। यह IV3PRK की रैंकिंग का "ऊँचा कोण" संदर्भ है (RDF 7.3 dB): इसकी तुलना कम कोण वाले प्राप्ति एंटीना से की जाती है।
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	Gary Breed K9AY का K9AY (QST, सितंबर 1997): एक ही मस्तूल पर 90 डिग्री पर दो ऊर्ध्वाधर लूप, समापन प्रतिरोधक (सामान्यतः 390 Ω, F/B के लिए समायोजित), 9:1 ट्रांसफ़ॉर्मर। यहाँ एक ही लूप, चुनी दिशा की ओर घुमाया, ज़मीन के ऊपर बंद, जैसे प्राप्ति (RDF) पृष्ठ पर। Hi-Z: RDF 7.2 dB।
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	प्राप्ति 4-square: lambda/8 वर्ग के कोनों पर चार छोटे सक्रिय ऊर्ध्वाधर, विकर्ण के साथ विकिरण। खाली कला = सटीक पिछला शून्य (पंक्तियों के बीच pi + beta d): सबसे अधिक सैद्धांतिक दिशिकता देता है; वास्तविक फ़ेज़िंग नेटवर्क (ON4UN, IV3PRK) अन्य कलाएँ उपयोग करते हैं और कम RDF देते हैं (IV3PRK 9.4 dB)। बटन सबसे अच्छे RDF वाली कला खोजता है।
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Hi-Z Antennas जैसे छोटे सक्रिय ऊर्ध्वाधरों के ऐरे: 2 तत्व end-fire (कार्डियॉइड, lambda/8), त्रिभुज में 3 (भुजा lambda/6, एक शीर्ष चुनी दिशा की ओर), वृत्त में 8 (व्यास 0.37 lambda: दिशा की ओर के चार और विपरीत वाला उपयोग)। Hi-Z: अपने कंबाइनर के साथ वृत्त में 8 RDF 13.4 dB; सरल दो-पंक्ति मॉडल कम रहता है। बटन सबसे अच्छे RDF वाली कला खोजता है।
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ ऊर्ध्वाधर वास्तविक ज़मीन से शुरू होते हैं (Sommerfeld ज़मीन के साथ GE 1): NEC-2 में वास्तविक ज़मीन से जुड़ा तार ऐसी प्रतिबाधा देता है जो स्रोत खंड पर निर्भर है (NEC-2 गाइड, EZNEC)। पैटर्न और RDF संकेतात्मक हैं; सभी प्राप्ति एंटीना के लिए ऊँचे रेडियल वाला कनेक्शन योजनाबद्ध है।
+fase tra le file da 120 a 300 gradi per l'RDF	RDF के लिए पंक्तियों के बीच कला 120 से 300 डिग्री
+nessuna fase con il lobo in avanti	आगे लोब वाली कोई कला नहीं
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	सबसे अच्छे RDF के लिए पंक्तियों के बीच कला: {0} डिग्री (RDF {1} dB)। फिर गणना हो रही है...
+linea d'orizzonte	क्षितिज रेखा
+scala angolare	कोण पैमाना
+lobo reale sopra il piatto fino a	समतल पर वास्तविक लोब, सीमा
+Profilo verso	प्रोफ़ाइल की ओर
+Lobo verticale e angoli di arrivo a	ऊर्ध्वाधर लोब और आगमन कोण,
+Cos'e' l'RDF	RDF क्या है
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = वांछित दिशा में गेन - सभी दिशाओं पर औसत गेन (W8JI; पहले 60 के दशक में SNIF कहा जाता था)। यह मापता है कि यदि शोर हर दिशा से समान रूप से आए तो एंटीना सिग्नल-शोर अनुपात कितना सुधारता है; निरपेक्ष गेन नहीं गिना जाता (प्रीएम्प उसे वापस ले आता है)। EZNEC की तरह औसत: ऊपरी गोलार्ध को पूरे गोले (4 pi) से विभाजित। इस परिपाटी से परिणाम IV3PRK और W8JI/Hi-Z से मेल खाते हैं (ऊर्ध्वाधर 5.07 बनाम 5.06 और 4.9; Beverage 350 m 13.5 बनाम 13.66)। सीमा: वास्तविक शोर समान नहीं होता (बिजली लाइनें, स्थानीय QRM): इसीलिए F/B और लोब का आकार भी मायने रखते हैं। प्रेषण एंटीना के लिए RDF का अर्थ नहीं: इसीलिए इसकी गणना केवल इस टैब में होती है। DMF (Directivity Merit Figure, ON4UN): आगे की दिशा में 20 डिग्री उन्नयन पर गेन घटा पिछले अर्ध-अंतरिक्ष का औसत गेन (90 डिग्री से परे दिगंश, ज़मीन के ऊपर, क्षेत्रफल के लिए कोसाइन से भारित): बताता है कि एंटीना पीछे से आने वाले शोर को कितना अस्वीकार करता है। ON4UN चेतावनी देते हैं कि DMF और RDF की आपस में तुलना न करें। स्रोत: W8JI और W8WWV (RDF), ON4UN Low-Band DXing अध्याय 7 (DMF, तालिका 7-22, 7-24, 7-25), IV3PRK, IK0XBX।
+elevazione	उन्नयन
+azimut	दिगंश
+azimut a {0}°	{0}° पर दिगंश
+totale	कुल
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	पहले शून्यों के बीच बीमचौड़ाई (FNBW): {0}°; सबसे ऊँचा साइड लोब: {1}
+Didascalie {0} %	लेबल {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB बनाम स्रोत से {1}: आयाम, समापन और ज़मीन जाँचें (स्रोत अलग ज़मीन या ज्यामिति उपयोग कर सकता है)।
+Azimut a {0}° · {1} MHz	{0}° पर दिगंश · {1} MHz
+Azimut a {0}° di elevazione	{0}° उन्नयन पर दिगंश
+RUMORE	शोर
+Apri la scheda {0}	{0} शीट खोलें
+caso mostrato: {0}	दिखाई गई स्थिति: {0}
+Rastremazioni	टेपर
+BANDA	बैंड
+λ/2 coassiale 4:1	समाक्षीय λ/2 4:1
+Manicotto λ/4	λ/4 स्लीव
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	NEC तारों के रूप में केबल शील्ड और मस्तूल; 1.8 से 1296 MHz तक बालन तुलना (कॉमन-मोड धारा, F/B, औसत F/R, हानि, 1 kW पर शक्ति)।
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	NEC तारों के रूप में खंभे, क्रॉस-बार, मस्तूल और फ़ेज़िंग-लाइन शील्ड: बिना / साथ फ़्रेम तुलना (गेन, F/B, औसत F/R, लोब, डिवाइडर Z, Tant और G/T)।
+TIPO	प्रकार
+DATI	डेटा
+TELAIO	फ़्रेम
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	चौकोर या गोल नली में, केबल में λ/4, Wilkinson; फ़ेज़िंग लाइनें, झुकाव; 1:1 चित्र
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X या +, λ/4 ऑफ़सेट तल; H, V, RHCP, LHCP, X-pol; अक्षीय अनुपात और पृथक्करण
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	समान लंबाई → समान कला। λ/2 के गुणज → डिवाइडर पर सक्रिय प्रतिबाधा दोहराती है। अनुशंसित सहनशीलता ± 5 mm (= ± {0}° कला)।
+impedenze attive delle {0} antenne dello stack in parallelo	{0} स्टैक एंटीनाओं की सक्रिय प्रतिबाधाएँ समानांतर में
+Banda con ROS < {0}	SWR < {0} वाला बैंड
+? Manuale	? मैनुअल
+Apre la spiegazione nel manuale	मैनुअल में व्याख्या खोलता है
+riferimento	संदर्भ
+Rispetto alla singola antenna	एकल एंटीना की तुलना में
+{0} antenne ideali	{0} आदर्श एंटीना
+x la distanza DL6WU, a passi di	x DL6WU दूरी, कदम
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	बायाँ अक्ष: स्टैक G - एकल G, 0 से ऊपर। दायाँ अक्ष: स्टैक F/R - एकल F/R, उलटा, 0 ऊपर: जहाँ स्टैक F/R सुधारता है वहाँ वक्र नीचे जाता है, और सबसे निचला बिंदु सबसे बड़ा सुधार है। G/T तालिका में रहता है।
+ΔG sulla singola	एकल एंटीना पर ΔG
+Chiusura del programma	प्रोग्राम बंद करना
+Vuoi chiudere YA-NEC?	क्या आप YA-NEC बंद करना चाहते हैं?
+Grazie per avermi usato: spero di esserti stato utile.	मुझे उपयोग करने के लिए धन्यवाद: आशा है मैं उपयोगी रहा।
+Sì	हाँ
+ROS attivo	सक्रिय SWR
+G realizzato	प्राप्त G
+ROS attivo massimo	अधिकतम सक्रिय SWR
+riflessi minimi	न्यूनतम परावर्तन
+ROS attivo alto: da non scegliere	ऊँचा सक्रिय SWR: न चुनें
+Documenti tecnici	तकनीकी दस्तावेज़
+Manuale d'uso	उपयोगकर्ता मैनुअल
+Manuale di calcolo e delle fonti	गणना और स्रोत मैनुअल
+Citazioni	उद्धरण
+Cerca in tutti i documenti	सभी दस्तावेज़ों में खोजें
+Apri il PDF	PDF खोलें
+Nessun risultato per «{0}»	«{0}» के लिए कोई परिणाम नहीं
+Primi {0} risultati per «{1}»	«{1}» के लिए पहले {0} परिणाम
+{0} risultati per «{1}»	«{1}» के लिए {0} परिणाम
+Apre la citazione {0}	उद्धरण {0} खोलता है
+Manuale di calcolo	गणना मैनुअल
+È pronta la versione {0} di YA-NEC	YA-NEC संस्करण {0} तैयार है
+È già scaricata e installata: entra in funzione quando riavvii il programma.	यह पहले ही डाउनलोड और इंस्टॉल हो चुका है: प्रोग्राम दोबारा शुरू करने पर लागू होगा।
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Mac पर यह स्वयं इंस्टॉल नहीं होता: GitHub के रिलीज़ पृष्ठ से नया .dmg डाउनलोड करें।
+Riavvia adesso	अभी पुनः आरंभ करें
+Più tardi	बाद में
+Apri la pagina delle versioni	रिलीज़ पृष्ठ खोलें
+Aggiornamento di YA-NEC	YA-NEC अपडेट
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	यह पहले ही डाउनलोड और इंस्टॉल हो चुका है। प्रोग्राम स्वयं पुनः आरंभ होता है और खुला मॉडल फिर से खोलता है।
+Riavvio tra {0} s	{0} s में पुनः आरंभ
+Questo avviso si chiude tra {0} s	यह सूचना {0} s में बंद होगी
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	अपडेट के बाद बिना सहेजा मॉडल फिर से खोला गया: जब चाहें सहेजें (प्रति data/aggiornamenti में)।
+Riaperto dopo l'aggiornamento il modello che era aperto.	अपडेट के बाद खुला मॉडल फिर से खोला गया।
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	हर बॉक्स में व्याख्या और स्रोत वाला टूलटिप है। धूसर: चिह्नित = हमेशा चालू (बंद नहीं हो सकता); अचिह्नित = अभी उपलब्ध नहीं; गोली-आकार विकल्प = निश्चित विकल्प। मैनुअल, अध्याय 21।
+"): sorgente sempre accesa.	"): हमेशा चालू स्रोत।
+' non da' un numero valido.	' मान्य संख्या नहीं है।
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik जैसा है
+0 - misure del metodo	0 - विधि माप
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = बैंड का मानक WR वेवगाइड (WR650, WR430, WR159, WR90)।
+0 = stesso disco all'altro capo (eco proprio).	0 = दूसरी ओर वही डिश (अपनी गूँज)।
+0 = stesso disco all'altro capo.	0 = दूसरी ओर वही डिश।
+0 gradi a destra	दाईं ओर 0 डिग्री
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = सिरे से एक तिहाई: प्रतिबाधा 200-300 Ω, 4:1 बालन
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: किनारे से दूर, जहाँ मुड़ने से फ़ीड फ़ोकस से हट जाएगा।
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 ठोस पॉलीएथिलीन (RG-58, RG-213), 0.8-0.85 फ़ोम परावैद्युत।
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 ठोस पॉलीएथिलीन, 0.8-0.85 फ़ोम, 0.9-0.97 सीढ़ी लाइन।
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 वेवगाइड तरंगदैर्ध्य
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - फ़ीड लूप
+1 - radiatore	1 - रेडिएटर
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = एक फेरा (पहले जैसा)। अधिक फेरों से Rr N² के साथ, त्वचा-प्रभाव हानि N के साथ बढ़ती है।
+1 cavo	1 केबल
+1-2-3 elementi	1-2-3 तत्व
+1. Obiettivi e pesi	1. लक्ष्य और भार
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - हवा, संतुलन, डिवाइडर, बालन, क्रॉस यागी
+1.3 - Antenne riceventi abilitate	1.3 - प्राप्ति एंटीना सक्षम
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	बड़ी डिश के साथ 10 GHz: सतह और पॉइंटिंग के अलावा ताप और हवा से विकृति (ATA: रात में 0.7 mm RMS, दिन में धूप में 3 mm), स्ट्रट का झुकना और लिब्रेशन फैलाव भी मायने रखते हैं।
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: 100 % पर छापें, "पृष्ठ में फ़िट" के बिना
+1005/f piedi	1005/f फ़ुट
+144 isol.	144 विद्युतरोधित
+2 - riflettore	2 - रिफ्लेक्टर
+2 - riflettori	2 - रिफ्लेक्टर
+2 in parallelo	2 समानांतर
+2 lati	2 भुजाएँ
+2. Variabili che l'ottimizzatore puo' cambiare	2. वे चर जिन्हें अनुकूलक बदल सकता है
+200 Ω con balun 4:1	4:1 बालन के साथ 200 Ω
+25 tondo	25 गोल
+3 - direttori	3 - डायरेक्टर
+3 gruppi	3 समूह
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 या 4। 2 के साथ उनके तल से बाहर कठोरता नहीं।
+3. Registro dei passi - clic su una riga per riprenderla	3. चरण लॉग - वापस लाने के लिए पंक्ति पर क्लिक करें
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω या 4:1 बालन
+36 Ω + terra	36 Ω + ज़मीन
+4 - tutto insieme	4 - सब एक साथ
+4 lati	4 भुजाएँ
+4 sorgenti: vedi tabella	4 स्रोत: तालिका देखें
+432 isol.	432 विद्युतरोधित
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	IC8TEM द्वारा 15/11/2026 को स्वीकृत 45 डेटा जाँच: सीमाएँ और व्याख्याएँ मैनुअल अध्याय 11 में।
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 फ़ुट लगभग 18 dBi, 12 फ़ुट लगभग 20.5 dBi
+75 ohm ideale	75 Ω आदर्श
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	त्रिज्या से 8 गुना लंबा हो। मोटे तारों या छोटे खंडों के साथ (UHF पर मोटी नलियाँ, पास-पास तत्व,\n
+9 fili	9 तार
+9 fili a 0,1 λ	0.1 λ पर 9 तार
+Accorciamento del pilotato	फ़ीड तत्व का छोटा होना
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	8% से अधिक छोटा: रैखिक अनुमान विश्वसनीय नहीं, NEC से जाँचें।
+Allega il modello aperto	खुला मॉडल संलग्न करें
+Allega il registro di oggi	आज का लॉग संलग्न करें
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	RMS लहर ऊँचाई और समुद्र के ऊपर एंटीना ऊँचाई, पैटर्न > वास्तविक ज़मीन में।
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	प्रतिबाधा चार्ट के लिए आवृत्ति के आसपास स्कैन चौड़ाई।
+Antenna a	एंटीना पर
+Applica la freccia al modello NEC	NEC मॉडल पर झोल लागू करें
+Approvata, in preparazione: non ancora attiva in questa versione.	स्वीकृत, तैयारी में: इस संस्करण में अभी सक्रिय नहीं।
+Apri la cartella	फ़ोल्डर खोलें
+Apri un modello nella finestra principale	मुख्य विंडो में मॉडल खोलें
+Apro il modello e il diagramma 3D resta vuoto.	मैं मॉडल खोलता हूँ और 3D दृश्य खाली रहता है।
+Area al vento dell'antenna	एंटीना का हवा क्षेत्रफल
+Area al vento totale	कुल हवा क्षेत्रफल
+Area al vento totale e lista di taglio	कुल हवा क्षेत्रफल और कटिंग सूची
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	चेतावनी: कोण पर मिलने वाले तारों या जोड़ पर भिन्न व्यास वाले तारों के साथ उपयोग न करें।\n
+Bobina di carico per la risonanza	अनुनाद के लिए लोडिंग कुंडली
+Boom con il tirante	ट्रस वाला बूम
+C1 in serie con la loop	लूप के साथ श्रेणी में C1
+C1 serie, C2 parallelo	C1 श्रेणी, C2 समानांतर
+C2 in parallelo all'ingresso	इनपुट के समानांतर C2
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	कैलकुलेटर > प्राप्ति एंटीना: नीचा द्विध्रुव, K9AY, प्राप्ति 4-square, Hi-Z 2/3/8 तत्व, RDF के लिए अनुकूलित पंक्ति-कला और ज़मीन कनेक्शन की चेतावनी के साथ।
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	यांत्रिक गणनाएँ (हवा और संतुलन), कैलकुलेटर > डिवाइडर और क्रॉस यागी, ऑब्जेक्ट > केबल और बालन और स्टैक फ़्रेम, HF लोड।
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	प्रारंभिक आकार निर्धारण: स्थापना के लिए योग्य इंजीनियर का डिज़ाइन चाहिए।
+Candidati da controllare	जाँचने के उम्मीदवार
+Categoria	श्रेणी
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	स्थल अनावरण श्रेणी (NTC 2018, तालिका 3.3.II और चित्र 3.3.2): भूमि खुरदरापन वर्ग (A शहरी केंद्र ... D बाधा-रहित क्षेत्र, समुद्र) और तट से दूरी पर निर्भर। I = खुला तट या समुद्र, V = शहर का केंद्र।
+Cebik, poi NEC	Cebik, फिर NEC
+Centro della banda scelta:\n	चुने बैंड का केंद्र:\n
+Con ghiaccio	बर्फ़ के साथ
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	बर्फ़ के साथ: हवा 0.6 गुना घटाई और दाएँ बॉक्स से त्रिज्यीय बर्फ़ (सरलीकृत ISO 12494 संयोजन)।
+Con lo stesso seme la prova si ripete uguale.	उसी बीज के साथ परीक्षण बिल्कुल वैसे ही दोहराता है।
+Condizione della sorgente non capita ("	स्रोत शर्त समझ नहीं आई ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	3 मिनट रुके बिना तुरंत GitHub जाँचता है। नया संस्करण हो तो डाउनलोड करता है, सूचित करता है और स्वचालित अपडेट की तरह पुनः आरंभ करता है (10 सेकंड, मॉडल फिर खुलता है)। स्वचालित अपडेट बंद होने पर भी काम करता है।
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	खंडीकरण जाँच और चेतावनियों में हमेशा जाँचा जाता है (सामान्य कर्नेल के साथ 8, विस्तारित कर्नेल के साथ 2)।
+Copie per candidato	प्रति उम्मीदवार प्रतियाँ
+Coppia sulla staffa boom-mast	बूम-मस्तूल क्लैंप पर टॉर्क
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	data/segnalazioni में zip बनाता है और पहले से लिखे पाठ के साथ GitHub का «New issue» पृष्ठ खोलता है। zip आप स्वयं हाथ से संलग्न करते हैं: प्रोग्राम स्वयं कुछ नहीं भेजता।
+Curvatura terrestre, in Diagrammi > Terreno reale.	पृथ्वी की वक्रता, पैटर्न > वास्तविक ज़मीन में।
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	व्यास Cebik के सूत्रों की सीमा से बाहर (1E-6 से 1E-2 lambda)।
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	दूसरी ज़मीन की दूरी और प्रकार: 1.5 के लिए स्वीकृत (वास्तविक ज़मीन 2)।
+Distanze di stack HF	HF स्टैकिंग दूरियाँ
+Distanze di stack: accoppiamento e distanza migliore	स्टैकिंग दूरियाँ: युग्मन और सबसे अच्छी दूरी
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	अनुकूलन के बाद, सहनशीलता जाँच में जाने वाले सबसे अच्छे परिणाम। 0 = कोई जाँच नहीं।
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	बहुत नीचे सिरे: लोगों और जानवरों से सावधान (सिरों पर ऊँचा वोल्टेज)।
+F/B peggiore	सबसे खराब F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq फ़ाइल: AutoEZ TLParms (हानिपूर्ण केबल) वाली पंक्तियाँ नाममात्र Zo और VF उपयोग करती हैं और हानि नहीं: NEC TL कार्ड हानि-रहित है।
+Filo riflettore	रिफ्लेक्टर तार
+Filo ripiegato	मुड़ा तार
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	लंबा hairpin (0.2 lambda से अधिक): दूरी घटाना या मोटे चालक उपयोग करना बेहतर।
+Forza del vento di progetto	डिज़ाइन हवा बल
+Forza l'aggiornamento	अपडेट ज़बरदस्ती करें
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	जीवा झोल: सीधे भाग पर जाली स्पैन के बीच परवलयज से कितनी नीचे रहती है (फलक विभाजन में जाता है)। पर्लिनों का कुल द्रव्यमान {4:0.00} kg{5}।
+Freccia tolta dal modello.	मॉडल से झोल हटाया गया।
+Ghiaccio radiale	त्रिज्यीय बर्फ़
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA फ़ाइलें हमेशा NEC-2 के लिए फिर से खंडित की जाती हैं (मैनुअल, अध्याय 10)।
+I lobi si leggono nella tabella delle distanze di stack.	साइड लोब स्टैकिंग दूरियों की तालिका में पढ़े जाते हैं।
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (पूर्णांकन), FIX (काटना), MOD, MAX, MIN, ODD (विषम पूर्णांक: फ़ीड तार के खंडों के लिए उपयोगी)।\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	सामान्य NEC2 हर तार को पतली रेखा मानता है: यह तब तक ठीक है जब तक खंड कम से कम\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	एक रिफ्लेक्टर तार बहुत कम सुधार देता है (Cebik): स्क्रीन या 9 तार बेहतर हैं।
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	मस्तूल पराभव से आगे: मोटा मस्तूल या छोटा ओवरहैंग।
+Impedenza del cavo	केबल प्रतिबाधा
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	दूसरे रूप में: डेटा जाँच की r5 जाँच बूम लंबाई के भौतिक अधिकतम से ऊपर गेन चिह्नित करती है।
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	N² के साथ प्रेरकत्व (घने फेरे) और एक-फेरे वाला NEC मॉडल: यहाँ NEC केवल एक फेरे की ज्यामिति जाँचता है।
+Interasse della forcina	hairpin दूरी
+Isole (tranne Sicilia e Sardegna) e mare aperto	द्वीप (सिसिली और सार्डिनिया को छोड़कर) और खुला समुद्र
+Kernel esteso del NEC2 (scheda EK).\n	विस्तारित NEC2 कर्नेल (EK कार्ड)।\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	hairpin दूरी चालक व्यास से बड़ी होनी चाहिए।
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim रेडिएटर को ऊपर से नीचे मोड़े तार से बंद करता है, स्टब के ठीक ऊपर तक।
+La fa la finestra Verifica della segmentazione (pulsante sopra).	यह खंडीकरण जाँच विंडो करती है (ऊपर बटन)।
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	hairpin सममित है: यह gamma की तरह पैटर्न को टेढ़ा नहीं करता। फ़ीड बिंदु पर बालन या चोक फिर भी चाहिए।
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	hairpin तभी काम करता है जब फ़ीड तत्व का R केबल प्रतिबाधा से कम हो: बड़े R के लिए gamma या ट्रांसफ़ॉर्मर उपयोग करें।
+La prepara IC8TEM: non ancora attiva.	IC8TEM इसे तैयार कर रहे हैं: अभी सक्रिय नहीं।
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	EZNEC Geometry Check के छह नियम, हर गणना पर, चेतावनियाँ टैब में।
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: बिना सुधार Z = {0:0.0} {1}j{2:0.0} Ω (सुधार के साथ {3:0.0} {4}j{5:0.0} Ω)।
+Località	स्थान
+Loop orizzontale di 1 λ	क्षैतिज 1 λ लूप
+Lunghezza del pilotato	फ़ीड तत्व की लंबाई
+Lunghezza della forcina	hairpin लंबाई
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	खुला मॉडल (.nec) zip में डालता है, भले सहेजा न गया हो।
+Mette nello zip il registro di oggi della cartella registri.	logs फ़ोल्डर से आज का लॉग zip में डालता है।
+Momenti al mast	मस्तूल पर आघूर्ण
+Momento al cuscinetto	बेयरिंग पर आघूर्ण
+NEC: risonanza cercata dal motore	NEC: इंजन द्वारा खोजा गया अनुनाद
+NOTE SU QUESTA VERSIONE (fase 0)\n	इस संस्करण पर टिप्पणियाँ (चरण 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	नया · ज़मीन के ऊपर: ऊँचाइयाँ, दूरियाँ, वांछित प्रस्थान कोण
+Nel modello non ci sono elementi orizzontali diritti	मॉडल में सीधे क्षैतिज तत्व नहीं हैं
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	स्टैक तालिका और मॉडल ऑब्जेक्ट में (स्टैक फ़्रेम, डिवाइडर)।
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	ज्यामिति कार्डों में व्यंजक बिना रिक्त स्थान लिखें, उदाहरण:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	कोई दूरी प्रस्तावित नहीं
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	कोई दूरी प्रस्तावित नहीं: सभी अधिकतम सक्रिय SWR से अधिक हैं।
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	फ़ाइलों में कोई IP पता, ई-मेल या उपयोगकर्ता नाम नहीं: होम फ़ोल्डर का पथ «~» बन जाता है। GitHub खाते के बिना आप zip किसी भी तरह भेज सकते हैं।
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	अभी स्वचालित नहीं: चेतावनियों में AGT परीक्षण से हाथ से किया जाता है (ARRL 24वाँ, 4nec2)।
+Numero di spire	फेरों की संख्या
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	हर प्रति के आयाम सहनशीलता टैब की सहनशीलताओं के भीतर यादृच्छिक रूप से खिसकाए जाते हैं (डिफ़ॉल्ट: लंबाई ±1 mm, स्थिति ±2 mm, व्यास ±0.1 mm)।
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	खुले मॉडल के अलावा, हर चर के न्यूनतम और अधिकतम के बीच यादृच्छिक रूप से चुने प्रारंभ। 0 = पहले जैसा।
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	शोर/GT/स्टैक टैब का वास्तविक आकाश शोर पृष्ठ: C# में पोर्ट की गई skynoise गणना (HEALPix मानचित्र पढ़ना, अंतर्वेशन, नाक्षत्र समय, निर्देशांक, चंद्रमा) और data/cielo में G8ONH के दो मानचित्र।
+Partenze a caso	यादृच्छिक प्रारंभ
+Perimetro Cebik	Cebik परिधि
+Peso del boom	बूम भार
+Pi-greco	Pi नेटवर्क
+Prepara la segnalazione	रिपोर्ट तैयार करें
+Proposta	प्रस्ताव
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	145 MHz पर nec2c परीक्षण (12 mm नलियाँ 40 mm पर): 30 mm -> 45 + j23 Ω, 35 mm -> 60 + j24 Ω। Slim Jim: 50 mm -> 48 + j7 Ω।
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	कब चाहिए: खंड/त्रिज्या अनुपात लगभग 2 और 8 के बीच (2 से नीचे दोनों विश्वसनीय नहीं)।\n
+Quota s.l.m.	समुद्र तल से ऊँचाई
+R del pilotato	फ़ीड तत्व R
+ROS attivo minimo {0}	न्यूनतम सक्रिय SWR {0}
+Raggio equivalente dei due conduttori	दोनों चालकों की समतुल्य त्रिज्या
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	फ़ीड तत्व का अभी का प्रतिघात: धनात्मक हो तो फ़ीड तत्व को और छोटा करना होगा।
+Reattanza della forcina	hairpin प्रतिघात
+Reattanza voluta del pilotato	वांछित फ़ीड तत्व प्रतिघात
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	प्रतिघात: kl = pi/2 से आगे (या बहुत मोटे चालक के साथ) AEH सूत्र मान्य नहीं, NEC उपयोग करें।
+Reinstalla la versione attuale	वर्तमान संस्करण फिर से इंस्टॉल करें
+Rel Z non positiva	Re Z धनात्मक नहीं
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	अनुनाद पर फ़ीड तत्व का प्रतिरोध, मॉडल या NEC गणना से।
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	पुनः आरंभ विफल: YA-NEC को हाथ से बंद करके फिर खोलें।
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	संस्करण वही हो तब भी डाउनलोड करके फिर इंस्टॉल करता है: प्रोग्राम की कोई फ़ाइल खराब हुई हो तो उपयोगी।
+Scansione	स्कैन
+Scegli il candidato con	उम्मीदवार चुनें
+Schermo	स्क्रीन
+Scrivi due frequenze diverse.	दो अलग आवृत्तियाँ लिखें।
+Segnala un problema	समस्या रिपोर्ट करें
+Seme del caso	यादृच्छिक बीज
+Serve solo per la reattanza (dipolo e monopolo).	केवल प्रतिघात के लिए चाहिए (द्विध्रुव और एकध्रुव)।
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	2 या अधिक फेरों के साथ उपयोग: 2 चालक व्यास से कम पर निकटता प्रभाव से वास्तविक हानि बढ़ती है (गणना नहीं)।
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	पैटर्न > वास्तविक ज़मीन में उपयोग: अपसरण गुणक और खुरदरापन के साथ समुद्री परावर्तन।
+Sicilia e provincia di Reggio Calabria	सिसिली और रेज्जो कैलाब्रिया प्रांत
+Sollecitazione	प्रतिबल
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	0.25 λ से ऊपर लोब नीचा होने लगता है: NVIS के लिए कम उपयुक्त।
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	30 MHz से ऊपर Cebik का प्रतिगमन यहाँ दी गई सीमा (HF तार) से बाहर उपयोग होता है: स्वचालित या NEC बेहतर है।
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	0.1 λ से नीचे ऊपर की ओर गेन गिरता है (Cebik): बहुत नीचा एंटीना कुछ नहीं पाता।
+Sotto l'antenna	एंटीना के नीचे
+Spina (tubo o tondo) dentro il giunto telescopico.	टेलीस्कोपिक जोड़ के अंदर प्लग (नली या छड़)।
+Spina interna nei giunti	जोड़ों में भीतरी प्लग
+Stack con il ROS attivo piu' basso	सबसे कम सक्रिय SWR वाला स्टैक
+Staffe e mast	क्लैंप और मस्तूल
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	समय: आज के लगभग (प्रारंभ + 1) गुना, साथ में उम्मीदवार x प्रतियाँ गणनाएँ।
+Tensione nel mast al cuscinetto	बेयरिंग पर मस्तूल में प्रतिबल
+Tiro del tirante	ट्रस तनाव
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	नलियाँ टेपर तालिका से ली गईं: आयाम NEC मॉडल जैसे ही।
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	सभी दूरियाँ अधिकतम सक्रिय SWR ({0}) से अधिक: कोई दूरी प्रस्तावित नहीं। अधिकतम सक्रिय SWR बढ़ाएँ, एंटीना की अपनी संदर्भ प्रतिबाधा आज़माएँ या एकल एंटीना ट्यून करें। मैट्रिक्स और चार्ट सबसे कम सक्रिय SWR वाली दूरी पर हैं।
+V invertito	उल्टा V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), युग्मन, सक्रिय SWR, सबसे अच्छी दूरी, दो आवृत्तियाँ
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	स्थल पर शिखर वेग: vb sqrt(ce), जहाँ vb = vb,0 ca (NTC 2018, 50-वर्ष वापसी अवधि) और ce(z) एंटीना ऊँचाई पर अनावरण श्रेणी का।
+Velocità	वेग
+Velocità a mano	हाथ से वेग
+Vento di sopravvivenza	जीवित रहने वाली हवा
+Vento di sopravvivenza del boom	बूम की जीवित रहने वाली हवा
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	तत्व के लंबवत हवा जिस पर पहला बिंदु पराभव तक पहुँचता है (स्व-भार और बर्फ़ सहित)।
+X da aggiungere al pilotato	फ़ीड तत्व में जोड़ने को X
+X del pilotato	फ़ीड तत्व X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1)। अंतिम जाँच hairpin वाले मॉडल पर NEC इंजन करता है।
+Z0 della forcina	hairpin Z0
+Z0 della linea dei due conduttori	दो-चालक लाइन का Z0
+Zona buona	अच्छा क्षेत्र
+al centro	केंद्र पर
+caso peggiore	सबसे खराब स्थिति
+caso peggiore delle due	दोनों में सबसे खराब
+cerca...	खोज...
+copie entro le soglie	सीमाओं के भीतर प्रतियाँ
+corrente sinusoidale	ज्यावक्रीय धारा
+distanza dal boom	बूम से दूरी
+distanza dall'inizio del boom	बूम की शुरुआत से दूरी
+due condensatori sul lato basso	नीचे की ओर दो संधारित्र
+effetto: calcolo in corso…	प्रभाव: गणना हो रही है…
+forza del vento x sbalzo	हवा बल x ओवरहैंग
+il caso peggiore migliore	सबसे अच्छी सबसे खराब स्थिति
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	समतुल्य द्विध्रुव, मोटा, 73 Ω से कम
+il voto medio migliore	सबसे अच्छा औसत अंक
+induttiva, in parallelo	प्रेरकीय, समानांतर
+la percentuale migliore di copie entro le soglie	सीमाओं के भीतर प्रतियों का सबसे अच्छा प्रतिशत
+linea a due fili	दो-तार लाइन
+m  mast a	m  मस्तूल पर
+m dal suolo	m ज़मीन से ऊपर
+m sopra il boom, attacco al	m बूम के ऊपर, जुड़ा
+media delle due	दोनों का औसत
+mm  lungo	mm  लंबा
+mm, acciaio	mm, इस्पात
+molto buono	बहुत अच्छा
+molto povero	बहुत खराब
+nessun rinforzo	कोई सुदृढ़ीकरण नहीं
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	+12 mm तक कोई व्यावसायिक नली पर्याप्त नहीं: टेपर फिर देखें
+nessuna distanza sotto il ROS attivo massimo	अधिकतम सक्रिय SWR से नीचे कोई दूरी नहीं
+partenza dal modello aperto	खुले मॉडल से शुरू करें
+per lato, teso per annullare il momento verticale al mast	प्रति ओर, मस्तूल पर ऊर्ध्वाधर आघूर्ण रद्द करने को तना हुआ
+primo cedimento: tubo Ø	पहली विफलता: नली Ø
+regge il vento di progetto con il 20 % di margine	20 % मार्जिन के साथ डिज़ाइन हवा सहता है
+riferimenti bibliografici	संदर्भ ग्रंथ
+sbalzo sopra il cuscinetto	बेयरिंग के ऊपर ओवरहैंग
+schermo 1 λ x 1 λ	स्क्रीन 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	घने खंड) विस्तारित कर्नेल अधिक सटीक सूत्र उपयोग करता है और परिणाम अधिक विश्वसनीय है।\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	प्लग के बिना भीतरी नली बाहरी के किनारे पर टिकती है और पहले 5 cm में प्रतिबल पर 1.25 का गुणक लगता है: अनुमान, क्लैंप और खाँचे परिणाम बहुत बदलते हैं।
+sollecitazione / snervamento	प्रतिबल / पराभव
+tubo piu' grosso	मोटी नली
+un filo riflettore	एक रिफ्लेक्टर तार
+zona di cedimento	विफलता क्षेत्र
+ø dei conduttori della forcina	hairpin चालकों का ø
+ø del filo	तार ø
+ø del pilotato	फ़ीड तत्व ø
+accordata	ट्यून किया
+accordate	ट्यून किया
+alimentazione	फ़ीड
+alluminio	एल्युमिनियम
+allungata	लंबा किया
+altro	अन्य
+anello	लूप
+angolo	कोण
+antiorario	वामावर्त
+aritmetico	अंकगणितीय
+automatico	स्वचालित
+banda	बैंड
+bande	बैंड
+bordi	किनारे
+buono	अच्छा
+capacitiva	धारितीय
+carichi	लोड
+carico	लोड
+cartesiana	कार्तीय
+cavi	केबल
+cavo	केबल
+centimetri	सेंटीमीटर
+centina	पसली
+cerchio	वृत्त
+condensatore	संधारित्र
+corrente	धारा
+destra	दायाँ
+diagramma	पैटर्न
+diametro	व्यास
+differenza	अंतर
+dipoli	द्विध्रुव
+dipolo	द्विध्रुव
+diretta	सीधा
+diritto	सीधा
+due	दो
+elementi	तत्व
+elemento	तत्व
+elimina	हटाएँ
+equilatera	समबाहु
+esito	परिणाम
+esperimenti	प्रयोग
+esponenziale	घातांकी
+fase	कला
+ferriti	फ़ेराइट
+fili	तार
+filo	तार
+forcina	hairpin
+forma	आकार
+formule	सूत्र
+frequenza	आवृत्ति
+geometria	ज्यामिति
+ghiaccio	बर्फ़
+giudizio	मूल्यांकन
+gradi	डिग्री
+griglia	ग्रिड
+guadagno	गेन
+incrociata	क्रॉस
+larghezza	चौड़ाई
+lato	भुजा
+lega	मिश्रधातु
+libera	मुक्त
+libero	मुक्त
+linea	लाइन
+lineare	रैखिक
+linee	लाइनें
+lobi	साइड लोब
+locale	स्थानीय
+mai	कभी नहीं
+manicotto	स्लीव
+mano	हाथ से
+meccanica	यांत्रिकी
+mezzaonda	अर्ध-तरंग
+millimetri	मिलीमीटर
+misure	माप
+modello	मॉडल
+modo	मोड
+nessuna	कोई नहीं
+nota	टिप्पणी
+nuovo	नया
+operativo	कार्य
+orario	दक्षिणावर्त
+ottagono	अष्टभुज
+palo	मस्तूल
+parabola	डिश
+passo	पिच
+perdite	हानियाँ
+perfetto	पूर्ण
+piano	तल
+piatto	चपटा
+piedi	फ़ुट
+polare	ध्रुवीय
+pollici	इंच
+propria	अपना
+punto	बिंदु
+quadrato	वर्ग
+quadro	चौकोर
+quota	ऊँचाई
+radiali	रेडियल
+radiatore	रेडिएटर
+raggio	त्रिज्या
+rame	ताँबा
+ramo	शाखा
+rapidi	तेज़
+rastremazioni	टेपर
+rete	नेटवर्क
+rettangolo	आयत
+riepilogo	सारांश
+riflettore	रिफ्लेक्टर
+riga	पंक्ति
+rombo	समचतुर्भुज
+scarso	खराब
+scarto	विचलन
+schiacciata	चपटा किया
+sempre	हमेशा
+senso	दिशा
+si'	हाँ
+sinistra	बायाँ
+soglia	सीमा
+sorgenti	स्रोत
+sotto	नीचे
+spire	फेरे
+staffe	क्लैंप
+stato	स्थिति
+sufficiente	पर्याप्त
+tetto	छत
+tipo	प्रकार
+tirante	ट्रस
+togli	हटाएँ
+tondo	गोल
+traffico	ट्रैफ़िक
+trasformatori	ट्रांसफ़ॉर्मर
+trombe	हॉर्न
+tubi	नलियाँ
+tubo	नली
+tutti	सभी
+uguale	समान
+uguali	समान
+uso	उपयोग
+a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU पर; सभी अधिकतम {1} से ऊपर
+% del mezzo boom	आधे बूम का %
++ aggiungi	+ जोड़ें
++ aggiungi variabile	+ चर जोड़ें
++ correzione del boom	+ बूम सुधार
++ nuova	+ नया
++ trappola	+ ट्रैप
++ verso il disco.	+ डिश की ओर।
++90 gradi Z	+90 डिग्री Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- अंकगणितीय: बैंड की IARU सीमाओं के ठीक बीच (उदाहरण 2 m पर 145.000 MHz),\n
+- correzione del boom	- बूम सुधार
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- कार्य: वह आवृत्ति जहाँ आप वास्तव में काम करते हैं (उदाहरण 2 m पर 144.300 MHz, 70 cm पर 432.200),\n
+-10 (nero) 10-100 MHz	-10 (काला) 10-100 MHz
+-10 nero	-10 काला
+-2 (rosso) 0,25-10 MHz	-2 (लाल) 0.25-10 MHz
+-2 rosso	-2 लाल
+-6 (giallo) 3-40 MHz	-6 (पीला) 3-40 MHz
+-6 giallo	-6 पीला
+-90 gradi Z	-90 डिग्री Z
+-> segmento NEC	-> NEC खंड
+. "Annulla" torna indietro.	। "पूर्ववत करें" वापस ले जाता है।
+. Antenna base: fili 1-	। आधार एंटीना: तार 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	। इतने ऊँचे Q के साथ स्वीप केवल कुछ kHz का होना चाहिए।
+. Salvalo con Salva con nome.	। इसे "इस रूप में सहेजें" से सहेजें।
+. Trascina per ruotare, rotella per ingrandire.	। घुमाने के लिए खींचें, ज़ूम के लिए पहिया।
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	। पतला तार, बड़ा कोर या दो ढेर किए कोर उपयोग करें।
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (Sengupta 2021 के माध्यम से) और GMRT तालिका 19.1
+12 (errore / HPBW)^2	12 (त्रुटि / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	निष्क्रिय वलय: परिधि {0:0.000} lambda, बिना स्रोत और बिना संधारित्र; प्रभाव पूरे मॉडल में दिखता है (डायरेक्टर या रिफ्लेक्टर)।
+Automatico	स्वचालित
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, nec2c और xnec2c की तरह: स्रोत कोड प्रोग्राम के साथ आता है (COPYING फ़ाइल)।\n
+Provincia di Trieste	त्रिएस्ते प्रांत
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	और YA-NEC के लिए C# में। संदर्भ इंटरफ़ेस: 5B4AZ और Eric KJ7LNW का xnec2c।\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	दूर क्षेत्र से गणना की गई दक्षता, Prad / (Prad + हानियाँ) = {3:0.0} %।
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	तार जितना नीचे जाता है प्रतिबाधा और हानियाँ उतनी कम विश्वसनीय होती हैं (मैनुअल में BOG देखें)। सुरक्षित परिणाम के लिए: कम से कम lambda/200 = {3:0.###} m।
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	यह {3:0.00} m व्यास तक बनाया जाता है; साथ वाली अपर्चर गणना किसी भी व्यास पर लागू है और पसलियों को पहले ही गिनती है (ऊपर बॉक्स)।
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} खंड: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} {5} Ω पर, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, दक्षता {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° उन्नयन
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19वाँ संस्करण, अध्याय 18 (W9PE का 2 m यागी): 0.2 λ पर तीन तत्व, लगभग 7 dBi और 15 dB से अधिक F/B।
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC की nec2c से सहमति (20/15/10 m छड़ें): रिफ्लेक्टर 0.185 / 0.197 / 0.222 λ पर, डायरेक्टर 0.095 / 0.116 / 0.114 λ पर: स्रोतों की सीमाओं के भीतर।
+↶ Annulla	↶ पूर्ववत करें
+↷ Ripeti	↷ फिर से करें
+■ Ferma	■ रोकें
+▶ Avvia	▶ शुरू करें
+☐ mantieni lunghezza del boom	☐ बूम लंबाई बनाए रखें
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ कोई चेतावनी नहीं: खंडीकरण चुने स्तर को पूरा करता है
+✓ nessun errore e nessun avviso	✓ कोई त्रुटि और कोई चेतावनी नहीं
+variabili del modello	मॉडल चर
+nuova variabile dal modello	मॉडल से नया चर
+Scrivi una variabile nella linguetta Variabili…	चर टैब में एक चर लिखें…
+Elemento diritto	सीधा तत्व
+Elemento piegato	मुड़ा तत्व
+Variabile nuova	नया चर
+Minimo / massimo	न्यूनतम / अधिकतम
+Cosa cambia	क्या बदलता है
+in ocra: dove agisce la variabile	गेरुआ में: जहाँ चर काम करता है
+Crea la variabile	चर बनाएँ
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	चर {0} बनाया गया: ज्यामिति नहीं बदलती। ज्यामिति पट्टी में "पूर्ववत करें" इसे हटाता है।
+Struttura 3D: dove agisce la variabile ▾	3D संरचना: जहाँ चर काम करता है ▾
+Struttura 3D ▸	3D संरचना ▸
+Clic: nasconde o mostra la struttura	क्लिक: संरचना छिपाएँ या दिखाएँ
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ठोस गेरुआ: चर उपयोग करता है · डैश गेरुआ: दूसरे चर के माध्यम से उपयोग करता है
+attraverso {0}: fili {1}	{0} के माध्यम से: तार {1}

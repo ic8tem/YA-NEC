@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:05,705
+Lesson 27: stacking on two frequencies and on HF, Monte Carlo, updates
+
+2
+00:00:05,755 --> 00:00:17,336
+YA-NEC course, lesson 27: stacking on two frequencies and on HF, Monte Carlo, updating and reporting a problem.
+
+3
+00:00:17,386 --> 00:00:29,027
+Noise/GT/Stack, Stacking distances. The model is the DK7ZB 7-element EME Yagi for 144 MHz.
+
+4
+00:00:29,077 --> 00:00:47,357
+New in 1.5: the reference impedance (here 28 Ω, the antenna's own) and two frequencies, 144.1 and 145 MHz. I raise the maximum active SWR to 2: at 145 MHz the single antenna is already at 1.71.
+
+5
+00:00:47,407 --> 00:01:10,771
+Worst case of the two: 0.55 times the DL6WU distance, 1.566 m. The stack gives 15.1 dBi with sidelobes at −13.4 dB; at the DL6WU distance it would be 16.3 dBi, but with sidelobes at −11.6 dB. The matrix shows the coupling between the ports.
+
+6
+00:01:10,821 --> 00:01:35,654
+HF stacking over ground, also new. Example: the ARRL 520-40H Yagi for 20 m. You give the height of the lower antenna, the distances to try and the wanted take-off angles, 5 to 15 degrees.
+
+7
+00:01:35,704 --> 00:01:58,690
+NEC computes every distance over the model's ground. Proposal: 18.47 m, that is 0.875 λ, with the upper antenna at 33.5 m: 17.12 dBi at 10 degrees, 2.59 dB more than the single antenna at 15 m. The chart compares in phase, top only, bottom only and out of phase.
+
+8
+00:01:58,740 --> 00:02:19,805
+How to read the chart: all in phase (blue) peaks at 10 degrees and drops to zero near 25. There the other combinations help: out of phase (orange) gives about 16 dBi between 22 and 30 degrees, bottom only about 14.5 dBi between 12 and 22. With a switch the stack also covers the high angles.
+
+9
+00:02:19,855 --> 00:02:25,371
+Now three antennas one above the other: click 3 and Calculate the HF stack again.
+
+10
+00:02:25,421 --> 00:02:45,418
+Proposal: 13.2 m, that is 0.625 λ, with the antennas at 15, 28.2 and 41.4 m: 18.14 dBi at 9 degrees, 3.61 dB more than the single antenna. With three antennas the chart compares all in phase, top only and bottom only.
+
+11
+00:02:45,468 --> 00:02:59,818
+Optimizer, Monte Carlo: it starts from several random points and checks the best candidates with copies that simulate building tolerances. The candidate with the most copies within the thresholds wins.
+
+12
+00:02:59,868 --> 00:03:11,713
+Settings, Update: Force update checks GitHub right away, without waiting for the 3 minutes; Reinstall the current version downloads it again.
+
+13
+00:03:11,763 --> 00:03:23,113
+Report a problem: describe what happened and YA-NEC prepares a zip with the open model and today's log. No IP addresses, e-mails or user names in the files.
+
+14
+00:03:23,163 --> 00:03:30,054
+End of lesson 27. Chapter 26 of the manual lists everything new in 1.5.

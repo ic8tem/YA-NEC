@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Hur täckande färgen är: lätt, medel eller stark. På tabellraden är slöjan lättare, så att siffrorna går att läsa.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Tråd {0} vald i 3D-vyn: rad {1} i tabellen
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Tråd {0}: finns inte i trådtabellen (geometrikort annat än GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Söker genast efter en ny version (utan att vänta 3 minuter).
+terreno reale	verklig terräng
+Locatore	Lokator
+da 8 a 12 caratteri	8 till 12 tecken
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Med 6 tecken kan punkten hamna kilometer fel: terrängprofilen kräver minst 8 tecken.
+Quota sito	Platsens höjd
+Altezza antenna	Antennhöjd
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Antennmittens höjd över marken. Om den skiljer sig från modellens höjs eller sänks NEC-diagrammet med samma strömfördelning.
+Distanza max	Max avstånd
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimut och avstånd räknas om vid varje ändring av lokatorn (storcirkel, sfär på 6371 km).
+Terra	Land
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Minskar havets reflektionskoefficient med Ament-faktorn för vågor på 0,25 m (standardavvikelse).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	statistisk modell för skrovlig yta (Ament 1953): gäller för strykande vinklar och jämnt hav.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Sänker profilen med jordens krökning (effektiv radie 4/3 vid normal refraktion) och minskar de avlägsna reflekterade strålarna med divergensfaktorn.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standardatmosfär (k = 4/3); med dukter eller inversioner ändras den skenbara krökningen.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Den högsta åsen mellan antennen och utgångsriktningen dämpar den direkta strålen som en kant (Fresnelintegral), som i HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	enkel knivegg: rundade åsar eller flera åsar i rad approximeras med den högsta.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Upprepar beräkningen var 10:e grad i azimut (endast DEM) och visar godhetstalet på rosen, med antennen vriden mot varje azimut.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	med antennen alltid vriden mot profilens azimut: gäller för en roterbar antenn.
+Cartesiana dBi / gradi	Kartesiskt dBi / grader
+0–180° intero	0–180° hela
+Zoom angolare	Vinkelzoom
+Sovrapponi alla linguetta Verticale	Lägg över fliken Vertikal
+premi Calcola	tryck på Beräkna
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Upprepar beräkningen med antennen från 6 till 30 m (HF) eller från 2 till 30 m (VHF) och visar höjden med bäst godhetstal på sträckan.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	strömmarna förblir den beräknade modellens: höjdens inverkan på impedans och strömmar beaktas inte (som i HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Tabellerna över ankomstvinklar i ARRL Antenna Book behövs (.PRN-filer per band och region): så snart de finns aktiveras detta och visar de orange fälten.
+locatore non valido	ogiltig lokator
+sul mare	över havet
+sul terreno	över land
+profilo reale	verklig profil
+terreno piatto	plan mark
+orizzonte ostruito	skymd horisont
+° (scala angolare ×	° (vinkelskala ×
+← dietro	← bak
+avanti →	fram →
+statistiche degli angoli di arrivo: non caricate	statistik över ankomstvinklar: inte laddad
+rosa 0–360°: calcolo in corso…	ros 0–360°: beräknar…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Välj profilfilen (klicka på "Från HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM inte tillgänglig: vid första användningen behövs nätverk för att ladda ner TINITALY eller SRTM1 (sedan stannar de i mappen data/dem).
+Profilo del terreno	Terrängprofil
+Lobo di elevazione	Elevationslob
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Beräkna först modellen (knappen Beräkna högst upp): antenndiagrammet kommer från NEC.
+da file	från fil
+dal DEM	från DEM
+rispetto alla stessa antenna su terreno piatto	relativt samma antenn över plan mark
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Skillnad mellan loben över den verkliga profilen och loben över plan mark, i medel över de användbara vinklarna.
+Guadagno a 5° / 10°	Förstärkning vid 5° / 10°
+Guadagno a 1° / 3°	Förstärkning vid 1° / 3°
+Angoli coperti a -3 dB	Vinklar som täcks vid -3 dB
+primo lobo sul profilo reale	första loben över den verkliga profilen
+calcolo…	beräknar…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Modell i fri rymd: strömmarna är de utan mark, som fri-rymd-diagrammet som HFTA använder. För att ta hänsyn till marken nära, beräkna modellen med verklig mark.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profilen gäller bara för en azimut: en roterbar antenn behöver fler riktningar (rutan "Alla azimuter").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metod som i HFTA (N6BV): direkt stråle + reflekterade strålar på varje fasett i profilen + diffraktion över åsarna. Antenndiagrammet kommer från NEC; den här beräkningen lägger till terrängen.
+Piatto	Plan
+Reale	Verklig
+Primo minimo	Första minimum
+Punto di riflessione	Reflektionspunkt
+Orizzonte	Horisont
+Uso: rotte DX in HF (angoli bassi 1–15°).	Användning: HF-DX-sträckor (låga vinklar 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Användning: tropo och MS (0–5°), EME med låg måne (markförstärkning vid månens upp-/nedgång).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Höjd med högst medelförstärkning över sträckans användbara vinklar.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	den beräknade modellens strömmar flyttade i höjd: impedans och markkoppling förblir modellens.
+Calcola prima il terreno reale	Beräkna först den verkliga terrängen
+Esporta il lobo sul terreno reale	Exportera loben över verklig terräng
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Bilder: Esri, Maxar, Earthstar Geographics och GIS-användargemenskapen
+© i contributori di OpenStreetMap	© OpenStreetMap-bidragsgivare
+Sfondo	Bakgrund
+Foto aerea	Flygfoto
+Solo griglia	Bara rutnät
+Griglia	Rutnät
+Cerca	Sök
+⌖ Centra sul locatore	⌖ Centrera på lokatorn
+Punto scelto	Vald punkt
+Coordinate	Koordinater
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klick på kartan = antennpunkt; dra = flytta; hjul = zoom (rutnätet går från 6 till 8, 10, 12 tecken). Tjock ram = ruta med 6 tecken.
+non disponibile	inte tillgänglig
+Lunghezza elementi	Elementlängd
+Posizione sul boom	Position på bommen
+Uniforme	Likformig
+Distribuzione	Fördelning
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element monterat ur centrum i klämman: förskjutning längs sin egen axel, med positionstoleransen.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	den verkliga klämman ändrar också den elektriska längden vid bommen: använd fliken Bomkorrektion för det.
+nuovo a ogni avvio	ny vid varje körning
+Numero prove	Antal försök
+Frequenze	Frekvenser
+Seme casuale	Slumpfrö
+OBIETTIVO LISTA DI TAGLIO	MÅL FÖR KAPLISTAN
+Calo F/B max	Max fall av F/B
+ROS max	Max SWR
+Ferma	Stopp
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Elementen nära det matade elementet är oftast mest kritiska; de i bommens ände tål större fel.
+l'istogramma serve al Monte Carlo	histogrammet gäller Monte Carlo
+5% peggiore	sämsta 5%
+Posizione mm	Position mm
+Lunghezza mm	Längd mm
+Tolleranza ammessa	Tillåten tolerans
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. I rött de element som kräver mindre än byggtoleransen.
+Calcola prima il modello	Beräkna först modellen
+sensibilita'	känslighet
+Tolleranze: fermato	Toleranser: stoppad
+Diametro mm	Diameter mm
+Tolleranza ammessa mm	Tillåten tolerans mm
+Avvia prima il calcolo	Kör först beräkningen
+Esporta la lista di taglio	Exportera kaplistan
+Lista di taglio	Kaplista
+Obiettivi	Mål
+Calo massimo del F/B	Maximalt fall av F/B
+ROS massimo	Maximal SWR
+Tolleranze di costruzione	Byggtoleranser
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Planerat (skiss 13, ska godkännas): ännu inte aktivt i den här versionen.
+Al quadro 20×2 mm	Al fyrkant 20×2 mm
+Al quadro 25×2 mm	Al fyrkant 25×2 mm
+Al quadro 30×2 mm	Al fyrkant 30×2 mm
+Al quadro 40×2 mm	Al fyrkant 40×2 mm
+Al tondo 25×1,5 mm	Al rund 25×1,5 mm
+Al tondo 30×2 mm	Al rund 30×2 mm
+Al tondo 40×2 mm	Al rund 40×2 mm
+Al tondo 50×2 mm	Al rund 50×2 mm
+Zona NTC	NTC-zon
+Quota sito as	Platsens höjd som
+Periodo ritorno	Återkomstperiod
+Categoria esposiz.	Exponeringskategori
+Coeff. topografia	Topografikoeff.
+Antenna da terra	Antenn över marken
+Palo sopra rotore	Mast över rotorn
+Ø palo	Mast Ø
+Usa elementi e boom del modello	Använd modellens element och bom
+Includi telaio, palo, cavi	Ta med ram, mast, kablar
+Scansione direzione del vento	Svep av vindriktningen
+UNITÀ	ENHETER
+N e kgf affiancati	N och kgf sida vid sida
+solo N	bara N
+solo kgf	bara kgf
+Mostra	Visa
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	ogiltig lokator: välj zonen för hand
+Telaio a H	H-ram
+Cavi e divisore	Kablar och delare
+Parte	Del
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Med vinden på tvären trycker elementen inte (cross-flow, K5IU): kraften på ett rör går med kvadraten på vindkomponenten vinkelrätt mot dess axel.
+momento flettente alla staffa del rotore	böjmoment vid rotorklämman
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Preliminär dimensionering: ersätter inte en kontroll av en ingenjör för mast, torn och fundament. Momentet vid basen kommer att gå till underfliken Mast och fundament.
+Sito e norma	Plats och standard
+Norma	Standard
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; koefficienter CNR-DT 207 R1/2018 och EN 1991-1-4
+Locatore / zona	Lokator / zon
+Risultati	Resultat
+Forza massima	Maximal kraft
+Momento flettente alla staffa del rotore	Böjmoment vid rotorklämman
+Momento torcente sul rotore	Vridmoment på rotorn
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Preliminär dimensionering: ersätter inte en kontroll av en behörig ingenjör för mast, torn och fundament.
+Al tondino pieno	Al massiv stång
+Materiale elementi	Elementmaterial
+Staffe, isolatori	Klämmor, isolatorer
+g cad.	g st
+Dipolo + scatola	Dipol + låda
+Cavo fino al palo	Kabel till masten
+STAFFA AL PALO	MASTKLÄMMA
+Posizione attuale	Nuvarande position
+m dal riflettore	m från reflektorn
+Massa / distanza	Massa / avstånd
+Vento dalla linguetta Vento	Vind från fliken Vind
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Använder dimensionerande tryck från den senaste beräkningen i underfliken Vind; utan den 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Flyttar hela modellen längs bommen så att den föreslagna klämman hamnar i origo (där masten och stackramen fästs). Ångra i 3D-strukturen tar tillbaka det.
+Momenti in funzione della posizione della staffa	Moment mot klämposition
+Masse e aree per parte	Massor och ytor per del
+ultimo direttore	sista direktor
+Staffe e isolatori	Klämmor och isolatorer
+Cavo sul boom	Kabel på bommen
+Massa kg	Massa kg
+Baricentro m	Tyngdpunkt m
+Area vento m²	Vindyta m²
+Centro area m	Ytcentrum m
+solo peso	bara vikt
+solo vento	bara vind
+File Touchstone .s1p	Touchstone-fil .s1p
+Formato letto	Läst format
+CAVO TRA VNA E ANTENNA	KABEL MELLAN VNA OCH ANTENN
+R e X separate	R och X separat
+Banda con ROS <	Band med SWR <
+ROS: calcolato e misurato	SWR: beräknat och uppmätt
+Confronto	Jämförelse
+misurato, cavo tolto	uppmätt, kabel borttagen
+R calcolata	R beräknad
+X calcolata	X beräknad
+R misurata	R uppmätt
+X misurata	X uppmätt
+Calcolato	Beräknat
+Misurato	Uppmätt
+Scarto	Skillnad
+Frequenza del ROS minimo	Frekvens för minsta SWR
+ROS minimo	Minsta SWR
+nessuna correzione: calcolo e misura coincidono.	ingen korrektion: beräkning och mätning stämmer.
+calcolo NEC sul campo della misura…	NEC-beräkning över mätområdet…
+Misura del VNA	VNA-mätning
+Tutti	Alla
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Kör ett svep (knappen Svep högst upp) för att se F/B och F/R över hela bandet
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = framåtförstärkning minus medeleffekten över bakre halvsfären (90-270° azimut, alla elevationer över 0°). Den finns också bland optimerarens mål.
+Tabelle: F/B e F/R su tutta la banda	Tabeller: F/B och F/R över hela bandet
+Valori dello sweep	Svepvärden
+ANTENNE RICEVENTI	MOTTAGARANTENNER
+4-square in ricezione	4-square för mottagning
+8 verticali in cerchio	8 vertikaler i cirkel
+Modello aperto	Öppna modellen
+Isotropo	Isotrop
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = förstärkning i önskad riktning minus medelförstärkningen över hela halvrymden: till skillnad från förstärkningen beror den inte på förlusterna.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Använder medianankomstvinkeln från fliken Verklig terräng som önskad elevation (statistik per band och region). Utan laddad ARRL-statistik behålls elevationen som skrivits här.
+Direzione voluta	Önskad riktning
+Hz  rumore	Hz  brus
+NF ricevitore	Mottagarens NF
+sorgente locale az	lokal källa az
+Cifre di merito in ricezione	Godhetstal vid mottagning
+Basta il segnale?	Räcker signalen?
+calcolo in corso…	beräknar…
+RDF in funzione della frequenza	RDF mot frekvens
+Calcola prima il modello aperto	Beräkna först den öppna modellen
+verticale λ/4	λ/4-vertikal
+° · dB relativi · arancio: -3 dB	° · relativa dB · orange: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Medelförstärkning över främre sektorn minus medlet över bakre halvsfären.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definierar DMF bara med förstärkningen vid 20 grader; här används medlet över skissens sektor, så värdena kan inte jämföras ett till ett med bokens.
+molto basso: serve un preamplificatore	mycket låg: en förförstärkare behövs
+basso ma accettabile: vedi soglia	låg men godtagbar: se tröskel
+come un'antenna trasmittente	som en sändarantenn
+F/R medio sull'emisfero posteriore	Medel-F/R över bakre halvsfären
+Rumore d'antenna ai morsetti	Antennbrus vid anslutningen
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Extern bruseffekt vid anslutningen: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + medelförstärkning viktad efter var bruset kommer ifrån.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	brus från horisonten viktat exp(-el/10 grader) i elevation: representerar avlägset människoskapat brus som kommer in lågt; den verkliga fördelningen beror på platsen.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	punktkälla vid 5 graders elevation med samma effekt som den isotropa bakgrunden.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotropt brus över marken; marken tillför inget brus.
+Margine sul ricevitore	Mottagarens marginal
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Antennbruset överstiger mottagarens brus med mindre än 6 dB: mottagaren begränsar känsligheten. Mer förförstärkning eller en mottagare med lägre NF behövs.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Förstärkning 1,8
+Spazio richiesto	Platsbehov
+λ/4 in tubo quadro	λ/4 i fyrkantsrör
+λ/4 in tubo tondo	λ/4 i runt rör
+Solo cavi di fase	Bara faslinjer
+Aria	Luft
+Uscite	Utgångar
+Z antenne	Antenn-Z
+Z ingresso	Ingångs-Z
+Dielettrico	Dielektrikum
+Connettori	Kontakter
+Correggi accorciamento dei connettori	Korrigera för kontakternas förkortning
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Drar av den del av ledningen som ligger inuti kontakterna från längden.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	uppskattning 4 mm per ände med N-kontakter (3 BNC, 1,5 SMA): bäst är att trimma med VNA, förkorta i steg om 1 mm.
+Divisori	Delare
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Använder de aktiva impedanserna för den öppna stackens antenner (en källa per antenn) och avstånden för faslinjernas minsta längd.
+CAVI DI FASE	FASLINJER
+Lunghezza minima	Minsta längd
+Passo verticale	Vertikalt avstånd
+solo cavi di fase: nessun trasformatore da costruire	bara faslinjer: ingen transformator att bygga
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω-kablar parallellt = 37,5 Ω
+quadro, lato	fyrkant, sida
+tondo, Ø	rund, Ø
+Z0 richiesta	Krävd Z0
+Ø conduttore interno	Innerledare Ø
+VF del cavo	Kabelns VF
+λ/4 in aria, mm	λ/4 i luft, mm
+da tagliare, mm	att kapa, mm
+Z carico in parallelo	Last-Z parallellt
+Rami λ/4: Z0 = Zin · √N	λ/4-grenar: Z0 = Zin · √N
+Resistenze a stella	Stjärnmotstånd
+Isolamento tra le uscite	Isolation mellan utgångar
+Perdita stimata	Uppskattad förlust
+Carico usato	Använd last
+non potenza di 2	inte en potens av 2
+ROS all'ingresso	Ingångs-SWR
+solo cavi di fase	bara faslinjer
+Uscita	Utgång
+Lungh. elettrica	Elektrisk längd
+Fisica mm	Fysiska mm
+Perdita dB	Förlust dB
+° di fase).	° fas).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° uppåt); impedansen vid delaren upprepas inte längre exakt.
+Solo cavi di fase: nessun disegno da stampare	Bara faslinjer: ingen ritning att skriva ut
+Divisore	Delare
+50 mm di controllo	Kontroll 50 mm
+GEOMETRIA	GEOMETRI
+λ/4 sul boom	λ/4 på bommen
+stesso piano	samma plan
+Metallico, isolati	Metall, isolerade
+Non metallico	Icke-metallisk
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Bommen finns inte i NEC-modellen: med element isolerade från en metallbom är effekten liten (bomkorrektion i Kalkylatorer).
+Yagi di base	Bas-Yagi
+Disposizione	Uppställning
+Sfasamento piani	Planförskjutning
+Cavo di ritardo λ/4	λ/4 fördröjningskabel
+Includi relè e cavi reali	Ta med verkliga reläer och kablar
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Lägger till förlusten i fördröjningskabeln (VF 0,66, 10 dB/100 m vid 144 MHz, skalad med kvadratroten ur frekvensen) och 0,1 dB för reläet.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	typiska värden för en 75 ohm-kabel och ett koaxialrelä; programmet känner inte till dina.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Samma fasnät fungerar också för en turnstile (dipoler korsade i 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Framifrån
+Componenti co-polare / cross-polare	Ko- / korspolära komponenter
+Rapporto assiale e ROS in frequenza	Axialförhållande och SWR mot frekvens
+piano A	plan A
+piano B	plan B
+vista dal davanti — boom al centro	vy framifrån — bommen i mitten
+piani sfalsati di λ/4 lungo il boom	plan förskjutna λ/4 längs bommen
+Yagi incrociate: serve una Yagi con una sola sorgente	Korsade Yagi: en Yagi med en enda källa behövs
+Yagi incrociate: calcolo in corso...	Korsade Yagi: beräknar...
+Rapporto assiale in asse	Axialförhållande på axeln
+Rapporto assiale a −3 dB	Axialförhållande vid −3 dB
+Isolamento tra i due piani	Isolation mellan de två planen
+Fase della rete sul piano B	Nätets fas på plan B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Perfekt ortogonala och symmetriska plan: i modellen är kopplingen och den motsatta polarisationen nästan noll. I verkligheten begränsar klämmor, kablar och små asymmetrier dem till omkring 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	från 1,8 MHz till 1296 MHz: listan över baluner ändras med bandet
+LINEA DI DISCESA	MATARLEDNING
+Coassiale	Koaxial
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Med en balanserad stegledning finns ingen skärm: common mode kommer bara från obalanser. Kortet beräknar koaxfallet; för stegledningen använd Ledningar (TL) med avstämningsenheten.
+Lungo il boom	Längs bommen
+m → palo	m → mast
+Discesa sul palo	Nerför masten
+Fino alla stazione	Till stationen
+Calza a massa sul palo / traliccio	Skärm jordad i mast / torn
+Messa a terra all'ingresso stazione	Jord vid stationens ingång
+BALUN DA CONFRONTARE	BALUNER ATT JÄMFÖRA
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 varv RG-213 på 110 mm: induktans enligt Wheeler, egenkapacitans enligt Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 och uppskattad egenkapacitans: drosselns verkliga impedans måste mätas.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferrittoroid som parallell RLC med lågt Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm i toppen (10 MHz med mix 31, 25 MHz med mix 43): typiska värden för 12 varv på 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koax λ/2 4:1: balanserad matning, skärmarna sammankopplade.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	kvarvarande common mode som 600 ohm resonant vid f0 (Q 3): beror på monteringen.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4-hylsa: kortsluten λ/4-ledning mellan skärm och hylsa, hög impedans vid f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Hylsans Z0 50 ohm och 0,08 dB förlust över kvartsvågen.
+10 perline in ferrite sulla calza.	10 ferritpärlor över skärmen.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm per pärla vid 144 MHz (mix 61), 100 ohm över 30 MHz med mix 43: typiska katalogvärden.
+Caso mostrato	Visat fall
+premi Calcola il confronto	tryck på Beräkna jämförelsen
+Corrente lungo la calza, dal dipolo verso il basso	Ström längs skärmen, från dipolen och nedåt
+Vista laterale: corrente sulla calza	Sidovy: ström på skärmen
+F/R medio	Medel-F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Förlust i balunen
+Potenza dissipata nel balun a 1 kW	Effekt som förbrukas i balunen vid 1 kW
+Banda con calza < 5 %	Band med skärmström < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	De grå posterna är baluner för det andra bandet; de aktiveras när frekvensen väljs. På HF räknas också skärmen ner till stationen (jordad), på VHF/UHF delen på bommen och masten. Skärmen är en tråd ansluten till ena sidan av matningspunkten, som i verkligheten utan balun; balunen är en common mode-impedans i första sträckan.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Glasfiber leder inte: ramen kommer inte med i NEC, bara faslinjernas skärmar finns kvar.
+Includi palo sotto il telaio	Ta med masten under ramen
+Cavi di fase lungo i montanti	Faslinjer längs stolparna
+Rotore e controventi	Rotor och stag
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Planerat: rotor och stag som trådar (tornets mått behövs).
+Materiale	Material
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	rött = ramdelar modellerade som NEC-trådar · streckat = faslinjernas skärm
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horisontell polarisation: de vertikala stolparna är svagt kopplade; den horisontella tvärbalken och faslinjerna inte.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertikal polarisation: stolparna och masten är parallella med elementen och betyder mer; den horisontella tvärbalken lite.
+Confronto senza / con telaio	Jämförelse utan / med ram
+Diagramma orizzontale sovrapposto	Horisontellt diagram överlagrat
+premi Calcola confronto	tryck på Beräkna jämförelsen
+Stack: calcola prima il modello	Stack: beräkna först modellen
+Stack: calcolo senza e con telaio...	Stack: beräknar utan och med ram...
+Pezzo	Del
+Collegato	Ansluten
+Cavi	Kablar
+Senza telaio	Utan ram
+Con telaio	Med ram
+Z ingresso divisore	Delarens ingångs-Z
+senza telaio	utan ram
+con telaio	med ram
+Stack: confronto senza / con telaio fatto	Stack: jämförelse utan / med ram klar
+CARICHI HF	HF-LASTER
+INSERISCI NEL MODELLO	INFOGA I MODELLEN
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Hatten sitter i trådens ände (b eller e), linear loading på trådens valda punkt.
+Inserisci nel modello	Infoga i modellen
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Redan godkänt i skissen Laster: Q för L och C, f0, Z per band, spänning och ström i komponenten. Här läggs konstruktionstyperna till.
+Trappola coassiale	Koaxialfälla
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	innerledaren löds till början av mittlindningen (att vända ändarna sänker resonansen cirka 50 kHz).
+Calcola spire per f0	Beräkna varv för f0
+Spire dell'avvolgimento (anche frazionarie).	Lindningens varv (även bråkdelar).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	verklig f0 avviker några procent: mät den med dippmeter eller VNA och korrigera varven.
+Blocca	Spärrar
+dipolo con	dipol med
+Filo Ø	Tråd Ø
+Calcola C per f0	Beräkna C för f0
+mm  Filo Ø	mm  Tråd Ø
+mm  Passo	mm  Stigning
+mm  Spire	mm  Varv
+MHz  dal centro	MHz  från mitten
+m  Braccio	m  Arm
+m  Filo dell'elemento Ø	m  Elementtråd Ø
+Calcola spire per la risonanza	Beräkna varv för resonans
+Piega	Vikning
+m  Distanza tra i fili	m  Avstånd mellan trådarna
+Calcola la piega per la risonanza	Beräkna vikningen för resonans
+Raggi	Ekrar
+m  Filo Ø	m  Tråd Ø
+Verticale alto	Vertikalens höjd
+m  Frequenza	m  Frekvens
+MHz  Filo Ø	MHz  Tråd Ø
+Calcola i raggi per la risonanza	Beräkna ekrarna för resonans
+L misurata	Uppmätt L
+MHz  Autorisonanza f0	MHz  Egenresonans f0
+Cappello capacitivo in punta al verticale	Kapacitiv hatt i toppen av vertikalen
+Bobina dalle misure	Spole från mått
+Reattanza del cappello in frequenza	Hattens reaktans mot frekvens
+impedenza della trappola	fällans impedans
+Si comporta da	Beter sig som
+Potenza persa	Förlorad effekt
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Sändareffekt för tabellens spänningar och förluster.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	lågt band: ström i bukpunkten sqrt(P/73) och i fällan I0 cos(beta a); spärrat band: spänning vid den inre dipolens spets I0 Z0 fördelad mellan fälla och strålning.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	ström i bukpunkten sqrt(P/73) och i lasten I0 cos(beta a), med a avståndet från mitten.
+Risonanza propria f0	Egenresonans f0
+Q ideale	Ideal Q
+Q della trappola alla risonanza.	Fällans Q vid resonans.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus dielektrisk förlust (tangent 3e-4 PE, 2e-4 PTFE). Uppmätta koaxialfällor har oftast Q mellan 100 och 300.
+Lunghezza di cavo	Kabellängd
++ 10 cm per le saldature	+ 10 cm för lödningarna
+R in parallelo equivalente	Ekvivalent parallell-R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: det är LD-lasten som går in i modellen
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipolarm på det låga bandet med fällan, jämfört med armen i full storlek (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC med fällan som last ger rätt längd.
+Induttanza misurata	Uppmätt induktans
+dalla misura	från mätningen
+Autorisonanza	Egenresonans
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frekvens där spolen självresonerar med sin egenkapacitans.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	egenkapacitans från Medhursts tabell efter längd / diameter, gäller för enlagersspolar långt från metallmassor.
+Q della bobina alla frequenza di lavoro.	Spolens Q vid arbetsfrekvensen.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	trådens resistans genom skinneffekt gånger en närhetsfaktor 1 + 2 (d/p)^2 (d tråd, p stigning): Medhurst ger liknande värden för spolar med längd ungefär lika med diametern.
+Reattanza della piega	Vikningens reaktans
+Z0 della linea	Ledningens Z0
+Q della piega	Vikningens Q
+Capacita' del cappello	Hattens kapacitans
+Capacita' del cappello verso lo spazio.	Hattens kapacitans mot rymden.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	summan av ekrarna (tunn tråd, 2 pi eps0 l / (ln(2l/a) - 1)) och ringen som mättas mot den hela skivan (8 eps0 r): ekrarna skärmar varandra. Infogad som trådar beräknar NEC den exakt.
+in punta al verticale	i toppen av vertikalen
+Altezza per la risonanza	Höjd för resonans
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Effekt på vertikalen
+Carichi HF: apri un modello nella finestra principale.	HF-laster: öppna en modell i huvudfönstret.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading och kapacitiv hatt infogas som trådar: för de andra välj «Som last».
+Il cappello capacitivo si inserisce come fili.	Den kapacitiva hatten infogas som trådar.
+RLC parallelo	Parallell RLC
+Effetto sul dipolo	Effekt på dipolen
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Armens förkortning jämfört med hel kvartsvåg (71,3 / f) med lasten i den punkten.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	ledningsmodell för den belastade armen X = Z0 (cot(beta b) - tan(beta a)), x 0,95 för ändeffekten.
+Esegui il test	Kör testet
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Förstärkningen kan visas korrigerad med AGT (redan planerat i optimeraren).
+Controllo prima/dopo il calcolo	Kontroll före/efter beräkningen
+Esito	Resultat
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ En eller flera kontroller utanför ±0,2 dB: se över segmenteringen (3D-struktur > Segmentering... och Kontrollera segmenteringen).
+Tutti i controlli entro ±0,2 dB.	Alla kontroller inom ±0,2 dB.
+Linea a finestra 450	Stegledning 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Tryck på Beräkna: NEC beräknar den öppna modellens impedans vid varje frekvens.
+Perdita nella linea	Ledningsförlust
+Perdita totale	Total förlust
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Typ av avstämningsenhet mellan ledningen och sändaren (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	förlust uppskattad från nätets belastade Q (Qn = sqrt(Rmax/Rmin - 1), två sektioner för T och Pi) och spolens Q; TLW av N6BV beräknar komponenterna en och en och kan skilja några tiondels dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Exempel: dubblett 2 × 20 m (ZS6BKW/G5RV). Varning när avstämningsenheten ser mindre än 20 Ω: höga förluster, det föreslås att förlänga eller korta ledningen. Ledning med förluster som i TLW (N6BV, ARRL).
+USA costa est	USA:s östkust
+USA costa ovest	USA:s västkust
+Giappone	Japan
+Caraibi	Karibien
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: tjänsten returnerade ingen GeoTIFF
+GeoTIFF compresso: non supportato	Komprimerad GeoTIFF: stöds inte
+GeoTIFF: tipo di dato non supportato	GeoTIFF: datatypen stöds inte
+Il file non contiene coppie distanza / quota.	Filen innehåller inga par avstånd / höjd.
+Nessuno	Ingen
+Ferriti a perline	Ferritpärlor
+Cavo e balun: segmento della sorgente non trovato.	Kabel och balun: källsegmentet hittades inte.
+solo palo	bara mast
+Acciaio zincato	Galvaniserat stål
+Alluminio	Aluminium
+Vetroresina	Glasfiber
+Montante sx/dx	Vänster/höger stolpe
+al boom	mot bommen
+Traversa	Tvärbalk
+Palo	Mast
+al dipolo	mot dipolen
+N, femmina	N, hona
+senza connettori	utan kontakter
+rurale tranquillo	lugn landsbygd
+Verticale λ/4	λ/4-vertikal
+λ/8 di lato	λ/8 per sida
+0,37 λ di diametro	0,37 λ diameter
+Cappello capacitivo	Kapacitiv hatt
+W8NX bassa impedenza	W8NX låg impedans
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	en grov kabel med PTFE-dielektrikum (RG-393) eller en LC-fälla med högspänningskondensator
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Vikningen är längre än lambda/8: ledningen beter sig inte längre som en konstant induktans, kontrollera resonansen med NEC genom att infoga den som trådar.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Hattens kapacitans är en uppskattning (ekrar som skärmar varandra): för exakt värde infoga den som trådar och beräkna med NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Lastens position ligger bortom kvartsvågen: flytta den närmare mitten.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	hatten sitter i trådens ände: välj första (b) eller sista (e) segmentet.
+il punto scelto e' troppo vicino all'estremo del filo.	den valda punkten ligger för nära trådens ände.
+questo tipo entra nel modello come carico.	den här typen går in i modellen som last.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF-laster: trådar tillagda av YA-NEC-kalkylatorn
+Il file Touchstone non contiene punti di S11.	Touchstone-filen innehåller inga S11-punkter.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV-filen innehåller inga rader frekvens, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT i fri rymd, förlustfri
+IMPOSTAZIONI	INSTÄLLNINGAR
+Schiera Hi-Z di verticali corte	Hi-Z-grupp med korta vertikaler
+Base del loop	Slingans bas
+Distanza, lato o diametro	Avstånd, sida eller diameter
+Altezza delle verticali	Vertikalernas höjd
+Base del loop dal suolo	Slingans bas över marken
+Fase tra le file	Fas mellan raderna
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Låg horisontell dipol: närmare marken än lambda/4 går loben uppåt. Det är referensen för «hög vinkel» i IV3PRK:s rangordning (RDF 7,3 dB): jämförs med mottagarantennerna för låg vinkel.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY av Gary Breed K9AY (QST, september 1997): två vertikala slingor i 90 grader på samma mast, termineringsmotstånd (390 ohm typiskt, justerat för F/B), transformator 9:1. Här en enda slinga, vriden mot vald riktning, sluten över marken som på sidan Mottagning (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Mottagnings-4-square: fyra korta aktiva vertikaler i hörnen av en kvadrat på lambda/8, strålande längs diagonalen. Tom fas = exakt bakåtnolla (pi + beta d mellan raderna): ger högsta teoretiska direktivitet; verkliga fasnät (ON4UN, IV3PRK) använder andra faser och ger lägre RDF (IV3PRK 9,4 dB). Knappen söker fasen med bäst RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Grupper av korta aktiva vertikaler som de från Hi-Z Antennas: 2 element end-fire (kardioid, lambda/8), 3 i triangel (sida lambda/6, ett hörn mot vald riktning), 8 i cirkel (diameter 0,37 lambda: de fyra mot riktningen och de motsatta används). Hi-Z: 8 i cirkel RDF 13,4 dB med sin kombinerare; den enkla modellen med två rader blir lägre. Knappen söker fasen med bäst RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikalerna utgår från verklig mark (GE 1 med Sommerfeld-mark): med NEC-2 ger en tråd ansluten till verklig mark en impedans som beror på källsegmentet (NEC-2-handboken, EZNEC). Diagram och RDF är vägledande; anslutning med upphöjda radialer är planerad för alla mottagarantenner.
+fase tra le file da 120 a 300 gradi per l'RDF	fas mellan raderna från 120 till 300 grader för RDF
+nessuna fase con il lobo in avanti	ingen fas med loben framåt
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fas mellan raderna för bäst RDF: {0} grader (RDF {1} dB). Räknar om...
+linea d'orizzonte	horisontlinje
+scala angolare	vinkelskala
+lobo reale sopra il piatto fino a	verklig lob över plan mark upp till
+Profilo verso	Profil mot
+Lobo verticale e angoli di arrivo a	Vertikal lob och ankomstvinklar vid
+Cos'e' l'RDF	Vad är RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = förstärkning i önskad riktning - medelförstärkning i alla riktningar (W8JI; tidigare kallad SNIF, på 60-talet). Det mäter hur mycket antennen förbättrar signal/brus-förhållandet om bruset kommer lika från alla riktningar; den absoluta förstärkningen räknas inte (en förförstärkare tar igen den). Medel som i EZNEC: övre halvsfären delad med hela sfären (4 pi). Med den konventionen stämmer resultaten med IV3PRK och W8JI/Hi-Z (vertikal 5,07 mot 5,06 och 4,9; Beverage 350 m 13,5 mot 13,66). Begränsning: verkligt brus är inte likformigt (kraftledningar, lokalt QRM): därför räknas också F/B och lobens form. För sändarantenner har RDF ingen mening: därför beräknas det bara i den här fliken. DMF (Directivity Merit Figure, ON4UN): förstärkning vid 20 graders elevation framåt minus medelförstärkningen i bakre halvrymden (azimut bortom 90 grader, över marken, viktad med cosinus efter yta): anger hur mycket antennen undertrycker brus som kommer bakifrån. ON4UN varnar för att jämföra DMF och RDF med varandra. Källor: W8JI och W8WWV (RDF), ON4UN Low-Band DXing kap. 7 (DMF, tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevation
+azimut	azimut
+azimut a {0}°	azimut vid {0}°
+totale	totalt
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Öppning till första nollan (FNBW): {0}°;  högsta sidolob: {1}
+Didascalie {0} %	Etiketter {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB mot {1} i källan: kontrollera mått, terminering och mark (källan kan använda en annan mark eller geometri).
+Azimut a {0}° · {1} MHz	Azimut vid {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimut vid {0}° elevation
+RUMORE	BRUS
+Apri la scheda {0}	Öppna kortet {0}
+caso mostrato: {0}	visat fall: {0}
+Rastremazioni	Teleskopiska
+BANDA	BAND
+λ/2 coassiale 4:1	koax λ/2 4:1
+Manicotto λ/4	λ/4-hylsa
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kabelskärm och mast som NEC-trådar; jämförelse av baluner (common mode-ström, F/B, medel-F/R, förlust, effekt vid 1 kW) från 1,8 till 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Stolpar, tvärbalk, mast och faslinjernas skärmar som NEC-trådar: jämförelse utan / med ram (förstärkning, F/B, medel-F/R, lober, delarens Z, Tant och G/T).
+TIPO	TYP
+DATI	DATA
+TELAIO	RAM
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 i fyrkants- eller rundrör, i kabel, Wilkinson; faslinjer, tilt; ritning 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X eller +, plan förskjutna λ/4; H, V, RHCP, LHCP, X-pol; axialförhållande och isolation
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Lika längder → lika fas. Multiplar av λ/2 → den aktiva impedansen upprepas vid delaren. Rekommenderad tolerans ± 5 mm (= ± {0}° fas).
+impedenze attive delle {0} antenne dello stack in parallelo	aktiva impedanser för stackens {0} antenner parallellt
+Banda con ROS < {0}	Band med SWR < {0}
+? Manuale	? Handbok
+Apre la spiegazione nel manuale	Öppnar förklaringen i handboken
+riferimento	referens
+Rispetto alla singola antenna	Jämfört med ensam antenn
+{0} antenne ideali	{0} ideala antenner
+x la distanza DL6WU, a passi di	x DL6WU-avståndet, i steg om
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Vänster axel: stackens G - ensam antenns G, från 0 och uppåt. Höger axel: stackens F/R - ensam antenns F/R, omvänd, med 0 högst upp: där stacken förbättrar F/R går kurvan nedåt, och lägsta punkten är största förbättringen. G/T står kvar i tabellen.
+ΔG sulla singola	ΔG över ensam antenn
+Chiusura del programma	Avsluta programmet
+Vuoi chiudere YA-NEC?	Vill du stänga YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Tack för att du använde mig: jag hoppas att jag var till nytta.
+Sì	Ja
+ROS attivo	Aktiv SWR
+G realizzato	Realiserad G
+ROS attivo massimo	Maximal aktiv SWR
+riflessi minimi	minsta reflexer
+ROS attivo alto: da non scegliere	hög aktiv SWR: välj inte
+Documenti tecnici	Tekniska dokument
+Manuale d'uso	Användarhandbok
+Manuale di calcolo e delle fonti	Handbok för beräkningar och källor
+Citazioni	Citat
+Cerca in tutti i documenti	Sök i alla dokument
+Apri il PDF	Öppna PDF-filen
+Nessun risultato per «{0}»	Inga resultat för «{0}»
+Primi {0} risultati per «{1}»	Första {0} resultaten för «{1}»
+{0} risultati per «{1}»	{0} resultat för «{1}»
+Apre la citazione {0}	Öppnar citat {0}
+Manuale di calcolo	Beräkningshandbok
+È pronta la versione {0} di YA-NEC	Version {0} av YA-NEC är klar
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Den är redan nedladdad och installerad: den börjar gälla när programmet startas om.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	På Mac installeras den inte själv: ladda ner den nya .dmg-filen från versionssidan på GitHub.
+Riavvia adesso	Starta om nu
+Più tardi	Senare
+Apri la pagina delle versioni	Öppna versionssidan
+Aggiornamento di YA-NEC	YA-NEC-uppdatering
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Den är redan nedladdad och installerad. Programmet startar om av sig självt och öppnar den öppna modellen igen.
+Riavvio tra {0} s	Omstart om {0} s
+Questo avviso si chiude tra {0} s	Meddelandet stängs om {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Efter uppdateringen öppnades den osparade modellen igen: spara den när du vill (kopia i data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Efter uppdateringen öppnades den modell som var öppen igen.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Varje ruta har sin hjälp med förklaring och källa. Grå: ikryssad = alltid aktiv (stängs inte av); inte ikryssad = ännu inte tillgänglig; val med piller = fast val. Handbok, kapitel 21.
+"): sorgente sempre accesa.	"): källa alltid aktiv.
+' non da' un numero valido.	' är inte ett giltigt tal.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik som den är
+0 - misure del metodo	0 - metodens mått
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = bandets standard-WR-vågledare (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = samma parabol i andra änden (eget eko).
+0 = stesso disco all'altro capo.	0 = samma parabol i andra änden.
+0 gradi a destra	0 grader till höger
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = en tredjedel från spetsen: impedans 200-300 ohm, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: långt från kanten, där böjningen skulle flytta matningen ur fokus.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 massiv polyeten (RG-58, RG-213), 0,8-0,85 skummat dielektrikum.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 massiv polyeten, 0,8-0,85 skummad, 0,9-0,97 öppen ledning.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 lambda i vågledare
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - matad slinga
+1 - radiatore	1 - strålare
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = ett varv (som förut). Med fler varv växer Rr med N², skinneffektförlusten med N.
+1 cavo	1 kabel
+1-2-3 elementi	1-2-3 element
+1. Obiettivi e pesi	1. Mål och vikter
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vind, balansering, delare, baluner, korsade Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Mottagarantenner aktiverade
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz med stor parabol: utöver yta och riktning räknas termisk deformation och vinddeformation (ATA: 0,7 mm RMS på natten, 3 mm på dagen i sol), stödens böjning och spridning genom librationen.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: skriv ut i 100 %, utan «anpassa till sidan»
+1005/f piedi	1005/f fot
+144 isol.	144 isol.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektorer
+2 in parallelo	2 parallellt
+2 lati	2 sidor
+2. Variabili che l'ottimizzatore puo' cambiare	2. Variabler som optimeraren får ändra
+200 Ω con balun 4:1	200 Ω med balun 4:1
+25 tondo	25 rund
+3 - direttori	3 - direktorer
+3 gruppi	3 grupper
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 eller 4. Med 2 finns ingen styvhet utanför deras plan.
+3. Registro dei passi - clic su una riga per riprenderla	3. Steglogg - klicka på en rad för att hämta tillbaka den
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω eller balun 4:1
+36 Ω + terra	36 Ω + jord
+4 - tutto insieme	4 - allt tillsammans
+4 lati	4 sidor
+4 sorgenti: vedi tabella	4 källor: se tabellen
+432 isol.	432 isol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 datakontroller godkända av IC8TEM den 15/11/2026: trösklar och förklaringar i handboken, kapitel 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 fot omkring 18 dBi, 12 fot omkring 20,5 dBi
+75 ohm ideale	75 ohm idealt
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 gånger längre än radien. Med tjocka trådar eller korta segment (tjocka rör på UHF, element nära varandra,\n
+9 fili	9 trådar
+9 fili a 0,1 λ	9 trådar på 0,1 λ
+Accorciamento del pilotato	Det matade elementets förkortning
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Förkortning över 8 %: den linjära uppskattningen är inte pålitlig, kontrollera med NEC.
+Allega il modello aperto	Bifoga den öppna modellen
+Allega il registro di oggi	Bifoga dagens logg
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Vågornas RMS-höjd och antennens höjd över havet, i Diagram > Verklig terräng.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Svepets bredd runt frekvensen, för impedansdiagrammet.
+Antenna a	Antenn vid
+Applica la freccia al modello NEC	Tillämpa nedböjningen på NEC-modellen
+Approvata, in preparazione: non ancora attiva in questa versione.	Godkänt, under förberedelse: ännu inte aktivt i den här versionen.
+Apri la cartella	Öppna mappen
+Apri un modello nella finestra principale	Öppna en modell i huvudfönstret
+Apro il modello e il diagramma 3D resta vuoto.	Jag öppnar modellen och 3D-vyn förblir tom.
+Area al vento dell'antenna	Antennens vindyta
+Area al vento totale	Total vindyta
+Area al vento totale e lista di taglio	Total vindyta och kaplista
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Obs: använd inte med trådar som möts i vinkel eller med olika diametrar i skarven.\n
+Bobina di carico per la risonanza	Förlängningsspole för resonans
+Boom con il tirante	Bom med stag
+C1 in serie con la loop	C1 i serie med slingan
+C1 serie, C2 parallelo	C1 serie, C2 parallellt
+C2 in parallelo all'ingresso	C2 parallellt med ingången
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Kalkylatorer > Mottagarantenner: låg dipol, K9AY, 4-square RX, Hi-Z 2/3/8 element, med fasen mellan raderna optimerad för RDF och varningen om jordanslutningen.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mekaniska beräkningar (Vind och Balansering), Kalkylatorer > Delare och korsade Yagi, Objekt > Kabel och balun och stackram, HF-laster.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Preliminär dimensionering: för installationen gäller en behörig teknikers projekt.
+Candidati da controllare	Kandidater att kontrollera
+Categoria	Kategori
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Platsens exponeringskategori (NTC 2018, tab. 3.3.II och fig. 3.3.2): beror på terrängens råhetsklass (A stadskärnor ... D områden utan hinder, hav) och avståndet till kusten. I = öppen kust eller hav, V = stadskärna.
+Cebik, poi NEC	Cebik, sedan NEC
+Centro della banda scelta:\n	Mitten av det valda bandet:\n
+Con ghiaccio	Med is
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Med is: vinden reducerad till 0,6 gånger och radiell is från rutan till höger (förenklad kombination ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Med samma frö upprepas testet lika.
+Condizione della sorgente non capita ("	Källvillkoret förstods inte ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Kontrollerar genast på GitHub utan att vänta de 3 minuterna. Finns en ny version laddas den ner, meddelas och startas om som den automatiska uppdateringen (10 sekunder, modellen öppnas igen). Fungerar även med automatisk uppdatering avstängd.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Alltid kontrollerat av segmenteringskontrollen och i Varningar (8 med normal kärna, 2 med utökad kärna).
+Copie per candidato	Kopior per kandidat
+Coppia sulla staffa boom-mast	Vridmoment i klämman bom-mast
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Skapar zip-filen i data/segnalazioni och öppnar GitHub-sidan «New issue» med texten redan skriven. Zip-filen bifogar du själv, för hand: programmet skickar ingenting av sig självt.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Jordens krökning, i Diagram > Verklig terräng.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diameter utanför området för Cebiks formler (från 1E-6 till 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Avstånd och typ för den andra marken: godkänt för 1.5 (Verklig terräng 2).
+Distanze di stack HF	HF-stackavstånd
+Distanze di stack: accoppiamento e distanza migliore	Stackavstånd: koppling och bästa avstånd
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Efter optimeringen går de bästa resultaten vidare till kontrollen med toleranserna. 0 = ingen kontroll.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Mycket låga ändar: se upp för människor och djur (höga spänningar i spetsarna).
+F/B peggiore	Sämsta F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq-fil: ledningar med TLParms från AutoEZ (kablar med förlust) använder nominella Zo och VF och ingen förlust: NEC:s TL-kort är förlustfritt.
+Filo riflettore	Reflektortråd
+Filo ripiegato	Vikt tråd
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Lång hairpin (mer än 0,2 lambda): det är bättre att minska avståndet eller använda grövre ledare.
+Forza del vento di progetto	Dimensionerande vindkraft
+Forza l'aggiornamento	Tvinga uppdatering
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Kordans nedhängning: hur mycket nätet på det raka stycket ligger under paraboloiden mitt i spannet (ingår i facetteringen). Remmarnas totala massa {4:0.00} kg{5}.
+Freccia tolta dal modello.	Nedböjningen borttagen ur modellen.
+Ghiaccio radiale	Radiell is
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA-filer omsegmenteras alltid för NEC-2 (handboken, kapitel 10).
+I lobi si leggono nella tabella delle distanze di stack.	Loberna läses i tabellen över stackavstånd.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (avrundar), FIX (trunkerar), MOD, MAX, MIN, ODD (udda heltal: användbart för den matade trådens segment).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Normal NEC2 behandlar varje tråd som en tunn linje: det gäller så länge segmentet är minst\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	En enda reflektortråd ger en mycket liten förbättring (Cebik): bättre skärmen eller de 9 trådarna.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Masten överskrider sträckgränsen: grövre mast eller kortare utskjutning.
+Impedenza del cavo	Kabelimpedans
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	I en annan form: kontroll r5 i Datakontrollerna flaggar förstärkning över det fysiska maximumet för bomlängden.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktans med N² (täta varv) och en NEC-modell med ett varv: här kontrollerar NEC bara geometrin för det enda varvet.
+Interasse della forcina	Hairpinens avstånd
+Isole (tranne Sicilia e Sardegna) e mare aperto	Öar (utom Sicilien och Sardinien) och öppet hav
+Kernel esteso del NEC2 (scheda EK).\n	Utökad NEC2-kärna (EK-kort).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Hairpinens avstånd måste vara större än ledardiametern.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim sluter strålaren upptill med en tråd vikt nedåt, ner till strax ovanför stubben.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Det görs i fönstret Segmenteringskontroll (knappen ovan).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpinen är symmetrisk: den snedvrider inte diagrammet som gamman. En balun eller drossel i matningspunkten behövs ändå.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpinen fungerar bara med ett matat elements R lägre än kabelimpedansen: för större R använd gamma eller en transformator.
+La prepara IC8TEM: non ancora attiva.	IC8TEM förbereder den: ännu inte aktiv.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	De sex reglerna i EZNEC:s Geometry Check, vid varje beräkning, i fliken Varningar.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: utan korrektion Z = {0:0.0} {1}j{2:0.0} ohm (med korrektionen {3:0.0} {4}j{5:0.0} ohm).
+Località	Plats
+Loop orizzontale di 1 λ	Horisontell slinga 1 λ
+Lunghezza del pilotato	Det matade elementets längd
+Lunghezza della forcina	Hairpinens längd
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Lägger den öppna modellen (.nec) i zip-filen, även om den inte är sparad.
+Mette nello zip il registro di oggi della cartella registri.	Lägger dagens logg från mappen logs i zip-filen.
+Momenti al mast	Moment på masten
+Momento al cuscinetto	Moment vid lagret
+NEC: risonanza cercata dal motore	NEC: resonans sökt av motorn
+NOTE SU QUESTA VERSIONE (fase 0)\n	ANTECKNINGAR OM DENNA VERSION (fas 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NYTT · över marken: höjder, avstånd, önskade utstrålningsvinklar
+Nel modello non ci sono elementi orizzontali diritti	Modellen har inga raka horisontella element
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	I stacktabellen och i modellens Objekt (stackram, delare).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Skriv uttryck utan mellanslag i geometrikort, till exempel:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Inget avstånd föreslaget
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Inget avstånd föreslaget: alla överskrider maximal aktiv SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Ingen IP-adress, ingen e-post, inga användarnamn i filerna: hemmappens sökväg blir «~». Utan GitHub-konto kan du skicka zip-filen som du vill.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Ännu inte automatiskt: det görs för hand med AGT-testet i Varningar (ARRL 24:e, 4nec2).
+Numero di spire	Antal varv
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Varje kopia har sina mått slumpmässigt förskjutna inom toleranserna i fliken Toleranser (standard: längd ±1 mm, position ±2 mm, diameter ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Utöver den öppna modellen, starter valda slumpmässigt mellan varje variabels minimum och maximum. 0 = som förut.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Sidan Brus från verklig himmel i fliken Brus/GT/Stack: skynoise-beräkningen porterad till C# (läsning av HEALPix-kartorna, interpolation, stjärntid, koordinater, Månen) och de två kartorna från G8ONH i data/cielo.
+Partenze a caso	Slumpmässiga starter
+Perimetro Cebik	Cebiks omkrets
+Peso del boom	Bommens vikt
+Pi-greco	Pi-nät
+Prepara la segnalazione	Förbered rapporten
+Proposta	Förslag
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c-test vid 145 MHz (rör 12 mm på 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	När det behövs: förhållande segment/radie mellan ungefär 2 och 8 (under 2 är ingen av dem pålitlig).\n
+Quota s.l.m.	Höjd ö.h.
+R del pilotato	Det matade elementets R
+ROS attivo minimo {0}	Minsta aktiva SWR {0}
+Raggio equivalente dei due conduttori	Ekvivalent radie för de två ledarna
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Det matade elementets nuvarande reaktans: om den är positiv måste det matade elementet kortas mer.
+Reattanza della forcina	Hairpinens reaktans
+Reattanza voluta del pilotato	Önskad reaktans för det matade elementet
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktans: bortom kl = pi/2 (eller med för grov ledare) gäller inte AEH-formeln, använd NEC.
+Reinstalla la versione attuale	Installera om nuvarande version
+Rel Z non positiva	Re Z inte positiv
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Det matade elementets resistans vid resonans, från modellen eller NEC-beräkningen.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Omstarten misslyckades: stäng och öppna YA-NEC igen för hand.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Laddar ner och installerar om även om versionen är densamma: användbart om en programfil har skadats.
+Scansione	Svep
+Scegli il candidato con	Välj kandidaten med
+Schermo	Skärm
+Scrivi due frequenze diverse.	Skriv två olika frekvenser.
+Segnala un problema	Rapportera ett problem
+Seme del caso	Slumpfrö
+Serve solo per la reattanza (dipolo e monopolo).	Behövs bara för reaktansen (dipol och monopol).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Används med 2 eller fler varv: under 2 ledardiametrar växer den verkliga förlusten genom närhetseffekten (beräknas inte).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Används i Diagram > Verklig terräng: havsreflektion med divergensfaktor och skrovlighet.
+Sicilia e provincia di Reggio Calabria	Sicilien och provinsen Reggio Calabria
+Sollecitazione	Spänning
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Över 0,25 λ börjar loben sjunka: mindre lämplig för NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Över 30 MHz används Cebiks regression utanför det område den erbjuds för här (HF-trådar): Automatisk eller NEC är bättre.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Under 0,1 λ sjunker förstärkningen uppåt (Cebik): en mycket låg antenn vinner ingenting.
+Sotto l'antenna	Under antennen
+Spina (tubo o tondo) dentro il giunto telescopico.	Plugg (rör eller stång) inuti teleskopskarven.
+Spina interna nei giunti	Innerplugg i skarvarna
+Stack con il ROS attivo piu' basso	Stack med lägst aktiv SWR
+Staffe e mast	Klämmor och mast
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Tid: ungefär (starter + 1) gånger nuvarande, plus kandidater x kopior beräkningar.
+Tensione nel mast al cuscinetto	Spänning i masten vid lagret
+Tiro del tirante	Stagets dragkraft
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Rör tagna från tabellen Avsmalningar: måtten är desamma som i NEC-modellen.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Alla avstånd överskrider maximal aktiv SWR ({0}): inget avstånd föreslaget. Höj maximal aktiv SWR, prova antennens egen referensimpedans eller trimma den ensamma antennen. Matris och diagram gäller avståndet med lägst aktiv SWR.
+V invertito	Inverterat V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), koppling, aktiv SWR, bästa avstånd, två frekvenser
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Toppvindhastighet på platsen: vb sqrt(ce), med vb = vb,0 ca (NTC 2018, återkomstperiod 50 år) och ce(z) för exponeringskategorin vid antennhöjden.
+Velocità	Hastighet
+Velocità a mano	Hastighet för hand
+Vento di sopravvivenza	Överlevnadsvind
+Vento di sopravvivenza del boom	Bommens överlevnadsvind
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Vind vinkelrätt mot elementet vid vilken första punkten når sträckgränsen (egenvikt och is inräknade).
+X da aggiungere al pilotato	X att lägga till det matade elementet
+X del pilotato	Det matade elementets X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Slutkontrollen görs av NEC-motorn på modellen med hairpinen.
+Z0 della forcina	Hairpinens Z0
+Z0 della linea dei due conduttori	Tvåledarledningens Z0
+Zona buona	Bra zon
+al centro	i mitten
+caso peggiore	sämsta fall
+caso peggiore delle due	sämsta fallet av de två
+cerca...	sök...
+copie entro le soglie	kopior inom trösklarna
+corrente sinusoidale	sinusformad ström
+distanza dal boom	avstånd från bommen
+distanza dall'inizio del boom	avstånd från bommens början
+due condensatori sul lato basso	två kondensatorer på undersidan
+effetto: calcolo in corso…	effekt: beräknar…
+forza del vento x sbalzo	vindkraft x utskjutning
+il caso peggiore migliore	det bästa sämsta fallet
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	den ekvivalenta dipolen, grövre, har mindre än 73 Ω
+il voto medio migliore	bästa medelpoäng
+induttiva, in parallelo	induktiv, parallellt
+la percentuale migliore di copie entro le soglie	bästa andel kopior inom trösklarna
+linea a due fili	tvåtrådsledning
+m  mast a	m  mast vid
+m dal suolo	m över marken
+m sopra il boom, attacco al	m över bommen, fäst vid
+media delle due	medel av de två
+mm  lungo	mm  lång
+mm, acciaio	mm, stål
+molto buono	mycket bra
+molto povero	mycket dålig
+nessun rinforzo	ingen förstärkning
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	inget handelsrör upp till +12 mm räcker: se över avsmalningen
+nessuna distanza sotto il ROS attivo massimo	inget avstånd under maximal aktiv SWR
+partenza dal modello aperto	börja från den öppna modellen
+per lato, teso per annullare il momento verticale al mast	per sida, spänd för att ta ut det vertikala momentet på masten
+primo cedimento: tubo Ø	första brott: rör Ø
+regge il vento di progetto con il 20 % di margine	klarar dimensionerande vind med 20 % marginal
+riferimenti bibliografici	litteraturhänvisningar
+sbalzo sopra il cuscinetto	utskjutning ovanför lagret
+schermo 1 λ x 1 λ	skärm 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	täta segment) använder den utökade kärnan en mer exakt formel och resultatet blir mer pålitligt.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	utan plugg vilar innerröret på ytterrörets kant och en faktor 1,25 tillämpas på spänningen i de första 5 cm: en uppskattning, klämmor och slitsar ändrar resultatet mycket.
+sollecitazione / snervamento	spänning / sträckgräns
+tubo piu' grosso	grövre rör
+un filo riflettore	en reflektortråd
+zona di cedimento	brottzon
+ø dei conduttori della forcina	ø för hairpinens ledare
+ø del filo	tråd-ø
+ø del pilotato	det matade elementets ø
+accordata	avstämd
+accordate	avstämd
+alimentazione	matning
+alluminio	aluminium
+allungata	förlängd
+altro	annat
+anello	slinga
+angolo	vinkel
+antiorario	moturs
+aritmetico	aritmetisk
+automatico	automatisk
+banda	band
+bande	band
+bordi	kanter
+buono	bra
+capacitiva	kapacitiv
+carichi	laster
+carico	last
+cartesiana	kartesisk
+cavi	kablar
+cavo	kabel
+centimetri	centimeter
+centina	spant
+cerchio	cirkel
+condensatore	kondensator
+corrente	ström
+destra	höger
+diagramma	diagram
+diametro	diameter
+differenza	skillnad
+dipoli	dipoler
+dipolo	dipol
+diretta	direkt
+diritto	rak
+due	två
+elementi	element
+elemento	element
+elimina	ta bort
+equilatera	liksidig
+esito	resultat
+esperimenti	experiment
+esponenziale	exponentiell
+fase	fas
+ferriti	ferriter
+fili	trådar
+filo	tråd
+forcina	hairpin
+forma	form
+formule	formler
+frequenza	frekvens
+geometria	geometri
+ghiaccio	is
+giudizio	betyg
+gradi	grader
+griglia	rutnät
+guadagno	förstärkning
+incrociata	korsade
+larghezza	bredd
+lato	sida
+lega	legering
+libera	fri
+libero	fri
+linea	ledning
+lineare	linjär
+linee	ledningar
+lobi	sidolober
+locale	lokal
+mai	aldrig
+manicotto	hylsa
+mano	för hand
+meccanica	mekanik
+mezzaonda	halvvåg
+millimetri	millimeter
+misure	mått
+modello	modell
+modo	läge
+nessuna	ingen
+nota	anmärkning
+nuovo	ny
+operativo	arbets
+orario	medurs
+ottagono	oktagon
+palo	mast
+parabola	parabol
+passo	stigning
+perdite	förluster
+perfetto	perfekt
+piano	plan
+piatto	platt
+piedi	fot
+polare	polär
+pollici	tum
+propria	egen
+punto	punkt
+quadrato	fyrkantig
+quadro	fyrkantig
+quota	höjd
+radiali	radialer
+radiatore	strålare
+raggio	radie
+rame	koppar
+ramo	gren
+rapidi	snabb
+rastremazioni	avsmalningar
+rete	nät
+rettangolo	rektangel
+riepilogo	sammanfattning
+riflettore	reflektor
+riga	rad
+rombo	romb
+scarso	dålig
+scarto	avvikelse
+schiacciata	tillplattad
+sempre	alltid
+senso	riktning
+si'	ja
+sinistra	vänster
+soglia	tröskel
+sorgenti	källor
+sotto	under
+spire	varv
+staffe	klämmor
+stato	status
+sufficiente	tillräcklig
+tetto	tak
+tipo	typ
+tirante	stag
+togli	ta bort
+tondo	rund
+traffico	trafik
+trasformatori	transformatorer
+trombe	hornantenner
+tubi	rör
+tubo	rör
+tutti	alla
+uguale	lika
+uguali	lika
+uso	använd
+a {0} x DL6WU; tutte sopra il massimo {1}	vid {0} x DL6WU; alla över maximum {1}
+% del mezzo boom	% av halva bommen
++ aggiungi	+ lägg till
++ aggiungi variabile	+ lägg till variabel
++ correzione del boom	+ bomkorrektion
++ nuova	+ ny
++ trappola	+ fälla
++ verso il disco.	+ mot parabolen.
++90 gradi Z	+90 grader Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetisk: exakt mitt emellan bandets IARU-gränser (till exempel 145,000 MHz på 2 m),\n
+- correzione del boom	- bomkorrektion
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- arbets: frekvensen där du faktiskt kör (till exempel 144,300 MHz på 2 m, 432,200 på 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (svart) 10-100 MHz
+-10 nero	-10 svart
+-2 (rosso) 0,25-10 MHz	-2 (röd) 0,25-10 MHz
+-2 rosso	-2 röd
+-6 (giallo) 3-40 MHz	-6 (gul) 3-40 MHz
+-6 giallo	-6 gul
+-90 gradi Z	-90 grader Z
+-> segmento NEC	-> NEC-segment
+. "Annulla" torna indietro.	. «Ångra» går tillbaka.
+. Antenna base: fili 1-	. Basantenn: trådar 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Med så högt Q får svepet bara spänna över några få kHz.
+. Salvalo con Salva con nome.	. Spara den med Spara som.
+. Trascina per ruotare, rotella per ingrandire.	. Dra för att rotera, hjulet för zoom.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Använd tunnare tråd, en större kärna eller två staplade kärnor.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) och GMRT tab. 19.1
+12 (errore / HPBW)^2	12 (fel / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passiv ring: omkrets {0:0.000} lambda, ingen källa och ingen kondensator; effekten syns i den fullständiga modellen (direktor eller reflektor).
+Automatico	Automatisk
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, liksom nec2c och xnec2c: källkoden följer med programmet (filen COPYING).\n
+Provincia di Trieste	Provinsen Trieste
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	och i C# för YA-NEC. Referensgränssnitt: xnec2c av 5B4AZ och Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	verkningsgrad beräknad från fjärrfältet, Prad / (Prad + förluster) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedans och förluster blir allt mindre pålitliga ju lägre tråden kommer (se BOG i handboken). För ett säkert resultat: minst lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	den skapas upp till {3:0.00} m i diameter; aperturberäkningen bredvid gäller för alla diametrar och tar redan hänsyn till spanten (rutan ovan).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segment: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} på {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, verkningsgrad {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° elevation
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19:e uppl., kap. 18 (W9PE:s 2 m-Yagi): tre element på 0,2 λ, omkring 7 dBi och F/B över 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC:s överensstämmelse med nec2c (stänger 20/15/10 m): reflektorer på 0,185 / 0,197 / 0,222 λ, direktorer på 0,095 / 0,116 / 0,114 λ: inom källornas intervall.
+↶ Annulla	↶ Ångra
+↷ Ripeti	↷ Gör om
+■ Ferma	■ Stopp
+▶ Avvia	▶ Start
+☐ mantieni lunghezza del boom	☐ behåll bomlängden
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ inga varningar: segmenteringen uppfyller vald nivå
+✓ nessun errore e nessun avviso	✓ inga fel och inga varningar
+variabili del modello	modellens variabler
+nuova variabile dal modello	ny variabel från modellen
+Scrivi una variabile nella linguetta Variabili…	Skriv en variabel i fliken Variabler…
+Elemento diritto	Rakt element
+Elemento piegato	Böjt element
+Variabile nuova	Ny variabel
+Minimo / massimo	Minimum / maximum
+Cosa cambia	Vad som ändras
+in ocra: dove agisce la variabile	i ockra: där variabeln verkar
+Crea la variabile	Skapa variabeln
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Variabeln {0} skapad: geometrin ändras inte. «Ångra» i Geometri-raden tar bort den.
+Struttura 3D: dove agisce la variabile ▾	3D-struktur: där variabeln verkar ▾
+Struttura 3D ▸	3D-struktur ▸
+Clic: nasconde o mostra la struttura	Klick: döljer eller visar strukturen
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	heldragen ockra: använder variabeln · streckad ockra: använder den via en annan variabel
+attraverso {0}: fili {1}	via {0}: trådar {1}

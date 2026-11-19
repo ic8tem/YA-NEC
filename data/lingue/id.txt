@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Seberapa pekat warnanya: ringan, sedang, atau kuat. Pada baris tabel selubungnya lebih ringan agar angka tetap terbaca.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Kawat {0} dipilih di tampilan 3D: baris {1} tabel
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Kawat {0}: tidak ada di tabel kawat (kartu geometri selain GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Segera memeriksa versi baru (tanpa menunggu 3 menit).
+terreno reale	medan nyata
+Locatore	Lokator
+da 8 a 12 caratteri	8 sampai 12 karakter
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Dengan 6 karakter titik bisa meleset berkilo-kilometer: profil medan memerlukan minimal 8 karakter.
+Quota sito	Ketinggian lokasi
+Altezza antenna	Tinggi antena
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Tinggi pusat antena di atas tanah. Jika berbeda dari model, pola NEC dinaikkan atau diturunkan dengan distribusi arus yang sama.
+Distanza max	Jarak maks.
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimut dan jarak dihitung ulang setiap kali lokator berubah (lingkaran besar, bola 6371 km).
+Terra	Daratan
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Mengurangi koefisien pantul laut dengan faktor Ament untuk gelombang 0.25 m (simpangan baku).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	model statistik permukaan kasar (Ament 1953): berlaku untuk sudut sapuan dan laut yang seragam.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Menurunkan profil sesuai kelengkungan Bumi (jari-jari efektif 4/3 pada refraksi normal) dan mengurangi sinar pantul jauh dengan faktor divergensi.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	atmosfer standar (k = 4/3); dengan ducting atau inversi kelengkungan semu berubah.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Punggungan tertinggi antara antena dan arah pancar meredam sinar langsung seperti tepi (integral Fresnel), seperti di HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	tepi pisau tunggal: punggungan bulat atau beberapa punggungan berurutan didekati dengan yang tertinggi.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Mengulang perhitungan setiap 10 derajat azimut (hanya DEM) dan menampilkan angka mutu pada mawar, dengan antena diputar ke setiap azimut.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	dengan antena selalu diputar ke azimut profil: berlaku untuk antena putar.
+Cartesiana dBi / gradi	Kartesius dBi / derajat
+0–180° intero	0–180° penuh
+Zoom angolare	Zoom sudut
+Sovrapponi alla linguetta Verticale	Tumpangkan pada tab Vertikal
+premi Calcola	tekan Hitung
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Mengulang perhitungan dengan antena dari 6 sampai 30 m (HF) atau dari 2 sampai 30 m (VHF) dan menampilkan ketinggian dengan angka mutu terbaik pada lintasan.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	arus tetap arus dari model yang dihitung: pengaruh ketinggian pada impedansi dan arus tidak diperhitungkan (seperti di HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Diperlukan tabel sudut kedatangan dari ARRL Antenna Book (berkas .PRN per pita dan wilayah): begitu tersedia, ini aktif dan menampilkan irisan oranye.
+locatore non valido	lokator tidak valid
+sul mare	di atas laut
+sul terreno	di atas daratan
+profilo reale	profil nyata
+terreno piatto	medan datar
+orizzonte ostruito	cakrawala terhalang
+° (scala angolare ×	° (skala sudut ×
+← dietro	← belakang
+avanti →	depan →
+statistiche degli angoli di arrivo: non caricate	statistik sudut kedatangan: belum dimuat
+rosa 0–360°: calcolo in corso…	mawar 0–360°: menghitung…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Pilih berkas profil (klik "Dari HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM tidak tersedia: pada penggunaan pertama diperlukan jaringan untuk mengunduh TINITALY atau SRTM1 (setelah itu tetap di folder data/dem).
+Profilo del terreno	Profil medan
+Lobo di elevazione	Lobus elevasi
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Hitung model terlebih dahulu (tombol Hitung di atas): pola antena berasal dari NEC.
+da file	dari berkas
+dal DEM	dari DEM
+rispetto alla stessa antenna su terreno piatto	relatif terhadap antena yang sama di atas medan datar
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Selisih antara lobus di atas profil nyata dan lobus di atas medan datar, dirata-ratakan pada sudut yang berguna.
+Guadagno a 5° / 10°	Gain pada 5° / 10°
+Guadagno a 1° / 3°	Gain pada 1° / 3°
+Angoli coperti a -3 dB	Sudut yang tercakup pada -3 dB
+primo lobo sul profilo reale	lobus pertama di atas profil nyata
+calcolo…	menghitung…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Model ruang bebas: arusnya tanpa tanah, seperti pola ruang bebas yang dipakai HFTA. Untuk memperhitungkan tanah di dekatnya, hitung model dengan tanah nyata.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profil hanya berlaku untuk satu azimut: antena putar memerlukan lebih banyak arah (kotak "Semua azimut").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metode seperti di HFTA (N6BV): sinar langsung + sinar pantul pada setiap faset profil + difraksi di atas punggungan. Pola antena berasal dari NEC; perhitungan ini menambahkan medan.
+Piatto	Datar
+Reale	Nyata
+Primo minimo	Minimum pertama
+Punto di riflessione	Titik pantul
+Orizzonte	Cakrawala
+Uso: rotte DX in HF (angoli bassi 1–15°).	Penggunaan: lintasan DX HF (sudut rendah 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Penggunaan: tropo dan MS (0–5°), EME dengan Bulan rendah (gain tanah saat Bulan terbit/terbenam).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Ketinggian dengan gain rata-rata tertinggi pada sudut berguna lintasan.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	arus model yang dihitung digeser dalam ketinggian: impedansi dan kopling tanah tetap dari model.
+Calcola prima il terreno reale	Hitung medan nyata terlebih dahulu
+Esporta il lobo sul terreno reale	Ekspor lobus di atas medan nyata
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Citra: Esri, Maxar, Earthstar Geographics, dan komunitas pengguna GIS
+© i contributori di OpenStreetMap	© kontributor OpenStreetMap
+Sfondo	Latar
+Foto aerea	Foto udara
+Solo griglia	Hanya kisi
+Griglia	Kisi
+Cerca	Cari
+⌖ Centra sul locatore	⌖ Pusatkan pada lokator
+Punto scelto	Titik terpilih
+Coordinate	Koordinat
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klik pada peta = titik antena; seret = pindahkan; roda = zoom (kisi berpindah dari 6 ke 8, 10, 12 karakter). Bingkai tebal = kotak 6 karakter.
+non disponibile	tidak tersedia
+Lunghezza elementi	Panjang elemen
+Posizione sul boom	Posisi pada boom
+Uniforme	Seragam
+Distribuzione	Distribusi
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Elemen dipasang tidak di tengah klem: pergeseran sepanjang sumbunya sendiri, dengan toleransi posisi.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	klem sebenarnya juga mengubah panjang listrik di dekat boom: untuk itu gunakan tab Koreksi boom.
+nuovo a ogni avvio	baru setiap kali dijalankan
+Numero prove	Jumlah percobaan
+Frequenze	Frekuensi
+Seme casuale	Benih acak
+OBIETTIVO LISTA DI TAGLIO	TARGET DAFTAR POTONG
+Calo F/B max	Penurunan F/B maks.
+ROS max	SWR maks.
+Ferma	Berhenti
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Elemen di dekat elemen yang diumpan biasanya paling kritis; yang di ujung boom menoleransi galat lebih besar.
+l'istogramma serve al Monte Carlo	histogram untuk Monte Carlo
+5% peggiore	5% terburuk
+Posizione mm	Posisi mm
+Lunghezza mm	Panjang mm
+Tolleranza ammessa	Toleransi yang diizinkan
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Merah: elemen yang memerlukan kurang dari toleransi pembuatan.
+Calcola prima il modello	Hitung model terlebih dahulu
+sensibilita'	sensitivitas
+Tolleranze: fermato	Toleransi: dihentikan
+Diametro mm	Diameter mm
+Tolleranza ammessa mm	Toleransi yang diizinkan mm
+Avvia prima il calcolo	Jalankan perhitungan terlebih dahulu
+Esporta la lista di taglio	Ekspor daftar potong
+Lista di taglio	Daftar potong
+Obiettivi	Target
+Calo massimo del F/B	Penurunan F/B maksimum
+ROS massimo	SWR maksimum
+Tolleranze di costruzione	Toleransi pembuatan
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Direncanakan (sketsa 13, menunggu persetujuan): belum aktif di versi ini.
+Al quadro 20×2 mm	Al persegi 20×2 mm
+Al quadro 25×2 mm	Al persegi 25×2 mm
+Al quadro 30×2 mm	Al persegi 30×2 mm
+Al quadro 40×2 mm	Al persegi 40×2 mm
+Al tondo 25×1,5 mm	Al bulat 25×1.5 mm
+Al tondo 30×2 mm	Al bulat 30×2 mm
+Al tondo 40×2 mm	Al bulat 40×2 mm
+Al tondo 50×2 mm	Al bulat 50×2 mm
+Zona NTC	Zona NTC
+Quota sito as	Ketinggian lokasi sebagai
+Periodo ritorno	Periode ulang
+Categoria esposiz.	Kategori paparan
+Coeff. topografia	Koef. topografi
+Antenna da terra	Antena di atas tanah
+Palo sopra rotore	Tiang di atas rotator
+Ø palo	Ø tiang
+Usa elementi e boom del modello	Gunakan elemen dan boom dari model
+Includi telaio, palo, cavi	Sertakan rangka, tiang, kabel
+Scansione direzione del vento	Pemindaian arah angin
+UNITÀ	SATUAN
+N e kgf affiancati	N dan kgf berdampingan
+solo N	hanya N
+solo kgf	hanya kgf
+Mostra	Tampilkan
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	lokator tidak valid: pilih zona secara manual
+Telaio a H	Rangka H
+Cavi e divisore	Kabel dan pembagi
+Parte	Bagian
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Dengan angin dari samping elemen tidak mendorong (cross-flow, K5IU): gaya pada pipa sebanding dengan kuadrat komponen angin yang tegak lurus sumbunya.
+momento flettente alla staffa del rotore	momen lentur pada klem rotator
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Pradimensi: tidak menggantikan pemeriksaan oleh insinyur untuk tiang, menara, dan fondasi. Momen di dasar akan masuk ke subtab Tiang dan fondasi.
+Sito e norma	Lokasi dan standar
+Norma	Standar
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; koefisien CNR-DT 207 R1/2018 dan EN 1991-1-4
+Locatore / zona	Lokator / zona
+Risultati	Hasil
+Forza massima	Gaya maksimum
+Momento flettente alla staffa del rotore	Momen lentur pada klem rotator
+Momento torcente sul rotore	Torsi pada rotator
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Pradimensi: tidak menggantikan pemeriksaan oleh insinyur berwenang untuk tiang, menara, dan fondasi.
+Al tondino pieno	Al batang pejal
+Materiale elementi	Bahan elemen
+Staffe, isolatori	Klem, isolator
+g cad.	g per buah
+Dipolo + scatola	Dipol + kotak
+Cavo fino al palo	Kabel ke tiang
+STAFFA AL PALO	KLEM TIANG
+Posizione attuale	Posisi saat ini
+m dal riflettore	m dari reflektor
+Massa / distanza	Massa / jarak
+Vento dalla linguetta Vento	Angin dari tab Angin
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Menggunakan tekanan rencana dari perhitungan terakhir di subtab Angin; tanpanya 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Menggeser seluruh model sepanjang boom sehingga klem yang disarankan jatuh di titik asal (tempat tiang dan rangka tumpukan dipasang). Urungkan di struktur 3D membalikkannya.
+Momenti in funzione della posizione della staffa	Momen terhadap posisi klem
+Masse e aree per parte	Massa dan luas per bagian
+ultimo direttore	direktor terakhir
+Staffe e isolatori	Klem dan isolator
+Cavo sul boom	Kabel pada boom
+Massa kg	Massa kg
+Baricentro m	Pusat gravitasi m
+Area vento m²	Luas angin m²
+Centro area m	Pusat luas m
+solo peso	hanya berat
+solo vento	hanya angin
+File Touchstone .s1p	Berkas Touchstone .s1p
+Formato letto	Format yang dibaca
+CAVO TRA VNA E ANTENNA	KABEL ANTARA VNA DAN ANTENA
+R e X separate	R dan X terpisah
+Banda con ROS <	Pita dengan SWR <
+ROS: calcolato e misurato	SWR: terhitung dan terukur
+Confronto	Perbandingan
+misurato, cavo tolto	terukur, kabel dihapus
+R calcolata	R terhitung
+X calcolata	X terhitung
+R misurata	R terukur
+X misurata	X terukur
+Calcolato	Terhitung
+Misurato	Terukur
+Scarto	Selisih
+Frequenza del ROS minimo	Frekuensi SWR minimum
+ROS minimo	SWR minimum
+nessuna correzione: calcolo e misura coincidono.	tanpa koreksi: perhitungan dan pengukuran sesuai.
+calcolo NEC sul campo della misura…	Perhitungan NEC pada rentang pengukuran…
+Misura del VNA	Pengukuran VNA
+Tutti	Semua
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Jalankan sweep (tombol Sweep di atas) untuk melihat F/B dan F/R di seluruh pita
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = gain ke depan dikurangi daya rata-rata di belahan bola belakang (azimut 90-270°, semua elevasi di atas 0°). Juga termasuk target pengoptimal.
+Tabelle: F/B e F/R su tutta la banda	Tabel: F/B dan F/R di seluruh pita
+Valori dello sweep	Nilai sweep
+ANTENNE RICEVENTI	ANTENA PENERIMA
+4-square in ricezione	4-square untuk penerimaan
+8 verticali in cerchio	8 vertikal dalam lingkaran
+Modello aperto	Buka model
+Isotropo	Isotropis
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = gain pada arah yang diinginkan dikurangi gain rata-rata di seluruh setengah ruang: tidak seperti gain, ia tidak bergantung pada rugi-rugi.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Menggunakan sudut kedatangan median dari tab Medan nyata sebagai elevasi yang diinginkan (statistik per pita dan wilayah). Tanpa statistik ARRL yang dimuat, elevasi yang ditulis di sini dipertahankan.
+Direzione voluta	Arah yang diinginkan
+Hz  rumore	Hz  derau
+NF ricevitore	NF penerima
+sorgente locale az	sumber lokal az
+Cifre di merito in ricezione	Angka mutu penerimaan
+Basta il segnale?	Apakah sinyal cukup?
+calcolo in corso…	menghitung…
+RDF in funzione della frequenza	RDF terhadap frekuensi
+Calcola prima il modello aperto	Hitung model yang terbuka terlebih dahulu
+verticale λ/4	vertikal λ/4
+° · dB relativi · arancio: -3 dB	° · dB relatif · oranye: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Gain rata-rata di sektor depan dikurangi rata-rata di belahan bola belakang.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN mendefinisikan DMF hanya dengan gain pada 20 derajat; di sini digunakan rata-rata pada sektor sketsa, sehingga nilainya tidak dapat dibandingkan satu lawan satu dengan buku.
+molto basso: serve un preamplificatore	sangat rendah: perlu praamplifier
+basso ma accettabile: vedi soglia	rendah tetapi dapat diterima: lihat ambang
+come un'antenna trasmittente	seperti antena pemancar
+F/R medio sull'emisfero posteriore	F/R rata-rata di belahan bola belakang
+Rumore d'antenna ai morsetti	Derau antena di terminal
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Daya derau eksternal di terminal: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + gain rata-rata yang dibobot menurut asal derau.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	derau dari cakrawala dibobot exp(-el/10 derajat) dalam elevasi: mewakili derau buatan manusia yang jauh dan datang rendah; distribusi nyata bergantung pada lokasi.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	sumber titik pada elevasi 5 derajat dengan daya yang sama seperti latar isotropis.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	derau isotropis di atas tanah; tanah tidak menambah derau.
+Margine sul ricevitore	Margin penerima
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Derau antena melebihi derau penerima kurang dari 6 dB: penerima membatasi sensitivitas. Perlu praamplifikasi lebih atau penerima dengan NF lebih rendah.
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	Gain 1.8
+Spazio richiesto	Ruang yang diperlukan
+λ/4 in tubo quadro	λ/4 dalam pipa persegi
+λ/4 in tubo tondo	λ/4 dalam pipa bulat
+Solo cavi di fase	Hanya saluran fase
+Aria	Udara
+Uscite	Keluaran
+Z antenne	Z antena
+Z ingresso	Z masukan
+Dielettrico	Dielektrik
+Connettori	Konektor
+Correggi accorciamento dei connettori	Koreksi pemendekan oleh konektor
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Mengurangkan bagian saluran di dalam konektor dari panjangnya.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	perkiraan 4 mm per ujung dengan konektor N (3 BNC, 1.5 SMA): sebaiknya disetel dengan VNA, memendekkan per 1 mm.
+Divisori	Pembagi
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Menggunakan impedansi aktif antena dari tumpukan yang terbuka (satu sumber per antena) dan jarak untuk panjang minimum saluran fase.
+CAVI DI FASE	SALURAN FASE
+Lunghezza minima	Panjang minimum
+Passo verticale	Jarak vertikal
+solo cavi di fase: nessun trasformatore da costruire	hanya saluran fase: tidak ada transformator yang perlu dibuat
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × kabel 75 Ω paralel = 37.5 Ω
+quadro, lato	persegi, sisi
+tondo, Ø	bulat, Ø
+Z0 richiesta	Z0 yang diperlukan
+Ø conduttore interno	Ø konduktor dalam
+VF del cavo	VF kabel
+λ/4 in aria, mm	λ/4 di udara, mm
+da tagliare, mm	untuk dipotong, mm
+Z carico in parallelo	Z beban paralel
+Rami λ/4: Z0 = Zin · √N	cabang λ/4: Z0 = Zin · √N
+Resistenze a stella	Resistor bintang
+Isolamento tra le uscite	Isolasi antar keluaran
+Perdita stimata	Perkiraan rugi
+Carico usato	Beban yang dipakai
+non potenza di 2	bukan pangkat 2
+ROS all'ingresso	SWR masukan
+solo cavi di fase	hanya saluran fase
+Uscita	Keluaran
+Lungh. elettrica	Panjang listrik
+Fisica mm	mm fisik
+Perdita dB	Rugi dB
+° di fase).	° fase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° ke atas); impedansi pada pembagi tidak lagi berulang persis.
+Solo cavi di fase: nessun disegno da stampare	Hanya saluran fase: tidak ada gambar untuk dicetak
+Divisore	Pembagi
+50 mm di controllo	Pemeriksaan 50 mm
+GEOMETRIA	GEOMETRI
+λ/4 sul boom	λ/4 pada boom
+stesso piano	bidang yang sama
+Metallico, isolati	Logam, berisolasi
+Non metallico	Non-logam
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Boom tidak ada dalam model NEC: dengan elemen yang berisolasi dari boom logam pengaruhnya kecil (koreksi boom di Kalkulator).
+Yagi di base	Yagi dasar
+Disposizione	Susunan
+Sfasamento piani	Pergeseran bidang
+Cavo di ritardo λ/4	Kabel tunda λ/4
+Includi relè e cavi reali	Sertakan relai dan kabel nyata
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Menambahkan rugi kabel tunda (VF 0.66, 10 dB/100 m pada 144 MHz, diskalakan dengan akar kuadrat frekuensi) dan 0.1 dB untuk relai.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	nilai tipikal kabel 75 ohm dan relai koaksial; program tidak mengetahui milik Anda.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Jaringan fase yang sama juga bekerja untuk turnstile (dipol bersilang 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Tampak depan
+Componenti co-polare / cross-polare	Komponen ko-polar / silang-polar
+Rapporto assiale e ROS in frequenza	Rasio aksial dan SWR terhadap frekuensi
+piano A	bidang A
+piano B	bidang B
+vista dal davanti — boom al centro	tampak depan — boom di tengah
+piani sfalsati di λ/4 lungo il boom	bidang digeser λ/4 sepanjang boom
+Yagi incrociate: serve una Yagi con una sola sorgente	Yagi silang: perlu Yagi dengan satu sumber
+Yagi incrociate: calcolo in corso...	Yagi silang: menghitung...
+Rapporto assiale in asse	Rasio aksial pada sumbu
+Rapporto assiale a −3 dB	Rasio aksial pada −3 dB
+Isolamento tra i due piani	Isolasi antara kedua bidang
+Fase della rete sul piano B	Fase jaringan pada bidang B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Bidang yang ortogonal dan simetris sempurna: dalam model kopling dan polarisasi berlawanan hampir nol. Pada kenyataannya klem, kabel, dan sedikit asimetri membatasinya sekitar 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	dari 1.8 MHz sampai 1296 MHz: daftar balun berubah sesuai pita
+LINEA DI DISCESA	SALURAN PENGUMPAN
+Coassiale	Koaksial
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Dengan saluran terbuka seimbang tidak ada pelindung: mode bersama hanya berasal dari ketidakseimbangan. Kartu menghitung kasus koaksial; untuk saluran terbuka gunakan Saluran (TL) dengan tuner.
+Lungo il boom	Sepanjang boom
+m → palo	m → tiang
+Discesa sul palo	Turun sepanjang tiang
+Fino alla stazione	Ke stasiun
+Calza a massa sul palo / traliccio	Pelindung dibumikan di tiang / menara
+Messa a terra all'ingresso stazione	Pembumian di pintu masuk stasiun
+BALUN DA CONFRONTARE	BALUN YANG DIBANDINGKAN
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 lilitan RG-213 pada 110 mm: induktansi menurut Wheeler, kapasitansi diri menurut Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 dan perkiraan kapasitansi diri: impedansi nyata choke harus diukur.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	Toroid ferit 1:1 sebagai RLC paralel dengan Q rendah.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm di puncak (10 MHz dengan campuran 31, 25 MHz dengan campuran 43): nilai tipikal 12 lilitan pada 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksial λ/2 4:1: pengumpanan seimbang, pelindung disatukan.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	sisa mode bersama sebagai resonansi 600 ohm pada f0 (Q 3): bergantung pada pemasangan.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	selongsong λ/4: saluran λ/4 terhubung singkat antara pelindung dan selongsong, impedansi tinggi pada f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 selongsong 50 ohm dan rugi 0.08 dB pada seperempat gelombang.
+10 perline in ferrite sulla calza.	10 manik ferit pada pelindung.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm per manik pada 144 MHz (campuran 61), 100 ohm di atas 30 MHz dengan campuran 43: nilai katalog tipikal.
+Caso mostrato	Kasus yang ditampilkan
+premi Calcola il confronto	tekan Hitung perbandingan
+Corrente lungo la calza, dal dipolo verso il basso	Arus sepanjang pelindung, dari dipol ke bawah
+Vista laterale: corrente sulla calza	Tampak samping: arus pada pelindung
+F/R medio	F/R rata-rata
+Z / ROS	Z / SWR
+Perdita nel balun	Rugi pada balun
+Potenza dissipata nel balun a 1 kW	Daya yang terbuang di balun pada 1 kW
+Banda con calza < 5 %	Pita dengan arus pelindung < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Butir abu-abu adalah balun untuk pita lain; aktif saat frekuensi dipilih. Di HF pelindung sampai ke stasiun juga dihitung (dibumikan), di VHF/UHF bagian pada boom dan tiang. Pelindung adalah kawat yang terhubung ke satu sisi titik umpan, seperti kenyataannya tanpa balun; balun adalah impedansi mode bersama di bagian pertama.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Fiberglas tidak menghantar: rangka tidak masuk ke NEC, hanya pelindung saluran fase yang tersisa.
+Includi palo sotto il telaio	Sertakan tiang di bawah rangka
+Cavi di fase lungo i montanti	Saluran fase sepanjang tiang tegak
+Rotore e controventi	Rotator dan tali penahan
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Direncanakan: rotator dan tali penahan sebagai kawat (perlu ukuran menara).
+Materiale	Bahan
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	merah = bagian rangka yang dimodelkan sebagai kawat NEC · putus-putus = pelindung saluran fase
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Polarisasi horizontal: tiang tegak vertikal terkopel lemah; palang horizontal dan saluran fase tidak.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Polarisasi vertikal: tiang tegak dan tiang sejajar dengan elemen dan lebih berpengaruh; palang horizontal sedikit.
+Confronto senza / con telaio	Perbandingan tanpa / dengan rangka
+Diagramma orizzontale sovrapposto	Pola horizontal ditumpangkan
+premi Calcola confronto	tekan Hitung perbandingan
+Stack: calcola prima il modello	Tumpukan: hitung model terlebih dahulu
+Stack: calcolo senza e con telaio...	Tumpukan: menghitung tanpa dan dengan rangka...
+Pezzo	Bagian
+Collegato	Terhubung
+Cavi	Kabel
+Senza telaio	Tanpa rangka
+Con telaio	Dengan rangka
+Z ingresso divisore	Z masukan pembagi
+senza telaio	tanpa rangka
+con telaio	dengan rangka
+Stack: confronto senza / con telaio fatto	Tumpukan: perbandingan tanpa / dengan rangka selesai
+CARICHI HF	BEBAN HF
+INSERISCI NEL MODELLO	SISIPKAN KE MODEL
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Topi ditempatkan di ujung kawat (b atau e), linear loading pada titik kawat yang dipilih.
+Inserisci nel modello	Sisipkan ke model
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Sudah disetujui dalam sketsa Beban: Q dari L dan C, f0, Z per pita, tegangan dan arus pada komponen. Di sini ditambahkan jenis konstruksi.
+Trappola coassiale	Perangkap koaksial
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	konduktor tengah disolder ke awal lilitan tengah (membalik ujung menurunkan resonansi sekitar 50 kHz).
+Calcola spire per f0	Hitung lilitan untuk f0
+Spire dell'avvolgimento (anche frazionarie).	Lilitan gulungan (juga pecahan).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	f0 nyata berbeda beberapa persen: ukur dengan dip-meter atau VNA dan koreksi lilitannya.
+Blocca	Memblokir
+dipolo con	dipol dengan
+Filo Ø	Kawat Ø
+Calcola C per f0	Hitung C untuk f0
+mm  Filo Ø	mm  Kawat Ø
+mm  Passo	mm  Jarak lilitan
+mm  Spire	mm  Lilitan
+MHz  dal centro	MHz  dari tengah
+m  Braccio	m  Lengan
+m  Filo dell'elemento Ø	m  Kawat elemen Ø
+Calcola spire per la risonanza	Hitung lilitan untuk resonansi
+Piega	Lipatan
+m  Distanza tra i fili	m  Jarak antar kawat
+Calcola la piega per la risonanza	Hitung lipatan untuk resonansi
+Raggi	Jari-jari
+m  Filo Ø	m  Kawat Ø
+Verticale alto	Tinggi vertikal
+m  Frequenza	m  Frekuensi
+MHz  Filo Ø	MHz  Kawat Ø
+Calcola i raggi per la risonanza	Hitung jari-jari untuk resonansi
+L misurata	L terukur
+MHz  Autorisonanza f0	MHz  Resonansi diri f0
+Cappello capacitivo in punta al verticale	Topi kapasitif di puncak vertikal
+Bobina dalle misure	Kumparan dari ukuran
+Reattanza del cappello in frequenza	Reaktansi topi terhadap frekuensi
+impedenza della trappola	impedansi perangkap
+Si comporta da	Berperilaku seperti
+Potenza persa	Daya yang hilang
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Daya pemancar untuk tegangan dan rugi pada tabel.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	pita rendah: arus di perut gelombang sqrt(P/73) dan di perangkap I0 cos(beta a); pita terblokir: tegangan di ujung dipol dalam I0 Z0 terbagi antara perangkap dan radiasi.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	arus di perut gelombang sqrt(P/73) dan di beban I0 cos(beta a), dengan a jarak dari tengah.
+Risonanza propria f0	Resonansi diri f0
+Q ideale	Q ideal
+Q della trappola alla risonanza.	Q perangkap saat resonansi.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	ditambah rugi dielektrik (tangen 3e-4 PE, 2e-4 PTFE). Perangkap koaksial yang diukur biasanya memiliki Q antara 100 dan 300.
+Lunghezza di cavo	Panjang kabel
++ 10 cm per le saldature	+ 10 cm untuk solderan
+R in parallelo equivalente	R paralel ekuivalen
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: inilah beban LD yang masuk ke model
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Lengan dipol pada pita rendah dengan perangkap, dibandingkan dengan lengan ukuran penuh (71.3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC dengan perangkap sebagai beban memberikan panjang yang benar.
+Induttanza misurata	Induktansi terukur
+dalla misura	dari pengukuran
+Autorisonanza	Resonansi diri
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frekuensi tempat kumparan beresonansi sendiri dengan kapasitansi dirinya.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	kapasitansi diri dari tabel Medhurst menurut panjang / diameter, berlaku untuk kumparan satu lapis jauh dari massa logam.
+Q della bobina alla frequenza di lavoro.	Q kumparan pada frekuensi kerja.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	resistansi kawat akibat efek kulit dikali faktor kedekatan 1 + 2 (d/p)^2 (d kawat, p jarak lilitan): Medhurst memberi nilai serupa untuk kumparan dengan panjang mendekati diameternya.
+Reattanza della piega	Reaktansi lipatan
+Z0 della linea	Z0 saluran
+Q della piega	Q lipatan
+Capacita' del cappello	Kapasitansi topi
+Capacita' del cappello verso lo spazio.	Kapasitansi topi terhadap ruang.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	jumlah jari-jari (kawat tipis, 2 pi eps0 l / (ln(2l/a) - 1)) dan cincin yang jenuh menuju cakram penuh (8 eps0 r): jari-jari saling menaungi. Jika disisipkan sebagai kawat, NEC menghitungnya dengan tepat.
+in punta al verticale	di puncak vertikal
+Altezza per la risonanza	Tinggi untuk resonansi
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	Pengaruh pada vertikal
+Carichi HF: apri un modello nella finestra principale.	Beban HF: buka model di jendela utama.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading dan topi kapasitif disisipkan sebagai kawat: untuk yang lain pilih «Sebagai beban».
+Il cappello capacitivo si inserisce come fili.	Topi kapasitif disisipkan sebagai kawat.
+RLC parallelo	RLC paralel
+Effetto sul dipolo	Pengaruh pada dipol
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Pemendekan lengan dibanding seperempat gelombang penuh (71.3 / f) dengan beban di titik itu.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	model saluran lengan berbeban X = Z0 (cot(beta b) - tan(beta a)), x 0.95 untuk efek ujung.
+Esegui il test	Jalankan uji
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Gain dapat ditampilkan dengan koreksi AGT (sudah direncanakan di pengoptimal).
+Controllo prima/dopo il calcolo	Pemeriksaan sebelum/sesudah perhitungan
+Esito	Hasil
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Satu atau lebih pemeriksaan di luar ±0.2 dB: tinjau segmentasi (Struktur 3D > Segmentasi... dan Periksa segmentasi).
+Tutti i controlli entro ±0,2 dB.	Semua pemeriksaan dalam ±0.2 dB.
+Linea a finestra 450	Saluran jendela 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Tekan Hitung: NEC menghitung impedansi model terbuka pada setiap frekuensi.
+Perdita nella linea	Rugi saluran
+Perdita totale	Rugi total
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Jenis tuner antara saluran dan pemancar (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	rugi diperkirakan dari Q berbeban jaringan (Qn = sqrt(Rmax/Rmin - 1), dua seksi untuk T dan Pi) dan Q kumparan; TLW dari N6BV menghitung komponen satu per satu dan bisa berbeda beberapa persepuluh dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Contoh: doublet 2 × 20 m (ZS6BKW/G5RV). Peringatan bila tuner melihat kurang dari 20 Ω: rugi tinggi, disarankan memperpanjang atau memperpendek saluran. Saluran berugi seperti di TLW (N6BV, ARRL).
+USA costa est	Pantai timur AS
+USA costa ovest	Pantai barat AS
+Giappone	Jepang
+Caraibi	Karibia
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: layanan tidak mengembalikan GeoTIFF
+GeoTIFF compresso: non supportato	GeoTIFF terkompresi: tidak didukung
+GeoTIFF: tipo di dato non supportato	GeoTIFF: jenis data tidak didukung
+Il file non contiene coppie distanza / quota.	Berkas tidak berisi pasangan jarak / tinggi.
+Nessuno	Tidak ada
+Ferriti a perline	Manik ferit
+Cavo e balun: segmento della sorgente non trovato.	Kabel dan balun: segmen sumber tidak ditemukan.
+solo palo	hanya tiang
+Acciaio zincato	Baja galvanis
+Alluminio	Aluminium
+Vetroresina	Fiberglas
+Montante sx/dx	Tiang tegak kiri/kanan
+al boom	ke arah boom
+Traversa	Palang
+Palo	Tiang
+al dipolo	ke arah dipol
+N, femmina	N, betina
+senza connettori	tanpa konektor
+rurale tranquillo	pedesaan tenang
+Verticale λ/4	vertikal λ/4
+λ/8 di lato	λ/8 per sisi
+0,37 λ di diametro	diameter 0.37 λ
+Cappello capacitivo	Topi kapasitif
+W8NX bassa impedenza	W8NX impedansi rendah
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	kabel tebal dengan dielektrik PTFE (RG-393) atau perangkap LC dengan kapasitor tegangan tinggi
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Lipatan lebih panjang dari lambda/8: saluran tidak lagi berperilaku seperti induktansi konstan, periksa resonansi dengan NEC dengan menyisipkannya sebagai kawat.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Kapasitansi topi adalah perkiraan (jari-jari saling menaungi): untuk nilai tepat sisipkan sebagai kawat dan hitung dengan NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Posisi beban melewati seperempat gelombang: dekatkan ke tengah.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	topi ditempatkan di ujung kawat: pilih segmen pertama (b) atau terakhir (e).
+il punto scelto e' troppo vicino all'estremo del filo.	titik yang dipilih terlalu dekat ke ujung kawat.
+questo tipo entra nel modello come carico.	jenis ini masuk ke model sebagai beban.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	Beban HF: kawat yang ditambahkan kalkulator YA-NEC
+Il file Touchstone non contiene punti di S11.	Berkas Touchstone tidak berisi titik S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV tidak berisi baris frekuensi, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT di ruang bebas, tanpa rugi
+IMPOSTAZIONI	PENGATURAN
+Schiera Hi-Z di verticali corte	Kelompok Hi-Z vertikal pendek
+Base del loop	Dasar loop
+Distanza, lato o diametro	Jarak, sisi, atau diameter
+Altezza delle verticali	Tinggi vertikal
+Base del loop dal suolo	Dasar loop di atas tanah
+Fase tra le file	Fase antar baris
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Dipol horizontal rendah: kurang dari lambda/4 dari tanah lobus mengarah ke atas. Ini acuan «sudut tinggi» dalam peringkat IV3PRK (RDF 7.3 dB): dibandingkan dengan antena penerima sudut rendah.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY karya Gary Breed K9AY (QST, September 1997): dua loop vertikal bersudut 90 derajat pada tiang yang sama, resistor terminasi (tipikal 390 ohm, disetel untuk F/B), transformator 9:1. Di sini satu loop, diputar ke arah yang dipilih, ditutup di atas tanah seperti pada halaman Penerimaan (RDF). Hi-Z: RDF 7.2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square penerima: empat vertikal aktif pendek di sudut persegi lambda/8, memancar sepanjang diagonal. Fase kosong = nol belakang tepat (pi + beta d antar baris): memberikan direktivitas teoretis tertinggi; jaringan fase nyata (ON4UN, IV3PRK) memakai fase lain dan memberikan RDF lebih rendah (IV3PRK 9.4 dB). Tombol mencari fase dengan RDF terbaik.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Kelompok vertikal aktif pendek seperti milik Hi-Z Antennas: 2 elemen end-fire (kardioid, lambda/8), 3 dalam segitiga (sisi lambda/6, satu sudut ke arah yang dipilih), 8 dalam lingkaran (diameter 0.37 lambda: dipakai empat ke arah tujuan dan yang berseberangan). Hi-Z: 8 dalam lingkaran RDF 13.4 dB dengan penggabungnya; model sederhana dua baris tetap lebih rendah. Tombol mencari fase dengan RDF terbaik.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikal berawal dari tanah nyata (GE 1 dengan tanah Sommerfeld): dengan NEC-2 kawat yang terhubung ke tanah nyata memberikan impedansi yang bergantung pada segmen sumber (panduan NEC-2, EZNEC). Pola dan RDF bersifat indikatif; sambungan dengan radial terangkat direncanakan untuk semua antena penerima.
+fase tra le file da 120 a 300 gradi per l'RDF	fase antar baris dari 120 sampai 300 derajat untuk RDF
+nessuna fase con il lobo in avanti	tidak ada fase dengan lobus ke depan
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fase antar baris untuk RDF terbaik: {0} derajat (RDF {1} dB). Menghitung ulang...
+linea d'orizzonte	garis cakrawala
+scala angolare	skala sudut
+lobo reale sopra il piatto fino a	lobus nyata di atas medan datar sampai
+Profilo verso	Profil ke arah
+Lobo verticale e angoli di arrivo a	Lobus vertikal dan sudut kedatangan pada
+Cos'e' l'RDF	Apa itu RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = gain pada arah yang diinginkan - gain rata-rata ke semua arah (W8JI; dulu disebut SNIF, pada tahun 60-an). Mengukur seberapa besar antena memperbaiki rasio sinyal/derau jika derau datang merata dari semua arah; gain absolut tidak dihitung (praamplifier menutupinya). Dirata-ratakan seperti di EZNEC: belahan bola atas dibagi seluruh bola (4 pi). Dengan konvensi ini hasilnya sesuai dengan IV3PRK dan W8JI/Hi-Z (vertikal 5.07 vs 5.06 dan 4.9; Beverage 350 m 13.5 vs 13.66). Batasan: derau nyata tidak merata (jaringan listrik, QRM lokal): karena itu F/B dan bentuk lobus juga penting. Untuk antena pemancar RDF tidak bermakna: karena itu hanya dihitung di tab ini. DMF (Directivity Merit Figure, ON4UN): gain pada elevasi 20 derajat ke depan dikurangi gain rata-rata setengah ruang belakang (azimut lebih dari 90 derajat, di atas tanah, dibobot kosinus menurut luas): menunjukkan seberapa besar antena menolak derau dari belakang. ON4UN memperingatkan agar DMF dan RDF tidak saling dibandingkan. Sumber: W8JI dan W8WWV (RDF), ON4UN Low-Band DXing bab 7 (DMF, tabel 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevasi
+azimut	azimut
+azimut a {0}°	azimut pada {0}°
+totale	total
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Bukaan sampai nol pertama (FNBW): {0}°;  lobus samping tertinggi: {1}
+Didascalie {0} %	Label {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB vs {1} dari sumber: periksa ukuran, terminasi, dan tanah (sumber mungkin memakai tanah atau geometri lain).
+Azimut a {0}° · {1} MHz	Azimut pada {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimut pada elevasi {0}°
+RUMORE	DERAU
+Apri la scheda {0}	Buka kartu {0}
+caso mostrato: {0}	kasus yang ditampilkan: {0}
+Rastremazioni	Teleskopik
+BANDA	PITA
+λ/2 coassiale 4:1	koaksial λ/2 4:1
+Manicotto λ/4	selongsong λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Pelindung kabel dan tiang sebagai kawat NEC; perbandingan balun (arus mode bersama, F/B, F/R rata-rata, rugi, daya pada 1 kW) dari 1.8 sampai 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Tiang tegak, palang, tiang, dan pelindung saluran fase sebagai kawat NEC: perbandingan tanpa / dengan rangka (gain, F/B, F/R rata-rata, lobus, Z pembagi, Tant dan G/T).
+TIPO	JENIS
+DATI	DATA
+TELAIO	RANGKA
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 dalam pipa persegi atau bulat, dalam kabel, Wilkinson; saluran fase, kemiringan; gambar 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X atau +, bidang digeser λ/4; H, V, RHCP, LHCP, X-pol; rasio aksial dan isolasi
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Panjang sama → fase sama. Kelipatan λ/2 → impedansi aktif berulang di pembagi. Toleransi yang disarankan ± 5 mm (= ± {0}° fase).
+impedenze attive delle {0} antenne dello stack in parallelo	impedansi aktif dari {0} antena tumpukan secara paralel
+Banda con ROS < {0}	Pita dengan SWR < {0}
+? Manuale	? Panduan
+Apre la spiegazione nel manuale	Membuka penjelasan di panduan
+riferimento	acuan
+Rispetto alla singola antenna	Relatif terhadap antena tunggal
+{0} antenne ideali	{0} antena ideal
+x la distanza DL6WU, a passi di	x jarak DL6WU, dengan langkah
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Sumbu kiri: G tumpukan - G antena tunggal, dari 0 ke atas. Sumbu kanan: F/R tumpukan - F/R antena tunggal, dibalik, dengan 0 di atas: di mana tumpukan memperbaiki F/R kurva turun, dan titik terendah adalah perbaikan terbesar. G/T tetap di tabel.
+ΔG sulla singola	ΔG di atas antena tunggal
+Chiusura del programma	Menutup program
+Vuoi chiudere YA-NEC?	Tutup YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Terima kasih telah menggunakan saya: semoga saya bermanfaat.
+Sì	Ya
+ROS attivo	SWR aktif
+G realizzato	G terealisasi
+ROS attivo massimo	SWR aktif maksimum
+riflessi minimi	pantulan minimum
+ROS attivo alto: da non scegliere	SWR aktif tinggi: jangan dipilih
+Documenti tecnici	Dokumen teknis
+Manuale d'uso	Panduan penggunaan
+Manuale di calcolo e delle fonti	Panduan perhitungan dan sumber
+Citazioni	Kutipan
+Cerca in tutti i documenti	Cari di semua dokumen
+Apri il PDF	Buka PDF
+Nessun risultato per «{0}»	Tidak ada hasil untuk «{0}»
+Primi {0} risultati per «{1}»	{0} hasil pertama untuk «{1}»
+{0} risultati per «{1}»	{0} hasil untuk «{1}»
+Apre la citazione {0}	Membuka kutipan {0}
+Manuale di calcolo	Panduan perhitungan
+È pronta la versione {0} di YA-NEC	YA-NEC versi {0} sudah siap
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Sudah diunduh dan dipasang: berlaku saat program dimulai ulang.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Di Mac tidak terpasang sendiri: unduh .dmg baru dari halaman rilis di GitHub.
+Riavvia adesso	Mulai ulang sekarang
+Più tardi	Nanti
+Apri la pagina delle versioni	Buka halaman rilis
+Aggiornamento di YA-NEC	Pembaruan YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Sudah diunduh dan dipasang. Program memulai ulang sendiri dan membuka kembali model yang terbuka.
+Riavvio tra {0} s	Mulai ulang dalam {0} dtk
+Questo avviso si chiude tra {0} s	Pemberitahuan ini tertutup dalam {0} dtk
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Setelah pembaruan model yang belum disimpan dibuka kembali: simpan kapan saja (salinan di data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Setelah pembaruan model yang tadi terbuka dibuka kembali.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Setiap kotak memiliki bantuan dengan penjelasan dan sumber. Abu-abu: dicentang = selalu aktif (tidak bisa dimatikan); tidak dicentang = belum tersedia; pilihan dengan tombol = pilihan tetap. Panduan, bab 21.
+"): sorgente sempre accesa.	"): sumber selalu aktif.
+' non da' un numero valido.	' bukan angka yang valid.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik apa adanya
+0 - misure del metodo	0 - ukuran metode
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = pandu gelombang WR standar pita (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = parabola yang sama di ujung lain (gema sendiri).
+0 = stesso disco all'altro capo.	0 = parabola yang sama di ujung lain.
+0 gradi a destra	0 derajat ke kanan
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = sepertiga dari ujung: impedansi 200-300 ohm, balun 4:1
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: jauh dari tepi, tempat lenturan akan mengeluarkan pengumpan dari fokus.
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 polietilena pejal (RG-58, RG-213), 0.8-0.85 dielektrik busa.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 polietilena pejal, 0.8-0.85 busa, 0.9-0.97 saluran terbuka.
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 lambda terpandu
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - loop yang diumpan
+1 - radiatore	1 - radiator
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = satu lilitan (seperti sebelumnya). Dengan lebih banyak lilitan Rr bertambah dengan N², rugi efek kulit dengan N.
+1 cavo	1 kabel
+1-2-3 elementi	1-2-3 elemen
+1. Obiettivi e pesi	1. Target dan bobot
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Angin, penyeimbangan, pembagi, balun, Yagi silang
+1.3 - Antenne riceventi abilitate	1.3 - Antena penerima diaktifkan
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz dengan parabola besar: selain permukaan dan pengarahan, deformasi termal dan angin ikut berpengaruh (ATA: 0.7 mm RMS malam hari, 3 mm siang hari di bawah matahari), lenturan penyangga, dan sebaran akibat librasi.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: cetak 100 %, tanpa «sesuaikan dengan halaman»
+1005/f piedi	1005/f kaki
+144 isol.	144 isol.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektor
+2 in parallelo	2 paralel
+2 lati	2 sisi
+2. Variabili che l'ottimizzatore puo' cambiare	2. Variabel yang boleh diubah pengoptimal
+200 Ω con balun 4:1	200 Ω dengan balun 4:1
+25 tondo	25 bulat
+3 - direttori	3 - direktor
+3 gruppi	3 kelompok
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 atau 4. Dengan 2 tidak ada kekakuan di luar bidangnya.
+3. Registro dei passi - clic su una riga per riprenderla	3. Log langkah - klik baris untuk memulihkannya
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω atau balun 4:1
+36 Ω + terra	36 Ω + arde
+4 - tutto insieme	4 - semuanya
+4 lati	4 sisi
+4 sorgenti: vedi tabella	4 sumber: lihat tabel
+432 isol.	432 isol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 pemeriksaan data disetujui IC8TEM pada 15/11/2026: ambang dan penjelasan di panduan, bab 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 kaki sekitar 18 dBi, 12 kaki sekitar 20.5 dBi
+75 ohm ideale	75 ohm ideal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 kali lebih panjang dari jari-jari. Dengan kawat tebal atau segmen pendek (pipa tebal di UHF, elemen berdekatan,\n
+9 fili	9 kawat
+9 fili a 0,1 λ	9 kawat pada 0.1 λ
+Accorciamento del pilotato	Pemendekan elemen yang diumpan
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Pemendekan di atas 8 %: perkiraan linear tidak andal, periksa dengan NEC.
+Allega il modello aperto	Lampirkan model yang terbuka
+Allega il registro di oggi	Lampirkan log hari ini
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Tinggi RMS gelombang dan tinggi antena di atas laut, di Pola > Medan nyata.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Lebar sweep di sekitar frekuensi, untuk grafik impedansi.
+Antenna a	Antena pada
+Applica la freccia al modello NEC	Terapkan lendutan ke model NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	Disetujui, dalam persiapan: belum aktif di versi ini.
+Apri la cartella	Buka folder
+Apri un modello nella finestra principale	Buka model di jendela utama
+Apro il modello e il diagramma 3D resta vuoto.	Saya membuka model dan tampilan 3D tetap kosong.
+Area al vento dell'antenna	Luas angin antena
+Area al vento totale	Luas angin total
+Area al vento totale e lista di taglio	Luas angin total dan daftar potong
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Perhatian: jangan dipakai dengan kawat yang bertemu bersudut atau berdiameter berbeda pada sambungan.\n
+Bobina di carico per la risonanza	Kumparan pembeban untuk resonansi
+Boom con il tirante	Boom dengan penarik
+C1 in serie con la loop	C1 seri dengan loop
+C1 serie, C2 parallelo	C1 seri, C2 paralel
+C2 in parallelo all'ingresso	C2 paralel dengan masukan
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Kalkulator > Antena penerima: dipol rendah, K9AY, 4-square RX, Hi-Z 2/3/8 elemen, dengan fase antar baris dioptimalkan untuk RDF dan peringatan tentang sambungan ke tanah.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Perhitungan mekanis (Angin dan Penyeimbangan), Kalkulator > Pembagi dan Yagi silang, Objek > Kabel dan balun serta rangka tumpukan, Beban HF.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Pradimensi: untuk pemasangan berlaku rancangan teknisi berwenang.
+Candidati da controllare	Kandidat untuk diperiksa
+Categoria	Kategori
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Kategori paparan lokasi (NTC 2018, tabel 3.3.II dan gbr. 3.3.2): bergantung pada kelas kekasaran medan (A pusat kota ... D area tanpa rintangan, laut) dan jarak dari pantai. I = pantai terbuka atau laut, V = pusat kota.
+Cebik, poi NEC	Cebik, lalu NEC
+Centro della banda scelta:\n	Tengah pita yang dipilih:\n
+Con ghiaccio	Dengan es
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Dengan es: angin dikurangi menjadi 0.6 kali dan es radial dari kotak di kanan (kombinasi sederhana ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Dengan benih yang sama uji berulang identik.
+Condizione della sorgente non capita ("	Kondisi sumber tidak dipahami ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Segera memeriksa GitHub tanpa menunggu 3 menit. Jika ada versi baru, mengunduhnya, memberi tahu, dan memulai ulang seperti pembaruan otomatis (10 detik, model dibuka kembali). Bekerja juga saat pembaruan otomatis dimatikan.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Selalu diperiksa oleh pemeriksaan segmentasi dan di Peringatan (8 dengan kernel normal, 2 dengan kernel diperluas).
+Copie per candidato	Salinan per kandidat
+Coppia sulla staffa boom-mast	Torsi pada klem boom-tiang
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Membuat zip di data/segnalazioni dan membuka halaman «New issue» GitHub dengan teks sudah tertulis. Zip Anda lampirkan sendiri, secara manual: program tidak mengirim apa pun sendiri.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Kelengkungan Bumi, di Pola > Medan nyata.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diameter di luar rentang rumus Cebik (dari 1E-6 sampai 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Jarak dan jenis tanah kedua: disetujui untuk 1.5 (Medan nyata 2).
+Distanze di stack HF	Jarak tumpukan HF
+Distanze di stack: accoppiamento e distanza migliore	Jarak tumpukan: kopling dan jarak terbaik
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Setelah optimasi, hasil terbaik masuk ke pemeriksaan dengan toleransi. 0 = tanpa pemeriksaan.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Ujung yang sangat rendah: hati-hati terhadap orang dan hewan (tegangan tinggi di ujung).
+F/B peggiore	F/B terburuk
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	Berkas .weq: saluran dengan TLParms dari AutoEZ (kabel berugi) memakai Zo dan VF nominal tanpa rugi: kartu TL NEC tanpa rugi.
+Filo riflettore	Kawat reflektor
+Filo ripiegato	Kawat terlipat
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Hairpin panjang (lebih dari 0.2 lambda): lebih baik kurangi jaraknya atau gunakan konduktor lebih tebal.
+Forza del vento di progetto	Gaya angin rencana
+Forza l'aggiornamento	Paksa pembaruan
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Lendutan tali busur: seberapa jauh jaring bagian lurus berada di bawah paraboloid di tengah bentang (masuk ke faset). Massa total sabuk {4:0.00} kg{5}.
+Freccia tolta dal modello.	Lendutan dihapus dari model.
+Ghiaccio radiale	Es radial
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Berkas MMANA selalu disegmentasi ulang untuk NEC-2 (panduan, bab 10).
+I lobi si leggono nella tabella delle distanze di stack.	Lobus dibaca di tabel jarak tumpukan.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (membulatkan), FIX (memotong), MOD, MAX, MIN, ODD (bilangan bulat ganjil: berguna untuk segmen kawat yang diumpan).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	NEC2 normal memperlakukan setiap kawat sebagai garis tipis: ini berlaku selama segmen setidaknya\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Satu kawat reflektor memberi perbaikan sangat kecil (Cebik): lebih baik layar atau 9 kawat.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Tiang melampaui batas luluh: tiang lebih tebal atau juluran lebih pendek.
+Impedenza del cavo	Impedansi kabel
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Dalam bentuk lain: pemeriksaan r5 pada Pemeriksaan data menandai gain di atas batas fisik untuk panjang boom.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktansi dengan N² (lilitan rapat) dan model NEC satu lilitan: di sini NEC hanya memeriksa geometri lilitan tunggal itu.
+Interasse della forcina	Jarak hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	Pulau-pulau (kecuali Sisilia dan Sardinia) dan laut lepas
+Kernel esteso del NEC2 (scheda EK).\n	Kernel NEC2 diperluas (kartu EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Jarak hairpin harus lebih besar dari diameter konduktor.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim menutup radiator di atas dengan kawat yang dilipat ke bawah, sampai tepat di atas stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Ini dilakukan oleh jendela Pemeriksaan segmentasi (tombol di atas).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin simetris: tidak membelokkan pola seperti gamma. Balun atau choke di titik umpan tetap diperlukan.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin hanya bekerja bila R elemen yang diumpan lebih rendah dari impedansi kabel: untuk R lebih besar gunakan gamma atau transformator.
+La prepara IC8TEM: non ancora attiva.	IC8TEM sedang menyiapkannya: belum aktif.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Enam aturan Geometry Check EZNEC, di setiap perhitungan, di tab Peringatan.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: tanpa koreksi Z = {0:0.0} {1}j{2:0.0} ohm (dengan koreksi {3:0.0} {4}j{5:0.0} ohm).
+Località	Lokasi
+Loop orizzontale di 1 λ	Loop horizontal 1 λ
+Lunghezza del pilotato	Panjang elemen yang diumpan
+Lunghezza della forcina	Panjang hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Memasukkan model yang terbuka (.nec) ke zip, meskipun belum disimpan.
+Mette nello zip il registro di oggi della cartella registri.	Memasukkan log hari ini dari folder logs ke zip.
+Momenti al mast	Momen pada tiang
+Momento al cuscinetto	Momen pada bantalan
+NEC: risonanza cercata dal motore	NEC: resonansi dicari oleh mesin
+NOTE SU QUESTA VERSIONE (fase 0)\n	CATATAN VERSI INI (fase 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	BARU · di atas tanah: ketinggian, jarak, sudut pancar yang diinginkan
+Nel modello non ci sono elementi orizzontali diritti	Model tidak memiliki elemen horizontal lurus
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Di tabel tumpukan dan di Objek model (rangka tumpukan, pembagi).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Di kartu geometri tulis ekspresi tanpa spasi, misalnya:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Tidak ada jarak yang diusulkan
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Tidak ada jarak yang diusulkan: semuanya melebihi SWR aktif maksimum.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Tanpa alamat IP, tanpa e-mail, tanpa nama pengguna di berkas: jalur folder rumah menjadi «~». Tanpa akun GitHub Anda bisa mengirim zip sesuka Anda.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Belum otomatis: dilakukan secara manual dengan uji AGT di Peringatan (ARRL ed. 24, 4nec2).
+Numero di spire	Jumlah lilitan
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Setiap salinan memiliki ukuran yang digeser acak dalam toleransi tab Toleransi (bawaan: panjang ±1 mm, posisi ±2 mm, diameter ±0.1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Selain model terbuka, titik awal dipilih acak antara minimum dan maksimum tiap variabel. 0 = seperti sebelumnya.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Halaman Derau langit nyata pada tab Derau/GT/Tumpukan: perhitungan skynoise yang dipindahkan ke C# (membaca peta HEALPix, interpolasi, waktu sideris, koordinat, Bulan) dan dua peta G8ONH di data/cielo.
+Partenze a caso	Titik awal acak
+Perimetro Cebik	Keliling Cebik
+Peso del boom	Berat boom
+Pi-greco	Jaringan Pi
+Prepara la segnalazione	Siapkan laporan
+Proposta	Usulan
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	uji nec2c pada 145 MHz (pipa 12 mm berjarak 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Kapan diperlukan: rasio segmen/jari-jari kira-kira antara 2 dan 8 (di bawah 2 tidak ada yang andal).\n
+Quota s.l.m.	Ketinggian dpl
+R del pilotato	R elemen yang diumpan
+ROS attivo minimo {0}	SWR aktif minimum {0}
+Raggio equivalente dei due conduttori	Jari-jari ekuivalen dua konduktor
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Reaktansi elemen yang diumpan saat ini: jika positif, elemen yang diumpan harus diperpendek lagi.
+Reattanza della forcina	Reaktansi hairpin
+Reattanza voluta del pilotato	Reaktansi elemen yang diumpan yang diinginkan
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktansi: melewati kl = pi/2 (atau dengan konduktor terlalu tebal) rumus AEH tidak berlaku, gunakan NEC.
+Reinstalla la versione attuale	Pasang ulang versi saat ini
+Rel Z non positiva	Re Z tidak positif
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Resistansi elemen yang diumpan saat resonansi, dari model atau perhitungan NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Mulai ulang gagal: tutup dan buka kembali YA-NEC secara manual.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Mengunduh dan memasang ulang meskipun versinya sama: berguna bila berkas program rusak.
+Scansione	Pindai
+Scegli il candidato con	Pilih kandidat dengan
+Schermo	Layar
+Scrivi due frequenze diverse.	Tulis dua frekuensi yang berbeda.
+Segnala un problema	Laporkan masalah
+Seme del caso	Benih acak
+Serve solo per la reattanza (dipolo e monopolo).	Hanya diperlukan untuk reaktansi (dipol dan monopol).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Dipakai dengan 2 lilitan atau lebih: di bawah 2 diameter konduktor rugi nyata bertambah karena efek kedekatan (tidak dihitung).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Dipakai di Pola > Medan nyata: pantulan laut dengan faktor divergensi dan kekasaran.
+Sicilia e provincia di Reggio Calabria	Sisilia dan provinsi Reggio Calabria
+Sollecitazione	Tegangan
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Di atas 0.25 λ lobus mulai turun: kurang cocok untuk NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Di atas 30 MHz regresi Cebik dipakai di luar rentang yang ditawarkan di sini (kawat HF): Otomatis atau NEC lebih baik.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Di bawah 0.1 λ gain ke atas turun (Cebik): antena yang sangat rendah tidak mendapat apa-apa.
+Sotto l'antenna	Di bawah antena
+Spina (tubo o tondo) dentro il giunto telescopico.	Sumbat (pipa atau batang) di dalam sambungan teleskopik.
+Spina interna nei giunti	Sumbat dalam pada sambungan
+Stack con il ROS attivo piu' basso	Tumpukan dengan SWR aktif terendah
+Staffe e mast	Klem dan tiang
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Waktu: kira-kira (titik awal + 1) kali waktu sekarang, ditambah kandidat x salinan perhitungan.
+Tensione nel mast al cuscinetto	Tegangan pada tiang di bantalan
+Tiro del tirante	Tarikan penarik
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Pipa diambil dari tabel Taper: ukurannya sama dengan di model NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Semua jarak melebihi SWR aktif maksimum ({0}): tidak ada jarak yang diusulkan. Naikkan SWR aktif maksimum, coba impedansi acuan antena itu sendiri, atau setel antena tunggal. Matriks dan grafik berada pada jarak dengan SWR aktif terendah.
+V invertito	V terbalik
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), kopling, SWR aktif, jarak terbaik, dua frekuensi
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Kecepatan puncak di lokasi: vb sqrt(ce), dengan vb = vb,0 ca (NTC 2018, periode ulang 50 tahun) dan ce(z) dari kategori paparan pada ketinggian antena.
+Velocità	Kecepatan
+Velocità a mano	Kecepatan manual
+Vento di sopravvivenza	Angin bertahan
+Vento di sopravvivenza del boom	Angin bertahan boom
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Angin tegak lurus elemen yang membuat titik pertama mencapai batas luluh (termasuk berat sendiri dan es).
+X da aggiungere al pilotato	X yang ditambahkan ke elemen yang diumpan
+X del pilotato	X elemen yang diumpan
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Pemeriksaan akhir dilakukan mesin NEC pada model dengan hairpin.
+Z0 della forcina	Z0 hairpin
+Z0 della linea dei due conduttori	Z0 saluran dua konduktor
+Zona buona	Zona baik
+al centro	di tengah
+caso peggiore	kasus terburuk
+caso peggiore delle due	terburuk dari keduanya
+cerca...	cari...
+copie entro le soglie	salinan di dalam ambang
+corrente sinusoidale	arus sinusoidal
+distanza dal boom	jarak dari boom
+distanza dall'inizio del boom	jarak dari awal boom
+due condensatori sul lato basso	dua kapasitor di sisi bawah
+effetto: calcolo in corso…	efek: menghitung…
+forza del vento x sbalzo	gaya angin x juluran
+il caso peggiore migliore	kasus terburuk yang terbaik
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	dipol ekuivalen, lebih tebal, memiliki kurang dari 73 Ω
+il voto medio migliore	skor rata-rata terbaik
+induttiva, in parallelo	induktif, paralel
+la percentuale migliore di copie entro le soglie	persentase salinan terbaik di dalam ambang
+linea a due fili	saluran dua kawat
+m  mast a	m  tiang pada
+m dal suolo	m di atas tanah
+m sopra il boom, attacco al	m di atas boom, dipasang pada
+media delle due	rata-rata keduanya
+mm  lungo	mm  panjang
+mm, acciaio	mm, baja
+molto buono	sangat baik
+molto povero	sangat buruk
+nessun rinforzo	tanpa penguatan
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	tidak ada pipa komersial sampai +12 mm yang cukup: tinjau taper
+nessuna distanza sotto il ROS attivo massimo	tidak ada jarak di bawah SWR aktif maksimum
+partenza dal modello aperto	mulai dari model terbuka
+per lato, teso per annullare il momento verticale al mast	per sisi, ditegangkan untuk meniadakan momen vertikal pada tiang
+primo cedimento: tubo Ø	kegagalan pertama: pipa Ø
+regge il vento di progetto con il 20 % di margine	menahan angin rencana dengan margin 20 %
+riferimenti bibliografici	referensi pustaka
+sbalzo sopra il cuscinetto	juluran di atas bantalan
+schermo 1 λ x 1 λ	layar 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	segmen rapat) kernel diperluas memakai rumus yang lebih tepat dan hasilnya lebih andal.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	tanpa sumbat pipa dalam bertumpu pada tepi pipa luar dan faktor 1.25 diterapkan pada tegangan di 5 cm pertama: perkiraan, klem dan celah sangat mengubah hasil.
+sollecitazione / snervamento	tegangan / batas luluh
+tubo piu' grosso	pipa lebih tebal
+un filo riflettore	satu kawat reflektor
+zona di cedimento	zona kegagalan
+ø dei conduttori della forcina	ø konduktor hairpin
+ø del filo	ø kawat
+ø del pilotato	ø elemen yang diumpan
+accordata	tertala
+accordate	tertala
+alimentazione	pengumpan
+alluminio	aluminium
+allungata	diperpanjang
+altro	lainnya
+anello	loop
+angolo	sudut
+antiorario	berlawanan arah jarum jam
+aritmetico	aritmetika
+automatico	otomatis
+banda	pita
+bande	pita
+bordi	tepi
+buono	baik
+capacitiva	kapasitif
+carichi	beban
+carico	beban
+cartesiana	kartesius
+cavi	kabel
+cavo	kabel
+centimetri	sentimeter
+centina	rusuk
+cerchio	lingkaran
+condensatore	kapasitor
+corrente	arus
+destra	kanan
+diagramma	pola
+diametro	diameter
+differenza	selisih
+dipoli	dipol
+dipolo	dipol
+diretta	langsung
+diritto	lurus
+due	dua
+elementi	elemen
+elemento	elemen
+elimina	hapus
+equilatera	sama sisi
+esito	hasil
+esperimenti	eksperimen
+esponenziale	eksponensial
+fase	fase
+ferriti	ferit
+fili	kawat
+filo	kawat
+forcina	hairpin
+forma	bentuk
+formule	rumus
+frequenza	frekuensi
+geometria	geometri
+ghiaccio	es
+giudizio	penilaian
+gradi	derajat
+griglia	kisi
+guadagno	gain
+incrociata	bersilang
+larghezza	lebar
+lato	sisi
+lega	paduan
+libera	bebas
+libero	bebas
+linea	saluran
+lineare	linear
+linee	saluran
+lobi	lobus samping
+locale	lokal
+mai	tidak pernah
+manicotto	selongsong
+mano	manual
+meccanica	mekanika
+mezzaonda	setengah gelombang
+millimetri	milimeter
+misure	ukuran
+modello	model
+modo	mode
+nessuna	tidak ada
+nota	catatan
+nuovo	baru
+operativo	kerja
+orario	searah jarum jam
+ottagono	segi delapan
+palo	tiang
+parabola	parabola
+passo	jarak lilitan
+perdite	rugi
+perfetto	sempurna
+piano	bidang
+piatto	pipih
+piedi	kaki
+polare	polar
+pollici	inci
+propria	sendiri
+punto	titik
+quadrato	persegi
+quadro	persegi
+quota	ketinggian
+radiali	radial
+radiatore	radiator
+raggio	jari-jari
+rame	tembaga
+ramo	cabang
+rapidi	cepat
+rastremazioni	taper
+rete	jaringan
+rettangolo	persegi panjang
+riepilogo	ringkasan
+riflettore	reflektor
+riga	baris
+rombo	belah ketupat
+scarso	buruk
+scarto	simpangan
+schiacciata	dipipihkan
+sempre	selalu
+senso	arah
+si'	ya
+sinistra	kiri
+soglia	ambang
+sorgenti	sumber
+sotto	di bawah
+spire	lilitan
+staffe	klem
+stato	status
+sufficiente	cukup
+tetto	atap
+tipo	jenis
+tirante	penarik
+togli	hapus
+tondo	bulat
+traffico	lalu lintas
+trasformatori	transformator
+trombe	antena horn
+tubi	pipa
+tubo	pipa
+tutti	semua
+uguale	sama
+uguali	sama
+uso	gunakan
+a {0} x DL6WU; tutte sopra il massimo {1}	pada {0} x DL6WU; semua di atas maksimum {1}
+% del mezzo boom	% dari setengah boom
++ aggiungi	+ tambah
++ aggiungi variabile	+ tambah variabel
++ correzione del boom	+ koreksi boom
++ nuova	+ baru
++ trappola	+ perangkap
++ verso il disco.	+ ke arah parabola.
++90 gradi Z	+90 derajat Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetika: tepat di tengah antara batas IARU pita (misalnya 145.000 MHz di 2 m),\n
+- correzione del boom	- koreksi boom
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- kerja: frekuensi tempat Anda benar-benar bekerja (misalnya 144.300 MHz di 2 m, 432.200 di 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (hitam) 10-100 MHz
+-10 nero	-10 hitam
+-2 (rosso) 0,25-10 MHz	-2 (merah) 0.25-10 MHz
+-2 rosso	-2 merah
+-6 (giallo) 3-40 MHz	-6 (kuning) 3-40 MHz
+-6 giallo	-6 kuning
+-90 gradi Z	-90 derajat Z
+-> segmento NEC	-> segmen NEC
+. "Annulla" torna indietro.	. «Urungkan» kembali ke sebelumnya.
+. Antenna base: fili 1-	. Antena dasar: kawat 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Dengan Q setinggi itu sweep hanya boleh mencakup beberapa kHz.
+. Salvalo con Salva con nome.	. Simpan dengan Simpan sebagai.
+. Trascina per ruotare, rotella per ingrandire.	. Seret untuk memutar, roda untuk zoom.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Gunakan kawat lebih tipis, inti lebih besar, atau dua inti bertumpuk.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (melalui Sengupta 2021) dan GMRT tabel 19.1
+12 (errore / HPBW)^2	12 (galat / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Cincin pasif: keliling {0:0.000} lambda, tanpa sumber dan tanpa kapasitor; efeknya terlihat pada model lengkap (direktor atau reflektor).
+Automatico	Otomatis
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, seperti nec2c dan xnec2c: kode sumber disertakan dengan program (berkas COPYING).\n
+Provincia di Trieste	Provinsi Trieste
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	dan dalam C# untuk YA-NEC. Antarmuka acuan: xnec2c karya 5B4AZ dan Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	efisiensi dihitung dari medan jauh, Prad / (Prad + rugi) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedansi dan rugi makin kurang andal ketika kawat makin rendah (lihat BOG di panduan). Untuk hasil yang aman: minimal lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	dibuat hingga diameter {3:0.00} m; perhitungan apertur di sampingnya berlaku untuk diameter apa pun dan sudah memperhitungkan rusuk (kotak di atas).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmen: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} pada {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efisiensi {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° elevasi
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL ed. 19, bab 18 (Yagi 2 m W9PE): tiga elemen berjarak 0.2 λ, sekitar 7 dBi dan F/B di atas 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Kesesuaian YA-NEC dengan nec2c (batang 20/15/10 m): reflektor pada 0.185 / 0.197 / 0.222 λ, direktor pada 0.095 / 0.116 / 0.114 λ: di dalam rentang sumber.
+↶ Annulla	↶ Urungkan
+↷ Ripeti	↷ Ulangi
+■ Ferma	■ Berhenti
+▶ Avvia	▶ Mulai
+☐ mantieni lunghezza del boom	☐ pertahankan panjang boom
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ tidak ada peringatan: segmentasi memenuhi tingkat yang dipilih
+✓ nessun errore e nessun avviso	✓ tidak ada galat dan peringatan
+variabili del modello	variabel model
+nuova variabile dal modello	variabel baru dari model
+Scrivi una variabile nella linguetta Variabili…	Tulis variabel di tab Variabel…
+Elemento diritto	Elemen lurus
+Elemento piegato	Elemen bengkok
+Variabile nuova	Variabel baru
+Minimo / massimo	Minimum / maksimum
+Cosa cambia	Apa yang berubah
+in ocra: dove agisce la variabile	oker: tempat variabel bekerja
+Crea la variabile	Buat variabel
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Variabel {0} dibuat: geometri tidak berubah. «Urungkan» di bilah Geometri menghapusnya.
+Struttura 3D: dove agisce la variabile ▾	Struktur 3D: tempat variabel bekerja ▾
+Struttura 3D ▸	Struktur 3D ▸
+Clic: nasconde o mostra la struttura	Klik: menyembunyikan atau menampilkan struktur
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	oker utuh: memakai variabel · oker putus-putus: memakainya melalui variabel lain
+attraverso {0}: fili {1}	melalui {0}: kawat {1}

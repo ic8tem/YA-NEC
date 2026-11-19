@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Jak moc barva kryje: lehké, střední nebo silné. Na řádku tabulky je závoj lehčí, aby byla čísla čitelná.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Vodič {0} vybrán ve 3D zobrazení: řádek {1} tabulky
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Vodič {0}: není v tabulce vodičů (karta geometrie jiná než GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Hned zkontroluje, zda je nová verze (bez čekání 3 minuty).
+terreno reale	skutečný terén
+Locatore	Lokátor
+da 8 a 12 caratteri	8 až 12 znaků
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Při 6 znacích může být bod o kilometry vedle: profil terénu potřebuje alespoň 8 znaků.
+Quota sito	Nadmořská výška místa
+Altezza antenna	Výška antény
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Výška středu antény nad zemí. Pokud se liší od modelu, diagram NEC se zvedne nebo sníží se stejným rozložením proudu.
+Distanza max	Max. vzdálenost
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimut a vzdálenosti se přepočítají při každé změně lokátoru (ortodroma, koule 6371 km).
+Terra	Pevnina
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Snižuje činitel odrazu moře Amentovým činitelem pro vlny 0,25 m (směrodatná odchylka).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	statistický model drsného povrchu (Ament 1953): platí pro klouzavé úhly a rovnoměrné moře.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Sníží profil o zakřivení Země (efektivní poloměr 4/3 při normální refrakci) a zeslabí vzdálené odražené paprsky činitelem divergence.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standardní atmosféra (k = 4/3); při vlnovodech nebo inverzích se zdánlivé zakřivení mění.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Nejvyšší hřeben mezi anténou a směrem vyzařování zeslabuje přímý paprsek jako hrana (Fresnelův integrál), jako v HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	jediná ostrá hrana: zaoblené hřebeny nebo několik hřebenů za sebou se aproximuje tím nejvyšším.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Opakuje výpočet po každých 10 stupních azimutu (pouze DEM) a ukazuje ukazatel kvality na růžici, s anténou natočenou do každého azimutu.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	s anténou vždy natočenou do azimutu profilu: platí pro otočnou anténu.
+Cartesiana dBi / gradi	Kartézský dBi / stupně
+0–180° intero	0–180° celý
+Zoom angolare	Zvětšení úhlu
+Sovrapponi alla linguetta Verticale	Překrýt na kartě Svislý
+premi Calcola	stiskněte Vypočítat
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Opakuje výpočet s anténou od 6 do 30 m (KV) nebo od 2 do 30 m (VHF) a ukazuje výšku s nejlepším ukazatelem kvality na trase.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	proudy zůstávají z vypočteného modelu: vliv výšky na impedanci a proudy se nezohledňuje (jako v HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Jsou potřeba tabulky úhlů příchodu z ARRL Antenna Book (soubory .PRN podle pásem a oblastí): jakmile budou k dispozici, toto se zapne a ukáže oranžové pruhy.
+locatore non valido	neplatný lokátor
+sul mare	nad mořem
+sul terreno	nad pevninou
+profilo reale	skutečný profil
+terreno piatto	rovný terén
+orizzonte ostruito	zakrytý obzor
+° (scala angolare ×	° (stupnice úhlů ×
+← dietro	← vzad
+avanti →	vpřed →
+statistiche degli angoli di arrivo: non caricate	statistika úhlů příchodu: nenačtena
+rosa 0–360°: calcolo in corso…	růžice 0–360°: počítám…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Vyberte soubor profilu (klikněte na "Z HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM není k dispozici: při prvním použití je potřeba síť ke stažení TINITALY nebo SRTM1 (pak zůstanou ve složce data/dem).
+Profilo del terreno	Profil terénu
+Lobo di elevazione	Elevační lalok
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Nejprve vypočítejte model (tlačítko Vypočítat nahoře): diagram antény pochází z NEC.
+da file	ze souboru
+dal DEM	z DEM
+rispetto alla stessa antenna su terreno piatto	vůči stejné anténě nad rovným terénem
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Rozdíl mezi lalokem nad skutečným profilem a lalokem nad rovným terénem, průměrovaný přes užitečné úhly.
+Guadagno a 5° / 10°	Zisk při 5° / 10°
+Guadagno a 1° / 3°	Zisk při 1° / 3°
+Angoli coperti a -3 dB	Úhly pokryté při -3 dB
+primo lobo sul profilo reale	první lalok nad skutečným profilem
+calcolo…	počítám…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Model ve volném prostoru: proudy jsou bez země, jako diagram ve volném prostoru, který používá HFTA. Chcete-li zohlednit blízkou zem, vypočítejte model se skutečnou zemí.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profil platí jen pro jeden azimut: otočná anténa potřebuje více směrů (pole "Všechny azimuty").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metoda jako v HFTA (N6BV): přímý paprsek + odražené paprsky na každé plošce profilu + difrakce přes hřebeny. Diagram antény pochází z NEC; tento výpočet přidává terén.
+Piatto	Rovný
+Reale	Skutečný
+Primo minimo	První minimum
+Punto di riflessione	Bod odrazu
+Orizzonte	Obzor
+Uso: rotte DX in HF (angoli bassi 1–15°).	Použití: DX trasy na KV (nízké úhly 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Použití: tropo a MS (0–5°), EME s nízkým Měsícem (zisk od země při východu/západu Měsíce).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Výška s nejvyšším průměrným ziskem v užitečných úhlech trasy.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	proudy vypočteného modelu posunuté ve výšce: impedance a vazba se zemí zůstávají z modelu.
+Calcola prima il terreno reale	Nejprve vypočítejte skutečný terén
+Esporta il lobo sul terreno reale	Exportovat lalok nad skutečným terénem
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Snímky: Esri, Maxar, Earthstar Geographics a komunita uživatelů GIS
+© i contributori di OpenStreetMap	© přispěvatelé OpenStreetMap
+Sfondo	Pozadí
+Foto aerea	Letecký snímek
+Solo griglia	Jen mřížka
+Griglia	Mřížka
+Cerca	Hledat
+⌖ Centra sul locatore	⌖ Vystředit na lokátor
+Punto scelto	Vybraný bod
+Coordinate	Souřadnice
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klik na mapu = bod antény; táhnout = posunout; kolečko = zvětšení (mřížka přechází z 6 na 8, 10, 12 znaků). Tlustý rámeček = čtverec 6 znaků.
+non disponibile	nedostupné
+Lunghezza elementi	Délka prvku
+Posizione sul boom	Poloha na ráhně
+Uniforme	Rovnoměrné
+Distribuzione	Rozdělení
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Prvek upevněný v objímce mimo střed: posun podél vlastní osy, s tolerancí polohy.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	skutečná objímka mění i elektrickou délku u ráhna: k tomu použijte kartu Korekce ráhna.
+nuovo a ogni avvio	nové při každém spuštění
+Numero prove	Počet pokusů
+Frequenze	Kmitočty
+Seme casuale	Náhodné semínko
+OBIETTIVO LISTA DI TAGLIO	CÍL ŘEZNÉHO SEZNAMU
+Calo F/B max	Max. pokles F/B
+ROS max	Max. SWR
+Ferma	Zastavit
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Prvky blízko napájeného prvku bývají nejkritičtější; prvky na konci ráhna snesou větší chyby.
+l'istogramma serve al Monte Carlo	histogram je pro Monte Carlo
+5% peggiore	nejhorších 5%
+Posizione mm	Poloha mm
+Lunghezza mm	Délka mm
+Tolleranza ammessa	Přípustná tolerance
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Červeně prvky, které potřebují méně než výrobní tolerance.
+Calcola prima il modello	Nejprve vypočítejte model
+sensibilita'	citlivost
+Tolleranze: fermato	Tolerance: zastaveno
+Diametro mm	Průměr mm
+Tolleranza ammessa mm	Přípustná tolerance mm
+Avvia prima il calcolo	Nejprve spusťte výpočet
+Esporta la lista di taglio	Exportovat řezný seznam
+Lista di taglio	Řezný seznam
+Obiettivi	Cíle
+Calo massimo del F/B	Maximální pokles F/B
+ROS massimo	Maximální SWR
+Tolleranze di costruzione	Výrobní tolerance
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Plánováno (náčrt 13, ke schválení): v této verzi zatím neaktivní.
+Al quadro 20×2 mm	Al čtyřhran 20×2 mm
+Al quadro 25×2 mm	Al čtyřhran 25×2 mm
+Al quadro 30×2 mm	Al čtyřhran 30×2 mm
+Al quadro 40×2 mm	Al čtyřhran 40×2 mm
+Al tondo 25×1,5 mm	Al kulatý 25×1,5 mm
+Al tondo 30×2 mm	Al kulatý 30×2 mm
+Al tondo 40×2 mm	Al kulatý 40×2 mm
+Al tondo 50×2 mm	Al kulatý 50×2 mm
+Zona NTC	Zóna NTC
+Quota sito as	Nadmořská výška místa jako
+Periodo ritorno	Doba návratu
+Categoria esposiz.	Kategorie expozice
+Coeff. topografia	Koef. topografie
+Antenna da terra	Anténa nad zemí
+Palo sopra rotore	Stožár nad rotátorem
+Ø palo	Ø stožáru
+Usa elementi e boom del modello	Použít prvky a ráhno modelu
+Includi telaio, palo, cavi	Zahrnout rám, stožár, kabely
+Scansione direzione del vento	Průchod směru větru
+UNITÀ	JEDNOTKY
+N e kgf affiancati	N a kgf vedle sebe
+solo N	jen N
+solo kgf	jen kgf
+Mostra	Zobrazit
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	neplatný lokátor: vyberte zónu ručně
+Telaio a H	Rám H
+Cavi e divisore	Kabely a dělič
+Parte	Díl
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Při větru napříč prvky netlačí (cross-flow, K5IU): síla na trubku roste s druhou mocninou složky větru kolmé k její ose.
+momento flettente alla staffa del rotore	ohybový moment u objímky rotátoru
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Předběžné dimenzování: nenahrazuje kontrolu stožáru, věže a základu inženýrem. Moment v patě půjde do podkarty Stožár a základ.
+Sito e norma	Místo a norma
+Norma	Norma
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; součinitele CNR-DT 207 R1/2018 a EN 1991-1-4
+Locatore / zona	Lokátor / zóna
+Risultati	Výsledky
+Forza massima	Maximální síla
+Momento flettente alla staffa del rotore	Ohybový moment u objímky rotátoru
+Momento torcente sul rotore	Krouticí moment na rotátoru
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Předběžné dimenzování: nenahrazuje kontrolu stožáru, věže a základu autorizovaným inženýrem.
+Al tondino pieno	Al plná tyč
+Materiale elementi	Materiál prvků
+Staffe, isolatori	Objímky, izolátory
+g cad.	g kus
+Dipolo + scatola	Dipól + krabička
+Cavo fino al palo	Kabel ke stožáru
+STAFFA AL PALO	OBJÍMKA STOŽÁRU
+Posizione attuale	Současná poloha
+m dal riflettore	m od reflektoru
+Massa / distanza	Hmotnost / vzdálenost
+Vento dalla linguetta Vento	Vítr z karty Vítr
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Použije návrhový tlak z posledního výpočtu v podkartě Vítr; bez něj 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Posune celý model podél ráhna tak, aby navržená objímka padla do počátku (kde se připevňuje stožár a rám soustavy). Zpět ve 3D struktuře to vrátí.
+Momenti in funzione della posizione della staffa	Momenty podle polohy objímky
+Masse e aree per parte	Hmotnosti a plochy po dílech
+ultimo direttore	poslední direktor
+Staffe e isolatori	Objímky a izolátory
+Cavo sul boom	Kabel na ráhně
+Massa kg	Hmotnost kg
+Baricentro m	Těžiště m
+Area vento m²	Plocha ve větru m²
+Centro area m	Střed plochy m
+solo peso	jen hmotnost
+solo vento	jen vítr
+File Touchstone .s1p	Soubor Touchstone .s1p
+Formato letto	Načtený formát
+CAVO TRA VNA E ANTENNA	KABEL MEZI VNA A ANTÉNOU
+R e X separate	R a X zvlášť
+Banda con ROS <	Pásmo s SWR <
+ROS: calcolato e misurato	SWR: vypočtený a změřený
+Confronto	Porovnání
+misurato, cavo tolto	změřeno, kabel odečten
+R calcolata	R vypočtené
+X calcolata	X vypočtené
+R misurata	R změřené
+X misurata	X změřené
+Calcolato	Vypočteno
+Misurato	Změřeno
+Scarto	Rozdíl
+Frequenza del ROS minimo	Kmitočet minimálního SWR
+ROS minimo	Minimální SWR
+nessuna correzione: calcolo e misura coincidono.	bez korekce: výpočet a měření se shodují.
+calcolo NEC sul campo della misura…	Výpočet NEC v rozsahu měření…
+Misura del VNA	Měření VNA
+Tutti	Vše
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Spusťte rozmítání (tlačítko Rozmítání nahoře), abyste viděli F/B a F/R v celém pásmu
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = zisk vpřed minus průměrný výkon v zadní polokouli (azimut 90-270°, všechny elevace nad 0°). Je i mezi cíli optimalizátoru.
+Tabelle: F/B e F/R su tutta la banda	Tabulky: F/B a F/R v celém pásmu
+Valori dello sweep	Hodnoty rozmítání
+ANTENNE RICEVENTI	PŘIJÍMACÍ ANTÉNY
+4-square in ricezione	4-square pro příjem
+8 verticali in cerchio	8 vertikálů v kruhu
+Modello aperto	Otevřít model
+Isotropo	Izotropní
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = zisk v požadovaném směru minus průměrný zisk v celém poloprostoru: na rozdíl od zisku nezávisí na ztrátách.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Použije medián úhlu příchodu z karty Skutečný terén jako požadovanou elevaci (statistika podle pásem a oblastí). Bez načtené statistiky ARRL zůstane elevace zapsaná zde.
+Direzione voluta	Požadovaný směr
+Hz  rumore	Hz  šum
+NF ricevitore	NF přijímače
+sorgente locale az	místní zdroj az
+Cifre di merito in ricezione	Ukazatele kvality příjmu
+Basta il segnale?	Stačí signál?
+calcolo in corso…	počítám…
+RDF in funzione della frequenza	RDF v závislosti na kmitočtu
+Calcola prima il modello aperto	Nejprve vypočítejte otevřený model
+verticale λ/4	vertikál λ/4
+° · dB relativi · arancio: -3 dB	° · relativní dB · oranžová: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Průměrný zisk v předním sektoru minus průměr v zadní polokouli.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definuje DMF jen se ziskem při 20 stupních; zde se používá průměr v sektoru z náčrtu, takže hodnoty nejsou srovnatelné jedna ku jedné s knihou.
+molto basso: serve un preamplificatore	velmi nízké: je potřeba předzesilovač
+basso ma accettabile: vedi soglia	nízké, ale přijatelné: viz práh
+come un'antenna trasmittente	jako vysílací anténa
+F/R medio sull'emisfero posteriore	Průměrné F/R v zadní polokouli
+Rumore d'antenna ai morsetti	Šum antény na svorkách
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Výkon vnějšího šumu na svorkách: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + průměrný zisk vážený podle toho, odkud šum přichází.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	šum od obzoru vážený exp(-el/10 stupňů) v elevaci: představuje vzdálený průmyslový šum přicházející nízko; skutečné rozložení závisí na místě.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	bodový zdroj v elevaci 5 stupňů se stejným výkonem jako izotropní pozadí.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	izotropní šum nad zemí; země šum nepřidává.
+Margine sul ricevitore	Rezerva přijímače
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Šum antény převyšuje šum přijímače o méně než 6 dB: přijímač omezuje citlivost. Je potřeba více předzesílení nebo přijímač s nižším NF.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Zisk 1,8
+Spazio richiesto	Potřebné místo
+λ/4 in tubo quadro	λ/4 ve čtyřhranné trubce
+λ/4 in tubo tondo	λ/4 v kulaté trubce
+Solo cavi di fase	Jen fázovací vedení
+Aria	Vzduch
+Uscite	Výstupy
+Z antenne	Z antény
+Z ingresso	Vstupní Z
+Dielettrico	Dielektrikum
+Connettori	Konektory
+Correggi accorciamento dei connettori	Korigovat zkrácení konektory
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Odečte od délky část vedení uvnitř konektorů.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	odhad 4 mm na konec s konektory N (3 BNC, 1,5 SMA): nejlepší je doladit s VNA a zkracovat po 1 mm.
+Divisori	Děliče
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Použije činné impedance antén otevřené soustavy (jeden zdroj na anténu) a rozteče pro minimální délku fázovacích vedení.
+CAVI DI FASE	FÁZOVACÍ VEDENÍ
+Lunghezza minima	Minimální délka
+Passo verticale	Svislá rozteč
+solo cavi di fase: nessun trasformatore da costruire	jen fázovací vedení: žádný transformátor ke stavbě
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 kabely 75 Ω paralelně = 37,5 Ω
+quadro, lato	čtyřhran, strana
+tondo, Ø	kulatý, Ø
+Z0 richiesta	Potřebná Z0
+Ø conduttore interno	Ø vnitřního vodiče
+VF del cavo	VF kabelu
+λ/4 in aria, mm	λ/4 ve vzduchu, mm
+da tagliare, mm	k uříznutí, mm
+Z carico in parallelo	Z zátěže paralelně
+Rami λ/4: Z0 = Zin · √N	větve λ/4: Z0 = Zin · √N
+Resistenze a stella	Rezistory do hvězdy
+Isolamento tra le uscite	Izolace mezi výstupy
+Perdita stimata	Odhadovaná ztráta
+Carico usato	Použitá zátěž
+non potenza di 2	není mocnina 2
+ROS all'ingresso	Vstupní SWR
+solo cavi di fase	jen fázovací vedení
+Uscita	Výstup
+Lungh. elettrica	Elektrická délka
+Fisica mm	Fyzické mm
+Perdita dB	Ztráta dB
+° di fase).	° fáze).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° nahoru); impedance na děliči se už přesně neopakuje.
+Solo cavi di fase: nessun disegno da stampare	Jen fázovací vedení: žádný výkres k tisku
+Divisore	Dělič
+50 mm di controllo	Kontrola 50 mm
+GEOMETRIA	GEOMETRIE
+λ/4 sul boom	λ/4 na ráhně
+stesso piano	stejná rovina
+Metallico, isolati	Kov, izolované
+Non metallico	Nekovové
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Ráhno není v modelu NEC: s prvky izolovanými od kovového ráhna je vliv malý (korekce ráhna v Kalkulátorech).
+Yagi di base	Základní Yagi
+Disposizione	Uspořádání
+Sfasamento piani	Posun rovin
+Cavo di ritardo λ/4	Zpožďovací kabel λ/4
+Includi relè e cavi reali	Zahrnout skutečná relé a kabely
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Přidá ztrátu zpožďovacího kabelu (VF 0,66, 10 dB/100 m na 144 MHz, přepočteno odmocninou kmitočtu) a 0,1 dB na relé.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	typické hodnoty kabelu 75 ohmů a koaxiálního relé; program ty vaše nezná.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Stejná fázovací síť funguje i pro turnstile (dipóly zkřížené pod 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Pohled zepředu
+Componenti co-polare / cross-polare	Kopolární / křížově polarizované složky
+Rapporto assiale e ROS in frequenza	Osový poměr a SWR v závislosti na kmitočtu
+piano A	rovina A
+piano B	rovina B
+vista dal davanti — boom al centro	pohled zepředu — ráhno uprostřed
+piani sfalsati di λ/4 lungo il boom	roviny posunuté o λ/4 podél ráhna
+Yagi incrociate: serve una Yagi con una sola sorgente	Zkřížené Yagi: je potřeba Yagi s jedním zdrojem
+Yagi incrociate: calcolo in corso...	Zkřížené Yagi: počítám...
+Rapporto assiale in asse	Osový poměr na ose
+Rapporto assiale a −3 dB	Osový poměr při −3 dB
+Isolamento tra i due piani	Izolace mezi oběma rovinami
+Fase della rete sul piano B	Fáze sítě v rovině B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Dokonale ortogonální a symetrické roviny: v modelu je vazba i opačná polarizace téměř nulová. Ve skutečnosti je objímky, kabely a malé asymetrie omezí asi na 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	od 1,8 MHz do 1296 MHz: seznam balunů se mění s pásmem
+LINEA DI DISCESA	NAPÁJEČ
+Coassiale	Koaxiální
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	U symetrického otevřeného vedení není stínění: soufázový režim vzniká jen z nesymetrie. Karta počítá koaxiální případ; pro otevřené vedení použijte Vedení (TL) s anténním členem.
+Lungo il boom	Podél ráhna
+m → palo	m → stožár
+Discesa sul palo	Dolů po stožáru
+Fino alla stazione	Ke stanici
+Calza a massa sul palo / traliccio	Stínění uzemněné na stožáru / věži
+Messa a terra all'ingresso stazione	Uzemnění u vstupu do stanice
+BALUN DA CONFRONTARE	BALUNY K POROVNÁNÍ
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 závitů RG-213 na 110 mm: indukčnost podle Wheelera, vlastní kapacita podle Medhursta.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 a odhadnutá vlastní kapacita: skutečnou impedanci tlumivky je třeba změřit.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	Feritový toroid 1:1 jako paralelní RLC s nízkým Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm ve špičce (10 MHz se směsí 31, 25 MHz se směsí 43): typické hodnoty 12 závitů na 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaxiální λ/2 4:1: symetrické napájení, stínění spojena.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	zbytkový soufázový režim jako 600 ohmů rezonančně na f0 (Q 3): závisí na montáži.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	rukáv λ/4: zkratované vedení λ/4 mezi stíněním a rukávem, vysoká impedance na f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 rukávu 50 ohmů a ztráta 0,08 dB na čtvrtvlně.
+10 perline in ferrite sulla calza.	10 feritových perel na stínění.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohmů na perlu na 144 MHz (směs 61), 100 ohmů nad 30 MHz se směsí 43: typické katalogové hodnoty.
+Caso mostrato	Zobrazený případ
+premi Calcola il confronto	stiskněte Vypočítat porovnání
+Corrente lungo la calza, dal dipolo verso il basso	Proud podél stínění, od dipólu dolů
+Vista laterale: corrente sulla calza	Boční pohled: proud na stínění
+F/R medio	Průměrné F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Ztráta v balunu
+Potenza dissipata nel balun a 1 kW	Výkon rozptýlený v balunu při 1 kW
+Banda con calza < 5 %	Pásmo s proudem stínění < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Šedé položky jsou baluny pro druhé pásmo; aktivují se volbou kmitočtu. Na KV se počítá i stínění až ke stanici (uzemněné), na VHF/UHF část na ráhně a stožáru. Stínění je vodič připojený k jedné straně napájecího bodu, jako ve skutečnosti bez balunu; balun je soufázová impedance v prvním úseku.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Sklolaminát nevede: rám nejde do NEC, zůstávají jen stínění fázovacích vedení.
+Includi palo sotto il telaio	Zahrnout stožár pod rámem
+Cavi di fase lungo i montanti	Fázovací vedení podél sloupků
+Rotore e controventi	Rotátor a kotvení
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Plánováno: rotátor a kotvení jako vodiče (jsou potřeba rozměry věže).
+Materiale	Materiál
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	červeně = části rámu modelované jako vodiče NEC · čárkovaně = stínění fázovacích vedení
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Vodorovná polarizace: svislé sloupky jsou slabě vázané; vodorovná příčka a fázovací vedení ne.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Svislá polarizace: sloupky a stožár jsou rovnoběžné s prvky a mají větší vliv; vodorovná příčka malý.
+Confronto senza / con telaio	Porovnání bez / s rámem
+Diagramma orizzontale sovrapposto	Vodorovný diagram v překrytí
+premi Calcola confronto	stiskněte Vypočítat porovnání
+Stack: calcola prima il modello	Soustava: nejprve vypočítejte model
+Stack: calcolo senza e con telaio...	Soustava: počítám bez a s rámem...
+Pezzo	Díl
+Collegato	Připojeno
+Cavi	Kabely
+Senza telaio	Bez rámu
+Con telaio	S rámem
+Z ingresso divisore	Vstupní Z děliče
+senza telaio	bez rámu
+con telaio	s rámem
+Stack: confronto senza / con telaio fatto	Soustava: porovnání bez / s rámem dokončeno
+CARICHI HF	KV ZÁTĚŽE
+INSERISCI NEL MODELLO	VLOŽIT DO MODELU
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Klobouk jde na konec vodiče (b nebo e), linear loading do zvoleného bodu vodiče.
+Inserisci nel modello	Vložit do modelu
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Již schváleno v náčrtu Zátěže: Q pro L a C, f0, Z podle pásem, napětí a proud v součástce. Zde přibývají konstrukční typy.
+Trappola coassiale	Koaxiální trap
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	živý vodič se připájí na začátek středního vinutí (prohození konců sníží rezonanci asi o 50 kHz).
+Calcola spire per f0	Vypočítat závity pro f0
+Spire dell'avvolgimento (anche frazionarie).	Závity vinutí (i zlomkové).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	skutečný f0 se liší o několik procent: změřte ho GDO nebo VNA a opravte závity.
+Blocca	Blokuje
+dipolo con	dipól s
+Filo Ø	Drát Ø
+Calcola C per f0	Vypočítat C pro f0
+mm  Filo Ø	mm  Drát Ø
+mm  Passo	mm  Stoupání
+mm  Spire	mm  Závity
+MHz  dal centro	MHz  od středu
+m  Braccio	m  Rameno
+m  Filo dell'elemento Ø	m  Drát prvku Ø
+Calcola spire per la risonanza	Vypočítat závity pro rezonanci
+Piega	Ohyb
+m  Distanza tra i fili	m  Rozteč drátů
+Calcola la piega per la risonanza	Vypočítat ohyb pro rezonanci
+Raggi	Paprsky
+m  Filo Ø	m  Drát Ø
+Verticale alto	Výška vertikálu
+m  Frequenza	m  Kmitočet
+MHz  Filo Ø	MHz  Drát Ø
+Calcola i raggi per la risonanza	Vypočítat paprsky pro rezonanci
+L misurata	Změřené L
+MHz  Autorisonanza f0	MHz  Vlastní rezonance f0
+Cappello capacitivo in punta al verticale	Kapacitní klobouk na vrcholu vertikálu
+Bobina dalle misure	Cívka z rozměrů
+Reattanza del cappello in frequenza	Reaktance klobouku v závislosti na kmitočtu
+impedenza della trappola	impedance trapu
+Si comporta da	Chová se jako
+Potenza persa	Ztracený výkon
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Výkon vysílače pro napětí a ztráty v tabulce.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	dolní pásmo: proud v kmitně sqrt(P/73) a v trapu I0 cos(beta a); blokované pásmo: napětí na konci vnitřního dipólu I0 Z0 rozdělené mezi trap a vyzařování.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	proud v kmitně sqrt(P/73) a v zátěži I0 cos(beta a), kde a je vzdálenost od středu.
+Risonanza propria f0	Vlastní rezonance f0
+Q ideale	Ideální Q
+Q della trappola alla risonanza.	Q trapu v rezonanci.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus dielektrické ztráty (tangenta 3e-4 PE, 2e-4 PTFE). Změřené koaxiální trapy mají obvykle Q mezi 100 a 300.
+Lunghezza di cavo	Délka kabelu
++ 10 cm per le saldature	+ 10 cm na pájení
+R in parallelo equivalente	Ekvivalentní paralelní R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: to je zátěž LD, která jde do modelu
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Rameno dipólu na dolním pásmu s trapem ve srovnání s ramenem plné velikosti (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC s trapem jako zátěží dá správnou délku.
+Induttanza misurata	Změřená indukčnost
+dalla misura	z měření
+Autorisonanza	Vlastní rezonance
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Kmitočet, na kterém cívka sama rezonuje se svou vlastní kapacitou.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	vlastní kapacita z Medhurstovy tabulky podle délky / průměru, platí pro jednovrstvé cívky daleko od kovových hmot.
+Q della bobina alla frequenza di lavoro.	Q cívky na pracovním kmitočtu.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	odpor drátu vlivem povrchového jevu krát činitel blízkosti 1 + 2 (d/p)^2 (d drát, p stoupání): Medhurst dává podobné hodnoty pro cívky s délkou podobnou průměru.
+Reattanza della piega	Reaktance ohybu
+Z0 della linea	Z0 vedení
+Q della piega	Q ohybu
+Capacita' del cappello	Kapacita klobouku
+Capacita' del cappello verso lo spazio.	Kapacita klobouku vůči prostoru.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	součet paprsků (tenký drát, 2 pi eps0 l / (ln(2l/a) - 1)) a prstence, který se nasycuje k plnému disku (8 eps0 r): paprsky se navzájem stíní. Vložený jako vodiče jej NEC spočítá přesně.
+in punta al verticale	na vrcholu vertikálu
+Altezza per la risonanza	Výška pro rezonanci
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Vliv na vertikál
+Carichi HF: apri un modello nella finestra principale.	KV zátěže: otevřete model v hlavním okně.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading a kapacitní klobouk se vkládají jako vodiče: pro ostatní zvolte «Jako zátěž».
+Il cappello capacitivo si inserisce come fili.	Kapacitní klobouk se vkládá jako vodiče.
+RLC parallelo	Paralelní RLC
+Effetto sul dipolo	Vliv na dipól
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Zkrácení ramene oproti plné čtvrtvlně (71,3 / f) se zátěží v tomto bodě.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	model vedení zatíženého ramene X = Z0 (cot(beta b) - tan(beta a)), x 0,95 kvůli koncovému jevu.
+Esegui il test	Spustit test
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Zisk lze zobrazit korigovaný o AGT (už plánováno v optimalizátoru).
+Controllo prima/dopo il calcolo	Kontrola před/po výpočtu
+Esito	Výsledek
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Jedna nebo více kontrol mimo ±0,2 dB: zkontrolujte segmentaci (3D struktura > Segmentace... a Ověřit segmentaci).
+Tutti i controlli entro ±0,2 dB.	Všechny kontroly v rozmezí ±0,2 dB.
+Linea a finestra 450	Žebříček 450 ohmů
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Stiskněte Vypočítat: NEC spočítá impedanci otevřeného modelu na každém kmitočtu.
+Perdita nella linea	Ztráta ve vedení
+Perdita totale	Celková ztráta
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Typ anténního členu mezi vedením a vysílačem (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	ztráta odhadnutá z zatíženého Q sítě (Qn = sqrt(Rmax/Rmin - 1), dvě sekce pro T a Pi) a Q cívky; TLW od N6BV počítá součástky jednu po druhé a může se lišit o několik desetin dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Příklad: dublet 2 × 20 m (ZS6BKW/G5RV). Varování, když anténní člen vidí méně než 20 Ω: velké ztráty, doporučuje se vedení prodloužit nebo zkrátit. Vedení se ztrátami jako v TLW (N6BV, ARRL).
+USA costa est	Východní pobřeží USA
+USA costa ovest	Západní pobřeží USA
+Giappone	Japonsko
+Caraibi	Karibik
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: služba nevrátila GeoTIFF
+GeoTIFF compresso: non supportato	Komprimovaný GeoTIFF: nepodporován
+GeoTIFF: tipo di dato non supportato	GeoTIFF: datový typ nepodporován
+Il file non contiene coppie distanza / quota.	Soubor neobsahuje dvojice vzdálenost / výška.
+Nessuno	Žádný
+Ferriti a perline	Feritové perly
+Cavo e balun: segmento della sorgente non trovato.	Kabel a balun: segment zdroje nenalezen.
+solo palo	jen stožár
+Acciaio zincato	Pozinkovaná ocel
+Alluminio	Hliník
+Vetroresina	Sklolaminát
+Montante sx/dx	Levý/pravý sloupek
+al boom	k ráhnu
+Traversa	Příčka
+Palo	Stožár
+al dipolo	k dipólu
+N, femmina	N, zásuvka
+senza connettori	bez konektorů
+rurale tranquillo	klidný venkov
+Verticale λ/4	vertikál λ/4
+λ/8 di lato	λ/8 na stranu
+0,37 λ di diametro	průměr 0,37 λ
+Cappello capacitivo	Kapacitní klobouk
+W8NX bassa impedenza	W8NX nízká impedance
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	silný kabel s dielektrikem PTFE (RG-393) nebo LC trap s vysokonapěťovým kondenzátorem
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Ohyb je delší než lambda/8: vedení se už nechová jako stálá indukčnost, ověřte rezonanci v NEC vložením jako vodiče.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Kapacita klobouku je odhad (paprsky se navzájem stíní): pro přesnou hodnotu jej vložte jako vodiče a spočítejte v NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Poloha zátěže je za čtvrtvlnou: posuňte ji blíže ke středu.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	klobouk jde na konec vodiče: zvolte první (b) nebo poslední (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	zvolený bod je příliš blízko konce vodiče.
+questo tipo entra nel modello come carico.	tento typ jde do modelu jako zátěž.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	KV zátěže: vodiče přidané kalkulátorem YA-NEC
+Il file Touchstone non contiene punti di S11.	Soubor Touchstone neobsahuje body S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV neobsahuje řádky kmitočet, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT ve volném prostoru, bez ztrát
+IMPOSTAZIONI	NASTAVENÍ
+Schiera Hi-Z di verticali corte	Skupina Hi-Z krátkých vertikálů
+Base del loop	Základna smyčky
+Distanza, lato o diametro	Rozteč, strana nebo průměr
+Altezza delle verticali	Výška vertikálů
+Base del loop dal suolo	Základna smyčky nad zemí
+Fase tra le file	Fáze mezi řadami
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Nízký vodorovný dipól: blíže k zemi než lambda/4 jde lalok nahoru. Je to referenční «vysoký úhel» v žebříčku IV3PRK (RDF 7,3 dB): porovnává se s přijímacími anténami pro nízké úhly.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY od Garyho Breeda K9AY (QST, září 1997): dvě svislé smyčky pod 90 stupni na stejném stožáru, zakončovací rezistor (typicky 390 ohmů, nastavený na F/B), transformátor 9:1. Zde jedna smyčka, natočená do zvoleného směru, uzavřená nad zemí jako na stránce Příjem (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Přijímací 4-square: čtyři krátké aktivní vertikály v rozích čtverce lambda/8, vyzařující po úhlopříčce. Prázdná fáze = přesná nula vzad (pi + beta d mezi řadami): dává nejvyšší teoretickou směrovost; skutečné fázovací sítě (ON4UN, IV3PRK) používají jiné fáze a dávají nižší RDF (IV3PRK 9,4 dB). Tlačítko hledá fázi s nejlepším RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Skupiny krátkých aktivních vertikálů jako od Hi-Z Antennas: 2 prvky end-fire (kardioida, lambda/8), 3 v trojúhelníku (strana lambda/6, jeden vrchol do zvoleného směru), 8 v kruhu (průměr 0,37 lambda: používají se čtyři ve směru a protilehlé). Hi-Z: 8 v kruhu RDF 13,4 dB se svým slučovačem; jednoduchý dvouřadý model vychází níže. Tlačítko hledá fázi s nejlepším RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikály vycházejí ze skutečné země (GE 1 se Sommerfeldovou zemí): v NEC-2 dává vodič připojený ke skutečné zemi impedanci závislou na segmentu zdroje (příručka NEC-2, EZNEC). Diagram a RDF jsou orientační; připojení se zvednutými radiály se plánuje pro všechny přijímací antény.
+fase tra le file da 120 a 300 gradi per l'RDF	fáze mezi řadami od 120 do 300 stupňů pro RDF
+nessuna fase con il lobo in avanti	žádná fáze s lalokem vpřed
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fáze mezi řadami pro nejlepší RDF: {0} stupňů (RDF {1} dB). Přepočítávám...
+linea d'orizzonte	čára obzoru
+scala angolare	stupnice úhlů
+lobo reale sopra il piatto fino a	skutečný lalok nad rovinou do
+Profilo verso	Profil směrem
+Lobo verticale e angoli di arrivo a	Svislý lalok a úhly příchodu na
+Cos'e' l'RDF	Co je RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = zisk v požadovaném směru - průměrný zisk do všech směrů (W8JI; dříve nazývaný SNIF, v 60. letech). Měří, o kolik anténa zlepší poměr signál/šum, pokud šum přichází rovnoměrně ze všech směrů; absolutní zisk se nepočítá (předzesilovač ho dorovná). Průměrováno jako v EZNEC: horní polokoule dělená celou koulí (4 pi). S touto konvencí se výsledky shodují s IV3PRK a W8JI/Hi-Z (vertikál 5,07 proti 5,06 a 4,9; Beverage 350 m 13,5 proti 13,66). Omezení: skutečný šum není rovnoměrný (elektrická vedení, místní QRM): proto se počítá i F/B a tvar laloku. U vysílacích antén nemá RDF smysl: proto se počítá jen na této kartě. DMF (Directivity Merit Figure, ON4UN): zisk při elevaci 20 stupňů vpřed minus průměrný zisk zadního poloprostoru (azimut za 90 stupni, nad zemí, vážený kosinem podle plochy): udává, jak moc anténa potlačuje šum přicházející zezadu. ON4UN varuje před vzájemným porovnáváním DMF a RDF. Zdroje: W8JI a W8WWV (RDF), ON4UN Low-Band DXing kap. 7 (DMF, tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevace
+azimut	azimut
+azimut a {0}°	azimut při {0}°
+totale	celkem
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Šířka k prvnímu nulovému bodu (FNBW): {0}°;  nejvyšší postranní lalok: {1}
+Didascalie {0} %	Popisky {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB proti {1} ve zdroji: zkontrolujte rozměry, zakončení a zem (zdroj může používat jinou zem nebo geometrii).
+Azimut a {0}° · {1} MHz	Azimut při {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimut při elevaci {0}°
+RUMORE	ŠUM
+Apri la scheda {0}	Otevřít kartu {0}
+caso mostrato: {0}	zobrazený případ: {0}
+Rastremazioni	Teleskopické
+BANDA	PÁSMO
+λ/2 coassiale 4:1	koaxiální λ/2 4:1
+Manicotto λ/4	rukáv λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Stínění kabelu a stožár jako vodiče NEC; porovnání balunů (soufázový proud, F/B, průměrné F/R, ztráta, výkon při 1 kW) od 1,8 do 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Sloupky, příčka, stožár a stínění fázovacích vedení jako vodiče NEC: porovnání bez / s rámem (zisk, F/B, průměrné F/R, laloky, Z děliče, Tant a G/T).
+TIPO	TYP
+DATI	DATA
+TELAIO	RÁM
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 ve čtyřhranné nebo kulaté trubce, v kabelu, Wilkinson; fázovací vedení, sklon; výkres 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X nebo +, roviny posunuté o λ/4; H, V, RHCP, LHCP, X-pol; osový poměr a izolace
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Stejné délky → stejná fáze. Násobky λ/2 → činná impedance se na děliči opakuje. Doporučená tolerance ± 5 mm (= ± {0}° fáze).
+impedenze attive delle {0} antenne dello stack in parallelo	činné impedance {0} antén soustavy paralelně
+Banda con ROS < {0}	Pásmo s SWR < {0}
+? Manuale	? Příručka
+Apre la spiegazione nel manuale	Otevře vysvětlení v příručce
+riferimento	reference
+Rispetto alla singola antenna	Vzhledem k jedné anténě
+{0} antenne ideali	{0} ideálních antén
+x la distanza DL6WU, a passi di	x rozteč DL6WU, v krocích po
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Levá osa: G soustavy - G jedné antény, od 0 nahoru. Pravá osa: F/R soustavy - F/R jedné antény, obrácená, s 0 nahoře: kde soustava zlepšuje F/R, křivka klesá, a nejnižší bod je největší zlepšení. G/T zůstává v tabulce.
+ΔG sulla singola	ΔG nad jednou anténou
+Chiusura del programma	Ukončení programu
+Vuoi chiudere YA-NEC?	Chcete zavřít YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Děkuji, že jste mě používali: doufám, že jsem byl užitečný.
+Sì	Ano
+ROS attivo	Činné SWR
+G realizzato	Realizované G
+ROS attivo massimo	Maximální činné SWR
+riflessi minimi	minimální odrazy
+ROS attivo alto: da non scegliere	vysoké činné SWR: nevybírat
+Documenti tecnici	Technické dokumenty
+Manuale d'uso	Uživatelská příručka
+Manuale di calcolo e delle fonti	Příručka výpočtů a zdrojů
+Citazioni	Citace
+Cerca in tutti i documenti	Hledat ve všech dokumentech
+Apri il PDF	Otevřít PDF
+Nessun risultato per «{0}»	Žádné výsledky pro «{0}»
+Primi {0} risultati per «{1}»	Prvních {0} výsledků pro «{1}»
+{0} risultati per «{1}»	{0} výsledků pro «{1}»
+Apre la citazione {0}	Otevře citaci {0}
+Manuale di calcolo	Příručka výpočtů
+È pronta la versione {0} di YA-NEC	Verze {0} YA-NEC je připravena
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Je již stažena a nainstalována: projeví se po restartu programu.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Na Macu se nenainstaluje sama: stáhněte nový .dmg ze stránky verzí na GitHubu.
+Riavvia adesso	Restartovat nyní
+Più tardi	Později
+Apri la pagina delle versioni	Otevřít stránku verzí
+Aggiornamento di YA-NEC	Aktualizace YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Je již stažena a nainstalována. Program se sám restartuje a znovu otevře otevřený model.
+Riavvio tra {0} s	Restart za {0} s
+Questo avviso si chiude tra {0} s	Toto upozornění se zavře za {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Po aktualizaci byl znovu otevřen neuložený model: uložte ho, kdy chcete (kopie v data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Po aktualizaci byl znovu otevřen model, který byl otevřený.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Každé pole má svou nápovědu s vysvětlením a zdrojem. Šedé: zaškrtnuto = vždy aktivní (nevypíná se); nezaškrtnuto = zatím nedostupné; volba tlačítky = pevná volba. Příručka, kapitola 21.
+"): sorgente sempre accesa.	"): zdroj vždy aktivní.
+' non da' un numero valido.	' není platné číslo.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik tak, jak je
+0 - misure del metodo	0 - rozměry metody
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = standardní vlnovod WR pásma (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = stejná parabola na druhém konci (vlastní echo).
+0 = stesso disco all'altro capo.	0 = stejná parabola na druhém konci.
+0 gradi a destra	0 stupňů vpravo
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = třetina od konce: impedance 200-300 ohmů, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: daleko od okraje, kde by průhyb vyvedl zářič z ohniska.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 plný polyetylen (RG-58, RG-213), 0,8-0,85 pěnové dielektrikum.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 plný polyetylen, 0,8-0,85 pěnový, 0,9-0,97 otevřené vedení.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 lambda ve vlnovodu
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - napájená smyčka
+1 - radiatore	1 - zářič
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = jeden závit (jako dříve). S více závity roste Rr s N², ztráta povrchovým jevem s N.
+1 cavo	1 kabel
+1-2-3 elementi	1-2-3 prvky
+1. Obiettivi e pesi	1. Cíle a váhy
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vítr, vyvážení, děliče, baluny, zkřížené Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Přijímací antény zapnuty
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz s velkou parabolou: kromě povrchu a zaměření se počítá tepelná deformace a deformace větrem (ATA: 0,7 mm RMS v noci, 3 mm ve dne na slunci), průhyb podpěr a rozptyl kvůli libraci.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: tisknout na 100 %, bez «přizpůsobit stránce»
+1005/f piedi	1005/f stop
+144 isol.	144 izol.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektory
+2 in parallelo	2 paralelně
+2 lati	2 strany
+2. Variabili che l'ottimizzatore puo' cambiare	2. Proměnné, které smí optimalizátor měnit
+200 Ω con balun 4:1	200 Ω s balunem 4:1
+25 tondo	25 kulatý
+3 - direttori	3 - direktory
+3 gruppi	3 skupiny
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 nebo 4. Se 2 není tuhost mimo jejich rovinu.
+3. Registro dei passi - clic su una riga per riprenderla	3. Záznam kroků - klikněte na řádek pro jeho obnovení
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω nebo balun 4:1
+36 Ω + terra	36 Ω + zem
+4 - tutto insieme	4 - vše dohromady
+4 lati	4 strany
+4 sorgenti: vedi tabella	4 zdroje: viz tabulku
+432 isol.	432 izol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 kontrol dat schválených IC8TEM 15/11/2026: prahy a vysvětlení v příručce, kapitola 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 stop asi 18 dBi, 12 stop asi 20,5 dBi
+75 ohm ideale	75 ohmů ideální
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8krát delší než poloměr. U tlustých vodičů nebo krátkých segmentů (tlusté trubky na UHF, blízké prvky,\n
+9 fili	9 vodičů
+9 fili a 0,1 λ	9 vodičů na 0,1 λ
+Accorciamento del pilotato	Zkrácení napájeného prvku
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Zkrácení nad 8 %: lineární odhad není spolehlivý, ověřte v NEC.
+Allega il modello aperto	Přiložit otevřený model
+Allega il registro di oggi	Přiložit dnešní záznam
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	RMS výška vln a výška antény nad mořem, v Diagramy > Skutečný terén.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Šířka rozmítání kolem kmitočtu, pro graf impedance.
+Antenna a	Anténa na
+Applica la freccia al modello NEC	Použít průvěs na model NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	Schváleno, v přípravě: v této verzi zatím neaktivní.
+Apri la cartella	Otevřít složku
+Apri un modello nella finestra principale	Otevřete model v hlavním okně
+Apro il modello e il diagramma 3D resta vuoto.	Otevřu model a 3D pohled zůstane prázdný.
+Area al vento dell'antenna	Plocha antény ve větru
+Area al vento totale	Celková plocha ve větru
+Area al vento totale e lista di taglio	Celková plocha ve větru a řezný seznam
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Pozor: nepoužívat s vodiči, které se spojují pod úhlem nebo s různými průměry ve spoji.\n
+Bobina di carico per la risonanza	Prodlužovací cívka pro rezonanci
+Boom con il tirante	Ráhno s táhlem
+C1 in serie con la loop	C1 sériově se smyčkou
+C1 serie, C2 parallelo	C1 sériově, C2 paralelně
+C2 in parallelo all'ingresso	C2 paralelně ke vstupu
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Kalkulátory > Přijímací antény: nízký dipól, K9AY, 4-square RX, Hi-Z 2/3/8 prvků, s fází mezi řadami optimalizovanou pro RDF a varováním o připojení k zemi.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mechanické výpočty (Vítr a Vyvážení), Kalkulátory > Děliče a zkřížené Yagi, Objekty > Kabel a balun a rám soustavy, KV zátěže.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Předběžné dimenzování: pro instalaci platí projekt autorizovaného technika.
+Candidati da controllare	Kandidáti ke kontrole
+Categoria	Kategorie
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Kategorie expozice místa (NTC 2018, tab. 3.3.II a obr. 3.3.2): závisí na třídě drsnosti terénu (A centra měst ... D oblasti bez překážek, moře) a na vzdálenosti od pobřeží. I = otevřené pobřeží nebo moře, V = centrum města.
+Cebik, poi NEC	Cebik, pak NEC
+Centro della banda scelta:\n	Střed zvoleného pásma:\n
+Con ghiaccio	S námrazou
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	S námrazou: vítr snížený na 0,6násobek a radiální námraza z pole vpravo (zjednodušená kombinace ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Se stejným semínkem se test opakuje stejně.
+Condizione della sorgente non capita ("	Podmínka zdroje nepochopena ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Hned zkontroluje GitHub bez čekání 3 minuty. Pokud je nová verze, stáhne ji, oznámí a restartuje jako automatická aktualizace (10 sekund, model se znovu otevře). Funguje i s vypnutou automatickou aktualizací.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Vždy kontrolováno ověřením segmentace a ve Varováních (8 s normálním jádrem, 2 s rozšířeným jádrem).
+Copie per candidato	Kopie na kandidáta
+Coppia sulla staffa boom-mast	Krouticí moment v objímce ráhno-stožár
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Vytvoří zip v data/segnalazioni a otevře stránku GitHubu «New issue» s již napsaným textem. Zip přiložíte sami, ručně: program sám nic neodesílá.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Zakřivení Země, v Diagramy > Skutečný terén.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Průměr mimo rozsah Cebikových vzorců (od 1E-6 do 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Vzdálenost a typ druhé země: schváleno pro 1.5 (Skutečný terén 2).
+Distanze di stack HF	Rozteče KV soustav
+Distanze di stack: accoppiamento e distanza migliore	Rozteče soustavy: vazba a nejlepší rozteč
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Po optimalizaci jdou nejlepší výsledky do kontroly s tolerancemi. 0 = bez kontroly.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Velmi nízké konce: pozor na lidi a zvířata (vysoká napětí na koncích).
+F/B peggiore	Nejhorší F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	Soubor .weq: vedení s TLParms z AutoEZ (kabely se ztrátami) používají jmenovité Zo a VF a žádnou ztrátu: karta TL v NEC je bezeztrátová.
+Filo riflettore	Reflektorový vodič
+Filo ripiegato	Ohnutý vodič
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Dlouhý hairpin (více než 0,2 lambda): je lepší zmenšit rozteč nebo použít tlustší vodiče.
+Forza del vento di progetto	Návrhová síla větru
+Forza l'aggiornamento	Vynutit aktualizaci
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Průvěs tětivy: o kolik síťka rovného úseku leží pod paraboloidem uprostřed pole (vstupuje do fazetování). Celková hmotnost pásů {4:0.00} kg{5}.
+Freccia tolta dal modello.	Průvěs odstraněn z modelu.
+Ghiaccio radiale	Radiální námraza
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Soubory MMANA se pro NEC-2 vždy přesegmentují (příručka, kapitola 10).
+I lobi si leggono nella tabella delle distanze di stack.	Laloky se čtou v tabulce roztečí soustavy.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (zaokrouhlí), FIX (ořízne), MOD, MAX, MIN, ODD (liché celé číslo: užitečné pro segmenty napájeného vodiče).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Běžný NEC2 považuje každý vodič za tenkou čáru: to platí, dokud je segment alespoň\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Jeden reflektorový vodič dá velmi malé zlepšení (Cebik): lepší je stínítko nebo 9 vodičů.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Stožár překračuje mez kluzu: silnější stožár nebo kratší vyložení.
+Impedenza del cavo	Impedance kabelu
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	V jiné podobě: kontrola r5 v Kontrolách dat označí zisk nad fyzikálním maximem pro délku ráhna.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Indukčnost s N² (těsné závity) a model NEC s jedním závitem: zde NEC kontroluje jen geometrii toho jednoho závitu.
+Interasse della forcina	Rozteč hairpinu
+Isole (tranne Sicilia e Sardegna) e mare aperto	Ostrovy (kromě Sicílie a Sardinie) a otevřené moře
+Kernel esteso del NEC2 (scheda EK).\n	Rozšířené jádro NEC2 (karta EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Rozteč hairpinu musí být větší než průměr vodiče.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim uzavírá zářič nahoře vodičem ohnutým dolů, až těsně nad stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Dělá to okno Ověření segmentace (tlačítko výše).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin je symetrický: nezkresluje diagram jako gama. Balun nebo tlumivka v napájecím bodě je stále potřeba.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin funguje jen s R napájeného prvku nižším než impedance kabelu: pro větší R použijte gamu nebo transformátor.
+La prepara IC8TEM: non ancora attiva.	IC8TEM ji připravuje: zatím neaktivní.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Šest pravidel Geometry Check z EZNEC, při každém výpočtu, na kartě Varování.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: bez korekce Z = {0:0.0} {1}j{2:0.0} ohm (s korekcí {3:0.0} {4}j{5:0.0} ohm).
+Località	Místo
+Loop orizzontale di 1 λ	Vodorovná smyčka 1 λ
+Lunghezza del pilotato	Délka napájeného prvku
+Lunghezza della forcina	Délka hairpinu
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Vloží do zipu otevřený model (.nec), i když není uložený.
+Mette nello zip il registro di oggi della cartella registri.	Vloží do zipu dnešní záznam ze složky logs.
+Momenti al mast	Momenty na stožáru
+Momento al cuscinetto	Moment u ložiska
+NEC: risonanza cercata dal motore	NEC: rezonanci hledá jádro výpočtu
+NOTE SU QUESTA VERSIONE (fase 0)\n	POZNÁMKY K TÉTO VERZI (fáze 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NOVÉ · nad zemí: výšky, rozteče, požadované vyzařovací úhly
+Nel modello non ci sono elementi orizzontali diritti	Model nemá žádné rovné vodorovné prvky
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	V tabulce soustavy a v Objektech modelu (rám soustavy, děliče).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	V kartách geometrie pište výrazy bez mezer, například:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Žádná navržená rozteč
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Žádná navržená rozteč: všechny překračují maximální činné SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	V souborech žádná IP adresa, e-mail ani uživatelská jména: cesta domovské složky se změní na «~». Bez účtu GitHub můžete zip poslat, jak chcete.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Zatím ne automaticky: dělá se ručně testem AGT ve Varováních (ARRL 24., 4nec2).
+Numero di spire	Počet závitů
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Každá kopie má rozměry náhodně posunuté v mezích tolerancí z karty Tolerance (výchozí: délka ±1 mm, poloha ±2 mm, průměr ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Kromě otevřeného modelu starty zvolené náhodně mezi minimem a maximem každé proměnné. 0 = jako dříve.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Stránka Šum skutečné oblohy na kartě Šum/GT/Soustava: výpočet skynoise převedený do C# (čtení map HEALPix, interpolace, hvězdný čas, souřadnice, Měsíc) a dvě mapy G8ONH v data/cielo.
+Partenze a caso	Náhodné starty
+Perimetro Cebik	Obvod podle Cebika
+Peso del boom	Hmotnost ráhna
+Pi-greco	Článek Pí
+Prepara la segnalazione	Připravit hlášení
+Proposta	Návrh
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	test nec2c na 145 MHz (trubky 12 mm v rozteči 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Kdy je potřeba: poměr segment/poloměr zhruba mezi 2 a 8 (pod 2 není spolehlivé ani jedno).\n
+Quota s.l.m.	Nadm. výška
+R del pilotato	R napájeného prvku
+ROS attivo minimo {0}	Minimální činné SWR {0}
+Raggio equivalente dei due conduttori	Ekvivalentní poloměr dvou vodičů
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Současná reaktance napájeného prvku: je-li kladná, napájený prvek je třeba ještě zkrátit.
+Reattanza della forcina	Reaktance hairpinu
+Reattanza voluta del pilotato	Požadovaná reaktance napájeného prvku
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktance: za kl = pi/2 (nebo s příliš tlustým vodičem) vzorec AEH neplatí, použijte NEC.
+Reinstalla la versione attuale	Přeinstalovat aktuální verzi
+Rel Z non positiva	Re Z není kladné
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Odpor napájeného prvku v rezonanci, z modelu nebo z výpočtu NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Restart se nezdařil: zavřete a znovu otevřete YA-NEC ručně.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Stáhne a přeinstaluje i při stejné verzi: užitečné, pokud se poškodil soubor programu.
+Scansione	Rozmítání
+Scegli il candidato con	Zvolit kandidáta s
+Schermo	Stínítko
+Scrivi due frequenze diverse.	Napište dva různé kmitočty.
+Segnala un problema	Nahlásit problém
+Seme del caso	Náhodné semínko
+Serve solo per la reattanza (dipolo e monopolo).	Potřeba jen pro reaktanci (dipól a monopól).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Používá se se 2 a více závity: pod 2 průměry vodiče roste skutečná ztráta jevem blízkosti (nepočítá se).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Používá se v Diagramy > Skutečný terén: odraz od moře s činitelem divergence a drsností.
+Sicilia e provincia di Reggio Calabria	Sicílie a provincie Reggio Calabria
+Sollecitazione	Napětí
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Nad 0,25 λ začne lalok klesat: méně vhodné pro NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Nad 30 MHz se Cebikova regrese používá mimo rozsah, pro který je zde nabízena (KV vodiče): lepší je Automaticky nebo NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Pod 0,1 λ klesá zisk směrem nahoru (Cebik): velmi nízká anténa nic nezíská.
+Sotto l'antenna	Pod anténou
+Spina (tubo o tondo) dentro il giunto telescopico.	Zátka (trubka nebo tyč) uvnitř teleskopického spoje.
+Spina interna nei giunti	Vnitřní zátka ve spojích
+Stack con il ROS attivo piu' basso	Soustava s nejnižším činným SWR
+Staffe e mast	Objímky a stožár
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Čas: asi (starty + 1) krát současný, plus kandidáti x kopie výpočtů.
+Tensione nel mast al cuscinetto	Napětí ve stožáru u ložiska
+Tiro del tirante	Tah táhla
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Trubky převzaté z tabulky Zúžení: rozměry jsou stejné jako v modelu NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Všechny rozteče překračují maximální činné SWR ({0}): žádná navržená rozteč. Zvyšte maximální činné SWR, zkuste vlastní referenční impedanci antény nebo dolaďte samotnou anténu. Matice a graf jsou pro rozteč s nejnižším činným SWR.
+V invertito	Obrácené V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), vazba, činné SWR, nejlepší rozteč, dva kmitočty
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Špičková rychlost větru v místě: vb sqrt(ce), kde vb = vb,0 ca (NTC 2018, doba návratu 50 let) a ce(z) podle kategorie expozice ve výšce antény.
+Velocità	Rychlost
+Velocità a mano	Rychlost ručně
+Vento di sopravvivenza	Vítr přežití
+Vento di sopravvivenza del boom	Vítr přežití ráhna
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Vítr kolmý na prvek, při kterém první bod dosáhne meze kluzu (vč. vlastní hmotnosti a námrazy).
+X da aggiungere al pilotato	X k přidání k napájenému prvku
+X del pilotato	X napájeného prvku
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Závěrečnou kontrolu dělá jádro NEC na modelu s hairpinem.
+Z0 della forcina	Z0 hairpinu
+Z0 della linea dei due conduttori	Z0 dvouvodičového vedení
+Zona buona	Dobrá zóna
+al centro	uprostřed
+caso peggiore	nejhorší případ
+caso peggiore delle due	nejhorší ze dvou
+cerca...	hledat...
+copie entro le soglie	kopie v mezích prahů
+corrente sinusoidale	sinusový proud
+distanza dal boom	vzdálenost od ráhna
+distanza dall'inizio del boom	vzdálenost od začátku ráhna
+due condensatori sul lato basso	dva kondenzátory na spodní straně
+effetto: calcolo in corso…	vliv: počítám…
+forza del vento x sbalzo	síla větru x vyložení
+il caso peggiore migliore	nejlepší nejhorší případ
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ekvivalentní dipól, tlustší, má méně než 73 Ω
+il voto medio migliore	nejlepší průměrné skóre
+induttiva, in parallelo	indukční, paralelně
+la percentuale migliore di copie entro le soglie	nejlepší podíl kopií v mezích prahů
+linea a due fili	dvouvodičové vedení
+m  mast a	m  stožár na
+m dal suolo	m nad zemí
+m sopra il boom, attacco al	m nad ráhnem, upevněno na
+media delle due	průměr obou
+mm  lungo	mm  dlouhý
+mm, acciaio	mm, ocel
+molto buono	velmi dobré
+molto povero	velmi slabé
+nessun rinforzo	bez vyztužení
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	žádná obchodní trubka do +12 mm nestačí: zkontrolujte zúžení
+nessuna distanza sotto il ROS attivo massimo	žádná rozteč pod maximálním činným SWR
+partenza dal modello aperto	začít z otevřeného modelu
+per lato, teso per annullare il momento verticale al mast	na stranu, napnuté tak, aby zrušilo svislý moment na stožáru
+primo cedimento: tubo Ø	první porušení: trubka Ø
+regge il vento di progetto con il 20 % di margine	odolá návrhovému větru s rezervou 20 %
+riferimenti bibliografici	bibliografické odkazy
+sbalzo sopra il cuscinetto	vyložení nad ložiskem
+schermo 1 λ x 1 λ	stínítko 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	husté segmenty) rozšířené jádro používá přesnější vzorec a výsledek je spolehlivější.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	bez zátky se vnitřní trubka opírá o okraj vnější a na napětí v prvních 5 cm se uplatní činitel 1,25: odhad, objímky a drážky výsledek značně mění.
+sollecitazione / snervamento	napětí / mez kluzu
+tubo piu' grosso	silnější trubka
+un filo riflettore	jeden reflektorový vodič
+zona di cedimento	zóna porušení
+ø dei conduttori della forcina	ø vodičů hairpinu
+ø del filo	ø drátu
+ø del pilotato	ø napájeného prvku
+accordata	naladěný
+accordate	naladěná
+alimentazione	napájení
+alluminio	hliník
+allungata	prodloužený
+altro	jiné
+anello	smyčka
+angolo	úhel
+antiorario	proti směru hodin
+aritmetico	aritmetický
+automatico	automaticky
+banda	pásmo
+bande	pásma
+bordi	okraje
+buono	dobré
+capacitiva	kapacitní
+carichi	zátěže
+carico	zátěž
+cartesiana	kartézský
+cavi	kabely
+cavo	kabel
+centimetri	centimetry
+centina	žebro
+cerchio	kruh
+condensatore	kondenzátor
+corrente	proud
+destra	vpravo
+diagramma	diagram
+diametro	průměr
+differenza	rozdíl
+dipoli	dipóly
+dipolo	dipól
+diretta	přímý
+diritto	rovný
+due	dva
+elementi	prvky
+elemento	prvek
+elimina	smazat
+equilatera	rovnostranný
+esito	výsledek
+esperimenti	experimenty
+esponenziale	exponenciální
+fase	fáze
+ferriti	ferity
+fili	vodiče
+filo	vodič
+forcina	hairpin
+forma	tvar
+formule	vzorce
+frequenza	kmitočet
+geometria	geometrie
+ghiaccio	námraza
+giudizio	hodnocení
+gradi	stupně
+griglia	mřížka
+guadagno	zisk
+incrociata	zkřížené
+larghezza	šířka
+lato	strana
+lega	slitina
+libera	volný
+libero	volná
+linea	vedení
+lineare	lineární
+linee	vedení
+lobi	postranní laloky
+locale	místní
+mai	nikdy
+manicotto	rukáv
+mano	ručně
+meccanica	mechanika
+mezzaonda	půlvlna
+millimetri	milimetry
+misure	rozměry
+modello	model
+modo	režim
+nessuna	žádný
+nota	poznámka
+nuovo	nový
+operativo	pracovní
+orario	po směru hodin
+ottagono	osmiúhelník
+palo	stožár
+parabola	parabola
+passo	stoupání
+perdite	ztráty
+perfetto	dokonalý
+piano	rovina
+piatto	plochý
+piedi	stopy
+polare	polární
+pollici	palce
+propria	vlastní
+punto	bod
+quadrato	čtvercový
+quadro	čtvercová
+quota	výška
+radiali	radiály
+radiatore	zářič
+raggio	poloměr
+rame	měď
+ramo	větev
+rapidi	rychlý
+rastremazioni	zúžení
+rete	síť
+rettangolo	obdélník
+riepilogo	souhrn
+riflettore	reflektor
+riga	řada
+rombo	kosočtverec
+scarso	slabé
+scarto	odchylka
+schiacciata	zploštělý
+sempre	vždy
+senso	směr
+si'	ano
+sinistra	vlevo
+soglia	práh
+sorgenti	zdroje
+sotto	pod
+spire	závity
+staffe	objímky
+stato	stav
+sufficiente	dostatečný
+tetto	střecha
+tipo	typ
+tirante	táhlo
+togli	odebrat
+tondo	kulatý
+traffico	provoz
+trasformatori	transformátory
+trombe	trychtýře
+tubi	trubky
+tubo	trubka
+tutti	všechny
+uguale	stejný
+uguali	stejné
+uso	použít
+a {0} x DL6WU; tutte sopra il massimo {1}	při {0} x DL6WU; všechny nad maximem {1}
+% del mezzo boom	% poloviny ráhna
++ aggiungi	+ přidat
++ aggiungi variabile	+ přidat proměnnou
++ correzione del boom	+ korekce ráhna
++ nuova	+ nový
++ trappola	+ trap
++ verso il disco.	+ směrem k parabole.
++90 gradi Z	+90 stupňů Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetický: přesně uprostřed mezi hranicemi IARU pásma (například 145,000 MHz na 2 m),\n
+- correzione del boom	- korekce ráhna
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- pracovní: kmitočet, na kterém skutečně pracujete (například 144,300 MHz na 2 m, 432,200 na 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (černá) 10-100 MHz
+-10 nero	-10 černá
+-2 (rosso) 0,25-10 MHz	-2 (červená) 0,25-10 MHz
+-2 rosso	-2 červená
+-6 (giallo) 3-40 MHz	-6 (žlutá) 3-40 MHz
+-6 giallo	-6 žlutá
+-90 gradi Z	-90 stupňů Z
+-> segmento NEC	-> segment NEC
+. "Annulla" torna indietro.	. «Zpět» se vrátí.
+. Antenna base: fili 1-	. Základní anténa: vodiče 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. S tak vysokým Q musí rozmítání pokrýt jen několik kHz.
+. Salvalo con Salva con nome.	. Uložte ho pomocí Uložit jako.
+. Trascina per ruotare, rotella per ingrandire.	. Táhněte pro otočení, kolečko pro zvětšení.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Použijte tenčí drát, větší jádro nebo dvě jádra na sobě.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (přes Sengupta 2021) a GMRT tab. 19.1
+12 (errore / HPBW)^2	12 (chyba / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasivní prstenec: obvod {0:0.000} lambda, bez zdroje a bez kondenzátoru; vliv je vidět v úplném modelu (direktor nebo reflektor).
+Automatico	Automaticky
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, jako nec2c a xnec2c: zdrojový kód je přiložen k programu (soubor COPYING).\n
+Provincia di Trieste	Provincie Terst
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	a v C# pro YA-NEC. Referenční rozhraní: xnec2c od 5B4AZ a Erica KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	účinnost vypočtená ze vzdáleného pole, Prad / (Prad + ztráty) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedance a ztráty jsou čím dál méně spolehlivé, čím níže vodič sestupuje (viz BOG v příručce). Pro spolehlivý výsledek: alespoň lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	vytvoří se do průměru {3:0.00} m; výpočet apertury vedle platí pro jakýkoli průměr a už zohledňuje žebra (pole výše).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmentů: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} na {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, účinnost {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° elevace
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. vyd., kap. 18 (Yagi 2 m od W9PE): tři prvky po 0,2 λ, asi 7 dBi a F/B přes 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Shoda YA-NEC s nec2c (tyče 20/15/10 m): reflektory na 0,185 / 0,197 / 0,222 λ, direktory na 0,095 / 0,116 / 0,114 λ: v rozsazích zdrojů.
+↶ Annulla	↶ Zpět
+↷ Ripeti	↷ Znovu
+■ Ferma	■ Zastavit
+▶ Avvia	▶ Spustit
+☐ mantieni lunghezza del boom	☐ zachovat délku ráhna
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ žádná varování: segmentace splňuje zvolenou úroveň
+✓ nessun errore e nessun avviso	✓ žádné chyby ani varování
+variabili del modello	proměnné modelu
+nuova variabile dal modello	nová proměnná z modelu
+Scrivi una variabile nella linguetta Variabili…	Napsat proměnnou na kartě Proměnné…
+Elemento diritto	Rovný prvek
+Elemento piegato	Ohnutý prvek
+Variabile nuova	Nová proměnná
+Minimo / massimo	Minimum / maximum
+Cosa cambia	Co se mění
+in ocra: dove agisce la variabile	okrově: kde proměnná působí
+Crea la variabile	Vytvořit proměnnou
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Proměnná {0} vytvořena: geometrie se nemění. «Zpět» v liště Geometrie ji odebere.
+Struttura 3D: dove agisce la variabile ▾	3D struktura: kde proměnná působí ▾
+Struttura 3D ▸	3D struktura ▸
+Clic: nasconde o mostra la struttura	Klik: skryje nebo zobrazí strukturu
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	plná okrová: používá proměnnou · čárkovaná okrová: používá ji přes jinou proměnnou
+attraverso {0}: fili {1}	přes {0}: vodiče {1}

@@ -62,6 +62,14 @@ namespace YaNec
             return true;
         }
 
+        // 1.5.2 (IC8TEM 19/11/2026 11:15 "si"): dopo Nuovo, o aprendo un file, la tendina Esempi torna a "Esempi..."
+        // (prima restava sul nome dell'ultimo esempio aperto anche con un altro modello)
+        void EsempiVuoto()
+        {
+            if (cmbEsempi == null || cmbEsempi.SelectedItem == null) return;
+            bool old = building; building = true; cmbEsempi.SelectedItem = null; building = old;
+        }
+
         async Task NuovoModello()
         {
             if (!await ChiediSeNonSalvato("Cosa faccio prima di cominciare un modello nuovo?", "nuovo")) return;
@@ -78,6 +86,7 @@ namespace YaNec
             try { RefreshAll(); AggiornaQuota(null, null); AggiornaOggetti(); }
             catch (Exception ex) { Registro.Scrivi("ERRORE", "ridisegno del modello nuovo: " + ex.Message); }
             SegnaSalvato();
+            EsempiVuoto();
             Registro.Scrivi("AZIONE", "nuovo modello vuoto a " + f.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture) + " MHz");
             Status("Modello nuovo, vuoto: aggiungi i fili nella tabella dei Fili o con la barra Geometria, oppure parti da un calcolatore.");
             SelectTab(0);

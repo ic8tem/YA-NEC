@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 26 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 22-25 with 1.3). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 28 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 22-25 with 1.3, 26 and 27 with 1.5). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -62,7 +62,7 @@ The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator:
 
 ### Lesson 6 - The model tools
 
-From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix. Since 1.0.11 the fill handle in the wire table (as in Excel), with Ctrl+Z.
+From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix. Since 1.0.11 the fill handle in the wire table (as in Excel), with Ctrl+Z, and the Insert symmetric element button: one more director at 3.9 m on the DK7ZB 7 elements.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.srt)
 
@@ -237,6 +237,24 @@ Monte Carlo tolerances with the cutting list (DJ9BV 10 elements), Cable and balu
 Wind with NTC 2018 / CNR-DT 207 from the locator, balance with the recommended clamp, HF loads (coaxial trap, loading coil with self-resonance) and the F/B and average F/R tables over the whole band.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_25_mechanics_loads_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_25_mechanics_loads_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_26_calculators_news_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_26.jpg" alt="Lesson 26 - What's new in the Calculators (1.4.2 and 1.5)"></a></td><td>
+
+### Lesson 26 - What's new in the Calculators (1.4.2 and 1.5)
+
+Multi-turn loop, radiation resistance and reactance (Tai, AEH) with the loading coil, folded dipole, NVIS, quad and hairpin: the new Calculator entries, with the NEC check.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_26_calculators_news_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_26_calculators_news_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_27.jpg" alt="Lesson 27 - Stacking, Monte Carlo, updates (1.5)"></a></td><td>
+
+### Lesson 27 - Stacking, Monte Carlo, updates (1.5)
+
+Stacking distances on two frequencies with the reference impedance and active SWR (DK7ZB 7 elements), HF stacking over ground with two and three ARRL 520-40H and how to read the elevation chart (in phase, top only, bottom only, out of phase), Monte Carlo in the Optimizer, forced update and Report a problem.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_27_stack_montecarlo_EN.srt)
 
 </td></tr></table>
 

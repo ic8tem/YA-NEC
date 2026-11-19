@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Πόσο καλυπτικό είναι το χρώμα: ελαφριά, μέτρια ή έντονη. Στη γραμμή του πίνακα το πέπλο είναι πιο ελαφρύ, για να διαβάζονται οι αριθμοί.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Σύρμα {0} επιλεγμένο στην τρισδιάστατη προβολή: γραμμή {1} του πίνακα
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Σύρμα {0}: δεν υπάρχει στον πίνακα συρμάτων (κάρτα γεωμετρίας διαφορετική από GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Ελέγχει αμέσως για νέα έκδοση (χωρίς αναμονή 3 λεπτών).
+terreno reale	πραγματικό έδαφος
+Locatore	Locator
+da 8 a 12 caratteri	8 έως 12 χαρακτήρες
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Με 6 χαρακτήρες το σημείο μπορεί να απέχει χιλιόμετρα: το προφίλ εδάφους χρειάζεται τουλάχιστον 8 χαρακτήρες.
+Quota sito	Υψόμετρο θέσης
+Altezza antenna	Ύψος κεραίας
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Ύψος του κέντρου της κεραίας πάνω από το έδαφος. Αν διαφέρει από αυτό του μοντέλου, το διάγραμμα NEC ανεβαίνει ή κατεβαίνει με την ίδια κατανομή ρεύματος.
+Distanza max	Μέγ. απόσταση
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Αζιμούθιο και αποστάσεις επανυπολογίζονται σε κάθε αλλαγή του locator (μέγιστος κύκλος, σφαίρα 6371 km).
+Terra	Ξηρά
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Μειώνει τον συντελεστή ανάκλασης της θάλασσας με τον συντελεστή Ament για κύματα 0,25 m (τυπική απόκλιση).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	στατιστικό μοντέλο τραχιάς επιφάνειας (Ament 1953): ισχύει για εφαπτομενικές γωνίες και ομοιόμορφη θάλασσα.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Χαμηλώνει το προφίλ λόγω καμπυλότητας της Γης (ενεργός ακτίνα 4/3 με κανονική διάθλαση) και μειώνει τις μακρινές ανακλώμενες ακτίνες με τον συντελεστή απόκλισης.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	πρότυπη ατμόσφαιρα (k = 4/3); με αγωγούς ή αναστροφές η φαινομενική καμπυλότητα αλλάζει.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Η ψηλότερη κορυφογραμμή μεταξύ κεραίας και κατεύθυνσης εκπομπής εξασθενεί την άμεση ακτίνα σαν ακμή (ολοκλήρωμα Fresnel), όπως στο HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	μονή ακμή μαχαιριού: στρογγυλεμένες κορυφογραμμές ή πολλές διαδοχικές προσεγγίζονται με την ψηλότερη.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Επαναλαμβάνει τον υπολογισμό ανά 10 μοίρες αζιμουθίου (μόνο DEM) και δείχνει τον δείκτη ποιότητας στο ρόδο, με την κεραία στραμμένη σε κάθε αζιμούθιο.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	με την κεραία πάντα στραμμένη στο αζιμούθιο του προφίλ: ισχύει για περιστρεφόμενη κεραία.
+Cartesiana dBi / gradi	Καρτεσιανό dBi / μοίρες
+0–180° intero	0–180° πλήρες
+Zoom angolare	Μεγέθυνση γωνίας
+Sovrapponi alla linguetta Verticale	Επικάλυψη στην καρτέλα Κατακόρυφο
+premi Calcola	πατήστε Υπολογισμός
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Επαναλαμβάνει τον υπολογισμό με την κεραία από 6 έως 30 m (HF) ή από 2 έως 30 m (VHF) και δείχνει το ύψος με τον καλύτερο δείκτη ποιότητας στη διαδρομή.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	τα ρεύματα παραμένουν του υπολογισμένου μοντέλου: η επίδραση του ύψους στη σύνθετη αντίσταση και στα ρεύματα δεν λαμβάνεται υπόψη (όπως στο HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Χρειάζονται οι πίνακες γωνιών άφιξης του ARRL Antenna Book (αρχεία .PRN ανά ζώνη και περιοχή): μόλις διατεθούν, αυτό ενεργοποιείται και δείχνει τις πορτοκαλί λωρίδες.
+locatore non valido	μη έγκυρο locator
+sul mare	πάνω από θάλασσα
+sul terreno	πάνω από ξηρά
+profilo reale	πραγματικό προφίλ
+terreno piatto	επίπεδο έδαφος
+orizzonte ostruito	φραγμένος ορίζοντας
+° (scala angolare ×	° (κλίμακα γωνιών ×
+← dietro	← πίσω
+avanti →	μπρος →
+statistiche degli angoli di arrivo: non caricate	στατιστική γωνιών άφιξης: δεν φορτώθηκε
+rosa 0–360°: calcolo in corso…	ρόδο 0–360°: υπολογισμός…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Επιλέξτε το αρχείο προφίλ (κλικ στο "Από HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	Το DEM δεν είναι διαθέσιμο: στην πρώτη χρήση χρειάζεται δίκτυο για λήψη TINITALY ή SRTM1 (μετά μένουν στον φάκελο data/dem).
+Profilo del terreno	Προφίλ εδάφους
+Lobo di elevazione	Λοβός ανύψωσης
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Υπολογίστε πρώτα το μοντέλο (κουμπί Υπολογισμός επάνω): το διάγραμμα της κεραίας προέρχεται από το NEC.
+da file	από αρχείο
+dal DEM	από DEM
+rispetto alla stessa antenna su terreno piatto	σε σχέση με την ίδια κεραία πάνω από επίπεδο έδαφος
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Διαφορά ανάμεσα στον λοβό πάνω από το πραγματικό προφίλ και τον λοβό πάνω από επίπεδο έδαφος, κατά μέσο όρο στις χρήσιμες γωνίες.
+Guadagno a 5° / 10°	Κέρδος στις 5° / 10°
+Guadagno a 1° / 3°	Κέρδος στις 1° / 3°
+Angoli coperti a -3 dB	Γωνίες που καλύπτονται στα -3 dB
+primo lobo sul profilo reale	πρώτος λοβός πάνω από το πραγματικό προφίλ
+calcolo…	υπολογισμός…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Μοντέλο ελεύθερου χώρου: τα ρεύματα είναι χωρίς έδαφος, όπως το διάγραμμα ελεύθερου χώρου που χρησιμοποιεί το HFTA. Για να ληφθεί υπόψη το κοντινό έδαφος, υπολογίστε το μοντέλο με πραγματικό έδαφος.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Το προφίλ ισχύει μόνο για ένα αζιμούθιο: μια περιστρεφόμενη κεραία χρειάζεται περισσότερες κατευθύνσεις (πλαίσιο "Όλα τα αζιμούθια").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Μέθοδος όπως στο HFTA (N6BV): άμεση ακτίνα + ανακλώμενες ακτίνες σε κάθε έδρα του προφίλ + περίθλαση πάνω από τις κορυφογραμμές. Το διάγραμμα της κεραίας προέρχεται από το NEC· ο υπολογισμός αυτός προσθέτει το έδαφος.
+Piatto	Επίπεδο
+Reale	Πραγματικό
+Primo minimo	Πρώτο ελάχιστο
+Punto di riflessione	Σημείο ανάκλασης
+Orizzonte	Ορίζοντας
+Uso: rotte DX in HF (angoli bassi 1–15°).	Χρήση: διαδρομές DX στα HF (χαμηλές γωνίες 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Χρήση: tropo και MS (0–5°), EME με χαμηλή Σελήνη (κέρδος εδάφους στην ανατολή/δύση της Σελήνης).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Ύψος με το μεγαλύτερο μέσο κέρδος στις χρήσιμες γωνίες της διαδρομής.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	ρεύματα του υπολογισμένου μοντέλου μετατοπισμένα σε ύψος: σύνθετη αντίσταση και σύζευξη με το έδαφος παραμένουν του μοντέλου.
+Calcola prima il terreno reale	Υπολογίστε πρώτα το πραγματικό έδαφος
+Esporta il lobo sul terreno reale	Εξαγωγή του λοβού πάνω από πραγματικό έδαφος
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Εικόνες: Esri, Maxar, Earthstar Geographics και η κοινότητα χρηστών GIS
+© i contributori di OpenStreetMap	© συντελεστές του OpenStreetMap
+Sfondo	Φόντο
+Foto aerea	Αεροφωτογραφία
+Solo griglia	Μόνο πλέγμα
+Griglia	Πλέγμα
+Cerca	Αναζήτηση
+⌖ Centra sul locatore	⌖ Κεντράρισμα στο locator
+Punto scelto	Επιλεγμένο σημείο
+Coordinate	Συντεταγμένες
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Κλικ στον χάρτη = σημείο κεραίας· σύρσιμο = μετακίνηση· ροδέλα = μεγέθυνση (το πλέγμα περνά από 6 σε 8, 10, 12 χαρακτήρες). Παχύ πλαίσιο = τετράγωνο 6 χαρακτήρων.
+non disponibile	μη διαθέσιμο
+Lunghezza elementi	Μήκος στοιχείου
+Posizione sul boom	Θέση στον φορέα
+Uniforme	Ομοιόμορφη
+Distribuzione	Κατανομή
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Στοιχείο στερεωμένο εκτός κέντρου στον σφιγκτήρα: μετατόπιση κατά τον δικό του άξονα, με την ανοχή θέσης.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	ο πραγματικός σφιγκτήρας αλλάζει και το ηλεκτρικό μήκος κοντά στον φορέα: γι' αυτό χρησιμοποιήστε την καρτέλα Διόρθωση φορέα.
+nuovo a ogni avvio	νέο σε κάθε εκτέλεση
+Numero prove	Αριθμός δοκιμών
+Frequenze	Συχνότητες
+Seme casuale	Τυχαίος σπόρος
+OBIETTIVO LISTA DI TAGLIO	ΣΤΟΧΟΣ ΛΙΣΤΑΣ ΚΟΠΗΣ
+Calo F/B max	Μέγ. πτώση F/B
+ROS max	Μέγ. SWR
+Ferma	Διακοπή
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Τα στοιχεία κοντά στο τροφοδοτούμενο είναι συνήθως τα πιο κρίσιμα· εκείνα στο άκρο του φορέα ανέχονται μεγαλύτερα σφάλματα.
+l'istogramma serve al Monte Carlo	το ιστόγραμμα αφορά το Monte Carlo
+5% peggiore	χειρότερο 5%
+Posizione mm	Θέση mm
+Lunghezza mm	Μήκος mm
+Tolleranza ammessa	Επιτρεπτή ανοχή
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Με κόκκινο τα στοιχεία που χρειάζονται λιγότερο από την ανοχή κατασκευής.
+Calcola prima il modello	Υπολογίστε πρώτα το μοντέλο
+sensibilita'	ευαισθησία
+Tolleranze: fermato	Ανοχές: σταμάτησε
+Diametro mm	Διάμετρος mm
+Tolleranza ammessa mm	Επιτρεπτή ανοχή mm
+Avvia prima il calcolo	Εκτελέστε πρώτα τον υπολογισμό
+Esporta la lista di taglio	Εξαγωγή λίστας κοπής
+Lista di taglio	Λίστα κοπής
+Obiettivi	Στόχοι
+Calo massimo del F/B	Μέγιστη πτώση F/B
+ROS massimo	Μέγιστο SWR
+Tolleranze di costruzione	Ανοχές κατασκευής
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Προγραμματισμένο (σκίτσο 13, προς έγκριση): ακόμη ανενεργό σε αυτή την έκδοση.
+Al quadro 20×2 mm	Al τετράγωνο 20×2 mm
+Al quadro 25×2 mm	Al τετράγωνο 25×2 mm
+Al quadro 30×2 mm	Al τετράγωνο 30×2 mm
+Al quadro 40×2 mm	Al τετράγωνο 40×2 mm
+Al tondo 25×1,5 mm	Al στρογγυλό 25×1,5 mm
+Al tondo 30×2 mm	Al στρογγυλό 30×2 mm
+Al tondo 40×2 mm	Al στρογγυλό 40×2 mm
+Al tondo 50×2 mm	Al στρογγυλό 50×2 mm
+Zona NTC	Ζώνη NTC
+Quota sito as	Υψόμετρο θέσης ως
+Periodo ritorno	Περίοδος επαναφοράς
+Categoria esposiz.	Κατηγορία έκθεσης
+Coeff. topografia	Συντ. τοπογραφίας
+Antenna da terra	Κεραία πάνω από το έδαφος
+Palo sopra rotore	Ιστός πάνω από τον περιστροφέα
+Ø palo	Ø ιστού
+Usa elementi e boom del modello	Χρήση στοιχείων και φορέα του μοντέλου
+Includi telaio, palo, cavi	Συμπερίληψη πλαισίου, ιστού, καλωδίων
+Scansione direzione del vento	Σάρωση κατεύθυνσης ανέμου
+UNITÀ	ΜΟΝΑΔΕΣ
+N e kgf affiancati	N και kgf δίπλα-δίπλα
+solo N	μόνο N
+solo kgf	μόνο kgf
+Mostra	Εμφάνιση
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	μη έγκυρο locator: επιλέξτε τη ζώνη χειροκίνητα
+Telaio a H	Πλαίσιο H
+Cavi e divisore	Καλώδια και διαιρέτης
+Parte	Εξάρτημα
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Με πλάγιο άνεμο τα στοιχεία δεν σπρώχνουν (cross-flow, K5IU): η δύναμη σε σωλήνα αυξάνεται με το τετράγωνο της συνιστώσας του ανέμου κάθετης στον άξονά του.
+momento flettente alla staffa del rotore	ροπή κάμψης στον σφιγκτήρα του περιστροφέα
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Προκαταρκτική διαστασιολόγηση: δεν αντικαθιστά τον έλεγχο μηχανικού για ιστό, πύργο και θεμέλιο. Η ροπή στη βάση θα πάει στην υποκαρτέλα Ιστός και θεμέλιο.
+Sito e norma	Θέση και πρότυπο
+Norma	Πρότυπο
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; συντελεστές CNR-DT 207 R1/2018 και EN 1991-1-4
+Locatore / zona	Locator / ζώνη
+Risultati	Αποτελέσματα
+Forza massima	Μέγιστη δύναμη
+Momento flettente alla staffa del rotore	Ροπή κάμψης στον σφιγκτήρα του περιστροφέα
+Momento torcente sul rotore	Ροπή στρέψης στον περιστροφέα
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Προκαταρκτική διαστασιολόγηση: δεν αντικαθιστά τον έλεγχο αδειούχου μηχανικού για ιστό, πύργο και θεμέλιο.
+Al tondino pieno	Al συμπαγής ράβδος
+Materiale elementi	Υλικό στοιχείων
+Staffe, isolatori	Σφιγκτήρες, μονωτήρες
+g cad.	g το καθένα
+Dipolo + scatola	Δίπολο + κουτί
+Cavo fino al palo	Καλώδιο έως τον ιστό
+STAFFA AL PALO	ΣΦΙΓΚΤΗΡΑΣ ΙΣΤΟΥ
+Posizione attuale	Τρέχουσα θέση
+m dal riflettore	m από τον ανακλαστήρα
+Massa / distanza	Μάζα / απόσταση
+Vento dalla linguetta Vento	Άνεμος από την καρτέλα Άνεμος
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Χρησιμοποιεί την πίεση σχεδιασμού του τελευταίου υπολογισμού στην υποκαρτέλα Άνεμος· χωρίς αυτή, 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Μετακινεί όλο το μοντέλο κατά μήκος του φορέα ώστε ο προτεινόμενος σφιγκτήρας να πέσει στην αρχή των αξόνων (όπου στερεώνονται ο ιστός και το πλαίσιο της συστοιχίας). Η Αναίρεση στην τρισδιάστατη δομή το αντιστρέφει.
+Momenti in funzione della posizione della staffa	Ροπές ανάλογα με τη θέση του σφιγκτήρα
+Masse e aree per parte	Μάζες και επιφάνειες ανά εξάρτημα
+ultimo direttore	τελευταίος κατευθυντήρας
+Staffe e isolatori	Σφιγκτήρες και μονωτήρες
+Cavo sul boom	Καλώδιο στον φορέα
+Massa kg	Μάζα kg
+Baricentro m	Κέντρο βάρους m
+Area vento m²	Επιφάνεια ανέμου m²
+Centro area m	Κέντρο επιφάνειας m
+solo peso	μόνο βάρος
+solo vento	μόνο άνεμος
+File Touchstone .s1p	Αρχείο Touchstone .s1p
+Formato letto	Αναγνωσμένη μορφή
+CAVO TRA VNA E ANTENNA	ΚΑΛΩΔΙΟ ΜΕΤΑΞΥ VNA ΚΑΙ ΚΕΡΑΙΑΣ
+R e X separate	R και X χωριστά
+Banda con ROS <	Ζώνη με SWR <
+ROS: calcolato e misurato	SWR: υπολογισμένο και μετρημένο
+Confronto	Σύγκριση
+misurato, cavo tolto	μετρημένο, καλώδιο αφαιρεμένο
+R calcolata	R υπολογισμένο
+X calcolata	X υπολογισμένο
+R misurata	R μετρημένο
+X misurata	X μετρημένο
+Calcolato	Υπολογισμένο
+Misurato	Μετρημένο
+Scarto	Διαφορά
+Frequenza del ROS minimo	Συχνότητα ελάχιστου SWR
+ROS minimo	Ελάχιστο SWR
+nessuna correzione: calcolo e misura coincidono.	καμία διόρθωση: υπολογισμός και μέτρηση συμφωνούν.
+calcolo NEC sul campo della misura…	Υπολογισμός NEC στο εύρος της μέτρησης…
+Misura del VNA	Μέτρηση VNA
+Tutti	Όλα
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Εκτελέστε σάρωση (κουμπί Σάρωση επάνω) για να δείτε F/B και F/R σε όλη τη ζώνη
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = κέρδος προς τα εμπρός μείον τη μέση ισχύ στο πίσω ημισφαίριο (αζιμούθιο 90-270°, όλες οι ανυψώσεις πάνω από 0°). Είναι επίσης μεταξύ των στόχων του βελτιστοποιητή.
+Tabelle: F/B e F/R su tutta la banda	Πίνακες: F/B και F/R σε όλη τη ζώνη
+Valori dello sweep	Τιμές σάρωσης
+ANTENNE RICEVENTI	ΚΕΡΑΙΕΣ ΛΗΨΗΣ
+4-square in ricezione	4-square για λήψη
+8 verticali in cerchio	8 κατακόρυφες σε κύκλο
+Modello aperto	Άνοιγμα μοντέλου
+Isotropo	Ισοτροπικό
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = κέρδος στην επιθυμητή κατεύθυνση μείον το μέσο κέρδος σε όλο τον ημιχώρο: αντίθετα με το κέρδος, δεν εξαρτάται από τις απώλειες.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Χρησιμοποιεί τη διάμεση γωνία άφιξης από την καρτέλα Πραγματικό έδαφος ως επιθυμητή ανύψωση (στατιστική ανά ζώνη και περιοχή). Χωρίς φορτωμένη στατιστική ARRL διατηρείται η ανύψωση που γράφεται εδώ.
+Direzione voluta	Επιθυμητή κατεύθυνση
+Hz  rumore	Hz  θόρυβος
+NF ricevitore	NF δέκτη
+sorgente locale az	τοπική πηγή az
+Cifre di merito in ricezione	Δείκτες ποιότητας λήψης
+Basta il segnale?	Φτάνει το σήμα;
+calcolo in corso…	υπολογισμός…
+RDF in funzione della frequenza	RDF ως προς τη συχνότητα
+Calcola prima il modello aperto	Υπολογίστε πρώτα το ανοιχτό μοντέλο
+verticale λ/4	κατακόρυφη λ/4
+° · dB relativi · arancio: -3 dB	° · σχετικά dB · πορτοκαλί: -3 dB
+settore ±30° az, 10–40° el	τομέας ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Μέσο κέρδος στον εμπρός τομέα μείον τον μέσο όρο στο πίσω ημισφαίριο.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	Ο ON4UN ορίζει το DMF μόνο με το κέρδος στις 20 μοίρες· εδώ χρησιμοποιείται ο μέσος όρος στον τομέα του σκίτσου, οπότε οι τιμές δεν συγκρίνονται ένα προς ένα με του βιβλίου.
+molto basso: serve un preamplificatore	πολύ χαμηλό: χρειάζεται προενισχυτής
+basso ma accettabile: vedi soglia	χαμηλό αλλά αποδεκτό: δείτε το κατώφλι
+come un'antenna trasmittente	όπως μια κεραία εκπομπής
+F/R medio sull'emisfero posteriore	Μέσο F/R στο πίσω ημισφαίριο
+Rumore d'antenna ai morsetti	Θόρυβος κεραίας στους ακροδέκτες
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Ισχύς εξωτερικού θορύβου στους ακροδέκτες: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + μέσο κέρδος σταθμισμένο κατά την προέλευση του θορύβου.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	θόρυβος από τον ορίζοντα σταθμισμένος exp(-el/10 μοίρες) σε ανύψωση: αντιπροσωπεύει τον μακρινό ανθρωπογενή θόρυβο που φτάνει χαμηλά· η πραγματική κατανομή εξαρτάται από τη θέση.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	σημειακή πηγή σε ανύψωση 5 μοιρών με την ίδια ισχύ όπως το ισοτροπικό υπόβαθρο.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	ισοτροπικός θόρυβος πάνω από το έδαφος· το έδαφος δεν προσθέτει θόρυβο.
+Margine sul ricevitore	Περιθώριο δέκτη
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Ο θόρυβος της κεραίας υπερβαίνει τον θόρυβο του δέκτη κατά λιγότερο από 6 dB: ο δέκτης περιορίζει την ευαισθησία. Χρειάζεται περισσότερη προενίσχυση ή δέκτης με χαμηλότερο NF.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Κέρδος 1,8
+Spazio richiesto	Απαιτούμενος χώρος
+λ/4 in tubo quadro	λ/4 σε τετράγωνο σωλήνα
+λ/4 in tubo tondo	λ/4 σε στρογγυλό σωλήνα
+Solo cavi di fase	Μόνο γραμμές φάσης
+Aria	Αέρας
+Uscite	Έξοδοι
+Z antenne	Z κεραίας
+Z ingresso	Z εισόδου
+Dielettrico	Διηλεκτρικό
+Connettori	Συνδετήρες
+Correggi accorciamento dei connettori	Διόρθωση βράχυνσης από τους συνδετήρες
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Αφαιρεί από το μήκος το τμήμα γραμμής μέσα στους συνδετήρες.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	εκτίμηση 4 mm ανά άκρο με συνδετήρες N (3 BNC, 1,5 SMA): καλύτερα ρύθμιση με VNA, κονταίνοντας ανά 1 mm.
+Divisori	Διαιρέτες
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Χρησιμοποιεί τις ενεργές σύνθετες αντιστάσεις των κεραιών της ανοιχτής συστοιχίας (μία πηγή ανά κεραία) και τις αποστάσεις για το ελάχιστο μήκος των γραμμών φάσης.
+CAVI DI FASE	ΓΡΑΜΜΕΣ ΦΑΣΗΣ
+Lunghezza minima	Ελάχιστο μήκος
+Passo verticale	Κατακόρυφη απόσταση
+solo cavi di fase: nessun trasformatore da costruire	μόνο γραμμές φάσης: κανένας μετασχηματιστής για κατασκευή
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 καλώδια 75 Ω παράλληλα = 37,5 Ω
+quadro, lato	τετράγωνο, πλευρά
+tondo, Ø	στρογγυλό, Ø
+Z0 richiesta	Απαιτούμενο Z0
+Ø conduttore interno	Ø εσωτερικού αγωγού
+VF del cavo	VF καλωδίου
+λ/4 in aria, mm	λ/4 στον αέρα, mm
+da tagliare, mm	για κοπή, mm
+Z carico in parallelo	Z φορτίου παράλληλα
+Rami λ/4: Z0 = Zin · √N	κλάδοι λ/4: Z0 = Zin · √N
+Resistenze a stella	Αντιστάσεις σε αστέρα
+Isolamento tra le uscite	Απομόνωση μεταξύ εξόδων
+Perdita stimata	Εκτιμώμενη απώλεια
+Carico usato	Φορτίο που χρησιμοποιείται
+non potenza di 2	όχι δύναμη του 2
+ROS all'ingresso	SWR εισόδου
+solo cavi di fase	μόνο γραμμές φάσης
+Uscita	Έξοδος
+Lungh. elettrica	Ηλεκτρικό μήκος
+Fisica mm	Φυσικά mm
+Perdita dB	Απώλεια dB
+° di fase).	° φάσης).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° προς τα πάνω)· η σύνθετη αντίσταση στον διαιρέτη δεν επαναλαμβάνεται πια ακριβώς.
+Solo cavi di fase: nessun disegno da stampare	Μόνο γραμμές φάσης: κανένα σχέδιο για εκτύπωση
+Divisore	Διαιρέτης
+50 mm di controllo	Έλεγχος 50 mm
+GEOMETRIA	ΓΕΩΜΕΤΡΙΑ
+λ/4 sul boom	λ/4 στον φορέα
+stesso piano	ίδιο επίπεδο
+Metallico, isolati	Μέταλλο, μονωμένα
+Non metallico	Μη μεταλλικό
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Ο φορέας δεν είναι στο μοντέλο NEC: με στοιχεία μονωμένα από μεταλλικό φορέα η επίδραση είναι μικρή (διόρθωση φορέα στους Υπολογιστές).
+Yagi di base	Βασική Yagi
+Disposizione	Διάταξη
+Sfasamento piani	Μετατόπιση επιπέδων
+Cavo di ritardo λ/4	Καλώδιο καθυστέρησης λ/4
+Includi relè e cavi reali	Συμπερίληψη πραγματικών ρελέ και καλωδίων
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Προσθέτει την απώλεια του καλωδίου καθυστέρησης (VF 0,66, 10 dB/100 m στα 144 MHz, κλιμακωμένη με την τετραγωνική ρίζα της συχνότητας) και 0,1 dB για το ρελέ.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	τυπικές τιμές καλωδίου 75 ohm και ομοαξονικού ρελέ· το πρόγραμμα δεν γνωρίζει τα δικά σας.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Το ίδιο δίκτυο φάσης λειτουργεί και για turnstile (δίπολα διασταυρωμένα στις 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Πρόσοψη
+Componenti co-polare / cross-polare	Ομοπολικές / ετεροπολικές συνιστώσες
+Rapporto assiale e ROS in frequenza	Αξονικός λόγος και SWR ως προς τη συχνότητα
+piano A	επίπεδο A
+piano B	επίπεδο B
+vista dal davanti — boom al centro	όψη από μπροστά — φορέας στο κέντρο
+piani sfalsati di λ/4 lungo il boom	επίπεδα μετατοπισμένα κατά λ/4 κατά μήκος του φορέα
+Yagi incrociate: serve una Yagi con una sola sorgente	Διασταυρωμένες Yagi: χρειάζεται Yagi με μία πηγή
+Yagi incrociate: calcolo in corso...	Διασταυρωμένες Yagi: υπολογισμός...
+Rapporto assiale in asse	Αξονικός λόγος στον άξονα
+Rapporto assiale a −3 dB	Αξονικός λόγος στα −3 dB
+Isolamento tra i due piani	Απομόνωση μεταξύ των δύο επιπέδων
+Fase della rete sul piano B	Φάση δικτύου στο επίπεδο B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Τέλεια ορθογώνια και συμμετρικά επίπεδα: στο μοντέλο η σύζευξη και η αντίθετη πόλωση είναι σχεδόν μηδενικές. Στην πραγματικότητα σφιγκτήρες, καλώδια και μικρές ασυμμετρίες τις περιορίζουν σε περίπου 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	από 1,8 MHz έως 1296 MHz: η λίστα των balun αλλάζει με τη ζώνη
+LINEA DI DISCESA	ΓΡΑΜΜΗ ΤΡΟΦΟΔΟΣΙΑΣ
+Coassiale	Ομοαξονική
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Με συμμετρική ανοιχτή γραμμή δεν υπάρχει θωράκιση: ο κοινός ρυθμός προέρχεται μόνο από ασυμμετρίες. Η κάρτα υπολογίζει την ομοαξονική περίπτωση· για την ανοιχτή γραμμή χρησιμοποιήστε Γραμμές (TL) με τον προσαρμογέα.
+Lungo il boom	Κατά μήκος του φορέα
+m → palo	m → ιστός
+Discesa sul palo	Κάτω στον ιστό
+Fino alla stazione	Έως τον σταθμό
+Calza a massa sul palo / traliccio	Θωράκιση γειωμένη στον ιστό / πύργο
+Messa a terra all'ingresso stazione	Γείωση στην είσοδο του σταθμού
+BALUN DA CONFRONTARE	BALUN ΠΡΟΣ ΣΥΓΚΡΙΣΗ
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 σπείρες RG-213 σε 110 mm: αυτεπαγωγή κατά Wheeler, ιδιοχωρητικότητα κατά Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 και εκτιμώμενη ιδιοχωρητικότητα: η πραγματική σύνθετη αντίσταση του πνίκτη πρέπει να μετρηθεί.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	Τοροειδής φερρίτης 1:1 ως παράλληλο RLC με χαμηλό Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm στην κορυφή (10 MHz με μείγμα 31, 25 MHz με μείγμα 43): τυπικές τιμές 12 σπειρών σε 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	ομοαξονικό λ/2 4:1: συμμετρική τροφοδοσία, θωρακίσεις ενωμένες.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	υπολειπόμενος κοινός ρυθμός ως 600 ohm σε συντονισμό στο f0 (Q 3): εξαρτάται από τη συναρμολόγηση.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	χιτώνιο λ/4: βραχυκυκλωμένη γραμμή λ/4 μεταξύ θωράκισης και χιτωνίου, υψηλή σύνθετη αντίσταση στο f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 χιτωνίου 50 ohm και απώλεια 0,08 dB στο τέταρτο κύματος.
+10 perline in ferrite sulla calza.	10 χάντρες φερρίτη πάνω στη θωράκιση.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm ανά χάντρα στα 144 MHz (μείγμα 61), 100 ohm πάνω από 30 MHz με μείγμα 43: τυπικές τιμές καταλόγου.
+Caso mostrato	Εμφανιζόμενη περίπτωση
+premi Calcola il confronto	πατήστε Υπολογισμός σύγκρισης
+Corrente lungo la calza, dal dipolo verso il basso	Ρεύμα κατά μήκος της θωράκισης, από το δίπολο προς τα κάτω
+Vista laterale: corrente sulla calza	Πλάγια όψη: ρεύμα στη θωράκιση
+F/R medio	Μέσο F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Απώλεια στο balun
+Potenza dissipata nel balun a 1 kW	Ισχύς που καταναλώνεται στο balun με 1 kW
+Banda con calza < 5 %	Ζώνη με ρεύμα θωράκισης < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Τα γκρι στοιχεία είναι balun για την άλλη ζώνη· ενεργοποιούνται με την επιλογή συχνότητας. Στα HF μετρά και η θωράκιση έως τον σταθμό (γειωμένη), στα VHF/UHF το τμήμα στον φορέα και τον ιστό. Η θωράκιση είναι σύρμα συνδεδεμένο στη μία πλευρά του σημείου τροφοδοσίας, όπως στην πραγματικότητα χωρίς balun· το balun είναι σύνθετη αντίσταση κοινού ρυθμού στο πρώτο τμήμα.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Το υαλόνημα δεν άγει: το πλαίσιο δεν μπαίνει στο NEC, μένουν μόνο οι θωρακίσεις των γραμμών φάσης.
+Includi palo sotto il telaio	Συμπερίληψη του ιστού κάτω από το πλαίσιο
+Cavi di fase lungo i montanti	Γραμμές φάσης κατά μήκος των ορθοστατών
+Rotore e controventi	Περιστροφέας και αντηρίδες
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Προγραμματισμένο: περιστροφέας και αντηρίδες ως σύρματα (χρειάζονται οι διαστάσεις του πύργου).
+Materiale	Υλικό
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	κόκκινο = μέρη του πλαισίου ως σύρματα NEC · διακεκομμένο = θωράκιση των γραμμών φάσης
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Οριζόντια πόλωση: οι κατακόρυφοι ορθοστάτες συζεύγνυνται ασθενώς· η οριζόντια τραβέρσα και οι γραμμές φάσης όχι.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Κατακόρυφη πόλωση: οι ορθοστάτες και ο ιστός είναι παράλληλοι με τα στοιχεία και μετρούν περισσότερο· η οριζόντια τραβέρσα λίγο.
+Confronto senza / con telaio	Σύγκριση χωρίς / με πλαίσιο
+Diagramma orizzontale sovrapposto	Οριζόντιο διάγραμμα σε επικάλυψη
+premi Calcola confronto	πατήστε Υπολογισμός σύγκρισης
+Stack: calcola prima il modello	Συστοιχία: υπολογίστε πρώτα το μοντέλο
+Stack: calcolo senza e con telaio...	Συστοιχία: υπολογισμός χωρίς και με πλαίσιο...
+Pezzo	Εξάρτημα
+Collegato	Συνδεδεμένο
+Cavi	Καλώδια
+Senza telaio	Χωρίς πλαίσιο
+Con telaio	Με πλαίσιο
+Z ingresso divisore	Z εισόδου του διαιρέτη
+senza telaio	χωρίς πλαίσιο
+con telaio	με πλαίσιο
+Stack: confronto senza / con telaio fatto	Συστοιχία: η σύγκριση χωρίς / με πλαίσιο ολοκληρώθηκε
+CARICHI HF	ΦΟΡΤΙΑ HF
+INSERISCI NEL MODELLO	ΕΙΣΑΓΩΓΗ ΣΤΟ ΜΟΝΤΕΛΟ
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Το καπέλο μπαίνει στο άκρο του σύρματος (b ή e), το linear loading στο επιλεγμένο σημείο του σύρματος.
+Inserisci nel modello	Εισαγωγή στο μοντέλο
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Ήδη εγκεκριμένο στο σκίτσο Φορτία: Q των L και C, f0, Z ανά ζώνη, τάση και ρεύμα στο εξάρτημα. Εδώ προστίθενται οι κατασκευαστικοί τύποι.
+Trappola coassiale	Ομοαξονική παγίδα
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	ο κεντρικός αγωγός κολλιέται στην αρχή του μεσαίου τυλίγματος (η αντιστροφή των άκρων χαμηλώνει τον συντονισμό περίπου 50 kHz).
+Calcola spire per f0	Υπολογισμός σπειρών για f0
+Spire dell'avvolgimento (anche frazionarie).	Σπείρες του τυλίγματος (και κλασματικές).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	η πραγματική f0 διαφέρει κατά μερικά τοις εκατό: μετρήστε τη με dip-meter ή VNA και διορθώστε τις σπείρες.
+Blocca	Αποκόπτει
+dipolo con	δίπολο με
+Filo Ø	Σύρμα Ø
+Calcola C per f0	Υπολογισμός C για f0
+mm  Filo Ø	mm  Σύρμα Ø
+mm  Passo	mm  Βήμα
+mm  Spire	mm  Σπείρες
+MHz  dal centro	MHz  από το κέντρο
+m  Braccio	m  Βραχίονας
+m  Filo dell'elemento Ø	m  Σύρμα στοιχείου Ø
+Calcola spire per la risonanza	Υπολογισμός σπειρών για συντονισμό
+Piega	Δίπλωση
+m  Distanza tra i fili	m  Απόσταση μεταξύ συρμάτων
+Calcola la piega per la risonanza	Υπολογισμός δίπλωσης για συντονισμό
+Raggi	Ακτίνες
+m  Filo Ø	m  Σύρμα Ø
+Verticale alto	Ύψος κατακόρυφης
+m  Frequenza	m  Συχνότητα
+MHz  Filo Ø	MHz  Σύρμα Ø
+Calcola i raggi per la risonanza	Υπολογισμός ακτίνων για συντονισμό
+L misurata	Μετρημένο L
+MHz  Autorisonanza f0	MHz  Ιδιοσυντονισμός f0
+Cappello capacitivo in punta al verticale	Χωρητικό καπέλο στην κορυφή της κατακόρυφης
+Bobina dalle misure	Πηνίο από διαστάσεις
+Reattanza del cappello in frequenza	Αντίδραση του καπέλου ως προς τη συχνότητα
+impedenza della trappola	σύνθετη αντίσταση παγίδας
+Si comporta da	Συμπεριφέρεται ως
+Potenza persa	Χαμένη ισχύς
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Ισχύς πομπού για τις τάσεις και απώλειες του πίνακα.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	χαμηλή ζώνη: ρεύμα στην κοιλία sqrt(P/73) και στην παγίδα I0 cos(beta a)· αποκομμένη ζώνη: τάση στο άκρο του εσωτερικού διπόλου I0 Z0 μοιρασμένη μεταξύ παγίδας και ακτινοβολίας.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	ρεύμα στην κοιλία sqrt(P/73) και στο φορτίο I0 cos(beta a), με a την απόσταση από το κέντρο.
+Risonanza propria f0	Ιδιοσυντονισμός f0
+Q ideale	Ιδανικό Q
+Q della trappola alla risonanza.	Q της παγίδας στον συντονισμό.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	συν διηλεκτρικές απώλειες (εφαπτομένη 3e-4 PE, 2e-4 PTFE). Οι μετρημένες ομοαξονικές παγίδες έχουν συνήθως Q μεταξύ 100 και 300.
+Lunghezza di cavo	Μήκος καλωδίου
++ 10 cm per le saldature	+ 10 cm για τις κολλήσεις
+R in parallelo equivalente	Ισοδύναμη παράλληλη R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: είναι το φορτίο LD που μπαίνει στο μοντέλο
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Βραχίονας διπόλου στη χαμηλή ζώνη με την παγίδα, σε σύγκριση με βραχίονα πλήρους μεγέθους (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	Το NEC με την παγίδα ως φορτίο δίνει το σωστό μήκος.
+Induttanza misurata	Μετρημένη αυτεπαγωγή
+dalla misura	από τη μέτρηση
+Autorisonanza	Ιδιοσυντονισμός
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Συχνότητα στην οποία το πηνίο συντονίζεται μόνο του με την ιδιοχωρητικότητά του.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	ιδιοχωρητικότητα από τον πίνακα του Medhurst κατά μήκος / διάμετρο, ισχύει για μονοστρωματικά πηνία μακριά από μεταλλικές μάζες.
+Q della bobina alla frequenza di lavoro.	Q του πηνίου στη συχνότητα λειτουργίας.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	αντίσταση σύρματος λόγω επιδερμικού φαινομένου επί συντελεστή γειτνίασης 1 + 2 (d/p)^2 (d σύρμα, p βήμα): ο Medhurst δίνει παρόμοιες τιμές για πηνία με μήκος κοντά στη διάμετρο.
+Reattanza della piega	Αντίδραση δίπλωσης
+Z0 della linea	Z0 της γραμμής
+Q della piega	Q δίπλωσης
+Capacita' del cappello	Χωρητικότητα καπέλου
+Capacita' del cappello verso lo spazio.	Χωρητικότητα του καπέλου ως προς τον χώρο.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	άθροισμα των ακτίνων (λεπτό σύρμα, 2 pi eps0 l / (ln(2l/a) - 1)) και του δακτυλίου που κορέννυται προς τον πλήρη δίσκο (8 eps0 r): οι ακτίνες θωρακίζουν η μία την άλλη. Αν εισαχθεί ως σύρματα, το NEC την υπολογίζει ακριβώς.
+in punta al verticale	στην κορυφή της κατακόρυφης
+Altezza per la risonanza	Ύψος για συντονισμό
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Επίδραση στην κατακόρυφη
+Carichi HF: apri un modello nella finestra principale.	Φορτία HF: ανοίξτε ένα μοντέλο στο κύριο παράθυρο.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Το linear loading και το χωρητικό καπέλο εισάγονται ως σύρματα: για τα υπόλοιπα επιλέξτε «Ως φορτίο».
+Il cappello capacitivo si inserisce come fili.	Το χωρητικό καπέλο εισάγεται ως σύρματα.
+RLC parallelo	Παράλληλο RLC
+Effetto sul dipolo	Επίδραση στο δίπολο
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Βράχυνση του βραχίονα σε σχέση με το πλήρες τέταρτο κύματος (71,3 / f) με το φορτίο σε αυτό το σημείο.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	μοντέλο γραμμής του φορτωμένου βραχίονα X = Z0 (cot(beta b) - tan(beta a)), x 0,95 για το φαινόμενο άκρου.
+Esegui il test	Εκτέλεση δοκιμής
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Το κέρδος μπορεί να εμφανιστεί διορθωμένο με το AGT (ήδη προβλεπόμενο στον βελτιστοποιητή).
+Controllo prima/dopo il calcolo	Έλεγχος πριν/μετά τον υπολογισμό
+Esito	Αποτέλεσμα
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Ένας ή περισσότεροι έλεγχοι εκτός ±0,2 dB: ελέγξτε την τμηματοποίηση (Τρισδιάστατη δομή > Τμηματοποίηση... και Έλεγχος τμηματοποίησης).
+Tutti i controlli entro ±0,2 dB.	Όλοι οι έλεγχοι εντός ±0,2 dB.
+Linea a finestra 450	Γραμμή με παράθυρα 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Πατήστε Υπολογισμός: το NEC υπολογίζει τη σύνθετη αντίσταση του ανοιχτού μοντέλου σε κάθε συχνότητα.
+Perdita nella linea	Απώλεια γραμμής
+Perdita totale	Συνολική απώλεια
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Τύπος προσαρμογέα μεταξύ γραμμής και πομπού (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	απώλεια εκτιμώμενη από το φορτωμένο Q του δικτύου (Qn = sqrt(Rmax/Rmin - 1), δύο τμήματα για T και Pi) και το Q του πηνίου· το TLW του N6BV υπολογίζει τα εξαρτήματα ένα-ένα και μπορεί να διαφέρει μερικά δέκατα του dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Παράδειγμα: doublet 2 × 20 m (ZS6BKW/G5RV). Προειδοποίηση όταν ο προσαρμογέας βλέπει λιγότερο από 20 Ω: υψηλές απώλειες, προτείνεται επιμήκυνση ή βράχυνση της γραμμής. Γραμμή με απώλειες όπως στο TLW (N6BV, ARRL).
+USA costa est	Ανατολική ακτή ΗΠΑ
+USA costa ovest	Δυτική ακτή ΗΠΑ
+Giappone	Ιαπωνία
+Caraibi	Καραϊβική
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: η υπηρεσία δεν επέστρεψε GeoTIFF
+GeoTIFF compresso: non supportato	Συμπιεσμένο GeoTIFF: δεν υποστηρίζεται
+GeoTIFF: tipo di dato non supportato	GeoTIFF: ο τύπος δεδομένων δεν υποστηρίζεται
+Il file non contiene coppie distanza / quota.	Το αρχείο δεν περιέχει ζεύγη απόσταση / ύψος.
+Nessuno	Κανένα
+Ferriti a perline	Χάντρες φερρίτη
+Cavo e balun: segmento della sorgente non trovato.	Καλώδιο και balun: δεν βρέθηκε το τμήμα της πηγής.
+solo palo	μόνο ιστός
+Acciaio zincato	Γαλβανισμένος χάλυβας
+Alluminio	Αλουμίνιο
+Vetroresina	Υαλόνημα
+Montante sx/dx	Αριστερός/δεξιός ορθοστάτης
+al boom	προς τον φορέα
+Traversa	Τραβέρσα
+Palo	Ιστός
+al dipolo	προς το δίπολο
+N, femmina	N, θηλυκό
+senza connettori	χωρίς συνδετήρες
+rurale tranquillo	ήσυχη αγροτική περιοχή
+Verticale λ/4	κατακόρυφη λ/4
+λ/8 di lato	λ/8 ανά πλευρά
+0,37 λ di diametro	διάμετρος 0,37 λ
+Cappello capacitivo	Χωρητικό καπέλο
+W8NX bassa impedenza	W8NX χαμηλή σύνθετη αντίσταση
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	χοντρό καλώδιο με διηλεκτρικό PTFE (RG-393) ή παγίδα LC με πυκνωτή υψηλής τάσης
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Η δίπλωση είναι μακρύτερη από lambda/8: η γραμμή δεν συμπεριφέρεται πια ως σταθερή αυτεπαγωγή, ελέγξτε τον συντονισμό με NEC εισάγοντάς τη ως σύρματα.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Η χωρητικότητα του καπέλου είναι εκτίμηση (ακτίνες που θωρακίζουν η μία την άλλη): για την ακριβή τιμή εισάγετέ το ως σύρματα και υπολογίστε με NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Η θέση του φορτίου είναι πέρα από το τέταρτο κύματος: μετακινήστε το πιο κοντά στο κέντρο.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	το καπέλο μπαίνει στο άκρο του σύρματος: επιλέξτε το πρώτο (b) ή το τελευταίο (e) τμήμα.
+il punto scelto e' troppo vicino all'estremo del filo.	το επιλεγμένο σημείο είναι πολύ κοντά στο άκρο του σύρματος.
+questo tipo entra nel modello come carico.	αυτός ο τύπος μπαίνει στο μοντέλο ως φορτίο.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	Φορτία HF: σύρματα που πρόσθεσε ο υπολογιστής του YA-NEC
+Il file Touchstone non contiene punti di S11.	Το αρχείο Touchstone δεν περιέχει σημεία S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	Το CSV δεν περιέχει γραμμές συχνότητα, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT σε ελεύθερο χώρο, χωρίς απώλειες
+IMPOSTAZIONI	ΡΥΘΜΙΣΕΙΣ
+Schiera Hi-Z di verticali corte	Ομάδα Hi-Z κοντών κατακόρυφων
+Base del loop	Βάση του βρόχου
+Distanza, lato o diametro	Απόσταση, πλευρά ή διάμετρος
+Altezza delle verticali	Ύψος των κατακόρυφων
+Base del loop dal suolo	Βάση του βρόχου πάνω από το έδαφος
+Fase tra le file	Φάση μεταξύ σειρών
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Χαμηλό οριζόντιο δίπολο: σε λιγότερο από lambda/4 από το έδαφος ο λοβός πάει προς τα πάνω. Είναι η αναφορά «υψηλής γωνίας» στην κατάταξη του IV3PRK (RDF 7,3 dB): συγκρίνεται με τις κεραίες λήψης χαμηλής γωνίας.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY του Gary Breed K9AY (QST, Σεπτέμβριος 1997): δύο κατακόρυφοι βρόχοι στις 90 μοίρες στον ίδιο ιστό, αντίσταση τερματισμού (τυπικά 390 ohm, ρυθμισμένη για F/B), μετασχηματιστής 9:1. Εδώ ένας μόνο βρόχος, στραμμένος στην επιλεγμένη κατεύθυνση, κλειστός πάνω από το έδαφος όπως στη σελίδα Λήψη (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square λήψης: τέσσερις κοντές ενεργές κατακόρυφες στις γωνίες τετραγώνου lambda/8, που ακτινοβολούν κατά τη διαγώνιο. Κενή φάση = ακριβές πίσω μηδέν (pi + beta d μεταξύ σειρών): δίνει τη μεγαλύτερη θεωρητική κατευθυντικότητα· τα πραγματικά δίκτυα φάσης (ON4UN, IV3PRK) χρησιμοποιούν άλλες φάσεις και δίνουν χαμηλότερο RDF (IV3PRK 9,4 dB). Το κουμπί αναζητά τη φάση με το καλύτερο RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Ομάδες κοντών ενεργών κατακόρυφων όπως της Hi-Z Antennas: 2 στοιχεία end-fire (καρδιοειδές, lambda/8), 3 σε τρίγωνο (πλευρά lambda/6, μία κορυφή προς την επιλεγμένη κατεύθυνση), 8 σε κύκλο (διάμετρος 0,37 lambda: χρησιμοποιούνται οι τέσσερις προς την κατεύθυνση και οι απέναντι). Hi-Z: 8 σε κύκλο RDF 13,4 dB με τον συνδυαστή τους· το απλό μοντέλο δύο σειρών μένει χαμηλότερα. Το κουμπί αναζητά τη φάση με το καλύτερο RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Οι κατακόρυφες ξεκινούν από το πραγματικό έδαφος (GE 1 με έδαφος Sommerfeld): με το NEC-2 ένα σύρμα συνδεδεμένο σε πραγματικό έδαφος δίνει σύνθετη αντίσταση που εξαρτάται από το τμήμα της πηγής (οδηγός NEC-2, EZNEC). Διάγραμμα και RDF είναι ενδεικτικά· η σύνδεση με υπερυψωμένα radial προβλέπεται για όλες τις κεραίες λήψης.
+fase tra le file da 120 a 300 gradi per l'RDF	φάση μεταξύ σειρών από 120 έως 300 μοίρες για το RDF
+nessuna fase con il lobo in avanti	καμία φάση με τον λοβό προς τα εμπρός
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Φάση μεταξύ σειρών για το καλύτερο RDF: {0} μοίρες (RDF {1} dB). Επανυπολογισμός...
+linea d'orizzonte	γραμμή ορίζοντα
+scala angolare	κλίμακα γωνιών
+lobo reale sopra il piatto fino a	πραγματικός λοβός πάνω από επίπεδο έως
+Profilo verso	Προφίλ προς
+Lobo verticale e angoli di arrivo a	Κατακόρυφος λοβός και γωνίες άφιξης στο
+Cos'e' l'RDF	Τι είναι το RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = κέρδος στην επιθυμητή κατεύθυνση - μέσο κέρδος σε όλες τις κατευθύνσεις (W8JI· παλαιότερα SNIF, τη δεκαετία του '60). Μετρά πόσο βελτιώνει η κεραία τον λόγο σήματος προς θόρυβο αν ο θόρυβος φτάνει εξίσου από όλες τις κατευθύνσεις· το απόλυτο κέρδος δεν μετρά (ένας προενισχυτής το ανακτά). Μέσος όρος όπως στο EZNEC: άνω ημισφαίριο διαιρεμένο με όλη τη σφαίρα (4 pi). Με αυτή τη σύμβαση τα αποτελέσματα συμφωνούν με IV3PRK και W8JI/Hi-Z (κατακόρυφη 5,07 έναντι 5,06 και 4,9· Beverage 350 m 13,5 έναντι 13,66). Όριο: ο πραγματικός θόρυβος δεν είναι ομοιόμορφος (γραμμές ρεύματος, τοπικό QRM): γι' αυτό μετρούν και το F/B και το σχήμα του λοβού. Για κεραίες εκπομπής το RDF δεν έχει νόημα: γι' αυτό υπολογίζεται μόνο σε αυτή την καρτέλα. DMF (Directivity Merit Figure, ON4UN): κέρδος σε ανύψωση 20 μοιρών προς τα εμπρός μείον το μέσο κέρδος του πίσω ημιχώρου (αζιμούθιο πέρα από 90 μοίρες, πάνω από το έδαφος, σταθμισμένο με το συνημίτονο κατά επιφάνεια): δείχνει πόσο απορρίπτει η κεραία τον θόρυβο από πίσω. Ο ON4UN προειδοποιεί να μη συγκρίνονται DMF και RDF μεταξύ τους. Πηγές: W8JI και W8WWV (RDF), ON4UN Low-Band DXing κεφ. 7 (DMF, πίν. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	ανύψωση
+azimut	αζιμούθιο
+azimut a {0}°	αζιμούθιο στις {0}°
+totale	σύνολο
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Άνοιγμα έως το πρώτο μηδέν (FNBW): {0}°·  υψηλότερος πλευρικός λοβός: {1}
+Didascalie {0} %	Ετικέτες {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB έναντι {1} της πηγής: ελέγξτε διαστάσεις, τερματισμό και έδαφος (η πηγή μπορεί να χρησιμοποιεί άλλο έδαφος ή γεωμετρία).
+Azimut a {0}° · {1} MHz	Αζιμούθιο στις {0}° · {1} MHz
+Azimut a {0}° di elevazione	Αζιμούθιο σε ανύψωση {0}°
+RUMORE	ΘΟΡΥΒΟΣ
+Apri la scheda {0}	Άνοιγμα της κάρτας {0}
+caso mostrato: {0}	εμφανιζόμενη περίπτωση: {0}
+Rastremazioni	Τηλεσκοπικοί
+BANDA	ΖΩΝΗ
+λ/2 coassiale 4:1	ομοαξονικό λ/2 4:1
+Manicotto λ/4	χιτώνιο λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Θωράκιση καλωδίου και ιστός ως σύρματα NEC· σύγκριση balun (ρεύμα κοινού ρυθμού, F/B, μέσο F/R, απώλεια, ισχύς με 1 kW) από 1,8 έως 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Ορθοστάτες, τραβέρσα, ιστός και θωρακίσεις των γραμμών φάσης ως σύρματα NEC: σύγκριση χωρίς / με πλαίσιο (κέρδος, F/B, μέσο F/R, λοβοί, Z διαιρέτη, Tant και G/T).
+TIPO	ΤΥΠΟΣ
+DATI	ΔΕΔΟΜΕΝΑ
+TELAIO	ΠΛΑΙΣΙΟ
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 σε τετράγωνο ή στρογγυλό σωλήνα, σε καλώδιο, Wilkinson· γραμμές φάσης, κλίση· σχέδιο 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X ή +, επίπεδα μετατοπισμένα κατά λ/4· H, V, RHCP, LHCP, X-pol· αξονικός λόγος και απομόνωση
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Ίσα μήκη → ίδια φάση. Πολλαπλάσια του λ/2 → η ενεργός σύνθετη αντίσταση επαναλαμβάνεται στον διαιρέτη. Συνιστώμενη ανοχή ± 5 mm (= ± {0}° φάσης).
+impedenze attive delle {0} antenne dello stack in parallelo	ενεργές σύνθετες αντιστάσεις των {0} κεραιών της συστοιχίας παράλληλα
+Banda con ROS < {0}	Ζώνη με SWR < {0}
+? Manuale	? Εγχειρίδιο
+Apre la spiegazione nel manuale	Ανοίγει την εξήγηση στο εγχειρίδιο
+riferimento	αναφορά
+Rispetto alla singola antenna	Σε σχέση με τη μεμονωμένη κεραία
+{0} antenne ideali	{0} ιδανικές κεραίες
+x la distanza DL6WU, a passi di	x η απόσταση DL6WU, σε βήματα των
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Αριστερός άξονας: G συστοιχίας - G μεμονωμένης κεραίας, από 0 προς τα πάνω. Δεξιός άξονας: F/R συστοιχίας - F/R μεμονωμένης κεραίας, ανεστραμμένος, με το 0 επάνω: όπου η συστοιχία βελτιώνει το F/R η καμπύλη κατεβαίνει, και το χαμηλότερο σημείο είναι η μεγαλύτερη βελτίωση. Το G/T μένει στον πίνακα.
+ΔG sulla singola	ΔG πάνω από τη μεμονωμένη κεραία
+Chiusura del programma	Κλείσιμο προγράμματος
+Vuoi chiudere YA-NEC?	Θέλετε να κλείσετε το YA-NEC;
+Grazie per avermi usato: spero di esserti stato utile.	Ευχαριστώ που με χρησιμοποιήσατε: ελπίζω να σας φάνηκα χρήσιμο.
+Sì	Ναι
+ROS attivo	Ενεργό SWR
+G realizzato	Πραγματοποιημένο G
+ROS attivo massimo	Μέγιστο ενεργό SWR
+riflessi minimi	ελάχιστες ανακλάσεις
+ROS attivo alto: da non scegliere	υψηλό ενεργό SWR: να μην επιλεγεί
+Documenti tecnici	Τεχνικά έγγραφα
+Manuale d'uso	Εγχειρίδιο χρήσης
+Manuale di calcolo e delle fonti	Εγχειρίδιο υπολογισμών και πηγών
+Citazioni	Παραθέματα
+Cerca in tutti i documenti	Αναζήτηση σε όλα τα έγγραφα
+Apri il PDF	Άνοιγμα PDF
+Nessun risultato per «{0}»	Κανένα αποτέλεσμα για «{0}»
+Primi {0} risultati per «{1}»	Πρώτα {0} αποτελέσματα για «{1}»
+{0} risultati per «{1}»	{0} αποτελέσματα για «{1}»
+Apre la citazione {0}	Ανοίγει το παράθεμα {0}
+Manuale di calcolo	Εγχειρίδιο υπολογισμών
+È pronta la versione {0} di YA-NEC	Η έκδοση {0} του YA-NEC είναι έτοιμη
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Έχει ήδη ληφθεί και εγκατασταθεί: ισχύει με την επανεκκίνηση του προγράμματος.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Στο Mac δεν εγκαθίσταται μόνη της: κατεβάστε το νέο .dmg από τη σελίδα εκδόσεων στο GitHub.
+Riavvia adesso	Επανεκκίνηση τώρα
+Più tardi	Αργότερα
+Apri la pagina delle versioni	Άνοιγμα σελίδας εκδόσεων
+Aggiornamento di YA-NEC	Ενημέρωση YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Έχει ήδη ληφθεί και εγκατασταθεί. Το πρόγραμμα επανεκκινείται μόνο του και ξανανοίγει το ανοιχτό μοντέλο.
+Riavvio tra {0} s	Επανεκκίνηση σε {0} s
+Questo avviso si chiude tra {0} s	Αυτή η ειδοποίηση κλείνει σε {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Μετά την ενημέρωση ξανάνοιξε το μη αποθηκευμένο μοντέλο: αποθηκεύστε το όποτε θέλετε (αντίγραφο στο data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Μετά την ενημέρωση ξανάνοιξε το μοντέλο που ήταν ανοιχτό.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Κάθε πλαίσιο έχει τη βοήθειά του με την εξήγηση και την πηγή. Γκρι: επιλεγμένο = πάντα ενεργό (δεν απενεργοποιείται)· μη επιλεγμένο = ακόμη μη διαθέσιμο· επιλογή με κουμπιά = σταθερή επιλογή. Εγχειρίδιο, κεφάλαιο 21.
+"): sorgente sempre accesa.	"): πηγή πάντα ενεργή.
+' non da' un numero valido.	' δεν είναι έγκυρος αριθμός.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik ως έχει
+0 - misure del metodo	0 - διαστάσεις της μεθόδου
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = πρότυπος κυματοδηγός WR της ζώνης (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = ίδιο κάτοπτρο στην άλλη άκρη (ίδια ηχώ).
+0 = stesso disco all'altro capo.	0 = ίδιο κάτοπτρο στην άλλη άκρη.
+0 gradi a destra	0 μοίρες δεξιά
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = ένα τρίτο από την άκρη: σύνθετη αντίσταση 200-300 ohm, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: μακριά από το χείλος, όπου η κάμψη θα έβγαζε τον τροφοδότη από την εστία.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 συμπαγές πολυαιθυλένιο (RG-58, RG-213), 0,8-0,85 αφρώδες διηλεκτρικό.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 συμπαγές πολυαιθυλένιο, 0,8-0,85 αφρώδες, 0,9-0,97 ανοιχτή γραμμή.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 lambda κυματοδηγού
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - τροφοδοτούμενος βρόχος
+1 - radiatore	1 - ακτινοβολητής
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = μία σπείρα (όπως πριν). Με περισσότερες σπείρες το Rr αυξάνεται με N², η επιδερμική απώλεια με N.
+1 cavo	1 καλώδιο
+1-2-3 elementi	1-2-3 στοιχεία
+1. Obiettivi e pesi	1. Στόχοι και βάρη
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Άνεμος, ζύγιση, διαιρέτες, balun, διασταυρωμένες Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Κεραίες λήψης ενεργοποιημένες
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz με μεγάλο κάτοπτρο: εκτός από επιφάνεια και σκόπευση μετρούν η θερμική παραμόρφωση και αυτή από τον άνεμο (ATA: 0,7 mm RMS τη νύχτα, 3 mm τη μέρα στον ήλιο), η κάμψη των στηριγμάτων και η διασπορά από τη βιβλίωση.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: εκτύπωση στο 100 %, χωρίς «προσαρμογή στη σελίδα»
+1005/f piedi	1005/f πόδια
+144 isol.	144 μον.
+2 - riflettore	2 - ανακλαστήρας
+2 - riflettori	2 - ανακλαστήρες
+2 in parallelo	2 παράλληλα
+2 lati	2 πλευρές
+2. Variabili che l'ottimizzatore puo' cambiare	2. Μεταβλητές που μπορεί να αλλάξει ο βελτιστοποιητής
+200 Ω con balun 4:1	200 Ω με balun 4:1
+25 tondo	25 στρογγυλό
+3 - direttori	3 - κατευθυντήρες
+3 gruppi	3 ομάδες
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 ή 4. Με 2 δεν υπάρχει ακαμψία εκτός του επιπέδου τους.
+3. Registro dei passi - clic su una riga per riprenderla	3. Ημερολόγιο βημάτων - κλικ σε μια γραμμή για ανάκτηση
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω ή balun 4:1
+36 Ω + terra	36 Ω + γείωση
+4 - tutto insieme	4 - όλα μαζί
+4 lati	4 πλευρές
+4 sorgenti: vedi tabella	4 πηγές: δείτε τον πίνακα
+432 isol.	432 μον.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 έλεγχοι δεδομένων εγκεκριμένοι από τον IC8TEM στις 15/11/2026: κατώφλια και εξηγήσεις στο εγχειρίδιο, κεφάλαιο 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 πόδια περίπου 18 dBi, 12 πόδια περίπου 20,5 dBi
+75 ohm ideale	75 ohm ιδανικά
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 φορές μακρύτερο από την ακτίνα. Με χοντρά σύρματα ή κοντά τμήματα (χοντροί σωλήνες στα UHF, κοντινά στοιχεία,\n
+9 fili	9 σύρματα
+9 fili a 0,1 λ	9 σύρματα στα 0,1 λ
+Accorciamento del pilotato	Βράχυνση τροφοδοτούμενου
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Βράχυνση πάνω από 8 %: η γραμμική εκτίμηση δεν είναι αξιόπιστη, ελέγξτε με NEC.
+Allega il modello aperto	Επισύναψη του ανοιχτού μοντέλου
+Allega il registro di oggi	Επισύναψη του σημερινού ημερολογίου
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Ύψος RMS κυμάτων και ύψος κεραίας πάνω από τη θάλασσα, στα Διαγράμματα > Πραγματικό έδαφος.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Πλάτος σάρωσης γύρω από τη συχνότητα, για το γράφημα σύνθετης αντίστασης.
+Antenna a	Κεραία στα
+Applica la freccia al modello NEC	Εφαρμογή βέλους στο μοντέλο NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	Εγκεκριμένο, σε προετοιμασία: ακόμη ανενεργό σε αυτή την έκδοση.
+Apri la cartella	Άνοιγμα φακέλου
+Apri un modello nella finestra principale	Ανοίξτε ένα μοντέλο στο κύριο παράθυρο
+Apro il modello e il diagramma 3D resta vuoto.	Ανοίγω το μοντέλο και η τρισδιάστατη προβολή μένει κενή.
+Area al vento dell'antenna	Επιφάνεια ανέμου της κεραίας
+Area al vento totale	Συνολική επιφάνεια ανέμου
+Area al vento totale e lista di taglio	Συνολική επιφάνεια ανέμου και λίστα κοπής
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Προσοχή: να μη χρησιμοποιείται με σύρματα που ενώνονται υπό γωνία ή με διαφορετικές διαμέτρους στη σύνδεση.\n
+Bobina di carico per la risonanza	Πηνίο φόρτισης για συντονισμό
+Boom con il tirante	Φορέας με ελκυστήρα
+C1 in serie con la loop	C1 σε σειρά με τον βρόχο
+C1 serie, C2 parallelo	C1 σειρά, C2 παράλληλα
+C2 in parallelo all'ingresso	C2 παράλληλα με την είσοδο
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Υπολογιστές > Κεραίες λήψης: χαμηλό δίπολο, K9AY, 4-square RX, Hi-Z 2/3/8 στοιχεία, με τη φάση μεταξύ σειρών βελτιστοποιημένη για RDF και την προειδοποίηση για τη σύνδεση με τη γη.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Μηχανικοί υπολογισμοί (Άνεμος και Ζύγιση), Υπολογιστές > Διαιρέτες και διασταυρωμένες Yagi, Αντικείμενα > Καλώδιο και balun και πλαίσιο συστοιχίας, Φορτία HF.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Προκαταρκτική διαστασιολόγηση: για την εγκατάσταση ισχύει η μελέτη αδειούχου τεχνικού.
+Candidati da controllare	Υποψήφιοι προς έλεγχο
+Categoria	Κατηγορία
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Κατηγορία έκθεσης της θέσης (NTC 2018, πίν. 3.3.II και σχ. 3.3.2): εξαρτάται από την κλάση τραχύτητας του εδάφους (A αστικά κέντρα ... D περιοχές χωρίς εμπόδια, θάλασσα) και την απόσταση από την ακτή. I = ανοιχτή ακτή ή θάλασσα, V = κέντρο πόλης.
+Cebik, poi NEC	Cebik, έπειτα NEC
+Centro della banda scelta:\n	Κέντρο της επιλεγμένης ζώνης:\n
+Con ghiaccio	Με πάγο
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Με πάγο: άνεμος μειωμένος στο 0,6 και ακτινικός πάγος από το πλαίσιο δεξιά (απλοποιημένος συνδυασμός ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Με τον ίδιο σπόρο η δοκιμή επαναλαμβάνεται ίδια.
+Condizione della sorgente non capita ("	Η συνθήκη της πηγής δεν κατανοήθηκε ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Ελέγχει αμέσως στο GitHub χωρίς να περιμένει τα 3 λεπτά. Αν υπάρχει νέα έκδοση την κατεβάζει, ειδοποιεί και επανεκκινεί όπως η αυτόματη ενημέρωση (10 δευτερόλεπτα, το μοντέλο ξανανοίγει). Λειτουργεί και με την αυτόματη ενημέρωση απενεργοποιημένη.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Ελέγχεται πάντα από τον έλεγχο τμηματοποίησης και στις Προειδοποιήσεις (8 με τον κανονικό πυρήνα, 2 με τον εκτεταμένο πυρήνα).
+Copie per candidato	Αντίγραφα ανά υποψήφιο
+Coppia sulla staffa boom-mast	Ροπή στον σφιγκτήρα φορέα-ιστού
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Δημιουργεί το zip στο data/segnalazioni και ανοίγει τη σελίδα «New issue» του GitHub με το κείμενο ήδη γραμμένο. Το zip το επισυνάπτετε εσείς, χειροκίνητα: το πρόγραμμα δεν στέλνει τίποτα μόνο του.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Καμπυλότητα της Γης, στα Διαγράμματα > Πραγματικό έδαφος.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Διάμετρος εκτός του εύρους των τύπων του Cebik (από 1E-6 έως 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Απόσταση και τύπος του δεύτερου εδάφους: εγκεκριμένο για την 1.5 (Πραγματικό έδαφος 2).
+Distanze di stack HF	Αποστάσεις συστοιχίας HF
+Distanze di stack: accoppiamento e distanza migliore	Αποστάσεις συστοιχίας: σύζευξη και καλύτερη απόσταση
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Μετά τη βελτιστοποίηση τα καλύτερα αποτελέσματα περνούν στον έλεγχο με τις ανοχές. 0 = κανένας έλεγχος.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Πολύ χαμηλά άκρα: προσοχή σε ανθρώπους και ζώα (υψηλές τάσεις στις άκρες).
+F/B peggiore	Χειρότερο F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	Αρχείο .weq: οι γραμμές με TLParms του AutoEZ (καλώδια με απώλειες) χρησιμοποιούν ονομαστικά Zo και VF και καμία απώλεια: η κάρτα TL του NEC είναι χωρίς απώλειες.
+Filo riflettore	Σύρμα ανακλαστήρα
+Filo ripiegato	Διπλωμένο σύρμα
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Μακρύ hairpin (πάνω από 0,2 lambda): καλύτερα να μειωθεί η απόσταση ή να χρησιμοποιηθούν χοντρότεροι αγωγοί.
+Forza del vento di progetto	Δύναμη ανέμου σχεδιασμού
+Forza l'aggiornamento	Εξαναγκασμός ενημέρωσης
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Βέλος χορδής: πόσο το πλέγμα του ευθύγραμμου τμήματος μένει κάτω από το παραβολοειδές στο μέσο του ανοίγματος (μπαίνει στην πολυεδρική προσέγγιση). Συνολική μάζα των ιμάντων {4:0.00} kg{5}.
+Freccia tolta dal modello.	Το βέλος αφαιρέθηκε από το μοντέλο.
+Ghiaccio radiale	Ακτινικός πάγος
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Τα αρχεία MMANA τμηματοποιούνται πάντα εκ νέου για το NEC-2 (εγχειρίδιο, κεφάλαιο 10).
+I lobi si leggono nella tabella delle distanze di stack.	Οι λοβοί διαβάζονται στον πίνακα αποστάσεων συστοιχίας.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (στρογγυλεύει), FIX (αποκόπτει), MOD, MAX, MIN, ODD (περιττός ακέραιος: χρήσιμο για τα τμήματα του τροφοδοτούμενου σύρματος).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Το κανονικό NEC2 αντιμετωπίζει κάθε σύρμα ως λεπτή γραμμή: ισχύει όσο το τμήμα είναι τουλάχιστον\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Ένα μόνο σύρμα ανακλαστήρα δίνει πολύ μικρή βελτίωση (Cebik): καλύτερα η οθόνη ή τα 9 σύρματα.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Ο ιστός υπερβαίνει το όριο διαρροής: χοντρότερος ιστός ή μικρότερη πρόβολος.
+Impedenza del cavo	Σύνθετη αντίσταση καλωδίου
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Σε άλλη μορφή: ο έλεγχος r5 των Ελέγχων δεδομένων επισημαίνει κέρδος πάνω από το φυσικό μέγιστο για το μήκος του φορέα.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Αυτεπαγωγή με N² (σφιχτές σπείρες) και μοντέλο NEC μίας σπείρας: εδώ το NEC ελέγχει μόνο τη γεωμετρία της μίας σπείρας.
+Interasse della forcina	Απόσταση hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	Νησιά (εκτός Σικελίας και Σαρδηνίας) και ανοιχτή θάλασσα
+Kernel esteso del NEC2 (scheda EK).\n	Εκτεταμένος πυρήνας NEC2 (κάρτα EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Η απόσταση του hairpin πρέπει να είναι μεγαλύτερη από τη διάμετρο του αγωγού.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Το Slim Jim κλείνει τον ακτινοβολητή επάνω με σύρμα διπλωμένο προς τα κάτω, μέχρι λίγο πάνω από το stub.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Το κάνει το παράθυρο Έλεγχος τμηματοποίησης (κουμπί πιο πάνω).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Το hairpin είναι συμμετρικό: δεν παραμορφώνει το διάγραμμα όπως το gamma. Χρειάζεται ακόμη balun ή πνίκτης στο σημείο τροφοδοσίας.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Το hairpin λειτουργεί μόνο με R τροφοδοτούμενου μικρότερη από τη σύνθετη αντίσταση του καλωδίου: για μεγαλύτερη R χρησιμοποιήστε gamma ή μετασχηματιστή.
+La prepara IC8TEM: non ancora attiva.	Ο IC8TEM την ετοιμάζει: ακόμη ανενεργή.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Οι έξι κανόνες του Geometry Check του EZNEC, σε κάθε υπολογισμό, στην καρτέλα Προειδοποιήσεις.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: χωρίς διόρθωση Z = {0:0.0} {1}j{2:0.0} ohm (με τη διόρθωση {3:0.0} {4}j{5:0.0} ohm).
+Località	Θέση
+Loop orizzontale di 1 λ	Οριζόντιος βρόχος 1 λ
+Lunghezza del pilotato	Μήκος τροφοδοτούμενου
+Lunghezza della forcina	Μήκος hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Βάζει στο zip το ανοιχτό μοντέλο (.nec), ακόμη κι αν δεν έχει αποθηκευτεί.
+Mette nello zip il registro di oggi della cartella registri.	Βάζει στο zip το σημερινό ημερολόγιο από τον φάκελο logs.
+Momenti al mast	Ροπές στον ιστό
+Momento al cuscinetto	Ροπή στο ρουλεμάν
+NEC: risonanza cercata dal motore	NEC: συντονισμός που αναζητά η μηχανή
+NOTE SU QUESTA VERSIONE (fase 0)\n	ΣΗΜΕΙΩΣΕΙΣ ΓΙΑ ΑΥΤΗ ΤΗΝ ΕΚΔΟΣΗ (φάση 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	ΝΕΟ · πάνω από το έδαφος: ύψη, αποστάσεις, επιθυμητές γωνίες εκπομπής
+Nel modello non ci sono elementi orizzontali diritti	Το μοντέλο δεν έχει ευθύγραμμα οριζόντια στοιχεία
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Στον πίνακα της συστοιχίας και στα Αντικείμενα του μοντέλου (πλαίσιο συστοιχίας, διαιρέτες).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Στις κάρτες γεωμετρίας γράψτε εκφράσεις χωρίς κενά, για παράδειγμα:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Καμία προτεινόμενη απόσταση
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Καμία προτεινόμενη απόσταση: όλες υπερβαίνουν το μέγιστο ενεργό SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Καμία διεύθυνση IP, κανένα e-mail, κανένα όνομα χρήστη στα αρχεία: η διαδρομή του προσωπικού φακέλου γίνεται «~». Χωρίς λογαριασμό GitHub μπορείτε να στείλετε το zip όπως θέλετε.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Ακόμη όχι αυτόματα: γίνεται χειροκίνητα με τη δοκιμή AGT στις Προειδοποιήσεις (ARRL 24η, 4nec2).
+Numero di spire	Αριθμός σπειρών
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Κάθε αντίγραφο έχει τις διαστάσεις του τυχαία μετατοπισμένες μέσα στις ανοχές της καρτέλας Ανοχές (προεπιλογή: μήκος ±1 mm, θέση ±2 mm, διάμετρος ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Πέρα από το ανοιχτό μοντέλο, εκκινήσεις επιλεγμένες τυχαία μεταξύ ελάχιστου και μέγιστου κάθε μεταβλητής. 0 = όπως πριν.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Σελίδα Θόρυβος πραγματικού ουρανού της καρτέλας Θόρυβος/GT/Συστοιχία: ο υπολογισμός skynoise μεταφερμένος σε C# (ανάγνωση χαρτών HEALPix, παρεμβολή, αστρικός χρόνος, συντεταγμένες, Σελήνη) και οι δύο χάρτες του G8ONH στο data/cielo.
+Partenze a caso	Τυχαίες εκκινήσεις
+Perimetro Cebik	Περίμετρος Cebik
+Peso del boom	Βάρος φορέα
+Pi-greco	Δίκτυο Pi
+Prepara la segnalazione	Προετοιμασία αναφοράς
+Proposta	Πρόταση
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	δοκιμή nec2c στα 145 MHz (σωλήνες 12 mm σε 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Πότε χρειάζεται: λόγος τμήματος/ακτίνας περίπου μεταξύ 2 και 8 (κάτω από 2 κανένα δεν είναι αξιόπιστο).\n
+Quota s.l.m.	Υψόμετρο
+R del pilotato	R τροφοδοτούμενου
+ROS attivo minimo {0}	Ελάχιστο ενεργό SWR {0}
+Raggio equivalente dei due conduttori	Ισοδύναμη ακτίνα των δύο αγωγών
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Τρέχουσα αντίδραση του τροφοδοτούμενου: αν είναι θετική, το τροφοδοτούμενο πρέπει να κοντύνει κι άλλο.
+Reattanza della forcina	Αντίδραση hairpin
+Reattanza voluta del pilotato	Επιθυμητή αντίδραση τροφοδοτούμενου
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Αντίδραση: πέρα από kl = pi/2 (ή με πολύ χοντρό αγωγό) ο τύπος AEH δεν ισχύει, χρησιμοποιήστε NEC.
+Reinstalla la versione attuale	Επανεγκατάσταση τρέχουσας έκδοσης
+Rel Z non positiva	Re Z μη θετική
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Αντίσταση τροφοδοτούμενου στον συντονισμό, από το μοντέλο ή τον υπολογισμό NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Η επανεκκίνηση απέτυχε: κλείστε και ανοίξτε ξανά το YA-NEC χειροκίνητα.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Κατεβάζει και επανεγκαθιστά ακόμη κι αν η έκδοση είναι ίδια: χρήσιμο αν ένα αρχείο του προγράμματος έχει χαλάσει.
+Scansione	Σάρωση
+Scegli il candidato con	Επιλογή υποψηφίου με
+Schermo	Οθόνη
+Scrivi due frequenze diverse.	Γράψτε δύο διαφορετικές συχνότητες.
+Segnala un problema	Αναφορά προβλήματος
+Seme del caso	Τυχαίος σπόρος
+Serve solo per la reattanza (dipolo e monopolo).	Χρειάζεται μόνο για την αντίδραση (δίπολο και μονόπολο).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Χρησιμοποιείται με 2 ή περισσότερες σπείρες: κάτω από 2 διαμέτρους αγωγού η πραγματική απώλεια αυξάνεται λόγω φαινομένου γειτνίασης (δεν υπολογίζεται).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Χρησιμοποιείται στα Διαγράμματα > Πραγματικό έδαφος: ανάκλαση θάλασσας με συντελεστή απόκλισης και τραχύτητα.
+Sicilia e provincia di Reggio Calabria	Σικελία και επαρχία Ρέτζιο Καλάμπρια
+Sollecitazione	Τάση
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Πάνω από 0,25 λ ο λοβός αρχίζει να χαμηλώνει: λιγότερο κατάλληλο για NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Πάνω από 30 MHz η παλινδρόμηση του Cebik χρησιμοποιείται εκτός του εύρους για το οποίο προσφέρεται εδώ (σύρματα HF): καλύτερα Αυτόματο ή NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Κάτω από 0,1 λ το κέρδος προς τα πάνω πέφτει (Cebik): μια πολύ χαμηλή κεραία δεν κερδίζει τίποτα.
+Sotto l'antenna	Κάτω από την κεραία
+Spina (tubo o tondo) dentro il giunto telescopico.	Τάπα (σωλήνας ή ράβδος) μέσα στη τηλεσκοπική σύνδεση.
+Spina interna nei giunti	Εσωτερική τάπα στις συνδέσεις
+Stack con il ROS attivo piu' basso	Συστοιχία με το χαμηλότερο ενεργό SWR
+Staffe e mast	Σφιγκτήρες και ιστός
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Χρόνος: περίπου (εκκινήσεις + 1) φορές ο σημερινός, συν υποψήφιοι x αντίγραφα υπολογισμοί.
+Tensione nel mast al cuscinetto	Τάση στον ιστό στο ρουλεμάν
+Tiro del tirante	Εφελκυσμός ελκυστήρα
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Σωλήνες από τον πίνακα Κωνικότητες: οι διαστάσεις είναι ίδιες με το μοντέλο NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Όλες οι αποστάσεις υπερβαίνουν το μέγιστο ενεργό SWR ({0}): καμία προτεινόμενη απόσταση. Αυξήστε το μέγιστο ενεργό SWR, δοκιμάστε τη δική σύνθετη αντίσταση αναφοράς της κεραίας ή ρυθμίστε τη μεμονωμένη κεραία. Μήτρα και γράφημα αφορούν την απόσταση με το χαμηλότερο ενεργό SWR.
+V invertito	Ανεστραμμένο V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), σύζευξη, ενεργό SWR, καλύτερη απόσταση, δύο συχνότητες
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Ταχύτητα αιχμής στη θέση: vb sqrt(ce), με vb = vb,0 ca (NTC 2018, περίοδος επαναφοράς 50 ετών) και ce(z) της κατηγορίας έκθεσης στο ύψος της κεραίας.
+Velocità	Ταχύτητα
+Velocità a mano	Ταχύτητα χειροκίνητα
+Vento di sopravvivenza	Άνεμος επιβίωσης
+Vento di sopravvivenza del boom	Άνεμος επιβίωσης φορέα
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Άνεμος κάθετος στο στοιχείο στον οποίο το πρώτο σημείο φτάνει στο όριο διαρροής (με ίδιο βάρος και πάγο).
+X da aggiungere al pilotato	X που προστίθεται στο τροφοδοτούμενο
+X del pilotato	X τροφοδοτούμενου
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Τον τελικό έλεγχο τον κάνει η μηχανή NEC στο μοντέλο με το hairpin.
+Z0 della forcina	Z0 hairpin
+Z0 della linea dei due conduttori	Z0 γραμμής δύο αγωγών
+Zona buona	Καλή ζώνη
+al centro	στο κέντρο
+caso peggiore	χειρότερη περίπτωση
+caso peggiore delle due	χειρότερη από τις δύο
+cerca...	αναζήτηση...
+copie entro le soglie	αντίγραφα εντός κατωφλίων
+corrente sinusoidale	ημιτονοειδές ρεύμα
+distanza dal boom	απόσταση από τον φορέα
+distanza dall'inizio del boom	απόσταση από την αρχή του φορέα
+due condensatori sul lato basso	δύο πυκνωτές στην κάτω πλευρά
+effetto: calcolo in corso…	επίδραση: υπολογισμός…
+forza del vento x sbalzo	δύναμη ανέμου x πρόβολος
+il caso peggiore migliore	η καλύτερη χειρότερη περίπτωση
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	το ισοδύναμο δίπολο, χοντρότερο, έχει λιγότερο από 73 Ω
+il voto medio migliore	η καλύτερη μέση βαθμολογία
+induttiva, in parallelo	επαγωγική, παράλληλα
+la percentuale migliore di copie entro le soglie	το καλύτερο ποσοστό αντιγράφων εντός κατωφλίων
+linea a due fili	δισύρματη γραμμή
+m  mast a	m  ιστός στα
+m dal suolo	m πάνω από το έδαφος
+m sopra il boom, attacco al	m πάνω από τον φορέα, στερεωμένο στα
+media delle due	μέσος όρος των δύο
+mm  lungo	mm  μήκος
+mm, acciaio	mm, χάλυβας
+molto buono	πολύ καλό
+molto povero	πολύ φτωχό
+nessun rinforzo	χωρίς ενίσχυση
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	κανένας εμπορικός σωλήνας έως +12 mm δεν αρκεί: αναθεωρήστε την κωνικότητα
+nessuna distanza sotto il ROS attivo massimo	καμία απόσταση κάτω από το μέγιστο ενεργό SWR
+partenza dal modello aperto	έναρξη από το ανοιχτό μοντέλο
+per lato, teso per annullare il momento verticale al mast	ανά πλευρά, τεντωμένο ώστε να εξουδετερώνει την κατακόρυφη ροπή στον ιστό
+primo cedimento: tubo Ø	πρώτη αστοχία: σωλήνας Ø
+regge il vento di progetto con il 20 % di margine	αντέχει τον άνεμο σχεδιασμού με περιθώριο 20 %
+riferimenti bibliografici	βιβλιογραφικές αναφορές
+sbalzo sopra il cuscinetto	πρόβολος πάνω από το ρουλεμάν
+schermo 1 λ x 1 λ	οθόνη 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	πυκνά τμήματα) ο εκτεταμένος πυρήνας χρησιμοποιεί ακριβέστερο τύπο και το αποτέλεσμα είναι πιο αξιόπιστο.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	χωρίς τάπα ο εσωτερικός σωλήνας ακουμπά στο χείλος του εξωτερικού και εφαρμόζεται συντελεστής 1,25 στην τάση στα πρώτα 5 cm: εκτίμηση, σφιγκτήρες και εγκοπές αλλάζουν πολύ το αποτέλεσμα.
+sollecitazione / snervamento	τάση / όριο διαρροής
+tubo piu' grosso	χοντρότερος σωλήνας
+un filo riflettore	ένα σύρμα ανακλαστήρα
+zona di cedimento	ζώνη αστοχίας
+ø dei conduttori della forcina	ø αγωγών hairpin
+ø del filo	ø σύρματος
+ø del pilotato	ø τροφοδοτούμενου
+accordata	συντονισμένο
+accordate	συντονισμένη
+alimentazione	τροφοδοσία
+alluminio	αλουμίνιο
+allungata	επιμηκυμένο
+altro	άλλο
+anello	βρόχος
+angolo	γωνία
+antiorario	αριστερόστροφα
+aritmetico	αριθμητική
+automatico	αυτόματο
+banda	ζώνη
+bande	ζώνες
+bordi	χείλη
+buono	καλό
+capacitiva	χωρητική
+carichi	φορτία
+carico	φορτίο
+cartesiana	καρτεσιανό
+cavi	καλώδια
+cavo	καλώδιο
+centimetri	εκατοστά
+centina	νεύρωση
+cerchio	κύκλος
+condensatore	πυκνωτής
+corrente	ρεύμα
+destra	δεξιά
+diagramma	διάγραμμα
+diametro	διάμετρος
+differenza	διαφορά
+dipoli	δίπολα
+dipolo	δίπολο
+diretta	άμεσο
+diritto	ευθύ
+due	δύο
+elementi	στοιχεία
+elemento	στοιχείο
+elimina	διαγραφή
+equilatera	ισόπλευρο
+esito	αποτέλεσμα
+esperimenti	πειράματα
+esponenziale	εκθετική
+fase	φάση
+ferriti	φερρίτες
+fili	σύρματα
+filo	σύρμα
+forcina	hairpin
+forma	σχήμα
+formule	τύποι
+frequenza	συχνότητα
+geometria	γεωμετρία
+ghiaccio	πάγος
+giudizio	αξιολόγηση
+gradi	μοίρες
+griglia	πλέγμα
+guadagno	κέρδος
+incrociata	διασταυρωμένες
+larghezza	πλάτος
+lato	πλευρά
+lega	κράμα
+libera	ελεύθερο
+libero	ελεύθερος
+linea	γραμμή
+lineare	γραμμική
+linee	γραμμές
+lobi	πλευρικοί λοβοί
+locale	τοπικό
+mai	ποτέ
+manicotto	χιτώνιο
+mano	χειροκίνητα
+meccanica	μηχανική
+mezzaonda	μισό κύμα
+millimetri	χιλιοστά
+misure	διαστάσεις
+modello	μοντέλο
+modo	λειτουργία
+nessuna	κανένα
+nota	σημείωση
+nuovo	νέο
+operativo	λειτουργίας
+orario	δεξιόστροφα
+ottagono	οκτάγωνο
+palo	ιστός
+parabola	κάτοπτρο
+passo	βήμα
+perdite	απώλειες
+perfetto	τέλειο
+piano	επίπεδο
+piatto	επίπεδο
+piedi	πόδια
+polare	πολική
+pollici	ίντσες
+propria	δικό του
+punto	σημείο
+quadrato	τετράγωνο
+quadro	τετράγωνη
+quota	ύψος
+radiali	radial
+radiatore	ακτινοβολητής
+raggio	ακτίνα
+rame	χαλκός
+ramo	κλάδος
+rapidi	γρήγορο
+rastremazioni	κωνικότητες
+rete	δίκτυο
+rettangolo	ορθογώνιο
+riepilogo	σύνοψη
+riflettore	ανακλαστήρας
+riga	σειρά
+rombo	ρόμβος
+scarso	φτωχό
+scarto	απόκλιση
+schiacciata	πεπλατυσμένο
+sempre	πάντα
+senso	κατεύθυνση
+si'	ναι
+sinistra	αριστερά
+soglia	κατώφλι
+sorgenti	πηγές
+sotto	κάτω
+spire	σπείρες
+staffe	σφιγκτήρες
+stato	κατάσταση
+sufficiente	επαρκές
+tetto	στέγη
+tipo	τύπος
+tirante	ελκυστήρας
+togli	αφαίρεση
+tondo	στρογγυλό
+traffico	κίνηση
+trasformatori	μετασχηματιστές
+trombe	χοάνες
+tubi	σωλήνες
+tubo	σωλήνας
+tutti	όλα
+uguale	ίσο
+uguali	ίσα
+uso	χρήση
+a {0} x DL6WU; tutte sopra il massimo {1}	στο {0} x DL6WU· όλες πάνω από το μέγιστο {1}
+% del mezzo boom	% του μισού φορέα
++ aggiungi	+ προσθήκη
++ aggiungi variabile	+ προσθήκη μεταβλητής
++ correzione del boom	+ διόρθωση φορέα
++ nuova	+ νέο
++ trappola	+ παγίδα
++ verso il disco.	+ προς το κάτοπτρο.
++90 gradi Z	+90 μοίρες Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- αριθμητική: ακριβώς στη μέση μεταξύ των ορίων IARU της ζώνης (για παράδειγμα 145,000 MHz στα 2 m),\n
+- correzione del boom	- διόρθωση φορέα
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- λειτουργίας: η συχνότητα όπου πράγματι δουλεύετε (για παράδειγμα 144,300 MHz στα 2 m, 432,200 στα 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (μαύρο) 10-100 MHz
+-10 nero	-10 μαύρο
+-2 (rosso) 0,25-10 MHz	-2 (κόκκινο) 0,25-10 MHz
+-2 rosso	-2 κόκκινο
+-6 (giallo) 3-40 MHz	-6 (κίτρινο) 3-40 MHz
+-6 giallo	-6 κίτρινο
+-90 gradi Z	-90 μοίρες Z
+-> segmento NEC	-> τμήμα NEC
+. "Annulla" torna indietro.	. Η «Αναίρεση» επιστρέφει πίσω.
+. Antenna base: fili 1-	. Βασική κεραία: σύρματα 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Με τόσο υψηλό Q η σάρωση πρέπει να καλύπτει μόνο λίγα kHz.
+. Salvalo con Salva con nome.	. Αποθηκεύστε το με Αποθήκευση ως.
+. Trascina per ruotare, rotella per ingrandire.	. Σύρετε για περιστροφή, ροδέλα για μεγέθυνση.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Χρησιμοποιήστε λεπτότερο σύρμα, μεγαλύτερο πυρήνα ή δύο στοιβαγμένους πυρήνες.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (μέσω Sengupta 2021) και GMRT πίν. 19.1
+12 (errore / HPBW)^2	12 (σφάλμα / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Παθητικός δακτύλιος: περίμετρος {0:0.000} lambda, χωρίς πηγή και χωρίς πυκνωτή· η επίδραση φαίνεται στο πλήρες μοντέλο (κατευθυντήρας ή ανακλαστήρας).
+Automatico	Αυτόματο
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, όπως τα nec2c και xnec2c: ο πηγαίος κώδικας συνοδεύει το πρόγραμμα (αρχείο COPYING).\n
+Provincia di Trieste	Επαρχία Τεργέστης
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	και σε C# για το YA-NEC. Διεπαφή αναφοράς: xnec2c των 5B4AZ και Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	απόδοση υπολογισμένη από το μακρινό πεδίο, Prad / (Prad + απώλειες) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	σύνθετη αντίσταση και απώλειες γίνονται όλο και λιγότερο αξιόπιστες όσο το σύρμα χαμηλώνει (βλ. BOG στο εγχειρίδιο). Για ασφαλές αποτέλεσμα: τουλάχιστον lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	δημιουργείται έως διάμετρο {3:0.00} m· ο υπολογισμός ανοίγματος δίπλα ισχύει για κάθε διάμετρο και λαμβάνει ήδη υπόψη τις νευρώσεις (πλαίσιο επάνω).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} τμήματα: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} σε {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, απόδοση {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° ανύψωσης
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19η έκδ., κεφ. 18 (Yagi 2 m του W9PE): τρία στοιχεία σε 0,2 λ, περίπου 7 dBi και F/B πάνω από 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Συμφωνία του YA-NEC με το nec2c (ράβδοι 20/15/10 m): ανακλαστήρες σε 0,185 / 0,197 / 0,222 λ, κατευθυντήρες σε 0,095 / 0,116 / 0,114 λ: εντός των εύρων των πηγών.
+↶ Annulla	↶ Αναίρεση
+↷ Ripeti	↷ Επανάληψη
+■ Ferma	■ Διακοπή
+▶ Avvia	▶ Έναρξη
+☐ mantieni lunghezza del boom	☐ διατήρηση μήκους φορέα
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ καμία προειδοποίηση: η τμηματοποίηση πληροί το επιλεγμένο επίπεδο
+✓ nessun errore e nessun avviso	✓ κανένα σφάλμα και καμία προειδοποίηση
+variabili del modello	μεταβλητές του μοντέλου
+nuova variabile dal modello	νέα μεταβλητή από το μοντέλο
+Scrivi una variabile nella linguetta Variabili…	Γράψτε μια μεταβλητή στην καρτέλα Μεταβλητές…
+Elemento diritto	Ευθύ στοιχείο
+Elemento piegato	Λυγισμένο στοιχείο
+Variabile nuova	Νέα μεταβλητή
+Minimo / massimo	Ελάχιστο / μέγιστο
+Cosa cambia	Τι αλλάζει
+in ocra: dove agisce la variabile	με ώχρα: πού δρα η μεταβλητή
+Crea la variabile	Δημιουργία μεταβλητής
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Η μεταβλητή {0} δημιουργήθηκε: η γεωμετρία δεν αλλάζει. Η «Αναίρεση» στη γραμμή Γεωμετρία την αφαιρεί.
+Struttura 3D: dove agisce la variabile ▾	Τρισδιάστατη δομή: πού δρα η μεταβλητή ▾
+Struttura 3D ▸	Τρισδιάστατη δομή ▸
+Clic: nasconde o mostra la struttura	Κλικ: αποκρύπτει ή εμφανίζει τη δομή
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	συνεχής ώχρα: χρησιμοποιεί τη μεταβλητή · διακεκομμένη ώχρα: τη χρησιμοποιεί μέσω άλλης μεταβλητής
+attraverso {0}: fili {1}	μέσω {0}: σύρματα {1}

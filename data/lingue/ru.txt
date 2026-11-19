@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Насколько плотен цвет: лёгкая, средняя или сильная. В строке таблицы заливка светлее, чтобы читались числа.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Провод {0} выбран в 3D-виде: строка {1} таблицы
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Провод {0}: нет в таблице проводов (карта геометрии не GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Сразу проверяет наличие новой версии (не дожидаясь 3 минут).
+terreno reale	реальный рельеф
+Locatore	Локатор
+da 8 a 12 caratteri	от 8 до 12 символов
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	При 6 символах точка может сместиться на километры: для профиля рельефа нужно не менее 8 символов.
+Quota sito	Высота места
+Altezza antenna	Высота антенны
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Высота центра антенны над землёй. Если она отличается от высоты в модели, диаграмма NEC поднимается или опускается с тем же распределением тока.
+Distanza max	Макс. расстояние
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Азимут и расстояния пересчитываются при каждом изменении локатора (ортодромия, сфера 6371 км).
+Terra	Суша
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Уменьшает коэффициент отражения моря множителем Амента для волн 0,25 м (среднеквадратичное отклонение).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	статистическая модель шероховатой поверхности (Ament 1953): справедлива для скользящих углов и однородного моря.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Опускает профиль на кривизну Земли (эффективный радиус 4/3 при нормальной рефракции) и ослабляет дальние отражённые лучи коэффициентом расходимости.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	стандартная атмосфера (k = 4/3); при волноводах или инверсиях кажущаяся кривизна меняется.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Самый высокий гребень между антенной и направлением излучения ослабляет прямой луч как край (интеграл Френеля), как в HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	одиночный клиновидный край: скруглённые гребни или несколько гребней подряд аппроксимируются самым высоким.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Повторяет расчёт через каждые 10 градусов азимута (только DEM) и показывает показатель качества на розе, поворачивая антенну на каждый азимут.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	с антенной, всегда повёрнутой на азимут профиля: справедливо для поворотной антенны.
+Cartesiana dBi / gradi	Декартова dBi / градусы
+0–180° intero	0–180° полностью
+Zoom angolare	Масштаб угла
+Sovrapponi alla linguetta Verticale	Наложить на вкладку Вертикальная
+premi Calcola	нажмите Рассчитать
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Повторяет расчёт с антенной от 6 до 30 м (КВ) или от 2 до 30 м (УКВ) и показывает высоту с лучшим показателем качества на трассе.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	токи остаются токами рассчитанной модели: влияние высоты на импеданс и токи не учитывается (как в HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Нужны таблицы углов прихода из ARRL Antenna Book (файлы .PRN по диапазонам и регионам): как только они появятся, это включится и покажет оранжевые полосы.
+locatore non valido	неверный локатор
+sul mare	над морем
+sul terreno	над сушей
+profilo reale	реальный профиль
+terreno piatto	ровная местность
+orizzonte ostruito	закрытый горизонт
+° (scala angolare ×	° (шкала углов ×
+← dietro	← назад
+avanti →	вперёд →
+statistiche degli angoli di arrivo: non caricate	статистика углов прихода: не загружена
+rosa 0–360°: calcolo in corso…	роза 0–360°: расчёт…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Выберите файл профиля (нажмите "Из HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM недоступна: при первом использовании нужна сеть, чтобы загрузить TINITALY или SRTM1 (потом они остаются в папке data/dem).
+Profilo del terreno	Профиль рельефа
+Lobo di elevazione	Лепесток по углу места
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Сначала рассчитайте модель (кнопка Рассчитать вверху): диаграмма антенны берётся из NEC.
+da file	из файла
+dal DEM	из DEM
+rispetto alla stessa antenna su terreno piatto	относительно той же антенны над ровной местностью
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Разница между лепестком над реальным профилем и лепестком над ровной местностью, усреднённая по полезным углам.
+Guadagno a 5° / 10°	Усиление при 5° / 10°
+Guadagno a 1° / 3°	Усиление при 1° / 3°
+Angoli coperti a -3 dB	Углы, перекрытые на уровне -3 дБ
+primo lobo sul profilo reale	первый лепесток над реальным профилем
+calcolo…	расчёт…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Модель в свободном пространстве: токи без земли, как в диаграмме свободного пространства, используемой HFTA. Чтобы учесть близкую землю, рассчитайте модель с реальной землёй.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Профиль действителен только для одного азимута: поворотной антенне нужно больше направлений (поле "Все азимуты").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Метод как в HFTA (N6BV): прямой луч + отражённые лучи на каждой грани профиля + дифракция на гребнях. Диаграмма антенны берётся из NEC; этот расчёт добавляет рельеф.
+Piatto	Ровная
+Reale	Реальная
+Primo minimo	Первый минимум
+Punto di riflessione	Точка отражения
+Orizzonte	Горизонт
+Uso: rotte DX in HF (angoli bassi 1–15°).	Применение: DX-трассы на КВ (низкие углы 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Применение: тропо и MS (0–5°), EME при низкой Луне (усиление от земли на восходе/заходе Луны).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Высота с наибольшим средним усилением в полезных углах трассы.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	токи рассчитанной модели смещены по высоте: импеданс и связь с землёй остаются как в модели.
+Calcola prima il terreno reale	Сначала рассчитайте реальный рельеф
+Esporta il lobo sul terreno reale	Экспортировать лепесток над реальным рельефом
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Снимки: Esri, Maxar, Earthstar Geographics и сообщество пользователей ГИС
+© i contributori di OpenStreetMap	© участники OpenStreetMap
+Sfondo	Фон
+Foto aerea	Аэрофото
+Solo griglia	Только сетка
+Griglia	Сетка
+Cerca	Поиск
+⌖ Centra sul locatore	⌖ Центрировать по локатору
+Punto scelto	Выбранная точка
+Coordinate	Координаты
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Щелчок по карте = точка антенны; перетаскивание = перемещение; колесо = масштаб (сетка переходит с 6 на 8, 10, 12 символов). Толстая рамка = квадрат из 6 символов.
+non disponibile	недоступно
+Lunghezza elementi	Длина элемента
+Posizione sul boom	Положение на траверсе
+Uniforme	Равномерное
+Distribuzione	Распределение
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Элемент закреплён в хомуте не по центру: смещение вдоль собственной оси, с допуском по положению.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	реальный хомут меняет и электрическую длину у траверсы: для этого используйте вкладку Поправка на траверсу.
+nuovo a ogni avvio	новое при каждом запуске
+Numero prove	Число испытаний
+Frequenze	Частоты
+Seme casuale	Случайное зерно
+OBIETTIVO LISTA DI TAGLIO	ЦЕЛЬ СПИСКА РЕЗКИ
+Calo F/B max	Макс. падение F/B
+ROS max	Макс. КСВ
+Ferma	Стоп
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Элементы рядом с активным обычно самые критичные; элементы в конце траверсы допускают большие ошибки.
+l'istogramma serve al Monte Carlo	гистограмма относится к Монте-Карло
+5% peggiore	худшие 5%
+Posizione mm	Положение мм
+Lunghezza mm	Длина мм
+Tolleranza ammessa	Допустимое отклонение
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Красным — элементы, которым нужно меньше, чем допуск изготовления.
+Calcola prima il modello	Сначала рассчитайте модель
+sensibilita'	чувствительность
+Tolleranze: fermato	Допуски: остановлено
+Diametro mm	Диаметр мм
+Tolleranza ammessa mm	Допустимое отклонение мм
+Avvia prima il calcolo	Сначала выполните расчёт
+Esporta la lista di taglio	Экспортировать список резки
+Lista di taglio	Список резки
+Obiettivi	Цели
+Calo massimo del F/B	Максимальное падение F/B
+ROS massimo	Максимальный КСВ
+Tolleranze di costruzione	Допуски изготовления
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Запланировано (эскиз 13, на утверждении): в этой версии пока не активно.
+Al quadro 20×2 mm	Al квадрат 20×2 мм
+Al quadro 25×2 mm	Al квадрат 25×2 мм
+Al quadro 30×2 mm	Al квадрат 30×2 мм
+Al quadro 40×2 mm	Al квадрат 40×2 мм
+Al tondo 25×1,5 mm	Al круглая 25×1,5 мм
+Al tondo 30×2 mm	Al круглая 30×2 мм
+Al tondo 40×2 mm	Al круглая 40×2 мм
+Al tondo 50×2 mm	Al круглая 50×2 мм
+Zona NTC	Зона NTC
+Quota sito as	Высота места как
+Periodo ritorno	Период повторяемости
+Categoria esposiz.	Категория открытости
+Coeff. topografia	Коэф. рельефа
+Antenna da terra	Антенна над землёй
+Palo sopra rotore	Мачта над поворотным устройством
+Ø palo	Ø мачты
+Usa elementi e boom del modello	Использовать элементы и траверсу модели
+Includi telaio, palo, cavi	Учесть раму, мачту, кабели
+Scansione direzione del vento	Перебор направления ветра
+UNITÀ	ЕДИНИЦЫ
+N e kgf affiancati	Н и кгс рядом
+solo N	только Н
+solo kgf	только кгс
+Mostra	Показать
+1 kgf = 9,80665 N	1 кгс = 9,80665 Н
+locatore non valido: zona da scegliere a mano	неверный локатор: выберите зону вручную
+Telaio a H	H-рама
+Cavi e divisore	Кабели и делитель
+Parte	Деталь
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	При боковом ветре элементы не давят (cross-flow, K5IU): сила на трубу растёт с квадратом составляющей ветра, перпендикулярной её оси.
+momento flettente alla staffa del rotore	изгибающий момент у хомута поворотного устройства
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Предварительный расчёт: не заменяет проверку мачты, башни и фундамента инженером. Момент у основания пойдёт в подвкладку Мачта и фундамент.
+Sito e norma	Место и норма
+Norma	Норма
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; коэффициенты CNR-DT 207 R1/2018 и EN 1991-1-4
+Locatore / zona	Локатор / зона
+Risultati	Результаты
+Forza massima	Максимальная сила
+Momento flettente alla staffa del rotore	Изгибающий момент у хомута поворотного устройства
+Momento torcente sul rotore	Крутящий момент на поворотном устройстве
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Предварительный расчёт: не заменяет проверку мачты, башни и фундамента квалифицированным инженером.
+Al tondino pieno	Al сплошной пруток
+Materiale elementi	Материал элементов
+Staffe, isolatori	Хомуты, изоляторы
+g cad.	г каждый
+Dipolo + scatola	Диполь + коробка
+Cavo fino al palo	Кабель до мачты
+STAFFA AL PALO	ХОМУТ МАЧТЫ
+Posizione attuale	Текущее положение
+m dal riflettore	м от рефлектора
+Massa / distanza	Масса / расстояние
+Vento dalla linguetta Vento	Ветер из вкладки Ветер
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Использует расчётное давление последнего расчёта в подвкладке Ветер; без него 600 Н/м².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Сдвигает всю модель вдоль траверсы так, чтобы предложенный хомут попал в начало координат (где крепятся мачта и рама сборки). Отмена в 3D-структуре возвращает обратно.
+Momenti in funzione della posizione della staffa	Моменты в зависимости от положения хомута
+Masse e aree per parte	Массы и площади по деталям
+ultimo direttore	последний директор
+Staffe e isolatori	Хомуты и изоляторы
+Cavo sul boom	Кабель на траверсе
+Massa kg	Масса кг
+Baricentro m	Центр тяжести м
+Area vento m²	Площадь парусности м²
+Centro area m	Центр площади м
+solo peso	только вес
+solo vento	только ветер
+File Touchstone .s1p	Файл Touchstone .s1p
+Formato letto	Прочитанный формат
+CAVO TRA VNA E ANTENNA	КАБЕЛЬ МЕЖДУ VNA И АНТЕННОЙ
+R e X separate	R и X отдельно
+Banda con ROS <	Полоса с КСВ <
+ROS: calcolato e misurato	КСВ: расчётный и измеренный
+Confronto	Сравнение
+misurato, cavo tolto	измерено, кабель исключён
+R calcolata	R расчётное
+X calcolata	X расчётное
+R misurata	R измеренное
+X misurata	X измеренное
+Calcolato	Расчёт
+Misurato	Измерение
+Scarto	Разница
+Frequenza del ROS minimo	Частота минимального КСВ
+ROS minimo	Минимальный КСВ
+nessuna correzione: calcolo e misura coincidono.	без поправки: расчёт и измерение совпадают.
+calcolo NEC sul campo della misura…	Расчёт NEC в диапазоне измерения…
+Misura del VNA	Измерение VNA
+Tutti	Все
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Выполните развёртку (кнопка Развёртка вверху), чтобы увидеть F/B и F/R по всему диапазону
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = усиление вперёд минус средняя мощность в задней полусфере (азимут 90-270°, все углы места выше 0°). Также входит в цели оптимизатора.
+Tabelle: F/B e F/R su tutta la banda	Таблицы: F/B и F/R по всему диапазону
+Valori dello sweep	Значения развёртки
+ANTENNE RICEVENTI	ПРИЁМНЫЕ АНТЕННЫ
+4-square in ricezione	4-square для приёма
+8 verticali in cerchio	8 вертикалов по кругу
+Modello aperto	Открыть модель
+Isotropo	Изотропный
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = усиление в нужном направлении минус среднее усиление по всему полупространству: в отличие от усиления, не зависит от потерь.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Использует медианный угол прихода с вкладки Реальный рельеф как нужный угол места (статистика по диапазонам и регионам). Без загруженной статистики ARRL остаётся угол места, записанный здесь.
+Direzione voluta	Нужное направление
+Hz  rumore	Гц  шум
+NF ricevitore	NF приёмника
+sorgente locale az	локальный источник az
+Cifre di merito in ricezione	Показатели качества приёма
+Basta il segnale?	Хватает ли сигнала?
+calcolo in corso…	расчёт…
+RDF in funzione della frequenza	RDF в зависимости от частоты
+Calcola prima il modello aperto	Сначала рассчитайте открытую модель
+verticale λ/4	вертикал λ/4
+° · dB relativi · arancio: -3 dB	° · относительные дБ · оранжевый: -3 дБ
+settore ±30° az, 10–40° el	сектор ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Среднее усиление в переднем секторе минус среднее в задней полусфере.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN определяет DMF только по усилению при 20 градусах; здесь используется среднее по сектору эскиза, поэтому значения нельзя сравнивать один к одному с книгой.
+molto basso: serve un preamplificatore	очень низкий: нужен предусилитель
+basso ma accettabile: vedi soglia	низкий, но приемлемый: см. порог
+come un'antenna trasmittente	как передающая антенна
+F/R medio sull'emisfero posteriore	Средний F/R в задней полусфере
+Rumore d'antenna ai morsetti	Шум антенны на зажимах
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Мощность внешнего шума на зажимах: -174 дБм/Гц + Fa (ITU-R P.372) + 10 log B + среднее усиление, взвешенное по направлению прихода шума.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	шум от горизонта, взвешенный exp(-el/10 градусов) по углу места: представляет дальний промышленный шум, приходящий низко; реальное распределение зависит от места.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	точечный источник на угле места 5 градусов с той же мощностью, что и изотропный фон.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	изотропный шум над землёй; земля шума не добавляет.
+Margine sul ricevitore	Запас приёмника
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Шум антенны превышает шум приёмника менее чем на 6 дБ: приёмник ограничивает чувствительность. Нужно больше предусиления или приёмник с меньшим NF.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Усиление 1,8
+Spazio richiesto	Требуемое место
+λ/4 in tubo quadro	λ/4 в квадратной трубе
+λ/4 in tubo tondo	λ/4 в круглой трубе
+Solo cavi di fase	Только фазирующие линии
+Aria	Воздух
+Uscite	Выходы
+Z antenne	Z антенны
+Z ingresso	Входной Z
+Dielettrico	Диэлектрик
+Connettori	Разъёмы
+Correggi accorciamento dei connettori	Учесть укорочение разъёмами
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Вычитает из длины часть линии внутри разъёмов.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	оценка 4 мм на конец с разъёмами N (3 BNC, 1,5 SMA): лучше подстроить по VNA, укорачивая по 1 мм.
+Divisori	Делители
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Использует активные импедансы антенн открытой сборки (один источник на антенну) и разносы для минимальной длины фазирующих линий.
+CAVI DI FASE	ФАЗИРУЮЩИЕ ЛИНИИ
+Lunghezza minima	Минимальная длина
+Passo verticale	Вертикальный разнос
+solo cavi di fase: nessun trasformatore da costruire	только фазирующие линии: трансформатор строить не нужно
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 кабеля 75 Ом параллельно = 37,5 Ом
+quadro, lato	квадрат, сторона
+tondo, Ø	круглая, Ø
+Z0 richiesta	Требуемое Z0
+Ø conduttore interno	Ø внутреннего проводника
+VF del cavo	VF кабеля
+λ/4 in aria, mm	λ/4 в воздухе, мм
+da tagliare, mm	отрезать, мм
+Z carico in parallelo	Z нагрузки параллельно
+Rami λ/4: Z0 = Zin · √N	ветви λ/4: Z0 = Zin · √N
+Resistenze a stella	Резисторы звездой
+Isolamento tra le uscite	Развязка между выходами
+Perdita stimata	Оценка потерь
+Carico usato	Используемая нагрузка
+non potenza di 2	не степень 2
+ROS all'ingresso	Входной КСВ
+solo cavi di fase	только фазирующие линии
+Uscita	Выход
+Lungh. elettrica	Электрическая длина
+Fisica mm	Физические мм
+Perdita dB	Потери дБ
+° di fase).	° фазы).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° вверх); импеданс на делителе уже точно не повторяется.
+Solo cavi di fase: nessun disegno da stampare	Только фазирующие линии: нет чертежа для печати
+Divisore	Делитель
+50 mm di controllo	Проверка 50 мм
+GEOMETRIA	ГЕОМЕТРИЯ
+λ/4 sul boom	λ/4 на траверсе
+stesso piano	одна плоскость
+Metallico, isolati	Металл, изолированные
+Non metallico	Неметаллическая
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Траверсы нет в модели NEC: при элементах, изолированных от металлической траверсы, влияние мало (поправка на траверсу в Калькуляторах).
+Yagi di base	Базовая Yagi
+Disposizione	Расположение
+Sfasamento piani	Смещение плоскостей
+Cavo di ritardo λ/4	Кабель задержки λ/4
+Includi relè e cavi reali	Учесть реальные реле и кабели
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Добавляет потери кабеля задержки (VF 0,66, 10 дБ/100 м на 144 МГц, пересчитано по корню из частоты) и 0,1 дБ на реле.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	типичные значения кабеля 75 Ом и коаксиального реле; программа ваших не знает.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Та же фазирующая сеть работает и для турникетной антенны (диполи, скрещённые под 90°).
+AR (dB) / ROS	AR (дБ) / КСВ
+Vista frontale	Вид спереди
+Componenti co-polare / cross-polare	Ко- и кросс-поляризационные составляющие
+Rapporto assiale e ROS in frequenza	Коэффициент эллиптичности и КСВ в зависимости от частоты
+piano A	плоскость A
+piano B	плоскость B
+vista dal davanti — boom al centro	вид спереди — траверса в центре
+piani sfalsati di λ/4 lungo il boom	плоскости смещены на λ/4 вдоль траверсы
+Yagi incrociate: serve una Yagi con una sola sorgente	Скрещённые Yagi: нужна Yagi с одним источником
+Yagi incrociate: calcolo in corso...	Скрещённые Yagi: расчёт...
+Rapporto assiale in asse	Коэффициент эллиптичности на оси
+Rapporto assiale a −3 dB	Коэффициент эллиптичности на −3 дБ
+Isolamento tra i due piani	Развязка между двумя плоскостями
+Fase della rete sul piano B	Фаза сети в плоскости B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Идеально ортогональные и симметричные плоскости: в модели связь и обратная поляризация почти нулевые. В реальности хомуты, кабели и небольшие асимметрии ограничивают их примерно 25-35 дБ.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	от 1,8 МГц до 1296 МГц: список балунов меняется с диапазоном
+LINEA DI DISCESA	ФИДЕР
+Coassiale	Коаксиальный
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	У симметричной открытой линии нет оплётки: синфазный режим возникает только из-за несимметрии. Карточка считает коаксиальный случай; для открытой линии используйте Линии (TL) с тюнером.
+Lungo il boom	Вдоль траверсы
+m → palo	м → мачта
+Discesa sul palo	Вниз по мачте
+Fino alla stazione	До станции
+Calza a massa sul palo / traliccio	Оплётка заземлена на мачте / башне
+Messa a terra all'ingresso stazione	Заземление на вводе в станцию
+BALUN DA CONFRONTARE	СРАВНИВАЕМЫЕ БАЛУНЫ
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 витков RG-213 на 110 мм: индуктивность по Уилеру, собственная ёмкость по Медхёрсту.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 и оценочная собственная ёмкость: реальный импеданс дросселя нужно измерить.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	Ферритовое кольцо 1:1 как параллельный RLC с низкой Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 кОм в пике (10 МГц со смесью 31, 25 МГц со смесью 43): типичные значения 12 витков на 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	коаксиальный λ/2 4:1: симметричное питание, оплётки соединены.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	остаточный синфазный режим как резонанс 600 Ом на f0 (Q 3): зависит от монтажа.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	стакан λ/4: короткозамкнутая линия λ/4 между оплёткой и стаканом, высокий импеданс на f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 стакана 50 Ом и потери 0,08 дБ на четвертьволне.
+10 perline in ferrite sulla calza.	10 ферритовых бусин на оплётке.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 Ом на бусину на 144 МГц (смесь 61), 100 Ом выше 30 МГц со смесью 43: типичные каталожные значения.
+Caso mostrato	Показанный случай
+premi Calcola il confronto	нажмите Рассчитать сравнение
+Corrente lungo la calza, dal dipolo verso il basso	Ток вдоль оплётки, от диполя вниз
+Vista laterale: corrente sulla calza	Вид сбоку: ток на оплётке
+F/R medio	Средний F/R
+Z / ROS	Z / КСВ
+Perdita nel balun	Потери в балуне
+Potenza dissipata nel balun a 1 kW	Мощность, рассеиваемая в балуне при 1 кВт
+Banda con calza < 5 %	Полоса с током оплётки < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Серые позиции — балуны для другого диапазона; они включаются при выборе частоты. На КВ учитывается и оплётка до станции (заземлённая), на УКВ часть на траверсе и мачте. Оплётка — это провод, соединённый с одной стороной точки питания, как в реальности без балуна; балун — синфазный импеданс на первом участке.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Стеклопластик не проводит: рама в NEC не входит, остаются только оплётки фазирующих линий.
+Includi palo sotto il telaio	Учесть мачту под рамой
+Cavi di fase lungo i montanti	Фазирующие линии вдоль стоек
+Rotore e controventi	Поворотное устройство и растяжки
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Запланировано: поворотное устройство и растяжки как провода (нужны размеры башни).
+Materiale	Материал
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	красный = части рамы, смоделированные проводами NEC · пунктир = оплётка фазирующих линий
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Горизонтальная поляризация: вертикальные стойки связаны слабо; горизонтальная перекладина и фазирующие линии — нет.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Вертикальная поляризация: стойки и мачта параллельны элементам и влияют сильнее; горизонтальная перекладина — мало.
+Confronto senza / con telaio	Сравнение без / с рамой
+Diagramma orizzontale sovrapposto	Горизонтальная диаграмма в наложении
+premi Calcola confronto	нажмите Рассчитать сравнение
+Stack: calcola prima il modello	Сборка: сначала рассчитайте модель
+Stack: calcolo senza e con telaio...	Сборка: расчёт без и с рамой...
+Pezzo	Деталь
+Collegato	Подключено
+Cavi	Кабели
+Senza telaio	Без рамы
+Con telaio	С рамой
+Z ingresso divisore	Входной Z делителя
+senza telaio	без рамы
+con telaio	с рамой
+Stack: confronto senza / con telaio fatto	Сборка: сравнение без / с рамой завершено
+CARICHI HF	КВ НАГРУЗКИ
+INSERISCI NEL MODELLO	ВСТАВИТЬ В МОДЕЛЬ
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Шляпа ставится на конец провода (b или e), linear loading — в выбранную точку провода.
+Inserisci nel modello	Вставить в модель
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Уже утверждено в эскизе Нагрузки: Q для L и C, f0, Z по диапазонам, напряжение и ток в элементе. Здесь добавляются конструктивные типы.
+Trappola coassiale	Коаксиальный трап
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	центральная жила припаивается к началу средней обмотки (перестановка концов снижает резонанс примерно на 50 кГц).
+Calcola spire per f0	Рассчитать витки для f0
+Spire dell'avvolgimento (anche frazionarie).	Витки обмотки (в том числе дробные).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	реальная f0 отличается на несколько процентов: измерьте её ГИРом или VNA и поправьте витки.
+Blocca	Запирает
+dipolo con	диполь с
+Filo Ø	Провод Ø
+Calcola C per f0	Рассчитать C для f0
+mm  Filo Ø	мм  Провод Ø
+mm  Passo	мм  Шаг
+mm  Spire	мм  Витки
+MHz  dal centro	МГц  от центра
+m  Braccio	м  Плечо
+m  Filo dell'elemento Ø	м  Провод элемента Ø
+Calcola spire per la risonanza	Рассчитать витки для резонанса
+Piega	Петля
+m  Distanza tra i fili	м  Расстояние между проводами
+Calcola la piega per la risonanza	Рассчитать петлю для резонанса
+Raggi	Лучи
+m  Filo Ø	м  Провод Ø
+Verticale alto	Высота вертикала
+m  Frequenza	м  Частота
+MHz  Filo Ø	МГц  Провод Ø
+Calcola i raggi per la risonanza	Рассчитать лучи для резонанса
+L misurata	Измеренная L
+MHz  Autorisonanza f0	МГц  Собственный резонанс f0
+Cappello capacitivo in punta al verticale	Ёмкостная шляпа на вершине вертикала
+Bobina dalle misure	Катушка по размерам
+Reattanza del cappello in frequenza	Реактанс шляпы в зависимости от частоты
+impedenza della trappola	импеданс трапа
+Si comporta da	Ведёт себя как
+Potenza persa	Потерянная мощность
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Мощность передатчика для напряжений и потерь в таблице.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	нижний диапазон: ток в пучности sqrt(P/73) и в трапе I0 cos(beta a); запертый диапазон: напряжение на конце внутреннего диполя I0 Z0, распределённое между трапом и излучением.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	ток в пучности sqrt(P/73) и в нагрузке I0 cos(beta a), где a — расстояние от центра.
+Risonanza propria f0	Собственный резонанс f0
+Q ideale	Идеальная Q
+Q della trappola alla risonanza.	Q трапа на резонансе.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	плюс диэлектрические потери (тангенс 3e-4 PE, 2e-4 PTFE). Измеренные коаксиальные трапы обычно имеют Q от 100 до 300.
+Lunghezza di cavo	Длина кабеля
++ 10 cm per le saldature	+ 10 см на пайку
+R in parallelo equivalente	Эквивалентное параллельное R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: это нагрузка LD, которая попадает в модель
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Плечо диполя на нижнем диапазоне с трапом по сравнению с полноразмерным плечом (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC с трапом в виде нагрузки даёт правильную длину.
+Induttanza misurata	Измеренная индуктивность
+dalla misura	по измерению
+Autorisonanza	Собственный резонанс
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Частота, на которой катушка сама резонирует со своей собственной ёмкостью.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	собственная ёмкость из таблицы Медхёрста по длине / диаметру, справедлива для однослойных катушек вдали от металлических масс.
+Q della bobina alla frequenza di lavoro.	Q катушки на рабочей частоте.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	сопротивление провода из-за скин-эффекта, умноженное на коэффициент близости 1 + 2 (d/p)^2 (d провод, p шаг): Медхёрст даёт похожие значения для катушек длиной примерно в диаметр.
+Reattanza della piega	Реактанс петли
+Z0 della linea	Z0 линии
+Q della piega	Q петли
+Capacita' del cappello	Ёмкость шляпы
+Capacita' del cappello verso lo spazio.	Ёмкость шляпы относительно пространства.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	сумма лучей (тонкий провод, 2 pi eps0 l / (ln(2l/a) - 1)) и кольца, насыщающегося к сплошному диску (8 eps0 r): лучи экранируют друг друга. Вставленную проводами, NEC рассчитает её точно.
+in punta al verticale	на вершине вертикала
+Altezza per la risonanza	Высота для резонанса
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Влияние на вертикал
+Carichi HF: apri un modello nella finestra principale.	КВ нагрузки: откройте модель в главном окне.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading и ёмкостная шляпа вставляются проводами: для остальных выберите «Как нагрузку».
+Il cappello capacitivo si inserisce come fili.	Ёмкостная шляпа вставляется проводами.
+RLC parallelo	Параллельный RLC
+Effetto sul dipolo	Влияние на диполь
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Укорочение плеча относительно полной четвертьволны (71,3 / f) с нагрузкой в этой точке.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	модель линии нагруженного плеча X = Z0 (cot(beta b) - tan(beta a)), x 0,95 из-за концевого эффекта.
+Esegui il test	Запустить тест
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Усиление можно показать с поправкой по AGT (уже предусмотрено в оптимизаторе).
+Controllo prima/dopo il calcolo	Проверка до/после расчёта
+Esito	Результат
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Одна или несколько проверок вне ±0,2 дБ: проверьте сегментацию (3D-структура > Сегментация... и Проверить сегментацию).
+Tutti i controlli entro ±0,2 dB.	Все проверки в пределах ±0,2 дБ.
+Linea a finestra 450	Оконная линия 450 Ом
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Нажмите Рассчитать: NEC вычисляет импеданс открытой модели на каждой частоте.
+Perdita nella linea	Потери в линии
+Perdita totale	Общие потери
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Тип тюнера между линией и передатчиком (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	потери оценены по нагруженной Q цепи (Qn = sqrt(Rmax/Rmin - 1), две секции для T и Pi) и Q катушки; TLW от N6BV рассчитывает элементы по одному и может отличаться на несколько десятых дБ.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Пример: диполь 2 × 20 м (ZS6BKW/G5RV). Предупреждение, когда тюнер видит меньше 20 Ω: большие потери, предлагается удлинить или укоротить линию. Линия с потерями как в TLW (N6BV, ARRL).
+USA costa est	Восточное побережье США
+USA costa ovest	Западное побережье США
+Giappone	Япония
+Caraibi	Карибы
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: сервис не вернул GeoTIFF
+GeoTIFF compresso: non supportato	Сжатый GeoTIFF: не поддерживается
+GeoTIFF: tipo di dato non supportato	GeoTIFF: тип данных не поддерживается
+Il file non contiene coppie distanza / quota.	Файл не содержит пар расстояние / высота.
+Nessuno	Нет
+Ferriti a perline	Ферритовые бусины
+Cavo e balun: segmento della sorgente non trovato.	Кабель и балун: сегмент источника не найден.
+solo palo	только мачта
+Acciaio zincato	Оцинкованная сталь
+Alluminio	Алюминий
+Vetroresina	Стеклопластик
+Montante sx/dx	Левая/правая стойка
+al boom	к траверсе
+Traversa	Перекладина
+Palo	Мачта
+al dipolo	к диполю
+N, femmina	N, гнездо
+senza connettori	без разъёмов
+rurale tranquillo	тихая сельская местность
+Verticale λ/4	вертикал λ/4
+λ/8 di lato	λ/8 на сторону
+0,37 λ di diametro	диаметр 0,37 λ
+Cappello capacitivo	Ёмкостная шляпа
+W8NX bassa impedenza	W8NX низкий импеданс
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	толстый кабель с диэлектриком PTFE (RG-393) или LC-трап с высоковольтным конденсатором
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Петля длиннее lambda/8: линия больше не ведёт себя как постоянная индуктивность, проверьте резонанс в NEC, вставив её проводами.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Ёмкость шляпы — это оценка (лучи экранируют друг друга): для точного значения вставьте её проводами и рассчитайте в NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Положение нагрузки за четвертьволной: перенесите её ближе к центру.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	шляпа ставится на конец провода: выберите первый (b) или последний (e) сегмент.
+il punto scelto e' troppo vicino all'estremo del filo.	выбранная точка слишком близко к концу провода.
+questo tipo entra nel modello come carico.	этот тип попадает в модель как нагрузка.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	КВ нагрузки: провода, добавленные калькулятором YA-NEC
+Il file Touchstone non contiene punti di S11.	Файл Touchstone не содержит точек S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV не содержит строк частота, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT в свободном пространстве, без потерь
+IMPOSTAZIONI	НАСТРОЙКИ
+Schiera Hi-Z di verticali corte	Группа Hi-Z из коротких вертикалов
+Base del loop	Основание рамки
+Distanza, lato o diametro	Разнос, сторона или диаметр
+Altezza delle verticali	Высота вертикалов
+Base del loop dal suolo	Основание рамки над землёй
+Fase tra le file	Фаза между рядами
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Низкий горизонтальный диполь: ближе lambda/4 к земле лепесток уходит вверх. Это эталон «высокого угла» в рейтинге IV3PRK (RDF 7,3 дБ): с ним сравнивают приёмные антенны низкого угла.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY Гэри Брида K9AY (QST, сентябрь 1997): две вертикальные рамки под 90 градусов на одной мачте, согласующий резистор (обычно 390 Ом, подбирается по F/B), трансформатор 9:1. Здесь одна рамка, повёрнутая в выбранном направлении, замкнутая над землёй, как на странице Приём (RDF). Hi-Z: RDF 7,2 дБ.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Приёмный 4-square: четыре коротких активных вертикала в углах квадрата lambda/8, излучающие по диагонали. Пустая фаза = точный нуль назад (pi + beta d между рядами): даёт наибольшую теоретическую направленность; реальные фазирующие сети (ON4UN, IV3PRK) используют другие фазы и дают меньший RDF (IV3PRK 9,4 дБ). Кнопка ищет фазу с лучшим RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Группы коротких активных вертикалов как у Hi-Z Antennas: 2 элемента end-fire (кардиоида, lambda/8), 3 треугольником (сторона lambda/6, одна вершина в выбранном направлении), 8 по кругу (диаметр 0,37 lambda: используются четыре в сторону направления и противоположные). Hi-Z: 8 по кругу RDF 13,4 дБ со своим сумматором; простая двухрядная модель получается ниже. Кнопка ищет фазу с лучшим RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Вертикалы начинаются от реальной земли (GE 1 с землёй Зоммерфельда): в NEC-2 провод, соединённый с реальной землёй, даёт импеданс, зависящий от сегмента источника (руководство NEC-2, EZNEC). Диаграмма и RDF ориентировочны; подключение с поднятыми радиалами запланировано для всех приёмных антенн.
+fase tra le file da 120 a 300 gradi per l'RDF	фаза между рядами от 120 до 300 градусов для RDF
+nessuna fase con il lobo in avanti	ни одна фаза не даёт лепестка вперёд
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Фаза между рядами для лучшего RDF: {0} градусов (RDF {1} дБ). Пересчёт...
+linea d'orizzonte	линия горизонта
+scala angolare	шкала углов
+lobo reale sopra il piatto fino a	реальный лепесток над ровной местностью до
+Profilo verso	Профиль в направлении
+Lobo verticale e angoli di arrivo a	Вертикальный лепесток и углы прихода на
+Cos'e' l'RDF	Что такое RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = усиление в нужном направлении - среднее усиление во всех направлениях (W8JI; раньше назывался SNIF, в 60-х). Показывает, насколько антенна улучшает отношение сигнал/шум, если шум приходит одинаково со всех сторон; абсолютное усиление не учитывается (предусилитель его восполняет). Усреднение как в EZNEC: верхняя полусфера, делённая на всю сферу (4 pi). При таком соглашении результаты совпадают с IV3PRK и W8JI/Hi-Z (вертикал 5,07 против 5,06 и 4,9; Beverage 350 м 13,5 против 13,66). Ограничение: реальный шум неоднороден (ЛЭП, местные помехи): поэтому важны и F/B, и форма лепестка. Для передающих антенн RDF не имеет смысла: поэтому он считается только на этой вкладке. DMF (Directivity Merit Figure, ON4UN): усиление вперёд при угле места 20 градусов минус среднее усиление заднего полупространства (азимут за 90 градусов, над землёй, взвешено косинусом по площади): показывает, насколько антенна подавляет шум сзади. ON4UN предупреждает не сравнивать DMF и RDF между собой. Источники: W8JI и W8WWV (RDF), ON4UN Low-Band DXing гл. 7 (DMF, табл. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	угол места
+azimut	азимут
+azimut a {0}°	азимут при {0}°
+totale	всего
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Ширина до первого нуля (FNBW): {0}°;  наибольший боковой лепесток: {1}
+Didascalie {0} %	Подписи {0} %
+ROS	КСВ
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} дБ против {1} в источнике: проверьте размеры, нагрузку и землю (источник может использовать другую землю или геометрию).
+Azimut a {0}° · {1} MHz	Азимут при {0}° · {1} МГц
+Azimut a {0}° di elevazione	Азимут при угле места {0}°
+RUMORE	ШУМ
+Apri la scheda {0}	Открыть карточку {0}
+caso mostrato: {0}	показанный случай: {0}
+Rastremazioni	Телескопические
+BANDA	ДИАПАЗОН
+λ/2 coassiale 4:1	коаксиальный λ/2 4:1
+Manicotto λ/4	стакан λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Оплётка кабеля и мачта как провода NEC; сравнение балунов (синфазный ток, F/B, средний F/R, потери, мощность при 1 кВт) от 1,8 до 1296 МГц.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Стойки, перекладина, мачта и оплётки фазирующих линий как провода NEC: сравнение без / с рамой (усиление, F/B, средний F/R, лепестки, Z делителя, Tant и G/T).
+TIPO	ТИП
+DATI	ДАННЫЕ
+TELAIO	РАМА
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 в квадратной или круглой трубе, в кабеле, Wilkinson; фазирующие линии, наклон; чертёж 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X или +, плоскости смещены на λ/4; H, V, RHCP, LHCP, X-pol; коэффициент эллиптичности и развязка
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Равные длины → равная фаза. Кратные λ/2 → активный импеданс повторяется на делителе. Рекомендуемый допуск ± 5 мм (= ± {0}° фазы).
+impedenze attive delle {0} antenne dello stack in parallelo	активные импедансы {0} антенн сборки параллельно
+Banda con ROS < {0}	Полоса с КСВ < {0}
+? Manuale	? Руководство
+Apre la spiegazione nel manuale	Открывает пояснение в руководстве
+riferimento	опорное значение
+Rispetto alla singola antenna	Относительно одиночной антенны
+{0} antenne ideali	{0} идеальных антенн
+x la distanza DL6WU, a passi di	x разнос DL6WU, с шагом
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Левая ось: G сборки - G одиночной антенны, от 0 вверх. Правая ось: F/R сборки - F/R одиночной антенны, перевёрнута, 0 вверху: где сборка улучшает F/R, кривая идёт вниз, и самая нижняя точка — наибольшее улучшение. G/T остаётся в таблице.
+ΔG sulla singola	ΔG над одиночной антенной
+Chiusura del programma	Закрытие программы
+Vuoi chiudere YA-NEC?	Закрыть YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Спасибо, что пользовались мной: надеюсь, я был полезен.
+Sì	Да
+ROS attivo	Активный КСВ
+G realizzato	Реализованное G
+ROS attivo massimo	Максимальный активный КСВ
+riflessi minimi	минимальные отражения
+ROS attivo alto: da non scegliere	высокий активный КСВ: не выбирать
+Documenti tecnici	Технические документы
+Manuale d'uso	Руководство пользователя
+Manuale di calcolo e delle fonti	Руководство по расчётам и источникам
+Citazioni	Цитаты
+Cerca in tutti i documenti	Искать во всех документах
+Apri il PDF	Открыть PDF
+Nessun risultato per «{0}»	Нет результатов для «{0}»
+Primi {0} risultati per «{1}»	Первые {0} результатов для «{1}»
+{0} risultati per «{1}»	{0} результатов для «{1}»
+Apre la citazione {0}	Открывает цитату {0}
+Manuale di calcolo	Руководство по расчётам
+È pronta la versione {0} di YA-NEC	Версия {0} YA-NEC готова
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Она уже загружена и установлена: вступит в силу после перезапуска программы.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	На Mac она не устанавливается сама: скачайте новый .dmg со страницы выпусков на GitHub.
+Riavvia adesso	Перезапустить сейчас
+Più tardi	Позже
+Apri la pagina delle versioni	Открыть страницу выпусков
+Aggiornamento di YA-NEC	Обновление YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Она уже загружена и установлена. Программа сама перезапустится и снова откроет открытую модель.
+Riavvio tra {0} s	Перезапуск через {0} с
+Questo avviso si chiude tra {0} s	Это уведомление закроется через {0} с
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	После обновления снова открыта несохранённая модель: сохраните её, когда захотите (копия в data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	После обновления снова открыта модель, которая была открыта.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	У каждого поля своя справка с пояснением и источником. Серое: отмечено = всегда включено (не отключается); не отмечено = пока недоступно; выбор кнопками = фиксированный выбор. Руководство, глава 21.
+"): sorgente sempre accesa.	"): источник всегда включён.
+' non da' un numero valido.	' — недопустимое число.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik как есть
+0 - misure del metodo	0 - размеры метода
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = стандартный волновод WR для диапазона (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = такая же тарелка на другом конце (собственное эхо).
+0 = stesso disco all'altro capo.	0 = такая же тарелка на другом конце.
+0 gradi a destra	0 градусов вправо
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = треть от конца: импеданс 200-300 Ом, балун 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: далеко от края, где прогиб вывел бы облучатель из фокуса.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 сплошной полиэтилен (RG-58, RG-213), 0,8-0,85 вспененный диэлектрик.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 сплошной полиэтилен, 0,8-0,85 вспененный, 0,9-0,97 открытая линия.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 lambda в волноводе
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - питаемая рамка
+1 - radiatore	1 - излучатель
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = один виток (как раньше). С большим числом витков Rr растёт как N², потери скин-эффекта — как N.
+1 cavo	1 кабель
+1-2-3 elementi	1-2-3 элемента
+1. Obiettivi e pesi	1. Цели и веса
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Ветер, балансировка, делители, балуны, скрещённые Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Приёмные антенны включены
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 ГГц с большой тарелкой: кроме поверхности и наведения важны тепловая и ветровая деформации (ATA: 0,7 мм RMS ночью, 3 мм днём на солнце), прогиб опор и разброс из-за либрации.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 мм: печатать в масштабе 100 %, без «по размеру страницы»
+1005/f piedi	1005/f футов
+144 isol.	144 изол.
+2 - riflettore	2 - рефлектор
+2 - riflettori	2 - рефлекторы
+2 in parallelo	2 параллельно
+2 lati	2 стороны
+2. Variabili che l'ottimizzatore puo' cambiare	2. Переменные, которые может менять оптимизатор
+200 Ω con balun 4:1	200 Ω с балуном 4:1
+25 tondo	25 круглая
+3 - direttori	3 - директоры
+3 gruppi	3 группы
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 или 4. При 2 нет жёсткости вне их плоскости.
+3. Registro dei passi - clic su una riga per riprenderla	3. Журнал шагов - щёлкните строку, чтобы вернуть её
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω или балун 4:1
+36 Ω + terra	36 Ω + земля
+4 - tutto insieme	4 - всё вместе
+4 lati	4 стороны
+4 sorgenti: vedi tabella	4 источника: см. таблицу
+432 isol.	432 изол.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 проверок данных, утверждённых IC8TEM 15/11/2026: пороги и пояснения в руководстве, глава 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 футов около 18 dBi, 12 футов около 20,5 dBi
+75 ohm ideale	75 Ом идеально
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	в 8 раз длиннее радиуса. При толстых проводах или коротких сегментах (толстые трубы на UHF, близкие элементы,\n
+9 fili	9 проводов
+9 fili a 0,1 λ	9 проводов на 0,1 λ
+Accorciamento del pilotato	Укорочение активного элемента
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Укорочение более 8 %: линейная оценка ненадёжна, проверьте в NEC.
+Allega il modello aperto	Приложить открытую модель
+Allega il registro di oggi	Приложить сегодняшний журнал
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Среднеквадратичная высота волн и высота антенны над морем, в Диаграммы > Реальный рельеф.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Ширина развёртки вокруг частоты, для графика импеданса.
+Antenna a	Антенна на
+Applica la freccia al modello NEC	Применить провисание к модели NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	Утверждено, в подготовке: в этой версии пока не активно.
+Apri la cartella	Открыть папку
+Apri un modello nella finestra principale	Откройте модель в главном окне
+Apro il modello e il diagramma 3D resta vuoto.	Открываю модель, а 3D-вид остаётся пустым.
+Area al vento dell'antenna	Площадь парусности антенны
+Area al vento totale	Общая площадь парусности
+Area al vento totale e lista di taglio	Общая площадь парусности и список резки
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Внимание: не использовать с проводами, сходящимися под углом или с разными диаметрами в стыке.\n
+Bobina di carico per la risonanza	Удлиняющая катушка для резонанса
+Boom con il tirante	Траверса с растяжкой
+C1 in serie con la loop	C1 последовательно с рамкой
+C1 serie, C2 parallelo	C1 последовательно, C2 параллельно
+C2 in parallelo all'ingresso	C2 параллельно входу
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Калькуляторы > Приёмные антенны: низкий диполь, K9AY, 4-square RX, Hi-Z 2/3/8 элементов, с фазой между рядами, оптимизированной по RDF, и предупреждением о подключении к земле.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Механические расчёты (Ветер и Балансировка), Калькуляторы > Делители и скрещённые Yagi, Объекты > Кабель и балун и рама сборки, КВ нагрузки.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Предварительный расчёт: для установки действует проект квалифицированного специалиста.
+Candidati da controllare	Кандидаты для проверки
+Categoria	Категория
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Категория открытости места (NTC 2018, табл. 3.3.II и рис. 3.3.2): зависит от класса шероховатости местности (A центры городов ... D местность без препятствий, море) и расстояния до побережья. I = открытое побережье или море, V = центр города.
+Cebik, poi NEC	Cebik, затем NEC
+Centro della banda scelta:\n	Центр выбранного диапазона:\n
+Con ghiaccio	С обледенением
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	С обледенением: ветер уменьшен до 0,6 и радиальный лёд из поля справа (упрощённое сочетание ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	С тем же зерном тест повторяется одинаково.
+Condizione della sorgente non capita ("	Условие источника не понято ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Сразу проверяет GitHub, не дожидаясь 3 минут. Если есть новая версия, загружает её, сообщает и перезапускает, как автоматическое обновление (10 секунд, модель открывается снова). Работает и при выключенном автоматическом обновлении.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Всегда проверяется проверкой сегментации и в Предупреждениях (8 с обычным ядром, 2 с расширенным ядром).
+Copie per candidato	Копий на кандидата
+Coppia sulla staffa boom-mast	Крутящий момент в хомуте траверса-мачта
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Создаёт zip в data/segnalazioni и открывает страницу GitHub «New issue» с уже написанным текстом. Zip прикладываете вы сами, вручную: программа ничего не отправляет сама.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Кривизна Земли, в Диаграммы > Реальный рельеф.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Диаметр вне диапазона формул Cebik (от 1E-6 до 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Расстояние и тип второй земли: утверждено для 1.5 (Реальный рельеф 2).
+Distanze di stack HF	Разносы КВ-сборок
+Distanze di stack: accoppiamento e distanza migliore	Разносы сборки: связь и лучший разнос
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	После оптимизации лучшие результаты проходят проверку с допусками. 0 = без проверки.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Очень низкие концы: осторожно с людьми и животными (высокое напряжение на концах).
+F/B peggiore	Худший F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	Файл .weq: линии с TLParms из AutoEZ (кабели с потерями) используют номинальные Zo и VF без потерь: карта TL в NEC без потерь.
+Filo riflettore	Провод рефлектора
+Filo ripiegato	Сложенный провод
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Длинный hairpin (более 0,2 lambda): лучше уменьшить разнос или использовать более толстые проводники.
+Forza del vento di progetto	Расчётная сила ветра
+Forza l'aggiornamento	Принудительное обновление
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Провисание хорды: насколько сетка прямого участка ниже параболоида в середине пролёта (входит в огранку). Общая масса лент {4:0.00} кг{5}.
+Freccia tolta dal modello.	Провисание удалено из модели.
+Ghiaccio radiale	Радиальный лёд
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Файлы MMANA всегда пересегментируются для NEC-2 (руководство, глава 10).
+I lobi si leggono nella tabella delle distanze di stack.	Лепестки читаются в таблице разносов сборки.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (округляет), FIX (отбрасывает дробь), MOD, MAX, MIN, ODD (нечётное целое: удобно для сегментов питаемого провода).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Обычный NEC2 считает каждый провод тонкой линией: это справедливо, пока сегмент хотя бы\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Один провод рефлектора даёт очень малое улучшение (Cebik): лучше экран или 9 проводов.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Мачта превышает предел текучести: более толстая мачта или меньший вылет.
+Impedenza del cavo	Импеданс кабеля
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	В другой форме: проверка r5 в Проверках данных отмечает усиление выше физического максимума для длины траверсы.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Индуктивность через N² (плотная намотка) и модель NEC с одним витком: здесь NEC проверяет только геометрию этого витка.
+Interasse della forcina	Разнос hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	Острова (кроме Сицилии и Сардинии) и открытое море
+Kernel esteso del NEC2 (scheda EK).\n	Расширенное ядро NEC2 (карта EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Разнос hairpin должен быть больше диаметра проводника.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim замыкает излучатель сверху проводом, сложенным вниз, почти до шлейфа.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Это делает окно Проверка сегментации (кнопка выше).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin симметричен: он не искажает диаграмму, как гамма. Балун или дроссель в точке питания всё равно нужен.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin работает, только если R активного элемента меньше импеданса кабеля: для большего R используйте гамму или трансформатор.
+La prepara IC8TEM: non ancora attiva.	IC8TEM её готовит: пока не активна.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Шесть правил Geometry Check из EZNEC, при каждом расчёте, на вкладке Предупреждения.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: без поправки Z = {0:0.0} {1}j{2:0.0} ohm (с поправкой {3:0.0} {4}j{5:0.0} ohm).
+Località	Место
+Loop orizzontale di 1 λ	Горизонтальная рамка 1 λ
+Lunghezza del pilotato	Длина активного элемента
+Lunghezza della forcina	Длина hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Кладёт в zip открытую модель (.nec), даже если она не сохранена.
+Mette nello zip il registro di oggi della cartella registri.	Кладёт в zip сегодняшний журнал из папки logs.
+Momenti al mast	Моменты на мачте
+Momento al cuscinetto	Момент у подшипника
+NEC: risonanza cercata dal motore	NEC: резонанс ищет вычислитель
+NOTE SU QUESTA VERSIONE (fase 0)\n	ЗАМЕЧАНИЯ К ЭТОЙ ВЕРСИИ (фаза 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	НОВОЕ · над землёй: высоты, разносы, нужные углы излучения
+Nel modello non ci sono elementi orizzontali diritti	В модели нет прямых горизонтальных элементов
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	В таблице сборки и в Объектах модели (рама сборки, делители).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	В картах геометрии пишите выражения без пробелов, например:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Разнос не предложен
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Разнос не предложен: все превышают максимальный активный КСВ.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	В файлах нет IP-адреса, e-mail, имён пользователей: путь домашней папки становится «~». Без учётной записи GitHub zip можно отправить как угодно.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Пока не автоматически: делается вручную тестом AGT в Предупреждениях (ARRL 24-е изд., 4nec2).
+Numero di spire	Число витков
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	У каждой копии размеры случайно смещены в пределах допусков с вкладки Допуски (по умолчанию: длина ±1 мм, положение ±2 мм, диаметр ±0,1 мм).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Помимо открытой модели, старты, выбранные случайно между минимумом и максимумом каждой переменной. 0 = как раньше.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Страница Шум реального неба на вкладке Шум/GT/Сборка: расчёт skynoise, перенесённый на C# (чтение карт HEALPix, интерполяция, звёздное время, координаты, Луна), и две карты G8ONH в data/cielo.
+Partenze a caso	Случайные старты
+Perimetro Cebik	Периметр по Cebik
+Peso del boom	Вес траверсы
+Pi-greco	П-контур
+Prepara la segnalazione	Подготовить отчёт
+Proposta	Предложение
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	тест nec2c на 145 МГц (трубки 12 мм с разносом 40 мм): 30 мм -> 45 + j23 ohm, 35 мм -> 60 + j24 ohm. Slim Jim: 50 мм -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Когда нужно: отношение сегмент/радиус примерно от 2 до 8 (ниже 2 ни один не надёжен).\n
+Quota s.l.m.	Высота над у. м.
+R del pilotato	R активного элемента
+ROS attivo minimo {0}	Минимальный активный КСВ {0}
+Raggio equivalente dei due conduttori	Эквивалентный радиус двух проводников
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Текущий реактанс активного элемента: если он положительный, активный элемент нужно укоротить сильнее.
+Reattanza della forcina	Реактанс hairpin
+Reattanza voluta del pilotato	Нужный реактанс активного элемента
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Реактанс: за kl = pi/2 (или при слишком толстом проводнике) формула AEH неприменима, используйте NEC.
+Reinstalla la versione attuale	Переустановить текущую версию
+Rel Z non positiva	Re Z неположительно
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Сопротивление активного элемента на резонансе, из модели или расчёта NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Перезапуск не удался: закройте и снова откройте YA-NEC вручную.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Загружает и переустанавливает, даже если версия та же: полезно, если файл программы повреждён.
+Scansione	Развёртка
+Scegli il candidato con	Выбрать кандидата с
+Schermo	Экран
+Scrivi due frequenze diverse.	Введите две разные частоты.
+Segnala un problema	Сообщить о проблеме
+Seme del caso	Случайное зерно
+Serve solo per la reattanza (dipolo e monopolo).	Нужно только для реактанса (диполь и монополь).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Используется при 2 и более витках: при шаге меньше 2 диаметров проводника реальные потери растут из-за эффекта близости (не рассчитывается).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Используется в Диаграммы > Реальный рельеф: отражение от моря с коэффициентом расходимости и шероховатостью.
+Sicilia e provincia di Reggio Calabria	Сицилия и провинция Реджо-Калабрия
+Sollecitazione	Напряжение
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Выше 0,25 λ лепесток начинает опускаться: хуже подходит для NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Выше 30 МГц регрессия Cebik используется вне диапазона, для которого она здесь предлагается (провода КВ): лучше Автоматически или NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Ниже 0,1 λ усиление вверх падает (Cebik): очень низкая антенна ничего не выигрывает.
+Sotto l'antenna	Под антенной
+Spina (tubo o tondo) dentro il giunto telescopico.	Пробка (трубка или пруток) внутри телескопического стыка.
+Spina interna nei giunti	Внутренняя пробка в стыках
+Stack con il ROS attivo piu' basso	Сборка с наименьшим активным КСВ
+Staffe e mast	Хомуты и мачта
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Время: примерно (старты + 1) раза от текущего плюс кандидаты x копии расчётов.
+Tensione nel mast al cuscinetto	Напряжение в мачте у подшипника
+Tiro del tirante	Натяжение растяжки
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Трубы взяты из таблицы Сужения: размеры те же, что в модели NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Все разносы превышают максимальный активный КСВ ({0}): разнос не предложен. Увеличьте максимальный активный КСВ, попробуйте собственный опорный импеданс антенны или настройте одиночную антенну. Матрица и график даны для разноса с наименьшим активным КСВ.
+V invertito	Inverted V (перевёрнутое V)
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	УКВ (DL6WU), связь, активный КСВ, лучший разнос, две частоты
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Пиковая скорость ветра на месте: vb sqrt(ce), где vb = vb,0 ca (NTC 2018, период повторяемости 50 лет) и ce(z) по категории открытости на высоте антенны.
+Velocità	Скорость
+Velocità a mano	Скорость вручную
+Vento di sopravvivenza	Предельный ветер
+Vento di sopravvivenza del boom	Предельный ветер для траверсы
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Ветер, перпендикулярный элементу, при котором первая точка достигает предела текучести (с собственным весом и льдом).
+X da aggiungere al pilotato	X, добавляемый к активному элементу
+X del pilotato	X активного элемента
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Окончательную проверку выполняет ядро NEC на модели с hairpin.
+Z0 della forcina	Z0 hairpin
+Z0 della linea dei due conduttori	Z0 двухпроводной линии
+Zona buona	Хорошая зона
+al centro	в центре
+caso peggiore	худший случай
+caso peggiore delle due	худший из двух
+cerca...	поиск...
+copie entro le soglie	копии в пределах порогов
+corrente sinusoidale	синусоидальный ток
+distanza dal boom	расстояние от траверсы
+distanza dall'inizio del boom	расстояние от начала траверсы
+due condensatori sul lato basso	два конденсатора снизу
+effetto: calcolo in corso…	эффект: расчёт…
+forza del vento x sbalzo	сила ветра x вылет
+il caso peggiore migliore	лучший худший случай
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	у эквивалентного, более толстого диполя меньше 73 Ω
+il voto medio migliore	лучший средний балл
+induttiva, in parallelo	индуктивная, параллельно
+la percentuale migliore di copie entro le soglie	лучшая доля копий в пределах порогов
+linea a due fili	двухпроводная линия
+m  mast a	м  мачта на
+m dal suolo	м над землёй
+m sopra il boom, attacco al	м над траверсой, закреплено на
+media delle due	среднее двух
+mm  lungo	мм  длиной
+mm, acciaio	мм, сталь
+molto buono	очень хорошо
+molto povero	очень плохо
+nessun rinforzo	без усиления
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	ни одна стандартная труба до +12 мм не подходит: пересмотрите сужение
+nessuna distanza sotto il ROS attivo massimo	нет разноса ниже максимального активного КСВ
+partenza dal modello aperto	начать с открытой модели
+per lato, teso per annullare il momento verticale al mast	на сторону, натянута так, чтобы погасить вертикальный момент на мачте
+primo cedimento: tubo Ø	первое разрушение: труба Ø
+regge il vento di progetto con il 20 % di margine	выдерживает расчётный ветер с запасом 20 %
+riferimenti bibliografici	библиографические ссылки
+sbalzo sopra il cuscinetto	вылет над подшипником
+schermo 1 λ x 1 λ	экран 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	плотные сегменты) расширенное ядро использует более точную формулу, и результат надёжнее.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	без пробки внутренняя труба опирается на край внешней, и к напряжению в первых 5 см применяется коэффициент 1,25: это оценка, хомуты и прорези сильно меняют результат.
+sollecitazione / snervamento	напряжение / предел текучести
+tubo piu' grosso	более толстая труба
+un filo riflettore	один провод рефлектора
+zona di cedimento	зона разрушения
+ø dei conduttori della forcina	ø проводников hairpin
+ø del filo	ø провода
+ø del pilotato	ø активного элемента
+accordata	настроенный
+accordate	настроенная
+alimentazione	питание
+alluminio	алюминий
+allungata	удлинённый
+altro	другое
+anello	рамка
+angolo	угол
+antiorario	против часовой стрелки
+aritmetico	среднеарифметическая
+automatico	автоматически
+banda	диапазон
+bande	диапазоны
+bordi	края
+buono	хорошо
+capacitiva	ёмкостная
+carichi	нагрузки
+carico	нагрузка
+cartesiana	декартова
+cavi	кабели
+cavo	кабель
+centimetri	сантиметры
+centina	ребро
+cerchio	круг
+condensatore	конденсатор
+corrente	ток
+destra	правый
+diagramma	диаграмма
+diametro	диаметр
+differenza	разница
+dipoli	диполи
+dipolo	диполь
+diretta	прямой
+diritto	прямой
+due	два
+elementi	элементы
+elemento	элемент
+elimina	удалить
+equilatera	равносторонний
+esito	результат
+esperimenti	эксперименты
+esponenziale	экспоненциальная
+fase	фаза
+ferriti	ферриты
+fili	провода
+filo	провод
+forcina	hairpin
+forma	форма
+formule	формулы
+frequenza	частота
+geometria	геометрия
+ghiaccio	лёд
+giudizio	оценка
+gradi	градусы
+griglia	сетка
+guadagno	усиление
+incrociata	скрещённые
+larghezza	ширина
+lato	сторона
+lega	сплав
+libera	свободный
+libero	свободное
+linea	линия
+lineare	линейная
+linee	линии
+lobi	боковые лепестки
+locale	местный
+mai	никогда
+manicotto	стакан
+mano	вручную
+meccanica	механика
+mezzaonda	полуволна
+millimetri	миллиметры
+misure	размеры
+modello	модель
+modo	режим
+nessuna	нет
+nota	примечание
+nuovo	новый
+operativo	рабочая
+orario	по часовой стрелке
+ottagono	восьмиугольник
+palo	мачта
+parabola	тарелка
+passo	шаг
+perdite	потери
+perfetto	идеальная
+piano	плоскость
+piatto	плоский
+piedi	футы
+polare	полярная
+pollici	дюймы
+propria	собственный
+punto	точка
+quadrato	квадратный
+quadro	квадратная
+quota	высота
+radiali	радиалы
+radiatore	излучатель
+raggio	радиус
+rame	медь
+ramo	ветвь
+rapidi	быстрый
+rastremazioni	сужения
+rete	сеть
+rettangolo	прямоугольник
+riepilogo	сводка
+riflettore	рефлектор
+riga	ряд
+rombo	ромб
+scarso	плохо
+scarto	отклонение
+schiacciata	сплющенный
+sempre	всегда
+senso	направление
+si'	да
+sinistra	левый
+soglia	порог
+sorgenti	источники
+sotto	ниже
+spire	витки
+staffe	хомуты
+stato	состояние
+sufficiente	достаточно
+tetto	крыша
+tipo	тип
+tirante	растяжка
+togli	удалить
+tondo	круглая
+traffico	трафик
+trasformatori	трансформаторы
+trombe	рупоры
+tubi	трубы
+tubo	труба
+tutti	все
+uguale	равно
+uguali	равные
+uso	использовать
+a {0} x DL6WU; tutte sopra il massimo {1}	при {0} x DL6WU; все выше максимума {1}
+% del mezzo boom	% половины траверсы
++ aggiungi	+ добавить
++ aggiungi variabile	+ добавить переменную
++ correzione del boom	+ поправка на траверсу
++ nuova	+ новый
++ trappola	+ трап
++ verso il disco.	+ к тарелке.
++90 gradi Z	+90 градусов Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- среднеарифметическая: ровно посередине между границами диапазона IARU (например, 145,000 МГц на 2 м),\n
+- correzione del boom	- поправка на траверсу
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- рабочая: частота, на которой вы реально работаете (например, 144,300 МГц на 2 м, 432,200 на 70 см),\n
+-10 (nero) 10-100 MHz	-10 (чёрный) 10-100 МГц
+-10 nero	-10 чёрный
+-2 (rosso) 0,25-10 MHz	-2 (красный) 0,25-10 МГц
+-2 rosso	-2 красный
+-6 (giallo) 3-40 MHz	-6 (жёлтый) 3-40 МГц
+-6 giallo	-6 жёлтый
+-90 gradi Z	-90 градусов Z
+-> segmento NEC	-> сегмент NEC
+. "Annulla" torna indietro.	. «Отменить» возвращает назад.
+. Antenna base: fili 1-	. Базовая антенна: провода 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. При такой высокой Q развёртка должна охватывать лишь несколько кГц.
+. Salvalo con Salva con nome.	. Сохраните её через Сохранить как.
+. Trascina per ruotare, rotella per ingrandire.	. Тащите для вращения, колесо для масштаба.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Используйте более тонкий провод, больший сердечник или два сложенных сердечника.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (по Sengupta 2021) и GMRT табл. 19.1
+12 (errore / HPBW)^2	12 (ошибка / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Пассивное кольцо: периметр {0:0.000} lambda, без источника и без конденсатора; эффект виден в полной модели (директор или рефлектор).
+Automatico	Автоматически
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, как nec2c и xnec2c: исходный код поставляется с программой (файл COPYING).\n
+Provincia di Trieste	Провинция Триест
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	и на C# для YA-NEC. Эталонный интерфейс: xnec2c от 5B4AZ и Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	КПД, рассчитанный по дальнему полю, Prad / (Prad + потери) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	импеданс и потери становятся всё менее надёжными по мере опускания провода (см. BOG в руководстве). Для надёжного результата: не менее lambda/200 = {3:0.###} м.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	создаётся диаметром до {3:0.00} м; расчёт апертуры рядом подходит для любого диаметра и уже учитывает рёбра (поле выше).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} МГц, {1} сегментов: Z = {2:0.000} {3:+0.000;-0.000}j, КСВ {4:0.00} на {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} дБ, КПД {10:0.00} %, AGT {11:0.00} дБ
+° di elevazione	° угла места
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19-е изд., гл. 18 (Yagi на 2 м от W9PE): три элемента с шагом 0,2 λ, около 7 dBi и F/B более 15 дБ.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Согласие YA-NEC с nec2c (прутки 20/15/10 м): рефлекторы на 0,185 / 0,197 / 0,222 λ, директоры на 0,095 / 0,116 / 0,114 λ: в пределах диапазонов источников.
+↶ Annulla	↶ Отменить
+↷ Ripeti	↷ Повторить
+■ Ferma	■ Стоп
+▶ Avvia	▶ Пуск
+☐ mantieni lunghezza del boom	☐ сохранить длину траверсы
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ нет предупреждений: сегментация соответствует выбранному уровню
+✓ nessun errore e nessun avviso	✓ нет ошибок и предупреждений
+variabili del modello	переменные модели
+nuova variabile dal modello	новая переменная из модели
+Scrivi una variabile nella linguetta Variabili…	Записать переменную на вкладке Переменные…
+Elemento diritto	Прямой элемент
+Elemento piegato	Изогнутый элемент
+Variabile nuova	Новая переменная
+Minimo / massimo	Минимум / максимум
+Cosa cambia	Что меняется
+in ocra: dove agisce la variabile	охрой: где действует переменная
+Crea la variabile	Создать переменную
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Переменная {0} создана: геометрия не меняется. «Отменить» на панели Геометрия удаляет её.
+Struttura 3D: dove agisce la variabile ▾	3D-структура: где действует переменная ▾
+Struttura 3D ▸	3D-структура ▸
+Clic: nasconde o mostra la struttura	Щелчок: скрывает или показывает структуру
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	сплошная охра: использует переменную · пунктирная охра: использует её через другую переменную
+attraverso {0}: fili {1}	через {0}: провода {1}

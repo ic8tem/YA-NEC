@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	色の濃さ：薄い、中間、濃い。表の行では数値が読めるように、より薄く表示されます。
 Filo {0} scelto nella vista 3D: riga {1} della tabella	3D ビューでワイヤー {0} を選択：表の {1} 行目
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	ワイヤー {0}：ワイヤー表にありません（GW 以外のジオメトリカード）
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	新しいバージョンをすぐに確認します (3 分待たずに)。
+terreno reale	実地形
+Locatore	ロケーター
+da 8 a 12 caratteri	8 ～ 12 文字
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	6 文字では地点が数 km ずれることがあります: 地形プロファイルには少なくとも 8 文字が必要です。
+Quota sito	地点の標高
+Altezza antenna	アンテナ高
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	アンテナ中心の地上高。モデルと異なる場合、NEC パターンは同じ電流分布のまま上げ下げされます。
+Distanza max	最大距離
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	ロケーターを変更するたびに方位と距離を再計算します (大圏、6371 km の球)。
+Terra	陸地
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	波高 0.25 m (標準偏差) の Ament 係数で海面の反射係数を下げます。
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	粗面の統計モデル (Ament 1953): 低い入射角と一様な海面で有効。
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	地球の曲率でプロファイルを下げ (通常の屈折で等価半径 4/3)、発散係数で遠方の反射波を弱めます。
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	標準大気 (k = 4/3)。ダクトや逆転層があると見かけの曲率が変わります。
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	アンテナと発射方向の間で最も高い稜線が、HFTA と同様に直接波をナイフエッジのように減衰させます (フレネル積分)。
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	単一ナイフエッジ: 丸い稜線や連続する稜線は最も高いもので近似します。
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	方位 10 度ごとに計算を繰り返し (DEM のみ)、アンテナを各方位に向けた性能指数をローズ図に表示します。
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	アンテナは常にプロファイルの方位に向けます: ローテーター付きアンテナに有効。
+Cartesiana dBi / gradi	直交座標 dBi / 度
+0–180° intero	0–180° 全体
+Zoom angolare	角度ズーム
+Sovrapponi alla linguetta Verticale	垂直タブに重ねる
+premi Calcola	「計算」を押してください
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	アンテナ高 6 ～ 30 m (HF) または 2 ～ 30 m (VHF) で計算を繰り返し、パス上の性能指数が最良の高さを表示します。
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	電流は計算済みモデルのまま: 高さがインピーダンスと電流に与える影響は考慮しません (HFTA と同じ)。
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	ARRL Antenna Book の到来角の表 (バンドと地域ごとの .PRN ファイル) が必要です: 入手でき次第この機能が有効になり、オレンジの区間を表示します。
+locatore non valido	無効なロケーター
+sul mare	海上
+sul terreno	陸上
+profilo reale	実プロファイル
+terreno piatto	平坦な地面
+orizzonte ostruito	遮られた水平線
+° (scala angolare ×	° (角度目盛 ×
+← dietro	← 後方
+avanti →	前方 →
+statistiche degli angoli di arrivo: non caricate	到来角の統計: 未読み込み
+rosa 0–360°: calcolo in corso…	0–360° ローズ図: 計算中…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	プロファイルファイルを選んでください (「HorizonProfiler から」をクリック)。
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM がありません: 初回は TINITALY または SRTM1 のダウンロードにネットワークが必要です (その後は data/dem フォルダに保存されます)。
+Profilo del terreno	地形プロファイル
+Lobo di elevazione	仰角ローブ
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	先にモデルを計算してください (上の「計算」ボタン): アンテナパターンは NEC から得られます。
+da file	ファイルから
+dal DEM	DEM から
+rispetto alla stessa antenna su terreno piatto	平坦な地面上の同じアンテナに対して
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	実プロファイル上のローブと平坦な地面上のローブの差を、有効な角度範囲で平均したもの。
+Guadagno a 5° / 10°	5° / 10° での利得
+Guadagno a 1° / 3°	1° / 3° での利得
+Angoli coperti a -3 dB	-3 dB でカバーする角度
+primo lobo sul profilo reale	実プロファイル上の第 1 ローブ
+calcolo…	計算中…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	自由空間モデル: 電流は大地なしのもので、HFTA が使う自由空間パターンと同じです。近くの大地を考慮するには、実大地でモデルを計算してください。
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	プロファイルは 1 つの方位にのみ有効です: ローテーター付きアンテナには複数の方向が必要です (「全方位」ボックス)。
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	HFTA (N6BV) と同じ方法: 直接波 + プロファイルの各面での反射波 + 稜線での回折。アンテナパターンは NEC から得られ、この計算で地形を加えます。
+Piatto	平坦
+Reale	実地形
+Primo minimo	第 1 ヌル
+Punto di riflessione	反射点
+Orizzonte	水平線
+Uso: rotte DX in HF (angoli bassi 1–15°).	用途: HF DX パス (低仰角 1–15°)。
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	用途: 対流圏伝搬と MS (0–5°)、月が低いときの EME (月の出/月の入りの大地利得)。
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	パスの有効角度で平均利得が最も高い高さ。
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	計算済みモデルの電流を高さ方向に移動: インピーダンスと大地との結合はモデルのままです。
+Calcola prima il terreno reale	先に実地形を計算してください
+Esporta il lobo sul terreno reale	実地形上のローブをエクスポート
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	画像: Esri、Maxar、Earthstar Geographics および GIS ユーザーコミュニティ
+© i contributori di OpenStreetMap	© OpenStreetMap 寄稿者
+Sfondo	背景
+Foto aerea	航空写真
+Solo griglia	グリッドのみ
+Griglia	グリッド
+Cerca	検索
+⌖ Centra sul locatore	⌖ ロケーターに合わせる
+Punto scelto	選択した地点
+Coordinate	座標
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	地図をクリック = アンテナ地点、ドラッグ = 移動、ホイール = ズーム (グリッドは 6 文字から 8、10、12 文字に)。太枠 = 6 文字のスクエア。
+non disponibile	利用不可
+Lunghezza elementi	エレメント長
+Posizione sul boom	ブーム上の位置
+Uniforme	一様
+Distribuzione	分布
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	エレメントがクランプで中心からずれて取り付けられた状態: 位置公差で自身の軸方向にずらします。
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	実際のクランプはブーム付近の電気長も変えます: それには「ブーム補正」タブを使ってください。
+nuovo a ogni avvio	実行ごとに新規
+Numero prove	試行回数
+Frequenze	周波数
+Seme casuale	乱数シード
+OBIETTIVO LISTA DI TAGLIO	切断リストの目標
+Calo F/B max	F/B 低下の最大値
+ROS max	最大 SWR
+Ferma	停止
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	給電エレメントに近いエレメントが通常最も重要で、ブーム端のエレメントは大きな誤差を許容します。
+l'istogramma serve al Monte Carlo	ヒストグラムはモンテカルロ用です
+5% peggiore	最悪 5%
+Posizione mm	位置 mm
+Lunghezza mm	長さ mm
+Tolleranza ammessa	許容公差
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	。赤は製作公差より小さい公差が必要なエレメントです。
+Calcola prima il modello	先にモデルを計算してください
+sensibilita'	感度
+Tolleranze: fermato	公差: 停止しました
+Diametro mm	直径 mm
+Tolleranza ammessa mm	許容公差 mm
+Avvia prima il calcolo	先に計算を実行してください
+Esporta la lista di taglio	切断リストをエクスポート
+Lista di taglio	切断リスト
+Obiettivi	目標
+Calo massimo del F/B	F/B 低下の最大値
+ROS massimo	SWR の最大値
+Tolleranze di costruzione	製作公差
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	予定 (スケッチ 13、承認待ち): このバージョンではまだ有効ではありません。
+Al quadro 20×2 mm	Al 角パイプ 20×2 mm
+Al quadro 25×2 mm	Al 角パイプ 25×2 mm
+Al quadro 30×2 mm	Al 角パイプ 30×2 mm
+Al quadro 40×2 mm	Al 角パイプ 40×2 mm
+Al tondo 25×1,5 mm	Al 丸パイプ 25×1.5 mm
+Al tondo 30×2 mm	Al 丸パイプ 30×2 mm
+Al tondo 40×2 mm	Al 丸パイプ 40×2 mm
+Al tondo 50×2 mm	Al 丸パイプ 50×2 mm
+Zona NTC	NTC ゾーン
+Quota sito as	地点の標高を
+Periodo ritorno	再現期間
+Categoria esposiz.	地表面粗度区分
+Coeff. topografia	地形係数
+Antenna da terra	アンテナ地上高
+Palo sopra rotore	ローテーターより上のマスト
+Ø palo	マスト Ø
+Usa elementi e boom del modello	モデルのエレメントとブームを使う
+Includi telaio, palo, cavi	フレーム、マスト、ケーブルを含める
+Scansione direzione del vento	風向スキャン
+UNITÀ	単位
+N e kgf affiancati	N と kgf を併記
+solo N	N のみ
+solo kgf	kgf のみ
+Mostra	表示
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	無効なロケーター: ゾーンを手動で選んでください
+Telaio a H	H フレーム
+Cavi e divisore	ケーブルと分配器
+Parte	部品
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	横風ではエレメントは押されません (cross-flow、K5IU): パイプにかかる力は軸に垂直な風成分の 2 乗に比例します。
+momento flettente alla staffa del rotore	ローテータークランプでの曲げモーメント
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	概算の寸法です: マスト、タワー、基礎の技術者による確認に代わるものではありません。基部のモーメントは「マストと基礎」サブタブに渡されます。
+Sito e norma	地点と基準
+Norma	基準
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019、係数は CNR-DT 207 R1/2018 と EN 1991-1-4
+Locatore / zona	ロケーター / ゾーン
+Risultati	結果
+Forza massima	最大の力
+Momento flettente alla staffa del rotore	ローテータークランプでの曲げモーメント
+Momento torcente sul rotore	ローテーターにかかるトルク
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	概算の寸法です: マスト、タワー、基礎の有資格技術者による確認に代わるものではありません。
+Al tondino pieno	Al 丸棒
+Materiale elementi	エレメントの材料
+Staffe, isolatori	クランプ、碍子
+g cad.	g / 個
+Dipolo + scatola	ダイポール + ボックス
+Cavo fino al palo	マストまでのケーブル
+STAFFA AL PALO	マストクランプ
+Posizione attuale	現在の位置
+m dal riflettore	m (反射器から)
+Massa / distanza	質量 / 距離
+Vento dalla linguetta Vento	「風」タブの風
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	「風」サブタブで最後に計算した設計風圧を使います。ない場合は 600 N/m²。
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	提案クランプ位置が原点 (マストとスタックフレームの取付点) に来るよう、モデル全体をブームに沿って移動します。3D 構造の「元に戻す」で戻せます。
+Momenti in funzione della posizione della staffa	クランプ位置とモーメントの関係
+Masse e aree per parte	部品ごとの質量と面積
+ultimo direttore	最後の導波器
+Staffe e isolatori	クランプと碍子
+Cavo sul boom	ブーム上のケーブル
+Massa kg	質量 kg
+Baricentro m	重心 m
+Area vento m²	受風面積 m²
+Centro area m	面積中心 m
+solo peso	重量のみ
+solo vento	風のみ
+File Touchstone .s1p	Touchstone .s1p ファイル
+Formato letto	読み取った形式
+CAVO TRA VNA E ANTENNA	VNA とアンテナ間のケーブル
+R e X separate	R と X を別々に
+Banda con ROS <	SWR < の帯域
+ROS: calcolato e misurato	SWR: 計算値と実測値
+Confronto	比較
+misurato, cavo tolto	実測、ケーブル除去済み
+R calcolata	R 計算値
+X calcolata	X 計算値
+R misurata	R 実測値
+X misurata	X 実測値
+Calcolato	計算値
+Misurato	実測値
+Scarto	差
+Frequenza del ROS minimo	SWR 最小の周波数
+ROS minimo	最小 SWR
+nessuna correzione: calcolo e misura coincidono.	補正なし: 計算と測定は一致しています。
+calcolo NEC sul campo della misura…	測定範囲で NEC 計算中…
+Misura del VNA	VNA 測定
+Tutti	すべて
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	バンド全体の F/B と F/R を見るにはスイープを実行してください (上の「スイープ」ボタン)
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = 前方利得から後方半球 (方位 90-270°、仰角 0° 以上すべて) の平均電力を引いたもの。オプティマイザの目標の 1 つでもあります。
+Tabelle: F/B e F/R su tutta la banda	表: バンド全体の F/B と F/R
+Valori dello sweep	スイープ値
+ANTENNE RICEVENTI	受信アンテナ
+4-square in ricezione	受信用 4-square
+8 verticali in cerchio	円周上の 8 本のバーチカル
+Modello aperto	モデルを開く
+Isotropo	等方性
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = 目的方向の利得から半空間全体の平均利得を引いたもの: 利得と違って損失に依存しません。
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	「実地形」タブの到来角の中央値を目的仰角として使います (バンドと地域ごとの統計)。ARRL の統計が読み込まれていないときは、ここに書いた仰角を保持します。
+Direzione voluta	目的方向
+Hz  rumore	Hz  雑音
+NF ricevitore	受信機 NF
+sorgente locale az	局所雑音源 az
+Cifre di merito in ricezione	受信の性能指数
+Basta il segnale?	信号は十分か?
+calcolo in corso…	計算中…
+RDF in funzione della frequenza	周波数に対する RDF
+Calcola prima il modello aperto	先に開いているモデルを計算してください
+verticale λ/4	λ/4 バーチカル
+° · dB relativi · arancio: -3 dB	° · 相対 dB · オレンジ: -3 dB
+settore ±30° az, 10–40° el	セクター ±30° az、10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	前方セクターの平均利得から後方半球の平均を引いたもの。
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN は 20 度の利得だけで DMF を定義しています。ここではスケッチのセクターの平均を使うため、本の値とそのまま比較することはできません。
+molto basso: serve un preamplificatore	非常に低い: プリアンプが必要
+basso ma accettabile: vedi soglia	低いが許容範囲: しきい値を参照
+come un'antenna trasmittente	送信アンテナと同様
+F/R medio sull'emisfero posteriore	後方半球の平均 F/R
+Rumore d'antenna ai morsetti	アンテナ端子での雑音
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	端子での外来雑音電力: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + 雑音の到来方向で重み付けした平均利得。
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	水平線からの雑音、仰角で exp(-el/10 度) の重み付け: 低い角度で届く遠方の人工雑音を表します。実際の分布は地点によります。
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	仰角 5 度の点雑音源、等方性の背景と同じ電力。
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	地上の等方性雑音。大地は雑音を加えません。
+Margine sul ricevitore	受信機マージン
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	アンテナ雑音が受信機雑音を超える量が 6 dB 未満: 感度は受信機で制限されます。プリアンプの追加か NF の低い受信機が必要です。
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	利得 1.8
+Spazio richiesto	必要な空間
+λ/4 in tubo quadro	角パイプの λ/4
+λ/4 in tubo tondo	丸パイプの λ/4
+Solo cavi di fase	位相線のみ
+Aria	空気
+Uscite	出力
+Z antenne	アンテナ Z
+Z ingresso	入力 Z
+Dielettrico	誘電体
+Connettori	コネクタ
+Correggi accorciamento dei connettori	コネクタによる短縮を補正
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	コネクタ内部の線路分を長さから差し引きます。
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	N コネクタで片端 4 mm の推定 (BNC 3、SMA 1.5): VNA を使い 1 mm ずつ短くして調整するのが最善です。
+Divisori	分配器
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	開いているスタックの各アンテナのアクティブインピーダンス (アンテナごとに 1 つの電源) と間隔から、位相線の最小長を求めます。
+CAVI DI FASE	位相線
+Lunghezza minima	最小長
+Passo verticale	垂直間隔
+solo cavi di fase: nessun trasformatore da costruire	位相線のみ: 製作する変成器はありません
+2 cavi da 75 Ω in parallelo = 37,5 Ω	75 Ω ケーブル 2 本を並列 = 37.5 Ω
+quadro, lato	角形、辺
+tondo, Ø	丸形、Ø
+Z0 richiesta	必要な Z0
+Ø conduttore interno	内導体 Ø
+VF del cavo	ケーブル VF
+λ/4 in aria, mm	空気中の λ/4、mm
+da tagliare, mm	切断長、mm
+Z carico in parallelo	並列の負荷 Z
+Rami λ/4: Z0 = Zin · √N	λ/4 分岐: Z0 = Zin · √N
+Resistenze a stella	スター抵抗
+Isolamento tra le uscite	出力間アイソレーション
+Perdita stimata	推定損失
+Carico usato	使用した負荷
+non potenza di 2	2 のべき乗ではありません
+ROS all'ingresso	入力 SWR
+solo cavi di fase	位相線のみ
+Uscita	出力
+Lungh. elettrica	電気長
+Fisica mm	物理長 mm
+Perdita dB	損失 dB
+° di fase).	° の位相)。
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° 上向き)。分配器でのインピーダンスは正確には繰り返されなくなります。
+Solo cavi di fase: nessun disegno da stampare	位相線のみ: 印刷する図面はありません
+Divisore	分配器
+50 mm di controllo	50 mm の確認
+GEOMETRIA	ジオメトリ
+λ/4 sul boom	ブーム上で λ/4
+stesso piano	同一平面
+Metallico, isolati	金属、絶縁
+Non metallico	非金属
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	ブームは NEC モデルに含まれていません: エレメントが金属ブームから絶縁されていれば影響は小さいです (計算機のブーム補正)。
+Yagi di base	基本八木
+Disposizione	配置
+Sfasamento piani	平面のずらし
+Cavo di ritardo λ/4	λ/4 遅延ケーブル
+Includi relè e cavi reali	実際のリレーとケーブルを含める
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	遅延ケーブルの損失 (VF 0.66、144 MHz で 10 dB/100 m、周波数の平方根で換算) とリレーの 0.1 dB を加えます。
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75 Ω ケーブルと同軸リレーの典型値です。プログラムはお使いの部品を知りません。
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	同じ位相回路はターンスタイル (90° に交差したダイポール) にも使えます。
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	正面図
+Componenti co-polare / cross-polare	主偏波 / 交差偏波成分
+Rapporto assiale e ROS in frequenza	周波数に対する軸比と SWR
+piano A	平面 A
+piano B	平面 B
+vista dal davanti — boom al centro	正面から見た図 — ブームは中央
+piani sfalsati di λ/4 lungo il boom	ブームに沿って λ/4 ずらした平面
+Yagi incrociate: serve una Yagi con una sola sorgente	クロス八木: 単一電源の八木が必要です
+Yagi incrociate: calcolo in corso...	クロス八木: 計算中...
+Rapporto assiale in asse	軸上の軸比
+Rapporto assiale a −3 dB	−3 dB での軸比
+Isolamento tra i due piani	2 平面間のアイソレーション
+Fase della rete sul piano B	平面 B の回路位相
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	完全に直交し対称な平面: モデルでは結合と逆偏波はほぼゼロです。実際にはクランプ、ケーブル、わずかな非対称性により約 25-35 dB に制限されます。
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	1.8 MHz から 1296 MHz まで: バランの一覧はバンドで変わります
+LINEA DI DISCESA	給電線
+Coassiale	同軸
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	平衡はしご線にはシールドがありません: コモンモードは不平衡からのみ生じます。このカードは同軸の場合を計算します。はしご線にはチューナー付きの「線路 (TL)」を使ってください。
+Lungo il boom	ブームに沿って
+m → palo	m → マスト
+Discesa sul palo	マストを下って
+Fino alla stazione	無線局まで
+Calza a massa sul palo / traliccio	シールドをマスト / タワーで接地
+Messa a terra all'ingresso stazione	無線局の引き込み口で接地
+BALUN DA CONFRONTARE	比較するバラン
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	RG-213 を 110 mm に 8 回巻き: Wheeler のインダクタンス、Medhurst の自己容量。
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 と推定自己容量: チョークの実際のインピーダンスは測定が必要です。
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 フェライトトロイダル、低 Q の並列 RLC として扱います。
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	ピークで 5 kOhm (材質 31 で 10 MHz、材質 43 で 25 MHz): 2 x FT-240 に 12 回巻きの典型値。
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	同軸 λ/2 4:1: 平衡給電、シールドは接続。
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	残留コモンモードを f0 で 600 Ω の共振 (Q 3) として扱います: 取り付け方によります。
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 スリーブ: シールドとスリーブ間の短絡 λ/4 線路、f0 で高インピーダンス。
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	スリーブ Z0 50 Ω、1/4 波長で損失 0.08 dB。
+10 perline in ferrite sulla calza.	シールド上のフェライトビーズ 10 個。
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	144 MHz でビーズ 1 個あたり 40 Ω (材質 61)、30 MHz 以上で材質 43 なら 100 Ω: カタログの典型値。
+Caso mostrato	表示中のケース
+premi Calcola il confronto	「比較を計算」を押してください
+Corrente lungo la calza, dal dipolo verso il basso	シールド上の電流、ダイポールから下へ
+Vista laterale: corrente sulla calza	側面図: シールド上の電流
+F/R medio	平均 F/R
+Z / ROS	Z / SWR
+Perdita nel balun	バランでの損失
+Potenza dissipata nel balun a 1 kW	1 kW 時にバランで消費される電力
+Banda con calza < 5 %	シールド電流 < 5 % の帯域
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	グレーの項目は他のバンド用のバランです。周波数を選ぶと有効になります。HF では無線局まで (接地された) シールドも、VHF/UHF ではブームとマスト上の部分も効きます。シールドはバランなしの実際と同じく給電点の片側に接続したワイヤーで、バランは最初の区間のコモンモードインピーダンスです。
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	グラスファイバーは導電しません: フレームは NEC に入らず、位相線のシールドだけが残ります。
+Includi palo sotto il telaio	フレームの下のマストを含める
+Cavi di fase lungo i montanti	支柱に沿った位相線
+Rotore e controventi	ローテーターと支線
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	予定: ローテーターと支線をワイヤーとして (タワーの寸法が必要)。
+Materiale	材料
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	赤 = NEC ワイヤーとしてモデル化したフレーム部品 · 破線 = 位相線のシールド
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	水平偏波: 垂直の支柱は結合が弱く、水平の横棒と位相線は結合しません。
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	垂直偏波: 支柱とマストはエレメントと平行で影響が大きく、水平の横棒は小さいです。
+Confronto senza / con telaio	フレームなし / ありの比較
+Diagramma orizzontale sovrapposto	重ねた水平パターン
+premi Calcola confronto	「比較を計算」を押してください
+Stack: calcola prima il modello	スタック: 先にモデルを計算してください
+Stack: calcolo senza e con telaio...	スタック: フレームなしとありで計算中...
+Pezzo	部品
+Collegato	接続
+Cavi	ケーブル
+Senza telaio	フレームなし
+Con telaio	フレームあり
+Z ingresso divisore	分配器の入力 Z
+senza telaio	フレームなし
+con telaio	フレームあり
+Stack: confronto senza / con telaio fatto	スタック: フレームなし / ありの比較が完了しました
+CARICHI HF	HF ローディング
+INSERISCI NEL MODELLO	モデルに挿入
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	キャパシタンスハットはワイヤーの端 (b または e)、リニアローディングはワイヤーの選んだ点に入ります。
+Inserisci nel modello	モデルに挿入
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	ローディングのスケッチで承認済み: L と C の Q、f0、バンドごとの Z、部品にかかる電圧と電流。ここでは製作方法の種類を追加します。
+Trappola coassiale	同軸トラップ
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	内導体を中央の巻線の巻き始めにはんだ付けします (両端を逆にすると共振が約 50 kHz 下がります)。
+Calcola spire per f0	f0 の巻数を計算
+Spire dell'avvolgimento (anche frazionarie).	巻線の巻数 (端数も可)。
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	実際の f0 は数 % 異なります: ディップメーターか VNA で測定し、巻数を修正してください。
+Blocca	ブロック
+dipolo con	ダイポール、
+Filo Ø	線径 Ø
+Calcola C per f0	f0 の C を計算
+mm  Filo Ø	mm  線径 Ø
+mm  Passo	mm  ピッチ
+mm  Spire	mm  巻数
+MHz  dal centro	MHz  中心から
+m  Braccio	m  エレメント片側
+m  Filo dell'elemento Ø	m  エレメントの線径 Ø
+Calcola spire per la risonanza	共振する巻数を計算
+Piega	折り返し
+m  Distanza tra i fili	m  線間隔
+Calcola la piega per la risonanza	共振する折り返しを計算
+Raggi	スポーク
+m  Filo Ø	m  線径 Ø
+Verticale alto	垂直部の高さ
+m  Frequenza	m  周波数
+MHz  Filo Ø	MHz  線径 Ø
+Calcola i raggi per la risonanza	共振するスポークを計算
+L misurata	実測 L
+MHz  Autorisonanza f0	MHz  自己共振 f0
+Cappello capacitivo in punta al verticale	バーチカル頂部のキャパシタンスハット
+Bobina dalle misure	測定値からのコイル
+Reattanza del cappello in frequenza	周波数に対するハットのリアクタンス
+impedenza della trappola	トラップのインピーダンス
+Si comporta da	動作
+Potenza persa	損失電力
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	表の電圧と損失に使う送信電力。
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	下のバンド: 腹の電流 sqrt(P/73)、トラップでは I0 cos(beta a)。阻止バンド: 内側ダイポール先端の電圧 I0 Z0 をトラップと放射で分け合います。
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	腹の電流 sqrt(P/73)、負荷では I0 cos(beta a) (a は中心からの距離)。
+Risonanza propria f0	自己共振 f0
+Q ideale	理想 Q
+Q della trappola alla risonanza.	共振時のトラップの Q。
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	さらに誘電損失 (正接 PE 3e-4、PTFE 2e-4) を加えます。実測の同軸トラップの Q は通常 100 ～ 300 です。
+Lunghezza di cavo	ケーブル長
++ 10 cm per le saldature	+ はんだ付け分 10 cm
+R in parallelo equivalente	等価並列 R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: これがモデルに入る LD 負荷です
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	トラップ付きの下のバンドでのダイポール片側の長さ、フルサイズの片側 (71.3 / f) との比較。
+il NEC con la trappola come carico da' la misura giusta.	トラップを負荷とした NEC で正しい長さが得られます。
+Induttanza misurata	実測インダクタンス
+dalla misura	測定から
+Autorisonanza	自己共振
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	コイルが自身の自己容量だけで共振する周波数。
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	Medhurst の表による長さ / 直径の関数としての自己容量、金属塊から離れた単層コイルで有効。
+Q della bobina alla frequenza di lavoro.	動作周波数でのコイルの Q。
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	表皮効果による線の抵抗に近接係数 1 + 2 (d/p)^2 (d は線径、p はピッチ) を掛けたもの: 長さが直径とほぼ等しいコイルでは Medhurst も同程度の値を示します。
+Reattanza della piega	折り返しのリアクタンス
+Z0 della linea	線路 Z0
+Q della piega	折り返しの Q
+Capacita' del cappello	ハットの容量
+Capacita' del cappello verso lo spazio.	ハットの対空間容量。
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	スポーク (細線、2 pi eps0 l / (ln(2l/a) - 1)) と、中実円板 (8 eps0 r) に向かって飽和するリングの和: スポークは互いに遮蔽し合います。ワイヤーとして挿入すれば NEC が正確に計算します。
+in punta al verticale	バーチカル頂部に
+Altezza per la risonanza	共振する高さ
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0)、x 0.95
+Effetto sul verticale	バーチカルへの効果
+Carichi HF: apri un modello nella finestra principale.	HF ローディング: メインウィンドウでモデルを開いてください。
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	リニアローディングとキャパシタンスハットはワイヤーとして挿入します。その他は「負荷として」を選んでください。
+Il cappello capacitivo si inserisce come fili.	キャパシタンスハットはワイヤーとして挿入します。
+RLC parallelo	並列 RLC
+Effetto sul dipolo	ダイポールへの効果
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	その点に負荷を入れたときの、フルの 1/4 波長 (71.3 / f) に対する片側の短縮。
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	負荷付き片側の線路モデル X = Z0 (cot(beta b) - tan(beta a))、端効果で x 0.95。
+Esegui il test	テストを実行
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	利得は AGT で補正して表示できます (オプティマイザにはすでにあります)。
+Controllo prima/dopo il calcolo	計算前/後のチェック
+Esito	結果
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ 1 つ以上のチェックが ±0.2 dB を超えています: セグメント分割を確認してください (3D 構造 > セグメント分割... と セグメント分割をチェック)。
+Tutti i controlli entro ±0,2 dB.	すべてのチェックが ±0.2 dB 以内です。
+Linea a finestra 450	450 Ω ウィンドウライン
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	「計算」を押してください: NEC が各周波数で開いているモデルのインピーダンスを計算します。
+Perdita nella linea	線路の損失
+Perdita totale	総損失
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	線路と送信機 (50 Ω) の間のチューナーの種類。
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	回路の負荷 Q (Qn = sqrt(Rmax/Rmin - 1)、T 型と π 型は 2 段) とコイルの Q から推定した損失。N6BV の TLW は部品を 1 つずつ計算するため、零点数 dB 異なることがあります。
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	例: 2 × 20 m のダブレット (ZS6BKW/G5RV)。チューナーから見た値が 20 Ω 未満のとき警告: 損失が大きく、線路を長くするか短くすることを勧めます。損失のある線路は TLW (N6BV、ARRL) と同様です。
+USA costa est	米国東海岸
+USA costa ovest	米国西海岸
+Giappone	日本
+Caraibi	カリブ海
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: サービスが GeoTIFF を返しませんでした
+GeoTIFF compresso: non supportato	圧縮 GeoTIFF: 非対応
+GeoTIFF: tipo di dato non supportato	GeoTIFF: 非対応のデータ型
+Il file non contiene coppie distanza / quota.	ファイルに距離 / 高さの組がありません。
+Nessuno	なし
+Ferriti a perline	フェライトビーズ
+Cavo e balun: segmento della sorgente non trovato.	ケーブルとバラン: 給電セグメントが見つかりません。
+solo palo	マストのみ
+Acciaio zincato	溶融亜鉛めっき鋼
+Alluminio	アルミニウム
+Vetroresina	グラスファイバー
+Montante sx/dx	支柱 左/右
+al boom	ブームまで
+Traversa	横棒
+Palo	マスト
+al dipolo	ダイポールまで
+N, femmina	N、メス
+senza connettori	コネクタなし
+rurale tranquillo	静かな田園地帯
+Verticale λ/4	λ/4 バーチカル
+λ/8 di lato	片側 λ/8
+0,37 λ di diametro	直径 0.37 λ
+Cappello capacitivo	キャパシタンスハット
+W8NX bassa impedenza	W8NX 低インピーダンス
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	太い PTFE 誘電体ケーブル (RG-393) または高耐圧コンデンサの LC トラップ
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	折り返しが lambda/8 より長い: 線路は一定のインダクタンスとして振る舞わなくなります。ワイヤーとして挿入し NEC で共振を確認してください。
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	ハットの容量は推定値です (スポークが互いに遮蔽): 正確な値はワイヤーとして挿入し NEC で計算してください。
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	負荷の位置が 1/4 波長を超えています: 中心に近づけてください。
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	ハットはワイヤーの端に入ります: 最初 (b) か最後 (e) のセグメントを選んでください。
+il punto scelto e' troppo vicino all'estremo del filo.	選んだ点がワイヤーの端に近すぎます。
+questo tipo entra nel modello come carico.	この種類は負荷としてモデルに入ります。
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF ローディング: YA-NEC の計算機が追加したワイヤー
+Il file Touchstone non contiene punti di S11.	Touchstone ファイルに S11 の点がありません。
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV に周波数、Re(S11)、Im(S11) の行がありません。
+AGT in spazio libero, senza perdite	自由空間、無損失での AGT
+IMPOSTAZIONI	設定
+Schiera Hi-Z di verticali corte	短いバーチカルの Hi-Z アレイ
+Base del loop	ループ基部
+Distanza, lato o diametro	間隔、辺または直径
+Altezza delle verticali	バーチカルの高さ
+Base del loop dal suolo	地上からのループ基部
+Fase tra le file	列間の位相
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	低い水平ダイポール: 地上 lambda/4 未満ではローブが上を向きます。IV3PRK のランキングの「高角」基準 (RDF 7.3 dB) で、低角の受信アンテナと比較されます。
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	Gary Breed K9AY による K9AY (QST、1997 年 9 月): 同じマスト上で 90 度に交差する 2 つの垂直ループ、終端抵抗 (典型 390 Ω、F/B で調整)、9:1 トランス。ここでは単一ループを選んだ方向に向け、「受信 (RDF)」ページと同じく地上で閉じています。Hi-Z: RDF 7.2 dB。
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	受信用 4-square: lambda/8 の正方形の角に置いた 4 本の短いアクティブバーチカルで、対角線方向に放射します。位相が空欄 = 後方の正確なヌル (列間 pi + beta d): 理論上最高の指向性になります。実際の位相回路 (ON4UN、IV3PRK) は別の位相を使い RDF は低くなります (IV3PRK 9.4 dB)。ボタンで RDF が最良の位相を探します。
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Hi-Z Antennas のような短いアクティブバーチカルのアレイ: 2 素子エンドファイア (カージオイド、lambda/8)、三角形の 3 素子 (辺 lambda/6、1 つの頂点を選んだ方向へ)、円周上の 8 素子 (直径 0.37 lambda: その方向の 4 本と反対側を使用)。Hi-Z: 専用コンバイナーで円周 8 素子 RDF 13.4 dB。単純な 2 列モデルはそれより低くなります。ボタンで RDF が最良の位相を探します。
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ バーチカルは実大地から立ち上がります (Sommerfeld 大地で GE 1): NEC-2 では実大地に接続したワイヤーのインピーダンスが給電セグメントに依存します (NEC-2 ガイド、EZNEC)。パターンと RDF は目安です。すべての受信アンテナで高架ラジアルによる接続を予定しています。
+fase tra le file da 120 a 300 gradi per l'RDF	RDF 用の列間位相 120 ～ 300 度
+nessuna fase con il lobo in avanti	ローブが前方を向く位相がありません
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	RDF が最良となる列間位相: {0} 度 (RDF {1} dB)。再計算中...
+linea d'orizzonte	水平線
+scala angolare	角度目盛
+lobo reale sopra il piatto fino a	平坦地上の実ローブ、上限
+Profilo verso	プロファイル方向
+Lobo verticale e angoli di arrivo a	垂直ローブと到来角、
+Cos'e' l'RDF	RDF とは
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = 目的方向の利得 - 全方向の平均利得 (W8JI、60 年代には SNIF と呼ばれました)。雑音があらゆる方向から均一に来る場合に、アンテナが信号対雑音比をどれだけ改善するかを示します。絶対利得は関係しません (プリアンプで取り戻せます)。平均は EZNEC と同じく上半球を全球 (4 pi) で割ります。この方式で結果は IV3PRK および W8JI/Hi-Z と一致します (バーチカル 5.07 に対し 5.06 と 4.9、Beverage 350 m 13.5 に対し 13.66)。限界: 実際の雑音は一様ではありません (電力線、近隣の QRM)。だから F/B とローブの形も重要です。送信アンテナでは RDF は意味がないため、このタブでのみ計算します。DMF (Directivity Merit Figure、ON4UN): 前方仰角 20 度の利得から後方半空間 (方位 90 度超、地上、面積に応じて余弦で重み付け) の平均利得を引いたもの: 後方から来る雑音をどれだけ抑えるかを示します。ON4UN は DMF と RDF を互いに比較しないよう注意しています。出典: W8JI と W8WWV (RDF)、ON4UN Low-Band DXing 第 7 章 (DMF、表 7-22、7-24、7-25)、IV3PRK、IK0XBX。
+elevazione	仰角
+azimut	方位
+azimut a {0}°	{0}° での方位
+totale	合計
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	第 1 ヌル間のビーム幅 (FNBW): {0}°、最大サイドローブ: {1}
+Didascalie {0} %	ラベル {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB、出典では {1}: 寸法、終端、大地を確認してください (出典は別の大地やジオメトリを使っている可能性があります)。
+Azimut a {0}° · {1} MHz	{0}° での方位 · {1} MHz
+Azimut a {0}° di elevazione	仰角 {0}° での方位
+RUMORE	雑音
+Apri la scheda {0}	{0} のシートを開く
+caso mostrato: {0}	表示中のケース: {0}
+Rastremazioni	テーパー
+BANDA	バンド
+λ/2 coassiale 4:1	同軸 λ/2 4:1
+Manicotto λ/4	λ/4 スリーブ
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	NEC ワイヤーとしてのケーブルシールドとマスト。1.8 ～ 1296 MHz でのバラン比較 (コモンモード電流、F/B、平均 F/R、損失、1 kW 時の電力)。
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	NEC ワイヤーとしての支柱、横棒、マスト、位相線シールド: フレームなし / ありの比較 (利得、F/B、平均 F/R、ローブ、分配器 Z、Tant と G/T)。
+TIPO	種類
+DATI	データ
+TELAIO	フレーム
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	角パイプまたは丸パイプの λ/4、ケーブル、Wilkinson。位相線、チルト。原寸図面
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X または +、λ/4 ずらした平面。H、V、RHCP、LHCP、X-pol。軸比とアイソレーション
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	長さが等しい → 位相も等しい。λ/2 の倍数 → 分配器でアクティブインピーダンスが繰り返されます。推奨公差 ± 5 mm (= 位相 ± {0}°)。
+impedenze attive delle {0} antenne dello stack in parallelo	スタックのアンテナ {0} 本のアクティブインピーダンスを並列
+Banda con ROS < {0}	SWR < {0} の帯域
+? Manuale	? マニュアル
+Apre la spiegazione nel manuale	マニュアルの説明を開きます
+riferimento	基準
+Rispetto alla singola antenna	単体アンテナとの比較
+{0} antenne ideali	理想アンテナ {0} 本
+x la distanza DL6WU, a passi di	x DL6WU 間隔、刻み
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	左軸: スタック G - 単体 G、0 から上へ。右軸: スタック F/R - 単体 F/R、反転して 0 が上: スタックで F/R が改善するところでは曲線が下がり、最も低い点が最大の改善です。G/T は表に残ります。
+ΔG sulla singola	単体アンテナに対する ΔG
+Chiusura del programma	プログラムの終了
+Vuoi chiudere YA-NEC?	YA-NEC を終了しますか?
+Grazie per avermi usato: spero di esserti stato utile.	ご利用ありがとうございました。お役に立てたなら幸いです。
+Sì	はい
+ROS attivo	アクティブ SWR
+G realizzato	実現利得 G
+ROS attivo massimo	アクティブ SWR の最大値
+riflessi minimi	反射最小
+ROS attivo alto: da non scegliere	アクティブ SWR が高い: 選ばないでください
+Documenti tecnici	技術文書
+Manuale d'uso	ユーザーマニュアル
+Manuale di calcolo e delle fonti	計算と出典のマニュアル
+Citazioni	引用
+Cerca in tutti i documenti	すべての文書を検索
+Apri il PDF	PDF を開く
+Nessun risultato per «{0}»	«{0}» の結果はありません
+Primi {0} risultati per «{1}»	«{1}» の最初の {0} 件
+{0} risultati per «{1}»	«{1}» の結果 {0} 件
+Apre la citazione {0}	引用 {0} を開きます
+Manuale di calcolo	計算マニュアル
+È pronta la versione {0} di YA-NEC	YA-NEC バージョン {0} の準備ができました
+È già scaricata e installata: entra in funzione quando riavvii il programma.	すでにダウンロードしてインストール済みです: プログラムを再起動すると有効になります。
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Mac では自動でインストールされません: GitHub のリリースページから新しい .dmg をダウンロードしてください。
+Riavvia adesso	今すぐ再起動
+Più tardi	後で
+Apri la pagina delle versioni	リリースページを開く
+Aggiornamento di YA-NEC	YA-NEC の更新
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	すでにダウンロードしてインストール済みです。プログラムは自動で再起動し、開いていたモデルを再び開きます。
+Riavvio tra {0} s	{0} 秒後に再起動
+Questo avviso si chiude tra {0} s	このお知らせは {0} 秒後に閉じます
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	保存されていなかったモデルを更新後に再び開きました: 都合のよいときに保存してください (コピーは data/aggiornamenti にあります)。
+Riaperto dopo l'aggiornamento il modello che era aperto.	開いていたモデルを更新後に再び開きました。
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	各ボックスには説明と出典のツールチップがあります。グレー: チェックあり = 常に有効 (オフにできません)、チェックなし = まだ利用できません、ピル型の選択肢 = 固定の選択。マニュアル第 21 章。
+"): sorgente sempre accesa.	"): 常に有効な出典。
+' non da' un numero valido.	' は有効な数値ではありません。
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik そのまま
+0 - misure del metodo	0 - 方法の測定値
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = バンドの標準 WR 導波管 (WR650、WR430、WR159、WR90)。
+0 = stesso disco all'altro capo (eco proprio).	0 = 相手側も同じディッシュ (自局のエコー)。
+0 = stesso disco all'altro capo.	0 = 相手側も同じディッシュ。
+0 gradi a destra	右へ 0 度
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = 先端から 3 分の 1: インピーダンス 200-300 Ω、4:1 バラン
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: 縁から離して。曲がると給電部が焦点からずれます。
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 は充実ポリエチレン (RG-58、RG-213)、0.8-0.85 は発泡誘電体。
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 は充実ポリエチレン、0.8-0.85 は発泡、0.9-0.97 ははしご線。
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 管内波長
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - 給電ループ
+1 - radiatore	1 - 放射器
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = 1 ターン (従来どおり)。ターン数が増えると Rr は N² で、表皮効果の損失は N で増えます。
+1 cavo	ケーブル 1 本
+1-2-3 elementi	1-2-3 エレメント
+1. Obiettivi e pesi	1. 目標と重み
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - 風、バランス、分配器、バラン、クロス八木
+1.3 - Antenne riceventi abilitate	1.3 - 受信アンテナを有効化
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	大型ディッシュの 10 GHz: 表面精度と指向に加え、熱と風による変形 (ATA: 夜間 0.7 mm RMS、日中の日なたで 3 mm)、支柱のたわみ、秤動による広がりも効きます。
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: 「ページに合わせる」なしで 100 % で印刷
+1005/f piedi	1005/f フィート
+144 isol.	144 絶縁
+2 - riflettore	2 - 反射器
+2 - riflettori	2 - 反射器
+2 in parallelo	2 本を並列
+2 lati	2 辺
+2. Variabili che l'ottimizzatore puo' cambiare	2. オプティマイザが変更してよい変数
+200 Ω con balun 4:1	4:1 バランで 200 Ω
+25 tondo	25 丸
+3 - direttori	3 - 導波器
+3 gruppi	3 グループ
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 本または 4 本。2 本では面外の剛性がありません。
+3. Registro dei passi - clic su una riga per riprenderla	3. ステップ記録 - 行をクリックするとその状態に戻ります
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω または 4:1 バラン
+36 Ω + terra	36 Ω + 大地
+4 - tutto insieme	4 - すべて一緒に
+4 lati	4 辺
+4 sorgenti: vedi tabella	4 つの電源: 表を参照
+432 isol.	432 絶縁
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	IC8TEM が 2026/11/15 に承認したデータチェック 45 項目: しきい値と説明はマニュアル第 11 章。
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 フィートで約 18 dBi、12 フィートで約 20.5 dBi
+75 ohm ideale	75 Ω 理想
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	半径の 8 倍より長い限り問題ありません。太い線や短いセグメント (UHF の太いパイプ、近接したエレメント、\n
+9 fili	9 本のワイヤー
+9 fili a 0,1 λ	0.1 λ に 9 本のワイヤー
+Accorciamento del pilotato	給電エレメントの短縮
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	短縮が 8% を超えています: 線形の推定は信頼できません。NEC で確認してください。
+Allega il modello aperto	開いているモデルを添付
+Allega il registro di oggi	今日のログを添付
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	「パターン > 実大地」での波高 RMS と海面からのアンテナ高。
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	インピーダンスのグラフ用の、周波数周辺のスキャン幅。
+Antenna a	アンテナ位置
+Applica la freccia al modello NEC	たわみを NEC モデルに適用
+Approvata, in preparazione: non ancora attiva in questa versione.	承認済み、準備中: このバージョンではまだ有効ではありません。
+Apri la cartella	フォルダを開く
+Apri un modello nella finestra principale	メインウィンドウでモデルを開く
+Apro il modello e il diagramma 3D resta vuoto.	モデルを開いても 3D 表示が空のままです。
+Area al vento dell'antenna	アンテナの受風面積
+Area al vento totale	全受風面積
+Area al vento totale e lista di taglio	全受風面積と切断リスト
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	注意: 角度をなして接合するワイヤーや、接合部で直径が異なるワイヤーには使わないでください。\n
+Bobina di carico per la risonanza	共振用のローディングコイル
+Boom con il tirante	トラス付きブーム
+C1 in serie con la loop	ループに直列の C1
+C1 serie, C2 parallelo	C1 直列、C2 並列
+C2 in parallelo all'ingresso	入力に並列の C2
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	計算機 > 受信アンテナ: 低いダイポール、K9AY、受信用 4-square、Hi-Z 2/3/8 エレメント。列間位相を RDF で最適化し、大地接続の警告付き。
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	機械計算 (風とバランス)、計算機 > 分配器とクロス八木、オブジェクト > ケーブルとバランおよびスタックフレーム、HF ローディング。
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	概算の寸法です: 設置には有資格技術者による設計が必要です。
+Candidati da controllare	確認する候補
+Categoria	区分
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	地点の地表面粗度区分 (NTC 2018、表 3.3.II と図 3.3.2): 地表の粗度クラス (A 市街地中心 ... D 障害物のない区域、海) と海岸からの距離によります。I = 開けた海岸または海、V = 市街地中心。
+Cebik, poi NEC	Cebik、その後 NEC
+Centro della banda scelta:\n	選んだバンドの中心:\n
+Con ghiaccio	着氷あり
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	着氷あり: 風を 0.6 倍に減らし、右のボックスの放射状着氷を加えます (ISO 12494 の簡略化した組み合わせ)。
+Con lo stesso seme la prova si ripete uguale.	同じシードならテストはまったく同じに繰り返されます。
+Condizione della sorgente non capita ("	電源の条件を解釈できません ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	3 分待たずにすぐ GitHub を確認します。新しいバージョンがあればダウンロードして知らせ、自動更新と同じように再起動します (10 秒、モデルは再び開きます)。自動更新がオフでも動作します。
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	セグメント分割チェックと警告で常に確認されます (通常カーネルで 8、拡張カーネルで 2)。
+Copie per candidato	候補ごとのコピー数
+Coppia sulla staffa boom-mast	ブーム-マストクランプのトルク
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	data/segnalazioni に zip を作成し、テキスト入力済みの GitHub «New issue» ページを開きます。zip はご自身で手動で添付してください: プログラムが自動で送信することはありません。
+Curvatura terrestre, in Diagrammi > Terreno reale.	地球の曲率、「パターン > 実大地」で。
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	直径が Cebik の式の範囲外です (1E-6 ～ 1E-2 lambda)。
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	2 つ目の大地の距離と種類: 1.5 で承認済み (実大地 2)。
+Distanze di stack HF	HF のスタック間隔
+Distanze di stack: accoppiamento e distanza migliore	スタック間隔: 結合と最適間隔
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	最適化の後、公差チェックに進む最良の結果。0 = チェックなし。
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	端が非常に低い: 人や動物に注意 (先端は高電圧)。
+F/B peggiore	最悪の F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq ファイル: AutoEZ の TLParms (損失のあるケーブル) の行は公称 Zo と VF を使い損失なしです: NEC の TL カードは無損失です。
+Filo riflettore	反射ワイヤー
+Filo ripiegato	折り返しワイヤー
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	長いヘアピン (0.2 lambda 超): 間隔を狭めるか太い導体を使うほうがよいです。
+Forza del vento di progetto	設計風荷重
+Forza l'aggiornamento	今すぐ更新
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	弦のたわみ: 直線部のメッシュが径間中央で放物面よりどれだけ下にあるか (ファセット化に入ります)。母屋の総質量 {4:0.00} kg{5}。
+Freccia tolta dal modello.	モデルからたわみを除去しました。
+Ghiaccio radiale	放射状着氷
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA ファイルは常に NEC-2 用に再分割されます (マニュアル第 10 章)。
+I lobi si leggono nella tabella delle distanze di stack.	サイドローブはスタック間隔の表で読み取ります。
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (四捨五入)、FIX (切り捨て)、MOD、MAX、MIN、ODD (奇数の整数: 給電ワイヤーのセグメントに便利)。\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	通常の NEC2 は各ワイヤーを細い線として扱います: セグメントが少なくとも\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	反射ワイヤー 1 本ではわずかな改善しかありません (Cebik): スクリーンか 9 本のワイヤーのほうが良いです。
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	マストが降伏点を超えています: マストを太くするか張り出しを短くしてください。
+Impedenza del cavo	ケーブルのインピーダンス
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	別の形: データチェックの r5 チェックが、ブーム長に対する物理的上限を超える利得を示します。
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	N² によるインダクタンス (密巻き) と 1 ターンの NEC モデル: ここで NEC は 1 ターンのジオメトリだけを確認します。
+Interasse della forcina	ヘアピン間隔
+Isole (tranne Sicilia e Sardegna) e mare aperto	島嶼 (シチリアとサルデーニャを除く) と外洋
+Kernel esteso del NEC2 (scheda EK).\n	拡張 NEC2 カーネル (EK カード)。\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	ヘアピン間隔は導体直径より大きくなければなりません。
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim は放射器の上端を下向きに折り返したワイヤーでスタブのすぐ上まで閉じます。
+La fa la finestra Verifica della segmentazione (pulsante sopra).	「セグメント分割チェック」ウィンドウで行います (上のボタン)。
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	ヘアピンは対称です: ガンマのようにパターンを偏らせません。給電点にはやはりバランかチョークが必要です。
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	ヘアピンは給電エレメントの R がケーブルのインピーダンスより低いときだけ有効です: R が大きい場合はガンマか変成器を使ってください。
+La prepara IC8TEM: non ancora attiva.	IC8TEM が準備中: まだ有効ではありません。
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	EZNEC Geometry Check の 6 つのルールを、計算のたびに「警告」タブで実行します。
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: 補正なし Z = {0:0.0} {1}j{2:0.0} Ω (補正あり {3:0.0} {4}j{5:0.0} Ω)。
+Località	場所
+Loop orizzontale di 1 λ	水平 1 λ ループ
+Lunghezza del pilotato	給電エレメント長
+Lunghezza della forcina	ヘアピン長
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	開いているモデル (.nec) を zip に入れます (未保存でも)。
+Mette nello zip il registro di oggi della cartella registri.	logs フォルダの今日のログを zip に入れます。
+Momenti al mast	マストにかかるモーメント
+Momento al cuscinetto	軸受でのモーメント
+NEC: risonanza cercata dal motore	NEC: エンジンで共振を探索
+NOTE SU QUESTA VERSIONE (fase 0)\n	このバージョンについて (フェーズ 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	新規 · 地上: 高さ、間隔、目的の放射角
+Nel modello non ci sono elementi orizzontali diritti	モデルにまっすぐな水平エレメントがありません
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	スタック表とモデルオブジェクト (スタックフレーム、分配器) で。
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	ジオメトリカードでは式をスペースなしで書いてください。例:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	提案できる間隔がありません
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	提案できる間隔がありません: すべてアクティブ SWR の最大値を超えています。
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	ファイルには IP アドレス、メールアドレス、ユーザー名は入りません: ホームフォルダのパスは «~» になります。GitHub アカウントがなければ、zip はどんな方法で送っても構いません。
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	まだ自動ではありません: 「警告」の AGT テストで手動で行います (ARRL 第 24 版、4nec2)。
+Numero di spire	ターン数
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	各コピーの寸法は「公差」タブの公差の範囲でランダムにずらされます (既定: 長さ ±1 mm、位置 ±2 mm、直径 ±0.1 mm)。
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	開いているモデルに加え、各変数の最小値と最大値の間でランダムに選んだ開始点。0 = 従来どおり。
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	「雑音/GT/スタック」タブの「実際の空の雑音」ページ: C# に移植した skynoise の計算 (HEALPix マップの読み込み、補間、恒星時、座標、月) と data/cielo にある G8ONH の 2 つのマップ。
+Partenze a caso	ランダムな開始点
+Perimetro Cebik	Cebik の周長
+Peso del boom	ブームの重量
+Pi-greco	π 型回路
+Prepara la segnalazione	レポートを準備
+Proposta	提案
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	145 MHz での nec2c テスト (12 mm パイプ、間隔 40 mm): 30 mm -> 45 + j23 Ω、35 mm -> 60 + j24 Ω。Slim Jim: 50 mm -> 48 + j7 Ω。
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	必要なとき: セグメント/半径の比がおよそ 2 ～ 8 (2 未満ではどちらも信頼できません)。\n
+Quota s.l.m.	海抜高度
+R del pilotato	給電エレメントの R
+ROS attivo minimo {0}	最小アクティブ SWR {0}
+Raggio equivalente dei due conduttori	2 本の導体の等価半径
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	現在の給電エレメントのリアクタンス: 正の場合は給電エレメントをさらに短くする必要があります。
+Reattanza della forcina	ヘアピンのリアクタンス
+Reattanza voluta del pilotato	目的の給電エレメントのリアクタンス
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	リアクタンス: kl = pi/2 を超えると (または導体が太すぎると) AEH の式は成り立ちません。NEC を使ってください。
+Reinstalla la versione attuale	現在のバージョンを再インストール
+Rel Z non positiva	Re Z が正ではありません
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	共振時の給電エレメントの抵抗、モデルまたは NEC 計算から。
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	再起動に失敗しました: YA-NEC を手動で閉じて開き直してください。
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	バージョンが同じでもダウンロードして再インストールします: プログラムのファイルが壊れたときに便利です。
+Scansione	スキャン
+Scegli il candidato con	候補の選び方
+Schermo	スクリーン
+Scrivi due frequenze diverse.	異なる 2 つの周波数を入力してください。
+Segnala un problema	問題を報告
+Seme del caso	乱数シード
+Serve solo per la reattanza (dipolo e monopolo).	リアクタンスにのみ必要 (ダイポールとモノポール)。
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	2 ターン以上で使用: 導体直径の 2 倍未満では近接効果で実際の損失が増えます (計算していません)。
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	「パターン > 実大地」で使用: 発散係数と粗さを考慮した海面反射。
+Sicilia e provincia di Reggio Calabria	シチリアとレッジョ・カラブリア県
+Sollecitazione	応力
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	0.25 λ を超えるとローブが下がり始めます: NVIS には向きにくくなります。
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	30 MHz を超えると、ここで提供している範囲 (HF ワイヤー) の外で Cebik の回帰式を使うことになります: 自動または NEC のほうが良いです。
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	0.1 λ 未満では上向きの利得が下がります (Cebik): 非常に低いアンテナには利点がありません。
+Sotto l'antenna	アンテナの下
+Spina (tubo o tondo) dentro il giunto telescopico.	伸縮継手内部のプラグ (パイプまたは棒)。
+Spina interna nei giunti	継手内部のプラグ
+Stack con il ROS attivo piu' basso	アクティブ SWR が最も低いスタック
+Staffe e mast	クランプとマスト
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	時間: 現在の約 (開始点数 + 1) 倍に、候補 x コピー数の計算が加わります。
+Tensione nel mast al cuscinetto	軸受でのマストの応力
+Tiro del tirante	トラスの張力
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	パイプは「テーパー」表から取ります: 寸法は NEC モデルと同じです。
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	すべての間隔がアクティブ SWR の最大値 ({0}) を超えています: 提案できる間隔がありません。アクティブ SWR の最大値を上げるか、アンテナ自身の基準インピーダンスを試すか、単体アンテナを調整してください。行列とグラフはアクティブ SWR が最も低い間隔のものです。
+V invertito	逆 V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU)、結合、アクティブ SWR、最適間隔、2 つの周波数
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	地点のピーク風速: vb sqrt(ce)、vb = vb,0 ca (NTC 2018、再現期間 50 年)、ce(z) はアンテナ高での地表面粗度区分の値。
+Velocità	風速
+Velocità a mano	風速を手動入力
+Vento di sopravvivenza	耐風速
+Vento di sopravvivenza del boom	ブームの耐風速
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	最初の点が降伏に達する、エレメントに垂直な風速 (自重と着氷を含む)。
+X da aggiungere al pilotato	給電エレメントに加える X
+X del pilotato	給電エレメントの X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2)、Za = 120·(ln(L/ø) − 1)。最終確認はヘアピン付きモデルで NEC エンジンが行います。
+Z0 della forcina	ヘアピンの Z0
+Z0 della linea dei due conduttori	2 線式線路の Z0
+Zona buona	良好域
+al centro	中心で
+caso peggiore	最悪の場合
+caso peggiore delle due	2 つのうち悪いほう
+cerca...	検索...
+copie entro le soglie	しきい値内のコピー
+corrente sinusoidale	正弦波電流
+distanza dal boom	ブームからの距離
+distanza dall'inizio del boom	ブーム始点からの距離
+due condensatori sul lato basso	下側に 2 つのコンデンサ
+effetto: calcolo in corso…	効果: 計算中…
+forza del vento x sbalzo	風力 x 張り出し
+il caso peggiore migliore	最悪の場合が最良のもの
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	等価ダイポールはより太く、73 Ω 未満です
+il voto medio migliore	平均スコアが最良のもの
+induttiva, in parallelo	誘導性、並列
+la percentuale migliore di copie entro le soglie	しきい値内のコピーの割合が最良のもの
+linea a due fili	2 線式線路
+m  mast a	m  マスト、
+m dal suolo	m 地上
+m sopra il boom, attacco al	m ブームの上、取付位置
+media delle due	2 つの平均
+mm  lungo	mm  長さ
+mm, acciaio	mm、鋼
+molto buono	非常に良い
+molto povero	非常に悪い
+nessun rinforzo	補強なし
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	+12 mm までの市販パイプでは足りません: テーパーを見直してください
+nessuna distanza sotto il ROS attivo massimo	アクティブ SWR の最大値以下の間隔がありません
+partenza dal modello aperto	開いているモデルから開始
+per lato, teso per annullare il momento verticale al mast	片側ずつ、マストにかかる垂直方向のモーメントを打ち消すよう張ります
+primo cedimento: tubo Ø	最初に壊れる部分: パイプ Ø
+regge il vento di progetto con il 20 % di margine	設計風速に 20 % の余裕で耐えます
+riferimenti bibliografici	参考文献
+sbalzo sopra il cuscinetto	軸受より上の張り出し
+schermo 1 λ x 1 λ	スクリーン 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	密なセグメント) では拡張カーネルがより正確な式を使い、結果がより信頼できます。\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	プラグがないと内側のパイプが外側のパイプの縁に当たり、最初の 5 cm の応力に係数 1.25 を掛けます: 推定値であり、クランプや切り込みで結果は大きく変わります。
+sollecitazione / snervamento	応力 / 降伏強さ
+tubo piu' grosso	より太いパイプ
+un filo riflettore	反射ワイヤー 1 本
+zona di cedimento	破壊域
+ø dei conduttori della forcina	ヘアピン導体の ø
+ø del filo	線径 ø
+ø del pilotato	給電エレメントの ø
+accordata	調整済み
+accordate	調整済み
+alimentazione	給電
+alluminio	アルミニウム
+allungata	延長した
+altro	その他
+anello	ループ
+angolo	角度
+antiorario	反時計回り
+aritmetico	算術
+automatico	自動
+banda	バンド
+bande	バンド
+bordi	端
+buono	良い
+capacitiva	容量性
+carichi	負荷
+carico	負荷
+cartesiana	直交座標
+cavi	ケーブル
+cavo	ケーブル
+centimetri	センチメートル
+centina	リブ
+cerchio	円
+condensatore	コンデンサ
+corrente	電流
+destra	右
+diagramma	パターン
+diametro	直径
+differenza	差
+dipoli	ダイポール
+dipolo	ダイポール
+diretta	直接
+diritto	まっすぐ
+due	2
+elementi	エレメント
+elemento	エレメント
+elimina	削除
+equilatera	正三角形
+esito	結果
+esperimenti	実験
+esponenziale	指数
+fase	位相
+ferriti	フェライト
+fili	ワイヤー
+filo	ワイヤー
+forcina	ヘアピン
+forma	形状
+formule	式
+frequenza	周波数
+geometria	ジオメトリ
+ghiaccio	着氷
+giudizio	評価
+gradi	度
+griglia	グリッド
+guadagno	利得
+incrociata	交差
+larghezza	幅
+lato	辺
+lega	合金
+libera	自由
+libero	自由
+linea	線路
+lineare	線形
+linee	線路
+lobi	サイドローブ
+locale	局所
+mai	しない
+manicotto	スリーブ
+mano	手動
+meccanica	機械
+mezzaonda	半波長
+millimetri	ミリメートル
+misure	測定値
+modello	モデル
+modo	モード
+nessuna	なし
+nota	注記
+nuovo	新規
+operativo	運用
+orario	時計回り
+ottagono	八角形
+palo	マスト
+parabola	ディッシュ
+passo	ピッチ
+perdite	損失
+perfetto	完全導体
+piano	平面
+piatto	平たい
+piedi	フィート
+polare	極座標
+pollici	インチ
+propria	自身の
+punto	点
+quadrato	正方形
+quadro	角形
+quota	高さ
+radiali	ラジアル
+radiatore	放射器
+raggio	半径
+rame	銅
+ramo	分岐
+rapidi	高速
+rastremazioni	テーパー
+rete	回路
+rettangolo	長方形
+riepilogo	概要
+riflettore	反射器
+riga	行
+rombo	ひし形
+scarso	悪い
+scarto	偏差
+schiacciata	押しつぶした
+sempre	常に
+senso	方向
+si'	はい
+sinistra	左
+soglia	しきい値
+sorgenti	出典
+sotto	下
+spire	ターン
+staffe	クランプ
+stato	状態
+sufficiente	十分
+tetto	屋根
+tipo	種類
+tirante	トラス
+togli	削除
+tondo	丸
+traffico	通信量
+trasformatori	変成器
+trombe	ホーン
+tubi	パイプ
+tubo	パイプ
+tutti	すべて
+uguale	等しい
+uguali	等しい
+uso	使用
+a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU で。すべて最大値 {1} を超えています
+% del mezzo boom	ブーム半分の %
++ aggiungi	+ 追加
++ aggiungi variabile	+ 変数を追加
++ correzione del boom	+ ブーム補正
++ nuova	+ 新規
++ trappola	+ トラップ
++ verso il disco.	+ ディッシュ方向。
++90 gradi Z	+90 度 Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- 算術: バンドの IARU 境界のちょうど中間 (例: 2 m では 145.000 MHz)、\n
+- correzione del boom	- ブーム補正
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- 運用: 実際に運用する周波数 (例: 2 m では 144.300 MHz、70 cm では 432.200)、\n
+-10 (nero) 10-100 MHz	-10 (黒) 10-100 MHz
+-10 nero	-10 黒
+-2 (rosso) 0,25-10 MHz	-2 (赤) 0.25-10 MHz
+-2 rosso	-2 赤
+-6 (giallo) 3-40 MHz	-6 (黄) 3-40 MHz
+-6 giallo	-6 黄
+-90 gradi Z	-90 度 Z
+-> segmento NEC	-> NEC セグメント
+. "Annulla" torna indietro.	。「元に戻す」で戻せます。
+. Antenna base: fili 1-	。基本アンテナ: ワイヤー 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	。これほど Q が高いと、スイープ幅は数 kHz にしかできません。
+. Salvalo con Salva con nome.	。「名前を付けて保存」で保存してください。
+. Trascina per ruotare, rotella per ingrandire.	。ドラッグで回転、ホイールでズーム。
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	。細い線、大きいコア、または重ねた 2 つのコアを使ってください。
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (Sengupta 2021 経由) と GMRT 表 19.1
+12 (errore / HPBW)^2	12 (誤差 / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	無給電リング: 周長 {0:0.000} lambda、電源もコンデンサもありません。効果は完全なモデル (導波器または反射器) で見られます。
+Automatico	自動
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0、nec2c および xnec2c と同じ: ソースコードはプログラムに同梱されています (COPYING ファイル)。\n
+Provincia di Trieste	トリエステ県
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	、YA-NEC 用に C# で。参考にしたインターフェース: 5B4AZ と Eric KJ7LNW の xnec2c。\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	遠方界から計算した効率、Prad / (Prad + 損失) = {3:0.0} %。
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	ワイヤーが低くなるほどインピーダンスと損失の信頼性が下がります (マニュアルの BOG を参照)。確実な結果には: 少なくとも lambda/200 = {3:0.###} m。
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	直径 {3:0.00} m まで作成されます。隣の開口の計算はどの直径にも有効で、リブもすでに考慮しています (上のボックス)。
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz、{1} セグメント: Z = {2:0.000} {3:+0.000;-0.000}j、SWR {4:0.00} ({5} Ω 基準)、Gmax {6:0.00} dBi (az {7:0.0}、el {8:0.0})、F/B {9:0.00} dB、効率 {10:0.00} %、AGT {11:0.00} dB
+° di elevazione	° 仰角
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 第 19 版 第 18 章 (W9PE の 2 m 八木): 0.2 λ の 3 エレメント、約 7 dBi、F/B 15 dB 超。
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC と nec2c の一致 (20/15/10 m のロッド): 反射器 0.185 / 0.197 / 0.222 λ、導波器 0.095 / 0.116 / 0.114 λ: 各出典の範囲内。
+↶ Annulla	↶ 元に戻す
+↷ Ripeti	↷ やり直し
+■ Ferma	■ 停止
+▶ Avvia	▶ 開始
+☐ mantieni lunghezza del boom	☐ ブーム長を保つ
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ 警告なし: セグメント分割は選んだレベルを満たしています
+✓ nessun errore e nessun avviso	✓ エラーも警告もありません
+variabili del modello	モデル変数
+nuova variabile dal modello	モデルから新しい変数
+Scrivi una variabile nella linguetta Variabili…	「変数」タブで変数を書いてください…
+Elemento diritto	まっすぐなエレメント
+Elemento piegato	曲がったエレメント
+Variabile nuova	新しい変数
+Minimo / massimo	最小値 / 最大値
+Cosa cambia	変わるもの
+in ocra: dove agisce la variabile	黄土色: 変数が作用する場所
+Crea la variabile	変数を作成
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	変数 {0} を作成しました: ジオメトリは変わりません。「ジオメトリ」バーの「元に戻す」で削除できます。
+Struttura 3D: dove agisce la variabile ▾	3D 構造: 変数が作用する場所 ▾
+Struttura 3D ▸	3D 構造 ▸
+Clic: nasconde o mostra la struttura	クリック: 構造を隠すまたは表示
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	黄土色の実線: 変数を使用 · 黄土色の破線: 別の変数を通して使用
+attraverso {0}: fili {1}	{0} を通して: ワイヤー {1}

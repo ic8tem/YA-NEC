@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	颜色的遮盖程度：淡、中或浓。表格行上的遮罩更淡，以便读取数字。
 Filo {0} scelto nella vista 3D: riga {1} della tabella	在三维视图中选中导线 {0}：表格第 {1} 行
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	导线 {0}：不在导线表中（几何卡不是 GW）
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	立即检查是否有新版本（无需等待 3 分钟）。
+terreno reale	真实地形
+Locatore	定位码
+da 8 a 12 caratteri	8 到 12 个字符
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	6 个字符时点位可能偏差数公里：地形剖面至少需要 8 个字符。
+Quota sito	地点海拔
+Altezza antenna	天线高度
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	天线中心离地高度。如与模型不同，NEC 方向图将以相同的电流分布升高或降低。
+Distanza max	最大距离
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	每次更改定位码时重新计算方位角和距离（大圆，6371 km 球体）。
+Terra	陆地
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	用 Ament 因子按 0.25 m 波浪（标准差）降低海面反射系数。
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	粗糙表面统计模型（Ament 1953）：适用于掠射角和均匀海面。
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	按地球曲率降低剖面（正常折射下等效半径 4/3），并用发散因子减弱远处的反射线。
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	标准大气（k = 4/3）；有波导或逆温时视在曲率会改变。
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	天线与出射方向之间最高的山脊像刃边一样衰减直射线（菲涅耳积分），与 HFTA 相同。
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	单刃边：圆形山脊或多个连续山脊以最高者近似。
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	每隔 10 度方位角重复计算（仅 DEM），并在玫瑰图上显示品质因数，天线转向每个方位。
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	天线始终指向剖面方位：适用于可旋转天线。
+Cartesiana dBi / gradi	直角坐标 dBi / 度
+0–180° intero	0–180° 全部
+Zoom angolare	角度缩放
+Sovrapponi alla linguetta Verticale	叠加到“垂直”选项卡
+premi Calcola	请按“计算”
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	以天线高度 6 到 30 m（HF）或 2 到 30 m（VHF）重复计算，并显示路径上品质因数最佳的高度。
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	电流仍为已计算模型的电流：不考虑高度对阻抗和电流的影响（与 HFTA 相同）。
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	需要 ARRL Antenna Book 的到达角表（按波段和地区的 .PRN 文件）：一旦可用，此功能即启用并显示橙色区段。
+locatore non valido	定位码无效
+sul mare	海面上方
+sul terreno	陆地上方
+profilo reale	真实剖面
+terreno piatto	平坦地形
+orizzonte ostruito	受遮挡的地平线
+° (scala angolare ×	°（角度刻度 ×
+← dietro	← 后
+avanti →	前 →
+statistiche degli angoli di arrivo: non caricate	到达角统计：未载入
+rosa 0–360°: calcolo in corso…	玫瑰图 0–360°：计算中…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	选择剖面文件（点击“来自 HorizonProfiler”）。
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM 不可用：首次使用需要联网下载 TINITALY 或 SRTM1（之后保存在 data/dem 文件夹中）。
+Profilo del terreno	地形剖面
+Lobo di elevazione	仰角波瓣
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	请先计算模型（上方“计算”按钮）：天线方向图来自 NEC。
+da file	来自文件
+dal DEM	来自 DEM
+rispetto alla stessa antenna su terreno piatto	相对于平坦地形上的同一天线
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	真实剖面上的波瓣与平坦地形上的波瓣之差，在有用角度范围内取平均。
+Guadagno a 5° / 10°	5° / 10° 增益
+Guadagno a 1° / 3°	1° / 3° 增益
+Angoli coperti a -3 dB	-3 dB 覆盖的角度
+primo lobo sul profilo reale	真实剖面上的第一波瓣
+calcolo…	计算中…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	自由空间模型：电流为无地面时的电流，与 HFTA 使用的自由空间方向图相同。若要考虑附近地面，请用真实地面计算模型。
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	剖面仅对一个方位有效：可旋转天线需要更多方向（“所有方位”框）。
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	方法与 HFTA（N6BV）相同：直射线 + 剖面每个小面上的反射线 + 山脊上的绕射。天线方向图来自 NEC；此计算加入地形。
+Piatto	平坦
+Reale	真实
+Primo minimo	第一极小值
+Punto di riflessione	反射点
+Orizzonte	地平线
+Uso: rotte DX in HF (angoli bassi 1–15°).	用途：HF DX 路径（低角度 1–15°）。
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	用途：对流层与流星余迹（0–5°），月亮低时的 EME（月出/月落时的地面增益）。
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	在路径有用角度上平均增益最高的高度。
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	已计算模型的电流在高度上平移：阻抗与地面耦合仍为模型中的值。
+Calcola prima il terreno reale	请先计算真实地形
+Esporta il lobo sul terreno reale	导出真实地形上的波瓣
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	影像：Esri、Maxar、Earthstar Geographics 及 GIS 用户社区
+© i contributori di OpenStreetMap	© OpenStreetMap 贡献者
+Sfondo	背景
+Foto aerea	航拍照片
+Solo griglia	仅网格
+Griglia	网格
+Cerca	搜索
+⌖ Centra sul locatore	⌖ 居中到定位码
+Punto scelto	所选点
+Coordinate	坐标
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	点击地图 = 天线位置；拖动 = 移动；滚轮 = 缩放（网格从 6 变为 8、10、12 个字符）。粗框 = 6 字符方格。
+non disponibile	不可用
+Lunghezza elementi	单元长度
+Posizione sul boom	在横梁上的位置
+Uniforme	均匀
+Distribuzione	分布
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	单元在卡箍中偏心安装：沿自身轴线偏移，使用位置公差。
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	实际卡箍也会改变横梁附近的电长度：为此请使用“横梁修正”选项卡。
+nuovo a ogni avvio	每次运行重新生成
+Numero prove	试验次数
+Frequenze	频率
+Seme casuale	随机种子
+OBIETTIVO LISTA DI TAGLIO	下料清单目标
+Calo F/B max	最大 F/B 下降
+ROS max	最大 SWR
+Ferma	停止
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	靠近有源单元的单元通常最关键；横梁末端的单元可容许更大误差。
+l'istogramma serve al Monte Carlo	直方图用于蒙特卡洛
+5% peggiore	最差 5%
+Posizione mm	位置 mm
+Lunghezza mm	长度 mm
+Tolleranza ammessa	允许公差
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	。红色表示需要小于制作公差的单元。
+Calcola prima il modello	请先计算模型
+sensibilita'	灵敏度
+Tolleranze: fermato	公差：已停止
+Diametro mm	直径 mm
+Tolleranza ammessa mm	允许公差 mm
+Avvia prima il calcolo	请先运行计算
+Esporta la lista di taglio	导出下料清单
+Lista di taglio	下料清单
+Obiettivi	目标
+Calo massimo del F/B	最大 F/B 下降
+ROS massimo	最大 SWR
+Tolleranze di costruzione	制作公差
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	计划中（草图 13，待批准）：本版本尚未启用。
+Al quadro 20×2 mm	Al 方管 20×2 mm
+Al quadro 25×2 mm	Al 方管 25×2 mm
+Al quadro 30×2 mm	Al 方管 30×2 mm
+Al quadro 40×2 mm	Al 方管 40×2 mm
+Al tondo 25×1,5 mm	Al 圆管 25×1.5 mm
+Al tondo 30×2 mm	Al 圆管 30×2 mm
+Al tondo 40×2 mm	Al 圆管 40×2 mm
+Al tondo 50×2 mm	Al 圆管 50×2 mm
+Zona NTC	NTC 分区
+Quota sito as	地点海拔为
+Periodo ritorno	重现期
+Categoria esposiz.	暴露类别
+Coeff. topografia	地形系数
+Antenna da terra	天线离地高度
+Palo sopra rotore	转台以上桅杆
+Ø palo	桅杆 Ø
+Usa elementi e boom del modello	使用模型的单元和横梁
+Includi telaio, palo, cavi	包括框架、桅杆、电缆
+Scansione direzione del vento	风向扫描
+UNITÀ	单位
+N e kgf affiancati	N 与 kgf 并列
+solo N	仅 N
+solo kgf	仅 kgf
+Mostra	显示
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	定位码无效：请手动选择分区
+Telaio a H	H 形框架
+Cavi e divisore	电缆与功分器
+Parte	部件
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	横向风时单元不受推力（cross-flow，K5IU）：作用在管上的力随垂直于其轴线的风分量的平方增大。
+momento flettente alla staffa del rotore	转台卡箍处的弯矩
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	预估尺寸：不能代替工程师对桅杆、塔架和基础的校核。底部弯矩将进入“桅杆与基础”子选项卡。
+Sito e norma	地点与标准
+Norma	标准
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019；系数 CNR-DT 207 R1/2018 与 EN 1991-1-4
+Locatore / zona	定位码 / 分区
+Risultati	结果
+Forza massima	最大力
+Momento flettente alla staffa del rotore	转台卡箍处的弯矩
+Momento torcente sul rotore	转台上的扭矩
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	预估尺寸：不能代替注册工程师对桅杆、塔架和基础的校核。
+Al tondino pieno	Al 实心棒
+Materiale elementi	单元材料
+Staffe, isolatori	卡箍、绝缘子
+g cad.	g 每个
+Dipolo + scatola	偶极子 + 盒
+Cavo fino al palo	至桅杆的电缆
+STAFFA AL PALO	桅杆卡箍
+Posizione attuale	当前位置
+m dal riflettore	m 距反射器
+Massa / distanza	质量 / 距离
+Vento dalla linguetta Vento	来自“风”选项卡的风
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	使用“风”子选项卡上次计算的设计风压；没有时为 600 N/m²。
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	沿横梁移动整个模型，使建议的卡箍位于原点（桅杆和堆叠框架的安装处）。在 3D 结构中“撤销”可恢复。
+Momenti in funzione della posizione della staffa	弯矩与卡箍位置的关系
+Masse e aree per parte	各部件的质量与面积
+ultimo direttore	最后一个引向器
+Staffe e isolatori	卡箍与绝缘子
+Cavo sul boom	横梁上的电缆
+Massa kg	质量 kg
+Baricentro m	重心 m
+Area vento m²	迎风面积 m²
+Centro area m	面积中心 m
+solo peso	仅重量
+solo vento	仅风
+File Touchstone .s1p	Touchstone .s1p 文件
+Formato letto	读取的格式
+CAVO TRA VNA E ANTENNA	VNA 与天线之间的电缆
+R e X separate	R 与 X 分开
+Banda con ROS <	SWR < 的频带
+ROS: calcolato e misurato	SWR：计算与实测
+Confronto	比较
+misurato, cavo tolto	实测，已去除电缆
+R calcolata	R 计算
+X calcolata	X 计算
+R misurata	R 实测
+X misurata	X 实测
+Calcolato	计算
+Misurato	实测
+Scarto	差值
+Frequenza del ROS minimo	最小 SWR 频率
+ROS minimo	最小 SWR
+nessuna correzione: calcolo e misura coincidono.	无修正：计算与测量一致。
+calcolo NEC sul campo della misura…	在测量范围内进行 NEC 计算…
+Misura del VNA	VNA 测量
+Tutti	全部
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	运行扫频（上方“扫频”按钮）以查看全频段的 F/B 与 F/R
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = 前向增益减去后半球的平均功率（方位 90-270°，0° 以上所有仰角）。它也是优化器的目标之一。
+Tabelle: F/B e F/R su tutta la banda	表格：全频段的 F/B 与 F/R
+Valori dello sweep	扫频值
+ANTENNE RICEVENTI	接收天线
+4-square in ricezione	接收用 4-square
+8 verticali in cerchio	圆周 8 根垂直天线
+Modello aperto	打开模型
+Isotropo	各向同性
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = 所需方向增益减去整个半空间的平均增益：与增益不同，它与损耗无关。
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	使用“真实地形”选项卡的到达角中位数作为所需仰角（按波段和地区统计）。未载入 ARRL 统计时，保留此处填写的仰角。
+Direzione voluta	所需方向
+Hz  rumore	Hz  噪声
+NF ricevitore	接收机 NF
+sorgente locale az	本地噪声源 az
+Cifre di merito in ricezione	接收品质因数
+Basta il segnale?	信号够吗？
+calcolo in corso…	计算中…
+RDF in funzione della frequenza	RDF 随频率变化
+Calcola prima il modello aperto	请先计算已打开的模型
+verticale λ/4	λ/4 垂直天线
+° · dB relativi · arancio: -3 dB	° · 相对 dB · 橙色：-3 dB
+settore ±30° az, 10–40° el	扇区 ±30° az，10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	前方扇区平均增益减去后半球平均值。
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN 仅用 20 度处的增益定义 DMF；此处使用草图扇区的平均值，因此数值不能与书中一一对比。
+molto basso: serve un preamplificatore	很低：需要前置放大器
+basso ma accettabile: vedi soglia	偏低但可接受：见阈值
+come un'antenna trasmittente	如同发射天线
+F/R medio sull'emisfero posteriore	后半球平均 F/R
+Rumore d'antenna ai morsetti	天线端口噪声
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	端口处外部噪声功率：-174 dBm/Hz + Fa（ITU-R P.372）+ 10 log B + 按噪声来向加权的平均增益。
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	来自地平线的噪声，按仰角 exp(-el/10 度) 加权：代表从低处到达的远处人为噪声；实际分布取决于地点。
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	仰角 5 度的点源，功率与各向同性背景相同。
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	地面以上的各向同性噪声；地面不增加噪声。
+Margine sul ricevitore	接收机余量
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	天线噪声高于接收机噪声不足 6 dB：灵敏度受接收机限制。需要更多前置放大或更低 NF 的接收机。
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	增益 1.8
+Spazio richiesto	所需空间
+λ/4 in tubo quadro	方管 λ/4
+λ/4 in tubo tondo	圆管 λ/4
+Solo cavi di fase	仅相位线
+Aria	空气
+Uscite	输出
+Z antenne	天线 Z
+Z ingresso	输入 Z
+Dielettrico	介质
+Connettori	连接器
+Correggi accorciamento dei connettori	修正连接器造成的缩短
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	从长度中扣除连接器内部的线段。
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	N 型连接器每端估计 4 mm（BNC 3，SMA 1.5）：最好用 VNA 每次缩短 1 mm 进行修剪。
+Divisori	功分器
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	使用已打开堆叠中各天线的有源阻抗（每天线一个源）和间距来确定相位线的最小长度。
+CAVI DI FASE	相位线
+Lunghezza minima	最小长度
+Passo verticale	垂直间距
+solo cavi di fase: nessun trasformatore da costruire	仅相位线：无需制作变换器
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 根 75 Ω 电缆并联 = 37.5 Ω
+quadro, lato	方形，边长
+tondo, Ø	圆形，Ø
+Z0 richiesta	所需 Z0
+Ø conduttore interno	内导体 Ø
+VF del cavo	电缆 VF
+λ/4 in aria, mm	空气中 λ/4，mm
+da tagliare, mm	需截取，mm
+Z carico in parallelo	并联负载 Z
+Rami λ/4: Z0 = Zin · √N	λ/4 支路：Z0 = Zin · √N
+Resistenze a stella	星形电阻
+Isolamento tra le uscite	输出间隔离度
+Perdita stimata	估计损耗
+Carico usato	所用负载
+non potenza di 2	不是 2 的幂
+ROS all'ingresso	输入 SWR
+solo cavi di fase	仅相位线
+Uscita	输出
+Lungh. elettrica	电长度
+Fisica mm	物理 mm
+Perdita dB	损耗 dB
+° di fase).	° 相位）。
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° 向上）；功分器处的阻抗不再精确重复。
+Solo cavi di fase: nessun disegno da stampare	仅相位线：没有可打印的图纸
+Divisore	功分器
+50 mm di controllo	50 mm 校验
+GEOMETRIA	几何
+λ/4 sul boom	横梁上 λ/4
+stesso piano	同一平面
+Metallico, isolati	金属，绝缘
+Non metallico	非金属
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	NEC 模型中没有横梁：单元与金属横梁绝缘时影响很小（见计算器中的横梁修正）。
+Yagi di base	基础八木
+Disposizione	布置
+Sfasamento piani	平面错开
+Cavo di ritardo λ/4	λ/4 延迟电缆
+Includi relè e cavi reali	包括实际继电器和电缆
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	加入延迟电缆的损耗（VF 0.66，144 MHz 时 10 dB/100 m，按频率平方根换算）及继电器的 0.1 dB。
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75 欧电缆和同轴继电器的典型值；程序不知道你的实际器件。
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	同一相位网络也适用于 turnstile（90° 交叉偶极子）。
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	正视图
+Componenti co-polare / cross-polare	同极化 / 交叉极化分量
+Rapporto assiale e ROS in frequenza	轴比和 SWR 随频率变化
+piano A	平面 A
+piano B	平面 B
+vista dal davanti — boom al centro	正视 — 横梁居中
+piani sfalsati di λ/4 lungo il boom	沿横梁错开 λ/4 的平面
+Yagi incrociate: serve una Yagi con una sola sorgente	交叉八木：需要单源八木
+Yagi incrociate: calcolo in corso...	交叉八木：计算中...
+Rapporto assiale in asse	轴向轴比
+Rapporto assiale a −3 dB	−3 dB 处轴比
+Isolamento tra i due piani	两平面间隔离度
+Fase della rete sul piano B	平面 B 上的网络相位
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	完全正交且对称的平面：模型中耦合和反向极化几乎为零。实际中卡箍、电缆和小的不对称会把它们限制在约 25-35 dB。
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	从 1.8 MHz 到 1296 MHz：巴伦列表随频段变化
+LINEA DI DISCESA	馈线
+Coassiale	同轴
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	平衡明线没有屏蔽层：共模仅来自不平衡。此卡片计算同轴情况；明线请使用带调谐器的“线路 (TL)”。
+Lungo il boom	沿横梁
+m → palo	m → 桅杆
+Discesa sul palo	沿桅杆向下
+Fino alla stazione	到电台
+Calza a massa sul palo / traliccio	屏蔽层在桅杆/塔上接地
+Messa a terra all'ingresso stazione	电台入口处接地
+BALUN DA CONFRONTARE	待比较的巴伦
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	RG-213 在 110 mm 上绕 8 圈：Wheeler 电感，Medhurst 自电容。
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 与估算的自电容：扼流圈的实际阻抗需要测量。
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 铁氧体磁环，按低 Q 并联 RLC 处理。
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	峰值 5 kOhm（31 材料 10 MHz，43 材料 25 MHz）：2 x FT-240 上 12 圈的典型值。
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	同轴 λ/2 4:1：平衡馈电，屏蔽层相连。
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	残余共模按 f0 处 600 欧谐振处理（Q 3）：取决于安装。
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 套筒：屏蔽层与套筒之间短路的 λ/4 线，在 f0 处呈高阻抗。
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	套筒 Z0 50 欧，四分之一波长上损耗 0.08 dB。
+10 perline in ferrite sulla calza.	屏蔽层上套 10 个铁氧体磁珠。
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	144 MHz 时每个磁珠 40 欧（61 材料），30 MHz 以上用 43 材料 100 欧：典型目录值。
+Caso mostrato	显示的情形
+premi Calcola il confronto	请按“计算比较”
+Corrente lungo la calza, dal dipolo verso il basso	沿屏蔽层的电流，从偶极子向下
+Vista laterale: corrente sulla calza	侧视图：屏蔽层上的电流
+F/R medio	平均 F/R
+Z / ROS	Z / SWR
+Perdita nel balun	巴伦损耗
+Potenza dissipata nel balun a 1 kW	1 kW 时巴伦耗散功率
+Banda con calza < 5 %	屏蔽层电流 < 5 % 的频带
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	灰色项目是另一频段的巴伦；选择频率时启用。HF 时还计入到电台的屏蔽层（接地），VHF/UHF 时为横梁和桅杆上的部分。屏蔽层是连接到馈电点一侧的导线，与实际无巴伦时相同；巴伦是第一段中的共模阻抗。
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	玻璃钢不导电：框架不进入 NEC，只保留相位线的屏蔽层。
+Includi palo sotto il telaio	包括框架下方的桅杆
+Cavi di fase lungo i montanti	沿立柱的相位线
+Rotore e controventi	转台与拉线
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	计划中：转台和拉线作为导线（需要塔的尺寸）。
+Materiale	材料
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	红色 = 作为 NEC 导线建模的框架部件 · 虚线 = 相位线的屏蔽层
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	水平极化：竖直立柱耦合很弱；水平横杆和相位线则不然。
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	垂直极化：立柱和桅杆与单元平行，影响更大；水平横杆影响小。
+Confronto senza / con telaio	无框架 / 有框架比较
+Diagramma orizzontale sovrapposto	叠加的水平方向图
+premi Calcola confronto	请按“计算比较”
+Stack: calcola prima il modello	堆叠：请先计算模型
+Stack: calcolo senza e con telaio...	堆叠：正在计算无框架和有框架...
+Pezzo	部件
+Collegato	已连接
+Cavi	电缆
+Senza telaio	无框架
+Con telaio	有框架
+Z ingresso divisore	功分器输入 Z
+senza telaio	无框架
+con telaio	有框架
+Stack: confronto senza / con telaio fatto	堆叠：无框架 / 有框架比较完成
+CARICHI HF	HF 负载
+INSERISCI NEL MODELLO	插入模型
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	帽加在导线末端（b 或 e），linear loading 加在导线的所选点。
+Inserisci nel modello	插入模型
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	已在“负载”草图中批准：L 和 C 的 Q、f0、各频段 Z、元件上的电压和电流。此处增加构造类型。
+Trappola coassiale	同轴陷波器
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	芯线焊到中间绕组的起点（两端互换会使谐振降低约 50 kHz）。
+Calcola spire per f0	计算 f0 所需圈数
+Spire dell'avvolgimento (anche frazionarie).	绕组圈数（可为小数）。
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	实际 f0 会相差几个百分点：用栅陷表或 VNA 测量并修正圈数。
+Blocca	阻断
+dipolo con	偶极子，带
+Filo Ø	导线 Ø
+Calcola C per f0	计算 f0 所需 C
+mm  Filo Ø	mm  导线 Ø
+mm  Passo	mm  螺距
+mm  Spire	mm  圈数
+MHz  dal centro	MHz  距中心
+m  Braccio	m  臂长
+m  Filo dell'elemento Ø	m  单元导线 Ø
+Calcola spire per la risonanza	计算谐振所需圈数
+Piega	折叠段
+m  Distanza tra i fili	m  导线间距
+Calcola la piega per la risonanza	计算谐振所需折叠段
+Raggi	辐条
+m  Filo Ø	m  导线 Ø
+Verticale alto	垂直天线高度
+m  Frequenza	m  频率
+MHz  Filo Ø	MHz  导线 Ø
+Calcola i raggi per la risonanza	计算谐振所需辐条
+L misurata	实测 L
+MHz  Autorisonanza f0	MHz  自谐振 f0
+Cappello capacitivo in punta al verticale	垂直天线顶部的容性帽
+Bobina dalle misure	由尺寸求线圈
+Reattanza del cappello in frequenza	帽的电抗随频率变化
+impedenza della trappola	陷波器阻抗
+Si comporta da	表现为
+Potenza persa	损失功率
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	表中电压和损耗所对应的发射功率。
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	低频段：波腹电流 sqrt(P/73)，陷波器处 I0 cos(beta a)；阻断频段：内偶极子末端电压 I0 Z0，分配于陷波器与辐射之间。
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	波腹电流 sqrt(P/73)，负载处 I0 cos(beta a)，a 为距中心的距离。
+Risonanza propria f0	自谐振 f0
+Q ideale	理想 Q
+Q della trappola alla risonanza.	陷波器谐振时的 Q。
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	加上介质损耗（损耗角正切 PE 3e-4，PTFE 2e-4）。实测同轴陷波器的 Q 通常在 100 到 300 之间。
+Lunghezza di cavo	电缆长度
++ 10 cm per le saldature	+ 10 cm 用于焊接
+R in parallelo equivalente	等效并联 R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L：即进入模型的 LD 负载
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	带陷波器时低频段的偶极子臂长，与全尺寸臂（71.3 / f）比较。
+il NEC con la trappola come carico da' la misura giusta.	NEC 将陷波器作为负载计算可得正确长度。
+Induttanza misurata	实测电感
+dalla misura	来自测量
+Autorisonanza	自谐振
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	线圈与自身分布电容单独谐振的频率。
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	按长度 / 直径查 Medhurst 表得到的自电容，适用于远离金属物体的单层线圈。
+Q della bobina alla frequenza di lavoro.	工作频率下线圈的 Q。
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	导线集肤效应电阻乘以邻近因子 1 + 2 (d/p)^2（d 线径，p 螺距）：对长度与直径相近的线圈，Medhurst 给出相近的值。
+Reattanza della piega	折叠段电抗
+Z0 della linea	线路 Z0
+Q della piega	折叠段 Q
+Capacita' del cappello	帽的电容
+Capacita' del cappello verso lo spazio.	帽对空间的电容。
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	辐条之和（细导线，2 pi eps0 l / (ln(2l/a) - 1)）加上向满圆盘饱和的圆环（8 eps0 r）：辐条相互屏蔽。作为导线插入时，NEC 可精确计算。
+in punta al verticale	在垂直天线顶部
+Altezza per la risonanza	谐振所需高度
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	对垂直天线的影响
+Carichi HF: apri un modello nella finestra principale.	HF 负载：请在主窗口打开一个模型。
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	linear loading 和容性帽以导线方式插入：其他类型请选择“作为负载”。
+Il cappello capacitivo si inserisce come fili.	容性帽以导线方式插入。
+RLC parallelo	并联 RLC
+Effetto sul dipolo	对偶极子的影响
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	负载位于该点时，臂长相对完整四分之一波长（71.3 / f）的缩短量。
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	加载臂的传输线模型 X = Z0 (cot(beta b) - tan(beta a))，因末端效应 x 0.95。
+Esegui il test	运行测试
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	增益可显示为经 AGT 修正的值（优化器中已计划）。
+Controllo prima/dopo il calcolo	计算前/后检查
+Esito	结果
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ 一项或多项检查超出 ±0.2 dB：请检查分段（3D 结构 > 分段... 和 检查分段）。
+Tutti i controlli entro ±0,2 dB.	所有检查均在 ±0.2 dB 以内。
+Linea a finestra 450	450 欧梯形线
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	按“计算”：NEC 计算已打开模型在每个频率的阻抗。
+Perdita nella linea	线路损耗
+Perdita totale	总损耗
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	线路与发射机之间的调谐器类型（50 Ω）。
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	损耗由网络的有载 Q（Qn = sqrt(Rmax/Rmin - 1)，T 和 Pi 为两节）和线圈 Q 估算；N6BV 的 TLW 逐个计算元件，可能相差零点几 dB。
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	示例：2 × 20 m 双极天线（ZS6BKW/G5RV）。调谐器看到的阻抗低于 20 Ω 时发出警告：损耗大，建议加长或缩短馈线。有损线路与 TLW 相同（N6BV，ARRL）。
+USA costa est	美国东海岸
+USA costa ovest	美国西海岸
+Giappone	日本
+Caraibi	加勒比
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY：服务未返回 GeoTIFF
+GeoTIFF compresso: non supportato	压缩的 GeoTIFF：不支持
+GeoTIFF: tipo di dato non supportato	GeoTIFF：不支持的数据类型
+Il file non contiene coppie distanza / quota.	文件不包含距离 / 高度数据对。
+Nessuno	无
+Ferriti a perline	铁氧体磁珠
+Cavo e balun: segmento della sorgente non trovato.	电缆与巴伦：未找到源分段。
+solo palo	仅桅杆
+Acciaio zincato	镀锌钢
+Alluminio	铝
+Vetroresina	玻璃钢
+Montante sx/dx	左/右立柱
+al boom	朝向横梁
+Traversa	横杆
+Palo	桅杆
+al dipolo	朝向偶极子
+N, femmina	N 型，母头
+senza connettori	无连接器
+rurale tranquillo	安静的乡村
+Verticale λ/4	λ/4 垂直天线
+λ/8 di lato	每边 λ/8
+0,37 λ di diametro	直径 0.37 λ
+Cappello capacitivo	容性帽
+W8NX bassa impedenza	W8NX 低阻抗
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	PTFE 介质的粗电缆（RG-393）或带高压电容的 LC 陷波器
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	折叠段长于 lambda/8：线路不再表现为恒定电感，请将其作为导线插入并用 NEC 检查谐振。
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	帽的电容为估计值（辐条相互屏蔽）：如需精确值，请作为导线插入并用 NEC 计算。
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	负载位置超出四分之一波长：请移近中心。
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	帽加在导线末端：请选择第一个 (b) 或最后一个 (e) 分段。
+il punto scelto e' troppo vicino all'estremo del filo.	所选点离导线末端太近。
+questo tipo entra nel modello come carico.	此类型作为负载进入模型。
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF 负载：YA-NEC 计算器添加的导线
+Il file Touchstone non contiene punti di S11.	Touchstone 文件不含 S11 数据点。
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV 不含频率、Re(S11)、Im(S11) 行。
+AGT in spazio libero, senza perdite	自由空间 AGT，无损耗
+IMPOSTAZIONI	设置
+Schiera Hi-Z di verticali corte	Hi-Z 短垂直天线阵
+Base del loop	环的底边
+Distanza, lato o diametro	间距、边长或直径
+Altezza delle verticali	垂直天线高度
+Base del loop dal suolo	环底边离地高度
+Fase tra le file	行间相位
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	低架水平偶极子：离地小于 lambda/4 时波瓣朝上。它是 IV3PRK 排名中的“高仰角”参考（RDF 7.3 dB）：用于与低仰角接收天线比较。
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	Gary Breed K9AY 的 K9AY（QST，1997 年 9 月）：同一桅杆上两个相交 90 度的垂直环，终端电阻（典型 390 欧，按 F/B 调整），9:1 变压器。此处为单个环，转向所选方向，在地面上闭合，与“接收 (RDF)”页面相同。Hi-Z：RDF 7.2 dB。
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	接收 4-square：四根短有源垂直天线位于边长 lambda/8 的正方形四角，沿对角线辐射。相位留空 = 精确后向零点（行间 pi + beta d）：给出最高的理论方向性；实际相位网络（ON4UN，IV3PRK）使用其他相位，RDF 较低（IV3PRK 9.4 dB）。按钮可搜索 RDF 最佳的相位。
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	类似 Hi-Z Antennas 的短有源垂直天线阵：2 单元端射（心形，lambda/8），3 单元三角形（边长 lambda/6，一个顶点指向所选方向），8 单元圆周（直径 0.37 lambda：使用朝向该方向的四根及对面的四根）。Hi-Z：8 单元圆周配其合成器 RDF 13.4 dB；简单的两行模型结果偏低。按钮可搜索 RDF 最佳的相位。
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ 垂直天线从真实地面起始（GE 1 加 Sommerfeld 地面）：在 NEC-2 中，接到真实地面的导线其阻抗取决于源分段（NEC-2 手册，EZNEC）。方向图和 RDF 仅供参考；所有接收天线都计划加入架高地网的连接方式。
+fase tra le file da 120 a 300 gradi per l'RDF	用于 RDF 的行间相位 120 到 300 度
+nessuna fase con il lobo in avanti	没有使波瓣朝前的相位
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	RDF 最佳的行间相位：{0} 度（RDF {1} dB）。正在重新计算...
+linea d'orizzonte	地平线
+scala angolare	角度刻度
+lobo reale sopra il piatto fino a	平坦地面上的实际波瓣，直到
+Profilo verso	剖面方向
+Lobo verticale e angoli di arrivo a	垂直波瓣与到达角，位于
+Cos'e' l'RDF	什么是 RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = 所需方向增益 - 全方向平均增益（W8JI；20 世纪 60 年代称为 SNIF）。它衡量在噪声从各方向均匀到达时天线对信噪比的改善；绝对增益不计入（前置放大器可补回）。平均方法与 EZNEC 相同：上半球除以整个球面（4 pi）。按此约定，结果与 IV3PRK 和 W8JI/Hi-Z 一致（垂直天线 5.07 对 5.06 和 4.9；Beverage 350 m 13.5 对 13.66）。局限：实际噪声并不均匀（电力线、本地 QRM）：因此 F/B 和波瓣形状同样重要。对发射天线 RDF 没有意义：因此仅在此选项卡中计算。DMF（Directivity Merit Figure，ON4UN）：向前 20 度仰角的增益减去后半空间的平均增益（方位超过 90 度，地面以上，按面积以余弦加权）：表示天线抑制来自后方噪声的程度。ON4UN 提醒不要把 DMF 与 RDF 相互比较。来源：W8JI 和 W8WWV（RDF），ON4UN Low-Band DXing 第 7 章（DMF，表 7-22、7-24、7-25），IV3PRK，IK0XBX。
+elevazione	仰角
+azimut	方位
+azimut a {0}°	{0}° 处的方位
+totale	总计
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	第一零点张角（FNBW）：{0}°；  最高旁瓣：{1}
+Didascalie {0} %	标签 {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB，来源为 {1}：请检查尺寸、端接和地面（来源可能使用了其他地面或几何结构）。
+Azimut a {0}° · {1} MHz	{0}° 处的方位 · {1} MHz
+Azimut a {0}° di elevazione	仰角 {0}° 处的方位
+RUMORE	噪声
+Apri la scheda {0}	打开卡片 {0}
+caso mostrato: {0}	显示的情形：{0}
+Rastremazioni	伸缩管
+BANDA	频段
+λ/2 coassiale 4:1	同轴 λ/2 4:1
+Manicotto λ/4	λ/4 套筒
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	电缆屏蔽层和桅杆作为 NEC 导线；1.8 到 1296 MHz 巴伦比较（共模电流、F/B、平均 F/R、损耗、1 kW 时功率）。
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	立柱、横杆、桅杆和相位线屏蔽层作为 NEC 导线：无框架 / 有框架比较（增益、F/B、平均 F/R、波瓣、功分器 Z、Tant 和 G/T）。
+TIPO	类型
+DATI	数据
+TELAIO	框架
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	方管或圆管、电缆中的 λ/4，Wilkinson；相位线，倾斜；1:1 图纸
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X 或 +，平面错开 λ/4；H、V、RHCP、LHCP、X-pol；轴比与隔离度
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	等长 → 等相位。λ/2 的整数倍 → 有源阻抗在功分器处重复。建议公差 ± 5 mm（= ± {0}° 相位）。
+impedenze attive delle {0} antenne dello stack in parallelo	堆叠中 {0} 副天线的有源阻抗并联
+Banda con ROS < {0}	SWR < {0} 的频带
+? Manuale	? 手册
+Apre la spiegazione nel manuale	在手册中打开说明
+riferimento	参考
+Rispetto alla singola antenna	相对于单副天线
+{0} antenne ideali	{0} 副理想天线
+x la distanza DL6WU, a passi di	x DL6WU 间距，步长
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	左轴：堆叠 G - 单副天线 G，从 0 向上。右轴：堆叠 F/R - 单副天线 F/R，倒置，0 在顶部：堆叠改善 F/R 处曲线下降，最低点即最大改善。G/T 保留在表中。
+ΔG sulla singola	相对单副天线的 ΔG
+Chiusura del programma	关闭程序
+Vuoi chiudere YA-NEC?	要关闭 YA-NEC 吗？
+Grazie per avermi usato: spero di esserti stato utile.	感谢使用我：希望对你有帮助。
+Sì	是
+ROS attivo	有源 SWR
+G realizzato	实际 G
+ROS attivo massimo	最大有源 SWR
+riflessi minimi	最小反射
+ROS attivo alto: da non scegliere	有源 SWR 高：不要选择
+Documenti tecnici	技术文档
+Manuale d'uso	用户手册
+Manuale di calcolo e delle fonti	计算与来源手册
+Citazioni	引文
+Cerca in tutti i documenti	在所有文档中搜索
+Apri il PDF	打开 PDF
+Nessun risultato per «{0}»	没有“{0}”的结果
+Primi {0} risultati per «{1}»	“{1}”的前 {0} 个结果
+{0} risultati per «{1}»	“{1}”的 {0} 个结果
+Apre la citazione {0}	打开引文 {0}
+Manuale di calcolo	计算手册
+È pronta la versione {0} di YA-NEC	YA-NEC 版本 {0} 已就绪
+È già scaricata e installata: entra in funzione quando riavvii il programma.	已下载并安装：重新启动程序后生效。
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	在 Mac 上不会自动安装：请从 GitHub 版本页面下载新的 .dmg。
+Riavvia adesso	立即重新启动
+Più tardi	稍后
+Apri la pagina delle versioni	打开版本页面
+Aggiornamento di YA-NEC	YA-NEC 更新
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	已下载并安装。程序将自动重新启动并重新打开当前模型。
+Riavvio tra {0} s	{0} 秒后重新启动
+Questo avviso si chiude tra {0} s	此通知将在 {0} 秒后关闭
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	更新后重新打开了未保存的模型：请随时保存（副本在 data/aggiornamenti）。
+Riaperto dopo l'aggiornamento il modello che era aperto.	更新后重新打开了原先打开的模型。
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	每个框都有带说明和来源的帮助。灰色：已勾选 = 始终启用（不能关闭）；未勾选 = 尚不可用；按钮选择 = 固定选择。手册第 21 章。
+"): sorgente sempre accesa.	"）：来源始终启用。
+' non da' un numero valido.	' 不是有效数字。
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik 原样
+0 - misure del metodo	0 - 方法给出的尺寸
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = 该频段的标准 WR 波导（WR650、WR430、WR159、WR90）。
+0 = stesso disco all'altro capo (eco proprio).	0 = 另一端为相同的抛物面（自身回波）。
+0 = stesso disco all'altro capo.	0 = 另一端为相同的抛物面。
+0 gradi a destra	向右 0 度
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = 距末端三分之一处：阻抗 200-300 欧，巴伦 4:1
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7：远离边缘，那里的弯曲会使馈源偏离焦点。
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 实心聚乙烯（RG-58、RG-213），0.8-0.85 发泡介质。
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 实心聚乙烯，0.8-0.85 发泡，0.9-0.97 明线。
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 导波波长
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - 馈电环
+1 - radiatore	1 - 辐射体
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = 单圈（同前）。圈数增加时 Rr 随 N² 增大，集肤效应损耗随 N 增大。
+1 cavo	1 根电缆
+1-2-3 elementi	1-2-3 单元
+1. Obiettivi e pesi	1. 目标与权重
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - 风、平衡、功分器、巴伦、交叉八木
+1.3 - Antenne riceventi abilitate	1.3 - 已启用接收天线
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz 大抛物面：除表面和指向外，还需考虑热变形和风致变形（ATA：夜间 0.7 mm RMS，白天日晒 3 mm）、支撑的弯曲和天平动引起的散布。
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm：以 100 % 打印，不要“适应页面”
+1005/f piedi	1005/f 英尺
+144 isol.	144 绝缘
+2 - riflettore	2 - 反射器
+2 - riflettori	2 - 反射器
+2 in parallelo	2 根并联
+2 lati	2 条边
+2. Variabili che l'ottimizzatore puo' cambiare	2. 优化器可以更改的变量
+200 Ω con balun 4:1	200 Ω 配 4:1 巴伦
+25 tondo	25 圆
+3 - direttori	3 - 引向器
+3 gruppi	3 组
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 或 4。只有 2 时其平面外没有刚度。
+3. Registro dei passi - clic su una riga per riprenderla	3. 步骤记录 - 点击某行可恢复
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω 或 4:1 巴伦
+36 Ω + terra	36 Ω + 地
+4 - tutto insieme	4 - 全部一起
+4 lati	4 条边
+4 sorgenti: vedi tabella	4 个源：见表
+432 isol.	432 绝缘
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	IC8TEM 于 15/11/2026 批准的 45 项数据检查：阈值和说明见手册第 11 章。
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 英尺约 18 dBi，12 英尺约 20.5 dBi
+75 ohm ideale	75 欧最佳
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 倍。对粗导线或短分段（UHF 的粗管、相距很近的单元，\n
+9 fili	9 根导线
+9 fili a 0,1 λ	0.1 λ 处 9 根导线
+Accorciamento del pilotato	有源单元缩短量
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	缩短超过 8 %：线性估算不可靠，请用 NEC 检查。
+Allega il modello aperto	附上已打开的模型
+Allega il registro di oggi	附上今天的日志
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	波浪 RMS 高度和天线海拔高度，在“方向图 > 真实地形”中。
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	频率附近的扫频宽度，用于阻抗曲线。
+Antenna a	天线位于
+Applica la freccia al modello NEC	将垂度应用到 NEC 模型
+Approvata, in preparazione: non ancora attiva in questa versione.	已批准，准备中：本版本尚未启用。
+Apri la cartella	打开文件夹
+Apri un modello nella finestra principale	请在主窗口打开一个模型
+Apro il modello e il diagramma 3D resta vuoto.	我打开模型后 3D 视图仍为空。
+Area al vento dell'antenna	天线迎风面积
+Area al vento totale	总迎风面积
+Area al vento totale e lista di taglio	总迎风面积与下料清单
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	注意：不要用于成角相接或接点处直径不同的导线。\n
+Bobina di carico per la risonanza	谐振用加感线圈
+Boom con il tirante	带拉杆的横梁
+C1 in serie con la loop	C1 与环串联
+C1 serie, C2 parallelo	C1 串联，C2 并联
+C2 in parallelo all'ingresso	C2 与输入并联
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	计算器 > 接收天线：低架偶极子、K9AY、4-square RX、Hi-Z 2/3/8 单元，行间相位按 RDF 优化，并附接地连接警告。
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	机械计算（风与平衡），计算器 > 功分器与交叉八木，对象 > 电缆与巴伦及堆叠框架，HF 负载。
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	预估尺寸：安装须以具备资质的技术人员的设计为准。
+Candidati da controllare	待检查的候选
+Categoria	类别
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	地点暴露类别（NTC 2018，表 3.3.II 与图 3.3.2）：取决于地面粗糙度等级（A 城市中心 ... D 无障碍区域、海面）和离海岸的距离。I = 开阔海岸或海面，V = 市中心。
+Cebik, poi NEC	Cebik，然后 NEC
+Centro della banda scelta:\n	所选频段的中心：\n
+Con ghiaccio	有覆冰
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	有覆冰：风减为 0.6 倍，并加上右侧框中的径向冰层（简化组合 ISO 12494）。
+Con lo stesso seme la prova si ripete uguale.	相同种子下测试结果完全重复。
+Condizione della sorgente non capita ("	未能理解来源条件 ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	立即检查 GitHub，无需等待 3 分钟。如有新版本，将下载、通知并像自动更新一样重新启动（10 秒，模型重新打开）。自动更新关闭时同样有效。
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	始终由分段检查和“警告”检查（普通内核 8，扩展内核 2）。
+Copie per candidato	每个候选的副本数
+Coppia sulla staffa boom-mast	横梁-桅杆卡箍处的扭矩
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	在 data/segnalazioni 中创建 zip，并打开 GitHub 的“New issue”页面，文字已填好。zip 由你手动附上：程序不会自行发送任何内容。
+Curvatura terrestre, in Diagrammi > Terreno reale.	地球曲率，在“方向图 > 真实地形”中。
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	直径超出 Cebik 公式的范围（1E-6 到 1E-2 lambda）。
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	第二地面的距离与类型：已批准用于 1.5（真实地形 2）。
+Distanze di stack HF	HF 堆叠间距
+Distanze di stack: accoppiamento e distanza migliore	堆叠间距：耦合与最佳间距
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	优化后，最佳结果进入带公差的检查。0 = 不检查。
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	末端很低：注意人员和动物（末端电压高）。
+F/B peggiore	最差 F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq 文件：带 AutoEZ TLParms 的线路（有损电缆）使用标称 Zo 和 VF，不计损耗：NEC 的 TL 卡为无损。
+Filo riflettore	反射导线
+Filo ripiegato	折叠导线
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	长 hairpin（超过 0.2 lambda）：最好减小间距或使用更粗的导体。
+Forza del vento di progetto	设计风力
+Forza l'aggiornamento	强制更新
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	弦的垂度：直线段的网面在跨中低于抛物面多少（计入面片化）。绑带总质量 {4:0.00} kg{5}。
+Freccia tolta dal modello.	已从模型中去除垂度。
+Ghiaccio radiale	径向覆冰
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA 文件总是为 NEC-2 重新分段（手册第 10 章）。
+I lobi si leggono nella tabella delle distanze di stack.	波瓣在堆叠间距表中读取。
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT（四舍五入）、FIX（截断）、MOD、MAX、MIN、ODD（奇数：适用于馈电导线的分段数）。\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	普通 NEC2 将每根导线视为细线：只要分段长度至少是半径的\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	单根反射导线改善很小（Cebik）：屏幕或 9 根导线更好。
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	桅杆超过屈服强度：加粗桅杆或缩短悬伸。
+Impedenza del cavo	电缆阻抗
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	另一种形式：数据检查中的 r5 检查会标出超过横梁长度物理上限的增益。
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	N² 规律的电感（密绕）和单圈 NEC 模型：此处 NEC 只检查单圈的几何结构。
+Interasse della forcina	hairpin 间距
+Isole (tranne Sicilia e Sardegna) e mare aperto	岛屿（西西里岛和撒丁岛除外）及开阔海面
+Kernel esteso del NEC2 (scheda EK).\n	扩展 NEC2 内核（EK 卡）。\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	hairpin 间距必须大于导体直径。
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim 在顶部用向下折叠的导线闭合辐射体，一直到短截线正上方。
+La fa la finestra Verifica della segmentazione (pulsante sopra).	由“分段检查”窗口完成（上方按钮）。
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	hairpin是对称的：不会像 gamma 那样使方向图偏斜。馈电点仍需巴伦或扼流圈。
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	hairpin仅在有源单元 R 低于电缆阻抗时有效：R 更大时请使用 gamma 或变压器。
+La prepara IC8TEM: non ancora attiva.	IC8TEM 正在准备：尚未启用。
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	EZNEC Geometry Check 的六条规则，每次计算时在“警告”选项卡中执行。
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson：未修正 Z = {0:0.0} {1}j{2:0.0} ohm（修正后 {3:0.0} {4}j{5:0.0} ohm）。
+Località	地点
+Loop orizzontale di 1 λ	1 λ 水平环
+Lunghezza del pilotato	有源单元长度
+Lunghezza della forcina	hairpin 长度
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	将打开的模型 (.nec) 放入 zip，即使尚未保存。
+Mette nello zip il registro di oggi della cartella registri.	将 logs 文件夹中今天的日志放入 zip。
+Momenti al mast	桅杆上的弯矩
+Momento al cuscinetto	轴承处弯矩
+NEC: risonanza cercata dal motore	NEC：由引擎搜索谐振
+NOTE SU QUESTA VERSIONE (fase 0)\n	本版本说明（阶段 0）\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	新 · 地面以上：高度、间距、所需出射角
+Nel modello non ci sono elementi orizzontali diritti	模型中没有直的水平单元
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	在堆叠表和模型对象中（堆叠框架、功分器）。
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	在几何卡中书写表达式时不要有空格，例如：  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	没有建议的间距
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	没有建议的间距：全部超过最大有源 SWR。
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	文件中没有 IP 地址、电子邮件或用户名：主文件夹路径变为“~”。没有 GitHub 账号时，可以用任何方式发送 zip。
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	尚未自动化：需在“警告”中用 AGT 测试手动完成（ARRL 第 24 版，4nec2）。
+Numero di spire	圈数
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	每个副本的尺寸在“公差”选项卡的公差范围内随机偏移（默认：长度 ±1 mm，位置 ±2 mm，直径 ±0.1 mm）。
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	除已打开的模型外，在每个变量的最小值和最大值之间随机选取起点。0 = 同前。
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	“噪声/GT/堆叠”选项卡的“真实天空噪声”页：skynoise 计算移植到 C#（读取 HEALPix 地图、插值、恒星时、坐标、月亮），以及 data/cielo 中 G8ONH 的两幅地图。
+Partenze a caso	随机起点
+Perimetro Cebik	Cebik 周长
+Peso del boom	横梁重量
+Pi-greco	Pi 网络
+Prepara la segnalazione	准备报告
+Proposta	建议
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	145 MHz nec2c 测试（12 mm 管，间距 40 mm）：30 mm -> 45 + j23 ohm，35 mm -> 60 + j24 ohm。Slim Jim：50 mm -> 48 + j7 ohm。
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	何时需要：分段/半径比约在 2 到 8 之间（低于 2 时两者都不可靠）。\n
+Quota s.l.m.	海拔
+R del pilotato	有源单元 R
+ROS attivo minimo {0}	最小有源 SWR {0}
+Raggio equivalente dei due conduttori	两根导体的等效半径
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	有源单元当前电抗：若为正值，需进一步缩短有源单元。
+Reattanza della forcina	hairpin 电抗
+Reattanza voluta del pilotato	所需有源单元电抗
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	电抗：超过 kl = pi/2（或导体过粗）时 AEH 公式不再适用，请使用 NEC。
+Reinstalla la versione attuale	重新安装当前版本
+Rel Z non positiva	Re Z 非正
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	谐振时有源单元的电阻，来自模型或 NEC 计算。
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	重新启动失败：请手动关闭并重新打开 YA-NEC。
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	即使版本相同也下载并重新安装：程序文件损坏时有用。
+Scansione	扫描
+Scegli il candidato con	按以下方式选择候选
+Schermo	屏幕
+Scrivi due frequenze diverse.	请输入两个不同的频率。
+Segnala un problema	报告问题
+Seme del caso	随机种子
+Serve solo per la reattanza (dipolo e monopolo).	仅电抗需要（偶极子和单极子）。
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	用于 2 圈及以上：间距小于 2 倍导体直径时，实际损耗因邻近效应增大（未计算）。
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	用于“方向图 > 真实地形”：带发散因子和粗糙度的海面反射。
+Sicilia e provincia di Reggio Calabria	西西里岛和雷焦卡拉布里亚省
+Sollecitazione	应力
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	超过 0.25 λ 时波瓣开始降低：不太适合 NVIS。
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	30 MHz 以上时，Cebik 回归被用于此处所提供范围（HF 导线）之外：自动或 NEC 更好。
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	低于 0.1 λ 时向上增益下降（Cebik）：极低的天线没有任何收益。
+Sotto l'antenna	天线下方
+Spina (tubo o tondo) dentro il giunto telescopico.	伸缩接头内的塞子（管或棒）。
+Spina interna nei giunti	接头内部塞子
+Stack con il ROS attivo piu' basso	有源 SWR 最低的堆叠
+Staffe e mast	卡箍与桅杆
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	时间：约为当前的（起点数 + 1）倍，再加 候选 x 副本 次计算。
+Tensione nel mast al cuscinetto	轴承处桅杆应力
+Tiro del tirante	拉杆拉力
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	管材取自“渐变”表：尺寸与 NEC 模型相同。
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	所有间距都超过最大有源 SWR（{0}）：没有建议的间距。请提高最大有源 SWR、尝试天线自身的参考阻抗，或调整单副天线。矩阵和图表对应有源 SWR 最低的间距。
+V invertito	倒 V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF（DL6WU），耦合，有源 SWR，最佳间距，两个频率
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	地点峰值风速：vb sqrt(ce)，其中 vb = vb,0 ca（NTC 2018，重现期 50 年），ce(z) 为天线高度处暴露类别的值。
+Velocità	速度
+Velocità a mano	手动输入速度
+Vento di sopravvivenza	生存风速
+Vento di sopravvivenza del boom	横梁生存风速
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	垂直于单元、使第一个点达到屈服强度的风速（含自重和覆冰）。
+X da aggiungere al pilotato	需加到有源单元的 X
+X del pilotato	有源单元 X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2)，Za = 120·(ln(L/ø) − 1)。最终检查由 NEC 引擎在带hairpin 的模型上完成。
+Z0 della forcina	hairpin Z0
+Z0 della linea dei due conduttori	双导体线 Z0
+Zona buona	良好区域
+al centro	在中心
+caso peggiore	最坏情况
+caso peggiore delle due	两者中较差者
+cerca...	搜索...
+copie entro le soglie	在阈值内的副本
+corrente sinusoidale	正弦电流
+distanza dal boom	距横梁的距离
+distanza dall'inizio del boom	距横梁起点的距离
+due condensatori sul lato basso	下侧两个电容
+effetto: calcolo in corso…	效果：计算中…
+forza del vento x sbalzo	风力 x 悬伸
+il caso peggiore migliore	最佳的最坏情况
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	等效偶极子更粗，阻抗低于 73 Ω
+il voto medio migliore	最佳平均分
+induttiva, in parallelo	感性，并联
+la percentuale migliore di copie entro le soglie	阈值内副本的最佳比例
+linea a due fili	双线
+m  mast a	m  桅杆于
+m dal suolo	m 离地
+m sopra il boom, attacco al	m 高于横梁，固定于
+media delle due	两者平均
+mm  lungo	mm  长
+mm, acciaio	mm，钢
+molto buono	很好
+molto povero	很差
+nessun rinforzo	无加强
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	+12 mm 以内没有合适的商品管：请重新检查渐变
+nessuna distanza sotto il ROS attivo massimo	在最大有源 SWR 以下没有间距
+partenza dal modello aperto	从已打开的模型开始
+per lato, teso per annullare il momento verticale al mast	每侧，张紧以抵消桅杆上的竖向弯矩
+primo cedimento: tubo Ø	首先破坏：管 Ø
+regge il vento di progetto con il 20 % di margine	在设计风速下有 20 % 余量
+riferimenti bibliografici	参考文献
+sbalzo sopra il cuscinetto	轴承上方的悬伸
+schermo 1 λ x 1 λ	屏幕 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	密集分段）时，扩展内核使用更精确的公式，结果更可靠。\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	无塞子时内管靠在外管边缘上，前 5 cm 的应力乘以系数 1.25：这是估算值，卡箍和开槽会显著改变结果。
+sollecitazione / snervamento	应力 / 屈服强度
+tubo piu' grosso	更粗的管
+un filo riflettore	单根反射导线
+zona di cedimento	破坏区
+ø dei conduttori della forcina	hairpin 导体 ø
+ø del filo	导线 ø
+ø del pilotato	有源单元 ø
+accordata	已调谐
+accordate	已调谐
+alimentazione	馈电
+alluminio	铝
+allungata	加长的
+altro	其他
+anello	环
+angolo	角度
+antiorario	逆时针
+aritmetico	算术
+automatico	自动
+banda	频段
+bande	频段
+bordi	边缘
+buono	好
+capacitiva	容性
+carichi	负载
+carico	负载
+cartesiana	直角坐标
+cavi	电缆
+cavo	电缆
+centimetri	厘米
+centina	肋
+cerchio	圆
+condensatore	电容
+corrente	电流
+destra	右
+diagramma	方向图
+diametro	直径
+differenza	差值
+dipoli	偶极子
+dipolo	偶极子
+diretta	直接
+diritto	直
+due	二
+elementi	单元
+elemento	单元
+elimina	删除
+equilatera	等边
+esito	结果
+esperimenti	实验
+esponenziale	指数
+fase	相位
+ferriti	铁氧体
+fili	导线
+filo	导线
+forcina	hairpin 
+forma	形状
+formule	公式
+frequenza	频率
+geometria	几何
+ghiaccio	冰
+giudizio	评分
+gradi	度
+griglia	网格
+guadagno	增益
+incrociata	交叉
+larghezza	宽度
+lato	边
+lega	合金
+libera	自由
+libero	自由
+linea	线
+lineare	线性
+linee	线路
+lobi	旁瓣
+locale	本地
+mai	从不
+manicotto	套筒
+mano	手动
+meccanica	力学
+mezzaonda	半波
+millimetri	毫米
+misure	尺寸
+modello	模型
+modo	模式
+nessuna	无
+nota	备注
+nuovo	新
+operativo	工作
+orario	顺时针
+ottagono	八边形
+palo	桅杆
+parabola	抛物面
+passo	螺距
+perdite	损耗
+perfetto	理想
+piano	平面
+piatto	扁平
+piedi	英尺
+polare	极坐标
+pollici	英寸
+propria	自身
+punto	点
+quadrato	方形
+quadro	方形
+quota	高度
+radiali	地网
+radiatore	辐射体
+raggio	半径
+rame	铜
+ramo	支路
+rapidi	快速
+rastremazioni	渐变
+rete	网络
+rettangolo	矩形
+riepilogo	摘要
+riflettore	反射器
+riga	行
+rombo	菱形
+scarso	差
+scarto	偏差
+schiacciata	压扁的
+sempre	始终
+senso	方向
+si'	是
+sinistra	左
+soglia	阈值
+sorgenti	来源
+sotto	下方
+spire	圈
+staffe	卡箍
+stato	状态
+sufficiente	足够
+tetto	屋顶
+tipo	类型
+tirante	拉杆
+togli	移除
+tondo	圆
+traffico	流量
+trasformatori	变压器
+trombe	喇叭
+tubi	管
+tubo	管
+tutti	全部
+uguale	相等
+uguali	相等
+uso	使用
+a {0} x DL6WU; tutte sopra il massimo {1}	在 {0} x DL6WU 处；全部高于最大值 {1}
+% del mezzo boom	半横梁的 %
++ aggiungi	+ 添加
++ aggiungi variabile	+ 添加变量
++ correzione del boom	+ 横梁修正
++ nuova	+ 新建
++ trappola	+ 陷波器
++ verso il disco.	+ 朝向抛物面。
++90 gradi Z	+90 度 Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- 算术：恰好位于该频段 IARU 边界的中点（例如 2 m 的 145.000 MHz），\n
+- correzione del boom	- 横梁修正
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- 工作：你实际工作的频率（例如 2 m 的 144.300 MHz，70 cm 的 432.200），\n
+-10 (nero) 10-100 MHz	-10（黑）10-100 MHz
+-10 nero	-10 黑
+-2 (rosso) 0,25-10 MHz	-2（红）0.25-10 MHz
+-2 rosso	-2 红
+-6 (giallo) 3-40 MHz	-6（黄）3-40 MHz
+-6 giallo	-6 黄
+-90 gradi Z	-90 度 Z
+-> segmento NEC	-> NEC 分段
+. "Annulla" torna indietro.	。“撤销”可返回。
+. Antenna base: fili 1-	。基础天线：导线 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	。Q 这么高时，扫频范围只能是几 kHz。
+. Salvalo con Salva con nome.	。请用“另存为”保存。
+. Trascina per ruotare, rotella per ingrandire.	。拖动旋转，滚轮缩放。
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	。请使用更细的导线、更大的磁芯或两个叠放的磁芯。
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D：Stutzman（引自 Sengupta 2021）及 GMRT 表 19.1
+12 (errore / HPBW)^2	12 (误差 / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	无源环：周长 {0:0.000} lambda，无源、无电容；效果见完整模型（引向器或反射器）。
+Automatico	自动
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0，与 nec2c 和 xnec2c 相同：源代码随程序提供（COPYING 文件）。\n
+Provincia di Trieste	的里雅斯特省
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	并以 C# 为 YA-NEC 实现。参考界面：5B4AZ 和 Eric KJ7LNW 的 xnec2c。\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	由远场计算的效率，Prad / (Prad + 损耗) = {3:0.0} %。
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	导线越低，阻抗和损耗越不可靠（见手册中的 BOG）。为得到可靠结果：至少 lambda/200 = {3:0.###} m。
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	可创建的直径最大 {3:0.00} m；旁边的口径计算适用于任何直径，并已考虑肋条（上方框）。
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz，{1} 段：Z = {2:0.000} {3:+0.000;-0.000}j，SWR {4:0.00}（{5} 欧），Gmax {6:0.00} dBi（az {7:0.0}，el {8:0.0}），F/B {9:0.00} dB，效率 {10:0.00} %，AGT {11:0.00} dB
+° di elevazione	° 仰角
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 第 19 版第 18 章（W9PE 的 2 m 八木）：三单元间距 0.2 λ，约 7 dBi，F/B 超过 15 dB。
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC 与 nec2c 一致（20/15/10 m 棒材）：反射器 0.185 / 0.197 / 0.222 λ，引向器 0.095 / 0.116 / 0.114 λ：在各来源范围内。
+↶ Annulla	↶ 撤销
+↷ Ripeti	↷ 重做
+■ Ferma	■ 停止
+▶ Avvia	▶ 开始
+☐ mantieni lunghezza del boom	☐ 保持横梁长度
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ 无警告：分段满足所选级别
+✓ nessun errore e nessun avviso	✓ 无错误也无警告
+variabili del modello	模型变量
+nuova variabile dal modello	从模型创建新变量
+Scrivi una variabile nella linguetta Variabili…	在“变量”选项卡中写一个变量…
+Elemento diritto	直单元
+Elemento piegato	弯折单元
+Variabile nuova	新变量
+Minimo / massimo	最小值 / 最大值
+Cosa cambia	变化内容
+in ocra: dove agisce la variabile	赭色：变量作用之处
+Crea la variabile	创建变量
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	已创建变量 {0}：几何不变。“几何”工具栏中的“撤销”可将其删除。
+Struttura 3D: dove agisce la variabile ▾	3D 结构：变量作用之处 ▾
+Struttura 3D ▸	3D 结构 ▸
+Clic: nasconde o mostra la struttura	点击：隐藏或显示结构
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	赭色实线：使用该变量 · 赭色虚线：通过另一变量使用它
+attraverso {0}: fili {1}	通过 {0}：导线 {1}

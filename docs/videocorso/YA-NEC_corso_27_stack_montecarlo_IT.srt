@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 27: stack su due frequenze e in HF, Monte Carlo, aggiornamento
+
+2
+00:00:05,000 --> 00:00:16,576
+Corso YA-NEC, lezione 27: stack su due frequenze e in HF, Monte Carlo, aggiornamento e segnalazione di un problema.
+
+3
+00:00:16,626 --> 00:00:28,254
+Rumore/GT/Stack, Distanze di stack. Il modello e' la 7 elementi DK7ZB per EME a 144 MHz.
+
+4
+00:00:28,304 --> 00:00:43,386
+Novita' della 1.5: l'impedenza di riferimento (qui 28 Ω, quella dell'antenna) e due frequenze, 144,1 e 145 MHz. Porto il ROS attivo massimo a 2: a 145 MHz la singola ha gia' 1,71.
+
+5
+00:00:43,436 --> 00:00:59,119
+Caso peggiore delle due: 0,55 volte la distanza DL6WU, 1,566 m. Lo stack da' 15,1 dBi con i lobi a −13,4 dB; alla distanza DL6WU sarebbero 16,3 dBi ma con i lobi a −11,6 dB. La matrice mostra l'accoppiamento tra le porte.
+
+6
+00:00:59,169 --> 00:01:23,999
+Stack HF sopra il terreno, anche questo nuovo. Esempio: la Yagi ARRL 520-40H a 20 m. Si danno la quota della piu' bassa, le distanze da provare e gli angoli di partenza voluti, da 5 a 15 gradi.
+
+7
+00:01:24,049 --> 00:01:41,532
+Il NEC calcola ogni distanza sopra il terreno del modello. Proposta: 18,47 m, cioe' 0,875 λ, con l'antenna alta a 33,5 m: 17,12 dBi a 10 gradi, 2,59 dB in piu' della singola a 15 m. Il grafico confronta in fase, solo sopra, solo sotto e controfase.
+
+8
+00:01:41,582 --> 00:02:01,066
+Come si legge il grafico: tutte in fase (blu) ha il massimo a 10 gradi e va a zero verso 25. Lì servono le altre combinazioni: controfase (arancio) dà circa 16 dBi tra 22 e 30 gradi, solo sotto circa 14,5 dBi tra 12 e 22. Con un commutatore lo stack copre anche gli angoli alti.
+
+9
+00:02:01,116 --> 00:02:03,637
+Adesso tre antenne una sopra l'altra: clic su 3 e di nuovo Calcola lo stack HF.
+
+10
+00:02:03,687 --> 00:02:17,638
+Proposta: 13,2 m, cioè 0,625 λ, con le antenne a 15, 28,2 e 41,4 m: 18,14 dBi a 9 gradi, 3,61 dB in più della singola. Con tre antenne il grafico confronta tutte in fase, solo sopra e solo sotto.
+
+11
+00:02:17,688 --> 00:02:31,371
+Ottimizzatore, Monte Carlo: parte da piu' punti a caso e controlla i candidati migliori con copie che simulano le tolleranze di costruzione. Vince il candidato con piu' copie entro le soglie.
+
+12
+00:02:31,421 --> 00:02:43,266
+Impostazioni, Aggiornamento: Forza l'aggiornamento controlla subito il GitHub, senza aspettare i 3 minuti; Reinstalla la versione attuale la riscarica.
+
+13
+00:02:43,316 --> 00:02:55,333
+Segnala un problema: scrivi cosa e' successo e YA-NEC prepara uno zip con il modello aperto e il registro di oggi. Niente indirizzi IP, e-mail o nomi utente nei file.
+
+14
+00:02:55,383 --> 00:03:00,333
+Fine della lezione 27. Il capitolo 26 del manuale elenca tutte le novita' della 1.5.

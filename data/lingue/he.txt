@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	עד כמה הצבע מכסה: קל, בינוני או חזק. בשורת הטבלה הכיסוי קל יותר, כדי שהמספרים יהיו קריאים.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	חוט {0} נבחר בתצוגת התלת־ממד: שורה {1} בטבלה
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	חוט {0}: אינו בטבלת החוטים (כרטיס גאומטריה שאינו GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	בודק מיד אם יש גרסה חדשה (בלי לחכות 3 דקות).
+terreno reale	פני שטח אמיתיים
+Locatore	מאתר
+da 8 a 12 caratteri	8 עד 12 תווים
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	עם 6 תווים הנקודה עלולה לסטות בקילומטרים: פרופיל השטח צריך לפחות 8 תווים.
+Quota sito	גובה האתר
+Altezza antenna	גובה האנטנה
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	גובה מרכז האנטנה מעל הקרקע. אם הוא שונה מזה שבמודל, דיאגרמת NEC מוגבהת או מונמכת עם אותה התפלגות זרם.
+Distanza max	מרחק מרבי
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	אזימוט ומרחקים מחושבים מחדש בכל שינוי מאתר (מעגל גדול, כדור 6371 km).
+Terra	יבשה
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	מקטין את מקדם ההחזרה של הים במקדם Ament לגלים של 0.25 m (סטיית תקן).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	מודל סטטיסטי של משטח מחוספס (Ament 1953): תקף לזוויות שוליות ולים אחיד.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	מנמיך את הפרופיל לפי עקמומיות כדור הארץ (רדיוס שקול 4/3 לשבירה רגילה) ומחליש את הקרניים המוחזרות הרחוקות במקדם ההתבדרות.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	אטמוספרה תקנית (k = 4/3); עם תעלות או היפוכים העקמומיות הנראית משתנה.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	הרכס הגבוה ביותר בין האנטנה לכיוון היציאה מנחית את הקרן הישירה כמו שפה (אינטגרל פרנל), כמו ב-HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	שפת סכין יחידה: רכסים מעוגלים או כמה רכסים ברצף מקורבים לפי הגבוה ביותר.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	חוזר על החישוב כל 10 מעלות אזימוט (DEM בלבד) ומציג את מדד האיכות על הוורד, כשהאנטנה מופנית לכל אזימוט.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	כשהאנטנה תמיד מופנית לאזימוט הפרופיל: תקף לאנטנה מסתובבת.
+Cartesiana dBi / gradi	קרטזי dBi / מעלות
+0–180° intero	0–180° מלא
+Zoom angolare	הגדלת זווית
+Sovrapponi alla linguetta Verticale	שכבה על לשונית האנכי
+premi Calcola	לחץ חשב
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	חוזר על החישוב עם אנטנה מ-6 עד 30 m (HF) או מ-2 עד 30 m (VHF) ומציג את הגובה עם מדד האיכות הטוב ביותר במסלול.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	הזרמים נשארים אלה של המודל המחושב: השפעת הגובה על העכבה והזרמים לא נלקחת בחשבון (כמו ב-HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	נדרשות טבלאות זוויות ההגעה של ARRL Antenna Book (קובצי .PRN לכל תחום ואזור): ברגע שיהיו זמינות התכונה תופעל ותציג את הפלחים הכתומים.
+locatore non valido	מאתר לא תקין
+sul mare	מעל הים
+sul terreno	מעל היבשה
+profilo reale	פרופיל אמיתי
+terreno piatto	קרקע שטוחה
+orizzonte ostruito	אופק חסום
+° (scala angolare ×	° (סולם זווית ×
+← dietro	← אחורה
+avanti →	קדימה →
+statistiche degli angoli di arrivo: non caricate	סטטיסטיקת זוויות הגעה: לא נטענה
+rosa 0–360°: calcolo in corso…	ורד 0–360°: מחשב…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	בחר את קובץ הפרופיל (לחץ "מ-HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM לא זמין: בשימוש הראשון נדרשת רשת כדי להוריד TINITALY או SRTM1 (אחר כך הם נשארים בתיקייה data/dem).
+Profilo del terreno	פרופיל שטח
+Lobo di elevazione	אונת הגבהה
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	חשב קודם את המודל (כפתור חשב למעלה): דיאגרמת האנטנה באה מ-NEC.
+da file	מקובץ
+dal DEM	מ-DEM
+rispetto alla stessa antenna su terreno piatto	ביחס לאותה אנטנה מעל קרקע שטוחה
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	ההפרש בין האונה מעל הפרופיל האמיתי לאונה מעל קרקע שטוחה, ממוצע על הזוויות השימושיות.
+Guadagno a 5° / 10°	הגבר ב-5° / 10°
+Guadagno a 1° / 3°	הגבר ב-1° / 3°
+Angoli coperti a -3 dB	זוויות מכוסות ב--3 dB
+primo lobo sul profilo reale	האונה הראשונה מעל הפרופיל האמיתי
+calcolo…	מחשב…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	מודל במרחב חופשי: הזרמים הם אלה ללא קרקע, כמו דיאגרמת המרחב החופשי ש-HFTA משתמש בה. כדי להתחשב בקרקע הקרובה, חשב את המודל עם קרקע אמיתית.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	הפרופיל תקף לאזימוט אחד בלבד: אנטנה מסתובבת צריכה יותר כיוונים (תיבת "כל האזימוטים").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	שיטה כמו ב-HFTA (N6BV): קרן ישירה + קרניים מוחזרות על כל פאה של הפרופיל + עקיפה מעל הרכסים. דיאגרמת האנטנה באה מ-NEC; חישוב זה מוסיף את השטח.
+Piatto	שטוח
+Reale	אמיתי
+Primo minimo	מינימום ראשון
+Punto di riflessione	נקודת החזרה
+Orizzonte	אופק
+Uso: rotte DX in HF (angoli bassi 1–15°).	שימוש: מסלולי DX ב-HF (זוויות נמוכות 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	שימוש: טרופו ו-MS (0–5°), EME עם ירח נמוך (הגבר קרקע בזריחת/שקיעת הירח).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	הגובה עם ההגבר הממוצע הגבוה ביותר על הזוויות השימושיות של המסלול.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	זרמי המודל המחושב הוזזו בגובה: העכבה והצימוד לקרקע נשארים כמו במודל.
+Calcola prima il terreno reale	חשב קודם את פני השטח האמיתיים
+Esporta il lobo sul terreno reale	ייצא את האונה מעל פני שטח אמיתיים
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	תצלומים: Esri, Maxar, Earthstar Geographics וקהילת משתמשי GIS
+© i contributori di OpenStreetMap	© תורמי OpenStreetMap
+Sfondo	רקע
+Foto aerea	תצלום אוויר
+Solo griglia	רשת בלבד
+Griglia	רשת
+Cerca	חיפוש
+⌖ Centra sul locatore	⌖ מרכז על המאתר
+Punto scelto	נקודה נבחרת
+Coordinate	קואורדינטות
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	לחיצה על המפה = נקודת האנטנה; גרירה = הזזה; גלגלת = זום (הרשת עוברת מ-6 ל-8, 10, 12 תווים). מסגרת עבה = ריבוע של 6 תווים.
+non disponibile	לא זמין
+Lunghezza elementi	אורך אלמנט
+Posizione sul boom	מיקום על הבום
+Uniforme	אחיד
+Distribuzione	התפלגות
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	אלמנט מותקן מחוץ למרכז במהדק: הזזה לאורך הציר שלו, עם סבולת המיקום.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	המהדק האמיתי משנה גם את האורך החשמלי ליד הבום: לשם כך השתמש בלשונית "תיקון בום".
+nuovo a ogni avvio	חדש בכל הרצה
+Numero prove	מספר ניסיונות
+Frequenze	תדרים
+Seme casuale	זרע אקראי
+OBIETTIVO LISTA DI TAGLIO	יעד רשימת החיתוך
+Calo F/B max	ירידת F/B מרבית
+ROS max	SWR מרבי
+Ferma	עצור
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	האלמנטים הקרובים לאלמנט המוזן הם בדרך כלל הקריטיים ביותר; אלה שבקצה הבום סובלים שגיאות גדולות יותר.
+l'istogramma serve al Monte Carlo	ההיסטוגרמה היא למונטה קרלו
+5% peggiore	5% הגרועים
+Posizione mm	מיקום mm
+Lunghezza mm	אורך mm
+Tolleranza ammessa	סבולת מותרת
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. באדום האלמנטים שצריכים סבולת קטנה מסבולת הבנייה.
+Calcola prima il modello	חשב קודם את המודל
+sensibilita'	רגישות
+Tolleranze: fermato	סבולות: נעצר
+Diametro mm	קוטר mm
+Tolleranza ammessa mm	סבולת מותרת mm
+Avvia prima il calcolo	הרץ קודם את החישוב
+Esporta la lista di taglio	ייצא את רשימת החיתוך
+Lista di taglio	רשימת חיתוך
+Obiettivi	יעדים
+Calo massimo del F/B	ירידת F/B מרבית
+ROS massimo	SWR מרבי
+Tolleranze di costruzione	סבולות בנייה
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	מתוכנן (סקיצה 13, ממתין לאישור): עדיין לא פעיל בגרסה זו.
+Al quadro 20×2 mm	Al מרובע 20×2 mm
+Al quadro 25×2 mm	Al מרובע 25×2 mm
+Al quadro 30×2 mm	Al מרובע 30×2 mm
+Al quadro 40×2 mm	Al מרובע 40×2 mm
+Al tondo 25×1,5 mm	Al עגול 25×1.5 mm
+Al tondo 30×2 mm	Al עגול 30×2 mm
+Al tondo 40×2 mm	Al עגול 40×2 mm
+Al tondo 50×2 mm	Al עגול 50×2 mm
+Zona NTC	אזור NTC
+Quota sito as	גובה האתר כ-
+Periodo ritorno	תקופת חזרה
+Categoria esposiz.	קטגוריית חשיפה
+Coeff. topografia	מקדם טופוגרפיה
+Antenna da terra	אנטנה מעל הקרקע
+Palo sopra rotore	תורן מעל הרוטור
+Ø palo	תורן Ø
+Usa elementi e boom del modello	השתמש באלמנטים ובבום של המודל
+Includi telaio, palo, cavi	כלול מסגרת, תורן, כבלים
+Scansione direzione del vento	סריקת כיוון רוח
+UNITÀ	יחידות
+N e kgf affiancati	N ו-kgf זה לצד זה
+solo N	N בלבד
+solo kgf	kgf בלבד
+Mostra	הצג
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	מאתר לא תקין: בחר את האזור ידנית
+Telaio a H	מסגרת H
+Cavi e divisore	כבלים ומפצל
+Parte	חלק
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	עם רוח רוחבית האלמנטים לא נדחפים (cross-flow, K5IU): הכוח על צינור הולך לפי ריבוע רכיב הרוח הניצב לצירו.
+momento flettente alla staffa del rotore	מומנט כפיפה במהדק הרוטור
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	תכנון ראשוני: אינו מחליף בדיקה של מהנדס לתורן, למגדל ולבסיס. מומנט הבסיס יעבור ללשונית המשנה "תורן ובסיס".
+Sito e norma	אתר ותקן
+Norma	תקן
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; מקדמים CNR-DT 207 R1/2018 ו-EN 1991-1-4
+Locatore / zona	מאתר / אזור
+Risultati	תוצאות
+Forza massima	כוח מרבי
+Momento flettente alla staffa del rotore	מומנט כפיפה במהדק הרוטור
+Momento torcente sul rotore	מומנט פיתול על הרוטור
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	תכנון ראשוני: אינו מחליף בדיקה של מהנדס מוסמך לתורן, למגדל ולבסיס.
+Al tondino pieno	Al מוט מלא
+Materiale elementi	חומר האלמנטים
+Staffe, isolatori	מהדקים, מבודדים
+g cad.	g ליחידה
+Dipolo + scatola	דיפול + קופסה
+Cavo fino al palo	כבל עד התורן
+STAFFA AL PALO	מהדק התורן
+Posizione attuale	מיקום נוכחי
+m dal riflettore	m מהמחזיר
+Massa / distanza	מסה / מרחק
+Vento dalla linguetta Vento	רוח מלשונית הרוח
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	משתמש בלחץ התכנון של החישוב האחרון בלשונית המשנה "רוח"; בלעדיו, 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	מזיז את כל המודל לאורך הבום כך שהמהדק המוצע ייפול על הראשית (שם מתחברים התורן ומסגרת הערימה). "בטל" במבנה התלת-ממדי מחזיר.
+Momenti in funzione della posizione della staffa	מומנטים לפי מיקום המהדק
+Masse e aree per parte	מסות ושטחים לפי חלק
+ultimo direttore	המכוון האחרון
+Staffe e isolatori	מהדקים ומבודדים
+Cavo sul boom	כבל על הבום
+Massa kg	מסה kg
+Baricentro m	מרכז כובד m
+Area vento m²	שטח רוח m²
+Centro area m	מרכז השטח m
+solo peso	משקל בלבד
+solo vento	רוח בלבד
+File Touchstone .s1p	קובץ Touchstone .s1p
+Formato letto	תבנית שנקראה
+CAVO TRA VNA E ANTENNA	כבל בין ה-VNA לאנטנה
+R e X separate	R ו-X בנפרד
+Banda con ROS <	תחום עם SWR <
+ROS: calcolato e misurato	SWR: מחושב ונמדד
+Confronto	השוואה
+misurato, cavo tolto	נמדד, הכבל הוסר
+R calcolata	R מחושב
+X calcolata	X מחושב
+R misurata	R נמדד
+X misurata	X נמדד
+Calcolato	מחושב
+Misurato	נמדד
+Scarto	הפרש
+Frequenza del ROS minimo	תדר ה-SWR המינימלי
+ROS minimo	SWR מינימלי
+nessuna correzione: calcolo e misura coincidono.	אין תיקון: החישוב והמדידה מתאימים.
+calcolo NEC sul campo della misura…	חישוב NEC על טווח המדידה…
+Misura del VNA	מדידת VNA
+Tutti	הכול
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	הרץ סריקה (כפתור סריקה למעלה) כדי לראות F/B ו-F/R על כל התחום
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = הגבר קדמי פחות ההספק הממוצע על חצי הכדור האחורי (90-270° אזימוט, כל ההגבהות מעל 0°). הוא גם בין יעדי המייטב.
+Tabelle: F/B e F/R su tutta la banda	טבלאות: F/B ו-F/R על כל התחום
+Valori dello sweep	ערכי סריקה
+ANTENNE RICEVENTI	אנטנות קליטה
+4-square in ricezione	4-square לקליטה
+8 verticali in cerchio	8 אנכיות במעגל
+Modello aperto	פתח מודל
+Isotropo	איזוטרופי
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = ההגבר בכיוון הרצוי פחות ההגבר הממוצע על כל חצי המרחב: בניגוד להגבר, אינו תלוי בהפסדים.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	משתמש בחציון זווית ההגעה מלשונית "פני שטח אמיתיים" כהגבהה הרצויה (סטטיסטיקה לפי תחום ואזור). בלי סטטיסטיקת ARRL טעונה נשמרת ההגבהה הכתובה כאן.
+Direzione voluta	כיוון רצוי
+Hz  rumore	Hz  רעש
+NF ricevitore	NF של המקלט
+sorgente locale az	מקור מקומי az
+Cifre di merito in ricezione	מדדי איכות לקליטה
+Basta il segnale?	האם האות מספיק?
+calcolo in corso…	מחשב…
+RDF in funzione della frequenza	RDF לפי תדר
+Calcola prima il modello aperto	חשב קודם את המודל הפתוח
+verticale λ/4	אנכית λ/4
+° · dB relativi · arancio: -3 dB	° · dB יחסי · כתום: -3 dB
+settore ±30° az, 10–40° el	גזרה ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	ההגבר הממוצע על הגזרה הקדמית פחות הממוצע על חצי הכדור האחורי.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN מגדיר את ה-DMF עם ההגבר ב-20 מעלות בלבד; כאן משתמשים בממוצע על גזרת הסקיצה, ולכן לא ניתן להשוות את הערכים לאלה שבספר אחד לאחד.
+molto basso: serve un preamplificatore	נמוך מאוד: נדרש קדם-מגבר
+basso ma accettabile: vedi soglia	נמוך אך קביל: ראה סף
+come un'antenna trasmittente	כמו אנטנת שידור
+F/R medio sull'emisfero posteriore	F/R ממוצע על חצי הכדור האחורי
+Rumore d'antenna ai morsetti	רעש האנטנה בהדקים
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	הספק רעש חיצוני בהדקים: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + הגבר ממוצע משוקלל לפי מאיפה הרעש מגיע.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	רעש מהאופק משוקלל exp(-el/10 מעלות) בהגבהה: מייצג רעש מעשה ידי אדם רחוק שמגיע נמוך; ההתפלגות האמיתית תלויה באתר.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	מקור נקודתי בהגבהה 5 מעלות באותו הספק כמו הרקע האיזוטרופי.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	רעש איזוטרופי מעל הקרקע; הקרקע אינה מוסיפה רעש.
+Margine sul ricevitore	מרווח המקלט
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	רעש האנטנה עולה על רעש המקלט בפחות מ-6 dB: המקלט מגביל את הרגישות. נדרש עוד קדם-הגברה או מקלט עם NF נמוך יותר.
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	הגבר 1.8
+Spazio richiesto	מקום נדרש
+λ/4 in tubo quadro	λ/4 בצינור מרובע
+λ/4 in tubo tondo	λ/4 בצינור עגול
+Solo cavi di fase	קווי מופע בלבד
+Aria	אוויר
+Uscite	יציאות
+Z antenne	Z של האנטנה
+Z ingresso	Z כניסה
+Dielettrico	דיאלקטרי
+Connettori	מחברים
+Correggi accorciamento dei connettori	תקן קיצור עקב מחברים
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	מסיר מהאורך את חלק הקו שבתוך המחברים.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	הערכה של 4 mm לכל קצה עם מחברי N (BNC 3, SMA 1.5): עדיף לקצץ עם VNA בצעדים של 1 mm.
+Divisori	מפצלים
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	משתמש בעכבות הפעילות של אנטנות הערימה הפתוחה (מקור לכל אנטנה) ובמרווחים לאורך המינימלי של קווי המופע.
+CAVI DI FASE	קווי מופע
+Lunghezza minima	אורך מינימלי
+Passo verticale	מרווח אנכי
+solo cavi di fase: nessun trasformatore da costruire	קווי מופע בלבד: אין שנאי לבנות
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 כבלי 75 Ω במקביל = 37.5 Ω
+quadro, lato	מרובע, צלע
+tondo, Ø	עגול, Ø
+Z0 richiesta	Z0 נדרש
+Ø conduttore interno	Ø מוליך פנימי
+VF del cavo	VF של הכבל
+λ/4 in aria, mm	λ/4 באוויר, mm
+da tagliare, mm	לחיתוך, mm
+Z carico in parallelo	Z עומס במקביל
+Rami λ/4: Z0 = Zin · √N	ענפי λ/4: Z0 = Zin · √N
+Resistenze a stella	נגדי כוכב
+Isolamento tra le uscite	בידוד בין יציאות
+Perdita stimata	הפסד משוער
+Carico usato	עומס בשימוש
+non potenza di 2	לא חזקה של 2
+ROS all'ingresso	SWR כניסה
+solo cavi di fase	קווי מופע בלבד
+Uscita	יציאה
+Lungh. elettrica	אורך חשמלי
+Fisica mm	mm פיזי
+Perdita dB	הפסד dB
+° di fase).	° מופע).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° כלפי מעלה); העכבה במפצל כבר לא חוזרת בדיוק.
+Solo cavi di fase: nessun disegno da stampare	קווי מופע בלבד: אין שרטוט להדפסה
+Divisore	מפצל
+50 mm di controllo	בדיקת 50 mm
+GEOMETRIA	גאומטריה
+λ/4 sul boom	λ/4 על הבום
+stesso piano	אותו מישור
+Metallico, isolati	מתכת, מבודד
+Non metallico	לא מתכתי
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	הבום אינו במודל NEC: עם אלמנטים מבודדים מבום מתכתי ההשפעה קטנה (תיקון בום במחשבונים).
+Yagi di base	יאגי בסיסי
+Disposizione	סידור
+Sfasamento piani	היסט מישור
+Cavo di ritardo λ/4	כבל השהיה λ/4
+Includi relè e cavi reali	כלול ממסרים וכבלים אמיתיים
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	מוסיף את הפסד כבל ההשהיה (VF 0.66, 10 dB/100 m ב-144 MHz, מותאם לפי שורש התדר) ו-0.1 dB לממסר.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	ערכים טיפוסיים של כבל 75 Ω ושל ממסר קואקסיאלי; התוכנה אינה מכירה את שלך.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	אותה רשת מופע עובדת גם ל-turnstile (דיפולים מוצלבים ב-90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	מבט מלפנים
+Componenti co-polare / cross-polare	רכיבי קיטוב משותף / מוצלב
+Rapporto assiale e ROS in frequenza	יחס צירים ו-SWR לפי תדר
+piano A	מישור A
+piano B	מישור B
+vista dal davanti — boom al centro	מבט מלפנים — הבום במרכז
+piani sfalsati di λ/4 lungo il boom	מישורים מוסטים ב-λ/4 לאורך הבום
+Yagi incrociate: serve una Yagi con una sola sorgente	יאגי מוצלבות: נדרשת יאגי עם מקור יחיד
+Yagi incrociate: calcolo in corso...	יאגי מוצלבות: מחשב...
+Rapporto assiale in asse	יחס צירים על הציר
+Rapporto assiale a −3 dB	יחס צירים ב-−3 dB
+Isolamento tra i due piani	בידוד בין שני המישורים
+Fase della rete sul piano B	מופע הרשת במישור B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	מישורים ניצבים וסימטריים לחלוטין: במודל הצימוד והקיטוב ההפוך כמעט אפס. במציאות מהדקים, כבלים ואי-סימטריות קטנות מגבילים אותם לכ-25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	מ-1.8 MHz עד 1296 MHz: רשימת הבאלונים משתנה עם התחום
+LINEA DI DISCESA	קו הזנה
+Coassiale	קואקסיאלי
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	בקו סולם מאוזן אין סיכוך: מצב משותף נובע רק מחוסר איזון. הכרטיס מחשב את המקרה הקואקסיאלי; לקו סולם השתמש ב"קווים (TL)" עם המתאם.
+Lungo il boom	לאורך הבום
+m → palo	m → תורן
+Discesa sul palo	במורד התורן
+Fino alla stazione	עד התחנה
+Calza a massa sul palo / traliccio	סיכוך מוארק לתורן / למגדל
+Messa a terra all'ingresso stazione	הארקה בכניסה לתחנה
+BALUN DA CONFRONTARE	באלונים להשוואה
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 כריכות של RG-213 על 110 mm: השראות Wheeler, קיבול עצמי Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 וקיבול עצמי משוער: את העכבה האמיתית של החונק יש למדוד.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	טורואיד פריט 1:1 כ-RLC מקבילי עם Q נמוך.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm בשיא (10 MHz עם תערובת 31, 25 MHz עם תערובת 43): ערכים טיפוסיים של 12 כריכות על 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	קואקסיאלי λ/2 4:1: הזנה מאוזנת, סיכוכים מחוברים.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	מצב משותף שיורי כתהודה של 600 Ω ב-f0 (Q 3): תלוי בהתקנה.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	שרוול λ/4: קו λ/4 מקוצר בין הסיכוך לשרוול, עכבה גבוהה ב-f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 של השרוול 50 Ω והפסד 0.08 dB לאורך רבע הגל.
+10 perline in ferrite sulla calza.	10 חרוזי פריט על הסיכוך.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 Ω לחרוז ב-144 MHz (תערובת 61), 100 Ω מעל 30 MHz עם תערובת 43: ערכי קטלוג טיפוסיים.
+Caso mostrato	מקרה מוצג
+premi Calcola il confronto	לחץ חשב השוואה
+Corrente lungo la calza, dal dipolo verso il basso	זרם לאורך הסיכוך, מהדיפול כלפי מטה
+Vista laterale: corrente sulla calza	מבט צד: זרם על הסיכוך
+F/R medio	F/R ממוצע
+Z / ROS	Z / SWR
+Perdita nel balun	הפסד בבאלון
+Potenza dissipata nel balun a 1 kW	הספק שמתבזבז בבאלון ב-1 kW
+Banda con calza < 5 %	תחום עם זרם סיכוך < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	הפריטים האפורים הם באלונים לתחום האחר; הם נעשים פעילים כשבוחרים את התדר. ב-HF נחשב גם הסיכוך עד התחנה (מוארק), ב-VHF/UHF החלק שעל הבום ועל התורן. הסיכוך הוא חוט המחובר לצד אחד של נקודת ההזנה, כמו במציאות בלי באלון; הבאלון הוא עכבת מצב משותף על הקטע הראשון.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	סיבי זכוכית אינם מוליכים: המסגרת לא נכנסת ל-NEC, נשארים רק סיכוכי קווי המופע.
+Includi palo sotto il telaio	כלול תורן מתחת למסגרת
+Cavi di fase lungo i montanti	קווי מופע לאורך העמודים
+Rotore e controventi	רוטור וכבלי עיגון
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	מתוכנן: רוטור וכבלי עיגון כחוטים (נדרשות מידות המגדל).
+Materiale	חומר
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	אדום = חלקי מסגרת שמודלו כחוטי NEC · מקווקו = סיכוך קווי המופע
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	קיטוב אופקי: העמודים האנכיים מצומדים חלש; הקורה האופקית וקווי המופע אינם מצומדים.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	קיטוב אנכי: העמודים והתורן מקבילים לאלמנטים ומשפיעים יותר; הקורה האופקית מעט.
+Confronto senza / con telaio	השוואה בלי / עם מסגרת
+Diagramma orizzontale sovrapposto	דיאגרמה אופקית בשכבות
+premi Calcola confronto	לחץ חשב השוואה
+Stack: calcola prima il modello	ערימה: חשב קודם את המודל
+Stack: calcolo senza e con telaio...	ערימה: מחשב בלי ועם מסגרת...
+Pezzo	חלק
+Collegato	מחובר
+Cavi	כבלים
+Senza telaio	בלי מסגרת
+Con telaio	עם מסגרת
+Z ingresso divisore	Z כניסת המפצל
+senza telaio	בלי מסגרת
+con telaio	עם מסגרת
+Stack: confronto senza / con telaio fatto	ערימה: השוואה בלי / עם מסגרת הושלמה
+CARICHI HF	עומסי HF
+INSERISCI NEL MODELLO	הכנס למודל
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	הכובע נכנס בקצה החוט (b או e), הטעינה הקווית בנקודה שנבחרה על החוט.
+Inserisci nel modello	הכנס למודל
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	כבר אושר בסקיצת העומסים: Q של L ו-C, f0, Z לכל תחום, מתח וזרם על הרכיב. כאן מתווספים סוגי הבנייה.
+Trappola coassiale	מלכודת קואקסיאלית
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	המוליך הפנימי מולחם לתחילת הכריכה האמצעית (היפוך הקצוות מוריד את התהודה בכ-50 kHz).
+Calcola spire per f0	חשב כריכות ל-f0
+Spire dell'avvolgimento (anche frazionarie).	כריכות הסליל (גם שבריות).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	f0 האמיתי שונה בכמה אחוזים: מדוד אותו במד טבילה או ב-VNA ותקן את הכריכות.
+Blocca	בלוקים
+dipolo con	דיפול עם
+Filo Ø	Ø חוט
+Calcola C per f0	חשב C ל-f0
+mm  Filo Ø	mm  Ø חוט
+mm  Passo	mm  פסיעה
+mm  Spire	mm  כריכות
+MHz  dal centro	MHz  מהמרכז
+m  Braccio	m  זרוע
+m  Filo dell'elemento Ø	m  Ø חוט האלמנט
+Calcola spire per la risonanza	חשב כריכות לתהודה
+Piega	קיפול
+m  Distanza tra i fili	m  מרווח בין החוטים
+Calcola la piega per la risonanza	חשב קיפול לתהודה
+Raggi	חישורים
+m  Filo Ø	m  Ø חוט
+Verticale alto	גובה האנכי
+m  Frequenza	m  תדר
+MHz  Filo Ø	MHz  Ø חוט
+Calcola i raggi per la risonanza	חשב חישורים לתהודה
+L misurata	L נמדד
+MHz  Autorisonanza f0	MHz  תהודה עצמית f0
+Cappello capacitivo in punta al verticale	כובע קיבולי בראש האנכית
+Bobina dalle misure	סליל ממדידות
+Reattanza del cappello in frequenza	ריאקטנס הכובע לפי תדר
+impedenza della trappola	עכבת המלכודת
+Si comporta da	מתנהג כ
+Potenza persa	הספק שאבד
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	הספק המשדר עבור המתחים וההפסדים בטבלה.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	תחום נמוך: זרם בבטן sqrt(P/73) ובמלכודת I0 cos(beta a); תחום חסום: המתח בקצה הדיפול הפנימי I0 Z0 מתחלק בין המלכודת לקרינה.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	זרם בבטן sqrt(P/73) ובעומס I0 cos(beta a), כש-a המרחק מהמרכז.
+Risonanza propria f0	תהודה עצמית f0
+Q ideale	Q אידיאלי
+Q della trappola alla risonanza.	Q של המלכודת בתהודה.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	ועוד הפסד דיאלקטרי (טנגנס 3e-4 PE, 2e-4 PTFE). למלכודות קואקסיאליות מדודות יש בדרך כלל Q בין 100 ל-300.
+Lunghezza di cavo	אורך הכבל
++ 10 cm per le saldature	+ 10 cm לנקודות ההלחמה
+R in parallelo equivalente	R מקבילי שקול
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: זה עומס ה-LD שנכנס למודל
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	זרוע הדיפול בתחום הנמוך עם המלכודת, בהשוואה לזרוע בגודל מלא (71.3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC עם המלכודת כעומס נותן את האורך הנכון.
+Induttanza misurata	השראות מדודה
+dalla misura	מהמדידה
+Autorisonanza	תהודה עצמית
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	התדר שבו הסליל מהדהד לבדו עם הקיבול העצמי שלו.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	קיבול עצמי מטבלת Medhurst כפונקציה של אורך / קוטר, תקף לסלילים חד-שכבתיים רחוקים ממסות מתכת.
+Q della bobina alla frequenza di lavoro.	Q של הסליל בתדר העבודה.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	התנגדות החוט מאפקט העור כפול מקדם קרבה 1 + 2 (d/p)^2 (d חוט, p פסיעה): Medhurst נותן ערכים דומים לסלילים שאורכם כקוטרם בערך.
+Reattanza della piega	ריאקטנס הקיפול
+Z0 della linea	Z0 של הקו
+Q della piega	Q של הקיפול
+Capacita' del cappello	קיבול הכובע
+Capacita' del cappello verso lo spazio.	קיבול הכובע למרחב.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	סכום החישורים (חוט דק, 2 pi eps0 l / (ln(2l/a) - 1)) והטבעת שמגיעה לרוויה לכיוון דיסק מלא (8 eps0 r): החישורים מסככים זה על זה. אם מוכנסים כחוטים, NEC מחשב זאת במדויק.
+in punta al verticale	בראש האנכית
+Altezza per la risonanza	גובה לתהודה
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	השפעה על האנכית
+Carichi HF: apri un modello nella finestra principale.	עומסי HF: פתח מודל בחלון הראשי.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	טעינה קווית וכובע קיבולי מוכנסים כחוטים: לאחרים בחר "כעומס".
+Il cappello capacitivo si inserisce come fili.	הכובע הקיבולי מוכנס כחוטים.
+RLC parallelo	RLC מקבילי
+Effetto sul dipolo	השפעה על הדיפול
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	קיצור הזרוע לעומת רבע הגל המלא (71.3 / f) עם העומס בנקודה זו.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	מודל קו של הזרוע הטעונה X = Z0 (cot(beta b) - tan(beta a)), x 0.95 לאפקט הקצה.
+Esegui il test	הרץ את הבדיקה
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	אפשר להציג את ההגבר מתוקן ב-AGT (כבר קיים במייטב).
+Controllo prima/dopo il calcolo	בדיקה לפני/אחרי החישוב
+Esito	תוצאה
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ בדיקה אחת או יותר מעבר ל-±0.2 dB: בדוק את החלוקה למקטעים (מבנה תלת-ממדי > חלוקה למקטעים... ובדוק חלוקה למקטעים).
+Tutti i controlli entro ±0,2 dB.	כל הבדיקות בתוך ±0.2 dB.
+Linea a finestra 450	קו חלון 450 Ω
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	לחץ חשב: NEC מחשב את עכבת המודל הפתוח בכל תדר.
+Perdita nella linea	הפסד בקו
+Perdita totale	הפסד כולל
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	סוג המתאם בין הקו למשדר (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	הפסד משוער מה-Q הטעון של הרשת (Qn = sqrt(Rmax/Rmin - 1), שני קטעים ל-T ול-Pi) ומה-Q של הסליל; TLW של N6BV מחשב את הרכיבים אחד אחד ועשוי להיות שונה בכמה עשיריות dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	דוגמה: דאבלט 2 × 20 m (ZS6BKW/G5RV). אזהרה כשהמתאם רואה פחות מ-20 Ω: הפסדים גבוהים, מוצע להאריך או לקצר את הקו. קו עם הפסדים כמו ב-TLW (N6BV, ARRL).
+USA costa est	החוף המזרחי של ארה"ב
+USA costa ovest	החוף המערבי של ארה"ב
+Giappone	יפן
+Caraibi	הקריביים
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: השירות לא החזיר GeoTIFF
+GeoTIFF compresso: non supportato	GeoTIFF דחוס: לא נתמך
+GeoTIFF: tipo di dato non supportato	GeoTIFF: סוג נתונים לא נתמך
+Il file non contiene coppie distanza / quota.	הקובץ אינו מכיל זוגות מרחק / גובה.
+Nessuno	אין
+Ferriti a perline	חרוזי פריט
+Cavo e balun: segmento della sorgente non trovato.	כבל ובאלון: מקטע המקור לא נמצא.
+solo palo	תורן בלבד
+Acciaio zincato	פלדה מגולוונת
+Alluminio	אלומיניום
+Vetroresina	סיבי זכוכית
+Montante sx/dx	עמוד שמאל/ימין
+al boom	עד הבום
+Traversa	קורה רוחבית
+Palo	תורן
+al dipolo	עד הדיפול
+N, femmina	N, נקבה
+senza connettori	ללא מחברים
+rurale tranquillo	כפרי שקט
+Verticale λ/4	אנכית λ/4
+λ/8 di lato	λ/8 לכל צד
+0,37 λ di diametro	קוטר 0.37 λ
+Cappello capacitivo	כובע קיבולי
+W8NX bassa impedenza	W8NX עכבה נמוכה
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	כבל גדול עם דיאלקטרי PTFE (RG-393) או מלכודת LC עם קבל מתח גבוה
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	הקיפול ארוך מ-lambda/8: הקו כבר לא מתנהג כהשראות קבועה, בדוק את התהודה ב-NEC כשהוא מוכנס כחוטים.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	קיבול הכובע הוא הערכה (החישורים מסככים זה על זה): לערך המדויק הכנס אותו כחוטים וחשב ב-NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	מיקום העומס מעבר לרבע הגל: קרב אותו למרכז.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	הכובע נכנס בקצה החוט: בחר את המקטע הראשון (b) או האחרון (e).
+il punto scelto e' troppo vicino all'estremo del filo.	הנקודה שנבחרה קרובה מדי לקצה החוט.
+questo tipo entra nel modello come carico.	סוג זה נכנס למודל כעומס.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	עומסי HF: חוטים שהוסיף מחשבון YA-NEC
+Il file Touchstone non contiene punti di S11.	קובץ ה-Touchstone אינו מכיל נקודות S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	ה-CSV אינו מכיל שורות של תדר, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT במרחב חופשי, ללא הפסדים
+IMPOSTAZIONI	הגדרות
+Schiera Hi-Z di verticali corte	מערך Hi-Z של אנכיות קצרות
+Base del loop	בסיס הלולאה
+Distanza, lato o diametro	מרווח, צלע או קוטר
+Altezza delle verticali	גובה האנכיות
+Base del loop dal suolo	בסיס הלולאה מעל הקרקע
+Fase tra le file	מופע בין שורות
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	דיפול אופקי נמוך: מתחת ל-lambda/4 מעל הקרקע האונה פונה למעלה. זו נקודת הייחוס "בזווית גבוהה" בדירוג של IV3PRK (RDF 7.3 dB): משווים אליה את אנטנות הקליטה בזווית נמוכה.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY של Gary Breed K9AY (QST, ספטמבר 1997): שתי לולאות אנכיות ב-90 מעלות על אותו תורן, נגד סיום (390 Ω טיפוסי, מכוון ל-F/B), שנאי 9:1. כאן לולאה אחת, מופנית לכיוון הנבחר, סגורה מעל הקרקע כמו בדף הקליטה (RDF). Hi-Z: RDF 7.2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square לקליטה: ארבע אנכיות פעילות קצרות בפינות ריבוע lambda/8, שמקרינות לאורך האלכסון. מופע ריק = אפס אחורי מדויק (pi + beta d בין השורות): נותן את הכיווניות התאורטית הגבוהה ביותר; רשתות מופע אמיתיות (ON4UN, IV3PRK) משתמשות במופעים אחרים ונותנות RDF נמוך יותר (IV3PRK 9.4 dB). הכפתור מחפש את המופע עם ה-RDF הטוב ביותר.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	מערכים של אנכיות פעילות קצרות כמו אלה של Hi-Z Antennas: 2 אלמנטים end-fire (קרדיואיד, lambda/8), 3 במשולש (צלע lambda/6, קודקוד לכיוון הנבחר), 8 במעגל (קוטר 0.37 lambda: משתמשים בארבע לכיוון ובזו שממול). Hi-Z: 8 במעגל RDF 13.4 dB עם המשלב שלה; המודל הפשוט בשתי שורות נשאר נמוך יותר. הכפתור מחפש את המופע עם ה-RDF הטוב ביותר.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ האנכיות מתחילות מהקרקע האמיתית (GE 1 עם קרקע Sommerfeld): ב-NEC-2 חוט המחובר לקרקע אמיתית נותן עכבה שתלויה במקטע המקור (מדריך NEC-2, EZNEC). הדיאגרמה וה-RDF להמחשה; החיבור עם רדיאלים מוגבהים מתוכנן לכל אנטנות הקליטה.
+fase tra le file da 120 a 300 gradi per l'RDF	מופע בין שורות מ-120 עד 300 מעלות עבור ה-RDF
+nessuna fase con il lobo in avanti	אין מופע שבו האונה פונה קדימה
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	מופע בין שורות ל-RDF הטוב ביותר: {0} מעלות (RDF {1} dB). מחשב מחדש...
+linea d'orizzonte	קו האופק
+scala angolare	סולם זווית
+lobo reale sopra il piatto fino a	אונה אמיתית מעל שטוח עד
+Profilo verso	פרופיל לכיוון
+Lobo verticale e angoli di arrivo a	אונה אנכית וזוויות הגעה ב-
+Cos'e' l'RDF	מה זה RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = ההגבר בכיוון הרצוי - ההגבר הממוצע על כל הכיוונים (W8JI; נקרא בעבר SNIF, בשנות ה-60). הוא מודד כמה האנטנה משפרת את יחס האות לרעש אם הרעש מגיע באופן שווה מכל כיוון; ההגבר המוחלט אינו נחשב (קדם-מגבר משיב אותו). ממוצע כמו ב-EZNEC: חצי הכדור העליון מחולק בכדור כולו (4 pi). במוסכמה זו התוצאות מתאימות ל-IV3PRK ול-W8JI/Hi-Z (אנכית 5.07 מול 5.06 ו-4.9; Beverage 350 m 13.5 מול 13.66). מגבלה: רעש אמיתי אינו אחיד (קווי חשמל, QRM מקומי): לכן גם ה-F/B וצורת האונה חשובים. לאנטנות שידור ל-RDF אין משמעות: לכן הוא מחושב רק בלשונית זו. DMF (Directivity Merit Figure, ON4UN): ההגבר בהגבהה של 20 מעלות בכיוון הקדמי פחות ההגבר הממוצע של חצי המרחב האחורי (אזימוט מעבר ל-90 מעלות, מעל הקרקע, משוקלל בקוסינוס לפי השטח): מראה כמה האנטנה דוחה רעש שמגיע מאחור. ON4UN מזהיר לא להשוות DMF ו-RDF זה לזה. מקורות: W8JI ו-W8WWV (RDF), ON4UN Low-Band DXing פרק 7 (DMF, טבלאות 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	הגבהה
+azimut	אזימוט
+azimut a {0}°	אזימוט ב-{0}°
+totale	סה"כ
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	רוחב אלומה בין האפסים הראשונים (FNBW): {0}°; אונת הצד הגבוהה ביותר: {1}
+Didascalie {0} %	תוויות {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB מול {1} מהמקור: בדוק מידות, סיום וקרקע (ייתכן שהמקור משתמש בקרקע או בגאומטריה שונה).
+Azimut a {0}° · {1} MHz	אזימוט ב-{0}° · {1} MHz
+Azimut a {0}° di elevazione	אזימוט בהגבהה {0}°
+RUMORE	רעש
+Apri la scheda {0}	פתח את כרטיס {0}
+caso mostrato: {0}	מקרה מוצג: {0}
+Rastremazioni	הצרות
+BANDA	תחום
+λ/2 coassiale 4:1	קואקסיאלי λ/2 4:1
+Manicotto λ/4	שרוול λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	סיכוך הכבל והתורן כחוטי NEC; השוואת באלונים (זרם מצב משותף, F/B, F/R ממוצע, הפסד, הספק ב-1 kW) מ-1.8 עד 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	עמודים, קורה רוחבית, תורן וסיכוכי קווי מופע כחוטי NEC: השוואה בלי / עם מסגרת (הגבר, F/B, F/R ממוצע, אונות, Z המפצל, Tant ו-G/T).
+TIPO	סוג
+DATI	נתונים
+TELAIO	מסגרת
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 בצינור מרובע או עגול, בכבל, Wilkinson; קווי מופע, הטיה; שרטוט 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X או +, מישורים מוסטים ב-λ/4; H, V, RHCP, LHCP, X-pol; יחס צירים ובידוד
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	אורכים שווים ← מופע שווה. כפולות של λ/2 ← העכבה הפעילה חוזרת במפצל. סבולת מומלצת ± 5 mm (= ± {0}° מופע).
+impedenze attive delle {0} antenne dello stack in parallelo	העכבות הפעילות של {0} אנטנות הערימה במקביל
+Banda con ROS < {0}	תחום עם SWR < {0}
+? Manuale	? מדריך
+Apre la spiegazione nel manuale	פותח את ההסבר במדריך
+riferimento	ייחוס
+Rispetto alla singola antenna	בהשוואה לאנטנה הבודדת
+{0} antenne ideali	{0} אנטנות אידיאליות
+x la distanza DL6WU, a passi di	x מרווח DL6WU, בצעדים של
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	ציר שמאלי: G ערימה - G בודדת, מ-0 למעלה. ציר ימני: F/R ערימה - F/R בודדת, הפוך, עם 0 למעלה: היכן שהערימה משפרת את ה-F/R העקומה יורדת, והנקודה הנמוכה ביותר היא השיפור הגדול ביותר. G/T נשאר בטבלה.
+ΔG sulla singola	ΔG מעל האנטנה הבודדת
+Chiusura del programma	סגירת התוכנה
+Vuoi chiudere YA-NEC?	לסגור את YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	תודה שהשתמשת בי: אני מקווה שהייתי לעזר.
+Sì	כן
+ROS attivo	SWR פעיל
+G realizzato	G ממומש
+ROS attivo massimo	SWR פעיל מרבי
+riflessi minimi	החזרות מינימליות
+ROS attivo alto: da non scegliere	SWR פעיל גבוה: אל תבחר
+Documenti tecnici	מסמכים טכניים
+Manuale d'uso	מדריך למשתמש
+Manuale di calcolo e delle fonti	מדריך חישובים ומקורות
+Citazioni	ציטוטים
+Cerca in tutti i documenti	חפש בכל המסמכים
+Apri il PDF	פתח את ה-PDF
+Nessun risultato per «{0}»	אין תוצאות עבור «{0}»
+Primi {0} risultati per «{1}»	{0} התוצאות הראשונות עבור «{1}»
+{0} risultati per «{1}»	{0} תוצאות עבור «{1}»
+Apre la citazione {0}	פותח את ציטוט {0}
+Manuale di calcolo	מדריך חישובים
+È pronta la versione {0} di YA-NEC	YA-NEC גרסה {0} מוכנה
+È già scaricata e installata: entra in funzione quando riavvii il programma.	היא כבר הורדה והותקנה: היא תיכנס לתוקף כשתפעיל מחדש את התוכנה.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	ב-Mac היא לא מתקינה את עצמה: הורד את קובץ ה-.dmg החדש מדף הגרסאות ב-GitHub.
+Riavvia adesso	הפעל מחדש עכשיו
+Più tardi	מאוחר יותר
+Apri la pagina delle versioni	פתח את דף הגרסאות
+Aggiornamento di YA-NEC	עדכון YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	היא כבר הורדה והותקנה. התוכנה מופעלת מחדש מעצמה ופותחת שוב את המודל הפתוח.
+Riavvio tra {0} s	הפעלה מחדש בעוד {0} שנ'
+Questo avviso si chiude tra {0} s	הודעה זו תיסגר בעוד {0} שנ'
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	אחרי העדכון נפתח שוב המודל שלא נשמר: שמור אותו מתי שתרצה (עותק ב-data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	אחרי העדכון נפתח שוב המודל שהיה פתוח.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	לכל תיבה יש חלונית עזרה עם הסבר ומקור. אפור: מסומן = תמיד פעיל (לא ניתן לכבות); לא מסומן = עדיין לא זמין; בחירות בצורת גלולה = בחירה קבועה. מדריך, פרק 21.
+"): sorgente sempre accesa.	"): מקור תמיד פעיל.
+' non da' un numero valido.	' אינו מספר תקין.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik כמות שהוא
+0 - misure del metodo	0 - מדידות השיטה
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = מוליך גל WR תקני של התחום (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = אותה צלחת בצד השני (הד עצמי).
+0 = stesso disco all'altro capo.	0 = אותה צלחת בצד השני.
+0 gradi a destra	0 מעלות ימינה
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = שליש מהקצה: עכבה 200-300 Ω, באלון 4:1
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: הרחק מהשפה, שם כיפוף היה מוציא את ההזנה מהמוקד.
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 פוליאתילן מלא (RG-58, RG-213), 0.8-0.85 דיאלקטרי קצף.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 פוליאתילן מלא, 0.8-0.85 קצף, 0.9-0.97 קו סולם.
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 אורך גל במוליך
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - לולאה מוזנת
+1 - radiatore	1 - מקרין
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = כריכה אחת (כמו קודם). עם יותר כריכות Rr גדל עם N², הפסד אפקט העור עם N.
+1 cavo	כבל 1
+1-2-3 elementi	1-2-3 אלמנטים
+1. Obiettivi e pesi	1. יעדים ומשקלים
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - רוח, איזון, מפצלים, באלונים, יאגי מוצלבות
+1.3 - Antenne riceventi abilitate	1.3 - אנטנות קליטה מופעלות
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz עם צלחת גדולה: מלבד המשטח והכיוון, נחשבים העיוות התרמי ומרוח (ATA: 0.7 mm RMS בלילה, 3 mm ביום בשמש), כיפוף התמוכות ופיזור הליברציה.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: הדפס ב-100 %, בלי "התאם לעמוד"
+1005/f piedi	1005/f רגל
+144 isol.	144 מבודד
+2 - riflettore	2 - מחזיר
+2 - riflettori	2 - מחזירים
+2 in parallelo	2 במקביל
+2 lati	2 צלעות
+2. Variabili che l'ottimizzatore puo' cambiare	2. משתנים שהמייטב רשאי לשנות
+200 Ω con balun 4:1	200 Ω עם באלון 4:1
+25 tondo	25 עגול
+3 - direttori	3 - מכוונים
+3 gruppi	3 קבוצות
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 או 4. עם 2 אין קשיחות מחוץ למישור שלהם.
+3. Registro dei passi - clic su una riga per riprenderla	3. יומן צעדים - לחץ על שורה כדי לחזור אליה
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω או באלון 4:1
+36 Ω + terra	36 Ω + קרקע
+4 - tutto insieme	4 - הכול יחד
+4 lati	4 צלעות
+4 sorgenti: vedi tabella	4 מקורות: ראה טבלה
+432 isol.	432 מבודד
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 בדיקות נתונים שאישר IC8TEM ב-15/11/2026: ספים והסברים במדריך, פרק 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 רגל כ-18 dBi, 12 רגל כ-20.5 dBi
+75 ohm ideale	75 Ω אידיאלי
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	ארוך פי 8 מהרדיוס. עם חוטים עבים או מקטעים קצרים (צינורות עבים ב-UHF, אלמנטים קרובים,\n
+9 fili	9 חוטים
+9 fili a 0,1 λ	9 חוטים ב-0.1 λ
+Accorciamento del pilotato	קיצור האלמנט המוזן
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	קיצור מעל 8%: ההערכה הלינארית אינה אמינה, בדוק ב-NEC.
+Allega il modello aperto	צרף את המודל הפתוח
+Allega il registro di oggi	צרף את היומן של היום
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	גובה גל RMS וגובה האנטנה מעל הים, בדיאגרמות > קרקע אמיתית.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	רוחב הסריקה סביב התדר, לגרף העכבה.
+Antenna a	אנטנה ב-
+Applica la freccia al modello NEC	החל את השקיעה על מודל NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	מאושר, בהכנה: עדיין לא פעיל בגרסה זו.
+Apri la cartella	פתח את התיקייה
+Apri un modello nella finestra principale	פתח מודל בחלון הראשי
+Apro il modello e il diagramma 3D resta vuoto.	אני פותח את המודל והתצוגה התלת-ממדית נשארת ריקה.
+Area al vento dell'antenna	שטח הרוח של האנטנה
+Area al vento totale	שטח רוח כולל
+Area al vento totale e lista di taglio	שטח רוח כולל ורשימת חיתוך
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	אזהרה: לא לשימוש עם חוטים שנפגשים בזווית או עם קטרים שונים בצומת.\n
+Bobina di carico per la risonanza	סליל טעינה לתהודה
+Boom con il tirante	בום עם מסבך
+C1 in serie con la loop	C1 בטור עם הלולאה
+C1 serie, C2 parallelo	C1 בטור, C2 במקביל
+C2 in parallelo all'ingresso	C2 במקביל לכניסה
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	מחשבונים > אנטנות קליטה: דיפול נמוך, K9AY, 4-square לקליטה, Hi-Z עם 2/3/8 אלמנטים, עם המופע בין השורות ממוטב ל-RDF ואזהרה על החיבור לקרקע.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	חישובים מכניים (רוח ואיזון), מחשבונים > מפצלים ויאגי מוצלבות, אובייקטים > כבל ובאלון ומסגרת ערימה, עומסי HF.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	תכנון ראשוני: ההתקנה דורשת תכנון של מהנדס מוסמך.
+Candidati da controllare	מועמדים לבדיקה
+Categoria	קטגוריה
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	קטגוריית החשיפה של האתר (NTC 2018, טבלה 3.3.II ואיור 3.3.2): תלויה בדרגת חספוס הקרקע (A מרכזי ערים ... D אזורים בלי מכשולים, ים) ובמרחק מהחוף. I = חוף פתוח או ים, V = מרכז עיר.
+Cebik, poi NEC	Cebik, ואז NEC
+Centro della banda scelta:\n	מרכז התחום שנבחר:\n
+Con ghiaccio	עם קרח
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	עם קרח: הרוח מופחתת פי 0.6 וקרח רדיאלי מהתיבה מימין (שילוב ISO 12494 מפושט).
+Con lo stesso seme la prova si ripete uguale.	עם אותו זרע הבדיקה חוזרת באופן זהה.
+Condizione della sorgente non capita ("	תנאי המקור לא הובן ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	בודק את GitHub מיד בלי לחכות 3 דקות. אם יש גרסה חדשה היא מורדת, מתריעה ומפעילה מחדש כמו העדכון האוטומטי (10 שניות, המודל נפתח שוב). עובד גם כשהעדכון האוטומטי כבוי.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	נבדק תמיד בבדיקת החלוקה למקטעים ובאזהרות (8 עם הליבה הרגילה, 2 עם הליבה המורחבת).
+Copie per candidato	עותקים לכל מועמד
+Coppia sulla staffa boom-mast	מומנט פיתול במהדק בום-תורן
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	יוצר את ה-zip ב-data/segnalazioni ופותח את דף «New issue» של GitHub עם הטקסט כבר כתוב. את ה-zip אתה מצרף בעצמך, ביד: התוכנה לא שולחת דבר מעצמה.
+Curvatura terrestre, in Diagrammi > Terreno reale.	עקמומיות כדור הארץ, בדיאגרמות > קרקע אמיתית.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	קוטר מחוץ לטווח הנוסחאות של Cebik (מ-1E-6 עד 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	מרחק וסוג הקרקע השנייה: אושר ל-1.5 (קרקע אמיתית 2).
+Distanze di stack HF	מרחקי ערימה ב-HF
+Distanze di stack: accoppiamento e distanza migliore	מרחקי ערימה: צימוד ומרחק מיטבי
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	אחרי המיטוב, התוצאות הטובות ביותר שעוברות לבדיקת הסבולות. 0 = ללא בדיקה.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	קצוות נמוכים מאוד: היזהרו מאנשים ובעלי חיים (מתחים גבוהים בקצוות).
+F/B peggiore	F/B הגרוע ביותר
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	קובץ .weq: שורות עם AutoEZ TLParms (כבלים עם הפסדים) משתמשות ב-Zo ו-VF נומינליים וללא הפסד: כרטיס ה-TL של NEC חסר הפסדים.
+Filo riflettore	חוט מחזיר
+Filo ripiegato	חוט מקופל
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	hairpin ארוך (מעל 0.2 lambda): עדיף להקטין את המרווח או להשתמש במוליכים עבים יותר.
+Forza del vento di progetto	כוח רוח תכנוני
+Forza l'aggiornamento	אלץ עדכון
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	שקיעת המיתר: כמה הרשת בקטע הישר נשארת מתחת לפרבולואיד באמצע המפתח (נכנס לפיאוּת). מסה כוללת של המרישים {4:0.00} kg{5}.
+Freccia tolta dal modello.	השקיעה הוסרה מהמודל.
+Ghiaccio radiale	קרח רדיאלי
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	קבצי MMANA מחולקים תמיד מחדש למקטעים עבור NEC-2 (מדריך, פרק 10).
+I lobi si leggono nella tabella delle distanze di stack.	אונות הצד נקראות בטבלת מרחקי הערימה.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (עיגול), FIX (קטיעה), MOD, MAX, MIN, ODD (מספר שלם אי-זוגי: שימושי למקטעי החוט המוזן).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	NEC2 רגיל מתייחס לכל חוט כקו דק: זה בסדר כל עוד המקטע לפחות\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	חוט מחזיר יחיד נותן שיפור קטן מאוד (Cebik): המסך או 9 החוטים טובים יותר.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	התורן עובר את נקודת הכניעה: תורן עבה יותר או בליטה קצרה יותר.
+Impedenza del cavo	עכבת הכבל
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	בצורה אחרת: בדיקה r5 של בדיקות הנתונים מסמנת הגבר מעל המקסימום הפיזיקלי לאורך הבום.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	השראות לפי N² (כריכות צפופות) ומודל NEC של כריכה אחת: כאן NEC בודק רק את הגאומטריה של הכריכה הבודדת.
+Interasse della forcina	מרווח hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	איים (פרט לסיציליה וסרדיניה) וים פתוח
+Kernel esteso del NEC2 (scheda EK).\n	ליבת NEC2 מורחבת (כרטיס EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	מרווח ה-hairpin חייב להיות גדול מקוטר המוליך.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	ה-Slim Jim סוגר את המקרין למעלה בחוט מקופל כלפי מטה, עד מעט מעל הסטאב.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	זה נעשה בחלון בדיקת החלוקה למקטעים (הכפתור למעלה).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	ה-hairpin סימטרי: הוא לא מעוות את הדיאגרמה כמו ה-gamma. עדיין נדרש באלון או חונק בנקודת ההזנה.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	ה-hairpin עובד רק כשה-R של האלמנט המוזן נמוך מעכבת הכבל: ל-R גדול יותר השתמש ב-gamma או בשנאי.
+La prepara IC8TEM: non ancora attiva.	IC8TEM מכין זאת: עדיין לא פעיל.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	ששת הכללים של EZNEC Geometry Check, בכל חישוב, בלשונית האזהרות.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: בלי תיקון Z = {0:0.0} {1}j{2:0.0} Ω (עם התיקון {3:0.0} {4}j{5:0.0} Ω).
+Località	מיקום
+Loop orizzontale di 1 λ	לולאה אופקית 1 λ
+Lunghezza del pilotato	אורך האלמנט המוזן
+Lunghezza della forcina	אורך ה-hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	מכניס את המודל הפתוח (.nec) ל-zip, גם אם לא נשמר.
+Mette nello zip il registro di oggi della cartella registri.	מכניס את היומן של היום מתיקיית logs ל-zip.
+Momenti al mast	מומנטים על התורן
+Momento al cuscinetto	מומנט במסב
+NEC: risonanza cercata dal motore	NEC: התהודה מחופשת על ידי המנוע
+NOTE SU QUESTA VERSIONE (fase 0)\n	הערות על גרסה זו (שלב 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	חדש · מעל הקרקע: גבהים, מרחקים, זוויות שיגור רצויות
+Nel modello non ci sono elementi orizzontali diritti	במודל אין אלמנטים אופקיים ישרים
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	בטבלת הערימה ובאובייקטים של המודל (מסגרת ערימה, מפצלים).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	בכרטיסי גאומטריה כתוב ביטויים בלי רווחים, לדוגמה:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	לא הוצע מרחק
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	לא הוצע מרחק: כולם עוברים את ה-SWR הפעיל המרבי.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	בלי כתובת IP, בלי דוא"ל, בלי שמות משתמש בקבצים: נתיב תיקיית הבית הופך ל-«~». בלי חשבון GitHub אפשר לשלוח את ה-zip בכל דרך.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	עדיין לא אוטומטי: זה נעשה ידנית בבדיקת AGT באזהרות (ARRL מהדורה 24, 4nec2).
+Numero di spire	מספר כריכות
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	לכל עותק המידות מוזזות באקראי בתוך הסבולות של לשונית הסבולות (ברירת מחדל: אורך ±1 mm, מיקום ±2 mm, קוטר ±0.1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	מלבד המודל הפתוח, התחלות שנבחרות באקראי בין המינימום והמקסימום של כל משתנה. 0 = כמו קודם.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	דף רעש השמיים האמיתי בלשונית רעש/GT/ערימה: חישוב skynoise שהועבר ל-C# (קריאת מפות HEALPix, אינטרפולציה, זמן כוכבי, קואורדינטות, ירח) ושתי המפות של G8ONH ב-data/cielo.
+Partenze a caso	התחלות אקראיות
+Perimetro Cebik	היקף Cebik
+Peso del boom	משקל הבום
+Pi-greco	רשת Pi
+Prepara la segnalazione	הכן את הדוח
+Proposta	הצעה
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	בדיקת nec2c ב-145 MHz (צינורות 12 mm במרווח 40 mm): 30 mm -> 45 + j23 Ω, 35 mm -> 60 + j24 Ω. Slim Jim: 50 mm -> 48 + j7 Ω.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	מתי זה נדרש: יחס מקטע/רדיוס בין כ-2 ל-8 (מתחת ל-2 אף אחד מהם אינו אמין).\n
+Quota s.l.m.	גובה מעל פני הים
+R del pilotato	R של האלמנט המוזן
+ROS attivo minimo {0}	SWR פעיל מינימלי {0}
+Raggio equivalente dei due conduttori	רדיוס שקול של שני המוליכים
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	הריאקטנס של האלמנט המוזן עכשיו: אם הוא חיובי יש לקצר את האלמנט המוזן עוד.
+Reattanza della forcina	ריאקטנס ה-hairpin
+Reattanza voluta del pilotato	ריאקטנס רצוי של האלמנט המוזן
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	ריאקטנס: מעבר ל-kl = pi/2 (או עם מוליך עבה מדי) נוסחת AEH אינה תקפה, השתמש ב-NEC.
+Reinstalla la versione attuale	התקן מחדש את הגרסה הנוכחית
+Rel Z non positiva	Re Z אינו חיובי
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	התנגדות האלמנט המוזן בתהודה, מהמודל או מחישוב NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	ההפעלה מחדש נכשלה: סגור ופתח את YA-NEC ידנית.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	מוריד ומתקין מחדש גם אם הגרסה זהה: שימושי אם קובץ של התוכנה נפגם.
+Scansione	סריקה
+Scegli il candidato con	בחר את המועמד עם
+Schermo	מסך
+Scrivi due frequenze diverse.	כתוב שני תדרים שונים.
+Segnala un problema	דווח על בעיה
+Seme del caso	זרע אקראי
+Serve solo per la reattanza (dipolo e monopolo).	נדרש רק לריאקטנס (דיפול ומונופול).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	בשימוש עם 2 כריכות או יותר: מתחת ל-2 קוטרי מוליך ההפסד האמיתי גדל בגלל אפקט הקרבה (לא מחושב).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	בשימוש בדיאגרמות > קרקע אמיתית: החזרה מהים עם מקדם התבדרות וחספוס.
+Sicilia e provincia di Reggio Calabria	סיציליה ומחוז רג'ו די קלבריה
+Sollecitazione	מאמץ
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	מעל 0.25 λ האונה מתחילה לרדת: פחות מתאים ל-NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	מעל 30 MHz הרגרסיה של Cebik משמשת מחוץ לטווח שהיא מוצעת לו כאן (חוטי HF): אוטומטי או NEC עדיפים.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	מתחת ל-0.1 λ ההגבר כלפי מעלה יורד (Cebik): אנטנה נמוכה מאוד לא מרוויחה דבר.
+Sotto l'antenna	מתחת לאנטנה
+Spina (tubo o tondo) dentro il giunto telescopico.	פקק (צינור או מוט) בתוך המחבר הטלסקופי.
+Spina interna nei giunti	פקק פנימי במחברים
+Stack con il ROS attivo piu' basso	ערימה עם ה-SWR הפעיל הנמוך ביותר
+Staffe e mast	מהדקים ותורן
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	זמן: בערך (התחלות + 1) פעמים הזמן הנוכחי, ועוד חישובים של מועמדים x עותקים.
+Tensione nel mast al cuscinetto	מאמץ בתורן במסב
+Tiro del tirante	מתיחות המסבך
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	הצינורות נלקחים מטבלת ההצרות: המידות זהות למודל NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	כל המרחקים עוברים את ה-SWR הפעיל המרבי ({0}): לא הוצע מרחק. העלה את ה-SWR הפעיל המרבי, נסה את עכבת הייחוס של האנטנה עצמה או כוונן את האנטנה הבודדת. המטריצה והגרף הם במרחק עם ה-SWR הפעיל הנמוך ביותר.
+V invertito	V הפוך
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), צימוד, SWR פעיל, מרחק מיטבי, שני תדרים
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	מהירות שיא באתר: vb sqrt(ce), כאשר vb = vb,0 ca (NTC 2018, תקופת חזרה 50 שנה) ו-ce(z) של קטגוריית החשיפה בגובה האנטנה.
+Velocità	מהירות
+Velocità a mano	מהירות ידנית
+Vento di sopravvivenza	רוח שרידות
+Vento di sopravvivenza del boom	רוח שרידות של הבום
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	רוח ניצבת לאלמנט שבה הנקודה הראשונה מגיעה לכניעה (כולל משקל עצמי וקרח).
+X da aggiungere al pilotato	X להוסיף לאלמנט המוזן
+X del pilotato	X של האלמנט המוזן
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). הבדיקה הסופית נעשית על ידי מנוע NEC על המודל עם ה-hairpin.
+Z0 della forcina	Z0 של ה-hairpin
+Z0 della linea dei due conduttori	Z0 של קו שני המוליכים
+Zona buona	אזור טוב
+al centro	במרכז
+caso peggiore	המקרה הגרוע
+caso peggiore delle due	הגרוע מבין השניים
+cerca...	חיפוש...
+copie entro le soglie	עותקים בתוך הספים
+corrente sinusoidale	זרם סינוסי
+distanza dal boom	מרחק מהבום
+distanza dall'inizio del boom	מרחק מתחילת הבום
+due condensatori sul lato basso	שני קבלים בצד התחתון
+effetto: calcolo in corso…	השפעה: מחשב…
+forza del vento x sbalzo	כוח רוח x בליטה
+il caso peggiore migliore	המקרה הגרוע הטוב ביותר
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	הדיפול השקול, העבה יותר, פחות מ-73 Ω
+il voto medio migliore	הציון הממוצע הטוב ביותר
+induttiva, in parallelo	השראי, במקביל
+la percentuale migliore di copie entro le soglie	האחוז הטוב ביותר של עותקים בתוך הספים
+linea a due fili	קו שני חוטים
+m  mast a	m  תורן ב-
+m dal suolo	m מעל הקרקע
+m sopra il boom, attacco al	m מעל הבום, מחובר ב-
+media delle due	ממוצע של השניים
+mm  lungo	mm  אורך
+mm, acciaio	mm, פלדה
+molto buono	טוב מאוד
+molto povero	גרוע מאוד
+nessun rinforzo	ללא חיזוק
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	אין צינור מסחרי עד +12 mm שמספיק: בדוק מחדש את ההצרה
+nessuna distanza sotto il ROS attivo massimo	אין מרחק מתחת ל-SWR הפעיל המרבי
+partenza dal modello aperto	התחל מהמודל הפתוח
+per lato, teso per annullare il momento verticale al mast	לכל צד, מתוח כדי לבטל את המומנט האנכי על התורן
+primo cedimento: tubo Ø	כשל ראשון: צינור Ø
+regge il vento di progetto con il 20 % di margine	עומד ברוח התכנון עם מרווח 20 %
+riferimenti bibliografici	מקורות ביבליוגרפיים
+sbalzo sopra il cuscinetto	בליטה מעל המסב
+schermo 1 λ x 1 λ	מסך 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	מקטעים צפופים) הליבה המורחבת משתמשת בנוסחה מדויקת יותר והתוצאה אמינה יותר.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	בלי פקק הצינור הפנימי נשען על שפת החיצוני ומקדם 1.25 מוחל על המאמץ ב-5 cm הראשונים: הערכה, מהדקים וחריצים משנים את התוצאה מאוד.
+sollecitazione / snervamento	מאמץ / כניעה
+tubo piu' grosso	צינור עבה יותר
+un filo riflettore	חוט מחזיר יחיד
+zona di cedimento	אזור כשל
+ø dei conduttori della forcina	ø מוליכי ה-hairpin
+ø del filo	ø חוט
+ø del pilotato	ø האלמנט המוזן
+accordata	מכוונן
+accordate	מכוונן
+alimentazione	הזנה
+alluminio	אלומיניום
+allungata	מוארך
+altro	אחר
+anello	לולאה
+angolo	זווית
+antiorario	נגד כיוון השעון
+aritmetico	אריתמטי
+automatico	אוטומטי
+banda	תחום
+bande	תחומים
+bordi	שוליים
+buono	טוב
+capacitiva	קיבולי
+carichi	עומסים
+carico	עומס
+cartesiana	קרטזי
+cavi	כבלים
+cavo	כבל
+centimetri	סנטימטרים
+centina	צלע
+cerchio	מעגל
+condensatore	קבל
+corrente	זרם
+destra	ימין
+diagramma	דיאגרמה
+diametro	קוטר
+differenza	הפרש
+dipoli	דיפולים
+dipolo	דיפול
+diretta	ישיר
+diritto	ישר
+due	שתיים
+elementi	אלמנטים
+elemento	אלמנט
+elimina	מחק
+equilatera	שווה צלעות
+esito	תוצאה
+esperimenti	ניסויים
+esponenziale	מעריכי
+fase	מופע
+ferriti	פריטים
+fili	חוטים
+filo	חוט
+forcina	hairpin
+forma	צורה
+formule	נוסחאות
+frequenza	תדר
+geometria	גאומטריה
+ghiaccio	קרח
+giudizio	דירוג
+gradi	מעלות
+griglia	רשת
+guadagno	הגבר
+incrociata	מוצלב
+larghezza	רוחב
+lato	צלע
+lega	סגסוגת
+libera	חופשי
+libero	חופשי
+linea	קו
+lineare	לינארי
+linee	קווים
+lobi	אונות צד
+locale	מקומי
+mai	אף פעם
+manicotto	שרוול
+mano	ידנית
+meccanica	מכניקה
+mezzaonda	חצי גל
+millimetri	מילימטרים
+misure	מדידות
+modello	מודל
+modo	מצב
+nessuna	אין
+nota	הערה
+nuovo	חדש
+operativo	עבודה
+orario	עם כיוון השעון
+ottagono	מתומן
+palo	תורן
+parabola	צלחת
+passo	פסיעה
+perdite	הפסדים
+perfetto	מושלם
+piano	מישור
+piatto	שטוח
+piedi	רגל
+polare	קוטבי
+pollici	אינצ'ים
+propria	עצמי
+punto	נקודה
+quadrato	ריבוע
+quadro	מרובע
+quota	גובה
+radiali	רדיאלים
+radiatore	מקרין
+raggio	רדיוס
+rame	נחושת
+ramo	ענף
+rapidi	מהיר
+rastremazioni	הצרות
+rete	רשת
+rettangolo	מלבן
+riepilogo	סיכום
+riflettore	מחזיר
+riga	שורה
+rombo	מעוין
+scarso	גרוע
+scarto	סטייה
+schiacciata	פחוס
+sempre	תמיד
+senso	כיוון
+si'	כן
+sinistra	שמאל
+soglia	סף
+sorgenti	מקורות
+sotto	מתחת
+spire	כריכות
+staffe	מהדקים
+stato	מצב
+sufficiente	מספיק
+tetto	גג
+tipo	סוג
+tirante	מסבך
+togli	הסר
+tondo	עגול
+traffico	תעבורה
+trasformatori	שנאים
+trombe	צופרים
+tubi	צינורות
+tubo	צינור
+tutti	הכול
+uguale	שווה
+uguali	שווים
+uso	השתמש
+a {0} x DL6WU; tutte sopra il massimo {1}	ב-{0} x DL6WU; כולם מעל המקסימום {1}
+% del mezzo boom	% מחצי הבום
++ aggiungi	+ הוסף
++ aggiungi variabile	+ הוסף משתנה
++ correzione del boom	+ תיקון בום
++ nuova	+ חדש
++ trappola	+ מלכודת
++ verso il disco.	+ לכיוון הצלחת.
++90 gradi Z	+90 מעלות Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- אריתמטי: בדיוק באמצע בין גבולות IARU של התחום (לדוגמה 145.000 MHz ב-2 m),\n
+- correzione del boom	- תיקון בום
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- עבודה: התדר שבו אתה באמת עובד (לדוגמה 144.300 MHz ב-2 m, 432.200 ב-70 cm),\n
+-10 (nero) 10-100 MHz	-10 (שחור) 10-100 MHz
+-10 nero	-10 שחור
+-2 (rosso) 0,25-10 MHz	-2 (אדום) 0.25-10 MHz
+-2 rosso	-2 אדום
+-6 (giallo) 3-40 MHz	-6 (צהוב) 3-40 MHz
+-6 giallo	-6 צהוב
+-90 gradi Z	-90 מעלות Z
+-> segmento NEC	-> מקטע NEC
+. "Annulla" torna indietro.	. "בטל" מחזיר.
+. Antenna base: fili 1-	. אנטנת בסיס: חוטים 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. עם Q כה גבוה הסריקה צריכה להשתרע על kHz ספורים בלבד.
+. Salvalo con Salva con nome.	. שמור אותו עם "שמור בשם".
+. Trascina per ruotare, rotella per ingrandire.	. גרור לסיבוב, גלגלת לזום.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. השתמש בחוט דק יותר, בליבה גדולה יותר או בשתי ליבות מוערמות.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (דרך Sengupta 2021) ו-GMRT טבלה 19.1
+12 (errore / HPBW)^2	12 (שגיאה / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	טבעת פסיבית: היקף {0:0.000} lambda, ללא מקור וללא קבל; ההשפעה נראית במודל המלא (מכוון או מחזיר).
+Automatico	אוטומטי
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, כמו nec2c ו-xnec2c: קוד המקור מגיע עם התוכנה (קובץ COPYING).\n
+Provincia di Trieste	מחוז טריאסטה
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	וב-C# עבור YA-NEC. ממשק ייחוס: xnec2c של 5B4AZ ושל Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	יעילות מחושבת מהשדה הרחוק, Prad / (Prad + הפסדים) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	העכבה וההפסדים פחות ופחות אמינים ככל שהחוט יורד (ראה BOG במדריך). לתוצאה בטוחה: לפחות lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	נוצר עד קוטר {3:0.00} m; חישוב הצמצם שלצדו תקף לכל קוטר וכבר מתחשב בצלעות (התיבה למעלה).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} מקטעים: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} על {5} Ω, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, יעילות {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° הגבהה
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL מהדורה 19, פרק 18 (יאגי 2 m של W9PE): שלושה אלמנטים ב-0.2 λ, כ-7 dBi ו-F/B מעל 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• התאמה של YA-NEC ל-nec2c (מוטות 20/15/10 m): מחזירים ב-0.185 / 0.197 / 0.222 λ, מכוונים ב-0.095 / 0.116 / 0.114 λ: בתוך הטווחים של המקורות.
+↶ Annulla	↶ בטל
+↷ Ripeti	↷ בצע שוב
+■ Ferma	■ עצור
+▶ Avvia	▶ התחל
+☐ mantieni lunghezza del boom	☐ שמור את אורך הבום
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ אין אזהרות: החלוקה למקטעים עומדת ברמה שנבחרה
+✓ nessun errore e nessun avviso	✓ אין שגיאות ואין אזהרות
+variabili del modello	משתני המודל
+nuova variabile dal modello	משתנה חדש מהמודל
+Scrivi una variabile nella linguetta Variabili…	כתוב משתנה בלשונית המשתנים…
+Elemento diritto	אלמנט ישר
+Elemento piegato	אלמנט מכופף
+Variabile nuova	משתנה חדש
+Minimo / massimo	מינימום / מקסימום
+Cosa cambia	מה משתנה
+in ocra: dove agisce la variabile	באוקר: היכן שהמשתנה פועל
+Crea la variabile	צור את המשתנה
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	המשתנה {0} נוצר: הגאומטריה לא משתנה. "בטל" בסרגל הגאומטריה מסיר אותו.
+Struttura 3D: dove agisce la variabile ▾	מבנה תלת-ממדי: היכן שהמשתנה פועל ▾
+Struttura 3D ▸	מבנה תלת-ממדי ▸
+Clic: nasconde o mostra la struttura	לחיצה: מסתיר או מציג את המבנה
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	אוקר מלא: משתמש במשתנה · אוקר מקווקו: משתמש בו דרך משתנה אחר
+attraverso {0}: fili {1}	דרך {0}: חוטים {1}

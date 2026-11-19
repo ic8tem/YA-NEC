@@ -105,6 +105,7 @@ namespace YaNec
                 if (files == null || files.Count == 0) return;
                 string path = files[0].TryGetLocalPath();
                 if (path == null) { Status("Impossibile leggere il file scelto.", true); return; }
+                EsempiVuoto();
                 LoadModelFile(path);
             }
             catch (Exception ex) { Status("Errore nell'apertura: " + ex.Message, true); }

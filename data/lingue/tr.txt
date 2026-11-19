@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Rengin ne kadar örtücü olduğu: hafif, orta veya güçlü. Tablo satırında örtü daha hafiftir, sayılar okunabilsin diye.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Tel {0} 3B görünümde seçildi: tablonun {1}. satırı
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Tel {0}: tel tablosunda yok (GW dışında bir geometri kartı)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Yeni sürümü hemen denetler (3 dakika beklemeden).
+terreno reale	gerçek arazi
+Locatore	Lokatör
+da 8 a 12 caratteri	8 ile 12 karakter
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	6 karakterle nokta kilometrelerce kayabilir: arazi profili en az 8 karakter gerektirir.
+Quota sito	Yerin rakımı
+Altezza antenna	Anten yüksekliği
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Anten merkezinin yerden yüksekliği. Modeldekinden farklıysa NEC deseni aynı akım dağılımıyla yükseltilir veya alçaltılır.
+Distanza max	Azami mesafe
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimut ve mesafeler her lokatör değişikliğinde yeniden hesaplanır (büyük daire, 6371 km küre).
+Terra	Kara
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Denizin yansıma katsayısını 0,25 m dalgalar için Ament çarpanıyla düşürür (standart sapma).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	pürüzlü yüzeyin istatistiksel modeli (Ament 1953): sıyırma açıları ve düzgün deniz için geçerlidir.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Profili Dünya'nın eğriliğiyle alçaltır (normal kırılmada etkin yarıçap 4/3) ve uzak yansıyan ışınları ıraksama çarpanıyla azaltır.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standart atmosfer (k = 4/3); kanallar veya terselmeler varsa görünür eğrilik değişir.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Anten ile çıkış yönü arasındaki en yüksek sırt, doğrudan ışını bir kenar gibi zayıflatır (Fresnel integrali), HFTA'daki gibi.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	tek bıçak kenarı: yuvarlak sırtlar veya art arda birkaç sırt en yükseğiyle yaklaşıklanır.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Hesabı her 10 derece azimutta bir tekrarlar (yalnızca DEM) ve anten her azimuta çevrilmiş olarak gülde değerlilik ölçüsünü gösterir.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	anten hep profilin azimutuna çevrili: döner anten için geçerlidir.
+Cartesiana dBi / gradi	Kartezyen dBi / derece
+0–180° intero	0–180° tam
+Zoom angolare	Açı yakınlaştırma
+Sovrapponi alla linguetta Verticale	Dikey sekmesinin üzerine yerleştir
+premi Calcola	Hesapla'ya basın
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Hesabı anteni 6'dan 30 m'ye (HF) veya 2'den 30 m'ye (VHF) taşıyarak tekrarlar ve yol üzerinde en iyi değerlilik ölçüsünü veren yüksekliği gösterir.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	akımlar hesaplanan modelinkiler olarak kalır: yüksekliğin empedans ve akımlar üzerindeki etkisi hesaba katılmaz (HFTA'daki gibi).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	ARRL Antenna Book'un varış açısı tabloları gerekir (bant ve bölgeye göre .PRN dosyaları): bulunur bulunmaz bu etkinleşir ve turuncu dilimleri gösterir.
+locatore non valido	geçersiz lokatör
+sul mare	deniz üzerinde
+sul terreno	kara üzerinde
+profilo reale	gerçek profil
+terreno piatto	düz arazi
+orizzonte ostruito	engellenmiş ufuk
+° (scala angolare ×	° (açı ölçeği ×
+← dietro	← arka
+avanti →	ön →
+statistiche degli angoli di arrivo: non caricate	varış açısı istatistiği: yüklenmedi
+rosa 0–360°: calcolo in corso…	gül 0–360°: hesaplanıyor…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Profil dosyasını seçin ("HorizonProfiler'dan" tıklayın).
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM yok: ilk kullanımda TINITALY veya SRTM1'i indirmek için ağ gerekir (sonra data/dem klasöründe kalırlar).
+Profilo del terreno	Arazi profili
+Lobo di elevazione	Yükselim lobu
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Önce modeli hesaplayın (üstteki Hesapla düğmesi): anten deseni NEC'ten gelir.
+da file	dosyadan
+dal DEM	DEM'den
+rispetto alla stessa antenna su terreno piatto	düz arazi üzerindeki aynı antene göre
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Gerçek profil üzerindeki lob ile düz arazi üzerindeki lob arasındaki fark, yararlı açılar üzerinden ortalanmış.
+Guadagno a 5° / 10°	5° / 10°'de kazanç
+Guadagno a 1° / 3°	1° / 3°'de kazanç
+Angoli coperti a -3 dB	-3 dB'de kapsanan açılar
+primo lobo sul profilo reale	gerçek profil üzerindeki ilk lob
+calcolo…	hesaplanıyor…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Serbest uzay modeli: akımlar zeminsizdir, HFTA'nın kullandığı serbest uzay deseni gibi. Yakındaki zemini hesaba katmak için modeli gerçek zeminle hesaplayın.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profil yalnızca tek bir azimut için geçerlidir: döner anten daha fazla yön gerektirir ("Tüm azimutlar" kutusu).
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	HFTA'daki gibi yöntem (N6BV): doğrudan ışın + profilin her yüzeyinde yansıyan ışınlar + sırtlar üzerinde kırınım. Anten deseni NEC'ten gelir; bu hesap araziyi ekler.
+Piatto	Düz
+Reale	Gerçek
+Primo minimo	İlk minimum
+Punto di riflessione	Yansıma noktası
+Orizzonte	Ufuk
+Uso: rotte DX in HF (angoli bassi 1–15°).	Kullanım: HF DX yolları (alçak açılar 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Kullanım: tropo ve MS (0–5°), alçak Ay ile EME (Ay doğuşu/batışında zemin kazancı).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Yolun yararlı açılarında en yüksek ortalama kazancı veren yükseklik.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	hesaplanan modelin akımları yükseklikte kaydırıldı: empedans ve zemin bağlaşımı modelinki olarak kalır.
+Calcola prima il terreno reale	Önce gerçek araziyi hesaplayın
+Esporta il lobo sul terreno reale	Gerçek arazi üzerindeki lobu dışa aktar
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Görüntüler: Esri, Maxar, Earthstar Geographics ve GIS kullanıcı topluluğu
+© i contributori di OpenStreetMap	© OpenStreetMap katkıcıları
+Sfondo	Arka plan
+Foto aerea	Hava fotoğrafı
+Solo griglia	Yalnızca ızgara
+Griglia	Izgara
+Cerca	Ara
+⌖ Centra sul locatore	⌖ Lokatöre ortala
+Punto scelto	Seçilen nokta
+Coordinate	Koordinatlar
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Haritaya tıklama = anten noktası; sürükleme = taşıma; tekerlek = yakınlaştırma (ızgara 6'dan 8, 10, 12 karaktere geçer). Kalın çerçeve = 6 karakterlik kare.
+non disponibile	mevcut değil
+Lunghezza elementi	Eleman uzunluğu
+Posizione sul boom	Bom üzerindeki konum
+Uniforme	Düzgün
+Distribuzione	Dağılım
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Kelepçeye merkez dışı takılmış eleman: kendi ekseni boyunca kayma, konum toleransıyla.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	gerçek kelepçe bom yakınında elektriksel uzunluğu da değiştirir: bunun için Bom düzeltmesi sekmesini kullanın.
+nuovo a ogni avvio	her çalıştırmada yeni
+Numero prove	Deneme sayısı
+Frequenze	Frekanslar
+Seme casuale	Rastgele tohum
+OBIETTIVO LISTA DI TAGLIO	KESİM LİSTESİ HEDEFİ
+Calo F/B max	Azami F/B düşüşü
+ROS max	Azami DDO
+Ferma	Durdur
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Beslenen elemana yakın elemanlar genellikle en kritik olanlardır; bom ucundakiler daha büyük hatalara dayanır.
+l'istogramma serve al Monte Carlo	histogram Monte Carlo içindir
+5% peggiore	en kötü %5
+Posizione mm	Konum mm
+Lunghezza mm	Uzunluk mm
+Tolleranza ammessa	İzin verilen tolerans
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Kırmızıyla, yapım toleransından daha azını gerektiren elemanlar.
+Calcola prima il modello	Önce modeli hesaplayın
+sensibilita'	duyarlılık
+Tolleranze: fermato	Toleranslar: durduruldu
+Diametro mm	Çap mm
+Tolleranza ammessa mm	İzin verilen tolerans mm
+Avvia prima il calcolo	Önce hesabı çalıştırın
+Esporta la lista di taglio	Kesim listesini dışa aktar
+Lista di taglio	Kesim listesi
+Obiettivi	Hedefler
+Calo massimo del F/B	Azami F/B düşüşü
+ROS massimo	Azami DDO
+Tolleranze di costruzione	Yapım toleransları
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Planlandı (taslak 13, onaylanacak): bu sürümde henüz etkin değil.
+Al quadro 20×2 mm	Al kare 20×2 mm
+Al quadro 25×2 mm	Al kare 25×2 mm
+Al quadro 30×2 mm	Al kare 30×2 mm
+Al quadro 40×2 mm	Al kare 40×2 mm
+Al tondo 25×1,5 mm	Al yuvarlak 25×1,5 mm
+Al tondo 30×2 mm	Al yuvarlak 30×2 mm
+Al tondo 40×2 mm	Al yuvarlak 40×2 mm
+Al tondo 50×2 mm	Al yuvarlak 50×2 mm
+Zona NTC	NTC bölgesi
+Quota sito as	Yerin rakımı olarak
+Periodo ritorno	Dönüş süresi
+Categoria esposiz.	Maruz kalma kategorisi
+Coeff. topografia	Topografya kats.
+Antenna da terra	Anten yerden yükseklik
+Palo sopra rotore	Rotor üstü direk
+Ø palo	Direk Ø
+Usa elementi e boom del modello	Modelin elemanlarını ve bomunu kullan
+Includi telaio, palo, cavi	Çerçeve, direk, kabloları dahil et
+Scansione direzione del vento	Rüzgâr yönü taraması
+UNITÀ	BİRİMLER
+N e kgf affiancati	N ve kgf yan yana
+solo N	yalnızca N
+solo kgf	yalnızca kgf
+Mostra	Göster
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	geçersiz lokatör: bölgeyi elle seçin
+Telaio a H	H çerçeve
+Cavi e divisore	Kablolar ve bölücü
+Parte	Parça
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Yandan esen rüzgârda elemanlar itmez (cross-flow, K5IU): bir boruya gelen kuvvet, eksenine dik rüzgâr bileşeninin karesiyle artar.
+momento flettente alla staffa del rotore	rotor kelepçesinde eğilme momenti
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Ön boyutlandırma: direk, kule ve temel için bir mühendisin denetiminin yerini tutmaz. Taban momenti Direk ve temel alt sekmesine gidecek.
+Sito e norma	Yer ve standart
+Norma	Standart
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; katsayılar CNR-DT 207 R1/2018 ve EN 1991-1-4
+Locatore / zona	Lokatör / bölge
+Risultati	Sonuçlar
+Forza massima	Azami kuvvet
+Momento flettente alla staffa del rotore	Rotor kelepçesinde eğilme momenti
+Momento torcente sul rotore	Rotordaki burulma momenti
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Ön boyutlandırma: direk, kule ve temel için yetkili bir mühendisin denetiminin yerini tutmaz.
+Al tondino pieno	Al dolu çubuk
+Materiale elementi	Eleman malzemesi
+Staffe, isolatori	Kelepçeler, yalıtkanlar
+g cad.	g adet
+Dipolo + scatola	Dipol + kutu
+Cavo fino al palo	Direğe kadar kablo
+STAFFA AL PALO	DİREK KELEPÇESİ
+Posizione attuale	Mevcut konum
+m dal riflettore	reflektörden m
+Massa / distanza	Kütle / mesafe
+Vento dalla linguetta Vento	Rüzgâr sekmesinden rüzgâr
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Rüzgâr alt sekmesindeki son hesabın tasarım basıncını kullanır; yoksa 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Tüm modeli bom boyunca kaydırarak önerilen kelepçenin orijine (direğin ve istif çerçevesinin bağlandığı yer) gelmesini sağlar. 3D yapıdaki Geri al bunu geri çevirir.
+Momenti in funzione della posizione della staffa	Kelepçe konumuna göre momentler
+Masse e aree per parte	Parçalara göre kütleler ve alanlar
+ultimo direttore	son direktör
+Staffe e isolatori	Kelepçeler ve yalıtkanlar
+Cavo sul boom	Bom üzerindeki kablo
+Massa kg	Kütle kg
+Baricentro m	Ağırlık merkezi m
+Area vento m²	Rüzgâr alanı m²
+Centro area m	Alan merkezi m
+solo peso	yalnızca ağırlık
+solo vento	yalnızca rüzgâr
+File Touchstone .s1p	Touchstone .s1p dosyası
+Formato letto	Okunan biçim
+CAVO TRA VNA E ANTENNA	VNA İLE ANTEN ARASINDAKİ KABLO
+R e X separate	R ve X ayrı
+Banda con ROS <	DDO < olan bant
+ROS: calcolato e misurato	DDO: hesaplanan ve ölçülen
+Confronto	Karşılaştırma
+misurato, cavo tolto	ölçülen, kablo çıkarılmış
+R calcolata	R hesaplanan
+X calcolata	X hesaplanan
+R misurata	R ölçülen
+X misurata	X ölçülen
+Calcolato	Hesaplanan
+Misurato	Ölçülen
+Scarto	Fark
+Frequenza del ROS minimo	En düşük DDO frekansı
+ROS minimo	En düşük DDO
+nessuna correzione: calcolo e misura coincidono.	düzeltme yok: hesap ve ölçüm uyuşuyor.
+calcolo NEC sul campo della misura…	Ölçüm aralığında NEC hesabı…
+Misura del VNA	VNA ölçümü
+Tutti	Tümü
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Tüm bant boyunca F/B ve F/R'yi görmek için bir tarama yapın (üstteki Tarama düğmesi)
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = ileri kazanç eksi arka yarıküredeki ortalama güç (azimut 90-270°, 0°'nin üzerindeki tüm yükselimler). Aynı zamanda optimize edicinin hedefleri arasındadır.
+Tabelle: F/B e F/R su tutta la banda	Tablolar: tüm bant boyunca F/B ve F/R
+Valori dello sweep	Tarama değerleri
+ANTENNE RICEVENTI	ALICI ANTENLER
+4-square in ricezione	Alım için 4-square
+8 verticali in cerchio	Daire üzerinde 8 dikey
+Modello aperto	Modeli aç
+Isotropo	İzotropik
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = istenen yöndeki kazanç eksi tüm yarı uzaydaki ortalama kazanç: kazançtan farklı olarak kayıplara bağlı değildir.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Gerçek arazi sekmesindeki ortanca varış açısını istenen yükselim olarak kullanır (bant ve bölgeye göre istatistik). ARRL istatistiği yüklü değilse burada yazılı yükselim korunur.
+Direzione voluta	İstenen yön
+Hz  rumore	Hz  gürültü
+NF ricevitore	Alıcı NF
+sorgente locale az	yerel kaynak az
+Cifre di merito in ricezione	Alım değerlilik ölçüleri
+Basta il segnale?	Sinyal yetiyor mu?
+calcolo in corso…	hesaplanıyor…
+RDF in funzione della frequenza	Frekansa göre RDF
+Calcola prima il modello aperto	Önce açık modeli hesaplayın
+verticale λ/4	λ/4 dikey
+° · dB relativi · arancio: -3 dB	° · göreli dB · turuncu: -3 dB
+settore ±30° az, 10–40° el	sektör ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Ön sektördeki ortalama kazanç eksi arka yarıküredeki ortalama.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN DMF'yi yalnızca 20 derecedeki kazançla tanımlar; burada taslaktaki sektörün ortalaması kullanılır, bu yüzden değerler kitaptakilerle bire bir karşılaştırılamaz.
+molto basso: serve un preamplificatore	çok düşük: ön yükselteç gerekir
+basso ma accettabile: vedi soglia	düşük ama kabul edilebilir: eşiğe bakın
+come un'antenna trasmittente	bir verici anten gibi
+F/R medio sull'emisfero posteriore	Arka yarıkürede ortalama F/R
+Rumore d'antenna ai morsetti	Uçlarda anten gürültüsü
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Uçlardaki dış gürültü gücü: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + gürültünün geldiği yöne göre ağırlıklandırılmış ortalama kazanç.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	ufuktan gelen gürültü yükselimde exp(-el/10 derece) ile ağırlıklandırılmış: alçaktan gelen uzak yapay gürültüyü temsil eder; gerçek dağılım yere bağlıdır.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	izotropik arka planla aynı güçte, 5 derece yükselimde nokta kaynak.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	zemin üzerinde izotropik gürültü; zemin gürültü eklemez.
+Margine sul ricevitore	Alıcı payı
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Anten gürültüsü alıcı gürültüsünü 6 dB'den az aşıyor: duyarlılığı alıcı sınırlıyor. Daha fazla ön yükseltme veya daha düşük NF'li bir alıcı gerekir.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Kazanç 1,8
+Spazio richiesto	Gereken alan
+λ/4 in tubo quadro	Kare boruda λ/4
+λ/4 in tubo tondo	Yuvarlak boruda λ/4
+Solo cavi di fase	Yalnızca faz hatları
+Aria	Hava
+Uscite	Çıkışlar
+Z antenne	Anten Z
+Z ingresso	Giriş Z
+Dielettrico	Dielektrik
+Connettori	Konnektörler
+Correggi accorciamento dei connettori	Konnektör kısalmasını düzelt
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Konnektörlerin içindeki hat parçasını uzunluktan çıkarır.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	N konnektörlerle uç başına 4 mm tahmini (3 BNC, 1,5 SMA): en iyisi VNA ile 1 mm'lik adımlarla kısaltarak ayarlamaktır.
+Divisori	Bölücüler
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Açık istifin antenlerinin etkin empedanslarını (anten başına bir kaynak) ve faz hatlarının en kısa uzunluğu için aralıkları kullanır.
+CAVI DI FASE	FAZ HATLARI
+Lunghezza minima	En kısa uzunluk
+Passo verticale	Dikey aralık
+solo cavi di fase: nessun trasformatore da costruire	yalnızca faz hatları: yapılacak transformatör yok
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω kablo paralel = 37,5 Ω
+quadro, lato	kare, kenar
+tondo, Ø	yuvarlak, Ø
+Z0 richiesta	Gereken Z0
+Ø conduttore interno	İç iletken Ø
+VF del cavo	Kablo VF
+λ/4 in aria, mm	Havada λ/4, mm
+da tagliare, mm	kesilecek, mm
+Z carico in parallelo	Paralel yük Z
+Rami λ/4: Z0 = Zin · √N	λ/4 kollar: Z0 = Zin · √N
+Resistenze a stella	Yıldız dirençler
+Isolamento tra le uscite	Çıkışlar arası yalıtım
+Perdita stimata	Tahmini kayıp
+Carico usato	Kullanılan yük
+non potenza di 2	2'nin kuvveti değil
+ROS all'ingresso	Giriş DDO
+solo cavi di fase	yalnızca faz hatları
+Uscita	Çıkış
+Lungh. elettrica	Elektriksel uzunluk
+Fisica mm	Fiziksel mm
+Perdita dB	Kayıp dB
+° di fase).	° faz).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° yukarı); bölücüdeki empedans artık tam olarak tekrarlanmaz.
+Solo cavi di fase: nessun disegno da stampare	Yalnızca faz hatları: yazdırılacak çizim yok
+Divisore	Bölücü
+50 mm di controllo	50 mm denetimi
+GEOMETRIA	GEOMETRİ
+λ/4 sul boom	Bom üzerinde λ/4
+stesso piano	aynı düzlem
+Metallico, isolati	Metal, yalıtılmış
+Non metallico	Metal olmayan
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Bom NEC modelinde yok: metal bomdan yalıtılmış elemanlarla etki küçüktür (Hesaplayıcılar'da bom düzeltmesi).
+Yagi di base	Temel Yagi
+Disposizione	Yerleşim
+Sfasamento piani	Düzlem kayması
+Cavo di ritardo λ/4	λ/4 gecikme kablosu
+Includi relè e cavi reali	Gerçek röleleri ve kabloları dahil et
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Gecikme kablosunun kaybını (VF 0,66, 144 MHz'de 10 dB/100 m, frekansın kareköküyle ölçeklenmiş) ve röle için 0,1 dB ekler.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	75 ohm kablo ve koaksiyel rölenin tipik değerleri; program sizinkileri bilmez.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Aynı fazlama ağı turnstile için de çalışır (90°'de çaprazlanmış dipoller).
+AR (dB) / ROS	AR (dB) / DDO
+Vista frontale	Önden görünüş
+Componenti co-polare / cross-polare	Eş ve çapraz polarizasyon bileşenleri
+Rapporto assiale e ROS in frequenza	Frekansa göre eksen oranı ve DDO
+piano A	düzlem A
+piano B	düzlem B
+vista dal davanti — boom al centro	önden görünüş — bom ortada
+piani sfalsati di λ/4 lungo il boom	bom boyunca λ/4 kaydırılmış düzlemler
+Yagi incrociate: serve una Yagi con una sola sorgente	Çapraz Yagi: tek kaynaklı bir Yagi gerekir
+Yagi incrociate: calcolo in corso...	Çapraz Yagi: hesaplanıyor...
+Rapporto assiale in asse	Eksen üzerinde eksen oranı
+Rapporto assiale a −3 dB	−3 dB'de eksen oranı
+Isolamento tra i due piani	İki düzlem arası yalıtım
+Fase della rete sul piano B	B düzleminde ağ fazı
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Tam dik ve simetrik düzlemler: modelde bağlaşım ve ters polarizasyon neredeyse sıfırdır. Gerçekte kelepçeler, kablolar ve küçük asimetriler bunları yaklaşık 25-35 dB ile sınırlar.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	1,8 MHz'den 1296 MHz'e: balun listesi banda göre değişir
+LINEA DI DISCESA	BESLEME HATTI
+Coassiale	Koaksiyel
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Dengeli açık hatta ekran yoktur: ortak mod yalnızca dengesizliklerden gelir. Kart koaksiyel durumu hesaplar; açık hat için tuner ile Hatlar (TL) kullanın.
+Lungo il boom	Bom boyunca
+m → palo	m → direk
+Discesa sul palo	Direkten aşağı
+Fino alla stazione	İstasyona kadar
+Calza a massa sul palo / traliccio	Ekran direğe / kuleye topraklanmış
+Messa a terra all'ingresso stazione	İstasyon girişinde toprak
+BALUN DA CONFRONTARE	KARŞILAŞTIRILACAK BALUNLAR
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	110 mm üzerinde 8 tur RG-213: Wheeler'a göre endüktans, Medhurst'e göre öz kapasitans.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 ve tahmini öz kapasitans: şokun gerçek empedansı ölçülmelidir.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	Düşük Q'lu paralel RLC olarak 1:1 ferrit toroid.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	Tepede 5 kOhm (karışım 31 ile 10 MHz, karışım 43 ile 25 MHz): 2 x FT-240 üzerinde 12 turun tipik değerleri.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksiyel λ/2 4:1: dengeli besleme, ekranlar birleşik.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	f0'da 600 ohm rezonans olarak artık ortak mod (Q 3): montaja bağlıdır.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 kılıf: ekran ile kılıf arasında kısa devre λ/4 hat, f0'da yüksek empedans.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Kılıf Z0 50 ohm ve çeyrek dalgada 0,08 dB kayıp.
+10 perline in ferrite sulla calza.	Ekran üzerinde 10 ferrit boncuk.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	144 MHz'de boncuk başına 40 ohm (karışım 61), karışım 43 ile 30 MHz üstünde 100 ohm: tipik katalog değerleri.
+Caso mostrato	Gösterilen durum
+premi Calcola il confronto	Karşılaştırmayı hesapla'ya basın
+Corrente lungo la calza, dal dipolo verso il basso	Ekran boyunca akım, dipolden aşağı
+Vista laterale: corrente sulla calza	Yandan görünüş: ekrandaki akım
+F/R medio	Ortalama F/R
+Z / ROS	Z / DDO
+Perdita nel balun	Balundaki kayıp
+Potenza dissipata nel balun a 1 kW	1 kW'ta balunda harcanan güç
+Banda con calza < 5 %	Ekran akımı < %5 olan bant
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Gri öğeler diğer bandın balunlarıdır; frekans seçildiğinde etkinleşirler. HF'de istasyona kadar ekran da (topraklı) sayılır, VHF/UHF'de bom ve direk üzerindeki kısım. Ekran, besleme noktasının bir tarafına bağlı bir teldir, gerçekte balunsuz olduğu gibi; balun ilk bölümdeki ortak mod empedansıdır.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Cam elyaf iletmez: çerçeve NEC'e girmez, yalnızca faz hatlarının ekranları kalır.
+Includi palo sotto il telaio	Çerçevenin altındaki direği dahil et
+Cavi di fase lungo i montanti	Dikmeler boyunca faz hatları
+Rotore e controventi	Rotor ve gergi telleri
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Planlandı: rotor ve gergi telleri tel olarak (kulenin ölçüleri gerekir).
+Materiale	Malzeme
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	kırmızı = NEC teli olarak modellenen çerçeve parçaları · kesikli = faz hatlarının ekranı
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Yatay polarizasyon: dikey dikmeler zayıf bağlaşımlıdır; yatay travers ve faz hatları değil.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Dikey polarizasyon: dikmeler ve direk elemanlara paraleldir ve daha çok etkiler; yatay travers az.
+Confronto senza / con telaio	Çerçevesiz / çerçeveli karşılaştırma
+Diagramma orizzontale sovrapposto	Üst üste yatay desen
+premi Calcola confronto	Karşılaştırmayı hesapla'ya basın
+Stack: calcola prima il modello	İstif: önce modeli hesaplayın
+Stack: calcolo senza e con telaio...	İstif: çerçevesiz ve çerçeveli hesaplanıyor...
+Pezzo	Parça
+Collegato	Bağlı
+Cavi	Kablolar
+Senza telaio	Çerçevesiz
+Con telaio	Çerçeveli
+Z ingresso divisore	Bölücünün giriş Z'si
+senza telaio	çerçevesiz
+con telaio	çerçeveli
+Stack: confronto senza / con telaio fatto	İstif: çerçevesiz / çerçeveli karşılaştırma tamamlandı
+CARICHI HF	HF YÜKLERİ
+INSERISCI NEL MODELLO	MODELE EKLE
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Şapka telin ucuna gider (b veya e), linear loading telin seçilen noktasına.
+Inserisci nel modello	Modele ekle
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Yükler taslağında zaten onaylandı: L ve C'nin Q'su, f0, banda göre Z, bileşendeki gerilim ve akım. Burada yapım tipleri eklenir.
+Trappola coassiale	Koaksiyel tuzak
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	iç iletken orta sargının başına lehimlenir (uçları değiştirmek rezonansı yaklaşık 50 kHz düşürür).
+Calcola spire per f0	f0 için tur sayısını hesapla
+Spire dell'avvolgimento (anche frazionarie).	Sargının turları (kesirli de).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	gerçek f0 yüzde birkaç farklıdır: dip-metre veya VNA ile ölçüp turları düzeltin.
+Blocca	Bloke eder
+dipolo con	şununla dipol:
+Filo Ø	Tel Ø
+Calcola C per f0	f0 için C'yi hesapla
+mm  Filo Ø	mm  Tel Ø
+mm  Passo	mm  Adım
+mm  Spire	mm  Turlar
+MHz  dal centro	MHz  merkezden
+m  Braccio	m  Kol
+m  Filo dell'elemento Ø	m  Eleman teli Ø
+Calcola spire per la risonanza	Rezonans için turları hesapla
+Piega	Katlama
+m  Distanza tra i fili	m  Teller arası mesafe
+Calcola la piega per la risonanza	Rezonans için katlamayı hesapla
+Raggi	Teller
+m  Filo Ø	m  Tel Ø
+Verticale alto	Dikeyin yüksekliği
+m  Frequenza	m  Frekans
+MHz  Filo Ø	MHz  Tel Ø
+Calcola i raggi per la risonanza	Rezonans için telleri hesapla
+L misurata	Ölçülen L
+MHz  Autorisonanza f0	MHz  Öz rezonans f0
+Cappello capacitivo in punta al verticale	Dikeyin tepesinde kapasitif şapka
+Bobina dalle misure	Ölçülerden bobin
+Reattanza del cappello in frequenza	Frekansa göre şapkanın reaktansı
+impedenza della trappola	tuzak empedansı
+Si comporta da	Şöyle davranır
+Potenza persa	Kaybedilen güç
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Tablodaki gerilim ve kayıplar için verici gücü.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	alt bant: karın noktasında akım sqrt(P/73) ve tuzakta I0 cos(beta a); bloke bant: iç dipolün ucunda gerilim I0 Z0, tuzak ve ışıma arasında paylaşılır.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	karın noktasında akım sqrt(P/73) ve yükte I0 cos(beta a), a merkeze uzaklık.
+Risonanza propria f0	Öz rezonans f0
+Q ideale	İdeal Q
+Q della trappola alla risonanza.	Rezonansta tuzağın Q'su.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	artı dielektrik kayıp (tanjant 3e-4 PE, 2e-4 PTFE). Ölçülen koaksiyel tuzakların Q'su genellikle 100 ile 300 arasıdır.
+Lunghezza di cavo	Kablo uzunluğu
++ 10 cm per le saldature	lehimler için + 10 cm
+R in parallelo equivalente	Eşdeğer paralel R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: modele giren LD yüküdür
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Alt bantta tuzaklı dipol kolu, tam boy kolla karşılaştırmalı (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	Tuzak yük olarak verilince NEC doğru uzunluğu verir.
+Induttanza misurata	Ölçülen endüktans
+dalla misura	ölçümden
+Autorisonanza	Öz rezonans
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Bobinin kendi öz kapasitansıyla tek başına rezonansa girdiği frekans.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	uzunluk / çapa göre Medhurst tablosundan öz kapasitans, metal kütlelerden uzak tek katlı bobinler için geçerlidir.
+Q della bobina alla frequenza di lavoro.	Çalışma frekansında bobinin Q'su.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	deri etkisinden telin direnci çarpı yakınlık çarpanı 1 + 2 (d/p)^2 (d tel, p adım): Medhurst uzunluğu çapına yakın bobinler için benzer değerler verir.
+Reattanza della piega	Katlamanın reaktansı
+Z0 della linea	Hattın Z0'ı
+Q della piega	Katlamanın Q'su
+Capacita' del cappello	Şapkanın kapasitansı
+Capacita' del cappello verso lo spazio.	Şapkanın uzaya göre kapasitansı.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	tellerin toplamı (ince tel, 2 pi eps0 l / (ln(2l/a) - 1)) ve dolu diske doğru doyan halka (8 eps0 r): teller birbirini perdeler. Tel olarak eklenince NEC tam olarak hesaplar.
+in punta al verticale	dikeyin tepesinde
+Altezza per la risonanza	Rezonans için yükseklik
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Dikeye etkisi
+Carichi HF: apri un modello nella finestra principale.	HF yükleri: ana pencerede bir model açın.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading ve kapasitif şapka tel olarak eklenir: diğerleri için «Yük olarak» seçin.
+Il cappello capacitivo si inserisce come fili.	Kapasitif şapka tel olarak eklenir.
+RLC parallelo	Paralel RLC
+Effetto sul dipolo	Dipole etkisi
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	O noktadaki yükle, tam çeyrek dalgaya (71,3 / f) göre kolun kısalması.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	yüklü kolun hat modeli X = Z0 (cot(beta b) - tan(beta a)), uç etkisi için x 0,95.
+Esegui il test	Testi çalıştır
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Kazanç AGT ile düzeltilmiş olarak gösterilebilir (optimize edicide zaten öngörüldü).
+Controllo prima/dopo il calcolo	Hesap öncesi/sonrası denetim
+Esito	Sonuç
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Bir veya daha fazla denetim ±0,2 dB dışında: bölütlemeyi gözden geçirin (3D yapı > Bölütleme... ve Bölütlemeyi denetle).
+Tutti i controlli entro ±0,2 dB.	Tüm denetimler ±0,2 dB içinde.
+Linea a finestra 450	450 ohm pencereli hat
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Hesapla'ya basın: NEC her frekansta açık modelin empedansını hesaplar.
+Perdita nella linea	Hat kaybı
+Perdita totale	Toplam kayıp
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Hat ile verici arasındaki tuner tipi (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	ağın yüklü Q'sundan (Qn = sqrt(Rmax/Rmin - 1), T ve Pi için iki bölüm) ve bobinin Q'sundan tahmin edilen kayıp; N6BV'nin TLW'si bileşenleri tek tek hesaplar ve birkaç onda bir dB farklı olabilir.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Örnek: 2 × 20 m doublet (ZS6BKW/G5RV). Tuner 20 Ω'dan az gördüğünde uyarı: yüksek kayıplar, hattı uzatmak veya kısaltmak önerilir. TLW'deki gibi kayıplı hat (N6BV, ARRL).
+USA costa est	ABD doğu kıyısı
+USA costa ovest	ABD batı kıyısı
+Giappone	Japonya
+Caraibi	Karayipler
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: hizmet GeoTIFF döndürmedi
+GeoTIFF compresso: non supportato	Sıkıştırılmış GeoTIFF: desteklenmiyor
+GeoTIFF: tipo di dato non supportato	GeoTIFF: veri türü desteklenmiyor
+Il file non contiene coppie distanza / quota.	Dosya mesafe / yükseklik çiftleri içermiyor.
+Nessuno	Yok
+Ferriti a perline	Ferrit boncuklar
+Cavo e balun: segmento della sorgente non trovato.	Kablo ve balun: kaynak bölütü bulunamadı.
+solo palo	yalnızca direk
+Acciaio zincato	Galvanizli çelik
+Alluminio	Alüminyum
+Vetroresina	Cam elyaf
+Montante sx/dx	Sol/sağ dikme
+al boom	bom'a doğru
+Traversa	Travers
+Palo	Direk
+al dipolo	dipole doğru
+N, femmina	N, dişi
+senza connettori	konnektörsüz
+rurale tranquillo	sakin kırsal
+Verticale λ/4	λ/4 dikey
+λ/8 di lato	kenar başına λ/8
+0,37 λ di diametro	0,37 λ çap
+Cappello capacitivo	Kapasitif şapka
+W8NX bassa impedenza	W8NX düşük empedans
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	PTFE dielektrikli kalın bir kablo (RG-393) veya yüksek gerilim kondansatörlü bir LC tuzak
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Katlama lambda/8'den uzun: hat artık sabit bir endüktans gibi davranmıyor, tel olarak ekleyip rezonansı NEC ile denetleyin.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Şapkanın kapasitansı bir tahmindir (birbirini perdeleyen teller): tam değer için tel olarak ekleyin ve NEC ile hesaplayın.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Yükün konumu çeyrek dalganın ötesinde: merkeze yaklaştırın.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	şapka telin ucuna gider: ilk (b) veya son (e) bölütü seçin.
+il punto scelto e' troppo vicino all'estremo del filo.	seçilen nokta telin ucuna çok yakın.
+questo tipo entra nel modello come carico.	bu tip modele yük olarak girer.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF yükleri: YA-NEC hesaplayıcısının eklediği teller
+Il file Touchstone non contiene punti di S11.	Touchstone dosyası S11 noktası içermiyor.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV frekans, Re(S11), Im(S11) satırları içermiyor.
+AGT in spazio libero, senza perdite	Serbest uzayda, kayıpsız AGT
+IMPOSTAZIONI	AYARLAR
+Schiera Hi-Z di verticali corte	Kısa dikeylerden Hi-Z grubu
+Base del loop	Halkanın tabanı
+Distanza, lato o diametro	Aralık, kenar veya çap
+Altezza delle verticali	Dikeylerin yüksekliği
+Base del loop dal suolo	Halkanın yerden yüksekliği
+Fase tra le file	Sıralar arası faz
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Alçak yatay dipol: yere lambda/4'ten yakınken lob yukarı gider. IV3PRK sıralamasındaki «yüksek açı» referansıdır (RDF 7,3 dB): alçak açılı alıcı antenlerle karşılaştırılır.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	Gary Breed K9AY'nin K9AY'si (QST, Eylül 1997): aynı direkte 90 derece açılı iki dikey halka, sonlandırma direnci (tipik 390 ohm, F/B için ayarlı), 9:1 transformatör. Burada seçilen yöne çevrilmiş, Alım (RDF) sayfasındaki gibi zemin üzerinde kapatılmış tek bir halka. Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Alım 4-square: lambda/8 kenarlı bir karenin köşelerinde dört kısa aktif dikey, köşegen boyunca ışıyor. Boş faz = tam arka sıfır (sıralar arası pi + beta d): en yüksek kuramsal yönlülüğü verir; gerçek fazlama ağları (ON4UN, IV3PRK) başka fazlar kullanır ve daha düşük RDF verir (IV3PRK 9,4 dB). Düğme en iyi RDF'yi veren fazı arar.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Hi-Z Antennas'takiler gibi kısa aktif dikey grupları: 2 eleman end-fire (kardioid, lambda/8), üçgende 3 (kenar lambda/6, bir köşe seçilen yöne), dairede 8 (çap 0,37 lambda: yöne doğru dördü ve karşıdakiler kullanılır). Hi-Z: dairede 8 kendi birleştiricisiyle RDF 13,4 dB; basit iki sıralı model daha düşük kalır. Düğme en iyi RDF'yi veren fazı arar.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Dikeyler gerçek zeminden başlar (Sommerfeld zeminli GE 1): NEC-2'de gerçek zemine bağlı bir tel, kaynak bölütüne bağlı bir empedans verir (NEC-2 kılavuzu, EZNEC). Desen ve RDF yol göstericidir; yükseltilmiş radyallerle bağlantı tüm alıcı antenler için planlanmıştır.
+fase tra le file da 120 a 300 gradi per l'RDF	RDF için sıralar arası faz 120 ile 300 derece arası
+nessuna fase con il lobo in avanti	hiçbir faz lobu öne vermiyor
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	En iyi RDF için sıralar arası faz: {0} derece (RDF {1} dB). Yeniden hesaplanıyor...
+linea d'orizzonte	ufuk çizgisi
+scala angolare	açı ölçeği
+lobo reale sopra il piatto fino a	düz üzerinde gerçek lob şuraya kadar:
+Profilo verso	Şu yöndeki profil:
+Lobo verticale e angoli di arrivo a	Dikey lob ve varış açıları:
+Cos'e' l'RDF	RDF nedir
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = istenen yöndeki kazanç - tüm yönlerdeki ortalama kazanç (W8JI; eskiden 60'larda SNIF denirdi). Gürültü her yönden eşit gelirse antenin sinyal/gürültü oranını ne kadar iyileştirdiğini ölçer; mutlak kazanç sayılmaz (bir ön yükselteç onu telafi eder). EZNEC'teki gibi ortalama: üst yarıküre bölü tüm küre (4 pi). Bu kabulle sonuçlar IV3PRK ve W8JI/Hi-Z ile uyuşur (dikey 5,07'ye karşı 5,06 ve 4,9; Beverage 350 m 13,5'e karşı 13,66). Sınır: gerçek gürültü düzgün değildir (enerji hatları, yerel QRM): bu yüzden F/B ve lobun biçimi de önemlidir. Verici antenler için RDF anlamsızdır: bu yüzden yalnızca bu sekmede hesaplanır. DMF (Directivity Merit Figure, ON4UN): öne doğru 20 derece yükselimde kazanç eksi arka yarı uzayın ortalama kazancı (90 dereceyi aşan azimut, zemin üzerinde, alana göre kosinüsle ağırlıklandırılmış): antenin arkadan gelen gürültüyü ne kadar bastırdığını gösterir. ON4UN, DMF ile RDF'nin birbiriyle karşılaştırılmamasını uyarır. Kaynaklar: W8JI ve W8WWV (RDF), ON4UN Low-Band DXing böl. 7 (DMF, tablo 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	yükselim
+azimut	azimut
+azimut a {0}°	{0}°'de azimut
+totale	toplam
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	İlk sıfıra açıklık (FNBW): {0}°;  en yüksek yan lob: {1}
+Didascalie {0} %	Etiketler %{0}
+ROS	DDO
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ Kaynaktaki {1} değerine karşı RDF {0} dB: ölçüleri, sonlandırmayı ve zemini denetleyin (kaynak başka bir zemin veya geometri kullanıyor olabilir).
+Azimut a {0}° · {1} MHz	{0}°'de azimut · {1} MHz
+Azimut a {0}° di elevazione	{0}° yükselimde azimut
+RUMORE	GÜRÜLTÜ
+Apri la scheda {0}	{0} kartını aç
+caso mostrato: {0}	gösterilen durum: {0}
+Rastremazioni	Teleskopik
+BANDA	BANT
+λ/2 coassiale 4:1	koaksiyel λ/2 4:1
+Manicotto λ/4	λ/4 kılıf
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	NEC teli olarak kablo ekranı ve direk; 1,8 ile 1296 MHz arası balun karşılaştırması (ortak mod akımı, F/B, ortalama F/R, kayıp, 1 kW'ta güç).
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	NEC teli olarak dikmeler, travers, direk ve faz hatlarının ekranları: çerçevesiz / çerçeveli karşılaştırma (kazanç, F/B, ortalama F/R, loblar, bölücünün Z'si, Tant ve G/T).
+TIPO	TİP
+DATI	VERİLER
+TELAIO	ÇERÇEVE
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	Kare veya yuvarlak boruda, kabloda λ/4, Wilkinson; faz hatları, eğim; 1:1 çizim
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X veya +, λ/4 kaydırılmış düzlemler; H, V, RHCP, LHCP, X-pol; eksen oranı ve yalıtım
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Eşit uzunluklar → eşit faz. λ/2'nin katları → etkin empedans bölücüde tekrarlanır. Önerilen tolerans ± 5 mm (= ± {0}° faz).
+impedenze attive delle {0} antenne dello stack in parallelo	istifin {0} anteninin paralel etkin empedansları
+Banda con ROS < {0}	DDO < {0} olan bant
+? Manuale	? Kılavuz
+Apre la spiegazione nel manuale	Açıklamayı kılavuzda açar
+riferimento	referans
+Rispetto alla singola antenna	Tek antene göre
+{0} antenne ideali	{0} ideal anten
+x la distanza DL6WU, a passi di	x DL6WU aralığı, adım:
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Sol eksen: istifin G'si - tek antenin G'si, 0'dan yukarı. Sağ eksen: istifin F/R'si - tek antenin F/R'si, ters çevrilmiş, 0 üstte: istifin F/R'yi iyileştirdiği yerde eğri iner ve en alçak nokta en büyük iyileşmedir. G/T tabloda kalır.
+ΔG sulla singola	Tek anten üzerinde ΔG
+Chiusura del programma	Programı kapatma
+Vuoi chiudere YA-NEC?	YA-NEC'i kapatmak istiyor musunuz?
+Grazie per avermi usato: spero di esserti stato utile.	Beni kullandığınız için teşekkürler: umarım yararlı olmuşumdur.
+Sì	Evet
+ROS attivo	Etkin DDO
+G realizzato	Gerçekleşen G
+ROS attivo massimo	Azami etkin DDO
+riflessi minimi	en az yansıma
+ROS attivo alto: da non scegliere	yüksek etkin DDO: seçmeyin
+Documenti tecnici	Teknik belgeler
+Manuale d'uso	Kullanım kılavuzu
+Manuale di calcolo e delle fonti	Hesap ve kaynak kılavuzu
+Citazioni	Alıntılar
+Cerca in tutti i documenti	Tüm belgelerde ara
+Apri il PDF	PDF'yi aç
+Nessun risultato per «{0}»	«{0}» için sonuç yok
+Primi {0} risultati per «{1}»	«{1}» için ilk {0} sonuç
+{0} risultati per «{1}»	«{1}» için {0} sonuç
+Apre la citazione {0}	{0} alıntısını açar
+Manuale di calcolo	Hesap kılavuzu
+È pronta la versione {0} di YA-NEC	YA-NEC'in {0} sürümü hazır
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Zaten indirildi ve kuruldu: program yeniden başlatıldığında geçerli olur.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Mac'te kendiliğinden kurulmaz: yeni .dmg dosyasını GitHub'daki sürümler sayfasından indirin.
+Riavvia adesso	Şimdi yeniden başlat
+Più tardi	Daha sonra
+Apri la pagina delle versioni	Sürümler sayfasını aç
+Aggiornamento di YA-NEC	YA-NEC güncellemesi
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Zaten indirildi ve kuruldu. Program kendiliğinden yeniden başlar ve açık modeli yeniden açar.
+Riavvio tra {0} s	{0} sn sonra yeniden başlatma
+Questo avviso si chiude tra {0} s	Bu bildirim {0} sn sonra kapanır
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Güncellemeden sonra kaydedilmemiş model yeniden açıldı: istediğinizde kaydedin (kopya data/aggiornamenti içinde).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Güncellemeden sonra açık olan model yeniden açıldı.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Her kutunun açıklama ve kaynaklı kendi yardımı vardır. Gri: işaretli = her zaman etkin (kapanmaz); işaretsiz = henüz yok; düğmelerle seçim = sabit seçim. Kılavuz, bölüm 21.
+"): sorgente sempre accesa.	"): kaynak her zaman etkin.
+' non da' un numero valido.	' geçerli bir sayı değil.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik olduğu gibi
+0 - misure del metodo	0 - yöntemin ölçüleri
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = bandın standart WR dalga kılavuzu (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = diğer uçta aynı çanak (kendi yankısı).
+0 = stesso disco all'altro capo.	0 = diğer uçta aynı çanak.
+0 gradi a destra	0 derece sağa
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = uçtan üçte bir: empedans 200-300 ohm, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: kenardan uzak, eğilmenin besleyiciyi odaktan çıkaracağı yerde.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 dolu polietilen (RG-58, RG-213), 0,8-0,85 köpük dielektrik.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 dolu polietilen, 0,8-0,85 köpük, 0,9-0,97 açık hat.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 kılavuzlanmış lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - beslenen halka
+1 - radiatore	1 - ışıyıcı
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = bir tur (eskisi gibi). Daha çok turla Rr N² ile, deri etkisi kaybı N ile artar.
+1 cavo	1 kablo
+1-2-3 elementi	1-2-3 eleman
+1. Obiettivi e pesi	1. Hedefler ve ağırlıklar
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Rüzgâr, dengeleme, bölücüler, balunlar, çapraz Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Alıcı antenler etkinleştirildi
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	Büyük çanakla 10 GHz: yüzey ve yönlendirmenin yanında ısıl ve rüzgâr deformasyonu (ATA: gece 0,7 mm RMS, gündüz güneşte 3 mm), desteklerin eğilmesi ve librasyondan saçılma önemlidir.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: %100'de yazdırın, «sayfaya sığdır» olmadan
+1005/f piedi	1005/f fit
+144 isol.	144 yal.
+2 - riflettore	2 - reflektör
+2 - riflettori	2 - reflektörler
+2 in parallelo	2 paralel
+2 lati	2 kenar
+2. Variabili che l'ottimizzatore puo' cambiare	2. Optimize edicinin değiştirebileceği değişkenler
+200 Ω con balun 4:1	4:1 balunla 200 Ω
+25 tondo	25 yuvarlak
+3 - direttori	3 - direktörler
+3 gruppi	3 grup
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 veya 4. 2 ile kendi düzlemleri dışında rijitlik yoktur.
+3. Registro dei passi - clic su una riga per riprenderla	3. Adım günlüğü - geri almak için bir satıra tıklayın
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω veya 4:1 balun
+36 Ω + terra	36 Ω + toprak
+4 - tutto insieme	4 - hepsi birlikte
+4 lati	4 kenar
+4 sorgenti: vedi tabella	4 kaynak: tabloya bakın
+432 isol.	432 yal.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	IC8TEM tarafından 15/11/2026'da onaylanan 45 veri denetimi: eşikler ve açıklamalar kılavuzda, bölüm 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 fit yaklaşık 18 dBi, 12 fit yaklaşık 20,5 dBi
+75 ohm ideale	75 ohm ideal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	yarıçaptan 8 kat uzun. Kalın teller veya kısa bölütlerle (UHF'de kalın borular, yakın elemanlar,\n
+9 fili	9 tel
+9 fili a 0,1 λ	0,1 λ'da 9 tel
+Accorciamento del pilotato	Beslenen elemanın kısalması
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	%8'in üzerinde kısalma: doğrusal tahmin güvenilir değil, NEC ile denetleyin.
+Allega il modello aperto	Açık modeli ekle
+Allega il registro di oggi	Bugünkü günlüğü ekle
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Dalgaların RMS yüksekliği ve antenin deniz üstü yüksekliği, Desenler > Gerçek arazi altında.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Empedans grafiği için frekans çevresindeki tarama genişliği.
+Antenna a	Anten şurada:
+Applica la freccia al modello NEC	Sarkmayı NEC modeline uygula
+Approvata, in preparazione: non ancora attiva in questa versione.	Onaylandı, hazırlanıyor: bu sürümde henüz etkin değil.
+Apri la cartella	Klasörü aç
+Apri un modello nella finestra principale	Ana pencerede bir model açın
+Apro il modello e il diagramma 3D resta vuoto.	Modeli açıyorum ve 3D görünüm boş kalıyor.
+Area al vento dell'antenna	Antenin rüzgâr alanı
+Area al vento totale	Toplam rüzgâr alanı
+Area al vento totale e lista di taglio	Toplam rüzgâr alanı ve kesim listesi
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Dikkat: açılı birleşen veya birleşim yerinde farklı çaplı tellerle kullanmayın.\n
+Bobina di carico per la risonanza	Rezonans için yükleme bobini
+Boom con il tirante	Gergili bom
+C1 in serie con la loop	Halkayla seri C1
+C1 serie, C2 parallelo	C1 seri, C2 paralel
+C2 in parallelo all'ingresso	Girişe paralel C2
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Hesaplayıcılar > Alıcı antenler: alçak dipol, K9AY, 4-square RX, Hi-Z 2/3/8 eleman, RDF için iyileştirilmiş sıralar arası faz ve toprak bağlantısı uyarısıyla.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mekanik hesaplar (Rüzgâr ve Dengeleme), Hesaplayıcılar > Bölücüler ve çapraz Yagi, Nesneler > Kablo ve balun ile istif çerçevesi, HF yükleri.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Ön boyutlandırma: kurulum için yetkili bir teknisyenin projesi geçerlidir.
+Candidati da controllare	Denetlenecek adaylar
+Categoria	Kategori
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Yerin maruz kalma kategorisi (NTC 2018, tablo 3.3.II ve şekil 3.3.2): arazinin pürüzlülük sınıfına (A şehir merkezleri ... D engelsiz alanlar, deniz) ve kıyıya uzaklığa bağlıdır. I = açık kıyı veya deniz, V = şehir merkezi.
+Cebik, poi NEC	Cebik, sonra NEC
+Centro della banda scelta:\n	Seçilen bandın merkezi:\n
+Con ghiaccio	Buzla
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Buzla: rüzgâr 0,6 katına düşürülmüş ve sağdaki kutudan radyal buz (basitleştirilmiş birleşim ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Aynı tohumla test aynen tekrarlanır.
+Condizione della sorgente non capita ("	Kaynak koşulu anlaşılamadı ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	3 dakikayı beklemeden hemen GitHub'ı denetler. Yeni sürüm varsa indirir, bildirir ve otomatik güncelleme gibi yeniden başlatır (10 saniye, model yeniden açılır). Otomatik güncelleme kapalıyken de çalışır.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Her zaman bölütleme denetimi ve Uyarılar tarafından denetlenir (normal çekirdekle 8, genişletilmiş çekirdekle 2).
+Copie per candidato	Aday başına kopya
+Coppia sulla staffa boom-mast	Bom-direk kelepçesinde tork
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	data/segnalazioni içinde zip oluşturur ve GitHub «New issue» sayfasını metin hazır olarak açar. Zip'i siz, elle eklersiniz: program kendiliğinden hiçbir şey göndermez.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Dünya eğriliği, Desenler > Gerçek arazi altında.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Çap, Cebik formüllerinin aralığı dışında (1E-6 ile 1E-2 lambda arası).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	İkinci zeminin mesafesi ve türü: 1.5 için onaylandı (Gerçek arazi 2).
+Distanze di stack HF	HF istif aralıkları
+Distanze di stack: accoppiamento e distanza migliore	İstif aralıkları: bağlaşım ve en iyi aralık
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	İyileştirmeden sonra en iyi sonuçlar toleranslarla denetime geçer. 0 = denetim yok.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Çok alçak uçlar: insanlara ve hayvanlara dikkat (uçlarda yüksek gerilim).
+F/B peggiore	En kötü F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq dosyası: AutoEZ'in TLParms'lı hatları (kayıplı kablolar) nominal Zo ve VF kullanır, kayıp yoktur: NEC'in TL kartı kayıpsızdır.
+Filo riflettore	Reflektör teli
+Filo ripiegato	Katlanmış tel
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Uzun hairpin (0,2 lambda'dan fazla): aralığı azaltmak veya daha kalın iletkenler kullanmak daha iyidir.
+Forza del vento di progetto	Tasarım rüzgâr kuvveti
+Forza l'aggiornamento	Güncellemeyi zorla
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Kirişin sarkması: düz bölümün ağının açıklığın ortasında paraboloidin ne kadar altında kaldığı (yüzeylemeye girer). Kayışların toplam kütlesi {4:0.00} kg{5}.
+Freccia tolta dal modello.	Sarkma modelden kaldırıldı.
+Ghiaccio radiale	Radyal buz
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA dosyaları NEC-2 için her zaman yeniden bölütlenir (kılavuz, bölüm 10).
+I lobi si leggono nella tabella delle distanze di stack.	Loblar istif aralıkları tablosunda okunur.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (yuvarlar), FIX (keser), MOD, MAX, MIN, ODD (tek tam sayı: beslenen telin bölütleri için yararlı).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Normal NEC2 her teli ince bir çizgi olarak ele alır: bu, bölüt en az şu kadar olduğu sürece geçerlidir:\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Tek bir reflektör teli çok küçük bir iyileşme verir (Cebik): ekran veya 9 tel daha iyidir.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Direk akma sınırını aşıyor: daha kalın direk veya daha kısa çıkıntı.
+Impedenza del cavo	Kablo empedansı
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Başka bir biçimde: Veri denetimlerindeki r5 denetimi, bom uzunluğu için fiziksel azaminin üzerindeki kazancı işaretler.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	N² ile endüktans (sık turlar) ve tek turlu NEC modeli: burada NEC yalnızca o tek turun geometrisini denetler.
+Interasse della forcina	Hairpin aralığı
+Isole (tranne Sicilia e Sardegna) e mare aperto	Adalar (Sicilya ve Sardinya hariç) ve açık deniz
+Kernel esteso del NEC2 (scheda EK).\n	Genişletilmiş NEC2 çekirdeği (EK kartı).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Hairpin aralığı iletken çapından büyük olmalıdır.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim, ışıyıcıyı üstte aşağı katlanmış bir telle kapatır, stub'ın hemen üstüne kadar.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Bunu Bölütleme denetimi penceresi yapar (yukarıdaki düğme).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin simetriktir: deseni gamma gibi çarpıtmaz. Besleme noktasında yine de balun veya şok gerekir.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin yalnızca beslenen elemanın R'si kablo empedansından düşükse çalışır: daha büyük R için gamma veya transformatör kullanın.
+La prepara IC8TEM: non ancora attiva.	IC8TEM hazırlıyor: henüz etkin değil.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	EZNEC Geometry Check'in altı kuralı, her hesapta, Uyarılar sekmesinde.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: düzeltmesiz Z = {0:0.0} {1}j{2:0.0} ohm (düzeltmeyle {3:0.0} {4}j{5:0.0} ohm).
+Località	Yer
+Loop orizzontale di 1 λ	1 λ yatay halka
+Lunghezza del pilotato	Beslenen eleman uzunluğu
+Lunghezza della forcina	Hairpin uzunluğu
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Açık modeli (.nec) kaydedilmemiş olsa bile zip'e koyar.
+Mette nello zip il registro di oggi della cartella registri.	logs klasöründeki bugünkü günlüğü zip'e koyar.
+Momenti al mast	Direk üzerindeki momentler
+Momento al cuscinetto	Yatakta moment
+NEC: risonanza cercata dal motore	NEC: motorun aradığı rezonans
+NOTE SU QUESTA VERSIONE (fase 0)\n	BU SÜRÜM HAKKINDA NOTLAR (aşama 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	YENİ · zemin üzerinde: yükseklikler, aralıklar, istenen çıkış açıları
+Nel modello non ci sono elementi orizzontali diritti	Modelde düz yatay eleman yok
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	İstif tablosunda ve modelin Nesnelerinde (istif çerçevesi, bölücüler).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Geometri kartlarına ifadeleri boşluksuz yazın, örneğin:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Önerilen aralık yok
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Önerilen aralık yok: hepsi azami etkin DDO'yu aşıyor.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Dosyalarda IP adresi, e-posta, kullanıcı adı yok: ev klasörünün yolu «~» olur. GitHub hesabı olmadan zip'i istediğiniz gibi gönderebilirsiniz.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Henüz otomatik değil: Uyarılar'daki AGT testiyle elle yapılır (ARRL 24., 4nec2).
+Numero di spire	Tur sayısı
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Her kopyanın ölçüleri, Toleranslar sekmesindeki toleranslar içinde rastgele kaydırılmıştır (varsayılan: uzunluk ±1 mm, konum ±2 mm, çap ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Açık modelin yanı sıra, her değişkenin en küçüğü ile en büyüğü arasında rastgele seçilen başlangıçlar. 0 = eskisi gibi.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Gürültü/GT/İstif sekmesinin Gerçek gökyüzü gürültüsü sayfası: C#'a aktarılmış skynoise hesabı (HEALPix haritalarını okuma, ara değerleme, yıldız zamanı, koordinatlar, Ay) ve data/cielo içindeki iki G8ONH haritası.
+Partenze a caso	Rastgele başlangıçlar
+Perimetro Cebik	Cebik çevresi
+Peso del boom	Bom ağırlığı
+Pi-greco	Pi ağı
+Prepara la segnalazione	Raporu hazırla
+Proposta	Öneri
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	145 MHz'de nec2c testi (40 mm arayla 12 mm borular): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Ne zaman gerekir: bölüt/yarıçap oranı yaklaşık 2 ile 8 arasında (2'nin altında hiçbiri güvenilir değil).\n
+Quota s.l.m.	Rakım
+R del pilotato	Beslenen eleman R
+ROS attivo minimo {0}	En düşük etkin DDO {0}
+Raggio equivalente dei due conduttori	İki iletkenin eşdeğer yarıçapı
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Beslenen elemanın şimdiki reaktansı: pozitifse beslenen eleman daha da kısaltılmalıdır.
+Reattanza della forcina	Hairpin reaktansı
+Reattanza voluta del pilotato	Beslenen elemanın istenen reaktansı
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktans: kl = pi/2'nin ötesinde (veya çok kalın iletkenle) AEH formülü geçerli değildir, NEC kullanın.
+Reinstalla la versione attuale	Geçerli sürümü yeniden kur
+Rel Z non positiva	Re Z pozitif değil
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Rezonansta beslenen elemanın direnci, modelden veya NEC hesabından.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Yeniden başlatma başarısız: YA-NEC'i elle kapatıp yeniden açın.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Sürüm aynı olsa bile indirir ve yeniden kurar: bir program dosyası bozulduysa yararlıdır.
+Scansione	Tarama
+Scegli il candidato con	Adayı şuna göre seç:
+Schermo	Ekran
+Scrivi due frequenze diverse.	İki farklı frekans yazın.
+Segnala un problema	Sorun bildir
+Seme del caso	Rastgele tohum
+Serve solo per la reattanza (dipolo e monopolo).	Yalnızca reaktans için gerekir (dipol ve monopol).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	2 veya daha fazla turla kullanılır: 2 iletken çapının altında gerçek kayıp yakınlık etkisiyle artar (hesaplanmaz).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Desenler > Gerçek arazi'de kullanılır: ıraksama çarpanı ve pürüzlülükle deniz yansıması.
+Sicilia e provincia di Reggio Calabria	Sicilya ve Reggio Calabria ili
+Sollecitazione	Gerilme
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	0,25 λ'nın üzerinde lob alçalmaya başlar: NVIS için daha az uygun.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	30 MHz üzerinde Cebik'in regresyonu burada sunulduğu aralığın (HF telleri) dışında kullanılır: Otomatik veya NEC daha iyidir.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	0,1 λ'nın altında yukarı kazanç düşer (Cebik): çok alçak bir anten hiçbir şey kazanmaz.
+Sotto l'antenna	Antenin altında
+Spina (tubo o tondo) dentro il giunto telescopico.	Teleskopik eklem içinde tıkaç (boru veya çubuk).
+Spina interna nei giunti	Eklemlerde iç tıkaç
+Stack con il ROS attivo piu' basso	En düşük etkin DDO'lu istif
+Staffe e mast	Kelepçeler ve direk
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Süre: şimdikinin yaklaşık (başlangıçlar + 1) katı, artı adaylar x kopyalar hesabı.
+Tensione nel mast al cuscinetto	Yatakta direkteki gerilme
+Tiro del tirante	Gerginin çekme kuvveti
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Borular Daralmalar tablosundan alındı: ölçüler NEC modelindekilerle aynıdır.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Tüm aralıklar azami etkin DDO'yu ({0}) aşıyor: önerilen aralık yok. Azami etkin DDO'yu yükseltin, antenin kendi referans empedansını deneyin veya tek anteni ayarlayın. Matris ve grafik en düşük etkin DDO'lu aralıktadır.
+V invertito	Ters V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), bağlaşım, etkin DDO, en iyi aralık, iki frekans
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Yerdeki tepe rüzgâr hızı: vb sqrt(ce), vb = vb,0 ca (NTC 2018, 50 yıllık dönüş süresi) ve anten yüksekliğinde maruz kalma kategorisinin ce(z) değeri.
+Velocità	Hız
+Velocità a mano	Elle hız
+Vento di sopravvivenza	Dayanım rüzgârı
+Vento di sopravvivenza del boom	Bomun dayanım rüzgârı
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	İlk noktanın akma sınırına ulaştığı, elemana dik rüzgâr (öz ağırlık ve buz dahil).
+X da aggiungere al pilotato	Beslenen elemana eklenecek X
+X del pilotato	Beslenen eleman X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Son denetimi NEC motoru hairpinli model üzerinde yapar.
+Z0 della forcina	Hairpin Z0
+Z0 della linea dei due conduttori	İki iletkenli hattın Z0'ı
+Zona buona	İyi bölge
+al centro	ortada
+caso peggiore	en kötü durum
+caso peggiore delle due	ikisinin en kötüsü
+cerca...	ara...
+copie entro le soglie	eşikler içindeki kopyalar
+corrente sinusoidale	sinüzoidal akım
+distanza dal boom	bomdan uzaklık
+distanza dall'inizio del boom	bomun başından uzaklık
+due condensatori sul lato basso	alt tarafta iki kondansatör
+effetto: calcolo in corso…	etki: hesaplanıyor…
+forza del vento x sbalzo	rüzgâr kuvveti x çıkıntı
+il caso peggiore migliore	en iyi en kötü durum
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	eşdeğer, daha kalın dipolün 73 Ω'dan azı var
+il voto medio migliore	en iyi ortalama puan
+induttiva, in parallelo	endüktif, paralel
+la percentuale migliore di copie entro le soglie	eşikler içindeki kopyaların en iyi yüzdesi
+linea a due fili	iki telli hat
+m  mast a	m  direk şurada:
+m dal suolo	m yerden
+m sopra il boom, attacco al	m bomun üstünde, şuraya bağlı:
+media delle due	ikisinin ortalaması
+mm  lungo	mm  uzunluk
+mm, acciaio	mm, çelik
+molto buono	çok iyi
+molto povero	çok zayıf
+nessun rinforzo	takviyesiz
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	+12 mm'ye kadar hiçbir ticari boru yetmiyor: daralmayı gözden geçirin
+nessuna distanza sotto il ROS attivo massimo	azami etkin DDO'nun altında aralık yok
+partenza dal modello aperto	açık modelden başla
+per lato, teso per annullare il momento verticale al mast	kenar başına, direkteki dikey momenti sıfırlamak için gerdirilmiş
+primo cedimento: tubo Ø	ilk göçme: boru Ø
+regge il vento di progetto con il 20 % di margine	tasarım rüzgârına %20 payla dayanır
+riferimenti bibliografici	kaynakça
+sbalzo sopra il cuscinetto	yatağın üstündeki çıkıntı
+schermo 1 λ x 1 λ	ekran 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	yoğun bölütler) genişletilmiş çekirdek daha kesin bir formül kullanır ve sonuç daha güvenilirdir.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	tıkaç olmadan iç boru dış borunun kenarına dayanır ve ilk 5 cm'deki gerilmeye 1,25 çarpanı uygulanır: bir tahmindir, kelepçeler ve yarıklar sonucu çok değiştirir.
+sollecitazione / snervamento	gerilme / akma sınırı
+tubo piu' grosso	daha kalın boru
+un filo riflettore	tek reflektör teli
+zona di cedimento	göçme bölgesi
+ø dei conduttori della forcina	hairpin iletkenlerinin ø'ı
+ø del filo	tel ø
+ø del pilotato	beslenen eleman ø
+accordata	ayarlı
+accordate	ayarlı
+alimentazione	besleme
+alluminio	alüminyum
+allungata	uzatılmış
+altro	diğer
+anello	halka
+angolo	açı
+antiorario	saat yönünün tersi
+aritmetico	aritmetik
+automatico	otomatik
+banda	bant
+bande	bantlar
+bordi	kenarlar
+buono	iyi
+capacitiva	kapasitif
+carichi	yükler
+carico	yük
+cartesiana	kartezyen
+cavi	kablolar
+cavo	kablo
+centimetri	santimetre
+centina	kaburga
+cerchio	daire
+condensatore	kondansatör
+corrente	akım
+destra	sağ
+diagramma	desen
+diametro	çap
+differenza	fark
+dipoli	dipoller
+dipolo	dipol
+diretta	doğrudan
+diritto	düz
+due	iki
+elementi	elemanlar
+elemento	eleman
+elimina	sil
+equilatera	eşkenar
+esito	sonuç
+esperimenti	deneyler
+esponenziale	üstel
+fase	faz
+ferriti	ferritler
+fili	teller
+filo	tel
+forcina	hairpin
+forma	biçim
+formule	formüller
+frequenza	frekans
+geometria	geometri
+ghiaccio	buz
+giudizio	değerlendirme
+gradi	derece
+griglia	ızgara
+guadagno	kazanç
+incrociata	çapraz
+larghezza	genişlik
+lato	kenar
+lega	alaşım
+libera	serbest
+libero	serbest
+linea	hat
+lineare	doğrusal
+linee	hatlar
+lobi	yan loblar
+locale	yerel
+mai	asla
+manicotto	kılıf
+mano	elle
+meccanica	mekanik
+mezzaonda	yarım dalga
+millimetri	milimetre
+misure	ölçüler
+modello	model
+modo	mod
+nessuna	yok
+nota	not
+nuovo	yeni
+operativo	çalışma
+orario	saat yönü
+ottagono	sekizgen
+palo	direk
+parabola	çanak
+passo	adım
+perdite	kayıplar
+perfetto	mükemmel
+piano	düzlem
+piatto	yassı
+piedi	fit
+polare	kutupsal
+pollici	inç
+propria	kendi
+punto	nokta
+quadrato	kare
+quadro	kare
+quota	yükseklik
+radiali	radyaller
+radiatore	ışıyıcı
+raggio	yarıçap
+rame	bakır
+ramo	kol
+rapidi	hızlı
+rastremazioni	daralmalar
+rete	ağ
+rettangolo	dikdörtgen
+riepilogo	özet
+riflettore	reflektör
+riga	sıra
+rombo	eşkenar dörtgen
+scarso	zayıf
+scarto	sapma
+schiacciata	yassılaştırılmış
+sempre	her zaman
+senso	yön
+si'	evet
+sinistra	sol
+soglia	eşik
+sorgenti	kaynaklar
+sotto	altında
+spire	turlar
+staffe	kelepçeler
+stato	durum
+sufficiente	yeterli
+tetto	çatı
+tipo	tip
+tirante	gergi
+togli	kaldır
+tondo	yuvarlak
+traffico	trafik
+trasformatori	transformatörler
+trombe	huni antenler
+tubi	borular
+tubo	boru
+tutti	tümü
+uguale	eşit
+uguali	eşit
+uso	kullan
+a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU'da; tümü azami {1} üzerinde
+% del mezzo boom	yarım bomun %'si
++ aggiungi	+ ekle
++ aggiungi variabile	+ değişken ekle
++ correzione del boom	+ bom düzeltmesi
++ nuova	+ yeni
++ trappola	+ tuzak
++ verso il disco.	+ çanağa doğru.
++90 gradi Z	+90 derece Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetik: bandın IARU sınırlarının tam ortası (örneğin 2 m'de 145,000 MHz),\n
+- correzione del boom	- bom düzeltmesi
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- çalışma: gerçekten çalıştığınız frekans (örneğin 2 m'de 144,300 MHz, 70 cm'de 432,200),\n
+-10 (nero) 10-100 MHz	-10 (siyah) 10-100 MHz
+-10 nero	-10 siyah
+-2 (rosso) 0,25-10 MHz	-2 (kırmızı) 0,25-10 MHz
+-2 rosso	-2 kırmızı
+-6 (giallo) 3-40 MHz	-6 (sarı) 3-40 MHz
+-6 giallo	-6 sarı
+-90 gradi Z	-90 derece Z
+-> segmento NEC	-> NEC bölütü
+. "Annulla" torna indietro.	. «Geri al» geri döner.
+. Antenna base: fili 1-	. Temel anten: teller 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Bu kadar yüksek Q ile tarama yalnızca birkaç kHz kapsamalıdır.
+. Salvalo con Salva con nome.	. Farklı kaydet ile kaydedin.
+. Trascina per ruotare, rotella per ingrandire.	. Döndürmek için sürükleyin, yakınlaştırmak için tekerlek.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Daha ince tel, daha büyük çekirdek veya üst üste iki çekirdek kullanın.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (Sengupta 2021 üzerinden) ve GMRT tablo 19.1
+12 (errore / HPBW)^2	12 (hata / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasif halka: çevre {0:0.000} lambda, kaynaksız ve kondansatörsüz; etki tam modelde görülür (direktör veya reflektör).
+Automatico	Otomatik
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, nec2c ve xnec2c gibi: kaynak kod programla birlikte gelir (COPYING dosyası).\n
+Provincia di Trieste	Trieste ili
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	ve YA-NEC için C# ile. Başvuru arayüzü: 5B4AZ ve Eric KJ7LNW'nin xnec2c'si.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	uzak alandan hesaplanan verim, Prad / (Prad + kayıplar) = %{3:0.0}.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	tel alçaldıkça empedans ve kayıplar giderek daha az güvenilir olur (kılavuzda BOG'a bakın). Güvenli bir sonuç için: en az lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	{3:0.00} m çapa kadar oluşturulur; yanındaki açıklık hesabı her çap için geçerlidir ve kaburgaları zaten hesaba katar (yukarıdaki kutu).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} bölüt: Z = {2:0.000} {3:+0.000;-0.000}j, {5} ohm'da DDO {4:0.00}, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, verim %{10:0.00}, AGT {11:0.00} dB
+° di elevazione	° yükselim
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. bs., böl. 18 (W9PE'nin 2 m Yagi'si): 0,2 λ aralıklı üç eleman, yaklaşık 7 dBi ve 15 dB üzerinde F/B.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC'in nec2c ile uyumu (20/15/10 m çubuklar): reflektörler 0,185 / 0,197 / 0,222 λ'da, direktörler 0,095 / 0,116 / 0,114 λ'da: kaynakların aralıkları içinde.
+↶ Annulla	↶ Geri al
+↷ Ripeti	↷ Yinele
+■ Ferma	■ Durdur
+▶ Avvia	▶ Başlat
+☐ mantieni lunghezza del boom	☐ bom uzunluğunu koru
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ uyarı yok: bölütleme seçilen düzeyi karşılıyor
+✓ nessun errore e nessun avviso	✓ hata ve uyarı yok
+variabili del modello	model değişkenleri
+nuova variabile dal modello	modelden yeni değişken
+Scrivi una variabile nella linguetta Variabili…	Değişkenler sekmesine bir değişken yazın…
+Elemento diritto	Düz eleman
+Elemento piegato	Bükülmüş eleman
+Variabile nuova	Yeni değişken
+Minimo / massimo	En küçük / en büyük
+Cosa cambia	Ne değişir
+in ocra: dove agisce la variabile	koyu sarıyla: değişkenin etkidiği yer
+Crea la variabile	Değişkeni oluştur
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	{0} değişkeni oluşturuldu: geometri değişmez. Geometri çubuğundaki «Geri al» onu kaldırır.
+Struttura 3D: dove agisce la variabile ▾	3D yapı: değişkenin etkidiği yer ▾
+Struttura 3D ▸	3D yapı ▸
+Clic: nasconde o mostra la struttura	Tıklama: yapıyı gizler veya gösterir
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	düz koyu sarı: değişkeni kullanır · kesikli koyu sarı: onu başka bir değişken üzerinden kullanır
+attraverso {0}: fili {1}	{0} üzerinden: teller {1}

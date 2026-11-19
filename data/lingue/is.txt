@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Hversu þekjandi liturinn er: létt, miðlungs eða sterk. Á línu töflunnar er slæðan léttari svo tölurnar sjáist.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Vír {0} valinn í þrívíddarsýninni: lína {1} í töflunni
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Vír {0}: ekki í vírtöflunni (rúmfræðispjald annað en GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Leitar strax að nýrri útgáfu (án þess að bíða í 3 mínútur).
+terreno reale	raunverulegt landslag
+Locatore	Staðsetningarkóði
+da 8 a 12 caratteri	8 til 12 stafir
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Með 6 stöfum getur punkturinn skeikað um kílómetra: landslagssniðið þarf a.m.k. 8 stafi.
+Quota sito	Hæð staðarins
+Altezza antenna	Hæð loftnets
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Hæð miðju loftnetsins yfir jörðu. Ef hún er önnur en í líkaninu er NEC-ritið hækkað eða lækkað með sömu straumdreifingu.
+Distanza max	Hámarksfjarlægð
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Stefnuhorn og fjarlægðir endurreiknuð við hverja breytingu á staðsetningarkóða (stórbaugur, kúla 6371 km).
+Terra	Land
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Lækkar endurvarpsstuðul sjávar með Ament-stuðlinum fyrir 0,25 m öldur (staðalfrávik).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	tölfræðilíkan fyrir hrjúft yfirborð (Ament 1953): gildir fyrir strjúkandi horn og jafnan sjó.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Lækkar sniðið vegna sveigju jarðar (virkur radíus 4/3 við eðlilega ljósbrotsbeygju) og dregur úr fjarlægum endurvörpuðum geislum með dreifistuðlinum.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	staðallofthjúpur (k = 4/3); með rásum eða hitahvörfum breytist sýnileg sveigja.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Hæsti hryggurinn milli loftnetsins og útgeislunarstefnunnar deyfir beina geislann eins og brún (Fresnel-heildi), eins og í HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	ein hnífsegg: ávalir hryggir eða margir hryggir í röð eru nálgaðir með þeim hæsta.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Endurtekur útreikninginn á 10 gráðu fresti í stefnuhorni (aðeins DEM) og sýnir verðleikatöluna á rósinni, með loftnetinu snúið að hverju stefnuhorni.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	með loftnetinu alltaf snúið að stefnuhorni sniðsins: gildir fyrir snúanlegt loftnet.
+Cartesiana dBi / gradi	Kartesískt dBi / gráður
+0–180° intero	0–180° allt
+Zoom angolare	Hornaaðdráttur
+Sovrapponi alla linguetta Verticale	Leggja yfir flipann Lóðrétt
+premi Calcola	ýttu á Reikna
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Endurtekur útreikninginn með loftnetinu frá 6 til 30 m (HF) eða frá 2 til 30 m (VHF) og sýnir hæðina með bestu verðleikatölu á leiðinni.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	straumarnir eru áfram þeir úr reiknaða líkaninu: áhrif hæðar á viðnám og strauma eru ekki tekin með (eins og í HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Töflur ARRL Antenna Book um komuhorn þarf (.PRN-skrár eftir bandi og svæði): um leið og þær eru tiltækar virkjast þetta og sýnir appelsínugulu svæðin.
+locatore non valido	ógildur staðsetningarkóði
+sul mare	yfir sjó
+sul terreno	yfir landi
+profilo reale	raunverulegt snið
+terreno piatto	slétt land
+orizzonte ostruito	hulinn sjóndeildarhringur
+° (scala angolare ×	° (hornakvarði ×
+← dietro	← aftur
+avanti →	fram →
+statistiche degli angoli di arrivo: non caricate	tölfræði komuhorna: ekki hlaðin
+rosa 0–360°: calcolo in corso…	rós 0–360°: reiknar…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Veldu sniðskrána (smelltu á "Frá HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM ekki tiltækt: við fyrstu notkun þarf net til að sækja TINITALY eða SRTM1 (síðan verða þau í möppunni data/dem).
+Profilo del terreno	Landslagssnið
+Lobo di elevazione	Hækkunargeiri
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Reiknaðu líkanið fyrst (hnappurinn Reikna efst): loftnetsritið kemur frá NEC.
+da file	úr skrá
+dal DEM	úr DEM
+rispetto alla stessa antenna su terreno piatto	miðað við sama loftnet yfir sléttu landi
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Munur á geiranum yfir raunverulega sniðinu og geiranum yfir sléttu landi, að meðaltali yfir nýtileg horn.
+Guadagno a 5° / 10°	Mögnun við 5° / 10°
+Guadagno a 1° / 3°	Mögnun við 1° / 3°
+Angoli coperti a -3 dB	Horn sem falla innan -3 dB
+primo lobo sul profilo reale	fyrsti geiri yfir raunverulega sniðinu
+calcolo…	reiknar…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Líkan í frjálsu rúmi: straumarnir eru þeir án jarðar, eins og ritið í frjálsu rúmi sem HFTA notar. Til að taka nærliggjandi jörð með skaltu reikna líkanið með raunverulegri jörð.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Sniðið gildir aðeins fyrir eitt stefnuhorn: snúanlegt loftnet þarf fleiri stefnur (reiturinn "Öll stefnuhorn").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Aðferð eins og í HFTA (N6BV): beinn geisli + endurvarpaðir geislar á hverjum fleti sniðsins + bjögun yfir hryggina. Loftnetsritið kemur frá NEC; þessi útreikningur bætir landslaginu við.
+Piatto	Slétt
+Reale	Raunverulegt
+Primo minimo	Fyrsta lágmark
+Punto di riflessione	Endurvarpspunktur
+Orizzonte	Sjóndeildarhringur
+Uso: rotte DX in HF (angoli bassi 1–15°).	Notkun: HF-DX-leiðir (lág horn 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Notkun: tropo og MS (0–5°), EME með lágt tungl (jarðmögnun við tunglris/-setur).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Hæð með hæstu meðalmögnun yfir nýtileg horn leiðarinnar.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	straumar reiknaða líkansins færðir í hæð: viðnám og jarðtenging eru áfram þau úr líkaninu.
+Calcola prima il terreno reale	Reiknaðu raunverulega landslagið fyrst
+Esporta il lobo sul terreno reale	Flytja út geirann yfir raunverulegu landslagi
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Myndir: Esri, Maxar, Earthstar Geographics og GIS-notendasamfélagið
+© i contributori di OpenStreetMap	© OpenStreetMap-framlagsaðilar
+Sfondo	Bakgrunnur
+Foto aerea	Loftmynd
+Solo griglia	Aðeins net
+Griglia	Net
+Cerca	Leita
+⌖ Centra sul locatore	⌖ Miðja á staðsetningarkóðann
+Punto scelto	Valinn punktur
+Coordinate	Hnit
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Smelltu á kortið = punktur loftnets; draga = færa; hjól = aðdráttur (netið fer úr 6 í 8, 10, 12 stafi). Þykkur rammi = 6 stafa reitur.
+non disponibile	ekki tiltækt
+Lunghezza elementi	Lengd staks
+Posizione sul boom	Staða á bómunni
+Uniforme	Jöfn
+Distribuzione	Dreifing
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Stak fest utan miðju í klemmunni: hliðrun eftir eigin ás, með stöðuvikmörkum.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	raunverulega klemman breytir líka rafmagnslengdinni við bómuna: notaðu flipann Bómuleiðrétting til þess.
+nuovo a ogni avvio	nýtt við hverja keyrslu
+Numero prove	Fjöldi tilrauna
+Frequenze	Tíðnir
+Seme casuale	Slembifræ
+OBIETTIVO LISTA DI TAGLIO	MARKMIÐ SKURÐARLISTANS
+Calo F/B max	Hámarksfall F/B
+ROS max	Hámarks-SWR
+Ferma	Stöðva
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Stökin nálægt mötuðu stakinu eru yfirleitt viðkvæmust; þau við enda bómunnar þola stærri villur.
+l'istogramma serve al Monte Carlo	stuðlaritið er fyrir Monte Carlo
+5% peggiore	verstu 5%
+Posizione mm	Staða mm
+Lunghezza mm	Lengd mm
+Tolleranza ammessa	Leyfð vikmörk
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Með rauðu stökin sem þurfa minna en smíðavikmörkin.
+Calcola prima il modello	Reiknaðu líkanið fyrst
+sensibilita'	næmi
+Tolleranze: fermato	Vikmörk: stöðvað
+Diametro mm	Þvermál mm
+Tolleranza ammessa mm	Leyfð vikmörk mm
+Avvia prima il calcolo	Keyrðu útreikninginn fyrst
+Esporta la lista di taglio	Flytja út skurðarlistann
+Lista di taglio	Skurðarlisti
+Obiettivi	Markmið
+Calo massimo del F/B	Hámarksfall F/B
+ROS massimo	Hámarks-SWR
+Tolleranze di costruzione	Smíðavikmörk
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Fyrirhugað (skissa 13, á eftir að samþykkja): ekki enn virkt í þessari útgáfu.
+Al quadro 20×2 mm	Al ferstrent 20×2 mm
+Al quadro 25×2 mm	Al ferstrent 25×2 mm
+Al quadro 30×2 mm	Al ferstrent 30×2 mm
+Al quadro 40×2 mm	Al ferstrent 40×2 mm
+Al tondo 25×1,5 mm	Al hringlaga 25×1,5 mm
+Al tondo 30×2 mm	Al hringlaga 30×2 mm
+Al tondo 40×2 mm	Al hringlaga 40×2 mm
+Al tondo 50×2 mm	Al hringlaga 50×2 mm
+Zona NTC	NTC-svæði
+Quota sito as	Hæð staðarins sem
+Periodo ritorno	Endurkomutími
+Categoria esposiz.	Áhrifaflokkur
+Coeff. topografia	Landslagsstuðull
+Antenna da terra	Loftnet yfir jörðu
+Palo sopra rotore	Mastur yfir snúningsvél
+Ø palo	Mastur Ø
+Usa elementi e boom del modello	Nota stök og bómu líkansins
+Includi telaio, palo, cavi	Taka með ramma, mastur, kapla
+Scansione direzione del vento	Skimun vindáttar
+UNITÀ	EININGAR
+N e kgf affiancati	N og kgf hlið við hlið
+solo N	aðeins N
+solo kgf	aðeins kgf
+Mostra	Sýna
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	ógildur staðsetningarkóði: veldu svæðið handvirkt
+Telaio a H	H-rammi
+Cavi e divisore	Kaplar og deilir
+Parte	Hluti
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Með vindinn þvert á þrýsta stökin ekki (cross-flow, K5IU): krafturinn á rör fer eftir öðru veldi vindþáttarins hornrétt á ás þess.
+momento flettente alla staffa del rotore	beygjuvægi við klemmu snúningsvélarinnar
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Bráðabirgðamál: koma ekki í stað athugunar verkfræðings á mastri, turni og undirstöðu. Vægið við fótinn fer í undirflipann Mastur og undirstaða.
+Sito e norma	Staður og staðall
+Norma	Staðall
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; stuðlar CNR-DT 207 R1/2018 og EN 1991-1-4
+Locatore / zona	Staðsetningarkóði / svæði
+Risultati	Niðurstöður
+Forza massima	Hámarkskraftur
+Momento flettente alla staffa del rotore	Beygjuvægi við klemmu snúningsvélarinnar
+Momento torcente sul rotore	Snúningsvægi á snúningsvélinni
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Bráðabirgðamál: koma ekki í stað athugunar löggilts verkfræðings á mastri, turni og undirstöðu.
+Al tondino pieno	Al gegnheil stöng
+Materiale elementi	Efni staka
+Staffe, isolatori	Klemmur, einangrarar
+g cad.	g hver
+Dipolo + scatola	Tvípóll + kassi
+Cavo fino al palo	Kapall að mastri
+STAFFA AL PALO	MASTURSKLEMMA
+Posizione attuale	Núverandi staða
+m dal riflettore	m frá endurvarpanum
+Massa / distanza	Massi / fjarlægð
+Vento dalla linguetta Vento	Vindur úr flipanum Vindur
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Notar hönnunarþrýsting síðasta útreiknings í undirflipanum Vindur; án hans 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Færir allt líkanið eftir bómunni þannig að ráðlagða klemman lendi í upphafspunktinum (þar sem mastrið og stæðurammi festast). Afturkalla í 3D-byggingunni snýr því til baka.
+Momenti in funzione della posizione della staffa	Vægi eftir stöðu klemmu
+Masse e aree per parte	Massar og fletir eftir hlutum
+ultimo direttore	síðasti stýrir
+Staffe e isolatori	Klemmur og einangrarar
+Cavo sul boom	Kapall á bómunni
+Massa kg	Massi kg
+Baricentro m	Þyngdarpunktur m
+Area vento m²	Vindflötur m²
+Centro area m	Miðja flatar m
+solo peso	aðeins þyngd
+solo vento	aðeins vindur
+File Touchstone .s1p	Touchstone-skrá .s1p
+Formato letto	Lesið snið
+CAVO TRA VNA E ANTENNA	KAPALL MILLI VNA OG LOFTNETS
+R e X separate	R og X sitt í hvoru lagi
+Banda con ROS <	Band með SWR <
+ROS: calcolato e misurato	SWR: reiknað og mælt
+Confronto	Samanburður
+misurato, cavo tolto	mælt, kapall fjarlægður
+R calcolata	R reiknað
+X calcolata	X reiknað
+R misurata	R mælt
+X misurata	X mælt
+Calcolato	Reiknað
+Misurato	Mælt
+Scarto	Munur
+Frequenza del ROS minimo	Tíðni lægsta SWR
+ROS minimo	Lægsta SWR
+nessuna correzione: calcolo e misura coincidono.	engin leiðrétting: útreikningur og mæling passa saman.
+calcolo NEC sul campo della misura…	NEC-útreikningur yfir mælisviðið…
+Misura del VNA	VNA-mæling
+Tutti	Allt
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Keyrðu sóp (hnappurinn Sóp efst) til að sjá F/B og F/R yfir allt bandið
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = mögnun fram mínus meðalafl yfir aftara hvolfið (90-270° stefnuhorn, allar hækkanir yfir 0°). Það er líka meðal markmiða bestunartólsins.
+Tabelle: F/B e F/R su tutta la banda	Töflur: F/B og F/R yfir allt bandið
+Valori dello sweep	Sópgildi
+ANTENNE RICEVENTI	MÓTTÖKULOFTNET
+4-square in ricezione	4-square fyrir móttöku
+8 verticali in cerchio	8 lóðrétt loftnet í hring
+Modello aperto	Opna líkanið
+Isotropo	Jafnátta
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = mögnun í æskilegri stefnu mínus meðalmögnun yfir allt hálfrýmið: ólíkt mögnuninni er það óháð töpunum.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Notar miðgildi komuhorns úr flipanum Raunverulegt landslag sem æskilega hækkun (tölfræði eftir bandi og svæði). Án hlaðinnar ARRL-tölfræði helst hækkunin sem hér er skrifuð.
+Direzione voluta	Æskileg stefna
+Hz  rumore	Hz  suð
+NF ricevitore	NF viðtækis
+sorgente locale az	staðbundinn gjafi az
+Cifre di merito in ricezione	Verðleikatölur við móttöku
+Basta il segnale?	Nægir merkið?
+calcolo in corso…	reiknar…
+RDF in funzione della frequenza	RDF eftir tíðni
+Calcola prima il modello aperto	Reiknaðu opna líkanið fyrst
+verticale λ/4	λ/4 lóðrétt loftnet
+° · dB relativi · arancio: -3 dB	° · hlutfallsleg dB · appelsínugult: -3 dB
+settore ±30° az, 10–40° el	geiri ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Meðalmögnun yfir fremri geirann mínus meðaltal yfir aftara hvolfið.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN skilgreinir DMF aðeins með mögnuninni við 20 gráður; hér er notað meðaltal yfir geira skissunnar, svo gildin eru ekki sambærileg einn á móti einum við bókina.
+molto basso: serve un preamplificatore	mjög lágt: formagnara þarf
+basso ma accettabile: vedi soglia	lágt en ásættanlegt: sjá þröskuld
+come un'antenna trasmittente	eins og sendiloftnet
+F/R medio sull'emisfero posteriore	Meðal-F/R yfir aftara hvolfið
+Rumore d'antenna ai morsetti	Suð loftnets við tengin
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Ytra suðafl við tengin: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + meðalmögnun vegin eftir því hvaðan suðið kemur.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	suð frá sjóndeildarhring vegið exp(-el/10 gráður) í hækkun: táknar fjarlægt manngert suð sem kemur lágt inn; raunveruleg dreifing fer eftir staðnum.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	punktgjafi í 5 gráðu hækkun með sama afl og jafnátta bakgrunnurinn.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	jafnátta suð yfir jörðu; jörðin bætir engu suði við.
+Margine sul ricevitore	Svigrúm viðtækis
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Suð loftnetsins er minna en 6 dB yfir suði viðtækisins: viðtækið takmarkar næmið. Meiri formögnun eða viðtæki með lægra NF þarf.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Mögnun 1,8
+Spazio richiesto	Plássþörf
+λ/4 in tubo quadro	λ/4 í ferstrendu röri
+λ/4 in tubo tondo	λ/4 í hringlaga röri
+Solo cavi di fase	Aðeins fasalínur
+Aria	Loft
+Uscite	Útgangar
+Z antenne	Z loftnets
+Z ingresso	Inngangs-Z
+Dielettrico	Rafsvari
+Connettori	Tengi
+Correggi accorciamento dei connettori	Leiðrétta fyrir styttingu tengjanna
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Dregur frá lengdinni þann hluta línunnar sem er inni í tengjunum.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	mat 4 mm á enda með N-tengjum (3 BNC, 1,5 SMA): best er að stilla með VNA og stytta í 1 mm skrefum.
+Divisori	Deilar
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Notar virk viðnám loftnetanna í opnu stæðunni (einn gjafi á loftnet) og bilin fyrir lágmarkslengd fasalínanna.
+CAVI DI FASE	FASALÍNUR
+Lunghezza minima	Lágmarkslengd
+Passo verticale	Lóðrétt bil
+solo cavi di fase: nessun trasformatore da costruire	aðeins fasalínur: enginn spennir til að smíða
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω kaplar samsíða = 37,5 Ω
+quadro, lato	ferstrent, hlið
+tondo, Ø	hringlaga, Ø
+Z0 richiesta	Nauðsynlegt Z0
+Ø conduttore interno	Innri leiðari Ø
+VF del cavo	VF kapals
+λ/4 in aria, mm	λ/4 í lofti, mm
+da tagliare, mm	til að skera, mm
+Z carico in parallelo	Álags-Z samsíða
+Rami λ/4: Z0 = Zin · √N	λ/4 greinar: Z0 = Zin · √N
+Resistenze a stella	Stjörnuviðnám
+Isolamento tra le uscite	Einangrun milli útganga
+Perdita stimata	Áætlað tap
+Carico usato	Notað álag
+non potenza di 2	ekki veldi af 2
+ROS all'ingresso	Inngangs-SWR
+solo cavi di fase	aðeins fasalínur
+Uscita	Útgangur
+Lungh. elettrica	Rafmagnslengd
+Fisica mm	Raunverulegir mm
+Perdita dB	Tap dB
+° di fase).	° fasa).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° upp); viðnámið við deilinn endurtekur sig ekki lengur nákvæmlega.
+Solo cavi di fase: nessun disegno da stampare	Aðeins fasalínur: engin teikning til að prenta
+Divisore	Deilir
+50 mm di controllo	Athugun 50 mm
+GEOMETRIA	RÚMFRÆÐI
+λ/4 sul boom	λ/4 á bómunni
+stesso piano	sama plan
+Metallico, isolati	Málmur, einangruð
+Non metallico	Ekki úr málmi
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Bóman er ekki í NEC-líkaninu: með stökum einangruðum frá málmbómu eru áhrifin lítil (bómuleiðrétting í Reiknivélum).
+Yagi di base	Grunn-Yagi
+Disposizione	Uppröðun
+Sfasamento piani	Planhliðrun
+Cavo di ritardo λ/4	λ/4 seinkunarkapall
+Includi relè e cavi reali	Taka með raunveruleg liða og kapla
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Bætir við tapi seinkunarkapalsins (VF 0,66, 10 dB/100 m við 144 MHz, kvarðað með kvaðratrót tíðninnar) og 0,1 dB fyrir liðann.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	dæmigerð gildi fyrir 75 ohm kapal og samása liða; forritið þekkir ekki þín.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Sama fasanet virkar líka fyrir turnstile (tvípólar krossaðir í 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Framhlið
+Componenti co-polare / cross-polare	Sam- / krossskautaðir þættir
+Rapporto assiale e ROS in frequenza	Ásahlutfall og SWR eftir tíðni
+piano A	plan A
+piano B	plan B
+vista dal davanti — boom al centro	séð að framan — bóma í miðju
+piani sfalsati di λ/4 lungo il boom	plön hliðruð λ/4 eftir bómunni
+Yagi incrociate: serve una Yagi con una sola sorgente	Krossuð Yagi: Yagi með einum gjafa þarf
+Yagi incrociate: calcolo in corso...	Krossuð Yagi: reiknar...
+Rapporto assiale in asse	Ásahlutfall á ásnum
+Rapporto assiale a −3 dB	Ásahlutfall við −3 dB
+Isolamento tra i due piani	Einangrun milli planana tveggja
+Fase della rete sul piano B	Fasi netsins á plani B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Fullkomlega hornrétt og samhverf plön: í líkaninu eru tenging og gagnstæð skautun nánast núll. Í raun takmarka klemmur, kaplar og smávægileg ósamhverfa þau við um 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	frá 1,8 MHz til 1296 MHz: listinn yfir balún breytist með bandinu
+LINEA DI DISCESA	FÆÐILÍNA
+Coassiale	Samása
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Með jafnvægri opinni línu er engin hlíf: sameiginlegur háttur kemur aðeins frá ójafnvægi. Spjaldið reiknar samása tilvikið; fyrir opnu línuna notaðu Línur (TL) með stilliboxinu.
+Lungo il boom	Eftir bómunni
+m → palo	m → mastur
+Discesa sul palo	Niður mastrið
+Fino alla stazione	Að stöðinni
+Calza a massa sul palo / traliccio	Hlíf jarðtengd við mastur / turn
+Messa a terra all'ingresso stazione	Jörð við inngang stöðvarinnar
+BALUN DA CONFRONTARE	BALÚN TIL SAMANBURÐAR
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 vafningar RG-213 á 110 mm: spanstuðull samkvæmt Wheeler, eigin rýmd samkvæmt Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 og áætluð eigin rýmd: raunverulegt viðnám drosselsins þarf að mæla.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferrít-hringkjarni sem samsíða RLC með lágt Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm í toppi (10 MHz með blöndu 31, 25 MHz með blöndu 43): dæmigerð gildi fyrir 12 vafninga á 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	samása λ/2 4:1: jafnvægisfæðing, hlífar tengdar saman.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	eftirstandandi sameiginlegur háttur sem 600 ohm sveiflandi við f0 (Q 3): fer eftir festingunni.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 hulsa: skammhleypt λ/4 lína milli hlífar og hulsu, hátt viðnám við f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 hulsunnar 50 ohm og 0,08 dB tap yfir fjórðungsbylgjuna.
+10 perline in ferrite sulla calza.	10 ferrítperlur yfir hlífina.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm á perlu við 144 MHz (blanda 61), 100 ohm yfir 30 MHz með blöndu 43: dæmigerð gildi úr vörulistum.
+Caso mostrato	Sýnt tilvik
+premi Calcola il confronto	ýttu á Reikna samanburðinn
+Corrente lungo la calza, dal dipolo verso il basso	Straumur eftir hlífinni, frá tvípólnum og niður
+Vista laterale: corrente sulla calza	Hliðarsýn: straumur á hlífinni
+F/R medio	Meðal-F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Tap í balúninu
+Potenza dissipata nel balun a 1 kW	Afl sem tapast í balúninu við 1 kW
+Banda con calza < 5 %	Band með hlífarstraum < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Gráu atriðin eru balún fyrir hitt bandið; þau virkjast þegar tíðnin er valin. Á HF telst líka hlífin niður að stöðinni (jarðtengd), á VHF/UHF hlutinn á bómunni og mastrinu. Hlífin er vír tengdur annarri hlið fæðipunktsins, eins og í raun án balúns; balúnið er viðnám sameiginlegs háttar í fyrsta hlutanum.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Trefjagler leiðir ekki: ramminn fer ekki inn í NEC, aðeins hlífar fasalínanna eru eftir.
+Includi palo sotto il telaio	Taka mastrið undir rammanum með
+Cavi di fase lungo i montanti	Fasalínur eftir stoðunum
+Rotore e controventi	Snúningsvél og stög
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Fyrirhugað: snúningsvél og stög sem vírar (mál turnsins þarf).
+Materiale	Efni
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	rautt = hlutar rammans gerðir sem NEC-vírar · strikað = hlíf fasalínanna
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Lárétt skautun: lóðréttu stoðirnar eru veikt tengdar; lárétta þverslá og fasalínurnar ekki.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Lóðrétt skautun: stoðirnar og mastrið eru samsíða stökunum og skipta meira máli; lárétta þverslá lítið.
+Confronto senza / con telaio	Samanburður án / með ramma
+Diagramma orizzontale sovrapposto	Lárétt rit lagt yfir
+premi Calcola confronto	ýttu á Reikna samanburðinn
+Stack: calcola prima il modello	Stæða: reiknaðu líkanið fyrst
+Stack: calcolo senza e con telaio...	Stæða: reiknar án og með ramma...
+Pezzo	Hluti
+Collegato	Tengt
+Cavi	Kaplar
+Senza telaio	Án ramma
+Con telaio	Með ramma
+Z ingresso divisore	Inngangs-Z deilisins
+senza telaio	án ramma
+con telaio	með ramma
+Stack: confronto senza / con telaio fatto	Stæða: samanburði án / með ramma lokið
+CARICHI HF	HF-ÁLÖG
+INSERISCI NEL MODELLO	SETJA INN Í LÍKANIÐ
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Hatturinn fer á enda vírsins (b eða e), linear loading á valinn punkt vírsins.
+Inserisci nel modello	Setja inn í líkanið
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Þegar samþykkt í skissunni Álög: Q fyrir L og C, f0, Z eftir böndum, spenna og straumur í íhlutnum. Hér bætast smíðagerðirnar við.
+Trappola coassiale	Samása gildra
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	innri leiðarinn er lóðaður við upphaf miðvafningsins (að snúa endunum lækkar ómunina um 50 kHz).
+Calcola spire per f0	Reikna vafninga fyrir f0
+Spire dell'avvolgimento (anche frazionarie).	Vafningar vafningsins (líka brot).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	raunveruleg f0 víkur um nokkur prósent: mældu hana með dýfumæli eða VNA og leiðréttu vafningana.
+Blocca	Lokar
+dipolo con	tvípóll með
+Filo Ø	Vír Ø
+Calcola C per f0	Reikna C fyrir f0
+mm  Filo Ø	mm  Vír Ø
+mm  Passo	mm  Stigning
+mm  Spire	mm  Vafningar
+MHz  dal centro	MHz  frá miðju
+m  Braccio	m  Armur
+m  Filo dell'elemento Ø	m  Vír staks Ø
+Calcola spire per la risonanza	Reikna vafninga fyrir ómun
+Piega	Brot
+m  Distanza tra i fili	m  Bil milli víranna
+Calcola la piega per la risonanza	Reikna brotið fyrir ómun
+Raggi	Teinar
+m  Filo Ø	m  Vír Ø
+Verticale alto	Hæð lóðrétta loftnetsins
+m  Frequenza	m  Tíðni
+MHz  Filo Ø	MHz  Vír Ø
+Calcola i raggi per la risonanza	Reikna teinana fyrir ómun
+L misurata	Mælt L
+MHz  Autorisonanza f0	MHz  Eigin ómun f0
+Cappello capacitivo in punta al verticale	Rýmdarhattur efst á lóðrétta loftnetinu
+Bobina dalle misure	Spóla út frá málum
+Reattanza del cappello in frequenza	Launviðnám hattsins eftir tíðni
+impedenza della trappola	viðnám gildrunnar
+Si comporta da	Hagar sér eins og
+Potenza persa	Tapað afl
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Afl sendis fyrir spennur og töp töflunnar.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	lágt band: straumur í kviðnum sqrt(P/73) og í gildrunni I0 cos(beta a); lokað band: spenna á enda innri tvípólsins I0 Z0 skipt milli gildru og geislunar.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	straumur í kviðnum sqrt(P/73) og í álaginu I0 cos(beta a), þar sem a er fjarlægðin frá miðju.
+Risonanza propria f0	Eigin ómun f0
+Q ideale	Kjör-Q
+Q della trappola alla risonanza.	Q gildrunnar við ómun.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	auk rafsvarataps (tangens 3e-4 PE, 2e-4 PTFE). Mældar samása gildrur hafa yfirleitt Q milli 100 og 300.
+Lunghezza di cavo	Lengd kapals
++ 10 cm per le saldature	+ 10 cm fyrir lóðningar
+R in parallelo equivalente	Jafngilt samsíða R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: þetta er LD-álagið sem fer inn í líkanið
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Armur tvípóls á lága bandinu með gildrunni, borinn saman við arm í fullri stærð (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC með gildrunni sem álagi gefur rétta lengd.
+Induttanza misurata	Mældur spanstuðull
+dalla misura	úr mælingunni
+Autorisonanza	Eigin ómun
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Tíðni þar sem spólan ómar ein með eigin rýmd.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	eigin rýmd úr töflu Medhursts eftir lengd / þvermáli, gildir fyrir einlaga spólur fjarri málmmössum.
+Q della bobina alla frequenza di lavoro.	Q spólunnar á vinnutíðni.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	viðnám vírsins vegna húðhrifa sinnum nálægðarstuðull 1 + 2 (d/p)^2 (d vír, p stigning): Medhurst gefur svipuð gildi fyrir spólur með lengd áþekka þvermálinu.
+Reattanza della piega	Launviðnám brotsins
+Z0 della linea	Z0 línunnar
+Q della piega	Q brotsins
+Capacita' del cappello	Rýmd hattsins
+Capacita' del cappello verso lo spazio.	Rýmd hattsins gagnvart rýminu.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	summa teinanna (grannur vír, 2 pi eps0 l / (ln(2l/a) - 1)) og hringsins sem mettast að fullum diski (8 eps0 r): teinarnir skýla hver öðrum. Settur inn sem vírar reiknar NEC hann nákvæmlega.
+in punta al verticale	efst á lóðrétta loftnetinu
+Altezza per la risonanza	Hæð fyrir ómun
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Áhrif á lóðrétta loftnetið
+Carichi HF: apri un modello nella finestra principale.	HF-álög: opnaðu líkan í aðalglugganum.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading og rýmdarhattur eru settir inn sem vírar: fyrir hin veldu «Sem álag».
+Il cappello capacitivo si inserisce come fili.	Rýmdarhatturinn er settur inn sem vírar.
+RLC parallelo	Samsíða RLC
+Effetto sul dipolo	Áhrif á tvípólinn
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Stytting armsins miðað við fulla fjórðungsbylgju (71,3 / f) með álagið á þeim punkti.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	línulíkan af hlaðna arminum X = Z0 (cot(beta b) - tan(beta a)), x 0,95 vegna endaáhrifa.
+Esegui il test	Keyra prófið
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Mögnunina má sýna leiðrétta með AGT (þegar fyrirhugað í bestunartólinu).
+Controllo prima/dopo il calcolo	Athugun fyrir/eftir útreikning
+Esito	Niðurstaða
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Ein eða fleiri athuganir utan ±0,2 dB: farðu yfir bútun (3D-bygging > Bútun... og Athuga bútun).
+Tutti i controlli entro ±0,2 dB.	Allar athuganir innan ±0,2 dB.
+Linea a finestra 450	Stigalína 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Ýttu á Reikna: NEC reiknar viðnám opna líkansins á hverri tíðni.
+Perdita nella linea	Tap í línu
+Perdita totale	Heildartap
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Gerð stilliboxs milli línunnar og sendisins (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	tap metið út frá hlöðnu Q netsins (Qn = sqrt(Rmax/Rmin - 1), tveir hlutar fyrir T og Pi) og Q spólunnar; TLW frá N6BV reiknar íhlutina einn í einu og getur munað nokkrum tíundu úr dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Dæmi: tvíleiðari 2 × 20 m (ZS6BKW/G5RV). Viðvörun þegar stilliboxið sér minna en 20 Ω: mikil töp, lagt er til að lengja eða stytta línuna. Lína með töpum eins og í TLW (N6BV, ARRL).
+USA costa est	Austurströnd Bandaríkjanna
+USA costa ovest	Vesturströnd Bandaríkjanna
+Giappone	Japan
+Caraibi	Karíbahaf
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: þjónustan skilaði engri GeoTIFF
+GeoTIFF compresso: non supportato	Þjöppuð GeoTIFF: ekki studd
+GeoTIFF: tipo di dato non supportato	GeoTIFF: gagnagerð ekki studd
+Il file non contiene coppie distanza / quota.	Skráin inniheldur engin pör fjarlægð / hæð.
+Nessuno	Ekkert
+Ferriti a perline	Ferrítperlur
+Cavo e balun: segmento della sorgente non trovato.	Kapall og balún: gjafabútur fannst ekki.
+solo palo	aðeins mastur
+Acciaio zincato	Galvaníserað stál
+Alluminio	Ál
+Vetroresina	Trefjagler
+Montante sx/dx	Vinstri/hægri stoð
+al boom	að bómunni
+Traversa	Þverslá
+Palo	Mastur
+al dipolo	að tvípólnum
+N, femmina	N, kvenkyns
+senza connettori	án tengja
+rurale tranquillo	rólegt sveitasvæði
+Verticale λ/4	λ/4 lóðrétt
+λ/8 di lato	λ/8 á hlið
+0,37 λ di diametro	0,37 λ þvermál
+Cappello capacitivo	Rýmdarhattur
+W8NX bassa impedenza	W8NX lágt viðnám
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	þykkur kapall með PTFE-rafsvara (RG-393) eða LC-gildra með háspennuþétti
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Brotið er lengra en lambda/8: línan hagar sér ekki lengur sem fastur spanstuðull, athugaðu ómunina með NEC með því að setja það inn sem víra.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Rýmd hattsins er mat (teinar sem skýla hver öðrum): fyrir nákvæmt gildi settu hann inn sem víra og reiknaðu með NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Staða álagsins er handan fjórðungsbylgjunnar: færðu það nær miðju.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	hatturinn fer á enda vírsins: veldu fyrsta (b) eða síðasta (e) bútinn.
+il punto scelto e' troppo vicino all'estremo del filo.	valinn punktur er of nálægt enda vírsins.
+questo tipo entra nel modello come carico.	þessi gerð fer inn í líkanið sem álag.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF-álög: vírar bætt við af YA-NEC-reiknivélinni
+Il file Touchstone non contiene punti di S11.	Touchstone-skráin inniheldur enga S11-punkta.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV-skráin inniheldur engar línur tíðni, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT í frjálsu rúmi, taplaust
+IMPOSTAZIONI	STILLINGAR
+Schiera Hi-Z di verticali corte	Hi-Z-hópur stuttra lóðréttra loftneta
+Base del loop	Grunnur lykkjunnar
+Distanza, lato o diametro	Bil, hlið eða þvermál
+Altezza delle verticali	Hæð lóðréttu loftnetanna
+Base del loop dal suolo	Grunnur lykkjunnar yfir jörðu
+Fase tra le file	Fasi milli raða
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Lágur láréttur tvípóll: nær jörðu en lambda/4 fer geirinn upp. Hann er viðmiðið fyrir «hátt horn» í röðun IV3PRK (RDF 7,3 dB): borinn saman við móttökuloftnet fyrir lágt horn.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY eftir Gary Breed K9AY (QST, september 1997): tvær lóðréttar lykkjur í 90 gráðum á sama mastri, lokaviðnám (390 ohm dæmigert, stillt fyrir F/B), spennir 9:1. Hér ein lykkja, snúið að valinni stefnu, lokuð yfir jörð eins og á síðunni Móttaka (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Móttöku-4-square: fjögur stutt virk lóðrétt loftnet í hornum fernings með lambda/8, geisla eftir hornalínunni. Tómur fasi = nákvæmt núll að aftan (pi + beta d milli raða): gefur hæstu fræðilegu stefnuvirkni; raunveruleg fasanet (ON4UN, IV3PRK) nota aðra fasa og gefa lægra RDF (IV3PRK 9,4 dB). Hnappurinn leitar að fasanum með besta RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Hópar stuttra virkra lóðréttra loftneta eins og frá Hi-Z Antennas: 2 stök end-fire (hjartalaga, lambda/8), 3 í þríhyrningi (hlið lambda/6, eitt horn að valinni stefnu), 8 í hring (þvermál 0,37 lambda: þau fjögur að stefnunni og þau gagnstæðu eru notuð). Hi-Z: 8 í hring RDF 13,4 dB með sínum sameini; einfalda líkanið með tveimur röðum verður lægra. Hnappurinn leitar að fasanum með besta RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Lóðréttu loftnetin byrja á raunverulegri jörð (GE 1 með Sommerfeld-jörð): með NEC-2 gefur vír tengdur raunverulegri jörð viðnám sem fer eftir gjafabútnum (NEC-2-handbókin, EZNEC). Rit og RDF eru leiðbeinandi; tenging með upphækkuðum geislum er fyrirhuguð fyrir öll móttökuloftnet.
+fase tra le file da 120 a 300 gradi per l'RDF	fasi milli raða frá 120 til 300 gráður fyrir RDF
+nessuna fase con il lobo in avanti	enginn fasi með geirann fram
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fasi milli raða fyrir besta RDF: {0} gráður (RDF {1} dB). Endurreiknar...
+linea d'orizzonte	sjóndeildarlína
+scala angolare	hornakvarði
+lobo reale sopra il piatto fino a	raunverulegur geiri yfir sléttu upp að
+Profilo verso	Snið í átt að
+Lobo verticale e angoli di arrivo a	Lóðréttur geiri og komuhorn við
+Cos'e' l'RDF	Hvað er RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = mögnun í æskilegri stefnu - meðalmögnun í allar stefnur (W8JI; áður kallað SNIF, á 7. áratugnum). Það mælir hve mikið loftnetið bætir hlutfall merkis og suðs ef suðið kemur jafnt úr öllum áttum; hrein mögnun skiptir ekki máli (formagnari vinnur hana upp). Meðaltal eins og í EZNEC: efra hvolf deilt með allri kúlunni (4 pi). Með þessari venju passa niðurstöðurnar við IV3PRK og W8JI/Hi-Z (lóðrétt 5,07 á móti 5,06 og 4,9; Beverage 350 m 13,5 á móti 13,66). Takmörkun: raunverulegt suð er ekki jafnt (raflínur, staðbundið QRM): þess vegna skipta F/B og lögun geirans líka máli. Fyrir sendiloftnet hefur RDF enga merkingu: þess vegna er það aðeins reiknað í þessum flipa. DMF (Directivity Merit Figure, ON4UN): mögnun við 20 gráðu hækkun fram mínus meðalmögnun aftara hálfrýmisins (stefnuhorn handan 90 gráða, yfir jörðu, vegið með kósínus eftir flatarmáli): sýnir hve mikið loftnetið hafnar suði sem kemur að aftan. ON4UN varar við að bera DMF og RDF saman. Heimildir: W8JI og W8WWV (RDF), ON4UN Low-Band DXing 7. kafli (DMF, tafla 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	hækkun
+azimut	stefnuhorn
+azimut a {0}°	stefnuhorn við {0}°
+totale	alls
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Opnun að fyrsta núlli (FNBW): {0}°;  hæsti hliðargeiri: {1}
+Didascalie {0} %	Merkingar {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB á móti {1} í heimildinni: athugaðu mál, lokun og jörð (heimildin gæti notað aðra jörð eða rúmfræði).
+Azimut a {0}° · {1} MHz	Stefnuhorn við {0}° · {1} MHz
+Azimut a {0}° di elevazione	Stefnuhorn við {0}° hækkun
+RUMORE	SUÐ
+Apri la scheda {0}	Opna spjaldið {0}
+caso mostrato: {0}	sýnt tilvik: {0}
+Rastremazioni	Sjónaukarör
+BANDA	BAND
+λ/2 coassiale 4:1	samása λ/2 4:1
+Manicotto λ/4	λ/4 hulsa
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kapalhlíf og mastur sem NEC-vírar; samanburður balúna (straumur sameiginlegs háttar, F/B, meðal-F/R, tap, afl við 1 kW) frá 1,8 til 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Stoðir, þverslá, mastur og hlífar fasalína sem NEC-vírar: samanburður án / með ramma (mögnun, F/B, meðal-F/R, geirar, Z deilis, Tant og G/T).
+TIPO	GERÐ
+DATI	GÖGN
+TELAIO	RAMMI
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 í ferstrendu eða hringlaga röri, í kapli, Wilkinson; fasalínur, halli; teikning 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X eða +, plön hliðruð λ/4; H, V, RHCP, LHCP, X-pol; ásahlutfall og einangrun
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Jafnar lengdir → jafn fasi. Margfeldi af λ/2 → virka viðnámið endurtekur sig við deilinn. Ráðlögð vikmörk ± 5 mm (= ± {0}° fasa).
+impedenze attive delle {0} antenne dello stack in parallelo	virk viðnám {0} loftneta stæðunnar samsíða
+Banda con ROS < {0}	Band með SWR < {0}
+? Manuale	? Handbók
+Apre la spiegazione nel manuale	Opnar skýringuna í handbókinni
+riferimento	viðmið
+Rispetto alla singola antenna	Miðað við stakt loftnet
+{0} antenne ideali	{0} kjörloftnet
+x la distanza DL6WU, a passi di	x DL6WU-bilið, í skrefum á
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Vinstri ás: G stæðu - G staks loftnets, frá 0 og upp. Hægri ás: F/R stæðu - F/R staks loftnets, öfugt, með 0 efst: þar sem stæðan bætir F/R fer ferillinn niður, og lægsti punkturinn er mesta bótin. G/T er í töflunni.
+ΔG sulla singola	ΔG yfir stöku loftneti
+Chiusura del programma	Loka forritinu
+Vuoi chiudere YA-NEC?	Viltu loka YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Takk fyrir að nota mig: ég vona að ég hafi komið að gagni.
+Sì	Já
+ROS attivo	Virkt SWR
+G realizzato	Raungerð G
+ROS attivo massimo	Hámarks virkt SWR
+riflessi minimi	lágmarksendurvörp
+ROS attivo alto: da non scegliere	hátt virkt SWR: ekki velja
+Documenti tecnici	Tækniskjöl
+Manuale d'uso	Notendahandbók
+Manuale di calcolo e delle fonti	Handbók um útreikninga og heimildir
+Citazioni	Tilvitnanir
+Cerca in tutti i documenti	Leita í öllum skjölum
+Apri il PDF	Opna PDF-skjalið
+Nessun risultato per «{0}»	Engar niðurstöður fyrir «{0}»
+Primi {0} risultati per «{1}»	Fyrstu {0} niðurstöður fyrir «{1}»
+{0} risultati per «{1}»	{0} niðurstöður fyrir «{1}»
+Apre la citazione {0}	Opnar tilvitnun {0}
+Manuale di calcolo	Reiknihandbók
+È pronta la versione {0} di YA-NEC	Útgáfa {0} af YA-NEC er tilbúin
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Hún er þegar sótt og sett upp: hún tekur gildi þegar forritið er endurræst.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Á Mac setur hún sig ekki upp sjálf: sæktu nýju .dmg-skrána af útgáfusíðunni á GitHub.
+Riavvia adesso	Endurræsa núna
+Più tardi	Seinna
+Apri la pagina delle versioni	Opna útgáfusíðuna
+Aggiornamento di YA-NEC	YA-NEC-uppfærsla
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Hún er þegar sótt og sett upp. Forritið endurræsir sig sjálft og opnar opna líkanið aftur.
+Riavvio tra {0} s	Endurræsing eftir {0} s
+Questo avviso si chiude tra {0} s	Þessi tilkynning lokast eftir {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Eftir uppfærsluna var óvistaða líkanið opnað aftur: vistaðu það þegar þú vilt (afrit í data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Eftir uppfærsluna var líkanið sem var opið opnað aftur.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Hver reitur hefur sína hjálp með skýringu og heimild. Grátt: hakað = alltaf virkt (slekkur ekki á sér); óhakað = ekki enn tiltækt; val með pillum = fast val. Handbók, 21. kafli.
+"): sorgente sempre accesa.	"): heimild alltaf virk.
+' non da' un numero valido.	' er ekki gild tala.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik eins og er
+0 - misure del metodo	0 - mál aðferðarinnar
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = staðlaður WR-bylgjuleiðari bandsins (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = sami diskur á hinum endanum (eigið bergmál).
+0 = stesso disco all'altro capo.	0 = sami diskur á hinum endanum.
+0 gradi a destra	0 gráður til hægri
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = þriðjungur frá endanum: viðnám 200-300 ohm, balún 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: fjarri brúninni, þar sem sveigja myndi færa fæðinn úr brennipunkti.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 gegnheilt pólýetýlen (RG-58, RG-213), 0,8-0,85 froðurafsvari.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 gegnheilt pólýetýlen, 0,8-0,85 froða, 0,9-0,97 opin lína.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 leidd lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - mötuð lykkja
+1 - radiatore	1 - geislari
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = einn vafningur (eins og áður). Með fleiri vafningum vex Rr með N², húðhrifatapið með N.
+1 cavo	1 kapall
+1-2-3 elementi	1-2-3 stök
+1. Obiettivi e pesi	1. Markmið og vægi
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vindur, jafnvægi, deilar, balún, krossuð Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Móttökuloftnet virkjuð
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz með stórum diski: auk yfirborðs og miðunar skipta máli hita- og vindaflögun (ATA: 0,7 mm RMS að nóttu, 3 mm að degi í sól), sveigja stoðanna og dreifing vegna vaggs tunglsins.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: prentaðu í 100 %, án «aðlaga að síðu»
+1005/f piedi	1005/f fet
+144 isol.	144 einangr.
+2 - riflettore	2 - endurvarpi
+2 - riflettori	2 - endurvarpar
+2 in parallelo	2 samsíða
+2 lati	2 hliðar
+2. Variabili che l'ottimizzatore puo' cambiare	2. Breytur sem bestunartólið má breyta
+200 Ω con balun 4:1	200 Ω með balúni 4:1
+25 tondo	25 hringlaga
+3 - direttori	3 - stýrar
+3 gruppi	3 hópar
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 eða 4. Með 2 er enginn stífleiki utan plans þeirra.
+3. Registro dei passi - clic su una riga per riprenderla	3. Skrefaskrá - smelltu á línu til að sækja hana aftur
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω eða balún 4:1
+36 Ω + terra	36 Ω + jörð
+4 - tutto insieme	4 - allt saman
+4 lati	4 hliðar
+4 sorgenti: vedi tabella	4 gjafar: sjá töfluna
+432 isol.	432 einangr.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 gagnaathuganir samþykktar af IC8TEM 15/11/2026: þröskuldar og skýringar í handbókinni, 11. kafla.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 fet um 18 dBi, 12 fet um 20,5 dBi
+75 ohm ideale	75 ohm kjörið
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 sinnum lengri en radíusinn. Með þykkum vírum eða stuttum bútum (þykk rör á UHF, stök nálægt hvert öðru,\n
+9 fili	9 vírar
+9 fili a 0,1 λ	9 vírar á 0,1 λ
+Accorciamento del pilotato	Stytting mataða staksins
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Stytting yfir 8 %: línulega matið er ekki áreiðanlegt, athugaðu með NEC.
+Allega il modello aperto	Hengja opna líkanið við
+Allega il registro di oggi	Hengja annál dagsins við
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	RMS-hæð öldu og hæð loftnets yfir sjó, í Stefnurit > Raunverulegt landslag.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Breidd sópsins kringum tíðnina, fyrir viðnámsritið.
+Antenna a	Loftnet við
+Applica la freccia al modello NEC	Beita siginu á NEC-líkanið
+Approvata, in preparazione: non ancora attiva in questa versione.	Samþykkt, í undirbúningi: ekki enn virkt í þessari útgáfu.
+Apri la cartella	Opna möppuna
+Apri un modello nella finestra principale	Opnaðu líkan í aðalglugganum
+Apro il modello e il diagramma 3D resta vuoto.	Ég opna líkanið og 3D-sýnin helst tóm.
+Area al vento dell'antenna	Vindflötur loftnetsins
+Area al vento totale	Heildarvindflötur
+Area al vento totale e lista di taglio	Heildarvindflötur og skurðarlisti
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Athugið: ekki nota með vírum sem mætast í horni eða með mismunandi þvermál í samskeytinu.\n
+Bobina di carico per la risonanza	Hleðsluspóla fyrir ómun
+Boom con il tirante	Bóma með stagi
+C1 in serie con la loop	C1 í röð við lykkjuna
+C1 serie, C2 parallelo	C1 í röð, C2 samsíða
+C2 in parallelo all'ingresso	C2 samsíða við innganginn
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Reiknivélar > Móttökuloftnet: lágur tvípóll, K9AY, 4-square RX, Hi-Z 2/3/8 stök, með fasann milli raða bestaðan fyrir RDF og viðvörunina um jarðtenginguna.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Vélrænir útreikningar (Vindur og Jafnvægi), Reiknivélar > Deilar og krossuð Yagi, Hlutir > Kapall og balún og stæðurammi, HF-álög.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Bráðabirgðamál: fyrir uppsetninguna gildir verkefni löggilts tæknimanns.
+Candidati da controllare	Frambjóðendur til athugunar
+Categoria	Flokkur
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Áhrifaflokkur staðarins (NTC 2018, tafla 3.3.II og mynd 3.3.2): fer eftir hrjúfleikaflokki landsins (A miðbæir ... D svæði án hindrana, sjór) og fjarlægð frá ströndinni. I = opin strönd eða sjór, V = miðbær.
+Cebik, poi NEC	Cebik, síðan NEC
+Centro della banda scelta:\n	Miðja valins bands:\n
+Con ghiaccio	Með ís
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Með ís: vindur minnkaður í 0,6 sinnum og geislaís úr reitnum til hægri (einfölduð samsetning ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Með sama fræi endurtekst prófið eins.
+Condizione della sorgente non capita ("	Skilyrði heimildar ekki skilið ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Athugar GitHub strax án þess að bíða í 3 mínútur. Ef ný útgáfa er til er hún sótt, tilkynnt og endurræst eins og sjálfvirka uppfærslan (10 sekúndur, líkanið opnast aftur). Virkar líka þegar slökkt er á sjálfvirkri uppfærslu.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Alltaf athugað af bútunarathuguninni og í Viðvörunum (8 með venjulegum kjarna, 2 með útvíkkuðum kjarna).
+Copie per candidato	Afrit á frambjóðanda
+Coppia sulla staffa boom-mast	Snúningsvægi í klemmunni bóma-mastur
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Býr til zip-skrána í data/segnalazioni og opnar GitHub-síðuna «New issue» með textanum þegar skrifuðum. Zip-skrána hengir þú við sjálf(ur), handvirkt: forritið sendir ekkert sjálft.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Sveigja jarðar, í Stefnurit > Raunverulegt landslag.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Þvermál utan sviðs formúla Cebiks (frá 1E-6 til 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Fjarlægð og gerð seinni jarðarinnar: samþykkt fyrir 1.5 (Raunverulegt landslag 2).
+Distanze di stack HF	HF-stæðubil
+Distanze di stack: accoppiamento e distanza migliore	Stæðubil: tenging og besta bil
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Eftir bestunina fara bestu niðurstöðurnar í athugun með vikmörkunum. 0 = engin athugun.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Mjög lágir endar: gættu að fólki og dýrum (há spenna á endunum).
+F/B peggiore	Versta F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq-skrá: línur með TLParms úr AutoEZ (kaplar með tapi) nota nafngildi Zo og VF og ekkert tap: TL-spjald NEC er taplaust.
+Filo riflettore	Endurvarpsvír
+Filo ripiegato	Brotinn vír
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Löng hárnál (meira en 0,2 lambda): betra er að minnka bilið eða nota þykkari leiðara.
+Forza del vento di progetto	Hönnunarvindkraftur
+Forza l'aggiornamento	Þvinga uppfærslu
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Sig strengsins: hve langt netið á beina hlutanum er undir fleygboganum á miðju hafi (tekið með í flötuninni). Heildarmassi ólanna {4:0.00} kg{5}.
+Freccia tolta dal modello.	Sig fjarlægt úr líkaninu.
+Ghiaccio radiale	Geislaís
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA-skrár eru alltaf bútaðar upp á nýtt fyrir NEC-2 (handbók, 10. kafli).
+I lobi si leggono nella tabella delle distanze di stack.	Geirarnir eru lesnir í töflunni yfir stæðubil.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (námundar), FIX (styttir), MOD, MAX, MIN, ODD (oddatala: gagnlegt fyrir búta mataða vírsins).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Venjulegt NEC2 meðhöndlar hvern vír sem granna línu: það gildir á meðan búturinn er a.m.k.\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Einn endurvarpsvír gefur mjög litla bót (Cebik): betra skjárinn eða 9 vírarnir.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Mastrið fer yfir flotmörk: þykkara mastur eða styttri útskögun.
+Impedenza del cavo	Viðnám kapals
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Í annarri mynd: athugun r5 í Gagnaathugunum merkir mögnun yfir eðlisfræðilegu hámarki fyrir lengd bómunnar.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Spanstuðull með N² (þéttir vafningar) og NEC-líkan með einum vafningi: hér athugar NEC aðeins rúmfræði þessa eina vafnings.
+Interasse della forcina	Bil hárnálarinnar
+Isole (tranne Sicilia e Sardegna) e mare aperto	Eyjar (nema Sikiley og Sardinía) og opið haf
+Kernel esteso del NEC2 (scheda EK).\n	Útvíkkaður NEC2-kjarni (EK-spjald).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Bil hárnálarinnar verður að vera stærra en þvermál leiðarans.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim lokar geislaranum að ofan með vír sem er brotinn niður, niður að rétt fyrir ofan stubbinn.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Það er gert í glugganum Bútunarathugun (hnappurinn hér að ofan).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hárnálin er samhverf: hún skekkir ekki ritið eins og gamma. Balún eða drossel við fæðipunktinn þarf samt.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hárnálin virkar aðeins með R mataða staksins lægra en viðnám kapalsins: fyrir stærra R notaðu gamma eða spenni.
+La prepara IC8TEM: non ancora attiva.	IC8TEM er að undirbúa hana: ekki enn virk.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Sex reglur Geometry Check í EZNEC, við hvern útreikning, í flipanum Viðvaranir.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: án leiðréttingar Z = {0:0.0} {1}j{2:0.0} ohm (með leiðréttingunni {3:0.0} {4}j{5:0.0} ohm).
+Località	Staður
+Loop orizzontale di 1 λ	Lárétt lykkja 1 λ
+Lunghezza del pilotato	Lengd mataða staksins
+Lunghezza della forcina	Lengd hárnálarinnar
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Setur opna líkanið (.nec) í zip-skrána, jafnvel þótt það sé ekki vistað.
+Mette nello zip il registro di oggi della cartella registri.	Setur annál dagsins úr möppunni logs í zip-skrána.
+Momenti al mast	Vægi á mastrinu
+Momento al cuscinetto	Vægi við leguna
+NEC: risonanza cercata dal motore	NEC: ómun leituð af vélinni
+NOTE SU QUESTA VERSIONE (fase 0)\n	ATHUGASEMDIR UM ÞESSA ÚTGÁFU (fasi 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NÝTT · yfir jörðu: hæðir, bil, æskileg útgeislunarhorn
+Nel modello non ci sono elementi orizzontali diritti	Líkanið hefur engin bein lárétt stök
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Í stæðutöflunni og í Hlutum líkansins (stæðurammi, deilar).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Skrifaðu segðir án bila í rúmfræðispjöld, til dæmis:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Ekkert bil lagt til
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Ekkert bil lagt til: öll fara yfir hámarks virkt SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Engin IP-tala, enginn tölvupóstur, engin notendanöfn í skránum: slóð heimamöppunnar verður «~». Án GitHub-aðgangs geturðu sent zip-skrána eins og þú vilt.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Ekki enn sjálfvirkt: það er gert handvirkt með AGT-prófinu í Viðvörunum (ARRL 24., 4nec2).
+Numero di spire	Fjöldi vafninga
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Hvert afrit hefur málin sín hliðruð af handahófi innan vikmarka flipans Vikmörk (sjálfgefið: lengd ±1 mm, staða ±2 mm, þvermál ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Auk opna líkansins, upphöf valin af handahófi milli lágmarks og hámarks hverrar breytu. 0 = eins og áður.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Síðan Suð frá raunverulegum himni í flipanum Suð/GT/Stæða: skynoise-útreikningurinn fluttur í C# (lestur HEALPix-kortanna, brúun, stjörnutími, hnit, Tunglið) og tvö kort G8ONH í data/cielo.
+Partenze a caso	Slembiupphöf
+Perimetro Cebik	Ummál Cebiks
+Peso del boom	Þyngd bómunnar
+Pi-greco	Pi-net
+Prepara la segnalazione	Undirbúa skýrsluna
+Proposta	Tillaga
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c-próf við 145 MHz (rör 12 mm á 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Hvenær þess þarf: hlutfall búts/radíuss milli um 2 og 8 (undir 2 er hvorugt áreiðanlegt).\n
+Quota s.l.m.	Hæð y.s.
+R del pilotato	R mataða staksins
+ROS attivo minimo {0}	Lægsta virka SWR {0}
+Raggio equivalente dei due conduttori	Jafngildur radíus leiðaranna tveggja
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Núverandi launviðnám mataða staksins: ef það er jákvætt þarf að stytta mataða stakið meira.
+Reattanza della forcina	Launviðnám hárnálarinnar
+Reattanza voluta del pilotato	Æskilegt launviðnám mataða staksins
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Launviðnám: handan kl = pi/2 (eða með of þykkum leiðara) gildir AEH-formúlan ekki, notaðu NEC.
+Reinstalla la versione attuale	Setja núverandi útgáfu upp aftur
+Rel Z non positiva	Re Z ekki jákvætt
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Viðnám mataða staksins við ómun, úr líkaninu eða NEC-útreikningnum.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Endurræsing mistókst: lokaðu og opnaðu YA-NEC aftur handvirkt.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Sækir og setur upp aftur jafnvel þótt útgáfan sé sú sama: gagnlegt ef skrá forritsins hefur skemmst.
+Scansione	Sóp
+Scegli il candidato con	Velja frambjóðandann með
+Schermo	Skjár
+Scrivi due frequenze diverse.	Skrifaðu tvær mismunandi tíðnir.
+Segnala un problema	Tilkynna vandamál
+Seme del caso	Slembifræ
+Serve solo per la reattanza (dipolo e monopolo).	Þarf aðeins fyrir launviðnámið (tvípóll og einpóll).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Notað með 2 eða fleiri vafningum: undir 2 þvermálum leiðara vex raunverulega tapið vegna nálægðarhrifa (ekki reiknað).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Notað í Stefnurit > Raunverulegt landslag: endurvarp sjávar með dreifistuðli og hrjúfleika.
+Sicilia e provincia di Reggio Calabria	Sikiley og Reggio Calabria-hérað
+Sollecitazione	Spenna
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Yfir 0,25 λ byrjar geirinn að lækka: síður hentugt fyrir NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Yfir 30 MHz er aðhvarf Cebiks notað utan sviðsins sem það er boðið fyrir hér (HF-vírar): Sjálfvirkt eða NEC er betra.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Undir 0,1 λ fellur mögnunin upp á við (Cebik): mjög lágt loftnet græðir ekkert.
+Sotto l'antenna	Undir loftnetinu
+Spina (tubo o tondo) dentro il giunto telescopico.	Tappi (rör eða stöng) inni í sjónaukasamskeytinu.
+Spina interna nei giunti	Innri tappi í samskeytum
+Stack con il ROS attivo piu' basso	Stæða með lægsta virka SWR
+Staffe e mast	Klemmur og mastur
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Tími: um (upphöf + 1) sinnum núverandi, auk frambjóðenda x afrita útreikninga.
+Tensione nel mast al cuscinetto	Spenna í mastrinu við leguna
+Tiro del tirante	Tog stagsins
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Rör tekin úr töflunni Mjókkanir: málin eru þau sömu og í NEC-líkaninu.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Öll bil fara yfir hámarks virkt SWR ({0}): ekkert bil lagt til. Hækkaðu hámarks virkt SWR, prófaðu eigið viðmiðunarviðnám loftnetsins eða stilltu staka loftnetið. Fylki og graf eru við bilið með lægsta virka SWR.
+V invertito	Öfugt V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), tenging, virkt SWR, besta bil, tvær tíðnir
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Hámarksvindhraði á staðnum: vb sqrt(ce), með vb = vb,0 ca (NTC 2018, endurkomutími 50 ár) og ce(z) áhrifaflokksins í hæð loftnetsins.
+Velocità	Hraði
+Velocità a mano	Hraði handvirkt
+Vento di sopravvivenza	Lifunarvindur
+Vento di sopravvivenza del boom	Lifunarvindur bómunnar
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Vindur hornrétt á stakið þar sem fyrsti punkturinn nær flotmörkum (eigin þyngd og ís meðtalin).
+X da aggiungere al pilotato	X til að bæta við mataða stakið
+X del pilotato	X mataða staksins
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Lokaathugunina gerir NEC-vélin á líkaninu með hárnálinni.
+Z0 della forcina	Z0 hárnálarinnar
+Z0 della linea dei due conduttori	Z0 tveggja leiðara línunnar
+Zona buona	Gott svæði
+al centro	í miðjunni
+caso peggiore	versta tilvik
+caso peggiore delle due	versta tilvik af tveimur
+cerca...	leita...
+copie entro le soglie	afrit innan þröskulda
+corrente sinusoidale	sínuslaga straumur
+distanza dal boom	fjarlægð frá bómunni
+distanza dall'inizio del boom	fjarlægð frá upphafi bómunnar
+due condensatori sul lato basso	tveir þéttar að neðanverðu
+effetto: calcolo in corso…	áhrif: reiknar…
+forza del vento x sbalzo	vindkraftur x útskögun
+il caso peggiore migliore	besta versta tilvikið
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	jafngildi tvípóllinn, þykkari, hefur minna en 73 Ω
+il voto medio migliore	besta meðaleinkunn
+induttiva, in parallelo	spanvirkt, samsíða
+la percentuale migliore di copie entro le soglie	besta hlutfall afrita innan þröskulda
+linea a due fili	tvíleiðaralína
+m  mast a	m  mastur við
+m dal suolo	m yfir jörðu
+m sopra il boom, attacco al	m yfir bómunni, fest við
+media delle due	meðaltal tveggja
+mm  lungo	mm  langt
+mm, acciaio	mm, stál
+molto buono	mjög gott
+molto povero	mjög lélegt
+nessun rinforzo	engin styrking
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	ekkert verslunarrör upp að +12 mm dugar: farðu yfir mjókkunina
+nessuna distanza sotto il ROS attivo massimo	ekkert bil undir hámarks virku SWR
+partenza dal modello aperto	byrja frá opna líkaninu
+per lato, teso per annullare il momento verticale al mast	á hlið, strengt til að eyða lóðrétta væginu á mastrinu
+primo cedimento: tubo Ø	fyrsta brot: rör Ø
+regge il vento di progetto con il 20 % di margine	þolir hönnunarvindinn með 20 % svigrúmi
+riferimenti bibliografici	heimildaskrá
+sbalzo sopra il cuscinetto	útskögun yfir legunni
+schermo 1 λ x 1 λ	skjár 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	þéttir bútar) notar útvíkkaði kjarninn nákvæmari formúlu og niðurstaðan verður áreiðanlegri.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	án tappa hvílir innra rörið á brún ytra rörsins og stuðullinn 1,25 er notaður á spennuna í fyrstu 5 cm: mat, klemmur og raufar breyta niðurstöðunni mikið.
+sollecitazione / snervamento	spenna / flotmörk
+tubo piu' grosso	þykkara rör
+un filo riflettore	einn endurvarpsvír
+zona di cedimento	brotsvæði
+ø dei conduttori della forcina	ø leiðara hárnálarinnar
+ø del filo	vír-ø
+ø del pilotato	ø mataða staksins
+accordata	stillt
+accordate	stillt
+alimentazione	fæðing
+alluminio	ál
+allungata	lengt
+altro	annað
+anello	lykkja
+angolo	horn
+antiorario	rangsælis
+aritmetico	reiknilegt
+automatico	sjálfvirkt
+banda	band
+bande	bönd
+bordi	brúnir
+buono	gott
+capacitiva	rýmdarvirkt
+carichi	álög
+carico	álag
+cartesiana	kartesískt
+cavi	kaplar
+cavo	kapall
+centimetri	sentimetrar
+centina	rif
+cerchio	hringur
+condensatore	þéttir
+corrente	straumur
+destra	hægri
+diagramma	rit
+diametro	þvermál
+differenza	munur
+dipoli	tvípólar
+dipolo	tvípóll
+diretta	beint
+diritto	beint
+due	tveir
+elementi	stök
+elemento	stak
+elimina	eyða
+equilatera	jafnhliða
+esito	niðurstaða
+esperimenti	tilraunir
+esponenziale	veldis-
+fase	fasi
+ferriti	ferrít
+fili	vírar
+filo	vír
+forcina	hárnál
+forma	lögun
+formule	formúlur
+frequenza	tíðni
+geometria	rúmfræði
+ghiaccio	ís
+giudizio	mat
+gradi	gráður
+griglia	net
+guadagno	mögnun
+incrociata	krossuð
+larghezza	breidd
+lato	hlið
+lega	málmblanda
+libera	frjálst
+libero	frjálst
+linea	lína
+lineare	línulegt
+linee	línur
+lobi	hliðargeirar
+locale	staðbundið
+mai	aldrei
+manicotto	hulsa
+mano	handvirkt
+meccanica	aflfræði
+mezzaonda	hálfbylgja
+millimetri	millimetrar
+misure	mál
+modello	líkan
+modo	háttur
+nessuna	ekkert
+nota	athugasemd
+nuovo	nýtt
+operativo	vinnu-
+orario	réttsælis
+ottagono	áttstrendingur
+palo	mastur
+parabola	diskur
+passo	stigning
+perdite	töp
+perfetto	fullkomið
+piano	plan
+piatto	flatt
+piedi	fet
+polare	pól-
+pollici	tommur
+propria	eigið
+punto	punktur
+quadrato	ferningur
+quadro	ferningslaga
+quota	hæð
+radiali	geislar
+radiatore	geislari
+raggio	radíus
+rame	kopar
+ramo	grein
+rapidi	hratt
+rastremazioni	mjókkanir
+rete	net
+rettangolo	rétthyrningur
+riepilogo	samantekt
+riflettore	endurvarpi
+riga	röð
+rombo	tígull
+scarso	lélegt
+scarto	frávik
+schiacciata	flatt út
+sempre	alltaf
+senso	stefna
+si'	já
+sinistra	vinstri
+soglia	þröskuldur
+sorgenti	heimildir
+sotto	undir
+spire	vafningar
+staffe	klemmur
+stato	staða
+sufficiente	nægilegt
+tetto	þak
+tipo	gerð
+tirante	stag
+togli	fjarlægja
+tondo	hringlaga
+traffico	umferð
+trasformatori	spennar
+trombe	horn
+tubi	rör
+tubo	rör
+tutti	allt
+uguale	jafnt
+uguali	jöfn
+uso	nota
+a {0} x DL6WU; tutte sopra il massimo {1}	við {0} x DL6WU; öll yfir hámarkinu {1}
+% del mezzo boom	% af hálfri bómunni
++ aggiungi	+ bæta við
++ aggiungi variabile	+ bæta við breytu
++ correzione del boom	+ bómuleiðrétting
++ nuova	+ nýtt
++ trappola	+ gildra
++ verso il disco.	+ að diskinum.
++90 gradi Z	+90 gráður Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- reiknilegt: nákvæmlega mitt á milli IARU-marka bandsins (til dæmis 145,000 MHz á 2 m),\n
+- correzione del boom	- bómuleiðrétting
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- vinnu-: tíðnin sem þú vinnur raunverulega á (til dæmis 144,300 MHz á 2 m, 432,200 á 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (svart) 10-100 MHz
+-10 nero	-10 svart
+-2 (rosso) 0,25-10 MHz	-2 (rautt) 0,25-10 MHz
+-2 rosso	-2 rautt
+-6 (giallo) 3-40 MHz	-6 (gult) 3-40 MHz
+-6 giallo	-6 gult
+-90 gradi Z	-90 gráður Z
+-> segmento NEC	-> NEC-bútur
+. "Annulla" torna indietro.	. «Afturkalla» fer til baka.
+. Antenna base: fili 1-	. Grunnloftnet: vírar 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Með svo háu Q má sópið aðeins ná yfir fáein kHz.
+. Salvalo con Salva con nome.	. Vistaðu það með Vista sem.
+. Trascina per ruotare, rotella per ingrandire.	. Dragðu til að snúa, hjól fyrir aðdrátt.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Notaðu grennri vír, stærri kjarna eða tvo staflaða kjarna.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (í gegnum Sengupta 2021) og GMRT tafla 19.1
+12 (errore / HPBW)^2	12 (villa / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Óvirkur hringur: ummál {0:0.000} lambda, enginn gjafi og enginn þéttir; áhrifin sjást í heildarlíkaninu (stýrir eða endurvarpi).
+Automatico	Sjálfvirkt
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, eins og nec2c og xnec2c: frumkóðinn fylgir forritinu (skráin COPYING).\n
+Provincia di Trieste	Trieste-hérað
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	og í C# fyrir YA-NEC. Viðmiðunarviðmót: xnec2c eftir 5B4AZ og Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	nýtni reiknuð út frá fjarsviðinu, Prad / (Prad + töp) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	viðnám og töp verða sífellt óáreiðanlegri eftir því sem vírinn lækkar (sjá BOG í handbókinni). Fyrir örugga niðurstöðu: a.m.k. lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	hann er búinn til upp að {3:0.00} m þvermáli; ljósopsútreikningurinn við hliðina gildir fyrir hvaða þvermál sem er og tekur þegar tillit til rifjanna (reiturinn að ofan).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} bútar: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} á {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, nýtni {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° hækkun
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. útg., 18. kafli (2 m Yagi W9PE): þrjú stök á 0,2 λ, um 7 dBi og F/B yfir 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Samræmi YA-NEC við nec2c (stangir 20/15/10 m): endurvarpar á 0,185 / 0,197 / 0,222 λ, stýrar á 0,095 / 0,116 / 0,114 λ: innan bila heimildanna.
+↶ Annulla	↶ Afturkalla
+↷ Ripeti	↷ Endurgera
+■ Ferma	■ Stöðva
+▶ Avvia	▶ Byrja
+☐ mantieni lunghezza del boom	☐ halda lengd bómunnar
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ engar viðvaranir: bútunin uppfyllir valið stig
+✓ nessun errore e nessun avviso	✓ engar villur og engar viðvaranir
+variabili del modello	breytur líkansins
+nuova variabile dal modello	ný breyta úr líkaninu
+Scrivi una variabile nella linguetta Variabili…	Skrifa breytu í flipann Breytur…
+Elemento diritto	Beint stak
+Elemento piegato	Beygt stak
+Variabile nuova	Ný breyta
+Minimo / massimo	Lágmark / hámark
+Cosa cambia	Hvað breytist
+in ocra: dove agisce la variabile	í okkurgulu: þar sem breytan verkar
+Crea la variabile	Búa til breytuna
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Breytan {0} búin til: rúmfræðin breytist ekki. «Afturkalla» í Rúmfræði-stikunni fjarlægir hana.
+Struttura 3D: dove agisce la variabile ▾	3D-bygging: þar sem breytan verkar ▾
+Struttura 3D ▸	3D-bygging ▸
+Clic: nasconde o mostra la struttura	Smelltu: felur eða sýnir bygginguna
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	heilt okkurgult: notar breytuna · strikað okkurgult: notar hana í gegnum aðra breytu
+attraverso {0}: fili {1}	í gegnum {0}: vírar {1}

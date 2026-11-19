@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	مدى تغطية اللون: خفيفة أو متوسطة أو قوية. في صف الجدول يكون الغطاء أخف لتبقى الأرقام مقروءة.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	السلك {0} مختار في العرض ثلاثي الأبعاد: الصف {1} من الجدول
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	السلك {0}: ليس في جدول الأسلاك (بطاقة هندسة غير GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	يتحقق فورًا من وجود إصدار جديد (دون انتظار 3 دقائق).
+terreno reale	التضاريس الحقيقية
+Locatore	محدد الموقع
+da 8 a 12 caratteri	من 8 إلى 12 حرفًا
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	مع 6 أحرف قد تبتعد النقطة كيلومترات: يحتاج مقطع التضاريس إلى 8 أحرف على الأقل.
+Quota sito	ارتفاع الموقع
+Altezza antenna	ارتفاع الهوائي
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	ارتفاع مركز الهوائي عن الأرض. إذا اختلف عن ارتفاع النموذج، يُرفع مخطط NEC أو يُخفض بتوزيع التيار نفسه.
+Distanza max	أقصى مسافة
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	يُعاد حساب السمت والمسافات عند كل تغيير لمحدد الموقع (دائرة عظمى، كرة 6371 km).
+Terra	اليابسة
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	يخفض معامل انعكاس البحر بمعامل Ament لأمواج 0.25 m (انحراف معياري).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	نموذج إحصائي للسطح الخشن (Ament 1953): صالح للزوايا المماسة وبحر منتظم.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	يخفض المقطع بانحناء الأرض (نصف قطر مكافئ 4/3 للانكسار العادي) ويضعف الأشعة المنعكسة البعيدة بمعامل التباعد.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	جو قياسي (k = 4/3)؛ مع القنوات أو الانقلابات الحرارية يتغير الانحناء الظاهري.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	أعلى حافة بين الهوائي واتجاه الانطلاق توهن الشعاع المباشر كحافة سكين (تكامل فرينل)، كما في HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	حافة سكين واحدة: الحواف المستديرة أو المتتالية تُقرَّب بأعلاها.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	يكرر الحساب كل 10 درجات سمت (DEM فقط) ويعرض رقم الجدارة على الوردة، مع توجيه الهوائي إلى كل سمت.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	مع توجيه الهوائي دائمًا إلى سمت المقطع: صالح لهوائي دوّار.
+Cartesiana dBi / gradi	ديكارتي dBi / درجات
+0–180° intero	0–180° كامل
+Zoom angolare	تكبير الزاوية
+Sovrapponi alla linguetta Verticale	تراكب على تبويب الرأسي
+premi Calcola	اضغط احسب
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	يكرر الحساب بارتفاع هوائي من 6 إلى 30 m (HF) أو من 2 إلى 30 m (VHF) ويعرض الارتفاع ذا أفضل رقم جدارة على المسار.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	تبقى التيارات تيارات النموذج المحسوب: لا يُؤخذ أثر الارتفاع على الممانعة والتيارات في الحسبان (كما في HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	يلزم جدول زوايا الوصول من ARRL Antenna Book (ملفات .PRN لكل نطاق ومنطقة): بمجرد توفرها تُفعَّل هذه الميزة وتعرض الشرائح البرتقالية.
+locatore non valido	محدد موقع غير صالح
+sul mare	فوق البحر
+sul terreno	فوق اليابسة
+profilo reale	المقطع الحقيقي
+terreno piatto	أرض مستوية
+orizzonte ostruito	أفق محجوب
+° (scala angolare ×	° (مقياس الزاوية ×
+← dietro	← خلف
+avanti →	أمام →
+statistiche degli angoli di arrivo: non caricate	إحصاءات زوايا الوصول: غير محمّلة
+rosa 0–360°: calcolo in corso…	وردة 0–360°: جارٍ الحساب…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	اختر ملف المقطع (انقر "من HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM غير متوفر: يلزم الاتصال بالشبكة عند أول استخدام لتنزيل TINITALY أو SRTM1 (ثم تبقى في مجلد data/dem).
+Profilo del terreno	مقطع التضاريس
+Lobo di elevazione	فص الارتفاع
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	احسب النموذج أولًا (زر احسب في الأعلى): مخطط الهوائي يأتي من NEC.
+da file	من ملف
+dal DEM	من DEM
+rispetto alla stessa antenna su terreno piatto	مقارنة بالهوائي نفسه فوق أرض مستوية
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	الفرق بين الفص فوق المقطع الحقيقي والفص فوق أرض مستوية، بمتوسط على الزوايا المفيدة.
+Guadagno a 5° / 10°	الكسب عند 5° / 10°
+Guadagno a 1° / 3°	الكسب عند 1° / 3°
+Angoli coperti a -3 dB	الزوايا المغطاة عند -3 dB
+primo lobo sul profilo reale	الفص الأول فوق المقطع الحقيقي
+calcolo…	جارٍ الحساب…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	نموذج في الفضاء الحر: التيارات هي تيارات غياب الأرض، مثل مخطط الفضاء الحر الذي يستخدمه HFTA. لاحتساب الأرض القريبة احسب النموذج بأرض حقيقية.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	المقطع صالح لسمت واحد فقط: الهوائي الدوّار يحتاج اتجاهات أكثر (خانة "كل السموت").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	الطريقة كما في HFTA (N6BV): شعاع مباشر + أشعة منعكسة على كل وجه من المقطع + حيود فوق الحواف. مخطط الهوائي يأتي من NEC، وهذا الحساب يضيف التضاريس.
+Piatto	مستوية
+Reale	حقيقية
+Primo minimo	أول نقطة صغرى
+Punto di riflessione	نقطة الانعكاس
+Orizzonte	الأفق
+Uso: rotte DX in HF (angoli bassi 1–15°).	الاستخدام: مسارات DX على HF (زوايا منخفضة 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	الاستخدام: التروبو وMS (0–5°)، وEME مع قمر منخفض (كسب الأرض عند شروق القمر وغروبه).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	الارتفاع ذو أعلى متوسط كسب على الزوايا المفيدة للمسار.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	تيارات النموذج المحسوب منقولة في الارتفاع: تبقى الممانعة والاقتران بالأرض كما في النموذج.
+Calcola prima il terreno reale	احسب التضاريس الحقيقية أولًا
+Esporta il lobo sul terreno reale	تصدير الفص فوق التضاريس الحقيقية
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	الصور: Esri وMaxar وEarthstar Geographics ومجتمع مستخدمي GIS
+© i contributori di OpenStreetMap	© المساهمون في OpenStreetMap
+Sfondo	الخلفية
+Foto aerea	صورة جوية
+Solo griglia	الشبكة فقط
+Griglia	الشبكة
+Cerca	بحث
+⌖ Centra sul locatore	⌖ التوسيط على محدد الموقع
+Punto scelto	النقطة المختارة
+Coordinate	الإحداثيات
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	النقر على الخريطة = نقطة الهوائي؛ السحب = تحريك؛ العجلة = تكبير (تنتقل الشبكة من 6 إلى 8 و10 و12 حرفًا). الإطار السميك = مربع من 6 أحرف.
+non disponibile	غير متوفر
+Lunghezza elementi	طول العنصر
+Posizione sul boom	الموضع على العارضة
+Uniforme	منتظم
+Distribuzione	التوزيع
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	عنصر مركّب خارج المركز في المشبك: إزاحة على محوره، بسماحة الموضع.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	المشبك الحقيقي يغيّر أيضًا الطول الكهربائي قرب العارضة: لذلك استخدم تبويب "تصحيح العارضة".
+nuovo a ogni avvio	جديد في كل تشغيل
+Numero prove	عدد المحاولات
+Frequenze	الترددات
+Seme casuale	بذرة عشوائية
+OBIETTIVO LISTA DI TAGLIO	هدف قائمة القطع
+Calo F/B max	أقصى انخفاض في F/B
+ROS max	أقصى SWR
+Ferma	إيقاف
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	العناصر القريبة من العنصر المغذّى هي عادةً الأكثر حساسية؛ أما التي في طرف العارضة فتتحمل أخطاء أكبر.
+l'istogramma serve al Monte Carlo	المدرّج التكراري لمونت كارلو
+5% peggiore	أسوأ 5%
+Posizione mm	الموضع mm
+Lunghezza mm	الطول mm
+Tolleranza ammessa	السماحة المقبولة
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. بالأحمر العناصر التي تحتاج سماحة أصغر من سماحة التصنيع.
+Calcola prima il modello	احسب النموذج أولًا
+sensibilita'	الحساسية
+Tolleranze: fermato	السماحات: متوقف
+Diametro mm	القطر mm
+Tolleranza ammessa mm	السماحة المقبولة mm
+Avvia prima il calcolo	شغّل الحساب أولًا
+Esporta la lista di taglio	تصدير قائمة القطع
+Lista di taglio	قائمة القطع
+Obiettivi	الأهداف
+Calo massimo del F/B	أقصى انخفاض في F/B
+ROS massimo	أقصى SWR
+Tolleranze di costruzione	سماحات التصنيع
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	مخطط له (المخطط 13، بانتظار الموافقة): غير مفعّل بعد في هذا الإصدار.
+Al quadro 20×2 mm	Al مربع 20×2 mm
+Al quadro 25×2 mm	Al مربع 25×2 mm
+Al quadro 30×2 mm	Al مربع 30×2 mm
+Al quadro 40×2 mm	Al مربع 40×2 mm
+Al tondo 25×1,5 mm	Al دائري 25×1.5 mm
+Al tondo 30×2 mm	Al دائري 30×2 mm
+Al tondo 40×2 mm	Al دائري 40×2 mm
+Al tondo 50×2 mm	Al دائري 50×2 mm
+Zona NTC	منطقة NTC
+Quota sito as	ارتفاع الموقع كـ
+Periodo ritorno	فترة العودة
+Categoria esposiz.	فئة التعرّض
+Coeff. topografia	معامل التضاريس
+Antenna da terra	الهوائي فوق الأرض
+Palo sopra rotore	الصاري فوق الدوّار
+Ø palo	الصاري Ø
+Usa elementi e boom del modello	استخدام عناصر النموذج وعارضته
+Includi telaio, palo, cavi	تضمين الإطار والصاري والكابلات
+Scansione direzione del vento	مسح اتجاه الرياح
+UNITÀ	الوحدات
+N e kgf affiancati	N وkgf جنبًا إلى جنب
+solo N	N فقط
+solo kgf	kgf فقط
+Mostra	عرض
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	محدد موقع غير صالح: اختر المنطقة يدويًا
+Telaio a H	إطار H
+Cavi e divisore	الكابلات والمقسّم
+Parte	الجزء
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	مع الرياح العرضية لا تدفع العناصر (cross-flow، K5IU): القوة على الأنبوب تتبع مربع مركبة الرياح العمودية على محوره.
+momento flettente alla staffa del rotore	عزم الانحناء عند مشبك الدوّار
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	تحجيم أولي: لا يغني عن فحص مهندس للصاري والبرج والأساس. عزم القاعدة سيذهب إلى التبويب الفرعي "الصاري والأساس".
+Sito e norma	الموقع والمعيار
+Norma	المعيار
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019؛ المعاملات CNR-DT 207 R1/2018 وEN 1991-1-4
+Locatore / zona	محدد الموقع / المنطقة
+Risultati	النتائج
+Forza massima	أقصى قوة
+Momento flettente alla staffa del rotore	عزم الانحناء عند مشبك الدوّار
+Momento torcente sul rotore	العزم على الدوّار
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	تحجيم أولي: لا يغني عن فحص مهندس مؤهل للصاري والبرج والأساس.
+Al tondino pieno	Al قضيب مصمت
+Materiale elementi	مادة العنصر
+Staffe, isolatori	مشابك، عوازل
+g cad.	g لكل واحد
+Dipolo + scatola	ثنائي القطب + صندوق
+Cavo fino al palo	الكابل حتى الصاري
+STAFFA AL PALO	مشبك الصاري
+Posizione attuale	الموضع الحالي
+m dal riflettore	m من العاكس
+Massa / distanza	الكتلة / المسافة
+Vento dalla linguetta Vento	الرياح من تبويب الرياح
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	يستخدم ضغط التصميم من آخر حساب في التبويب الفرعي "الرياح"؛ وبدونه 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	ينقل النموذج كله على طول العارضة بحيث يقع المشبك المقترح في نقطة الأصل (حيث يُثبَّت الصاري وإطار التكديس). "تراجع" في البنية ثلاثية الأبعاد يعيده.
+Momenti in funzione della posizione della staffa	العزوم بحسب موضع المشبك
+Masse e aree per parte	الكتل والمساحات لكل جزء
+ultimo direttore	آخر موجِّه
+Staffe e isolatori	المشابك والعوازل
+Cavo sul boom	الكابل على العارضة
+Massa kg	الكتلة kg
+Baricentro m	مركز الثقل m
+Area vento m²	مساحة الرياح m²
+Centro area m	مركز المساحة m
+solo peso	الوزن فقط
+solo vento	الرياح فقط
+File Touchstone .s1p	ملف Touchstone .s1p
+Formato letto	الصيغة المقروءة
+CAVO TRA VNA E ANTENNA	الكابل بين VNA والهوائي
+R e X separate	R وX منفصلان
+Banda con ROS <	النطاق مع SWR <
+ROS: calcolato e misurato	SWR: محسوب ومقاس
+Confronto	مقارنة
+misurato, cavo tolto	مقاس، بعد إزالة الكابل
+R calcolata	R محسوب
+X calcolata	X محسوب
+R misurata	R مقاس
+X misurata	X مقاس
+Calcolato	محسوب
+Misurato	مقاس
+Scarto	الفرق
+Frequenza del ROS minimo	تردد أدنى SWR
+ROS minimo	أدنى SWR
+nessuna correzione: calcolo e misura coincidono.	لا تصحيح: الحساب والقياس متفقان.
+calcolo NEC sul campo della misura…	حساب NEC على نطاق القياس…
+Misura del VNA	قياس VNA
+Tutti	الكل
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	شغّل مسحًا (زر المسح في الأعلى) لرؤية F/B وF/R على النطاق كله
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = الكسب الأمامي ناقص متوسط القدرة على نصف الكرة الخلفي (سمت 90-270°، كل الارتفاعات فوق 0°). وهو أيضًا من أهداف المحسِّن.
+Tabelle: F/B e F/R su tutta la banda	جداول: F/B وF/R على النطاق كله
+Valori dello sweep	قيم المسح
+ANTENNE RICEVENTI	هوائيات الاستقبال
+4-square in ricezione	4-square للاستقبال
+8 verticali in cerchio	8 هوائيات رأسية في دائرة
+Modello aperto	افتح النموذج
+Isotropo	متساوي الخواص
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = الكسب في الاتجاه المطلوب ناقص متوسط الكسب على نصف الفضاء كله: بخلاف الكسب لا يعتمد على الفقد.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	يستخدم وسيط زاوية الوصول من تبويب "التضاريس الحقيقية" كارتفاع مطلوب (إحصاءات لكل نطاق ومنطقة). من دون تحميل إحصاءات ARRL يُحتفظ بالارتفاع المكتوب هنا.
+Direzione voluta	الاتجاه المطلوب
+Hz  rumore	Hz  الضجيج
+NF ricevitore	NF المستقبِل
+sorgente locale az	مصدر محلي az
+Cifre di merito in ricezione	أرقام جدارة الاستقبال
+Basta il segnale?	هل الإشارة كافية؟
+calcolo in corso…	جارٍ الحساب…
+RDF in funzione della frequenza	RDF بحسب التردد
+Calcola prima il modello aperto	احسب النموذج المفتوح أولًا
+verticale λ/4	رأسي λ/4
+° · dB relativi · arancio: -3 dB	° · dB نسبي · برتقالي: -3 dB
+settore ±30° az, 10–40° el	قطاع ±30° az، 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	متوسط الكسب على القطاع الأمامي ناقص المتوسط على نصف الكرة الخلفي.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	يعرّف ON4UN مقياس DMF بالكسب عند 20 درجة فقط؛ هنا يُستخدم المتوسط على قطاع المخطط، لذا لا يمكن مقارنة القيم بقيم الكتاب واحدًا بواحد.
+molto basso: serve un preamplificatore	منخفض جدًا: يلزم مضخم أولي
+basso ma accettabile: vedi soglia	منخفض لكنه مقبول: انظر العتبة
+come un'antenna trasmittente	مثل هوائي إرسال
+F/R medio sull'emisfero posteriore	متوسط F/R على نصف الكرة الخلفي
+Rumore d'antenna ai morsetti	ضجيج الهوائي عند الأطراف
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	قدرة الضجيج الخارجي عند الأطراف: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + متوسط الكسب موزونًا بحسب مصدر الضجيج.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	ضجيج من الأفق موزون بـ exp(-el/10 درجات) في الارتفاع: يمثل الضجيج الصناعي البعيد الذي يصل منخفضًا؛ والتوزيع الحقيقي يعتمد على الموقع.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	مصدر نقطي عند ارتفاع 5 درجات بقدرة الخلفية المتساوية الخواص نفسها.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	ضجيج متساوي الخواص فوق الأرض؛ الأرض لا تضيف ضجيجًا.
+Margine sul ricevitore	هامش المستقبِل
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	ضجيج الهوائي يتجاوز ضجيج المستقبِل بأقل من 6 dB: المستقبِل يحد الحساسية. يلزم تضخيم أولي أكبر أو مستقبِل بـ NF أقل.
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	الكسب 1.8
+Spazio richiesto	المساحة اللازمة
+λ/4 in tubo quadro	λ/4 في أنبوب مربع
+λ/4 in tubo tondo	λ/4 في أنبوب دائري
+Solo cavi di fase	خطوط الطور فقط
+Aria	هواء
+Uscite	المخارج
+Z antenne	Z الهوائي
+Z ingresso	Z الدخل
+Dielettrico	العازل
+Connettori	الموصلات
+Correggi accorciamento dei connettori	تصحيح القِصَر بسبب الموصلات
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	يطرح من الطول جزء الخط الموجود داخل الموصلات.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	تقدير 4 mm لكل طرف مع موصلات N (BNC 3، SMA 1.5): الأفضل التشذيب بجهاز VNA بتقصير 1 mm في كل مرة.
+Divisori	المقسّمات
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	يستخدم الممانعات الفعّالة لهوائيات التكديس المفتوح (مصدر لكل هوائي) والمسافات لتحديد الطول الأدنى لخطوط الطور.
+CAVI DI FASE	خطوط الطور
+Lunghezza minima	الطول الأدنى
+Passo verticale	المسافة الرأسية
+solo cavi di fase: nessun trasformatore da costruire	خطوط الطور فقط: لا محوّل للبناء
+2 cavi da 75 Ω in parallelo = 37,5 Ω	كابلان 75 Ω على التوازي = 37.5 Ω
+quadro, lato	مربع، الضلع
+tondo, Ø	دائري، Ø
+Z0 richiesta	Z0 المطلوبة
+Ø conduttore interno	Ø الموصل الداخلي
+VF del cavo	VF الكابل
+λ/4 in aria, mm	λ/4 في الهواء، mm
+da tagliare, mm	للقطع، mm
+Z carico in parallelo	Z الحمل على التوازي
+Rami λ/4: Z0 = Zin · √N	فروع λ/4: Z0 = Zin · √N
+Resistenze a stella	مقاومات النجمة
+Isolamento tra le uscite	العزل بين المخارج
+Perdita stimata	الفقد المقدّر
+Carico usato	الحمل المستخدم
+non potenza di 2	ليس قوة للعدد 2
+ROS all'ingresso	SWR الدخل
+solo cavi di fase	خطوط الطور فقط
+Uscita	المخرج
+Lungh. elettrica	الطول الكهربائي
+Fisica mm	mm فيزيائي
+Perdita dB	الفقد dB
+° di fase).	° من الطور).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° للأعلى)؛ لم تعد الممانعة عند المقسّم تتكرر بدقة.
+Solo cavi di fase: nessun disegno da stampare	خطوط الطور فقط: لا رسم للطباعة
+Divisore	المقسّم
+50 mm di controllo	فحص 50 mm
+GEOMETRIA	الهندسة
+λ/4 sul boom	λ/4 على العارضة
+stesso piano	المستوى نفسه
+Metallico, isolati	معدني، معزول
+Non metallico	غير معدني
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	العارضة ليست في نموذج NEC: مع عناصر معزولة عن عارضة معدنية يكون الأثر صغيرًا (تصحيح العارضة في الحاسبات).
+Yagi di base	ياغي أساسي
+Disposizione	الترتيب
+Sfasamento piani	إزاحة المستوى
+Cavo di ritardo λ/4	كابل تأخير λ/4
+Includi relè e cavi reali	تضمين المرحّلات والكابلات الحقيقية
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	يضيف فقد كابل التأخير (VF 0.66، 10 dB/100 m عند 144 MHz، محوّلًا بالجذر التربيعي للتردد) و0.1 dB للمرحّل.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	قيم نموذجية لكابل 75 Ω ومرحّل محوري؛ البرنامج لا يعرف قطعك.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	شبكة الطور نفسها تصلح أيضًا للـ turnstile (ثنائيا قطب متقاطعان بزاوية 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	منظر أمامي
+Componenti co-polare / cross-polare	المركبتان متماثلة الاستقطاب / متقاطعة الاستقطاب
+Rapporto assiale e ROS in frequenza	النسبة المحورية وSWR بحسب التردد
+piano A	المستوى A
+piano B	المستوى B
+vista dal davanti — boom al centro	منظر من الأمام — العارضة في المنتصف
+piani sfalsati di λ/4 lungo il boom	مستويان مزاحان بـ λ/4 على طول العارضة
+Yagi incrociate: serve una Yagi con una sola sorgente	ياغي متقاطع: يلزم ياغي بمصدر واحد
+Yagi incrociate: calcolo in corso...	ياغي متقاطع: جارٍ الحساب...
+Rapporto assiale in asse	النسبة المحورية على المحور
+Rapporto assiale a −3 dB	النسبة المحورية عند −3 dB
+Isolamento tra i due piani	العزل بين المستويين
+Fase della rete sul piano B	طور الشبكة على المستوى B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	مستويان متعامدان ومتماثلان تمامًا: في النموذج يكاد الاقتران والاستقطاب المعاكس يكونان صفرًا. في الواقع تحدهما المشابك والكابلات واللاتماثلات الصغيرة عند نحو 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	من 1.8 MHz إلى 1296 MHz: قائمة البالونات تتغير مع النطاق
+LINEA DI DISCESA	خط التغذية
+Coassiale	محوري
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	مع خط سلّمي متوازن لا يوجد درع: النمط المشترك يأتي فقط من عدم الاتزان. البطاقة تحسب الحالة المحورية؛ للخط السلّمي استخدم "الخطوط (TL)" مع المولّف.
+Lungo il boom	على طول العارضة
+m → palo	m → الصاري
+Discesa sul palo	نزولًا على الصاري
+Fino alla stazione	حتى المحطة
+Calza a massa sul palo / traliccio	الدرع مؤرض بالصاري / البرج
+Messa a terra all'ingresso stazione	تأريض عند مدخل المحطة
+BALUN DA CONFRONTARE	بالونات للمقارنة
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 لفات من RG-213 على 110 mm: محاثة Wheeler، سعة ذاتية Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 وسعة ذاتية مقدّرة: الممانعة الحقيقية للخانق يجب قياسها.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	حلقة فريت 1:1 كدائرة RLC متوازية بـ Q منخفض.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm عند القمة (10 MHz مع الخليط 31، 25 MHz مع الخليط 43): قيم نموذجية لـ 12 لفة على 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	محوري λ/2 بنسبة 4:1: تغذية متوازنة، الدروع موصولة.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	النمط المشترك المتبقي كرنين 600 Ω عند f0 (Q 3): يعتمد على التركيب.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	كُمّ λ/4: خط λ/4 مقصور بين الدرع والكُمّ، ممانعة عالية عند f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 الكُمّ 50 Ω وفقد 0.08 dB على ربع الموجة.
+10 perline in ferrite sulla calza.	10 حبات فريت على الدرع.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 Ω لكل حبة عند 144 MHz (الخليط 61)، و100 Ω فوق 30 MHz مع الخليط 43: قيم نموذجية من الكتالوج.
+Caso mostrato	الحالة المعروضة
+premi Calcola il confronto	اضغط احسب المقارنة
+Corrente lungo la calza, dal dipolo verso il basso	التيار على طول الدرع، من ثنائي القطب نزولًا
+Vista laterale: corrente sulla calza	منظر جانبي: التيار على الدرع
+F/R medio	متوسط F/R
+Z / ROS	Z / SWR
+Perdita nel balun	الفقد في البالون
+Potenza dissipata nel balun a 1 kW	القدرة المبددة في البالون عند 1 kW
+Banda con calza < 5 %	النطاق مع تيار الدرع < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	العناصر الرمادية بالونات للنطاق الآخر؛ تصبح فعّالة عند اختيار التردد. على HF يُحسب أيضًا الدرع النازل حتى المحطة (المؤرض)، وعلى VHF/UHF الجزء على العارضة والصاري. الدرع سلك موصول بجانب واحد من نقطة التغذية، كما في الواقع بلا بالون؛ والبالون ممانعة نمط مشترك على المقطع الأول.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	الألياف الزجاجية لا توصل: الإطار لا يدخل NEC، وتبقى دروع خطوط الطور فقط.
+Includi palo sotto il telaio	تضمين الصاري تحت الإطار
+Cavi di fase lungo i montanti	خطوط الطور على طول القوائم
+Rotore e controventi	الدوّار والشدّادات
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	مخطط له: الدوّار والشدّادات كأسلاك (يلزم أبعاد البرج).
+Materiale	المادة
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	أحمر = أجزاء الإطار المنمذجة كأسلاك NEC · متقطع = درع خطوط الطور
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	استقطاب أفقي: القوائم الرأسية ضعيفة الاقتران؛ والعارضة الأفقية وخطوط الطور غير مقترنة.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	استقطاب رأسي: القوائم والصاري موازية للعناصر وتؤثر أكثر؛ والعارضة الأفقية قليلًا.
+Confronto senza / con telaio	مقارنة بدون / مع الإطار
+Diagramma orizzontale sovrapposto	مخطط أفقي متراكب
+premi Calcola confronto	اضغط احسب المقارنة
+Stack: calcola prima il modello	التكديس: احسب النموذج أولًا
+Stack: calcolo senza e con telaio...	التكديس: جارٍ الحساب بدون الإطار ومعه...
+Pezzo	القطعة
+Collegato	موصول
+Cavi	الكابلات
+Senza telaio	بدون إطار
+Con telaio	مع إطار
+Z ingresso divisore	Z دخل المقسّم
+senza telaio	بدون إطار
+con telaio	مع إطار
+Stack: confronto senza / con telaio fatto	التكديس: اكتملت المقارنة بدون / مع الإطار
+CARICHI HF	أحمال HF
+INSERISCI NEL MODELLO	إدراج في النموذج
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	توضع القبعة في نهاية السلك (b أو e)، والتحميل الخطي عند النقطة المختارة من السلك.
+Inserisci nel modello	إدراج في النموذج
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	معتمد مسبقًا في مخطط الأحمال: Q لـ L وC، f0، Z لكل نطاق، الجهد والتيار على المكوّن. هنا تُضاف أنواع البناء.
+Trappola coassiale	مصيدة محورية
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	يُلحَم الموصل الداخلي ببداية الملف الأوسط (عكس الطرفين يخفض الرنين نحو 50 kHz).
+Calcola spire per f0	احسب اللفات لـ f0
+Spire dell'avvolgimento (anche frazionarie).	لفات الملف (يمكن أن تكون كسرية).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	f0 الحقيقي يختلف ببضعة بالمئة: قِسه بمقياس الانخفاض أو VNA وصحّح اللفات.
+Blocca	كتل
+dipolo con	ثنائي قطب مع
+Filo Ø	Ø السلك
+Calcola C per f0	احسب C لـ f0
+mm  Filo Ø	mm  Ø السلك
+mm  Passo	mm  الخطوة
+mm  Spire	mm  اللفات
+MHz  dal centro	MHz  من المركز
+m  Braccio	m  الذراع
+m  Filo dell'elemento Ø	m  Ø سلك العنصر
+Calcola spire per la risonanza	احسب اللفات للرنين
+Piega	الطيّة
+m  Distanza tra i fili	m  المسافة بين السلكين
+Calcola la piega per la risonanza	احسب الطيّة للرنين
+Raggi	الأشعة
+m  Filo Ø	m  Ø السلك
+Verticale alto	ارتفاع الجزء الرأسي
+m  Frequenza	m  التردد
+MHz  Filo Ø	MHz  Ø السلك
+Calcola i raggi per la risonanza	احسب الأشعة للرنين
+L misurata	L المقاسة
+MHz  Autorisonanza f0	MHz  الرنين الذاتي f0
+Cappello capacitivo in punta al verticale	قبعة سعوية في قمة الهوائي الرأسي
+Bobina dalle misure	ملف من القياسات
+Reattanza del cappello in frequenza	مفاعلة القبعة بحسب التردد
+impedenza della trappola	ممانعة المصيدة
+Si comporta da	يتصرف كـ
+Potenza persa	القدرة المفقودة
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	قدرة المرسل للجهود والفقد في الجدول.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	النطاق الأدنى: التيار عند البطن sqrt(P/73) وعند المصيدة I0 cos(beta a)؛ النطاق المحجوب: الجهد عند طرف ثنائي القطب الداخلي I0 Z0 يُقسَم بين المصيدة والإشعاع.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	التيار عند البطن sqrt(P/73) وعند الحمل I0 cos(beta a)، حيث a المسافة من المركز.
+Risonanza propria f0	الرنين الذاتي f0
+Q ideale	Q المثالي
+Q della trappola alla risonanza.	Q المصيدة عند الرنين.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	يُضاف الفقد العازلي (ظل الزاوية 3e-4 PE، 2e-4 PTFE). المصائد المحورية المقاسة لها عادةً Q بين 100 و300.
+Lunghezza di cavo	طول الكابل
++ 10 cm per le saldature	+ 10 cm لنقاط اللحام
+R in parallelo equivalente	R المتوازية المكافئة
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: هذا هو حمل LD الذي يدخل النموذج
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	ذراع ثنائي القطب على النطاق الأدنى مع المصيدة، مقارنة بالذراع كامل الحجم (71.3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC مع المصيدة كحمل يعطي الطول الصحيح.
+Induttanza misurata	المحاثة المقاسة
+dalla misura	من القياس
+Autorisonanza	الرنين الذاتي
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	التردد الذي يرن عنده الملف وحده بسعته الذاتية.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	السعة الذاتية من جدول Medhurst كدالة في الطول / القطر، صالحة للملفات أحادية الطبقة البعيدة عن الكتل المعدنية.
+Q della bobina alla frequenza di lavoro.	Q الملف عند تردد العمل.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	مقاومة السلك من الأثر القشري مضروبة في معامل التقارب 1 + 2 (d/p)^2 (d السلك، p الخطوة): يعطي Medhurst قيمًا مشابهة للملفات التي طولها يساوي قطرها تقريبًا.
+Reattanza della piega	مفاعلة الطيّة
+Z0 della linea	Z0 الخط
+Q della piega	Q الطيّة
+Capacita' del cappello	سعة القبعة
+Capacita' del cappello verso lo spazio.	سعة القبعة إلى الفضاء.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	مجموع الأشعة (سلك رفيع، 2 pi eps0 l / (ln(2l/a) - 1)) والحلقة التي تتشبع نحو القرص المصمت (8 eps0 r): الأشعة تحجب بعضها. إذا أُدرجت كأسلاك يحسبها NEC بدقة.
+in punta al verticale	في قمة الهوائي الرأسي
+Altezza per la risonanza	الارتفاع للرنين
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0)، x 0.95
+Effetto sul verticale	الأثر على الهوائي الرأسي
+Carichi HF: apri un modello nella finestra principale.	أحمال HF: افتح نموذجًا في النافذة الرئيسية.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	التحميل الخطي والقبعة السعوية يُدرجان كأسلاك: للبقية اختر "كحمل".
+Il cappello capacitivo si inserisce come fili.	القبعة السعوية تُدرج كأسلاك.
+RLC parallelo	RLC متوازية
+Effetto sul dipolo	الأثر على ثنائي القطب
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	تقصير الذراع مقارنة بربع الموجة الكامل (71.3 / f) مع الحمل عند تلك النقطة.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	نموذج خطي للذراع المحمّل X = Z0 (cot(beta b) - tan(beta a))، x 0.95 لأثر الطرف.
+Esegui il test	شغّل الاختبار
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	يمكن عرض الكسب مصحّحًا بـ AGT (متوفر أصلًا في المحسِّن).
+Controllo prima/dopo il calcolo	فحص قبل/بعد الحساب
+Esito	النتيجة
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ فحص أو أكثر يتجاوز ±0.2 dB: افحص التقطيع (البنية ثلاثية الأبعاد > التقطيع... وفحص التقطيع).
+Tutti i controlli entro ±0,2 dB.	كل الفحوص ضمن ±0.2 dB.
+Linea a finestra 450	خط نافذة 450 Ω
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	اضغط احسب: يحسب NEC ممانعة النموذج المفتوح عند كل تردد.
+Perdita nella linea	الفقد في الخط
+Perdita totale	الفقد الكلي
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	نوع المولّف بين الخط والمرسل (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	فقد مقدّر من Q المحمّل للشبكة (Qn = sqrt(Rmax/Rmin - 1)، قسمان لـ T وPi) ومن Q الملف؛ برنامج TLW لـ N6BV يحسب المكونات واحدًا واحدًا وقد يختلف ببضعة أعشار dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	مثال: دوبلت 2 × 20 m (ZS6BKW/G5RV). تحذير حين يرى المولّف أقل من 20 Ω: فقد عالٍ، ويُقترح إطالة الخط أو تقصيره. الخط ذو الفقد كما في TLW (N6BV، ARRL).
+USA costa est	الساحل الشرقي للولايات المتحدة
+USA costa ovest	الساحل الغربي للولايات المتحدة
+Giappone	اليابان
+Caraibi	الكاريبي
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: لم تُرجع الخدمة GeoTIFF
+GeoTIFF compresso: non supportato	GeoTIFF مضغوط: غير مدعوم
+GeoTIFF: tipo di dato non supportato	GeoTIFF: نوع بيانات غير مدعوم
+Il file non contiene coppie distanza / quota.	الملف لا يحتوي أزواج مسافة / ارتفاع.
+Nessuno	لا شيء
+Ferriti a perline	حبات فريت
+Cavo e balun: segmento della sorgente non trovato.	الكابل والبالون: لم يُعثر على مقطع المصدر.
+solo palo	الصاري فقط
+Acciaio zincato	فولاذ مجلفن
+Alluminio	ألومنيوم
+Vetroresina	ألياف زجاجية
+Montante sx/dx	القائم يسار/يمين
+al boom	إلى العارضة
+Traversa	العارضة العرضية
+Palo	الصاري
+al dipolo	إلى ثنائي القطب
+N, femmina	N، أنثى
+senza connettori	بلا موصلات
+rurale tranquillo	ريف هادئ
+Verticale λ/4	رأسي λ/4
+λ/8 di lato	λ/8 لكل جانب
+0,37 λ di diametro	قطر 0.37 λ
+Cappello capacitivo	قبعة سعوية
+W8NX bassa impedenza	W8NX ممانعة منخفضة
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	كابل كبير بعازل PTFE (RG-393) أو مصيدة LC بمكثف جهد عالٍ
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	الطيّة أطول من lambda/8: لم يعد الخط يتصرف كمحاثة ثابتة، افحص الرنين بـ NEC بإدراجها كأسلاك.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	سعة القبعة تقدير (الأشعة تحجب بعضها): للقيمة الدقيقة أدرجها كأسلاك واحسب بـ NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	موضع الحمل أبعد من ربع الموجة: قرّبه من المركز.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	القبعة توضع في نهاية السلك: اختر المقطع الأول (b) أو الأخير (e).
+il punto scelto e' troppo vicino all'estremo del filo.	النقطة المختارة قريبة جدًا من نهاية السلك.
+questo tipo entra nel modello come carico.	هذا النوع يدخل النموذج كحمل.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	أحمال HF: أسلاك أضافتها حاسبة YA-NEC
+Il file Touchstone non contiene punti di S11.	ملف Touchstone لا يحتوي نقاط S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	ملف CSV لا يحتوي صفوف تردد وRe(S11) وIm(S11).
+AGT in spazio libero, senza perdite	AGT في الفضاء الحر، بلا فقد
+IMPOSTAZIONI	الإعدادات
+Schiera Hi-Z di verticali corte	مصفوفة Hi-Z من هوائيات رأسية قصيرة
+Base del loop	قاعدة الحلقة
+Distanza, lato o diametro	المسافة أو الضلع أو القطر
+Altezza delle verticali	ارتفاع الهوائيات الرأسية
+Base del loop dal suolo	قاعدة الحلقة فوق الأرض
+Fase tra le file	الطور بين الصفوف
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	ثنائي قطب أفقي منخفض: تحت lambda/4 من الأرض يتجه الفص للأعلى. هو مرجع "الزاوية العالية" في ترتيب IV3PRK (RDF 7.3 dB): يُقارن بهوائيات الاستقبال منخفضة الزاوية.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY من Gary Breed K9AY (QST، سبتمبر 1997): حلقتان رأسيتان بزاوية 90 درجة على الصاري نفسه، مقاومة إنهاء (390 Ω نموذجيًا، تُضبط لـ F/B)، محوّل 9:1. هنا حلقة واحدة موجّهة إلى الاتجاه المختار، مغلقة فوق الأرض كما في صفحة الاستقبال (RDF). Hi-Z: RDF 7.2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square للاستقبال: أربعة هوائيات رأسية فعّالة قصيرة في زوايا مربع lambda/8، تشع على طول القطر. طور فارغ = صفر خلفي دقيق (pi + beta d بين الصفوف): يعطي أعلى اتجاهية نظرية؛ شبكات الطور الحقيقية (ON4UN، IV3PRK) تستخدم أطوارًا أخرى وتعطي RDF أقل (IV3PRK 9.4 dB). الزر يبحث عن الطور ذي أفضل RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	مصفوفات من هوائيات رأسية فعّالة قصيرة مثل Hi-Z Antennas: عنصران end-fire (قلبي، lambda/8)، 3 في مثلث (ضلع lambda/6، رأس نحو الاتجاه المختار)، 8 في دائرة (قطر 0.37 lambda: تُستخدم الأربعة نحو الاتجاه والمقابل). Hi-Z: 8 في دائرة RDF 13.4 dB مع مجمّعها الخاص؛ النموذج البسيط بصفين يبقى أقل. الزر يبحث عن الطور ذي أفضل RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ الهوائيات الرأسية تبدأ من الأرض الحقيقية (GE 1 مع أرض Sommerfeld): مع NEC-2 يعطي السلك الموصول بالأرض الحقيقية ممانعة تعتمد على مقطع المصدر (دليل NEC-2، EZNEC). المخطط وRDF إرشاديان؛ والوصل بأشعة مرفوعة مخطط له لكل هوائيات الاستقبال.
+fase tra le file da 120 a 300 gradi per l'RDF	الطور بين الصفوف من 120 إلى 300 درجة لـ RDF
+nessuna fase con il lobo in avanti	لا طور يتجه فيه الفص للأمام
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	الطور بين الصفوف لأفضل RDF: {0} درجة (RDF {1} dB). جارٍ إعادة الحساب...
+linea d'orizzonte	خط الأفق
+scala angolare	مقياس الزاوية
+lobo reale sopra il piatto fino a	الفص الحقيقي فوق المستوي حتى
+Profilo verso	المقطع نحو
+Lobo verticale e angoli di arrivo a	الفص الرأسي وزوايا الوصول عند
+Cos'e' l'RDF	ما هو RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = الكسب في الاتجاه المطلوب - متوسط الكسب على كل الاتجاهات (W8JI؛ كان يُسمى SNIF في الستينيات). يقيس كم يحسّن الهوائي نسبة الإشارة إلى الضجيج إذا وصل الضجيج بالتساوي من كل اتجاه؛ الكسب المطلق لا يُحتسب (المضخم الأولي يستعيده). المتوسط كما في EZNEC: نصف الكرة العلوي مقسومًا على الكرة كاملة (4 pi). بهذا الاصطلاح تتفق النتائج مع IV3PRK وW8JI/Hi-Z (رأسي 5.07 مقابل 5.06 و4.9؛ Beverage 350 m 13.5 مقابل 13.66). الحد: الضجيج الحقيقي غير منتظم (خطوط الكهرباء، QRM المحلي): لذلك يهم F/B وشكل الفص أيضًا. لهوائيات الإرسال لا معنى لـ RDF: لذا يُحسب في هذا التبويب فقط. DMF (Directivity Merit Figure، ON4UN): الكسب عند ارتفاع 20 درجة في الاتجاه الأمامي ناقص متوسط كسب نصف الفضاء الخلفي (سمت أبعد من 90 درجة، فوق الأرض، موزون بجيب التمام للمساحة): يبيّن كم يرفض الهوائي الضجيج القادم من الخلف. يحذّر ON4UN من مقارنة DMF وRDF ببعضهما. المصادر: W8JI وW8WWV (RDF)، ON4UN Low-Band DXing الفصل 7 (DMF، الجداول 7-22، 7-24، 7-25)، IV3PRK، IK0XBX.
+elevazione	الارتفاع
+azimut	السمت
+azimut a {0}°	السمت عند {0}°
+totale	الإجمالي
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	عرض الحزمة بين الصفرين الأولين (FNBW): {0}°؛ أعلى فص جانبي: {1}
+Didascalie {0} %	التسميات {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB مقابل {1} من المصدر: افحص الأبعاد والإنهاء والأرض (قد يستخدم المصدر أرضًا أو هندسة مختلفة).
+Azimut a {0}° · {1} MHz	السمت عند {0}° · {1} MHz
+Azimut a {0}° di elevazione	السمت عند ارتفاع {0}°
+RUMORE	الضجيج
+Apri la scheda {0}	افتح بطاقة {0}
+caso mostrato: {0}	الحالة المعروضة: {0}
+Rastremazioni	التدرجات
+BANDA	النطاق
+λ/2 coassiale 4:1	محوري λ/2 بنسبة 4:1
+Manicotto λ/4	كُمّ λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	درع الكابل والصاري كأسلاك NEC؛ مقارنة البالونات (تيار النمط المشترك، F/B، متوسط F/R، الفقد، القدرة عند 1 kW) من 1.8 إلى 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	القوائم والعارضة العرضية والصاري ودروع خطوط الطور كأسلاك NEC: مقارنة بدون / مع الإطار (الكسب، F/B، متوسط F/R، الفصوص، Z المقسّم، Tant وG/T).
+TIPO	النوع
+DATI	البيانات
+TELAIO	الإطار
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 في أنبوب مربع أو دائري، في كابل، Wilkinson؛ خطوط الطور، الإمالة؛ رسم 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X أو +، مستويان مزاحان بـ λ/4؛ H، V، RHCP، LHCP، X-pol؛ النسبة المحورية والعزل
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	أطوال متساوية ← طور متساوٍ. مضاعفات λ/2 ← تتكرر الممانعة الفعّالة عند المقسّم. السماحة الموصى بها ± 5 mm (= ± {0}° من الطور).
+impedenze attive delle {0} antenne dello stack in parallelo	الممانعات الفعّالة لهوائيات التكديس الـ {0} على التوازي
+Banda con ROS < {0}	النطاق مع SWR < {0}
+? Manuale	? الدليل
+Apre la spiegazione nel manuale	يفتح الشرح في الدليل
+riferimento	مرجع
+Rispetto alla singola antenna	مقارنة بالهوائي المفرد
+{0} antenne ideali	{0} هوائيات مثالية
+x la distanza DL6WU, a passi di	x مسافة DL6WU، بخطوات
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	المحور الأيسر: G التكديس - G المفرد، من 0 صعودًا. المحور الأيمن: F/R التكديس - F/R المفرد، مقلوب، و0 في الأعلى: حيث يحسّن التكديس F/R ينزل المنحنى، وأدنى نقطة هي أكبر تحسين. يبقى G/T في الجدول.
+ΔG sulla singola	ΔG مقارنة بالهوائي المفرد
+Chiusura del programma	إغلاق البرنامج
+Vuoi chiudere YA-NEC?	هل تريد إغلاق YA-NEC؟
+Grazie per avermi usato: spero di esserti stato utile.	شكرًا لاستخدامي: أتمنى أن أكون قد أفدتك.
+Sì	نعم
+ROS attivo	SWR الفعّال
+G realizzato	G المحقَّق
+ROS attivo massimo	أقصى SWR فعّال
+riflessi minimi	أدنى انعكاسات
+ROS attivo alto: da non scegliere	SWR فعّال مرتفع: لا تختره
+Documenti tecnici	الوثائق التقنية
+Manuale d'uso	دليل المستخدم
+Manuale di calcolo e delle fonti	دليل الحسابات والمصادر
+Citazioni	الاستشهادات
+Cerca in tutti i documenti	البحث في كل الوثائق
+Apri il PDF	افتح PDF
+Nessun risultato per «{0}»	لا نتائج لـ «{0}»
+Primi {0} risultati per «{1}»	أول {0} نتائج لـ «{1}»
+{0} risultati per «{1}»	{0} نتائج لـ «{1}»
+Apre la citazione {0}	يفتح الاستشهاد {0}
+Manuale di calcolo	دليل الحسابات
+È pronta la versione {0} di YA-NEC	إصدار YA-NEC {0} جاهز
+È già scaricata e installata: entra in funzione quando riavvii il programma.	تم تنزيله وتثبيته مسبقًا: يسري عند إعادة تشغيل البرنامج.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	على Mac لا يثبّت نفسه: نزّل ملف .dmg الجديد من صفحة الإصدارات على GitHub.
+Riavvia adesso	أعد التشغيل الآن
+Più tardi	لاحقًا
+Apri la pagina delle versioni	افتح صفحة الإصدارات
+Aggiornamento di YA-NEC	تحديث YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	تم تنزيله وتثبيته مسبقًا. يعيد البرنامج تشغيل نفسه ويعيد فتح النموذج المفتوح.
+Riavvio tra {0} s	إعادة التشغيل خلال {0} ث
+Questo avviso si chiude tra {0} s	يُغلق هذا الإشعار خلال {0} ث
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	أُعيد فتح النموذج غير المحفوظ بعد التحديث: احفظه متى شئت (نسخة في data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	أُعيد فتح النموذج الذي كان مفتوحًا بعد التحديث.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	لكل خانة تلميح فيه الشرح والمصدر. رمادي: محدد = مفعّل دائمًا (لا يمكن إيقافه)؛ غير محدد = غير متوفر بعد؛ خيارات الأقراص = خيار ثابت. الدليل، الفصل 21.
+"): sorgente sempre accesa.	"): مصدر مفعّل دائمًا.
+' non da' un numero valido.	' ليس رقمًا صالحًا.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik كما هو
+0 - misure del metodo	0 - قياسات الطريقة
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = دليل موجي WR القياسي للنطاق (WR650، WR430، WR159، WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = الصحن نفسه في الطرف الآخر (الصدى الخاص).
+0 = stesso disco all'altro capo.	0 = الصحن نفسه في الطرف الآخر.
+0 gradi a destra	0 درجة إلى اليمين
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = ثلث من الطرف: ممانعة 200-300 Ω، بالون 4:1
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: بعيدًا عن الحافة، حيث يُخرج الانحناء المغذّي عن البؤرة.
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 بولي إيثيلين مصمت (RG-58، RG-213)، 0.8-0.85 عازل رغوي.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 بولي إيثيلين مصمت، 0.8-0.85 رغوي، 0.9-0.97 خط سلّمي.
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 طول موجة الدليل
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - الحلقة المغذّاة
+1 - radiatore	1 - المشع
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = لفة واحدة (كما من قبل). مع لفات أكثر يزداد Rr مع N² وفقد الأثر القشري مع N.
+1 cavo	كابل واحد
+1-2-3 elementi	1-2-3 عناصر
+1. Obiettivi e pesi	1. الأهداف والأوزان
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - الرياح، التوازن، المقسّمات، البالونات، الياغي المتقاطع
+1.3 - Antenne riceventi abilitate	1.3 - تفعيل هوائيات الاستقبال
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz مع صحن كبير: إضافة إلى السطح والتوجيه، يُحتسب التشوه الحراري وبفعل الرياح (ATA: 0.7 mm RMS ليلًا، 3 mm نهارًا في الشمس)، وكذلك انحناء الدعامات وانتشار الترنّح.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: اطبع بنسبة 100 %، دون "ملاءمة الصفحة"
+1005/f piedi	1005/f قدم
+144 isol.	144 معزول
+2 - riflettore	2 - العاكس
+2 - riflettori	2 - العواكس
+2 in parallelo	2 على التوازي
+2 lati	ضلعان
+2. Variabili che l'ottimizzatore puo' cambiare	2. المتغيرات التي يجوز للمحسِّن تغييرها
+200 Ω con balun 4:1	200 Ω مع بالون 4:1
+25 tondo	25 دائري
+3 - direttori	3 - الموجِّهات
+3 gruppi	3 مجموعات
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 أو 4. مع 2 لا صلابة خارج مستواهما.
+3. Registro dei passi - clic su una riga per riprenderla	3. سجل الخطوات - انقر صفًا لاستعادته
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω أو بالون 4:1
+36 Ω + terra	36 Ω + أرض
+4 - tutto insieme	4 - الكل معًا
+4 lati	4 أضلاع
+4 sorgenti: vedi tabella	4 مصادر: انظر الجدول
+432 isol.	432 معزول
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 فحصًا للبيانات اعتمدها IC8TEM في 15/11/2026: العتبات والشروح في الدليل، الفصل 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 أقدام نحو 18 dBi، و12 قدمًا نحو 20.5 dBi
+75 ohm ideale	75 Ω مثالي
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	أطول من نصف القطر بـ 8 مرات. مع أسلاك سميكة أو مقاطع قصيرة (أنابيب سميكة على UHF، عناصر متقاربة،\n
+9 fili	9 أسلاك
+9 fili a 0,1 λ	9 أسلاك عند 0.1 λ
+Accorciamento del pilotato	تقصير العنصر المغذّى
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	تقصير يتجاوز 8%: التقدير الخطي غير موثوق، تحقّق بـ NEC.
+Allega il modello aperto	إرفاق النموذج المفتوح
+Allega il registro di oggi	إرفاق سجل اليوم
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	ارتفاع الموج RMS وارتفاع الهوائي فوق البحر، في المخططات > الأرض الحقيقية.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	عرض المسح حول التردد، لمخطط الممانعة.
+Antenna a	الهوائي عند
+Applica la freccia al modello NEC	تطبيق الترهّل على نموذج NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	معتمد، قيد الإعداد: غير مفعّل بعد في هذا الإصدار.
+Apri la cartella	افتح المجلد
+Apri un modello nella finestra principale	افتح نموذجًا في النافذة الرئيسية
+Apro il modello e il diagramma 3D resta vuoto.	أفتح النموذج ويبقى العرض ثلاثي الأبعاد فارغًا.
+Area al vento dell'antenna	مساحة الرياح للهوائي
+Area al vento totale	مساحة الرياح الكلية
+Area al vento totale e lista di taglio	مساحة الرياح الكلية وقائمة القطع
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	تحذير: لا تستخدمه مع أسلاك تلتقي بزاوية أو بأقطار مختلفة عند الوصلة.\n
+Bobina di carico per la risonanza	ملف تحميل للرنين
+Boom con il tirante	عارضة بجملون
+C1 in serie con la loop	C1 على التوالي مع الحلقة
+C1 serie, C2 parallelo	C1 توالٍ، C2 توازٍ
+C2 in parallelo all'ingresso	C2 على التوازي مع الدخل
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	الحاسبات > هوائيات الاستقبال: ثنائي قطب منخفض، K9AY، 4-square للاستقبال، Hi-Z بـ 2/3/8 عناصر، مع الطور بين الصفوف المحسَّن لـ RDF وتحذير وصل الأرض.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	الحسابات الميكانيكية (الرياح والتوازن)، الحاسبات > المقسّمات والياغي المتقاطع، الكائنات > الكابل والبالون وإطار التكديس، أحمال HF.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	تحجيم أولي: يحتاج التركيب إلى تصميم من مهندس مؤهل.
+Candidati da controllare	المرشّحون للفحص
+Categoria	الفئة
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	فئة تعرّض الموقع (NTC 2018، الجدول 3.3.II والشكل 3.3.2): تعتمد على فئة خشونة الأرض (A مراكز المدن ... D مناطق بلا عوائق، البحر) وعلى البعد عن الساحل. I = ساحل مفتوح أو بحر، V = مركز المدينة.
+Cebik, poi NEC	Cebik ثم NEC
+Centro della banda scelta:\n	مركز النطاق المختار:\n
+Con ghiaccio	مع الجليد
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	مع الجليد: الرياح مخفّضة إلى 0.6 مرة وجليد شعاعي من الخانة على اليمين (تركيبة ISO 12494 مبسطة).
+Con lo stesso seme la prova si ripete uguale.	مع البذرة نفسها يتكرر الاختبار بالضبط.
+Condizione della sorgente non capita ("	لم يُفهم شرط المصدر ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	يتحقق من GitHub فورًا دون انتظار الدقائق الثلاث. إن وُجد إصدار جديد ينزّله وينبّه ويعيد التشغيل كالتحديث التلقائي (10 ثوانٍ، ويُعاد فتح النموذج). يعمل حتى مع إيقاف التحديث التلقائي.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	يُفحص دائمًا بفحص التقطيع وفي التحذيرات (8 مع النواة العادية، 2 مع النواة الموسّعة).
+Copie per candidato	النسخ لكل مرشّح
+Coppia sulla staffa boom-mast	العزم على مشبك العارضة-الصاري
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	ينشئ ملف zip في data/segnalazioni ويفتح صفحة «New issue» في GitHub والنص مكتوب مسبقًا. ترفق الملف بنفسك يدويًا: البرنامج لا يرسل شيئًا من تلقاء نفسه.
+Curvatura terrestre, in Diagrammi > Terreno reale.	انحناء الأرض، في المخططات > الأرض الحقيقية.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	القطر خارج نطاق صيغ Cebik (من 1E-6 إلى 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	مسافة الأرض الثانية ونوعها: معتمدة للإصدار 1.5 (الأرض الحقيقية 2).
+Distanze di stack HF	مسافات التكديس على HF
+Distanze di stack: accoppiamento e distanza migliore	مسافات التكديس: الاقتران وأفضل مسافة
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	بعد التحسين، أفضل النتائج التي تنتقل إلى فحص السماحات. 0 = بلا فحص.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	أطراف منخفضة جدًا: انتبه للناس والحيوانات (جهود عالية عند الأطراف).
+F/B peggiore	أسوأ F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	ملف .weq: الأسطر التي فيها AutoEZ TLParms (كابلات ذات فقد) تستخدم Zo وVF الاسميين بلا فقد: بطاقة TL في NEC بلا فقد.
+Filo riflettore	سلك العاكس
+Filo ripiegato	السلك المطوي
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	hairpin طويل (أكثر من 0.2 lambda): الأفضل تقليل المسافة أو استخدام موصلات أسمك.
+Forza del vento di progetto	قوة الرياح التصميمية
+Forza l'aggiornamento	فرض التحديث
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	ترهّل الوتر: كم تبقى الشبكة على المقطع المستقيم تحت مجسّم القطع المكافئ في منتصف الباع (يدخل في التقسيم إلى أوجه). الكتلة الكلية للمدادات {4:0.00} kg{5}.
+Freccia tolta dal modello.	أُزيل الترهّل من النموذج.
+Ghiaccio radiale	جليد شعاعي
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	ملفات MMANA يُعاد تقطيعها دائمًا لـ NEC-2 (الدليل، الفصل 10).
+I lobi si leggono nella tabella delle distanze di stack.	الفصوص الجانبية تُقرأ في جدول مسافات التكديس.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (تقريب)، FIX (بتر)، MOD، MAX، MIN، ODD (عدد صحيح فردي: مفيد لمقاطع السلك المغذّى).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	يعامل NEC2 العادي كل سلك كخط رفيع: هذا جيد ما دام المقطع على الأقل\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	سلك عاكس واحد يعطي تحسنًا ضئيلًا جدًا (Cebik): الشاشة أو الأسلاك التسعة أفضل.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	الصاري يتجاوز حد الخضوع: صاري أسمك أو بروز أقصر.
+Impedenza del cavo	ممانعة الكابل
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	بشكل آخر: يشير الفحص r5 من فحوص البيانات إلى كسب يتجاوز الحد الفيزيائي لطول العارضة.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	محاثة بـ N² (لفات متلاصقة) ونموذج NEC بلفة واحدة: هنا يفحص NEC هندسة اللفة الواحدة فقط.
+Interasse della forcina	مسافة hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	الجزر (عدا صقلية وسردينيا) والبحر المفتوح
+Kernel esteso del NEC2 (scheda EK).\n	نواة NEC2 الموسّعة (بطاقة EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	يجب أن تكون مسافة hairpin أكبر من قطر الموصل.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	يغلق Slim Jim المشع من الأعلى بسلك مطوي للأسفل، حتى ما فوق الوصلة مباشرة.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	تقوم به نافذة فحص التقطيع (الزر أعلاه).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	hairpin متماثل: لا يُميل المخطط كما يفعل gamma. ما زال يلزم بالون أو خانق عند نقطة التغذية.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	يعمل hairpin فقط إذا كانت R العنصر المغذّى أقل من ممانعة الكابل: لـ R أكبر استخدم gamma أو محوّلًا.
+La prepara IC8TEM: non ancora attiva.	IC8TEM يُعدّه: غير مفعّل بعد.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	القواعد الست لـ EZNEC Geometry Check، عند كل حساب، في تبويب التحذيرات.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: بلا تصحيح Z = {0:0.0} {1}j{2:0.0} Ω (مع التصحيح {3:0.0} {4}j{5:0.0} Ω).
+Località	الموقع
+Loop orizzontale di 1 λ	حلقة أفقية 1 λ
+Lunghezza del pilotato	طول العنصر المغذّى
+Lunghezza della forcina	طول hairpin
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	يضع النموذج المفتوح (.nec) في ملف zip، حتى لو لم يُحفظ.
+Mette nello zip il registro di oggi della cartella registri.	يضع سجل اليوم من مجلد logs في ملف zip.
+Momenti al mast	العزوم على الصاري
+Momento al cuscinetto	العزم عند المحمل
+NEC: risonanza cercata dal motore	NEC: الرنين يبحث عنه المحرك
+NOTE SU QUESTA VERSIONE (fase 0)\n	ملاحظات حول هذا الإصدار (المرحلة 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	جديد · فوق الأرض: الارتفاعات، المسافات، زوايا الإطلاق المطلوبة
+Nel modello non ci sono elementi orizzontali diritti	النموذج لا يحتوي عناصر أفقية مستقيمة
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	في جدول التكديس وفي كائنات النموذج (إطار التكديس، المقسّمات).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	في بطاقات الهندسة اكتب التعابير بلا مسافات، مثلًا:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	لا مسافة مقترحة
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	لا مسافة مقترحة: كلها تتجاوز أقصى SWR فعّال.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	لا عنوان IP ولا بريد إلكتروني ولا أسماء مستخدمين في الملفات: مسار المجلد الرئيسي يصبح «~». من دون حساب GitHub يمكنك إرسال الملف بأي طريقة.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	ليس تلقائيًا بعد: يُجرى يدويًا باختبار AGT في التحذيرات (ARRL الطبعة 24، 4nec2).
+Numero di spire	عدد اللفات
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	كل نسخة تُزاح أبعادها عشوائيًا ضمن سماحات تبويب السماحات (الافتراضي: الطول ±1 mm، الموضع ±2 mm، القطر ±0.1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	إضافة إلى النموذج المفتوح، نقاط بداية مختارة عشوائيًا بين أدنى وأقصى قيمة لكل متغير. 0 = كما من قبل.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	صفحة ضجيج السماء الحقيقي في تبويب الضجيج/GT/التكديس: حساب skynoise منقولًا إلى C# (قراءة خرائط HEALPix، الاستيفاء، الزمن النجمي، الإحداثيات، القمر) وخريطتا G8ONH في data/cielo.
+Partenze a caso	بدايات عشوائية
+Perimetro Cebik	محيط Cebik
+Peso del boom	وزن العارضة
+Pi-greco	شبكة Pi
+Prepara la segnalazione	إعداد التقرير
+Proposta	اقتراح
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	اختبار nec2c عند 145 MHz (أنابيب 12 mm على مسافة 40 mm): 30 mm -> 45 + j23 Ω، 35 mm -> 60 + j24 Ω. Slim Jim: 50 mm -> 48 + j7 Ω.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	متى يلزم: نسبة المقطع/نصف القطر بين نحو 2 و8 (تحت 2 لا يوثق بأي منهما).\n
+Quota s.l.m.	الارتفاع عن سطح البحر
+R del pilotato	R العنصر المغذّى
+ROS attivo minimo {0}	أدنى SWR فعّال {0}
+Raggio equivalente dei due conduttori	نصف القطر المكافئ للموصلين
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	مفاعلة العنصر المغذّى الآن: إن كانت موجبة يجب تقصير العنصر المغذّى أكثر.
+Reattanza della forcina	مفاعلة hairpin
+Reattanza voluta del pilotato	مفاعلة العنصر المغذّى المطلوبة
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	المفاعلة: بعد kl = pi/2 (أو مع موصل سميك جدًا) لا تصح صيغة AEH، استخدم NEC.
+Reinstalla la versione attuale	أعد تثبيت الإصدار الحالي
+Rel Z non positiva	Re Z غير موجبة
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	مقاومة العنصر المغذّى عند الرنين، من النموذج أو حساب NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	فشلت إعادة التشغيل: أغلق YA-NEC وافتحه يدويًا.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	ينزّل ويعيد التثبيت حتى لو كان الإصدار نفسه: مفيد إذا تلف ملف من البرنامج.
+Scansione	المسح
+Scegli il candidato con	اختر المرشّح بحسب
+Schermo	الشاشة
+Scrivi due frequenze diverse.	اكتب ترددين مختلفين.
+Segnala un problema	الإبلاغ عن مشكلة
+Seme del caso	بذرة عشوائية
+Serve solo per la reattanza (dipolo e monopolo).	يلزم للمفاعلة فقط (ثنائي القطب وأحادي القطب).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	يُستخدم مع لفتين أو أكثر: تحت قطرين للموصل يزداد الفقد الحقيقي بسبب أثر التقارب (لا يُحسب).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	يُستخدم في المخططات > الأرض الحقيقية: انعكاس البحر مع معامل التباعد والخشونة.
+Sicilia e provincia di Reggio Calabria	صقلية ومقاطعة ريدجو كالابريا
+Sollecitazione	الإجهاد
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	فوق 0.25 λ يبدأ الفص بالانخفاض: أقل ملاءمة لـ NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	فوق 30 MHz يُستخدم انحدار Cebik خارج النطاق المعروض له هنا (أسلاك HF): التلقائي أو NEC أفضل.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	تحت 0.1 λ ينخفض الكسب للأعلى (Cebik): الهوائي المنخفض جدًا لا يكسب شيئًا.
+Sotto l'antenna	تحت الهوائي
+Spina (tubo o tondo) dentro il giunto telescopico.	سدادة (أنبوب أو قضيب) داخل الوصلة التلسكوبية.
+Spina interna nei giunti	سدادة داخلية في الوصلات
+Stack con il ROS attivo piu' basso	التكديس ذو أدنى SWR فعّال
+Staffe e mast	المشابك والصاري
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	الوقت: نحو (البدايات + 1) ضعف الحالي، مضافًا إليه حسابات المرشّحين x النسخ.
+Tensione nel mast al cuscinetto	الإجهاد في الصاري عند المحمل
+Tiro del tirante	شد الجملون
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	الأنابيب مأخوذة من جدول التدرجات: الأبعاد نفسها كما في نموذج NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	كل المسافات تتجاوز أقصى SWR فعّال ({0}): لا مسافة مقترحة. ارفع أقصى SWR فعّال، أو جرّب ممانعة المرجع الخاصة بالهوائي، أو اضبط الهوائي المفرد. المصفوفة والمخطط عند المسافة ذات أدنى SWR فعّال.
+V invertito	V مقلوب
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU)، الاقتران، SWR الفعّال، أفضل مسافة، ترددان
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	سرعة الذروة في الموقع: vb sqrt(ce)، حيث vb = vb,0 ca (NTC 2018، فترة عودة 50 عامًا) وce(z) لفئة التعرّض عند ارتفاع الهوائي.
+Velocità	السرعة
+Velocità a mano	السرعة يدويًا
+Vento di sopravvivenza	رياح البقاء
+Vento di sopravvivenza del boom	رياح بقاء العارضة
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	الرياح العمودية على العنصر التي تبلغ عندها أول نقطة حد الخضوع (مع الوزن الذاتي والجليد).
+X da aggiungere al pilotato	X لإضافتها إلى العنصر المغذّى
+X del pilotato	X العنصر المغذّى
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2)، Za = 120·(ln(L/ø) − 1). الفحص النهائي يجريه محرك NEC على النموذج مع hairpin.
+Z0 della forcina	Z0 لـ hairpin
+Z0 della linea dei due conduttori	Z0 لخط الموصلين
+Zona buona	منطقة جيدة
+al centro	في المركز
+caso peggiore	أسوأ حالة
+caso peggiore delle due	أسوأ الحالتين
+cerca...	بحث...
+copie entro le soglie	نسخ ضمن العتبات
+corrente sinusoidale	تيار جيبي
+distanza dal boom	المسافة من العارضة
+distanza dall'inizio del boom	المسافة من بداية العارضة
+due condensatori sul lato basso	مكثفان في الجانب السفلي
+effetto: calcolo in corso…	الأثر: جارٍ الحساب…
+forza del vento x sbalzo	قوة الرياح x البروز
+il caso peggiore migliore	أفضل أسوأ حالة
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ثنائي القطب المكافئ، الأسمك، أقل من 73 Ω
+il voto medio migliore	أفضل متوسط درجات
+induttiva, in parallelo	حثّي، على التوازي
+la percentuale migliore di copie entro le soglie	أفضل نسبة من النسخ ضمن العتبات
+linea a due fili	خط ثنائي السلك
+m  mast a	m  الصاري عند
+m dal suolo	m فوق الأرض
+m sopra il boom, attacco al	m فوق العارضة، مثبت عند
+media delle due	متوسط الاثنين
+mm  lungo	mm  طولًا
+mm, acciaio	mm، فولاذ
+molto buono	جيد جدًا
+molto povero	ضعيف جدًا
+nessun rinforzo	بلا تقوية
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	لا أنبوب تجاري حتى +12 mm يكفي: راجع التدرج
+nessuna distanza sotto il ROS attivo massimo	لا مسافة تحت أقصى SWR فعّال
+partenza dal modello aperto	ابدأ من النموذج المفتوح
+per lato, teso per annullare il momento verticale al mast	لكل جانب، مشدود لإلغاء العزم الرأسي على الصاري
+primo cedimento: tubo Ø	أول انهيار: الأنبوب Ø
+regge il vento di progetto con il 20 % di margine	يتحمل رياح التصميم بهامش 20 %
+riferimenti bibliografici	المراجع
+sbalzo sopra il cuscinetto	البروز فوق المحمل
+schermo 1 λ x 1 λ	شاشة 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	مقاطع كثيفة) تستخدم النواة الموسّعة صيغة أدق وتكون النتيجة أوثق.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	بلا سدادة يرتكز الأنبوب الداخلي على حافة الخارجي ويُطبق معامل 1.25 على الإجهاد في أول 5 cm: تقدير، والمشابك والشقوق تغيّر النتيجة كثيرًا.
+sollecitazione / snervamento	الإجهاد / حد الخضوع
+tubo piu' grosso	أنبوب أسمك
+un filo riflettore	سلك عاكس واحد
+zona di cedimento	منطقة الانهيار
+ø dei conduttori della forcina	ø موصلات hairpin
+ø del filo	ø السلك
+ø del pilotato	ø العنصر المغذّى
+accordata	مضبوط
+accordate	مضبوط
+alimentazione	التغذية
+alluminio	ألومنيوم
+allungata	مُطال
+altro	أخرى
+anello	حلقة
+angolo	الزاوية
+antiorario	عكس عقارب الساعة
+aritmetico	حسابي
+automatico	تلقائي
+banda	النطاق
+bande	النطاقات
+bordi	الحواف
+buono	جيد
+capacitiva	سعوي
+carichi	الأحمال
+carico	الحمل
+cartesiana	ديكارتي
+cavi	الكابلات
+cavo	الكابل
+centimetri	سنتيمترات
+centina	ضلع
+cerchio	دائرة
+condensatore	مكثف
+corrente	التيار
+destra	يمين
+diagramma	المخطط
+diametro	القطر
+differenza	الفرق
+dipoli	ثنائيات القطب
+dipolo	ثنائي القطب
+diretta	مباشر
+diritto	مستقيم
+due	اثنان
+elementi	العناصر
+elemento	العنصر
+elimina	حذف
+equilatera	متساوي الأضلاع
+esito	النتيجة
+esperimenti	التجارب
+esponenziale	أسّي
+fase	الطور
+ferriti	الفريت
+fili	الأسلاك
+filo	السلك
+forcina	hairpin
+forma	الشكل
+formule	الصيغ
+frequenza	التردد
+geometria	الهندسة
+ghiaccio	الجليد
+giudizio	التقييم
+gradi	درجات
+griglia	الشبكة
+guadagno	الكسب
+incrociata	متقاطع
+larghezza	العرض
+lato	الضلع
+lega	سبيكة
+libera	حر
+libero	حر
+linea	خط
+lineare	خطي
+linee	الخطوط
+lobi	الفصوص الجانبية
+locale	محلي
+mai	أبدًا
+manicotto	الكُمّ
+mano	يدويًا
+meccanica	الميكانيكا
+mezzaonda	نصف موجة
+millimetri	مليمترات
+misure	القياسات
+modello	النموذج
+modo	النمط
+nessuna	لا شيء
+nota	ملاحظة
+nuovo	جديد
+operativo	التشغيل
+orario	باتجاه عقارب الساعة
+ottagono	مثمن
+palo	الصاري
+parabola	الصحن
+passo	الخطوة
+perdite	الفقد
+perfetto	مثالي
+piano	مستوٍ
+piatto	مسطّح
+piedi	أقدام
+polare	قطبي
+pollici	بوصات
+propria	خاص
+punto	نقطة
+quadrato	مربع
+quadro	مربع
+quota	الارتفاع
+radiali	الأشعة الأرضية
+radiatore	المشع
+raggio	نصف القطر
+rame	نحاس
+ramo	فرع
+rapidi	سريع
+rastremazioni	التدرجات
+rete	الشبكة
+rettangolo	مستطيل
+riepilogo	ملخص
+riflettore	العاكس
+riga	صف
+rombo	معيّن
+scarso	ضعيف
+scarto	الانحراف
+schiacciata	مضغوط
+sempre	دائمًا
+senso	الاتجاه
+si'	نعم
+sinistra	يسار
+soglia	العتبة
+sorgenti	المصادر
+sotto	تحت
+spire	اللفات
+staffe	المشابك
+stato	الحالة
+sufficiente	كافٍ
+tetto	السطح
+tipo	النوع
+tirante	الجملون
+togli	إزالة
+tondo	دائري
+traffico	الحركة
+trasformatori	المحوّلات
+trombe	البوقات
+tubi	الأنابيب
+tubo	الأنبوب
+tutti	الكل
+uguale	متساوٍ
+uguali	متساوية
+uso	استخدام
+a {0} x DL6WU; tutte sopra il massimo {1}	عند {0} x DL6WU؛ كلها فوق الحد الأقصى {1}
+% del mezzo boom	% من نصف العارضة
++ aggiungi	+ إضافة
++ aggiungi variabile	+ إضافة متغير
++ correzione del boom	+ تصحيح العارضة
++ nuova	+ جديد
++ trappola	+ مصيدة
++ verso il disco.	+ نحو الصحن.
++90 gradi Z	+90 درجة Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- حسابي: في المنتصف تمامًا بين حدود IARU للنطاق (مثلًا 145.000 MHz على 2 m)،\n
+- correzione del boom	- تصحيح العارضة
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- التشغيل: التردد الذي تعمل عليه فعلًا (مثلًا 144.300 MHz على 2 m، و432.200 على 70 cm)،\n
+-10 (nero) 10-100 MHz	-10 (أسود) 10-100 MHz
+-10 nero	-10 أسود
+-2 (rosso) 0,25-10 MHz	-2 (أحمر) 0.25-10 MHz
+-2 rosso	-2 أحمر
+-6 (giallo) 3-40 MHz	-6 (أصفر) 3-40 MHz
+-6 giallo	-6 أصفر
+-90 gradi Z	-90 درجة Z
+-> segmento NEC	-> مقطع NEC
+. "Annulla" torna indietro.	. "تراجع" يعيد ما كان.
+. Antenna base: fili 1-	. الهوائي الأساسي: الأسلاك 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. مع Q بهذا الارتفاع يجب أن يمتد المسح بضعة kHz فقط.
+. Salvalo con Salva con nome.	. احفظه بـ "حفظ باسم".
+. Trascina per ruotare, rotella per ingrandire.	. اسحب للتدوير، والعجلة للتكبير.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. استخدم سلكًا أرفع أو قلبًا أكبر أو قلبين متراكبين.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (عبر Sengupta 2021) وGMRT الجدول 19.1
+12 (errore / HPBW)^2	12 (الخطأ / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	حلقة سلبية: محيط {0:0.000} lambda، بلا مصدر ولا مكثف؛ يظهر الأثر في النموذج الكامل (موجِّه أو عاكس).
+Automatico	تلقائي
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0، مثل nec2c وxnec2c: الشيفرة المصدرية مرفقة بالبرنامج (ملف COPYING).\n
+Provincia di Trieste	مقاطعة تريستي
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	وبلغة C# لـ YA-NEC. الواجهة المرجعية: xnec2c من 5B4AZ وEric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	الكفاءة محسوبة من المجال البعيد، Prad / (Prad + الفقد) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	تقل موثوقية الممانعة والفقد كلما انخفض السلك (انظر BOG في الدليل). لنتيجة آمنة: lambda/200 على الأقل = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	يُنشأ حتى قطر {3:0.00} m؛ وحساب الفتحة المجاور صالح لأي قطر ويحتسب الأضلاع مسبقًا (الخانة أعلاه).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz، {1} مقاطع: Z = {2:0.000} {3:+0.000;-0.000}j، SWR {4:0.00} على {5} Ω، Gmax {6:0.00} dBi (az {7:0.0}، el {8:0.0})، F/B {9:0.00} dB، الكفاءة {10:0.00} %، AGT {11:0.00} dB
+° di elevazione	° من الارتفاع
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL الطبعة 19، الفصل 18 (ياغي 2 m من W9PE): ثلاثة عناصر على 0.2 λ، نحو 7 dBi وF/B فوق 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• توافق YA-NEC مع nec2c (قضبان 20/15/10 m): العواكس عند 0.185 / 0.197 / 0.222 λ، والموجِّهات عند 0.095 / 0.116 / 0.114 λ: ضمن نطاقات المصادر.
+↶ Annulla	↶ تراجع
+↷ Ripeti	↷ إعادة
+■ Ferma	■ إيقاف
+▶ Avvia	▶ بدء
+☐ mantieni lunghezza del boom	☐ الحفاظ على طول العارضة
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ لا تحذيرات: التقطيع يستوفي المستوى المختار
+✓ nessun errore e nessun avviso	✓ لا أخطاء ولا تحذيرات
+variabili del modello	متغيرات النموذج
+nuova variabile dal modello	متغير جديد من النموذج
+Scrivi una variabile nella linguetta Variabili…	اكتب متغيرًا في تبويب المتغيرات…
+Elemento diritto	عنصر مستقيم
+Elemento piegato	عنصر منحنٍ
+Variabile nuova	متغير جديد
+Minimo / massimo	الأدنى / الأقصى
+Cosa cambia	ما الذي يتغير
+in ocra: dove agisce la variabile	بالمغرة: حيث يعمل المتغير
+Crea la variabile	إنشاء المتغير
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	أُنشئ المتغير {0}: لا تتغير الهندسة. "تراجع" في شريط الهندسة يزيله.
+Struttura 3D: dove agisce la variabile ▾	البنية ثلاثية الأبعاد: حيث يعمل المتغير ▾
+Struttura 3D ▸	البنية ثلاثية الأبعاد ▸
+Clic: nasconde o mostra la struttura	انقر: إخفاء البنية أو إظهارها
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	مغرة متصلة: يستخدم المتغير · مغرة متقطعة: يستخدمه عبر متغير آخر
+attraverso {0}: fili {1}	عبر {0}: الأسلاك {1}

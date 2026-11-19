@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 26 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 22-25 con la 1.3). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
+Un corso completo in 28 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 22-25 con la 1.3, la 26 e la 27 con la 1.5). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -62,7 +62,7 @@ Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappol
 
 ### Lezione 6 - Gli strumenti del modello
 
-Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica. Dalla 1.0.11 la maniglia di riempimento nella tabella dei fili (come in Excel), con Ctrl+Z.
+Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica. Dalla 1.0.11 la maniglia di riempimento nella tabella dei fili (come in Excel), con Ctrl+Z, e il pulsante Ins. elemento simmetrico: un direttore in più a 3,9 m sulla DK7ZB 7 elementi.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.srt)
 
@@ -237,6 +237,24 @@ Tolleranze Monte Carlo con la lista di taglio (DJ9BV 10 elementi), Cavo e balun 
 Vento con NTC 2018 / CNR-DT 207 dal locatore, bilanciamento con la staffa consigliata, Carichi HF (trappola coassiale, bobina di carico con autorisonanza) e le tabelle F/B e F/R medio su tutta la banda.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_25_meccanica_carichi_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_25_meccanica_carichi_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_26_novita_calcolatori_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_26.jpg" alt="Lezione 26 - Novità dei Calcolatori (1.4.2 e 1.5)"></a></td><td>
+
+### Lezione 26 - Novità dei Calcolatori (1.4.2 e 1.5)
+
+Loop a più spire, resistenza di radiazione e reattanza (Tai, AEH) con la bobina di carico, dipolo ripiegato, NVIS, quad e hairpin: le voci nuove dei Calcolatori, con il controllo NEC.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_26_novita_calcolatori_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_26_novita_calcolatori_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_27_stack_montecarlo_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_27.jpg" alt="Lezione 27 - Stack, Monte Carlo, aggiornamento (1.5)"></a></td><td>
+
+### Lezione 27 - Stack, Monte Carlo, aggiornamento (1.5)
+
+Distanze di stack su due frequenze con l'impedenza di riferimento e il ROS attivo (DK7ZB 7 elementi), stack HF sopra il terreno con due e tre ARRL 520-40H e la lettura del diagramma in elevazione (in fase, solo sopra, solo sotto, controfase), Monte Carlo nell'Ottimizzatore, aggiornamento forzato e Segnala un problema.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_27_stack_montecarlo_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_27_stack_montecarlo_IT.srt)
 
 </td></tr></table>
 

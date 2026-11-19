@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	สีทึบแค่ไหน: อ่อน ปานกลาง หรือเข้ม บนแถวของตารางชั้นสีจะอ่อนกว่า เพื่อให้อ่านตัวเลขได้
 Filo {0} scelto nella vista 3D: riga {1} della tabella	เลือกสาย {0} ในมุมมอง 3 มิติ: แถว {1} ของตาราง
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	สาย {0}: ไม่อยู่ในตารางสาย (การ์ดเรขาคณิตไม่ใช่ GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	ตรวจหาเวอร์ชันใหม่ทันที (ไม่ต้องรอ 3 นาที)
+terreno reale	ภูมิประเทศจริง
+Locatore	โลเคเตอร์
+da 8 a 12 caratteri	8 ถึง 12 ตัวอักษร
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	ด้วย 6 ตัวอักษร ตำแหน่งอาจคลาดได้หลายกิโลเมตร: โปรไฟล์ภูมิประเทศต้องใช้อย่างน้อย 8 ตัวอักษร
+Quota sito	ความสูงของสถานที่
+Altezza antenna	ความสูงสายอากาศ
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	ความสูงของจุดกึ่งกลางสายอากาศจากพื้น ถ้าต่างจากในแบบจำลอง แพตเทิร์น NEC จะถูกยกขึ้นหรือลดลงโดยใช้การกระจายกระแสเดิม
+Distanza max	ระยะสูงสุด
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	คำนวณมุมทิศและระยะใหม่ทุกครั้งที่เปลี่ยนโลเคเตอร์ (วงกลมใหญ่ ทรงกลม 6371 km)
+Terra	แผ่นดิน
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	ลดสัมประสิทธิ์การสะท้อนของทะเลด้วยตัวประกอบ Ament สำหรับคลื่นสูง 0.25 m (ส่วนเบี่ยงเบนมาตรฐาน)
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	แบบจำลองทางสถิติของผิวขรุขระ (Ament 1953): ใช้ได้กับมุมเฉียดและทะเลที่สม่ำเสมอ
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	ลดโปรไฟล์ตามความโค้งของโลก (รัศมีสมมูล 4/3 สำหรับการหักเหปกติ) และลดรังสีสะท้อนที่อยู่ไกลด้วยตัวประกอบการลู่ออก
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	บรรยากาศมาตรฐาน (k = 4/3); เมื่อมีท่อนำคลื่นหรือชั้นผกผัน ความโค้งปรากฏจะเปลี่ยน
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	สันเขาที่สูงที่สุดระหว่างสายอากาศกับทิศที่ออกจะลดทอนรังสีตรงเหมือนขอบมีด (อินทิกรัลเฟรสเนล) เช่นเดียวกับ HFTA
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	ขอบมีดเดียว: สันเขากลมหรือหลายสันติดกันจะประมาณด้วยสันที่สูงที่สุด
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	ทำการคำนวณซ้ำทุก 10 องศาของมุมทิศ (เฉพาะ DEM) และแสดงตัวเลขคุณภาพบนแผนภาพกุหลาบ โดยหันสายอากาศไปแต่ละมุมทิศ
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	สายอากาศหันไปตามมุมทิศของโปรไฟล์เสมอ: ใช้ได้กับสายอากาศหมุนได้
+Cartesiana dBi / gradi	พิกัดฉาก dBi / องศา
+0–180° intero	0–180° ทั้งหมด
+Zoom angolare	ขยายมุม
+Sovrapponi alla linguetta Verticale	ซ้อนบนแท็บแนวตั้ง
+premi Calcola	กด "คำนวณ"
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	ทำการคำนวณซ้ำโดยให้สายอากาศสูง 6 ถึง 30 m (HF) หรือ 2 ถึง 30 m (VHF) และแสดงความสูงที่ให้ตัวเลขคุณภาพดีที่สุดบนเส้นทาง
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	กระแสยังคงเป็นของแบบจำลองที่คำนวณแล้ว: ไม่พิจารณาผลของความสูงต่ออิมพีแดนซ์และกระแส (เช่นเดียวกับ HFTA)
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	ต้องใช้ตารางมุมที่มาถึงของ ARRL Antenna Book (ไฟล์ .PRN ตามแบนด์และภูมิภาค): เมื่อมีไฟล์ ฟังก์ชันนี้จะเปิดใช้และแสดงช่วงสีส้ม
+locatore non valido	โลเคเตอร์ไม่ถูกต้อง
+sul mare	บนทะเล
+sul terreno	บนแผ่นดิน
+profilo reale	โปรไฟล์จริง
+terreno piatto	พื้นราบ
+orizzonte ostruito	ขอบฟ้าถูกบัง
+° (scala angolare ×	° (มาตราส่วนมุม ×
+← dietro	← หลัง
+avanti →	หน้า →
+statistiche degli angoli di arrivo: non caricate	สถิติมุมที่มาถึง: ยังไม่ได้โหลด
+rosa 0–360°: calcolo in corso…	แผนภาพกุหลาบ 0–360°: กำลังคำนวณ…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	เลือกไฟล์โปรไฟล์ (คลิก "จาก HorizonProfiler")
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	ไม่มี DEM: การใช้ครั้งแรกต้องใช้เครือข่ายเพื่อดาวน์โหลด TINITALY หรือ SRTM1 (จากนั้นจะอยู่ในโฟลเดอร์ data/dem)
+Profilo del terreno	โปรไฟล์ภูมิประเทศ
+Lobo di elevazione	โลบมุมเงย
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	คำนวณแบบจำลองก่อน (ปุ่ม "คำนวณ" ด้านบน): แพตเทิร์นสายอากาศมาจาก NEC
+da file	จากไฟล์
+dal DEM	จาก DEM
+rispetto alla stessa antenna su terreno piatto	เทียบกับสายอากาศเดียวกันบนพื้นราบ
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	ผลต่างระหว่างโลบบนโปรไฟล์จริงกับโลบบนพื้นราบ เฉลี่ยในช่วงมุมที่ใช้งานได้
+Guadagno a 5° / 10°	อัตราขยายที่ 5° / 10°
+Guadagno a 1° / 3°	อัตราขยายที่ 1° / 3°
+Angoli coperti a -3 dB	มุมที่ครอบคลุมที่ -3 dB
+primo lobo sul profilo reale	โลบแรกบนโปรไฟล์จริง
+calcolo…	กำลังคำนวณ…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	แบบจำลองในอวกาศว่าง: กระแสเป็นกระแสเมื่อไม่มีพื้น เหมือนแพตเทิร์นอวกาศว่างที่ HFTA ใช้ หากต้องการคิดพื้นใกล้เคียง ให้คำนวณแบบจำลองด้วยพื้นจริง
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	โปรไฟล์ใช้ได้กับมุมทิศเดียว: สายอากาศหมุนได้ต้องใช้หลายทิศ (ช่อง "ทุกมุมทิศ")
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	วิธีเดียวกับ HFTA (N6BV): รังสีตรง + รังสีสะท้อนบนทุกส่วนของโปรไฟล์ + การเลี้ยวเบนบนสันเขา แพตเทิร์นสายอากาศมาจาก NEC การคำนวณนี้เพิ่มภูมิประเทศเข้าไป
+Piatto	ราบ
+Reale	จริง
+Primo minimo	จุดต่ำสุดแรก
+Punto di riflessione	จุดสะท้อน
+Orizzonte	ขอบฟ้า
+Uso: rotte DX in HF (angoli bassi 1–15°).	การใช้: เส้นทาง DX บน HF (มุมต่ำ 1–15°)
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	การใช้: โทรโพและ MS (0–5°), EME เมื่อดวงจันทร์ต่ำ (อัตราขยายจากพื้นตอนจันทร์ขึ้น/จันทร์ตก)
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	ความสูงที่ให้อัตราขยายเฉลี่ยสูงสุดในมุมที่ใช้งานได้ของเส้นทาง
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	กระแสของแบบจำลองที่คำนวณแล้วถูกเลื่อนตามความสูง: อิมพีแดนซ์และการคัปปลิงกับพื้นยังเป็นของแบบจำลอง
+Calcola prima il terreno reale	คำนวณภูมิประเทศจริงก่อน
+Esporta il lobo sul terreno reale	ส่งออกโลบบนภูมิประเทศจริง
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	ภาพ: Esri, Maxar, Earthstar Geographics และชุมชนผู้ใช้ GIS
+© i contributori di OpenStreetMap	© ผู้ร่วมพัฒนา OpenStreetMap
+Sfondo	พื้นหลัง
+Foto aerea	ภาพถ่ายทางอากาศ
+Solo griglia	เฉพาะกริด
+Griglia	กริด
+Cerca	ค้นหา
+⌖ Centra sul locatore	⌖ ไปที่โลเคเตอร์
+Punto scelto	จุดที่เลือก
+Coordinate	พิกัด
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	คลิกบนแผนที่ = จุดสายอากาศ; ลาก = เลื่อน; ล้อเมาส์ = ซูม (กริดเปลี่ยนจาก 6 เป็น 8, 10, 12 ตัวอักษร) กรอบหนา = ช่อง 6 ตัวอักษร
+non disponibile	ไม่พร้อมใช้งาน
+Lunghezza elementi	ความยาวอีลีเมนต์
+Posizione sul boom	ตำแหน่งบนบูม
+Uniforme	สม่ำเสมอ
+Distribuzione	การกระจาย
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	อีลีเมนต์ติดตั้งเยื้องศูนย์ในแคลมป์: เลื่อนตามแกนของตัวเอง ด้วยพิกัดความเผื่อของตำแหน่ง
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	แคลมป์จริงยังเปลี่ยนความยาวทางไฟฟ้าใกล้บูมด้วย: สำหรับเรื่องนี้ใช้แท็บ "การแก้ค่าบูม"
+nuovo a ogni avvio	ใหม่ทุกครั้งที่รัน
+Numero prove	จำนวนการทดลอง
+Frequenze	ความถี่
+Seme casuale	ค่าเริ่มสุ่ม
+OBIETTIVO LISTA DI TAGLIO	เป้าหมายรายการตัด
+Calo F/B max	F/B ลดลงสูงสุด
+ROS max	SWR สูงสุด
+Ferma	หยุด
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	อีลีเมนต์ที่อยู่ใกล้อีลีเมนต์ที่ป้อนมักวิกฤตที่สุด ส่วนที่ปลายบูมทนความคลาดเคลื่อนได้มากกว่า
+l'istogramma serve al Monte Carlo	ฮิสโทแกรมใช้สำหรับมอนติคาร์โล
+5% peggiore	แย่ที่สุด 5%
+Posizione mm	ตำแหน่ง mm
+Lunghezza mm	ความยาว mm
+Tolleranza ammessa	พิกัดความเผื่อที่ยอมรับ
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	 สีแดงคืออีลีเมนต์ที่ต้องการพิกัดความเผื่อน้อยกว่าพิกัดความเผื่อในการสร้าง
+Calcola prima il modello	คำนวณแบบจำลองก่อน
+sensibilita'	ความไว
+Tolleranze: fermato	พิกัดความเผื่อ: หยุดแล้ว
+Diametro mm	เส้นผ่านศูนย์กลาง mm
+Tolleranza ammessa mm	พิกัดความเผื่อที่ยอมรับ mm
+Avvia prima il calcolo	รันการคำนวณก่อน
+Esporta la lista di taglio	ส่งออกรายการตัด
+Lista di taglio	รายการตัด
+Obiettivi	เป้าหมาย
+Calo massimo del F/B	F/B ลดลงสูงสุด
+ROS massimo	SWR สูงสุด
+Tolleranze di costruzione	พิกัดความเผื่อในการสร้าง
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	ตามแผน (ภาพร่าง 13 รออนุมัติ): ยังไม่ทำงานในเวอร์ชันนี้
+Al quadro 20×2 mm	Al ท่อเหลี่ยม 20×2 mm
+Al quadro 25×2 mm	Al ท่อเหลี่ยม 25×2 mm
+Al quadro 30×2 mm	Al ท่อเหลี่ยม 30×2 mm
+Al quadro 40×2 mm	Al ท่อเหลี่ยม 40×2 mm
+Al tondo 25×1,5 mm	Al ท่อกลม 25×1.5 mm
+Al tondo 30×2 mm	Al ท่อกลม 30×2 mm
+Al tondo 40×2 mm	Al ท่อกลม 40×2 mm
+Al tondo 50×2 mm	Al ท่อกลม 50×2 mm
+Zona NTC	โซน NTC
+Quota sito as	ความสูงของสถานที่เป็น
+Periodo ritorno	คาบการเกิดซ้ำ
+Categoria esposiz.	ประเภทการเปิดรับลม
+Coeff. topografia	สัมประสิทธิ์ภูมิประเทศ
+Antenna da terra	สายอากาศเหนือพื้น
+Palo sopra rotore	เสาเหนือโรเตเตอร์
+Ø palo	เสา Ø
+Usa elementi e boom del modello	ใช้อีลีเมนต์และบูมของแบบจำลอง
+Includi telaio, palo, cavi	รวมโครง เสา สายนำสัญญาณ
+Scansione direzione del vento	สแกนทิศลม
+UNITÀ	หน่วย
+N e kgf affiancati	N และ kgf คู่กัน
+solo N	เฉพาะ N
+solo kgf	เฉพาะ kgf
+Mostra	แสดง
+1 kgf = 9,80665 N	1 kgf = 9.80665 N
+locatore non valido: zona da scegliere a mano	โลเคเตอร์ไม่ถูกต้อง: เลือกโซนเอง
+Telaio a H	โครง H
+Cavi e divisore	สายนำสัญญาณและตัวแบ่ง
+Parte	ชิ้นส่วน
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	เมื่อลมพัดขวาง อีลีเมนต์ไม่ถูกดัน (cross-flow, K5IU): แรงบนท่อเป็นไปตามกำลังสองขององค์ประกอบลมที่ตั้งฉากกับแกนของท่อ
+momento flettente alla staffa del rotore	โมเมนต์ดัดที่แคลมป์โรเตเตอร์
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	การกำหนดขนาดเบื้องต้น: ไม่แทนการตรวจสอบเสา หอ และฐานรากโดยวิศวกร โมเมนต์ที่ฐานจะส่งไปยังแท็บย่อย "เสาและฐานราก"
+Sito e norma	สถานที่และมาตรฐาน
+Norma	มาตรฐาน
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; สัมประสิทธิ์ CNR-DT 207 R1/2018 และ EN 1991-1-4
+Locatore / zona	โลเคเตอร์ / โซน
+Risultati	ผลลัพธ์
+Forza massima	แรงสูงสุด
+Momento flettente alla staffa del rotore	โมเมนต์ดัดที่แคลมป์โรเตเตอร์
+Momento torcente sul rotore	แรงบิดบนโรเตเตอร์
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	การกำหนดขนาดเบื้องต้น: ไม่แทนการตรวจสอบเสา หอ และฐานรากโดยวิศวกรที่มีคุณวุฒิ
+Al tondino pieno	Al แท่งตัน
+Materiale elementi	วัสดุอีลีเมนต์
+Staffe, isolatori	แคลมป์ ฉนวน
+g cad.	g ต่อชิ้น
+Dipolo + scatola	ไดโพล + กล่อง
+Cavo fino al palo	สายนำสัญญาณถึงเสา
+STAFFA AL PALO	แคลมป์เสา
+Posizione attuale	ตำแหน่งปัจจุบัน
+m dal riflettore	m จากรีเฟลกเตอร์
+Massa / distanza	มวล / ระยะ
+Vento dalla linguetta Vento	ลมจากแท็บ "ลม"
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	ใช้ความดันออกแบบจากการคำนวณล่าสุดในแท็บย่อย "ลม"; ถ้าไม่มีใช้ 600 N/m²
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	เลื่อนแบบจำลองทั้งหมดไปตามบูม เพื่อให้แคลมป์ที่แนะนำอยู่ที่จุดกำเนิด (ที่ติดเสาและโครงสแตก) "เลิกทำ" ในโครงสร้าง 3D จะย้อนกลับ
+Momenti in funzione della posizione della staffa	โมเมนต์ตามตำแหน่งแคลมป์
+Masse e aree per parte	มวลและพื้นที่ตามชิ้นส่วน
+ultimo direttore	ไดเรกเตอร์ตัวสุดท้าย
+Staffe e isolatori	แคลมป์และฉนวน
+Cavo sul boom	สายนำสัญญาณบนบูม
+Massa kg	มวล kg
+Baricentro m	จุดศูนย์ถ่วง m
+Area vento m²	พื้นที่รับลม m²
+Centro area m	จุดศูนย์กลางพื้นที่ m
+solo peso	เฉพาะน้ำหนัก
+solo vento	เฉพาะลม
+File Touchstone .s1p	ไฟล์ Touchstone .s1p
+Formato letto	รูปแบบที่อ่าน
+CAVO TRA VNA E ANTENNA	สายนำสัญญาณระหว่าง VNA กับสายอากาศ
+R e X separate	R และ X แยกกัน
+Banda con ROS <	แบนด์ที่ SWR <
+ROS: calcolato e misurato	SWR: คำนวณและวัด
+Confronto	เปรียบเทียบ
+misurato, cavo tolto	วัด ตัดสายนำสัญญาณออกแล้ว
+R calcolata	R คำนวณ
+X calcolata	X คำนวณ
+R misurata	R วัด
+X misurata	X วัด
+Calcolato	คำนวณ
+Misurato	วัด
+Scarto	ผลต่าง
+Frequenza del ROS minimo	ความถี่ที่ SWR ต่ำสุด
+ROS minimo	SWR ต่ำสุด
+nessuna correzione: calcolo e misura coincidono.	ไม่มีการแก้: การคำนวณและการวัดตรงกัน
+calcolo NEC sul campo della misura…	กำลังคำนวณ NEC ในช่วงการวัด…
+Misura del VNA	การวัดด้วย VNA
+Tutti	ทั้งหมด
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	รันการสวีป (ปุ่ม "สวีป" ด้านบน) เพื่อดู F/B และ F/R ทั้งแบนด์
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = อัตราขยายด้านหน้าลบกำลังเฉลี่ยในครึ่งทรงกลมด้านหลัง (มุมทิศ 90-270° ทุกมุมเงยเหนือ 0°) เป็นหนึ่งในเป้าหมายของตัวหาค่าเหมาะสมด้วย
+Tabelle: F/B e F/R su tutta la banda	ตาราง: F/B และ F/R ทั้งแบนด์
+Valori dello sweep	ค่าสวีป
+ANTENNE RICEVENTI	สายอากาศรับ
+4-square in ricezione	4-square สำหรับรับ
+8 verticali in cerchio	สายอากาศแนวตั้ง 8 ต้นเป็นวงกลม
+Modello aperto	เปิดแบบจำลอง
+Isotropo	ไอโซทรอปิก
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = อัตราขยายในทิศที่ต้องการลบอัตราขยายเฉลี่ยทั้งครึ่งปริภูมิ: ต่างจากอัตราขยายตรงที่ไม่ขึ้นกับความสูญเสีย
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	ใช้ค่ามัธยฐานของมุมที่มาถึงจากแท็บ "ภูมิประเทศจริง" เป็นมุมเงยที่ต้องการ (สถิติตามแบนด์และภูมิภาค) ถ้าไม่ได้โหลดสถิติ ARRL จะใช้มุมเงยที่เขียนไว้ที่นี่
+Direzione voluta	ทิศที่ต้องการ
+Hz  rumore	Hz  สัญญาณรบกวน
+NF ricevitore	NF ของเครื่องรับ
+sorgente locale az	แหล่งรบกวนใกล้ az
+Cifre di merito in ricezione	ตัวเลขคุณภาพการรับ
+Basta il segnale?	สัญญาณพอไหม?
+calcolo in corso…	กำลังคำนวณ…
+RDF in funzione della frequenza	RDF ตามความถี่
+Calcola prima il modello aperto	คำนวณแบบจำลองที่เปิดอยู่ก่อน
+verticale λ/4	แนวตั้ง λ/4
+° · dB relativi · arancio: -3 dB	° · dB สัมพัทธ์ · สีส้ม: -3 dB
+settore ±30° az, 10–40° el	เซกเตอร์ ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	อัตราขยายเฉลี่ยในเซกเตอร์ด้านหน้าลบค่าเฉลี่ยของครึ่งทรงกลมด้านหลัง
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN นิยาม DMF ด้วยอัตราขยายที่ 20 องศาเท่านั้น ที่นี่ใช้ค่าเฉลี่ยในเซกเตอร์ของภาพร่าง จึงเทียบกับค่าในหนังสือแบบหนึ่งต่อหนึ่งไม่ได้
+molto basso: serve un preamplificatore	ต่ำมาก: ต้องใช้พรีแอมป์
+basso ma accettabile: vedi soglia	ต่ำแต่ยอมรับได้: ดูค่าเกณฑ์
+come un'antenna trasmittente	เหมือนสายอากาศส่ง
+F/R medio sull'emisfero posteriore	F/R เฉลี่ยของครึ่งทรงกลมด้านหลัง
+Rumore d'antenna ai morsetti	สัญญาณรบกวนที่ขั้วสายอากาศ
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	กำลังสัญญาณรบกวนภายนอกที่ขั้ว: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + อัตราขยายเฉลี่ยถ่วงน้ำหนักตามทิศที่สัญญาณรบกวนมา
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	สัญญาณรบกวนจากขอบฟ้า ถ่วงน้ำหนัก exp(-el/10 องศา) ตามมุมเงย: แทนสัญญาณรบกวนจากมนุษย์ที่อยู่ไกลและมาถึงในมุมต่ำ การกระจายจริงขึ้นกับสถานที่
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	แหล่งจุดที่มุมเงย 5 องศา กำลังเท่ากับพื้นหลังไอโซทรอปิก
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	สัญญาณรบกวนไอโซทรอปิกเหนือพื้น; พื้นไม่เพิ่มสัญญาณรบกวน
+Margine sul ricevitore	ส่วนเผื่อของเครื่องรับ
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	สัญญาณรบกวนของสายอากาศสูงกว่าของเครื่องรับไม่ถึง 6 dB: ความไวถูกจำกัดโดยเครื่องรับ ต้องขยายสัญญาณเพิ่มหรือใช้เครื่องรับที่มี NF ต่ำกว่า
+RDF 1,8	RDF 1.8
+RDF 3,5	RDF 3.5
+Guadagno 1,8	อัตราขยาย 1.8
+Spazio richiesto	พื้นที่ที่ต้องใช้
+λ/4 in tubo quadro	λ/4 ในท่อเหลี่ยม
+λ/4 in tubo tondo	λ/4 ในท่อกลม
+Solo cavi di fase	เฉพาะสายเฟส
+Aria	อากาศ
+Uscite	เอาต์พุต
+Z antenne	Z สายอากาศ
+Z ingresso	Z อินพุต
+Dielettrico	ไดอิเล็กทริก
+Connettori	คอนเนกเตอร์
+Correggi accorciamento dei connettori	แก้การหดสั้นจากคอนเนกเตอร์
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	หักส่วนของสายที่อยู่ในคอนเนกเตอร์ออกจากความยาว
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	ประมาณ 4 mm ต่อปลายสำหรับคอนเนกเตอร์ N (BNC 3, SMA 1.5): ดีที่สุดคือตัดแต่งด้วย VNA โดยตัดทีละ 1 mm
+Divisori	ตัวแบ่ง
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	ใช้อิมพีแดนซ์แอ็กทีฟของสายอากาศในสแตกที่เปิดอยู่ (แหล่งจ่ายหนึ่งต่อสายอากาศ) และระยะห่าง เพื่อหาความยาวต่ำสุดของสายเฟส
+CAVI DI FASE	สายเฟส
+Lunghezza minima	ความยาวต่ำสุด
+Passo verticale	ระยะห่างแนวตั้ง
+solo cavi di fase: nessun trasformatore da costruire	เฉพาะสายเฟส: ไม่มีหม้อแปลงให้สร้าง
+2 cavi da 75 Ω in parallelo = 37,5 Ω	สาย 75 Ω 2 เส้นขนาน = 37.5 Ω
+quadro, lato	เหลี่ยม ด้าน
+tondo, Ø	กลม Ø
+Z0 richiesta	Z0 ที่ต้องการ
+Ø conduttore interno	ตัวนำใน Ø
+VF del cavo	VF ของสาย
+λ/4 in aria, mm	λ/4 ในอากาศ, mm
+da tagliare, mm	ตัด, mm
+Z carico in parallelo	Z โหลดแบบขนาน
+Rami λ/4: Z0 = Zin · √N	กิ่ง λ/4: Z0 = Zin · √N
+Resistenze a stella	ตัวต้านทานแบบดาว
+Isolamento tra le uscite	การแยกระหว่างเอาต์พุต
+Perdita stimata	ความสูญเสียโดยประมาณ
+Carico usato	โหลดที่ใช้
+non potenza di 2	ไม่ใช่กำลังของ 2
+ROS all'ingresso	SWR อินพุต
+solo cavi di fase	เฉพาะสายเฟส
+Uscita	เอาต์พุต
+Lungh. elettrica	ความยาวทางไฟฟ้า
+Fisica mm	mm กายภาพ
+Perdita dB	ความสูญเสีย dB
+° di fase).	° ของเฟส)
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° ขึ้น); อิมพีแดนซ์ที่ตัวแบ่งจะไม่ซ้ำเดิมอย่างแม่นยำอีกต่อไป
+Solo cavi di fase: nessun disegno da stampare	เฉพาะสายเฟส: ไม่มีแบบให้พิมพ์
+Divisore	ตัวแบ่ง
+50 mm di controllo	ตรวจ 50 mm
+GEOMETRIA	รูปทรง
+λ/4 sul boom	λ/4 บนบูม
+stesso piano	ระนาบเดียวกัน
+Metallico, isolati	โลหะ หุ้มฉนวน
+Non metallico	ไม่ใช่โลหะ
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	บูมไม่ได้อยู่ในแบบจำลอง NEC: ถ้าอีลีเมนต์หุ้มฉนวนจากบูมโลหะ ผลจะน้อย (การแก้ค่าบูมในเครื่องคำนวณ)
+Yagi di base	ยากิพื้นฐาน
+Disposizione	การจัดวาง
+Sfasamento piani	การเยื้องระนาบ
+Cavo di ritardo λ/4	สายหน่วง λ/4
+Includi relè e cavi reali	รวมรีเลย์และสายจริง
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	เพิ่มความสูญเสียของสายหน่วง (VF 0.66, 10 dB/100 m ที่ 144 MHz ปรับตามรากที่สองของความถี่) และ 0.1 dB ของรีเลย์
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	ค่าทั่วไปของสาย 75 Ω และรีเลย์โคแอกเชียล; โปรแกรมไม่รู้ว่าของคุณเป็นอย่างไร
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	วงจรเฟสเดียวกันใช้กับเทิร์นสไตล์ได้ด้วย (ไดโพลไขว้กัน 90°)
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	มุมมองด้านหน้า
+Componenti co-polare / cross-polare	องค์ประกอบโพลาไรซ์ร่วม / ไขว้
+Rapporto assiale e ROS in frequenza	อัตราส่วนแกนและ SWR ตามความถี่
+piano A	ระนาบ A
+piano B	ระนาบ B
+vista dal davanti — boom al centro	มองจากด้านหน้า — บูมอยู่กลาง
+piani sfalsati di λ/4 lungo il boom	ระนาบเยื้องกัน λ/4 ตามบูม
+Yagi incrociate: serve una Yagi con una sola sorgente	ยากิไขว้: ต้องเป็นยากิที่มีแหล่งจ่ายเดียว
+Yagi incrociate: calcolo in corso...	ยากิไขว้: กำลังคำนวณ...
+Rapporto assiale in asse	อัตราส่วนแกนบนแกน
+Rapporto assiale a −3 dB	อัตราส่วนแกนที่ −3 dB
+Isolamento tra i due piani	การแยกระหว่างสองระนาบ
+Fase della rete sul piano B	เฟสของวงจรบนระนาบ B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	ระนาบตั้งฉากและสมมาตรสมบูรณ์: ในแบบจำลอง การคัปปลิงและโพลาไรซ์ตรงข้ามแทบเป็นศูนย์ ในความเป็นจริง แคลมป์ สาย และความไม่สมมาตรเล็กน้อยจำกัดไว้ราว 25-35 dB
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	จาก 1.8 MHz ถึง 1296 MHz: รายการบาลันเปลี่ยนตามแบนด์
+LINEA DI DISCESA	สายป้อน
+Coassiale	โคแอกเชียล
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	สายบันไดแบบสมดุลไม่มีชีลด์: โหมดร่วมเกิดจากความไม่สมดุลเท่านั้น การ์ดนี้คำนวณกรณีโคแอกเชียล; สำหรับสายบันไดใช้ "สาย (TL)" พร้อมจูนเนอร์
+Lungo il boom	ตามบูม
+m → palo	m → เสา
+Discesa sul palo	ลงตามเสา
+Fino alla stazione	ถึงสถานี
+Calza a massa sul palo / traliccio	ชีลด์ต่อลงดินที่เสา / หอ
+Messa a terra all'ingresso stazione	ต่อลงดินที่ทางเข้าสถานี
+BALUN DA CONFRONTARE	บาลันที่จะเปรียบเทียบ
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	RG-213 พัน 8 รอบบน 110 mm: ความเหนี่ยวนำ Wheeler, ความจุตัวเอง Medhurst
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 และความจุตัวเองโดยประมาณ: อิมพีแดนซ์จริงของโช้กต้องวัด
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	ทอรอยด์เฟอร์ไรต์ 1:1 ถือเป็น RLC ขนานที่มี Q ต่ำ
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm ที่จุดยอด (10 MHz กับเนื้อ 31, 25 MHz กับเนื้อ 43): ค่าทั่วไปของ 12 รอบบน 2 x FT-240
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	โคแอกเชียล λ/2 4:1: ป้อนแบบสมดุล ชีลด์ต่อกัน
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	โหมดร่วมที่เหลือถือเป็นเรโซแนนซ์ 600 Ω ที่ f0 (Q 3): ขึ้นกับการติดตั้ง
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	ปลอก λ/4: สาย λ/4 ลัดวงจรระหว่างชีลด์กับปลอก อิมพีแดนซ์สูงที่ f0
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	ปลอก Z0 50 Ω และความสูญเสีย 0.08 dB ตลอดหนึ่งในสี่ความยาวคลื่น
+10 perline in ferrite sulla calza.	ลูกปัดเฟอร์ไรต์ 10 เม็ดบนชีลด์
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 Ω ต่อเม็ดที่ 144 MHz (เนื้อ 61), 100 Ω เหนือ 30 MHz กับเนื้อ 43: ค่าทั่วไปจากแค็ตตาล็อก
+Caso mostrato	กรณีที่แสดง
+premi Calcola il confronto	กด "คำนวณการเปรียบเทียบ"
+Corrente lungo la calza, dal dipolo verso il basso	กระแสตามชีลด์ จากไดโพลลงไป
+Vista laterale: corrente sulla calza	มุมมองด้านข้าง: กระแสบนชีลด์
+F/R medio	F/R เฉลี่ย
+Z / ROS	Z / SWR
+Perdita nel balun	ความสูญเสียในบาลัน
+Potenza dissipata nel balun a 1 kW	กำลังที่สูญเสียในบาลันที่ 1 kW
+Banda con calza < 5 %	แบนด์ที่กระแสชีลด์ < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	รายการสีเทาเป็นบาลันของแบนด์อื่น จะใช้ได้เมื่อเลือกความถี่ บน HF ชีลด์ที่ลงไปถึงสถานี (ต่อลงดิน) ก็มีผล บน VHF/UHF คือส่วนบนบูมและเสา ชีลด์เป็นสายที่ต่อกับด้านหนึ่งของจุดป้อน เหมือนของจริงที่ไม่มีบาลัน; บาลันคืออิมพีแดนซ์โหมดร่วมบนช่วงแรก
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	ไฟเบอร์กลาสไม่นำไฟฟ้า: โครงไม่เข้า NEC เหลือเพียงชีลด์ของสายเฟส
+Includi palo sotto il telaio	รวมเสาใต้โครง
+Cavi di fase lungo i montanti	สายเฟสตามเสาตั้ง
+Rotore e controventi	โรเตเตอร์และสายยึด
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	ตามแผน: โรเตเตอร์และสายยึดเป็นสาย (ต้องใช้ขนาดของหอ)
+Materiale	วัสดุ
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	สีแดง = ชิ้นส่วนโครงที่จำลองเป็นสาย NEC · เส้นประ = ชีลด์ของสายเฟส
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	โพลาไรซ์แนวนอน: เสาตั้งแนวตั้งคัปปลิงน้อย คานขวางแนวนอนและสายเฟสไม่คัปปลิง
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	โพลาไรซ์แนวตั้ง: เสาตั้งและเสาขนานกับอีลีเมนต์และมีผลมากกว่า คานขวางแนวนอนมีผลน้อย
+Confronto senza / con telaio	เปรียบเทียบไม่มี / มีโครง
+Diagramma orizzontale sovrapposto	แพตเทิร์นแนวนอนซ้อนกัน
+premi Calcola confronto	กด "คำนวณการเปรียบเทียบ"
+Stack: calcola prima il modello	สแตก: คำนวณแบบจำลองก่อน
+Stack: calcolo senza e con telaio...	สแตก: กำลังคำนวณแบบไม่มีและมีโครง...
+Pezzo	ชิ้น
+Collegato	ต่ออยู่
+Cavi	สายนำสัญญาณ
+Senza telaio	ไม่มีโครง
+Con telaio	มีโครง
+Z ingresso divisore	Z อินพุตของตัวแบ่ง
+senza telaio	ไม่มีโครง
+con telaio	มีโครง
+Stack: confronto senza / con telaio fatto	สแตก: เปรียบเทียบไม่มี / มีโครงเสร็จแล้ว
+CARICHI HF	โหลด HF
+INSERISCI NEL MODELLO	แทรกลงในแบบจำลอง
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	หมวกอยู่ที่ปลายสาย (b หรือ e) ส่วนการโหลดเชิงเส้นอยู่ที่จุดที่เลือกบนสาย
+Inserisci nel modello	แทรกลงในแบบจำลอง
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	อนุมัติแล้วในภาพร่างโหลด: Q ของ L และ C, f0, Z ตามแบนด์, แรงดันและกระแสบนชิ้นส่วน ที่นี่เพิ่มแบบการสร้าง
+Trappola coassiale	แทรปโคแอกเชียล
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	บัดกรีตัวนำในเข้ากับต้นขดลวดกลาง (สลับปลายจะทำให้เรโซแนนซ์ต่ำลงราว 50 kHz)
+Calcola spire per f0	คำนวณรอบสำหรับ f0
+Spire dell'avvolgimento (anche frazionarie).	จำนวนรอบของขดลวด (เป็นเศษได้)
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	f0 จริงต่างไปไม่กี่เปอร์เซ็นต์: วัดด้วยดิปมิเตอร์หรือ VNA แล้วแก้จำนวนรอบ
+Blocca	บล็อก
+dipolo con	ไดโพลกับ
+Filo Ø	สาย Ø
+Calcola C per f0	คำนวณ C สำหรับ f0
+mm  Filo Ø	mm  สาย Ø
+mm  Passo	mm  ระยะพิตช์
+mm  Spire	mm  รอบ
+MHz  dal centro	MHz  จากกึ่งกลาง
+m  Braccio	m  แขน
+m  Filo dell'elemento Ø	m  สายอีลีเมนต์ Ø
+Calcola spire per la risonanza	คำนวณรอบสำหรับเรโซแนนซ์
+Piega	พับ
+m  Distanza tra i fili	m  ระยะห่างระหว่างสาย
+Calcola la piega per la risonanza	คำนวณการพับสำหรับเรโซแนนซ์
+Raggi	ซี่
+m  Filo Ø	m  สาย Ø
+Verticale alto	ความสูงส่วนตั้ง
+m  Frequenza	m  ความถี่
+MHz  Filo Ø	MHz  สาย Ø
+Calcola i raggi per la risonanza	คำนวณซี่สำหรับเรโซแนนซ์
+L misurata	L ที่วัด
+MHz  Autorisonanza f0	MHz  เรโซแนนซ์ตัวเอง f0
+Cappello capacitivo in punta al verticale	หมวกความจุที่ยอดสายอากาศแนวตั้ง
+Bobina dalle misure	ขดลวดจากค่าที่วัด
+Reattanza del cappello in frequenza	รีแอกแตนซ์ของหมวกตามความถี่
+impedenza della trappola	อิมพีแดนซ์ของแทรป
+Si comporta da	ทำงานเป็น
+Potenza persa	กำลังที่สูญเสีย
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	กำลังส่งสำหรับแรงดันและความสูญเสียในตาราง
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	แบนด์ล่าง: กระแสที่จุดสูงสุด sqrt(P/73) และที่แทรป I0 cos(beta a); แบนด์ที่ถูกกั้น: แรงดันที่ปลายไดโพลใน I0 Z0 แบ่งระหว่างแทรปกับการแผ่คลื่น
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	กระแสที่จุดสูงสุด sqrt(P/73) และที่โหลด I0 cos(beta a) โดย a คือระยะจากกึ่งกลาง
+Risonanza propria f0	เรโซแนนซ์ตัวเอง f0
+Q ideale	Q อุดมคติ
+Q della trappola alla risonanza.	Q ของแทรปที่เรโซแนนซ์
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	บวกความสูญเสียไดอิเล็กทริก (แทนเจนต์ 3e-4 PE, 2e-4 PTFE) แทรปโคแอกเชียลที่วัดได้มักมี Q ระหว่าง 100 ถึง 300
+Lunghezza di cavo	ความยาวสาย
++ 10 cm per le saldature	+ 10 cm สำหรับจุดบัดกรี
+R in parallelo equivalente	R ขนานสมมูล
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: นี่คือโหลด LD ที่ใส่ในแบบจำลอง
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	แขนไดโพลบนแบนด์ล่างที่มีแทรป เทียบกับแขนเต็มขนาด (71.3 / f)
+il NEC con la trappola come carico da' la misura giusta.	NEC ที่ใช้แทรปเป็นโหลดให้ความยาวที่ถูกต้อง
+Induttanza misurata	ความเหนี่ยวนำที่วัด
+dalla misura	จากการวัด
+Autorisonanza	เรโซแนนซ์ตัวเอง
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	ความถี่ที่ขดลวดเรโซแนนซ์เองด้วยความจุตัวเอง
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	ความจุตัวเองจากตารางของ Medhurst เป็นฟังก์ชันของความยาว / เส้นผ่านศูนย์กลาง ใช้ได้กับขดลวดชั้นเดียวที่อยู่ห่างจากมวลโลหะ
+Q della bobina alla frequenza di lavoro.	Q ของขดลวดที่ความถี่ใช้งาน
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	ความต้านทานของสายจากผลผิว คูณตัวประกอบความใกล้ 1 + 2 (d/p)^2 (d สาย, p พิตช์): Medhurst ให้ค่าใกล้เคียงสำหรับขดลวดที่ยาวประมาณเท่าเส้นผ่านศูนย์กลาง
+Reattanza della piega	รีแอกแตนซ์ของการพับ
+Z0 della linea	Z0 ของสาย
+Q della piega	Q ของการพับ
+Capacita' del cappello	ความจุของหมวก
+Capacita' del cappello verso lo spazio.	ความจุของหมวกต่อปริภูมิ
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	ผลรวมของซี่ (สายบาง 2 pi eps0 l / (ln(2l/a) - 1)) และวงแหวนที่อิ่มตัวไปสู่จานตัน (8 eps0 r): ซี่บังกันเอง ถ้าแทรกเป็นสาย NEC จะคำนวณได้แม่นยำ
+in punta al verticale	ที่ยอดสายอากาศแนวตั้ง
+Altezza per la risonanza	ความสูงสำหรับเรโซแนนซ์
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0.95
+Effetto sul verticale	ผลต่อสายอากาศแนวตั้ง
+Carichi HF: apri un modello nella finestra principale.	โหลด HF: เปิดแบบจำลองในหน้าต่างหลัก
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	การโหลดเชิงเส้นและหมวกความจุแทรกเป็นสาย: แบบอื่นให้เลือก "เป็นโหลด"
+Il cappello capacitivo si inserisce come fili.	หมวกความจุแทรกเป็นสาย
+RLC parallelo	RLC ขนาน
+Effetto sul dipolo	ผลต่อไดโพล
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	การหดสั้นของแขนเทียบกับหนึ่งในสี่ความยาวคลื่นเต็ม (71.3 / f) เมื่อมีโหลดที่จุดนั้น
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	แบบจำลองสายของแขนที่มีโหลด X = Z0 (cot(beta b) - tan(beta a)), x 0.95 สำหรับผลปลาย
+Esegui il test	รันการทดสอบ
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	แสดงอัตราขยายที่แก้ด้วย AGT ได้ (มีอยู่แล้วในตัวหาค่าเหมาะสม)
+Controllo prima/dopo il calcolo	ตรวจก่อน/หลังการคำนวณ
+Esito	ผลลัพธ์
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ มีการตรวจหนึ่งรายการขึ้นไปเกิน ±0.2 dB: ตรวจการแบ่งเซกเมนต์ (โครงสร้าง 3D > การแบ่งเซกเมนต์... และ ตรวจการแบ่งเซกเมนต์)
+Tutti i controlli entro ±0,2 dB.	การตรวจทั้งหมดอยู่ใน ±0.2 dB
+Linea a finestra 450	สายหน้าต่าง 450 Ω
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	กด "คำนวณ": NEC คำนวณอิมพีแดนซ์ของแบบจำลองที่เปิดอยู่ที่แต่ละความถี่
+Perdita nella linea	ความสูญเสียในสาย
+Perdita totale	ความสูญเสียรวม
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	ชนิดของจูนเนอร์ระหว่างสายกับเครื่องส่ง (50 Ω)
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	ความสูญเสียประมาณจาก Q โหลดของวงจร (Qn = sqrt(Rmax/Rmin - 1) สองช่วงสำหรับ T และ Pi) และจาก Q ของขดลวด; TLW ของ N6BV คำนวณชิ้นส่วนทีละชิ้นและอาจต่างไปไม่กี่ส่วนสิบ dB
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	ตัวอย่าง: ดับเบิลต์ 2 × 20 m (ZS6BKW/G5RV) เตือนเมื่อจูนเนอร์เห็นต่ำกว่า 20 Ω: ความสูญเสียสูง แนะนำให้ต่อหรือตัดสาย สายที่มีความสูญเสียเหมือนใน TLW (N6BV, ARRL)
+USA costa est	ชายฝั่งตะวันออกของสหรัฐฯ
+USA costa ovest	ชายฝั่งตะวันตกของสหรัฐฯ
+Giappone	ญี่ปุ่น
+Caraibi	แคริบเบียน
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: บริการไม่ส่ง GeoTIFF กลับมา
+GeoTIFF compresso: non supportato	GeoTIFF แบบบีบอัด: ไม่รองรับ
+GeoTIFF: tipo di dato non supportato	GeoTIFF: ไม่รองรับชนิดข้อมูล
+Il file non contiene coppie distanza / quota.	ไฟล์ไม่มีคู่ระยะ / ความสูง
+Nessuno	ไม่มี
+Ferriti a perline	ลูกปัดเฟอร์ไรต์
+Cavo e balun: segmento della sorgente non trovato.	สายและบาลัน: ไม่พบเซกเมนต์ของแหล่งจ่าย
+solo palo	เฉพาะเสา
+Acciaio zincato	เหล็กชุบสังกะสี
+Alluminio	อะลูมิเนียม
+Vetroresina	ไฟเบอร์กลาส
+Montante sx/dx	เสาตั้งซ้าย/ขวา
+al boom	ไปยังบูม
+Traversa	คานขวาง
+Palo	เสา
+al dipolo	ไปยังไดโพล
+N, femmina	N ตัวเมีย
+senza connettori	ไม่มีคอนเนกเตอร์
+rurale tranquillo	ชนบทเงียบ
+Verticale λ/4	แนวตั้ง λ/4
+λ/8 di lato	λ/8 ต่อข้าง
+0,37 λ di diametro	เส้นผ่านศูนย์กลาง 0.37 λ
+Cappello capacitivo	หมวกความจุ
+W8NX bassa impedenza	W8NX อิมพีแดนซ์ต่ำ
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	สายไดอิเล็กทริก PTFE ขนาดใหญ่ (RG-393) หรือแทรป LC ที่มีตัวเก็บประจุแรงดันสูง
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	การพับยาวกว่า lambda/8: สายไม่ทำงานเป็นความเหนี่ยวนำคงที่อีกต่อไป ตรวจเรโซแนนซ์ด้วย NEC โดยแทรกเป็นสาย
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	ความจุของหมวกเป็นค่าประมาณ (ซี่บังกันเอง): ค่าที่แม่นยำให้แทรกเป็นสายและคำนวณด้วย NEC
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	ตำแหน่งโหลดเกินหนึ่งในสี่ความยาวคลื่น: ย้ายเข้าใกล้กึ่งกลาง
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	หมวกอยู่ที่ปลายสาย: เลือกเซกเมนต์แรก (b) หรือสุดท้าย (e)
+il punto scelto e' troppo vicino all'estremo del filo.	จุดที่เลือกอยู่ใกล้ปลายสายเกินไป
+questo tipo entra nel modello come carico.	ชนิดนี้เข้าแบบจำลองเป็นโหลด
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	โหลด HF: สายที่เครื่องคำนวณของ YA-NEC เพิ่มเข้าไป
+Il file Touchstone non contiene punti di S11.	ไฟล์ Touchstone ไม่มีจุด S11
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV ไม่มีแถวของความถี่, Re(S11), Im(S11)
+AGT in spazio libero, senza perdite	AGT ในอวกาศว่าง ไม่มีความสูญเสีย
+IMPOSTAZIONI	การตั้งค่า
+Schiera Hi-Z di verticali corte	แถวลำดับ Hi-Z ของสายอากาศแนวตั้งสั้น
+Base del loop	ฐานลูป
+Distanza, lato o diametro	ระยะห่าง ด้าน หรือเส้นผ่านศูนย์กลาง
+Altezza delle verticali	ความสูงของสายอากาศแนวตั้ง
+Base del loop dal suolo	ฐานลูปเหนือพื้น
+Fase tra le file	เฟสระหว่างแถว
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	ไดโพลแนวนอนต่ำ: ต่ำกว่า lambda/4 จากพื้น โลบจะชี้ขึ้น เป็นค่าอ้างอิง "มุมสูง" ในการจัดอันดับของ IV3PRK (RDF 7.3 dB) ใช้เทียบกับสายอากาศรับมุมต่ำ
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY ของ Gary Breed K9AY (QST, กันยายน 1997): ลูปแนวตั้งสองวงทำมุม 90 องศาบนเสาเดียวกัน ตัวต้านทานปลายสาย (ทั่วไป 390 Ω ปรับตาม F/B) หม้อแปลง 9:1 ที่นี่ใช้ลูปเดียว หันไปทิศที่เลือก ปิดเหนือพื้นเหมือนในหน้า "การรับ (RDF)" Hi-Z: RDF 7.2 dB
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square สำหรับรับ: สายอากาศแนวตั้งแอ็กทีฟสั้นสี่ต้นที่มุมของสี่เหลี่ยม lambda/8 ยิงตามแนวทแยง เฟสว่าง = จุดศูนย์ด้านหลังพอดี (pi + beta d ระหว่างแถว): ให้สภาพเจาะจงทิศทางทางทฤษฎีสูงสุด วงจรเฟสจริง (ON4UN, IV3PRK) ใช้เฟสอื่นและให้ RDF ต่ำกว่า (IV3PRK 9.4 dB) ปุ่มนี้หาเฟสที่ให้ RDF ดีที่สุด
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	แถวลำดับของสายอากาศแนวตั้งแอ็กทีฟสั้นแบบ Hi-Z Antennas: 2 อีลีเมนต์ end-fire (คาร์ดิออยด์ lambda/8) 3 อีลีเมนต์เป็นสามเหลี่ยม (ด้าน lambda/6 ยอดหนึ่งชี้ไปทิศที่เลือก) 8 อีลีเมนต์เป็นวงกลม (เส้นผ่านศูนย์กลาง 0.37 lambda: ใช้สี่ต้นทางทิศนั้นและต้นตรงข้าม) Hi-Z: 8 เป็นวงกลม RDF 13.4 dB ด้วยตัวรวมของตัวเอง แบบจำลองสองแถวอย่างง่ายจะต่ำกว่า ปุ่มนี้หาเฟสที่ให้ RDF ดีที่สุด
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ สายอากาศแนวตั้งเริ่มจากพื้นจริง (GE 1 กับพื้น Sommerfeld): กับ NEC-2 สายที่ต่อกับพื้นจริงให้อิมพีแดนซ์ที่ขึ้นกับเซกเมนต์แหล่งจ่าย (คู่มือ NEC-2, EZNEC) แพตเทิร์นและ RDF เป็นค่าโดยประมาณ มีแผนต่อด้วยเรเดียลยกสูงสำหรับสายอากาศรับทั้งหมด
+fase tra le file da 120 a 300 gradi per l'RDF	เฟสระหว่างแถวจาก 120 ถึง 300 องศาสำหรับ RDF
+nessuna fase con il lobo in avanti	ไม่มีเฟสที่โลบชี้ไปข้างหน้า
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	เฟสระหว่างแถวที่ให้ RDF ดีที่สุด: {0} องศา (RDF {1} dB) กำลังคำนวณใหม่...
+linea d'orizzonte	เส้นขอบฟ้า
+scala angolare	มาตราส่วนมุม
+lobo reale sopra il piatto fino a	โลบจริงบนพื้นราบ ถึง
+Profilo verso	โปรไฟล์ไปทาง
+Lobo verticale e angoli di arrivo a	โลบแนวตั้งและมุมที่มาถึงที่
+Cos'e' l'RDF	RDF คืออะไร
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = อัตราขยายในทิศที่ต้องการ - อัตราขยายเฉลี่ยทุกทิศ (W8JI; เดิมเรียกว่า SNIF ในยุค 60) วัดว่าสายอากาศปรับปรุงอัตราส่วนสัญญาณต่อสัญญาณรบกวนได้เท่าใดเมื่อสัญญาณรบกวนมาเท่ากันจากทุกทิศ; อัตราขยายสัมบูรณ์ไม่นับ (พรีแอมป์ชดเชยได้) เฉลี่ยแบบ EZNEC: ครึ่งทรงกลมบนหารด้วยทั้งทรงกลม (4 pi) ด้วยวิธีนี้ผลลัพธ์ตรงกับ IV3PRK และ W8JI/Hi-Z (แนวตั้ง 5.07 เทียบ 5.06 และ 4.9; Beverage 350 m 13.5 เทียบ 13.66) ข้อจำกัด: สัญญาณรบกวนจริงไม่สม่ำเสมอ (สายไฟฟ้า QRM ในพื้นที่): จึงต้องดู F/B และรูปร่างโลบด้วย สำหรับสายอากาศส่ง RDF ไม่มีความหมาย จึงคำนวณเฉพาะในแท็บนี้ DMF (Directivity Merit Figure, ON4UN): อัตราขยายที่มุมเงย 20 องศาด้านหน้าลบอัตราขยายเฉลี่ยของครึ่งปริภูมิด้านหลัง (มุมทิศเกิน 90 องศา เหนือพื้น ถ่วงน้ำหนักด้วยโคไซน์ตามพื้นที่): บอกว่าสายอากาศปฏิเสธสัญญาณรบกวนจากด้านหลังได้เท่าใด ON4UN เตือนว่าอย่าเปรียบเทียบ DMF กับ RDF กัน แหล่งที่มา: W8JI และ W8WWV (RDF), ON4UN Low-Band DXing บทที่ 7 (DMF, ตาราง 7-22, 7-24, 7-25), IV3PRK, IK0XBX
+elevazione	มุมเงย
+azimut	มุมทิศ
+azimut a {0}°	มุมทิศที่ {0}°
+totale	รวม
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	ความกว้างลำคลื่นระหว่างจุดศูนย์แรก (FNBW): {0}°; โลบข้างสูงสุด: {1}
+Didascalie {0} %	ป้ายกำกับ {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB เทียบกับ {1} จากแหล่งที่มา: ตรวจขนาด ปลายสาย และพื้น (แหล่งที่มาอาจใช้พื้นหรือรูปทรงต่างกัน)
+Azimut a {0}° · {1} MHz	มุมทิศที่ {0}° · {1} MHz
+Azimut a {0}° di elevazione	มุมทิศที่มุมเงย {0}°
+RUMORE	สัญญาณรบกวน
+Apri la scheda {0}	เปิดชีต {0}
+caso mostrato: {0}	กรณีที่แสดง: {0}
+Rastremazioni	ทาเปอร์
+BANDA	แบนด์
+λ/2 coassiale 4:1	โคแอกเชียล λ/2 4:1
+Manicotto λ/4	ปลอก λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	ชีลด์สายและเสาเป็นสาย NEC; เปรียบเทียบบาลัน (กระแสโหมดร่วม, F/B, F/R เฉลี่ย, ความสูญเสีย, กำลังที่ 1 kW) จาก 1.8 ถึง 1296 MHz
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	เสาตั้ง คานขวาง เสา และชีลด์สายเฟสเป็นสาย NEC: เปรียบเทียบไม่มี / มีโครง (อัตราขยาย, F/B, F/R เฉลี่ย, โลบ, Z ตัวแบ่ง, Tant และ G/T)
+TIPO	ชนิด
+DATI	ข้อมูล
+TELAIO	โครง
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 ในท่อเหลี่ยมหรือกลม ในสาย Wilkinson; สายเฟส การเอียง; แบบ 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X หรือ + ระนาบเยื้อง λ/4; H, V, RHCP, LHCP, X-pol; อัตราส่วนแกนและการแยก
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	ความยาวเท่ากัน → เฟสเท่ากัน ผลคูณของ λ/2 → อิมพีแดนซ์แอ็กทีฟซ้ำที่ตัวแบ่ง พิกัดความเผื่อที่แนะนำ ± 5 mm (= ± {0}° ของเฟส)
+impedenze attive delle {0} antenne dello stack in parallelo	อิมพีแดนซ์แอ็กทีฟของสายอากาศ {0} ต้นในสแตกต่อขนาน
+Banda con ROS < {0}	แบนด์ที่ SWR < {0}
+? Manuale	? คู่มือ
+Apre la spiegazione nel manuale	เปิดคำอธิบายในคู่มือ
+riferimento	อ้างอิง
+Rispetto alla singola antenna	เทียบกับสายอากาศเดี่ยว
+{0} antenne ideali	สายอากาศอุดมคติ {0} ต้น
+x la distanza DL6WU, a passi di	x ระยะ DL6WU ทีละ
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	แกนซ้าย: G สแตก - G เดี่ยว จาก 0 ขึ้นไป แกนขวา: F/R สแตก - F/R เดี่ยว กลับด้านโดยมี 0 อยู่บน: ที่ที่สแตกปรับ F/R ให้ดีขึ้น เส้นโค้งจะลง และจุดต่ำสุดคือการปรับปรุงมากที่สุด G/T อยู่ในตาราง
+ΔG sulla singola	ΔG เทียบกับสายอากาศเดี่ยว
+Chiusura del programma	ปิดโปรแกรม
+Vuoi chiudere YA-NEC?	ต้องการปิด YA-NEC หรือไม่?
+Grazie per avermi usato: spero di esserti stato utile.	ขอบคุณที่ใช้งาน หวังว่าจะเป็นประโยชน์
+Sì	ใช่
+ROS attivo	SWR แอ็กทีฟ
+G realizzato	G ที่ได้จริง
+ROS attivo massimo	SWR แอ็กทีฟสูงสุด
+riflessi minimi	การสะท้อนน้อยที่สุด
+ROS attivo alto: da non scegliere	SWR แอ็กทีฟสูง: อย่าเลือก
+Documenti tecnici	เอกสารทางเทคนิค
+Manuale d'uso	คู่มือผู้ใช้
+Manuale di calcolo e delle fonti	คู่มือการคำนวณและแหล่งที่มา
+Citazioni	การอ้างอิง
+Cerca in tutti i documenti	ค้นหาในเอกสารทั้งหมด
+Apri il PDF	เปิด PDF
+Nessun risultato per «{0}»	ไม่มีผลลัพธ์สำหรับ «{0}»
+Primi {0} risultati per «{1}»	ผลลัพธ์ {0} รายการแรกสำหรับ «{1}»
+{0} risultati per «{1}»	{0} ผลลัพธ์สำหรับ «{1}»
+Apre la citazione {0}	เปิดการอ้างอิง {0}
+Manuale di calcolo	คู่มือการคำนวณ
+È pronta la versione {0} di YA-NEC	YA-NEC เวอร์ชัน {0} พร้อมแล้ว
+È già scaricata e installata: entra in funzione quando riavvii il programma.	ดาวน์โหลดและติดตั้งแล้ว: จะมีผลเมื่อเริ่มโปรแกรมใหม่
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	บน Mac จะไม่ติดตั้งเอง: ดาวน์โหลด .dmg ใหม่จากหน้ารีลีสบน GitHub
+Riavvia adesso	เริ่มใหม่ตอนนี้
+Più tardi	ภายหลัง
+Apri la pagina delle versioni	เปิดหน้ารีลีส
+Aggiornamento di YA-NEC	อัปเดต YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	ดาวน์โหลดและติดตั้งแล้ว โปรแกรมจะเริ่มใหม่เองและเปิดแบบจำลองที่เปิดอยู่อีกครั้ง
+Riavvio tra {0} s	เริ่มใหม่ใน {0} วินาที
+Questo avviso si chiude tra {0} s	ประกาศนี้จะปิดใน {0} วินาที
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	เปิดแบบจำลองที่ยังไม่ได้บันทึกอีกครั้งหลังอัปเดต: บันทึกเมื่อสะดวก (สำเนาอยู่ใน data/aggiornamenti)
+Riaperto dopo l'aggiornamento il modello che era aperto.	เปิดแบบจำลองที่เปิดอยู่อีกครั้งหลังอัปเดต
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	ทุกช่องมีคำแนะนำพร้อมคำอธิบายและแหล่งที่มา สีเทา: ติ๊กแล้ว = เปิดเสมอ (ปิดไม่ได้); ไม่ได้ติ๊ก = ยังไม่พร้อม; ตัวเลือกแบบเม็ดยา = ตัวเลือกคงที่ คู่มือบทที่ 21
+"): sorgente sempre accesa.	"): แหล่งที่มาเปิดเสมอ
+' non da' un numero valido.	' ไม่ใช่ตัวเลขที่ถูกต้อง
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik ตามเดิม
+0 - misure del metodo	0 - ค่าวัดของวิธี
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = ท่อนำคลื่น WR มาตรฐานของแบนด์ (WR650, WR430, WR159, WR90)
+0 = stesso disco all'altro capo (eco proprio).	0 = จานเดียวกันที่อีกฝั่ง (เสียงสะท้อนของตัวเอง)
+0 = stesso disco all'altro capo.	0 = จานเดียวกันที่อีกฝั่ง
+0 gradi a destra	0 องศาไปทางขวา
+0,15 lambda	0.15 lambda
+0,20 lambda	0.20 lambda
+0,25 lambda	0.25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0.33 = หนึ่งในสามจากปลาย: อิมพีแดนซ์ 200-300 Ω บาลัน 4:1
+0,33 lambda	0.33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0.6-0.7: ห่างจากขอบ ที่ซึ่งการงอจะทำให้ตัวป้อนหลุดโฟกัส
+0,625 lambda x 0,95	0.625 lambda x 0.95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0.66 พอลิเอทิลีนตัน (RG-58, RG-213), 0.8-0.85 ไดอิเล็กทริกโฟม
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0.66 พอลิเอทิลีนตัน, 0.8-0.85 โฟม, 0.9-0.97 สายบันได
+0,7 x lambda/4	0.7 x lambda/4
+0,75 lambda guida	0.75 ความยาวคลื่นในท่อนำคลื่น
+0,75 x 0,375 lambda	0.75 x 0.375 lambda
+1 - anello alimentato	1 - ลูปที่ป้อน
+1 - radiatore	1 - ตัวแผ่คลื่น
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = หนึ่งรอบ (เหมือนเดิม) เมื่อมีหลายรอบ Rr โตตาม N² ความสูญเสียผลผิวโตตาม N
+1 cavo	สาย 1 เส้น
+1-2-3 elementi	1-2-3 อีลีเมนต์
+1. Obiettivi e pesi	1. เป้าหมายและน้ำหนัก
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - ลม สมดุล ตัวแบ่ง บาลัน ยากิไขว้
+1.3 - Antenne riceventi abilitate	1.3 - เปิดใช้สายอากาศรับ
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz กับจานใหญ่: นอกจากผิวและการชี้แล้ว การเสียรูปจากความร้อนและลม (ATA: 0.7 mm RMS ตอนกลางคืน 3 mm ตอนกลางวันกลางแดด) การงอของค้ำ และการแผ่จากลิเบรชันก็มีผล
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: พิมพ์ที่ 100 % ไม่ใช้ "พอดีหน้า"
+1005/f piedi	1005/f ฟุต
+144 isol.	144 หุ้มฉนวน
+2 - riflettore	2 - รีเฟลกเตอร์
+2 - riflettori	2 - รีเฟลกเตอร์
+2 in parallelo	2 เส้นขนาน
+2 lati	2 ด้าน
+2. Variabili che l'ottimizzatore puo' cambiare	2. ตัวแปรที่ตัวหาค่าเหมาะสมเปลี่ยนได้
+200 Ω con balun 4:1	200 Ω ด้วยบาลัน 4:1
+25 tondo	25 กลม
+3 - direttori	3 - ไดเรกเตอร์
+3 gruppi	3 กลุ่ม
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 หรือ 4 ถ้ามี 2 จะไม่มีความแข็งออกนอกระนาบ
+3. Registro dei passi - clic su una riga per riprenderla	3. บันทึกขั้นตอน - คลิกแถวเพื่อย้อนกลับ
+3/4 lambda x 0,95	3/4 lambda x 0.95
+300 Ω o balun 4:1	300 Ω หรือบาลัน 4:1
+36 Ω + terra	36 Ω + พื้น
+4 - tutto insieme	4 - ทั้งหมดพร้อมกัน
+4 lati	4 ด้าน
+4 sorgenti: vedi tabella	4 แหล่งจ่าย: ดูตาราง
+432 isol.	432 หุ้มฉนวน
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	การตรวจข้อมูล 45 รายการที่ IC8TEM อนุมัติเมื่อ 15/11/2026: ค่าเกณฑ์และคำอธิบายในคู่มือบทที่ 11
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 ฟุตประมาณ 18 dBi, 12 ฟุตประมาณ 20.5 dBi
+75 ohm ideale	75 Ω อุดมคติ
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	ยาวกว่ารัศมี 8 เท่า กับสายหนาหรือเซกเมนต์สั้น (ท่อหนาที่ UHF อีลีเมนต์ใกล้กัน\n
+9 fili	สาย 9 เส้น
+9 fili a 0,1 λ	สาย 9 เส้นที่ 0.1 λ
+Accorciamento del pilotato	การหดสั้นของอีลีเมนต์ที่ป้อน
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	หดสั้นเกิน 8%: ค่าประมาณเชิงเส้นเชื่อถือไม่ได้ ตรวจด้วย NEC
+Allega il modello aperto	แนบแบบจำลองที่เปิดอยู่
+Allega il registro di oggi	แนบบันทึกของวันนี้
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	ความสูงคลื่น RMS และความสูงสายอากาศเหนือทะเล ใน แพตเทิร์น > พื้นจริง
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	ความกว้างการสแกนรอบความถี่ สำหรับกราฟอิมพีแดนซ์
+Antenna a	สายอากาศที่
+Applica la freccia al modello NEC	ใช้การหย่อนกับแบบจำลอง NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	อนุมัติแล้ว กำลังเตรียม: ยังไม่ทำงานในเวอร์ชันนี้
+Apri la cartella	เปิดโฟลเดอร์
+Apri un modello nella finestra principale	เปิดแบบจำลองในหน้าต่างหลัก
+Apro il modello e il diagramma 3D resta vuoto.	เปิดแบบจำลองแล้วมุมมอง 3D ยังว่าง
+Area al vento dell'antenna	พื้นที่รับลมของสายอากาศ
+Area al vento totale	พื้นที่รับลมทั้งหมด
+Area al vento totale e lista di taglio	พื้นที่รับลมทั้งหมดและรายการตัด
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	คำเตือน: อย่าใช้กับสายที่มาบรรจบกันเป็นมุมหรือมีเส้นผ่านศูนย์กลางต่างกันที่จุดต่อ\n
+Bobina di carico per la risonanza	ขดลวดโหลดสำหรับเรโซแนนซ์
+Boom con il tirante	บูมพร้อมโครงถัก
+C1 in serie con la loop	C1 อนุกรมกับลูป
+C1 serie, C2 parallelo	C1 อนุกรม, C2 ขนาน
+C2 in parallelo all'ingresso	C2 ขนานกับอินพุต
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	เครื่องคำนวณ > สายอากาศรับ: ไดโพลต่ำ, K9AY, 4-square รับ, Hi-Z 2/3/8 อีลีเมนต์ พร้อมเฟสระหว่างแถวที่หาค่าเหมาะสมสำหรับ RDF และคำเตือนเรื่องการต่อพื้น
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	การคำนวณเชิงกล (ลมและสมดุล), เครื่องคำนวณ > ตัวแบ่งและยากิไขว้, วัตถุ > สายและบาลัน และโครงสแตก, โหลด HF
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	การกำหนดขนาดเบื้องต้น: การติดตั้งต้องมีการออกแบบโดยวิศวกรที่มีคุณวุฒิ
+Candidati da controllare	ผู้สมัครที่จะตรวจ
+Categoria	ประเภท
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	ประเภทการเปิดรับลมของสถานที่ (NTC 2018 ตาราง 3.3.II และรูป 3.3.2): ขึ้นกับระดับความขรุขระของพื้น (A ใจกลางเมือง ... D พื้นที่ไม่มีสิ่งกีดขวาง ทะเล) และระยะจากชายฝั่ง I = ชายฝั่งเปิดหรือทะเล, V = ใจกลางเมือง
+Cebik, poi NEC	Cebik แล้วจึง NEC
+Centro della banda scelta:\n	กึ่งกลางของแบนด์ที่เลือก:\n
+Con ghiaccio	มีน้ำแข็ง
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	มีน้ำแข็ง: ลดลมเหลือ 0.6 เท่าและเพิ่มน้ำแข็งรอบตัวจากช่องทางขวา (การผสมแบบย่อของ ISO 12494)
+Con lo stesso seme la prova si ripete uguale.	ด้วยค่าเริ่มเดียวกัน การทดสอบจะซ้ำเหมือนเดิมทุกประการ
+Condizione della sorgente non capita ("	ไม่เข้าใจเงื่อนไขของแหล่งจ่าย ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	ตรวจ GitHub ทันทีไม่ต้องรอ 3 นาที ถ้ามีเวอร์ชันใหม่จะดาวน์โหลด แจ้ง และเริ่มใหม่เหมือนการอัปเดตอัตโนมัติ (10 วินาที แบบจำลองเปิดอีกครั้ง) ใช้ได้แม้ปิดการอัปเดตอัตโนมัติ
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	ตรวจเสมอโดยการตรวจการแบ่งเซกเมนต์และในคำเตือน (8 กับเคอร์เนลปกติ, 2 กับเคอร์เนลขยาย)
+Copie per candidato	สำเนาต่อผู้สมัคร
+Coppia sulla staffa boom-mast	แรงบิดที่แคลมป์บูม-เสา
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	สร้าง zip ใน data/segnalazioni และเปิดหน้า «New issue» ของ GitHub พร้อมข้อความที่เขียนไว้แล้ว คุณแนบ zip เองด้วยมือ: โปรแกรมไม่ส่งอะไรเอง
+Curvatura terrestre, in Diagrammi > Terreno reale.	ความโค้งของโลก ใน แพตเทิร์น > พื้นจริง
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	เส้นผ่านศูนย์กลางนอกช่วงของสูตร Cebik (1E-6 ถึง 1E-2 lambda)
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	ระยะและชนิดของพื้นที่สอง: อนุมัติสำหรับ 1.5 (พื้นจริง 2)
+Distanze di stack HF	ระยะสแตก HF
+Distanze di stack: accoppiamento e distanza migliore	ระยะสแตก: การคัปปลิงและระยะที่ดีที่สุด
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	หลังการหาค่าเหมาะสม ผลลัพธ์ที่ดีที่สุดที่ไปตรวจพิกัดความเผื่อ 0 = ไม่ตรวจ
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	ปลายต่ำมาก: ระวังคนและสัตว์ (แรงดันสูงที่ปลาย)
+F/B peggiore	F/B แย่ที่สุด
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	ไฟล์ .weq: บรรทัดที่มี AutoEZ TLParms (สายมีความสูญเสีย) ใช้ Zo และ VF ระบุโดยไม่มีความสูญเสีย: การ์ด TL ของ NEC ไม่มีความสูญเสีย
+Filo riflettore	สายรีเฟลกเตอร์
+Filo ripiegato	สายพับ
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	แฮร์พินยาว (เกิน 0.2 lambda): ควรลดระยะห่างหรือใช้ตัวนำหนาขึ้น
+Forza del vento di progetto	แรงลมออกแบบ
+Forza l'aggiornamento	บังคับอัปเดต
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	การหย่อนของคอร์ด: ตาข่ายบนช่วงตรงอยู่ต่ำกว่าพาราโบลอยด์เท่าใดที่กลางช่วง (เข้าไปในการแบ่งเหลี่ยม) มวลรวมของแป {4:0.00} kg{5}
+Freccia tolta dal modello.	นำการหย่อนออกจากแบบจำลองแล้ว
+Ghiaccio radiale	น้ำแข็งรอบตัว
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	ไฟล์ MMANA จะถูกแบ่งเซกเมนต์ใหม่สำหรับ NEC-2 เสมอ (คู่มือบทที่ 10)
+I lobi si leggono nella tabella delle distanze di stack.	โลบข้างอ่านได้ในตารางระยะสแตก
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (ปัด), FIX (ตัดทิ้ง), MOD, MAX, MIN, ODD (จำนวนเต็มคี่: มีประโยชน์กับเซกเมนต์ของสายที่ป้อน)\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	NEC2 ปกติถือว่าแต่ละสายเป็นเส้นบาง: ใช้ได้ตราบที่เซกเมนต์อย่างน้อย\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	สายรีเฟลกเตอร์เส้นเดียวช่วยได้น้อยมาก (Cebik): ตะแกรงหรือสาย 9 เส้นดีกว่า
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	เสาเกินจุดคราก: ใช้เสาหนาขึ้นหรือส่วนยื่นสั้นลง
+Impedenza del cavo	อิมพีแดนซ์ของสาย
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	อีกรูปแบบหนึ่ง: การตรวจ r5 ของการตรวจข้อมูลจะแจ้งอัตราขยายที่เกินค่าสูงสุดทางกายภาพสำหรับความยาวบูม
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	ความเหนี่ยวนำตาม N² (พันชิด) และแบบจำลอง NEC หนึ่งรอบ: ที่นี่ NEC ตรวจเพียงรูปทรงของรอบเดียว
+Interasse della forcina	ระยะห่างแฮร์พิน
+Isole (tranne Sicilia e Sardegna) e mare aperto	เกาะต่าง ๆ (ยกเว้นซิซิลีและซาร์ดิเนีย) และทะเลเปิด
+Kernel esteso del NEC2 (scheda EK).\n	เคอร์เนล NEC2 แบบขยาย (การ์ด EK)\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	ระยะห่างแฮร์พินต้องมากกว่าเส้นผ่านศูนย์กลางตัวนำ
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim ปิดตัวแผ่คลื่นด้านบนด้วยสายที่พับลง ลงมาจนเหนือสตับเล็กน้อย
+La fa la finestra Verifica della segmentazione (pulsante sopra).	ทำโดยหน้าต่าง "ตรวจการแบ่งเซกเมนต์" (ปุ่มด้านบน)
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	แฮร์พินสมมาตร: ไม่ทำให้แพตเทิร์นเบี้ยวแบบแกมมา ที่จุดป้อนยังต้องมีบาลันหรือโช้ก
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	แฮร์พินใช้ได้เฉพาะเมื่อ R ของอีลีเมนต์ที่ป้อนต่ำกว่าอิมพีแดนซ์ของสาย: ถ้า R สูงกว่าให้ใช้แกมมาหรือหม้อแปลง
+La prepara IC8TEM: non ancora attiva.	IC8TEM กำลังเตรียม: ยังไม่ทำงาน
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	หกกฎของ EZNEC Geometry Check ทุกครั้งที่คำนวณ ในแท็บคำเตือน
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: ไม่แก้ Z = {0:0.0} {1}j{2:0.0} Ω (แก้แล้ว {3:0.0} {4}j{5:0.0} Ω)
+Località	ตำแหน่ง
+Loop orizzontale di 1 λ	ลูปแนวนอน 1 λ
+Lunghezza del pilotato	ความยาวอีลีเมนต์ที่ป้อน
+Lunghezza della forcina	ความยาวแฮร์พิน
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	ใส่แบบจำลองที่เปิดอยู่ (.nec) ลงใน zip แม้ยังไม่ได้บันทึก
+Mette nello zip il registro di oggi della cartella registri.	ใส่บันทึกของวันนี้จากโฟลเดอร์ logs ลงใน zip
+Momenti al mast	โมเมนต์บนเสา
+Momento al cuscinetto	โมเมนต์ที่ตลับลูกปืน
+NEC: risonanza cercata dal motore	NEC: เครื่องยนต์ค้นหาเรโซแนนซ์
+NOTE SU QUESTA VERSIONE (fase 0)\n	หมายเหตุเกี่ยวกับเวอร์ชันนี้ (ระยะ 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	ใหม่ · เหนือพื้น: ความสูง ระยะห่าง มุมแผ่ออกที่ต้องการ
+Nel modello non ci sono elementi orizzontali diritti	แบบจำลองไม่มีอีลีเมนต์แนวนอนที่ตรง
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	ในตารางสแตกและในวัตถุของแบบจำลอง (โครงสแตก ตัวแบ่ง)
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	ในการ์ดรูปทรงให้เขียนนิพจน์โดยไม่มีช่องว่าง เช่น:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	ไม่มีระยะที่เสนอ
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	ไม่มีระยะที่เสนอ: ทั้งหมดเกิน SWR แอ็กทีฟสูงสุด
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	ไม่มีที่อยู่ IP อีเมล หรือชื่อผู้ใช้ในไฟล์: เส้นทางของโฟลเดอร์หลักกลายเป็น «~» ถ้าไม่มีบัญชี GitHub ส่ง zip ด้วยวิธีใดก็ได้
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	ยังไม่อัตโนมัติ: ทำเองด้วยการทดสอบ AGT ในคำเตือน (ARRL ฉบับที่ 24, 4nec2)
+Numero di spire	จำนวนรอบ
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	แต่ละสำเนามีขนาดถูกเลื่อนแบบสุ่มภายในพิกัดความเผื่อของแท็บพิกัดความเผื่อ (ค่าเริ่มต้น: ความยาว ±1 mm ตำแหน่ง ±2 mm เส้นผ่านศูนย์กลาง ±0.1 mm)
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	นอกจากแบบจำลองที่เปิดอยู่ จุดเริ่มที่สุ่มระหว่างค่าต่ำสุดและสูงสุดของแต่ละตัวแปร 0 = เหมือนเดิม
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	หน้า "สัญญาณรบกวนจากท้องฟ้าจริง" ของแท็บสัญญาณรบกวน/GT/สแตก: การคำนวณ skynoise ที่พอร์ตเป็น C# (อ่านแผนที่ HEALPix การประมาณค่า เวลาดาราคติ พิกัด ดวงจันทร์) และแผนที่ G8ONH สองแผ่นใน data/cielo
+Partenze a caso	จุดเริ่มแบบสุ่ม
+Perimetro Cebik	เส้นรอบรูป Cebik
+Peso del boom	น้ำหนักบูม
+Pi-greco	วงจร Pi
+Prepara la segnalazione	เตรียมรายงาน
+Proposta	ข้อเสนอ
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	การทดสอบ nec2c ที่ 145 MHz (ท่อ 12 mm ห่าง 40 mm): 30 mm -> 45 + j23 Ω, 35 mm -> 60 + j24 Ω Slim Jim: 50 mm -> 48 + j7 Ω
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	เมื่อจำเป็น: อัตราส่วนเซกเมนต์/รัศมีประมาณ 2 ถึง 8 (ต่ำกว่า 2 เชื่อถือไม่ได้ทั้งคู่)\n
+Quota s.l.m.	ความสูงจากระดับน้ำทะเล
+R del pilotato	R ของอีลีเมนต์ที่ป้อน
+ROS attivo minimo {0}	SWR แอ็กทีฟต่ำสุด {0}
+Raggio equivalente dei due conduttori	รัศมีสมมูลของตัวนำสองเส้น
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	รีแอกแตนซ์ของอีลีเมนต์ที่ป้อนตอนนี้: ถ้าเป็นบวก ต้องทำให้อีลีเมนต์ที่ป้อนสั้นลงอีก
+Reattanza della forcina	รีแอกแตนซ์ของแฮร์พิน
+Reattanza voluta del pilotato	รีแอกแตนซ์ที่ต้องการของอีลีเมนต์ที่ป้อน
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	รีแอกแตนซ์: เกิน kl = pi/2 (หรือตัวนำหนาเกินไป) สูตร AEH ใช้ไม่ได้ ให้ใช้ NEC
+Reinstalla la versione attuale	ติดตั้งเวอร์ชันปัจจุบันใหม่
+Rel Z non positiva	Re Z ไม่เป็นบวก
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	ความต้านทานของอีลีเมนต์ที่ป้อนที่เรโซแนนซ์ จากแบบจำลองหรือการคำนวณ NEC
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	เริ่มใหม่ไม่สำเร็จ: ปิดและเปิด YA-NEC ใหม่ด้วยตัวเอง
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	ดาวน์โหลดและติดตั้งใหม่แม้เวอร์ชันเดียวกัน: มีประโยชน์ถ้าไฟล์โปรแกรมเสียหาย
+Scansione	สแกน
+Scegli il candidato con	เลือกผู้สมัครด้วย
+Schermo	ตะแกรง
+Scrivi due frequenze diverse.	ใส่สองความถี่ที่ต่างกัน
+Segnala un problema	รายงานปัญหา
+Seme del caso	ค่าเริ่มสุ่ม
+Serve solo per la reattanza (dipolo e monopolo).	จำเป็นเฉพาะสำหรับรีแอกแตนซ์ (ไดโพลและโมโนโพล)
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	ใช้กับ 2 รอบขึ้นไป: ต่ำกว่า 2 เท่าของเส้นผ่านศูนย์กลางตัวนำ ความสูญเสียจริงเพิ่มขึ้นจากผลความใกล้ (ไม่ได้คำนวณ)
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	ใช้ใน แพตเทิร์น > พื้นจริง: การสะท้อนจากทะเลพร้อมตัวประกอบการลู่ออกและความขรุขระ
+Sicilia e provincia di Reggio Calabria	ซิซิลีและจังหวัดเรจโจคาลาเบรีย
+Sollecitazione	ความเค้น
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	เกิน 0.25 λ โลบเริ่มต่ำลง: เหมาะกับ NVIS น้อยลง
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	เหนือ 30 MHz สมการถดถอยของ Cebik ถูกใช้นอกช่วงที่เสนอไว้ที่นี่ (สาย HF): อัตโนมัติหรือ NEC ดีกว่า
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	ต่ำกว่า 0.1 λ อัตราขยายขึ้นด้านบนลดลง (Cebik): สายอากาศที่ต่ำมากไม่ได้อะไรเพิ่ม
+Sotto l'antenna	ใต้สายอากาศ
+Spina (tubo o tondo) dentro il giunto telescopico.	ตัวอุด (ท่อหรือแท่ง) ภายในข้อต่อแบบสวม
+Spina interna nei giunti	ตัวอุดภายในข้อต่อ
+Stack con il ROS attivo piu' basso	สแตกที่ SWR แอ็กทีฟต่ำสุด
+Staffe e mast	แคลมป์และเสา
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	เวลา: ประมาณ (จุดเริ่ม + 1) เท่าของตอนนี้ บวกการคำนวณ ผู้สมัคร x สำเนา
+Tensione nel mast al cuscinetto	ความเค้นในเสาที่ตลับลูกปืน
+Tiro del tirante	แรงดึงโครงถัก
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	ท่อนำมาจากตาราง "ทาเปอร์": ขนาดเหมือนในแบบจำลอง NEC
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	ทุกระยะเกิน SWR แอ็กทีฟสูงสุด ({0}): ไม่มีระยะที่เสนอ เพิ่ม SWR แอ็กทีฟสูงสุด ลองอิมพีแดนซ์อ้างอิงของสายอากาศเอง หรือปรับสายอากาศเดี่ยว เมทริกซ์และกราฟเป็นของระยะที่ SWR แอ็กทีฟต่ำสุด
+V invertito	V คว่ำ
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), การคัปปลิง, SWR แอ็กทีฟ, ระยะที่ดีที่สุด, สองความถี่
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	ความเร็วลมยอดที่สถานที่: vb sqrt(ce) โดย vb = vb,0 ca (NTC 2018 คาบการเกิดซ้ำ 50 ปี) และ ce(z) ของประเภทการเปิดรับลมที่ความสูงสายอากาศ
+Velocità	ความเร็ว
+Velocità a mano	ความเร็วกำหนดเอง
+Vento di sopravvivenza	ลมที่รอดได้
+Vento di sopravvivenza del boom	ลมที่บูมรอดได้
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	ลมตั้งฉากกับอีลีเมนต์ที่ทำให้จุดแรกถึงจุดคราก (รวมน้ำหนักตัวเองและน้ำแข็ง)
+X da aggiungere al pilotato	X ที่ต้องเพิ่มให้อีลีเมนต์ที่ป้อน
+X del pilotato	X ของอีลีเมนต์ที่ป้อน
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42.5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1) การตรวจสุดท้ายทำโดยเครื่องยนต์ NEC บนแบบจำลองที่มีแฮร์พิน
+Z0 della forcina	Z0 ของแฮร์พิน
+Z0 della linea dei due conduttori	Z0 ของสายสองตัวนำ
+Zona buona	โซนดี
+al centro	ที่กึ่งกลาง
+caso peggiore	กรณีแย่ที่สุด
+caso peggiore delle due	กรณีแย่ที่สุดของทั้งสอง
+cerca...	ค้นหา...
+copie entro le soglie	สำเนาที่อยู่ในเกณฑ์
+corrente sinusoidale	กระแสไซน์
+distanza dal boom	ระยะจากบูม
+distanza dall'inizio del boom	ระยะจากต้นบูม
+due condensatori sul lato basso	ตัวเก็บประจุสองตัวด้านล่าง
+effetto: calcolo in corso…	ผล: กำลังคำนวณ…
+forza del vento x sbalzo	แรงลม x ส่วนยื่น
+il caso peggiore migliore	กรณีแย่ที่สุดที่ดีที่สุด
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ไดโพลสมมูลหนากว่า มีน้อยกว่า 73 Ω
+il voto medio migliore	คะแนนเฉลี่ยที่ดีที่สุด
+induttiva, in parallelo	เหนี่ยวนำ ขนาน
+la percentuale migliore di copie entro le soglie	สัดส่วนสำเนาในเกณฑ์ที่ดีที่สุด
+linea a due fili	สายสองเส้น
+m  mast a	m  เสาที่
+m dal suolo	m เหนือพื้น
+m sopra il boom, attacco al	m เหนือบูม ยึดที่
+media delle due	ค่าเฉลี่ยของทั้งสอง
+mm  lungo	mm  ยาว
+mm, acciaio	mm เหล็ก
+molto buono	ดีมาก
+molto povero	แย่มาก
+nessun rinforzo	ไม่มีการเสริม
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	ไม่มีท่อในท้องตลาดถึง +12 mm ที่พอ: ทบทวนทาเปอร์
+nessuna distanza sotto il ROS attivo massimo	ไม่มีระยะที่ต่ำกว่า SWR แอ็กทีฟสูงสุด
+partenza dal modello aperto	เริ่มจากแบบจำลองที่เปิดอยู่
+per lato, teso per annullare il momento verticale al mast	ต่อข้าง ดึงให้หักล้างโมเมนต์แนวดิ่งบนเสา
+primo cedimento: tubo Ø	พังก่อน: ท่อ Ø
+regge il vento di progetto con il 20 % di margine	ทนลมออกแบบได้โดยมีส่วนเผื่อ 20 %
+riferimenti bibliografici	เอกสารอ้างอิง
+sbalzo sopra il cuscinetto	ส่วนยื่นเหนือตลับลูกปืน
+schermo 1 λ x 1 λ	ตะแกรง 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	เซกเมนต์หนาแน่น) เคอร์เนลขยายใช้สูตรที่แม่นยำกว่าและผลลัพธ์เชื่อถือได้มากกว่า\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	ถ้าไม่มีตัวอุด ท่อในจะพิงขอบท่อนอก และคูณความเค้นใน 5 cm แรกด้วยตัวประกอบ 1.25: เป็นค่าประมาณ แคลมป์และร่องเปลี่ยนผลได้มาก
+sollecitazione / snervamento	ความเค้น / จุดคราก
+tubo piu' grosso	ท่อหนาขึ้น
+un filo riflettore	สายรีเฟลกเตอร์เส้นเดียว
+zona di cedimento	โซนพัง
+ø dei conduttori della forcina	ø ตัวนำแฮร์พิน
+ø del filo	ø สาย
+ø del pilotato	ø อีลีเมนต์ที่ป้อน
+accordata	จูนแล้ว
+accordate	จูนแล้ว
+alimentazione	ป้อน
+alluminio	อะลูมิเนียม
+allungata	ยืดยาว
+altro	อื่น ๆ
+anello	ลูป
+angolo	มุม
+antiorario	ทวนเข็มนาฬิกา
+aritmetico	เลขคณิต
+automatico	อัตโนมัติ
+banda	แบนด์
+bande	แบนด์
+bordi	ขอบ
+buono	ดี
+capacitiva	เชิงความจุ
+carichi	โหลด
+carico	โหลด
+cartesiana	พิกัดฉาก
+cavi	สายนำสัญญาณ
+cavo	สายนำสัญญาณ
+centimetri	เซนติเมตร
+centina	ซี่โครง
+cerchio	วงกลม
+condensatore	ตัวเก็บประจุ
+corrente	กระแส
+destra	ขวา
+diagramma	แพตเทิร์น
+diametro	เส้นผ่านศูนย์กลาง
+differenza	ผลต่าง
+dipoli	ไดโพล
+dipolo	ไดโพล
+diretta	ตรง
+diritto	ตรง
+due	สอง
+elementi	อีลีเมนต์
+elemento	อีลีเมนต์
+elimina	ลบ
+equilatera	ด้านเท่า
+esito	ผลลัพธ์
+esperimenti	การทดลอง
+esponenziale	เอกซ์โพเนนเชียล
+fase	เฟส
+ferriti	เฟอร์ไรต์
+fili	สาย
+filo	สาย
+forcina	แฮร์พิน
+forma	รูปร่าง
+formule	สูตร
+frequenza	ความถี่
+geometria	รูปทรง
+ghiaccio	น้ำแข็ง
+giudizio	การให้คะแนน
+gradi	องศา
+griglia	กริด
+guadagno	อัตราขยาย
+incrociata	ไขว้
+larghezza	ความกว้าง
+lato	ด้าน
+lega	โลหะผสม
+libera	อิสระ
+libero	อิสระ
+linea	สาย
+lineare	เชิงเส้น
+linee	สาย
+lobi	โลบข้าง
+locale	เฉพาะที่
+mai	ไม่เคย
+manicotto	ปลอก
+mano	กำหนดเอง
+meccanica	กลศาสตร์
+mezzaonda	ครึ่งคลื่น
+millimetri	มิลลิเมตร
+misure	ค่าวัด
+modello	แบบจำลอง
+modo	โหมด
+nessuna	ไม่มี
+nota	หมายเหตุ
+nuovo	ใหม่
+operativo	ใช้งาน
+orario	ตามเข็มนาฬิกา
+ottagono	แปดเหลี่ยม
+palo	เสา
+parabola	จาน
+passo	พิตช์
+perdite	ความสูญเสีย
+perfetto	สมบูรณ์
+piano	ระนาบ
+piatto	แบน
+piedi	ฟุต
+polare	เชิงขั้ว
+pollici	นิ้ว
+propria	ของตัวเอง
+punto	จุด
+quadrato	สี่เหลี่ยมจัตุรัส
+quadro	เหลี่ยม
+quota	ความสูง
+radiali	เรเดียล
+radiatore	ตัวแผ่คลื่น
+raggio	รัศมี
+rame	ทองแดง
+ramo	กิ่ง
+rapidi	เร็ว
+rastremazioni	ทาเปอร์
+rete	วงจร
+rettangolo	สี่เหลี่ยมผืนผ้า
+riepilogo	สรุป
+riflettore	รีเฟลกเตอร์
+riga	แถว
+rombo	สี่เหลี่ยมขนมเปียกปูน
+scarso	แย่
+scarto	ส่วนเบี่ยงเบน
+schiacciata	แบนลง
+sempre	เสมอ
+senso	ทิศทาง
+si'	ใช่
+sinistra	ซ้าย
+soglia	เกณฑ์
+sorgenti	แหล่งที่มา
+sotto	ด้านล่าง
+spire	รอบ
+staffe	แคลมป์
+stato	สถานะ
+sufficiente	พอ
+tetto	หลังคา
+tipo	ชนิด
+tirante	โครงถัก
+togli	นำออก
+tondo	กลม
+traffico	ทราฟฟิก
+trasformatori	หม้อแปลง
+trombe	ฮอร์น
+tubi	ท่อ
+tubo	ท่อ
+tutti	ทั้งหมด
+uguale	เท่ากัน
+uguali	เท่ากัน
+uso	ใช้
+a {0} x DL6WU; tutte sopra il massimo {1}	ที่ {0} x DL6WU; ทั้งหมดเกินค่าสูงสุด {1}
+% del mezzo boom	% ของครึ่งบูม
++ aggiungi	+ เพิ่ม
++ aggiungi variabile	+ เพิ่มตัวแปร
++ correzione del boom	+ การแก้ค่าบูม
++ nuova	+ ใหม่
++ trappola	+ แทรป
++ verso il disco.	+ หันไปทางจาน
++90 gradi Z	+90 องศา Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- เลขคณิต: กึ่งกลางพอดีระหว่างขอบเขต IARU ของแบนด์ (เช่น 145.000 MHz บน 2 m)\n
+- correzione del boom	- การแก้ค่าบูม
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- ใช้งาน: ความถี่ที่คุณใช้งานจริง (เช่น 144.300 MHz บน 2 m, 432.200 บน 70 cm)\n
+-10 (nero) 10-100 MHz	-10 (ดำ) 10-100 MHz
+-10 nero	-10 ดำ
+-2 (rosso) 0,25-10 MHz	-2 (แดง) 0.25-10 MHz
+-2 rosso	-2 แดง
+-6 (giallo) 3-40 MHz	-6 (เหลือง) 3-40 MHz
+-6 giallo	-6 เหลือง
+-90 gradi Z	-90 องศา Z
+-> segmento NEC	-> เซกเมนต์ NEC
+. "Annulla" torna indietro.	 "เลิกทำ" จะย้อนกลับ
+. Antenna base: fili 1-	 สายอากาศพื้นฐาน: สาย 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	 ด้วย Q สูงขนาดนี้ การสวีปต้องกว้างเพียงไม่กี่ kHz
+. Salvalo con Salva con nome.	 บันทึกด้วย "บันทึกเป็น"
+. Trascina per ruotare, rotella per ingrandire.	 ลากเพื่อหมุน ล้อเมาส์เพื่อซูม
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	 ใช้สายที่บางกว่า แกนที่ใหญ่กว่า หรือแกนสองอันซ้อนกัน
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1.14-1.17 lambda/D: Stutzman (ผ่าน Sengupta 2021) และ GMRT ตาราง 19.1
+12 (errore / HPBW)^2	12 (ความคลาดเคลื่อน / HPBW)^2
+57,3 lambda/a	57.3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	วงแหวนไม่ป้อน: เส้นรอบรูป {0:0.000} lambda ไม่มีแหล่งจ่ายและตัวเก็บประจุ ผลเห็นได้ในแบบจำลองเต็ม (ไดเรกเตอร์หรือรีเฟลกเตอร์)
+Automatico	อัตโนมัติ
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0 เหมือน nec2c และ xnec2c: ซอร์สโค้ดมาพร้อมโปรแกรม (ไฟล์ COPYING)\n
+Provincia di Trieste	จังหวัดตรีเยสเต
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	และใน C# สำหรับ YA-NEC อินเทอร์เฟซอ้างอิง: xnec2c ของ 5B4AZ และ Eric KJ7LNW\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	ประสิทธิภาพที่คำนวณจากสนามไกล Prad / (Prad + ความสูญเสีย) = {3:0.0} %
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	อิมพีแดนซ์และความสูญเสียเชื่อถือได้น้อยลงเมื่อสายต่ำลง (ดู BOG ในคู่มือ) เพื่อผลที่ปลอดภัย: อย่างน้อย lambda/200 = {3:0.###} m
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	สร้างได้ถึงเส้นผ่านศูนย์กลาง {3:0.00} m; การคำนวณช่องรับข้าง ๆ ใช้ได้กับทุกเส้นผ่านศูนย์กลางและคิดซี่โครงแล้ว (ช่องด้านบน)
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} เซกเมนต์: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} บน {5} Ω, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, ประสิทธิภาพ {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° ของมุมเงย
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL ฉบับที่ 19 บทที่ 18 (ยากิ 2 m ของ W9PE): สามอีลีเมนต์ห่าง 0.2 λ ประมาณ 7 dBi และ F/B เกิน 15 dB
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• ความสอดคล้องของ YA-NEC กับ nec2c (แท่ง 20/15/10 m): รีเฟลกเตอร์ที่ 0.185 / 0.197 / 0.222 λ ไดเรกเตอร์ที่ 0.095 / 0.116 / 0.114 λ: อยู่ในช่วงของแหล่งที่มา
+↶ Annulla	↶ เลิกทำ
+↷ Ripeti	↷ ทำซ้ำ
+■ Ferma	■ หยุด
+▶ Avvia	▶ เริ่ม
+☐ mantieni lunghezza del boom	☐ คงความยาวบูม
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ ไม่มีคำเตือน: การแบ่งเซกเมนต์ผ่านระดับที่เลือก
+✓ nessun errore e nessun avviso	✓ ไม่มีข้อผิดพลาดและคำเตือน
+variabili del modello	ตัวแปรของแบบจำลอง
+nuova variabile dal modello	ตัวแปรใหม่จากแบบจำลอง
+Scrivi una variabile nella linguetta Variabili…	เขียนตัวแปรในแท็บตัวแปร…
+Elemento diritto	อีลีเมนต์ตรง
+Elemento piegato	อีลีเมนต์งอ
+Variabile nuova	ตัวแปรใหม่
+Minimo / massimo	ต่ำสุด / สูงสุด
+Cosa cambia	สิ่งที่เปลี่ยน
+in ocra: dove agisce la variabile	สีเหลืองดิน: ที่ที่ตัวแปรมีผล
+Crea la variabile	สร้างตัวแปร
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	สร้างตัวแปร {0} แล้ว: รูปทรงไม่เปลี่ยน "เลิกทำ" ในแถบรูปทรงจะลบออก
+Struttura 3D: dove agisce la variabile ▾	โครงสร้าง 3D: ที่ที่ตัวแปรมีผล ▾
+Struttura 3D ▸	โครงสร้าง 3D ▸
+Clic: nasconde o mostra la struttura	คลิก: ซ่อนหรือแสดงโครงสร้าง
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	เส้นทึบสีเหลืองดิน: ใช้ตัวแปร · เส้นประสีเหลืองดิน: ใช้ผ่านตัวแปรอื่น
+attraverso {0}: fili {1}	ผ่าน {0}: สาย {1}

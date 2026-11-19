@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Hvor dækkende farven er: let, middel eller stærk. På tabelrækken er sløret lettere, så tallene kan læses.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Tråd {0} valgt i 3D-visningen: række {1} i tabellen
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Tråd {0}: ikke i trådtabellen (geometrikort andet end GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Søger straks efter en ny version (uden at vente 3 minutter).
+terreno reale	virkeligt terræn
+Locatore	Lokator
+da 8 a 12 caratteri	8 til 12 tegn
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Med 6 tegn kan punktet ramme kilometer ved siden af: terrænprofilen kræver mindst 8 tegn.
+Quota sito	Stedets højde
+Altezza antenna	Antennehøjde
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Højden af antennens midte over jorden. Hvis den afviger fra modellens, hæves eller sænkes NEC-diagrammet med samme strømfordeling.
+Distanza max	Maks. afstand
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimut og afstande genberegnes ved hver ændring af lokatoren (storcirkel, kugle på 6371 km).
+Terra	Land
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Reducerer havets refleksionskoefficient med Ament-faktoren for bølger på 0,25 m (standardafvigelse).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	statistisk model for ru overflade (Ament 1953): gælder for strejfende vinkler og ensartet hav.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Sænker profilen med jordens krumning (effektiv radius 4/3 ved normal refraktion) og reducerer de fjerne reflekterede stråler med divergensfaktoren.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standardatmosfære (k = 4/3); med dukter eller inversioner ændres den tilsyneladende krumning.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Den højeste kam mellem antennen og udgangsretningen dæmper den direkte stråle som en kant (Fresnel-integral), som i HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	enkelt knivsæg: afrundede kamme eller flere kamme efter hinanden tilnærmes med den højeste.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Gentager beregningen for hver 10. grad azimut (kun DEM) og viser godhedstallet på rosen, med antennen drejet mod hver azimut.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	med antennen altid drejet mod profilens azimut: gælder for en drejbar antenne.
+Cartesiana dBi / gradi	Kartesisk dBi / grader
+0–180° intero	0–180° hele
+Zoom angolare	Vinkelzoom
+Sovrapponi alla linguetta Verticale	Læg over fanen Lodret
+premi Calcola	tryk på Beregn
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Gentager beregningen med antennen fra 6 til 30 m (HF) eller fra 2 til 30 m (VHF) og viser højden med bedste godhedstal på strækningen.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	strømmene forbliver den beregnede models: højdens virkning på impedans og strømme medregnes ikke (som i HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Tabellerne over ankomstvinkler i ARRL Antenna Book er nødvendige (.PRN-filer pr. bånd og region): så snart de findes, aktiveres dette og viser de orange felter.
+locatore non valido	ugyldig lokator
+sul mare	over havet
+sul terreno	over land
+profilo reale	virkelig profil
+terreno piatto	fladt terræn
+orizzonte ostruito	skærmet horisont
+° (scala angolare ×	° (vinkelskala ×
+← dietro	← bag
+avanti →	for →
+statistiche degli angoli di arrivo: non caricate	statistik over ankomstvinkler: ikke indlæst
+rosa 0–360°: calcolo in corso…	rose 0–360°: beregner…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Vælg profilfilen (klik på "Fra HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM ikke tilgængelig: ved første brug kræves netværk for at hente TINITALY eller SRTM1 (derefter bliver de i mappen data/dem).
+Profilo del terreno	Terrænprofil
+Lobo di elevazione	Elevationslap
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Beregn først modellen (knappen Beregn øverst): antennediagrammet kommer fra NEC.
+da file	fra fil
+dal DEM	fra DEM
+rispetto alla stessa antenna su terreno piatto	i forhold til samme antenne over fladt terræn
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Forskel mellem lappen over den virkelige profil og lappen over fladt terræn, i gennemsnit over de nyttige vinkler.
+Guadagno a 5° / 10°	Forstærkning ved 5° / 10°
+Guadagno a 1° / 3°	Forstærkning ved 1° / 3°
+Angoli coperti a -3 dB	Vinkler dækket ved -3 dB
+primo lobo sul profilo reale	første lap over den virkelige profil
+calcolo…	beregner…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Model i frit rum: strømmene er dem uden jord, som det frit-rum-diagram HFTA bruger. For at medregne jorden tæt på, beregn modellen med virkelig jord.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profilen gælder kun én azimut: en drejbar antenne har brug for flere retninger (feltet "Alle azimuter").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metode som i HFTA (N6BV): direkte stråle + reflekterede stråler på hver facet af profilen + diffraktion over kammene. Antennediagrammet kommer fra NEC; denne beregning tilføjer terrænet.
+Piatto	Flad
+Reale	Virkelig
+Primo minimo	Første minimum
+Punto di riflessione	Refleksionspunkt
+Orizzonte	Horisont
+Uso: rotte DX in HF (angoli bassi 1–15°).	Brug: HF-DX-strækninger (lave vinkler 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Brug: tropo og MS (0–5°), EME med lav måne (jordforstærkning ved måneopgang/-nedgang).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Højde med højeste gennemsnitlige forstærkning over strækningens nyttige vinkler.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	den beregnede models strømme flyttet i højden: impedans og jordkobling forbliver modellens.
+Calcola prima il terreno reale	Beregn først det virkelige terræn
+Esporta il lobo sul terreno reale	Eksporter lappen over virkeligt terræn
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Billeder: Esri, Maxar, Earthstar Geographics og GIS-brugerfællesskabet
+© i contributori di OpenStreetMap	© OpenStreetMap-bidragydere
+Sfondo	Baggrund
+Foto aerea	Luftfoto
+Solo griglia	Kun gitter
+Griglia	Gitter
+Cerca	Søg
+⌖ Centra sul locatore	⌖ Centrer på lokatoren
+Punto scelto	Valgt punkt
+Coordinate	Koordinater
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Klik på kortet = antennepunkt; træk = flyt; hjul = zoom (gitteret går fra 6 til 8, 10, 12 tegn). Tyk ramme = felt med 6 tegn.
+non disponibile	ikke tilgængelig
+Lunghezza elementi	Elementlængde
+Posizione sul boom	Position på bommen
+Uniforme	Ensartet
+Distribuzione	Fordeling
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element monteret uden for midten i klemmen: forskydning langs egen akse, med positionstolerancen.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	den virkelige klemme ændrer også den elektriske længde ved bommen: brug fanen Bomkorrektion til det.
+nuovo a ogni avvio	ny ved hver kørsel
+Numero prove	Antal forsøg
+Frequenze	Frekvenser
+Seme casuale	Tilfældigt frø
+OBIETTIVO LISTA DI TAGLIO	MÅL FOR SKÆRELISTEN
+Calo F/B max	Maks. fald i F/B
+ROS max	Maks. SWR
+Ferma	Stop
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Elementerne tæt på det fødede element er som regel mest kritiske; dem for enden af bommen tåler større fejl.
+l'istogramma serve al Monte Carlo	histogrammet gælder Monte Carlo
+5% peggiore	værste 5%
+Posizione mm	Position mm
+Lunghezza mm	Længde mm
+Tolleranza ammessa	Tilladt tolerance
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Med rødt de elementer, der kræver mindre end byggetolerancen.
+Calcola prima il modello	Beregn først modellen
+sensibilita'	følsomhed
+Tolleranze: fermato	Tolerancer: stoppet
+Diametro mm	Diameter mm
+Tolleranza ammessa mm	Tilladt tolerance mm
+Avvia prima il calcolo	Kør først beregningen
+Esporta la lista di taglio	Eksporter skærelisten
+Lista di taglio	Skæreliste
+Obiettivi	Mål
+Calo massimo del F/B	Maksimalt fald i F/B
+ROS massimo	Maksimal SWR
+Tolleranze di costruzione	Byggetolerancer
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Planlagt (skitse 13, skal godkendes): endnu ikke aktivt i denne version.
+Al quadro 20×2 mm	Al firkant 20×2 mm
+Al quadro 25×2 mm	Al firkant 25×2 mm
+Al quadro 30×2 mm	Al firkant 30×2 mm
+Al quadro 40×2 mm	Al firkant 40×2 mm
+Al tondo 25×1,5 mm	Al rund 25×1,5 mm
+Al tondo 30×2 mm	Al rund 30×2 mm
+Al tondo 40×2 mm	Al rund 40×2 mm
+Al tondo 50×2 mm	Al rund 50×2 mm
+Zona NTC	NTC-zone
+Quota sito as	Stedets højde som
+Periodo ritorno	Gentagelsesperiode
+Categoria esposiz.	Eksponeringskategori
+Coeff. topografia	Topografikoeff.
+Antenna da terra	Antenne over jorden
+Palo sopra rotore	Mast over rotoren
+Ø palo	Mast Ø
+Usa elementi e boom del modello	Brug modellens elementer og bom
+Includi telaio, palo, cavi	Medtag ramme, mast, kabler
+Scansione direzione del vento	Scanning af vindretningen
+UNITÀ	ENHEDER
+N e kgf affiancati	N og kgf side om side
+solo N	kun N
+solo kgf	kun kgf
+Mostra	Vis
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	ugyldig lokator: vælg zonen manuelt
+Telaio a H	H-ramme
+Cavi e divisore	Kabler og deler
+Parte	Del
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Med vinden på tværs skubber elementerne ikke (cross-flow, K5IU): kraften på et rør går med kvadratet på vindkomponenten vinkelret på aksen.
+momento flettente alla staffa del rotore	bøjningsmoment ved rotorklemmen
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Foreløbig dimensionering: erstatter ikke en ingeniørs kontrol af mast, tårn og fundament. Momentet ved foden skal til underfanen Mast og fundament.
+Sito e norma	Sted og standard
+Norma	Standard
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; koefficienter CNR-DT 207 R1/2018 og EN 1991-1-4
+Locatore / zona	Lokator / zone
+Risultati	Resultater
+Forza massima	Maksimal kraft
+Momento flettente alla staffa del rotore	Bøjningsmoment ved rotorklemmen
+Momento torcente sul rotore	Drejningsmoment på rotoren
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Foreløbig dimensionering: erstatter ikke en kvalificeret ingeniørs kontrol af mast, tårn og fundament.
+Al tondino pieno	Al massiv stang
+Materiale elementi	Elementmateriale
+Staffe, isolatori	Klemmer, isolatorer
+g cad.	g stk.
+Dipolo + scatola	Dipol + boks
+Cavo fino al palo	Kabel til masten
+STAFFA AL PALO	MASTEKLEMME
+Posizione attuale	Nuværende position
+m dal riflettore	m fra reflektoren
+Massa / distanza	Masse / afstand
+Vento dalla linguetta Vento	Vind fra fanen Vind
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Bruger det dimensionerende tryk fra sidste beregning i underfanen Vind; uden det 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Flytter hele modellen langs bommen, så den foreslåede klemme lander i origo (hvor masten og stakrammen fastgøres). Fortryd i 3D-strukturen tager det tilbage.
+Momenti in funzione della posizione della staffa	Momenter mod klemmeposition
+Masse e aree per parte	Masser og arealer pr. del
+ultimo direttore	sidste direktor
+Staffe e isolatori	Klemmer og isolatorer
+Cavo sul boom	Kabel på bommen
+Massa kg	Masse kg
+Baricentro m	Tyngdepunkt m
+Area vento m²	Vindareal m²
+Centro area m	Arealcenter m
+solo peso	kun vægt
+solo vento	kun vind
+File Touchstone .s1p	Touchstone-fil .s1p
+Formato letto	Læst format
+CAVO TRA VNA E ANTENNA	KABEL MELLEM VNA OG ANTENNE
+R e X separate	R og X hver for sig
+Banda con ROS <	Bånd med SWR <
+ROS: calcolato e misurato	SWR: beregnet og målt
+Confronto	Sammenligning
+misurato, cavo tolto	målt, kabel fjernet
+R calcolata	R beregnet
+X calcolata	X beregnet
+R misurata	R målt
+X misurata	X målt
+Calcolato	Beregnet
+Misurato	Målt
+Scarto	Forskel
+Frequenza del ROS minimo	Frekvens for mindste SWR
+ROS minimo	Mindste SWR
+nessuna correzione: calcolo e misura coincidono.	ingen korrektion: beregning og måling stemmer.
+calcolo NEC sul campo della misura…	NEC-beregning over måleområdet…
+Misura del VNA	VNA-måling
+Tutti	Alle
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Kør et sweep (knappen Sweep øverst) for at se F/B og F/R over hele båndet
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = forstærkning fremad minus den gennemsnitlige effekt over den bageste halvkugle (90-270° azimut, alle elevationer over 0°). Det er også blandt optimeringsværktøjets mål.
+Tabelle: F/B e F/R su tutta la banda	Tabeller: F/B og F/R over hele båndet
+Valori dello sweep	Sweepværdier
+ANTENNE RICEVENTI	MODTAGEANTENNER
+4-square in ricezione	4-square til modtagelse
+8 verticali in cerchio	8 vertikaler i cirkel
+Modello aperto	Åbn modellen
+Isotropo	Isotrop
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = forstærkning i den ønskede retning minus den gennemsnitlige forstærkning over hele halvrummet: i modsætning til forstærkningen afhænger den ikke af tabene.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Bruger den mediane ankomstvinkel fra fanen Virkeligt terræn som ønsket elevation (statistik pr. bånd og region). Uden indlæst ARRL-statistik bevares den elevation, der er skrevet her.
+Direzione voluta	Ønsket retning
+Hz  rumore	Hz  støj
+NF ricevitore	Modtagerens NF
+sorgente locale az	lokal kilde az
+Cifre di merito in ricezione	Godhedstal ved modtagelse
+Basta il segnale?	Er signalet nok?
+calcolo in corso…	beregner…
+RDF in funzione della frequenza	RDF mod frekvens
+Calcola prima il modello aperto	Beregn først den åbne model
+verticale λ/4	λ/4-vertikal
+° · dB relativi · arancio: -3 dB	° · relative dB · orange: -3 dB
+settore ±30° az, 10–40° el	sektor ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Gennemsnitlig forstærkning over den forreste sektor minus gennemsnittet over den bageste halvkugle.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definerer DMF kun med forstærkningen ved 20 grader; her bruges gennemsnittet over skitsens sektor, så værdierne kan ikke sammenlignes én til én med bogens.
+molto basso: serve un preamplificatore	meget lav: en forforstærker er nødvendig
+basso ma accettabile: vedi soglia	lav men acceptabel: se tærskel
+come un'antenna trasmittente	som en senderantenne
+F/R medio sull'emisfero posteriore	Gennemsnitlig F/R over den bageste halvkugle
+Rumore d'antenna ai morsetti	Antennestøj ved terminalerne
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Ekstern støjeffekt ved terminalerne: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + gennemsnitlig forstærkning vægtet efter, hvor støjen kommer fra.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	støj fra horisonten vægtet exp(-el/10 grader) i elevation: repræsenterer fjern menneskeskabt støj, der kommer lavt ind; den virkelige fordeling afhænger af stedet.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	punktkilde ved 5 graders elevation med samme effekt som den isotrope baggrund.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	isotrop støj over jorden; jorden tilfører ingen støj.
+Margine sul ricevitore	Modtagerens margin
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Antennestøjen overstiger modtagerens støj med mindre end 6 dB: modtageren begrænser følsomheden. Der kræves mere forforstærkning eller en modtager med lavere NF.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Forstærkning 1,8
+Spazio richiesto	Pladsbehov
+λ/4 in tubo quadro	λ/4 i firkantrør
+λ/4 in tubo tondo	λ/4 i rundt rør
+Solo cavi di fase	Kun faselinjer
+Aria	Luft
+Uscite	Udgange
+Z antenne	Antenne-Z
+Z ingresso	Indgangs-Z
+Dielettrico	Dielektrikum
+Connettori	Stik
+Correggi accorciamento dei connettori	Korriger for stikkenes forkortning
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Trækker den del af linjen, der ligger inde i stikkene, fra længden.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	skøn på 4 mm pr. ende med N-stik (3 BNC, 1,5 SMA): det er bedst at trimme med VNA og afkorte i trin på 1 mm.
+Divisori	Delere
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Bruger de aktive impedanser for antennerne i den åbne stak (én kilde pr. antenne) og afstandene til faselinjernes mindste længde.
+CAVI DI FASE	FASELINJER
+Lunghezza minima	Mindste længde
+Passo verticale	Lodret afstand
+solo cavi di fase: nessun trasformatore da costruire	kun faselinjer: ingen transformer at bygge
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω-kabler parallelt = 37,5 Ω
+quadro, lato	firkant, side
+tondo, Ø	rund, Ø
+Z0 richiesta	Krævet Z0
+Ø conduttore interno	Inderleder Ø
+VF del cavo	Kablets VF
+λ/4 in aria, mm	λ/4 i luft, mm
+da tagliare, mm	at skære, mm
+Z carico in parallelo	Belastnings-Z parallelt
+Rami λ/4: Z0 = Zin · √N	λ/4-grene: Z0 = Zin · √N
+Resistenze a stella	Stjernemodstande
+Isolamento tra le uscite	Isolation mellem udgange
+Perdita stimata	Anslået tab
+Carico usato	Anvendt belastning
+non potenza di 2	ikke en potens af 2
+ROS all'ingresso	Indgangs-SWR
+solo cavi di fase	kun faselinjer
+Uscita	Udgang
+Lungh. elettrica	Elektrisk længde
+Fisica mm	Fysiske mm
+Perdita dB	Tab dB
+° di fase).	° fase).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° opad); impedansen ved deleren gentages ikke længere præcist.
+Solo cavi di fase: nessun disegno da stampare	Kun faselinjer: ingen tegning at udskrive
+Divisore	Deler
+50 mm di controllo	Kontrol 50 mm
+GEOMETRIA	GEOMETRI
+λ/4 sul boom	λ/4 på bommen
+stesso piano	samme plan
+Metallico, isolati	Metal, isolerede
+Non metallico	Ikke-metallisk
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Bommen er ikke i NEC-modellen: med elementer isoleret fra en metalbom er virkningen lille (bomkorrektion i Beregnere).
+Yagi di base	Basis-Yagi
+Disposizione	Opstilling
+Sfasamento piani	Planforskydning
+Cavo di ritardo λ/4	λ/4-forsinkelseskabel
+Includi relè e cavi reali	Medtag virkelige relæer og kabler
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Lægger tabet i forsinkelseskablet til (VF 0,66, 10 dB/100 m ved 144 MHz, skaleret med kvadratroden af frekvensen) og 0,1 dB for relæet.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	typiske værdier for et 75 ohm-kabel og et koaksialrelæ; programmet kender ikke dine.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Det samme fasenet virker også til en turnstile (dipoler krydset i 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Set forfra
+Componenti co-polare / cross-polare	Ko- / krydspolære komponenter
+Rapporto assiale e ROS in frequenza	Aksialforhold og SWR mod frekvens
+piano A	plan A
+piano B	plan B
+vista dal davanti — boom al centro	set forfra — bommen i midten
+piani sfalsati di λ/4 lungo il boom	planer forskudt λ/4 langs bommen
+Yagi incrociate: serve una Yagi con una sola sorgente	Krydsede Yagier: en Yagi med én kilde er nødvendig
+Yagi incrociate: calcolo in corso...	Krydsede Yagier: beregner...
+Rapporto assiale in asse	Aksialforhold på aksen
+Rapporto assiale a −3 dB	Aksialforhold ved −3 dB
+Isolamento tra i due piani	Isolation mellem de to planer
+Fase della rete sul piano B	Nettets fase på plan B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Perfekt ortogonale og symmetriske planer: i modellen er koblingen og den modsatte polarisation næsten nul. I virkeligheden begrænser klemmer, kabler og små asymmetrier dem til omkring 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	fra 1,8 MHz til 1296 MHz: listen over baluner ændres med båndet
+LINEA DI DISCESA	FØDELINJE
+Coassiale	Koaksial
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Med en balanceret åben linje er der ingen skærm: common mode kommer kun fra ubalancer. Kortet beregner koaksialtilfældet; til den åbne linje brug Linjer (TL) med tuneren.
+Lungo il boom	Langs bommen
+m → palo	m → mast
+Discesa sul palo	Ned ad masten
+Fino alla stazione	Til stationen
+Calza a massa sul palo / traliccio	Skærm jordet i mast / tårn
+Messa a terra all'ingresso stazione	Jord ved stationens indgang
+BALUN DA CONFRONTARE	BALUNER AT SAMMENLIGNE
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 vindinger RG-213 på 110 mm: induktans efter Wheeler, egenkapacitet efter Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 og anslået egenkapacitet: drosselens virkelige impedans skal måles.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferrittoroide som parallel RLC med lav Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm i toppen (10 MHz med mix 31, 25 MHz med mix 43): typiske værdier for 12 vindinger på 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksial λ/2 4:1: balanceret fødning, skærmene forbundet.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	resterende common mode som 600 ohm resonant ved f0 (Q 3): afhænger af monteringen.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4-muffe: kortsluttet λ/4-linje mellem skærm og muffe, høj impedans ved f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Muffens Z0 50 ohm og 0,08 dB tab over kvartbølgen.
+10 perline in ferrite sulla calza.	10 ferritperler over skærmen.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohm pr. perle ved 144 MHz (mix 61), 100 ohm over 30 MHz med mix 43: typiske katalogværdier.
+Caso mostrato	Vist tilfælde
+premi Calcola il confronto	tryk på Beregn sammenligningen
+Corrente lungo la calza, dal dipolo verso il basso	Strøm langs skærmen, fra dipolen og nedad
+Vista laterale: corrente sulla calza	Set fra siden: strøm på skærmen
+F/R medio	Gennemsnitlig F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Tab i balunen
+Potenza dissipata nel balun a 1 kW	Effekt afsat i balunen ved 1 kW
+Banda con calza < 5 %	Bånd med skærmstrøm < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	De grå punkter er baluner til det andet bånd; de aktiveres, når frekvensen vælges. På HF tæller også skærmen ned til stationen (jordet), på VHF/UHF delen på bommen og masten. Skærmen er en tråd forbundet til den ene side af fødepunktet, som i virkeligheden uden balun; balunen er en common mode-impedans i det første stykke.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Glasfiber leder ikke: rammen kommer ikke med i NEC, kun faselinjernes skærme bliver tilbage.
+Includi palo sotto il telaio	Medtag masten under rammen
+Cavi di fase lungo i montanti	Faselinjer langs stolperne
+Rotore e controventi	Rotor og barduner
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Planlagt: rotor og barduner som tråde (tårnets mål kræves).
+Materiale	Materiale
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	rødt = rammedele modelleret som NEC-tråde · stiplet = faselinjernes skærm
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Vandret polarisation: de lodrette stolper er svagt koblet; den vandrette tværbjælke og faselinjerne ikke.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Lodret polarisation: stolperne og masten er parallelle med elementerne og betyder mere; den vandrette tværbjælke lidt.
+Confronto senza / con telaio	Sammenligning uden / med ramme
+Diagramma orizzontale sovrapposto	Vandret diagram lagt over
+premi Calcola confronto	tryk på Beregn sammenligningen
+Stack: calcola prima il modello	Stak: beregn først modellen
+Stack: calcolo senza e con telaio...	Stak: beregner uden og med ramme...
+Pezzo	Del
+Collegato	Forbundet
+Cavi	Kabler
+Senza telaio	Uden ramme
+Con telaio	Med ramme
+Z ingresso divisore	Delerens indgangs-Z
+senza telaio	uden ramme
+con telaio	med ramme
+Stack: confronto senza / con telaio fatto	Stak: sammenligning uden / med ramme færdig
+CARICHI HF	HF-BELASTNINGER
+INSERISCI NEL MODELLO	INDSÆT I MODELLEN
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Hatten sidder for enden af tråden (b eller e), linear loading i det valgte punkt på tråden.
+Inserisci nel modello	Indsæt i modellen
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Allerede godkendt i skitsen Belastninger: Q for L og C, f0, Z pr. bånd, spænding og strøm i komponenten. Her tilføjes konstruktionstyperne.
+Trappola coassiale	Koaksialfælde
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	inderlederen loddes til begyndelsen af midtervindingen (at vende enderne sænker resonansen ca. 50 kHz).
+Calcola spire per f0	Beregn vindinger for f0
+Spire dell'avvolgimento (anche frazionarie).	Viklingens vindinger (også brøkdele).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	den virkelige f0 afviger nogle procent: mål den med dykmeter eller VNA og ret vindingerne.
+Blocca	Spærrer
+dipolo con	dipol med
+Filo Ø	Tråd Ø
+Calcola C per f0	Beregn C for f0
+mm  Filo Ø	mm  Tråd Ø
+mm  Passo	mm  Stigning
+mm  Spire	mm  Vindinger
+MHz  dal centro	MHz  fra midten
+m  Braccio	m  Arm
+m  Filo dell'elemento Ø	m  Elementtråd Ø
+Calcola spire per la risonanza	Beregn vindinger for resonans
+Piega	Foldning
+m  Distanza tra i fili	m  Afstand mellem trådene
+Calcola la piega per la risonanza	Beregn foldningen for resonans
+Raggi	Eger
+m  Filo Ø	m  Tråd Ø
+Verticale alto	Vertikalens højde
+m  Frequenza	m  Frekvens
+MHz  Filo Ø	MHz  Tråd Ø
+Calcola i raggi per la risonanza	Beregn egerne for resonans
+L misurata	Målt L
+MHz  Autorisonanza f0	MHz  Egenresonans f0
+Cappello capacitivo in punta al verticale	Kapacitiv hat på toppen af vertikalen
+Bobina dalle misure	Spole ud fra mål
+Reattanza del cappello in frequenza	Hattens reaktans mod frekvens
+impedenza della trappola	fældens impedans
+Si comporta da	Opfører sig som
+Potenza persa	Tabt effekt
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Sendereffekt for tabellens spændinger og tab.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	lavt bånd: strøm i bugen sqrt(P/73) og i fælden I0 cos(beta a); spærret bånd: spænding ved den indre dipols spids I0 Z0 fordelt mellem fælde og stråling.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	strøm i bugen sqrt(P/73) og i belastningen I0 cos(beta a), med a afstanden fra midten.
+Risonanza propria f0	Egenresonans f0
+Q ideale	Ideel Q
+Q della trappola alla risonanza.	Fældens Q ved resonans.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus dielektrisk tab (tangens 3e-4 PE, 2e-4 PTFE). Målte koaksialfælder har som regel Q mellem 100 og 300.
+Lunghezza di cavo	Kabellængde
++ 10 cm per le saldature	+ 10 cm til lodningerne
+R in parallelo equivalente	Ækvivalent parallel-R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: det er LD-belastningen, der går ind i modellen
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipolarm på det lave bånd med fælden, sammenlignet med armen i fuld størrelse (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC med fælden som belastning giver den rigtige længde.
+Induttanza misurata	Målt induktans
+dalla misura	fra målingen
+Autorisonanza	Egenresonans
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frekvens, hvor spolen resonerer alene med sin egenkapacitet.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	egenkapacitet fra Medhursts tabel efter længde / diameter, gælder for enkeltlagsspoler langt fra metalmasser.
+Q della bobina alla frequenza di lavoro.	Spolens Q ved arbejdsfrekvensen.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	trådens modstand ved skineffekt gange en nærhedsfaktor 1 + 2 (d/p)^2 (d tråd, p stigning): Medhurst giver lignende værdier for spoler med længde omtrent lig diameteren.
+Reattanza della piega	Foldningens reaktans
+Z0 della linea	Linjens Z0
+Q della piega	Foldningens Q
+Capacita' del cappello	Hattens kapacitet
+Capacita' del cappello verso lo spazio.	Hattens kapacitet mod rummet.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	summen af egerne (tynd tråd, 2 pi eps0 l / (ln(2l/a) - 1)) og ringen, der mætter mod den fulde skive (8 eps0 r): egerne skærmer hinanden. Indsat som tråde beregner NEC den præcist.
+in punta al verticale	på toppen af vertikalen
+Altezza per la risonanza	Højde for resonans
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Virkning på vertikalen
+Carichi HF: apri un modello nella finestra principale.	HF-belastninger: åbn en model i hovedvinduet.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading og kapacitiv hat indsættes som tråde: for de andre vælg «Som belastning».
+Il cappello capacitivo si inserisce come fili.	Den kapacitive hat indsættes som tråde.
+RLC parallelo	Parallel RLC
+Effetto sul dipolo	Virkning på dipolen
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Armens afkortning i forhold til fuld kvartbølge (71,3 / f) med belastningen i det punkt.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	linjemodel for den belastede arm X = Z0 (cot(beta b) - tan(beta a)), x 0,95 for endeeffekten.
+Esegui il test	Kør testen
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Forstærkningen kan vises korrigeret med AGT (allerede planlagt i optimeringsværktøjet).
+Controllo prima/dopo il calcolo	Kontrol før/efter beregningen
+Esito	Resultat
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ En eller flere kontroller uden for ±0,2 dB: gennemgå segmenteringen (3D-struktur > Segmentering... og Kontrollér segmenteringen).
+Tutti i controlli entro ±0,2 dB.	Alle kontroller inden for ±0,2 dB.
+Linea a finestra 450	Stigeledning 450 ohm
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Tryk på Beregn: NEC beregner den åbne models impedans ved hver frekvens.
+Perdita nella linea	Linjetab
+Perdita totale	Samlet tab
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Type tuner mellem linjen og senderen (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	tab anslået ud fra nettets belastede Q (Qn = sqrt(Rmax/Rmin - 1), to sektioner for T og Pi) og spolens Q; TLW fra N6BV beregner komponenterne én ad gangen og kan afvige nogle tiendedele dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Eksempel: dublet 2 × 20 m (ZS6BKW/G5RV). Advarsel, når tuneren ser mindre end 20 Ω: høje tab, det foreslås at forlænge eller afkorte linjen. Linje med tab som i TLW (N6BV, ARRL).
+USA costa est	USA's østkyst
+USA costa ovest	USA's vestkyst
+Giappone	Japan
+Caraibi	Caribien
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: tjenesten returnerede ingen GeoTIFF
+GeoTIFF compresso: non supportato	Komprimeret GeoTIFF: understøttes ikke
+GeoTIFF: tipo di dato non supportato	GeoTIFF: datatypen understøttes ikke
+Il file non contiene coppie distanza / quota.	Filen indeholder ingen par afstand / højde.
+Nessuno	Ingen
+Ferriti a perline	Ferritperler
+Cavo e balun: segmento della sorgente non trovato.	Kabel og balun: kildesegmentet blev ikke fundet.
+solo palo	kun mast
+Acciaio zincato	Galvaniseret stål
+Alluminio	Aluminium
+Vetroresina	Glasfiber
+Montante sx/dx	Venstre/højre stolpe
+al boom	mod bommen
+Traversa	Tværbjælke
+Palo	Mast
+al dipolo	mod dipolen
+N, femmina	N, hun
+senza connettori	uden stik
+rurale tranquillo	roligt landdistrikt
+Verticale λ/4	λ/4-vertikal
+λ/8 di lato	λ/8 pr. side
+0,37 λ di diametro	0,37 λ diameter
+Cappello capacitivo	Kapacitiv hat
+W8NX bassa impedenza	W8NX lav impedans
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	et tykt kabel med PTFE-dielektrikum (RG-393) eller en LC-fælde med højspændingskondensator
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Foldningen er længere end lambda/8: linjen opfører sig ikke længere som en konstant induktans, kontrollér resonansen med NEC ved at indsætte den som tråde.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Hattens kapacitet er et skøn (eger, der skærmer hinanden): for den præcise værdi indsæt den som tråde og beregn med NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Belastningens position ligger ud over kvartbølgen: flyt den tættere på midten.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	hatten sidder for enden af tråden: vælg første (b) eller sidste (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	det valgte punkt ligger for tæt på trådens ende.
+questo tipo entra nel modello come carico.	denne type går ind i modellen som belastning.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF-belastninger: tråde tilføjet af YA-NEC-beregneren
+Il file Touchstone non contiene punti di S11.	Touchstone-filen indeholder ingen S11-punkter.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV-filen indeholder ingen rækker frekvens, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT i frit rum, tabsfri
+IMPOSTAZIONI	INDSTILLINGER
+Schiera Hi-Z di verticali corte	Hi-Z-gruppe af korte vertikaler
+Base del loop	Loopens basis
+Distanza, lato o diametro	Afstand, side eller diameter
+Altezza delle verticali	Vertikalernes højde
+Base del loop dal suolo	Loopens basis over jorden
+Fase tra le file	Fase mellem rækkerne
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Lav vandret dipol: tættere på jorden end lambda/4 går lappen opad. Det er referencen for «høj vinkel» i IV3PRK's rangordning (RDF 7,3 dB): den sammenlignes med modtageantennerne til lav vinkel.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY af Gary Breed K9AY (QST, september 1997): to lodrette loops i 90 grader på samme mast, termineringsmodstand (390 ohm typisk, justeret for F/B), transformer 9:1. Her én loop, drejet mod den valgte retning, lukket over jorden som på siden Modtagelse (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Modtage-4-square: fire korte aktive vertikaler i hjørnerne af et kvadrat på lambda/8, der stråler langs diagonalen. Tom fase = præcist nulpunkt bagud (pi + beta d mellem rækkerne): giver den højeste teoretiske direktivitet; virkelige fasenet (ON4UN, IV3PRK) bruger andre faser og giver lavere RDF (IV3PRK 9,4 dB). Knappen søger fasen med bedste RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Grupper af korte aktive vertikaler som dem fra Hi-Z Antennas: 2 elementer end-fire (kardioide, lambda/8), 3 i trekant (side lambda/6, et hjørne mod den valgte retning), 8 i cirkel (diameter 0,37 lambda: de fire mod retningen og de modsatte bruges). Hi-Z: 8 i cirkel RDF 13,4 dB med sin kombiner; den enkle model med to rækker bliver lavere. Knappen søger fasen med bedste RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikalerne udgår fra virkelig jord (GE 1 med Sommerfeld-jord): med NEC-2 giver en tråd forbundet til virkelig jord en impedans, der afhænger af kildesegmentet (NEC-2-manualen, EZNEC). Diagram og RDF er vejledende; tilslutning med hævede radialer er planlagt for alle modtageantenner.
+fase tra le file da 120 a 300 gradi per l'RDF	fase mellem rækkerne fra 120 til 300 grader for RDF
+nessuna fase con il lobo in avanti	ingen fase med lappen fremad
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fase mellem rækkerne for bedste RDF: {0} grader (RDF {1} dB). Genberegner...
+linea d'orizzonte	horisontlinje
+scala angolare	vinkelskala
+lobo reale sopra il piatto fino a	virkelig lap over fladt op til
+Profilo verso	Profil mod
+Lobo verticale e angoli di arrivo a	Lodret lap og ankomstvinkler ved
+Cos'e' l'RDF	Hvad er RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = forstærkning i den ønskede retning - gennemsnitlig forstærkning i alle retninger (W8JI; tidligere kaldt SNIF, i 60'erne). Den måler, hvor meget antennen forbedrer signal/støj-forholdet, hvis støjen kommer ens fra alle retninger; den absolutte forstærkning tæller ikke (en forforstærker henter den ind). Gennemsnit som i EZNEC: øvre halvkugle divideret med hele kuglen (4 pi). Med denne konvention stemmer resultaterne med IV3PRK og W8JI/Hi-Z (vertikal 5,07 mod 5,06 og 4,9; Beverage 350 m 13,5 mod 13,66). Begrænsning: virkelig støj er ikke ensartet (elledninger, lokal QRM): derfor tæller også F/B og lappens form. For senderantenner giver RDF ingen mening: derfor beregnes den kun i denne fane. DMF (Directivity Merit Figure, ON4UN): forstærkning ved 20 graders elevation fremad minus den gennemsnitlige forstærkning i det bageste halvrum (azimut ud over 90 grader, over jorden, vægtet med cosinus efter areal): viser, hvor meget antennen afviser støj bagfra. ON4UN advarer mod at sammenligne DMF og RDF med hinanden. Kilder: W8JI og W8WWV (RDF), ON4UN Low-Band DXing kap. 7 (DMF, tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevation
+azimut	azimut
+azimut a {0}°	azimut ved {0}°
+totale	i alt
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Åbning til første nulpunkt (FNBW): {0}°;  højeste sidelap: {1}
+Didascalie {0} %	Etiketter {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB mod {1} i kilden: kontrollér mål, terminering og jord (kilden kan bruge en anden jord eller geometri).
+Azimut a {0}° · {1} MHz	Azimut ved {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimut ved {0}° elevation
+RUMORE	STØJ
+Apri la scheda {0}	Åbn kortet {0}
+caso mostrato: {0}	vist tilfælde: {0}
+Rastremazioni	Teleskopiske
+BANDA	BÅND
+λ/2 coassiale 4:1	koaksial λ/2 4:1
+Manicotto λ/4	λ/4-muffe
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kabelskærm og mast som NEC-tråde; sammenligning af baluner (common mode-strøm, F/B, gennemsnitlig F/R, tab, effekt ved 1 kW) fra 1,8 til 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Stolper, tværbjælke, mast og faselinjernes skærme som NEC-tråde: sammenligning uden / med ramme (forstærkning, F/B, gennemsnitlig F/R, lapper, delerens Z, Tant og G/T).
+TIPO	TYPE
+DATI	DATA
+TELAIO	RAMME
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 i firkant- eller rundrør, i kabel, Wilkinson; faselinjer, tilt; tegning 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X eller +, planer forskudt λ/4; H, V, RHCP, LHCP, X-pol; aksialforhold og isolation
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Lige længder → lige fase. Multipla af λ/2 → den aktive impedans gentages ved deleren. Anbefalet tolerance ± 5 mm (= ± {0}° fase).
+impedenze attive delle {0} antenne dello stack in parallelo	aktive impedanser for stakkens {0} antenner parallelt
+Banda con ROS < {0}	Bånd med SWR < {0}
+? Manuale	? Manual
+Apre la spiegazione nel manuale	Åbner forklaringen i manualen
+riferimento	reference
+Rispetto alla singola antenna	I forhold til den enkelte antenne
+{0} antenne ideali	{0} ideelle antenner
+x la distanza DL6WU, a passi di	x DL6WU-afstanden, i trin på
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Venstre akse: stakkens G - den enkelte antennes G, fra 0 og opad. Højre akse: stakkens F/R - den enkelte antennes F/R, omvendt, med 0 øverst: hvor stakken forbedrer F/R, går kurven nedad, og det laveste punkt er den største forbedring. G/T står i tabellen.
+ΔG sulla singola	ΔG over den enkelte antenne
+Chiusura del programma	Afslut programmet
+Vuoi chiudere YA-NEC?	Vil du lukke YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Tak fordi du brugte mig: jeg håber, jeg var til nytte.
+Sì	Ja
+ROS attivo	Aktiv SWR
+G realizzato	Realiseret G
+ROS attivo massimo	Maksimal aktiv SWR
+riflessi minimi	mindste refleksioner
+ROS attivo alto: da non scegliere	høj aktiv SWR: vælg ikke
+Documenti tecnici	Tekniske dokumenter
+Manuale d'uso	Brugermanual
+Manuale di calcolo e delle fonti	Manual til beregninger og kilder
+Citazioni	Citater
+Cerca in tutti i documenti	Søg i alle dokumenter
+Apri il PDF	Åbn PDF'en
+Nessun risultato per «{0}»	Ingen resultater for «{0}»
+Primi {0} risultati per «{1}»	Første {0} resultater for «{1}»
+{0} risultati per «{1}»	{0} resultater for «{1}»
+Apre la citazione {0}	Åbner citat {0}
+Manuale di calcolo	Beregningsmanual
+È pronta la versione {0} di YA-NEC	Version {0} af YA-NEC er klar
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Den er allerede hentet og installeret: den træder i kraft, når programmet genstartes.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	På Mac installeres den ikke af sig selv: hent den nye .dmg-fil fra versionssiden på GitHub.
+Riavvia adesso	Genstart nu
+Più tardi	Senere
+Apri la pagina delle versioni	Åbn versionssiden
+Aggiornamento di YA-NEC	YA-NEC-opdatering
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Den er allerede hentet og installeret. Programmet genstarter af sig selv og åbner den åbne model igen.
+Riavvio tra {0} s	Genstart om {0} s
+Questo avviso si chiude tra {0} s	Meddelelsen lukkes om {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Efter opdateringen er den ikke-gemte model åbnet igen: gem den, når du vil (kopi i data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Efter opdateringen er den model, der var åben, åbnet igen.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Hvert felt har sin hjælp med forklaring og kilde. Grå: markeret = altid aktiv (slås ikke fra); ikke markeret = endnu ikke tilgængelig; valg med piller = fast valg. Manual, kapitel 21.
+"): sorgente sempre accesa.	"): kilde altid aktiv.
+' non da' un numero valido.	' er ikke et gyldigt tal.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik som den er
+0 - misure del metodo	0 - metodens mål
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = båndets standard-WR-bølgeleder (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = samme parabol i den anden ende (eget ekko).
+0 = stesso disco all'altro capo.	0 = samme parabol i den anden ende.
+0 gradi a destra	0 grader til højre
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = en tredjedel fra spidsen: impedans 200-300 ohm, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: langt fra kanten, hvor bøjning ville flytte fødeelementet ud af fokus.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 massiv polyethylen (RG-58, RG-213), 0,8-0,85 skummet dielektrikum.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 massiv polyethylen, 0,8-0,85 skummet, 0,9-0,97 åben linje.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 lambda i bølgeleder
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - fødet loop
+1 - radiatore	1 - strålingselement
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = én vinding (som før). Med flere vindinger vokser Rr med N², skineffekttabet med N.
+1 cavo	1 kabel
+1-2-3 elementi	1-2-3 elementer
+1. Obiettivi e pesi	1. Mål og vægte
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vind, balancering, delere, baluner, krydsede Yagier
+1.3 - Antenne riceventi abilitate	1.3 - Modtageantenner aktiveret
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz med stor parabol: ud over overflade og retning tæller termisk deformation og vinddeformation (ATA: 0,7 mm RMS om natten, 3 mm om dagen i sol), bøjning af støtterne og spredning på grund af libration.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: udskriv i 100 %, uden «tilpas til siden»
+1005/f piedi	1005/f fod
+144 isol.	144 isol.
+2 - riflettore	2 - reflektor
+2 - riflettori	2 - reflektorer
+2 in parallelo	2 parallelt
+2 lati	2 sider
+2. Variabili che l'ottimizzatore puo' cambiare	2. Variabler, som optimeringsværktøjet må ændre
+200 Ω con balun 4:1	200 Ω med balun 4:1
+25 tondo	25 rund
+3 - direttori	3 - direktorer
+3 gruppi	3 grupper
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 eller 4. Med 2 er der ingen stivhed uden for deres plan.
+3. Registro dei passi - clic su una riga per riprenderla	3. Trinlog - klik på en række for at hente den tilbage
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω eller balun 4:1
+36 Ω + terra	36 Ω + jord
+4 - tutto insieme	4 - alt sammen
+4 lati	4 sider
+4 sorgenti: vedi tabella	4 kilder: se tabellen
+432 isol.	432 isol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 datakontroller godkendt af IC8TEM den 15/11/2026: tærskler og forklaringer i manualen, kapitel 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 fod ca. 18 dBi, 12 fod ca. 20,5 dBi
+75 ohm ideale	75 ohm ideelt
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 gange længere end radius. Med tykke tråde eller korte segmenter (tykke rør på UHF, elementer tæt på hinanden,\n
+9 fili	9 tråde
+9 fili a 0,1 λ	9 tråde på 0,1 λ
+Accorciamento del pilotato	Det fødede elements afkortning
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Afkortning over 8 %: det lineære skøn er ikke pålideligt, kontrollér med NEC.
+Allega il modello aperto	Vedhæft den åbne model
+Allega il registro di oggi	Vedhæft dagens log
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Bølgernes RMS-højde og antennens højde over havet, i Diagrammer > Virkeligt terræn.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Sweepets bredde omkring frekvensen, til impedansgrafen.
+Antenna a	Antenne ved
+Applica la freccia al modello NEC	Anvend nedhænget på NEC-modellen
+Approvata, in preparazione: non ancora attiva in questa versione.	Godkendt, under forberedelse: endnu ikke aktivt i denne version.
+Apri la cartella	Åbn mappen
+Apri un modello nella finestra principale	Åbn en model i hovedvinduet
+Apro il modello e il diagramma 3D resta vuoto.	Jeg åbner modellen, og 3D-visningen forbliver tom.
+Area al vento dell'antenna	Antennens vindareal
+Area al vento totale	Samlet vindareal
+Area al vento totale e lista di taglio	Samlet vindareal og skæreliste
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Bemærk: brug ikke med tråde, der mødes i vinkel eller med forskellige diametre i samlingen.\n
+Bobina di carico per la risonanza	Forlængerspole til resonans
+Boom con il tirante	Bom med stag
+C1 in serie con la loop	C1 i serie med loopen
+C1 serie, C2 parallelo	C1 serie, C2 parallel
+C2 in parallelo all'ingresso	C2 parallelt med indgangen
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Beregnere > Modtageantenner: lav dipol, K9AY, 4-square RX, Hi-Z 2/3/8 elementer, med fasen mellem rækkerne optimeret for RDF og advarslen om jordforbindelsen.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mekaniske beregninger (Vind og Balancering), Beregnere > Delere og krydsede Yagier, Objekter > Kabel og balun og stakramme, HF-belastninger.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Foreløbig dimensionering: til installationen gælder en kvalificeret teknikers projekt.
+Candidati da controllare	Kandidater at kontrollere
+Categoria	Kategori
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Stedets eksponeringskategori (NTC 2018, tab. 3.3.II og fig. 3.3.2): afhænger af terrænets ruhedsklasse (A bycentre ... D områder uden forhindringer, hav) og afstanden til kysten. I = åben kyst eller hav, V = bycentrum.
+Cebik, poi NEC	Cebik, derefter NEC
+Centro della banda scelta:\n	Midten af det valgte bånd:\n
+Con ghiaccio	Med is
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Med is: vinden reduceret til 0,6 gange og radial is fra feltet til højre (forenklet kombination ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Med samme frø gentages testen ens.
+Condizione della sorgente non capita ("	Kildebetingelsen blev ikke forstået ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Tjekker straks GitHub uden at vente de 3 minutter. Er der en ny version, hentes den, der gives besked, og der genstartes som ved den automatiske opdatering (10 sekunder, modellen åbnes igen). Virker også med automatisk opdatering slået fra.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Altid kontrolleret af segmenteringskontrollen og i Advarsler (8 med normal kerne, 2 med udvidet kerne).
+Copie per candidato	Kopier pr. kandidat
+Coppia sulla staffa boom-mast	Drejningsmoment i klemmen bom-mast
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Opretter zip-filen i data/segnalazioni og åbner GitHub-siden «New issue» med teksten allerede skrevet. Zip-filen vedhæfter du selv, manuelt: programmet sender intet af sig selv.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Jordkrumning, i Diagrammer > Virkeligt terræn.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diameter uden for området for Cebiks formler (fra 1E-6 til 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Afstand og type for den anden jord: godkendt til 1.5 (Virkeligt terræn 2).
+Distanze di stack HF	HF-stakafstande
+Distanze di stack: accoppiamento e distanza migliore	Stakafstande: kobling og bedste afstand
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Efter optimeringen går de bedste resultater videre til kontrollen med tolerancerne. 0 = ingen kontrol.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Meget lave ender: pas på mennesker og dyr (høje spændinger i spidserne).
+F/B peggiore	Værste F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq-fil: linjer med TLParms fra AutoEZ (kabler med tab) bruger nominelle Zo og VF og intet tab: NEC's TL-kort er tabsfrit.
+Filo riflettore	Reflektortråd
+Filo ripiegato	Foldet tråd
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Lang hairpin (mere end 0,2 lambda): det er bedre at mindske afstanden eller bruge tykkere ledere.
+Forza del vento di progetto	Dimensionerende vindkraft
+Forza l'aggiornamento	Gennemtving opdatering
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Kordens nedhæng: hvor meget nettet på det lige stykke ligger under paraboloiden midt i spændet (indgår i facetteringen). Remmenes samlede masse {4:0.00} kg{5}.
+Freccia tolta dal modello.	Nedhænget fjernet fra modellen.
+Ghiaccio radiale	Radial is
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA-filer segmenteres altid igen til NEC-2 (manualen, kapitel 10).
+I lobi si leggono nella tabella delle distanze di stack.	Lapperne aflæses i tabellen over stakafstande.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (afrunder), FIX (afkorter), MOD, MAX, MIN, ODD (ulige heltal: nyttigt til segmenterne i den fødede tråd).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Almindelig NEC2 behandler hver tråd som en tynd linje: det holder, så længe segmentet er mindst\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Én reflektortråd giver en meget lille forbedring (Cebik): bedre skærmen eller de 9 tråde.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Masten overskrider flydegrænsen: tykkere mast eller kortere udhæng.
+Impedenza del cavo	Kabelimpedans
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	I en anden form: kontrol r5 i Datakontrollerne markerer forstærkning over det fysiske maksimum for bomlængden.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktans med N² (tætte vindinger) og en NEC-model med én vinding: her kontrollerer NEC kun geometrien af den ene vinding.
+Interasse della forcina	Hairpinens afstand
+Isole (tranne Sicilia e Sardegna) e mare aperto	Øer (undtagen Sicilien og Sardinien) og åbent hav
+Kernel esteso del NEC2 (scheda EK).\n	Udvidet NEC2-kerne (EK-kort).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Hairpinens afstand skal være større end lederdiameteren.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim lukker strålingselementet foroven med en tråd foldet nedad, ned til lige over stubben.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Det gøres i vinduet Segmenteringskontrol (knappen ovenfor).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpinen er symmetrisk: den skævvrider ikke diagrammet som gammaen. En balun eller drossel i fødepunktet er stadig nødvendig.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpinen virker kun med det fødede elements R lavere end kabelimpedansen: til større R brug gamma eller en transformer.
+La prepara IC8TEM: non ancora attiva.	IC8TEM forbereder den: endnu ikke aktiv.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	De seks regler i EZNEC's Geometry Check, ved hver beregning, i fanen Advarsler.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: uden korrektion Z = {0:0.0} {1}j{2:0.0} ohm (med korrektionen {3:0.0} {4}j{5:0.0} ohm).
+Località	Sted
+Loop orizzontale di 1 λ	Vandret loop 1 λ
+Lunghezza del pilotato	Det fødede elements længde
+Lunghezza della forcina	Hairpinens længde
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Lægger den åbne model (.nec) i zip-filen, også hvis den ikke er gemt.
+Mette nello zip il registro di oggi della cartella registri.	Lægger dagens log fra mappen logs i zip-filen.
+Momenti al mast	Momenter på masten
+Momento al cuscinetto	Moment ved lejet
+NEC: risonanza cercata dal motore	NEC: resonans søgt af motoren
+NOTE SU QUESTA VERSIONE (fase 0)\n	NOTER TIL DENNE VERSION (fase 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NYT · over jorden: højder, afstande, ønskede udstrålingsvinkler
+Nel modello non ci sono elementi orizzontali diritti	Modellen har ingen lige vandrette elementer
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	I staktabellen og i modellens Objekter (stakramme, delere).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Skriv udtryk uden mellemrum i geometrikort, for eksempel:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Ingen afstand foreslået
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Ingen afstand foreslået: alle overskrider maksimal aktiv SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Ingen IP-adresse, ingen e-mail, ingen brugernavne i filerne: stien til hjemmemappen bliver «~». Uden GitHub-konto kan du sende zip-filen, som du vil.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Endnu ikke automatisk: det gøres manuelt med AGT-testen i Advarsler (ARRL 24., 4nec2).
+Numero di spire	Antal vindinger
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Hver kopi har sine mål tilfældigt forskudt inden for tolerancerne i fanen Tolerancer (standard: længde ±1 mm, position ±2 mm, diameter ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Ud over den åbne model, starter valgt tilfældigt mellem hver variabels minimum og maksimum. 0 = som før.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Siden Støj fra den virkelige himmel i fanen Støj/GT/Stak: skynoise-beregningen overført til C# (læsning af HEALPix-kortene, interpolation, stjernetid, koordinater, Månen) og de to kort fra G8ONH i data/cielo.
+Partenze a caso	Tilfældige starter
+Perimetro Cebik	Cebiks omkreds
+Peso del boom	Bommens vægt
+Pi-greco	Pi-net
+Prepara la segnalazione	Forbered rapporten
+Proposta	Forslag
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c-test ved 145 MHz (rør 12 mm på 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Hvornår det er nødvendigt: forhold segment/radius mellem ca. 2 og 8 (under 2 er ingen af dem pålidelige).\n
+Quota s.l.m.	Højde o.h.
+R del pilotato	Det fødede elements R
+ROS attivo minimo {0}	Mindste aktive SWR {0}
+Raggio equivalente dei due conduttori	Ækvivalent radius for de to ledere
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Det fødede elements nuværende reaktans: hvis den er positiv, skal det fødede element afkortes mere.
+Reattanza della forcina	Hairpinens reaktans
+Reattanza voluta del pilotato	Ønsket reaktans for det fødede element
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktans: ud over kl = pi/2 (eller med for tyk leder) gælder AEH-formlen ikke, brug NEC.
+Reinstalla la versione attuale	Geninstaller den nuværende version
+Rel Z non positiva	Re Z ikke positiv
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Det fødede elements modstand ved resonans, fra modellen eller NEC-beregningen.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Genstart mislykkedes: luk og åbn YA-NEC igen manuelt.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Henter og geninstallerer, også hvis versionen er den samme: nyttigt, hvis en programfil er blevet beskadiget.
+Scansione	Sweep
+Scegli il candidato con	Vælg kandidaten med
+Schermo	Skærm
+Scrivi due frequenze diverse.	Skriv to forskellige frekvenser.
+Segnala un problema	Rapportér et problem
+Seme del caso	Tilfældigt frø
+Serve solo per la reattanza (dipolo e monopolo).	Kræves kun til reaktansen (dipol og monopol).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Bruges med 2 eller flere vindinger: under 2 lederdiametre vokser det virkelige tab på grund af nærhedseffekten (ikke beregnet).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Bruges i Diagrammer > Virkeligt terræn: havrefleksion med divergensfaktor og ruhed.
+Sicilia e provincia di Reggio Calabria	Sicilien og provinsen Reggio Calabria
+Sollecitazione	Spænding
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Over 0,25 λ begynder lappen at falde: mindre egnet til NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Over 30 MHz bruges Cebiks regression uden for det område, den tilbydes til her (HF-tråde): Automatisk eller NEC er bedre.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Under 0,1 λ falder forstærkningen opad (Cebik): en meget lav antenne vinder intet.
+Sotto l'antenna	Under antennen
+Spina (tubo o tondo) dentro il giunto telescopico.	Prop (rør eller stang) inde i teleskopsamlingen.
+Spina interna nei giunti	Indvendig prop i samlingerne
+Stack con il ROS attivo piu' basso	Stak med laveste aktive SWR
+Staffe e mast	Klemmer og mast
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Tid: ca. (starter + 1) gange den nuværende, plus kandidater x kopier beregninger.
+Tensione nel mast al cuscinetto	Spænding i masten ved lejet
+Tiro del tirante	Stagets træk
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Rør hentet fra tabellen Tilspidsninger: målene er de samme som i NEC-modellen.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Alle afstande overskrider maksimal aktiv SWR ({0}): ingen afstand foreslået. Hæv maksimal aktiv SWR, prøv antennens egen referenceimpedans eller trim den enkelte antenne. Matrix og graf gælder afstanden med laveste aktive SWR.
+V invertito	Omvendt V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), kobling, aktiv SWR, bedste afstand, to frekvenser
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Spidsvindhastighed på stedet: vb sqrt(ce), med vb = vb,0 ca (NTC 2018, gentagelsesperiode 50 år) og ce(z) for eksponeringskategorien i antennehøjden.
+Velocità	Hastighed
+Velocità a mano	Hastighed manuelt
+Vento di sopravvivenza	Overlevelsesvind
+Vento di sopravvivenza del boom	Bommens overlevelsesvind
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Vind vinkelret på elementet, ved hvilken det første punkt når flydegrænsen (egenvægt og is medregnet).
+X da aggiungere al pilotato	X der skal lægges til det fødede element
+X del pilotato	Det fødede elements X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Slutkontrollen udføres af NEC-motoren på modellen med hairpinen.
+Z0 della forcina	Hairpinens Z0
+Z0 della linea dei due conduttori	Tolederlinjens Z0
+Zona buona	God zone
+al centro	i midten
+caso peggiore	værste tilfælde
+caso peggiore delle due	værste tilfælde af de to
+cerca...	søg...
+copie entro le soglie	kopier inden for tærsklerne
+corrente sinusoidale	sinusformet strøm
+distanza dal boom	afstand fra bommen
+distanza dall'inizio del boom	afstand fra bommens begyndelse
+due condensatori sul lato basso	to kondensatorer på undersiden
+effetto: calcolo in corso…	virkning: beregner…
+forza del vento x sbalzo	vindkraft x udhæng
+il caso peggiore migliore	det bedste værste tilfælde
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	den ækvivalente dipol, tykkere, har mindre end 73 Ω
+il voto medio migliore	bedste gennemsnitsscore
+induttiva, in parallelo	induktiv, parallelt
+la percentuale migliore di copie entro le soglie	bedste andel kopier inden for tærsklerne
+linea a due fili	totrådslinje
+m  mast a	m  mast ved
+m dal suolo	m over jorden
+m sopra il boom, attacco al	m over bommen, fastgjort ved
+media delle due	gennemsnit af de to
+mm  lungo	mm  lang
+mm, acciaio	mm, stål
+molto buono	meget god
+molto povero	meget dårlig
+nessun rinforzo	ingen forstærkning
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	intet handelsrør op til +12 mm er nok: gennemgå tilspidsningen
+nessuna distanza sotto il ROS attivo massimo	ingen afstand under maksimal aktiv SWR
+partenza dal modello aperto	start fra den åbne model
+per lato, teso per annullare il momento verticale al mast	pr. side, strammet for at ophæve det lodrette moment på masten
+primo cedimento: tubo Ø	første brud: rør Ø
+regge il vento di progetto con il 20 % di margine	klarer den dimensionerende vind med 20 % margin
+riferimenti bibliografici	litteraturhenvisninger
+sbalzo sopra il cuscinetto	udhæng over lejet
+schermo 1 λ x 1 λ	skærm 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	tætte segmenter) bruger den udvidede kerne en mere præcis formel, og resultatet bliver mere pålideligt.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	uden prop hviler inderrøret på yderrørets kant, og en faktor 1,25 anvendes på spændingen i de første 5 cm: et skøn, klemmer og slidser ændrer resultatet meget.
+sollecitazione / snervamento	spænding / flydegrænse
+tubo piu' grosso	tykkere rør
+un filo riflettore	én reflektortråd
+zona di cedimento	brudzone
+ø dei conduttori della forcina	ø for hairpinens ledere
+ø del filo	tråd-ø
+ø del pilotato	det fødede elements ø
+accordata	afstemt
+accordate	afstemt
+alimentazione	fødning
+alluminio	aluminium
+allungata	forlænget
+altro	andet
+anello	loop
+angolo	vinkel
+antiorario	mod uret
+aritmetico	aritmetisk
+automatico	automatisk
+banda	bånd
+bande	bånd
+bordi	kanter
+buono	god
+capacitiva	kapacitiv
+carichi	belastninger
+carico	belastning
+cartesiana	kartesisk
+cavi	kabler
+cavo	kabel
+centimetri	centimeter
+centina	spant
+cerchio	cirkel
+condensatore	kondensator
+corrente	strøm
+destra	højre
+diagramma	diagram
+diametro	diameter
+differenza	forskel
+dipoli	dipoler
+dipolo	dipol
+diretta	direkte
+diritto	lige
+due	to
+elementi	elementer
+elemento	element
+elimina	slet
+equilatera	ligesidet
+esito	resultat
+esperimenti	eksperimenter
+esponenziale	eksponentiel
+fase	fase
+ferriti	ferritter
+fili	tråde
+filo	tråd
+forcina	hairpin
+forma	form
+formule	formler
+frequenza	frekvens
+geometria	geometri
+ghiaccio	is
+giudizio	vurdering
+gradi	grader
+griglia	gitter
+guadagno	forstærkning
+incrociata	krydsede
+larghezza	bredde
+lato	side
+lega	legering
+libera	fri
+libero	fri
+linea	linje
+lineare	lineær
+linee	linjer
+lobi	sidelapper
+locale	lokal
+mai	aldrig
+manicotto	muffe
+mano	manuelt
+meccanica	mekanik
+mezzaonda	halvbølge
+millimetri	millimeter
+misure	mål
+modello	model
+modo	tilstand
+nessuna	ingen
+nota	note
+nuovo	ny
+operativo	arbejds
+orario	med uret
+ottagono	ottekant
+palo	mast
+parabola	parabol
+passo	stigning
+perdite	tab
+perfetto	perfekt
+piano	plan
+piatto	flad
+piedi	fod
+polare	polær
+pollici	tommer
+propria	egen
+punto	punkt
+quadrato	firkantet
+quadro	firkantet
+quota	højde
+radiali	radialer
+radiatore	strålingselement
+raggio	radius
+rame	kobber
+ramo	gren
+rapidi	hurtig
+rastremazioni	tilspidsninger
+rete	net
+rettangolo	rektangel
+riepilogo	resumé
+riflettore	reflektor
+riga	række
+rombo	rombe
+scarso	dårlig
+scarto	afvigelse
+schiacciata	fladtrykt
+sempre	altid
+senso	retning
+si'	ja
+sinistra	venstre
+soglia	tærskel
+sorgenti	kilder
+sotto	under
+spire	vindinger
+staffe	klemmer
+stato	status
+sufficiente	tilstrækkelig
+tetto	tag
+tipo	type
+tirante	stag
+togli	fjern
+tondo	rund
+traffico	trafik
+trasformatori	transformere
+trombe	hornantenner
+tubi	rør
+tubo	rør
+tutti	alle
+uguale	lig
+uguali	lige
+uso	brug
+a {0} x DL6WU; tutte sopra il massimo {1}	ved {0} x DL6WU; alle over maksimum {1}
+% del mezzo boom	% af den halve bom
++ aggiungi	+ tilføj
++ aggiungi variabile	+ tilføj variabel
++ correzione del boom	+ bomkorrektion
++ nuova	+ ny
++ trappola	+ fælde
++ verso il disco.	+ mod parabolen.
++90 gradi Z	+90 grader Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetisk: præcis midt mellem båndets IARU-grænser (for eksempel 145,000 MHz på 2 m),\n
+- correzione del boom	- bomkorrektion
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- arbejds: den frekvens, du faktisk kører på (for eksempel 144,300 MHz på 2 m, 432,200 på 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (sort) 10-100 MHz
+-10 nero	-10 sort
+-2 (rosso) 0,25-10 MHz	-2 (rød) 0,25-10 MHz
+-2 rosso	-2 rød
+-6 (giallo) 3-40 MHz	-6 (gul) 3-40 MHz
+-6 giallo	-6 gul
+-90 gradi Z	-90 grader Z
+-> segmento NEC	-> NEC-segment
+. "Annulla" torna indietro.	. «Fortryd» går tilbage.
+. Antenna base: fili 1-	. Basisantenne: tråde 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Med så høj Q må sweepet kun dække nogle få kHz.
+. Salvalo con Salva con nome.	. Gem den med Gem som.
+. Trascina per ruotare, rotella per ingrandire.	. Træk for at dreje, hjulet for zoom.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Brug tyndere tråd, en større kerne eller to stablede kerner.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) og GMRT tab. 19.1
+12 (errore / HPBW)^2	12 (fejl / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passiv ring: omkreds {0:0.000} lambda, ingen kilde og ingen kondensator; virkningen ses i den fuldstændige model (direktor eller reflektor).
+Automatico	Automatisk
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, ligesom nec2c og xnec2c: kildekoden følger med programmet (filen COPYING).\n
+Provincia di Trieste	Provinsen Trieste
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	og i C# til YA-NEC. Referencegrænseflade: xnec2c af 5B4AZ og Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	virkningsgrad beregnet ud fra fjernfeltet, Prad / (Prad + tab) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedans og tab bliver stadig mindre pålidelige, jo lavere tråden kommer (se BOG i manualen). For et sikkert resultat: mindst lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	den oprettes op til {3:0.00} m i diameter; aperturberegningen ved siden af gælder for alle diametre og tager allerede højde for spanterne (feltet ovenfor).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmenter: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} på {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, virkningsgrad {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° elevation
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19. udg., kap. 18 (W9PE's 2 m-Yagi): tre elementer på 0,2 λ, ca. 7 dBi og F/B over 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC's overensstemmelse med nec2c (stænger 20/15/10 m): reflektorer på 0,185 / 0,197 / 0,222 λ, direktorer på 0,095 / 0,116 / 0,114 λ: inden for kildernes intervaller.
+↶ Annulla	↶ Fortryd
+↷ Ripeti	↷ Gentag
+■ Ferma	■ Stop
+▶ Avvia	▶ Start
+☐ mantieni lunghezza del boom	☐ bevar bomlængden
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ ingen advarsler: segmenteringen opfylder det valgte niveau
+✓ nessun errore e nessun avviso	✓ ingen fejl og ingen advarsler
+variabili del modello	modellens variabler
+nuova variabile dal modello	ny variabel fra modellen
+Scrivi una variabile nella linguetta Variabili…	Skriv en variabel i fanen Variabler…
+Elemento diritto	Lige element
+Elemento piegato	Bøjet element
+Variabile nuova	Ny variabel
+Minimo / massimo	Minimum / maksimum
+Cosa cambia	Hvad der ændres
+in ocra: dove agisce la variabile	i okker: hvor variablen virker
+Crea la variabile	Opret variablen
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Variablen {0} er oprettet: geometrien ændres ikke. «Fortryd» i Geometri-linjen fjerner den.
+Struttura 3D: dove agisce la variabile ▾	3D-struktur: hvor variablen virker ▾
+Struttura 3D ▸	3D-struktur ▸
+Clic: nasconde o mostra la struttura	Klik: skjuler eller viser strukturen
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	fuldt okker: bruger variablen · stiplet okker: bruger den via en anden variabel
+attraverso {0}: fili {1}	via {0}: tråde {1}

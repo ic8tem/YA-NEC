@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Cât de opacă este culoarea: ușoară, medie sau puternică. Pe rândul tabelului vălul este mai ușor, ca să se citească cifrele.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Firul {0} ales în vederea 3D: rândul {1} din tabel
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Firul {0}: nu este în tabelul firelor (fișă de geometrie diferită de GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Verifică imediat dacă există o versiune nouă (fără a aștepta 3 minute).
+terreno reale	teren real
+Locatore	Locator
+da 8 a 12 caratteri	8 până la 12 caractere
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Cu 6 caractere punctul poate fi deplasat cu kilometri: profilul terenului are nevoie de cel puțin 8 caractere.
+Quota sito	Altitudinea locului
+Altezza antenna	Înălțimea antenei
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Înălțimea centrului antenei deasupra solului. Dacă diferă de cea a modelului, diagrama NEC este ridicată sau coborâtă cu aceeași distribuție de curent.
+Distanza max	Distanța max.
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimutul și distanțele se recalculează la fiecare schimbare a locatorului (cerc mare, sferă de 6371 km).
+Terra	Uscat
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Reduce coeficientul de reflexie al mării cu factorul Ament pentru valuri de 0,25 m (abatere standard).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	model statistic de suprafață rugoasă (Ament 1953): valabil pentru unghiuri razante și mare uniformă.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Coboară profilul cu curbura Pământului (rază efectivă 4/3 la refracție normală) și reduce razele reflectate îndepărtate cu factorul de divergență.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	atmosferă standard (k = 4/3); cu ducturi sau inversiuni curbura aparentă se schimbă.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Cea mai înaltă creastă dintre antenă și direcția de plecare atenuează raza directă ca o muchie (integrala Fresnel), ca în HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	muchie de cuțit unică: crestele rotunjite sau mai multe creste la rând se aproximează cu cea mai înaltă.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Repetă calculul la fiecare 10 grade de azimut (doar DEM) și arată factorul de merit pe rozetă, cu antena rotită spre fiecare azimut.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	cu antena mereu rotită spre azimutul profilului: valabil pentru o antenă rotativă.
+Cartesiana dBi / gradi	Cartezian dBi / grade
+0–180° intero	0–180° complet
+Zoom angolare	Zoom unghi
+Sovrapponi alla linguetta Verticale	Suprapune pe fila Vertical
+premi Calcola	apasă Calculează
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Repetă calculul cu antena de la 6 la 30 m (HF) sau de la 2 la 30 m (VHF) și arată înălțimea cu cel mai bun factor de merit pe traseu.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	curenții rămân cei ai modelului calculat: efectul înălțimii asupra impedanței și curenților nu este luat în calcul (ca în HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Sunt necesare tabelele unghiurilor de sosire din ARRL Antenna Book (fișiere .PRN pe benzi și regiuni): de îndată ce sunt disponibile, aceasta se activează și arată fâșiile portocalii.
+locatore non valido	locator invalid
+sul mare	deasupra mării
+sul terreno	deasupra uscatului
+profilo reale	profil real
+terreno piatto	teren plat
+orizzonte ostruito	orizont obturat
+° (scala angolare ×	° (scară unghiuri ×
+← dietro	← spate
+avanti →	față →
+statistiche degli angoli di arrivo: non caricate	statistica unghiurilor de sosire: neîncărcată
+rosa 0–360°: calcolo in corso…	rozetă 0–360°: se calculează…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Alege fișierul profilului (clic pe "Din HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM indisponibil: la prima utilizare e nevoie de rețea pentru a descărca TINITALY sau SRTM1 (apoi rămân în dosarul data/dem).
+Profilo del terreno	Profilul terenului
+Lobo di elevazione	Lob de elevație
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Calculează mai întâi modelul (butonul Calculează sus): diagrama antenei vine din NEC.
+da file	din fișier
+dal DEM	din DEM
+rispetto alla stessa antenna su terreno piatto	față de aceeași antenă deasupra terenului plat
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Diferența dintre lobul deasupra profilului real și lobul deasupra terenului plat, mediată pe unghiurile utile.
+Guadagno a 5° / 10°	Câștig la 5° / 10°
+Guadagno a 1° / 3°	Câștig la 1° / 3°
+Angoli coperti a -3 dB	Unghiuri acoperite la -3 dB
+primo lobo sul profilo reale	primul lob deasupra profilului real
+calcolo…	se calculează…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Model în spațiu liber: curenții sunt cei fără sol, ca diagrama în spațiu liber folosită de HFTA. Pentru a ține cont de solul apropiat, calculează modelul cu sol real.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profilul e valabil doar pentru un azimut: o antenă rotativă are nevoie de mai multe direcții (caseta "Toate azimuturile").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metodă ca în HFTA (N6BV): rază directă + raze reflectate pe fiecare fațetă a profilului + difracție peste creste. Diagrama antenei vine din NEC; acest calcul adaugă terenul.
+Piatto	Plat
+Reale	Real
+Primo minimo	Primul minim
+Punto di riflessione	Punct de reflexie
+Orizzonte	Orizont
+Uso: rotte DX in HF (angoli bassi 1–15°).	Utilizare: trasee DX în HF (unghiuri mici 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Utilizare: tropo și MS (0–5°), EME cu Luna jos (câștig de sol la răsăritul/apusul Lunii).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Înălțimea cu cel mai mare câștig mediu pe unghiurile utile ale traseului.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	curenții modelului calculat mutați în înălțime: impedanța și cuplajul cu solul rămân cele ale modelului.
+Calcola prima il terreno reale	Calculează mai întâi terenul real
+Esporta il lobo sul terreno reale	Exportă lobul deasupra terenului real
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Imagini: Esri, Maxar, Earthstar Geographics și comunitatea utilizatorilor GIS
+© i contributori di OpenStreetMap	© contribuitorii OpenStreetMap
+Sfondo	Fundal
+Foto aerea	Fotografie aeriană
+Solo griglia	Doar grila
+Griglia	Grilă
+Cerca	Caută
+⌖ Centra sul locatore	⌖ Centrează pe locator
+Punto scelto	Punct ales
+Coordinate	Coordonate
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Clic pe hartă = punctul antenei; trage = mută; rotiță = zoom (grila trece de la 6 la 8, 10, 12 caractere). Chenar gros = pătrat de 6 caractere.
+non disponibile	indisponibil
+Lunghezza elementi	Lungimea elementului
+Posizione sul boom	Poziția pe boom
+Uniforme	Uniformă
+Distribuzione	Distribuție
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Element montat descentrat în clemă: deplasare de-a lungul propriei axe, cu toleranța de poziție.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	clema reală schimbă și lungimea electrică lângă boom: pentru asta folosește fila Corecția boom-ului.
+nuovo a ogni avvio	nou la fiecare rulare
+Numero prove	Număr de încercări
+Frequenze	Frecvențe
+Seme casuale	Sămânță aleatoare
+OBIETTIVO LISTA DI TAGLIO	ȚINTA LISTEI DE TĂIERE
+Calo F/B max	Scădere max. F/B
+ROS max	SWR max.
+Ferma	Oprește
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Elementele apropiate de elementul alimentat sunt de obicei cele mai critice; cele de la capătul boom-ului tolerează erori mai mari.
+l'istogramma serve al Monte Carlo	histograma este pentru Monte Carlo
+5% peggiore	cele mai rele 5%
+Posizione mm	Poziție mm
+Lunghezza mm	Lungime mm
+Tolleranza ammessa	Toleranță admisă
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Cu roșu elementele care necesită mai puțin decât toleranța de execuție.
+Calcola prima il modello	Calculează mai întâi modelul
+sensibilita'	sensibilitate
+Tolleranze: fermato	Toleranțe: oprit
+Diametro mm	Diametru mm
+Tolleranza ammessa mm	Toleranță admisă mm
+Avvia prima il calcolo	Rulează mai întâi calculul
+Esporta la lista di taglio	Exportă lista de tăiere
+Lista di taglio	Listă de tăiere
+Obiettivi	Ținte
+Calo massimo del F/B	Scădere maximă F/B
+ROS massimo	SWR maxim
+Tolleranze di costruzione	Toleranțe de execuție
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Planificat (schița 13, de aprobat): încă neactiv în această versiune.
+Al quadro 20×2 mm	Al pătrat 20×2 mm
+Al quadro 25×2 mm	Al pătrat 25×2 mm
+Al quadro 30×2 mm	Al pătrat 30×2 mm
+Al quadro 40×2 mm	Al pătrat 40×2 mm
+Al tondo 25×1,5 mm	Al rotund 25×1,5 mm
+Al tondo 30×2 mm	Al rotund 30×2 mm
+Al tondo 40×2 mm	Al rotund 40×2 mm
+Al tondo 50×2 mm	Al rotund 50×2 mm
+Zona NTC	Zona NTC
+Quota sito as	Altitudinea locului ca
+Periodo ritorno	Perioadă de revenire
+Categoria esposiz.	Categorie de expunere
+Coeff. topografia	Coef. topografic
+Antenna da terra	Antenă deasupra solului
+Palo sopra rotore	Catarg deasupra rotorului
+Ø palo	Ø catarg
+Usa elementi e boom del modello	Folosește elementele și boom-ul modelului
+Includi telaio, palo, cavi	Include cadrul, catargul, cablurile
+Scansione direzione del vento	Baleiaj al direcției vântului
+UNITÀ	UNITĂȚI
+N e kgf affiancati	N și kgf alăturate
+solo N	doar N
+solo kgf	doar kgf
+Mostra	Arată
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	locator invalid: alege zona manual
+Telaio a H	Cadru H
+Cavi e divisore	Cabluri și divizor
+Parte	Piesă
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Cu vântul din lateral elementele nu împing (cross-flow, K5IU): forța pe o țeavă crește cu pătratul componentei vântului perpendiculare pe axa ei.
+momento flettente alla staffa del rotore	moment încovoietor la clema rotorului
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Predimensionare: nu înlocuiește verificarea de către un inginer a catargului, turnului și fundației. Momentul la bază va merge în sub-fila Catarg și fundație.
+Sito e norma	Loc și normă
+Norma	Normă
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; coeficienți CNR-DT 207 R1/2018 și EN 1991-1-4
+Locatore / zona	Locator / zonă
+Risultati	Rezultate
+Forza massima	Forță maximă
+Momento flettente alla staffa del rotore	Moment încovoietor la clema rotorului
+Momento torcente sul rotore	Cuplu pe rotor
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Predimensionare: nu înlocuiește verificarea de către un inginer autorizat a catargului, turnului și fundației.
+Al tondino pieno	Al bară plină
+Materiale elementi	Material elemente
+Staffe, isolatori	Cleme, izolatori
+g cad.	g bucata
+Dipolo + scatola	Dipol + cutie
+Cavo fino al palo	Cablu până la catarg
+STAFFA AL PALO	CLEMA CATARGULUI
+Posizione attuale	Poziția actuală
+m dal riflettore	m de la reflector
+Massa / distanza	Masă / distanță
+Vento dalla linguetta Vento	Vânt din fila Vânt
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Folosește presiunea de calcul a ultimului calcul din sub-fila Vânt; fără ea, 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Mută tot modelul de-a lungul boom-ului astfel încât clema sugerată să cadă în origine (unde se prind catargul și cadrul grupului). Anulare în structura 3D o inversează.
+Momenti in funzione della posizione della staffa	Momente în funcție de poziția clemei
+Masse e aree per parte	Mase și suprafețe pe piese
+ultimo direttore	ultimul director
+Staffe e isolatori	Cleme și izolatori
+Cavo sul boom	Cablu pe boom
+Massa kg	Masă kg
+Baricentro m	Centru de greutate m
+Area vento m²	Suprafață în vânt m²
+Centro area m	Centrul suprafeței m
+solo peso	doar greutate
+solo vento	doar vânt
+File Touchstone .s1p	Fișier Touchstone .s1p
+Formato letto	Format citit
+CAVO TRA VNA E ANTENNA	CABLU ÎNTRE VNA ȘI ANTENĂ
+R e X separate	R și X separat
+Banda con ROS <	Bandă cu SWR <
+ROS: calcolato e misurato	SWR: calculat și măsurat
+Confronto	Comparație
+misurato, cavo tolto	măsurat, cablu eliminat
+R calcolata	R calculat
+X calcolata	X calculat
+R misurata	R măsurat
+X misurata	X măsurat
+Calcolato	Calculat
+Misurato	Măsurat
+Scarto	Diferență
+Frequenza del ROS minimo	Frecvența SWR-ului minim
+ROS minimo	SWR minim
+nessuna correzione: calcolo e misura coincidono.	nicio corecție: calculul și măsurarea concordă.
+calcolo NEC sul campo della misura…	Calcul NEC pe intervalul măsurării…
+Misura del VNA	Măsurare VNA
+Tutti	Toate
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Rulează un baleiaj (butonul Baleiaj sus) pentru a vedea F/B și F/R pe toată banda
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = câștigul înainte minus puterea medie pe emisfera din spate (90-270° azimut, toate elevațiile peste 0°). Este și printre țintele optimizatorului.
+Tabelle: F/B e F/R su tutta la banda	Tabele: F/B și F/R pe toată banda
+Valori dello sweep	Valori baleiaj
+ANTENNE RICEVENTI	ANTENE DE RECEPȚIE
+4-square in ricezione	4-square pentru recepție
+8 verticali in cerchio	8 verticale în cerc
+Modello aperto	Deschide modelul
+Isotropo	Izotrop
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = câștigul în direcția dorită minus câștigul mediu pe tot semispațiul: spre deosebire de câștig, nu depinde de pierderi.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Folosește unghiul median de sosire din fila Teren real ca elevație dorită (statistică pe benzi și regiuni). Fără statistica ARRL încărcată se păstrează elevația scrisă aici.
+Direzione voluta	Direcția dorită
+Hz  rumore	Hz  zgomot
+NF ricevitore	NF receptor
+sorgente locale az	sursă locală az
+Cifre di merito in ricezione	Factori de merit la recepție
+Basta il segnale?	Ajunge semnalul?
+calcolo in corso…	se calculează…
+RDF in funzione della frequenza	RDF în funcție de frecvență
+Calcola prima il modello aperto	Calculează mai întâi modelul deschis
+verticale λ/4	verticală λ/4
+° · dB relativi · arancio: -3 dB	° · dB relativi · portocaliu: -3 dB
+settore ±30° az, 10–40° el	sector ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Câștigul mediu pe sectorul din față minus media pe emisfera din spate.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN definește DMF doar cu câștigul la 20 de grade; aici se folosește media pe sectorul din schiță, deci valorile nu sunt comparabile unu la unu cu cele din carte.
+molto basso: serve un preamplificatore	foarte scăzut: e nevoie de un preamplificator
+basso ma accettabile: vedi soglia	scăzut dar acceptabil: vezi pragul
+come un'antenna trasmittente	ca o antenă de emisie
+F/R medio sull'emisfero posteriore	F/R mediu pe emisfera din spate
+Rumore d'antenna ai morsetti	Zgomotul antenei la borne
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Puterea zgomotului extern la borne: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + câștigul mediu ponderat după direcția din care vine zgomotul.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	zgomot de la orizont ponderat exp(-el/10 grade) în elevație: reprezintă zgomotul industrial îndepărtat care sosește jos; distribuția reală depinde de loc.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	sursă punctiformă la 5 grade elevație cu aceeași putere ca fondul izotrop.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	zgomot izotrop deasupra solului; solul nu adaugă zgomot.
+Margine sul ricevitore	Rezerva receptorului
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Zgomotul antenei depășește zgomotul receptorului cu mai puțin de 6 dB: receptorul limitează sensibilitatea. E nevoie de mai multă preamplificare sau de un receptor cu NF mai mic.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Câștig 1,8
+Spazio richiesto	Spațiu necesar
+λ/4 in tubo quadro	λ/4 în țeavă pătrată
+λ/4 in tubo tondo	λ/4 în țeavă rotundă
+Solo cavi di fase	Doar linii de fazare
+Aria	Aer
+Uscite	Ieșiri
+Z antenne	Z antenă
+Z ingresso	Z de intrare
+Dielettrico	Dielectric
+Connettori	Conectori
+Correggi accorciamento dei connettori	Corectează scurtarea datorată conectorilor
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Scade din lungime partea de linie din interiorul conectorilor.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	estimare de 4 mm pe capăt cu conectori N (3 BNC, 1,5 SMA): cel mai bine se ajustează cu VNA, scurtând câte 1 mm.
+Divisori	Divizoare
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Folosește impedanțele active ale antenelor grupului deschis (o sursă pe antenă) și distanțele pentru lungimea minimă a liniilor de fazare.
+CAVI DI FASE	LINII DE FAZARE
+Lunghezza minima	Lungime minimă
+Passo verticale	Distanță verticală
+solo cavi di fase: nessun trasformatore da costruire	doar linii de fazare: niciun transformator de construit
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 cabluri de 75 Ω în paralel = 37,5 Ω
+quadro, lato	pătrat, latură
+tondo, Ø	rotund, Ø
+Z0 richiesta	Z0 necesar
+Ø conduttore interno	Ø conductor interior
+VF del cavo	VF cablu
+λ/4 in aria, mm	λ/4 în aer, mm
+da tagliare, mm	de tăiat, mm
+Z carico in parallelo	Z sarcină în paralel
+Rami λ/4: Z0 = Zin · √N	ramuri λ/4: Z0 = Zin · √N
+Resistenze a stella	Rezistoare în stea
+Isolamento tra le uscite	Izolare între ieșiri
+Perdita stimata	Pierdere estimată
+Carico usato	Sarcina folosită
+non potenza di 2	nu e o putere a lui 2
+ROS all'ingresso	SWR la intrare
+solo cavi di fase	doar linii de fazare
+Uscita	Ieșire
+Lungh. elettrica	Lungime electrică
+Fisica mm	mm fizici
+Perdita dB	Pierdere dB
+° di fase).	° de fază).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° în sus); impedanța la divizor nu se mai repetă exact.
+Solo cavi di fase: nessun disegno da stampare	Doar linii de fazare: niciun desen de tipărit
+Divisore	Divizor
+50 mm di controllo	Verificare 50 mm
+GEOMETRIA	GEOMETRIE
+λ/4 sul boom	λ/4 pe boom
+stesso piano	același plan
+Metallico, isolati	Metal, izolate
+Non metallico	Nemetalic
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Boom-ul nu e în modelul NEC: cu elemente izolate de un boom metalic efectul e mic (corecția boom-ului în Calculatoare).
+Yagi di base	Yagi de bază
+Disposizione	Dispunere
+Sfasamento piani	Decalajul planurilor
+Cavo di ritardo λ/4	Cablu de întârziere λ/4
+Includi relè e cavi reali	Include relee și cabluri reale
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Adaugă pierderea cablului de întârziere (VF 0,66, 10 dB/100 m la 144 MHz, scalată cu rădăcina pătrată a frecvenței) și 0,1 dB pentru releu.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	valori tipice pentru un cablu de 75 ohmi și un releu coaxial; programul nu le cunoaște pe ale tale.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Aceeași rețea de fazare funcționează și pentru un turnstile (dipoli încrucișați la 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Vedere din față
+Componenti co-polare / cross-polare	Componente copolare / contrapolare
+Rapporto assiale e ROS in frequenza	Raport axial și SWR în funcție de frecvență
+piano A	planul A
+piano B	planul B
+vista dal davanti — boom al centro	vedere din față — boom-ul în centru
+piani sfalsati di λ/4 lungo il boom	planuri decalate cu λ/4 de-a lungul boom-ului
+Yagi incrociate: serve una Yagi con una sola sorgente	Yagi încrucișate: e nevoie de o Yagi cu o singură sursă
+Yagi incrociate: calcolo in corso...	Yagi încrucișate: se calculează...
+Rapporto assiale in asse	Raport axial pe axă
+Rapporto assiale a −3 dB	Raport axial la −3 dB
+Isolamento tra i due piani	Izolare între cele două planuri
+Fase della rete sul piano B	Faza rețelei pe planul B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Planuri perfect ortogonale și simetrice: în model cuplajul și polarizarea opusă sunt aproape nule. În realitate clemele, cablurile și micile asimetrii le limitează la circa 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	de la 1,8 MHz la 1296 MHz: lista de baluni se schimbă cu banda
+LINEA DI DISCESA	LINIE DE ALIMENTARE
+Coassiale	Coaxial
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Cu o linie deschisă simetrică nu există ecran: modul comun vine doar din dezechilibre. Fișa calculează cazul coaxial; pentru linia deschisă folosește Linii (TL) cu acordorul.
+Lungo il boom	De-a lungul boom-ului
+m → palo	m → catarg
+Discesa sul palo	În jos pe catarg
+Fino alla stazione	Până la stație
+Calza a massa sul palo / traliccio	Ecran legat la masă pe catarg / turn
+Messa a terra all'ingresso stazione	Împământare la intrarea în stație
+BALUN DA CONFRONTARE	BALUNI DE COMPARAT
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 spire de RG-213 pe 110 mm: inductanță după Wheeler, capacitate proprie după Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 și capacitate proprie estimată: impedanța reală a șocului trebuie măsurată.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	Tor de ferită 1:1 ca RLC paralel cu Q mic.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm la vârf (10 MHz cu amestec 31, 25 MHz cu amestec 43): valori tipice pentru 12 spire pe 2 x FT-240.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	coaxial λ/2 4:1: alimentare simetrică, ecrane unite.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	mod comun rezidual ca 600 ohmi rezonant la f0 (Q 3): depinde de montaj.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	manșon λ/4: linie λ/4 în scurtcircuit între ecran și manșon, impedanță mare la f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Z0 manșon 50 ohmi și pierdere de 0,08 dB pe sfertul de undă.
+10 perline in ferrite sulla calza.	10 perle de ferită pe ecran.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 ohmi pe perlă la 144 MHz (amestec 61), 100 ohmi peste 30 MHz cu amestec 43: valori tipice de catalog.
+Caso mostrato	Cazul afișat
+premi Calcola il confronto	apasă Calculează comparația
+Corrente lungo la calza, dal dipolo verso il basso	Curentul de-a lungul ecranului, de la dipol în jos
+Vista laterale: corrente sulla calza	Vedere laterală: curentul pe ecran
+F/R medio	F/R mediu
+Z / ROS	Z / SWR
+Perdita nel balun	Pierdere în balun
+Potenza dissipata nel balun a 1 kW	Putere disipată în balun la 1 kW
+Banda con calza < 5 %	Bandă cu curent pe ecran < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Elementele gri sunt baluni pentru cealaltă bandă; se activează la alegerea frecvenței. În HF contează și ecranul până la stație (la masă), în VHF/UHF partea de pe boom și catarg. Ecranul este un fir legat la o parte a punctului de alimentare, ca în realitate fără balun; balunul este o impedanță de mod comun pe primul tronson.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Fibra de sticlă nu conduce: cadrul nu intră în NEC, rămân doar ecranele liniilor de fazare.
+Includi palo sotto il telaio	Include catargul de sub cadru
+Cavi di fase lungo i montanti	Linii de fazare de-a lungul montanților
+Rotore e controventi	Rotor și ancore
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Planificat: rotor și ancore ca fire (sunt necesare dimensiunile turnului).
+Materiale	Material
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	roșu = părți ale cadrului modelate ca fire NEC · întrerupt = ecranul liniilor de fazare
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Polarizare orizontală: montanții verticali sunt slab cuplați; traversa orizontală și liniile de fazare nu.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Polarizare verticală: montanții și catargul sunt paraleli cu elementele și contează mai mult; traversa orizontală puțin.
+Confronto senza / con telaio	Comparație fără / cu cadru
+Diagramma orizzontale sovrapposto	Diagramă orizontală suprapusă
+premi Calcola confronto	apasă Calculează comparația
+Stack: calcola prima il modello	Grup: calculează mai întâi modelul
+Stack: calcolo senza e con telaio...	Grup: se calculează fără și cu cadru...
+Pezzo	Piesă
+Collegato	Conectat
+Cavi	Cabluri
+Senza telaio	Fără cadru
+Con telaio	Cu cadru
+Z ingresso divisore	Z de intrare a divizorului
+senza telaio	fără cadru
+con telaio	cu cadru
+Stack: confronto senza / con telaio fatto	Grup: comparația fără / cu cadru încheiată
+CARICHI HF	SARCINI HF
+INSERISCI NEL MODELLO	INSEREAZĂ ÎN MODEL
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Pălăria merge la capătul firului (b sau e), linear loading în punctul ales al firului.
+Inserisci nel modello	Inserează în model
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Deja aprobat în schița Sarcini: Q pentru L și C, f0, Z pe benzi, tensiune și curent în componentă. Aici se adaugă tipurile constructive.
+Trappola coassiale	Capcană coaxială
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	conductorul central se lipește la începutul înfășurării din mijloc (inversarea capetelor coboară rezonanța cu circa 50 kHz).
+Calcola spire per f0	Calculează spirele pentru f0
+Spire dell'avvolgimento (anche frazionarie).	Spirele înfășurării (și fracționare).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	f0 real diferă cu câteva procente: măsoară-l cu grid-dip-ul sau cu VNA și corectează spirele.
+Blocca	Blochează
+dipolo con	dipol cu
+Filo Ø	Fir Ø
+Calcola C per f0	Calculează C pentru f0
+mm  Filo Ø	mm  Fir Ø
+mm  Passo	mm  Pas
+mm  Spire	mm  Spire
+MHz  dal centro	MHz  de la centru
+m  Braccio	m  Braț
+m  Filo dell'elemento Ø	m  Firul elementului Ø
+Calcola spire per la risonanza	Calculează spirele pentru rezonanță
+Piega	Pliere
+m  Distanza tra i fili	m  Distanța dintre fire
+Calcola la piega per la risonanza	Calculează plierea pentru rezonanță
+Raggi	Spițe
+m  Filo Ø	m  Fir Ø
+Verticale alto	Înălțimea verticalei
+m  Frequenza	m  Frecvență
+MHz  Filo Ø	MHz  Fir Ø
+Calcola i raggi per la risonanza	Calculează spițele pentru rezonanță
+L misurata	L măsurat
+MHz  Autorisonanza f0	MHz  Autorezonanță f0
+Cappello capacitivo in punta al verticale	Pălărie capacitivă în vârful verticalei
+Bobina dalle misure	Bobină din dimensiuni
+Reattanza del cappello in frequenza	Reactanța pălăriei în funcție de frecvență
+impedenza della trappola	impedanța capcanei
+Si comporta da	Se comportă ca
+Potenza persa	Putere pierdută
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Puterea emițătorului pentru tensiunile și pierderile din tabel.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	banda de jos: curent în ventru sqrt(P/73) și în capcană I0 cos(beta a); banda blocată: tensiune la vârful dipolului interior I0 Z0 împărțită între capcană și radiație.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	curent în ventru sqrt(P/73) și în sarcină I0 cos(beta a), cu a distanța de la centru.
+Risonanza propria f0	Autorezonanță f0
+Q ideale	Q ideal
+Q della trappola alla risonanza.	Q-ul capcanei la rezonanță.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plus pierderile dielectrice (tangentă 3e-4 PE, 2e-4 PTFE). Capcanele coaxiale măsurate au de obicei Q între 100 și 300.
+Lunghezza di cavo	Lungime cablu
++ 10 cm per le saldature	+ 10 cm pentru lipituri
+R in parallelo equivalente	R paralel echivalent
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: este sarcina LD care intră în model
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Brațul dipolului pe banda de jos cu capcana, comparat cu brațul de mărime completă (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC cu capcana ca sarcină dă lungimea corectă.
+Induttanza misurata	Inductanță măsurată
+dalla misura	din măsurare
+Autorisonanza	Autorezonanță
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Frecvența la care bobina rezonează singură cu capacitatea ei proprie.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	capacitate proprie din tabelul lui Medhurst după lungime / diametru, valabilă pentru bobine cu un strat departe de mase metalice.
+Q della bobina alla frequenza di lavoro.	Q-ul bobinei la frecvența de lucru.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	rezistența firului prin efect pelicular înmulțită cu un factor de proximitate 1 + 2 (d/p)^2 (d fir, p pas): Medhurst dă valori asemănătoare pentru bobine cu lungime apropiată de diametru.
+Reattanza della piega	Reactanța plierii
+Z0 della linea	Z0 al liniei
+Q della piega	Q-ul plierii
+Capacita' del cappello	Capacitatea pălăriei
+Capacita' del cappello verso lo spazio.	Capacitatea pălăriei față de spațiu.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	suma spițelor (fir subțire, 2 pi eps0 l / (ln(2l/a) - 1)) și a inelului care se saturează spre discul plin (8 eps0 r): spițele se ecranează între ele. Inserată ca fire, NEC o calculează exact.
+in punta al verticale	în vârful verticalei
+Altezza per la risonanza	Înălțime pentru rezonanță
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Efect asupra verticalei
+Carichi HF: apri un modello nella finestra principale.	Sarcini HF: deschide un model în fereastra principală.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading și pălăria capacitivă se inserează ca fire: pentru celelalte alege «Ca sarcină».
+Il cappello capacitivo si inserisce come fili.	Pălăria capacitivă se inserează ca fire.
+RLC parallelo	RLC paralel
+Effetto sul dipolo	Efect asupra dipolului
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Scurtarea brațului față de sfertul de undă complet (71,3 / f) cu sarcina în acel punct.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	model de linie al brațului încărcat X = Z0 (cot(beta b) - tan(beta a)), x 0,95 pentru efectul de capăt.
+Esegui il test	Rulează testul
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Câștigul poate fi afișat corectat cu AGT (deja prevăzut în optimizator).
+Controllo prima/dopo il calcolo	Verificare înainte/după calcul
+Esito	Rezultat
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Una sau mai multe verificări în afara ±0,2 dB: revizuiește segmentarea (Structură 3D > Segmentare... și Verifică segmentarea).
+Tutti i controlli entro ±0,2 dB.	Toate verificările în ±0,2 dB.
+Linea a finestra 450	Linie cu ferestre de 450 ohmi
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Apasă Calculează: NEC calculează impedanța modelului deschis la fiecare frecvență.
+Perdita nella linea	Pierdere pe linie
+Perdita totale	Pierdere totală
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Tipul acordorului dintre linie și emițător (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	pierdere estimată din Q-ul încărcat al rețelei (Qn = sqrt(Rmax/Rmin - 1), două secțiuni pentru T și Pi) și Q-ul bobinei; TLW de la N6BV calculează componentele una câte una și poate diferi cu câteva zecimi de dB.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Exemplu: dublet 2 × 20 m (ZS6BKW/G5RV). Avertisment când acordorul vede mai puțin de 20 Ω: pierderi mari, se sugerează lungirea sau scurtarea liniei. Linie cu pierderi ca în TLW (N6BV, ARRL).
+USA costa est	Coasta de est a SUA
+USA costa ovest	Coasta de vest a SUA
+Giappone	Japonia
+Caraibi	Caraibe
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: serviciul nu a returnat un GeoTIFF
+GeoTIFF compresso: non supportato	GeoTIFF comprimat: nesuportat
+GeoTIFF: tipo di dato non supportato	GeoTIFF: tip de date nesuportat
+Il file non contiene coppie distanza / quota.	Fișierul nu conține perechi distanță / înălțime.
+Nessuno	Niciunul
+Ferriti a perline	Perle de ferită
+Cavo e balun: segmento della sorgente non trovato.	Cablu și balun: segmentul sursei nu a fost găsit.
+solo palo	doar catarg
+Acciaio zincato	Oțel zincat
+Alluminio	Aluminiu
+Vetroresina	Fibră de sticlă
+Montante sx/dx	Montant stâng/drept
+al boom	spre boom
+Traversa	Traversă
+Palo	Catarg
+al dipolo	spre dipol
+N, femmina	N, mamă
+senza connettori	fără conectori
+rurale tranquillo	zonă rurală liniștită
+Verticale λ/4	verticală λ/4
+λ/8 di lato	λ/8 pe latură
+0,37 λ di diametro	diametru 0,37 λ
+Cappello capacitivo	Pălărie capacitivă
+W8NX bassa impedenza	W8NX impedanță mică
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	un cablu gros cu dielectric PTFE (RG-393) sau o capcană LC cu condensator de înaltă tensiune
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Plierea e mai lungă decât lambda/8: linia nu se mai comportă ca o inductanță constantă, verifică rezonanța cu NEC inserând-o ca fire.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Capacitatea pălăriei e o estimare (spițe care se ecranează): pentru valoarea exactă insereaz-o ca fire și calculează cu NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Poziția sarcinii este dincolo de sfertul de undă: apropie-o de centru.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	pălăria merge la capătul firului: alege primul (b) sau ultimul (e) segment.
+il punto scelto e' troppo vicino all'estremo del filo.	punctul ales este prea aproape de capătul firului.
+questo tipo entra nel modello come carico.	acest tip intră în model ca sarcină.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	Sarcini HF: fire adăugate de calculatorul YA-NEC
+Il file Touchstone non contiene punti di S11.	Fișierul Touchstone nu conține puncte S11.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV-ul nu conține rânduri frecvență, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT în spațiu liber, fără pierderi
+IMPOSTAZIONI	SETĂRI
+Schiera Hi-Z di verticali corte	Grup Hi-Z de verticale scurte
+Base del loop	Baza buclei
+Distanza, lato o diametro	Distanță, latură sau diametru
+Altezza delle verticali	Înălțimea verticalelor
+Base del loop dal suolo	Baza buclei deasupra solului
+Fase tra le file	Faza între rânduri
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Dipol orizontal jos: la mai puțin de lambda/4 de sol lobul merge în sus. Este referința de «unghi înalt» din clasamentul IV3PRK (RDF 7,3 dB): se compară cu antenele de recepție de unghi mic.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY de Gary Breed K9AY (QST, septembrie 1997): două bucle verticale la 90 de grade pe același catarg, rezistor de terminare (390 ohmi tipic, reglat pentru F/B), transformator 9:1. Aici o singură buclă, rotită spre direcția aleasă, închisă deasupra solului ca pe pagina Recepție (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	4-square de recepție: patru verticale active scurte în colțurile unui pătrat de lambda/8, radiind pe diagonală. Fază goală = nul exact în spate (pi + beta d între rânduri): dă cea mai mare directivitate teoretică; rețelele de fazare reale (ON4UN, IV3PRK) folosesc alte faze și dau un RDF mai mic (IV3PRK 9,4 dB). Butonul caută faza cu cel mai bun RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Grupuri de verticale active scurte ca cele de la Hi-Z Antennas: 2 elemente end-fire (cardioidă, lambda/8), 3 în triunghi (latură lambda/6, un vârf spre direcția aleasă), 8 în cerc (diametru 0,37 lambda: se folosesc cele patru spre direcție și cele opuse). Hi-Z: 8 în cerc RDF 13,4 dB cu combinatorul lor; modelul simplu cu două rânduri rămâne mai jos. Butonul caută faza cu cel mai bun RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Verticalele pornesc din solul real (GE 1 cu sol Sommerfeld): cu NEC-2 un fir legat la solul real dă o impedanță care depinde de segmentul sursei (ghidul NEC-2, EZNEC). Diagrama și RDF sunt orientative; conectarea cu radiale ridicate este planificată pentru toate antenele de recepție.
+fase tra le file da 120 a 300 gradi per l'RDF	faza între rânduri de la 120 la 300 de grade pentru RDF
+nessuna fase con il lobo in avanti	nicio fază cu lobul înainte
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Faza între rânduri pentru cel mai bun RDF: {0} grade (RDF {1} dB). Se recalculează...
+linea d'orizzonte	linia orizontului
+scala angolare	scara unghiurilor
+lobo reale sopra il piatto fino a	lob real deasupra terenului plat până la
+Profilo verso	Profil spre
+Lobo verticale e angoli di arrivo a	Lob vertical și unghiuri de sosire la
+Cos'e' l'RDF	Ce este RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = câștigul în direcția dorită - câștigul mediu în toate direcțiile (W8JI; numit anterior SNIF, în anii '60). Măsoară cât îmbunătățește antena raportul semnal/zgomot dacă zgomotul vine egal din toate direcțiile; câștigul absolut nu contează (un preamplificator îl recuperează). Mediere ca în EZNEC: emisfera superioară împărțită la întreaga sferă (4 pi). Cu această convenție rezultatele coincid cu IV3PRK și W8JI/Hi-Z (verticală 5,07 față de 5,06 și 4,9; Beverage 350 m 13,5 față de 13,66). Limită: zgomotul real nu e uniform (linii electrice, QRM local): de aceea contează și F/B și forma lobului. Pentru antenele de emisie RDF nu are sens: de aceea se calculează doar în această filă. DMF (Directivity Merit Figure, ON4UN): câștigul la 20 de grade elevație înainte minus câștigul mediu al semispațiului din spate (azimut dincolo de 90 de grade, deasupra solului, ponderat cu cosinusul după suprafață): arată cât respinge antena zgomotul care vine din spate. ON4UN avertizează să nu se compare DMF și RDF între ele. Surse: W8JI și W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevație
+azimut	azimut
+azimut a {0}°	azimut la {0}°
+totale	total
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Deschidere la primul nul (FNBW): {0}°;  cel mai înalt lob lateral: {1}
+Didascalie {0} %	Etichete {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB față de {1} din sursă: verifică dimensiunile, terminarea și solul (sursa poate folosi alt sol sau altă geometrie).
+Azimut a {0}° · {1} MHz	Azimut la {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimut la {0}° elevație
+RUMORE	ZGOMOT
+Apri la scheda {0}	Deschide fișa {0}
+caso mostrato: {0}	caz afișat: {0}
+Rastremazioni	Telescopice
+BANDA	BANDĂ
+λ/2 coassiale 4:1	coaxial λ/2 4:1
+Manicotto λ/4	manșon λ/4
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Ecranul cablului și catargul ca fire NEC; comparație de baluni (curent de mod comun, F/B, F/R mediu, pierdere, putere la 1 kW) de la 1,8 la 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Montanți, traversă, catarg și ecranele liniilor de fazare ca fire NEC: comparație fără / cu cadru (câștig, F/B, F/R mediu, lobi, Z al divizorului, Tant și G/T).
+TIPO	TIP
+DATI	DATE
+TELAIO	CADRU
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 în țeavă pătrată sau rotundă, în cablu, Wilkinson; linii de fazare, înclinare; desen 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X sau +, planuri decalate cu λ/4; H, V, RHCP, LHCP, X-pol; raport axial și izolare
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Lungimi egale → fază egală. Multipli de λ/2 → impedanța activă se repetă la divizor. Toleranță recomandată ± 5 mm (= ± {0}° de fază).
+impedenze attive delle {0} antenne dello stack in parallelo	impedanțele active ale celor {0} antene ale grupului în paralel
+Banda con ROS < {0}	Bandă cu SWR < {0}
+? Manuale	? Manual
+Apre la spiegazione nel manuale	Deschide explicația în manual
+riferimento	referință
+Rispetto alla singola antenna	Față de antena singură
+{0} antenne ideali	{0} antene ideale
+x la distanza DL6WU, a passi di	x distanța DL6WU, în pași de
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Axa stângă: G grup - G antena singură, de la 0 în sus. Axa dreaptă: F/R grup - F/R antena singură, inversată, cu 0 sus: unde grupul îmbunătățește F/R curba coboară, iar punctul cel mai de jos este cea mai mare îmbunătățire. G/T rămâne în tabel.
+ΔG sulla singola	ΔG peste antena singură
+Chiusura del programma	Închiderea programului
+Vuoi chiudere YA-NEC?	Vrei să închizi YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Îți mulțumesc că m-ai folosit: sper că ți-am fost de folos.
+Sì	Da
+ROS attivo	SWR activ
+G realizzato	G realizat
+ROS attivo massimo	SWR activ maxim
+riflessi minimi	reflexii minime
+ROS attivo alto: da non scegliere	SWR activ mare: nu alege
+Documenti tecnici	Documente tehnice
+Manuale d'uso	Manual de utilizare
+Manuale di calcolo e delle fonti	Manual de calcul și al surselor
+Citazioni	Citate
+Cerca in tutti i documenti	Caută în toate documentele
+Apri il PDF	Deschide PDF-ul
+Nessun risultato per «{0}»	Niciun rezultat pentru «{0}»
+Primi {0} risultati per «{1}»	Primele {0} rezultate pentru «{1}»
+{0} risultati per «{1}»	{0} rezultate pentru «{1}»
+Apre la citazione {0}	Deschide citatul {0}
+Manuale di calcolo	Manual de calcul
+È pronta la versione {0} di YA-NEC	Versiunea {0} a YA-NEC este gata
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Este deja descărcată și instalată: intră în vigoare la repornirea programului.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Pe Mac nu se instalează singură: descarcă noul .dmg din pagina de versiuni de pe GitHub.
+Riavvia adesso	Repornește acum
+Più tardi	Mai târziu
+Apri la pagina delle versioni	Deschide pagina de versiuni
+Aggiornamento di YA-NEC	Actualizare YA-NEC
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Este deja descărcată și instalată. Programul repornește singur și redeschide modelul deschis.
+Riavvio tra {0} s	Repornire în {0} s
+Questo avviso si chiude tra {0} s	Acest aviz se închide în {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	După actualizare a fost redeschis modelul nesalvat: salvează-l când vrei (copie în data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	După actualizare a fost redeschis modelul care era deschis.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Fiecare casetă are ajutorul ei cu explicația și sursa. Gri: bifat = mereu activ (nu se dezactivează); nebifat = încă indisponibil; alegere cu butoane = alegere fixă. Manual, capitolul 21.
+"): sorgente sempre accesa.	"): sursă mereu activă.
+' non da' un numero valido.	' nu este un număr valid.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik ca atare
+0 - misure del metodo	0 - dimensiunile metodei
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = ghid WR standard al benzii (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = aceeași parabolă la celălalt capăt (ecou propriu).
+0 = stesso disco all'altro capo.	0 = aceeași parabolă la celălalt capăt.
+0 gradi a destra	0 grade la dreapta
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = o treime de la vârf: impedanță 200-300 ohmi, balun 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: departe de margine, unde flexiunea ar scoate alimentatorul din focar.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 polietilenă compactă (RG-58, RG-213), 0,8-0,85 dielectric spumat.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 polietilenă compactă, 0,8-0,85 spumat, 0,9-0,97 linie deschisă.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 lambda ghidată
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - buclă alimentată
+1 - radiatore	1 - radiator
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = o spiră (ca înainte). Cu mai multe spire Rr crește cu N², pierderea prin efect pelicular cu N.
+1 cavo	1 cablu
+1-2-3 elementi	1-2-3 elemente
+1. Obiettivi e pesi	1. Ținte și ponderi
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vânt, echilibrare, divizoare, baluni, Yagi încrucișate
+1.3 - Antenne riceventi abilitate	1.3 - Antene de recepție activate
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz cu parabolă mare: pe lângă suprafață și pointare contează deformarea termică și de vânt (ATA: 0,7 mm RMS noaptea, 3 mm ziua la soare), flexiunea suporturilor și dispersia din librație.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: tipărește la 100 %, fără «potrivire la pagină»
+1005/f piedi	1005/f picioare
+144 isol.	144 izol.
+2 - riflettore	2 - reflector
+2 - riflettori	2 - reflectoare
+2 in parallelo	2 în paralel
+2 lati	2 laturi
+2. Variabili che l'ottimizzatore puo' cambiare	2. Variabile pe care optimizatorul le poate schimba
+200 Ω con balun 4:1	200 Ω cu balun 4:1
+25 tondo	25 rotund
+3 - direttori	3 - directori
+3 gruppi	3 grupuri
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 sau 4. Cu 2 nu există rigiditate în afara planului lor.
+3. Registro dei passi - clic su una riga per riprenderla	3. Jurnal de pași - clic pe un rând pentru a-l recupera
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω sau balun 4:1
+36 Ω + terra	36 Ω + masă
+4 - tutto insieme	4 - totul împreună
+4 lati	4 laturi
+4 sorgenti: vedi tabella	4 surse: vezi tabelul
+432 isol.	432 izol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 de verificări de date aprobate de IC8TEM la 15/11/2026: praguri și explicații în manual, capitolul 11.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 picioare circa 18 dBi, 12 picioare circa 20,5 dBi
+75 ohm ideale	75 ohmi ideal
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	de 8 ori mai lung decât raza. Cu fire groase sau segmente scurte (țevi groase în UHF, elemente apropiate,\n
+9 fili	9 fire
+9 fili a 0,1 λ	9 fire la 0,1 λ
+Accorciamento del pilotato	Scurtarea elementului alimentat
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Scurtare peste 8 %: estimarea liniară nu e de încredere, verifică cu NEC.
+Allega il modello aperto	Atașează modelul deschis
+Allega il registro di oggi	Atașează jurnalul de azi
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Înălțimea RMS a valurilor și înălțimea antenei deasupra mării, în Diagrame > Teren real.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Lățimea baleiajului în jurul frecvenței, pentru graficul de impedanță.
+Antenna a	Antenă la
+Applica la freccia al modello NEC	Aplică săgeata pe modelul NEC
+Approvata, in preparazione: non ancora attiva in questa versione.	Aprobat, în pregătire: încă neactiv în această versiune.
+Apri la cartella	Deschide dosarul
+Apri un modello nella finestra principale	Deschide un model în fereastra principală
+Apro il modello e il diagramma 3D resta vuoto.	Deschid modelul și vederea 3D rămâne goală.
+Area al vento dell'antenna	Suprafața în vânt a antenei
+Area al vento totale	Suprafață totală în vânt
+Area al vento totale e lista di taglio	Suprafață totală în vânt și listă de tăiere
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Atenție: nu folosi cu fire care se unesc în unghi sau cu diametre diferite la îmbinare.\n
+Bobina di carico per la risonanza	Bobină de încărcare pentru rezonanță
+Boom con il tirante	Boom cu tirant
+C1 in serie con la loop	C1 în serie cu bucla
+C1 serie, C2 parallelo	C1 serie, C2 paralel
+C2 in parallelo all'ingresso	C2 în paralel cu intrarea
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Calculatoare > Antene de recepție: dipol jos, K9AY, 4-square RX, Hi-Z 2/3/8 elemente, cu faza între rânduri optimizată pentru RDF și avertismentul privind legătura la pământ.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Calcule mecanice (Vânt și Echilibrare), Calculatoare > Divizoare și Yagi încrucișate, Obiecte > Cablu și balun și cadrul grupului, Sarcini HF.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Predimensionare: pentru instalare este valabil proiectul unui tehnician autorizat.
+Candidati da controllare	Candidați de verificat
+Categoria	Categorie
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Categoria de expunere a locului (NTC 2018, tab. 3.3.II și fig. 3.3.2): depinde de clasa de rugozitate a terenului (A centre urbane ... D zone fără obstacole, mare) și de distanța față de coastă. I = coastă deschisă sau mare, V = centru de oraș.
+Cebik, poi NEC	Cebik, apoi NEC
+Centro della banda scelta:\n	Centrul benzii alese:\n
+Con ghiaccio	Cu gheață
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Cu gheață: vânt redus la 0,6 ori și gheață radială din caseta din dreapta (combinație simplificată ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Cu aceeași sămânță testul se repetă la fel.
+Condizione della sorgente non capita ("	Condiția sursei nu a fost înțeleasă ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Verifică imediat pe GitHub fără a aștepta cele 3 minute. Dacă există o versiune nouă o descarcă, anunță și repornește ca actualizarea automată (10 secunde, modelul se redeschide). Funcționează și cu actualizarea automată oprită.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Mereu verificat de verificarea segmentării și în Avertismente (8 cu nucleul normal, 2 cu nucleul extins).
+Copie per candidato	Copii pe candidat
+Coppia sulla staffa boom-mast	Cuplu în clema boom-catarg
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Creează zip-ul în data/segnalazioni și deschide pagina «New issue» de pe GitHub cu textul deja scris. Zip-ul îl atașezi tu, manual: programul nu trimite nimic singur.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Curbura Pământului, în Diagrame > Teren real.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Diametru în afara intervalului formulelor lui Cebik (de la 1E-6 la 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Distanța și tipul celui de-al doilea sol: aprobat pentru 1.5 (Teren real 2).
+Distanze di stack HF	Distanțe de grup HF
+Distanze di stack: accoppiamento e distanza migliore	Distanțe de grup: cuplaj și cea mai bună distanță
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	După optimizare, cele mai bune rezultate trec la verificarea cu toleranțele. 0 = nicio verificare.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Capete foarte joase: atenție la oameni și animale (tensiuni mari la vârfuri).
+F/B peggiore	Cel mai slab F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	Fișier .weq: liniile cu TLParms din AutoEZ (cabluri cu pierderi) folosesc Zo și VF nominale și nicio pierdere: cartela TL a NEC este fără pierderi.
+Filo riflettore	Fir reflector
+Filo ripiegato	Fir pliat
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Hairpin lung (peste 0,2 lambda): e mai bine să reduci distanța sau să folosești conductori mai groși.
+Forza del vento di progetto	Forța vântului de calcul
+Forza l'aggiornamento	Forțează actualizarea
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Săgeata coardei: cât rămâne plasa tronsonului drept sub paraboloid la mijlocul deschiderii (intră în fațetare). Masa totală a curelelor {4:0.00} kg{5}.
+Freccia tolta dal modello.	Săgeata eliminată din model.
+Ghiaccio radiale	Gheață radială
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	Fișierele MMANA sunt mereu resegmentate pentru NEC-2 (manual, capitolul 10).
+I lobi si leggono nella tabella delle distanze di stack.	Lobii se citesc în tabelul distanțelor de grup.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (rotunjește), FIX (trunchiază), MOD, MAX, MIN, ODD (întreg impar: util pentru segmentele firului alimentat).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	NEC2 normal tratează fiecare fir ca pe o linie subțire: este valabil cât timp segmentul este de cel puțin\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Un singur fir reflector dă o îmbunătățire foarte mică (Cebik): mai bine ecranul sau cele 9 fire.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Catargul depășește limita de curgere: catarg mai gros sau consolă mai scurtă.
+Impedenza del cavo	Impedanța cablului
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Sub altă formă: verificarea r5 din Verificările de date semnalează un câștig peste maximul fizic pentru lungimea boom-ului.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Inductanță cu N² (spire strânse) și un model NEC cu o spiră: aici NEC verifică doar geometria acelei spire.
+Interasse della forcina	Distanța hairpin
+Isole (tranne Sicilia e Sardegna) e mare aperto	Insule (cu excepția Siciliei și Sardiniei) și mare deschisă
+Kernel esteso del NEC2 (scheda EK).\n	Nucleu NEC2 extins (cartela EK).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Distanța hairpin trebuie să fie mai mare decât diametrul conductorului.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim închide radiatorul sus cu un fir pliat în jos, până chiar deasupra stub-ului.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	O face fereastra Verificarea segmentării (butonul de mai sus).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin-ul este simetric: nu deformează diagrama ca gamma. Un balun sau un șoc la punctul de alimentare este în continuare necesar.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin-ul funcționează doar cu un R al elementului alimentat mai mic decât impedanța cablului: pentru un R mai mare folosește gamma sau un transformator.
+La prepara IC8TEM: non ancora attiva.	IC8TEM o pregătește: încă neactivă.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Cele șase reguli ale Geometry Check din EZNEC, la fiecare calcul, în fila Avertismente.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: fără corecție Z = {0:0.0} {1}j{2:0.0} ohm (cu corecția {3:0.0} {4}j{5:0.0} ohm).
+Località	Loc
+Loop orizzontale di 1 λ	Buclă orizontală de 1 λ
+Lunghezza del pilotato	Lungimea elementului alimentat
+Lunghezza della forcina	Lungimea hairpin-ului
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Pune în zip modelul deschis (.nec), chiar dacă nu e salvat.
+Mette nello zip il registro di oggi della cartella registri.	Pune în zip jurnalul de azi din dosarul logs.
+Momenti al mast	Momente pe catarg
+Momento al cuscinetto	Moment la rulment
+NEC: risonanza cercata dal motore	NEC: rezonanța căutată de motor
+NOTE SU QUESTA VERSIONE (fase 0)\n	NOTE DESPRE ACEASTĂ VERSIUNE (faza 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NOU · deasupra solului: înălțimi, distanțe, unghiuri de plecare dorite
+Nel modello non ci sono elementi orizzontali diritti	Modelul nu are elemente orizontale drepte
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	În tabelul grupului și în Obiectele modelului (cadrul grupului, divizoare).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	În cartelele de geometrie scrie expresiile fără spații, de exemplu:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Nicio distanță propusă
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Nicio distanță propusă: toate depășesc SWR-ul activ maxim.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Nicio adresă IP, niciun e-mail, niciun nume de utilizator în fișiere: calea dosarului personal devine «~». Fără cont GitHub poți trimite zip-ul cum vrei.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Încă nu automat: se face manual cu testul AGT din Avertismente (ARRL ed. 24, 4nec2).
+Numero di spire	Număr de spire
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Fiecare copie are dimensiunile deplasate aleator în limitele toleranțelor din fila Toleranțe (implicit: lungime ±1 mm, poziție ±2 mm, diametru ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Pe lângă modelul deschis, porniri alese aleator între minimul și maximul fiecărei variabile. 0 = ca înainte.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Pagina Zgomotul cerului real din fila Zgomot/GT/Grup: calculul skynoise portat în C# (citirea hărților HEALPix, interpolare, timp sideral, coordonate, Luna) și cele două hărți G8ONH în data/cielo.
+Partenze a caso	Porniri aleatoare
+Perimetro Cebik	Perimetrul Cebik
+Peso del boom	Greutatea boom-ului
+Pi-greco	Rețea Pi
+Prepara la segnalazione	Pregătește raportul
+Proposta	Propunere
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	test nec2c la 145 MHz (țevi de 12 mm la 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Când e nevoie: raport segment/rază între circa 2 și 8 (sub 2 niciunul nu e de încredere).\n
+Quota s.l.m.	Altitudine
+R del pilotato	R elementului alimentat
+ROS attivo minimo {0}	SWR activ minim {0}
+Raggio equivalente dei due conduttori	Raza echivalentă a celor doi conductori
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Reactanța actuală a elementului alimentat: dacă e pozitivă, elementul alimentat trebuie scurtat mai mult.
+Reattanza della forcina	Reactanța hairpin-ului
+Reattanza voluta del pilotato	Reactanța dorită a elementului alimentat
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reactanță: dincolo de kl = pi/2 (sau cu un conductor prea gros) formula AEH nu mai e valabilă, folosește NEC.
+Reinstalla la versione attuale	Reinstalează versiunea actuală
+Rel Z non positiva	Re Z nepozitiv
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Rezistența elementului alimentat la rezonanță, din model sau din calculul NEC.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Repornirea a eșuat: închide și redeschide YA-NEC manual.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Descarcă și reinstalează chiar dacă versiunea e aceeași: util dacă un fișier al programului s-a deteriorat.
+Scansione	Baleiaj
+Scegli il candidato con	Alege candidatul cu
+Schermo	Ecran
+Scrivi due frequenze diverse.	Scrie două frecvențe diferite.
+Segnala un problema	Raportează o problemă
+Seme del caso	Sămânță aleatoare
+Serve solo per la reattanza (dipolo e monopolo).	Necesar doar pentru reactanță (dipol și monopol).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Folosit cu 2 sau mai multe spire: sub 2 diametre de conductor pierderea reală crește prin efectul de proximitate (necalculat).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Folosit în Diagrame > Teren real: reflexie pe mare cu factor de divergență și rugozitate.
+Sicilia e provincia di Reggio Calabria	Sicilia și provincia Reggio Calabria
+Sollecitazione	Tensiune
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Peste 0,25 λ lobul începe să coboare: mai puțin potrivit pentru NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Peste 30 MHz regresia lui Cebik e folosită în afara intervalului pentru care e oferită aici (fire HF): mai bine Automat sau NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Sub 0,1 λ câștigul în sus scade (Cebik): o antenă foarte joasă nu câștigă nimic.
+Sotto l'antenna	Sub antenă
+Spina (tubo o tondo) dentro il giunto telescopico.	Dop (țeavă sau bară) în interiorul îmbinării telescopice.
+Spina interna nei giunti	Dop interior în îmbinări
+Stack con il ROS attivo piu' basso	Grup cu cel mai mic SWR activ
+Staffe e mast	Cleme și catarg
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Timp: circa (porniri + 1) ori cel actual, plus candidați x copii calcule.
+Tensione nel mast al cuscinetto	Tensiune în catarg la rulment
+Tiro del tirante	Tensiunea tirantului
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Țevi luate din tabelul Îngustări: dimensiunile sunt aceleași ca în modelul NEC.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Toate distanțele depășesc SWR-ul activ maxim ({0}): nicio distanță propusă. Crește SWR-ul activ maxim, încearcă impedanța de referință proprie a antenei sau reglează antena singură. Matricea și graficul sunt la distanța cu cel mai mic SWR activ.
+V invertito	V inversat
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), cuplaj, SWR activ, cea mai bună distanță, două frecvențe
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Viteza de vârf în loc: vb sqrt(ce), cu vb = vb,0 ca (NTC 2018, perioadă de revenire 50 de ani) și ce(z) din categoria de expunere la înălțimea antenei.
+Velocità	Viteză
+Velocità a mano	Viteză manual
+Vento di sopravvivenza	Vânt de supraviețuire
+Vento di sopravvivenza del boom	Vântul de supraviețuire al boom-ului
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Vânt perpendicular pe element la care primul punct atinge limita de curgere (inclusiv greutatea proprie și gheața).
+X da aggiungere al pilotato	X de adăugat elementului alimentat
+X del pilotato	X elementului alimentat
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Verificarea finală o face motorul NEC pe modelul cu hairpin.
+Z0 della forcina	Z0 hairpin
+Z0 della linea dei due conduttori	Z0 al liniei cu două conductoare
+Zona buona	Zonă bună
+al centro	în centru
+caso peggiore	cazul cel mai rău
+caso peggiore delle due	cel mai rău dintre cele două
+cerca...	caută...
+copie entro le soglie	copii în limitele pragurilor
+corrente sinusoidale	curent sinusoidal
+distanza dal boom	distanța de la boom
+distanza dall'inizio del boom	distanța de la începutul boom-ului
+due condensatori sul lato basso	doi condensatori pe partea de jos
+effetto: calcolo in corso…	efect: se calculează…
+forza del vento x sbalzo	forța vântului x consolă
+il caso peggiore migliore	cel mai bun caz cel mai rău
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	dipolul echivalent, mai gros, are mai puțin de 73 Ω
+il voto medio migliore	cel mai bun scor mediu
+induttiva, in parallelo	inductivă, în paralel
+la percentuale migliore di copie entro le soglie	cel mai bun procent de copii în limitele pragurilor
+linea a due fili	linie bifilară
+m  mast a	m  catarg la
+m dal suolo	m deasupra solului
+m sopra il boom, attacco al	m deasupra boom-ului, prins la
+media delle due	media celor două
+mm  lungo	mm  lungime
+mm, acciaio	mm, oțel
+molto buono	foarte bun
+molto povero	foarte slab
+nessun rinforzo	fără întărire
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	nicio țeavă comercială până la +12 mm nu ajunge: revizuiește îngustarea
+nessuna distanza sotto il ROS attivo massimo	nicio distanță sub SWR-ul activ maxim
+partenza dal modello aperto	pornește de la modelul deschis
+per lato, teso per annullare il momento verticale al mast	pe latură, tensionat pentru a anula momentul vertical pe catarg
+primo cedimento: tubo Ø	prima cedare: țeavă Ø
+regge il vento di progetto con il 20 % di margine	rezistă la vântul de calcul cu o marjă de 20 %
+riferimenti bibliografici	referințe bibliografice
+sbalzo sopra il cuscinetto	consolă deasupra rulmentului
+schermo 1 λ x 1 λ	ecran 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	segmente dese) nucleul extins folosește o formulă mai exactă și rezultatul e mai de încredere.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	fără dop țeava interioară se sprijină pe marginea celei exterioare și se aplică un factor de 1,25 tensiunii în primii 5 cm: o estimare, clemele și fantele schimbă mult rezultatul.
+sollecitazione / snervamento	tensiune / limită de curgere
+tubo piu' grosso	țeavă mai groasă
+un filo riflettore	un fir reflector
+zona di cedimento	zonă de cedare
+ø dei conduttori della forcina	ø conductorilor hairpin
+ø del filo	ø fir
+ø del pilotato	ø element alimentat
+accordata	acordat
+accordate	acordată
+alimentazione	alimentare
+alluminio	aluminiu
+allungata	alungit
+altro	altul
+anello	buclă
+angolo	unghi
+antiorario	antiorar
+aritmetico	aritmetică
+automatico	automat
+banda	bandă
+bande	benzi
+bordi	margini
+buono	bun
+capacitiva	capacitivă
+carichi	sarcini
+carico	sarcină
+cartesiana	cartezian
+cavi	cabluri
+cavo	cablu
+centimetri	centimetri
+centina	nervură
+cerchio	cerc
+condensatore	condensator
+corrente	curent
+destra	dreapta
+diagramma	diagramă
+diametro	diametru
+differenza	diferență
+dipoli	dipoli
+dipolo	dipol
+diretta	direct
+diritto	drept
+due	doi
+elementi	elemente
+elemento	element
+elimina	șterge
+equilatera	echilateral
+esito	rezultat
+esperimenti	experimente
+esponenziale	exponențial
+fase	fază
+ferriti	ferite
+fili	fire
+filo	fir
+forcina	hairpin
+forma	formă
+formule	formule
+frequenza	frecvență
+geometria	geometrie
+ghiaccio	gheață
+giudizio	evaluare
+gradi	grade
+griglia	grilă
+guadagno	câștig
+incrociata	încrucișate
+larghezza	lățime
+lato	latură
+lega	aliaj
+libera	liber
+libero	liberă
+linea	linie
+lineare	liniar
+linee	linii
+lobi	lobi laterali
+locale	local
+mai	niciodată
+manicotto	manșon
+mano	manual
+meccanica	mecanică
+mezzaonda	semiundă
+millimetri	milimetri
+misure	dimensiuni
+modello	model
+modo	mod
+nessuna	niciunul
+nota	notă
+nuovo	nou
+operativo	de lucru
+orario	orar
+ottagono	octogon
+palo	catarg
+parabola	parabolă
+passo	pas
+perdite	pierderi
+perfetto	perfect
+piano	plan
+piatto	plat
+piedi	picioare
+polare	polar
+pollici	țoli
+propria	propriu
+punto	punct
+quadrato	pătrat
+quadro	pătrată
+quota	înălțime
+radiali	radiale
+radiatore	radiator
+raggio	rază
+rame	cupru
+ramo	ramură
+rapidi	rapid
+rastremazioni	îngustări
+rete	rețea
+rettangolo	dreptunghi
+riepilogo	rezumat
+riflettore	reflector
+riga	rând
+rombo	romb
+scarso	slab
+scarto	abatere
+schiacciata	turtit
+sempre	mereu
+senso	direcție
+si'	da
+sinistra	stânga
+soglia	prag
+sorgenti	surse
+sotto	sub
+spire	spire
+staffe	cleme
+stato	stare
+sufficiente	suficient
+tetto	acoperiș
+tipo	tip
+tirante	tirant
+togli	elimină
+tondo	rotund
+traffico	trafic
+trasformatori	transformatoare
+trombe	pâlnii
+tubi	țevi
+tubo	țeavă
+tutti	toate
+uguale	egal
+uguali	egale
+uso	folosește
+a {0} x DL6WU; tutte sopra il massimo {1}	la {0} x DL6WU; toate peste maximul {1}
+% del mezzo boom	% din jumătatea de boom
++ aggiungi	+ adaugă
++ aggiungi variabile	+ adaugă variabilă
++ correzione del boom	+ corecția boom-ului
++ nuova	+ nou
++ trappola	+ capcană
++ verso il disco.	+ spre parabolă.
++90 gradi Z	+90 grade Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetică: exact la jumătatea dintre limitele IARU ale benzii (de exemplu 145,000 MHz pe 2 m),\n
+- correzione del boom	- corecția boom-ului
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- de lucru: frecvența pe care lucrezi efectiv (de exemplu 144,300 MHz pe 2 m, 432,200 pe 70 cm),\n
+-10 (nero) 10-100 MHz	-10 (negru) 10-100 MHz
+-10 nero	-10 negru
+-2 (rosso) 0,25-10 MHz	-2 (roșu) 0,25-10 MHz
+-2 rosso	-2 roșu
+-6 (giallo) 3-40 MHz	-6 (galben) 3-40 MHz
+-6 giallo	-6 galben
+-90 gradi Z	-90 grade Z
+-> segmento NEC	-> segment NEC
+. "Annulla" torna indietro.	. «Anulare» revine.
+. Antenna base: fili 1-	. Antena de bază: fire 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Cu un Q atât de mare baleiajul trebuie să acopere doar câțiva kHz.
+. Salvalo con Salva con nome.	. Salvează-l cu Salvează ca.
+. Trascina per ruotare, rotella per ingrandire.	. Trage pentru a roti, rotița pentru zoom.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Folosește fir mai subțire, un miez mai mare sau două miezuri suprapuse.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (prin Sengupta 2021) și GMRT tab. 19.1
+12 (errore / HPBW)^2	12 (eroare / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Inel pasiv: perimetru {0:0.000} lambda, fără sursă și fără condensator; efectul se vede în modelul complet (director sau reflector).
+Automatico	Automat
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, ca nec2c și xnec2c: codul sursă însoțește programul (fișierul COPYING).\n
+Provincia di Trieste	Provincia Trieste
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	și în C# pentru YA-NEC. Interfață de referință: xnec2c de 5B4AZ și Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	eficiență calculată din câmpul îndepărtat, Prad / (Prad + pierderi) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	impedanța și pierderile devin tot mai puțin de încredere pe măsură ce firul coboară (vezi BOG în manual). Pentru un rezultat sigur: cel puțin lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	se creează până la {3:0.00} m diametru; calculul aperturii de alături e valabil pentru orice diametru și ține deja cont de nervuri (caseta de sus).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmente: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} pe {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, eficiență {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° de elevație
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL ed. 19, cap. 18 (Yagi de 2 m a lui W9PE): trei elemente la 0,2 λ, circa 7 dBi și F/B peste 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• Concordanța YA-NEC cu nec2c (bare de 20/15/10 m): reflectoare la 0,185 / 0,197 / 0,222 λ, directori la 0,095 / 0,116 / 0,114 λ: în intervalele surselor.
+↶ Annulla	↶ Anulare
+↷ Ripeti	↷ Refacere
+■ Ferma	■ Oprește
+▶ Avvia	▶ Pornește
+☐ mantieni lunghezza del boom	☐ păstrează lungimea boom-ului
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ niciun avertisment: segmentarea respectă nivelul ales
+✓ nessun errore e nessun avviso	✓ nicio eroare și niciun avertisment
+variabili del modello	variabilele modelului
+nuova variabile dal modello	variabilă nouă din model
+Scrivi una variabile nella linguetta Variabili…	Scrie o variabilă în fila Variabile…
+Elemento diritto	Element drept
+Elemento piegato	Element îndoit
+Variabile nuova	Variabilă nouă
+Minimo / massimo	Minim / maxim
+Cosa cambia	Ce se schimbă
+in ocra: dove agisce la variabile	cu ocru: unde acționează variabila
+Crea la variabile	Creează variabila
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Variabila {0} a fost creată: geometria nu se schimbă. «Anulare» din bara Geometrie o elimină.
+Struttura 3D: dove agisce la variabile ▾	Structură 3D: unde acționează variabila ▾
+Struttura 3D ▸	Structură 3D ▸
+Clic: nasconde o mostra la struttura	Clic: ascunde sau arată structura
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ocru continuu: folosește variabila · ocru întrerupt: o folosește prin altă variabilă
+attraverso {0}: fili {1}	prin {0}: fire {1}

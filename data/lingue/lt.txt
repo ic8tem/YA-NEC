@@ -3899,3 +3899,1044 @@ Clic su un filo nella vista 3D (o su una riga della tabella dei fili): il filo s
 Quanto e' coprente il colore: leggera, media o forte. Sulla riga della tabella il velo e' piu' leggero, per leggere i numeri.	Kiek dengia spalva: lengvas, vidutinis ar stiprus. Lentelės eilutėje šydas lengvesnis, kad skaičiai būtų įskaitomi.
 Filo {0} scelto nella vista 3D: riga {1} della tabella	Laidas {0} pasirinktas 3D vaizde: lentelės eilutė {1}
 Filo {0}: non e' nella tabella dei fili (scheda di geometria diversa da GW)	Laidas {0}: jo nėra laidų lentelėje (geometrijos kortelė ne GW)
+# 1.5.2: voci della 1.3-1.5.1
+Controlla subito se c'e' una versione nuova (senza aspettare i 3 minuti).	Iš karto patikrina, ar yra nauja versija (nelaukiant 3 minučių).
+terreno reale	tikrasis reljefas
+Locatore	Lokatorius
+da 8 a 12 caratteri	8–12 simbolių
+Con 6 caratteri il punto puo' sbagliare di km: per il profilo del terreno servono almeno 8 caratteri.	Su 6 simboliais taškas gali būti nutolęs kilometrais: reljefo profiliui reikia bent 8 simbolių.
+Quota sito	Vietos aukštis
+Altezza antenna	Antenos aukštis
+Altezza del centro dell'antenna sul suolo. Se diversa da quella del modello, il diagramma del NEC viene alzato o abbassato con lo stesso andamento delle correnti.	Antenos centro aukštis virš žemės. Jei jis skiriasi nuo modelio, NEC diagrama pakeliama arba nuleidžiama su tuo pačiu srovės pasiskirstymu.
+Distanza max	Didž. atstumas
+Azimut e distanze ricalcolati a ogni cambio di locatore (ortodromia, sfera di 6371 km).	Azimutas ir atstumai perskaičiuojami kiekvieną kartą pakeitus lokatorių (didysis apskritimas, 6371 km sfera).
+Terra	Sausuma
+Riduce il coefficiente di riflessione del mare con il fattore di Ament per onde di 0,25 m (deviazione standard).	Sumažina jūros atspindžio koeficientą Ament koeficientu 0,25 m bangoms (standartinis nuokrypis).
+modello statistico di superficie rugosa (Ament 1953): vale per angoli radenti e mare uniforme.	šiurkštaus paviršiaus statistinis modelis (Ament 1953): galioja slystantiems kampams ir tolygiai jūrai.
+Abbassa il profilo con la curvatura della terra (raggio efficace 4/3 per la rifrazione normale) e riduce i raggi riflessi lontani con il fattore di divergenza.	Nuleidžia profilį dėl Žemės kreivumo (efektyvusis spindulys 4/3 esant normaliai refrakcijai) ir sumažina tolimus atspindėtus spindulius sklaidos koeficientu.
+atmosfera standard (k = 4/3); con condotti o inversioni la curvatura apparente cambia.	standartinė atmosfera (k = 4/3); esant kanalams ar inversijoms tariamasis kreivumas keičiasi.
+Il crinale piu' alto tra antenna e direzione d'uscita attenua il raggio diretto come uno spigolo (integrale di Fresnel), come in HFTA.	Aukščiausias keteros taškas tarp antenos ir išėjimo krypties silpnina tiesioginį spindulį kaip briauna (Frenelio integralas), kaip HFTA.
+spigolo singolo a lama di coltello: crinali arrotondati o piu' crinali in fila sono approssimati con il piu' alto.	viena peilio briauna: suapvalintos keteros ar kelios keteros iš eilės aproksimuojamos aukščiausiąja.
+Ripete il calcolo ogni 10 gradi di azimut (solo con il DEM) e mostra la figura di merito sulla rosa, con l'antenna rivolta verso ogni azimut.	Pakartoja skaičiavimą kas 10 azimuto laipsnių (tik DEM) ir rodo kokybės rodiklį rožėje, anteną pasukus į kiekvieną azimutą.
+con l'antenna sempre rivolta verso l'azimut del profilo: vale per un'antenna rotativa.	anteną visada pasukus į profilio azimutą: galioja sukamai antenai.
+Cartesiana dBi / gradi	Dekarto dBi / laipsniai
+0–180° intero	0–180° visas
+Zoom angolare	Kampo mastelis
+Sovrapponi alla linguetta Verticale	Uždėti ant kortelės Vertikalusis
+premi Calcola	spustelėk Skaičiuoti
+Ripete il calcolo con l'antenna da 6 a 30 m (HF) o da 2 a 30 m (VHF) e indica l'altezza con la figura di merito migliore sulla rotta.	Pakartoja skaičiavimą su antena nuo 6 iki 30 m (HF) arba nuo 2 iki 30 m (VHF) ir rodo aukštį su geriausiu kokybės rodikliu trasoje.
+le correnti restano quelle del modello calcolato: l'effetto dell'altezza sull'impedenza e sulle correnti non e' considerato (come in HFTA).	srovės lieka apskaičiuoto modelio: aukščio įtaka varžai ir srovėms neįvertinama (kaip HFTA).
+Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.	Reikia ARRL Antenna Book atvykimo kampų lentelių (.PRN failai pagal juostas ir regionus): kai tik jos bus, tai įsijungs ir rodys oranžines juostas.
+locatore non valido	netinkamas lokatorius
+sul mare	virš jūros
+sul terreno	virš sausumos
+profilo reale	tikrasis profilis
+terreno piatto	lygus reljefas
+orizzonte ostruito	uždengtas horizontas
+° (scala angolare ×	° (kampų skalė ×
+← dietro	← atgal
+avanti →	pirmyn →
+statistiche degli angoli di arrivo: non caricate	atvykimo kampų statistika: neįkelta
+rosa 0–360°: calcolo in corso…	rožė 0–360°: skaičiuojama…
+Scegli il file del profilo (clic su "Da HorizonProfiler").	Pasirink profilio failą (spustelėk "Iš HorizonProfiler").
+DEM non disponibile: serve la rete al primo uso per scaricare TINITALY o SRTM1 (poi restano nella cartella data/dem).	DEM nepasiekiamas: pirmą kartą reikia tinklo TINITALY arba SRTM1 atsisiųsti (vėliau jie lieka aplanke data/dem).
+Profilo del terreno	Reljefo profilis
+Lobo di elevazione	Elevacijos lapelis
+Calcola prima il modello (pulsante Calcola in alto): il diagramma dell'antenna viene dal NEC.	Pirmiausia apskaičiuok modelį (mygtukas Skaičiuoti viršuje): antenos diagrama gaunama iš NEC.
+da file	iš failo
+dal DEM	iš DEM
+rispetto alla stessa antenna su terreno piatto	lyginant su ta pačia antena virš lygaus reljefo
+Differenza tra il lobo sul profilo reale e il lobo sul terreno piatto, mediata sugli angoli utili.	Skirtumas tarp lapelio virš tikrojo profilio ir lapelio virš lygaus reljefo, vidurkis naudingų kampų ribose.
+Guadagno a 5° / 10°	Stiprinimas ties 5° / 10°
+Guadagno a 1° / 3°	Stiprinimas ties 1° / 3°
+Angoli coperti a -3 dB	Kampai, padengti ties -3 dB
+primo lobo sul profilo reale	pirmasis lapelis virš tikrojo profilio
+calcolo…	skaičiuojama…
+Modello in spazio libero: le correnti sono quelle senza suolo, come il diagramma libero usato da HFTA. Per tenere conto del suolo vicino calcola il modello con il terreno reale.	Laisvosios erdvės modelis: srovės yra be žemės, kaip HFTA naudojama laisvosios erdvės diagrama. Norint įvertinti artimą žemę, apskaičiuok modelį su tikrąja žeme.
+Il profilo vale per un solo azimut: per un'antenna rotativa servono piu' direzioni (casella "Tutti gli azimut").	Profilis galioja tik vienam azimutui: sukamai antenai reikia daugiau krypčių (langelis "Visi azimutai").
+Metodo come HFTA (N6BV): raggio diretto + raggi riflessi su ogni tratto del profilo + diffrazione sui crinali. Il diagramma dell'antenna viene dal NEC, il terreno lo aggiunge questo calcolo.	Metodas kaip HFTA (N6BV): tiesioginis spindulys + atspindėti spinduliai kiekvienoje profilio briaunoje + difrakcija per keteras. Antenos diagrama gaunama iš NEC; šis skaičiavimas prideda reljefą.
+Piatto	Lygus
+Reale	Tikrasis
+Primo minimo	Pirmasis minimumas
+Punto di riflessione	Atspindžio taškas
+Orizzonte	Horizontas
+Uso: rotte DX in HF (angoli bassi 1–15°).	Naudojimas: HF DX trasos (maži kampai 1–15°).
+Uso: tropo e MS (0–5°), EME con la Luna bassa (guadagno di terra all'alba/tramonto lunare).	Naudojimas: tropo ir MS (0–5°), EME su žemu Mėnuliu (žemės stiprinimas Mėnuliui tekant/leidžiantis).
+Altezza con il guadagno medio piu' alto sugli angoli utili della rotta.	Aukštis su didžiausiu vidutiniu stiprinimu naudinguose trasos kampuose.
+correnti del modello calcolato spostate in quota: impedenza e accoppiamento col suolo restano quelli del modello.	apskaičiuoto modelio srovės perkeltos aukštyje: varža ir ryšys su žeme lieka modelio.
+Calcola prima il terreno reale	Pirmiausia apskaičiuok tikrąjį reljefą
+Esporta il lobo sul terreno reale	Eksportuoti lapelį virš tikrojo reljefo
+Foto: Esri, Maxar, Earthstar Geographics e la comunita' GIS	Vaizdai: Esri, Maxar, Earthstar Geographics ir GIS naudotojų bendruomenė
+© i contributori di OpenStreetMap	© OpenStreetMap bendraautoriai
+Sfondo	Fonas
+Foto aerea	Aerofotonuotrauka
+Solo griglia	Tik tinklelis
+Griglia	Tinklelis
+Cerca	Ieškoti
+⌖ Centra sul locatore	⌖ Centruoti lokatoriuje
+Punto scelto	Pasirinktas taškas
+Coordinate	Koordinatės
+Clic sulla mappa = punto dell'antenna; trascina = sposta; rotella = zoom (la griglia passa da 6 a 8, 10, 12 caratteri). Bordo spesso = quadrato a 6 caratteri.	Spustelėjimas žemėlapyje = antenos taškas; vilkti = perkelti; ratukas = mastelis (tinklelis pereina nuo 6 iki 8, 10, 12 simbolių). Storas rėmelis = 6 simbolių kvadratas.
+non disponibile	nepasiekiama
+Lunghezza elementi	Elemento ilgis
+Posizione sul boom	Padėtis ant strėlės
+Uniforme	Tolygus
+Distribuzione	Pasiskirstymas
+Elemento montato fuori centro sulla staffa: spostamento lungo il proprio asse, con la tolleranza della posizione.	Elementas apkaboje sumontuotas ne centre: poslinkis išilgai savo ašies, su padėties leistinuoju nuokrypiu.
+la staffa reale cambia anche la lunghezza elettrica vicino al boom: per quella usa la linguetta Correzione del boom.	tikroji apkaba taip pat keičia elektrinį ilgį prie strėlės: tam naudok kortelę Strėlės pataisa.
+nuovo a ogni avvio	nauja kiekvieno paleidimo metu
+Numero prove	Bandymų skaičius
+Frequenze	Dažniai
+Seme casuale	Atsitiktinė sėkla
+OBIETTIVO LISTA DI TAGLIO	PJOVIMO SĄRAŠO TIKSLAS
+Calo F/B max	Didž. F/B kritimas
+ROS max	Didž. SWR
+Ferma	Stabdyti
+Gli elementi vicini al radiatore sono di solito i più critici; quelli in fondo al boom tollerano errori più grandi.	Elementai prie maitinamo elemento paprastai yra kritiškiausi; esantys strėlės gale toleruoja didesnes klaidas.
+l'istogramma serve al Monte Carlo	histograma skirta Monte Carlo
+5% peggiore	blogiausi 5%
+Posizione mm	Padėtis mm
+Lunghezza mm	Ilgis mm
+Tolleranza ammessa	Leistinasis nuokrypis
+. In rosso gli elementi che chiedono meno della tolleranza di costruzione.	. Raudonai elementai, kuriems reikia mažesnio nei gamybos leistinasis nuokrypis.
+Calcola prima il modello	Pirmiausia apskaičiuok modelį
+sensibilita'	jautrumas
+Tolleranze: fermato	Leistinieji nuokrypiai: sustabdyta
+Diametro mm	Skersmuo mm
+Tolleranza ammessa mm	Leistinasis nuokrypis mm
+Avvia prima il calcolo	Pirmiausia paleisk skaičiavimą
+Esporta la lista di taglio	Eksportuoti pjovimo sąrašą
+Lista di taglio	Pjovimo sąrašas
+Obiettivi	Tikslai
+Calo massimo del F/B	Didžiausias F/B kritimas
+ROS massimo	Didžiausias SWR
+Tolleranze di costruzione	Gamybos leistinieji nuokrypiai
+Prevista (bozzetto 13, da approvare): non ancora attiva in questa versione.	Planuojama (eskizas 13, laukia patvirtinimo): šioje versijoje dar neaktyvu.
+Al quadro 20×2 mm	Al kvadratinis 20×2 mm
+Al quadro 25×2 mm	Al kvadratinis 25×2 mm
+Al quadro 30×2 mm	Al kvadratinis 30×2 mm
+Al quadro 40×2 mm	Al kvadratinis 40×2 mm
+Al tondo 25×1,5 mm	Al apvalus 25×1,5 mm
+Al tondo 30×2 mm	Al apvalus 30×2 mm
+Al tondo 40×2 mm	Al apvalus 40×2 mm
+Al tondo 50×2 mm	Al apvalus 50×2 mm
+Zona NTC	NTC zona
+Quota sito as	Vietos aukštis kaip
+Periodo ritorno	Pasikartojimo periodas
+Categoria esposiz.	Atvirumo kategorija
+Coeff. topografia	Topografijos koef.
+Antenna da terra	Antena virš žemės
+Palo sopra rotore	Stiebas virš rotoriaus
+Ø palo	Stiebo Ø
+Usa elementi e boom del modello	Naudoti modelio elementus ir strėlę
+Includi telaio, palo, cavi	Įtraukti rėmą, stiebą, kabelius
+Scansione direzione del vento	Vėjo krypties skenavimas
+UNITÀ	VIENETAI
+N e kgf affiancati	N ir kgf greta
+solo N	tik N
+solo kgf	tik kgf
+Mostra	Rodyti
+1 kgf = 9,80665 N	1 kgf = 9,80665 N
+locatore non valido: zona da scegliere a mano	netinkamas lokatorius: pasirink zoną rankiniu būdu
+Telaio a H	H rėmas
+Cavi e divisore	Kabeliai ir skirstytuvas
+Parte	Dalis
+Con il vento di traverso gli elementi non spingono (flusso trasversale, K5IU): la forza su un tubo va con il quadrato della componente del vento perpendicolare al suo asse.	Vėjui pučiant skersai elementai nespaudžia (cross-flow, K5IU): jėga vamzdžiui auga su statmenos jo ašiai vėjo komponentės kvadratu.
+momento flettente alla staffa del rotore	lenkimo momentas prie rotoriaus apkabos
+Predimensionamento: non sostituisce la verifica di un tecnico per palo, traliccio e plinto. Il momento alla base passera' alla sottolinguetta Palo e plinto.	Preliminarus dimensionavimas: nepakeičia inžinieriaus patikros stiebui, bokštui ir pamatui. Pagrindo momentas pateks į poskirtį Stiebas ir pamatas.
+Sito e norma	Vieta ir standartas
+Norma	Standartas
+NTC 2018 + Circolare 7/2019; coefficienti CNR-DT 207 R1/2018 ed EN 1991-1-4	NTC 2018 + Circolare 7/2019; koeficientai CNR-DT 207 R1/2018 ir EN 1991-1-4
+Locatore / zona	Lokatorius / zona
+Risultati	Rezultatai
+Forza massima	Didžiausia jėga
+Momento flettente alla staffa del rotore	Lenkimo momentas prie rotoriaus apkabos
+Momento torcente sul rotore	Sukimo momentas rotoriui
+Predimensionamento: non sostituisce la verifica di un tecnico abilitato per palo, traliccio e plinto.	Preliminarus dimensionavimas: nepakeičia kvalifikuoto inžinieriaus patikros stiebui, bokštui ir pamatui.
+Al tondino pieno	Al pilnas strypas
+Materiale elementi	Elementų medžiaga
+Staffe, isolatori	Apkabos, izoliatoriai
+g cad.	g vnt.
+Dipolo + scatola	Dipolis + dėžutė
+Cavo fino al palo	Kabelis iki stiebo
+STAFFA AL PALO	STIEBO APKABA
+Posizione attuale	Dabartinė padėtis
+m dal riflettore	m nuo reflektoriaus
+Massa / distanza	Masė / atstumas
+Vento dalla linguetta Vento	Vėjas iš kortelės Vėjas
+Usa la pressione di progetto dell'ultimo calcolo della sottolinguetta Vento; senza quel calcolo usa 600 N/m².	Naudoja paskutinio skaičiavimo poskirtyje Vėjas skaičiuojamąjį slėgį; be jo 600 N/m².
+Sposta tutto il modello lungo il boom in modo che la staffa consigliata cada nell'origine (dove il palo e il telaio dello stack si attaccano). Si annulla con Annulla della Struttura 3D.	Perkelia visą modelį išilgai strėlės taip, kad siūloma apkaba atsidurtų koordinačių pradžioje (kur tvirtinami stiebas ir grupės rėmas). Atšaukti 3D struktūroje tai atšaukia.
+Momenti in funzione della posizione della staffa	Momentai pagal apkabos padėtį
+Masse e aree per parte	Masės ir plotai pagal dalis
+ultimo direttore	paskutinis direktorius
+Staffe e isolatori	Apkabos ir izoliatoriai
+Cavo sul boom	Kabelis ant strėlės
+Massa kg	Masė kg
+Baricentro m	Svorio centras m
+Area vento m²	Vėjo plotas m²
+Centro area m	Ploto centras m
+solo peso	tik svoris
+solo vento	tik vėjas
+File Touchstone .s1p	Touchstone failas .s1p
+Formato letto	Nuskaitytas formatas
+CAVO TRA VNA E ANTENNA	KABELIS TARP VNA IR ANTENOS
+R e X separate	R ir X atskirai
+Banda con ROS <	Juosta, kurioje SWR <
+ROS: calcolato e misurato	SWR: apskaičiuotas ir išmatuotas
+Confronto	Palyginimas
+misurato, cavo tolto	išmatuota, kabelis pašalintas
+R calcolata	R apskaičiuota
+X calcolata	X apskaičiuota
+R misurata	R išmatuota
+X misurata	X išmatuota
+Calcolato	Apskaičiuota
+Misurato	Išmatuota
+Scarto	Skirtumas
+Frequenza del ROS minimo	Mažiausio SWR dažnis
+ROS minimo	Mažiausias SWR
+nessuna correzione: calcolo e misura coincidono.	pataisos nėra: skaičiavimas ir matavimas sutampa.
+calcolo NEC sul campo della misura…	NEC skaičiavimas matavimo intervale…
+Misura del VNA	VNA matavimas
+Tutti	Visi
+Fai uno sweep (pulsante Sweep in alto) per vedere F/B e F/R su tutta la banda	Paleisk skenavimą (mygtukas Skenavimas viršuje), kad pamatytum F/B ir F/R visoje juostoje
+F/R = guadagno avanti meno media della potenza sull'emisfero posteriore (90-270° di azimut, a tutte le elevazioni sopra 0°). Entra anche negli obiettivi dell'ottimizzatore.	F/R = stiprinimas pirmyn minus vidutinė galia galiniame pusrutulyje (azimutas 90-270°, visos elevacijos virš 0°). Jis taip pat yra tarp optimizatoriaus tikslų.
+Tabelle: F/B e F/R su tutta la banda	Lentelės: F/B ir F/R visoje juostoje
+Valori dello sweep	Skenavimo reikšmės
+ANTENNE RICEVENTI	PRIIMANČIOSIOS ANTENOS
+4-square in ricezione	4-square priėmimui
+8 verticali in cerchio	8 vertikalės apskritime
+Modello aperto	Atidaryti modelį
+Isotropo	Izotropinis
+RDF = guadagno nella direzione voluta meno guadagno medio su tutto il semispazio: non dipende dalle perdite, a differenza del guadagno.	RDF = stiprinimas norimoje kryptyje minus vidutinis stiprinimas visoje puserdvėje: skirtingai nei stiprinimas, jis nepriklauso nuo nuostolių.
+Usa come elevazione voluta l'angolo di arrivo mediano della linguetta Terreno reale (statistiche per banda e regione). Senza le statistiche ARRL caricate resta l'elevazione scritta qui.	Naudoja kortelės Tikrasis reljefas atvykimo kampo medianą kaip norimą elevaciją (statistika pagal juostas ir regionus). Neįkėlus ARRL statistikos lieka čia įrašyta elevacija.
+Direzione voluta	Norima kryptis
+Hz  rumore	Hz  triukšmas
+NF ricevitore	Imtuvo NF
+sorgente locale az	vietinis šaltinis az
+Cifre di merito in ricezione	Priėmimo kokybės rodikliai
+Basta il segnale?	Ar signalo pakanka?
+calcolo in corso…	skaičiuojama…
+RDF in funzione della frequenza	RDF pagal dažnį
+Calcola prima il modello aperto	Pirmiausia apskaičiuok atidarytą modelį
+verticale λ/4	λ/4 vertikalė
+° · dB relativi · arancio: -3 dB	° · santykiniai dB · oranžinė: -3 dB
+settore ±30° az, 10–40° el	sektorius ±30° az, 10–40° el
+Media del guadagno nel settore avanti meno la media sull'emisfero posteriore.	Vidutinis stiprinimas priekiniame sektoriuje minus vidurkis galiniame pusrutulyje.
+ON4UN definisce il DMF con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto, quindi i valori non sono confrontabili uno a uno con quelli del libro.	ON4UN apibrėžia DMF tik su stiprinimu ties 20 laipsnių; čia naudojamas vidurkis eskizo sektoriuje, todėl reikšmės nėra palyginamos vienas su vienu su knygos reikšmėmis.
+molto basso: serve un preamplificatore	labai žemas: reikia pirminio stiprintuvo
+basso ma accettabile: vedi soglia	žemas, bet priimtinas: žr. slenkstį
+come un'antenna trasmittente	kaip siunčiamoji antena
+F/R medio sull'emisfero posteriore	Vidutinis F/R galiniame pusrutulyje
+Rumore d'antenna ai morsetti	Antenos triukšmas gnybtuose
+Potenza di rumore esterno ai morsetti: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + guadagno medio pesato sulla provenienza del rumore.	Išorinio triukšmo galia gnybtuose: -174 dBm/Hz + Fa (ITU-R P.372) + 10 log B + vidutinis stiprinimas, pasvertas pagal triukšmo kilmę.
+rumore dal piano con peso exp(-el/10 gradi) sull'elevazione: rappresenta il rumore artificiale lontano che arriva basso; la distribuzione vera dipende dal sito.	triukšmas iš horizonto, pasvertas exp(-el/10 laipsnių) elevacijoje: vaizduoja tolimą žmogaus sukeltą triukšmą, ateinantį žemai; tikrasis pasiskirstymas priklauso nuo vietos.
+sorgente puntiforme a 5 gradi di elevazione con la stessa potenza del fondo isotropo.	taškinis šaltinis 5 laipsnių elevacijoje su tokia pačia galia kaip izotropinis fonas.
+rumore isotropo sopra il suolo; il suolo non aggiunge rumore.	izotropinis triukšmas virš žemės; žemė triukšmo neprideda.
+Margine sul ricevitore	Imtuvo atsarga
+Il rumore d'antenna supera il rumore del ricevitore di meno di 6 dB: il ricevitore limita la sensibilita'. Serve piu' preamplificazione o un ricevitore con NF piu' bassa.	Antenos triukšmas viršija imtuvo triukšmą mažiau nei 6 dB: imtuvas riboja jautrumą. Reikia daugiau pirminio stiprinimo arba imtuvo su mažesniu NF.
+RDF 1,8	RDF 1,8
+RDF 3,5	RDF 3,5
+Guadagno 1,8	Stiprinimas 1,8
+Spazio richiesto	Reikiama vieta
+λ/4 in tubo quadro	λ/4 kvadratiniame vamzdyje
+λ/4 in tubo tondo	λ/4 apvaliame vamzdyje
+Solo cavi di fase	Tik fazinės linijos
+Aria	Oras
+Uscite	Išėjimai
+Z antenne	Antenos Z
+Z ingresso	Įėjimo Z
+Dielettrico	Dielektrikas
+Connettori	Jungtys
+Correggi accorciamento dei connettori	Koreguoti jungčių sutrumpinimą
+Toglie dalla lunghezza la parte di linea che sta dentro i connettori.	Atima iš ilgio linijos dalį jungčių viduje.
+stima di 4 mm per estremo con i connettori N (3 BNC, 1,5 SMA): conviene tarare con il VNA, accorciando a passi di 1 mm.	įvertis 4 mm kiekvienam galui su N jungtimis (3 BNC, 1,5 SMA): geriausia derinti su VNA, trumpinant po 1 mm.
+Divisori	Skirstytuvai
+Usa le impedenze attive delle antenne dello stack aperto (una sorgente per antenna) e le distanze per la lunghezza minima dei cavi di fase.	Naudoja atidarytos grupės antenų aktyviąsias varžas (vienas šaltinis antenai) ir atstumus minimaliam fazinių linijų ilgiui.
+CAVI DI FASE	FAZINĖS LINIJOS
+Lunghezza minima	Mažiausias ilgis
+Passo verticale	Vertikalus atstumas
+solo cavi di fase: nessun trasformatore da costruire	tik fazinės linijos: transformatoriaus statyti nereikia
+2 cavi da 75 Ω in parallelo = 37,5 Ω	2 × 75 Ω kabeliai lygiagrečiai = 37,5 Ω
+quadro, lato	kvadratinis, kraštinė
+tondo, Ø	apvalus, Ø
+Z0 richiesta	Reikiama Z0
+Ø conduttore interno	Vidinio laidininko Ø
+VF del cavo	Kabelio VF
+λ/4 in aria, mm	λ/4 ore, mm
+da tagliare, mm	pjauti, mm
+Z carico in parallelo	Apkrovos Z lygiagrečiai
+Rami λ/4: Z0 = Zin · √N	λ/4 šakos: Z0 = Zin · √N
+Resistenze a stella	Žvaigždės rezistoriai
+Isolamento tra le uscite	Izoliacija tarp išėjimų
+Perdita stimata	Apskaičiuoti nuostoliai
+Carico usato	Naudojama apkrova
+non potenza di 2	ne 2 laipsnis
+ROS all'ingresso	Įėjimo SWR
+solo cavi di fase	tik fazinės linijos
+Uscita	Išėjimas
+Lungh. elettrica	Elektrinis ilgis
+Fisica mm	Fiziniai mm
+Perdita dB	Nuostoliai dB
+° di fase).	° fazės).
+° verso l'alto); l'impedenza al divisore non si ripete piu' esattamente.	° aukštyn); varža prie skirstytuvo nebesikartoja tiksliai.
+Solo cavi di fase: nessun disegno da stampare	Tik fazinės linijos: nėra brėžinio spausdinti
+Divisore	Skirstytuvas
+50 mm di controllo	Patikra 50 mm
+GEOMETRIA	GEOMETRIJA
+λ/4 sul boom	λ/4 ant strėlės
+stesso piano	ta pati plokštuma
+Metallico, isolati	Metalas, izoliuoti
+Non metallico	Nemetalinis
+Il boom non entra nel modello NEC: con elementi isolati dal boom metallico l'effetto e' piccolo (correzione del boom nei Calcolatori).	Strėlės NEC modelyje nėra: su elementais, izoliuotais nuo metalinės strėlės, poveikis mažas (strėlės pataisa Skaičiuoklėse).
+Yagi di base	Bazinė Yagi
+Disposizione	Išdėstymas
+Sfasamento piani	Plokštumų poslinkis
+Cavo di ritardo λ/4	λ/4 vėlinimo kabelis
+Includi relè e cavi reali	Įtraukti tikras reles ir kabelius
+Aggiunge la perdita del cavo di ritardo (VF 0,66, 10 dB/100 m a 144 MHz, scalata con la radice della frequenza) e 0,1 dB per il relè.	Prideda vėlinimo kabelio nuostolius (VF 0,66, 10 dB/100 m ties 144 MHz, pakoreguota pagal dažnio kvadratinę šaknį) ir 0,1 dB relei.
+valori tipici di un cavo da 75 ohm e di un relè coassiale; il programma non conosce i tuoi.	tipinės 75 omų kabelio ir koaksialinės relės reikšmės; programa tavųjų nežino.
+La stessa rete di fase serve anche per un turnstile (dipoli incrociati a 90°).	Tas pats fazavimo tinklas tinka ir turnstile antenai (dipoliai sukryžiuoti 90°).
+AR (dB) / ROS	AR (dB) / SWR
+Vista frontale	Vaizdas iš priekio
+Componenti co-polare / cross-polare	Kopoliarinės / kryžminės poliarizacijos dedamosios
+Rapporto assiale e ROS in frequenza	Ašinis santykis ir SWR pagal dažnį
+piano A	plokštuma A
+piano B	plokštuma B
+vista dal davanti — boom al centro	vaizdas iš priekio — strėlė centre
+piani sfalsati di λ/4 lungo il boom	plokštumos paslinktos λ/4 išilgai strėlės
+Yagi incrociate: serve una Yagi con una sola sorgente	Sukryžiuotos Yagi: reikia Yagi su vienu šaltiniu
+Yagi incrociate: calcolo in corso...	Sukryžiuotos Yagi: skaičiuojama...
+Rapporto assiale in asse	Ašinis santykis ašyje
+Rapporto assiale a −3 dB	Ašinis santykis ties −3 dB
+Isolamento tra i due piani	Izoliacija tarp dviejų plokštumų
+Fase della rete sul piano B	Tinklo fazė plokštumoje B
+Piani perfettamente ortogonali e simmetrici: nel modello l'accoppiamento e la polarizzazione opposta sono quasi nulli. Nella realta' staffe, cavi e piccole asimmetrie li limitano a circa 25-35 dB.	Visiškai ortogonalios ir simetriškos plokštumos: modelyje ryšys ir priešinga poliarizacija beveik nuliniai. Realybėje apkabos, kabeliai ir nedidelės asimetrijos juos riboja iki maždaug 25-35 dB.
+da 1,8 MHz a 1296 MHz: l'elenco dei balun cambia con la banda	nuo 1,8 MHz iki 1296 MHz: balunų sąrašas keičiasi su juosta
+LINEA DI DISCESA	MAITINIMO LINIJA
+Coassiale	Koaksialinė
+Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.	Su simetrine atvira linija ekrano nėra: bendrasis režimas atsiranda tik dėl nesimetrijos. Kortelė skaičiuoja koaksialinį atvejį; atvirai linijai naudok Linijos (TL) su derintuvu.
+Lungo il boom	Išilgai strėlės
+m → palo	m → stiebas
+Discesa sul palo	Žemyn stiebu
+Fino alla stazione	Iki stoties
+Calza a massa sul palo / traliccio	Ekranas įžemintas prie stiebo / bokšto
+Messa a terra all'ingresso stazione	Įžeminimas stoties įėjime
+BALUN DA CONFRONTARE	LYGINAMI BALUNAI
+8 spire di RG-213 su 110 mm: induttanza di Wheeler, capacita' propria di Medhurst.	8 vijos RG-213 ant 110 mm: induktyvumas pagal Wheeler, savoji talpa pagal Medhurst.
+Q 50 e capacita' propria stimata: l'impedenza vera del choke va misurata.	Q 50 ir apskaičiuota savoji talpa: tikrąją droselio varžą reikia išmatuoti.
+Toroide 1:1 in ferrite come RLC parallelo a Q basso.	1:1 ferito toroidas kaip lygiagreti RLC su mažu Q.
+5 kOhm al picco (10 MHz con il mix 31, 25 MHz con il mix 43): valori tipici di 12 spire su 2 x FT-240.	5 kOhm piko metu (10 MHz su mišiniu 31, 25 MHz su mišiniu 43): tipinės 12 vijų ant 2 x FT-240 reikšmės.
+λ/2 coassiale 4:1: alimentazione bilanciata, calze unite.	koaksialinis λ/2 4:1: simetrinis maitinimas, ekranai sujungti.
+modo comune residuo come 600 ohm risonanti a f0 (Q 3): dipende dal montaggio.	likutinis bendrasis režimas kaip 600 omų rezonansas ties f0 (Q 3): priklauso nuo montavimo.
+Manicotto λ/4 (sleeve): linea λ/4 in corto tra calza e manicotto, alta impedenza a f0.	λ/4 įvorė: trumpai sujungta λ/4 linija tarp ekrano ir įvorės, didelė varža ties f0.
+Z0 del manicotto 50 ohm e 0,08 dB di perdita sul quarto d'onda.	Įvorės Z0 50 omų ir 0,08 dB nuostoliai ketvirtbangyje.
+10 perline in ferrite sulla calza.	10 ferito karoliukų ant ekrano.
+40 ohm per perlina a 144 MHz (mix 61), 100 ohm sopra 30 MHz con il mix 43: valori tipici dei cataloghi.	40 omų karoliukui ties 144 MHz (mišinys 61), 100 omų virš 30 MHz su mišiniu 43: tipinės katalogo reikšmės.
+Caso mostrato	Rodomas atvejis
+premi Calcola il confronto	spustelėk Skaičiuoti palyginimą
+Corrente lungo la calza, dal dipolo verso il basso	Srovė išilgai ekrano, nuo dipolio žemyn
+Vista laterale: corrente sulla calza	Šoninis vaizdas: srovė ekrane
+F/R medio	Vidutinis F/R
+Z / ROS	Z / SWR
+Perdita nel balun	Nuostoliai balune
+Potenza dissipata nel balun a 1 kW	Balune išsklaidoma galia esant 1 kW
+Banda con calza < 5 %	Juosta, kurioje ekrano srovė < 5 %
+Le voci in grigio sono balun dell'altra banda e si attivano scegliendo la frequenza. In HF conta anche la calza fino alla stazione (messa a terra), in VHF/UHF il tratto sul boom e sul palo. La calza e' un filo attaccato a un lato del punto di alimentazione, come nella realta' senza balun; il balun e' un'impedenza di modo comune sul primo tratto.	Pilki įrašai yra balunai kitai juostai; jie įsijungia pasirinkus dažnį. HF diapazone skaičiuojamas ir ekranas iki stoties (įžemintas), VHF/UHF dalis ant strėlės ir stiebo. Ekranas yra laidas, sujungtas su viena maitinimo taško puse, kaip realybėje be baluno; balunas yra bendrojo režimo varža pirmojoje atkarpoje.
+La vetroresina non conduce: il telaio non entra nel NEC, restano solo le calze dei cavi di fase.	Stiklo pluoštas nelaidus: rėmas į NEC nepatenka, lieka tik fazinių linijų ekranai.
+Includi palo sotto il telaio	Įtraukti stiebą po rėmu
+Cavi di fase lungo i montanti	Fazinės linijos palei statramsčius
+Rotore e controventi	Rotorius ir atotampos
+Prevista: rotore e controventi come fili (servono le misure del traliccio).	Planuojama: rotorius ir atotampos kaip laidai (reikia bokšto matmenų).
+Materiale	Medžiaga
+rosso = parti del telaio modellate come fili NEC · tratteggio = calza dei cavi di fase	raudona = rėmo dalys, modeliuotos kaip NEC laidai · brūkšninė = fazinių linijų ekranas
+Polarizzazione orizzontale: i montanti verticali sono poco accoppiati; la traversa orizzontale e i cavi di fase no.	Horizontali poliarizacija: vertikalūs statramsčiai silpnai susieti; horizontalus skersinis ir fazinės linijos – ne.
+Polarizzazione verticale: i montanti e il palo sono paralleli agli elementi e pesano di piu'; la traversa orizzontale poco.	Vertikali poliarizacija: statramsčiai ir stiebas lygiagretūs elementams ir svarbesni; horizontalus skersinis mažai.
+Confronto senza / con telaio	Palyginimas be / su rėmu
+Diagramma orizzontale sovrapposto	Horizontali diagrama uždėta
+premi Calcola confronto	spustelėk Skaičiuoti palyginimą
+Stack: calcola prima il modello	Grupė: pirmiausia apskaičiuok modelį
+Stack: calcolo senza e con telaio...	Grupė: skaičiuojama be ir su rėmu...
+Pezzo	Dalis
+Collegato	Prijungta
+Cavi	Kabeliai
+Senza telaio	Be rėmo
+Con telaio	Su rėmu
+Z ingresso divisore	Skirstytuvo įėjimo Z
+senza telaio	be rėmo
+con telaio	su rėmu
+Stack: confronto senza / con telaio fatto	Grupė: palyginimas be / su rėmu baigtas
+CARICHI HF	HF APKROVOS
+INSERISCI NEL MODELLO	ĮTERPTI Į MODELĮ
+Il cappello va all'estremo del filo (b o e), il linear loading nel punto scelto del filo.	Kepurė dedama laido gale (b arba e), linear loading pasirinktame laido taške.
+Inserisci nel modello	Įterpti į modelį
+Gia' approvati nel bozzetto Carichi: Q di L e C, f0, Z per banda, tensione e corrente sul componente. Qui si aggiungono i tipi costruttivi.	Jau patvirtinta eskize Apkrovos: L ir C Q, f0, Z pagal juostas, įtampa ir srovė komponente. Čia pridedami konstrukcijos tipai.
+Trappola coassiale	Koaksialinis spąstas
+il filo interno va saldato all'inizio dell'avvolgimento del centrale (invertendo i capi la risonanza scende di circa 50 kHz).	centrinė gysla prilituojama prie vidurinės apvijos pradžios (sukeitus galus rezonansas sumažėja apie 50 kHz).
+Calcola spire per f0	Skaičiuoti vijas f0
+Spire dell'avvolgimento (anche frazionarie).	Apvijos vijos (ir trupmeninės).
+la f0 reale si scosta di qualche per cento, misurala con il grid-dip o il VNA e correggi le spire.	tikrasis f0 skiriasi keliais procentais: išmatuok jį dip metru ar VNA ir pataisyk vijas.
+Blocca	Blokuoja
+dipolo con	dipolis su
+Filo Ø	Laidas Ø
+Calcola C per f0	Skaičiuoti C f0
+mm  Filo Ø	mm  Laidas Ø
+mm  Passo	mm  Žingsnis
+mm  Spire	mm  Vijos
+MHz  dal centro	MHz  nuo centro
+m  Braccio	m  Petys
+m  Filo dell'elemento Ø	m  Elemento laidas Ø
+Calcola spire per la risonanza	Skaičiuoti vijas rezonansui
+Piega	Lenkimas
+m  Distanza tra i fili	m  Atstumas tarp laidų
+Calcola la piega per la risonanza	Skaičiuoti lenkimą rezonansui
+Raggi	Stipinai
+m  Filo Ø	m  Laidas Ø
+Verticale alto	Vertikalės aukštis
+m  Frequenza	m  Dažnis
+MHz  Filo Ø	MHz  Laidas Ø
+Calcola i raggi per la risonanza	Skaičiuoti stipinus rezonansui
+L misurata	Išmatuotas L
+MHz  Autorisonanza f0	MHz  Savasis rezonansas f0
+Cappello capacitivo in punta al verticale	Talpinė kepurė vertikalės viršuje
+Bobina dalle misure	Ritė pagal matmenis
+Reattanza del cappello in frequenza	Kepurės reaktyvioji varža pagal dažnį
+impedenza della trappola	spąsto varža
+Si comporta da	Elgiasi kaip
+Potenza persa	Prarasta galia
+Potenza del trasmettitore per le tensioni e le perdite della tabella.	Siųstuvo galia lentelės įtampoms ir nuostoliams.
+banda bassa: corrente in ventre sqrt(P/73) e alla trappola I0 cos(beta a); banda bloccata: tensione alla punta del dipolo interno I0 Z0 divisa tra la trappola e la radiazione.	žemoji juosta: srovė pūpsnyje sqrt(P/73) ir spąste I0 cos(beta a); blokuota juosta: įtampa vidinio dipolio gale I0 Z0, padalyta tarp spąsto ir spinduliuotės.
+corrente in ventre sqrt(P/73) e al carico I0 cos(beta a), con a la distanza dal centro.	srovė pūpsnyje sqrt(P/73) ir apkrovoje I0 cos(beta a), kur a – atstumas nuo centro.
+Risonanza propria f0	Savasis rezonansas f0
+Q ideale	Idealus Q
+Q della trappola alla risonanza.	Spąsto Q rezonanse.
+piu' la perdita del dielettrico (tangente 3e-4 PE, 2e-4 PTFE). Le trappole coassiali misurate stanno di solito tra Q 100 e 300.	plius dielektriniai nuostoliai (tangentas 3e-4 PE, 2e-4 PTFE). Išmatuotų koaksialinių spąstų Q paprastai būna nuo 100 iki 300.
+Lunghezza di cavo	Kabelio ilgis
++ 10 cm per le saldature	+ 10 cm litavimui
+R in parallelo equivalente	Ekvivalentinė lygiagreti R
+Q x w0 L: e' il carico LD che entra nel modello	Q x w0 L: tai LD apkrova, patenkanti į modelį
+Braccio del dipolo alla banda bassa con la trappola, confrontato con il braccio a grandezza piena (71,3 / f).	Dipolio petys žemojoje juostoje su spąstu, palyginti su pilno dydžio pečiu (71,3 / f).
+il NEC con la trappola come carico da' la misura giusta.	NEC su spąstu kaip apkrova duoda teisingą ilgį.
+Induttanza misurata	Išmatuotas induktyvumas
+dalla misura	iš matavimo
+Autorisonanza	Savasis rezonansas
+Frequenza a cui la bobina risuona da sola con la sua capacita' propria.	Dažnis, kuriame ritė pati rezonuoja su savo savąja talpa.
+capacita' propria dalla tabella di Medhurst in funzione di lunghezza / diametro, valida per bobine a strato singolo lontane da masse metalliche.	savoji talpa iš Medhurst lentelės pagal ilgį / skersmenį, galioja vieno sluoksnio ritėms toli nuo metalinių masių.
+Q della bobina alla frequenza di lavoro.	Ritės Q darbo dažnyje.
+resistenza del filo per effetto pelle per un fattore di vicinanza 1 + 2 (d/p)^2 (d filo, p passo): Medhurst da' valori simili per bobine con lunghezza circa uguale al diametro.	laido varža dėl paviršiaus efekto, padauginta iš artumo koeficiento 1 + 2 (d/p)^2 (d laidas, p žingsnis): Medhurst pateikia panašias reikšmes ritėms, kurių ilgis panašus į skersmenį.
+Reattanza della piega	Lenkimo reaktyvioji varža
+Z0 della linea	Linijos Z0
+Q della piega	Lenkimo Q
+Capacita' del cappello	Kepurės talpa
+Capacita' del cappello verso lo spazio.	Kepurės talpa erdvės atžvilgiu.
+somma dei raggi (filo sottile, 2 pi eps0 l / (ln(2l/a) - 1)) e dell'anello che satura verso il disco pieno (8 eps0 r): i raggi si fanno schermo a vicenda. Inserito come fili il NEC lo calcola esatto.	stipinų suma (plonas laidas, 2 pi eps0 l / (ln(2l/a) - 1)) ir žiedas, kuris įsisotina iki pilno disko (8 eps0 r): stipinai vienas kitą ekranuoja. Įterptą kaip laidus, NEC ją apskaičiuoja tiksliai.
+in punta al verticale	vertikalės viršuje
+Altezza per la risonanza	Aukštis rezonansui
+tan(beta h) = 1 / (w C Z0), x 0,95	tan(beta h) = 1 / (w C Z0), x 0,95
+Effetto sul verticale	Poveikis vertikalei
+Carichi HF: apri un modello nella finestra principale.	HF apkrovos: atidaryk modelį pagrindiniame lange.
+Come fili si inseriscono il linear loading e il cappello capacitivo: per gli altri scegli "Come carico".	Linear loading ir talpinė kepurė įterpiamos kaip laidai: kitiems pasirink «Kaip apkrovą».
+Il cappello capacitivo si inserisce come fili.	Talpinė kepurė įterpiama kaip laidai.
+RLC parallelo	Lygiagreti RLC
+Effetto sul dipolo	Poveikis dipoliui
+Accorciamento del braccio rispetto al quarto d'onda pieno (71,3 / f) con il carico in quel punto.	Peties sutrumpėjimas, palyginti su pilnu ketvirtbangiu (71,3 / f), su apkrova tame taške.
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), x 0,95 per l'effetto di estremita'.	apkrauto peties linijos modelis X = Z0 (cot(beta b) - tan(beta a)), x 0,95 dėl galinio efekto.
+Esegui il test	Paleisti testą
+Il guadagno può essere mostrato corretto con l'AGT (già previsto nell'ottimizzatore).	Stiprinimą galima rodyti pataisytą pagal AGT (jau numatyta optimizatoriuje).
+Controllo prima/dopo il calcolo	Patikra prieš/po skaičiavimo
+Esito	Rezultatas
+⚠ Uno o piu' controlli oltre ±0,2 dB: verifica la segmentazione (Struttura 3D > Segmentazione... e Verifica segmentazione).	⚠ Viena ar kelios patikros už ±0,2 dB ribų: peržiūrėk segmentavimą (3D struktūra > Segmentavimas... ir Tikrinti segmentavimą).
+Tutti i controlli entro ±0,2 dB.	Visos patikros ±0,2 dB ribose.
+Linea a finestra 450	Langinė linija 450 omų
+Premi Calcola: il NEC calcola l'impedenza del modello aperto a ogni frequenza.	Spustelėk Skaičiuoti: NEC apskaičiuoja atidaryto modelio varžą kiekviename dažnyje.
+Perdita nella linea	Linijos nuostoliai
+Perdita totale	Bendri nuostoliai
+Tipo di accordatore tra la linea e il trasmettitore (50 Ω).	Derintuvo tipas tarp linijos ir siųstuvo (50 Ω).
+perdita stimata dal Q caricato della rete (Qn = sqrt(Rmax/Rmin - 1), due sezioni per T e Pi-greco) e dal Q della bobina; TLW di N6BV calcola i componenti uno per uno e puo' dare qualche decimo di dB diverso.	nuostoliai įvertinti pagal tinklo apkrautą Q (Qn = sqrt(Rmax/Rmin - 1), dvi sekcijos T ir Pi) ir ritės Q; N6BV TLW skaičiuoja komponentus po vieną ir gali skirtis keliomis dB dešimtosiomis.
+Esempio: doppietto 2 × 20 m (ZS6BKW/G5RV). Avviso quando l'accordatore vede meno di 20 Ω: perdite alte, si suggerisce di allungare o accorciare la linea. Linea con perdite come TLW (N6BV, ARRL).	Pavyzdys: dubletas 2 × 20 m (ZS6BKW/G5RV). Įspėjimas, kai derintuvas mato mažiau nei 20 Ω: dideli nuostoliai, siūloma pailginti arba sutrumpinti liniją. Linija su nuostoliais kaip TLW (N6BV, ARRL).
+USA costa est	JAV rytinė pakrantė
+USA costa ovest	JAV vakarinė pakrantė
+Giappone	Japonija
+Caraibi	Karibai
+TINITALY: il servizio non ha restituito un GeoTIFF	TINITALY: paslauga negrąžino GeoTIFF
+GeoTIFF compresso: non supportato	Suspaustas GeoTIFF: nepalaikomas
+GeoTIFF: tipo di dato non supportato	GeoTIFF: duomenų tipas nepalaikomas
+Il file non contiene coppie distanza / quota.	Faile nėra porų atstumas / aukštis.
+Nessuno	Nėra
+Ferriti a perline	Ferito karoliukai
+Cavo e balun: segmento della sorgente non trovato.	Kabelis ir balunas: šaltinio segmentas nerastas.
+solo palo	tik stiebas
+Acciaio zincato	Cinkuotas plienas
+Alluminio	Aliuminis
+Vetroresina	Stiklo pluoštas
+Montante sx/dx	Kairysis/dešinysis statramstis
+al boom	link strėlės
+Traversa	Skersinis
+Palo	Stiebas
+al dipolo	link dipolio
+N, femmina	N, lizdas
+senza connettori	be jungčių
+rurale tranquillo	rami kaimo vietovė
+Verticale λ/4	λ/4 vertikalė
+λ/8 di lato	λ/8 kiekvienoje pusėje
+0,37 λ di diametro	0,37 λ skersmuo
+Cappello capacitivo	Talpinė kepurė
+W8NX bassa impedenza	W8NX maža varža
+un cavo a dielettrico PTFE grosso (RG-393) o una trappola LC con condensatore da alta tensione	storas kabelis su PTFE dielektriku (RG-393) arba LC spąstas su aukštos įtampos kondensatoriumi
+La piega e' piu' lunga di lambda/8: la linea non si comporta piu' da induttanza costante, controlla la risonanza con il NEC inserendola come fili.	Lenkimas ilgesnis nei lambda/8: linija nebesielgia kaip pastovus induktyvumas, patikrink rezonansą su NEC, įterpdamas jį kaip laidus.
+La capacita' del cappello e' una stima (raggi che si fanno schermo a vicenda): per il valore esatto inseriscilo come fili e calcola con il NEC.	Kepurės talpa yra įvertis (vienas kitą ekranuojantys stipinai): tiksliai reikšmei įterpk ją kaip laidus ir skaičiuok su NEC.
+La posizione del carico e' oltre il quarto d'onda: avvicinala al centro.	Apkrovos padėtis yra už ketvirtbangio: perkelk ją arčiau centro.
+il cappello va all'estremo del filo: scegli il segmento iniziale (b) o finale (e).	kepurė dedama laido gale: pasirink pirmą (b) arba paskutinį (e) segmentą.
+il punto scelto e' troppo vicino all'estremo del filo.	pasirinktas taškas per arti laido galo.
+questo tipo entra nel modello come carico.	šis tipas patenka į modelį kaip apkrova.
+Carichi HF: fili aggiunti dal calcolatore di YA-NEC	HF apkrovos: YA-NEC skaičiuoklės pridėti laidai
+Il file Touchstone non contiene punti di S11.	Touchstone faile nėra S11 taškų.
+Il CSV non contiene righe frequenza, Re(S11), Im(S11).	CSV faile nėra eilučių dažnis, Re(S11), Im(S11).
+AGT in spazio libero, senza perdite	AGT laisvojoje erdvėje, be nuostolių
+IMPOSTAZIONI	NUOSTATOS
+Schiera Hi-Z di verticali corte	Trumpų vertikalių Hi-Z grupė
+Base del loop	Kilpos pagrindas
+Distanza, lato o diametro	Atstumas, kraštinė ar skersmuo
+Altezza delle verticali	Vertikalių aukštis
+Base del loop dal suolo	Kilpos pagrindas virš žemės
+Fase tra le file	Fazė tarp eilių
+Dipolo orizzontale basso: a meno di lambda/4 dal suolo il lobo va verso l'alto. E' il riferimento "a lobo alto" della graduatoria di IV3PRK (RDF 7,3 dB): si confronta con le riceventi a lobo basso.	Žemas horizontalus dipolis: arčiau žemės nei lambda/4 lapelis kyla aukštyn. Tai «didelio kampo» atskaita IV3PRK reitinge (RDF 7,3 dB): lyginama su mažo kampo priimančiosiomis antenomis.
+K9AY di Gary Breed K9AY (QST, settembre 1997): due loop verticali a 90 gradi sullo stesso palo, resistenza di terminazione (390 ohm tipici, si regola per il F/B), trasformatore 9:1. Qui un loop solo, rivolto verso la direzione scelta, chiuso sopra il suolo come nella pagina Ricezione (RDF). Hi-Z: RDF 7,2 dB.	K9AY, autorius Gary Breed K9AY (QST, 1997 m. rugsėjis): dvi vertikalios kilpos 90 laipsnių kampu ant to paties stiebo, apkrovos rezistorius (tipiškai 390 omų, sureguliuotas F/B), transformatorius 9:1. Čia viena kilpa, pasukta į pasirinktą kryptį, uždaryta virš žemės kaip puslapyje Priėmimas (RDF). Hi-Z: RDF 7,2 dB.
+4-square in ricezione: quattro verticali corte attive ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale. Fase vuota = nullo posteriore esatto (pi + beta d tra le file): da' la direttivita' massima teorica; le reti di fase reali (ON4UN, IV3PRK) usano fasi diverse e danno un RDF piu' basso (IV3PRK 9,4 dB). Il pulsante cerca la fase con l'RDF migliore.	Priėmimo 4-square: keturios trumpos aktyvios vertikalės lambda/8 kvadrato kampuose, spinduliuojančios išilgai įstrižainės. Tuščia fazė = tikslus galinis nulis (pi + beta d tarp eilių): duoda didžiausią teorinį kryptingumą; tikri fazavimo tinklai (ON4UN, IV3PRK) naudoja kitas fazes ir duoda mažesnį RDF (IV3PRK 9,4 dB). Mygtukas ieško fazės su geriausiu RDF.
+Schiere di verticali corte attive come quelle di Hi-Z Antennas: 2 elementi in end-fire (cardioide, lambda/8), 3 a triangolo (lato lambda/6, un vertice verso la direzione scelta), 8 in cerchio (diametro 0,37 lambda: si usano le quattro verso la direzione e quella opposta). Hi-Z: 8 in cerchio RDF 13,4 dB con il suo combinatore; il modello semplice a due file resta piu' basso. Il pulsante cerca la fase con l'RDF migliore.	Trumpų aktyvių vertikalių grupės kaip Hi-Z Antennas: 2 elementai end-fire (kardioidė, lambda/8), 3 trikampyje (kraštinė lambda/6, viena viršūnė į pasirinktą kryptį), 8 apskritime (skersmuo 0,37 lambda: naudojamos keturios kryptimi ir priešingos). Hi-Z: 8 apskritime RDF 13,4 dB su savo jungtuvu; paprastas dviejų eilių modelis lieka žemesnis. Mygtukas ieško fazės su geriausiu RDF.
+⚠ Le verticali partono dal terreno reale (GE 1 con il terreno di Sommerfeld): con il NEC-2 un filo collegato al terreno reale da' un'impedenza che dipende dal segmento della sorgente (guida del NEC-2, EZNEC). Diagramma e RDF sono indicativi; il collegamento con radiali rialzate e' in programma per tutte le riceventi.	⚠ Vertikalės prasideda nuo tikrosios žemės (GE 1 su Sommerfeld žeme): su NEC-2 laidas, prijungtas prie tikrosios žemės, duoda varžą, kuri priklauso nuo šaltinio segmento (NEC-2 vadovas, EZNEC). Diagrama ir RDF yra orientaciniai; jungimas su pakeltais radialais numatytas visoms priimančiosioms antenoms.
+fase tra le file da 120 a 300 gradi per l'RDF	fazė tarp eilių nuo 120 iki 300 laipsnių RDF
+nessuna fase con il lobo in avanti	nėra fazės su lapeliu į priekį
+Fase tra le file per l'RDF migliore: {0} gradi (RDF {1} dB). Ricalcolo...	Fazė tarp eilių geriausiam RDF: {0} laipsnių (RDF {1} dB). Perskaičiuojama...
+linea d'orizzonte	horizonto linija
+scala angolare	kampų skalė
+lobo reale sopra il piatto fino a	tikrasis lapelis virš lygaus iki
+Profilo verso	Profilis link
+Lobo verticale e angoli di arrivo a	Vertikalusis lapelis ir atvykimo kampai ties
+Cos'e' l'RDF	Kas yra RDF
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, sopra il terreno, con il peso del coseno per l'area): dice quanto l'antenna scarta il rumore che arriva da dietro. ON4UN avverte di non confrontare DMF e RDF tra loro. Fonti: W8JI e W8WWV (RDF), ON4UN Low-Band DXing cap. 7 (DMF, Tab. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.	RDF = stiprinimas norimoje kryptyje - vidutinis stiprinimas visomis kryptimis (W8JI; anksčiau vadintas SNIF, 7-ajame dešimtmetyje). Jis matuoja, kiek antena pagerina signalo/triukšmo santykį, jei triukšmas ateina vienodai iš visų krypčių; absoliutus stiprinimas neskaičiuojamas (pirminis stiprintuvas jį atgauna). Vidurkis kaip EZNEC: viršutinis pusrutulis padalytas iš visos sferos (4 pi). Su šiuo susitarimu rezultatai sutampa su IV3PRK ir W8JI/Hi-Z (vertikalė 5,07 prieš 5,06 ir 4,9; Beverage 350 m 13,5 prieš 13,66). Ribojimas: tikras triukšmas nėra tolygus (elektros linijos, vietinis QRM): todėl svarbūs ir F/B bei lapelio forma. Siunčiamosioms antenoms RDF neturi prasmės: todėl jis skaičiuojamas tik šioje kortelėje. DMF (Directivity Merit Figure, ON4UN): stiprinimas pirmyn ties 20 laipsnių elevacija minus vidutinis galinės puserdvės stiprinimas (azimutas už 90 laipsnių, virš žemės, pasvertas kosinusu pagal plotą): rodo, kiek antena atmeta iš galo ateinantį triukšmą. ON4UN įspėja nelyginti DMF ir RDF tarpusavyje. Šaltiniai: W8JI ir W8WWV (RDF), ON4UN Low-Band DXing 7 sk. (DMF, lent. 7-22, 7-24, 7-25), IV3PRK, IK0XBX.
+elevazione	elevacija
+azimut	azimutas
+azimut a {0}°	azimutas ties {0}°
+totale	iš viso
+Apertura al primo nullo (FNBW): {0}°;  lobo laterale piu' alto: {1}	Anga iki pirmojo nulio (FNBW): {0}°;  aukščiausias šoninis lapelis: {1}
+Didascalie {0} %	Etiketės {0} %
+ROS	SWR
+⚠ RDF {0} dB contro {1} della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	⚠ RDF {0} dB prieš šaltinio {1}: patikrink matmenis, apkrovą ir žemę (šaltinis gali naudoti kitą žemę ar geometriją).
+Azimut a {0}° · {1} MHz	Azimutas ties {0}° · {1} MHz
+Azimut a {0}° di elevazione	Azimutas ties {0}° elevacija
+RUMORE	TRIUKŠMAS
+Apri la scheda {0}	Atidaryti kortelę {0}
+caso mostrato: {0}	rodomas atvejis: {0}
+Rastremazioni	Teleskopiniai
+BANDA	JUOSTA
+λ/2 coassiale 4:1	koaksialinis λ/2 4:1
+Manicotto λ/4	λ/4 įvorė
+Calza del cavo e palo come fili NEC; confronto dei balun (corrente di modo comune, F/B, F/R medio, perdita, potenza a 1 kW) da 1,8 a 1296 MHz.	Kabelio ekranas ir stiebas kaip NEC laidai; balunų palyginimas (bendrojo režimo srovė, F/B, vidutinis F/R, nuostoliai, galia esant 1 kW) nuo 1,8 iki 1296 MHz.
+Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).	Statramsčiai, skersinis, stiebas ir fazinių linijų ekranai kaip NEC laidai: palyginimas be / su rėmu (stiprinimas, F/B, vidutinis F/R, lapeliai, skirstytuvo Z, Tant ir G/T).
+TIPO	TIPAS
+DATI	DUOMENYS
+TELAIO	RĖMAS
+λ/4 in tubo quadro o tondo, in cavo, Wilkinson; cavi di fase, tilt; disegno 1:1	λ/4 kvadratiniame ar apvaliame vamzdyje, kabelyje, Wilkinson; fazinės linijos, polinkis; brėžinys 1:1
+X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento	X arba +, plokštumos paslinktos λ/4; H, V, RHCP, LHCP, X-pol; ašinis santykis ir izoliacija
+Lunghezze uguali → fase uguale. Multipli di λ/2 → l'impedenza attiva si ripete al divisore. Tolleranza consigliata ± 5 mm (= ± {0}° di fase).	Vienodi ilgiai → vienoda fazė. λ/2 kartotiniai → aktyvioji varža kartojasi prie skirstytuvo. Rekomenduojamas leistinasis nuokrypis ± 5 mm (= ± {0}° fazės).
+impedenze attive delle {0} antenne dello stack in parallelo	grupės {0} antenų aktyviosios varžos lygiagrečiai
+Banda con ROS < {0}	Juosta, kurioje SWR < {0}
+? Manuale	? Vadovas
+Apre la spiegazione nel manuale	Atidaro paaiškinimą vadove
+riferimento	atskaita
+Rispetto alla singola antenna	Palyginti su viena antena
+{0} antenne ideali	{0} idealios antenos
+x la distanza DL6WU, a passi di	x DL6WU atstumas, žingsniu
+Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella.	Kairė ašis: grupės G - pavienės antenos G, nuo 0 aukštyn. Dešinė ašis: grupės F/R - pavienės antenos F/R, apversta, su 0 viršuje: kur grupė pagerina F/R, kreivė leidžiasi, o žemiausias taškas yra didžiausias pagerėjimas. G/T lieka lentelėje.
+ΔG sulla singola	ΔG virš pavienės antenos
+Chiusura del programma	Programos uždarymas
+Vuoi chiudere YA-NEC?	Ar nori uždaryti YA-NEC?
+Grazie per avermi usato: spero di esserti stato utile.	Ačiū, kad mane naudojai: tikiuosi, kad buvau naudingas.
+Sì	Taip
+ROS attivo	Aktyvusis SWR
+G realizzato	Realizuotas G
+ROS attivo massimo	Didžiausias aktyvusis SWR
+riflessi minimi	mažiausi atspindžiai
+ROS attivo alto: da non scegliere	didelis aktyvusis SWR: nesirinkti
+Documenti tecnici	Techniniai dokumentai
+Manuale d'uso	Naudotojo vadovas
+Manuale di calcolo e delle fonti	Skaičiavimų ir šaltinių vadovas
+Citazioni	Citatos
+Cerca in tutti i documenti	Ieškoti visuose dokumentuose
+Apri il PDF	Atidaryti PDF
+Nessun risultato per «{0}»	Nėra rezultatų užklausai «{0}»
+Primi {0} risultati per «{1}»	Pirmi {0} rezultatai užklausai «{1}»
+{0} risultati per «{1}»	{0} rezultatai užklausai «{1}»
+Apre la citazione {0}	Atidaro citatą {0}
+Manuale di calcolo	Skaičiavimų vadovas
+È pronta la versione {0} di YA-NEC	YA-NEC versija {0} paruošta
+È già scaricata e installata: entra in funzione quando riavvii il programma.	Ji jau atsisiųsta ir įdiegta: įsigalios paleidus programą iš naujo.
+Sul Mac non si installa da sola: scarica il nuovo .dmg dalla pagina delle versioni su GitHub.	Mac kompiuteryje ji neįsidiegia pati: atsisiųsk naują .dmg iš versijų puslapio GitHub.
+Riavvia adesso	Paleisti iš naujo dabar
+Più tardi	Vėliau
+Apri la pagina delle versioni	Atidaryti versijų puslapį
+Aggiornamento di YA-NEC	YA-NEC atnaujinimas
+È già scaricata e installata. Il programma si riavvia da solo e riapre il modello aperto.	Ji jau atsisiųsta ir įdiegta. Programa pati pasileidžia iš naujo ir vėl atidaro atidarytą modelį.
+Riavvio tra {0} s	Paleidimas iš naujo po {0} s
+Questo avviso si chiude tra {0} s	Šis pranešimas užsidarys po {0} s
+Riaperto dopo l'aggiornamento il modello che non era salvato: salvalo quando vuoi (copia in data/aggiornamenti).	Po atnaujinimo vėl atidarytas neišsaugotas modelis: išsaugok jį, kada nori (kopija aplanke data/aggiornamenti).
+Riaperto dopo l'aggiornamento il modello che era aperto.	Po atnaujinimo vėl atidarytas modelis, kuris buvo atidarytas.
+Ogni casella ha il suo fumetto con la spiegazione e la fonte. In grigio: spuntata = sempre attiva (non si spegne); non spuntata = non ancora disponibile; scelte a pillole = scelta fissa. Manuale, capitolo 21.	Kiekvienas langelis turi savo pagalbą su paaiškinimu ir šaltiniu. Pilka: pažymėta = visada aktyvus (neišsijungia); nepažymėta = dar nepasiekiama; pasirinkimas mygtukais = fiksuotas pasirinkimas. Vadovas, 21 skyrius.
+"): sorgente sempre accesa.	"): šaltinis visada aktyvus.
+' non da' un numero valido.	' nėra tinkamas skaičius.
+0 - N6NB/Cebik com'e'	0 - N6NB/Cebik, kaip yra
+0 - misure del metodo	0 - metodo matmenys
+0 = guida WR standard della banda (WR650, WR430, WR159, WR90).	0 = juostos standartinis WR bangolaidis (WR650, WR430, WR159, WR90).
+0 = stesso disco all'altro capo (eco proprio).	0 = ta pati lėkštė kitame gale (savas aidas).
+0 = stesso disco all'altro capo.	0 = ta pati lėkštė kitame gale.
+0 gradi a destra	0 laipsnių į dešinę
+0,15 lambda	0,15 lambda
+0,20 lambda	0,20 lambda
+0,25 lambda	0,25 lambda
+0,33 = un terzo dalla punta: impedenza 200-300 ohm, balun 4:1	0,33 = trečdalis nuo galo: varža 200-300 omų, balunas 4:1
+0,33 lambda	0,33 lambda
+0,6-0,7: lontano dal bordo, dove la flessione sposterebbe il feed fuori fuoco.	0,6-0,7: toli nuo krašto, kur įlinkis išstumtų švitintuvą iš židinio.
+0,625 lambda x 0,95	0,625 lambda x 0,95
+0,66 polietilene pieno (RG-58, RG-213), 0,8-0,85 dielettrico espanso.	0,66 kietas polietilenas (RG-58, RG-213), 0,8-0,85 putų dielektrikas.
+0,66 polietilene pieno, 0,8-0,85 espanso, 0,9-0,97 linea aperta.	0,66 kietas polietilenas, 0,8-0,85 putos, 0,9-0,97 atvira linija.
+0,7 x lambda/4	0,7 x lambda/4
+0,75 lambda guida	0,75 bangolaidžio lambda
+0,75 x 0,375 lambda	0,75 x 0,375 lambda
+1 - anello alimentato	1 - maitinama kilpa
+1 - radiatore	1 - spinduolis
+1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N.	1 = viena vija (kaip anksčiau). Su daugiau vijų Rr auga su N², paviršiaus efekto nuostoliai su N.
+1 cavo	1 kabelis
+1-2-3 elementi	1-2-3 elementai
+1. Obiettivi e pesi	1. Tikslai ir svoriai
+1.2 - Vento, bilanciamento, divisori, balun, Yagi incrociate	1.2 - Vėjas, balansavimas, skirstytuvai, balunai, sukryžiuotos Yagi
+1.3 - Antenne riceventi abilitate	1.3 - Priimančiosios antenos įjungtos
+10 GHz con disco grande: oltre a superficie e puntamento contano la deformazione termica e da vento (ATA: 0,7 mm RMS di notte, 3 mm di giorno al sole), la flessione dei puntoni e lo spreading da librazione.	10 GHz su didele lėkšte: be paviršiaus ir nukreipimo svarbi šiluminė ir vėjo deformacija (ATA: 0,7 mm RMS naktį, 3 mm dieną saulėje), atramų įlinkis ir sklaida dėl libracijos.
+100 mm: stampa al 100 %, senza "adatta alla pagina"	100 mm: spausdinti 100 %, be «pritaikyti puslapiui»
+1005/f piedi	1005/f pėdų
+144 isol.	144 izol.
+2 - riflettore	2 - reflektorius
+2 - riflettori	2 - reflektoriai
+2 in parallelo	2 lygiagrečiai
+2 lati	2 kraštinės
+2. Variabili che l'ottimizzatore puo' cambiare	2. Kintamieji, kuriuos optimizatorius gali keisti
+200 Ω con balun 4:1	200 Ω su balunu 4:1
+25 tondo	25 apvalus
+3 - direttori	3 - direktoriai
+3 gruppi	3 grupės
+3 o 4. Con 2 non c'e' rigidezza fuori dal loro piano.	3 arba 4. Su 2 nėra standumo už jų plokštumos ribų.
+3. Registro dei passi - clic su una riga per riprenderla	3. Žingsnių žurnalas - spustelėk eilutę, kad ją atkurtum
+3/4 lambda x 0,95	3/4 lambda x 0,95
+300 Ω o balun 4:1	300 Ω arba balunas 4:1
+36 Ω + terra	36 Ω + žemė
+4 - tutto insieme	4 - viskas kartu
+4 lati	4 kraštinės
+4 sorgenti: vedi tabella	4 šaltiniai: žr. lentelę
+432 isol.	432 izol.
+45 controlli dei dati approvati da IC8TEM il 15/11/2026: soglie e spiegazioni nel manuale, capitolo 11.	45 duomenų patikros, IC8TEM patvirtintos 15/11/2026: slenksčiai ir paaiškinimai vadove, 11 skyriuje.
+6 piedi circa 18 dBi, 12 piedi circa 20,5 dBi	6 pėdos apie 18 dBi, 12 pėdų apie 20,5 dBi
+75 ohm ideale	75 omai idealu
+8 volte piu' lungo del raggio. Con fili grossi o segmenti corti (tubi spessi in UHF, elementi vicini,\n	8 kartus ilgesnis už spindulį. Su storais laidais ar trumpais segmentais (stori vamzdžiai UHF, arti esantys elementai,\n
+9 fili	9 laidai
+9 fili a 0,1 λ	9 laidai ties 0,1 λ
+Accorciamento del pilotato	Maitinamo elemento sutrumpinimas
+Accorciamento oltre l'8%: la stima lineare non e' affidabile, verifica con il NEC.	Sutrumpinimas virš 8 %: tiesinis įvertis nepatikimas, patikrink su NEC.
+Allega il modello aperto	Pridėti atidarytą modelį
+Allega il registro di oggi	Pridėti šiandienos žurnalą
+Altezza rms dell'onda e quota dell'antenna sul mare, in Diagrammi > Terreno reale.	Bangų RMS aukštis ir antenos aukštis virš jūros, skiltyje Diagramos > Tikrasis reljefas.
+Ampiezza della scansione attorno alla frequenza, per il grafico dell'impedenza.	Skenavimo plotis aplink dažnį, varžos grafikui.
+Antenna a	Antena ties
+Applica la freccia al modello NEC	Taikyti įlinkį NEC modeliui
+Approvata, in preparazione: non ancora attiva in questa versione.	Patvirtinta, rengiama: šioje versijoje dar neaktyvu.
+Apri la cartella	Atidaryti aplanką
+Apri un modello nella finestra principale	Atidaryk modelį pagrindiniame lange
+Apro il modello e il diagramma 3D resta vuoto.	Atidarau modelį ir 3D vaizdas lieka tuščias.
+Area al vento dell'antenna	Antenos vėjo plotas
+Area al vento totale	Bendras vėjo plotas
+Area al vento totale e lista di taglio	Bendras vėjo plotas ir pjovimo sąrašas
+Attenzione: non va usato con fili che si incontrano ad angolo o con diametri diversi alla giunzione.\n	Dėmesio: nenaudoti su laidais, kurie susijungia kampu arba skirtingų skersmenų jungtyje.\n
+Bobina di carico per la risonanza	Prailginimo ritė rezonansui
+Boom con il tirante	Strėlė su atotampa
+C1 in serie con la loop	C1 nuosekliai su kilpa
+C1 serie, C2 parallelo	C1 nuosekliai, C2 lygiagrečiai
+C2 in parallelo all'ingresso	C2 lygiagrečiai įėjimui
+Calcolatori > Antenne riceventi: Dipolo basso, K9AY, 4-square RX, Hi-Z 2/3/8 elementi, con la fase tra le file ottimizzata per l'RDF e l'avviso sul collegamento a terra.	Skaičiuoklės > Priimančiosios antenos: žemas dipolis, K9AY, 4-square RX, Hi-Z 2/3/8 elementai, su faze tarp eilių, optimizuota RDF, ir įspėjimu apie įžeminimo jungtį.
+Calcoli meccanici (Vento e Bilanciamento), Calcolatori > Divisori e Yagi incrociate, Oggetti > Cavo e balun e telaio dello stack, Carichi HF.	Mechaniniai skaičiavimai (Vėjas ir Balansavimas), Skaičiuoklės > Skirstytuvai ir sukryžiuotos Yagi, Objektai > Kabelis ir balunas bei grupės rėmas, HF apkrovos.
+Calcolo di predimensionamento: per l'installazione vale il progetto di un tecnico abilitato.	Preliminarus dimensionavimas: montavimui galioja kvalifikuoto techniko projektas.
+Candidati da controllare	Tikrintini kandidatai
+Categoria	Kategorija
+Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.	Vietos atvirumo kategorija (NTC 2018, lent. 3.3.II ir pav. 3.3.2): priklauso nuo reljefo šiurkštumo klasės (A miestų centrai ... D vietovės be kliūčių, jūra) ir atstumo iki kranto. I = atvira pakrantė ar jūra, V = miesto centras.
+Cebik, poi NEC	Cebik, paskui NEC
+Centro della banda scelta:\n	Pasirinktos juostos centras:\n
+Con ghiaccio	Su ledu
+Con ghiaccio: vento ridotto a 0,6 volte e ghiaccio radiale della casella a destra (combinazione semplificata ISO 12494).	Su ledu: vėjas sumažintas iki 0,6 karto ir radialinis ledas iš langelio dešinėje (supaprastintas derinys ISO 12494).
+Con lo stesso seme la prova si ripete uguale.	Su ta pačia sėkla testas kartojasi vienodai.
+Condizione della sorgente non capita ("	Šaltinio sąlyga nesuprasta ("
+Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.	Iš karto patikrina GitHub, nelaukdamas 3 minučių. Jei yra nauja versija, ją atsisiunčia, praneša ir paleidžia iš naujo kaip automatinis atnaujinimas (10 sekundžių, modelis vėl atsidaro). Veikia ir išjungus automatinį atnaujinimą.
+Controllato sempre dalla verifica della segmentazione e negli Avvisi (8 con il kernel normale, 2 con il kernel esteso).	Visada tikrinama segmentavimo patikra ir Įspėjimuose (8 su įprastu branduoliu, 2 su išplėstiniu branduoliu).
+Copie per candidato	Kopijos kandidatui
+Coppia sulla staffa boom-mast	Sukimo momentas strėlės-stiebo apkaboje
+Crea lo zip in data/segnalazioni e apre la pagina «Nuova segnalazione» del GitHub con il testo gia' scritto. Lo zip lo alleghi tu, a mano: il programma non invia nulla da solo.	Sukuria zip failą aplanke data/segnalazioni ir atidaro GitHub puslapį «New issue» su jau parašytu tekstu. Zip failą pridedi pats, rankiniu būdu: programa pati nieko nesiunčia.
+Curvatura terrestre, in Diagrammi > Terreno reale.	Žemės kreivumas, skiltyje Diagramos > Tikrasis reljefas.
+Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).	Skersmuo už Cebiko formulių intervalo (nuo 1E-6 iki 1E-2 lambda).
+Distanza e tipo del secondo terreno: approvato per la 1.5 (Terreno reale 2).	Antrosios žemės atstumas ir tipas: patvirtinta 1.5 versijai (Tikrasis reljefas 2).
+Distanze di stack HF	HF grupės atstumai
+Distanze di stack: accoppiamento e distanza migliore	Grupės atstumai: ryšys ir geriausias atstumas
+Dopo l'ottimizzazione, i risultati migliori che passano al controllo con le tolleranze. 0 = nessun controllo.	Po optimizavimo geriausi rezultatai patenka į patikrą su leistinaisiais nuokrypiais. 0 = jokios patikros.
+Estremi molto bassi: attenzione a persone e animali (tensioni alte alle punte).	Labai žemi galai: saugokis žmonių ir gyvūnų (aukštos įtampos galuose).
+F/B peggiore	Blogiausias F/B
+File .weq: le linee con TLParms di AutoEZ (cavi con perdite) usano Zo e VF nominali e nessuna perdita: la scheda TL di NEC e' senza perdite.	.weq failas: linijos su AutoEZ TLParms (kabeliai su nuostoliais) naudoja vardinius Zo ir VF ir be nuostolių: NEC TL kortelė yra be nuostolių.
+Filo riflettore	Reflektoriaus laidas
+Filo ripiegato	Sulenktas laidas
+Forcina lunga (oltre 0,2 lambda): conviene stringere l'interasse o usare conduttori piu' grossi.	Ilgas hairpin (daugiau nei 0,2 lambda): geriau sumažinti atstumą arba naudoti storesnius laidininkus.
+Forza del vento di progetto	Skaičiuojamoji vėjo jėga
+Forza l'aggiornamento	Priverstinis atnaujinimas
+Freccia della corda: di quanto la rete sul tratto diritto resta sotto il paraboloide a meta' campata (entra nella sfaccettatura). Massa totale degli arcarecci {4:0.00} kg{5}.	Stygos įlinkis: kiek tiesios atkarpos tinklas yra žemiau paraboloido tarpatramio viduryje (įeina į briaunavimą). Diržų bendra masė {4:0.00} kg{5}.
+Freccia tolta dal modello.	Įlinkis pašalintas iš modelio.
+Ghiaccio radiale	Radialinis ledas
+I file MMANA si risegmentano sempre per il NEC-2 (manuale, capitolo 10).	MMANA failai visada persegmentuojami NEC-2 (vadovas, 10 skyrius).
+I lobi si leggono nella tabella delle distanze di stack.	Lapeliai skaitomi grupės atstumų lentelėje.
+INT (arrotonda), FIX (tronca), MOD, MAX, MIN, ODD (intero dispari: utile per i segmenti del filo alimentato).\n	INT (apvalina), FIX (nupjauna), MOD, MAX, MIN, ODD (nelyginis sveikasis: naudinga maitinamo laido segmentams).\n
+Il NEC2 normale tratta ogni filo come una linea sottile: va bene finche' il segmento e' almeno\n	Įprastas NEC2 kiekvieną laidą traktuoja kaip ploną liniją: tai galioja, kol segmentas yra bent\n
+Il filo riflettore singolo da' un miglioramento molto piccolo (Cebik): meglio lo schermo o i 9 fili.	Vienas reflektoriaus laidas duoda labai mažą pagerėjimą (Cebik): geriau ekranas arba 9 laidai.
+Il mast supera lo snervamento: mast piu' grosso o sbalzo piu' corto.	Stiebas viršija takumo ribą: storesnis stiebas arba trumpesnė konsolė.
+Impedenza del cavo	Kabelio varža
+In un'altra forma: il controllo r5 dei Controlli dei dati segnala il guadagno sopra il massimo fisico per la lunghezza del boom.	Kita forma: Duomenų patikrų patikra r5 pažymi stiprinimą, viršijantį fizinį maksimumą pagal strėlės ilgį.
+Induttanza con N² (spire vicine) e modello NEC a una spira: il NEC qui verifica solo la geometria della spira singola.	Induktyvumas su N² (glaudžios vijos) ir vienos vijos NEC modelis: čia NEC tikrina tik tos vienos vijos geometriją.
+Interasse della forcina	Hairpin atstumas
+Isole (tranne Sicilia e Sardegna) e mare aperto	Salos (išskyrus Siciliją ir Sardiniją) ir atvira jūra
+Kernel esteso del NEC2 (scheda EK).\n	Išplėstinis NEC2 branduolys (EK kortelė).\n
+L'interasse della forcina deve essere maggiore del diametro dei conduttori.	Hairpin atstumas turi būti didesnis už laidininko skersmenį.
+La Slim Jim chiude in alto il radiatore con un filo ripiegato verso il basso, fino a poco sopra lo stub.	Slim Jim uždaro spinduolį viršuje žemyn sulenktu laidu, iki pat virš šleifo.
+La fa la finestra Verifica della segmentazione (pulsante sopra).	Tai atlieka langas Segmentavimo patikra (mygtukas viršuje).
+La forcina e' simmetrica: non sbilancia il diagramma come il gamma. Serve comunque un balun o un choke al punto di alimentazione.	Hairpin yra simetriškas: jis neiškreipia diagramos kaip gama. Maitinimo taške vis tiek reikia baluno ar droselio.
+La forcina funziona solo con R del pilotato minore dell'impedenza del cavo: per R maggiore usa il gamma o un trasformatore.	Hairpin veikia tik kai maitinamo elemento R mažesnė už kabelio varžą: didesnei R naudok gamą arba transformatorių.
+La prepara IC8TEM: non ancora attiva.	IC8TEM ją rengia: dar neaktyvi.
+Le sei regole del Geometry Check di EZNEC, a ogni calcolo, nella linguetta Avvisi.	Šešios EZNEC Geometry Check taisyklės, kiekviename skaičiavime, kortelėje Įspėjimai.
+Leeson: senza correzione Z = {0:0.0} {1}j{2:0.0} ohm (con la correzione {3:0.0} {4}j{5:0.0} ohm).	Leeson: be pataisos Z = {0:0.0} {1}j{2:0.0} ohm (su pataisa {3:0.0} {4}j{5:0.0} ohm).
+Località	Vieta
+Loop orizzontale di 1 λ	Horizontali 1 λ kilpa
+Lunghezza del pilotato	Maitinamo elemento ilgis
+Lunghezza della forcina	Hairpin ilgis
+Mette nello zip il modello aperto (.nec), anche se non e' salvato.	Įdeda į zip atidarytą modelį (.nec), net jei jis neišsaugotas.
+Mette nello zip il registro di oggi della cartella registri.	Įdeda į zip šiandienos žurnalą iš aplanko logs.
+Momenti al mast	Momentai stiebe
+Momento al cuscinetto	Momentas ties guoliu
+NEC: risonanza cercata dal motore	NEC: rezonansą ieško variklis
+NOTE SU QUESTA VERSIONE (fase 0)\n	PASTABOS APIE ŠIĄ VERSIJĄ (fazė 0)\n
+NUOVO · sopra il terreno: quote, distanze, angoli di partenza voluti	NAUJA · virš žemės: aukščiai, atstumai, norimi spinduliavimo kampai
+Nel modello non ci sono elementi orizzontali diritti	Modelis neturi tiesių horizontalių elementų
+Nella tabella dello stack e negli Oggetti del modello (telaio dello stack, divisori).	Grupės lentelėje ir modelio Objektuose (grupės rėmas, skirstytuvai).
+Nelle schede di geometria scrivere le espressioni senza spazi, per esempio:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n	Geometrijos kortelėse rašyk išraiškas be tarpų, pavyzdžiui:  GW 1 NS 0 -L/2 0 0 L/2 0 R.\n
+Nessuna distanza proposta	Atstumas nepasiūlytas
+Nessuna distanza proposta: tutte superano il ROS attivo massimo.	Atstumas nepasiūlytas: visi viršija didžiausią aktyvųjį SWR.
+Niente indirizzo IP, niente e-mail, niente nomi utente nei file: il percorso della cartella personale diventa «~». Senza account GitHub puoi mandare lo zip come preferisci.	Failuose nėra IP adreso, el. pašto, naudotojų vardų: namų aplanko kelias tampa «~». Be GitHub paskyros zip gali siųsti, kaip nori.
+Non ancora automatica: si fa a mano con il test AGT negli Avvisi (ARRL 24a, 4nec2).	Dar ne automatiškai: tai daroma rankiniu būdu su AGT testu Įspėjimuose (ARRL 24-asis, 4nec2).
+Numero di spire	Vijų skaičius
+Ogni copia ha le misure spostate a caso entro le tolleranze della linguetta Tolleranze (di partenza: lunghezza ±1 mm, posizione ±2 mm, diametro ±0,1 mm).	Kiekvienos kopijos matmenys atsitiktinai paslinkti kortelės Leistinieji nuokrypiai ribose (numatytai: ilgis ±1 mm, padėtis ±2 mm, skersmuo ±0,1 mm).
+Oltre al modello aperto, partenze scelte a caso tra minimo e massimo di ogni variabile. 0 = come prima.	Be atidaryto modelio, pradžios, atsitiktinai parinktos tarp kiekvieno kintamojo minimumo ir maksimumo. 0 = kaip anksčiau.
+Pagina Rumore dal cielo vero della sopralinguetta Rumore/GT/Stack: il calcolo di skynoise portato in C# (lettura delle mappe HEALPix, interpolazione, tempo siderale, coordinate, Luna) e le due mappe di G8ONH in data/cielo.	Kortelės Triukšmas/GT/Grupė puslapis Tikrojo dangaus triukšmas: skynoise skaičiavimas perkeltas į C# (HEALPix žemėlapių skaitymas, interpoliacija, žvaigždinis laikas, koordinatės, Mėnulis) ir du G8ONH žemėlapiai aplanke data/cielo.
+Partenze a caso	Atsitiktinės pradžios
+Perimetro Cebik	Cebiko perimetras
+Peso del boom	Strėlės svoris
+Pi-greco	Pi tinklas
+Prepara la segnalazione	Paruošti ataskaitą
+Proposta	Pasiūlymas
+Prova nec2c a 145 MHz (tubi 12 mm a 40 mm): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.	nec2c testas ties 145 MHz (12 mm vamzdžiai 40 mm atstumu): 30 mm -> 45 + j23 ohm, 35 mm -> 60 + j24 ohm. Slim Jim: 50 mm -> 48 + j7 ohm.
+Quando serve: rapporto segmento/raggio fra 2 e 8 circa (sotto 2 nessuno dei due e' affidabile).\n	Kada reikia: segmento/spindulio santykis maždaug tarp 2 ir 8 (žemiau 2 nė vienas nepatikimas).\n
+Quota s.l.m.	Aukštis v. j. l.
+R del pilotato	Maitinamo elemento R
+ROS attivo minimo {0}	Mažiausias aktyvusis SWR {0}
+Raggio equivalente dei due conduttori	Dviejų laidininkų ekvivalentinis spindulys
+Reattanza del pilotato adesso: se e' positiva il pilotato va accorciato di piu'.	Dabartinė maitinamo elemento reaktyvioji varža: jei ji teigiama, maitinamą elementą reikia trumpinti daugiau.
+Reattanza della forcina	Hairpin reaktyvioji varža
+Reattanza voluta del pilotato	Norima maitinamo elemento reaktyvioji varža
+Reattanza: oltre kl = pi/2 (o conduttore troppo grosso) la formula dell'AEH non vale, usa il NEC.	Reaktyvioji varža: už kl = pi/2 (arba su per storu laidininku) AEH formulė negalioja, naudok NEC.
+Reinstalla la versione attuale	Iš naujo įdiegti dabartinę versiją
+Rel Z non positiva	Re Z neteigiama
+Resistenza del pilotato alla risonanza, dal modello o dal calcolo NEC.	Maitinamo elemento varža rezonanse, iš modelio arba NEC skaičiavimo.
+Riavvio non riuscito: chiudi e riapri YA-NEC a mano.	Paleisti iš naujo nepavyko: uždaryk ir vėl atidaryk YA-NEC rankiniu būdu.
+Riscarica e reinstalla anche se la versione e' la stessa: utile se un file del programma si e' rovinato.	Atsisiunčia ir įdiegia iš naujo, net jei versija ta pati: naudinga, jei programos failas sugadintas.
+Scansione	Skenavimas
+Scegli il candidato con	Pasirinkti kandidatą su
+Schermo	Ekranas
+Scrivi due frequenze diverse.	Įrašyk du skirtingus dažnius.
+Segnala un problema	Pranešti apie problemą
+Seme del caso	Atsitiktinė sėkla
+Serve solo per la reattanza (dipolo e monopolo).	Reikia tik reaktyviajai varžai (dipolis ir monopolis).
+Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato).	Naudojama su 2 ar daugiau vijų: mažiau nei 2 laidininko skersmenys tikrieji nuostoliai auga dėl artumo efekto (neskaičiuojama).
+Si usa in Diagrammi > Terreno reale: riflessione sul mare con fattore di divergenza e rugosita'.	Naudojama skiltyje Diagramos > Tikrasis reljefas: jūros atspindys su sklaidos koeficientu ir šiurkštumu.
+Sicilia e provincia di Reggio Calabria	Sicilija ir Redžo di Kalabrijos provincija
+Sollecitazione	Įtempis
+Sopra 0,25 λ il lobo comincia ad abbassarsi: meno adatto all'NVIS.	Virš 0,25 λ lapelis pradeda leistis: mažiau tinka NVIS.
+Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.	Virš 30 MHz Cebiko regresija naudojama už intervalo, kuriam ji čia siūloma (HF laidai): geriau Automatiškai arba NEC.
+Sotto 0,1 λ il guadagno verso l'alto cala (Cebik): l'antenna bassissima non guadagna.	Žemiau 0,1 λ stiprinimas aukštyn krenta (Cebik): labai žema antena nieko nelaimi.
+Sotto l'antenna	Po antena
+Spina (tubo o tondo) dentro il giunto telescopico.	Kamštis (vamzdis ar strypas) teleskopinės jungties viduje.
+Spina interna nei giunti	Vidinis kamštis jungtyse
+Stack con il ROS attivo piu' basso	Grupė su mažiausiu aktyviuoju SWR
+Staffe e mast	Apkabos ir stiebas
+Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.	Laikas: maždaug (pradžios + 1) karto daugiau nei dabar, plius kandidatai x kopijos skaičiavimų.
+Tensione nel mast al cuscinetto	Įtempis stiebe ties guoliu
+Tiro del tirante	Atotampos įtempimas
+Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC.	Vamzdžiai paimti iš lentelės Siaurėjimai: matmenys tokie patys kaip NEC modelyje.
+Tutte le distanze superano il ROS attivo massimo ({0}): nessuna distanza proposta. Alza il ROS attivo massimo, prova l'impedenza di riferimento dell'antenna o accorda l'antenna singola. Matrice e grafico sono alla distanza con il ROS attivo piu' basso.	Visi atstumai viršija didžiausią aktyvųjį SWR ({0}): atstumas nepasiūlytas. Padidink didžiausią aktyvųjį SWR, išbandyk pačios antenos atskaitos varžą arba suderink pavienę anteną. Matrica ir grafikas yra atstumui su mažiausiu aktyviuoju SWR.
+V invertito	Apverstas V
+VHF/UHF (DL6WU), accoppiamento, ROS attivo, distanza migliore, due frequenze	VHF/UHF (DL6WU), ryšys, aktyvusis SWR, geriausias atstumas, du dažniai
+Velocita' di picco al sito: vb sqrt(ce), con vb = vb,0 ca (NTC 2018, periodo di ritorno 50 anni) e ce(z) della categoria di esposizione all'altezza dell'antenna.	Didžiausias vėjo greitis vietoje: vb sqrt(ce), kur vb = vb,0 ca (NTC 2018, pasikartojimo periodas 50 metų) ir ce(z) pagal atvirumo kategoriją antenos aukštyje.
+Velocità	Greitis
+Velocità a mano	Greitis rankiniu būdu
+Vento di sopravvivenza	Išgyvenimo vėjas
+Vento di sopravvivenza del boom	Strėlės išgyvenimo vėjas
+Vento perpendicolare all'elemento a cui il primo punto arriva allo snervamento (peso proprio e ghiaccio compresi).	Statmenas elementui vėjas, kuriam esant pirmasis taškas pasiekia takumo ribą (įskaitant savąjį svorį ir ledą).
+X da aggiungere al pilotato	X, kurį reikia pridėti maitinamam elementui
+X del pilotato	Maitinamo elemento X
+X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). La verifica finale la fa il motore NEC sul modello con la forcina.	X ≈ 42,5 − Za·cot(βL/2), Za = 120·(ln(L/ø) − 1). Galutinę patikrą atlieka NEC variklis modeliui su hairpin.
+Z0 della forcina	Hairpin Z0
+Z0 della linea dei due conduttori	Dviejų laidininkų linijos Z0
+Zona buona	Gera zona
+al centro	centre
+caso peggiore	blogiausias atvejis
+caso peggiore delle due	blogiausias iš dviejų
+cerca...	ieškoti...
+copie entro le soglie	kopijos slenksčių ribose
+corrente sinusoidale	sinusinė srovė
+distanza dal boom	atstumas nuo strėlės
+distanza dall'inizio del boom	atstumas nuo strėlės pradžios
+due condensatori sul lato basso	du kondensatoriai apatinėje pusėje
+effetto: calcolo in corso…	poveikis: skaičiuojama…
+forza del vento x sbalzo	vėjo jėga x konsolė
+il caso peggiore migliore	geriausias blogiausias atvejis
+il dipolo equivalente, piu' grosso, ha meno di 73 Ω	ekvivalentinis dipolis, storesnis, turi mažiau nei 73 Ω
+il voto medio migliore	geriausias vidutinis balas
+induttiva, in parallelo	induktyvus, lygiagrečiai
+la percentuale migliore di copie entro le soglie	geriausia kopijų dalis slenksčių ribose
+linea a due fili	dvilaidė linija
+m  mast a	m  stiebas ties
+m dal suolo	m virš žemės
+m sopra il boom, attacco al	m virš strėlės, pritvirtintas ties
+media delle due	dviejų vidurkis
+mm  lungo	mm  ilgio
+mm, acciaio	mm, plienas
+molto buono	labai gerai
+molto povero	labai blogai
+nessun rinforzo	be sustiprinimo
+nessun tubo commerciale fino a +12 mm basta: rivedi la rastremazione	joks prekinis vamzdis iki +12 mm nepakanka: peržiūrėk siaurėjimą
+nessuna distanza sotto il ROS attivo massimo	nėra atstumo žemiau didžiausio aktyviojo SWR
+partenza dal modello aperto	pradėti nuo atidaryto modelio
+per lato, teso per annullare il momento verticale al mast	kiekvienoje pusėje, įtemptas, kad panaikintų vertikalų momentą stiebe
+primo cedimento: tubo Ø	pirmas lūžis: vamzdis Ø
+regge il vento di progetto con il 20 % di margine	atlaiko skaičiuojamąjį vėją su 20 % atsarga
+riferimenti bibliografici	literatūros nuorodos
+sbalzo sopra il cuscinetto	konsolė virš guolio
+schermo 1 λ x 1 λ	ekranas 1 λ x 1 λ
+segmenti fitti) il kernel esteso usa una formula piu' esatta e il risultato e' piu' affidabile.\n	tankūs segmentai) išplėstinis branduolys naudoja tikslesnę formulę ir rezultatas patikimesnis.\n
+senza spina il tubo interno lavora sul bordo di quello esterno e si conta un fattore 1,25 sulla sollecitazione nei primi 5 cm: valore di stima, le fascette e le fessure cambiano molto il risultato.	be kamščio vidinis vamzdis remiasi į išorinio vamzdžio kraštą ir pirmų 5 cm įtempiui taikomas koeficientas 1,25: įvertis, apkabos ir plyšiai rezultatą labai keičia.
+sollecitazione / snervamento	įtempis / takumo riba
+tubo piu' grosso	storesnis vamzdis
+un filo riflettore	vienas reflektoriaus laidas
+zona di cedimento	lūžio zona
+ø dei conduttori della forcina	hairpin laidininkų ø
+ø del filo	laido ø
+ø del pilotato	maitinamo elemento ø
+accordata	suderintas
+accordate	suderinta
+alimentazione	maitinimas
+alluminio	aliuminis
+allungata	pailgintas
+altro	kita
+anello	kilpa
+angolo	kampas
+antiorario	prieš laikrodžio rodyklę
+aritmetico	aritmetinis
+automatico	automatiškai
+banda	juosta
+bande	juostos
+bordi	kraštai
+buono	geras
+capacitiva	talpinis
+carichi	apkrovos
+carico	apkrova
+cartesiana	Dekarto
+cavi	kabeliai
+cavo	kabelis
+centimetri	centimetrai
+centina	briauna
+cerchio	apskritimas
+condensatore	kondensatorius
+corrente	srovė
+destra	dešinė
+diagramma	diagrama
+diametro	skersmuo
+differenza	skirtumas
+dipoli	dipoliai
+dipolo	dipolis
+diretta	tiesioginis
+diritto	tiesus
+due	du
+elementi	elementai
+elemento	elementas
+elimina	ištrinti
+equilatera	lygiakraštis
+esito	rezultatas
+esperimenti	eksperimentai
+esponenziale	eksponentinis
+fase	fazė
+ferriti	feritai
+fili	laidai
+filo	laidas
+forcina	hairpin
+forma	forma
+formule	formulės
+frequenza	dažnis
+geometria	geometrija
+ghiaccio	ledas
+giudizio	įvertinimas
+gradi	laipsniai
+griglia	tinklelis
+guadagno	stiprinimas
+incrociata	sukryžiuoti
+larghezza	plotis
+lato	kraštinė
+lega	lydinys
+libera	laisvas
+libero	laisva
+linea	linija
+lineare	tiesinis
+linee	linijos
+lobi	šoniniai lapeliai
+locale	vietinis
+mai	niekada
+manicotto	įvorė
+mano	rankiniu būdu
+meccanica	mechanika
+mezzaonda	pusbangis
+millimetri	milimetrai
+misure	matmenys
+modello	modelis
+modo	režimas
+nessuna	nėra
+nota	pastaba
+nuovo	naujas
+operativo	darbo
+orario	pagal laikrodžio rodyklę
+ottagono	aštuonkampis
+palo	stiebas
+parabola	lėkštė
+passo	žingsnis
+perdite	nuostoliai
+perfetto	tobulas
+piano	plokštuma
+piatto	plokščias
+piedi	pėdos
+polare	polinis
+pollici	coliai
+propria	savas
+punto	taškas
+quadrato	kvadratinis
+quadro	kvadratinė
+quota	aukštis
+radiali	radialai
+radiatore	spinduolis
+raggio	spindulys
+rame	varis
+ramo	šaka
+rapidi	greitas
+rastremazioni	siaurėjimai
+rete	tinklas
+rettangolo	stačiakampis
+riepilogo	santrauka
+riflettore	reflektorius
+riga	eilė
+rombo	rombas
+scarso	blogas
+scarto	nuokrypis
+schiacciata	suplotas
+sempre	visada
+senso	kryptis
+si'	taip
+sinistra	kairė
+soglia	slenkstis
+sorgenti	šaltiniai
+sotto	žemiau
+spire	vijos
+staffe	apkabos
+stato	būsena
+sufficiente	pakankamas
+tetto	stogas
+tipo	tipas
+tirante	atotampa
+togli	pašalinti
+tondo	apvalus
+traffico	eismas
+trasformatori	transformatoriai
+trombe	ruporai
+tubi	vamzdžiai
+tubo	vamzdis
+tutti	visi
+uguale	lygus
+uguali	lygūs
+uso	naudoti
+a {0} x DL6WU; tutte sopra il massimo {1}	ties {0} x DL6WU; visi virš maksimumo {1}
+% del mezzo boom	% pusės strėlės
++ aggiungi	+ pridėti
++ aggiungi variabile	+ pridėti kintamąjį
++ correzione del boom	+ strėlės pataisa
++ nuova	+ naujas
++ trappola	+ spąstas
++ verso il disco.	+ link lėkštės.
++90 gradi Z	+90 laipsnių Z
+- aritmetico: la meta' esatta tra i limiti IARU della banda (per esempio 145,000 MHz in 2 m),\n	- aritmetinis: tiksliai per vidurį tarp juostos IARU ribų (pavyzdžiui, 145,000 MHz 2 m juostoje),\n
+- correzione del boom	- strėlės pataisa
+- operativo: la frequenza dove si lavora davvero (per esempio 144,300 MHz in 2 m, 432,200 in 70 cm),\n	- darbo: dažnis, kuriuo iš tikrųjų dirbi (pavyzdžiui, 144,300 MHz 2 m juostoje, 432,200 70 cm juostoje),\n
+-10 (nero) 10-100 MHz	-10 (juoda) 10-100 MHz
+-10 nero	-10 juoda
+-2 (rosso) 0,25-10 MHz	-2 (raudona) 0,25-10 MHz
+-2 rosso	-2 raudona
+-6 (giallo) 3-40 MHz	-6 (geltona) 3-40 MHz
+-6 giallo	-6 geltona
+-90 gradi Z	-90 laipsnių Z
+-> segmento NEC	-> NEC segmentas
+. "Annulla" torna indietro.	. «Atšaukti» grįžta atgal.
+. Antenna base: fili 1-	. Bazinė antena: laidai 1-
+. Con un Q cosi' alto lo sweep va fatto su pochi kHz.	. Su tokiu dideliu Q skenavimas turi apimti tik kelis kHz.
+. Salvalo con Salva con nome.	. Išsaugok jį su Išsaugoti kaip.
+. Trascina per ruotare, rotella per ingrandire.	. Vilk, kad pasuktum, ratukas – mastelis.
+. Usa filo piu' sottile, un nucleo piu' grande o due nuclei sovrapposti.	. Naudok plonesnį laidą, didesnę šerdį arba dvi sukrautas šerdis.
+1,14-1,17 lambda/D: Stutzman (via Sengupta 2021) e GMRT tab. 19.1	1,14-1,17 lambda/D: Stutzman (per Sengupta 2021) ir GMRT lent. 19.1
+12 (errore / HPBW)^2	12 (klaida / HPBW)^2
+57,3 lambda/a	57,3 lambda/a
+Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasyvus žiedas: perimetras {0:0.000} lambda, be šaltinio ir be kondensatoriaus; poveikis matomas pilname modelyje (direktorius ar reflektorius).
+Automatico	Automatiškai
+GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, kaip nec2c ir xnec2c: išeities kodas pridedamas prie programos (failas COPYING).\n
+Provincia di Trieste	Triesto provincija
+e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	ir C# kalba YA-NEC. Atskaitos sąsaja: xnec2c, autoriai 5B4AZ ir Eric KJ7LNW.\n
+efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	naudingumo koeficientas, apskaičiuotas iš tolimojo lauko, Prad / (Prad + nuostoliai) = {3:0.0} %.
+l'impedenza e le perdite diventano sempre meno affidabili man mano che il filo scende (vedi BOG nel manuale). Per un risultato sicuro: almeno lambda/200 = {3:0.###} m.	varža ir nuostoliai tampa vis mažiau patikimi, kuo žemiau nusileidžia laidas (žr. BOG vadove). Patikimam rezultatui: bent lambda/200 = {3:0.###} m.
+si crea fino a {3:0.00} m di diametro; il calcolo d'apertura qui a fianco vale per qualsiasi diametro e tiene gia' conto delle centine (casella sopra).	ji sukuriama iki {3:0.00} m skersmens; šalia esantis apertūros skaičiavimas tinka bet kokiam skersmeniui ir jau įvertina briaunas (langelis viršuje).
+{0:0.000} MHz, {1} segmenti: Z = {2:0.000} {3:+0.000;-0.000}j, ROS {4:0.00} su {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, efficienza {10:0.00} %, AGT {11:0.00} dB	{0:0.000} MHz, {1} segmentų: Z = {2:0.000} {3:+0.000;-0.000}j, SWR {4:0.00} esant {5} ohm, Gmax {6:0.00} dBi (az {7:0.0}, el {8:0.0}), F/B {9:0.00} dB, naudingumas {10:0.00} %, AGT {11:0.00} dB
+° di elevazione	° elevacijos
+• ARRL 19ª ed., cap. 18 (Yagi 2 m di W9PE): tre elementi a 0,2 λ, circa 7 dBi e F/B oltre 15 dB.	• ARRL 19-as leid., 18 sk. (W9PE 2 m Yagi): trys elementai 0,2 λ atstumu, apie 7 dBi ir F/B virš 15 dB.
+• Accordo di YA-NEC con nec2c (bacchette 20/15/10 m): riflettori a 0,185 / 0,197 / 0,222 λ, direttori a 0,095 / 0,116 / 0,114 λ: dentro gli intervalli delle fonti.	• YA-NEC sutapimas su nec2c (20/15/10 m strypai): reflektoriai ties 0,185 / 0,197 / 0,222 λ, direktoriai ties 0,095 / 0,116 / 0,114 λ: šaltinių intervaluose.
+↶ Annulla	↶ Atšaukti
+↷ Ripeti	↷ Pakartoti
+■ Ferma	■ Stabdyti
+▶ Avvia	▶ Pradėti
+☐ mantieni lunghezza del boom	☐ išlaikyti strėlės ilgį
+✓ nessun avviso: la segmentazione rispetta il livello scelto	✓ jokių įspėjimų: segmentavimas atitinka pasirinktą lygį
+✓ nessun errore e nessun avviso	✓ jokių klaidų ir įspėjimų
+variabili del modello	modelio kintamieji
+nuova variabile dal modello	naujas kintamasis iš modelio
+Scrivi una variabile nella linguetta Variabili…	Įrašyti kintamąjį kortelėje Kintamieji…
+Elemento diritto	Tiesus elementas
+Elemento piegato	Sulenktas elementas
+Variabile nuova	Naujas kintamasis
+Minimo / massimo	Minimumas / maksimumas
+Cosa cambia	Kas keičiasi
+in ocra: dove agisce la variabile	ochra: kur veikia kintamasis
+Crea la variabile	Sukurti kintamąjį
+Variabile {0} creata: la geometria non cambia. "Annulla" della barra Geometria la toglie.	Kintamasis {0} sukurtas: geometrija nesikeičia. «Atšaukti» Geometrijos juostoje jį pašalina.
+Struttura 3D: dove agisce la variabile ▾	3D struktūra: kur veikia kintamasis ▾
+Struttura 3D ▸	3D struktūra ▸
+Clic: nasconde o mostra la struttura	Spustelėjimas: paslepia arba rodo struktūrą
+ocra pieno: usa la variabile · ocra tratteggiato: la usa attraverso un'altra variabile	ištisinė ochra: naudoja kintamąjį · brūkšninė ochra: naudoja jį per kitą kintamąjį
+attraverso {0}: fili {1}	per {0}: laidai {1}

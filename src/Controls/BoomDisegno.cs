@@ -29,11 +29,14 @@ namespace YaNec
             }
             double pmin = double.MaxValue, pmax = double.MinValue, lmax = 0;
             foreach (El e in Elementi) { pmin = Math.Min(pmin, e.Pos_m); pmax = Math.Max(pmax, e.Pos_m); lmax = Math.Max(lmax, Math.Max(e.Fisico_mm, e.Elettrico_mm)); }
-            double x0 = 40, x1 = W - 40, yc = (H - 70) / 2 + 10, hMax = (H - 90) / 2;
+            // 1.5.2: hMax da (H - 90) / 2 a (H - 130) / 2, perche' i nomi sotto gli elementi piu' lunghi non coprano la nota "differenza esagerata"
+            double x0 = 40, x1 = W - 40, yc = (H - 70) / 2 + 10, hMax = (H - 130) / 2;
             double span = Math.Max(1e-9, pmax - pmin);
             double k = lmax > 0 ? hMax / (lmax / 2) : 1;      // px per mm (mezzo elemento)
             ctx.DrawRectangle(Pal.B(Color.FromRgb(185, 195, 211)), null, new Rect(x0 - 10, yc - 7, x1 - x0 + 20, 14));
             IPen blu = new Pen(Pal.B(Pal.Accent), 4.5), aran = new Pen(Pal.B(Pal.Orange), 2.6, new DashStyle(new double[] { 3, 2 }, 0));
+            // 1.5.2 (IC8TEM 19/11/2026 «Si', sfalsa i nomi»): quando un nome non entra accanto al precedente scende di una riga (due righe alternate)
+            double[] fineRiga = { double.MinValue, double.MinValue };
             foreach (El e in Elementi)
             {
                 double x = Elementi.Count == 1 ? (x0 + x1) / 2 : x0 + (e.Pos_m - pmin) / span * (x1 - x0);
@@ -41,10 +44,14 @@ namespace YaNec
                 double hf = e.Fisico_mm / 2 * k, he = hf - (e.Fisico_mm - e.Elettrico_mm) / 2 * k * 12;
                 ctx.DrawLine(blu, new Point(x, yc - hf), new Point(x, yc + hf));
                 ctx.DrawLine(aran, new Point(x + 6, yc - he), new Point(x + 6, yc + he));
-                Draw.TextC(ctx, e.Nome, x, yc + hf + 12, 11.5, Pal.Fore);
+                double wNome = Draw.Ft(e.Nome, 11.5, Pal.Fore).Width;
+                int rigaNome = x - wNome / 2 >= fineRiga[0] + 4 ? 0 : x - wNome / 2 >= fineRiga[1] + 4 ? 1 : 0;
+                fineRiga[rigaNome] = x + wNome / 2;
+                Draw.TextC(ctx, e.Nome, x, yc + hf + 12 + 14 * rigaNome, 11.5, Pal.Fore);
             }
             double yl = H - 52;
-            Draw.Text(ctx, "differenza esagerata per vederla", x0 - 10, yl - 16, 11, Pal.Muted);
+            // 1.5.2: la nota va a destra, sulla riga della legenda (prima stava sotto gli elementi e copriva i nomi)
+            Draw.TextR(ctx, "differenza esagerata per vederla", x1 + 10, yl + 2, 11, Pal.Muted);
             if (Rilievo)
             {
                 Draw.Text(ctx, "— rilievo (misure reali, con il boom)", x0 - 10, yl, 13, Pal.Accent);

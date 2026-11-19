@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 26: novità dei Calcolatori (1.4.2 e 1.5)
+
+2
+00:00:05,000 --> 00:00:11,584
+Corso YA-NEC, lezione 26: le novita' dei Calcolatori nelle versioni 1.4.2 e 1.5.
+
+3
+00:00:11,634 --> 00:00:25,351
+Loop magnetica: ora con il numero di spire e il passo tra le spire. Con due spire la resistenza di radiazione cresce con (N·A)², l'induttanza con N².
+
+4
+00:00:25,401 --> 00:00:44,418
+Con 2 spire il rendimento sale dal 16 al 28 %, ma la tensione sul condensatore arriva a 14,8 kV. L'effetto di prossimita' tra spire vicine non e' calcolato: lo ricorda un avviso. C'e' anche una terza scelta di accoppiamento, capacitivo con due condensatori (AEH, 4ª ed.).
+
+5
+00:00:44,468 --> 00:00:54,102
+Strumenti, Resistenza di radiazione: nuovo campo Diametro del conduttore.
+
+6
+00:00:54,152 --> 00:01:07,702
+Per il dipolo corto di 10 m a 3,6 MHz: 2,85 Ω di radiazione, reattanza −2271 Ω con la formula di Tai (Antenna Engineering Handbook, eq. 4-1) e la bobina di 100 µH che lo porta in risonanza.
+
+7
+00:01:07,752 --> 00:01:23,279
+HF, Dipoli, ripiegato: la scheda da' il raggio equivalente dei due conduttori, la Z0 della loro linea e la Z alla frequenza, 248 − j98 Ω.
+
+8
+00:01:23,329 --> 00:01:34,879
+Il grafico mostra R e X in frequenza con la formula di Uda e Mushiake. A risonanza la Z resta sotto 73 Ω per il rapporto: il dipolo equivalente e' piu' grosso.
+
+9
+00:01:34,929 --> 00:01:43,279
+NVIS (dalla 1.4.2): dipolo, V invertito o loop di 1 λ, con il terreno e lo schermo o i 9 fili a terra di Cebik.
+
+10
+00:01:43,329 --> 00:01:59,045
+Altezza ottima: il NEC prova le quote da 0,10 a 0,25 λ e sceglie il guadagno massimo allo zenit. Qui 14,6 m, cioe' 0,175 λ.
+
+11
+00:01:59,095 --> 00:02:09,379
+Quad, Metodo: Automatico usa Cebik in HF (perimetro che dipende dal diametro del filo) e il NEC in VHF; si puo' scegliere ARRL, Cebik o NEC.
+
+12
+00:02:09,429 --> 00:02:20,446
+Strumenti, Forcina: adattamento a forcina (beta match) del pilotato a 50 Ω. Per un pilotato da 25 Ω servono −25 Ω di reattanza e una forcina di 496 mm.
+
+13
+00:02:20,496 --> 00:02:25,446
+Fonti: Antenna Engineering Handbook 4ª ed., W5QJR, ARRL Antenna Book, Cebik, N6BV. Tutto nel manuale, capitoli 25 e 26.
