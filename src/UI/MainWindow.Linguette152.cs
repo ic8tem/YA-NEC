@@ -80,7 +80,7 @@ namespace YaNec
             else if (nome == "Frequenza" || nome == "Parametri") { princ = "Diagrammi"; voce = "Parametri"; }   // 1.5.3
             else if (nome == "Lobi") { princ = "Diagrammi"; voce = "Lobi"; }
             else if (nome == "NEC" || nome == "Correnti") { princ = LinNecCorr; voce = nome; }
-            else if (nome == "Variabili" || nome == "Ottimizzatore") { princ = LinVarOtt; voce = nome; }
+            else if (nome == "Variabili" || nome == "Ottimizzatore" || nome == VoceRicentra) { princ = LinVarOtt; voce = nome; }
             int ti = -1;
             for (int i = 0; i < tabs.Count; i++) if ((tabs[i].Tag as string) == princ) ti = i;
             if (ti < 0) return false;
@@ -120,10 +120,11 @@ namespace YaNec
             sottoVarOtt = new SottoLinguette(LinVarOtt);
             sottoVarOtt.Aggiungi("Variabili", variabili);
             sottoVarOtt.Aggiungi("Ottimizzatore", ottimizzatore);
+            sottoVarOtt.Aggiungi(VoceRicentra, BuildRicentraPage());   // 1.5.3: bozzetto «Ridimensiona e ricentra» approvato
             sottoVarOtt.Aperta = v =>
             {
                 AggiornaSchedeOtt();
-                try { if (v == "Ottimizzatore") OttSincronizza(); }
+                try { if (v == "Ottimizzatore") OttSincronizza(); else if (v == VoceRicentra && ricSync != null) ricSync(); }
                 catch (Exception ex) { Status("Errore nella linguetta Ottimizzatore: " + ex.Message, true); }
             };
             return sottoVarOtt.Costruisci();

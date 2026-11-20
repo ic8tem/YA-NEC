@@ -96,7 +96,7 @@ namespace YaNec
             fasCalc.Voce("yagiincr", "Yagi incrociate", false, null, "X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento");   // 1.2.0 (bozzetto VHF 6)
             fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
             fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
-            fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "scala un modello a un'altra frequenza");
+            fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "ora in Variabili e ottimizzazione > Ridimensiona e ricentra");   // 1.5.3
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
             fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");
             fasCalc.Voce("forcina", "Forcina (beta / hairpin)", false, null, "adattamento simmetrico del pilotato a 50 Ω (Cebik)");   // 1.5
@@ -118,7 +118,7 @@ namespace YaNec
                 Control c;
                 if (!calcPages.TryGetValue(k, out c))
                 {
-                    c = k == "carichihf" ? BuildCarichiHfPanel() : k == "divisori" ? BuildDivisoriPanel() : k == "yagiincr" ? BuildYagiIncrociatePanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
+                    c = k == "ridim" ? BuildRimandoRicentra() : k == "carichihf" ? BuildCarichiHfPanel() : k == "divisori" ? BuildDivisoriPanel() : k == "yagiincr" ? BuildYagiIncrociatePanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
                     calcPages[k] = c;
                 }
                 hostCalc.Content = c;
