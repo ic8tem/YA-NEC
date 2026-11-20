@@ -533,6 +533,18 @@ namespace YaNec
             SelectTab(IndiceLinguetta("Struttura 3D"));
             await Task.Delay(300);
             PrImmagine("struttura_dk7zb");
+            // 1.5.3 (IC8TEM 20/11/2026 12:32 «mi devi pure verificare sempre questo»): Verifica della segmentazione con «tutti» e
+            // «segmenti per λ», poi Ridimensiona antenna sul modello corretto: la geometria deve costruirsi (prima: segmenti 0 sul filo 1)
+            try
+            {
+                SegOptions so = new SegOptions { Livello = 2, PerLambda = 40, SoloSegnalati = false };
+                NecModel corr = SegCheck.Correct(model, model.FreqMHz * 1.01, so, SegCheck.Check(model, model.FreqMHz * 1.01, so));
+                NecModel riletto = NecModel.Parse(corr.ToNec());
+                NecModel scal = Engine.CalcRidimensiona.Scala(riletto, 144.3 / 145.0, false);
+                int n1 = corr.BuildGeometry().N, n2 = riletto.BuildGeometry().N, n3 = NecModel.Parse(scal.ToNec()).BuildGeometry().N;
+                PrPasso("Segmentazione «tutti» a 40 per λ, rilettura e Ridimensiona", "geometria valida (segmenti > 0)", n1 + " / " + n2 + " / " + n3 + " segmenti", n1 > 0 && n1 == n2 && n3 == n2);
+            }
+            catch (Exception ex) { PrPasso("Segmentazione «tutti» a 40 per λ, rilettura e Ridimensiona", "geometria valida (segmenti > 0)", ex.Message, false); }
             foreach (string t in new[] { "Diagrammi", "Frequenza", "Smith", "Correnti", "Avvisi" })
             {
                 if (!ApriLinguetta(t)) { PrPasso("linguetta " + t, "presente", "mancante", false); continue; }   // 1.5.2: Smith e Correnti sono sottolinguette

@@ -808,7 +808,8 @@ namespace YaNec.Engine
                     }
                     catch (NecException) { }
                 }
-                if (g.Src != null) sb.AppendLine(g.Id + " " + string.Join(" ", g.Src));
+                // 1.5.3: un campo di testo vuoto (null) spostava tutti i campi dopo di lui (segmenti letti come 0): allora si scrivono i numeri
+                if (g.Src != null && Array.TrueForAll(g.Src, x => !string.IsNullOrWhiteSpace(x))) sb.AppendLine(g.Id + " " + string.Join(" ", g.Src));
                 else
                     sb.AppendLine(string.Format(CI, "{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}", g.Id, g.I1, g.I2,
                         F(g.F1), F(g.F2), F(g.F3), F(g.F4), F(g.F5), F(g.F6), F(g.F7)));

@@ -12,19 +12,25 @@ namespace YaNec
 {
     public static class ConvertiModelli
     {
+        // 1.5.3: prove di Ridimensiona antenna e della Verifica della segmentazione («tutti») su ogni modello (IC8TEM 20/11/2026 12:32-12:33)
+        static string Prova(Func<object> f)
+        {
+            try { return "ok " + f(); } catch (Exception ex) { return "errore: " + ex.GetBaseException().Message.Replace(";", ","); }
+        }
+
         public static int Esegui(string dirIn, string dirOut)
         {
             CultureInfo ci = CultureInfo.InvariantCulture;
             Directory.CreateDirectory(dirOut);
-            StringBuilder csv = new StringBuilder("file;esito;formato;schede;segmenti;sorgenti;carichi;MHz;terreno;R;X;Gmax dBi;avvisi;errore\n");
+            StringBuilder csv = new StringBuilder("file;esito;formato;schede;segmenti;sorgenti;carichi;MHz;terreno;R;X;Gmax dBi;avvisi;errore;ridimensiona;segmentazione tutti\n");
             foreach (string f in Directory.GetFiles(dirIn))
             {
                 string ext = Path.GetExtension(f).ToLowerInvariant(), nome = Path.GetFileName(f);
-                if (ext != ".weq" && ext != ".ez" && ext != ".maa" && ext != ".yag" && ext != ".ant" && ext != ".nec") continue;
+                if (ext != ".weq" && ext != ".ez" && ext != ".maa" && ext != ".yag" && ext != ".ant" && ext != ".nec" && ext != ".yanec") continue;
                 try
                 {
                     NecModel m;
-                    if (ext == ".maa") { System.Collections.Generic.List<MmanaWireInfo> w; m = MmanaImport.Load(f, 40, out w); }
+                    if (ext == ".maa" || ext == ".yanec") { System.Collections.Generic.List<MmanaWireInfo> w; m = MmanaImport.Load(f, 40, out w); }
                     else if (ext == ".weq") m = EzImport.LoadWeq(f);
                     else if (ext == ".ez") m = EzImport.LoadEz(f);
                     else if (ext == ".yag") m = K6stiImport.LoadYag(f);
@@ -36,7 +42,8 @@ namespace YaNec
                     RunResult r = Analysis.Run(m, g, m.FreqMHz, 5.0);
                     csv.AppendLine(string.Join(";", nome, "ok", m.SourceFormat, m.Geometry.Count.ToString(ci), g.N.ToString(ci), m.Sources.Count.ToString(ci), m.Loads.Count.ToString(ci),
                         m.FreqMHz.ToString("0.####", ci), m.Ground.Kind.ToString(), r.Zin.Real.ToString("0.###", ci), r.Zin.Imaginary.ToString("0.###", ci), r.GmaxDbi.ToString("0.##", ci),
-                        string.Join(" | ", m.Warnings).Replace(";", ","), ""));
+                        string.Join(" | ", m.Warnings).Replace(";", ","), "", Prova(() => NecModel.Parse(CalcRidimensiona.Scala(m, 0.9985, true).ToNec()).BuildGeometry().N),
+                        Prova(() => { SegOptions so = new SegOptions { Livello = 2, PerLambda = 40, SoloSegnalati = false }; NecModel c = SegCheck.Correct(m, m.FreqMHz * 1.01, so, SegCheck.Check(m, m.FreqMHz * 1.01, so)); return c.BuildGeometry().N + "/" + NecModel.Parse(c.ToNec()).BuildGeometry().N; })));
                 }
                 catch (Exception ex) { csv.AppendLine(nome + ";errore;;;;;;;;;;;;" + ex.GetBaseException().Message.Replace(";", ",").Replace("\n", " ")); }
                 Console.WriteLine(nome);
