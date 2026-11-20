@@ -145,11 +145,18 @@ namespace YaNec
 
         Control BuildRicezioneRdfPage()
         {
-            string ant = "beverage", rum = "iso";
-            Fascione fAnt = new Fascione(); fAnt.Famiglia("ANTENNE RICEVENTI");
-            string[][] antenne = { new[] { "beverage", "Beverage" }, new[] { "bog", "Beverage a terra (BOG)" }, new[] { "k9ay", "K9AY" }, new[] { "flag", "Flag / Pennant" }, new[] { "ewe", "EWE" },
-                new[] { "4sq", "4-square in ricezione" }, new[] { "8c", "8 verticali in cerchio" }, new[] { "modello", "Modello aperto" } };
-            foreach (string[] a in antenne) fAnt.Voce(a[0], a[1]);
+            // 1.5.2 (IC8TEM 20/11/2026 02:51, «Sono d'accordo con la tua proposta, compila», senza bozzetto): Ricezione lavora solo sul
+            // modello aperto. Prima c'era un elenco di 7 antenne con misure fisse, doppione di Calcolatori > Antenne riceventi (dove si
+            // sceglie l'antenna e si scrivono le misure, poi «Apri come modello»).
+            string ant = "modello", rum = "iso";
+            string[][] antenne = { new[] { "modello", "Modello aperto" } };
+            StackPanel fAnt = new StackPanel { Spacing = 6, Margin = new Thickness(0, 0, 0, 8) };
+            fAnt.Children.Add(new TextBlock { Text = "ANTENNA", FontSize = 11, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Muted) });
+            fAnt.Children.Add(new TextBlock { Text = "Il modello aperto, con la verticale λ/4 di riferimento.", TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Fore) });
+            fAnt.Children.Add(Nota("Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne riceventi, poi «Apri come modello»."));
+            Button bVaiRx = Btn("Calcolatori > Antenne riceventi", false);
+            bVaiRx.Click += (s, e) => { int ti = -1; for (int i = 0; i < tabs.Count; i++) if ((tabs[i].Tag as string) == "Calcolatori") ti = i; if (ti >= 0) SelectTab(ti); ApriFamigliaCalc("Antenne riceventi"); };
+            fAnt.Children.Add(bVaiRx);
             Fascione fRum = new Fascione(); fRum.Famiglia("RUMORE");
             fRum.Voce("iso", "Isotropo"); fRum.Voce("piano", "Dal piano (ITU-R P.372)"); fRum.Voce("locale", "Sorgente locale (azimut)");
             StackPanel sx = new StackPanel { Width = 222, Spacing = 2 };
@@ -246,7 +253,7 @@ namespace YaNec
                 GroundSpec gr = new GroundSpec { Kind = GroundKind.Real, Epsr = Grounds[gi].Item2, Sigma = Grounds[gi].Item3 };
                 string k = ant;
                 if (k == "modello" && run == null) { titPol.Text = "Calcola prima il modello aperto"; return; }
-                if (k == "modello") f = run.FreqMHz;
+                if (k == "modello") { f = run.FreqMHz; tF.Text = FN(f, 3); }
                 string nomeAnt = Array.Find(antenne, a => a[0] == k)[1];
                 titPol.Text = Lang.F("Azimut a {0}° · {1} MHz", FN(el, 0), FN(f, 3));
                 notaPol.Text = "calcolo in corso…";
@@ -315,8 +322,15 @@ namespace YaNec
                             double[] y = new double[fs.Length];
                             for (int i = 0; i < fs.Length; i++)
                             {
-                                if (kk == "modello") { y[i] = double.NaN; continue; }
-                                Nec2Engine e = risolvi(kk, fs[i], kk == "vert" ? 0 : az, el, gr, ct);
+                                Nec2Engine e;
+                                if (kk == "modello")
+                                {
+                                    // 1.5.2: il modello aperto ricalcolato a ogni frequenza della curva
+                                    try { e = Analysis.Run(model, model.BuildGeometry(), fs[i], 10, ct).Engine; }
+                                    catch (OperationCanceledException) { throw; }
+                                    catch { y[i] = double.NaN; continue; }
+                                }
+                                else e = risolvi(kk, fs[i], kk == "vert" ? 0 : az, el, gr, ct);
                                 y[i] = RdfRicezione.Calcola(e, fs[i], kk == "vert" ? 0 : az, el, 0, 0, bw, amb, nf, pre).Rdf;
                             }
                             l.Add(y);
@@ -337,13 +351,12 @@ namespace YaNec
                 catch (OperationCanceledException) { }
                 catch (Exception ex) { notaPol.Text = "Errore: " + ex.Message; }
             };
-            fAnt.Selected += k => { ant = k; rdfAggiorna(true); };
             fRum.Selected += k => { rum = k; rdfAggiorna(true); };
             foreach (TextBox t in new[] { tAz, tEl, tF, tB, tNf, tPre, tAzL }) t.LostFocus += (s, e) => rdfAggiorna(true);
             foreach (ComboBox c in new[] { cAmb, cTer }) c.SelectionChanged += (s, e) => rdfAggiorna(true);
             cRif.IsCheckedChanged += (s, e) => rdfAggiorna(true);
             cMed.IsCheckedChanged += (s, e) => rdfAggiorna(true);
-            fAnt.Select("beverage", false); fRum.Select("iso", false);
+            fRum.Select("iso", false);
             rdfAggiorna(true);
             return new ScrollViewer { Content = g, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled };
         }

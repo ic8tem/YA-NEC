@@ -1870,6 +1870,8 @@ Collaudo: su un profilo piatto la curva reale deve coincidere con il NEC sul suo
 
 ### 23.3 Ricezione (RDF)
 
+Dalla 1.5.2 Ricezione lavora solo sul **modello aperto** (con la verticale λ/4 di riferimento e la K9AY nella curva in frequenza): l'elenco di antenne con le misure fisse e' stato tolto perche' faceva il doppione di **Calcolatori > Antenne riceventi**, dove si sceglie l'antenna e se ne scrivono le misure; poi «Apri come modello» e qui la si valuta. La curva dell'RDF in frequenza ricalcola il modello aperto a ogni frequenza.
+
 Cifre di merito delle antenne riceventi: **RDF** (guadagno nella direzione voluta meno guadagno medio su tutto il semispazio; non dipende dalle perdite), **DMF** (media sul settore avanti meno media sull'emisfero posteriore), guadagno, F/B e F/R medio, rumore d'antenna ai morsetti (ITU-R P.372) e margine sul ricevitore (avviso sotto 6 dB). Antenne: Beverage, BOG, K9AY, Flag / Pennant, EWE, 4-square in ricezione, 8 verticali in cerchio, modello aperto. Rumore: isotropo, dal piano, sorgente locale. Riferimento tratteggiato: verticale lambda/4. Grafico dell'RDF in frequenza e tabella di confronto con i valori di letteratura (W8JI, ON4UN, IV3PRK). Fumetto giallo sul DMF: ON4UN lo definisce con il solo guadagno a 20 gradi; qui si usa la media sul settore del bozzetto. Collaudo: dipolo corto 1,76 dB (teorico), verticale lambda/4 tra 4,6 e 5,4 dB.
 
 ### 23.4 Misure VNA
@@ -2099,6 +2101,8 @@ Oltre 40 oggetti le etichette si nascondono e resta il simbolo, per non coprire 
 - Dopo Nuovo, e aprendo un file con Apri modello, la tendina Esempi torna a «Esempi...».
 
 **Terreno a scomparsa e barra di stato.** La legenda «Come viene disegnato ogni terreno» non sta piu' sotto il disegno della Struttura 3D (che guadagna spazio): si apre con il pulsante **Mostra terreno** a sinistra della barra di stato, in basso, e si chiude con lo stesso pulsante o con Esc. Ogni errore scritto nella barra di stato e' in grassetto e compare anche in una finestra con **OK**; se arriva un altro errore mentre la finestra e' aperta, il testo si aggiorna nella stessa finestra.
+
+**Ricezione (RDF) senza doppioni (20/11/2026).** Diagrammi > Ricezione (RDF) valuta solo il modello aperto; per scegliere e dimensionare l'antenna si usa Calcolatori > Antenne riceventi e poi «Apri come modello» (capitolo 23.3).
 
 **Linguette riordinate (IC8TEM 19/11/2026).** Le linguette principali passano da 16 a 13:
 - **Smith** e' l'ultima voce della fascia dei **Diagrammi**;
