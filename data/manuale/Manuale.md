@@ -141,7 +141,7 @@ Vista: trascinare = ruota, rotella = zoom, tasto destro = sposta, doppio clic = 
 
 ## 7. Diagrammi, Frequenza, Smith, Correnti
 
-Dalla 1.5.2 la carta di **Smith** e' l'ultima voce della fascia dei Diagrammi (dopo Tolleranze) e **Correnti** e' la seconda sottolinguetta di **NEC/correnti**.
+Dalla 1.5.2 la carta di **Smith** e' l'ultima voce della fascia dei Diagrammi (dopo Tolleranze) e **Correnti** e' la seconda sottolinguetta di **NEC/correnti**. Dalla 1.5.3 la prima voce della fascia si chiama **Lobi** (i diagrammi di azimut e di elevazione) e la linguetta Frequenza non c'e' piu': i suoi grafici sono la seconda voce della fascia, **Parametri**.
 
 ![Figura 3 - Diagrammi di azimut e di elevazione (scala ARRL) della DK7ZB 10 elementi](immagini/07_diagrammi.png)
 
@@ -161,9 +161,9 @@ Le stesse misure sono quelle che danno i programmi di riferimento (la scheda "pa
 
 **F/B lungo l'asse (dalla 1.1).** Per i modelli in spazio libero con il fascio lungo l'asse Z (per esempio la Yagi del MathWorks Antenna Toolbox, che ha gli elementi lungo X e il boom lungo Z), il F/B si cercava all'indietro nel piano orizzontale e veniva sbagliato. Ora, se il massimo e' a theta sotto 1 grado o sopra 179 gradi e non c'e' terreno, la direzione posteriore e' quella opposta lungo l'asse (180 - theta) e il F/R e' il peggiore dell'emisfero opposto. Con il terreno o con il fascio nel piano orizzontale non cambia niente.
 
-**Diagrammi**: azimut ed elevazione, scala logaritmica ARRL o lineare in dB, totale o totale + verticale + orizzontale. **Frequenza**: quattro grafici lungo lo sweep in una griglia 2 x 2: in alto ROS a sinistra e guadagno a destra, in basso impedenza (R, X, |Z|) a sinistra e rapporti F/B e F/R a destra; sotto, su tutta la larghezza, l'efficienza di radiazione. Passando il mouse si leggono i valori. **Smith**: impedenza lungo lo sweep sulla carta di Smith. **Correnti**: tabella delle correnti di ogni segmento.
+**Lobi**: azimut ed elevazione, scala logaritmica ARRL o lineare in dB, totale o totale + verticale + orizzontale. **Parametri** (era la linguetta Frequenza): quattro grafici lungo lo sweep in una griglia 2 x 2: in alto ROS a sinistra e guadagno a destra, in basso impedenza (R, X, |Z|) a sinistra e rapporti F/B e F/R a destra; sotto, su tutta la larghezza, l'efficienza di radiazione. Passando il mouse si leggono i valori. **Smith**: impedenza lungo lo sweep sulla carta di Smith. **Correnti**: tabella delle correnti di ogni segmento.
 
-![Figura 4 - Linguetta Frequenza](immagini/08_frequenza.png)
+![Figura 4 - Diagrammi > Parametri](immagini/08_frequenza.png)
 
 ![Figura 5 - Carta di Smith](immagini/09_smith.png)
 
@@ -450,7 +450,7 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 | Sorgenti | PULSE, tensione (o corrente), fase. Con "Sorgenti a corrente" i valori sono correnti: il programma ricava le tensioni a ogni frequenza (V = Z I), come serve per le schiere fasate e il four-square. Una sorgente al centro (c) rende dispari i segmenti del filo. |
 | Carichi | LC (trappola: L uH e C pF in parallelo, Q della bobina, F = frequenza di risonanza; con F indicata, cambiando L si ricalcola C), R+jX, RLC serie; "Usa i carichi" come MMANA. Laplace (S) nella prossima versione. |
 | Linee | linee di trasmissione ideali tra due punti (scheda TL del NEC-2): Z0, lunghezza (0 = distanza tra i centri dei segmenti), casella Incrociata (Z0 negativa, come nelle LPDA). Verificate contro nec2c nell'autotest. |
-| Stack | riconosce le copie identiche spostate (stessi fili, raggi e segmenti); calcola l'antenna base in spazio libero e propone le distanze DL6WU D = lambda / (2 sin(a/2)) con la sua apertura nel piano giusto; "Applica e ricalcola" sposta le copie e la riga in basso alla quota scritta. |
+| Stack | riconosce le copie identiche spostate (stessi fili, raggi e segmenti) e mostra righe x colonne, spaziature (in m e in lambda) e quota della riga in basso. Dalla 1.5.3 le distanze DL6WU e lo spostamento delle copie stanno solo in Rumore/GT/Stack > Distanze di stack VHF: il pulsante **Distanze di stack VHF** apre quella voce. Sotto resta il **Telaio a H e palo nello stack**. |
 
 > NOTA: Correzione approvata per lo stack: polarizzazione orizzontale, stack verticale -> apertura verticale, affiancate -> apertura orizzontale; con la polarizzazione verticale i piani si scambiano. A circa 2 lambda i lobi secondari sono al minimo (Yagi 15 el. di Balanis).
 
@@ -1593,11 +1593,11 @@ Le linee TL del NEC-2 sono ideali (senza perdite): le perdite dei cavi si calcol
 
 ### Diagrammi: angolo a -3 dB e definizioni
 
-**Diagrammi**: azimut ed elevazione, scala logaritmica ARRL o lineare in dB, totale o totale + verticale + orizzontale. L'apertura a -3 dB si vede sempre: due raggi tratteggiati dal centro ai punti a -3 dB, con l'arco e il valore (il "triangolo"). Scelte grafiche: la scala ARRL (logaritmica modificata) e' quella dei libri e delle riviste, cosi' i diagrammi si confrontano a occhio con quelli pubblicati; la scala lineare in dB serve per leggere i lobi piccoli (F/R oltre 25 dB). Il triangolo e' sempre acceso perche' l'apertura e' il dato che serve per lo stack (DL6WU) e per il puntamento.
+**Lobi**: azimut ed elevazione, scala logaritmica ARRL o lineare in dB, totale o totale + verticale + orizzontale. L'apertura a -3 dB si vede sempre: due raggi tratteggiati dal centro ai punti a -3 dB, con l'arco e il valore (il "triangolo"). Scelte grafiche: la scala ARRL (logaritmica modificata) e' quella dei libri e delle riviste, cosi' i diagrammi si confrontano a occhio con quelli pubblicati; la scala lineare in dB serve per leggere i lobi piccoli (F/R oltre 25 dB). Il triangolo e' sempre acceso perche' l'apertura e' il dato che serve per lo stack (DL6WU) e per il puntamento.
 
 **Angolo a -3 dB**: dalla direzione del massimo si scende a passi di mezzo grado verso i due lati finche' il guadagno va sotto il massimo - 3 dB; il punto esatto si trova per interpolazione lineare tra gli ultimi due valori, e l'apertura e' la somma dei due lati. Mezzo grado basta: con le aperture di una Yagi VHF (25-60 gradi) l'errore e' sotto 0,1 gradi.
 
-**Frequenza**: quattro grafici lungo lo sweep in una griglia 2 x 2: in alto ROS a sinistra e guadagno a destra, in basso impedenza (R, X, |Z|) a sinistra e rapporti F/B e F/R a destra; sotto, su tutta la larghezza, l'efficienza di radiazione. Passando il mouse si leggono i valori. **Smith**: impedenza lungo lo sweep sulla carta di Smith, normalizzata su Z0. **Correnti**: tabella delle correnti di ogni segmento (ampiezza e fase).
+**Parametri** (Diagrammi > Parametri, era la linguetta Frequenza): quattro grafici lungo lo sweep in una griglia 2 x 2: in alto ROS a sinistra e guadagno a destra, in basso impedenza (R, X, |Z|) a sinistra e rapporti F/B e F/R a destra; sotto, su tutta la larghezza, l'efficienza di radiazione. Passando il mouse si leggono i valori. **Smith**: impedenza lungo lo sweep sulla carta di Smith, normalizzata su Z0. **Correnti**: tabella delle correnti di ogni segmento (ampiezza e fase).
 
 Definizioni usate (le stesse in tutto il programma): **F/B** = guadagno avanti / guadagno a 180 gradi esatti; **F/R** = guadagno avanti / peggior lobo in tutto il semispazio posteriore (90-270 gradi), che e' il dato piu' severo e quello che conta per il rumore; **fronte/lato** = avanti / peggior valore tra 60 e 120 gradi.
 
@@ -2082,7 +2082,7 @@ C'e' anche **Quota di tutta l'antenna (Z)**. Il riquadro di conferma mostra nome
 
 Oltre 40 oggetti le etichette si nascondono e resta il simbolo, per non coprire il disegno.
 
-**Bande nei grafici di frequenza.** Nella linguetta Frequenza le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz) sono una fascia colorata sul fondo dei grafici, con il nome della banda in alto; le curve restano sopra. Il colore si sceglie nelle **Impostazioni**, riga «Bande nei grafici di frequenza»: verde salvia, ambra, azzurro ghiaccio oppure nessuna. Nel tema scuro la fascia e' piu' chiara.
+**Bande nei grafici di frequenza.** In Diagrammi > Parametri le bande radioamatoriali (IARU Regione 1, da 136 kHz a 10 GHz) sono una fascia colorata sul fondo dei grafici, con il nome della banda in alto; le curve restano sopra. Il colore si sceglie nelle **Impostazioni**, riga «Bande nei grafici di frequenza»: verde salvia, ambra, azzurro ghiaccio oppure nessuna. Nel tema scuro la fascia e' piu' chiara.
 
 **Terreno reale.**
 - Quando parte il calcolo la barra in basso scrive «Terreno reale: calcolo in corso…» e il pulsante Calcola resta spento fino alla fine («calcolo finito», oppure l'errore). Prima l'unico segno era nel titolo del profilo, che non si vede se la pagina e' scorsa in basso.

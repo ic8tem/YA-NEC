@@ -455,7 +455,8 @@ namespace YaNec
             // calcolatori", poi le altre in fondo; "Oggetti inseriti" non e' piu' una linguetta (le tabelle sono in basso a destra nella Struttura 3D)
             // 1.5.2 (IC8TEM 19/11/2026 17:06-17:11, schema approvato): Smith dentro Diagrammi; NEC e Correnti in "NEC/correnti";
             // Variabili e Ottimizzatore in "Variabili e ottimizzazione" (al posto dell'Ottimizzatore). Da 16 a 13 linguette.
-            string[] names = { "Struttura 3D", "Frequenza", "Diagrammi", "Rumore/GT/Stack", LinNecCorr, LinVarOtt, "Calcolatori", "Avvisi", "Impostazioni", "Documenti tecnici", "Crediti", "Registro", "Autotest" };
+            // 1.5.3 (IC8TEM 20/11/2026 12:23): Frequenza diventa la voce "Parametri" della fascia dei Diagrammi. 12 linguette.
+            string[] names = { "Struttura 3D", "Diagrammi", "Rumore/GT/Stack", LinNecCorr, LinVarOtt, "Calcolatori", "Avvisi", "Impostazioni", "Documenti tecnici", "Crediti", "Registro", "Autotest" };
             for (int i = 0; i < names.Length; i++)
             {
                 int idx = i;
@@ -482,7 +483,7 @@ namespace YaNec
             pag["Diagrammi"] = DiagrammiConFascia(BuildPatternPage());   // 1.2.0: fascia Diagrammi / Tabelle / Terreno reale / Ricezione (RDF) / Tolleranze
             pag["Rumore/GT/Stack"] = BuildGtSopra();   // 1.1.0: sopralinguetta con tre voci
             // 1.1.0: "Antenne riceventi" e' una famiglia dei Calcolatori (la pagina si costruisce alla prima apertura)
-            pag["Frequenza"] = BuildFreqPage();
+            diagPagine["Parametri"] = BuildFreqPage();   // 1.5.3: era la linguetta Frequenza
             diagPagine["Smith"] = BuildSmithPage();   // 1.5.2: voce della fascia dei Diagrammi
             Control pCorr = BuildCurrentsPage();
             pag[LinNecCorr] = CostruisciNecCorrenti(BuildNecPage(), pCorr);

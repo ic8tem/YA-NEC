@@ -77,6 +77,8 @@ namespace YaNec
         {
             string princ = nome, voce = null;
             if (nome == "Smith") { princ = "Diagrammi"; voce = "Smith"; }
+            else if (nome == "Frequenza" || nome == "Parametri") { princ = "Diagrammi"; voce = "Parametri"; }   // 1.5.3
+            else if (nome == "Lobi") { princ = "Diagrammi"; voce = "Lobi"; }
             else if (nome == "NEC" || nome == "Correnti") { princ = LinNecCorr; voce = nome; }
             else if (nome == "Variabili" || nome == "Ottimizzatore") { princ = LinVarOtt; voce = nome; }
             int ti = -1;

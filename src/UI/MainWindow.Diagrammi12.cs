@@ -17,15 +17,15 @@ namespace YaNec
 {
     public partial class MainWindow
     {
-        public static readonly string[] DiagVoci = { "Diagrammi", "Tabelle", "Misure VNA", "Terreno reale", "Ricezione (RDF)", "Tolleranze", "Smith" };   // 1.5.2: Smith (era una linguetta)
+        public static readonly string[] DiagVoci = { "Lobi", "Parametri", "Tabelle", "Misure VNA", "Terreno reale", "Ricezione (RDF)", "Tolleranze", "Smith" };   // 1.5.2: Smith (era una linguetta); 1.5.3 (IC8TEM 20/11/2026 12:23): "Diagrammi" diventa "Lobi", la linguetta Frequenza entra come "Parametri"
         readonly Dictionary<string, Button> diagBtn = new Dictionary<string, Button>();
         readonly Dictionary<string, Control> diagPagine = new Dictionary<string, Control>();
         ContentControl diagCorpo;
-        string diagVoce = "Diagrammi";
+        string diagVoce = "Lobi";
 
         Control DiagrammiConFascia(Control diagrammi)
         {
-            diagPagine["Diagrammi"] = diagrammi;
+            diagPagine["Lobi"] = diagrammi;
             WrapPanel fp = new WrapPanel { Orientation = Orientation.Horizontal };
             foreach (string v in DiagVoci)
             {
@@ -41,7 +41,7 @@ namespace YaNec
             DockPanel.SetDock(fascia, Dock.Top);
             d.Children.Add(fascia);
             d.Children.Add(diagCorpo);
-            ApriVoceDiagrammi("Diagrammi");
+            ApriVoceDiagrammi("Lobi");
             return d;
         }
 

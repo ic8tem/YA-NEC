@@ -22,8 +22,6 @@ namespace YaNec
         Fascione fasOggetti;
         ContentControl hostOggetti;
         StackInfo stackInfo;
-        RunResult stackBaseRun;
-        NecModel stackBaseFor;
 
         // ------------------------------------------------------------------------------------------------
         // piccoli costruttori comuni alle nuove linguette
@@ -732,77 +730,23 @@ namespace YaNec
                 body.Children.Add(vai);
                 return Pannello("Stack", body);
             }
+            // 1.5.3 (IC8TEM 20/11/2026 12:21, "si procedi" sulla proposta dei doppioni): qui resta solo il riconoscimento delle copie;
+            // distanze DL6WU, aperture e spostamento delle copie stanno in Rumore/GT/Stack > Distanze di stack VHF (prima erano in tutti e due i posti)
             StackInfo si = stackInfo;
             double f = ParseNum(txtFreq.Text, model.FreqMHz), lam = 299.792458 / f;
             body.Children.Add(Nota("Riconosciute " + si.Describe() + ". Antenna base: fili 1-" + si.WiresPerCopy + "; polarizzazione " + (si.HorizontalPol ? "orizzontale" : "verticale") + ".", Pal.Fore));
-            // aperture dell'antenna base in spazio libero (calcolate dal programma)
-            TextBlock ape = Nota("Calcolo dell'antenna base in spazio libero...", Pal.Fore);
-            body.Children.Add(ape);
-            TextBox tv = Tb(double.IsNaN(si.SpacingV) ? "" : FN(si.SpacingV, 3), 90);
-            TextBox th = Tb(double.IsNaN(si.SpacingH) ? "" : FN(si.SpacingH, 3), 90);
-            TextBox tq = Tb(FN(si.BaseHeight, 2), 90);
-            TextBlock lv = new TextBlock { VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) };
-            TextBlock lh = new TextBlock { VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) };
-            Action upd = () =>
-            {
-                double v = ParseNum(tv.Text, double.NaN), h = ParseNum(th.Text, double.NaN);
-                lv.Text = double.IsNaN(v) ? "" : "m = " + FN(v / lam, 2) + " lambda";
-                lh.Text = double.IsNaN(h) ? "" : "m = " + FN(h / lam, 2) + " lambda";
-            };
-            tv.LostFocus += (s, e) => upd();
-            th.LostFocus += (s, e) => upd();
-            upd();
-            Button bv = Btn("DL6WU ...", false), bh = Btn("DL6WU ...", false);
-            bv.IsEnabled = bh.IsEnabled = false;
             body.Children.Add(Riga("Righe (in verticale) x colonne", new TextBlock { Text = si.Rows + " x " + si.Cols + " = " + si.Copies + " antenne", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) }));
-            if (si.Rows > 1) body.Children.Add(Riga("Spaziatura verticale", tv, lv, bv));
-            if (si.Cols > 1) body.Children.Add(Riga("Spaziatura orizzontale", th, lh, bh));
-            body.Children.Add(Riga("Altezza dal suolo della riga in basso", tq, new TextBlock { Text = "m (al boom)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted) }));
-            Button ap = Btn("Applica e ricalcola", true);
-            ap.Click += (s, e) =>
-            {
-                double v = ParseNum(tv.Text, double.NaN), h = ParseNum(th.Text, double.NaN), q = ParseNum(tq.Text, double.NaN);
-                if ((!double.IsNaN(v) && v <= 0) || (!double.IsNaN(h) && h <= 0)) { Status("Le spaziature devono essere positive.", true); return; }
-                StackDetect.Apply(model, si, v, h, model.Ground.Kind == GroundKind.FreeSpace ? double.NaN : q);
-                Status("Stack ridisposto: verticale " + (double.IsNaN(v) ? "-" : FN(v, 3)) + " m, orizzontale " + (double.IsNaN(h) ? "-" : FN(h, 3)) + " m.");
-                // 0.5.1: controllo k4 (spaziatura sotto meta' della DL6WU dell'antenna base, se gia' calcolata)
-                if (stackBaseRun != null && stackBaseFor == model)
-                {
-                    List<ControlloDato> k4 = ControlliDati.Stack(v, h, StackDetect.Dl6wu(lam, stackBaseRun.HpbwEl), StackDetect.Dl6wu(lam, stackBaseRun.HpbwAz));
-                    if (k4.Count > 0) { Status("⚠ " + k4[0].ToString(), true); foreach (ControlloDato cd in k4) Registro.Scrivi("CONTROLLI", cd.ToString()); }
-                }
-                ApplicaERicalcola("stack");
-            };
-            body.Children.Add(ap);
-            body.Children.Add(Nota("Correzione approvata: la formula DL6WU D = lambda / (2 sin(a/2)) si applica con le aperture dell'antenna base in spazio libero calcolate dal programma. " +
-                "Polarizzazione orizzontale: stack verticale -> apertura verticale, affiancate -> apertura orizzontale; polarizzazione verticale: i due piani si scambiano. " +
-                "Con il MoM (Yagi 15 el. di Balanis) a circa 2 lambda i lobi secondari sono al minimo; oltre, il guadagno sale di qualche decimo ma i lobi peggiorano di 4-5 dB. " +
-                "Le impedenze di ogni antenna nello stack sono 'impedenze attive' (riquadro Impedenza, una sorgente alla volta nella linguetta Avvisi)."));
-            if (model.Ground.Kind == GroundKind.FreeSpace) body.Children.Add(Nota("Spazio libero: l'altezza dal suolo non si applica.", Pal.Orange));
-
-            // calcolo delle aperture in background (una volta per modello e frequenza)
-            NecModel mm = model;
-            Task.Run(() =>
-            {
-                if (stackBaseRun != null && stackBaseFor == mm && Math.Abs(stackBaseRun.FreqMHz - f) < 1e-9) return stackBaseRun;
-                NecModel b = StackDetect.BaseAntenna(mm, si);
-                SegmentGeometry g = b.BuildGeometry();
-                return Analysis.Run(b, g, f, 2.0);
-            }).ContinueWith(t => Dispatcher.UIThread.Post(() =>
-            {
-                if (t.IsFaulted) { ape.Text = "Antenna base: errore nel calcolo (" + t.Exception.GetBaseException().Message + ")"; return; }
-                RunResult r = t.Result;
-                stackBaseRun = r; stackBaseFor = mm;
-                // aperture: piano orizzontale (azimut) e verticale (elevazione) dell'antenna base in spazio libero
-                double ah = r.HpbwAz, av = r.HpbwEl;
-                double dh = StackDetect.Dl6wu(lam, ah), dv = StackDetect.Dl6wu(lam, av);
-                ape.Text = "Antenna base in spazio libero a " + FN(f, 3) + " MHz: " + FN(r.GmaxDbi, 2) + " dBi, apertura orizzontale " + FN(ah, 1) + " gradi, verticale " + FN(av, 1) +
-                    " gradi -> DL6WU: sovrapposte " + FN(dv, 2) + " m (" + FN(dv / lam, 2) + " lambda), affiancate " + FN(dh, 2) + " m (" + FN(dh / lam, 2) + " lambda).";
-                bv.Content = "DL6WU " + FN(dv, 2) + " m"; bh.Content = "DL6WU " + FN(dh, 2) + " m";
-                bv.IsEnabled = !double.IsNaN(dv); bh.IsEnabled = !double.IsNaN(dh);
-                bv.Click += (s, e) => { tv.Text = FN(dv, 3); upd(); };
-                bh.Click += (s, e) => { th.Text = FN(dh, 3); upd(); };
-            }));
+            if (si.Rows > 1 && !double.IsNaN(si.SpacingV))
+                body.Children.Add(Riga("Spaziatura verticale", new TextBlock { Text = FN(si.SpacingV, 3) + " m = " + FN(si.SpacingV / lam, 2) + " lambda", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) }));
+            if (si.Cols > 1 && !double.IsNaN(si.SpacingH))
+                body.Children.Add(Riga("Spaziatura orizzontale", new TextBlock { Text = FN(si.SpacingH, 3) + " m = " + FN(si.SpacingH / lam, 2) + " lambda", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) }));
+            if (model.Ground.Kind != GroundKind.FreeSpace)
+                body.Children.Add(Riga("Altezza dal suolo della riga in basso", new TextBlock { Text = FN(si.BaseHeight, 2) + " m (al boom)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Fore) }));
+            body.Children.Add(Nota("Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF."));
+            body.Children.Add(Nota("Le impedenze di ogni antenna nello stack sono 'impedenze attive' (riquadro Impedenza, una sorgente alla volta nella linguetta Avvisi)."));
+            Button vaiS = Btn("Distanze di stack VHF", true);
+            vaiS.Click += (s, e) => ApriRumoreGt("stack");
+            body.Children.Add(vaiS);
             StackPanel tutto = new StackPanel { Spacing = 10 };
             tutto.Children.Add(Pannello("Stack", body, "l'antenna base resta una sola: le copie si spostano insieme"));
             tutto.Children.Add(PannelloApriGrande("Telaio a H e palo nello stack", "Montanti, traversa, palo e calze dei cavi di fase come fili NEC: confronto senza / con telaio (guadagno, F/B, F/R medio, lobi, Z del divisore, Tant e G/T).", () => PannelloTelaio(si)));   // 1.2.0: bozzetto VHF 4

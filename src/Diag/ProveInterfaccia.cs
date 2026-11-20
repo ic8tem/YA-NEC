@@ -753,7 +753,7 @@ namespace YaNec
                 PrImmagine("L_" + Pulito(nome));
                 await ProvaPagina(nome);
                 // 1.5.2: le linguette di prima diventate sottolinguette (Smith in Diagrammi, Correnti, Ottimizzatore)
-                string[] exLin = nome == LinNecCorr ? new[] { "Correnti", "NEC" } : nome == LinVarOtt ? new[] { "Ottimizzatore", "Variabili" } : nome == "Diagrammi" ? new[] { "Smith", "Diagrammi" } : new string[0];
+                string[] exLin = nome == LinNecCorr ? new[] { "Correnti", "NEC" } : nome == LinVarOtt ? new[] { "Ottimizzatore", "Variabili" } : nome == "Diagrammi" ? new[] { "Smith", "Parametri", "Lobi" } : new string[0];
                 for (int q = 0; q + 1 < exLin.Length; q++)
                 {
                     string v = exLin[q];

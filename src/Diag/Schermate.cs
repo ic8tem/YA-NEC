@@ -71,7 +71,7 @@ namespace YaNec
                 if (await apri("ARRL 520-40H Yagi 5 el 20 m (70 ft).yanec"))
                 {
                     SelectTab(IndiceLinguetta("Struttura 3D")); await foto("struttura-3d");
-                    SelectTab(IndiceLinguetta("Diagrammi")); ApriVoceDiagrammi("Diagrammi"); await foto("diagrammi");
+                    SelectTab(IndiceLinguetta("Diagrammi")); ApriVoceDiagrammi("Lobi"); await foto("diagrammi");
                     ApriVoceDiagrammi("Terreno reale"); await Attendi(() => terrEsito != null, 90000); await Task.Delay(2500); await foto("terreno-reale");
                     ApriVoceDiagrammi("Tabelle"); await foto("tabelle-fb-fr");
                     ApriLinguetta("Smith"); await foto("smith");
