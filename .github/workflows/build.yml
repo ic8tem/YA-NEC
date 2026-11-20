@@ -37,6 +37,15 @@ jobs:
         run: |
           rm -rf /tmp/w7 && mkdir /tmp/w7 && git archive HEAD | tar -x -C /tmp/w7
           dotnet build /tmp/w7/YA-NEC.csproj -c Release -p:Windows7=true
+      # 1.5.3 (IC8TEM 20/11/2026 12:32 «mi devi pure verificare sempre questo»): ogni modello d'esempio letto, calcolato, passato da
+      # Ridimensiona e dalla Verifica della segmentazione con «tutti»; la compilazione fallisce se una delle due da' errore.
+      - name: Prova dei modelli d'esempio (Ridimensiona e Segmentazione)
+        shell: bash
+        run: |
+          DLL=$(ls bin/Release/net8.0*/YA-NEC.dll | head -1)
+          timeout 900 dotnet "$DLL" --converti data/modelli /tmp/conv
+          cut -d';' -f1,2,5,10,11,12,14,15,16 /tmp/conv/converti.csv
+          if cut -d';' -f15,16 /tmp/conv/converti.csv | grep -q "errore"; then echo "::error::Ridimensiona o Segmentazione con errori"; exit 1; fi
 
   pacchetti:
     if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/release' || github.event_name == 'workflow_dispatch'
