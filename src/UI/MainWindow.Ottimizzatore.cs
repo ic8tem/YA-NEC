@@ -57,7 +57,7 @@ namespace YaNec
             new[] { "fb", "F/B", "70", "≥ 22 dB" },
             new[] { "fr", "F/R medio (emisfero posteriore)", "0", "≥ 18 dB" },   // 1.2.0 (bozzetto 11 A)
             new[] { "el", "Elevazione", "0", "-" },
-            new[] { "z", "Impedenza voluta", "40", "Z0 +j0" },
+            new[] { "z", "Impedenza voluta", "40", "50 +j0" },   // 1.5.3 (IC8TEM 20/11/2026): parte sempre da 50 +j0 (prima "Z0 +j0", lo Z0 della barra in alto)
             new[] { "i", "Corrente in un punto", "0", "-" },
         };
 
