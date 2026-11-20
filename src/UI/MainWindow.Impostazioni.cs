@@ -193,7 +193,7 @@ namespace YaNec
 
             // ---- Diagrammi ----
             StackPanel dia = new StackPanel();
-            dia.Children.Add(RigaImp("Passo degli angoli", SceltaFutura(new[] { "0,5", "1", "2", "5" }, 2, "Il diagramma 3D si calcola a 2 gradi con l'affinamento del massimo.")));
+            dia.Children.Add(RigaImp("Passo degli angoli", PilloleAngoli(), null, "Diagramma 3D, AGT, Rumore/G/T e tabelle. «auto»: il passo più fine che sul modello aperto costa meno di mezzo secondo su questo computer; il diagramma compare a 2 gradi e quello fine segue in sottofondo. In rosso il passo al limite (oltre 1 s), spento se servirebbero più di 10 s. Sweep e ottimizzatore restano a 2 gradi. Velocità e tempi previsti nel Registro."));   // 1.5.3
             dia.Children.Add(RigaImp("Polarizzazione", SceltaFutura(new[] { "totale", "oriz.", "vert.", "circ. destra", "circ. sinistra" }, 0, "Totale, verticale e orizzontale sono nella linguetta Diagrammi; le circolari arrivano dopo.")));
             dia.Children.Add(RigaImp("F/R: settore posteriore", new TextBlock { Text = "180 gradi (90-270)", Foreground = Pal.B(Pal.Fore), VerticalAlignment = VerticalAlignment.Center }, "come EZNEC", "Il settore di 120 gradi come MMANA arriva con la prossima versione."));
             dia.Children.Add(Casella("Mostra l'angolo a -3 dB (triangolo nei diagrammi 2D)", true, true, "Gia' attivo dalla 0.4.0: raggi tratteggiati, arco e valore. Il cono nel 3D arriva dopo."));
@@ -307,6 +307,7 @@ namespace YaNec
         void SincronizzaImpostazioni()
         {
             if (impZ0 == null) return;
+            AggiornaPassoAngoli();   // 1.5.3
             impSync = true;
             try
             {

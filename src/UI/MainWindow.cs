@@ -127,6 +127,7 @@ namespace YaNec
             Height = 900;
             MinWidth = 900;
             MinHeight = 560;
+            AvviaPassoAngoli();   // 1.5.3: prima di BuildUi (le pillole delle Impostazioni leggono la scelta)
             BuildUi();
             // 1.0.2: stato del tasto del mouse, per non ridisegnare le tabelle degli Oggetti a meta' di un clic (RidisegnaTabelle)
             AddHandler(PointerPressedEvent, (s, e) => puntatoreGiu = true, Avalonia.Interactivity.RoutingStrategies.Tunnel, true);

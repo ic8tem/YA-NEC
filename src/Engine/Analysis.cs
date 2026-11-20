@@ -308,6 +308,8 @@ namespace YaNec.Engine
         /// <summary>
         /// Diagramma 3D a passo gridStep (gradi) dalla soluzione gia' fatta; best/bt/bp: massimo sulla griglia (theta, phi).
         /// </summary>
+        static int diagrammiInCorso;
+
         public static PatternGrid Griglia(Nec2Engine e, double gridStep, CancellationToken ct, out double best, out double bt, out double bp, out double ms)
         {
             bool gnd = e.HasGround;
@@ -324,6 +326,9 @@ namespace YaNec.Engine
             double b0 = e.Gain(90, 0).GainTotal, t0 = 90, p0 = 0;
             Prestazioni.Scopo misuraDiag = Prestazioni.Misura("Diagramma 3D (campo lontano)", gridStep.ToString(System.Globalization.CultureInfo.InvariantCulture) + " gradi", false);
             System.Diagnostics.Stopwatch swDiag = System.Diagnostics.Stopwatch.StartNew();
+            bool solo = Interlocked.Increment(ref diagrammiInCorso) == 1;   // 1.5.3: si misura solo un diagramma alla volta (non durante l'ottimizzatore)
+            try
+            {
             // dalla 0.4.2 (approvato da IC8TEM il 13/11/2026): una riga di elevazione per processore. Il campo lontano (Ffld)
             // legge solo i dati della soluzione, quindi i thread non si disturbano; il massimo si cerca dopo, nello stesso
             // ordine di prima, cosi' il risultato e' identico al calcolo su un solo processore.
@@ -345,6 +350,9 @@ namespace YaNec.Engine
                     if (g.Total[i, j] > b0 + 0.005) { b0 = g.Total[i, j]; t0 = g.ThetaAt(i); p0 = g.PhiAt(j); }
             misuraDiag.Dispose();
             ms = swDiag.Elapsed.TotalMilliseconds;
+            if (solo && Volatile.Read(ref diagrammiInCorso) == 1) PassoAngoli.Registra(e.Geometry.N, g.NTheta * g.NPhi, ms / 1000.0);   // 1.5.3: velocita' del computer
+            }
+            finally { Interlocked.Decrement(ref diagrammiInCorso); }
             best = b0; bt = t0; bp = p0;
             return g;
         }

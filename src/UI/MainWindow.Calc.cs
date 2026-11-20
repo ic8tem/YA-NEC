@@ -533,16 +533,20 @@ namespace YaNec
 
         bool affinando;
         // diagramma 3D a 2 gradi in sottofondo, solo se si vede (Struttura 3D, Diagrammi, Rumore/GT/Stack)
-        async void AffinaDiagrammaSeServe(RunResult r, CancellationToken tok)
+        // 1.5.3: al passo degli angoli scelto (o «auto», adattato al computer); sempre = anche fuori dalle linguette del diagramma
+        async void AffinaDiagrammaSeServe(RunResult r, CancellationToken tok, bool sempre = false)
         {
-            if (affinando || r == null || r.Grid == null || r.Grid.ThetaStep <= 2.0) return;
+            double passo = PassoDiagramma();
+            if (affinando || r == null || r.Grid == null || Math.Abs(r.Grid.ThetaStep - passo) < 1e-9) return;
+            if (r.Grid.ThetaStep < passo && !sempre) return;
             string n = curTab >= 0 && curTab < tabs.Count ? tabs[curTab].Tag as string : "";
-            if (n != "Struttura 3D" && n != "Diagrammi" && n != "Rumore/GT/Stack") return;
+            if (!sempre && n != "Struttura 3D" && n != "Diagrammi" && n != "Rumore/GT/Stack") return;
             affinando = true;
             try
             {
-                await Task.Run(() => Analysis.AffinaDiagramma(r, 2.0, tok));
-                if (!tok.IsCancellationRequested && run == r) { Registro.Scrivi("CALCOLO", "diagramma 3D affinato a 2 gradi"); RefreshAll(); }
+                RegistraPassoAngoli();
+                await Task.Run(() => Analysis.AffinaDiagramma(r, passo, tok));
+                if (!tok.IsCancellationRequested && run == r) { Registro.Scrivi("CALCOLO", "diagramma 3D a " + passo.ToString("0.#", CultureInfo.InvariantCulture) + " gradi"); RefreshAll(); AggiornaPassoAngoli(); }
             }
             catch (OperationCanceledException) { }
             catch (Exception ex) { Registro.Scrivi("CALCOLO", "diagramma 3D a 2 gradi non riuscito: " + ex.Message); }
