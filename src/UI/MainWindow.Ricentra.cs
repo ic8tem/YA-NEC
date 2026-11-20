@@ -165,7 +165,7 @@ namespace YaNec
                     if (r.Righe.Count > 0)
                     {
                         Grid tb = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto,Auto,Auto,Auto") };
-                        string[] tit = { "Elemento", "Ø ora", "Ø dopo", "Lunghezza ora", "dopo il diametro", "dopo la scala" };
+                        string[] tit = { "Elemento", "Ø ora", "Ø dopo", "Lunghezza ora", "dopo la scala", "dopo il diametro" };   // 1.5.3: la scala si fa prima del diametro
                         int riga = 0;
                         Action<string[], bool> add = (v, h) =>
                         {
@@ -189,8 +189,8 @@ namespace YaNec
                     fin.Children.Add(new TextBlock { Text = " · " + r.GDopo.ToString("0.00", cc) + " dBi · F/B " + r.FbDopo.ToString("0.0", cc) + " dB", Foreground = Pal.B(Pal.Fore) });
                     esito.Children.Add(fin);
                     foreach (string n in r.Note) esito.Children.Add(Nota(n, Pal.Orange));
-                    if (!double.IsNaN(segLam) && segLam < 100)
-                        esito.Children.Add(Nota("Segmenti lunghi: circa " + segLam.ToString("0", cc) + " per λ sul segmento più lungo. Sulle antenne a banda stretta (Yagi lunghe) con meno di 100 per λ il risultato può non essere convergente: alza i segmenti per λ e ripeti il Cerca.", Pal.Orange));
+                    if (!double.IsNaN(segLam) && segLam < 80)   // con 120 per λ il dipolo da 12 mm ha segmenti di 4 raggi (circa 86 per λ): niente avviso
+                        esito.Children.Add(Nota("Segmenti lunghi: circa " + segLam.ToString("0", cc) + " per λ sul segmento più lungo. Sulle antenne a banda stretta (Yagi lunghe) con segmenti lunghi il risultato può non essere convergente: alza i segmenti per λ e ripeti il Cerca.", Pal.Orange));
                     bApp.IsEnabled = true;
                 }
                 catch (OperationCanceledException) { stato.Text = "Interrotto."; }
