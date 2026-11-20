@@ -7,61 +7,61 @@ Lezione 22: il terreno reale
 Corso YA-NEC, lezione 22: il terreno reale, come HFTA di N6BV. Dagli Esempi apriamo la Yagi 5 elementi dell'ARRL per i 20 m, a 21 m su terreno medio.
 
 3
-00:00:15,933 --> 00:00:29,124
-Linguetta Diagrammi: la fascia in alto ha sette voci, dalla 1.5.2 anche la carta di Smith. Scegliamo Terreno reale.
+00:00:15,933 --> 00:00:29,384
+Linguetta Diagrammi: la fascia in alto ha otto voci, da Lobi e Parametri fino alla carta di Smith. Scegliamo Terreno reale.
 
 4
-00:00:29,174 --> 00:00:39,724
+00:00:29,434 --> 00:00:39,984
 A sinistra la posizione dell'antenna: un locatore da 8 a 12 caratteri, qui JN70CN82WE. Sotto: latitudine, longitudine e quota del suolo dal DEM.
 
 5
-00:00:39,774 --> 00:00:50,425
+00:00:40,034 --> 00:00:50,690
 Scegli sulla mappa: foto aerea con la griglia dei locatori, che si infittisce con lo zoom.
 
 6
-00:00:50,475 --> 00:00:57,958
+00:00:50,740 --> 00:00:58,223
 Un clic sceglie il punto; a destra il locatore a 10 caratteri, le coordinate e la quota del suolo.
 
 7
-00:00:58,008 --> 00:01:05,134
+00:00:58,273 --> 00:01:05,416
 Usa questo punto: si torna alla pagina con il nuovo locatore.
 
 8
-00:01:05,184 --> 00:01:15,801
+00:01:05,466 --> 00:01:16,083
 Profilo del terreno dal DEM: TINITALY dell'INGV, celle di 10 m; fuori dall'Italia SRTM1. Si scarica al primo uso e resta nella cartella data/dem.
 
 9
-00:01:15,851 --> 00:01:24,134
+00:01:16,133 --> 00:01:24,416
 Per direzione di traffico: sei rotte con azimut e distanza ricalcolati dal locatore. Prima gli USA, costa est.
 
 10
-00:01:24,184 --> 00:01:35,134
+00:01:24,466 --> 00:01:35,417
 In alto il profilo verso gli USA, con il punto di riflessione. Sotto il lobo verticale: blu sul terreno vero, arancio tratteggiato sul terreno piatto.
 
 11
-00:01:35,184 --> 00:01:48,801
+00:01:35,467 --> 00:01:49,083
 A destra i risultati alla HFTA. Figura di merito sulla rotta: -0,5 dB rispetto al terreno piatto. Ma sugli angoli bassi il terreno vero dà fino a 13 dB in più: la costa scende verso il mare.
 
 12
-00:01:48,851 --> 00:02:00,492
+00:01:49,133 --> 00:02:00,592
 Ora il Giappone: un altro profilo. Figura di merito +0,6 dB, primo massimo a 1,5 gradi invece di 13.
 
 13
-00:02:00,542 --> 00:02:06,892
+00:02:00,642 --> 00:02:06,992
 Scansione dell'altezza: il calcolo si ripete da 6 a 30 m. Intanto, come funziona.
 
 14
-00:02:06,942 --> 00:02:20,292
+00:02:07,042 --> 00:02:20,392
 Il diagramma dell'antenna viene dal NEC; ogni tratto del profilo riflette con i coefficienti di Fresnel, pesato con la parte di zona di Fresnel che copre; sui crinali c'è la diffrazione.
 
 15
-00:02:20,342 --> 00:02:26,906
+00:02:20,442 --> 00:02:26,987
 Collaudo: su un profilo piatto il risultato coincide con il NEC entro 0,1 dB.
 
 16
-00:02:26,956 --> 00:02:36,906
+00:02:27,037 --> 00:02:36,987
 Ecco il risultato della scansione: per il Giappone l'altezza migliore è 16 m, con il guadagno medio sugli angoli utili da 1 a 15 gradi.
 
 17
-00:02:36,956 --> 00:02:41,907
+00:02:37,037 --> 00:02:41,988
 Il terreno conta quanto l'antenna. Tutto spiegato nel capitolo 23 del manuale. Prossima lezione: ricezione, tabelle e tolleranze. 73 de IC8TEM

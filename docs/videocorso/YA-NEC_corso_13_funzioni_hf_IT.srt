@@ -3,77 +3,77 @@
 Lezione 13: le altre funzioni per l'HF
 
 2
-00:00:05,000 --> 00:00:16,585
+00:00:05,000 --> 00:00:16,598
 Corso YA-NEC, lezione 13: le altre funzioni per l'HF. Esempi: la ARRL 520-40H, Yagi 5 elementi per i 20 m a 70 piedi, dall'ARRL Antenna Book.
 
 3
-00:00:16,635 --> 00:00:27,185
+00:00:16,648 --> 00:00:27,198
 65 fili di tubi di alluminio telescopici, con la correzione di Leeson per i gradini. I riquadri in alto: 21,5 - j16,6 ohm, 15,06 dBi, F/B 28 dB.
 
 4
-00:00:27,235 --> 00:00:35,985
+00:00:27,248 --> 00:00:35,998
 ROS 2,64 su 50 ohm: il progetto ARRL vuole il suo adattamento (hairpin o gamma). Il modello mostra il radiatore nudo.
 
 5
-00:00:36,035 --> 00:00:43,452
-Linguetta Diagrammi: azimut all'elevazione del massimo, ed elevazione nella direzione principale.
+00:00:36,048 --> 00:00:44,198
+Linguetta Diagrammi, voce Lobi: azimut all'elevazione del massimo, ed elevazione nella direzione principale.
 
 6
-00:00:43,502 --> 00:00:52,652
+00:00:44,248 --> 00:00:53,400
 Massimo a 13,2 gradi sul terreno medio, apertura a -3 dB 55,1 gradi in azimut e 14,2 in elevazione, scala logaritmica ARRL.
 
 7
-00:00:52,702 --> 00:00:58,786
+00:00:53,450 --> 00:00:59,534
 'Azimut ruotato di 90 gradi': lo 0 in alto o a destra, come in EZNEC o MMANA.
 
 8
-00:00:58,836 --> 00:01:06,518
+00:00:59,584 --> 00:01:07,267
 Stesso diagramma, abitudine diversa.
 
 9
-00:01:06,568 --> 00:01:16,412
+00:01:07,317 --> 00:01:17,173
 Scala lineare in dB: i lobi posteriori sembrano molto piu' grandi, perche' la scala ARRL comprime i livelli bassi.
 
 10
-00:01:16,462 --> 00:01:22,947
-Linguetta Frequenza: lo sweep sulla banda.
+00:01:17,223 --> 00:01:23,173
+Voce Parametri, che prima era la linguetta Frequenza: lo sweep sulla banda.
 
 11
-00:01:22,997 --> 00:01:34,147
+00:01:23,223 --> 00:01:34,373
 ROS, guadagno nella direzione principale, impedenza, F/B e F/R, efficienza di radiazione: tra 14,0 e 14,4 MHz il F/B ha il picco di 35 dB verso 14,1 MHz.
 
 12
-00:01:34,197 --> 00:01:37,211
+00:01:34,423 --> 00:01:37,445
 Il riquadro 'Altri dati'.
 
 13
-00:01:37,261 --> 00:01:46,477
+00:01:37,495 --> 00:01:46,712
 Efficienza 98,5 % (perdite nell'alluminio), 145 segmenti. La prova AGT vale solo nello spazio libero o sul terreno perfetto.
 
 14
-00:01:46,527 --> 00:01:56,438
+00:01:46,762 --> 00:01:51,322
 Carta di Smith: è una voce della fascia dei Diagrammi.
 
 15
-00:01:56,488 --> 00:02:06,171
+00:01:51,372 --> 00:02:01,056
 L'impedenza da 14,0 (verde) a 14,4 MHz (arancio) con il cerchio del ROS 2: tutto quello che la rete di adattamento deve correggere.
 
 16
-00:02:06,221 --> 00:02:16,299
+00:02:01,106 --> 00:02:11,375
 Linguetta NEC/correnti, voce NEC: le schede NEC-2 del modello, modificabili.
 
 17
-00:02:16,349 --> 00:02:26,766
+00:02:11,425 --> 00:02:21,842
 Qui si leggono e si cambiano tutte le schede - GW, GE, GN, EX, LD, FR - poi 'Applica e ricalcola'. I commenti conservano la fonte del modello.
 
 18
-00:02:26,816 --> 00:02:33,267
+00:02:21,892 --> 00:02:28,438
 Rumore/GT/Stack: il lato ricezione, temperatura d'antenna e G/T.
 
 19
-00:02:33,317 --> 00:02:43,400
+00:02:28,488 --> 00:02:38,572
 Sotto i 28 MHz il programma avvisa: comanda il rumore esterno, quindi il G/T serve solo per confronto. Diventa utile in VHF - lezione 18.
 
 20
-00:02:43,450 --> 00:02:49,400
+00:02:38,622 --> 00:02:44,572
 Diagrammi, sweep, Smith, altri dati, schede NEC: gli strumenti attorno alla simulazione. Prossima lezione: la Yagi 6 elementi DK7ZB con le misure del progettista. 73 de IC8TEM

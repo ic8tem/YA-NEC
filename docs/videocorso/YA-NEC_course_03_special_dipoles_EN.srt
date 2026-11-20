@@ -1,91 +1,91 @@
 1
-00:00:00,000 --> 00:00:06,796
-Lesson 3: special dipoles - folded, OCF/Windom, G5RV, T2FD
+00:00:00,000 --> 00:00:04,950
+Lesson 3: special dipoles
 
 2
-00:00:06,846 --> 00:00:16,428
+00:00:05,000 --> 00:00:15,695
 YA-NEC course, lesson 3: special dipoles - folded, OCF/Windom, G5RV and T2FD. Calculators tab, Dipoles.
 
 3
-00:00:16,478 --> 00:00:23,144
+00:00:15,745 --> 00:00:22,585
 Folded dipole for 14.2 MHz: 9.89 m, two conductors joined at the ends.
 
 4
-00:00:23,194 --> 00:00:34,885
+00:00:22,635 --> 00:00:34,471
 The current splits between the two conductors, so the impedance is four times higher: about 292 ohm. That is why the real-time SWR on 50 ohm is 5.6.
 
 5
-00:00:34,935 --> 00:00:44,950
+00:00:34,521 --> 00:00:46,527
 'Create the NEC model and check it': four wires, 10 cm apart.
 
 6
-00:00:45,000 --> 00:00:57,869
+00:00:46,577 --> 00:00:59,490
 NEC: 273 - j95 ohm, 7.12 dBi. On 300 ohm ribbon that is SWR 1.4; on 50 ohm coax it needs a 4:1 balun.
 
 7
-00:00:57,919 --> 00:01:12,890
+00:00:59,540 --> 00:01:14,802
 OCF, the off-centre fed dipole descended from Loren Windom W8GZ (1929): 3.6 MHz, 39.61 m fed at one third, arms 13.07 m and 26.54 m.
 
 8
-00:01:12,940 --> 00:01:22,034
+00:01:14,852 --> 00:01:24,077
 The idea: at that point the impedance is similar on the fundamental and on the even harmonics - 7.2, 14.4, 28.8 MHz.
 
 9
-00:01:22,084 --> 00:01:36,948
+00:01:24,127 --> 00:01:40,599
 Create the model, then look at it from 3 to 30 MHz on 200 ohm, the usual 4:1 balun.
 
 10
-00:01:36,998 --> 00:02:04,015
+00:01:40,649 --> 00:02:13,951
 Z0 for SWR 200 ohm. Frequency and sweep: band Free, centre 16.5 MHz, span 27 MHz, 109 points.
 
 11
-00:02:04,065 --> 00:02:18,854
+00:02:14,001 --> 00:02:29,009
 The dips: near 7.3, 14.8, 18.5 and 26.5 MHz, SWR between about 1.2 and 1.6. The harmonics land slightly high: you trim the length while watching this graph.
 
 12
-00:02:18,904 --> 00:02:30,770
+00:02:29,059 --> 00:02:41,259
 On 80 m, with the wire at only 12 m, the impedance is 75 - j25 ohm: SWR 2.7 on 200 ohm. Height and ground decide the fundamental.
 
 13
-00:02:30,820 --> 00:02:40,249
+00:02:41,309 --> 00:02:53,120
 G5RV by Louis Varney G5RV: 31.10 m top and 10.36 m of 600 ohm ladder line, then the coax.
 
 14
-00:02:40,299 --> 00:02:52,557
+00:02:53,170 --> 00:03:05,501
 Real time: minimum SWR 2.03 at 14.24 MHz and 7.9 dBi. On 20 m the top is one and a half wavelengths: four main lobes.
 
 15
-00:02:52,607 --> 00:03:02,625
+00:03:05,551 --> 00:03:17,000
 Create the model: the ladder line becomes a NEC TL card, the source sits at its bottom end.
 
 16
-00:03:02,675 --> 00:03:15,515
+00:03:17,050 --> 00:03:29,540
 At 14.15 MHz: 98 - j44 ohm, SWR 2.5 on 50 ohm. Varney designed it for a tuner: the G5RV is not a resonant multiband antenna.
 
 17
-00:03:15,565 --> 00:03:29,219
+00:03:29,590 --> 00:03:43,274
 T2FD, the terminated folded dipole of G.L. Countryman W3HH: 33.31 m for 3 to 18 MHz, conductors 1 m apart, 450 ohm resistor opposite the feed.
 
 18
-00:03:29,269 --> 00:03:43,391
+00:03:43,324 --> 00:03:58,951
 The calculator promises about 300 ohm over the whole band. Let's ask the NEC.
 
 19
-00:03:43,441 --> 00:03:54,740
+00:03:59,001 --> 00:04:10,503
 At 3 MHz: 1365 - j721 ohm. Z0 for SWR 300 ohm, sweep 3 to 18 MHz.
 
 20
-00:03:54,790 --> 00:04:20,697
+00:04:10,553 --> 00:04:43,190
 Frequency and sweep: centre 10.5 MHz, span 15 MHz, 61 points.
 
 21
-00:04:20,747 --> 00:04:29,387
+00:04:43,240 --> 00:04:51,925
 On 300 ohm the SWR swings between 1.3 and 8: much less flat than the legend says.
 
 22
-00:04:29,437 --> 00:04:39,987
+00:04:51,975 --> 00:05:02,525
 And the green curve is the price: radiation efficiency between 10 and 55 %, the rest heats the resistor. Quiet and tuner-friendly, but not free.
 
 23
-00:04:40,037 --> 00:04:51,073
+00:05:02,575 --> 00:05:13,422
 Folded, OCF, G5RV, T2FD: four classics, each with its own truth in the NEC. Next lesson: parallel dipoles. 73 de IC8TEM

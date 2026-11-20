@@ -1,95 +1,95 @@
 1
-00:00:00,000 --> 00:00:05,138
-Lesson 14: the DK7ZB 6-element Yagi with the designer's dimensions
+00:00:00,000 --> 00:00:04,950
+Lesson 14: DK7ZB 6-element Yagi
 
 2
-00:00:05,188 --> 00:00:18,828
+00:00:05,000 --> 00:00:18,567
 YA-NEC course, lesson 14: a published design, typed in as it is. The 6-element 2 m Yagi by DK7ZB, 28 ohm, boom 2.40 m (qsl.net/dk7zb).
 
 3
-00:00:18,878 --> 00:00:38,576
+00:00:18,617 --> 00:00:38,330
 From the DK7ZB page: positions from the reflector 0 - 390 - 640 - 1150 - 1785 - 2380 mm; lengths for 10 mm elements 1017 - 971 - 935 - 907 - 905 - 876 mm.
 
 4
-00:00:38,626 --> 00:00:43,443
+00:00:38,380 --> 00:00:43,278
 New: an empty model. No variables this time: just numbers.
 
 5
-00:00:43,493 --> 00:00:53,795
+00:00:43,328 --> 00:00:53,618
 Frequency 144.300 MHz, sweep 2 MHz to see the whole band.
 
 6
-00:00:53,845 --> 00:01:05,667
+00:00:53,668 --> 00:01:05,054
 Each element is one wire across Y, from -L/2 to +L/2; X is the position on the boom. Radius 5 mm (10 mm tube), 21 segments.
 
 7
-00:01:05,717 --> 00:01:15,932
+00:01:05,104 --> 00:01:15,304
 Reflector: X = 0, Y from -0.5085 to +0.5085 m (1017 mm).
 
 8
-00:01:15,982 --> 00:01:24,902
+00:01:15,354 --> 00:01:24,361
 Driven element: X = 0.390, half-length 0.4855 m (971 mm).
 
 9
-00:01:24,952 --> 00:01:34,003
+00:01:24,411 --> 00:01:33,418
 Director 1: X = 0.640, half-length 0.4675 m (935 mm).
 
 10
-00:01:34,053 --> 00:01:42,682
+00:01:33,468 --> 00:01:41,995
 Director 2: X = 1.150, half-length 0.4535 m (907 mm).
 
 11
-00:01:42,732 --> 00:01:51,783
+00:01:42,045 --> 00:01:51,038
 Director 3: X = 1.785, half-length 0.4525 m (905 mm).
 
 12
-00:01:51,833 --> 00:01:59,793
+00:01:51,088 --> 00:01:59,092
 Director 4: X = 2.380, half-length 0.438 m (876 mm).
 
 13
-00:01:59,843 --> 00:02:04,675
+00:01:59,142 --> 00:02:04,003
 Apply and recalculate: six elements on a 2.38 m boom.
 
 14
-00:02:04,725 --> 00:02:12,703
+00:02:04,053 --> 00:02:12,020
 Feed at the centre of the driven element: w2c. Apply and recalculate.
 
 15
-00:02:12,753 --> 00:02:28,262
+00:02:12,070 --> 00:02:27,419
 Result: 30.2 - j3.5 ohm, 12.06 dBi = 9.91 dBd, F/B 30.3 dB, F/R 26.4 dB, beamwidth 45 x 53 degrees.
 
 16
-00:02:28,312 --> 00:02:42,374
+00:02:27,469 --> 00:02:41,531
 DK7ZB gives 9.9 dBd and 24 dB: gain agrees within 0.01 dB. His F/B is the worst rear lobe, so compare it with our F/R (26.4 dB).
 
 17
-00:02:42,424 --> 00:02:49,512
+00:02:41,581 --> 00:02:48,668
 The antenna is designed for 28 ohm, not 50: set Z0 for SWR to 28 ohm.
 
 18
-00:02:49,562 --> 00:02:55,951
+00:02:48,718 --> 00:02:55,005
 SWR on 28 ohm: 1.15 at 144.300 MHz.
 
 19
-00:02:56,001 --> 00:03:02,564
-Frequency tab: the sweep from 143.3 to 145.3 MHz.
+00:02:55,055 --> 00:03:05,422
+Patterns, Parameters item: the sweep from 143.3 to 145.3 MHz.
 
 20
-00:03:02,614 --> 00:03:13,963
+00:03:05,472 --> 00:03:17,098
 SWR below 1.5 over the whole 2 MHz, gain almost flat around 12 dBi, F/B peak near 143.9 MHz: a broadband design.
 
 21
-00:03:14,013 --> 00:03:18,029
-Patterns: azimuth and elevation in free space.
+00:03:17,148 --> 00:03:27,337
+Lobes item: azimuth and elevation in free space.
 
 22
-00:03:18,079 --> 00:03:25,030
+00:03:27,387 --> 00:03:34,337
 Clean main lobe, side and rear lobes all below -20 dB.
 
 23
-00:03:25,080 --> 00:03:36,924
+00:03:34,387 --> 00:03:46,041
 From 28 to 50 ohm DK7ZB uses a quarter-wave transformer made of two 75 ohm coax lines in parallel (37.5 ohm): see his page for the cut lengths.
 
 24
-00:03:36,974 --> 00:03:50,607
+00:03:46,091 --> 00:03:59,477
 Typing a published design and checking it takes two minutes. Thanks to DK7ZB for the data. Next lesson: the same 6 elements brought to 50 ohm with the Optimizer. 73 de IC8TEM

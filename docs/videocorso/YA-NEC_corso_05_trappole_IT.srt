@@ -1,79 +1,59 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lezione 5: le trappole e il dipolo trappolato
 
 2
-00:00:04,000 --> 00:00:16,643
+00:00:05,000 --> 00:00:21,520
 Corso YA-NEC, lezione 5: le trappole e il dipolo trappolato. Calcolatori, Dipoli, tipo 'trappolato'.
 
 3
-00:00:16,693 --> 00:00:27,777
+00:00:21,570 --> 00:00:32,654
 Il classico W3DZZ (C.L. Buchanan, QST 1955): una trappola per braccio, risonante a 7,05 MHz con 60 pF. Il calcolatore trova 8,49 uH; W3DZZ usava 8,2 uH.
 
 4
-00:00:27,827 --> 00:00:39,444
+00:00:32,704 --> 00:00:44,321
 In 40 m la trappola e' un'impedenza altissima: lavorano solo i 10,11 m interni. In 80 m e' una bobina: tutto il filo e' piu' corto di un dipolo normale da 38 m.
 
 5
-00:00:39,494 --> 00:00:55,504
+00:00:44,371 --> 00:01:02,190
 Il ROS minimo in tempo reale e' a 3,653 MHz, un po' basso. 'Porta in risonanza (NEC)' regola i tratti esterni.
 
 6
-00:00:55,554 --> 00:01:03,171
+00:01:02,240 --> 00:01:09,857
 Tratto esterno 6,63 m, totale 33,49 m. Verifica NEC: 61,3 ohm a 3,75 MHz, ROS 1,23, efficienza 98 %.
 
 7
-00:01:03,221 --> 00:01:16,307
+00:01:09,907 --> 00:01:25,270
 'Crea il modello NEC', poi la tabella Carichi tra gli oggetti del modello.
 
 8
-00:01:16,357 --> 00:01:25,774
+00:01:25,320 --> 00:01:34,737
 Le due trappole sono due carichi LC: 8,494 uH, 60 pF, Q 150, in fondo ai tratti interni. Il Q decide le perdite della trappola.
 
 9
-00:01:25,824 --> 00:01:51,670
-Linguetta Frequenza: un solo sweep da 3,4 a 7,4 MHz, 201 punti.
+00:01:34,787 --> 00:02:07,031
+Diagrammi, voce Parametri: un solo sweep da 3,4 a 7,4 MHz, 201 punti.
 
 10
-00:01:51,720 --> 00:01:59,871
+00:02:07,081 --> 00:02:15,231
 Due minimi: 80 m a 3,75 MHz e 40 m vicino a 7,24 MHz. In mezzo l'impedenza sale oltre 10 kohm verso 5,3 MHz.
 
 11
-00:01:59,921 --> 00:02:11,271
+00:02:15,281 --> 00:02:26,631
 E la curva verde: tra le due bande la corrente nelle trappole e' enorme e l'efficienza crolla. Li' nessuno trasmette - ma mostra quanto costano le trappole.
 
 12
-00:02:11,321 --> 00:02:29,305
+00:02:26,681 --> 00:02:44,801
 Zoom sui 40 m: centro 7,15 MHz, ampiezza 500 kHz.
 
 13
-00:02:29,355 --> 00:02:39,838
+00:02:44,851 --> 00:02:55,334
 In 40 m: circa 100 ohm in risonanza, ROS 2 a 7,24 MHz, efficienza 88-90 %. Le perdite delle trappole si prendono circa un decimo della potenza.
 
 14
-00:02:39,888 --> 00:02:52,907
+00:02:55,384 --> 00:03:08,401
 Per migliorare i 40 m si sposta la risonanza della trappola o la lunghezza interna; con trappole a Q piu' basso la perdita cresce. Tutto in pochi secondi, prima di tagliare un filo.
 
 15
-00:02:52,957 --> 00:03:12,154
-Novita' della 1.0.11: il dipolo trappolato ha anche il modo a singola banda, con la bobina di carico. Calcolatori, Dipoli, trappolato, 'singola banda'.
-
-16
-00:03:12,204 --> 00:03:24,754
-Si scelgono frequenza, lunghezza del braccio e posizione della bobina in % del braccio dal centro. 7,1 MHz, braccio 6,5 m, bobina al 50 %: 13,1 uH, dipolo il 35 % piu' corto.
-
-17
-00:03:24,804 --> 00:03:33,488
-Bobina al 30 % del braccio: basta una bobina da 9,4 uH. Piu' vicina al centro, piu' piccola, ma con meno efficienza.
-
-18
-00:03:33,538 --> 00:03:46,713
-La formula e' lo stesso modello a linea della W3DZZ, risolto per la bobina. 'Porta in risonanza (NEC)' ritocca solo la bobina: 9,12 uH. Le lunghezze restano quelle scelte.
-
-19
-00:03:46,763 --> 00:03:53,375
-Verifica NEC: 40,3 ohm, ROS 1,24, 5,5 dBi, efficienza 90 % con le perdite della bobina (Q 200).
-
-20
-00:03:54,424 --> 00:04:00,374
+00:03:08,451 --> 00:03:14,401
 Le trappole: una bobina e un condensatore che decidono dove finisce l'antenna. Prossima lezione: gli strumenti del modello. 73 de IC8TEM

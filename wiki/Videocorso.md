@@ -2,13 +2,13 @@
 
 # Videocorso
 
-Un corso completo in 29 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 23-25 con la 1.3, la 26 con la 1.5; la 0, 1, 13, 15, 22, 27 e 28 con la 1.5.2, con le linguette riordinate). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
+Un corso completo in 29 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 23-25 con la 1.3, la 26 con la 1.5; la 1, 15, 27 e 28 con la 1.5.2, con le linguette riordinate; la 0, 3, 5, 13, 14, 19, 22 e 24 con l'anteprima 1.5.3, con Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
 ### Lezione 0 - Il programma in 5 minuti
 
-Installazione, la barra in alto, i riquadri dei risultati e le linguette. Gli Esempi, i formati che si aprono (NEC2, MMANA, AutoEZ/MultiNEC, EZNEC, YO e AO di K6STI, .yanec) con un file AutoEZ di AC6LA e un MMANA di IC8TEM. Le linguette (Smith nella fascia dei Diagrammi) e il pulsante Mostra terreno nella barra di stato. Impostazioni, aggiornamento automatico, colori, Documenti tecnici, Registro e Autotest.
+Installazione, la barra in alto, i riquadri dei risultati e le linguette. Gli Esempi, i formati che si aprono (NEC2, MMANA, AutoEZ/MultiNEC, EZNEC, YO e AO di K6STI, .yanec) con un file AutoEZ di AC6LA e un MMANA di IC8TEM. Le linguette (nella fascia dei Diagrammi Lobi, Parametri - lo sweep - e la carta di Smith) e il pulsante Mostra terreno nella barra di stato. Impostazioni, aggiornamento automatico, colori, Documenti tecnici, Registro e Autotest.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_00_programma_IT.srt)
 
@@ -126,7 +126,7 @@ Loop magnetica da 1 m per i 40 m (efficienza 16 %, 52 A e 5,6 kV con 100 W) e l'
 
 ### Lezione 13 - Le altre funzioni per l'HF
 
-Sulla ARRL 520-40H (5 elementi per i 20 m dall'ARRL Antenna Book): riquadri dei risultati, diagrammi con azimut ruotato e scala ARRL o lineare, sweep di frequenza, Altri dati (efficienza, AGT, segmenti), carta di Smith (nella fascia dei Diagrammi), schede NEC modificabili (linguetta NEC/correnti) e la linguetta Rumore/GT/Stack.
+Sulla ARRL 520-40H (5 elementi per i 20 m dall'ARRL Antenna Book): riquadri dei risultati, diagrammi con azimut ruotato e scala ARRL o lineare, sweep di frequenza (voce Parametri, che era la linguetta Frequenza), Altri dati (efficienza, AGT, segmenti), carta di Smith (nella fascia dei Diagrammi), schede NEC modificabili (linguetta NEC/correnti) e la linguetta Rumore/GT/Stack.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_13_funzioni_hf_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_13_funzioni_hf_IT.srt)
 

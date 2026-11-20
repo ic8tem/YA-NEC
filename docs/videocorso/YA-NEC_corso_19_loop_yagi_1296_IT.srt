@@ -1,51 +1,51 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lezione 19: loop Yagi per i 1296 MHz
 
 2
-00:00:04,000 --> 00:00:21,444
+00:00:05,000 --> 00:00:26,494
 Corso YA-NEC, lezione 19: la loop Yagi per i 1296 MHz. Calcolatori, Loop Yagi 1296 MHz.
 
 3
-00:00:21,494 --> 00:00:34,378
+00:00:26,544 --> 00:00:39,427
 Il progetto N6CA delle tabelle ARRL, la classica loop Yagi di G3JVL: 25 elementi - due riflettori, l'anello alimentato e 22 direttori - su un boom di 1,78 m, 7,7 lunghezze d'onda.
 
 4
-00:00:34,428 --> 00:00:45,311
+00:00:39,477 --> 00:00:50,361
 L'ARRL dice circa 18 dBi per 6 piedi. Tempo reale: 18,6 dBi, F/B 20,6 dB, 20,7 x 21 gradi. Ma il minimo di ROS e' a 1271 MHz, 25 MHz troppo in basso.
 
 5
-00:00:45,361 --> 00:01:01,374
+00:00:50,411 --> 00:01:08,846
 'Crea il modello NEC e verificalo'.
 
 6
-00:01:01,424 --> 00:01:09,707
+00:01:08,896 --> 00:01:17,179
 400 fili: ogni anello e' un poligono di 16 lati di striscia. A 1296,1 MHz: 50 + j9,6 ohm, ROS 1,21, 18,60 dBi.
 
 7
-00:01:09,757 --> 00:01:14,766
-Linguetta Frequenza.
+00:01:17,229 --> 00:01:28,389
+Diagrammi, voce Parametri.
 
 8
-00:01:14,816 --> 00:01:25,100
+00:01:28,439 --> 00:01:38,723
 Guadagno quasi piatto da 1280 a 1310 MHz, picco di F/B verso 1300, ma il minimo di ROS cade verso 1290: l'anello alimentato e' un po' lungo.
 
 9
-00:01:25,150 --> 00:01:35,796
+00:01:38,773 --> 00:01:53,745
 Torniamo al calcolatore: 'Ottimizza fino al passo' 1 - solo l'anello alimentato.
 
 10
-00:01:35,846 --> 00:01:48,864
+00:01:53,795 --> 00:02:09,493
 'Ottimizza (NEC)'.
 
 11
-00:01:48,914 --> 00:01:57,997
+00:02:09,543 --> 00:02:18,627
 Pochi secondi dopo: 48,1 - j0,9 ohm, ROS minimo 1,04 a 1296,8 MHz, guadagno 18,59 dBi. I direttori non sono stati toccati.
 
 12
-00:01:58,047 --> 00:02:10,598
+00:02:18,677 --> 00:02:31,227
 I passi da 2 a 4 accordano anche riflettori e direttori, come fa G3JVL al banco. Gli avvisi ricordano i limiti: nessun boom nel modello NEC, anelli di striscia come poligoni.
 
 13
-00:02:10,648 --> 00:02:16,598
+00:02:31,277 --> 00:02:37,227
 Loop Yagi: 400 fili, ma il metodo e' lo stesso. Prossima lezione: antenne per satelliti - Eggbeater, QFH, Quagi. 73 de IC8TEM

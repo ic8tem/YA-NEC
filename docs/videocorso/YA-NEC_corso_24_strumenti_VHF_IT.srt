@@ -1,79 +1,79 @@
 1
 00:00:00,000 --> 00:00:04,950
-Lezione 24: tolleranze, cavo e balun, Yagi incrociate, divisori e telaio a H
+Lezione 24: strumenti VHF
 
 2
-00:00:05,000 --> 00:00:16,596
+00:00:05,000 --> 00:00:16,604
 Corso YA-NEC, lezione 24: gli strumenti VHF della 1.2. Dagli Esempi apriamo la Yagi 10 elementi DJ9BV per i 144 MHz.
 
 3
-00:00:16,646 --> 00:00:27,910
+00:00:16,654 --> 00:00:31,267
 Diagrammi, voce Tolleranze: errori di costruzione su lunghezza degli elementi, posizione sul boom e diametro, con il metodo Monte Carlo.
 
 4
-00:00:27,960 --> 00:00:36,178
+00:00:31,317 --> 00:00:39,535
 Portiamo le prove a 100 e premiamo Avvia: ogni prova e' una Yagi con errori a caso, calcolata con il NEC.
 
 5
-00:00:36,228 --> 00:00:43,844
+00:00:39,585 --> 00:00:47,202
 Il risultato: F/B nominale 19 dB, nel 5% dei casi peggiori 18,1. ROS sotto 1,52 nel 95% delle prove.
 
 6
-00:00:43,894 --> 00:00:54,711
+00:00:47,252 --> 00:00:58,069
 A destra la sensibilita' per elemento; sotto la lista di taglio con la tolleranza ammessa: in rosso gli elementi critici, da tagliare con piu' cura.
 
 7
-00:00:54,761 --> 00:01:15,551
+00:00:58,119 --> 00:01:21,429
 Ora la Yagi 7 elementi DK7ZB. Nella Struttura 3D, tra gli oggetti del modello, Cavo e balun: si apre una scheda grande.
 
 8
-00:01:15,601 --> 00:01:21,686
+00:01:21,479 --> 00:01:27,555
 Calza del cavo e palo diventano fili NEC. Calcola il confronto tra nessun balun e i balun VHF.
 
 9
-00:01:21,736 --> 00:01:31,420
+00:01:27,605 --> 00:01:37,289
 Senza balun sulla calza scorre il 15% della corrente del dipolo e il F/B scende a 19,6 dB. Con il manicotto lambda/4: 3% e 23,8 dB.
 
 10
-00:01:31,470 --> 00:01:40,020
+00:01:37,339 --> 00:01:45,889
 Le ferriti funzionano, ma a 1 kW dissipano circa 31 W: il grafico mostra la corrente lungo la calza per ogni caso.
 
 11
-00:01:40,070 --> 00:01:51,291
+00:01:45,939 --> 00:02:01,202
 Calcolatori, VHF, Yagi incrociate: due Yagi uguali a X o a +, con i piani sfalsati di lambda/4 sul boom.
 
 12
-00:01:51,341 --> 00:01:59,483
+00:02:01,252 --> 00:02:09,384
 Commutazione: orizzontale, verticale, circolare destra o sinistra, X-pol per l'EME. Premiamo Calcola con la circolare destra.
 
 13
-00:01:59,533 --> 00:02:07,617
+00:02:09,434 --> 00:02:17,517
 RHCP 13,3 dBic, rapporto assiale 0 dB in asse e 0,3 dB a -3 dB; sotto, rapporto assiale e ROS in frequenza.
 
 14
-00:02:07,667 --> 00:02:24,318
+00:02:17,567 --> 00:02:35,623
 Ultimo esempio: lo stack di 4 Yagi DK7ZB su telaio a H. Calcolatori, Divisori e cavi di fase.
 
 15
-00:02:24,368 --> 00:02:33,985
-Divisore lambda/4 in tubo quadro: Z0 25 ohm, conduttore interno 14,2 mm, circa 512 mm da tagliare. Disegno quotato stampabile 1:1.
+00:02:35,673 --> 00:02:45,291
+Divisore lambda/4 in tubo quadro: Z0 25 ohm, conduttore interno 14,2 mm, circa 511 mm da tagliare. Disegno quotato stampabile 1:1.
 
 16
-00:02:34,035 --> 00:02:43,718
+00:02:45,341 --> 00:02:55,025
 Collegato allo Stack, il ROS all'ingresso usa le impedenze attive delle quattro antenne; a destra i cavi di fase, lunghezze uguali.
 
 17
-00:02:43,768 --> 00:02:57,596
+00:02:55,075 --> 00:03:11,512
 Struttura 3D, oggetto Stack: in fondo, Telaio a H e palo nello stack.
 
 18
-00:02:57,646 --> 00:03:03,728
+00:03:11,562 --> 00:03:17,637
 Montanti, traversa, palo e calze dei cavi di fase entrano nel calcolo come fili NEC. Calcola confronto.
 
 19
-00:03:03,778 --> 00:03:13,928
+00:03:17,687 --> 00:03:27,837
 Con il telaio: guadagno -0,4 dB, F/R medio -3,8 dB, G/T -0,5 dB/K. Con la polarizzazione orizzontale contano la traversa e i cavi di fase.
 
 20
-00:03:13,978 --> 00:03:18,928
+00:03:27,887 --> 00:03:32,837
 Fonti: DL6WU, DK7ZB, W8NX, ON4UN, ARRL Antenna Book, VE7BQH. Tutto nel manuale, capitolo 23.

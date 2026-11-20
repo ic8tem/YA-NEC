@@ -1,95 +1,95 @@
 1
-00:00:00,000 --> 00:00:03,950
-Lezione 14: la Yagi 6 elementi DK7ZB con le misure del progettista
+00:00:00,000 --> 00:00:04,950
+Lezione 14: Yagi 6 elementi DK7ZB
 
 2
-00:00:04,000 --> 00:00:14,683
+00:00:05,000 --> 00:00:15,684
 Corso YA-NEC, lezione 14: un progetto pubblicato, inserito così com'è. La Yagi 6 elementi per i 2 m di DK7ZB, 28 ohm, boom 2,40 m (qsl.net/dk7zb).
 
 3
-00:00:14,733 --> 00:00:25,884
+00:00:15,734 --> 00:00:26,884
 Dal sito di DK7ZB: posizioni dal riflettore 0 - 390 - 640 - 1150 - 1785 - 2380 mm; lunghezze per elementi da 10 mm 1017 - 971 - 935 - 907 - 905 - 876 mm.
 
 4
-00:00:25,934 --> 00:00:31,417
+00:00:26,934 --> 00:00:32,417
 Nuovo: un modello vuoto. Questa volta niente variabili: solo numeri.
 
 5
-00:00:31,467 --> 00:00:41,749
+00:00:32,467 --> 00:00:42,754
 Frequenza 144,300 MHz, sweep di 2 MHz per vedere tutta la banda.
 
 6
-00:00:41,799 --> 00:00:50,549
+00:00:42,804 --> 00:00:51,554
 Ogni elemento è un filo lungo Y, da -L/2 a +L/2; X è la posizione sul boom. Raggio 5 mm (tubo da 10 mm), 21 segmenti.
 
 7
-00:00:50,599 --> 00:00:56,897
+00:00:51,604 --> 00:00:57,937
 Riflettore: X = 0, Y da -0,5085 a +0,5085 m (1017 mm).
 
 8
-00:00:56,947 --> 00:01:03,685
+00:00:57,987 --> 00:01:04,723
 Radiatore: X = 0,390, mezza lunghezza 0,4855 m (971 mm).
 
 9
-00:01:03,735 --> 00:01:10,477
+00:01:04,773 --> 00:01:11,502
 Direttore 1: X = 0,640, mezza lunghezza 0,4675 m (935 mm).
 
 10
-00:01:10,527 --> 00:01:17,267
+00:01:11,552 --> 00:01:18,284
 Direttore 2: X = 1,150, mezza lunghezza 0,4535 m (907 mm).
 
 11
-00:01:17,317 --> 00:01:24,189
+00:01:18,334 --> 00:01:25,209
 Direttore 3: X = 1,785, mezza lunghezza 0,4525 m (905 mm).
 
 12
-00:01:24,239 --> 00:01:31,329
+00:01:25,259 --> 00:01:32,333
 Direttore 4: X = 2,380, mezza lunghezza 0,438 m (876 mm).
 
 13
-00:01:31,379 --> 00:01:35,996
+00:01:32,383 --> 00:01:37,233
 Applica e ricalcola: sei elementi su un boom di 2,38 m.
 
 14
-00:01:36,046 --> 00:01:43,998
+00:01:37,283 --> 00:01:45,246
 Alimentazione al centro del radiatore: w2c. Applica e ricalcola.
 
 15
-00:01:44,048 --> 00:01:51,598
+00:01:45,296 --> 00:01:52,846
 Risultato: 30,2 - j3,5 ohm, 12,06 dBi = 9,91 dBd, F/B 30,3 dB, F/R 26,4 dB, apertura 45 x 53 gradi.
 
 16
-00:01:51,648 --> 00:02:03,131
+00:01:52,896 --> 00:02:04,380
 DK7ZB dichiara 9,9 dBd e 24 dB: il guadagno coincide entro 0,01 dB. Il suo F/B è il lobo posteriore peggiore, quindi si confronta con il nostro F/R (26,4 dB).
 
 17
-00:02:03,181 --> 00:02:09,265
+00:02:04,430 --> 00:02:10,513
 L'antenna è progettata per 28 ohm, non 50: impostiamo Z0 per il ROS a 28 ohm.
 
 18
-00:02:09,315 --> 00:02:14,265
+00:02:10,563 --> 00:02:15,513
 ROS su 28 ohm: 1,15 a 144,300 MHz.
 
 19
-00:02:14,315 --> 00:02:18,665
-Linguetta Frequenza: lo sweep da 143,3 a 145,3 MHz.
+00:02:15,563 --> 00:02:25,921
+Diagrammi, voce Parametri: lo sweep da 143,3 a 145,3 MHz.
 
 20
-00:02:18,715 --> 00:02:28,465
+00:02:25,971 --> 00:02:35,722
 ROS sotto 1,5 su tutti i 2 MHz, guadagno quasi piatto intorno a 12 dBi, picco del F/B vicino a 143,9 MHz: un progetto a banda larga.
 
 21
-00:02:28,515 --> 00:02:32,932
-Diagrammi: azimut ed elevazione nello spazio libero.
+00:02:35,772 --> 00:02:45,741
+Voce Lobi: azimut ed elevazione nello spazio libero.
 
 22
-00:02:32,982 --> 00:02:39,932
+00:02:45,791 --> 00:02:52,742
 Lobo principale pulito, lobi laterali e posteriori tutti sotto -20 dB.
 
 23
-00:02:39,982 --> 00:02:51,599
+00:02:52,792 --> 00:03:04,408
 Da 28 a 50 ohm DK7ZB usa un trasformatore a quarto d'onda fatto con due cavi coassiali da 75 ohm in parallelo (37,5 ohm): le misure di taglio sono sul suo sito.
 
 24
-00:02:51,649 --> 00:02:58,599
+00:03:04,458 --> 00:03:11,409
 Scrivere un progetto pubblicato e verificarlo richiede due minuti. Grazie a DK7ZB per i dati. Prossima lezione: la stessa 6 elementi portata a 50 ohm con l'Ottimizzatore. 73 de IC8TEM
