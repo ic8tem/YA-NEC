@@ -212,7 +212,10 @@ namespace YaNec.Engine
                 foreach (SourceSpec s in m.Sources) if (s.Tag == c.I1 && AlCentro(s.Seg, c.I2)) centro = true;
                 if (o.Dispari && centro && n % 2 == 0) n++;
                 c.I2 = n;
-                if (c.Src != null && c.Src.Length > 1) c.Src[1] = null;
+                // 1.5.3 (IC8TEM 20/11/2026 12:30, errore «GW con tag 1: il numero di segmenti deve essere almeno 1» con «tutti» e
+                // «segmenti per λ»): la scheda riletta tiene il testo dei campi (Src) e il ricalcolo delle variabili rilegge I2 da li';
+                // con Src[1] = null il numero di segmenti tornava 0. Ora il testo porta il numero nuovo.
+                if (c.Src != null && c.Src.Length > 1) c.Src[1] = n.ToString(CultureInfo.InvariantCulture);
             }
             Dictionary<int, int> dopo = Conta(m.BuildGeometry());
             Func<int, int, int> sposta = (tag, seg) =>
