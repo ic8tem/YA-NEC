@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	قضبان مصمتة (مم)
 Tondini o tubi, da 8 mm (mm)	قضبان أو أنابيب، من 8 مم (مم)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	يأخذ كل عنصر أقرب مقاس مفعّل؛ ويُصحَّح طوله ليبقى مُوالفًا كما كان (نفس المفاعلة، نموذج خطوط شيلكونوف، نفس تصحيح ليسون). في الترددات الراديوية الأنبوب والقضيب المصمت بنفس القطر متساويان.
 misure commerciali	مقاسات تجارية
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	في النهاية الوصول إلى Z0 +j0 بطول العنصر المغذّى فقط
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	تصفير المفاعلة (X = 0) بطول العنصر المغذّى فقط
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	اضغط بحث: لا يتغير النموذج المفتوح حتى تضغط تطبيق.
 Ridimensiona e ricentra il modello aperto	إعادة تحجيم وتمركز النموذج المفتوح
 Ridimensiona e ricentra	إعادة التحجيم والتمركز

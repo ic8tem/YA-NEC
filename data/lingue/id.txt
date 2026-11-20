@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Batang pejal (mm)
 Tondini o tubi, da 8 mm (mm)	Batang atau pipa, mulai 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Setiap elemen mengambil ukuran aktif terdekat; panjangnya dikoreksi agar elemen tetap tertala seperti sebelumnya (reaktansi sama, model saluran Schelkunoff, sama dengan koreksi Leeson). Untuk RF, pipa dan batang pejal berdiameter sama adalah setara.
 misure commerciali	ukuran komersial
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	di akhir capai Z0 +j0 hanya dengan panjang elemen penggerak
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	nolkan reaktansi (X = 0) hanya dengan panjang elemen yang dicatu
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Tekan Cari: model terbuka tidak berubah sampai Anda menekan Terapkan.
 Ridimensiona e ricentra il modello aperto	Ubah ukuran dan pusatkan ulang model terbuka
 Ridimensiona e ricentra	Ubah ukuran dan pusatkan ulang

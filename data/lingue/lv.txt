@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Pilni stieņi (mm)
 Tondini o tubi, da 8 mm (mm)	Stieņi vai caurules, no 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Katrs elements saņem tuvāko ieslēgto izmēru; garums tiek labots, lai elements paliktu noskaņots kā iepriekš (tā pati reaktivitāte, Šelkunova līniju modelis, tas pats, kas Līsona korekcijai). RF ziņā vienāda diametra caurule un pilns stienis ir vienādi.
 misure commerciali	tirdzniecības izmēri
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	beigās panākt Z0 +j0 tikai ar starotāja garumu
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	nonullēt reaktanci (X = 0) tikai ar barotā elementa garumu
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Spiediet Meklēt: atvērtais modelis nemainās, līdz nospiežat Lietot.
 Ridimensiona e ricentra il modello aperto	Mainīt atvērtā modeļa mērogu un pārcentrēt
 Ridimensiona e ricentra	Mainīt mērogu un pārcentrēt

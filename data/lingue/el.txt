@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Συμπαγείς ράβδοι (mm)
 Tondini o tubi, da 8 mm (mm)	Ράβδοι ή σωλήνες, από 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Κάθε στοιχείο παίρνει την πλησιέστερη ενεργή διάσταση· το μήκος διορθώνεται ώστε να μένει συντονισμένο όπως πριν (ίδια αντίδραση, μοντέλο γραμμών Schelkunoff, το ίδιο με τη διόρθωση Leeson). Για τις RF ένας σωλήνας και μια συμπαγής ράβδος ίδιας διαμέτρου είναι ίσοι.
 misure commerciali	εμπορικές διαστάσεις
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	στο τέλος φέρε σε Z0 +j0 μόνο με το μήκος του τροφοδοτούμενου
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	μηδενισμός της αντίδρασης (X = 0) μόνο με το μήκος του τροφοδοτούμενου στοιχείου
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Πάτησε Αναζήτηση: το ανοιχτό μοντέλο δεν αλλάζει πριν πατήσεις Εφαρμογή.
 Ridimensiona e ricentra il modello aperto	Αλλαγή κλίμακας και επανακέντρωση του ανοιχτού μοντέλου
 Ridimensiona e ricentra	Αλλαγή κλίμακας και επανακέντρωση

@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Dolu çubuklar (mm)
 Tondini o tubi, da 8 mm (mm)	Çubuk veya borular, 8 mm'den itibaren (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Her eleman açık olan en yakın ölçüyü alır; uzunluk, eleman önceki gibi ayarlı kalacak şekilde düzeltilir (aynı reaktans, Schelkunoff hat modeli, Leeson düzeltmesiyle aynı). RF için aynı çaplı boru ve dolu çubuk eşittir.
 misure commerciali	ticari ölçüler
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	sonunda yalnızca besleme elemanının uzunluğuyla Z0 +j0'a getir
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	reaktansı yalnızca beslenen elemanın boyuyla sıfırla (X = 0)
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Ara'ya basın: açık model, Uygula'ya basana kadar değişmez.
 Ridimensiona e ricentra il modello aperto	Açık modeli yeniden boyutlandır ve ortala
 Ridimensiona e ricentra	Yeniden boyutlandır ve ortala

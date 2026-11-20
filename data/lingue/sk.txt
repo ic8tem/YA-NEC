@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Plné tyče (mm)
 Tondini o tubi, da 8 mm (mm)	Tyče alebo rúrky, od 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Každý prvok dostane najbližší zapnutý rozmer; dĺžka sa opraví tak, aby prvok zostal naladený ako predtým (rovnaká reaktancia, líniový model Schelkunova, rovnaký ako Leesonova korekcia). Pre VF sú rúrka a plná tyč rovnakého priemeru rovnocenné.
 misure commerciali	obchodné rozmery
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	nakoniec dostať na Z0 +j0 len dĺžkou žiariča
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	vynulovať reaktanciu (X = 0) iba dĺžkou napájaného prvku
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Stlačte Hľadať: otvorený model sa nezmení, kým nestlačíte Použiť.
 Ridimensiona e ricentra il modello aperto	Prepočítať a precentrovať otvorený model
 Ridimensiona e ricentra	Prepočítať a precentrovať

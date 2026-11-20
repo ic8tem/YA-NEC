@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Solidong baras (mm)
 Tondini o tubi, da 8 mm (mm)	Baras o tubo, mula 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Bawat elemento ay kumukuha ng pinakamalapit na naka-on na sukat; itinatama ang haba para manatiling naka-tune gaya ng dati (parehong reactance, line model ni Schelkunoff, kapareho ng Leeson correction). Sa RF, pantay ang tubo at solidong baras na may parehong diameter.
 misure commerciali	komersyal na sukat
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	sa dulo, dalhin sa Z0 +j0 gamit lamang ang haba ng driven element
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	gawing zero ang reactance (X = 0) gamit lamang ang haba ng driven element
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Pindutin ang Hanapin: hindi magbabago ang bukas na modelo hanggang pindutin ang Ilapat.
 Ridimensiona e ricentra il modello aperto	Baguhin ang sukat at i-recenter ang bukas na modelo
 Ridimensiona e ricentra	Baguhin ang sukat at i-recenter

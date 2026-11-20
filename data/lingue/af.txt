@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Soliede stawe (mm)
 Tondini o tubi, da 8 mm (mm)	Stawe of buise, vanaf 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Elke element kry die naaste geaktiveerde maat; die lengte word reggestel sodat die element ingestem bly soos voorheen (dieselfde reaktansie, Schelkunoff se lynmodel, dieselfde as die Leeson-korreksie). Vir RF is 'n buis en 'n soliede staaf van dieselfde deursnee gelyk.
 misure commerciali	handelsmates
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	bring dit aan die einde na Z0 +j0 slegs met die lengte van die gevoerde element
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	stel die reaktansie op nul (X = 0) slegs met die lengte van die gevoerde element
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Druk Soek: die oop model verander eers wanneer jy Pas toe druk.
 Ridimensiona e ricentra il modello aperto	Herskaal en hersentreer die oop model
 Ridimensiona e ricentra	Herskaal en hersentreer

@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	แท่งตัน (mm)
 Tondini o tubi, da 8 mm (mm)	แท่งหรือท่อ ตั้งแต่ 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	แต่ละอิลิเมนต์ใช้ขนาดที่เปิดไว้ซึ่งใกล้ที่สุด ความยาวถูกแก้ให้ยังจูนเหมือนเดิม (รีแอกแตนซ์เท่าเดิม แบบจำลองสายของ Schelkunoff แบบเดียวกับการแก้ของ Leeson) สำหรับ RF ท่อกับแท่งตันขนาดเส้นผ่าศูนย์กลางเท่ากันถือว่าเท่ากัน
 misure commerciali	ขนาดมาตรฐานในท้องตลาด
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	สุดท้ายปรับให้ได้ Z0 +j0 ด้วยความยาวอิลิเมนต์ป้อนเท่านั้น
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	ทำให้รีแอกแตนซ์เป็นศูนย์ (X = 0) ด้วยความยาวของอิลิเมนต์ที่ป้อนเท่านั้น
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	กดค้นหา: โมเดลที่เปิดอยู่จะไม่เปลี่ยนจนกว่าจะกดใช้
 Ridimensiona e ricentra il modello aperto	ปรับขนาดและจัดศูนย์ใหม่ให้โมเดลที่เปิดอยู่
 Ridimensiona e ricentra	ปรับขนาดและจัดศูนย์ใหม่

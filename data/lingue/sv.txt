@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Massiva stavar (mm)
 Tondini o tubi, da 8 mm (mm)	Stavar eller rör, från 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Varje element får närmaste aktiverade mått; längden rättas så att elementet förblir avstämt som förut (samma reaktans, Schelkunoffs ledningsmodell, samma som Leeson-korrektionen). För RF är ett rör och en massiv stav med samma diameter lika.
 misure commerciali	handelsmått
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	till sist ta den till Z0 +j0 enbart med det matade elementets längd
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	nollställ reaktansen (X = 0) enbart med det matade elementets längd
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Tryck Sök: den öppna modellen ändras inte förrän du trycker Verkställ.
 Ridimensiona e ricentra il modello aperto	Skala om och centrera om den öppna modellen
 Ridimensiona e ricentra	Skala om och centrera om

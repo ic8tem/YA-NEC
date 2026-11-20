@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Gegnheilar stangir (mm)
 Tondini o tubi, da 8 mm (mm)	Stangir eða rör, frá 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Hvert stak fær næstu virku stærð; lengdin er leiðrétt svo stakið haldist stillt eins og áður (sama launviðnám, línulíkan Schelkunoffs, það sama og Leeson-leiðréttingin). Fyrir RF eru rör og gegnheil stöng með sama þvermál eins.
 misure commerciali	verslunarstærðir
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	að lokum færa á Z0 +j0 aðeins með lengd fædda staksins
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	núllstilla launviðnámið (X = 0) eingöngu með lengd fædda stakins
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Ýttu á Leita: opna líkanið breytist ekki fyrr en þú ýtir á Nota.
 Ridimensiona e ricentra il modello aperto	Endurkvarða og endurmiðja opna líkanið
 Ridimensiona e ricentra	Endurkvarða og endurmiðja

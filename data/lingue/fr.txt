@@ -5084,7 +5084,7 @@ Tondini pieni (mm)	Ronds pleins (mm)
 Tondini o tubi, da 8 mm (mm)	Ronds ou tubes, dès 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Chaque élément prend la dimension activée la plus proche ; sa longueur est corrigée pour qu'il reste accordé comme avant (même réactance, modèle de lignes de Schelkunoff, le même que la correction de Leeson). En RF, un tube et un rond plein de même diamètre sont équivalents.
 misure commerciali	dimensions du commerce
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	à la fin, amener à Z0 +j0 avec la seule longueur du radiateur
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	annuler la réactance (X = 0) avec la seule longueur de l'élément alimenté
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Appuyez sur Chercher : le modèle ouvert ne change pas avant Appliquer.
 Ridimensiona e ricentra il modello aperto	Redimensionner et recentrer le modèle ouvert
 Ridimensiona e ricentra	Redimensionner et recentrer

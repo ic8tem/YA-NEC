@@ -5085,7 +5085,7 @@ Tondini pieni (mm)	Vollstäbe (mm)
 Tondini o tubi, da 8 mm (mm)	Stäbe oder Rohre, ab 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Jedes Element erhält das nächstgelegene aktivierte Maß; seine Länge wird so korrigiert, dass es abgestimmt bleibt wie vorher (gleiche Reaktanz, Leitungsmodell nach Schelkunoff, wie bei der Leeson-Korrektur). Für HF sind ein Rohr und ein Vollstab gleichen Durchmessers gleich.
 misure commerciali	handelsübliche Maße
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	am Ende nur mit der Strahlerlänge auf Z0 +j0 bringen
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	Reaktanz nur mit der Strahlerlänge auf null bringen (X = 0)
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Suchen drücken: das offene Modell ändert sich erst mit Anwenden.
 Ridimensiona e ricentra il modello aperto	Offenes Modell skalieren und neu zentrieren
 Ridimensiona e ricentra	Skalieren und neu zentrieren

@@ -107,7 +107,7 @@ namespace YaNec
             }));
             body.Children.Add(Riga("Diametri", Scelta(new[] { "in scala", "uguali", "misure commerciali" }, 1, k => { diam = k; comm.IsEnabled = k == 2; comm.Opacity = k == 2 ? 1 : 0.45; })));
             body.Children.Add(comm);
-            CheckBox chRit = new CheckBox { Content = "alla fine porta a Z0 +j0 con la sola lunghezza del radiatore", IsChecked = true, Margin = new Thickness(0, 2) };
+            CheckBox chRit = new CheckBox { Content = "azzera la reattanza (X = 0) con la sola lunghezza del radiatore", IsChecked = true, Margin = new Thickness(0, 2) };
             body.Children.Add(chRit);
 
             Button bCerca = Btn("Cerca", false), bApp = Btn("Applica e ricalcola", true);

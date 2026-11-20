@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Vergalhões maciços (mm)
 Tondini o tubi, da 8 mm (mm)	Vergalhões ou tubos, a partir de 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Cada elemento recebe a medida ativada mais próxima; o comprimento é corrigido para que continue sintonizado como antes (mesma reatância, modelo de linhas de Schelkunoff, o mesmo da correção de Leeson). Em RF um tubo e um vergalhão maciço do mesmo diâmetro são iguais.
 misure commerciali	medidas comerciais
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	no final levar a Z0 +j0 só com o comprimento do radiador
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	zerar a reatância (X = 0) apenas com o comprimento do elemento excitado
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Clique em Buscar: o modelo aberto não muda até clicar em Aplicar.
 Ridimensiona e ricentra il modello aperto	Redimensionar e recentralizar o modelo aberto
 Ridimensiona e ricentra	Redimensionar e recentralizar

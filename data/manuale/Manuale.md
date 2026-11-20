@@ -214,7 +214,7 @@ Terza sottolinguetta di **Variabili e ottimizzazione**. Lavora sul modello apert
 
 La scala e' attorno al punto piu' basso del modello: l'altezza dal suolo resta. Carichi L e C non si scalano. Il risultato mostra la tabella degli elementi (diametro e lunghezza prima, dopo il diametro e dopo la scala), Z e ROS prima e dopo, guadagno e F/B. Con meno di 100 segmenti per lambda sul segmento piu' lungo compare un avviso: sulle Yagi lunghe a banda stretta la segmentazione grossa non e' convergente.
 
-Esempio: la 11 el I4GBZ di MMANA (51,4 +j4,5 ohm a 144,300 MHz in MMANA) nel NEC-2 ha il picco a 50 ohm circa a 143,77 MHz (scarto di lunghezza tra MININEC e NEC-2 di circa lo 0,4 %, antenna a banda strettissima). Con 160 segmenti per lambda e diametri uguali: fattore 0,9962-0,9964, 52,9 +j0,8 ohm a 144,300 MHz, 21,7 dBi sul terreno medio a 5 m; il ritocco del radiatore porta a Z0 +j0.
+Esempio: la 11 el I4GBZ di MMANA (51,4 +j4,5 ohm a 144,300 MHz in MMANA) nel NEC-2 ha il picco a 50 ohm circa a 143,77 MHz (scarto di lunghezza tra MININEC e NEC-2 di circa lo 0,4 %, antenna a banda strettissima). Con 160 segmenti per lambda e diametri uguali: fattore 0,9962-0,9964, 52,9 +j0,8 ohm a 144,300 MHz, 21,7 dBi sul terreno medio a 5 m; il ritocco del radiatore azzera la reattanza (X = 0).
 
 ## 10. Formati di file
 

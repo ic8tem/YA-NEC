@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	নিরেট রড (mm)
 Tondini o tubi, da 8 mm (mm)	রড বা টিউব, 8 mm থেকে (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	প্রতিটি এলিমেন্ট সবচেয়ে কাছের চালু মাপ নেয়; দৈর্ঘ্য এমনভাবে সংশোধন হয় যাতে এলিমেন্ট আগের মতো টিউন থাকে (একই রিঅ্যাক্ট্যান্স, শেলকুনফ লাইন মডেল, লিসন সংশোধনের মতোই)। RF-এর জন্য একই ব্যাসের টিউব ও নিরেট রড সমান।
 misure commerciali	বাণিজ্যিক মাপ
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	শেষে কেবল ড্রিভেন এলিমেন্টের দৈর্ঘ্য দিয়ে Z0 +j0-তে আনুন
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	শুধু চালিত উপাদানের দৈর্ঘ্য দিয়ে রিঅ্যাক্ট্যান্স শূন্য করো (X = 0)
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	খুঁজুন চাপুন: প্রয়োগ না চাপা পর্যন্ত খোলা মডেল বদলায় না।
 Ridimensiona e ricentra il modello aperto	খোলা মডেলের আকার বদল ও পুনঃকেন্দ্রীকরণ
 Ridimensiona e ricentra	আকার বদল ও পুনঃকেন্দ্রীকরণ

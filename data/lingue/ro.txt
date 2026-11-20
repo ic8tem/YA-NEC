@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Bare pline (mm)
 Tondini o tubi, da 8 mm (mm)	Bare sau țevi, de la 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Fiecare element primește cea mai apropiată dimensiune activată; lungimea se corectează ca elementul să rămână acordat ca înainte (aceeași reactanță, modelul de linii Schelkunoff, același cu corecția Leeson). Pentru RF o țeavă și o bară plină de același diametru sunt egale.
 misure commerciali	dimensiuni comerciale
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	la final adu la Z0 +j0 doar cu lungimea radiatorului
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	anulează reactanța (X = 0) doar cu lungimea elementului alimentat
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Apasă Caută: modelul deschis nu se schimbă până nu apeși Aplică.
 Ridimensiona e ricentra il modello aperto	Redimensionează și recentrează modelul deschis
 Ridimensiona e ricentra	Redimensionează și recentrează

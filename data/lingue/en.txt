@@ -7050,7 +7050,7 @@ Tondini pieni (mm)	Solid rods (mm)
 Tondini o tubi, da 8 mm (mm)	Rods or tubes, from 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Each element takes the nearest enabled size; its length is corrected so that the element stays tuned as before (same reactance, Schelkunoff line model, the same as the Leeson correction). For RF a tube and a solid rod of the same diameter are equal.
 misure commerciali	commercial sizes
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	at the end bring it to Z0 +j0 with the driven element length only
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	zero the reactance (X = 0) with the driven element length only
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Press Search: the open model does not change until you press Apply.
 Ridimensiona e ricentra il modello aperto	Resize and recentre the open model
 Ridimensiona e ricentra	Resize and recentre

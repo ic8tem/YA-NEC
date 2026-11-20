@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	中実棒 (mm)
 Tondini o tubi, da 8 mm (mm)	棒またはパイプ、8 mm 以上 (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	各エレメントは有効な寸法のうち最も近いものを取り、以前と同じ同調を保つよう長さを補正します (同じリアクタンス、Schelkunoff の線路モデル、Leeson 補正と同じ)。RF では同じ直径のパイプと中実棒は同等です。
 misure commerciali	市販寸法
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	最後に放射器の長さだけで Z0 +j0 にする
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	給電素子の長さだけでリアクタンスをゼロにする (X = 0)
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	検索を押してください: 適用を押すまで開いているモデルは変わりません。
 Ridimensiona e ricentra il modello aperto	開いているモデルをリサイズして再センタリング
 Ridimensiona e ricentra	リサイズと再センタリング

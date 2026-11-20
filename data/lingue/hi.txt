@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	ठोस छड़ें (mm)
 Tondini o tubi, da 8 mm (mm)	छड़ें या नलियाँ, 8 mm से (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	हर एलिमेंट सबसे नज़दीकी चालू माप लेता है; लंबाई ऐसे सुधारी जाती है कि एलिमेंट पहले जैसा ट्यून रहे (वही रिएक्टेंस, शेलकुनॉफ़ लाइन मॉडल, लीसन सुधार वाला ही)। RF के लिए समान व्यास की नली और ठोस छड़ बराबर हैं।
 misure commerciali	व्यावसायिक माप
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	अंत में केवल ड्रिवन एलिमेंट की लंबाई से Z0 +j0 पर लाएँ
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	केवल चालित तत्व की लंबाई से प्रतिघात शून्य करें (X = 0)
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	खोजें दबाएँ: लागू करें दबाने तक खुला मॉडल नहीं बदलता।
 Ridimensiona e ricentra il modello aperto	खुले मॉडल का आकार बदलें और पुनः केंद्रित करें
 Ridimensiona e ricentra	आकार बदलें और पुनः केंद्रित करें

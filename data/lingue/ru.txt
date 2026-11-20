@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Сплошные прутки (мм)
 Tondini o tubi, da 8 mm (mm)	Прутки или трубки, от 8 мм (мм)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Каждый элемент получает ближайший включённый размер; длина исправляется так, чтобы элемент остался настроен как раньше (то же реактивное сопротивление, линейная модель Щелкунова, та же, что в поправке Лисона). Для ВЧ трубка и сплошной пруток одного диаметра одинаковы.
 misure commerciali	стандартные размеры
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	в конце довести до Z0 +j0 только длиной вибратора
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	обнулить реактивное сопротивление (X = 0) только длиной активного элемента
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Нажмите Найти: открытая модель не меняется, пока вы не нажмёте Применить.
 Ridimensiona e ricentra il modello aperto	Пересчитать и перецентрировать открытую модель
 Ridimensiona e ricentra	Пересчитать и перецентрировать

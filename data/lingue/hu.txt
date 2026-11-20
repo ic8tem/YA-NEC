@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Tömör rudak (mm)
 Tondini o tubi, da 8 mm (mm)	Rudak vagy csövek, 8 mm-től (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Minden elem a legközelebbi bekapcsolt méretet kapja; a hossza úgy módosul, hogy hangolt maradjon, mint előtte (azonos reaktancia, Schelkunoff-féle vonalmodell, ugyanaz, mint a Leeson-korrekció). RF szempontból az azonos átmérőjű cső és tömör rúd egyforma.
 misure commerciali	kereskedelmi méretek
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	a végén Z0 +j0-ra hozni csak a sugárzó hosszával
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	a reaktancia nullázása (X = 0) csak a táplált elem hosszával
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Nyomja meg a Keresést: a nyitott modell csak az Alkalmaz után változik.
 Ridimensiona e ricentra il modello aperto	A nyitott modell átméretezése és újraközpontosítása
 Ridimensiona e ricentra	Átméretezés és újraközpontosítás

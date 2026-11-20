@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Pilni strypai (mm)
 Tondini o tubi, da 8 mm (mm)	Strypai arba vamzdžiai, nuo 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Kiekvienas elementas gauna artimiausią įjungtą matmenį; ilgis pataisomas, kad elementas liktų suderintas kaip anksčiau (ta pati reaktyvioji varža, Šelkunovo linijų modelis, toks pat kaip Leesono pataisa). RD požiūriu to paties skersmens vamzdis ir pilnas strypas yra lygūs.
 misure commerciali	prekybiniai matmenys
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	pabaigoje pasiekti Z0 +j0 tik spinduolio ilgiu
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	panaikinti reaktansą (X = 0) tik maitinamo elemento ilgiu
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Spauskite Ieškoti: atvertas modelis nesikeičia, kol nepaspausite Taikyti.
 Ridimensiona e ricentra il modello aperto	Keisti atverto modelio mastelį ir centruoti iš naujo
 Ridimensiona e ricentra	Keisti mastelį ir centruoti

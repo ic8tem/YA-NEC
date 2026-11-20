@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Pręty pełne (mm)
 Tondini o tubi, da 8 mm (mm)	Pręty lub rurki, od 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Każdy element dostaje najbliższy włączony wymiar; długość jest korygowana tak, by element pozostał dostrojony jak wcześniej (ta sama reaktancja, model linii Schelkunowa, ten sam co korekcja Leesona). Dla w.cz. rurka i pełny pręt o tej samej średnicy są równoważne.
 misure commerciali	wymiary handlowe
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	na końcu doprowadź do Z0 +j0 samą długością promiennika
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	wyzeruj reaktancję (X = 0) tylko długością elementu zasilanego
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Naciśnij Szukaj: otwarty model zmieni się dopiero po Zastosuj.
 Ridimensiona e ricentra il modello aperto	Przeskaluj i wyśrodkuj otwarty model
 Ridimensiona e ricentra	Przeskaluj i wyśrodkuj

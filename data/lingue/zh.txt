@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	实心棒 (mm)
 Tondini o tubi, da 8 mm (mm)	棒或管,8 mm 起 (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	每个振子取最接近的已启用尺寸;长度经过修正,使振子保持原来的谐振 (相同电抗,Schelkunoff 传输线模型,与 Leeson 修正相同)。对射频而言,同直径的管和实心棒等效。
 misure commerciali	市售尺寸
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	最后仅用有源振子长度调到 Z0 +j0
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	仅用馈电元件长度将电抗归零 (X = 0)
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	按搜索:在按应用之前打开的模型不会改变。
 Ridimensiona e ricentra il modello aperto	缩放并重新居中打开的模型
 Ridimensiona e ricentra	缩放并重新居中

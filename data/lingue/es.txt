@@ -5082,7 +5082,7 @@ Tondini pieni (mm)	Varillas macizas (mm)
 Tondini o tubi, da 8 mm (mm)	Varillas o tubos, desde 8 mm (mm)
 Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Cada elemento toma la medida activada más cercana; su longitud se corrige para que siga sintonizado como antes (misma reactancia, modelo de líneas de Schelkunoff, el mismo de la corrección de Leeson). En RF un tubo y una varilla maciza del mismo diámetro son iguales.
 misure commerciali	medidas comerciales
-alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	al final llevar a Z0 +j0 solo con la longitud del radiador
+azzera la reattanza (X = 0) con la sola lunghezza del radiatore	anular la reactancia (X = 0) solo con la longitud del elemento excitado
 Premi Cerca: il modello aperto non cambia finché non premi Applica.	Pulse Buscar: el modelo abierto no cambia hasta que pulse Aplicar.
 Ridimensiona e ricentra il modello aperto	Redimensionar y recentrar el modelo abierto
 Ridimensiona e ricentra	Redimensionar y recentrar
