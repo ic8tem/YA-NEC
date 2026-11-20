@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Beregnere > Modtageantenner
 Parametri	Parametre
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU-afstande, basisantennens strålebredder og flytning af kopierne: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Ønsket frekvens
+Dove lavora meglio adesso	Hvor den virker bedst nu
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Mindste SWR på Z0, søgt med et smalt sweep fra −3 % til +3 % af den ønskede frekvens
+Cosa fare	Hvad skal gøres
+ricentra: sposta dove lavora meglio adesso	gencentrér: flyt hen hvor den virker bedst nu
+ridimensiona: da una frequenza all'altra	omskalér: fra én frekvens til en anden
+Tondini pieni (mm)	Massive stænger (mm)
+Tondini o tubi, da 8 mm (mm)	Stænger eller rør, fra 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Hvert element får den nærmeste aktive størrelse; længden rettes, så elementet forbliver afstemt som før (samme reaktans, Schelkunoffs linjemodel, det samme som Leeson-korrektionen). For RF er et rør og en massiv stang med samme diameter ens.
+misure commerciali	handelsmål
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	til sidst bring den til Z0 +j0 kun med strålerens længde
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Tryk Søg: den åbne model ændres først, når du trykker Anvend.
+Ridimensiona e ricentra il modello aperto	Omskalér og gencentrér den åbne model
+Ridimensiona e ricentra	Omskalér og gencentrér
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometri > Skalér forbliver det generelle værktøj (faktor skrevet i hånden). Her kopieres den åbne model, skaleres omkring sit laveste punkt (højden over jorden bevares) og genberegnes; L- og C-belastninger skaleres ikke.
+Ø ora	Ø nu
+Ø dopo	Ø efter
+Lunghezza ora	Længde nu
+dopo il diametro	efter diameteren
+dopo la scala	efter skalering
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Omskalér antenne er flyttet til Variabili e ottimizzazione > Ridimensiona e ricentra: der gør den det samme med den åbne model (k = f gammel / f ny), plus gencentrering, handelsdiametre og justering af stråleren.
+Apri Ridimensiona e ricentra	Åbn Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	nu i Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Afbrudt.
+auto	auto

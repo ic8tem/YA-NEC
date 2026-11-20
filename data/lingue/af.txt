@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Sakrekenaars > Ontvangantennes
 Parametri	Parameters
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU-afstande, bundelwydtes van die basisantenna en verskuiwing van die kopieë: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Gewenste frekwensie
+Dove lavora meglio adesso	Waar dit nou die beste werk
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Minimum SWR op Z0, gesoek met 'n nou sweep van −3 % tot +3 % van die gewenste frekwensie
+Cosa fare	Wat om te doen
+ricentra: sposta dove lavora meglio adesso	hersentreer: skuif na waar dit nou die beste werk
+ridimensiona: da una frequenza all'altra	herskaal: van een frekwensie na 'n ander
+Tondini pieni (mm)	Soliede stawe (mm)
+Tondini o tubi, da 8 mm (mm)	Stawe of buise, vanaf 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Elke element kry die naaste geaktiveerde maat; die lengte word reggestel sodat die element ingestem bly soos voorheen (dieselfde reaktansie, Schelkunoff se lynmodel, dieselfde as die Leeson-korreksie). Vir RF is 'n buis en 'n soliede staaf van dieselfde deursnee gelyk.
+misure commerciali	handelsmates
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	bring dit aan die einde na Z0 +j0 slegs met die lengte van die gevoerde element
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Druk Soek: die oop model verander eers wanneer jy Pas toe druk.
+Ridimensiona e ricentra il modello aperto	Herskaal en hersentreer die oop model
+Ridimensiona e ricentra	Herskaal en hersentreer
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometrie > Skaal bly die algemene hulpmiddel (faktor met die hand). Hier word die oop model gekopieer, om sy laagste punt geskaal (die hoogte bo die grond bly) en herbereken; L- en C-laste word nie geskaal nie.
+Ø ora	Ø nou
+Ø dopo	Ø daarna
+Lunghezza ora	Lengte nou
+dopo il diametro	na die deursnee
+dopo la scala	na die skaal
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Herskaal antenna het geskuif na Variabili e ottimizzazione > Ridimensiona e ricentra: daar doen dit dieselfde op die oop model (k = ou f / nuwe f), plus hersentrering, handelsdeursneë en die aanpassing van die gevoerde element.
+Apri Ridimensiona e ricentra	Open Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	nou in Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Onderbreek.
+auto	outo

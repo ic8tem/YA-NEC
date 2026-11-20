@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	เครื่องคำนวณ > เสาอากาศรับ
 Parametri	พารามิเตอร์
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	ระยะห่าง DL6WU ความกว้างลำคลื่นของสายอากาศหลัก และการย้ายสำเนา: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	ความถี่ที่ต้องการ
+Dove lavora meglio adesso	ตอนนี้ทำงานดีที่สุดที่ไหน
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	SWR ต่ำสุดเทียบ Z0 ค้นด้วยการสวีปแคบจาก −3 % ถึง +3 % ของความถี่ที่ต้องการ
+Cosa fare	จะทำอะไร
+ricentra: sposta dove lavora meglio adesso	จัดศูนย์ใหม่: เลื่อนไปที่ที่ตอนนี้ทำงานดีที่สุด
+ridimensiona: da una frequenza all'altra	ปรับขนาด: จากความถี่หนึ่งไปอีกความถี่
+Tondini pieni (mm)	แท่งตัน (mm)
+Tondini o tubi, da 8 mm (mm)	แท่งหรือท่อ ตั้งแต่ 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	แต่ละอิลิเมนต์ใช้ขนาดที่เปิดไว้ซึ่งใกล้ที่สุด ความยาวถูกแก้ให้ยังจูนเหมือนเดิม (รีแอกแตนซ์เท่าเดิม แบบจำลองสายของ Schelkunoff แบบเดียวกับการแก้ของ Leeson) สำหรับ RF ท่อกับแท่งตันขนาดเส้นผ่าศูนย์กลางเท่ากันถือว่าเท่ากัน
+misure commerciali	ขนาดมาตรฐานในท้องตลาด
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	สุดท้ายปรับให้ได้ Z0 +j0 ด้วยความยาวอิลิเมนต์ป้อนเท่านั้น
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	กดค้นหา: โมเดลที่เปิดอยู่จะไม่เปลี่ยนจนกว่าจะกดใช้
+Ridimensiona e ricentra il modello aperto	ปรับขนาดและจัดศูนย์ใหม่ให้โมเดลที่เปิดอยู่
+Ridimensiona e ricentra	ปรับขนาดและจัดศูนย์ใหม่
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	เรขาคณิต > สเกล ยังเป็นเครื่องมือทั่วไป (ใส่ตัวคูณเอง) ที่นี่โมเดลที่เปิดอยู่จะถูกคัดลอก สเกลรอบจุดต่ำสุด (ความสูงจากพื้นคงเดิม) และคำนวณใหม่ โหลด L และ C ไม่ถูกสเกล
+Ø ora	Ø ตอนนี้
+Ø dopo	Ø หลัง
+Lunghezza ora	ความยาว ตอนนี้
+dopo il diametro	หลังเปลี่ยนขนาดเส้นผ่าศูนย์กลาง
+dopo la scala	หลังสเกล
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	การปรับขนาดสายอากาศย้ายไปที่ Variabili e ottimizzazione > Ridimensiona e ricentra: ที่นั่นทำแบบเดียวกันกับโมเดลที่เปิดอยู่ (k = f เดิม / f ใหม่) พร้อมการจัดศูนย์ใหม่ ขนาดมาตรฐาน และการปรับอิลิเมนต์ป้อน
+Apri Ridimensiona e ricentra	เปิด Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	ตอนนี้อยู่ใน Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	หยุดแล้ว
+auto	อัตโนมัติ

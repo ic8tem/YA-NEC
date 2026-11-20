@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	कैलकुलेटर > प्राप्ति एंटीना
 Parametri	पैरामीटर
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU दूरियाँ, मूल एंटीना की बीमविड्थ और प्रतियों को खिसकाना: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	इच्छित आवृत्ति
+Dove lavora meglio adesso	अभी सबसे अच्छा कहाँ काम करता है
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Z0 पर न्यूनतम SWR, इच्छित आवृत्ति के −3 % से +3 % तक संकरे स्वीप से खोजा गया
+Cosa fare	क्या करें
+ricentra: sposta dove lavora meglio adesso	पुनः केंद्रित करें: वहाँ खिसकाएँ जहाँ अभी सबसे अच्छा काम करता है
+ridimensiona: da una frequenza all'altra	आकार बदलें: एक आवृत्ति से दूसरी पर
+Tondini pieni (mm)	ठोस छड़ें (mm)
+Tondini o tubi, da 8 mm (mm)	छड़ें या नलियाँ, 8 mm से (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	हर एलिमेंट सबसे नज़दीकी चालू माप लेता है; लंबाई ऐसे सुधारी जाती है कि एलिमेंट पहले जैसा ट्यून रहे (वही रिएक्टेंस, शेलकुनॉफ़ लाइन मॉडल, लीसन सुधार वाला ही)। RF के लिए समान व्यास की नली और ठोस छड़ बराबर हैं।
+misure commerciali	व्यावसायिक माप
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	अंत में केवल ड्रिवन एलिमेंट की लंबाई से Z0 +j0 पर लाएँ
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	खोजें दबाएँ: लागू करें दबाने तक खुला मॉडल नहीं बदलता।
+Ridimensiona e ricentra il modello aperto	खुले मॉडल का आकार बदलें और पुनः केंद्रित करें
+Ridimensiona e ricentra	आकार बदलें और पुनः केंद्रित करें
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	ज्यामिति > स्केल सामान्य उपकरण बना रहता है (हाथ से लिखा गुणक)। यहाँ खुले मॉडल की प्रति बनाकर उसके सबसे निचले बिंदु के चारों ओर स्केल किया जाता है (ज़मीन से ऊँचाई बनी रहती है) और फिर से गणना होती है; L और C लोड स्केल नहीं होते।
+Ø ora	Ø अभी
+Ø dopo	Ø बाद में
+Lunghezza ora	लंबाई अभी
+dopo il diametro	व्यास के बाद
+dopo la scala	स्केल के बाद
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	एंटीना का आकार बदलना अब Variabili e ottimizzazione > Ridimensiona e ricentra में है: वहाँ यह खुले मॉडल पर वही करता है (k = पुरानी f / नई f), साथ में पुनः केंद्रण, व्यावसायिक व्यास और ड्रिवन एलिमेंट का सुधार।
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra खोलें
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	अब Variabili e ottimizzazione > Ridimensiona e ricentra में
+Interrotto.	रोका गया।
+auto	स्वतः

@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Kalkulátorok > Vevőantennák
 Parametri	Paraméterek
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU-távolságok, az alapantenna nyílásszögei és a másolatok áthelyezése: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Kívánt frekvencia
+Dove lavora meglio adesso	Hol működik most a legjobban
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Legkisebb SÁH Z0-ra, keskeny sweeppel keresve a kívánt frekvencia −3 %-ától +3 %-áig
+Cosa fare	Mi a teendő
+ricentra: sposta dove lavora meglio adesso	újraközpontosítás: oda tolni, ahol most a legjobban működik
+ridimensiona: da una frequenza all'altra	átméretezés: egyik frekvenciáról a másikra
+Tondini pieni (mm)	Tömör rudak (mm)
+Tondini o tubi, da 8 mm (mm)	Rudak vagy csövek, 8 mm-től (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Minden elem a legközelebbi bekapcsolt méretet kapja; a hossza úgy módosul, hogy hangolt maradjon, mint előtte (azonos reaktancia, Schelkunoff-féle vonalmodell, ugyanaz, mint a Leeson-korrekció). RF szempontból az azonos átmérőjű cső és tömör rúd egyforma.
+misure commerciali	kereskedelmi méretek
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	a végén Z0 +j0-ra hozni csak a sugárzó hosszával
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Nyomja meg a Keresést: a nyitott modell csak az Alkalmaz után változik.
+Ridimensiona e ricentra il modello aperto	A nyitott modell átméretezése és újraközpontosítása
+Ridimensiona e ricentra	Átméretezés és újraközpontosítás
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	A Geometria > Méretezés marad az általános eszköz (kézzel írt tényező). Itt a nyitott modell másolatát a legalsó pontja körül méretezzük (a talaj feletti magasság marad) és újraszámoljuk; az L és C terhelések nem méreteződnek.
+Ø ora	Ø most
+Ø dopo	Ø utána
+Lunghezza ora	Hossz most
+dopo il diametro	az átmérő után
+dopo la scala	a méretezés után
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Az Antenna átméretezése átkerült ide: Variabili e ottimizzazione > Ridimensiona e ricentra; ott ugyanezt végzi a nyitott modellen (k = régi f / új f), továbbá újraközpontosítás, kereskedelmi átmérők és a sugárzó finomítása.
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra megnyitása
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	most itt: Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Megszakítva.
+auto	auto

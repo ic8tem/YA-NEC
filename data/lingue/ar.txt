@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	الحاسبات > هوائيات الاستقبال
 Parametri	المعاملات
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	مسافات DL6WU وعرض حزم الهوائي الأساسي ونقل النسخ: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	التردد المطلوب
+Dove lavora meglio adesso	أين يعمل أفضل الآن
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	أدنى SWR على Z0، يُبحث عنه بمسح ضيق من −3 % إلى +3 % من التردد المطلوب
+Cosa fare	ماذا تفعل
+ricentra: sposta dove lavora meglio adesso	إعادة التمركز: النقل إلى حيث يعمل أفضل الآن
+ridimensiona: da una frequenza all'altra	إعادة التحجيم: من تردد إلى آخر
+Tondini pieni (mm)	قضبان مصمتة (مم)
+Tondini o tubi, da 8 mm (mm)	قضبان أو أنابيب، من 8 مم (مم)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	يأخذ كل عنصر أقرب مقاس مفعّل؛ ويُصحَّح طوله ليبقى مُوالفًا كما كان (نفس المفاعلة، نموذج خطوط شيلكونوف، نفس تصحيح ليسون). في الترددات الراديوية الأنبوب والقضيب المصمت بنفس القطر متساويان.
+misure commerciali	مقاسات تجارية
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	في النهاية الوصول إلى Z0 +j0 بطول العنصر المغذّى فقط
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	اضغط بحث: لا يتغير النموذج المفتوح حتى تضغط تطبيق.
+Ridimensiona e ricentra il modello aperto	إعادة تحجيم وتمركز النموذج المفتوح
+Ridimensiona e ricentra	إعادة التحجيم والتمركز
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	تبقى الهندسة > المقياس الأداة العامة (معامل يُكتب يدويًا). هنا يُنسخ النموذج المفتوح ويُحجَّم حول أدنى نقطة (يبقى الارتفاع عن الأرض) ويُعاد حسابه؛ لا تُحجَّم أحمال L وC.
+Ø ora	Ø الآن
+Ø dopo	Ø بعد
+Lunghezza ora	الطول الآن
+dopo il diametro	بعد القطر
+dopo la scala	بعد التحجيم
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	انتقلت إعادة تحجيم الهوائي إلى Variabili e ottimizzazione > Ridimensiona e ricentra: هناك تفعل الشيء نفسه على النموذج المفتوح (k = f القديم / f الجديد)، مع إعادة التمركز والأقطار التجارية وضبط العنصر المغذّى.
+Apri Ridimensiona e ricentra	فتح Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	الآن في Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	توقف.
+auto	تلقائي

@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Kalkulaatorid > Vastuvõtuantennid
 Parametri	Parameetrid
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU vahekaugused, põhiantenni kiirelaiused ja koopiate nihutamine: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Soovitud sagedus
+Dove lavora meglio adesso	Kus see praegu kõige paremini töötab
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Vähim SWR Z0 suhtes, otsitud kitsa pühkimisega −3 %…+3 % soovitud sagedusest
+Cosa fare	Mida teha
+ricentra: sposta dove lavora meglio adesso	tsentreeri ümber: nihuta sinna, kus see praegu kõige paremini töötab
+ridimensiona: da una frequenza all'altra	mastaabi muutus: ühelt sageduselt teisele
+Tondini pieni (mm)	Täisvardad (mm)
+Tondini o tubi, da 8 mm (mm)	Vardad või torud, alates 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Iga element saab lähima sisselülitatud mõõdu; pikkust parandatakse, et element jääks häälestatuks nagu enne (sama reaktants, Schelkunoffi liinimudel, sama mis Leesoni parandus). RF jaoks on sama läbimõõduga toru ja täisvarras võrdsed.
+misure commerciali	kaubanduslikud mõõdud
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	lõpuks vii Z0 +j0 peale ainult toidetava elemendi pikkusega
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Vajuta Otsi: avatud mudel ei muutu enne, kui vajutad Rakenda.
+Ridimensiona e ricentra il modello aperto	Muuda avatud mudeli mastaapi ja tsentreeri ümber
+Ridimensiona e ricentra	Muuda mastaapi ja tsentreeri
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geomeetria > Mastaap jääb üldiseks tööriistaks (tegur käsitsi). Siin kopeeritakse avatud mudel, skaleeritakse ümber madalaima punkti (kõrgus maapinnast jääb) ja arvutatakse uuesti; L- ja C-koormusi ei skaleerita.
+Ø ora	Ø praegu
+Ø dopo	Ø pärast
+Lunghezza ora	Pikkus praegu
+dopo il diametro	pärast läbimõõtu
+dopo la scala	pärast skaleerimist
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Antenni mastaabi muutmine kolis siia: Variabili e ottimizzazione > Ridimensiona e ricentra; seal teeb see sama avatud mudeliga (k = vana f / uus f), lisaks ümbertsentreerimine, kaubanduslikud läbimõõdud ja toidetava elemendi täpsustus.
+Apri Ridimensiona e ricentra	Ava Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	nüüd siin: Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Katkestatud.
+auto	auto

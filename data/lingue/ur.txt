@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	کیلکولیٹرز > وصولی اینٹینے
 Parametri	پیرامیٹرز
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU فاصلے، بنیادی اینٹینا کی بیم چوڑائی اور نقول کی منتقلی: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	مطلوبہ فریکوئنسی
+Dove lavora meglio adesso	اب یہ کہاں بہترین کام کرتا ہے
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Z0 پر کم سے کم SWR، مطلوبہ فریکوئنسی کے −3 % سے +3 % تک تنگ سویپ سے تلاش
+Cosa fare	کیا کرنا ہے
+ricentra: sposta dove lavora meglio adesso	دوبارہ مرکز: وہاں منتقل کریں جہاں اب بہترین کام کرتا ہے
+ridimensiona: da una frequenza all'altra	سائز بدلیں: ایک فریکوئنسی سے دوسری پر
+Tondini pieni (mm)	ٹھوس سلاخیں (mm)
+Tondini o tubi, da 8 mm (mm)	سلاخیں یا نلکیاں، 8 mm سے (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	ہر عنصر قریب ترین فعال ناپ لیتا ہے؛ لمبائی اس طرح درست کی جاتی ہے کہ عنصر پہلے کی طرح ٹیون رہے (وہی ری ایکٹینس، شیلکونوف لائن ماڈل، لیسن تصحیح والا)۔ RF کے لیے ایک ہی قطر کی نلکی اور ٹھوس سلاخ برابر ہیں۔
+misure commerciali	تجارتی ناپ
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	آخر میں صرف ڈرائیون عنصر کی لمبائی سے Z0 +j0 پر لائیں
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	تلاش دبائیں: لاگو کریں دبانے تک کھلا ماڈل نہیں بدلتا۔
+Ridimensiona e ricentra il modello aperto	کھلے ماڈل کا سائز بدلیں اور دوبارہ مرکز کریں
+Ridimensiona e ricentra	سائز بدلیں اور دوبارہ مرکز کریں
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	جیومیٹری > اسکیل عمومی آلہ رہتا ہے (ہاتھ سے لکھا ضرب)۔ یہاں کھلے ماڈل کی نقل اس کے سب سے نچلے نقطے کے گرد اسکیل ہوتی ہے (زمین سے اونچائی رہتی ہے) اور دوبارہ حساب ہوتا ہے؛ L اور C لوڈ اسکیل نہیں ہوتے۔
+Ø ora	Ø اب
+Ø dopo	Ø بعد
+Lunghezza ora	لمبائی اب
+dopo il diametro	قطر کے بعد
+dopo la scala	اسکیل کے بعد
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	اینٹینا کا سائز بدلنا اب Variabili e ottimizzazione > Ridimensiona e ricentra میں ہے: وہاں یہ کھلے ماڈل پر یہی کرتا ہے (k = پرانی f / نئی f)، ساتھ میں دوبارہ مرکز، تجارتی قطر اور ڈرائیون عنصر کی درستی۔
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra کھولیں
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	اب Variabili e ottimizzazione > Ridimensiona e ricentra میں
+Interrotto.	روک دیا گیا۔
+auto	خودکار

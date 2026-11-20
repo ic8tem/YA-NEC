@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Υπολογιστές > Κεραίες λήψης
 Parametri	Παράμετροι
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Αποστάσεις DL6WU, εύρη δέσμης της βασικής κεραίας και μετακίνηση των αντιγράφων: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Επιθυμητή συχνότητα
+Dove lavora meglio adesso	Πού λειτουργεί καλύτερα τώρα
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Ελάχιστο SWR ως προς Z0, αναζητείται με στενή σάρωση από −3 % έως +3 % της επιθυμητής συχνότητας
+Cosa fare	Τι να γίνει
+ricentra: sposta dove lavora meglio adesso	επανακέντρωση: μετακίνηση εκεί που λειτουργεί καλύτερα τώρα
+ridimensiona: da una frequenza all'altra	αλλαγή κλίμακας: από μια συχνότητα σε άλλη
+Tondini pieni (mm)	Συμπαγείς ράβδοι (mm)
+Tondini o tubi, da 8 mm (mm)	Ράβδοι ή σωλήνες, από 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Κάθε στοιχείο παίρνει την πλησιέστερη ενεργή διάσταση· το μήκος διορθώνεται ώστε να μένει συντονισμένο όπως πριν (ίδια αντίδραση, μοντέλο γραμμών Schelkunoff, το ίδιο με τη διόρθωση Leeson). Για τις RF ένας σωλήνας και μια συμπαγής ράβδος ίδιας διαμέτρου είναι ίσοι.
+misure commerciali	εμπορικές διαστάσεις
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	στο τέλος φέρε σε Z0 +j0 μόνο με το μήκος του τροφοδοτούμενου
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Πάτησε Αναζήτηση: το ανοιχτό μοντέλο δεν αλλάζει πριν πατήσεις Εφαρμογή.
+Ridimensiona e ricentra il modello aperto	Αλλαγή κλίμακας και επανακέντρωση του ανοιχτού μοντέλου
+Ridimensiona e ricentra	Αλλαγή κλίμακας και επανακέντρωση
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Η Γεωμετρία > Κλίμακα μένει το γενικό εργαλείο (συντελεστής με το χέρι). Εδώ το ανοιχτό μοντέλο αντιγράφεται, κλιμακώνεται γύρω από το χαμηλότερο σημείο (το ύψος από το έδαφος μένει) και ξαναϋπολογίζεται· τα φορτία L και C δεν κλιμακώνονται.
+Ø ora	Ø τώρα
+Ø dopo	Ø μετά
+Lunghezza ora	Μήκος τώρα
+dopo il diametro	μετά τη διάμετρο
+dopo la scala	μετά την κλίμακα
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Η αλλαγή κλίμακας κεραίας μεταφέρθηκε στο Variabili e ottimizzazione > Ridimensiona e ricentra: εκεί κάνει το ίδιο στο ανοιχτό μοντέλο (k = παλιά f / νέα f), μαζί με επανακέντρωση, εμπορικές διαμέτρους και διόρθωση του τροφοδοτούμενου.
+Apri Ridimensiona e ricentra	Άνοιγμα Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	τώρα στο Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Διακόπηκε.
+auto	αυτόμ.

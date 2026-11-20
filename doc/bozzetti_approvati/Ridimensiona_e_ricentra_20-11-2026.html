@@ -1,0 +1,78 @@
+<title>Ridimensiona e ricentra</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#eef1f5;--card:#fff;--ink:#1b2430;--mut:#5d6878;--line:#c9d1dc;--blu:#2f6fd6;--bluf:#e7effc;--ora:#e08a00;--verde:#1f8a4c;--nota:#fff3df;--f:"Segoe UI",Inter,system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14181e;--card:#1c222a;--ink:#e3e8ee;--mut:#9aa6b4;--line:#34404f;--blu:#6f9fee;--bluf:#22314a;--ora:#ffad33;--verde:#4cc17f;--nota:#3a2c14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14181e;--card:#1c222a;--ink:#e3e8ee;--mut:#9aa6b4;--line:#34404f;--blu:#6f9fee;--bluf:#22314a;--ora:#ffad33;--verde:#4cc17f;--nota:#3a2c14;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:14px;margin:0}
+main{max-width:1100px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:1.3rem;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--mut);margin:0 0 16px;max-width:100ch;line-height:1.45}
+.fin{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:14px}
+.fin h2{font-size:.95rem;margin:0 0 10px}
+.riga{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0}
+.et{width:220px;color:var(--ink)}
+input[type=text]{width:90px;padding:3px 6px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--ink);font:inherit}
+.pill{border:1px solid var(--blu);color:var(--blu);background:transparent;border-radius:14px;padding:2px 11px;font:inherit;font-size:.85rem;cursor:pointer}
+.pill.on{background:var(--blu);color:#fff}
+.btn{border:1px solid var(--blu);background:var(--card);color:var(--blu);border-radius:14px;padding:4px 14px;font:inherit;cursor:pointer}
+.btn.p{background:var(--blu);color:#fff}
+.mut{color:var(--mut);font-size:.85rem}
+.nuovo{outline:2px dashed var(--ora);outline-offset:4px;border-radius:6px;padding:6px 8px;margin-top:12px}
+.tag{font-size:.72rem;color:var(--ora);font-weight:600;margin-left:6px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-size:.85rem;min-width:620px;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:600}
+.ok{color:var(--verde);font-weight:700}
+.note{background:var(--nota);border:1px solid var(--ora);border-radius:6px;padding:8px 12px;font-size:.85rem;line-height:1.45;margin-top:10px;max-width:100ch}
+.dis{opacity:.45;pointer-events:none}
+</style>
+<main>
+<h1>Variabili e ottimizzazione › Ridimensiona e ricentra</h1>
+<p class="sub">Bozzetto per YA-NEC 1.5.3, dalle richieste di IC8TEM del 20/11/2026: 12:25 «trovami un modo semplice per ricentrarla a 144.300»; 12:29 «si» con la revisione dei diametri commerciali (tondini pieni 3-4-5-6 mm, da 8 mm anche tubi); 12:31 «questo allora va qua» (Ridimensiona antenna esce da Calcolatori › Strumenti ed entra in Variabili e ottimizzazione). Geometria › Scala resta com'è. Valori dell'esempio: 11el I4GBZ, terreno medio a 5 m, 160 segmenti per λ.</p>
+
+<div class="fin">
+  <div class="riga" style="margin-bottom:10px"><button class="pill">Variabili</button><button class="pill">Ottimizzatore</button><button class="pill on">Ridimensiona e ricentra</button><span class="tag">sottolinguetta nuova</span></div>
+  <h2>Ridimensiona e ricentra il modello aperto</h2>
+  <div class="riga"><span class="et">Cosa fare</span><button class="pill on" data-m="1">ricentra: sposta dove lavora meglio adesso</button><button class="pill" data-m="0">ridimensiona: da una frequenza all'altra</button></div>
+  <div class="riga" id="rowF1" hidden><span class="et">Frequenza del modello</span><input type="text" value="144,300"><span class="mut">MHz</span></div>
+  <div class="riga"><span class="et">Frequenza voluta</span><input type="text" value="144,300"><span class="mut">MHz</span></div>
+  <div class="riga" id="rowMeglio"><span class="et">Dove lavora meglio adesso</span><span class="mut">ROS minimo su Z0 (50 Ω), cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta</span></div>
+  <div class="riga"><span class="et">Diametri</span><button class="pill" data-d="s">in scala</button><button class="pill on" data-d="u">uguali</button><button class="pill" data-d="c">misure commerciali</button></div>
+  <div id="comm" class="dis">
+    <div class="riga"><span class="et">Tondini pieni</span><span id="pieni"></span></div>
+    <div class="riga"><span class="et">Tondini o tubi (da 8 mm)</span><span id="tubi"></span></div>
+    <div class="riga"><span class="et"></span><span class="mut" style="max-width:70ch">ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali. Le misure accese si salvano in config.ini.</span></div>
+  </div>
+  <div class="riga"><label><input type="checkbox" checked> alla fine porta a Z0 +j0 con la sola lunghezza del radiatore</label></div>
+  <div class="riga"><button class="btn" id="cerca">Cerca</button><button class="btn p" id="appl" disabled>Applica e ricalcola</button><span class="mut" id="stato">premi Cerca: il modello aperto non cambia finché non premi Applica</span></div>
+  <div id="esito" hidden>
+    <p style="margin:10px 0 6px"><b>ROS minimo adesso a 143,77 MHz</b> → fattore <b>0,9963</b> (143,77/144,3): elementi circa 3 mm più corti, boom 2,7 cm più corto; radiatore ritoccato di −1,2 mm.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Elemento</th><th>Ø ora</th><th>Ø dopo</th><th>Lunghezza ora</th><th>dopo il diametro</th><th>dopo la scala</th></tr></thead>
+      <tbody id="tab"></tbody>
+    </table></div>
+    <p style="margin:10px 0 0">A 144,300 MHz: prima <b>26,8 −j25,8 Ω</b> (ROS 2,50) → dopo <b class="ok">50,0 +j0,0 Ω (ROS 1,00)</b> · 21,7 dBi · F/B 13 dB</p>
+  </div>
+</div>
+
+<p class="note">«Ridimensiona» è lo strumento che oggi sta in Calcolatori › Strumenti (k = f vecchia / f nuova): da lì si toglie, perché qui fa la stessa cosa sul modello aperto, con in più i diametri commerciali e il ritocco del radiatore. In Calcolatori › Strumenti resta un rimando a questa pagina per chi lo cerca lì. Con meno di 100 segmenti per λ il «Cerca» dà un avviso giallo: con 40 questa antenna non è convergente.</p>
+</main>
+<script>
+const P=[3,4,5,6],T=[8,10,12,14,15,16,18,20,22,25,28,30,32,35,40];
+const mk=(l,id)=>{document.getElementById(id).innerHTML=l.map(d=>`<button class="pill on" style="margin:2px">${d}</button>`).join('');};
+mk(P,'pieni');mk(T,'tubi');
+document.querySelectorAll('#pieni .pill,#tubi .pill').forEach(b=>b.onclick=()=>b.classList.toggle('on'));
+document.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-d]').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('comm').classList.toggle('dis',b.dataset.d!=='c');});
+document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-m]').forEach(x=>x.classList.toggle('on',x===b));const r=b.dataset.m==='1';document.getElementById('rowF1').hidden=r;document.getElementById('rowMeglio').hidden=!r;});
+const R=[["Riflettore",6,6,1005],["Radiatore",12,12,989],["D1",6,6,957],["D2",6,6,935],["D3",6,6,917],["D4",6,6,903],["D5",6,6,891],["D6",6,6,888],["D7",6,6,886],["D8",6,6,885],["D9",6,6,888]];
+document.getElementById('cerca').onclick=()=>{
+  const s=0.9963;
+  document.getElementById('tab').innerHTML=R.map((r,i)=>{let l2=r[3]*s;if(i==1)l2-=1.2;return `<tr><td>${r[0]}</td><td>${r[1]} mm</td><td>${r[2]} mm</td><td>${r[3]} mm</td><td>${r[3]} mm</td><td>${l2.toFixed(1).replace('.',',')} mm</td></tr>`}).join('');
+  document.getElementById('esito').hidden=false;document.getElementById('appl').disabled=false;
+  document.getElementById('stato').textContent='sweep di 61 punti: 1,8 s (il modello aperto non è ancora cambiato)';
+};
+</script>

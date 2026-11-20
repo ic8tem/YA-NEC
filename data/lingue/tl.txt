@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Mga Calculator > Mga antenang pantanggap
 Parametri	Mga parameter
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Mga pagitan ng DL6WU, lapad ng sinag ng batayang antena at paglipat ng mga kopya: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Nais na frequency
+Dove lavora meglio adesso	Kung saan ito pinakamahusay gumana ngayon
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Pinakamababang SWR sa Z0, hinahanap sa makitid na sweep mula −3 % hanggang +3 % ng nais na frequency
+Cosa fare	Ano ang gagawin
+ricentra: sposta dove lavora meglio adesso	i-recenter: ilipat kung saan ito pinakamahusay gumana ngayon
+ridimensiona: da una frequenza all'altra	baguhin ang sukat: mula sa isang frequency papunta sa iba
+Tondini pieni (mm)	Solidong baras (mm)
+Tondini o tubi, da 8 mm (mm)	Baras o tubo, mula 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Bawat elemento ay kumukuha ng pinakamalapit na naka-on na sukat; itinatama ang haba para manatiling naka-tune gaya ng dati (parehong reactance, line model ni Schelkunoff, kapareho ng Leeson correction). Sa RF, pantay ang tubo at solidong baras na may parehong diameter.
+misure commerciali	komersyal na sukat
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	sa dulo, dalhin sa Z0 +j0 gamit lamang ang haba ng driven element
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Pindutin ang Hanapin: hindi magbabago ang bukas na modelo hanggang pindutin ang Ilapat.
+Ridimensiona e ricentra il modello aperto	Baguhin ang sukat at i-recenter ang bukas na modelo
+Ridimensiona e ricentra	Baguhin ang sukat at i-recenter
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Ang Geometry > Scale ay nananatiling pangkalahatang kasangkapan (factor na manu-manong isinulat). Dito kinokopya ang bukas na modelo, sini-scale sa paligid ng pinakamababang punto (nananatili ang taas mula sa lupa) at muling kinakalkula; hindi sini-scale ang L at C loads.
+Ø ora	Ø ngayon
+Ø dopo	Ø pagkatapos
+Lunghezza ora	Haba ngayon
+dopo il diametro	pagkatapos ng diameter
+dopo la scala	pagkatapos ng scale
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Ang pagbago ng sukat ng antena ay lumipat sa Variabili e ottimizzazione > Ridimensiona e ricentra: doon ginagawa nito ang pareho sa bukas na modelo (k = lumang f / bagong f), kasama ang pag-recenter, komersyal na diameter at pag-ayos ng driven element.
+Apri Ridimensiona e ricentra	Buksan ang Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	nasa Variabili e ottimizzazione > Ridimensiona e ricentra na ngayon
+Interrotto.	Itinigil.
+auto	awto

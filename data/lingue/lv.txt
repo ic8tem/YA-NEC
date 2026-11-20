@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Kalkulatori > Uztveršanas antenas
 Parametri	Parametri
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU attālumi, bāzes antenas kūļa platumi un kopiju pārvietošana: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Vēlamā frekvence
+Dove lavora meglio adesso	Kur tā tagad strādā vislabāk
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Mazākais SVR uz Z0, meklēts ar šauru pārslaucīšanu no −3 % līdz +3 % no vēlamās frekvences
+Cosa fare	Ko darīt
+ricentra: sposta dove lavora meglio adesso	pārcentrēt: pārvietot uz vietu, kur tā tagad strādā vislabāk
+ridimensiona: da una frequenza all'altra	mainīt mērogu: no vienas frekvences uz citu
+Tondini pieni (mm)	Pilni stieņi (mm)
+Tondini o tubi, da 8 mm (mm)	Stieņi vai caurules, no 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Katrs elements saņem tuvāko ieslēgto izmēru; garums tiek labots, lai elements paliktu noskaņots kā iepriekš (tā pati reaktivitāte, Šelkunova līniju modelis, tas pats, kas Līsona korekcijai). RF ziņā vienāda diametra caurule un pilns stienis ir vienādi.
+misure commerciali	tirdzniecības izmēri
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	beigās panākt Z0 +j0 tikai ar starotāja garumu
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Spiediet Meklēt: atvērtais modelis nemainās, līdz nospiežat Lietot.
+Ridimensiona e ricentra il modello aperto	Mainīt atvērtā modeļa mērogu un pārcentrēt
+Ridimensiona e ricentra	Mainīt mērogu un pārcentrēt
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Ģeometrija > Mērogs paliek vispārējais rīks (koeficients ar roku). Šeit atvērtais modelis tiek kopēts, mērogots ap zemāko punktu (augstums virs zemes paliek) un pārrēķināts; L un C slodzes netiek mērogotas.
+Ø ora	Ø tagad
+Ø dopo	Ø pēc
+Lunghezza ora	Garums tagad
+dopo il diametro	pēc diametra
+dopo la scala	pēc mērogošanas
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Antenas mēroga maiņa pārcelta uz Variabili e ottimizzazione > Ridimensiona e ricentra: tur tā dara to pašu ar atvērto modeli (k = vecā f / jaunā f), plus pārcentrēšana, tirdzniecības diametri un starotāja precizēšana.
+Apri Ridimensiona e ricentra	Atvērt Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	tagad šeit: Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Pārtraukts.
+auto	auto

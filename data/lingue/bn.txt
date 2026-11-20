@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	ক্যালকুলেটর > গ্রহণ অ্যান্টেনা
 Parametri	প্যারামিটার
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU দূরত্ব, মূল অ্যান্টেনার বিমউইডথ এবং কপিগুলি সরানো: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	কাঙ্ক্ষিত কম্পাঙ্ক
+Dove lavora meglio adesso	এখন কোথায় সবচেয়ে ভালো কাজ করে
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Z0-তে সর্বনিম্ন SWR, কাঙ্ক্ষিত কম্পাঙ্কের −3 % থেকে +3 % পর্যন্ত সরু সুইপে খোঁজা হয়
+Cosa fare	কী করবেন
+ricentra: sposta dove lavora meglio adesso	পুনঃকেন্দ্রীকরণ: যেখানে এখন সবচেয়ে ভালো কাজ করে সেখানে সরান
+ridimensiona: da una frequenza all'altra	আকার বদল: এক কম্পাঙ্ক থেকে অন্যটিতে
+Tondini pieni (mm)	নিরেট রড (mm)
+Tondini o tubi, da 8 mm (mm)	রড বা টিউব, 8 mm থেকে (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	প্রতিটি এলিমেন্ট সবচেয়ে কাছের চালু মাপ নেয়; দৈর্ঘ্য এমনভাবে সংশোধন হয় যাতে এলিমেন্ট আগের মতো টিউন থাকে (একই রিঅ্যাক্ট্যান্স, শেলকুনফ লাইন মডেল, লিসন সংশোধনের মতোই)। RF-এর জন্য একই ব্যাসের টিউব ও নিরেট রড সমান।
+misure commerciali	বাণিজ্যিক মাপ
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	শেষে কেবল ড্রিভেন এলিমেন্টের দৈর্ঘ্য দিয়ে Z0 +j0-তে আনুন
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	খুঁজুন চাপুন: প্রয়োগ না চাপা পর্যন্ত খোলা মডেল বদলায় না।
+Ridimensiona e ricentra il modello aperto	খোলা মডেলের আকার বদল ও পুনঃকেন্দ্রীকরণ
+Ridimensiona e ricentra	আকার বদল ও পুনঃকেন্দ্রীকরণ
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	জ্যামিতি > স্কেল সাধারণ টুল হিসেবেই থাকে (হাতে লেখা গুণক)। এখানে খোলা মডেলের কপি তার সর্বনিম্ন বিন্দুর চারপাশে স্কেল হয় (মাটি থেকে উচ্চতা থাকে) এবং আবার গণনা হয়; L ও C লোড স্কেল হয় না।
+Ø ora	Ø এখন
+Ø dopo	Ø পরে
+Lunghezza ora	দৈর্ঘ্য এখন
+dopo il diametro	ব্যাসের পরে
+dopo la scala	স্কেলের পরে
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	অ্যান্টেনার আকার বদল এখন Variabili e ottimizzazione > Ridimensiona e ricentra-এ: সেখানে খোলা মডেলে একই কাজ করে (k = পুরোনো f / নতুন f), সঙ্গে পুনঃকেন্দ্রীকরণ, বাণিজ্যিক ব্যাস ও ড্রিভেন এলিমেন্টের সংশোধন।
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra খুলুন
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	এখন Variabili e ottimizzazione > Ridimensiona e ricentra-এ
+Interrotto.	থামানো হয়েছে।
+auto	স্বয়ং

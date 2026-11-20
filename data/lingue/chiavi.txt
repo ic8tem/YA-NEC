@@ -6753,3 +6753,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi
 Parametri
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta
+Dove lavora meglio adesso
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta
+Cosa fare
+ricentra: sposta dove lavora meglio adesso
+ridimensiona: da una frequenza all'altra
+Tondini pieni (mm)
+Tondini o tubi, da 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.
+misure commerciali
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore
+Premi Cerca: il modello aperto non cambia finché non premi Applica.
+Ridimensiona e ricentra il modello aperto
+Ridimensiona e ricentra
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.
+Ø ora
+Ø dopo
+Lunghezza ora
+dopo il diametro
+dopo la scala
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.
+Apri Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.
+auto

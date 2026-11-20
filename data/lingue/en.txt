@@ -7040,3 +7040,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Calculators > Receiving antennas
 Parametri	Parameters
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU spacings, base antenna beamwidths and moving the copies: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Target frequency
+Dove lavora meglio adesso	Where it works best now
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Minimum SWR on Z0, searched with a narrow sweep from −3 % to +3 % of the target frequency
+Cosa fare	What to do
+ricentra: sposta dove lavora meglio adesso	recentre: move where it works best now
+ridimensiona: da una frequenza all'altra	resize: from one frequency to another
+Tondini pieni (mm)	Solid rods (mm)
+Tondini o tubi, da 8 mm (mm)	Rods or tubes, from 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Each element takes the nearest enabled size; its length is corrected so that the element stays tuned as before (same reactance, Schelkunoff line model, the same as the Leeson correction). For RF a tube and a solid rod of the same diameter are equal.
+misure commerciali	commercial sizes
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	at the end bring it to Z0 +j0 with the driven element length only
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Press Search: the open model does not change until you press Apply.
+Ridimensiona e ricentra il modello aperto	Resize and recentre the open model
+Ridimensiona e ricentra	Resize and recentre
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometry > Scale remains the general tool (factor typed by hand). Here the open model is copied, scaled around its lowest point (the height above ground stays) and recalculated; L and C loads are not scaled.
+Ø ora	Ø now
+Ø dopo	Ø after
+Lunghezza ora	Length now
+dopo il diametro	after the diameter
+dopo la scala	after scaling
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Resize antenna has moved to Variabili e ottimizzazione > Ridimensiona e ricentra: there it does the same on the open model (k = old f / new f), plus recentring where the antenna works best, commercial diameters and the driven element touch-up.
+Apri Ridimensiona e ricentra	Open Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	now in Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Stopped.
+auto	auto

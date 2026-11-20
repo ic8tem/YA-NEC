@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	מחשבונים > אנטנות קליטה
 Parametri	פרמטרים
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	מרווחי DL6WU, רוחבי האלומה של האנטנה הבסיסית והזזת העותקים: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	תדר רצוי
+Dove lavora meglio adesso	היכן היא עובדת הכי טוב עכשיו
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	SWR מינימלי ביחס ל-Z0, נמצא בסריקה צרה מ-−3 % עד +3 % מהתדר הרצוי
+Cosa fare	מה לעשות
+ricentra: sposta dove lavora meglio adesso	מרכוז מחדש: הזזה למקום שבו היא עובדת הכי טוב עכשיו
+ridimensiona: da una frequenza all'altra	שינוי קנה מידה: מתדר אחד לאחר
+Tondini pieni (mm)	מוטות מלאים (מ"מ)
+Tondini o tubi, da 8 mm (mm)	מוטות או צינורות, מ-8 מ"מ (מ"מ)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	כל אלמנט מקבל את המידה הפעילה הקרובה ביותר; האורך מתוקן כך שהאלמנט יישאר מכוון כמו קודם (אותה ריאקטנס, מודל הקווים של שלקונוף, כמו תיקון Leeson). ב-RF צינור ומוט מלא באותו קוטר שווים.
+misure commerciali	מידות מסחריות
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	בסוף להביא ל-Z0 +j0 רק באורך המקרין
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	לחץ חיפוש: המודל הפתוח לא משתנה עד שתלחץ החל.
+Ridimensiona e ricentra il modello aperto	שינוי קנה מידה ומרכוז מחדש של המודל הפתוח
+Ridimensiona e ricentra	שינוי קנה מידה ומרכוז
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	גאומטריה > קנה מידה נשאר הכלי הכללי (מקדם ידני). כאן המודל הפתוח מועתק, משנה קנה מידה סביב הנקודה הנמוכה ביותר (הגובה מעל הקרקע נשמר) ומחושב מחדש; עומסי L ו-C אינם משתנים.
+Ø ora	Ø עכשיו
+Ø dopo	Ø אחרי
+Lunghezza ora	אורך עכשיו
+dopo il diametro	אחרי הקוטר
+dopo la scala	אחרי קנה המידה
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	שינוי קנה מידה של אנטנה עבר אל Variabili e ottimizzazione > Ridimensiona e ricentra: שם הוא עושה אותו דבר על המודל הפתוח (k = f ישן / f חדש), ובנוסף מרכוז, קטרים מסחריים וכיוון המקרין.
+Apri Ridimensiona e ricentra	פתח Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	עכשיו ב-Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	הופסק.
+auto	אוטו'

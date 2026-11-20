@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Hesaplayıcılar > Alıcı antenler
 Parametri	Parametreler
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU aralıkları, temel antenin hüzme genişlikleri ve kopyaların taşınması: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	İstenen frekans
+Dove lavora meglio adesso	Şu an en iyi çalıştığı yer
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Z0'a göre en düşük DDO, istenen frekansın −3 % ile +3 % arasında dar bir taramayla aranır
+Cosa fare	Ne yapılsın
+ricentra: sposta dove lavora meglio adesso	yeniden ortala: şu an en iyi çalıştığı yere kaydır
+ridimensiona: da una frequenza all'altra	yeniden boyutlandır: bir frekanstan diğerine
+Tondini pieni (mm)	Dolu çubuklar (mm)
+Tondini o tubi, da 8 mm (mm)	Çubuk veya borular, 8 mm'den itibaren (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Her eleman açık olan en yakın ölçüyü alır; uzunluk, eleman önceki gibi ayarlı kalacak şekilde düzeltilir (aynı reaktans, Schelkunoff hat modeli, Leeson düzeltmesiyle aynı). RF için aynı çaplı boru ve dolu çubuk eşittir.
+misure commerciali	ticari ölçüler
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	sonunda yalnızca besleme elemanının uzunluğuyla Z0 +j0'a getir
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Ara'ya basın: açık model, Uygula'ya basana kadar değişmez.
+Ridimensiona e ricentra il modello aperto	Açık modeli yeniden boyutlandır ve ortala
+Ridimensiona e ricentra	Yeniden boyutlandır ve ortala
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometri > Ölçek genel araç olarak kalır (çarpan elle yazılır). Burada açık model kopyalanır, en alçak noktası etrafında ölçeklenir (yerden yükseklik korunur) ve yeniden hesaplanır; L ve C yükleri ölçeklenmez.
+Ø ora	Ø şimdi
+Ø dopo	Ø sonra
+Lunghezza ora	Uzunluk şimdi
+dopo il diametro	çaptan sonra
+dopo la scala	ölçekten sonra
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Anteni yeniden boyutlandır şuraya taşındı: Variabili e ottimizzazione > Ridimensiona e ricentra; orada açık modelde aynısını yapar (k = eski f / yeni f), ayrıca yeniden ortalama, ticari çaplar ve besleme elemanı rötuşu.
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra'yı aç
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	artık burada: Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Durduruldu.
+auto	otomatik

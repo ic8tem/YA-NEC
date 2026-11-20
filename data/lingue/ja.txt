@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	計算機 > 受信アンテナ
 Parametri	パラメータ
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU 間隔、基本アンテナのビーム幅、コピーの移動: Rumore/GT/Stack > Distanze di stack VHF。
+Frequenza voluta	目標周波数
+Dove lavora meglio adesso	現在いちばん良く動作する場所
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Z0 に対する最小SWR。目標周波数の −3 %〜+3 % を狭いスイープで探します
+Cosa fare	操作
+ricentra: sposta dove lavora meglio adesso	再センタリング: 今いちばん良く動作する所を移す
+ridimensiona: da una frequenza all'altra	リサイズ: ある周波数から別の周波数へ
+Tondini pieni (mm)	中実棒 (mm)
+Tondini o tubi, da 8 mm (mm)	棒またはパイプ、8 mm 以上 (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	各エレメントは有効な寸法のうち最も近いものを取り、以前と同じ同調を保つよう長さを補正します (同じリアクタンス、Schelkunoff の線路モデル、Leeson 補正と同じ)。RF では同じ直径のパイプと中実棒は同等です。
+misure commerciali	市販寸法
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	最後に放射器の長さだけで Z0 +j0 にする
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	検索を押してください: 適用を押すまで開いているモデルは変わりません。
+Ridimensiona e ricentra il modello aperto	開いているモデルをリサイズして再センタリング
+Ridimensiona e ricentra	リサイズと再センタリング
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	ジオメトリ > スケールは一般用ツールのままです (係数は手入力)。ここでは開いているモデルを複製し、最も低い点を中心にスケールして (地上高は保持) 再計算します。L と C の負荷はスケールしません。
+Ø ora	Ø 現在
+Ø dopo	Ø 変更後
+Lunghezza ora	長さ 現在
+dopo il diametro	直径変更後
+dopo la scala	スケール後
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	アンテナのリサイズは Variabili e ottimizzazione > Ridimensiona e ricentra に移りました: そこで開いているモデルに同じことを行い (k = 旧 f / 新 f)、さらに再センタリング、市販直径、放射器の微調整ができます。
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra を開く
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	現在は Variabili e ottimizzazione > Ridimensiona e ricentra にあります
+Interrotto.	中断しました。
+auto	自動

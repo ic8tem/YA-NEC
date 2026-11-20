@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Kalkulátory > Prijímacie antény
 Parametri	Parametre
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Rozostupy DL6WU, šírky zväzku základnej antény a posun kópií: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Požadovaná frekvencia
+Dove lavora meglio adesso	Kde teraz pracuje najlepšie
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Minimálne PSV na Z0, hľadané úzkym rozmietaním od −3 % do +3 % požadovanej frekvencie
+Cosa fare	Čo urobiť
+ricentra: sposta dove lavora meglio adesso	precentrovať: posunúť tam, kde teraz pracuje najlepšie
+ridimensiona: da una frequenza all'altra	prepočítať rozmery: z jednej frekvencie na inú
+Tondini pieni (mm)	Plné tyče (mm)
+Tondini o tubi, da 8 mm (mm)	Tyče alebo rúrky, od 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Každý prvok dostane najbližší zapnutý rozmer; dĺžka sa opraví tak, aby prvok zostal naladený ako predtým (rovnaká reaktancia, líniový model Schelkunova, rovnaký ako Leesonova korekcia). Pre VF sú rúrka a plná tyč rovnakého priemeru rovnocenné.
+misure commerciali	obchodné rozmery
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	nakoniec dostať na Z0 +j0 len dĺžkou žiariča
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Stlačte Hľadať: otvorený model sa nezmení, kým nestlačíte Použiť.
+Ridimensiona e ricentra il modello aperto	Prepočítať a precentrovať otvorený model
+Ridimensiona e ricentra	Prepočítať a precentrovať
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometria > Mierka zostáva všeobecným nástrojom (činiteľ zadaný ručne). Tu sa otvorený model skopíruje, zmení mierku okolo najnižšieho bodu (výška nad zemou zostane) a prepočíta; záťaže L a C sa nemenia.
+Ø ora	Ø teraz
+Ø dopo	Ø potom
+Lunghezza ora	Dĺžka teraz
+dopo il diametro	po priemere
+dopo la scala	po zmene mierky
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Prepočet antény sa presunul do Variabili e ottimizzazione > Ridimensiona e ricentra: tam robí to isté s otvoreným modelom (k = f stará / f nová), navyše precentrovanie, obchodné priemery a doladenie žiariča.
+Apri Ridimensiona e ricentra	Otvoriť Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	teraz v Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Prerušené.
+auto	auto

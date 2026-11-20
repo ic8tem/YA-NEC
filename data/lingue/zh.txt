@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	计算器 > 接收天线
 Parametri	参数
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU 间距、基本天线的波束宽度与副本的移动：Rumore/GT/Stack > Distanze di stack VHF。
+Frequenza voluta	目标频率
+Dove lavora meglio adesso	目前工作最好的位置
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Z0 下的最小驻波比,在目标频率 −3 % 至 +3 % 内用窄扫频搜索
+Cosa fare	操作
+ricentra: sposta dove lavora meglio adesso	重新居中:移到目前工作最好的位置
+ridimensiona: da una frequenza all'altra	缩放:从一个频率到另一个频率
+Tondini pieni (mm)	实心棒 (mm)
+Tondini o tubi, da 8 mm (mm)	棒或管,8 mm 起 (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	每个振子取最接近的已启用尺寸;长度经过修正,使振子保持原来的谐振 (相同电抗,Schelkunoff 传输线模型,与 Leeson 修正相同)。对射频而言,同直径的管和实心棒等效。
+misure commerciali	市售尺寸
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	最后仅用有源振子长度调到 Z0 +j0
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	按搜索:在按应用之前打开的模型不会改变。
+Ridimensiona e ricentra il modello aperto	缩放并重新居中打开的模型
+Ridimensiona e ricentra	缩放并重新居中
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	几何 > 缩放仍是通用工具 (手动输入系数)。这里复制打开的模型,围绕最低点缩放 (离地高度不变) 并重新计算;L 和 C 负载不缩放。
+Ø ora	Ø 现在
+Ø dopo	Ø 之后
+Lunghezza ora	长度 现在
+dopo il diametro	改直径后
+dopo la scala	缩放后
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	天线缩放已移到 Variabili e ottimizzazione > Ridimensiona e ricentra:在那里对打开的模型做同样的事 (k = 旧 f / 新 f),另有重新居中、市售直径和有源振子微调。
+Apri Ridimensiona e ricentra	打开 Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	现在位于 Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	已中断。
+auto	自动

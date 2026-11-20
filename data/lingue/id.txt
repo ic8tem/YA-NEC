@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Kalkulator > Antena penerima
 Parametri	Parameter
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Jarak DL6WU, lebar berkas antena dasar dan pemindahan salinan: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Frekuensi yang diinginkan
+Dove lavora meglio adesso	Di mana kini bekerja paling baik
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	SWR minimum terhadap Z0, dicari dengan sapuan sempit dari −3 % hingga +3 % frekuensi yang diinginkan
+Cosa fare	Yang dilakukan
+ricentra: sposta dove lavora meglio adesso	pusatkan ulang: geser ke tempat kini bekerja paling baik
+ridimensiona: da una frequenza all'altra	ubah ukuran: dari satu frekuensi ke frekuensi lain
+Tondini pieni (mm)	Batang pejal (mm)
+Tondini o tubi, da 8 mm (mm)	Batang atau pipa, mulai 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Setiap elemen mengambil ukuran aktif terdekat; panjangnya dikoreksi agar elemen tetap tertala seperti sebelumnya (reaktansi sama, model saluran Schelkunoff, sama dengan koreksi Leeson). Untuk RF, pipa dan batang pejal berdiameter sama adalah setara.
+misure commerciali	ukuran komersial
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	di akhir capai Z0 +j0 hanya dengan panjang elemen penggerak
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Tekan Cari: model terbuka tidak berubah sampai Anda menekan Terapkan.
+Ridimensiona e ricentra il modello aperto	Ubah ukuran dan pusatkan ulang model terbuka
+Ridimensiona e ricentra	Ubah ukuran dan pusatkan ulang
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometri > Skala tetap menjadi alat umum (faktor ditulis manual). Di sini model terbuka disalin, diskalakan di sekitar titik terendahnya (tinggi dari tanah tetap) dan dihitung ulang; beban L dan C tidak diskalakan.
+Ø ora	Ø sekarang
+Ø dopo	Ø sesudah
+Lunghezza ora	Panjang sekarang
+dopo il diametro	setelah diameter
+dopo la scala	setelah skala
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Ubah ukuran antena pindah ke Variabili e ottimizzazione > Ridimensiona e ricentra: di sana melakukan hal yang sama pada model terbuka (k = f lama / f baru), ditambah pemusatan ulang, diameter komersial, dan penyetelan elemen penggerak.
+Apri Ridimensiona e ricentra	Buka Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	kini di Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Dihentikan.
+auto	otomatis

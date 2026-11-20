@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Calculatoare > Antene de recepție
 Parametri	Parametri
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Distanțe DL6WU, deschiderile antenei de bază și mutarea copiilor: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Frecvența dorită
+Dove lavora meglio adesso	Unde funcționează cel mai bine acum
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	RUS minim pe Z0, căutat cu o baleiere îngustă de la −3 % la +3 % din frecvența dorită
+Cosa fare	Ce faci
+ricentra: sposta dove lavora meglio adesso	recentrare: mută unde funcționează cel mai bine acum
+ridimensiona: da una frequenza all'altra	redimensionare: de la o frecvență la alta
+Tondini pieni (mm)	Bare pline (mm)
+Tondini o tubi, da 8 mm (mm)	Bare sau țevi, de la 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Fiecare element primește cea mai apropiată dimensiune activată; lungimea se corectează ca elementul să rămână acordat ca înainte (aceeași reactanță, modelul de linii Schelkunoff, același cu corecția Leeson). Pentru RF o țeavă și o bară plină de același diametru sunt egale.
+misure commerciali	dimensiuni comerciale
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	la final adu la Z0 +j0 doar cu lungimea radiatorului
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Apasă Caută: modelul deschis nu se schimbă până nu apeși Aplică.
+Ridimensiona e ricentra il modello aperto	Redimensionează și recentrează modelul deschis
+Ridimensiona e ricentra	Redimensionează și recentrează
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometrie > Scară rămâne instrumentul general (factor scris de mână). Aici modelul deschis se copiază, se scalează în jurul punctului cel mai de jos (înălțimea față de sol rămâne) și se recalculează; sarcinile L și C nu se scalează.
+Ø ora	Ø acum
+Ø dopo	Ø după
+Lunghezza ora	Lungime acum
+dopo il diametro	după diametru
+dopo la scala	după scalare
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Redimensionarea antenei s-a mutat în Variabili e ottimizzazione > Ridimensiona e ricentra: acolo face același lucru pe modelul deschis (k = f veche / f nouă), plus recentrarea, diametrele comerciale și retușul radiatorului.
+Apri Ridimensiona e ricentra	Deschide Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	acum în Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Întrerupt.
+auto	auto

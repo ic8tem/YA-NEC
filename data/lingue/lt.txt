@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Skaičiuoklės > Priėmimo antenos
 Parametri	Parametrai
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU atstumai, bazinės antenos spindulio pločiai ir kopijų perkėlimas: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Norimas dažnis
+Dove lavora meglio adesso	Kur dabar veikia geriausiai
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Mažiausias SWR Z0 atžvilgiu, ieškomas siauru skenavimu nuo −3 % iki +3 % norimo dažnio
+Cosa fare	Ką daryti
+ricentra: sposta dove lavora meglio adesso	centruoti iš naujo: perkelti ten, kur dabar veikia geriausiai
+ridimensiona: da una frequenza all'altra	keisti mastelį: iš vieno dažnio į kitą
+Tondini pieni (mm)	Pilni strypai (mm)
+Tondini o tubi, da 8 mm (mm)	Strypai arba vamzdžiai, nuo 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Kiekvienas elementas gauna artimiausią įjungtą matmenį; ilgis pataisomas, kad elementas liktų suderintas kaip anksčiau (ta pati reaktyvioji varža, Šelkunovo linijų modelis, toks pat kaip Leesono pataisa). RD požiūriu to paties skersmens vamzdis ir pilnas strypas yra lygūs.
+misure commerciali	prekybiniai matmenys
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	pabaigoje pasiekti Z0 +j0 tik spinduolio ilgiu
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Spauskite Ieškoti: atvertas modelis nesikeičia, kol nepaspausite Taikyti.
+Ridimensiona e ricentra il modello aperto	Keisti atverto modelio mastelį ir centruoti iš naujo
+Ridimensiona e ricentra	Keisti mastelį ir centruoti
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometrija > Mastelis lieka bendru įrankiu (koeficientas rašomas ranka). Čia atvertas modelis nukopijuojamas, jo mastelis keičiamas apie žemiausią tašką (aukštis virš žemės lieka) ir perskaičiuojamas; L ir C apkrovos nekeičiamos.
+Ø ora	Ø dabar
+Ø dopo	Ø po
+Lunghezza ora	Ilgis dabar
+dopo il diametro	po skersmens
+dopo la scala	po mastelio
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Antenos mastelio keitimas perkeltas į Variabili e ottimizzazione > Ridimensiona e ricentra: ten jis daro tą patį su atvertu modeliu (k = sena f / nauja f), be to centravimas, prekybiniai skersmenys ir spinduolio patikslinimas.
+Apri Ridimensiona e ricentra	Atverti Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	dabar čia: Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Nutraukta.
+auto	auto

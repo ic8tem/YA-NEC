@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Rekenhulpen > Ontvangstantennes
 Parametri	Parameters
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	DL6WU-afstanden, openingshoeken van de basisantenne en verplaatsen van de kopieën: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Gewenste frequentie
+Dove lavora meglio adesso	Waar ze nu het best werkt
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Minimale SWR op Z0, gezocht met een smalle sweep van −3 % tot +3 % van de gewenste frequentie
+Cosa fare	Wat te doen
+ricentra: sposta dove lavora meglio adesso	hercentreren: verschuiven naar waar ze nu het best werkt
+ridimensiona: da una frequenza all'altra	herschalen: van de ene frequentie naar de andere
+Tondini pieni (mm)	Massieve staven (mm)
+Tondini o tubi, da 8 mm (mm)	Staven of buizen, vanaf 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Elk element krijgt de dichtstbijzijnde ingeschakelde maat; de lengte wordt gecorrigeerd zodat het element afgestemd blijft als voorheen (zelfde reactantie, lijnmodel van Schelkunoff, hetzelfde als de Leeson-correctie). Voor RF zijn een buis en een massieve staaf van dezelfde diameter gelijk.
+misure commerciali	handelsmaten
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	op het eind naar Z0 +j0 brengen met alleen de lengte van de straler
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Druk op Zoeken: het open model verandert pas bij Toepassen.
+Ridimensiona e ricentra il modello aperto	Het open model herschalen en hercentreren
+Ridimensiona e ricentra	Herschalen en hercentreren
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometrie > Schalen blijft het algemene gereedschap (factor met de hand). Hier wordt het open model gekopieerd, rond zijn laagste punt geschaald (de hoogte boven de grond blijft) en herberekend; L- en C-belastingen worden niet geschaald.
+Ø ora	Ø nu
+Ø dopo	Ø daarna
+Lunghezza ora	Lengte nu
+dopo il diametro	na de diameter
+dopo la scala	na het schalen
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Antenne herschalen is verhuisd naar Variabili e ottimizzazione > Ridimensiona e ricentra: daar doet het hetzelfde met het open model (k = f oud / f nieuw), plus hercentreren, handelsdiameters en de correctie van de straler.
+Apri Ridimensiona e ricentra	Ridimensiona e ricentra openen
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	nu in Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Onderbroken.
+auto	auto

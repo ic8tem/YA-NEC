@@ -69,7 +69,7 @@ Schermi piccoli: se lo schermo utile e' piu' basso di 860 punti o piu' stretto d
 
 Dall'alto in basso: barra del titolo (nome del modello, pulsante About), barra dei comandi, riquadri dei risultati, linguette, pagina della linguetta scelta, barra di stato (messaggi e avanzamento).
 
-Ordine delle linguette (dalla 1.5.2): **Struttura 3D, Frequenza, Diagrammi, Rumore/GT/Stack, NEC/correnti, Variabili e ottimizzazione, Calcolatori**, poi Avvisi, Impostazioni, Documenti tecnici, Crediti, Registro e Autotest. La **Smith** e' una voce della fascia dei Diagrammi; **NEC/correnti** ha le sottolinguette NEC e Correnti; **Variabili e ottimizzazione** ha le sottolinguette Variabili e Ottimizzatore. La linguetta "Oggetti inseriti" non c'e' piu': sorgenti, carichi, linee, stack, rastremazioni, trasformatori e reti sono nella zona in basso a destra della Struttura 3D (capitolo 14). "Modello NEC" si chiama ora **NEC**.
+Ordine delle linguette (dalla 1.5.3): **Struttura 3D, Diagrammi, Rumore/GT/Stack, NEC/correnti, Variabili e ottimizzazione, Calcolatori**, poi Avvisi, Impostazioni, Documenti tecnici, Crediti, Registro e Autotest. La fascia dei Diagrammi ha le voci **Lobi**, **Parametri** (l'ex linguetta Frequenza), Tabelle, Misure VNA, Terreno reale, Ricezione (RDF), Tolleranze e **Smith**; **NEC/correnti** ha le sottolinguette NEC e Correnti; **Variabili e ottimizzazione** ha le sottolinguette Variabili, Ottimizzatore e (dalla 1.5.3) Ridimensiona e ricentra. La linguetta "Oggetti inseriti" non c'e' piu': sorgenti, carichi, linee, stack, rastremazioni, trasformatori e reti sono nella zona in basso a destra della Struttura 3D (capitolo 14). "Modello NEC" si chiama ora **NEC**.
 
 Questo manuale e' anche dentro il programma, nella linguetta **Documenti tecnici**: a sinistra l'indice dei capitoli, a destra un capitolo alla volta con le figure e, in fondo, i pulsanti per il capitolo precedente e seguente (il capitolo si impagina quando lo si apre, cosi' la linguetta si apre subito). Lo stesso testo e' in doc\Manuale_d_uso.pdf per la stampa.
 
@@ -200,6 +200,21 @@ Le schede SY sono le stesse di 4nec2 e xnec2c: `SY L=1000*MM, H=L/2`. Nelle sche
 > ATTENZIONE: Nel file salvato le espressioni restano nelle schede di geometria; nelle schede EX, LD, GN e FR vengono salvate come numeri.
 
 **Ottimizzatore** (sottolinguetta dopo Variabili, nella linguetta Variabili e ottimizzazione): a sinistra gli **obiettivi** con un cursore di peso (a sinistra = ignora, a destra = conta di piu') e una soglia: jX, ROS (es. "&le; 1,3"), guadagno ("max" o un valore in dBi), F/B (es. "&ge; 22 dB"), elevazione voluta del massimo, impedenza voluta (di partenza "50 +j0"; si puo' scrivere per esempio "28 +j0", oppure "Z0 +j0" per lo Z0 della barra in alto), corrente minima in un punto (notazione MMANA, es. w4c). Raggiunta la soglia, quell'obiettivo smette di pesare. Sotto, le **frequenze da rispettare**: il voto e' la media su tutte (clic = frequenza principale in grassetto, clic destro = la toglie, "+ aggiungi" per altre, anche di bande diverse). Al centro le **variabili** della linguetta Variabili con valore, minimo, massimo e passo (anche "1 mm"); quelle scritte come formula seguono le altre da sole; "tutti gli elementi" le rimette tutte, clic destro sul nome per spostarla in alto (provata prima) o toglierla; "mantieni lunghezza del boom" scarta le prove che cambiano il boom; metodo "una variabile alla volta" (come MMANA: passo che si dimezza fino al passo dato) o "simplesso" (Nelder e Mead, tutte insieme). Il **voto** va da 0 a 100: per ogni frequenza e obiettivo un punteggio da 0 a 1 (ROS e impedenza come potenza adattata, guadagno rispetto alla partenza, F/B 1 - e^(-F/B/15 dB)), media pesata. Il **registro dei passi** tiene gli ultimi 128 miglioramenti: clic su una riga per riprenderla (schede, diagramma e "Avvia" ripartono da li'). A destra l'andamento del voto, Avvia / Ferma, **Applica al modello** (copia i valori nella linguetta Variabili mantenendo le unita' scritte, es. 1018MM) e Annulla tutto; sotto il diagramma di azimut della partenza (tratteggiato) e del passo scelto. Mentre la linguetta e' aperta, le schede in alto mostrano stato, voto, guadagno, F/B, ROS (con il peggiore in banda) e impedenza.
+
+### 9.x Ridimensiona e ricentra (dalla 1.5.3)
+
+Terza sottolinguetta di **Variabili e ottimizzazione**. Lavora sul modello aperto, che cambia solo con **Applica e ricalcola** (il file su disco non cambia).
+
+| Dato | Scelte | Spiegazione |
+|---|---|---|
+| Cosa fare | ricentra / ridimensiona | **ricentra**: uno sweep stretto (61 punti tra -3 % e +3 % della frequenza voluta, poi 21 attorno al minimo) trova la frequenza di ROS minimo su Z0 e il modello si scala di k = f migliore / f voluta. **ridimensiona**: k = f del modello / f voluta (come Ridimensiona antenna dei Calcolatori) |
+| Frequenza voluta | MHz | dove l'antenna deve lavorare |
+| Diametri | in scala / uguali / misure commerciali | con «uguali» i raggi restano quelli veri; con «misure commerciali» ogni elemento (filo diritto non collegato ad altri) prende la misura accesa piu' vicina tra i tondini pieni 3, 4, 5, 6 mm e i tondini o tubi da 8 a 40 mm, e la sua lunghezza cambia perche' la reattanza al centro resti quella di prima alla frequenza voluta (modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Le misure accese si salvano in config.ini |
+| Ritocco del radiatore | casella | alla fine la sola lunghezza del filo alimentato al centro si cerca (secante, pochi calcoli) perche' la reattanza all'ingresso sia 0 |
+
+La scala e' attorno al punto piu' basso del modello: l'altezza dal suolo resta. Carichi L e C non si scalano. Il risultato mostra la tabella degli elementi (diametro e lunghezza prima, dopo il diametro e dopo la scala), Z e ROS prima e dopo, guadagno e F/B. Con meno di 100 segmenti per lambda sul segmento piu' lungo compare un avviso: sulle Yagi lunghe a banda stretta la segmentazione grossa non e' convergente.
+
+Esempio: la 11 el I4GBZ di MMANA (51,4 +j4,5 ohm a 144,300 MHz in MMANA) nel NEC-2 ha il picco a 50 ohm circa a 143,77 MHz (scarto di lunghezza tra MININEC e NEC-2 di circa lo 0,4 %, antenna a banda strettissima). Con 160 segmenti per lambda e diametri uguali: fattore 0,9962-0,9964, 52,9 +j0,8 ohm a 144,300 MHz, 21,7 dBi sul terreno medio a 5 m; il ritocco del radiatore porta a Z0 +j0.
 
 ## 10. Formati di file
 
@@ -463,7 +478,7 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 | HF | Dipoli, Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), Discone |
 | Antenne riceventi | Beverage, BOG, EWE, DHDL, loop magnetica ricevente, verticale di riferimento (era una linguetta a parte) |
 | VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Eggbeater, QFH |
-| Strumenti | Ridimensiona antenna, Tetto, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T, Toroidi FT, Balun / Un-Un, Staffe |
+| Strumenti | Ridimensiona antenna (dalla 1.5.3 un rimando a Variabili e ottimizzazione > Ridimensiona e ricentra), Tetto, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T, Toroidi FT, Balun / Un-Un, Staffe |
 | Dischi e illuminatori | Parabola primo fuoco, Parabola offset, Trombe e illuminatori, Biquad |
 | 2,4 GHz | Antenne su PCB |
 
@@ -876,7 +891,7 @@ Fonti: ARRL Antenna Book / Kandoian: cono lambda/4 alla frequenza minima, disco 
 
 **Ridimensiona antenna**
 
-Strumento sul modello aperto: scala tutte le misure con k = f vecchia / f nuova (come la scheda GS del NEC), con i diametri in scala o uguali. Con i diametri uguali la risonanza si sposta un poco: va ricontrollata con il calcolo.
+Dalla 1.5.3 questa voce apre **Variabili e ottimizzazione > Ridimensiona e ricentra** (capitolo 9), che fa la stessa cosa con in piu' il ricentraggio, i diametri commerciali e il ritocco del radiatore. Descrizione della voce come era fino alla 1.5.2. Strumento sul modello aperto: scala tutte le misure con k = f vecchia / f nuova (come la scheda GS del NEC), con i diametri in scala o uguali. Con i diametri uguali la risonanza si sposta un poco: va ricontrollata con il calcolo.
 
 | Dato | Unita' / scelte | Spiegazione |
 |---|---|---|
@@ -1712,7 +1727,7 @@ Le caselle nere (attive) cambiano il calcolo o la grafica e si possono accendere
 | Calcolo NEC-2 / doppia precisione | scelta grigia, **fissa** | il motore e' uno solo: NEC-2 di nec2c in doppia precisione |
 | Secondo terreno (solo campo lontano) | grigia, **non ancora disponibile** | approvato per la 1.5 (Terreno reale 2) |
 | Terreno/mare lontano, fattore di divergenza, rugosita' | grigie, **sempre attive nel Terreno reale** | si usano in Diagrammi > Terreno reale (capitolo 23.2), non nei diagrammi normali |
-| Passo degli angoli 0,5 / 1 / 2 / 5 | scelta grigia, **fissa** a 2 gradi | il diagramma 3D si calcola a 2 gradi con l'affinamento del massimo |
+| Passo degli angoli auto / 0,5 / 1 / 2 / 5 | **auto** (dalla 1.5.3) | passo del diagramma 3D, dell'AGT, del Rumore/G/T e delle tabelle. La velocita' del computer (segmenti x direzioni al secondo) si misura su ogni diagramma calcolato e si tiene in config.ini; con «auto» si usa il passo piu' fine che sul modello aperto costa meno di 0,5 s (il diagramma compare a 2 gradi, quello fine segue in sottofondo). Il passo al limite (previsto tra 1 e 10 s) e' in rosso; oltre 10 s la pillola e' spenta. Il fumetto di ogni pillola dice il tempo previsto. Sweep e ottimizzatore restano a 2 gradi. Nel Registro, riga COMPUTER, la velocita', i GFLOPS stimati (60 operazioni per segmento e direzione) e i tempi previsti per ogni passo |
 | Polarizzazione totale / oriz. / vert. / circolari | scelta grigia, **fissa** su totale qui | orizzontale e verticale si scelgono nella linguetta Diagrammi; le circolari nel calcolatore Yagi incrociate |
 | F/R: settore posteriore | informazione | 180 gradi (90-270) come EZNEC |
 | Campo vicino (NE/NH) | grigia, **non ancora disponibile** | |
@@ -2114,3 +2129,11 @@ Oltre 40 oggetti le etichette si nascondono e resta il simbolo, per non coprire 
 I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Variabili…» dell'ottimizzatore) aprono la sottolinguetta giusta.
 
 **Traduzioni.** Le voci della 1.5.2 sono tradotte in tutte le 36 lingue.
+
+### 26.3 Dalla 1.5.3
+
+- Nella fascia dei **Diagrammi** la prima voce si chiama **Lobi**; la linguetta Frequenza e' la voce **Parametri** (12 linguette).
+- **Variabili e ottimizzazione > Ridimensiona e ricentra** (capitolo 9): ricentraggio automatico, diametri commerciali, ritocco del radiatore; Ridimensiona antenna lascia i Calcolatori.
+- **Passo degli angoli** adattato al computer (Impostazioni > Diagrammi, capitolo 21).
+- **Oggetti > Stack**: solo il riconoscimento delle copie e il pulsante «Distanze di stack VHF».
+- Corretto: con la Verifica della segmentazione («tutti») e poi Ridimensiona antenna compariva «GW con tag 1: il numero di segmenti deve essere almeno 1». La compilazione di controllo prova ogni volta i modelli d'esempio con Ridimensiona e Segmentazione.

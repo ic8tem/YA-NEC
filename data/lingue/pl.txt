@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Kalkulatory > Anteny odbiorcze
 Parametri	Parametry
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Odstępy DL6WU, szerokości wiązki anteny bazowej i przesuwanie kopii: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Żądana częstotliwość
+Dove lavora meglio adesso	Gdzie teraz działa najlepiej
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Minimalny WFS na Z0, szukany wąskim przemiataniem od −3 % do +3 % żądanej częstotliwości
+Cosa fare	Co zrobić
+ricentra: sposta dove lavora meglio adesso	wyśrodkuj: przesuń tam, gdzie teraz działa najlepiej
+ridimensiona: da una frequenza all'altra	przeskaluj: z jednej częstotliwości na inną
+Tondini pieni (mm)	Pręty pełne (mm)
+Tondini o tubi, da 8 mm (mm)	Pręty lub rurki, od 8 mm (mm)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Każdy element dostaje najbliższy włączony wymiar; długość jest korygowana tak, by element pozostał dostrojony jak wcześniej (ta sama reaktancja, model linii Schelkunowa, ten sam co korekcja Leesona). Dla w.cz. rurka i pełny pręt o tej samej średnicy są równoważne.
+misure commerciali	wymiary handlowe
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	na końcu doprowadź do Z0 +j0 samą długością promiennika
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Naciśnij Szukaj: otwarty model zmieni się dopiero po Zastosuj.
+Ridimensiona e ricentra il modello aperto	Przeskaluj i wyśrodkuj otwarty model
+Ridimensiona e ricentra	Przeskaluj i wyśrodkuj
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Geometria > Skala pozostaje narzędziem ogólnym (współczynnik wpisany ręcznie). Tutaj otwarty model jest kopiowany, skalowany wokół najniższego punktu (wysokość nad ziemią zostaje) i przeliczany; obciążenia L i C nie są skalowane.
+Ø ora	Ø teraz
+Ø dopo	Ø potem
+Lunghezza ora	Długość teraz
+dopo il diametro	po średnicy
+dopo la scala	po skalowaniu
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Przeskalowanie anteny przeniesiono do Variabili e ottimizzazione > Ridimensiona e ricentra: tam robi to samo na otwartym modelu (k = f stara / f nowa), plus wyśrodkowanie, średnice handlowe i korekta promiennika.
+Apri Ridimensiona e ricentra	Otwórz Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	teraz w Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Przerwano.
+auto	auto

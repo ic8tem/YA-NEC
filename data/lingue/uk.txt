@@ -5072,3 +5072,28 @@ Per scegliere un'antenna ricevente e scriverne le misure: Calcolatori > Antenne 
 Calcolatori > Antenne riceventi	Калькулятори > Приймальні антени
 Parametri	Параметри
 Distanze DL6WU, aperture dell'antenna base e spostamento delle copie: Rumore/GT/Stack > Distanze di stack VHF.	Відстані DL6WU, ширина променя базової антени та переміщення копій: Rumore/GT/Stack > Distanze di stack VHF.
+Frequenza voluta	Потрібна частота
+Dove lavora meglio adesso	Де антена зараз працює найкраще
+ROS minimo su Z0, cercato con uno sweep stretto tra −3 % e +3 % della frequenza voluta	Мінімальний КСХ за Z0, шукається вузьким свіпом від −3 % до +3 % потрібної частоти
+Cosa fare	Що зробити
+ricentra: sposta dove lavora meglio adesso	перецентрувати: зсунути туди, де зараз працює найкраще
+ridimensiona: da una frequenza all'altra	перерахувати розміри: з однієї частоти на іншу
+Tondini pieni (mm)	Суцільні прутки (мм)
+Tondini o tubi, da 8 mm (mm)	Прутки або трубки, від 8 мм (мм)
+Ogni elemento prende la misura accesa più vicina; la lunghezza si corregge perché l'elemento resti accordato come prima (stessa reattanza, modello a linee di Schelkunoff, lo stesso della correzione di Leeson). Per l'RF un tubo e un tondino dello stesso diametro sono uguali.	Кожен елемент отримує найближчий увімкнений розмір; довжина виправляється так, щоб елемент лишився налаштованим як раніше (той самий реактивний опір, лінійна модель Щелкунова, та сама, що в поправці Лісона). Для ВЧ трубка і суцільний пруток однакового діаметра рівні.
+misure commerciali	стандартні розміри
+alla fine porta a Z0 +j0 con la sola lunghezza del radiatore	наприкінці довести до Z0 +j0 лише довжиною вібратора
+Premi Cerca: il modello aperto non cambia finché non premi Applica.	Натисніть Знайти: відкрита модель не змінюється, доки не натиснете Застосувати.
+Ridimensiona e ricentra il modello aperto	Перерахувати й перецентрувати відкриту модель
+Ridimensiona e ricentra	Перерахувати й перецентрувати
+Geometria > Scala resta lo strumento generico (fattore scritto a mano). Qui il modello aperto si copia, si scala attorno al punto più basso (l'altezza dal suolo resta) e si ricalcola; carichi L e C non si scalano.	Геометрія > Масштаб лишається загальним інструментом (коефіцієнт вручну). Тут відкрита модель копіюється, масштабується навколо найнижчої точки (висота над землею лишається) і перераховується; навантаження L і C не масштабуються.
+Ø ora	Ø зараз
+Ø dopo	Ø після
+Lunghezza ora	Довжина зараз
+dopo il diametro	після діаметра
+dopo la scala	після масштабу
+Ridimensiona antenna è passato in Variabili e ottimizzazione > Ridimensiona e ricentra: lì fa la stessa cosa sul modello aperto (k = f vecchia / f nuova), con in più il ricentraggio dove l'antenna lavora meglio, i diametri commerciali e il ritocco del radiatore.	Перерахунок розмірів антени перенесено до Variabili e ottimizzazione > Ridimensiona e ricentra: там він робить те саме з відкритою моделлю (k = f стара / f нова), плюс перецентрування, стандартні діаметри та підстроювання вібратора.
+Apri Ridimensiona e ricentra	Відкрити Ridimensiona e ricentra
+ora in Variabili e ottimizzazione > Ridimensiona e ricentra	тепер у Variabili e ottimizzazione > Ridimensiona e ricentra
+Interrotto.	Перервано.
+auto	авто
