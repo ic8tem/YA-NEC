@@ -33,7 +33,7 @@ namespace YaNec
             SelectTab(ti);
         }
 
-        static string Zs(System.Numerics.Complex z)
+        static string ZRic(System.Numerics.Complex z)
         {
             CultureInfo cc = CultureInfo.CurrentCulture;
             return z.Real.ToString("0.0", cc) + (z.Imaginary >= 0 ? " +j" : " −j") + Math.Abs(z.Imaginary).ToString("0.0", cc) + " Ω";
@@ -184,8 +184,8 @@ namespace YaNec
                         esito.Children.Add(new ScrollViewer { Content = tb, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto, VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled });
                     }
                     StackPanel fin = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4 };
-                    fin.Children.Add(new TextBlock { Text = "A " + FN(f2, 3) + " MHz: prima " + Zs(r.ZPrima) + " (ROS " + r.RosPrima.ToString("0.00", cc) + ") → dopo ", Foreground = Pal.B(Pal.Fore) });
-                    fin.Children.Add(new TextBlock { Text = Zs(r.ZDopo) + " (ROS " + r.RosDopo.ToString("0.00", cc) + ")", FontWeight = FontWeight.Bold, Foreground = Pal.B(r.RosDopo <= 1.5 ? Pal.Green : Pal.Orange) });
+                    fin.Children.Add(new TextBlock { Text = "A " + FN(f2, 3) + " MHz: prima " + ZRic(r.ZPrima) + " (ROS " + r.RosPrima.ToString("0.00", cc) + ") → dopo ", Foreground = Pal.B(Pal.Fore) });
+                    fin.Children.Add(new TextBlock { Text = ZRic(r.ZDopo) + " (ROS " + r.RosDopo.ToString("0.00", cc) + ")", FontWeight = FontWeight.Bold, Foreground = Pal.B(r.RosDopo <= 1.5 ? Pal.Green : Pal.Orange) });
                     fin.Children.Add(new TextBlock { Text = " · " + r.GDopo.ToString("0.00", cc) + " dBi · F/B " + r.FbDopo.ToString("0.0", cc) + " dB", Foreground = Pal.B(Pal.Fore) });
                     esito.Children.Add(fin);
                     foreach (string n in r.Note) esito.Children.Add(Nota(n, Pal.Orange));
@@ -201,7 +201,7 @@ namespace YaNec
             {
                 if (ricEsito == null || ricEsito.Modello == null || ricPer != model) { Status("Il modello aperto è cambiato: premi di nuovo Cerca.", true); bApp.IsEnabled = false; return; }
                 NecModel nm = ricEsito.Modello;
-                Registro.Scrivi("AZIONE", "ridimensiona e ricentra: fattore " + ricEsito.Fattore.ToString("0.00000", CultureInfo.InvariantCulture) + ", Z " + Zs(ricEsito.ZDopo));
+                Registro.Scrivi("AZIONE", "ridimensiona e ricentra: fattore " + ricEsito.Fattore.ToString("0.00000", CultureInfo.InvariantCulture) + ", Z " + ZRic(ricEsito.ZDopo));
                 SetModel(nm, null);
                 bApp.IsEnabled = false;
                 stato.Text = "Applicato: " + nm.FileName + ". Il file su disco non è cambiato: salvalo se vuoi tenerlo.";
