@@ -84,6 +84,11 @@ namespace YaNec.Engine
         public double TuneScale = 1;                             // fattore applicato alla lunghezza da "Risonanza"
         public void Add(string label, string value) { Lines.Add(new[] { label, value }); }
         public string AvvisoDati;                                // 1.0.15: riquadro arancio sotto i dati (bozzetto DL6WU approvato da IC8TEM 17/11/2026 09:57)
+        // 1.5.6 (bozzetto Filari approvato da IC8TEM il 21/11/2026 21:12): pulsanti che aprono un'altra scheda gia' compilata,
+        // impedenza di riferimento del ROS (trasformatore ideale: 50 x rapporto) e bande verificate dal calcolo in tempo reale
+        public List<CalcRimando> Rimandi = new List<CalcRimando>();
+        public double Z0Rif = double.NaN;
+        public double[] Bande;
     }
 
     public abstract class SimpleCalc
@@ -165,6 +170,7 @@ namespace YaNec.Engine
             if (string.IsNullOrEmpty(o.Formula)) o.Formula = "Fonti: " + Source + ".";
             // 0.5.1: controlli dei dati (parametri e modello NEC del calcolatore), come avvisi della scheda
             try { ControlliDati.AggiungiACalcolatore(this, o); } catch { }
+            try { RimandiCalcolatori.Aggiungi(this, o); } catch { }
             return o;
         }
 

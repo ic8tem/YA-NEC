@@ -39,7 +39,7 @@ namespace YaNec
         Control calcMeccPagina;   // 1.5: la pagina dei Calcoli meccanici (prima linguetta principale) dentro i Calcolatori
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
-            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
+            { "HF", new[] { "dipoli", "filari", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh", "discone" } },   // 1.5.6: Discone da HF a VHF (IC8TEM 21/11/2026)
             { "Antenne riceventi", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
@@ -68,6 +68,7 @@ namespace YaNec
             calcTitolo = new TextBlock { Text = "HF", FontSize = 18, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(2, 0, 0, 6) };
             fasCalc.Children.Add(calcTitolo);
             fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD", true);
+            fasCalc.Voce("filari", "Filari", false, null, "alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke");   // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
             fasCalc.Voce("dipmb", "Dipolo multibanda", false, null, "bacchette parallele, manica aperta, radiatori XR-5");   // 0.4.30
             fasCalc.Voce("yagimb", "Yagi multibanda", false, null, "HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda");   // 0.4.30
             fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole", true);
@@ -185,6 +186,25 @@ namespace YaNec
             if (fasCalc.Current != scelta) fasCalc.Select(scelta);
         }
 
+        // 1.5.6: pulsanti di rimando tra i Calcolatori (bozzetto Filari approvato da IC8TEM il 21/11/2026 21:12)
+        string ritornoPer, ritornoVoce, ritornoTitolo;
+        void ApriRimando(CalcRimando r, SimpleCalc da)
+        {
+            SimpleCalc dest = simpleCalcs != null ? simpleCalcs.Find(c => c.Key == r.Voce) : null;
+            if (dest != null)
+            {
+                foreach (KeyValuePair<string, double> kv in r.Valori) { CalcParam p = dest.Par(kv.Key); if (p != null) p.Value = kv.Value; }
+                dest.Scale = 1;
+            }
+            string voce = dest != null ? (dest.Group ?? dest.Key) : r.Voce;
+            ritornoPer = voce; ritornoVoce = da.Group ?? da.Key; ritornoTitolo = da.Nome;
+            calcPages.Remove(voce);
+            string fam = FamigliaDi(voce);
+            if (fam == null) return;
+            ApriFamigliaCalc(fam, voce);
+            Registro.Scrivi("AZIONE", "rimando dei Calcolatori: " + da.Key + " -> " + voce);
+        }
+
         // voce del fascione con piu' varianti: pillole "Tipo" in alto e il calcolatore sotto
         Control BuildGruppoCalc(string key)
         {
@@ -266,6 +286,15 @@ namespace YaNec
             if (sc is CalcStackDl6wu)   // 1.3.1 (bozzetto approvato da IC8TEM il 18/11/2026 13:04): pulsante "? Manuale"
                 left.Children.Add(new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 6), Children = { titoloCalc, BtnManuale("Distanze di stack: accoppiamento e distanza migliore") } });
             else { titoloCalc.Margin = new Thickness(0, 0, 0, 6); left.Children.Add(titoloCalc); }
+            // 1.5.6: aperta da un pulsante di rimando (Filari, OCF...): "‹ Torna a ..." riporta alla scheda di partenza
+            if (ritornoPer != null && ritornoPer == (sc.Group ?? sc.Key) && ritornoVoce != null)
+            {
+                string rv = ritornoVoce;
+                Button bTorna = Btn("‹ Torna a " + ritornoTitolo, false);
+                bTorna.HorizontalAlignment = HorizontalAlignment.Left; bTorna.Margin = new Thickness(0, 0, 0, 6);
+                bTorna.Click += (s0, e0) => { string fr = FamigliaDi(rv); if (fr != null) ApriFamigliaCalc(fr, rv); };
+                left.Children.Insert(left.Children.Count - 1, bTorna);
+            }
             if (pilloleTipo != null || !string.IsNullOrEmpty(sc.Variant))
             {
                 ContentControl posto = new ContentControl { Tag = "posto-tipo", Content = pilloleTipo };
@@ -476,6 +505,9 @@ namespace YaNec
             Button bCar = Btn("Carichi (C) ›", false);
             foreach (Button b in new[] { bNec, bSalva, bApri, bTune, bCar }) { b.Margin = new Thickness(0, 0, 8, 6); btns.Children.Add(b); }
             left.Children.Add(btns);
+            // 1.5.6 (bozzetto Filari approvato da IC8TEM il 21/11/2026 21:12): pulsanti viola che aprono Balun, Toroidi FT, Cavi RG, Carichi HF gia' compilati
+            WrapPanel rimandi = new WrapPanel { Margin = new Thickness(0, 0, 0, 2), IsVisible = false };
+            left.Children.Add(rimandi);
             // 0.4.20 (IC8TEM 14/11/2026 16:24, "creare lo stack"): dalla scheda DL6WU si crea lo stack nel modello aperto con le distanze calcolate;
             // se il modello e' gia' uno stack si applicano le distanze alle copie che ci sono
             // 1.0.16 (bozzetto biquad approvato da IC8TEM il 17/11/2026 17:25): feed per la parabola e dima del filo a scala 1:1
@@ -583,7 +615,8 @@ namespace YaNec
             top.Children.Add(colDestra);
             root.Children.Add(Scheda(top));
             Action<string, double, double, double> avviaTempoReale;
-            root.Children.Add(TempoRealePanel(out avviaTempoReale));   // 0.4.2: calcolo in tempo reale (IC8TEM 13/11/2026)
+            Action<double[]> avviaBande;
+            root.Children.Add(TempoRealePanel(out avviaTempoReale, out avviaBande));   // 0.4.2: calcolo in tempo reale (IC8TEM 13/11/2026); 1.5.6: ROS per banda
             Border necCard = Riquadretto("Verifica NEC (modello creato)", "in attesa", "Z, G, efficienza dal motore");
 
             Grid bottom = new Grid { ColumnDefinitions = new ColumnDefinitions("3*,10,2*") };
@@ -682,7 +715,20 @@ namespace YaNec
                     foreach (string w in avMod) avv.Children.Insert(0, new TextBlock { Text = "⚠ modello NEC: " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Yellow), FontSize = 13.5 });
                     if (avMod.Count > 0 && avv.Children.Count > 1 && avv.Children[avv.Children.Count - 1] is TextBlock tbn && (tbn.Text == "nessun avviso" || tbn.Text == Lang.T("nessun avviso"))) avv.Children.RemoveAt(avv.Children.Count - 1);
                 }
-                avviaTempoReale(last.Nec, model != null ? model.Z0 : 50, double.NaN, double.NaN);
+                rimandi.Children.Clear();
+                foreach (CalcRimando rr in last.Rimandi)
+                {
+                    CalcRimando r0 = rr;
+                    Button br = Btn(r0.Testo, false);
+                    br.Foreground = Pal.B(Pal.Violet); br.BorderBrush = Pal.B(Pal.Violet); br.BorderThickness = new Thickness(1); br.Background = Pal.B(Pal.A(30, Pal.Violet));
+                    br.Margin = new Thickness(0, 0, 8, 6);
+                    if (!string.IsNullOrEmpty(r0.Tip)) ToolTip.SetTip(br, r0.Tip);
+                    br.Click += (s1, e1) => ApriRimando(r0, sc);
+                    rimandi.Children.Add(br);
+                }
+                rimandi.IsVisible = rimandi.Children.Count > 0;
+                avviaBande(last.Bande);
+                avviaTempoReale(last.Nec, !double.IsNaN(last.Z0Rif) ? last.Z0Rif : (model != null ? model.Z0 : 50), double.NaN, double.NaN);
                 bNec.IsVisible = bSalva.IsVisible = bApri.IsVisible = haNec || sc.UsesModel;
                 bTune.IsVisible = haNec && sc.CanTune;
                 bTune.Content = sc.TuneLabel;

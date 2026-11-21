@@ -28,9 +28,11 @@ namespace YaNec
             // del lobo di riflessione, 1-2 gradi, e la formula dava 60-77 m)
             public double HpbwAzFs = double.NaN, HpbwElFs = double.NaN;
             public bool ConTerreno;
+            public double[] BandeF, BandeRos;          // 1.5.6: ROS alle bande della scheda (Filari)
+            public System.Numerics.Complex[] BandeZ;
         }
 
-        static EsitoTempoReale CalcolaTempoReale(string nec, double z0, double da, double a, CancellationToken tok)
+        static EsitoTempoReale CalcolaTempoReale(string nec, double z0, double da, double a, CancellationToken tok, double[] bande = null)
         {
             EsitoTempoReale es = new EsitoTempoReale { Z0 = z0 };
             NecModel m = NecModel.Parse(nec);
@@ -85,6 +87,19 @@ namespace YaNec
             // 0.4.8 (registri 0.4.7: 1,6 s e 500 MB a calcolo): griglia di 21 punti calcolata in parallelo, poi il minimo e i due
             // limiti a ROS 2,0 cercati per bisezione invece che con una griglia fitta (circa 40 soluzioni invece di 62, stessi risultati
             // entro 1 kHz sui limiti)
+            if (bande != null && bande.Length > 0)
+            {
+                es.BandeF = bande; es.BandeRos = new double[bande.Length]; es.BandeZ = new System.Numerics.Complex[bande.Length];
+                Parallel.For(0, bande.Length, new ParallelOptions { MaxDegreeOfParallelism = Math.Max(1, Environment.ProcessorCount / 2), CancellationToken = tok }, i =>
+                {
+                    Nec2Engine e = new Nec2Engine(g);
+                    e.Solve(bande[i], Analysis.EffectiveSources(m, g, bande[i]), m.EffectiveLoads(), TerreniEdifici.Alla(m.Ground, bande[i]), m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(bande[i]));
+                    System.Numerics.Complex zz = e.Sources[0].Z;
+                    es.BandeZ[i] = zz;
+                    double gam = System.Numerics.Complex.Abs((zz - z0) / (zz + z0));
+                    es.BandeRos[i] = gam >= 0.999999 ? 999 : (1 + gam) / (1 - gam);
+                });
+            }
             es.Da = double.IsNaN(da) ? f * 0.9 : da; es.A = double.IsNaN(a) ? f * 1.1 : a;   // banda della scheda (LPDA) o +-10 %
             const int NG = 20;
             double[] gf = new double[NG + 1], gs = new double[NG + 1];
@@ -126,6 +141,14 @@ namespace YaNec
         /// <summary>Riquadro "Calcolo in tempo reale"; avvia(nec, z0, da, a) (da/a NaN = +-10 %) parte con 400 ms di attesa e annulla il calcolo precedente.</summary>
         Border TempoRealePanel(out Action<string, double, double, double> avvia)
         {
+            Action<double[]> nessuna;
+            return TempoRealePanel(out avvia, out nessuna);
+        }
+
+        Border TempoRealePanel(out Action<string, double, double, double> avvia, out Action<double[]> avviaBande)
+        {
+            double[] bandeAttese = null;
+            avviaBande = b => bandeAttese = b;
             StackPanel box = new StackPanel { Spacing = 4 };
             StackPanel testa = new StackPanel { Orientation = Avalonia.Layout.Orientation.Horizontal, Spacing = 10 };
             testa.Children.Add(new TextBlock { Text = "Calcolo in tempo reale", FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
@@ -152,10 +175,10 @@ namespace YaNec
                 if (cts != null) cts.Cancel();
                 cts = new CancellationTokenSource();
                 CancellationToken tok = cts.Token;
-                string nec = necAtteso; double z0 = z0Atteso, da = daAtteso, a = aAtteso;
+                string nec = necAtteso; double z0 = z0Atteso, da = daAtteso, a = aAtteso; double[] bnd = bandeAttese;
                 stato.Text = "calcolo...";
                 DateTime t0 = DateTime.Now;
-                Task.Run(() => { using (Prestazioni.Misura("Calcolatore: calcolo in tempo reale", null, false)) return CalcolaTempoReale(nec, z0, da, a, tok); }, tok).ContinueWith(t => Dispatcher.UIThread.Post(() =>
+                Task.Run(() => { using (Prestazioni.Misura("Calcolatore: calcolo in tempo reale", null, false)) return CalcolaTempoReale(nec, z0, da, a, tok, bnd); }, tok).ContinueWith(t => Dispatcher.UIThread.Post(() =>
                 {
                     if (tok.IsCancellationRequested) return;
                     if (t.IsFaulted) { stato.Text = "errore: " + t.Exception.GetBaseException().Message; return; }
@@ -184,6 +207,16 @@ namespace YaNec
                         string st = okAzF && okElF ? FN(StackDetect.Dl6wu(lam, es.HpbwAzFs), 2) + " / " + FN(StackDetect.Dl6wu(lam, es.HpbwElFs), 2) + " m" : "-";
                         cards.Children.Add(Riquadretto("Distanze di stack DL6WU", st, "affiancate / sovrapposte (punto di partenza)" + (es.ConTerreno ? ", aperture nello spazio libero" : "")));
                     }
+                    if (es.BandeF != null)
+                        for (int i = 0; i < es.BandeF.Length; i++)
+                        {
+                            int ib = Array.IndexOf(CalcFilari.BandeF, es.BandeF[i]);
+                            string nome = ib >= 0 ? CalcFilari.BandeNomi[ib] : FN(es.BandeF[i], 3) + " MHz";
+                            System.Numerics.Complex zb = es.BandeZ[i];
+                            double rb = es.BandeRos[i];
+                            cards.Children.Add(Riquadretto(nome + ", ROS (NEC)", rb >= 99 ? "> 99" : FN(rb, 2),
+                                (rb <= 2 ? "✓ " : (rb <= 3 ? "accordatore interno, " : "accordatore esterno, ")) + "Z " + FN(zb.Real, 0) + (zb.Imaginary >= 0 ? " +j" : " -j") + FN(Math.Abs(zb.Imaginary), 0) + " Ω", rb <= 2));
+                        }
                     stato.Text = "aggiornato (" + FN((DateTime.Now - t0).TotalSeconds, 1) + " s) a " + FN(es.F, 3) + " MHz";
                 }));
             };
