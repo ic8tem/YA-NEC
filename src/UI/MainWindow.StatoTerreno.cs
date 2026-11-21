@@ -65,8 +65,9 @@ namespace YaNec
                     w.KeyDown += (s, e) => { if (e.Key == Key.Escape || e.Key == Key.Enter) w.Close(); };
                     w.Closed += (s, e) => { finErrore = null; finErroreTesto = null; };
                     finErrore = w;
-                    w.Opened += (s, e) => ok.Focus();   // Invio o Esc chiudono subito
+                    w.Opened += (s, e) => { w.Activate(); ok.Focus(); };   // Invio o Esc chiudono subito
                     w.Show(this);
+                    w.Activate();   // 1.5.3: la finestra prende il fuoco anche se si stava scrivendo in una tabella (Invio la chiude)
                 }
                 catch { finErrore = null; }
             });

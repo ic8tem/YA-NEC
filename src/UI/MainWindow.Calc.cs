@@ -496,9 +496,10 @@ namespace YaNec
             catch (Exception ex)
             {
                 lastError = ex.Message;
-                // 1.5.3: senza sorgente, dopo l'avviso della tabella dei fili, solo la riga di stato (niente seconda finestra)
+                // 1.5.3: senza sorgente, dopo l'avviso della tabella dei fili, resta l'avviso nella riga di stato (nessuna finestra)
                 bool giaDetto = senzaSorgenteGiaDetto && m.Sources.Count == 0;
-                Status("Errore nel calcolo: " + ex.Message, !giaDetto);
+                if (giaDetto) Registro.Scrivi("CALCOLO", "non eseguito: " + ex.Message);
+                else Status("Errore nel calcolo: " + ex.Message, true);
                 // 1.0.1: anche se il calcolo non riesce (per esempio un modello nuovo ancora senza sorgente) la Struttura 3D
                 // e gli Oggetti del modello si ridisegnano, altrimenti la tabella delle Sorgenti non compare e non si puo' aggiungere
                 // la sorgente che manca

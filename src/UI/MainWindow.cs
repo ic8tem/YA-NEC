@@ -1089,15 +1089,16 @@ namespace YaNec
             t[1].Foreground = Pal.B(color ?? Pal.Fore);
         }
 
-        void Status(string s, bool error = false)
+        void Status(string s, bool error = false, bool avviso = false)
         {
-            Registro.Scrivi(error ? "ERRORE" : "STATO", s);
+            Registro.Scrivi(error ? "ERRORE" : avviso ? "AVVISO" : "STATO", s);
             ultimoStato = s;
             ultimoStatoErrore = error;
             if (lblStatus == null) return;
             lblStatus.Text = s;
-            lblStatus.Foreground = Pal.B(error ? Pal.Rgb(255, 140, 120) : Pal.BarFore);
-            lblStatus.FontWeight = error ? FontWeight.Bold : FontWeight.Normal;   // 1.5.2: errore in grassetto e finestra con OK
+            lblStatus.Foreground = Pal.B(error ? Pal.Rgb(255, 140, 120) : avviso ? Pal.Rgb(255, 190, 90) : Pal.BarFore);
+            lblStatus.FontWeight = error || avviso ? FontWeight.Bold : FontWeight.Normal;   // 1.5.2: errore in grassetto e finestra con OK
+            // 1.5.3: un avviso (passo normale del lavoro, per esempio i fili scritti prima della sorgente) resta nella riga di stato, senza finestra
             if (error) FinestraErrore(s);
         }
     }
