@@ -1,79 +1,79 @@
 1
 00:00:00,000 --> 00:00:04,950
-Lezione 15: l'Ottimizzatore
+Lezione 15: L'Ottimizzatore
 
 2
 00:00:05,000 --> 00:00:14,950
 Corso YA-NEC, lezione 15: l'Ottimizzatore. Prima la Yagi 6 elementi DK7ZB della lezione 14, da 28 a 50 ohm; poi una Yagi HF 3 elementi.
 
 3
-00:00:15,000 --> 00:01:54,842
+00:00:15,000 --> 00:03:48,904
 Modello nuovo, 144,300 MHz. Stavolta riflettore, radiatore e primo direttore usano variabili: LR, LDE, LD1 e le posizioni XDE, XD1.
 
 4
-00:01:54,892 --> 00:02:02,176
+00:03:48,954 --> 00:03:56,237
 Partenza, le misure del progettista: 30,2 - j3,5 ohm, ROS 1,67 su 50 ohm, 12,06 dBi, F/B 30 dB.
 
 5
-00:02:02,226 --> 00:02:10,495
+00:03:56,287 --> 00:04:04,835
 Linguetta Variabili e ottimizzazione, voce Ottimizzatore.
 
 6
-00:02:10,545 --> 00:02:21,562
+00:04:04,885 --> 00:04:15,902
 A sinistra gli obiettivi e i loro pesi: ROS al massimo 1,3 su Z0 = 50 ohm, guadagno il piu' alto possibile, F/B almeno 22 dB, impedenza voluta Z0 + j0.
 
 7
-00:02:21,612 --> 00:02:33,829
+00:04:15,952 --> 00:04:28,169
 Al centro le variabili che può cambiare, ognuna con minimo, massimo e passo; a sinistra, sotto gli obiettivi, le tre frequenze da rispettare: 143,55, 144,3 e 145,05 MHz.
 
 8
-00:02:33,879 --> 00:02:44,696
+00:04:28,219 --> 00:04:39,035
 Sotto le variabili il Monte Carlo: 8 partenze a caso, poi i 3 candidati migliori controllati con 50 copie che simulano le tolleranze di costruzione.
 
 9
-00:02:44,746 --> 00:02:48,758
+00:04:39,085 --> 00:04:43,114
 'Avvia'.
 
 10
-00:02:48,808 --> 00:02:59,092
-1204 passi in 35 secondi, tolleranze comprese: 40,4 + j0,6 ohm, ROS 1,24 a centro banda e 1,30 all'estremo peggiore, 11,99 dBi, F/B 33,6 dB.
+00:04:43,164 --> 00:04:52,514
+1204 passi, tolleranze comprese: 40,4 + j0,6 ohm, ROS 1,24 a centro banda e 1,30 all'estremo peggiore, 11,99 dBi, F/B 33,6 dB.
 
 11
-00:02:59,142 --> 00:03:14,559
+00:04:52,564 --> 00:05:07,981
 Il prezzo dell'alimentazione diretta a 50 ohm: 0,07 dB di guadagno. Il radiatore è cresciuto di 1 cm, il primo direttore e il riflettore si sono accorciati. Con le tolleranze il 58 % delle copie resta entro le soglie.
 
 12
-00:03:14,609 --> 00:03:21,175
+00:05:08,031 --> 00:05:15,008
 'Applica al modello': i valori nuovi vanno nella voce Variabili.
 
 13
-00:03:21,225 --> 00:03:31,308
+00:05:15,058 --> 00:05:25,141
 Ora il modello si adatta a 50 ohm senza il trasformatore da 28 ohm. Il registro dei passi permette di tornare a una soluzione intermedia.
 
 14
-00:03:31,358 --> 00:04:54,334
+00:05:25,191 --> 00:07:56,279
 Ora l'HF: Nuovo, una Yagi 3 elementi per 14,150 MHz dalle misure di partenza classiche.
 
 15
-00:04:54,384 --> 00:05:05,934
+00:07:56,329 --> 00:08:07,879
 Riflettore 0,51, radiatore 0,47, direttore 0,45 lunghezze d'onda, spaziature 0,15 e 0,3 lunghezze d'onda, tubi da 30 mm: 26,4 - j11 ohm, 7,85 dBi, F/B 21,6 dB.
 
 16
-00:05:05,984 --> 00:05:18,218
+00:08:07,929 --> 00:08:20,365
 Ottimizzazione, stessi obiettivi, avvia.
 
 17
-00:05:18,268 --> 00:05:25,218
+00:08:20,415 --> 00:08:27,365
 Il voto sale in fretta e poi si stabilizza: l'ottimizzatore prova una variabile alla volta, ripartendo da otto punti a caso.
 
 18
-00:05:25,268 --> 00:05:32,618
+00:08:27,415 --> 00:08:34,765
 Risultato: F/B da 21,6 a 32,8 dB, guadagno 7,75 dBi, impedenza circa 33 ohm, ROS 1,53 su 50 ohm.
 
 19
-00:05:32,668 --> 00:05:48,618
+00:08:34,815 --> 00:08:50,765
 Una Yagi 3 elementi con un nullo posteriore profondo sta naturalmente vicino a 25-35 ohm: per questo nessuna copia del Monte Carlo resta entro ROS 1,3. Vuole un hairpin o un gamma match - la lezione 12 mostra come calcolarli.
 
 20
-00:05:48,668 --> 00:05:54,618
+00:08:50,815 --> 00:08:56,766
 Obiettivi, pesi, variabili, frequenze: l'Ottimizzatore fa in pochi secondi quello che richiedeva serate di ritocchi. Prossima lezione: VHF/UHF avanzato. 73 de IC8TEM

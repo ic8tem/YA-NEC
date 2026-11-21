@@ -1,67 +1,67 @@
 1
 00:00:00,000 --> 00:00:04,950
-Lezione 28: rilievo di un'antenna costruita e correzione del boom al contrario
+Lezione 28: il rilievo e la correzione del boom al contrario
 
 2
-00:00:05,000 --> 00:00:18,576
+00:00:05,000 --> 00:00:29,456
 Corso YA-NEC, lezione 28: il rilievo di un'antenna gia' costruita e la correzione del boom applicata al contrario.
 
 3
-00:00:18,626 --> 00:00:30,376
+00:00:29,506 --> 00:00:41,256
 Il rilievo, sull'antenna vera: lunghezza di ogni elemento da punta a punta, posizione lungo il boom a partire dal riflettore, diametro degli elementi col calibro.
 
 4
-00:00:30,426 --> 00:00:42,843
+00:00:41,306 --> 00:00:53,723
 Poi il boom: tondo o quadro e la sua misura. E come sono fissati gli elementi: passanti a contatto, passanti isolati o sopra il boom. Del radiatore: se e' isolato dal boom.
 
 5
-00:00:42,893 --> 00:00:56,643
+00:00:53,773 --> 00:01:07,526
 Esempio: la 10 elementi bvo di IC8TEM costruita su un boom tondo da 30 mm, elementi da 4 mm passanti a contatto, radiatore da 8 mm isolato. Queste sono le misure che si leggerebbero col metro.
 
 6
-00:00:56,693 --> 00:01:20,705
+00:01:07,576 --> 00:01:34,434
 Nuovo, e nella tabella dei Fili una riga per elemento: X e' la posizione sul boom, Y1 e Y2 la meta' della lunghezza, poi il raggio in mm, cioe' meta' del diametro misurato, e i segmenti.
 
 7
-00:01:20,755 --> 00:01:41,560
+00:01:34,484 --> 00:02:14,330
 Dieci righe come queste, una per elemento. Applica e ricalcola, poi la sorgente al centro del radiatore: w2c.
 
 8
-00:01:41,610 --> 00:01:50,427
+00:02:14,380 --> 00:02:23,197
 Calcolato cosi' com'e', il rilievo da' 11,9 − j44,6 Ω, ROS 7,6 e F/B 10,5 dB: non e' l'antenna che funziona sul tetto.
 
 9
-00:01:50,477 --> 00:02:01,294
+00:02:23,247 --> 00:02:34,063
 Il motivo: il NEC non vede il boom. Un elemento che attraversa un boom metallico si comporta come un elemento piu' corto: nel modello va accorciato.
 
 10
-00:02:01,344 --> 00:02:22,104
+00:02:34,113 --> 00:03:15,220
 Calcolatori, VHF, Correzione del boom. Boom tondo da 30 mm, elementi da 4 mm, montaggio passante a contatto.
 
 11
-00:02:22,154 --> 00:02:31,504
+00:03:15,270 --> 00:03:59,066
 Applica a: tutti tranne il radiatore, perche' il radiatore e' isolato dal boom. Verso: rilievo → modello elettrico per il NEC.
 
 12
-00:02:31,554 --> 00:02:41,904
+00:03:59,116 --> 00:04:09,466
 La formula DL6WU / G3SEK da' 9,5 mm su tutto l'elemento: la tabella toglie la correzione a riflettore e direttori, il radiatore resta com'e'.
 
 13
-00:02:41,954 --> 00:02:45,577
+00:04:09,516 --> 00:05:24,118
 Confronta i due calcola sia il rilievo cosi' com'e' sia il modello elettrico.
 
 14
-00:02:45,627 --> 00:02:55,044
+00:05:24,168 --> 00:05:33,585
 Rilievo: risonanza a 145,97 MHz, ROS 7,62 a 144,3, non conforme. Modello elettrico: 144,33 MHz, ROS 1,15, 15,7 dBi e F/R 19 dB.
 
 15
-00:02:55,094 --> 00:03:04,662
+00:05:33,635 --> 00:06:00,613
 Crea il modello elettrico per il NEC: si apre come file nuovo, con la correzione nel nome; il file del rilievo non viene toccato.
 
 16
-00:03:04,712 --> 00:03:20,729
+00:06:00,663 --> 00:06:16,680
 Calcola: 57,3 + j0,7 Ω, ROS 1,15, 15,7 dBi, F/B 19 dB: e' di nuovo l'antenna del progetto. Da qui si simula e si ottimizza su questo modello; per costruire, la correzione si rimette nel verso progetto → elementi da realizzare.
 
 17
-00:03:20,779 --> 00:03:25,729
+00:06:16,730 --> 00:06:21,680
 Attenzione: la formula vale fino a 0,055 λ di boom; passanti isolati circa meta' correzione, staffa conduttiva sopra il boom circa 0,65. Fonti: DL6WU, G3SEK, SM5BSZ, DG7YBN.
