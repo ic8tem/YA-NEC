@@ -1,51 +1,51 @@
 1
-00:00:00,000 --> 00:00:05,895
+00:00:00,000 --> 00:00:05,735
 Lesson 25: wind, balance, HF loads and F/B and F/R tables
 
 2
-00:00:05,945 --> 00:00:16,528
+00:00:05,785 --> 00:00:27,477
 YA-NEC course, lesson 25, redone for 1.5: mechanical calculations, HF loads and tables. We open the 7-element DK7ZB Yagi.
 
 3
-00:00:16,578 --> 00:00:34,410
+00:00:27,527 --> 00:00:48,092
 Since 1.5 the Mechanical calculations are an item of the Calculators. Wind: NTC 2018 standard with CNR-DT 207. From the locator zone 9; with height and category the design pressure is 1560 N/m2.
 
 4
-00:00:34,460 --> 00:00:49,410
+00:00:48,142 --> 00:01:03,093
 The forces per part use the elements and the boom of the model, plus the mast above the rotator and the cables. Maximum force 486 N with the wind at 90 degrees to the boom, bending moment at the clamp 1.2 kN·m.
 
 5
-00:00:49,460 --> 00:00:59,657
+00:01:03,143 --> 00:01:13,491
 Balance: centre of gravity, wind thrust centre and clamp in the side view. Here the clamp is 1.63 m from the reflector.
 
 6
-00:00:59,707 --> 00:01:10,390
+00:01:13,541 --> 00:01:24,323
 Calculate: the recommended position is 1.39 m, between the centre of gravity and the thrust centre. The Move clamp in the model button applies it.
 
 7
-00:01:10,440 --> 00:01:22,884
+00:01:24,373 --> 00:01:46,739
 Calculators, HF, HF loads: LC and coaxial traps, coils, linear loading and capacitive hats.
 
 8
-00:01:22,934 --> 00:01:37,126
+00:01:46,789 --> 00:02:00,967
 Coaxial trap for 40 m in RG-58: self-resonance 7.10 MHz, Q 216, it shortens the dipole by 0.6 m per leg. The table gives voltage and power lost at 1 kW.
 
 9
-00:01:37,176 --> 00:01:49,813
+00:02:01,017 --> 00:02:13,377
 Loading coil: 9.6 uH, self-resonance at 33.6 MHz with Medhurst's formula, Q 583. The 80 m dipole gets 3.3 m shorter per leg.
 
 10
-00:01:49,863 --> 00:01:58,147
+00:02:13,427 --> 00:02:21,711
 Insert into the model adds the load as an impedance versus frequency, or as wires for linear loading and hats.
 
 11
-00:01:58,197 --> 00:02:07,839
+00:02:21,761 --> 00:02:32,902
 Patterns, Tables item: F/B and average F/R over the whole sweep band.
 
 12
-00:02:07,889 --> 00:02:18,239
+00:02:32,952 --> 00:02:43,302
 The F/B at a single point at 180 degrees has a narrow peak; the average F/R over the rear hemisphere is more stable. Below, the sweep values.
 
 13
-00:02:18,289 --> 00:02:32,365
+00:02:43,352 --> 00:02:57,574
 Sources: NTC 2018, CNR-DT 207, EN 1991-1-4, K5IU, W8NX, Medhurst, ARRL Antenna Book. All in the manual, chapter 23.

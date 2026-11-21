@@ -1,71 +1,71 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lezione 16: VHF/UHF avanzato
 
 2
-00:00:04,000 --> 00:00:19,459
+00:00:05,000 --> 00:00:24,788
 Corso YA-NEC, lezione 16: VHF e UHF avanzato. Calcolatori, Yagi lunga DL6WU (Günter Hoch DL6WU).
 
 3
-00:00:19,509 --> 00:00:29,326
+00:00:24,838 --> 00:00:34,655
 10 elementi per 144,3 MHz, parassiti da 4 mm sopra un boom da 20 mm: 4,46 m, 2,15 lunghezze d'onda. La formula DL6WU stima 11,79 dBd.
 
 4
-00:00:29,376 --> 00:00:40,592
+00:00:34,705 --> 00:00:45,921
 Il NEC in tempo reale dice gia' 14,01 dBi = 11,86 dBd, ROS 1,09 su 50 ohm, F/B 32 dB, e le distanze di stack DL6WU: 3,27 m affiancate, 2,97 m sovrapposte.
 
 5
-00:00:40,642 --> 00:00:55,656
+00:00:45,971 --> 00:01:05,639
 'Ottimizza (NEC)': l'ottimizzazione a passi del metodo DL6WU, qui tutti i passi insieme.
 
 6
-00:00:55,706 --> 00:01:03,389
+00:01:05,689 --> 00:01:13,377
 In circa 10 secondi: 45,2 + j0,3 ohm, 14,1 dBi, ROS 1,05 al centro, e ROS sotto 2 da 140 a 146,8 MHz.
 
 7
-00:01:03,439 --> 00:01:15,525
+00:01:13,427 --> 00:01:34,796
 'Apri come modello', poi di nuovo ai calcolatori.
 
 8
-00:01:15,575 --> 00:01:23,125
+00:01:34,846 --> 00:01:43,723
 Correzione del boom: gli elementi non sono nello spazio libero, il boom li accorcia elettricamente.
 
 9
-00:01:23,175 --> 00:01:33,259
+00:01:43,773 --> 00:01:53,857
 Elementi da 6 mm passanti in un boom tondo conduttivo da 40 mm a 144,3 MHz: formula DL6WU/G3SEK 16 mm su tutto l'elemento, 8 mm per lato.
 
 10
-00:01:33,309 --> 00:01:42,525
+00:01:53,907 --> 00:02:03,124
 A destra il confronto con le altre fonti - YU7EF, VE7BQH, K1FO, I0JXX, DJ9BV, DG7YBN: da 1 a 1,5 mm di differenza a 144 MHz.
 
 11
-00:01:42,575 --> 00:01:48,592
+00:02:03,174 --> 00:02:14,385
 Staffe di fissaggio: la piastra al centro di ogni elemento, 100 x 50 x 5 mm.
 
 12
-00:01:48,642 --> 00:01:58,259
+00:02:14,435 --> 00:02:24,052
 Diametro equivalente 24,6 mm. Ogni elemento risuonerebbe 5-7 MHz piu' in alto: la tabella propone 17 mm per lato di compensazione.
 
 13
-00:01:58,309 --> 00:02:07,320
+00:02:24,102 --> 00:02:37,202
 'Aggiungi le piastre al modello'.
 
 14
-00:02:07,370 --> 00:02:17,453
+00:02:37,252 --> 00:02:47,335
 Sorpresa: 16 - j19 ohm, ROS 3,6, 12,45 dBi. Le piastre sono un gradino brusco da 4 a 24,6 mm, e il NEC-2 semplice calcola male i gradini.
 
 15
-00:02:17,503 --> 00:02:32,651
-Il calcolatore lo dice: accendere la correzione di Leeson - Impostazioni, Tubi telescopici, correzione Leeson, Applica.
+00:02:47,385 --> 00:03:07,571
+Il calcolatore lo dice: accendere la correzione di Leeson - Impostazioni, Tubi telescopici, correzione Leeson.
 
 16
-00:02:32,701 --> 00:02:41,984
+00:03:07,621 --> 00:03:16,904
 Con Leeson: 43,2 - j0,6 ohm, ROS 1,16, 14,07 dBi, F/B 36,6 dB. Le piastre costano quasi niente, se modellate nel modo giusto.
 
 17
-00:02:42,034 --> 00:02:50,785
+00:03:16,954 --> 00:03:25,704
 Formule, ottimizzazione a passi, boom e piastre: tutto quello che serve a una Yagi VHF lunga prima di forare il boom.
 
 18
-00:02:50,835 --> 00:02:56,785
+00:03:25,754 --> 00:03:31,705
 Yagi lunga DL6WU, correzione del boom, piastre, Leeson: VHF/UHF con la meccanica vera. Prossima lezione: antenne VHF su un tetto. 73 de IC8TEM

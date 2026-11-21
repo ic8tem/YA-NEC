@@ -1,63 +1,63 @@
 1
-00:00:00,000 --> 00:00:04,309
+00:00:00,000 --> 00:00:04,950
 Lesson 18: VHF stacks, noise and G/T
 
 2
-00:00:04,359 --> 00:00:16,035
+00:00:05,000 --> 00:00:21,495
 YA-NEC course, lesson 18: VHF stacks, noise and G/T. Examples: the DK7ZB 10-element Yagi for 144 MHz, 28 ohm.
 
 3
-00:00:16,085 --> 00:00:28,205
+00:00:21,545 --> 00:00:33,665
 In free space: 28.1 - j6.1 ohm, 15.41 dBi, F/B 26 dB, beamwidth 30.9 x 33.1 degrees.
 
 4
-00:00:28,255 --> 00:00:33,932
+00:00:33,715 --> 00:00:47,713
 Noise/GT/Stack tab: what the antenna hears, not only what it radiates.
 
 5
-00:00:33,982 --> 00:00:46,451
+00:00:47,763 --> 00:01:00,334
 Sky at 200 K, ground at 1000 K, antenna aimed 30 degrees up: antenna temperature 264 K, 93 % from the sky, 7 % from the ground through the side and rear lobes.
 
 6
-00:00:46,501 --> 00:00:59,057
+00:01:00,384 --> 00:01:12,838
 G/T of the antenna -8.81 dB, as in VE7BQH's tables; with cable loss and a 0.3 dB preamplifier the system G/T is -9.14 dB.
 
 7
-00:00:59,107 --> 00:01:14,307
-Stack: 2 stacked, 'use the suggested spacings' (DL6WU: 3.65 m), Calculate. The NEC computes the whole stack, coupling included.
+00:01:12,888 --> 00:01:35,839
+Stack: 2 stacked vertically, 'Use the suggested spacings' (DL6WU: 3.65 m). NEC computes the whole stack, coupling included.
 
 8
-00:01:14,357 --> 00:01:28,288
+00:01:35,889 --> 00:01:49,602
 18.41 dBi, stack gain +3.0 dB, ideal +3; G/T from -8.81 to -5.96 dB. The antenna temperature rises only 10 K.
 
 9
-00:01:28,338 --> 00:01:47,521
+00:01:49,652 --> 00:02:16,914
 Now 2 x 2.
 
 10
-00:01:47,571 --> 00:01:59,735
+00:02:16,964 --> 00:02:29,390
 21.44 dBi, +6.03 dB; G/T -2.86 dB, system -3.18 dB: almost 6 dB better than one antenna.
 
 11
-00:01:59,785 --> 00:02:19,614
+00:02:29,440 --> 00:02:58,979
 Now long Yagis: DL6WU calculator, 17 elements, open as model.
 
 12
-00:02:19,664 --> 00:02:38,766
+00:02:59,029 --> 00:03:24,060
 17 elements: 16.74 dBi in free space, 1.3 dB more than the 10-element short Yagi.
 
 13
-00:02:38,816 --> 00:03:09,347
+00:03:24,110 --> 00:04:00,968
 Back to Noise/GT/Stack: 2 x 2 with the suggested spacings.
 
 14
-00:03:09,397 --> 00:03:20,150
+00:04:01,018 --> 00:04:11,538
 22.54 dBi, stack gain +5.8 dB, G/T -1.89 dB (one antenna -7.47 dB).
 
 15
-00:03:20,200 --> 00:03:32,196
+00:04:11,588 --> 00:04:23,468
 Long Yagis have narrower beams: the DL6WU distances grow, and the stack gives slightly less than the ideal 6 dB. VE7BQH's G/T tables use the same method.
 
 16
-00:03:32,246 --> 00:03:44,475
+00:04:23,518 --> 00:04:36,154
 Short or long, single or 2 x 2: gain, temperature and G/T together. Next lesson: the loop Yagi for 1296 MHz. 73 de IC8TEM

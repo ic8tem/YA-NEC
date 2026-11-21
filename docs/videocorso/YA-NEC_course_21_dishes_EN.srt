@@ -3,69 +3,69 @@
 Lesson 21: dishes
 
 2
-00:00:05,000 --> 00:00:23,561
+00:00:05,000 --> 00:00:23,325
 YA-NEC course, lesson 21: dishes. Prime focus, horns and feeds, offset dish: three calculators of the DISHES family.
 
 3
-00:00:23,611 --> 00:00:34,298
+00:00:23,375 --> 00:00:33,960
 Prime-focus dish: 23 cm, 3 m dish, f/D 0.42, 10 dB edge taper. Everything is recalculated while you type.
 
 4
-00:00:34,348 --> 00:00:49,530
-Summary: 30.4 dBi, 66 % efficiency, 5.04 degree -3 dB beamwidth. The balance shows where it is lost: spillover 91 %, taper 90 %, feed and strut blockage 96 %.
+00:00:34,010 --> 00:00:49,687
+Summary: 30.2 dBi, 64 % efficiency, -3 dB beamwidth 5.04 degrees. The budget shows where it is lost: spillover 91 %, illumination 90 %, feed and strut blockage 94 %.
 
 5
-00:00:49,580 --> 00:00:59,249
+00:00:49,737 --> 00:00:59,354
 Surface with the Ruze formula (3 mm RMS) and mesh with Mumford: at 23 cm they cost very little. The sources are on the Fonti page.
 
 6
-00:00:59,299 --> 00:01:09,264
+00:00:59,404 --> 00:01:22,749
 Let's try f/D 0.38: the deeper dish changes spillover and taper, and the gain updates at once.
 
 7
-00:01:09,314 --> 00:01:19,597
+00:01:22,799 --> 00:01:33,082
 Lobes: pattern from aperture integration, with and without feed blockage; below, the beamwidth compared with the formulas in the literature.
 
 8
-00:01:19,647 --> 00:01:31,064
+00:01:33,132 --> 00:01:44,549
 Mechanics: scale cross section with focus, depth and rim angle, then weights, centre of gravity and counterweight. In the warnings, wind and ice on the mesh.
 
 9
-00:01:31,114 --> 00:01:45,438
+00:01:44,599 --> 00:01:59,600
 Bands and EME: the same dish on 23, 13, 6 and 3 cm. Over 40 dBi on 6 cm, but on 3 cm a 3 mm surface is no longer enough: the Ruze column says so.
 
 10
-00:01:45,488 --> 00:01:56,873
+00:01:59,650 --> 00:02:11,735
 Horns and feeds: coffee-can, VE4MA, Chaparral, W2IMU, conical and pyramidal. Here the W2IMU dual-mode on 1296 MHz.
 
 11
-00:01:56,923 --> 00:02:07,669
+00:02:11,785 --> 00:02:22,123
 Pattern: E and H planes, -10 dB at 54 degrees off axis, 10.5 dBi gain. The dashed lines are the level wanted at the dish edge.
 
 12
-00:02:07,719 --> 00:02:17,766
+00:02:22,173 --> 00:02:32,118
 On the dish: feed efficiency versus f/D. With this horn the best is around f/D 0.50; the phase centre tells where to put the mouth.
 
 13
-00:02:17,816 --> 00:02:27,099
+00:02:32,168 --> 00:02:41,452
 From the NEC model page the horn becomes a file to open in YA-NEC, and the dish can use its pattern with the NEC feed button.
 
 14
-00:02:27,149 --> 00:02:36,160
+00:02:41,502 --> 00:02:53,658
 Offset dish: a slice of a paraboloid with the feed out of the beam. No blockage, but asymmetric illumination.
 
 15
-00:02:36,210 --> 00:02:48,570
+00:02:53,708 --> 00:03:06,039
 10 GHz, 1 x 1.1 m dish: 38.9 dBi, 65 % efficiency, 1.92 degree beam. Feed blockage 100 %: no loss.
 
 16
-00:02:48,620 --> 00:02:58,695
+00:03:06,089 --> 00:03:20,520
 Lobes in the H and V planes, and Geometry with the templates to build the dish: profile and rims relative to the focus.
 
 17
-00:02:58,745 --> 00:03:08,695
+00:03:20,570 --> 00:03:30,520
 With circular polarization the offset beam moves (squint, Adatia and Rudge): on 10 GHz 0.15 degrees per sense, to keep in mind for EME.
 
 18
-00:03:08,745 --> 00:03:16,770
-Dishes: prime focus, horns and offset in the same engine, with sources and warnings. End of the course: enjoy your antennas!
+00:03:30,570 --> 00:03:40,429
+Dishes: prime focus, horns and offset in the same engine, with sources and warnings. Next lesson: real terrain. 73 de IC8TEM

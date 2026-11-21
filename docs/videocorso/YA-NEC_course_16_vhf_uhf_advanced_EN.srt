@@ -1,71 +1,71 @@
 1
-00:00:00,000 --> 00:00:04,265
+00:00:00,000 --> 00:00:04,950
 Lesson 16: advanced VHF/UHF
 
 2
-00:00:04,315 --> 00:00:19,776
+00:00:05,000 --> 00:00:24,850
 YA-NEC course, lesson 16: advanced VHF and UHF. Calculators, DL6WU long Yagi (Günter Hoch DL6WU).
 
 3
-00:00:19,826 --> 00:00:35,488
+00:00:24,900 --> 00:00:40,867
 10 elements for 144.3 MHz, 4 mm parasitic elements on top of a 20 mm boom: 4.46 m, 2.15 wavelengths. DL6WU's formula estimates 11.79 dBd.
 
 4
-00:00:35,538 --> 00:00:54,058
+00:00:40,917 --> 00:00:59,263
 The real-time NEC already says 14.01 dBi = 11.86 dBd, SWR 1.09 on 50 ohm, F/B 32 dB, and the DL6WU stacking distances: 3.27 m side by side, 2.97 m stacked.
 
 5
-00:00:54,108 --> 00:01:09,121
+00:00:59,313 --> 00:01:18,038
 'Optimize (NEC)': the step optimization of the DL6WU method, here all steps together.
 
 6
-00:01:09,171 --> 00:01:23,357
+00:01:18,088 --> 00:01:32,302
 In about 10 seconds: 45.2 + j0.3 ohm, 14.1 dBi, SWR 1.05 at the centre, and SWR below 2 from 140 to 146.8 MHz.
 
 7
-00:01:23,407 --> 00:01:35,488
+00:01:32,352 --> 00:01:57,745
 'Open as model', then back to the calculators.
 
 8
-00:01:35,538 --> 00:01:42,421
+00:01:57,795 --> 00:02:06,365
 Boom correction: the elements are not in free space, the boom shortens them electrically.
 
 9
-00:01:42,471 --> 00:01:55,769
+00:02:06,415 --> 00:02:19,655
 6 mm elements through a 40 mm round conductive boom at 144.3 MHz: DL6WU/G3SEK formula 16 mm on the whole element, 8 mm per side.
 
 10
-00:01:55,819 --> 00:02:10,717
+00:02:19,705 --> 00:02:34,487
 On the right, the comparison with the other sources - YU7EF, VE7BQH, K1FO, I0JXX, DJ9BV, DG7YBN: from 1 to 1.5 mm of difference at 144 MHz.
 
 11
-00:02:10,767 --> 00:02:16,880
+00:02:34,537 --> 00:02:46,262
 Mounting brackets: the plate in the centre of each element, 100 x 50 x 5 mm.
 
 12
-00:02:16,930 --> 00:02:27,632
+00:02:46,312 --> 00:02:56,999
 Equivalent diameter 24.6 mm. Each element would resonate 5-7 MHz higher: the table proposes 17 mm per side to compensate.
 
 13
-00:02:27,682 --> 00:02:36,708
+00:02:57,049 --> 00:03:06,248
 'Add the plates to the model'.
 
 14
-00:02:36,758 --> 00:02:50,529
+00:03:06,298 --> 00:03:20,244
 Surprise: 16 - j19 ohm, SWR 3.6, 12.45 dBi. The plates are a sudden step from 4 to 24.6 mm, and plain NEC-2 handles steps badly.
 
 15
-00:02:50,579 --> 00:03:05,732
-The calculator says it: switch on the Leeson correction - Settings, Telescoping tubes, Leeson correction, Apply.
+00:03:20,294 --> 00:03:41,409
+The calculator says it: switch on the Leeson correction - Settings, Telescoping tubes, Leeson correction.
 
 16
-00:03:05,782 --> 00:03:20,643
+00:03:41,459 --> 00:03:56,088
 With Leeson: 43.2 - j0.6 ohm, SWR 1.16, 14.07 dBi, F/B 36.6 dB. The plates cost almost nothing once they are modelled correctly.
 
 17
-00:03:20,693 --> 00:03:28,643
+00:03:56,138 --> 00:04:04,088
 Formulas, step optimization, boom and plates: everything a long VHF Yagi needs before you drill the boom.
 
 18
-00:03:28,693 --> 00:03:41,562
+00:04:04,138 --> 00:04:17,240
 DL6WU long Yagi, boom correction, mounting plates, Leeson: VHF/UHF with real hardware. Next lesson: VHF antennas on a roof. 73 de IC8TEM
