@@ -11,61 +11,61 @@ Corso YA-NEC, lezione 23: le antenne riceventi nuove della 1.3. Linguetta Calcol
 Dalla 1.3 sono attive anche Dipolo basso, K9AY, 4-square RX e le schiere Hi-Z. Il rombo ripiegato resta grigio: arrivera' con le sue fonti.
 
 4
-00:00:23,867 --> 00:00:34,417
+00:00:23,867 --> 00:01:13,490
 K9AY di Gary Breed (QST, settembre 1997): un loop verticale sul palo, chiuso su una resistenza. Valori tipici: base 9,2 m, apice 7,6 m, 390 ohm.
 
 5
-00:00:34,467 --> 00:00:42,654
+00:01:13,540 --> 00:01:31,741
 Crea il modello NEC e calcola l'RDF: il modello si apre nella Struttura 3D, con il lobo e le quote.
 
 6
-00:00:42,704 --> 00:00:51,359
+00:01:31,791 --> 00:01:43,433
 Tornando ai Calcolatori ci sono le cifre: RDF 6,8 dB contro i 7,2 di Hi-Z, F/B solo 4,3 dB con 390 ohm.
 
 7
-00:00:51,409 --> 00:01:03,154
+00:01:43,483 --> 00:02:03,011
 Ottimizza per F/B: la terminazione sale a 1400 ohm, F/B quasi 30 dB e RDF 7,8 dB.
 
 8
-00:01:03,204 --> 00:01:14,689
+00:02:03,061 --> 00:02:14,545
 Attenzione: nel K9AY vero si usano 390-560 ohm. Il modello e' un solo loop chiuso sopra il suolo: la resistenza giusta si regola sul campo, ascoltando il F/B.
 
 9
-00:01:14,739 --> 00:01:23,423
+00:02:14,595 --> 00:02:23,278
 4-square in ricezione: quattro verticali corte ai vertici di un quadrato di lato lambda/8, fuoco lungo la diagonale.
 
 10
-00:01:23,473 --> 00:01:35,235
+00:02:23,328 --> 00:02:47,779
 Nella Struttura 3D si vedono le fasi delle quattro sorgenti e il lobo verso la direzione scelta.
 
 11
-00:01:35,285 --> 00:01:50,373
+00:02:47,829 --> 00:03:14,447
 Ottimizza la fase (RDF): prova la fase tra le file da 120 a 300 gradi e tiene solo i lobi entro 45 gradi dalla direzione.
 
 12
-00:01:50,423 --> 00:01:59,173
+00:03:14,497 --> 00:03:23,248
 Risultato: 200 gradi, RDF 12,4 dB, F/B 27,5 dB. La fase vuota invece usa il nullo posteriore esatto, pi + beta per d.
 
 13
-00:01:59,223 --> 00:02:12,640
+00:03:23,298 --> 00:03:36,714
 Gli avvisi in giallo: verticali sul terreno reale nel NEC-2, quindi valori indicativi; e un RDF piu' alto dei 9,4 dB di IV3PRK, perche' le reti di fase vere non arrivano alla fase ideale.
 
 14
-00:02:12,690 --> 00:02:22,906
+00:03:36,764 --> 00:03:48,875
 Schiera Hi-Z: 2 elementi in cardioide, 3 a triangolo, 8 in cerchio. Con 8 elementi la fase parte da 220 gradi, che manda il lobo in avanti.
 
 15
-00:02:22,956 --> 00:02:42,823
+00:03:48,925 --> 00:04:22,184
 RDF 9,1 dB contro i 13,4 di Hi-Z: il modello semplice usa due file e non ha il combinatore vero. L'avviso giallo lo ricorda.
 
 16
-00:02:42,873 --> 00:02:57,166
+00:04:22,234 --> 00:04:37,982
 Diagrammi, pagina Ricezione (RDF): anche qui la schiera di 8 verticali in cerchio ora ha il lobo in avanti.
 
 17
-00:02:57,216 --> 00:03:05,314
+00:04:38,032 --> 00:04:46,116
 Sotto, l'RDF in frequenza e la tabella delle riceventi, con l'ingombro di ciascuna.
 
 18
-00:03:05,364 --> 00:03:10,317
+00:04:46,166 --> 00:04:51,116
 Fonti: K9AY (QST 1997), Hi-Z Antennas, IV3PRK, ON4UN e W8JI. Tutto nel manuale, capitolo 24.
