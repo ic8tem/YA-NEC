@@ -241,7 +241,7 @@ namespace YaNec.Engine
             if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
             int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);   // FT-140-43, FT-240-43, 2 x FT-240-43 (indici della scheda Balun: 1, 2, 3)
             string[] nomiNucleo = { "", "FT-140-43", "FT-240-43", "2 x FT-240-43" };
-            o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "2 / 16 spire" : "2 / 14 spire") + ", vedi Balun / Un-Un");
+            o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1" : "rapporto spire 7:1") + ", spire in Balun / Un-Un");
 
             // ---- tabella per banda (modello TF5NN, filo su terra ideale)
             if (tipo != 2)
