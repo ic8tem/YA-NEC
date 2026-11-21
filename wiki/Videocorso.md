@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 30 lezioni brevi (3-5 minuti), in italiano e in inglese. Girate con l'anteprima 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi): 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25, 27 e 29; le altre sono in rifacimento con la 1.5.3. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
+Un corso completo in 30 lezioni brevi (3-5 minuti), in italiano e in inglese. Girate con l'anteprima 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25, 27 e 29; le altre sono in rifacimento con la 1.5.3. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -62,7 +62,7 @@ Il W3DZZ (C.L. Buchanan, QST 1955) per 80 e 40 m dal calcolatore Dipoli: trappol
 
 ### Lezione 6 - Gli strumenti del modello
 
-Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica. Dalla 1.0.11 la maniglia di riempimento nella tabella dei fili (come in Excel), con Ctrl+Z, e il pulsante Ins. elemento simmetrico: un direttore in più a 3,9 m sulla DK7ZB 7 elementi.
+Dal dipolo degli Esempi: Sposta (a 15 m il lobo scende da 29,5 a 19,6 gradi), orizzontale <-> verticale, Annulla. Poi un errore voluto (3 segmenti), la linguetta Avvisi, Controlla e la Segmentazione con anteprima e correzione automatica.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_06_strumenti_modello_IT.srt)
 

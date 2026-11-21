@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 30 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25, 27 and 29; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 30 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25, 27 and 29; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -62,7 +62,7 @@ The W3DZZ (C.L. Buchanan, QST 1955) for 80 and 40 m from the Dipoles calculator:
 
 ### Lesson 6 - The model tools
 
-From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix. Since 1.0.11 the fill handle in the wire table (as in Excel), with Ctrl+Z, and the Insert symmetric element button: one more director at 3.9 m on the DK7ZB 7 elements.
+From the Examples dipole: Move (at 15 m the lobe drops from 29.5 to 19.6 degrees), horizontal <-> vertical, Undo. Then a deliberate mistake (3 segments), the Warnings tab, Check and Segmentation with preview and automatic fix.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_06_model_tools_EN.srt)
 

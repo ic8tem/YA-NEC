@@ -1,143 +1,95 @@
 1
 00:00:00,000 --> 00:00:04,950
-Lesson 6: the model tools
+Lesson 6: model tools: geometry bar, Check, Segmentation, Warnings
 
 2
-00:00:05,000 --> 00:00:15,591
+00:00:05,000 --> 00:00:21,120
 YA-NEC course, lesson 6: the model tools. We start from an example: the 20 m dipole at 10 m over average ground.
 
 3
-00:00:15,641 --> 00:00:22,816
+00:00:21,170 --> 00:00:28,475
 74.2 + j10.7 ohm, 7.11 dBi at 29.5 degrees.
 
 4
-00:00:22,866 --> 00:00:30,120
+00:00:28,525 --> 00:00:35,795
 The Geometry bar works on the whole antenna or on the selected wires. 'Move': Z = 5 m.
 
 5
-00:00:30,170 --> 00:00:40,254
+00:00:35,845 --> 00:00:45,928
 The preview shows the antenna in its new place, and the box lists what changes in the wire table. Units are accepted too: 10cm, 6in, 2ft.
 
 6
-00:00:40,304 --> 00:00:47,387
+00:00:45,978 --> 00:00:53,070
 'Apply move'.
 
 7
-00:00:47,437 --> 00:01:01,950
+00:00:53,120 --> 00:01:07,763
 Now at 15 m: 74.2 + j30.1 ohm, 7.52 dBi, and the main lobe drops from 29.5 to 19.6 degrees. Sources and loads follow the wires by themselves.
 
 8
-00:01:02,000 --> 00:01:08,617
+00:01:07,813 --> 00:01:14,430
 Quick commands: 'horizontal <-> vertical' turns the dipole upright around its centre.
 
 9
-00:01:08,667 --> 00:01:20,620
+00:01:14,480 --> 00:01:26,477
 Vertical dipole, bottom end at 9.8 m: 76.5 + j22.7 ohm, 2.01 dBi. Average ground eats much more of a vertical antenna.
 
 10
-00:01:20,670 --> 00:01:28,750
+00:01:26,527 --> 00:01:34,607
 'Undo' twice: back to the starting dipole. Every geometry command can be undone and redone.
 
 11
-00:01:28,800 --> 00:01:33,065
+00:01:34,657 --> 00:01:38,937
 74.2 + j10.7 ohm again.
 
 12
-00:01:33,115 --> 00:01:41,107
+00:01:38,987 --> 00:01:53,111
 Now a classic mistake: only 3 segments on the 10.4 m wire.
 
 13
-00:01:41,157 --> 00:01:48,201
+00:01:53,161 --> 00:02:00,073
 The result still looks reasonable - 75.4 + j7.3 ohm - and that is exactly the danger.
 
 14
-00:01:48,251 --> 00:01:52,261
+00:02:00,123 --> 00:02:06,960
 The Warnings tab says why.
 
 15
-00:01:52,311 --> 00:02:03,332
+00:02:07,010 --> 00:02:18,032
 Segments longer than lambda/10 (2.11 m): 3.47 m. The NEC-2 guide advises against it; EZNEC flags it as 'segment length too long'.
 
 16
-00:02:03,382 --> 00:02:10,458
+00:02:18,082 --> 00:02:29,133
 'Check...' runs the data checks that need no calculation.
 
 17
-00:02:10,508 --> 00:02:17,667
-42 checks, all fine: the data are valid. Segment length is the job of the next tool.
+00:02:29,183 --> 00:02:40,012
+43 checks, all fine: the data are valid. Segment length is the job of the next tool.
 
 18
-00:02:17,717 --> 00:02:27,001
+00:02:40,062 --> 00:02:49,346
 'Segmentation...': segment length, segment/radius ratio, equal segments around sources and lines (rules from EZNEC and ARRL).
 
 19
-00:02:27,051 --> 00:02:36,924
+00:02:49,396 --> 00:02:59,240
 Wire 1: segment too long, 3.47 m against a minimum of 2.09 m. Target level: prudent, lambda/20.
 
 20
-00:02:36,974 --> 00:02:42,988
+00:02:59,290 --> 00:03:05,305
 'Preview' computes before and after without touching the model.
 
 21
-00:02:43,038 --> 00:02:48,055
+00:03:05,355 --> 00:03:10,372
 From 3 to 11 segments, odd so the source stays in the centre.
 
 22
-00:02:48,105 --> 00:02:55,118
+00:03:10,422 --> 00:03:17,438
 'Apply and recalculate'.
 
 23
-00:02:55,168 --> 00:03:03,119
+00:03:17,488 --> 00:03:25,438
 Fixed: no warnings left. With a long model, this window can also open by itself before every calculation.
 
 24
-00:03:03,169 --> 00:03:19,325
-New in 1.0.11: the fill handle, as in Excel. Let's open an example with several wires: the DK7ZB 7-element EME Yagi.
-
-25
-00:03:19,375 --> 00:03:25,625
-In the wire table we write 4 mm in the reflector radius.
-
-26
-00:03:25,675 --> 00:03:35,092
-The active cell has a small blue square in the bottom right corner: drag it down over the other rows, which turn light blue.
-
-27
-00:03:35,142 --> 00:03:43,558
-On release all the cells take the same value (variables and formulas too) and the model is recalculated at once.
-
-28
-00:03:43,608 --> 00:03:51,358
-Ctrl+Z right after puts back the previous values: the fill is in the Undo history of the Geometry bar.
-
-29
-00:03:51,408 --> 00:04:01,659
-The handle is also in the Sources, Loads and Lines tables. With several rows selected (Shift + arrows) the block is repeated; the Tag column has no handle.
-
-30
-00:04:01,709 --> 00:04:22,983
-New in 1.0.9 in the Wires table: the Insert symmetric element button. It adds a straight element centred on the boom without writing its two ends by hand.
-
-31
-00:04:23,033 --> 00:04:34,784
-You write the X position on the boom, the total length, the Z height, the radius in mm and the segments: odd, so that the centre falls in the middle of a segment.
-
-32
-00:04:34,834 --> 00:04:49,870
-Example: one more director at 3.9 m, 0.9 m long, radius 3 mm, 17 segments. The preview shows the row that will be written: Y1 = -0.45, Y2 = 0.45.
-
-33
-00:04:49,920 --> 00:05:01,804
-Horizontal puts the wire along Y, vertical along Z. It is inserted at the end of the table or after the selected row. Variables and formulas work in the fields too.
-
-34
-00:05:01,854 --> 00:05:19,728
-Insert, then Apply and recalculate: the eighth element enters the model and the calculation is updated.
-
-35
-00:05:19,778 --> 00:05:26,764
-With a row selected, the fields start from the values of that row: handy to copy an element and move it along the boom.
-
-36
-00:05:26,814 --> 00:05:37,574
+00:03:25,488 --> 00:03:36,131
 Move, rotate, scale, undo, check, segment: the model stays clean. Next lesson: simple HF beams from the calculators. 73 de IC8TEM
