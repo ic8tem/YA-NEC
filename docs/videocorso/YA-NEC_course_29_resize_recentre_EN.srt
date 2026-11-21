@@ -1,0 +1,75 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lesson 29: resize and recentre
+
+2
+00:00:05,000 --> 00:00:15,164
+YA-NEC course, lesson 29: Resize and recentre, new in 1.5.3. First, Segments per lambda for MMANA files: 160.
+
+3
+00:00:15,214 --> 00:00:48,852
+Examples: the I4GBZ 11-element Yagi for 144 MHz, an MMANA file.
+
+4
+00:00:48,902 --> 00:01:11,742
+In MMANA it gives 51.4 + j4.5 ohm at 144.300 MHz. In NEC-2, 5 m over average ground: 7.3 - j14.1 ohm, SWR 7.4. A very narrow-band antenna: the length offset between MININEC and NEC-2, about 0.4 %, is enough to move it.
+
+5
+00:01:11,792 --> 00:01:20,159
+Variables and optimization, Resize and recentre.
+
+6
+00:01:20,209 --> 00:01:34,132
+Two modes. Recentre: find where the antenna works best now and move it to the target frequency. Resize: from one frequency to another, for example a 144 MHz design moved to 50 MHz.
+
+7
+00:01:34,182 --> 00:01:42,855
+Diameters: scaled, equal, or commercial sizes, with solid rods from 3 to 6 mm and rods or tubes from 8 to 40 mm.
+
+8
+00:01:42,905 --> 00:01:49,322
+And the check box: zero the reactance, X = 0, with the driven element length only.
+
+9
+00:01:49,372 --> 00:01:54,481
+Recentre at 144.3 MHz with equal diameters: Search.
+
+10
+00:01:54,531 --> 00:02:08,687
+The SWR minimum is now at 143.766 MHz: factor 0.9963, every element shortened by 3-4 mm; the driven element trimmed by 3.1 mm.
+
+11
+00:02:08,737 --> 00:02:30,945
+Result at 144.3 MHz: before 7.3 - j14.1 ohm, SWR 7.44; after 53.5 - j0.0 ohm, SWR 1.07, 21.69 dBi, F/B 13.1 dB. The reactance is zero, the R stays the antenna's own.
+
+12
+00:02:30,995 --> 00:02:40,384
+Commercial sizes, and Search again.
+
+13
+00:02:40,434 --> 00:02:57,318
+Nothing changes here: 6 and 12 mm are already commercial sizes. With an odd diameter each element takes the nearest enabled size and the length is corrected for the same reactance, with Schelkunoff's line model, like the Leeson correction.
+
+14
+00:02:57,368 --> 00:03:03,318
+So far the open model has not changed: see first, decide later.
+
+15
+00:03:03,368 --> 00:03:23,069
+Apply and recalculate.
+
+16
+00:03:23,119 --> 00:03:34,344
+The recentred model opens and is calculated: the antenna now works at 144.3 MHz in NEC-2 too. The file on disk does not change: save it with Save as.
+
+17
+00:03:34,394 --> 00:03:41,267
+The other mode: resize, from one frequency to another.
+
+18
+00:03:41,317 --> 00:03:53,401
+It scales around the lowest point, so the height above ground stays; L and C loads are not scaled. Geometry, Scale remains the generic tool with a hand-written factor.
+
+19
+00:03:53,451 --> 00:04:02,502
+Resize and recentre: an MMANA model or a design moved to the right frequency in one click, with real diameters. 73 de IC8TEM

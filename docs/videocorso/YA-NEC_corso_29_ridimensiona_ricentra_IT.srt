@@ -1,0 +1,75 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 29: ridimensiona e ricentra
+
+2
+00:00:05,000 --> 00:00:14,084
+Corso YA-NEC, lezione 29: Ridimensiona e ricentra, la novita' della 1.5.3. Prima, Segmenti per lambda dei file MMANA: 160.
+
+3
+00:00:14,134 --> 00:00:47,431
+Esempi: la Yagi 11 elementi di I4GBZ per i 144 MHz, un file MMANA.
+
+4
+00:00:47,481 --> 00:01:02,566
+In MMANA fa 51,4 + j4,5 ohm a 144,300 MHz. Nel NEC-2, a 5 m su terreno medio: 7,3 - j14,1 ohm, ROS 7,4. Antenna a banda strettissima: lo scarto di lunghezza tra MININEC e NEC-2, circa lo 0,4 %, basta a spostarla.
+
+5
+00:01:02,616 --> 00:01:11,174
+Variabili e ottimizzazione, Ridimensiona e ricentra.
+
+6
+00:01:11,224 --> 00:01:24,907
+Due modi. Ricentra: cerca dove l'antenna lavora meglio adesso e la sposta alla frequenza voluta. Ridimensiona: da una frequenza a un'altra, per esempio un progetto dei 144 portato sui 50 MHz.
+
+7
+00:01:24,957 --> 00:01:33,507
+Diametri: in scala, uguali, o misure commerciali, con i tondini pieni da 3 a 6 mm e i tondini o tubi da 8 a 40 mm.
+
+8
+00:01:33,557 --> 00:01:39,708
+E la casella: azzera la reattanza, X = 0, con la sola lunghezza del radiatore.
+
+9
+00:01:39,758 --> 00:01:42,264
+Ricentra a 144,3 MHz con i diametri uguali: Cerca.
+
+10
+00:01:42,314 --> 00:01:51,864
+Il ROS minimo adesso e' a 143,766 MHz: fattore 0,9963, tutti gli elementi accorciati di 3-4 mm; il radiatore ritoccato di 3,1 mm.
+
+11
+00:01:51,914 --> 00:02:03,864
+Risultato a 144,3 MHz: prima 7,3 - j14,1 ohm, ROS 7,44; dopo 53,5 - j0,0 ohm, ROS 1,07, 21,69 dBi, F/B 13,1 dB. La reattanza e' zero, la R resta quella dell'antenna.
+
+12
+00:02:03,914 --> 00:02:13,576
+Misure commerciali, e di nuovo Cerca.
+
+13
+00:02:13,626 --> 00:02:31,642
+Qui non cambia niente: 6 e 12 mm sono gia' misure commerciali. Con un diametro fuori serie ogni elemento prende la misura accesa piu' vicina e la lunghezza si corregge a reattanza uguale, con il modello a linee di Schelkunoff, come la correzione di Leeson.
+
+14
+00:02:31,692 --> 00:02:37,709
+Fino a qui il modello aperto non e' cambiato: si vede prima, si decide dopo.
+
+15
+00:02:37,759 --> 00:02:57,518
+Applica e ricalcola.
+
+16
+00:02:57,568 --> 00:03:08,585
+Il modello ricentrato si apre e si calcola: ora l'antenna lavora a 144,3 MHz anche nel NEC-2. Il file su disco non cambia: si salva con Salva con nome.
+
+17
+00:03:08,635 --> 00:03:16,602
+L'altro modo: ridimensiona, da una frequenza all'altra.
+
+18
+00:03:16,652 --> 00:03:29,136
+Scala attorno al punto piu' basso, cosi' l'altezza dal suolo resta; carichi L e C non si scalano. Geometria, Scala resta lo strumento generico con il fattore scritto a mano.
+
+19
+00:03:29,186 --> 00:03:35,136
+Ridimensiona e ricentra: un modello MMANA o un progetto spostato alla frequenza giusta in un clic, con diametri veri. 73 de IC8TEM

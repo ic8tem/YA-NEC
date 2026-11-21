@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 29 lezioni brevi (3-5 minuti), in italiano e in inglese. Girate con l'anteprima 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi): 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25 e 27; le altre sono in rifacimento con la 1.5.3. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
+Un corso completo in 30 lezioni brevi (3-5 minuti), in italiano e in inglese. Girate con l'anteprima 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi): 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25, 27 e 29; le altre sono in rifacimento con la 1.5.3. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -264,6 +264,16 @@ Distanze di stack VHF su due frequenze con l'impedenza di riferimento e il ROS a
 Cosa misurare sull'antenna gia' costruita (lunghezze da punta a punta, posizioni sul boom dal riflettore, diametri col calibro, boom e montaggio degli elementi) e come scriverlo nella tabella dei Fili. Esempio: la 10el bvo di IC8TEM su boom tondo da 30 mm. Il rilievo calcolato cosi' com'e' risuona a 145,97 MHz (ROS 7,6 a 144,3): Calcolatori > VHF > Correzione del boom nel verso «rilievo → modello elettrico per il NEC» toglie 9,5 mm a riflettore e direttori, «Confronta i due» e «Crea il modello elettrico per il NEC» riportano l'antenna a 144,33 MHz, ROS 1,15, 15,7 dBi. Fonti: DL6WU, G3SEK, SM5BSZ, DG7YBN.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_28_rilievo_boom_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_28_rilievo_boom_IT.srt)
+
+</td></tr></table>
+
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_29_ridimensiona_ricentra_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_29.jpg" alt="Lezione 29 - Ridimensiona e ricentra (1.5.3)"></a></td><td>
+
+### Lezione 29 - Ridimensiona e ricentra (1.5.3)
+
+Variabili e ottimizzazione > Ridimensiona e ricentra. La Yagi 11 elementi di I4GBZ per i 144 MHz (file MMANA, dagli Esempi): in MMANA 51,4 + j4,5 ohm, nel NEC-2 a 5 m su terreno medio 7,3 - j14,1 ohm, ROS 7,4. «Ricentra» cerca dove l'antenna lavora meglio (143,766 MHz) e la riporta a 144,3 MHz (fattore 0,9963), la casella «azzera la reattanza» ritocca il solo radiatore: 53,5 - j0,0 ohm, ROS 1,07, 21,69 dBi. Diametri in scala, uguali o misure commerciali (correzione a reattanza uguale con il modello a linee di Schelkunoff, come Leeson); «Ridimensiona» porta un progetto da una frequenza a un'altra. Il modello aperto cambia solo con «Applica e ricalcola».
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_29_ridimensiona_ricentra_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_29_ridimensiona_ricentra_IT.srt)
 
 </td></tr></table>
 

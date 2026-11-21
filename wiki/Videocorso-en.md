@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 29 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25 and 27; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 30 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 24, 25, 27 and 29; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -264,6 +264,16 @@ VHF stack spacings on two frequencies with the reference impedance and active SW
 What to measure on an antenna that is already built (tip-to-tip lengths, positions on the boom from the reflector, diameters with a caliper, boom and element mounting) and how to write it in the Wires table. Example: the 10-element bvo by IC8TEM on a 30 mm round boom. The survey calculated as it is resonates at 145.97 MHz (SWR 7.6 at 144.3): Calculators > VHF > Boom correction in the sense «survey → electrical model for the NEC» takes 9.5 mm off reflector and directors, «Compare the two» and «Create the electrical model for the NEC» bring the antenna back to 144.33 MHz, SWR 1.15, 15.7 dBi. Sources: DL6WU, G3SEK, SM5BSZ, DG7YBN.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_28_survey_boom_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_28_survey_boom_EN.srt)
+
+</td></tr></table>
+
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_29_resize_recentre_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_29.jpg" alt="Lesson 29 - Resize and recentre (1.5.3)"></a></td><td>
+
+### Lesson 29 - Resize and recentre (1.5.3)
+
+Variables and optimization > Resize and recentre. The I4GBZ 11-element Yagi for 144 MHz (MMANA file, from the Examples): 51.4 + j4.5 ohm in MMANA, 7.3 - j14.1 ohm and SWR 7.4 in NEC-2 at 5 m over average ground. «Recentre» finds where the antenna works best (143.766 MHz) and moves it back to 144.3 MHz (factor 0.9963); the «zero the reactance» box trims the driven element only: 53.5 - j0.0 ohm, SWR 1.07, 21.69 dBi. Diameters scaled, equal or commercial sizes (length corrected for the same reactance with Schelkunoff's line model, like Leeson); «Resize» moves a design from one frequency to another. The open model changes only with «Apply and recalculate».
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_29_resize_recentre_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_29_resize_recentre_EN.srt)
 
 </td></tr></table>
 
