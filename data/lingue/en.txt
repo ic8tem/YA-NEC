@@ -7080,3 +7080,12 @@ Si parte da un'antenna gia' costruita o comprata: le misure reali (rilievo) si s
 polarizzazione orizzontale	horizontal polarization
 MISURA	MEASUREMENT
 MOSTRA	SHOW
+Interpretazione: la misura e' spostata in basso di {0} %	Interpretation: the measurement is shifted down by {0} %
+Interpretazione: la misura e' spostata in alto di {0} %	Interpretation: the measurement is shifted up by {0} %
+accorciare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare.	shorten the driven element by {0} mm per side, or turn on the boom correction (Calculators > Boom correction) and recalculate.
+allungare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare.	lengthen the driven element by {0} mm per side, or turn on the boom correction (Calculators > Boom correction) and recalculate.
+scalare il modello del {0} % (Struttura 3D > Scala) e ricalcolare.	scale the model by {0} % (3D structure > Scale) and recalculate.
+Il programma non cambia nulla da solo.	The program changes nothing by itself.
+Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo).	The measured minimum SWR is higher than the calculated one: the resistive part does not match (matching, balun or cable losses).
+Proposta:	Proposal:
+misurato	measured

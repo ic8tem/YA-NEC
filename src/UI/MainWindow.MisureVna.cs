@@ -107,7 +107,7 @@ namespace YaNec
                         gRos.Series.Add(new LineSeries { Name = "misurato, cavo tolto" + (misure.Count > 1 ? " (" + m.Nome + ")" : ""), Y = sul(m.F, zAntenna(m)), Color = col, Width = 2.2, Decimals = 2 });
                         gRos.Series.Add(new LineSeries { Name = "misurato grezzo (con cavo)", Y = sul(m.F, m.Z), Color = Pal.A(110, col), Width = 1.6, Decimals = 2 });
                     }
-                    else gRos.Series.Add(new LineSeries { Name = "misurato" + (misure.Count > 1 ? " (" + m.Nome + ")" : ""), Y = sul(m.F, m.Z), Color = col, Width = 2.2, Decimals = 2 });
+                    else gRos.Series.Add(new LineSeries { Name = Lang.T("misurato") + (misure.Count > 1 ? " (" + m.Nome + ")" : ""), Y = sul(m.F, m.Z), Color = col, Width = 2.2, Decimals = 2 });
                 }
                 gRos.MarkX = run != null ? run.FreqMHz : double.NaN;
                 gRos.IsVisible = cRos.IsChecked == true || cRl.IsChecked == true; gRos.InvalidateVisual();
@@ -162,16 +162,18 @@ namespace YaNec
                 rg(new[] { "Z a " + FN(fr, 3) + " MHz", zs(rc.ZaF), zs(rm.ZaF), "" }, false, null);
                 // interpretazione e proposta
                 bool uniforme = !double.IsNaN(rc.BandaDa) && !double.IsNaN(rm.BandaDa) && Math.Abs(((rm.BandaDa - rc.BandaDa) / rc.BandaDa - (rm.BandaA - rc.BandaA) / rc.BandaA) * 100) < Math.Max(0.15, Math.Abs(sc) / 2);
-                string testo = "Interpretazione: la misura e' spostata " + (sc < 0 ? "in basso" : "in alto") + " di " + FN(Math.Abs(sc), 2) + " %" + (uniforme ? ", uguale su tutta la banda → probabile effetto di boom/staffe o dielettrico non modellato" : ", in modo non uniforme → controlla adattamento, balun e cavo (la Z misurata ha una forma diversa)") + ". ";
+                // 1.5.4: testi con i numeri tradotti (prima restavano in italiano in tutte le lingue)
+                string testo = string.Format(Lang.T(sc < 0 ? "Interpretazione: la misura e' spostata in basso di {0} %" : "Interpretazione: la misura e' spostata in alto di {0} %"), FN(Math.Abs(sc), 2)) +
+                    Lang.T(uniforme ? ", uguale su tutta la banda → probabile effetto di boom/staffe o dielettrico non modellato" : ", in modo non uniforme → controlla adattamento, balun e cavo (la Z misurata ha una forma diversa)") + ". ";
                 string prop = "";
                 List<Tolleranze.Elemento> el = MeccElementi();
                 var dr = el.FirstOrDefault(e => e.Alimentato);
-                if (Math.Abs(sc) < 0.05) prop = "nessuna correzione: calcolo e misura coincidono.";
-                else if (dr != null) prop = (sc < 0 ? "accorciare" : "allungare") + " il radiatore di " + FN(Math.Abs(sc) / 100 * dr.Lung * 1000 / 2, 1) + " mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare. Il programma non cambia nulla da solo.";
-                else prop = "scalare il modello del " + FN(-sc, 2) + " % (Struttura 3D > Scala) e ricalcolare. Il programma non cambia nulla da solo.";
-                if (rm.RosMin > rc.RosMin + 0.15) testo += "Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo). ";
+                if (Math.Abs(sc) < 0.05) prop = Lang.T("nessuna correzione: calcolo e misura coincidono.");
+                else if (dr != null) prop = string.Format(Lang.T(sc < 0 ? "accorciare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare." : "allungare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare."), FN(Math.Abs(sc) / 100 * dr.Lung * 1000 / 2, 1)) + " " + Lang.T("Il programma non cambia nulla da solo.");
+                else prop = string.Format(Lang.T("scalare il modello del {0} % (Struttura 3D > Scala) e ricalcolare."), FN(-sc, 2)) + " " + Lang.T("Il programma non cambia nulla da solo.");
+                if (rm.RosMin > rc.RosMin + 0.15) testo += Lang.T("Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo).") + " ";
                 interp.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = testo });
-                interp.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = "Proposta: ", FontWeight = FontWeight.Bold });
+                interp.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = Lang.T("Proposta:") + " ", FontWeight = FontWeight.Bold });
                 interp.Inlines.Add(new Avalonia.Controls.Documents.Run { Text = prop });
             };
             Func<Task> calcolaSulCampo = async () =>

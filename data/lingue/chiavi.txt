@@ -6791,3 +6791,12 @@ Si parte da un'antenna gia' costruita o comprata: le misure reali (rilievo) si s
 polarizzazione orizzontale
 MISURA
 MOSTRA
+Interpretazione: la misura e' spostata in basso di {0} %
+Interpretazione: la misura e' spostata in alto di {0} %
+accorciare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare.
+allungare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare.
+scalare il modello del {0} % (Struttura 3D > Scala) e ricalcolare.
+Il programma non cambia nulla da solo.
+Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo).
+Proposta:
+misurato
