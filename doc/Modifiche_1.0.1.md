@@ -220,3 +220,6 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
 - 21/11/2026 17:45 (visto girando la lezione 30 in inglese): Diagrammi > Misure VNA, i titoli dei riquadri «MISURA» e «MOSTRA» restavano in italiano; tradotti in 36 lingue.
 - 21/11/2026 18:10 (visto girando la lezione 30 in inglese): Diagrammi > Misure VNA, la riga «misurato» della legenda e l'interpretazione con la proposta di correzione restavano in italiano; ora sono testi traducibili (inglese aggiunto, le altre lingue lo mostrano in inglese).
 - 21/11/2026 18:45, videocorso: nuove lezioni 30 (Cavi e misure col VNA) e 31 (Altri calcolatori), IT + EN, girate con l'anteprima c3efcca. Il corso ha 32 lezioni; wiki aggiornato. Il file .s1p della lezione 30 e' un esempio preparato per la lezione (lo dice il parlato).
+
+## 1.5.5
+- 21/11/2026 20:00, IC8TEM («si procedi»): versione 1.5.5 con le correzioni trovate preparando le lezioni 30 e 31 (polarizzazione della HEN, traduzioni della pagina Misure VNA). VERSION, note di rilascio, README in 8 lingue, paragrafo 26.5 del manuale, PDF rigenerati. Anteprima c3efcca: prove dell'interfaccia superate.

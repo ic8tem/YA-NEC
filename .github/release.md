@@ -2,7 +2,12 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.4** (capitolo 26.4 del manuale):
+**Novità della 1.5.5** (capitolo 26.5 del manuale):
+- **Calcolatori > VHF > HEN**: la scheda «Guadagno dichiarato» indica la polarizzazione orizzontale, come la verifica NEC della stessa pagina (prima diceva verticale);
+- **Diagrammi > Misure VNA**: titoli «Misura» e «Mostra», legenda «misurato», interpretazione e proposta di correzione tradotti (restavano in italiano);
+- **Videocorso**: 32 lezioni, con le nuove 30 «Cavi e misure col VNA» e 31 «Altri calcolatori».
+
+**Dalla 1.5.4:**
 - **Modello scritto a mano**: i fili applicati prima della sorgente danno un avviso arancione nella barra di stato («nessuna sorgente»), senza la finestra che restava aperta sopra il lavoro; le finestre di errore vere prendono il fuoco, così Invio o Esc le chiudono anche mentre si scrive in una tabella;
 - **Traduzioni**: Calcolatori > VHF > Correzione del boom, verso «dal rilievo al modello elettrico»: spiegazione e avvisi tradotti in inglese (restavano in italiano);
 - **Videocorso completo**: 30 lezioni girate con la 1.5.3-1.5.4, in italiano e in inglese, con la nuova lezione 29 «Ridimensiona e ricentra».

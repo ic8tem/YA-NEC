@@ -2147,3 +2147,9 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - Le finestre di errore prendono il fuoco quando si aprono: Invio o Esc le chiudono anche se si stava scrivendo in una tabella.
 - Calcolatori > VHF > Correzione del boom, verso «dal rilievo al modello elettrico»: spiegazione e avvisi tradotti in inglese.
 - Videocorso: 30 lezioni, tutte girate con la 1.5.3-1.5.4, con la nuova lezione 29 «Ridimensiona e ricentra».
+
+### 26.5 Dalla 1.5.5
+
+- Calcolatori > VHF > HEN: la scheda «Guadagno dichiarato» indica la polarizzazione orizzontale. Con i lati lunghi verticali la Hentenna e' polarizzata orizzontalmente, come conferma la verifica NEC della stessa pagina («pol. H»).
+- Diagrammi > Misure VNA: i titoli dei riquadri, la voce «misurato» della legenda e l'interpretazione con la proposta di correzione sono tradotti.
+- Videocorso: 32 lezioni, con le nuove 30 «Cavi e misure col VNA» e 31 «Altri calcolatori».
