@@ -1,71 +1,71 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lesson 9: other beams
 
 2
-00:00:04,000 --> 00:00:14,093
+00:00:05,000 --> 00:00:50,828
 YA-NEC course, lesson 9: other beams - HB9CV, Quad, Hexbeam and log-periodic. All from the Calculators tab.
 
 3
-00:00:14,143 --> 00:00:28,183
+00:00:50,878 --> 00:01:04,642
 HB9CV by Rudolf Baumgartner HB9CV: two driven elements, 103.4 and 95.9 cm at 145 MHz, lambda/8 apart, joined by a crossed phase line.
 
 4
-00:00:28,233 --> 00:00:40,462
+00:01:04,692 --> 00:01:16,673
 Real time: 6.32 dBi and F/B 32.5 dB with only two elements. The model has two sources, that is why the SWR card says 'more sources'.
 
 5
-00:00:40,512 --> 00:00:46,123
+00:01:16,723 --> 00:01:27,392
 Quad: loops instead of dipoles. Two elements for 14.2 MHz.
 
 6
-00:00:46,173 --> 00:01:00,511
-Radiator 21.57 m, reflector 22.08 m, 3.17 m apart. SWR 1.17, 7.87 dBi, F/B 10.8 dB.
+00:01:27,442 --> 00:01:47,024
+Driven loop 21.40 m, reflector 21.93 m, 3.17 m apart. Automatic method: with a reflector the perimeter starts from Cebik and the NEC engine brings it to resonance. SWR 1.2, 7.93 dBi, F/B 7.1 dB.
 
 7
-00:01:00,561 --> 00:01:05,584
+00:01:47,074 --> 00:01:54,475
 Three elements: a director is added.
 
 8
-00:01:05,634 --> 00:01:14,874
-Director 20.93 m: 9.16 dBi and F/B 16.5 dB, SWR still 1.19.
+00:01:54,525 --> 00:02:08,842
+Director 21.02 m: 9.12 dBi and F/B 15.3 dB, SWR 1.16; SWR below 2 from 14.05 to 14.33 MHz.
 
 9
-00:01:14,924 --> 00:01:21,633
+00:02:08,892 --> 00:02:15,847
 'Multiband': the DK7ZB-style 2-element quad for 20-10 m, all loops on one boom.
 
 10
-00:01:21,683 --> 00:01:34,596
+00:02:15,897 --> 00:02:28,911
 On 20 m: SWR 1.08, 6.84 dBi, F/B 15.5 dB. The warning reminds you: one boom means the spacing is ideal for one band only.
 
 11
-00:01:34,646 --> 00:01:40,890
+00:02:28,961 --> 00:02:37,355
 Hexbeam 20-10 m with the G3TXQ dimensions and the JN1GLB measurements.
 
 12
-00:01:40,940 --> 00:01:54,623
+00:02:37,405 --> 00:02:51,045
 Driven element and reflector bent like a W, bands joined by coax. On 20 m: SWR 1.17, 5.83 dBi, F/B 17.6 dB, in a small turning radius.
 
 13
-00:01:54,673 --> 00:02:05,058
+00:02:51,095 --> 00:03:03,903
 Last: the log-periodic dipole array, Carrel method.
 
 14
-00:02:05,108 --> 00:02:21,701
+00:03:03,953 --> 00:03:20,619
 Default design 144-432 MHz: tau 0.9, sigma 0.168, 16 elements, 2.78 m boom. Real time: 9.12 dBi, F/B 14.3 dB.
 
 15
-00:02:21,751 --> 00:03:03,323
+00:03:20,669 --> 00:04:07,402
 'Calculate with the NEC' sweeps the whole band.
 
 16
-00:03:03,373 --> 00:03:21,093
+00:04:07,452 --> 00:04:25,099
 SWR 1.2 at 144 and 1.1 at 432 MHz, gain 7.4 to 10.4 dBi - but a spike to SWR 4.3 near 165 MHz and F/B down to 4 dB at 252 MHz.
 
 17
-00:03:21,143 --> 00:03:29,852
+00:04:25,149 --> 00:04:33,742
 The formulas give the start; the NEC sweep shows where to adjust. On HF the same method gives booms of 10 to 27 m.
 
 18
-00:03:29,902 --> 00:03:38,240
+00:04:33,792 --> 00:04:42,028
 HB9CV, Quad, Hexbeam, LPDA: four directional families in a few clicks. 73 de IC8TEM
