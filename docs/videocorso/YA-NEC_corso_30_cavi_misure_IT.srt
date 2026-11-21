@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 30: cavi e misure col VNA
+
+2
+00:00:05,000 --> 00:00:19,038
+Corso YA-NEC, lezione 30: cavi e misure. Calcolatori, Strumenti, Cavi RG: le perdite dal nostro abaco dei cavi.
+
+3
+00:00:19,088 --> 00:00:28,038
+Esempio: 20 m di RG-59 a 144,3 MHz su un carico di 50 ohm. 13,5 dB ogni 100 m: perdita 2,7 dB, al carico arriva il 52 %.
+
+4
+00:00:28,088 --> 00:00:35,971
+Il cavo da 75 ohm su un carico da 50 trasforma l'impedenza: al trasmettitore 66,6 + j12,8 ohm, ROS 1,24.
+
+5
+00:00:36,021 --> 00:00:43,171
+A destra, il cambio d'impedenza con un tratto di cavo: un'antenna da 100 ohm da portare a 50.
+
+6
+00:00:43,221 --> 00:00:52,905
+Serve una Z0 di 70,7 ohm: un quarto d'onda di RG-59, 34,3 cm col fattore di velocita' 0,66, porta a 56,4 ohm. ROS 1,13 invece di 2.
+
+7
+00:00:52,955 --> 00:01:02,306
+Sotto, gli altri trasformatori possibili, dal migliore: un clic ne sceglie uno, e la linea si puo' mettere nel modello aperto.
+
+8
+00:01:02,356 --> 00:01:31,246
+Ora le misure. Dagli Esempi il dipolo per i 144 MHz; Diagrammi, voce Misure VNA.
+
+9
+00:01:31,296 --> 00:01:55,758
+Apri misura legge un file Touchstone .s1p o il CSV del NanoVNA-Saver. Qui un file d'esempio preparato per la lezione, non una misura vera.
+
+10
+00:01:55,808 --> 00:02:02,891
+In rosso il ROS misurato, in blu il calcolo NEC; a destra le due curve sulla carta di Smith.
+
+11
+00:02:02,941 --> 00:02:11,158
+Il confronto: ROS minimo calcolato a 141,66 MHz, misurato a 143,2. La misura e' spostata in alto dell'1,09 %.
+
+12
+00:02:11,208 --> 00:02:21,092
+La proposta: allungare il radiatore di 5,5 mm per lato, oppure attivare la correzione del boom. Il programma non cambia nulla da solo.
+
+13
+00:02:21,142 --> 00:02:27,825
+A sinistra si toglie dalla misura il cavo tra VNA e antenna: tipo di cavo e lunghezza.
+
+14
+00:02:27,875 --> 00:02:33,826
+Fonti: W4ZT e YB0EMJ per i cavi, il formato Touchstone per i file del VNA. Prossima lezione: altri calcolatori. 73 de IC8TEM

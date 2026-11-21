@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lesson 30: cables and VNA measurements
+
+2
+00:00:05,000 --> 00:00:18,522
+YA-NEC course, lesson 30: cables and measurements. Calculators, Tools, RG cables: losses from our cable chart.
+
+3
+00:00:18,572 --> 00:00:32,343
+Example: 20 m of RG-59 at 144.3 MHz into a 50 ohm load. 13.5 dB per 100 m: 2.7 dB loss, 52 % reaches the load.
+
+4
+00:00:32,393 --> 00:00:42,913
+The 75 ohm cable on a 50 ohm load transforms the impedance: 66.6 + j12.8 ohm at the transmitter, SWR 1.24.
+
+5
+00:00:42,963 --> 00:00:50,046
+On the right, the impedance change with a length of cable: a 100 ohm antenna to bring to 50.
+
+6
+00:00:50,096 --> 00:01:05,161
+It needs a Z0 of 70.7 ohm: a quarter wave of RG-59, 34.3 cm with the 0.66 velocity factor, gives 56.4 ohm. SWR 1.13 instead of 2.
+
+7
+00:01:05,211 --> 00:01:13,694
+Below, the other possible transformers, best first: one click picks one, and the line can go into the open model.
+
+8
+00:01:13,744 --> 00:01:44,017
+Now measurements. From the Examples the 144 MHz dipole; Patterns, VNA measurements.
+
+9
+00:01:44,067 --> 00:02:07,738
+Open measurement reads a Touchstone .s1p file or the NanoVNA-Saver CSV. Here a sample file made for this lesson, not a real measurement.
+
+10
+00:02:07,788 --> 00:02:15,271
+In red the measured SWR, in blue the NEC calculation; on the right both curves on the Smith chart.
+
+11
+00:02:15,321 --> 00:02:27,114
+The comparison: calculated SWR minimum at 141.66 MHz, measured at 143.2. The measurement is 1.09 % higher.
+
+12
+00:02:27,164 --> 00:02:36,914
+The proposal: lengthen the driven element by 5.5 mm per side, or turn on the boom correction. The program changes nothing by itself.
+
+13
+00:02:36,964 --> 00:02:44,648
+On the left you remove the cable between VNA and antenna from the measurement: cable type and length.
+
+14
+00:02:44,698 --> 00:02:56,171
+Sources: W4ZT and YB0EMJ for the cables, the Touchstone format for VNA files. Next lesson: more calculators. 73 de IC8TEM

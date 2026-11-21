@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 30 short lessons (3-5 minutes), in Italian and English. All recorded with 1.5.3 (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 32 short lessons (3-5 minutes), in Italian and English. All recorded with 1.5.3 (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -274,6 +274,26 @@ What to measure on an antenna that is already built (tip-to-tip lengths, positio
 Variables and optimization > Resize and recentre. The I4GBZ 11-element Yagi for 144 MHz (MMANA file, from the Examples): 51.4 + j4.5 ohm in MMANA, 7.3 - j14.1 ohm and SWR 7.4 in NEC-2 at 5 m over average ground. «Recentre» finds where the antenna works best (143.766 MHz) and moves it back to 144.3 MHz (factor 0.9963); the «zero the reactance» box trims the driven element only: 53.5 - j0.0 ohm, SWR 1.07, 21.69 dBi. Diameters scaled, equal or commercial sizes (length corrected for the same reactance with Schelkunoff's line model, like Leeson); «Resize» moves a design from one frequency to another. The open model changes only with «Apply and recalculate».
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_29_resize_recentre_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_29_resize_recentre_EN.srt)
+
+</td></tr></table>
+
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_30_cables_measurements_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_30.jpg" alt="Lesson 30 - Cables and VNA measurements"></a></td><td>
+
+### Lesson 30 - Cables and VNA measurements
+
+Calculators > Tools > RG cables: 20 m of RG-59 at 144.3 MHz lose 2.7 dB (13.5 dB/100 m); into a 50 ohm load the 75 ohm cable gives 66.6 + j12.8 ohm. Impedance change with a length of cable: from 100 to 50 ohm needs Z0 70.7 ohm, a quarter wave of RG-59 (34.3 cm) gives 56.4 ohm and SWR 1.13 instead of 2. Patterns > VNA measurements with the 144 MHz dipole and a sample .s1p file (not a real measurement): calculated and measured SWR, Smith chart, comparison (measurement 1.09 % higher) and correction proposal; the cable between VNA and antenna can be removed from the measurement. Sources: W4ZT, YB0EMJ, Touchstone format.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_30_cables_measurements_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_30_cables_measurements_EN.srt)
+
+</td></tr></table>
+
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_31_more_calculators_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_31.jpg" alt="Lesson 31 - More calculators"></a></td><td>
+
+### Lesson 31 - More calculators
+
+Loop Skywire for 80 m (83.8 m, 14 m high, 450 ohm ladder line: 122 - j21 ohm, 7.1 dBi straight up); rectangular loop at 14.2 MHz brought to resonance by NEC (22.26 m, 124.8 ohm); HEN at 50.15 MHz (2.899 m sides, 66.5 ohm, 5 dBi, horizontal polarization); Big Wheel at 145 MHz with 1:1 PDF petal template and hub; biquad at 2442 MHz; 2.4 GHz PCB antennas (IFA on FR4, 1:1 PDF and DXF). Sources: W7FB, NT0Z, JE1DEU, W1IJD, W1FVY, F1BKM, TI, Kent Electronics.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_31_more_calculators_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_31_more_calculators_EN.srt)
 
 </td></tr></table>
 

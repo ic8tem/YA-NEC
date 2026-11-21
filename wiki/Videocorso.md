@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 30 lezioni brevi (3-5 minuti), in italiano e in inglese. Tutte girate con la 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
+Un corso completo in 32 lezioni brevi (3-5 minuti), in italiano e in inglese. Tutte girate con la 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -274,6 +274,26 @@ Cosa misurare sull'antenna gia' costruita (lunghezze da punta a punta, posizioni
 Variabili e ottimizzazione > Ridimensiona e ricentra. La Yagi 11 elementi di I4GBZ per i 144 MHz (file MMANA, dagli Esempi): in MMANA 51,4 + j4,5 ohm, nel NEC-2 a 5 m su terreno medio 7,3 - j14,1 ohm, ROS 7,4. «Ricentra» cerca dove l'antenna lavora meglio (143,766 MHz) e la riporta a 144,3 MHz (fattore 0,9963), la casella «azzera la reattanza» ritocca il solo radiatore: 53,5 - j0,0 ohm, ROS 1,07, 21,69 dBi. Diametri in scala, uguali o misure commerciali (correzione a reattanza uguale con il modello a linee di Schelkunoff, come Leeson); «Ridimensiona» porta un progetto da una frequenza a un'altra. Il modello aperto cambia solo con «Applica e ricalcola».
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_29_ridimensiona_ricentra_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_29_ridimensiona_ricentra_IT.srt)
+
+</td></tr></table>
+
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_30_cavi_misure_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_30.jpg" alt="Lezione 30 - Cavi e misure col VNA"></a></td><td>
+
+### Lezione 30 - Cavi e misure col VNA
+
+Calcolatori > Strumenti > Cavi RG: 20 m di RG-59 a 144,3 MHz perdono 2,7 dB (13,5 dB/100 m); su un carico da 50 ohm il cavo da 75 porta a 66,6 + j12,8 ohm. Cambio d'impedenza con un tratto di cavo: da 100 a 50 ohm serve Z0 70,7 ohm, un quarto d'onda di RG-59 (34,3 cm) da' 56,4 ohm e ROS 1,13 invece di 2. Diagrammi > Misure VNA con il dipolo per i 144 MHz e un file .s1p d'esempio (non una misura vera): ROS calcolato e misurato, carta di Smith, confronto (misura spostata in alto dell'1,09 %) e proposta di correzione; il cavo tra VNA e antenna si toglie dalla misura. Fonti: W4ZT, YB0EMJ, formato Touchstone.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_30_cavi_misure_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_30_cavi_misure_IT.srt)
+
+</td></tr></table>
+
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_31_altri_calcolatori_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_31.jpg" alt="Lezione 31 - Altri calcolatori"></a></td><td>
+
+### Lezione 31 - Altri calcolatori
+
+Loop Skywire per gli 80 m (83,8 m, 14 m d'altezza, scala da 450 ohm: 122 - j21 ohm, 7,1 dBi verso lo zenit); loop rettangolare a 14,2 MHz portato in risonanza col NEC (22,26 m, 124,8 ohm); HEN a 50,15 MHz (lati 2,899 m, 66,5 ohm, 5 dBi, polarizzazione orizzontale); Big Wheel a 145 MHz con dima del petalo e mozzo in PDF 1:1; biquad a 2442 MHz; antenne su PCB a 2,4 GHz (IFA su FR4, PDF 1:1 e DXF). Fonti: W7FB, NT0Z, JE1DEU, W1IJD, W1FVY, F1BKM, TI, Kent Electronics.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_31_altri_calcolatori_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_31_altri_calcolatori_IT.srt)
 
 </td></tr></table>
 

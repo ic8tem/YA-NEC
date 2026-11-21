@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lesson 31: more calculators
+
+2
+00:00:05,000 --> 00:00:19,097
+YA-NEC course, lesson 31: more calculators. HF, Horizontal multiband loop: the Loop Skywire.
+
+3
+00:00:19,147 --> 00:00:33,442
+Lowest band 80 m, square: 83.8 m perimeter, 20.95 m side, 14 m high. 450 ohm ladder line feeder, 30 m: 0.09 dB loss.
+
+4
+00:00:33,492 --> 00:00:43,764
+Create the NEC model and check it: at 3.65 MHz 122 - j21 ohm and 7.1 dBi straight up, over average ground.
+
+5
+00:00:43,814 --> 00:01:00,208
+Rectangular loop, square at 14.2 MHz: the formula 306.3 divided by f gives a 21.57 m perimeter.
+
+6
+00:01:00,258 --> 00:01:09,238
+Bring to resonance with NEC: 22.26 m perimeter, 124.8 ohm impedance, zero reactance.
+
+7
+00:01:09,288 --> 00:01:16,608
+On 50 ohm the SWR stays at 2.5: it needs a 75 ohm quarter wave, as in lesson 30.
+
+8
+00:01:16,658 --> 00:01:32,092
+VHF, HEN, the Japanese J loop. With the formula dimensions at 50.15 MHz the SWR minimum falls at 48.4 MHz.
+
+9
+00:01:32,142 --> 00:01:44,742
+Bring to resonance: 2.899 m sides, 66.5 ohm, 5 dBi; SWR under 2 from 49.64 to 50.69 MHz.
+
+10
+00:01:44,792 --> 00:01:51,742
+With the long sides vertical the HEN is horizontally polarized: the NEC check says so too.
+
+11
+00:01:51,792 --> 00:02:09,043
+Big Wheel for 145 MHz: 1224 mm wheel, 2050 mm petals, hub, 127 mm stub between the two levels.
+
+12
+00:02:09,093 --> 00:02:15,043
+Petal bending template and hub detail in PDF, at 1:1 scale, ready to print.
+
+13
+00:02:15,093 --> 00:02:34,346
+Dishes and feeds, Biquad at 2442 MHz: 30.5 mm side, 243 mm of wire, 15 mm from the 123 mm reflector.
+
+14
+00:02:34,396 --> 00:02:49,976
+2.4 GHz, PCB antennas: the IFA on FR4 with its dimensions in millimetres, the dimensioned drawing, the 1:1 PDF and the DXF for milling.
+
+15
+00:02:50,026 --> 00:03:05,099
+Sources: W7FB and NT0Z for the Skywire, JE1DEU for the HEN, W1IJD, W1FVY and F1BKM for the Big Wheel, TI and Kent Electronics for the PCBs. 73 de IC8TEM
