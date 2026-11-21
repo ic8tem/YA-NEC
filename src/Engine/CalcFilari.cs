@@ -69,19 +69,29 @@ namespace YaNec.Engine
         double L0Formula;
         public override string TuneLabel { get { return "Accorda la lunghezza (NEC)"; } }
 
-        /// <summary>EFHW: lunghezza (fattore di scala tra 0,8 e 1,2) con il ROS piu' basso attraverso il trasformatore alla banda piu' bassa,
+        /// <summary>EFHW: lunghezza (fattore di scala tra 0,8 e 1,2) con il ROS piu' basso attraverso il trasformatore (monobanda: alla banda;
+        /// multibanda: media geometrica sulle bande armoniche),
         /// con il contrappeso e il terreno del modello. Non si cerca lo zero della reattanza: oltre la mezz'onda porterebbe ai 3/4 d'onda.</summary>
         public override double Tune(double fmhz)
         {
+            // multibanda: media geometrica del ROS sulle bande armoniche della tabella (il compromesso tra le bande);
+            // monobanda: il ROS alla banda della scheda
+            bool multi = I("tipo") == 0;
             Func<double, double> ros = sc =>
             {
                 Scale = sc;
                 CalcOutput o = Compute();
                 NecModel m = NecModel.Parse(o.Nec);
-                SegmentGeometry g = Analysis.GeometriaDiCalcolo(m, fmhz);
-                Nec2Engine e = new Nec2Engine(g);
-                e.Solve(fmhz, Analysis.EffectiveSources(m, g, fmhz), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(fmhz));
-                return Ros(e.Sources[0].Z, double.IsNaN(o.Z0Rif) ? 2450 : o.Z0Rif);
+                double[] ff = multi && o.Bande != null && o.Bande.Length > 0 ? o.Bande : new[] { fmhz };
+                double somma = 0;
+                foreach (double fq in ff)
+                {
+                    SegmentGeometry g = Analysis.GeometriaDiCalcolo(m, fq);
+                    Nec2Engine e = new Nec2Engine(g);
+                    e.Solve(fq, Analysis.EffectiveSources(m, g, fq), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(fq));
+                    somma += Math.Log(Math.Min(50, Ros(e.Sources[0].Z, double.IsNaN(o.Z0Rif) ? 2450 : o.Z0Rif)));
+                }
+                return Math.Exp(somma / ff.Length);
             };
             double best = 1, rb = double.MaxValue;
             for (double sc = 0.80; sc <= 1.2001; sc += 0.025) { double r = ros(sc); if (r < rb) { rb = r; best = sc; } }
