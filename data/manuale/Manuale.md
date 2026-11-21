@@ -2140,3 +2140,10 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - **Diagrammi > Ricezione (RDF)** lavora solo sul modello aperto (con la verticale λ/4 di riferimento); nell'**Ottimizzatore** l'impedenza voluta parte sempre da 50 +j0.
 - Corretto: **Calcolatori > Quad**, metodo Automatico con riflettore o direttore: la formula di Cebik e' la risonanza della spira da sola e l'accoppiamento abbassa la risonanza del radiatore di circa il 4 %; ora il motore NEC porta il radiatore in risonanza partendo da Cebik (a 14,2 MHz la 2 elementi ha ROS sotto 2 da 14,10 a 14,30 MHz). Con «Cebik» scelto a mano e 2-3 elementi compare un avviso.
 - Corretto: un modello scritto a mano nella tabella dei fili, ancora senza sorgente, apriva due finestre («nessuna sorgente» e «il modello non ha sorgenti»); ora una sola, l'errore del calcolo va nella barra di stato.
+
+### 26.4 Dalla 1.5.4
+
+- Un modello scritto a mano nella tabella dei fili, ancora senza sorgente, non apre piu' finestre: nella barra di stato compare l'avviso arancione «Attenzione: nessuna sorgente (aggiungerla nella tabella Sorgenti)», che resta finche' la sorgente non c'e'. Mettere prima i fili e poi la sorgente e' un passo normale.
+- Le finestre di errore prendono il fuoco quando si aprono: Invio o Esc le chiudono anche se si stava scrivendo in una tabella.
+- Calcolatori > VHF > Correzione del boom, verso «dal rilievo al modello elettrico»: spiegazione e avvisi tradotti in inglese.
+- Videocorso: 30 lezioni, tutte girate con la 1.5.3-1.5.4, con la nuova lezione 29 «Ridimensiona e ricentra».

@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="電流とローブ付きの 3D 構造"></a><br><sub>電流とローブ付きの 3D 構造</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM プロファイル上の HFTA 方式の実地形"></a><br><sub>DEM プロファイル上の HFTA 方式の実地形</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="受信: RDF、DMF とノイズ"></a><br><sub>受信: RDF、DMF とノイズ</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="製作公差 (モンテカルロ)"></a><br><sub>製作公差 (モンテカルロ)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="ケーブルとバラン: コモンモード電流"></a><br><sub>ケーブルとバラン: コモンモード電流</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="クロス八木: RHCP、LHCP、軸比"></a><br><sub>クロス八木: RHCP、LHCP、軸比</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="機械計算: 風 (NTC 2018)"></a><br><sub>機械計算: 風 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="電力分配器と位相ケーブル"></a><br><sub>電力分配器と位相ケーブル</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 負荷: トラップとコイル"></a><br><sub>HF 負荷: トラップとコイル</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="スミスチャート"></a><br><sub>スミスチャート</sub></td></tr></table>
 
+## 1.5.4 の新機能
+
+- **手入力のモデル**: 給電点より先にワイヤーを適用すると、ウィンドウを出さずステータスバーにオレンジ色の注意を表示。本当のエラーウィンドウはフォーカスを取り、Enter か Esc で閉じます。
+- **翻訳**: ブームのページ(実測から電気モデルへ)を英語に翻訳。
+- **ビデオ講座完成**: 1.5.3-1.5.4 で撮影した全30回(イタリア語・英語)、新しい第29回「リサイズと再センタリング」。
+
 ## 1.5.3 の新機能
 
 - **リサイズと再センタリング**（変数と最適化）：MMANA モデルや設計をワンクリックで目的の周波数へ。直径はスケール、同一、市販サイズ（中実棒 3-6 mm、棒またはパイプ 8-40 mm）から選択。放射器の調整でリアクタンスをゼロにします。

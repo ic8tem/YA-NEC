@@ -2,7 +2,12 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.3** (capitolo 26.3 del manuale):
+**Novità della 1.5.4** (capitolo 26.4 del manuale):
+- **Modello scritto a mano**: i fili applicati prima della sorgente danno un avviso arancione nella barra di stato («nessuna sorgente»), senza la finestra che restava aperta sopra il lavoro; le finestre di errore vere prendono il fuoco, così Invio o Esc le chiudono anche mentre si scrive in una tabella;
+- **Traduzioni**: Calcolatori > VHF > Correzione del boom, verso «dal rilievo al modello elettrico»: spiegazione e avvisi tradotti in inglese (restavano in italiano);
+- **Videocorso completo**: 30 lezioni girate con la 1.5.3-1.5.4, in italiano e in inglese, con la nuova lezione 29 «Ridimensiona e ricentra».
+
+**Dalla 1.5.3:**
 - **Variabili e ottimizzazione > Ridimensiona e ricentra**: ricentra (sweep stretto, ROS minimo su Z0, fattore = frequenza migliore / voluta) o ridimensiona da una frequenza all'altra; diametri in scala, uguali o **misure commerciali** (tondini pieni 3-6 mm, tondini o tubi 8-40 mm, lunghezza corretta a reattanza uguale); casella «azzera la reattanza (X = 0) con la sola lunghezza del radiatore». Ridimensiona antenna lascia i Calcolatori;
 - **Diagrammi**: la prima voce si chiama **Lobi**; la linguetta Frequenza diventa la voce **Parametri** (12 linguette); **Ricezione (RDF)** lavora sul modello aperto, con la verticale λ/4 di riferimento;
 - **Impostazioni > Diagrammi**: **passo degli angoli** adattato al computer (auto, 0,5, 1, 2, 5 gradi);
