@@ -750,7 +750,7 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("s", "Spaziatura", 0.15, "lambda"));
             Params.Add(new CalcParam("d", "Diametro del filo", 2, "mm"));
             Params.Add(new CalcParam("h", "Quota del centro (0 = spazio libero)", 0, "m"));
-            Params.Add(CalcParam.Scelta("met", "Metodo", 0, "Automatico: Cebik fino a 30 MHz; sopra i 30 MHz il motore cerca la risonanza sul modello vero, partendo da Cebik.",
+            Params.Add(CalcParam.Scelta("met", "Metodo", 0, "Automatico: Cebik per la quad a 1 elemento fino a 30 MHz; con riflettore o direttore, e sopra i 30 MHz, il motore cerca la risonanza sul modello vero, partendo da Cebik.",
                 "Automatico", "ARRL (1005/f)", "Cebik (dipende dal diametro)", "NEC: risonanza cercata dal motore"));
         }
 
@@ -768,7 +768,10 @@ namespace YaNec.Engine
             CalcOutput o = new CalcOutput();
             double f = P("f"), a = P("d") / 2000, h = P("h"), lam = C0 / f, sp = P("s") * lam;
             int ne = I("n") + 1, met = I("met");
-            if (met == 0) met = f <= 30 ? 2 : 3;
+            // 1.5.3 (IC8TEM 21/11/2026 06:36 «correggi tutto»): la formula di Cebik e' la risonanza della spira da sola; con riflettore o direttore
+            // l'accoppiamento sposta la risonanza del radiatore (14,2 MHz, 2 el. a 0,15 lambda: ROS sotto 2 solo tra 13,56 e 13,75 MHz).
+            // Automatico: Cebik solo per la quad a 1 elemento fino a 30 MHz; con piu' elementi, o sopra i 30 MHz, il motore cerca la risonanza partendo da Cebik.
+            if (met == 0) met = f <= 30 && ne == 1 ? 2 : 3;
             if (soloCebik) met = 2;
             double pArrl = 306.3 / f;
             double[] cb = Cebik(P("d") / 1000 / lam);
@@ -804,8 +807,9 @@ namespace YaNec.Engine
             o.Add("Perimetro Cebik", Calcolatori.N(pCeb, 3) + " m (" + (pCeb >= pArrl ? "+" : "") + Calcolatori.N((pCeb / pArrl - 1) * 100, 1) + " %)");
             o.Formula = "Formule: ARRL, perimetro del radiatore 306,3/f m, riflettore 313,6/f m, direttore 297,2/f m. Cebik (Cubical Quad Notes vol. 2): D1 = log10(d/lambda), " +
                 "perimetro = 8 x (0,0001386 D1^4 + 0,0026779 D1^3 + 0,0195541 D1^2 + 0,0654053 D1 + 0,2164538) lambda, valido per d tra 1E-6 e 1E-2 lambda; " +
-                "riflettore e direttore nei rapporti ARRL. Automatico: Cebik fino a 30 MHz, sopra il motore NEC cerca la risonanza. Spaziatura 0,14-0,2 lambda; alimentazione al centro del lato basso = polarizzazione orizzontale.";
+                "riflettore e direttore nei rapporti ARRL. Automatico: Cebik per 1 elemento fino a 30 MHz; con piu' elementi o sopra i 30 MHz il motore NEC cerca la risonanza. Spaziatura 0,14-0,2 lambda; alimentazione al centro del lato basso = polarizzazione orizzontale.";
             if (cb[2] < -6 || cb[2] > -2) o.Warnings.Add("Diametro fuori dall'intervallo delle formule di Cebik (da 1E-6 a 1E-2 lambda).");
+            if (met == 2 && ne >= 2) o.Warnings.Add("La formula di Cebik vale per la spira da sola: con riflettore o direttore il radiatore risuona piu' in basso. Meglio Automatico o NEC.");
             if (met == 2 && f > 30) o.Warnings.Add("Sopra i 30 MHz la regressione di Cebik e' usata fuori dal campo per cui la si propone qui (fili in HF): meglio Automatico o NEC.");
             // 1.5 (proposta q2): Cebik, Cubical Quad Notes vol. 3, conclusioni
             o.Formula += " Cebik (Quad Notes vol. 3): oltre circa 4 elementi la quad perde il vantaggio di guadagno su una Yagi con lo stesso boom.";

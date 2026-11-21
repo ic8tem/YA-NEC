@@ -241,7 +241,7 @@ Yagi 520-40H dell'ARRL (5 el. 20 m a 70 ft) con e senza correzione, dalla Tab. 7
 |---|---|---|
 | Moxon | regressioni di MOXGEN | Cebik [C33]; casi DK7ZB [C80] |
 | quad e delta | perimetro 1005/f piedi | ARRL [C12] |
-| quad (dalla 1.4.2) | perimetro = 8 · (0,0001386 D1⁴ + 0,0026779 D1³ + 0,0195541 D1² + 0,0654053 D1 + 0,2164538) λ, D1 = log10(d/λ), valido da 1E-6 a 1E-2 λ; Automatico: Cebik fino a 30 MHz, sopra risonanza cercata dal NEC | Cebik [C37] |
+| quad (dalla 1.4.2) | perimetro = 8 · (0,0001386 D1⁴ + 0,0026779 D1³ + 0,0195541 D1² + 0,0654053 D1 + 0,2164538) λ, D1 = log10(d/λ), valido da 1E-6 a 1E-2 λ; Automatico: Cebik per 1 elemento fino a 30 MHz; con piu' elementi o sopra i 30 MHz risonanza cercata dal NEC | Cebik [C37] |
 | forcina (beta / hairpin) | Xc = √(R(Z0−R)), XL = Z0·√(R/(Z0−R)), Z0f = 120·arccosh(s/d), lunghezza = arctan(XL/Z0f)/β | Cebik [C38] |
 | hexbeam | geometria a W e a U di G3TXQ | G3TXQ, M0OXO (nel manuale d'uso) |
 
@@ -249,7 +249,7 @@ Yagi 520-40H dell'ARRL (5 el. 20 m a 70 ft) con e senza correzione, dalla Tab. 7
 
 Moxon a filo di DK7ZB per i 6, 10, 12, 15, 17, 20 e 30 m (filo nudo da 1 mm, spazio libero): YA-NEC come nec2c. Delta loop a 14,2 MHz con vertice a 37 gradi: 49,2 - j127 ohm.
 
-Quad di Cebik (dalla 1.4.2): la formula ridà la Tab. 2-2 di [C37] (filo #12: 1,0542 λ a 14,1 MHz, 1,0812 λ a 146 MHz); rispetto all'ARRL il perimetro esce piu' lungo del 3 % in HF e fino al 10,8 % a 144 MHz con tubo da 12 mm, per questo sopra i 30 MHz il metodo Automatico passa al NEC. Moxon da 2 m di Cebik [C38] con nec2c: elementi da 1/4" e 1/2" come la sua Tab. 2 (6,1 e 6,0 dBi, F/B 30 e 36 dB, 48 - j2 e 51 - j2 ohm a 146 MHz); con 1" il NEC-2 non converge (segmenti troppo corti rispetto al raggio).
+Quad di Cebik (dalla 1.4.2): la formula ridà la Tab. 2-2 di [C37] (filo #12: 1,0542 λ a 14,1 MHz, 1,0812 λ a 146 MHz); rispetto all'ARRL il perimetro esce piu' lungo del 3 % in HF e fino al 10,8 % a 144 MHz con tubo da 12 mm, per questo sopra i 30 MHz il metodo Automatico passa al NEC. La formula e' la risonanza della spira da sola: con un riflettore a 0,15 λ il radiatore risuona circa il 4 % piu' in basso (14,2 MHz: ROS sotto 2 solo tra 13,56 e 13,75 MHz), quindi dalla 1.5.3 con 2 o 3 elementi Automatico passa al NEC anche in HF. Moxon da 2 m di Cebik [C38] con nec2c: elementi da 1/4" e 1/2" come la sua Tab. 2 (6,1 e 6,0 dBi, F/B 30 e 36 dB, 48 - j2 e 51 - j2 ohm a 146 MHz); con 1" il NEC-2 non converge (segmenti troppo corti rispetto al raggio).
 
 ## 6. Calcolatori: dipoli, verticali, loop
 

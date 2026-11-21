@@ -5104,3 +5104,4 @@ Banda alta	高频段
 risonanza delle trappole	陷波器谐振
 trappola	陷波器
 Solo il modello di questa scheda (il modello aperto non si usa). ROS riferito a Z0 del programma; sopra i 28 MHz anche angoli a -3 dB e distanze di stack DL6WU.	仅本卡片的模型 (不使用打开的模型)。驻波比以程序的 Z0 为准;28 MHz 以上还给出 -3 dB 角度和 DL6WU 堆叠间距。
+La formula di Cebik vale per la spira da sola: con riflettore o direttore il radiatore risuona piu' in basso. Meglio Automatico o NEC.	Cebik 公式适用于单独的环：加上反射器或引向器后，主振子的谐振会降低。建议用自动或 NEC。

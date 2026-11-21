@@ -7072,3 +7072,4 @@ Banda alta	High band
 risonanza delle trappole	trap resonance
 trappola	trap
 Solo il modello di questa scheda (il modello aperto non si usa). ROS riferito a Z0 del programma; sopra i 28 MHz anche angoli a -3 dB e distanze di stack DL6WU.	Only the model of this card (the open model is not used). SWR referred to the program's Z0; above 28 MHz also -3 dB angles and DL6WU stacking distances.
+La formula di Cebik vale per la spira da sola: con riflettore o direttore il radiatore risuona piu' in basso. Meglio Automatico o NEC.	Cebik's formula applies to a single loop: with a reflector or director the driven element resonates lower. Better Automatic or NEC.
