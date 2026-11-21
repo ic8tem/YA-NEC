@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.5.3의 새 기능
+
+- **크기 변경 및 재중심화** (변수와 최적화): MMANA 모델이나 설계를 한 번의 클릭으로 원하는 주파수로; 직경은 비례, 동일 또는 시판 규격 (중실봉 3-6 mm, 봉 또는 관 8-40 mm); 급전 소자 조정으로 리액턴스를 0으로.
+- **패턴**: 첫 항목 이름은 **로브**, 주파수 탭은 **파라미터**로; **각도 간격**은 컴퓨터에 맞게 조정; **수신 (RDF)**는 열린 모델로 계산.
+- **수정**: 자동 모드의 2-3 소자 쿼드는 NEC로 공진시킴 (Cebik 공식은 단일 루프용); 소스 없는 모델은 경고 한 번만; 동영상 강좌를 1.5.3으로 다시 녹화.
+
 ## 1.5.2의 새 기능
 
 - **탭 재정리**(16→13): 스미스 차트는 다이어그램 띠로, **NEC/전류**, **변수와 최적화**; 스택 간격 VHF 및 HF + HFTA; 계산기 그룹의 새 순서.

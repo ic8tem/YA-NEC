@@ -2137,3 +2137,6 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - **Passo degli angoli** adattato al computer (Impostazioni > Diagrammi, capitolo 21).
 - **Oggetti > Stack**: solo il riconoscimento delle copie e il pulsante «Distanze di stack VHF».
 - Corretto: con la Verifica della segmentazione («tutti») e poi Ridimensiona antenna compariva «GW con tag 1: il numero di segmenti deve essere almeno 1». La compilazione di controllo prova ogni volta i modelli d'esempio con Ridimensiona e Segmentazione.
+- **Diagrammi > Ricezione (RDF)** lavora solo sul modello aperto (con la verticale λ/4 di riferimento); nell'**Ottimizzatore** l'impedenza voluta parte sempre da 50 +j0.
+- Corretto: **Calcolatori > Quad**, metodo Automatico con riflettore o direttore: la formula di Cebik e' la risonanza della spira da sola e l'accoppiamento abbassa la risonanza del radiatore di circa il 4 %; ora il motore NEC porta il radiatore in risonanza partendo da Cebik (a 14,2 MHz la 2 elementi ha ROS sotto 2 da 14,10 a 14,30 MHz). Con «Cebik» scelto a mano e 2-3 elementi compare un avviso.
+- Corretto: un modello scritto a mano nella tabella dei fili, ancora senza sorgente, apriva due finestre («nessuna sorgente» e «il modello non ha sorgenti»); ora una sola, l'errore del calcolo va nella barra di stato.

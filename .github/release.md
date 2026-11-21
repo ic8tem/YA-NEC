@@ -2,7 +2,16 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.2** (capitolo 26.2 del manuale):
+**Novità della 1.5.3** (capitolo 26.3 del manuale):
+- **Variabili e ottimizzazione > Ridimensiona e ricentra**: ricentra (sweep stretto, ROS minimo su Z0, fattore = frequenza migliore / voluta) o ridimensiona da una frequenza all'altra; diametri in scala, uguali o **misure commerciali** (tondini pieni 3-6 mm, tondini o tubi 8-40 mm, lunghezza corretta a reattanza uguale); casella «azzera la reattanza (X = 0) con la sola lunghezza del radiatore». Ridimensiona antenna lascia i Calcolatori;
+- **Diagrammi**: la prima voce si chiama **Lobi**; la linguetta Frequenza diventa la voce **Parametri** (12 linguette); **Ricezione (RDF)** lavora sul modello aperto, con la verticale λ/4 di riferimento;
+- **Impostazioni > Diagrammi**: **passo degli angoli** adattato al computer (auto, 0,5, 1, 2, 5 gradi);
+- **Oggetti > Stack**: solo il riconoscimento delle copie e il pulsante «Distanze di stack VHF»; **Ottimizzatore**: l'impedenza voluta parte sempre da 50 +j0;
+- **Correzioni**: Calcolatori > Quad in Automatico con riflettore o direttore: il radiatore si porta in risonanza con il NEC partendo da Cebik (la formula vale per la spira da sola: a 14,2 MHz la 2 elementi risuonava a 13,65 MHz), avviso se si sceglie Cebik a mano; un modello scritto a mano senza sorgente apre una sola finestra di avviso; Verifica della segmentazione «tutti» seguita da Ridimensiona; traduzioni di ripiegato, trappolato, multibanda e della riga del calcolo in tempo reale in 36 lingue;
+- **Videocorso**: le lezioni rigirate con la 1.5.3, in italiano e in inglese.
+
+**Dalla 1.5.2:**
+
 - **Linguette riordinate** (da 16 a 13): la carta di **Smith** è l'ultima voce della fascia dei Diagrammi; **NEC/correnti** (sottolinguette NEC e Correnti); **Variabili e ottimizzazione** (sottolinguette Variabili e Ottimizzatore); in Rumore/GT/Stack **Distanze di stack VHF** e **Distanze di stack HF + HFTA**; famiglie dei Calcolatori nell'ordine HF, Antenne riceventi, VHF, Strumenti, Dischi e illuminatori, 2,4 GHz, Calcoli meccanici;
 - **Struttura 3D**: casella **Linee, carichi e reti** (linee TL, carichi LD, reti NT, trasformatori e stub disegnati sui fili); la legenda dei terreni si apre dal pulsante **Mostra terreno** nella barra di stato; ogni errore della barra di stato è in grassetto e compare anche in una finestra con **OK**;
 - **Frequenza**: le bande radioamatoriali (IARU Regione 1) sul fondo dei grafici, colore nelle Impostazioni;
