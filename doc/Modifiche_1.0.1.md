@@ -208,3 +208,4 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
 - 21/11/2026 10:50, videocorso: nuova lezione 29 «Ridimensiona e ricentra (1.5.3)», IT + EN (Yagi 11 elementi I4GBZ in MMANA: da 7,3 - j14,1 ohm e ROS 7,44 a 53,5 - j0,0 ohm, ROS 1,07, 21,69 dBi). Wiki Videocorso: il corso ora ha 30 lezioni.
 - 21/11/2026 11:00, videocorso: rigirata con la 1.5.3 (IT + EN) la lezione 6 (Gli strumenti del modello). Nel wiki tolta dalla descrizione la parte sulla maniglia di riempimento e su Ins. elemento simmetrico, che il nuovo video non mostra.
 - 21/11/2026 11:10, videocorso: rigirata con la 1.5.3 (IT + EN) la lezione 23 (Antenne riceventi). Wiki Videocorso aggiornato.
+- 21/11/2026 11:20, videocorso: rigirata con la 1.5.3 (IT + EN) la lezione 26 (Novità dei Calcolatori 1.4.2 e 1.5). Wiki Videocorso aggiornato.

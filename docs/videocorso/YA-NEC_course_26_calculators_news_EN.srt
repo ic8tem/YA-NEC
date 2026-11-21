@@ -1,51 +1,51 @@
 1
-00:00:00,000 --> 00:00:05,575
+00:00:00,000 --> 00:00:05,589
 Lesson 26: what's new in the Calculators (1.4.2 and 1.5)
 
 2
-00:00:05,625 --> 00:00:12,843
+00:00:05,639 --> 00:00:15,123
 YA-NEC course, lesson 26: what's new in the Calculators in versions 1.4.2 and 1.5.
 
 3
-00:00:12,893 --> 00:00:26,624
+00:00:15,173 --> 00:01:14,519
 Magnetic loop: now with the number of turns and the turn spacing. With two turns the radiation resistance grows with (N·A)², the inductance with N².
 
 4
-00:00:26,674 --> 00:00:45,070
+00:01:14,569 --> 00:01:33,067
 With 2 turns the efficiency rises from 16 to 28 %, but the capacitor voltage reaches 14.8 kV. Proximity effect between close turns is not calculated: a warning says so. There is also a third coupling choice, capacitive with two capacitors (AEH, 4th ed.).
 
 5
-00:00:45,120 --> 00:00:54,764
+00:01:33,117 --> 00:01:47,016
 Tools, Radiation resistance: new Conductor diameter field.
 
 6
-00:00:54,814 --> 00:01:11,683
+00:01:47,066 --> 00:02:04,023
 For the 10 m short dipole at 3.6 MHz: 2.85 Ω of radiation resistance, −2271 Ω reactance with Tai's formula (Antenna Engineering Handbook, eq. 4-1), and the 100 µH coil that brings it to resonance.
 
 7
-00:01:11,733 --> 00:01:27,253
+00:02:04,073 --> 00:02:22,597
 HF, Dipoles, folded: the card gives the equivalent radius of the two conductors, the Z0 of their line and the Z at the frequency, 248 − j98 Ω.
 
 8
-00:01:27,303 --> 00:01:38,720
+00:02:22,647 --> 00:02:34,064
 The chart shows R and X versus frequency with the Uda and Mushiake formula. At resonance Z stays below 73 Ω times the ratio: the equivalent dipole is fatter.
 
 9
-00:01:38,770 --> 00:01:46,934
+00:02:34,114 --> 00:02:49,259
 NVIS (since 1.4.2): dipole, inverted V or 1 λ loop, with the ground and Cebik's screen or 9 ground wires.
 
 10
-00:01:46,984 --> 00:02:02,706
+00:02:49,309 --> 00:03:05,087
 Best height: NEC tries heights from 0.10 to 0.25 λ and picks the highest zenith gain. Here 14.6 m, that is 0.175 λ.
 
 11
-00:02:02,756 --> 00:02:12,373
-Quad, Method: Automatic uses Cebik on HF (perimeter depending on wire diameter) and NEC on VHF; you can choose ARRL, Cebik or NEC.
+00:03:05,137 --> 00:03:21,021
+Quad, Method: Automatic uses Cebik for the 1-element quad on HF (perimeter depending on the wire diameter); with a reflector or director, and on VHF, NEC brings the driven loop to resonance. ARRL, Cebik or NEC can be chosen.
 
 12
-00:02:12,423 --> 00:02:24,332
+00:03:21,071 --> 00:03:35,123
 Tools, Hairpin: hairpin (beta match) of the driven element to 50 Ω. For a 25 Ω driven element you need −25 Ω of reactance and a 496 mm hairpin.
 
 13
-00:02:24,382 --> 00:02:36,284
+00:03:35,173 --> 00:03:46,973
 Sources: Antenna Engineering Handbook 4th ed., W5QJR, ARRL Antenna Book, Cebik, N6BV. All in the manual, chapters 25 and 26.

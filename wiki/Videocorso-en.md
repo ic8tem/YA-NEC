@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 30 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27 and 29; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 30 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 and 29; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
