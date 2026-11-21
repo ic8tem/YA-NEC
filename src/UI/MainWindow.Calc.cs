@@ -496,7 +496,9 @@ namespace YaNec
             catch (Exception ex)
             {
                 lastError = ex.Message;
-                Status("Errore nel calcolo: " + ex.Message, true);
+                // 1.5.3: senza sorgente, dopo l'avviso della tabella dei fili, solo la riga di stato (niente seconda finestra)
+                bool giaDetto = senzaSorgenteGiaDetto && m.Sources.Count == 0;
+                Status("Errore nel calcolo: " + ex.Message, !giaDetto);
                 // 1.0.1: anche se il calcolo non riesce (per esempio un modello nuovo ancora senza sorgente) la Struttura 3D
                 // e gli Oggetti del modello si ridisegnano, altrimenti la tabella delle Sorgenti non compare e non si puo' aggiungere
                 // la sorgente che manca
@@ -509,9 +511,11 @@ namespace YaNec
             }
             finally
             {
+                senzaSorgenteGiaDetto = false;
                 if (!tok.IsCancellationRequested) { prog.IsVisible = false; prog.IsIndeterminate = false; }
             }
         }
+        bool senzaSorgenteGiaDetto;   // 1.5.3: la tabella dei fili ha gia' detto «nessuna sorgente»
 
         CancellationTokenSource sweepCts;
 

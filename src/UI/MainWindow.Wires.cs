@@ -851,7 +851,9 @@ namespace YaNec
                 if (newWires.Exists(q => q.I1 == t)) continue;
                 m.Sources.RemoveAll(q => q.Tag == t);
             }
-            if (m.Sources.Count == 0) Status("Attenzione: nessuna sorgente (aggiungerla nella tabella Sorgenti).", true);
+            // 1.5.3 (IC8TEM 21/11/2026 «correggi tutto»): modello scritto a mano ancora senza sorgente: una sola finestra (questa);
+            // il calcolo che segue ridisegna la Struttura 3D e le tabelle senza aprire una seconda finestra «il modello non ha sorgenti»
+            if (m.Sources.Count == 0) { Status("Attenzione: nessuna sorgente (aggiungerla nella tabella Sorgenti).", true); senzaSorgenteGiaDetto = true; }
             model = m;
             mmWires = null;     // la tabella dei fili MMANA risegmentati non vale piu'
 
