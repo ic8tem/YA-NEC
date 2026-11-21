@@ -39,8 +39,8 @@ namespace YaNec
         Control calcMeccPagina;   // 1.5: la pagina dei Calcoli meccanici (prima linguetta principale) dentro i Calcolatori
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
-            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "discone", "carichihf" } },
-            { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh" } },
+            { "HF", new[] { "dipoli", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
+            { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh", "discone" } },   // 1.5.6: Discone da HF a VHF (IC8TEM 21/11/2026)
             { "Antenne riceventi", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
             { "Calcoli meccanici", new string[0] },
@@ -82,7 +82,6 @@ namespace YaNec
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
             fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
             fasCalc.Voce("nvis", "NVIS", false, null, "dipolo, V invertito, loop 1 λ; altezza ottima, schermo o 9 fili a terra (Cebik)");   // 1.5
-            fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");
             fasCalc.Voce("carichihf", "Carichi HF", false, null, "trappole LC e coassiali, bobine con autorisonanza, linear loading, cappelli; Q, tensioni e perdite per banda");   // 1.2.0
             fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
             fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
@@ -96,6 +95,7 @@ namespace YaNec
             fasCalc.Voce("yagiincr", "Yagi incrociate", false, null, "X o +, piani sfalsati di λ/4; H, V, RHCP, LHCP, X-pol; rapporto assiale e isolamento");   // 1.2.0 (bozzetto VHF 6)
             fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
             fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
+            fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");   // 1.5.6: spostata da HF a VHF
             fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "ora in Variabili e ottimizzazione > Ridimensiona e ricentra");   // 1.5.3
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
             fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");

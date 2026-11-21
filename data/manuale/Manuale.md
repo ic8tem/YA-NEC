@@ -475,9 +475,9 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 
 | Famiglia | Voci |
 |---|---|
-| HF | Dipoli, Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), Discone |
+| HF | Dipoli, Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), NVIS, Carichi HF |
 | Antenne riceventi | Beverage, BOG, EWE, DHDL, loop magnetica ricevente, verticale di riferimento (era una linguetta a parte) |
-| VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Eggbeater, QFH |
+| VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Divisori e cavi di fase, Yagi incrociate, Eggbeater, QFH, Discone (dalla 1.5.6; prima era in HF) |
 | Strumenti | Ridimensiona antenna (dalla 1.5.3 un rimando a Variabili e ottimizzazione > Ridimensiona e ricentra), Tetto, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T, Toroidi FT, Balun / Un-Un, Staffe |
 | Dischi e illuminatori | Parabola primo fuoco, Parabola offset, Trombe e illuminatori, Biquad |
 | 2,4 GHz | Antenne su PCB |

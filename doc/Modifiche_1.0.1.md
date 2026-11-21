@@ -223,3 +223,4 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
 
 ## 1.5.5
 - 21/11/2026 20:00, IC8TEM («si procedi»): versione 1.5.5 con le correzioni trovate preparando le lezioni 30 e 31 (polarizzazione della HEN, traduzioni della pagina Misure VNA). VERSION, note di rilascio, README in 8 lingue, paragrafo 26.5 del manuale, PDF rigenerati. Anteprima c3efcca: prove dell'interfaccia superate.
+- 21/11/2026 20:44, IC8TEM (immagine con la freccia dalla Discone alla linguetta VHF): Calcolatori > Discone spostata dalla famiglia HF alla famiglia VHF (in fondo, dopo la QFH). La frequenza minima predefinita resta 50 MHz (banda circa 50-500 MHz). Nel manuale la tabella delle famiglie e' aggiornata (in HF mancavano anche NVIS e Carichi HF, in VHF Divisori e cavi di fase e Yagi incrociate). Il calcolo non cambia. Per la prossima versione.
