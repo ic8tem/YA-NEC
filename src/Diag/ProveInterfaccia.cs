@@ -650,7 +650,8 @@ namespace YaNec
             // 0.4.8: funzioni che YA-NEC non ha ancora (superfici, fili virtuali di EZNEC, celle nascoste di AutoEZ) e file difettosi
             // (frequenza 0 in butternut-new.maa): non sono guasti, si contano a parte come nel collaudo completo
             Func<string, bool> nonCalcolabile = msg => msg != null && (msg.Contains("non sono ancora supportate") || msg.Contains("non e' supportata") ||
-                msg.Contains("non ha sorgenti") || msg.Contains(".NGF") || msg.Contains("non contiene schede di geometria") || msg.Contains("Frequenza non valida nel file"));
+                msg.Contains("non ha sorgenti") || msg.Contains(".NGF") || msg.Contains("non contiene schede di geometria") || msg.Contains("Frequenza non valida nel file") ||
+                msg.Contains("non importabile"));   // 1.5.3: .weq con formule di AutoEZ che il file non contiene (file incompleto, non un errore di YA-NEC)
             Stopwatch tot = Stopwatch.StartNew();
             string puntiPrima = txtNpts.Text;
             foreach (string f in files)
