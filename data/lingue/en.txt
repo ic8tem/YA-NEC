@@ -7089,3 +7089,74 @@ Il programma non cambia nulla da solo.	The program changes nothing by itself.
 Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo).	The measured minimum SWR is higher than the calculated one: the resistive part does not match (matching, balun or cable losses).
 Proposta:	Proposal:
 misurato	measured
+alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke	end-fed: EFHW 49:1 / 64:1, with coil, non-resonant wire 9:1 / 4:1; counterpoise, choke
+EFHW multibanda	EFHW multiband
+EFHW monobanda	EFHW single band
+EFHW con bobina	EFHW with coil
+Filo non risonante	Non-resonant wire
+inclinata dal basso	sloping up from the bottom
+inclinata dall'alto	sloping down from the top
+L rovesciata	inverted L
+U rovesciata	inverted U
+tutto dritto	straight
+nudo	bare
+isolato in PVC	PVC insulated
+isolato in PE / PTFE	PE / PTFE insulated
+1 · Antenna	1 · Antenna
+2 · Disposizione	2 · Layout
+Banda piu' bassa (mezz'onda)	Lowest band (half wave)
+Banda aggiunta dalla bobina	Band added by the coil
+Filo dopo la bobina	Wire after the coil
+Lunghezza del filo	Wire length
+Trasformatore	Transformer
+Contrappeso (% del filo)	Counterpoise (% of the wire)
+filo 0,05 λ	0.05 λ wire
+calza del coassiale	coax shield
+Altezza del trasformatore	Transformer height
+Altezza della punta	Tip height
+Altezza del tratto orizzontale	Height of the horizontal run
+Coda che scende	Hanging tail
+Filo fino alla bobina	Wire up to the coil
+Coda dopo la bobina	Tail after the coil
+Filo radiante	Radiating wire
+Choke sul coassiale	Coax choke
+Condensatore sul primario	Capacitor across the primary
+Tensione in punta	Voltage at the end
+al trasformatore	at the transformer
+la corrente torna dal contrappeso	the current returns through the counterpoise
+Nucleo del trasformatore	Transformer core
+Lunghezze consigliate (VE3EED)	Recommended lengths (VE3EED)
+metri, per il 9:1	metres, for the 9:1
+Distanza a terra	Ground distance
+tra il trasformatore e la punta	between the transformer and the tip
+Punta	Tip
+altezza	height
+Tratti	Runs
+sale, orizzontale	rising, horizontal
+sale, orizzontale, coda	rising, horizontal, tail
+Impedenza in punta al variare della lunghezza (modello TF5NN)	End impedance versus length (TF5NN model)
+Costruisci il trasformatore 49:1 ›	Build the 49:1 transformer ›
+Costruisci il trasformatore 64:1 ›	Build the 64:1 transformer ›
+Costruisci l'un-un 9:1 ›	Build the 9:1 unun ›
+Costruisci l'un-un 4:1 ›	Build the 4:1 unun ›
+Choke sul coassiale ›	Coax choke ›
+Bobina di carico ›	Loading coil ›
+Balun 1:1 ›	1:1 balun ›
+Balun 4:1 ›	4:1 balun ›
+Balun 6:1 ›	6:1 balun ›
+Balun 9:1 ›	9:1 balun ›
+Trasformatore λ/4 ›	λ/4 transformer ›
+Apre Strumenti > Balun / Un-Un con rapporto, frequenze e potenza di questa scheda.	Opens Tools > Balun / Unun with the ratio, frequencies and power of this page.
+Apre Strumenti > Toroidi FT con un FT-240-43 e le spire per oltre 1000 Ω alla frequenza piu' bassa.	Opens Tools > FT toroids with an FT-240-43 and the turns for over 1000 Ω at the lowest frequency.
+Apre Strumenti > Cavi RG con un quarto d'onda (VF 0,66) chiuso sull'impedenza dell'antenna: scegli un cavo da 75 Ω.	Opens Tools > RG cables with a quarter wave (VF 0.66) terminated in the antenna impedance: choose a 75 Ω cable.
+Apre HF > Carichi HF (bobine con autorisonanza, Q, tensioni e perdite).	Opens HF > HF loads (coils with self-resonance, Q, voltages and losses).
+Con la calza come contrappeso il coassiale fino al choke irradia: tienilo lontano dalla casa e non mettere il choke sul trasformatore (I3RKE).	With the shield as counterpoise the coax radiates up to the choke: keep it away from the house and do not put the choke at the transformer (I3RKE).
+Con un solo FT-240-43 il funzionamento continuo (FT8, RTTY) va tenuto tra 30 e 50 W; 100 W in SSB.	With a single FT-240-43 keep continuous duty (FT8, RTTY) at 30-50 W; 100 W on SSB.
+FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)	FT-140-43 and FT-114-43 not recommended above QRP: losses over 20 % measured (DG1JAN)
+le bande armoniche cadono un po' piu' in basso: la tabella mostra il ROS che resta (TF5NN)	the harmonic bands fall a little low: the table shows the remaining SWR (TF5NN)
+La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; ritocca la coda.	The coil is an estimate (transmission line): the real-time calculation shows where it really resonates; trim the tail.
+lunghezza lontana dalle mezze onde delle bande scelte (VE3EED)	length away from the half waves of the chosen bands (VE3EED)
+accordatore interno, 	internal tuner, 
+accordatore esterno, 	external tuner, 
+Accorda la lunghezza (NEC)	Tune the length (NEC)
+3 · Altezze	3 · Heights

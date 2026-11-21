@@ -6800,3 +6800,75 @@ Il programma non cambia nulla da solo.
 Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo).
 Proposta:
 misurato
+alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke
+EFHW multibanda
+EFHW monobanda
+EFHW con bobina
+Filo non risonante
+inclinata dal basso
+inclinata dall'alto
+L rovesciata
+U rovesciata
+tutto dritto
+nudo
+isolato in PVC
+isolato in PE / PTFE
+1 · Antenna
+2 · Disposizione
+Banda piu' bassa (mezz'onda)
+Banda aggiunta dalla bobina
+Filo dopo la bobina
+Lunghezza del filo
+Trasformatore
+Contrappeso (% del filo)
+filo 0,05 λ
+calza del coassiale
+ø del filo
+Altezza del trasformatore
+Altezza della punta
+Altezza del tratto orizzontale
+Coda che scende
+Filo fino alla bobina
+Coda dopo la bobina
+Filo radiante
+Choke sul coassiale
+Condensatore sul primario
+Tensione in punta
+al trasformatore
+la corrente torna dal contrappeso
+Nucleo del trasformatore
+Lunghezze consigliate (VE3EED)
+metri, per il 9:1
+Distanza a terra
+tra il trasformatore e la punta
+Punta
+altezza
+Tratti
+sale, orizzontale
+sale, orizzontale, coda
+Impedenza in punta al variare della lunghezza (modello TF5NN)
+Costruisci il trasformatore 49:1 ›
+Costruisci il trasformatore 64:1 ›
+Costruisci l'un-un 9:1 ›
+Costruisci l'un-un 4:1 ›
+Choke sul coassiale ›
+Bobina di carico ›
+Balun 1:1 ›
+Balun 4:1 ›
+Balun 6:1 ›
+Balun 9:1 ›
+Trasformatore λ/4 ›
+Apre Strumenti > Balun / Un-Un con rapporto, frequenze e potenza di questa scheda.
+Apre Strumenti > Toroidi FT con un FT-240-43 e le spire per oltre 1000 Ω alla frequenza piu' bassa.
+Apre Strumenti > Cavi RG con un quarto d'onda (VF 0,66) chiuso sull'impedenza dell'antenna: scegli un cavo da 75 Ω.
+Apre HF > Carichi HF (bobine con autorisonanza, Q, tensioni e perdite).
+Con la calza come contrappeso il coassiale fino al choke irradia: tienilo lontano dalla casa e non mettere il choke sul trasformatore (I3RKE).
+Con un solo FT-240-43 il funzionamento continuo (FT8, RTTY) va tenuto tra 30 e 50 W; 100 W in SSB.
+FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)
+le bande armoniche cadono un po' piu' in basso: la tabella mostra il ROS che resta (TF5NN)
+La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; ritocca la coda.
+lunghezza lontana dalle mezze onde delle bande scelte (VE3EED)
+accordatore interno, 
+accordatore esterno, 
+Accorda la lunghezza (NEC)
+3 · Altezze

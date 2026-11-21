@@ -52,18 +52,60 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("pw", "Potenza", 100, "W"));
             Params.Add(new CalcParam("disp", "Disposizione", 0, "") { Choices = Disposizioni, Pillole = true, Sezione = "2 · Disposizione" });
             Func<int, Func<bool>> d = k => () => I("disp") == k;
-            Params.Add(new CalcParam("ha", "Altezza del trasformatore", 1.5, "m") { Visibile = d(0) });
+            Params.Add(new CalcParam("ha", "Altezza del trasformatore", 1.5, "m") { Visibile = d(0), Sezione = "3 · Altezze" });
             Params.Add(new CalcParam("hb", "Altezza della punta", 10, "m") { Visibile = d(0) });
-            Params.Add(new CalcParam("hc", "Altezza del trasformatore", 10, "m") { Visibile = d(1) });
+            Params.Add(new CalcParam("hc", "Altezza del trasformatore", 10, "m") { Visibile = d(1), Sezione = "3 · Altezze" });
             Params.Add(new CalcParam("hd", "Altezza della punta", 2, "m") { Visibile = d(1) });
-            Params.Add(new CalcParam("he", "Altezza del trasformatore", 1.5, "m") { Visibile = d(2) });
-            Params.Add(new CalcParam("hf", "Altezza del trasformatore", 1.5, "m") { Visibile = d(3) });
+            Params.Add(new CalcParam("he", "Altezza del trasformatore", 1.5, "m") { Visibile = d(2), Sezione = "3 · Altezze" });
+            Params.Add(new CalcParam("hf", "Altezza del trasformatore", 1.5, "m") { Visibile = d(3), Sezione = "3 · Altezze" });
             Params.Add(new CalcParam("hg", "Altezza del tratto orizzontale", 10, "m") { Visibile = d(3) });
-            Params.Add(new CalcParam("hh", "Altezza del trasformatore", 4, "m") { Visibile = d(4) });
+            Params.Add(new CalcParam("hh", "Altezza del trasformatore", 4, "m") { Visibile = d(4), Sezione = "3 · Altezze" });
             Params.Add(new CalcParam("hi", "Altezza del tratto orizzontale", 10, "m") { Visibile = d(4) });
             Params.Add(new CalcParam("hl", "Coda che scende", 3, "m") { Visibile = d(4) });
-            Params.Add(new CalcParam("hm", "Altezza", 10, "m") { Visibile = d(5) });
-            CanTune = false;
+            Params.Add(new CalcParam("hm", "Altezza", 10, "m") { Visibile = d(5), Sezione = "3 · Altezze" });
+            CanTune = true;
+        }
+
+        double L0Formula;
+        public override string TuneLabel { get { return "Accorda la lunghezza (NEC)"; } }
+
+        /// <summary>EFHW: lunghezza (fattore di scala tra 0,8 e 1,2) con il ROS piu' basso attraverso il trasformatore alla banda piu' bassa,
+        /// con il contrappeso e il terreno del modello. Non si cerca lo zero della reattanza: oltre la mezz'onda porterebbe ai 3/4 d'onda.</summary>
+        public override double Tune(double fmhz)
+        {
+            Func<double, double> ros = sc =>
+            {
+                Scale = sc;
+                CalcOutput o = Compute();
+                NecModel m = NecModel.Parse(o.Nec);
+                SegmentGeometry g = Analysis.GeometriaDiCalcolo(m, fmhz);
+                Nec2Engine e = new Nec2Engine(g);
+                e.Solve(fmhz, Analysis.EffectiveSources(m, g, fmhz), m.EffectiveLoads(), m.Ground, m.ExtendedKernel, m.Rkh, m.EffectiveNetworks(fmhz));
+                return Ros(e.Sources[0].Z, double.IsNaN(o.Z0Rif) ? 2450 : o.Z0Rif);
+            };
+            double best = 1, rb = double.MaxValue;
+            for (double sc = 0.80; sc <= 1.2001; sc += 0.025) { double r = ros(sc); if (r < rb) { rb = r; best = sc; } }
+            double lo = best - 0.025, hi = best + 0.025, gr = (Math.Sqrt(5) - 1) / 2;
+            double x1 = hi - gr * (hi - lo), x2 = lo + gr * (hi - lo), r1 = ros(x1), r2 = ros(x2);
+            for (int k = 0; k < 12; k++)
+            {
+                if (r1 < r2) { hi = x2; x2 = x1; r2 = r1; x1 = hi - gr * (hi - lo); r1 = ros(x1); }
+                else { lo = x1; x1 = x2; r1 = r2; x2 = lo + gr * (hi - lo); r2 = ros(x2); }
+            }
+            double bs = r1 < r2 ? x1 : x2;
+            if (Math.Min(r1, r2) > rb) bs = best;
+            Scale = bs;
+            return bs;
+        }
+
+        /// <summary>Fattore di velocita' del filo isolato con l'induttanza aggiunta di Cebik (la stessa del LD 7 nel modello NEC):
+        /// dL = 2e-7 (er R/r)^(1/12) (1 - 1/er) ln(R/r) H/m contro L' = Z0 / c del filo, Z0 = 60 ln(0,22 lambda / r).</summary>
+        static double VfIsolato(double fmhz, double r, double er, double R)
+        {
+            if (er <= 1 || R <= r) return 1;
+            double dL = 2e-7 * Math.Pow(er * R / r, 1.0 / 12) * (1 - 1 / er) * Math.Log(R / r);
+            double Lp = 60 * Math.Log(0.22 * (C0 / fmhz) / r) / 299792458.0;
+            return Math.Sqrt(Lp / (Lp + dL));
         }
 
         static CalcParam Vis(CalcParam p, Func<bool> v) { p.Visibile = v; return p; }
@@ -117,6 +159,7 @@ namespace YaNec.Engine
         {
             CalcOutput o = new CalcOutput();
             int tipo = Math.Max(0, Math.Min(3, I("tipo"))), iso = Math.Max(0, Math.Min(2, I("iso"))), disp = Math.Max(0, Math.Min(5, I("disp")));
+            CanTune = tipo <= 1;
             bool nonRis = tipo == 3;
             double a = Math.Max(0.1, P("d")) / 2000, vf = VfIsol[iso], pw = Math.Max(0, P("pw"));
             double rapp = nonRis ? (I("trb") == 1 ? 4 : 9) : (I("tr") == 1 ? 64 : 49);
@@ -128,7 +171,10 @@ namespace YaNec.Engine
             double L, Lbob = 0, Lcoda = 0, uH = 0, fb = Math.Max(0.5, P("fb"));
             if (!nonRis)
             {
+                if (iso > 0) vf = VfIsolato(fBassa, a, ErIsol[iso], a + SpIsol[iso] / 1000);
                 L = (1 - Estremita(fBassa, a)) * (C0 / fBassa) * vf / 2;
+                L0Formula = L;
+                if (tipo <= 1) L *= Scale;
                 if (tipo == 2)
                 {
                     // bobina (OfficinaHF, 20 m di filo + bobina + coda per gli 80 m): reattanza che rende il tutto mezz'onda alla banda aggiunta,
@@ -153,8 +199,12 @@ namespace YaNec.Engine
             {
                 double fbnd = BandeF[i];
                 if (tipo == 1) { if (Math.Abs(fbnd - fBassa) / fBassa < 0.08) bande.Add(i); continue; }
-                double fmin = tipo == 2 ? Math.Min(fb, fBassa) : fBassa;
-                if (fbnd >= fmin * 0.95) bande.Add(i);
+                if (tipo == 3) { if (fbnd >= fBassa * 0.95) bande.Add(i); continue; }
+                // EFHW: solo le bande vicine a un multiplo della mezz'onda (entro il 6 %), anche quella della bobina
+                bool armonica = false;
+                for (int n = 1; n <= 16; n++) if (Math.Abs(fbnd - n * fBassa) / fbnd < 0.06) armonica = true;
+                if (tipo == 2 && Math.Abs(fbnd - fb) / fb < 0.06) armonica = true;
+                if (armonica) bande.Add(i);
             }
             if (bande.Count == 0) bande.Add(Array.IndexOf(BandeF, 7.1));
 
@@ -165,7 +215,7 @@ namespace YaNec.Engine
                 o.Card("Bobina", Calcolatori.N(uH, 0) + " µH", "per " + Calcolatori.N(fb, 2) + " MHz (stima, verifica NEC)", true);
                 o.Card("Coda dopo la bobina", Calcolatori.N(Lcoda, 2) + " m", "totale " + Calcolatori.N(L, 2) + " m di filo");
             }
-            else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", "λ/2 a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 2) + ", effetto d'estremita'", true);
+            else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", Math.Abs(Scale - 1) > 1e-6 ? "accordato con il NEC (formula " + Calcolatori.N(L0Formula, 2) + " m)" : "λ/2 a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 3) + ", effetto d'estremita'", true);
             else o.Card("Filo", Calcolatori.N(L, 2) + " m", "non risonante, con il " + rappTxt + " e l'accordatore", true);
             if (calza) o.Card("Choke sul coassiale", Calcolatori.N(cp, 1) + " m", "dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)");
             else o.Card("Contrappeso", Calcolatori.N(cp, 2) + " m", nonRis ? Calcolatori.N(P("cpp"), 1) + " % del filo (5-10 %)" : "0,05 λ (AA5TB)");
@@ -287,7 +337,6 @@ namespace YaNec.Engine
 
             // ---- annotazioni del disegno
             o.Mark(8, -0.4, h1 - 0.5, rappTxt, 0, 0.4, h1 + 0.3);
-            o.Mark(0, 0.6, h1 - 0.9, rappTxt, 0);
             if (calza) o.Mark(0, -cp, Math.Max(0.4, zc) + 0.6, "choke", 2);
             o.Mark(0, -Math.Max(1, cp * 0.6), zc - 0.9, calza ? "calza " + Calcolatori.N(cp, 1) + " m" : "contrappeso " + Calcolatori.N(cp, 2) + " m", 1);
             double[] ult = pts[pts.Count - 1];

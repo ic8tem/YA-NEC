@@ -475,7 +475,7 @@ Gli oggetti non hanno piu' una linguetta: stanno nella zona in basso a destra de
 
 | Famiglia | Voci |
 |---|---|
-| HF | Dipoli, Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), NVIS, Carichi HF |
+| HF | Dipoli, Filari (dalla 1.5.6), Dipoli multibanda, Yagi multibanda, Verticali, Verticali multibanda, Four-square, Delta loop, Loop rettangolare, Loop magnetica, Quad, Antenna EH, Moxon, Hexbeam 20-10 m, Loop orizzontale multibanda (Skywire), NVIS, Carichi HF |
 | Antenne riceventi | Beverage, BOG, EWE, DHDL, loop magnetica ricevente, verticale di riferimento (era una linguetta a parte) |
 | VHF | HB9CV, Big Wheel, HEN, LPDA, Yagi lunga DL6WU, Quagi, Loop Yagi, Boom, Divisori e cavi di fase, Yagi incrociate, Eggbeater, QFH, Discone (dalla 1.5.6; prima era in HF) |
 | Strumenti | Ridimensiona antenna (dalla 1.5.3 un rimando a Variabili e ottimizzazione > Ridimensiona e ricentra), Tetto, Rete LC, Resistenza di radiazione, Cavi RG, Toroidi T, Toroidi FT, Balun / Un-Un, Staffe |
@@ -602,6 +602,18 @@ Fonti: L. Varney G5RV (RSGB Bulletin 1966): 102 piedi (31,1 m) + 34 piedi (10,36
 | Quota del centro | m |  |
 
 Fonti: G. Countryman W3HH (QST 1949); B&W.
+
+**Filari (dalla 1.5.6)**
+
+A cosa serve: le antenne filari alimentate in punta. Quattro tipi: **EFHW multibanda** (mezz'onda sulla banda piu' bassa e sulle armoniche), **EFHW monobanda**, **EFHW con bobina** (il filo di una banda allungato con una bobina e una coda per la banda sotto, per esempio 20 m di filo per i 40 m piu' la bobina per gli 80 m) e **filo non risonante** con l'un-un 9:1 o 4:1 e l'accordatore. Sei disposizioni, ognuna con le sue altezze: **inclinata dal basso** (trasformatore in basso, filo che sale), **inclinata dall'alto** (trasformatore in cima al palo, filo che scende verso la punta), **verticale**, **L rovesciata**, **U rovesciata** (il filo sale dal trasformatore, corre in orizzontale e la coda scende) e **tutto dritto** (filo teso in orizzontale alla stessa altezza del trasformatore).
+
+Contrappeso. Con il 49:1 e il 64:1 in punta la corrente e' piccola e basta un contrappeso corto: **0,05 lambda** della banda piu' bassa (AA5TB), a filo, oppure la **calza del coassiale** fino al choke, messo a 0,05 lambda dal trasformatore. Se manca il contrappeso, fa da contrappeso il coassiale intero con la radio e l'impianto di casa (I3RKE). Con il 9:1 e il 4:1 il contrappeso va tra il **5 e il 10 % del filo** principale. Il **condensatore** sul primario (100 pF con il 49:1, 150 pF con il 64:1, almeno 1 kV) non sostituisce il contrappeso: compensa l'induttanza dispersa del trasformatore e abbassa il ROS sulle bande alte.
+
+I riquadri danno la lunghezza del filo, il contrappeso o la distanza del choke, il condensatore, la tensione in punta (V = radice di P x |Z|), il nucleo e, per ogni banda, il ROS attraverso il trasformatore con il modello del filo di TF5NN. Il **calcolo in tempo reale** rifa' la stessa tabella con il motore NEC, sulla disposizione scelta, con il terreno medio e il contrappeso; nel modello il trasformatore e' ideale, quindi il ROS e' riferito a 50 x rapporto (2450 ohm con il 49:1). Il grafico mostra l'impedenza in punta al variare della lunghezza per le prime due bande. Con il filo non risonante la scheda avvisa se la lunghezza cade vicino a una mezz'onda di una banda d'uso e riporta le lunghezze consigliate da VE3EED.
+
+**Pulsanti viola.** «Costruisci il trasformatore 49:1 ›» (o 64:1, 9:1, 4:1) apre Strumenti > Balun / Un-Un gia' compilata con rapporto, frequenze, potenza e nucleo; «Choke sul coassiale ›» apre Toroidi FT con un FT-240-43 e le spire per oltre 1000 ohm alla banda piu' bassa; «Bobina di carico ›» apre Carichi HF. Nella scheda aperta, «‹ Torna a ...» riporta a quella di partenza. Gli stessi pulsanti ci sono nelle altre schede filari: dipoli (Balun 1:1), ripiegato (4:1), OCF/Windom (4:1, 6:1, choke), T2FD (9:1), G5RV (choke), Delta e Quad (Balun 1:1 e trasformatore a quarto d'onda in Cavi RG), Loop rettangolare e Skywire (4:1 e choke), Moxon e Hexbeam (choke).
+
+Fonti: S. Yates AA5TB, The End-Fed Half-Wave Antenna; G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0); VE3EED (lunghezze del filo non risonante); DG1JAN, xOTA-Antenna (100 pF; FT-140-43 e FT-114-43 con perdite oltre il 20 %); W8JI e O. Duffy (trasformatori); L. I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (EFHW con bobina per gli 80 m, tensione in punta).
 
 **Dipolo multibanda**
 
@@ -2153,3 +2165,9 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - Calcolatori > VHF > HEN: la scheda «Guadagno dichiarato» indica la polarizzazione orizzontale. Con i lati lunghi verticali la Hentenna e' polarizzata orizzontalmente, come conferma la verifica NEC della stessa pagina («pol. H»).
 - Diagrammi > Misure VNA: i titoli dei riquadri, la voce «misurato» della legenda e l'interpretazione con la proposta di correzione sono tradotti.
 - Videocorso: 32 lezioni, con le nuove 30 «Cavi e misure col VNA» e 31 «Altri calcolatori».
+
+### 26.6 Dalla 1.5.6
+
+- Calcolatori > HF > **Filari**: nuova scheda per le antenne filari alimentate in punta (EFHW multibanda, monobanda, con bobina, filo non risonante con 9:1 o 4:1), con sei disposizioni del filo, contrappeso, condensatore, tensione in punta e ROS per banda (modello TF5NN e motore NEC). Vedi il capitolo dei Calcolatori.
+- Pulsanti viola di rimando: dai Filari e dalle altre schede filari (dipoli, OCF/Windom, T2FD, G5RV, Delta, Quad, Loop, Skywire, Moxon, Hexbeam) si apre la scheda del balun, del choke (Toroidi FT), del quarto d'onda (Cavi RG) o dei carichi, gia' compilata. La scheda Balun / Un-Un resta in Strumenti.
+- Calcolatori: la Discone e' passata dalla famiglia HF alla famiglia VHF.
