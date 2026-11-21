@@ -748,7 +748,7 @@ namespace YaNec
                     using (Prestazioni.Misura("Calcolatore: verifica NEC (" + sc.Title + ")"))
                     {
                         NecModel m = NecModel.Parse(o.Nec);
-                        return SimpleCalc.Solve(o, m.FreqMHz, model != null ? model.Z0 : 50);
+                        return SimpleCalc.Solve(o, m.FreqMHz, !double.IsNaN(o.Z0Rif) ? o.Z0Rif : (model != null ? model.Z0 : 50));   // 1.5.6: Filari, ROS riferito a 50 x rapporto
                     }
                 }).ContinueWith(t => Dispatcher.UIThread.Post(() =>
                 {

@@ -2,7 +2,14 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.5** (capitolo 26.5 del manuale):
+**Novità della 1.5.6** (capitolo 26.6 del manuale):
+- **Calcolatori > HF > Filari** (nuova scheda): antenne filari alimentate in punta. EFHW multibanda, monobanda e con bobina (49:1 o 64:1), filo non risonante con 9:1 o 4:1; sei disposizioni del filo (inclinata dal basso o dall'alto, verticale, L e U rovesciata, tutto dritto); contrappeso di 0,05 λ a filo o con la calza del coassiale fino al choke (con il 9:1 e il 4:1 tra il 5 e il 10 % del filo), condensatore sul primario, tensione in punta, ROS per banda con il modello di TF5NN e con il motore NEC, pulsante **Accorda la lunghezza (NEC)**;
+- **Pulsanti di rimando** (viola): dai Filari e dalle altre schede filari (dipoli, OCF/Windom, T2FD, G5RV, Delta, Quad, Loop, Skywire, Moxon, Hexbeam) si apre già compilata la scheda del balun, del choke (Toroidi FT), del quarto d'onda (Cavi RG) o dei carichi, con «‹ Torna a ...»; la scheda Balun / Un-Un resta in Strumenti;
+- **Discone**: passata dalla famiglia HF alla famiglia VHF.
+
+Fonti della scheda Filari: AA5TB, TF5NN (HF Antenna Impedance Visualizer, CC BY 4.0), VE3EED, DG1JAN, W8JI, O. Duffy, I3RKE, OfficinaHF.
+
+**Dalla 1.5.5:**
 - **Calcolatori > VHF > HEN**: la scheda «Guadagno dichiarato» indica la polarizzazione orizzontale, come la verifica NEC della stessa pagina (prima diceva verticale);
 - **Diagrammi > Misure VNA**: titoli «Misura» e «Mostra», legenda «misurato», interpretazione e proposta di correzione tradotti (restavano in italiano);
 - **Videocorso**: 32 lezioni, con le nuove 30 «Cavi e misure col VNA» e 31 «Altri calcolatori».

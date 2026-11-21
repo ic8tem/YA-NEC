@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.5.6 새 기능
+
+- **계산기 > HF > 와이어 안테나**(신규): 끝단 급전 와이어 안테나. EFHW 멀티밴드, 싱글밴드, 코일 포함(49:1 또는 64:1), 비공진 와이어(9:1 또는 4:1). 6가지 설치 방식(아래에서 경사, 위에서 경사, 수직, 역L, 역U, 일직선). 0.05 λ 카운터포이즈 또는 동축 외피, 콘덴서, 끝단 전압, TF5NN 모델과 NEC로 계산한 밴드별 SWR. **길이 맞추기(NEC)**.
+- **연결 버튼**: 와이어 안테나와 다른 와이어 페이지(다이폴, OCF/Windom, T2FD, G5RV, 델타, 쿼드, 루프, Skywire, Moxon, Hexbeam)에서 발룬, 초크(FT 토로이드), 1/4 파장(RG 케이블), 부하 페이지가 미리 채워진 상태로 열립니다. 「‹ 돌아가기」 포함.
+- **디스콘**: HF 계열에서 VHF 계열로 이동.
+
 ## 1.5.5 새 기능
 
 - **계산기 > HEN**: 카드가 NEC 검증과 같이 수평 편파를 표시합니다(이전에는 수직).
