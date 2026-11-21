@@ -6788,3 +6788,4 @@ Solo il modello di questa scheda (il modello aperto non si usa). ROS riferito a 
 La formula di Cebik vale per la spira da sola: con riflettore o direttore il radiatore risuona piu' in basso. Meglio Automatico o NEC.
 Si parte da un'antenna gia' costruita o comprata: le misure reali (rilievo) si scrivono nei fili del modello NEC. Cosi' com'e' il calcolo non e' conforme, perche' il NEC non vede il boom. Il pulsante toglie la correzione del boom elemento per elemento e crea il modello elettrico idoneo alla simulazione; il rilievo resta in un file a parte.
 ⚠ La correzione vale per elementi diritti che attraversano il boom; per elementi isolati o su staffa vale la frazione indicata (passante isolato meta', staffa 0,65). Il file del rilievo non viene sovrascritto: il modello elettrico si apre come file nuovo ("... elettrico ....nec").
+polarizzazione orizzontale

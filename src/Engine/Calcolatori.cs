@@ -1181,7 +1181,7 @@ namespace YaNec.Engine
             o.Card("Lati verticali", Calcolatori.N(H, 3) + " m", "lambda/2", true);
             o.Card("Larghezza", Calcolatori.N(W, 3) + " m", "lambda/6");
             o.Card("Barra di alimentazione", Calcolatori.N(pf, 3) + " m dal basso", Calcolatori.N(P("p"), 2) + " lambda");
-            o.Card("Guadagno dichiarato", "2,5-3 dBd", "polarizzazione verticale");
+            o.Card("Guadagno dichiarato", "2,5-3 dBd", "polarizzazione orizzontale");
             o.Formula = "Formule (hamuniverse, Hentenna di origine giapponese): lati lambda/2, alto e basso lambda/6, barra di alimentazione a circa lambda/10 dal basso; " +
                 "si regola spostando insieme i due punti della barra. Le misure \"vengono un po' lunghe\": il NEC lo verifica.";
             NecDeck d = new NecDeck(Title + " " + Calcolatori.N(f, 3) + " MHz");

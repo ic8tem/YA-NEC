@@ -5105,3 +5105,4 @@ risonanza delle trappole	トラップの共振
 trappola	トラップ
 Solo il modello di questa scheda (il modello aperto non si usa). ROS riferito a Z0 del programma; sopra i 28 MHz anche angoli a -3 dB e distanze di stack DL6WU.	このカードのモデルのみ (開いているモデルは使いません)。SWR はプログラムの Z0 基準。28 MHz 以上では -3 dB 角度と DL6WU スタック間隔も。
 La formula di Cebik vale per la spira da sola: con riflettore o direttore il radiatore risuona piu' in basso. Meglio Automatico o NEC.	Cebik の式は単独ループ用です。反射器や導波器があると放射器の共振は低くなります。自動または NEC を推奨。
+polarizzazione orizzontale	水平偏波

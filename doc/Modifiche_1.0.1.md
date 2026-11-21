@@ -216,3 +216,4 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
 
 ## 1.5.4
 - 21/11/2026 16:55, IC8TEM («ti sto chiedendo da ore di compilare e pubblicare la nuova versione»): versione 1.5.4. VERSION, note di rilascio (.github/release.md), README in 8 lingue, paragrafo 26.4 del manuale (avviso «nessuna sorgente» nella barra di stato, fuoco delle finestre di errore, traduzione della pagina Boom, videocorso di 30 lezioni), PDF dei tre documenti rigenerati. Anteprima add2571: prove dell'interfaccia 418/418.
+- 21/11/2026 17:40 (visto preparando la lezione 31): Calcolatori > VHF > HEN, la scheda «Guadagno dichiarato» diceva «polarizzazione verticale», ma la Hentenna con i lati lunghi verticali e' polarizzata orizzontalmente (lo dice anche la verifica NEC della stessa pagina, «pol. H»). Corretta in «polarizzazione orizzontale», tradotta in 36 lingue.
