@@ -1,55 +1,55 @@
 1
 00:00:00,000 --> 00:00:04,950
-Lezione 27: stack su due frequenze e in HF, Monte Carlo, aggiornamento
+Lezione 27: stack, Monte Carlo, aggiornamento
 
 2
-00:00:05,000 --> 00:00:16,584
+00:00:05,000 --> 00:00:16,620
 Corso YA-NEC, lezione 27: stack su due frequenze e in HF, Monte Carlo, aggiornamento e segnalazione di un problema.
 
 3
-00:00:16,634 --> 00:00:30,020
+00:00:16,670 --> 00:00:30,364
 Rumore/GT/Stack, Distanze di stack VHF. Il modello e' la 7 elementi DK7ZB per EME a 144 MHz.
 
 4
-00:00:30,070 --> 00:00:45,144
+00:00:30,414 --> 00:00:45,521
 Novita' della 1.5: l'impedenza di riferimento (qui 28 Ω, quella dell'antenna) e due frequenze, 144,1 e 145 MHz. Porto il ROS attivo massimo a 2: a 145 MHz la singola ha gia' 1,71.
 
 5
-00:00:45,194 --> 00:01:00,877
+00:00:45,571 --> 00:01:01,254
 Caso peggiore delle due: 0,55 volte la distanza DL6WU, 1,566 m. Lo stack da' 15,1 dBi con i lobi a −13,4 dB; alla distanza DL6WU sarebbero 16,3 dBi ma con i lobi a −11,6 dB. La matrice mostra l'accoppiamento tra le porte.
 
 6
-00:01:00,927 --> 00:01:27,322
+00:01:01,304 --> 00:01:27,903
 Stack HF sopra il terreno, voce Distanze di stack HF + HFTA. Esempio: la Yagi ARRL 520-40H a 20 m. Si danno la quota della piu' bassa, le distanze da provare e gli angoli di partenza voluti, da 5 a 15 gradi.
 
 7
-00:01:27,372 --> 00:01:44,856
+00:01:27,953 --> 00:01:45,437
 Il NEC calcola ogni distanza sopra il terreno del modello. Proposta: 18,47 m, cioe' 0,875 λ, con l'antenna alta a 33,5 m: 17,12 dBi a 10 gradi, 2,59 dB in piu' della singola a 15 m. Il grafico confronta in fase, solo sopra, solo sotto e controfase.
 
 8
-00:01:44,906 --> 00:02:04,389
+00:01:45,487 --> 00:02:04,970
 Come si legge il grafico: tutte in fase (blu) ha il massimo a 10 gradi e va a zero verso 25. Lì servono le altre combinazioni: controfase (arancio) dà circa 16 dBi tra 22 e 30 gradi, solo sotto circa 14,5 dBi tra 12 e 22. Con un commutatore lo stack copre anche gli angoli alti.
 
 9
-00:02:04,439 --> 00:02:06,950
+00:02:05,020 --> 00:02:07,542
 Adesso tre antenne una sopra l'altra: clic su 3 e di nuovo Calcola lo stack HF.
 
 10
-00:02:07,000 --> 00:02:20,950
+00:02:07,592 --> 00:02:21,542
 Proposta: 13,2 m, cioè 0,625 λ, con le antenne a 15, 28,2 e 41,4 m: 18,14 dBi a 9 gradi, 3,61 dB in più della singola. Con tre antenne il grafico confronta tutte in fase, solo sopra e solo sotto.
 
 11
-00:02:21,000 --> 00:02:37,933
+00:02:21,592 --> 00:02:38,690
 Variabili e ottimizzazione, Ottimizzatore, Monte Carlo: parte da piu' punti a caso e controlla i candidati migliori con copie che simulano le tolleranze di costruzione. Vince il candidato con piu' copie entro le soglie.
 
 12
-00:02:37,983 --> 00:02:52,351
+00:02:38,740 --> 00:02:53,224
 Impostazioni, Aggiornamento: Forza l'aggiornamento controlla subito il GitHub, senza aspettare i 3 minuti; Reinstalla la versione attuale la riscarica.
 
 13
-00:02:52,401 --> 00:03:04,418
+00:02:53,274 --> 00:03:05,291
 Segnala un problema: scrivi cosa e' successo e YA-NEC prepara uno zip con il modello aperto e il registro di oggi. Niente indirizzi IP, e-mail o nomi utente nei file.
 
 14
-00:03:04,468 --> 00:03:09,419
+00:03:05,341 --> 00:03:10,291
 Fine della lezione 27. Il capitolo 26 del manuale elenca tutte le novita' della 1.5.

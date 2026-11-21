@@ -1,91 +1,91 @@
 1
-00:00:00,000 --> 00:00:04,789
+00:00:00,000 --> 00:00:04,950
 Lesson 12: loaded loop, toroids, L-C network and model objects
 
 2
-00:00:04,839 --> 00:00:15,933
+00:00:05,000 --> 00:00:48,535
 YA-NEC course, lesson 12: the loaded loop, toroids, the L-C network and the model objects. Calculators, Magnetic loop.
 
 3
-00:00:15,983 --> 00:00:25,281
+00:00:48,585 --> 00:00:57,709
 A 1 m loop of 22 mm copper tube for 40 m: radiation resistance 6 milliohm, loss resistance 31.6 milliohm.
 
 4
-00:00:25,331 --> 00:00:37,837
+00:00:57,759 --> 00:01:10,279
 So the efficiency is only 16 % (-7.9 dB). 2.45 uH tuned by 205 pF; Q 2900, bandwidth 4.9 kHz.
 
 5
-00:00:37,887 --> 00:00:48,123
+00:01:10,329 --> 00:01:20,420
 And with 100 W: 52 A in the loop and 5.6 kV across the capacitor. Formulas from the ARRL Antenna Book and W5QJR.
 
 6
-00:00:48,173 --> 00:00:59,194
+00:01:20,470 --> 00:01:33,844
 'Create the NEC model and check it'.
 
 7
-00:00:59,244 --> 00:01:09,800
-The NEC model is fed directly in the loop, with the wires set to 'Lossless': 5.55 dBi over ground, efficiency 100 %. Too good to be true.
+00:01:33,894 --> 00:01:42,511
+The NEC model is fed directly in the loop and already has copper wires, like the calculator: -0.13 dBi over ground.
 
 8
-00:01:09,850 --> 00:01:19,428
-Wires: Copper.
+00:01:42,561 --> 00:01:53,960
+For comparison, Wires: Lossless.
 
 9
-00:01:19,478 --> 00:01:30,442
-With copper losses the gain drops to -0.13 dBi: almost 6 dB lost in the metal, as the calculator said. Always set the material on small loops.
+00:01:54,010 --> 00:02:04,348
+Lossless, the gain rises to 5.55 dBi: almost 6 dB are lost in the metal, as the calculator said. Always set the material on small loops.
 
 10
-00:01:30,492 --> 00:01:41,947
+00:02:04,398 --> 00:02:18,195
 Now matching: the L-C network calculator.
 
 11
-00:01:41,997 --> 00:01:54,408
+00:02:18,245 --> 00:02:30,714
 Load 12 - j30 ohm at 7.1 MHz onto 50 ohm: series coil 1.15 uH, shunt capacitor 798 pF; the check gives 50 + j0 ohm.
 
 12
-00:01:54,458 --> 00:01:59,469
+00:02:30,764 --> 00:02:38,041
 Toroids: iron powder (T).
 
 13
-00:01:59,519 --> 00:02:11,028
+00:02:38,091 --> 00:02:49,571
 Mix 2 (red), T-68 core, 2.45 uH wanted: 21 turns, 2.51 uH, mix good from 0.25 to 10 MHz.
 
 14
-00:02:11,078 --> 00:02:16,098
+00:02:49,621 --> 00:02:56,903
 Ferrite toroids (FT).
 
 15
-00:02:16,148 --> 00:02:29,163
+00:02:56,953 --> 00:03:09,967
 FT-240 in mix 43, 12 turns: 155 uH, 6.9 kohm at 7.1 MHz - a good common-mode choke. AL has a +-25 % tolerance.
 
 16
-00:02:29,213 --> 00:02:34,228
+00:03:10,017 --> 00:03:17,281
 Baluns and un-uns: every ratio, with a construction drawing.
 
 17
-00:02:34,278 --> 00:02:46,347
+00:03:17,331 --> 00:03:29,880
 4:1 current balun (Guanella) on two FT-240-43: 2 x 3 bifilar turns, 1 mm copper. The warning: above 30 MHz the turn capacitance makes it worse.
 
 18
-00:02:46,397 --> 00:02:53,480
+00:03:29,930 --> 00:03:42,156
 Last: the model objects, under the wire table of the 3D structure tab.
 
 19
-00:02:53,530 --> 00:03:00,552
+00:03:42,206 --> 00:03:51,895
 Lines: NEC TL cards, as in lessons 2 and 3.
 
 20
-00:03:00,602 --> 00:03:08,552
+00:03:51,945 --> 00:04:02,176
 Transformers: an impedance ratio between two points of the model, for example the 1:6 of the Waller Flag.
 
 21
-00:03:08,602 --> 00:03:16,182
+00:04:02,226 --> 00:04:12,196
 L networks and phasing networks: matching and phasing built into the model.
 
 22
-00:03:16,232 --> 00:03:24,982
+00:04:12,246 --> 00:04:20,996
 And the sources: voltage or current. With 'Current sources' the program derives the voltages, as for the four-square.
 
 23
-00:03:25,032 --> 00:03:35,137
+00:04:21,046 --> 00:04:31,239
 Loop, toroids, L-C network, model objects: the components around the antenna. Next lesson: the other HF functions. 73 de IC8TEM

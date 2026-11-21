@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 29 lezioni brevi (3-5 minuti), in italiano e in inglese, girate con YA-NEC 1.0.4 e successive (le lezioni 23-25 con la 1.3, la 26 con la 1.5; la 1, 15, 27 e 28 con la 1.5.2, con le linguette riordinate; la 0, 3, 5, 13, 14, 19, 22 e 24 con l'anteprima 1.5.3, con Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube). Le lezioni escono man mano: quelle senza collegamento sono in preparazione.
+Un corso completo in 29 lezioni brevi (3-5 minuti), in italiano e in inglese. Girate con l'anteprima 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi): 0, 1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 13, 14, 17, 19, 20, 22, 24 e 27; le altre sono in rifacimento con la 1.5.3. Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -99,7 +99,7 @@ HB9CV (Rudolf Baumgartner HB9CV) a 145 MHz con la linea di fase incrociata; Quad
 
 ### Lezione 10 - Antenne riceventi: Beverage ed EWE
 
-Beverage da 175 m per i 160 m e la EWE di Floyd Koontz WA2WVL (QST febbraio 1995) nella linguetta Antenne riceventi: modello NEC su terreno di Sommerfeld, RDF e DMF, ottimizza per F/B sulla terminazione, preamplificatore consigliato e graduatoria RDF con le misure IV3PRK e Hi-Z.
+Beverage da 175 m per i 160 m e la EWE di Floyd Koontz WA2WVL (QST febbraio 1995) nei Calcolatori, famiglia Antenne riceventi: modello NEC su terreno di Sommerfeld, RDF e DMF, ottimizza per F/B sulla terminazione, preamplificatore consigliato e graduatoria RDF con le misure IV3PRK e Hi-Z.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_10_beverage_ewe_IT.srt)
 

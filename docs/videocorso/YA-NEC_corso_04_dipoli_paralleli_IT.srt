@@ -1,59 +1,59 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lezione 4: i dipoli paralleli
 
 2
-00:00:04,000 --> 00:00:13,077
+00:00:05,000 --> 00:00:19,946
 Corso YA-NEC, lezione 4: i dipoli paralleli - piu' bande su un solo coassiale. Calcolatori, Dipolo multibanda.
 
 3
-00:00:13,127 --> 00:00:24,611
+00:00:19,996 --> 00:00:31,480
 Modo 'bacchette parallele': un dipolo per banda, uno sotto l'altro, tutti sulla stessa alimentazione. Qui 20, 15 e 10 m, filo da 2 mm, a 10 cm, spazio libero.
 
 4
-00:00:24,661 --> 00:00:33,843
+00:00:31,530 --> 00:00:40,550
 'Accorda e verifica' accorda tutte le lunghezze insieme, perche' ogni dipolo sposta gli altri.
 
 5
-00:00:33,893 --> 00:00:41,843
+00:00:40,600 --> 00:00:48,550
 Risultati per banda: 20 m 10,27 m, ROS 1,21 a centro banda; 15 m 6,87 m, ROS 1,03; 10 m 5,01 m, ROS 1,19.
 
 6
-00:00:41,893 --> 00:00:53,377
+00:00:48,600 --> 00:01:00,084
 La colonna 'ruba': in 10 m il dipolo dei 15 porta il 72 % della corrente di quello dei 10. In 10 m gli estremi di banda arrivano a ROS 6: la banda si stringe.
 
 7
-00:00:53,427 --> 00:01:11,842
+00:01:00,134 --> 00:01:15,424
 Ora aggiungiamo i 40 m e riaccordiamo.
 
 8
-00:01:11,892 --> 00:01:22,575
+00:01:15,474 --> 00:01:26,158
 Ecco la trappola dei dipoli paralleli: in 15 m il dipolo dei 40 e' lungo tre mezze onde e risuona anche lui. Porta il 132 % della corrente del 15.
 
 9
-00:01:22,625 --> 00:01:33,309
-Il ROS in 15 m sale a 1,69 e gli estremi dei 10 m a 7,9. I rimedi classici: un altro angolo per il filo dei 15, piu' distanza, oppure niente 15 m.
+00:01:26,208 --> 00:01:37,691
+Il ROS in 15 m sale a 1,69 e in 10 m l'inizio banda arriva a ROS 65. I rimedi classici: un altro angolo per il filo dei 15, piu' distanza, oppure niente 15 m.
 
 10
-00:01:33,359 --> 00:01:42,606
+00:01:37,741 --> 00:01:48,981
 Secondo modo: la manica aperta (open sleeve), come la descrive Tom Schiller N6BT.
 
 11
-00:01:42,656 --> 00:01:52,473
+00:01:49,031 --> 00:01:58,848
 Si alimenta solo il dipolo dei 20 m. Gli elementi dei 15 e dei 10 sono parassiti, vicinissimi, nello stesso piano: qui tubi da 20 mm.
 
 12
-00:01:52,523 --> 00:02:20,714
+00:01:58,898 --> 00:02:07,011
 'Accorda e verifica' ora cerca lunghezze e distanze delle maniche.
 
 13
-00:02:20,764 --> 00:02:29,114
+00:02:07,061 --> 00:02:15,411
 Maniche a 16 e 10 cm. ROS a centro banda: 20 m 1,50, 15 m 1,09, 10 m 1,14. Nessun cavo agli elementi parassiti.
 
 14
-00:02:29,164 --> 00:02:39,514
+00:02:15,461 --> 00:02:25,811
 Stessa regola di prima: le bande si influenzano, quindi il simulatore le accorda insieme, in pochi secondi invece che in pomeriggi sul tetto.
 
 15
-00:02:39,564 --> 00:02:45,514
+00:02:25,861 --> 00:02:31,812
 Dipoli paralleli e manica aperta: tutto da un solo calcolatore. Prossima lezione: le trappole e il dipolo trappolato. 73 de IC8TEM

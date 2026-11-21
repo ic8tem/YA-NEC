@@ -1,59 +1,59 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lesson 17: VHF antennas on a roof
 
 2
-00:00:04,000 --> 00:00:15,583
+00:00:05,000 --> 00:00:20,392
 YA-NEC course, lesson 17: VHF antennas on a roof. Examples: the DK7ZB 7-element EME Yagi for 144 MHz, from an MMANA file.
 
 3
-00:00:15,633 --> 00:00:26,240
+00:00:20,442 --> 00:00:30,846
 In free space: 28.2 + j0.8 ohm (a 28 ohm design), 13.35 dBi, F/B 23.9 dB.
 
 4
-00:00:26,290 --> 00:00:40,465
+00:00:30,896 --> 00:00:46,607
 Calculators, Tools, 'Antenna on a roof (slab)'.
 
 5
-00:00:40,515 --> 00:00:48,904
+00:00:46,657 --> 00:00:55,220
 Roof slab 15 m above the ground. The model is at z = 0, so the tool warns: the antenna touches the slab.
 
 6
-00:00:48,954 --> 00:00:55,097
+00:00:55,270 --> 00:01:04,898
 'Height to add to the model': 3 m above the slab.
 
 7
-00:00:55,147 --> 00:01:00,098
+00:01:04,948 --> 00:01:09,898
 18 m from the ground in total, 8.65 wavelengths.
 
 8
-00:01:00,148 --> 00:01:21,168
+00:01:09,948 --> 00:01:33,562
 'Compute both cases (NEC)'.
 
 9
-00:01:21,218 --> 00:01:38,378
+00:01:33,612 --> 00:01:50,641
 HF case, the real ground under the building at 18 m: 19.28 dBi at 1.7 degrees elevation. VHF case, the concrete slab under the antenna (ITU-R P.2040): 18.19 dBi at 9.1 degrees.
 
 10
-00:01:38,428 --> 00:01:48,628
+00:01:50,691 --> 00:02:00,964
 The impedance hardly changes - 28.2 or 28.1 ohm - but the elevation of the main lobe does: 1.7 or 9.1 degrees, and 1 dB of gain.
 
 11
-00:01:48,678 --> 00:01:58,828
+00:02:01,014 --> 00:02:11,165
 Reality sits in between: the higher the frequency and the larger the roof, the more the slab case applies. For EME at moonrise it matters.
 
 12
-00:01:58,878 --> 00:02:16,024
+00:02:11,215 --> 00:02:40,740
 Case 'VHF/UHF: slab', 'Open as model', Patterns.
 
 13
-00:02:16,074 --> 00:02:23,891
+00:02:40,790 --> 00:02:48,607
 Elevation over the slab: the lobe is lifted from the horizon, with the first reflection lobes above it.
 
 14
-00:02:23,941 --> 00:02:35,785
+00:02:48,657 --> 00:03:00,079
 The ground menu also has the two concrete slab entries (VHF-UHF ITU-R P.2040, HF Perotoni 2019), whose values follow the frequency.
 
 15
-00:02:35,835 --> 00:02:48,297
+00:03:00,129 --> 00:03:12,823
 A roof is not free space and not plain ground: two cases, side by side, in one click. Next lesson: VHF stacks, noise and G/T. 73 de IC8TEM

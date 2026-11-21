@@ -1,67 +1,67 @@
 1
-00:00:00,000 --> 00:00:03,950
-Lezione 11: Four-square e altre riceventi
+00:00:00,000 --> 00:00:04,950
+Lezione 11: four-square e altre riceventi
 
 2
-00:00:04,000 --> 00:00:20,464
+00:00:05,000 --> 00:00:27,988
 Corso YA-NEC, lezione 11: la Four-square e le altre riceventi. Prima la Four-square, nei Calcolatori.
 
 3
-00:00:20,514 --> 00:00:29,731
+00:00:28,038 --> 00:00:37,255
 Quattro verticali lambda/4 per i 7,1 MHz agli angoli di un quadrato di 10,56 m, 4 radiali sollevati ciascuna, come in ON4UN.
 
 4
-00:00:29,781 --> 00:00:41,731
+00:00:37,305 --> 00:00:49,255
 Alimentate con sorgenti di corrente: 0, -90, -90 e -180 gradi. 4,1 dBi su terreno medio, F/B 19,4 dB, apertura 100 gradi; i pulsanti 0-90-180-270 cambiano direzione.
 
 5
-00:00:41,781 --> 00:00:51,731
+00:00:49,305 --> 00:00:59,256
 La tabella mostra le impedenze risultanti: da 22 a 56 ohm, tutte diverse. Per questo una four-square vuole una vera rete di sfasamento.
 
 6
-00:00:51,781 --> 00:00:59,861
-Torniamo alla linguetta Antenne riceventi: la Flag (K6SE, W7IUV).
+00:00:59,306 --> 00:01:08,084
+Ora la famiglia Antenne riceventi dei Calcolatori: la Flag (K6SE, W7IUV).
 
 7
-00:00:59,911 --> 00:01:39,542
+00:01:08,134 --> 00:01:58,017
 Un rettangolo terminato da 8,8 x 4,28 m, resistenza da 937 ohm, trasformatore 16:1.
 
 8
-00:01:39,592 --> 00:01:47,542
+00:01:58,067 --> 00:02:06,017
 RDF 7,8 dB, come la misura di IV3PRK (7,8-8,0); F/B 38,5 dB, guadagno -30 dBi: 20 dB di preamplificatore.
 
 9
-00:01:47,592 --> 00:02:13,606
+00:02:06,067 --> 00:02:38,448
 'Ottimizza per F/B'.
 
 10
-00:02:13,656 --> 00:02:18,273
+00:02:38,498 --> 00:02:43,115
 950 ohm: F/B 39,2 dB. La Flag e' gia' quasi al massimo.
 
 11
-00:02:18,323 --> 00:02:25,406
+00:02:43,165 --> 00:02:51,699
 Waller Flag (NX4D, N4IS): due Flag a 7,73 m, sfasate con linee - il modello IV3PRK del 2007.
 
 12
-00:02:25,456 --> 00:03:16,091
+00:02:51,749 --> 00:03:47,926
 Carichi da 600 ohm, linee da 100 ohm, quella dietro incrociata: la seconda Flag cancella quello che la prima sente ancora da dietro.
 
 13
-00:03:16,141 --> 00:03:22,892
+00:03:47,976 --> 00:03:54,726
 RDF 11,6 dB (IV3PRK: 11,84) - meglio di una Beverage da 175 m - in un giardino di 12 m.
 
 14
-00:03:22,942 --> 00:03:28,225
+00:03:54,776 --> 00:04:00,060
 Il prezzo e' il segnale: -58,5 dBi. Servono due preamplificatori.
 
 15
-00:03:28,275 --> 00:03:34,358
+00:04:00,110 --> 00:04:06,193
 La graduatoria con le antenne calcolate in questa lezione e nella precedente.
 
 16
-00:03:34,408 --> 00:03:45,159
+00:04:06,243 --> 00:04:16,993
 RDF da 5 dB della verticale a oltre 13 dB delle Beverage lunghe e delle schiere Hi-Z: si sceglie in base a spazio, spesa e quanto si vuole sentire.
 
 17
-00:03:45,209 --> 00:03:51,159
+00:04:17,043 --> 00:04:22,993
 Four-square, Flag, Waller Flag: in ricezione conta l'RDF, non il guadagno. Prossima lezione: loop caricati, toroidi e oggetti del modello. 73 de IC8TEM

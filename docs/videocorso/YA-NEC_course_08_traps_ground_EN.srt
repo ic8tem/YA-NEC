@@ -1,63 +1,63 @@
 1
-00:00:00,000 --> 00:00:03,950
+00:00:00,000 --> 00:00:04,950
 Lesson 8: HF beam with traps and ground
 
 2
-00:00:04,000 --> 00:00:14,088
+00:00:05,000 --> 00:00:20,029
 YA-NEC course, lesson 8: an HF beam with traps, over real ground. Calculators, Multiband Yagi.
 
 3
-00:00:14,138 --> 00:00:22,888
+00:00:20,079 --> 00:00:28,829
 Each band has its own driven dipole and one reflector or director; the dipoles sit on parallel rods, all on one feed.
 
 4
-00:00:22,938 --> 00:00:28,323
+00:00:28,879 --> 00:00:37,007
 'Proposal: 6 bands from 40/20/15/10 m'.
 
 5
-00:00:28,373 --> 00:00:40,573
+00:00:37,057 --> 00:00:49,126
 Four dipoles - 40, 20, 15, 10 m - plus two traps: on the 15 m dipole for 30 m, on the 10 m dipole for 17 m. Six bands from four rods.
 
 6
-00:00:40,623 --> 00:00:48,031
+00:00:49,176 --> 00:00:56,714
 40, 20, 15 and 10 m also get a reflector; 30 and 17 m work as trapped dipoles only.
 
 7
-00:00:48,081 --> 00:00:53,574
+00:00:56,764 --> 00:01:05,336
 Average ground (Sommerfeld) at 10 m: real ground, not free space.
 
 8
-00:00:53,624 --> 00:01:00,774
+00:01:05,386 --> 00:01:18,610
 'Tune and verify': all lengths, the trap tails and the reflector spacings are tuned together.
 
 9
-00:01:00,824 --> 00:01:10,237
-With 27 wires and 207 segments over Sommerfeld ground this takes about four minutes - we skip ahead.
+00:01:18,660 --> 00:01:28,074
+With 27 wires and 207 segments over Sommerfeld ground this takes almost five minutes - we skip ahead.
 
 10
-00:01:10,287 --> 00:01:26,196
-Results per band. Centre SWR between 1.13 and 1.35 on all six bands: 40 m 9.2 dBi, 20 m 11.4 dBi, 15 m 6.9, 10 m 8.7 dBi.
+00:01:28,124 --> 00:01:43,932
+Results per band. Centre SWR between 1.13 and 1.30 on all six bands: 40 m 9.2 dBi, 20 m 11.4 dBi, 15 m 6.9, 10 m 8.7 dBi.
 
 11
-00:01:26,246 --> 00:01:38,235
+00:01:43,982 --> 00:01:56,145
 F/B: 15 dB on 20 m, 14 on 15 m, 18 on 10 m, but only 8.4 dB on 40 m and almost nothing on the trapped 30 and 17 m.
 
 12
-00:01:38,285 --> 00:01:49,132
+00:01:56,195 --> 00:02:07,042
 The band edges tell the truth: on 15 m SWR 7 and 3.9, on 10 m up to 27. Too many elements interact in a small space.
 
 13
-00:01:49,182 --> 00:01:59,891
+00:02:07,092 --> 00:02:17,903
 The 'steals' column shows why: on 17 m the 10 m reflector carries 180 % of the current, on 30 m the 15 m reflector 137 %.
 
 14
-00:01:59,941 --> 00:02:08,956
+00:02:17,953 --> 00:02:30,267
 'Open as model' puts the whole beam in the 3D structure, ready for the Optimizer.
 
 15
-00:02:09,006 --> 00:02:16,156
+00:02:30,317 --> 00:02:37,467
 Six bands on one boom are possible, but the simulator shows the compromises before you build.
 
 16
-00:02:16,206 --> 00:02:28,246
+00:02:37,517 --> 00:02:49,470
 Traps and real ground: the multiband beam with all its compromises. Next lesson: other beams - HB9CV, Quad, Hexbeam, LPDA. 73 de IC8TEM

@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 29 short lessons (3-5 minutes), in Italian and English, recorded with YA-NEC 1.0.4 and later (lessons 23-25 with 1.3, 26 with 1.5; 1, 15, 27 and 28 with 1.5.2, with the reorganised tabs; 0, 3, 5, 13, 14, 19, 22 and 24 with the 1.5.3 preview, with Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube). Lessons are released one after another: those without a link are in preparation.
+A complete course in 29 short lessons (3-5 minutes), in Italian and English. Recorded with the 1.5.3 preview (Calculators in families, Lobes and Parameters in the Patterns band): 0, 1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 13, 14, 17, 19, 20, 22, 24 and 27; the others are being redone with 1.5.3. Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -99,7 +99,7 @@ HB9CV (Rudolf Baumgartner HB9CV) at 145 MHz with its crossed phase line; 2 and 3
 
 ### Lesson 10 - Receiving antennas: Beverage and EWE
 
-A 175 m Beverage for 160 m and the EWE by Floyd Koontz WA2WVL (QST February 1995) in the Receiving antennas tab: NEC model over Sommerfeld ground, RDF and DMF, optimize the termination for F/B, suggested preamplifier and the RDF ranking with the IV3PRK and Hi-Z measurements.
+A 175 m Beverage for 160 m and the EWE by Floyd Koontz WA2WVL (QST February 1995) in the Calculators, Receiving antennas family: NEC model over Sommerfeld ground, RDF and DMF, optimize the termination for F/B, suggested preamplifier and the RDF ranking with the IV3PRK and Hi-Z measurements.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_10_beverage_ewe_EN.srt)
 

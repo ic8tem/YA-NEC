@@ -1,111 +1,107 @@
 1
-00:00:00,000 --> 00:00:04,309
-YA-NEC video course - lesson 2: single-element wire antennas.
+00:00:00,000 --> 00:00:04,950
+Lesson 2: single-element wire antennas
 
 2
-00:00:04,359 --> 00:00:11,842
+00:00:05,000 --> 00:00:12,483
 YA-NEC course, lesson 2: single-element wire antennas. Everything starts from the Calculators tab.
 
 3
-00:00:11,892 --> 00:00:21,538
+00:00:12,533 --> 00:00:30,361
 Dipoles, type Inverted V: here at 7.1 MHz, apex at 12 m, 120 degrees between the legs.
 
 4
-00:00:21,588 --> 00:00:32,559
+00:00:30,411 --> 00:00:41,324
 The real-time calculation below runs the NEC on every change: SWR 1.42, 5.36 dBi, maximum at 62 degrees - an NVIS-friendly antenna.
 
 5
-00:00:32,609 --> 00:00:45,194
-Delta loop: since 1.0.11 the card has three sections. Dimensions: frequency 14.150 MHz, lowest point at 8 m. Shape: equilateral, apex up.
+00:00:41,374 --> 00:00:53,846
+Delta loop, equilateral, apex up, fed in the centre of the bottom side. Frequency 14.150 MHz, base at 8 m.
 
 6
-00:00:45,244 --> 00:00:57,194
-Balun / feed point: each tile shows where the balun goes and the polarization it gives. Lambda/4 along the side: vertical. Back to the centre of the horizontal side.
-
-7
-00:00:57,244 --> 00:01:07,259
+00:00:53,896 --> 00:01:07,195
 'Bring to resonance (NEC)'.
 
-8
-00:01:07,309 --> 00:01:18,768
+7
+00:01:07,245 --> 00:01:18,732
 Perimeter 22.63 m, sides 7.54 m. The NEC confirms about 120 ohm: SWR 2.4 on 50 ohm, too high.
 
-9
-00:01:18,818 --> 00:01:24,834
+8
+00:01:18,782 --> 00:01:27,675
 Open as model: the delta goes into the 3D structure.
 
-10
-00:01:24,884 --> 00:01:31,636
+9
+00:01:27,725 --> 00:01:34,550
 120.2 ohm, 7.19 dBi at 28 degrees, horizontal polarization.
 
-11
-00:01:31,686 --> 00:01:44,121
+10
+00:01:34,600 --> 00:01:54,897
 The classic remedy: a quarter wave of 75 ohm coax. Calculators, RG cables, frequency 14.150 MHz.
 
-12
-00:01:44,171 --> 00:01:49,122
+11
+00:01:54,947 --> 00:02:03,704
 'from model' takes the impedance of the open model: 120 ohm.
 
-13
-00:01:49,172 --> 00:02:05,780
+12
+00:02:03,754 --> 00:02:20,420
 Ideal Z0 = sqrt(120 x 50) = 77.5 ohm: RG-59 is perfect. Cut length 3.50 m (VF 0.66), SWR 1.05, loss 0.16 dB.
 
-14
-00:02:05,830 --> 00:02:12,857
+13
+00:02:20,470 --> 00:02:32,138
 'Put the line in the open model (TL)': the cable becomes a NEC transmission line.
 
-15
-00:02:12,907 --> 00:02:20,779
+14
+00:02:32,188 --> 00:02:40,090
 Now the model, cable included, shows 46.8 ohm and SWR 1.07: the delta loop is matched.
 
-16
-00:02:20,829 --> 00:02:27,160
+15
+00:02:40,140 --> 00:02:49,117
 Verticals: lambda/4 with radials on the ground, 7.1 MHz, 16 radials.
 
-17
-00:02:27,210 --> 00:02:39,178
+16
+00:02:49,167 --> 00:03:01,439
 10.04 m radiator. With 16 radials the ground loss is about 15 ohm: efficiency 71 % (ON4UN table 9-1), impedance about 51 ohm.
 
-18
-00:02:39,228 --> 00:02:43,252
+17
+00:03:01,489 --> 00:03:06,346
 5/8 wave for 145 MHz.
 
-19
-00:02:43,302 --> 00:02:51,640
+18
+00:03:06,396 --> 00:03:14,866
 1.228 m whip and a 602 nH coil at the base: more gain at low angle than the lambda/4.
 
-20
-00:02:51,690 --> 00:02:56,275
+19
+00:03:14,916 --> 00:03:19,806
 Coil-loaded vertical: 6 m whip for 3.6 MHz.
 
-21
-00:02:56,325 --> 00:03:04,663
+20
+00:03:19,856 --> 00:03:28,310
 32 uH at the base, but only 13 % efficiency: a short vertical on 80 m pays a lot in coil and ground losses.
 
-22
-00:03:04,713 --> 00:03:14,273
+21
+00:03:28,360 --> 00:03:37,935
 J-pole for 145 MHz: 147.3 cm and 49.1 cm, feed 32 mm from the bottom.
 
-23
-00:03:14,323 --> 00:03:20,851
+22
+00:03:37,985 --> 00:03:44,352
 SWR 1.35. Warning: without a common-mode choke the coax radiates too.
 
-24
-00:03:20,901 --> 00:03:30,318
+23
+00:03:44,402 --> 00:03:57,818
 Last one: the multiband vertical like the DX Commander. 'Check all bands' runs a sweep on every band with all elements present.
 
-25
-00:03:30,368 --> 00:04:35,212
+24
+00:03:57,868 --> 00:05:25,709
 Each band is computed in the background, about ten seconds each: you can keep working in the other tabs.
 
-26
-00:04:35,262 --> 00:04:44,745
+25
+00:05:25,759 --> 00:05:35,243
 The table: minimum SWR, frequency, gain at 10 degrees, efficiency, and which element 'steals' current from the one in resonance.
 
-27
-00:04:44,795 --> 00:04:51,853
+26
+00:05:35,293 --> 00:05:42,409
 On 20 m, for example, the 30 m wire takes 35 % of the current: trim one element at a time.
 
-28
-00:04:51,903 --> 00:04:59,950
+27
+00:05:42,459 --> 00:05:50,143
 Inverted V, delta loop with its quarter-wave transformer, verticals: all from the calculators. 73 de IC8TEM

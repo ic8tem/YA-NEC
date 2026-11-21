@@ -1,63 +1,63 @@
 1
-00:00:00,000 --> 00:00:04,149
-Lesson 7: simple HF beams - Moxon and 2-element Yagi
+00:00:00,000 --> 00:00:04,950
+Lesson 7: simple HF beams: Moxon and 2-element Yagi
 
 2
-00:00:04,199 --> 00:00:14,271
+00:00:05,000 --> 00:00:20,006
 YA-NEC course, lesson 7: a simple HF beam from the calculators - the Moxon and the 2-element Yagi.
 
 3
-00:00:14,321 --> 00:00:26,397
+00:00:20,056 --> 00:00:32,161
 Moxon rectangle (Les Moxon G6XN; dimensions from L.B. Cebik's MOXGEN, as used by DK7ZB). Frequency 14.15 MHz, 2 mm wire.
 
 4
-00:00:26,447 --> 00:00:43,317
+00:00:32,211 --> 00:00:49,110
 A 7.72 m, B 1.18 m, C 0.20 m, D 1.44 m. In free space: SWR 1.01, 6.02 dBi and F/B 41 dB - a deep rear null with two elements.
 
 5
-00:00:43,367 --> 00:00:52,101
+00:00:49,160 --> 00:01:01,228
 Now 12 m above average ground.
 
 6
-00:00:52,151 --> 00:01:02,132
+00:01:01,278 --> 00:01:11,216
 SWR 1.09, 11.08 dBi with the ground reflection, maximum at 24 degrees; F/B 18.5 dB.
 
 7
-00:01:02,182 --> 00:01:13,205
+00:01:11,266 --> 00:01:25,350
 'Create the NEC model and check it'.
 
 8
-00:01:13,255 --> 00:01:21,390
+00:01:25,400 --> 00:01:33,665
 58 + j0.1 ohm, SWR 1.16 on 50 ohm: the Moxon is fed directly with coax.
 
 9
-00:01:21,440 --> 00:01:35,649
+00:01:33,715 --> 00:01:52,221
 Now a 2-element Yagi with the Multiband Yagi calculator, 20 m only.
 
 10
-00:01:35,699 --> 00:01:45,188
+00:01:52,271 --> 00:02:04,689
 One driven dipole and one parasitic element per band; we keep only 20 m.
 
 11
-00:01:45,238 --> 00:01:54,250
+00:02:04,739 --> 00:02:11,846
 Average ground at 10 m, then 'Tune and verify' - reflector-dipole.
 
 12
-00:01:54,300 --> 00:02:05,344
+00:02:11,896 --> 00:02:22,940
 Reflector 10.64 m at 4.32 m: SWR 1.03 at band centre, 12.2 dBi, F/B 13.6 dB.
 
 13
-00:02:05,394 --> 00:02:17,473
+00:02:22,990 --> 00:02:36,796
 Same thing with a director: dipole-director.
 
 14
-00:02:17,523 --> 00:02:27,272
+00:02:36,846 --> 00:02:46,479
 Director 9.19 m at 1.96 m: 10.6 dBi, F/B only 4.8 dB, impedance 39 ohm.
 
 15
-00:02:27,322 --> 00:02:37,075
+00:02:46,529 --> 00:02:56,279
 Reflector or director: the Moxon wins on F/B, the reflector Yagi on gain. The 3-element Yagi comes in lesson 15, with the Optimizer.
 
 16
-00:02:37,125 --> 00:02:46,750
+00:02:56,329 --> 00:03:06,114
 Moxon and 2-element Yagi: two beams in a few clicks. Next lesson: HF beams with traps and ground. 73 de IC8TEM
