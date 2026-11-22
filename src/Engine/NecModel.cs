@@ -469,6 +469,13 @@ namespace YaNec.Engine
             }
             if (m.Geometry.Count == 0) throw new NecException("Il file non contiene schede di geometria.");
             m.LeggiRigheExtra();
+            // 1.5.9 (IC8TEM 22/11/2026 22:31 «approvato»): senza scheda FR il NEC-2 originale calcola a 299,8 MHz (lambda = 1 m), come serve
+            // ai modelli scritti in lunghezze d'onda (W1GHZ, DIPROD e DIPSPLSH); prima YA-NEC usava 144,3 MHz
+            if (!haveFr)
+            {
+                m.FreqMHz = 299.7925;
+                m.Warnings.Add("Nessuna scheda FR: frequenza 299,7925 MHz (lambda = 1 m) come il NEC-2; per un'altra frequenza aggiungi la scheda FR.");
+            }
             foreach (double[] tr in m.trappole4nec2)
             {
                 LoadSpec ld = m.Loads[(int)tr[0]];
