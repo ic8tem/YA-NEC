@@ -79,7 +79,8 @@ namespace YaNec.Engine
             add(new CalcOcf(), "dipoli", "OCF/Windom");
             add(new CalcG5rv(), "dipoli", "G5RV");
             add(new CalcT2fd(), "dipoli", "T2FD");
-            add(new CalcFilari(), "filari", null);     // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
+            add(new CalcFilari(), "filari", null);
+            add(new CalcVerticale43(), "vert43", null);   // 1.5.9 (bozzetto approvato da IC8TEM 22/11/2026 21:22)     // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
             add(new CalcQuartoTerra(), "verticali", "lambda/4 e radiali");
             add(new CalcCinqueOttavi(), "verticali", "5/8");
             add(new CalcGroundPlane(), "verticali", "ground plane");

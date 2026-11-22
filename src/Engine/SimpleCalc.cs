@@ -89,6 +89,10 @@ namespace YaNec.Engine
         public List<CalcRimando> Rimandi = new List<CalcRimando>();
         public double Z0Rif = double.NaN;
         public double[] Bande;
+        // 1.5.9 (bozzetto Verticale 43 piedi approvato da IC8TEM il 22/11/2026 21:22): tabella sotto i riquadri, prima riga = intestazioni;
+        // le celle che iniziano con "✓" sono verdi, con "⚠" arancio
+        public List<string[]> Tabella;
+        public string TabellaTitolo;
     }
 
     public abstract class SimpleCalc

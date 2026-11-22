@@ -39,7 +39,7 @@ namespace YaNec
         Control calcMeccPagina;   // 1.5: la pagina dei Calcoli meccanici (prima linguetta principale) dentro i Calcolatori
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
-            { "HF", new[] { "dipoli", "filari", "dipmb", "yagimb", "verticali", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
+            { "HF", new[] { "dipoli", "filari", "dipmb", "yagimb", "verticali", "vert43", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh", "discone" } },   // 1.5.6: Discone da HF a VHF (IC8TEM 21/11/2026)
             { "Antenne riceventi", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
@@ -72,6 +72,7 @@ namespace YaNec
             fasCalc.Voce("dipmb", "Dipolo multibanda", false, null, "bacchette parallele, manica aperta, radiatori XR-5");   // 0.4.30
             fasCalc.Voce("yagimb", "Yagi multibanda", false, null, "HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda");   // 0.4.30
             fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole", true);
+            fasCalc.Voce("vert43", "Verticale non risonante (43 piedi)", false, null, "un-un 4:1, accordatore; perdite nel cavo, tensione alla base");   // 1.5.9 (bozzetto approvato da IC8TEM 22/11/2026 21:22)
             fasCalc.Voce("vertmb", "Verticale multibanda (DX Commander)", false, null, "elementi a ventaglio, terreno suo, verifica per banda");   // 0.4.30
             fasCalc.Voce("4sq", "Four-square", false, null, "quattro verticali sfasati (ON4UN)");
             fasCalc.Voce("delta", "Delta loop", false, null, "equilatera, schiacciata, angolo di alimentazione");
@@ -623,6 +624,37 @@ namespace YaNec
             top.Children.Add(left);
             top.Children.Add(colDestra);
             root.Children.Add(Scheda(top));
+            // 1.5.9 (bozzetto Verticale 43 piedi approvato da IC8TEM il 22/11/2026 21:22): tabella banda per banda a tutta larghezza
+            StackPanel tabBox = new StackPanel();
+            TextBlock tabTitolo = new TextBlock { FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6), TextWrapping = TextWrapping.Wrap };
+            Grid tabGriglia = new Grid();
+            tabBox.Children.Add(tabTitolo);
+            tabBox.Children.Add(new ScrollViewer { Content = tabGriglia, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto, VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled });
+            Border tabPanel = Scheda(tabBox);
+            tabPanel.IsVisible = false;
+            root.Children.Add(tabPanel);
+            Action<CalcOutput> mostraTabella = o0 =>
+            {
+                tabGriglia.Children.Clear(); tabGriglia.RowDefinitions.Clear(); tabGriglia.ColumnDefinitions.Clear();
+                if (o0.Tabella == null || o0.Tabella.Count == 0) { tabPanel.IsVisible = false; return; }
+                tabPanel.IsVisible = true;
+                tabTitolo.Text = Lang.T(o0.TabellaTitolo ?? "");
+                int nc = 0; foreach (string[] r in o0.Tabella) nc = Math.Max(nc, r.Length);
+                for (int j = 0; j < nc; j++) tabGriglia.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
+                for (int i = 0; i < o0.Tabella.Count; i++)
+                {
+                    tabGriglia.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                    for (int j = 0; j < o0.Tabella[i].Length; j++)
+                    {
+                        string t = o0.Tabella[i][j] ?? "";
+                        Color col = i == 0 ? Pal.Muted : t.StartsWith("✓") ? Pal.Green : t.StartsWith("⚠") ? Pal.Orange : Pal.Fore;
+                        TextBlock tb = new TextBlock { Text = Lang.TC(t), FontSize = i == 0 ? 12.5 : 13, FontWeight = i == 0 || j == 0 ? FontWeight.SemiBold : FontWeight.Normal, Foreground = Pal.B(col) };
+                        Border cell = new Border { Child = tb, Padding = new Thickness(7, 4, 10, 4), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
+                        Grid.SetRow(cell, i); Grid.SetColumn(cell, j);
+                        tabGriglia.Children.Add(cell);
+                    }
+                }
+            };
             Action<string, double, double, double> avviaTempoReale;
             Action<double[]> avviaBande;
             root.Children.Add(TempoRealePanel(out avviaTempoReale, out avviaBande));   // 0.4.2: calcolo in tempo reale (IC8TEM 13/11/2026); 1.5.6: ROS per banda
@@ -693,6 +725,7 @@ namespace YaNec
                 }
                 dr.Nec = last.Nec; dr.Out = last; dr.InvalidateVisual();
                 if (mostraDestra != null) mostraDestra(last);
+                mostraTabella(last);
                 if (last.Chart != null && last.Chart.X != null)
                 {
                     chartTitle.Text = last.Chart.Title + (string.IsNullOrEmpty(last.Chart.MarkText) ? "" : "  (" + last.Chart.MarkText + ")");

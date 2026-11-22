@@ -72,6 +72,27 @@ namespace YaNec.Engine
                         }
                         break;
                     }
+                case "vert43":
+                    {
+                        // 1.5.9: un-un 4:1, cavo con il carico vero alla banda piu' bassa, choke, verticale lambda/4 di confronto
+                        CalcVerticale43 v = sc as CalcVerticale43;
+                        double[] fb = { 1.85, 3.65, 5.36, 7.1 };
+                        double fl = fb[Math.Max(0, Math.Min(3, sc.I("bnd")))];
+                        double pw = Math.Max(5, sc.P("pw"));
+                        if (sc.I("ad") == 0) r.Add(Balun(B41, fl, 30, pw, "Un-un 4:1 ›", pw <= 15 ? 1 : (pw <= 120 ? 2 : 3), 1));
+                        if (v != null && v.IndiceCavo >= 0)
+                        {
+                            CalcRimando c = new CalcRimando { Testo = "Cavo con il ROS ›", Voce = "cavi", Tip = "Apre Strumenti > Cavi RG con il cavo, la lunghezza e il carico che il cavo vede sulla banda piu' bassa." };
+                            c.Valori["c"] = v.IndiceCavo; c.Valori["f"] = fl; c.Valori["l"] = sc.P("lc");
+                            c.Valori["rl"] = Math.Round(v.CaricoCavo.Real, 1); c.Valori["xl"] = Math.Round(v.CaricoCavo.Imaginary, 1);
+                            r.Add(c);
+                        }
+                        r.Add(Choke(fl));
+                        CalcRimando q = new CalcRimando { Testo = "Verticale λ/4 ›", Voce = "quarto", Tip = "Apre HF > Verticali > lambda/4 con gli stessi radiali sulla banda piu' bassa, per il confronto." };
+                        q.Valori["f"] = fl; q.Valori["n"] = sc.P("nr"); q.Valori["lr"] = Math.Round(Math.Max(0.05, sc.P("lr") / (299.792458 / fl)), 3);
+                        r.Add(q);
+                        break;
+                    }
                 case "ocf":
                     r.Add(Balun(B41, f, 30, 100, "Balun 4:1 ›"));
                     r.Add(Balun(B61, f, 30, 100, "Balun 6:1 ›"));
