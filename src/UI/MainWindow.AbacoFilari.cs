@@ -126,7 +126,7 @@ namespace YaNec
                     for (int c = 0; c < intest.Length && c < riga.Length; c++)
                     {
                         string v = riga[c];
-                        string vis = efhw ? (c >= 2 ? v.Replace('.', ',') : Lang.T(v)) : (c == 2 ? Lang.T(v) : v.Replace('.', ','));
+                        string vis = efhw ? (c >= 2 ? v.Replace('.', ',') : Lang.TC(v)) : (c == 2 ? Lang.T(v) : v.Replace('.', ','));
                         Border cella = new Border { Background = c >= primaBanda ? ColoreRos(v) : Brushes.Transparent, Margin = new Thickness(1), IsHitTestVisible = false };
                         cella.Child = new TextBlock { Text = vis, FontSize = 12.5, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(6, 2), HorizontalAlignment = c < primaBanda ? HorizontalAlignment.Left : HorizontalAlignment.Right, FontFamily = c >= 2 ? new FontFamily("Consolas, Menlo, monospace") : FontFamily.Default };
                         Grid.SetRow(cella, r + 1); Grid.SetColumn(cella, c); g.Children.Add(cella);
@@ -157,6 +157,7 @@ namespace YaNec
                     double L = double.Parse(scelta[2], CultureInfo.InvariantCulture);
                     set("tipo", scelta[1].Contains("multibanda") ? 0 : 1);
                     set("f", f); set("tr", tab == "64" ? 1 : 0); set("cp", contr == "senza" ? 2 : 0);
+                    if (contr == "senza") set("coax", double.Parse(scelta[3], CultureInfo.InvariantCulture));
                     double l0 = (1 - CalcFilari.Estremita(f, 0.0005)) * (299.792458 / f) / 2;
                     sc.Scale = L / l0;
                 }

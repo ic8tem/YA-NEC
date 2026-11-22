@@ -555,3 +555,63 @@ Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spil
 ### 15.2 Altre fonti
 
 Baars [C21], Ruze [C55], Kildal [C22], Stutzman e Thiele [C20], Wade W1GHZ [C32], Balanis cap. 12, 13 e 15 [C14], Idelchik e Hoerner per il vento sulla rete [C28].
+
+## 16. Filari alimentate in punta
+
+Le formule della scheda Calcolatori > HF > Filari (dalla 1.5.6) e dell'abaco (dalla 1.5.8). Fonti: AA5TB [C88], TF5NN [C89], VE3EED [C93], DG1JAN [C94], I3RKE [C95], OfficinaHF [C96], O. Duffy [C97], W8JI [C82].
+
+### 16.1 Il filo come linea di trasmissione
+
+Il filo alimentato in punta si tratta come una linea aperta la cui perdita e' la potenza irradiata [C89]: verificato con NEC-2, 4 % di errore su |Z| su terra ideale, 11 % con il contrappeso.
+
+> FORMULA: Z0 = 60 · ln(0,22 λ / a) · VF        θ = 2π L / (λ · VF) + e · π        α = atanh(Rrad / Z0)        Z = Z0 · [sinh 2α − j sin 2θ] / [cosh 2α − cos 2θ]
+
+L'effetto d'estremita', in mezze onde, e' e = 0,0464 − 0,003 · ln(λ / a) (minimo 0,004); la mezz'onda vera e' L = (1 − e) · VF · λ/2. Le armoniche cadono un po' corte: l'effetto d'estremita' e' lo stesso in valore assoluto ma pesa meno su piu' mezze onde. Per questo un filo da 40 m va meglio sui 20 e 10 m che sui 15 m, e l'accordo multibanda cerca un compromesso. Per il filo isolato il fattore di velocita' viene dall'induttanza aggiunta di Cebik, la stessa del LD 7 del modello:
+
+> FORMULA: ΔL = 2·10⁻⁷ · (εr R/r)^(1/12) · (1 − 1/εr) · ln(R/r) [H/m]        VF = √(L' / (L' + ΔL)),  L' = Z0 / c
+
+### 16.2 Trasformatore, condensatore e tensione in punta
+
+In punta a una mezz'onda l'impedenza e' di 2000-3500 ohm: il 49:1 (spire 7:1) porta 2450 ohm a 50 ohm, il 64:1 (8:1) porta 3200 ohm. Nel modello il trasformatore e' ideale e il ROS e' riferito a 50 x rapporto. Il condensatore sul primario (100 pF con il 49:1, 150 pF con il 64:1, almeno 1 kV) compensa l'induttanza dispersa del trasformatore e abbassa il ROS sulle bande alte [C94] [C96]; non sostituisce il contrappeso.
+
+> FORMULA: V = √(P · |Z|)        (100 W su 3300 ohm: 574 V efficaci, 812 V di picco)
+
+### 16.3 Contrappeso
+
+La corrente in punta e' piccola: I = √(P / R), cioe' 0,20 A con 100 W su 2450 ohm. Per farla tornare basta un contrappeso corto, 0,05 λ della banda piu' bassa [C88]; in alternativa fa da contrappeso la calza del coassiale fino al choke [C95]. Senza contrappeso il NEC non trova una via di ritorno (con i soli 0,1 m del collegamento il ROS supera 99 a ogni banda): nella pratica fa da contrappeso la calza del coassiale. L'abaco «senza contrappeso» la modella come 10 m di coassiale senza choke che scendono dal trasformatore fino a 0,3 m da terra e vanno verso la radio. Sul terreno medio, a 3 m: la mezz'onda accordata sui 40 m cambia poco di lunghezza (20,27 m contro 19,85 m con il 49:1) ma il ROS alla banda sale da 1,5 a 2,4; sulle bande alte invece il ROS scende quasi ovunque sotto 2 (10 m: 1,1-2,1 con qualunque filo), e persino il quarto d'onda dei 20 m da' 1,4. Non e' un merito dell'antenna: la calza diventa parte del radiatore, irradia e porta la RF in stazione, e il ROS dipende dalla lunghezza del coassiale. Sulla banda piu' bassa il quarto d'onda resta inservibile (160 m: 67,5 con il 49:1, 84 con il 64:1). Per questo la scheda, con «nessuno», chiede la lunghezza del coassiale fino alla radio e lo segnala con un avviso.
+
+Con il 9:1 l'impedenza in punta e' piu' bassa (450 ohm nominali) e la corrente sale a 0,47 A con 100 W: il contrappeso deve essere piu' lungo. L'abaco del 9:1 mostra che il contrappeso migliore dipende dal filo: quasi sempre tra il 5 % (filo da 40 m con 2 m) e il 25 % (25,6 m con 6,4 m; 32,6 m con 8,2 m), con l'eccezione del filo da 21,6 m che vuole 10 m (46 %).
+
+### 16.4 Bobina di carico
+
+Per allungare l'EFHW di una banda piu' bassa si mette una bobina dopo il filo della banda alta, seguita da una coda. La stima tratta il filo come linea: la reattanza della bobina annulla quella dei due tratti alla banda aggiunta.
+
+> FORMULA: X_L = Z0 · (cot θ1 + cot θ2),  θ1 = filo prima della bobina,  θ2 = coda + effetto d'estremita'
+
+Con i dati di OfficinaHF [C96] (20,15 m + coda di 2,39 m per gli 80 m) la formula da' 128 µH contro 110-120 µH dichiarati. Nel NEC, con contrappeso e terreno, la bobina migliore e' piu' piccola (95-101 µH) e sugli 80 m il ROS non scende sotto 1,9 (verticale, 64:1) e arriva a 6 (U rovesciata, 49:1): la sola bobina non annulla la reattanza in punta. Il pulsante «Accorda la bobina (NEC)» cerca l'induttanza con il ROS piu' basso; con la bobina il 64:1 va sempre meglio del 49:1.
+
+### 16.5 Abachi
+
+Calcolati con «YA-NEC --abaco-filari» (filo nudo da 1 mm orizzontale a 3 m, contrappeso orizzontale opposto alla stessa altezza, trasformatore ideale, terreno medio e perfetto; per il 49:1 e il 64:1 anche senza contrappeso, con la calza di 10 m di coassiale al suo posto) e mostrati dal pulsante «Abaco ›» della scheda. Si leggono cinque cose.
+
+- **λ/2 contro λ/4.** Alla banda piu' bassa il quarto d'onda da' ROS oltre 99 con 49:1 e 64:1 su entrambi i terreni: in punta l'impedenza e' bassa (decine di ohm), il contrario di quella per cui e' fatto il trasformatore. La mezz'onda accordata da' ROS tra 1,0 e 1,7 sul terreno medio.
+- **Terreno perfetto.** Un filo a 3 m sopra un piano perfetto ha sotto di se' la propria immagine in controfase: la resistenza di radiazione crolla, l'impedenza in punta va molto oltre 3000 ohm e sulle bande basse il ROS resta alto anche alla mezz'onda (40 m: 6-7; 80 e 160 m: oltre 20). Il terreno medio, con le sue perdite, smorza questi picchi ed e' l'ipotesi della scheda.
+- **Monobanda e multibanda.** Accordata per una banda, la mezz'onda va benissimo li' e male sulle armoniche (40 m accordata: 40 m 1,5, 15 m 5,6). Accordata come multibanda cede qualcosa sulla fondamentale e guadagna sulle armoniche (20,44 m con 49:1: 40 m 2,4, 20 m 1,2, 15 m 1,9, 10 m 2,0).
+- **9:1.** Sul terreno medio a 3 m la lunghezza migliore trovata e' 40 m con 2 m di contrappeso: sei bande con ROS fino a 3 (40, 20, 17, 15, 12 e 10 m). Delle lunghezze di VE3EED [C93] la migliore e' 36,3 m con 5 m di contrappeso (quattro bande). Sui 30, 60 e 80 m il 9:1 resta un caso da accordatore esterno.
+- **Senza contrappeso.** La calza del coassiale abbassa il ROS sulle bande alte e lo alza sulla fondamentale (16.3): numeri migliori in apparenza, con il coassiale che irradia.
+
+### 16.6 Casi di prova
+
+60 combinazioni della scheda (3 tipi x 6 disposizioni x 2 trasformatori x bobina si'/no), terreno medio, accordo NEC del pulsante («YA-NEC --prova-filari»). EFHW monobanda 40 m: ROS 1,04-1,68 in tutte le disposizioni. Multibanda 40-10 m: 20, 15 e 10 m tra 1,05 e 2,1 ovunque, 40 m tra 2,1 e 3,3. Bobina per gli 80 m: da 1,94 (verticale, 64:1) a 6,02 (U rovesciata, 49:1). Verticale e inclinata dall'alto sono le disposizioni migliori, L e U rovesciata le peggiori. Il filo non risonante con il valore predefinito di prima (16,2 m, contrappeso 7,5 %) non funzionava: ROS 8-99 su quasi tutte le bande; per questo la scheda propone ora le righe dell'abaco.
+
+### 16.7 Fonti, somiglianze e differenze
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| AA5TB [C88] | contrappeso 0,05 λ; corrente piccola in punta | nessun modello numerico |
+| TF5NN [C89] | modello del filo ed effetto d'estremita' usati da YA-NEC; verificato con NEC-2 | terra ideale: sulle bande basse il NEC con il terreno vero da' impedenze diverse |
+| VE3EED [C93] | lunghezze del filo non risonante | nell'abaco a 3 m le migliori sono altre (40 m); dipende da altezza e contrappeso |
+| DG1JAN [C94] | 100 pF; perdite misurate dei nuclei | sconsiglia FT-140-43 e FT-114-43, che OfficinaHF usa a 100 W |
+| W8JI [C82], O. Duffy [C97] | avvolgimento e perdite dei trasformatori | - |
+| I3RKE [C95] | la calza del coassiale fa parte dell'antenna | nessuna lunghezza ne' trasformatore |
+| OfficinaHF [C96] | bobina per gli 80 m, tensione in punta, 64:1 per gli 80 m | contrappeso «non necessario»; «80 mH» per 80 µH; 160 m con 260 µH non ottimale |
