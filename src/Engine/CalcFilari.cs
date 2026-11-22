@@ -17,7 +17,7 @@ namespace YaNec.Engine
 {
     public class CalcFilari : SimpleCalc
     {
-        public static readonly string[] Tipi = { "EFHW multibanda", "EFHW monobanda", "EFHW con bobina", "Filo non risonante" };
+        public static readonly string[] Tipi = { "EFHW multibanda", "EFHW monobanda", "Filo non risonante" };   // 22/11/2026: la bobina e' una scelta dell'EFHW (IC8TEM)
         public static readonly string[] Disposizioni = { "inclinata dal basso", "inclinata dall'alto", "verticale", "L rovesciata", "U rovesciata", "tutto dritto" };
         static readonly string[] Isolanti = { "nudo", "isolato in PVC", "isolato in PE / PTFE" };
         static readonly double[] VfIsol = { 1.0, 0.97, 0.98 };
@@ -34,10 +34,12 @@ namespace YaNec.Engine
             Key = "filari"; Title = "Filari"; Family = "HF";
             Source = "S. Yates AA5TB, The End-Fed Half-Wave Antenna (contrappeso 0,05 λ); G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, modello del filo verificato con NEC-2); " +
                      "VE3EED (lunghezze del filo non risonante); DG1JAN, xOTA-Antenna (CC BY-SA 4.0: 100 pF, perdite dei nuclei); W8JI e O. Duffy (trasformatori); I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (bobina per gli 80 m, tensione in punta)";
-            Func<bool> efhw = () => I("tipo") != 3, nonRis = () => I("tipo") == 3, bobina = () => I("tipo") == 2;
-            Params.Add(CalcParam.Scelta("tipo", "Tipo", 0, "EFHW: mezz'onda alimentata in punta con il 49:1 o il 64:1, sulle armoniche (multibanda) o su una banda. Con bobina: la stessa antenna allungata per una banda piu' bassa. Filo non risonante: lunghezza lontana dalle mezze onde, 9:1 o 4:1 e accordatore.",
+            Func<bool> efhw = () => I("tipo") != 2, nonRis = () => I("tipo") == 2, bobina = () => I("tipo") != 2 && I("bob") == 1;
+            Params.Add(CalcParam.Scelta("tipo", "Tipo", 0, "EFHW: mezz'onda alimentata in punta con il 49:1 o il 64:1, sulle armoniche (multibanda) o su una banda; la bobina di carico, se c'e', la allunga per una banda piu' bassa. Filo non risonante: lunghezza lontana dalle mezze onde, 9:1 o 4:1 e accordatore.",
                 Tipi).ConSezione("1 · Antenna"));
             Params.Add(new CalcParam("f", "Banda piu' bassa (mezz'onda)", 7.1, "MHz", "La frequenza a cui il filo e' lungo mezz'onda. Con bobina: la banda del filo senza bobina (es. 7,1 MHz), la bobina aggiunge la banda sotto.") { Visibile = efhw });
+            // 22/11/2026, IC8TEM («la bobina di carico puo' essere opzionale», scelta «Interruttore nell'EFHW»)
+            Params.Add(Vis(CalcParam.Scelta("bob", "Bobina di carico", 0, "Senza bobina: solo il filo (es. 40-20-15-10 m). Con la bobina e una coda dopo di essa l'antenna lavora anche su una banda piu' bassa (es. +80 m, OfficinaHF); alle bande alte la bobina blocca la coda.", "no", "si'"), efhw));
             Params.Add(new CalcParam("fb", "Banda aggiunta dalla bobina", 3.65, "MHz") { Visibile = bobina });
             Params.Add(new CalcParam("coda", "Filo dopo la bobina", 2.4, "m", "OfficinaHF: 2,39 m per gli 80 m su 20 m di filo. Coda corta = bobina grande.") { Visibile = bobina });
             Params.Add(new CalcParam("fl", "Banda piu' bassa", 7.1, "MHz") { Visibile = nonRis });
@@ -168,9 +170,9 @@ namespace YaNec.Engine
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
-            int tipo = Math.Max(0, Math.Min(3, I("tipo"))), iso = Math.Max(0, Math.Min(2, I("iso"))), disp = Math.Max(0, Math.Min(5, I("disp")));
-            CanTune = tipo <= 1;
-            bool nonRis = tipo == 3;
+            int tipo = Math.Max(0, Math.Min(2, I("tipo"))), iso = Math.Max(0, Math.Min(2, I("iso"))), disp = Math.Max(0, Math.Min(5, I("disp")));
+            bool nonRis = tipo == 2, conBob = !nonRis && I("bob") == 1;
+            CanTune = !nonRis && !conBob;
             double a = Math.Max(0.1, P("d")) / 2000, vf = VfIsol[iso], pw = Math.Max(0, P("pw"));
             double rapp = nonRis ? (I("trb") == 1 ? 4 : 9) : (I("tr") == 1 ? 64 : 49);
             string rappTxt = rapp.ToString("0", CultureInfo.InvariantCulture) + ":1";
@@ -184,8 +186,8 @@ namespace YaNec.Engine
                 if (iso > 0) vf = VfIsolato(fBassa, a, ErIsol[iso], a + SpIsol[iso] / 1000);
                 L = (1 - Estremita(fBassa, a)) * (C0 / fBassa) * vf / 2;
                 L0Formula = L;
-                if (tipo <= 1) L *= Scale;
-                if (tipo == 2)
+                if (!conBob) L *= Scale;
+                if (conBob)
                 {
                     // bobina (OfficinaHF, 20 m di filo + bobina + coda per gli 80 m): reattanza che rende il tutto mezz'onda alla banda aggiunta,
                     // con il filo come linea di impedenza media Z0 (TF5NN): X = Z0 (cot t1 + cot t2), t1 = filo prima della bobina, t2 = coda
@@ -199,7 +201,7 @@ namespace YaNec.Engine
                 }
             }
             else L = Math.Max(1, P("L"));
-            double lamBassa = C0 / (tipo == 2 ? fb : fBassa);
+            double lamBassa = C0 / (conBob ? fb : fBassa);
             double cp = nonRis ? L * Math.Max(1, Math.Min(20, P("cpp"))) / 100 : 0.05 * lamBassa;
             bool calza = !nonRis && I("cp") == 1;
 
@@ -208,18 +210,18 @@ namespace YaNec.Engine
             for (int i = 0; i < BandeF.Length; i++)
             {
                 double fbnd = BandeF[i];
-                if (tipo == 1) { if (Math.Abs(fbnd - fBassa) / fBassa < 0.08) bande.Add(i); continue; }
-                if (tipo == 3) { if (fbnd >= fBassa * 0.95) bande.Add(i); continue; }
+                if (tipo == 1) { if (Math.Abs(fbnd - fBassa) / fBassa < 0.08 || (conBob && Math.Abs(fbnd - fb) / fb < 0.06)) bande.Add(i); continue; }
+                if (nonRis) { if (fbnd >= fBassa * 0.95) bande.Add(i); continue; }
                 // EFHW: solo le bande vicine a un multiplo della mezz'onda (entro il 6 %), anche quella della bobina
                 bool armonica = false;
                 for (int n = 1; n <= 16; n++) if (Math.Abs(fbnd - n * fBassa) / fbnd < 0.06) armonica = true;
-                if (tipo == 2 && Math.Abs(fbnd - fb) / fb < 0.06) armonica = true;
+                if (conBob && Math.Abs(fbnd - fb) / fb < 0.06) armonica = true;
                 if (armonica) bande.Add(i);
             }
             if (bande.Count == 0) bande.Add(Array.IndexOf(BandeF, 7.1));
 
             // ---- riquadri
-            if (tipo == 2)
+            if (conBob)
             {
                 o.Card("Filo fino alla bobina", Calcolatori.N(Lbob, 2) + " m", "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz", true);
                 o.Card("Bobina", Calcolatori.N(uH, 0) + " µH", Calcolatori.N(fb, 2) + " MHz: stima da verificare con il NEC", true);
@@ -235,7 +237,7 @@ namespace YaNec.Engine
                 double cpf = rapp == 64 ? 150 : 100;
                 o.Card("Condensatore sul primario", alte ? Calcolatori.N(cpf, 0) + " pF" : "non serve", alte ? "almeno 1 kV, migliora le bande alte" : "solo bande sotto i 20 MHz");
             }
-            Complex zb = tipo == 2 ? new Complex(2500, 0) : ZFilo(L, fBassa, a, vf);
+            Complex zb = conBob ? ZFilo(Lbob, fBassa, a, vf) : ZFilo(L, fBassa, a, vf);
             double v = Math.Sqrt(pw * Complex.Abs(zb));
             o.Card("Tensione in punta", Calcolatori.N(v, 0) + " V", "efficaci a " + Calcolatori.N(pw, 0) + " W (" + Calcolatori.N(v * Math.Sqrt(2), 0) + " V di picco)");
             if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
@@ -244,11 +246,12 @@ namespace YaNec.Engine
             o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1, spire in Balun / Un-Un" : "rapporto spire 7:1, spire in Balun / Un-Un"));
 
             // ---- tabella per banda (modello TF5NN, filo su terra ideale)
-            if (tipo != 2)
             {
+                double lw = conBob ? Lbob : L;   // con la bobina: alle bande del filo la bobina blocca la coda (la banda della bobina la da' il NEC)
                 foreach (int i in bande)
                 {
-                    Complex z = ZFilo(L, BandeF[i], a, vf);
+                    if (conBob && Math.Abs(BandeF[i] - fb) / fb < 0.06) continue;
+                    Complex z = ZFilo(lw, BandeF[i], a, vf);
                     double r = Ros(z / rapp, 50);
                     string esito = r <= 2 ? "✓ " : (r <= 3 ? "accordatore interno, " : "accordatore esterno, ");
                     o.Card(BandeNomi[i] + ", ROS con il " + rappTxt, Calcolatori.N(Math.Min(r, 99), 2), esito + "Z " + Calcolatori.N(z.Real, 0) + (z.Imaginary >= 0 ? " +j" : " -j") + Calcolatori.N(Math.Abs(z.Imaginary), 0) + " Ω (TF5NN)", r <= 2);
@@ -272,13 +275,16 @@ namespace YaNec.Engine
             }
 
             // ---- grafico: |Z| in punta contro la lunghezza, prima e seconda banda
-            if (tipo != 2)
             {
-                double l0 = Math.Max(1, L * 0.4), l1 = L * 1.6;
+                double lw = conBob ? Lbob : L;
+                double l0 = Math.Max(1, lw * 0.4), l1 = lw * 1.6;
                 int np = 120;
                 o.Chart = new CalcChart { Title = "Impedenza in punta al variare della lunghezza (modello TF5NN)", XLabel = "m", YLabel = "Ω" };
                 o.Chart.X = Calcolatori.Lin(l0, l1, np); o.Chart.Y = new double[np];
-                int b1 = bande[0], b2 = bande.Count > 1 ? bande[1] : -1;
+                List<int> bc = new List<int>();
+                foreach (int i in bande) if (!conBob || Math.Abs(BandeF[i] - fb) / fb >= 0.06) bc.Add(i);
+                if (bc.Count == 0) bc.Add(bande[0]);
+                int b1 = bc[0], b2 = bc.Count > 1 ? bc[1] : -1;
                 for (int i = 0; i < np; i++) o.Chart.Y[i] = Complex.Abs(ZFilo(o.Chart.X[i], BandeF[b1], a, vf));
                 o.Chart.Nome1 = BandeNomi[b1];
                 if (b2 >= 0)
@@ -287,7 +293,7 @@ namespace YaNec.Engine
                     for (int i = 0; i < np; i++) o.Chart.Y2[i] = Complex.Abs(ZFilo(o.Chart.X[i], BandeF[b2], a, vf));
                     o.Chart.Nome2 = BandeNomi[b2];
                 }
-                o.Chart.MarkX = L; o.Chart.MarkText = Calcolatori.N(L, 2) + " m; " + rappTxt + " = " + Calcolatori.N(z0rif, 0) + " Ω";
+                o.Chart.MarkX = lw; o.Chart.MarkText = Calcolatori.N(lw, 2) + " m; " + rappTxt + " = " + Calcolatori.N(z0rif, 0) + " Ω";
                 o.Chart.YMin = 0;
             }
 
@@ -309,7 +315,7 @@ namespace YaNec.Engine
                 double[] p = pts[i], q = pts[i + 1];
                 double lt = Dist(p, q);
                 if (lt < 1e-6) continue;
-                if (tipo == 2 && pBob > fatto + 1e-6 && pBob < fatto + lt - 1e-6)
+                if (conBob && pBob > fatto + 1e-6 && pBob < fatto + lt - 1e-6)
                 {
                     // spezza il tratto alla bobina: segmento corto (0,1 m) con il carico
                     double u0 = (pBob - fatto - 0.05) / lt, u1 = (pBob - fatto + 0.05) / lt;
@@ -336,12 +342,12 @@ namespace YaNec.Engine
             if (tagBob > 0) dk.Ld(0, tagBob, segBob, segBob, 0, uH * 1e-6, 0);   // bobina ideale (serie R-L-C: solo L)
             dk.Ground(2);
             dk.Ex(tFeed, 1);
-            string nec = dk.End(tipo == 2 ? fb : fBassa);
+            string nec = dk.End(conBob ? fb : fBassa);
             o.Nec = "CM YA-NEC Z0=" + z0rif.ToString("0", CultureInfo.InvariantCulture) + "\n" + nec;
             o.Z0Rif = z0rif;
             List<double> fb2 = new List<double>();
-            if (tipo == 2) fb2.Add(fb);
-            foreach (int i in bande) if (tipo != 2 || Math.Abs(BandeF[i] - fb) / fb > 0.08) fb2.Add(BandeF[i]);
+            if (conBob) fb2.Add(fb);
+            foreach (int i in bande) if (!conBob || Math.Abs(BandeF[i] - fb) / fb > 0.06) fb2.Add(BandeF[i]);
             o.Bande = fb2.ToArray();
             o.Plane = "xz";
 
@@ -356,14 +362,14 @@ namespace YaNec.Engine
             string fz = "Formule: filo λ/2 = (1 - e) VF λ/2, e = effetto d'estremita' in mezze onde = 0,0464 - 0,003 ln(λ/a) (TF5NN, con le armoniche che cadono un po' corte); " +
                 "contrappeso 0,05 λ della banda piu' bassa (AA5TB) o tra il 5 e il 10 % del filo con il 9:1 e il 4:1; tensione in punta V = √(P |Z|); impedenza per banda dal modello TF5NN v3 (filo come linea aperta con perdita uguale alla radiazione, su terra ideale; " +
                 "rispetto al NEC-2 errore del 4 % su terra ideale e dell'11 % con il contrappeso). Nel modello NEC il trasformatore e' ideale: il ROS del calcolo in tempo reale e' riferito a 50 x " + rapp.ToString("0", CultureInfo.InvariantCulture) + " = " + Calcolatori.N(z0rif, 0) + " Ω.";
-            if (tipo == 2) fz += " Bobina: X = Z0 (cot θ1 + cot θ2), con θ1 il filo prima della bobina e θ2 la coda (piu' l'effetto d'estremita') alla banda aggiunta, Z0 = 60 ln(0,22 λ/a); OfficinaHF: 20,15 m + 110-120 µH + 2,39 m per gli 80 m.";
+            if (conBob) fz += " Bobina: X = Z0 (cot θ1 + cot θ2), con θ1 il filo prima della bobina e θ2 la coda (piu' l'effetto d'estremita') alla banda aggiunta, Z0 = 60 ln(0,22 λ/a); OfficinaHF: 20,15 m + 110-120 µH + 2,39 m per gli 80 m.";
             o.Formula = fz + " Fonti: " + Source + ".";
             if (calza) o.Warnings.Add("Con la calza come contrappeso il coassiale fino al choke irradia: tienilo lontano dalla casa e non mettere il choke sul trasformatore (I3RKE).");
             if (!nonRis && pw > 50 && nucleo == 2) o.Warnings.Add("Con un solo FT-240-43 il funzionamento continuo (FT8, RTTY) va tenuto tra 30 e 50 W; 100 W in SSB.");
             if (pw > 15 && pw <= 120 && nucleo == 2 && !nonRis) o.Oks.Add("FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)");
             if (v > 400) o.Warnings.Add("In punta ci sono " + Calcolatori.N(v, 0) + " V efficaci: isolatore buono e filo lontano da persone e rami.");
             if (tipo == 0) o.Oks.Add("le bande armoniche cadono un po' piu' in basso: la tabella mostra il ROS che resta (TF5NN)");
-            if (tipo == 2) o.Warnings.Add("La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; ritocca la coda.");
+            if (conBob) o.Warnings.Add("La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; ritocca la coda.");
             return o;
         }
 

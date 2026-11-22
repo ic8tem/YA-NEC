@@ -60,6 +60,7 @@ namespace YaNec.Engine
     {
         public int Type, Tag, From, To;
         public double F1, F2, F3;
+        public bool DaIsolante;   // 1.5.6: LD 2 nato dal LD 7 (filo isolato): non e' una bobina, la Struttura 3D non lo disegna
         public LoadSpec Clone() { return (LoadSpec)MemberwiseClone(); }
     }
 

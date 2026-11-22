@@ -530,7 +530,7 @@ namespace YaNec.Engine
                     if (R <= r) { troppoSottile++; cur = null; continue; }
                     if (cur != null && t == tagCur && k == segCur + 1 && Math.Abs(r - rCur) <= 1e-12 * r) { cur.To = k; segCur = k; continue; }
                     double L = 2e-7 * Math.Pow(er * R / r, 1.0 / 12) * (1 - 1 / er) * Math.Log(R / r);
-                    cur = new LoadSpec { Type = 2, Tag = t, From = k, To = k, F1 = 0, F2 = L, F3 = 0 };
+                    cur = new LoadSpec { Type = 2, Tag = t, From = k, To = k, F1 = 0, F2 = L, F3 = 0, DaIsolante = true };
                     m.Loads.Add(cur); nCarichi++;
                     rCur = r; segCur = k; tagCur = t;
                 }

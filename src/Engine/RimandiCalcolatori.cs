@@ -54,7 +54,8 @@ namespace YaNec.Engine
                         int tipo = sc.I("tipo");
                         double pw = Math.Max(5, sc.P("pw"));
                         int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);
-                        if (tipo == 3)
+                        bool conBob = tipo != 2 && sc.I("bob") == 1;   // 22/11/2026: bobina facoltativa nell'EFHW
+                        if (tipo == 2)
                         {
                             double fl = Math.Max(1, sc.P("fl"));
                             bool quattro = sc.I("trb") == 1;
@@ -63,11 +64,11 @@ namespace YaNec.Engine
                         }
                         else
                         {
-                            double fb = tipo == 2 ? Math.Min(sc.P("fb"), f) : f;
+                            double fb = conBob ? Math.Min(sc.P("fb"), f) : f;
                             bool s64 = sc.I("tr") == 1;
                             r.Add(Balun(s64 ? B641 : B491, fb, 30, pw, s64 ? "Costruisci il trasformatore 64:1 ›" : "Costruisci il trasformatore 49:1 ›", nucleo));
                             r.Add(Choke(fb));
-                            if (tipo == 2) r.Add(new CalcRimando { Testo = "Bobina di carico ›", Voce = "carichihf", Tip = "Apre HF > Carichi HF (bobine con autorisonanza, Q, tensioni e perdite)." });
+                            if (conBob) r.Add(new CalcRimando { Testo = "Bobina di carico ›", Voce = "carichihf", Tip = "Apre HF > Carichi HF (bobine con autorisonanza, Q, tensioni e perdite)." });
                         }
                         break;
                     }

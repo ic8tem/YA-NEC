@@ -701,7 +701,7 @@ namespace YaNec
             for (int i = 0; i < m.Loads.Count; i++)
             {
                 LoadSpec ld = m.Loads[i];
-                if (ld.Type == 5 || ld.Type == 7 || ld.Tag <= 0) continue;
+                if (ld.Type == 5 || ld.Type == 7 || ld.Tag <= 0 || ld.DaIsolante) continue;   // 1.5.6 (IC8TEM 22/11/2026): l'isolante del filo non e' una bobina
                 int sg = ld.From > 0 ? seg(ld.Tag, (ld.From + Math.Max(ld.From, ld.To)) / 2) : centroFilo(ld.Tag);
                 if (sg < 0) continue;
                 // filo virtuale di EZNEC: un segmento solo con 1 Mohm di reattanza
