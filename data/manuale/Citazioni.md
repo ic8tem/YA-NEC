@@ -109,6 +109,13 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C85 | TINITALY 1.1 (INGV, CC BY 4.0, doi 10.13127/tinitaly/1.1); SRTM1 (NASA / USGS) | modelli del terreno | terreno reale (calcolo 3) |
 | C86 | Hi-Z Antennas | tabella RDF | Antenne riceventi |
 | C87 | IC8TEM, prove con EZNEC Pro/2+ 7.0 del 14/11/2026 (735 modelli) | - | calibrazione del collaudo |
+| C88 | S. Yates AA5TB, "The End-Fed Half-Wave Antenna" (aa5tb.com) | contrappeso 0,05 λ, corrente in punta | Filari (calcolo 16) |
+| C89 | G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (github.com/TF5NN, CC BY 4.0) | modello del filo come linea con perdita, effetto d'estremita', confronto con NEC-2 | Filari (calcolo 16) |
+| C93 | VE3EED, lunghezze del filo non risonante per l'un-un 9:1 | tabella delle lunghezze | Filari (calcolo 16) |
+| C94 | DG1JAN, xOTA-Antenna (github.com/DG1JAN, CC BY-SA 4.0) | 100 pF, perdite dei nuclei FT-82/114/140-43 | Filari (calcolo 16) |
+| C95 | L. I3RKE, "Conoscere le antenne End Fed" (ARI Vittorio Veneto, 2020) | la calza del coassiale come parte dell'antenna, choke | Filari (calcolo 16) |
+| C96 | OfficinaHF (officinahf.jimdofree.com), pagine End Fed, balun e un-un, long wire, Windom, Delta | bobina per gli 80 m, tensione in punta, 64:1 | Filari (calcolo 16) |
+| C97 | O. Duffy VK1OD (owenduffy.net) | perdite dei trasformatori EFHW | Filari (calcolo 16) |
 
 ## Fonti scartate
 
@@ -117,5 +124,6 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C90 | Rothammels Antennenbuch, cap. 24, Tab. 24.2 (correzione del boom misurata) | scartata da IC8TEM il 14/11/2026: sono le stesse misure di DL6WU, gia' usate con la formula DL6WU/G3SEK |
 | C91 | D. B. Leeson, "A Simple Model of Feedback Oscillator Noise Spectrum", Proc. IEEE 1966 | omonimo: riguarda il rumore di fase degli oscillatori, non la correzione dei tubi. Citato solo per evitare la confusione |
 | C92 | progetti senza licenza (antsim, yagi_designer, moxon-antenna-calculator, pymoxon) | solo consultati: nessun codice usato |
+| C98 | progetti EFHW senza licenza (cheenle/efhw-knowledge, evil-lair/EFHW-antennas, ben-kuhn/BaitcasterEFHW, aussiegeek/portable-efhw) e ckowals/EFHW4 | i primi solo consultati per il confronto delle fonti, nessun testo ne' codice usato; ckowals/EFHW4 non riguarda le antenne |
 
 > NOTA: la rilettura delle fonti scartate e' in corso; questo elenco si aggiorna con le decisioni di IC8TEM.

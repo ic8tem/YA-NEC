@@ -504,6 +504,15 @@ namespace YaNec
             Button bTune = Btn("Porta in risonanza (NEC)", false);
             Button bCar = Btn("Carichi (C) ›", false);
             foreach (Button b in new[] { bNec, bSalva, bApri, bTune, bCar }) { b.Margin = new Thickness(0, 0, 8, 6); btns.Children.Add(b); }
+            if (sc.Key == "filari")
+            {
+                // 1.5.8 (anteprima approvata da IC8TEM il 22/11/2026 16:46): abaco delle filari in una finestra
+                Button bAbaco = Btn("Abaco ›", false);
+                bAbaco.Margin = new Thickness(0, 0, 8, 6);
+                ToolTip.SetTip(bAbaco, Lang.T("Tabelle di lunghezze e contrappesi calcolate con il NEC (filo orizzontale a 3 m): una riga si puo' copiare nella scheda."));
+                bAbaco.Click += (s0, e0) => ApriAbacoFilari(sc);
+                btns.Children.Add(bAbaco);
+            }
             left.Children.Add(btns);
             // 1.5.6 (bozzetto Filari approvato da IC8TEM il 21/11/2026 21:12): pulsanti viola che aprono Balun, Toroidi FT, Cavi RG, Carichi HF gia' compilati
             WrapPanel rimandi = new WrapPanel { Margin = new Thickness(0, 0, 0, 2), IsVisible = false };

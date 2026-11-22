@@ -18,7 +18,8 @@ namespace YaNec
         static readonly CultureInfo IC = CultureInfo.InvariantCulture;
         const double C0 = 299.792458, A = 0.0005;
         static double H = 3.0, Passo = 0.5;
-        static bool Perfetto = true;   // 22/11/2026 17:30: anche terreno medio (GN 2, 13 / 0,005 S/m) e altre altezze
+        static bool Perfetto = true;
+        static double Coax = 0;   // 22/11/2026 17:00: «senza contrappeso» = la calza del coassiale (10 m, senza choke) fa da contrappeso   // 22/11/2026 17:30: anche terreno medio (GN 2, 13 / 0,005 S/m) e altre altezze
         static readonly string[] Nomi = CalcFilari.BandeNomi;
         static readonly double[] F = CalcFilari.BandeF;
 
@@ -32,7 +33,14 @@ namespace YaNec
             int tag = 0;
             Func<double, double, int, string> gw = (x1, x2, n) => { tag++; return "GW " + tag + " " + n + " " + N(x1, "0.####") + " 0 " + N(H) + " " + N(x2, "0.####") + " 0 " + N(H) + " " + N(A, "0.######") + "\n"; };
             int nc = Math.Max(1, (int)Math.Ceiling(cp / seg)), nw = Math.Max(3, (int)Math.Ceiling(L / seg));
-            if (cp > 0.01) sb.Append(gw(-0.1 - cp, -0.1, nc));
+            if (Coax > 0)
+            {
+                // senza contrappeso: fa da contrappeso la calza del coassiale, senza choke, giu' lungo il palo fino a 0,3 m e poi verso la radio
+                double giu = Math.Min(Coax, H - 0.3), resto = Coax - giu;
+                tag++; sb.Append("GW " + tag + " " + Math.Max(1, (int)Math.Ceiling(giu / seg)) + " -0.1 0 " + N(H) + " -0.1 0 " + N(H - giu, "0.####") + " " + N(A, "0.######") + "\n");
+                if (resto > 0.05) { tag++; sb.Append("GW " + tag + " " + Math.Max(1, (int)Math.Ceiling(resto / seg)) + " -0.1 0 " + N(H - giu, "0.####") + " " + N(-0.1 - resto, "0.####") + " 0 " + N(H - giu, "0.####") + " 0.0035\n"); }
+            }
+            else if (cp > 0.01) sb.Append(gw(-0.1 - cp, -0.1, nc));
             sb.Append(gw(-0.1, 0, 1)); int feed = tag;
             sb.Append(gw(0, L, nw));
             sb.Append((Perfetto ? "GE 1\nGN 1" : "GE 0\nGN 2 0 0 0 13 0.005") + "\nEX 0 " + feed + " 1 0 1 0\nFR 0 1 0 0 " + N(f, "0.####") + " 0\nEN\n");
@@ -71,11 +79,12 @@ namespace YaNec
               // 22/11/2026 16:45, IC8TEM: «49:1 e 64:1 sono anche senza contrappeso» -> anche senza (solo 0,1 m di alimentazione)
               foreach (bool senza in new[] { false, true })
               {
-                o.AppendLine("## EFHW " + rapp + ":1 (Z0 " + z0 + " ohm), " + (senza ? "senza contrappeso" : "contrappeso 0,05 lambda della banda piu' bassa"));
+                o.AppendLine("## EFHW " + rapp + ":1 (Z0 " + z0 + " ohm), " + (senza ? "senza contrappeso (fa da contrappeso la calza di 10 m di coassiale, senza choke)" : "contrappeso 0,05 lambda della banda piu' bassa"));
                 o.AppendLine("banda bassa\tlunghezza\tfilo m\tcontrappeso m" + intest);
                 foreach (int b in basse)
                 {
-                    double f = F[b], lam = C0 / f, cp = senza ? 0 : 0.05 * lam;
+                    double f = F[b], lam = C0 / f, cp = senza ? 10 : 0.05 * lam;
+                    Coax = senza ? 10 : 0;
                     double l0 = (1 - CalcFilari.Estremita(f, A)) * lam / 2;
                     // lunghezza col ROS minimo alla banda piu' bassa (scansione 0,85-1,10 e affinamento)
                     double best = l0, rb = double.MaxValue;
@@ -101,6 +110,7 @@ namespace YaNec
                 o.AppendLine();
               }
             }
+            Coax = 0;
             if (soloEfhw) { File.WriteAllText(uscita, o.ToString(), new UTF8Encoding(false)); return 0; }
             // ---------------- 9:1: lunghezze e contrappesi ----------------
             double[] ve3eed = { 29, 35.5, 41, 58, 71, 84, 107, 119, 148 };

@@ -6929,3 +6929,36 @@ aggiornato ({0} s) a {1} MHz
 Accorda la bobina (NEC)
 accordata con il NEC (stima 
 La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno.
+Coassiale fino alla radio
+Senza contrappeso la calza del coassiale, senza choke, fa da contrappeso: la sua lunghezza cambia il ROS. Nel modello scende lungo il palo e poi va verso la radio a 0,3 m da terra.
+coassiale fino alla radio, senza choke
+la calza fa da contrappeso
+Senza contrappeso la corrente torna sulla calza del coassiale fino alla radio: il coassiale irradia, porta RF in stazione e cambia il ROS con la sua lunghezza (I3RKE).
+Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore. Nessuno: nessun filo e nessun choke; la corrente torna sulla calza del coassiale fino alla radio (49:1 e 64:1 si usano anche cosi', IC8TEM 22/11/2026).
+Con il 9:1 e il 4:1 il contrappeso va di solito tra il 5 e il 10 % del filo principale; l'abaco (pulsante Abaco) mostra il migliore per ogni lunghezza, a volte fino al 25-46 %.
+Abaco delle filari
+Abaco ›
+Usa questa riga nella scheda
+Tabelle di lunghezze e contrappesi calcolate con il NEC (filo orizzontale a 3 m): una riga si puo' copiare nella scheda.
+Filo nudo da 1 mm orizzontale a 3 m, contrappeso orizzontale dalla parte opposta alla stessa altezza, trasformatore ideale (ROS su 50 x rapporto). Calcolato con il NEC di YA-NEC. Con altre altezze, disposizioni o fili conta il calcolo della scheda.
+EFHW 49:1
+EFHW 64:1
+9:1, lunghezze migliori
+9:1, lunghezze VE3EED
+contrappeso 0,05 λ
+senza contrappeso
+Tabella non presente nel file dell'abaco.
+banda bassa
+lunghezza
+filo m
+contrappeso m
+contrappeso
+bande ROS<=3
+λ/2 formula
+λ/2 accordata (monobanda)
+λ/4 (difficile)
+Terreno medio: la mezz'onda accordata per una banda da' ROS 1,0-1,7 su quella banda; la multibanda cede sulla fondamentale e guadagna sulle armoniche; il quarto d'onda supera 99 alla banda piu' bassa.
+Terreno perfetto: a 3 m il filo vede la propria immagine in controfase; sulle bande basse il ROS resta alto anche alla mezz'onda. La scheda calcola sempre con il terreno medio.
+9:1, dagli 80 ai 10 m: contrappesi fissi (0-10 m) e in percentuale del filo; il migliore ha piu' bande con ROS fino a 3 e, a parita', la media dei ROS piu' bassa.
+Riga dell'abaco nella scheda Filari: ora il calcolo e' libero, si puo' cambiare tutto.
+Abaco delle filari non trovato (data/abaco_filari.tsv).

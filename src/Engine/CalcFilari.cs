@@ -46,9 +46,10 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("L", "Lunghezza del filo", 16.2, "m", "VE3EED: lunghezze consigliate 8,8 - 10,8 - 12,5 - 17,7 - 21,6 - 25,6 - 32,6 - 36,3 - 45,1 m; lontano dalle mezze onde delle bande d'uso.") { Visibile = nonRis });
             Params.Add(Vis(CalcParam.Scelta("tr", "Trasformatore", 0, "49:1 per 2000-3000 Ω (spire 7:1); 64:1 per i fili alti e gli 80 m (spire 8:1).", "49:1", "64:1"), efhw));
             Params.Add(Vis(CalcParam.Scelta("trb", "Trasformatore", 0, "9:1 trifilare (filo lungo, 300-600 Ω) o 4:1 (fili piu' corti, 100-300 Ω). Serve l'accordatore.", "9:1", "4:1"), nonRis));
-            Params.Add(Vis(CalcParam.Scelta("cp", "Contrappeso RF", 0, "Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore.",
-                "filo 0,05 λ", "calza del coassiale"), efhw));
-            Params.Add(new CalcParam("cpp", "Contrappeso (% del filo)", 7.5, "%", "Con il 9:1 e il 4:1 il contrappeso va tra il 5 e il 10 % del filo principale.") { Visibile = nonRis });
+            Params.Add(Vis(CalcParam.Scelta("cp", "Contrappeso RF", 0, "Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore. Nessuno: nessun filo e nessun choke; la corrente torna sulla calza del coassiale fino alla radio (49:1 e 64:1 si usano anche cosi', IC8TEM 22/11/2026).",
+                "filo 0,05 λ", "calza del coassiale", "nessuno"), efhw));
+            Params.Add(new CalcParam("coax", "Coassiale fino alla radio", 10, "m", "Senza contrappeso la calza del coassiale, senza choke, fa da contrappeso: la sua lunghezza cambia il ROS. Nel modello scende lungo il palo e poi va verso la radio a 0,3 m da terra.") { Visibile = () => I("tipo") != 2 && I("cp") == 2 });
+            Params.Add(new CalcParam("cpp", "Contrappeso (% del filo)", 7.5, "%", "Con il 9:1 e il 4:1 il contrappeso va di solito tra il 5 e il 10 % del filo principale; l'abaco (pulsante Abaco) mostra il migliore per ogni lunghezza, a volte fino al 25-46 %.") { Visibile = nonRis });
             Params.Add(CalcParam.Scelta("iso", "Filo", 1, "L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).", Isolanti));
             Params.Add(new CalcParam("d", "ø del filo", 1.0, "mm"));
             Params.Add(new CalcParam("pw", "Potenza", 100, "W"));
@@ -221,7 +222,8 @@ namespace YaNec.Engine
             }
             else L = Math.Max(1, P("L"));
             double lamBassa = C0 / (conBob ? fb : fBassa);
-            double cp = nonRis ? L * Math.Max(1, Math.Min(20, P("cpp"))) / 100 : 0.05 * lamBassa;
+            bool nessuno = !nonRis && I("cp") == 2;   // 22/11/2026: EFHW senza contrappeso
+            double cp = nonRis ? L * Math.Max(1, Math.Min(60, P("cpp"))) / 100 : (nessuno ? Math.Max(0.5, P("coax")) : 0.05 * lamBassa);
             bool calza = !nonRis && I("cp") == 1;
 
             // ---- bande in tabella
@@ -249,6 +251,7 @@ namespace YaNec.Engine
             else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", Math.Abs(Scale - 1) > 1e-6 ? "accordato con il NEC (formula " + Calcolatori.N(L0Formula, 2) + " m)" : "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 3) + ", effetto d'estremita'", true);
             else o.Card("Filo", Calcolatori.N(L, 2) + " m", "non risonante, con il " + rappTxt + " e l'accordatore", true);
             if (calza) o.Card("Choke sul coassiale", Calcolatori.N(cp, 1) + " m", "dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)");
+            else if (nessuno) o.Card("Contrappeso RF", "calza " + Calcolatori.N(cp, 1) + " m", "coassiale fino alla radio, senza choke");
             else o.Card("Contrappeso RF", Calcolatori.N(cp, 2) + " m", nonRis ? Calcolatori.N(P("cpp"), 1) + " % del filo (5-10 %)" : "0,05 λ (AA5TB)");
             if (!nonRis)
             {
@@ -259,7 +262,8 @@ namespace YaNec.Engine
             Complex zb = conBob ? ZFilo(Lbob, fBassa, a, vf) : ZFilo(L, fBassa, a, vf);
             double v = Math.Sqrt(pw * Complex.Abs(zb));
             o.Card("Tensione in punta", Calcolatori.N(v, 0) + " V", "efficaci a " + Calcolatori.N(pw, 0) + " W (" + Calcolatori.N(v * Math.Sqrt(2), 0) + " V di picco)");
-            if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
+            if (nessuno) o.Card("Choke sul coassiale", "nessuno", "la calza fa da contrappeso");
+            else if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
             int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);   // FT-140-43, FT-240-43, 2 x FT-240-43 (indici della scheda Balun: 1, 2, 3)
             string[] nomiNucleo = { "", "FT-140-43", "FT-240-43", "2 x FT-240-43" };
             o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1, spire in Balun / Un-Un" : "rapporto spire 7:1, spire in Balun / Un-Un"));
@@ -373,7 +377,7 @@ namespace YaNec.Engine
             // ---- annotazioni del disegno
             o.Mark(8, -0.4, h1 - 0.5, rappTxt, 0, 0.4, h1 + 0.3);
             if (calza) o.Mark(0, -cp, Math.Max(0.4, zc) + 0.6, "choke", 2);
-            o.Mark(0, -Math.Max(1, cp * 0.6), zc - 0.9, calza ? "calza " + Calcolatori.N(cp, 1) + " m" : "contrappeso " + Calcolatori.N(cp, 2) + " m", 1);
+            o.Mark(0, -Math.Max(1, cp * 0.6), zc - 0.9, calza || nessuno ? "calza " + Calcolatori.N(cp, 1) + " m" : "contrappeso " + Calcolatori.N(cp, 2) + " m", 1);
             double[] ult = pts[pts.Count - 1];
             o.Mark(0, ult[0], ult[1] + 0.6, "punta", 0);
 
@@ -383,6 +387,7 @@ namespace YaNec.Engine
                 "rispetto al NEC-2 errore del 4 % su terra ideale e dell'11 % con il contrappeso). Nel modello NEC il trasformatore e' ideale: il ROS del calcolo in tempo reale e' riferito a 50 x " + rapp.ToString("0", CultureInfo.InvariantCulture) + " = " + Calcolatori.N(z0rif, 0) + " Ω.";
             if (conBob) fz += " Bobina: X = Z0 (cot θ1 + cot θ2), con θ1 il filo prima della bobina e θ2 la coda (piu' l'effetto d'estremita') alla banda aggiunta, Z0 = 60 ln(0,22 λ/a); OfficinaHF: 20,15 m + 110-120 µH + 2,39 m per gli 80 m.";
             o.Formula = fz + " Fonti: " + Source + ".";
+            if (nessuno) o.Warnings.Add("Senza contrappeso la corrente torna sulla calza del coassiale fino alla radio: il coassiale irradia, porta RF in stazione e cambia il ROS con la sua lunghezza (I3RKE).");
             if (calza) o.Warnings.Add("Con la calza come contrappeso il coassiale fino al choke irradia: tienilo lontano dalla casa e non mettere il choke sul trasformatore (I3RKE).");
             if (!nonRis && pw > 50 && nucleo == 2) o.Warnings.Add("Con un solo FT-240-43 il funzionamento continuo (FT8, RTTY) va tenuto tra 30 e 50 W; 100 W in SSB.");
             if (pw > 15 && pw <= 120 && nucleo == 2 && !nonRis) o.Oks.Add("FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)");

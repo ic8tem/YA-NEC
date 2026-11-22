@@ -7219,3 +7219,36 @@ aggiornato ({0} s) a {1} MHz	updated ({0} s) at {1} MHz
 Accorda la bobina (NEC)	Tune the coil (NEC)
 accordata con il NEC (stima 	tuned with NEC (estimate 
 La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno.	The coil is an estimate (transmission line): the real-time calculation shows where it really resonates; «Tune the coil (NEC)» finds the right inductance with the counterpoise and the ground.
+Coassiale fino alla radio	Coax to the radio
+Senza contrappeso la calza del coassiale, senza choke, fa da contrappeso: la sua lunghezza cambia il ROS. Nel modello scende lungo il palo e poi va verso la radio a 0,3 m da terra.	Without counterpoise the coax shield, with no choke, is the counterpoise: its length changes the SWR. In the model it runs down the mast and then towards the radio 0.3 m above ground.
+coassiale fino alla radio, senza choke	coax to the radio, no choke
+la calza fa da contrappeso	the shield is the counterpoise
+Senza contrappeso la corrente torna sulla calza del coassiale fino alla radio: il coassiale irradia, porta RF in stazione e cambia il ROS con la sua lunghezza (I3RKE).	Without counterpoise the current returns on the coax shield to the radio: the coax radiates, brings RF into the shack and its length changes the SWR (I3RKE).
+Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore. Nessuno: nessun filo e nessun choke; la corrente torna sulla calza del coassiale fino alla radio (49:1 e 64:1 si usano anche cosi', IC8TEM 22/11/2026).	Wire: 0.05 λ of the lowest band (AA5TB), from the transformer downwards. Shield: the coax up to the choke is the counterpoise, with the choke 0.05 λ from the transformer. None: no wire and no choke; the current returns on the coax shield to the radio (the 49:1 and 64:1 are also used this way).
+Con il 9:1 e il 4:1 il contrappeso va di solito tra il 5 e il 10 % del filo principale; l'abaco (pulsante Abaco) mostra il migliore per ogni lunghezza, a volte fino al 25-46 %.	With the 9:1 and the 4:1 the counterpoise is usually 5 to 10 % of the main wire; the chart (Chart button) shows the best one for each length, sometimes up to 25-46 %.
+Abaco delle filari	Wire antenna chart
+Abaco ›	Chart ›
+Usa questa riga nella scheda	Use this row in the page
+Tabelle di lunghezze e contrappesi calcolate con il NEC (filo orizzontale a 3 m): una riga si puo' copiare nella scheda.	Tables of lengths and counterpoises computed with NEC (horizontal wire at 3 m): a row can be copied into the page.
+Filo nudo da 1 mm orizzontale a 3 m, contrappeso orizzontale dalla parte opposta alla stessa altezza, trasformatore ideale (ROS su 50 x rapporto). Calcolato con il NEC di YA-NEC. Con altre altezze, disposizioni o fili conta il calcolo della scheda.	Bare 1 mm wire horizontal at 3 m, horizontal counterpoise on the opposite side at the same height, ideal transformer (SWR on 50 x ratio). Computed with the YA-NEC NEC engine. With other heights, layouts or wires the page calculation applies.
+EFHW 49:1	EFHW 49:1
+EFHW 64:1	EFHW 64:1
+9:1, lunghezze migliori	9:1, best lengths
+9:1, lunghezze VE3EED	9:1, VE3EED lengths
+contrappeso 0,05 λ	0.05 λ counterpoise
+senza contrappeso	no counterpoise
+Tabella non presente nel file dell'abaco.	Table not in the chart file.
+banda bassa	lowest band
+lunghezza	length
+filo m	wire m
+contrappeso m	counterpoise m
+contrappeso	counterpoise
+bande ROS<=3	bands SWR<=3
+λ/2 formula	λ/2 formula
+λ/2 accordata (monobanda)	λ/2 tuned (single band)
+λ/4 (difficile)	λ/4 (difficult)
+Terreno medio: la mezz'onda accordata per una banda da' ROS 1,0-1,7 su quella banda; la multibanda cede sulla fondamentale e guadagna sulle armoniche; il quarto d'onda supera 99 alla banda piu' bassa.	Average ground: the half wave tuned for one band gives SWR 1.0-1.7 on that band; the multiband one gives up some on the fundamental and gains on the harmonics; the quarter wave exceeds 99 on the lowest band.
+Terreno perfetto: a 3 m il filo vede la propria immagine in controfase; sulle bande basse il ROS resta alto anche alla mezz'onda. La scheda calcola sempre con il terreno medio.	Perfect ground: at 3 m the wire sees its own image in antiphase; on the low bands the SWR stays high even at the half wave. The page always calculates with average ground.
+9:1, dagli 80 ai 10 m: contrappesi fissi (0-10 m) e in percentuale del filo; il migliore ha piu' bande con ROS fino a 3 e, a parita', la media dei ROS piu' bassa.	9:1, 80 to 10 m: fixed counterpoises (0-10 m) and as a percentage of the wire; the best has more bands with SWR up to 3 and, on a tie, the lowest average SWR.
+Riga dell'abaco nella scheda Filari: ora il calcolo e' libero, si puo' cambiare tutto.	Chart row copied into the Wire antennas page: the calculation is now free, everything can be changed.
+Abaco delle filari non trovato (data/abaco_filari.tsv).	Wire antenna chart not found (data/abaco_filari.tsv).
