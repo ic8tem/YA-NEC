@@ -706,7 +706,7 @@ namespace YaNec
             try
             {
                 using (Prestazioni.Misura("Ottimizzatore", o.Variabili.Count + " variabili, " + o.Frequenze.Count + " frequenze"))
-                    await Task.Run(() => o.Esegui(tok));
+                    using (Structure3DView.PausaAnimazione()) await Task.Run(() => o.Esegui(tok));
                 if (tok.IsCancellationRequested) esito = "fermato";
             }
             catch (OperationCanceledException) { esito = "fermato"; }

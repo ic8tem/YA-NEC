@@ -468,7 +468,8 @@ namespace YaNec
             {
                 // 0.4.20: modelli grandi, primo diagramma 3D a 5 gradi (quello a 2 gradi segue in sottofondo)
                 bool grande = g.N > SegmentiModelloGrande && !ProveAutomatiche && ModoCalcoloAuto != 0;
-                RunResult r = await Task.Run(() => { RunResult rr = Analysis.Run(m, g, f, grande ? 5.0 : 2.0, tok); ControlliDopoCalcolo(m, rr); return rr; });   // 0.5.1: controlli dei dati
+                RunResult r;
+                using (Structure3DView.PausaAnimazione()) r = await Task.Run(() => { RunResult rr = Analysis.Run(m, g, f, grande ? 5.0 : 2.0, tok); ControlliDopoCalcolo(m, rr); return rr; });   // 0.5.1: controlli dei dati
                 if (tok.IsCancellationRequested || m != model) return;
                 run = r;
                 lastError = null;
@@ -550,7 +551,7 @@ namespace YaNec
             try
             {
                 RegistraPassoAngoli();
-                await Task.Run(() => Analysis.AffinaDiagramma(r, passo, tok));
+                using (Structure3DView.PausaAnimazione()) await Task.Run(() => Analysis.AffinaDiagramma(r, passo, tok));
                 if (!tok.IsCancellationRequested && run == r) { Registro.Scrivi("CALCOLO", "diagramma 3D a " + passo.ToString("0.#", CultureInfo.InvariantCulture) + " gradi"); RefreshAll(); AggiornaPassoAngoli(); }
             }
             catch (OperationCanceledException) { }
@@ -592,7 +593,8 @@ namespace YaNec
             DateTime t0 = DateTime.Now;
             try
             {
-                List<SweepPoint> res = await Task.Run(() => Analysis.Sweep(m, g, fs, th, ph, pr, tok));
+                List<SweepPoint> res;
+                using (Structure3DView.PausaAnimazione()) res = await Task.Run(() => Analysis.Sweep(m, g, fs, th, ph, pr, tok));
                 if (m != model || tok.IsCancellationRequested) return;
                 sweep = res;
                 int bad = res.Count(p => !p.Ok);
@@ -748,6 +750,7 @@ namespace YaNec
             view3d.Ground = model != null && model.Ground.Kind != GroundKind.FreeSpace;
             view3d.SourceSegs = new HashSet<int>();
             view3d.CurrentNorm = null;
+            view3d.CurrentC = null;
             view3d.Pattern = null;
             view3d.LobeAz = double.NaN;
             if (geo != null && model != null)
@@ -791,10 +794,12 @@ namespace YaNec
             if (run != null && run.Geometry != null && geo != null && (run.Geometry == geo || run.Geometry.N == geo.N))
             {
                 double[] c = new double[geo.N];
+                Complex[] cc = new Complex[geo.N];
                 double mx = 0;
-                for (int i = 0; i < geo.N; i++) { c[i] = Complex.Abs(run.Engine.SegmentCurrent(i)); mx = Math.Max(mx, c[i]); }
+                for (int i = 0; i < geo.N; i++) { cc[i] = run.Engine.SegmentCurrent(i); c[i] = Complex.Abs(cc[i]); mx = Math.Max(mx, c[i]); }
                 if (mx > 0) for (int i = 0; i < geo.N; i++) c[i] /= mx;
                 view3d.CurrentNorm = c;
+                view3d.CurrentC = cc;
                 view3d.Pattern = run.Grid;
                 view3d.PatternMax = run.GmaxDbi;
                 view3d.LobeAz = run.PhiMax;

@@ -7580,3 +7580,16 @@ Con 	With
 : a 	: at 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W the core heats up. Choose «automatic» or a larger core.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): power estimated 1.5 times the FT-240-43 from the core cross-section, efficiency as the FT-240-43 (not measured by DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse
+animate	animated
+valori col mouse	values on hover
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Dots running along the wires: denser and faster where the current is stronger, shifted according to the current phase. They stop during calculation, sweep and optimizer.
+Velocita' dei puntini.	Speed of the dots.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	On mouse hover: on a wire the current, phase, diameter and segment length; on the 3D lobe the gain and direction.
+animazione spenta oltre {0} segmenti	animation off above {0} segments
+Filo {0}, segmento {1} (n. {2} del NEC)	Wire {0}, segment {1} (NEC no. {2})
+fase {0}°	phase {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
+azimut {0}° · elevazione {1}°	azimuth {0}° · elevation {1}°
+guadagno {0} dBi ({1} dB dal massimo)	gain {0} dBi ({1} dB from maximum)

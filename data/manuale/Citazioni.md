@@ -89,6 +89,7 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C116 | R. Sutherland, hf-nec2c (github.com/sutherlandryan/hf-nec2c, licenza BSD-2) | costanti di zint dal listato del NEC-2 | calcolo 1.7 |
 | C117 | UR3PKI, nec2-rs (github.com/CyberDev-space/nec2-rs, licenza MIT), docs/nec2c-deviations.md, letto il 22/11/2026 | i dieci punti in cui nec2c si scosta dal Fortran del NEC-2 | confronto del calcolo 1.7 |
 | C118 | S. M. Burns, momwire (github.com/stevenmburns/momwire, licenza MIT), tests/fixtures/refusal_coverage_0800 e docs/deck-dialect.md, letto il 22/11/2026 | 33 file NEC volutamente sbagliati e le regole con cui vanno rifiutati | controlli di ingresso della 1.5.9 (calcolo 1.7); nessun codice copiato |
+| C119 | EA1FUO, AntennaSim (github.com/EA1FUO/AntennaSim, licenza GPL-3), letto il 22/11/2026 | correnti animate lungo i fili e valori al passaggio del mouse nella vista 3D | solo l'idea per la Struttura 3D della 1.5.9 (manuale, «Struttura 3D: caselle della vista»); nessun codice usato |
 | C5 | R. Lewallen W7EL, EZNEC Pro/2+ 7.0 | help (Stepped Diameter Correction); comportamento di Geometry Check e Segmentation Check | avvisi, fili collegati al terreno, confronti (calcolo 2, 4) |
 | C6 | A. Voors, 4nec2 | help (EX 6, LD 6, LD 7, GN 3); Ground.txt, Conduc.txt | terreni tipici, filo isolato (calcolo 2, 3) |
 | C7 | YT1NT / VE3EA, TANT; D. Maguire AC6LA, XLGTa; KF2YN | metodo di Tant e G/T, correzione del guadagno medio | Rumore e G/T (calcolo 8) |

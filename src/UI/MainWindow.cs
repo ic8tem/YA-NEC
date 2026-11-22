@@ -570,18 +570,28 @@ namespace YaNec
             // correnti: casella si'/no e, se si', scelta a pallino tra colori e sola curva (richiesta IC8TEM 13/11/2026 17:56)
             chkCur = new CheckBox { Content = "Correnti", IsChecked = true, Margin = new Thickness(4, 0) };
             RadioButton rbColori = new RadioButton { Content = "a colori", GroupName = "corr3d", IsChecked = true, Margin = new Thickness(2, 0) };
-            RadioButton rbCurva = new RadioButton { Content = "solo curva", GroupName = "corr3d", IsChecked = false, Margin = new Thickness(2, 0, 8, 0) };
+            RadioButton rbCurva = new RadioButton { Content = "solo curva", GroupName = "corr3d", IsChecked = false, Margin = new Thickness(2, 0) };
+            // 1.5.9 (bozzetto «Struttura 3D › correnti animate e valori col mouse», approvato alla lettera da IC8TEM il 22/11/2026)
+            RadioButton rbAnim = new RadioButton { Content = "animate", GroupName = "corr3d", IsChecked = false, Margin = new Thickness(2, 0) };
+            Slider slVel = new Slider { Minimum = 0.25, Maximum = 3, Value = 1, Width = 80, IsEnabled = false, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(2, 0, 8, 0) };
+            slVel.PropertyChanged += (s, e) => { if (e.Property == Slider.ValueProperty) view3d.AnimSpeed = slVel.Value; };
+            CheckBox chkValori = new CheckBox { Content = "valori col mouse", IsChecked = false, Margin = new Thickness(4, 0) };
+            chkValori.IsCheckedChanged += (s, e) => { view3d.HoverValues = chkValori.IsChecked == true; view3d.InvalidateVisual(); };
             chkCur.IsCheckedChanged += (s, e) =>
             {
                 bool on = chkCur.IsChecked == true;
-                view3d.ShowCurrents = on; rbColori.IsEnabled = on; rbCurva.IsEnabled = on;
+                view3d.ShowCurrents = on; rbColori.IsEnabled = on; rbCurva.IsEnabled = on; rbAnim.IsEnabled = on; slVel.IsEnabled = on && rbAnim.IsChecked == true;
                 view3d.InvalidateVisual();
             };
-            rbColori.IsCheckedChanged += (s, e) =>
+            Action modoCorr = () =>
             {
-                bool col = rbColori.IsChecked == true;
-                view3d.CurrentColors = col; view3d.CurrentCurves = !col; view3d.InvalidateVisual();
+                view3d.CurrentColors = rbColori.IsChecked == true; view3d.CurrentCurves = rbCurva.IsChecked == true;
+                view3d.CurrentAnimate = rbAnim.IsChecked == true; slVel.IsEnabled = rbAnim.IsChecked == true;
+                view3d.InvalidateVisual();
             };
+            rbColori.IsCheckedChanged += (s, e) => modoCorr();
+            rbCurva.IsCheckedChanged += (s, e) => modoCorr();
+            rbAnim.IsCheckedChanged += (s, e) => modoCorr();
             chkPat = new CheckBox { Content = "Lobo 3D", IsChecked = true, Margin = new Thickness(4, 0) };
             chkPat.IsCheckedChanged += (s, e) => { view3d.ShowPattern = chkPat.IsChecked == true; view3d.InvalidateVisual(); };
             CheckBox chkQuota = new CheckBox { Content = "Terreno e quota", IsChecked = true, Margin = new Thickness(4, 0) };
@@ -600,10 +610,17 @@ namespace YaNec
             ToolTip.SetTip(chkCur, "Mostra o nasconde la corrente sui fili.");
             ToolTip.SetTip(rbColori, "Fili colorati secondo la corrente (blu bassa, rosso alta), con la scala in basso.");
             ToolTip.SetTip(rbCurva, "Fili nel colore normale con sopra la distribuzione della corrente come curva (zero agli estremi liberi).");
+            ToolTip.SetTip(rbAnim, "Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.");
+            ToolTip.SetTip(slVel, "Velocita' dei puntini.");
+            ToolTip.SetTip(chkValori, "Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.");
             ToolTip.SetTip(chkQuota, "Terreno disegnato secondo il tipo scelto nel menu Terreno e quote dell'antenna dal suolo (0 m).");
             bar.Children.Add(chkCur);
             bar.Children.Add(rbColori);
             bar.Children.Add(rbCurva);
+            bar.Children.Add(rbAnim);
+            bar.Children.Add(Lbl("velocita'"));
+            bar.Children.Add(slVel);
+            bar.Children.Add(chkValori);
             bar.Children.Add(chkPat);
             bar.Children.Add(chkQuota);
             bar.Children.Add(chkFasi); bar.Children.Add(chkOgg);

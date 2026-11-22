@@ -6,6 +6,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
+using Avalonia.Threading;
+using System.Numerics;
+using System.Runtime.InteropServices;
 using YaNec.Engine;
 
 namespace YaNec
@@ -25,6 +28,27 @@ namespace YaNec
         public GroundStyle GroundLook;          // null = solo griglia
         // correnti disegnate come funzioni (curve) sopra ogni filo
         public bool CurrentCurves = false, CurrentColors = true;
+        // 1.5.9 (bozzetto «Struttura 3D › correnti animate e valori col mouse», approvato alla lettera da IC8TEM il 22/11/2026;
+        // idea vista in AntennaSim di EA1FUO, GPL-3: nessun codice usato): correnti complesse del NEC per segmento (A, come la tabella
+        // delle correnti), puntini animati e fumetto dei valori al passaggio del mouse
+        public Complex[] CurrentC;
+        public double AnimSpeed = 1;          // cursore «velocita'» (0,25 - 3)
+        public bool HoverValues;              // casella «valori col mouse»
+        public const int AnimMaxSeg = 6000;   // oltre, i puntini rallenterebbero troppo il disegno: restano i colori
+        bool currentAnimate;
+        public bool CurrentAnimate
+        {
+            get { return currentAnimate; }
+            set { currentAnimate = value; AggiornaTimer(); InvalidateVisual(); }
+        }
+        static int pausaAnimazione;
+        sealed class Ripresa : IDisposable { bool fatto; public void Dispose() { if (!fatto) { fatto = true; System.Threading.Interlocked.Decrement(ref pausaAnimazione); } } }
+        /// <summary>Ferma i puntini durante calcolo, sweep e ottimizzatore (using (...) attorno al lavoro in sottofondo).</summary>
+        public static IDisposable PausaAnimazione() { System.Threading.Interlocked.Increment(ref pausaAnimazione); return new Ripresa(); }
+        DispatcherTimer animTimer;
+        double animT;
+        DateTime animUltimo = DateTime.UtcNow;
+        Point? hoverAt;
         public string HeightSummary = "";
         public string GroundValues = "";
         // bozzetto four-square: etichette di ampiezza e fase sulle sorgenti e freccia del lobo
@@ -74,6 +98,38 @@ namespace YaNec
             ClipToBounds = true;
         }
 
+        void AggiornaTimer()
+        {
+            if (currentAnimate && animTimer == null)
+            {
+                animTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(33) };
+                animTimer.Tick += (s, e) =>
+                {
+                    DateTime ora = DateTime.UtcNow;
+                    double dt = Math.Min(0.1, (ora - animUltimo).TotalSeconds);
+                    animUltimo = ora;
+                    if (!IsEffectivelyVisible || pausaAnimazione > 0 || RiduciAnimazioni() || !ShowCurrents || Geo == null || CurrentC == null || Geo.N > AnimMaxSeg) return;
+                    animT += dt * AnimSpeed;
+                    InvalidateVisual();
+                };
+                animTimer.Start();
+            }
+            else if (!currentAnimate && animTimer != null) { animTimer.Stop(); animTimer = null; }
+        }
+
+        // «Riduci animazioni» del sistema: su Windows l'opzione «Mostra animazioni in Windows» (SPI_GETCLIENTAREAANIMATION),
+        // letta ogni 5 secondi; sugli altri sistemi Avalonia non la espone
+        static bool riduciLetto; static bool riduciValore; static DateTime riduciQuando;
+        [DllImport("user32.dll")] static extern bool SystemParametersInfo(uint a, uint b, ref bool c, uint d);
+        static bool RiduciAnimazioni()
+        {
+            if (!OperatingSystem.IsWindows()) return false;
+            if (riduciLetto && (DateTime.UtcNow - riduciQuando).TotalSeconds < 5) return riduciValore;
+            try { bool on = true; if (SystemParametersInfo(0x1042, 0, ref on, 0)) riduciValore = !on; } catch { riduciValore = false; }
+            riduciLetto = true; riduciQuando = DateTime.UtcNow;
+            return riduciValore;
+        }
+
         public void ResetView()
         {
             az = -55; el = 22; zoom = 1; panX = 0; panY = 0;
@@ -102,7 +158,12 @@ namespace YaNec
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
-            if (!rotating && !panning) return;
+            if (!rotating && !panning)
+            {
+                if (HoverValues) { hoverAt = e.GetPosition(this); InvalidateVisual(); }
+                return;
+            }
+            hoverAt = null;
             Point p = e.GetPosition(this);
             double dx = p.X - last.X, dy = p.Y - last.Y;
             last = p;
@@ -146,6 +207,12 @@ namespace YaNec
             }
             rotating = panning = false;
             e.Pointer.Capture(null);
+        }
+
+        protected override void OnPointerExited(PointerEventArgs e)
+        {
+            base.OnPointerExited(e);
+            if (hoverAt != null) { hoverAt = null; InvalidateVisual(); }
         }
 
         protected override void OnPointerWheelChanged(PointerWheelEventArgs e)
@@ -410,7 +477,7 @@ namespace YaNec
             // si raccolgono in poche geometrie (una per colore, 16 livelli di corrente) disegnate una volta sola, e lo spessore scende con
             // il numero dei segmenti (2,2 px fino a 3000, poi fino a 0,6 px). I punti fuori da un margine ampio della vista si scartano.
             {
-                bool colori = ShowCurrents && CurrentColors && CurrentNorm != null;
+                bool colori = ShowCurrents && (CurrentColors || currentAnimate) && CurrentNorm != null;
                 double spess = Geo.N <= 3000 ? 2.2 : Geo.N <= 8000 ? 1.4 : Geo.N <= 15000 ? 1.0 : 0.6;
                 int nLiv = colori ? 16 : 1;
                 StreamGeometry[] geo = new StreamGeometry[nLiv];
@@ -483,6 +550,13 @@ namespace YaNec
                 }
             }
 
+            // 1.5.9: puntini che scorrono lungo i fili (piu' fitti e veloci dove la corrente e' forte, sfasati con la fase)
+            if (ShowCurrents && currentAnimate && CurrentNorm != null && CurrentC != null && CurrentNorm.Length == Geo.N && CurrentC.Length == Geo.N)
+            {
+                if (Geo.N <= AnimMaxSeg) DisegnaPuntini(ctx, cx, cy, sc, ox, oy, oz, W, H);
+                else Draw.Text(ctx, Lang.F("animazione spenta oltre {0} segmenti", AnimMaxSeg.ToString()), 10, 26, 11.5, Pal.Muted);
+            }
+
             // correnti come funzioni sopra i fili
             if (ShowCurrents && CurrentCurves && CurrentNorm != null && CurrentNorm.Length == Geo.N)
                 DrawCurrentCurves(ctx, cx, cy, sc, ox, oy, oz, R);
@@ -496,7 +570,8 @@ namespace YaNec
             // legenda
             Draw.Text(ctx, Info + (Ground && HeightSummary.Length > 0 ? ", " + HeightSummary : ""), 10, 8, 12.5, Pal.ChartText);
             Draw.TextR(ctx, "trascina: ruota  |  rotella: zoom  |  tasto destro: sposta  |  doppio clic: vista iniziale", W - 10, H - 22, 11, Pal.Muted);
-            if (ShowCurrents && CurrentColors && CurrentNorm != null)
+            if (HoverValues && hoverAt != null) DisegnaFumetto(ctx, hoverAt.Value, cx, cy, sc, ox, oy, oz, R, W, H);
+            if (ShowCurrents && (CurrentColors || currentAnimate) && CurrentNorm != null)
             {
                 double bx = 10, by = H - 30, bw = 160;
                 for (int k = 0; k < 40; k++)
@@ -505,6 +580,109 @@ namespace YaNec
                 Draw.TextR(ctx, "alta", bx + bw, by - 16, 11, Pal.ChartText);
             }
         }
+        // ------------------------------------------------------------------------------------------------
+        // 1.5.9: puntini animati. Per ogni segmento: numero di puntini secondo la lunghezza sullo schermo e la corrente (passo da 40 px
+        // a corrente bassa a 12 px al massimo), posizione = frazione(j/n + t * velocita' * |I| + fase/360); colore e misura come «a colori».
+        void DisegnaPuntini(DrawingContext ctx, double cx, double cy, double sc, double ox, double oy, double oz, double W, double H)
+        {
+            int totale = 0;
+            const int maxPuntini = 5000;
+            IBrush[] pennelli = new IBrush[16];
+            for (int i = 0; i < Geo.N && totale < maxPuntini; i++)
+            {
+                double a = CurrentNorm[i];
+                if (a < 0.08) continue;
+                double x1, y1, x2, y2;
+                Project(Geo.X1[i], Geo.Y1[i], Geo.Z1[i], cx, cy, sc, ox, oy, oz, out x1, out y1);
+                Project(Geo.X2[i], Geo.Y2[i], Geo.Z2[i], cx, cy, sc, ox, oy, oz, out x2, out y2);
+                if (double.IsNaN(x1) || double.IsNaN(x2)) continue;
+                if ((x1 < -20 && x2 < -20) || (x1 > W + 20 && x2 > W + 20) || (y1 < -20 && y2 < -20) || (y1 > H + 20 && y2 > H + 20)) continue;
+                double lpx = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+                double passo = 40 - 28 * a;
+                int n = Math.Max(1, (int)Math.Round(lpx / passo));
+                if (lpx < 3 && (i % 3) != 0) continue;   // segmenti cortissimi sullo schermo: uno su tre
+                double fase = Math.Atan2(CurrentC[i].Imaginary, CurrentC[i].Real) / (2 * Math.PI);
+                int k = Math.Max(0, Math.Min(15, (int)(a * 16)));
+                if (pennelli[k] == null) pennelli[k] = Pal.B(Pal.Heat((k + 0.5) / 16));
+                double rr = 1.3 + 2.0 * a;
+                for (int j = 0; j < n; j++)
+                {
+                    double u = j / (double)n + animT * 0.6 * a + fase;
+                    u -= Math.Floor(u);
+                    ctx.DrawEllipse(pennelli[k], null, new Point(x1 + u * (x2 - x1), y1 + u * (y2 - y1)), rr, rr);
+                    totale++;
+                }
+            }
+        }
+
+        // 1.5.9: fumetto dei valori. Filo: tag, segmento nel filo e numero NEC, |I| in mA e dB dal massimo, fase, diametro e lunghezza
+        // del segmento. Lobo 3D: azimut, elevazione, guadagno in dBi e dB dal massimo. Nessun calcolo nuovo.
+        void DisegnaFumetto(DrawingContext ctx, Point m, double cx, double cy, double sc, double ox, double oy, double oz, double R, double W, double H)
+        {
+            List<string> righe = null;
+            double best = 8; int seg = -1;
+            for (int i = 0; i < Geo.N; i++)
+            {
+                double ax, ay, bx, by;
+                Project(Geo.X1[i], Geo.Y1[i], Geo.Z1[i], cx, cy, sc, ox, oy, oz, out ax, out ay);
+                Project(Geo.X2[i], Geo.Y2[i], Geo.Z2[i], cx, cy, sc, ox, oy, oz, out bx, out by);
+                double vx = bx - ax, vy = by - ay, l2 = vx * vx + vy * vy;
+                double t = l2 > 0 ? Math.Max(0, Math.Min(1, ((m.X - ax) * vx + (m.Y - ay) * vy) / l2)) : 0;
+                double dx = ax + t * vx - m.X, dy = ay + t * vy - m.Y, d = Math.Sqrt(dx * dx + dy * dy);
+                if (d < best) { best = d; seg = i; }
+            }
+            if (seg >= 0)
+            {
+                int nelFilo = 0;
+                for (int i = 0; i <= seg; i++) if (Geo.Tag[i] == Geo.Tag[seg]) nelFilo++;
+                righe = new List<string> { Lang.F("Filo {0}, segmento {1} (n. {2} del NEC)", Geo.Tag[seg].ToString(), nelFilo.ToString(), (seg + 1).ToString()) };
+                if (CurrentC != null && seg < CurrentC.Length)
+                {
+                    double mx = 0;
+                    foreach (Complex c in CurrentC) mx = Math.Max(mx, c.Magnitude);
+                    double ia = CurrentC[seg].Magnitude, db = mx > 0 && ia > 0 ? 20 * Math.Log10(ia / mx) : double.NegativeInfinity;
+                    righe.Add("|I| " + Draw.N(ia * 1000, ia * 1000 >= 10 ? 1 : 2) + " mA (" + (double.IsInfinity(db) ? "-∞" : Draw.N(db, 1)) + " dB)");
+                    righe.Add(Lang.F("fase {0}°", Draw.N(CurrentC[seg].Phase * 180 / Math.PI, 1)));
+                }
+                righe.Add(Lang.F("ø {0} mm · segmento {1} mm", Draw.N(Geo.Bi[seg] * 2000, 2), Draw.N(Geo.Length(seg) * 1000, 1)));
+            }
+            else if (ShowPattern && Pattern != null)
+            {
+                double rp = R * 0.95, bestL = 10; int bt = -1, bp = -1;
+                for (int it = 0; it < Pattern.NTheta; it++)
+                    for (int ip = 0; ip < Pattern.NPhi; ip++)
+                    {
+                        double g = Pattern.Total[it, ip];
+                        double rr = Math.Max(0, (g - PatternMax + 30) / 30.0) * rp;
+                        if (rr <= 0) continue;
+                        double th = Pattern.ThetaAt(it) * Math.PI / 180, ph = Pattern.PhiAt(ip) * Math.PI / 180, qx, qy;
+                        Project(ox + rr * Math.Sin(th) * Math.Cos(ph), oy + rr * Math.Sin(th) * Math.Sin(ph), oz + rr * Math.Cos(th), cx, cy, sc, ox, oy, oz, out qx, out qy);
+                        double d = Math.Sqrt((qx - m.X) * (qx - m.X) + (qy - m.Y) * (qy - m.Y));
+                        if (d < bestL) { bestL = d; bt = it; bp = ip; }
+                    }
+                if (bt >= 0)
+                {
+                    double g = Pattern.Total[bt, bp];
+                    righe = new List<string>
+                    {
+                        Lang.T("Lobo 3D"),
+                        Lang.F("azimut {0}° · elevazione {1}°", Draw.N(Pattern.PhiAt(bp), 0), Draw.N(90 - Pattern.ThetaAt(bt), 0)),
+                        Lang.F("guadagno {0} dBi ({1} dB dal massimo)", Draw.N(g, 2), Draw.N(g - PatternMax, 1))
+                    };
+                }
+            }
+            if (righe == null) return;
+            double bw = 0;
+            foreach (string l in righe) bw = Math.Max(bw, Draw.Ft(l, 12, Pal.Fore).Width);
+            double bh = righe.Count * 17 + 10, x = m.X + 14, y = m.Y - bh - 8;
+            if (x + bw + 18 > W) x = m.X - bw - 32;
+            if (y < 4) y = m.Y + 18;
+            Color fondo = Pal.Dark ? Pal.Rgb(0x2c, 0x28, 0x14) : Pal.Rgb(0xff, 0xfb, 0xe6), bordo = Pal.Dark ? Pal.Rgb(0x6f, 0x64, 0x30) : Pal.Rgb(0xd9, 0xc6, 0x6b);
+            ctx.DrawRectangle(Pal.B(fondo), Pal.P(bordo, 1), new Rect(x, y, bw + 18, bh), 6, 6);
+            for (int i = 0; i < righe.Count; i++)
+                Draw.Text(ctx, righe[i], x + 9, y + 5 + i * 17, 12, Pal.Fore, i == 0 ? FontWeight.SemiBold : FontWeight.Normal);
+        }
+
         // ------------------------------------------------------------------------------------------------
         // livelli dell'antenna sopra il suolo: si raggruppano le quote dei segmenti; un gruppo sottile (antenna orizzontale)
         // da' una sola quota, un gruppo alto (verticale) da' la base e la cima. Piu' di 10 livelli: solo il minimo e il massimo.
