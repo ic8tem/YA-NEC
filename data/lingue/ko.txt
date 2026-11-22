@@ -5108,3 +5108,2456 @@ La formula di Cebik vale per la spira da sola: con riflettore o direttore il rad
 polarizzazione orizzontale	수평 편파
 MISURA	측정
 MOSTRA	표시
+# 1.5.9: voci aggiunte (traduzione automatica controllata, IC8TEM 22/11/2026 22:47)
+Da HorizonProfiler (.csv / .hpr)	HorizonProfiler에서 (.csv / .hpr)
+DEM TINITALY / SRTM1	DEM TINITALY / SRTM1
+Acqua salata (εr 81, σ 5 S/m)	바닷물 (εr 81, σ 5 S/m)
+Acqua dolce (εr 80, σ 0,003 S/m)	민물 (εr 80, σ 0.003 S/m)
+Rugosità mare (stato 2–3)	해면 거칠기 (해상 상태 2–3)
+Divergenza (terra curva, k = 4/3)	발산 (곡면 지구, k = 4/3)
+Tutti gli azimut (rosa 0–360°)	전체 방위각 (0–360° 장미도)
+Polare (come Verticale)	극좌표 (수직과 동일)
+Statistiche angoli ARRL (banda e regione)	ARRL 도래각 통계 (밴드 및 지역)
+Calcola prima il modello (pulsante Calcola in alto)	먼저 모델을 계산하세요 (상단의 계산 버튼)
+distanza dall'antenna (km)	안테나로부터의 거리 (km)
+quota s.l.m. (m)	해발 고도 (m)
+terreno piatto (NEC)	평탄 지면 (NEC)
+Intero 0–180° (come la linguetta Verticale)	전체 0–180° (수직 탭과 동일)
+Zoom 0–	확대 0–
+figura di merito rispetto al terreno piatto, per azimut (antenna rivolta verso ogni azimut)	평탄 지면 대비 성능 지수, 방위각별 (안테나를 각 방위각으로 회전)
+attiva la scansione (sotto)	스캔 켜기 (아래)
+Elev.	앙각
+Profilo del terreno (HorizonProfiler)	지형 단면 (HorizonProfiler)
+Profili (csv, hpr, txt)	단면 (csv, hpr, txt)
+Quota del suolo (DEM)	지면 고도 (DEM)
+DEM TINITALY	DEM TINITALY
+Quota del suolo (DEM: serve la rete al primo uso)	지면 고도 (DEM: 처음 사용 시 네트워크 필요)
+± mm	± mm
+Gaussiana (t = 2σ)	가우스 (t = 2σ)
+Includi foratura del boom (posizione)	붐 천공 포함 (위치)
+Includi errore della staffa (isolatori)	클램프 오차 포함 (절연체)
+fisso (ripetibile)	고정 (반복 가능)
+Avvia (≈ 500 calcoli NEC)	시작 (≈ 500회 NEC 계산)
+Sensibilità per elemento (calo di F/B per 1 mm di errore)	소자별 민감도 (오차 1 mm당 F/B 저하)
+F/B (dB)	F/B (dB)
+ROS nominale (peggiore nella banda)	공칭 SWR (밴드 내 최악값)
+elementi più critici (vedi sensibilità)	가장 민감한 소자 (민감도 참조)
+Elem.	소자
+Avvia (sensibilità)	시작 (민감도)
+Tolleranze: servono almeno due elementi diritti (un filo per elemento)	공차: 직선 소자가 최소 2개 필요 (소자당 와이어 1개)
+Stampa la lista di taglio (PDF)	절단 목록 인쇄 (PDF)
+TIA-222-H (testo non disponibile)	TIA-222-H (본문 없음)
+direzione del vento rispetto al boom (°)	붐 기준 풍향 (°)
+forza (N)	힘 (N)
+Forze per parte (vento lungo il boom: elementi di fianco)	부품별 힘 (붐 방향 바람: 소자 측면)
+fuori dall'Italia: zona e vb da scegliere a mano (NTC vale in Italia)	이탈리아 외: 구역과 vb를 직접 선택 (NTC는 이탈리아에서 적용)
+qr = ½ · ρ · vr² (ρ = 1,25 kg/m³)	qr = ½ · ρ · vr² (ρ = 1.25 kg/m³)
+q = qr · ce · ct	q = qr · ce · ct
+Area m²	면적 m²
+F (kgf)	F (kgf)
+forza totale (N)	총 힘 (N)
+momento torcente sul rotore (N·m)	로테이터 토크 (N·m)
+° dal boom)	° 붐 기준)
+Carico del vento (predimensionamento)	풍하중 (예비 설계)
+Forze per parte (vento lungo il boom)	부품별 힘 (붐 방향 바람)
+Area m2	면적 m2
+Relazione del vento (PDF)	풍하중 보고서 (PDF)
+MASSE (DAL MODELLO)	질량 (모델 기준)
+Al tubo (spessore tipico)	Al 튜브 (일반 두께)
+kg a	kg, 위치
+posizione della staffa dal riflettore (m)	반사기로부터 클램프 위치 (m)
+Bilanciamento: calcola prima il modello (servono gli elementi)	균형: 먼저 모델을 계산하세요 (소자 필요)
+momento del peso sul morsetto (N·m)	클램프의 중량 모멘트 (N·m)
+momento torcente del vento sul rotore (N·m)	로테이터의 바람 토크 (N·m)
+bilanciamento del peso (baricentro)	중량 균형 (무게 중심)
+bilanciamento del vento (centro area)	바람 균형 (면적 중심)
+CSV (NanoVNA-Saver e simili)	CSV (NanoVNA-Saver 등)
+File	파일
+Togli il cavo dalla misura (de-embedding)	측정에서 케이블 제거 (디임베딩)
+VF (vuoto = tabella)	VF (비움 = 표)
+Perdita di ritorno (dB)	반사 손실 (dB)
+frequenza (MHz)	주파수 (MHz)
+apri una misura del VNA (.s1p o CSV)	VNA 측정값 열기 (.s1p 또는 CSV)
+perdita di ritorno (dB)	반사 손실 (dB)
+calcolato (NEC)	계산값 (NEC)
+misurato grezzo (con cavo)	원시 측정값 (케이블 포함)
+, uguale su tutta la banda → probabile effetto di boom/staffe o dielettrico non modellato	, 밴드 전체에서 동일 → 붐/클램프 영향 또는 모델링되지 않은 유전체 가능성
+, in modo non uniforme → controlla adattamento, balun e cavo (la Z misurata ha una forma diversa)	, 불균일 → 정합, 발룬, 케이블을 확인하세요 (측정된 Z의 형태가 다름)
+diagrammi:	패턴:
+F/B (un solo punto a 180°)	F/B (180° 한 점만)
+F/R medio (emisfero posteriore)	평균 F/R (후방 반구)
+f (MHz)	f (MHz)
+F/R peggiore (dB)	최악 F/R (dB)
+F/R medio (dB)	평균 F/R (dB)
+Beverage a terra (BOG)	지면 Beverage (BOG)
+Flag / Pennant	Flag / Pennant
+Dal piano (ITU-R P.372)	평지 기준 (ITU-R P.372)
+Sorgente locale (azimut)	국소 잡음원 (방위각)
+Mostra anche il riferimento (verticale λ/4)	기준도 표시 (λ/4 수직)
+Mediana sugli angoli di arrivo (linguetta Terreno reale)	도래각 중앙값 (실제 지형 탭)
+dB  preamp	dB  프리앰프
+DMF (direttività media sul fronte)	DMF (전방 평균 지향성)
+capitolo 7 (Ricezione RDF)	7장 (수신 RDF)
+: l'RDF e' indicativo, in tabella i valori di letteratura.	: RDF는 참고값이며, 표에는 문헌값이 있습니다.
+λ/4 in cavo (2 cavi 75 Ω in parallelo)	λ/4 케이블 (75 Ω 케이블 2개 병렬)
+Wilkinson (λ/4 in cavo o in linea + resistenze)	Wilkinson (λ/4 케이블 또는 선로 + 저항)
+PTFE (εr 2,1)	PTFE (εr 2.1)
+Tubo esterno (lato / Ø int.)	외부 튜브 (변 / 내경 Ø)
+Collega allo Stack (cavi reali)	스택에 연결 (실제 케이블)
+Fase sfalsata per inclinare il lobo (tilt elettrico)	로브 기울이기 위한 위상 오프셋 (전기적 틸트)
+Tilt	틸트
+° in su	° 위로
+Disegno quotato (stampabile 1:1)	치수 도면 (1:1 인쇄 가능)
+ROS all'ingresso (carichi = impedenze attive dello Stack)	입력 SWR (부하 = 스택의 능동 임피던스)
+vista laterale (scala ridotta a schermo; in stampa 1:1)	측면도 (화면은 축소, 인쇄 시 1:1)
+Z0 dei rami (Zin · √N)	분기 Z0 (Zin · √N)
+ideale a f0; cala lontano da f0 (rami λ/4)	f0에서 이상적; f0에서 멀어지면 저하 (λ/4 분기)
+Z0 = √(Zin · Zcarico)	Z0 = √(Zin · Z부하)
+Quadro/tondo: Z0 = 138 · log(1,0787 · D/d)	사각/원형: Z0 = 138 · log(1.0787 · D/d)
+Coassiale: Z0 = 138 · log(D/d)	동축: Z0 = 138 · log(D/d)
+Disegno 1:1 del divisore (PDF)	분배기 1:1 도면 (PDF)
+X-pol (2 ricevitori, EME)	X-pol (수신기 2대, EME)
+angolo dall'asse (°)	축으로부터의 각도 (°)
+AR (dB)	AR (dB)
+piani sullo stesso punto del boom (ritardo con il cavo)	붐의 같은 지점에 두 평면 (케이블로 지연)
+Yagi incrociate: calcola prima il modello aperto (una Yagi)	교차 Yagi: 먼저 열린 모델을 계산하세요 (Yagi 1개)
+piano A (orizz.)	평면 A (수평)
+piano B (vert.)	평면 B (수직)
+AR in asse (dB)	축상 AR (dB)
+Linea aperta (HF)	평행 개방선 (HF)
+distanza dal punto di alimentazione (m)	급전점으로부터의 거리 (m)
+corrente calza (%)	실드 전류 (%)
+Cavo e balun: calcola prima il modello (una sola sorgente)	케이블과 발룬: 먼저 모델을 계산하세요 (급전원 1개만)
+Corrente sulla calza (% del dipolo)	실드 전류 (다이폴 대비 %)
+Vista frontale (dal davanti dell'antenna)	정면도 (안테나 앞에서)
+Ø mm	Ø mm
+Lobo laterale peggiore (piano E)	최악 사이드 로브 (E 평면)
+Tant (elev. 10°, cielo 200 K, suolo 290 K)	Tant (앙각 10°, 하늘 200 K, 지면 290 K)
+Come carico (Z in frequenza)	부하로 (주파수별 Z)
+Come fili (linear loading, cappelli)	와이어로 (linear loading, 용량 모자)
+Impedenza della trappola (Q in frequenza, perdite per effetto pelle)	트랩 임피던스 (주파수별 Q, 표피 효과 손실)
+capitolo 15 (Carichi HF)	15장 (HF 부하)
+Impedenza del carico (con l'autorisonanza e le perdite per effetto pelle)	부하 임피던스 (자기 공진 및 표피 효과 손실 포함)
+Z trappola (Ω)	트랩 Z (Ω)
+Z carico (Ω)	부하 Z (Ω)
+; Annulla nella barra Geometria lo toglie).	; 형상 막대의 실행 취소로 제거).
+Mostra il guadagno corretto con l'AGT (scheda Guadagno massimo)	AGT로 보정한 이득 표시 (최대 이득 카드)
+Test del guadagno medio (AGT)	평균 이득 테스트 (AGT)
+(premi "Esegui il test"; si fa da solo all'apertura degli Avvisi con i modelli fino a 1500 segmenti)	("테스트 실행"을 누르세요; 1500 세그먼트 이하 모델은 경고 창을 열 때 자동 실행)
+Z al punto di alimentazione (Ω)	급전점 Z (Ω)
+Z all'accordatore (Ω)	튜너에서의 Z (Ω)
+m  frequenze (MHz)	m  주파수 (MHz)
+capitolo 14 (Linea aperta + accordatore)	14장 (평행 개방선 + 튜너)
+Linea aperta + accordatore (alla TLW)	평행 개방선 + 튜너 (TLW 방식)
+Choke a spire di coax (HF)	동축 코일 초크 (HF)
+Toroide 1:1, mix 31/43 (HF)	1:1 토로이드, mix 31/43 (HF)
+λ/2 coassiale 4:1 (VHF/UHF)	λ/2 동축 4:1 (VHF/UHF)
+Manicotto λ/4 (VHF/UHF)	λ/4 슬리브 (VHF/UHF)
+Pawsey stub	Pawsey 스터브
+H (2 montanti)	H (기둥 2개)
+Traverse (per riga)	가로대 (행별)
+Traliccio (Ø equivalente)	철탑 (등가 Ø)
+Cavi fase (calza)	위상선 (실드)
+Beverage 180 m	Beverage 180 m
+Trappola LC (componenti)	LC 트랩 (부품)
+Bobina di carico (autorisonanza)	로딩 코일 (자기 공진)
+Linear loading	Linear loading
+Bobina dalle misure (L, Q, f0)	측정값으로 코일 (L, Q, f0)
+RG-213 o RG-400	RG-213 또는 RG-400
+blocco debole (|Z| sotto 1 kΩ)	약한 차단 (|Z| 1 kΩ 미만)
+Carichi HF:	HF 부하:
+AGT sul terreno perfetto (atteso 2,000)	완전 도체 지면 AGT (예상 2.000)
+AGT dopo il cambio di segmentazione (segmenti raddoppiati)	세그먼트 변경 후 AGT (세그먼트 2배)
+Dipolo basso (riferimento)	낮은 다이폴 (기준)
+2 (cardioide)	2 (카디오이드)
+3 (triangolo)	3 (삼각형)
+8 (cerchio)	8 (원형)
+Apice (altezza del palo)	정점 (마스트 높이)
+ottimizza la fase (RDF)	위상 최적화 (RDF)
+gradi (vuota = nullo posteriore, π + βd)	도 (비움 = 후방 널, π + βd)
+{0} dB a {1}	{1}에서 {0} dB
+scala lineare in dB ({0} dB)	선형 dB 눈금 ({0} dB)
+F/R max	최대 F/R
+mostra anche il G/T (variazione sulla singola, asse di sinistra)	G/T도 표시 (단일 안테나 대비 변화, 왼쪽 축)
+aumento di guadagno sulla singola (dB)	단일 안테나 대비 이득 증가 (dB)
+variazione del F/R sulla singola (0 in alto, scende se migliora)	단일 안테나 대비 F/R 변화 (위가 0, 개선되면 아래로)
+G/T sulla singola (dB)	단일 안테나 대비 G/T (dB)
+F/R dB	F/R dB
+ΔF/R	ΔF/R
+x DL6WU	x DL6WU
+G/T dB/K	G/T dB/K
+ΔF/R (0 in alto)	ΔF/R (위가 0)
+ΔG/T	ΔG/T
+oltre: "ROS attivo alto: da non scegliere" (escluse dalla scelta proposta)	초과 시: "능동 SWR 높음: 선택 금지" (제안 선택에서 제외)
+Sempre attiva: non si spegne. 	항상 켜짐: 끌 수 없습니다. 
+Non ancora disponibile: arriva in una prossima versione. 	아직 사용할 수 없음: 향후 버전에서 제공됩니다. 
+Scelta fissa: oggi c'e' solo la voce evidenziata. 	고정 선택: 현재는 강조된 항목만 있습니다. 
+0 (non scelto)	0 (선택 안 함)
+0 (radiatore)	0 (복사기)
+0 - DL6WU com'e'	0 - DL6WU 원본 그대로
+0 - N6CA com'e'	0 - N6CA 원본 그대로
+0,125 – 0,225 λ (Cebik)	0.125 – 0.225 λ (Cebik)
+1 : 2 (largo)	1 : 2 (넓게)
+1,22 lambda/D: corrisponde a un taper forte (circa -14/-18 dB nelle tabelle)	1.22 lambda/D: 강한 테이퍼에 해당 (표에서 약 -14/-18 dB)
+1,25 lambda guida (W1GHZ: oltre una lambda guida, non critica)	1.25 관내 파장 (W1GHZ: 관내 파장 1개 이상이면 민감하지 않음)
+1. Diagramma del feed (ampiezza)	1. 피드 패턴 (진폭)
+1.2 - Terreno reale (DEM e mappe)	1.2 - 실제 지형 (DEM 및 지도)
+1/4 lambda x 0,95 (stub)	1/4 lambda x 0.95 (스터브)
+10 GHz: HPBW (gradi)	10 GHz: HPBW (도)
+10 GHz: errore ammesso per 0,5 dB (gradi)	10 GHz: 0.5 dB 허용 오차 (도)
+10 GHz: guadagno (dBi)	10 GHz: 이득 (dBi)
+10 GHz: perdita eco Luna (dB)	10 GHz: 달 반사 손실 (dB)
+100 mm: controlla questo righello prima di incidere (stampa al 100 %, nessun adattamento alla pagina)	100 mm: 에칭 전에 이 눈금자를 확인하세요 (100 % 인쇄, 페이지 맞춤 없음)
+144 cond.	144 조건
+180 gradi (90-270)	180도 (90-270)
+2 : 1 (alto)	2 : 1 (높게)
+2. Fase del feed (copolare)	2. 피드 위상 (주편파)
+3. Efficienza in funzione di f/D (centro di fase fisso)	3. f/D에 따른 효율 (위상 중심 고정)
+4-square RX	4-square RX
+4-square RX (IV3PRK)	4-square RX (IV3PRK)
+4-square crossfire (IV3PRK)	4-square crossfire (IV3PRK)
+43 (1-50 MHz, choke)	43 (1-50 MHz, 초크)
+432 cond.	432 조건
+61 (trasformatori fino a 100 MHz)	61 (100 MHz까지 변압기)
+73 Ω x rapporto (spazio libero)	73 Ω x 비율 (자유 공간)
+About	정보
+Altezza (0 = 0,175 λ)	높이 (0 = 0.175 λ)
+Altezza ottima (scansione)	최적 높이 (스캔)
+Area al vento (per il rotore)	풍압 면적 (로테이터용)
+BOG (Beverage On Ground)	BOG (Beverage On Ground)
+Boom Ø	붐 Ø
+Cebik (dipende dal diametro)	Cebik (직경에 따라 다름)
+Cosa e' successo (cosa facevi e cosa ti aspettavi)	무슨 일이 있었나요 (무엇을 하고 있었고 무엇을 기대했는지)
+Distanze di stack: accoppiamento e distanza migliore (1.1)	스택 간격: 결합 및 최적 간격 (1.1)
+Forcina (beta / hairpin match)	헤어핀 (베타 / 헤어핀 정합)
+Forcina (beta / hairpin)	헤어핀 (베타 / 헤어핀)
+Impedenza in frequenza (AEH eq. 4-11)	주파수별 임피던스 (AEH 식 4-11)
+MHz (per esempio inizio e fine del tratto usato, oppure 144,1 e 145)	MHz (예: 사용 구간의 시작과 끝, 또는 144.1과 145)
+Mast Ø	마스트 Ø
+Meccanica: elementi piegati dalla freccia sotto il peso (YA-NEC)	기계: 자중 처짐으로 휜 소자 (YA-NEC)
+Passo tra le spire (asse-asse)	권선 간격 (중심 간)
+Perimetro ARRL (1005/f)	ARRL 둘레 (1005/f)
+Reattanza (AEH eq. 4-1)	리액턴스 (AEH 식 4-1)
+Resistenza con la Tab. 4-1 (AEH)	표 4-1에 의한 저항 (AEH)
+Risultati (alla YagiStress, K7NV)	결과 (YagiStress 방식, K7NV)
+Rumore dal cielo vero (1.1)	실제 하늘 잡음 (1.1)
+Sardegna (a occidente della retta tra Capo Teulada e l'Isola di Maddalena)	사르데냐 (Capo Teulada와 Maddalena 섬을 잇는 선의 서쪽)
+Sardegna (a oriente della retta tra Capo Teulada e l'Isola di Maddalena)	사르데냐 (Capo Teulada와 Maddalena 섬을 잇는 선의 동쪽)
+Segmenti:	세그먼트:
+Short	단락
+Slim Jim (filo ripiegato)	Slim Jim (접은 와이어)
+Sorgenti:	급전원:
+Spessori dei tubi dal boom (mm)	붐부터의 튜브 두께 (mm)
+Stack HF sopra il terreno (NEC)	지면 위 HF 스택 (NEC)
+T (passa-alto)	T (고역 통과)
+Tirante del boom (truss)	붐 트러스
+Toscana, Marche, Umbria, Lazio, Abruzzo, Molise, Puglia, Campania, Basilicata, Calabria (tranne Reggio Calabria)	토스카나, 마르케, 움브리아, 라치오, 아브루초, 몰리세, 풀리아, 캄파니아, 바실리카타, 칼라브리아 (레조칼라브리아 제외)
+Valle d'Aosta, Piemonte, Lombardia, Trentino-Alto Adige, Veneto, Friuli-Venezia Giulia (tranne Trieste)	발레다오스타, 피에몬테, 롬바르디아, 트렌티노알토아디제, 베네토, 프리울리베네치아줄리아 (트리에스테 제외)
+Z alla frequenza (AEH eq. 4-11)	주파수별 Z (AEH 식 4-11)
+adattamento simmetrico del pilotato a 50 Ω (Cebik)	구동 소자의 50 Ω 대칭 정합 (Cebik)
+capacitivo (C1 serie, C2 parallelo)	용량성 (C1 직렬, C2 병렬)
+capitolo 15 (Meccanica)	15장 (기계)
+compatto (finestra bassa)	간결 (낮은 창)
+fili a 0,001 λ dal suolo con il terreno di Sommerfeld, come nei modelli di Cebik (girano anche con il NEC-2)	Sommerfeld 지면에서 지면 위 0.001 λ의 와이어, Cebik 모델과 동일 (NEC-2로도 실행됨)
+modo asimmetrico (eq. 4-10)	비대칭 모드 (식 4-10)
+peso (kg)	무게 (kg)
+una (barra in alto)	하나 (상단 막대)
+antenna	안테나
+area	면적
+        come correggere: 	        수정 방법: 
+   (filo rastremato, con GC)	   (테이퍼 와이어, GC 사용)
+   -   pagina 	   -   페이지 
+   - si modifica nella linguetta Modello NEC	   - NEC 모델 탭에서 수정합니다
+   limite inferiore di Balanis (serve la fase del feed)	   Balanis 하한 (피드 위상 필요)
+  (formato 	  (형식 
+  (rispettata)	  (충족)
+  Confronto dopo la riapertura: Z 	  다시 연 후 비교: Z 
+  Confronto non riuscito: 	  비교 실패: 
+  EZNEC e' un marchio registrato di Roy W. Lewallen.\n	  EZNEC는 Roy W. Lewallen의 등록 상표입니다.\n
+  Il motore e' verificato con l'autotest sugli stessi modelli calcolati con nec2c. Corretto un errore di nec2c\n	  엔진은 nec2c로 계산한 동일 모델에 대한 자체 테스트로 검증되었습니다. nec2c의 오류를 수정했습니다\n
+  Impostazioni ed esempi: 	  설정 및 예제: 
+  filo   lunghezza (m)   raggio (mm)   segmenti NEC   segmento (mm)   segmento/raggio   alimentato	  와이어   길이 (m)   반경 (mm)   NEC 세그먼트   세그먼트 (mm)   세그먼트/반경   급전
+  nell'impedenza interna dei fili (routine zint, carichi LD 5 sotto x = 110), riportando le formule del NEC2 originale.\n	  와이어 내부 임피던스에서 (zint 루틴, x = 110 미만의 LD 5 부하), 원래 NEC2의 공식을 복원했습니다.\n
+  seg   tag        X (m)       Y (m)       Z (m)    lung. (mm)   |I| (mA)    fase (°)	  seg   tag        X (m)       Y (m)       Z (m)    길이 (mm)   |I| (mA)    위상 (°)
+  utile per le antenne che devono coprire tutta la banda (FM, ripetitori, satelliti).\n	  밴드 전체를 커버해야 하는 안테나에 유용합니다 (FM, 중계기, 위성).\n
+  · il migliore	  · 최적
+  ⚠ Il boom supera 0,055 lambda: la formula non vale.	  ⚠ 붐이 0.055 lambda를 초과합니다: 공식이 성립하지 않습니다.
+ % (Struttura 3D > Scala) e ricalcolare. Il programma non cambia nulla da solo.	 % (3D 구조 > 배율) 후 다시 계산하세요. 프로그램은 스스로 아무것도 바꾸지 않습니다.
+ % dalla formula	 % 공식 대비
+ % dello snervamento dell'acciaio	 % 강철 항복 강도 대비
+ % rispetto a Cebik	 % Cebik 대비
+ % sulla formula	 % 공식 대비
+ %): le altre bande seguono le proporzioni e si spostano tutte.	 %): 다른 밴드는 비율을 따라 모두 이동합니다.
+ %: fuori da 0-100 %, il calcolo non e' affidabile.	 %: 0-100 % 범위 밖에서는 계산을 신뢰할 수 없습니다.
+ (0 = proporzioni DL6WU, 1 = direttori equidistanti).	 (0 = DL6WU 비율, 1 = 등간격 도파기).
+ (2 cavi)	 (케이블 2개)
+ (AA7JV/N4IS, misure IV3PRK): lunghezza 	 (AA7JV/N4IS, IV3PRK 측정): 길이 
+ (Al, aria)	 (Al, 공기)
+ (Medhurst)	 (Medhurst)
+ (Nominatim, © OpenStreetMap)	 (Nominatim, © OpenStreetMap)
+ (acceso solo in certe bande)	 (일부 밴드에서만 켜짐)
+ (adattato dal NEC)	 (NEC에서 조정)
+ (almeno uno per tubo): i numeri dei segmenti del filo cambiano.	 (튜브당 최소 1개): 와이어의 세그먼트 번호가 바뀝니다.
+ (alto dx)	 (우상단)
+ (alto sx)	 (좌상단)
+ (anello o asta piu' piccoli: D/8-D/10 nella prova con nec2c) o regola con l'ottimizzatore.	 (더 작은 루프 또는 막대: nec2c 테스트에서 D/8-D/10) 또는 최적화기로 조정하세요.
+ (basso dx)	 (우하단)
+ (basso sx)	 (좌하단)
+ (calcolatore YA-NEC)	 (YA-NEC 계산기)
+ (calcolatore YA-NEC)\nCE\n	 (YA-NEC 계산기)\nCE\n
+ (cambiata la variabile 	 (변경된 변수 
+ (caso peggiore delle due frequenze)	 (두 주파수 중 최악의 경우)
+ (cavo di ritardo λ/4)	 (λ/4 지연 케이블)
+ (cavo)	 (케이블)
+ (centro diritto 	 (직선 중앙 
+ (componenti)	 (부품)
+ (corretto con l'AGT)	 (AGT로 보정)
+ (correzione KF2YN applicata)	 (KF2YN 보정 적용)
+ (dal cavo)	 (케이블에서)
+ (dal modello)	 (모델에서)
+ (dalla f0 misurata)	 (측정된 f0에서)
+ (diametri a gradini di MMANA) non ancora supportato: usato 1 mm.	 (MMANA 계단형 직경) 아직 지원되지 않음: 1 mm 사용.
+ (dipolo 	 (다이폴 
+ (elettrico, boom -	 (전기적, 붐 -
+ (equivalente 	 (등가 
+ (ferrite)	 (페라이트)
+ (fili 	 (와이어 
+ (filo 	 (와이어 
+ (folded, conduttori a 	 (폴디드, 도체 간격 
+ (gradi)	 (도)
+ (il ROS nominale supera gia' l'obiettivo: conta solo l'aumento)	 (공칭 SWR이 이미 목표를 초과: 증가분만 계산)
+ (il piu' grosso 	 (가장 굵은 
+ (in rosso: 	 (빨간색: 
+ (la scheda considera un cavo solo: con 2 in parallelo vale la Z0 dimezzata)	 (카드는 케이블 1개만 고려: 2개 병렬이면 Z0의 절반 적용)
+ (le bobine vere 50-500).	 (실제 코일은 50-500).
+ (linea bifilare: serve un balun)	 (평행 2선: 발룬 필요)
+ (media delle due frequenze)	 (두 주파수의 평균)
+ (monopolo a terra)	 (접지 모노폴)
+ (non aperta: 	 (열리지 않음: 
+ (non conforme)	 (부적합)
+ (non usata: casella spenta)	 (사용 안 함: 체크 해제)
+ (ognuna aspetta l'altra e nessuna ha un valore).	 (서로를 기다려 어느 쪽도 값이 없습니다).
+ (onda piana o dipolo elementare) non ancora supportata: ignorata.	 (평면파 또는 미소 다이폴) 아직 지원되지 않음: 무시됨.
+ (piano di massa a griglia di fili)	 (와이어 격자 접지면)
+ (piatto 	 (평판 
+ (polvere di ferro)	 (철분)
+ (predefinita: calcola il Vento per usare quella del sito)	 (기본값: 사이트 값을 쓰려면 바람을 계산하세요)
+ (pulsante Controlla per i dettagli)	 (자세한 내용은 확인 버튼)
+ (questo calcolo, 	 (이 계산, 
+ (radiatore)	 (복사기)
+ (rilievi)	 (지형지물)
+ (risonanza 	 (공진 
+ (scansione NEC)	 (NEC 스캔)
+ (segmento 	 (세그먼트 
+ (senza correzione)	 (보정 없음)
+ (senza: 	 (없이: 
+ (si puo' continuare a lavorare nelle altre linguette)	 (다른 탭에서 계속 작업할 수 있습니다)
+ (si sceglie anche al centimetro nella casella Quota).	 (높이 칸에서 센티미터 단위로도 선택 가능).
+ (sorgente 1 di 	 (급전원 1 / 
+ (sovrapposizione 10 mm, crocette ogni 50 mm)	 (10 mm 겹침, 50 mm마다 십자 표시)
+ (spazio libero, come TANT)	 (자유 공간, TANT와 동일)
+ (sviluppo L 	 (전개 길이 L 
+ (tubo 	 (튜브 
+ (tutta l'antenna)	 (안테나 전체)
+ (un loop a delta chiuso in basso, 390 ohm)	 (아래가 닫힌 델타 루프, 390 ohm)
+ (uno resta alla finestra)	 (하나는 창에 남음)
+ (verticali corte alimentate con la fase del nullo posteriore, amplificatori ideali)	 (후방 널 위상으로 급전한 짧은 수직, 이상적 증폭기)
+ (voto 	 (점수 
+ (λ/2 in piu')	 (λ/2 추가)
+ +j0 Ω al centro banda (disegno aggiornato).	 +j0 Ω 밴드 중앙 (도면 갱신됨).
+ - Big Wheel 	 - Big Wheel 
+ - Costantino Cerrotta IC8TEM	 - Costantino Cerrotta IC8TEM
+ - SPECCHIATO (trasferimento del toner)	 - 좌우 반전 (토너 전사)
+ - Yagi multibanda HF (Calcolatori > Yagi multibanda HF), radiatori: 	 - HF 멀티밴드 Yagi (계산기 > HF 멀티밴드 Yagi), 복사기: 
+ - clic su un nome: lo scrive nella cella attiva della tabella dei fili	 - 이름 클릭: 와이어 표의 활성 셀에 입력됩니다
+ - radiatore multibanda per Yagi HF (Calcolatori > Dipolo multibanda), 	 - HF Yagi용 멀티밴드 복사기 (계산기 > 멀티밴드 다이폴), 
+ - scelti: tag 	 - 선택됨: tag 
+ -> diametro uniforme 	 -> 균일 직경 
+ -> errore: 	 -> 오류: 
+ -> filo 	 -> 와이어 
+ / zona 	 / 구역 
+ 10 GHz: compare almeno un avviso critico	 10 GHz: 심각한 경고가 최소 1개 표시됨
+ 2,4 GHz - unita' mm, scala 1:1	 2.4 GHz - 단위 mm, 배율 1:1
+ : 1): per la polarizzazione circolare servirebbe una linea di fase da circa 	 : 1): 원편파에는 약 다음 길이의 위상선이 필요합니다 
+ = centro dell'antenna	 = 안테나 중심
+ Accoppiamento capacitivo (AEH 4a ed., eq. 5-20 e 5-21): C2 = sqrt(R0/R - 1)/(w R0), C1 = 1/(w (wL - sqrt(R (R0 - R)))).	 용량성 결합 (AEH 4판, 식 5-20 및 5-21): C2 = sqrt(R0/R - 1)/(w R0), C1 = 1/(w (wL - sqrt(R (R0 - R)))).
+ CSV di YA-NEC con intestazione: terza colonna = piano H	 헤더가 있는 YA-NEC CSV: 세 번째 열 = H 평면
+ Cebik (Quad Notes vol. 3): oltre circa 4 elementi la quad perde il vantaggio di guadagno su una Yagi con lo stesso boom.	 Cebik (Quad Notes vol. 3): 약 4소자를 넘으면 쿼드는 같은 붐의 Yagi에 대한 이득 우위를 잃습니다.
+ Come correggere: 	 수정 방법: 
+ Feed: analisi presente con fase, 31 punti in f/D e 81 in posizione	 피드: 위상 포함 해석 있음, f/D 31점, 위치 81점
+ Hz, rumore 	 Hz, 잡음 
+ Il diagramma ruota di conseguenza: con 90 gradi attorno a Z il massimo passa da 0 a 90 gradi di azimut.	 패턴도 그에 따라 회전합니다: Z축 기준 90도이면 최대값이 방위각 0도에서 90도로 이동합니다.
+ Il file su disco non e' cambiato.	 디스크의 파일은 변경되지 않았습니다.
+ K, citta' 	 K, 도시 
+ K, residenziale 	 K, 주거지 
+ La formula ITU-R P.2040 e' tarata da 1 a 100 GHz: qui e' estrapolata.	 ITU-R P.2040 공식은 1~100 GHz에서 보정되었으며, 여기서는 외삽값입니다.
+ Le misure di Perotoni arrivano a 2 MHz: qui sono estrapolate.	 Perotoni의 측정은 2 MHz까지이며, 여기서는 외삽값입니다.
+ MB contro 	 MB 대 
+ MB disponibili.	 MB 사용 가능.
+ MB): calcolo lento.	 MB): 계산이 느립니다.
+ MB, piu' di 4 decimi della memoria disponibile (	 MB, 사용 가능한 메모리의 10분의 4 초과 (
+ MHz (1 V sulla sorgente, se non diverso nel modello)	 MHz (모델에 다른 값이 없으면 급전원 1 V)
+ MHz (K6SE/W7IUV, misure IV3PRK)	 MHz (K6SE/W7IUV, IV3PRK 측정)
+ MHz (avanti in alto, scala 30 dB)	 MHz (전방이 위, 30 dB 눈금)
+ MHz (banda da bloccare)	 MHz (차단할 밴드)
+ MHz (bobina di carico)	 MHz (로딩 코일)
+ MHz (calcolatore antenne riceventi YA-NEC)	 MHz (YA-NEC 수신 안테나 계산기)
+ MHz (calcolatore).nec	 MHz (계산기).nec
+ MHz (cambiando frequenza vanno ricalcolate in YA-NEC).	 MHz (주파수를 바꾸면 YA-NEC에서 다시 계산해야 합니다).
+ MHz (effetto pelle)	 MHz (표피 효과)
+ MHz (lambda 	 MHz (lambda 
+ MHz (lavoro)	 MHz (운용)
+ MHz (le bobine vere stanno tra 50 e 500).	 MHz (실제 코일은 50~500 사이).
+ MHz (mark out di AutoEZ)	 MHz (AutoEZ mark out)
+ MHz (poco sopra la minima): per la banda intera usa lo sweep della linguetta Frequenza.	 MHz (최소값 약간 위): 밴드 전체는 주파수 탭의 스윕을 사용하세요.
+ MHz (quella della scheda a sinistra). Cavo: 	 MHz (왼쪽 카드의 값). 케이블: 
+ MHz (span 	 MHz (스팬 
+ MHz (vale solo a questa frequenza).	 MHz (이 주파수에서만 유효).
+ MHz fuori dall'intervallo 0,01-30 000 MHz.	 MHz가 0.01-30 000 MHz 범위를 벗어났습니다.
+ MHz il balun puo' peggiorare. Meno spire o un nucleo con AL piu' alto.	 MHz에서 발룬 성능이 나빠질 수 있습니다. 권선을 줄이거나 AL이 더 높은 코어를 쓰세요.
+ MHz l'accordatore vede 	 MHz에서 튜너가 보는 값 
+ MHz non e' in una banda radioamatoriale.	 MHz는 아마추어 밴드에 속하지 않습니다.
+ MHz sarebbe 	 MHz에서는 
+ MHz sono 	 MHz는 
+ MHz) che deve isolare.	 MHz) 절연해야 함.
+ MHz) e' lontana piu' del 5 % dalla banda da bloccare: usa "Calcola" per le spire o i componenti giusti.	 MHz)가 차단할 밴드에서 5 % 이상 떨어져 있습니다: 올바른 권선이나 부품은 "계산"을 사용하세요.
+ MHz). La formula vale fino a 0,055 lambda: 	 MHz). 공식은 0.055 lambda까지 유효: 
+ MHz): per la banda alta cambia la frequenza nella barra in alto dopo averlo aperto.	 MHz): 상위 밴드는 연 후 상단 막대에서 주파수를 바꾸세요.
+ MHz, bobina al 	 MHz, 코일 위치 
+ MHz, centro 	 MHz, 중심 
+ MHz, diagramma a 	 MHz, 패턴 위치 
+ MHz, lontano da tutte le bande.	 MHz, 모든 밴드에서 멀리 떨어짐.
+ MHz, lontano dalla banda del dipolo (	 MHz, 다이폴 밴드에서 멀리 떨어짐 (
+ MHz, meno di 3 volte la frequenza di lavoro: la reattanza cresce piu' del previsto e le perdite pure. Allunga la bobina o usa un diametro piu' piccolo con piu' spire distanziate.	 MHz, 운용 주파수의 3배 미만: 리액턴스와 손실이 예상보다 커집니다. 코일을 길게 하거나 더 작은 직경에 간격을 둔 권선을 더 감으세요.
+ MHz, meno di 3 volte la frequenza di lavoro: la reattanza effettiva e' molto piu' alta di w L.	 MHz, 운용 주파수의 3배 미만: 실효 리액턴스가 w L보다 훨씬 높습니다.
+ MHz, oltre 3 volte la frequenza di lavoro: va bene.	 MHz, 운용 주파수의 3배 초과: 양호.
+ MHz, resistenza 	 MHz, 저항 
+ MHz, terminazione 	 MHz, 종단 
+ MHz, tubo 	 MHz, 튜브 
+ MHz. Il modello non e' stato cambiato.	 MHz. 모델은 변경되지 않았습니다.
+ MHz.nec	 MHz.nec
+ MHz.pdf	 MHz.pdf
+ MHz: cielo (galattico) 	 MHz: 하늘 (은하) 
+ MHz: provare tau piu' alto o 'Ottimizza...'.	 MHz: 더 높은 tau 또는 '최적화...'를 시도하세요.
+ MHz: sopra i 	 MHz: 다음 초과 
+ MHz: valgono solo a questa frequenza	 MHz: 이 주파수에서만 유효
+ MHz\nAntenna: 	 MHz\n안테나: 
+ N m (vento)	 N m (바람)
+ NEC: schede GE, RP (phi 90, 0, 45) ed EN presenti	 NEC: GE, RP (phi 90, 0, 45), EN 카드 있음
+ Pa, forza massima 	 Pa, 최대 힘 
+ Passo di 	 간격 
+ S/m (coefficiente di riflessione, come il NEC-2 di NEC-Wires).	 S/m (반사 계수, NEC-Wires의 NEC-2와 동일).
+ S/m: oltre 10 000 S/m e' un metallo, non un terreno.	 S/m: 10 000 S/m 초과는 지면이 아니라 금속입니다.
+ Slim Jim: il radiatore si chiude in cima e torna giu' parallelo, a 	 Slim Jim: 복사기가 위에서 닫혀 평행하게 내려옵니다, 간격 
+ T1 la fase risulta usata	 T1 위상이 사용된 것으로 나타남
+ TANT da 1296 MHz: cielo 10 K, terreno 290 K.	 1296 MHz TANT: 하늘 10 K, 지면 290 K.
+ Tilt: ogni riga piu' in alto ha il cavo piu' lungo di 	 틸트: 위쪽 행마다 케이블이 다음만큼 더 깁니다 
+ UTC, azimut 	 UTC, 방위각 
+ VE7BQH 432 (DG7YBN): cielo 20 K, terreno 350 K.	 VE7BQH 432 (DG7YBN): 하늘 20 K, 지면 350 K.
+ W in SSB (meno in FT8/RTTY): oltre si scalda. Usa un nucleo piu' grande o due nuclei sovrapposti.	 W SSB 기준 (FT8/RTTY는 더 낮음): 초과하면 과열됩니다. 더 큰 코어나 코어 2개를 겹쳐 쓰세요.
+ a 2,4 GHz (Calcolatori > 2,4 GHz commerciale)\n	 2.4 GHz에서 (계산기 > 2.4 GHz 상용)\n
+ ai bordi)	 가장자리)
+ al boom	 붐에
+ al filo 	 와이어에 
+ al segmento 	 세그먼트에 
+ al variare della frequenza	 주파수 변화에 따라
+ all'estremo del filo 	 와이어 끝에 
+ alla frequenza del file)	 파일의 주파수에서)
+ altre schede	 기타 카드
+ anni: cr 	 년: cr 
+ antenne	 안테나
+ antenne a tutte le distanze in corso (una soluzione NEC per porta)...	 안테나 전체 간격 계산 중 (포트당 NEC 해 1개)...
+ antenne a tutte le distanze, a 	 안테나 전체 간격, 
+ antenne identiche (	 동일 안테나 (
+ antenne: distanze...	 안테나: 간격...
+ applicata. "Annulla" torna indietro.	 적용됨. "실행 취소"로 되돌립니다.
+ avvisi	 경고
+ avvisi a 	 경고, 
+ avvisi: 	 경고: 
+ bacchette	 막대
+ bande	 밴드
+ bande.	 밴드.
+ bifilari	 평행 2선
+ blocchi di 	 블록 
+ c'e' un carico: il linear loading va su un filo senza carichi.	 부하가 있습니다: linear loading은 부하 없는 와이어에 둡니다.
+ c'e' una linea: scegline un altro.	 선로가 있습니다: 다른 것을 선택하세요.
+ c'e' una sorgente: il linear loading va su un filo senza sorgenti.	 급전원이 있습니다: linear loading은 급전원 없는 와이어에 둡니다.
+ calcoli NEC)	 NEC 계산)
+ calcoli)	 계산)
+ carichi e 	 부하 및 
+ carichi segnati come esclusi in AutoEZ ("x") non sono stati importati.	 AutoEZ에서 제외("x")로 표시된 부하는 가져오지 않았습니다.
+ carichi: i valori di L e C non sono stati scalati.	 부하: L과 C 값은 배율 조정되지 않았습니다.
+ cm (segnale proporzionale ad A)	 cm (A에 비례하는 신호)
+ cm tra gli assi, meno di 3 diametri (	 cm 축간 거리, 직경의 3배 미만 (
+ cm): il NEC-2 con tubi quasi a contatto non e' affidabile.	 cm): 튜브가 거의 맞닿으면 NEC-2를 신뢰할 수 없습니다.
+ cm, oppure usare tubi piu' sottili.	 cm, 또는 더 가는 튜브를 사용하세요.
+ collegata a un segmento inesistente.	 존재하지 않는 세그먼트에 연결됨.
+ colonna 	 열 
+ con anello	 링 포함
+ con errori	 오류 있음
+ con i tubi del riflettore 20 m della XR-5 (esempio da modificare).	 XR-5 20 m 반사기 튜브 사용 (수정용 예제).
+ con il terreno	 지면 포함
+ con impedenza 	 임피던스 
+ con impedenza zero.	 임피던스 0.
+ con l'anello (poligono tra le punte dei raggi)	 링 포함 (스포크 끝을 잇는 다각형)
+ con la fase	 위상 포함
+ con la rastremazione 	 테이퍼 
+ con radiali a 	 래디얼 
+ contando dal lato massa.	 접지 측부터 셉니다.
+ controlli che si fanno senza calcolare.	 계산 없이 하는 점검.
+ copiati nella linguetta Variabili. Per tenere anche il modello di partenza salvalo prima con un altro nome.	 변수 탭에 복사됨. 원래 모델도 유지하려면 먼저 다른 이름으로 저장하세요.
+ copie	 복사본
+ dB (il calo massimo diviso per la radice del numero degli elementi: errori indipendenti) e non porta il ROS sopra 	 dB (최대 저하를 소자 수의 제곱근으로 나눈 값: 독립 오차) 이며 SWR을 다음 이상으로 올리지 않음 
+ dB (minimo 	 dB (최소 
+ dB (prima 	 dB (이전 
+ dB (un modello senza perdite in spazio libero dovrebbe dare 0 dB entro +-0,2): impedenza e guadagno poco affidabili.	 dB (자유 공간의 무손실 모델은 +-0.2 이내로 0 dB가 나와야 함): 임피던스와 이득의 신뢰도가 낮습니다.
+ dB con 	 dB, 조건 
+ dB intorno a 	 dB, 부근 
+ dB sulla verticale λ/4	 dB λ/4 수직 대비
+ dB). Ricalcolo...	 dB). 재계산 중...
+ dB): la profondita' e' troppo diversa da quella di MOXGEN (	 dB): 깊이가 MOXGEN 값과 너무 다릅니다 (
+ dB, 5% peggiore 	 dB, 최악 5% 
+ dB, ROS massimo 	 dB, 최대 SWR 
+ dB, antenna 	 dB, 안테나 
+ dB/100 m, 0,1 dB di relè): non cambiano il diagramma, solo la Z e il ROS.	 dB/100 m, 릴레이 0.1 dB): 패턴은 바뀌지 않고 Z와 SWR만 바뀝니다.
+ dB\nZ0 ideale: 	 dB\n이상적 Z0: 
+ dBd, elevazione 	 dBd, 앙각 
+ dBi nello spazio libero (MOXGEN 	 dBi 자유 공간 (MOXGEN 
+ dBi, apertura orizzontale 	 dBi, 수평 빔폭 
+ dBi, boom 	 dBi, 붐 
+ dBi, eff. 	 dBi, 효율 
+ dal filo 	 와이어에서 
+ del .weq non letta: 	 .weq의 항목을 읽지 못함: 
+ del .weq non letto: 	 .weq의 항목을 읽지 못함: 
+ del .weq verso "	 .weq에서 다음으로 "
+ del .weq: "LPDA repeat" di AutoEZ non applicato (manca la linea tra due fili vicini o il numero di fili).	 .weq: AutoEZ "LPDA repeat" 미적용 (인접 두 와이어 사이 선로 또는 와이어 수 누락).
+ del .weq: perdita non usata (la scheda TL e' senza perdite).	 .weq: 손실 미사용 (TL 카드는 무손실).
+ del .weq: stub 	 .weq: 스터브 
+ del file MMANA incompleto.	 MMANA 파일의 항목이 불완전합니다.
+ delle due frequenze)	 두 주파수의)
+ di 1 segmento sopra l'antenna, con 1 Mohm di reattanza in serie: la porta resta aperta e il filo non irradia (non spegnere "Usa i carichi").	 안테나 위 1 세그먼트, 직렬 리액턴스 1 Mohm: 포트는 개방 상태이며 와이어는 복사하지 않습니다 ("부하 사용"을 끄지 마세요).
+ di antenne (	 안테나 (
+ di lunghezza nulla.	 길이가 0입니다.
+ di lunghezza zero tra due punti coincidenti: la linea non c'e'.	 일치하는 두 점 사이의 길이 0: 선로가 없습니다.
+ di perdita	 손실
+ dipende da altre variabili: si cambia regolando quelle, oppure modificando l'espressione.	 다른 변수에 의존합니다: 그 변수들을 조정하거나 식을 수정해서 바꾸세요.
+ direttori	 도파기
+ disponibile (Mac)	 사용 가능 (Mac)
+ diversi	 서로 다름
+ e filo 	 및 와이어 
+ e il filo 	 및 와이어 
+ e poi a 	 그다음 
+ e posizione 	 및 위치 
+ e' gia' piu' lungo.	 이미 더 깁니다.
+ e' la formula "=	 공식 "=
+ e' usata da qualche filo: cambiare prima il raggio di quei fili.	 일부 와이어가 사용 중입니다: 먼저 해당 와이어의 반경을 바꾸세요.
+ elementi	 소자
+ elementi (boom 	 소자 (붐 
+ elementi (boom usato 	 소자 (사용한 붐 
+ elementi - L = 	 소자 - L = 
+ elementi a tubi uniti in un filo con la rastremazione.	 튜브를 테이퍼로 하나의 와이어로 합친 소자.
+ elementi accorciati di 	 소자를 다음만큼 단축 
+ elementi stanno su 	 소자가 다음에 들어감 
+ elementi): 	 소자): 
+ elementi, alimentato il secondo	 소자, 두 번째 급전
+ elementi, linea incrociata)...	 소자, 교차 선로)...
+ errori e 	 오류 및 
+ errori, 	 오류, 
+ esempio DF3GJ: 6 righe (commento in coda compreso), attenuazione riconosciuta	 DF3GJ 예제: 6행 (끝 주석 포함), 감쇠 인식됨
+ espressioni corrette	 올바른 식
+ feed da CSV con la virgola decimale	 소수점 쉼표가 있는 CSV의 피드
+ file W1GHZ a 3 colonne: la terza e' la fase, non il piano H	 3열 W1GHZ 파일: 세 번째 열은 H 평면이 아니라 위상
+ fili GW, 	 GW 와이어, 
+ fili a lunghezza zero (per esempio il filo 	 길이 0인 와이어 (예: 와이어 
+ fili affiancati) 	 나란한 와이어) 
+ fili ciascuna	 와이어 각각
+ fili con il diametro piu' grande della lunghezza (per esempio il filo 	 직경이 길이보다 큰 와이어 (예: 와이어 
+ fili con il diametro sopra lambda/10 = 	 직경이 lambda/10 초과인 와이어 = 
+ fili con il diametro sotto 0,01 mm (il piu' sottile 	 직경이 0.01 mm 미만인 와이어 (가장 가는 것 
+ fili con un diametro che sembra scritto in m dove servono i mm (per esempio 	 mm가 필요한 곳에 m로 쓴 것으로 보이는 직경의 와이어 (예: 
+ fili con un diametro che sembra scritto in mm dove servono i metri (per esempio 	 m가 필요한 곳에 mm로 쓴 것으로 보이는 직경의 와이어 (예: 
+ fili segnati come esclusi in AutoEZ ("x" nella prima colonna) non sono stati importati, come fa AutoEZ.	 AutoEZ에서 제외로 표시된 와이어(첫 열의 "x")는 AutoEZ와 마찬가지로 가져오지 않았습니다.
+ fili virtuali di EZNEC (	 EZNEC 가상 와이어 (
+ fili).	 와이어).
+ fili): 	 와이어): 
+ fili, 	 와이어, 
+ finiti in 	 끝난 위치 
+ fino alla punta	 끝까지
+ frequenze	 주파수
+ frequenze, 	 주파수, 
+ frequenze, metodo 	 주파수, 방법 
+ ft² (per la scheda del rotore)	 ft² (로테이터 사양서용)
+ fuori da 0,3-1.	 0.3-1 범위 밖.
+ fuori dall'intervallo di Carrel (0,04-0,22).	 Carrel 범위(0.04-0.22) 밖.
+ fuori dall'intervallo di Carrel (0,78-0,98).	 Carrel 범위(0.78-0.98) 밖.
+ giace nel piano di simmetria.	 대칭면 위에 있습니다.
+ giace sul piano del terreno: con il terreno l'antenna va messa sopra lo zero (quote Z maggiori di 0, per esempio con l'altezza dal suolo).	 지면 평면 위에 있습니다: 지면이 있으면 안테나를 0보다 위에 두어야 합니다 (Z 높이 0 초과, 예: 지상고 사용).
+ gradi	 도
+ gradi - Bar = 	 도 - Bar = 
+ gradi -> DL6WU: sovrapposte 	 도 -> DL6WU: 겹침 
+ gradi dal boom	 도 붐 기준
+ gradi di elevazione	 도 앙각
+ gradi)	 도)
+ gradi) viene dal perimetro e dall'altezza, i pulsanti della forma non contano	 도)는 둘레와 높이로 정해지며, 형태 버튼은 영향이 없습니다
+ gradi).	 도).
+ gradi): misure di formula.	 도): 공식 치수.
+ gradi, azimut 	 도, 방위각 
+ gradi, curve di 	 도, 곡선 
+ gradi, verticale 	 도, 수직 
+ gradi: L = lambda / (4 (1/VF - cos theta)) = 	 도: L = lambda / (4 (1/VF - cos theta)) = 
+ ha lunghezza nulla.	 길이가 0입니다.
+ ha modifiche non salvate (fili, sorgenti, carichi, linee, variabili o terreno cambiati dopo l'apertura o l'ultimo salvataggio).	 저장되지 않은 변경 사항이 있습니다 (열기 또는 마지막 저장 후 와이어, 급전원, 부하, 선로, 변수 또는 지면이 변경됨).
+ ha raggio 0 ma manca la scheda GC.	 반경이 0이지만 GC 카드가 없습니다.
+ ha tubi che si allargano andando verso la punta.	 끝으로 갈수록 굵어지는 튜브가 있습니다.
+ ha una coordinata o il raggio senza valore (formula impossibile).	 값이 없는 좌표 또는 반경이 있습니다 (불가능한 공식).
+ il radiatore di 	 복사기 
+ in asse	 축상
+ in data/segnalazioni. Allegala alla pagina di GitHub che si e' aperta (o mandala come preferisci).	 data/segnalazioni에 저장됨. 열린 GitHub 페이지에 첨부하세요 (또는 원하는 방법으로 보내세요).
+ in parallelo	 병렬
+ in tutto, quelli sui risultati dopo Calcola).	 전체, 결과에 대한 것은 계산 후).
+ incompleto.	 불완전.
+ inesistente: ignorata.	 존재하지 않음: 무시됨.
+ inesistente: ignorato.	 존재하지 않음: 무시됨.
+ interno 	 내부 
+ kHz, guadagno 	 kHz, 이득 
+ kHz: va riaccordato a ogni spostamento.	 kHz: 주파수를 옮길 때마다 다시 튜닝해야 합니다.
+ kV con 	 kV, 조건 
+ kV contro 	 kV 대 
+ kV sul condensatore: serve un variabile a vuoto o con spaziatura adeguata.	 kV가 커패시터에 걸림: 진공 가변 또는 간격이 충분한 가변 커패시터가 필요합니다.
+ kV): proposto 	 kV): 제안 
+ kg (lista di taglio)	 kg (절단 목록)
+ kg (senza boom, staffe e sovrapposizioni dei tubi).	 kg (붐, 클램프, 튜브 겹침 제외).
+ kgf m)	 kgf m)
+ kgf), vento a 	 kgf), 바람 
+ kgf. Centro area = punto dove il vento laterale non fa ruotare l'antenna. * Gli elementi non contano per il torcente: con il vento di traverso sono paralleli al vento (flusso trasversale, K5IU). Pressione del vento 	 kgf. 면적 중심 = 측풍이 안테나를 회전시키지 않는 점. * 소자는 토크에 포함되지 않습니다: 측풍일 때 소자는 바람과 평행합니다 (횡류, K5IU). 풍압 
+ kgf/m²	 kgf/m²
+ kgf/m²)	 kgf/m²)
+ kgf·m	 kgf·m
+ l'EFHW regge indicativamente 	 EFHW의 대략적 허용 전력 
+ lambda	 lambda
+ lambda 	 lambda 
+ lambda (	 lambda (
+ lambda (lambda/4 = 	 lambda (lambda/4 = 
+ lambda dal suolo: oltre 10 lambda il terreno cambia solo i lobi a bassa elevazione.	 lambda 지상고: 10 lambda를 넘으면 지면은 낮은 앙각 로브만 바꿉니다.
+ lambda fuori da 0,1-0,25 lambda (ARRL: 0,14-0,2).	 lambda, 0.1-0.25 lambda 범위 밖 (ARRL: 0.14-0.2).
+ lambda)	 lambda)
+ lambda), affiancate 	 lambda), 나란히 
+ lambda).	 lambda).
+ lambda, a 	 lambda, 위치 
+ lambda, cioe' a mezz'onda.	 lambda, 즉 반파장.
+ lambda, non e' fitta: il terreno perfetto esagera il riflesso.	 lambda, 촘촘하지 않음: 완전 도체 지면은 반사를 과장합니다.
+ lambda.	 lambda.
+ lati	 변
+ lati + spazio al centro di 	 변 + 중앙 간격 
+ lati nel modello	 모델의 변
+ linea di trasmissione	 전송 선로
+ linee di trasmissione	 전송 선로
+ linee.	 선로.
+ lontano dalla risonanza (	 공진에서 멀리 떨어짐 (
+ lunga 	 길이 
+ m (DL6WU, apertura H 	 m (DL6WU, H 빔폭 
+ m (DL6WU, apertura V 	 m (DL6WU, V 빔폭 
+ m (categoria 	 m (범주 
+ m (guadagno medio su 	 m (평균 이득, 범위 
+ m (lambda/1000 = 	 m (lambda/1000 = 
+ m (massimo circa 	 m (최대 약 
+ m (rosso/nero e blu/bianco).	 m (빨강/검정 및 파랑/흰색).
+ m (spostata di 	 m (이동량 
+ m a 0,001 λ dal suolo	 m 지면 위 0.001 λ
+ m a grandezza piena (	 m 실물 크기 (
+ m dal basso	 m 아래에서
+ m dal boom	 m 붐에서
+ m dal centro, poi 	 m 중심에서, 그다음 
+ m dal riflettore) e' ora nell'origine.	 m 반사기에서)가 이제 원점에 있습니다.
+ m dall'inizio del boom	 m 붐 시작점에서
+ m del modello: il diagramma del NEC e' spostato in quota con le stesse correnti (l'impedenza e l'accoppiamento col suolo non cambiano).	 m 모델: NEC 패턴을 같은 전류로 높이만 이동했습니다 (임피던스와 지면 결합은 변하지 않음).
+ m di profondita')	 m 깊이)
+ m e avvolgi 	 m, 감기 
+ m e avvolgili affiancati per 	 m, 나란히 감기 
+ m fino alla punta	 m 끝까지
+ m invece dei 	 m, 원래 값 대신 
+ m senza trappole	 m 트랩 없음
+ m sopra 	 m 위 
+ m sotto il 10 m	 m 10 m 아래
+ m su terreno medio.	 m 평균 지면 위.
+ m troppo grande per il perimetro di 	 m 둘레에 비해 너무 큼 
+ m) dal centro del lato orizzontale: massimo di corrente sui lati inclinati, polarizzazione verticale	 m) 수평 변 중심에서: 경사 변에 전류 최대, 수직 편파
+ m) distribuite su tutto il nucleo.	 m) 코어 전체에 분포.
+ m) e vento di progetto → 	 m) 및 설계 풍속 → 
+ m) e' gia' lungo almeno un quarto d'onda (	 m)는 이미 최소 1/4 파장 길이입니다 (
+ m) il loop irradia soprattutto verso l'alto: buono per i contatti vicini (NVIS), meno per il DX.	 m) 루프는 주로 위쪽으로 복사합니다: 근거리 교신(NVIS)에 좋고 DX에는 덜 좋습니다.
+ m) per portare la Z sopra 20 Ω.	 m) Z를 20 Ω 이상으로 올리기 위해.
+ m), maglie da 0,1 λ, filo da 1", a 0,001 λ dal suolo	 m), 0.1 λ 메시, 1" 와이어, 지면 위 0.001 λ
+ m): la bobina non serve, accorcia il braccio.	 m): 코일이 필요 없습니다, 팔을 줄이세요.
+ m): risonanza del modello a linee 	 m): 선로 모델의 공진 
+ m): usata la forma scelta.	 m): 선택한 형태 사용.
+ m, a 0,001 λ dal suolo	 m, 지면 위 0.001 λ
+ m, base a 	 m, 밑변 위치 
+ m, bobina al 	 m, 코일 위치 
+ m, boom 	 m, 붐 
+ m, carico 	 m, 부하 
+ m, centro a 	 m, 중심 위치 
+ m, centro area 	 m, 면적 중심 
+ m, coassiale al 12 m	 m, 12 m에 동축
+ m, esterno 	 m, 외부 
+ m, fili a 	 m, 와이어 간격 
+ m, orizzontale 	 m, 수평 
+ m, perdita adattata 	 m, 정합 손실 
+ m, raggio 	 m, 반경 
+ m, tra le punte 	 m, 끝 사이 
+ m, verticali 	 m, 수직 
+ m: ROS sulla linea	 m: 선로 SWR
+ m: con il terreno va messa sopra il suolo. Quota proposta: 	 m: 지면이 있으면 지면 위에 두어야 합니다. 제안 높이: 
+ m: fuori dal campo del NEC-2 (impedenza non attendibile)	 m: NEC-2 범위 밖 (임피던스 신뢰 불가)
+ ma i due punti distano 	 그러나 두 점 사이 거리는 
+ manca l'operatore: scrivere 	 연산자가 없습니다: 다음과 같이 쓰세요 
+ mantieni lunghezza del boom	 붐 길이 유지
+ meno accorciamento connettori	 커넥터 단축분 제외
+ millesimi di lambda	 lambda의 1/1000
+ minore dell'altezza di un'antenna (	 안테나 높이보다 작음 (
+ minore della larghezza di un'antenna (	 안테나 폭보다 작음 (
+ minuti)	 분)
+ mm (formula), boom 	 mm (공식), 붐 
+ mm (lato 	 mm (변 
+ mm (lobo inclinato di 	 mm (로브 기울기 
+ mm (per lato 	 mm (한쪽당 
+ mm (peso proprio + ghiaccio 	 mm (자중 + 얼음 
+ mm (striscia 	 mm (스트립 
+ mm a U tra i livelli	 mm 단 사이 U자
+ mm con i fori a 3,2 mm dalle punte), diametro 	 mm, 끝에서 3.2 mm 위치에 구멍), 직경 
+ mm in tutto, poi verifica NEC	 mm 전체, 그다음 NEC 검증
+ mm l'uno dall'altro: tutti i petali nello stesso verso.	 mm 간격: 모든 꽃잎이 같은 방향.
+ mm nel modello). Riflettore: griglia di fili a z = -d, passo 0,07 λ e raggio con l'area uguale (2 pi a = passo, Rubinstein 2005) se pieno, 	 mm 모델 내). 반사기: z = -d의 와이어 격자, 간격 0.07 λ, 면적이 같은 반경 (2 pi a = 간격, Rubinstein 2005) 꽉 찬 경우, 
+ mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare. Il programma non cambia nulla da solo.	 mm 한쪽당, 또는 붐 보정(계산기 > 붐 보정)을 켜고 다시 계산하세요. 프로그램은 스스로 아무것도 바꾸지 않습니다.
+ mm rame	 mm 구리
+ mm sopra il riflettore	 mm 반사기 위
+ mm sopra lo stub (0,012 lambda)	 mm 스터브 위 (0.012 lambda)
+ mm sull'asse).	 mm 축 위).
+ mm sull'asse, 	 mm 축 위, 
+ mm tolti a 	 mm 제거, 위치 
+ mm).nec	 mm).nec
+ mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): 전력 일부가 뒤로 빠집니다 (Mumford). NEC는 실제 메시로 계산합니다.
+ mm): raggio 	 mm): 반경 
+ mm, alimentato al centro del lato posteriore	 mm, 후방 변 중앙 급전
+ mm, bracci piegati in avanti di 	 mm, 팔을 앞으로 굽힘 
+ mm, circonferenza 	 mm, 둘레 
+ mm, diametro ± 	 mm, 직경 ± 
+ mm, filo 	 mm, 와이어 
+ mm, inserita nel filo 	 mm, 와이어에 삽입 
+ mm, lati lunghi 	 mm, 긴 변 
+ mm, lunghezza 	 mm, 길이 
+ mm, posizione ± 	 mm, 위치 ± 
+ mm, sopra λ/10 (	 mm, λ/10 초과 (
+ mm, sotto 2 diametri del conduttore: allarga il passo.	 mm, 도체 직경 2배 미만: 간격을 넓히세요.
+ nH/spira²	 nH/회²
+ nH/spira² (	 nH/회² (
+ ne stanno circa 	 약 다음 개가 들어감 
+ ne usa 	 사용 개수 
+ nel modello): converti prima la geometria in fili.	 모델 내): 먼저 형상을 와이어로 변환하세요.
+ nella cella attiva della tabella dei fili	 와이어 표의 활성 셀에
+ nella tabella delle variabili (prima di 	 변수 표에 (다음보다 앞에 
+ nella tabella delle variabili o correggere il nome.	 변수 표에 추가하거나 이름을 수정하세요.
+ non applicata.	 적용되지 않음.
+ non c'e' nella tabella Rastremazioni (Oggetti del modello).	 테이퍼 표(모델 객체)에 없습니다.
+ non c'e'.	 없습니다.
+ non corretto (	 보정되지 않음 (
+ non e' al centro, l'alimentazione e' spostata di mezzo segmento.	 중앙이 아닙니다, 급전점이 반 세그먼트 이동되었습니다.
+ non e' nel file	 파일에 없음
+ non esiste (	 존재하지 않음 (
+ non esiste (fili GW: 	 존재하지 않음 (GW 와이어: 
+ non esiste (fili: 	 존재하지 않음 (와이어: 
+ non esiste nella miscela -10 della tabella: scegli T-37...T-80.	 표의 -10 재질에 없습니다: T-37...T-80을 선택하세요.
+ non ha tratti.	 구간이 없습니다.
+ non ha un valore (radice di un numero negativo, logaritmo di zero o di un negativo, numero troppo grande).	 값이 없습니다 (음수의 제곱근, 0 또는 음수의 로그, 너무 큰 수).
+ non ha un'espressione.	 식이 없습니다.
+ non nota: controlla la scheda del costruttore (a 1 kW la trappola vede 	 알 수 없음: 제조사 사양서를 확인하세요 (1 kW에서 트랩에 걸리는 값 
+ non riconosciuto: fili senza perdite, scegliere il materiale nelle impostazioni del modello.	 인식되지 않음: 무손실 와이어, 모델 설정에서 재질을 선택하세요.
+ non supportata: ignorata.	 지원되지 않음: 무시됨.
+ non trovata: messa sul filo 1.	 찾을 수 없음: 와이어 1에 배치.
+ non trovata: non scritta.	 찾을 수 없음: 기록하지 않음.
+ non trovato: messo sul filo 1.	 찾을 수 없음: 와이어 1에 배치.
+ non trovato: non scritto.	 찾을 수 없음: 기록하지 않음.
+ o diametro	 또는 직경
+ ohm (F/B 	 ohm (F/B 
+ ohm (YA-NEC)	 ohm (YA-NEC)
+ ohm (YA-NEC, Ricezione RDF)	 ohm (YA-NEC, RDF 수신)
+ ohm (calcolatore antenne riceventi YA-NEC)	 ohm (YA-NEC 수신 안테나 계산기)
+ ohm (riga CM YA-NEC)	 ohm (YA-NEC CM 행)
+ ohm (riga Controls)	 ohm (Controls 행)
+ ohm - sigma' = 	 ohm - sigma' = 
+ ohm -> interasse 	 ohm -> 축간 거리 
+ ohm -> terminazione circa 	 ohm -> 종단 약 
+ ohm VF 	 ohm VF 
+ ohm a 	 ohm, 위치 
+ ohm alla frequenza di progetto (	 ohm 설계 주파수에서 (
+ ohm) con una sola sorgente: fisicamente impossibile.	 ohm) 급전원 1개로: 물리적으로 불가능.
+ ohm): XL = Z0 -> L = 	 ohm): XL = Z0 -> L = 
+ ohm): un carico passivo non genera potenza.	 ohm): 수동 부하는 전력을 만들지 않습니다.
+ ohm, L 	 ohm, L 
+ ohm, guadagno e F/R. Il modello aperto non cambia.	 ohm, 이득 및 F/R. 열린 모델은 바뀌지 않습니다.
+ ohm, linee 	 ohm, 선로 
+ ohm, lunghezza NEC 	 ohm, NEC 길이 
+ ohm, oppure abbassare il riflettore finche' la spira scende verso 	 ohm, 또는 루프가 다음 값 쪽으로 내려갈 때까지 반사기를 낮추세요 
+ ohm, trasformatore 	 ohm, 변압기 
+ ohm.	 ohm.
+ ohm: fuori dai valori costruibili (5-2000 ohm).	 ohm: 제작 가능한 값(5-2000 ohm) 밖.
+ oltre il numero dei segmenti (	 세그먼트 수 초과 (
+ oltre la retta dell'ottimo (	 최적선 너머 (
+ orizzontali	 수평
+ pF (allunga il dipolo)	 pF (다이폴을 늘임)
+ pF (ceramico, 2-3 kV) in parallelo al primario: migliora il ROS sulle bande alte.	 pF (세라믹, 2-3 kV) 1차측에 병렬: 고역 밴드 SWR 개선.
+ pF verso lo spazio	 pF 공간 대비
+ passi, stessa partenza e stessi limiti)	 단계, 같은 시작점과 같은 한계)
+ per 16:1 (	 16:1용 (
+ per 4:1 (	 4:1용 (
+ per 9:1 (	 9:1용 (
+ per la banda nuova 	 새 밴드용 
+ prima della fine della geometria (GE).	 형상 끝(GE) 이전.
+ pronta, riavvio tra 	 준비됨, 재시작까지 
+ proposta dal locatore (confini approssimati: verifica sulla tabella 3.3.I delle NTC)	 로케이터로 제안 (경계는 근사: NTC 표 3.3.I에서 확인)
+ prove	 시행
+ prove Monte Carlo	 Monte Carlo 시행
+ prove non superate (dettagli nella linguetta Autotest).	 개 테스트 실패 (자체 테스트 탭에 상세 내용).
+ prove non superate.	 개 테스트 실패.
+ punte 	 끝 
+ punte di filo quasi coincidenti con un altro filo ma non unite (per esempio filo 	 다른 와이어와 거의 일치하지만 연결되지 않은 와이어 끝 (예: 와이어 
+ punti	 점
+ punti su 	 점, 범위 
+ punti)	 점)
+ punti...	 점...
+ quote diverse (antenne sovrapposte?) ma una sola sorgente: le antenne senza sorgente sono calcolate come passive.	 서로 다른 높이 (스택 안테나?) 이지만 급전원은 1개: 급전원 없는 안테나는 수동 소자로 계산됩니다.
+ radiali	 래디얼
+ radiali da 	 래디얼, 길이 
+ radiatore-direttore	 복사기-도파기
+ raggi da 	 스포크, 길이 
+ rami λ/4 da 	 λ/4 분기, 
+ resistenze da 	 저항, 
+ reti L (riga YA-NEC RETEL) non scritte.	 L 회로망 (YA-NEC RETEL 행) 기록 안 됨.
+ riflettore-radiatore	 반사기-복사기
+ righe della tabella dei fili.	 행 (와이어 표).
+ righe di fili con un'unita' sconosciuta nella prima colonna non sono state importate.	 첫 열의 단위를 알 수 없는 와이어 행은 가져오지 않았습니다.
+ righe).	 행).
+ righe: Invio o 'Applica e ricalcola' per calcolare.	 행: Enter 또는 '적용 후 재계산'으로 계산합니다.
+ ripetuta 	 반복 
+ rispetto a DL6WU): a parita' di boom gli elementi in piu' danno poco guadagno (il guadagno dipende soprattutto dal boom) e stringono la banda.	 DL6WU 대비): 같은 붐에서 추가 소자는 이득이 거의 늘지 않고 (이득은 주로 붐 길이에 좌우) 대역폭을 좁힙니다.
+ s: misure accordate a 	 s: 다음에 맞춘 치수 
+ sarebbe 	 다음이 됩니다 
+ scalata a 	 배율 조정 대상 
+ scalato.nec	 배율조정.nec
+ scende sotto il terreno.	 지면 아래로 내려갑니다.
+ schede	 카드
+ schede di geometria	 형상 카드
+ schede di geometria, 	 형상 카드, 
+ schede di geometria: oltre 	 형상 카드: 다음 초과 
+ schede)	 카드)
+ scritto come R+jX a 	 R+jX로 기록, 주파수 
+ scritto come RLC serie valido a 	 직렬 RLC로 기록, 유효 주파수 
+ se un'antenna si stacca	 안테나가 분리되면
+ seg. 	 seg. 
+ seg.)	 seg.)
+ segm.	 세그.
+ segmenti	 세그먼트
+ segmenti 	 세그먼트 
+ segmenti (numero pari): il segmento 	 세그먼트 (짝수): 세그먼트 
+ segmenti invece di 	 세그먼트, 원래 
+ segmenti): il calcolo richiede qualche secondo.	 세그먼트): 계산에 몇 초 걸립니다.
+ segmenti, 	 세그먼트, 
+ segmenti.	 세그먼트.
+ segmenti. Il file su disco non e' cambiato: salvalo se vuoi tenerla.	 세그먼트. 디스크의 파일은 변경되지 않았습니다: 유지하려면 저장하세요.
+ segmenti. Trascina per ruotare, rotella per ingrandire.	 세그먼트. 드래그로 회전, 휠로 확대.
+ segmenti...	 세그먼트...
+ segmenti: la matrice chiede 	 세그먼트: 행렬에 필요한 메모리 
+ segmenti: la matrice del NEC-2 chiede 	 세그먼트: NEC-2 행렬에 필요한 메모리 
+ segmento 	 세그먼트 
+ sembra in Hz.	 Hz 단위로 보입니다.
+ sembra in kHz: l'antenna e' grande 	 kHz 단위로 보입니다: 안테나 크기 
+ senza lunghezza e con VF 	 길이 없이 VF 
+ senza lunghezza.	 길이 없음.
+ senza risonanza calcolabile.	 계산 가능한 공진 없음.
+ senza salvare	 저장하지 않고
+ senza una linea sullo stesso segmento: non importato (YA-NEC non ha ancora gli stub a una porta).	 같은 세그먼트에 선로 없음: 가져오지 않음 (YA-NEC에는 아직 1포트 스터브가 없음).
+ si scosta di 	 편차 
+ si usa la ferrite 43 (FT-140-43, FT-240-43).	 페라이트 43을 사용합니다 (FT-140-43, FT-240-43).
+ sopra 	 위 
+ sorgenti	 급전원
+ sorgenti segnate come escluse in AutoEZ ("x") non sono state importate.	 AutoEZ에서 제외("x")로 표시된 급전원은 가져오지 않았습니다.
+ sotto meta' della DL6WU (	 DL6WU의 절반 미만 (
+ spire	 회
+ spire 	 회 
+ spire (filo smaltato o in PTFE da 	 회 (에나멜 또는 PTFE 와이어 
+ spire attorcigliate sopra le prime 	 회, 처음 권선 위에 꼬아서 
+ spire del secondario, dal lato massa (autotrasformatore).	 회 2차측, 접지 측부터 (단권 변압기).
+ spire di coassiale sottile in PTFE (RG-303, RG-400) sullo stesso nucleo.	 회 가는 PTFE 동축 케이블 (RG-303, RG-400) 같은 코어에.
+ spire la capacita' tra le spire risuona verso 	 회에서 권선 간 용량이 다음 부근에서 공진 
+ spire la perdita e' solo quella dell'effetto pelle: l'effetto di prossimita' tra le spire vicine non e' calcolato, quindi il rendimento vero e' piu' basso (ARRL Antenna Book 15ª: 8 spire, 10 % calcolato, 3 % reale).	 회에서 손실은 표피 효과만 반영: 인접 권선 간 근접 효과는 계산하지 않으므로 실제 효율은 더 낮습니다 (ARRL Antenna Book 15판: 8회, 계산 10 %, 실제 3 %).
+ spire su tutto il nucleo.	 회 코어 전체에.
+ spire sul nucleo (ogni passaggio nel foro e' una spira).	 회 코어에 (구멍을 한 번 통과할 때마다 1회).
+ spire)	 회)
+ spire, 	 회, 
+ spire, sul suo nucleo (	 회, 해당 코어에 (
+ spire.	 회.
+ spostandola	 이동하여
+ stack 	 스택 
+ su 50-75 ohm	 50-75 ohm에서
+ su un filo (tag 	 와이어에 (tag 
+ sul filo 	 와이어에 
+ sulla linea · perdita 	 선로 상 · 손실 
+ sulla trappola supera la tensione di lavoro (	 트랩에서 작동 전압 초과 (
+ tra il filo 	 와이어 사이 
+ trasformatori (riga YA-NEC TRASF) non scritti.	 변압기 (YA-NEC TRASF 행) 기록 안 됨.
+ trasformatori ideali di EZNEC (rapporto delle impedenze dalla Rel Z delle due porte).	 EZNEC 이상 변압기 (두 포트의 Re Z로 임피던스 비율).
+ tratti della rastremazione -	 테이퍼 구간 -
+ trifilari	 3선
+ tubi telescopici	 신축 튜브
+ tubo	 튜브
+ uno dall'altro (praticamente nella stessa posizione sul boom).	 서로 간격 (사실상 붐의 같은 위치).
+ uscite serve Z0 = 	 출력에 필요한 Z0 = 
+ variabili diventano numeri: le formule restano solo nel .yanec e nel .nec.	 변수가 숫자로 바뀝니다: 공식은 .yanec과 .nec에만 남습니다.
+ variabili e celle calcolate di AutoEZ oltre la prima colonna del foglio Variables (AA, AB, ... BG, ...) ricostruite	 Variables 시트 첫 열 이후의 AutoEZ 변수 및 계산 셀 (AA, AB, ... BG, ...) 재구성됨
+ variabili, 	 변수, 
+ verticali	 수직
+ vie. Il Wilkinson isola le uscite: utile anche in 144 MHz quando un'antenna dello stack si guasta o si stacca.	 분배. Wilkinson은 출력 간을 절연합니다: 144 MHz에서 스택 안테나 하나가 고장 나거나 분리될 때도 유용합니다.
+ volte fino al filo 	 회 와이어까지 
+ vuole 	 필요: 
+ vuole almeno un argomento.	 인수가 최소 1개 필요합니다.
+ | MathWorks: LR 0,9085, LD 0,8460, L1 0,7210, L2 0,6585, L3 0,7210, L4 0,6585, SR 0,4201, S1 0,3634, S2 0,2384, S3 0,5167, S4 0,5324, FS 0,0161	 | MathWorks: LR 0.9085, LD 0.8460, L1 0.7210, L2 0.6585, L3 0.7210, L4 0.6585, SR 0.4201, S1 0.3634, S2 0.2384, S3 0.5167, S4 0.5324, FS 0.0161
+ µH (accorcia il dipolo)	 µH (다이폴을 줄임)
+ µH/100 spire	 µH/100회
+ · 5% peggiore 	 · 최악 5% 
+ · calcolo in corso…	 · 계산 중…
+ · controllo alla frequenza più alta dello sweep: 	 · 스윕 최고 주파수에서 확인: 
+ · metà (	 · 절반 (
+ · profilo U: calcolo numerico	 · U 프로파일: 수치 계산
+ · quota DEM 	 · DEM 고도 
+ Ω (lunghezza per il fattore di velocita') verso la discesa a 50 Ω.	 Ω (길이 × 속도 계수) 50 Ω 급전선 쪽으로.
+ Ω (stima, poi il NEC)	 Ω (추정 후 NEC)
+ Ω (verifica con i numeri complessi)	 Ω (복소수로 검증)
+ Ω a stella	 Ω 스타 결선
+ Ω con l'autorisonanza	 Ω 자기 공진 포함
+ Ω di terra	 Ω 접지
+ Ω e calcola ROS e guadagno.	 Ω 그리고 SWR과 이득을 계산합니다.
+ Ω in banda (dopo "Porta in adattamento")	 Ω 밴드 내 ("정합으로 맞추기" 후)
+ Ω lunga 	 Ω 길이 
+ Ω), con un commutatore o un morsetto.	 Ω), 스위치나 단자로.
+ Ω, ciascuna fino a P/	 Ω, 각각 최대 P/
+ Ω, linea 	 Ω, 선로 
+ Ω: due cavi da 75 Ω in parallelo (37,5 Ω) vanno bene solo per 2 uscite da 50 Ω (35,4 Ω).	 Ω: 75 Ω 케이블 2개 병렬(37.5 Ω)은 50 Ω 출력 2개(35.4 Ω)에만 적합합니다.
+ Ω: la distribuzione funziona con una linea di circa 50 Ω (G3TXQ usa spezzoni di coassiale). Con una linea ad alta impedenza le bande alte non si adattano (prova con nec2c: ROS da 2 a 9 con 120-300 Ω).	 Ω: 분배는 약 50 Ω 선로에서 동작합니다 (G3TXQ는 동축 케이블 토막 사용). 고임피던스 선로에서는 고역 밴드가 정합되지 않습니다 (nec2c 테스트: 120-300 Ω에서 SWR 2~9).
+ Ω: perdite alte. Allunga o accorcia la linea (prova 	 Ω: 손실이 큽니다. 선로를 늘리거나 줄이세요 (시도 
+ λ sulla banda bassa	 λ 저역 밴드에서
+ λ sviluppati	 λ 전개 길이
+ λ) le spaziature dei direttori sono x	 λ) 도파기 간격은 x
+ λ, centro filo	 λ, 와이어 중심
+ λ, nessuna sorgente	 λ, 급전원 없음
+ λ: le fonti stanno fra 0,09 e 0,13 λ. IK1ZYW: da 1/8 a 1/16 λ si perdono circa 0,5 dB di guadagno e 3 dB di F/B.	 λ: 문헌값은 0.09~0.13 λ. IK1ZYW: 1/8에서 1/16 λ로 가면 이득 약 0.5 dB, F/B 3 dB 손실.
+ λ: le fonti stanno fra 0,238 (W6PQL, filo isolato) e 0,264 λ (OE2TZL).	 λ: 문헌값은 0.238 (W6PQL, 절연 와이어)~0.264 λ (OE2TZL).
+" di AutoEZ: la linea tra i fili 	" (AutoEZ): 와이어 사이 선로 
+" non valido: 	" 유효하지 않음: 
+".\n\nRicorda di creare prima il modello NEC dai valori della scheda: 	".\n\n먼저 카드 값으로 NEC 모델을 만드세요: 
+"solo modelli leggeri" (normale): oltre 	"가벼운 모델만" (일반): 다음 초과 
+' ignorata: a sinistra c'e' un'espressione, che vale gia' 	' 무시됨: 왼쪽에 이미 값이 있는 식이 있습니다 
+' non e' un nome di variabile e vale 	' 은(는) 변수 이름이 아니며 값은 
+(alzando, si allarga di piu' il lato del dipolo). Sotto 0,1 λ il guadagno cala: l'antenna bassissima non guadagna, era un errore dei vecchi programmi con il terreno semplificato. 	(높이면 다이폴 쪽이 더 넓어집니다). 0.1 λ 미만에서는 이득이 떨어집니다: 매우 낮은 안테나는 이득이 없으며, 이는 단순화된 지면을 쓴 옛 프로그램의 오류였습니다. 
+(il disco da 3 m a 1296 MHz ha 30566 segmenti, 16,5 GB e decine di minuti). Le prestazioni di questo disco sono nel calcolo d'apertura qui a fianco, 	(1296 MHz의 3 m 접시는 30566 세그먼트, 16.5 GB, 수십 분 소요). 이 접시의 성능은 옆의 개구면 계산에 있습니다, 
+(immagine non trovata: 	(이미지를 찾을 수 없음: 
+(segue 	(이어서 
+) che non c'e'.	) 존재하지 않습니다.
+) come fili 	) 와이어로 
+) con valori negativi: R 	) 음수 값: R 
+) e' piu' grosso di quello prima (	)이(가) 앞의 것보다 굵습니다 (
+) ha raggio nullo o negativo.	) 반경이 0이거나 음수입니다.
+) non ancora calcolati: scheda ignorata.	) 아직 계산되지 않음: 카드 무시됨.
+) non supportato.	) 지원되지 않음.
+) o correggere il nome.	) 또는 이름을 수정하세요.
+) scritta da AutoEZ con formule del foglio Calculate, che non e' nel .weq: non importabile.	) .weq에 없는 Calculate 시트 공식으로 AutoEZ가 작성: 가져올 수 없음.
+) – formule Balanis	) – Balanis 공식
+), coda 	), 꼬리 
+), ramo parallelo Xp = 	), 병렬 분기 Xp = 
+), un solo piano	), 단일 평면
+). Verifica sulla tab. 11-1 di ON4UN (n 2, 75 ohm, 41 -j19,3, k 1, -90 gradi, 3,8 MHz): Xs 68,60, Xp -46,64.	). ON4UN 표 11-1로 검증 (n 2, 75 ohm, 41 -j19.3, k 1, -90도, 3.8 MHz): Xs 68.60, Xp -46.64.
+): boom piu' lungo senza guadagno in piu'.	): 이득 증가 없이 붐만 길어짐.
+): chiudi e riapri YA-NEC a mano.	): YA-NEC를 직접 닫았다가 다시 여세요.
+): controllare Z0 della linea e lo stub.	): 선로 Z0와 스터브를 확인하세요.
+): copie spostate alle distanze DL6WU.	): 복사본을 DL6WU 간격으로 이동.
+): estremi coincidenti.	): 양 끝이 일치.
+): fuori dall'approssimazione del filo sottile.	): 가는 와이어 근사를 벗어남.
+): i tubi si allargano verso la punta.	): 튜브가 끝으로 갈수록 굵어짐.
+): il NEC-2 le tratta come staccate.	): NEC-2는 분리된 것으로 처리합니다.
+): il NEC-2 tiene solo l'ultima.	): NEC-2는 마지막 것만 유지합니다.
+): il divisore λ/4 a stella non da' una Z0 standard → il programma propone due trasformatori in cascata o il Wilkinson a 	): λ/4 스타 분배기는 표준 Z0를 주지 않음 → 프로그램이 2단 변환기 또는 다음 Wilkinson을 제안 
+): la corrente in una punta libera e' quasi zero e l'impedenza diventa altissima e poco precisa.	): 자유단의 전류는 거의 0이어서 임피던스가 매우 높고 부정확해집니다.
+): le antenne si accoppiano, il guadagno scende e le impedenze cambiano.	): 안테나가 결합하여 이득이 떨어지고 임피던스가 바뀝니다.
+): le antenne si toccano.	): 안테나가 서로 닿습니다.
+): lo stesso conduttore descritto due volte.	): 같은 도체가 두 번 기술됨.
+): misure di formula.	): 공식 치수.
+): per Pi e T alza il Q sopra il minimo richiesto da R.	): Pi와 T는 Q를 R이 요구하는 최소값 이상으로 올리세요.
+): per il NEC-2 un filo e' sottile e lungo.	): NEC-2에서 와이어는 가늘고 길어야 합니다.
+): sembra 1000 volte troppo grande, come i mm scritti al posto dei metri.	): 1000배 너무 커 보입니다, m 대신 mm로 쓴 것처럼.
+): sembra 1000 volte troppo piccola, come i metri scritti al posto dei mm.	): 1000배 너무 작아 보입니다, mm 대신 m로 쓴 것처럼.
+): uso i valori scritti nelle caselle.	): 칸에 입력된 값을 사용합니다.
+)\nLunghezza: 	)\n길이: 
+)\nPerdita: 	)\n손실: 
++ altezza dell'antenna sul suolo: 	+ 안테나 지상고: 
+, F/B nominale 	, 공칭 F/B 
+, High Accuracy	, High Accuracy
+, Sommerfeld (GN 2)	, Sommerfeld (GN 2)
+, alim. 2 x 	, 급전 2 x 
+, alimentato al centro del lato basso (polarizzazione orizzontale)	, 아래 변 중앙 급전 (수평 편파)
+, aperture nello spazio libero	, 자유 공간 빔폭
+, bifilare	, 2선
+, bordi di 	, 가장자리 
+, calcolato in spazio libero a 	, 자유 공간에서 계산, 주파수 
+, calza all'inizio dell'avvolgimento (massa).	, 권선 시작에 실드 (접지).
+, centro 	, 중심 
+, che e' definita dopo: le variabili si calcolano dall'alto in basso.	, 이는 뒤에서 정의됩니다: 변수는 위에서 아래로 계산됩니다.
+, che ha un errore	, 오류가 있음
+, che non e' definita.	, 정의되지 않았습니다.
+, coda 	, 꼬리 
+, con ghiaccio	, 얼음 포함
+, con la fase	, 위상 포함
+, diametri in 	, 직경 단위 
+, direttore a U	, U자 도파기
+, divisore 	, 분배기 
+, elevazione 	, 앙각 
+, estremo E1\nprima: 	, 끝 E1\n이전: 
+, fase B 	, 위상 B 
+, filo 	, 와이어 
+, ghiaccio escluso	, 얼음 제외
+, incrociata	, 교차
+, lambda nel cavo 	, 케이블 내 lambda 
+, linea bifilare	, 평행 2선
+, lontano dai 3,217 m di JN1GLB (	, JN1GLB의 3.217 m에서 멀리 떨어짐 (
+, massimo 	, 최대 
+, orizzontale 	, 수평 
+, parassiti vicini nello stesso piano	, 같은 평면의 인접 무급전 소자
+, pol. H	, H 편파
+, pol. V	, V 편파
+, pol. mista	, 혼합 편파
+, punte allungate di 	, 끝을 다음만큼 연장 
+, quota 0 (le Z sono gia' assolute)	, 높이 0 (Z 값은 이미 절대값)
+, seg. 	, seg. 
+, segmenti "	, 세그먼트 "
+, segmento 	, 세그먼트 
+, sigma 	, sigma 
+, specchiato	, 반전
+, trasformatori 	, 변압기 
+, tratto 	, 구간 
+, usata nel peso e nel contrappeso	, 무게와 평형추에 사용
+, variabile 	, 변수 
+, vento perpendicolare al boom, pesi degli elementi	, 붐에 수직인 바람, 소자 무게
+, vento perpendicolare all'elemento	, 소자에 수직인 바람
+- - modello elettrico per il NEC (senza boom)	- - NEC용 전기 모델 (붐 제외)
+- - progetto elettrico (fili NEC, senza boom)	- - 전기 설계 (NEC 와이어, 붐 제외)
+1 - 2^-(Dluna/HPBW)^2 (DF3GJ, UA3AVR)	1 - 2^-(D달/HPBW)^2 (DF3GJ, UA3AVR)
+10 caratteri · quadrato di 	10자 · 사각형 
+1005/f piedi: 	1005/f 피트: 
+120 acosh(s/d), fili a 	120 acosh(s/d), 와이어 간격 
+139 / f (verso il lobo)	139 / f (로브 방향)
+16 lati da 	16변, 각 
+2 verticali in end-fire (cardioide), distanza 	수직 2개 end-fire (카디오이드), 간격 
+299,792458 (come EZNEC)	299.792458 (EZNEC와 동일)
+299,8 (come nec2c)	299.8 (nec2c와 동일)
+299,8 (nec2c)	299.8 (nec2c)
+3 verticali a triangolo, lato 	삼각형 수직 3개, 변 
+4-square in ricezione, lato 	수신용 4-square, 변 
+4. Efficienza in funzione della posizione del feed (f/D 	4. 피드 위치에 따른 효율 (f/D 
+8 verticali in cerchio, diametro 	원형 수직 8개, 직경 
+: 1 (impedenze, 600/100 = 6)	: 1 (임피던스, 600/100 = 6)
+: Balanis 15-55	: Balanis 15-55
+: EZNEC non ha le reti a due porte generiche, non scritta.	: EZNEC에는 일반 2포트 회로망이 없어 기록하지 않음.
+: GN 3 di 4nec2 (MiniNec ground): impedenza su terreno perfetto, diagramma con er 	: 4nec2의 GN 3 (MiniNec ground): 완전 도체 지면 임피던스, 패턴은 er 
+: HPBW (lambda/D)	: HPBW (lambda/D)
+: LD 7 con costante dielettrica <= 1 o raggio nullo: nessun effetto, il filo e' nudo.	: 유전 상수 <= 1 또는 반경 0인 LD 7: 효과 없음, 와이어는 피복 없음.
+: MMANA non la gestisce, va persa.	: MMANA가 처리하지 못해 손실됩니다.
+: Q della bobina 	: 코일 Q 
+: Z0 deve essere positiva (per incrociarla usare la casella).	: Z0는 양수여야 합니다 (교차하려면 체크박스 사용).
+: c'e' una cella vuota.	: 빈 셀이 있습니다.
+: calcolato come RLC parallelo.	: 병렬 RLC로 계산.
+: campi vicini (	: 근거리장 (
+: carico parallelo (LD 1) con R, L e C tutti zero.	: R, L, C가 모두 0인 병렬 부하 (LD 1).
+: carico serie (LD 0) con R, L e C tutti zero, non fa niente.	: R, L, C가 모두 0인 직렬 부하 (LD 0), 효과 없음.
+: conducibilita' del filo (LD 5) 	: 와이어 도전율 (LD 5) 
+: conto non valido (	: 잘못된 계산 (
+: controlla valore, minimo, massimo e passo (passo > 0, massimo > minimo)	: 값, 최소, 최대, 간격을 확인하세요 (간격 > 0, 최대 > 최소)
+: dal progetto elettrico agli elementi da realizzare	: 전기 설계에서 제작할 소자로
+: dal rilievo scritto nel NEC al modello elettrico	: NEC에 기록된 실측에서 전기 모델로
+: diametro non valido.	: 잘못된 직경.
+: diametro nullo.	: 직경 0.
+: diversi (vedi gli avvisi del formato).	: 서로 다름 (형식 경고 참조).
+: diviso per 1000 sarebbe 	: 1000으로 나누면 
+: eccitazione EX tipo 	: EX 여기 형식 
+: efficienza di taper	: 테이퍼 효율
+: estremi non trovati, non scritta.	: 끝점을 찾지 못해 기록하지 않음.
+: estremi non trovati.	: 끝점을 찾지 못함.
+: fattore di velocita' 	: 속도 계수 
+: file non trovato (	: 파일을 찾을 수 없음 (
+: fili 	: 와이어 
+: ignorata.	: 무시됨.
+: il centro non e' su un filo solo lungo almeno la piastra, nessuna modifica.	: 중심이 플레이트 이상 길이의 단일 와이어 위에 있지 않음, 변경 없음.
+: il filo e' piu' lungo della rastremazione -	: 와이어가 테이퍼보다 깁니다 -
+: il filo finisce prima, dei 	: 와이어가 더 일찍 끝남, 전체 
+: il filo non esiste.	: 와이어가 존재하지 않습니다.
+: il numero di segmenti deve essere almeno 1.	: 세그먼트 수는 최소 1이어야 합니다.
+: il salvataggio crea un file nuovo.	: 저장하면 새 파일이 만들어집니다.
+: il tratto 	: 구간 
+: impedenza 	: 임피던스 
+: impedenza (LD 4) con resistenza negativa (	: 음의 저항을 가진 임피던스 (LD 4) (
+: impedenza caratteristica nulla.	: 특성 임피던스 0.
+: in EZNEC su un solo segmento (	: EZNEC에서 단일 세그먼트에 (
+: in MMANA come R+jX valido a 	: MMANA에서 R+jX로, 유효 주파수 
+: in MMANA va al centro del filo 	: MMANA에서는 와이어 중앙에 배치 
+: l'ultimo tratto e' allungato di 	: 마지막 구간을 다음만큼 연장 
+: la banda nuova deve essere piu' bassa (dipolo piu' lungo), ma il dipolo dei 	: 새 밴드는 더 낮아야 합니다 (더 긴 다이폴), 그러나 다음 다이폴은 
+: la bobina ha Q = 	: 코일 Q = 
+: la formula usa "	: 공식이 다음을 사용 "
+: la rastremazione -	: 테이퍼 -
+: la riga -	: 행 -
+: le ammettenze di chiusura della scheda TL non esistono in EZNEC, non scritte.	: TL 카드의 종단 어드미턴스는 EZNEC에 없어 기록하지 않음.
+: le due estremita' sono sullo stesso segmento.	: 양 끝이 같은 세그먼트에 있습니다.
+: le due porte devono essere su segmenti diversi.	: 두 포트는 서로 다른 세그먼트에 있어야 합니다.
+: le impedenze devono essere positive.	: 임피던스는 양수여야 합니다.
+: lo spostamento dal punto indicato non e' gestito, la sorgente va al punto 	: 지정 지점으로부터의 오프셋은 처리되지 않으며, 급전원은 다음 지점에 배치 
+: lunghezza 	: 길이 
+: lunghezza multipla di mezz'onda, la rete non e' definita.	: 길이가 반파장의 배수여서 회로망이 정의되지 않습니다.
+: moltiplicato per 1000 sarebbe 	: 1000을 곱하면 
+: motore (spill x taper)	: 엔진 (spill x taper)
+: nessun tratto.	: 구간 없음.
+: non ancora importato.	: 아직 가져오지 않음.
+: non esiste in AutoEZ, non scritta.	: AutoEZ에 없어 기록하지 않음.
+: non importato (usare il .nec scritto da EZNEC).	: 가져오지 않음 (EZNEC가 쓴 .nec를 사용하세요).
+: non importato.	: 가져오지 않음.
+: non modificato (	: 변경되지 않음 (
+: non orizzontale, lasciato diritto.	: 수평이 아니어서 직선으로 둠.
+: piastra 	: 플레이트 
+: piastra non piu' grossa del tubo centrale, nessuna modifica.	: 플레이트가 중앙 튜브보다 굵지 않음, 변경 없음.
+: primo lobo (dB)	: 첫 사이드 로브 (dB)
+: raggio 	: 반경 
+: riferimenti circolari tra i fili.	: 와이어 간 순환 참조.
+: riferimento a un filo inesistente (	: 존재하지 않는 와이어 참조 (
+: riferimento al centro di un filo (	: 와이어 중심 참조 (
+: risuona a 	: 공진 주파수 
+: scheda 	: 카드 
+: scheda sconosciuta 	: 알 수 없는 카드 
+: schermo di radiali (GN con NRADL) valido solo con il terreno a coefficiente di riflessione (GN 0) e con lunghezza e raggio maggiori di zero: ignorato (come nec2c con Sommerfeld).	: 래디얼 스크린 (NRADL이 있는 GN)은 반사 계수 지면 (GN 0)이고 길이와 반경이 0보다 클 때만 유효: 무시됨 (Sommerfeld를 쓰는 nec2c와 동일).
+: scritta come impedenza a 	: 다음 주파수의 임피던스로 기록 
+: scritto come impedenza 	: 임피던스로 기록 
+: servono lunghezza (o "resto") e 	: 길이 (또는 "나머지")와 다음이 필요 
+: si conserva com'e'.	: 그대로 유지됩니다.
+: sorgenti, carichi o linee fuori dal centro del filo centrale, nessuna modifica.	: 중앙 와이어 중심 밖에 급전원, 부하 또는 선로 있음, 변경 없음.
+: sotto 1 non esiste (l'aria vale 1).	: 1 미만은 존재하지 않습니다 (공기는 1).
+: sposta le impedenze	: 임피던스를 이동
+: tipo non disponibile in EZNEC, non scritto.	: EZNEC에 없는 형식, 기록하지 않음.
+: tipo non disponibile in MMANA, non scritto.	: MMANA에 없는 형식, 기록하지 않음.
+: tipo non scritto nel .weq.	: .weq에 기록되지 않는 형식.
+: trappola LC che risuona a 	: 다음에서 공진하는 LC 트랩 
+: trovata 	: 발견 
+: tubi non trovati nel file.	: 파일에서 튜브를 찾을 수 없음.
+: uguali.	: 동일.
+: una linea vera non puo' essere piu' corta della distanza.	: 실제 선로는 거리보다 짧을 수 없습니다.
+: variabile vuota	: 빈 변수
+: verticale 	: 수직 
+:1 su 75 ohm	:1, 75 ohm에서
+= apertura D	= 개구 D
+=== Parabola primo fuoco: autotest ===	=== 프라임 포커스 접시: 자체 테스트 ===
+=== Trombe e illuminatori: autotest ===	=== 혼과 피드: 자체 테스트 ===
+Aggiornamento automatico dal GitHub (ogni 	GitHub에서 자동 업데이트 (주기 
+Altezza 	높이 
+Alza a 	다음으로 올림 
+Anelli fatti a poligono di 	링을 다각형으로 구성, 변 수 
+Antenna a 	안테나 위치 
+Antenna base in spazio libero a 	자유 공간의 기본 안테나, 주파수 
+Antenna su PCB: 	PCB 안테나: 
+Antenna su tetto, caso HF: terreno vero alla quota totale (solaio 	지붕 위 안테나, HF의 경우: 전체 높이에서 실제 지면 (바닥 
+Antenna: alla fine dell'avvolgimento (spira 	안테나: 권선 끝에 (권선 
+Antenna: presa 	안테나: 탭 
+Apertura a -3 dB: 	-3 dB 빔폭: 
+Apertura non riuscita: 	열기 실패: 
+Attenzione: il modello ha 	주의: 모델에 다음이 있습니다 
+AutoEZ / MultiNEC	AutoEZ / MultiNEC
+Autotest: 	자체 테스트: 
+Avvia (≈ 	시작 (≈ 
+Avvolgi il secondario: 	2차측 감기: 
+Avvolgi ogni coppia affiancata, 	각 쌍을 나란히 감기, 
+Avvolgili affiancati per 	나란히 감기, 
+Azimut all'elevazione di 	다음 앙각에서의 방위각 
+Bacchetta da 	막대 
+Banda 	밴드 
+Banda con ROS < 	SWR < 인 대역 
+Bande collegate al centro con spezzoni di linea lungo il palo (TL nel NEC, lunghezza elettrica = dislivello / VF), alimentazione in alto al 20 m (M0OXO, N4KC). 	밴드는 마스트를 따라 선로 토막으로 중앙에서 연결 (NEC의 TL, 전기적 길이 = 높이 차 / VF), 위쪽 20 m에서 급전 (M0OXO, N4KC). 
+Beverage 350 m 13,5 contro 13,66). Limite: il rumore reale non e' uniforme (linee elettriche, QRM locale): per questo contano anche F/B e la forma del lobo. 	Beverage 350 m 13.5 대 13.66). 한계: 실제 잡음은 균일하지 않습니다 (전력선, 국소 QRM): 그래서 F/B와 로브 형태도 중요합니다. 
+Big Wheel: petalo a triangolo arrotondato (bracci a 	Big Wheel: 둥근 삼각형 꽃잎 (팔 각도 
+Bilanciamento: 	균형: 
+Bilancio di potenza del NEC-2 non affidabile (ingresso {0:0.###E0} W, perdite {1:0.###E0} W: efficienza {2:0.0} %), tipico dei piccoli loop ad alto Q: 	NEC-2 전력 수지를 신뢰할 수 없음 (입력 {0:0.###E0} W, 손실 {1:0.###E0} W: 효율 {2:0.0} %), 고Q 소형 루프에서 흔함: 
+Bobina di carico a 	로딩 코일 위치 
+Bobina di carico: l'autorisonanza (Medhurst) e' a 	로딩 코일: 자기 공진 (Medhurst) 주파수 
+Boom 	붐 
+Boom (	붐 (
+Boom (G3SEK): BD (733 BD (0,055 - BD) - 504 BD (0,03 - BD)). Guadagno 9,2 + 3,39 ln(L/lambda) dBd: ogni raddoppio del boom da' solo 2,35 dB. 	붐 (G3SEK): BD (733 BD (0.055 - BD) - 504 BD (0.03 - BD)). 이득 9.2 + 3.39 ln(L/lambda) dBd: 붐을 2배로 할 때마다 2.35 dB만 늘어납니다. 
+Bracci fissati ai triangoli a 	팔을 삼각형에 고정, 위치 
+Calcola il rilievo cosi' com'e' e il modello elettrico: risonanza (ricerca entro +-10 %), ROS su Z0 = 	실측 그대로와 전기 모델을 계산: 공진 (+-10 % 내 탐색), Z0 기준 SWR = 
+Calcola spire per f0 = 	f0에 대한 권선 수 계산 = 
+Calcolo a 	계산 주파수 
+Calcolo finito in 	계산 완료, 소요 
+Cambio d'impedenza con un tratto di cavo (YA-NEC)\nFrequenza: 	케이블 구간으로 임피던스 변환 (YA-NEC)\n주파수: 
+Caratteri 	문자 
+Carichi (	부하 (
+Carichi HF inseriti come fili (Annulla nella barra Geometria li toglie): 	HF 부하를 와이어로 삽입 (형상 막대의 실행 취소로 제거): 
+Carichi HF: 	HF 부하: 
+Carichi HF: nessuna soluzione nell'intervallo (	HF 부하: 범위 내 해 없음 (
+Carico 	부하 
+Carico LD 	LD 부하 
+Carico MMANA di tipo S (Laplace) sul filo 	와이어의 MMANA S형 (Laplace) 부하 
+Carico MMANA non riconosciuto: 	인식되지 않은 MMANA 부하: 
+Carico NEC 	NEC 부하 
+Carico R+jX sul filo 	와이어의 R+jX 부하 
+Carico RLC serie sul filo 	와이어의 직렬 RLC 부하 
+Carico RLC sul filo 	와이어의 RLC 부하 
+Carico alla riga 	행의 부하 
+Carico di Laplace di AO sul filo 	와이어의 AO Laplace 부하 
+Carico di Laplace sul filo 	와이어의 Laplace 부하 
+Carico inserito nel modello (LD 	모델에 부하 삽입 (LD 
+Carico su un filo inesistente: 	존재하지 않는 와이어의 부하: 
+Carico sul filo 	와이어의 부하 
+Carico trappola (T) di EZNEC sul filo 	와이어의 EZNEC 트랩 (T) 부하 
+Cartella dei registri: 	로그 폴더: 
+Cartella: 	폴더: 
+Caso HF: modello alzato di (quota del solaio + quota aggiunta), terreno vero con Sommerfeld. Caso VHF/UHF: modello alzato della sola quota aggiunta, solaio come terreno 	HF의 경우: 모델을 (바닥 높이 + 추가 높이)만큼 올림, Sommerfeld 실제 지면. VHF/UHF의 경우: 추가 높이만큼만 올림, 바닥을 지면으로 
+Caso di prova approvato: verticale lambda/4 a 1,83 MHz con 4 radiali a 0,5 m e con 32 radiali a 5 cm su terreno medio di Sommerfeld: RDF 5,07 dB in 	승인된 테스트 사례: 1.83 MHz λ/4 수직, 0.5 m 높이 래디얼 4개 및 5 cm 높이 래디얼 32개, Sommerfeld 평균 지면: RDF 5.07 dB, 
+Cavo e balun: 	케이블과 발룬: 
+Cavo: 	케이블: 
+Cebik	Cebik
+Cheng e Chen (IEEE Trans. AP, 1973-75) ottimizzano insieme lunghezze e spaziature di una 6 elementi: come qui le spaziature diventano variabili, ma con un metodo a perturbazioni e senza vincolo sul boom. 	Cheng과 Chen (IEEE Trans. AP, 1973-75)은 6소자의 길이와 간격을 함께 최적화합니다: 여기처럼 간격이 변수가 되지만, 섭동법을 쓰고 붐 제약이 없습니다. 
+Coassiale: centrale alla presa 	동축 케이블: 중심 도체를 탭에 
+Come costruirlo: 	제작 방법: 
+Con il tipo "corrente" il programma calcola da solo le tensioni che danno esattamente queste correnti (matrice delle impedenze mutue). 	"전류" 형식이면 프로그램이 정확히 이 전류를 만드는 전압을 직접 계산합니다 (상호 임피던스 행렬). 
+Con la correzione Leeson attiva (Impostazioni, tubi telescopici) l'elemento entro il 15 % della risonanza e' sostituito da un tubo equivalente ricalcolato a ogni frequenza, 	Leeson 보정을 켜면 (설정, 신축 튜브) 공진 15 % 이내의 소자는 주파수마다 다시 계산한 등가 튜브로 대체됩니다, 
+Con la reattanza dell'antenna diversa da 0 la Z ottenuta e il ROS tengono conto anche di X. "libera": qualunque lunghezza (cosa si vede in fondo al cavo). 	안테나 리액턴스가 0이 아니면 결과 Z와 SWR에 X도 반영됩니다. "자유": 임의 길이 (케이블 끝에서 보이는 값). 
+Con la spunta, quando aggiungi le piastre al modello le punte di ogni elemento si allungano della compensazione calcolata (meta' per lato), 	체크하면 모델에 플레이트를 추가할 때 각 소자의 끝이 계산된 보정량만큼 늘어납니다 (한쪽에 절반씩), 
+Con questi vincoli il Moxon non funziona (F/B 	이 제약 조건에서는 Moxon이 동작하지 않습니다 (F/B 
+Condensatore da circa 	커패시터 약 
+Confronto non riuscito: 	비교 실패: 
+Confronto: Sevick (ARRL) circa 29 / 18 / 9 / 0 Ω con 4 / 8 / 16 / infiniti radiali. La Tab. 9-1 viene dalle misure di Brown, Lewis ed Epstein (Proc. IRE 1937, circa 3 MHz, un solo terreno, Fig. 25): 	비교: Sevick (ARRL) 래디얼 4 / 8 / 16 / 무한개에서 약 29 / 18 / 9 / 0 Ω. 표 9-1은 Brown, Lewis, Epstein의 측정값입니다 (Proc. IRE 1937, 약 3 MHz, 단일 지면, 그림 25): 
+Controllo dei dati - 	데이터 확인 - 
+Controllo dei dati interrotto: 	데이터 확인 중단: 
+Copia non riuscita: 	복사 실패: 
+Corrente in un punto: 	한 점의 전류: 
+Correnti al centro dei segmenti a 	세그먼트 중심 전류, 주파수 
+Correzione approvata: la formula DL6WU D = lambda / (2 sin(a/2)) si applica con le aperture dell'antenna base in spazio libero calcolate dal programma. 	승인된 보정: DL6WU 공식 D = lambda / (2 sin(a/2))를 프로그램이 계산한 자유 공간 기본 안테나 빔폭으로 적용합니다. 
+Cosa cambia nella tabella dei fili (con "Angolo come variabile" le coordinate diventano formule con 	와이어 표에서 바뀌는 내용 ("각도를 변수로" 선택 시 좌표가 다음을 포함한 공식이 됨 
+Cosa entra nel file 	파일에 들어가는 내용 
+Cosa succede quando apri un modello o lo cambi. "sempre": calcolo alla frequenza centrale e subito dopo lo sweep (come fino alla 0.4.19). 	모델을 열거나 변경할 때의 동작. "항상": 중심 주파수에서 계산 후 바로 스윕 (0.4.19까지와 동일). 
+Crea il disco come griglia di fili (maglia circa lambda/10, centine, rete ideale o piana tra le centine secondo la casella sopra) 	접시를 와이어 격자로 생성 (메시 약 lambda/10, 리브, 위 체크박스에 따라 리브 사이 이상적 또는 평면 메시) 
+Crea una scheda PDF con i dati del boom (diametro, forma, montaggio, correzione) e la tabella degli elementi del modello aperto 	붐 데이터 (직경, 형태, 장착, 보정)와 열린 모델의 소자 표로 PDF 시트를 만듭니다 
+Criterio: 	기준: 
+D = L / (2 (1 + sqrt(1/k^2 + (N pi)^2))), H = D / k. Le due spire sono in parallelo sui morsetti in alto: la grande e' induttiva, la piccola capacitiva, 	D = L / (2 (1 + sqrt(1/k^2 + (N pi)^2))), H = D / k. 두 루프는 위쪽 단자에서 병렬입니다: 큰 루프는 유도성, 작은 루프는 용량성, 
+DMF (Directivity Merit Figure, ON4UN): guadagno a 20 gradi di elevazione nella direzione avanti meno il guadagno medio della semisfera posteriore (azimut oltre 90 gradi, 	DMF (Directivity Merit Figure, ON4UN): 전방 앙각 20도의 이득에서 후방 반구 평균 이득을 뺀 값 (방위각 90도 초과, 
+Dal .weq: 	.weq에서: 
+Dal mozzo un tratto di λ/4 di cavo da 	허브에서 λ/4 케이블 구간, 
+Dalla 0.4.20 il calcolo (matrice, fattorizzazione, sweep, diagramma) lascia libero un processore logico per la finestra, 	0.4.20부터 계산 (행렬, 분해, 스윕, 패턴)은 창을 위해 논리 프로세서 하나를 비워 둡니다, 
+Diagramma del feed non disponibile: 	피드 패턴 없음: 
+Diagramma dell'ottimizzatore: 	최적화기 패턴: 
+Diagrammi: 	패턴: 
+Dima non salvata: 	템플릿 저장 안 됨: 
+Dipolo caricato 	로딩 다이폴 
+Dipolo multibanda: 	멀티밴드 다이폴: 
+Direttore N: (K1 - K2 ln N)(1 - K3 e^-K4N), K dalla tabella sul diametro. Riflettore ((20 - 40)/(186,88 ln(2/d) - 320) + 1)/2, radiatore (0,4777 - 1,0522 d + 0,43363 d^-0,0149)/2 x 1,02. 	도파기 N: (K1 - K2 ln N)(1 - K3 e^-K4N), K는 직경별 표에서. 반사기 ((20 - 40)/(186.88 ln(2/d) - 320) + 1)/2, 복사기 (0.4777 - 1.0522 d + 0.43363 d^-0.0149)/2 x 1.02. 
+Disegno 1:1 del divisore: 	분배기 1:1 도면: 
+Disegno PDF: 	PDF 도면: 
+Distanza dal riflettore di 	반사기로부터의 거리 
+Distanze provate (	시도한 간격 (
+Distribuzione del F/B sulle 	F/B 분포, 대상 
+Divisore 	분배기 
+Divisori: 	분배기: 
+Dove va il carico: w + numero del filo + b (inizio), c (centro), e (fine), oppure w4:7 (segmento 7 del filo 4). 	부하 위치: w + 와이어 번호 + b (시작), c (중앙), e (끝), 또는 w4:7 (와이어 4의 세그먼트 7). 
+Due DHDL broadside a 	broadside DHDL 2개, 간격 
+Due frequenze: 	두 주파수: 
+EFHW con polvere di ferro: la permeabilita' bassa richiede molte spire e il primario da 	철분 코어 EFHW: 낮은 투자율 때문에 권선이 많이 필요하고 1차측 
+ERR  calcolo: 	ERR  계산: 
+ERR  feed tabellato: 	ERR  표 형식 피드: 
+EZNEC lo rifiuta ("One or more wires extend into or are lying on the ground"). Alzare il filo almeno di un raggio sopra il suolo (radiali: qualche centimetro), 	EZNEC가 거부합니다 ("One or more wires extend into or are lying on the ground"). 와이어를 지면 위로 최소 반경만큼 올리세요 (래디얼: 수 센티미터), 
+Effetto sul dipolo 	다이폴에 대한 영향 
+Eggbeater: perimetro 1005/f piedi, riflettore a radiali a 1/8 lambda, linea di fase lambda/4, spire accordate in quadratura col NEC e 	Eggbeater: 둘레 1005/f 피트, 1/8 lambda 래디얼 반사기, λ/4 위상선, NEC로 직교 위상 튜닝한 루프 및 
+Elementi (	소자 (
+Elementi a diametri a gradini (tubi telescopici): per il calcolo diventano un elemento di diametro uniforme con lunghezza corretta, 	계단형 직경 소자 (신축 튜브): 계산 시 보정된 길이의 균일 직경 소자가 됩니다, 
+Elementi a tubi telescopici: per un risultato come YO, EZNEC e ARRL attiva la correzione Leeson (Impostazioni > Tubi telescopici). 	신축 튜브 소자: YO, EZNEC, ARRL과 같은 결과를 원하면 Leeson 보정을 켜세요 (설정 > 신축 튜브). 
+Elementi di 	소자 
+Elemento 	소자 
+Elemento simmetrico: 	대칭 소자: 
+Elevazione 	앙각 
+Elevazione (piano az 	앙각 (방위 평면 
+Elevazione nel piano di azimut 	방위각 평면의 앙각 
+Elica 	헬리컬 
+Elica: 	헬리컬: 
+Emerson 	Emerson 
+Errore NEC: 	NEC 오류: 
+Errore nel calcolo: 	계산 오류: 
+Errore nel modello del calcolatore: 	계산기 모델 오류: 
+Errore nel modello elettrico: 	전기 모델 오류: 
+Errore nel modello: 	모델 오류: 
+Errore nel salvataggio: 	저장 오류: 
+Errore nell'apertura: 	열기 오류: 
+Errore nella geometria: 	형상 오류: 
+Errore nella linguetta 	탭 오류 
+Errore nella scheda PDF: 	PDF 시트 오류: 
+Errore nelle schede NEC: 	NEC 카드 오류: 
+Errore nelle variabili: 	변수 오류: 
+Errore nello sweep: 	스윕 오류: 
+Errore: 	오류: 
+Esporta CSV: 	CSV 내보내기: 
+Esportazione non riuscita: 	내보내기 실패: 
+F/B scende a 	F/B가 다음으로 떨어짐 
+F/B: nominale 	F/B: 공칭 
+Fai le prese spellando il filo alla spira 	다음 권선에서 와이어 피복을 벗겨 탭을 만드세요 
+File .ANT: asse non valido in 	.ANT 파일: 잘못된 축, 위치 
+File .ANT: carico di Laplace con denominatore nullo a 	.ANT 파일: 분모가 0인 Laplace 부하, 위치 
+File .ANT: espressione incompleta: 	.ANT 파일: 불완전한 식: 
+File .ANT: espressione non valida: 	.ANT 파일: 잘못된 식: 
+File .ANT: filo 	.ANT 파일: 와이어 
+File .ANT: il file finisce prima del filo 	.ANT 파일: 다음 와이어 전에 파일이 끝남 
+File .ANT: il filo 	.ANT 파일: 와이어 
+File .ANT: linea senza Z= o D= e S=: 	.ANT 파일: Z= 또는 D=와 S=가 없는 선로: 
+File .ANT: linea senza i due estremi: 	.ANT 파일: 양 끝이 없는 선로: 
+File .ANT: numero di segmenti non valido: 	.ANT 파일: 잘못된 세그먼트 수: 
+File .ANT: posizione non riconosciuta: 	.ANT 파일: 인식되지 않은 위치: 
+File .ANT: simbolo non definito: 	.ANT 파일: 정의되지 않은 기호: 
+File .ANT: valore non valido in 	.ANT 파일: 잘못된 값, 위치 
+File .YAG: elemento 	.YAG 파일: 소자 
+File .YAG: il file finisce prima dell'elemento 	.YAG 파일: 다음 소자 전에 파일이 끝남 
+File .ez, filo 	.ez 파일, 와이어 
+File .weq, riga 	.weq 파일, 행 
+File .weq: 	.weq 파일: 
+File .weq: "LPDA repeat to 	.weq 파일: "LPDA repeat to 
+File .weq: il modello EZNEC e' a 	.weq 파일: EZNEC 모델 주파수 
+File .weq: la variabile 	.weq 파일: 변수 
+File .weq: rete di adattamento (tabella «L Networks» di EZNEC, riga 	.weq 파일: 정합 회로망 (EZNEC «L Networks» 표, 행 
+Fili 	와이어 
+Fili (	와이어 (
+Filo 	와이어 
+Filo con tag 	tag가 있는 와이어 
+Fonti: 	출처: 
+Fonti: R. Lewallen W7EL (rete L con le linee lambda/4 "current forcing"), F. Lahlum W1MK (formule), ON4UN Low-Band DXing cap. 11 (tab. 11-1...11-5), ARRL Antenna Book (ibrido di Collins). 	출처: R. Lewallen W7EL (λ/4 "current forcing" 선로를 쓴 L 회로망), F. Lahlum W1MK (공식), ON4UN Low-Band DXing 11장 (표 11-1...11-5), ARRL Antenna Book (Collins 하이브리드). 
+Formato .ez non riconosciuto (versione di EZNEC diversa da quelle note). 	.ez 형식을 인식할 수 없음 (알려진 것과 다른 EZNEC 버전). 
+Formula DL6WU: D = lambda / (2 sin(B/2)), B = apertura a -3 dB nel piano dello stack (ARRL 24a ed., Rothammel cap. 24, DG7YBN). 	DL6WU 공식: D = lambda / (2 sin(B/2)), B = 스택 평면의 -3 dB 빔폭 (ARRL 24판, Rothammel 24장, DG7YBN). 
+Formule (ON4UN): verticali lambda/4 ai vertici di un quadrato di lato lambda/4, correnti uguali sfasate 0 (dietro), -90 (lati), -180 gradi (davanti). 	공식 (ON4UN): 변이 λ/4인 정사각형 꼭짓점의 λ/4 수직, 같은 크기 전류에 위상 0 (후방), -90 (측면), -180도 (전방). 
+Formule (modello a linea del braccio caricato, lo stesso della W3DZZ risolto per la bobina): X = Z0 (cot(beta b) - tan(beta a)), 	공식 (로딩된 팔의 선로 모델, W3DZZ와 같으며 코일에 대해 풂): X = Z0 (cot(beta b) - tan(beta a)), 
+Formule: ARRL, perimetro del radiatore 306,3/f m, riflettore 313,6/f m, direttore 297,2/f m. Cebik (Cubical Quad Notes vol. 2): D1 = log10(d/lambda), 	공식: ARRL, 복사기 둘레 306.3/f m, 반사기 313.6/f m, 도파기 297.2/f m. Cebik (Cubical Quad Notes vol. 2): D1 = log10(d/lambda), 
+Formule: per ogni banda radiatore 306,3/f e riflettore 313,6/f (ARRL), anelli concentrici sulle stesse crociere e un solo boom: la spaziatura in lambda cambia da banda a banda. 	공식: 밴드마다 복사기 306.3/f, 반사기 313.6/f (ARRL), 같은 스프레더에 동심 루프와 붐 하나: lambda 단위 간격은 밴드마다 다릅니다. 
+Four-square 	Four-square 
+Freccia applicata al modello (Annulla nella barra Geometria la toglie). 	모델에 처짐 적용 (형상 막대의 실행 취소로 제거). 
+Frequenza 	주파수 
+Frequenza fuori dalla banda consigliata per la miscela 	재질의 권장 대역을 벗어난 주파수 
+Funzione sconosciuta: 	알 수 없는 함수: 
+Fuori dal metodo DL6WU: 	DL6WU 방법 범위 밖: 
+G/T come VE7BQH: 	VE7BQH 방식 G/T: 
+G6GVI (da MW1FGQ): doppia biquad, alluminio piu' rete da 1/2 x 1 pollice, circa 12,5 dBi stimati a 3,4 GHz. 	G6GVI (MW1FGQ 출처): 더블 바이쿼드, 알루미늄과 1/2 x 1 인치 메시, 3.4 GHz에서 추정 약 12.5 dBi. 
+GX: il segmento 	GX: 세그먼트 
+Geometria: 	형상: 
+Geometria: quadrati di lato s (circa λ/4 da centro filo a centro filo) disposti a rombo lungo la polarizzazione, alimentati al centro tra due nodi distanti 	형상: 변 s (와이어 중심 간 약 λ/4)인 정사각형을 편파 방향으로 마름모 배치, 다음 간격의 두 노드 사이 중앙에서 급전 
+Giunzione, fili 	접합, 와이어 
+Giunzioni di 3 o piu' segmenti: 	3개 이상 세그먼트 접합: 
+Gli angoli devono essere crescenti (dato n. 	각도는 증가해야 합니다 (데이터 번호 
+Gli errori di superficie abbassano il guadagno (Ruze) e spargono l'energia in un fondo largo: la curva tratteggiata arancio e' la stima di Baars (fascio d'errore gaussiano), non un calcolo. 	표면 오차는 이득을 낮추고 (Ruze) 에너지를 넓은 바닥으로 퍼뜨립니다: 주황색 점선은 계산이 아니라 Baars의 추정 (가우스 오차 빔)입니다. 
+Guadagno medio = potenza irradiata nell'emisfero superiore / 4 pi (con il terreno) oppure media su tutta la sfera in spazio libero, 	평균 이득 = 상부 반구 복사 전력 / 4 pi (지면 있음) 또는 자유 공간에서 구 전체 평균, 
+Guadagno medio del modello = 	모델의 평균 이득 = 
+Guanella 4:1: due linee bifilari da 2 Zcoassiale, ingressi in parallelo e uscite in serie. Ruthroff: tensione sommata (9:1 = tre fili in serie). 	Guanella 4:1: 2 Z동축의 평행 2선 2개, 입력 병렬, 출력 직렬. Ruthroff: 전압 합산 (9:1 = 와이어 3개 직렬). 
+Hexbeam: raggio delle punte del 20 m 	Hexbeam: 20 m 끝의 반경 
+I puntoni non sono nel diagramma (non hanno simmetria circolare): danno lobi a stella nei loro piani e sono contati solo nell'efficienza. 	지지대는 패턴에 포함되지 않습니다 (원형 대칭이 없음): 해당 평면에 별 모양 로브를 만들며 효율에만 반영됩니다. 
+IK1ZYW (2012, MMANA): da 1/8 λ a 15 mm (1/16 λ) circa -0,5 dB e -3 dB di F/B. 	IK1ZYW (2012, MMANA): 1/8 λ에서 15 mm (1/16 λ)로 가면 약 -0.5 dB, F/B -3 dB. 
+INFO misure trovate (m): 	INFO 찾은 치수 (m): 
+INFO ottimizzatore sulla Yagi MathWorks non concluso: 	INFO MathWorks Yagi 최적화 미완료: 
+Ibrido di Collins (90 gradi, Z0 	Collins 하이브리드 (90도, Z0 
+Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. 	Monte Carlo는 매 단계에 들어가지 않습니다: 여러 무작위 점에서 최적화를 시작하고 최상위 후보만 제작 공차로 검사합니다. 
+Il NEC-2 originale e nec2c usano c = 299,8 m/us, EZNEC il valore esatto 299,792458. La differenza (2,5 parti su 100000) sposta l'impedenza 	원래 NEC-2와 nec2c는 c = 299.8 m/us, EZNEC는 정확한 값 299.792458을 씁니다. 그 차이 (100000분의 2.5)로 임피던스가 이동합니다 
+Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo). 	측정 최소 SWR이 계산값보다 높습니다: 저항 성분이 맞지 않습니다 (정합, 발룬 또는 케이블 손실). 
+Il calcolo cresce con il cubo dei segmenti: un disco da 1,2 m a 1296 MHz ha circa 7000 segmenti (0,8 GB, alcuni minuti). 	계산량은 세그먼트 수의 세제곱에 비례합니다: 1296 MHz의 1.2 m 접시는 약 7000 세그먼트 (0.8 GB, 몇 분). 
+Il fascio dipende dal diametro e dall'illuminazione, non dalle perdite: un disco sovrailluminato ha il fascio piu' stretto ma rende meno (W1GHZ, app. 6A). 	빔은 손실이 아니라 직경과 조사 분포에 따라 달라집니다: 과조사된 접시는 빔이 더 좁지만 성능은 떨어집니다 (W1GHZ, 부록 6A). 
+Il filo resta uno nella tabella (comodo da modificare e da ottimizzare). Per il calcolo diventa un tubo per tratto, con lo stesso tag e lo stesso numero 	와이어는 표에서 한 행으로 유지됩니다 (수정과 최적화에 편리). 계산 시에는 구간마다 튜브 하나가 되며, 같은 tag와 같은 번호 
+Il loop e' un'onda intera sulla banda piu' bassa e 2, 3, 4... onde sulle altre: l'impedenza al loop cambia molto da banda a banda. 	루프는 최저 밴드에서 1파장, 다른 밴드에서 2, 3, 4... 파장입니다: 루프의 임피던스는 밴드마다 크게 다릅니다. 
+Il modello NEC a fili e' calcolato a 	NEC 와이어 모델 계산 주파수 
+Il modello aperto viene copiato con tutte le misure moltiplicate per k (scheda GS): con "diametri uguali" i raggi restano quelli di prima. 	열린 모델이 모든 치수에 k를 곱해 복사됩니다 (GS 카드): "직경 동일"이면 반경은 그대로입니다. 
+Il modello di partenza non si calcola: 	시작 모델을 계산할 수 없습니다: 
+Il modello ha 	모델에 다음이 있습니다 
+Il modello ha fili a 	모델에 다음 위치의 와이어가 있습니다 
+Il motore di YA-NEC e' la traduzione in C# delle sue routine (geometria, matrice, campi, diagramma). 	YA-NEC 엔진은 그 루틴 (형상, 행렬, 전자기장, 패턴)을 C#으로 옮긴 것입니다. 
+Il nucleo 	코어 
+Il piano verticale e' asimmetrico perche' l'illuminazione e' piu' forte verso il bordo inferiore (piu' vicino al fuoco): i lobi dalla parte del bordo inferiore sono piu' alti. 	수직 평면이 비대칭인 이유는 아래쪽 가장자리 (초점에 더 가까움) 쪽 조사가 더 강하기 때문입니다: 아래쪽 가장자리 쪽 사이드 로브가 더 높습니다. 
+Il primario: 	1차측: 
+Il registro e' sempre attivo: un file di testo per sessione nella cartella Registri accanto al programma, con ogni azione, i tempi di risposta, 	로그는 항상 켜져 있습니다: 프로그램 옆 로그 폴더에 세션마다 텍스트 파일 하나, 모든 동작과 응답 시간 포함, 
+Il segmento 	세그먼트 
+Il septum non e' nel modello: il polarizzatore non cambia il diagramma (W1GHZ). Bocca nel piano z = 0: il centro di fase che YA-NEC calcola e' riferito alla bocca. 	셉텀은 모델에 없습니다: 편파기는 패턴을 바꾸지 않습니다 (W1GHZ). 개구부는 z = 0 평면: YA-NEC가 계산하는 위상 중심은 개구부 기준입니다. 
+Il voto e' la somma sulle frequenze: tiene buona l'antenna anche ai bordi della banda. Si possono mettere bande diverse (antenne multibanda). 	점수는 주파수별 합입니다: 밴드 가장자리에서도 안테나 성능을 유지합니다. 서로 다른 밴드를 넣을 수 있습니다 (멀티밴드 안테나). 
+Impedenza del filo sul terreno Z0 = 138 log10(4h/d) = 	지면 위 와이어 임피던스 Z0 = 138 log10(4h/d) = 
+Importato da YO (.YAG): alimentato il secondo elemento (convenzione di YO), 	YO (.YAG)에서 가져옴: 두 번째 소자 급전 (YO 규칙), 
+In alternativa: 	또는: 
+Incollate 	붙여넣음 
+Induttanza con 	인덕턴스, 조건 
+Integrali di Sommerfeld, griglie di interpolazione, onda di terra di Norton: tradotti in C# e verificati con nec2c 	Sommerfeld 적분, 보간 격자, Norton 지표파: C#으로 옮기고 nec2c로 검증 
+Interpretazione: la misura e' spostata 	해석: 측정값이 이동되어 있음 
+Inv. = polarita' invertita. Nel calcolo diventa una scheda NT (reattanza magnetizzante 10000 volte Z1): per collegarlo a una linea si usa un filo corto lontano ("filo virtuale"). 	Inv. = 극성 반전. 계산 시 NT 카드가 됩니다 (자화 리액턴스 Z1의 10000배): 선로에 연결하려면 멀리 떨어진 짧은 와이어 ("가상 와이어")를 씁니다. 
+Ispirazione per le funzioni delle prossime fasi (variabili, sweep su variabili, Resonate, AutoSeg, linee e reti, 	다음 단계 기능의 참고 (변수, 변수 스윕, Resonate, AutoSeg, 선로와 회로망, 
+L'antenna e' a quota 	안테나 높이 
+L'efficienza e' integrata su tutta l'apertura (griglia 240 x 240) con il campo F(theta')/rho del feed: spillover, illuminazione e fase escono dallo stesso integrale. 	효율은 피드 전계 F(theta')/rho로 개구면 전체 (240 x 240 격자)에서 적분합니다: 스필오버, 조사, 위상이 같은 적분에서 나옵니다. 
+L'impedenza di ogni spira dipende molto dalla distanza dal riflettore (tamago: da 62 a 143 ohm tra 0,03 e 0,12 lambda di distanza della base): 	각 루프의 임피던스는 반사기와의 거리에 크게 좌우됩니다 (tamago: 밑변 거리 0.03~0.12 lambda에서 62~143 ohm): 
+LD 7 di 4nec2 non convertito: 	4nec2 LD 7 변환 안 됨: 
+LPDA: sigma 	LPDA: sigma 
+LPDA: tau 	LPDA: tau 
+La Luna e' sotto l'orizzonte a quell'ora (elevazione 	그 시각 달은 지평선 아래에 있습니다 (앙각 
+La bobina misurata risuona a 	측정한 코일의 공진 주파수 
+La formula non tiene conto del diametro degli elementi, della distanza dalle estremita' del boom ne' della segmentazione del modello (DG7YBN). 	이 공식은 소자 직경, 붐 끝으로부터의 거리, 모델 세그먼트 분할을 고려하지 않습니다 (DG7YBN). 
+La funzione 	함수 
+La piastra al centro dell'elemento e' un tratto corto e grosso: un gradino in piu' del tubo. Diametro equivalente della sezione 	소자 중앙의 플레이트는 짧고 굵은 구간입니다: 튜브의 계단이 하나 더 있는 셈입니다. 단면 등가 직경 
+La regola comune (DL6WU, G3SEK) e' che il guadagno dipende soprattutto dalla lunghezza del boom e poco dal numero di elementi, purche' le spaziature siano ragionevoli. Fonti: 	일반 규칙 (DL6WU, G3SEK): 간격이 적절하면 이득은 주로 붐 길이에 좌우되고 소자 수에는 별로 좌우되지 않습니다. 출처: 
+La risonanza della trappola (	트랩 공진 (
+La stima di Z0 e' tarata sul NEC (entro circa il 15 % tra il 20 e il 70 % del braccio): "Porta in risonanza (NEC)" ritocca la bobina, non le lunghezze. 	Z0 추정은 NEC로 보정되었습니다 (팔의 20~70 % 범위에서 약 15 % 이내): "공진으로 맞추기 (NEC)"는 길이가 아니라 코일을 조정합니다. 
+La variabile 	변수 
+La verifica non torna (ROS 	검증이 맞지 않음 (SWR 
+Lato (a 	변 (a 
+Lato di 	변 
+Le lunghezze di DL6WU non valgono piu' e nemmeno il guadagno stimato 9,2 + 3,39 ln L: i numeri veri li da' il NEC dopo "Ottimizza (NEC)". 	DL6WU 길이도, 추정 이득 9.2 + 3.39 ln L도 더 이상 맞지 않습니다: 실제 수치는 "최적화 (NEC)" 후 NEC가 줍니다. 
+Le prestazioni dichiarate per l'antenna EH ("come un dipolo") non sono confermate dalle misure indipendenti: e' un dipolo corto, e il NEC lo mostra. 	EH 안테나의 주장된 성능 ("다이폴과 같음")은 독립 측정으로 확인되지 않았습니다: 짧은 다이폴이며, NEC도 그렇게 보여 줍니다. 
+Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). 	변수는 변수 탭에서 가져옵니다 (길이, 간격, 높이, 부하, 급전원 위상, 스택 간격...). 
+Leeson: 	Leeson: 
+Lettura non riuscita: 	읽기 실패: 
+Linea 	선로 
+Linea alla riga 	행의 선로 
+Linea dal filo 	와이어에서 선로 
+Linea di adattamento (YA-NEC, cambio d'impedenza): TL Z0 	정합 선로 (YA-NEC, 임피던스 변환): TL Z0 
+Linea messa nel modello: TL da 	모델에 넣은 선로: TL 
+Linea nel modello: 	모델의 선로: 
+Linea o rete 	선로 또는 회로망 
+Linea, primo punto 	선로, 첫 번째 점 
+Linea, secondo punto 	선로, 두 번째 점 
+Linear loading a 	Linear loading 위치 
+Lista di taglio esportata: 	절단 목록 내보냄: 
+Lista di taglio in PDF: 	PDF 절단 목록: 
+Lista di taglio: 	절단 목록: 
+Lo stack si crea solo da modelli fatti di fili GW (scheda 	스택은 GW 와이어로 된 모델에서만 만들 수 있습니다 (카드 
+Lobo esportato: 	로브 내보냄: 
+Localita' non trovata: 	위치를 찾을 수 없음: 
+Loop 	루프 
+Loop magnetica 	마그네틱 루프 
+Loop piccolo: Rr = 31171 A^2/lambda^4 = 	소형 루프: Rr = 31171 A^2/lambda^4 = 
+Loop: 	루프: 
+Lunghezza per la massima risposta a 	최대 응답을 위한 길이, 주파수 
+MMANA non le gestisce: 	MMANA가 처리하지 못함: 
+Maglia della rete di 	메시 간격 
+Manca ')' dopo gli argomenti di 	다음 인수 뒤에 ')' 누락 
+Mappa del cielo non in ordine RING: 	하늘 지도가 RING 순서가 아님: 
+Mappa del cielo non valida: 	잘못된 하늘 지도: 
+Massimo 	최대 
+Massimo a 	최대 위치 
+MathWorks (Antenna Toolbox): biquad Yagi a 2,4 GHz con 4 direttori biquad, solo grafici. 	MathWorks (Antenna Toolbox): 바이쿼드 도파기 4개의 2.4 GHz 바이쿼드 Yagi, 그래프만. 
+Metodo: integrazione del diagramma 3D per angoli solidi finiti (somma = 4 pi esatta, come XLGTa di AC6LA), scansione dell'elevazione come TANT di YT1NT/VE3EA, 	방법: 유한 입체각으로 3D 패턴 적분 (합 = 정확히 4 pi, AC6LA의 XLGTa와 동일), YT1NT/VE3EA의 TANT처럼 앙각 스캔, 
+Misura del VNA: 	VNA 측정: 
+Misure VNA: 	VNA 측정: 
+Misure di partenza: "Calcola questa antenna" accorda col NEC a 	시작 치수: "이 안테나 계산"이 NEC로 다음에 맞춰 튜닝 
+Modello NEC: 	NEC 모델: 
+Modello caricato: 	모델 불러옴: 
+Modello con 	모델, 포함 
+Modello d'apertura: valido nel lobo principale, dove serve per illuminare il disco. Non vede le correnti esterne, il bordo e gli anelli: per i lobi posteriori, i feed con choke e il confronto finale serve il NEC. 	개구면 모델: 접시 조사에 필요한 주 로브에서 유효합니다. 외부 전류, 가장자리, 링은 보지 못합니다: 후방 로브, 초크 피드, 최종 비교에는 NEC가 필요합니다. 
+Modello del calcolatore aperto: 	계산기 모델 열림: 
+Modello pesante (	무거운 모델 (
+Modello salvato: 	모델 저장됨: 
+Modello semplificato di 	단순화 모델 
+Modello spostato: la staffa consigliata (	모델 이동됨: 권장 클램프 (
+Modo simmetrico di AO ("Free Space Symmetric") con la sola meta' +Y nel file: l'altra meta' e' l'immagine speculare sul piano X-Z, 	AO 대칭 모드 ("Free Space Symmetric"), 파일에는 +Y 절반만: 나머지 절반은 X-Z 평면의 거울상, 
+Modo simmetrico: la linea tra i fili 	대칭 모드: 와이어 사이 선로 
+Modo simmetrico: sorgente o carico sul filo 	대칭 모드: 와이어의 급전원 또는 부하 
+Monta i bracci di sotto sul triangolo di massa (calza) e quelli di sopra sul triangolo del centrale, a 	아래 팔은 접지 삼각형 (실드)에, 위 팔은 중심 도체 삼각형에 장착, 간격 
+Moxon: la misura 	Moxon: 치수 
+NEC2 di G. J. Burke e A. J. Poggio (LLNL), tradotto in C da Neoklis Kyriazis 5B4AZ (nec2c) 	G. J. Burke와 A. J. Poggio (LLNL)의 NEC2, Neoklis Kyriazis 5B4AZ가 C로 번역 (nec2c) 
+Nel NEC-2 la scheda non c'e': si usa la permittivita' efficace (er+1)/2 sulle lunghezze (il NEC risolve la geometria vera a f x √eeff) 	NEC-2에는 해당 카드가 없습니다: 길이에 실효 유전율 (er+1)/2를 적용합니다 (NEC는 실제 형상을 f x √eeff에서 풂) 
+Nel modello non ci sono copie identiche della stessa antenna. Il riconoscimento cerca fili elencati a gruppi uguali, 	모델에 같은 안테나의 동일 복사본이 없습니다. 인식 기능은 같은 그룹으로 나열된 와이어를 찾습니다, 
+Nelle 24 ore: minimo 	24시간 동안: 최소 
+Nessun problema trovato nei 	문제 없음, 대상 
+Nessun segmento con tag 	다음 tag의 세그먼트 없음 
+Nessun segmento ha il tag 	다음 tag를 가진 세그먼트 없음 
+Nessuna banda libera sotto il 	다음 아래에 빈 밴드 없음 
+Note del file .YAG: 	.YAG 파일 메모: 
+Numero 	번호 
+ON4UN Tab. 9-3 per 	ON4UN 표 9-3, 대상 
+Ogni anello e' fatto di tratti di tubo diritti da centina a centina. Il calcolo sceglie per ogni anello il tubo piu' leggero che regge vento e peso 	각 링은 리브에서 리브까지 직선 튜브 구간으로 만듭니다. 계산은 링마다 바람과 무게를 견디는 가장 가벼운 튜브를 고릅니다 
+Ogni trappola va in tutti e due i bracci del dipolo scelto, subito dopo la punta, con una coda per la banda in piu'. Sola bobina: risuona con la sua capacita' propria (Medhurst) 	각 트랩은 선택한 다이폴의 양 팔 끝 바로 뒤에 들어가며, 추가 밴드용 꼬리가 붙습니다. 코일만: 자체 용량으로 공진 (Medhurst) 
+Operatori: + - * / ^ e parentesi.  Funzioni: SIN, COS, TAN (in gradi), ATN (in gradi), SQR, EXP, LOG, LOG10, ABS, SGN, 	연산자: + - * / ^ 및 괄호.  함수: SIN, COS, TAN (도 단위), ATN (도 단위), SQR, EXP, LOG, LOG10, ABS, SGN, 
+Ottimizzatore: 	최적화기: 
+Ottimizzazione: simplesso di Nelder e Mead sul NEC (radiatore, riflettore, direttori, poi tutto). 	최적화: NEC 기반 Nelder-Mead 심플렉스 (복사기, 반사기, 도파기, 그다음 전체). 
+PDF non salvato: 	PDF 저장 안 됨: 
+Passante conduttivo: C = (25,195 B - 229 B^2) x diametro del boom, B = diametro del boom in lunghezze d'onda (DL6WU, fit di G3SEK), valida fino a B = 0,055. 	도전성 관통: C = (25.195 B - 229 B^2) x 붐 직경, B = 파장 단위 붐 직경 (DL6WU, G3SEK 피팅), B = 0.055까지 유효. 
+Passante isolato: meta'. Boom quadro: lato x 1,18 (SM5BSZ). Sopra il boom con staffa conduttiva: circa 0,65 (DG7YBN on-boom). 	절연 관통: 절반. 사각 붐: 변 x 1.18 (SM5BSZ). 도전성 클램프로 붐 위: 약 0.65 (DG7YBN on-boom). 
+Passo 	간격 
+Per le antenne trasmittenti l'RDF non ha senso: per questo si calcola solo in questa linguetta. 	송신 안테나에는 RDF가 의미가 없습니다: 그래서 이 탭에서만 계산합니다. 
+Perdita del cavo di ritardo e del relè incluse in modo approssimato (	지연 케이블과 릴레이 손실을 근사적으로 포함 (
+Perdita della discesa: formula della linea con perdite e disadattamento, P al carico / P in ingresso = (1 - |ρ|²) / (e^(2αl) - |ρ|² e^(-2αl)), 	급전선 손실: 부정합을 포함한 손실 선로 공식, 부하 P / 입력 P = (1 - |ρ|²) / (e^(2αl) - |ρ|² e^(-2αl)), 
+Perdita di 	손실 
+Perdita nell'accordatore (	튜너 손실 (
+Peso dei tubi di tutti i fili (alluminio, parete 1,25 mm): circa 	모든 와이어 튜브 무게 (알루미늄, 두께 1.25 mm): 약 
+Peso: 	무게: 
+Petalo 	꽃잎 
+Piastre non aggiunte: 	플레이트 추가 안 됨: 
+Piega i tre petali uguali sulla dima (triangolo arrotondato, bracci a 	템플릿 위에서 같은 꽃잎 3개를 구부리세요 (둥근 삼각형, 팔 각도 
+Pivot molto piccolo alla riga 	다음 행의 피벗이 매우 작음 
+Porta, fili 	포트, 와이어 
+Posizione della sorgente non riconosciuta: 	인식되지 않은 급전원 위치: 
+Potenza: con 	전력: 조건 
+Profilo caricato: 	단면 불러옴: 
+Profilo: 	단면: 
+Pronta: 	준비됨: 
+Proposta: 	제안: 
+Puntamento azimut 	방위각 지향 
+Q caricato 	부하 Q 
+Quad: direttori ad anello con perimetro 0,975 x alimentato x D/D1. Ottimizzazione come la Yagi DL6WU. Fonti: 	쿼드: 둘레 0.975 x 급전 소자 x D/D1의 루프 도파기. DL6WU Yagi와 같이 최적화. 출처: 
+Quad: spaziatura 	쿼드: 간격 
+Quadratura non raggiunta (scarto 	직교 위상 미달 (편차 
+Quagi N6NB: anello riflettore e anello alimentato, direttori a bacchetta. Proporzioni dal modello NEC di Cebik (144,5 MHz): riflettore 1,0548 lambda di perimetro, 	N6NB Quagi: 루프 반사기와 루프 급전 소자, 막대 도파기. Cebik NEC 모델 (144.5 MHz)의 비율: 반사기 둘레 1.0548 lambda, 
+Quota del suolo (	지면 고도 (
+Quota: 	높이: 
+Quota: il punto piu' basso dell'antenna e' a 	높이: 안테나 최저점 위치 
+ROS att. 	능동 SWR 
+ROS nella banda: 95% delle prove sotto 	밴드 내 SWR: 시행의 95%가 다음 미만 
+ROS oltre 2 in banda (max 	밴드 내 SWR 2 초과 (최대 
+Raggio da sezione (riga 	단면에서 반경 (행 
+Raggio equivalente della striscia = larghezza/4. Ottimizzazione come la Yagi DL6WU (riflettori insieme, alimentato, direttori). Fonti: 	스트립 등가 반경 = 폭/4. DL6WU Yagi와 같이 최적화 (반사기 함께, 급전 소자, 도파기). 출처: 
+Rastremazione non applicata: 	테이퍼 적용 안 됨: 
+Rastremazioni 	테이퍼 
+Reattanza a 	리액턴스, 주파수 
+Reattanza al variare delle spire a 	권선 수에 따른 리액턴스, 주파수 
+Registro di questa sessione: 	이 세션의 로그: 
+Registro non leggibile: 	로그를 읽을 수 없음: 
+Regole della correzione dei diametri a gradini, RDF e DMF, tabelle delle antenne riceventi e delle verticali, test di convergenza e del guadagno medio, 	계단형 직경 보정 규칙, RDF와 DMF, 수신 안테나 및 수직 안테나 표, 수렴 및 평균 이득 테스트, 
+Relazione PDF: 	PDF 보고서: 
+Relazione del vento: 	풍하중 보고서: 
+Repository dell'aggiornamento: 	업데이트 저장소: 
+Rete L di Lewallen (formule di Lahlum, ON4UN eq. 11-3...11-8): ramo serie Xs = 	Lewallen L 회로망 (Lahlum 공식, ON4UN 식 11-3...11-8): 직렬 분기 Xs = 
+Rete L, porta 1 	L 회로망, 포트 1 
+Rete L, porta 2 	L 회로망, 포트 2 
+Rete NT dal filo 	와이어에서 NT 회로망 
+Rete elettrosaldata tipica a maglie di 20 cm: a 	일반 20 cm 용접 철망: 주파수 
+Reti L 	L 회로망 
+Riavvio non riuscito (	재시작 실패 (
+Ricavati: alfa = 	유도값: alfa = 
+Ricerca: 	탐색: 
+Riconosciute 	인식됨 
+Riferimento al filo 	와이어 참조 
+Rifiuto 	거부 
+Riga 	행 
+Riga RASTRFILO per il tag 	tag의 RASTRFILO 행 
+Riga di rastremazione non valida: 	잘못된 테이퍼 행: 
+Riga di stub non valida: 	잘못된 스터브 행: 
+Riga non valida: 	잘못된 행: 
+Risonanza: modello a linee del filo selezionato da solo (Schelkunoff, come la correzione Leeson). Unisci: i fili in linea di diametro diverso (da .ez, .weq, .nec) 	공진: 선택한 와이어 단독의 선로 모델 (Schelkunoff, Leeson 보정과 동일). 합치기: 직경이 다른 일렬 와이어 (.ez, .weq, .nec에서) 
+Risorse adesso: 	현재 자원: 
+Rispetto alla singola a 	단일 안테나 대비, 주파수 
+Risultato (	결과 (
+Rothammel (massima estensione 	Rothammel (최대 크기 
+SBF - errore di connessione del segmento 	SBF - 세그먼트 연결 오류 
+Salva 	저장 
+Salva e poi 	저장 후 
+Salvataggio non riuscito: 	저장 실패: 
+Salvato: 	저장됨: 
+Scheda 	카드 
+Scheda GC con raggio nullo (tag 	반경 0인 GC 카드 (tag 
+Scheda LD: nessun segmento con tag 	LD 카드: 다음 tag의 세그먼트 없음 
+Scheda PDF del boom creata: 	붐 PDF 시트 생성됨: 
+Scheda di geometria sconosciuta: 	알 수 없는 형상 카드: 
+Scrive 	기록 
+Se λ/4 e' troppo corto per arrivare al punto di alimentazione si sceglie 3λ/4 o 5λ/4: stessa Z, banda piu' stretta e piu' perdita. Le linee bifilari vanno usate con un balun. 	λ/4가 급전점까지 닿기에 너무 짧으면 3λ/4 또는 5λ/4를 선택합니다: 같은 Z, 더 좁은 대역, 더 큰 손실. 평행 2선은 발룬과 함께 써야 합니다. 
+Segmentazione MMANA originale (DM1, DM2, SC, EC): 	원래 MMANA 세그먼트 분할 (DM1, DM2, SC, EC): 
+Segmentazione corretta: 	세그먼트 분할 수정됨: 
+Segnalazione non preparata: 	보고서 준비 안 됨: 
+Sevick: circa 	Sevick: 약 
+Si parte da un'antenna gia' costruita o comprata: le misure reali (rilievo) si scrivono nei fili del modello NEC. Cosi' com'e' il calcolo non e' conforme, perche' il NEC non vede il boom. 	이미 제작했거나 구입한 안테나에서 시작합니다: 실제 치수 (실측)를 NEC 모델의 와이어에 입력합니다. 그대로는 계산이 적합하지 않습니다, NEC는 붐을 보지 못하기 때문입니다. 
+Similitudini: W1GHZ, OE5JFL e Atkins descrivono la stessa geometria (sezione del paraboloide madre, feed sulla bisettrice dei bordi). 	유사점: W1GHZ, OE5JFL, Atkins는 같은 형상을 설명합니다 (모 포물면의 단면, 가장자리 이등분선 위의 피드). 
+Sollecitazione a 	응력, 위치 
+Sollecitazione del boom a 	붐 응력, 위치 
+Solo il modello di questa scheda (il modello aperto non si usa). ROS riferito a 	이 카드의 모델만 (열린 모델은 사용 안 함). SWR 기준 
+Somiglianze: stesso petalo di circa un'onda e stesso stub da 127 mm. Differenze: F1BKM dichiara circa 5 dB sui dipoli incrociati, il QST non da' un guadagno assoluto. 	유사점: 약 1파장의 같은 꽃잎과 같은 127 mm 스터브. 차이점: F1BKM은 교차 다이폴 대비 약 5 dB를 주장하고, QST는 절대 이득을 제시하지 않습니다. 
+Sorgente 	급전원 
+Sorgente su un filo inesistente: 	존재하지 않는 와이어의 급전원: 
+Sorgente su un segmento inesistente: 	존재하지 않는 세그먼트의 급전원: 
+Sorgente sul filo 	와이어의 급전원 
+Sorgente/carico sul filo 	와이어의 급전원/부하 
+Sorgenti (	급전원 (
+Sorgenti accese solo in certe bande: scritte solo quelle accese a 	일부 밴드에서만 켜지는 급전원: 다음에서 켜진 것만 기록 
+Sorgenti di corrente: il NEC-2 non le ha, scritte come tensioni calcolate a 	전류원: NEC-2에는 없어 다음에서 계산한 전압으로 기록 
+Sotto λ/4 sulla banda piu' bassa (	최저 밴드에서 λ/4 미만 (
+Spaziature DL6WU (lambda): R 0, A 0,2, poi 0,075 0,180 0,215 0,250 0,280 0,300 0,315 0,330 0,345 0,360 0,375 0,390 0,400 ... 	DL6WU 간격 (lambda): R 0, A 0.2, 그다음 0.075 0.180 0.215 0.250 0.280 0.300 0.315 0.330 0.345 0.360 0.375 0.390 0.400 ... 
+Spiegazione nel manuale, 	설명서 참조, 
+Stack 	스택 
+Stack   	스택   
+Stack di 	스택 
+Stack non creato: 	스택 생성 안 됨: 
+Stack ridisposto: verticale 	스택 재배치: 수직 
+Staffe e mast · forza del vento 	클램프와 마스트 · 풍력 
+Stato: 	상태: 
+Stub 	스터브 
+Stub alla riga 	행의 스터브 
+Stub da 	스터브 
+Superfici come griglia di fili da un segmento per lato, come i modelli NEC2 di W1GHZ (coffee-can, W2IMU, trombe coniche) e di VA3RR. 	면은 변당 세그먼트 1개의 와이어 격자로, W1GHZ (coffee-can, W2IMU, 원뿔 혼)와 VA3RR의 NEC2 모델과 같습니다. 
+Sweep da 	스윕 시작 
+T. Marshall (BYTE 10/2001): 2,4 GHz, lato 30,5 mm (0,248 λ), filo 1,2 mm, 15 mm (0,122 λ), riflettore 123 mm (110 mm come feed), bordi di 30 mm su due lati, 11 dBi. 	T. Marshall (BYTE 10/2001): 2.4 GHz, 변 30.5 mm (0.248 λ), 와이어 1.2 mm, 15 mm (0.122 λ), 반사기 123 mm (피드로는 110 mm), 두 변에 30 mm 가장자리, 11 dBi. 
+TBF - errore di connessione del segmento 	TBF - 세그먼트 연결 오류 
+TRIO - errore di connessione del segmento 	TRIO - 세그먼트 연결 오류 
+Tabella del boom esportata: 	붐 표 내보냄: 
+Tabella esportata in 	표 내보냄: 
+Taglia 2 coppie di filo da 	와이어 2쌍 절단, 길이 
+Taglia 2 fili (rosso e nero) da 	와이어 2개 (빨강, 검정) 절단, 길이 
+Taglia 2 fili uguali (rosso e nero) da 	같은 와이어 2개 (빨강, 검정) 절단, 길이 
+Taglia 3 fili (rosso, nero, blu) da 	와이어 3개 (빨강, 검정, 파랑) 절단, 길이 
+Taglia un filo da 	와이어 1개 절단, 길이 
+Telaio: 	프레임: 
+Tensione di lavoro del 	작동 전압, 대상 
+Terminazione per il massimo F/B: 	최대 F/B를 위한 종단: 
+Terreno di AO: er 	AO 지면: er 
+Terreno reale "MININEC" di EZNEC: impedenza calcolata come su terreno perfetto, diagramma con er e sigma (GN 3, come EZNEC). 	EZNEC "MININEC" 실제 지면: 임피던스는 완전 도체 지면처럼 계산, 패턴은 er과 sigma 사용 (GN 3, EZNEC와 동일). 
+Terreno reale: 	실제 지면: 
+Terreno reale: MMANA usa i propri parametri del terreno (impostali in MMANA: er 	실제 지면: MMANA는 자체 지면 파라미터를 사용합니다 (MMANA에서 설정: er 
+Terreno: AutoEZ lo prende dal modello EZNEC aperto (impostarlo in EZNEC: er 	지면: AutoEZ는 열린 EZNEC 모델에서 가져옵니다 (EZNEC에서 설정: er 
+Terreno: {0}, er {1:0.##} e sigma {2:0.#####} S/m a {3:0.###} MHz.{4} Il NEC-2 lo tratta come terreno omogeneo e infinito: 	지면: {0}, er {1:0.##}, sigma {2:0.#####} S/m, {3:0.###} MHz.{4} NEC-2는 균질한 무한 지면으로 처리합니다: 
+Test AGT non riuscito: 	AGT 테스트 실패: 
+Tipo di carico LD non valido: 	잘못된 LD 부하 형식: 
+Tolleranza ammessa: errore di lunghezza (in piu' o in meno) che da solo fa calare il F/B di 	허용 공차: 단독으로 F/B를 다음만큼 떨어뜨리는 길이 오차 (+/-) 
+Tolleranze: 	공차: 
+Trappola LC per 	LC 트랩, 대상 
+Trappola RLC di AO sul filo 	와이어의 AO RLC 트랩 
+Trappola coassiale per 	동축 트랩, 대상 
+Trasformatore 	변압기 
+Trasformatore alla riga 	행의 변압기 
+Trasformatore, porta 1 	변압기, 포트 1 
+Trasformatore, porta 2 	변압기, 포트 2 
+Trasformatori 	변압기 
+Tre dipoli uguali a 120 gradi, con il punto di alimentazione a 	120도 간격의 같은 다이폴 3개, 급전점 위치 
+Trovato: 	찾음: 
+Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il "collegamento" di MMANA, gia' coperto dalle formule. 	공식으로 쓴 변수 (LDE = LR*0,985)는 다른 변수를 자동으로 따릅니다: MMANA의 "연결" 기능이며, 이미 공식으로 처리됩니다. 
+Unita' di misura non riconosciuta: 	인식되지 않은 측정 단위: 
+Valore non valido nel file .ANT: 	.ANT 파일의 잘못된 값: 
+Valori del passo 	단계 값 
+Variabile 	변수 
+Variabile definita due volte: 	두 번 정의된 변수: 
+Variabile sconosciuta: 	알 수 없는 변수: 
+Variabili di AutoEZ: 	AutoEZ 변수: 
+Vento di progetto (	설계 풍속 (
+Vento: 	바람: 
+Verifica finita: 	검증 완료: 
+Verticale multibanda: 	멀티밴드 수직: 
+Voto del passo 	단계 점수 
+W. Zwickel OE2TZL (QSP 10/93): 23 cm, lato 61 mm (0,258 λ a 1270 MHz), filo 2 mm, 31 mm (0,131 λ), lamiera, 8 dBd, ROS sotto 1,6 in banda. 	W. Zwickel OE2TZL (QSP 10/93): 23 cm, 변 61 mm (1270 MHz에서 0.258 λ), 와이어 2 mm, 31 mm (0.131 λ), 금속판, 8 dBd, 밴드 내 SWR 1.6 미만. 
+W3DZZ (7,05 MHz, 60 pF): L calcolata 	W3DZZ (7.05 MHz, 60 pF): 계산된 L 
+W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai 	W5QJR, AA5TB. 각 계산기는 계산된 치수로 NEC 모델을 만들고 (여기서는 커패시터를 C 부하로) 엔진으로 검증합니다: 다음 옆에 
+W6PQL: 23 cm, lato 55 mm (0,238 λ) con filo #12 isolato, 22 mm (0,095 λ), rete da 1/2 x 1 pollice di circa 20 x 25 cm, circa 9 dBi, 60 gradi, F/B oltre 25 dB. 	W6PQL: 23 cm, 절연 #12 와이어로 변 55 mm (0.238 λ), 22 mm (0.095 λ), 약 20 x 25 cm의 1/2 x 1 인치 메시, 약 9 dBi, 60도, F/B 25 dB 초과. 
+Wheeler, bobina lunga 	Wheeler, 긴 코일 
+YA-NEC - Distanze di stack (	YA-NEC - 스택 간격 (
+YA-NEC - Yagi multibanda HF, due elementi per banda: 	YA-NEC - HF 멀티밴드 Yagi, 밴드당 2소자: 
+YA-NEC correzione del boom (-): 	YA-NEC 붐 보정 (-): 
+YA-NEC esiste grazie al lavoro di colleghi radioamatori e ricercatori che hanno reso pubblico il loro codice. 	YA-NEC는 코드를 공개한 동료 아마추어 무선사와 연구자들의 노력 덕분에 존재합니다. 
+YA-NEC lo calcola come filo nudo alla quota minima che il terreno di Sommerfeld accetta, lambda/1000 (16 cm a 160 m, 8 cm a 80 m, 4 cm a 40 m). 	YA-NEC는 이를 Sommerfeld 지면이 허용하는 최소 높이 lambda/1000의 피복 없는 와이어로 계산합니다 (160 m에서 16 cm, 80 m에서 8 cm, 40 m에서 4 cm). 
+Yagi MathWorks, nostro ottimizzatore (simplesso, 	MathWorks Yagi, 자체 최적화기 (심플렉스, 
+Yagi incrociate: 	교차 Yagi: 
+Yagi multibanda: 	멀티밴드 Yagi: 
+Z al loop 	루프의 Z 
+Z antenne / 	안테나 Z / 
+Z ottenuta: 	결과 Z: 
+Zona 	구역 
+Zoom su 	확대 대상 
+\n(allegare lo zip della segnalazione preparato da YA-NEC)	\n(YA-NEC가 준비한 보고서 zip을 첨부하세요)
+\nDa ottenere: 	\n목표: 
+\ndopo:  	\n이후:  
+\nformule: 	\n공식: 
+\nnonsalvato\n	\n저장안됨\n
+\nsalvato\n	\n저장됨\n
+a mano (MOXGEN 	수동 (MOXGEN 
+accorciamento per braccio dovuto alla trappola (interno 	트랩으로 인한 팔당 단축 (내부 
+accordo e 	튜닝 및 
+accordo, passo 	튜닝, 간격 
+aggiornato (	업데이트됨 (
+alim. 2 x 	급전 2 x 
+allontanare gli elementi ad almeno 	소자를 최소 다음 거리로 떨어뜨리세요 
+altezza efficace 	실효 높이 
+altezza fissata: la forma (angolo al vertice 	높이 고정: 형태 (꼭짓점 각도 
+anello da 	링 
+angolo al vertice 	꼭짓점 각도 
+angolo di bordo 	가장자리 각도 
+angolo di rotazione attorno a 	회전 각도, 축 
+antenna a 	안테나 위치 
+antinduttiva, almeno 	무유도, 최소 
+apertura Kraus 	Kraus 빔폭 
+arancio: 	주황: 
+area efficace 	실효 면적 
+auto: 	자동: 
+autotrasformatore per EFHW, rapporto spire 	EFHW용 단권 변압기, 권선비 
+avviso sull'impedenza delle spire che dipende dall'altezza sul riflettore. QFH: formule e tabella del conduttore di Coppens, geometria 	반사기 위 높이에 따른 루프 임피던스 경고. QFH: Coppens 공식과 도체 표, 형상 
+avviso: versione 	경고: 버전 
+azimut 	방위각 
+bacchetta 	막대 
+balun: 	발룬: 
+banda di 	대역 
+baricentro 	무게 중심 
+base delle spire 	루프 밑변 
+bobina 	코일 
+boom 	붐 
+boom fino a 0,055 lambda = 	붐 최대 0.055 lambda = 
+bordi della banda 	밴드 가장자리 
+braccio 	팔 
+buildyourownantenna (2014, 4nec2): doppia biquad a 2450 MHz, lato 30,9 mm, 11 mm, riflettore 132 x 282 mm con bordi di 28,5 mm, circa 14 dBi. 	buildyourownantenna (2014, 4nec2): 2450 MHz 더블 바이쿼드, 변 30.9 mm, 11 mm, 28.5 mm 가장자리의 132 x 282 mm 반사기, 약 14 dBi. 
+cala a 	다음으로 감소 
+calcolato: ci stanno 	계산됨: 들어가는 수 
+calcolo di 	계산 
+calcolo in corso: antenna singola e 	계산 중: 단일 안테나 및 
+capacita' 	용량 
+capacita' propria 	자체 용량 
+cappello: 	용량 모자: 
+categoria 	범주 
+cavo 	케이블 
+ce alla quota z = 	높이 z에서 ce = 
+centro 	중심 
+centro di spinta del vento 	풍압 중심 
+cercati tra 	탐색 범위 
+circa 	약 
+circa 0,02 lambda = 	약 0.02 lambda = 
+circonferenza 	둘레 
+coassiale 	동축 케이블 
+coda 	꼬리 
+come EZNEC e IV3PRK (convenzione approvata il 12/11/2026). RDF = guadagno nella direzione voluta - guadagno medio (dB). 	EZNEC 및 IV3PRK와 동일 (2026/11/12 승인된 규칙). RDF = 원하는 방향의 이득 - 평균 이득 (dB). 
+come correggere: 	수정 방법: 
+come una bobina da 	다음 코일처럼 
+con preamp 	프리앰프 포함 
+con un dipolo e riflettore nel fuoco, e lo apre nella finestra principale. Verificato con EZNEC: disco da 1,2 m a 1296 MHz, scarto 0,06 %. 	초점에 다이폴과 반사기를 두고, 메인 창에서 엽니다. EZNEC로 검증: 1296 MHz 1.2 m 접시, 편차 0.06 %. 
+condizione non capita: 	이해할 수 없는 조건: 
+conducibilita' del terreno 	지면 도전율 
+conduttore tondo d = 	원형 도체 d = 
+consigliata 	권장 
+contro 	대 
+controllo con le tolleranze: candidato 	공차 검사: 후보 
+costante dielettrica del terreno 	지면 유전 상수 
+cuscinetto / rotore (sbalzo 	베어링 / 로테이터 (돌출 
+dal 20 m al 10 m 	20 m에서 10 m까지 
+dalla cima fino a 	꼭대기에서 다음까지 
+definire 	정의 
+di segmenti in totale, distribuiti in proporzione alle lunghezze (almeno uno per tubo): le sorgenti e i carichi restano sugli stessi segmenti. 	세그먼트 총수, 길이에 비례해 분배 (튜브당 최소 1개): 급전원과 부하는 같은 세그먼트에 남습니다. 
+dipende da 	의존 대상 
+dipolo corto 	짧은 다이폴 
+dir. 	도파기 
+direttore 	도파기 
+distanza 	거리 
+distanza del 	거리, 대상 
+dopo il λ/4: ROS 	λ/4 이후: SWR 
+due cavi da 	케이블 2개, 
+due elementi paralleli a 	평행 소자 2개, 간격 
+due sorgenti sullo stesso segmento (filo 	같은 세그먼트에 급전원 2개 (와이어 
+e la installa: entra in funzione al prossimo avvio, una finestra lo avvisa e il programma si riavvia da solo dopo 10 secondi, riaprendo il modello (copia della versione precedente in data/aggiornamenti). Non tocca config.ini ne' i modelli. 	설치합니다: 다음 시작 시 적용되며, 창으로 알린 뒤 10초 후 프로그램이 자동으로 재시작하여 모델을 다시 엽니다 (이전 버전 사본은 data/aggiornamenti에). config.ini와 모델은 건드리지 않습니다. 
+e' piu' corto del raggio del tubo e il punto di calcolo cade dentro il conduttore. EZNEC lo rifiuta (Geometry Error: "center of end segment within wire"). 	튜브 반경보다 짧아 계산점이 도체 내부에 들어갑니다. EZNEC가 거부합니다 (Geometry Error: "center of end segment within wire"). 
+effetto non calcolato: 	계산되지 않은 효과: 
+effetto: risonanza 	효과: 공진 
+efficienza 	효율 
+elementi 	소자 
+elemento 	소자 
+elevazione 	앙각 
+elica MathWorks: 	MathWorks 헬리컬: 
+entro −0,25 dB: da 	−0.25 dB 이내: 범위 
+eq. 4-2 «antenna corta»: 	식 4-2 «짧은 안테나»: 
+equilibrio delle aree al vento: 	풍압 면적 균형: 
+errore: 	오류: 
+estremi a 	끝 위치 
+fattore di velocita' 	속도 계수 
+fili 	와이어 
+fili non collegati troppo vicini (superficie-superficie 	연결되지 않은 와이어가 너무 가까움 (표면 간 
+filo 	와이어 
+filo usato 	사용한 와이어 
+formule circolari: 	순환 공식: 
+forza massima (vento a 	최대 힘 (바람 
+freccia in punta 	끝 처짐 
+frequenza di calcolo 	계산 주파수 
+griglia della coda 	꼬리 격자 
+guadagno con lobi sotto 	다음 미만 사이드 로브의 이득 
+guadagno: nominale 	이득: 공칭 
+i terminali della trappola sono la calza all'inizio e il centrale alla fine. La capacita' e' quella tra centrale e calza per tutta la lunghezza avvolta. 	트랩 단자는 시작의 실드와 끝의 중심 도체입니다. 용량은 감은 길이 전체에 걸친 중심 도체와 실드 사이의 용량입니다. 
+il filo 	와이어 
+il filo con l'etichetta 	라벨이 있는 와이어 
+il punto piu' basso dell'antenna e' a 	안테나 최저점 위치 
+induttanza 	인덕턴스 
+induttanza di Wheeler sul diametro medio (forma + cavo) e capacita' del cavo per la lunghezza avvolta: 	평균 직경 (보빈 + 케이블)의 Wheeler 인덕턴스와 감은 길이의 케이블 용량: 
+ingombro 	크기 
+isolato in PTFE, 	PTFE 절연, 
+l'antenna e' grande 	안테나 크기 
+la cella 	셀 
+la durata delle funzioni, CPU, GPU, RAM e disco. Per segnalare una lentezza basta mandare il file della sessione. 	함수 실행 시간, CPU, GPU, RAM, 디스크. 느림을 보고하려면 세션 파일을 보내면 됩니다. 
+la frequenza 	주파수 
+la frequenza di calcolo 	계산 주파수 
+la geometria non si costruisce: 	형상을 만들 수 없음: 
+la rete calcolata riporta il carico a 	계산된 회로망이 부하를 다음으로 변환 
+la scheda 	카드 
+la variabile 	변수 
+lambda/1000 = 	lambda/1000 = 
+lambda/4 x 	lambda/4 x 
+lato 	변 
+licenza: 	라이선스: 
+linea 	선로 
+linea 450 Ω 	450 Ω 선로 
+linea tra i fili 	와이어 사이 선로 
+linea tra il filo 	와이어 사이 선로 
+linear loading: piega di 	linear loading: 접힘 
+lobi 	사이드 로브 
+lobo 	로브 
+lobo (az 	로브 (방위 
+loop di accoppiamento 	결합 루프 
+lunghezza 	길이 
+lunghezza ± 	길이 ± 
+manica aperta: due elementi a 	오픈 슬리브: 소자 2개, 간격 
+mare (riflessione con εr 	바다 (εr 반사 
+margine 	여유 
+martybugs.net: filo 1,6 mm, 15-17 mm, PCB 123 mm, 11-12 dBi, doppia biquad circa 13 dBi, apertura 50 gradi. 	martybugs.net: 와이어 1.6 mm, 15-17 mm, PCB 123 mm, 11-12 dBi, 더블 바이쿼드 약 13 dBi, 빔폭 50도. 
+massa 	질량 
+massimo 	최대 
+media migliore tra 	최적 평균 범위 
+min 2,5 diametri: max 	최소 2.5 직경: 최대 
+minima 	최소 
+modello a linea del braccio caricato X = Z0 (cot(beta b) - tan(beta a)), Z0 = 60 (ln(2h/a) - 1), x 0,95 per l'effetto di estremita': 	로딩된 팔의 선로 모델 X = Z0 (cot(beta b) - tan(beta a)), Z0 = 60 (ln(2h/a) - 1), 끝 효과로 x 0.95: 
+momento torcente sul rotore con la staffa al baricentro del peso (	클램프를 무게 중심에 둘 때 로테이터 토크 (
+nel file importato l'elemento piu' lungo e' 	가져온 파일에서 가장 긴 소자는 
+non entrano in un solo strato: nel foro di 	한 층에 다 들어가지 않습니다: 구멍 
+nucleo 	코어 
+obiettivo 	목표 
+ogni antenna ha la sua sorgente, uguale in ampiezza e fase (cavi uguali e divisore ideale). Se il modello e' gia' uno stack, sposta le copie alle distanze DL6WU. 	각 안테나에 진폭과 위상이 같은 급전원이 있습니다 (같은 케이블과 이상적 분배기). 모델이 이미 스택이면 복사본을 DL6WU 간격으로 옮깁니다. 
+ogni braccio 	팔마다 
+oltre 	초과 
+origine del modello nel fuoco: 	모델 원점을 초점에: 
+parte dell'antenna e' sotto il suolo (fino a 	안테나 일부가 지면 아래에 있습니다 (최대 
+parte dell'antenna e' sotto il suolo o distesa sul suolo: 	안테나 일부가 지면 아래에 있거나 지면에 놓여 있습니다: 
+partenza 	시작 
+partenza a caso 	무작위 시작 
+passo 	간격 
+peggiore in banda 	밴드 내 최악 
+per braccio: carico a 	팔당: 부하 위치 
+percentuale 	백분율 
+perimetro 	둘레 
+perimetro trovato dal motore NEC (risonanza della spira alimentata): 	NEC 엔진이 찾은 둘레 (급전 루프의 공진): 
+peso 	무게 
+polarizzazione 	편파 
+porta 	포트 
+posizione 	위치 
+posizione consigliata della staffa (	권장 클램프 위치 (
+preampli consigliato 	권장 프리앰프 
+presa 	탭 
+pressione 	압력 
+progetto: 	설계: 
+puntamento entro 	지향 오차 이내 
+punte 	끝 
+punto piu' basso, 	최저점, 
+punto piu' sollecitato a 	최대 응력점 위치 
+punto: 	점: 
+quadratura NEC: 	NEC 직교 위상: 
+quota 	높이 
+quote 	높이 
+rad. 	복사기 
+radiali sul terreno: 	지면 래디얼: 
+radiatore multibanda 	멀티밴드 복사기 
+radiatori (	복사기 (
+raggio 	반경 
+raggio = d / 2 = 	반경 = d / 2 = 
+raggio equivalente = 0,25 × larghezza = 	등가 반경 = 0.25 × 폭 = 
+raggio equivalente = 0,59 × 	등가 반경 = 0.59 × 
+raggio equivalente ≈ 0,2 (a + b) = 	등가 반경 ≈ 0.2 (a + b) = 
+rame: pista e piano di massa · punto rosso: alimentazione · cerchio: corto a massa / foro · pista 	구리: 트랙과 접지면 · 빨간 점: 급전 · 원: 접지 단락 / 구멍 · 트랙 
+rapporto 	비율 
+rapporto assiale 	축비 
+rastremazione 	테이퍼 
+reale (er 	실제 (er 
+reattanza 	리액턴스 
+residuo entro il bordo: E 	가장자리 내 잔차: E 
+resistenza della calza e del centrale per effetto pelle con un fattore 3 per la treccia e fino a 3 per la vicinanza delle spire, 	실드와 중심 도체의 표피 효과 저항, 편조에 계수 3, 권선 근접에 최대 3, 
+rettangolare W x t: 2 x 0,2235 (W + t) (Balanis). Compensazione: allungamento delle punte che riporta la risonanza del modello a linee di Schelkunoff 	직사각형 W x t: 2 x 0.2235 (W + t) (Balanis). 보정: Schelkunoff 선로 모델의 공진을 되돌리는 끝 연장 
+ricalcolata a ogni frequenza, come la Stepped Diameter Correction di EZNEC. Solo elementi diritti e simmetrici, con sorgenti/carichi/linee al centro, 	주파수마다 다시 계산, EZNEC의 Stepped Diameter Correction과 동일. 중앙에 급전원/부하/선로가 있는 직선 대칭 소자만, 
+ricerca iniziale 	초기 탐색 
+riferimento circolare nella cella 	셀의 순환 참조 
+rifl. 	반사기 
+rifl. U 	U 반사기 
+riflessione 	반사 
+riflessione GX nei piani 	평면의 GX 반사 
+riflettore 	반사기 
+riflettore a U = 3 R + 2 tr R, spazio tra le punte (1 - td - tr) R. JN1GLB: td = 0,744 / 0,711 / 0,705 / 0,702 / 0,694, tr = 0,136 / 0,114 / 0,110 / 0,111 / 0,121. 	U 반사기 = 3 R + 2 tr R, 끝 사이 간격 (1 - td - tr) R. JN1GLB: td = 0.744 / 0.711 / 0.705 / 0.702 / 0.694, tr = 0.136 / 0.114 / 0.110 / 0.111 / 0.121. 
+riga 	행 
+risonanza a 	공진 주파수 
+risonanza nel modello, 	모델 내 공진, 
+rispetto al quarto d'onda pieno (	완전한 1/4 파장 대비 (
+risuona a 	공진 주파수 
+rotazione GR, 	GR 회전, 
+salva e poi 	저장 후 
+scala x 	배율 x 
+scalare il modello del 	모델 배율 조정 
+scansione 	스캔 
+schede 	카드 
+scrivere 	입력 
+se l'antenna non e' fatta cosi', riaprire il file con l'unita' giusta o scalare la geometria (barra Geometria, Scala: 	안테나가 이렇지 않다면 올바른 단위로 파일을 다시 열거나 형상 배율을 조정하세요 (형상 막대, 배율: 
+segmenti per λ: 	λ당 세그먼트: 
+segmenti: 	세그먼트: 
+segmento 	세그먼트 
+senza le statistiche ARRL degli angoli di arrivo la media e' uniforme su 	ARRL 도래각 통계가 없으면 평균은 다음 범위에서 균일 
+senza: 	없이: 
+serve a calcolare 	계산에 사용 
+sezione: tubo 	단면: 튜브 
+sigma ottimo = 0,243 tau - 0,051 = 	최적 sigma = 0.243 tau - 0.051 = 
+simmetria, 	대칭, 
+singola 	단일 
+sola bobina 	코일만 
+sopra a 	위, 위치 
+sopravvivenza 	생존 풍속 
+sorgente sul filo 	와이어의 급전원 
+sorgente sul segmento 	세그먼트의 급전원 
+sorgente sul segmento di punta del filo 	와이어 끝 세그먼트의 급전원 
+sotto 	아래 
+spazio disco-cono 	디스크-콘 간격 
+specchia nel piano 	평면에 대해 반전 
+spento: 	꺼짐: 
+spezzoni tra le quote: 	높이 사이 구간: 
+spira circa 	권선 약 
+spostare 	이동 
+stack (singola 	스택 (단일 
+stack: spaziatura orizzontale 	스택: 수평 간격 
+stack: spaziatura verticale 	스택: 수직 간격 
+staffa attuale 	현재 클램프 
+stima: 	추정: 
+striscia da 	스트립 
+stub a U: 	U 스터브: 
+stub sul filo 	와이어의 스터브 
+suggerita 	제안 
+sul filo 	와이어에 
+tabella di Coppens per 	Coppens 표, 대상 
+tacche degli anelli (arcarecci), dell'attacco dei puntoni e ogni 100 mm di raggio. Il PDF va stampato al 100 % (senza "adatta alla pagina"): 	링 (중도리), 지지대 부착부, 반경 100 mm마다의 표시. PDF는 100 %로 인쇄하세요 ("페이지에 맞춤" 없이): 
+tempo siderale locale 	지방 항성시 
+terreno 	지면 
+tolleranza su d: ± 0,2 mm (± 	d 공차: ± 0.2 mm (± 
+torcente sul rotore con la staffa attuale (	현재 클램프로 로테이터 토크 (
+trappola LC sul dipolo dei 	다이폴의 LC 트랩 
+trappola sul dipolo dei 	다이폴의 트랩 
+trasformatore 	변압기 
+tubi di lega 	합금 튜브 
+un cavo da 	케이블 1개, 
+un elemento lungo 	긴 소자 1개 
+un filo da 	와이어 1개, 
+una libera interpretazione delle schede di MMANA: tabella dei fili sotto la struttura 3D (una riga per filo), posizione di sorgenti e carichi 	MMANA 카드를 자유롭게 해석: 3D 구조 아래 와이어 표 (와이어당 1행), 급전원과 부하 위치 
+uniforme 	균일 
+valide fino a B = 0,055 lambda (DL6WU, fit di G3SEK). Boom quadro: lato x 1,18 (SM5BSZ). Staffa conduttiva sopra il boom: circa 0,65 (DG7YBN on-boom). 	B = 0.055 lambda까지 유효 (DL6WU, G3SEK 피팅). 사각 붐: 변 x 1.18 (SM5BSZ). 붐 위 도전성 클램프: 약 0.65 (DG7YBN on-boom). 
+valori presi dal 	값 출처 
+variabili definite e mai usate: 	정의만 되고 사용되지 않은 변수: 
+vb = vb,0 · ca · cr (zona 	vb = vb,0 · ca · cr (구역 
+verde: 	초록: 
+verifica di 	검증 
+verificata alla fonte, a 88 gradi coincide entro 0,2 Ω per 15 e 60 radiali, incertezza 2-4 Ω. Avvertenza (N6MW, 2016): la parte teorica di Brown 	원문으로 검증, 88도에서 래디얼 15개와 60개 모두 0.2 Ω 이내로 일치, 불확도 2-4 Ω. 주의 (N6MW, 2016): Brown의 이론 부분 
+versione 	버전 
+vista dall'alto: alimentato solo il 	위에서 본 모습: 다음만 급전 
+yagi multibanda 	멀티밴드 yagi 
+zona 	구역 
+|rho| = 	|rho| = 
+°, elevazione 	°, 앙각 
+— alimentati    - - parassiti / code    ■ trappole    ● alimentazione (non in scala)	— 급전 소자    - - 무급전 소자 / 꼬리    ■ 트랩    ● 급전 (축척 아님)
+— elementi da realizzare (con il boom)	— 제작할 소자 (붐 포함)
+— rilievo (misure reali, con il boom)	— 실측 (실제 치수, 붐 포함)
+● aggiornato in 	● 업데이트 소요 
+⚠ APPROSSIMAZIONE. Il BOG e' un filo isolato appoggiato al suolo: il NEC-2 non tratta fili sul terreno, interrati o isolati (serve il NEC-4). 	⚠ 근사. BOG는 지면에 놓인 절연 와이어입니다: NEC-2는 지면 위, 매설 또는 절연 와이어를 처리하지 못합니다 (NEC-4 필요). 
+⚠ Le piastre si aggiungono al modello aperto, che resta quello caricato (non si apre un modello nuovo): Annulla nella barra Geometria toglie la modifica. 	⚠ 플레이트는 열린 모델에 추가되며, 불러온 모델이 그대로 유지됩니다 (새 모델이 열리지 않음): 형상 막대의 실행 취소로 변경을 제거합니다. 
+⚠ Modello approssimato (NEC-2): filo nudo a 	⚠ 근사 모델 (NEC-2): 피복 없는 와이어, 높이 
+⚠ Z aperto e Z in corto differiscono meno del 5%: nel modello l'onda si spegne prima dell'estremo lontano, la terminazione non conta e il F/B non si regola. 	⚠ 개방 Z와 단락 Z의 차이가 5% 미만: 모델에서 파가 먼 끝에 닿기 전에 소멸하여 종단이 영향이 없고 F/B를 조정할 수 없습니다. 
+⚠ modello NEC: 	⚠ NEC 모델: 
+⚠ sotto lambda/1000 = 	⚠ lambda/1000 미만 = 
+(nessuna: il modello non ha schede SY)	(없음: 모델에 SY 카드가 없음)
+(tutte le variabili sono gia' nell'elenco)	(모든 변수가 이미 목록에 있음)
+Quota di tutta l'antenna (Z)	안테나 전체 높이 (Z)
+lunghezza (ora {0} m)	길이 (현재 {0} m)
+perimetro (ora {0} m)	둘레 (현재 {0} m)
+lunghezza sviluppata (ora {0} m)	전개 길이 (현재 {0} m)
+posizione lungo l'asse (ora {0} m)	축 방향 위치 (현재 {0} m)
+raggio (ora {0} mm)	반경 (현재 {0} mm)
+(±3 %, si cambiano dopo nell'elenco)	(±3 %, 나중에 목록에서 변경 가능)
+non tocca la geometria (nessun filo la usa direttamente)	형상에 영향 없음 (직접 사용하는 와이어 없음)
+ e Z2 di tutti i fili (	 및 모든 와이어의 Z2 (
+Z1 e Z2 di tutti i fili (	모든 와이어의 Z1 및 Z2 (
+lunghezza (filo 	길이 (와이어 
+perimetro (fili 	둘레 (와이어 
+raggio in mm (	반경 mm (
+posizione lungo l'asse 	축 방향 위치 
+quota aggiunta a tutta l'antenna (m)	안테나 전체에 더한 높이 (m)
+Si parte da un'antenna gia' costruita o comprata: le misure reali (rilievo) si scrivono nei fili del modello NEC. Cosi' com'e' il calcolo non e' conforme, perche' il NEC non vede il boom. Il pulsante toglie la correzione del boom elemento per elemento e crea il modello elettrico idoneo alla simulazione; il rilievo resta in un file a parte.	이미 제작했거나 구입한 안테나에서 시작합니다: 실제 치수 (실측)를 NEC 모델의 와이어에 입력합니다. 그대로는 계산이 적합하지 않습니다, NEC는 붐을 보지 못하기 때문입니다. 이 버튼은 소자별로 붐 보정을 제거하여 시뮬레이션에 적합한 전기 모델을 만듭니다; 실측은 별도 파일에 남습니다.
+⚠ La correzione vale per elementi diritti che attraversano il boom; per elementi isolati o su staffa vale la frazione indicata (passante isolato meta', staffa 0,65). Il file del rilievo non viene sovrascritto: il modello elettrico si apre come file nuovo ("... elettrico ....nec").	⚠ 보정은 붐을 관통하는 직선 소자에 적용됩니다; 절연되었거나 브래킷 위의 소자는 표시된 비율을 적용합니다 (절연 관통 절반, 브래킷 0.65). 실측 파일은 덮어쓰지 않습니다: 전기 모델은 새 파일로 열립니다 ("... elettrico ....nec").
+⚠ La correzione vale per elementi diritti che attraversano il boom; isolati o su staffa vale la frazione indicata (passante isolato meta', staffa 0,65). Formula DL6WU/G3SEK valida fino a 0,055 lambda (manuale, Correzione del boom).	⚠ 보정은 붐을 관통하는 직선 소자에 적용됩니다; 절연되었거나 브래킷 위면 표시된 비율을 적용합니다 (절연 관통 절반, 브래킷 0.65). DL6WU/G3SEK 공식은 0.055 lambda까지 유효 (설명서, 붐 보정).
+⚠ La correzione vale per elementi diritti che attraversano il boom; per elementi isolati o su staffa vale la frazione indicata (passante isolato meta', staffa 0,65). 	⚠ 보정은 붐을 관통하는 직선 소자에 적용됩니다; 절연되었거나 브래킷 위의 소자는 표시된 비율을 적용합니다 (절연 관통 절반, 브래킷 0.65). 
+Interpretazione: la misura e' spostata in basso di {0} %	해석: 측정값이 {0} % 아래로 이동됨
+Interpretazione: la misura e' spostata in alto di {0} %	해석: 측정값이 {0} % 위로 이동됨
+accorciare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare.	복사기를 한쪽당 {0} mm 줄이거나, 붐 보정을 켜고 (계산기 > 붐 보정) 다시 계산하세요.
+allungare il radiatore di {0} mm per lato, oppure attivare la correzione del boom (Calcolatori > Correzione del boom) e ricalcolare.	복사기를 한쪽당 {0} mm 늘리거나, 붐 보정을 켜고 (계산기 > 붐 보정) 다시 계산하세요.
+scalare il modello del {0} % (Struttura 3D > Scala) e ricalcolare.	모델 배율을 {0} % 조정하고 (3D 구조 > 배율) 다시 계산하세요.
+Il programma non cambia nulla da solo.	프로그램은 스스로 아무것도 바꾸지 않습니다.
+Il ROS minimo misurato e' piu' alto del calcolato: la parte resistiva non torna (adattamento, perdite del balun o del cavo).	측정 최소 SWR이 계산값보다 높습니다: 저항 성분이 맞지 않습니다 (정합, 발룬 또는 케이블 손실).
+Proposta:	제안:
+misurato	측정값
+alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke	끝 급전: EFHW 49:1 / 64:1, 코일 포함, 비공진 와이어 9:1 / 4:1; 카운터포이즈, 초크
+EFHW multibanda	멀티밴드 EFHW
+EFHW monobanda	단일 밴드 EFHW
+EFHW con bobina	코일 EFHW
+Filo non risonante	비공진 와이어
+inclinata dal basso	아래에서 비스듬히
+inclinata dall'alto	위에서 비스듬히
+L rovesciata	역 L
+U rovesciata	역 U
+tutto dritto	일직선
+nudo	피복 없음
+isolato in PVC	PVC 절연
+isolato in PE / PTFE	PE / PTFE 절연
+1 · Antenna	1 · 안테나
+2 · Disposizione	2 · 배치
+Banda piu' bassa (mezz'onda)	최저 밴드 (반파장)
+Banda aggiunta dalla bobina	코일로 추가된 밴드
+Filo dopo la bobina	코일 뒤 와이어
+Lunghezza del filo	와이어 길이
+Trasformatore	변압기
+Contrappeso (% del filo)	카운터포이즈 (와이어 대비 %)
+filo 0,05 λ	0.05 λ 와이어
+calza del coassiale	동축 케이블 실드
+Altezza del trasformatore	변압기 높이
+Altezza della punta	끝 높이
+Altezza del tratto orizzontale	수평 구간 높이
+Coda che scende	늘어진 꼬리
+Filo fino alla bobina	코일까지의 와이어
+Coda dopo la bobina	코일 뒤 꼬리
+Filo radiante	복사 와이어
+Choke sul coassiale	동축 초크
+Condensatore sul primario	1차측 커패시터
+Tensione in punta	끝 전압
+al trasformatore	변압기에서
+la corrente torna dal contrappeso	전류가 카운터포이즈로 돌아옴
+Nucleo del trasformatore	변압기 코어
+Lunghezze consigliate (VE3EED)	권장 길이 (VE3EED)
+metri, per il 9:1	미터, 9:1용
+Distanza a terra	지면 거리
+tra il trasformatore e la punta	변압기와 끝 사이
+Punta	끝
+altezza	높이
+Tratti	구간
+sale, orizzontale	상승, 수평
+sale, orizzontale, coda	상승, 수평, 꼬리
+Impedenza in punta al variare della lunghezza (modello TF5NN)	길이에 따른 끝 임피던스 (TF5NN 모델)
+Costruisci il trasformatore 49:1 ›	49:1 변압기 만들기 ›
+Costruisci il trasformatore 64:1 ›	64:1 변압기 만들기 ›
+Costruisci l'un-un 9:1 ›	9:1 언언 만들기 ›
+Costruisci l'un-un 4:1 ›	4:1 언언 만들기 ›
+Choke sul coassiale ›	동축 초크 ›
+Bobina di carico ›	로딩 코일 ›
+Balun 1:1 ›	1:1 발룬 ›
+Balun 4:1 ›	4:1 발룬 ›
+Balun 6:1 ›	6:1 발룬 ›
+Balun 9:1 ›	9:1 발룬 ›
+Trasformatore λ/4 ›	λ/4 변환기 ›
+Apre Strumenti > Balun / Un-Un con rapporto, frequenze e potenza di questa scheda.	이 페이지의 비율, 주파수, 전력으로 도구 > 발룬 / 언언을 엽니다.
+Apre Strumenti > Toroidi FT con un FT-240-43 e le spire per oltre 1000 Ω alla frequenza piu' bassa.	FT-240-43과 최저 주파수에서 1000 Ω 이상이 되는 권선 수로 도구 > FT 토로이드를 엽니다.
+Apre Strumenti > Cavi RG con un quarto d'onda (VF 0,66) chiuso sull'impedenza dell'antenna: scegli un cavo da 75 Ω.	안테나 임피던스로 종단한 1/4 파장 (VF 0.66)으로 도구 > RG 케이블을 엽니다: 75 Ω 케이블을 선택하세요.
+Apre HF > Carichi HF (bobine con autorisonanza, Q, tensioni e perdite).	HF > HF 부하를 엽니다 (자기 공진, Q, 전압, 손실을 포함한 코일).
+Con la calza come contrappeso il coassiale fino al choke irradia: tienilo lontano dalla casa e non mettere il choke sul trasformatore (I3RKE).	실드를 카운터포이즈로 쓰면 초크까지의 동축 케이블이 복사합니다: 집에서 멀리 두고 초크를 변압기에 붙이지 마세요 (I3RKE).
+Con un solo FT-240-43 il funzionamento continuo (FT8, RTTY) va tenuto tra 30 e 50 W; 100 W in SSB.	FT-240-43 하나로는 연속 운용 (FT8, RTTY)을 30~50 W로 유지하세요; SSB는 100 W.
+FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)	FT-140-43과 FT-114-43은 QRP 이상에서 권장하지 않음: 손실 20 % 초과 측정 (DG1JAN)
+le bande armoniche cadono un po' piu' in basso: la tabella mostra il ROS che resta (TF5NN)	고조파 밴드가 약간 낮게 떨어집니다: 표에 남는 SWR이 표시됩니다 (TF5NN)
+La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; ritocca la coda.	코일은 추정값입니다 (전송 선로): 실시간 계산이 실제 공진 위치를 보여 줍니다; 꼬리를 다듬으세요.
+lunghezza lontana dalle mezze onde delle bande scelte (VE3EED)	선택한 밴드의 반파장에서 먼 길이 (VE3EED)
+accordatore interno, 	내장 튜너, 
+accordatore esterno, 	외장 튜너, 
+Accorda la lunghezza (NEC)	길이 튜닝 (NEC)
+3 · Altezze	3 · 높이
+rapporto spire 7:1	권선비 7:1
+rapporto spire 8:1	권선비 8:1
+S. Yates AA5TB, The End-Fed Half-Wave Antenna (contrappeso 0,05 λ); G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, modello del filo verificato con NEC-2); 	S. Yates AA5TB, The End-Fed Half-Wave Antenna (카운터포이즈 0.05 λ); G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, NEC-2로 검증한 와이어 모델); 
+VE3EED (lunghezze del filo non risonante); DG1JAN, xOTA-Antenna (CC BY-SA 4.0: 100 pF, perdite dei nuclei); W8JI e O. Duffy (trasformatori); I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (bobina per gli 80 m, tensione in punta)	VE3EED (비공진 와이어 길이); DG1JAN, xOTA-Antenna (CC BY-SA 4.0: 100 pF, 코어 손실); W8JI 및 O. Duffy (변압기); I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (80 m 코일, 끝 전압)
+EFHW: mezz'onda alimentata in punta con il 49:1 o il 64:1, sulle armoniche (multibanda) o su una banda. Con bobina: la stessa antenna allungata per una banda piu' bassa. Filo non risonante: lunghezza lontana dalle mezze onde, 9:1 o 4:1 e accordatore.	EFHW: 49:1 또는 64:1로 끝 급전하는 반파장, 고조파 (멀티밴드) 또는 한 밴드에서. 코일 포함: 같은 안테나를 더 낮은 밴드용으로 연장. 비공진 와이어: 반파장에서 먼 길이, 9:1 또는 4:1과 튜너.
+La frequenza a cui il filo e' lungo mezz'onda. Con bobina: la banda del filo senza bobina (es. 7,1 MHz), la bobina aggiunge la banda sotto.	와이어가 반파장이 되는 주파수. 코일 포함: 코일 없는 와이어의 밴드 (예: 7.1 MHz), 코일이 아래 밴드를 추가합니다.
+OfficinaHF: 2,39 m per gli 80 m su 20 m di filo. Coda corta = bobina grande.	OfficinaHF: 20 m 와이어에 80 m용 2.39 m. 짧은 꼬리 = 큰 코일.
+VE3EED: lunghezze consigliate 8,8 - 10,8 - 12,5 - 17,7 - 21,6 - 25,6 - 32,6 - 36,3 - 45,1 m; lontano dalle mezze onde delle bande d'uso.	VE3EED: 권장 길이 8.8 - 10.8 - 12.5 - 17.7 - 21.6 - 25.6 - 32.6 - 36.3 - 45.1 m; 사용 밴드의 반파장에서 멀리.
+49:1 per 2000-3000 Ω (spire 7:1); 64:1 per i fili alti e gli 80 m (spire 8:1).	49:1은 2000-3000 Ω용 (권선 7:1); 64:1은 높은 와이어와 80 m용 (권선 8:1).
+9:1 trifilare (filo lungo, 300-600 Ω) o 4:1 (fili piu' corti, 100-300 Ω). Serve l'accordatore.	9:1 3선 (긴 와이어, 300-600 Ω) 또는 4:1 (짧은 와이어, 100-300 Ω). 튜너가 필요합니다.
+Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore.	와이어: 최저 밴드의 0.05 λ (AA5TB), 변압기에서 아래로. 실드: 변압기에서 0.05 λ 위치의 초크까지 동축 케이블이 카운터포이즈 역할.
+Con il 9:1 e il 4:1 il contrappeso va tra il 5 e il 10 % del filo principale.	9:1과 4:1에서는 카운터포이즈를 주 와이어의 5~10 %로 합니다.
+L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).	절연체는 파를 느리게 합니다: 절연 와이어는 더 짧습니다. NEC 모델에서 절연체는 LD 7 카드입니다 (Cebik 방법).
+La banda aggiunta dalla bobina deve stare sotto la banda del filo: bobina non calcolata.	코일로 추가한 밴드는 와이어 밴드보다 낮아야 합니다: 코일 계산 안 됨.
+mezz'onda a 	반파장, 주파수 
+ MHz: stima da verificare con il NEC	 MHz: NEC로 검증할 추정값
+ m di filo in tutto	 m 와이어 전체
+accordato con il NEC (formula 	NEC로 튜닝됨 (공식 
+, effetto d'estremita'	, 끝 효과
+non risonante, con il 	비공진, 사용 
+ e l'accordatore	 및 튜너
+dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)	변압기에서: 거기까지의 실드가 카운터포이즈 (0.05 λ)
+ % del filo (5-10 %)	 % 와이어 대비 (5-10 %)
+almeno 1 kV, migliora le bande alte	최소 1 kV, 고역 밴드 개선
+solo bande sotto i 20 MHz	20 MHz 미만 밴드만
+efficaci a 	실효값, 전력 
+ V di picco)	 V 피크)
+trifilare	3선
+bifilare	2선
+rapporto spire 7:1, spire in Balun / Un-Un	권선비 7:1, 권선 수는 발룬 / 언언에서
+rapporto spire 8:1, spire in Balun / Un-Un	권선비 8:1, 권선 수는 발룬 / 언언에서
+, ROS con il 	, SWR 사용 
+Il filo e' vicino a un multiplo di mezz'onda su 	와이어가 다음 밴드에서 반파장의 배수에 가깝습니다 
+: li' l'impedenza e' altissima e il 	: 그곳에서 임피던스가 매우 높아 
+ non basta. Cambia lunghezza (VE3EED).	 로는 부족합니다. 길이를 바꾸세요 (VE3EED).
+calza 	실드 
+contrappeso 	카운터포이즈 
+punta	끝
+Formule: filo λ/2 = (1 - e) VF λ/2, e = effetto d'estremita' in mezze onde = 0,0464 - 0,003 ln(λ/a) (TF5NN, con le armoniche che cadono un po' corte); 	공식: λ/2 와이어 = (1 - e) VF λ/2, e = 반파장 단위 끝 효과 = 0.0464 - 0.003 ln(λ/a) (TF5NN, 고조파는 약간 짧게 떨어짐); 
+contrappeso 0,05 λ della banda piu' bassa (AA5TB) o tra il 5 e il 10 % del filo con il 9:1 e il 4:1; tensione in punta V = √(P |Z|); impedenza per banda dal modello TF5NN v3 (filo come linea aperta con perdita uguale alla radiazione, su terra ideale; 	카운터포이즈는 최저 밴드의 0.05 λ (AA5TB) 또는 9:1과 4:1에서 와이어의 5~10 %; 끝 전압 V = √(P |Z|); 밴드별 임피던스는 TF5NN v3 모델 (와이어를 복사와 같은 손실의 개방 선로로, 이상적 지면 위; 
+rispetto al NEC-2 errore del 4 % su terra ideale e dell'11 % con il contrappeso). Nel modello NEC il trasformatore e' ideale: il ROS del calcolo in tempo reale e' riferito a 50 x 	NEC-2 대비 오차는 이상적 지면에서 4 %, 카운터포이즈 포함 시 11 %). NEC 모델에서 변압기는 이상적입니다: 실시간 계산의 SWR은 다음 기준입니다 50 x 
+ Bobina: X = Z0 (cot θ1 + cot θ2), con θ1 il filo prima della bobina e θ2 la coda (piu' l'effetto d'estremita') alla banda aggiunta, Z0 = 60 ln(0,22 λ/a); OfficinaHF: 20,15 m + 110-120 µH + 2,39 m per gli 80 m.	 코일: X = Z0 (cot θ1 + cot θ2), θ1은 코일 앞 와이어, θ2는 추가 밴드에서의 꼬리 (끝 효과 포함), Z0 = 60 ln(0.22 λ/a); OfficinaHF: 80 m용 20.15 m + 110-120 µH + 2.39 m.
+ Fonti: 	 출처: 
+In punta ci sono 	끝에 걸리는 전압 
+ V efficaci: isolatore buono e filo lontano da persone e rami.	 V 실효값: 좋은 절연체를 쓰고 와이어를 사람과 나뭇가지에서 멀리 두세요.
+Il filo e' piu' corto del dislivello: la punta resta a 	와이어가 높이 차보다 짧습니다: 끝이 다음 높이에 남습니다 
+Salita e coda sono quasi tutto il filo: la coda e' stata accorciata a 	상승 구간과 꼬리가 와이어의 거의 전부입니다: 꼬리를 다음으로 줄였습니다 
+‹ Torna a 	‹ 돌아가기: 
+, ROS (NEC)	, SWR (NEC)
+no	아니요
+Senza bobina: solo il filo (es. 40-20-15-10 m). Con la bobina e una coda dopo di essa l'antenna lavora anche su una banda piu' bassa (es. +80 m, OfficinaHF); alle bande alte la bobina blocca la coda.	코일 없음: 와이어만 (예: 40-20-15-10 m). 코일과 그 뒤의 꼬리가 있으면 더 낮은 밴드에서도 동작합니다 (예: +80 m, OfficinaHF); 고역 밴드에서는 코일이 꼬리를 차단합니다.
+EFHW: mezz'onda alimentata in punta con il 49:1 o il 64:1, sulle armoniche (multibanda) o su una banda; la bobina di carico, se c'e', la allunga per una banda piu' bassa. Filo non risonante: lunghezza lontana dalle mezze onde, 9:1 o 4:1 e accordatore.	EFHW: 49:1 또는 64:1로 끝 급전하는 반파장, 고조파 (멀티밴드) 또는 한 밴드에서; 로딩 코일이 있으면 더 낮은 밴드용으로 연장합니다. 비공진 와이어: 반파장에서 먼 길이, 9:1 또는 4:1과 튜너.
+Contrappeso RF	RF 카운터포이즈
+cercati tra {0} e {1} MHz	{0}~{1} MHz에서 탐색
+aggiornato ({0} s) a {1} MHz	업데이트됨 ({0} s), {1} MHz
+0,05 λ (AA5TB)	0.05 λ (AA5TB)
+Accorda la bobina (NEC)	코일 튜닝 (NEC)
+accordata con il NEC (stima 	NEC로 튜닝됨 (추정 
+La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno.	코일은 추정값입니다 (전송 선로): 실시간 계산이 실제 공진 위치를 보여 줍니다; «코일 튜닝 (NEC)»은 카운터포이즈와 지면을 포함해 올바른 인덕턴스를 찾습니다.
+Coassiale fino alla radio	무전기까지 동축 케이블
+Senza contrappeso la calza del coassiale, senza choke, fa da contrappeso: la sua lunghezza cambia il ROS. Nel modello scende lungo il palo e poi va verso la radio a 0,3 m da terra.	카운터포이즈가 없으면 초크 없는 동축 케이블 실드가 카운터포이즈 역할을 합니다: 그 길이에 따라 SWR이 바뀝니다. 모델에서는 마스트를 따라 내려와 지면 위 0.3 m로 무전기까지 갑니다.
+coassiale fino alla radio, senza choke	무전기까지 동축 케이블, 초크 없음
+la calza fa da contrappeso	실드가 카운터포이즈 역할
+Senza contrappeso la corrente torna sulla calza del coassiale fino alla radio: il coassiale irradia, porta RF in stazione e cambia il ROS con la sua lunghezza (I3RKE).	카운터포이즈가 없으면 전류가 동축 케이블 실드를 타고 무전기까지 돌아옵니다: 동축 케이블이 복사하고, 무선실에 RF를 끌어들이며, 길이에 따라 SWR이 바뀝니다 (I3RKE).
+Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore. Nessuno: nessun filo e nessun choke; la corrente torna sulla calza del coassiale fino alla radio (49:1 e 64:1 si usano anche cosi', IC8TEM 22/11/2026).	와이어: 최저 밴드의 0.05 λ (AA5TB), 변압기에서 아래로. 실드: 변압기에서 0.05 λ 위치의 초크까지 동축 케이블이 카운터포이즈 역할. 없음: 와이어도 초크도 없음; 전류가 동축 케이블 실드를 타고 무전기까지 돌아옵니다 (49:1과 64:1은 이렇게도 사용, IC8TEM 22/11/2026).
+Con il 9:1 e il 4:1 il contrappeso va di solito tra il 5 e il 10 % del filo principale; l'abaco (pulsante Abaco) mostra il migliore per ogni lunghezza, a volte fino al 25-46 %.	9:1과 4:1에서는 보통 카운터포이즈를 주 와이어의 5~10 %로 합니다; 도표 (도표 버튼)는 길이별 최적값을 보여 주며, 때로는 25-46 %까지입니다.
+Abaco delle filari	와이어 안테나 도표
+Abaco ›	도표 ›
+Usa questa riga nella scheda	이 행을 페이지에 사용
+Tabelle di lunghezze e contrappesi calcolate con il NEC (filo orizzontale a 3 m): una riga si puo' copiare nella scheda.	NEC로 계산한 길이와 카운터포이즈 표 (3 m 높이 수평 와이어): 행을 페이지에 복사할 수 있습니다.
+Filo nudo da 1 mm orizzontale a 3 m, contrappeso orizzontale dalla parte opposta alla stessa altezza, trasformatore ideale (ROS su 50 x rapporto). Calcolato con il NEC di YA-NEC. Con altre altezze, disposizioni o fili conta il calcolo della scheda.	3 m 높이의 1 mm 수평 피복 없는 와이어, 반대쪽 같은 높이에 수평 카운터포이즈, 이상적 변압기 (50 x 비율 기준 SWR). YA-NEC의 NEC로 계산. 다른 높이, 배치, 와이어에서는 페이지의 계산이 적용됩니다.
+EFHW 49:1	EFHW 49:1
+EFHW 64:1	EFHW 64:1
+9:1, lunghezze migliori	9:1, 최적 길이
+9:1, lunghezze VE3EED	9:1, VE3EED 길이
+contrappeso 0,05 λ	0.05 λ 카운터포이즈
+senza contrappeso	카운터포이즈 없음
+Tabella non presente nel file dell'abaco.	도표 파일에 표가 없습니다.
+banda bassa	최저 밴드
+lunghezza	길이
+filo m	와이어 m
+contrappeso m	카운터포이즈 m
+contrappeso	카운터포이즈
+bande ROS<=3	SWR<=3 밴드
+λ/2 formula	λ/2 공식
+λ/2 accordata (monobanda)	λ/2 튜닝 (단일 밴드)
+λ/4 (difficile)	λ/4 (어려움)
+Terreno medio: la mezz'onda accordata per una banda da' ROS 1,0-1,7 su quella banda; la multibanda cede sulla fondamentale e guadagna sulle armoniche; il quarto d'onda supera 99 alla banda piu' bassa.	평균 지면: 한 밴드에 튜닝한 반파장은 그 밴드에서 SWR 1.0-1.7; 멀티밴드는 기본파에서 다소 손해 보고 고조파에서 이득; 1/4 파장은 최저 밴드에서 99를 넘습니다.
+Terreno perfetto: a 3 m il filo vede la propria immagine in controfase; sulle bande basse il ROS resta alto anche alla mezz'onda. La scheda calcola sempre con il terreno medio.	완전 도체 지면: 3 m에서 와이어는 역위상의 자기 영상을 봅니다; 저역 밴드에서는 반파장에서도 SWR이 높게 남습니다. 페이지는 항상 평균 지면으로 계산합니다.
+9:1, dagli 80 ai 10 m: contrappesi fissi (0-10 m) e in percentuale del filo; il migliore ha piu' bande con ROS fino a 3 e, a parita', la media dei ROS piu' bassa.	9:1, 80~10 m: 고정 카운터포이즈 (0-10 m)와 와이어 대비 백분율; 최적은 SWR 3 이하 밴드가 가장 많고, 같으면 평균 SWR이 가장 낮은 것.
+Riga dell'abaco nella scheda Filari: ora il calcolo e' libero, si puo' cambiare tutto.	도표 행을 와이어 안테나 페이지에 복사: 이제 계산이 자유로우며 모두 바꿀 수 있습니다.
+Abaco delle filari non trovato (data/abaco_filari.tsv).	와이어 안테나 도표를 찾을 수 없음 (data/abaco_filari.tsv).
+λ/2 multibanda (armoniche: 	λ/2 멀티밴드 (고조파: 
+Senza contrappeso fa da contrappeso la calza di 10 m di coassiale senza choke: i ROS bassi sulle bande alte vengono dalla calza che irradia e porta RF in stazione.	카운터포이즈가 없으면 초크 없는 10 m 동축 케이블의 실드가 카운터포이즈 역할을 합니다: 고역 밴드의 낮은 SWR은 실드가 복사하며 무선실에 RF를 끌어들이기 때문입니다.
+G/T stack (VHF)	스택 G/T (VHF)
+G/T stack	스택 G/T
+Maschera VHF: ROS + G/T	VHF 마스크: SWR + G/T
+Da 50 MHz in su: ROS con soglia 1,3 e G/T dello stack al massimo; guadagno, F/B e gli altri obiettivi a zero (il G/T li contiene gia').	50 MHz 이상: SWR 임계값 1.3, 스택 G/T 최대; 이득, F/B 및 기타 목표는 0 (G/T에 이미 포함).
+DL6WU dalle aperture a -3 dB, ricalcolate a ogni passo	-3 dB 빔폭에서 DL6WU, 매 단계 재계산
+gradi (VE7BQH)	도 (VE7BQH)
+Temperature	온도
+uniformi come VE7BQH: cielo {0} K, terreno {1} K (a {2} MHz)	VE7BQH처럼 균일: 하늘 {0} K, 지면 {1} K ({2} MHz)
+Preamplificatore	프리앰프
+NF	NF
+dB, guadagno	dB, 이득
+combinatore prima del preamp	프리앰프 앞 결합기
+dB, cavo dopo il preamp	dB, 프리앰프 뒤 케이블
+veloce + controllo NEC	빠름 + NEC 확인
+solo NEC dello stack	스택 NEC만
+Veloce: a ogni passo il diagramma della singola antenna per il fattore di schiera. Ogni 10 passi e alla fine si calcola lo stack completo con il NEC, accoppiamento compreso, e il G/T veloce si corregge della differenza. Solo NEC: lo stack completo a ogni passo (molto piu' lento).	빠름: 매 단계 단일 안테나 패턴 × 배열 계수. 10단계마다와 마지막에 결합을 포함한 전체 스택을 NEC로 계산하고, 빠른 G/T를 그 차이만큼 보정합니다. NEC만: 매 단계 전체 스택 (훨씬 느림).
+Come la linguetta Rumore/GT/Stack (VE7BQH, TANT, correzione KF2YN): antenna in spazio libero, cielo e terreno a temperatura uniforme. Il G/T e' quello di sistema: T antenna + preamplificatore + cavo diviso il guadagno del preamplificatore.	잡음/GT/스택 탭과 동일 (VE7BQH, TANT, KF2YN 보정): 자유 공간의 안테나, 균일 온도의 하늘과 지면. G/T는 시스템 값입니다: 안테나 T + 프리앰프 + 케이블을 프리앰프 이득으로 나눈 값.
+obiettivo non usato	사용하지 않는 목표
+G/T stack {0} a {1}°	스택 G/T {0}, {1}°
+partenza {0} ({1}{2} dB)	시작 {0} ({1}{2} dB)
+prima	이전
+dopo	이후
+G/T stack {0} a {1}° (sistema)	스택 G/T {0}, {1}° (시스템)
+G/T antenna (come VE7BQH)	안테나 G/T (VE7BQH 방식)
+G/T singola	단일 G/T
+T antenna (stack), K	안테나 T (스택), K
+Guadagno stack, dBi	스택 이득, dBi
+Guadagno singola, dBi	단일 이득, dBi
+ROS peggiore	최악 SWR
+Distanze DL6WU V x H, m	DL6WU 간격 V x H, m
+Prima / dopo	이전 / 이후
+G/T con lo stack NEC completo (accoppiamento compreso); controlli NEC durante l'ottimizzazione: {0}.	전체 NEC 스택의 G/T (결합 포함); 최적화 중 NEC 확인: {0}.
+La maschera VHF e' per le antenne da 50 MHz in su.	VHF 마스크는 50 MHz 이상 안테나용입니다.
+Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli le variabili e premi Avvia.	VHF 마스크: SWR (임계값 1.3)과 스택 G/T; 나머지 가중치는 0. 변수를 선택하고 시작을 누르세요.
+"max" = G/T piu' alto possibile; oppure un valore in dB/K, es. "≥ -14". G/T di sistema dello stack scelto nel pannello Maschera VHF, alla frequenza principale	"max" = 가능한 최고 G/T; 또는 dB/K 값, 예: "≥ -14". VHF 마스크 패널에서 선택한 스택의 시스템 G/T, 주 주파수에서
+G/T dello stack del modello di partenza	시작 모델의 스택 G/T
+controllo finale del G/T con lo stack NEC	NEC 스택으로 G/T 최종 확인
+Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il "collegamento" di MMANA, gia' coperto dalle formule. 	변수는 변수 탭에서 가져옵니다 (길이, 간격, 높이, 부하, 급전원 위상, 스택 간격...). 공식으로 쓴 변수 (LDE = LR*0,985)는 다른 변수를 자동으로 따릅니다: MMANA의 "연결" 기능이며, 이미 공식으로 처리됩니다. 
+- - partenza: {0} dBi, F/B {1} dB	- - 시작: {0} dBi, F/B {1} dB
+— passo {0}: {1} dBi, F/B {2} dB	— 단계 {0}: {1} dBi, F/B {2} dB
+ROS ({0} ohm)	SWR ({0} ohm)
+automatico (dalla potenza)	자동 (전력 기준)
+ideale (senza perdite)	이상적 (무손실)
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: il nucleo dalla potenza (FT-140-43 fino a 15 W, FT-240-43 fino a 120 W, due FT-240-43 sopra).	DG1JAN 측정 효율 (NanoVNA, 2400 ohm 부하, 2-30 MHz): FT-82-43과 FT-114-43 약 80 %, FT-140-43 2/14 약 79 %, FT-240-43 2/15 약 75 % (30 MHz에서 71 %), Fair-Rite 2개 결합 (5943000601 + 5943001101) 약 90 %, MM0OPX 권장 Fair-Rite 2643251002 약 91 %. 자동: 전력에 따라 코어 선택 (15 W까지 FT-140-43, 120 W까지 FT-240-43, 그 이상 FT-240-43 2개).
+Perdite del nucleo	코어 손실
+Potenza nel nucleo	코어 전력
+trasformatore ideale (come nel modello NEC)	이상적 변압기 (NEC 모델과 동일)
+ % di efficienza a 	 % 효율, 주파수 
+ % a 28,5 MHz (DG1JAN	 % 28.5 MHz에서 (DG1JAN
+, misura di un FT-240-43 solo	, FT-240-43 단일 측정
+; si toglie al guadagno e scalda il nucleo (FT8 e RTTY al 100 % del tempo)	; 이득에서 빠지고 코어를 가열합니다 (FT8과 RTTY는 100 % 듀티)
+Il nucleo dissipa circa 	코어 소비 전력 약 
+ W: nei modi digitali scalda. Nuclei con meno perdite: due Fair-Rite accoppiati o il 2643251002 (MM0OPX), circa 90 % (DG1JAN).	 W: 디지털 모드에서 가열됩니다. 손실이 적은 코어: Fair-Rite 2개 결합 또는 2643251002 (MM0OPX), 약 90 % (DG1JAN).
+uniformi come VE7BQH	VE7BQH처럼 균일
+cielo vero	실제 하늘
+QTH	QTH
+ora UTC	UTC 시각
+Cielo vero: mappa di Haslam (408 MHz, scalata alla frequenza, G8ONH) vista dal QTH all'ora data, antenna puntata all'azimut e all'elevazione scritti; sotto l'orizzonte 290 K. QTH come locator (JN70CN) o latitudine e longitudine.	실제 하늘: 주어진 시각에 QTH에서 본 Haslam 지도 (408 MHz, 주파수에 맞게 환산, G8ONH), 안테나는 입력한 방위각과 앙각으로 지향; 지평선 아래는 290 K. QTH는 로케이터 (JN70CN) 또는 위도와 경도.
+Maschera VHF, cielo vero: QTH non valido (locator, es. JN70CN, oppure latitudine e longitudine).	VHF 마스크, 실제 하늘: 잘못된 QTH (로케이터, 예: JN70CN, 또는 위도와 경도).
+Maschera VHF, cielo vero: data e ora non valide (gg/mm/aaaa hh:mm, UTC).	VHF 마스크, 실제 하늘: 잘못된 날짜와 시각 (dd/mm/yyyy hh:mm, UTC).
+Maschera VHF, cielo vero: mappa del cielo non letta (	VHF 마스크, 실제 하늘: 하늘 지도를 읽지 못함 (
+T antenna (stack, cielo vero), K	안테나 T (스택, 실제 하늘), K
+un-un 4:1 + accordatore in stazione	4:1 언언 + 무선실 튜너
+accordatore alla base	기부 튜너
+diretta (1:1) + accordatore in stazione	직결 (1:1) + 무선실 튜너
+povero	불량
+medio	평균
+mare	바다
+Calcola le bande (NEC)	밴드 계산 (NEC)
+Verticale non risonante (43 piedi)	비공진 수직 (43 피트)
+P. Salas AD5X, The 43-Foot Vertical (presentazione di N0CU, 2016: Rr, ROS con il 4:1, perdite nel coassiale, guadagni e angoli, tensione alla base); 	P. Salas AD5X, The 43-Foot Vertical (N0CU 발표, 2016: Rr, 4:1 사용 시 SWR, 동축 케이블 손실, 이득과 각도, 기부 전압); 
+G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, impedenza del monopolo); ON4UN, Low-Band DXing cap. 9 (resistenza di terra dei radiali interrati, Tab. 9-1); 	G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, 모노폴 임피던스); ON4UN, Low-Band DXing 9장 (매설 래디얼의 접지 저항, 표 9-1); 
+abaco dei cavi di YA-NEC (perdite da catalogo); accordatore come in Linea aperta + accordatore (Q della bobina)	YA-NEC 케이블 도표 (카탈로그 손실); 튜너는 평행 개방선 + 튜너와 동일 (코일 Q)
+Altezza della verticale	수직 안테나 높이
+43 piedi = 13,1 m (AD5X). Si usano anche 26 piedi (7,9 m), 31 piedi (9,4 m) e 50 piedi (15,2 m).	43 피트 = 13.1 m (AD5X). 26 피트 (7.9 m), 31 피트 (9.4 m), 50 피트 (15.2 m)도 사용됩니다.
+ø del tubo (medio)	튜브 ø (평균)
+Diametro medio dei tubi telescopici.	신축 튜브의 평균 직경.
+Le bande della tabella: dalla piu' bassa scelta fino ai 10 m.	표의 밴드: 선택한 최저 밴드부터 10 m까지.
+Adattamento alla base	기부 정합
+Un-un 4:1 alla base e accordatore in stazione (la soluzione piu' comune); accordatore automatico alla base (il coassiale lavora adattato); oppure coassiale collegato direttamente alla base.	기부에 4:1 언언과 무선실 튜너 (가장 흔한 방식); 기부에 자동 튜너 (동축 케이블이 정합 상태로 동작); 또는 동축 케이블을 기부에 직결.
+Coassiale fino alla stazione	무선실까지 동축 케이블
+Tipo di coassiale	동축 케이블 종류
+AD5X: piu' radiali possibile; con pochi radiali l'efficienza sulle bande basse crolla.	AD5X: 래디얼은 가능한 한 많이; 래디얼이 적으면 저역 밴드 효율이 급락합니다.
+2 · Terra e radiali	2 · 지면과 래디얼
+Interrati o appoggiati: il NEC-2 non li tratta, la loro perdita entra come resistenza di terra in serie alla base. Rialzati: fili veri nel modello NEC, sopra il terreno di Sommerfeld.	매설 또는 지면 설치: NEC-2가 처리하지 못하므로 그 손실은 기부에 직렬인 접지 저항으로 들어갑니다. 지상 설치: Sommerfeld 지면 위 NEC 모델의 실제 와이어.
+interrati	매설
+rialzati	지상 설치
+Altezza dei radiali rialzati	지상 래디얼 높이
+Dai radiali con la Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda), oppure un valore fisso come AD5X (10 Ω).	ON4UN 표 9-1로 래디얼에서 산출 (개수와 λ 단위 길이, 밴드별), 또는 AD5X처럼 고정값 (10 Ω).
+dai radiali (ON4UN)	래디얼에서 (ON4UN)
+valore fisso	고정값
+Rg fissa	고정 Rg
+Banda per banda (stima TF5NN + resistenza di terra; «Calcola le bande (NEC)» per guadagno e angolo)	밴드별 (TF5NN 추정 + 접지 저항; 이득과 각도는 «밴드 계산 (NEC)»)
+Z alla base (Ω)	기부 Z (Ω)
+ROS sul cavo	케이블 SWR
+Perdita nel cavo	케이블 손실
+Perdita accordatore	튜너 손실
+Guadagno, angolo	이득, 각도
+Al trasmettitore	송신기에서
+⚠ accordatore alla base	⚠ 기부 튜너
+angolo alto	높은 각도
+accettabile	허용 가능
+✓ ottima per il DX	✓ DX에 최적
+⚠ accordatore con perdite	⚠ 손실 있는 튜너
+ dBi a 	 dBi, 
+nel guadagno	이득에 포함
+Banda migliore	최적 밴드
+ dBi (angolo fino a 30°)	 dBi (각도 30°까지)
+«Calcola le bande (NEC)»	«밴드 계산 (NEC)»
+Z alla base sui 	기부 Z, 밴드 
+dal NEC, con la resistenza di terra	NEC에서, 접지 저항 포함
+stima TF5NN + Rg 	TF5NN 추정 + Rg 
+Efficienza sui 	효율, 밴드 
+radiali rialzati: le perdite nel terreno sono nel guadagno del NEC	지상 래디얼: 지면 손실은 NEC 이득에 포함됨
+Tensione alla base	기부 전압
+ W sui 	 W, 밴드 
+ kV di picco)	 kV 피크)
+Perdita nel cavo, 	케이블 손실, 
+cavo adattato (accordatore alla base)	정합 케이블 (기부 튜너)
+ sul cavo	 케이블에서
+ dopo il 4:1	 4:1 이후
+ dB adattato sui 	 dB 정합 시, 밴드 
+ dB sui 10 m	 dB 10 m에서
+Perdite nel cavo e nell'accordatore (stima TF5NN + Rg)	케이블과 튜너 손실 (TF5NN 추정 + Rg)
+ kV alla base	 kV 기부에서
+Alla base ci sono circa 	기부에 걸리는 전압 약 
+ kV efficaci a 	 kV 실효값, 전력 
+ W: condensatori e rele' adatti, antenna fuori dalla portata delle persone.	 W: 적합한 커패시터와 릴레이를 쓰고, 안테나는 사람 손이 닿지 않게 두세요.
+Radiali corti rispetto alla banda piu' bassa (meno di 0,15 λ): la Tab. 9-1 di ON4UN non scende sotto, la resistenza di terra vera e' piu' alta.	최저 밴드에 비해 래디얼이 짧음 (0.15 λ 미만): ON4UN 표 9-1은 그 이하를 다루지 않으며, 실제 접지 저항은 더 높습니다.
+Terreno povero e pochi radiali: l'efficienza crolla e l'angolo sale, la verticale non e' migliore di un dipolo basso.	불량 지면과 적은 래디얼: 효율이 급락하고 각도가 올라가, 수직 안테나가 낮은 다이폴보다 나을 것이 없습니다.
+«Calcola le bande (NEC)» mette nella tabella impedenza, guadagno, angolo ed efficienza del NEC con il terreno e i radiali scelti	«밴드 계산 (NEC)»은 선택한 지면과 래디얼로 NEC의 임피던스, 이득, 각도, 효율을 표에 넣습니다
+con il 4:1 il ROS sul cavo e' riferito a 200 Ω alla base (un-un ideale)	4:1에서는 케이블 SWR이 기부 200 Ω 기준입니다 (이상적 언언)
+Formule: impedenza alla base dal modello TF5NN v3 (monopolo su terra ideale) piu' Rg, oppure dal NEC-2; Rg dei radiali interrati dalla Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda) o fissa; 	공식: 기부 임피던스는 TF5NN v3 모델 (이상적 지면 위 모노폴)에 Rg를 더하거나 NEC-2에서; 매설 래디얼의 Rg는 ON4UN 표 9-1 (개수와 λ 단위 길이, 밴드별) 또는 고정값; 
+un-un 4:1 ideale (carico del cavo Z/4); perdita nel cavo con il carico vero (linea con perdite, gamma = alfa + j beta, come Cavi RG); accordatore: reattanza annullata da una bobina con Q 	이상적 4:1 언언 (케이블 부하 Z/4); 실제 부하에서의 케이블 손실 (손실 선로, gamma = alfa + j beta, RG 케이블과 동일); 튜너: 다음 Q의 코일로 리액턴스 상쇄 
+, poi rete di Q caricato √(Rmax/Rmin - 1) (T in stazione, L alla base, come Linea aperta + accordatore); tensione alla base V = |Z| √(P/R) con la potenza che arriva all'antenna; al trasmettitore = guadagno NEC - perdite. 	, 그다음 부하 Q √(Rmax/Rmin - 1) 회로망 (무선실은 T, 기부는 L, 평행 개방선 + 튜너와 동일); 기부 전압 V = |Z| √(P/R), 안테나에 도달하는 전력 기준; 송신기 기준 = NEC 이득 - 손실. 
+AD5X: Rr 3-4 Ω e circa -j600 Ω sui 160 m, 65 Ω sui 40 m, ROS 324:1 sui 160 e 41:1 sugli 80 m con il 4:1 e Rg 10 Ω, circa 13 kV alla base a 1500 W sui 160 m. Fonti: 	AD5X: 160 m에서 Rr 3-4 Ω 및 약 -j600 Ω, 40 m에서 65 Ω, 4:1과 Rg 10 Ω일 때 SWR 160 m 324:1, 80 m 41:1, 160 m 1500 W에서 기부 약 13 kV. 출처: 
+un-un 4:1, accordatore; perdite nel cavo, tensione alla base	4:1 언언, 튜너; 케이블 손실, 기부 전압
+Un-un 4:1 ›	4:1 언언 ›
+Cavo con il ROS ›	SWR 포함 케이블 ›
+Verticale λ/4 ›	λ/4 수직 ›
+Apre Strumenti > Cavi RG con il cavo, la lunghezza e il carico che il cavo vede sulla banda piu' bassa.	최저 밴드에서 케이블이 보는 부하와 케이블, 길이로 도구 > RG 케이블을 엽니다.
+Apre HF > Verticali > lambda/4 con gli stessi radiali sulla banda piu' bassa, per il confronto.	비교를 위해 최저 밴드에서 같은 래디얼로 HF > 수직 > lambda/4를 엽니다.
+Perdite oltre 3 dB (	손실 3 dB 초과 (
+): l'accordatore in stazione accorda il cavo, non l'antenna: si perdono piu' di 3 dB nel cavo e nell'accordatore. Serve l'accordatore (o una rete L) alla base (AD5X).	): 무선실 튜너는 안테나가 아니라 케이블을 튜닝합니다: 케이블과 튜너에서 3 dB 넘게 손실됩니다. 기부에 튜너 (또는 L 회로망)가 필요합니다 (AD5X).
+Efficienza bassa sulla banda piu' bassa (	최저 밴드 효율 낮음 (
+): la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).	): 짧은 수직 안테나는 래디얼에 달려 있습니다 (래디얼 추가, 또는 지상 래디얼).
+Lobo alto (	높은 로브 (
+): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.	): 주 로브가 높습니다 (35° 초과): 수직 안테나가 5/8 λ 이상이어서 λ/4보다 DX에 불리합니다.
+Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)	밴드별 (NEC-2, Sommerfeld 지면, 지상 래디얼)
+Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)	밴드별 (NEC-2, 래디얼은 접지 저항으로, 선택한 지면으로 패턴)
+ROS sul cavo 	케이블 SWR 
+  Calcola: fili dritti, archi ed eliche (GW, GA, GH), copie e simmetrie (GM, GR, GX), scala (GS), fili rastremati (GC);\n	  계산 대상: 직선 와이어, 호와 헬리컬 (GW, GA, GH), 복사와 대칭 (GM, GR, GX), 배율 (GS), 테이퍼 와이어 (GC);\n
+  carichi LD 0-5 e materiale dei fili; sorgenti di tensione (EX 0); modelli MMANA con risegmentazione NEC.\n	  LD 0-5 부하와 와이어 재질; 전압원 (EX 0); NEC 재분할한 MMANA 모델.\n
+  cioe' la frequenza di progetto delle antenne per DX, EME e meteor scatter;\n	  즉 DX, EME, 유성 산란용 안테나의 설계 주파수;\n
+  kernel normale ed esteso (EK); spazio libero, terreno perfetto, terreno reale col coefficiente di riflessione;\n	  일반 및 확장 커널 (EK); 자유 공간, 완전 도체 지면, 반사 계수 실제 지면;\n
+ (frequenza dalla barra in alto; le caselle si aggiornano da sole)	 (주파수는 상단 막대에서; 칸은 자동으로 갱신됨)
+ Due DHDL affiancate in fase con linee uguali: IV3PRK RDF 12,7 dB a 90 m (apertura 52 gradi, lobo pulito), 13,7 oltre 120 m con lobi laterali; YA-NEC 12,6 dB a 90 m.	 같은 선로로 동위상 급전한 나란한 DHDL 2개: IV3PRK RDF 90 m에서 12.7 dB (빔폭 52도, 깨끗한 로브), 120 m 초과에서 사이드 로브와 함께 13.7; YA-NEC 90 m에서 12.6 dB.
+ K; terreno rurale 	 K; 농촌 지면 
+ MHz (vale solo a questa frequenza; il NEC-2 non ha i carichi di Laplace).	 MHz (이 주파수에서만 유효; NEC-2에는 Laplace 부하가 없음).
+ MHz; un tubo uniforme della stessa lunghezza risuonerebbe a circa 	 MHz; 같은 길이의 균일 튜브는 약 다음에서 공진 
+ avvisi. Gli errori danno un calcolo sbagliato o impossibile; gli avvisi sono dati possibili ma sospetti.	 경고. 오류는 계산을 틀리거나 불가능하게 만들고, 경고는 가능하지만 의심스러운 데이터입니다.
+ dB contro 	 dB 대 
+ della fonte: controlla dimensioni, terminazione e terreno (la fonte puo' usare un terreno o una geometria diversi).	 출처 값: 치수, 종단, 지면을 확인하세요 (출처는 다른 지면이나 형상을 쓸 수 있음).
+ elementi; Annulla nella barra Geometria le toglie). 	 소자; 형상 막대의 실행 취소로 제거). 
+ la tabella dei fili non si costruisce (sarebbe lentissima e occuperebbe gigabyte di memoria).\nI fili si modificano nella linguetta Modello NEC; Struttura 3D e calcolo funzionano normalmente.	 와이어 표는 만들지 않습니다 (매우 느리고 수 기가바이트 메모리를 차지함).\n와이어는 NEC 모델 탭에서 수정하세요; 3D 구조와 계산은 정상 동작합니다.
+ lambda; con le misure in 	 lambda; 치수 단위 
+ lati con la circonferenza esatta; con piu' lati il segmento scende sotto 8 volte il raggio della striscia e il NEC-2 perde precisione.	 변, 정확한 둘레; 변이 더 많으면 세그먼트가 스트립 반경의 8배 미만이 되어 NEC-2 정확도가 떨어집니다.
+ m (minimo del NEC-2); il BOG reale sta sul suolo	 m (NEC-2 최소); 실제 BOG는 지면에 놓임
+ m invece che isolato sul suolo. Lobo, direzione e RDF indicativi; impedenza, perdite e guadagno assoluto no.	 m, 지면 위 절연 대신. 로브, 방향, RDF는 참고용; 임피던스, 손실, 절대 이득은 아님.
+ m) invece che isolato sul suolo;	 m) 지면 위 절연 대신;
+ m). Lobo, direzione e RDF sono indicativi; impedenza e perdite non sono quelle del BOG reale (200-300 ohm misurati).	 m). 로브, 방향, RDF는 참고용입니다; 임피던스와 손실은 실제 BOG 값이 아닙니다 (측정값 200-300 ohm).
+ m; sorgente sul filo 	 m; 와이어의 급전원 
+ mancante; 	 누락; 
+ mohm; altezza efficace h = 2 pi A / lambda = 	 mohm; 실효 높이 h = 2 pi A / lambda = 
+ pF; spire su T225-2 (AL 120): 	 pF; T225-2 (AL 120) 권선: 
+ proprio sul piano dell'immagine; messo solo sul filo originale (in AO sono due segmenti corti ai due lati).	 영상 평면 바로 위; 원래 와이어에만 배치 (AO에서는 양쪽의 짧은 세그먼트 2개).
+ segmenti, o se il calcolo dura piu' di 2 s, lo sweep non parte da solo: premi Sweep; 	 세그먼트, 또는 계산이 2 s를 넘으면 스윕이 자동으로 시작되지 않습니다: 스윕을 누르세요; 
+ spire ha troppa poca induttanza; per il 	 회는 인덕턴스가 너무 작습니다; 다음 밴드용 
+ stub in parallelo (riga YA-NEC STUB, per esempio lo stub in corto della LPDA) non scritti: EZNEC non li ha; in EZNEC si aggiunge una linea in corto a mano.	 병렬 스터브 (YA-NEC STUB 행, 예: LPDA의 단락 스터브) 기록 안 됨: EZNEC에는 없음; EZNEC에서는 단락 선로를 직접 추가하세요.
+ tocca il piano dell'immagine; l'immagine della linea non e' stata aggiunta.	 영상 평면에 닿습니다; 선로의 영상은 추가되지 않았습니다.
+"_Salvato da YA-NEC 	"_YA-NEC로 저장 
+(calcestruzzo ITU-R P.2040: er 5,24, sigma 0,0462 f^0,7822 S/m con f in GHz; calcestruzzo HF di Perotoni: er 20, tan delta 0,012; rete fitta: terreno perfetto). 	(콘크리트 ITU-R P.2040: er 5.24, sigma 0.0462 f^0.7822 S/m, f는 GHz; Perotoni HF 콘크리트: er 20, tan delta 0.012; 촘촘한 메시: 완전 도체 지면). 
+(rapporto tra corrente nel terreno e nei radiali) non concorda con i calcoli moderni; le misure restano valide. Il NEC-2 non tratta i radiali interrati (serve il NEC-4): 	(지면 전류와 래디얼 전류의 비)는 현대 계산과 맞지 않습니다; 측정값은 유효합니다. NEC-2는 매설 래디얼을 처리하지 못합니다 (NEC-4 필요): 
+(resistenza di radiazione); ON4UN (four-square); Amidon (AL dei toroidi, amidoncorp.com, tabella ok1dxd); 	(복사 저항); ON4UN (four-square); Amidon (토로이드 AL, amidoncorp.com, ok1dxd 표); 
+(trave appoggiata sulle due centine; tutta la rete a carico degli arcarecci, a favore di sicurezza) con freccia col vento fino a L/200 e freccia permanente fino a lambda/40; 	(두 리브에 걸친 단순보; 메시 전체를 중도리가 부담, 안전 측) 바람 처짐 L/200까지, 영구 처짐 lambda/40까지; 
+) + un parassita per banda; lobo verso destra	) + 밴드당 무급전 소자 1개; 로브는 오른쪽
+). Si ottiene dal modello NEC del feed o da un file W1GHZ a 3 colonne; senza fase il centro di fase si assume nell'origine del modello.	). 피드의 NEC 모델 또는 3열 W1GHZ 파일에서 얻습니다; 위상이 없으면 위상 중심을 모델 원점으로 가정합니다.
+); contrappeso o radiali alla massa.	); 카운터포이즈 또는 래디얼을 접지에.
+); la sorgente e' ora in fondo alla linea. "Annulla" torna indietro.	); 급전원이 이제 선로 끝에 있습니다. "실행 취소"로 되돌립니다.
+, verticale 	, 수직 
+0 = misure DL6WU com'e'; 1 radiatore (adattamento); 2 riflettore (F/B); 3 direttori (guadagno); 4 tutto insieme.	0 = DL6WU 치수 그대로; 1 복사기 (정합); 2 반사기 (F/B); 3 도파기 (이득); 4 전체 함께.
+0 = misure N6NB/Cebik; 1 anello alimentato (50 ohm); 2 riflettore; 3 direttori; 4 tutto insieme.	0 = N6NB/Cebik 치수; 1 급전 루프 (50 ohm); 2 반사기; 3 도파기; 4 전체 함께.
+0 = misure di N6CA; 1 anello alimentato; 2 riflettori; 3 direttori; 4 tutto insieme.	0 = N6CA 치수; 1 급전 루프; 2 반사기; 3 도파기; 4 전체 함께.
+1296: segnali deboli; 1283: da 1280 a 1300 MHz; 1270: FM e satelliti (modo L).	1296: 미약 신호; 1283: 1280~1300 MHz; 1270: FM 및 위성 (L 모드).
+2 radiali circa 28 Ω, 15 circa 15 Ω, 60 x 0,25 λ 7,9 Ω, 120 x 0,4 λ 0,1 Ω; efficienza = 36 / (36 + Rterra). Tab. 9-3: lunghezza ottima 0,10 λ (4 radiali) ... 0,50 λ (120). 	래디얼 2개 약 28 Ω, 15개 약 15 Ω, 60 x 0.25 λ 7.9 Ω, 120 x 0.4 λ 0.1 Ω; 효율 = 36 / (36 + R접지). 표 9-3: 최적 길이 0.10 λ (래디얼 4개) ... 0.50 λ (120개). 
+; Seg dei fili come nel file.	; 와이어 Seg는 파일과 동일.
+; banda della trappola, senza parassita	; 트랩 밴드, 무급전 소자 없음
+; colori = corrente al centro banda	; 색 = 밴드 중앙 전류
+; correzione di Leeson accesa.	; Leeson 보정 켜짐.
+; da tagliare 	; 절단 길이 
+; geometria ibrida (il disco contiene il vertice)	; 하이브리드 형상 (접시가 꼭짓점을 포함)
+; guadagno medio dello stack = 	; 스택 평균 이득 = 
+; misure non accordate	; 튜닝되지 않은 치수
+; polarizzazione 	; 편파 
+ARRL Antenna Book, W5QJR, AA5TB	ARRL Antenna Book, W5QJR, AA5TB
+ARRL Antenna Book; W3DZZ; L. Varney G5RV; G. Countryman W3HH (T2FD); W5QJR e AA5TB (loop magnetica); 	ARRL Antenna Book; W3DZZ; L. Varney G5RV; G. Countryman W3HH (T2FD); W5QJR 및 AA5TB (마그네틱 루프); 
+About - 	정보 - 
+Antenne riceventi di IV3PRK nella linguetta Antenne riceventi; Salva con nome in .weq ed .ez; lettura dei carichi, delle linee e del terreno dei .ez; 	수신 안테나 탭의 IV3PRK 수신 안테나; .weq 및 .ez로 다른 이름 저장; .ez의 부하, 선로, 지면 읽기; 
+Azimut a 	방위각, 
+C. Cerrotta IC8TEM (database dei cavi di YAEC, con le schede di SSB-Electronic, Messi & Paoloni, Times Microwave, CommScope Andrew, RFS, Belden, Prospecta, Qaxial, Siva Cavi, Tasker, Caledonian, SV1BSX, DD1US/EA5IP); 	C. Cerrotta IC8TEM (YAEC 케이블 데이터베이스, SSB-Electronic, Messi & Paoloni, Times Microwave, CommScope Andrew, RFS, Belden, Prospecta, Qaxial, Siva Cavi, Tasker, Caledonian, SV1BSX, DD1US/EA5IP 사양서 포함); 
+Calcola un punto su quattro e infittisce da solo dove la curva cambia in fretta; gli altri punti si stimano con funzioni razionali. 	네 점 중 한 점을 계산하고 곡선이 급변하는 곳에 스스로 점을 추가합니다; 나머지 점은 유리 함수로 추정합니다. 
+Calcolatore Pennant nelle Antenne riceventi; lettura dei .weq con fili, sorgenti e carichi esclusi, diametri AWG, funzioni di Excel e carichi RLC; 	수신 안테나의 Pennant 계산기; 제외된 와이어, 급전원, 부하, AWG 직경, Excel 함수, RLC 부하가 있는 .weq 읽기; 
+Carichi 	부하 
+Controlla ogni 3 minuti (la prima volta 10 secondi dopo l'avvio) l'ultima versione pubblicata sul GitHub; se e' piu' nuova la scarica in silenzio, ne verifica l'impronta SHA-256 	3분마다 (처음은 시작 10초 후) GitHub에 공개된 최신 버전을 확인합니다; 더 새로우면 조용히 내려받아 SHA-256 지문을 검증하고 
+Controllo dei dati [k6]: f/D 	데이터 확인 [k6]: f/D 
+Copia l'antenna del modello aperto in righe (una sopra l'altra) e colonne (affiancate, perpendicolari al lobo) con le distanze DL6WU della scheda; 	열린 모델의 안테나를 카드의 DL6WU 간격으로 행 (위아래)과 열 (나란히, 로브에 수직)로 복사합니다; 
+Correzione dei diametri a gradini e compensazione delle staffe secondo l'algoritmo di Leeson; Yagi 520-40H con e senza correzione come 	Leeson 알고리즘에 따른 계단형 직경 보정과 클램프 보정; 보정 유무별 Yagi 520-40H, 다음과 같이 
+Costanti: PI; unita' MM, CM, IN, FT; PF, NF, UF, NH, UH; diametri AWG_0 ... AWG_20.  Maiuscole e minuscole sono uguali.\n	상수: PI; 단위 MM, CM, IN, FT; PF, NF, UF, NH, UH; 직경 AWG_0 ... AWG_20.  대소문자를 구분하지 않습니다.\n
+D. Leeson W6NL (Physical Design of Yagi Antennas, ARRL 1992; SCALE / EFFLEN.FOR); ARRL Antenna Book 21a ed. (cap. 4, Tab. 7) e 24a ed. (cap. 8); 	D. Leeson W6NL (Physical Design of Yagi Antennas, ARRL 1992; SCALE / EFFLEN.FOR); ARRL Antenna Book 21판 (4장, 표 7) 및 24판 (8장); 
+DHDL di AA7JV (TX3A) e N4IS con le misure di IV3PRK (2013): verticali 6,5 m alle estremita', orizzontali 10 + 10 m a 2 m dal suolo, fili inclinati che si incrociano al centro senza toccarsi; 	AA7JV (TX3A)와 N4IS의 DHDL, IV3PRK 측정 (2013): 양 끝에 6.5 m 수직, 지면 위 2 m에 10 + 10 m 수평, 중앙에서 닿지 않고 교차하는 경사 와이어; 
+Diametri a gradini: EZNEC li calcola con la sua Stepped Diameter Correction; YA-NEC applica la correzione di Leeson 	계단형 직경: EZNEC는 자체 Stepped Diameter Correction으로 계산; YA-NEC는 Leeson 보정을 적용 
+Didascalie 	라벨 
+Differenze: Balanis ottimizza il guadagno della tromba da sola, W1GHZ l'efficienza sulla parabola; per un feed la tromba ottima di Balanis e' di solito troppo corta e larga, per questo qui si dimensiona sull'illuminazione del disco. 	차이점: Balanis는 혼 단독 이득을, W1GHZ는 접시 효율을 최적화합니다; 피드로는 Balanis 최적 혼이 보통 너무 짧고 넓어서, 여기서는 접시 조사를 기준으로 치수를 정합니다. 
+Differenze: W1GHZ calcola l'efficienza con il diagramma del feed; OE5JFL e Atkins danno solo la geometria. OK1DFC usa un disco che contiene il vertice (ibrido) per non avere un feed enorme a 1296 MHz. 	차이점: W1GHZ는 피드 패턴으로 효율을 계산하고, OE5JFL과 Atkins는 형상만 제시합니다. OK1DFC는 1296 MHz에서 거대한 피드를 피하려고 꼭짓점을 포함한 접시 (하이브리드)를 씁니다. 
+Due righe per rete: ramo serie tra le due porte e ramo parallelo sulla porta 1 o 2; in ogni ramo R, L e C sono in serie (L 0 = assente, C 0 = assente). 	회로망당 2행: 두 포트 사이 직렬 분기와 포트 1 또는 2의 병렬 분기; 각 분기에서 R, L, C는 직렬 (L 0 = 없음, C 0 = 없음). 
+E. Anderson e altri (LAPACK Users' Guide, SIAM 1999, zgetrf); G. H. Golub e C. F. Van Loan (Matrix Computations, 2013); Intel (Software Developer's Manual, VFMADDSUB); 	E. Anderson 외 (LAPACK Users' Guide, SIAM 1999, zgetrf); G. H. Golub 및 C. F. Van Loan (Matrix Computations, 2013); Intel (Software Developer's Manual, VFMADDSUB); 
+Earl Cunningham K6SE e WA1ION (Pennant); IV3PRK (RDF della Pennant); G. J. Burke, LLNL (manuale NEC-4, teoria, 1992; manuale d'uso NEC-4.2, 2011); D. B. Leeson W6NL (Physical Design of Yagi Antennas, 1992); R. Severns N6LF (QEX 2009); Fartookzadeh e altri (Radioengineering 2016); K1GQ (cocoaNEC, pagina NEC4); 	Earl Cunningham K6SE 및 WA1ION (Pennant); IV3PRK (Pennant RDF); G. J. Burke, LLNL (NEC-4 설명서, 이론, 1992; NEC-4.2 사용 설명서, 2011); D. B. Leeson W6NL (Physical Design of Yagi Antennas, 1992); R. Severns N6LF (QEX 2009); Fartookzadeh 외 (Radioengineering 2016); K1GQ (cocoaNEC, NEC4 페이지); 
+Elementi diritti lunghi almeno lambda/4; il filo centrale si divide in tubo, piastra e tubo, e sorgente e carichi del centro passano sulla piastra. 	길이 lambda/4 이상의 직선 소자; 중앙 와이어는 튜브, 플레이트, 튜브로 나뉘고, 중앙의 급전원과 부하는 플레이트로 옮겨집니다. 
+Esempi ufficiali del manuale NEC-2 nel collaudo e sorgente EX 5 (qdsrc); costanti di zint() come nell'originale; fbar() di Sommerfeld; 	테스트에 NEC-2 설명서 공식 예제와 EX 5 급전원 (qdsrc); 원본과 같은 zint() 상수; Sommerfeld fbar(); 
+Fattorizzazione LU a blocchi con le istruzioni vettoriali; sei controlli geometrici con le regole e le parole di EZNEC; terreno MININEC di EZNEC letto come GN 3 e GN 0 scritto come High Accuracy; 	벡터 명령어를 쓴 블록 LU 분해; EZNEC 규칙과 문구를 따른 6가지 형상 검사; EZNEC MININEC 지면은 GN 3으로 읽고 GN 0은 High Accuracy로 기록; 
+Formule (B = boom in lunghezze d'onda, C = frazione del diametro del boom): passante conduttivo C = 25,195 B - 229 B²; passante isolato la meta'; 	공식 (B = 파장 단위 붐, C = 붐 직경 비율): 도전성 관통 C = 25.195 B - 229 B²; 절연 관통은 그 절반; 
+Formule (DK7ZB): elemento posteriore 150/f m, anteriore 139/f m, spaziatura lambda/8; i due elementi sono alimentati con correnti uguali, l'anteriore in ritardo di 135 gradi 	공식 (DK7ZB): 후방 소자 150/f m, 전방 139/f m, 간격 lambda/8; 두 소자는 같은 크기 전류로 급전, 전방은 135도 지연 
+Formule (corrente triangolare per dipolo e monopolo corti, uniforme nel loop): dipolo Rr = 20 pi^2 (l/lambda)^2; monopolo Rr = 40 pi^2 (h/lambda)^2 = 395 (h/lambda)^2; 	공식 (짧은 다이폴과 모노폴은 삼각형 전류, 루프는 균일): 다이폴 Rr = 20 pi^2 (l/lambda)^2; 모노폴 Rr = 40 pi^2 (h/lambda)^2 = 395 (h/lambda)^2; 
+Formule (hamuniverse, Hentenna di origine giapponese): lati lambda/2, alto e basso lambda/6, barra di alimentazione a circa lambda/10 dal basso; 	공식 (hamuniverse, 일본에서 유래한 Hentenna): 변 lambda/2, 위아래 lambda/6, 급전 막대는 아래에서 약 lambda/10; 
+Formule di J. Coppens: L = n lambda x correzione del conduttore; spira grande 1,026 L, piccola 0,975 L, piu' 4 (2R - pi R / 2) per le curve; 	J. Coppens 공식: L = n lambda x 도체 보정; 큰 루프 1.026 L, 작은 루프 0.975 L, 굽힘에 4 (2R - pi R / 2) 추가; 
+Formule: L = 1/((2 pi f1)^2 C); interno = 71,3/f1; trappola alla banda bassa X = w L / (1 - (f2/f1)^2); esterno b da cot(beta b) = (X + Z0 tan(beta a)) / Z0 	공식: L = 1/((2 pi f1)^2 C); 내부 = 71.3/f1; 저역 밴드 트랩 X = w L / (1 - (f2/f1)^2); 외부 b는 cot(beta b) = (X + Z0 tan(beta a)) / Z0에서 
+Formule: Z0 = 60 (ln(2h/a) - 1); bobina X = Z0 [cot(beta (h - hc)) - tan(beta hc)] (bobina a quota hc); Rr = 160 pi^2 (heff/lambda)^2 con heff = (h + hc)/2 	공식: Z0 = 60 (ln(2h/a) - 1); 코일 X = Z0 [cot(beta (h - hc)) - tan(beta hc)] (높이 hc의 코일); Rr = 160 pi^2 (heff/lambda)^2, heff = (h + hc)/2 
+Formule: Zantenna = k Zcoassiale con k = (Ntotali/Nprimario)^2; primario con reattanza almeno 4 volte Zcoassiale alla frequenza piu' bassa: L = 4 Z / (2 pi f), N = sqrt(L/AL). 	공식: Z안테나 = k Z동축, k = (N전체/N1차)^2; 1차측 리액턴스는 최저 주파수에서 Z동축의 4배 이상: L = 4 Z / (2 pi f), N = sqrt(L/AL). 
+Formule: perimetro 1005/f piedi (F5VIF), poi allungato col NEC finche' le correnti delle due spire sono in quadratura (tamago); 	공식: 둘레 1005/f 피트 (F5VIF), 이후 두 루프 전류가 직교 위상이 될 때까지 NEC로 연장 (tamago); 
+Formule: perimetro 306,3/f m (ARRL); triangolo isoscele con angolo al vertice a: lato inclinato = P/(2 + 2 sin(a/2)), lato orizzontale = 2 s sin(a/2). 	공식: 둘레 306.3/f m (ARRL); 꼭짓점 각도 a인 이등변 삼각형: 경사 변 = P/(2 + 2 sin(a/2)), 수평 변 = 2 s sin(a/2). 
+Formule: radiatore 71,3/f; resistenza di terra dalla Tab. 9-1 di ON4UN (radiali interrati, numero e lunghezza, interpolata): 	공식: 복사기 71.3/f; 접지 저항은 ON4UN 표 9-1에서 (매설 래디얼, 개수와 길이, 보간): 
+Formule: rete L con Q = sqrt(Rmaggiore/Rminore - 1), Xserie = Q Rminore, Xparallelo = Rmaggiore/Q; Pi con resistenza virtuale Rv = Rmaggiore/(Q^2 + 1); 	공식: L 회로망 Q = sqrt(R큰값/R작은값 - 1), X직렬 = Q R작은값, X병렬 = R큰값/Q; Pi는 가상 저항 Rv = R큰값/(Q^2 + 1); 
+Formule: stilo 0,625 lambda x 0,95; reattanza da compensare con il modello a linea: X = Z0 cot(beta h), Z0 = 60 (ln(2h/a) - 1). 	공식: 휩 0.625 lambda x 0.95; 선로 모델로 보상할 리액턴스: X = Z0 cot(beta h), Z0 = 60 (ln(2h/a) - 1). 
+G. Hoch DL6WU ("Extremely Long Yagi Antennas", VHF Communications 3/1982; con PA0MS, VERON); J. Haigwood KY4Z e B. Stein W6NBI (programma BASIC 1983-86), 	G. Hoch DL6WU ("Extremely Long Yagi Antennas", VHF Communications 3/1982; PA0MS와 함께, VERON); J. Haigwood KY4Z 및 B. Stein W6NBI (BASIC 프로그램 1983-86), 
+G. J. Burke e A. J. Poggio (NEC-2 Part III, NTIS ADA956129); R. Sutherland (hf-nec2c); E. Wheeler KJ7LNW (nec2c); E. S. Harriman AE6TY (nec2c-ae6ty, SimSmith); 	G. J. Burke 및 A. J. Poggio (NEC-2 Part III, NTIS ADA956129); R. Sutherland (hf-nec2c); E. Wheeler KJ7LNW (nec2c); E. S. Harriman AE6TY (nec2c-ae6ty, SimSmith); 
+G. J. Burke e A. J. Poggio (NEC-2 Part III, sez. II); R. Lewallen W7EL (EZNEC: Geometry Check, AGT); R. L. Carrel e C. A. Balanis (tau e sigma delle LPDA); 	G. J. Burke 및 A. J. Poggio (NEC-2 Part III, II절); R. Lewallen W7EL (EZNEC: Geometry Check, AGT); R. L. Carrel 및 C. A. Balanis (LPDA의 tau와 sigma); 
+G. Marcus W3PM (QST 1/1990, tabelle delle quagi); C. Angle N6CA e M. Walters G3JVL (loop Yagi 1296 MHz, ARRL Antenna Book 24a ed. sez. 15.3.7); J. Johnson G0KSC (LFA, misure del 6 el. 144 MHz); DG7YBN e M. Steyer DK7ZB (radiatore piegato, "Design principles OWL"); 	G. Marcus W3PM (QST 1/1990, quagi 표); C. Angle N6CA 및 M. Walters G3JVL (1296 MHz 루프 Yagi, ARRL Antenna Book 24판 15.3.7절); J. Johnson G0KSC (LFA, 144 MHz 6소자 치수); DG7YBN 및 M. Steyer DK7ZB (접힌 복사기, "Design principles OWL"); 
+Geometria G3TXQ dal modello di JN1GLB: per ogni banda un esagono di raggio R; alimentato a W = R + td R per lato (dal centro al vertice a 30 gradi e lungo il lato), 	JN1GLB 모델의 G3TXQ 형상: 밴드마다 반경 R의 육각형; 급전 소자는 한쪽당 W = R + td R (중심에서 30도 꼭짓점까지, 그리고 변을 따라), 
+Hanley Strappman AG7T (Ez2Nec: struttura dei file .ez, lettura e scrittura); Dan Maguire AC6LA (formato .weq di AutoEZ, file d'esempio); 	Hanley Strappman AG7T (Ez2Nec: .ez 파일 구조, 읽기와 쓰기); Dan Maguire AC6LA (AutoEZ .weq 형식, 예제 파일); 
+I cinque radiatori della XR-5 (20-17-15-12-10 m) con i tubi di fabbrica: coassiale al 12 m, che eccita 10 e 15 m; linea da 450 ohm al 20 m, che eccita 15 e 17 m (T. Schiller N6BT). 	XR-5의 복사기 5개 (20-17-15-12-10 m), 공장 튜브 사용: 동축 케이블은 12 m에 연결되어 10 m와 15 m를 여기; 450 ohm 선로는 20 m에 연결되어 15 m와 17 m를 여기 (T. Schiller N6BT). 
+I. Pellejero, "Notes on antenna simulation using NEC-2" (ipellejero.es); L. B. Cebik W4RNL, "S-N, RCA, and MININEC Grounds" e "A Ground Is Just a Ground" (antenna2.github.io/cebik); 	I. Pellejero, "Notes on antenna simulation using NEC-2" (ipellejero.es); L. B. Cebik W4RNL, "S-N, RCA, and MININEC Grounds" 및 "A Ground Is Just a Ground" (antenna2.github.io/cebik); 
+I. White G3SEK (modifiche 1986 e correzione del boom); R. Rodrigues (trascrizione in Python, github.com/ricardorodrigues-ca/yagi-antenna-calculator, MIT); 	I. White G3SEK (1986 수정 및 붐 보정); R. Rodrigues (Python 이식, github.com/ricardorodrigues-ca/yagi-antenna-calculator, MIT); 
+IV3PRK; IK0XBX; ARRL Antenna Book 21a e 24a ed.; K. Rothammel (cap. 24); D. K. Cheng e C. A. Chen; P. P. Viezbicke (NBS TN 688); 	IV3PRK; IK0XBX; ARRL Antenna Book 21판 및 24판; K. Rothammel (24장); D. K. Cheng 및 C. A. Chen; P. P. Viezbicke (NBS TN 688); 
+Il formato dei file .maa che YA-NEC apre (risegmentati per il NEC2); i file .maa usati come esempi e casi di studio, che restano dei loro autori; 	YA-NEC가 여는 .maa 파일 형식 (NEC2용으로 재분할); 예제와 사례 연구로 쓴 .maa 파일은 원저자의 것입니다; 
+J. D. Kraus (Antennas); D. T. Emerson (NRAO, 1995); G1OJS (NECBOL, MIT); DX Commander (dxcommander.com); J. Devoldere ON4UN (Low-Band DXing); 	J. D. Kraus (Antennas); D. T. Emerson (NRAO, 1995); G1OJS (NECBOL, MIT); DX Commander (dxcommander.com); J. Devoldere ON4UN (Low-Band DXing); 
+Jose Carlos N4IS e Doug Waller NX4D (Waller Flag); Larry W7IUV e Earl Cunningham K6SE (Flag); Tobias DH1TW (descrizione della DHDL); 	Jose Carlos N4IS 및 Doug Waller NX4D (Waller Flag); Larry W7IUV 및 Earl Cunningham K6SE (Flag); Tobias DH1TW (DHDL 설명); 
+L'accordo cerca insieme tutte le misure (lunghezze; distanze dei parassiti; per l'XR-5 punte, posizioni del 17, 15 e 10 m e linea) 	튜닝은 모든 치수를 함께 탐색합니다 (길이; 무급전 소자 거리; XR-5는 끝, 17, 15, 10 m 위치와 선로) 
+L. G. Windom W8GZ (QST 1929); F. Spillner DJ2KY (FD4, QRV 1971); Belrose e Bouliane (QST 1990); C. L. Buchanan W3DZZ (QST 1955); Y. Someya JE1DEU (Hentenna, 1972); 	L. G. Windom W8GZ (QST 1929); F. Spillner DJ2KY (FD4, QRV 1971); Belrose 및 Bouliane (QST 1990); C. L. Buchanan W3DZZ (QST 1955); Y. Someya JE1DEU (Hentenna, 1972); 
+Le variabili restano nelle schede di geometria anche nel file salvato; nelle schede EX, LD, GN e FR vengono salvate come numeri.\n	변수는 저장된 파일에서도 형상 카드에 남습니다; EX, LD, GN, FR 카드에서는 숫자로 저장됩니다.\n
+Limiti solo per il modello NEC: diametro fino a 1,2 m e al massimo 12000 segmenti, cioe' circa 7 lambda: 1296 MHz 1,2 m; 2320 MHz 0,9 m; 3400 MHz 0,6 m; 5760 MHz 0,35 m; 10368 MHz 0,2 m (f/D 0,42, 16 centine). 	NEC 모델에만 적용되는 한계: 직경 1.2 m까지, 최대 12000 세그먼트, 즉 약 7 lambda: 1296 MHz 1.2 m; 2320 MHz 0.9 m; 3400 MHz 0.6 m; 5760 MHz 0.35 m; 10368 MHz 0.2 m (f/D 0.42, 리브 16개). 
+Linee 	선로 
+Linee ideali senza perdite (scheda TL del NEC-2): lunghezza 0 = distanza tra i centri dei due segmenti; 'Incrociata' = Z0 negativa (linea a fase invertita, come nelle LPDA). 	이상적 무손실 선로 (NEC-2 TL 카드): 길이 0 = 두 세그먼트 중심 간 거리; '교차' = 음의 Z0 (위상 반전 선로, LPDA와 같음). 
+Lobo, direzione, RDF e lunghezza migliore sono indicativi; l'impedenza e le perdite del modello NON sono quelle del BOG reale (200-300 ohm misurati, N4DJ e K1FZ): 	로브, 방향, RDF, 최적 길이는 참고용입니다; 모델의 임피던스와 손실은 실제 BOG 값이 아닙니다 (측정값 200-300 ohm, N4DJ 및 K1FZ): 
+Luis Mansutti IV3PRK (DHDL e DHDL broadside 2013, Waller Flag e Flag W7IUV 2007, BOG, iv3prk.it); George AA7JV e TX3A (DHDL); 	Luis Mansutti IV3PRK (DHDL 및 DHDL broadside 2013, Waller Flag 및 W7IUV Flag 2007, BOG, iv3prk.it); George AA7JV 및 TX3A (DHDL); 
+MOXGEN (Cebik): x = log10(d/lambda); A = -0,000857 x^2 - 0,00957 x + 0,33986; B = -0,00214 x^2 - 0,02036 x + 0,00829; C = 0,00181 x^2 + 0,01781 x + 0,05164; 	MOXGEN (Cebik): x = log10(d/lambda); A = -0.000857 x^2 - 0.00957 x + 0.33986; B = -0.00214 x^2 - 0.02036 x + 0.00829; C = 0.00181 x^2 + 0.01781 x + 0.05164; 
+Martin Steyer DK7ZB (HB9CV, quad); L. B. Cebik W4RNL (MOXGEN); hamuniverse.com (Hentenna); J. Kraus e C. A. Balanis 	Martin Steyer DK7ZB (HB9CV, 쿼드); L. B. Cebik W4RNL (MOXGEN); hamuniverse.com (Hentenna); J. Kraus 및 C. A. Balanis 
+Media come EZNEC: emisfero superiore diviso per tutta la sfera (4 pi). Con questa convenzione i calcoli tornano con IV3PRK e W8JI/Hi-Z (verticale 5,07 contro 5,06 e 4,9; 	EZNEC와 같은 평균: 상부 반구를 구 전체 (4 pi)로 나눔. 이 규칙으로 계산이 IV3PRK 및 W8JI/Hi-Z와 일치합니다 (수직 5.07 대 5.06 및 4.9; 
+Metodo: integrazione d'apertura con feed cos^q (o diagramma NEC del feed) e attenuazione spaziale; il blocco del feed e' sottratto al centro. 	방법: cos^q 피드 (또는 피드의 NEC 패턴)와 공간 감쇠를 쓴 개구면 적분; 피드 차폐는 중앙에서 뺍니다. 
+Misura di quanto l'antenna migliora il rapporto segnale/rumore se il rumore arriva uniforme da ogni direzione; il guadagno assoluto non conta (con un preampli si recupera). 	잡음이 모든 방향에서 균일하게 올 때 안테나가 신호 대 잡음비를 얼마나 개선하는지의 척도; 절대 이득은 중요하지 않습니다 (프리앰프로 회복). 
+Misure di N6CA (ARRL 24a ed., fig. 15.47-15.48) in lunghezze d'onda della tabella scelta, scalate alla frequenza di progetto; circonferenza = distanza tra i fori. 	N6CA 치수 (ARRL 24판, 그림 15.47-15.48), 선택한 표의 파장 단위를 설계 주파수로 환산; 둘레 = 구멍 간 거리. 
+ON6WG/F5VIF "Eggbeater Antenna VHF/UHF" (perimetro 1005/f piedi, riflettore a radiali, 1/8 lambda, RG-62 lambda/4); K5OE; 	ON6WG/F5VIF "Eggbeater Antenna VHF/UHF" (둘레 1005/f 피트, 래디얼 반사기, 1/8 lambda, RG-62 lambda/4); K5OE; 
+PULSE come in MMANA: w + numero del filo + b inizio, c centro, e fine (es. w4c); w4:7 = segmento 7. La colonna grigia mostra il segmento NEC calcolato; 	MMANA와 같은 PULSE: w + 와이어 번호 + b 시작, c 중앙, e 끝 (예: w4c); w4:7 = 세그먼트 7. 회색 열은 계산된 NEC 세그먼트를 보여 줍니다; 
+Quote minime dei fili sul terreno (lambda/10 con GN 0, lambda/1000 con Sommerfeld), massimo di circa 30 fili per giunzione, NEC-2 senza fili interrati e isolanti; 	지면 위 와이어 최소 높이 (GN 0은 lambda/10, Sommerfeld는 lambda/1000), 접합당 최대 약 30개 와이어, NEC-2는 매설 와이어와 절연체 없음; 
+R. Fry (NEC-2 User's Guide sui terreni, radiodiscussions.com, 2012); G. J. Burke e A. J. Poggio, manuale NEC-2; K1FZ (note sul BOG, qsl.net/k1fz); N4DJ; IV3PRK (BOG 63 m); 	R. Fry (지면에 관한 NEC-2 User's Guide, radiodiscussions.com, 2012); G. J. Burke 및 A. J. Poggio, NEC-2 설명서; K1FZ (BOG 노트, qsl.net/k1fz); N4DJ; IV3PRK (BOG 63 m); 
+R. Lewallen W7EL (help di EZNEC 7, Stepped Diameter Correction); W8JI e G. Ordy W8WWV (RDF); ON4UN (DMF, cap. 7 e 9, misure DJ8WL); 	R. Lewallen W7EL (EZNEC 7 도움말, Stepped Diameter Correction); W8JI 및 G. Ordy W8WWV (RDF); ON4UN (DMF, 7장 및 9장, DJ8WL 측정); 
+RDF = guadagno nella direzione voluta - guadagno medio su tutte le direzioni (W8JI; prima chiamato SNIF, anni '60). 	RDF = 원하는 방향의 이득 - 전 방향 평균 이득 (W8JI; 이전 명칭 SNIF, 1960년대). 
+Riflettore: 0,15-0,20 λ (0,2 λ allarga banda e F/B; sotto 0,15 λ la resistenza scende e la banda si stringe). Direttore: 0,10-0,12 λ. 	반사기: 0.15-0.20 λ (0.2 λ는 대역폭과 F/B를 넓힘; 0.15 λ 미만에서는 저항이 떨어지고 대역이 좁아짐). 도파기: 0.10-0.12 λ. 
+Scheda Elica con esito NEC contro Kraus ed Emerson; verticale a ventaglio con verifica per banda; IFA, MIFA, dipolo, Yagi e Big Wheel su PCB con permittivita' efficace, 	Kraus 및 Emerson 대비 NEC 결과가 있는 헬리컬 카드; 밴드별 검증이 있는 팬 수직; 실효 유전율을 쓴 PCB 위 IFA, MIFA, 다이폴, Yagi, Big Wheel, 
+Similitudini: W1GHZ e Balanis partono dallo stesso modello d'apertura (campo del modo con errore di fase quadratico); W1GHZ lo verifica con NEC2 e HFSS. 	유사점: W1GHZ와 Balanis는 같은 개구면 모델 (2차 위상 오차를 가진 모드 전계)에서 출발합니다; W1GHZ는 NEC2와 HFSS로 검증합니다. 
+Soglie dei tempi di risposta 0,1 / 1 / 10 s nel punteggio delle funzioni; uso della GPU nel registro (Windows); misure di fabbrica della XR-5 (disegno dwxr5.007); 	기능 점수의 응답 시간 임계값 0.1 / 1 / 10 s; 로그의 GPU 사용량 (Windows); XR-5 공장 치수 (도면 dwxr5.007); 
+Sorgenti 	급전원 
+Sweep in frequenza con funzioni razionali e punti infittiti dove serve; simmetrie GX e GR sfruttate nella soluzione; LD 7 di 4nec2 (filo isolato) 	유리 함수와 필요한 곳에 점을 추가한 주파수 스윕; 해에 GX와 GR 대칭 활용; 4nec2 LD 7 (절연 와이어) 
+Terreno reale: il coefficiente di riflessione (GN 0) va bene per antenne alte piu' di circa 0,2 lambda; per fili bassi, radiali sopraelevati, 	실제 지면: 반사 계수 (GN 0)는 약 0.2 lambda보다 높은 안테나에 적합합니다; 낮은 와이어, 지상 래디얼, 
+Trasformatore ideale tra due punti (come in EZNEC): Z rel. 1 e Z rel. 2 sono le impedenze che il trasformatore fa corrispondere (per esempio 600 e 100 ohm, rapporto spire 1 : 0,41); 	두 점 사이의 이상적 변압기 (EZNEC와 동일): Z rel. 1과 Z rel. 2는 변압기가 정합하는 임피던스 (예: 600과 100 ohm, 권선비 1 : 0.41); 
+Type come in MMANA: LC = trappola L e C in parallelo (L in uH, C in pF, Q della bobina, F = frequenza di risonanza; con la F indicata, cambiando L il programma ricalcola C); 	MMANA와 같은 Type: LC = L과 C 병렬 트랩 (L은 uH, C는 pF, 코일 Q, F = 공진 주파수; F를 지정하면 L을 바꿀 때 프로그램이 C를 다시 계산); 
+W. Overbeck N6NB (Quagi, QST 4/1977 e 2/1978); L. B. Cebik W4RNL ("Quagi and Yagi on 2 Meters", "Under the Limits: MININEC", "When MININEC is Superior to NEC"); 	W. Overbeck N6NB (Quagi, QST 4/1977 및 2/1978); L. B. Cebik W4RNL ("Quagi and Yagi on 2 Meters", "Under the Limits: MININEC", "When MININEC is Superior to NEC"); 
+W. W. Hansen e J. R. Woodyard ("A New Principle in Directional Antenna Design", Proc. IRE 26(3), 1938: massimo di una schiera end-fire); 	W. W. Hansen 및 J. R. Woodyard ("A New Principle in Directional Antenna Design", Proc. IRE 26(3), 1938: end-fire 배열의 최대); 
+Waller Flag (NX4D, N4IS; modello IV3PRK 2007): due anelli 4,27 x 2 m nello stesso piano, carichi 600 ohm, trasformatori 600/100, linee da 100 ohm (due RG58, VF 0,66) TL1 4 m all'anello davanti e TL2 3-7 m incrociata a quello dietro. 	Waller Flag (NX4D, N4IS; IV3PRK 2007 모델): 같은 평면의 4.27 x 2 m 루프 2개, 600 ohm 부하, 600/100 변압기, 100 ohm 선로 (RG58 2개, VF 0.66) 앞 루프로 TL1 4 m, 뒤 루프로 교차 TL2 3-7 m. 
+YB0EMJ e W4ZT (tabelle dei coassiali da 75, 93, 95, 125, 185 ohm); DX Engineering (linea LL300); Electronics World 1965 via RF Cafe (piattina 300 ohm); KV5R (VF della linea a finestra); ARRL Antenna Book; 	YB0EMJ 및 W4ZT (75, 93, 95, 125, 185 ohm 동축 케이블 표); DX Engineering (LL300 선로); Electronics World 1965 via RF Cafe (300 ohm 평행 피더); KV5R (윈도 라인 VF); ARRL Antenna Book; 
+alimentato 1,0382, D1 0,4390 lambda e poi 0,0023 lambda in meno per ognuno; spaziature 0,256 0,192 0,404 0,214 e poi 0,318 lambda. 	급전 소자 1.0382, D1 0.4390 lambda, 이후 각각 0.0023 lambda씩 감소; 간격 0.256 0.192 0.404 0.214, 이후 0.318 lambda. 
+azimut a 	방위각, 
+come filo e punto del filo (notazione w4c) elencati accanto ai fili; dall'help idee per ottimizzatore, stack, Taper wire set e strumenti. 	와이어와 와이어 위 지점 (w4c 표기)을 와이어 옆에 나열; 도움말에서 최적화기, 스택, Taper wire set, 도구에 대한 아이디어. 
+come in EZNEC; senza correzione il NEC-2 fa risuonare gli elementi a gradini circa l'1-2 % piu' in basso. Nel file .nec si scrivono i tubi veri (leggibili da tutti i programmi) 	EZNEC와 동일; 보정 없이 NEC-2는 계단형 소자를 약 1-2 % 낮게 공진시킵니다. .nec 파일에는 실제 튜브를 기록합니다 (모든 프로그램에서 읽기 가능) 
+come induttanza distribuita; EF0213 come prova del G/T, con le perdite dei conduttori nella temperatura d'antenna; 	분포 인덕턴스로; G/T 테스트로 EF0213, 안테나 온도에 도체 손실 포함; 
+entro il 15 % della loro risonanza; gli Avvisi dicono quali elementi sono stati corretti. La scelta si salva nel file (riga CM YA-NEC LEESON=1). 	공진의 15 % 이내; 경고에서 어떤 소자가 보정되었는지 알려 줍니다. 선택은 파일에 저장됩니다 (CM YA-NEC LEESON=1 행). 
+fattorizzazione LU a blocchi in parallelo; distanza minima superficie-superficie di 5 mm tra fili non collegati; avviso per estremi 	병렬 블록 LU 분해; 연결되지 않은 와이어 간 표면 최소 거리 5 mm; 다음 끝점에 대한 경고 
+fissata; 	고정; 
+lambda_g (eeff 	lambda_g (eeff 
+linea di fase lambda/4 tra le due alimentazioni, lunghezza fisica = lambda/4 x VF; rapporto delle correnti = |Z spira| / Z0 della linea; 	두 급전점 사이 λ/4 위상선, 물리적 길이 = lambda/4 x VF; 전류비 = |Z 루프| / 선로 Z0; 
+quasi coincidenti; efficienza in funzione della frequenza; anello di Faraday a maglia uniforme e prova di convergenza nella scheda Loop; 	거의 일치; 주파수에 따른 효율; 루프 카드의 균일 메시 패러데이 루프와 수렴 테스트; 
+rapporto d'impedenza = (spire)^2; reattanza del primario almeno 4 volte l'impedenza lato coassiale (ARRL); G. Guanella, "Novel Matching Systems for High Frequencies", Brown-Boveri Review sett. 1944; 	임피던스비 = (권선비)^2; 1차측 리액턴스는 동축 측 임피던스의 4배 이상 (ARRL); G. Guanella, "Novel Matching Systems for High Frequencies", Brown-Boveri Review 1944년 9월; 
+risonanza; ROS 	공진; SWR 
+stub lambda/4 errati; 	잘못된 λ/4 스터브; 
+vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e le stanze sotto non ci sono. Per l'antenna alta 	지붕 위 낮은 안테나 아래 슬래브로만 유효합니다; 용접 철망과 아래 방은 포함되지 않습니다. 높은 안테나는 
+° di elevazione;  apertura a -3 dB: 	° 앙각;  -3 dB 빔폭: 
+• ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL 19판, 10장 (Log-Yag): 반사기는 뒤 0.085 λ, 도파기는 앞 0.13-0.15 λ; 반사기가 0.08~0.25 λ 사이면 이득이 거의 변하지 않습니다. 도파기가 반사기보다 가깝다는 점은 일치; 다만 복사기는 로그 주기 셀입니다.
+• ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL 19판, 8장 (end-fire): 역위상으로 급전한 두 소자의 최대 이득은 약 0.1 λ, 실제로는 1/8과 1/4 λ; 더 좁은 간격은 이득이 거의 늘지 않고 대역을 크게 좁힙니다. 무급전이 아닌 급전 소자에 관한 것이지만, 0.1 λ 미만이 불리한 이유를 설명합니다.
+• ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book 24판 (2019), 11장 §11.3.3: 2소자는 다이폴 대비 약 4 dB, F/R 약 10 dB; 4소자 이상 최적화 Yagi에서는 반사기, 복사기, 첫 도파기가 붐 0.15-0.20 λ 안에 들어갑니다 (W2PV: 모두 0.15 λ 일정). 2소자가 아니라 최적화 Yagi에 관한 내용입니다.
