@@ -188,10 +188,10 @@ namespace YaNec
                     if (es.PiuSorgenti) cards.Children.Add(Riquadretto("ROS", "piu' sorgenti", "vedi le impedenze delle sorgenti", true));
                     else
                     {
-                        cards.Children.Add(Riquadretto("ROS minimo (" + FN(es.Z0, 0) + " Ω)", FN(es.SwrMin, 2), "a " + FN(es.FSwrMin, 3) + " MHz", true));
+                        cards.Children.Add(Riquadretto("ROS minimo (" + FN(es.Z0, 0) + " Ω)", FN(es.SwrMin, 2), Lang.F("a {0} MHz", FN(es.FSwrMin, 3)), true));
                         string lim = double.IsNaN(es.SwrMin) || es.SwrMin > 2.0 ? "ROS mai sotto 2"
                             : (double.IsNaN(es.Lim1) ? "sotto " + FN(es.Da, 3) : FN(es.Lim1, 3)) + " - " + (double.IsNaN(es.Lim2) ? "oltre " + FN(es.A, 3) : FN(es.Lim2, 3)) + " MHz";
-                        cards.Children.Add(Riquadretto("Limiti a ROS 2,0", lim, "cercati tra " + FN(es.Da, 3) + " e " + FN(es.A, 3) + " MHz", true));
+                        cards.Children.Add(Riquadretto("Limiti a ROS 2,0", lim, Lang.F("cercati tra {0} e {1} MHz", FN(es.Da, 3), FN(es.A, 3)), true));
                     }
                     cards.Children.Add(Riquadretto("Guadagno", FN(r.GmaxDbi, 2) + " dBi", FN(r.GmaxDbi - 2.15, 2) + " dBd, elevazione " + FN(r.ElevationOfMax, 0) + "°", true));
                     cards.Children.Add(Riquadretto("F/B", FN(r.FrontBack, 1) + " dB", "F/R " + FN(r.FrontRear, 1) + " dB"));
@@ -217,7 +217,7 @@ namespace YaNec
                             cards.Children.Add(Riquadretto(nome + ", ROS (NEC)", rb >= 99 ? "> 99" : FN(rb, 2),
                                 (rb <= 2 ? "✓ " : (rb <= 3 ? "accordatore interno, " : "accordatore esterno, ")) + "Z " + FN(zb.Real, 0) + (zb.Imaginary >= 0 ? " +j" : " -j") + FN(Math.Abs(zb.Imaginary), 0) + " Ω", rb <= 2));
                         }
-                    stato.Text = "aggiornato (" + FN((DateTime.Now - t0).TotalSeconds, 1) + " s) a " + FN(es.F, 3) + " MHz";
+                    stato.Text = Lang.F("aggiornato ({0} s) a {1} MHz", FN((DateTime.Now - t0).TotalSeconds, 1), FN(es.F, 3));
                 }));
             };
             avvia = (nec, z0, da, a) =>

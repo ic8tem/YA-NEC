@@ -191,7 +191,7 @@ namespace YaNec
                         cv.Children.Add(e1); cv.Children.Add(e2);
                         prof.Children.Add(new ScrollViewer { Content = cv, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto });
                     }
-                    foreach (string n0 in note) prof.Children.Add(Nota("⚠ " + n0, Pal.Orange));
+                    foreach (string n0 in note) prof.Children.Add(Nota("⚠ " + Lang.T(n0), Pal.Orange));
                 }
             }
 

@@ -46,7 +46,7 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("L", "Lunghezza del filo", 16.2, "m", "VE3EED: lunghezze consigliate 8,8 - 10,8 - 12,5 - 17,7 - 21,6 - 25,6 - 32,6 - 36,3 - 45,1 m; lontano dalle mezze onde delle bande d'uso.") { Visibile = nonRis });
             Params.Add(Vis(CalcParam.Scelta("tr", "Trasformatore", 0, "49:1 per 2000-3000 Ω (spire 7:1); 64:1 per i fili alti e gli 80 m (spire 8:1).", "49:1", "64:1"), efhw));
             Params.Add(Vis(CalcParam.Scelta("trb", "Trasformatore", 0, "9:1 trifilare (filo lungo, 300-600 Ω) o 4:1 (fili piu' corti, 100-300 Ω). Serve l'accordatore.", "9:1", "4:1"), nonRis));
-            Params.Add(Vis(CalcParam.Scelta("cp", "Contrappeso", 0, "Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore.",
+            Params.Add(Vis(CalcParam.Scelta("cp", "Contrappeso RF", 0, "Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore.",
                 "filo 0,05 λ", "calza del coassiale"), efhw));
             Params.Add(new CalcParam("cpp", "Contrappeso (% del filo)", 7.5, "%", "Con il 9:1 e il 4:1 il contrappeso va tra il 5 e il 10 % del filo principale.") { Visibile = nonRis });
             Params.Add(CalcParam.Scelta("iso", "Filo", 1, "L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).", Isolanti));
@@ -230,7 +230,7 @@ namespace YaNec.Engine
             else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", Math.Abs(Scale - 1) > 1e-6 ? "accordato con il NEC (formula " + Calcolatori.N(L0Formula, 2) + " m)" : "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 3) + ", effetto d'estremita'", true);
             else o.Card("Filo", Calcolatori.N(L, 2) + " m", "non risonante, con il " + rappTxt + " e l'accordatore", true);
             if (calza) o.Card("Choke sul coassiale", Calcolatori.N(cp, 1) + " m", "dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)");
-            else o.Card("Contrappeso", Calcolatori.N(cp, 2) + " m", nonRis ? Calcolatori.N(P("cpp"), 1) + " % del filo (5-10 %)" : "0,05 λ (AA5TB)");
+            else o.Card("Contrappeso RF", Calcolatori.N(cp, 2) + " m", nonRis ? Calcolatori.N(P("cpp"), 1) + " % del filo (5-10 %)" : "0,05 λ (AA5TB)");
             if (!nonRis)
             {
                 bool alte = false; foreach (int i in bande) if (BandeF[i] > 20) alte = true;

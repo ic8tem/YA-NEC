@@ -39,7 +39,7 @@ namespace YaNec
                 sp.Children.Add(new TextBlock { Text = "⚠ APPROSSIMAZIONE: " + approssimazione, TextWrapping = TextWrapping.Wrap, FontWeight = FontWeight.SemiBold, Foreground = new SolidColorBrush(Color.FromRgb(90, 60, 0)) });
             if (avvisi != null)
                 foreach (string a in avvisi)
-                    sp.Children.Add(new TextBlock { Text = "⚠ " + a, TextWrapping = TextWrapping.Wrap, Foreground = new SolidColorBrush(Color.FromRgb(90, 60, 0)) });
+                    sp.Children.Add(new TextBlock { Text = "⚠ " + Lang.T(a), TextWrapping = TextWrapping.Wrap, Foreground = new SolidColorBrush(Color.FromRgb(90, 60, 0)) });
             sp.Children.Add(new TextBlock { Text = "Spiegazione nel manuale, capitolo 11 (Terreni: limiti del NEC-2 e controlli geometrici).", TextWrapping = TextWrapping.Wrap, FontSize = 11.5, Foreground = new SolidColorBrush(Color.FromRgb(90, 90, 90)) });
             ToolTip.SetTip(c, new Border { Background = new SolidColorBrush(Color.FromRgb(255, 236, 153)), BorderBrush = new SolidColorBrush(Color.FromRgb(214, 168, 0)), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(4), Padding = new Thickness(8, 6), Child = sp });
         }

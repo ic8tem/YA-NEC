@@ -246,6 +246,16 @@ namespace YaNec
             return m.TryGetValue(it, out t) ? t : it;
         }
 
+        /// <summary>1.5.6: come T, ma un testo composto (numeri e pezzi noti) si traduce a frammenti, come fanno le caselle; per i disegni.</summary>
+        public static string TC(string it)
+        {
+            if (string.IsNullOrEmpty(it) || !Attiva) return it;
+            string t;
+            if (map.TryGetValue(it, out t)) return t;
+            if (valori.Contains(it)) return it;
+            return Frammenti(it) ?? it;
+        }
+
         // Testo tradotto con segnaposto {0}, {1}, ... (numeri e date secondo la cultura della lingua scelta)
         public static string F(string it, params object[] args)
         {

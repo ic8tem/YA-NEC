@@ -671,7 +671,7 @@ namespace YaNec
                     ToolTip.SetTip(kv.Value, dalModello ? "Valore preso dal modello aperto nella finestra principale (si aggiorna da solo)." : calcolato ? "Valore ricavato dagli altri dati: non si scrive (vedi la nota sotto i dati)." : (string.IsNullOrEmpty(tipo) ? null : tipo));
                 }
                 foreach (Action a in aggiornaHint) a();
-                avvDatiTesto.Text = string.IsNullOrEmpty(last.AvvisoDati) ? "" : "⚠ " + last.AvvisoDati;
+                avvDatiTesto.Text = string.IsNullOrEmpty(last.AvvisoDati) ? "" : "⚠ " + Lang.T(last.AvvisoDati);
                 avvDati.IsVisible = !string.IsNullOrEmpty(last.AvvisoDati);
                 formula.Text = last.Formula;
                 cards.Children.Clear();
@@ -703,7 +703,7 @@ namespace YaNec
                 Grid.SetColumnSpan(avvPanel, chartPanel.IsVisible ? 1 : 3);
                 chart.InvalidateVisual();
                 avv.Children.Clear();
-                foreach (string w in last.Warnings) avv.Children.Add(new TextBlock { Text = "⚠ " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Orange), FontSize = 13.5 });
+                foreach (string w in last.Warnings) avv.Children.Add(new TextBlock { Text = "⚠ " + Lang.T(w), TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Orange), FontSize = 13.5 });
                 foreach (string w in last.Oks) avv.Children.Add(new TextBlock { Text = "✓ " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Green), FontSize = 13.5 });
                 if (avv.Children.Count == 0) avv.Children.Add(new TextBlock { Text = "nessun avviso", Foreground = Pal.B(Pal.Muted) });
                 bool haNec = last.Nec != null;
@@ -1092,7 +1092,7 @@ namespace YaNec
                 cards.Children.Clear();
                 foreach (CalcCard c in last.Cards) cards.Children.Add(Riquadretto(c.Title, c.Value, c.Sub, c.Hl));
                 avv.Children.Clear();
-                foreach (string w in last.Warnings) avv.Children.Add(Nota("⚠ " + w, Pal.Orange));
+                foreach (string w in last.Warnings) avv.Children.Add(Nota("⚠ " + Lang.T(w), Pal.Orange));
                 foreach (string w in av4) avv.Children.Add(Nota("⚠ modello NEC: " + w, Pal.Yellow));
                 tab.Children.Clear();
                 tab.Children.Add(rigaTab("", new[] { "Filo", "Ampiezza", "Fase", "Tipo", "Z risultante" }));

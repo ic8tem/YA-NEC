@@ -15,7 +15,8 @@ namespace YaNec
         public static FormattedText Ft(string s, double size, Color c, FontWeight w = FontWeight.Normal)
         {
             // 0.5.3: le scritte dei disegni passano dalla traduzione (testo italiano = chiave)
-            return new FormattedText(Lang.T(s ?? ""), CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
+            return new FormattedText(Lang.TC(s ?? ""),   // 1.5.6: anche i testi composti (es. «contrappeso 2,11 m»)
+                CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
                 new Typeface(FontFamily.Default, FontStyle.Normal, w), size, new ImmutableSolidColorBrush(c));
         }
 
