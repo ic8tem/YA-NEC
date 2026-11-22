@@ -33,12 +33,13 @@ namespace YaNec.Engine
         static readonly double[] K = { 1, 2, 4, 6, 9, 16, 16, 49, 64 };
 
         // nome, AL in nH/spira^2, diametro esterno, interno, altezza (mm), polvere di ferro
-        public static readonly string[] Nuclei = { "FT-114-43", "FT-140-43", "FT-240-43", "2 x FT-240-43", "FT-240-31", "FT-240-61", "T-200-2", "T-200A-2", "T-300-2", "T-300A-2", "T-400-2", "T-400A-2", "T-200-6" };
-        static readonly double[] AL = { 510, 885, 1075, 2150, 2053, 170, 12.0, 21.8, 11.4, 22.8, 18.0, 36.0, 10.0 };
+        public static readonly string[] Nuclei = { "FT-114-43", "FT-140-43", "FT-240-43", "2 x FT-240-43", "FT-240-31", "FT-240-61", "T-200-2", "T-200A-2", "T-300-2", "T-300A-2", "T-400-2", "T-400A-2", "T-200-6", "FT-290-43", "2 x FT-290-43", "3 x FT-240-43" };   // 1.5.9: FT-290-43 (Fair-Rite 5943011101) e tre FT-240-43 in fondo, gli indici vecchi non cambiano
+        static readonly double[] AL = { 510, 885, 1075, 2150, 2053, 170, 12.0, 21.8, 11.4, 22.8, 18.0, 36.0, 10.0, 1300, 2600, 3225 };
         static readonly double[,] Dim =
         {
             { 29.0, 19.0, 7.5 }, { 35.6, 22.9, 12.7 }, { 61.0, 35.6, 12.7 }, { 61.0, 35.6, 25.4 }, { 61.0, 35.6, 12.7 }, { 61.0, 35.6, 12.7 },
-            { 50.8, 31.8, 14.0 }, { 50.8, 31.8, 25.4 }, { 77.7, 48.9, 12.7 }, { 77.7, 48.9, 25.4 }, { 101.6, 57.2, 16.5 }, { 101.6, 57.2, 33.0 }, { 50.8, 31.8, 14.0 }
+            { 50.8, 31.8, 14.0 }, { 50.8, 31.8, 25.4 }, { 77.7, 48.9, 12.7 }, { 77.7, 48.9, 25.4 }, { 101.6, 57.2, 16.5 }, { 101.6, 57.2, 33.0 }, { 50.8, 31.8, 14.0 },
+            { 73.7, 38.9, 12.7 }, { 73.7, 38.9, 25.4 }, { 61.0, 35.6, 38.1 }
         };
 
         public CalcBalun()
@@ -141,7 +142,7 @@ namespace YaNec.Engine
                         if (b.Cpf > 0) passi.Add("Condensatore da circa " + b.Cpf + " pF (ceramico, 2-3 kV) in parallelo al primario: migliora il ROS sulle bande alte.");
                         else passi.Add("Sulle bande alte il condensatore sul primario di solito non serve: provalo da 50 a 150 pF se il ROS sale sopra i 21 MHz.");
                         if (polvere) o.Warnings.Add("EFHW con polvere di ferro: la permeabilita' bassa richiede molte spire e il primario da " + p + " spire ha troppa poca induttanza; per il " + Rapporti[r] + " si usa la ferrite 43 (FT-140-43, FT-240-43).");
-                        double lim = mi == 0 ? 25 : (mi == 1 ? 100 : (mi == 3 ? 600 : 300));
+                        double lim = mi == 0 ? 25 : (mi == 1 ? 100 : (mi == 3 ? 600 : (mi == 13 ? 450 : (mi == 14 || mi == 15 ? 900 : 300))));   // 1.5.9: FT-290-43 stimato 1,5 x FT-240-43
                         if (!polvere && pw > lim) o.Warnings.Add("Potenza: con " + Nuclei[mi] + " l'EFHW regge indicativamente " + lim + " W in SSB (meno in FT8/RTTY): oltre si scalda. Usa un nucleo piu' grande o due nuclei sovrapposti.");
                         break;
                     }

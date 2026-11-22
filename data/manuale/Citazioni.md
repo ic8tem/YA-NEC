@@ -131,6 +131,7 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C111 | F. Fucelli IK0XBX, «Le mie antenne RX» (Sezione ARI di Perugia, 18/12/2018) (presentazione allegata da IC8TEM; solo citata) | Beverage, K9AY a quattro direzioni, cavo e terra | Antenne riceventi (calcolo 17) |
 | C112 | IV3PRK, «the 4-Square Rx Vertical Array, Part 2: putting all stuff together and construction details» (agosto 2008) (iv3prk.it, tutti i diritti riservati: solo citato, letto il 22/11/2026) | VF misurato, linee di ritardo, attenuatore a T, scatole, modo comune e fulmini (K4SAV, K7TJR) | Antenne riceventi (calcolo 17) |
 | C113 | P. Salas AD5X, «The 43-Foot Vertical», nella presentazione di N0CU (2016, allegata da IC8TEM; solo citata) | Rr e reattanza sui 160 m, ROS con il 4:1, perdite nel coassiale, guadagni e angoli per banda, tensione alla base | Verticale non risonante (calcolo 18) |
+| C114 | OH7SV, trasformatore EFHW 49:1 su FT-240-43 (jumaradio, letto il 22/11/2026; solo citato) | potenza per 1, 2 e 3 nuclei, per modo (continua, CW, SSB) e banda (160 m, 80 m e sopra); condensatore 47-100 pF 2 kV | Filari, nucleo automatico (calcolo 16) |
 
 ## Fonti scartate
 

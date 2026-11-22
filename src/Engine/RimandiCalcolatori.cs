@@ -66,7 +66,8 @@ namespace YaNec.Engine
                         {
                             double fb = conBob ? Math.Min(sc.P("fb"), f) : f;
                             bool s64 = sc.I("tr") == 1;
-                            r.Add(Balun(s64 ? B641 : B491, fb, 30, pw, s64 ? "Costruisci il trasformatore 64:1 ›" : "Costruisci il trasformatore 49:1 ›", nucleo));
+                            CalcFilari cf = sc as CalcFilari;   // 1.5.9: il nucleo scelto dalla scheda (anche FT-290-43 e 3 x FT-240-43)
+                            r.Add(Balun(s64 ? B641 : B491, fb, 30, pw, s64 ? "Costruisci il trasformatore 64:1 ›" : "Costruisci il trasformatore 49:1 ›", cf != null ? cf.NucleoBalun : nucleo));
                             r.Add(Choke(fb));
                             if (conBob) r.Add(new CalcRimando { Testo = "Bobina di carico ›", Voce = "carichihf", Tip = "Apre HF > Carichi HF (bobine con autorisonanza, Q, tensioni e perdite)." });
                         }

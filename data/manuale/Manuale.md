@@ -2195,6 +2195,7 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - Calcolatori > HF > Filari: pulsante **Abaco ›** con le tabelle di lunghezze e contrappesi calcolate con il NEC (EFHW 49:1 e 64:1 con e senza contrappeso, 9:1 con il contrappeso migliore), terreno medio o perfetto; una riga si copia nella scheda e poi il calcolo resta libero.
 - Filari: contrappeso «nessuno» (la calza del coassiale fino alla radio, con la sua lunghezza).
 - Filari (dopo l'uscita della 1.5.8): scelta del **nucleo del trasformatore** con le perdite misurate da DG1JAN (FT-82, FT-114, FT-140, FT-240, due Fair-Rite accoppiati, 2643251002 di MM0OPX, ideale): schede «Perdite del nucleo» (dB ed efficienza alla banda piu' bassa e a 28,5 MHz) e «Potenza nel nucleo».
+- Filari (1.5.9): nuova scelta **Modo** (FT8/RTTY, CW, SSB); «automatico» sceglie il nucleo da potenza, modo e banda piu' bassa con la tabella di OH7SV, tra 1, 2 o 3 FT-240-43 e 1 o 2 FT-290-43 (potenza stimata 1,5 volte l'FT-240-43); avviso se il nucleo scelto a mano non regge la potenza. Il pulsante «Costruisci il trasformatore» apre la scheda Balun con lo stesso nucleo.
 - Ottimizzatore, maschera VHF (dopo l'uscita della 1.5.8): temperature **uniformi come VE7BQH** o **cielo vero**.
 - Manuale di calcolo e delle fonti: nuovo capitolo 16, «Filari alimentate in punta».
 - Videocorso: nuova lezione 32 «Maschera VHF ROS + G/T».

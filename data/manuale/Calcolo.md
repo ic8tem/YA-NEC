@@ -588,6 +588,13 @@ In punta a una mezz'onda l'impedenza e' di 2000-3500 ohm: il 49:1 (spire 7:1) po
 
 Il nucleo non e' senza perdite. DG1JAN [C94] le ha misurate con un NanoVNA su un carico da 2400 ohm (perdita del nucleo = perdita di inserzione - disadattamento - carico): FT-82-43 e FT-114-43 intorno all'80 % di efficienza (circa 1 dB), FT-140-43 2/14 intorno al 79 %, FT-240-43 2/15 intorno al 75 % (71 % a 30 MHz, circa 1,2-1,5 dB), due nuclei Fair-Rite accoppiati intorno al 90 %, il Fair-Rite 2643251002 consigliato da MM0OPX per 100 W intorno al 91 %. Nel modello NEC il trasformatore e' ideale; dalla 1.5.8 la scheda Filari ha la scelta del nucleo e mostra le perdite (efficienza di DG1JAN letta sulle sue curve a 3,5, 14 e 28 MHz e interpolata, -10 log η in dB) e la potenza che scalda il nucleo, P (1 - η). Per due FT-240-43 accoppiati DG1JAN non ha misure: la scheda usa quelle di un FT-240-43 solo e lo dice.
 
+
+Potenza del nucleo (dalla 1.5.9). OH7SV [C114] da' la potenza che regge l'FT-240-43 nel trasformatore 49:1, per numero di nuclei, modo e banda: un nucleo 30 / 60 / 120 W sui 160 m e 50 / 100 / 200 W dagli 80 m in su (continua, cioe' FT8 e RTTY / CW / SSB); due nuclei 120 / 240 / 480 e 200 / 400 / 800 W; tre nuclei 270 / 540 / 1080 e 450 / 900 / 1800 W. Il condensatore di compensazione e' da 47-100 pF, 2 kV. Con «automatico» la scheda usa l'FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa, nell'ordine 1 x FT-240-43, 1 x FT-290-43, 2 x FT-240-43, 2 x FT-290-43, 3 x FT-240-43. L'FT-290-43 (Fair-Rite 5943011101, 73,7 x 38,9 x 12,7 mm, AL 1300 nH) non e' nella tabella di OH7SV ne' tra le misure di DG1JAN: la sua potenza e' stimata 1,5 volte quella dell'FT-240-43 (sezione 221 contro 162 mm², volume 39 contro 25 cm³) e l'efficienza e' presa uguale.
+
+> FORMULA: nuclei = il piu' piccolo con P(OH7SV, modo, banda) ≥ P trasmessa        P(FT-290-43) ≈ 1,5 · P(FT-240-43) (stima)
+
+Somiglianze e differenze: la regola precedente della scheda («un FT-240-43 a 30-50 W in continua, 100 W in SSB») coincide con la riga degli 80 m di OH7SV; DG1JAN misura le perdite di un solo FT-240-43 e non la potenza; OfficinaHF usa nuclei piu' piccoli a 100 W, che DG1JAN e OH7SV sconsigliano.
+
 > FORMULA: V = √(P · |Z|)        (100 W su 3300 ohm: 574 V efficaci, 812 V di picco)
 
 ### 16.3 Contrappeso

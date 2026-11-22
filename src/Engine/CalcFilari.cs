@@ -18,7 +18,44 @@ namespace YaNec.Engine
     public class CalcFilari : SimpleCalc
     {
         /// <summary>1.5.8: nuclei del trasformatore EFHW; l'efficienza e' quella misurata da DG1JAN (16/06/2023) [C94].</summary>
-        public static readonly string[] NucleiNomi = { "automatico (dalla potenza)", "FT-82-43", "FT-114-43", "FT-140-43", "FT-240-43", "2 x FT-240-43", "Fair-Rite 5943000601 + 5943001101", "Fair-Rite 2643251002 (MM0OPX)", "ideale (senza perdite)" };
+        public static readonly string[] NucleiNomi = { "automatico (potenza, modo, banda)", "FT-82-43", "FT-114-43", "FT-140-43", "FT-240-43", "2 x FT-240-43", "Fair-Rite 5943000601 + 5943001101", "Fair-Rite 2643251002 (MM0OPX)", "ideale (senza perdite)", "FT-290-43", "2 x FT-290-43", "3 x FT-240-43" };
+        public static readonly string[] Modi = { "FT8 / RTTY (continua)", "CW", "SSB" };
+
+        // 1.5.9 (IC8TEM 22/11/2026 22:49 «si ma puoi coinvolgere anche il ft-290-43»): potenza dei nuclei FT-240-43 secondo OH7SV (jumaradio),
+        // in W per modo (continua / CW / SSB), per 1, 2 e 3 nuclei, sui 160 m e dagli 80 m in su. FT-290-43 (Fair-Rite 5943011101, 73,7 x 38,9 x
+        // 12,7 mm, AL 1300): non misurato, stimato 1,5 volte l'FT-240-43 (sezione 221 contro 162 mm2, volume 39 contro 25 cm3).
+        static readonly double[,,] Oh7sv =
+        {
+            { { 30, 60, 120 }, { 50, 100, 200 } },      // 1 x FT-240-43: [160 m | 80 m e sopra][modo]
+            { { 120, 240, 480 }, { 200, 400, 800 } },   // 2 x
+            { { 270, 540, 1080 }, { 450, 900, 1800 } }, // 3 x
+        };
+        public const double Ft290SuFt240 = 1.5;
+        /// <summary>Indice in CalcBalun.Nuclei del nucleo scelto (per il pulsante «Costruisci il trasformatore»).</summary>
+        public int NucleoBalun = 2;
+
+        /// <summary>Potenza (W) che regge il nucleo nuc della scheda (indici di NucleiNomi) nel modo e sulla banda piu' bassa f; NaN se non c'e' il dato.</summary>
+        public static double PotenzaNucleo(int nuc, int modo, double f)
+        {
+            int b = f < 2.5 ? 0 : 1, m = Math.Max(0, Math.Min(2, modo));
+            switch (nuc)
+            {
+                case 4: return Oh7sv[0, b, m];
+                case 5: return Oh7sv[1, b, m];
+                case 11: return Oh7sv[2, b, m];
+                case 9: return Ft290SuFt240 * Oh7sv[0, b, m];
+                case 10: return Ft290SuFt240 * Oh7sv[1, b, m];
+                default: return double.NaN;
+            }
+        }
+
+        /// <summary>Nucleo automatico: FT-140-43 in QRP (fino a 15 W), poi il piu' piccolo tra 1 x FT-240, 1 x FT-290, 2 x FT-240, 2 x FT-290, 3 x FT-240 che regge la potenza.</summary>
+        public static int NucleoAutomatico(double pw, int modo, double f)
+        {
+            if (pw <= 15) return 3;
+            foreach (int n in new[] { 4, 9, 5, 10, 11 }) if (PotenzaNucleo(n, modo, f) >= pw) return n;
+            return 11;
+        }
 
         /// <summary>Efficienza (0-1) del nucleo alla frequenza, dalle curve di DG1JAN lette a 3,5, 14 e 28 MHz; 2 x FT-240-43 non misurato: come un FT-240-43.</summary>
         public static double EfficienzaNucleo(int nuc, double fMHz)
@@ -29,7 +66,7 @@ namespace YaNec.Engine
                 case 1: e = new[] { 0.80, 0.81, 0.81 }; break;   // FT-82-43 3/21
                 case 2: e = new[] { 0.80, 0.82, 0.80 }; break;   // FT-114-43 3/21
                 case 3: e = new[] { 0.79, 0.80, 0.78 }; break;   // FT-140-43 2/14 (Amidon)
-                case 4: case 5: e = new[] { 0.77, 0.77, 0.72 }; break;   // FT-240-43 2/15
+                case 4: case 5: case 9: case 10: case 11: e = new[] { 0.77, 0.77, 0.72 }; break;   // FT-240-43 2/15 (FT-290-43 e 3 nuclei: non misurati, come l'FT-240-43)
                 case 6: e = new[] { 0.90, 0.88, 0.86 }; break;   // 5943000601 + 5943001101 3/21
                 case 7: e = new[] { 0.92, 0.92, 0.88 }; break;   // 2643251002 2/15
                 default: return 1;
@@ -74,8 +111,9 @@ namespace YaNec.Engine
             Params.Add(CalcParam.Scelta("iso", "Filo", 1, "L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).", Isolanti));
             Params.Add(new CalcParam("d", "ø del filo", 1.0, "mm"));
             Params.Add(new CalcParam("pw", "Potenza", 100, "W"));
+            Params.Add(Vis(CalcParam.Scelta("modo", "Modo", 2, "Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.", Modi), () => I("tipo") != 2));
             // 1.5.8 (IC8TEM 22/11/2026 21:02 «concordo provvedi»): il trasformatore non e' ideale; efficienza dei nuclei misurata da DG1JAN [C94]
-            Params.Add(Vis(CalcParam.Scelta("nuc", "Nucleo del trasformatore", 0, "Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: il nucleo dalla potenza (FT-140-43 fino a 15 W, FT-240-43 fino a 120 W, due FT-240-43 sopra).", NucleiNomi), efhw));
+            Params.Add(Vis(CalcParam.Scelta("nuc", "Nucleo del trasformatore", 0, "Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).", NucleiNomi), efhw));
             Params.Add(new CalcParam("disp", "Disposizione", 0, "") { Choices = Disposizioni, Pillole = true, Sezione = "2 · Disposizione" });
             Func<int, Func<bool>> d = k => () => I("disp") == k;
             Params.Add(new CalcParam("ha", "Altezza del trasformatore", 1.5, "m") { Visibile = d(0), Sezione = "3 · Altezze" });
@@ -287,16 +325,26 @@ namespace YaNec.Engine
             o.Card("Tensione in punta", Calcolatori.N(v, 0) + " V", "efficaci a " + Calcolatori.N(pw, 0) + " W (" + Calcolatori.N(v * Math.Sqrt(2), 0) + " V di picco)");
             if (nessuno) o.Card("Choke sul coassiale", "nessuno", "la calza fa da contrappeso");
             else if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
-            int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);   // FT-140-43, FT-240-43, 2 x FT-240-43 (indici della scheda Balun: 1, 2, 3)
+            int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);   // filo non risonante: FT-140-43, FT-240-43, 2 x FT-240-43 (indici della scheda Balun: 1, 2, 3)
             string[] nomiNucleo = { "", "FT-140-43", "FT-240-43", "2 x FT-240-43" };
-            int nuc = nonRis ? 0 : I("nuc");
-            if (nuc == 3) nucleo = 1; else if (nuc == 4) nucleo = 2; else if (nuc == 5) nucleo = 3;
-            string nomeNuc = nuc == 0 || nonRis ? nomiNucleo[nucleo] : NucleiNomi[nuc];
-            o.Card("Nucleo del trasformatore", nomeNuc, nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1, spire in Balun / Un-Un" : "rapporto spire 7:1, spire in Balun / Un-Un"));
+            int nuc = nonRis ? 0 : I("nuc"), modo = Math.Max(0, Math.Min(2, I("modo")));
+            double fNuc = conBob ? Math.Min(fb, fBassa) : fBassa;
+            // 1.5.9: EFHW, nucleo automatico da potenza, modo e banda piu' bassa (OH7SV), anche FT-290-43 e 3 x FT-240-43
+            int nucEff = nonRis ? 0 : (nuc == 0 ? NucleoAutomatico(pw, modo, fNuc) : nuc);
+            string nomeNuc = nonRis ? nomiNucleo[nucleo] : NucleiNomi[nucEff];
+            NucleoBalun = Array.IndexOf(CalcBalun.Nuclei, nomeNuc);
+            if (NucleoBalun < 0) NucleoBalun = nonRis ? nucleo : (nucEff == 1 || nucEff == 2 ? 0 : 2);   // FT-82/FT-114 -> FT-114-43; Fair-Rite -> FT-240-43
+            double regge = nonRis ? double.NaN : PotenzaNucleo(nucEff, modo, fNuc);
+            string bandaNuc = fNuc < 2.5 ? "sui 160 m" : "dagli 80 m in su";
+            string subNuc = nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1" : "rapporto spire 7:1") +
+                (!double.IsNaN(regge) ? "; regge " + Calcolatori.N(regge, 0) + " W in " + Modi[modo] + " " + bandaNuc + (nucEff == 9 || nucEff == 10 ? " (stima: 1,5 x FT-240-43)" : " (OH7SV)") : ", spire in Balun / Un-Un");
+            o.Card("Nucleo del trasformatore", nomeNuc, subNuc, !double.IsNaN(regge) && regge < pw);
+            if (!double.IsNaN(regge) && regge < pw)
+                o.Warnings.Add("Con " + nomeNuc + " OH7SV indica al massimo " + Calcolatori.N(regge, 0) + " W in " + Modi[modo] + " " + bandaNuc + ": a " + Calcolatori.N(pw, 0) + " W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.");
+            if (nucEff == 9 || nucEff == 10) o.Oks.Add("FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)");
             if (!nonRis)
             {
                 // 1.5.8: perdite del nucleo (DG1JAN): guadagno da togliere e potenza che scalda il nucleo, alla banda piu' bassa e a 28 MHz
-                int nucEff = nuc == 0 ? (nucleo == 1 ? 3 : 4) : nuc;
                 double e1 = EfficienzaNucleo(nucEff, fBassa), e2 = EfficienzaNucleo(nucEff, 28.5);
                 if (nucEff == 8) o.Card("Perdite del nucleo", "0 dB", "trasformatore ideale (come nel modello NEC)");
                 else
@@ -428,8 +476,7 @@ namespace YaNec.Engine
             o.Formula = fz + " Fonti: " + Source + ".";
             if (nessuno) o.Warnings.Add("Senza contrappeso la corrente torna sulla calza del coassiale fino alla radio: il coassiale irradia, porta RF in stazione e cambia il ROS con la sua lunghezza (I3RKE).");
             if (calza) o.Warnings.Add("Con la calza come contrappeso il coassiale fino al choke irradia: tienilo lontano dalla casa e non mettere il choke sul trasformatore (I3RKE).");
-            if (!nonRis && pw > 50 && nucleo == 2) o.Warnings.Add("Con un solo FT-240-43 il funzionamento continuo (FT8, RTTY) va tenuto tra 30 e 50 W; 100 W in SSB.");
-            if (pw > 15 && pw <= 120 && nucleo == 2 && !nonRis) o.Oks.Add("FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)");
+            if (pw > 15 && !nonRis && (nucEff == 4 || nucEff == 5 || nucEff >= 9)) o.Oks.Add("FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)");
             if (v > 400) o.Warnings.Add("In punta ci sono " + Calcolatori.N(v, 0) + " V efficaci: isolatore buono e filo lontano da persone e rami.");
             if (tipo == 0) o.Oks.Add("le bande armoniche cadono un po' piu' in basso: la tabella mostra il ROS che resta (TF5NN)");
             if (conBob) { if (Math.Abs(Scale - 1) < 1e-6) o.Warnings.Add("La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno."); }

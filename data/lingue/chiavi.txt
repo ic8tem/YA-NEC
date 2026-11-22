@@ -7115,3 +7115,17 @@ Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)
 Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)
 ROS sul cavo 
  pF (ceramico, 2-3 kV) in parallelo al primario: migliora il ROS sulle bande alte.
+automatico (potenza, modo, banda)
+FT8 / RTTY (continua)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).
+; regge 
+ W in 
+ sui 160 m
+dagli 80 m in su
+ (stima: 1,5 x FT-240-43)
+, spire in Balun / Un-Un
+ OH7SV indica al massimo 
+: a 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)

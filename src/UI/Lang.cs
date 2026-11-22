@@ -111,13 +111,14 @@ namespace YaNec
         // codice canonico (pt-BR, zh-TW con le maiuscole giuste) o null
         static string Canonical(string code) { int i = IndexOf(code); return i < 0 ? null : Languages[i][0]; }
 
-        // Lingua all'avvio: quella salvata in config.ini (chiave "lingua"); al primo avvio quella del sistema, se prevista, altrimenti l'italiano
+        // Lingua all'avvio: quella salvata in config.ini (chiave "lingua"); al primo avvio quella del sistema, se prevista, altrimenti
+        // l'inglese (1.5.9, IC8TEM 22/11/2026 22:47: «parti con la lingua che rilevi dal sistema operativo, se non la riconosci parti dall'inglese»)
         public static void Init(string saved)
         {
             string code = Canonical((saved ?? "").Trim());
             if (code == null)
             {
-                code = "it";
+                code = "en";
                 try
                 {
                     CultureInfo ui = CultureInfo.CurrentUICulture;
