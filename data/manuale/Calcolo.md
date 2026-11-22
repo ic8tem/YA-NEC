@@ -72,6 +72,51 @@ YA-NEC calcola con il NEC-2 (nec2c) e non ha un motore MININEC. I due metodi ris
 
 **Prova di lettura (riga di comando «YA-NEC --converti <cartella> <uscita>»).** Ogni modello si legge, si calcola con YA-NEC, si scrive in .nec e si ricalcola con nec2c. Novembre 2026: 61 .weq di IC8TEM, 198 modelli degli archivi (AutoEZ, MultiNEC, MMANA, Modeling, mynec4pc) e 116 .yag (zipyagi, Hy-Gain). Entro lo 0,5 % da nec2c tranne: le Yagi con impedenza di pochi ohm (scarti di 0,03-0,07 Ω), i modelli con la correzione dei tubi a gradini (YA-NEC applica Leeson, nec2c no) e i modelli su terreno di Sommerfeld (1,35-2 %; con terreno perfetto, coefficiente di riflessione o spazio libero gli stessi modelli stanno entro lo 0,14 %, quindi la differenza è nel calcolo di Sommerfeld, da studiare).
 
+### 1.7 Come e' stato modificato il motore (dalla 0.4 alla 1.5.9)
+
+Il punto di partenza e' nec2c 1.3 di N. Kyriazis 5B4AZ [C1], tradotto in C# routine per routine (geometria, matrice, campi, campo lontano, SOMNEC). Ogni modifica e' stata confrontata con nec2c, con necpp [C2] e, dove serviva, con il listato Fortran del NEC-2 [C3]; l'autotest (1.4) e il collaudo dei modelli d'archivio la verificano a ogni compilazione. Le modifiche sono di tre tipi.
+
+**A. Difetti di nec2c corretti come nel NEC-2 originale.** I risultati cambiano solo nei casi colpiti dal difetto.
+
+| Routine | Difetto di nec2c | Correzione in YA-NEC | Dalla |
+|---|---|---|---|
+| zint (perdite del filo, LD 5) | mancano due «return»: vale sempre la terza formula, giusta solo con l'effetto pelle molto marcato; fili sottili o poco conduttivi perdono troppo poco | le tre formule come nel listato; costanti cc5 e CN dal listato ZINT (Part III, via hf-nec2c [C116]) | 0.4.2 |
+| evlua (Sommerfeld) | se rmis > 4 rho / zph il cammino sotto i punti di diramazione e' saltato: integrale incompleto | il cammino del Fortran; sul mare, fili a 0,2-1 λ, fino al 5 % di impedenza | 0.4.38 |
+| intrp (Sommerfeld) | in uno sweep tiene i coefficienti della frequenza precedente | coefficienti azzerati a ogni frequenza | 0.4.2 |
+| rom2 (campo del terreno) | dimezzamenti del passo limitati dal numero di segmenti | limite 65536 come nel Fortran | 0.4.2 |
+| qdsrc (sorgente EX 5) | mancava la caduta sul carico del segmento | aggiunta, per gli esempi del manuale NEC-2 Part III | 0.4.2 |
+| SC dopo SP (superfici) | il NEC-2 le accetta, nec2c si ferma | YA-NEC non tratta ancora le superfici (lo dice con un errore chiaro) | - |
+
+**B. Parti numeriche riscritte: stesso risultato, piu' veloce o piu' robusto.**
+
+| Parte | Come in nec2c | Come in YA-NEC | Dalla |
+|---|---|---|---|
+| Soluzione [Z][I] = [V] | LU colonna per colonna | LU a blocchi con pivot parziale, istruzioni vettoriali per i prodotti complessi, in parallelo (idea di E. S. Harriman AE6TY, nec2c-ae6ty [C115]; LAPACK [C29]); la LU classica resta attivabile per i confronti | 0.4.20 |
+| Riempimento della matrice | un processore | in parallelo, un blocco di segmenti per thread; vettori di appoggio di efld e rom2 creati una volta per thread (la Butternut da 1453 segmenti allocava 3,1 GB) | 0.4.2, 0.4.20 |
+| Simmetrie GX e GR | stesso metodo | soluzione in forma di gruppo; i blocchi grandi si fattorizzano uno dopo l'altro | 0.4.2, 0.4.30 |
+| Campo lontano | un processore | una riga di elevazione per processore, seni e coseni per somma degli angoli | 0.4.2 |
+| Sweep in frequenza | un calcolo per frequenza | funzioni razionali (MBPE, Burke e Miller) con punti infittiti dove due stime non concordano [C57]; punti in parallelo entro un quarto della memoria | 0.4.2, 0.4.14 |
+| Tabelle di Sommerfeld | ricalcolate a ogni modello | conservate per terreno e frequenza (fino a 64) | 0.4.20 |
+| Linea TL lunga un multiplo di mezz'onda | ammettenza infinita | lunghezza spostata di una parte su un milione, come nec2c e 4nec2 (hrs_441.nec) | 0.4.8 |
+
+**C. Aggiunte e scelte di YA-NEC, sempre dichiarate negli avvisi.**
+
+| Aggiunta | Cosa fa | Dalla |
+|---|---|---|
+| Velocita' della luce | 299,792458 come EZNEC invece di 299,8 del NEC-2: lo scarto di fondo con EZNEC scende dallo 0,25 % allo 0,002 %, la loop magnetica MAGLOOP2 dal 4 allo 0,1 %; le prove con nec2c usano 299,8 | 0.4.30 |
+| Correzione di Leeson | diametri a gradini come la Stepped Diameter Correction di EZNEC (capitolo 4) | 0.4 |
+| Schermo di radiali (GN con NRADL) | anche nel campo lontano, come nec2c | 0.4.30 |
+| Terreno «MiniNec» (GN 3 di 4nec2) | impedenza su terreno perfetto, diagramma con er e sigma: per leggere i file EZNEC e per la verticale da 43 piedi con i radiali interrati | 1.5, 1.5.9 |
+| Carichi e sorgenti di 4nec2 | LD 6 (trappola LC), LD 7 (filo isolato, metodo di Cebik), EX 6 (sorgenti di corrente) | 0.4, 1.5.6 |
+| Giunzioni come il NEC-4 (opzione, spenta) | carica alle giunzioni da un piccolo calcolo dei momenti e corrente sulla superficie del segmento sorgente, dal manuale di teoria del NEC-4 (Burke 1992) senza codice NEC-4 | 1.2.0 |
+| Efficienza delle strutture ad alto Q | se il bilancio Re(V I*) da' efficienza negativa (loop magnetica) si usa Prad / (Prad + perdite), con un avviso | 0.4.30 |
+| Controlli dei dati | quote minime dei fili sul terreno, giunzioni affollate, fili vicini, segmentazione e AGT (capitolo 2) | 0.4.18 |
+| Frequenza senza scheda FR | 299,7925 MHz (lambda = 1 m) come il NEC-2, prima 144,3 MHz: i modelli di W1GHZ scritti in lunghezze d'onda coincidono con nec2c | 1.5.9 |
+
+**Cosa non e' cambiato.** Le formule del metodo dei momenti (funzioni di base, nucleo sottile ed esteso, campi vicini e lontani, Sommerfeld-Norton) sono quelle del NEC-2: YA-NEC non ha un motore MININEC (1.5) e non ha il codice del NEC-4. Le superfici (SP, SM, SC) non ci sono ancora.
+
+**Confronto con gli altri motori derivati dal NEC-2.** nec2-rs di UR3PKI [C117] (Rust, licenza MIT) elenca dieci punti in cui nec2c si scosta dal Fortran: zint, evlua, intrp e rom2 YA-NEC li aveva gia' corretti allo stesso modo; restano da valutare il criterio di convergenza di gshank (|re| + |im| nel Fortran), la contabilita' delle perdite di rete con piu' sorgenti, le condizioni del nucleo esteso in qdsrc e nefld, e le superfici. hf-nec2c di R. Sutherland [C116] e nec2c-ae6ty di AE6TY [C115] sono le fonti delle costanti di zint e della LU a blocchi; xnec2c, nec2c-windows e le altre copie di nec2c non hanno differenze di calcolo.
+
 ## 2. Segmentazione, AGT, convergenza
 
 ### 2.1 Limiti della guida del NEC-2
