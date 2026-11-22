@@ -17,6 +17,27 @@ namespace YaNec.Engine
 {
     public class CalcFilari : SimpleCalc
     {
+        /// <summary>1.5.8: nuclei del trasformatore EFHW; l'efficienza e' quella misurata da DG1JAN (16/06/2023) [C94].</summary>
+        public static readonly string[] NucleiNomi = { "automatico (dalla potenza)", "FT-82-43", "FT-114-43", "FT-140-43", "FT-240-43", "2 x FT-240-43", "Fair-Rite 5943000601 + 5943001101", "Fair-Rite 2643251002 (MM0OPX)", "ideale (senza perdite)" };
+
+        /// <summary>Efficienza (0-1) del nucleo alla frequenza, dalle curve di DG1JAN lette a 3,5, 14 e 28 MHz; 2 x FT-240-43 non misurato: come un FT-240-43.</summary>
+        public static double EfficienzaNucleo(int nuc, double fMHz)
+        {
+            double[] e;   // a 3,5 / 14 / 28 MHz
+            switch (nuc)
+            {
+                case 1: e = new[] { 0.80, 0.81, 0.81 }; break;   // FT-82-43 3/21
+                case 2: e = new[] { 0.80, 0.82, 0.80 }; break;   // FT-114-43 3/21
+                case 3: e = new[] { 0.79, 0.80, 0.78 }; break;   // FT-140-43 2/14 (Amidon)
+                case 4: case 5: e = new[] { 0.77, 0.77, 0.72 }; break;   // FT-240-43 2/15
+                case 6: e = new[] { 0.90, 0.88, 0.86 }; break;   // 5943000601 + 5943001101 3/21
+                case 7: e = new[] { 0.92, 0.92, 0.88 }; break;   // 2643251002 2/15
+                default: return 1;
+            }
+            double f = Math.Max(3.5, Math.Min(28, fMHz));
+            return f <= 14 ? e[0] + (e[1] - e[0]) * (f - 3.5) / 10.5 : e[1] + (e[2] - e[1]) * (f - 14) / 14;
+        }
+
         public static readonly string[] Tipi = { "EFHW multibanda", "EFHW monobanda", "Filo non risonante" };   // 22/11/2026: la bobina e' una scelta dell'EFHW (IC8TEM)
         public static readonly string[] Disposizioni = { "inclinata dal basso", "inclinata dall'alto", "verticale", "L rovesciata", "U rovesciata", "tutto dritto" };
         static readonly string[] Isolanti = { "nudo", "isolato in PVC", "isolato in PE / PTFE" };
@@ -53,6 +74,8 @@ namespace YaNec.Engine
             Params.Add(CalcParam.Scelta("iso", "Filo", 1, "L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).", Isolanti));
             Params.Add(new CalcParam("d", "ø del filo", 1.0, "mm"));
             Params.Add(new CalcParam("pw", "Potenza", 100, "W"));
+            // 1.5.8 (IC8TEM 22/11/2026 21:02 «concordo provvedi»): il trasformatore non e' ideale; efficienza dei nuclei misurata da DG1JAN [C94]
+            Params.Add(Vis(CalcParam.Scelta("nuc", "Nucleo del trasformatore", 0, "Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: il nucleo dalla potenza (FT-140-43 fino a 15 W, FT-240-43 fino a 120 W, due FT-240-43 sopra).", NucleiNomi), efhw));
             Params.Add(new CalcParam("disp", "Disposizione", 0, "") { Choices = Disposizioni, Pillole = true, Sezione = "2 · Disposizione" });
             Func<int, Func<bool>> d = k => () => I("disp") == k;
             Params.Add(new CalcParam("ha", "Altezza del trasformatore", 1.5, "m") { Visibile = d(0), Sezione = "3 · Altezze" });
@@ -266,7 +289,23 @@ namespace YaNec.Engine
             else if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
             int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);   // FT-140-43, FT-240-43, 2 x FT-240-43 (indici della scheda Balun: 1, 2, 3)
             string[] nomiNucleo = { "", "FT-140-43", "FT-240-43", "2 x FT-240-43" };
-            o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1, spire in Balun / Un-Un" : "rapporto spire 7:1, spire in Balun / Un-Un"));
+            int nuc = nonRis ? 0 : I("nuc");
+            if (nuc == 3) nucleo = 1; else if (nuc == 4) nucleo = 2; else if (nuc == 5) nucleo = 3;
+            string nomeNuc = nuc == 0 || nonRis ? nomiNucleo[nucleo] : NucleiNomi[nuc];
+            o.Card("Nucleo del trasformatore", nomeNuc, nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1, spire in Balun / Un-Un" : "rapporto spire 7:1, spire in Balun / Un-Un"));
+            if (!nonRis)
+            {
+                // 1.5.8: perdite del nucleo (DG1JAN): guadagno da togliere e potenza che scalda il nucleo, alla banda piu' bassa e a 28 MHz
+                int nucEff = nuc == 0 ? (nucleo == 1 ? 3 : 4) : nuc;
+                double e1 = EfficienzaNucleo(nucEff, fBassa), e2 = EfficienzaNucleo(nucEff, 28.5);
+                if (nucEff == 8) o.Card("Perdite del nucleo", "0 dB", "trasformatore ideale (come nel modello NEC)");
+                else
+                {
+                    o.Card("Perdite del nucleo", Calcolatori.N(-10 * Math.Log10(e1), 2) + " dB", Calcolatori.N(e1 * 100, 0) + " % di efficienza a " + Calcolatori.N(fBassa, 1) + " MHz, " + Calcolatori.N(e2 * 100, 0) + " % a 28,5 MHz (DG1JAN" + (nucEff == 5 ? ", misura di un FT-240-43 solo" : "") + ")", e1 < 0.8);
+                    o.Card("Potenza nel nucleo", Calcolatori.N(pw * (1 - e1), 0) + " W", "a " + Calcolatori.N(pw, 0) + " W; si toglie al guadagno e scalda il nucleo (FT8 e RTTY al 100 % del tempo)");
+                    if (pw * (1 - e1) > 15) o.Warnings.Add("Il nucleo dissipa circa " + Calcolatori.N(pw * (1 - e1), 0) + " W: nei modi digitali scalda. Nuclei con meno perdite: due Fair-Rite accoppiati o il 2643251002 (MM0OPX), circa 90 % (DG1JAN).");
+                }
+            }
 
             // ---- tabella per banda (modello TF5NN, filo su terra ideale)
             {

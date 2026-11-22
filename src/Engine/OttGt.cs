@@ -26,6 +26,13 @@ namespace YaNec.Engine
         public double NfDb = 0.25, GuadagnoPreDb = 20, CavoDopoDb = 2;
         public bool Veloce = true;
         public int PassoGradi = 3;
+        // 1.5.8 (IC8TEM 22/11/2026 21:01 «aggiungi»): cielo vero invece delle temperature uniformi. Stessa mappa e stesso calcolo della
+        // pagina Rumore dal cielo vero (CieloVero.Tpattern, Haslam 408 MHz scalata, G8ONH): QTH, ora UTC, azimut; elevazione = Elevazione;
+        // sotto l'orizzonte TterrenoVero.
+        public bool CieloVero;
+        public MappaCielo Mappa;
+        public double Lat, Lon, Azimut = 270, TterrenoVero = 290;
+        public DateTime Ora = DateTime.UtcNow;
 
         /// <summary>Temperature uniformi della linguetta Rumore/GT/Stack (TANT, VE7BQH) per la frequenza.</summary>
         public static void Temperature(double fMHz, out double cielo, out double terreno)
@@ -39,6 +46,7 @@ namespace YaNec.Engine
     {
         public double GtSys = double.NaN, GtAnt = double.NaN, Tant = double.NaN, Tsys = double.NaN, Gstack = double.NaN, Gsingola = double.NaN;
         public double GtSingola = double.NaN, Dv = double.NaN, Dh = double.NaN, HpbwEl = double.NaN, HpbwAz = double.NaN;
+        public double TcieloVero = double.NaN;   // parte del diagramma con il cielo vero (K), se scelto
         public bool ConNec;
     }
 
@@ -66,6 +74,11 @@ namespace YaNec.Engine
             res.Gsingola = r.Engine.Gain(thF, phF).GainTotal;
             GtResult singola = NoiseGt.Gt(r.Grid, thF, phF, res.Gsingola, s.Elevazione, s.Tcielo, s.Tterreno, 0, s.NfDb, true, eff);
             res.GtSingola = singola.GtAnt;
+            if (s.CieloVero && s.Mappa != null)
+            {
+                CieloRisultato cs = YaNec.Engine.CieloVero.Tpattern(r.Grid, thF, phF, s.Mappa, f, s.Lat, s.Lon, s.Ora, s.Azimut, s.Elevazione, s.TterrenoVero);
+                res.GtSingola = res.Gsingola - 10 * Math.Log10(Math.Max(1e-9, cs.Tpattern + singola.Tloss));
+            }
             PatternGrid gs;
             double gst, effs = eff;
             if (n == 1) { gs = r.Grid; gst = res.Gsingola; }
@@ -111,8 +124,15 @@ namespace YaNec.Engine
             GtResult x = NoiseGt.Gt(gs, thF, phF, gst, s.Elevazione, s.Tcielo, s.Tterreno, s.PerditePrima, s.NfDb, true, effs);
             res.Tant = x.Tant;
             res.GtAnt = x.GtAnt;
+            if (s.CieloVero && s.Mappa != null)
+            {
+                CieloRisultato cv = YaNec.Engine.CieloVero.Tpattern(gs, thF, phF, s.Mappa, f, s.Lat, s.Lon, s.Ora, s.Azimut, s.Elevazione, s.TterrenoVero);
+                res.TcieloVero = cv.Tpattern;
+                res.Tant = cv.Tpattern + x.Tloss;
+                res.GtAnt = gst - 10 * Math.Log10(Math.Max(1e-9, res.Tant));
+            }
             double tcavo = 290 * (Math.Pow(10, s.CavoDopoDb / 10) - 1);
-            res.Tsys = x.Tant + x.Tpre + tcavo / Math.Pow(10, s.GuadagnoPreDb / 10);
+            res.Tsys = res.Tant + x.Tpre + tcavo / Math.Pow(10, s.GuadagnoPreDb / 10);
             res.GtSys = gst - 10 * Math.Log10(Math.Max(1e-9, res.Tsys));
             return res;
         }

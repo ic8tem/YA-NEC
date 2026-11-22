@@ -645,7 +645,7 @@ namespace YaNec
             o.Principale = ottFreqPrinc;
             o.MantieniBoom = ottBoom;
             o.Simplesso = ottSimplesso;
-            OttGtLeggi(o);   // 1.5.8
+            if (!OttGtLeggi(o)) return false;   // 1.5.8
             return true;
         }
 

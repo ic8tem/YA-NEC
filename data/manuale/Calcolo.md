@@ -351,7 +351,7 @@ Nel modo veloce lo stack e' il diagramma NEC della singola per il fattore di sch
 
 > FORMULA: Tsys = Tant + Tpre + Tcavo / Gpre        Tcavo = 290 · (10^(L/10) - 1)        G/T = G_stack - 10 · log(Tsys)
 
-Tant comprende il diagramma, le perdite prima del preamplificatore (combinatore) e quelle dei conduttori (efficienza del NEC). Con 20 dB di preamplificatore, 2 dB di cavo dopo di esso aggiungono 1,7 K. Il punteggio del voto e' 1 / (1 + e^(-(G/T - G/T0) / 0,5 dB)), G/T0 quello di partenza; con una soglia in dB/K, raggiunta la soglia vale 1.
+Tant comprende il diagramma, le perdite prima del preamplificatore (combinatore) e quelle dei conduttori (efficienza del NEC). Con 20 dB di preamplificatore, 2 dB di cavo dopo di esso aggiungono 1,7 K. Con il **cielo vero** (dalla 1.5.8) la parte del diagramma Tpattern viene da CieloVero.Tpattern (8.3: mappa di Haslam scalata, vista dal QTH all'ora data, puntamento in azimut ed elevazione, 290 K sotto l'orizzonte) al posto delle temperature uniformi; Tloss e la catena di ricezione restano uguali. Il punteggio del voto e' 1 / (1 + e^(-(G/T - G/T0) / 0,5 dB)), G/T0 quello di partenza; con una soglia in dB/K, raggiunta la soglia vale 1.
 
 ## 9. Stack VHF/UHF
 
@@ -586,7 +586,7 @@ L'effetto d'estremita', in mezze onde, e' e = 0,0464 − 0,003 · ln(λ / a) (mi
 
 In punta a una mezz'onda l'impedenza e' di 2000-3500 ohm: il 49:1 (spire 7:1) porta 2450 ohm a 50 ohm, il 64:1 (8:1) porta 3200 ohm. Nel modello il trasformatore e' ideale e il ROS e' riferito a 50 x rapporto. Il condensatore sul primario (100 pF con il 49:1, 150 pF con il 64:1, almeno 1 kV) compensa l'induttanza dispersa del trasformatore e abbassa il ROS sulle bande alte [C94] [C96]; non sostituisce il contrappeso. Il rapporto spire e' √(Za / 50) [C88]: AA5TB trova con misure e modelli che l'8:1 (64:1) da' il ROS piu' stabile al variare del contrappeso.
 
-Il nucleo non e' senza perdite. DG1JAN [C94] le ha misurate con un NanoVNA su un carico da 2400 ohm (perdita del nucleo = perdita di inserzione - disadattamento - carico): FT-82-43 e FT-114-43 intorno all'80 % di efficienza (circa 1 dB), FT-140-43 2/14 intorno al 79 %, FT-240-43 2/15 intorno al 75 % (71 % a 30 MHz, circa 1,2-1,5 dB), due nuclei Fair-Rite accoppiati intorno al 90 %, il Fair-Rite 2643251002 consigliato da MM0OPX per 100 W intorno al 91 %. Nel modello il trasformatore e' ideale: queste perdite vanno sottratte al guadagno e scaldano il nucleo, soprattutto nei modi digitali.
+Il nucleo non e' senza perdite. DG1JAN [C94] le ha misurate con un NanoVNA su un carico da 2400 ohm (perdita del nucleo = perdita di inserzione - disadattamento - carico): FT-82-43 e FT-114-43 intorno all'80 % di efficienza (circa 1 dB), FT-140-43 2/14 intorno al 79 %, FT-240-43 2/15 intorno al 75 % (71 % a 30 MHz, circa 1,2-1,5 dB), due nuclei Fair-Rite accoppiati intorno al 90 %, il Fair-Rite 2643251002 consigliato da MM0OPX per 100 W intorno al 91 %. Nel modello NEC il trasformatore e' ideale; dalla 1.5.8 la scheda Filari ha la scelta del nucleo e mostra le perdite (efficienza di DG1JAN letta sulle sue curve a 3,5, 14 e 28 MHz e interpolata, -10 log η in dB) e la potenza che scalda il nucleo, P (1 - η). Per due FT-240-43 accoppiati DG1JAN non ha misure: la scheda usa quelle di un FT-240-43 solo e lo dice.
 
 > FORMULA: V = √(P · |Z|)        (100 W su 3300 ohm: 574 V efficaci, 812 V di picco)
 

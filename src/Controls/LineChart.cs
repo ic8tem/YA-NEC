@@ -198,7 +198,7 @@ namespace YaNec
                 double xx = PX(X[best]);
                 ctx.DrawLine(Pal.P(Pal.A(200, Pal.Fore), 1), new Point(xx, pr.Top), new Point(xx, pr.Bottom));
                 List<string> lines = new List<string>();
-                lines.Add(Draw.N(X[best], 3) + " " + Lang.T(XLabel));   // 1.5.2: fumetto tradotto
+                lines.Add(Draw.N(X[best], XLabel == "MHz" ? 3 : (Math.Abs(X[best] - Math.Round(X[best])) < 1e-9 ? 0 : 2)) + " " + Lang.T(XLabel));   // 1.5.2: fumetto tradotto; 1.5.8: i passi senza decimali («39.000 steps»)
                 foreach (LineSeries s in Series)
                     if (s.Y != null && best < s.Y.Length) lines.Add(Lang.T(s.Name) + ": " + Draw.N(s.Y[best], s.Decimals));
                 double bw = 0;

@@ -7005,3 +7005,24 @@ Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, 
 - - partenza: {0} dBi, F/B {1} dB
 — passo {0}: {1} dBi, F/B {2} dB
 ROS ({0} ohm)
+automatico (dalla potenza)
+ideale (senza perdite)
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: il nucleo dalla potenza (FT-140-43 fino a 15 W, FT-240-43 fino a 120 W, due FT-240-43 sopra).
+Perdite del nucleo
+Potenza nel nucleo
+trasformatore ideale (come nel modello NEC)
+ % di efficienza a 
+ % a 28,5 MHz (DG1JAN
+, misura di un FT-240-43 solo
+; si toglie al guadagno e scalda il nucleo (FT8 e RTTY al 100 % del tempo)
+Il nucleo dissipa circa 
+ W: nei modi digitali scalda. Nuclei con meno perdite: due Fair-Rite accoppiati o il 2643251002 (MM0OPX), circa 90 % (DG1JAN).
+uniformi come VE7BQH
+cielo vero
+QTH
+ora UTC
+Cielo vero: mappa di Haslam (408 MHz, scalata alla frequenza, G8ONH) vista dal QTH all'ora data, antenna puntata all'azimut e all'elevazione scritti; sotto l'orizzonte 290 K. QTH come locator (JN70CN) o latitudine e longitudine.
+Maschera VHF, cielo vero: QTH non valido (locator, es. JN70CN, oppure latitudine e longitudine).
+Maschera VHF, cielo vero: data e ora non valide (gg/mm/aaaa hh:mm, UTC).
+Maschera VHF, cielo vero: mappa del cielo non letta (
+T antenna (stack, cielo vero), K

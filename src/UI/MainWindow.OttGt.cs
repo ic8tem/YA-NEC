@@ -21,6 +21,9 @@ namespace YaNec
         bool ottGtVeloce = true;
         TextBox ottGtElev, ottGtNf, ottGtGpre, ottGtCavo, ottGtComb;
         TextBlock ottGtTemp;
+        int ottGtCielo;                       // 0 = uniformi come VE7BQH, 1 = cielo vero
+        TextBox ottGtQth, ottGtOra, ottGtAz;
+        StackPanel ottGtCieloRiga;
         StackPanel ottGtPrimaDopo;
         Button ottGtMaschera;
 
@@ -67,7 +70,19 @@ namespace YaNec
             ottGtElev = Tb("30", 60);
             p.Children.Add(OttGtRiga("Elevazione", ottGtElev, OttGtTesto("gradi (VE7BQH)")));
             ottGtTemp = OttGtTesto("");
-            p.Children.Add(OttGtRiga("Temperature", ottGtTemp));
+            // 1.5.8 (IC8TEM 21:01 «aggiungi»): cielo vero, la stessa mappa della pagina Rumore dal cielo vero
+            ottGtQth = Tb(cfg.Get("cielo_qth", ""), 90);
+            ottGtOra = Tb(DateTime.UtcNow.ToString("dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture), 130);
+            ottGtAz = Tb("270", 55);
+            ottGtCieloRiga = new StackPanel { Spacing = 2, IsVisible = false };
+            WrapPanel cw = new WrapPanel();
+            cw.Children.Add(OttGtTesto("QTH")); cw.Children.Add(ottGtQth);
+            cw.Children.Add(OttGtTesto("ora UTC")); cw.Children.Add(ottGtOra);
+            cw.Children.Add(OttGtTesto("azimut")); cw.Children.Add(ottGtAz); cw.Children.Add(OttGtTesto("gradi"));
+            ottGtCieloRiga.Children.Add(cw);
+            ottGtCieloRiga.Children.Add(Nota("Cielo vero: mappa di Haslam (408 MHz, scalata alla frequenza, G8ONH) vista dal QTH all'ora data, antenna puntata all'azimut e all'elevazione scritti; sotto l'orizzonte 290 K. QTH come locator (JN70CN) o latitudine e longitudine."));
+            p.Children.Add(OttGtRiga("Temperature", OttGtPillole(new[] { "uniformi come VE7BQH", "cielo vero" }, () => ottGtCielo, k => { ottGtCielo = k; ottGtCieloRiga.IsVisible = k == 1; ottGtTemp.IsVisible = k == 0; }), ottGtTemp));
+            p.Children.Add(ottGtCieloRiga);
             ottGtNf = Tb("0,25", 55); ottGtGpre = Tb("20", 55); ottGtCavo = Tb("2", 55); ottGtComb = Tb("0,2", 55);
             p.Children.Add(OttGtRiga("Preamplificatore", OttGtTesto("NF"), ottGtNf, OttGtTesto("dB, guadagno"), ottGtGpre, OttGtTesto("dB")));
             p.Children.Add(OttGtRiga("Perdite", OttGtTesto("combinatore prima del preamp"), ottGtComb, OttGtTesto("dB, cavo dopo il preamp"), ottGtCavo, OttGtTesto("dB")));
@@ -113,7 +128,7 @@ namespace YaNec
             Status("Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli le variabili e premi Avvia.");
         }
 
-        void OttGtLeggi(Ottimizzatore o)
+        bool OttGtLeggi(Ottimizzatore o)
         {
             double f = OttFreqPrincipale(), tc, tt;
             OttGtImpostazioni.Temperature(f, out tc, out tt);
@@ -124,7 +139,23 @@ namespace YaNec
                 NfDb = Math.Max(0, ParseNum(ottGtNf.Text, 0.25)), GuadagnoPreDb = ParseNum(ottGtGpre.Text, 20),
                 CavoDopoDb = Math.Max(0, ParseNum(ottGtCavo.Text, 2)), PerditePrima = Math.Max(0, ParseNum(ottGtComb.Text, 0.2))
             };
+            if (ottGtCielo == 1 && ott0UsaGt())
+            {
+                double lat, lon;
+                if (!LeggiQth(ottGtQth.Text, out lat, out lon)) { Status("Maschera VHF, cielo vero: QTH non valido (locator, es. JN70CN, oppure latitudine e longitudine).", true); return false; }
+                DateTime t;
+                if (!DateTime.TryParseExact(ottGtOra.Text.Trim(), new[] { "dd/MM/yyyy HH:mm", "dd/MM/yyyy H:mm", "yyyy-MM-dd HH:mm", "dd/MM/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal, out t))
+                { Status("Maschera VHF, cielo vero: data e ora non valide (gg/mm/aaaa hh:mm, UTC).", true); return false; }
+                cfg.Set("cielo_qth", ottGtQth.Text.Trim());
+                o.Gt.CieloVero = true; o.Gt.Lat = lat; o.Gt.Lon = lon; o.Gt.Ora = DateTime.SpecifyKind(t, DateTimeKind.Utc);
+                o.Gt.Azimut = ParseNum(ottGtAz.Text, 270);
+                try { o.Gt.Mappa = CieloVero.Mappa(System.IO.Path.Combine(AppPaths.DataDir, "cielo"), f); }
+                catch (Exception ex) { Status("Maschera VHF, cielo vero: mappa del cielo non letta (" + ex.Message + ").", true); return false; }
+            }
+            return true;
         }
+
+        bool ott0UsaGt() { foreach (OttRigaObiettivo r in ottOb) if (r.Chiave == "gt" && r.Peso.Value > 0) return true; return false; }
 
         /// <summary>Scheda in alto e tabella prima / dopo del pannello.</summary>
         void OttGtMostra()
@@ -149,7 +180,7 @@ namespace YaNec
                 new[] { Lang.F("G/T stack {0} a {1}° (sistema)", Lang.T(nome), Fmt(ott.Gt.Elevazione, 0)), Fmt(gt0, 2), Fmt(gtB, 2) },
                 new[] { "G/T antenna (come VE7BQH)", Fmt(p0.Gt.GtAnt, 2), Fmt(b.Gt.GtAnt, 2) },
                 new[] { "G/T singola", Fmt(p0.Gt.GtSingola, 2), Fmt(b.Gt.GtSingola, 2) },
-                new[] { "T antenna (stack), K", Fmt(p0.Gt.Tant, 0), Fmt(b.Gt.Tant, 0) },
+                new[] { ott.Gt.CieloVero ? "T antenna (stack, cielo vero), K" : "T antenna (stack), K", Fmt(p0.Gt.Tant, 0), Fmt(b.Gt.Tant, 0) },
                 new[] { "Guadagno stack, dBi", Fmt(p0.Gt.Gstack, 2), Fmt(b.Gt.Gstack, 2) },
                 new[] { "Guadagno singola, dBi", Fmt(p0.Gt.Gsingola, 2), Fmt(b.Gt.Gsingola, 2) },
                 new[] { "ROS peggiore", Fmt(p0.RosPeggiore, 2), Fmt(b.RosPeggiore, 2) },

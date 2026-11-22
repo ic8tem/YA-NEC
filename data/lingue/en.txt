@@ -7295,3 +7295,24 @@ Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, 
 - - partenza: {0} dBi, F/B {1} dB	- - start: {0} dBi, F/B {1} dB
 — passo {0}: {1} dBi, F/B {2} dB	— step {0}: {1} dBi, F/B {2} dB
 ROS ({0} ohm)	SWR ({0} ohm)
+automatico (dalla potenza)	automatic (from the power)
+ideale (senza perdite)	ideal (lossless)
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: il nucleo dalla potenza (FT-140-43 fino a 15 W, FT-240-43 fino a 120 W, due FT-240-43 sopra).	Efficiency measured by DG1JAN (NanoVNA, 2400 ohm load, 2-30 MHz): FT-82-43 and FT-114-43 about 80 %, FT-140-43 2/14 about 79 %, FT-240-43 2/15 about 75 % (71 % at 30 MHz), two coupled Fair-Rite cores (5943000601 + 5943001101) about 90 %, Fair-Rite 2643251002 recommended by MM0OPX about 91 %. Automatic: the core from the power (FT-140-43 up to 15 W, FT-240-43 up to 120 W, two FT-240-43 above).
+Perdite del nucleo	Core losses
+Potenza nel nucleo	Power in the core
+trasformatore ideale (come nel modello NEC)	ideal transformer (as in the NEC model)
+ % di efficienza a 	 % efficiency at 
+ % a 28,5 MHz (DG1JAN	 % at 28.5 MHz (DG1JAN
+, misura di un FT-240-43 solo	, measured on a single FT-240-43
+; si toglie al guadagno e scalda il nucleo (FT8 e RTTY al 100 % del tempo)	; it is taken from the gain and heats the core (FT8 and RTTY at 100 % duty)
+Il nucleo dissipa circa 	The core dissipates about 
+ W: nei modi digitali scalda. Nuclei con meno perdite: due Fair-Rite accoppiati o il 2643251002 (MM0OPX), circa 90 % (DG1JAN).	 W: it heats up in digital modes. Lower-loss cores: two coupled Fair-Rite cores or the 2643251002 (MM0OPX), about 90 % (DG1JAN).
+uniformi come VE7BQH	uniform as VE7BQH
+cielo vero	real sky
+QTH	QTH
+ora UTC	UTC time
+Cielo vero: mappa di Haslam (408 MHz, scalata alla frequenza, G8ONH) vista dal QTH all'ora data, antenna puntata all'azimut e all'elevazione scritti; sotto l'orizzonte 290 K. QTH come locator (JN70CN) o latitudine e longitudine.	Real sky: Haslam map (408 MHz, scaled to the frequency, G8ONH) seen from the QTH at the given time, antenna aimed at the azimuth and elevation written; 290 K below the horizon. QTH as a locator (JN70CN) or latitude and longitude.
+Maschera VHF, cielo vero: QTH non valido (locator, es. JN70CN, oppure latitudine e longitudine).	VHF mask, real sky: invalid QTH (locator, e.g. JN70CN, or latitude and longitude).
+Maschera VHF, cielo vero: data e ora non valide (gg/mm/aaaa hh:mm, UTC).	VHF mask, real sky: invalid date and time (dd/mm/yyyy hh:mm, UTC).
+Maschera VHF, cielo vero: mappa del cielo non letta (	VHF mask, real sky: sky map not read (
+T antenna (stack, cielo vero), K	Antenna T (stack, real sky), K

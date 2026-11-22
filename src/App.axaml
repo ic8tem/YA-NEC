@@ -8,6 +8,17 @@
       <Setter Property="CornerRadius" Value="14"/>
       <Setter Property="Padding" Value="12,4"/>
     </Style>
+    <!-- 1.5.8: i pulsanti pieni (blu, viola) col mouse sopra tengono il loro colore, appena piu' chiaro; prima il tema li faceva grigio chiaro -->
+    <Style Selector="Button.accento:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{TemplateBinding Background}"/>
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+      <Setter Property="Opacity" Value="0.86"/>
+    </Style>
+    <Style Selector="Button.accento:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{TemplateBinding Background}"/>
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+      <Setter Property="Opacity" Value="0.72"/>
+    </Style>
     <Style Selector="ToggleButton.tab">
       <Setter Property="CornerRadius" Value="14"/>
       <Setter Property="Padding" Value="14,4"/>

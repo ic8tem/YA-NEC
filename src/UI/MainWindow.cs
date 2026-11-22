@@ -878,6 +878,7 @@ namespace YaNec
             b.Classes.Add("pill");
             if (accent)
             {
+                b.Classes.Add("accento");   // 1.5.8: col mouse sopra resta del suo colore (App.axaml), non diventa chiaro
                 b.Background = Pal.B(Pal.Accent);
                 b.Foreground = Pal.B(Pal.AccentFore);
                 b.FontWeight = FontWeight.SemiBold;
