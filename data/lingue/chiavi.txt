@@ -7001,3 +7001,6 @@ Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli 
 "max" = G/T piu' alto possibile; oppure un valore in dB/K, es. "≥ -14". G/T di sistema dello stack scelto nel pannello Maschera VHF, alla frequenza principale
 G/T dello stack del modello di partenza
 controllo finale del G/T con lo stack NEC
+Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il "collegamento" di MMANA, gia' coperto dalle formule. 
+- - partenza: {0} dBi, F/B {1} dB
+— passo {0}: {1} dBi, F/B {2} dB

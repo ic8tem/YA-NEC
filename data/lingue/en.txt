@@ -7291,3 +7291,6 @@ Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli 
 "max" = G/T piu' alto possibile; oppure un valore in dB/K, es. "≥ -14". G/T di sistema dello stack scelto nel pannello Maschera VHF, alla frequenza principale	"max" = highest possible G/T; or a value in dB/K, e.g. "≥ -14". System G/T of the stack chosen in the VHF mask panel, at the main frequency
 G/T dello stack del modello di partenza	stack G/T of the starting model
 controllo finale del G/T con lo stack NEC	final G/T check with the NEC stack
+Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il "collegamento" di MMANA, gia' coperto dalle formule. 	The variables come from the Variables tab (lengths, spacings, height, loads, source phases, stacking distance...). A variable written as a formula (LDE = LR*0,985) follows the others by itself: it is the MMANA "link", already covered by the formulas. 
+- - partenza: {0} dBi, F/B {1} dB	- - start: {0} dBi, F/B {1} dB
+— passo {0}: {1} dBi, F/B {2} dB	— step {0}: {1} dBi, F/B {2} dB

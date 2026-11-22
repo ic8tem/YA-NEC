@@ -318,9 +318,13 @@ namespace YaNec
             Avalonia.AvaloniaObjectExtensions.AddClassHandler<T>(evento, (o, e) => azione(o, e.NewValue));
         }
 
+        // 1.5.8: controlli con testo dell'utente o del modello (descrizioni delle variabili) che non si traducono
+        static readonly System.Runtime.CompilerServices.ConditionalWeakTable<Avalonia.AvaloniaObject, object> esclusi = new System.Runtime.CompilerServices.ConditionalWeakTable<Avalonia.AvaloniaObject, object>();
+        public static void NonTradurre(Avalonia.AvaloniaObject o) { if (o != null && !esclusi.TryGetValue(o, out _)) esclusi.Add(o, null); }
+
         static void Sostituisci(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty p, string testo)
         {
-            if (inTraduzione || string.IsNullOrEmpty(testo) || !Attiva) return;
+            if (inTraduzione || string.IsNullOrEmpty(testo) || !Attiva || esclusi.TryGetValue(o, out _)) return;
             string t;
             if (!map.TryGetValue(testo, out t)) t = valori.Contains(testo) ? null : Frammenti(testo);   // 1.5.1: testi composti (1.5.2: non quelli gia' tradotti)
             if (t == null || t == testo) return;

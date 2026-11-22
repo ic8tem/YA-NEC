@@ -143,9 +143,10 @@ namespace YaNec
             StackPanel vp = new StackPanel { Spacing = 4 };
             ottVarPanel = new StackPanel { Spacing = 2 };
             vp.Children.Add(ottVarPanel);
-            vp.Children.Add(Nota("Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). " +
-                                 "Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il \"collegamento\" di MMANA, gia' coperto dalle formule. " +
-                                 "Ordine = ordine di prova: la piu' efficace in alto."));
+            // 1.5.8 (lezione 32 in inglese): le frasi si traducono una per una, la nota intera non e' una voce del file delle lingue
+            vp.Children.Add(Nota(Lang.T("Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). " +
+                                 "Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il \"collegamento\" di MMANA, gia' coperto dalle formule. ") +
+                                 Lang.T("Ordine = ordine di prova: la piu' efficace in alto.")));
             WrapPanel vb = new WrapPanel();
             Button bAgg = Btn("+ aggiungi variabile", false);
             bAgg.Click += (s, e) => OttMenuAggiungi(bAgg);
@@ -197,8 +198,8 @@ namespace YaNec
             ottMcScelta = new ComboBox { ItemsSource = new[] { "la percentuale migliore di copie entro le soglie", "il caso peggiore migliore", "il voto medio migliore" }, SelectedIndex = 0, MinWidth = 260 };
             mc.Children.Add(rmc("Scegli il candidato con", ottMcScelta, ""));
             mc.Children.Add(rmc("Seme del caso", ottMcSeme, ""));
-            mc.Children.Add(Nota("Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. " +
-                                 "Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli."));
+            mc.Children.Add(Nota(Lang.T("Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. ") +
+                                 Lang.T("Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.")));
             ottMcRis = new StackPanel { Spacing = 4 };
             mc.Children.Add(ottMcRis);
             StackPanel c2s = new StackPanel();
@@ -409,7 +410,9 @@ namespace YaNec
             {
                 Grid g = OttGrigliaVar();
                 TextBox nome = new TextBox { Text = r.Nome, IsReadOnly = true, FontFamily = Pal.Mono, Margin = new Thickness(2) };
-                TextBlock note = new TextBlock { Text = r.Note, Foreground = Pal.B(Pal.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(4, 0) };
+                TextBlock note = new TextBlock { Foreground = Pal.B(Pal.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(4, 0) };
+                Lang.NonTradurre(note);   // 1.5.8: descrizione scritta dall'autore del modello (CM YA-NEC VAR): resta com'e' (prima «meta' length del reflector»)
+                note.Text = r.Note;
                 Control[] c = { r.Usa, nome, r.Ora, r.Min, r.Max, r.Passo, note };
                 for (int i = 0; i < c.Length; i++)
                 {
@@ -671,7 +674,7 @@ namespace YaNec
             o.SceltaMc = Math.Max(0, ottMcScelta.SelectedIndex);
             if (tolTbL != null) { o.TolL = ParseNum(tolTbL.Text, 1); o.TolP = ParseNum(tolTbP.Text, 2); o.TolD = ParseNum(tolTbD.Text, 0.1); o.Gauss = tolCbDist.SelectedIndex == 1; }
             ottMcRis.Children.Clear();
-            o.Fase += t => Dispatcher.UIThread.Post(() => Status("Ottimizzatore: " + t));
+            o.Fase += t => Dispatcher.UIThread.Post(() => Status(Lang.T("Ottimizzatore: ") + Lang.TC(t)));
             ott = o;
             ottScelto = null;
             ottSerieMigliore.Clear(); ottSeriePasso.Clear();
@@ -854,14 +857,14 @@ namespace YaNec
             if (ottRunPartenza != null && ottRunPartenza.AzCut != null)
             {
                 ottPolar.Traces.Add(new PolarTrace { Db = ottRunPartenza.AzCut, Color = Pal.Muted, Dashed = true, Name = "partenza" });
-                note.Add(string.Format(CultureInfo.CurrentCulture, "- - partenza: {0:0.00} dBi, F/B {1:0.0} dB", ottRunPartenza.GmaxDbi, Nz(ottRunPartenza.FrontBack)));
+                note.Add(Lang.F("- - partenza: {0} dBi, F/B {1} dB", Fmt(ottRunPartenza.GmaxDbi, 2), Fmt(Nz(ottRunPartenza.FrontBack), 1)));
                 rif = Math.Max(rif, ottRunPartenza.GmaxDbi);
             }
             if (ottRunScelto != null && ottRunScelto.AzCut != null && ott != null)
             {
                 OttPasso b = ottScelto ?? ott.Migliore;
                 ottPolar.Traces.Add(new PolarTrace { Db = ottRunScelto.AzCut, Color = Pal.Accent, Name = "migliore" });
-                note.Add(string.Format(CultureInfo.CurrentCulture, "— passo {0}: {1:0.00} dBi, F/B {2:0.0} dB", b.N, ottRunScelto.GmaxDbi, Nz(ottRunScelto.FrontBack)));
+                note.Add(Lang.F("— passo {0}: {1} dBi, F/B {2} dB", b.N, Fmt(ottRunScelto.GmaxDbi, 2), Fmt(Nz(ottRunScelto.FrontBack), 1)));
                 rif = Math.Max(rif, ottRunScelto.GmaxDbi);
             }
             ottPolar.RefDb = rif > -900 ? rif : 0;
