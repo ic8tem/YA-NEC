@@ -7578,3 +7578,16 @@ Con 	Με
 : a 	: στα 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W ο πυρήνας ζεσταίνεται. Επιλέξτε «αυτόματο» ή μεγαλύτερο πυρήνα.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): ισχύς εκτιμώμενη 1,5 φορές του FT-240-43 από τη διατομή του πυρήνα, απόδοση όπως του FT-240-43 (δεν μετρήθηκε από τον DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	κινούμενο
+valori col mouse	τιμές με το ποντίκι
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Κουκκίδες που κινούνται κατά μήκος των συρμάτων: πυκνότερες και ταχύτερες όπου το ρεύμα είναι ισχυρότερο, μετατοπισμένες ανάλογα με τη φάση του ρεύματος. Σταματούν κατά τον υπολογισμό, τη σάρωση και τον βελτιστοποιητή.
+Velocita' dei puntini.	Ταχύτητα των κουκκίδων.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Με το ποντίκι επάνω: σε σύρμα το ρεύμα, η φάση, η διάμετρος και το μήκος τμήματος· στον λοβό 3D το κέρδος και η κατεύθυνση.
+animazione spenta oltre {0} segmenti	κίνηση ανενεργή πάνω από {0} τμήματα
+Filo {0}, segmento {1} (n. {2} del NEC)	Σύρμα {0}, τμήμα {1} (αρ. NEC {2})
+fase {0}°	φάση {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · τμήμα {1} mm
+azimut {0}° · elevazione {1}°	αζιμούθιο {0}° · ανύψωση {1}°
+guadagno {0} dBi ({1} dB dal massimo)	κέρδος {0} dBi ({1} dB από το μέγιστο)

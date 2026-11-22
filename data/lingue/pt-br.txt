@@ -7578,3 +7578,16 @@ Con 	Com
 : a 	: em 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W o núcleo esquenta. Escolha «automático» ou um núcleo maior.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potência estimada em 1,5 vez a do FT-240-43 a partir da seção do núcleo, eficiência igual à do FT-240-43 (não medido por DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animado
+valori col mouse	valores ao passar o mouse
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Pontos que correm ao longo dos fios: mais densos e rápidos onde a corrente é mais forte, defasados conforme a fase da corrente. Param durante o cálculo, a varredura e o otimizador.
+Velocita' dei puntini.	Velocidade dos pontos.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Ao passar o mouse: sobre um fio a corrente, fase, diâmetro e comprimento do segmento; sobre o lóbulo 3D o ganho e a direção.
+animazione spenta oltre {0} segmenti	animação desligada acima de {0} segmentos
+Filo {0}, segmento {1} (n. {2} del NEC)	Fio {0}, segmento {1} (nº {2} do NEC)
+fase {0}°	fase {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segmento {1} mm
+azimut {0}° · elevazione {1}°	azimute {0}° · elevação {1}°
+guadagno {0} dBi ({1} dB dal massimo)	ganho {0} dBi ({1} dB do máximo)

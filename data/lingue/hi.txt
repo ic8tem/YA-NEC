@@ -7578,3 +7578,16 @@ Con 	कोर
 : a 	: पावर 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W पर कोर गर्म हो जाता है। «स्वचालित» या बड़ा कोर चुनें।
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): कोर के अनुप्रस्थ काट से पावर का अनुमान FT-240-43 का 1.5 गुना, दक्षता FT-240-43 जैसी (DG1JAN ने इसे नहीं मापा)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	एनिमेटेड
+valori col mouse	होवर पर मान
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	तारों पर चलते बिंदु: जहाँ धारा अधिक है वहाँ अधिक घने और तेज़, धारा के फेज़ के अनुसार खिसके हुए। गणना, स्वीप और ऑप्टिमाइज़र के दौरान रुक जाते हैं।
+Velocita' dei puntini.	बिंदुओं की गति।
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	माउस ले जाने पर: तार पर धारा, फेज़, व्यास और सेगमेंट की लंबाई; 3D लोब पर गेन और दिशा।
+animazione spenta oltre {0} segmenti	{0} से अधिक सेगमेंट पर एनिमेशन बंद
+Filo {0}, segmento {1} (n. {2} del NEC)	तार {0}, सेगमेंट {1} (NEC सं. {2})
+fase {0}°	फेज़ {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · सेगमेंट {1} mm
+azimut {0}° · elevazione {1}°	दिगंश {0}° · उन्नयन {1}°
+guadagno {0} dBi ({1} dB dal massimo)	गेन {0} dBi (अधिकतम से {1} dB)

@@ -7578,3 +7578,16 @@ Con 	З
 : a 	: при 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W осердя нагрівається. Виберіть «автоматично» або більше осердя.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): потужність оцінено в 1,5 раза більше за FT-240-43 за перерізом осердя, ККД як у FT-240-43 (DG1JAN його не вимірював)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	анімація
+valori col mouse	значення під мишею
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Точки, що біжать уздовж проводів: густіші й швидші там, де струм сильніший, зсунуті відповідно до фази струму. Зупиняються під час розрахунку, розгортки та оптимізації.
+Velocita' dei puntini.	Швидкість точок.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	При наведенні миші: на проводі — струм, фаза, діаметр і довжина сегмента; на 3D-пелюстці — підсилення і напрямок.
+animazione spenta oltre {0} segmenti	анімацію вимкнено понад {0} сегментів
+Filo {0}, segmento {1} (n. {2} del NEC)	Провід {0}, сегмент {1} (№ {2} у NEC)
+fase {0}°	фаза {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · сегмент {1} mm
+azimut {0}° · elevazione {1}°	азимут {0}° · кут місця {1}°
+guadagno {0} dBi ({1} dB dal massimo)	підсилення {0} dBi ({1} dB від максимуму)

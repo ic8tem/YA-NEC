@@ -7578,3 +7578,16 @@ Con 	Med
 : a 	: ved 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W bliver kernen varm. Vælg «automatisk» eller en større kerne.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): effekt anslået til 1,5 gange FT-240-43 ud fra kernens tværsnit, virkningsgrad som FT-240-43 (ikke målt af DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animeret
+valori col mouse	værdier ved mus
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Prikker der løber langs trådene: tættere og hurtigere hvor strømmen er stærkere, forskudt efter strømmens fase. De stopper under beregning, sweep og optimering.
+Velocita' dei puntini.	Prikkernes hastighed.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Med musen over: på en tråd strøm, fase, diameter og segmentlængde; på 3D-loben forstærkning og retning.
+animazione spenta oltre {0} segmenti	animation slået fra over {0} segmenter
+Filo {0}, segmento {1} (n. {2} del NEC)	Tråd {0}, segment {1} (NEC nr. {2})
+fase {0}°	fase {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
+azimut {0}° · elevazione {1}°	azimut {0}° · elevation {1}°
+guadagno {0} dBi ({1} dB dal massimo)	forstærkning {0} dBi ({1} dB fra maksimum)

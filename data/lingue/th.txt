@@ -7578,3 +7578,16 @@ Con 	เมื่อใช้
 : a 	: ที่ 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W แกนจะร้อน เลือก «อัตโนมัติ» หรือแกนที่ใหญ่กว่า
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): ประมาณกำลังไว้ 1.5 เท่าของ FT-240-43 จากพื้นที่หน้าตัดของแกน ประสิทธิภาพเท่ากับ FT-240-43 (DG1JAN ไม่ได้วัด)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	เคลื่อนไหว
+valori col mouse	แสดงค่าเมื่อชี้เมาส์
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	จุดที่วิ่งไปตามสายไฟ: หนาแน่นและเร็วขึ้นในตำแหน่งที่กระแสแรงกว่า และเลื่อนตามเฟสของกระแส จะหยุดระหว่างการคำนวณ การสวีป และตัวปรับค่าเหมาะสม
+Velocita' dei puntini.	ความเร็วของจุด
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	เมื่อชี้เมาส์: บนสายแสดงกระแส เฟส เส้นผ่านศูนย์กลาง และความยาวเซกเมนต์ บนโลบ 3D แสดงเกนและทิศทาง
+animazione spenta oltre {0} segmenti	ปิดภาพเคลื่อนไหวเมื่อเกิน {0} เซกเมนต์
+Filo {0}, segmento {1} (n. {2} del NEC)	สาย {0}, เซกเมนต์ {1} (NEC หมายเลข {2})
+fase {0}°	เฟส {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · เซกเมนต์ {1} mm
+azimut {0}° · elevazione {1}°	มุมทิศ {0}° · มุมเงย {1}°
+guadagno {0} dBi ({1} dB dal massimo)	เกน {0} dBi ({1} dB จากค่าสูงสุด)

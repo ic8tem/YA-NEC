@@ -7578,3 +7578,16 @@ Con 	S
 : a 	: pri 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W sa jadro zahrieva. Zvoľte «automaticky» alebo väčšie jadro.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): výkon odhadnutý na 1,5-násobok FT-240-43 podľa prierezu jadra, účinnosť ako pri FT-240-43 (DG1JAN ho nemeral)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animované
+valori col mouse	hodnoty pod myšou
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Bodky bežiace po vodičoch: hustejšie a rýchlejšie tam, kde je prúd silnejší, posunuté podľa fázy prúdu. Zastavia sa počas výpočtu, rozmietania a optimalizácie.
+Velocita' dei puntini.	Rýchlosť bodiek.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Pri prejdení myšou: na vodiči prúd, fáza, priemer a dĺžka segmentu; na 3D laloku zisk a smer.
+animazione spenta oltre {0} segmenti	animácia vypnutá nad {0} segmentov
+Filo {0}, segmento {1} (n. {2} del NEC)	Vodič {0}, segment {1} (NEC č. {2})
+fase {0}°	fáza {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
+azimut {0}° · elevazione {1}°	azimut {0}° · elevácia {1}°
+guadagno {0} dBi ({1} dB dal massimo)	zisk {0} dBi ({1} dB od maxima)

@@ -7578,3 +7578,16 @@ Con 	코어
 : a 	: 전력 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W에서는 코어가 발열합니다. «자동» 또는 더 큰 코어를 선택하세요.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): 코어 단면적으로 전력을 FT-240-43의 1.5배로 추정, 효율은 FT-240-43과 동일 (DG1JAN 미측정)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	애니메이션
+valori col mouse	마우스 오버 값
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	도선을 따라 흐르는 점: 전류가 강한 곳일수록 더 촘촘하고 빠르며, 전류 위상에 따라 어긋납니다. 계산, 스윕, 최적화 중에는 멈춥니다.
+Velocita' dei puntini.	점의 속도.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	마우스를 올리면: 도선에서는 전류, 위상, 직경, 세그먼트 길이, 3D 로브에서는 이득과 방향.
+animazione spenta oltre {0} segmenti	{0}개 세그먼트 초과 시 애니메이션 끔
+Filo {0}, segmento {1} (n. {2} del NEC)	도선 {0}, 세그먼트 {1} (NEC 번호 {2})
+fase {0}°	위상 {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · 세그먼트 {1} mm
+azimut {0}° · elevazione {1}°	방위각 {0}° · 앙각 {1}°
+guadagno {0} dBi ({1} dB dal massimo)	이득 {0} dBi (최대값 대비 {1} dB)

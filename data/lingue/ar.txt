@@ -7578,3 +7578,16 @@ Con 	مع
 : a 	: عند 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W يسخن القلب. اختر «تلقائي» أو قلبًا أكبر.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101، AL 1300 nH): القدرة مقدّرة بـ 1.5 مرة قدرة FT-240-43 بناءً على مقطع القلب، والكفاءة مثل FT-240-43 (لم يقسه DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	متحرك
+valori col mouse	القيم عند التمرير
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	نقاط تتحرك على طول الأسلاك: أكثف وأسرع حيث يكون التيار أقوى، ومزاحة وفق طور التيار. تتوقف أثناء الحساب والمسح والمُحسِّن.
+Velocita' dei puntini.	سرعة النقاط.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	عند تمرير الماوس: على السلك التيار والطور والقطر وطول المقطع؛ على الفص ثلاثي الأبعاد الكسب والاتجاه.
+animazione spenta oltre {0} segmenti	الحركة متوقفة فوق {0} مقطع
+Filo {0}, segmento {1} (n. {2} del NEC)	السلك {0}، المقطع {1} (رقم {2} في NEC)
+fase {0}°	الطور {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · المقطع {1} mm
+azimut {0}° · elevazione {1}°	السمت {0}° · الارتفاع {1}°
+guadagno {0} dBi ({1} dB dal massimo)	الكسب {0} dBi ({1} dB من الحد الأقصى)

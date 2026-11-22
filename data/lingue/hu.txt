@@ -7578,3 +7578,16 @@ Con 	Mag:
 : a 	: ha a teljesítmény 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W, a mag melegszik. Válassza az «automatikus» beállítást vagy nagyobb magot.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): teljesítmény a mag keresztmetszete alapján becsülve az FT-240-43 1,5-szerese, hatásfok mint az FT-240-43-é (DG1JAN nem mérte)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animált
+valori col mouse	értékek egérrel
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	A huzalokon futó pontok: sűrűbbek és gyorsabbak, ahol erősebb az áram, az áram fázisa szerint eltolva. Számítás, sweep és optimalizálás közben megállnak.
+Velocita' dei puntini.	A pontok sebessége.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Egérrel fölé állva: huzalon az áram, fázis, átmérő és szegmenshossz; a 3D lebenyen a nyereség és az irány.
+animazione spenta oltre {0} segmenti	animáció kikapcsolva {0} szegmens felett
+Filo {0}, segmento {1} (n. {2} del NEC)	Huzal {0}, szegmens {1} (NEC sz. {2})
+fase {0}°	fázis {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · szegmens {1} mm
+azimut {0}° · elevazione {1}°	azimut {0}° · eleváció {1}°
+guadagno {0} dBi ({1} dB dal massimo)	nyereség {0} dBi ({1} dB a maximumtól)

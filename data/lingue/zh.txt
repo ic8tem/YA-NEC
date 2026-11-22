@@ -7578,3 +7578,16 @@ Con 	使用
 : a 	: 在 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W 时磁芯会发热。请选择«自动»或更大的磁芯。
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): 根据磁芯截面估计功率为 FT-240-43 的 1.5 倍, 效率与 FT-240-43 相同 (DG1JAN 未测量)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	动画
+valori col mouse	鼠标悬停显示数值
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	沿导线流动的圆点：电流越强处越密集、越快，并按电流相位错开。计算、扫描和优化期间会停止。
+Velocita' dei puntini.	圆点速度。
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	鼠标悬停时：导线上显示电流、相位、直径和分段长度；3D 波瓣上显示增益和方向。
+animazione spenta oltre {0} segmenti	超过 {0} 个分段时关闭动画
+Filo {0}, segmento {1} (n. {2} del NEC)	导线 {0}，分段 {1}（NEC 编号 {2}）
+fase {0}°	相位 {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · 分段 {1} mm
+azimut {0}° · elevazione {1}°	方位角 {0}° · 仰角 {1}°
+guadagno {0} dBi ({1} dB dal massimo)	增益 {0} dBi（距最大值 {1} dB）

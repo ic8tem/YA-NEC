@@ -7578,3 +7578,16 @@ Con 	Sa
 : a 	: sa 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W umiinit ang core. Piliin ang «awtomatiko» o mas malaking core.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): lakas na tinatayang 1.5 beses ng FT-240-43 batay sa cross-section ng core, episyensiya tulad ng FT-240-43 (hindi sinukat ni DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	gumagalaw
+valori col mouse	halaga sa hover
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Mga tuldok na tumatakbo sa mga kawad: mas siksik at mas mabilis kung saan mas malakas ang kuryente, nakausog ayon sa phase ng kuryente. Humihinto ang mga ito habang nagkakalkula, nagsi-sweep at nag-o-optimize.
+Velocita' dei puntini.	Bilis ng mga tuldok.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Kapag itinapat ang mouse: sa kawad ang kuryente, phase, diyametro at haba ng segment; sa 3D lobe ang gain at direksyon.
+animazione spenta oltre {0} segmenti	naka-off ang animasyon kapag lampas {0} segment
+Filo {0}, segmento {1} (n. {2} del NEC)	Kawad {0}, segment {1} (NEC blg. {2})
+fase {0}°	phase {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
+azimut {0}° · elevazione {1}°	azimuth {0}° · elevation {1}°
+guadagno {0} dBi ({1} dB dal massimo)	gain {0} dBi ({1} dB mula sa maximum)

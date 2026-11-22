@@ -7578,3 +7578,16 @@ Con 	עם
 : a 	: בהספק 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W הליבה מתחממת. בחר «אוטומטי» או ליבה גדולה יותר.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): הספק מוערך פי 1.5 מ-FT-240-43 לפי חתך הליבה, נצילות כמו FT-240-43 (לא נמדדה על ידי DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	מונפש
+valori col mouse	ערכים במעבר עכבר
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	נקודות הנעות לאורך החוטים: צפופות ומהירות יותר היכן שהזרם חזק יותר, מוסטות לפי פאזת הזרם. הן נעצרות במהלך חישוב, סריקה ומיטוב.
+Velocita' dei puntini.	מהירות הנקודות.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	במעבר עכבר: על חוט – הזרם, הפאזה, הקוטר ואורך המקטע; על האונה ב-3D – ההגבר והכיוון.
+animazione spenta oltre {0} segmenti	אנימציה כבויה מעל {0} מקטעים
+Filo {0}, segmento {1} (n. {2} del NEC)	חוט {0}, מקטע {1} (מס' {2} ב-NEC)
+fase {0}°	פאזה {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · מקטע {1} mm
+azimut {0}° · elevazione {1}°	אזימוט {0}° · הגבהה {1}°
+guadagno {0} dBi ({1} dB dal massimo)	הגבר {0} dBi ({1} dB מהמקסימום)

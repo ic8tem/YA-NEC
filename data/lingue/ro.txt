@@ -7578,3 +7578,16 @@ Con 	Cu
 : a 	: la 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W miezul se încălzește. Alegeți «automat» sau un miez mai mare.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): putere estimată la 1,5 ori cea a FT-240-43 din secțiunea miezului, randament ca FT-240-43 (nemăsurat de DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animat
+valori col mouse	valori la mouse
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Puncte care curg de-a lungul firelor: mai dese și mai rapide unde curentul este mai puternic, decalate după faza curentului. Se opresc în timpul calculului, baleierii și optimizatorului.
+Velocita' dei puntini.	Viteza punctelor.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	La trecerea mouse-ului: pe un fir curentul, faza, diametrul și lungimea segmentului; pe lobul 3D câștigul și direcția.
+animazione spenta oltre {0} segmenti	animație oprită peste {0} segmente
+Filo {0}, segmento {1} (n. {2} del NEC)	Fir {0}, segment {1} (nr. NEC {2})
+fase {0}°	fază {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
+azimut {0}° · elevazione {1}°	azimut {0}° · elevație {1}°
+guadagno {0} dBi ({1} dB dal massimo)	câștig {0} dBi ({1} dB față de maxim)

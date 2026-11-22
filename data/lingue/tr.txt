@@ -7578,3 +7578,16 @@ Con 	Çekirdek
 : a 	: güç 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W olduğunda çekirdek ısınır. Daha büyük bir çekirdek ya da «otomatik» seçin.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): güç, çekirdek kesitinden FT-240-43'ün 1,5 katı olarak tahmin edildi, verim FT-240-43 ile aynı (DG1JAN tarafından ölçülmedi)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animasyonlu
+valori col mouse	üzerine gelince değerler
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Teller boyunca akan noktalar: akımın güçlü olduğu yerlerde daha sık ve hızlı, akım fazına göre kaydırılmış. Hesaplama, tarama ve optimizasyon sırasında durur.
+Velocita' dei puntini.	Noktaların hızı.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Fareyle üzerine gelince: telde akım, faz, çap ve segment uzunluğu; 3B lobda kazanç ve yön.
+animazione spenta oltre {0} segmenti	{0} segmentin üzerinde animasyon kapalı
+Filo {0}, segmento {1} (n. {2} del NEC)	Tel {0}, segment {1} (NEC no. {2})
+fase {0}°	faz {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
+azimut {0}° · elevazione {1}°	azimut {0}° · yükseliş {1}°
+guadagno {0} dBi ({1} dB dal massimo)	kazanç {0} dBi (maksimumdan {1} dB)

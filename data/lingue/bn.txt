@@ -7578,3 +7578,16 @@ Con 	কোর
 : a 	: পাওয়ার 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W-এ কোর গরম হয়। «স্বয়ংক্রিয়» বা বড় কোর বেছে নিন।
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): কোরের প্রস্থচ্ছেদ থেকে পাওয়ার আনুমানিক FT-240-43-এর 1.5 গুণ, দক্ষতা FT-240-43-এর মতো (DG1JAN মাপেননি)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	অ্যানিমেটেড
+valori col mouse	হোভারে মান
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	তারের উপর দিয়ে চলমান বিন্দু: যেখানে কারেন্ট বেশি সেখানে ঘন ও দ্রুত, কারেন্টের ফেজ অনুযায়ী সরানো। গণনা, সুইপ ও অপ্টিমাইজারের সময় থেমে যায়।
+Velocita' dei puntini.	বিন্দুর গতি।
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	মাউস রাখলে: তারের উপর কারেন্ট, ফেজ, ব্যাস ও সেগমেন্টের দৈর্ঘ্য; 3D লোবের উপর গেইন ও দিক।
+animazione spenta oltre {0} segmenti	{0}টির বেশি সেগমেন্টে অ্যানিমেশন বন্ধ
+Filo {0}, segmento {1} (n. {2} del NEC)	তার {0}, সেগমেন্ট {1} (NEC নং {2})
+fase {0}°	ফেজ {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · সেগমেন্ট {1} mm
+azimut {0}° · elevazione {1}°	অ্যাজিমাথ {0}° · উচ্চতা {1}°
+guadagno {0} dBi ({1} dB dal massimo)	গেইন {0} dBi (সর্বোচ্চ থেকে {1} dB)

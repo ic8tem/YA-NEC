@@ -7578,3 +7578,16 @@ Con 	Með
 : a 	: við 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W hitnar kjarninn. Veldu «sjálfvirkt» eða stærri kjarna.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): afl áætlað 1,5 sinnum afl FT-240-43 út frá þversniði kjarnans, nýtni eins og hjá FT-240-43 (DG1JAN mældi hann ekki)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	hreyfimynd
+valori col mouse	gildi við músarbendil
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Punktar sem renna eftir vírunum: þéttari og hraðari þar sem straumurinn er sterkari, hliðraðir eftir fasa straumsins. Þeir stöðvast við útreikning, sóp og bestun.
+Velocita' dei puntini.	Hraði punktanna.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Með músina yfir: á vír straumur, fasi, þvermál og lengd búts; á 3D-geiranum ávinningur og stefna.
+animazione spenta oltre {0} segmenti	hreyfing óvirk yfir {0} bútum
+Filo {0}, segmento {1} (n. {2} del NEC)	Vír {0}, bútur {1} (NEC nr. {2})
+fase {0}°	fasi {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · bútur {1} mm
+azimut {0}° · elevazione {1}°	áttarhorn {0}° · hæðarhorn {1}°
+guadagno {0} dBi ({1} dB dal massimo)	ávinningur {0} dBi ({1} dB frá hámarki)

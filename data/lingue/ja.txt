@@ -7578,3 +7578,16 @@ Con 	コア
 : a 	: 電力 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W ではコアが発熱します。«自動» またはより大きなコアを選んでください。
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): コア断面積から電力は FT-240-43 の 1.5 倍と推定、効率は FT-240-43 と同等 (DG1JAN は未測定)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	アニメーション
+valori col mouse	マウスで値表示
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	ワイヤー上を流れる点：電流が強い所ほど密で速く、電流の位相に応じてずれます。計算・スイープ・最適化の間は停止します。
+Velocita' dei puntini.	点の速度。
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	マウスを重ねると：ワイヤー上では電流・位相・直径・セグメント長、3Dローブ上では利得と方向を表示します。
+animazione spenta oltre {0} segmenti	{0} セグメントを超えるとアニメーション停止
+Filo {0}, segmento {1} (n. {2} del NEC)	ワイヤー {0}、セグメント {1}（NEC 番号 {2}）
+fase {0}°	位相 {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · セグメント {1} mm
+azimut {0}° · elevazione {1}°	方位角 {0}° · 仰角 {1}°
+guadagno {0} dBi ({1} dB dal massimo)	利得 {0} dBi（最大値から {1} dB）

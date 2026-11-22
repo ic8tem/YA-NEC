@@ -7578,3 +7578,16 @@ Con 	Dengan
 : a 	: pada 
  W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W inti menjadi panas. Pilih «otomatis» atau inti yang lebih besar.
 FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): daya diperkirakan 1,5 kali FT-240-43 berdasarkan penampang inti, efisiensi sama dengan FT-240-43 (tidak diukur oleh DG1JAN)
+
+# 1.5.9: Struttura 3D, correnti animate e valori col mouse (traduzione automatica controllata)
+animate	animasi
+valori col mouse	nilai saat hover
+Puntini che scorrono lungo i fili: piu' fitti e veloci dove la corrente e' piu' forte, sfasati secondo la fase della corrente. Si fermano durante calcolo, sweep e ottimizzatore.	Titik-titik yang bergerak di sepanjang kawat: lebih rapat dan lebih cepat di tempat arus lebih kuat, bergeser menurut fase arus. Berhenti selama perhitungan, sweep, dan pengoptimal.
+Velocita' dei puntini.	Kecepatan titik.
+Passando col mouse: sul filo corrente, fase, diametro e lunghezza del segmento; sul lobo 3D guadagno e direzione.	Saat mouse di atas: pada kawat arus, fase, diameter, dan panjang segmen; pada lobus 3D gain dan arah.
+animazione spenta oltre {0} segmenti	animasi mati di atas {0} segmen
+Filo {0}, segmento {1} (n. {2} del NEC)	Kawat {0}, segmen {1} (NEC no. {2})
+fase {0}°	fase {0}°
+ø {0} mm · segmento {1} mm	ø {0} mm · segmen {1} mm
+azimut {0}° · elevazione {1}°	azimut {0}° · elevasi {1}°
+guadagno {0} dBi ({1} dB dal massimo)	gain {0} dBi ({1} dB dari maksimum)
