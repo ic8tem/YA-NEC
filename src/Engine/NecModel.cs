@@ -552,8 +552,25 @@ namespace YaNec.Engine
             }
         }
 
+        // 1.5.9 (IC8TEM 23/11/2026 00:56 «si procedi»): il NEC calcola ogni esecuzione (XQ, RP, NE, NH) con le schede lette fino a li';
+        // YA-NEC ha un solo calcolo e prende la prima esecuzione. Prima le schede dopo l'esecuzione si sommavano (l'ultima FR, tutte
+        // le EX): nei file NEC-4.2 di prova di momwire 5 su 99 davano un'impedenza diversa da quella stampata dal NEC.
+        bool esecuzioneLetta, avvisoEsecuzioni;
+        static readonly HashSet<string> SchedeDiEsecuzione = new HashSet<string> { "FR", "EX", "LD", "GN", "GD", "EK", "KH", "NT", "TL", "CP" };
+
         void ApplyControl(ControlCard c, int lineNo, ref bool haveFr, string line)
         {
+            if (esecuzioneLetta && SchedeDiEsecuzione.Contains(c.Id))
+            {
+                if (!avvisoEsecuzioni)
+                {
+                    avvisoEsecuzioni = true;
+                    Warnings.Add("Riga " + lineNo + ": il file ha piu' esecuzioni (schede dopo XQ, RP, NE o NH): YA-NEC calcola la prima, come la prima stampa del NEC; da qui le schede " +
+                        "FR, EX, LD, GN, EK, TL e NT sono ignorate.");
+                }
+                return;
+            }
+            if (c.Id == "XQ" || c.Id == "RP" || c.Id == "NE" || c.Id == "NH") esecuzioneLetta = true;
             switch (c.Id)
             {
                 case "FR":
