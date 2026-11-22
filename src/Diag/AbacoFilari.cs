@@ -57,7 +57,7 @@ namespace YaNec
             return s.ToString();
         }
 
-        public static int Esegui(string uscita, string terreno = "perfetto", double altezza = 3, double passo = 0.5)
+        public static int Esegui(string uscita, string terreno = "perfetto", double altezza = 3, double passo = 0.5, bool soloEfhw = false)
         {
             Perfetto = terreno != "medio"; H = altezza; Passo = passo;
             StringBuilder o = new StringBuilder();
@@ -68,11 +68,14 @@ namespace YaNec
             foreach (int rapp in new[] { 49, 64 })
             {
                 double z0 = 50 * rapp;
-                o.AppendLine("## EFHW " + rapp + ":1 (Z0 " + z0 + " ohm), contrappeso 0,05 lambda della banda piu' bassa");
+              // 22/11/2026 16:45, IC8TEM: «49:1 e 64:1 sono anche senza contrappeso» -> anche senza (solo 0,1 m di alimentazione)
+              foreach (bool senza in new[] { false, true })
+              {
+                o.AppendLine("## EFHW " + rapp + ":1 (Z0 " + z0 + " ohm), " + (senza ? "senza contrappeso" : "contrappeso 0,05 lambda della banda piu' bassa"));
                 o.AppendLine("banda bassa\tlunghezza\tfilo m\tcontrappeso m" + intest);
                 foreach (int b in basse)
                 {
-                    double f = F[b], lam = C0 / f, cp = 0.05 * lam;
+                    double f = F[b], lam = C0 / f, cp = senza ? 0 : 0.05 * lam;
                     double l0 = (1 - CalcFilari.Estremita(f, A)) * lam / 2;
                     // lunghezza col ROS minimo alla banda piu' bassa (scansione 0,85-1,10 e affinamento)
                     double best = l0, rb = double.MaxValue;
@@ -93,10 +96,12 @@ namespace YaNec
                     o.AppendLine(Nomi[b] + "\tλ/2 accordata (monobanda)\t" + N(best) + "\t" + N(cp) + Riga(best, cp, z0, b, null));
                     if (arm.Count > 1) o.AppendLine(Nomi[b] + "\tλ/2 multibanda (armoniche: " + string.Join(" ", arm.ConvertAll(i => Nomi[i])) + ")\t" + N(bm) + "\t" + N(cp) + Riga(bm, cp, z0, b, null));
                     o.AppendLine(Nomi[b] + "\tλ/4 (difficile)\t" + N(l0 / 2) + "\t" + N(cp) + Riga(l0 / 2, cp, z0, b, null));
-                    Console.WriteLine("EFHW " + rapp + " " + Nomi[b] + " fatto");
+                    Console.WriteLine("EFHW " + rapp + " " + Nomi[b] + (senza ? " senza contrappeso" : "") + " fatto");
                 }
                 o.AppendLine();
+              }
             }
+            if (soloEfhw) { File.WriteAllText(uscita, o.ToString(), new UTF8Encoding(false)); return 0; }
             // ---------------- 9:1: lunghezze e contrappesi ----------------
             double[] ve3eed = { 29, 35.5, 41, 58, 71, 84, 107, 119, 148 };
             double[] cpFissi = Perfetto ? new double[] { 0, 1, 2, 3, 5, 7.6, 10, 15 } : new double[] { 0, 1, 2, 3, 5, 7.6, 10 };
