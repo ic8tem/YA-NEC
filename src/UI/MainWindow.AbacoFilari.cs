@@ -47,7 +47,7 @@ namespace YaNec
         {
             Dictionary<string, List<string[]>> dati = LeggiAbaco();
             if (dati.Count == 0) { Status("Abaco delle filari non trovato (data/abaco_filari.tsv).", true); return; }
-            Window w = new Window { Title = Lang.T("Abaco delle filari") + " - YA-NEC", Width = 1180, Height = 760, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = Pal.B(Pal.Panel) };
+            Window w = new Window { Title = Lang.T("Abaco delle filari") + " - YA-NEC", Width = Math.Max(1180, Math.Min(1560, Bounds.Width - 40)), Height = 760, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = Pal.B(Pal.Panel) };
             DockPanel root = new DockPanel { Margin = new Thickness(14) };
             StackPanel testa = new StackPanel { Spacing = 6 };
             DockPanel.SetDock(testa, Dock.Top);
@@ -128,7 +128,7 @@ namespace YaNec
                         string v = riga[c];
                         string vis = efhw ? (c >= 2 ? v.Replace('.', ',') : Lang.TC(v)) : (c == 2 ? Lang.T(v) : v.Replace('.', ','));
                         Border cella = new Border { Background = c >= primaBanda ? ColoreRos(v) : Brushes.Transparent, Margin = new Thickness(1), IsHitTestVisible = false };
-                        cella.Child = new TextBlock { Text = vis, FontSize = 12.5, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(6, 2), HorizontalAlignment = c < primaBanda ? HorizontalAlignment.Left : HorizontalAlignment.Right, FontFamily = c >= 2 ? new FontFamily("Consolas, Menlo, monospace") : FontFamily.Default };
+                        cella.Child = new TextBlock { Text = vis, FontSize = 12.5, TextWrapping = efhw && c == 1 ? TextWrapping.Wrap : TextWrapping.NoWrap, MaxWidth = efhw && c == 1 ? 290 : double.PositiveInfinity, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(6, 2), HorizontalAlignment = c < primaBanda ? HorizontalAlignment.Left : HorizontalAlignment.Right, FontFamily = c >= 2 ? new FontFamily("Consolas, Menlo, monospace") : FontFamily.Default };
                         Grid.SetRow(cella, r + 1); Grid.SetColumn(cella, c); g.Children.Add(cella);
                     }
                     string[] r0 = riga; Border b0 = sf;
@@ -143,6 +143,7 @@ namespace YaNec
                 nota.Text = Lang.T(efhw ? (terreno == "medio" ? "Terreno medio: la mezz'onda accordata per una banda da' ROS 1,0-1,7 su quella banda; la multibanda cede sulla fondamentale e guadagna sulle armoniche; il quarto d'onda supera 99 alla banda piu' bassa." :
                         "Terreno perfetto: a 3 m il filo vede la propria immagine in controfase; sulle bande basse il ROS resta alto anche alla mezz'onda. La scheda calcola sempre con il terreno medio.")
                     : "9:1, dagli 80 ai 10 m: contrappesi fissi (0-10 m) e in percentuale del filo; il migliore ha piu' bande con ROS fino a 3 e, a parita', la media dei ROS piu' bassa.");
+                if (efhw && contr == "senza") nota.Text += " " + Lang.T("Senza contrappeso fa da contrappeso la calza di 10 m di coassiale senza choke: i ROS bassi sulle bande alte vengono dalla calza che irradia e porta RF in stazione.");
             };
             usa.Click += (s, e) =>
             {

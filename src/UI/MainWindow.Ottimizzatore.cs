@@ -59,6 +59,7 @@ namespace YaNec
             new[] { "el", "Elevazione", "0", "-" },
             new[] { "z", "Impedenza voluta", "40", "50 +j0" },   // 1.5.3 (IC8TEM 20/11/2026): parte sempre da 50 +j0 (prima "Z0 +j0", lo Z0 della barra in alto)
             new[] { "i", "Corrente in un punto", "0", "-" },
+            new[] { "gt", "G/T stack (VHF)", "0", "max" },   // 1.5.8: maschera VHF (bozzetto approvato da IC8TEM il 22/11/2026 17:03)
         };
 
         // ------------------------------------------------------------------------------------------------
@@ -67,7 +68,7 @@ namespace YaNec
         WrapPanel CreaSchedeOttimizzatore()
         {
             WrapPanel p = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(6, 4), IsVisible = false };
-            foreach (string[] k in new[] { new[] { "stato", "Stato" }, new[] { "voto", "Voto migliore" }, new[] { "g", "Guadagno" }, new[] { "fb", "F/B" }, new[] { "ros", "ROS" }, new[] { "z", "Impedenza" } })
+            foreach (string[] k in new[] { new[] { "stato", "Stato" }, new[] { "voto", "Voto migliore" }, new[] { "g", "Guadagno" }, new[] { "fb", "F/B" }, new[] { "ros", "ROS" }, new[] { "z", "Impedenza" }, new[] { "gt", "G/T stack" } })
             {
                 TextBlock l = new TextBlock { Text = k[1], FontSize = 11, Foreground = Pal.B(Pal.Muted) };
                 TextBlock v = new TextBlock { Text = "-", FontSize = 18, FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore) };
@@ -133,7 +134,10 @@ namespace YaNec
             ob.Children.Add(ottFreqPanel);
             ob.Children.Add(Nota("Il voto e' la somma sulle frequenze: tiene buona l'antenna anche ai bordi della banda. Si possono mettere bande diverse (antenne multibanda). " +
                                  "Clic su una frequenza: diventa la principale (in grassetto, quella delle schede in alto); clic destro: la toglie."));
-            Control c1 = new ScrollViewer { Content = Pannello("1. Obiettivi e pesi", ob), HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
+            StackPanel c1s = new StackPanel();
+            c1s.Children.Add(Pannello("1. Obiettivi e pesi", ob));
+            c1s.Children.Add(OttGtPannello());   // 1.5.8
+            Control c1 = new ScrollViewer { Content = c1s, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
 
             // ---- 2. Variabili ----
             StackPanel vp = new StackPanel { Spacing = 4 };
@@ -255,6 +259,7 @@ namespace YaNec
                 case "el": return "Elevazione voluta del massimo in gradi, es. \"15\" (si calcola il diagramma completo alla frequenza principale)";
                 case "z": return "Impedenza voluta, es. \"28 +j0\" o \"Z0 +j0\" (Z0 della barra in alto)";
                 case "i": return "Punto in cui la corrente deve essere minima, notazione MMANA: w4c (filo 4, centro), w4b, w4e, w4:7";
+                case "gt": return "\"max\" = G/T piu' alto possibile; oppure un valore in dB/K, es. \"≥ -14\". G/T di sistema dello stack scelto nel pannello Maschera VHF, alla frequenza principale";
             }
             return "";
         }
@@ -290,6 +295,7 @@ namespace YaNec
 
         void OttFrequenze()
         {
+            OttGtAggiornaTesti();   // 1.5.8: temperature e maschera VHF seguono la frequenza principale
             if (ottFreqPanel == null) return;
             ottFreqPanel.Children.Clear();
             for (int i = 0; i < ottFreq.Count; i++)
@@ -625,6 +631,7 @@ namespace YaNec
             o.Principale = ottFreqPrinc;
             o.MantieniBoom = ottBoom;
             o.Simplesso = ottSimplesso;
+            OttGtLeggi(o);   // 1.5.8
             return true;
         }
 
@@ -756,7 +763,7 @@ namespace YaNec
             if (ott == null || ott.Iniziale == null)
             {
                 OttScheda("stato", ottInCorso ? "in preparazione" : Lang.T("pronto"), ottInCorso ? "calcolo del modello di partenza" : "premi Avvia", ottInCorso ? Pal.Green : (Color?)null);
-                foreach (string k in new[] { "voto", "g", "fb", "ros", "z" }) OttScheda(k, "-", " ");
+                foreach (string k in new[] { "voto", "g", "fb", "ros", "z", "gt" }) OttScheda(k, "-", " ");
                 return;
             }
             TimeSpan t = DateTime.Now - ottT0;
@@ -774,6 +781,7 @@ namespace YaNec
             OttScheda("ros", Fmt(ros, 2), Lang.F("peggiore in banda {0}", Fmt(b.RosPeggiore, 2)), ros <= 1.5 ? Pal.Green : (Color?)null);
             OttRigaObiettivo zo = ottOb.Find(q => q.Chiave == "z");
             OttScheda("z", Fmt(b.Z.Real, 1) + " " + (b.Z.Imaginary < 0 ? "-" : "+") + "j" + Fmt(Math.Abs(b.Z.Imaginary), 1), zo != null && zo.Peso.Value > 0 ? Lang.F("obiettivo {0}", zo.Soglia.Text) : " ");
+            OttGtMostra();   // 1.5.8
         }
 
         void OttRegistro()

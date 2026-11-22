@@ -6963,3 +6963,41 @@ Terreno perfetto: a 3 m il filo vede la propria immagine in controfase; sulle ba
 Riga dell'abaco nella scheda Filari: ora il calcolo e' libero, si puo' cambiare tutto.
 Abaco delle filari non trovato (data/abaco_filari.tsv).
 λ/2 multibanda (armoniche: 
+Senza contrappeso fa da contrappeso la calza di 10 m di coassiale senza choke: i ROS bassi sulle bande alte vengono dalla calza che irradia e porta RF in stazione.
+G/T stack (VHF)
+G/T stack
+Maschera VHF: ROS + G/T
+Da 50 MHz in su: ROS con soglia 1,3 e G/T dello stack al massimo; guadagno, F/B e gli altri obiettivi a zero (il G/T li contiene gia').
+DL6WU dalle aperture a -3 dB, ricalcolate a ogni passo
+gradi (VE7BQH)
+Temperature
+uniformi come VE7BQH: cielo {0} K, terreno {1} K (a {2} MHz)
+Preamplificatore
+NF
+dB, guadagno
+combinatore prima del preamp
+dB, cavo dopo il preamp
+veloce + controllo NEC
+solo NEC dello stack
+Veloce: a ogni passo il diagramma della singola antenna per il fattore di schiera. Ogni 10 passi e alla fine si calcola lo stack completo con il NEC, accoppiamento compreso, e il G/T veloce si corregge della differenza. Solo NEC: lo stack completo a ogni passo (molto piu' lento).
+Come la linguetta Rumore/GT/Stack (VE7BQH, TANT, correzione KF2YN): antenna in spazio libero, cielo e terreno a temperatura uniforme. Il G/T e' quello di sistema: T antenna + preamplificatore + cavo diviso il guadagno del preamplificatore.
+obiettivo non usato
+G/T stack {0} a {1}°
+partenza {0} ({1}{2} dB)
+prima
+dopo
+G/T stack {0} a {1}° (sistema)
+G/T antenna (come VE7BQH)
+G/T singola
+T antenna (stack), K
+Guadagno stack, dBi
+Guadagno singola, dBi
+ROS peggiore
+Distanze DL6WU V x H, m
+Prima / dopo
+G/T con lo stack NEC completo (accoppiamento compreso); controlli NEC durante l'ottimizzazione: {0}.
+La maschera VHF e' per le antenne da 50 MHz in su.
+Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli le variabili e premi Avvia.
+"max" = G/T piu' alto possibile; oppure un valore in dB/K, es. "≥ -14". G/T di sistema dello stack scelto nel pannello Maschera VHF, alla frequenza principale
+G/T dello stack del modello di partenza
+controllo finale del G/T con lo stack NEC

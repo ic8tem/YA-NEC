@@ -14,6 +14,9 @@
 //   elevazione exp(-((el - voluta) / 10 gradi)^2)                  il valore e' l'elevazione voluta del massimo
 //   impedenza  1 - |(Z - Zv) / (Z + Zv)|^2                         il valore e' Zv (es. 28 +j0)
 //   corrente   1 - |I punto| / |I massima|                         corrente piu' bassa possibile nel punto (trappole, nodi)
+//   G/T stack  1 / (1 + exp(-(GT - GT0) / 0,5 dB)), GT0 = partenza   soglia: G/T >= valore (dB/K). 1.5.8, maschera VHF (OttGt.cs):
+//              G/T di sistema dello stack alla frequenza principale; nel modo veloce il fattore di schiera, corretto ogni 10 passi
+//              con lo stack NEC completo (la differenza NEC - veloce si somma ai passi seguenti).
 // Elevazione e corrente si calcolano alla frequenza centrale con il diagramma completo; gli altri con lo sweep in frequenza
 // nella direzione del massimo del modello di partenza.
 using System;
@@ -51,6 +54,9 @@ namespace YaNec.Engine
         public bool Valido;
         public string Errore;
         public bool Rispetta = true;    // 1.5: tutte le soglie rispettate a tutte le frequenze
+        public OttGtRisultato Gt;       // 1.5.8: G/T dello stack (null se l'obiettivo non c'e')
+        public double GtVoto = double.NaN;   // G/T usato nel voto (veloce + correzione, o NEC)
+        public double GtNec = double.NaN;    // G/T con lo stack NEC completo, se calcolato per questo passo
     }
 
     /// <summary>1.5 (bozzetto "Monte Carlo nell'Ottimizzatore" approvato da IC8TEM il 18/11/2026 19:36): un candidato controllato con le tolleranze.</summary>
@@ -76,6 +82,11 @@ namespace YaNec.Engine
         /// <summary>1.0.17: direzione "avanti" fissata (theta, phi in gradi); NaN = quella del massimo del modello di partenza (come prima).
         /// Serve quando il modello di partenza non ha ancora il lobo dove lo si vuole (Yagi di MathWorks: tutti gli elementi a 0,5 lambda).</summary>
         public double ThetaAvanti = double.NaN, PhiAvanti = double.NaN;
+        /// <summary>1.5.8: impostazioni del G/T dello stack (maschera VHF). Correzione = NEC - veloce dell'ultimo controllo.</summary>
+        public OttGtImpostazioni Gt = new OttGtImpostazioni();
+        public double GtCorrezione;
+        public int GtControlli;
+        double gt0 = double.NaN;
 
         // 1.5: Monte Carlo (versione leggera): partenze a caso e controllo dei migliori con le tolleranze di costruzione
         public int PartenzeCaso = 0;              // partenze a caso oltre al modello aperto (0 = come prima)
@@ -120,6 +131,18 @@ namespace YaNec.Engine
             g0 = new double[Frequenze.Count];
             for (int i = 0; i < g0.Length; i++) g0[i] = sp0[i].Ok ? sp0[i].GainFwd : r0.GmaxDbi;
             if (MantieniBoom) boom0 = Boom(Partenza, g);
+            GtCorrezione = 0; GtControlli = 0; gt0 = double.NaN;
+            if (UsaGt())
+            {
+                Fase?.Invoke("G/T dello stack del modello di partenza");
+                OttGtRisultato a = OttGt.Calcola(Partenza, g, Frequenze[Principale], Gt, !Gt.Veloce, ct);
+                if (Gt.Veloce)
+                {
+                    OttGtRisultato b = OttGt.Calcola(Partenza, g, Frequenze[Principale], Gt, true, ct);
+                    GtCorrezione = b.GtSys - a.GtSys; GtControlli++;
+                }
+                gt0 = a.GtSys + (Gt.Veloce ? GtCorrezione : 0);
+            }
             double[] x = new double[att.Count];
             for (int i = 0; i < x.Length; i++) x[i] = Math.Max(att[i].Min, Math.Min(att[i].Max, att[i].Valore));
             Iniziale = Prova(x, ct);
@@ -127,7 +150,7 @@ namespace YaNec.Engine
             Migliore = Iniziale;
             Annota(Iniziale, true);
             Candidati.Clear();
-            if (PartenzeCaso <= 0 && NumCandidati <= 0) { if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct); return; }
+            if (PartenzeCaso <= 0 && NumCandidati <= 0) { if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct); ControlloGtFinale(ct); return; }
             Random rnd = new Random(Seme);
             List<OttCandidato> fine = new List<OttCandidato>();
             int maxTot = MaxPassi;
@@ -169,6 +192,29 @@ namespace YaNec.Engine
             best.Proposto = true;
             Migliore = best.Passo;
             Annota(Migliore, true);
+            ControlloGtFinale(ct);
+        }
+
+        bool UsaGt() { return Obiettivi.Exists(o => o.Chiave == "gt" && o.Peso > 0); }
+
+        /// <summary>1.5.8: alla fine il G/T del migliore (e della partenza) con lo stack NEC completo, accoppiamento compreso.</summary>
+        void ControlloGtFinale(CancellationToken ct)
+        {
+            if (!UsaGt() || ct.IsCancellationRequested) return;
+            foreach (OttPasso p in new[] { Iniziale, Migliore })
+            {
+                if (p == null || !p.Valido || !double.IsNaN(p.GtNec)) continue;
+                try
+                {
+                    Fase?.Invoke("controllo finale del G/T con lo stack NEC");
+                    NecModel m = Modello(p.Valori);
+                    OttGtRisultato b = OttGt.Calcola(m, m.BuildGeometry(), Frequenze[Principale], Gt, true, ct);
+                    p.GtNec = b.GtSys;
+                    if (Gt.Veloce || p.Gt == null) p.Gt = b;
+                }
+                catch (OperationCanceledException) { return; }
+                catch (Exception) { }
+            }
         }
 
         /// <summary>Copie del candidato con le misure spostate a caso entro le tolleranze (lunghezza, posizione sul boom, diametro di ogni elemento).</summary>
@@ -340,6 +386,23 @@ namespace YaNec.Engine
                 RunResult rc = null;
                 foreach (OttObiettivo o in Obiettivi)
                     if (o.Peso > 0 && (o.Chiave == "el" || o.Chiave == "i")) { rc = Analysis.Run(m, g, Frequenze[Principale], 2.0, ct); break; }
+                if (UsaGt())
+                {
+                    // 1.5.8: G/T dello stack alla frequenza principale; nel modo veloce un controllo NEC ogni 10 passi (e alla partenza)
+                    r.Gt = OttGt.Calcola(m, g, Frequenze[Principale], Gt, !Gt.Veloce, ct);
+                    r.GtVoto = r.Gt.GtSys;
+                    if (!Gt.Veloce) r.GtNec = r.Gt.GtSys;
+                    else
+                    {
+                        if (r.N > 0 && r.N % 10 == 0)
+                        {
+                            OttGtRisultato b = OttGt.Calcola(m, g, Frequenze[Principale], Gt, true, ct);
+                            GtCorrezione = b.GtSys - r.Gt.GtSys; GtControlli++;
+                            r.GtNec = b.GtSys;
+                        }
+                        r.GtVoto = r.Gt.GtSys + GtCorrezione;
+                    }
+                }
                 double voto = 0, pesi = 0, rosMax = 0;
                 for (int fi = 0; fi < Frequenze.Count; fi++)
                 {
@@ -349,7 +412,7 @@ namespace YaNec.Engine
                     foreach (OttObiettivo o in Obiettivi)
                     {
                         if (o.Peso <= 0) continue;
-                        double s = Punteggio(o, p, fi, rc, m.Z0);
+                        double s = o.Chiave == "gt" ? PunteggioGt(o, r) : Punteggio(o, p, fi, rc, m.Z0);
                         voto += o.Peso * s; pesi += o.Peso;
                         if (o.HaSoglia && o.Chiave != "el" && o.Chiave != "z" && o.Chiave != "i" && s < 1) r.Rispetta = false;
                     }
@@ -360,6 +423,15 @@ namespace YaNec.Engine
                 r.Elev = rc != null ? rc.ElevationOfMax : 90 - thFwd;
                 r.Valido = true;
             }
+        }
+
+        double PunteggioGt(OttObiettivo o, OttPasso r)
+        {
+            double gt = r.GtVoto;
+            if (double.IsNaN(gt)) return 0;
+            if (o.HaSoglia && gt >= o.Soglia) return 1;
+            double rif = double.IsNaN(gt0) ? gt : gt0;
+            return 1 / (1 + Math.Exp(-(gt - rif) / 0.5));
         }
 
         double Punteggio(OttObiettivo o, SweepPoint p, int fi, RunResult rc, double z0)

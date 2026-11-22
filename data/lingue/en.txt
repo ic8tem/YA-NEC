@@ -7253,3 +7253,41 @@ Terreno perfetto: a 3 m il filo vede la propria immagine in controfase; sulle ba
 Riga dell'abaco nella scheda Filari: ora il calcolo e' libero, si puo' cambiare tutto.	Chart row copied into the Wire antennas page: the calculation is now free, everything can be changed.
 Abaco delle filari non trovato (data/abaco_filari.tsv).	Wire antenna chart not found (data/abaco_filari.tsv).
 λ/2 multibanda (armoniche: 	λ/2 multiband (harmonics: 
+Senza contrappeso fa da contrappeso la calza di 10 m di coassiale senza choke: i ROS bassi sulle bande alte vengono dalla calza che irradia e porta RF in stazione.	Without a counterpoise the shield of 10 m of coax without a choke acts as the counterpoise: the low SWR on the high bands comes from the shield radiating and bringing RF into the shack.
+G/T stack (VHF)	Stack G/T (VHF)
+G/T stack	Stack G/T
+Maschera VHF: ROS + G/T	VHF mask: SWR + G/T
+Da 50 MHz in su: ROS con soglia 1,3 e G/T dello stack al massimo; guadagno, F/B e gli altri obiettivi a zero (il G/T li contiene gia').	From 50 MHz up: SWR with a 1.3 threshold and maximum stack G/T; gain, F/B and the other goals set to zero (the G/T already contains them).
+DL6WU dalle aperture a -3 dB, ricalcolate a ogni passo	DL6WU from the -3 dB beamwidths, recalculated at every step
+gradi (VE7BQH)	degrees (VE7BQH)
+Temperature	Temperatures
+uniformi come VE7BQH: cielo {0} K, terreno {1} K (a {2} MHz)	uniform as VE7BQH: sky {0} K, ground {1} K (at {2} MHz)
+Preamplificatore	Preamplifier
+NF	NF
+dB, guadagno	dB, gain
+combinatore prima del preamp	combiner before the preamp
+dB, cavo dopo il preamp	dB, cable after the preamp
+veloce + controllo NEC	fast + NEC check
+solo NEC dello stack	stack NEC only
+Veloce: a ogni passo il diagramma della singola antenna per il fattore di schiera. Ogni 10 passi e alla fine si calcola lo stack completo con il NEC, accoppiamento compreso, e il G/T veloce si corregge della differenza. Solo NEC: lo stack completo a ogni passo (molto piu' lento).	Fast: at every step the pattern of the single antenna times the array factor. Every 10 steps and at the end the complete stack is calculated with NEC, coupling included, and the fast G/T is corrected by the difference. NEC only: the complete stack at every step (much slower).
+Come la linguetta Rumore/GT/Stack (VE7BQH, TANT, correzione KF2YN): antenna in spazio libero, cielo e terreno a temperatura uniforme. Il G/T e' quello di sistema: T antenna + preamplificatore + cavo diviso il guadagno del preamplificatore.	As in the Noise/GT/Stack tab (VE7BQH, TANT, KF2YN correction): antenna in free space, sky and ground at uniform temperature. The G/T is the system one: antenna T + preamplifier + cable divided by the preamplifier gain.
+obiettivo non usato	goal not used
+G/T stack {0} a {1}°	Stack G/T {0} at {1}°
+partenza {0} ({1}{2} dB)	start {0} ({1}{2} dB)
+prima	before
+dopo	after
+G/T stack {0} a {1}° (sistema)	Stack G/T {0} at {1}° (system)
+G/T antenna (come VE7BQH)	Antenna G/T (as VE7BQH)
+G/T singola	Single G/T
+T antenna (stack), K	Antenna T (stack), K
+Guadagno stack, dBi	Stack gain, dBi
+Guadagno singola, dBi	Single gain, dBi
+ROS peggiore	Worst SWR
+Distanze DL6WU V x H, m	DL6WU spacings V x H, m
+Prima / dopo	Before / after
+G/T con lo stack NEC completo (accoppiamento compreso); controlli NEC durante l'ottimizzazione: {0}.	G/T with the complete NEC stack (coupling included); NEC checks during the optimisation: {0}.
+La maschera VHF e' per le antenne da 50 MHz in su.	The VHF mask is for antennas from 50 MHz up.
+Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli le variabili e premi Avvia.	VHF mask: SWR (threshold 1.3) and stack G/T; the other weights at zero. Choose the variables and press Start.
+"max" = G/T piu' alto possibile; oppure un valore in dB/K, es. "≥ -14". G/T di sistema dello stack scelto nel pannello Maschera VHF, alla frequenza principale	"max" = highest possible G/T; or a value in dB/K, e.g. "≥ -14". System G/T of the stack chosen in the VHF mask panel, at the main frequency
+G/T dello stack del modello di partenza	stack G/T of the starting model
+controllo finale del G/T con lo stack NEC	final G/T check with the NEC stack
