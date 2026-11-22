@@ -926,7 +926,7 @@ Diametro del disco	Atspindžio skersmuo
 Diametro del feed	Švitintuvo skersmuo
 Diametro del filo	Laido skersmuo
 Diametro del filo degli anelli	Kilpų laido skersmuo
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	Tinklo vielos skersmuo: kartu su akies dydžiu jis lemia pralaidumą per tinklą (Mumford) ir vėjui atvirą paviršių.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	Tinklo vielos skersmuo: kartu su akies dydžiu jis lemia pralaidumą per tinklą (W1GHZ, Otoshi) ir vėjui atvirą paviršių.
 Diametro del filo piu' grande della lunghezza del filo	Laido skersmuo didesnis už laido ilgį
 Diametro del radiatore	Spinduolio skersmuo
 Diametro dell'altro conduttore	Antrojo laidininko skersmuo
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	LC suderinimo grandinė
 rete NT	NT grandinė
 Rete NT: si conserva com'e'.	NT grandinė: paliekama kaip yra.
 rete troppo larga	tinklas per retas
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	Tinklas: viela stora palyginti su akies dydžiu; Mumford formulė yra ties savo riba ir tinklas laikomas beveik ištisiniu.
 Rete: trasmissione	Tinklas: pralaidumas
 Rete: vento	Tinklas: vėjas
 reti L	L grandinė
@@ -3073,7 +3072,7 @@ Struttura 3D	3D struktūra
 Struttura e superficie	Struktūra ir paviršius
 stub in corto	trumpai sujungta atšaka
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	Atšakos, transformatoriai ir L grandinės lieka tik bazinėje antenoje: kopijoms jas reikia pridėti rankiniu būdu.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ir Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ir Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ir Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb ir Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	kiekviename lape yra 100 mm liniuotė masteliui patikrinti, o lapai persidengia 10 mm ties kryželiais. Stebulė ir briaunos aukštis įrašyti duomenyse kairėje.
 su tutta la sfera	per visą sferą
 su tutte le direzioni	visomis kryptimis
@@ -3398,7 +3397,7 @@ voto migliore	geriausi taškai
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE 1959 m. rugp.; J. Sevick, Transmission Line Transformers, 4 leid. Noble 2001; šerdžių AL: Amidon (amidoncorp.com), geležies milteliai: Amidon lentelė iš ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), NEC modelis L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), lentelės W3PM (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, lygt. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, cap. 12	W1GHZ, 12 sk.
 W1GHZ, cap. 6.5	W1GHZ, 6.5 sk.
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book 6.3 sk.
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 nemodeliuoja izoliacijos: apskaičiuoti matmenys tinka plikai vielai. Su izoliuota viela elementą reikia sutrumpinti (W6PQL: kraštinė 0,238 lambda vietoj 0,248, apie 4 % mažiau).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Viršutinė žiedlapio šaka ir apatinė gretimo žiedlapio šaka yra 20 laipsnių viena nuo kitos: kartu jos sudaro λ/4 liniją, kuri perneša aukštą žiedlapio impedansą į stebulę.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Pilkame lauke rašyti negalima: jis rodo išvestinę vertę. Su "Abu" nurodomi abu, ir atstumai proporcingai ištempiami arba suspaudžiami: išeinama iš metodo ir reikia NEC optimizavimo.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Kraštinė yra apie λ/4 nuo vielos centro iki vielos centro; atstumas nuo atspindžio (šaltiniuose 0,1-0,13 λ) yra SWR reguliavimas. Su tinklu atspindys yra vielų grotelės su tikra akute (Mumford: akutė mažesnė nei λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	Kraštinė yra apie λ/4 nuo vielos centro iki vielos centro; atstumas nuo atspindžio (šaltiniuose 0,1-0,13 λ) yra SWR reguliavimas. Su tinklu atspindys yra vielų grotelės su tikra akute (W1GHZ, Otoshi: akutė mažesnė nei λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	Atidarytas modelis jau yra grupė: atidarykite vieną anteną.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Modelis yra laisvoje erdvėje: HF grupei naudojamas vidutinis gruntas (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Žiedlapis masteliu 1:1 ant sujungiamų A4 lapų (10 mm užlaida, kryželiai kas 50 mm, 100 mm liniuotė). Tik Big Wheel.
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	Šleifas
 Stub: larghezza	Šleifas: plotis
 Stub: lunghezza sviluppata	Šleifas: išskleistas ilgis
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ir Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ir Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ir Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb ir Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Kai kuriose juostose maitinimo linija praranda daugiau nei 3 dB (paryškinti langeliai): sutrumpinkite liniją, pereikite prie kopėčių linijos arba pastatykite derintuvą prie kilpos.
 T antenna (cielo vero)	Antenos T (tikras dangus)
 T antenna nelle 24 ore	Antenos T per 24 valandas
 T antenna nelle 24 ore (puntamento fisso)	Antenos T per 24 valandas (fiksuotas nukreipimas)
 T del terreno (cielo vero)	Žemės T (tikras dangus)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ir MW1FGQ; buildyourownantenna (dvigubas biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ir MW1FGQ; buildyourownantenna (dvigubas biquad, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ir MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (palyginimas)
 Tabella dello stack copiata.	Grupės lentelė nukopijuota.
 Temperature uniformi (VE7BQH)	Vienodos temperatūros (VE7BQH)
@@ -5836,7 +5835,7 @@ area	plotas
  mm sull'asse, 	 mm ašyje, 
  mm tolti a 	 mm nuimta ties 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): dalis galios praeina už jo (Mumford). NEC ją apskaičiuoja su tikru tinkleliu.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): dalis galios praeina už jo (W1GHZ, Otoshi). NEC ją apskaičiuoja su tikru tinkleliu.
  mm): raggio 	 mm): spindulys 
  mm, alimentato al centro del lato posteriore	 mm, maitinama galinės kraštinės centre
  mm, bracci piegati in avanti di 	 mm, pečiai palenkti į priekį per 

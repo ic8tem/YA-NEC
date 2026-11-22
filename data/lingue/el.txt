@@ -926,7 +926,7 @@ Diametro del disco	Διάμετρος του πιάτου
 Diametro del feed	Διάμετρος του τροφοδότη
 Diametro del filo	Διάμετρος του σύρματος
 Diametro del filo degli anelli	Διάμετρος του σύρματος βρόχου
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	Διάμετρος σύρματος πλέγματος: μαζί με το βήμα των οπών δίνει τη διαπερατότητα του πλέγματος (Mumford) και την επιφάνεια που εκτίθεται στον άνεμο.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	Διάμετρος σύρματος πλέγματος: μαζί με το βήμα των οπών δίνει τη διαπερατότητα του πλέγματος (W1GHZ, Otoshi) και την επιφάνεια που εκτίθεται στον άνεμο.
 Diametro del filo piu' grande della lunghezza del filo	Διάμετρος σύρματος μεγαλύτερη από το μήκος του σύρματος
 Diametro del radiatore	Διάμετρος του ακτινοβολητή
 Diametro dell'altro conduttore	Διάμετρος του άλλου αγωγού
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	Κύκλωμα προσαρμογής LC
 rete NT	Κύκλωμα NT
 Rete NT: si conserva com'e'.	Κύκλωμα NT: διατηρήθηκε ως έχει.
 rete troppo larga	πολύ αραιό πλέγμα
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	Πλέγμα: σύρμα παχύ σε σχέση με το βήμα· ο τύπος Mumford είναι στο όριό του και το πλέγμα θεωρείται σχεδόν συμπαγές.
 Rete: trasmissione	Πλέγμα: διαπερατότητα
 Rete: vento	Πλέγμα: άνεμος
 reti L	Κυκλώματα L
@@ -3073,7 +3072,7 @@ Struttura 3D	Τρισδιάστατη δομή
 Struttura e superficie	Δομή και επιφάνεια
 stub in corto	βραχυκυκλωμένο stub
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	Τα stubs, οι μετασχηματιστές και τα κυκλώματα L μένουν μόνο στη βασική κεραία: στα αντίγραφα πρέπει να προστεθούν με το χέρι.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman και Thiele· S. Sengupta· GMRT/NCRA· J. Baars· C.A. Balanis· P. Wade W1GHZ· J. Ruze· W.W. Mumford· I.E. Idelchik· S.F. Hoerner· Lamb και Olver· Bob Atkins· OE2IGL· DF3GJ· UA3AVR· DJ7FJ· OK1DFC· RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman και Thiele· S. Sengupta· GMRT/NCRA· J. Baars· C.A. Balanis· P. Wade W1GHZ· J. Ruze· T.Y. Otoshi· I.E. Idelchik· S.F. Hoerner· Lamb και Olver· Bob Atkins· OE2IGL· DF3GJ· UA3AVR· DJ7FJ· OK1DFC· RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	σε κάθε φύλλο υπάρχει χάρακας 100 mm για έλεγχο της κλίμακας και τα φύλλα επικαλύπτονται κατά 10 mm στους σταυρούς. Η πλήμνη και το ύψος της νεύρωσης γράφονται στα δεδομένα αριστερά.
 su tutta la sfera	σε όλη τη σφαίρα
 su tutte le direzioni	σε όλες τις κατευθύνσεις
@@ -3398,7 +3397,7 @@ voto migliore	καλύτερη βαθμολογία
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE Αύγ. 1959· J. Sevick, Transmission Line Transformers, 4η έκδ. Noble 2001· AL πυρήνων: Amidon (amidoncorp.com), σκόνη σιδήρου: πίνακας Amidon από ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), μοντέλο NEC του L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), πίνακες W3PM (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, εξ. 9-233· S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961· W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Proc. IRE 49, 1961· W1GHZ, Mesh Reflector Loss Calculations
 W1GHZ, cap. 12	W1GHZ, κεφ. 12
 W1GHZ, cap. 6.5	W1GHZ, κεφ. 6.5
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book κεφ. 6.3
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	Το NEC-2 δεν μοντελοποιεί τη μόνωση: οι υπολογισμένες διαστάσεις αφορούν γυμνό σύρμα. Με μονωμένο σύρμα το στοιχείο πρέπει να κονταίνει (W6PQL: πλευρά 0,238 lambda αντί 0,248, περίπου 4 % λιγότερο).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Ο πάνω βραχίονας ενός πετάλου και ο κάτω του γειτονικού απέχουν 20 μοίρες: μαζί σχηματίζουν τη γραμμή λ/4 που μεταφέρει την υψηλή σύνθετη αντίσταση του πετάλου στην πλήμνη.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Το γκρι πεδίο δεν επεξεργάζεται: δείχνει την παράγωγη τιμή. Με "Και τα δύο" δίνονται και τα δύο και οι αποστάσεις τεντώνονται ή συμπιέζονται αναλογικά: βγαίνετε από τη μέθοδο και χρειάζεται βελτιστοποίηση NEC.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Η πλευρά είναι περίπου λ/4 από κέντρο σε κέντρο σύρματος· η απόσταση από τον ανακλαστήρα (0,1-0,13 λ στις πηγές) είναι η ρύθμιση του SWR. Με πλέγμα ο ανακλαστήρας είναι συρμάτινο πλέγμα με το πραγματικό άνοιγμα (Mumford: άνοιγμα κάτω από λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	Η πλευρά είναι περίπου λ/4 από κέντρο σε κέντρο σύρματος· η απόσταση από τον ανακλαστήρα (0,1-0,13 λ στις πηγές) είναι η ρύθμιση του SWR. Με πλέγμα ο ανακλαστήρας είναι συρμάτινο πλέγμα με το πραγματικό άνοιγμα (W1GHZ, Otoshi: άνοιγμα κάτω από λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	Το ανοιχτό μοντέλο είναι ήδη συστοιχία: ανοίξτε τη μεμονωμένη κεραία.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Το μοντέλο είναι σε ελεύθερο χώρο: για τη συστοιχία HF χρησιμοποιείται μέσο έδαφος (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Το πέταλο σε κλίμακα 1:1 σε φύλλα A4 προς ένωση (επικάλυψη 10 mm, σταυροί ανά 50 mm, χάρακας 100 mm). Μόνο για το Big Wheel.
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	Stub
 Stub: larghezza	Stub: πλάτος
 Stub: lunghezza sviluppata	Stub: ανεπτυγμένο μήκος
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman και Thiele· S. Sengupta· GMRT/NCRA· J. Baars· C.A. Balanis· P. Wade W1GHZ· PA0PLY· J. Ruze· W.W. Mumford· I.E. Idelchik· S.F. Hoerner· Lamb και Olver· Bob Atkins· OE2IGL· DF3GJ· UA3AVR· DJ7FJ· OK1DFC· RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman και Thiele· S. Sengupta· GMRT/NCRA· J. Baars· C.A. Balanis· P. Wade W1GHZ· PA0PLY· J. Ruze· T.Y. Otoshi· I.E. Idelchik· S.F. Hoerner· Lamb και Olver· Bob Atkins· OE2IGL· DF3GJ· UA3AVR· DJ7FJ· OK1DFC· RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Σε κάποια μπάντα η γραμμή χάνει πάνω από 3 dB (επισημασμένα πλαίσια): κονταίνετε τη γραμμή, περάστε σε γραμμή σκάλας ή βάλτε τον tuner στον βρόχο.
 T antenna (cielo vero)	T κεραίας (πραγματικός ουρανός)
 T antenna nelle 24 ore	T κεραίας σε 24 ώρες
 T antenna nelle 24 ore (puntamento fisso)	T κεραίας σε 24 ώρες (σταθερή σκόπευση)
 T del terreno (cielo vero)	T εδάφους (πραγματικός ουρανός)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001)· martybugs.net· W. Zwickel OE2TZL (QSP 10/93)· W6PQL· IK1ZYW· G6GVI και MW1FGQ· buildyourownantenna (διπλό biquad, 2014)· nec2.org· W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001)· martybugs.net· W. Zwickel OE2TZL (QSP 10/93)· W6PQL· IK1ZYW· G6GVI και MW1FGQ· buildyourownantenna (διπλό biquad, 2014)· nec2.org· T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001)· martybugs.net· W. Zwickel OE2TZL (QSP 10/93)· W6PQL· IK1ZYW· G6GVI και MW1FGQ· buildyourownantenna· nec2.org· MathWorks Antenna Toolbox (σύγκριση)
 Tabella dello stack copiata.	Ο πίνακας συστοιχίας αντιγράφηκε.
 Temperature uniformi (VE7BQH)	Ομοιόμορφες θερμοκρασίες (VE7BQH)
@@ -5836,7 +5835,7 @@ area	εμβαδόν
  mm sull'asse, 	 mm στον άξονα, 
  mm tolti a 	 mm αφαιρέθηκαν στα 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): μέρος της ισχύος πηγαίνει προς τα πίσω (Mumford). Το NEC το υπολογίζει με το πραγματικό πλέγμα.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): μέρος της ισχύος πηγαίνει προς τα πίσω (W1GHZ, Otoshi). Το NEC το υπολογίζει με το πραγματικό πλέγμα.
  mm): raggio 	 mm): ακτίνα 
  mm, alimentato al centro del lato posteriore	 mm, τροφοδοσία στο κέντρο της πίσω πλευράς
  mm, bracci piegati in avanti di 	 mm, βραχίονες λυγισμένοι προς τα εμπρός κατά 

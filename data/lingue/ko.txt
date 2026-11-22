@@ -926,7 +926,7 @@ Diametro del disco	파라볼라 지름
 Diametro del feed	피드 지름
 Diametro del filo	와이어 지름
 Diametro del filo degli anelli	루프 와이어 지름
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	메시 선 지름: 눈 간격과 함께 메시 투과 (Mumford)와 바람을 받는 면적을 정합니다.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	메시 선 지름: 눈 간격과 함께 메시 투과 (W1GHZ, Otoshi)와 바람을 받는 면적을 정합니다.
 Diametro del filo piu' grande della lunghezza del filo	와이어 지름이 와이어 길이보다 큼
 Diametro del radiatore	방사기 지름
 Diametro dell'altro conduttore	다른 도체의 지름
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	LC 정합 회로
 rete NT	NT 회로
 Rete NT: si conserva com'e'.	NT 회로: 그대로 유지.
 rete troppo larga	메시가 너무 성김
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	메시: 선이 피치에 비해 굵음. Mumford 식이 한계이며 메시를 거의 채워진 것으로 다룹니다.
 Rete: trasmissione	메시: 투과
 Rete: vento	메시: 바람
 reti L	L 회로
@@ -3073,7 +3072,7 @@ Struttura 3D	3D 구조
 Struttura e superficie	구조와 표면
 stub in corto	단락 스터브
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	스터브, 트랜스, L 회로는 기본 안테나에만 남습니다: 복사본에는 직접 추가해야 합니다.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman과 Thiele, S. Sengupta, GMRT/NCRA, J. Baars, C.A. Balanis, P. Wade W1GHZ, J. Ruze, W.W. Mumford, I.E. Idelchik, S.F. Hoerner, Lamb과 Olver, Bob Atkins, OE2IGL, DF3GJ, UA3AVR, DJ7FJ, OK1DFC, RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman과 Thiele, S. Sengupta, GMRT/NCRA, J. Baars, C.A. Balanis, P. Wade W1GHZ, J. Ruze, T.Y. Otoshi, I.E. Idelchik, S.F. Hoerner, Lamb과 Olver, Bob Atkins, OE2IGL, DF3GJ, UA3AVR, DJ7FJ, OK1DFC, RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	각 시트에는 축척 확인용 100 mm 자가 있고 시트는 십자 표시에서 10 mm 겹칩니다. 허브와 리브 높이는 왼쪽 데이터에 적혀 있습니다.
 su tutta la sfera	구 전체에 걸쳐
 su tutte le direzioni	모든 방향에 걸쳐
@@ -3398,7 +3397,7 @@ voto migliore	최고 점수
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE 1959년 8월. J. Sevick, Transmission Line Transformers 제4판, Noble 2001. 코어 AL: Amidon (amidoncorp.com), 철분: ok1dxd의 Amidon 표
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), L. B. Cebik W4RNL의 NEC 모델 (Quagi and Yagi on 2 Meters), W3PM 표 (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, 식 9-233. S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961. W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Proc. IRE 49, 1961. W1GHZ, Mesh Reflector Loss Calculations
 W1GHZ, cap. 12	W1GHZ, 12장
 W1GHZ, cap. 6.5	W1GHZ, 6.5장
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book 6.3장
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2는 피복을 모델링하지 않습니다: 계산 치수는 나선 기준입니다. 피복선이면 소자를 짧게 해야 합니다 (W6PQL: 변 0,248 대신 0,238 lambda, 약 4 % 짧음).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	한 꽃잎의 위쪽 암과 이웃 꽃잎의 아래쪽 암은 20도 떨어져 있습니다: 함께 λ/4 선로를 이루어 꽃잎의 높은 임피던스를 허브로 가져옵니다.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	회색 칸은 편집할 수 없습니다: 유도된 값을 보여 줍니다. "둘 다"를 고르면 둘 다 주고 간격이 비례해 늘거나 줄어듭니다: 방법을 벗어나므로 NEC 최적화가 필요합니다.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	변은 선 중심 간 약 λ/4; 반사기와의 거리 (출처에서 0,1-0,13 λ)가 SWR 조정입니다. 메시라면 반사기는 실제 눈 크기의 선 격자입니다 (Mumford: 눈은 λ/10 미만).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	변은 선 중심 간 약 λ/4; 반사기와의 거리 (출처에서 0,1-0,13 λ)가 SWR 조정입니다. 메시라면 반사기는 실제 눈 크기의 선 격자입니다 (W1GHZ, Otoshi: 눈은 λ/10 미만).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	열린 모델은 이미 스택입니다: 단일 안테나를 여세요.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	모델은 자유 공간입니다: HF 스택에는 평균 대지를 사용합니다 (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	A4 용지를 이어 붙인 1:1 꽃잎 (10 mm 겹침, 50 mm마다 십자, 100 mm 자). Big Wheel 전용.
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	스텁
 Stub: larghezza	스텁: 폭
 Stub: lunghezza sviluppata	스텁: 전개 길이
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman과 Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb과 Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman과 Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb과 Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	일부 대역에서 급전선 손실이 3 dB를 넘습니다 (강조 칸): 선로를 줄이거나, 사다리 피더로 바꾸거나, 튜너를 루프에 두세요.
 T antenna (cielo vero)	안테나 T (실제 하늘)
 T antenna nelle 24 ore	24시간 안테나 T
 T antenna nelle 24 ore (puntamento fisso)	24시간 안테나 T (지향 고정)
 T del terreno (cielo vero)	대지 T (실제 하늘)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI와 MW1FGQ; buildyourownantenna (더블 바이쿼드, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI와 MW1FGQ; buildyourownantenna (더블 바이쿼드, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI와 MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (비교)
 Tabella dello stack copiata.	스택 표를 복사했습니다.
 Temperature uniformi (VE7BQH)	균일 온도 (VE7BQH)
@@ -5836,7 +5835,7 @@ area	면적
  mm sull'asse, 	 mm 축 위, 
  mm tolti a 	 mm 제거, 위치 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): 전력 일부가 뒤로 빠집니다 (Mumford). NEC는 실제 메시로 계산합니다.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): 전력 일부가 뒤로 빠집니다 (W1GHZ, Otoshi). NEC는 실제 메시로 계산합니다.
  mm): raggio 	 mm): 반경 
  mm, alimentato al centro del lato posteriore	 mm, 후방 변 중앙 급전
  mm, bracci piegati in avanti di 	 mm, 팔을 앞으로 굽힘 

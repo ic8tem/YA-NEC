@@ -997,7 +997,7 @@ Diametro del disco	Dish diameter
 Diametro del feed	Feed diameter
 Diametro del filo	Wire diameter
 Diametro del filo degli anelli	Loop wire diameter
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	Mesh wire diameter: together with the hole pitch it gives the transmission through the mesh (Mumford) and the surface exposed to the wind.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	Mesh wire diameter: together with the hole pitch it gives the transmission through the mesh (W1GHZ, Otoshi) and the surface exposed to the wind.
 Diametro del filo piu' grande della lunghezza del filo	Wire diameter larger than the wire length
 Diametro del radiatore	Radiator diameter
 Diametro dell'altro conduttore	Diameter of the other conductor
@@ -2144,7 +2144,6 @@ Rete / superficie	Mesh / surface
 Rete 0,85 kg/m2 circa; lamiera di alluminio 1,5 mm = 4,05 kg/m2.	Mesh about 0.85 kg/m2; 1.5 mm aluminium sheet = 4.05 kg/m2.
 Rete di alimentazione singolare (porta senza collegamento).	Singular feed network (port without connection).
 Rete fitta (terreno perfetto)	Fine mesh (perfect ground)
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	Mesh: wire thick compared with the pitch; the Mumford formula is at its limit and the mesh is treated as almost solid.
 Rete: trasmissione	Mesh: transmission
 Rete: vento	Mesh: wind
 Reti L di EZNEC: non ancora importate.	EZNEC L networks: not imported yet.
@@ -2343,7 +2342,7 @@ Stilo	Whip
 Strumenti	Tools
 Struttura e superficie	Structure and surface
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	Stubs, transformers and L networks stay only on the base antenna: they must be added to the copies by hand.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman and Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb and Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman and Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb and Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su un boom unico la spaziatura e' ottima solo per una banda; DK7ZB e gli altri progettisti ritoccano i perimetri con il calcolo.	On a single boom the spacing is optimum only for one band; DK7ZB and the other designers adjust the perimeters with the calculation.
 Sulla parabola	On the dish
 Sulle bande alte il condensatore sul primario di solito non serve: provalo da 50 a 150 pF se il ROS sale sopra i 21 MHz.	On the high bands the capacitor on the primary is usually not needed: try 50 to 150 pF if the SWR rises above 21 MHz.
@@ -2526,7 +2525,7 @@ Voto migliore	Best score
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE Aug. 1959; J. Sevick, Transmission Line Transformers, 4th ed. Noble 2001; core AL: Amidon (amidoncorp.com), iron powder: Amidon table by ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), NEC model by L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), W3PM tables (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book ch. 6.3
 W1GHZ, Microwave Antenna Book, cap. 5 e 6	W1GHZ, Microwave Antenna Book, ch. 5 and 6
 W1GHZ, Online Microwave Antenna Book, cap. 6.1 e 12 (PHASEPAT, DIPROD.NEC); P.-S. Kildal, Factorization of the feed efficiency of paraboloids and Cassegrain antennas, IEEE Trans. AP-33, 1985; DF3GJ (formato dei file)	W1GHZ, Online Microwave Antenna Book, ch. 6.1 and 12 (PHASEPAT, DIPROD.NEC); P.-S. Kildal, Factorization of the feed efficiency of paraboloids and Cassegrain antennas, IEEE Trans. AP-33, 1985; DF3GJ (file format)
@@ -3597,7 +3596,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 does not model the insulation: the computed dimensions are those of the bare wire. With insulated wire the element must be shortened (W6PQL: side 0.238 lambda instead of 0.248, about 4 % less).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	The upper arm of a petal and the lower arm of the adjacent petal are 20 degrees apart: together they form the λ/4 line that brings the high impedance of the petal to the hub.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	The grey field cannot be edited: it shows the derived value. With "Both" you give both and the spacings are stretched or shrunk in proportion: you leave the method and NEC optimization is needed.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	The side is about λ/4 from wire centre to wire centre; the distance from the reflector (0.1-0.13 λ in the sources) is the SWR adjustment. With mesh the reflector is a wire grid with the real mesh (Mumford: mesh below λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	The side is about λ/4 from wire centre to wire centre; the distance from the reflector (0.1-0.13 λ in the sources) is the SWR adjustment. With mesh the reflector is a wire grid with the real mesh (W1GHZ, Otoshi: mesh below λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	The open model is already a stack: open the single antenna.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	The model is in free space: for the HF stack average ground is used (13 / 0.005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	The petal at 1:1 scale on A4 sheets to be joined (10 mm overlap, crosses every 50 mm, 100 mm ruler). Only for the Big Wheel.
@@ -3694,13 +3693,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	Stub
 Stub: larghezza	Stub: width
 Stub: lunghezza sviluppata	Stub: developed length
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman and Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb and Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman and Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb and Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	On some band the feed line loses more than 3 dB (highlighted boxes): shorten the line, switch to ladder line or put the tuner at the loop.
 T antenna (cielo vero)	Antenna T (real sky)
 T antenna nelle 24 ore	Antenna T over 24 hours
 T antenna nelle 24 ore (puntamento fisso)	Antenna T over 24 hours (fixed pointing)
 T del terreno (cielo vero)	Ground T (real sky)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI and MW1FGQ; buildyourownantenna (double biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI and MW1FGQ; buildyourownantenna (double biquad, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI and MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (comparison)
 Tabella dello stack copiata.	Stack table copied.
 Temperature uniformi (VE7BQH)	Uniform temperatures (VE7BQH)
@@ -5609,7 +5608,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	at {0} x DL6WU; all above the maximum 
  mm sull'asse, 	 mm on the axis, 
  mm tolti a 	 mm removed at 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): part of the power goes behind (Mumford). NEC calculates it with the real mesh.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): part of the power goes behind (W1GHZ, Otoshi). NEC calculates it with the real mesh.
  mm): raggio 	 mm): radius 
  mm, alimentato al centro del lato posteriore	 mm, fed at the centre of the rear side
  mm, bracci piegati in avanti di 	 mm, arms bent forward by 

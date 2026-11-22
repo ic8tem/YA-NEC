@@ -4,7 +4,7 @@
 // polarizzazione lungo Y (la fila dei quadrati), riflettore a z = -d; cosi' "Feed dal modello NEC" della parabola lo legge senza conversioni.
 // Fonti: T. Marshall (BYTE 10/2001, trevormarshall.com), martybugs.net, W. Zwickel OE2TZL (QSP 10/93), W6PQL, IK1ZYW (2012),
 // G6GVI e MW1FGQ, buildyourownantenna (2014, doppia biquad), nec2.org (riflettore a griglia 0,05-0,1 lambda), MathWorks (biquad Yagi),
-// W.W. Mumford (rete), A. Rubinstein e altri 2005 (raggio dei fili della griglia).
+// T.Y. Otoshi (rete), A. Rubinstein e altri 2005 (raggio dei fili della griglia).
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -24,7 +24,7 @@ namespace YaNec.Engine
         public CalcBiquad()
         {
             Key = "biquad"; Title = "Biquad e doppia biquad";
-            Source = "T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford";
+            Source = "T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi";
             CalcParam b = CalcParam.Scelta("banda", "Banda", 2, "Banda di lavoro: la frequenza e tutte le misure in mm si riscalano. \"libera\" lascia scrivere la frequenza.",
                 "1296", "2320", "2442 Wi-Fi", "3400", "5760", "libera");
             b.Pillole = true;
@@ -53,7 +53,7 @@ namespace YaNec.Engine
             lip.Visibile = () => I("bordi") > 0;
             Params.Add(lip);
             Params.Add(new CalcParam("z0", "Impedenza di riferimento", 50, "Ω", "Per il ROS (50 ohm con il coassiale direttamente sul punto di alimentazione, come in tutte le fonti)."));
-            NotaFissa = "Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).";
+            NotaFissa = "Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).";
         }
 
         public override string TuneLabel { get { return "Porta in adattamento (NEC)"; } }
@@ -190,7 +190,7 @@ namespace YaNec.Engine
             if (s / lam < 0.22 || s / lam > 0.28) o.Warnings.Add("Lato di " + Calcolatori.N(s / lam, 3) + " λ: le fonti stanno fra 0,238 (W6PQL, filo isolato) e 0,264 λ (OE2TZL).");
             if (d / lam < 0.06 || d / lam > 0.16) o.Warnings.Add("Distanza dal riflettore di " + Calcolatori.N(d / lam, 3) + " λ: le fonti stanno fra 0,09 e 0,13 λ. IK1ZYW: da 1/8 a 1/16 λ si perdono circa 0,5 dB di guadagno e 3 dB di F/B.");
             if (rw < 0.7 * lam || rh < estY * 2 + 0.3 * lam) o.Warnings.Add("Riflettore piccolo: il guadagno scende e il lobo posteriore cresce (Marshall: 123 mm a 2,4 GHz, cioe' circa 1 λ, per la biquad da sola).");
-            if (rete && reteVera && Math.Max(px, py) > lam / 10) o.Warnings.Add("Maglia della rete di " + Calcolatori.N(Math.Max(px, py) * 1000, 1) + " mm, sopra λ/10 (" + Calcolatori.N(lam * 100, 1) + " mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.");
+            if (rete && reteVera && Math.Max(px, py) > lam / 10) o.Warnings.Add("Maglia della rete di " + Calcolatori.N(Math.Max(px, py) * 1000, 1) + " mm, sopra λ/10 (" + Calcolatori.N(lam * 100, 1) + " mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.");
             if (rete && !reteVera) o.Warnings.Add("Rete troppo fitta per il calcolo (oltre 1800 segmenti): nel NEC il riflettore e' una griglia di 0,07 λ, come se fosse pieno. Con maglie sotto λ/10 la differenza e' piccola.");
             if (I("iso") == 1) o.Warnings.Add("Filo isolato: il NEC-2 lo calcola come nudo. L'isolante accorcia l'elemento: W6PQL usa 0,238 λ di lato con il filo isolato contro 0,248 λ di Marshall con il filo nudo (circa il 4 % in meno).");
             if (UltimiSegmenti > 2500) o.Warnings.Add("Modello pesante (" + UltimiSegmenti + " segmenti): il calcolo richiede qualche secondo.");
@@ -199,7 +199,7 @@ namespace YaNec.Engine
             o.Formula = "Geometria: quadrati di lato s (circa λ/4 da centro filo a centro filo) disposti a rombo lungo la polarizzazione, alimentati al centro tra due nodi distanti " +
                 "max(1,5 mm; 4 raggi). Doppia biquad: quattro quadrati in fila; il filo si incrocia tra il primo e il secondo quadrato di ogni lato senza toccarsi (ponte di " +
                 Calcolatori.N(zc * 1000, 1) + " mm nel modello). Riflettore: griglia di fili a z = -d, passo 0,07 λ e raggio con l'area uguale (2 pi a = passo, Rubinstein 2005) se pieno, " +
-                "maglia e filo veri se a rete (Mumford: trasmissione 1/(1 + x^2), x = λ / [2 s ln(s / pi d)]). Riferimento come i feed di YA-NEC: elemento a z = 0, fascio verso +Z, polarizzazione lungo Y. " +
+                "maglia e filo veri se a rete (W1GHZ, Otoshi: per ogni direzione dei fili passa (2 s v / λ)^2, v = ln[1 / (1 - e^(-pi d / s))]). Riferimento come i feed di YA-NEC: elemento a z = 0, fascio verso +Z, polarizzazione lungo Y. " +
                 "\"Porta in adattamento (NEC)\" regola il lato per la risonanza e la distanza per il ROS minimo, poi calcola ROS e guadagno su +-5 % di banda.\n" +
                 "Fonti a confronto (somiglianze: tutti usano un lato vicino a λ/4 e regolano il ROS con la distanza dal riflettore; differenze: lato e distanza): " +
                 "T. Marshall (BYTE 10/2001): 2,4 GHz, lato 30,5 mm (0,248 λ), filo 1,2 mm, 15 mm (0,122 λ), riflettore 123 mm (110 mm come feed), bordi di 30 mm su due lati, 11 dBi. " +

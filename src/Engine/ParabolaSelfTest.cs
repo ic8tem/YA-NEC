@@ -30,6 +30,18 @@ namespace YaNec.Engine
             Prova(log, "J0(5)", Parabola.BesselJ0(5.0), -0.1775967713, 1e-6);
             Prova(log, "J0(10)", Parabola.BesselJ0(10.0), -0.2459357645, 1e-6);
 
+            // 1b. rete del disco (Otoshi, foglio W1GHZ 2014) contro la tabella di G3LTF a 5,7 GHz (RSGB 2016): rumore dal terreno
+            //     a 290 K; passo da centro a centro 6, 8, 10 mm con filo da 1 e 2 mm (foro = passo - filo)
+            {
+                double lam57 = Parabola.C0 / 5760e6 * 1000.0;
+                double[,] g3 = { { 6, 1, 18 }, { 6, 2, 4 }, { 8, 1, 51 }, { 8, 2, 15 }, { 10, 1, 108 } };
+                for (int i = 0; i < g3.GetLength(0); i++)
+                {
+                    double tK = Parabola.TrasmissioneRete(g3[i, 0] - g3[i, 1], g3[i, 1], lam57) * 290.0;
+                    Prova(log, string.Format(CI, "rete {0:0}x{0:0} mm filo {1:0} mm a 5760 MHz (G3LTF {2:0} K)", g3[i, 0], g3[i, 1], g3[i, 2]), tK, g3[i, 2], 3.0);
+                }
+            }
+
             // 2. metodo dei lobi contro le tabelle pubblicate
             double hp, sl, et;
             Parabola.ProvaApertura(x => 1.0, out hp, out sl, out et);
@@ -66,8 +78,9 @@ namespace YaNec.Engine
                 // 1.0.14: il blocco comprende l'ombra dei puntoni sull'onda sferica (Baars 4.36c-f): 0,9644 -> 0,9359, guadagno -0,13 dB
                 Prova(log, "blocco", r.EtaBlocco, 0.9359, 1.5e-3);
                 Prova(log, "Ruze (3 mm)", r.EtaRuze, 0.9738, 1e-3);
-                Prova(log, "rete 6 mm / 0,8 mm", r.EtaRete, 0.9966, 1e-3);
-                Prova(log, "guadagno (dBi)", r.Guadagno_dBi, 30.246, 0.05);
+                // rete con la formula di Otoshi/W1GHZ (prima 0,9966 e 30,246 dBi; a 10 GHz 40,194 dBi)
+                Prova(log, "rete 6 mm / 0,8 mm (Otoshi, W1GHZ)", r.EtaRete, 0.9928, 1e-3);
+                Prova(log, "guadagno (dBi)", r.Guadagno_dBi, 30.229, 0.05);
                 Prova(log, "HPBW (gradi)", r.Hpbw_deg, 5.041, 0.02);
                 Prova(log, "primo lobo (dB)", r.PrimoLobo_dB, -23.30, 0.2);
                 Prova(log, "fuori fuoco per -0,25 dB (mm)", r.TolleranzaAssiale025_mm, 59.2, 1.0);
@@ -89,7 +102,7 @@ namespace YaNec.Engine
             if (r.Errore == null)
             {
                 Prova(log, "10 GHz: HPBW (gradi)", r.Hpbw_deg, 0.6304, 0.005);
-                Prova(log, "10 GHz: guadagno (dBi)", r.Guadagno_dBi, 40.194, 0.05);
+                Prova(log, "10 GHz: guadagno (dBi)", r.Guadagno_dBi, 38.396, 0.05);
                 Prova(log, "10 GHz: perdita eco Luna (dB)", r.PerditaEco_dB, 1.888, 0.03);
                 Prova(log, "10 GHz: errore ammesso per 0,5 dB (gradi)", r.Tolleranza05_deg, 0.1287, 0.002);
                 bool avv = r.Avvisi.Exists(a => a.Livello == 2);
@@ -118,7 +131,7 @@ namespace YaNec.Engine
                     Prova(log, "feed tabellato: spillover", rt.EtaSpill, 0.9126, 0.003);
                     Prova(log, "feed tabellato: taper", rt.EtaTaper, 0.9033, 0.003);
                     Prova(log, "feed tabellato: taper al bordo (dB)", rt.TaperBordoTab_dB, 10.0, 0.1);
-                    Prova(log, "feed tabellato: guadagno (dBi)", rt.Guadagno_dBi, 30.246, 0.06);
+                    Prova(log, "feed tabellato: guadagno (dBi)", rt.Guadagno_dBi, 30.229, 0.06);
                     Prova(log, "feed tabellato: HPBW (gradi)", rt.Hpbw_deg, 5.041, 0.03);
                 }
                 else { ko++; log("ERR  feed tabellato: " + rt.Errore); }
@@ -172,7 +185,7 @@ namespace YaNec.Engine
                 Prova(log, "T1 centro di fase piano H (mm)", r1.CentroFaseH_mm, 0.1 * lamMm, 0.05);
                 Prova(log, "T1 stima di W1GHZ a -10 dB (mm)", r1.CentroFaseStima10_mm, 0.1 * lamMm, 0.2);
                 Prova(log, "T1 efficienza di fase dopo la correzione", r1.EtaFase, 1.0, 1e-6);
-                Prova(log, "T1 guadagno (dBi, come il cos^q)", r1.Guadagno_dBi, 30.248, 0.06);
+                Prova(log, "T1 guadagno (dBi, come il cos^q)", r1.Guadagno_dBi, 30.230, 0.06);
                 bool fu = r1.FaseUsata; if (fu) ok++; else ko++;
                 log((fu ? "OK  " : "ERR ") + " T1 la fase risulta usata");
 

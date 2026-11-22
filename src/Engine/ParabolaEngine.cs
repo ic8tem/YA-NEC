@@ -12,7 +12,8 @@
 //   - blocco dei puntoni come ombra a onda piana pesata con l'illuminazione: eta_b = (1-B)^2
 //     (Galt telescope, arXiv 1607.06436, eq. 6-7; Lamb & Olver 1986);
 //   - errori di superficie con la formula di Ruze: eta = exp(-(4 pi sigma / lambda)^2);
-//   - rete metallica: coefficiente di trasmissione di Mumford (Proc. IRE 49, 1961).
+//   - rete metallica: perdita per trasmissione di T.Y. Otoshi (Noise Temperature Theory..., Artech 2008, pp. 271-276)
+//     come nel foglio "Mesh Reflector Loss Calculations" di W1GHZ (2014), media per polarizzazione circolare.
 // Collaudo del metodo: riproduce le tabelle di Stutzman/GMRT (apertura uniforme 1,02 lambda/D e -17,6 dB;
 // pedestal -10 dB n=1: 1,14 lambda/D, -22,3 dB, eta_t 0,917; n=2: 1,17, -27,0, 0,877; -18 dB n=2: 1,29, -34,5, 0,719).
 #nullable disable
@@ -746,14 +747,27 @@ namespace YaNec.Engine
             return a;
         }
 
-        /// <summary>Trasmissione in potenza di una rete a maglia quadra (Mumford 1961): T = 1/(1+X^2), X = lambda/(2 s ln(s/(pi d))).</summary>
+        /// <summary>Potenza che passa attraverso una rete a maglia quadra (T.Y. Otoshi, Artech 2008, pp. 271-276, come il foglio
+        /// "Mesh Reflector Loss Calculations" di W1GHZ, 2014): per ogni direzione dei fili TL = 20 log10[lambda / (2 s v)],
+        /// v = ln[1 / (1 - exp(-pi d / s))], s = passo da centro a centro, d = diametro del filo; perdita = 10^(-TL/10).
+        /// Polarizzazione circolare (EME): media di W1GHZ 0,25 (L_orizz + L_vert + 2 L_diag), con la diagonale s*sqrt(2).
+        /// Incidenza normale. Sostituisce la formula usata prima (dava 2-3 volte meno rumore e 0 con il filo grosso):
+        /// riproduce la tabella di G3LTF a 5,7 GHz (rete 6x6 mm, filo 1 mm: 18 K).</summary>
         public static double TrasmissioneRete(double foro_mm, double filo_mm, double lambda_mm)
         {
+            if (filo_mm <= 0.0 || foro_mm <= 0.0 || lambda_mm <= 0.0) return 0.0;
             double s = foro_mm + filo_mm;
-            double lg = Math.Log(s / (Math.PI * filo_mm));
-            if (lg <= 0.0) return 0.0;       // fili piu' grossi del passo/pi: si comporta da superficie piena
-            double x = lambda_mm / (2.0 * s * lg);
-            return 1.0 / (1.0 + x * x);
+            double v = Math.Log(1.0 / (1.0 - Math.Exp(-Math.PI * filo_mm / s)));
+            double lato = PerditaRete(lambda_mm, s, v);
+            double diag = PerditaRete(lambda_mm, s * Math.Sqrt(2.0), v);
+            return 0.25 * (2.0 * lato + 2.0 * diag);
+        }
+
+        // una direzione dei fili: 10^(-TL/10) con TL = 20 log10[lambda / (2 s v)], al massimo 1 (rete che non scherma piu')
+        static double PerditaRete(double lambda_mm, double passo_mm, double v)
+        {
+            double x = 2.0 * passo_mm * v / lambda_mm;
+            return Math.Min(1.0, x * x);
         }
 
         /// <summary>Perdita sull'eco quando il fascio e' paragonabile alla Luna (Luna a "cappello", fasci gaussiani).
@@ -1402,7 +1416,6 @@ namespace YaNec.Engine
                 double fl = p.ReteForo_mm / lam;
                 if (fl > 0.25) A.Add(new ParabolaAvviso(2, string.Format(CI, "Rete: foro {0:0.0} mm = lambda/{1:0.0}, oltre lambda/4: la rete non e' piu' uno schermo (perdita {2:0.00} dB, rumore da dietro {3:0} K).", p.ReteForo_mm, 1 / fl, -Db10(r.EtaRete), r.RumoreRete_K)));
                 else if (fl > 0.1) A.Add(new ParabolaAvviso(1, string.Format(CI, "Rete: foro {0:0.0} mm = lambda/{1:0.0}; la regola pratica e' lambda/10 o meno (perdita {2:0.00} dB, rumore da dietro circa {3:0} K, conta in EME).", p.ReteForo_mm, 1 / fl, -Db10(r.EtaRete), r.RumoreRete_K)));
-                if (Math.Log((p.ReteForo_mm + p.ReteFilo_mm) / (Math.PI * p.ReteFilo_mm)) <= 0.2) A.Add(new ParabolaAvviso(0, "Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena."));
             }
             if (r.SigmaTot_mm > lam / 16.0) A.Add(new ParabolaAvviso(2, string.Format(CI, "Superficie: {0:0.0} mm RMS = lambda/{1:0} -> perdita Ruze {2:0.0} dB. Serve almeno lambda/20 ({3:0.0} mm).", r.SigmaTot_mm, lam / r.SigmaTot_mm, -Db10(r.EtaRuze), lam / 20.0)));
             else if (r.SigmaTot_mm > lam / 20.0) A.Add(new ParabolaAvviso(1, string.Format(CI, "Superficie: {0:0.0} mm RMS = lambda/{1:0} (perdita {2:0.00} dB); obiettivo lambda/20 = {3:0.0} mm, i dischi migliori lambda/40.", r.SigmaTot_mm, lam / r.SigmaTot_mm, -Db10(r.EtaRuze), lam / 20.0)));

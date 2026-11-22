@@ -246,7 +246,7 @@ namespace YaNec
             new CreditEntry
             {
                 Title = "Calcolatore Parabola primo fuoco (0.4.2)",
-                Who = "Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign",
+                Who = "Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign",
                 What = "Integrazione d'apertura con feed cos^q o calcolato dal NEC, efficienze (spillover, taper, blocco, Ruze, rete), meccanica e vento della rete, contrappeso, bande ed EME. Elenco completo nella pagina Fonti del calcolatore e in CREDITI.txt.",
                 Link = "",
                 License = "fonti citate"

@@ -926,7 +926,7 @@ Diametro del disco	Diametrul parabolei
 Diametro del feed	Diametrul alimentatorului
 Diametro del filo	Diametrul firului
 Diametro del filo degli anelli	Diametrul firului buclei
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	Diametrul firului plasei: împreună cu pasul ochiurilor dă transmisia prin plasă (Mumford) și suprafața expusă vântului.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	Diametrul firului plasei: împreună cu pasul ochiurilor dă transmisia prin plasă (W1GHZ, Otoshi) și suprafața expusă vântului.
 Diametro del filo piu' grande della lunghezza del filo	Diametrul firului mai mare decât lungimea firului
 Diametro del radiatore	Diametrul radiatorului
 Diametro dell'altro conduttore	Diametrul celuilalt conductor
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	Rețea de adaptare LC
 rete NT	Rețea NT
 Rete NT: si conserva com'e'.	Rețea NT: păstrată așa cum este.
 rete troppo larga	plasă prea rară
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	Plasă: fir gros față de pas; formula Mumford e la limită și plasa e tratată ca aproape plină.
 Rete: trasmissione	Plasă: transmisie
 Rete: vento	Plasă: vânt
 reti L	Rețele L
@@ -3073,7 +3072,7 @@ Struttura 3D	Structură 3D
 Struttura e superficie	Structură și suprafață
 stub in corto	stub în scurtcircuit
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	Stub-urile, transformatoarele și rețelele L rămân doar pe antena de bază: la copii trebuie adăugate manual.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman și Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb și Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman și Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb și Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	pe fiecare foaie există o riglă de 100 mm pentru verificarea scării, iar foile se suprapun cu 10 mm la cruci. Butucul și înălțimea nervurii sunt scrise în datele din stânga.
 su tutta la sfera	pe toată sfera
 su tutte le direzioni	pe toate direcțiile
@@ -3398,7 +3397,7 @@ voto migliore	cel mai bun scor
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE aug. 1959; J. Sevick, Transmission Line Transformers, ed. 4 Noble 2001; AL miezuri: Amidon (amidoncorp.com), pulbere de fier: tabel Amidon de la ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), model NEC de L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabele W3PM (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, ec. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, cap. 12	W1GHZ, cap. 12
 W1GHZ, cap. 6.5	W1GHZ, cap. 6.5
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book cap. 6.3
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 nu modelează izolația: cotele calculate sunt ale sârmei goale. Cu sârmă izolată elementul trebuie scurtat (W6PQL: latura 0,238 lambda în loc de 0,248, circa 4 % mai puțin).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Brațul superior al unei petale și cel inferior al petalei vecine sunt la 20 de grade unul de altul: împreună formează linia λ/4 care aduce impedanța mare a petalei la butuc.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Câmpul gri nu se poate edita: arată valoarea derivată. Cu "Ambele" se dau amândouă și distanțele se întind sau se strâng proporțional: se iese din metodă și e nevoie de optimizarea NEC.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Latura este circa λ/4 de la mijlocul sârmei la mijlocul sârmei; distanța de la reflector (0,1-0,13 λ în surse) este reglajul SWR. Cu plasă reflectorul este o rețea de sârme cu ochiul real (Mumford: ochi sub λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	Latura este circa λ/4 de la mijlocul sârmei la mijlocul sârmei; distanța de la reflector (0,1-0,13 λ în surse) este reglajul SWR. Cu plasă reflectorul este o rețea de sârme cu ochiul real (W1GHZ, Otoshi: ochi sub λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	Modelul deschis este deja un grup: deschideți antena singură.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Modelul este în spațiu liber: pentru grupul HF se folosește sol mediu (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Petala la scara 1:1 pe foi A4 de îmbinat (suprapunere 10 mm, cruci la fiecare 50 mm, riglă de 100 mm). Doar pentru Big Wheel.
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	Stub
 Stub: larghezza	Stub: lățime
 Stub: lunghezza sviluppata	Stub: lungime desfășurată
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman și Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb și Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman și Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb și Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Pe unele benzi linia pierde mai mult de 3 dB (căsuțe evidențiate): scurtați linia, treceți la linie în scară sau puneți tunerul la buclă.
 T antenna (cielo vero)	T antenă (cer real)
 T antenna nelle 24 ore	T antenă în 24 de ore
 T antenna nelle 24 ore (puntamento fisso)	T antenă în 24 de ore (orientare fixă)
 T del terreno (cielo vero)	T sol (cer real)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI și MW1FGQ; buildyourownantenna (biquad dublu, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI și MW1FGQ; buildyourownantenna (biquad dublu, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI și MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (comparație)
 Tabella dello stack copiata.	Tabelul grupului copiat.
 Temperature uniformi (VE7BQH)	Temperaturi uniforme (VE7BQH)
@@ -5836,7 +5835,7 @@ area	suprafață
  mm sull'asse, 	 mm pe axă, 
  mm tolti a 	 mm eliminați la 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): o parte din putere trece în spate (Mumford). NEC o calculează cu ochiul real.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): o parte din putere trece în spate (W1GHZ, Otoshi). NEC o calculează cu ochiul real.
  mm): raggio 	 mm): rază 
  mm, alimentato al centro del lato posteriore	 mm, alimentat la centrul laturii din spate
  mm, bracci piegati in avanti di 	 mm, brațe îndoite înainte cu 

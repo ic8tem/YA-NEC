@@ -926,7 +926,7 @@ Diametro del disco	Diameter van de schotel
 Diametro del feed	Diameter van de feed
 Diametro del filo	Diameter van de draad
 Diametro del filo degli anelli	Diameter van de draad van de lussen
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	Diameter van de gaasdraad: met de maaswijdte geeft hij de transmissie door het gaas (Mumford) en het aan de wind blootgestelde oppervlak.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	Diameter van de gaasdraad: met de maaswijdte geeft hij de transmissie door het gaas (W1GHZ, Otoshi) en het aan de wind blootgestelde oppervlak.
 Diametro del filo piu' grande della lunghezza del filo	Draaddiameter groter dan de draadlengte
 Diametro del radiatore	Diameter van de straler
 Diametro dell'altro conduttore	Diameter van de andere geleider
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	LC-aanpassingsnetwerk
 rete NT	NT-netwerk
 Rete NT: si conserva com'e'.	NT-netwerk: blijft zoals het is.
 rete troppo larga	gaas te grof
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	Gaas: draad dik ten opzichte van de maaswijdte; de formule van Mumford zit aan haar grens en het gaas wordt als bijna vol behandeld.
 Rete: trasmissione	Gaas: transmissie
 Rete: vento	Gaas: wind
 reti L	L-netwerken
@@ -3073,7 +3072,7 @@ Struttura 3D	3D-structuur
 Struttura e superficie	Structuur en oppervlak
 stub in corto	kortgesloten stub
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	Stubs, transformatoren en L-netwerken blijven alleen op de basisantenne: ze moeten met de hand aan de kopieën worden toegevoegd.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman en Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb en Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman en Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb en Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	op elk vel staat een liniaal van 100 mm om de schaal te controleren, en de vellen overlappen 10 mm op de kruisjes. Naaf en hoogte van het spant worden in de gegevens links ingevuld.
 su tutta la sfera	over de hele bol
 su tutte le direzioni	over alle richtingen
@@ -3398,7 +3397,7 @@ voto migliore	beste score
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE aug. 1959; J. Sevick, Transmission Line Transformers, 4e ed. Noble 2001; AL van de kernen: Amidon (amidoncorp.com), ijzerpoeder: Amidon-tabel van ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), NEC-model van L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabellen van W3PM (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, verg. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, cap. 12	W1GHZ, hfdst. 12
 W1GHZ, cap. 6.5	W1GHZ, hfdst. 6.5
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book hfdst. 6.3
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 modelleert de isolatie niet: de berekende maten zijn die van blanke draad. Met geïsoleerde draad moet het element worden ingekort (W6PQL: zijde 0,238 lambda in plaats van 0,248, ongeveer 4 % minder).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	De bovenste arm van een blad en de onderste van het naburige blad staan 20 graden uit elkaar: samen vormen ze de λ/4-lijn die de hoge impedantie van het blad naar de naaf brengt.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Het grijze veld is niet in te vullen: het toont de afgeleide waarde. Met "Beide" geeft u beide op en de afstanden worden naar verhouding verlengd of verkort: u verlaat de methode en NEC-optimalisatie is nodig.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	De zijde is ongeveer λ/4 van draadmidden tot draadmidden; de afstand tot de reflector (0,1-0,13 λ in de bronnen) is de SWR-afregeling. Met gaas is de reflector een draadrooster met de echte maas (Mumford: maas onder λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	De zijde is ongeveer λ/4 van draadmidden tot draadmidden; de afstand tot de reflector (0,1-0,13 λ in de bronnen) is de SWR-afregeling. Met gaas is de reflector een draadrooster met de echte maas (W1GHZ, Otoshi: maas onder λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	Het geopende model is al een stack: open de enkele antenne.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Het model is in de vrije ruimte: voor de HF-stack wordt gemiddelde grond gebruikt (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Het blad op schaal 1:1 op A4-vellen om aan elkaar te plakken (10 mm overlap, kruisjes om de 50 mm, liniaal van 100 mm). Alleen voor de Big Wheel.
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	Stub
 Stub: larghezza	Stub: breedte
 Stub: lunghezza sviluppata	Stub: ontwikkelde lengte
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman en Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb en Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman en Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb en Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Op sommige banden verliest de voedingslijn meer dan 3 dB (gemarkeerde vakken): kort de lijn in, schakel over op ladderlijn of zet de tuner bij de loop.
 T antenna (cielo vero)	Antenne-T (echte hemel)
 T antenna nelle 24 ore	Antenne-T in 24 uur
 T antenna nelle 24 ore (puntamento fisso)	Antenne-T in 24 uur (vaste richting)
 T del terreno (cielo vero)	Grond-T (echte hemel)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI en MW1FGQ; buildyourownantenna (dubbele biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI en MW1FGQ; buildyourownantenna (dubbele biquad, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI en MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (vergelijking)
 Tabella dello stack copiata.	Stacktabel gekopieerd.
 Temperature uniformi (VE7BQH)	Uniforme temperaturen (VE7BQH)
@@ -5836,7 +5835,7 @@ area	oppervlak
  mm sull'asse, 	 mm op de as, 
  mm tolti a 	 mm weggenomen op 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): een deel van het vermogen gaat naar achteren (Mumford). NEC berekent het met het echte gaas.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): een deel van het vermogen gaat naar achteren (W1GHZ, Otoshi). NEC berekent het met het echte gaas.
  mm): raggio 	 mm): straal 
  mm, alimentato al centro del lato posteriore	 mm, gevoed in het midden van de achterzijde
  mm, bracci piegati in avanti di 	 mm, armen naar voren gebogen met 

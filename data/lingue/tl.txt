@@ -926,7 +926,7 @@ Diametro del disco	Diyametro ng dish
 Diametro del feed	Diyametro ng feed
 Diametro del filo	Diyametro ng wire
 Diametro del filo degli anelli	Diyametro ng wire ng loop
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	Diyametro ng wire ng lambat: kasama ang pitch ng butas, ibinibigay nito ang pagtagos sa lambat (Mumford) at ang ibabaw na nakalantad sa hangin.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	Diyametro ng wire ng lambat: kasama ang pitch ng butas, ibinibigay nito ang pagtagos sa lambat (W1GHZ, Otoshi) at ang ibabaw na nakalantad sa hangin.
 Diametro del filo piu' grande della lunghezza del filo	Diyametro ng wire na mas malaki sa haba ng wire
 Diametro del radiatore	Diyametro ng radiator
 Diametro dell'altro conduttore	Diyametro ng ibang konduktor
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	LC na matching network
 rete NT	NT na network
 Rete NT: si conserva com'e'.	NT na network: pinanatili kung ano ito.
 rete troppo larga	masyadong magaspang ang lambat
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	Lambat: makapal ang wire kumpara sa pitch; nasa hangganan ang formula ni Mumford at itinuturing na halos solido ang lambat.
 Rete: trasmissione	Lambat: pagtagos
 Rete: vento	Lambat: hangin
 reti L	Mga L na network
@@ -3073,7 +3072,7 @@ Struttura 3D	3D na istruktura
 Struttura e superficie	Istruktura at ibabaw
 stub in corto	naka-short na stub
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	Nananatili lamang sa base na antena ang mga stub, transformer at L na network: dapat idagdag nang mano-mano sa mga kopya.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman at Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb at Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman at Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb at Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	sa bawat pahina may 100 mm na ruler para suriin ang iskala, at nagsasapaw nang 10 mm ang mga pahina sa mga krus. Nakasulat ang taas ng hub at tadyang sa datos sa kaliwa.
 su tutta la sfera	sa buong globo
 su tutte le direzioni	sa lahat ng direksyon
@@ -3398,7 +3397,7 @@ voto migliore	pinakamahusay na iskor
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE Ago. 1959; J. Sevick, Transmission Line Transformers, ika-4 na ed. Noble 2001; AL ng core: Amidon (amidoncorp.com), iron powder: talaan ng Amidon ni ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), NEC model ni L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), mga talaan ni W3PM (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, cap. 12	W1GHZ, kab. 12
 W1GHZ, cap. 6.5	W1GHZ, kab. 6.5
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book kab. 6.3
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	Hindi minomodelo ng NEC-2 ang insulation: ang nakuwentang sukat ay para sa hubad na wire. Sa insulated wire kailangang paikliin ang elemento (W6PQL: gilid na 0,238 lambda sa halip na 0,248, mga 4 % na mas maikli).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	Ang itaas na braso ng isang talulot at ang ibabang braso ng katabing talulot ay 20 degree ang layo: magkasama nilang binubuo ang λ/4 na linya na nagdadala ng mataas na impedance ng talulot sa hub.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	Hindi mae-edit ang kulay-abong field: ipinapakita nito ang hinangong halaga. Sa "Pareho" ibinibigay ang dalawa at proporsyonal na hinahatak o pinipiga ang mga pagitan: lumalabas sa pamamaraan at kailangan ang NEC optimization.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	Ang gilid ay mga λ/4 mula gitna ng wire hanggang gitna ng wire; ang layo mula sa reflector (0,1-0,13 λ sa mga pinagmulan) ang pag-aayos ng SWR. Sa mesh, ang reflector ay grid ng wire na may tunay na butas (Mumford: butas na mas mababa sa λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	Ang gilid ay mga λ/4 mula gitna ng wire hanggang gitna ng wire; ang layo mula sa reflector (0,1-0,13 λ sa mga pinagmulan) ang pag-aayos ng SWR. Sa mesh, ang reflector ay grid ng wire na may tunay na butas (W1GHZ, Otoshi: butas na mas mababa sa λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	Stack na ang nakabukas na modelo: buksan ang iisang antenna.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	Nasa free space ang modelo: para sa HF stack ginagamit ang karaniwang lupa (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	Ang talulot sa sukat na 1:1 sa mga A4 na papel na pagdudugtungin (10 mm na overlap, krus bawat 50 mm, 100 mm na ruler). Para lamang sa Big Wheel.
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	Stub
 Stub: larghezza	Stub: lapad
 Stub: lunghezza sviluppata	Stub: nakabukang haba
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman at Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb at Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman at Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb at Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	Sa ilang band, higit 3 dB ang loss ng feed line (mga naka-highlight na kahon): paikliin ang linya, lumipat sa ladder line o ilagay ang tuner sa loop.
 T antenna (cielo vero)	T ng antenna (tunay na langit)
 T antenna nelle 24 ore	T ng antenna sa loob ng 24 oras
 T antenna nelle 24 ore (puntamento fisso)	T ng antenna sa loob ng 24 oras (nakapirming pagtutok)
 T del terreno (cielo vero)	T ng lupa (tunay na langit)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI at MW1FGQ; buildyourownantenna (dobleng biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI at MW1FGQ; buildyourownantenna (dobleng biquad, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI at MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (paghahambing)
 Tabella dello stack copiata.	Nakopya ang talahanayan ng stack.
 Temperature uniformi (VE7BQH)	Pantay na temperatura (VE7BQH)
@@ -5836,7 +5835,7 @@ area	area
  mm sull'asse, 	 mm sa axis, 
  mm tolti a 	 mm na inalis sa 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): bahagi ng power ay lumulusot sa likod (Mumford). Kinakalkula ito ng NEC gamit ang totoong mesh.
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): bahagi ng power ay lumulusot sa likod (W1GHZ, Otoshi). Kinakalkula ito ng NEC gamit ang totoong mesh.
  mm): raggio 	 mm): radius 
  mm, alimentato al centro del lato posteriore	 mm, pinapakain sa gitna ng likurang gilid
  mm, bracci piegati in avanti di 	 mm, mga brasong nakabaluktot pasulong nang 

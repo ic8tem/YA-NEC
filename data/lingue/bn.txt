@@ -926,7 +926,7 @@ Diametro del disco	ডিশের ব্যাস
 Diametro del feed	ফিডের ব্যাস
 Diametro del filo	তারের ব্যাস
 Diametro del filo degli anelli	লুপ তারের ব্যাস
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	জাল তারের ব্যাস: ছিদ্রের পিচের সাথে এটি জালের মধ্য দিয়ে সঞ্চালন (Mumford) ও বাতাসের সামনে পৃষ্ঠ দেয়।
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	জাল তারের ব্যাস: ছিদ্রের পিচের সাথে এটি জালের মধ্য দিয়ে সঞ্চালন (W1GHZ, Otoshi) ও বাতাসের সামনে পৃষ্ঠ দেয়।
 Diametro del filo piu' grande della lunghezza del filo	তারের দৈর্ঘ্যের চেয়ে বড় তারের ব্যাস
 Diametro del radiatore	রেডিয়েটরের ব্যাস
 Diametro dell'altro conduttore	অন্য পরিবাহীর ব্যাস
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	LC ম্যাচিং নেটওয়ার্ক
 rete NT	NT নেটওয়ার্ক
 Rete NT: si conserva com'e'.	NT নেটওয়ার্ক: যেমন আছে তেমন রাখা হয়েছে।
 rete troppo larga	জাল খুব মোটা
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	জাল: পিচের তুলনায় তার মোটা; Mumford সূত্র তার সীমায় এবং জাল প্রায় নিরেট হিসেবে ধরা হয়।
 Rete: trasmissione	জাল: সঞ্চালন
 Rete: vento	জাল: বাতাস
 reti L	L নেটওয়ার্ক
@@ -3073,7 +3072,7 @@ Struttura 3D	3D কাঠামো
 Struttura e superficie	কাঠামো ও পৃষ্ঠ
 stub in corto	শর্ট করা স্টাব
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	স্টাব, ট্রান্সফর্মার ও L নেটওয়ার্ক শুধু ভিত্তি অ্যান্টেনায় থাকে: কপিগুলিতে হাতে যোগ করতে হবে।
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ও Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ও Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ও Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb ও Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	প্রতিটি পৃষ্ঠায় স্কেল যাচাইয়ের জন্য 100 মিমি রুলার আছে, এবং পৃষ্ঠাগুলি ক্রসে 10 মিমি একে অপরের উপর পড়ে। হাব ও পাঁজরের উচ্চতা বাম দিকের তথ্যে লেখা।
 su tutta la sfera	সমগ্র গোলকের উপর
 su tutte le direzioni	সব দিকের উপর
@@ -3398,7 +3397,7 @@ voto migliore	সেরা স্কোর
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE আগস্ট 1959; J. Sevick, Transmission Line Transformers, চতুর্থ সংস্করণ Noble 2001; কোর AL: Amidon (amidoncorp.com), লৌহচূর্ণ: ok1dxd-এর Amidon সারণি
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), L. B. Cebik W4RNL-এর NEC মডেল (Quagi and Yagi on 2 Meters), W3PM সারণি (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, সমীকরণ 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, cap. 12	W1GHZ, অধ্যায় 12
 W1GHZ, cap. 6.5	W1GHZ, অধ্যায় 6.5
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book অধ্যায় 6.3
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 অন্তরণ মডেল করে না: গণিত মাপ খালি তারের। অন্তরিত তারে উপাদান ছোট করতে হবে (W6PQL: 0,248-এর বদলে 0,238 lambda বাহু, প্রায় 4 % কম)।
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	একটি পাপড়ির উপরের বাহু ও পাশের পাপড়ির নিচের বাহু 20 ডিগ্রি দূরে: একসাথে তারা λ/4 লাইন গঠন করে যা পাপড়ির উচ্চ প্রতিবন্ধক হাবে আনে।
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	ধূসর ক্ষেত্রে লেখা যায় না: এটি উদ্ভূত মান দেখায়। "উভয়" দিয়ে দুটোই দেওয়া হয় এবং দূরত্ব আনুপাতিকভাবে প্রসারিত বা সংকুচিত হয়: পদ্ধতির বাইরে যান এবং NEC অপ্টিমাইজেশন লাগে।
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	বাহু তারের কেন্দ্র থেকে তারের কেন্দ্র প্রায় λ/4; প্রতিফলক থেকে দূরত্ব (উৎসে 0,1-0,13 λ) হলো SWR সমন্বয়। জালের ক্ষেত্রে প্রতিফলক প্রকৃত ফাঁকসহ তারের গ্রিড (Mumford: ফাঁক λ/10-এর নিচে)।
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	বাহু তারের কেন্দ্র থেকে তারের কেন্দ্র প্রায় λ/4; প্রতিফলক থেকে দূরত্ব (উৎসে 0,1-0,13 λ) হলো SWR সমন্বয়। জালের ক্ষেত্রে প্রতিফলক প্রকৃত ফাঁকসহ তারের গ্রিড (W1GHZ, Otoshi: ফাঁক λ/10-এর নিচে)।
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	খোলা মডেলটি ইতিমধ্যে স্ট্যাক: একক অ্যান্টেনা খুলুন।
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	মডেল মুক্ত স্থানে: HF স্ট্যাকের জন্য গড় মাটি ব্যবহৃত হয় (13 / 0,005 S/m, Sommerfeld)।
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	জোড়া দেওয়ার A4 পাতায় 1:1 স্কেলে পাপড়ি (10 mm ওভারল্যাপ, প্রতি 50 mm-এ ক্রস, 100 mm মাপকাঠি)। কেবল Big Wheel-এর জন্য।
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	স্টাব
 Stub: larghezza	স্টাব: প্রস্থ
 Stub: lunghezza sviluppata	স্টাব: খোলা দৈর্ঘ্য
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ও Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb ও Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman ও Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb ও Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	কিছু ব্যান্ডে ফিড লাইন 3 dB-এর বেশি হারায় (চিহ্নিত ঘর): লাইন ছোট করুন, ল্যাডার লাইনে যান বা টিউনার লুপে রাখুন।
 T antenna (cielo vero)	অ্যান্টেনা T (প্রকৃত আকাশ)
 T antenna nelle 24 ore	24 ঘণ্টায় অ্যান্টেনা T
 T antenna nelle 24 ore (puntamento fisso)	24 ঘণ্টায় অ্যান্টেনা T (স্থির দিকনির্দেশ)
 T del terreno (cielo vero)	মাটি T (প্রকৃত আকাশ)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ও MW1FGQ; buildyourownantenna (ডাবল বাইকোয়াড, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ও MW1FGQ; buildyourownantenna (ডাবল বাইকোয়াড, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI ও MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (তুলনা)
 Tabella dello stack copiata.	স্ট্যাক সারণি কপি হয়েছে।
 Temperature uniformi (VE7BQH)	সমরূপ তাপমাত্রা (VE7BQH)
@@ -5836,7 +5835,7 @@ area	ক্ষেত্রফল
  mm sull'asse, 	 mm অক্ষে, 
  mm tolti a 	 mm সরানো হয়েছে 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): শক্তির একটি অংশ পেছনে চলে যায় (Mumford)। NEC আসল জাল দিয়ে এটি গণনা করে।
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): শক্তির একটি অংশ পেছনে চলে যায় (W1GHZ, Otoshi)। NEC আসল জাল দিয়ে এটি গণনা করে।
  mm): raggio 	 mm): ব্যাসার্ধ 
  mm, alimentato al centro del lato posteriore	 mm, পেছনের বাহুর কেন্দ্রে ফিড করা
  mm, bracci piegati in avanti di 	 mm, বাহুগুলো সামনে বাঁকানো 

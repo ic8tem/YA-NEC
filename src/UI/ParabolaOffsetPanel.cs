@@ -147,7 +147,7 @@ namespace YaNec
             sx.Children.Add(Famiglia("Superficie e ambiente"));
             Spunta(sx, "Superficie piena (lamiera)", () => inp.SuperficiePiena, v => inp.SuperficiePiena = v, "Pannelli pieni invece della rete: niente perdite di rete, ma vento come un disco pieno.");
             Campo(sx, "Foro della rete (luce)", "mm", () => inp.ReteForo_mm, v => inp.ReteForo_mm = v, "lambda/10 o meno.");
-            Campo(sx, "Filo della rete", "mm", () => inp.ReteFilo_mm, v => inp.ReteFilo_mm = v, "Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.");
+            Campo(sx, "Filo della rete", "mm", () => inp.ReteFilo_mm, v => inp.ReteFilo_mm = v, "Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.");
             Campo(sx, "Massa superficiale", "kg/m2", () => inp.ReteMassaSup_kg_m2, v => inp.ReteMassaSup_kg_m2 = v, "Lamiera d'acciaio da 0,6 mm (disco TV) circa 4,7 kg/m2; alluminio 1 mm 2,7 kg/m2.");
             Campo(sx, "Errore RMS della superficie", "mm", () => inp.ErroreRmsCostruttivo_mm, v => inp.ErroreRmsCostruttivo_mm = v, "I dischi TV stampati stanno di solito sotto il millimetro; il vero limite e' la deformazione dei supporti.");
             Campo(sx, "Raffica di progetto", "km/h", () => inp.Vento_kmh, v => inp.Vento_kmh = v, "Velocita' del vento per il calcolo della spinta sul disco e sul supporto.");

@@ -1742,7 +1742,7 @@ Diametro del disco
 Diametro del feed
 Diametro del filo
 Diametro del filo degli anelli
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.
 Diametro del filo piu' grande della lunghezza del filo
 Diametro del radiatore
 Diametro dell'altro conduttore
@@ -3339,7 +3339,6 @@ Rete NT: si conserva com'e'.
 Rete di alimentazione singolare (porta senza collegamento).
 Rete elettrosaldata tipica a maglie di 20 cm: a 
 Rete fitta (terreno perfetto)
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.
 Rete: trasmissione
 Rete: vento
 Reti L 
@@ -3626,7 +3625,7 @@ Struttura e superficie
 Stub 
 Stub alla riga 
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su un boom unico la spaziatura e' ottima solo per una banda; DK7ZB e gli altri progettisti ritoccano i perimetri con il calcolo.
 Sulla parabola
 Sulle bande alte il condensatore sul primario di solito non serve: provalo da 50 a 150 pF se il ROS sale sopra i 21 MHz.
@@ -3885,7 +3884,7 @@ W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi a
 W. Overbeck N6NB (Quagi, QST 4/1977 e 2/1978); L. B. Cebik W4RNL ("Quagi and Yagi on 2 Meters", "Under the Limits: MININEC", "When MININEC is Superior to NEC"); 
 W. W. Hansen e J. R. Woodyard ("A New Principle in Directional Antenna Design", Proc. IRE 26(3), 1938: massimo di una schiera end-fire); 
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, Microwave Antenna Book cap. 6.3
 W1GHZ, Microwave Antenna Book, cap. 5 e 6
 W1GHZ, Online Microwave Antenna Book, cap. 6.1 e 12 (PHASEPAT, DIPROD.NEC); P.-S. Kildal, Factorization of the feed efficiency of paraboloids and Cassegrain antennas, IEEE Trans. AP-33, 1985; DF3GJ (formato dei file)
@@ -5560,7 +5559,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).
 Il modello aperto e' gia' uno stack: apri l'antenna singola.
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.
@@ -5657,13 +5656,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub
 Stub: larghezza
 Stub: lunghezza sviluppata
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.
 T antenna (cielo vero)
 T antenna nelle 24 ore
 T antenna nelle 24 ore (puntamento fisso)
 T del terreno (cielo vero)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)
 Tabella dello stack copiata.
 Temperature uniformi (VE7BQH)

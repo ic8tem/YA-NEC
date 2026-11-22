@@ -926,7 +926,7 @@ Diametro del disco	抛物面直径
 Diametro del feed	馈源直径
 Diametro del filo	导线直径
 Diametro del filo degli anelli	环导线直径
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	网线直径: 与孔距一起决定网面透射 (Mumford) 和迎风面积。
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	网线直径: 与孔距一起决定网面透射 (W1GHZ, Otoshi) 和迎风面积。
 Diametro del filo piu' grande della lunghezza del filo	导线直径大于导线长度
 Diametro del radiatore	辐射单元直径
 Diametro dell'altro conduttore	另一导体直径
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	LC 匹配网络
 rete NT	NT 网络
 Rete NT: si conserva com'e'.	NT 网络: 保持原样。
 rete troppo larga	网孔过粗
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	网: 导线相对网距较粗；Mumford 公式已到极限，网按近似实心处理。
 Rete: trasmissione	网: 透射
 Rete: vento	网: 风
 reti L	L 网络
@@ -3073,7 +3072,7 @@ Struttura 3D	3D 结构
 Struttura e superficie	结构与表面
 stub in corto	短路短截线
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	短截线、变压器和 L 网络只保留在基础天线上: 需手动添加到副本。
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman 和 Thiele；S. Sengupta；GMRT/NCRA；J. Baars；C.A. Balanis；P. Wade W1GHZ；J. Ruze；W.W. Mumford；I.E. Idelchik；S.F. Hoerner；Lamb 和 Olver；Bob Atkins；OE2IGL；DF3GJ；UA3AVR；DJ7FJ；OK1DFC；RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman 和 Thiele；S. Sengupta；GMRT/NCRA；J. Baars；C.A. Balanis；P. Wade W1GHZ；J. Ruze；T.Y. Otoshi；I.E. Idelchik；S.F. Hoerner；Lamb 和 Olver；Bob Atkins；OE2IGL；DF3GJ；UA3AVR；DJ7FJ；OK1DFC；RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	每页都有 100 mm 标尺用于核对比例，各页在十字标记处重叠 10 mm。轮毂和肋条高度写在左侧数据中。
 su tutta la sfera	整个球面
 su tutte le direzioni	所有方向
@@ -3398,7 +3397,7 @@ voto migliore	最佳评分
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff，"Some Broad-Band Transformers"，Proc. IRE 1959 年 8 月；J. Sevick，Transmission Line Transformers，第 4 版，Noble 2001；磁芯 AL: Amidon (amidoncorp.com)，铁粉: ok1dxd 整理的 Amidon 表
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977、2/1978)，L. B. Cebik W4RNL 的 NEC 模型 (Quagi and Yagi on 2 Meters)，W3PM 表 (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman、G.A. Thiele，Antenna Theory and Design，式 9-233；S. Sengupta，Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford，Proc. IRE 49，1961；W1GHZ，Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi，Proc. IRE 49，1961；W1GHZ，Mesh Reflector Loss Calculations
 W1GHZ, cap. 12	W1GHZ，第 12 章
 W1GHZ, cap. 6.5	W1GHZ，第 6.5 章
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ，Microwave Antenna Book 第 6.3 章
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 不模拟绝缘层：计算尺寸为裸线尺寸。用绝缘线时须缩短振子（W6PQL：边长 0,238 lambda 而非 0,248，约短 4 %）。
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	一片花瓣的上臂与相邻花瓣的下臂相距 20 度：二者组成 λ/4 传输线，把花瓣的高阻抗带到轮毂。
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	灰色字段不可编辑：显示的是推导值。选"两者"时两者都给定，间距按比例拉伸或压缩：此时脱离该方法，需要 NEC 优化。
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	边长按导线中心约为 λ/4；到反射器的距离（来源中 0,1-0,13 λ）即 SWR 调整。网状时反射器为具有实际网孔的导线栅格（Mumford：网孔小于 λ/10）。
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	边长按导线中心约为 λ/4；到反射器的距离（来源中 0,1-0,13 λ）即 SWR 调整。网状时反射器为具有实际网孔的导线栅格（W1GHZ、Otoshi：网孔小于 λ/10）。
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	打开的模型已经是堆叠：请打开单副天线。
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	模型在自由空间：HF 堆叠使用平均地面（13 / 0,005 S/m，Sommerfeld）。
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	1:1 花瓣，印在拼接的 A4 纸上（重叠 10 mm，每 50 mm 一个十字，100 mm 标尺）。仅用于 Big Wheel。
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	短截线
 Stub: larghezza	短截线：宽度
 Stub: lunghezza sviluppata	短截线：展开长度
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman 与 Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb 与 Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman 与 Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb 与 Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	某些波段馈线损耗超过 3 dB（高亮格）：缩短馈线、改用梯形线或把调谐器放在环处。
 T antenna (cielo vero)	天线 T（真实天空）
 T antenna nelle 24 ore	24 小时天线 T
 T antenna nelle 24 ore (puntamento fisso)	24 小时天线 T（固定指向）
 T del terreno (cielo vero)	地面 T（真实天空）
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI 与 MW1FGQ; buildyourownantenna（双双菱形，2014）; nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI 与 MW1FGQ; buildyourownantenna（双双菱形，2014）; nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI 与 MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox（比较）
 Tabella dello stack copiata.	堆叠表已复制。
 Temperature uniformi (VE7BQH)	均匀温度 (VE7BQH)
@@ -5836,7 +5835,7 @@ area	面积
  mm sull'asse, 	 mm 轴向， 
  mm tolti a 	 mm 去除于 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm)：部分功率透射到后方 (Mumford)。NEC 按真实网格计算。
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm)：部分功率透射到后方 (W1GHZ, Otoshi)。NEC 按真实网格计算。
  mm): raggio 	 mm)：半径 
  mm, alimentato al centro del lato posteriore	 mm，在后边中心馈电
  mm, bracci piegati in avanti di 	 mm，振臂向前弯折 

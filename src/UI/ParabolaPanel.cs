@@ -270,7 +270,7 @@ namespace YaNec
             Campo(sx, "Mozzo + flangia", "kg", () => inp.MozzoMassa_kg, v => inp.MozzoMassa_kg = v, "Peso del mozzo centrale e della flangia di attacco: entra nel peso e nel baricentro.");
             Spunta(sx, "Superficie piena (lamiera)", () => inp.SuperficiePiena, v => inp.SuperficiePiena = v, "Pannelli pieni invece della rete: niente perdite di rete, ma vento come un disco pieno.");
             Campo(sx, "Foro della rete (luce)", "mm", () => inp.ReteForo_mm, v => inp.ReteForo_mm = v, "Luce netta della maglia quadra. Regola pratica: lambda/10 o meno (lambda/4 e' il limite in cui la rete smette di essere uno schermo).");
-            Campo(sx, "Filo della rete", "mm", () => inp.ReteFilo_mm, v => inp.ReteFilo_mm = v, "Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.");
+            Campo(sx, "Filo della rete", "mm", () => inp.ReteFilo_mm, v => inp.ReteFilo_mm = v, "Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.");
             Campo(sx, "Massa superficiale", "kg/m2", () => inp.ReteMassaSup_kg_m2, v => inp.ReteMassaSup_kg_m2 = v, "Rete 0,85 kg/m2 circa; lamiera di alluminio 1,5 mm = 4,05 kg/m2.");
             Campo(sx, "Errore RMS della superficie", "mm", () => inp.ErroreRmsCostruttivo_mm, v => inp.ErroreRmsCostruttivo_mm = v, "Scostamento RMS dal paraboloide (centine, rete, montaggio). Ruze: lambda/20 costa 1,7 dB, lambda/40 0,4 dB.");
             Spunta(sx, "Aggiungi la sfaccettatura della rete piana", () => inp.IncludiSfaccettatura, v => inp.IncludiSfaccettatura = v, "Caso peggiore: rete tesa piatta tra due centine, senza sagomatura. Stima geometrica (Ruze) piu' il bordo a poligono tra le punte delle centine.");
@@ -559,7 +559,7 @@ namespace YaNec
                 new[] { "Asimmetria dei piani E e H (polarizzazione incrociata)", Pc(r.EtaPol), Db(r.EtaPol) },
                 new[] { string.Format(IT, "Blocco: feed {0:0.0}% + puntoni {1:0.0}% dell'apertura pesata (di cui {2:0.0}% onda sferica, Baars 4.36)", r.BloccoCentrale_frac * 100, r.BloccoPuntoni_frac * 100, r.BloccoSferico_frac * 100), Pc(r.EtaBlocco), Db(r.EtaBlocco) },
                 new[] { string.Format(IT, "Superficie (Ruze, {0:0.0} mm RMS = lambda/{1:0})", r.SigmaTot_mm, r.Lambda_mm / Math.Max(1e-9, r.SigmaTot_mm)), Pc(r.EtaRuze), Db(r.EtaRuze) },
-                new[] { inp.SuperficiePiena ? "Superficie piena" : string.Format(IT, "Rete {0:0.#} mm = lambda/{1:0.0} (Mumford)", inp.ReteForo_mm, r.Lambda_mm / inp.ReteForo_mm), Pc(r.EtaRete), Db(r.EtaRete) },
+                new[] { inp.SuperficiePiena ? "Superficie piena" : string.Format(IT, "Rete {0:0.#} mm = lambda/{1:0.0} (W1GHZ, Otoshi)", inp.ReteForo_mm, r.Lambda_mm / inp.ReteForo_mm), Pc(r.EtaRete), Db(r.EtaRete) },
                 new[] { "Perdite varie (feed, cavo, fase)", Pc(r.EtaVarie), Db(r.EtaVarie) },
                 new[] { "#Totale", Pc(r.EtaTotale), Db(r.EtaTotale) },
             }, "*,Auto,Auto"), "Bilancio dell'efficienza"));
@@ -906,7 +906,7 @@ namespace YaNec
                 new[] { "Fuori fuoco assiale", "Ruze 1969; NRAO ALMA memo 479" },
                 new[] { "Fase del feed, centro di fase, asimmetria E/H", "W1GHZ, Online Microwave Antenna Book, cap. 6.1 e 12 (PHASEPAT, DIPROD.NEC); P.-S. Kildal, Factorization of the feed efficiency of paraboloids and Cassegrain antennas, IEEE Trans. AP-33, 1985; DF3GJ (formato dei file)" },
                 new[] { "Spostamento laterale (BDF)", "Y.T. Lo 1960; Ruze 1965" },
-                new[] { "Rete: trasmissione", "W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations" },
+                new[] { "Rete: trasmissione", "T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)" },
                 new[] { "Rete: vento", "I.E. Idelchik, Handbook of Hydraulic Resistance, diagr. 8-6; teoria del disco attuatore (Taylor); Hoerner, Fluid-Dynamic Drag" },
                 new[] { "Disco pieno al vento", "Hoerner; rfessentials (Cd 1,2-1,4); dati di costruttori 1,5-1,65" },
                 new[] { "EME: puntamento, fascio e Luna", "Bob Atkins (off-axis gain loss); OE2IGL/DF3GJ EME link budget; DF3GJ Filling Factors; UA3AVR DUBUS 3/2016; DJ7FJ DUBUS 1/1995" },

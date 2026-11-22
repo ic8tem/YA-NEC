@@ -568,7 +568,7 @@ Taper e spillover tirano in direzioni opposte: un bordo poco illuminato riduce l
 
 **3. Superficie (Ruze): eta_superficie = exp[-(4 pi sigma / lambda)^2].** sigma e' lo scostamento RMS della superficie dal paraboloide (centine, rete, montaggio). lambda/40 costa 0,4 dB, lambda/20 costa 1,7 dB, lambda/16 circa 2,7 dB. Con la casella "Aggiungi la sfaccettatura della rete piana" si somma (in quadratura) l'errore della rete tesa piatta tra due centine: freccia della corda k2 s^2/8 (s = corda tra le centine, k2 = curvatura del paraboloide in quel punto), RMS circa 0,298 volte la freccia, media pesata con l'illuminazione. Dalla 1.0.14 conta solo la componente assiale dell'errore, eps_assiale = eps_normale / sqrt(1 + (r/2F)^2) (Baars, eq. 4.43): verso il bordo la superficie e' inclinata e lo stesso errore normale sposta meno la fase. La pagina Meccanica mostra tutti e due i valori.
 
-**4. Rete (Mumford): eta_rete = 1 - T.** Una parte dell'onda passa attraverso i fori della rete: T = 1 / (1 + x^2), x = lambda / [2 s ln(s / (pi d))], con s = passo (foro + filo) e d = diametro del filo. La potenza trasmessa va dietro il disco e porta rumore del terreno (T x 290 K, pagina Riepilogo). Con "Superficie piena" il fattore vale 1.
+**4. Rete (Otoshi, foglio di W1GHZ): eta_rete = 1 - T.** Una parte dell'onda passa attraverso i fori della rete. Per ogni direzione dei fili la perdita di trasmissione e' TL = 20 log10[lambda / (2 s v)], con v = ln[1 / (1 - e^(-pi d / s))], s = passo (foro + filo) e d = diametro del filo; la potenza che passa e' 10^(-TL/10) = (2 s v / lambda)^2. Per la polarizzazione circolare dell'EME si fa la media di W1GHZ: T = 0,25 (L_orizzontale + L_verticale + 2 L_diagonale), con la diagonale di passo s x 1,41 (T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems, Artech 2008, pp. 271-276; P. Wade W1GHZ, Mesh Reflector Loss Calculations, 2014). La formula riproduce la tabella di G3LTF a 5,7 GHz (rete 6x6 mm con filo da 1 mm: 18 K; 8x8 mm: 51 K; 10x10 mm: 108 K) entro 3 K, ed e' nell'autotest. La potenza trasmessa va dietro il disco e porta rumore del terreno (T x 290 K, pagina Riepilogo). Con "Superficie piena" il fattore vale 1.
 
 **5. Bordo a poligono: eta_bordo = N sin(2 pi / N) / (2 pi).** Solo con la sfaccettatura accesa: con la rete piana tra N centine il bordo e' un poligono, che ha meno area del cerchio (16 centine: 0,975, -0,11 dB).
 
@@ -585,12 +585,12 @@ Taper e spillover tirano in direzioni opposte: un bordo poco illuminato riduce l
 | apertura (taper x spillover; fase e polarizzazione = 1 con il feed cos^q) | | 82,4 % | -0,84 dB |
 | blocco (feed 0,75 % del campo, puntoni 1,05 % onda piana + 1,45 % onda sferica) | | 93,6 % | -0,29 dB |
 | superficie, 3 mm = lambda/77 (Ruze) | | 97,4 % | -0,12 dB |
-| rete 6 mm = lambda/38 (Mumford, T = 0,34 %) | | 99,7 % | -0,01 dB |
+| rete 6 mm = lambda/38 (Otoshi/W1GHZ, T = 0,72 %) | | 99,3 % | -0,03 dB |
 | perdite varie | | 85,1 % | -0,70 dB |
-| **totale** | | **63,8 %** | **-1,95 dB** |
-| guadagno: apertura uniforme 32,20 dBi - 1,95 dB | **30,25 dBi** | | |
+| **totale** | | **63,6 %** | **-1,97 dB** |
+| guadagno: apertura uniforme 32,20 dBi - 1,97 dB | **30,23 dBi** | | |
 
-Si vede che a 1296 MHz rete e superficie quasi non contano: pesano illuminazione e perdite varie. Alle bande alte i numeri cambiano: con la stessa rete e lo stesso errore RMS, a 10368 MHz (lambda 28,9 mm) la superficie da 3 mm (lambda/10) costa circa 7 dB e la rete 6 mm diventa trasparente per una parte importante della potenza; la pagina Bande ed EME fa lo stesso conto per le quattro bande.
+Si vede che a 1296 MHz rete e superficie quasi non contano: pesano illuminazione e perdite varie. Alle bande alte i numeri cambiano: con la stessa rete e lo stesso errore RMS, a 10368 MHz (lambda 28,9 mm) la superficie da 3 mm (lambda/10) costa circa 7 dB e la rete 6 mm lascia passare circa il 46 % della potenza (-2,7 dB e circa 130 K dal terreno); la pagina Bande ed EME fa lo stesso conto per le quattro bande.
 
 Con il diagramma del feed dal modello NEC (pulsante "Feed dal modello NEC") o da un file W1GHZ, taper e spillover si calcolano sul diagramma vero, anche diverso nei piani E e H; con la fase si aggiungono eta_fase ed eta_pol, e il centro di fase si cerca dove l'efficienza e' massima (criterio di W1GHZ).
 
@@ -607,7 +607,7 @@ Con il diagramma del feed dal modello NEC (pulsante "Feed dal modello NEC") o da
 
 L'autotest ha la sezione 10 con i casi della letteratura: feed cos^2...cos^8 a f/D 0,3, 0,42 e 0,6 contro l'integrale di Balanis (15-55), fatto con un integrale indipendente, e contro il motore; forma chiusa per cos^2 e massimo della curva (0,829); distribuzione quadratica a -12 dB (0,893, HPBW 66,3 gradi lambda/D); gaussiana a -12 dB (0,866); Tf 4,58 dB a f/D 0,3; fuori fuoco con beta = 1 (0,919); Ruze con sigma = lambda/20 (-1,71 dB). Le misure di PA0PLY a 10 GHz (disco da 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB di rapporto sole/rumore; choke avvitata -0,6 dB; cappuccio dell'LNB -0,5 dB) sono riportate come riferimento: il diagramma di quei feed non ha una formula e va calcolato col NEC.
 
-Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spillover, efficienza d'illuminazione); P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6 (taper ottimo, fase, efficienza reale); P.-S. Kildal, IEEE Trans. AP-33, 1985 (fattori dell'efficienza del feed); J. Ruze, Proc. IEEE 1966 (errori di superficie) e Microwave Journal 1968 (puntoni); W.W. Mumford, Proc. IRE 1961 (trasmissione della rete); Galt Telescope, arXiv 1607.06436, e Lamb e Olver (blocco pesato); J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4 (controlli, ombra sferica dei puntoni, componente assiale, fascio d'errore); C.A. Balanis, Antenna Theory, cap. 15 (feed cos^n, limite di fase, guadagno massimo); PA0PLY (misure di feed a 10 GHz).
+Fonti: Stutzman e Thiele, Antenna Theory and Design, eq. 9-233 (feed cos^q, spillover, efficienza d'illuminazione); P. Wade W1GHZ, Online Microwave Antenna Book, cap. 4 e 6 (taper ottimo, fase, efficienza reale); P.-S. Kildal, IEEE Trans. AP-33, 1985 (fattori dell'efficienza del feed); J. Ruze, Proc. IEEE 1966 (errori di superficie) e Microwave Journal 1968 (puntoni); T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems, Artech 2008, pp. 271-276, e P. Wade W1GHZ, Mesh Reflector Loss Calculations, 2014 (trasmissione della rete); Galt Telescope, arXiv 1607.06436, e Lamb e Olver (blocco pesato); J.W.M. Baars, The Paraboloidal Reflector Antenna in Radio Astronomy and Communication, Springer 2007, cap. 4 (controlli, ombra sferica dei puntoni, componente assiale, fascio d'errore); C.A. Balanis, Antenna Theory, cap. 15 (feed cos^n, limite di fase, guadagno massimo); PA0PLY (misure di feed a 10 GHz).
 
 ### 15.2 Altre fonti
 

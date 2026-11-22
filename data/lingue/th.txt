@@ -926,7 +926,7 @@ Diametro del disco	เส้นผ่านศูนย์กลางจาน
 Diametro del feed	เส้นผ่านศูนย์กลางฟีด
 Diametro del filo	เส้นผ่านศูนย์กลางสาย
 Diametro del filo degli anelli	เส้นผ่านศูนย์กลางสายของลูป
-Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (Mumford) e la superficie esposta al vento.	เส้นผ่านศูนย์กลางลวดตาข่าย: ร่วมกับระยะช่องตาข่ายให้ค่าการทะลุผ่านตาข่าย (Mumford) และพื้นผิวที่รับลม
+Diametro del filo della rete: con il passo dei fori da' la trasmissione attraverso la rete (W1GHZ, Otoshi) e la superficie esposta al vento.	เส้นผ่านศูนย์กลางลวดตาข่าย: ร่วมกับระยะช่องตาข่ายให้ค่าการทะลุผ่านตาข่าย (W1GHZ, Otoshi) และพื้นผิวที่รับลม
 Diametro del filo piu' grande della lunghezza del filo	เส้นผ่านศูนย์กลางสายมากกว่าความยาวสาย
 Diametro del radiatore	เส้นผ่านศูนย์กลางตัวแผ่คลื่น
 Diametro dell'altro conduttore	เส้นผ่านศูนย์กลางของตัวนำอีกเส้น
@@ -2697,7 +2697,6 @@ Rete LC di adattamento	เครือข่ายแมตช์ LC
 rete NT	เครือข่าย NT
 Rete NT: si conserva com'e'.	เครือข่าย NT: คงไว้ตามเดิม
 rete troppo larga	ตาข่ายหยาบเกินไป
-Rete: filo grosso rispetto al passo; la formula di Mumford e' al limite e la rete e' trattata come quasi piena.	ตาข่าย: ลวดหนาเมื่อเทียบกับระยะห่าง; สูตร Mumford ถึงขีดจำกัดและถือว่าตาข่ายเกือบทึบ
 Rete: trasmissione	ตาข่าย: การทะลุผ่าน
 Rete: vento	ตาข่าย: ลม
 reti L	เครือข่าย L
@@ -3073,7 +3072,7 @@ Struttura 3D	โครงสร้าง 3D
 Struttura e superficie	โครงสร้างและพื้นผิว
 stub in corto	สตับช็อต
 Stub, trasformatori e reti L restano solo sull'antenna base: vanno aggiunti a mano alle copie.	สตับ หม้อแปลง และเครือข่าย L อยู่เฉพาะบนเสาอากาศฐาน: ต้องเพิ่มให้สำเนาด้วยมือ
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman และ Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb และ Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman และ Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb และ Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 su ogni foglio c'e' un righello di 100 mm per controllare la scala, e i fogli si sovrappongono di 10 mm sulle crocette. Mozzo e altezza della centina si scrivono nei dati a sinistra.	ในแต่ละแผ่นมีไม้บรรทัด 100 mm เพื่อตรวจมาตราส่วน และแผ่นซ้อนกัน 10 mm ที่เครื่องหมายกากบาท ความสูงดุมและซี่เขียนไว้ในข้อมูลด้านซ้าย
 su tutta la sfera	ทั่วทั้งทรงกลม
 su tutte le direzioni	ทุกทิศทาง
@@ -3398,7 +3397,7 @@ voto migliore	คะแนนดีที่สุด
 W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ago. 1959; J. Sevick, Transmission Line Transformers, 4ª ed. Noble 2001; AL dei nuclei: Amidon (amidoncorp.com), polvere di ferro: tabella Amidon di ok1dxd	W. K. Ruthroff, "Some Broad-Band Transformers", Proc. IRE ส.ค. 1959; J. Sevick, Transmission Line Transformers พิมพ์ครั้งที่ 4 Noble 2001; AL ของแกน: Amidon (amidoncorp.com) ผงเหล็ก: ตาราง Amidon โดย ok1dxd
 W. Overbeck N6NB (QST 4/1977, 2/1978), modello NEC di L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), tabelle di W3PM (QST 1/1990)	W. Overbeck N6NB (QST 4/1977, 2/1978), แบบจำลอง NEC โดย L. B. Cebik W4RNL (Quagi and Yagi on 2 Meters), ตาราง W3PM (QST 1/1990)
 W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, eq. 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)	W.L. Stutzman, G.A. Thiele, Antenna Theory and Design, สมการ 9-233; S. Sengupta, Virginia Tech 2021 (A Fast Approximate Method)
-W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations	W.W. Mumford, Proc. IRE 49, 1961; W1GHZ, Mesh Reflector Loss Calculations
+T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)	T.Y. Otoshi, Noise Temperature Theory and Applications for Deep Space Communications Antenna Systems (Artech, 2008), pp. 271-276; W1GHZ, Mesh Reflector Loss Calculations (2014)
 W1GHZ, cap. 12	W1GHZ บทที่ 12
 W1GHZ, cap. 6.5	W1GHZ บทที่ 6.5
 W1GHZ, Microwave Antenna Book cap. 6.3	W1GHZ, Microwave Antenna Book บทที่ 6.3
@@ -3596,7 +3595,7 @@ INFO  PA0PLY 10 GHz, 3 m, f/D 0,3: guida aperta 13,5 dB contro choke 15,2 dB (so
 Il NEC-2 non modella l'isolante: le misure calcolate sono quelle del filo nudo. Con il filo isolato l'elemento va accorciato (W6PQL: lato 0,238 lambda invece di 0,248, circa il 4 % in meno).	NEC-2 ไม่จำลองฉนวน: ขนาดที่คำนวณเป็นของลวดเปลือย ถ้าใช้ลวดหุ้มฉนวนต้องตัดอีลีเมนต์ให้สั้นลง (W6PQL: ด้าน 0,238 lambda แทน 0,248 น้อยกว่าประมาณ 4 %)
 Il braccio di sopra di un petalo e quello di sotto del petalo vicino stanno a 20 gradi: insieme fanno la linea di λ/4 che porta l'alta impedenza del petalo al mozzo.	แขนบนของกลีบหนึ่งและแขนล่างของกลีบข้างเคียงห่างกัน 20 องศา: รวมกันเป็นสาย λ/4 ที่นำอิมพีแดนซ์สูงของกลีบมาที่ดุม
 Il campo grigio non si scrive: mostra il valore ricavato. Con "Tutti e due" si danno entrambi e le spaziature si allungano o si accorciano in proporzione: si esce dal metodo e serve l'ottimizzazione NEC.	ช่องสีเทาแก้ไขไม่ได้: แสดงค่าที่ได้จากการคำนวณ เมื่อเลือก "ทั้งสอง" จะกำหนดทั้งสองค่าและระยะห่างจะถูกยืดหรือหดตามสัดส่วน: ออกนอกวิธีนี้และต้องใช้การหาค่าเหมาะสม NEC
-Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (Mumford: maglia sotto λ/10).	ด้านยาวประมาณ λ/4 จากกึ่งกลางลวดถึงกึ่งกลางลวด; ระยะจากตัวสะท้อน (0,1-0,13 λ ในแหล่งที่มา) คือการปรับ SWR ถ้าเป็นตาข่าย ตัวสะท้อนคือกริดลวดที่มีช่องตาข่ายจริง (Mumford: ช่องเล็กกว่า λ/10)
+Il lato e' circa λ/4 da centro a centro del filo; la distanza dal riflettore (0,1-0,13 λ nelle fonti) e' la regolazione del ROS. Con la rete il riflettore e' una griglia di fili con la maglia vera (W1GHZ, Otoshi: maglia sotto λ/10).	ด้านยาวประมาณ λ/4 จากกึ่งกลางลวดถึงกึ่งกลางลวด; ระยะจากตัวสะท้อน (0,1-0,13 λ ในแหล่งที่มา) คือการปรับ SWR ถ้าเป็นตาข่าย ตัวสะท้อนคือกริดลวดที่มีช่องตาข่ายจริง (W1GHZ, Otoshi: ช่องเล็กกว่า λ/10)
 Il modello aperto e' gia' uno stack: apri l'antenna singola.	แบบจำลองที่เปิดอยู่เป็นสแตกแล้ว: เปิดสายอากาศเดี่ยว
 Il modello e' in spazio libero: per lo stack HF si usa il suolo medio (13 / 0,005 S/m, Sommerfeld).	แบบจำลองอยู่ในที่ว่าง: สำหรับสแตก HF ใช้ดินเฉลี่ย (13 / 0,005 S/m, Sommerfeld)
 Il petalo a scala 1:1 su fogli A4 da unire (sovrapposizione 10 mm, crocette ogni 50 mm, righello di 100 mm). Solo per la Big Wheel.	กลีบมาตราส่วน 1:1 บนกระดาษ A4 ที่นำมาต่อกัน (ซ้อน 10 mm, กากบาททุก 50 mm, ไม้บรรทัด 100 mm) เฉพาะ Big Wheel
@@ -3693,13 +3692,13 @@ Striscia piegata a U tra i due livelli, in parallelo al mozzo (QST 1961: 5"; F1B
 Stub	สตับ
 Stub: larghezza	สตับ: ความกว้าง
 Stub: lunghezza sviluppata	สตับ: ความยาวเมื่อคลี่
-Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman และ Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; W.W. Mumford; I.E. Idelchik; S.F. Hoerner; Lamb และ Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
+Stutzman e Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb e Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign	Stutzman และ Thiele; S. Sengupta; GMRT/NCRA; J. Baars; C.A. Balanis; P. Wade W1GHZ; PA0PLY; J. Ruze; T.Y. Otoshi; I.E. Idelchik; S.F. Hoerner; Lamb และ Olver; Bob Atkins; OE2IGL; DF3GJ; UA3AVR; DJ7FJ; OK1DFC; RF HamDesign
 Su qualche banda la discesa perde piu' di 3 dB (riquadri evidenziati): accorcia la linea, passa alla scala o metti l'accordatore al loop.	บางแบนด์สายป้อนสูญเสียเกิน 3 dB (ช่องที่เน้น): ทำสายให้สั้นลง เปลี่ยนเป็นสายบันได หรือวางจูนเนอร์ที่ลูป
 T antenna (cielo vero)	T สายอากาศ (ท้องฟ้าจริง)
 T antenna nelle 24 ore	T สายอากาศตลอด 24 ชั่วโมง
 T antenna nelle 24 ore (puntamento fisso)	T สายอากาศตลอด 24 ชั่วโมง (ชี้ทิศคงที่)
 T del terreno (cielo vero)	T พื้นดิน (ท้องฟ้าจริง)
-T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; W.W. Mumford	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI และ MW1FGQ; buildyourownantenna (ไบควอดคู่, 2014); nec2.org; W.W. Mumford
+T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna (doppia biquad, 2014); nec2.org; T.Y. Otoshi	T. Marshall (BYTE 10/2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI และ MW1FGQ; buildyourownantenna (ไบควอดคู่, 2014); nec2.org; T.Y. Otoshi
 T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI e MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (confronto)	T. Marshall (BYTE 2001); martybugs.net; W. Zwickel OE2TZL (QSP 10/93); W6PQL; IK1ZYW; G6GVI และ MW1FGQ; buildyourownantenna; nec2.org; MathWorks Antenna Toolbox (เปรียบเทียบ)
 Tabella dello stack copiata.	คัดลอกตารางสแตกแล้ว
 Temperature uniformi (VE7BQH)	อุณหภูมิสม่ำเสมอ (VE7BQH)
@@ -5836,7 +5835,7 @@ area	พื้นที่
  mm sull'asse, 	 mm บนแกน, 
  mm tolti a 	 mm ที่ตัดออกที่ 
  mm).nec	 mm).nec
- mm): parte della potenza passa dietro (Mumford). Il NEC la calcola con la maglia vera.	 mm): กำลังบางส่วนไปด้านหลัง (Mumford) NEC คำนวณด้วยตาข่ายจริง
+ mm): parte della potenza passa dietro (W1GHZ, Otoshi). Il NEC la calcola con la maglia vera.	 mm): กำลังบางส่วนไปด้านหลัง (W1GHZ, Otoshi) NEC คำนวณด้วยตาข่ายจริง
  mm): raggio 	 mm): รัศมี 
  mm, alimentato al centro del lato posteriore	 mm ป้อนที่ศูนย์กลางของด้านหลัง
  mm, bracci piegati in avanti di 	 mm แขนงอไปข้างหน้า 
