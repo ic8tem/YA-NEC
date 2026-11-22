@@ -7294,3 +7294,4 @@ controllo finale del G/T con lo stack NEC	final G/T check with the NEC stack
 Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il "collegamento" di MMANA, gia' coperto dalle formule. 	The variables come from the Variables tab (lengths, spacings, height, loads, source phases, stacking distance...). A variable written as a formula (LDE = LR*0,985) follows the others by itself: it is the MMANA "link", already covered by the formulas. 
 - - partenza: {0} dBi, F/B {1} dB	- - start: {0} dBi, F/B {1} dB
 — passo {0}: {1} dBi, F/B {2} dB	— step {0}: {1} dBi, F/B {2} dB
+ROS ({0} ohm)	SWR ({0} ohm)

@@ -790,7 +790,7 @@ namespace YaNec
             OttScheda("voto", Fmt(b.Voto, 1), Lang.F("partenza {0}", Fmt(p0.Voto, 1)));   // 1.5.2: tradotti (lezione 15 EN)
             OttScheda("g", Fmt(b.G, 2) + " dBi", Lang.F("partenza {0}", Fmt(p0.G, 2)));
             OttScheda("fb", Fmt(b.FB, 1) + " dB", Lang.F("partenza {0}", Fmt(p0.FB, 1)));
-            ottCard["ros"][0].Text = "ROS (" + Fmt(model != null ? model.Z0 : 50, 1) + " ohm)";
+            ottCard["ros"][0].Text = Lang.F("ROS ({0} ohm)", Fmt(model != null ? model.Z0 : 50, 1));   // 1.5.8: in inglese restava «ROS»
             double ros = Analysis.Swr(b.Z, model != null ? model.Z0 : 50);
             OttScheda("ros", Fmt(ros, 2), Lang.F("peggiore in banda {0}", Fmt(b.RosPeggiore, 2)), ros <= 1.5 ? Pal.Green : (Color?)null);
             OttRigaObiettivo zo = ottOb.Find(q => q.Chiave == "z");
