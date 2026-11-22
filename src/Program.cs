@@ -30,6 +30,8 @@ namespace YaNec
             if (args.Length >= 3 && args[0] == "--passi") return PassiDaGuardare.Scrivi(args[1], args[2]);
             // 1.5: prova d'importazione dei modelli senza finestra (IC8TEM 18/11/2026)
             if (args.Length >= 3 && args[0] == "--converti") { Librerie.Prepara(); return ConvertiModelli.Esegui(args[1], args[2]); }
+            // 1.5.7+: prova di tutte le combinazioni della scheda Filari, senza finestra (IC8TEM 22/11/2026)
+            if (args.Length >= 2 && args[0] == "--prova-filari") { Librerie.Prepara(); return ProvaFilari.Esegui(args[1]); }
             Librerie.Prepara();
             List<string> la = new List<string>(args);
             Engine.Dem.Cartella = AppPaths.DataDir;   // 1.2.0: DEM scaricati in data/dem

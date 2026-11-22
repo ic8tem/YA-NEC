@@ -239,3 +239,4 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
 
 ## 1.5.7
 - 22/11/2026 13:10, IC8TEM («Ok correggi compila e pubblica»): versione 1.5.7 con la bobina di carico facoltativa e «Accorda la bobina (NEC)», le traduzioni corrette (avvisi di tutti i calcolatori, scheda Filari in inglese, disegni, tempo reale) e la Struttura 3D senza le bobine dell'isolante. VERSION, note di rilascio, README in 8 lingue, paragrafo 26.7 del manuale, PDF rigenerati.
+- 22/11/2026 15:19, IC8TEM («Prova tutte le combinazioni che ti ho dato come possibili»): nuovo avvio senza finestra «YA-NEC --prova-filari <uscita.txt>» (Diag/ProvaFilari.cs) che prova tutte le combinazioni della scheda Filari (3 tipi x 6 disposizioni x 2 trasformatori x bobina si'/no, 60 casi) con l'accordo NEC del pulsante e scrive ROS e impedenza del NEC a ogni banda. Contrappeso «filo» e «calza» hanno lo stesso modello e non si ripetono.
