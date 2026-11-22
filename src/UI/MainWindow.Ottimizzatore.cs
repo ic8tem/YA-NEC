@@ -132,8 +132,8 @@ namespace YaNec
             ob.Children.Add(new TextBlock { Text = "Frequenze da rispettare", FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 8, 0, 2) });
             ottFreqPanel = new WrapPanel();
             ob.Children.Add(ottFreqPanel);
-            ob.Children.Add(Nota("Il voto e' la somma sulle frequenze: tiene buona l'antenna anche ai bordi della banda. Si possono mettere bande diverse (antenne multibanda). " +
-                                 "Clic su una frequenza: diventa la principale (in grassetto, quella delle schede in alto); clic destro: la toglie."));
+            ob.Children.Add(NotaT("Il voto e' la somma sulle frequenze: tiene buona l'antenna anche ai bordi della banda. Si possono mettere bande diverse (antenne multibanda). ",
+                                  "Clic su una frequenza: diventa la principale (in grassetto, quella delle schede in alto); clic destro: la toglie."));
             StackPanel c1s = new StackPanel();
             c1s.Children.Add(Pannello("1. Obiettivi e pesi", ob));
             c1s.Children.Add(OttGtPannello());   // 1.5.8
@@ -144,9 +144,9 @@ namespace YaNec
             ottVarPanel = new StackPanel { Spacing = 2 };
             vp.Children.Add(ottVarPanel);
             // 1.5.8 (lezione 32 in inglese): le frasi si traducono una per una, la nota intera non e' una voce del file delle lingue
-            vp.Children.Add(Nota(Lang.T("Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). " +
-                                 "Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il \"collegamento\" di MMANA, gia' coperto dalle formule. ") +
-                                 Lang.T("Ordine = ordine di prova: la piu' efficace in alto.")));
+            vp.Children.Add(NotaT(("Le variabili vengono dalla linguetta Variabili (lunghezze, spaziature, altezza, carichi, fasi delle sorgenti, distanza di stack...). " +
+                                 "Una variabile scritta come formula (LDE = LR*0,985) segue le altre da sola: e' il \"collegamento\" di MMANA, gia' coperto dalle formule. "),
+                                 "Ordine = ordine di prova: la piu' efficace in alto."));
             WrapPanel vb = new WrapPanel();
             Button bAgg = Btn("+ aggiungi variabile", false);
             bAgg.Click += (s, e) => OttMenuAggiungi(bAgg);
@@ -198,8 +198,8 @@ namespace YaNec
             ottMcScelta = new ComboBox { ItemsSource = new[] { "la percentuale migliore di copie entro le soglie", "il caso peggiore migliore", "il voto medio migliore" }, SelectedIndex = 0, MinWidth = 260 };
             mc.Children.Add(rmc("Scegli il candidato con", ottMcScelta, ""));
             mc.Children.Add(rmc("Seme del caso", ottMcSeme, ""));
-            mc.Children.Add(Nota(Lang.T("Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. ") +
-                                 Lang.T("Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli.")));
+            mc.Children.Add(NotaT(("Il Monte Carlo non entra in ogni passo: fa partire l'ottimizzatore da piu' punti a caso e controlla con le tolleranze di costruzione solo i migliori candidati. "),
+                                 "Tempo: circa (partenze + 1) volte quello di oggi, piu' candidati x copie calcoli."));
             ottMcRis = new StackPanel { Spacing = 4 };
             mc.Children.Add(ottMcRis);
             StackPanel c2s = new StackPanel();
@@ -246,6 +246,17 @@ namespace YaNec
             g.Children.Add(c1); g.Children.Add(c2); g.Children.Add(c3);
             OttStatoSchede();
             return g;
+        }
+
+        /// <summary>1.5.8: nota fatta di frasi tradotte una per una; il testo gia' tradotto non passa piu' dai frammenti («copiess»).</summary>
+        TextBlock NotaT(params string[] frasi)
+        {
+            TextBlock t = Nota("");
+            Lang.NonTradurre(t);
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            foreach (string f in frasi) sb.Append(Lang.T(f));
+            t.Text = sb.ToString();
+            return t;
         }
 
         static string SuggerimentoSoglia(string k)
