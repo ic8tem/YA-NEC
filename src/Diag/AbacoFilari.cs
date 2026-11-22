@@ -16,7 +16,9 @@ namespace YaNec
     static class AbacoFilari
     {
         static readonly CultureInfo IC = CultureInfo.InvariantCulture;
-        const double C0 = 299.792458, H = 3.0, A = 0.0005;
+        const double C0 = 299.792458, A = 0.0005;
+        static double H = 3.0, Passo = 0.5;
+        static bool Perfetto = true;   // 22/11/2026 17:30: anche terreno medio (GN 2, 13 / 0,005 S/m) e altre altezze
         static readonly string[] Nomi = CalcFilari.BandeNomi;
         static readonly double[] F = CalcFilari.BandeF;
 
@@ -33,7 +35,7 @@ namespace YaNec
             if (cp > 0.01) sb.Append(gw(-0.1 - cp, -0.1, nc));
             sb.Append(gw(-0.1, 0, 1)); int feed = tag;
             sb.Append(gw(0, L, nw));
-            sb.Append("GE 1\nGN 1\nEX 0 " + feed + " 1 0 1 0\nFR 0 1 0 0 " + N(f, "0.####") + " 0\nEN\n");
+            sb.Append((Perfetto ? "GE 1\nGN 1" : "GE 0\nGN 2 0 0 0 13 0.005") + "\nEX 0 " + feed + " 1 0 1 0\nFR 0 1 0 0 " + N(f, "0.####") + " 0\nEN\n");
             NecModel m = NecModel.Parse(sb.ToString());
             SegmentGeometry g = Analysis.GeometriaDiCalcolo(m, f);
             Nec2Engine e = new Nec2Engine(g);
@@ -55,10 +57,11 @@ namespace YaNec
             return s.ToString();
         }
 
-        public static int Esegui(string uscita)
+        public static int Esegui(string uscita, string terreno = "perfetto", double altezza = 3, double passo = 0.5)
         {
+            Perfetto = terreno != "medio"; H = altezza; Passo = passo;
             StringBuilder o = new StringBuilder();
-            o.AppendLine("# YA-NEC abaco filari: filo nudo 1 mm orizzontale a 3 m, contrappeso orizzontale opposto, terreno perfetto, trasformatore ideale. " + DateTime.Now.ToString("yyyy-MM-dd HH:mm", IC));
+            o.AppendLine("# YA-NEC abaco filari: filo nudo 1 mm orizzontale a " + N(H, "0.#") + " m, contrappeso orizzontale opposto, terreno " + (Perfetto ? "perfetto" : "medio (13, 0,005 S/m)") + ", trasformatore ideale. " + DateTime.Now.ToString("yyyy-MM-dd HH:mm", IC));
             string intest = "\t" + string.Join("\t", Nomi);
             // ---------------- EFHW 49:1 e 64:1 ----------------
             int[] basse = { 0, 1, 3, 5, 7, 9 };   // 160, 80, 40, 20, 15, 10 m
@@ -96,8 +99,8 @@ namespace YaNec
             }
             // ---------------- 9:1: lunghezze e contrappesi ----------------
             double[] ve3eed = { 29, 35.5, 41, 58, 71, 84, 107, 119, 148 };
-            double[] cpFissi = { 0, 1, 2, 3, 5, 7.6, 10, 15 };
-            double[] cpPerc = { 0.05, 0.075, 0.10, 0.15, 0.25 };
+            double[] cpFissi = Perfetto ? new double[] { 0, 1, 2, 3, 5, 7.6, 10, 15 } : new double[] { 0, 1, 2, 3, 5, 7.6, 10 };
+            double[] cpPerc = Perfetto ? new[] { 0.05, 0.075, 0.10, 0.15, 0.25 } : new[] { 0.05, 0.10, 0.25 };
             const double z09 = 450;
             int bandaMin = 1;   // dagli 80 m in su
             Func<double, double, double[]> rosBande = (L, cp) =>
@@ -138,7 +141,7 @@ namespace YaNec
             // scansione delle lunghezze 6-46 m con il contrappeso migliore tra quelli provati
             o.AppendLine("## 9:1 scansione delle lunghezze (passo 0,5 m), contrappeso migliore per ciascuna");
             o.AppendLine("filo m\tcontrappeso m\tcontrappeso\tbande ROS<=3" + intest);
-            for (double L = 6; L <= 46.001; L += 0.5)
+            for (double L = 6; L <= 46.001; L += Passo)
             {
                 List<double> cps = new List<double>(cpFissi); foreach (double p in cpPerc) cps.Add(L * p);
                 double bestCp = 0, bestP = double.MinValue; double[] bestR = null;

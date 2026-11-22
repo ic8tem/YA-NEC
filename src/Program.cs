@@ -31,7 +31,7 @@ namespace YaNec
             // 1.5: prova d'importazione dei modelli senza finestra (IC8TEM 18/11/2026)
             if (args.Length >= 3 && args[0] == "--converti") { Librerie.Prepara(); return ConvertiModelli.Esegui(args[1], args[2]); }
             // 1.5.7+: prova di tutte le combinazioni della scheda Filari, senza finestra (IC8TEM 22/11/2026)
-            if (args.Length >= 2 && args[0] == "--abaco-filari") { Librerie.Prepara(); return AbacoFilari.Esegui(args[1]); }   // IC8TEM 22/11/2026 16:28
+            if (args.Length >= 2 && args[0] == "--abaco-filari") { Librerie.Prepara(); return AbacoFilari.Esegui(args[1], args.Length > 2 ? args[2] : "perfetto", args.Length > 3 ? double.Parse(args[3], System.Globalization.CultureInfo.InvariantCulture) : 3, args.Length > 4 ? double.Parse(args[4], System.Globalization.CultureInfo.InvariantCulture) : 0.5); }   // IC8TEM 22/11/2026 16:28
             if (args.Length >= 2 && args[0] == "--prova-filari") { Librerie.Prepara(); return ProvaFilari.Esegui(args[1]); }
             Librerie.Prepara();
             List<string> la = new List<string>(args);
