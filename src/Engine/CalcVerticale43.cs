@@ -303,7 +303,8 @@ namespace YaNec.Engine
             double z0 = alti ? Math.Max(0.3, P("hr")) : 0;
             if (ad != 2) o.Mark(8, -1.6, z0 + 0.2, ad == 0 ? "4:1" : "ATU", 0, -0.4, z0 + 1.4);
             o.Mark(7, 1.2, z0, Calcolatori.N(h, 1) + " m", 0, 1.2, z0 + h);
-            o.Mark(0, -Math.Max(3, h * 0.35), z0 + 2.2, Calcolatori.N(P("lc"), 0) + " m " + c.Name.Split(' ')[0], 1);
+            o.Mark(2, -0.3, z0 + 0.15, null, 1, -h * 0.8, z0 + 0.15);   // coassiale verso la stazione
+            o.Mark(0, -h * 0.8, z0 + 1.3, Calcolatori.N(P("lc"), 0) + " m " + c.Name.Split(' ')[0], 1);
             if (vB > 2000) o.Mark(0, 1.6, z0 + 0.5, "≈ " + Calcolatori.N(vB / 1000, 1) + " kV alla base", 2);
 
             // ---- avvisi
