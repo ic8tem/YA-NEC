@@ -414,7 +414,7 @@ namespace YaNec.Engine
             o.Plane = "xz";
 
             // ---- annotazioni del disegno
-            o.Mark(8, -0.4, h1 - 0.5, rappTxt, 0, 0.4, h1 + 0.3);
+            o.Mark(0, -Math.Max(1.5, L * 0.14), h1 + 1.0, rappTxt, 0);   // 1.5.9: scritta a sinistra, non sopra il quadratino della sorgente
             if (calza) o.Mark(0, -cp, Math.Max(0.4, zc) + 0.6, "choke", 2);
             o.Mark(0, -Math.Max(1, cp * 0.6), zc - 0.9, calza || nessuno ? "calza " + Calcolatori.N(cp, 1) + " m" : "contrappeso " + Calcolatori.N(cp, 2) + " m", 1);
             double[] ult = pts[pts.Count - 1];
