@@ -193,7 +193,7 @@ namespace YaNec
             if (!Mini)
             {
                 string fili = b.Tipo == "guanella" ? "rosso/nero e blu/grigio: le due coppie" : (b.Tipo == "trifilare" ? "rosso, nero, blu: i tre fili" : (b.Tipo == "auto" ? "arancio: le prese" : (b.Tipo == "efhw" ? "nero: primario sopra il secondario (rosso)" : "rosso e nero: la coppia")));
-                scrivi(b.Nucleo + (b.Polvere ? " (polvere di ferro)" : " (ferrite)") + " · " + fili, W / 2, H - 16, mu, 11.5);
+                scrivi(b.Nucleo + Lang.T(b.Polvere ? " (polvere di ferro)" : " (ferrite)") + " · " + Lang.T(fili), W / 2, H - 16, mu, 11.5);   // 1.5.9: pezzi tradotti uno per uno
             }
         }
 

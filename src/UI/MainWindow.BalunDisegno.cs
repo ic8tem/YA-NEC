@@ -54,7 +54,7 @@ namespace YaNec
                 tit.Text = s == null ? "Come costruirlo" : "Come costruirlo: " + s.Rapporto + " su " + s.Nucleo;
                 passi.Children.Clear();
                 int n = 1;
-                if (o != null) foreach (string p in o.Passi) passi.Children.Add(new TextBlock { Text = (n++) + ". " + p, TextWrapping = TextWrapping.Wrap, FontSize = 13, Foreground = Pal.B(Pal.Fore) });
+                if (o != null) foreach (string p in o.Passi) passi.Children.Add(new TextBlock { Text = (n++) + ". " + Lang.TC(p), TextWrapping = TextWrapping.Wrap, FontSize = 13, Foreground = Pal.B(Pal.Fore) });
                 CalcParam pr = sc.Params.Find(x => x.Key == "r");
                 int sel = pr != null ? (int)pr.Value : -1;
                 for (int i = 0; i < celle.Count; i++) { celle[i].BorderBrush = Pal.B(i == sel ? Pal.Accent : Pal.Border); celle[i].BorderThickness = new Thickness(i == sel ? 2 : 1); }
