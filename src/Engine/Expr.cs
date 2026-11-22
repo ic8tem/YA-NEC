@@ -78,7 +78,12 @@ namespace YaNec.Engine
         {
             if (string.IsNullOrWhiteSpace(text)) return 0;
             double quick;
-            if (double.TryParse(text.Trim(), NumberStyles.Float, CI, out quick)) return quick;
+            if (double.TryParse(text.Trim(), NumberStyles.Float, CI, out quick))
+            {
+                // 1.5.9 (controlli come nec2-rs): "nan", "inf" o 1e400 non sono numeri utilizzabili
+                if (double.IsNaN(quick) || double.IsInfinity(quick)) throw new NecException("'" + text.Trim() + "' non e' un numero valido.");
+                return quick;
+            }
             Parser p = new Parser(text, vars);
             double v = p.ParseExpr();
             p.SkipWs();

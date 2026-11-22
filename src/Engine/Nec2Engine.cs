@@ -165,6 +165,10 @@ namespace YaNec.Engine
             ksymp = 1; iperf = 0; zrati = Complex.One; frati = Complex.One; miniNec = false; nradl = 0;
             if (ground != null && ground.Kind != GroundKind.FreeSpace)
             {
+                // 1.5.9: il NEC-2 non calcola fili interrati; con GE -1 il controllo della geometria non scatta e uscivano numeri senza senso
+                for (int i = 0; i < n; i++)
+                    if (zm[i] < -0.01 * sim[i])
+                        throw new NecException("Il segmento " + (i + 1) + " e' sotto il terreno (z = " + zm[i].ToString("0.###", System.Globalization.CultureInfo.InvariantCulture) + " m): il NEC-2 non calcola fili interrati. Per i radiali interrati usa il terreno MiniNec (GN 3) con un carico, come nella verticale da 43 piedi.");
                 ksymp = 2;
                 frati = Complex.One;
                 if (ground.Kind == GroundKind.Perfect || ground.MiniNec) iperf = 1;

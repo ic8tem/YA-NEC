@@ -523,7 +523,61 @@ namespace YaNec.Engine
                 if (g.Length(i) <= 1.0e-20) throw new NecException("Il segmento " + (i + 1) + " ha lunghezza nulla.");
                 if (g.Bi[i] <= 0.0) throw new NecException("Il segmento " + (i + 1) + " (tag " + g.Tag[i] + ") ha raggio nullo o negativo.");
             }
+            ControllaNumeriESovrapposti(g);
             return g;
         }
-    }
+    
+        /// <summary>1.5.9 (controlli di ingresso come nec2-rs e momwire): coordinate non finite o fuori scala (GM, GS o GW con
+        /// valori enormi davano NaN o bloccavano il calcolo) e segmenti sovrapposti (due fili sullo stesso tratto davano Z = 0
+        /// senza nessun avviso).</summary>
+        static void ControllaNumeriESovrapposti(SegmentGeometry g)
+        {
+            int n = g.X1.Length;
+            const double MAXC = 1e9;   // un milione di km: oltre e' certamente un errore del file
+            for (int i = 0; i < n; i++)
+            {
+                double[] v = { g.X1[i], g.Y1[i], g.Z1[i], g.X2[i], g.Y2[i], g.Z2[i], g.Bi[i] };
+                foreach (double c in v)
+                    if (double.IsNaN(c) || double.IsInfinity(c) || Math.Abs(c) > MAXC)
+                        throw new NecException("Il segmento " + (i + 1) + " (tag " + g.Tag[i] + ") ha coordinate o raggio non validi o fuori scala (oltre 10^9 m): controlla le schede GW, GM e GS.");
+            }
+            // segmenti sovrapposti: paralleli, con il centro dell'uno sull'altro; ricerca ordinata per x del centro
+            double[] mx = new double[n], len = new double[n];
+            int[] ord = new int[n];
+            double lmax = 0;
+            for (int i = 0; i < n; i++)
+            {
+                mx[i] = 0.5 * (g.X1[i] + g.X2[i]);
+                len[i] = g.Length(i);
+                if (len[i] > lmax) lmax = len[i];
+                ord[i] = i;
+            }
+            Array.Sort(mx, ord);
+            for (int a = 0; a < n; a++)
+            {
+                int i = ord[a];
+                for (int b = a + 1; b < n && mx[b] - mx[a] <= 0.5 * lmax; b++)
+                {
+                    int j = ord[b];
+                    if (Sovrapposti(g, i, j, len[i], len[j]) || Sovrapposti(g, j, i, len[j], len[i]))
+                        throw new NecException("I segmenti " + (Math.Min(i, j) + 1) + " (tag " + g.Tag[Math.Min(i, j)] + ") e " + (Math.Max(i, j) + 1) + " (tag " + g.Tag[Math.Max(i, j)] +
+                            ") sono sovrapposti: due fili occupano lo stesso tratto. Togli il filo doppio o spostalo.");
+                }
+            }
+        }
+
+        // vero se il centro del segmento j cade dentro il segmento i (tolleranza 1/1000 della lunghezza) e i due sono paralleli
+        static bool Sovrapposti(SegmentGeometry g, int i, int j, double li, double lj)
+        {
+            double ux = (g.X2[i] - g.X1[i]) / li, uy = (g.Y2[i] - g.Y1[i]) / li, uz = (g.Z2[i] - g.Z1[i]) / li;
+            double vx = (g.X2[j] - g.X1[j]) / lj, vy = (g.Y2[j] - g.Y1[j]) / lj, vz = (g.Z2[j] - g.Z1[j]) / lj;
+            if (Math.Abs(ux * vx + uy * vy + uz * vz) < 0.9999) return false;
+            double cx = 0.5 * (g.X1[j] + g.X2[j]) - g.X1[i], cy = 0.5 * (g.Y1[j] + g.Y2[j]) - g.Y1[i], cz = 0.5 * (g.Z1[j] + g.Z2[j]) - g.Z1[i];
+            double t = cx * ux + cy * uy + cz * uz;
+            double tol = 1e-3 * Math.Min(li, lj);
+            if (t <= tol || t >= li - tol) return false;
+            double dx = cx - t * ux, dy = cy - t * uy, dz = cz - t * uz;
+            return Math.Sqrt(dx * dx + dy * dy + dz * dz) <= tol;
+        }
+}
 }

@@ -12,7 +12,8 @@ namespace YaNec.Engine
     public sealed partial class Nec2Engine
     {
         const double PTP = .6283185308, PI10 = 31.41592654, TOSP = 1.128379167, ACCS = 1.0E-12, SP = 1.772453851, GAMMA = .5772156649;
-        const double C1 = -.02457850915, C2 = .3674669052, C3 = .7978845608;
+        const double C1 = -.0245785095,   // 1.5.9 (punto c): valore del Fortran del NEC-2 ((1 - 2 gamma) / 2 pi); nec2c -.02457850915
+                      C2 = .3674669052, C3 = .7978845608;
         const double P10 = .0703125, P20 = .1121520996, Q10 = .125, Q20 = .0732421875, P11 = .1171875, P21 = .1441955566, Q11 = .375, Q21 = .1025390625;
         const double POF = .7853981635, CRIT = 1.0E-4;
         const int MAXH = 20, NM = 131072, NTS = 4;
@@ -24,8 +25,10 @@ namespace YaNec.Engine
         static readonly int[] nxa = { 11, 17, 9 }, nya = { 10, 5, 8 };
         static readonly double[] dxa = { .02, .05, .1 }, dya = { .1745329252, .0872664626, .1745329252 }, xsa = { 0.0, .2, .2 }, ysa = { 0.0, 0.0, .3490658504 };
 
-        sealed class SomGrid { public Complex Epscf; public Complex[] Ar1 = new Complex[11 * 10 * 4], Ar2 = new Complex[17 * 5 * 4], Ar3 = new Complex[9 * 8 * 4]; }
+        sealed class SomGrid { public int NonConvergenze; public Complex Epscf; public Complex[] Ar1 = new Complex[11 * 10 * 4], Ar2 = new Complex[17 * 5 * 4], Ar3 = new Complex[9 * 8 * 4]; }
         SomGrid grid;
+        /// <summary>1.5.9: integrali di Sommerfeld che non sono andati a convergenza (si e' usata l'ultima stima).</summary>
+        public int SommerfeldNonConvergenze { get { return grid != null ? grid.NonConvergenze : 0; } }
         // le griglie dipendono solo da frequenza e terreno: si riusano tra un calcolo e l'altro (sweep, ottimizzatore)
         static readonly Dictionary<string, SomGrid> gridCache = new Dictionary<string, SomGrid>();
         static readonly object gridLock = new object();
@@ -592,6 +595,7 @@ namespace YaNec.Engine
         sealed class Somnec
         {
             int jh;
+            int nonConv;   // 1.5.9: integrali di GSHANK non convergenti in MAXH passi (si usa l'ultima stima, come il Fortran)
             double ck2, ck2sq, tkmag, tsmag, ck1r, zph, rho;
             Complex ct1, ct2, ct3, ck1, ck1sq, cksm;
             Complex a, b;   // cntour
@@ -709,6 +713,7 @@ namespace YaNec.Engine
                     g.Ar1[0 + ith * 11 + 220] = erh;
                     g.Ar1[0 + ith * 11 + 330] = eph;
                 }
+                g.NonConvergenze = nonConv;
                 return g;
             }
 
@@ -983,7 +988,7 @@ namespace YaNec.Engine
             // ---- gshank: integrazione fino all'infinito con l'accelerazione di Shanks ----
             void Gshank(Complex start, Complex dela, Complex[] sum, int nans, Complex[] seed, int ibk, Complex bk, Complex delb)
             {
-                int ibx, j, i, jm, intx, inx;
+                int ibx, j, i, jm, intx, inx = 0;
                 bool brk = false;
                 double amg, den, denm;
                 Complex a1, a2, as1, as2, del, aa;
@@ -1075,7 +1080,9 @@ namespace YaNec.Engine
                             den = (Math.Abs(a1.Real) + Math.Abs(a1.Imaginary)) * CRIT;
                             if (den < denm) den = denm;
                             a1 = q1[i, j] - a1;
-                            amg = Math.Abs(a1.Real + Math.Abs(a1.Imaginary));   // come in nec2c
+                            // 1.5.9 (IC8TEM 22/11/2026 23:12, punto a): |re| + |im| come il Fortran del NEC-2 (nec2c scriveva |re + |im||,
+                            // piu' piccolo con la parte reale negativa: l'integrazione poteva fermarsi troppo presto). Fonte: nec2-rs, docs/nec2c-deviations.md
+                            amg = Math.Abs(a1.Real) + Math.Abs(a1.Imaginary);
                             if (amg > den)
                             {
                                 brk = true;
@@ -1090,7 +1097,9 @@ namespace YaNec.Engine
                         return;
                     }
                 }
-                throw new NecException("Terreno di Sommerfeld: integrale non convergente (GSHANK).");
+                // 1.5.9 (punto b): come il Fortran, dopo MAXH passi si usa l'ultima stima (nec2c si fermava); Analysis lo dice negli avvisi
+                for (i = 0; i < nans; i++) sum[i] = .5 * (q1[i, inx] + q2[i, inx]);
+                nonConv++;
             }
 
             // ---- rom1: Romberg a passo variabile dei 6 integrali da a a b ----

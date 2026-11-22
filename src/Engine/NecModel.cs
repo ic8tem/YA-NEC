@@ -489,6 +489,9 @@ namespace YaNec.Engine
                 m.Ground.Calcestruzzo = Math.Min(2, m.calcestruzzoCm);
                 m.Ground.Name = TerreniEdifici.Nomi[m.Ground.Calcestruzzo];
             }
+            // 1.5.9: se tutte le schede EX sono state scartate lo si dice subito, invece del generico "non ha sorgenti"
+            if (m.Sources.Count == 0 && m.exIgnorate > 0)
+                throw new NecException("Nessuna sorgente utilizzabile: le schede EX del file sono di un tipo che YA-NEC non calcola (" + m.exIgnorate + "). Usa EX 0 (tensione) o EX 5.");
             if (m.Networks.Count > 0 && m.Sources.Exists(q => q.Qds))
                 m.Warnings.Add("EX 5 insieme a linee o reti (TL/NT): in questo caso la sorgente e' calcolata come EX 0, come tensione al centro del segmento.");
             if (m.ex6 > 0)
@@ -500,6 +503,7 @@ namespace YaNec.Engine
         }
 
         int ex6;   // sorgenti EX 6 di 4nec2 lette
+        int exIgnorate;   // 1.5.9: schede EX scartate (tipo non calcolato o non valido)
         readonly List<double[]> trappole4nec2 = new List<double[]>();   // LD 6 di 4nec2: indice del carico, Q, frequenza
         readonly List<double[]> isolati4nec2 = new List<double[]>();    // LD 7 di 4nec2: tag, primo, ultimo, er, raggio esterno, riga
 
@@ -570,7 +574,9 @@ namespace YaNec.Engine
                     }
                     if (c.I1 != 0 && c.I1 != 5)
                     {
-                        Warnings.Add("Riga " + lineNo + ": eccitazione EX tipo " + c.I1 + " (onda piana o dipolo elementare) non ancora supportata: ignorata.");
+                        exIgnorate++;
+                        if (c.I1 >= 1 && c.I1 <= 4) Warnings.Add("Riga " + lineNo + ": eccitazione EX tipo " + c.I1 + " (onda piana o dipolo elementare) non ancora supportata: ignorata.");
+                        else Warnings.Add("Riga " + lineNo + ": tipo di eccitazione EX " + c.I1 + " non valido (il NEC-2 usa da 0 a 5): ignorata.");
                         break;
                     }
                     Sources.Add(new SourceSpec { Tag = c.I2, Seg = c.I3, V = new Complex(c.F1, c.F2), Qds = c.I1 == 5 });
@@ -582,6 +588,17 @@ namespace YaNec.Engine
                     {
                         WireConductivity = c.F1;
                         WireMaterial = "dal file";
+                        break;
+                    }
+                    if (c.I1 == 5 && c.F1 <= 0)
+                    {
+                        // 1.5.9: conducibilita' nulla o negativa = resistenza infinita, il calcolo da' NaN
+                        Warnings.Add("Riga " + lineNo + ": LD 5 con conducibilita' nulla o negativa (" + c.F1.ToString(CI) + " S/m): ignorata.");
+                        break;
+                    }
+                    if (c.I1 < 0 || c.I1 > 7)
+                    {
+                        Warnings.Add("Riga " + lineNo + ": tipo di carico LD " + c.I1 + " non valido: ignorato.");
                         break;
                     }
                     if (c.I1 == 6)
@@ -609,6 +626,8 @@ namespace YaNec.Engine
                         // GN 3 di 4nec2 = "MiniNec ground" (help di 4nec2): correnti e impedenza su terreno perfetto (GN 1), campo lontano
                         // con il terreno reale (4nec2 aggiunge GD 0 0 0 0 er sigma); valido per le verticali, non per fili orizzontali sotto 0,2 lambda
                         Ground = new GroundSpec { Kind = GroundKind.Real, Epsr = c.F1, Sigma = c.F2, Sommerfeld = c.I1 == 2, MiniNec = c.I1 == 3 };
+                        // 1.5.9: con er nullo o negativo il calcolo da' NaN (controllo come nec2-rs)
+                        if (c.F1 <= 0) throw new NecException("Riga " + lineNo + ": costante dielettrica del terreno non valida (" + c.F1.ToString(CI) + "): deve essere maggiore di 0.");
                         if (c.I1 == 3) Warnings.Add("Riga " + lineNo + ": GN 3 di 4nec2 (MiniNec ground): impedenza su terreno perfetto, diagramma con er " + c.F1.ToString(CI) + " e sigma " + c.F2.ToString(CI) + " S/m.");
                     }
                     // 0.4.30: schermo di radiali del NEC-2 (GN con NRADL: F3 lunghezza, F4 raggio dei fili), solo con il coefficiente di riflessione

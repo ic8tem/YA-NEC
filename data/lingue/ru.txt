@@ -7561,3 +7561,20 @@ vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e
 • ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL 19-е изд., гл. 10 (Log-Yag): рефлектор в 0,085 λ сзади, директор в 0,13-0,15 λ спереди; усиление почти не меняется при рефлекторе от 0,08 до 0,25 λ. Согласуется в том, что директор ближе рефлектора; но излучатель здесь — логопериодическая ячейка.
 • ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL 19-е изд., гл. 8 (end-fire): при двух элементах, питаемых в противофазе, максимум усиления около 0,1 λ, на практике 1/8 и 1/4 λ; меньшие расстояния дают мало дополнительного усиления и сильно сужают полосу. Речь об активных, а не пассивных элементах, но объясняет, почему ниже 0,1 λ это невыгодно.
 • ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book 24-е изд. (2019), гл. 11 §11.3.3: 2-элементная антенна даёт около 4 дБ относительно диполя и F/R около 10 дБ; в оптимизированных Yagi от 4 элементов рефлектор, активный вибратор и первый директор укладываются в 0,15-0,20 λ траверсы (W2PV: 0,15 λ постоянно между всеми). Речь об оптимизированных Yagi, а не о 2-элементных.
+
+# 1.5.9: Filari OH7SV e FT-290-43 (traduzione automatica controllata)
+automatico (potenza, modo, banda)	автоматически (мощность, вид излучения, диапазон)
+FT8 / RTTY (continua)	FT8 / RTTY (непрерывный)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.	Для мощности, которую выдерживает сердечник (OH7SV): FT8, RTTY и подобные держат передатчик включённым всё время; CW примерно половину; SSB примерно четверть.
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).	КПД, измеренный DG1JAN (NanoVNA, нагрузка 2400 ohm, 2-30 MHz): FT-82-43 и FT-114-43 около 80 %, FT-140-43 2/14 около 79 %, FT-240-43 2/15 около 75 % (71 % на 30 MHz), два связанных сердечника Fair-Rite (5943000601 + 5943001101) около 90 %, Fair-Rite 2643251002, рекомендованный MM0OPX, около 91 %. Автоматически: FT-140-43 до 15 W, затем наименьший сердечник, выдерживающий мощность в данном виде излучения и на самом низком диапазоне по OH7SV (1, 2 или 3 FT-240-43; FT-290-43 оценочно в 1,5 раза больше FT-240-43).
+; regge 	; выдерживает 
+ W in 	 W в 
+ sui 160 m	 на 160 m
+dagli 80 m in su	от 80 m и выше
+ (stima: 1,5 x FT-240-43)	 (оценка: 1,5 x FT-240-43)
+, spire in Balun / Un-Un	, витки в Balun / Unun
+Con 	С 
+ OH7SV indica al massimo 	 OH7SV указывает максимум 
+: a 	: при 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W сердечник нагревается. Выберите «автоматически» или сердечник побольше.
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): мощность оценена в 1,5 раза больше FT-240-43 по сечению сердечника, КПД как у FT-240-43 (DG1JAN его не измерял)

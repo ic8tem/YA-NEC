@@ -7561,3 +7561,20 @@ vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e
 • ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL 19th ed., अध्या. 10 (Log-Yag): रिफ्लेक्टर 0.085 λ पीछे, डायरेक्टर 0.13-0.15 λ आगे; रिफ्लेक्टर 0.08 और 0.25 λ के बीच होने पर लाभ लगभग नहीं बदलता। रिफ्लेक्टर की तुलना में डायरेक्टर के अधिक निकट होने पर सहमत; पर रेडिएटर एक लॉग-पीरियॉडिक सेल है।
 • ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL 19th ed., अध्या. 8 (end-fire): विपरीत फ़ेज़ में फ़ीड दो एलिमेंटों के साथ अधिकतम लाभ लगभग 0.1 λ पर है, व्यवहार में 1/8 और 1/4 λ; कम अंतराल थोड़ा अतिरिक्त लाभ देते हैं और बैंडविड्थ बहुत संकरी करते हैं। यह ड्रिवन एलिमेंटों के बारे में है, पैरासिटिक नहीं, पर समझाता है कि 0.1 λ से नीचे क्यों लाभकारी नहीं।
 • ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book 24th ed. (2019), अध्या. 11 §11.3.3: 2-एलिमेंट डाइपोल पर लगभग 4 dB और लगभग 10 dB का F/R देता है; 4 एलिमेंट से ऊपर के अनुकूलित Yagi में रिफ्लेक्टर, ड्रिवन एलिमेंट और पहला डायरेक्टर 0.15-0.20 λ बूम में समाते हैं (W2PV: सभी के बीच 0.15 λ स्थिर)। यह अनुकूलित Yagi के बारे में है, 2-एलिमेंट के नहीं।
+
+# 1.5.9: Filari OH7SV e FT-290-43 (traduzione automatica controllata)
+automatico (potenza, modo, banda)	स्वचालित (पावर, मोड, बैंड)
+FT8 / RTTY (continua)	FT8 / RTTY (निरंतर)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.	उस पावर के लिए जिसे कोर सह सकता है (OH7SV): FT8, RTTY और इसी तरह के मोड ट्रांसमीटर को हर समय चालू रखते हैं; CW लगभग आधा; SSB लगभग एक चौथाई।
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).	DG1JAN द्वारा मापी गई दक्षता (NanoVNA, 2400 ohm लोड, 2-30 MHz): FT-82-43 और FT-114-43 लगभग 80 %, FT-140-43 2/14 लगभग 79 %, FT-240-43 2/15 लगभग 75 % (30 MHz पर 71 %), दो युग्मित Fair-Rite कोर (5943000601 + 5943001101) लगभग 90 %, MM0OPX द्वारा अनुशंसित Fair-Rite 2643251002 लगभग 91 %। स्वचालित: 15 W तक FT-140-43, फिर सबसे छोटा कोर जो OH7SV के अनुसार मोड में और सबसे निचले बैंड पर पावर सह सके (1, 2 या 3 FT-240-43; FT-290-43 अनुमानित FT-240-43 का 1.5 गुना)।
+; regge 	; सहता है 
+ W in 	 W, मोड 
+ sui 160 m	 160 m पर
+dagli 80 m in su	80 m और ऊपर
+ (stima: 1,5 x FT-240-43)	 (अनुमान: 1.5 x FT-240-43)
+, spire in Balun / Un-Un	, Balun / Unun में फेरे
+Con 	कोर 
+ OH7SV indica al massimo 	 के साथ OH7SV अधिकतम 
+: a 	: पावर 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W पर कोर गर्म हो जाता है। «स्वचालित» या बड़ा कोर चुनें।
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): कोर के अनुप्रस्थ काट से पावर का अनुमान FT-240-43 का 1.5 गुना, दक्षता FT-240-43 जैसी (DG1JAN ने इसे नहीं मापा)

@@ -7561,3 +7561,20 @@ vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e
 • ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL 19판, 10장 (Log-Yag): 반사기는 뒤 0.085 λ, 도파기는 앞 0.13-0.15 λ; 반사기가 0.08~0.25 λ 사이면 이득이 거의 변하지 않습니다. 도파기가 반사기보다 가깝다는 점은 일치; 다만 복사기는 로그 주기 셀입니다.
 • ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL 19판, 8장 (end-fire): 역위상으로 급전한 두 소자의 최대 이득은 약 0.1 λ, 실제로는 1/8과 1/4 λ; 더 좁은 간격은 이득이 거의 늘지 않고 대역을 크게 좁힙니다. 무급전이 아닌 급전 소자에 관한 것이지만, 0.1 λ 미만이 불리한 이유를 설명합니다.
 • ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book 24판 (2019), 11장 §11.3.3: 2소자는 다이폴 대비 약 4 dB, F/R 약 10 dB; 4소자 이상 최적화 Yagi에서는 반사기, 복사기, 첫 도파기가 붐 0.15-0.20 λ 안에 들어갑니다 (W2PV: 모두 0.15 λ 일정). 2소자가 아니라 최적화 Yagi에 관한 내용입니다.
+
+# 1.5.9: Filari OH7SV e FT-290-43 (traduzione automatica controllata)
+automatico (potenza, modo, banda)	자동 (출력, 모드, 밴드)
+FT8 / RTTY (continua)	FT8 / RTTY (연속)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.	코어가 견딜 수 있는 전력 기준 (OH7SV): FT8, RTTY 및 유사 모드는 송신기를 항상 켜 둡니다; CW는 약 절반; SSB는 약 4분의 1.
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).	DG1JAN이 측정한 효율 (NanoVNA, 2400 ohm 부하, 2-30 MHz): FT-82-43 및 FT-114-43 약 80 %, FT-140-43 2/14 약 79 %, FT-240-43 2/15 약 75 % (30 MHz에서 71 %), 결합한 Fair-Rite 코어 2개 (5943000601 + 5943001101) 약 90 %, MM0OPX가 추천한 Fair-Rite 2643251002 약 91 %. 자동: 15 W까지는 FT-140-43, 그 이상은 OH7SV에 따라 해당 모드와 가장 낮은 밴드에서 전력을 견디는 가장 작은 코어 (FT-240-43 1, 2 또는 3개; FT-290-43은 FT-240-43의 1.5배로 추정).
+; regge 	; 허용 
+ W in 	 W, 모드 
+ sui 160 m	 (160 m)
+dagli 80 m in su	80 m 이상
+ (stima: 1,5 x FT-240-43)	 (추정: 1.5 x FT-240-43)
+, spire in Balun / Un-Un	, Balun / Unun 권수
+Con 	코어 
+ OH7SV indica al massimo 	 사용 시 OH7SV 최대 
+: a 	: 전력 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W에서는 코어가 발열합니다. «자동» 또는 더 큰 코어를 선택하세요.
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): 코어 단면적으로 전력을 FT-240-43의 1.5배로 추정, 효율은 FT-240-43과 동일 (DG1JAN 미측정)

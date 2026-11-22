@@ -7561,3 +7561,20 @@ vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e
 • ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL ed. 19, cap. 10 (Log-Yag): reflector la 0,085 λ în spate, director la 0,13-0,15 λ în față; câștigul aproape nu se schimbă cu reflectorul între 0,08 și 0,25 λ. Concordă privind directorul mai apropiat decât reflectorul; radiatorul însă este o celulă log-periodică.
 • ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL ed. 19, cap. 8 (end-fire): cu două elemente alimentate în opoziție câștigul maxim este în jur de 0,1 λ, în practică 1/8 și 1/4 λ; distanțele mai mici dau puțin câștig în plus și îngustează mult banda. Este vorba de elemente alimentate, nu parazite, dar explică de ce sub 0,1 λ nu merită.
 • ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book ed. 24 (2019), cap. 11 §11.3.3: un 2 elemente dă circa 4 dB peste un dipol și un F/R de circa 10 dB; în Yagi optimizate de la 4 elemente în sus, reflectorul, elementul activ și primul director încap în 0,15-0,20 λ de boom (W2PV: 0,15 λ constant între toate). Este vorba de Yagi optimizate, nu de cele cu 2 elemente.
+
+# 1.5.9: Filari OH7SV e FT-290-43 (traduzione automatica controllata)
+automatico (potenza, modo, banda)	automat (putere, mod, bandă)
+FT8 / RTTY (continua)	FT8 / RTTY (continuu)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.	Pentru puterea pe care o suportă miezul (OH7SV): FT8, RTTY și similare țin emițătorul pornit tot timpul; CW aproximativ jumătate; SSB aproximativ un sfert.
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).	Randament măsurat de DG1JAN (NanoVNA, sarcină de 2400 ohmi, 2-30 MHz): FT-82-43 și FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % la 30 MHz), două miezuri Fair-Rite cuplate (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 recomandat de MM0OPX circa 91 %. Automat: FT-140-43 până la 15 W, apoi cel mai mic miez care suportă puterea în modul respectiv și pe banda cea mai joasă conform OH7SV (1, 2 sau 3 FT-240-43; FT-290-43 estimat la 1,5 ori FT-240-43).
+; regge 	; suportă 
+ W in 	 W în 
+ sui 160 m	 pe 160 m
+dagli 80 m in su	de la 80 m în sus
+ (stima: 1,5 x FT-240-43)	 (estimare: 1,5 x FT-240-43)
+, spire in Balun / Un-Un	, spire în Balun / Unun
+Con 	Cu 
+ OH7SV indica al massimo 	 OH7SV indică cel mult 
+: a 	: la 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W miezul se încălzește. Alegeți «automat» sau un miez mai mare.
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): putere estimată la 1,5 ori cea a FT-240-43 din secțiunea miezului, randament ca FT-240-43 (nemăsurat de DG1JAN)

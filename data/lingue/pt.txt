@@ -7561,3 +7561,20 @@ vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e
 • ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL 19.ª ed., cap. 10 (Log-Yag): refletor a 0,085 λ atrás, diretor a 0,13-0,15 λ à frente; o ganho quase não muda com o refletor entre 0,08 e 0,25 λ. Concorda quanto ao diretor mais próximo do que o refletor; o radiador, porém, é uma célula log-periódica.
 • ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL 19.ª ed., cap. 8 (end-fire): com dois elementos alimentados em oposição o ganho máximo está por volta de 0,1 λ, na prática 1/8 e 1/4 λ; espaçamentos mais apertados dão pouco ganho a mais e estreitam muito a banda. Refere-se a elementos alimentados, não parasitas, mas explica porque abaixo de 0,1 λ não compensa.
 • ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book 24.ª ed. (2019), cap. 11 §11.3.3: uma 2 elementos dá cerca de 4 dB sobre o dipolo e um F/R de cerca de 10 dB; nas Yagis otimizadas de 4 elementos para cima, refletor, elemento excitado e primeiro diretor ficam em 0,15-0,20 λ de boom (W2PV: 0,15 λ constante entre todos). Fala de Yagis otimizadas, não de 2 elementos.
+
+# 1.5.9: Filari OH7SV e FT-290-43 (traduzione automatica controllata)
+automatico (potenza, modo, banda)	automático (potência, modo, banda)
+FT8 / RTTY (continua)	FT8 / RTTY (contínuo)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.	Para a potência que o núcleo suporta (OH7SV): FT8, RTTY e semelhantes mantêm o transmissor ligado o tempo todo; CW cerca de metade; SSB cerca de um quarto.
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).	Eficiência medida por DG1JAN (NanoVNA, carga de 2400 ohms, 2-30 MHz): FT-82-43 e FT-114-43 cerca de 80 %, FT-140-43 2/14 cerca de 79 %, FT-240-43 2/15 cerca de 75 % (71 % a 30 MHz), dois núcleos Fair-Rite acoplados (5943000601 + 5943001101) cerca de 90 %, Fair-Rite 2643251002 recomendado por MM0OPX cerca de 91 %. Automático: FT-140-43 até 15 W, depois o núcleo mais pequeno que suporta a potência no modo e na banda mais baixa segundo OH7SV (1, 2 ou 3 FT-240-43; FT-290-43 estimado em 1,5 vezes o FT-240-43).
+; regge 	; suporta 
+ W in 	 W em 
+ sui 160 m	 nos 160 m
+dagli 80 m in su	dos 80 m para cima
+ (stima: 1,5 x FT-240-43)	 (estimativa: 1,5 x FT-240-43)
+, spire in Balun / Un-Un	, espiras no Balun / Unun
+Con 	Com 
+ OH7SV indica al massimo 	 OH7SV indica no máximo 
+: a 	: a 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W o núcleo aquece. Escolha «automático» ou um núcleo maior.
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potência estimada em 1,5 vezes a do FT-240-43 a partir da secção do núcleo, eficiência igual à do FT-240-43 (não medido por DG1JAN)

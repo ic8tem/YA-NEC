@@ -144,6 +144,7 @@ namespace YaNec.Engine
             Nec2Engine e = new Nec2Engine(geo) { GiunzioniNec4 = model.GiunzioniNec4 };
             e.Solve(fmhz, EffectiveSources(model, geo, fmhz), model.EffectiveLoads(), TerreniEdifici.Alla(model.Ground, fmhz), model.ExtendedKernel, model.Rkh, model.EffectiveNetworks(fmhz));
             if (e.PivotWarning != null) r.Warnings.Add(e.PivotWarning);
+            if (e.SommerfeldNonConvergenze > 0) r.Warnings.Add("Terreno di Sommerfeld: " + e.SommerfeldNonConvergenze + " integrali non sono andati a convergenza in 20 passi; come il NEC-2 si usa l'ultima stima (fili molto vicini al terreno o terreno molto conduttivo: verifica con il coefficiente di riflessione).");
             r.Engine = e;
             r.Sources = e.Sources;
             r.Zin = e.Sources[0].Z;

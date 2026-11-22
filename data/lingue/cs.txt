@@ -7561,3 +7561,20 @@ vale solo come lastra sotto un'antenna bassa sul tetto; la rete elettrosaldata e
 • ARRL 19ª ed., cap. 10 (Log-Yag): riflettore a 0,085 λ dietro, direttore a 0,13-0,15 λ davanti; il guadagno quasi non cambia con il riflettore tra 0,08 e 0,25 λ. Concorda sul direttore piu' vicino del riflettore; il radiatore pero' e' una cella log-periodica.	• ARRL 19. vyd., kap. 10 (Log-Yag): reflektor 0,085 λ vzadu, direktor 0,13-0,15 λ vpředu; zisk se s reflektorem mezi 0,08 a 0,25 λ téměř nemění. Souhlasí v tom, že direktor je blíž než reflektor; zářič je ovšem log-periodická buňka.
 • ARRL 19ª ed., cap. 8 (end-fire): con due elementi alimentati in opposizione il guadagno massimo e' intorno a 0,1 λ, in pratica 1/8 e 1/4 λ; spaziature piu' strette danno poco guadagno in piu' e restringono molto la banda. Riguarda elementi alimentati, non parassiti, ma spiega perche' sotto 0,1 λ non conviene.	• ARRL 19. vyd., kap. 8 (end-fire): se dvěma prvky napájenými v protifázi je maximální zisk kolem 0,1 λ, v praxi 1/8 a 1/4 λ; menší rozteče dávají jen málo zisku navíc a silně zužují pásmo. Týká se napájených prvků, ne pasivních, ale vysvětluje, proč se pod 0,1 λ nevyplatí jít.
 • ARRL Antenna Book 24ª ed. (2019), cap. 11 §11.3.3: una 2 elementi da' circa 4 dB sul dipolo e un F/R di circa 10 dB; nelle Yagi ottimizzate da 4 elementi in su riflettore, radiatore e primo direttore stanno in 0,15-0,20 λ di boom (W2PV: 0,15 λ costante tra tutti). Parla di Yagi ottimizzate, non di 2 elementi.	• ARRL Antenna Book 24. vyd. (2019), kap. 11 §11.3.3: 2prvková anténa dává asi 4 dB oproti dipólu a F/R asi 10 dB; u optimalizovaných Yagi od 4 prvků výše jsou reflektor, zářič a první direktor v 0,15-0,20 λ ráhna (W2PV: 0,15 λ konstantně mezi všemi). Jde o optimalizované Yagi, ne o 2prvkové.
+
+# 1.5.9: Filari OH7SV e FT-290-43 (traduzione automatica controllata)
+automatico (potenza, modo, banda)	automaticky (výkon, druh provozu, pásmo)
+FT8 / RTTY (continua)	FT8 / RTTY (nepřetržitě)
+Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.	Pro výkon, který jádro snese (OH7SV): FT8, RTTY a podobné drží vysílač zapnutý po celou dobu; CW asi polovinu; SSB asi čtvrtinu.
+Efficienza misurata da DG1JAN (NanoVNA, carico da 2400 ohm, 2-30 MHz): FT-82-43 e FT-114-43 circa 80 %, FT-140-43 2/14 circa 79 %, FT-240-43 2/15 circa 75 % (71 % a 30 MHz), due Fair-Rite accoppiati (5943000601 + 5943001101) circa 90 %, Fair-Rite 2643251002 consigliato da MM0OPX circa 91 %. Automatico: FT-140-43 fino a 15 W, poi il nucleo piu' piccolo che regge la potenza nel modo e sulla banda piu' bassa secondo OH7SV (1, 2 o 3 FT-240-43; FT-290-43 stimato 1,5 volte l'FT-240-43).	Účinnost změřená DG1JAN (NanoVNA, zátěž 2400 ohmů, 2-30 MHz): FT-82-43 a FT-114-43 asi 80 %, FT-140-43 2/14 asi 79 %, FT-240-43 2/15 asi 75 % (71 % na 30 MHz), dvě spřažená jádra Fair-Rite (5943000601 + 5943001101) asi 90 %, Fair-Rite 2643251002 doporučené MM0OPX asi 91 %. Automaticky: FT-140-43 do 15 W, pak nejmenší jádro, které snese výkon v daném druhu provozu a na nejnižším pásmu podle OH7SV (1, 2 nebo 3 FT-240-43; FT-290-43 odhadem 1,5násobek FT-240-43).
+; regge 	; snese 
+ W in 	 W v 
+ sui 160 m	 na 160 m
+dagli 80 m in su	od 80 m výše
+ (stima: 1,5 x FT-240-43)	 (odhad: 1,5 x FT-240-43)
+, spire in Balun / Un-Un	, závity v Balun / Unun
+Con 	S 
+ OH7SV indica al massimo 	 OH7SV uvádí nejvýše 
+: a 	: při 
+ W il nucleo si scalda. Scegli «automatico» o un nucleo piu' grande.	 W se jádro zahřívá. Zvolte «automaticky» nebo větší jádro.
+FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): potenza stimata 1,5 volte l'FT-240-43 dalla sezione del nucleo, efficienza come l'FT-240-43 (DG1JAN non lo ha misurato)	FT-290-43 (Fair-Rite 5943011101, AL 1300 nH): výkon odhadnut na 1,5násobek FT-240-43 podle průřezu jádra, účinnost jako u FT-240-43 (DG1JAN jej neměřil)
