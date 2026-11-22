@@ -6926,3 +6926,6 @@ Contrappeso RF
 cercati tra {0} e {1} MHz
 aggiornato ({0} s) a {1} MHz
 0,05 λ (AA5TB)
+Accorda la bobina (NEC)
+accordata con il NEC (stima 
+La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno.

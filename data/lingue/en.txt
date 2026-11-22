@@ -7216,3 +7216,6 @@ Contrappeso RF	Counterpoise
 cercati tra {0} e {1} MHz	searched between {0} and {1} MHz
 aggiornato ({0} s) a {1} MHz	updated ({0} s) at {1} MHz
 0,05 λ (AA5TB)	0.05 λ (AA5TB)
+Accorda la bobina (NEC)	Tune the coil (NEC)
+accordata con il NEC (stima 	tuned with NEC (estimate 
+La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno.	The coil is an estimate (transmission line): the real-time calculation shows where it really resonates; «Tune the coil (NEC)» finds the right inductance with the counterpoise and the ground.

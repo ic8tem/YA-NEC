@@ -68,8 +68,8 @@ namespace YaNec.Engine
             CanTune = true;
         }
 
-        double L0Formula;
-        public override string TuneLabel { get { return "Accorda la lunghezza (NEC)"; } }
+        double L0Formula, uHStima;
+        public override string TuneLabel { get { return I("tipo") != 2 && I("bob") == 1 ? "Accorda la bobina (NEC)" : "Accorda la lunghezza (NEC)"; } }
 
         /// <summary>EFHW: lunghezza (fattore di scala tra 0,8 e 1,2) con il ROS piu' basso attraverso il trasformatore (monobanda: alla banda;
         /// multibanda: media geometrica sulle bande armoniche),
@@ -96,6 +96,23 @@ namespace YaNec.Engine
                 return Math.Exp(somma / ff.Length);
             };
             double best = 1, rb = double.MaxValue;
+            if (I("tipo") != 2 && I("bob") == 1)
+            {
+                // 22/11/2026: con la bobina si cerca l'induttanza (fattore da 1/4 a 4 volte la stima) con il ROS piu' basso alla banda della bobina
+                multi = false;
+                double lb = 0, rlb = double.MaxValue;
+                for (int k = 0; k <= 40; k++) { double l = Math.Log(0.25) + k * Math.Log(16) / 40, r = ros(Math.Exp(l)); if (r < rlb) { rlb = r; lb = l; } }
+                double a0 = lb - Math.Log(16) / 40, b0 = lb + Math.Log(16) / 40, g0 = (Math.Sqrt(5) - 1) / 2;
+                double c1 = b0 - g0 * (b0 - a0), c2 = a0 + g0 * (b0 - a0), q1 = ros(Math.Exp(c1)), q2 = ros(Math.Exp(c2));
+                for (int k = 0; k < 14; k++)
+                {
+                    if (q1 < q2) { b0 = c2; c2 = c1; q2 = q1; c1 = b0 - g0 * (b0 - a0); q1 = ros(Math.Exp(c1)); }
+                    else { a0 = c1; c1 = c2; q1 = q2; c2 = a0 + g0 * (b0 - a0); q2 = ros(Math.Exp(c2)); }
+                }
+                double sb = Math.Min(q1, q2) <= rlb ? Math.Exp(q1 < q2 ? c1 : c2) : Math.Exp(lb);
+                Scale = sb;
+                return sb;
+            }
             for (double sc = 0.80; sc <= 1.2001; sc += 0.025) { double r = ros(sc); if (r < rb) { rb = r; best = sc; } }
             double lo = best - 0.025, hi = best + 0.025, gr = (Math.Sqrt(5) - 1) / 2;
             double x1 = hi - gr * (hi - lo), x2 = lo + gr * (hi - lo), r1 = ros(x1), r2 = ros(x2);
@@ -172,7 +189,7 @@ namespace YaNec.Engine
             CalcOutput o = new CalcOutput();
             int tipo = Math.Max(0, Math.Min(2, I("tipo"))), iso = Math.Max(0, Math.Min(2, I("iso"))), disp = Math.Max(0, Math.Min(5, I("disp")));
             bool nonRis = tipo == 2, conBob = !nonRis && I("bob") == 1;
-            CanTune = !nonRis && !conBob;
+            CanTune = !nonRis;   // con la bobina si accorda la bobina, senza la lunghezza
             double a = Math.Max(0.1, P("d")) / 2000, vf = VfIsol[iso], pw = Math.Max(0, P("pw"));
             double rapp = nonRis ? (I("trb") == 1 ? 4 : 9) : (I("tr") == 1 ? 64 : 49);
             string rappTxt = rapp.ToString("0", CultureInfo.InvariantCulture) + ":1";
@@ -196,7 +213,9 @@ namespace YaNec.Engine
                     double lamB = C0 / fb, k = 2 * Math.PI / (lamB * vf), z0l = 60 * Math.Log(0.22 * lamB / a) * vf;
                     double t1 = k * Lbob, t2 = k * Lcoda + Estremita(fb, a) * Math.PI;
                     double x = z0l * (1 / Math.Tan(t1) + 1 / Math.Tan(t2));
-                    uH = Math.Max(0, x / (2 * Math.PI * fb)) ;
+                    uH = Math.Max(0, x / (2 * Math.PI * fb));
+                    uHStima = uH;
+                    uH *= Scale;   // «Accorda la bobina (NEC)»
                     L = Lbob + Lcoda;
                 }
             }
@@ -224,7 +243,7 @@ namespace YaNec.Engine
             if (conBob)
             {
                 o.Card("Filo fino alla bobina", Calcolatori.N(Lbob, 2) + " m", "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz", true);
-                o.Card("Bobina", Calcolatori.N(uH, 0) + " µH", Calcolatori.N(fb, 2) + " MHz: stima da verificare con il NEC", true);
+                o.Card("Bobina", Calcolatori.N(uH, 0) + " µH", Math.Abs(Scale - 1) > 1e-6 ? "accordata con il NEC (stima " + Calcolatori.N(uHStima, 0) + " µH)" : Calcolatori.N(fb, 2) + " MHz: stima da verificare con il NEC", true);
                 o.Card("Coda dopo la bobina", Calcolatori.N(Lcoda, 2) + " m", Calcolatori.N(L, 2) + " m di filo in tutto");
             }
             else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", Math.Abs(Scale - 1) > 1e-6 ? "accordato con il NEC (formula " + Calcolatori.N(L0Formula, 2) + " m)" : "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 3) + ", effetto d'estremita'", true);
@@ -369,7 +388,7 @@ namespace YaNec.Engine
             if (pw > 15 && pw <= 120 && nucleo == 2 && !nonRis) o.Oks.Add("FT-140-43 e FT-114-43 sconsigliati sopra la QRP: perdite oltre il 20 % misurate (DG1JAN)");
             if (v > 400) o.Warnings.Add("In punta ci sono " + Calcolatori.N(v, 0) + " V efficaci: isolatore buono e filo lontano da persone e rami.");
             if (tipo == 0) o.Oks.Add("le bande armoniche cadono un po' piu' in basso: la tabella mostra il ROS che resta (TF5NN)");
-            if (conBob) o.Warnings.Add("La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; ritocca la coda.");
+            if (conBob) { if (Math.Abs(Scale - 1) < 1e-6) o.Warnings.Add("La bobina e' una stima (linea di trasmissione): il calcolo in tempo reale dice dove risuona davvero; «Accorda la bobina (NEC)» cerca l'induttanza giusta con il contrappeso e il terreno."); }
             return o;
         }
 
