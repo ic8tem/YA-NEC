@@ -137,6 +137,24 @@ namespace YaNec.Engine
             int ist = N;
             if (ns < 1) return;
             Ensure(ist + ns);
+            if (hl == 0.0)
+            {
+                // 1.5.9 (IC8TEM 23/11/2026 00:50 «approvate»): GH con passo nullo = spirale piatta nel piano z = 0, come xnec2c e
+                // nec2++ 2.3.1: S = segmenti per giro, il raggio va da A1 (B1) ad A2 (B2) in modo lineare. Prima: segmenti di lunghezza nulla.
+                if (s == 0.0) throw new NecException("GH a spirale (passo nullo): il numero di segmenti per giro (S) non puo' essere zero.");
+                if (b1 == 0.0) b1 = a1;
+                if (b2 == 0.0) b2 = a2;
+                double phi = 0.0, dphi = 2.0 * Math.PI / s, da = (a1 - a2) / ns, db = (b1 - b2) / ns;
+                for (int i = ist; i < ist + ns; i++)
+                {
+                    bi[i] = rad; itag[i] = itg;
+                    z1[i] = 0.0; z2[i] = 0.0;
+                    x1[i] = a1 * Math.Cos(phi); y1[i] = b1 * Math.Sin(phi);
+                    a1 -= da; b1 -= db; phi += dphi;
+                    x2[i] = a1 * Math.Cos(phi); y2[i] = b1 * Math.Sin(phi);
+                }
+                return;
+            }
             double zinc = Math.Abs(hl / ns);
             z1[ist] = 0.0;
             for (int i = ist; i < ist + ns; i++)

@@ -45,6 +45,7 @@ namespace YaNec.Engine
             new[] { "g4", "Antenna o parte dell'antenna sotto il suolo" },
             new[] { "g5", "Elemento non simmetrico quando il resto della Yagi lo e'" },
             new[] { "g6", "Elementi che si accavallano (stessa posizione sul boom)" },
+            new[] { "g7", "Anello chiuso molto piu' piccolo della lunghezza d'onda con una giunzione di 3 o piu' fili (difetto noto del NEC-2)" },
             new[] { "k1", "LPDA: tau e sigma fuori dall'intervallo di Carrel" },
             new[] { "k2", "Rastremazione con tubi che si allargano verso la punta" },
             new[] { "k3", "Trappola su un dipolo piu' corto della banda nuova" },
@@ -267,6 +268,7 @@ namespace YaNec.Engine
                 Linee(m, geo, f, l);
                 try { Elementi(m, geo, lam, l); } catch { }
                 if (!perCalcolatore && freqOk && !u3 && Importato(m)) try { UnitaImportata(geo, lam, l); } catch { }
+                if (freqOk) try { AnelliConGiunzioni(geo, lam, l); } catch { }
             }
             // ---- carichi (s4, s5, s6)
             Carichi(m, geo, f, l);
@@ -337,6 +339,80 @@ namespace YaNec.Engine
         }
 
         // contatti fuori giunzione (0.4.20): sovrapposti e paralleli che si toccano = g1, gli altri come controlli geometrici di EZNEC
+        /// <summary>g7 (1.5.9, IC8TEM 23/11/2026 00:48 «approvati»; fonte momwire di S. Burns, docs/nec2-loop-pathology.md, e la prova di
+        /// W7EL citata da G. J. Burke): in un anello chiuso che passa per una giunzione di 3 o piu' fili, le condizioni della base a tre termini
+        /// del NEC-2 alla giunzione lasciano un piccolo errore nell'integrale del potenziale lungo l'anello, che agisce come una sorgente falsa
+        /// e cresce come 1/f. Con l'anello molto piu' piccolo di lambda la corrente che circola nell'anello puo' risultare molto piu' alta del
+        /// vero (W7EL: 160 A invece di 0,48 A a 500 Hz). Avviso sotto lambda/50 di perimetro.</summary>
+        static void AnelliConGiunzioni(SegmentGeometry geo, double lam, List<ControlloDato> l)
+        {
+            int n = geo.N;
+            if (n < 3 || n > 5000 || !(lam > 0)) return;
+            int[] par = new int[2 * n];
+            for (int k = 0; k < par.Length; k++) par[k] = k;
+            Func<int, int> trova = null;
+            trova = k => { while (par[k] != k) { par[k] = par[par[k]]; k = par[k]; } return k; };
+            Action<int, int> unisci = (a, b) => { a = trova(a); b = trova(b); if (a != b) par[a] = b; };
+            for (int i = 0; i < n; i++)
+            {
+                int c1 = geo.Icon1[i], c2 = geo.Icon2[i];
+                if (c1 != 0 && c1 != i + 1 && Math.Abs(c1) <= n) unisci(2 * i, c1 > 0 ? 2 * (c1 - 1) + 1 : 2 * (-c1 - 1));
+                if (c2 != 0 && c2 != i + 1 && Math.Abs(c2) <= n) unisci(2 * i + 1, c2 > 0 ? 2 * (c2 - 1) : 2 * (-c2 - 1) + 1);
+            }
+            Dictionary<int, int> grado = new Dictionary<int, int>();
+            for (int k = 0; k < 2 * n; k++) { int r = trova(k); grado[r] = grado.TryGetValue(r, out int g) ? g + 1 : 1; }
+            // albero di copertura (BFS sui nodi, i segmenti sono i lati); ogni lato fuori dall'albero chiude un anello
+            Dictionary<int, List<int>> lati = new Dictionary<int, List<int>>();
+            for (int i = 0; i < n; i++)
+            {
+                int a = trova(2 * i), b = trova(2 * i + 1);
+                if (!lati.ContainsKey(a)) lati[a] = new List<int>();
+                if (!lati.ContainsKey(b)) lati[b] = new List<int>();
+                lati[a].Add(i); lati[b].Add(i);
+            }
+            Dictionary<int, int> padre = new Dictionary<int, int>(), viaSeg = new Dictionary<int, int>(), prof = new Dictionary<int, int>();
+            HashSet<int> segAlbero = new HashSet<int>();
+            foreach (int radice in lati.Keys)
+            {
+                if (padre.ContainsKey(radice)) continue;
+                padre[radice] = -1; viaSeg[radice] = -1; prof[radice] = 0;
+                Queue<int> q = new Queue<int>(); q.Enqueue(radice);
+                while (q.Count > 0)
+                {
+                    int u = q.Dequeue();
+                    foreach (int sgm in lati[u])
+                    {
+                        int a = trova(2 * sgm), b = trova(2 * sgm + 1), v = a == u ? b : a;
+                        if (padre.ContainsKey(v)) continue;
+                        padre[v] = u; viaSeg[v] = sgm; prof[v] = prof[u] + 1; segAlbero.Add(sgm);
+                        q.Enqueue(v);
+                    }
+                }
+            }
+            double peggiore = double.MaxValue; int tagPeggiore = -1; int trovati = 0;
+            for (int i = 0; i < n && trovati < 200; i++)
+            {
+                if (segAlbero.Contains(i)) continue;
+                int u = trova(2 * i), v = trova(2 * i + 1);
+                if (u == v) continue;
+                trovati++;
+                double per = geo.Length(i);
+                bool giunzione = grado[u] >= 3 || grado[v] >= 3;
+                while (u != v)
+                {
+                    if (prof[u] < prof[v]) { int t = u; u = v; v = t; }
+                    per += geo.Length(viaSeg[u]);
+                    u = padre[u];
+                    if (grado[u] >= 3) giunzione = true;
+                }
+                if (giunzione && per < peggiore) { peggiore = per; tagPeggiore = geo.Tag[i]; }
+            }
+            if (tagPeggiore >= 0 && peggiore < lam / 50)
+                Add(l, "g7", false, string.Format(CC, "anello chiuso di {0} di perimetro ({1:0.####} lambda, filo {2}) che passa per una giunzione di 3 o piu' fili: con anelli cosi' piccoli il NEC-2 puo' dare una corrente falsa che gira nell'anello, tanto piu' grande quanto piu' bassa e' la frequenza (W7EL: 160 A invece di 0,48 A).",
+                    M(peggiore), peggiore / lam, tagPeggiore),
+                    "non fidarsi delle correnti dell'anello e dell'efficienza; se possibile togliere la giunzione (alimentazione su un segmento invece che al nodo) o controllare con un altro programma (NEC-4/NEC-5).");
+        }
+
         static void Contatti(SegmentGeometry geo, List<ControlloDato> l)
         {
             if (geo.N > 4000) return;

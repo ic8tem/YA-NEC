@@ -165,7 +165,10 @@ namespace YaNec.Engine
             Complex[] g4 = tsG4 ?? (tsG4 = new Complex[9]), g5 = tsG5 ?? (tsG5 = new Complex[9]);
             Complex[] t01 = tsT01 ?? (tsT01 = new Complex[9]), t10 = tsT10 ?? (tsT10 = new Complex[9]), t20 = tsT20 ?? (tsT20 = new Complex[9]);
             Complex t00, t02, t11;
-            int npm = n;
+            // 1.5.9 (IC8TEM 23/11/2026 00:49 «si procedi»): limite delle suddivisioni NM = 65536 come nella ROM2 del Fortran.
+            // nec2c usava il numero dei segmenti: i modelli piccoli su terreno di Sommerfeld avevano l'integrale meno preciso
+            // (corretto anche in xnec2c, commit 0af717e, e in nec2++ 2.3.5; Beverage di 11 segmenti: 604,81 -> 604,93 ohm, Fortran 604,924)
+            const int npm = 65536;
 
             double zz = a;
             double ze = b;
