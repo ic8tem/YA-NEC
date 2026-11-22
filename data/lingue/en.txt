@@ -7162,3 +7162,50 @@ Accorda la lunghezza (NEC)	Tune the length (NEC)
 3 · Altezze	3 · Heights
 rapporto spire 7:1	turns ratio 7:1
 rapporto spire 8:1	turns ratio 8:1
+S. Yates AA5TB, The End-Fed Half-Wave Antenna (contrappeso 0,05 λ); G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, modello del filo verificato con NEC-2); 	S. Yates AA5TB, The End-Fed Half-Wave Antenna (0.05 λ counterpoise); G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, wire model checked against NEC-2); 
+VE3EED (lunghezze del filo non risonante); DG1JAN, xOTA-Antenna (CC BY-SA 4.0: 100 pF, perdite dei nuclei); W8JI e O. Duffy (trasformatori); I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (bobina per gli 80 m, tensione in punta)	VE3EED (non-resonant wire lengths); DG1JAN, xOTA-Antenna (CC BY-SA 4.0: 100 pF, core losses); W8JI and O. Duffy (transformers); I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (80 m coil, end voltage)
+EFHW: mezz'onda alimentata in punta con il 49:1 o il 64:1, sulle armoniche (multibanda) o su una banda. Con bobina: la stessa antenna allungata per una banda piu' bassa. Filo non risonante: lunghezza lontana dalle mezze onde, 9:1 o 4:1 e accordatore.	EFHW: end-fed half wave with the 49:1 or 64:1, on the harmonics (multiband) or on one band. With coil: the same antenna lengthened for a lower band. Non-resonant wire: length away from the half waves, 9:1 or 4:1 and a tuner.
+La frequenza a cui il filo e' lungo mezz'onda. Con bobina: la banda del filo senza bobina (es. 7,1 MHz), la bobina aggiunge la banda sotto.	The frequency at which the wire is a half wave long. With coil: the band of the wire without the coil (e.g. 7.1 MHz); the coil adds the band below.
+OfficinaHF: 2,39 m per gli 80 m su 20 m di filo. Coda corta = bobina grande.	OfficinaHF: 2.39 m for 80 m on 20 m of wire. Short tail = large coil.
+VE3EED: lunghezze consigliate 8,8 - 10,8 - 12,5 - 17,7 - 21,6 - 25,6 - 32,6 - 36,3 - 45,1 m; lontano dalle mezze onde delle bande d'uso.	VE3EED: recommended lengths 8.8 - 10.8 - 12.5 - 17.7 - 21.6 - 25.6 - 32.6 - 36.3 - 45.1 m; away from the half waves of the bands in use.
+49:1 per 2000-3000 Ω (spire 7:1); 64:1 per i fili alti e gli 80 m (spire 8:1).	49:1 for 2000-3000 Ω (turns 7:1); 64:1 for high wires and 80 m (turns 8:1).
+9:1 trifilare (filo lungo, 300-600 Ω) o 4:1 (fili piu' corti, 100-300 Ω). Serve l'accordatore.	9:1 trifilar (long wire, 300-600 Ω) or 4:1 (shorter wires, 100-300 Ω). A tuner is needed.
+Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore.	Wire: 0.05 λ of the lowest band (AA5TB), from the transformer downwards. Shield: the coax up to the choke is the counterpoise, with the choke 0.05 λ from the transformer.
+Con il 9:1 e il 4:1 il contrappeso va tra il 5 e il 10 % del filo principale.	With the 9:1 and the 4:1 the counterpoise is 5 to 10 % of the main wire.
+L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).	Insulation slows the wave: insulated wire is shorter. In the NEC model the insulation is the LD 7 card (Cebik's method).
+La banda aggiunta dalla bobina deve stare sotto la banda del filo: bobina non calcolata.	The band added by the coil must be below the band of the wire: coil not calculated.
+mezz'onda a 	half wave at 
+ MHz: stima da verificare con il NEC	 MHz: estimate to check with NEC
+ m di filo in tutto	 m of wire in total
+accordato con il NEC (formula 	tuned with NEC (formula 
+, effetto d'estremita'	, end effect
+non risonante, con il 	non-resonant, with the 
+ e l'accordatore	 and a tuner
+dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)	from the transformer: the shield up to there is the counterpoise (0.05 λ)
+ % del filo (5-10 %)	 % of the wire (5-10 %)
+almeno 1 kV, migliora le bande alte	at least 1 kV, improves the high bands
+solo bande sotto i 20 MHz	only bands below 20 MHz
+efficaci a 	RMS at 
+ V di picco)	 V peak)
+trifilare	trifilar
+bifilare	bifilar
+rapporto spire 7:1, spire in Balun / Un-Un	turns ratio 7:1, turns in Balun / Unun
+rapporto spire 8:1, spire in Balun / Un-Un	turns ratio 8:1, turns in Balun / Unun
+, ROS con il 	, SWR with the 
+Il filo e' vicino a un multiplo di mezz'onda su 	The wire is close to a multiple of a half wave on 
+: li' l'impedenza e' altissima e il 	: there the impedance is very high and the 
+ non basta. Cambia lunghezza (VE3EED).	 is not enough. Change the length (VE3EED).
+calza 	shield 
+contrappeso 	counterpoise 
+punta	tip
+Formule: filo λ/2 = (1 - e) VF λ/2, e = effetto d'estremita' in mezze onde = 0,0464 - 0,003 ln(λ/a) (TF5NN, con le armoniche che cadono un po' corte); 	Formulas: λ/2 wire = (1 - e) VF λ/2, e = end effect in half waves = 0.0464 - 0.003 ln(λ/a) (TF5NN, with the harmonics falling a little short); 
+contrappeso 0,05 λ della banda piu' bassa (AA5TB) o tra il 5 e il 10 % del filo con il 9:1 e il 4:1; tensione in punta V = √(P |Z|); impedenza per banda dal modello TF5NN v3 (filo come linea aperta con perdita uguale alla radiazione, su terra ideale; 	counterpoise 0.05 λ of the lowest band (AA5TB) or 5 to 10 % of the wire with the 9:1 and the 4:1; end voltage V = √(P |Z|); impedance per band from the TF5NN v3 model (wire as an open line with loss equal to radiation, over perfect ground; 
+rispetto al NEC-2 errore del 4 % su terra ideale e dell'11 % con il contrappeso). Nel modello NEC il trasformatore e' ideale: il ROS del calcolo in tempo reale e' riferito a 50 x 	against NEC-2 the error is 4 % over perfect ground and 11 % with the counterpoise). In the NEC model the transformer is ideal: the SWR of the real-time calculation is referred to 50 x 
+ Bobina: X = Z0 (cot θ1 + cot θ2), con θ1 il filo prima della bobina e θ2 la coda (piu' l'effetto d'estremita') alla banda aggiunta, Z0 = 60 ln(0,22 λ/a); OfficinaHF: 20,15 m + 110-120 µH + 2,39 m per gli 80 m.	 Coil: X = Z0 (cot θ1 + cot θ2), with θ1 the wire before the coil and θ2 the tail (plus the end effect) at the added band, Z0 = 60 ln(0.22 λ/a); OfficinaHF: 20.15 m + 110-120 µH + 2.39 m for 80 m.
+ Fonti: 	 Sources: 
+In punta ci sono 	At the end there are 
+ V efficaci: isolatore buono e filo lontano da persone e rami.	 V RMS: use a good insulator and keep the wire away from people and branches.
+Il filo e' piu' corto del dislivello: la punta resta a 	The wire is shorter than the height difference: the tip stays at 
+Salita e coda sono quasi tutto il filo: la coda e' stata accorciata a 	Rise and tail are almost all the wire: the tail has been shortened to 
+‹ Torna a 	‹ Back to 
+, ROS (NEC)	, SWR (NEC)

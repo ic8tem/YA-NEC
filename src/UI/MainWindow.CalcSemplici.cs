@@ -290,7 +290,7 @@ namespace YaNec
             if (ritornoPer != null && ritornoPer == (sc.Group ?? sc.Key) && ritornoVoce != null)
             {
                 string rv = ritornoVoce;
-                Button bTorna = Btn("‹ Torna a " + ritornoTitolo, false);
+                Button bTorna = Btn("‹ Torna a " + Lang.T(ritornoTitolo), false);   // 1.5.6: titolo tradotto (verifica traduzioni, IC8TEM 22/11/2026)
                 bTorna.HorizontalAlignment = HorizontalAlignment.Left; bTorna.Margin = new Thickness(0, 0, 0, 6);
                 bTorna.Click += (s0, e0) => { string fr = FamigliaDi(rv); if (fr != null) ApriFamigliaCalc(fr, rv); };
                 left.Children.Insert(left.Children.Count - 1, bTorna);

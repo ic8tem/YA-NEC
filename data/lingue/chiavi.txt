@@ -6872,3 +6872,50 @@ accordatore interno,
 accordatore esterno, 
 Accorda la lunghezza (NEC)
 3 · Altezze
+S. Yates AA5TB, The End-Fed Half-Wave Antenna (contrappeso 0,05 λ); G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, modello del filo verificato con NEC-2); 
+VE3EED (lunghezze del filo non risonante); DG1JAN, xOTA-Antenna (CC BY-SA 4.0: 100 pF, perdite dei nuclei); W8JI e O. Duffy (trasformatori); I3RKE, Conoscere le antenne End Fed (ARI Vittorio Veneto, 2020); OfficinaHF (bobina per gli 80 m, tensione in punta)
+EFHW: mezz'onda alimentata in punta con il 49:1 o il 64:1, sulle armoniche (multibanda) o su una banda. Con bobina: la stessa antenna allungata per una banda piu' bassa. Filo non risonante: lunghezza lontana dalle mezze onde, 9:1 o 4:1 e accordatore.
+La frequenza a cui il filo e' lungo mezz'onda. Con bobina: la banda del filo senza bobina (es. 7,1 MHz), la bobina aggiunge la banda sotto.
+OfficinaHF: 2,39 m per gli 80 m su 20 m di filo. Coda corta = bobina grande.
+VE3EED: lunghezze consigliate 8,8 - 10,8 - 12,5 - 17,7 - 21,6 - 25,6 - 32,6 - 36,3 - 45,1 m; lontano dalle mezze onde delle bande d'uso.
+49:1 per 2000-3000 Ω (spire 7:1); 64:1 per i fili alti e gli 80 m (spire 8:1).
+9:1 trifilare (filo lungo, 300-600 Ω) o 4:1 (fili piu' corti, 100-300 Ω). Serve l'accordatore.
+Filo: 0,05 λ della banda piu' bassa (AA5TB), dal trasformatore verso il basso. Calza: fa da contrappeso il coassiale fino al choke, messo a 0,05 λ dal trasformatore.
+Con il 9:1 e il 4:1 il contrappeso va tra il 5 e il 10 % del filo principale.
+L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).
+La banda aggiunta dalla bobina deve stare sotto la banda del filo: bobina non calcolata.
+mezz'onda a 
+ MHz: stima da verificare con il NEC
+ m di filo in tutto
+accordato con il NEC (formula 
+, effetto d'estremita'
+non risonante, con il 
+ e l'accordatore
+dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)
+ % del filo (5-10 %)
+almeno 1 kV, migliora le bande alte
+solo bande sotto i 20 MHz
+efficaci a 
+ V di picco)
+trifilare
+bifilare
+rapporto spire 7:1, spire in Balun / Un-Un
+rapporto spire 8:1, spire in Balun / Un-Un
+, ROS con il 
+Il filo e' vicino a un multiplo di mezz'onda su 
+: li' l'impedenza e' altissima e il 
+ non basta. Cambia lunghezza (VE3EED).
+calza 
+contrappeso 
+punta
+Formule: filo λ/2 = (1 - e) VF λ/2, e = effetto d'estremita' in mezze onde = 0,0464 - 0,003 ln(λ/a) (TF5NN, con le armoniche che cadono un po' corte); 
+contrappeso 0,05 λ della banda piu' bassa (AA5TB) o tra il 5 e il 10 % del filo con il 9:1 e il 4:1; tensione in punta V = √(P |Z|); impedenza per banda dal modello TF5NN v3 (filo come linea aperta con perdita uguale alla radiazione, su terra ideale; 
+rispetto al NEC-2 errore del 4 % su terra ideale e dell'11 % con il contrappeso). Nel modello NEC il trasformatore e' ideale: il ROS del calcolo in tempo reale e' riferito a 50 x 
+ Bobina: X = Z0 (cot θ1 + cot θ2), con θ1 il filo prima della bobina e θ2 la coda (piu' l'effetto d'estremita') alla banda aggiunta, Z0 = 60 ln(0,22 λ/a); OfficinaHF: 20,15 m + 110-120 µH + 2,39 m per gli 80 m.
+ Fonti: 
+In punta ci sono 
+ V efficaci: isolatore buono e filo lontano da persone e rami.
+Il filo e' piu' corto del dislivello: la punta resta a 
+Salita e coda sono quasi tutto il filo: la coda e' stata accorciata a 
+‹ Torna a 
+, ROS (NEC)

@@ -222,10 +222,10 @@ namespace YaNec.Engine
             if (tipo == 2)
             {
                 o.Card("Filo fino alla bobina", Calcolatori.N(Lbob, 2) + " m", "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz", true);
-                o.Card("Bobina", Calcolatori.N(uH, 0) + " µH", "per " + Calcolatori.N(fb, 2) + " MHz (stima, verifica NEC)", true);
-                o.Card("Coda dopo la bobina", Calcolatori.N(Lcoda, 2) + " m", "totale " + Calcolatori.N(L, 2) + " m di filo");
+                o.Card("Bobina", Calcolatori.N(uH, 0) + " µH", Calcolatori.N(fb, 2) + " MHz: stima da verificare con il NEC", true);
+                o.Card("Coda dopo la bobina", Calcolatori.N(Lcoda, 2) + " m", Calcolatori.N(L, 2) + " m di filo in tutto");
             }
-            else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", Math.Abs(Scale - 1) > 1e-6 ? "accordato con il NEC (formula " + Calcolatori.N(L0Formula, 2) + " m)" : "λ/2 a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 3) + ", effetto d'estremita'", true);
+            else if (!nonRis) o.Card("Filo radiante", Calcolatori.N(L, 2) + " m", Math.Abs(Scale - 1) > 1e-6 ? "accordato con il NEC (formula " + Calcolatori.N(L0Formula, 2) + " m)" : "mezz'onda a " + Calcolatori.N(fBassa, 3) + " MHz, VF " + Calcolatori.N(vf, 3) + ", effetto d'estremita'", true);
             else o.Card("Filo", Calcolatori.N(L, 2) + " m", "non risonante, con il " + rappTxt + " e l'accordatore", true);
             if (calza) o.Card("Choke sul coassiale", Calcolatori.N(cp, 1) + " m", "dal trasformatore: la calza fino a li' e' il contrappeso (0,05 λ)");
             else o.Card("Contrappeso", Calcolatori.N(cp, 2) + " m", nonRis ? Calcolatori.N(P("cpp"), 1) + " % del filo (5-10 %)" : "0,05 λ (AA5TB)");
@@ -241,7 +241,7 @@ namespace YaNec.Engine
             if (!calza) o.Card("Choke sul coassiale", "al trasformatore", "la corrente torna dal contrappeso");
             int nucleo = pw <= 15 ? 1 : (pw <= 120 ? 2 : 3);   // FT-140-43, FT-240-43, 2 x FT-240-43 (indici della scheda Balun: 1, 2, 3)
             string[] nomiNucleo = { "", "FT-140-43", "FT-240-43", "2 x FT-240-43" };
-            o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1" : "rapporto spire 7:1") + ", spire in Balun / Un-Un");
+            o.Card("Nucleo del trasformatore", nomiNucleo[nucleo], nonRis ? (rapp == 9 ? "trifilare" : "bifilare") : (rapp == 64 ? "rapporto spire 8:1, spire in Balun / Un-Un" : "rapporto spire 7:1, spire in Balun / Un-Un"));
 
             // ---- tabella per banda (modello TF5NN, filo su terra ideale)
             if (tipo != 2)
