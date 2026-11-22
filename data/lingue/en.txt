@@ -7347,9 +7347,6 @@ Dai radiali con la Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda)
 dai radiali (ON4UN)	from the radials (ON4UN)
 valore fisso	fixed value
 Rg fissa	Fixed Rg
-Banda per banda (NEC-2, terreno di Sommerfeld	Band by band (NEC-2, Sommerfeld ground
-, radiali rialzati	, elevated radials
-, radiali come resistenza di terra	, radials as ground resistance
 Banda per banda (stima TF5NN + resistenza di terra; «Calcola le bande (NEC)» per guadagno e angolo)	Band by band (TF5NN estimate + ground resistance; «Compute the bands (NEC)» for gain and angle)
 Z alla base (Ω)	Z at the base (Ω)
 ROS sul cavo	SWR on the coax
@@ -7406,3 +7403,5 @@ Efficienza bassa sulla banda piu' bassa (	Low efficiency on the lowest band (
 ): la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).	): a short vertical lives on its radials (more radials, or elevated radials).
 Lobo alto (	High lobe (
 ): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.	): the main lobe is high (more than 35°): the vertical is 5/8 λ or longer and DX loses compared with a λ/4.
+Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)	Band by band (NEC-2, Sommerfeld ground, elevated radials)
+Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)	Band by band (NEC-2, radials as ground resistance, pattern with the chosen ground)

@@ -5,7 +5,8 @@
 // sul terreno reale, guadagno al trasmettitore, tensione alla base.
 // Senza il NEC: impedenza dal modello TF5NN v3 (monopolo su terra ideale) piu' la resistenza di terra. Con «Calcola le bande (NEC)»:
 // impedenza, guadagno, angolo ed efficienza dal motore NEC-2 con il terreno di Sommerfeld; radiali interrati come resistenza di terra
-// in serie (ON4UN Tab. 9-1, il NEC-2 non tratta i fili interrati), radiali rialzati come fili veri.
+// in serie (ON4UN Tab. 9-1, il NEC-2 non tratta i fili interrati) su terreno «MiniNec» (GN 3: impedenza su terreno perfetto,
+// diagramma con er e sigma), radiali rialzati come fili veri sopra il terreno di Sommerfeld.
 // Fonte: P. Salas AD5X, «The 43-Foot Vertical» (presentazione di N0CU, 2016): numeri citati per il confronto, non riprodotti.
 using System;
 using System.Collections.Generic;
@@ -113,9 +114,11 @@ namespace YaNec.Engine
             int nr = Math.Max(0, Math.Min(64, (int)Math.Round(P("nr"))));
             if (!alti)
             {
+                // radiali interrati: GN 3 («MiniNec ground»): impedenza su terreno perfetto con Rg in serie, diagramma con er e sigma
+                // (come EZNEC e AD5X). Con GN 2 il filo che tocca il terreno reale non ha schermo di radiali: R di centinaia di ohm.
                 int tv = dk.Ws(seg, 0, 0, 0, 0, 0, h, a, false, 9);
                 dk.Raw("GE 1");
-                dk.Raw("GN 2 0 0 0 " + t[0].ToString(CultureInfo.InvariantCulture) + " " + t[1].ToString(CultureInfo.InvariantCulture));
+                dk.Raw("GN 3 0 0 0 " + t[0].ToString(CultureInfo.InvariantCulture) + " " + t[1].ToString(CultureInfo.InvariantCulture));
                 double rg = Rg(f);
                 if (rg > 0) dk.Ld(4, tv, 1, 1, rg, 0, 0);
                 dk.Ex(tv, 1);
@@ -204,7 +207,7 @@ namespace YaNec.Engine
             CanTune = true;
 
             // ---- tabella per banda
-            o.TabellaTitolo = nec != null ? "Banda per banda (NEC-2, terreno di Sommerfeld" + (alti ? ", radiali rialzati" : ", radiali come resistenza di terra") + ")"
+            o.TabellaTitolo = nec != null ? (alti ? "Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)" : "Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)")
                                           : "Banda per banda (stima TF5NN + resistenza di terra; «Calcola le bande (NEC)» per guadagno e angolo)";
             o.Tabella = new List<string[]>();
             o.Tabella.Add(new[] { "Banda", "Z alla base (Ω)", "ROS sul cavo", "Perdita nel cavo", "Perdita accordatore", "Efficienza", "Guadagno, angolo", "Al trasmettitore", "AD5X", "Esito" });
@@ -307,7 +310,7 @@ namespace YaNec.Engine
             if (perditeForti.Count > 0 && ad != 1)
                 o.Warnings.Add("Perdite oltre 3 dB (" + string.Join(", ", perditeForti) + "): l'accordatore in stazione accorda il cavo, non l'antenna: si perdono piu' di 3 dB nel cavo e nell'accordatore. Serve l'accordatore (o una rete L) alla base (AD5X).");
             if (vB > 2000) o.Warnings.Add("Alla base ci sono circa " + Calcolatori.N(vB / 1000, 1) + " kV efficaci a " + Calcolatori.N(pw, 0) + " W: condensatori e rele' adatti, antenna fuori dalla portata delle persone.");
-            if (!alti && !double.IsNaN(effB) && effB < 0.3) o.Warnings.Add("Efficienza bassa sulla banda piu' bassa (" + nomeB + "): la verticale corta: la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).");
+            if (!alti && !double.IsNaN(effB) && effB < 0.3) o.Warnings.Add("Efficienza bassa sulla banda piu' bassa (" + nomeB + "): la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).");
             if (altiAngoli.Count > 0) o.Warnings.Add("Lobo alto (" + string.Join(", ", altiAngoli) + "): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.");
             if (!alti && I("rgm") == 0 && Math.Max(0.01, P("lr")) / (C0 / fl) < 0.15) o.Warnings.Add("Radiali corti rispetto alla banda piu' bassa (meno di 0,15 λ): la Tab. 9-1 di ON4UN non scende sotto, la resistenza di terra vera e' piu' alta.");
             if (I("terr") == 0 && P("nr") < 8) o.Warnings.Add("Terreno povero e pochi radiali: l'efficienza crolla e l'angolo sale, la verticale non e' migliore di un dipolo basso.");

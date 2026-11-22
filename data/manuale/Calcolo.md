@@ -761,7 +761,7 @@ Una verticale di 13,1 m e' corta sui 160 e sugli 80 m (resistenza di radiazione 
 
 ### 18.2 Terra e radiali
 
-Radiali interrati: il NEC-2 non tratta i fili interrati; la loro perdita entra come resistenza di terra in serie alla base, dalla Tab. 9-1 di ON4UN con la lunghezza in λ di ogni banda (la tabella va da 0,15 a 0,40 λ: sotto 0,15 λ la resistenza vera e' piu' alta), oppure fissa. Radiali rialzati: fili veri nel modello, sopra il terreno di Sommerfeld; le perdite nel terreno stanno nel guadagno del NEC.
+Radiali interrati: il NEC-2 non tratta i fili interrati; la loro perdita entra come resistenza di terra in serie alla base, con il terreno «MiniNec» (GN 3: impedenza su terreno perfetto, diagramma con er e sigma del terreno scelto, come EZNEC e AD5X; con il GN 2 il filo che tocca il terreno reale senza schermo di radiali darebbe centinaia di ohm), dalla Tab. 9-1 di ON4UN con la lunghezza in λ di ogni banda (la tabella va da 0,15 a 0,40 λ: sotto 0,15 λ la resistenza vera e' piu' alta), oppure fissa. Radiali rialzati: fili veri nel modello, sopra il terreno di Sommerfeld; le perdite nel terreno stanno nel guadagno del NEC.
 
 ### 18.3 Fonti, somiglianze e differenze
 

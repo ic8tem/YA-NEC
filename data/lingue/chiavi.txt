@@ -7056,9 +7056,6 @@ Dai radiali con la Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda)
 dai radiali (ON4UN)
 valore fisso
 Rg fissa
-Banda per banda (NEC-2, terreno di Sommerfeld
-, radiali rialzati
-, radiali come resistenza di terra
 Banda per banda (stima TF5NN + resistenza di terra; «Calcola le bande (NEC)» per guadagno e angolo)
 Z alla base (Ω)
 ROS sul cavo
@@ -7114,3 +7111,5 @@ Efficienza bassa sulla banda piu' bassa (
 ): la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).
 Lobo alto (
 ): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.
+Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)
+Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)
