@@ -106,7 +106,10 @@ namespace YaNec
                     default: r.Peso.Value = 0; break;
                 }
             }
-            OttGtAggiornaTesti();
+            // frequenze dentro la banda VHF: la principale e +-0,2 % (144,3 MHz: 144,0 e 144,6), come nel bozzetto
+            double f = OttFreqPrincipale(), d = Math.Max(0.1, Math.Round(f * 0.002, 1));
+            ottFreq.Clear(); ottFreq.Add(Math.Round(f - d, 3)); ottFreq.Add(f); ottFreq.Add(Math.Round(f + d, 3)); ottFreqPrinc = 1;
+            OttFrequenze();
             Status("Maschera VHF: ROS (soglia 1,3) e G/T dello stack; gli altri pesi a zero. Scegli le variabili e premi Avvia.");
         }
 
