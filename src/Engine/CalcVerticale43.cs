@@ -266,7 +266,7 @@ namespace YaNec.Engine
             o.Card("Z alla base sui " + nomeB, Calcolatori.N(zbR, zbR < 10 ? 1 : 0) + (zbX >= 0 ? " +j" : " −j") + Calcolatori.N(Math.Abs(zbX), 0) + " Ω", nec != null ? "dal NEC, con la resistenza di terra" : "stima TF5NN + Rg " + Calcolatori.N(rgB, 1) + " Ω");
             o.Card("Efficienza sui " + nomeB, double.IsNaN(effB) ? "nel guadagno" : Calcolatori.N(effB * 100, 0) + " %", alti ? "radiali rialzati: le perdite nel terreno sono nel guadagno del NEC" : "Rr / (Rr + Rg), Rg " + Calcolatori.N(rgB, 1) + " Ω", !double.IsNaN(effB) && effB < 0.3);
             o.Card("Tensione alla base", Calcolatori.N(vB / 1000, 1) + " kV", "efficaci a " + Calcolatori.N(pw, 0) + " W sui " + nomeB + " (" + Calcolatori.N(vB * Math.Sqrt(2) / 1000, 1) + " kV di picco)", vB > 2000);
-            o.Card("Perdita nel cavo, " + nomeB, Calcolatori.N(cavoB, 1) + " dB", ad == 1 ? "cavo adattato (accordatore alla base)" : "ROS " + (rosB >= 99 ? "> 99" : Calcolatori.N(rosB, 0)) + " sul cavo" + (ad == 0 ? " dopo il 4:1" : ""), cavoB > 3);
+            o.Card("Perdita nel cavo, " + nomeB, Calcolatori.N(cavoB, 1) + " dB", ad == 1 ? "cavo adattato (accordatore alla base)" : "ROS sul cavo " + (rosB >= 99 ? "> 99" : Calcolatori.N(rosB, 0)) + (ad == 0 ? " dopo il 4:1" : ""), cavoB > 3);
             o.Card("Coassiale", Calcolatori.N(P("lc"), 0) + " m di " + c.Name, Calcolatori.N(c.AttenuationAt(fl) * P("lc") / 100, 2) + " dB adattato sui " + nomeB + ", " + Calcolatori.N(c.AttenuationAt(28.5) * P("lc") / 100, 2) + " dB sui 10 m");
 
             // ---- grafico: perdita cavo + accordatore da 1,8 a 30 MHz (stima TF5NN), adattamento scelto e alternativa
