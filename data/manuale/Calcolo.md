@@ -341,6 +341,18 @@ Fonti: skynoise di G8ONH, Haslam, Remazeilles [C56]; Kaplan (USNO Circular 179);
 
 Prove (autotest): mappa 144 MHz, punto freddo (RA 142, Dec 30) 165,7 K, centro galattico circa 22 000 K; tempo siderale all'epoca J2000 = 18,697 h come l'USNO.
 
+### 8.4 G/T dello stack nell'ottimizzatore (dalla 1.5.8)
+
+La maschera VHF dell'ottimizzatore usa lo stesso G/T di 8.1 (VE7BQH, TANT, correzione KF2YN) su uno stack di righe x colonne alle distanze DL6WU (9.1), ricalcolate a ogni passo dalle aperture a -3 dB della singola antenna. Due modi:
+
+> FORMULA: G_stack(θ, φ) = G_singola(θ, φ) · |Σ e^(j k p_i · u)|² / N        (veloce: antenne uguali in fase, senza accoppiamento)
+
+Nel modo veloce lo stack e' il diagramma NEC della singola per il fattore di schiera; ogni 10 passi e alla fine si calcola lo stack completo con il NEC (StackDetect.Crea, accoppiamento compreso) e la differenza NEC - veloce corregge i passi seguenti. Nel modo NEC lo stack completo si calcola a ogni passo. La catena di ricezione segue Friis:
+
+> FORMULA: Tsys = Tant + Tpre + Tcavo / Gpre        Tcavo = 290 · (10^(L/10) - 1)        G/T = G_stack - 10 · log(Tsys)
+
+Tant comprende il diagramma, le perdite prima del preamplificatore (combinatore) e quelle dei conduttori (efficienza del NEC). Con 20 dB di preamplificatore, 2 dB di cavo dopo di esso aggiungono 1,7 K. Il punteggio del voto e' 1 / (1 + e^(-(G/T - G/T0) / 0,5 dB)), G/T0 quello di partenza; con una soglia in dB/K, raggiunta la soglia vale 1.
+
 ## 9. Stack VHF/UHF
 
 ### 9.1 Distanza DL6WU
@@ -572,7 +584,9 @@ L'effetto d'estremita', in mezze onde, e' e = 0,0464 − 0,003 · ln(λ / a) (mi
 
 ### 16.2 Trasformatore, condensatore e tensione in punta
 
-In punta a una mezz'onda l'impedenza e' di 2000-3500 ohm: il 49:1 (spire 7:1) porta 2450 ohm a 50 ohm, il 64:1 (8:1) porta 3200 ohm. Nel modello il trasformatore e' ideale e il ROS e' riferito a 50 x rapporto. Il condensatore sul primario (100 pF con il 49:1, 150 pF con il 64:1, almeno 1 kV) compensa l'induttanza dispersa del trasformatore e abbassa il ROS sulle bande alte [C94] [C96]; non sostituisce il contrappeso.
+In punta a una mezz'onda l'impedenza e' di 2000-3500 ohm: il 49:1 (spire 7:1) porta 2450 ohm a 50 ohm, il 64:1 (8:1) porta 3200 ohm. Nel modello il trasformatore e' ideale e il ROS e' riferito a 50 x rapporto. Il condensatore sul primario (100 pF con il 49:1, 150 pF con il 64:1, almeno 1 kV) compensa l'induttanza dispersa del trasformatore e abbassa il ROS sulle bande alte [C94] [C96]; non sostituisce il contrappeso. Il rapporto spire e' √(Za / 50) [C88]: AA5TB trova con misure e modelli che l'8:1 (64:1) da' il ROS piu' stabile al variare del contrappeso.
+
+Il nucleo non e' senza perdite. DG1JAN [C94] le ha misurate con un NanoVNA su un carico da 2400 ohm (perdita del nucleo = perdita di inserzione - disadattamento - carico): FT-82-43 e FT-114-43 intorno all'80 % di efficienza (circa 1 dB), FT-140-43 2/14 intorno al 79 %, FT-240-43 2/15 intorno al 75 % (71 % a 30 MHz, circa 1,2-1,5 dB), due nuclei Fair-Rite accoppiati intorno al 90 %, il Fair-Rite 2643251002 consigliato da MM0OPX per 100 W intorno al 91 %. Nel modello il trasformatore e' ideale: queste perdite vanno sottratte al guadagno e scaldano il nucleo, soprattutto nei modi digitali.
 
 > FORMULA: V = √(P · |Z|)        (100 W su 3300 ohm: 574 V efficaci, 812 V di picco)
 
@@ -608,10 +622,10 @@ Calcolati con «YA-NEC --abaco-filari» (filo nudo da 1 mm orizzontale a 3 m, co
 
 | Fonte | Somiglianze | Differenze |
 |---|---|---|
-| AA5TB [C88] | contrappeso 0,05 λ; corrente piccola in punta | nessun modello numerico |
+| AA5TB [C88] | contrappeso 0,05 λ; corrente piccola in punta; 8:1 piu' stabile; calza come ritorno | modelli con un altro programma, non NEC-2 |
 | TF5NN [C89] | modello del filo ed effetto d'estremita' usati da YA-NEC; verificato con NEC-2 | terra ideale: sulle bande basse il NEC con il terreno vero da' impedenze diverse |
 | VE3EED [C93] | lunghezze del filo non risonante | nell'abaco a 3 m le migliori sono altre (40 m); dipende da altezza e contrappeso |
-| DG1JAN [C94] | 100 pF; perdite misurate dei nuclei | sconsiglia FT-140-43 e FT-114-43, che OfficinaHF usa a 100 W |
+| DG1JAN [C94] | 100 pF; perdite misurate dei nuclei (FT-240-43 circa 75 %, Fair-Rite accoppiati circa 90 %) | sconsiglia FT-140-43 e FT-114-43, che OfficinaHF usa a 100 W |
 | W8JI [C82], O. Duffy [C97] | avvolgimento e perdite dei trasformatori | - |
 | I3RKE [C95] | la calza del coassiale fa parte dell'antenna | nessuna lunghezza ne' trasformatore |
 | OfficinaHF [C96] | bobina per gli 80 m, tensione in punta, 64:1 per gli 80 m | contrappeso «non necessario»; «80 mH» per 80 µH; 160 m con 260 µH non ottimale |
