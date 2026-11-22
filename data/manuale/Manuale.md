@@ -2171,3 +2171,9 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - Calcolatori > HF > **Filari**: nuova scheda per le antenne filari alimentate in punta (EFHW multibanda, monobanda, con bobina, filo non risonante con 9:1 o 4:1), con sei disposizioni del filo, contrappeso, condensatore, tensione in punta e ROS per banda (modello TF5NN e motore NEC). Vedi il capitolo dei Calcolatori.
 - Pulsanti viola di rimando: dai Filari e dalle altre schede filari (dipoli, OCF/Windom, T2FD, G5RV, Delta, Quad, Loop, Skywire, Moxon, Hexbeam) si apre la scheda del balun, del choke (Toroidi FT), del quarto d'onda (Cavi RG) o dei carichi, gia' compilata. La scheda Balun / Un-Un resta in Strumenti.
 - Calcolatori: la Discone e' passata dalla famiglia HF alla famiglia VHF.
+
+### 26.7 Dalla 1.5.7
+
+- Calcolatori > HF > Filari: la bobina di carico e' una scelta dell'EFHW («Bobina di carico: no / si'»); con la bobina il pulsante **Accorda la bobina (NEC)** cerca l'induttanza giusta con contrappeso e terreno.
+- Traduzioni: gli avvisi arancio di tutti i calcolatori si traducono; scheda Filari completa in inglese (le altre lingue la mostrano in inglese); scritte dei disegni e del calcolo in tempo reale tradotte.
+- Struttura 3D: il filo isolato (LD 7) non si disegna piu' come una fila di bobine.

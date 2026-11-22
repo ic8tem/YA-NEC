@@ -2,7 +2,12 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.6** (capitolo 26.6 del manuale):
+**Novità della 1.5.7** (capitolo 26.7 del manuale):
+- **Filari**: la bobina di carico è una scelta dell'EFHW (sì / no) invece di un tipo a parte; con la bobina il pulsante **Accorda la bobina (NEC)** cerca l'induttanza con il ROS più basso alla banda della bobina, con contrappeso e terreno;
+- **Traduzioni**: gli avvisi arancio di tutti i calcolatori ora si traducono (il simbolo ⚠ lo impediva); scheda Filari completa in inglese; scritte dei disegni e del calcolo in tempo reale tradotte; nei Filari «Contrappeso RF» = «Counterpoise»;
+- **Struttura 3D**: il filo isolato (LD 7) non si disegna più come una fila di bobine; il calcolo non cambia.
+
+**Dalla 1.5.6:**
 - **Calcolatori > HF > Filari** (nuova scheda): antenne filari alimentate in punta. EFHW multibanda, monobanda e con bobina (49:1 o 64:1), filo non risonante con 9:1 o 4:1; sei disposizioni del filo (inclinata dal basso o dall'alto, verticale, L e U rovesciata, tutto dritto); contrappeso di 0,05 λ a filo o con la calza del coassiale fino al choke (con il 9:1 e il 4:1 tra il 5 e il 10 % del filo), condensatore sul primario, tensione in punta, ROS per banda con il modello di TF5NN e con il motore NEC, pulsante **Accorda la lunghezza (NEC)**;
 - **Pulsanti di rimando** (viola): dai Filari e dalle altre schede filari (dipoli, OCF/Windom, T2FD, G5RV, Delta, Quad, Loop, Skywire, Moxon, Hexbeam) si apre già compilata la scheda del balun, del choke (Toroidi FT), del quarto d'onda (Cavi RG) o dei carichi, con «‹ Torna a ...»; la scheda Balun / Un-Un resta in Strumenti;
 - **Discone**: passata dalla famiglia HF alla famiglia VHF.
