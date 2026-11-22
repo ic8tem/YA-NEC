@@ -305,10 +305,10 @@ namespace YaNec.Engine
 
             // ---- avvisi
             if (perditeForti.Count > 0 && ad != 1)
-                o.Warnings.Add("Su " + string.Join(", ", perditeForti) + " l'accordatore in stazione accorda il cavo, non l'antenna: si perdono piu' di 3 dB nel cavo e nell'accordatore. Serve l'accordatore (o una rete L) alla base (AD5X).");
+                o.Warnings.Add("Perdite oltre 3 dB (" + string.Join(", ", perditeForti) + "): l'accordatore in stazione accorda il cavo, non l'antenna: si perdono piu' di 3 dB nel cavo e nell'accordatore. Serve l'accordatore (o una rete L) alla base (AD5X).");
             if (vB > 2000) o.Warnings.Add("Alla base ci sono circa " + Calcolatori.N(vB / 1000, 1) + " kV efficaci a " + Calcolatori.N(pw, 0) + " W: condensatori e rele' adatti, antenna fuori dalla portata delle persone.");
-            if (!alti && !double.IsNaN(effB) && effB < 0.3) o.Warnings.Add("Sui " + nomeB + " l'efficienza e' bassa: la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).");
-            if (altiAngoli.Count > 0) o.Warnings.Add("Su " + string.Join(", ", altiAngoli) + " il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.");
+            if (!alti && !double.IsNaN(effB) && effB < 0.3) o.Warnings.Add("Efficienza bassa sulla banda piu' bassa (" + nomeB + "): la verticale corta: la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).");
+            if (altiAngoli.Count > 0) o.Warnings.Add("Lobo alto (" + string.Join(", ", altiAngoli) + "): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.");
             if (!alti && I("rgm") == 0 && Math.Max(0.01, P("lr")) / (C0 / fl) < 0.15) o.Warnings.Add("Radiali corti rispetto alla banda piu' bassa (meno di 0,15 λ): la Tab. 9-1 di ON4UN non scende sotto, la resistenza di terra vera e' piu' alta.");
             if (I("terr") == 0 && P("nr") < 8) o.Warnings.Add("Terreno povero e pochi radiali: l'efficienza crolla e l'angolo sale, la verticale non e' migliore di un dipolo basso.");
             if (nec == null) o.Oks.Add("«Calcola le bande (NEC)» mette nella tabella impedenza, guadagno, angolo ed efficienza del NEC con il terreno e i radiali scelti");

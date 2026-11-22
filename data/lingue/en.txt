@@ -7316,3 +7316,93 @@ Maschera VHF, cielo vero: QTH non valido (locator, es. JN70CN, oppure latitudine
 Maschera VHF, cielo vero: data e ora non valide (gg/mm/aaaa hh:mm, UTC).	VHF mask, real sky: invalid date and time (dd/mm/yyyy hh:mm, UTC).
 Maschera VHF, cielo vero: mappa del cielo non letta (	VHF mask, real sky: sky map not read (
 T antenna (stack, cielo vero), K	Antenna T (stack, real sky), K
+# 1.5.9: Verticale non risonante (43 piedi)
+un-un 4:1 + accordatore in stazione	4:1 unun + tuner in the shack
+accordatore alla base	tuner at the base
+diretta (1:1) + accordatore in stazione	direct (1:1) + tuner in the shack
+povero	poor
+medio	average
+mare	sea
+Calcola le bande (NEC)	Compute the bands (NEC)
+Verticale non risonante (43 piedi)	Non-resonant vertical (43 feet)
+P. Salas AD5X, The 43-Foot Vertical (presentazione di N0CU, 2016: Rr, ROS con il 4:1, perdite nel coassiale, guadagni e angoli, tensione alla base); 	P. Salas AD5X, The 43-Foot Vertical (N0CU presentation, 2016: Rr, SWR with the 4:1, coax loss, gains and angles, base voltage); 
+G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, impedenza del monopolo); ON4UN, Low-Band DXing cap. 9 (resistenza di terra dei radiali interrati, Tab. 9-1); 	G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, monopole impedance); ON4UN, Low-Band DXing ch. 9 (ground resistance of buried radials, Table 9-1); 
+abaco dei cavi di YA-NEC (perdite da catalogo); accordatore come in Linea aperta + accordatore (Q della bobina)	YA-NEC cable chart (catalogue losses); tuner as in Open line + tuner (coil Q)
+Altezza della verticale	Height of the vertical
+43 piedi = 13,1 m (AD5X). Si usano anche 26 piedi (7,9 m), 31 piedi (9,4 m) e 50 piedi (15,2 m).	43 feet = 13.1 m (AD5X). 26 feet (7.9 m), 31 feet (9.4 m) and 50 feet (15.2 m) are also used.
+ø del tubo (medio)	Tube ø (average)
+Diametro medio dei tubi telescopici.	Average diameter of the telescopic tubes.
+Le bande della tabella: dalla piu' bassa scelta fino ai 10 m.	The bands in the table: from the lowest chosen up to 10 m.
+Adattamento alla base	Matching at the base
+Un-un 4:1 alla base e accordatore in stazione (la soluzione piu' comune); accordatore automatico alla base (il coassiale lavora adattato); oppure coassiale collegato direttamente alla base.	4:1 unun at the base and tuner in the shack (the most common solution); automatic tuner at the base (the coax works matched); or coax connected straight to the base.
+Coassiale fino alla stazione	Coax to the shack
+Tipo di coassiale	Coax type
+AD5X: piu' radiali possibile; con pochi radiali l'efficienza sulle bande basse crolla.	AD5X: as many radials as possible; with few radials the efficiency on the low bands collapses.
+2 · Terra e radiali	2 · Ground and radials
+Interrati o appoggiati: il NEC-2 non li tratta, la loro perdita entra come resistenza di terra in serie alla base. Rialzati: fili veri nel modello NEC, sopra il terreno di Sommerfeld.	Buried or on the ground: NEC-2 cannot handle them, their loss enters as a ground resistance in series at the base. Elevated: real wires in the NEC model, over the Sommerfeld ground.
+interrati	buried
+rialzati	elevated
+Altezza dei radiali rialzati	Height of the elevated radials
+Dai radiali con la Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda), oppure un valore fisso come AD5X (10 Ω).	From the radials with ON4UN Table 9-1 (number and length in λ, band by band), or a fixed value like AD5X (10 Ω).
+dai radiali (ON4UN)	from the radials (ON4UN)
+valore fisso	fixed value
+Rg fissa	Fixed Rg
+Banda per banda (NEC-2, terreno di Sommerfeld	Band by band (NEC-2, Sommerfeld ground
+, radiali rialzati	, elevated radials
+, radiali come resistenza di terra	, radials as ground resistance
+Banda per banda (stima TF5NN + resistenza di terra; «Calcola le bande (NEC)» per guadagno e angolo)	Band by band (TF5NN estimate + ground resistance; «Compute the bands (NEC)» for gain and angle)
+Z alla base (Ω)	Z at the base (Ω)
+ROS sul cavo	SWR on the coax
+Perdita nel cavo	Coax loss
+Perdita accordatore	Tuner loss
+Guadagno, angolo	Gain, angle
+Al trasmettitore	At the transmitter
+⚠ accordatore alla base	⚠ tuner at the base
+angolo alto	high angle
+accettabile	acceptable
+✓ ottima per il DX	✓ excellent for DX
+⚠ accordatore con perdite	⚠ lossy tuner
+ dBi a 	 dBi at 
+nel guadagno	in the gain
+Banda migliore	Best band
+ dBi (angolo fino a 30°)	 dBi (angle up to 30°)
+«Calcola le bande (NEC)»	«Compute the bands (NEC)»
+Z alla base sui 	Z at the base on 
+dal NEC, con la resistenza di terra	from NEC, with the ground resistance
+stima TF5NN + Rg 	TF5NN estimate + Rg 
+Efficienza sui 	Efficiency on 
+radiali rialzati: le perdite nel terreno sono nel guadagno del NEC	elevated radials: the ground losses are in the NEC gain
+Tensione alla base	Base voltage
+ W sui 	 W on 
+ kV di picco)	 kV peak)
+Perdita nel cavo, 	Coax loss, 
+cavo adattato (accordatore alla base)	matched coax (tuner at the base)
+ sul cavo	 on the coax
+ dopo il 4:1	 after the 4:1
+ dB adattato sui 	 dB matched on 
+ dB sui 10 m	 dB on 10 m
+Perdite nel cavo e nell'accordatore (stima TF5NN + Rg)	Coax and tuner losses (TF5NN estimate + Rg)
+ kV alla base	 kV at the base
+Alla base ci sono circa 	At the base there are about 
+ kV efficaci a 	 kV RMS at 
+ W: condensatori e rele' adatti, antenna fuori dalla portata delle persone.	 W: suitable capacitors and relays, antenna out of people's reach.
+Radiali corti rispetto alla banda piu' bassa (meno di 0,15 λ): la Tab. 9-1 di ON4UN non scende sotto, la resistenza di terra vera e' piu' alta.	Radials short for the lowest band (less than 0.15 λ): ON4UN Table 9-1 does not go lower, the real ground resistance is higher.
+Terreno povero e pochi radiali: l'efficienza crolla e l'angolo sale, la verticale non e' migliore di un dipolo basso.	Poor ground and few radials: the efficiency collapses and the angle rises, the vertical is no better than a low dipole.
+«Calcola le bande (NEC)» mette nella tabella impedenza, guadagno, angolo ed efficienza del NEC con il terreno e i radiali scelti	«Compute the bands (NEC)» puts into the table the NEC impedance, gain, angle and efficiency with the chosen ground and radials
+con il 4:1 il ROS sul cavo e' riferito a 200 Ω alla base (un-un ideale)	with the 4:1 the SWR on the coax is referred to 200 Ω at the base (ideal unun)
+Formule: impedenza alla base dal modello TF5NN v3 (monopolo su terra ideale) piu' Rg, oppure dal NEC-2; Rg dei radiali interrati dalla Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda) o fissa; 	Formulas: base impedance from the TF5NN v3 model (monopole over ideal ground) plus Rg, or from NEC-2; Rg of buried radials from ON4UN Table 9-1 (number and length in λ, band by band) or fixed; 
+un-un 4:1 ideale (carico del cavo Z/4); perdita nel cavo con il carico vero (linea con perdite, gamma = alfa + j beta, come Cavi RG); accordatore: reattanza annullata da una bobina con Q 	ideal 4:1 unun (coax load Z/4); coax loss with the real load (lossy line, gamma = alpha + j beta, as in RG cables); tuner: reactance cancelled by a coil with Q 
+, poi rete di Q caricato √(Rmax/Rmin - 1) (T in stazione, L alla base, come Linea aperta + accordatore); tensione alla base V = |Z| √(P/R) con la potenza che arriva all'antenna; al trasmettitore = guadagno NEC - perdite. 	, then a network of loaded Q √(Rmax/Rmin - 1) (T in the shack, L at the base, as in Open line + tuner); base voltage V = |Z| √(P/R) with the power reaching the antenna; at the transmitter = NEC gain - losses. 
+AD5X: Rr 3-4 Ω e circa -j600 Ω sui 160 m, 65 Ω sui 40 m, ROS 324:1 sui 160 e 41:1 sugli 80 m con il 4:1 e Rg 10 Ω, circa 13 kV alla base a 1500 W sui 160 m. Fonti: 	AD5X: Rr 3-4 Ω and about -j600 Ω on 160 m, 65 Ω on 40 m, SWR 324:1 on 160 and 41:1 on 80 m with the 4:1 and Rg 10 Ω, about 13 kV at the base at 1500 W on 160 m. Sources: 
+un-un 4:1, accordatore; perdite nel cavo, tensione alla base	4:1 unun, tuner; coax losses, base voltage
+Un-un 4:1 ›	4:1 unun ›
+Cavo con il ROS ›	Coax with the SWR ›
+Verticale λ/4 ›	λ/4 vertical ›
+Apre Strumenti > Cavi RG con il cavo, la lunghezza e il carico che il cavo vede sulla banda piu' bassa.	Opens Tools > RG cables with the coax, the length and the load the coax sees on the lowest band.
+Apre HF > Verticali > lambda/4 con gli stessi radiali sulla banda piu' bassa, per il confronto.	Opens HF > Verticals > lambda/4 with the same radials on the lowest band, for comparison.
+Perdite oltre 3 dB (	Losses above 3 dB (
+): l'accordatore in stazione accorda il cavo, non l'antenna: si perdono piu' di 3 dB nel cavo e nell'accordatore. Serve l'accordatore (o una rete L) alla base (AD5X).	): the tuner in the shack tunes the coax, not the antenna: more than 3 dB are lost in the coax and the tuner. A tuner (or an L network) at the base is needed (AD5X).
+Efficienza bassa sulla banda piu' bassa (	Low efficiency on the lowest band (
+): la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).	): a short vertical lives on its radials (more radials, or elevated radials).
+Lobo alto (	High lobe (
+): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.	): the main lobe is high (more than 35°): the vertical is 5/8 λ or longer and DX loses compared with a λ/4.

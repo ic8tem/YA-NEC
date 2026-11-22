@@ -7026,3 +7026,91 @@ Maschera VHF, cielo vero: QTH non valido (locator, es. JN70CN, oppure latitudine
 Maschera VHF, cielo vero: data e ora non valide (gg/mm/aaaa hh:mm, UTC).
 Maschera VHF, cielo vero: mappa del cielo non letta (
 T antenna (stack, cielo vero), K
+un-un 4:1 + accordatore in stazione
+accordatore alla base
+diretta (1:1) + accordatore in stazione
+povero
+medio
+mare
+Calcola le bande (NEC)
+Verticale non risonante (43 piedi)
+P. Salas AD5X, The 43-Foot Vertical (presentazione di N0CU, 2016: Rr, ROS con il 4:1, perdite nel coassiale, guadagni e angoli, tensione alla base); 
+G. B. Gudlaugsson TF5NN, HF Antenna Impedance Visualizer v3 (CC BY 4.0, impedenza del monopolo); ON4UN, Low-Band DXing cap. 9 (resistenza di terra dei radiali interrati, Tab. 9-1); 
+abaco dei cavi di YA-NEC (perdite da catalogo); accordatore come in Linea aperta + accordatore (Q della bobina)
+Altezza della verticale
+43 piedi = 13,1 m (AD5X). Si usano anche 26 piedi (7,9 m), 31 piedi (9,4 m) e 50 piedi (15,2 m).
+ø del tubo (medio)
+Diametro medio dei tubi telescopici.
+Le bande della tabella: dalla piu' bassa scelta fino ai 10 m.
+Adattamento alla base
+Un-un 4:1 alla base e accordatore in stazione (la soluzione piu' comune); accordatore automatico alla base (il coassiale lavora adattato); oppure coassiale collegato direttamente alla base.
+Coassiale fino alla stazione
+Tipo di coassiale
+AD5X: piu' radiali possibile; con pochi radiali l'efficienza sulle bande basse crolla.
+2 · Terra e radiali
+Interrati o appoggiati: il NEC-2 non li tratta, la loro perdita entra come resistenza di terra in serie alla base. Rialzati: fili veri nel modello NEC, sopra il terreno di Sommerfeld.
+interrati
+rialzati
+Altezza dei radiali rialzati
+Dai radiali con la Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda), oppure un valore fisso come AD5X (10 Ω).
+dai radiali (ON4UN)
+valore fisso
+Rg fissa
+Banda per banda (NEC-2, terreno di Sommerfeld
+, radiali rialzati
+, radiali come resistenza di terra
+Banda per banda (stima TF5NN + resistenza di terra; «Calcola le bande (NEC)» per guadagno e angolo)
+Z alla base (Ω)
+ROS sul cavo
+Perdita nel cavo
+Perdita accordatore
+Guadagno, angolo
+Al trasmettitore
+⚠ accordatore alla base
+angolo alto
+accettabile
+✓ ottima per il DX
+⚠ accordatore con perdite
+nel guadagno
+Banda migliore
+ dBi (angolo fino a 30°)
+«Calcola le bande (NEC)»
+Z alla base sui 
+dal NEC, con la resistenza di terra
+stima TF5NN + Rg 
+Efficienza sui 
+radiali rialzati: le perdite nel terreno sono nel guadagno del NEC
+Tensione alla base
+ W sui 
+ kV di picco)
+Perdita nel cavo, 
+cavo adattato (accordatore alla base)
+ sul cavo
+ dopo il 4:1
+ dB adattato sui 
+ dB sui 10 m
+Perdite nel cavo e nell'accordatore (stima TF5NN + Rg)
+ kV alla base
+Alla base ci sono circa 
+ kV efficaci a 
+ W: condensatori e rele' adatti, antenna fuori dalla portata delle persone.
+Radiali corti rispetto alla banda piu' bassa (meno di 0,15 λ): la Tab. 9-1 di ON4UN non scende sotto, la resistenza di terra vera e' piu' alta.
+Terreno povero e pochi radiali: l'efficienza crolla e l'angolo sale, la verticale non e' migliore di un dipolo basso.
+«Calcola le bande (NEC)» mette nella tabella impedenza, guadagno, angolo ed efficienza del NEC con il terreno e i radiali scelti
+con il 4:1 il ROS sul cavo e' riferito a 200 Ω alla base (un-un ideale)
+Formule: impedenza alla base dal modello TF5NN v3 (monopolo su terra ideale) piu' Rg, oppure dal NEC-2; Rg dei radiali interrati dalla Tab. 9-1 di ON4UN (numero e lunghezza in λ, banda per banda) o fissa; 
+un-un 4:1 ideale (carico del cavo Z/4); perdita nel cavo con il carico vero (linea con perdite, gamma = alfa + j beta, come Cavi RG); accordatore: reattanza annullata da una bobina con Q 
+, poi rete di Q caricato √(Rmax/Rmin - 1) (T in stazione, L alla base, come Linea aperta + accordatore); tensione alla base V = |Z| √(P/R) con la potenza che arriva all'antenna; al trasmettitore = guadagno NEC - perdite. 
+AD5X: Rr 3-4 Ω e circa -j600 Ω sui 160 m, 65 Ω sui 40 m, ROS 324:1 sui 160 e 41:1 sugli 80 m con il 4:1 e Rg 10 Ω, circa 13 kV alla base a 1500 W sui 160 m. Fonti: 
+un-un 4:1, accordatore; perdite nel cavo, tensione alla base
+Un-un 4:1 ›
+Cavo con il ROS ›
+Verticale λ/4 ›
+Apre Strumenti > Cavi RG con il cavo, la lunghezza e il carico che il cavo vede sulla banda piu' bassa.
+Apre HF > Verticali > lambda/4 con gli stessi radiali sulla banda piu' bassa, per il confronto.
+Perdite oltre 3 dB (
+): l'accordatore in stazione accorda il cavo, non l'antenna: si perdono piu' di 3 dB nel cavo e nell'accordatore. Serve l'accordatore (o una rete L) alla base (AD5X).
+Efficienza bassa sulla banda piu' bassa (
+): la verticale corta vive dei radiali (piu' radiali, o radiali rialzati).
+Lobo alto (
+): il lobo principale e' alto (piu' di 35°): la verticale e' lunga 5/8 λ o piu' e il DX perde rispetto a una λ/4.

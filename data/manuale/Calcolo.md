@@ -629,3 +629,145 @@ Calcolati con «YA-NEC --abaco-filari» (filo nudo da 1 mm orizzontale a 3 m, co
 | W8JI [C82], O. Duffy [C97] | avvolgimento e perdite dei trasformatori | - |
 | I3RKE [C95] | la calza del coassiale fa parte dell'antenna | nessuna lunghezza ne' trasformatore |
 | OfficinaHF [C96] | bobina per gli 80 m, tensione in punta, 64:1 per gli 80 m | contrappeso «non necessario»; «80 mH» per 80 µH; 160 m con 260 µH non ottimale |
+
+## 17. Antenne riceventi per le bande basse: le note di IV3PRK
+
+Approvato da IC8TEM il 22/11/2026 21:34. Fonti: i documenti di Pierluigi "Luis" Mansutti IV3PRK (iv3prk.it, tutti i diritti riservati: qui solo numeri e idee, riassunti con parole nostre e citati), letti il 22/11/2026. Il capitolo 7 da' le definizioni (RDF, DMF, Beverage); qui le esperienze di una stazione reale sui 160 m, con i numeri dei suoi modelli EZNEC e delle sue misure, e quello che ne viene per chi modella con YA-NEC.
+
+### 17.1 In ricezione conta la direttivita', non il guadagno
+
+Sulle bande basse il rumore che arriva dall'esterno supera quello del ricevitore: alzare il segnale alza anche il rumore. Conta il rapporto segnale/rumore, e con l'antenna lo si migliora solo togliendo rumore e QRM dalle direzioni che non servono. Per questo il parametro e' l'RDF (7.1) e non l'efficienza. IV3PRK lo mostra sul suo traliccio: da 4 radiali rialzati a 32 radiali a terra il guadagno sale di 0,4 dB, l'RDF resta 5,06-5,07 dB [C99].
+
+> FORMULA: RDF = G(direzione voluta) - Gmedio        (W8JI; passo del diagramma 5 gradi = 2 592 direzioni, stesso risultato del passo di 1 grado [C99])
+
+Ogni dB di RDF in piu' e' un dB in meno di rumore e QRM dalle altre direzioni. Valori pratici sotto 10 dB; 12-13 dB chiedono ettari di terreno.
+
+| Antenna (EZNEC, 1,835 MHz) | Guadagno | Angolo | Apertura | F/B | Gmedio | RDF |
+|---|---|---|---|---|---|---|
+| traliccio shunt-fed, 4 radiali rialzati | +1,30 dB | 25 | - | - | -3,76 | 5,06 |
+| dipolo basso | -2,70 dB | 90 | - | - | -10,00 | 7,30 |
+| Pennant (9 x 4 m, 880-900 ohm) | -35,32 dB | 30 | 147 | 37 dB | -43,11 | 7,79 |
+| Flag (950 ohm) | -29,97 dB | 30 | 149 | 30 dB | -37,73 | 7,76 |
+| 4-square mini caricata (1994) | -5,86 dB | 20 | 127 | 30 dB | -15,23 | 9,37 |
+| Beverage 175 m | -9,82 dB | 36 | 84 | 18 dB | -20,63 | 10,81 |
+| Beverage 350 m | -6,43 dB | 24 | 53 | 27 dB | -20,09 | 13,66 |
+| due Pennant end-fire a 30 m, 173 gradi | -38,00 dB | 24 | 82 | 40 dB | -49,27 | 11,27 |
+| DHDL TX3A (22 m, 1250 ohm) | -27,57 dB | 20 | 106 | 31 dB | -37,52 | 9,95 |
+| QDFA (4 Delta Flag, modello da sola) | circa -30 dB | - | - | 60 dB | - | 11,3 |
+
+Fonti: [C99] per le prime righe, [C100] Pennant e Flag, [C102] DHDL, [C104] QDFA. YA-NEC (7.3) calcola per la Beverage da 175 m un RDF di 10,55 dB contro i 10,81 di IV3PRK.
+
+### 17.2 Pennant e Flag
+
+Loop piccoli chiusi su una resistenza dalla parte opposta all'alimentazione: funzionano come due verticali corte end-fire alimentate dai lati orizzontali (stessa famiglia di Flag, Delta, K9AY, EWE). La Pennant di K6SE (QST, luglio 2000) di IV3PRK: filo isolato di 22,5 m in tutto, lato verticale 4,26 m con il fondo a circa 1,8-2 m, due lati da 9,12 m che si uniscono al trasformatore a circa 4 m; resistenza di circa 880-900 ohm a meta' del lato verticale (quattro da 220 ohm a carbone in serie); il lobo va verso l'alimentazione [C100]. Pregio principale: nessun collegamento a terra, quindi meno dipendenza dal terreno di K9AY ed EWE.
+
+Il segnale in uscita e' bassissimo (-35 dB): servono uno o due preamplificatori (IV3PRK: K9AY 10 dB esterno e KD9SV a circa 18 dB). La Flag da' circa 5 dB di segnale in piu' a parita' di RDF e F/B [C101].
+
+Due Pennant end-fire (EZNEC): l'F/B e' massimo a circa 120 gradi di sfasamento, l'RDF cresce fino a circa 180 gradi e non dipende dalla distanza (25-40 m). Con 30 m di distanza e 52 m di RG58 (173 gradi): RDF 11,27 dB. Pennant e Flag insieme danno oltre 1 dB di RDF in meno: meglio due uguali [C101]. Nella realta' IV3PRK non ha mai trovato una prova A/B in cui le due Pennant sfasate battessero la Flag rotativa.
+
+### 17.3 Trasformatori e choke
+
+Il trasformatore e' la parte piu' critica: il segnale e' di decine di dB sotto lo zero e non si puo' perdere altro. Avvolgimenti separati (non autotrasformatori): la calza del coassiale non tocca il lato antenna, cosi' il rumore preso dalla calza non entra nel segnale ("rumore di modo comune") [C103].
+
+> FORMULA: X primario >= 4 · Z antenna        L = X / (2π f)        N = 1000 · √(L[mH] / AL)        N1/N2 = √(Z1/Z2)
+
+Esempio di IV3PRK per la Pennant (900 ohm) su binoculare BN73-202 (materiale 73, AL 8500, permeabilita' circa 1500 a 2 MHz): X = 3600 ohm; L = 3600 / (2π · 1,8 MHz) = 318 µH; N1 = 1000 · √(0,318 / 8500) = 6,1 spire; rapporto spire √(900/50) = 4,24; arrotondato a 8 spire lato antenna e 2 lato 50 ohm (in pratica 12:3 o 8:2) [C103]. Con il materiale 61 o 77 su un FT50 le spire diventerebbero 68:16 o 21:5. Verifica di YA-NEC: 3600 / (2π · 1,8e6) = 318,3 µH; √(0,3183/8500) · 1000 = 6,12; stessi numeri.
+
+Choke sul coassiale: sui 160 m serve un'impedenza resistiva di almeno 1500 ohm. Materiale 75 (J): a 2 MHz µ' circa 300 e µ" circa 1600, quindi impedenza quasi tutta resistiva. 16 spire di RG58 su un FT140-J superano i 2000 ohm (misurate fino a 8 spire, circa 1000 ohm; la regola del quadrato delle spire sovrastima). Spire distanziate, coassiale a terra vicino al choke. Dal 2025 IV3PRK usa l'FT240-31 (materiale 31, consigliato da K9YC) [C103]. Con il DHDL toglie la calza del tutto: 15 m di doppino (circa 100 ohm) tra trasformatori isolati, "meglio di qualsiasi choke" [C102].
+
+### 17.4 Four-square ricevente
+
+Elementi caricati in cima alla W8JI (RXvrhat), modello EZNEC: verticali da 7,5-9,5 m, carico 73 + j296 ohm (Q circa 4), RDF del singolo 4,86 dB. Due elementi end-fire: a λ/4 (42 m) lo sfasamento di 95 gradi da' F/B 51 dB ma un lobo alto; 115 gradi mette il nullo a 30-60 gradi (stazioni europee a 200-800 km) con RDF 8,79. A λ/8 (21 m) il guadagno scende di circa 3 dB ma l'RDF sale (9,04 a 137 gradi, 9,50 a 147) [C105].
+
+Quadrato in crossfire (diagonale): linea di ritardo all'elemento posteriore = diagonale x 0,95 x VF, meta' agli elementi laterali (DX Engineering). Con 29,7 m di diagonale e CATV con VF 0,85: 24 m e 12 m. Con 142 gradi sull'elemento posteriore: RDF 11,40, F/B 38 dB [C105].
+
+> FORMULA: linea di ritardo = diagonale · 0,95 · VF        gradi = lunghezza / VF · 360 / λ
+
+Costruzione (parte 2, agosto 2008) [C112]. Cavo da 75 ohm per interramento; il VF misurato con l'analizzatore su una linea a λ/4 era 0,82 e non 0,81 come da catalogo, quindi a 1,825 MHz il quarto d'onda e' 33,70 m e non 33,27 m: misurare sempre il VF prima di tagliare. Lato del quadrato ridotto a 20 m dal terreno disponibile, verticali di 9,5 m caricate in cima, carico R 74 + j295 ohm. Modello finale:
+
+| Alimentazione | Ritardi (gradi) | Guadagno | Angolo | Apertura -3 dB | F/B | RDF |
+|---|---|---|---|---|---|---|
+| diagonale (crossfire) | 58 e 29 | -23,51 dBi | 20 gradi | 74 gradi | 29 dB | 12,02 dB |
+| lato (end-fire/broadside) | 0 e 29 | -15,48 dBi | 22 gradi | 115 gradi | 13 dB | 9,89 dB |
+
+Le linee di ritardo sono 21,70 m e 10,85 m (diagonale) e 9,85 m (lato), meno 1 m di cavo dentro le scatole; i quarti d'onda 33,20 m (33,70 meno 0,50 interni). Sul lato il segnale e' circa 8 dB piu' forte che in diagonale, quindi un attenuatore a T da 8 dB (21,5 e 47,3 ohm) entra in linea nelle posizioni di lato per avere lo stesso livello. Prova al banco con le linee chiuse su 75 ohm: circa 52 ohm in diagonale e 42 ohm sul lato. Nella scatola degli elementi un'induttanza di 20 spire su un nucleo di ferrite scorrevole (circa 25 µH, 290-295 ohm a 1,825 MHz) e le resistenze di carico su paletti per cambiarle sul campo.
+
+Modo comune e fulmini, sui consigli di K4SAV (e K7TJR): trasformatore d'uscita ad avvolgimenti separati senza collegare la calza; condensatore da 10 nF e diodo inverso su ogni rele'; negativo delle bobine a massa tramite 10 nF; cavo di comando avvolto su due FT140-J; calza del cavo verso la stazione e -12 V del comando su un picchetto di terra separato (obbligatorio per i fulmini; con il trasformatore isolato il choke sul coassiale non serve); scaricatore a gas su ogni verticale (utile solo per le scariche vicine, non per il colpo diretto). Terra: base dei pali in legno avvolta in lamiera di rame per 1 m, poi radiali quanti servono; stessi valori su tutti gli elementi.
+
+Sul campo: F/B 30 dB su segnali forti, ma S/N peggiore delle Pennant (rumore circa 10 dB piu' alto) [C106]. Il rumore veniva dagli elementi (con le linee chiuse su 75 ohm il rumore scende a -122 dBm, con le antenne -103/-110 dBm); tolti i fili di carico, rumore giu' di 10-15 dB [C107]. Poi la 4-square di K7TJR con amplificatori ad alta impedenza: modo A per l'RDF massimo (circa 12 dB, lobo stretto), modo B per l'F/B, con linee di ritardo nel rapporto 0,5 (lato 20 m: circa 48 o 72 gradi) [C108].
+
+### 17.5 Misure di S/N: i modelli non bastano
+
+IV3PRK misura con un oscillatore di prova a 1,843 MHz a circa una lunghezza d'onda e un SDR [C106]:
+
+| Antenna (verso NE) | Segnale | Rumore | S/N |
+|---|---|---|---|
+| 4-square, diagonale | -61 dBm | -97 dBm | 36 dB |
+| Pennant gruppo nord | -60 dBm | -107 dBm | 47 dB |
+| Pennant broadside | -59 dBm | -108 dBm | 49 dB |
+| DHDL TX3A | -62 dBm | -100 dBm | 38 dB |
+| antenna TX (senza preamplificatori) | -50 dBm | -95 dBm | 45 dB |
+
+Tolti i 25 dB di preamplificatori, il fondo di rumore della Pennant e' circa 40 dB sotto quello del traliccio TX. La DHDL ha lo stesso segnale della Pennant vicina ma almeno 5 dB di rumore in piu' (area piu' grande) [C106].
+
+L'ambiente decide piu' del modello:
+- un cavo telefonico che attraversava il terreno dava 40 dB di rumore in piu' alla Beverage a due fili verso sud; interrato, la Beverage e la 4-square hanno funzionato [C109];
+- il QDFA modellato con i fili vicini: F/B da 60 a 15 dB e RDF da 11,3 a 10,0 con traliccio e radiali; con la recinzione metallica non a terra il diagramma diventa omnidirezionale, a terra l'F/B scende a 7,5 dB: progetto abbandonato [C104];
+- il miniloop a tre spire di Lankford: nullo laterale di 30-40 dB sulle onde medie (1 MHz), solo 5 dB sui 160 m, e nessun nullo posteriore [C110].
+
+### 17.6 Beverage e K9AY in pratica: le note di IK0XBX
+
+Francesco Fucelli IK0XBX (Sezione ARI di Perugia, «Le mie antenne RX», 2018) [C111] ha lavorato oltre 200 paesi DXCC sui 160 m con un loop K9AY a quattro direzioni (due loop e due relè, schema di ON4UN), una Beverage in due versi e una DHDL. Le sue regole costruttive:
+- **Beverage**: filo da 1 mm a 1,5-2,5 m da terra (1,5 m la migliore per il DX, fino a 6 m accettabile: piu' alta = piu' segnale ma lobi laterali e angolo piu' alti, quindi piu' rumore); resistenza antinduttiva da 470-560 ohm (almeno 2 W se in stazione c'e' un amplificatore) verso un picchetto; trasformatore 9:1 su binoculare BN73-202 con 2 spire lato cavo e 6 lato antenna (poche spire = poco accoppiamento capacitivo);
+- **lunghezza**: dai grafici di ON4UN sui 160 m, 89 m danno -14,3 dBi e un lobo di circa 120 gradi, 176 m -9,9 dBi e 60 gradi, 353 m -6,3 dBi e 30 gradi; 90 m sui 40 m si comportano come 353 m sui 160 m;
+- **terreno**: piu' e' conduttivo, piu' basso e' il segnale; non cambia molto l'angolo ne' la direttivita'; evitare i radiali della verticale TX e le reti metalliche (le sue passano vicino e funzionano lo stesso);
+- **cavo**: 75 ohm TV, calza non collegata alla terra dell'antenna, ferriti a 5-10 m dall'antenna e all'ingresso in casa, nessuna messa a terra del cavo a meno di 5 m dall'antenna; picchetti di rame da 1 m (tubo da 35 mm), anche due o piu'.
+
+Confronto con IV3PRK: la Beverage da 176 m di ON4UN (-9,9 dBi) coincide con quella da 175 m di IV3PRK (-9,82 dBi, RDF 10,81); stesso binoculare BN73-202, 6:2 per i circa 450 ohm della Beverage (IK0XBX) e 8:2 per i 900 ohm della Pennant (IV3PRK), in tutti e due i casi avvolgimenti separati e calza staccata dalla terra dell'antenna contro il rumore di modo comune. Differenza: IK0XBX mette la K9AY al primo posto per l'ascolto in tutte le direzioni in poco spazio, IV3PRK la scarta per la dipendenza dal terreno e preferisce Pennant e Flag (17.2).
+
+### 17.7 Cosa ne viene per YA-NEC
+
+- Confrontare le antenne riceventi con l'RDF (linguetta Rumore/GT/Stack, Calcolatori > Antenne riceventi), non con il guadagno; il passo di 5 gradi basta.
+- Mettere nel modello i fili vicini: traliccio, radiali rialzati, recinzioni, linee. YA-NEC li calcola con lo stesso NEC; IV3PRK mostra che sono loro a rovinare l'F/B (il QDFA da 60 a 7,5 dB).
+- Il NEC non misura il rumore locale: un RDF alto nel modello non garantisce l'S/N (Pennant contro 4-square, DHDL, Pennant end-fire).
+- Per il trasformatore e il choke della ricevente: formule di 17.3 (Calcolatori > Strumenti > Toroidi FT per le spire con l'AL).
+
+### 17.8 Fonti, somiglianze e differenze
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| IV3PRK [C99]-[C110] | stessa definizione dell'RDF (W8JI), modelli EZNEC con terreno MININEC | YA-NEC usa il terreno di Sommerfeld; i modelli di IV3PRK comprendono tutto il suo terreno (fino a 1487 segmenti) |
+| W8JI [C82] | RDF, verticali caricate in cima, trasformatori su binoculare | - |
+| ON4UN [C18] | Beverage, choke, attenuatori a T nella 4-square; grafici della Beverage per lunghezza (anche in IK0XBX) | - |
+| IK0XBX [C111] | Beverage 1,5-2,5 m, 470-560 ohm, BN73-202 6:2, calza staccata dalla terra, K9AY a quattro direzioni | preferisce la K9AY, che IV3PRK scarta; nessun modello NEC, solo risultati sul campo (DXCC) |
+| K9YC | materiale 31 per i choke sulle bande basse | IV3PRK ha usato il 75 (J) fino al 2025 |
+| K6SE, K7TJR, Lankford, N4IS e AA7JV | Pennant, 4-square Hi-Z, QDFA e miniloop, DHDL | progetti loro, IV3PRK riporta le sue prove |
+
+## 18. Verticale non risonante (43 piedi)
+
+Approvata da IC8TEM il 22/11/2026 21:22 (bozzetto). Fonte principale: P. Salas AD5X, «The 43-Foot Vertical», nella presentazione di N0CU (2016) [C113]: qui solo numeri e idee, citati.
+
+### 18.1 Cosa calcola
+
+Una verticale di 13,1 m e' corta sui 160 e sugli 80 m (resistenza di radiazione di pochi ohm e reattanza capacitiva di centinaia di ohm), vicina al quarto d'onda sui 30 m e lunga 5/8 λ o piu' dai 15 m in su. Con un un-un 4:1 alla base il ROS sul coassiale e' accettabile dai 60 ai 10 m; sui 160 e sugli 80 m l'accordatore in stazione accorda il cavo, non l'antenna, e la perdita nel cavo con il ROS diventa di molti dB [C113].
+
+> FORMULA: Z alla base = Z del monopolo (TF5NN v3, terra ideale) + Rg        oppure dal NEC-2 con il terreno di Sommerfeld
+
+> FORMULA: carico del cavo = Z / 4 (un-un 4:1 ideale)        perdita nel cavo = 10 log10(Pin / Pcarico) sulla linea con perdite (gamma = alfa + j beta)
+
+> FORMULA: perdita dell'accordatore = 10 log10[(1 + |X| / (Qu R)) (1 + k Qn / Qu)],  Qn = √(Rmax / Rmin - 1),  Qu = 150
+
+> FORMULA: V alla base = |Z| √(P all'antenna / R)        al trasmettitore = G (NEC) - perdita nel cavo - perdita dell'accordatore
+
+### 18.2 Terra e radiali
+
+Radiali interrati: il NEC-2 non tratta i fili interrati; la loro perdita entra come resistenza di terra in serie alla base, dalla Tab. 9-1 di ON4UN con la lunghezza in λ di ogni banda (la tabella va da 0,15 a 0,40 λ: sotto 0,15 λ la resistenza vera e' piu' alta), oppure fissa. Radiali rialzati: fili veri nel modello, sopra il terreno di Sommerfeld; le perdite nel terreno stanno nel guadagno del NEC.
+
+### 18.3 Fonti, somiglianze e differenze
+
+| Fonte | Somiglianze | Differenze |
+|---|---|---|
+| AD5X via N0CU [C113] | Rr 3-4 Ω e circa -j600 Ω sui 160 m, 65 Ω sui 40 m; ROS 324:1 sui 160 m e 41:1 sugli 80 m con il 4:1 e Rg 10 Ω; circa 13 kV alla base a 1500 W sui 160 m; guadagni e angoli su terreno reale | AD5X usa Rg fisso; YA-NEC calcola Rg dai radiali e il diagramma con Sommerfeld, e aggiunge la perdita dell'accordatore |
+| ON4UN [C18], W8JI [C82] | la verticale corta vive dei radiali; l'accordatore deve stare alla base | - |
+| TF5NN [C89] | impedenza del monopolo per la stima immediata | sostituita dal NEC con «Calcola le bande (NEC)» |
+
