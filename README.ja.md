@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="電流とローブ付きの 3D 構造"></a><br><sub>電流とローブ付きの 3D 構造</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM プロファイル上の HFTA 方式の実地形"></a><br><sub>DEM プロファイル上の HFTA 方式の実地形</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="受信: RDF、DMF とノイズ"></a><br><sub>受信: RDF、DMF とノイズ</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="製作公差 (モンテカルロ)"></a><br><sub>製作公差 (モンテカルロ)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="ケーブルとバラン: コモンモード電流"></a><br><sub>ケーブルとバラン: コモンモード電流</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="クロス八木: RHCP、LHCP、軸比"></a><br><sub>クロス八木: RHCP、LHCP、軸比</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="機械計算: 風 (NTC 2018)"></a><br><sub>機械計算: 風 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="電力分配器と位相ケーブル"></a><br><sub>電力分配器と位相ケーブル</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 負荷: トラップとコイル"></a><br><sub>HF 負荷: トラップとコイル</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="スミスチャート"></a><br><sub>スミスチャート</sub></td></tr></table>
 
+## 1.5.8 の新機能
+
+- **計算機 > HF > ワイヤーアンテナ**: NEC で計算した表を開く **早見表 ›** ボタン (EFHW 49:1 と 64:1 のカウンターポイズ有無、9:1 と最良のカウンターポイズ、平均または完全大地)。行をページにコピーでき、自由計算もそのまま使えます。
+- **最適化**: **VHF マスク SWR + G/T**。30 度の 2 x 2 スタック (DL6WU 間隔、VE7BQH の温度、プリアンプ 20 dB、ケーブル 2 dB) の G/T を SWR と一緒に最適化します。
+- **計算マニュアル**: 第 16 章と 8.4 節。**ビデオ講座**: 第 32 回。
+
 ## 1.5.7 の新機能
 
 - **ワイヤーアンテナ**: ローディングコイルは EFHW の選択肢(あり/なし)になり、**コイルを合わせる(NEC)** がカウンターポイズと大地を含めて正しいインダクタンスを求めます。

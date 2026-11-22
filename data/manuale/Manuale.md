@@ -2187,4 +2187,5 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - Calcolatori > HF > Filari: pulsante **Abaco ›** con le tabelle di lunghezze e contrappesi calcolate con il NEC (EFHW 49:1 e 64:1 con e senza contrappeso, 9:1 con il contrappeso migliore), terreno medio o perfetto; una riga si copia nella scheda e poi il calcolo resta libero.
 - Filari: contrappeso «nessuno» (la calza del coassiale fino alla radio, con la sua lunghezza).
 - Manuale di calcolo e delle fonti: nuovo capitolo 16, «Filari alimentate in punta».
+- Videocorso: nuova lezione 32 «Maschera VHF ROS + G/T».
 - Variabili e ottimizzazione > Ottimizzatore: **maschera VHF ROS + G/T**, che ottimizza il G/T dello stack (2 x 2 a 30 gradi, distanze DL6WU, temperature di VE7BQH, preamplificatore 20 dB, 2 dB di cavo) insieme al ROS.

@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 32 lezioni brevi (3-5 minuti), in italiano e in inglese. Tutte girate con la 1.5.3 (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
+Un corso completo in 33 lezioni brevi (2-5 minuti), in italiano e in inglese. Girate con la 1.5.3 (la 32 con la 1.5.8) (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -294,6 +294,15 @@ Calcolatori > Strumenti > Cavi RG: 20 m di RG-59 a 144,3 MHz perdono 2,7 dB (13,
 Loop Skywire per gli 80 m (83,8 m, 14 m d'altezza, scala da 450 ohm: 122 - j21 ohm, 7,1 dBi verso lo zenit); loop rettangolare a 14,2 MHz portato in risonanza col NEC (22,26 m, 124,8 ohm); HEN a 50,15 MHz (lati 2,899 m, 66,5 ohm, 5 dBi, polarizzazione orizzontale); Big Wheel a 145 MHz con dima del petalo e mozzo in PDF 1:1; biquad a 2442 MHz; antenne su PCB a 2,4 GHz (IFA su FR4, PDF 1:1 e DXF). Fonti: W7FB, NT0Z, JE1DEU, W1IJD, W1FVY, F1BKM, TI, Kent Electronics.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_31_altri_calcolatori_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_31_altri_calcolatori_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_32_maschera_vhf_gt_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_32.jpg" alt="Lezione 32 - Maschera VHF ROS + G/T"></a></td><td>
+
+### Lezione 32 - Maschera VHF ROS + G/T
+
+Variabili e ottimizzazione › Ottimizzatore, la maschera VHF della 1.5.8 sulla Yagi 10 elementi a 144 MHz: ROS con soglia 1,3 e G/T dello stack 2 x 2 a 30 gradi come VE7BQH (distanze DL6WU ricalcolate a ogni passo, cielo 200 K e terreno 1000 K, preamplificatore 20 dB, 2 dB di cavo). In 89 passi il G/T sale da -2,95 a -2,81 dB/K e il ROS peggiore in banda scende da 1,66 a 1,33; tabella prima / dopo con lo stack NEC completo.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_32_maschera_vhf_gt_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_32_maschera_vhf_gt_IT.srt)
 
 </td></tr></table>
 

@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.5.8 새 기능
+
+- **계산기 > HF > 와이어 안테나**: NEC로 계산한 표를 여는 **차트 ›** 버튼 (EFHW 49:1, 64:1 카운터포이즈 유무, 9:1과 최적 카운터포이즈, 평균 또는 완전 대지). 행을 페이지로 복사할 수 있고 자유 계산은 그대로 사용할 수 있습니다.
+- **최적화**: **VHF 마스크 SWR + G/T**. 30도 2 x 2 스택(DL6WU 간격, VE7BQH 온도, 프리앰프 20 dB, 케이블 2 dB)의 G/T를 SWR과 함께 최적화합니다.
+- **계산 설명서**: 16장과 8.4절. **비디오 강좌**: 32강.
+
 ## 1.5.7 새 기능
 
 - **와이어 안테나**: 로딩 코일은 EFHW의 선택 사항(예/아니오)이 되었고, **코일 맞추기(NEC)**가 카운터포이즈와 대지를 포함해 올바른 인덕턴스를 찾습니다.

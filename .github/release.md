@@ -2,7 +2,14 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
-**Novità della 1.5.7** (capitolo 26.7 del manuale):
+**Novità della 1.5.8** (capitolo 26.8 del manuale):
+- **Filari > Abaco ›**: tabelle di lunghezze e contrappesi calcolate con il NEC, filo orizzontale a 3 m su terreno medio o perfetto: EFHW 49:1 e 64:1 (λ/2 con la formula, accordata e multibanda; λ/4 difficile) con il contrappeso di 0,05 λ o senza (fa da contrappeso la calza di 10 m di coassiale), 9:1 per filo e scansione delle lunghezze con il contrappeso migliore. «Usa questa riga nella scheda» la copia nei Filari, che restano liberi per il calcolo. Contrappeso «nessuno» = calza del coassiale fino alla radio;
+- **Ottimizzatore > Maschera VHF ROS + G/T**: ottimizza il G/T di sistema dello stack (2 x 2, 2 affiancate, 2 sovrapposte o singola) a 30 gradi, alle distanze DL6WU ricalcolate a ogni passo, con le temperature di VE7BQH, preamplificatore 20 dB e 2 dB di cavo; calcolo veloce con il fattore di schiera e controllo con lo stack NEC completo ogni 10 passi; tabella prima / dopo;
+- **Manuale di calcolo e delle fonti**: capitolo 16 «Filari alimentate in punta» (con le misure dei nuclei di DG1JAN e la pagina di AA5TB lette direttamente) e paragrafo 8.4 sul G/T dello stack;
+- **Videocorso**: 33 lezioni, con la nuova 32 «Maschera VHF ROS + G/T»;
+- **Traduzioni**: Ottimizzatore (note, fasi, legenda del diagramma, scheda SWR); le descrizioni delle variabili scritte nel modello restano come le ha scritte l'autore.
+
+**Dalla 1.5.7:**
 - **Filari**: la bobina di carico è una scelta dell'EFHW (sì / no) invece di un tipo a parte; con la bobina il pulsante **Accorda la bobina (NEC)** cerca l'induttanza con il ROS più basso alla banda della bobina, con contrappeso e terreno;
 - **Traduzioni**: gli avvisi arancio di tutti i calcolatori ora si traducono (il simbolo ⚠ lo impediva); scheda Filari completa in inglese; scritte dei disegni e del calcolo in tempo reale tradotte; nei Filari «Contrappeso RF» = «Counterpoise»;
 - **Struttura 3D**: il filo isolato (LD 7) non si disegna più come una fila di bobine; il calcolo non cambia.

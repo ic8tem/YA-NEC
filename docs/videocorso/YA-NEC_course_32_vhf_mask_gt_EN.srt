@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:05,618
+Lesson 32: optimizer: VHF mask SWR + G/T
+
+2
+00:00:05,668 --> 00:00:23,556
+YA-NEC course, lesson 32: the Optimizer with the VHF mask, SWR and G/T. I open the 10-element 144 MHz Yagi example with variables.
+
+3
+00:00:23,606 --> 00:00:38,593
+Variables and optimization, Optimizer. Besides the usual goals there is the new stack G/T; in the middle the five variables of the model.
+
+4
+00:00:38,643 --> 00:00:43,993
+Below the goals, the purple VHF mask panel, active from 50 MHz up.
+
+5
+00:00:44,043 --> 00:01:01,727
+The button sets SWR to 60 with a 1.3 threshold and G/T to 100, all the others to zero: G/T already contains gain and rear lobes. The frequencies become 144.0, 144.3 and 144.6 MHz.
+
+6
+00:01:01,777 --> 00:01:12,951
+The G/T is the VE7BQH one: a 2 x 2 stack at DL6WU spacings, recalculated at every step from the -3 dB beamwidths, aimed at 30 degrees.
+
+7
+00:01:13,001 --> 00:01:27,558
+Uniform sky 200 K and ground 1000 K. System G/T: preamplifier with 0.25 dB NF and 20 dB gain, 0.2 dB combiner before it and 2 dB of cable after it.
+
+8
+00:01:27,608 --> 00:01:38,958
+Fast calculation: the single antenna times the array factor, and every 10 steps the complete stack with NEC, coupling included, which corrects the fast one.
+
+9
+00:01:39,008 --> 00:01:44,491
+For this lesson no Monte Carlo: zero random starts, zero candidates.
+
+10
+00:01:44,541 --> 00:01:47,715
+Start.
+
+11
+00:01:47,765 --> 00:02:05,485
+89 steps in 25 seconds. At the top the stack G/T card: from -2.95 to -2.81 dB/K, +0.15 dB. SWR 1.06 at the centre and 1.33 at the worst in band.
+
+12
+00:02:05,535 --> 00:02:19,509
+The Before / after panel: antenna T from 273 to 263 K with the same stack gain, 21.69 dBi. The G/T rises because the pattern picks up less hot ground.
+
+13
+00:02:19,559 --> 00:02:34,290
+The DL6WU spacings go from 3.79 x 4.03 to 3.72 x 3.97 m. These G/T values come from the complete NEC stack; 9 NEC checks during the optimization.
+
+14
+00:02:34,340 --> 00:02:46,598
+SWR and G/T together: the optimizer works for the EME stack, not for the single antenna. Apply to model copies the values into Variables. 73 de IC8TEM

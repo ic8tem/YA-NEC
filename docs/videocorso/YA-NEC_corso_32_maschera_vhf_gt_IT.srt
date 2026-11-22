@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 32: ottimizzatore: maschera VHF ROS + G/T
+
+2
+00:00:05,000 --> 00:00:20,272
+Corso YA-NEC, lezione 32: l'Ottimizzatore con la maschera VHF, ROS e G/T. Apro l'esempio Yagi 10 elementi 144 MHz con le variabili.
+
+3
+00:00:20,322 --> 00:00:35,347
+Variabili e ottimizzazione, Ottimizzatore. Oltre agli obiettivi di sempre c'e' il nuovo G/T stack; al centro le cinque variabili del modello.
+
+4
+00:00:35,397 --> 00:00:41,747
+Sotto gli obiettivi il riquadro viola della maschera VHF, attivo da 50 MHz in su.
+
+5
+00:00:41,797 --> 00:00:54,880
+Il pulsante mette il ROS a 60 con soglia 1,3 e il G/T a 100, tutti gli altri a zero: il G/T contiene gia' guadagno e lobi posteriori. Le frequenze diventano 144,0, 144,3 e 144,6 MHz.
+
+6
+00:00:54,930 --> 00:01:04,481
+Il G/T e' quello di VE7BQH: stack 2 x 2 alle distanze DL6WU, ricalcolate a ogni passo dalle aperture a -3 dB, puntato a 30 gradi.
+
+7
+00:01:04,531 --> 00:01:15,681
+Cielo 200 K e terreno 1000 K uniformi. G/T di sistema: preamplificatore con NF 0,25 dB e 20 dB di guadagno, combinatore 0,2 dB prima e 2 dB di cavo dopo.
+
+8
+00:01:15,731 --> 00:01:27,014
+Calcolo veloce: la singola antenna per il fattore di schiera, e ogni 10 passi lo stack completo con il NEC, accoppiamento compreso, che corregge il veloce.
+
+9
+00:01:27,064 --> 00:01:32,814
+Per la lezione niente Monte Carlo: zero partenze a caso, zero candidati.
+
+10
+00:01:32,864 --> 00:01:36,048
+Avvia.
+
+11
+00:01:36,098 --> 00:01:45,782
+89 passi in 25 secondi. In alto la scheda G/T stack: da -2,95 a -2,81 dB/K, +0,15 dB. ROS 1,06 al centro e 1,33 al peggio in banda.
+
+12
+00:01:45,832 --> 00:01:57,449
+Il riquadro Prima / dopo: T antenna da 273 a 263 K con lo stesso guadagno dello stack, 21,69 dBi. Il G/T sale perche' il diagramma raccoglie meno terreno caldo.
+
+13
+00:01:57,499 --> 00:02:07,982
+Le distanze DL6WU passano da 3,79 x 4,03 a 3,72 x 3,97 m. I G/T sono quelli dello stack NEC completo; durante l'ottimizzazione 9 controlli NEC.
+
+14
+00:02:08,032 --> 00:02:13,982
+ROS e G/T insieme: l'ottimizzatore lavora per lo stack EME e non per la singola antenna. Applica al modello copia i valori nelle Variabili. 73 de IC8TEM

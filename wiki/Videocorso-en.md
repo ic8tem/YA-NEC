@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 32 short lessons (3-5 minutes), in Italian and English. All recorded with 1.5.3 (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 33 short lessons (2-5 minutes), in Italian and English. Recorded with 1.5.3 (lesson 32 with 1.5.8) (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -294,6 +294,15 @@ Calculators > Tools > RG cables: 20 m of RG-59 at 144.3 MHz lose 2.7 dB (13.5 dB
 Loop Skywire for 80 m (83.8 m, 14 m high, 450 ohm ladder line: 122 - j21 ohm, 7.1 dBi straight up); rectangular loop at 14.2 MHz brought to resonance by NEC (22.26 m, 124.8 ohm); HEN at 50.15 MHz (2.899 m sides, 66.5 ohm, 5 dBi, horizontal polarization); Big Wheel at 145 MHz with 1:1 PDF petal template and hub; biquad at 2442 MHz; 2.4 GHz PCB antennas (IFA on FR4, 1:1 PDF and DXF). Sources: W7FB, NT0Z, JE1DEU, W1IJD, W1FVY, F1BKM, TI, Kent Electronics.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_31_more_calculators_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_31_more_calculators_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_32_vhf_mask_gt_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_32.jpg" alt="Lesson 32 - VHF mask SWR + G/T"></a></td><td>
+
+### Lesson 32 - VHF mask SWR + G/T
+
+Variables and optimization › Optimizer, the 1.5.8 VHF mask on the 10-element 144 MHz Yagi: SWR with a 1.3 threshold and the G/T of a 2 x 2 stack at 30 degrees as VE7BQH (DL6WU spacings recalculated at every step, sky 200 K and ground 1000 K, 20 dB preamp, 2 dB of cable). In 89 steps the G/T rises from -2.95 to -2.81 dB/K and the worst SWR in band drops from 1.66 to 1.33; before / after table with the complete NEC stack.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_32_vhf_mask_gt_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_32_vhf_mask_gt_EN.srt)
 
 </td></tr></table>
 
