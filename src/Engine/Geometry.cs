@@ -401,7 +401,13 @@ namespace YaNec.Engine
             double zy = cth * sps;
             double zz = cth * cps;
             int nrp = nrpt == 0 ? 1 : nrpt;
-            if (N <= 0) return;
+            if (N > 0) MoveFili(xx, xy, xz, yx, yy, yz, zx, zy, zz, xs, ys, zs, its, nrpt, itgi, nrp);
+            MoveSuperfici(xx, xy, xz, yx, yy, yz, zx, zy, zz, xs, ys, zs, nrpt, nrp);
+        }
+
+        void MoveFili(double xx, double xy, double xz, double yx, double yy, double yz, double zx, double zy, double zz,
+                      double xs, double ys, double zs, int its, int nrpt, int itgi, int nrp)
+        {
             int i1 = SegNoLocal(its, 1);
             if (i1 < 1) i1 = 1;
             int k = nrpt == 0 ? i1 - 1 : N;
@@ -430,6 +436,11 @@ namespace YaNec.Engine
                 n = k;
             }
             Truncate(n);
+        }
+
+        void MoveSuperfici(double xx, double xy, double xz, double yx, double yy, double yz, double zx, double zy, double zz,
+                           double xs, double ys, double zs, int nrpt, int nrp)
+        {
             // superfici: si spostano (e con nrpt si copiano) tutte, come move di nec2c
             if (M > 0)
             {
