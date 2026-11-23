@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	στο {0} x DL6WU· όλες πάνω
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Παθητικός δακτύλιος: περίμετρος {0:0.000} lambda, χωρίς πηγή και χωρίς πυκνωτή· η επίδραση φαίνεται στο πλήρες μοντέλο (κατευθυντήρας ή ανακλαστήρας).
 Automatico	Αυτόματο
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, όπως τα nec2c και xnec2c: ο πηγαίος κώδικας συνοδεύει το πρόγραμμα (αρχείο COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, όπως τα nec2c και xnec2c: ο πηγαίος κώδικας συνοδεύει το πρόγραμμα (αρχείο COPYING).\n
 Provincia di Trieste	Επαρχία Τεργέστης
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	και σε C# για το YA-NEC. Διεπαφή αναφοράς: xnec2c των 5B4AZ και Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	απόδοση υπολογισμένη από το μακρινό πεδίο, Prad / (Prad + απώλειες) = {3:0.0} %.

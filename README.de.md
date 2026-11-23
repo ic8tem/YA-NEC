@@ -147,7 +147,7 @@ Alle 30 Minuten prüft das Programm im Hintergrund, ob es hier eine neue Version
 
 ## Danksagung und Lizenz
 
-**GPL-3.0** ([LICENSE](LICENSE), [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)), wie nec2c und xnec2c, von denen die Rechenmaschine abstammt. YA-NEC gibt es dank der Arbeit von Funkamateuren und Forschern: Die vollständige Liste steht in [CREDITI.txt](CREDITI.txt) und im Reiter **Danksagung**. Dank an Luis IV3PRK für die kostenlosen Veröffentlichungen auf seiner Website.
+**GPL-3.0-or-later** ([LICENSE](LICENSE), [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)), wie nec2c und xnec2c, von denen die Rechenmaschine abstammt. YA-NEC gibt es dank der Arbeit von Funkamateuren und Forschern: Die vollständige Liste steht in [CREDITI.txt](CREDITI.txt) und im Reiter **Danksagung**. Dank an Luis IV3PRK für die kostenlosen Veröffentlichungen auf seiner Website.
 
 ## Kontakt
 

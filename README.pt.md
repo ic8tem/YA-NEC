@@ -147,7 +147,7 @@ A cada 30 minutos o programa verifica em silêncio se há aqui uma versão nova.
 
 ## Créditos e licença
 
-**GPL-3.0** ([LICENSE](LICENSE), [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)), como o nec2c e o xnec2c, dos quais deriva o motor. O YA-NEC existe graças ao trabalho de radioamadores e investigadores: a lista completa está em [CREDITI.txt](CREDITI.txt) e no separador **Créditos**. Obrigado a Luis IV3PRK pelas publicações gratuitas no seu site.
+**GPL-3.0-or-later** ([LICENSE](LICENSE), [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)), como o nec2c e o xnec2c, dos quais deriva o motor. O YA-NEC existe graças ao trabalho de radioamadores e investigadores: a lista completa está em [CREDITI.txt](CREDITI.txt) e no separador **Créditos**. Obrigado a Luis IV3PRK pelas publicações gratuitas no seu site.
 
 ## Contactos
 

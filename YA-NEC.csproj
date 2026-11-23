@@ -16,7 +16,8 @@
     <Product>YA-NEC</Product>
     <Authors>Costantino Cerrotta IC8TEM</Authors>
     <Description>YA-NEC - simulatore d'antenne NEC2 (motore nec2c tradotto in C#) per Windows, Linux e Mac</Description>
-    <Copyright>GPL-3.0 - NEC2 (LLNL), nec2c e xnec2c (5B4AZ, KJ7LNW), YA-NEC (IC8TEM)</Copyright>
+    <Copyright>Copyright (C) 2026 Costantino Cerrotta IC8TEM - GPL-3.0-or-later; NEC2 (LLNL), nec2c e xnec2c (5B4AZ, KJ7LNW)</Copyright>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
     <InvariantGlobalization>false</InvariantGlobalization>

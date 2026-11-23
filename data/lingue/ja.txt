@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU で。すべて最大値 {
 57,3 lambda/a	57.3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	無給電リング: 周長 {0:0.000} lambda、電源もコンデンサもありません。効果は完全なモデル (導波器または反射器) で見られます。
 Automatico	自動
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0、nec2c および xnec2c と同じ: ソースコードはプログラムに同梱されています (COPYING ファイル)。\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later、nec2c および xnec2c と同じ: ソースコードはプログラムに同梱されています (COPYING ファイル)。\n
 Provincia di Trieste	トリエステ県
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	、YA-NEC 用に C# で。参考にしたインターフェース: 5B4AZ と Eric KJ7LNW の xnec2c。\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	遠方界から計算した効率、Prad / (Prad + 損失) = {3:0.0} %。

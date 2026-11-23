@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU-nál; mind a maximum felet
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passzív gyűrű: kerület {0:0.000} lambda, forrás és kondenzátor nélkül; a hatás a teljes modellben látszik (direktor vagy reflektor).
 Automatico	Automatikus
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, mint a nec2c és az xnec2c: a forráskód a programmal együtt jár (COPYING fájl).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, mint a nec2c és az xnec2c: a forráskód a programmal együtt jár (COPYING fájl).\n
 Provincia di Trieste	Trieszt megye
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	és C#-ban a YA-NEC-hez. Referencia-felület: xnec2c, 5B4AZ és Eric KJ7LNW munkája.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	hatásfok a távoli térből számolva, Prad / (Prad + veszteségek) = {3:0.0} %.

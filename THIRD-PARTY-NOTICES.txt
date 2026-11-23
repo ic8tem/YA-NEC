@@ -1,7 +1,9 @@
 YA-NEC - NOTE DI TERZE PARTI
 ============================
 
-YA-NEC: Copyright (C) 2026 Costantino Cerrotta IC8TEM - GNU GPL 3.0 o successiva (file LICENSE).
+YA-NEC: Copyright (C) 2026 Costantino Cerrotta IC8TEM
+Licenza: GNU GPL 3.0 o successiva (SPDX: GPL-3.0-or-later), testo nel file LICENSE (e COPYING).
+Il motore deriva da codice GPL (nec2c, xnec2c-optimize): per questo YA-NEC resta sotto GPL.
 
 Questo programma include o deriva dai componenti di terze parti elencati qui sotto.
 L'elenco completo delle fonti, degli autori dei modelli di esempio e degli articoli usati
@@ -43,6 +45,28 @@ Avviso completo in data/cielo/LICENCE-skynoise.txt (testo MIT anche qui sotto).
 
 nec2-array - YO3IIU - GNU GPL 2 o successiva
 Riferimento del metodo per la matrice di accoppiamento tra le porte: nessun codice incluso.
+
+nec2c-ae6ty - E. S. Harriman AE6TY - licenza MIT
+https://github.com/ae6ty/nec2c-ae6ty
+Idea della fattorizzazione LU a blocchi in parallelo (riscritta in C#).
+
+hf-nec2c - R. Sutherland - licenza BSD-2-Clause
+https://github.com/sutherlandryan/hf-nec2c
+Costanti della routine zint (perdite dei fili) verificate sul listato Fortran.
+
+nec2-rs - UR3PKI (CyberDev-space) - licenza MIT
+https://github.com/CyberDev-space/nec2-rs
+Elenco delle differenze tra nec2c e il Fortran e controlli di ingresso (1.5.9); confronto
+per le superfici SP/SM/SC. Nessun codice incluso.
+
+momwire - Steven M. Burns - licenza MIT
+https://github.com/stevenmburns/momwire
+File di prova (rifiuti dei dati sbagliati, confronti con NEC-4.2) usati solo nelle verifiche
+della 1.5.9; descrizione del difetto degli anelli con giunzioni (avviso g7). Nessun file incluso.
+
+AntennaSim - EA1FUO - GNU GPL 3.0
+https://github.com/EA1FUO/AntennaSim
+Solo l'idea delle correnti animate e dei valori col mouse nella Struttura 3D: nessun codice.
 
 ---------------------------------------------------------
 LIBRERIE INCLUSE NEI PACCHETTI

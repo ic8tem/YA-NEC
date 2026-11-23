@@ -52,7 +52,7 @@ namespace YaNec
                 "e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n" +
                 "I crediti completi sono nella linguetta Crediti."));
             body.Children.Add(Section("LICENZA",
-                "GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n" +
+                "GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n" +
                 "Il programma e' fornito cosi' com'e', senza garanzie: verificare sempre i risultati dei modelli."));
 
             // due pulsanti: uno a sinistra, uno a destra

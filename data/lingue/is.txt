@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	við {0} x DL6WU; öll yfir hámarkinu
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Óvirkur hringur: ummál {0:0.000} lambda, enginn gjafi og enginn þéttir; áhrifin sjást í heildarlíkaninu (stýrir eða endurvarpi).
 Automatico	Sjálfvirkt
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, eins og nec2c og xnec2c: frumkóðinn fylgir forritinu (skráin COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, eins og nec2c og xnec2c: frumkóðinn fylgir forritinu (skráin COPYING).\n
 Provincia di Trieste	Trieste-hérað
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	og í C# fyrir YA-NEC. Viðmiðunarviðmót: xnec2c eftir 5B4AZ og Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	nýtni reiknuð út frá fjarsviðinu, Prad / (Prad + töp) = {3:0.0} %.

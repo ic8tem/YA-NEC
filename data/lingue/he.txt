@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	ב-{0} x DL6WU; כולם מעל המק
 57,3 lambda/a	57.3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	טבעת פסיבית: היקף {0:0.000} lambda, ללא מקור וללא קבל; ההשפעה נראית במודל המלא (מכוון או מחזיר).
 Automatico	אוטומטי
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, כמו nec2c ו-xnec2c: קוד המקור מגיע עם התוכנה (קובץ COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, כמו nec2c ו-xnec2c: קוד המקור מגיע עם התוכנה (קובץ COPYING).\n
 Provincia di Trieste	מחוז טריאסטה
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	וב-C# עבור YA-NEC. ממשק ייחוס: xnec2c של 5B4AZ ושל Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	יעילות מחושבת מהשדה הרחוק, Prad / (Prad + הפסדים) = {3:0.0} %.

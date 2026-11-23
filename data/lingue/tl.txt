@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	sa {0} x DL6WU; lahat ay lampas sa max
 57,3 lambda/a	57.3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passive na singsing: perimeter {0:0.000} lambda, walang source at walang capacitor; makikita ang epekto sa buong modelo (director o reflector).
 Automatico	Awtomatiko
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, gaya ng nec2c at xnec2c: kasama ng programa ang source code (file na COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, gaya ng nec2c at xnec2c: kasama ng programa ang source code (file na COPYING).\n
 Provincia di Trieste	Lalawigan ng Trieste
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	at sa C# para sa YA-NEC. Sangguniang interface: xnec2c nina 5B4AZ at Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	efficiency na kinalkula mula sa far field, Prad / (Prad + mga loss) = {3:0.0} %.

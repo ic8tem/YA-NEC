@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	ved {0} x DL6WU; alle over maksimum {1
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Passiv ring: omkreds {0:0.000} lambda, ingen kilde og ingen kondensator; virkningen ses i den fuldstændige model (direktor eller reflektor).
 Automatico	Automatisk
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, ligesom nec2c og xnec2c: kildekoden følger med programmet (filen COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, ligesom nec2c og xnec2c: kildekoden følger med programmet (filen COPYING).\n
 Provincia di Trieste	Provinsen Trieste
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	og i C# til YA-NEC. Referencegrænseflade: xnec2c af 5B4AZ og Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	virkningsgrad beregnet ud fra fjernfeltet, Prad / (Prad + tab) = {3:0.0} %.

@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU-এ; সব সর্ব�
 57,3 lambda/a	57.3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	নিষ্ক্রিয় বলয়: পরিধি {0:0.000} lambda, উৎস ও ধারক ছাড়া; প্রভাব পূর্ণ মডেলে দেখা যায় (ডিরেক্টর বা রিফ্লেক্টর)।
 Automatico	স্বয়ংক্রিয়
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, nec2c ও xnec2c-এর মতো: উৎস কোড প্রোগ্রামের সাথে আসে (COPYING ফাইল)।\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, nec2c ও xnec2c-এর মতো: উৎস কোড প্রোগ্রামের সাথে আসে (COPYING ফাইল)।\n
 Provincia di Trieste	ত্রিয়েস্তে প্রদেশ
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	এবং YA-NEC-এর জন্য C#-এ। রেফারেন্স ইন্টারফেস: 5B4AZ ও Eric KJ7LNW-এর xnec2c।\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	দূর ক্ষেত্র থেকে গণিত দক্ষতা, Prad / (Prad + ক্ষতি) = {3:0.0} %।

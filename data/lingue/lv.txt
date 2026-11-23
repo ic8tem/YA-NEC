@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	pie {0} x DL6WU; visi virs maksimuma {
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasīvs gredzens: perimetrs {0:0.000} lambda, bez avota un bez kondensatora; ietekme redzama pilnajā modelī (direktors vai reflektors).
 Automatico	Automātiski
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, kā nec2c un xnec2c: pirmkods ir pievienots programmai (fails COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, kā nec2c un xnec2c: pirmkods ir pievienots programmai (fails COPYING).\n
 Provincia di Trieste	Triestes province
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	un C# valodā YA-NEC vajadzībām. Atsauces saskarne: xnec2c, autori 5B4AZ un Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	efektivitāte aprēķināta no tālā lauka, Prad / (Prad + zudumi) = {3:0.0} %.

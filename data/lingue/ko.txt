@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU에서. 모두 최대값 {1
 57,3 lambda/a	57.3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	무급전 링: 둘레 {0:0.000} lambda, 급전원과 커패시터 없음. 효과는 전체 모델 (도파기 또는 반사기)에서 보입니다.
 Automatico	자동
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, nec2c 및 xnec2c와 같음: 소스 코드는 프로그램과 함께 제공됩니다 (COPYING 파일).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, nec2c 및 xnec2c와 같음: 소스 코드는 프로그램과 함께 제공됩니다 (COPYING 파일).\n
 Provincia di Trieste	트리에스테 현
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	, YA-NEC용으로 C#에서. 참고한 인터페이스: 5B4AZ와 Eric KJ7LNW의 xnec2c.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	원역장에서 계산한 효율, Prad / (Prad + 손실) = {3:0.0} %.

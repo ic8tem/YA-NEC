@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	{0} x DL6WU'da; tümü azami {1} üzer
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasif halka: çevre {0:0.000} lambda, kaynaksız ve kondansatörsüz; etki tam modelde görülür (direktör veya reflektör).
 Automatico	Otomatik
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, nec2c ve xnec2c gibi: kaynak kod programla birlikte gelir (COPYING dosyası).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, nec2c ve xnec2c gibi: kaynak kod programla birlikte gelir (COPYING dosyası).\n
 Provincia di Trieste	Trieste ili
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	ve YA-NEC için C# ile. Başvuru arayüzü: 5B4AZ ve Eric KJ7LNW'nin xnec2c'si.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	uzak alandan hesaplanan verim, Prad / (Prad + kayıplar) = %{3:0.0}.

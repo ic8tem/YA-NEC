@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	при {0} x DL6WU; усі вище м
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Пасивне кільце: периметр {0:0.000} lambda, без джерела й без конденсатора; ефект видно в повній моделі (директор або рефлектор).
 Automatico	Автоматично
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, як nec2c і xnec2c: вихідний код постачається з програмою (файл COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, як nec2c і xnec2c: вихідний код постачається з програмою (файл COPYING).\n
 Provincia di Trieste	Провінція Трієст
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	і на C# для YA-NEC. Еталонний інтерфейс: xnec2c від 5B4AZ і Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	ККД, розрахований за дальнім полем, Prad / (Prad + втрати) = {3:0.0} %.

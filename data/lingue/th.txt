@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	ที่ {0} x DL6WU; ทั้งห
 57,3 lambda/a	57.3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	วงแหวนไม่ป้อน: เส้นรอบรูป {0:0.000} lambda ไม่มีแหล่งจ่ายและตัวเก็บประจุ ผลเห็นได้ในแบบจำลองเต็ม (ไดเรกเตอร์หรือรีเฟลกเตอร์)
 Automatico	อัตโนมัติ
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0 เหมือน nec2c และ xnec2c: ซอร์สโค้ดมาพร้อมโปรแกรม (ไฟล์ COPYING)\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later เหมือน nec2c และ xnec2c: ซอร์สโค้ดมาพร้อมโปรแกรม (ไฟล์ COPYING)\n
 Provincia di Trieste	จังหวัดตรีเยสเต
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	และใน C# สำหรับ YA-NEC อินเทอร์เฟซอ้างอิง: xnec2c ของ 5B4AZ และ Eric KJ7LNW\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	ประสิทธิภาพที่คำนวณจากสนามไกล Prad / (Prad + ความสูญเสีย) = {3:0.0} %

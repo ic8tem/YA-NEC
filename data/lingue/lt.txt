@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	ties {0} x DL6WU; visi virš maksimumo
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pasyvus žiedas: perimetras {0:0.000} lambda, be šaltinio ir be kondensatoriaus; poveikis matomas pilname modelyje (direktorius ar reflektorius).
 Automatico	Automatiškai
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, kaip nec2c ir xnec2c: išeities kodas pridedamas prie programos (failas COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, kaip nec2c ir xnec2c: išeities kodas pridedamas prie programos (failas COPYING).\n
 Provincia di Trieste	Triesto provincija
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	ir C# kalba YA-NEC. Atskaitos sąsaja: xnec2c, autoriai 5B4AZ ir Eric KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	naudingumo koeficientas, apskaičiuotas iš tolimojo lauko, Prad / (Prad + nuostoliai) = {3:0.0} %.

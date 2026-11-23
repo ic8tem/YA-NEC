@@ -4907,7 +4907,7 @@ a {0} x DL6WU; tutte sopra il massimo {1}	przy {0} x DL6WU; wszystkie powyżej m
 57,3 lambda/a	57,3 lambda/a
 Anello passivo: perimetro {0:0.000} lambda, nessuna sorgente e nessun condensatore; l'effetto si vede nel modello completo (direttore o riflettore).	Pierścień pasywny: obwód {0:0.000} lambda, bez źródła i bez kondensatora; efekt widać w pełnym modelu (direktor lub reflektor).
 Automatico	Automatycznie
-GPL-3.0, come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0, jak nec2c i xnec2c: kod źródłowy jest dołączony do programu (plik COPYING).\n
+GPL-3.0-or-later (GPL 3 o successiva), come nec2c e xnec2c: il codice sorgente accompagna il programma (file COPYING).\n	GPL-3.0-or-later, jak nec2c i xnec2c: kod źródłowy jest dołączony do programu (plik COPYING).\n
 Provincia di Trieste	Prowincja Triestu
 e in C# per YA-NEC. Interfaccia di riferimento: xnec2c di 5B4AZ e Eric KJ7LNW.\n	i w C# dla YA-NEC. Interfejs odniesienia: xnec2c autorstwa 5B4AZ i Erica KJ7LNW.\n
 efficienza calcolata dal campo lontano, Prad / (Prad + perdite) = {3:0.0} %.	sprawność obliczona z pola dalekiego, Prad / (Prad + straty) = {3:0.0} %.
