@@ -14,7 +14,6 @@ namespace YaNec.Engine
     public sealed partial class Nec2Engine
     {
         const double FPI = 12.56637062, PI8 = 25.13274123, CONST2 = 4.771341188;
-        static readonly Complex CONST4 = new Complex(0.0, 188.365);
 
         // ---- superfici: in metri (dalla geometria) e in lunghezze d'onda (frequenza corrente) ----
         readonly int m, neq;
