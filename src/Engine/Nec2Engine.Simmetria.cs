@@ -31,7 +31,7 @@ namespace YaNec.Engine
         bool SimmetriaUsabile()
         {
             int np = geo.SymNp, nop = geo.SymNop;
-            if (!UsaSimmetrie || nop < 2 || np < 1 || np * nop != n) return false;
+            if (!UsaSimmetrie || nop < 2 || np < 1 || np * nop != n || m > 0) return false;
             string piani = geo.SymPiani ?? "";
             if (ksymp == 2 && piani.Contains("z")) return false;       // riflessione nel piano del terreno: non ammessa
             // estensione del modello per la tolleranza

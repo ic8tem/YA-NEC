@@ -101,6 +101,9 @@ namespace YaNec.Engine
         // dopo averla verificata sui segmenti (Nec2Engine.Simmetria).
         public int SymNp, SymNop;
         public string SymPiani = "";
+        // 1.5.9: superfici (patch SP/SM/SC) in metri: centro, versori tangenti t1 e t2, area (m2), segno (psalp: -1 sulle copie riflesse)
+        public int M;
+        public double[] PX, PY, PZ, T1X, T1Y, T1Z, T2X, T2Y, T2Z, PArea, PSalp;
 
         public double CenterX(int i) { return (X1[i] + X2[i]) / 2; }
         public double CenterY(int i) { return (Y1[i] + Y2[i]) / 2; }

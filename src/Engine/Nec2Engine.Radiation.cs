@@ -128,6 +128,13 @@ namespace YaNec.Engine
             }
             eth = (cix * thx + ciy * thy + ciz * thz) * CONST3;
             eph = (cix * phx + ciy * phy) * CONST3;
+            if (m > 0)
+            {
+                // 1.5.9: campo delle superfici (fflds di nec2c)
+                Complex sth, sph;
+                CampoSuperfici(thx, thy, thz, phx, phy, rox, roy, roz, kmax, out sth, out sph);
+                eth += sth; eph += sph;
+            }
         }
 
         /// <summary>Costante di guadagno di potenza (rdpat: gcop) = lambda^2 * 2pi / (376.73 * Pin).</summary>

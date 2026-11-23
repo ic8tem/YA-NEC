@@ -113,6 +113,14 @@ namespace YaNec.Engine
             air = new double[n]; aii = new double[n]; bir = new double[n]; bii = new double[n]; cir = new double[n]; cii = new double[n];
             int maxj = n + 4;
             jco = new int[maxj]; ax = new double[maxj]; bx = new double[maxj]; cx = new double[maxj];
+            // 1.5.9: superfici (patch)
+            m = g.M;
+            neq = n + 2 * m;
+            pxm = m > 0 ? (double[])g.PX.Clone() : new double[0]; pym = m > 0 ? (double[])g.PY.Clone() : new double[0]; pzm = m > 0 ? (double[])g.PZ.Clone() : new double[0];
+            pam = m > 0 ? (double[])g.PArea.Clone() : new double[0]; psalp = m > 0 ? (double[])g.PSalp.Clone() : new double[0];
+            t1x = m > 0 ? (double[])g.T1X.Clone() : new double[0]; t1y = m > 0 ? (double[])g.T1Y.Clone() : new double[0]; t1z = m > 0 ? (double[])g.T1Z.Clone() : new double[0];
+            t2x = m > 0 ? (double[])g.T2X.Clone() : new double[0]; t2y = m > 0 ? (double[])g.T2Y.Clone() : new double[0]; t2z = m > 0 ? (double[])g.T2Z.Clone() : new double[0];
+            px = new double[m]; py = new double[m]; pz = new double[m]; pbi = new double[m];
 
             // dati dei segmenti come nella scheda GE di nec2c
             for (int i = 0; i < n; i++)
@@ -154,6 +162,7 @@ namespace YaNec.Engine
                 x[i] = xm[i] * fr; y[i] = ym[i] * fr; z[i] = zm[i] * fr;
                 si[i] = sim[i] * fr; bi[i] = bim[i] * fr;
             }
+            if (m > 0) ScalaSuperfici(fr);
             PreparaGiunzioniNec4();   // 1.2.0: carica alle giunzioni come il NEC-4 (opzione, spenta di partenza)
 
             // carichi
@@ -196,6 +205,8 @@ namespace YaNec.Engine
                         gsT1 = new Complex(0.0, 2367.067 / nradl);
                         gsT2 = scrwr * nradl;
                     }
+                    if (iperf == 2 && m > 0)
+                        throw new NecException("Le superfici (SP/SM/SC) non si calcolano con il terreno di Sommerfeld (GN 2), come nel NEC-2: usa il terreno perfetto o il coefficiente di riflessione (GN 0).");
                     if (iperf == 2)
                     {
                         gw_u = zrati;
@@ -210,6 +221,9 @@ namespace YaNec.Engine
 
             // sorgenti
             if (sources == null || sources.Count == 0) throw new NecException("Il modello non ha sorgenti (scheda EX).");
+            if (m > 0)
+                foreach (SourceSpec q in sources)
+                    if (q.Qds) throw new NecException("Sorgente EX 5 con le superfici (SP/SM/SC): non ancora calcolata; usa EX 0.");
             int[] isant = new int[sources.Count];
             Complex[] vsant = new Complex[sources.Count];
             for (int k = 0; k < sources.Count; k++)
@@ -226,15 +240,15 @@ namespace YaNec.Engine
             if (FattorizzaSimmetrica(rkhIn, extendedKernel ? 1 : 0)) risolvi = RisolviSimmetrica;
             else
             {
-                Complex[] cm = new Complex[(long)n * n];
+                Complex[] cm = new Complex[(long)neq * neq];
                 System.Diagnostics.Stopwatch swF = System.Diagnostics.Stopwatch.StartNew();
                 using (Prestazioni.Misura("Motore: riempimento della matrice", null, false)) CmSet(cm, rkhIn, extendedKernel ? 1 : 0);
                 MsRiempimento = swF.Elapsed.TotalMilliseconds;
-                int[] ip = new int[n];
+                int[] ip = new int[neq];
                 swF.Restart();
-                using (Prestazioni.Misura("Motore: fattorizzazione LU", null, false)) Factr(n, cm, ip, n);
+                using (Prestazioni.Misura("Motore: fattorizzazione LU", null, false)) Factr(neq, cm, ip, neq);
                 MsFattorizzazione = swF.Elapsed.TotalMilliseconds;
-                risolvi = b => SolveLu(n, cm, ip, b, n);
+                risolvi = b => SolveLu(neq, cm, ip, b, neq);
             }
 
             System.Diagnostics.Stopwatch swR = System.Diagnostics.Stopwatch.StartNew();
@@ -245,7 +259,7 @@ namespace YaNec.Engine
             else
             {
                 // termine noto: campo applicato dalle sorgenti di tensione (etmns)
-                Complex[] e = new Complex[n];
+                Complex[] e = new Complex[neq];
                 for (int k = 0; k < isant.Length; k++)
                 {
                     if (sources[k].Qds) continue;
@@ -256,7 +270,7 @@ namespace YaNec.Engine
                 for (int k = 0; k < isant.Length; k++)
                     if (sources[k].Qds) Qdsrc(isant[k], vsant[k], e);
                 risolvi(e);
-                cur = e;
+                cur = AllargaPerSuperfici(e);
                 Cabc(cur);
 
                 // parametri d'ingresso
@@ -337,10 +351,11 @@ namespace YaNec.Engine
             Complex[,] ys = new Complex[np, np];
             for (int p = 0; p < np; p++)
             {
-                Complex[] ep = new Complex[n];
+                Complex[] ep = new Complex[neq];
                 int sp = ports[p] - 1;
                 ep[sp] = -1.0 / (si[sp] * wlam);
                 risolvi(ep);
+                ep = AllargaPerSuperfici(ep);
                 Cabc(ep);
                 for (int q = 0; q < np; q++) ys[q, p] = ep[ports[q] - 1] * wlam;
             }
@@ -429,14 +444,14 @@ namespace YaNec.Engine
             }
 
             // 4) soluzione con tutte le tensioni delle porte
-            Complex[] e = new Complex[n];
+            Complex[] e = new Complex[neq];
             for (int p = 0; p < np; p++)
             {
                 int sp = ports[p] - 1;
                 e[sp] = -v[p] / (si[sp] * wlam);
             }
             risolvi(e);
-            cur = e;
+            cur = AllargaPerSuperfici(e);
             Cabc(cur);
 
             Sources = new List<SourceResult>();
@@ -612,6 +627,16 @@ namespace YaNec.Engine
             }
             for (int i = 0; i < n; i++)
                 curx[i] = new Complex(air[i] + cir[i], aii[i] + cii[i]);
+            if (m > 0) CabcSuperfici(curx);
+        }
+
+        // 1.5.9: le correnti delle patch occupano 2 posti nella soluzione (t1, t2) e 3 dopo cabc (x, y, z)
+        Complex[] AllargaPerSuperfici(Complex[] e)
+        {
+            if (m == 0) return e;
+            Complex[] c = new Complex[n + 3 * m];
+            Array.Copy(e, c, neq);
+            return c;
         }
 
         // ======================= qdsrc: sorgente EX 5 (discontinuita' di pendenza della corrente) =======================

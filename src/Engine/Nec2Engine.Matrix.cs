@@ -23,8 +23,9 @@ namespace YaNec.Engine
         // nObs: segmenti di osservazione riempiti (n = matrice intera; con le simmetrie solo la prima copia, Nec2Engine.Simmetria)
         void CmSet(Complex[] cm, double rkhx, int iexkx, int nObs = -1)
         {
-            int nrow = n;
+            int nrow = neq;
             if (nObs < 0) nObs = n;
+            if (m > 0) nObs = n;   // con le superfici niente simmetrie: matrice intera
             rkh = rkhx;
             iexk = iexkx;
             Array.Clear(cm, 0, cm.Length);
@@ -45,7 +46,7 @@ namespace YaNec.Engine
                         w.Cmww(j, i1, i2, cm, nrow, i1 - 1);
                     }
                 });
-                if (nload == 0) return;
+                if (nload == 0) { if (m > 0) CmSetSuperfici(cm, nrow); return; }
                 for (int j = 1; j <= nObs; j++)
                 {
                     Complex zaj = zarray[j - 1];
@@ -57,6 +58,7 @@ namespace YaNec.Engine
                         cm[(jss - 1) + (long)(j - 1) * nrow] -= (ax[i] + cx[i]) * zaj;
                     }
                 }
+                if (m > 0) CmSetSuperfici(cm, nrow);
                 return;
             }
             for (int j = 1; j <= n; j++)
@@ -73,6 +75,7 @@ namespace YaNec.Engine
                     cm[(jss - 1) + (long)(j - 1) * nrow] -= (ax[i] + cx[i]) * zaj;
                 }
             }
+            if (m > 0) CmSetSuperfici(cm, nrow);
         }
 
         // elementi della matrice per le interazioni filo-filo (riempimento trasposto, itrp = 1)

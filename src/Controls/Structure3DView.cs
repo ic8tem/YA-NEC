@@ -259,6 +259,13 @@ namespace YaNec
                 miny = Math.Min(miny, Math.Min(Geo.Y1[i], Geo.Y2[i])); maxy = Math.Max(maxy, Math.Max(Geo.Y1[i], Geo.Y2[i]));
                 minz = Math.Min(minz, Math.Min(Geo.Z1[i], Geo.Z2[i])); maxz = Math.Max(maxz, Math.Max(Geo.Z1[i], Geo.Z2[i]));
             }
+            if (Geo.M > 0 && Geo.PX != null)
+                for (int k = 0; k < Geo.M; k++)
+                {
+                    minx = Math.Min(minx, Geo.PX[k]); maxx = Math.Max(maxx, Geo.PX[k]);
+                    miny = Math.Min(miny, Geo.PY[k]); maxy = Math.Max(maxy, Geo.PY[k]);
+                    minz = Math.Min(minz, Geo.PZ[k]); maxz = Math.Max(maxz, Geo.PZ[k]);
+                }
             List<double> levels = HeightLevels();
             bool quote = Ground && ShowGroundAndHeight && levels.Count > 0;
             HeightSummary = HeightText(levels);
@@ -512,6 +519,33 @@ namespace YaNec
                     ctx.DrawGeometry(null, Pal.P(c, spess), geo[k]);
                 }
             }
+            // 1.5.9: superfici (patch SP/SM/SC): quadratini di lato pari alla radice dell'area, nel piano t1-t2, con la normale
+            if (Geo.M > 0 && Geo.PX != null)
+            {
+                IBrush fp = Pal.B(Pal.A(70, Pal.Cyan));
+                IPen bp = Pal.P(Pal.A(170, Pal.Cyan), 0.8);
+                for (int k = 0; k < Geo.M; k++)
+                {
+                    double h = 0.5 * Math.Sqrt(Math.Abs(Geo.PArea[k]));
+                    double[] sx = { 1, -1, -1, 1 }, sy = { 1, 1, -1, -1 };
+                    StreamGeometry pg = new StreamGeometry();
+                    using (StreamGeometryContext pc = pg.Open())
+                    {
+                        for (int c = 0; c < 4; c++)
+                        {
+                            double qx = Geo.PX[k] + h * (sx[c] * Geo.T1X[k] + sy[c] * Geo.T2X[k]);
+                            double qy = Geo.PY[k] + h * (sx[c] * Geo.T1Y[k] + sy[c] * Geo.T2Y[k]);
+                            double qz = Geo.PZ[k] + h * (sx[c] * Geo.T1Z[k] + sy[c] * Geo.T2Z[k]);
+                            double ux, uy;
+                            Project(qx, qy, qz, cx, cy, sc, ox, oy, oz, out ux, out uy);
+                            if (c == 0) pc.BeginFigure(new Point(ux, uy), true); else pc.LineTo(new Point(ux, uy));
+                        }
+                        pc.EndFigure(true);
+                    }
+                    ctx.DrawGeometry(fp, bp, pg);
+                }
+            }
+
             // estremi dei segmenti (piccole tacche) e sorgenti
             if (Geo.N < 3000)
                 for (int i = 0; i < Geo.N; i++)
