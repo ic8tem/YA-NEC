@@ -40,7 +40,7 @@ namespace YaNec.Engine
         public static readonly double[] Tubi = { 8, 10, 12, 14, 15, 16, 18, 20, 22, 25, 28, 30, 32, 35, 40 };
         static readonly CultureInfo CI = CultureInfo.InvariantCulture;
 
-        static double Len(GeomCard c)
+        internal static double Len(GeomCard c)
         {
             return Math.Sqrt((c.F4 - c.F1) * (c.F4 - c.F1) + (c.F5 - c.F2) * (c.F5 - c.F2) + (c.F6 - c.F3) * (c.F6 - c.F3));
         }
@@ -67,7 +67,7 @@ namespace YaNec.Engine
             return r;
         }
 
-        static NecModel Copia(NecModel src)
+        internal static NecModel Copia(NecModel src)
         {
             NecModel m = NecModel.Parse(src.ToNec());
             foreach (GeomCard c in m.Geometry) c.Src = null;
@@ -101,7 +101,7 @@ namespace YaNec.Engine
             return (a + b) / 2;
         }
 
-        static void Accorcia(GeomCard c, double nuovaLunghezza)
+        internal static void Accorcia(GeomCard c, double nuovaLunghezza)
         {
             double L = Len(c), k = nuovaLunghezza / L;
             double xc = (c.F1 + c.F4) / 2, yc = (c.F2 + c.F5) / 2, zc = (c.F3 + c.F6) / 2;
@@ -125,7 +125,7 @@ namespace YaNec.Engine
             }
         }
 
-        static GeomCard Alimentato(NecModel m)
+        internal static GeomCard Alimentato(NecModel m)
         {
             if (m.Sources.Count != 1) return null;
             SourceSpec s = m.Sources[0];

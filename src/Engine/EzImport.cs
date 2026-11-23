@@ -778,7 +778,57 @@ namespace YaNec.Engine
         //     +28 FF FF oppure il calibro AWG   +30 segmenti (int16)
         //     +32 filo della sorgente (int16, 0 = nessuna)  +34 % da E1  +38 ampiezza  +42 fase (float)  +46 tipo ('V'/'I')
         // =============================================================================================
-        const int EzTable = 186, EzRow = 170;
+        const int EzTable = 186, EzRow = 170, EzGap = 324;
+
+        /// <summary>1.6.0: blocchi in coda al .ez (Ez2Nec read.rs): dopo le righe e 324 byte, (tag int16, lunghezza int16 con i 4 byte
+        /// della testa) fino alla fine. Restituisce per tag l'inizio e la fine dei dati.</summary>
+        static Dictionary<int, int[]> EzBlocchi(byte[] d, int nRec)
+        {
+            Dictionary<int, int[]> r = new Dictionary<int, int[]>();
+            int pos = EzTable + EzRow * nRec + EzGap;
+            while (pos + 4 <= d.Length)
+            {
+                int tag = (ushort)BitConverter.ToInt16(d, pos), len = (ushort)BitConverter.ToInt16(d, pos + 2);
+                if (len < 4 || pos + len > d.Length) break;
+                if (!r.ContainsKey(tag)) r[tag] = new[] { pos + 4, pos + len };
+                pos += len;
+            }
+            return r;
+        }
+
+        /// <summary>1.6.0: reti L di EZNEC dal blocco 0x11 (struttura di Ez2Nec read.rs, read_l_networks): porta 1 = ramo in serie tra le
+        /// porte, porta 2 = ramo in parallelo sulla porta 2; R, L, C e frequenza della R per porta; S/P = elementi in serie o in parallelo.</summary>
+        static int EzRetiL(byte[] d, Dictionary<int, int[]> blocchi, List<int> segs, NecModel m)
+        {
+            int[] b;
+            if (!blocchi.TryGetValue(0x11, out b) || b[1] - b[0] < 11 || d[b[0]] != 0 || d[b[0] + 1] != 0 || d[b[0] + 2] != 2) return 0;
+            int s = b[0], n = BitConverter.ToInt32(d, s + 3);
+            if (n <= 0 || n != BitConverter.ToInt32(d, s + 7) || n > 500) return 0;
+            int elems = 2 * n + 2, wiresAt = 11, pctsAt = wiresAt + 4 * elems, zAt = pctsAt + 4 * elems + 12, n3At = zAt + 16 * n, blocksAt = n3At + 36, connAt = blocksAt + 32 * n + 2;
+            if (s + connAt + 2 * n > b[1]) return 0;
+            int fatte = 0;
+            for (int k = 0; k < n; k++)
+            {
+                int[] w = new int[2]; double[] pc = new double[2]; bool[] par = new bool[2];
+                for (int p = 0; p < 2; p++)
+                {
+                    int e = 2 * k + p + 1;
+                    w[p] = BitConverter.ToInt32(d, s + wiresAt + 4 * e);
+                    pc[p] = BitConverter.ToSingle(d, s + pctsAt + 4 * e);
+                    par[p] = d[s + connAt + 2 * k + p] == (byte)'P';
+                }
+                if (w[0] < 1 || w[0] > segs.Count || w[1] < 1 || w[1] > segs.Count) { m.Warnings.Add("Rete L " + (k + 1) + " di EZNEC su un filo inesistente: ignorata."); continue; }
+                Func<int, double> blk = j => BitConverter.ToSingle(d, s + blocksAt + 32 * k + 4 * j);
+                m.RetiL.Add(new ReteL
+                {
+                    Tag1 = w[0], Seg1 = SegOf(segs[w[0] - 1], pc[0]), Tag2 = w[1], Seg2 = SegOf(segs[w[1] - 1], pc[1]),
+                    Rs = blk(0), Rp = blk(1), Ls = blk(2), Lp = blk(3), Cs = blk(4), Cp = blk(5), RfS = blk(6), RfP = blk(7),
+                    ParS = par[0], ParP = par[1], LatoParallelo = 2, Eznec = true
+                });
+                fatte++;
+            }
+            return fatte;
+        }
 
         public static NecModel LoadEz(string path)
         {
@@ -853,6 +903,17 @@ namespace YaNec.Engine
             }
             // carichi: tutti dello stesso tipo (0x75: Z = R+jX, R = RLC, L = Laplace)
             char tipo = (char)d[0x75];
+            int nLap = 0, nStub = 0, nPerd = 0, nRetiL = 0;
+            // 1.6.0: blocchi in coda al file (Ez2Nec read.rs): perdite delle linee (0x0e) e reti L (0x11)
+            Dictionary<int, int[]> blocchi = EzBlocchi(d, nRec);
+            double[] perdite = new double[Math.Max(0, nTl)];
+            int[] bp;
+            if (blocchi.TryGetValue(0x0e, out bp) && bp[1] - bp[0] >= 7 && d[bp[0] + 2] == 1)
+            {
+                int nr = BitConverter.ToInt32(d, bp[0] + 3);
+                for (int k = 0; k < Math.Min(nr, perdite.Length); k++)
+                    if (bp[0] + 7 + 8 * k + 8 <= bp[1]) perdite[k] = BitConverter.ToSingle(d, bp[0] + 7 + 8 * k);
+            }
             for (int k = 0; k < Math.Min(nLoad, nRec); k++)
             {
                 int r = EzTable + EzRow * k;
@@ -866,7 +927,14 @@ namespace YaNec.Engine
                     if (forma == 'T') m.Warnings.Add("Carico trappola (T) di EZNEC sul filo " + w + ": calcolato come RLC parallelo.");
                     m.Loads.Add(new LoadSpec { Type = forma == 'S' ? 0 : 1, Tag = w, From = seg, To = seg, F1 = rr, F2 = l, F3 = c });
                 }
-                else if (tipo == 'L') m.Warnings.Add("Carico di Laplace sul filo " + w + ": non importato (usare il .nec scritto da EZNEC).");
+                else if (tipo == 'L')
+                {
+                    // 1.6.0 (proposta 6, Ez2Nec read.rs: coefficienti a +0x3D, sei del numeratore e sei del denominatore, s^0 per primo)
+                    CaricoLaplace cl = new CaricoLaplace { Tag = w, Seg = seg };
+                    for (int j = 0; j < 6; j++) { cl.Num[j] = BitConverter.ToSingle(d, r + 0x3D + 4 * j); cl.Den[j] = BitConverter.ToSingle(d, r + 0x3D + 24 + 4 * j); }
+                    m.Laplace.Add(cl);
+                    nLap++;
+                }
                 else m.Loads.Add(new LoadSpec { Type = 4, Tag = w, From = seg, To = seg, F1 = BitConverter.ToSingle(d, r + 0x35), F2 = BitConverter.ToSingle(d, r + 0x39) });
             }
             for (int k = 0; k < Math.Min(nTl, nRec); k++)
@@ -875,8 +943,34 @@ namespace YaNec.Engine
                 int wa = BitConverter.ToInt16(d, r), wb = BitConverter.ToInt16(d, r + 6);
                 double pa = BitConverter.ToSingle(d, r + 2), pb = BitConverter.ToSingle(d, r + 8), z0 = BitConverter.ToSingle(d, r + 12), len = BitConverter.ToSingle(d, r + 16), vf = BitConverter.ToSingle(d, r + 20);
                 if (!filoOk(wa, "Linea")) continue;
-                if (wb < 0) { m.Warnings.Add("Stub " + (wb == -1 ? "in corto" : "aperto") + " sul filo " + wa + ": non ancora importato."); continue; }
+                double perd = k < perdite.Length && perdite[k] > 0 && perdite[k] < 10 ? perdite[k] : 0;
+                if (wb < 0)
+                {
+                    // 1.6.0 (proposta 6): stub in corto (-1) o aperto (-2) di EZNEC. Ez2Nec lo scrive come rete con un filo fittizio per
+                    // l'altro capo; in YA-NEC e' uno stub sul segmento: in parallelo a una linea che parte da li', altrimenti a una porta
+                    // (la sua impedenza entra in serie nel filo). Lunghezza negativa = gradi elettrici.
+                    if (len == 0 || !(vf > 0)) { m.Warnings.Add("Stub sul filo " + wa + " senza lunghezza o fattore di velocita': non importato."); continue; }
+                    double lfis = len > 0 ? len : -len / 360.0 * 299.792458 / m.FreqMHz * vf;
+                    m.Stubs.Add(new Stub { Tag = wa, Seg = SegOf(segs[wa - 1], pa), Z0 = Math.Abs(z0), LenM = lfis, Vf = vf, Corto = wb == -1, DbPerM = perd });
+                    nStub++;
+                    continue;
+                }
                 if (!filoOk(wb, "Linea")) continue;
+                if (perd > 0)
+                {
+                    // 1.6.0: linea con perdite: rete NT ricalcolata a ogni frequenza (come Ez2Nec); senza lunghezza = distanza tra i punti
+                    double lfis = len > 0 ? len : len < 0 ? -len / 360.0 * 299.792458 / m.FreqMHz * vf : 0;
+                    if (lfis == 0)
+                    {
+                        GeomCard ga = m.Geometry[wa - 1], gb = m.Geometry[wb - 1];
+                        Func<GeomCard, double, double[]> pt = (gw, pc) => { double u = Math.Max(0, Math.Min(100, pc)) / 100; return new[] { gw.F1 + (gw.F4 - gw.F1) * u, gw.F2 + (gw.F5 - gw.F2) * u, gw.F3 + (gw.F6 - gw.F3) * u }; };
+                        double[] qa = pt(ga, pa), qb = pt(gb, pb);
+                        lfis = Math.Sqrt((qa[0] - qb[0]) * (qa[0] - qb[0]) + (qa[1] - qb[1]) * (qa[1] - qb[1]) + (qa[2] - qb[2]) * (qa[2] - qb[2]));
+                    }
+                    m.LineePerdite.Add(new LineaPerdite { Tag1 = wa, Seg1 = SegOf(segs[wa - 1], pa), Tag2 = wb, Seg2 = SegOf(segs[wb - 1], pb), Z0 = z0, LenM = lfis, Vf = vf > 0 ? vf : 1, DbPerM = perd });
+                    nPerd++;
+                    continue;
+                }
                 double lnec = len > 0 && vf > 0 ? len / vf : 0;    // nel NEC la lunghezza della TL e' elettrica
                 if (len < 0)
                 {
@@ -887,7 +981,14 @@ namespace YaNec.Engine
                 else if (len == 0 && Math.Abs(vf - 1) > 1e-6) m.Warnings.Add("Linea dal filo " + wa + " senza lunghezza e con VF " + vf.ToString("0.##", CI) + ": usata la distanza tra i segmenti con VF 1.");
                 m.Networks.Add(new NetworkSpec { IsTl = true, Tag1 = wa, Seg1 = SegOf(segs[wa - 1], pa), Tag2 = wb, Seg2 = SegOf(segs[wb - 1], pb), F1 = z0, F2 = lnec });
             }
-            if (d[0x40] == 5 && BitConverter.ToInt32(d, 0x9C) > 0) m.Warnings.Add("Reti L di EZNEC: non ancora importate.");
+            if (d[0x40] == 5 && BitConverter.ToInt32(d, 0x9C) > 0)
+            {
+                nRetiL = EzRetiL(d, blocchi, segs, m);
+                if (nRetiL < BitConverter.ToInt32(d, 0x9C)) m.Warnings.Add("Reti L di EZNEC: importate " + nRetiL + " su " + BitConverter.ToInt32(d, 0x9C) + " (blocco 0x11 non letto per intero).");
+            }
+            if (nLap + nStub + nPerd + nRetiL > 0)
+                m.Notes.Add("Dal .ez (lettura di Ez2Nec, AG7T): " + nLap + " carichi di Laplace, " + nStub + " stub, " + nPerd + " linee con perdite, " + nRetiL +
+                    " reti L; YA-NEC li ricalcola a ogni frequenza.");
             // terreno
             char gnd = (char)d[0x36];
             if (gnd == 'P') { m.Ground.Kind = GroundKind.Perfect; m.GroundFlag = 1; }

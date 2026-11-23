@@ -492,6 +492,12 @@ namespace YaNec.Engine
                 if (l1 < 1) l1 = 1;
                 if (l2 > n) l2 = n;
                 double zlr = ld.F1, zli = ld.F2, zlc = ld.F3;
+                if (ld.Zf != null && ld.Type == 4)
+                {
+                    // 1.6.0: stub a una porta e carichi di Laplace (EZNEC): R + jX alla frequenza del calcolo
+                    Complex zf = ld.Zf(FrequencyMHz);
+                    zlr = double.IsNaN(zf.Real) ? 0 : zf.Real; zli = double.IsNaN(zf.Imaginary) ? 0 : zf.Imaginary;
+                }
                 for (int i = l1 - 1; i < l2; i++)
                 {
                     if (ldtags != 0)

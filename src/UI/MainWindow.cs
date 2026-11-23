@@ -573,6 +573,8 @@ namespace YaNec
             RadioButton rbCurva = new RadioButton { Content = "solo curva", GroupName = "corr3d", IsChecked = false, Margin = new Thickness(2, 0) };
             // 1.5.9 (bozzetto «Struttura 3D › correnti animate e valori col mouse», approvato alla lettera da IC8TEM il 22/11/2026)
             RadioButton rbAnim = new RadioButton { Content = "animate", GroupName = "corr3d", IsChecked = false, Margin = new Thickness(2, 0) };
+            // 1.6.0 (bozzetto «spunti dalla ricerca su GitHub», proposta 4, approvato da IC8TEM il 23/11/2026 14:27)
+            RadioButton rbFase = new RadioButton { Content = "fase", GroupName = "corr3d", IsChecked = false, Margin = new Thickness(2, 0) };
             Slider slVel = new Slider { Minimum = 0.25, Maximum = 3, Value = 1, Width = 80, IsEnabled = false, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(2, 0, 8, 0) };
             slVel.PropertyChanged += (s, e) => { if (e.Property == Slider.ValueProperty) view3d.AnimSpeed = slVel.Value; };
             CheckBox chkValori = new CheckBox { Content = "valori col mouse", IsChecked = false, Margin = new Thickness(4, 0) };
@@ -580,18 +582,21 @@ namespace YaNec
             chkCur.IsCheckedChanged += (s, e) =>
             {
                 bool on = chkCur.IsChecked == true;
-                view3d.ShowCurrents = on; rbColori.IsEnabled = on; rbCurva.IsEnabled = on; rbAnim.IsEnabled = on; slVel.IsEnabled = on && rbAnim.IsChecked == true;
+                view3d.ShowCurrents = on; rbColori.IsEnabled = on; rbCurva.IsEnabled = on; rbAnim.IsEnabled = on; rbFase.IsEnabled = on; slVel.IsEnabled = on && rbAnim.IsChecked == true;
                 view3d.InvalidateVisual();
             };
             Action modoCorr = () =>
             {
                 view3d.CurrentColors = rbColori.IsChecked == true; view3d.CurrentCurves = rbCurva.IsChecked == true;
                 view3d.CurrentAnimate = rbAnim.IsChecked == true; slVel.IsEnabled = rbAnim.IsChecked == true;
+                view3d.CurrentPhase = rbFase.IsChecked == true;
                 view3d.InvalidateVisual();
             };
             rbColori.IsCheckedChanged += (s, e) => modoCorr();
             rbCurva.IsCheckedChanged += (s, e) => modoCorr();
             rbAnim.IsCheckedChanged += (s, e) => modoCorr();
+            rbFase.IsCheckedChanged += (s, e) => modoCorr();
+            ToolTip.SetTip(rbFase, "Fili colorati secondo la fase della corrente rispetto all'alimentazione (rosso 0°, verde 120°, blu 240°), con la scala circolare in basso; grigi dove la corrente e' sotto il 3 % del massimo. Mostra subito un elemento fuori fase o una schiera alimentata male.");
             chkPat = new CheckBox { Content = "Lobo 3D", IsChecked = true, Margin = new Thickness(4, 0) };
             chkPat.IsCheckedChanged += (s, e) => { view3d.ShowPattern = chkPat.IsChecked == true; view3d.InvalidateVisual(); };
             CheckBox chkQuota = new CheckBox { Content = "Terreno e quota", IsChecked = true, Margin = new Thickness(4, 0) };
@@ -618,6 +623,7 @@ namespace YaNec
             bar.Children.Add(rbColori);
             bar.Children.Add(rbCurva);
             bar.Children.Add(rbAnim);
+            bar.Children.Add(rbFase);
             bar.Children.Add(Lbl("velocita'"));
             bar.Children.Add(slVel);
             bar.Children.Add(chkValori);
@@ -734,6 +740,9 @@ namespace YaNec
             bar.Children.Add(cCur); bar.Children.Add(bTogli); bar.Children.Add(cNul);
             DockPanel.SetDock(bar, Dock.Top);
             d.Children.Add(bar);
+            Control barF = BarraFissati();   // 1.6.0
+            DockPanel.SetDock(barF, Dock.Top);
+            d.Children.Add(barF);
             Grid g = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*") };
             polAz = new PolarPlot { Title = "Azimut", TextScale = carV / 100.0, Rotate = cRuota.IsChecked == true ? 90 : 0 };
             polEl = new PolarPlot { Title = "Elevazione", Elevation = true, TextScale = carV / 100.0 };
@@ -784,13 +793,24 @@ namespace YaNec
                 cc[i].Margin = new Thickness(c == 0 ? 0 : 3, r == 0 ? 0 : 3, c == 0 && i != 4 ? 3 : 0, r == 2 ? 0 : 3);
                 g.Children.Add(cc[i]);
             }
-            return g;
+            // 1.6.0: risultati fissati sopra i grafici
+            DockPanel dp = new DockPanel();
+            Control barF = BarraFissati();
+            DockPanel.SetDock(barF, Dock.Top);
+            dp.Children.Add(barF);
+            dp.Children.Add(g);
+            return dp;
         }
 
         Control BuildSmithPage()
         {
             smith = new SmithChart();
-            return Riquadro(smith);
+            DockPanel dp = new DockPanel();
+            Control barF = BarraFissati();
+            DockPanel.SetDock(barF, Dock.Top);
+            dp.Children.Add(barF);
+            dp.Children.Add(Riquadro(smith));
+            return dp;
         }
 
         Control BuildCurrentsPage()

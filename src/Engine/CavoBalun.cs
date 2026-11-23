@@ -67,6 +67,9 @@ namespace YaNec.Engine
         public class Percorso
         {
             public double LungoBoom = 0.5, DiscesaPalo = 3, FinoStazione = 0, RaggioCalza = 0.005, RaggioPalo = 0.025;
+            /// <summary>1.6.0 (proposta 5): quota del tratto verso la stazione (0 = alla fine della discesa; con la quota la discesa si ferma li')
+            /// e direzione del tratto rispetto al boom, in gradi attorno alla verticale (0 = lungo il boom, 90 = sotto un braccio).</summary>
+            public double QuotaOrizzontale, Direzione;
             public bool PaloPresente = true, CalzaAMassa = true, TerraStazione = true;
         }
 
@@ -76,11 +79,23 @@ namespace YaNec.Engine
             public double CorrPerc, Fb, FrMedio, G, Ros, PerditaDb, WattA1kW, BandaDa = double.NaN, BandaA = double.NaN;
             public Complex Z;
             public double[] Dist, Corr;   // corrente lungo la calza (% della corrente al punto di alimentazione)
+            /// <summary>1.6.0: corrente sulla calza all'ingresso della stazione (% del punto di alimentazione), potenza irradiata dalla sola
+            /// calza (% della potenza irradiata in tutto: integrale del campo delle correnti della calza sulla sfera, o sulla semisfera con il
+            /// terreno) e ROS cambiato rispetto al modello senza cavo.</summary>
+            public double CorrStazione = double.NaN, PotCalzaPerc = double.NaN, DeltaRos = double.NaN;
         }
 
         /// <summary>Modello con la calza (e il palo): restituisce il modello, il tag del primo filo della calza e i tag della calza in ordine.</summary>
         public static NecModel ConCalza(NecModel m0, SegmentGeometry g, double f, Percorso p, string balun, double f0, out List<int> tagsCalza)
         {
+            int ts;
+            return ConCalza(m0, g, f, p, balun, f0, out tagsCalza, out ts);
+        }
+
+        /// <summary>tagStazione: tag del tratto che arriva alla stazione (o dell'ultimo tratto della calza se non c'e').</summary>
+        public static NecModel ConCalza(NecModel m0, SegmentGeometry g, double f, Percorso p, string balun, double f0, out List<int> tagsCalza, out int tagStazione)
+        {
+            tagStazione = -1;
             NecModel m = m0.Clone();
             tagsCalza = new List<int>();
             SourceSpec s = m.Sources[0];
@@ -109,12 +124,20 @@ namespace YaNec.Engine
             double[] b2 = Add(b1, dirBoom, Math.Max(0.02, p.LungoBoom));
             punti.Add(b2);
             double[] b3 = Add(b2, giu, Math.Max(0.1, p.DiscesaPalo));
+            if (p.QuotaOrizzontale > 0) b3[2] = Math.Min(b2[2] - 0.1, p.QuotaOrizzontale);   // 1.6.0: la discesa si ferma alla quota del tratto
             if (m0.Ground.Kind != GroundKind.FreeSpace) b3[2] = Math.Max(0.1, b3[2]);
             punti.Add(b3);
+            int kStazione = -1;
             if (p.FinoStazione > 0.05)
             {
-                double[] b4 = Add(b3, dirBoom, p.FinoStazione);
+                // 1.6.0: il tratto verso la stazione gira attorno alla verticale di Direzione gradi rispetto al boom
+                double a = p.Direzione * Math.PI / 180;
+                double[] h = Unit(new[] { dirBoom[0], dirBoom[1], 0 });
+                if (Norm(h) < 0.5) h = new double[] { 1, 0, 0 };
+                double[] dirSt = { h[0] * Math.Cos(a) - h[1] * Math.Sin(a), h[0] * Math.Sin(a) + h[1] * Math.Cos(a), 0 };
+                double[] b4 = Add(b3, dirSt, p.FinoStazione);
                 punti.Add(b4);
+                kStazione = punti.Count - 2;
                 if (p.TerraStazione && m0.Ground.Kind != GroundKind.FreeSpace) punti.Add(new[] { b4[0], b4[1], 0.0 });
             }
             for (int k = 0; k + 1 < punti.Count; k++)
@@ -123,6 +146,7 @@ namespace YaNec.Engine
                 if (len < 1e-4) continue;
                 m.Geometry.Add(new GeomCard { Id = "GW", I1 = ++tag, I2 = k == 0 ? 1 : ns(len), F1 = punti[k][0], F2 = punti[k][1], F3 = punti[k][2], F4 = punti[k + 1][0], F5 = punti[k + 1][1], F6 = punti[k + 1][2], F7 = rc });
                 tagsCalza.Add(tag);
+                if (k == kStazione || (kStazione < 0 && k == punti.Count - 2)) tagStazione = tag;
             }
             // palo: dal boom (2 cm sotto) a terra o per la discesa, 5 cm dietro la calza; collegato alla calza in basso se richiesto
             if (p.PaloPresente)
@@ -152,8 +176,8 @@ namespace YaNec.Engine
 
         public static Esito Valuta(NecModel m0, SegmentGeometry g, double f, double f0, Percorso p, string balun, double th, double ph, CancellationToken ct)
         {
-            List<int> tags;
-            NecModel m = ConCalza(m0, g, f, p, balun, f0, out tags);
+            List<int> tags; int tagSt;
+            NecModel m = ConCalza(m0, g, f, p, balun, f0, out tags, out tagSt);
             SegmentGeometry gg = m.BuildGeometry();
             RunResult r = Analysis.Run(m, gg, f, 5, ct);
             Esito e = new Esito { Chiave = balun, Nome = Tipi.First(t => t.Chiave == balun).Nome, Z = r.Zin, Ros = r.Swr, G = r.Engine.Gain(th, ph).GainTotal, Fb = r.FrontBack, FrMedio = r.FrontRearMedio };
@@ -171,6 +195,18 @@ namespace YaNec.Engine
                     dist.Add(d + len / 2); corr.Add(pc); d += len; mx = Math.Max(mx, pc);
                 }
             e.Dist = dist.ToArray(); e.Corr = corr.ToArray(); e.CorrPerc = mx;
+            // 1.6.0: corrente all'ingresso della stazione (ultimo segmento del tratto verso la stazione)
+            for (int i = gg.N - 1; i >= 0; i--)
+                if (gg.Tag[i] == tagSt) { e.CorrStazione = r.Engine.SegmentCurrent(i).Magnitude / iFeed * 100; break; }
+            // 1.6.0: potenza irradiata dalla sola calza rispetto a tutta la potenza irradiata
+            try
+            {
+                bool[] mask = new bool[gg.N];
+                HashSet<int> ht = new HashSet<int>(tags);
+                for (int i = 0; i < gg.N; i++) mask[i] = ht.Contains(gg.Tag[i]);
+                e.PotCalzaPerc = 100 * r.Engine.FrazioneIrradiata(mask);
+            }
+            catch (Exception) { }
             if (balun != "nessuno")
             {
                 int i0 = -1; for (int i = 0; i < gg.N; i++) if (gg.Tag[i] == tags[0]) { i0 = i; break; }

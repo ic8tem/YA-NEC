@@ -210,6 +210,7 @@ namespace YaNec
 
         void SetModel(NecModel m, List<MmanaWireInfo> wires)
         {
+            FissatiNuovoModello(m);   // 1.6.0
             model = m;
             mmWires = wires;
             run = null;
@@ -826,6 +827,8 @@ namespace YaNec
                 polAz.Title = Lang.F("Azimut all'elevazione di {0}°", Fmt(run.ElevationOfMax, 1));   // 1.5.2: tradotto (lezione 13 EN)
                 polEl.Title = Lang.F("Elevazione nel piano di azimut {0}°", Fmt(run.PhiMax, 1));
                 polEl.GroundHalf = model.Ground.Kind != GroundKind.FreeSpace;
+                List<string> noteFissati = new List<string>();
+                FissatiNeiDiagrammi(noteFissati);   // 1.6.0: risultati fissati, sotto quello attuale
                 polAz.Traces.Add(new PolarTrace { Db = run.AzCut, Color = Pal.Series(0), Width = 2.4, Name = "totale" });
                 polEl.Traces.Add(new PolarTrace { Db = run.ElCut, Color = Pal.Series(0), Width = 2.4, Name = "totale" });
                 if (vh)
@@ -842,7 +845,7 @@ namespace YaNec
                 {
                     Lang.F("Massimo {0} dBi a {1}°;  F/B {2} dB;  F/R {3} dB", Fmt(run.GmaxDbi, 2), Fmt(run.PhiMax, 1), Fmt(run.FrontBack, 2), Fmt(run.FrontRear, 2)),
                     Lang.F("Apertura a -3 dB: {0}°;  {1} MHz", Fmt(run.HpbwAz, 1), Fmt(run.FreqMHz, 3))
-                };
+                }.Concat(noteFissati).ToArray();
                 polEl.Notes = new[]
                 {
                     Lang.F("Massimo a {0}° di elevazione;  apertura a -3 dB: {1}°", Fmt(run.ElevationOfMax, 1), Fmt(run.HpbwEl, 1)),
@@ -868,6 +871,7 @@ namespace YaNec
             {
                 double z0 = model != null ? model.Z0 : 50;
                 chSwr.Title = Lang.F("ROS su Z0 = {0} ohm", Fmt(z0, 1));
+                FissatiNelloSweep(x);   // 1.6.0: risultati fissati, sotto quello attuale
                 chSwr.Series.Add(new LineSeries { Name = "ROS", Y = ok.Select(p => Math.Min(p.Swr, 10)).ToArray(), Color = Pal.Series(0), Width = 2.4 });
                 chSwr.YMinFixed = 1;
                 double mx = ok.Max(p => Math.Min(p.Swr, 10));

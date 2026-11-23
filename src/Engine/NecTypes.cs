@@ -61,6 +61,9 @@ namespace YaNec.Engine
         public int Type, Tag, From, To;
         public double F1, F2, F3;
         public bool DaIsolante;   // 1.5.6: LD 2 nato dal LD 7 (filo isolato): non e' una bobina, la Struttura 3D non lo disegna
+        /// <summary>1.6.0: impedenza in funzione della frequenza (MHz) per i carichi LD 4 ricavati da stub a una porta e carichi di Laplace
+        /// importati da EZNEC: il motore la valuta a ogni frequenza al posto di F1 + jF2. Solo nel calcolo, non si scrive nel file.</summary>
+        public Func<double, Complex> Zf;
         public LoadSpec Clone() { return (LoadSpec)MemberwiseClone(); }
     }
 

@@ -29,6 +29,11 @@ namespace YaNec
             ToolTip.SetTip(cTipo, "Con la linea aperta bilanciata non c'e' calza: il modo comune nasce solo dagli squilibri. La scheda calcola il caso coassiale; per la linea aperta usa Linee (TL) con l'accordatore.");
             TextBox tBoom = Tb("0,5", 60), tPalo = Tb("3,0", 60), tSt = Tb("0", 60);
             sx.Children.Add(riga("Tipo", cTipo, "")); sx.Children.Add(riga("Lungo il boom", tBoom, "m → palo")); sx.Children.Add(riga("Discesa sul palo", tPalo, "m")); sx.Children.Add(riga("Fino alla stazione", tSt, "m"));
+            // 1.6.0 (bozzetto «spunti dalla ricerca su GitHub», proposta 5, approvato da IC8TEM il 23/11/2026 14:27; idea da AntennaCalc di lrizio, MIT)
+            TextBox tQuota = Tb("0", 60), tDir = Tb("0", 60);
+            ToolTip.SetTip(tQuota, "Quota del tratto orizzontale verso la stazione. 0 = alla fine della discesa; con una quota la discesa sul palo si ferma li'.");
+            ToolTip.SetTip(tDir, "Direzione del tratto verso la stazione rispetto al boom, in gradi attorno alla verticale: 0 = lungo il boom (dietro l'antenna), 90 = sotto un braccio del radiatore.");
+            sx.Children.Add(riga("Quota del tratto orizzontale", tQuota, "m")); sx.Children.Add(riga("Direzione rispetto al boom", tDir, "°"));
             CheckBox cMassa = new CheckBox { Content = "Calza a massa sul palo / traliccio", IsChecked = true }, cTerra = new CheckBox { Content = "Messa a terra all'ingresso stazione", IsChecked = true };
             foreach (CheckBox c in new[] { cMassa, cTerra }) { c.Margin = new Thickness(2, 0); sx.Children.Add(c); }
             sx.Children.Add(MeccFam("BALUN DA CONFRONTARE"));
@@ -50,7 +55,7 @@ namespace YaNec
             StackPanel avv = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
             StackPanel cT = new StackPanel(); cT.Children.Add(tab); cT.Children.Add(avv);
             LineChart gC = new LineChart { Height = 320, XLabel = "distanza dal punto di alimentazione (m)", YLabel = "corrente calza (%)", EmptyText = "premi Calcola il confronto" };
-            StackPanel dxr = new StackPanel(); dxr.Children.Add(Pannello("Confronto dei balun", cT)); dxr.Children.Add(Pannello("Corrente lungo la calza, dal dipolo verso il basso", gC));
+            StackPanel dxr = new StackPanel(); dxr.Children.Add(Pannello("Confronto dei balun", cT)); dxr.Children.Add(Pannello("Corrente lungo la calza, dal dipolo fino alla stazione", gC));
             Grid corpo = new Grid { ColumnDefinitions = new ColumnDefinitions("0.7*,10,1.3*") };   // 1.2.0: piu' spazio alla tabella (schermata del 18/11 00:14)
             corpo.Children.Add(Pannello("Vista laterale: corrente sulla calza", dV)); Grid.SetColumn(dxr, 2); corpo.Children.Add(dxr);
             Grid g = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
@@ -109,7 +114,8 @@ namespace YaNec
             {
                 if (run == null || model.Sources.Count != 1) { Status("Cavo e balun: calcola prima il modello (una sola sorgente)", true); return; }
                 double f = ParseNum(tF.Text, run.FreqMHz), f0 = f;
-                CavoBalun.Percorso p = new CavoBalun.Percorso { LungoBoom = ParseNum(tBoom.Text, 0.5), DiscesaPalo = ParseNum(tPalo.Text, 3), FinoStazione = ParseNum(tSt.Text, 0), CalzaAMassa = cMassa.IsChecked == true, TerraStazione = cTerra.IsChecked == true };
+                CavoBalun.Percorso p = new CavoBalun.Percorso { LungoBoom = ParseNum(tBoom.Text, 0.5), DiscesaPalo = ParseNum(tPalo.Text, 3), FinoStazione = ParseNum(tSt.Text, 0), CalzaAMassa = cMassa.IsChecked == true, TerraStazione = cTerra.IsChecked == true,
+                    QuotaOrizzontale = Math.Max(0, ParseNum(tQuota.Text, 0)), Direzione = ParseNum(tDir.Text, 0) };
                 List<string> scelti = CavoBalun.Tipi.Where(t => cB[t.Chiave].IsChecked == true && cB[t.Chiave].IsEnabled).Select(t => t.Chiave).ToList();
                 if (scelti.Count == 0) return;
                 NecModel m0 = model; SegmentGeometry g0 = run.Geometry; double th = run.ThetaMax, ph = run.PhiMax;
@@ -120,6 +126,9 @@ namespace YaNec
                     var res = await Task.Run(() =>
                     {
                         List<CavoBalun.Esito> l = new List<CavoBalun.Esito>(); int n = 0;
+                        // 1.6.0: ROS del modello senza cavo, per «ROS cambiato di»
+                        double rosSenza = double.NaN;
+                        try { List<SweepPoint> sp0 = Analysis.Sweep(m0, g0, new[] { f }, th, ph, null, CancellationToken.None); if (sp0.Count > 0 && sp0[0].Ok) rosSenza = sp0[0].Swr; } catch { }
                         foreach (string k in scelti)
                         {
                             CavoBalun.Esito e = CavoBalun.Valuta(m0, g0, f, f0, p, k, th, ph, CancellationToken.None);
@@ -134,6 +143,7 @@ namespace YaNec
                                 if (e.CorrPerc < 5) { e.BandaDa = da; e.BandaA = a; }
                             }
                             n += 2; ((IProgress<int>)pr).Report(n);
+                            e.DeltaRos = e.Ros - rosSenza;
                             l.Add(e);
                         }
                         List<int> tg; NecModel mc = CavoBalun.ConCalza(m0, g0, f, p, "nessuno", f0, out tg);
@@ -164,6 +174,9 @@ namespace YaNec
                     double minC = esiti.Min(e => e.CorrPerc), maxFb = esiti.Max(e => e.Fb);
                     rg("", e => e.Nome.Split('(')[0].Trim(), null);
                     rg("Corrente sulla calza (% del dipolo)", e => FN(e.CorrPerc, 0) + " %", e => e.CorrPerc > 10 ? rosso : Math.Abs(e.CorrPerc - minC) < 1e-9 ? verde : (Color?)null);
+                    if (p.FinoStazione > 0.05) rg("Corrente sulla calza in stazione", e => double.IsNaN(e.CorrStazione) ? "—" : FN(e.CorrStazione, 0) + " %", e => e.CorrStazione > 10 ? rosso : e.CorrStazione < 3 ? verde : (Color?)null);
+                    rg("Potenza irradiata dalla calza", e => double.IsNaN(e.PotCalzaPerc) ? "—" : FN(e.PotCalzaPerc, e.PotCalzaPerc < 1 ? 1 : 0) + " %", e => e.PotCalzaPerc > 5 ? rosso : e.PotCalzaPerc < 0.5 ? verde : (Color?)null);
+                    rg("ROS cambiato di", e => double.IsNaN(e.DeltaRos) ? "—" : (e.DeltaRos >= 0 ? "+" : "−") + FN(Math.Abs(e.DeltaRos), 2), null);
                     rg("F/B", e => FN(e.Fb, 1) + " dB", e => Math.Abs(e.Fb - maxFb) < 1e-9 ? verde : e.Fb < maxFb - 3 ? rosso : (Color?)null);
                     rg("F/R medio", e => FN(e.FrMedio, 1) + " dB", null);
                     rg("Guadagno", e => FN(e.G, 1) + " dBi", null);

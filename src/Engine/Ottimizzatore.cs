@@ -78,6 +78,14 @@ namespace YaNec.Engine
         public int Principale;                    // indice della frequenza principale (in grassetto nel bozzetto)
         public bool MantieniBoom;
         public bool Simplesso;                    // falso = una variabile alla volta (come MMANA)
+        /// <summary>1.6.0 (bozzetto «spunti dalla ricerca su GitHub», proposta 3, approvato da IC8TEM il 23/11/2026 14:27): evoluzione
+        /// differenziale DE/rand/1/bin di Storn e Price (1997) al posto di Simplesso / una variabile alla volta. Popolazione (0 = 10 per
+        /// variabile, da 8 a 200), peso della differenza F, incrocio CR, generazioni al massimo; alla fine, se chiesto, la rifinitura con il
+        /// simplesso. Idea dagli ottimizzatori di NEC-Workbench (GPL-3) e 45south: nessun codice preso.</summary>
+        public bool Evoluzione;
+        public int DePopolazione = 0, DeGenerazioni = 80;
+        public double DeF = 0.7, DeCR = 0.9;
+        public bool DeRifinitura = true;
         public int MaxPassi = 3000;
         /// <summary>1.0.17: direzione "avanti" fissata (theta, phi in gradi); NaN = quella del massimo del modello di partenza (come prima).
         /// Serve quando il modello di partenza non ha ancora il lobo dove lo si vuole (Yagi di MathWorks: tutti gli elementi a 0,5 lambda).</summary>
@@ -150,7 +158,7 @@ namespace YaNec.Engine
             Migliore = Iniziale;
             Annota(Iniziale, true);
             Candidati.Clear();
-            if (PartenzeCaso <= 0 && NumCandidati <= 0) { if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct); ControlloGtFinale(ct); return; }
+            if (PartenzeCaso <= 0 && NumCandidati <= 0) { Metodo(ct); ControlloGtFinale(ct); return; }
             Random rnd = new Random(Seme);
             List<OttCandidato> fine = new List<OttCandidato>();
             int maxTot = MaxPassi;
@@ -166,7 +174,7 @@ namespace YaNec.Engine
                 }
                 Fase?.Invoke(k == 0 ? "partenza dal modello aperto" : "partenza a caso " + k + " di " + PartenzeCaso);
                 MaxPassi = Passi + maxTot;
-                if (Simplesso) NelderMead(ct); else UnaAllaVolta(ct);
+                Metodo(ct);
                 fine.Add(new OttCandidato { Nome = k == 0 ? "modello aperto" : "partenza " + k, Passo = Migliore });
             }
             MaxPassi = maxTot;
@@ -252,6 +260,131 @@ namespace YaNec.Engine
         // ---------------------------------------------------------------------------------------------
         // metodi
         // ---------------------------------------------------------------------------------------------
+        void Metodo(CancellationToken ct)
+        {
+            if (Evoluzione)
+            {
+                EvoluzioneDifferenziale(ct);
+                if (DeRifinitura && Passi < MaxPassi && !ct.IsCancellationRequested) { Fase?.Invoke("rifinitura con il simplesso"); NelderMead(ct); }
+            }
+            else if (Simplesso) NelderMead(ct);
+            else UnaAllaVolta(ct);
+        }
+
+        /// <summary>1.6.0: evoluzione differenziale DE/rand/1/bin (Storn e Price 1997) nelle coordinate normalizzate 0..1 di ogni variabile.
+        /// Per ogni antenna i della popolazione: prova = a + F (b - c) con a, b, c diverse e scelte a caso, incrocio binomiale con la
+        /// vecchia (almeno una coordinata nuova), fuori dall'intervallo si torna a meta' strada; la prova prende il posto della vecchia se il
+        /// voto non e' piu' basso. Le prove di una generazione si calcolano in parallelo (tranne con il G/T dello stack). Si ferma alle
+        /// generazioni chieste, ai passi massimi o quando tutta la popolazione ha voti entro 0,01 e misure entro il passo.</summary>
+        void EvoluzioneDifferenziale(CancellationToken ct)
+        {
+            int n = att.Count;
+            int np = DePopolazione > 0 ? DePopolazione : 10 * n;
+            np = Math.Max(Math.Max(8, n + 2), Math.Min(200, np));
+            Random rnd = new Random(Seme + 7919);
+            Func<double[], double[]> reale = u =>
+            {
+                double[] y = new double[n];
+                for (int i = 0; i < n; i++) y[i] = att[i].Min + Math.Max(0, Math.Min(1, u[i])) * (att[i].Max - att[i].Min);
+                return y;
+            };
+            double[][] pop = new double[np][];
+            double[] voto = new double[np];
+            pop[0] = new double[n];
+            for (int i = 0; i < n; i++) pop[0][i] = (Migliore.Valori[i] - att[i].Min) / (att[i].Max - att[i].Min);
+            voto[0] = Migliore.Voto;
+            List<double[]> nuovi = new List<double[]>();
+            for (int k = 1; k < np; k++)
+            {
+                pop[k] = new double[n];
+                for (int i = 0; i < n; i++) pop[k][i] = rnd.NextDouble();
+                nuovi.Add(pop[k]);
+            }
+            Fase?.Invoke("evoluzione differenziale: popolazione di partenza (" + np + ")");
+            OttPasso[] r0 = ProvaTutti(nuovi, reale, ct);
+            for (int k = 1; k < np; k++) voto[k] = r0[k - 1].Valido ? r0[k - 1].Voto : -1e9;
+            AggiornaMigliore(r0);
+            for (int gen = 1; gen <= Math.Max(1, DeGenerazioni) && Passi < MaxPassi && !ct.IsCancellationRequested; gen++)
+            {
+                Fase?.Invoke("evoluzione differenziale: generazione " + gen + " di " + DeGenerazioni);
+                List<double[]> prove = new List<double[]>();
+                for (int k = 0; k < np; k++)
+                {
+                    int a, b, c;
+                    do a = rnd.Next(np); while (a == k);
+                    do b = rnd.Next(np); while (b == k || b == a);
+                    do c = rnd.Next(np); while (c == k || c == a || c == b);
+                    int jr = rnd.Next(n);
+                    double[] u = new double[n];
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (i == jr || rnd.NextDouble() < DeCR)
+                        {
+                            double v = pop[a][i] + DeF * (pop[b][i] - pop[c][i]);
+                            if (v < 0) v = pop[k][i] / 2;
+                            else if (v > 1) v = (1 + pop[k][i]) / 2;
+                            u[i] = v;
+                        }
+                        else u[i] = pop[k][i];
+                    }
+                    prove.Add(u);
+                }
+                OttPasso[] rp = ProvaTutti(prove, reale, ct);
+                for (int k = 0; k < np; k++)
+                {
+                    if (rp[k] == null || !rp[k].Valido) continue;
+                    if (rp[k].Voto >= voto[k]) { pop[k] = prove[k]; voto[k] = rp[k].Voto; }
+                }
+                AggiornaMigliore(rp);
+                // convergenza: voti tutti vicini e misure entro il passo dichiarato
+                double vmin = double.MaxValue, vmax = double.MinValue;
+                for (int k = 0; k < np; k++) { vmin = Math.Min(vmin, voto[k]); vmax = Math.Max(vmax, voto[k]); }
+                if (vmax - vmin < 0.01)
+                {
+                    bool stretta = true;
+                    for (int i = 0; i < n && stretta; i++)
+                    {
+                        double lo = double.MaxValue, hi = double.MinValue;
+                        for (int k = 0; k < np; k++) { lo = Math.Min(lo, pop[k][i]); hi = Math.Max(hi, pop[k][i]); }
+                        if ((hi - lo) * (att[i].Max - att[i].Min) > att[i].Passo) stretta = false;
+                    }
+                    if (stretta) break;
+                }
+            }
+        }
+
+        void AggiornaMigliore(OttPasso[] r)
+        {
+            foreach (OttPasso p in r)
+                if (p != null && p.Valido && p.Voto > Migliore.Voto + 1e-9) { Migliore = p; Annota(p, true); }
+        }
+
+        /// <summary>1.6.0: prove di una generazione; in parallelo sui processori del calcolo (con il G/T dello stack una alla volta, perche'
+        /// la correzione del modo veloce cambia a ogni controllo). Oltre i passi massimi le prove restano vuote.</summary>
+        OttPasso[] ProvaTutti(List<double[]> xs, Func<double[], double[]> reale, CancellationToken ct)
+        {
+            OttPasso[] r = new OttPasso[xs.Count];
+            if (UsaGt())
+            {
+                for (int k = 0; k < xs.Count && Passi < MaxPassi; k++) r[k] = Prova(reale(xs[k]), ct);
+                return r;
+            }
+            ParallelOptions po = Processori.Opzioni();
+            po.CancellationToken = ct;
+            po.MaxDegreeOfParallelism = Math.Max(1, Math.Min(po.MaxDegreeOfParallelism, 4));   // ogni prova usa gia' lo sweep in parallelo
+            try
+            {
+                System.Threading.Tasks.Parallel.For(0, xs.Count, po, k =>
+                {
+                    if (Passi >= MaxPassi) return;
+                    r[k] = Prova(reale(xs[k]), ct);
+                });
+            }
+            catch (OperationCanceledException) { throw; }
+            catch (AggregateException ex) when (ex.InnerException is OperationCanceledException) { throw ex.InnerException; }
+            return r;
+        }
+
         void UnaAllaVolta(CancellationToken ct)
         {
             // passo iniziale: 8 volte il passo dichiarato (al massimo un quarto dell'intervallo), poi si dimezza fino al passo
@@ -361,9 +494,9 @@ namespace YaNec.Engine
                 k.Append(y[i].ToString("R", CultureInfo.InvariantCulture)).Append(';');
             }
             OttPasso vecchio;
-            if (cache.TryGetValue(k.ToString(), out vecchio)) return vecchio;
+            lock (cache) if (cache.TryGetValue(k.ToString(), out vecchio)) return vecchio;
             ct.ThrowIfCancellationRequested();
-            OttPasso r = new OttPasso { Valori = y, N = Passi++ };
+            OttPasso r = new OttPasso { Valori = y, N = Interlocked.Increment(ref Passi) - 1 };   // 1.6.0: anche da piu' thread (evoluzione differenziale)
             try
             {
                 NecModel m = Modello(y);
@@ -373,7 +506,7 @@ namespace YaNec.Engine
             }
             catch (OperationCanceledException) { throw; }
             catch (Exception ex) { r.Valido = false; r.Errore = ex.Message; }
-            cache[k.ToString()] = r;
+            lock (cache) cache[k.ToString()] = r;
             if (PassoFatto != null) PassoFatto(r, false);
             return r;
         }

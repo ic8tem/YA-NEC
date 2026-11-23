@@ -27,7 +27,32 @@ namespace YaNec.Engine
         /// <summary>1.2.0: solo il campo diretto delle correnti (senza l'immagine nel suolo), per il terreno reale.</summary>
         public void FfldDiretto(double thet, double phi, out Complex eth, out Complex eph) { FfldK(thet, phi, 1, out eth, out eph); }
 
-        void FfldK(double thet, double phi, int kmax, out Complex eth, out Complex eph)
+        void FfldK(double thet, double phi, int kmax, out Complex eth, out Complex eph) { FfldK(thet, phi, kmax, null, out eth, out eph); }
+
+        /// <summary>1.6.0 (Cavo e balun, proposta 5): parte della potenza irradiata che viene dai soli segmenti con mask[i] vero: integrale di
+        /// |E|^2 del campo delle sole correnti scelte diviso per l'integrale del campo di tutte, sulla sfera (sulla semisfera superiore con il
+        /// terreno), passo 5 gradi in theta e 10 in phi, peso sin(theta). Le superfici (patch) non entrano nel campo della maschera.</summary>
+        public double FrazioneIrradiata(bool[] mask)
+        {
+            double tutto = 0, parte = 0;
+            int thMax = ksymp == 2 ? 90 : 180;
+            for (int it = 0; it < thMax / 5; it++)
+            {
+                double th = (it * 5 + 2.5) * TA, w = Math.Sin(th);
+                for (int ip = 0; ip < 36; ip++)
+                {
+                    double ph = (ip * 10 + 5) * TA;
+                    Complex a, b, c, d;
+                    FfldK(th, ph, ksymp, null, out a, out b);
+                    FfldK(th, ph, ksymp, mask, out c, out d);
+                    tutto += w * ((a * Complex.Conjugate(a)).Real + (b * Complex.Conjugate(b)).Real);
+                    parte += w * ((c * Complex.Conjugate(c)).Real + (d * Complex.Conjugate(d)).Real);
+                }
+            }
+            return tutto > 0 ? parte / tutto : 0;
+        }
+
+        void FfldK(double thet, double phi, int kmax, bool[] mask, out Complex eth, out Complex eph)
         {
             double phx = -Math.Sin(phi);
             double phy = Math.Cos(phi);
@@ -69,6 +94,7 @@ namespace YaNec.Engine
                 double[] sEl = sinEl, cEl = cosEl;
                 for (int i = 0; i < n; i++)
                 {
+                    if (mask != null && (i >= mask.Length || !mask[i])) continue;
                     double omega = -(rox * cab[i] + roy * sab[i] + roz * salp[i]);
                     double el = PI * si[i];
                     double sill = omega * el;
@@ -128,7 +154,7 @@ namespace YaNec.Engine
             }
             eth = (cix * thx + ciy * thy + ciz * thz) * CONST3;
             eph = (cix * phx + ciy * phy) * CONST3;
-            if (m > 0)
+            if (m > 0 && mask == null)
             {
                 // 1.5.9: campo delle superfici (fflds di nec2c)
                 Complex sth, sph;

@@ -231,6 +231,8 @@ namespace YaNec.Engine
             if (m.Stubs.Count > 0) perso.Add(m.Stubs.Count + " stub in parallelo (riga YA-NEC STUB, per esempio lo stub in corto della LPDA) non scritti: EZNEC non li ha; in EZNEC si aggiunge una linea in corto a mano.");
             if (m.Trasformatori.Count > 0) perso.Add(m.Trasformatori.Count + " trasformatori (riga YA-NEC TRASF) non scritti.");
             if (m.RetiL.Count > 0) perso.Add(m.RetiL.Count + " reti L (riga YA-NEC RETEL) non scritte.");
+            if (m.Laplace.Count > 0) perso.Add(m.Laplace.Count + " carichi di Laplace (riga YA-NEC LAPLACE) non scritti.");
+            if (m.LineePerdite.Count > 0) perso.Add(m.LineePerdite.Count + " linee con perdite (riga YA-NEC LINEAP) non scritte.");
             bool reale = m.Ground.Kind == GroundKind.Real;
             int nr = Math.Max(Math.Max(nw, ns), Math.Max(nl, nt));
             byte[] head = Convert.FromBase64String(TestaModello);

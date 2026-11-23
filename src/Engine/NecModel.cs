@@ -52,6 +52,8 @@ namespace YaNec.Engine
         public List<Trasformatore> Trasformatori = new List<Trasformatore>();
         public List<ReteL> RetiL = new List<ReteL>();
         public List<Stub> Stubs = new List<Stub>();          // 0.4.7: stub in parallelo senza filo fittizio (LPDA)
+        public List<CaricoLaplace> Laplace = new List<CaricoLaplace>();      // 1.6.0: carichi di Laplace (EZNEC)
+        public List<LineaPerdite> LineePerdite = new List<LineaPerdite>();   // 1.6.0: linee con perdite (EZNEC)
         readonly List<string> righeExtra = new List<string>();
         Dictionary<string, double> varValues = new Dictionary<string, double>(StringComparer.OrdinalIgnoreCase);
         Dictionary<string, string> varDescr = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -85,6 +87,10 @@ namespace YaNec.Engine
             foreach (ReteL q in RetiL) m.RetiL.Add(q.Clone());
             m.Stubs = new List<Stub>();
             foreach (Stub st in Stubs) m.Stubs.Add(st.Clone());
+            m.Laplace = new List<CaricoLaplace>();
+            foreach (CaricoLaplace c in Laplace) m.Laplace.Add(c.Clone());
+            m.LineePerdite = new List<LineaPerdite>();
+            foreach (LineaPerdite lp in LineePerdite) m.LineePerdite.Add(lp.Clone());
             return m;
         }
 
@@ -100,22 +106,34 @@ namespace YaNec.Engine
         /// <summary>Linee e reti da usare nel calcolo alla frequenza f: quelle del modello piu' trasformatori e reti L (schede NT).</summary>
         public List<NetworkSpec> EffectiveNetworks(double fMHz)
         {
-            if (Trasformatori.Count == 0 && RetiL.Count == 0 && Stubs.Count == 0) return Networks;
+            if (Trasformatori.Count == 0 && RetiL.Count == 0 && Stubs.Count == 0 && LineePerdite.Count == 0) return Networks;
             List<NetworkSpec> l = new List<NetworkSpec>(Networks);
             foreach (Trasformatore t in Trasformatori) l.Add(OggettiExtra.Nt(t));
             foreach (ReteL q in RetiL) l.Add(OggettiExtra.Nt(q, fMHz));
-            // stub: ammettenza in parallelo all'estremo della prima linea TL che tocca il segmento (copia della scheda, il modello non cambia)
+            foreach (LineaPerdite lp in LineePerdite) l.Add(lp.Nt(fMHz));   // 1.6.0
+            // stub: ammettenza in parallelo all'estremo della prima linea TL che tocca il segmento (copia della scheda, il modello non cambia).
+            // 1.6.0: anche sulla porta di una rete NT (linea con perdite, rete L, trasformatore): si somma a Y11 o Y22. Senza nessuna rete
+            // sul segmento lo stub e' a una porta e va nei carichi (EffectiveLoads).
             foreach (Stub st in Stubs)
             {
-                int k = l.FindIndex(n => n.IsTl && ((n.Tag1 == st.Tag && n.Seg1 == st.Seg) || (n.Tag2 == st.Tag && n.Seg2 == st.Seg)));
+                int k = l.FindIndex(n => (n.Tag1 == st.Tag && n.Seg1 == st.Seg) || (n.Tag2 == st.Tag && n.Seg2 == st.Seg));
                 if (k < 0) continue;
                 NetworkSpec c = l[k].Clone();
                 System.Numerics.Complex y = st.Y(fMHz);
-                if (c.Tag1 == st.Tag && c.Seg1 == st.Seg) { c.F3 += y.Real; c.F4 += y.Imaginary; }
-                else { c.F5 += y.Real; c.F6 += y.Imaginary; }
+                bool p1 = c.Tag1 == st.Tag && c.Seg1 == st.Seg;
+                if (c.IsTl) { if (p1) { c.F3 += y.Real; c.F4 += y.Imaginary; } else { c.F5 += y.Real; c.F6 += y.Imaginary; } }
+                else { if (p1) { c.F1 += y.Real; c.F2 += y.Imaginary; } else { c.F5 += y.Real; c.F6 += y.Imaginary; } }
                 l[k] = c;
             }
             return l;
+        }
+
+        /// <summary>1.6.0: c'e' una linea o una rete con una porta su questo segmento?</summary>
+        public bool PortaDiRete(int tag, int seg)
+        {
+            Func<int, int, int, int, bool> tocca = (t1, s1, t2, s2) => (t1 == tag && s1 == seg) || (t2 == tag && s2 == seg);
+            return Networks.Exists(n => tocca(n.Tag1, n.Seg1, n.Tag2, n.Seg2)) || Trasformatori.Exists(n => tocca(n.Tag1, n.Seg1, n.Tag2, n.Seg2)) ||
+                   RetiL.Exists(n => tocca(n.Tag1, n.Seg1, n.Tag2, n.Seg2)) || LineePerdite.Exists(n => tocca(n.Tag1, n.Seg1, n.Tag2, n.Seg2));
         }
 
         /// <summary>Carichi da usare nel calcolo: quelli del modello piu' il materiale dei fili.</summary>
@@ -124,6 +142,15 @@ namespace YaNec.Engine
             List<LoadSpec> l = UseLoads ? new List<LoadSpec>(Loads) : new List<LoadSpec>();
             if (WireConductivity > 0)
                 l.Add(new LoadSpec { Type = 5, Tag = 0, From = 0, To = 0, F1 = WireConductivity });
+            // 1.6.0 (proposta 6, Ez2Nec): carichi di Laplace e stub a una porta, ricalcolati a ogni frequenza dal motore
+            if (UseLoads)
+                foreach (CaricoLaplace c in Laplace) { CaricoLaplace cc = c; l.Add(new LoadSpec { Type = 4, Tag = cc.Tag, From = cc.Seg, To = cc.Seg, Zf = cc.Z }); }
+            foreach (Stub st in Stubs)
+            {
+                if (PortaDiRete(st.Tag, st.Seg)) continue;
+                Stub s1 = st;
+                l.Add(new LoadSpec { Type = 4, Tag = s1.Tag, From = s1.Seg, To = s1.Seg, Zf = s1.Zserie });
+            }
             return l;
         }
 
@@ -358,7 +385,8 @@ namespace YaNec.Engine
                                 {
                                     if (m.righeExtra.Count > 0) m.righeExtra[m.righeExtra.Count - 1] += " " + c.Substring(8).Trim();
                                 }
-                                else if (c.StartsWith("YA-NEC RASTR", StringComparison.Ordinal) || c.StartsWith("YA-NEC TRASF ", StringComparison.Ordinal) || c.StartsWith("YA-NEC RETEL ", StringComparison.Ordinal) || c.StartsWith("YA-NEC STUB ", StringComparison.Ordinal))
+                                else if (c.StartsWith("YA-NEC RASTR", StringComparison.Ordinal) || c.StartsWith("YA-NEC TRASF ", StringComparison.Ordinal) || c.StartsWith("YA-NEC RETEL ", StringComparison.Ordinal) || c.StartsWith("YA-NEC STUB ", StringComparison.Ordinal) ||
+                                         c.StartsWith("YA-NEC LAPLACE ", StringComparison.Ordinal) || c.StartsWith("YA-NEC LINEAP ", StringComparison.Ordinal))
                                     m.righeExtra.Add(c.Substring(7).Trim());
                                 else if (c.StartsWith("YANEC ", StringComparison.Ordinal))
                                 {
@@ -725,6 +753,21 @@ namespace YaNec.Engine
                         }
                         Stubs.Add(st);
                     }
+                    else if (e.StartsWith("LAPLACE ", StringComparison.Ordinal))
+                    {
+                        CaricoLaplace c = CaricoLaplace.Leggi(e.Substring(8));
+                        if (c == null) { Warnings.Add("Riga di carico di Laplace non valida: " + e); continue; }
+                        Laplace.Add(c);
+                    }
+                    else if (e.StartsWith("LINEAP ", StringComparison.Ordinal))
+                    {
+                        LineaPerdite lp = LineaPerdite.Leggi(e.Substring(7));
+                        if (lp == null) { Warnings.Add("Riga di linea con perdite non valida: " + e); continue; }
+                        // la scheda NT scritta per gli altri programmi si toglie: YA-NEC la ricalcola a ogni frequenza
+                        int k = Networks.FindIndex(n => !n.IsTl && n.Tag1 == lp.Tag1 && n.Seg1 == lp.Seg1 && n.Tag2 == lp.Tag2 && n.Seg2 == lp.Seg2);
+                        if (k >= 0) Networks.RemoveAt(k);
+                        LineePerdite.Add(lp);
+                    }
                     else if (e.StartsWith("TRASF ", StringComparison.Ordinal) || e.StartsWith("RETEL ", StringComparison.Ordinal))
                     {
                         bool tr = e.StartsWith("TRASF ", StringComparison.Ordinal);
@@ -815,6 +858,8 @@ namespace YaNec.Engine
             foreach (Trasformatore t in Trasformatori) extra.Add(OggettiExtra.RigaTrasformatore(t));
             foreach (ReteL q in RetiL) extra.Add(OggettiExtra.RigaReteL(q));
             foreach (Stub st in Stubs) extra.Add(Stub.Riga(st));
+            foreach (CaricoLaplace c in Laplace) extra.Add(CaricoLaplace.Riga(c));
+            foreach (LineaPerdite lp in LineePerdite) extra.Add(LineaPerdite.Riga(lp));
             foreach (string e in extra)
             {
                 // righe CM di 80 caratteri al massimo: il seguito va su righe "CM YA-NEC+"

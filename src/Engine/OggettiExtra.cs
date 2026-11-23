@@ -44,17 +44,36 @@ namespace YaNec.Engine
         public int Tag, Seg;
         public double Z0 = 300, LenM, Vf = 1;
         public bool Corto = true;
+        /// <summary>1.6.0: perdita della linea in dB/m (0 = senza perdite), dagli stub con perdite di EZNEC.</summary>
+        public double DbPerM;
         public Stub Clone() { return (Stub)MemberwiseClone(); }
         public System.Numerics.Complex Y(double fMHz)
         {
+            if (DbPerM > 0)
+            {
+                // 1.6.0: con le perdite come EZNEC e Ez2Nec (elements.rs, Apache-2.0): solo perdite nei conduttori, R serie = 2 alfa Z0
+                System.Numerics.Complex g, zc;
+                LineaPerdite.Costanti(Z0, Vf, DbPerM, fMHz, out g, out zc);
+                System.Numerics.Complex th = System.Numerics.Complex.Tanh(g * LenM);
+                if (Corto) return System.Numerics.Complex.Abs(th) < 1e-15 ? new System.Numerics.Complex(1e6, 0) : 1 / (zc * th);
+                return th / zc;
+            }
             double b = 2 * Math.PI * fMHz / (299.792458 * Math.Max(0.01, Vf));
             double t = Math.Tan(b * LenM);
             if (Corto) return Math.Abs(t) < 1e-12 ? new System.Numerics.Complex(0, -1e6) : new System.Numerics.Complex(0, -1 / (Z0 * t));
             return new System.Numerics.Complex(0, t / Z0);
         }
+        /// <summary>1.6.0: stub a una porta (nessuna linea sullo stesso segmento): l'impedenza d'ingresso dello stub entra in serie nel filo,
+        /// come la porta di una scheda NT (Ez2Nec la scrive cosi', con un filo fittizio per l'altro capo). Aperto a mezz'onda: 1 Gohm.</summary>
+        public System.Numerics.Complex Zserie(double fMHz)
+        {
+            System.Numerics.Complex y = Y(fMHz);
+            return System.Numerics.Complex.Abs(y) < 1e-9 ? new System.Numerics.Complex(1e9, 0) : 1 / y;
+        }
         public static string Riga(Stub s)
         {
-            return string.Format(System.Globalization.CultureInfo.InvariantCulture, "YA-NEC STUB {0} {1} {2:R} {3:R} {4:R} {5}", s.Tag, s.Seg, s.Z0, s.LenM, s.Vf, s.Corto ? "corto" : "aperto");
+            return string.Format(System.Globalization.CultureInfo.InvariantCulture, "YA-NEC STUB {0} {1} {2:R} {3:R} {4:R} {5}", s.Tag, s.Seg, s.Z0, s.LenM, s.Vf, s.Corto ? "corto" : "aperto") +
+                (s.DbPerM > 0 ? " " + s.DbPerM.ToString("R", System.Globalization.CultureInfo.InvariantCulture) : "");
         }
         public static Stub Leggi(string t)
         {
@@ -64,6 +83,7 @@ namespace YaNec.Engine
             Stub s = new Stub { Tag = int.Parse(f[0], ci), Seg = int.Parse(f[1], ci), Z0 = double.Parse(f[2], ci), LenM = double.Parse(f[3], ci) };
             if (f.Length > 4) s.Vf = double.Parse(f[4], ci);
             if (f.Length > 5) s.Corto = !f[5].StartsWith("ap", StringComparison.OrdinalIgnoreCase);
+            if (f.Length > 6) s.DbPerM = double.Parse(f[6], ci);
             return s;
         }
     }
@@ -74,6 +94,11 @@ namespace YaNec.Engine
         public double Rs, Ls, Cs;            // ramo serie: ohm, H, F (0 = assente; C 0 = corto)
         public double Rp, Lp, Cp;            // ramo parallelo
         public int LatoParallelo = 2;        // 1 = sulla porta 1, 2 = sulla porta 2
+        /// <summary>1.6.0: rete L importata da EZNEC (Ez2Nec, Apache-2.0): ogni ramo e' R, L, C in serie o in parallelo (ParS, ParP), la R cresce
+        /// con la radice della frequenza da RfS/RfP (0 = fissa), un ramo in serie tutto a zero e' un corto. Il ramo serie va tra le porte,
+        /// il ramo parallelo sulla porta 2.</summary>
+        public bool Eznec, ParS, ParP;
+        public double RfS, RfP;
         public ReteL Clone() { return (ReteL)MemberwiseClone(); }
     }
 
@@ -243,9 +268,34 @@ namespace YaNec.Engine
             return new Complex(r, w * l - (c > 0 ? 1 / (w * c) : 0));
         }
 
+        /// <summary>1.6.0: ammettenza di un ramo RLC come EZNEC (Ez2Nec, elements.rs): serie (elemento a zero = corto) o parallelo
+        /// (elemento a zero = assente, tutti a zero = aperto); R scalata con la radice della frequenza da rf.</summary>
+        public static Complex YRamoEznec(double r, double l, double c, bool par, double rf, double fMHz)
+        {
+            double w = 2 * Math.PI * fMHz * 1e6;
+            if (rf > 0) r *= Math.Sqrt(fMHz / rf);
+            if (!par)
+            {
+                Complex z = new Complex(r, w * l - (c != 0 ? 1 / (w * c) : 0));
+                return Complex.Abs(z) < 1e-12 ? new Complex(1e6, 0) : 1 / z;
+            }
+            Complex y = Complex.Zero;
+            if (r != 0) y += 1 / r;
+            if (l != 0) y += 1 / new Complex(0, w * l);
+            if (c != 0) y += new Complex(0, w * c);
+            return y;
+        }
+
         public static NetworkSpec Nt(ReteL q, double fMHz)
         {
             NetworkSpec n = new NetworkSpec { IsTl = false, Tag1 = q.Tag1, Seg1 = q.Seg1, Tag2 = q.Tag2, Seg2 = q.Seg2 };
+            if (q.Eznec)
+            {
+                Complex y1 = YRamoEznec(q.Rs, q.Ls, q.Cs, q.ParS, q.RfS, fMHz), y2 = YRamoEznec(q.Rp, q.Lp, q.Cp, q.ParP, q.RfP, fMHz);
+                Complex a11 = y1, a12 = -y1, a22 = y1 + y2;
+                n.F1 = a11.Real; n.F2 = a11.Imaginary; n.F3 = a12.Real; n.F4 = a12.Imaginary; n.F5 = a22.Real; n.F6 = a22.Imaginary;
+                return n;
+            }
             Complex zs = Ramo(q.Rs, q.Ls, q.Cs, fMHz), zp = Ramo(q.Rp, q.Lp, q.Cp, fMHz);
             if (Complex.Abs(zs) < 1e-6) zs = new Complex(1e-6, 0);
             bool parallelo = q.Rp != 0 || q.Lp != 0 || q.Cp != 0;
@@ -262,7 +312,8 @@ namespace YaNec.Engine
 
         public static string RigaReteL(ReteL q)
         {
-            return string.Format(CI, "YA-NEC RETEL {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10}", q.Tag1, q.Seg1, q.Tag2, q.Seg2, F(q.Rs), F(q.Ls), F(q.Cs), F(q.Rp), F(q.Lp), F(q.Cp), q.LatoParallelo);
+            return string.Format(CI, "YA-NEC RETEL {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10}", q.Tag1, q.Seg1, q.Tag2, q.Seg2, F(q.Rs), F(q.Ls), F(q.Cs), F(q.Rp), F(q.Lp), F(q.Cp), q.LatoParallelo) +
+                (q.Eznec ? string.Format(CI, " EZ {0} {1} {2} {3}", q.ParS ? 1 : 0, q.ParP ? 1 : 0, F(q.RfS), F(q.RfP)) : "");
         }
 
         public static Trasformatore LeggiTrasformatore(string s)
@@ -283,9 +334,14 @@ namespace YaNec.Engine
             if (p.Length < 11) return null;
             try
             {
-                return new ReteL { Tag1 = int.Parse(p[0], CI), Seg1 = int.Parse(p[1], CI), Tag2 = int.Parse(p[2], CI), Seg2 = int.Parse(p[3], CI),
+                ReteL q = new ReteL { Tag1 = int.Parse(p[0], CI), Seg1 = int.Parse(p[1], CI), Tag2 = int.Parse(p[2], CI), Seg2 = int.Parse(p[3], CI),
                     Rs = double.Parse(p[4], CI), Ls = double.Parse(p[5], CI), Cs = double.Parse(p[6], CI), Rp = double.Parse(p[7], CI), Lp = double.Parse(p[8], CI), Cp = double.Parse(p[9], CI),
                     LatoParallelo = int.Parse(p[10], CI) == 1 ? 1 : 2 };
+                if (p.Length >= 16 && p[11] == "EZ")
+                {
+                    q.Eznec = true; q.ParS = p[12] == "1"; q.ParP = p[13] == "1"; q.RfS = double.Parse(p[14], CI); q.RfP = double.Parse(p[15], CI);
+                }
+                return q;
             }
             catch { return null; }
         }

@@ -37,7 +37,10 @@ namespace YaNec
         PolarPlot ottPolar;
         WrapPanel ottCards, resCards;
         readonly Dictionary<string, TextBlock[]> ottCard = new Dictionary<string, TextBlock[]>();
-        bool ottBoom, ottSimplesso;
+        bool ottBoom, ottSimplesso, ottEvoluzione;
+        Border ottDeBox;
+        TextBox ottDePop, ottDeF, ottDeCr, ottDeGen;
+        ComboBox ottDeRif;
         Button ottMetodo, ottBoomBtn, ottAvvia, ottFerma;
         NecModel ottModelloVars;
         Ottimizzatore ott;
@@ -135,6 +138,7 @@ namespace YaNec
             ob.Children.Add(NotaT("Il voto e' la somma sulle frequenze: tiene buona l'antenna anche ai bordi della banda. Si possono mettere bande diverse (antenne multibanda). ",
                                   "Clic su una frequenza: diventa la principale (in grassetto, quella delle schede in alto); clic destro: la toglie."));
             StackPanel c1s = new StackPanel();
+            c1s.Children.Add(PannelloAdattaZ0());   // 1.6.0: solo con una Yagi riconosciuta
             c1s.Children.Add(Pannello("1. Obiettivi e pesi", ob));
             c1s.Children.Add(OttGtPannello());   // 1.5.8
             Control c1 = new ScrollViewer { Content = c1s, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
@@ -161,14 +165,47 @@ namespace YaNec
             {
                 MenuFlyout f = new MenuFlyout();
                 MenuItem a = new MenuItem { Header = "una variabile alla volta (come MMANA: passo che si dimezza)" };
-                a.Click += (s2, e2) => { ottSimplesso = false; ottMetodo.Content = "metodo: una variabile alla volta ▾"; };
+                a.Click += (s2, e2) => { ottSimplesso = false; ottEvoluzione = false; ottMetodo.Content = "metodo: una variabile alla volta ▾"; ottDeBox.IsVisible = false; };
                 MenuItem b = new MenuItem { Header = "simplesso di Nelder e Mead (tutte le variabili insieme)" };
-                b.Click += (s2, e2) => { ottSimplesso = true; ottMetodo.Content = "metodo: simplesso (Nelder-Mead) ▾"; };
-                f.Items.Add(a); f.Items.Add(b);
+                b.Click += (s2, e2) => { ottSimplesso = true; ottEvoluzione = false; ottMetodo.Content = "metodo: simplesso (Nelder-Mead) ▾"; ottDeBox.IsVisible = false; };
+                // 1.6.0 (bozzetto «spunti dalla ricerca su GitHub», proposta 3, approvato da IC8TEM il 23/11/2026 14:27)
+                MenuItem c = new MenuItem { Header = "evoluzione differenziale (cerca in tutto l'intervallo)" };
+                c.Click += (s2, e2) => { ottSimplesso = false; ottEvoluzione = true; ottMetodo.Content = "metodo: evoluzione differenziale ▾"; ottDeBox.IsVisible = true; };
+                f.Items.Add(a); f.Items.Add(b); f.Items.Add(c);
                 f.ShowAt(ottMetodo);
             };
             vb.Children.Add(bAgg); vb.Children.Add(bTutti); vb.Children.Add(ottBoomBtn); vb.Children.Add(ottMetodo);
             vp.Children.Add(vb);
+            // 1.6.0: parametri dell'evoluzione differenziale (visibili con quel metodo)
+            {
+                StackPanel de = new StackPanel { Spacing = 3 };
+                de.Children.Add(new TextBlock { Text = "Evoluzione differenziale", FontWeight = FontWeight.SemiBold, Foreground = Pal.B(Pal.Fore) });
+                ottDePop = Tb("auto", 70); ottDeF = Tb("0,7", 70); ottDeCr = Tb("0,9", 70); ottDeGen = Tb("80", 70);
+                ottDeRif = new ComboBox { ItemsSource = new[] { "simplesso", "nessuna" }, SelectedIndex = 0, MinWidth = 130 };
+                ToolTip.SetTip(ottDePop, "Antenne di ogni generazione. «auto» = 10 per ogni variabile (da 8 a 200).");
+                ToolTip.SetTip(ottDeF, "Peso della differenza F (0,4-1): piu' alto = passi piu' lunghi, cerca piu' lontano.");
+                ToolTip.SetTip(ottDeCr, "Incrocio CR (0-1): parte delle misure che prende dalla prova nuova; 0,9 va bene con variabili legate tra loro (Yagi).");
+                ToolTip.SetTip(ottDeGen, "Generazioni al massimo; si ferma prima se tutta la popolazione ha lo stesso voto e misure entro il passo.");
+                ToolTip.SetTip(ottDeRif, "Alla fine il simplesso parte dalla migliore e la rifinisce.");
+                Func<string, Control, Control> rr = (et, c) =>
+                {
+                    WrapPanel w = new WrapPanel { Margin = new Thickness(0, 1) };
+                    w.Children.Add(new TextBlock { Text = et, Width = 190, VerticalAlignment = VerticalAlignment.Center });
+                    w.Children.Add(c);
+                    return w;
+                };
+                de.Children.Add(rr("Popolazione", ottDePop));
+                de.Children.Add(rr("Peso della differenza (F)", ottDeF));
+                de.Children.Add(rr("Incrocio (CR)", ottDeCr));
+                de.Children.Add(rr("Generazioni al massimo", ottDeGen));
+                de.Children.Add(rr("Rifinitura finale", ottDeRif));
+                de.Children.Add(NotaT("Storn e Price (1997), schema DE/rand/1/bin: ogni antenna nuova = a + F·(b − c), poi incrocio con la vecchia. ",
+                    "Cerca in tutto l'intervallo Minimo-Massimo; le prove di una generazione si calcolano in parallelo. Idea dagli ottimizzatori di NEC-Workbench e 45south."));
+                ottDeBox = new Border { Child = de, IsVisible = ottEvoluzione, BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(8), Padding = new Thickness(10, 8), Margin = new Thickness(0, 6, 0, 0) };
+                vp.Children.Add(ottDeBox);
+                if (ottEvoluzione) ottMetodo.Content = "metodo: evoluzione differenziale ▾";
+                else if (ottSimplesso) ottMetodo.Content = "metodo: simplesso (Nelder-Mead) ▾";
+            }
             ottNuovaCorpo = new StackPanel { Spacing = 4 };
             ottNuovaBox = new Border { Child = ottNuovaCorpo, IsVisible = false, BorderBrush = new SolidColorBrush(Structure3DView.Ocra), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(8), Padding = new Thickness(10, 8), Margin = new Thickness(0, 6, 0, 0) };
             vp.Children.Add(ottNuovaBox);
@@ -291,6 +328,7 @@ namespace YaNec
                 ottSerieMigliore.Clear(); ottSeriePasso.Clear();
                 OttRegistro();
                 OttGrafici();
+                AdattaZ0Visibile();   // 1.6.0
             }
             OttStatoSchede();
         }
@@ -645,6 +683,16 @@ namespace YaNec
             o.Principale = ottFreqPrinc;
             o.MantieniBoom = ottBoom;
             o.Simplesso = ottSimplesso;
+            o.Evoluzione = ottEvoluzione;   // 1.6.0
+            if (ottEvoluzione)
+            {
+                string tp = (ottDePop.Text ?? "").Trim();
+                o.DePopolazione = tp.Length == 0 || tp.StartsWith("a", StringComparison.OrdinalIgnoreCase) ? 0 : Math.Max(0, (int)Math.Round(ParseNum(tp, 0)));
+                o.DeF = Math.Max(0.1, Math.Min(2, ParseNum(ottDeF.Text, 0.7)));
+                o.DeCR = Math.Max(0, Math.Min(1, ParseNum(ottDeCr.Text, 0.9)));
+                o.DeGenerazioni = Math.Max(1, (int)Math.Round(ParseNum(ottDeGen.Text, 80)));
+                o.DeRifinitura = ottDeRif.SelectedIndex == 0;
+            }
             if (!OttGtLeggi(o)) return false;   // 1.5.8
             return true;
         }
@@ -694,7 +742,7 @@ namespace YaNec
             ottInCorso = true;
             ottAvvia.IsEnabled = false; ottFerma.IsEnabled = true;
             ottT0 = DateTime.Now;
-            Registro.Scrivi("AZIONE", "ottimizzatore avviato: " + o.Variabili.Count + " variabili, " + o.Frequenze.Count + " frequenze, metodo " + (o.Simplesso ? "simplesso" : "una variabile alla volta"));
+            Registro.Scrivi("AZIONE", "ottimizzatore avviato: " + o.Variabili.Count + " variabili, " + o.Frequenze.Count + " frequenze, metodo " + (o.Evoluzione ? "evoluzione differenziale" : o.Simplesso ? "simplesso" : "una variabile alla volta"));
             o.PassoFatto += (p, migliore) => { lock (ottSeriePasso) { ottSeriePasso.Add(p.Valido ? p.Voto : double.NaN); ottSerieMigliore.Add(o.Migliore != null ? o.Migliore.Voto : (p.Valido ? p.Voto : double.NaN)); } };
             if (ottTimer == null)
             {

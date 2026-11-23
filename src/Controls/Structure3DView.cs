@@ -28,6 +28,36 @@ namespace YaNec
         public GroundStyle GroundLook;          // null = solo griglia
         // correnti disegnate come funzioni (curve) sopra ogni filo
         public bool CurrentCurves = false, CurrentColors = true;
+        /// <summary>1.6.0 (bozzetto «spunti dalla ricerca su GitHub», proposta 4, approvato da IC8TEM il 23/11/2026 14:27): fili colorati
+        /// secondo la fase della corrente rispetto all'alimentazione (ruota dei colori: rosso 0°, verde 120°, blu 240°); i segmenti con meno
+        /// del 3 % della corrente massima restano grigi (fase non significativa). Idea da NEC-Workbench (GPL-3): nessun codice usato.</summary>
+        public bool CurrentPhase;
+        const int NFasi = 24;
+        public static Color ColoreFase(double gradi)
+        {
+            double h = ((gradi % 360) + 360) % 360 / 60.0;
+            int k = (int)Math.Floor(h); double f = h - k;
+            double v = 0.92, p = 0.15, q = 0.15 + (v - 0.15) * (1 - f), t = 0.15 + (v - 0.15) * f;
+            double r, g, b;
+            switch (k % 6)
+            {
+                case 0: r = v; g = t; b = p; break;
+                case 1: r = q; g = v; b = p; break;
+                case 2: r = p; g = v; b = t; break;
+                case 3: r = p; g = q; b = v; break;
+                case 4: r = t; g = p; b = v; break;
+                default: r = v; g = p; b = q; break;
+            }
+            return Color.FromRgb((byte)(255 * r), (byte)(255 * g), (byte)(255 * b));
+        }
+        double FaseRiferimento()
+        {
+            if (CurrentC == null) return 0;
+            foreach (int sg in SourceSegs) if (sg >= 0 && sg < CurrentC.Length && CurrentC[sg].Magnitude > 0) return CurrentC[sg].Phase * 180 / Math.PI;
+            int im = 0;
+            for (int i = 1; i < CurrentC.Length; i++) if (CurrentC[i].Magnitude > CurrentC[im].Magnitude) im = i;
+            return CurrentC.Length > 0 ? CurrentC[im].Phase * 180 / Math.PI : 0;
+        }
         // 1.5.9 (bozzetto «Struttura 3D › correnti animate e valori col mouse», approvato alla lettera da IC8TEM il 22/11/2026;
         // idea vista in AntennaSim di EA1FUO, GPL-3: nessun codice usato): correnti complesse del NEC per segmento (A, come la tabella
         // delle correnti), puntini animati e fumetto dei valori al passaggio del mouse
@@ -484,9 +514,11 @@ namespace YaNec
             // si raccolgono in poche geometrie (una per colore, 16 livelli di corrente) disegnate una volta sola, e lo spessore scende con
             // il numero dei segmenti (2,2 px fino a 3000, poi fino a 0,6 px). I punti fuori da un margine ampio della vista si scartano.
             {
-                bool colori = ShowCurrents && (CurrentColors || currentAnimate) && CurrentNorm != null;
+                bool fasi = ShowCurrents && CurrentPhase && CurrentC != null && CurrentNorm != null && CurrentC.Length == Geo.N && CurrentNorm.Length == Geo.N;
+                bool colori = !fasi && ShowCurrents && (CurrentColors || currentAnimate) && CurrentNorm != null;
                 double spess = Geo.N <= 3000 ? 2.2 : Geo.N <= 8000 ? 1.4 : Geo.N <= 15000 ? 1.0 : 0.6;
-                int nLiv = colori ? 16 : 1;
+                int nLiv = colori ? 16 : fasi ? NFasi + 1 : 1;
+                double fRif = fasi ? FaseRiferimento() : 0;
                 StreamGeometry[] geo = new StreamGeometry[nLiv];
                 StreamGeometryContext[] gc = new StreamGeometryContext[nLiv];
                 bool[] usato = new bool[nLiv];
@@ -501,6 +533,15 @@ namespace YaNec
                         if (Math.Abs(sx1 - W / 2) > lim || Math.Abs(sy1 - H / 2) > lim || Math.Abs(sx2 - W / 2) > lim || Math.Abs(sy2 - H / 2) > lim) continue;
                         int k = 0;
                         if (colori) k = i < CurrentNorm.Length ? Math.Max(0, Math.Min(nLiv - 1, (int)(CurrentNorm[i] * nLiv))) : 0;
+                        else if (fasi)
+                        {
+                            if (CurrentNorm[i] < 0.03) k = NFasi;
+                            else
+                            {
+                                double fg = (CurrentC[i].Phase * 180 / Math.PI - fRif + 720) % 360;
+                                k = (int)Math.Round(fg / (360.0 / NFasi)) % NFasi;
+                            }
+                        }
                         if (gc[k] == null) { geo[k] = new StreamGeometry(); gc[k] = geo[k].Open(); }
                         gc[k].BeginFigure(new Point(sx1, sy1), false);
                         gc[k].LineTo(new Point(sx2, sy2));
@@ -515,8 +556,8 @@ namespace YaNec
                 for (int k = 0; k < nLiv; k++)
                 {
                     if (!usato[k]) continue;
-                    Color c = colori ? Pal.Heat((k + 0.5) / nLiv) : Pal.Fore;
-                    ctx.DrawGeometry(null, Pal.P(c, spess), geo[k]);
+                    Color c = colori ? Pal.Heat((k + 0.5) / nLiv) : fasi ? (k == NFasi ? Pal.A(140, Pal.Muted) : ColoreFase(k * 360.0 / NFasi)) : Pal.Fore;
+                    ctx.DrawGeometry(null, Pal.P(c, fasi && k < NFasi ? spess + 0.8 : spess), geo[k]);
                 }
             }
             // 1.5.9: superfici (patch SP/SM/SC): quadratini di lato pari alla radice dell'area, nel piano t1-t2, con la normale
@@ -605,7 +646,30 @@ namespace YaNec
             Draw.Text(ctx, Info + (Ground && HeightSummary.Length > 0 ? ", " + HeightSummary : ""), 10, 8, 12.5, Pal.ChartText);
             Draw.TextR(ctx, "trascina: ruota  |  rotella: zoom  |  tasto destro: sposta  |  doppio clic: vista iniziale", W - 10, H - 22, 11, Pal.Muted);
             if (HoverValues && hoverAt != null) DisegnaFumetto(ctx, hoverAt.Value, cx, cy, sc, ox, oy, oz, R, W, H);
-            if (ShowCurrents && (CurrentColors || currentAnimate) && CurrentNorm != null)
+            if (ShowCurrents && CurrentPhase && CurrentC != null && CurrentNorm != null)
+            {
+                // 1.6.0: scala circolare della fase in basso a sinistra
+                double rx = 46, ry = H - 52, r1 = 30, r2 = 18;
+                for (int k = 0; k < 36; k++)
+                {
+                    double a0 = (k * 10 - 90) * Math.PI / 180, a1 = ((k + 1) * 10 - 90) * Math.PI / 180;
+                    StreamGeometry sg = new StreamGeometry();
+                    using (StreamGeometryContext c = sg.Open())
+                    {
+                        c.BeginFigure(new Point(rx + r1 * Math.Cos(a0), ry + r1 * Math.Sin(a0)), true);
+                        c.LineTo(new Point(rx + r1 * Math.Cos(a1), ry + r1 * Math.Sin(a1)));
+                        c.LineTo(new Point(rx + r2 * Math.Cos(a1), ry + r2 * Math.Sin(a1)));
+                        c.LineTo(new Point(rx + r2 * Math.Cos(a0), ry + r2 * Math.Sin(a0)));
+                        c.EndFigure(true);
+                    }
+                    ctx.DrawGeometry(Pal.B(ColoreFase(k * 10 + 5)), null, sg);
+                }
+                Draw.TextC(ctx, "0°", rx, ry - r1 - 15, 10.5, Pal.ChartText);
+                Draw.Text(ctx, "120°", rx + r1 * 0.87 + 2, ry + r1 * 0.5 - 4, 10.5, Pal.ChartText);
+                Draw.TextR(ctx, "240°", rx - r1 * 0.87 - 2, ry + r1 * 0.5 - 4, 10.5, Pal.ChartText);
+                Draw.Text(ctx, Lang.T("fase della corrente rispetto all'alimentazione"), rx + r1 + 34, ry - 7, 11, Pal.ChartText);
+            }
+            else if (ShowCurrents && (CurrentColors || currentAnimate) && CurrentNorm != null)
             {
                 double bx = 10, by = H - 30, bw = 160;
                 for (int k = 0; k < 40; k++)

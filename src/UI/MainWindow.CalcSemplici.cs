@@ -35,13 +35,17 @@ namespace YaNec
         readonly Dictionary<string, string> calcUltima = new Dictionary<string, string>();
         /// <summary>1.1.0: famiglie dei Calcolatori e loro voci. 1.5.2: nuovo ordine chiesto da IC8TEM il 19/11/2026 17:06
         /// (schema numerato 1-7 sull'albero delle linguette): HF, Antenne riceventi, VHF, Strumenti, Dischi e illuminatori, 2,4 GHz, Calcoli meccanici.</summary>
-        public static readonly string[] CalcFamiglie = { "HF", "Antenne riceventi", "VHF", "Strumenti", "Dischi e illuminatori", "2,4 GHz", "Calcoli meccanici" };
+        // 1.6.0: «Suggerimenti» in testa (bozzetto «spunti dalla ricerca su GitHub», proposta 1, approvato da IC8TEM il 23/11/2026 14:27)
+        public static readonly string[] CalcFamiglie = { "Suggerimenti", "HF", "Antenne riceventi", "VHF", "Strumenti", "Dischi e illuminatori", "2,4 GHz", "Calcoli meccanici" };
         Control calcMeccPagina;   // 1.5: la pagina dei Calcoli meccanici (prima linguetta principale) dentro i Calcolatori
+        Control calcSugg;         // 1.6.0: pagina dei Suggerimenti
+        string calcVarianteVoluta;
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
             { "HF", new[] { "dipoli", "filari", "dipmb", "yagimb", "verticali", "vert43", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh", "discone" } },   // 1.5.6: Discone da HF a VHF (IC8TEM 21/11/2026)
             { "Antenne riceventi", new string[0] },
+            { "Suggerimenti", new string[0] },
             { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
             { "Calcoli meccanici", new string[0] },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
@@ -170,6 +174,12 @@ namespace YaNec
                 ApriVoceMeccanica(voce ?? meccVoceAttiva);
                 return;
             }
+            if (fam == "Suggerimenti")
+            {
+                if (calcSugg == null) calcSugg = BuildSuggerimentiPage();
+                calcCorpo.Content = calcSugg;
+                return;
+            }
             if (fam == "Antenne riceventi")
             {
                 if (calcRx == null) calcRx = BuildRiceventiPage();
@@ -198,12 +208,16 @@ namespace YaNec
                 dest.Scale = 1;
             }
             string voce = dest != null ? (dest.Group ?? dest.Key) : r.Voce;
-            ritornoPer = voce; ritornoVoce = da.Group ?? da.Key; ritornoTitolo = da.Nome;
+            calcVarianteVoluta = dest != null && dest.Group != null ? dest.Key : null;   // 1.6.0: apre la variante giusta (V invertita nei Dipoli)
+            if (da == null) { ritornoPer = null; }
+            else { ritornoPer = voce; ritornoVoce = da.Group ?? da.Key; ritornoTitolo = da.Nome; }
             calcPages.Remove(voce);
             string fam = FamigliaDi(voce);
             if (fam == null) return;
+            bool giaAperta = fasCalc != null && fasCalc.Current == voce;
             ApriFamigliaCalc(fam, voce);
-            Registro.Scrivi("AZIONE", "rimando dei Calcolatori: " + da.Key + " -> " + voce);
+            if (giaAperta) fasCalc.Select(voce);   // 1.6.0: la pagina si rifa' con i valori nuovi anche se la voce era gia' quella aperta
+            Registro.Scrivi("AZIONE", "rimando dei Calcolatori: " + (da != null ? da.Key : "suggerimenti") + " -> " + voce);
         }
 
         // voce del fascione con piu' varianti: pillole "Tipo" in alto e il calcolatore sotto
@@ -214,9 +228,11 @@ namespace YaNec
             if (l.Count == 1) return BuildSimpleCalcPanel(l[0], null);
             ContentControl cc = new ContentControl();
             Dictionary<int, Control> cache = new Dictionary<int, Control>();
-            StackPanel tipo = Scelta(l.Select(c => c.Variant).ToArray(), 0, k => { });
-            cache[0] = BuildSimpleCalcPanel(l[0], tipo);
-            cc.Content = cache[0];
+            int i0 = calcVarianteVoluta != null ? Math.Max(0, l.FindIndex(c => c.Key == calcVarianteVoluta)) : 0;   // 1.6.0
+            calcVarianteVoluta = null;
+            StackPanel tipo = Scelta(l.Select(c => c.Variant).ToArray(), i0, k => { });
+            cache[i0] = BuildSimpleCalcPanel(l[i0], tipo);
+            cc.Content = cache[i0];
             // le pillole "Tipo" stanno nella riga "Tipo" del pannello visibile: alla scelta si spostano nel pannello della variante
             for (int i = 0; i < tipo.Children.Count; i++)
             {
