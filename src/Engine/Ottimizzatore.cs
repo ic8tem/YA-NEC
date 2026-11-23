@@ -306,7 +306,7 @@ namespace YaNec.Engine
             AggiornaMigliore(r0);
             for (int gen = 1; gen <= Math.Max(1, DeGenerazioni) && Passi < MaxPassi && !ct.IsCancellationRequested; gen++)
             {
-                Fase?.Invoke("evoluzione differenziale: generazione " + gen + " di " + DeGenerazioni);
+                Fase?.Invoke("evoluzione differenziale: generazione " + gen + "/" + DeGenerazioni);
                 List<double[]> prove = new List<double[]>();
                 for (int k = 0; k < np; k++)
                 {

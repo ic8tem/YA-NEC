@@ -7140,3 +7140,117 @@ fase {0}°
 ø {0} mm · segmento {1} mm
 azimut {0}° · elevazione {1}°
 guadagno {0} dBi ({1} dB dal massimo)
+fase della corrente rispetto all'alimentazione
+serve una sola sorgente al centro di un filo diritto con un numero dispari di segmenti
+servono almeno tre elementi diritti paralleli (riflettore, radiatore, direttore)
+elementi non disposti lungo un boom
+nessun elemento davanti o dietro al radiatore
+direttore non trovato
+l'elemento dopo il radiatore e' piu' lungo del radiatore: non sembra un direttore
+il radiatore tocca altri fili (dipolo ripiegato, gamma, anello): la sua lunghezza non si cambia da sola
+Con il solo radiatore si annulla la reattanza ma la resistenza resta quella della Yagi: per arrivare a Z0 scegli anche D1.
+ROS ancora sopra 1,2: la resistenza della Yagi e' lontana da Z0 (allarga il calo di guadagno ammesso o usa un adattatore).
+Una variazione e' arrivata al limite (radiatore e D1 +-5 %, posizione di D1 +-60 % della distanza dal radiatore).
+rifinitura con il simplesso
+medio (13 / 0,005)
+molto povero (3 / 0,001)
+molto buono (20 / 0,0303)
+mare (81 / 5)
+guadagno in una direzione
+tutte le direzioni
+angolo basso (DX)
+NVIS (verso lo zenit)
+indifferente
+il calcolatore non da' un modello NEC
+Dipolo λ/2
+Quad 2 elementi
+HB9CV
+Hex beam
+Yagi DL6WU
+Verticale λ/4 con radiali a terra
+Ground plane
+Verticale 5/8
+Dipolo NVIS
+Adattamento diretto a Z0
+Senza adattatore: si cambiano la lunghezza del radiatore e lunghezza e posizione del primo direttore finche' l'impedenza arriva a Z0. 
+Il resto della Yagi non cambia. Idea di AntAn (sozden, Apache-2.0).
+radiatore (lunghezza) + D1 (lunghezza e posizione)
+non deve scendere piu' di 0,2 dB
+non deve scendere piu' di 0,5 dB
+libero
+Calo di guadagno ammesso nella direzione del lobo: oltre, la prova e' penalizzata.
+Cosa si muove
+Adatta a {0} Ω
+Adattamento diretto: Z0 non valida.
+Adattamento diretto: il modello e' cambiato durante il calcolo, risultato scartato.
+Avanti/indietro
+Variazioni: radiatore {0} mm.
+Variazioni: radiatore {0} mm, D1 {1} mm e {2} mm {3}.
+verso il radiatore
+lontano dal radiatore
+{0} calcoli.
+Adattamento diretto applicato: ROS {0} → {1}. Il file su disco non è cambiato: salvalo se vuoi tenerlo.
+Adattamento diretto annullato: il modello e' quello di prima.
+Suggerimenti
+Quota del tratto orizzontale verso la stazione. 0 = alla fine della discesa; con una quota la discesa sul palo si ferma li'.
+Direzione del tratto verso la stazione rispetto al boom, in gradi attorno alla verticale: 0 = lungo il boom (dietro l'antenna), 90 = sotto un braccio del radiatore.
+Quota del tratto orizzontale
+Direzione rispetto al boom
+Corrente lungo la calza, dal dipolo fino alla stazione
+Corrente sulla calza in stazione
+Potenza irradiata dalla calza
+ROS cambiato di
+Fissa questo risultato
+mostra i fissati
+nascondi i fissati
+togli tutti
+Tiene il risultato di adesso (diagrammi e sweep) e lo disegna tratteggiato sotto i risultati dei calcoli seguenti, per confrontare prima e dopo una modifica. Fino a 4: il quinto prende il posto del piu' vecchio.
+Nasconde o mostra le curve fissate senza toglierle.
+Toglie tutti i risultati fissati.
+Risultati fissati tolti.
+Calcola prima il modello: non c'e' un risultato da fissare.
+Risultato fissato: {0}. Si vede tratteggiato nei diagrammi, nello sweep e nella carta di Smith.
+- - {0}: {1} dBi, F/B {2} dB a {3} MHz
+evoluzione differenziale (cerca in tutto l'intervallo)
+metodo: evoluzione differenziale ▾
+Evoluzione differenziale
+simplesso
+nessuna
+Antenne di ogni generazione. «auto» = 10 per ogni variabile (da 8 a 200).
+Peso della differenza F (0,4-1): piu' alto = passi piu' lunghi, cerca piu' lontano.
+Incrocio CR (0-1): parte delle misure che prende dalla prova nuova; 0,9 va bene con variabili legate tra loro (Yagi).
+Generazioni al massimo; si ferma prima se tutta la popolazione ha lo stesso voto e misure entro il passo.
+Alla fine il simplesso parte dalla migliore e la rifinisce.
+Popolazione
+Peso della differenza (F)
+Incrocio (CR)
+Generazioni al massimo
+Rifinitura finale
+Storn e Price (1997), schema DE/rand/1/bin: ogni antenna nuova = a + F·(b − c), poi incrocio con la vecchia. 
+Cerca in tutto l'intervallo Minimo-Massimo; le prove di una generazione si calcolano in parallelo. Idea dagli ottimizzatori di NEC-Workbench e 45south.
+evoluzione differenziale
+Cosa ti serve
+Altezza del centro dell'antenna (delle verticali: della base). La V invertita usa l'altezza del vertice, il ground plane quella della base; la verticale λ/4 con radiali sta a terra; la NVIS sceglie da sola l'altezza (0,175 λ).
+Lato piu' lungo dell'antenna vista dall'alto (radiali compresi). 0 = nessun limite.
+Ingombro massimo
+Cosa conta
+Calcola tutte
+Ogni antenna usa il suo calcolatore con i valori di partenza, portata all'altezza e sul terreno scelti, e un calcolo NEC (in parallelo). 
+Idea di AntAn di sozden (Apache-2.0): nessun codice copiato.
+Antenne possibili
+Premi «Calcola tutte»: le antenne adatte alla frequenza si calcolano e si ordinano secondo quello che conta.
+Suggerimenti: frequenza tra 1,5 e 6000 MHz.
+{0} antenne calcolate in {1} s, ordinate per «{2}». Le righe in grigio non rispettano ingombro o polarizzazione.
+«apri» porta nel calcolatore con questi valori; da lì «Apri come modello» come sempre. Valori indicativi di partenza: ogni calcolatore ha poi la sua «Porta in risonanza» o ottimizzazione.
+Fermato.
+Risultato
+Ingombro
+zenit {0} dBi
+, alta {0} m
+fuori dall'ingombro
+apri
+{0}: calcolatore aperto con i valori dei suggerimenti.
+fase
+Fili colorati secondo la fase della corrente rispetto all'alimentazione (rosso 0°, verde 120°, blu 240°), con la scala circolare in basso; grigi dove la corrente e' sotto il 3 % del massimo. Mostra subito un elemento fuori fase o una schiera alimentata male.
+evoluzione differenziale: popolazione di partenza (
+evoluzione differenziale: generazione 

@@ -2202,3 +2202,35 @@ I collegamenti interni (per esempio «Scrivi una variabile nella linguetta Varia
 - Manuale di calcolo e delle fonti: nuovo capitolo 16, «Filari alimentate in punta».
 - Videocorso: nuova lezione 32 «Maschera VHF ROS + G/T».
 - Variabili e ottimizzazione > Ottimizzatore: **maschera VHF ROS + G/T**, che ottimizza il G/T dello stack (2 x 2 a 30 gradi, distanze DL6WU, temperature di VE7BQH, preamplificatore 20 dB, 2 dB di cavo) insieme al ROS.
+
+## 27. Novita' della 1.6
+
+La 1.6 raccoglie le novita' della 1.5.9 (superfici SP/SM/SC, correnti animate, controlli di ingresso, licenza GPL-3.0-or-later) e sei proposte nate dalla ricerca dei programmi simili su GitHub (bozzetto «spunti dalla ricerca su GitHub», approvato da IC8TEM il 23/11/2026). Le idee vengono da altri programmi liberi, citati qui sotto; nessun codice e' stato copiato.
+
+### 27.1 Calcolatori › Suggerimenti
+
+Nuova famiglia **Suggerimenti**, prima delle altre nella fascia dei Calcolatori. A sinistra «Cosa ti serve»: frequenza, altezza dal suolo, terreno, ingombro massimo, cosa conta (guadagno in una direzione, tutte le direzioni, angolo basso per il DX, NVIS) e polarizzazione. **Calcola tutte** prepara con ogni calcolatore adatto alla banda il suo modello con i valori di partenza, lo porta all'altezza e sul terreno scelti e lo calcola con il NEC (in parallelo). A destra la tabella delle antenne possibili: guadagno, avanti/indietro, angolo del massimo (con NVIS il guadagno verso lo zenit), ROS, ingombro; in grigio quelle che non stanno nell'ingombro o hanno l'altra polarizzazione. **apri** porta nel calcolatore con quei valori.
+
+L'altezza e' quella del centro dell'antenna (delle verticali: della base); la V invertita usa l'altezza del vertice, il ground plane quella della base, la verticale λ/4 con radiali sta a terra, la NVIS sceglie da sola 0,175 λ. I numeri sono di partenza: ogni calcolatore ha poi la sua risonanza o ottimizzazione. Idea di AntAn (sozden, Apache-2.0).
+
+### 27.2 Ottimizzatore › Adattamento diretto a Z0
+
+In cima all'Ottimizzatore, solo quando il modello e' una Yagi riconosciuta (una sorgente al centro di un radiatore diritto che non tocca altri fili, almeno un riflettore e un direttore paralleli). **Adatta a 50 Ω** cerca la lunghezza del radiatore e lunghezza e posizione del primo direttore che portano il ROS su Z0 al minimo alla frequenza principale dell'Ottimizzatore, con il calo di guadagno ammesso (0,2 dB, 0,5 dB o libero); il resto della Yagi non cambia. La tabella mostra prima e dopo e le variazioni in mm; il modello adattato si applica subito (con le misure in numeri, come Ridimensiona e ricentra) e **Annulla** rimette quello di prima. Con «solo il radiatore» si annulla la reattanza ma la resistenza resta quella della Yagi. Idea di AntAn (Apache-2.0).
+
+### 27.3 Ottimizzatore › evoluzione differenziale
+
+Nel menu «metodo» c'e' la **evoluzione differenziale** (Storn e Price, 1997, schema DE/rand/1/bin): ogni antenna nuova e' a + F·(b − c) con tre antenne scelte a caso nella popolazione, poi l'incrocio con la vecchia; si tiene la migliore delle due. Cerca in tutto l'intervallo Minimo-Massimo delle variabili, e non solo vicino al modello aperto. Parametri: popolazione («auto» = 10 per variabile), peso della differenza F (0,7), incrocio CR (0,9), generazioni al massimo (80), rifinitura finale con il simplesso. Le prove di una generazione si calcolano in parallelo; Monte Carlo, registro dei passi e andamento restano come prima. Idea dagli ottimizzatori di NEC-Workbench (GPL-3) e 45south.
+
+### 27.4 Risultati fissati e correnti per fase
+
+Nei Diagrammi, nella Frequenza (sweep) e nella carta di Smith: **Fissa questo risultato** tiene il risultato di adesso e lo disegna tratteggiato, con il suo colore e il suo nome (ora e nome del modello), sotto i risultati dei calcoli seguenti; fino a 4 (il quinto prende il posto del piu' vecchio). **nascondi i fissati** e **togli tutti**. I fissati restano finche' non si apre un altro modello; restano anche dopo Ridimensiona e ricentra e l'Adattamento diretto, perche' servono proprio al confronto.
+
+Nella Struttura 3D, accanto a «a colori», «solo curva» e «animate», la scelta **fase**: i fili si colorano secondo la fase della corrente rispetto all'alimentazione (rosso 0°, verde 120°, blu 240°, scala circolare in basso); grigi dove la corrente e' sotto il 3 % del massimo. Si vede subito un elemento fuori fase o una schiera alimentata male. Idea da NEC-Workbench (GPL-3).
+
+### 27.5 Cavo e balun: la calza fino alla stazione
+
+Nella scheda Cavo e balun (Oggetti del modello) il percorso del cavo ha due dati nuovi: **quota del tratto orizzontale** (0 = alla fine della discesa; con una quota la discesa sul palo si ferma li') e **direzione rispetto al boom** (0 = dietro l'antenna lungo il boom, 90 = sotto un braccio). Nella tabella del confronto: **corrente sulla calza in stazione** (RF in stazione, in % della corrente al punto di alimentazione), **potenza irradiata dalla calza** (in % della potenza irradiata: integrale del campo delle sole correnti della calza) e **ROS cambiato di** rispetto al modello senza cavo. Idea da AntennaCalc di lrizio (MIT).
+
+### 27.6 Importatore EZNEC
+
+Dal file .ez ora si leggono anche i **carichi di Laplace** (rapporto di due polinomi in s, ricalcolato a ogni frequenza), gli **stub** in corto o aperti (sul segmento: in parallelo a una linea che parte da li', altrimenti in serie nel filo come una porta), le **linee con perdite** (rete NT con le perdite nei conduttori, come EZNEC) e le **reti L** (ramo in serie tra le porte e ramo in parallelo sulla porta 2, R, L, C in serie o in parallelo). Nel file .nec restano come righe «CM YA-NEC LAPLACE», «STUB» e «LINEAP», che solo YA-NEC legge. La struttura del file e le formule vengono da Ez2Nec di AG7T (Apache-2.0); il collaudo e' stato fatto sugli archivi di modelli EZNEC.

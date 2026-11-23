@@ -7593,3 +7593,115 @@ fase {0}°	phase {0}°
 ø {0} mm · segmento {1} mm	ø {0} mm · segment {1} mm
 azimut {0}° · elevazione {1}°	azimuth {0}° · elevation {1}°
 guadagno {0} dBi ({1} dB dal massimo)	gain {0} dBi ({1} dB from maximum)
+# 1.6.0
+fase della corrente rispetto all'alimentazione	current phase relative to the feed
+serve una sola sorgente al centro di un filo diritto con un numero dispari di segmenti	it needs a single source at the centre of a straight wire with an odd number of segments
+servono almeno tre elementi diritti paralleli (riflettore, radiatore, direttore)	it needs at least three straight parallel elements (reflector, driven element, director)
+elementi non disposti lungo un boom	the elements are not along a boom
+nessun elemento davanti o dietro al radiatore	no element in front of or behind the driven element
+direttore non trovato	director not found
+l'elemento dopo il radiatore e' piu' lungo del radiatore: non sembra un direttore	the element after the driven element is longer than it: it does not look like a director
+il radiatore tocca altri fili (dipolo ripiegato, gamma, anello): la sua lunghezza non si cambia da sola	the driven element touches other wires (folded dipole, gamma, loop): its length cannot be changed on its own
+Con il solo radiatore si annulla la reattanza ma la resistenza resta quella della Yagi: per arrivare a Z0 scegli anche D1.	With the driven element alone the reactance is cancelled but the resistance stays that of the Yagi: to reach Z0 choose D1 as well.
+ROS ancora sopra 1,2: la resistenza della Yagi e' lontana da Z0 (allarga il calo di guadagno ammesso o usa un adattatore).	SWR still above 1.2: the Yagi resistance is far from Z0 (allow a larger gain drop or use a matching network).
+Una variazione e' arrivata al limite (radiatore e D1 +-5 %, posizione di D1 +-60 % della distanza dal radiatore).	A change reached its limit (driven element and D1 ±5 %, D1 position ±60 % of its distance from the driven element).
+rifinitura con il simplesso	final refinement with the simplex
+medio (13 / 0,005)	average (13 / 0.005)
+molto povero (3 / 0,001)	very poor (3 / 0.001)
+molto buono (20 / 0,0303)	very good (20 / 0.0303)
+mare (81 / 5)	sea (81 / 5)
+guadagno in una direzione	gain in one direction
+tutte le direzioni	all directions
+angolo basso (DX)	low angle (DX)
+NVIS (verso lo zenit)	NVIS (towards the zenith)
+indifferente	either
+il calcolatore non da' un modello NEC	the calculator gives no NEC model
+Dipolo λ/2	λ/2 dipole
+Quad 2 elementi	2-element quad
+HB9CV	HB9CV
+Hex beam	Hex beam
+Yagi DL6WU	DL6WU Yagi
+Verticale λ/4 con radiali a terra	λ/4 vertical with ground radials
+Ground plane	Ground plane
+Verticale 5/8	5/8 vertical
+Dipolo NVIS	NVIS dipole
+Adattamento diretto a Z0	Direct match to Z0
+Senza adattatore: si cambiano la lunghezza del radiatore e lunghezza e posizione del primo direttore finche' l'impedenza arriva a Z0. 	No matching network: the driven element length and the length and position of the first director are changed until the impedance reaches Z0. 
+Il resto della Yagi non cambia. Idea di AntAn (sozden, Apache-2.0).	The rest of the Yagi does not change. Idea from AntAn (sozden, Apache-2.0).
+radiatore (lunghezza) + D1 (lunghezza e posizione)	driven element (length) + D1 (length and position)
+non deve scendere piu' di 0,2 dB	must not drop more than 0.2 dB
+non deve scendere piu' di 0,5 dB	must not drop more than 0.5 dB
+Calo di guadagno ammesso nella direzione del lobo: oltre, la prova e' penalizzata.	Allowed gain drop in the lobe direction: beyond it, the trial is penalised.
+Cosa si muove	What moves
+Adatta a {0} Ω	Match to {0} Ω
+Adattamento diretto: Z0 non valida.	Direct match: invalid Z0.
+Adattamento diretto: il modello e' cambiato durante il calcolo, risultato scartato.	Direct match: the model changed during the calculation, result discarded.
+Avanti/indietro	Front/back
+Variazioni: radiatore {0} mm.	Changes: driven element {0} mm.
+Variazioni: radiatore {0} mm, D1 {1} mm e {2} mm {3}.	Changes: driven element {0} mm, D1 {1} mm and {2} mm {3}.
+verso il radiatore	towards the driven element
+lontano dal radiatore	away from the driven element
+{0} calcoli.	{0} calculations.
+Adattamento diretto applicato: ROS {0} → {1}. Il file su disco non è cambiato: salvalo se vuoi tenerlo.	Direct match applied: SWR {0} → {1}. The file on disk has not changed: save it if you want to keep it.
+Adattamento diretto annullato: il modello e' quello di prima.	Direct match undone: the model is the previous one.
+Suggerimenti	Suggestions
+Quota del tratto orizzontale verso la stazione. 0 = alla fine della discesa; con una quota la discesa sul palo si ferma li'.	Height of the horizontal run to the shack. 0 = at the end of the drop; with a height the drop along the mast stops there.
+Direzione del tratto verso la stazione rispetto al boom, in gradi attorno alla verticale: 0 = lungo il boom (dietro l'antenna), 90 = sotto un braccio del radiatore.	Direction of the run to the shack relative to the boom, in degrees around the vertical: 0 = along the boom (behind the antenna), 90 = under one arm of the driven element.
+Quota del tratto orizzontale	Height of the horizontal run
+Direzione rispetto al boom	Direction relative to the boom
+Corrente lungo la calza, dal dipolo fino alla stazione	Current along the shield, from the dipole to the shack
+Corrente sulla calza in stazione	Shield current at the shack
+Potenza irradiata dalla calza	Power radiated by the shield
+ROS cambiato di	SWR changed by
+Fissa questo risultato	Pin this result
+mostra i fissati	show pinned
+nascondi i fissati	hide pinned
+togli tutti	remove all
+Tiene il risultato di adesso (diagrammi e sweep) e lo disegna tratteggiato sotto i risultati dei calcoli seguenti, per confrontare prima e dopo una modifica. Fino a 4: il quinto prende il posto del piu' vecchio.	Keeps the current result (patterns and sweep) and draws it dashed under the results of the following calculations, to compare before and after a change. Up to 4: the fifth replaces the oldest.
+Nasconde o mostra le curve fissate senza toglierle.	Hides or shows the pinned curves without removing them.
+Toglie tutti i risultati fissati.	Removes all pinned results.
+Risultati fissati tolti.	Pinned results removed.
+Calcola prima il modello: non c'e' un risultato da fissare.	Calculate the model first: there is no result to pin.
+Risultato fissato: {0}. Si vede tratteggiato nei diagrammi, nello sweep e nella carta di Smith.	Result pinned: {0}. It is shown dashed in the patterns, the sweep and the Smith chart.
+- - {0}: {1} dBi, F/B {2} dB a {3} MHz	- - {0}: {1} dBi, F/B {2} dB at {3} MHz
+evoluzione differenziale (cerca in tutto l'intervallo)	differential evolution (searches the whole range)
+metodo: evoluzione differenziale ▾	method: differential evolution ▾
+Evoluzione differenziale	Differential evolution
+simplesso	simplex
+Antenne di ogni generazione. «auto» = 10 per ogni variabile (da 8 a 200).	Antennas in each generation. «auto» = 10 per variable (8 to 200).
+Peso della differenza F (0,4-1): piu' alto = passi piu' lunghi, cerca piu' lontano.	Difference weight F (0.4-1): higher = longer steps, searches further.
+Incrocio CR (0-1): parte delle misure che prende dalla prova nuova; 0,9 va bene con variabili legate tra loro (Yagi).	Crossover CR (0-1): share of the dimensions taken from the new trial; 0.9 suits variables that depend on each other (Yagi).
+Generazioni al massimo; si ferma prima se tutta la popolazione ha lo stesso voto e misure entro il passo.	Maximum generations; it stops earlier when the whole population has the same score and dimensions within the step.
+Alla fine il simplesso parte dalla migliore e la rifinisce.	At the end the simplex starts from the best one and refines it.
+Popolazione	Population
+Peso della differenza (F)	Difference weight (F)
+Incrocio (CR)	Crossover (CR)
+Generazioni al massimo	Maximum generations
+Rifinitura finale	Final refinement
+Storn e Price (1997), schema DE/rand/1/bin: ogni antenna nuova = a + F·(b − c), poi incrocio con la vecchia. 	Storn and Price (1997), DE/rand/1/bin scheme: each new antenna = a + F·(b − c), then crossover with the old one. 
+Cerca in tutto l'intervallo Minimo-Massimo; le prove di una generazione si calcolano in parallelo. Idea dagli ottimizzatori di NEC-Workbench e 45south.	It searches the whole Minimum-Maximum range; the trials of a generation are calculated in parallel. Idea from the optimisers of NEC-Workbench and 45south.
+evoluzione differenziale	differential evolution
+Cosa ti serve	What you need
+Altezza del centro dell'antenna (delle verticali: della base). La V invertita usa l'altezza del vertice, il ground plane quella della base; la verticale λ/4 con radiali sta a terra; la NVIS sceglie da sola l'altezza (0,175 λ).	Height of the antenna centre (for verticals: of the base). The inverted V uses the apex height, the ground plane that of the base; the λ/4 vertical with radials sits on the ground; the NVIS picks its own height (0.175 λ).
+Lato piu' lungo dell'antenna vista dall'alto (radiali compresi). 0 = nessun limite.	Longest side of the antenna seen from above (radials included). 0 = no limit.
+Ingombro massimo	Maximum size
+Cosa conta	What matters
+Calcola tutte	Calculate all
+Ogni antenna usa il suo calcolatore con i valori di partenza, portata all'altezza e sul terreno scelti, e un calcolo NEC (in parallelo). 	Each antenna uses its calculator with the starting values, moved to the chosen height and ground, and one NEC calculation (in parallel). 
+Idea di AntAn di sozden (Apache-2.0): nessun codice copiato.	Idea from AntAn by sozden (Apache-2.0): no code copied.
+Antenne possibili	Possible antennas
+Premi «Calcola tutte»: le antenne adatte alla frequenza si calcolano e si ordinano secondo quello che conta.	Press «Calculate all»: the antennas suited to the frequency are calculated and sorted by what matters.
+Suggerimenti: frequenza tra 1,5 e 6000 MHz.	Suggestions: frequency between 1.5 and 6000 MHz.
+{0} antenne calcolate in {1} s, ordinate per «{2}». Le righe in grigio non rispettano ingombro o polarizzazione.	{0} antennas calculated in {1} s, sorted by «{2}». Grey rows do not meet the size or polarisation.
+«apri» porta nel calcolatore con questi valori; da lì «Apri come modello» come sempre. Valori indicativi di partenza: ogni calcolatore ha poi la sua «Porta in risonanza» o ottimizzazione.	«open» goes to the calculator with these values; from there «Open as model» as usual. Starting values only: each calculator then has its own «Bring to resonance» or optimisation.
+Fermato.	Stopped.
+Risultato	Result
+Ingombro	Size
+zenit {0} dBi	zenith {0} dBi
+, alta {0} m	, {0} m high
+fuori dall'ingombro	exceeds the size
+apri	open
+{0}: calcolatore aperto con i valori dei suggerimenti.	{0}: calculator opened with the suggested values.
+Fili colorati secondo la fase della corrente rispetto all'alimentazione (rosso 0°, verde 120°, blu 240°), con la scala circolare in basso; grigi dove la corrente e' sotto il 3 % del massimo. Mostra subito un elemento fuori fase o una schiera alimentata male.	Wires coloured by the current phase relative to the feed (red 0°, green 120°, blue 240°), with the circular scale at the bottom; grey where the current is below 3 % of the maximum. It shows at once an out-of-phase element or a badly fed array.
+evoluzione differenziale: popolazione di partenza (	differential evolution: starting population (
+evoluzione differenziale: generazione 	differential evolution: generation 
