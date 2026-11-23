@@ -649,7 +649,7 @@ namespace YaNec
             if (ShowCurrents && CurrentPhase && CurrentC != null && CurrentNorm != null)
             {
                 // 1.6.0: scala circolare della fase in basso a sinistra
-                double rx = 46, ry = H - 52, r1 = 30, r2 = 18;
+                double rx = 78, ry = H - 56, r1 = 30, r2 = 18;
                 for (int k = 0; k < 36; k++)
                 {
                     double a0 = (k * 10 - 90) * Math.PI / 180, a1 = ((k + 1) * 10 - 90) * Math.PI / 180;

@@ -17,6 +17,14 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.6 새 기능
+
+- **계산기 › 추천**: 주파수, 높이, 대지, 설치 공간으로 가능한 안테나를 NEC로 계산하고 이득, 균일성, 낮은 앙각 또는 NVIS 순으로 정렬합니다. «열기»는 해당 계산기로 이동합니다.
+- **최적화기**: 정합기 없이 야기 안테나의 **Z0 직접 정합**(복사기와 첫 번째 도파기)과 변수의 전체 범위를 찾는 **차분 진화** 방법.
+- 다이어그램, 주파수, 스미스에서 **이 결과 고정**(비교용 점선 최대 4개); 3D 구조에서 **위상별로 색칠한 전류**.
+- **케이블과 발룬**: 무선실까지의 실드(구간의 높이와 방향), 무선실 전류와 케이블이 방사하는 전력.
+- **EZNEC 가져오기**: 라플라스 부하, 스터브, 손실 선로, L 회로; NEC-2 **SP/SM/SC 면**, 애니메이션 전류, 입력 검사; 라이선스 **GPL-3.0-or-later**.
+
 ## 1.5.8 새 기능
 
 - **계산기 > HF > 와이어 안테나**: NEC로 계산한 표를 여는 **차트 ›** 버튼 (EFHW 49:1, 64:1 카운터포이즈 유무, 9:1과 최적 카운터포이즈, 평균 또는 완전 대지). 행을 페이지로 복사할 수 있고 자유 계산은 그대로 사용할 수 있습니다.

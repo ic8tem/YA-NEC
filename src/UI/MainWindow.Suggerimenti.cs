@@ -21,13 +21,13 @@ namespace YaNec
 
         Control BuildSuggerimentiPage()
         {
-            StackPanel sx = new StackPanel { Spacing = 4, Width = 330 };
+            StackPanel sx = new StackPanel { Spacing = 4, Width = 380 };
             sx.Children.Add(new TextBlock { Text = "Cosa ti serve", FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore) });
             double f0 = model != null ? model.FreqMHz : 14.175;
             TextBox tF = Tb(Fmt(f0, 3), 110), tH = Tb("10", 110), tIng = Tb("12", 110);
-            ComboBox cTer = new ComboBox { ItemsSource = Suggerimenti.Terreni, SelectedIndex = 0, Width = 190 };
-            ComboBox cOb = new ComboBox { ItemsSource = Suggerimenti.Obiettivi, SelectedIndex = 0, Width = 190 };
-            ComboBox cPol = new ComboBox { ItemsSource = Suggerimenti.Polarizzazioni, SelectedIndex = 2, Width = 190 };
+            ComboBox cTer = new ComboBox { ItemsSource = Suggerimenti.Terreni, SelectedIndex = 0, Width = 230 };
+            ComboBox cOb = new ComboBox { ItemsSource = Suggerimenti.Obiettivi, SelectedIndex = 0, Width = 230 };
+            ComboBox cPol = new ComboBox { ItemsSource = Suggerimenti.Polarizzazioni, SelectedIndex = 2, Width = 230 };
             ToolTip.SetTip(tH, "Altezza del centro dell'antenna (delle verticali: della base). La V invertita usa l'altezza del vertice, il ground plane quella della base; la verticale λ/4 con radiali sta a terra; la NVIS sceglie da sola l'altezza (0,175 λ).");
             ToolTip.SetTip(tIng, "Lato piu' lungo dell'antenna vista dall'alto (radiali compresi). 0 = nessun limite.");
             Func<string, Control, string, Control> riga = (et, c, um) =>
@@ -142,6 +142,7 @@ namespace YaNec
                     cella(2, Fmt(double.IsNaN(x.Fb) ? 0 : x.Fb, 1) + " dB", true);
                     cella(3, q.Obiettivo == 3 ? Lang.F("zenit {0} dBi", Fmt(x.Zenit, 1)) : Fmt(x.El, 0) + "°", true);
                     cella(4, Fmt(x.Ros, 2) + (Math.Abs(x.Z0 - 50) > 0.5 ? " (" + Fmt(x.Z0, 0) + " Ω)" : ""), true);
+                    ToolTip.SetTip(g.Children[g.Children.Count - 1], "Z = " + Fmt(x.Z.Real, 1) + (x.Z.Imaginary < 0 ? " − j" : " + j") + Fmt(Math.Abs(x.Z.Imaginary), 1) + " Ω");
                     string ing = x.Profondo > 0.15 ? Fmt(x.Largo, 1) + " × " + Fmt(x.Profondo, 1) + " m" : Fmt(x.Largo, 1) + " m";
                     if (x.Alto > Math.Max(1, x.Largo * 0.8)) ing += Lang.F(", alta {0} m", Fmt(x.Alto, 1));
                     if (x.Fuori) ing += " — " + Lang.T("fuori dall'ingombro");

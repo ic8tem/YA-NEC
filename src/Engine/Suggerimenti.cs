@@ -42,7 +42,7 @@ namespace YaNec.Engine
         public static readonly string[] Obiettivi = { "guadagno in una direzione", "tutte le direzioni", "angolo basso (DX)", "NVIS (verso lo zenit)" };
         public static readonly string[] Polarizzazioni = { "orizzontale", "verticale", "indifferente" };
 
-        // montaggio: 0 centro all'altezza, 1 base all'altezza, 2 a terra (radiali del calcolatore), 3 altezza del calcolatore
+        // montaggio: 0 centro all'altezza, 1 base all'altezza, 2 com'e' nel calcolatore (a terra o sul piano di massa ideale), 3 altezza del calcolatore
         class Cand
         {
             public string Chiave, Nome; public double FMin, FMax; public int Montaggio; public bool HBasso, SoloNvis;
@@ -74,7 +74,7 @@ namespace YaNec.Engine
                 new Cand { Chiave = "yagidl6wu", Nome = "Yagi DL6WU", FMin = 14, FMax = 3000, Montaggio = 0, Crea = () => new CalcYagiDl6wu(), Imposta = (c, q) => { Set(c, "modo", 0); Set(c, "nel", ElementiYagi(q.F)); Set(c, "bw", 0); } },
                 new Cand { Chiave = "quarto", Nome = "Verticale λ/4 con radiali a terra", FMin = 1.8, FMax = 30, Montaggio = 2, Crea = () => new CalcQuartoTerra(), Imposta = (c, q) => { } },
                 new Cand { Chiave = "gp", Nome = "Ground plane", FMin = 7, FMax = 1300, Montaggio = 3, Crea = () => new CalcGroundPlane(), Imposta = (c, q) => Set(c, "h", q.H) },
-                new Cand { Chiave = "58", Nome = "Verticale 5/8", FMin = 25, FMax = 1300, Montaggio = 1, Crea = () => new CalcCinqueOttavi(), Imposta = (c, q) => { } },
+                new Cand { Chiave = "58", Nome = "Verticale 5/8", FMin = 25, FMax = 1300, Montaggio = 2, Crea = () => new CalcCinqueOttavi(), Imposta = (c, q) => { } },
                 new Cand { Chiave = "jpole", Nome = "J-pole", FMin = 25, FMax = 1300, Montaggio = 1, Crea = () => new CalcJpole(), Imposta = (c, q) => { } },
                 new Cand { Chiave = "discone", Nome = "Discone", FMin = 25, FMax = 1300, Montaggio = 1, Crea = () => new CalcDiscone(), Imposta = (c, q) => Set(c, "f", q.F * 0.85) },
                 new Cand { Chiave = "nvis", Nome = "Dipolo NVIS", FMin = 1.8, FMax = 10, Montaggio = 3, SoloNvis = true, Crea = () => new CalcNvis(), Imposta = (c, q) => { Set(c, "tipo", 0); Set(c, "h", 0); Set(c, "ter", q.Terreno); } },
@@ -125,6 +125,11 @@ namespace YaNec.Engine
                 Set(sc, "f", q.F);
                 c.Imposta(sc, q);
                 if (c.Chiave == "yagidl6wu") s.Nome = "Yagi " + sc.I("nel") + " el DL6WU";
+                // risonanza con il NEC come «Porta in risonanza» (non per la Yagi DL6WU, dove e' un'ottimizzazione lunga, ne' per Moxon e
+                // hex beam, che hanno gia' le misure dei loro autori)
+                if (sc.CanTune && !(sc is CalcYagiDl6wu) && !(sc is CalcMoxon) && !(sc is CalcHexbeam))
+                    try { sc.Tune(sc.P("f") > 0 ? sc.P("f") : q.F); } catch (Exception) { sc.Scale = 1; }
+                ct.ThrowIfCancellationRequested();
                 CalcOutput o = sc.Run();
                 if (string.IsNullOrEmpty(o.Nec)) throw new NecException("il calcolatore non da' un modello NEC");
                 NecModel m = NecModel.Parse(o.Nec);

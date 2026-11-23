@@ -17,6 +17,14 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="電流とローブ付きの 3D 構造"></a><br><sub>電流とローブ付きの 3D 構造</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM プロファイル上の HFTA 方式の実地形"></a><br><sub>DEM プロファイル上の HFTA 方式の実地形</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="受信: RDF、DMF とノイズ"></a><br><sub>受信: RDF、DMF とノイズ</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="製作公差 (モンテカルロ)"></a><br><sub>製作公差 (モンテカルロ)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="ケーブルとバラン: コモンモード電流"></a><br><sub>ケーブルとバラン: コモンモード電流</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="クロス八木: RHCP、LHCP、軸比"></a><br><sub>クロス八木: RHCP、LHCP、軸比</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="機械計算: 風 (NTC 2018)"></a><br><sub>機械計算: 風 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="電力分配器と位相ケーブル"></a><br><sub>電力分配器と位相ケーブル</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 負荷: トラップとコイル"></a><br><sub>HF 負荷: トラップとコイル</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="スミスチャート"></a><br><sub>スミスチャート</sub></td></tr></table>
 
+## 1.6 の新機能
+
+- **計算機 › 提案**: 周波数・高さ・大地・設置スペースから、候補となるアンテナを NEC で計算し、利得・均一性・低い打ち上げ角・NVIS の順に並べます。「開く」でその計算機へ。
+- **オプティマイザ**: 整合回路なしで八木の **Z0 への直接整合**（放射器と第1導波器）、変数の全範囲を探索する **差分進化** 法。
+- ダイアグラム・周波数・スミスで **この結果を固定**（比較用に最大4本の破線）。3D 構造で **位相で色分けした電流**。
+- **ケーブルとバラン**: シャックまでのシールド（区間の高さと方向）、シャックでの電流とケーブルからの放射電力。
+- **EZNEC インポート**: ラプラス負荷、スタブ、損失のある線路、L 回路。NEC-2 の **SP/SM/SC 面**、電流アニメーション、入力チェック。ライセンス **GPL-3.0-or-later**。
+
 ## 1.5.8 の新機能
 
 - **計算機 > HF > ワイヤーアンテナ**: NEC で計算した表を開く **早見表 ›** ボタン (EFHW 49:1 と 64:1 のカウンターポイズ有無、9:1 と最良のカウンターポイズ、平均または完全大地)。行をページにコピーでき、自由計算もそのまま使えます。

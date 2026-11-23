@@ -2,6 +2,20 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.6** (capitolo 27 del manuale), da sei spunti trovati confrontando YA-NEC con i programmi liberi simili su GitHub (idee citate, nessun codice copiato):
+- **Calcolatori › Suggerimenti** (idea di AntAn): frequenza, altezza, terreno, ingombro massimo, cosa conta (guadagno, tutte le direzioni, angolo basso, NVIS) e polarizzazione; «Calcola tutte» calcola con il NEC le antenne adatte (dipolo, V invertita, delta, quad, Moxon, HB9CV, hex beam, Yagi DL6WU, verticali, J-pole, discone, NVIS) all'altezza e sul terreno scelti; «apri» porta nel calcolatore con quei valori;
+- **Ottimizzatore › Adattamento diretto a Z0** (idea di AntAn): con una Yagi riconosciuta cambia la lunghezza del radiatore e lunghezza e posizione del primo direttore finché il ROS su Z0 è minimo, con il calo di guadagno ammesso; «Annulla» rimette il modello di prima;
+- **Ottimizzatore › evoluzione differenziale** (Storn e Price 1997; idea da NEC-Workbench e 45south): cerca in tutto l'intervallo delle variabili, generazioni calcolate in parallelo, rifinitura finale con il simplesso;
+- **Fissa questo risultato** in Diagrammi, Frequenza e Smith: fino a 4 risultati tratteggiati sotto quello attuale; **Struttura 3D › fase**: fili colorati secondo la fase della corrente (idee da NEC-Workbench);
+- **Cavo e balun**: quota e direzione del tratto verso la stazione; corrente sulla calza in stazione, potenza irradiata dalla calza e ROS cambiato (idea da AntennaCalc);
+- **Importatore EZNEC** (struttura e formule di Ez2Nec, AG7T): carichi di Laplace, stub in corto e aperti, linee con perdite e reti L, ricalcolati a ogni frequenza. Nei modelli ARRL con la rete L il guadagno ora coincide con quello della stessa schiera alimentata con le linee (4-square 3,55 dBi, cardioide 1,22 dBi).
+
+**Dalla 1.5.9** (mai pubblicata da sola):
+- **Superfici SP/SM/SC** del NEC-2 (patch, anche in catena con SC), con i fili collegati: illuminatori e piani di massa più precisi, controllati con nec2c;
+- **Struttura 3D**: correnti **animate** e **valori col mouse**;
+- **Motore**: integrale di Sommerfeld con la convergenza e il limite di suddivisione del Fortran originale; spirale piatta con GH a passo nullo; file con più esecuzioni (si calcola la prima, come il NEC); controlli dei dati in ingresso (numeri non validi, segmenti sovrapposti, terreno, carichi, sorgenti);
+- **Licenza**: GPL-3.0-or-later esplicita.
+
 **Novità della 1.5.8** (capitolo 26.8 del manuale):
 - **Filari > Abaco ›**: tabelle di lunghezze e contrappesi calcolate con il NEC, filo orizzontale a 3 m su terreno medio o perfetto: EFHW 49:1 e 64:1 (λ/2 con la formula, accordata e multibanda; λ/4 difficile) con il contrappeso di 0,05 λ o senza (fa da contrappeso la calza di 10 m di coassiale), 9:1 per filo e scansione delle lunghezze con il contrappeso migliore. «Usa questa riga nella scheda» la copia nei Filari, che restano liberi per il calcolo. Contrappeso «nessuno» = calza del coassiale fino alla radio;
 - **Ottimizzatore > Maschera VHF ROS + G/T**: ottimizza il G/T di sistema dello stack (2 x 2, 2 affiancate, 2 sovrapposte o singola) a 30 gradi, alle distanze DL6WU ricalcolate a ogni passo, con le temperature di VE7BQH, preamplificatore 20 dB e 2 dB di cavo; calcolo veloce con il fattore di schiera e controllo con lo stack NEC completo ogni 10 passi; tabella prima / dopo;
