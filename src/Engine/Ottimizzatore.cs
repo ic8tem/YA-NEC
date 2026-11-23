@@ -369,7 +369,7 @@ namespace YaNec.Engine
                 for (int k = 0; k < xs.Count && Passi < MaxPassi; k++) r[k] = Prova(reale(xs[k]), ct);
                 return r;
             }
-            ParallelOptions po = Processori.Opzioni();
+            System.Threading.Tasks.ParallelOptions po = Processori.Opzioni();
             po.CancellationToken = ct;
             po.MaxDegreeOfParallelism = Math.Max(1, Math.Min(po.MaxDegreeOfParallelism, 4));   // ogni prova usa gia' lo sweep in parallelo
             try

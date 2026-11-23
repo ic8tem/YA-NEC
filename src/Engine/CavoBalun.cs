@@ -131,10 +131,10 @@ namespace YaNec.Engine
             if (p.FinoStazione > 0.05)
             {
                 // 1.6.0: il tratto verso la stazione gira attorno alla verticale di Direzione gradi rispetto al boom
-                double a = p.Direzione * Math.PI / 180;
+                double ang = p.Direzione * Math.PI / 180;
                 double[] h = Unit(new[] { dirBoom[0], dirBoom[1], 0 });
                 if (Norm(h) < 0.5) h = new double[] { 1, 0, 0 };
-                double[] dirSt = { h[0] * Math.Cos(a) - h[1] * Math.Sin(a), h[0] * Math.Sin(a) + h[1] * Math.Cos(a), 0 };
+                double[] dirSt = { h[0] * Math.Cos(ang) - h[1] * Math.Sin(ang), h[0] * Math.Sin(ang) + h[1] * Math.Cos(ang), 0 };
                 double[] b4 = Add(b3, dirSt, p.FinoStazione);
                 punti.Add(b4);
                 kStazione = punti.Count - 2;
