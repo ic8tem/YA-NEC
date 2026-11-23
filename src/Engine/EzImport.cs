@@ -981,10 +981,10 @@ namespace YaNec.Engine
                 else if (len == 0 && Math.Abs(vf - 1) > 1e-6) m.Warnings.Add("Linea dal filo " + wa + " senza lunghezza e con VF " + vf.ToString("0.##", CI) + ": usata la distanza tra i segmenti con VF 1.");
                 m.Networks.Add(new NetworkSpec { IsTl = true, Tag1 = wa, Seg1 = SegOf(segs[wa - 1], pa), Tag2 = wb, Seg2 = SegOf(segs[wb - 1], pb), F1 = z0, F2 = lnec });
             }
-            if (d[0x40] == 5 && BitConverter.ToInt32(d, 0x9C) > 0)
+            if (d[0x40] == 5 && BitConverter.ToInt16(d, 0x9C) > 0)
             {
                 nRetiL = EzRetiL(d, blocchi, segs, m);
-                if (nRetiL < BitConverter.ToInt32(d, 0x9C)) m.Warnings.Add("Reti L di EZNEC: importate " + nRetiL + " su " + BitConverter.ToInt32(d, 0x9C) + " (blocco 0x11 non letto per intero).");
+                if (nRetiL < BitConverter.ToInt16(d, 0x9C)) m.Warnings.Add("Reti L di EZNEC: importate " + nRetiL + " su " + BitConverter.ToInt16(d, 0x9C) + " (blocco 0x11 non letto per intero).");
             }
             if (nLap + nStub + nPerd + nRetiL > 0)
                 m.Notes.Add("Dal .ez (lettura di Ez2Nec, AG7T): " + nLap + " carichi di Laplace, " + nStub + " stub, " + nPerd + " linee con perdite, " + nRetiL +
