@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:05,560
+Lesson 36: what's new in 1.7, matching, loops, stacks and tips
+
+2
+00:00:05,610 --> 00:00:28,539
+YA-NEC course, lesson 36: more of what's new in 1.7. Calculators, HF, Quad, «multiband» type.
+
+3
+00:00:28,589 --> 00:00:41,408
+Five bands on the same spreaders, from 20 to 10 metres. You choose the band fed in NEC and what to do with the driven loops of the other bands: open, closed or on their own line.
+
+4
+00:00:41,458 --> 00:00:53,054
+«Tune and compare» brings the fed band to resonance with all the loops and compares it with the same band alone: here the perimeters change by 1.5 % and the F/B by 4.5 dB.
+
+5
+00:00:53,104 --> 00:01:04,654
+Magnetic loop: now also rectangular and octagonal, with turns in series or in parallel, and coupling by Faraday loop, gamma, capacitive or ferrite transformer.
+
+6
+00:01:04,704 --> 00:01:14,587
+Below, the bands covered by the variable capacitor: tuning capacitance, efficiency, bandwidth at SWR 2 and capacitor voltage at 100 W.
+
+7
+00:01:14,637 --> 00:01:31,412
+Tools, Gamma match, with Healey's formulas: step-up ratio, rod Z0, gamma length and series capacitor.
+
+8
+00:01:31,462 --> 00:01:42,593
+«Tune gamma and capacitor» uses NEC to find first the rod length, then the capacitor: here 105.6 cm and 81 pF, SWR 1.03.
+
+9
+00:01:42,643 --> 00:01:51,326
+Stub matching, from IW2FND's article: single or double stub, shorted or open. The load can come from the open model.
+
+10
+00:01:51,376 --> 00:02:00,526
+The Smith chart shows the load and the path along the line; the table gives stub distance and length for the two solutions.
+
+11
+00:02:00,576 --> 00:02:26,136
+Noise/GT/Stack, Stack spacings VHF, with the 10 element Yagi: the calculation tries the spacings and proposes the best.
+
+12
+00:02:26,186 --> 00:02:33,203
+New: you can click a row of the table. It turns orange, and that spacing is the chosen one.
+
+13
+00:02:33,253 --> 00:03:30,024
+«Create the stack (chosen or proposed row)» builds the stack with the orange row: here 2.841 metres, 18.05 dBi.
+
+14
+00:03:30,074 --> 00:03:39,114
+Patterns, Smith: the side with R below Z0 is shaded orange, so you see at once on which side the impedance lies.
+
+15
+00:03:39,164 --> 00:03:46,981
+In Parameters, too, the SWR tells the two sides apart: solid line with R above Z0, dashed with R below.
+
+16
+00:03:47,031 --> 00:03:54,115
+Last new item, the Tips tab: short cards from the articles cited in the Technical documents.
+
+17
+00:03:54,165 --> 00:04:00,381
+Each card shows its source and buttons that open the right calculator or chart.
+
+18
+00:04:00,431 --> 00:04:07,046
+End of lesson 36. Enjoy YA-NEC 1.7. 73 de IC8TEM.

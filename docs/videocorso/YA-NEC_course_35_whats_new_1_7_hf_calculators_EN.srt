@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:05,138
+Lesson 35: what's new in 1.7, the new HF calculators
+
+2
+00:00:05,565 --> 00:00:20,277
+YA-NEC course, lesson 35: the new HF calculators of 1.7. Calculators, HF, HF Yagi 2-3 elements.
+
+3
+00:00:20,327 --> 00:00:31,144
+The starting dimensions come from I4MFA's articles: driven element, reflector 4 % longer, director 6 % shorter, and the percentage trims for tuning.
+
+4
+00:00:31,194 --> 00:00:40,529
+«Tuning guide»: NEC lengthens each element by 1 % and shows what happens to resonance and F/B. It is what you do on the roof, but beforehand.
+
+5
+00:00:40,579 --> 00:00:52,863
+Resonance is moved mainly by the driven element; reflector and director change the front to back. The SWR on 50 ohm stays high: you need a match, such as the gamma match.
+
+6
+00:00:52,913 --> 00:01:00,553
+Interlaced dual-band Yagi: two bands on the same boom, with one feed line or two, after W1JR's idea.
+
+7
+00:01:00,603 --> 00:01:11,639
+The table gives position and length of each element. The warnings check pairs of nearby elements in a 1/2, 2/3 or 7/8 ratio, which interact.
+
+8
+00:01:11,689 --> 00:01:21,676
+Verticals: the new «trap multiband» type, from 40 to 10 metres, with LC traps and radials.
+
+9
+00:01:21,726 --> 00:01:28,202
+«Tune the bands» uses NEC section by section, from the bottom, to find the length of each piece for each band.
+
+10
+00:01:28,252 --> 00:01:36,772
+For each band: section, top trap, impedance, SWR and efficiency. Trap losses matter most on 40 metres.
+
+11
+00:01:36,822 --> 00:01:51,691
+«Inverted L / T» for 160 metres: vertical section, horizontal section or T top hat, over the radials.
+
+12
+00:01:51,741 --> 00:02:15,190
+«Half-sloper on the tower»: the wire slopes down and the Yagi on top acts as a top hat. «Find the lowest SWR» tries the lengths with NEC; here the wire would touch the ground, and the warning says to raise the feed point or reduce the slope.
+
+13
+00:02:15,240 --> 00:02:42,632
+Dipoles: «broadband» with the coaxial resonator, a stub in parallel and a quarter wave transformer that widen the band.
+
+14
+00:02:42,682 --> 00:02:57,562
+«Relay multiband»: full length sections joined by remote controlled relays, as in the article by IK4PKK and IK4CIE.
+
+15
+00:02:57,612 --> 00:03:11,364
+Linear loading: it shortens the antenna with a folded line section instead of a coil.
+
+16
+00:03:11,414 --> 00:03:22,857
+«Bring to resonance and compare» compares with NEC, at the same length: linear loading, a coil at the same place, a coil at the base and a top hat. Here the top hat wins.
+
+17
+00:03:22,907 --> 00:04:02,985
+Wire antennas: «harmonic resonances», the EFLW wire that resonates on several bands at once.
+
+18
+00:04:03,035 --> 00:04:12,283
+With the starting length the harmonics fall outside the bands. «Length for the chosen bands» looks for the wire that brings them all closest to the band centres.
+
+19
+00:04:12,333 --> 00:04:21,749
+The table shows the updated resonances; the shortening factor must still be measured on site, as the RadioKit article explains.
+
+20
+00:04:21,799 --> 00:04:29,548
+End of lesson 35. Next one: matching, loops, stacks and tips. 73 de IC8TEM.

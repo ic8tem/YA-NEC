@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 33 lezioni brevi (2-5 minuti), in italiano e in inglese. Girate con la 1.5.3 (la 32 con la 1.5.8) (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
+Un corso completo in 37 lezioni brevi (2-5 minuti), in italiano e in inglese. Girate con la 1.5.3 (la 32 con la 1.5.8, la 33 con la 1.5.9, dalla 34 alla 36 con la 1.7.0) (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -303,6 +303,42 @@ Loop Skywire per gli 80 m (83,8 m, 14 m d'altezza, scala da 450 ohm: 122 - j21 o
 Variabili e ottimizzazione › Ottimizzatore, la maschera VHF della 1.5.8 sulla Yagi 10 elementi a 144 MHz: ROS con soglia 1,3 e G/T dello stack 2 x 2 a 30 gradi come VE7BQH (distanze DL6WU ricalcolate a ogni passo, cielo 200 K e terreno 1000 K, preamplificatore 20 dB, 2 dB di cavo). In 89 passi il G/T sale da -2,95 a -2,81 dB/K e il ROS peggiore in banda scende da 1,66 a 1,33; tabella prima / dopo con lo stack NEC completo.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_32_maschera_vhf_gt_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_32_maschera_vhf_gt_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_33_filari_abaco_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_33.jpg" alt="Lezione 33 - Filari, abaco e pulsanti viola"></a></td><td>
+
+### Lezione 33 - Filari, abaco e pulsanti viola
+
+Calcolatori › HF › Filari della 1.5.9: EFHW multibanda o monobanda con il 49:1 o il 64:1, filo non risonante con il 9:1 o il 4:1, bobina di carico facoltativa; contrappeso (0,05 lambda come AA5TB, calza fino al choke o nessuno) e nucleo con le perdite misurate da DG1JAN. L'abaco delle lunghezze, la riga scelta che torna nella scheda, i pulsanti viola per il balun e il choke.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_33_filari_abaco_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_33_filari_abaco_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_34_novita_1_6_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_34.jpg" alt="Lezione 34 - Le novità della 1.6"></a></td><td>
+
+### Lezione 34 - Le novità della 1.6
+
+Calcolatori › Suggerimenti a 14,150 MHz (antenne adatte calcolate con il NEC a 12 m sul terreno medio, «apri» porta nella Moxon); «Fissa questo risultato» nei Diagrammi; l'evoluzione differenziale e l'Adattamento diretto a Z0 sulla Yagi 10 elementi a 144 MHz (ROS da 1,20 a 1,01, guadagno uguale); la colorazione «fase» nella Struttura 3D; Cavo e balun con il tratto verso la stazione, la corrente sulla calza in stazione e la potenza irradiata dalla calza.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_34_novita_1_6_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_34_novita_1_6_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_35_novita_1_7_calcolatori_hf_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_35.jpg" alt="Lezione 35 - Novità 1.7: i calcolatori HF"></a></td><td>
+
+### Lezione 35 - Novità 1.7: i calcolatori HF
+
+I nuovi calcolatori HF della 1.7: Yagi HF 2-3 elementi con la guida di taratura (I4MFA), Yagi bibanda interlacciata (W1JR), verticale trappolata multibanda con «Accorda le bande», L invertita / T per i 160 m, half-sloper sul traliccio, dipolo a banda larga con risonatore coassiale, dipolo multibanda a relè (IK4PKK e IK4CIE), carico lineare confrontato con bobina e cappello, filo risonante in armonica (EFLW).
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_35_novita_1_7_calcolatori_hf_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_35_novita_1_7_calcolatori_hf_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_36_novita_1_7_adattamenti_stack_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_36.jpg" alt="Lezione 36 - Novità 1.7: adattamenti, loop, stack e consigli"></a></td><td>
+
+### Lezione 36 - Novità 1.7: adattamenti, loop, stack e consigli
+
+Quad multibanda con «Accorda e confronta»; loop magnetica rettangolare e ottagonale, spire in parallelo, accoppiamenti e bande coperte dal variabile; gamma match (Healey) accordato con il NEC; adattamento a stub con la carta di Smith (IW2FND); stack VHF con la riga della tabella scelta con un clic e «Crea lo stack»; il lato R < Z0 in arancio nella carta di Smith e nel ROS; la linguetta Consigli.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_36_novita_1_7_adattamenti_stack_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_36_novita_1_7_adattamenti_stack_IT.srt)
 
 </td></tr></table>
 

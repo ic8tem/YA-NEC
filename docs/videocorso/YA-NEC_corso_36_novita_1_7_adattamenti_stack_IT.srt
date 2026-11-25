@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 36: novità 1.7, adattamenti, loop, stack e consigli
+
+2
+00:00:05,572 --> 00:00:28,082
+Corso YA-NEC, lezione 36: altre novità della 1.7. Calcolatori, HF, Quad, tipo «multibanda».
+
+3
+00:00:28,132 --> 00:00:40,416
+Cinque bande sugli stessi bracci, da 20 a 10 metri. Si sceglie la banda alimentata nel NEC e cosa fare dei radiatori delle altre bande: aperti, chiusi o sulla loro linea.
+
+4
+00:00:40,466 --> 00:00:49,994
+«Accorda e confronta» porta in risonanza la banda alimentata con tutti gli anelli e la confronta con la stessa banda da sola: qui i perimetri cambiano dell'1,5 % e il F/B di 4,5 dB.
+
+5
+00:00:50,044 --> 00:01:02,328
+Loop magnetica: ora anche rettangolare e ottagonale, con spire in serie o in parallelo, e accoppiamento con loop di Faraday, gamma, capacitivo o trasformatore su ferrite.
+
+6
+00:01:02,378 --> 00:01:11,461
+Sotto, le bande coperte dal variabile: capacità di accordo, efficienza, banda a ROS 2 e tensione sul condensatore a 100 W.
+
+7
+00:01:11,511 --> 00:01:27,573
+Strumenti, Gamma match, con le formule di Healey: rapporto di salita, Z0 della barra, lunghezza del gamma e condensatore in serie.
+
+8
+00:01:27,623 --> 00:01:30,588
+«Accorda gamma e condensatore» cerca con il NEC prima la lunghezza della barra, poi il condensatore: qui 105,6 cm e 81 pF, ROS 1,03.
+
+9
+00:01:30,638 --> 00:01:40,055
+Adattamento a stub, dall'articolo di IW2FND: stub singolo o doppio, in corto o aperto. Il carico può venire dal modello aperto.
+
+10
+00:01:40,105 --> 00:01:49,855
+La carta di Smith mostra il carico e il percorso lungo la linea; la tabella dà distanza e lunghezza dello stub per le due soluzioni.
+
+11
+00:01:49,905 --> 00:02:15,361
+Rumore/GT/Stack, Distanze di stack VHF, con la Yagi 10 elementi: il calcolo prova le distanze e propone la migliore.
+
+12
+00:02:15,411 --> 00:02:23,095
+Novità: si può cliccare una riga della tabella. Diventa arancione, e questa distanza è quella scelta.
+
+13
+00:02:23,145 --> 00:03:21,185
+«Crea lo stack (riga scelta o proposta)» costruisce lo stack con la riga arancione: qui 2,841 metri, 18,05 dBi.
+
+14
+00:03:21,235 --> 00:03:30,310
+Diagrammi, Smith: il lato con R minore di Z0 è colorato in arancio, così si vede subito da che parte sta l'impedenza.
+
+15
+00:03:30,360 --> 00:03:37,976
+Anche in Parametri il ROS distingue i due lati: tratto pieno con R sopra Z0, tratteggio con R sotto.
+
+16
+00:03:38,026 --> 00:03:45,643
+Ultima novità, la linguetta Consigli: schede brevi nate dagli articoli citati nei Documenti tecnici.
+
+17
+00:03:45,693 --> 00:03:52,310
+Ogni scheda ha la fonte e i pulsanti che aprono il calcolatore o il diagramma giusto.
+
+18
+00:03:52,360 --> 00:03:57,310
+Fine della lezione 36. Buon lavoro con YA-NEC 1.7. 73 de IC8TEM.

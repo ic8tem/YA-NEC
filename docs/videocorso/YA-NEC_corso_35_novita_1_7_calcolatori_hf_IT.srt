@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 35: novità 1.7, i nuovi calcolatori HF
+
+2
+00:00:05,568 --> 00:00:17,830
+Corso YA-NEC, lezione 35: i nuovi calcolatori HF della 1.7. Calcolatori, HF, Yagi HF 2-3 elementi.
+
+3
+00:00:17,880 --> 00:00:30,096
+Le misure di partenza vengono dagli articoli di I4MFA: radiatore, riflettore più lungo del 4 %, direttore più corto del 6 %, e i ritocchi in percentuale per la taratura.
+
+4
+00:00:30,146 --> 00:00:36,097
+«Guida di taratura»: il NEC allunga ogni elemento dell'1 % e mostra cosa succede a risonanza e F/B. È quello che si fa sul tetto, ma prima.
+
+5
+00:00:36,147 --> 00:00:48,964
+La risonanza la sposta soprattutto il radiatore; riflettore e direttore cambiano il rapporto avanti/dietro. Il ROS su 50 ohm resta alto: serve un adattatore, come il gamma match.
+
+6
+00:00:49,014 --> 00:00:57,098
+Yagi bibanda interlacciata: due bande sullo stesso boom, con una linea o due linee, secondo l'idea di W1JR.
+
+7
+00:00:57,148 --> 00:01:08,231
+La tabella dà posizione e lunghezza di ogni elemento. Gli avvisi controllano le coppie di elementi vicini in rapporto 1/2, 2/3 o 7/8, che si disturbano.
+
+8
+00:01:08,281 --> 00:01:18,146
+Verticali: il nuovo tipo «trappolata multibanda», da 40 a 10 metri, con trappole LC e radiali.
+
+9
+00:01:18,196 --> 00:01:23,585
+«Accorda le bande» calcola con il NEC tratto per tratto, dal basso, la lunghezza di ogni pezzo per ogni banda.
+
+10
+00:01:23,635 --> 00:01:33,185
+Per ogni banda: tratto, trappola in cima, impedenza, ROS ed efficienza. Le perdite delle trappole pesano soprattutto in 40 metri.
+
+11
+00:01:33,235 --> 00:01:48,132
+«L invertita / T» per i 160 metri: tratto verticale, tratto orizzontale o cappello a T, sopra i radiali.
+
+12
+00:01:48,182 --> 00:02:11,647
+«Half-sloper sul traliccio»: il filo scende inclinato e la Yagi in cima fa da cappello. «Cerca il ROS più basso» prova le lunghezze con il NEC; qui il filo toccherebbe terra, e l'avviso dice di alzare il punto di alimentazione o ridurre l'inclinazione.
+
+13
+00:02:11,697 --> 00:02:38,813
+Dipoli: «banda larga» con il risonatore coassiale, uno stub in parallelo e un trasformatore lambda/4 che allargano la banda.
+
+14
+00:02:38,863 --> 00:02:53,828
+«Multibanda a relè»: tratti a lunghezza piena uniti da relè telecomandati, come nell'articolo di IK4PKK e IK4CIE.
+
+15
+00:02:53,878 --> 00:03:07,578
+Carico lineare: accorcia l'antenna con un tratto di linea piegata al posto della bobina.
+
+16
+00:03:07,628 --> 00:03:19,110
+«Porta in risonanza e confronta» mette a confronto con il NEC, a parità di lunghezza: carico lineare, bobina nello stesso punto, bobina alla base e cappello. Qui vince il cappello.
+
+17
+00:03:19,160 --> 00:03:58,404
+Filari: «risonanze in armonica», il filo EFLW che risuona su più bande insieme.
+
+18
+00:03:58,454 --> 00:04:04,088
+Con la lunghezza di partenza le armoniche cadono fuori banda. «Lunghezza per le bande scelte» cerca il filo che le porta tutte più vicine ai centri banda.
+
+19
+00:04:04,138 --> 00:04:14,288
+La tabella mostra le risonanze aggiornate; il fattore di accorciamento va comunque misurato sul posto, come spiega l'articolo di RadioKit.
+
+20
+00:04:14,338 --> 00:04:19,289
+Fine della lezione 35. Nella prossima: adattamenti, loop, stack e consigli. 73 de IC8TEM.

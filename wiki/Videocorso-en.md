@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 33 short lessons (2-5 minutes), in Italian and English. Recorded with 1.5.3 (lesson 32 with 1.5.8) (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 37 short lessons (2-5 minutes), in Italian and English. Recorded with 1.5.3 (lesson 32 with 1.5.8, 33 with 1.5.9, 34 to 36 with 1.7.0) (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -303,6 +303,42 @@ Loop Skywire for 80 m (83.8 m, 14 m high, 450 ohm ladder line: 122 - j21 ohm, 7.
 Variables and optimization › Optimizer, the 1.5.8 VHF mask on the 10-element 144 MHz Yagi: SWR with a 1.3 threshold and the G/T of a 2 x 2 stack at 30 degrees as VE7BQH (DL6WU spacings recalculated at every step, sky 200 K and ground 1000 K, 20 dB preamp, 2 dB of cable). In 89 steps the G/T rises from -2.95 to -2.81 dB/K and the worst SWR in band drops from 1.66 to 1.33; before / after table with the complete NEC stack.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_32_vhf_mask_gt_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_32_vhf_mask_gt_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_33_wire_antennas_chart_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_33.jpg" alt="Lesson 33 - Wire antennas, chart and purple buttons"></a></td><td>
+
+### Lesson 33 - Wire antennas, chart and purple buttons
+
+Calculators › HF › Wire antennas of 1.5.9: multiband or single band EFHW with the 49:1 or 64:1, non-resonant wire with the 9:1 or 4:1, optional loading coil; counterpoise (0.05 lambda as AA5TB, braid up to the choke or none) and core with the losses measured by DG1JAN. The length chart, the chosen row going back to the sheet, the purple buttons for balun and choke.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_33_wire_antennas_chart_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_33_wire_antennas_chart_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_34_whats_new_1_6_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_34.jpg" alt="Lesson 34 - What's new in 1.6"></a></td><td>
+
+### Lesson 34 - What's new in 1.6
+
+Calculators › Suggestions at 14.150 MHz (suitable antennas computed with NEC at 12 m over average ground, «open» goes to the Moxon); «Pin this result» in Patterns; differential evolution and Direct match to Z0 on the 10-element 144 MHz Yagi (SWR from 1.20 to 1.01, same gain); the «phase» colouring in the 3D structure; Cable and balun with the run to the station, the braid current at the station and the power radiated by the braid.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_34_whats_new_1_6_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_34_whats_new_1_6_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_35_whats_new_1_7_hf_calculators_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_35.jpg" alt="Lesson 35 - What's new in 1.7: HF calculators"></a></td><td>
+
+### Lesson 35 - What's new in 1.7: HF calculators
+
+The new HF calculators of 1.7: 2-3 element HF Yagi with the tuning guide (I4MFA), interlaced dual-band Yagi (W1JR), trap multiband vertical with «Tune the bands», inverted L / T for 160 m, half-sloper on the tower, broadband dipole with coaxial resonator, relay multiband dipole (IK4PKK and IK4CIE), linear loading compared with coil and top hat, wire resonant on harmonics (EFLW).
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_35_whats_new_1_7_hf_calculators_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_35_whats_new_1_7_hf_calculators_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_36_whats_new_1_7_matching_stack_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_36.jpg" alt="Lesson 36 - What's new in 1.7: matching, loops, stacks and tips"></a></td><td>
+
+### Lesson 36 - What's new in 1.7: matching, loops, stacks and tips
+
+Multiband quad with «Tune and compare»; rectangular and octagonal magnetic loop, turns in parallel, couplings and bands covered by the variable capacitor; gamma match (Healey) tuned with NEC; stub matching with the Smith chart (IW2FND); VHF stack with the table row chosen by a click and «Create the stack»; the R < Z0 side in orange in the Smith chart and in the SWR; the Tips tab.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_36_whats_new_1_7_matching_stack_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_36_whats_new_1_7_matching_stack_EN.srt)
 
 </td></tr></table>
 

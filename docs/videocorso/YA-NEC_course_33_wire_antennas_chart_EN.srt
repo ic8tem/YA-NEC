@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lesson 33: wire antennas, chart and purple buttons
+
+2
+00:00:05,000 --> 00:00:19,938
+YA-NEC course, lesson 33: the Wire antennas card, the chart and the purple buttons. Calculators, HF family, Wire antennas.
+
+3
+00:00:19,988 --> 00:00:33,605
+At the top the type: multiband or single band EFHW, with the 49 to 1 or the 64 to 1, or a non-resonant wire with the 9 to 1 or the 4 to 1. The loading coil is optional: it adds a lower band.
+
+4
+00:00:33,655 --> 00:00:45,971
+The counterpoise: a 0.05 wavelength wire as AA5TB suggests, the coax shield up to the choke, or none. The transformer core carries the losses measured by DG1JAN.
+
+5
+00:00:46,021 --> 00:00:57,465
+Six layouts: sloping up or down, vertical, inverted L and U, straight. On the right the drawing with the counterpoise.
+
+6
+00:00:57,515 --> 00:01:12,477
+Below, the boxes: radiating wire, counterpoise, capacitor across the primary, voltage at the end, core, core losses and power.
+
+7
+00:01:12,527 --> 00:01:20,877
+For each band the SWR through the transformer, from the TF5NN line model. The full check is done by NEC.
+
+8
+00:01:20,927 --> 00:01:27,724
+Tune the length with NEC looks for the length with the best SWR on all the harmonics, with the counterpoise and the ground.
+
+9
+00:01:27,774 --> 00:01:43,680
+The Chart button opens tables already computed with NEC: for each lowest band the half wave from the formula, tuned single band, tuned multiband and the quarter wave. The colour goes from green to red with the SWR.
+
+10
+00:01:43,730 --> 00:01:55,613
+At the top you choose the transformer, 49 to 1, 64 to 1 or 9 to 1 with the best lengths or the VE3EED ones, average or perfect ground, with or without counterpoise.
+
+11
+00:01:55,663 --> 00:02:13,578
+I pick the 40 metre multiband row and press Use this row in the card: the values go into the card, then the calculation is free again.
+
+12
+00:02:13,628 --> 00:02:29,045
+The purple buttons open another card already filled in. Build the transformer opens Balun and Unun with ratio, frequencies, power and core, and the winding drawing.
+
+13
+00:02:29,095 --> 00:02:49,588
+Back returns to the wire antennas. Coax choke opens the ferrite toroids with the turns for more than a thousand ohms on the lowest band.
+
+14
+00:02:49,638 --> 00:02:55,588
+End of lesson 33. Thank you for watching.

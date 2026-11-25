@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 33: filari, abaco e pulsanti viola
+
+2
+00:00:05,000 --> 00:00:19,959
+Corso YA-NEC, lezione 33: la scheda Filari, l'abaco e i pulsanti viola. Calcolatori, famiglia HF, voce Filari.
+
+3
+00:00:20,009 --> 00:00:33,092
+In alto il tipo: EFHW multibanda o monobanda, con il 49:1 o il 64:1, oppure filo non risonante con il 9:1 o il 4:1. La bobina di carico e' facoltativa: aggiunge una banda piu' bassa.
+
+4
+00:00:33,142 --> 00:00:45,359
+Il contrappeso: un filo di 0,05 lambda come AA5TB, la calza del coassiale fino al choke, oppure nessuno. Il nucleo del trasformatore porta le perdite misurate da DG1JAN.
+
+5
+00:00:45,409 --> 00:00:56,875
+Sei disposizioni: inclinata dal basso o dall'alto, verticale, L e U rovesciate, tutto dritto. A destra il disegno con il contrappeso.
+
+6
+00:00:56,925 --> 00:01:11,872
+Sotto, i riquadri: filo radiante, contrappeso, condensatore sul primario, tensione in punta, nucleo, perdite e potenza nel nucleo.
+
+7
+00:01:11,922 --> 00:01:20,539
+Per ogni banda il ROS attraverso il trasformatore, dal modello a linea di TF5NN. La verifica completa la fa il NEC.
+
+8
+00:01:20,589 --> 00:01:25,173
+Accorda la lunghezza col NEC cerca la lunghezza con il ROS migliore su tutte le armoniche, con il contrappeso e il terreno.
+
+9
+00:01:25,223 --> 00:01:41,134
+Il pulsante Abaco apre le tabelle gia' calcolate con il NEC: per ogni banda piu' bassa la mezz'onda da formula, accordata monobanda, accordata multibanda e il quarto d'onda. Il colore va dal verde al rosso secondo il ROS.
+
+10
+00:01:41,184 --> 00:01:52,334
+In alto si sceglie il trasformatore, 49:1, 64:1 o 9:1 con le lunghezze migliori o quelle di VE3EED, il terreno medio o perfetto, con o senza contrappeso.
+
+11
+00:01:52,384 --> 00:02:10,109
+Scelgo la 40 metri multibanda e premo Usa questa riga nella scheda: i valori passano nella scheda, poi il calcolo resta libero.
+
+12
+00:02:10,159 --> 00:02:25,566
+I pulsanti viola aprono un'altra scheda gia' compilata. Costruisci il trasformatore apre Balun e Un-Un con rapporto, frequenze, potenza e nucleo, e il disegno degli avvolgimenti.
+
+13
+00:02:25,616 --> 00:02:46,111
+Torna a Filari riporta indietro. Choke sul coassiale apre i Toroidi in ferrite con le spire per oltre mille ohm alla banda piu' bassa.
+
+14
+00:02:46,161 --> 00:02:52,112
+Fine della lezione 33. Grazie per la visione.

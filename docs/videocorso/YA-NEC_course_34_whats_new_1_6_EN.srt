@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lesson 34: what's new in 1.6
+
+2
+00:00:05,559 --> 00:00:13,569
+YA-NEC course, lesson 34: what's new in 1.6. We start from Calculators, Suggestions.
+
+3
+00:00:13,619 --> 00:00:23,256
+You write what you need: 14.150 MHz, antenna at 12 metres, average ground, maximum size 12 metres, and what matters most.
+
+4
+00:00:23,306 --> 00:00:32,456
+«Calculate all»: every suitable antenna is built with its own calculator and computed with NEC at that height, in parallel.
+
+5
+00:00:32,506 --> 00:00:42,723
+The table is sorted by what matters: gain, front to back, take-off angle, SWR and size. Grey rows do not meet the size or the polarization.
+
+6
+00:00:42,773 --> 00:00:53,314
+«open» takes you to the calculator with these values. Here is the 20 metre Moxon, ready to be tuned.
+
+7
+00:00:53,364 --> 00:01:03,031
+Now a 10 element Yagi for 144 MHz. In Patterns, «Pin this result» keeps the current lobe as a dashed trace.
+
+8
+00:01:03,081 --> 00:01:16,712
+Variables and optimization, Optimizer. The method menu has the new differential evolution: it searches the whole range of the variables.
+
+9
+00:01:16,762 --> 00:01:25,537
+At the top, the Direct match to Z0: no matching network, only the driven element and the first director change until the impedance reaches 50 ohm.
+
+10
+00:01:25,587 --> 00:01:34,339
+Here is before and after: SWR from 1.20 to 1.01, same gain. «Cancel» brings back the previous model.
+
+11
+00:01:34,389 --> 00:01:44,292
+Back in Patterns, the new lobe is drawn over the pinned one: you see at once what changed at the back.
+
+12
+00:01:44,342 --> 00:01:56,113
+3D structure: the new «phase» colouring shows the phase of the current on each wire, with the colour wheel at the bottom.
+
+13
+00:01:56,163 --> 00:02:03,580
+In the Yagi the phase rotates along the directors: it is the wave travelling towards the front.
+
+14
+00:02:03,630 --> 00:02:17,651
+In the Model objects, the Cable and balun sheet has new data: the run towards the station, its height and its direction.
+
+15
+00:02:17,701 --> 00:02:26,137
+We come down the mast and run 10 metres at 2.5 metres height, across the boom. Then «Compute the comparison».
+
+16
+00:02:26,187 --> 00:02:35,270
+For each balun: current on the braid, also at the station entry, power radiated by the braid and how much the SWR changes.
+
+17
+00:02:35,320 --> 00:02:43,537
+The chart follows the braid current from the dipole to the station. Here the quarter wave sleeve is the best.
+
+18
+00:02:43,587 --> 00:02:50,929
+End of lesson 34. Next one: what's new in 1.7. 73 de IC8TEM.

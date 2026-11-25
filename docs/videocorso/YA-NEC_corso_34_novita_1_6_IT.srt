@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 34: le novità della 1.6
+
+2
+00:00:05,560 --> 00:00:13,597
+Corso YA-NEC, lezione 34: le novità della 1.6. Partiamo da Calcolatori, Suggerimenti.
+
+3
+00:00:13,647 --> 00:00:23,284
+Si scrive cosa serve: frequenza 14,150 MHz, antenna a 12 metri, terreno medio, ingombro massimo 12 metri, e cosa conta di più.
+
+4
+00:00:23,334 --> 00:00:32,951
+«Calcola tutte»: ogni antenna adatta viene costruita con il suo calcolatore e calcolata con il NEC a quella altezza, in parallelo.
+
+5
+00:00:33,001 --> 00:00:44,884
+La tabella è ordinata per quello che conta: guadagno, avanti/indietro, angolo di partenza, ROS e ingombro. Le righe grigie non rispettano ingombro o polarizzazione.
+
+6
+00:00:44,934 --> 00:00:55,562
+«apri» porta nel calcolatore con questi valori. Ecco la Moxon per i 20 metri, pronta da accordare.
+
+7
+00:00:55,612 --> 00:01:05,241
+Ora una Yagi 10 elementi per i 144 MHz. In Diagrammi, «Fissa questo risultato» tiene il lobo attuale come traccia tratteggiata.
+
+8
+00:01:05,291 --> 00:01:18,832
+Variabili e ottimizzazione, Ottimizzatore. Nel menu del metodo c'è la nuova evoluzione differenziale: cerca in tutto l'intervallo delle variabili.
+
+9
+00:01:18,882 --> 00:01:25,472
+In alto, l'Adattamento diretto a Z0: senza adattatore, cambia solo radiatore e primo direttore finché l'impedenza arriva a 50 ohm.
+
+10
+00:01:25,522 --> 00:01:33,139
+Ecco il prima e il dopo: ROS da 1,20 a 1,01, guadagno uguale. «Annulla» rimette il modello di prima.
+
+11
+00:01:33,189 --> 00:01:42,972
+Tornando ai Diagrammi, il lobo nuovo è sopra quello fissato: si vede subito cosa è cambiato dietro.
+
+12
+00:01:43,022 --> 00:01:54,862
+Struttura 3D: la nuova colorazione «fase» mostra la fase della corrente su ogni filo, con la ruota dei colori in basso.
+
+13
+00:01:54,912 --> 00:02:02,304
+Nella Yagi la fase ruota lungo i direttori: è l'onda che viaggia verso il davanti.
+
+14
+00:02:02,354 --> 00:02:16,416
+Negli Oggetti del modello, la scheda Cavo e balun ha nuovi dati: il tratto verso la stazione, la sua quota e la direzione.
+
+15
+00:02:16,466 --> 00:02:24,926
+Scendiamo dal palo e andiamo per 10 metri a 2,5 metri di quota, di traverso rispetto al boom. Poi «Calcola il confronto».
+
+16
+00:02:24,976 --> 00:02:34,326
+Per ogni balun: corrente sulla calza, anche all'ingresso della stazione, potenza irradiata dalla calza e quanto cambia il ROS.
+
+17
+00:02:34,376 --> 00:02:42,793
+Il grafico segue la corrente sulla calza dal dipolo fino alla stazione. Qui il manicotto lambda/4 è il migliore.
+
+18
+00:02:42,843 --> 00:02:47,793
+Fine della lezione 34. Nella prossima, le novità della 1.7. 73 de IC8TEM.
