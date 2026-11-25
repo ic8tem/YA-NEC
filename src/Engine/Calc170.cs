@@ -351,7 +351,9 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("f", "Frequenza", 14.175, "MHz"));
             Params.Add(CalcParam.Scelta("tipo", "Stub", 0, "In corto: piu' facile da fare e da regolare; aperto: va isolato in punta.", "in corto", "aperto"));
             Params.Add(CalcParam.Scelta("modo", "Adattamento", 0, null, "stub singolo", "stub doppio"));
-            Params.Add(CalcParam.Scelta("sp", "Distanza tra gli stub", 0, null, "λ/8", "3λ/8") { Visibile = () => I("modo") == 1 });
+            CalcParam psp = CalcParam.Scelta("sp", "Distanza tra gli stub", 0, null, "λ/8", "3λ/8");
+            psp.Visibile = () => I("modo") == 1;
+            Params.Add(psp);
             CanTune = false;
             PuoUsareModello = true;
         }
@@ -599,3 +601,4 @@ namespace YaNec.Engine
             return o;
         }
     }
+}
