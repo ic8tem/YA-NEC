@@ -8105,3 +8105,8 @@ dal NEC (quota e terreno)	from NEC (height and ground)
 stima: 73 Ω; «Porta in risonanza (NEC)» li misura	estimate: 73 Ω; «Bring to resonance (NEC)» measures them
 ROS piu' basso trovato col NEC	lowest SWR found with NEC
 0,95 λ/4, poi «Cerca il ROS piu' basso»	0.95 λ/4, then «Find the lowest SWR»
+Clic: sceglie questa distanza (arancio) per «Crea lo stack»	Click: choose this distance (orange) for «Create the stack»
+Distanza scelta: {0} m ({1} λ). «Crea lo stack» usa questa distanza.	Chosen distance: {0} m ({1} λ). «Create the stack» uses this distance.
+Crea lo stack (riga scelta o proposta)	Create the stack (chosen or proposed row)
+Crea lo stack nel modello aperto con la distanza della riga cliccata nella tabella (arancio) o, senza scelta, con quella proposta.	Creates the stack in the open model with the distance of the row clicked in the table (orange) or, without a choice, with the proposed one.
+Nessuna distanza proposta: tutte superano il ROS attivo massimo. Clicca una riga della tabella per sceglierne una.	No proposed distance: all exceed the maximum active SWR. Click a row of the table to choose one.

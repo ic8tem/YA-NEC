@@ -2301,3 +2301,7 @@ Per una lunghezza di filo (es. 21,12 m) la tabella da' per ogni banda le mezze o
 ### 28.15 Linguetta Consigli
 
 Nuova linguetta **Consigli** dopo i Documenti tecnici: schede brevi con la fonte e il pulsante «apri» verso il calcolatore che mostra i numeri. Le stesse schede compaiono, in viola, in fondo ai calcolatori che riguardano.
+
+### 28.16 Stack: scegliere la distanza con un clic
+
+In Rumore/GT/Stack, nella tabella «Distanze provate» (stack VHF, HF e a due frequenze) ogni riga si clicca: la riga scelta diventa arancio e **Crea lo stack (riga scelta o proposta)** crea lo stack nel modello aperto con quella distanza. Senza una scelta il pulsante usa la distanza proposta; un nuovo calcolo toglie la scelta.

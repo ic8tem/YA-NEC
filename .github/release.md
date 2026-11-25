@@ -8,6 +8,7 @@
 - **Loop magnetica**: rettangolo, spire in parallelo, trasformatore su ferrite + rete L, copertura del variabile, Q misurato e tabella per banda (I3STS, IZ3LJH);
 - **Filari**: materiale del filo (anche cavetto d'acciaio), FT-82-43 per il QRP, perdite per banda;
 - **Stack**: area efficace accanto a DL6WU (IZ0FNO); **ROS**: curva piena dove R < Z0, avviso con R bassa (I5WHC); **Terreno reale**: angoli di partenza verso un locatore, con la MUF (I4MFA);
+- **Stack**: clic su una riga della tabella delle distanze (arancio) e «Crea lo stack» con quella distanza;
 - **Efficienza** stimata nei calcolatori con bobine e trappole; nuova linguetta **Consigli**; nuovo esempio: Yagi 4 elementi per gli 8 m con radiatore ripiegato verticale.
 
 **Novità della 1.6** (capitolo 27 del manuale), da sei spunti trovati confrontando YA-NEC con i programmi liberi simili su GitHub (idee citate, nessun codice copiato):

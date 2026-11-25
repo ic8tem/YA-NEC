@@ -347,7 +347,8 @@ namespace YaNec
                 new TextBlock { Text = "caso peggiore: la distanza che rispetta il criterio a entrambe le frequenze; le due frequenze si calcolano una dopo l'altra (tempo doppio)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 520 }));
             ssVhfBox.Children.Add(Riga("ROS attivo massimo", ssRosMax, new TextBlock { Text = "oltre: \"ROS attivo alto: da non scegliere\" (escluse dalla scelta proposta)", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 520 }));
             ssVhfBox.Children.Add(Riga("G/T (da Rumore e G/T)", new TextBlock { Text = "temperature del cielo e del terreno ed elevazione della voce Rumore e G/T", VerticalAlignment = VerticalAlignment.Center, Foreground = Pal.B(Pal.Muted), TextWrapping = TextWrapping.Wrap, MaxWidth = 420 }));
-            Button bv = Btn("Calcola accoppiamento e distanze (NEC)", true), bu = Btn("Usa la distanza proposta per lo stack", false), bc = Btn("Copia", false);
+            Button bv = Btn("Calcola accoppiamento e distanze (NEC)", true), bu = Btn("Crea lo stack (riga scelta o proposta)", false), bc = Btn("Copia", false);
+            ToolTip.SetTip(bu, "Crea lo stack nel modello aperto con la distanza della riga cliccata nella tabella (arancio) o, senza scelta, con quella proposta.");
             bv.Click += (s, e) => StudioStack(false);
             bu.Click += (s, e) => UsaPropostaStack();
             bc.Click += async (s, e) => { try { if (Clipboard != null) await Clipboard.SetTextAsync(TestoStack()); Status("Tabella dello stack copiata."); } catch { } };
@@ -425,34 +426,64 @@ namespace YaNec
                 {
                     if (t.IsCanceled) return;
                     if (t.IsFaulted) { st.Text = "Errore: " + t.Exception.GetBaseException().Message; return; }
-                    ssUltimo = t.Result;
+                    ssUltimo = t.Result; ssScelto = null;
                     ssUltimo.QuotaBase = hf ? h : double.NaN;
                     st.Text = "Criterio: " + ssUltimo.Criterio + ".";
                     if (hf) MostraStackHf(ssUltimo, righe); else MostraStackVhf(ssUltimo, righe, col, z0);
                 }));
         }
 
-        Grid Tabella(List<string[]> righe, int evid = -1, int evid2 = -1)
+        /// <summary>1.7.0 (IC8TEM 25/11/2026 22:00): con scegli != null le righe da primaDati in poi si cliccano: la riga scelta diventa arancio
+        /// e scegli riceve l'indice del punto (0 = prima riga di dati); sel = punto gia' scelto.</summary>
+        Grid Tabella(List<string[]> righe, int evid = -1, int evid2 = -1, Action<int> scegli = null, int primaDati = 1, int sel = -1)
         {
             Grid g = new Grid();
             int nc = righe[0].Length;
             for (int c = 0; c < nc; c++) g.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
+            List<Border>[] celle = new List<Border>[righe.Count];
+            Func<int, bool, IBrush> fondo = (r, scelta) => Pal.B(r == 0 ? Pal.Panel2 : scelta ? Pal.A(110, Pal.Orange) : (r == evid ? Pal.A(60, Pal.Green) : (r == evid2 ? Pal.A(45, Pal.Violet) : Pal.Panel)));
             for (int r = 0; r < righe.Count; r++)
             {
                 g.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                celle[r] = new List<Border>();
+                bool cliccabile = scegli != null && r >= primaDati;
                 for (int c = 0; c < nc; c++)
                 {
                     Border b = new Border
                     {
                         BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0.5), Padding = new Thickness(7, 3),
-                        Background = Pal.B(r == 0 ? Pal.Panel2 : (r == evid ? Pal.A(60, Pal.Green) : (r == evid2 ? Pal.A(45, Pal.Violet) : Pal.Panel))),
+                        Background = fondo(r, cliccabile && r - primaDati == sel),
                         Child = new TextBlock { Text = righe[r][c], FontWeight = r == 0 || r == evid ? FontWeight.SemiBold : FontWeight.Normal, Foreground = Pal.B(Pal.Fore), HorizontalAlignment = c == nc - 1 ? HorizontalAlignment.Left : HorizontalAlignment.Right }
                     };
                     Grid.SetRow(b, r); Grid.SetColumn(b, c);
                     g.Children.Add(b);
+                    celle[r].Add(b);
+                    if (cliccabile)
+                    {
+                        int rr = r;
+                        b.Cursor = new Avalonia.Input.Cursor(Avalonia.Input.StandardCursorType.Hand);
+                        ToolTip.SetTip(b, Lang.T("Clic: sceglie questa distanza (arancio) per «Crea lo stack»"));
+                        b.PointerPressed += (s0, e0) =>
+                        {
+                            for (int k = primaDati; k < celle.Length; k++) foreach (Border x in celle[k]) x.Background = fondo(k, k == rr);
+                            scegli(rr - primaDati);
+                        };
+                    }
                 }
             }
             return g;
+        }
+
+        // 1.7.0: distanza scelta con un clic nella tabella (null = la proposta)
+        StackPunto ssScelto;
+        void ScegliPuntoStack(StackStudioRisultato r, int i)
+        {
+            if (r == null || i < 0 || i >= r.Punti.Count) return;
+            ssScelto = r.Punti[i];
+            bool hf = !double.IsNaN(r.QuotaBase);
+            StatoStack(r).Text = Lang.F("Distanza scelta: {0} m ({1} λ). «Crea lo stack» usa questa distanza.", FN(hf || ssCalc == null || ssCalc.I("righe") > 1 ? ssScelto.Dv : ssScelto.Dh, 3),
+                FN((hf || ssCalc == null || ssCalc.I("righe") > 1 ? ssScelto.Dv : ssScelto.Dh) / r.Lambda, 2));
+            Registro.Scrivi("AZIONE", "stack: scelta la riga " + FN(ssScelto.K, 2));
         }
 
         void MostraStackVhf(StackStudioRisultato r, int righe, int col, double z0)
@@ -564,7 +595,8 @@ namespace YaNec
             grafici.Children.Add(cbGt);
             grafici.Children.Add(new TextBlock { Text = Lang.T("Asse di sinistra: G stack - G singola, da 0 in su. Asse di destra: F/R dello stack - F/R della singola, rovesciato, con lo 0 in alto: dove lo stack migliora il F/R la curva scende, e il punto piu' basso e' il miglioramento massimo. Il G/T resta nella tabella."), TextWrapping = TextWrapping.Wrap, FontSize = 12, Foreground = Pal.B(Pal.Muted) });
             Grid tg = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
-            Control tb = Tabella(rows, ie, id);
+            if (ssScelto != null && !r.Punti.Contains(ssScelto)) ssScelto = null;
+            Control tb = Tabella(rows, ie, id, k => ScegliPuntoStack(r, k), 2, ssScelto != null ? r.Punti.IndexOf(ssScelto) : -1);
             Grid.SetColumn(tb, 0); Grid.SetColumn(grafici, 2);
             tg.Children.Add(tb); tg.Children.Add(grafici);
             ssRis.Children.Add(Pannello(r.Prima != null ? "Distanze provate (" + (r.Media ? "media" : "caso peggiore") + " delle due frequenze)" : "Distanze provate", tg, null, "Distanze di stack: accoppiamento e distanza migliore"));
@@ -595,7 +627,8 @@ namespace YaNec
             };
             ch.MarkX = r.Proposta.K;
             Grid tg = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
-            Control tb = Tabella(rows, ie);
+            if (ssScelto != null && !r.Punti.Contains(ssScelto)) ssScelto = null;
+            Control tb = Tabella(rows, ie, -1, k => ScegliPuntoStack(r, k), 1, ssScelto != null ? r.Punti.IndexOf(ssScelto) : -1);
             Grid.SetColumn(tb, 0); Grid.SetColumn(ch, 2);
             tg.Children.Add(tb); tg.Children.Add(ch);
             return Pannello("Due frequenze: " + fa + " e " + fb + " MHz", tg, "stesse distanze in metri alle due frequenze; la riga verde e' quella proposta", "Distanze di stack: accoppiamento e distanza migliore");
@@ -632,7 +665,8 @@ namespace YaNec
             };
             if (r.ElBop != null) ch.Series.Add(new LineSeries { Name = "controfase (BOP)", Y = r.ElBop.Take(lim).ToArray(), Color = Pal.Orange, Dashed = true });
             Grid tg = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,12,*") };
-            Control tb = Tabella(rows, ie);
+            if (ssScelto != null && !r.Punti.Contains(ssScelto)) ssScelto = null;
+            Control tb = Tabella(rows, ie, -1, k => ScegliPuntoStack(r, k), 1, ssScelto != null ? r.Punti.IndexOf(ssScelto) : -1);
             Grid.SetColumn(tb, 0); Grid.SetColumn(ch, 2);
             tg.Children.Add(tb); tg.Children.Add(ch);
             ssRisHf.Children.Add(Pannello("Distanze provate e diagramma in elevazione", tg));
@@ -642,7 +676,8 @@ namespace YaNec
         {
             StackStudioRisultato r = ssUltimo;
             if (r == null || r.Proposta == null || model == null || run == null) { StatoStack(r).Text = "Calcola prima le distanze."; return; }
-            if (r.TutteEscluse) { StatoStack(r).Text = Lang.T("Nessuna distanza proposta: tutte superano il ROS attivo massimo."); return; }
+            StackPunto pu = ssScelto != null && r.Punti.Contains(ssScelto) ? ssScelto : r.Proposta;   // 1.7.0: la riga scelta (arancio) o la proposta
+            if (pu == r.Proposta && r.TutteEscluse) { StatoStack(r).Text = Lang.T("Nessuna distanza proposta: tutte superano il ROS attivo massimo. Clicca una riga della tabella per sceglierne una."); return; }
             try
             {
                 bool hf = !double.IsNaN(r.QuotaBase);
@@ -655,11 +690,11 @@ namespace YaNec
                     if (b.Ground == null || b.Ground.Kind == GroundKind.FreeSpace) { b.Ground = new GroundSpec { Kind = GroundKind.Real, Epsr = 13, Sigma = 0.005, Sommerfeld = true, Name = "medio" }; b.GroundFlag = 1; }
                 }
                 List<string> note = new List<string>();
-                NecModel nm = StackDetect.Crea(b, righe, col, r.Proposta.Dv, r.Proposta.Dh, run.PhiMax, note);
+                NecModel nm = StackDetect.Crea(b, righe, col, pu.Dv, pu.Dh, run.PhiMax, note);
                 string fn = model.FileName;
                 SetModel(nm, null);
                 model.FileName = string.IsNullOrEmpty(fn) ? "stack.nec" : Path.Combine(Path.GetDirectoryName(fn) ?? "", Path.GetFileNameWithoutExtension(fn) + " stack " + righe + "x" + col + ".nec");
-                Registro.Scrivi("AZIONE", "stack creato con la distanza proposta: " + string.Join(" ", note));
+                Registro.Scrivi("AZIONE", "stack creato con la distanza " + (pu == r.Proposta ? "proposta" : "scelta nella tabella") + ": " + string.Join(" ", note));
                 Status(string.Join(" ", note) + " Il file su disco non e' cambiato.");
                 Calculate(true);
             }
