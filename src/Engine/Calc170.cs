@@ -113,8 +113,8 @@ namespace YaNec.Engine
         static double Banda(double ra, double qa, double zs, double zt, bool conRis)
         {
             double hi = 0, lo = 0;
-            for (double d = 0; d < 0.3; d += 0.0005) { if (RosRlc(d, ra, qa, zs, zt, conRis) > 2) break; hi = d; }
-            for (double d = 0; d > -0.3; d -= 0.0005) { if (RosRlc(d, ra, qa, zs, zt, conRis) > 2) break; lo = d; }
+            for (double d = 0; d < 0.3; d += 0.001) { if (RosRlc(d, ra, qa, zs, zt, conRis) > 2) break; hi = d; }
+            for (double d = 0; d > -0.3; d -= 0.001) { if (RosRlc(d, ra, qa, zs, zt, conRis) > 2) break; lo = d; }
             return hi - lo;
         }
 
@@ -128,8 +128,8 @@ namespace YaNec.Engine
             if (zs <= 0 || zt <= 0)
             {
                 double best = -1, bs = 50, bt = 50;
-                for (double s = 3; s <= 150; s *= 1.05)
-                    for (double t = 25; t <= 100; t += 2.5)
+                for (double s = 3; s <= 150; s *= 1.12)
+                    for (double t = 25; t <= 100; t += 5)
                     {
                         double ss = zs > 0 ? zs : s, tt = zt > 0 ? zt : t;
                         double b = Banda(ra, qa, ss, tt, true);

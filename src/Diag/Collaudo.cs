@@ -409,6 +409,24 @@ namespace YaNec
                 }
                 Passo("calcolatore " + (c.Group ?? c.Key) + (c.Variant != null ? " / " + c.Variant : ""), "riquadri e modello NEC calcolabile", esito, ok, true);
             }
+            // 1.7.0: i pulsanti NEC dei nuovi calcolatori (bozzetto «mining riviste»): Tune, poi calcolo del modello
+            foreach (SimpleCalc c in SimpleCalc.All())
+            {
+                if (Array.IndexOf(new[] { "yagihf", "verttrap", "caricolin", "quadmulti", "yagibib", "eflw", "lt160", "halfsloper", "gamma", "bandalarga", "dipolorele" }, c.Key) < 0) continue;
+                try
+                {
+                    CalcOutput o0 = c.Run();
+                    double f0 = NecModel.Parse(o0.Nec).FreqMHz;
+                    double sc = c.Tune(f0);
+                    CalcOutput o = c.Run();
+                    NecModel m = NecModel.Parse(o.Nec);
+                    RunResult r = Calcola(m, m.FreqMHz);
+                    string tab = o.Tabella != null && o.Tabella.Count > 1 ? "; " + string.Join(" | ", o.Tabella[o.Tabella.Count - 1]) : "";
+                    Passo("1.7 " + c.Key + ": " + c.TuneLabel, "nessun errore, modello calcolabile", string.Format(CI, "fattore {0:0.000}, Z {1}, {2:0.00} dBi, eff. {3:0} %", sc, Z(r.Zin), r.GmaxDbi, r.Efficiency) + tab,
+                        !double.IsNaN(r.GmaxDbi) && !double.IsNaN(r.Zin.Real), true);
+                }
+                catch (Exception ex) { Passo("1.7 " + c.Key + ": " + c.TuneLabel, "nessun errore", ex.GetBaseException().Message, false); }
+            }
             double[] mx = CalcMoxon.Dimensioni(28.5, 2);
             Passo("Moxon MOXGEN 28,5 MHz filo 2 mm", "A 3,825 m (DK7ZB 3,86), E circa 1,40 m", string.Format(CI, "A {0:0.000} m, E {1:0.000} m", mx[0], mx[4]), Math.Abs(mx[0] - 3.825) < 0.005 && Math.Abs(mx[4] - 1.40) < 0.05);
             double cb = MainWindow.CorrezioneBoom(144.3, 40, false, 0, 0), cb432 = MainWindow.CorrezioneBoom(432.2, 25, false, 1, 0);
