@@ -266,19 +266,23 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("d", "ø del filo", 2, "mm"));
         }
         public override string TuneLabel { get { return "Cerca il ROS piu' basso (NEC)"; } }
+        Complex zMigliore; double scalaZ = double.NaN;
 
         /// <summary>L'impedenza dell'half-sloper dipende da traliccio e carico in cima: si cerca la lunghezza del filo con il ROS piu' basso su 50 ohm
         /// (con la risonanza X = 0 si puo' finire su un punto ad alta impedenza).</summary>
         public override double Tune(double fmhz)
         {
             double f = P("f"), best = 1, rb = double.MaxValue;
+            Complex zb = Complex.Zero;
             for (double sc = 0.5; sc <= 1.6; sc += 0.02)
             {
                 Scale = sc;
-                double r = C170.Ros(C170.Zin(Compute().Nec, f), 50);
-                if (r < rb) { rb = r; best = sc; }
+                Complex z = C170.Zin(Compute().Nec, f);
+                double r = C170.Ros(z, 50);
+                if (r < rb) { rb = r; best = sc; zb = z; }
             }
             Scale = best;
+            zMigliore = zb; scalaZ = best;
             return best;
         }
 
@@ -299,6 +303,18 @@ namespace YaNec.Engine
             o.Card("Filo inclinato", C170.N(ls, 2) + " m", Scale != 1 ? "ROS piu' basso trovato col NEC" : "0,95 λ/4, poi «Cerca il ROS piu' basso»", true);
             o.Card("Ancoraggio", C170.N(xEnd, 1) + " m dal traliccio", "a " + C170.N(zEnd, 1) + " m da terra");
             o.Card("Alimentazione", C170.N(hf, 1) + " m", "coassiale: calza al traliccio, centrale al filo");
+            if (Scale == scalaZ && Scale != 1)
+            {
+                double ros = C170.Ros(zMigliore, 50);
+                o.Card("Z al punto di alimentazione (NEC)", C170.Z(zMigliore), "ROS " + C170.N(Math.Min(ros, 99), 1) + " su 50 Ω", true);
+                if (ros > 2)
+                {
+                    o.Warnings.Add("Con questo traliccio il ROS minimo e' " + C170.N(Math.Min(ros, 99), 1) + ": serve una rete di adattamento al punto di alimentazione (o cambia quota dell'alimentazione, inclinazione e carico in cima).");
+                    CalcRimando rr = new CalcRimando { Testo = "Rete LC per adattare ›", Voce = "retelc", Tip = "Apre la Rete LC di adattamento con la Z trovata dal NEC." };
+                    rr.Valori["rl"] = zMigliore.Real; rr.Valori["xl"] = zMigliore.Imaginary; rr.Valori["r0"] = 50; rr.Valori["f"] = f;
+                    o.Rimandi.Add(rr);
+                }
+            }
             o.Formula = "Half-sloper (VE2CV): il filo inclinato lungo circa λ/4 e il traliccio con la Yagi in cima formano insieme l'antenna; l'impedenza dipende molto da altezza del traliccio, " +
                 "carico in cima e quota dell'alimentazione (di solito 25-100 Ω): la da' il NEC. Terreno perfetto sotto il traliccio a terra.";
             o.Oks.Add("Il diagramma ha un massimo debole verso il lato del filo e polarizzazione mista: e' un'antenna per le bande basse quando il traliccio c'e' gia'.");
@@ -572,7 +588,8 @@ namespace YaNec.Engine
                 o.Mark(1, prevP.Real, prevP.Imaginary, null, col, 0, 0, 0.02);
                 col = col == 1 ? 2 : 1;
             }
-            o.Mark(0, -R, -1.12, "Γ: carico (rosso), percorso lungo la linea (arancio, viola), stub (tratteggio) fino al centro", 3);
+            o.Mark(0, -R, -1.12, "Γ: carico (rosso), linea (arancio, viola)", 3);
+            o.Mark(0, -R, -1.26, "stub tratteggiato fino al centro", 3);
         }
     }
 

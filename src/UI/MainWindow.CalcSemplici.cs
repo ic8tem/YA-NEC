@@ -347,7 +347,7 @@ namespace YaNec
             {
                 CalcParam pp = p;
                 int nPrima = left.Children.Count;
-                Control cellaSez = null;
+                Control cellaSez = null, cellaGruppo = null;
                 if (pp.Sezione != null)
                 {
                     gruppo = null; griglia = null; ultimaRigaScelte = null;
@@ -446,7 +446,9 @@ namespace YaNec
                     else
                     {
                         if (gruppo == null) { gruppo = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 2, 0, 2) }; left.Children.Add(gruppo); }
-                        gruppo.Children.Add(CellaCalc(pp.Label, pp.Tip, t, u, h));
+                        Control cella = CellaCalc(pp.Label, pp.Tip, t, u, h);
+                        gruppo.Children.Add(cella);
+                        cellaGruppo = cella;   // 1.7.0: nelle schede senza sezioni si nasconde solo la cella, non tutto il gruppo
                     }
                     leggi.Add(() => { if (!t.IsReadOnly) pp.Value = ParseNum(t.Text, pp.Value); });
                     aggiornaHint.Add(() => { h.Text = pp.Hint ?? ""; h.IsVisible = !string.IsNullOrEmpty(h.Text); });
@@ -466,8 +468,12 @@ namespace YaNec
                 {
                     // tutto cio' che questo parametro ha aggiunto (titolo della sezione compreso) o la sua cella nella griglia
                     List<Control> suoi = new List<Control>();
-                    for (int i = nPrima; i < left.Children.Count; i++) if (!(left.Children[i] is Grid gg && gg == griglia && cellaSez != null)) suoi.Add(left.Children[i]);
-                    if (cellaSez != null) suoi.Add(cellaSez);
+                    if (cellaGruppo != null) suoi.Add(cellaGruppo);
+                    else
+                    {
+                        for (int i = nPrima; i < left.Children.Count; i++) if (!(left.Children[i] is Grid gg && gg == griglia && cellaSez != null)) suoi.Add(left.Children[i]);
+                        if (cellaSez != null) suoi.Add(cellaSez);
+                    }
                     Func<bool> vis = pp.Visibile;
                     visib.Add(() => { bool v = vis(); foreach (Control c in suoi) c.IsVisible = v; });
                 }

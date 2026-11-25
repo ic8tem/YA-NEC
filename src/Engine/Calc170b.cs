@@ -323,18 +323,21 @@ namespace YaNec.Engine
         }
 
         public override string TuneLabel { get { return "Cerca il ROS piu' basso (NEC)"; } }
+        Complex zMigliore; double scalaZ = double.NaN;
 
         /// <summary>Con una linea sola il radiatore accoppiato non porta a zero la reattanza in modo semplice: si cerca il fattore del radiatore
         /// della banda calcolata con il ROS piu' basso su 50 ohm.</summary>
         public override double Tune(double fmhz)
         {
             double f = Fp[I("b") == 0 ? 0 : 1], best = 1, rb = double.MaxValue;
+            Complex zb = Complex.Zero;
             for (double sc = 0.85; sc <= 1.15; sc += 0.005)
             {
-                double r = C170.Ros(C170.Zin(Mazzo(sc), f), 50);
-                if (r < rb) { rb = r; best = sc; }
+                Complex z = C170.Zin(Mazzo(sc), f);
+                double r = C170.Ros(z, 50);
+                if (r < rb) { rb = r; best = sc; zb = z; }
             }
-            Scale = best;
+            Scale = best; zMigliore = zb; scalaZ = best;
             return Scale;
         }
 
@@ -352,6 +355,12 @@ namespace YaNec.Engine
             }
             double boom = 0; foreach (double[] e in el) boom = Math.Max(boom, e[1]);
             o.Card("Boom", C170.N(boom, 2) + " m", el.Count + " elementi");
+            if (Scale == scalaZ)
+            {
+                double ros = C170.Ros(zMigliore, 50);
+                o.Card("Z all'alimentazione (NEC)", C170.Z(zMigliore), "ROS " + C170.N(Math.Min(ros, 99), 1) + " su 50 Ω", true);
+                if (ros > 2) o.Warnings.Add("ROS minimo " + C170.N(Math.Min(ros, 99), 1) + ": con una linea sola va ritoccata la distanza del radiatore accoppiato (W1JR lo ha ottimizzato con il calcolo) oppure serve un adattamento; con due linee ogni banda ha il suo.");
+            }
             o.Card("Banda calcolata", nomeB[I("b") == 0 ? 0 : 1], I("ali") == 1 ? "una sola linea sul radiatore della banda bassa" : "due linee, l'altro radiatore aperto", true);
             // interazione: coppie di elementi delle due bande vicine (entro 0,06 λ della banda alta) con lunghezze in rapporto vicino a 1/2, 2/3, 7/8
             double lh = C0 / Fp[0];

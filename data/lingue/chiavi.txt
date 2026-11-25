@@ -7640,3 +7640,17 @@ Consiglio
 ROS, R < Z0
 ROS, R > Z0
 hmF2 300 km; I4MFA, RR 9 e 11/2024
+
+Γ: carico (rosso), linea (arancio, viola)
+stub tratteggiato fino al centro
+Cerca il ROS piu' basso (NEC)
+Accorda gamma e condensatore (NEC)
+Z al punto di alimentazione (NEC)
+Rete LC per adattare ›
+Apre la Rete LC di adattamento con la Z trovata dal NEC.
+Z all'alimentazione (NEC)
+Dipolo in risonanza
+dal NEC (quota e terreno)
+stima: 73 Ω; «Porta in risonanza (NEC)» li misura
+ROS piu' basso trovato col NEC
+0,95 λ/4, poi «Cerca il ROS piu' basso»

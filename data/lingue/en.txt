@@ -8091,3 +8091,17 @@ Consiglio	Tip
 ROS, R < Z0	SWR, R < Z0
 ROS, R > Z0	SWR, R > Z0
 hmF2 300 km; I4MFA, RR 9 e 11/2024	hmF2 300 km; I4MFA, RR 9 and 11/2024
+
+Γ: carico (rosso), linea (arancio, viola)	Γ: load (red), line (orange, violet)
+stub tratteggiato fino al centro	dashed stub to the centre
+Cerca il ROS piu' basso (NEC)	Find the lowest SWR (NEC)
+Accorda gamma e condensatore (NEC)	Tune gamma and capacitor (NEC)
+Z al punto di alimentazione (NEC)	Z at the feed point (NEC)
+Rete LC per adattare ›	LC network to match ›
+Apre la Rete LC di adattamento con la Z trovata dal NEC.	Opens the LC matching network with the Z found by NEC.
+Z all'alimentazione (NEC)	Z at the feed (NEC)
+Dipolo in risonanza	Dipole at resonance
+dal NEC (quota e terreno)	from NEC (height and ground)
+stima: 73 Ω; «Porta in risonanza (NEC)» li misura	estimate: 73 Ω; «Bring to resonance (NEC)» measures them
+ROS piu' basso trovato col NEC	lowest SWR found with NEC
+0,95 λ/4, poi «Cerca il ROS piu' basso»	0.95 λ/4, then «Find the lowest SWR»
