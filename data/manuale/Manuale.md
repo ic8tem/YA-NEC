@@ -2234,3 +2234,70 @@ Nella scheda Cavo e balun (Oggetti del modello) il percorso del cavo ha due dati
 ### 27.6 Importatore EZNEC
 
 Dal file .ez ora si leggono anche i **carichi di Laplace** (rapporto di due polinomi in s, ricalcolato a ogni frequenza), gli **stub** in corto o aperti (sul segmento: in parallelo a una linea che parte da li', altrimenti in serie nel filo come una porta), le **linee con perdite** (rete NT con le perdite nei conduttori, come EZNEC) e le **reti L** (ramo in serie tra le porte e ramo in parallelo sulla porta 2, R, L, C in serie o in parallelo). Nel file .nec restano come righe «CM YA-NEC LAPLACE», «STUB» e «LINEAP», che solo YA-NEC legge. La struttura del file e le formule vengono da Ez2Nec di AG7T (Apache-2.0); il collaudo e' stato fatto sugli archivi di modelli EZNEC.
+
+## 28. Novita' della 1.7
+
+La 1.7 porta le proposte nate dalla lettura delle riviste (RadioRivista, RadioKit, QST, ARRL Handbook), approvate da IC8TEM il 25/11/2026. Dagli articoli YA-NEC prende solo idee e formule classiche, riassunte e citate (Citazioni C125-C138); le misure degli articoli non sono copiate.
+
+### 28.1 Stack: area efficace
+
+Calcolatori › Distanze di stack DL6WU (anche in Rumore/GT/Stack): accanto alle distanze DL6WU c'e' l'**area efficace** Ae = G λ²/4π della singola antenna (dal modello aperto o dal guadagno scritto). La tabella confronta la cella dello stack (sovrapposte × affiancate) con Ae: se la cella e' piu' piccola le antenne si accoppiano e il guadagno si perde; oltre, il guadagno resta quasi costante (IZ0FNO). Si possono scrivere due distanze da verificare. Nello studio dello stack il grafico «Rispetto alla singola antenna» ha una linea arancio tratteggiata dove la cella eguaglia Ae. DL6WU guarda un piano alla volta, l'area efficace la cella intera: i due criteri danno distanze vicine perche' G ≈ 41000/(Bh·Bv).
+
+### 28.2 ROS: da che lato sta
+
+Nel grafico del ROS (Diagrammi › Parametri) la curva e' **piena dove R < Z0** e tratteggiata dove R > Z0; nella carta di Smith il lato R < Z0 ha una velatura arancio. La scheda del ROS scrive «R bassa» o «R alta». Con R sotto Z0/2 e ROS ancora sotto 2 la scheda diventa arancio e la barra di stato dice quanta corrente in piu' porta il finale: a pari potenza la corrente cresce come √(Z0/R), circa +40 % a 25 Ω su 50 (I5WHC: un finale guasto a 26-27 Ω con l'allarme a ROS 2).
+
+### 28.3 Filari: nucleo FT-82-43 e cavetto d'acciaio
+
+Nuova scelta **Materiale del filo**: rame, rame smaltato, Copperweld (in HF come il rame) e cavetto d'acciaio da pesca, nel modello NEC come LD 5. Con l'EFHW una tabella da' per ogni banda la perdita nel filo, quella nel nucleo e l'efficienza. Il nucleo automatico fino a 10 W e' l'FT-82-43 (RadioKit 6/2023: EFHW QRP da 112 g); la potenza che regge e' una stima per l'uso QRP.
+
+### 28.4 Nuovi calcolatori HF: banda larga, L invertita e T, half-sloper, gamma match
+
+- **Dipoli › banda larga (risonatore coassiale)**: un tronco di coassiale λ/4 in corto in parallelo ai morsetti compensa la reattanza del dipolo e un trasformatore λ/4 riporta a 50 Ω (doppia sintonia). Le impedenze migliori si cercano sul modello RLC del dipolo; il NEC verifica con le linee vere.
+- **Verticali › L invertita / T (160 m)**: tratto verticale e tratto orizzontale (o due bracci in cima), resistenza di terra dai radiali (ON4UN), terreno perfetto con la terra come carico alla base.
+- **Verticali › half-sloper sul traliccio** (VE2CV): filo inclinato lungo circa λ/4 alimentato sul traliccio, la Yagi in cima come due fili incrociati (cappello capacitivo). L'impedenza la da' il NEC.
+- **Strumenti › Gamma match** (Healey, QST 4/1969): rapporto (1 + α)², lunghezza della barra per avere 50 Ω e condensatore in serie; il NEC verifica il dipolo con il gamma.
+
+### 28.5 Quad multibanda: bande non alimentate e interazione
+
+Si alimenta ognuna delle cinque bande. I radiatori delle bande non alimentate sono **aperti** (una linea per banda staccata), **chiusi** (il modello di prima) o **chiusi sulla loro linea** (stub aperto in fondo, con lunghezza, impedenza e fattore di velocita'). Le **linee di disaccoppiamento** (tronchi di coassiale in corto λ/4 alla banda alimentata, in cima agli anelli delle bande vicine) tolgono l'interazione tra 12 e 10 m (I4MFA). «Accorda e confronta (NEC)» porta in risonanza la banda alimentata con tutti gli anelli e la confronta con la stessa banda da sola e, con le linee, senza.
+
+### 28.6 Loop magnetica
+
+Forma **rettangolo** (L di Grover), spire **in serie o in parallelo**, accoppiamento **trasformatore su ferrite + rete L**, variabile Cmin-Cmax con la **copertura** in frequenza, **Q misurato** (la resistenza totale viene dalla misura) e una tabella per ogni banda coperta: C di accordo, R totale, efficienza, banda a ROS 2, tensione sul condensatore e rete L (I3STS e IZ3LJH).
+
+### 28.7 Strumenti › Adattamento a stub
+
+Stub singolo (due soluzioni: distanza dal carico e lunghezza) e doppio (stub sul carico e a λ/8 o 3λ/8, con la zona che non si puo' adattare), in corto o aperto, lunghezze fisiche con il fattore di velocita'. Il carico si scrive o si prende dal modello aperto. Il disegno e' la carta di Smith con il percorso (IW2FND).
+
+### 28.8 Terreno reale: angoli di partenza
+
+Nelle Opzioni del Terreno reale, «Angoli di partenza verso» un locatore: distanza dal proprio locatore, salti in F2 (strato a 300 km, salto massimo circa 4000 km) e angolo di partenza per ogni numero di salti, segnati in viola sul lobo verticale; con la foF2 anche la MUF di ogni salto. E' il metodo deterministico di I4MFA, diverso da quello statistico di N6BV in HFTA (le cui tabelle .PRN non si possono distribuire).
+
+### 28.9 Yagi HF 2-3 elementi
+
+Valori di partenza di I4MFA (radiatore λ/2 - 4 %, riflettore + 4 %, direttore - 6 %; 2 el. con riflettore a 0,165 λ o con direttore a 0,09 λ), ritocchi in % e **Guida di taratura (NEC)**: l'effetto di ogni elemento allungato dell'1 % su risonanza e F/B. La regola: il riflettore sposta il massimo del F/B, il radiatore la risonanza, il direttore tutti e due. Confronto: W4RNL, 0,150/0,175 λ.
+
+### 28.10 Dipolo multibanda a rele'
+
+Ogni banda ha il suo dipolo a lunghezza piena: i rele' chiusi uniscono i tratti fino alla banda voluta. Il modello NEC ha i rele' aperti come tratti con resistenza altissima. La scheda da' la durata della batteria con i rele' chiusi (IK4PKK e IK4CIE).
+
+### 28.11 Verticale trappolata multibanda
+
+Bande 40-20-15-10, 80-40-20-15-10 o 20-15-10 m, trappole con C grande, media o piccola e il loro Q, banda piu' bassa con tratto pieno o con **bobina e cappello** (idea dalla MV7). Le lunghezze vengono dal modello a linea del monopolo; «Accorda le bande (NEC)» ritocca i tratti dalla banda alta alla bassa e riempie Z, ROS ed efficienza di ogni banda (IZ2IAM, AV-5).
+
+### 28.12 Yagi bibanda interlacciata
+
+Due bande sullo stesso boom (12/17, 10/15, 4/6 m), 2 + 2 o 3 + 3 elementi, due linee o una linea sola con il radiatore della banda alta accoppiato. Avviso quando due elementi vicini delle due bande hanno lunghezze in rapporto vicino a 1/2, 2/3 o 7/8 (W1JR). Nei modelli d'esempio c'e' una Yagi 4 elementi per gli 8 m (40,68 MHz) con il radiatore ripiegato verticale alimentato direttamente a 50 Ω (idea di I3RKE, misure di YA-NEC: ROS 1,09 e 11,2 dBi in spazio libero).
+
+### 28.13 Carico lineare ed efficienza
+
+Carico lineare per la verticale λ/4 o il dipolo accorciato (IU5HIV): reattanza dal modello a linea, linea bifilare in corto lunga l con X = Z0 tan(βl). «Porta in risonanza e confronta (NEC)» accorda il carico e confronta, alla stessa lunghezza fisica, efficienza e banda di carico lineare, bobina alla stessa posizione, bobina alla base e cappello: il carico verso la cima e il cappello rendono di piu' (I5WHC). Il dipolo trappolato mostra l'efficienza stimata alla banda bassa (o con la bobina).
+
+### 28.14 Filari › risonanze in armonica
+
+Per una lunghezza di filo (es. 21,12 m) la tabella da' per ogni banda le mezze onde, la risonanza piu' vicina, la distanza dal centro banda e se cade in banda; il calcolo NEC da' il ROS di ogni banda. «Lunghezza per le bande scelte» cerca la lunghezza migliore. Il fattore di accorciamento si misura sul posto (EFLW, RKE 1/2024: 0,93).
+
+### 28.15 Linguetta Consigli
+
+Nuova linguetta **Consigli** dopo i Documenti tecnici: schede brevi con la fonte e il pulsante «apri» verso il calcolatore che mostra i numeri. Le stesse schede compaiono, in viola, in fondo ai calcolatori che riguardano.

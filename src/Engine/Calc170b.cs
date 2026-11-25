@@ -104,13 +104,13 @@ namespace YaNec.Engine
         string Chiave() { string k = ""; foreach (CalcParam p in Params) k += p.Value.ToString("R", CultureInfo.InvariantCulture) + ";"; return k; }
 
         /// <summary>Lunghezze dei tratti dal modello a linea (dal basso), reattanza della bobina (con cappello) e L delle trappole.</summary>
-        void Progetto(out double[] tratti, out double[] lt, out double xBob)
+        void Progetto(out double[] trattiOut, out double[] ltOut, out double xBobOut)
         {
             double[] fr = Fr;
             int n = fr.Length;
             double a = P("d") / 2000, c = Cratio[Math.Max(0, Math.Min(2, I("lc")))] * 1e-12, k = 0.97;
             bool cap = I("ult") == 1;
-            tratti = new double[n]; lt = new double[n - 1]; xBob = 0;
+            double[] tratti = new double[n], lt = new double[n - 1]; double xBob = 0;
             for (int i = 0; i < n - 1; i++) lt[i] = 1 / (Math.Pow(2 * Math.PI * fr[i] * 1e6, 2) * c);
             tratti[0] = k * C0 / fr[0] / 4;
             for (int j = 1; j < n; j++)
@@ -153,6 +153,7 @@ namespace YaNec.Engine
                     tratti[j] = C170.Bisez(fx, 0.05, Math.PI / 2 / beta - 0.01);
                 }
             }
+            trattiOut = tratti; ltOut = lt; xBobOut = xBob;
         }
 
         string Mazzo(double f, double[] tratti, double[] lt, double xBob, double[] sc)

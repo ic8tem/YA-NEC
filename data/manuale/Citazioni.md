@@ -67,6 +67,20 @@ I crediti del software (librerie, caratteri e licenze) restano nella linguetta *
 | C63 | L. G. Windom W8GZ, QST settembre 1929; F. Spillner DJ2KY, QRV dicembre 1971; Belrose e Bouliane, QST agosto 1990; C. L. Buchanan W3DZZ, QST marzo 1955 | dipoli alimentati fuori centro e trappolati | Calcolatori: dipoli (calcolo 6) |
 | C38 | L. B. Cebik W4RNL, "Antenna Options" n. 1-3 e 12-13 (QEX); "The Moxon Rectangle on 2 Meters"; "Some J-Poles That I Have Known"; "What Is a Slim Jim?" | Yagi a 3 elementi e adattamento a forcina; NVIS (altezza 0,175 λ, schermo, 9 fili); Moxon 2 m Tab. 1-2; J-pole standard e non standard (2,46 e 2,56 dBi dopo l'AGT); Slim Jim | Calcolatori: Forcina, NVIS, J-pole / Slim Jim (calcolo 5, 6) |
 | C39 | R. D. Straw N6BV, "What's the Deal About NVIS?", QST dicembre 2005 | dipolo NVIS e antenne molto basse | Calcolatori: NVIS (calcolo 6) |
+| C125 | M. Lisi IZ0FNO, «Spaziatura degli elementi di un array e area efficace», RadioRivista 9/2026 | area efficace Ae = G λ²/4π, cella dello stack, curva NBS e simulazione di I0KPT | Distanze di stack DL6WU e studio dello stack, 1.7 (manuale 28.1) |
+| C126 | P. Musacchio I5WHC, PA da 700 W per i 160 m, RadioRivista 9/2026; «Adattare necesse est», RadioRivista 4/2025 | ROS 2 con R tra 25 e 100 Ω, corrente dei MOSFET; resistenza di radiazione e perdite, cappello contro bobina alla base | ROS da che lato, Consigli, efficienza nei calcolatori, 1.7 (manuale 28.2, 28.12) |
+| C127 | M. Dose, EFHW QRP con FT-82-43 e cavetto d'acciaio, RadioKit 6/2023 | nucleo FT-82-43, 20,5 m di cavetto da 0,6 mm | Filari, 1.7 (manuale 28.3) |
+| C128 | ARRL Handbook, cap. 20 «Antenne e progetti» (edizione spagnola) | dipolo a banda larga con risonatore coassiale, L invertita e T per i 160 m, half-sloper di VE2CV, gamma e delta match (solo le idee) | nuovi calcolatori HF, 1.7 (manuale 28.4) |
+| C129 | D. J. Healey W3PVZ, «An Examination of the Gamma Match», QST 4/1969 | fattore di divisione della corrente, rapporto (1 + α)², linea in corto in parallelo | Gamma match, 1.7 (manuale 28.4) |
+| C130 | M. Filippi I4MFA, RadioRivista 5/2023 (rimanda a RR 3/1992 per le linee di disaccoppiamento), 9/2024, 11/2024, 9/2025, 11/2025 | linee di disaccoppiamento nella quad multibanda; propagazione e angoli di partenza deterministici; Yagi HF 2-3 elementi e regole di taratura; spider quad 10/15 m con linee separate | Quad multibanda, Terreno reale, Yagi HF, 1.7 (manuale 28.5, 28.8, 28.9) |
+| C131 | S. Stefani I3STS e IZ3LJH, «La mia antenna loop magnetica», RadioRivista 6/2024 | loop rettangolare, spire in parallelo, trasformatore e rete L, Q misurato | Loop magnetica, 1.7 (manuale 28.6) |
+| C132 | IW2FND, adattamento a stub, RadioRivista 10/2023 | stub singolo e doppio (formule classiche delle linee) | Adattamento a stub, 1.7 (manuale 28.7) |
+| C133 | IK4PKK e IK4CIE, dipolo multibanda a rele', RadioRivista 9/2025 | tratti a lunghezza piena uniti da rele', corrente dei rele' | Dipolo multibanda a rele', 1.7 (manuale 28.10) |
+| C134 | IZ2IAM, Cushcraft AV-5, RadioRivista 11/2025; Grazioli, verticale MV7, RadioKit Elettronica 11/2025 | verticale trappolata a 5 bande; bobina con cappello (il contrappeso brevettato non si usa) | Verticale trappolata, 1.7 (manuale 28.11) |
+| C135 | J. Reisert W1JR, «12- and 17-Meter Antenna Design», QST 2/2022 | Yagi bibanda sullo stesso boom con una linea, elementi isolati, interazione tra le bande (solo riassunto) | Yagi bibanda interlacciata, 1.7 (manuale 28.12) |
+| C136 | I3RKE, Yagi 4 elementi per gli 8 m con radiatore ripiegato verticale, RadioRivista 3/2025 | idea del radiatore ripiegato alimentato direttamente a 50 Ω | modello d'esempio degli 8 m, 1.7 (misure proprie) |
+| C137 | M. Diana IU5HIV, «Carico lineare per antenne a 1/4», RadioKit Elettronica 1/2024 | carico lineare (linea bifilare in corto) al posto della bobina | Carico lineare, 1.7 (manuale 28.13) |
+| C138 | «EFLW», RadioKit Elettronica 1/2024 | filo di 21,12 m risonante in armonica su 40, 20, 15 e 10 m; fattore di accorciamento misurato (0,93) | Filari › risonanze in armonica, Consigli, 1.7 (manuale 28.14) |
 
 ## Norme e rapporti
 
