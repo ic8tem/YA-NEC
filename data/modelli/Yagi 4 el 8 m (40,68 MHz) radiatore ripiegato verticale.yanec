@@ -1,0 +1,22 @@
+CM YA-NEC FORMATO=yanec 2
+CM YANEC NOME=Yagi 4 el 8 m (40,68 MHz) radiatore ripiegato verticale
+CM YANEC DESCRIZIONE=Yagi 4 elementi in polarizzazione verticale per gli 8 m, radiatore ripiegato a diametri diversi alimentato direttamente a 50 ohm (modello di prova di YA-NEC 1.7.0, idea da I3RKE, RadioRivista 3/2025; misure proprie, non quelle dell'articolo)
+CM YANEC CATEGORIA=Esempi di YA-NEC
+CM YANEC FONTE=Esempi di YA-NEC (modelli preparati o convertiti per IC8TEM)
+CM YANEC ORIGINALE=Yagi 4 el 8 m (40,68 MHz) radiatore ripiegato verticale.nec
+CM YANEC CONTENUTO=nec
+CM Yagi 4 el 8 m (40,68 MHz) radiatore ripiegato verticale
+CE
+GW 1 21 0.0000 0.0000 -1.8608 0.0000 0.0000 1.8608 0.0060
+GW 2 10 0.5896 0.0000 -1.6950 0.5896 0.0000 -0.0200 0.0080
+GW 3 1 0.5896 0.0000 -0.0200 0.5896 0.0000 0.0200 0.0080
+GW 4 10 0.5896 0.0000 0.0200 0.5896 0.0000 1.6950 0.0080
+GW 5 21 0.5896 0.0600 -1.6950 0.5896 0.0600 1.6950 0.0010
+GW 6 1 0.5896 0.0000 1.6950 0.5896 0.0600 1.6950 0.0010
+GW 7 1 0.5896 0.0000 -1.6950 0.5896 0.0600 -1.6950 0.0010
+GW 8 21 1.4739 0.0000 -1.6213 1.4739 0.0000 1.6213 0.0060
+GW 9 21 3.0952 0.0000 -1.5844 3.0952 0.0000 1.5844 0.0060
+GE 0
+EX 0 3 1 0 1 0
+FR 0 1 0 0 40.680 0
+EN

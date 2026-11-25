@@ -79,13 +79,22 @@ namespace YaNec.Engine
             add(new CalcOcf(), "dipoli", "OCF/Windom");
             add(new CalcG5rv(), "dipoli", "G5RV");
             add(new CalcT2fd(), "dipoli", "T2FD");
-            add(new CalcFilari(), "filari", null);
+            add(new CalcBandaLarga(), "dipoli", "banda larga (risonatore coassiale)");   // 1.7.0 (bozzetto «mining riviste» D, approvato 25/11/2026 20:41)
+            add(new CalcDipoloRele(), "dipoli", "multibanda a rele'");                    // 1.7.0 (J)
+            add(new CalcFilari(), "filari", "EFHW e fili");
+            add(new CalcEflw(), "filari", "risonanze in armonica (EFLW)");               // 1.7.0 (P)
             add(new CalcVerticale43(), "vert43", null);   // 1.5.9 (bozzetto approvato da IC8TEM 22/11/2026 21:22)     // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
             add(new CalcQuartoTerra(), "verticali", "lambda/4 e radiali");
             add(new CalcCinqueOttavi(), "verticali", "5/8");
             add(new CalcGroundPlane(), "verticali", "ground plane");
             add(new CalcCaricata(), "verticali", "caricata con bobina");
             add(new CalcJpole(), "verticali", "J-pole");
+            add(new CalcVertTrappolata(), "verticali", "trappolata multibanda");        // 1.7.0 (K)
+            add(new CalcLT160(), "verticali", "L invertita / T (160 m)");              // 1.7.0 (D)
+            add(new CalcHalfSloper(), "verticali", "half-sloper sul traliccio");       // 1.7.0 (D)
+            add(new CalcYagiHf(), "yagihf", null);                                     // 1.7.0 (I)
+            add(new CalcYagiBibanda(), "yagibib", null);                               // 1.7.0 (L)
+            add(new CalcCaricoLineare(), "caricolin", null);                           // 1.7.0 (O)
             add(new CalcLoopMagnetica(), "loopmag", null);
             add(new CalcHb9cv(), "hb9cv", null);
             add(new CalcQuad(), "quad", "1-2-3 elementi");
@@ -112,6 +121,8 @@ namespace YaNec.Engine
             add(new CalcTetto(), "tetto", null);   // 0.5.0 (IC8TEM 15/11/2026 15:32, proposta B)
             add(new CalcReteLC(), "retelc", null);
             add(new CalcForcina(), "forcina", null);   // 1.5
+            add(new CalcGammaMatch(), "gamma", null);  // 1.7.0 (D)
+            add(new CalcStub(), "stub", null);         // 1.7.0 (G)
             add(new CalcRr(), "rrad", null);
             add(new CalcCavi(), "cavi", null);
             add(new CalcToroidiT(), "toroidiT", null);
@@ -269,6 +280,13 @@ namespace YaNec.Engine
             o.Card("Tratto interno", Calcolatori.N(inner, 2) + " m", "centro → bobina (" + Calcolatori.N(pc * 100, 0) + " %)");
             o.Card("Tratto esterno", Calcolatori.N(outer, 2) + " m", "bobina → punta");
             o.Card("Lunghezza totale", Calcolatori.N(2 * A, 2) + " m", "contro " + Calcolatori.N(piena, 1) + " m a grandezza piena (" + (2 * A < piena ? "−" : "+") + Calcolatori.N(Math.Abs(1 - 2 * A / piena) * 100, 0) + " %)");
+            if (serve)
+            {
+                // 1.7.0 (bozzetto «mining riviste» S, I5WHC RR 4/2025): efficienza stimata, perdita della bobina riferita al centro con la corrente cos(beta a)
+                double ic = Math.Cos(2 * Math.PI / lam * inner), rb = w * L / Q, rr = Math.Min(73, 73 * Math.Pow(2 * A / (lam / 2), 2));
+                double eff = rr / (rr + 2 * rb * ic * ic);
+                o.Card("Efficienza (stima)", Calcolatori.N(eff * 100, 0) + " %", "Rr circa " + Calcolatori.N(rr, 0) + " Ω, bobine " + Calcolatori.N(2 * rb * ic * ic, 1) + " Ω riferiti al centro; il NEC da' quella vera");
+            }
             o.Formula = "Formule (modello a linea del braccio caricato, lo stesso della W3DZZ risolto per la bobina): X = Z0 (cot(beta b) - tan(beta a)), " +
                 "a = tratto interno = p x braccio, b = tratto esterno, beta = 2 pi / lambda, Z0 = 60 (ln(b/r) - 1); L = X / (2 pi f); perdita R = X / Q. " +
                 "La stima di Z0 e' tarata sul NEC (entro circa il 15 % tra il 20 e il 70 % del braccio): \"Porta in risonanza (NEC)\" ritocca la bobina, non le lunghezze. " +
@@ -321,6 +339,12 @@ namespace YaNec.Engine
             o.Card("Tratto esterno", Calcolatori.N(outer, 2) + " m", "per braccio, trappola -> punta");
             o.Card("Lunghezza totale", Calcolatori.N(2 * (inner + outer), 2) + " m", "contro " + Calcolatori.N(2 * 71.3 / f2, 1) + " m senza trappole");
             o.Card("Reattanza della trappola", "+j" + Calcolatori.N(X, 0) + " Ω", "a " + Calcolatori.N(f2, 3) + " MHz (bobina di carico)");
+            {
+                // 1.7.0 (bozzetto S): efficienza stimata alla banda bassa: perdita della trappola X/Q con la corrente cos(beta a) riferita al centro
+                double it = Math.Cos(beta * inner), rt = X / Q, rr = Math.Min(73, 73 * Math.Pow(2 * (inner + outer) / (lam2 / 2), 2));
+                double eff = rr / (rr + 2 * rt * it * it);
+                o.Card("Efficienza alla banda bassa (stima)", Calcolatori.N(eff * 100, 0) + " %", "trappole con Q " + Calcolatori.N(Q, 0) + ": " + Calcolatori.N(2 * rt * it * it, 1) + " Ω di perdita riferiti al centro (I5WHC, RR 4/2025)");
+            }
             o.Formula = "Formule: L = 1/((2 pi f1)^2 C); interno = 71,3/f1; trappola alla banda bassa X = w L / (1 - (f2/f1)^2); esterno b da cot(beta b) = (X + Z0 tan(beta a)) / Z0 " +
                 "con Z0 = 60 (ln(2h/a) - 1). Riferimento W3DZZ: 60 pF e 8,2 uH a 7,05 MHz, 2 x 10,1 m + 2 x 6,7 m. Il NEC (trappole come carichi RLC paralleli) verifica le due bande.";
             if (f2 >= f1) o.Warnings.Add("La banda bassa deve essere sotto quella delle trappole.");
@@ -842,47 +866,153 @@ namespace YaNec.Engine
     {
         static readonly double[] Fb = { 14.175, 18.118, 21.225, 24.94, 28.5 };
         static readonly string[] Nb = { "20 m", "17 m", "15 m", "12 m", "10 m" };
+        // 1.7.0 (bozzetto «mining riviste» E+N, approvato da IC8TEM il 25/11/2026 20:41): si alimenta qualunque banda; i radiatori delle bande
+        // non alimentate sono aperti, chiusi o chiusi sulla loro linea (stub aperto in fondo); linee di disaccoppiamento sulle bande vicine;
+        // «Accorda e confronta» porta in risonanza la banda alimentata con tutti gli anelli e misura l'interazione (I4MFA, RR 3/92, 5/2023, 11/2025).
         public CalcQuadMulti()
         {
-            Key = "quadmulti"; Title = "Quad multibanda 2 el."; Source = "ARRL Antenna Book (perimetri per banda); impostazione degli anelli concentrici come DK7ZB";
-            Params.Add(CalcParam.Scelta("b", "Banda alimentata nel NEC", 0, null, "20 m", "15 m", "10 m"));
+            Key = "quadmulti"; Title = "Quad multibanda 2 el."; Source = "ARRL Antenna Book (perimetri per banda); impostazione degli anelli concentrici come DK7ZB; I4MFA (RadioRivista 3/92, 5/2023, 11/2025: linee separate e di disaccoppiamento)";
+            Params.Add(CalcParam.Scelta("b", "Banda alimentata nel NEC", 0, null, "20 m", "17 m", "15 m", "12 m", "10 m"));
             Params.Add(new CalcParam("s", "Boom (spaziatura unica)", 2.5, "m"));
             Params.Add(new CalcParam("d", "Diametro del filo", 1.5, "mm"));
-            CanTune = false;
+            Params.Add(CalcParam.Scelta("inatt", "Radiatori delle bande non alimentate", 0, "Con una linea per banda il radiatore di una banda non usata non e' un anello chiuso: e' chiuso sulla sua linea (aperta in fondo, al commutatore). «Chiusi» e' il modello di prima (anello continuo, come una linea in corto).",
+                "aperti", "chiusi", "sulla loro linea"));
+            Params.Add(new CalcParam("ll", "Lunghezza delle linee", 15, "m", "Linea di ogni banda dal punto di alimentazione al commutatore (aperta in fondo).") { Visibile = () => I("inatt") == 2 });
+            Params.Add(new CalcParam("lz", "Impedenza delle linee", 50, "Ω") { Visibile = () => I("inatt") == 2 });
+            Params.Add(new CalcParam("lv", "Fattore di velocita'", 0.66, "") { Visibile = () => I("inatt") == 2 });
+            Params.Add(CalcParam.Scelta("dis", "Linee di disaccoppiamento", 0, "Tronchi di coassiale in corto, lunghi λ/4 (con il fattore di velocita') alla frequenza alimentata, inseriti in cima agli anelli delle bande vicine (rapporto oltre 0,84, es. 12 e 10 m): li' aprono l'anello e tolgono l'interazione (I4MFA, RR 3/92).",
+                "no", "sulle bande vicine"));
+            Params.Add(new CalcParam("dv", "VF del coassiale di disaccoppiamento", 0.66, "") { Visibile = () => I("dis") == 1 });
+            CanTune = true;
         }
-        public override CalcOutput Compute()
+
+        public override string TuneLabel { get { return "Accorda e confronta (NEC)"; } }
+
+        // risultati dell'ultimo «Accorda e confronta»
+        string confrontoChiave;
+        RunResult rSola, rTutta, rSenzaDis;
+        double scalaAccordo = 1;
+
+        int Bsel { get { return Math.Max(0, Math.Min(4, I("b"))); } }
+
+        /// <summary>Bande vicine a quella alimentata (rapporto delle frequenze oltre 0,84): sono quelle che la disturbano.</summary>
+        List<int> Vicine(int b)
         {
-            CalcOutput o = new CalcOutput();
+            List<int> l = new List<int>();
+            for (int i = 0; i < Fb.Length; i++) if (i != b && Math.Min(Fb[i], Fb[b]) / Math.Max(Fb[i], Fb[b]) > 0.84) l.Add(i);
+            return l;
+        }
+
+        string Chiave() { string k = ""; foreach (CalcParam p in Params) k += p.Key + "=" + p.Value.ToString("R", CultureInfo.InvariantCulture) + ";"; return k; }
+
+        /// <summary>Modello: tutte le bande (o solo quella alimentata), con o senza le linee di disaccoppiamento.</summary>
+        string Modello(bool soloAlimentata, bool disacc, double scala)
+        {
             double sp = P("s"), a = P("d") / 2000;
-            int bsel = new[] { 0, 2, 4 }[Math.Max(0, Math.Min(2, I("b")))];
+            int bsel = Bsel, inatt = I("inatt");
+            List<int> vic = Vicine(bsel);
+            NecDeck d = new NecDeck(Title + " " + Nb[bsel] + (soloAlimentata ? " (sola)" : " 20-10 m"));
+            int feedTag = 0;
+            List<string> stub = new List<string>();
+            List<int[]> aperti = new List<int[]>();
             for (int i = 0; i < Fb.Length; i++)
             {
-                double f = Fb[i], lam = C0 / f;
-                o.Card(Nb[i], "rad. " + Calcolatori.N(306.3 / f, 2) + " m", "rifl. " + Calcolatori.N(313.6 / f, 2) + " m, boom " + Calcolatori.N(sp / lam, 3) + " lambda", i == bsel);
-            }
-            o.Formula = "Formule: per ogni banda radiatore 306,3/f e riflettore 313,6/f (ARRL), anelli concentrici sulle stesse crociere e un solo boom: la spaziatura in lambda cambia da banda a banda. " +
-                "Le interazioni tra gli anelli spostano le risonanze: il NEC le calcola con tutti gli anelli presenti (anche quelli non alimentati).";
-            o.Warnings.Add("Su un boom unico la spaziatura e' ottima solo per una banda; DK7ZB e gli altri progettisti ritoccano i perimetri con il calcolo.");
-            NecDeck d = new NecDeck(Title + " 20-10 m");
-            int feedTag = 0, feedSeg = 0;
-            for (int i = 0; i < Fb.Length; i++)
-            {
-                double f = Fb[i], seg = C0 / f / 30;
+                if (soloAlimentata && i != bsel) continue;
+                double f = Fb[i], seg = C0 / f / 30, k = i == bsel ? scala : 1;
                 for (int e = 0; e < 2; e++)
                 {
-                    double x = e == 0 ? -sp / 2 : sp / 2, l = (e == 0 ? 313.6 : 306.3) / f / 4;
-                    // quadrato a rombo (diamante) come sulle crociere: alimentazione al vertice basso
+                    double x = e == 0 ? -sp / 2 : sp / 2, l = k * (e == 0 ? 313.6 : 306.3) / f / 4;
                     double r = l / Math.Sqrt(2);
                     int t1 = d.Ws(seg, x, 0, -r, x, r, 0, a, false, 3);
                     d.Ws(seg, x, r, 0, x, 0, r, a, false, 3);
-                    d.Ws(seg, x, 0, r, x, -r, 0, a, false, 3);
+                    int t3 = d.Ws(seg, x, 0, r, x, -r, 0, a, false, 3);
                     d.Ws(seg, x, -r, 0, x, 0, -r, a, false, 3);
-                    if (e == 1 && i == bsel) { feedTag = t1; feedSeg = 1; }
+                    if (e == 1 && i == bsel) feedTag = t1;
+                    else if (e == 1 && inatt == 0) aperti.Add(new[] { t1, 1 });
+                    else if (e == 1 && inatt == 2)
+                        stub.Add(string.Format(CultureInfo.InvariantCulture, "CM YA-NEC STUB {0} 1 {1:R} {2:R} {3:R} aperto", t1, Math.Max(1, P("lz")), Math.Max(0.01, P("ll")), Math.Max(0.1, Math.Min(1, P("lv")))));
+                    if (disacc && vic.Contains(i))
+                    {
+                        double vf = Math.Max(0.1, Math.Min(1, P("dv"))), lq = vf * C0 / Fb[bsel] / 4;
+                        stub.Add(string.Format(CultureInfo.InvariantCulture, "CM YA-NEC STUB {0} 1 50 {1:R} {2:R} corto", t3, lq, vf));
+                    }
                 }
             }
             d.Ground(0);
-            d.Ex(feedTag, feedSeg);
-            o.Nec = d.End(Fb[bsel]);
+            foreach (int[] ap in aperti) d.Ld(0, ap[0], ap[1], ap[1], 1e7, 0, 0);   // radiatore aperto: R serie altissima
+            d.Ex(feedTag, 1);
+            string nec = d.End(Fb[bsel]);
+            return stub.Count > 0 ? string.Join("\n", stub) + "\n" + nec : nec;
+        }
+
+        static RunResult Calcola(string nec, double f)
+        {
+            NecModel m = NecModel.Parse(nec);
+            return Analysis.Run(m, m.BuildGeometry(), f, 2.0);
+        }
+
+        /// <summary>Porta in risonanza la banda alimentata con tutti gli anelli presenti (perimetri della banda alimentata in scala), poi
+        /// confronta con la stessa banda da sola e, con le linee di disaccoppiamento, senza.</summary>
+        public override double Tune(double fmhz)
+        {
+            double f = Fb[Bsel];
+            bool dis = I("dis") == 1;
+            Func<double, double> x = sc => Calcola(Modello(false, dis, sc), f).Zin.Imaginary;
+            double s0 = 1, s1 = 1.02, f0 = x(s0), f1 = x(s1);
+            for (int it = 0; it < 20 && Math.Abs(f1) > 0.2 && f1 != f0; it++)
+            {
+                double s2 = Math.Max(s1 * 0.95, Math.Min(s1 * 1.05, s1 - f1 * (s1 - s0) / (f1 - f0)));
+                s0 = s1; f0 = f1; s1 = s2; f1 = x(s1);
+            }
+            scalaAccordo = s1;
+            rTutta = Calcola(Modello(false, dis, s1), f);
+            rSola = Calcola(Modello(true, false, s1), f);
+            rSenzaDis = dis ? Calcola(Modello(false, false, s1), f) : null;
+            confrontoChiave = Chiave();
+            Scale = 1;
+            return 1;
+        }
+
+        public override CalcOutput Compute()
+        {
+            CalcOutput o = new CalcOutput();
+            double sp = P("s");
+            int bsel = Bsel;
+            bool fresco = confrontoChiave == Chiave();
+            double sc = fresco ? scalaAccordo : 1;
+            for (int i = 0; i < Fb.Length; i++)
+            {
+                double f = Fb[i], lam = C0 / f, k = i == bsel ? sc : 1;
+                o.Card(Nb[i], "rad. " + Calcolatori.N(k * 306.3 / f, 2) + " m", "rifl. " + Calcolatori.N(k * 313.6 / f, 2) + " m, boom " + Calcolatori.N(sp / lam, 3) + " lambda" + (i == bsel && fresco ? " (accordata)" : ""), i == bsel);
+            }
+            o.Formula = "Formule: per ogni banda radiatore 306,3/f e riflettore 313,6/f (ARRL), anelli concentrici sulle stesse crociere e un solo boom: la spaziatura in lambda cambia da banda a banda. " +
+                "Le interazioni tra gli anelli spostano le risonanze: il NEC le calcola con tutti gli anelli presenti (anche quelli non alimentati). " +
+                "Radiatori non alimentati: aperti (R serie altissima), chiusi (anello continuo) o chiusi sulla loro linea aperta in fondo (stub, Z = -j Z0 cot(βl/VF)). " +
+                "Linee di disaccoppiamento: stub di coassiale in corto lungo VF λ/4 alla banda alimentata, in cima agli anelli delle bande vicine (I4MFA, RR 3/92).";
+            o.Warnings.Add("Su un boom unico la spaziatura e' ottima solo per una banda; DK7ZB e gli altri progettisti ritoccano i perimetri con il calcolo.");
+            List<int> vic = Vicine(bsel);
+            if (bsel >= 3 || vic.Contains(3) || vic.Contains(4))
+                o.Warnings.Add("12 e 10 m hanno lunghezze d'onda in rapporto circa 7/8: gli elementi si disturbano a vicenda (riflettore dei 10 m vicino al radiatore dei 12 m). Rimedi: linee di disaccoppiamento (tronchi di coassiale) su riflettori e direttori (I4MFA, RR 3/92 e 5/2023). «Accorda e confronta» misura l'effetto.");
+            if (I("inatt") == 1) o.Oks.Add("Radiatori non alimentati chiusi: e' come avere la loro linea in corto. Con una linea per banda il caso reale e' «aperti» o «sulla loro linea» (I4MFA, RR 11/2025).");
+            if (fresco && rTutta != null && rSola != null)
+            {
+                double df = 0;
+                // spostamento della risonanza stimato dalla reattanza della banda da sola alla frequenza dell'accordo
+                o.Card("Da sola", Calcolatori.N(rSola.Zin.Real, 0) + (rSola.Zin.Imaginary < 0 ? " -j" : " +j") + Calcolatori.N(Math.Abs(rSola.Zin.Imaginary), 0) + " Ω",
+                    Calcolatori.N(rSola.GmaxDbi, 2) + " dBi, F/B " + Calcolatori.N(rSola.FrontBack, 1) + " dB");
+                o.Card("Con tutti gli anelli (accordata)", Calcolatori.N(rTutta.Zin.Real, 0) + (rTutta.Zin.Imaginary < 0 ? " -j" : " +j") + Calcolatori.N(Math.Abs(rTutta.Zin.Imaginary), 0) + " Ω",
+                    Calcolatori.N(rTutta.GmaxDbi, 2) + " dBi, F/B " + Calcolatori.N(rTutta.FrontBack, 1) + " dB, perimetri " + Calcolatori.N((scalaAccordo - 1) * 100, 1) + " %", true);
+                if (rSenzaDis != null)
+                    o.Card("Senza linee di disaccoppiamento", Calcolatori.N(rSenzaDis.Zin.Real, 0) + (rSenzaDis.Zin.Imaginary < 0 ? " -j" : " +j") + Calcolatori.N(Math.Abs(rSenzaDis.Zin.Imaginary), 0) + " Ω",
+                        Calcolatori.N(rSenzaDis.GmaxDbi, 2) + " dBi, F/B " + Calcolatori.N(rSenzaDis.FrontBack, 1) + " dB");
+                double dFb = rTutta.FrontBack - rSola.FrontBack, dG = rTutta.GmaxDbi - rSola.GmaxDbi;
+                if (Math.Abs(scalaAccordo - 1) > 0.01 || Math.Abs(dFb) > 3 || Math.Abs(dG) > 0.5)
+                    o.Warnings.Add("Interazione forte sui " + Nb[bsel] + ": con gli altri anelli i perimetri vanno cambiati del " + Calcolatori.N((scalaAccordo - 1) * 100, 1) + " %, il F/B cambia di " + Calcolatori.N(dFb, 1) + " dB e il guadagno di " + Calcolatori.N(dG, 2) + " dB rispetto alla banda da sola.");
+                else o.Oks.Add("Interazione piccola sui " + Nb[bsel] + ": perimetri entro l'1 %, F/B entro 3 dB e guadagno entro 0,5 dB rispetto alla banda da sola.");
+                df = 0;
+            }
+            else o.Oks.Add("«Accorda e confronta (NEC)» porta in risonanza la banda alimentata con tutti gli anelli e la confronta con la stessa banda da sola" + (I("dis") == 1 ? " e senza le linee di disaccoppiamento." : "."));
+            o.Nec = Modello(false, I("dis") == 1, sc);
             o.Plane = "yz";
             return o;
         }

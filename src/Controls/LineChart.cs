@@ -27,6 +27,8 @@ namespace YaNec
         public double YMinFixed = double.NaN, YMaxFixed = double.NaN;
         public double Y2MinFixed = double.NaN, Y2MaxFixed = double.NaN;
         public double MarkX = double.NaN;
+        public double MarkX2 = double.NaN;    // 1.7.0: seconda linea verticale tratteggiata (es. cella dello stack uguale all'area efficace)
+        public string MarkX2Label;
         public string MarkXLabel;            // 1.2.0: scritta accanto alla linea verticale (es. banda da bloccare)
         public Color? MarkXColor;
         public double[] HLines = new double[0];
@@ -150,6 +152,11 @@ namespace YaNec
             {
                 if (h < ylo || h > yhi) continue;
                 ctx.DrawLine(Pal.P(Pal.A(160, Pal.Red), 1, Pal.Dash), new Point(pr.Left, PY(h)), new Point(pr.Right, PY(h)));
+            }
+            if (!double.IsNaN(MarkX2) && MarkX2 >= xmin && MarkX2 <= xmax)
+            {
+                ctx.DrawLine(Pal.P(Pal.A(200, Pal.Orange), 1.2, Pal.Dash), new Point(PX(MarkX2), pr.Top), new Point(PX(MarkX2), pr.Bottom));
+                if (!string.IsNullOrEmpty(MarkX2Label)) Draw.Text(ctx, MarkX2Label, PX(MarkX2) + 6, pr.Bottom - 22, 11, Pal.Orange);
             }
             if (!double.IsNaN(MarkX) && MarkX >= xmin && MarkX <= xmax)
             {

@@ -42,11 +42,11 @@ namespace YaNec
         string calcVarianteVoluta;
         static readonly Dictionary<string, string[]> CalcVoci = new Dictionary<string, string[]>
         {
-            { "HF", new[] { "dipoli", "filari", "dipmb", "yagimb", "verticali", "vert43", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf" } },
+            { "HF", new[] { "dipoli", "filari", "dipmb", "yagihf", "yagimb", "yagibib", "verticali", "vert43", "vertmb", "4sq", "delta", "looprett", "loopmag", "quad", "eh", "moxon", "hexbeam", "skywire", "nvis", "carichihf", "caricolin" } },   // 1.7.0: yagihf, yagibib, caricolin
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh", "discone" } },   // 1.5.6: Discone da HF a VHF (IC8TEM 21/11/2026)
             { "Antenne riceventi", new string[0] },
             { "Suggerimenti", new string[0] },
-            { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },
+            { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "gamma", "stub", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },   // 1.7.0: gamma, stub
             { "Calcoli meccanici", new string[0] },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
             { "2,4 GHz", new[] { "pcb24" } },
@@ -71,11 +71,13 @@ namespace YaNec
             // una famiglia; "Distanze di stack DL6WU" passa alla sopralinguetta Rumore/GT/Stack.
             calcTitolo = new TextBlock { Text = "HF", FontSize = 18, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(2, 0, 0, 6) };
             fasCalc.Children.Add(calcTitolo);
-            fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD", true);
-            fasCalc.Voce("filari", "Filari", false, null, "alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke");   // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
+            fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD, banda larga, multibanda a rele'", true);
+            fasCalc.Voce("filari", "Filari", false, null, "alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke; risonanze in armonica (EFLW)");   // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
             fasCalc.Voce("dipmb", "Dipolo multibanda", false, null, "bacchette parallele, manica aperta, radiatori XR-5");   // 0.4.30
+            fasCalc.Voce("yagihf", "Yagi HF 2-3 elementi", false, null, "valori di partenza e guida di taratura (I4MFA)");   // 1.7.0
             fasCalc.Voce("yagimb", "Yagi multibanda", false, null, "HF e inizio VHF: radiatori multibanda + riflettore o direttore per banda");   // 0.4.30
-            fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole", true);
+            fasCalc.Voce("yagibib", "Yagi bibanda interlacciata", false, null, "due bande sullo stesso boom, una o due linee (W1JR)");   // 1.7.0
+            fasCalc.Voce("verticali", "Verticali", false, null, "lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole, trappolata multibanda, L invertita / T, half-sloper", true);
             fasCalc.Voce("vert43", "Verticale non risonante (43 piedi)", false, null, "un-un 4:1, accordatore; perdite nel cavo, tensione alla base");   // 1.5.9 (bozzetto approvato da IC8TEM 22/11/2026 21:22)
             fasCalc.Voce("vertmb", "Verticale multibanda (DX Commander)", false, null, "elementi a ventaglio, terreno suo, verifica per banda");   // 0.4.30
             fasCalc.Voce("4sq", "Four-square", false, null, "quattro verticali sfasati (ON4UN)");
@@ -88,6 +90,7 @@ namespace YaNec
             fasCalc.Voce("hexbeam", "Hexbeam 20-10 m", false, null, "G3TXQ, misure JN1GLB, accordo a 50 Ω");   // 0.4.30
             fasCalc.Voce("skywire", "Loop orizzontale multibanda", false, null, "Loop Skywire (W7FB, NT0Z): tutte le bande, scala o coassiale, perdita della discesa");   // 1.0.17
             fasCalc.Voce("nvis", "NVIS", false, null, "dipolo, V invertito, loop 1 λ; altezza ottima, schermo o 9 fili a terra (Cebik)");   // 1.5
+            fasCalc.Voce("caricolin", "Carico lineare", false, null, "λ/4 e dipolo accorciato; confronto con bobina e cappello (IU5HIV, I5WHC)");   // 1.7.0
             fasCalc.Voce("carichihf", "Carichi HF", false, null, "trappole LC e coassiali, bobine con autorisonanza, linear loading, cappelli; Q, tensioni e perdite per banda");   // 1.2.0
             fasCalc.Voce("hb9cv", "HB9CV", false, null, "due elementi alimentati sfasati");
             fasCalc.Voce("bigwheel", "Big Wheel", false, null, "144-432 MHz, polarizzazione orizzontale, omnidirezionale; i due livelli e i tre dipoli");   // 1.0.17
@@ -106,6 +109,8 @@ namespace YaNec
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
             fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");
             fasCalc.Voce("forcina", "Forcina (beta / hairpin)", false, null, "adattamento simmetrico del pilotato a 50 Ω (Cebik)");   // 1.5
+            fasCalc.Voce("gamma", "Gamma match", false, null, "barra, distanza, condensatore in serie (Healey)");   // 1.7.0
+            fasCalc.Voce("stub", "Adattamento a stub", false, null, "stub singolo e doppio, carta di Smith (IW2FND)");   // 1.7.0
             fasCalc.Voce("rrad", "Resistenza di radiazione", false, null, "dipolo corto, monopolo, loop", true);
             fasCalc.Voce("cavi", "Cavi RG", false, null, "dal nostro abaco cavi");
             fasCalc.Voce("toroidiT", "Toroidi iron powder (T)", false, null, "AL, spire, banda", true);
@@ -763,6 +768,9 @@ namespace YaNec
                 avv.Children.Clear();
                 foreach (string w in last.Warnings) avv.Children.Add(new TextBlock { Text = "⚠ " + Lang.T(w), TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Orange), FontSize = 13.5 });
                 foreach (string w in last.Oks) avv.Children.Add(new TextBlock { Text = "✓ " + w, TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Green), FontSize = 13.5 });
+                // 1.7.0 (bozzetto «mining riviste» U): le schede della linguetta Consigli che riguardano questo calcolatore
+                foreach (Consiglio cns in Consigli.Per(sc.Key))
+                    avv.Children.Add(new TextBlock { Text = Lang.T("Consiglio") + " · " + Lang.T(cns.Titolo) + ": " + Lang.T(cns.Testo) + " (" + cns.Fonte + ")", TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Violet), FontSize = 13.5 });
                 if (avv.Children.Count == 0) avv.Children.Add(new TextBlock { Text = "nessun avviso", Foreground = Pal.B(Pal.Muted) });
                 bool haNec = last.Nec != null;
                 // 0.4.20 (IC8TEM 14/11/2026 16:01): fumetto giallo con gli avvisi del modello NEC che i pulsanti creano

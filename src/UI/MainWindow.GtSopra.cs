@@ -534,6 +534,13 @@ namespace YaNec
             ch2.YMinFixed = 0; ch2.YMaxFixed = Math.Ceiling(Math.Max(ideale, r.Punti.Max(q => q.G - r.GSingola)) + 1);
             ch2.Y2MaxFixed = Math.Max(1.5, Math.Ceiling(dfrInv.Max() + 0.5)); ch2.Y2MinFixed = Math.Floor(Math.Min(-1, dfrInv.Min()) - 0.5);
             ch2.MarkX = p.K;
+            // 1.7.0 (bozzetto «mining riviste» A): distanza dove la cella dello stack eguaglia l'area efficace Ae = G λ²/4π (IZ0FNO, RR 9/2026)
+            if (r.Dl6wu != null && r.Lambda > 0 && r.Dl6wu.Dv > 0 && r.Dl6wu.Dh > 0)
+            {
+                double ae = YaNec.Engine.CalcStackDl6wu.Ae(r.GSingola, r.Lambda), c1 = r.Dl6wu.Dv * r.Dl6wu.Dh;
+                ch2.MarkX2 = righe > 1 && col > 1 ? Math.Sqrt(ae / c1) : ae / c1;
+                ch2.MarkX2Label = Lang.T("cella = Ae");
+            }
             CheckBox cbGt = new CheckBox { Content = Lang.T("mostra anche il G/T (variazione sulla singola, asse di sinistra)"), IsChecked = false, Margin = new Thickness(0, 4, 0, 0) };
             Action serie2 = () =>
             {

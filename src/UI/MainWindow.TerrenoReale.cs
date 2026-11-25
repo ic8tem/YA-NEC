@@ -60,6 +60,8 @@ namespace YaNec
             List<Tuple<double, double>> rosa = null;
             Dem.Profilo ultimoProf = null; TerrenoReale.Esito ultimo = null; double ultimaH = 0, ultimoAz = 0, ultimaF = 0;
             string titDir = "";
+            // 1.7.0 (bozzetto «mining riviste» H, approvato da IC8TEM il 25/11/2026 20:41): angoli di partenza deterministici (I4MFA, RR 9 e 11/2024)
+            List<Tuple<int, double, double>> salti = new List<Tuple<int, double, double>>();   // numero di salti, elevazione (gradi), MUF (MHz, NaN senza foF2)
             NecModel modelloPrima = null; bool? vhfPrima = null;
             double hMigliore = double.NaN; List<Tuple<double, double>> scansione = null;
 
@@ -204,6 +206,16 @@ namespace YaNec
             CheckBox cStat = new CheckBox { Content = "Statistiche angoli ARRL (banda e regione)", IsEnabled = false };
             ToolTip.SetTip(cStat, "Servono le tabelle degli angoli di arrivo dell'ARRL Antenna Book (file .PRN per banda e regione): appena disponibili si attiva e mostra gli spicchi arancioni.");
             StackPanel opz = new StackPanel { Spacing = 2 }; opz.Children.Add(cScan); opz.Children.Add(cStat);
+            // 1.7.0 (bozzetto H): senza le statistiche ARRL (i file .PRN non si possono distribuire) gli angoli di partenza verso un corrispondente:
+            // locatore -> distanza -> salti in F2 (hmF2 300 km, salto massimo circa 4000 km) -> angolo per ogni numero di salti; con la foF2 la MUF di ogni salto
+            TextBox tCorr = new TextBox { Width = 110, Watermark = "PM95" }, tFoF2 = new TextBox { Width = 70, Watermark = "foF2" };
+            TextBlock risSalti = new TextBlock { TextWrapping = TextWrapping.Wrap, FontSize = 12, Foreground = Pal.B(Pal.Violet) };
+            StackPanel rSalti = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6, Margin = new Thickness(0, 6, 0, 0) };
+            rSalti.Children.Add(new TextBlock { Text = Lang.T("Angoli di partenza verso"), VerticalAlignment = VerticalAlignment.Center });
+            rSalti.Children.Add(tCorr); rSalti.Children.Add(new TextBlock { Text = "foF2 MHz", VerticalAlignment = VerticalAlignment.Center }); rSalti.Children.Add(tFoF2);
+            ToolTip.SetTip(tCorr, "Locatore del corrispondente (4 o 6 caratteri): distanza dal tuo locatore, salti possibili in F2 e angolo di partenza per ogni numero di salti, segnati sul lobo in viola. Metodo deterministico (I4MFA, RR 9 e 11/2024), diverso da quello statistico di N6BV in HFTA.");
+            ToolTip.SetTip(tFoF2, "Frequenza critica dello strato F2 (MHz), facoltativa: con questa si calcola la MUF di ogni salto (MUF = foF2 / cos φ).");
+            opz.Children.Add(rSalti); opz.Children.Add(risSalti);
             StackPanel avvisi = new StackPanel { Spacing = 4, Margin = new Thickness(0, 6, 0, 0) };
             opz.Children.Add(avvisi);
             StackPanel dx = new StackPanel();
@@ -444,6 +456,14 @@ namespace YaNec
                 curva(r.Libero, TerrGrigio, 1.4, false);
                 curva(r.Piatto, TerrArancio, 1.8, true);
                 curva(r.Reale, TerrBlu, 2.4, false);
+                foreach (var sa in salti)
+                {
+                    if (!(mezzo || sa.Item2 <= zm)) continue;
+                    Pen pv = new Pen(Pal.B(Pal.Violet), 1.3, new DashStyle(new double[] { 3, 3 }, 0));
+                    Point q = P(sa.Item2, gtop);
+                    ctx.DrawLine(pv, c0, q);
+                    Draw.Text(ctx, Lang.F("{0} salti", sa.Item1) + " " + FN(sa.Item2, 0) + "°", q.X + 3, q.Y - 14, 10.5, Pal.Violet);
+                }
                 var lb = primoLobo(r.El, r.Reale);
                 if (lb.Item1 > 0)
                 {
@@ -850,6 +870,36 @@ namespace YaNec
             fAz.Selected += k => { modoAz = k; rigaAz.IsVisible = k == "libero"; fDir.IsVisible = k == "traffico"; terrAggiorna(); };
             fDir.Selected += k => { dirTr = int.Parse(k.Substring(1)); terrAggiorna(); };
             fVista.Selected += k => { vista = k; ridisegnaLobo(); };
+            // 1.7.0 (bozzetto H): angoli di partenza deterministici verso il corrispondente
+            Action calcolaSalti = () =>
+            {
+                salti.Clear();
+                string lc = (tCorr.Text ?? "").Trim().ToUpperInvariant();
+                double la2, lo2;
+                if (lc.Length == 0 || double.IsNaN(lat) || !Dem.DaLocatore(lc, out la2, out lo2)) { risSalti.Text = lc.Length == 0 ? "" : Lang.T("locatore non valido (o manca il tuo locatore)"); ridisegnaLobo(); return; }
+                double az, km;
+                Dem.Rotta(lat, lon, la2, lo2, out az, out km);
+                double fof2 = double.NaN, ff;
+                if (double.TryParse((tFoF2.Text ?? "").Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out ff) && ff > 0) fof2 = ff;
+                const double Rt = 6371, hF = 300;
+                int n0 = Math.Max(1, (int)Math.Ceiling(km / 3900));
+                List<string> righe = new List<string>();
+                for (int n = n0; n <= n0 + 2; n++)
+                {
+                    double th = km / n / (2 * Rt);
+                    double el = Math.Atan((Math.Cos(th) - Rt / (Rt + hF)) / Math.Sin(th)) * 180 / Math.PI;
+                    if (el < 0) continue;
+                    double phi = Math.Asin(Rt * Math.Cos(el * Math.PI / 180) / (Rt + hF));
+                    double muf = double.IsNaN(fof2) ? double.NaN : fof2 / Math.Cos(phi);
+                    salti.Add(Tuple.Create(n, el, muf));
+                    righe.Add(Lang.F("{0} salti", n) + ": " + FN(el, 1) + "°" + (double.IsNaN(muf) ? "" : ", MUF " + FN(muf, 1) + " MHz"));
+                }
+                risSalti.Text = FN(Math.Round(km / 10) * 10, 0) + " km, az " + FN(az, 0) + "° · " + string.Join(" · ", righe) + "  (" + Lang.T("hmF2 300 km; I4MFA, RR 9 e 11/2024") + ")";
+                Registro.Scrivi("AZIONE", "terreno reale: angoli di partenza verso " + lc + ", " + FN(km, 0) + " km");
+                ridisegnaLobo();
+            };
+            tCorr.TextChanged += (s9, e9) => calcolaSalti();
+            tFoF2.TextChanged += (s9, e9) => calcolaSalti();
             cZoom.SelectionChanged += (s, e) => ridisegnaLobo();
             tLoc.LostFocus += (s, e) => { quotaSito = double.NaN; terrAggiorna(); };
             Action leggiQuota = () =>

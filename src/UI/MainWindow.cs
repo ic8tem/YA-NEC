@@ -457,7 +457,7 @@ namespace YaNec
             // 1.5.2 (IC8TEM 19/11/2026 17:06-17:11, schema approvato): Smith dentro Diagrammi; NEC e Correnti in "NEC/correnti";
             // Variabili e Ottimizzatore in "Variabili e ottimizzazione" (al posto dell'Ottimizzatore). Da 16 a 13 linguette.
             // 1.5.3 (IC8TEM 20/11/2026 12:23): Frequenza diventa la voce "Parametri" della fascia dei Diagrammi. 12 linguette.
-            string[] names = { "Struttura 3D", "Diagrammi", "Rumore/GT/Stack", LinNecCorr, LinVarOtt, "Calcolatori", "Avvisi", "Impostazioni", "Documenti tecnici", "Crediti", "Registro", "Autotest" };
+            string[] names = { "Struttura 3D", "Diagrammi", "Rumore/GT/Stack", LinNecCorr, LinVarOtt, "Calcolatori", "Avvisi", "Impostazioni", "Documenti tecnici", "Consigli", "Crediti", "Registro", "Autotest" };   // 1.7.0: Consigli (bozzetto U)
             for (int i = 0; i < names.Length; i++)
             {
                 int idx = i;
@@ -494,6 +494,7 @@ namespace YaNec
             pag["Avvisi"] = BuildNotesPage();
             pag["Autotest"] = BuildTestPage();
             pag["Documenti tecnici"] = BuildManualPage();   // 1.4: prima "Manuale"
+            pag["Consigli"] = BuildConsigliPage();   // 1.7.0
             pag["Crediti"] = BuildCreditsPage();
             pag["Registro"] = BuildRegistroPage();
             foreach (string nm in names) pages.Add(pag[nm]);

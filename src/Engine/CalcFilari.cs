@@ -40,6 +40,7 @@ namespace YaNec.Engine
             int b = f < 2.5 ? 0 : 1, m = Math.Max(0, Math.Min(2, modo));
             switch (nuc)
             {
+                case 1: return new double[] { 5, 10, 15 }[m];   // 1.7.0: FT-82-43, stima per l'uso QRP (RadioKit 6/2023: 10-15 W in SSB)
                 case 4: return Oh7sv[0, b, m];
                 case 5: return Oh7sv[1, b, m];
                 case 11: return Oh7sv[2, b, m];
@@ -52,6 +53,7 @@ namespace YaNec.Engine
         /// <summary>Nucleo automatico: FT-140-43 in QRP (fino a 15 W), poi il piu' piccolo tra 1 x FT-240, 1 x FT-290, 2 x FT-240, 2 x FT-290, 3 x FT-240 che regge la potenza.</summary>
         public static int NucleoAutomatico(double pw, int modo, double f)
         {
+            if (pw <= 10) return 1;   // 1.7.0 (bozzetto «mining riviste» C): FT-82-43 in QRP fino a 10 W (RadioKit 6/2023, EFHW da 112 g)
             if (pw <= 15) return 3;
             foreach (int n in new[] { 4, 9, 5, 10, 11 }) if (PotenzaNucleo(n, modo, f) >= pw) return n;
             return 11;
@@ -78,6 +80,13 @@ namespace YaNec.Engine
         public static readonly string[] Tipi = { "EFHW multibanda", "EFHW monobanda", "Filo non risonante" };   // 22/11/2026: la bobina e' una scelta dell'EFHW (IC8TEM)
         public static readonly string[] Disposizioni = { "inclinata dal basso", "inclinata dall'alto", "verticale", "L rovesciata", "U rovesciata", "tutto dritto" };
         static readonly string[] Isolanti = { "nudo", "isolato in PVC", "isolato in PE / PTFE" };
+        // 1.7.0 (bozzetto «mining riviste» C, approvato da IC8TEM il 25/11/2026 20:41): materiale del filo (LD 5 nel modello NEC).
+        // Copperweld: in HF la corrente scorre nel rivestimento di rame (effetto pelle), quindi come il rame; acciaio inox dei cavetti da pesca
+        // (RadioKit 6/2023, 0,6 mm): conducibilita' tipica 1,4 MS/m, non magnetico.
+        public static readonly string[] Materiali = { "rame", "rame smaltato", "Copperweld", "cavetto d'acciaio (pesca)" };
+        static readonly double[] SigmaMat = { 5.8e7, 5.8e7, 5.8e7, 1.4e6 };
+        /// <summary>Resistenza di radiazione riferita al massimo di corrente di un filo lungo n mezze onde (73 ohm per n = 1, poi cresce lentamente).</summary>
+        static double RradArmonica(int n) { return 73 + 30 * Math.Log(Math.Max(1, n)); }
         static readonly double[] VfIsol = { 1.0, 0.97, 0.98 };
         static readonly double[] ErIsol = { 1.0, 3.5, 2.2 };
         static readonly double[] SpIsol = { 0, 0.8, 0.4 };   // spessore dell'isolante (mm)
@@ -110,6 +119,7 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("cpp", "Contrappeso (% del filo)", 7.5, "%", "Con il 9:1 e il 4:1 il contrappeso va di solito tra il 5 e il 10 % del filo principale; l'abaco (pulsante Abaco) mostra il migliore per ogni lunghezza, a volte fino al 25-46 %.") { Visibile = nonRis });
             Params.Add(CalcParam.Scelta("iso", "Filo", 1, "L'isolante rallenta l'onda: il filo isolato e' piu' corto. Nel modello NEC l'isolante e' la scheda LD 7 (metodo di Cebik).", Isolanti));
             Params.Add(new CalcParam("d", "ø del filo", 1.0, "mm"));
+            Params.Add(new CalcParam("mat", "Materiale del filo", 0, "", "Rame, rame smaltato e Copperweld in HF si equivalgono (effetto pelle nel rame); il cavetto d'acciaio da pesca e' leggerissimo ma perde di piu'. Nel modello NEC: LD 5 su tutti i fili.") { Choices = Materiali });
             Params.Add(new CalcParam("pw", "Potenza", 100, "W"));
             Params.Add(Vis(CalcParam.Scelta("modo", "Modo", 2, "Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.", Modi), () => I("tipo") != 2));
             // 1.5.8 (IC8TEM 22/11/2026 21:02 «concordo provvedi»): il trasformatore non e' ideale; efficienza dei nuclei misurata da DG1JAN [C94]
@@ -367,6 +377,27 @@ namespace YaNec.Engine
                     o.Card(BandeNomi[i] + ", ROS con il " + rappTxt, Calcolatori.N(Math.Min(r, 99), 2), esito + "Z " + Calcolatori.N(z.Real, 0) + (z.Imaginary >= 0 ? " +j" : " -j") + Calcolatori.N(Math.Abs(z.Imaginary), 0) + " Ω (TF5NN)", r <= 2);
                 }
             }
+            if (!nonRis)
+            {
+                // 1.7.0 (bozzetto C): perdita nel filo (effetto pelle, corrente sinusoidale: Rperdita = Rs L / (pi d) riferita al massimo di
+                // corrente) e nel nucleo (DG1JAN) per ogni banda; il modello NEC ha il materiale (LD 5) e da' l'efficienza vera
+                int matT = Math.Max(0, Math.Min(Materiali.Length - 1, I("mat")));
+                double lw = conBob ? Lbob : L;
+                o.TabellaTitolo = "Perdite per banda: filo di " + Materiali[matT] + " ø " + Calcolatori.N(P("d"), 1) + " mm, nucleo " + NucleiNomi[nucEff];
+                o.Tabella = new List<string[]> { new[] { "Banda", "Perdita nel filo", "Perdita nel nucleo", "Efficienza" } };
+                foreach (int i in bande)
+                {
+                    if (conBob && Math.Abs(BandeF[i] - fb) / fb < 0.06) continue;
+                    double fh = BandeF[i] * 1e6, rs = Math.Sqrt(Math.PI * fh * 4e-7 * Math.PI / SigmaMat[matT]);
+                    double rl = rs * lw / (Math.PI * 2 * a);
+                    int nmezze = Math.Max(1, (int)Math.Round(lw / (C0 / BandeF[i] * vf / 2)));
+                    double rr = RradArmonica(nmezze), ef = rr / (rr + rl), en = nucEff == 8 ? 1 : EfficienzaNucleo(nucEff, BandeF[i]);
+                    double tot = ef * en;
+                    o.Tabella.Add(new[] { BandeNomi[i], Calcolatori.N(-10 * Math.Log10(ef), 1) + " dB", Calcolatori.N(-10 * Math.Log10(en), 1) + " dB",
+                        (tot < 0.6 ? "⚠ " : "") + Calcolatori.N(tot * 100, 0) + " %" });
+                }
+                if (matT == 3) o.Oks.Add("Cavetto d'acciaio: leggero e robusto (RadioKit 6/2023, EFHW da 112 g con 20,5 m di cavetto da 0,6 mm), ma l'acciaio conduce circa 40 volte meno del rame: la perdita conta soprattutto sulle bande basse.");
+            }
             if (nonRis)
             {
                 // VE3EED: mezze onde da evitare
@@ -450,6 +481,8 @@ namespace YaNec.Engine
                 foreach (int t in tagCp) dk.Raw("LD 7 " + t + " 0 0 " + ErIsol[iso].ToString(CultureInfo.InvariantCulture) + " " + R.ToString("0.######", CultureInfo.InvariantCulture));
             }
             if (tagBob > 0) dk.Ld(0, tagBob, segBob, segBob, 0, uH * 1e-6, 0);   // bobina ideale (serie R-L-C: solo L)
+            int matF = Math.Max(0, Math.Min(Materiali.Length - 1, I("mat")));
+            dk.Ld(5, 0, 0, 0, SigmaMat[matF], 0, 0);   // 1.7.0: materiale del filo
             dk.Ground(2);
             dk.Ex(tFeed, 1);
             string nec = dk.End(conBob ? fb : fBassa);

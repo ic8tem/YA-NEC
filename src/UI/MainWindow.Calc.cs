@@ -649,7 +649,14 @@ namespace YaNec
             Complex z = run.Zin;
             SetCard("z", Fmt(z.Real, 2) + (z.Imaginary >= 0 ? " +j" : " -j") + Fmt(Math.Abs(z.Imaginary), 2), Lang.F("a {0} MHz", Fmt(run.FreqMHz, 3)) + (run.Sources.Count > 1 ? Lang.F(" (sorgente 1 di {0})", run.Sources.Count) : ""));
             Color swrCol = run.Swr <= 1.5 ? Pal.Green : (run.Swr <= 2.0 ? Pal.Fore : (run.Swr <= 3 ? Pal.Orange : Pal.Red));
-            SetCard("swr", run.Swr >= 99 ? ">99" : Fmt(run.Swr, 2), Lang.F("su Z0 = {0} ohm", Fmt(run.Z0, 1)), swrCol);
+            // 1.7.0 (bozzetto B): da che lato sta il ROS; arancio quando R scende sotto Z0/2 con ROS sotto 2 (I5WHC, RR 9/2026)
+            string lato = run.Swr < 1.02 ? "" : (z.Real < run.Z0 ? " · " + Lang.F("R bassa ({0} Ω)", Fmt(z.Real, 0)) : " · " + Lang.F("R alta ({0} Ω)", Fmt(z.Real, 0)));
+            bool rBassa = z.Real < run.Z0 / 2 && run.Swr < 2;
+            if (rBassa) swrCol = Pal.Orange;
+            SetCard("swr", run.Swr >= 99 ? ">99" : Fmt(run.Swr, 2), Lang.F("su Z0 = {0} ohm", Fmt(run.Z0, 1)) + lato, swrCol);
+            if (rBassa)
+                Status(Lang.F("ROS {0} con R bassa ({1} Ω, sotto Z0/2): a pari potenza il finale porta circa il {2} % di corrente in piu' che su Z0 (I5WHC, RR 9/2026).",
+                    Fmt(run.Swr, 2), Fmt(z.Real, 0), Fmt(100 * (Math.Sqrt(run.Z0 / Math.Max(0.1, z.Real)) - 1), 0)), false, true);
             { double gm = GuadagnoMostrato(run.GmaxDbi); SetCard("g", Fmt(gm, 2) + " dBi", Fmt(gm - 2.15, 2) + " dBd" + (gm != run.GmaxDbi ? " (corretto con l'AGT)" : "")); }
             SetCard("dir", "az " + Fmt(run.PhiMax, 1) + "°", "elevazione " + Fmt(run.ElevationOfMax, 1) + "°");
             SetCard("fb", Fmt(Nz(run.FrontBack), 2) + " dB", "avanti / dietro (180°)");
@@ -872,7 +879,19 @@ namespace YaNec
                 double z0 = model != null ? model.Z0 : 50;
                 chSwr.Title = Lang.F("ROS su Z0 = {0} ohm", Fmt(z0, 1));
                 FissatiNelloSweep(x);   // 1.6.0: risultati fissati, sotto quello attuale
-                chSwr.Series.Add(new LineSeries { Name = "ROS", Y = ok.Select(p => Math.Min(p.Swr, 10)).ToArray(), Color = Pal.Series(0), Width = 2.4 });
+                // 1.7.0 (bozzetto «mining riviste» B, approvato da IC8TEM il 25/11/2026 20:41): curva piena dove R < Z0, tratteggiata dove R > Z0
+                // (I5WHC, RR 9/2026: a pari ROS con R bassa il finale porta piu' corrente). Ai cambi di lato il punto sta in tutte e due le curve.
+                double[] ros = ok.Select(p => Math.Min(p.Swr, 10)).ToArray();
+                bool[] bassa = ok.Select(p => p.Z.Real < z0).ToArray();
+                double[] yb = new double[ros.Length], ya = new double[ros.Length];
+                for (int i = 0; i < ros.Length; i++)
+                {
+                    bool vb = bassa[i] || (i > 0 && bassa[i - 1]) || (i + 1 < ros.Length && bassa[i + 1]);
+                    bool va = !bassa[i] || (i > 0 && !bassa[i - 1]) || (i + 1 < ros.Length && !bassa[i + 1]);
+                    yb[i] = vb ? ros[i] : double.NaN; ya[i] = va ? ros[i] : double.NaN;
+                }
+                chSwr.Series.Add(new LineSeries { Name = Lang.T("ROS, R < Z0"), Y = yb, Color = Pal.Series(0), Width = 2.4 });
+                chSwr.Series.Add(new LineSeries { Name = Lang.T("ROS, R > Z0"), Y = ya, Color = Pal.Series(0), Width = 2.4, Dashed = true });
                 chSwr.YMinFixed = 1;
                 double mx = ok.Max(p => Math.Min(p.Swr, 10));
                 chSwr.YMaxFixed = mx < 2.5 ? 3 : (mx < 5 ? 5 : 10);

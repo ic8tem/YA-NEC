@@ -59,6 +59,11 @@ namespace YaNec
             EllipseGeometry clip = new EllipseGeometry(new Rect(c.X - R, c.Y - R, 2 * R, 2 * R));
             using (ctx.PushGeometryClip(clip))
             {
+                // 1.7.0 (bozzetto «mining riviste» B, approvato da IC8TEM il 25/11/2026): velatura arancio leggera dove R < Z0
+                // (fuori dal cerchio r = 1), per vedere da che lato sta il ROS
+                Geometry fuori = new CombinedGeometry(GeometryCombineMode.Exclude, new EllipseGeometry(new Rect(c.X - R, c.Y - R, 2 * R, 2 * R)),
+                    new EllipseGeometry(new Rect(c.X, c.Y - R / 2, R, R)));
+                ctx.DrawGeometry(new SolidColorBrush(Color.FromArgb((byte)(Pal.Dark ? 34 : 26), Pal.Orange.R, Pal.Orange.G, Pal.Orange.B)), null, fuori);
                 // cerchi di resistenza costante: centro (r/(1+r), 0), raggio 1/(1+r)
                 foreach (double r in new[] { 0.2, 0.5, 1.0, 2.0, 5.0 })
                 {
@@ -83,6 +88,7 @@ namespace YaNec
                 Draw.TextC(ctx, Draw.N(r * Z0, 0), c.X + xr * R, c.Y + 9, 9.5, Pal.ChartText);
             }
             Draw.Text(ctx, "ROS 2", c.X + R / 3 + 3, c.Y - R / 3 - 4, 9.5, Pal.Green);
+            Draw.Text(ctx, "R < Z0", c.X - R * 0.86, c.Y - R * 0.22, 9.5, Pal.Orange);
 
             foreach (Tuple<Complex[], Color> a in Fissate)
             {

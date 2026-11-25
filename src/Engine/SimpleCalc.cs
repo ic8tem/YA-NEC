@@ -539,19 +539,25 @@ namespace YaNec.Engine
         static readonly string[] Mat = { "tubo di rame", "tubo di alluminio", "tubo di ottone" };
         public CalcLoopMagnetica()
         {
-            Key = "loopmag"; Title = "Loop magnetica (piccolo loop trasmittente)"; Family = "Loop"; Source = "ARRL Antenna Book, W5QJR, AA5TB";
+            Key = "loopmag"; Title = "Loop magnetica (piccolo loop trasmittente)"; Family = "Loop"; Source = "ARRL Antenna Book, W5QJR, AA5TB; I3STS e IZ3LJH (RadioRivista 6/2024: rettangolo, spire in parallelo, trasformatore e rete L, Q misurato)";
             Params.Add(new CalcParam("f", "Frequenza", 7.1, "MHz"));
-            Params.Add(CalcParam.Scelta("forma", "Forma", 0, null, "cerchio", "ottagono", "quadrato"));
-            Params.Add(new CalcParam("D", "Diametro", 1.0, "m", "Per il quadrato: il lato; per l'ottagono: il diametro tra due vertici opposti."));
+            Params.Add(CalcParam.Scelta("forma", "Forma", 0, null, "cerchio", "ottagono", "quadrato", "rettangolo"));   // 1.7.0: rettangolo (I3STS, RR 6/2024)
+            Params.Add(new CalcParam("D", "Diametro", 1.0, "m", "Per il quadrato: il lato; per l'ottagono: il diametro tra due vertici opposti; per il rettangolo: il lato orizzontale."));
+            Params.Add(new CalcParam("Db", "Lato verticale", 0.6, "m") { Visibile = () => I("forma") == 3 });
             Params.Add(new CalcParam("mat", "Conduttore", 0, "") { Choices = Mat });
             Params.Add(new CalcParam("d", "ø del conduttore", 22, "mm"));
             // 1.5 (proposta l1 e bozzetto Calcolatori 1.5 approvati da IC8TEM il 18/11/2026; fattore di prossimita' di Smith non usato, risposta NO
             // delle 21:22): piu' spire con il solo effetto pelle e l'avviso sulla prossimita'
             Params.Add(new CalcParam("n", "Numero di spire", 1, "", "1 = una spira (come prima). Con piu' spire Rr cresce con N², la perdita per effetto pelle con N."));
             Params.Add(new CalcParam("passo", "Passo tra le spire (asse-asse)", 66, "mm", "Si usa con 2 o piu' spire: sotto 2 diametri del conduttore la perdita reale cresce per l'effetto di prossimita' (non calcolato)."));
+            // 1.7.0 (bozzetto «mining riviste» F, approvato da IC8TEM il 25/11/2026 20:41): spire in parallelo (I3STS e IZ3LJH, RR 6/2024)
+            Params.Add(CalcParam.Scelta("coll", "Spire collegate", 0, "In serie: L e Rr crescono con N². In parallelo: Rr come una spira, perdite divise per N, L poco sotto quella di una spira (mutua induttanza tra spire vicine).", "in serie", "in parallelo"));
             Params.Add(new CalcParam("p", "Potenza", 100, "W"));
             Params.Add(new CalcParam("h", "Quota", 3, "m", "Quota del centro per il calcolo con il terreno (0 = spazio libero)."));
-            Params.Add(CalcParam.Scelta("acc", "Accoppiamento", 0, null, "loop di Faraday D/5", "gamma", "capacitivo (C1 serie, C2 parallelo)"));   // 1.5 a7: terza voce
+            Params.Add(CalcParam.Scelta("acc", "Accoppiamento", 0, null, "loop di Faraday D/5", "gamma", "capacitivo (C1 serie, C2 parallelo)", "trasformatore su ferrite + rete L"));   // 1.5 a7: terza voce; 1.7.0: quarta
+            Params.Add(new CalcParam("cmin", "Variabile: C minima", 15, "pF", "Con la massima del variabile da' la copertura in frequenza (capacita' parassita compresa)."));
+            Params.Add(new CalcParam("cmax", "Variabile: C massima", 250, "pF"));
+            Params.Add(new CalcParam("qm", "Q misurato", 0, "", "0 = Q calcolato. Con il Q misurato (f / banda a -3 dB, a vuoto) la resistenza totale viene dalla misura e l'efficienza si corregge (I3STS, RR 6/2024)."));
             // 1.0.7 (IC8TEM 16/11/2026 19:54 "procedi"): "Accorda il condensatore (NEC)" cerca il C che porta la loop in risonanza nel modello
             // NEC (prima: CanTune = false e il C di formula lasciava la loop fuori risonanza, ROS 533 sul loop di accoppiamento)
         }
@@ -592,23 +598,96 @@ namespace YaNec.Engine
 
         const double Z0Rif = 50;   // 1.5 (a7): impedenza della linea per l'accoppiamento capacitivo
 
-        static void Forma(int forma, double D, out double A, out double per, out double Deq)
+        static void Forma(int forma, double D, out double A, out double per, out double Deq, double Db = 0)
         {
+            if (forma == 3) { double b = Db > 0 ? Db : D; per = 2 * (D + b); A = D * b; Deq = Math.Sqrt(4 * A / Math.PI); return; }
             if (forma == 1) { double s = D * Math.Sin(Math.PI / 8); per = 8 * s; A = 2 * Math.Sqrt(2) * D * D / 4; }
             else if (forma == 2) { per = 4 * D; A = D * D; }
             else { per = Math.PI * D; A = Math.PI * D * D / 4; }
             Deq = Math.Sqrt(4 * A / Math.PI);
         }
 
-        static double Eff(int forma, double D, double dt, double f, double sigma, int nsp = 1)
+        static double Eff(int forma, double D, double dt, double f, double sigma, int nsp = 1, double Db = 0, bool par = false)
         {
             double A, per, Deq;
-            Forma(forma, D, out A, out per, out Deq);
+            Forma(forma, D, out A, out per, out Deq, Db);
             double lam = C0 / (f / 1e6);
-            double rr = 31171 * Math.Pow(nsp * A / (lam * lam), 2);
+            int ne = par ? 1 : nsp;
+            double rr = 31171 * Math.Pow(ne * A / (lam * lam), 2);
             double rs = Math.Sqrt(Math.PI * f * 4e-7 * Math.PI / sigma);
-            double rl = nsp * rs * per / (Math.PI * dt);
+            double rl = (par ? 1.0 / nsp : nsp) * rs * per / (Math.PI * dt);
             return rr / (rr + rl);
+        }
+
+        /// <summary>1.7.0: induttanza di una spira (rettangolo: formula di Grover per il filo tondo di raggio r).</summary>
+        static double L1(int forma, double D, double Db, double Deq, double dt)
+        {
+            double mu0 = 4e-7 * Math.PI, r = dt / 2;
+            if (forma == 3)
+            {
+                double a = D, b = Db > 0 ? Db : D, dg = Math.Sqrt(a * a + b * b);
+                return mu0 / Math.PI * (-2 * (a + b) + 2 * dg - a * Math.Log((a + dg) / b) - b * Math.Log((b + dg) / a) + a * Math.Log(2 * a / r) + b * Math.Log(2 * b / r));
+            }
+            if (forma == 2) return 2 * mu0 * D / Math.PI * (Math.Log(D / r) - 0.774);
+            return mu0 * Deq / 2 * (Math.Log(8 * Deq / dt) - 2);
+        }
+
+        static readonly double[] BandeLoop = { 3.65, 7.1, 10.12, 14.175, 18.118, 21.225, 24.94, 28.5 };
+        static readonly string[] BandeLoopN = { "80 m", "40 m", "30 m", "20 m", "17 m", "15 m", "12 m", "10 m" };
+
+        /// <summary>1.7.0 (bozzetto F): rapporto proposto del trasformatore su ferrite (R della loop portata verso 12,5 ohm, poi la rete L a 50).</summary>
+        static int RapportoTrasf(double rt) { return Math.Max(1, (int)Math.Round(Math.Sqrt(12.5 / Math.Max(1e-4, rt)))); }
+
+        /// <summary>1.7.0 (bozzetto F): per ogni banda coperta dal variabile: C di accordo, R totale, efficienza, banda a ROS 2, tensione su C e rete L.</summary>
+        void TabellaBande(CalcOutput o, int forma, double D, double Db, double dt, int mat, int nsp, bool par, double pw)
+        {
+            double A, per, Deq;
+            Forma(forma, D, out A, out per, out Deq, Db);
+            double f0 = P("f") * 1e6, mu0 = 4e-7 * Math.PI;
+            double l1 = L1(forma, D, Db, Deq, dt), L;
+            if (par) { double pas = Math.Max(P("passo") / 1000, dt), req = Deq / 2; double M = Math.Max(0, Math.Min(l1, mu0 * req * (Math.Log(8 * req / pas) - 2))); L = (l1 + (nsp - 1) * M) / nsp; }
+            else L = nsp * nsp * l1;
+            double cmin = Math.Max(1, P("cmin")) * 1e-12, cmax = Math.Max(P("cmin") + 1, P("cmax")) * 1e-12;
+            double fmin = 1 / (2 * Math.PI * Math.Sqrt(L * cmax)), fmax = 1 / (2 * Math.PI * Math.Sqrt(L * cmin));
+            o.Card("Copertura del variabile", Calcolatori.N(fmin / 1e6, 1) + "-" + Calcolatori.N(fmax / 1e6, 1) + " MHz", Calcolatori.N(P("cmin"), 0) + "-" + Calcolatori.N(P("cmax"), 0) + " pF con L = " + Calcolatori.Henry(L));
+            bool trasf = I("acc") == 3;
+            double qMis = P("qm");
+            // R di perdita alla frequenza di progetto (per scalarla con √f quando c'e' il Q misurato)
+            double rs0 = Math.Sqrt(Math.PI * f0 * mu0 / Sigma[mat]);
+            double rl0 = (par ? 1.0 / nsp : nsp) * rs0 * per / (Math.PI * dt);
+            double rr0 = 31171 * Math.Pow((par ? 1 : nsp) * A / Math.Pow(C0 / (f0 / 1e6), 2), 2);
+            if (qMis > 0) rl0 = Math.Max(0, 2 * Math.PI * f0 * L / qMis - rr0);
+            int n = -1;
+            o.TabellaTitolo = "Bande coperte dal variabile" + (trasf ? " (trasformatore e rete L)" : "");
+            o.Tabella = new List<string[]> { trasf ? new[] { "Banda", "C accordo", "R totale", "Efficienza", "Banda a ROS 2", "Tensione su C a " + Calcolatori.N(pw, 0) + " W", "Rete L" }
+                                                   : new[] { "Banda", "C accordo", "R totale", "Efficienza", "Banda a ROS 2", "Tensione su C a " + Calcolatori.N(pw, 0) + " W" } };
+            for (int i = 0; i < BandeLoop.Length; i++)
+            {
+                double fb = BandeLoop[i] * 1e6;
+                if (fb < fmin * 0.999 || fb > fmax * 1.001) continue;
+                double w = 2 * Math.PI * fb, xl = w * L, c = 1 / (w * xl);
+                double rr = 31171 * Math.Pow((par ? 1 : nsp) * A / Math.Pow(C0 / BandeLoop[i], 2), 2), rl = rl0 * Math.Sqrt(fb / f0), rt = rr + rl;
+                double ql = xl / rt / 2, bw2 = fb / ql * (2 - 1) / Math.Sqrt(2), v = Math.Sqrt(pw / rt) * xl;
+                List<string> r = new List<string> { BandeLoopN[i], Calcolatori.N(c * 1e12, 0) + " pF", Calcolatori.Ohm(rt), Calcolatori.N(rr / rt * 100, 0) + " %", Calcolatori.N(bw2 / 1000, 1) + " kHz", Calcolatori.N(v / 1000, 1) + " kV" };
+                if (trasf)
+                {
+                    if (n < 0) n = RapportoTrasf(rt);
+                    double rsx = n * n * rt;
+                    if (rsx < 50)
+                    {
+                        double qq = Math.Sqrt(50 / rsx - 1), lL = qq * rsx / w, cL = qq / (50 * w);
+                        r.Add(Calcolatori.Henry(lL) + " / " + Calcolatori.N(cL * 1e12, 0) + " pF");
+                    }
+                    else r.Add(Calcolatori.N(rsx, 0) + " Ω: rapporto troppo alto");
+                }
+                o.Tabella.Add(r.ToArray());
+            }
+            if (o.Tabella.Count == 1) o.Tabella.Add(new[] { "nessuna banda radioamatoriale nella copertura" });
+            if (trasf && n > 0)
+            {
+                o.Card("Trasformatore su ferrite", "rapporto " + n + ":1", "spire serie-parallelo, una per spira della loop (IZ3LJH, RR 6/2024); poi rete L: bobina in serie, C in parallelo verso i 50 Ω", true);
+                o.Oks.Add("Trasformatore e rete L non sono nel modello NEC: il modello ha la sorgente in serie sul lato basso (la loop vista dal secondario); la tabella da' la rete L per ogni banda.");
+            }
         }
 
         public override CalcOutput Compute()
@@ -618,14 +697,32 @@ namespace YaNec.Engine
             double D = P("D"), dt = P("d") / 1000, f = P("f") * 1e6, pw = P("p"), h = P("h");
             double lam = C0 / P("f");
             double A, per, Deq;
-            Forma(forma, D, out A, out per, out Deq);
+            double Db = forma == 3 ? Math.Max(0.05, P("Db")) : 0;
+            Forma(forma, D, out A, out per, out Deq, Db);
             int nsp = Math.Max(1, Math.Min(20, I("n")));
-            double rr = 31171 * Math.Pow(nsp * A / (lam * lam), 2);
+            bool par = nsp > 1 && I("coll") == 1;
             double mu0 = 4e-7 * Math.PI, rs = Math.Sqrt(Math.PI * f * mu0 / Sigma[mat]);
-            double rl = nsp * rs * per / (Math.PI * dt);
-            double L = nsp * nsp * (forma == 2 ? 2 * mu0 * D / Math.PI * (Math.Log(D / (dt / 2)) - 0.774) : mu0 * Deq / 2 * (Math.Log(8 * Deq / dt) - 2));
+            double l1 = L1(forma, D, Db, Deq, dt);
+            double L, rr, rl;
+            if (par)
+            {
+                // 1.7.0: N spire in parallelo: una spira equivalente; mutua tra spire vicine M ≈ μ0 Req (ln(8 Req/p) - 2) (Neumann), L = (L1 + (N-1) M)/N
+                double pas = Math.Max(P("passo") / 1000, dt), req = Deq / 2;
+                double M = Math.Max(0, Math.Min(l1, mu0 * req * (Math.Log(8 * req / pas) - 2)));
+                L = (l1 + (nsp - 1) * M) / nsp;
+                rr = 31171 * Math.Pow(A / (lam * lam), 2);
+                rl = rs * per / (Math.PI * dt) / nsp;
+            }
+            else
+            {
+                L = nsp * nsp * l1;
+                rr = 31171 * Math.Pow(nsp * A / (lam * lam), 2);
+                rl = nsp * rs * per / (Math.PI * dt);
+            }
             double w = 2 * Math.PI * f, xl = w * L;
             double cap = 1 / (w * w * L);
+            double qMis = P("qm");
+            if (qMis > 0) rl = Math.Max(0, xl / qMis - rr);   // 1.7.0: Q misurato: la resistenza totale viene dalla misura
             double rt = rr + rl, q = xl / rt, ql = q / 2;
             double bw = f / ql;
             double i = Math.Sqrt(pw / rt), v = i * xl;
@@ -634,10 +731,10 @@ namespace YaNec.Engine
             Hint("f", band != null ? Calcolatori.N(band.Low, 3) + "-" + Calcolatori.N(band.High, 3) : "");
             Hint("D", "circonferenza " + Calcolatori.N(per, 2) + " m = " + Calcolatori.N(per / lam, 3) + " lambda");
             Hint("h", "(per il calcolo con il terreno)");
-            double dc = D / 5;
-            Hint("acc", I("acc") == 0 ? "anello da " + Calcolatori.N(dc, 2) + " m" : I("acc") == 1 ? "presa a gamma sul lato basso" : "due condensatori sul lato basso");
+            double dc = (forma == 3 ? Math.Min(D, Math.Max(0.05, P("Db"))) : D) / 5;
+            Hint("acc", I("acc") == 0 ? "anello da " + Calcolatori.N(dc, 2) + " m" : I("acc") == 1 ? "presa a gamma sul lato basso" : I("acc") == 2 ? "due condensatori sul lato basso" : "trasformatore n:1 e rete L sul lato basso");
             o.Card("Resistenza di radiazione", Calcolatori.Ohm(rr), Calcolatori.N(rr, 5) + " ohm");
-            o.Card("Resistenza di perdita", Calcolatori.Ohm(rl), Mat[mat].Replace("tubo di ", "") + ", effetto pelle" + (nsp > 1 ? " (" + nsp + " spire)" : ""));
+            o.Card("Resistenza di perdita", Calcolatori.Ohm(rl), qMis > 0 ? "dal Q misurato " + Calcolatori.N(qMis, 0) : Mat[mat].Replace("tubo di ", "") + ", effetto pelle" + (nsp > 1 ? " (" + nsp + " spire " + (par ? "in parallelo" : "in serie") + ")" : ""));
             if (nsp > 1)
             {
                 double pas = P("passo");
@@ -652,7 +749,9 @@ namespace YaNec.Engine
             o.Card("Corrente / tensione su C", Calcolatori.N(i, 0) + " A / " + Calcolatori.N(v / 1000, 1) + " kV", "con " + Calcolatori.N(pw, 0) + " W");
             o.Formula = "Formule: Rr = 31171 (N·A)²/λ⁴ (N spire); Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, " +
                 "W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai " +
-                "valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare.";
+                "valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare. " +
+                "Rettangolo: L di Grover (filo tondo). Spire in parallelo: L = (L1 + (N-1) M)/N con M = μ0 R (ln(8R/p) - 2), Rr di una spira, perdite / N (I3STS e IZ3LJH, RR 6/2024). " +
+                "Banda a ROS 2 = f/Qc · (S-1)/√S. Con il Q misurato: Rtotale = X/Q.";
             if (I("acc") == 2)
             {
                 // 1.5 (a7, bozzetto AEH approvato 18/11/2026 23:16): accoppiamento capacitivo, AEH 4a ed. eq. 5-20 e 5-21 (Smith): C2 in parallelo
@@ -674,7 +773,8 @@ namespace YaNec.Engine
 
             o.Chart = new CalcChart { Title = "Efficienza al variare del diametro (" + Calcolatori.N(P("f"), 1) + " MHz, tubo " + Calcolatori.N(P("d"), 0) + " mm)", XLabel = "m", YLabel = "%" };
             o.Chart.X = Calcolatori.Lin(0.5, 2.5, 41); o.Chart.Y = new double[41];
-            for (int k = 0; k < 41; k++) o.Chart.Y[k] = 100 * Eff(forma, o.Chart.X[k], dt, f, Sigma[mat], nsp);
+            for (int k = 0; k < 41; k++) o.Chart.Y[k] = 100 * Eff(forma, o.Chart.X[k], dt, f, Sigma[mat], nsp, Db * o.Chart.X[k] / D, par);
+            TabellaBande(o, forma, D, Db, dt, mat, nsp, par, pw);
             o.Chart.MarkX = D; o.Chart.MarkText = Calcolatori.N(D, 1) + " m: " + Calcolatori.N(eff * 100, 0) + " %";
             o.Chart.YMin = 0;
 
@@ -686,7 +786,21 @@ namespace YaNec.Engine
             double cScaled = cap * Scale;
             NecDeck dk = new NecDeck("Loop magnetica " + Calcolatori.N(P("f"), 3) + " MHz, " + Mat[mat] + " " + Calcolatori.N(P("d"), 0) + " mm");
             double off = forma == 2 ? Math.PI / 4 : (forma == 1 ? Math.PI / 8 : Math.PI / ns);
-            int capTag = 0, gamTag = 0;
+            int capTag = 0, gamTag = 0, capSeg = 1;
+            double basso = zc - R * Math.Cos(Math.PI / ns);   // quota del lato basso
+            if (forma == 3)
+            {
+                // 1.7.0: rettangolo D x Db, lato basso, destro, alto (condensatore), sinistro
+                double hx = D / 2, hz = Db / 2;
+                int sg = Math.Max(2, (int)Math.Ceiling(Math.Max(D, Db) / (C0 / P("f") / 60)));
+                gamTag = dk.W(sg, -hx, 0, zc - hz, hx, 0, zc - hz, dt / 2);
+                dk.W(sg, hx, 0, zc - hz, hx, 0, zc + hz, dt / 2);
+                capTag = dk.W(sg | 1, hx, 0, zc + hz, -hx, 0, zc + hz, dt / 2);
+                capSeg = ((sg | 1) + 1) / 2;
+                dk.W(sg, -hx, 0, zc + hz, -hx, 0, zc - hz, dt / 2);
+                basso = zc - hz; R = Math.Max(hx, hz);
+                ns = 0;
+            }
             for (int k = 0; k < ns; k++)
             {
                 double a1 = -Math.PI / 2 + off + 2 * Math.PI * k / ns, a2 = a1 + 2 * Math.PI / ns;
@@ -701,7 +815,7 @@ namespace YaNec.Engine
             if (I("acc") == 0)
             {
                 // loop di Faraday di diametro D/5, dentro la loop principale, appoggiato in basso
-                double rc = dc / 2, zcc = zc - R * Math.Cos(Math.PI / ns) + rc + 0.02 * D;
+                double rc = dc / 2, zcc = basso + rc + 0.02 * D;
                 int first = 0;
                 for (int k = 0; k < 8; k++)
                 {
@@ -713,11 +827,12 @@ namespace YaNec.Engine
                 o.Mark(1, 0, zcc, "loop di accoppiamento " + Calcolatori.N(dc, 2) + " m", 1, 0, 0, rc);
                 o.Mark(2, 0, zcc - rc, "coassiale 50 ohm", 3, 0, zcc - rc - R * 0.35);
             }
-            else if (I("acc") == 2)
+            else if (I("acc") == 2 || I("acc") == 3)
             {
                 // 1.5 (a7): capacitivo, sorgente sul lato basso; C1 (= condensatore d'accordo) sullo stesso segmento, niente C in alto
+                // 1.7.0: trasformatore su ferrite: sorgente in serie sul lato basso (il secondario), condensatore in alto
                 feedTag = gamTag == 0 ? 1 : gamTag;
-                o.Mark(3, -R * 0.18, zc - R * 1.08, "C1 serie, C2 parallelo", 1, R * 0.18, zc - R * 1.08);
+                o.Mark(3, -R * 0.18, basso - R * 0.08, I("acc") == 3 ? "trasformatore + rete L" : "C1 serie, C2 parallelo", 1, R * 0.18, basso - R * 0.08);
             }
             else
             {
@@ -731,7 +846,7 @@ namespace YaNec.Engine
                 double xc1 = xl - Math.Sqrt(Math.Max(0, rt * (Z0Rif - rt)));
                 dk.Ld(0, feedTag, 1, 1, 0, 0, xc1 > 0 ? Scale / (w * xc1) : cScaled);
             }
-            else dk.Ld(0, capTag == 0 ? 1 : capTag, 1, 1, 0, 0, cScaled);
+            else dk.Ld(0, capTag == 0 ? 1 : capTag, capSeg, capSeg, 0, 0, cScaled);
             // 1.0.7: il materiale scelto entra nel modello (LD 5 su tutti i fili): prima i fili erano senza perdite e la verifica NEC dava
             // efficienza 100 % e 5,6 dBi contro il 16 % delle formule
             dk.Ld(5, 0, 0, 0, Sigma[mat], 0, 0);
@@ -756,6 +871,10 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("ah", "Apertura orizzontale a -3 dB", 30.9, "gradi"));
             Params.Add(new CalcParam("av", "Apertura verticale a -3 dB", 33.1, "gradi"));
             Params.Add(new CalcParam("boom", "Boom dell'antenna", 2.0, "lambda", "Per i limiti di validita' della formula (ARRL 24a ed.)."));
+            // 1.7.0 (bozzetto «mining riviste» A, approvato da IC8TEM il 25/11/2026 20:41): area efficace accanto a DL6WU (IZ0FNO, RR 9/2026)
+            Params.Add(new CalcParam("g", "Guadagno della singola antenna", 15.7, "dBi", "Per l'area efficace Ae = G λ²/4π: con un modello aperto viene dal suo calcolo in spazio libero."));
+            Params.Add(new CalcParam("dvv", "Distanza sovrapposte da verificare", 0, "m", "0 = solo la distanza DL6WU. Con un valore la tabella confronta anche la cella di queste distanze con l'area efficace."));
+            Params.Add(new CalcParam("dhv", "Distanza affiancate da verificare", 0, "m", "0 = solo la distanza DL6WU."));
             // 0.4.20 (IC8TEM 14/11/2026 16:24): lo stack si crea da qui, con le distanze DL6WU
             Params.Add(new CalcParam("righe", "Antenne in verticale (righe)", 2, "", "Per il pulsante \"Crea lo stack nel modello aperto\": antenne una sopra l'altra, a passo DL6WU sovrapposte."));
             Params.Add(new CalcParam("col", "Antenne affiancate (colonne)", 1, "", "Per il pulsante \"Crea lo stack nel modello aperto\": antenne una accanto all'altra, a passo DL6WU affiancate, perpendicolari al lobo."));
@@ -875,12 +994,38 @@ namespace YaNec.Engine
             o.Mark(0, qx + 2.2 * lam, z0, "", 3);
         }
 
+        /// <summary>1.7.0: area efficace Ae = G λ²/4π (IZ0FNO, RR 9/2026). La cella dello stack (dv × dh; con una sola fila la distanza
+        /// DL6WU dell'altro piano fa da larghezza) non deve essere piu' piccola di Ae: sotto, accoppiamento forte e guadagno perso.</summary>
+        public static double Ae(double gDbi, double lam) { return Math.Pow(10, gDbi / 10) * lam * lam / (4 * Math.PI); }
+
+        void AreaEfficace(CalcOutput o, double lam, double gdbi, double dv, double dh, int nr, int nc)
+        {
+            double ae = Ae(gdbi, lam);
+            o.Card("Area efficace", N(ae, 2) + " m²", "Ae = Gλ²/4π, G = " + N(gdbi, 1) + " dBi", true);
+            o.TabellaTitolo = "Area efficace e cella dello stack (IZ0FNO)";
+            o.Tabella = new List<string[]> { new[] { "Distanze", "Cella dx · dy", "Ae", "Verifica" } };
+            Action<string, double, double> riga = (nome, v, h) =>
+            {
+                double cella = v * h;
+                o.Tabella.Add(new[] { nome, N(v, 2) + " × " + N(h, 2) + " = " + N(cella, 2) + " m²", N(ae, 2) + " m²",
+                    cella >= ae ? "✓ cella > Ae: guadagno pieno" : "⚠ cella < Ae: accoppiamento forte, guadagno perso" });
+            };
+            riga("DL6WU (sovrapposte / affiancate)", dv, dh);
+            double vv = P("dvv"), hv = P("dhv");
+            if (vv > 0 || hv > 0) riga("da verificare", vv > 0 ? vv : dv, hv > 0 ? hv : dh);
+            o.Add("Lato minimo per l'area efficace", N(Math.Sqrt(ae), 2) + " m (cella quadrata)");
+            o.Formula += " Area efficace (IZ0FNO, RR 9/2026, curva NBS e simulazione di I0KPT): ogni antenna ha diritto a Ae = G λ²/4π; se la cella dello stack e' piu' piccola il guadagno si perde, oltre resta quasi costante. " +
+                "DL6WU guarda un piano alla volta, l'area efficace la cella intera: i due criteri danno distanze vicine perche' G ≈ 41000/(Bh·Bv).";
+            if (nr * nc > 1 && dv * dh < ae) o.Warnings.Add("La cella DL6WU e' piu' piccola dell'area efficace: controlla le distanze con il calcolo dello stack (Rumore/GT/Stack).");
+        }
+
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
             DalModello.Clear();
             DaModello = false;
             double f = P("f"), ah = P("ah"), av = P("av"), bl = P("boom");
+            double gModello = double.NaN;
             string origine = null;
             if (UsaModello && Model != null && Model.Geometry.Count > 0)
             {
@@ -901,8 +1046,8 @@ namespace YaNec.Engine
                     else if (r.HpbwAz > 0 && r.HpbwEl > 0)
                     {
                         UltimoPhiLobo = r.PhiMax; DaModello = true;
-                        f = fm; ah = r.HpbwAz; av = r.HpbwEl; bl = boomM / (C0 / fm);
-                        DalModello["f"] = f; DalModello["ah"] = ah; DalModello["av"] = av; DalModello["boom"] = bl;
+                        f = fm; ah = r.HpbwAz; av = r.HpbwEl; bl = boomM / (C0 / fm); gModello = r.GmaxDbi;
+                        DalModello["f"] = f; DalModello["ah"] = ah; DalModello["av"] = av; DalModello["boom"] = bl; DalModello["g"] = r.GmaxDbi;
                         origine = (stack ? "antenna base dello stack aperto" : "modello aperto") + (string.IsNullOrEmpty(Model.FileName) ? "" : " (" + System.IO.Path.GetFileName(Model.FileName) + ")") +
                                   ", calcolato in spazio libero a " + N(fm, 3) + " MHz: " + N(r.GmaxDbi, 2) + " dBi, boom " + N(boomM, 3) + " m";
                     }
@@ -920,6 +1065,7 @@ namespace YaNec.Engine
             o.Add("Affiancate (usa l'apertura orizzontale)", N(dh, 3) + " m = " + N(dh / lam, 2) + " lambda");
             o.Add("Sovrapposte (usa l'apertura verticale)", N(dv, 3) + " m = " + N(dv / lam, 2) + " lambda");
             DisegnoStack(o, lam, nr, nc, dv, dh);
+            AreaEfficace(o, lam, double.IsNaN(gModello) ? P("g") : gModello, dv, dh, nr, nc);
             o.Formula = "Formula DL6WU: D = lambda / (2 sin(B/2)), B = apertura a -3 dB nel piano dello stack (ARRL 24a ed., Rothammel cap. 24, DG7YBN). " +
                 "Limiti (ARRL 24a ed.): approssimata; vale nel piano E per boom oltre circa 0,7 lambda e nel piano H oltre 2 lambda; \"piu' sicura\" con boom di almeno 2 lambda.";
             if (origine != null) o.Oks.Add("valori presi dal " + origine + " (frequenza dalla barra in alto; le caselle si aggiornano da sole)");
