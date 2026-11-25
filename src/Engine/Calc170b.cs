@@ -322,10 +322,19 @@ namespace YaNec.Engine
             return dk.End(f);
         }
 
+        public override string TuneLabel { get { return "Cerca il ROS piu' basso (NEC)"; } }
+
+        /// <summary>Con una linea sola il radiatore accoppiato non porta a zero la reattanza in modo semplice: si cerca il fattore del radiatore
+        /// della banda calcolata con il ROS piu' basso su 50 ohm.</summary>
         public override double Tune(double fmhz)
         {
-            double f = Fp[I("b") == 0 ? 0 : 1];
-            Scale = C170.Risonanza(s => Mazzo(s), f, Scale);
+            double f = Fp[I("b") == 0 ? 0 : 1], best = 1, rb = double.MaxValue;
+            for (double sc = 0.85; sc <= 1.15; sc += 0.005)
+            {
+                double r = C170.Ros(C170.Zin(Mazzo(sc), f), 50);
+                if (r < rb) { rb = r; best = sc; }
+            }
+            Scale = best;
             return Scale;
         }
 
@@ -359,7 +368,7 @@ namespace YaNec.Engine
             else o.Oks.Add("Nessuna coppia di elementi vicini in rapporto 1/2, 2/3 o 7/8.");
             o.Oks.Add("Elementi isolati dal boom (come W1JR): il boom metallico non e' nel modello.");
             o.Formula = "Valori di partenza: radiatore λ/2 - 4 %, riflettore +4 %, direttore -6 % per ogni banda (I4MFA); spaziature 0,15 e 0,175 λ; radiatore della banda alta 0,04 λ davanti a quello della bassa. " +
-                "«Porta in risonanza (NEC)» ritocca il radiatore della banda calcolata (con una linea sola, alla banda alta, quello accoppiato). Idea della Yagi bibanda a una linea: W1JR, QST 2/2022.";
+                "«Cerca il ROS piu' basso (NEC)» ritocca il radiatore della banda calcolata (con una linea sola, alla banda alta, quello accoppiato). Idea della Yagi bibanda a una linea: W1JR, QST 2/2022.";
             o.Nec = Mazzo(Scale);
             o.Plane = "xy";
             return o;

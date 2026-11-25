@@ -118,12 +118,36 @@ namespace YaNec.Engine
             return hi - lo;
         }
 
+        // «Porta in risonanza (NEC)»: risonanza del dipolo da solo, poi R e Q del dipolo vero (quota e terreno) per scegliere risonatore e trasformatore
+        bool soloDipolo;
+        double raNec = double.NaN, qaNec = double.NaN;
+        string chiaveNec;
+        string Chiave() { string k = ""; foreach (CalcParam p in Params) k += p.Value.ToString("R", CultureInfo.InvariantCulture) + ";"; return k; }
+        public override double Tune(double fmhz)
+        {
+            double f = P("f");
+            soloDipolo = true;
+            try
+            {
+                double s0 = Scale;
+                Scale = C170.Risonanza(sc => { Scale = sc; return Compute().Nec; }, f, s0);
+                string nec = Compute().Nec;
+                Complex z = C170.Zin(nec, f), z1 = C170.Zin(nec, f * 1.002), z2 = C170.Zin(nec, f * 0.998);
+                raNec = Math.Max(1, z.Real);
+                qaNec = Math.Max(1, f / (2 * raNec) * (z1.Imaginary - z2.Imaginary) / (0.004 * f));
+                chiaveNec = Chiave();
+            }
+            finally { soloDipolo = false; }
+            return Scale;
+        }
+
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
             double f = P("f"), lam = C0 / f, a = P("d") / 2000, h = P("h"), vf = Math.Max(0.1, Math.Min(1, P("vf")));
             double L = 142.65 / f * Scale;
-            double ra = 73, qa = Math.PI / 4 * 120 * (Math.Log(L / a) - 1) / ra;
+            bool daNec = chiaveNec == Chiave() && !double.IsNaN(raNec);
+            double ra = daNec ? raNec : 73, qa = daNec ? qaNec : Math.PI / 4 * 120 * (Math.Log(L / a) - 1) / ra;
             double zs = P("zs"), zt = P("zt");
             if (zs <= 0 || zt <= 0)
             {
@@ -142,6 +166,7 @@ namespace YaNec.Engine
             o.Card("Risonatore (stub in corto)", C170.N(zs, 0) + " Ω, " + C170.N(vf * lam / 4, 2) + " m", "λ/4 con VF " + C170.N(vf, 2) + ", in parallelo ai morsetti del dipolo", true);
             o.Card("Trasformatore λ/4", C170.N(zt, 0) + " Ω, " + C170.N(vf * lam / 4, 2) + " m", "tra il dipolo e il cavo da 50 Ω");
             o.Card("Banda a ROS 2 (stima)", C170.N(b1 * f * 1000, 0) + " kHz", "dipolo semplice " + C170.N(b0 * f * 1000, 0) + " kHz (Q del dipolo " + C170.N(qa, 1) + ")");
+            o.Card("Dipolo in risonanza", C170.N(ra, 1) + " Ω, Q " + C170.N(qa, 1), daNec ? "dal NEC (quota e terreno)" : "stima: 73 Ω; «Porta in risonanza (NEC)» li misura");
             if (zs < 45) o.Oks.Add("Risonatore da " + C170.N(zs, 0) + " Ω: si ottiene con " + Math.Max(2, (int)Math.Round(50 / zs)) + " coassiali da 50 Ω in parallelo (stessa lunghezza).");
             o.Formula = "Formule: dipolo 142,65/f; vicino alla risonanza il dipolo e' un RLC serie, Z = R (1 + j2Qδ), Q = (π/4) 120 (ln(L/a) - 1) / R (Schelkunoff). " +
                 "Lo stub λ/4 in corto in parallelo ha suscettanza opposta a quella del dipolo e allarga la banda; il trasformatore λ/4 riporta a 50 Ω. " +
@@ -159,6 +184,14 @@ namespace YaNec.Engine
             double seg = lam / 50, z = h > 0 ? h : 0;
             int nd = Odd(L / seg, 11);
             int td = dk.W(nd, 0, -L / 2, z, 0, L / 2, z, a);
+            if (soloDipolo)
+            {
+                dk.Ground(h > 0 ? 2 : 0);
+                dk.Ex(td, (nd + 1) / 2);
+                o.Nec = dk.End(f);
+                o.Plane = "yz";
+                return o;
+            }
             int tf = dk.W(1, lam, -0.1, Math.Max(z, 1), lam, 0.1, Math.Max(z, 1), 0.001);
             dk.Ground(h > 0 ? 2 : 0);
             dk.Tl(tf, 1, td, (nd + 1) / 2, zt, lam / 4);
@@ -232,6 +265,23 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("lh", "Yagi in cima: lunghezza degli elementi", 10, "m", "La Yagi fa da cappello capacitivo: nel modello due fili incrociati lunghi cosi'. 0 = traliccio senza Yagi."));
             Params.Add(new CalcParam("d", "ø del filo", 2, "mm"));
         }
+        public override string TuneLabel { get { return "Cerca il ROS piu' basso (NEC)"; } }
+
+        /// <summary>L'impedenza dell'half-sloper dipende da traliccio e carico in cima: si cerca la lunghezza del filo con il ROS piu' basso su 50 ohm
+        /// (con la risonanza X = 0 si puo' finire su un punto ad alta impedenza).</summary>
+        public override double Tune(double fmhz)
+        {
+            double f = P("f"), best = 1, rb = double.MaxValue;
+            for (double sc = 0.5; sc <= 1.6; sc += 0.02)
+            {
+                Scale = sc;
+                double r = C170.Ros(C170.Zin(Compute().Nec, f), 50);
+                if (r < rb) { rb = r; best = sc; }
+            }
+            Scale = best;
+            return best;
+        }
+
         public override CalcOutput Compute()
         {
             CalcOutput o = new CalcOutput();
@@ -246,7 +296,7 @@ namespace YaNec.Engine
                 zEnd = 0.5; xEnd = gap + ls * Math.Cos(ang);
                 o.Warnings.Add("Il filo toccherebbe terra: accorciato a " + C170.N(ls, 1) + " m. Alza l'alimentazione o riduci l'inclinazione.");
             }
-            o.Card("Filo inclinato", C170.N(ls, 2) + " m", Scale != 1 ? "accordato col NEC" : "0,95 λ/4, poi «Porta in risonanza»", true);
+            o.Card("Filo inclinato", C170.N(ls, 2) + " m", Scale != 1 ? "ROS piu' basso trovato col NEC" : "0,95 λ/4, poi «Cerca il ROS piu' basso»", true);
             o.Card("Ancoraggio", C170.N(xEnd, 1) + " m dal traliccio", "a " + C170.N(zEnd, 1) + " m da terra");
             o.Card("Alimentazione", C170.N(hf, 1) + " m", "coassiale: calza al traliccio, centrale al filo");
             o.Formula = "Half-sloper (VE2CV): il filo inclinato lungo circa λ/4 e il traliccio con la Yagi in cima formano insieme l'antenna; l'impedenza dipende molto da altezza del traliccio, " +
@@ -256,7 +306,7 @@ namespace YaNec.Engine
             double seg = lam / 50;
             dk.Ws(seg, 0, 0, 0, 0, 0, hf, at, false, 3);
             int tt = dk.Ws(seg, 0, 0, hf, 0, 0, H, at, false, 2);
-            if (lh > 0) { dk.Ws(seg, -lh / 2, 0, H, lh / 2, 0, H, 0.015); dk.Ws(seg, 0, -lh / 2, H, 0, lh / 2, H, 0.015); }
+            if (lh > 0) { dk.Ws(seg, 0, 0, H, lh / 2, 0, H, 0.015); dk.Ws(seg, 0, 0, H, -lh / 2, 0, H, 0.015); dk.Ws(seg, 0, 0, H, 0, lh / 2, H, 0.015); dk.Ws(seg, 0, 0, H, 0, -lh / 2, H, 0.015); }
             int tf = dk.W(1, 0, 0, hf, gap, 0, hf, a);
             dk.Ws(seg, gap, 0, hf, xEnd, 0, zEnd, a, false, 3);
             dk.Ground(1, true);
@@ -301,13 +351,15 @@ namespace YaNec.Engine
             double lgMax = lam / 8;
             double lg = double.NaN;
             if (zin(lgMax).Real >= 50) lg = C170.Bisez(x => zin(x).Real - 50, 0.002, lgMax);
+            bool formulaOk = !double.IsNaN(lg);
+            if (!formulaOk) lg = lam / 20;   // partenza per la ricerca con il NEC
             lg *= Scale;
-            Complex z = double.IsNaN(lg) ? Complex.Zero : zin(lg);
+            Complex z = zin(lg);
             double w = 2 * Math.PI * f * 1e6, cs = z.Imaginary > 0 ? 1 / (w * z.Imaginary) : double.NaN;
+            if (Scale != 1 && chiaveC == Chiave() && !double.IsNaN(cNec)) cs = cNec;   // condensatore trovato con il NEC
             o.Card("Rapporto di salita", C170.N(k, 2), "(1 + α)², α = " + C170.N(alfa, 2));
             o.Card("Z0 barra-elemento", C170.N(z0, 0) + " Ω", "linea a fili diversi");
-            if (double.IsNaN(lg)) o.Warnings.Add("Con questa R e queste misure il gamma non arriva a 50 Ω: avvicina la barra o usane una piu' sottile (rapporto di salita piu' alto).");
-            else
+            if (!formulaOk && Scale == 1) o.Warnings.Add("Con questa R e queste misure il gamma non arriva a 50 Ω: avvicina la barra o usane una piu' sottile (rapporto di salita piu' alto).");
             {
                 o.Card("Lunghezza del gamma", C170.N(lg * 100, 1) + " cm", "dal centro al ponticello" + (Scale != 1 ? " (accordato col NEC)" : ""), true);
                 o.Card("Condensatore in serie", C170.N(cs * 1e12, 0) + " pF", "annulla +j" + C170.N(z.Imaginary, 0) + " Ω", true);
@@ -315,7 +367,7 @@ namespace YaNec.Engine
             o.Formula = "Formule (Healey, QST 4/1969): α = ln(2s/d) / ln(2s/D), rapporto (1 + α)²; Z0 = 60 acosh((4s² - d² - D²)/(2dD)); la meta' dell'antenna vista attraverso il rapporto, (1+α)² R/2, " +
                 "e' in parallelo al tratto di linea in corto j Z0 tan(βl): la lunghezza l porta la parte reale a 50 Ω, il condensatore in serie toglie la reattanza. Il NEC verifica sul dipolo con il gamma vero.";
             // modello: elemento lungo y spezzato al centro e al ponticello; barra sopra l'elemento (z = s); sorgente e condensatore sul filo verticale al centro
-            if (!double.IsNaN(lg) && lg > 0.02)
+            if (lg > 0.02)
             {
                 NecDeck dk = new NecDeck(Title + " " + C170.N(f, 3) + " MHz");
                 double seg = lam / 50;
@@ -326,7 +378,7 @@ namespace YaNec.Engine
                 dk.Ws(seg, 0, 0, s, 0, lg, s, d / 2, false, 2);
                 dk.W(1, 0, lg, s, 0, lg, 0, d / 2);
                 dk.Ground(0);
-                if (!double.IsNaN(cs)) dk.Ld(0, tfeed, 1, 1, 0, 0, cs);
+                if (!double.IsNaN(cs) && !senzaC) dk.Ld(0, tfeed, 1, 1, 0, 0, cs);
                 dk.Ex(tfeed, 1);
                 o.Nec = dk.End(f);
                 o.Plane = "yz";
@@ -335,6 +387,35 @@ namespace YaNec.Engine
             return o;
         }
         static double Acosh(double x) { return Math.Log(x + Math.Sqrt(Math.Max(0, x * x - 1))); }
+
+        public override string TuneLabel { get { return "Accorda gamma e condensatore (NEC)"; } }
+        double cNec = double.NaN; string chiaveC;
+        string Chiave() { string k = ""; foreach (CalcParam p in Params) k += p.Value.ToString("R", CultureInfo.InvariantCulture) + ";"; return k; }
+        bool senzaC;
+
+        /// <summary>Si cerca la lunghezza del gamma che porta R a 50 ohm nel modello NEC senza condensatore (X induttiva), poi C = 1/(ωX).</summary>
+        public override double Tune(double fmhz)
+        {
+            double f = P("f"), w = 2 * Math.PI * f * 1e6, best = 1, eb = double.MaxValue, xb = double.NaN;
+            senzaC = true;
+            try
+            {
+                for (double sc = 0.3; sc <= 3.0; sc += 0.025)
+                {
+                    Scale = sc;
+                    CalcOutput o = Compute();
+                    if (o.Nec == null) continue;
+                    Complex z = C170.Zin(o.Nec, f);
+                    double e = Math.Abs(z.Real - 50) + (z.Imaginary > 0 ? 0 : 1000);
+                    if (e < eb) { eb = e; best = sc; xb = z.Imaginary; }
+                }
+            }
+            finally { senzaC = false; }
+            Scale = best;
+            cNec = xb > 0 ? 1 / (w * xb) : double.NaN;
+            chiaveC = Chiave();
+            return best;
+        }
     }
 
     // =============================================================================================
