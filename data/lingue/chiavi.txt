@@ -6743,7 +6743,6 @@ proposta
 migliore
 partenza
 passi
-modello aperto
 Mostra terreno ▴
 Nascondi terreno ▾
 Errore
@@ -7114,7 +7113,6 @@ Lobo alto (
 Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)
 Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)
 ROS sul cavo 
- pF (ceramico, 2-3 kV) in parallelo al primario: migliora il ROS sulle bande alte.
 automatico (potenza, modo, banda)
 FT8 / RTTY (continua)
 Per la potenza che il nucleo regge (OH7SV): FT8, RTTY e simili tengono il trasmettitore acceso tutto il tempo; il CW circa la meta'; l'SSB circa un quarto.
@@ -7254,3 +7252,391 @@ fase
 Fili colorati secondo la fase della corrente rispetto all'alimentazione (rosso 0°, verde 120°, blu 240°), con la scala circolare in basso; grigi dove la corrente e' sotto il 3 % del massimo. Mostra subito un elemento fuori fase o una schiera alimentata male.
 evoluzione differenziale: popolazione di partenza (
 evoluzione differenziale: generazione 
+Dipolo a banda larga con risonatore coassiale
+ARRL Handbook cap. 20 (dipolo a banda larga con risonatore coassiale, solo l'idea); doppia sintonia: stub λ/4 in corto in parallelo al dipolo e trasformatore λ/4 (formule classiche delle linee)
+Frequenza centrale
+0 = spazio libero.
+Fattore di velocita' del coassiale
+Impedenza del risonatore
+0 = la migliore calcolata. Impedenze sotto 50 Ω: piu' coassiali uguali in parallelo (due da 50 = 25 Ω).
+Impedenza del trasformatore
+0 = la migliore calcolata (tra 25 e 100 Ω).
+, accordato col NEC
+Risonatore (stub in corto)
+λ/4 con VF 
+, in parallelo ai morsetti del dipolo
+Trasformatore λ/4
+tra il dipolo e il cavo da 50 Ω
+Banda a ROS 2 (stima)
+dipolo semplice 
+ kHz (Q del dipolo 
+Risonatore da 
+ Ω: si ottiene con 
+ coassiali da 50 Ω in parallelo (stessa lunghezza).
+Formule: dipolo 142,65/f; vicino alla risonanza il dipolo e' un RLC serie, Z = R (1 + j2Qδ), Q = (π/4) 120 (ln(L/a) - 1) / R (Schelkunoff). Lo stub λ/4 in corto in parallelo ha suscettanza opposta a quella del dipolo e allarga la banda; il trasformatore λ/4 riporta a 50 Ω. Impedenze scelte cercando la banda a ROS 2 piu' larga sul modello RLC; il NEC verifica col dipolo vero (stub e trasformatore come linee). Idea: ARRL Handbook cap. 20.
+ROS stimato contro la frequenza
+con il risonatore
+dipolo semplice
+Nel modello NEC la sorgente sta su un filo corto lontano dall'antenna e la linea TL (lunghezza elettrica λ/4) fa da trasformatore; lo stub e' in parallelo ai morsetti del dipolo.
+L invertita e T per i 160 m
+ARRL Handbook cap. 20 (antenne a L invertita e a T per i 160 m, solo l'idea); ON4UN, Low-Band DXing (resistenza di terra, Tab. 9-1)
+L invertita: verticale e un tratto orizzontale. T: verticale con due bracci uguali in cima (cappello), i bracci non irradiano.
+L invertita
+Altezza del tratto verticale
+Tratto verticale
+Bracci in cima (ognuno)
+Tratto orizzontale
+accordato col NEC
+stima, poi «Porta in risonanza»
+Efficienza (stima)
+Rr circa 
+ Ω contro 
+Formule: tratto orizzontale circa 0,97 λ/4 meno la verticale (L), bracci della T circa 0,62 di quella misura; Rr fino a 160 π² (h/λ)² con corrente quasi uniforme sulla verticale (la T ci va vicino, la L meno); terra dalla Tab. 9-1 di ON4UN. Nel modello NEC terreno perfetto e la resistenza di terra come carico alla base (come la verticale λ/4).
+L invertita: il tratto orizzontale irradia anche in polarizzazione orizzontale ad angoli alti; con la T i due bracci si annullano.
+Verticale sotto λ/8: resistenza di radiazione bassa, la terra pesa molto sull'efficienza (I5WHC, RR 4/2025).
+Half-sloper sul traliccio
+VE2CV (ARRL Handbook cap. 20: half-sloper sul traliccio con la Yagi in cima, solo l'idea)
+Altezza del traliccio
+Diametro equivalente del traliccio
+Un traliccio a sezione triangolare di lato s vale circa un tubo di diametro 0,7 s.
+Quota dell'alimentazione
+Sul traliccio, di solito poco sotto la Yagi.
+Inclinazione del filo
+Angolo del filo sull'orizzontale.
+Yagi in cima: lunghezza degli elementi
+La Yagi fa da cappello capacitivo: nel modello due fili incrociati lunghi cosi'. 0 = traliccio senza Yagi.
+Il filo toccherebbe terra: accorciato a 
+ m. Alza l'alimentazione o riduci l'inclinazione.
+Filo inclinato
+0,95 λ/4, poi «Porta in risonanza»
+ m dal traliccio
+ m da terra
+coassiale: calza al traliccio, centrale al filo
+Half-sloper (VE2CV): il filo inclinato lungo circa λ/4 e il traliccio con la Yagi in cima formano insieme l'antenna; l'impedenza dipende molto da altezza del traliccio, carico in cima e quota dell'alimentazione (di solito 25-100 Ω): la da' il NEC. Terreno perfetto sotto il traliccio a terra.
+Il diagramma ha un massimo debole verso il lato del filo e polarizzazione mista: e' un'antenna per le bande basse quando il traliccio c'e' gia'.
+La Yagi in cima e' modellata come due fili incrociati: con il NEC conta la capacita' verso il cielo, non i dettagli della Yagi.
+Gamma match
+D. J. Healey W3PVZ, "An Examination of the Gamma Match", QST 4/1969 (formule classiche); ARRL Handbook cap. 20
+Lunghezza dell'elemento
+0 = mezz'onda risonante (142,65/f) come dipolo; per il radiatore di una Yagi scrivi la sua lunghezza.
+ø dell'elemento
+ø della barra del gamma
+Distanza barra-elemento (asse-asse)
+R al centro dell'elemento
+73 Ω per il dipolo da solo; per il radiatore di una Yagi 15-35 Ω (dal NEC del modello completo).
+Z0 barra-elemento
+linea a fili diversi
+Con questa R e queste misure il gamma non arriva a 50 Ω: avvicina la barra o usane una piu' sottile (rapporto di salita piu' alto).
+Lunghezza del gamma
+dal centro al ponticello
+ (accordato col NEC)
+Condensatore in serie
+annulla +j
+Formule (Healey, QST 4/1969): α = ln(2s/d) / ln(2s/D), rapporto (1 + α)²; Z0 = 60 acosh((4s² - d² - D²)/(2dD)); la meta' dell'antenna vista attraverso il rapporto, (1+α)² R/2, e' in parallelo al tratto di linea in corto j Z0 tan(βl): la lunghezza l porta la parte reale a 50 Ω, il condensatore in serie toglie la reattanza. Il NEC verifica sul dipolo con il gamma vero.
+Adattamento a stub
+IW2FND, RadioRivista 10/2023; formule classiche delle linee (stub singolo e doppio)
+Carico: R
+Carico: X
+Fattore di velocita'
+In corto: piu' facile da fare e da regolare; aperto: va isolato in punta.
+stub singolo
+stub doppio
+Distanza tra gli stub
+valori scritti
+modello aperto a 
+Modello aperto con piu' di 800 segmenti: carico dai valori scritti.
+Modello aperto non calcolabile (
+): carico dai valori scritti.
+Distanza dal carico
+Lunghezza dello stub
+Suscettanza da annullare
+carico gia' adattato
+Stub sul carico
+Stub a 
+non adattabile
+Il carico cade nella zona che lo stub doppio con questa distanza non puo' adattare (G > Y0/sin²(βd)): sposta il primo stub di λ/8 lungo la linea o usa lo stub singolo.
+Linea: y(d) = Y0 (yL + jY0 tan βd)/(Y0 + j yL tan βd). Stub singolo: alla distanza d dove Re(y) = Y0 lo stub annulla la suscettanza (in corto: Y = -jY0 cot βl; aperto: Y = jY0 tan βl). Stub doppio: il primo stub sul carico porta y sul cerchio che, dopo la distanza fissa, cade su Re(y) = Y0; zona non adattabile G > Y0/sin²(βd). Lunghezze fisiche con il fattore di velocita'. Fonte: IW2FND, RR 10/2023.
+Γ: carico (rosso), percorso lungo la linea (arancio, viola), stub (tratteggio) fino al centro
+Yagi HF 2-3 elementi
+I4MFA, RadioRivista 9/2025 (valori di partenza e regole di taratura); L. B. Cebik W4RNL (spaziature 0,150/0,175 λ, confronto)
+2 el. con riflettore: circa 6 dBi, F/B 10 dB, 50 Ω. 2 el. con direttore: circa 6,5 dBi, F/B 15 dB, 25 Ω, banda stretta. 3 el.: radiatore = λ/2 - 4 %, riflettore +4 %, direttore -6 % (I4MFA).
+2 el. riflettore
+2 el. direttore
+ø dei tubi
+Spaziatura del riflettore
+I4MFA: 0,165 λ nel 2 el.; W4RNL: 0,150 λ nel 3 el.
+Spaziatura del direttore
+I4MFA: 0,09 λ nel 2 el. con direttore; W4RNL: 0,175 λ nel 3 el.
+Ritocco del riflettore
+2 · Taratura
+Ritocco del radiatore
+Ritocco del direttore
+Guida di taratura (NEC)
+Modifica (+1 %)
+nessuna (punto di partenza)
+sposta la risonanza di 
+risonanza quasi ferma
+F/B quasi fermo
+radiatore + 4 %, a 
+radiatore - 6 %, a 
+circa 6 dBi, F/B 10 dB, 50 Ω
+circa 6,5 dBi, F/B 15 dB, 25 Ω, banda stretta
+circa 8 dBi, F/B oltre 20 dB, 20-30 Ω
+Attesi (I4MFA)
+il NEC verifica
+Valori di partenza (I4MFA, RR 9/2025): radiatore λ/2 - 4 %, riflettore radiatore + 4 %, direttore radiatore - 6 %; 2 el. con riflettore a 0,165 λ, con direttore a 0,09 λ. Regole di taratura: il riflettore sposta il massimo del F/B, il radiatore la risonanza, il direttore tutti e due. Confronto W4RNL: 3 el. con spaziature 0,150 e 0,175 λ.
+Guida di taratura: effetto di ogni elemento allungato dell'1 % (NEC)
+«Guida di taratura (NEC)» calcola l'effetto di ogni elemento allungato dell'1 %: il riflettore sposta il massimo del F/B, il radiatore la risonanza, il direttore tutti e due (I4MFA).
+Dipolo multibanda a rele'
+IK4PKK e IK4CIE, RadioRivista 9/2025 (tratti a lunghezza piena uniti da rele' telecomandati)
+Banda calcolata
+Il modello NEC ha i rele' chiusi fino a questa banda e aperti oltre.
+Corrente di un rele' chiuso
+punta del braccio
+rele' a 
+ m dal centro
+rele' a riposo
+ ore
+banda piu' alta: nessun rele' chiuso
+ rele' chiusi da 
+Ogni banda ha il suo braccio a lunghezza piena (142,65/f in tutto): i rele' chiusi uniscono i tratti fino alla banda voluta, quelli aperti staccano il resto. Confronto con il dipolo trappolato: qui ogni banda e' un dipolo intero (banda a ROS 2 piena, niente perdite delle trappole), in cambio servono i fili di comando e l'alimentazione dei rele'. Fonte: IK4PKK e IK4CIE, RR 9/2025. Nel modello NEC un rele' aperto e' un tratto corto con una resistenza altissima; i fili di comando non ci sono.
+I fili di comando dei rele' vanno fatti passare lontano dal dipolo o con impedenze di blocco: possono risuonare e cambiare il ROS.
+Verticale trappolata multibanda
+IZ2IAM, RadioRivista 11/2025 (Cushcraft AV-5); bobina con cappello: idea da Grazioli, RadioKit Elettronica 11/2025 (il contrappeso brevettato non si riproduce); modello a linea del monopolo (Schelkunoff: Z0 = 60 (ln(2h/a) - 1)); ON4UN (resistenza di terra)
+C grande: trappole meno sensibili e con meno perdite in banda, ma piu' accorciamento. C piccola: bobine piu' grandi, banda piu' stretta sulle bande basse.
+C grande (60 pF)
+media (33 pF)
+C piccola (20 pF)
+Q delle trappole
+Bobina con cappello: un tratto corto con la bobina e un cappello di 4 raggi in cima; la bobina carica la banda bassa e fa da separazione.
+tratto pieno
+bobina con cappello
+Tratto sopra la bobina
+Raggi del cappello (4)
+2 · Terra
+Accorda le bande (NEC)
+Tratti, trappole e bande (dal basso)
+Trappola in cima
+Efficienza (NEC)
+ + cappello
+«Accorda le bande»
+Altezza totale
+tubi da 
+ + bobina
+Modello a linea (dal basso): il tratto 1 e' λ/4 della banda piu' alta con l'effetto di punta (0,97); ogni banda sotto aggiunge il suo tratto oltre la trappola, che sotto la sua risonanza e' una bobina X = ωL/(1 - ω²LC). Z0 del monopolo 60 (ln(2h/a) - 1) (Schelkunoff). «Accorda le bande (NEC)» ritocca i tratti dalla banda alta alla bassa, poi calcola ogni banda con il NEC (trappole come RLC paralleli con il loro Q, terra come resistenza alla base). Fonti: IZ2IAM, RR 11/2025; Grazioli, RKE 11/2025 (bobina con cappello).
+Le trappole riducono banda e rendimento sulle bande basse: le perdite da Q della bobina pesano dove la trappola lavora da carico (I5WHC, RR 4/2025).
+«Accorda le bande (NEC)» porta in risonanza ogni banda e riempie Z, ROS ed efficienza.
+Yagi bibanda interlacciata
+W1JR, QST 2/2022 (Yagi 12 e 17 m sullo stesso boom con una sola linea: solo riassunto, misure non riprodotte); valori di partenza come la Yagi HF (I4MFA)
+Elementi per banda
+Una linea: alimentato il radiatore della banda bassa, quello della banda alta gli sta accanto (0,04 λ) e prende energia per accoppiamento. Due linee: una per banda, il radiatore non usato aperto.
+due linee
+una linea (radiatore alto accoppiato)
+Elementi sul boom
+radiatore accoppiato
+una sola linea sul radiatore della banda bassa
+due linee, l'altro radiatore aperto
+elementi a 
+ m, rapporto 
+Interazione: 
+. Un elemento della banda bassa vicino a uno della banda alta con lunghezze in rapporto vicino a 1/2, 2/3 o 7/8 sposta la risonanza e il F/B dell'altra banda (W1JR, QST 2/2022).
+Nessuna coppia di elementi vicini in rapporto 1/2, 2/3 o 7/8.
+Elementi isolati dal boom (come W1JR): il boom metallico non e' nel modello.
+Valori di partenza: radiatore λ/2 - 4 %, riflettore +4 %, direttore -6 % per ogni banda (I4MFA); spaziature 0,15 e 0,175 λ; radiatore della banda alta 0,04 λ davanti a quello della bassa. «Porta in risonanza (NEC)» ritocca il radiatore della banda calcolata (con una linea sola, alla banda alta, quello accoppiato). Idea della Yagi bibanda a una linea: W1JR, QST 2/2022.
+Carico lineare
+IU5HIV, RadioKit Elettronica 1/2024 (carico lineare per antenne a 1/4, il suo programma non e' incluso); modello a linea del monopolo (Schelkunoff); linea bifilare Z0 = 120 acosh(s/d); I5WHC, RR 4/2025 (efficienza)
+dipolo accorciato
+Lunghezza fisica
+In % della lunghezza risonante senza carico (λ/4 per la verticale, il braccio per il dipolo).
+ø del filo del carico
+Distanza tra i due fili del carico
+Posizione del carico
+Dal punto di alimentazione: 0 = alla base (o al centro del dipolo), 50 = a meta'.
+Q della bobina (confronto)
+Altezza del dipolo
+Porta in risonanza e confronta (NEC)
+Carico (stessa lunghezza fisica)
+R in risonanza
+carico lineare
+bobina alla stessa posizione
+bobina al centro
+bobina alla base
+cappelli alle punte
+cappello in cima
+ % della lunghezza risonante
+due fili a 
+ cm, chiusi in fondo (Z0 
+ Ω); filo totale 
+Reattanza da aggiungere
+ m dal punto di alimentazione
+Bobina equivalente
+perdita 
+ Ω con Q 
+Confronto con il NEC (stessa lunghezza fisica, ognuno portato in risonanza)
+«Porta in risonanza e confronta (NEC)» accorda il carico lineare e confronta efficienza e banda con la bobina alla stessa posizione, la bobina 
+ e il cappello
+ alle punte
+ in cima
+Modello a linea: sopra il carico il tratto aperto vale -j Z0 cot(β(H - p)), Z0 = 60 (ln(2H/a) - 1); il carico X porta a zero la reattanza alla base. Carico lineare = linea bifilare in corto, X = Z0s tan(βl), Z0s = 120 acosh(s/d). Confronto: a parita' di lunghezza il carico verso la cima e il cappello rendono di piu' della bobina alla base (I5WHC, RR 4/2025). Idea del carico lineare: IU5HIV, RKE 1/2024.
+Carico alla base: e' la soluzione piu' comoda ma la corrente sul radiatore cala presto; spostandolo verso la cima l'efficienza sale (prova con la posizione).
+tutte le HF (80-10 m)
+Filo risonante in armonica (EFLW)
+RadioKit Elettronica 1/2024 (EFLW: 21,12 m risonante su 40, 20, 15 e 10 m, fattore di accorciamento misurato sul posto); confronto con Dose (RK 6/2023) e l'EFHW Vibroplex (QST 2/2022)
+Dipende da altezza, alberi, tetto e inclinazione: va misurato sul posto con il ROS (nell'articolo 0,93).
+Bande scelte
+Lunghezza per le bande scelte
+lunghezza trovata per le bande scelte (scritta 
+ MHz con k 
+Risonanze in armonica vicino alle bande scelte
+Mezze onde
+Risonanza piu' vicina
+Dal centro banda
+In banda?
+⚠ fuori banda
+Risonanze: f_n = n · c · k / (2 L) (n mezze onde, k fattore di accorciamento). «Lunghezza per le bande scelte» cerca la lunghezza che porta le armoniche piu' vicine ai centri banda insieme. Il ROS di ogni banda lo da' il calcolo NEC (trasformatore ideale 
+:1, ROS riferito a 
+ Ω). Fonte: EFLW, RKE 1/2024; confronto: Dose, RK 6/2023 (49:1 su FT-82-43) e l'EFHW Vibroplex (QST 2/2022).
+Il fattore di accorciamento dipende da altezza, alberi, tetto e inclinazione: va misurato sul posto con il ROS (esempio dell'articolo: 0,93).
+Per gli 80 m: bobina con un codino in punta (Filari, «con bobina»), oppure filo lungo il doppio.
+Apri in Filari (EFHW)
+Trasformatore, nucleo, contrappeso e perdite nella scheda Filari.
+rame smaltato
+cavetto d'acciaio (pesca)
+Materiale del filo
+Rame, rame smaltato e Copperweld in HF si equivalgono (effetto pelle nel rame); il cavetto d'acciaio da pesca e' leggerissimo ma perde di piu'. Nel modello NEC: LD 5 su tutti i fili.
+Perdite per banda: filo di 
+ mm, nucleo 
+Perdita nel filo
+Perdita nel nucleo
+Cavetto d'acciaio: leggero e robusto (RadioKit 6/2023, EFHW da 112 g con 20,5 m di cavetto da 0,6 mm), ma l'acciaio conduce circa 40 volte meno del rame: la perdita conta soprattutto sulle bande basse.
+banda larga (risonatore coassiale)
+multibanda a rele'
+EFHW e fili
+risonanze in armonica (EFLW)
+trappolata multibanda
+L invertita / T (160 m)
+half-sloper sul traliccio
+ Ω, bobine 
+ Ω riferiti al centro; il NEC da' quella vera
+Efficienza alla banda bassa (stima)
+trappole con Q 
+ Ω di perdita riferiti al centro (I5WHC, RR 4/2025)
+ARRL Antenna Book (perimetri per banda); impostazione degli anelli concentrici come DK7ZB; I4MFA (RadioRivista 3/92, 5/2023, 11/2025: linee separate e di disaccoppiamento)
+Radiatori delle bande non alimentate
+Con una linea per banda il radiatore di una banda non usata non e' un anello chiuso: e' chiuso sulla sua linea (aperta in fondo, al commutatore). «Chiusi» e' il modello di prima (anello continuo, come una linea in corto).
+sulla loro linea
+Lunghezza delle linee
+Linea di ogni banda dal punto di alimentazione al commutatore (aperta in fondo).
+Impedenza delle linee
+Linee di disaccoppiamento
+Tronchi di coassiale in corto, lunghi λ/4 (con il fattore di velocita') alla frequenza alimentata, inseriti in cima agli anelli delle bande vicine (rapporto oltre 0,84, es. 12 e 10 m): li' aprono l'anello e tolgono l'interazione (I4MFA, RR 3/92).
+sulle bande vicine
+VF del coassiale di disaccoppiamento
+Accorda e confronta (NEC)
+ (sola)
+ (accordata)
+Formule: per ogni banda radiatore 306,3/f e riflettore 313,6/f (ARRL), anelli concentrici sulle stesse crociere e un solo boom: la spaziatura in lambda cambia da banda a banda. Le interazioni tra gli anelli spostano le risonanze: il NEC le calcola con tutti gli anelli presenti (anche quelli non alimentati). Radiatori non alimentati: aperti (R serie altissima), chiusi (anello continuo) o chiusi sulla loro linea aperta in fondo (stub, Z = -j Z0 cot(βl/VF)). Linee di disaccoppiamento: stub di coassiale in corto lungo VF λ/4 alla banda alimentata, in cima agli anelli delle bande vicine (I4MFA, RR 3/92).
+12 e 10 m hanno lunghezze d'onda in rapporto circa 7/8: gli elementi si disturbano a vicenda (riflettore dei 10 m vicino al radiatore dei 12 m). Rimedi: linee di disaccoppiamento (tronchi di coassiale) su riflettori e direttori (I4MFA, RR 3/92 e 5/2023). «Accorda e confronta» misura l'effetto.
+Radiatori non alimentati chiusi: e' come avere la loro linea in corto. Con una linea per banda il caso reale e' «aperti» o «sulla loro linea» (I4MFA, RR 11/2025).
+Da sola
+Con tutti gli anelli (accordata)
+ dB, perimetri 
+Senza linee di disaccoppiamento
+Interazione forte sui 
+: con gli altri anelli i perimetri vanno cambiati del 
+ %, il F/B cambia di 
+ dB e il guadagno di 
+ dB rispetto alla banda da sola.
+Interazione piccola sui 
+: perimetri entro l'1 %, F/B entro 3 dB e guadagno entro 0,5 dB rispetto alla banda da sola.
+«Accorda e confronta (NEC)» porta in risonanza la banda alimentata con tutti gli anelli e la confronta con la stessa banda da sola
+ e senza le linee di disaccoppiamento.
+ROS basso non vuol dire antenna efficiente
+La resistenza vista dal trasmettitore e' radiazione piu' perdite (conduttore, bobine, terreno): un carico fittizio ha ROS 1. Sotto 0,2 λ un dipolo orizzontale perde molto nel terreno; su un'antenna accorciata il cappello in testa rende piu' della bobina alla base.
+I5WHC, RadioRivista 4/2025; ON4UN, Low-Band DXing; DJ8WL
+Verticale accorciata
+λ/4 e radiali
+ROS 2 non e' sempre uguale
+Lo stesso ROS si ha con R sotto o sopra Z0. Con R bassa (per esempio 25 Ω su 50) a pari potenza la corrente nei finali sale di circa il 40-50 %: un finale si e' guastato a 26-27 Ω con l'allarme fermo a ROS 2. Nel grafico del ROS la curva e' piena dove R < Z0.
+I5WHC, RadioRivista 9/2026
+Diagrammi › Parametri
+Il nucleo del trasformatore EFHW scalda
+Il trasformatore 49:1 non e' ideale: un FT-240-43 ha circa il 75 % di efficienza, quindi a 100 W in FT8 dissipa una ventina di watt. I nuclei piccoli vanno bene solo in QRP.
+DG1JAN; OH7SV; RadioKit 6/2023
+Il fattore di accorciamento di un filo si misura sul posto
+Altezza, alberi, tetto e inclinazione cambiano la velocita' dell'onda sul filo: il valore giusto si trova con il ROS, accorciando a piccoli passi (nell'esempio dell'articolo 0,93). Il calcolo da' il punto di partenza.
+RadioKit Elettronica 1/2024 (EFLW)
+Filari › risonanze in armonica
+ARRL Antenna Book, W5QJR, AA5TB; I3STS e IZ3LJH (RadioRivista 6/2024: rettangolo, spire in parallelo, trasformatore e rete L, Q misurato)
+Per il quadrato: il lato; per l'ottagono: il diametro tra due vertici opposti; per il rettangolo: il lato orizzontale.
+Lato verticale
+Spire collegate
+In serie: L e Rr crescono con N². In parallelo: Rr come una spira, perdite divise per N, L poco sotto quella di una spira (mutua induttanza tra spire vicine).
+in serie
+in parallelo
+trasformatore su ferrite + rete L
+Variabile: C minima
+Con la massima del variabile da' la copertura in frequenza (capacita' parassita compresa).
+Variabile: C massima
+Q misurato
+0 = Q calcolato. Con il Q misurato (f / banda a -3 dB, a vuoto) la resistenza totale viene dalla misura e l'efficienza si corregge (I3STS, RR 6/2024).
+Copertura del variabile
+ pF con L = 
+Bande coperte dal variabile
+ (trasformatore e rete L)
+C accordo
+R totale
+Tensione su C a 
+Rete L
+ Ω: rapporto troppo alto
+nessuna banda radioamatoriale nella copertura
+Trasformatore su ferrite
+spire serie-parallelo, una per spira della loop (IZ3LJH, RR 6/2024); poi rete L: bobina in serie, C in parallelo verso i 50 Ω
+Trasformatore e rete L non sono nel modello NEC: il modello ha la sorgente in serie sul lato basso (la loop vista dal secondario); la tabella da' la rete L per ogni banda.
+trasformatore n:1 e rete L sul lato basso
+dal Q misurato 
+tubo di 
+, effetto pelle
+Formule: Rr = 31171 (N·A)²/λ⁴ (N spire); Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare. Rettangolo: L di Grover (filo tondo). Spire in parallelo: L = (L1 + (N-1) M)/N con M = μ0 R (ln(8R/p) - 2), Rr di una spira, perdite / N (I3STS e IZ3LJH, RR 6/2024). Banda a ROS 2 = f/Qc · (S-1)/√S. Con il Q misurato: Rtotale = X/Q.
+trasformatore + rete L
+Guadagno della singola antenna
+Per l'area efficace Ae = G λ²/4π: con un modello aperto viene dal suo calcolo in spazio libero.
+Distanza sovrapposte da verificare
+0 = solo la distanza DL6WU. Con un valore la tabella confronta anche la cella di queste distanze con l'area efficace.
+Distanza affiancate da verificare
+0 = solo la distanza DL6WU.
+Area efficace
+Area efficace e cella dello stack (IZ0FNO)
+Cella dx · dy
+✓ cella > Ae: guadagno pieno
+⚠ cella < Ae: accoppiamento forte, guadagno perso
+DL6WU (sovrapposte / affiancate)
+da verificare
+Lato minimo per l'area efficace
+ m (cella quadrata)
+ Area efficace (IZ0FNO, RR 9/2026, curva NBS e simulazione di I0KPT): ogni antenna ha diritto a Ae = G λ²/4π; se la cella dello stack e' piu' piccola il guadagno si perde, oltre resta quasi costante. DL6WU guarda un piano alla volta, l'area efficace la cella intera: i due criteri danno distanze vicine perche' G ≈ 41000/(Bh·Bv).
+La cella DL6WU e' piu' piccola dell'area efficace: controlla le distanze con il calcolo dello stack (Rumore/GT/Stack).
+R bassa ({0} Ω)
+R alta ({0} Ω)
+ROS {0} con R bassa ({1} Ω, sotto Z0/2): a pari potenza il finale porta circa il {2} % di corrente in piu' che su Z0 (I5WHC, RR 9/2026).
+mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD, banda larga, multibanda a rele'
+alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke; risonanze in armonica (EFLW)
+valori di partenza e guida di taratura (I4MFA)
+due bande sullo stesso boom, una o due linee (W1JR)
+lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole, trappolata multibanda, L invertita / T, half-sloper
+λ/4 e dipolo accorciato; confronto con bobina e cappello (IU5HIV, I5WHC)
+barra, distanza, condensatore in serie (Healey)
+stub singolo e doppio, carta di Smith (IW2FND)
+Consigli pratici
+Schede brevi riassunte dalle fonti citate (Citazioni nei Documenti tecnici). Il pulsante apre il calcolatore che mostra i numeri; le stesse schede compaiono in fondo a quei calcolatori.
+cella = Ae
+Angoli di partenza verso
+Locatore del corrispondente (4 o 6 caratteri): distanza dal tuo locatore, salti possibili in F2 e angolo di partenza per ogni numero di salti, segnati sul lobo in viola. Metodo deterministico (I4MFA, RR 9 e 11/2024), diverso da quello statistico di N6BV in HFTA.
+Frequenza critica dello strato F2 (MHz), facoltativa: con questa si calcola la MUF di ogni salto (MUF = foF2 / cos φ).
+{0} salti
+locatore non valido (o manca il tuo locatore)
+Consigli
+Consiglio
+ROS, R < Z0
+ROS, R > Z0
+hmF2 300 km; I4MFA, RR 9 e 11/2024

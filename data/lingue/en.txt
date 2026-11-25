@@ -7030,7 +7030,6 @@ proposta	proposed
 migliore	best
 partenza	start
 passi	steps
-modello aperto	open model
 Mostra terreno ▴	Show ground ▴
 Nascondi terreno ▾	Hide ground ▾
 Errore	Error
@@ -7406,7 +7405,6 @@ Lobo alto (	High lobe (
 Banda per banda (NEC-2, terreno di Sommerfeld, radiali rialzati)	Band by band (NEC-2, Sommerfeld ground, elevated radials)
 Banda per banda (NEC-2, radiali come resistenza di terra, diagramma con il terreno scelto)	Band by band (NEC-2, radials as ground resistance, pattern with the chosen ground)
 ROS sul cavo 	SWR on the coax 
- pF (ceramico, 2-3 kV) in parallelo al primario: migliora il ROS sulle bande alte.	 pF (ceramic, 2-3 kV) across the primary: improves the SWR on the high bands.
 # 1.5.9: testi mancanti (proposte approvate da IC8TEM il 22/11/2026 22:14)
   Calcola: fili dritti, archi ed eliche (GW, GA, GH), copie e simmetrie (GM, GR, GX), scala (GS), fili rastremati (GC);\n	  Computes: straight wires, arcs and helices (GW, GA, GH), copies and symmetries (GM, GR, GX), scale (GS), tapered wires (GC);\n
   carichi LD 0-5 e materiale dei fili; sorgenti di tensione (EX 0); modelli MMANA con risegmentazione NEC.\n	  LD 0-5 loads and wire material; voltage sources (EX 0); MMANA models with NEC resegmentation.\n
@@ -7705,3 +7703,391 @@ apri	open
 Fili colorati secondo la fase della corrente rispetto all'alimentazione (rosso 0°, verde 120°, blu 240°), con la scala circolare in basso; grigi dove la corrente e' sotto il 3 % del massimo. Mostra subito un elemento fuori fase o una schiera alimentata male.	Wires coloured by the current phase relative to the feed (red 0°, green 120°, blue 240°), with the circular scale at the bottom; grey where the current is below 3 % of the maximum. It shows at once an out-of-phase element or a badly fed array.
 evoluzione differenziale: popolazione di partenza (	differential evolution: starting population (
 evoluzione differenziale: generazione 	differential evolution: generation 
+Dipolo a banda larga con risonatore coassiale	Broadband dipole with coaxial resonator
+ARRL Handbook cap. 20 (dipolo a banda larga con risonatore coassiale, solo l'idea); doppia sintonia: stub λ/4 in corto in parallelo al dipolo e trasformatore λ/4 (formule classiche delle linee)	ARRL Handbook ch. 20 (broadband dipole with coaxial resonator, idea only); double tuning: shorted λ/4 stub in parallel with the dipole and λ/4 transformer (classic line formulas)
+Frequenza centrale	Centre frequency
+0 = spazio libero.	0 = free space.
+Fattore di velocita' del coassiale	Coax velocity factor
+Impedenza del risonatore	Resonator impedance
+0 = la migliore calcolata. Impedenze sotto 50 Ω: piu' coassiali uguali in parallelo (due da 50 = 25 Ω).	0 = best computed. Impedances below 50 Ω: several equal coax cables in parallel (two 50 Ω = 25 Ω).
+Impedenza del trasformatore	Transformer impedance
+0 = la migliore calcolata (tra 25 e 100 Ω).	0 = best computed (between 25 and 100 Ω).
+, accordato col NEC	, tuned with NEC
+Risonatore (stub in corto)	Resonator (shorted stub)
+λ/4 con VF 	λ/4 with VF 
+, in parallelo ai morsetti del dipolo	, in parallel with the dipole terminals
+Trasformatore λ/4	λ/4 transformer
+tra il dipolo e il cavo da 50 Ω	between the dipole and the 50 Ω cable
+Banda a ROS 2 (stima)	2:1 SWR bandwidth (estimate)
+dipolo semplice 	plain dipole 
+ kHz (Q del dipolo 	 kHz (dipole Q 
+Risonatore da 	Resonator of 
+ Ω: si ottiene con 	 Ω: made with 
+ coassiali da 50 Ω in parallelo (stessa lunghezza).	 50 Ω coax cables in parallel (same length).
+Formule: dipolo 142,65/f; vicino alla risonanza il dipolo e' un RLC serie, Z = R (1 + j2Qδ), Q = (π/4) 120 (ln(L/a) - 1) / R (Schelkunoff). Lo stub λ/4 in corto in parallelo ha suscettanza opposta a quella del dipolo e allarga la banda; il trasformatore λ/4 riporta a 50 Ω. Impedenze scelte cercando la banda a ROS 2 piu' larga sul modello RLC; il NEC verifica col dipolo vero (stub e trasformatore come linee). Idea: ARRL Handbook cap. 20.	Formulas: dipole 142.65/f; near resonance the dipole is a series RLC, Z = R (1 + j2Qδ), Q = (π/4) 120 (ln(L/a) - 1) / R (Schelkunoff). The shorted λ/4 stub in parallel has a susceptance opposite to the dipole's and widens the bandwidth; the λ/4 transformer brings it back to 50 Ω. Impedances chosen by looking for the widest 2:1 SWR bandwidth on the RLC model; NEC checks with the real dipole (stub and transformer as lines). Idea: ARRL Handbook ch. 20.
+ROS stimato contro la frequenza	Estimated SWR vs frequency
+con il risonatore	with the resonator
+dipolo semplice	plain dipole
+Nel modello NEC la sorgente sta su un filo corto lontano dall'antenna e la linea TL (lunghezza elettrica λ/4) fa da trasformatore; lo stub e' in parallelo ai morsetti del dipolo.	In the NEC model the source is on a short wire far from the antenna and the TL line (electrical length λ/4) is the transformer; the stub is in parallel with the dipole terminals.
+L invertita e T per i 160 m	Inverted L and T for 160 m
+ARRL Handbook cap. 20 (antenne a L invertita e a T per i 160 m, solo l'idea); ON4UN, Low-Band DXing (resistenza di terra, Tab. 9-1)	ARRL Handbook ch. 20 (inverted-L and T antennas for 160 m, idea only); ON4UN, Low-Band DXing (ground resistance, Tab. 9-1)
+L invertita: verticale e un tratto orizzontale. T: verticale con due bracci uguali in cima (cappello), i bracci non irradiano.	Inverted L: vertical plus a horizontal section. T: vertical with two equal arms on top (hat); the arms do not radiate.
+L invertita	Inverted L
+Altezza del tratto verticale	Height of the vertical section
+Tratto verticale	Vertical section
+Bracci in cima (ognuno)	Top arms (each)
+Tratto orizzontale	Horizontal section
+accordato col NEC	tuned with NEC
+stima, poi «Porta in risonanza»	estimate, then «Bring to resonance»
+Efficienza (stima)	Efficiency (estimate)
+Rr circa 	Rr about 
+ Ω contro 	 Ω against 
+Formule: tratto orizzontale circa 0,97 λ/4 meno la verticale (L), bracci della T circa 0,62 di quella misura; Rr fino a 160 π² (h/λ)² con corrente quasi uniforme sulla verticale (la T ci va vicino, la L meno); terra dalla Tab. 9-1 di ON4UN. Nel modello NEC terreno perfetto e la resistenza di terra come carico alla base (come la verticale λ/4).	Formulas: horizontal section about 0.97 λ/4 minus the vertical (L), T arms about 0.62 of that; Rr up to 160 π² (h/λ)² with almost uniform current on the vertical (the T comes close, the L less); ground from ON4UN Tab. 9-1. In the NEC model perfect ground and the ground resistance as a load at the base (like the λ/4 vertical).
+L invertita: il tratto orizzontale irradia anche in polarizzazione orizzontale ad angoli alti; con la T i due bracci si annullano.	Inverted L: the horizontal section also radiates horizontal polarization at high angles; with the T the two arms cancel out.
+Verticale sotto λ/8: resistenza di radiazione bassa, la terra pesa molto sull'efficienza (I5WHC, RR 4/2025).	Vertical below λ/8: low radiation resistance, the ground weighs a lot on efficiency (I5WHC, RR 4/2025).
+Half-sloper sul traliccio	Half-sloper on the tower
+VE2CV (ARRL Handbook cap. 20: half-sloper sul traliccio con la Yagi in cima, solo l'idea)	VE2CV (ARRL Handbook ch. 20: half-sloper on the tower with the Yagi on top, idea only)
+Altezza del traliccio	Tower height
+Diametro equivalente del traliccio	Equivalent tower diameter
+Un traliccio a sezione triangolare di lato s vale circa un tubo di diametro 0,7 s.	A triangular tower of side s is roughly a tube of diameter 0.7 s.
+Quota dell'alimentazione	Feed point height
+Sul traliccio, di solito poco sotto la Yagi.	On the tower, usually just below the Yagi.
+Inclinazione del filo	Wire slope
+Angolo del filo sull'orizzontale.	Angle of the wire above horizontal.
+Yagi in cima: lunghezza degli elementi	Yagi on top: element length
+La Yagi fa da cappello capacitivo: nel modello due fili incrociati lunghi cosi'. 0 = traliccio senza Yagi.	The Yagi acts as a capacitive hat: in the model two crossed wires this long. 0 = tower without Yagi.
+Il filo toccherebbe terra: accorciato a 	The wire would touch the ground: shortened to 
+ m. Alza l'alimentazione o riduci l'inclinazione.	 m. Raise the feed point or reduce the slope.
+Filo inclinato	Sloping wire
+0,95 λ/4, poi «Porta in risonanza»	0.95 λ/4, then «Bring to resonance»
+ m dal traliccio	 m from the tower
+ m da terra	 m above ground
+coassiale: calza al traliccio, centrale al filo	coax: shield to the tower, centre to the wire
+Half-sloper (VE2CV): il filo inclinato lungo circa λ/4 e il traliccio con la Yagi in cima formano insieme l'antenna; l'impedenza dipende molto da altezza del traliccio, carico in cima e quota dell'alimentazione (di solito 25-100 Ω): la da' il NEC. Terreno perfetto sotto il traliccio a terra.	Half-sloper (VE2CV): the sloping wire about λ/4 long and the tower with the Yagi on top make up the antenna together; the impedance depends heavily on tower height, top load and feed height (usually 25-100 Ω): NEC gives it. Perfect ground under the grounded tower.
+Il diagramma ha un massimo debole verso il lato del filo e polarizzazione mista: e' un'antenna per le bande basse quando il traliccio c'e' gia'.	The pattern has a weak maximum toward the wire side and mixed polarization: it is an antenna for the low bands when the tower is already there.
+La Yagi in cima e' modellata come due fili incrociati: con il NEC conta la capacita' verso il cielo, non i dettagli della Yagi.	The Yagi on top is modelled as two crossed wires: in NEC what matters is the capacitance to the sky, not the details of the Yagi.
+Gamma match	Gamma match
+D. J. Healey W3PVZ, "An Examination of the Gamma Match", QST 4/1969 (formule classiche); ARRL Handbook cap. 20	D. J. Healey W3PVZ, "An Examination of the Gamma Match", QST 4/1969 (classic formulas); ARRL Handbook ch. 20
+Lunghezza dell'elemento	Element length
+0 = mezz'onda risonante (142,65/f) come dipolo; per il radiatore di una Yagi scrivi la sua lunghezza.	0 = resonant half wave (142.65/f) as a dipole; for the driven element of a Yagi enter its length.
+ø dell'elemento	ø of the element
+ø della barra del gamma	ø of the gamma rod
+Distanza barra-elemento (asse-asse)	Rod-element spacing (centre to centre)
+R al centro dell'elemento	R at the element centre
+73 Ω per il dipolo da solo; per il radiatore di una Yagi 15-35 Ω (dal NEC del modello completo).	73 Ω for the dipole alone; for the driven element of a Yagi 15-35 Ω (from NEC of the complete model).
+Z0 barra-elemento	Z0 rod-element
+linea a fili diversi	line with unequal conductors
+Con questa R e queste misure il gamma non arriva a 50 Ω: avvicina la barra o usane una piu' sottile (rapporto di salita piu' alto).	With this R and these dimensions the gamma does not reach 50 Ω: move the rod closer or use a thinner one (higher step-up ratio).
+Lunghezza del gamma	Gamma length
+dal centro al ponticello	from the centre to the shorting strap
+ (accordato col NEC)	 (tuned with NEC)
+Condensatore in serie	Series capacitor
+annulla +j	cancels +j
+Formule (Healey, QST 4/1969): α = ln(2s/d) / ln(2s/D), rapporto (1 + α)²; Z0 = 60 acosh((4s² - d² - D²)/(2dD)); la meta' dell'antenna vista attraverso il rapporto, (1+α)² R/2, e' in parallelo al tratto di linea in corto j Z0 tan(βl): la lunghezza l porta la parte reale a 50 Ω, il condensatore in serie toglie la reattanza. Il NEC verifica sul dipolo con il gamma vero.	Formulas (Healey, QST 4/1969): α = ln(2s/d) / ln(2s/D), ratio (1 + α)²; Z0 = 60 acosh((4s² - d² - D²)/(2dD)); half the antenna seen through the ratio, (1+α)² R/2, is in parallel with the shorted line section j Z0 tan(βl): the length l brings the real part to 50 Ω, the series capacitor removes the reactance. NEC checks the dipole with the real gamma.
+Adattamento a stub	Stub matching
+IW2FND, RadioRivista 10/2023; formule classiche delle linee (stub singolo e doppio)	IW2FND, RadioRivista 10/2023; classic line formulas (single and double stub)
+Carico: R	Load: R
+Carico: X	Load: X
+Fattore di velocita'	Velocity factor
+In corto: piu' facile da fare e da regolare; aperto: va isolato in punta.	Shorted: easier to build and adjust; open: must be insulated at the end.
+stub singolo	single stub
+stub doppio	double stub
+Distanza tra gli stub	Distance between the stubs
+valori scritti	entered values
+modello aperto a 	open model at 
+Modello aperto con piu' di 800 segmenti: carico dai valori scritti.	Open model with more than 800 segments: load from the entered values.
+Modello aperto non calcolabile (	Open model cannot be computed (
+): carico dai valori scritti.	): load from the entered values.
+Distanza dal carico	Distance from the load
+Lunghezza dello stub	Stub length
+Suscettanza da annullare	Susceptance to cancel
+carico gia' adattato	load already matched
+Stub sul carico	Stub at the load
+Stub a 	Stub at 
+non adattabile	cannot be matched
+Il carico cade nella zona che lo stub doppio con questa distanza non puo' adattare (G > Y0/sin²(βd)): sposta il primo stub di λ/8 lungo la linea o usa lo stub singolo.	The load falls in the region that the double stub with this spacing cannot match (G > Y0/sin²(βd)): move the first stub λ/8 along the line or use the single stub.
+Linea: y(d) = Y0 (yL + jY0 tan βd)/(Y0 + j yL tan βd). Stub singolo: alla distanza d dove Re(y) = Y0 lo stub annulla la suscettanza (in corto: Y = -jY0 cot βl; aperto: Y = jY0 tan βl). Stub doppio: il primo stub sul carico porta y sul cerchio che, dopo la distanza fissa, cade su Re(y) = Y0; zona non adattabile G > Y0/sin²(βd). Lunghezze fisiche con il fattore di velocita'. Fonte: IW2FND, RR 10/2023.	Line: y(d) = Y0 (yL + jY0 tan βd)/(Y0 + j yL tan βd). Single stub: at the distance d where Re(y) = Y0 the stub cancels the susceptance (shorted: Y = -jY0 cot βl; open: Y = jY0 tan βl). Double stub: the first stub at the load moves y onto the circle that, after the fixed spacing, falls on Re(y) = Y0; region that cannot be matched G > Y0/sin²(βd). Physical lengths with the velocity factor. Source: IW2FND, RR 10/2023.
+Γ: carico (rosso), percorso lungo la linea (arancio, viola), stub (tratteggio) fino al centro	Γ: load (red), path along the line (orange, violet), stub (dashed) to the centre
+Yagi HF 2-3 elementi	HF Yagi 2-3 elements
+I4MFA, RadioRivista 9/2025 (valori di partenza e regole di taratura); L. B. Cebik W4RNL (spaziature 0,150/0,175 λ, confronto)	I4MFA, RadioRivista 9/2025 (starting values and tuning rules); L. B. Cebik W4RNL (spacings 0.150/0.175 λ, comparison)
+2 el. con riflettore: circa 6 dBi, F/B 10 dB, 50 Ω. 2 el. con direttore: circa 6,5 dBi, F/B 15 dB, 25 Ω, banda stretta. 3 el.: radiatore = λ/2 - 4 %, riflettore +4 %, direttore -6 % (I4MFA).	2 el. with reflector: about 6 dBi, F/B 10 dB, 50 Ω. 2 el. with director: about 6.5 dBi, F/B 15 dB, 25 Ω, narrow band. 3 el.: driven element = λ/2 - 4 %, reflector +4 %, director -6 % (I4MFA).
+2 el. riflettore	2 el. reflector
+2 el. direttore	2 el. director
+ø dei tubi	ø of the tubes
+Spaziatura del riflettore	Reflector spacing
+I4MFA: 0,165 λ nel 2 el.; W4RNL: 0,150 λ nel 3 el.	I4MFA: 0.165 λ in the 2 el.; W4RNL: 0.150 λ in the 3 el.
+Spaziatura del direttore	Director spacing
+I4MFA: 0,09 λ nel 2 el. con direttore; W4RNL: 0,175 λ nel 3 el.	I4MFA: 0.09 λ in the 2 el. with director; W4RNL: 0.175 λ in the 3 el.
+Ritocco del riflettore	Reflector adjustment
+2 · Taratura	2 · Tuning
+Ritocco del radiatore	Driven element adjustment
+Ritocco del direttore	Director adjustment
+Guida di taratura (NEC)	Tuning guide (NEC)
+Modifica (+1 %)	Change (+1 %)
+nessuna (punto di partenza)	none (starting point)
+sposta la risonanza di 	moves the resonance by 
+risonanza quasi ferma	resonance almost unchanged
+F/B quasi fermo	F/B almost unchanged
+radiatore + 4 %, a 	driven element + 4 %, at 
+radiatore - 6 %, a 	driven element - 6 %, at 
+circa 6 dBi, F/B 10 dB, 50 Ω	about 6 dBi, F/B 10 dB, 50 Ω
+circa 6,5 dBi, F/B 15 dB, 25 Ω, banda stretta	about 6.5 dBi, F/B 15 dB, 25 Ω, narrow band
+circa 8 dBi, F/B oltre 20 dB, 20-30 Ω	about 8 dBi, F/B over 20 dB, 20-30 Ω
+Attesi (I4MFA)	Expected (I4MFA)
+il NEC verifica	NEC checks
+Valori di partenza (I4MFA, RR 9/2025): radiatore λ/2 - 4 %, riflettore radiatore + 4 %, direttore radiatore - 6 %; 2 el. con riflettore a 0,165 λ, con direttore a 0,09 λ. Regole di taratura: il riflettore sposta il massimo del F/B, il radiatore la risonanza, il direttore tutti e due. Confronto W4RNL: 3 el. con spaziature 0,150 e 0,175 λ.	Starting values (I4MFA, RR 9/2025): driven element λ/2 - 4 %, reflector driven element + 4 %, director driven element - 6 %; 2 el. with reflector at 0.165 λ, with director at 0.09 λ. Tuning rules: the reflector moves the F/B maximum, the driven element the resonance, the director both. W4RNL comparison: 3 el. with spacings 0.150 and 0.175 λ.
+Guida di taratura: effetto di ogni elemento allungato dell'1 % (NEC)	Tuning guide: effect of each element lengthened by 1 % (NEC)
+«Guida di taratura (NEC)» calcola l'effetto di ogni elemento allungato dell'1 %: il riflettore sposta il massimo del F/B, il radiatore la risonanza, il direttore tutti e due (I4MFA).	«Tuning guide (NEC)» computes the effect of each element lengthened by 1 %: the reflector moves the F/B maximum, the driven element the resonance, the director both (I4MFA).
+Dipolo multibanda a rele'	Relay multiband dipole
+IK4PKK e IK4CIE, RadioRivista 9/2025 (tratti a lunghezza piena uniti da rele' telecomandati)	IK4PKK and IK4CIE, RadioRivista 9/2025 (full-length sections joined by remote-controlled relays)
+Banda calcolata	Computed band
+Il modello NEC ha i rele' chiusi fino a questa banda e aperti oltre.	The NEC model has the relays closed up to this band and open beyond it.
+Corrente di un rele' chiuso	Current of a closed relay
+punta del braccio	end of the arm
+rele' a 	relay at 
+ m dal centro	 m from the centre
+rele' a riposo	relays at rest
+ ore	 hours
+banda piu' alta: nessun rele' chiuso	highest band: no relay closed
+ rele' chiusi da 	 relays closed at 
+Ogni banda ha il suo braccio a lunghezza piena (142,65/f in tutto): i rele' chiusi uniscono i tratti fino alla banda voluta, quelli aperti staccano il resto. Confronto con il dipolo trappolato: qui ogni banda e' un dipolo intero (banda a ROS 2 piena, niente perdite delle trappole), in cambio servono i fili di comando e l'alimentazione dei rele'. Fonte: IK4PKK e IK4CIE, RR 9/2025. Nel modello NEC un rele' aperto e' un tratto corto con una resistenza altissima; i fili di comando non ci sono.	Each band has its own full-length arm (142.65/f overall): closed relays join the sections up to the wanted band, open ones disconnect the rest. Comparison with the trap dipole: here each band is a whole dipole (full 2:1 SWR bandwidth, no trap losses), in exchange you need control wires and relay power. Source: IK4PKK and IK4CIE, RR 9/2025. In the NEC model an open relay is a short section with a very high resistance; the control wires are not modelled.
+I fili di comando dei rele' vanno fatti passare lontano dal dipolo o con impedenze di blocco: possono risuonare e cambiare il ROS.	Route the relay control wires away from the dipole or use blocking chokes: they can resonate and change the SWR.
+Verticale trappolata multibanda	Trap multiband vertical
+IZ2IAM, RadioRivista 11/2025 (Cushcraft AV-5); bobina con cappello: idea da Grazioli, RadioKit Elettronica 11/2025 (il contrappeso brevettato non si riproduce); modello a linea del monopolo (Schelkunoff: Z0 = 60 (ln(2h/a) - 1)); ON4UN (resistenza di terra)	IZ2IAM, RadioRivista 11/2025 (Cushcraft AV-5); coil with hat: idea from Grazioli, RadioKit Elettronica 11/2025 (the patented counterpoise is not reproduced); line model of the monopole (Schelkunoff: Z0 = 60 (ln(2h/a) - 1)); ON4UN (ground resistance)
+C grande: trappole meno sensibili e con meno perdite in banda, ma piu' accorciamento. C piccola: bobine piu' grandi, banda piu' stretta sulle bande basse.	Large C: traps less sensitive and with less in-band loss, but more shortening. Small C: larger coils, narrower bandwidth on the low bands.
+C grande (60 pF)	large C (60 pF)
+media (33 pF)	medium (33 pF)
+C piccola (20 pF)	small C (20 pF)
+Q delle trappole	Trap Q
+Bobina con cappello: un tratto corto con la bobina e un cappello di 4 raggi in cima; la bobina carica la banda bassa e fa da separazione.	Coil with hat: a short section with the coil and a 4-spoke hat on top; the coil loads the low band and also isolates it.
+tratto pieno	full section
+bobina con cappello	coil with hat
+Tratto sopra la bobina	Section above the coil
+Raggi del cappello (4)	Hat spokes (4)
+2 · Terra	2 · Ground
+Accorda le bande (NEC)	Tune the bands (NEC)
+Tratti, trappole e bande (dal basso)	Sections, traps and bands (from the bottom)
+Trappola in cima	Trap at the top
+Efficienza (NEC)	Efficiency (NEC)
+ + cappello	 + hat
+«Accorda le bande»	«Tune the bands»
+Altezza totale	Total height
+tubi da 	tubes of 
+ + bobina	 + coil
+Modello a linea (dal basso): il tratto 1 e' λ/4 della banda piu' alta con l'effetto di punta (0,97); ogni banda sotto aggiunge il suo tratto oltre la trappola, che sotto la sua risonanza e' una bobina X = ωL/(1 - ω²LC). Z0 del monopolo 60 (ln(2h/a) - 1) (Schelkunoff). «Accorda le bande (NEC)» ritocca i tratti dalla banda alta alla bassa, poi calcola ogni banda con il NEC (trappole come RLC paralleli con il loro Q, terra come resistenza alla base). Fonti: IZ2IAM, RR 11/2025; Grazioli, RKE 11/2025 (bobina con cappello).	Line model (from the bottom): section 1 is λ/4 of the highest band with the end effect (0.97); each lower band adds its section beyond the trap, which below its resonance is a coil X = ωL/(1 - ω²LC). Monopole Z0 60 (ln(2h/a) - 1) (Schelkunoff). «Tune the bands (NEC)» adjusts the sections from the high band to the low one, then computes each band with NEC (traps as parallel RLC with their Q, ground as a resistance at the base). Sources: IZ2IAM, RR 11/2025; Grazioli, RKE 11/2025 (coil with hat).
+Le trappole riducono banda e rendimento sulle bande basse: le perdite da Q della bobina pesano dove la trappola lavora da carico (I5WHC, RR 4/2025).	Traps reduce bandwidth and efficiency on the low bands: the coil Q losses weigh where the trap works as a loading coil (I5WHC, RR 4/2025).
+«Accorda le bande (NEC)» porta in risonanza ogni banda e riempie Z, ROS ed efficienza.	«Tune the bands (NEC)» brings every band to resonance and fills in Z, SWR and efficiency.
+Yagi bibanda interlacciata	Interlaced dual-band Yagi
+W1JR, QST 2/2022 (Yagi 12 e 17 m sullo stesso boom con una sola linea: solo riassunto, misure non riprodotte); valori di partenza come la Yagi HF (I4MFA)	W1JR, QST 2/2022 (12 and 17 m Yagi on the same boom with one feed line: summary only, dimensions not reproduced); starting values as the HF Yagi (I4MFA)
+Elementi per banda	Elements per band
+Una linea: alimentato il radiatore della banda bassa, quello della banda alta gli sta accanto (0,04 λ) e prende energia per accoppiamento. Due linee: una per banda, il radiatore non usato aperto.	One line: the low-band driven element is fed, the high-band one sits next to it (0.04 λ) and is fed by coupling. Two lines: one per band, the unused driven element open.
+due linee	two lines
+una linea (radiatore alto accoppiato)	one line (coupled high driven element)
+Elementi sul boom	Elements on the boom
+radiatore accoppiato	coupled driven element
+una sola linea sul radiatore della banda bassa	a single line on the low-band driven element
+due linee, l'altro radiatore aperto	two lines, the other driven element open
+elementi a 	elements at 
+ m, rapporto 	 m, ratio 
+Interazione: 	Interaction: 
+. Un elemento della banda bassa vicino a uno della banda alta con lunghezze in rapporto vicino a 1/2, 2/3 o 7/8 sposta la risonanza e il F/B dell'altra banda (W1JR, QST 2/2022).	. A low-band element close to a high-band one with lengths in a ratio near 1/2, 2/3 or 7/8 shifts the resonance and the F/B of the other band (W1JR, QST 2/2022).
+Nessuna coppia di elementi vicini in rapporto 1/2, 2/3 o 7/8.	No pair of nearby elements in a 1/2, 2/3 or 7/8 ratio.
+Elementi isolati dal boom (come W1JR): il boom metallico non e' nel modello.	Elements insulated from the boom (as W1JR): the metal boom is not in the model.
+Valori di partenza: radiatore λ/2 - 4 %, riflettore +4 %, direttore -6 % per ogni banda (I4MFA); spaziature 0,15 e 0,175 λ; radiatore della banda alta 0,04 λ davanti a quello della bassa. «Porta in risonanza (NEC)» ritocca il radiatore della banda calcolata (con una linea sola, alla banda alta, quello accoppiato). Idea della Yagi bibanda a una linea: W1JR, QST 2/2022.	Starting values: driven element λ/2 - 4 %, reflector +4 %, director -6 % for each band (I4MFA); spacings 0.15 and 0.175 λ; high-band driven element 0.04 λ ahead of the low-band one. «Bring to resonance (NEC)» adjusts the driven element of the computed band (with a single line, on the high band, the coupled one). Idea of the single-feed dual-band Yagi: W1JR, QST 2/2022.
+Carico lineare	Linear loading
+IU5HIV, RadioKit Elettronica 1/2024 (carico lineare per antenne a 1/4, il suo programma non e' incluso); modello a linea del monopolo (Schelkunoff); linea bifilare Z0 = 120 acosh(s/d); I5WHC, RR 4/2025 (efficienza)	IU5HIV, RadioKit Elettronica 1/2024 (linear loading for 1/4 antennas, his program is not included); monopole line model (Schelkunoff); two-wire line Z0 = 120 acosh(s/d); I5WHC, RR 4/2025 (efficiency)
+dipolo accorciato	shortened dipole
+Lunghezza fisica	Physical length
+In % della lunghezza risonante senza carico (λ/4 per la verticale, il braccio per il dipolo).	In % of the resonant length without loading (λ/4 for the vertical, the arm for the dipole).
+ø del filo del carico	ø of the loading wire
+Distanza tra i due fili del carico	Spacing of the two loading wires
+Posizione del carico	Loading position
+Dal punto di alimentazione: 0 = alla base (o al centro del dipolo), 50 = a meta'.	From the feed point: 0 = at the base (or the dipole centre), 50 = halfway.
+Q della bobina (confronto)	Coil Q (comparison)
+Altezza del dipolo	Dipole height
+Porta in risonanza e confronta (NEC)	Bring to resonance and compare (NEC)
+Carico (stessa lunghezza fisica)	Loading (same physical length)
+R in risonanza	R at resonance
+carico lineare	linear loading
+bobina alla stessa posizione	coil at the same position
+bobina al centro	coil at the centre
+bobina alla base	coil at the base
+cappelli alle punte	hats at the ends
+cappello in cima	hat on top
+ % della lunghezza risonante	 % of the resonant length
+due fili a 	two wires at 
+ cm, chiusi in fondo (Z0 	 cm, shorted at the end (Z0 
+ Ω); filo totale 	 Ω); total wire 
+Reattanza da aggiungere	Reactance to add
+ m dal punto di alimentazione	 m from the feed point
+Bobina equivalente	Equivalent coil
+perdita 	loss 
+ Ω con Q 	 Ω with Q 
+Confronto con il NEC (stessa lunghezza fisica, ognuno portato in risonanza)	Comparison with NEC (same physical length, each brought to resonance)
+«Porta in risonanza e confronta (NEC)» accorda il carico lineare e confronta efficienza e banda con la bobina alla stessa posizione, la bobina 	«Bring to resonance and compare (NEC)» tunes the linear loading and compares efficiency and bandwidth with the coil at the same position, the coil 
+ e il cappello	 and the hat
+ alle punte	 at the ends
+ in cima	 on top
+Modello a linea: sopra il carico il tratto aperto vale -j Z0 cot(β(H - p)), Z0 = 60 (ln(2H/a) - 1); il carico X porta a zero la reattanza alla base. Carico lineare = linea bifilare in corto, X = Z0s tan(βl), Z0s = 120 acosh(s/d). Confronto: a parita' di lunghezza il carico verso la cima e il cappello rendono di piu' della bobina alla base (I5WHC, RR 4/2025). Idea del carico lineare: IU5HIV, RKE 1/2024.	Line model: above the loading the open section is -j Z0 cot(β(H - p)), Z0 = 60 (ln(2H/a) - 1); the loading X brings the reactance at the base to zero. Linear loading = shorted two-wire line, X = Z0s tan(βl), Z0s = 120 acosh(s/d). Comparison: for the same length, loading toward the top and the hat work better than the coil at the base (I5WHC, RR 4/2025). Idea of linear loading: IU5HIV, RKE 1/2024.
+Carico alla base: e' la soluzione piu' comoda ma la corrente sul radiatore cala presto; spostandolo verso la cima l'efficienza sale (prova con la posizione).	Loading at the base: the easiest solution, but the current on the radiator drops early; moving it toward the top raises the efficiency (try the position).
+tutte le HF (80-10 m)	all HF (80-10 m)
+Filo risonante in armonica (EFLW)	Wire resonant on harmonics (EFLW)
+RadioKit Elettronica 1/2024 (EFLW: 21,12 m risonante su 40, 20, 15 e 10 m, fattore di accorciamento misurato sul posto); confronto con Dose (RK 6/2023) e l'EFHW Vibroplex (QST 2/2022)	RadioKit Elettronica 1/2024 (EFLW: 21.12 m resonant on 40, 20, 15 and 10 m, shortening factor measured on site); comparison with Dose (RK 6/2023) and the Vibroplex EFHW (QST 2/2022)
+Dipende da altezza, alberi, tetto e inclinazione: va misurato sul posto con il ROS (nell'articolo 0,93).	It depends on height, trees, roof and slope: measure it on site with the SWR (0.93 in the article).
+Bande scelte	Chosen bands
+Lunghezza per le bande scelte	Length for the chosen bands
+lunghezza trovata per le bande scelte (scritta 	length found for the chosen bands (entered 
+ MHz con k 	 MHz with k 
+Risonanze in armonica vicino alle bande scelte	Harmonic resonances near the chosen bands
+Mezze onde	Half waves
+Risonanza piu' vicina	Nearest resonance
+Dal centro banda	From band centre
+In banda?	In band?
+⚠ fuori banda	⚠ out of band
+Risonanze: f_n = n · c · k / (2 L) (n mezze onde, k fattore di accorciamento). «Lunghezza per le bande scelte» cerca la lunghezza che porta le armoniche piu' vicine ai centri banda insieme. Il ROS di ogni banda lo da' il calcolo NEC (trasformatore ideale 	Resonances: f_n = n · c · k / (2 L) (n half waves, k shortening factor). «Length for the chosen bands» looks for the length that brings the nearest harmonics to the band centres together. The SWR of each band comes from the NEC calculation (ideal transformer 
+:1, ROS riferito a 	:1, SWR referred to 
+ Ω). Fonte: EFLW, RKE 1/2024; confronto: Dose, RK 6/2023 (49:1 su FT-82-43) e l'EFHW Vibroplex (QST 2/2022).	 Ω). Source: EFLW, RKE 1/2024; comparison: Dose, RK 6/2023 (49:1 on FT-82-43) and the Vibroplex EFHW (QST 2/2022).
+Il fattore di accorciamento dipende da altezza, alberi, tetto e inclinazione: va misurato sul posto con il ROS (esempio dell'articolo: 0,93).	The shortening factor depends on height, trees, roof and slope: measure it on site with the SWR (example in the article: 0.93).
+Per gli 80 m: bobina con un codino in punta (Filari, «con bobina»), oppure filo lungo il doppio.	For 80 m: coil with a short tail at the end (Wire antennas, «with coil»), or a wire twice as long.
+Apri in Filari (EFHW)	Open in Wire antennas (EFHW)
+Trasformatore, nucleo, contrappeso e perdite nella scheda Filari.	Transformer, core, counterpoise and losses in the Wire antennas tab.
+rame smaltato	enamelled copper
+cavetto d'acciaio (pesca)	steel cable (fishing)
+Materiale del filo	Wire material
+Rame, rame smaltato e Copperweld in HF si equivalgono (effetto pelle nel rame); il cavetto d'acciaio da pesca e' leggerissimo ma perde di piu'. Nel modello NEC: LD 5 su tutti i fili.	Copper, enamelled copper and Copperweld are equivalent on HF (skin effect in the copper); the steel fishing cable is very light but loses more. In the NEC model: LD 5 on all wires.
+Perdite per banda: filo di 	Losses per band: wire of 
+ mm, nucleo 	 mm, core 
+Perdita nel filo	Wire loss
+Perdita nel nucleo	Core loss
+Cavetto d'acciaio: leggero e robusto (RadioKit 6/2023, EFHW da 112 g con 20,5 m di cavetto da 0,6 mm), ma l'acciaio conduce circa 40 volte meno del rame: la perdita conta soprattutto sulle bande basse.	Steel cable: light and strong (RadioKit 6/2023, 112 g EFHW with 20.5 m of 0.6 mm cable), but steel conducts about 40 times less than copper: the loss matters mostly on the low bands.
+banda larga (risonatore coassiale)	broadband (coaxial resonator)
+multibanda a rele'	relay multiband
+EFHW e fili	EFHW and wires
+risonanze in armonica (EFLW)	harmonic resonances (EFLW)
+trappolata multibanda	trap multiband
+L invertita / T (160 m)	inverted L / T (160 m)
+half-sloper sul traliccio	half-sloper on the tower
+ Ω, bobine 	 Ω, coils 
+ Ω riferiti al centro; il NEC da' quella vera	 Ω referred to the centre; NEC gives the real one
+Efficienza alla banda bassa (stima)	Efficiency on the low band (estimate)
+trappole con Q 	traps with Q 
+ Ω di perdita riferiti al centro (I5WHC, RR 4/2025)	 Ω of loss referred to the centre (I5WHC, RR 4/2025)
+ARRL Antenna Book (perimetri per banda); impostazione degli anelli concentrici come DK7ZB; I4MFA (RadioRivista 3/92, 5/2023, 11/2025: linee separate e di disaccoppiamento)	ARRL Antenna Book (perimeters per band); concentric loops arranged as DK7ZB; I4MFA (RadioRivista 3/92, 5/2023, 11/2025: separate and decoupling lines)
+Radiatori delle bande non alimentate	Driven elements of the unfed bands
+Con una linea per banda il radiatore di una banda non usata non e' un anello chiuso: e' chiuso sulla sua linea (aperta in fondo, al commutatore). «Chiusi» e' il modello di prima (anello continuo, come una linea in corto).	With one line per band the driven element of an unused band is not a closed loop: it is closed on its line (open at the far end, at the switch). «Closed» is the earlier model (continuous loop, like a shorted line).
+sulla loro linea	on their line
+Lunghezza delle linee	Line length
+Linea di ogni banda dal punto di alimentazione al commutatore (aperta in fondo).	Line of each band from the feed point to the switch (open at the far end).
+Impedenza delle linee	Line impedance
+Linee di disaccoppiamento	Decoupling lines
+Tronchi di coassiale in corto, lunghi λ/4 (con il fattore di velocita') alla frequenza alimentata, inseriti in cima agli anelli delle bande vicine (rapporto oltre 0,84, es. 12 e 10 m): li' aprono l'anello e tolgono l'interazione (I4MFA, RR 3/92).	Shorted coax stubs, λ/4 long (with the velocity factor) at the fed frequency, inserted at the top of the loops of the nearby bands (ratio above 0.84, e.g. 12 and 10 m): there they open the loop and remove the interaction (I4MFA, RR 3/92).
+sulle bande vicine	on the nearby bands
+VF del coassiale di disaccoppiamento	VF of the decoupling coax
+Accorda e confronta (NEC)	Tune and compare (NEC)
+ (sola)	 (alone)
+ (accordata)	 (tuned)
+Formule: per ogni banda radiatore 306,3/f e riflettore 313,6/f (ARRL), anelli concentrici sulle stesse crociere e un solo boom: la spaziatura in lambda cambia da banda a banda. Le interazioni tra gli anelli spostano le risonanze: il NEC le calcola con tutti gli anelli presenti (anche quelli non alimentati). Radiatori non alimentati: aperti (R serie altissima), chiusi (anello continuo) o chiusi sulla loro linea aperta in fondo (stub, Z = -j Z0 cot(βl/VF)). Linee di disaccoppiamento: stub di coassiale in corto lungo VF λ/4 alla banda alimentata, in cima agli anelli delle bande vicine (I4MFA, RR 3/92).	Formulas: for each band driven element 306.3/f and reflector 313.6/f (ARRL), concentric loops on the same spreaders and a single boom: the spacing in wavelengths changes from band to band. The interactions between the loops shift the resonances: NEC computes them with all loops present (including the unfed ones). Unfed driven elements: open (very high series R), closed (continuous loop) or closed on their line open at the far end (stub, Z = -j Z0 cot(βl/VF)). Decoupling lines: shorted coax stub VF λ/4 long at the fed band, at the top of the loops of the nearby bands (I4MFA, RR 3/92).
+12 e 10 m hanno lunghezze d'onda in rapporto circa 7/8: gli elementi si disturbano a vicenda (riflettore dei 10 m vicino al radiatore dei 12 m). Rimedi: linee di disaccoppiamento (tronchi di coassiale) su riflettori e direttori (I4MFA, RR 3/92 e 5/2023). «Accorda e confronta» misura l'effetto.	12 and 10 m have wavelengths in a ratio of about 7/8: the elements disturb each other (10 m reflector close to the 12 m driven element). Remedies: decoupling lines (coax stubs) on reflectors and directors (I4MFA, RR 3/92 and 5/2023). «Tune and compare» measures the effect.
+Radiatori non alimentati chiusi: e' come avere la loro linea in corto. Con una linea per banda il caso reale e' «aperti» o «sulla loro linea» (I4MFA, RR 11/2025).	Unfed driven elements closed: it is like having their line shorted. With one line per band the real case is «open» or «on their line» (I4MFA, RR 11/2025).
+Da sola	Alone
+Con tutti gli anelli (accordata)	With all loops (tuned)
+ dB, perimetri 	 dB, perimeters 
+Senza linee di disaccoppiamento	Without decoupling lines
+Interazione forte sui 	Strong interaction on 
+: con gli altri anelli i perimetri vanno cambiati del 	: with the other loops the perimeters must change by 
+ %, il F/B cambia di 	 %, the F/B changes by 
+ dB e il guadagno di 	 dB and the gain by 
+ dB rispetto alla banda da sola.	 dB compared with the band alone.
+Interazione piccola sui 	Small interaction on 
+: perimetri entro l'1 %, F/B entro 3 dB e guadagno entro 0,5 dB rispetto alla banda da sola.	: perimeters within 1 %, F/B within 3 dB and gain within 0.5 dB compared with the band alone.
+«Accorda e confronta (NEC)» porta in risonanza la banda alimentata con tutti gli anelli e la confronta con la stessa banda da sola	«Tune and compare (NEC)» brings the fed band to resonance with all the loops and compares it with the same band alone
+ e senza le linee di disaccoppiamento.	 and without the decoupling lines.
+ROS basso non vuol dire antenna efficiente	Low SWR does not mean an efficient antenna
+La resistenza vista dal trasmettitore e' radiazione piu' perdite (conduttore, bobine, terreno): un carico fittizio ha ROS 1. Sotto 0,2 λ un dipolo orizzontale perde molto nel terreno; su un'antenna accorciata il cappello in testa rende piu' della bobina alla base.	The resistance seen by the transmitter is radiation plus losses (conductor, coils, ground): a dummy load has SWR 1. Below 0.2 λ a horizontal dipole loses a lot in the ground; on a shortened antenna a top hat works better than a coil at the base.
+I5WHC, RadioRivista 4/2025; ON4UN, Low-Band DXing; DJ8WL	I5WHC, RadioRivista 4/2025; ON4UN, Low-Band DXing; DJ8WL
+Verticale accorciata	Shortened vertical
+λ/4 e radiali	λ/4 and radials
+ROS 2 non e' sempre uguale	SWR 2 is not always the same
+Lo stesso ROS si ha con R sotto o sopra Z0. Con R bassa (per esempio 25 Ω su 50) a pari potenza la corrente nei finali sale di circa il 40-50 %: un finale si e' guastato a 26-27 Ω con l'allarme fermo a ROS 2. Nel grafico del ROS la curva e' piena dove R < Z0.	The same SWR occurs with R below or above Z0. With low R (for example 25 Ω on 50) at the same power the current in the final stage rises by about 40-50 %: a final stage failed at 26-27 Ω with the alarm still at SWR 2. In the SWR chart the curve is solid where R < Z0.
+I5WHC, RadioRivista 9/2026	I5WHC, RadioRivista 9/2026
+Diagrammi › Parametri	Charts › Parameters
+Il nucleo del trasformatore EFHW scalda	The EFHW transformer core gets hot
+Il trasformatore 49:1 non e' ideale: un FT-240-43 ha circa il 75 % di efficienza, quindi a 100 W in FT8 dissipa una ventina di watt. I nuclei piccoli vanno bene solo in QRP.	The 49:1 transformer is not ideal: an FT-240-43 is about 75 % efficient, so at 100 W in FT8 it dissipates some twenty watts. Small cores are fine only for QRP.
+DG1JAN; OH7SV; RadioKit 6/2023	DG1JAN; OH7SV; RadioKit 6/2023
+Il fattore di accorciamento di un filo si misura sul posto	The shortening factor of a wire is measured on site
+Altezza, alberi, tetto e inclinazione cambiano la velocita' dell'onda sul filo: il valore giusto si trova con il ROS, accorciando a piccoli passi (nell'esempio dell'articolo 0,93). Il calcolo da' il punto di partenza.	Height, trees, roof and slope change the wave velocity on the wire: the right value is found with the SWR, shortening in small steps (0.93 in the example of the article). The calculation gives the starting point.
+RadioKit Elettronica 1/2024 (EFLW)	RadioKit Elettronica 1/2024 (EFLW)
+Filari › risonanze in armonica	Wire antennas › harmonic resonances
+ARRL Antenna Book, W5QJR, AA5TB; I3STS e IZ3LJH (RadioRivista 6/2024: rettangolo, spire in parallelo, trasformatore e rete L, Q misurato)	ARRL Antenna Book, W5QJR, AA5TB; I3STS and IZ3LJH (RadioRivista 6/2024: rectangle, turns in parallel, transformer and L network, measured Q)
+Per il quadrato: il lato; per l'ottagono: il diametro tra due vertici opposti; per il rettangolo: il lato orizzontale.	For the square: the side; for the octagon: the diameter between two opposite corners; for the rectangle: the horizontal side.
+Lato verticale	Vertical side
+Spire collegate	Turns connected
+In serie: L e Rr crescono con N². In parallelo: Rr come una spira, perdite divise per N, L poco sotto quella di una spira (mutua induttanza tra spire vicine).	In series: L and Rr grow with N². In parallel: Rr as one turn, losses divided by N, L slightly below one turn (mutual inductance between close turns).
+in serie	in series
+in parallelo	in parallel
+trasformatore su ferrite + rete L	ferrite transformer + L network
+Variabile: C minima	Variable capacitor: minimum C
+Con la massima del variabile da' la copertura in frequenza (capacita' parassita compresa).	With the maximum of the capacitor it gives the frequency coverage (stray capacitance included).
+Variabile: C massima	Variable capacitor: maximum C
+Q misurato	Measured Q
+0 = Q calcolato. Con il Q misurato (f / banda a -3 dB, a vuoto) la resistenza totale viene dalla misura e l'efficienza si corregge (I3STS, RR 6/2024).	0 = computed Q. With the measured Q (f / -3 dB bandwidth, unloaded) the total resistance comes from the measurement and the efficiency is corrected (I3STS, RR 6/2024).
+Copertura del variabile	Capacitor coverage
+ pF con L = 	 pF with L = 
+Bande coperte dal variabile	Bands covered by the capacitor
+ (trasformatore e rete L)	 (transformer and L network)
+C accordo	Tuning C
+R totale	Total R
+Tensione su C a 	Voltage on C at 
+Rete L	L network
+ Ω: rapporto troppo alto	 Ω: ratio too high
+nessuna banda radioamatoriale nella copertura	no amateur band in the coverage
+Trasformatore su ferrite	Ferrite transformer
+spire serie-parallelo, una per spira della loop (IZ3LJH, RR 6/2024); poi rete L: bobina in serie, C in parallelo verso i 50 Ω	series-parallel turns, one per loop turn (IZ3LJH, RR 6/2024); then L network: series coil, C in parallel toward the 50 Ω
+Trasformatore e rete L non sono nel modello NEC: il modello ha la sorgente in serie sul lato basso (la loop vista dal secondario); la tabella da' la rete L per ogni banda.	Transformer and L network are not in the NEC model: the model has the source in series on the bottom side (the loop seen from the secondary); the table gives the L network for each band.
+trasformatore n:1 e rete L sul lato basso	n:1 transformer and L network on the bottom side
+dal Q misurato 	from the measured Q 
+tubo di 	tube of 
+, effetto pelle	, skin effect
+Formule: Rr = 31171 (N·A)²/λ⁴ (N spire); Rperdita = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; banda = f/Q caricato. Fonti: ARRL Antenna Book, W5QJR, AA5TB. Ogni calcolatore crea il modello NEC con le misure calcolate (qui il condensatore come carico C) e lo verifica con il motore: accanto ai valori di formula compaiono quelli del calcolo NEC, e il modello si puo' aprire e salvare. Rettangolo: L di Grover (filo tondo). Spire in parallelo: L = (L1 + (N-1) M)/N con M = μ0 R (ln(8R/p) - 2), Rr di una spira, perdite / N (I3STS e IZ3LJH, RR 6/2024). Banda a ROS 2 = f/Qc · (S-1)/√S. Con il Q misurato: Rtotale = X/Q.	Formulas: Rr = 31171 (N·A)²/λ⁴ (N turns); Rloss = C·Rs/(πd), Rs = √(πfμ0/σ); L = μ0 (D/2)(ln(8D/d) - 2); Q = X/R; bandwidth = f/loaded Q. Sources: ARRL Antenna Book, W5QJR, AA5TB. Each calculator creates the NEC model with the computed dimensions (here the capacitor as a C load) and checks it with the engine: next to the formula values appear those of the NEC calculation, and the model can be opened and saved. Rectangle: Grover's L (round wire). Turns in parallel: L = (L1 + (N-1) M)/N with M = μ0 R (ln(8R/p) - 2), Rr of one turn, losses / N (I3STS and IZ3LJH, RR 6/2024). 2:1 SWR bandwidth = f/Qc · (S-1)/√S. With the measured Q: Rtotal = X/Q.
+trasformatore + rete L	transformer + L network
+Guadagno della singola antenna	Gain of the single antenna
+Per l'area efficace Ae = G λ²/4π: con un modello aperto viene dal suo calcolo in spazio libero.	For the effective area Ae = G λ²/4π: with an open model it comes from its free-space calculation.
+Distanza sovrapposte da verificare	Stacked distance to check
+0 = solo la distanza DL6WU. Con un valore la tabella confronta anche la cella di queste distanze con l'area efficace.	0 = only the DL6WU distance. With a value the table also compares the cell of these distances with the effective area.
+Distanza affiancate da verificare	Side-by-side distance to check
+0 = solo la distanza DL6WU.	0 = only the DL6WU distance.
+Area efficace	Effective area
+Area efficace e cella dello stack (IZ0FNO)	Effective area and stack cell (IZ0FNO)
+Cella dx · dy	Cell dx · dy
+✓ cella > Ae: guadagno pieno	✓ cell > Ae: full gain
+⚠ cella < Ae: accoppiamento forte, guadagno perso	⚠ cell < Ae: strong coupling, gain lost
+DL6WU (sovrapposte / affiancate)	DL6WU (stacked / side by side)
+da verificare	to check
+Lato minimo per l'area efficace	Minimum side for the effective area
+ m (cella quadrata)	 m (square cell)
+ Area efficace (IZ0FNO, RR 9/2026, curva NBS e simulazione di I0KPT): ogni antenna ha diritto a Ae = G λ²/4π; se la cella dello stack e' piu' piccola il guadagno si perde, oltre resta quasi costante. DL6WU guarda un piano alla volta, l'area efficace la cella intera: i due criteri danno distanze vicine perche' G ≈ 41000/(Bh·Bv).	 Effective area (IZ0FNO, RR 9/2026, NBS curve and I0KPT simulation): each antenna is entitled to Ae = G λ²/4π; if the stack cell is smaller the gain is lost, beyond it stays almost constant. DL6WU looks at one plane at a time, the effective area at the whole cell: the two criteria give close distances because G ≈ 41000/(Bh·Bv).
+La cella DL6WU e' piu' piccola dell'area efficace: controlla le distanze con il calcolo dello stack (Rumore/GT/Stack).	The DL6WU cell is smaller than the effective area: check the distances with the stack calculation (Noise/GT/Stack).
+R bassa ({0} Ω)	low R ({0} Ω)
+R alta ({0} Ω)	high R ({0} Ω)
+ROS {0} con R bassa ({1} Ω, sotto Z0/2): a pari potenza il finale porta circa il {2} % di corrente in piu' che su Z0 (I5WHC, RR 9/2026).	SWR {0} with low R ({1} Ω, below Z0/2): at the same power the final stage carries about {2} % more current than on Z0 (I5WHC, RR 9/2026).
+mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD, banda larga, multibanda a rele'	half wave, inverted V, folded, trap, OCF/Windom, G5RV, T2FD, broadband, relay multiband
+alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke; risonanze in armonica (EFLW)	end fed: EFHW 49:1 / 64:1, with coil, non-resonant wire 9:1 / 4:1; counterpoise, choke; harmonic resonances (EFLW)
+valori di partenza e guida di taratura (I4MFA)	starting values and tuning guide (I4MFA)
+due bande sullo stesso boom, una o due linee (W1JR)	two bands on the same boom, one or two lines (W1JR)
+lambda/4 e 5/8, ground plane, radiali, caricate con bobina, J-pole, trappolata multibanda, L invertita / T, half-sloper	lambda/4 and 5/8, ground plane, radials, coil-loaded, J-pole, trap multiband, inverted L / T, half-sloper
+λ/4 e dipolo accorciato; confronto con bobina e cappello (IU5HIV, I5WHC)	λ/4 and shortened dipole; comparison with coil and hat (IU5HIV, I5WHC)
+barra, distanza, condensatore in serie (Healey)	rod, spacing, series capacitor (Healey)
+stub singolo e doppio, carta di Smith (IW2FND)	single and double stub, Smith chart (IW2FND)
+Consigli pratici	Practical tips
+Schede brevi riassunte dalle fonti citate (Citazioni nei Documenti tecnici). Il pulsante apre il calcolatore che mostra i numeri; le stesse schede compaiono in fondo a quei calcolatori.	Short cards summarized from the cited sources (Citations in the Technical documents). The button opens the calculator that shows the numbers; the same cards appear at the bottom of those calculators.
+cella = Ae	cell = Ae
+Angoli di partenza verso	Take-off angles toward
+Locatore del corrispondente (4 o 6 caratteri): distanza dal tuo locatore, salti possibili in F2 e angolo di partenza per ogni numero di salti, segnati sul lobo in viola. Metodo deterministico (I4MFA, RR 9 e 11/2024), diverso da quello statistico di N6BV in HFTA.	Locator of the other station (4 or 6 characters): distance from your locator, possible F2 hops and take-off angle for each number of hops, marked in violet on the lobe. Deterministic method (I4MFA, RR 9 and 11/2024), different from N6BV's statistical one in HFTA.
+Frequenza critica dello strato F2 (MHz), facoltativa: con questa si calcola la MUF di ogni salto (MUF = foF2 / cos φ).	Critical frequency of the F2 layer (MHz), optional: with it the MUF of each hop is computed (MUF = foF2 / cos φ).
+{0} salti	{0} hops
+locatore non valido (o manca il tuo locatore)	invalid locator (or your locator is missing)
+Consigli	Tips
+Consiglio	Tip
+ROS, R < Z0	SWR, R < Z0
+ROS, R > Z0	SWR, R > Z0
+hmF2 300 km; I4MFA, RR 9 e 11/2024	hmF2 300 km; I4MFA, RR 9 and 11/2024

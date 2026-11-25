@@ -2,6 +2,14 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.7** (capitolo 28 del manuale), dalle idee trovate leggendo RadioRivista, RadioKit, QST e l'ARRL Handbook (solo riassunti e formule classiche, fonti citate):
+- **Nuovi calcolatori**: Yagi HF 2-3 elementi con la guida di taratura (I4MFA), Yagi bibanda interlacciata (W1JR), verticale trappolata multibanda (AV-5, bobina con cappello), L invertita / T per i 160 m, half-sloper sul traliccio (VE2CV), dipolo a banda larga con risonatore coassiale, dipolo multibanda a relè, carico lineare con il confronto bobina / cappello (IU5HIV, I5WHC), filo risonante in armonica (EFLW), gamma match (Healey) e adattamento a stub singolo e doppio con la carta di Smith;
+- **Quad multibanda**: si alimenta ogni banda, radiatori delle altre bande aperti, chiusi o sulla loro linea, linee di disaccoppiamento e «Accorda e confronta» con la misura dell'interazione 12/10 m (I4MFA);
+- **Loop magnetica**: rettangolo, spire in parallelo, trasformatore su ferrite + rete L, copertura del variabile, Q misurato e tabella per banda (I3STS, IZ3LJH);
+- **Filari**: materiale del filo (anche cavetto d'acciaio), FT-82-43 per il QRP, perdite per banda;
+- **Stack**: area efficace accanto a DL6WU (IZ0FNO); **ROS**: curva piena dove R < Z0, avviso con R bassa (I5WHC); **Terreno reale**: angoli di partenza verso un locatore, con la MUF (I4MFA);
+- **Efficienza** stimata nei calcolatori con bobine e trappole; nuova linguetta **Consigli**; nuovo esempio: Yagi 4 elementi per gli 8 m con radiatore ripiegato verticale.
+
 **Novità della 1.6** (capitolo 27 del manuale), da sei spunti trovati confrontando YA-NEC con i programmi liberi simili su GitHub (idee citate, nessun codice copiato):
 - **Calcolatori › Suggerimenti** (idea di AntAn): frequenza, altezza, terreno, ingombro massimo, cosa conta (guadagno, tutte le direzioni, angolo basso, NVIS) e polarizzazione; «Calcola tutte» calcola con il NEC le antenne adatte (dipolo, V invertita, delta, quad, Moxon, HB9CV, hex beam, Yagi DL6WU, verticali, J-pole, discone, NVIS) all'altezza e sul terreno scelti; «apri» porta nel calcolatore con quei valori;
 - **Ottimizzatore › Adattamento diretto a Z0** (idea di AntAn): con una Yagi riconosciuta cambia la lunghezza del radiatore e lunghezza e posizione del primo direttore finché il ROS su Z0 è minimo, con il calo di guadagno ammesso; «Annulla» rimette il modello di prima;

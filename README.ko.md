@@ -17,6 +17,12 @@
 
 <table><tr><td width="50%" align="center"><a href="docs/screenshots/struttura-3d.png"><img src="docs/screenshots/struttura-3d.png" alt="전류와 로브가 있는 3D 구조"></a><br><sub>전류와 로브가 있는 3D 구조</sub></td><td width="50%" align="center"><a href="docs/screenshots/terreno-reale.png"><img src="docs/screenshots/terreno-reale.png" alt="DEM 단면 위의 HFTA 방식 실제 지형"></a><br><sub>DEM 단면 위의 HFTA 방식 실제 지형</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/ricezione-rdf.png"><img src="docs/screenshots/ricezione-rdf.png" alt="수신: RDF, DMF와 잡음"></a><br><sub>수신: RDF, DMF와 잡음</sub></td><td width="50%" align="center"><a href="docs/screenshots/tolleranze.png"><img src="docs/screenshots/tolleranze.png" alt="제작 공차 (몬테카를로)"></a><br><sub>제작 공차 (몬테카를로)</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/cavo-balun.png"><img src="docs/screenshots/cavo-balun.png" alt="케이블과 발룬: 공통 모드 전류"></a><br><sub>케이블과 발룬: 공통 모드 전류</sub></td><td width="50%" align="center"><a href="docs/screenshots/yagi-incrociate.png"><img src="docs/screenshots/yagi-incrociate.png" alt="교차 야기: RHCP, LHCP, 축비"></a><br><sub>교차 야기: RHCP, LHCP, 축비</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/vento.png"><img src="docs/screenshots/vento.png" alt="기계 계산: 바람 (NTC 2018)"></a><br><sub>기계 계산: 바람 (NTC 2018)</sub></td><td width="50%" align="center"><a href="docs/screenshots/divisori.png"><img src="docs/screenshots/divisori.png" alt="전력 분배기와 위상 케이블"></a><br><sub>전력 분배기와 위상 케이블</sub></td></tr><tr><td width="50%" align="center"><a href="docs/screenshots/carichi-hf.png"><img src="docs/screenshots/carichi-hf.png" alt="HF 부하: 트랩과 코일"></a><br><sub>HF 부하: 트랩과 코일</sub></td><td width="50%" align="center"><a href="docs/screenshots/smith.png"><img src="docs/screenshots/smith.png" alt="스미스 차트"></a><br><sub>스미스 차트</sub></td></tr></table>
 
+## 1.7 새 기능
+
+- **새 계산기**: 튜닝 가이드가 있는 HF 2~3 엘리먼트 야기, 인터레이스 듀얼밴드 야기, 트랩 멀티밴드 버티컬, 160 m용 역 L / T, 타워 하프 슬로퍼, 광대역 다이폴, 릴레이 멀티밴드 다이폴, 선형 로딩, 고조파 공진 와이어, 감마 매치, 스미스 차트가 있는 스텁 정합.
+- 급전하지 않는 밴드의 선로와 디커플링 선로가 있는 **멀티밴드 쿼드**, 직사각형·병렬 권선·트랜스와 L 회로가 있는 **마그네틱 루프**, 선재와 FT-82-43을 고르는 **와이어 안테나**.
+- 유효 면적이 있는 **스택**, R이 어느 쪽인지 보여 주는 **SWR**, 로케이터 방향 발사각이 있는 **실제 지형**, 코일과 트랩의 효율, 새 **팁** 탭.
+
 ## 1.6 새 기능
 
 - **계산기 › 추천**: 주파수, 높이, 대지, 설치 공간으로 가능한 안테나를 NEC로 계산하고 이득, 균일성, 낮은 앙각 또는 NVIS 순으로 정렬합니다. «열기»는 해당 계산기로 이동합니다.
