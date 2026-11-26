@@ -99,7 +99,7 @@ namespace YaNec
         StackPanel stackRighe;
         TextBlock stackEsito;
         NecModel stackBase, stackAtteso;     // modello di partenza dello stack e ultimo modello messo dal riquadro
-        StackInfo stackInfo;
+        StackInfo stackDiaInfo;
         double stackDv, stackDh;
         DispatcherTimer stackTimer;
         bool stackInAggiorna;
@@ -133,8 +133,8 @@ namespace YaNec
                 // modello nuovo (aperto, modificato altrove): nuovo riconoscimento
                 StackInfo si = null;
                 try { si = StackDetect.Detect(model); } catch { si = null; }
-                if (si == null || si.Copies < 2 || (si.Rows < 2 && si.Cols < 2)) { stackBox.IsVisible = false; stackBase = null; stackInfo = null; return; }
-                stackBase = model; stackInfo = si; stackAtteso = model;
+                if (si == null || si.Copies < 2 || (si.Rows < 2 && si.Cols < 2)) { stackBox.IsVisible = false; stackBase = null; stackDiaInfo = null; return; }
+                stackBase = model; stackDiaInfo = si; stackAtteso = model;
                 stackDv = si.SpacingV; stackDh = si.SpacingH;
                 CostruisciRigheStack();
             }
@@ -146,7 +146,7 @@ namespace YaNec
         void CostruisciRigheStack()
         {
             stackRighe.Children.Clear();
-            StackInfo si = stackInfo;
+            StackInfo si = stackDiaInfo;
             string pol = si.HorizontalPol ? Lang.T("orizzontale") : Lang.T("verticale");
             stackRighe.Children.Add(new TextBlock { Text = Lang.F("Stack {0} × {1} (antenne uguali, {2})", si.Rows, si.Cols, pol), FontWeight = FontWeight.SemiBold, FontSize = 13, TextWrapping = TextWrapping.Wrap });
             double lam = model != null && model.FreqMHz > 0 ? 299.792458 / model.FreqMHz : double.NaN;
@@ -192,13 +192,13 @@ namespace YaNec
 
         void StackApplica()
         {
-            if (stackBase == null || stackInfo == null) return;
+            if (stackBase == null || stackDiaInfo == null) return;
             try
             {
                 bool primo = model == stackBase;
                 if (primo && run != null) FissaRisultato();   // il lobo di partenza resta tratteggiato
                 NecModel m = stackBase.Clone();
-                StackDetect.Apply(m, stackInfo, stackInfo.Rows > 1 ? stackDv : double.NaN, stackInfo.Cols > 1 ? stackDh : double.NaN, double.NaN);
+                StackDetect.Apply(m, stackDiaInfo, stackDiaInfo.Rows > 1 ? stackDv : double.NaN, stackDiaInfo.Cols > 1 ? stackDh : double.NaN, double.NaN);
                 List<string> err = m.Reevaluate();
                 if (err.Count > 0) { Status("Stack: " + err[0], true); return; }
                 stackAtteso = m;
@@ -206,7 +206,7 @@ namespace YaNec
                 stackInAggiorna = true;
                 try { GeoMetti(m, primo); }
                 finally { stackInAggiorna = false; }
-                Status(Lang.F("Distanza di stack cambiata: {0}. «Annulla» della barra Geometria torna al modello di partenza.", stackInfo.Rows > 1 ? Fmt(stackDv, 2) + " m" : Fmt(stackDh, 2) + " m"));
+                Status(Lang.F("Distanza di stack cambiata: {0}. «Annulla» della barra Geometria torna al modello di partenza.", stackDiaInfo.Rows > 1 ? Fmt(stackDv, 2) + " m" : Fmt(stackDh, 2) + " m"));
             }
             catch (Exception ex) { Status("Stack: " + ex.Message, true); }
         }
