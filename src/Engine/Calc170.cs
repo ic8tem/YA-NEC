@@ -192,7 +192,7 @@ namespace YaNec.Engine
                 o.Plane = "yz";
                 return o;
             }
-            int tf = dk.W(1, lam, -0.1, Math.Max(z, 1), lam, 0.1, Math.Max(z, 1), 0.001);
+            int tf = dk.W(1, 0.15 * lam, -0.1, z, 0.15 * lam, 0.1, z, 0.001);
             dk.Ground(h > 0 ? 2 : 0);
             dk.Tl(tf, 1, td, (nd + 1) / 2, zt, lam / 4);
             dk.Ex(tf, 1);
@@ -261,7 +261,7 @@ namespace YaNec.Engine
             Params.Add(new CalcParam("H", "Altezza del traliccio", 18, "m"));
             Params.Add(new CalcParam("dt", "Diametro equivalente del traliccio", 300, "mm", "Un traliccio a sezione triangolare di lato s vale circa un tubo di diametro 0,7 s."));
             Params.Add(new CalcParam("hf", "Quota dell'alimentazione", 16, "m", "Sul traliccio, di solito poco sotto la Yagi."));
-            Params.Add(new CalcParam("ang", "Inclinazione del filo", 45, "gradi", "Angolo del filo sull'orizzontale."));
+            Params.Add(new CalcParam("ang", "Inclinazione del filo", 30, "gradi", "Angolo del filo sull'orizzontale."));
             Params.Add(new CalcParam("lh", "Yagi in cima: lunghezza degli elementi", 10, "m", "La Yagi fa da cappello capacitivo: nel modello due fili incrociati lunghi cosi'. 0 = traliccio senza Yagi."));
             Params.Add(new CalcParam("d", "ø del filo", 2, "mm"));
         }
@@ -274,8 +274,11 @@ namespace YaNec.Engine
         {
             double f = P("f"), best = 1, rb = double.MaxValue;
             Complex zb = Complex.Zero;
+            // 1.7.1: la ricerca si ferma dove il filo toccherebbe terra (oltre, il filo resta accorciato e la ricerca finiva sul limite)
+            double lam0 = C0 / f, hf0 = Math.Max(1, Math.Min(Math.Max(3, P("H")) - 0.5, P("hf"))), sa0 = Math.Sin(Math.Max(10, Math.Min(80, P("ang"))) * Math.PI / 180);
             for (double sc = 0.5; sc <= 1.6; sc += 0.02)
             {
+                if (sc > 0.5 && hf0 - 0.95 * lam0 / 4 * sc * sa0 < 0.5) break;
                 Scale = sc;
                 Complex z = C170.Zin(Compute().Nec, f);
                 double r = C170.Ros(z, 50);
@@ -378,7 +381,7 @@ namespace YaNec.Engine
             if (!formulaOk && Scale == 1) o.Warnings.Add("Con questa R e queste misure il gamma non arriva a 50 Ω: avvicina la barra o usane una piu' sottile (rapporto di salita piu' alto).");
             {
                 o.Card("Lunghezza del gamma", C170.N(lg * 100, 1) + " cm", "dal centro al ponticello" + (Scale != 1 ? " (accordato col NEC)" : ""), true);
-                o.Card("Condensatore in serie", C170.N(cs * 1e12, 0) + " pF", "annulla +j" + C170.N(z.Imaginary, 0) + " Ω", true);
+                o.Card("Condensatore in serie", C170.N(cs * 1e12, 0) + " pF", "annulla la reattanza +j" + C170.N(z.Imaginary, 0) + " Ω", true);
             }
             o.Formula = "Formule (Healey, QST 4/1969): α = ln(2s/d) / ln(2s/D), rapporto (1 + α)²; Z0 = 60 acosh((4s² - d² - D²)/(2dD)); la meta' dell'antenna vista attraverso il rapporto, (1+α)² R/2, " +
                 "e' in parallelo al tratto di linea in corto j Z0 tan(βl): la lunghezza l porta la parte reale a 50 Ω, il condensatore in serie toglie la reattanza. Il NEC verifica sul dipolo con il gamma vero.";

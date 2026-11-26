@@ -2305,3 +2305,9 @@ Nuova linguetta **Consigli** dopo i Documenti tecnici: schede brevi con la fonte
 ### 28.16 Stack: scegliere la distanza con un clic
 
 In Rumore/GT/Stack, nella tabella «Distanze provate» (stack VHF, HF e a due frequenze) ogni riga si clicca: la riga scelta diventa arancio e **Crea lo stack (riga scelta o proposta)** crea lo stack nel modello aperto con quella distanza. Senza una scelta il pulsante usa la distanza proposta; un nuovo calcolo toglie la scelta.
+
+### 28.17 Quote cliccabili e distanza di stack in diretta (1.7.1)
+
+Nella **Struttura 3D**, con il terreno e le quote accesi, le scritte della linea di quota si cliccano (sotto il mouse hanno lo sfondo azzurro): la quota di un livello (per esempio 9,00 m), **h** (quota dal suolo) e **Δ** (distanza tra due livelli). Si scrive il valore nuovo e si preme Invio: h o la quota del livello più basso spostano tutta l'antenna; Δ o la quota di un livello più alto spostano quel livello e quelli sopra. Se un filo attraversa la quota di taglio, o se nel modello ci sono archi, eliche o simmetrie, si sposta con la barra Geometria. **↶ Annulla** della barra Geometria torna indietro.
+
+Nei **Diagrammi**, quando il modello è uno stack di antenne uguali (lo stesso riconoscimento della scheda Stack), in alto a destra compare il riquadro della distanza: − e + (passi del 2 %), il campo e il cursore (da 0,4 a 2,2 volte la distanza di partenza, con il valore in λ). I diagrammi si ricalcolano a ogni scatto; al primo cambio il risultato di partenza si fissa e resta tratteggiato per il confronto. Sotto ci sono guadagno, F/B ed elevazione del lobo. **↶ Annulla** torna al modello di partenza.

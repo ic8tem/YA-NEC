@@ -97,6 +97,7 @@ namespace YaNec.Engine
         {
             AdattaEsito r = new AdattaEsito { SoloRadiatore = soloRadiatore };
             NecModel m = Ricentra.Copia(src);
+            NecModel base0 = Ricentra.Copia(src);   // 1.7.1: per tenere le variabili del modello di partenza
             m.FreqMHz = f;
             string perche;
             Yagi y = Trova(m, out perche);
@@ -191,8 +192,29 @@ namespace YaNec.Engine
                 r.Note.Add("Una variazione e' arrivata al limite (radiatore e D1 +-5 %, posizione di D1 +-60 % della distanza dal radiatore).");
             m.FileName = string.IsNullOrEmpty(src.FileName) ? "adattato.nec" :
                 System.IO.Path.GetFileNameWithoutExtension(src.FileName) + " adattato " + z0.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) + " ohm.nec";
-            r.Modello = m;
+            r.Modello = ConservaVariabili(src, base0, m);
             return r;
+        }
+
+        /// <summary>1.7.1: il modello adattato tiene le variabili (schede SY) e le espressioni dei fili non toccati;
+        /// solo i fili cambiati (radiatore e D1) passano ai numeri. Se le schede non corrispondono una a una resta il modello in numeri.</summary>
+        static NecModel ConservaVariabili(NecModel src, NecModel base0, NecModel m)
+        {
+            if (src.Variables.Count == 0) return m;
+            NecModel o = src.Clone();
+            if (o.Geometry.Count != m.Geometry.Count || base0.Geometry.Count != m.Geometry.Count) return m;
+            for (int i = 0; i < m.Geometry.Count; i++)
+                if (o.Geometry[i].Id != m.Geometry[i].Id || base0.Geometry[i].Id != m.Geometry[i].Id) return m;
+            Func<double, double, bool> div = (a, b) => Math.Abs(a - b) > 1e-9 * Math.Max(1, Math.Abs(a));
+            for (int i = 0; i < m.Geometry.Count; i++)
+            {
+                GeomCard a = base0.Geometry[i], b = m.Geometry[i];
+                if (div(a.F1, b.F1) || div(a.F2, b.F2) || div(a.F3, b.F3) || div(a.F4, b.F4) || div(a.F5, b.F5) || div(a.F6, b.F6) || div(a.F7, b.F7))
+                    o.Geometry[i] = b.Clone();
+            }
+            o.FreqMHz = m.FreqMHz;
+            o.FileName = m.FileName;
+            return o;
         }
     }
 }

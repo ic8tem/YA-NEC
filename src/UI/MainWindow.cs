@@ -652,6 +652,7 @@ namespace YaNec
             d.Children.Insert(0, barGeo);
             view3d = new Structure3DView();
             view3d.WireClicked += (tag, ctrl) => FiloCliccato3D(tag, ctrl);
+            view3d.QuotaCliccata += (k, intervallo, v, pt) => QuotaCliccata3D(k, intervallo, v, pt);   // 1.7.1
             view3d.OggettoCliccato += (tipo, riga) =>
             {
                 string k = tipo == 0 ? "linee" : tipo == 1 ? "carichi" : "trasformatori";
@@ -769,7 +770,11 @@ namespace YaNec
             a2.Margin = new Thickness(3, 0, 0, 0);
             g.Children.Add(a1);
             g.Children.Add(a2);
-            d.Children.Add(g);
+            // 1.7.1: riquadro della distanza di stack in alto a destra, sopra i diagrammi (solo con uno stack di antenne uguali)
+            Grid ov = new Grid();
+            ov.Children.Add(g);
+            ov.Children.Add(RiquadroStackDiagrammi());
+            d.Children.Add(ov);
             return d;
         }
 

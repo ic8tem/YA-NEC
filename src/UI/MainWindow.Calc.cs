@@ -819,6 +819,7 @@ namespace YaNec
         void ShowPatterns()
         {
             if (polAz == null) return;
+            AggiornaRiquadroStack();   // 1.7.1
             polAz.Traces.Clear();
             polEl.Traces.Clear();
             polAz.Notes = new string[0];

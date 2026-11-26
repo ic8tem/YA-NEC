@@ -755,7 +755,7 @@ namespace YaNec
                 mostraTabella(last);
                 if (last.Chart != null && last.Chart.X != null)
                 {
-                    chartTitle.Text = last.Chart.Title + (string.IsNullOrEmpty(last.Chart.MarkText) ? "" : "  (" + last.Chart.MarkText + ")");
+                    chartTitle.Text = Lang.T(last.Chart.Title) + (string.IsNullOrEmpty(last.Chart.MarkText) ? "" : "  (" + last.Chart.MarkText + ")");
                     chart.X = last.Chart.X;
                     chart.XLabel = last.Chart.XLabel;
                     chart.YLabel = last.Chart.YLabel;

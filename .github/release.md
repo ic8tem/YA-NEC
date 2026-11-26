@@ -2,6 +2,11 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.7.1**:
+- **Struttura 3D**: le quote (h, Δ e le quote dei livelli) si cliccano e si cambiano: h sposta tutta l'antenna, Δ il livello e quelli sopra; «↶ Annulla» torna indietro;
+- **Diagrammi**: con uno stack di antenne uguali, riquadro in alto a destra per cambiare la distanza in diretta (− / + / cursore), con il lobo di partenza tratteggiato;
+- correzioni: half-sloper con inclinazione predefinita 30° (con 45° il filo toccava terra), dipolo a banda larga senza l'avviso sulla linea, Adattamento diretto a Z0 che tiene le variabili del modello, traduzioni inglesi mancanti.
+
 **Novità della 1.7** (capitolo 28 del manuale), dalle idee trovate leggendo RadioRivista, RadioKit, QST e l'ARRL Handbook (solo riassunti e formule classiche, fonti citate):
 - **Nuovi calcolatori**: Yagi HF 2-3 elementi con la guida di taratura (I4MFA), Yagi bibanda interlacciata (W1JR), verticale trappolata multibanda (AV-5, bobina con cappello), L invertita / T per i 160 m, half-sloper sul traliccio (VE2CV), dipolo a banda larga con risonatore coassiale, dipolo multibanda a relè, carico lineare con il confronto bobina / cappello (IU5HIV, I5WHC), filo risonante in armonica (EFLW), gamma match (Healey) e adattamento a stub singolo e doppio con la carta di Smith;
 - **Quad multibanda**: si alimenta ogni banda, radiatori delle altre bande aperti, chiusi o sulla loro linea, linee di disaccoppiamento e «Accorda e confronta» con la misura dell'interazione 12/10 m (I4MFA);

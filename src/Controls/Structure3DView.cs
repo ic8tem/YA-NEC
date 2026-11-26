@@ -108,6 +108,12 @@ namespace YaNec
         public HashSet<int> SegVirtuali = new HashSet<int>();
         public bool ShowObjects = true;
         public event Action<int, int> OggettoCliccato;   // tipo, riga
+        // 1.7.1 (bozzetto «quote cliccabili» approvato da IC8TEM il 26/11/2026 06:17): clic su una quota o su h / Δ della linea di quota.
+        // Argomenti: indice del livello (1 = il piu' basso), true = intervallo (h o Δ), false = quota assoluta; valore attuale; punto del clic.
+        public event Action<int, bool, double, Point> QuotaCliccata;
+        public List<double> LivelliQuote = new List<double>();   // 0 e i livelli disegnati nell'ultimo fotogramma
+        readonly List<Tuple<Rect, int, bool>> zoneQuote = new List<Tuple<Rect, int, bool>>();
+        int quotaSotto = -1;   // zona sotto il mouse (indice in zoneQuote)
         readonly List<Tuple<Point, int, int>> zoneOggetti = new List<Tuple<Point, int, int>>();
         static readonly Color ColTl = Color.Parse("#8A3FFC"), ColCarico = Color.Parse("#C2410C"), ColRete = Color.Parse("#0F766E");
         public List<double[]> Preview;                  // segmenti x1 y1 z1 x2 y2 z2 dopo la trasformazione
@@ -190,7 +196,11 @@ namespace YaNec
             base.OnPointerMoved(e);
             if (!rotating && !panning)
             {
-                if (HoverValues) { hoverAt = e.GetPosition(this); InvalidateVisual(); }
+                Point hp = e.GetPosition(this);
+                int qs = -1;
+                if (QuotaCliccata != null) for (int i = 0; i < zoneQuote.Count; i++) if (zoneQuote[i].Item1.Contains(hp)) { qs = i; break; }
+                if (qs != quotaSotto) { quotaSotto = qs; Cursor = qs >= 0 ? new Cursor(StandardCursorType.Hand) : Cursor.Default; InvalidateVisual(); }
+                if (HoverValues) { hoverAt = hp; InvalidateVisual(); }
                 return;
             }
             hoverAt = null;
@@ -214,6 +224,18 @@ namespace YaNec
         {
             base.OnPointerReleased(e);
             Point rp = e.GetPosition(this);
+            if (rotating && QuotaCliccata != null && Math.Abs(rp.X - pressAt.X) + Math.Abs(rp.Y - pressAt.Y) < 4)
+            {
+                foreach (Tuple<Rect, int, bool> z in zoneQuote)
+                    if (z.Item1.Contains(rp))
+                    {
+                        int k = z.Item2;
+                        double v = z.Item3 ? LivelliQuote[k] - LivelliQuote[k - 1] : LivelliQuote[k];
+                        rotating = panning = false; e.Pointer.Capture(null);
+                        QuotaCliccata(k, z.Item3, v, rp);
+                        return;
+                    }
+            }
             if (rotating && OggettoCliccato != null && Math.Abs(rp.X - pressAt.X) + Math.Abs(rp.Y - pressAt.Y) < 4)
             {
                 foreach (Tuple<Point, int, int> z in zoneOggetti)
@@ -637,7 +659,7 @@ namespace YaNec
                 DrawCurrentCurves(ctx, cx, cy, sc, ox, oy, oz, R);
 
             // quote altimetriche dal suolo
-            if (quote) DrawHeights(ctx, levels, cx, cy, sc, ox, oy, oz, R, minx, miny);
+            if (quote) DrawHeights(ctx, levels, cx, cy, sc, ox, oy, oz, R, minx, miny); else zoneQuote.Clear();
 
             // fasi delle sorgenti ed direzione del lobo
             if (ShowPhases) DrawPhasesAndLobe(ctx, cx, cy, sc, ox, oy, oz, R);
@@ -839,6 +861,16 @@ namespace YaNec
             ctx.DrawGeometry(Pal.B(c), null, g);
         }
 
+        // 1.7.1: zona cliccabile di una scritta della linea di quota (allineata a destra in x); sotto il mouse sfondo azzurro
+        void ZonaQuota(DrawingContext ctx, string testo, double x, double y, double size, FontWeight w, int k, bool intervallo)
+        {
+            if (QuotaCliccata == null) return;
+            FormattedText ft = Draw.Ft(testo, size, Pal.ChartText, w);
+            Rect r = new Rect(x - ft.Width - 4, y - 2, ft.Width + 8, ft.Height + 4);
+            if (zoneQuote.Count == quotaSotto) ctx.DrawRectangle(Pal.B(Color.FromArgb(70, 0x37, 0x8A, 0xDD)), Pal.P(Color.Parse("#378ADD"), 1), r, 4, 4);
+            zoneQuote.Add(Tuple.Create(r, k, intervallo));
+        }
+
         // linea di quota verticale a sinistra della struttura: tacca a 0 m e a ogni livello, h dal suolo e distanza tra i livelli
         void DrawHeights(DrawingContext ctx, List<double> lv, double cx, double cy, double sc, double ox, double oy, double oz, double R, double minx, double miny)
         {
@@ -856,10 +888,14 @@ namespace YaNec
                 p[k] = new Point(qx, qy);
             }
             ctx.DrawLine(pen, p[0], p[p.Length - 1]);
+            zoneQuote.Clear();
+            LivelliQuote = all;
             for (int k = 0; k < p.Length; k++)
             {
                 ctx.DrawLine(pen, new Point(p[k].X - 9, p[k].Y), new Point(p[k].X + 9, p[k].Y));
-                Draw.TextR(ctx, Draw.N(all[k], 2) + " m", p[k].X - 12, p[k].Y - 9, 12, c);
+                string tq = Draw.N(all[k], 2) + " m";
+                if (k > 0) ZonaQuota(ctx, tq, p[k].X - 12, p[k].Y - 9, 12, FontWeight.Normal, k, false);
+                Draw.TextR(ctx, tq, p[k].X - 12, p[k].Y - 9, 12, c);
                 if (k == 0) continue;
                 // freccette alle estremita' dell'intervallo
                 bool upw = p[k].Y < p[k - 1].Y;
@@ -870,7 +906,7 @@ namespace YaNec
                 }
                 string lab = (k == 1 ? "h = " : "Δ = ") + Draw.N(all[k] - all[k - 1], 2) + " m";
                 double my = (p[k].Y + p[k - 1].Y) / 2, mx = (p[k].X + p[k - 1].X) / 2;
-                if (Math.Abs(p[k].Y - p[k - 1].Y) > 16) Draw.TextR(ctx, lab, mx - 10, my - 9, 12.5, c, FontWeight.Bold);
+                if (Math.Abs(p[k].Y - p[k - 1].Y) > 16) { ZonaQuota(ctx, lab, mx - 10, my - 9, 12.5, FontWeight.Bold, k, true); Draw.TextR(ctx, lab, mx - 10, my - 9, 12.5, c, FontWeight.Bold); }
                 // tratteggio dalla tacca al punto della struttura piu' vicino a quella quota
                 double best = 1e30, bx = 0, by = 0, bz = 0;
                 for (int i = 0; i < Geo.N; i++)

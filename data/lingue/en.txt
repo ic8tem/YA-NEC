@@ -8110,3 +8110,29 @@ Distanza scelta: {0} m ({1} λ). «Crea lo stack» usa questa distanza.	Chosen d
 Crea lo stack (riga scelta o proposta)	Create the stack (chosen or proposed row)
 Crea lo stack nel modello aperto con la distanza della riga cliccata nella tabella (arancio) o, senza scelta, con quella proposta.	Creates the stack in the open model with the distance of the row clicked in the table (orange) or, without a choice, with the proposed one.
 Nessuna distanza proposta: tutte superano il ROS attivo massimo. Clicca una riga della tabella per sceglierne una.	No proposed distance: all exceed the maximum active SWR. Click a row of the table to choose one.
+velocita'	speed
+dal centro al ponticello (accordato col NEC)	from the centre to the shorting strap (tuned with NEC)
+annulla la reattanza +j	cancels the reactance +j
+annulla la reattanza 	cancels the reactance 
+Con questo traliccio il ROS minimo e' 	With this tower the lowest SWR is 
+: serve una rete di adattamento al punto di alimentazione (o cambia quota dell'alimentazione, inclinazione e carico in cima).	: a matching network is needed at the feed point (or change the feed height, the slope and the top load).
+h: quota dal suolo	h: height above ground
+Δ tra i livelli {0} e {1}	Δ between levels {0} and {1}
+Quota del livello {0}	Height of level {0}
+sposta tutta l'antenna	moves the whole antenna
+sposta questo livello e quelli sopra	moves this level and those above
+Invio applica, Esc chiude	Enter applies, Esc closes
+Scrivi un numero.	Enter a number.
+{0}: {1} → {2} m. «Annulla» della barra Geometria torna indietro.	{0}: {1} → {2} m. «↶ Undo» in the Geometry bar goes back.
+Nel modello ci sono archi, eliche o simmetrie (GA, GH, GM, GR, GX): sposta con la barra Geometria.	The model has arcs, helices or symmetries (GA, GH, GM, GR, GX): move it with the Geometry bar.
+Il filo {0} attraversa la quota di taglio ({1} m): sposta con la barra Geometria.	Wire {0} crosses the cut height ({1} m): move it with the Geometry bar.
+Nessun filo da spostare a questa quota.	No wire to move at this height.
+Con questo valore i fili andrebbero sotto il suolo.	With this value the wires would go below ground.
+Con questo valore il livello scenderebbe sotto quello di prima.	With this value the level would drop below the previous one.
+tratteggio: lobo con la distanza di partenza	dashed: lobe with the starting spacing
+{0} dBi · F/B {1} dB · el {2}°	{0} dBi · F/B {1} dB · el {2}°
+Stack {0} × {1} (antenne uguali, {2})	Stack {0} × {1} (identical antennas, {2})
+partenza {0} m	start {0} m
+distanza verticale	vertical spacing
+distanza orizzontale	horizontal spacing
+Distanza di stack cambiata: {0}. «Annulla» della barra Geometria torna al modello di partenza.	Stack spacing changed: {0}. «↶ Undo» in the Geometry bar goes back to the starting model.
