@@ -2,7 +2,7 @@
 
 # Videocorso
 
-Un corso completo in 37 lezioni brevi (2-5 minuti), in italiano e in inglese. Girate con la 1.5.3 (la 32 con la 1.5.8, la 33 con la 1.5.9, dalla 34 alla 36 con la 1.7.0) (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
+Un corso completo in 38 lezioni brevi (2-5 minuti), in italiano e in inglese. Girate con la 1.5.3 (la 32 con la 1.5.8, la 33 con la 1.5.9, dalla 34 alla 36 con la 1.7.0, la 37 con la 1.7.2) (Calcolatori a famiglie, Lobi e Parametri nella fascia dei Diagrammi). Ogni video ha i sottotitoli impressi; il file .srt serve per chi li vuole a parte (per esempio su YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_00_programma_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lezione 0 - Il programma in 5 minuti"></a></td><td>
 
@@ -339,6 +339,15 @@ I nuovi calcolatori HF della 1.7: Yagi HF 2-3 elementi con la guida di taratura 
 Quad multibanda con «Accorda e confronta»; loop magnetica rettangolare e ottagonale, spire in parallelo, accoppiamenti e bande coperte dal variabile; gamma match (Healey) accordato con il NEC; adattamento a stub con la carta di Smith (IW2FND); stack VHF con la riga della tabella scelta con un clic e «Crea lo stack»; il lato R < Z0 in arancio nella carta di Smith e nel ROS; la linguetta Consigli.
 
 ▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_36_novita_1_7_adattamenti_stack_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_36_novita_1_7_adattamenti_stack_IT.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_37_novita_1_7_1_quote_stack_IT.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_37.jpg" alt="Lezione 37 - Quote cliccabili e stack in diretta (1.7.1 e 1.7.2)"></a></td><td>
+
+### Lezione 37 - Quote cliccabili e stack in diretta (1.7.1 e 1.7.2)
+
+Stack 2 x 1 di Yagi 4 elementi a 144 MHz: nella Struttura 3D si cliccano Δ (4,00 → 4,50 m) e h (9 → 10 m); nei Diagrammi il riquadro della distanza di stack con + e cursore ricalcola i lobi in diretta, con il lobo di partenza tratteggiato. La 1.7.2: aggiornamento automatico firmato e protezioni contro i file preparati apposta.
+
+▶ [Guarda il video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_corso_37_novita_1_7_1_quote_stack_IT.mp4) · [sottotitoli .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_corso_37_novita_1_7_1_quote_stack_IT.srt)
 
 </td></tr></table>
 

@@ -4,6 +4,8 @@
 
 **Προσομοιωτής συρμάτινων κεραιών βασισμένος στο NEC-2** για Windows, Linux και macOS. Από τον Costantino Cerrotta **IC8TEM**. Άδεια GPL-3.0.
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[Τι νέο στην 1.3](Novita-1.3-el)**
 >
 > **[Τι νέο στην 1.2](Novita-1.2-el)**

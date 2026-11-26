@@ -22,110 +22,10 @@ Funktionen: Impedanz, SWR, Gewinn, 2D- und 3D-Diagramme, Frequenz-Sweep und Smit
 - **Neue Rechner**: KW-Yagi mit 2-3 Elementen und Abgleichhilfe, verschachtelte Zweiband-Yagi, Mehrband-Vertikal mit Sperrkreisen, Inverted L / T für 160 m, Half-Sloper am Mast, Breitbanddipol, Mehrbanddipol mit Relais, Linear Loading, auf Harmonischen resonanter Draht, Gamma-Match und Stub-Anpassung mit Smith-Diagramm.
 - **Mehrband-Quad** mit den Leitungen der nicht gespeisten Bänder und Entkopplungsleitungen; **Magnetic Loop** rechteckig, mit parallelen Windungen, Übertrager und L-Glied; **Drahtantennen** mit Drahtmaterial und FT-82-43.
 - **Stack** mit Wirkfläche; **SWR** zeigt, auf welcher Seite R liegt; **Reales Gelände** mit Abstrahlwinkeln zu einem Locator; Wirkungsgrad bei Spulen und Sperrkreisen; neuer Reiter **Tipps**.
+- **1.7.1**: anklickbare Höhenangaben in der 3D-Struktur; in den Diagrammen lässt sich der Stockungsabstand live ändern.
+- **1.7.2 (Sicherheit)**: die automatische Aktualisierung installiert nur von YA-NEC signierte Pakete; absichtlich präparierte Dateien beenden das Programm nicht mehr.
 
-## Neu in 1.6
-
-- **Rechner › Vorschläge**: aus Frequenz, Höhe, Boden und Platz die möglichen Antennen, mit NEC berechnet und nach Gewinn, Gleichmäßigkeit, flachem Winkel oder NVIS sortiert; «öffnen» führt zum Rechner.
-- **Optimierer**: **direkte Anpassung an Z0** einer Yagi (Strahler und erster Direktor, ohne Anpassglied) und die Methode **differentielle Evolution**, die den ganzen Bereich der Variablen durchsucht.
-- **Ergebnis festhalten** in Diagrammen, Frequenz und Smith (bis zu 4 gestrichelte Kurven zum Vergleich); 3D-Struktur mit **nach Phase gefärbten Strömen**.
-- **Kabel und Balun**: der Schirm bis zur Station (Höhe und Richtung der Strecke), Strom an der Station und vom Kabel abgestrahlte Leistung.
-- **EZNEC-Import**: Laplace-Lasten, Stubs, verlustbehaftete Leitungen und L-Netzwerke; NEC-2-**Flächen SP/SM/SC**, animierte Ströme, Eingabeprüfungen; Lizenz **GPL-3.0-or-later**.
-
-## Neu in 1.5.8
-
-- **Rechner > HF > Drahtantennen**: Schaltfläche **Tabelle ›** mit NEC-Tabellen (EFHW 49:1 und 64:1 mit und ohne Gegengewicht, 9:1 mit dem besten Gegengewicht, mittlerer oder perfekter Boden); eine Zeile wird in die Seite übernommen, die freie Berechnung bleibt.
-- **Optimierer**: **VHF-Maske SWR + G/T**, optimiert das G/T eines 2 x 2 Stacks bei 30 Grad (DL6WU-Abstände, VE7BQH-Temperaturen, 20 dB Vorverstärker, 2 dB Kabel) zusammen mit dem SWR.
-- **Berechnungshandbuch**: Kapitel 16 und Abschnitt 8.4; **Videokurs**: Lektion 32.
-
-## Neu in 1.5.7
-
-- **Drahtantennen**: die Ladespule ist eine Option der EFHW (ja / nein), und **Spule abstimmen (NEC)** findet die passende Induktivität mit Gegengewicht und Boden.
-- **Übersetzungen**: die orangen Warnungen aller Rechner werden jetzt übersetzt; Zeichnungsbeschriftungen und die Echtzeitberechnung ebenfalls.
-- **3D-Struktur**: isolierter Draht wird nicht mehr als Reihe von Spulen gezeichnet.
-
-## Neu in 1.5.6
-
-- **Rechner > HF > Drahtantennen** (neu): endgespeiste Drahtantennen. EFHW Mehrband, Einband und mit Spule (49:1 oder 64:1), nicht resonanter Draht mit 9:1 oder 4:1; sechs Anordnungen (schräg nach oben oder unten, vertikal, umgekehrtes L und U, gerade); Gegengewicht 0,05 λ oder Koaxmantel, Kondensator, Spannung am Ende, SWR je Band aus dem TF5NN-Modell und aus NEC; **Länge abstimmen (NEC)**.
-- **Sprungtasten**: von den Drahtantennen und den anderen Drahtseiten (Dipole, OCF/Windom, T2FD, G5RV, Delta, Quad, Loop, Skywire, Moxon, Hexbeam) öffnet sich die Seite Balun, Drossel (FT-Ringkerne), Viertelwelle (RG-Kabel) oder Lasten bereits ausgefüllt, mit «‹ Zurück».
-- **Discone**: von der Familie HF in die Familie VHF verschoben.
-
-## Neu in 1.5.5
-
-- **Rechner > HEN**: die Karte zeigt horizontale Polarisation, wie die NEC-Prüfung (vorher stand dort vertikal).
-- **VNA-Messungen**: Titel, Legende und Korrekturvorschlag übersetzt (sie blieben auf Italienisch).
-- **Videokurs**: 32 Lektionen, mit den neuen 30 «Kabel und VNA-Messungen» und 31 «Weitere Rechner».
-
-## Neu in 1.5.4
-
-- **Von Hand geschriebenes Modell**: Drähte, die vor der Quelle übernommen werden, geben einen orangefarbenen Hinweis in der Statusleiste, ohne Fenster; echte Fehlerfenster erhalten den Fokus (Enter oder Esc schließen sie).
-- **Übersetzungen**: Seite Boom (vom Aufmaß zum elektrischen Modell) ins Englische übersetzt.
-- **Vollständiger Videokurs**: 30 Lektionen mit 1.5.3-1.5.4 aufgenommen, auf Italienisch und Englisch, mit der neuen Lektion 29 «Skalieren und neu zentrieren».
-
-## Neu in 1.5.3
-
-- **Skalieren und neu zentrieren** (Variablen und Optimierung): ein MMANA-Modell oder ein Entwurf mit einem Klick auf die gewünschte Frequenz; Durchmesser skaliert, gleich oder handelsüblich (Vollstäbe 3-6 mm, Stäbe oder Rohre 8-40 mm); die Korrektur des Strahlers setzt die Reaktanz auf null.
-- **Diagramme**: der erste Eintrag heißt **Keulen**, der Reiter Frequenz wird zu **Parameter**; **Winkelschritt** an den Rechner angepasst; **Empfang (RDF)** am geöffneten Modell.
-- **Korrekturen**: Quad mit 2-3 Elementen in Automatisch wird vom NEC in Resonanz gebracht (Cebik gilt für die einzelne Schleife); nur noch ein Hinweis bei einem Modell ohne Quelle; Videokurs mit 1.5.3 neu aufgenommen.
-
-## Neu in 1.5.2
-
-- **Neu geordnete Reiter** (von 16 auf 13): Smith-Diagramm im Band der Diagramme, **NEC/Ströme**, **Variablen und Optimierung**; Stockabstände VHF und HF + HFTA; neue Reihenfolge der Rechner-Familien.
-- **3D-Struktur**: Leitungen, Lasten und Netzwerke auf den Drähten; die Bodenlegende öffnet sich mit **Boden zeigen** in der Statusleiste; jeder Fehler fett und in einem OK-Fenster. **Frequenz**: Amateurfunkbänder im Hintergrund der Diagramme.
-- **Realer Boden**: Rechenstatus und Standorthöhe von Hand. **Optimierer**: **Maße auf den Millimeter** (Koordinaten und handelsübliche Durchmesser, NEC-Prüfung, Zuschnittliste). Diagramme und Karten in 36 Sprachen übersetzt.
-
-## Neu in 1.5.1
-
-- **Optimierer**: „+ Variable hinzufügen“ erzeugt eine Variable aus dem Modell (Länge oder Umfang, Position, Radius jedes Elements, auch Loops; Antennenhöhe), mit ockerfarbener Vorschau.
-- **Variablen**: rechts zeigt die 3D-Struktur in Ocker, wo die gewählte Variable wirkt.
-- Korrekturen und vollständige englische Übersetzung.
-
-## Neu in 1.5
-
-- **Rechner**: Mechanische Berechnungen jetzt unter den Rechnern; Blindwiderstand des kurzen Dipols, Faltdipol über der Frequenz, Magnetloop mit mehreren Windungen und kapazitiver Kopplung (Antenna Engineering Handbook, 4. Aufl.). **Stockungsabstände KW** als eigener Punkt.
-- **AutoEZ-, MultiNEC-, EZNEC-Modelle**: „mark out“-Quellen, virtuelle Drähte, Transformatoren, berechnete Zellen; die gespeicherte .nec schreibt Stromquellen als berechnete Spannungen.
-
-## Neu in 1.4.2
-
-- **Rechner**: NVIS (beste Höhe und Erdschirm, nach Cebik), Haarnadel-Anpassung (Beta-Match), Quad mit Cebiks Methode und NEC-Resonanz im VHF-Bereich, J-Pole mit Slim Jim.
-- **Optimierer**: Monte Carlo mit Bautoleranzen. **Stacks**: Abstand auf zwei Frequenzen geprüft.
-- **Einstellungen**: Update erzwingen, Problem melden.
-
-## Neu in 1.4
-
-- **Technische Dokumente**: Benutzerhandbuch, neues Berechnungs- und Quellenhandbuch und nummerierte Zitate, jeweils mit Inhaltsverzeichnis und PDF; Suche in allen drei (Dokumente auf Italienisch).
-- **Stockungsabstände**: aktives SWR und realisierter Gewinn; Abstände mit hohem aktiven SWR werden als "nicht wählen" markiert.
-- **Schließen**: Bestätigungsfenster mit Dank.
-
-## Neu in 1.3
-
-- **Empfangsantennen**: In den Rechnern sind jetzt **Niedriger Dipol**, **K9AY** (Abschluss mit "für F/B optimieren"), **4-Square RX** und die **Hi-Z**-Gruppen mit 2, 3 und 8 Vertikalen aktiv, mit der **Phase zwischen den Reihen** und der Schaltfläche "Phase optimieren (RDF)". Jeder Eintrag erzeugt das NEC-Modell und liefert RDF, DMF, F/B und den Platz in der Rangliste; ein gelber Hinweis erinnert an die NEC-2-Grenze bei Drähten am realen Boden.
-- **Empfang (RDF)**: Die 8 Vertikalen im Kreis haben 220 Grad Phase, die Keule zeigt nach vorn.
-- **Videokurs**: Lektionen 22 (Reales Gelände), 23 (Empfangsantennen), 24 (VHF-Werkzeuge) und 25 (Mechanik und KW-Lasten), auf Italienisch und Englisch mit Sprecher.
-- **Sprachen**: Noch nicht übersetzte Texte erscheinen auf Englisch statt Italienisch.
-- **Korrekturen**: KW-Lasten schließt sich nicht mehr beim Wechsel zu "Ladespule"; ein Klick auf einen anderen Eintrag mit dem Cursor in einem Feld schließt das Programm nicht mehr; Hinweise der Empfangsantennen häufen sich nicht mehr; breite Fenster ragen nicht mehr nach rechts hinaus.
-- Alles in Kapitel 24 des Handbuchs, mit den Quellen (K9AY, Hi-Z Antennas, IV3PRK, ON4UN, W7EL).
-
-## Neu in 1.2
-
-- **Reales Gelände** (wie HFTA von N6BV): Elevationsdiagramm über dem wahren Geländeprofil, aus dem DEM **TINITALY** (Italien, 10 m) oder **SRTM1** (weltweit), aus einer HorizonProfiler-Datei oder eben. Reflexionen Abschnitt für Abschnitt, gewichtet mit den Fresnel-Zonen, Beugung an Kämmen, Meer, gekrümmte Erde; Verkehrsrichtungen aus dem Locator (bis 12 Zeichen) und **Karte** mit Luftbild, OpenStreetMap und Locator-Gitter. Auf VHF Gesamtansicht und Zoom 0-15 Grad.
-- **Empfang (RDF)**: RDF, DMF, mittleres F/R, Antennenrauschen (ITU-R P.372) und Empfängerreserve für Beverage, BOG, K9AY, Flag, EWE, 4-Square und 8 Vertikale im Kreis.
-- **VNA-Messungen**: .s1p- und CSV-Dateien über der Rechnung, Kabel herausgerechnet (De-Embedding), Smith-Diagramm und Korrekturvorschlag.
-- **Bautoleranzen**: wiederholbares Monte Carlo, Empfindlichkeit je Element und Zuschnittliste mit zulässiger Toleranz.
-- **Mechanische Berechnungen** (neuer Reiter): **Wind** nach NTC 2018, CNR-DT 207 und EN 1991-1-4 (Zone aus dem Locator, Querströmung) und **Ausbalancieren** am Mast; Kräfte in N und kgf.
-- **Kabel und Balun** von 1,8 bis 1296 MHz (der Schirm wird ein NEC-Draht), **H-Rahmen und Mast** im Stack, λ/4- und Wilkinson-**Teiler** mit 1:1-Zeichnung, **gekreuzte Yagis** (RHCP, LHCP, X-Pol), **KW-Lasten** (W8NX-Koax-Traps, Spulen, Linear Loading), **mittleres F/R** auch im Optimierer und automatischer **AGT-Test**.
-- Alles im Kapitel 23 des Handbuchs erklärt, mit den Quellen; neue Einträge in die 37 Sprachen übersetzt.
-
-## Neu in 1.1
-
-> **Anmerkung des Autors.** In dieser Version habe ich lange über die Rauschtemperatur nachgedacht. Man hat mich auf MATLAB-Studien zur Stockung von Richtantennen aufmerksam gemacht, und ich wollte es sofort versuchen: den Nutzern von YA-NEC die Möglichkeit geben, über den Stockungsabstand nach DL6WU (die trigonometrische Formel) hinauszugehen, und sie, wenn sie möchten, bei der Wahl eines eigenen Stockungsabstands begleiten. Dazu eine gründliche Überarbeitung der Oberfläche. — *Costantino IC8TEM*
-
-- **Rauschen vom echten Himmel.** Neue Seite im Obertab **Rauschen/GT/Stock**: Das Diagramm der Antenne oder des Stocks wird über die echte Himmelskarte gelegt (408-MHz-Durchmusterung von Haslam, von Remazeilles neu bearbeitet, von G8ONH auf 144 und 432 MHz umgerechnet), vom eigenen QTH (Locator oder Koordinaten) zur gewählten Zeit, mit beliebiger Ausrichtung, auf den Mond oder auf die kälteste Himmelsstelle. Zwei G/T nebeneinander: mit gleichmäßigem Himmel, vergleichbar mit den Tabellen von VE7BQH (30 Grad, 2 x 2-Stock im DL6WU-Abstand), und mit dem echten Himmel, mit der Kurve der Antennentemperatur über 24 Stunden samt Minimum und Maximum. Die Rechnung ist **skynoise von John C. Sager G8ONH** (MIT-Lizenz), nach C# portiert.
-- **Stockungsabstand mit NEC gewählt.** Auf der Seite **Stockungsabstände** (aus den Rechnern verschoben) wird der Stock für eine Reihe von Abständen um den DL6WU-Abstand wirklich berechnet: Gewinn, höchste Nebenkeule, G/T und Kopplungsmatrix zwischen den Ports (S11, S21...). Ein Kriterium wählt den vorgeschlagenen Abstand (höchster Gewinn, niedrigste Nebenkeulen, bestes G/T oder Gewinn mit Nebenkeulen unter einer Schwelle), und eine Schaltfläche erstellt damit den Stock. Auf **KW** gilt die DL6WU-Formel nicht: Der Stock über Grund wird nach den gewünschten Abstrahlwinkeln gewählt, mit Elevationsdiagrammen gleichphasig (BIP), einzeln und gegenphasig (BOP).
-- **Rechner nach Familien.** Eine Leiste unter den Tabs teilt die Rechner in **KW**, **UKW**, **Empfangsantennen** (kein eigener Tab mehr), **Werkzeuge**, **Spiegel und Erreger** und **2,4 GHz**; die Liste links zeigt nur die gewählte Familie.
-- **Messungen im Diagramm.** Neben der -3-dB-Breite: Breite bis zur ersten Nullstelle (FNBW), höchste Nebenkeule (SLL) und zwei Cursor C1 und C2 per Klick, mit Pegel, Winkel und Differenz.
-- **V/R entlang der Achse** korrigiert für Freiraummodelle, deren Keule entlang der Z-Achse zeigt (wie die Yagi der MathWorks Antenna Toolbox).
-- **Neue Rechner**: Biquad und Doppel-Biquad (Spiegelerreger), Big Wheel und drei Dipole, horizontale Mehrband-Schleife (Skywire) mit Leitungsverlust auf jedem Band.
-- **Übersetzungen**: alle neuen Einträge in den 37 Sprachen des Programms. **Videokurs** mit Lektionen zu den neuen Themen aktualisiert.
+Die Neuerungen früherer Versionen (1.1 bis 1.6) stehen in den [Versionshinweisen](https://github.com/ic8tem/YA-NEC/releases), im [Wiki](https://github.com/ic8tem/YA-NEC/wiki) und im Handbuch.
 
 ## Herunterladen
 
@@ -151,7 +51,7 @@ Zu jedem Zip gehört die Prüfsumme `.sha256`.
 
 ## Automatische Aktualisierung
 
-Alle 30 Minuten prüft das Programm im Hintergrund, ob es hier eine neue Version gibt. Falls ja, lädt es das Zip seiner Plattform herunter, prüft die SHA-256-Prüfsumme und installiert es: Die neue Version startet **beim nächsten Programmstart**, mit einer Meldung in der Statusleiste. Die vorherige Version bleibt in `data/aggiornamenti/precedente-<version>`; Einstellungen (`data/config.ini`) und Modelle des Benutzers bleiben unberührt. Ohne Prüfsumme oder mit abweichender Prüfsumme wird nichts installiert. Abschalten unter **Einstellungen > Aktualisierung**.
+Das Programm prüft 10 Sekunden nach dem Start und dann alle 3 Minuten, ob es hier eine neue Version gibt. Wenn ja, lädt es sie herunter und prüft die SHA-256-Prüfsumme und ab 1.7.2 die **Signatur von YA-NEC** (ECDSA P-256): ohne oder mit falscher Signatur wird nichts installiert. Die neue Version startet beim Neustart, den das Programm selbst ausführt und dabei das Modell wieder öffnet; die vorherige bleibt in `data/aggiornamenti/precedente-<Version>`, Einstellungen und Modelle bleiben unberührt. Abschaltbar unter **Einstellungen > Aktualisierung**.
 
 **Ausnahme: Debian/Ubuntu- (.deb) und Fedora/openSUSE-Pakete (.rpm).** Wenn es sie gibt, installieren sie sich mit Administratorrechten in Systemordner; das Programm kann (und darf) sich daher nicht selbst ändern: Sie werden über die Paketverwaltung aktualisiert. In diesen Paketen ist die automatische Aktualisierung abgeschaltet, und die Einstellungen sagen das.
 

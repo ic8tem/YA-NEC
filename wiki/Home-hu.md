@@ -4,6 +4,8 @@
 
 **NEC-2 alapú huzalantenna-szimulátor** Windowsra, Linuxra és macOS-re. Készítette: Costantino Cerrotta **IC8TEM**. Licenc: GPL-3.0.
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[Újdonságok az 1.3-ben](Novita-1.3-hu)**
 >
 > **[Újdonságok az 1.2-ben](Novita-1.2-hu)**

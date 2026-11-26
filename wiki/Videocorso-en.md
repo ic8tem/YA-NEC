@@ -2,7 +2,7 @@
 
 # Video course
 
-A complete course in 37 short lessons (2-5 minutes), in Italian and English. Recorded with 1.5.3 (lesson 32 with 1.5.8, 33 with 1.5.9, 34 to 36 with 1.7.0) (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
+A complete course in 38 short lessons (2-5 minutes), in Italian and English. Recorded with 1.5.3 (lesson 32 with 1.5.8, 33 with 1.5.9, 34 to 36 with 1.7.0, 37 with 1.7.2) (Calculators in families, Lobes and Parameters in the Patterns band). Every video has burnt-in subtitles and an English voice (Piper TTS, voice "amy", MIT licence); where the voice needs more time the picture pauses for a moment; the .srt file is for those who want them separately (for example on YouTube).
 
 <table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_00_program_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_00.jpg" alt="Lesson 0 - The program in 5 minutes"></a></td><td>
 
@@ -339,6 +339,15 @@ The new HF calculators of 1.7: 2-3 element HF Yagi with the tuning guide (I4MFA)
 Multiband quad with «Tune and compare»; rectangular and octagonal magnetic loop, turns in parallel, couplings and bands covered by the variable capacitor; gamma match (Healey) tuned with NEC; stub matching with the Smith chart (IW2FND); VHF stack with the table row chosen by a click and «Create the stack»; the R < Z0 side in orange in the Smith chart and in the SWR; the Tips tab.
 
 ▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_36_whats_new_1_7_matching_stack_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_36_whats_new_1_7_matching_stack_EN.srt)
+
+</td></tr></table>
+<table><tr><td width="40%"><a href="https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_37_whats_new_1_7_1_heights_stack_EN.mp4"><img src="https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/anteprima_37.jpg" alt="Lesson 37 - Clickable heights and live stack (1.7.1 and 1.7.2)"></a></td><td>
+
+### Lesson 37 - Clickable heights and live stack (1.7.1 and 1.7.2)
+
+2 x 1 stack of 4-element 144 MHz Yagis: in the 3D structure click Δ (4.00 → 4.50 m) and h (9 → 10 m); in Patterns the stack spacing box with + and slider recalculates the lobes live, with the starting lobe dashed. 1.7.2: signed automatic update and protection against files prepared on purpose.
+
+▶ [Watch the video](https://github.com/ic8tem/YA-NEC/blob/main/docs/videocorso/YA-NEC_course_37_whats_new_1_7_1_heights_stack_EN.mp4) · [subtitles .srt](https://raw.githubusercontent.com/ic8tem/YA-NEC/main/docs/videocorso/YA-NEC_course_37_whats_new_1_7_1_heights_stack_EN.srt)
 
 </td></tr></table>
 

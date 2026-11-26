@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:04,950
+Lezione 37: novità della 1.7.1 e 1.7.2
+
+2
+00:00:05,562 --> 00:00:15,446
+Corso YA-NEC, lezione 37: le novità della 1.7.1 e della 1.7.2. Apriamo uno stack di due Yagi 4 elementi per i 144 MHz, a 9 e 13 metri.
+
+3
+00:00:15,496 --> 00:00:23,912
+Nella Struttura 3D le quote della linea di quota adesso si cliccano: passando sopra, la scritta diventa azzurra.
+
+4
+00:00:23,962 --> 00:00:33,978
+Clic su Δ: si scrive la distanza nuova tra i due livelli, 4,5 metri, e Invio. Si sposta solo l'antenna di sopra.
+
+5
+00:00:34,028 --> 00:00:39,445
+Il modello si ricalcola subito: la quota di sopra è ora 13,5 metri.
+
+6
+00:00:39,495 --> 00:00:54,049
+Clic su h, la quota dal suolo: 10 metri. Questa volta si sposta tutto lo stack, la distanza resta 4,5.
+
+7
+00:00:54,099 --> 00:01:04,849
+Se un filo attraversa la quota di taglio, o ci sono archi ed eliche, il programma lo dice e rimanda alla barra Geometria. «Annulla» torna indietro.
+
+8
+00:01:04,899 --> 00:01:13,277
+Nei Diagrammi, con uno stack di antenne uguali, in alto a destra compare il riquadro della distanza.
+
+9
+00:01:13,327 --> 00:01:28,905
+Con il più la distanza cresce a passi del 2 %. Al primo cambio il lobo di partenza si fissa e resta tratteggiato in arancio.
+
+10
+00:01:28,955 --> 00:01:38,438
+Il cursore va da 0,4 a 2,2 volte la distanza di partenza; sotto, la distanza in lambda, guadagno, avanti/indietro ed elevazione.
+
+11
+00:01:38,488 --> 00:02:01,850
+Spostandolo, i diagrammi si ricalcolano in diretta: si vede quando i lobi secondari crescono.
+
+12
+00:02:01,900 --> 00:02:13,784
+La 1.7.2 riguarda la sicurezza: l'aggiornamento automatico installa solo pacchetti con la firma di YA-NEC, e i file preparati apposta non chiudono più il programma.
+
+13
+00:02:13,834 --> 00:02:18,784
+Fine della lezione 37. 73 de IC8TEM.

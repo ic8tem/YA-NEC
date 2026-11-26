@@ -6,6 +6,8 @@
 
 **محاكي هوائيات سلكية مبني على NEC-2** لأنظمة Windows وLinux وmacOS. إعداد: Costantino Cerrotta **IC8TEM**. الترخيص GPL-3.0.
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[الجديد في 1.3](Novita-1.3-ar)**
 >
 > **[الجديد في 1.2](Novita-1.2-ar)**

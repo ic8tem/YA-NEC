@@ -4,6 +4,8 @@
 
 **NEC-2 ベースのワイヤーアンテナ・シミュレーター**（Windows、Linux、macOS）。作者：Costantino Cerrotta **IC8TEM**。ライセンス GPL-3.0。
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[1.3 の新機能](Novita-1.3-ja)**
 >
 > **[1.2 の新機能](Novita-1.2-ja)**

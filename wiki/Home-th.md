@@ -4,6 +4,8 @@
 
 **โปรแกรมจำลองสายอากาศแบบลวดที่ใช้ NEC-2** สำหรับ Windows, Linux และ macOS จัดทำโดย Costantino Cerrotta **IC8TEM** สัญญาอนุญาต GPL-3.0
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[มีอะไรใหม่ใน 1.3](Novita-1.3-th)**
 >
 > **[มีอะไรใหม่ใน 1.2](Novita-1.2-th)**

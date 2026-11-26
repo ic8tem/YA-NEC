@@ -22,110 +22,10 @@ Fonctions : impédance, ROS, gain, diagrammes 2D et 3D, balayage en fréquence e
 - **Nouveaux calculateurs** : Yagi HF 2-3 éléments avec guide de réglage, Yagi bibande entrelacée, verticale multibande à trappes, L inversé / T pour 160 m, half-sloper sur pylône, dipôle large bande, dipôle multibande à relais, charge linéaire, fil résonant sur les harmoniques, gamma match et adaptation par stub avec abaque de Smith.
 - **Quad multibande** avec les lignes des bandes non alimentées et les lignes de découplage ; **boucle magnétique** rectangulaire, à spires en parallèle, avec transformateur et réseau en L ; **Antennes filaires** avec le matériau du fil et le FT-82-43.
 - **Stack** avec la surface effective ; **ROS** indiquant de quel côté se trouve R ; **Terrain réel** avec les angles de départ vers un locator ; rendement dans les calculateurs à bobines et trappes ; nouvel onglet **Conseils**.
+- **1.7.1** : cotes cliquables dans la Structure 3D ; dans les Diagrammes, l'espacement d'un stack se change en direct.
+- **1.7.2 (sécurité)** : la mise à jour automatique n'installe que des paquets signés par YA-NEC ; les fichiers préparés exprès ne ferment plus le programme.
 
-## Nouveautés de la 1.6
-
-- **Calculateurs › Suggestions** : à partir de la fréquence, de la hauteur, du sol et de l'encombrement, les antennes possibles calculées avec NEC et triées par gain, uniformité, angle bas ou NVIS ; « ouvrir » mène au calculateur.
-- **Optimiseur** : **adaptation directe à Z0** d'une Yagi (radiateur et premier directeur, sans adaptateur) et méthode **évolution différentielle**, qui cherche dans tout l'intervalle des variables.
-- **Figer ce résultat** dans Diagrammes, Fréquence et Smith (jusqu'à 4 courbes en pointillé pour comparer) ; structure 3D avec les **courants colorés selon la phase**.
-- **Câble et balun** : la tresse jusqu'à la station (hauteur et direction du parcours), courant à la station et puissance rayonnée par le câble.
-- **Import EZNEC** : charges de Laplace, stubs, lignes avec pertes et réseaux L ; **surfaces SP/SM/SC** du NEC-2, courants animés, contrôles des données ; licence **GPL-3.0-or-later**.
-
-## Nouveautés de la 1.5.8
-
-- **Calculateurs > HF > Antennes filaires** : bouton **Abaque ›** avec des tables calculées par NEC (EFHW 49:1 et 64:1 avec et sans contrepoids, 9:1 avec le meilleur contrepoids, sol moyen ou parfait) ; une ligne se copie dans la page et le calcul libre reste possible.
-- **Optimiseur** : **masque VHF ROS + G/T**, qui optimise le G/T d'un stack 2 x 2 à 30 degrés (espacements DL6WU, températures de VE7BQH, préampli 20 dB, 2 dB de câble) avec le ROS.
-- **Manuel de calcul** : chapitre 16 et section 8.4 ; **cours vidéo** : leçon 32.
-
-## Nouveautés de la 1.5.7
-
-- **Antennes filaires** : la bobine de charge est une option de l'EFHW (oui / non) et **Ajuster la bobine (NEC)** cherche la bonne inductance avec le contrepoids et le sol.
-- **Traductions** : les avertissements orange de tous les calculateurs sont maintenant traduits, ainsi que les textes des dessins et du calcul en temps réel.
-- **Structure 3D** : le fil isolé n'est plus dessiné comme une rangée de bobines.
-
-## Nouveautés de la 1.5.6
-
-- **Calculateurs > HF > Antennes filaires** (nouveau) : antennes filaires alimentées en bout. EFHW multibande, monobande et avec bobine (49:1 ou 64:1), fil non résonant avec 9:1 ou 4:1 ; six dispositions (inclinée vers le haut ou vers le bas, verticale, L et U inversés, droite) ; contrepoids de 0,05 λ ou tresse du coaxial, condensateur, tension en bout, ROS par bande avec le modèle TF5NN et avec NEC ; **Ajuster la longueur (NEC)**.
-- **Boutons de renvoi** : depuis les antennes filaires et les autres fiches filaires (dipôles, OCF/Windom, T2FD, G5RV, Delta, Quad, Loop, Skywire, Moxon, Hexbeam), la fiche du balun, du choke (tores FT), du quart d'onde (câbles RG) ou des charges s'ouvre déjà remplie, avec « ‹ Retour ».
-- **Discone** : passée de la famille HF à la famille VHF.
-
-## Nouveautés de la 1.5.5
-
-- **Calculateurs > HEN** : la fiche indique la polarisation horizontale, comme la vérification NEC (elle disait verticale).
-- **Mesures VNA** : titres, légende et proposition de correction traduits (ils restaient en italien).
-- **Cours vidéo** : 32 leçons, avec les nouvelles 30 « Câbles et mesures au VNA » et 31 « Autres calculateurs ».
-
-## Nouveautés de la 1.5.4
-
-- **Modèle écrit à la main** : les fils appliqués avant la source donnent un avertissement orange dans la barre d'état, sans fenêtre ; les vraies fenêtres d'erreur prennent le focus (Entrée ou Échap les ferment).
-- **Traductions** : page Boom (du relevé au modèle électrique) traduite en anglais.
-- **Cours vidéo complet** : 30 leçons tournées avec la 1.5.3-1.5.4, en italien et en anglais, avec la nouvelle leçon 29 « Redimensionner et recentrer ».
-
-## Nouveautés de la 1.5.3
-
-- **Redimensionner et recentrer** (Variables et optimisation) : un modèle MMANA ou un projet amené à la fréquence voulue en un clic ; diamètres à l'échelle, égaux ou du commerce (ronds pleins 3-6 mm, ronds ou tubes 8-40 mm) ; la retouche du radiateur annule la réactance.
-- **Diagrammes** : la première entrée s'appelle **Lobes**, l'onglet Fréquence devient **Paramètres** ; **pas des angles** adapté à l'ordinateur ; **Réception (RDF)** sur le modèle ouvert.
-- **Corrections** : quad à 2-3 éléments en Automatique mise en résonance par le NEC (Cebik vaut pour la boucle seule) ; un seul avertissement pour un modèle sans source ; cours vidéo réenregistré avec la 1.5.3.
-
-## Nouveautés de la 1.5.2
-
-- **Onglets réorganisés** (de 16 à 13) : l'abaque de Smith dans la bande des Diagrammes, **NEC/courants**, **Variables et optimisation** ; espacements de couplage VHF et HF + HFTA ; nouvel ordre des familles de Calculateurs.
-- **Structure 3D** : lignes, charges et réseaux dessinés sur les fils ; la légende du sol s'ouvre par **Afficher le sol** dans la barre d'état ; chaque erreur en gras et dans une fenêtre avec OK. **Fréquence** : bandes radioamateurs en fond des graphiques.
-- **Terrain réel** : état du calcul et altitude du site à la main. **Optimiseur** : **Mesures au millimètre** (coordonnées et diamètres du commerce, vérification NEC, liste de coupe). Diagrammes, graphiques et cartes traduits en 36 langues.
-
-## Nouveautés de la 1.5.1
-
-- **Optimiseur** : « + ajouter une variable » crée une variable à partir du modèle (longueur ou périmètre, position, rayon de chaque élément, boucles comprises ; hauteur de l'antenne), avec aperçu en ocre.
-- **Variables** : à droite, la structure 3D montre en ocre où agit la variable choisie.
-- Corrections et traduction anglaise complétée.
-
-## Nouveautés de la 1.5
-
-- **Calculateurs** : les calculs mécaniques passent dans les Calculateurs ; réactance du dipôle court, dipôle replié en fréquence, boucle magnétique à plusieurs spires avec couplage capacitif (Antenna Engineering Handbook, 4e éd.). **Distances d'empilement HF** en entrée séparée.
-- **Modèles AutoEZ, MultiNEC, EZNEC** : sources « mark out », fils virtuels, transformateurs, cellules calculées ; le .nec enregistré écrit les sources de courant comme les tensions calculées.
-
-## Nouveautés de la 1.4.2
-
-- **Calculateurs** : NVIS (hauteur optimale et écran de sol, d'après Cebik), adaptation en épingle (beta match), Quad avec la méthode de Cebik et la résonance NEC en VHF, J-pole avec la Slim Jim.
-- **Optimiseur** : Monte Carlo avec les tolérances de construction. **Stacks** : espacements sur deux fréquences.
-- **Réglages** : Forcer la mise à jour, Signaler un problème.
-
-## Nouveautés de la 1.4
-
-- **Documents techniques** : manuel d'utilisation, nouveau manuel de calcul et des sources et citations numérotées, chacun avec sommaire et PDF ; recherche dans les trois (documents en italien).
-- **Distances de couplage** : ROS actif et gain réalisé ; les distances à ROS actif élevé sont marquées « à ne pas choisir ».
-- **Fermeture** : fenêtre de confirmation avec remerciement.
-
-## Nouveautés de la 1.3
-
-- **Antennes de réception** : dans les Calculateurs s'activent **Dipôle bas**, **K9AY** (terminaison avec « optimiser pour F/B »), **4-square RX** et les réseaux **Hi-Z** de 2, 3 et 8 verticales, avec la **phase entre rangées** et le bouton « optimiser la phase (RDF) ». Chaque élément crée le modèle NEC et donne RDF, DMF, F/B et la place au classement ; un avertissement jaune rappelle la limite du NEC-2 avec des fils reliés au sol réel.
-- **Réception (RDF)** : les 8 verticales en cercle ont une phase de 220 degrés et le lobe vers l'avant.
-- **Cours vidéo** : leçons 22 (Terrain réel), 23 (Antennes de réception), 24 (Outils VHF) et 25 (Calculs mécaniques et charges HF), en italien et en anglais avec voix.
-- **Langues** : les textes pas encore traduits s'affichent en anglais au lieu de l'italien.
-- **Corrections** : Charges HF ne se ferme plus en passant à « Bobine de charge » ; un clic sur un autre élément avec le curseur dans un champ ne ferme plus le programme ; les avertissements des antennes de réception ne s'accumulent plus ; les fenêtres larges ne débordent plus à droite.
-- Tout est au chapitre 24 du manuel, avec les sources (K9AY, Hi-Z Antennas, IV3PRK, ON4UN, W7EL).
-
-## Nouveautés de la 1.2
-
-- **Terrain réel** (comme HFTA de N6BV) : diagramme d'élévation sur le vrai profil du terrain, depuis le MNT **TINITALY** (Italie, 10 m) ou **SRTM1** (monde), un fichier HorizonProfiler ou un sol plat. Réflexions segment par segment pondérées par les zones de Fresnel, diffraction sur les crêtes, mer, Terre courbe ; directions de trafic depuis le locator (jusqu'à 12 caractères) et **carte** avec photo aérienne, OpenStreetMap et grille des locators. En VHF vue entière et zoom 0-15 degrés.
-- **Réception (RDF)** : RDF, DMF, F/R moyen, bruit d'antenne (UIT-R P.372) et marge du récepteur pour Beverage, BOG, K9AY, Flag, EWE, 4-square et 8 verticales en cercle.
-- **Mesures VNA** : fichiers .s1p et CSV superposés au calcul, câble retiré (de-embedding), abaque de Smith et correction proposée.
-- **Tolérances de construction** : Monte Carlo reproductible, sensibilité par élément et liste de coupe avec la tolérance admise.
-- **Calculs mécaniques** (nouvel onglet) : **vent** selon NTC 2018, CNR-DT 207 et EN 1991-1-4 (zone depuis le locator, écoulement transversal) et **équilibrage** sur le mât ; forces en N et kgf.
-- **Câble et balun** de 1,8 à 1296 MHz (la tresse devient un fil NEC), **cadre en H et mât** dans le groupement, **diviseurs** λ/4 et Wilkinson avec dessin 1:1, **Yagis croisées** (RHCP, LHCP, X-pol), **charges HF** (trappes coaxiales W8NX, bobines, linear loading), **F/R moyen** aussi dans l'optimiseur et **test AGT** automatique.
-- Tout est expliqué au chapitre 23 du manuel, avec les sources ; nouveaux éléments traduits dans les 37 langues.
-
-## Nouveautés de la 1.1
-
-> **Note de l'auteur.** Dans cette version, j'ai longuement réfléchi à la température de bruit. On m'a signalé des études sous MATLAB sur l'empilement des antennes directives, et j'ai voulu m'y essayer tout de suite : offrir à l'utilisateur de YA-NEC la possibilité d'aller au-delà de la distance d'empilement de DL6WU (la formule trigonométrique) et l'accompagner, s'il le souhaite, dans le choix de sa propre distance d'empilement. Et, avec cela, une profonde révision de l'interface. — *Costantino IC8TEM*
-
-- **Bruit du ciel réel.** Nouvelle page dans le super-onglet **Bruit/GT/Empilement** : le diagramme de l'antenne ou de l'empilement est posé sur la vraie carte du ciel (relevé à 408 MHz de Haslam, retraité par Remazeilles, porté à 144 et 432 MHz par G8ONH), depuis votre QTH (locator ou coordonnées) à l'heure choisie, en pointant où vous voulez, sur la Lune ou sur le point de ciel le plus froid. Deux G/T côte à côte : avec un ciel uniforme, comparable aux tableaux de VE7BQH (30 degrés, empilement 2 x 2 à la distance DL6WU), et avec le ciel réel, avec la courbe de température d'antenne sur 24 heures, son minimum et son maximum. Le calcul est celui de **skynoise de John C. Sager G8ONH** (licence MIT), porté en C#.
-- **Distance d'empilement choisie avec le NEC.** Dans la page **Distances d'empilement** (sortie des Calculateurs), l'empilement est réellement calculé pour une série de distances autour de celle de DL6WU : gain, lobe secondaire le plus haut, G/T et matrice de couplage entre les ports (S11, S21...). Un critère choisit la distance proposée (gain maximal, lobes les plus bas, meilleur G/T, ou gain avec les lobes sous un seuil) et un bouton l'utilise pour créer l'empilement. En **HF** la formule de DL6WU ne s'applique pas : l'empilement au-dessus du sol se choisit sur les angles de départ voulus, avec les diagrammes en élévation en phase (BIP), seules et en opposition de phase (BOP).
-- **Calculateurs par familles.** Une barre sous les onglets répartit les calculateurs en **HF**, **VHF**, **Antennes de réception** (qui n'est plus un onglet séparé), **Outils**, **Paraboles et sources** et **2,4 GHz** ; la liste de gauche ne montre que la famille choisie.
-- **Mesures sur les diagrammes.** En plus de l'ouverture à -3 dB : ouverture au premier zéro (FNBW), lobe secondaire le plus haut (SLL) et deux curseurs C1 et C2 posés d'un clic, avec niveau, angle et différence entre les deux.
-- **F/B le long de l'axe** corrigé pour les modèles en espace libre dont le faisceau suit l'axe Z (comme la Yagi du MathWorks Antenna Toolbox).
-- **Nouveaux calculateurs** : biquad et double biquad (sources de parabole), Big Wheel et trois dipôles, boucle horizontale multibande (Skywire) avec la perte de la ligne sur chaque bande.
-- **Traductions** : toutes les nouvelles entrées dans les 37 langues du programme. **Cours vidéo** mis à jour avec les leçons sur les nouveaux sujets.
+Les nouveautés des versions précédentes (de la 1.1 à la 1.6) sont dans les [notes de version](https://github.com/ic8tem/YA-NEC/releases), dans le [Wiki](https://github.com/ic8tem/YA-NEC/wiki) et dans le manuel.
 
 ## Téléchargement
 
@@ -151,7 +51,7 @@ Chaque zip est accompagné de son empreinte `.sha256`.
 
 ## Mise à jour automatique
 
-Toutes les 30 minutes, le programme vérifie discrètement s'il existe ici une nouvelle version. Si c'est le cas, il télécharge le zip de sa plateforme, vérifie l'empreinte SHA-256 et l'installe : la nouvelle version démarre **au prochain lancement**, avec un message dans la barre d'état. La version précédente est conservée dans `data/aggiornamenti/precedente-<version>` ; les réglages (`data/config.ini`) et les modèles de l'utilisateur ne sont pas touchés. Sans empreinte, ou avec une empreinte différente, rien n'est installé. La mise à jour se désactive dans **Réglages > Mise à jour**.
+Le programme vérifie 10 secondes après le démarrage puis toutes les 3 minutes s'il y a ici une nouvelle version. Si oui, il la télécharge, vérifie son empreinte SHA-256 et, depuis la 1.7.2, la **signature de YA-NEC** (ECDSA P-256) : sans signature ou avec une signature fausse, rien n'est installé. La nouvelle version démarre au redémarrage, que le programme fait seul en rouvrant le modèle ; la précédente reste dans `data/aggiornamenti/precedente-<version>`, réglages et modèles ne sont pas touchés. Elle se désactive dans **Réglages > Mise à jour**.
 
 **Exception : paquets Debian/Ubuntu (.deb) et Fedora/openSUSE (.rpm).** Quand ils existeront, ils s'installeront dans les dossiers système avec les droits d'administrateur ; le programme ne peut donc pas (et ne doit pas) se modifier lui-même : ils se mettront à jour avec le gestionnaire de paquets. Dans ces paquets, la mise à jour automatique est désactivée et les Réglages l'indiquent.
 

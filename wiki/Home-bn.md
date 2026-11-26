@@ -4,6 +4,8 @@
 
 **NEC-2 ভিত্তিক তার অ্যান্টেনা সিমুলেটর**, Windows, Linux ও macOS-এর জন্য। প্রণেতা: Costantino Cerrotta **IC8TEM**। লাইসেন্স GPL-3.0।
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[1.3-এ নতুন](Novita-1.3-bn)**
 >
 > **[1.2-এ নতুন](Novita-1.2-bn)**

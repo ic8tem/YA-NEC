@@ -4,6 +4,8 @@
 
 **Симулятор проволочных антенн на основе NEC-2** для Windows, Linux и macOS. Автор: Costantino Cerrotta **IC8TEM**. Лицензия GPL-3.0.
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[Что нового в 1.3](Novita-1.3-ru)**
 >
 > **[Что нового в 1.2](Novita-1.2-ru)**

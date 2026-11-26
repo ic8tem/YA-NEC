@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:05,531
+Lesson 37: what's new in 1.7.1 and 1.7.2
+
+2
+00:00:05,581 --> 00:00:18,261
+YA-NEC course, lesson 37: what's new in 1.7.1 and 1.7.2. We open a stack of two 4 element Yagis for 144 MHz, at 9 and 13 metres.
+
+3
+00:00:18,311 --> 00:00:27,062
+In the 3D structure the heights of the dimension line can now be clicked: under the mouse the label turns light blue.
+
+4
+00:00:27,112 --> 00:00:37,087
+Click on Δ: write the new spacing between the two levels, 4.5 metres, and Enter. Only the upper antenna moves.
+
+5
+00:00:37,137 --> 00:00:42,820
+The model is recalculated at once: the upper height is now 13.5 metres.
+
+6
+00:00:42,870 --> 00:00:57,405
+Click on h, the height above ground: 10 metres. This time the whole stack moves, the spacing stays 4.5.
+
+7
+00:00:57,455 --> 00:01:07,339
+If a wire crosses the cut height, or there are arcs and helices, the program says so and points to the Geometry bar. «Undo» goes back.
+
+8
+00:01:07,389 --> 00:01:16,138
+In Patterns, with a stack of identical antennas, the spacing box appears at the top right.
+
+9
+00:01:16,188 --> 00:01:31,775
+With plus the spacing grows in 2 % steps. At the first change the starting lobe is pinned and stays dashed in orange.
+
+10
+00:01:31,825 --> 00:01:41,041
+The slider goes from 0.4 to 2.2 times the starting spacing; below, the spacing in lambda, gain, front to back and elevation.
+
+11
+00:01:41,091 --> 00:02:04,487
+Moving it, the patterns are recalculated live: you see when the side lobes grow.
+
+12
+00:02:04,537 --> 00:02:15,155
+1.7.2 is about security: the automatic update installs only packages signed by YA-NEC, and files prepared on purpose no longer close the program.
+
+13
+00:02:15,205 --> 00:02:20,155
+End of lesson 37. 73 de IC8TEM.

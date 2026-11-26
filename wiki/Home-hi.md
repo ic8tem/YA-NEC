@@ -4,6 +4,8 @@
 
 **NEC-2 पर आधारित तार एंटीना सिम्युलेटर**, Windows, Linux और macOS के लिए। लेखक: Costantino Cerrotta **IC8TEM**। लाइसेंस GPL-3.0।
 
+> **[What's new in 1.7](Novita-1.7-en)**
+>
 > **[1.3 में नया](Novita-1.3-hi)**
 >
 > **[1.2 में नया](Novita-1.2-hi)**
