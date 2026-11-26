@@ -116,7 +116,7 @@ namespace YaNec
             {
                 Child = sp, Padding = new Thickness(10, 8), Background = Pal.B(Pal.Panel), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(8), HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(0, 6, 10, 0),
-                Width = 300, IsVisible = false
+                Width = 330, IsVisible = false
             };
             stackTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(250) };
             stackTimer.Tick += (s, e) => { stackTimer.Stop(); StackApplica(); };
