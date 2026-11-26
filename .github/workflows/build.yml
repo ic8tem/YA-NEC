@@ -237,7 +237,26 @@ jobs:
           (cd gestori && zip -qr "../dist/YA-NEC-$VER-gestori-winget-scoop-chocolatey.zip" .)
       - name: Note della versione (tabella dei download con la versione giusta)
         run: sed -i "s/@VER@/$VER/g" .github/release.md
-      - uses: softprops/action-gh-release@v2
+      # 1.7.2 (controllo di sicurezza del 26/11/2026): firma ECDSA P-256 dei pacchetti dell'aggiornamento automatico (<pacchetto>.sig, base64).
+      # La chiave privata e' il segreto YA_NEC_FIRMA e serve solo a questo passo; senza segreto la release non si pubblica (il programma
+      # dalla 1.7.2 non installa pacchetti senza firma). La chiave pubblica e' in src/Diag/Aggiornamento.cs.
+      - name: Firma dei pacchetti dell'aggiornamento
+        env:
+          FIRMA: ${{ secrets.YA_NEC_FIRMA }}
+        run: |
+          if [ -z "$FIRMA" ]; then echo "::error::manca il segreto YA_NEC_FIRMA: pacchetti non firmati, release fermata"; exit 1; fi
+          K="$RUNNER_TEMP/firma.pem"; umask 077; printf '%s\n' "$FIRMA" > "$K"
+          openssl ec -in "$K" -pubout -out "$RUNNER_TEMP/pub.pem" 2>/dev/null
+          shopt -s nullglob; n=0
+          for f in dist/*-portatile.zip dist/*-linux-x64.tar.gz dist/*-linux-arm64.tar.gz dist/*-linux-armv7l.tar.gz dist/*-alpine-x64.tar.gz dist/*-alpine-arm64.tar.gz; do
+            openssl dgst -sha256 -sign "$K" -out "$f.der" "$f"
+            openssl dgst -sha256 -verify "$RUNNER_TEMP/pub.pem" -signature "$f.der" "$f" >/dev/null
+            base64 -w0 "$f.der" > "$f.sig"; rm -f "$f.der"; n=$((n+1))
+          done
+          shred -u "$K" 2>/dev/null || rm -f "$K"
+          echo "pacchetti firmati: $n"; [ "$n" -gt 0 ]
+      # softprops fissato alla sua impronta (v2.6.2): un tag spostato da altri non cambia il codice che pubblica la release
+      - uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65
         with:
           name: YA-NEC ${{ env.VER }}
           tag_name: v${{ env.VER }}

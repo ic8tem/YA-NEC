@@ -94,13 +94,22 @@ namespace YaNec.Engine
             return m;
         }
 
+        /// <summary>1.7.2: segmenti massimi (la matrice del NEC con 40000 segmenti occupa gia' circa 25 GB).</summary>
+        public const int MaxSegmenti = 40000;
+
         public SegmentGeometry BuildGeometry(List<string> notes = null)
         {
             int ignd = GroundFlag;
             // con il terreno i fili che lo toccano vanno collegati alla loro immagine
             if (Ground.Kind != GroundKind.FreeSpace && ignd == 0) ignd = 1;
             if (Ground.Kind == GroundKind.FreeSpace) ignd = 0;
-            return GeometryBuilder.Build(OggettiExtra.Espandi(this, Geometry, notes), ignd, notes);
+            // 1.7.2 (controllo di sicurezza): un file con un numero di segmenti assurdo esauriva la memoria prima di qualsiasi messaggio
+            long dich = 0;
+            foreach (GeomCard c in Geometry) if (c.Id == "GW" || c.Id == "GA" || c.Id == "GH") dich += Math.Max(0, c.I2);
+            if (dich > MaxSegmenti) throw new NecException("Troppi segmenti nel modello (" + dich + "): il limite e' " + MaxSegmenti + ".");
+            SegmentGeometry g = GeometryBuilder.Build(OggettiExtra.Espandi(this, Geometry, notes), ignd, notes);
+            if (g.N > MaxSegmenti) throw new NecException("Troppi segmenti nel modello (" + g.N + "): il limite e' " + MaxSegmenti + ".");
+            return g;
         }
 
         /// <summary>Linee e reti da usare nel calcolo alla frequenza f: quelle del modello piu' trasformatori e reti L (schede NT).</summary>

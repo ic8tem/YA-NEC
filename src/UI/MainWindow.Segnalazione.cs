@@ -61,9 +61,11 @@ namespace YaNec
         {
             if (string.IsNullOrEmpty(t)) return t ?? "";
             string home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            if (!string.IsNullOrEmpty(home)) t = t.Replace(home, "~");
+            // 1.7.2: su Windows i percorsi non distinguono maiuscole e minuscole (c:\users\nome = C:\Users\Nome)
+            StringComparison cmp = OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+            if (!string.IsNullOrEmpty(home)) t = t.Replace(home, "~", cmp);
             string u = Environment.UserName;
-            if (!string.IsNullOrEmpty(u) && u.Length > 2) t = t.Replace(u, "utente");
+            if (!string.IsNullOrEmpty(u) && u.Length > 2) t = t.Replace(u, "utente", cmp);
             return t;
         }
 

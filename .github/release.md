@@ -2,6 +2,11 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.7.2** (sicurezza):
+- **aggiornamento automatico firmato**: si installano solo pacchetti con la firma di YA-NEC (ECDSA P-256), oltre all'impronta SHA-256; download con tempo e dimensione massimi;
+- file e modelli preparati apposta non chiudono più il programma (espressioni troppo annidate, segmenti oltre 40000, GeoTIFF guasti);
+- controllo degli aggiornamenti più leggero per GitHub (richiesta condizionale) e avviso se il repository dell'aggiornamento non è ic8tem/YA-NEC.
+
 **Novità della 1.7.1**:
 - **Struttura 3D**: le quote (h, Δ e le quote dei livelli) si cliccano e si cambiano: h sposta tutta l'antenna, Δ il livello e quelli sopra; «↶ Annulla» torna indietro;
 - **Diagrammi**: con uno stack di antenne uguali, riquadro in alto a destra per cambiare la distanza in diretta (− / + / cursore), con il lobo di partenza tratteggiato;

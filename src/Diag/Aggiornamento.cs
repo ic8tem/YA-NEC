@@ -3,11 +3,15 @@
 //
 // Come funziona:
 //  - ogni 3 minuti (e 10 secondi dopo l'avvio; fino alla 1.4.0 ogni 30 minuti, il primo dopo 2) si legge l'ultima versione pubblicata: GET api.github.com/repos/<repo>/releases/latest,
-//    senza chiave (repository pubblico; 2 richieste l'ora, molto sotto il limite di 60 di GitHub);
+//    senza chiave (repository pubblico; 20 richieste l'ora; dalla 1.7.2 con If-None-Match: la risposta 304 "nessuna novita'" non conta nel limite di 60 l'ora di GitHub);
 //  - se la versione e' piu' nuova si scarica in background il pacchetto portatile della piattaforma (dalla 1.3.1 con i nomi dell'elenco
 //    di YA-MS: <programma>-<versione>-windows-x64-portatile.zip, -linux-x64.tar.gz, -alpine-x64.tar.gz...; fino alla 1.3.0
 //    "<programma>-<versione>-<rid>.zip", che le release continuano a pubblicare per le versioni vecchie) e la sua impronta "<pacchetto>.sha256"; senza impronta, o con impronta diversa, non si
 //    installa niente;
+//  - 1.7.2 (controllo di sicurezza del 26/11/2026, IC8TEM: "correggi compila e pubblica"): il pacchetto deve avere anche la firma
+//    "<pacchetto>.sig" (ECDSA P-256 con SHA-256, base64), fatta nella release con la chiave privata che sta nei segreti di GitHub;
+//    la chiave pubblica e' qui sotto. Senza firma, o con firma sbagliata, non si installa niente: un pacchetto messo nella release
+//    da altri (con la sua impronta) non basta piu'. Download con tempo massimo di 10 minuti e al massimo 400 MB;
 //  - i file nuovi si mettono al posto dei vecchi: un programma in uso non si puo' sovrascrivere, ma si puo' rinominare, quindi il file
 //    vecchio diventa "<nome>.old" e quello nuovo prende il suo posto; il programma che sta girando non cambia, la versione nuova parte
 //    al prossimo avvio, che cancella i .old e scrive nella barra di stato "aggiornato da ... a ...";
@@ -44,6 +48,28 @@ namespace YaNec
         /// <summary>1.4.1 (IC8TEM 18/11/2026 16:18, "poi con un popup avvisa"): versione nuova installata (true) o solo disponibile (Mac, false).</summary>
         public static event Action<string, bool> Pronta;
         static string avvisata = "";
+        /// <summary>1.7.2: chiave pubblica (ECDSA P-256, SubjectPublicKeyInfo in base64) delle firme dei pacchetti di aggiornamento.</summary>
+        const string ChiavePubblica = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEI08uh0Jh0MEWBXV2y9zYZ4PL4oAna6zbpb6XgNfBREcJUPYNZw+x5SEtVwK6Fwyg6kd1E5KkC2W7S/hqs37OAw==";
+        /// <summary>1.7.2: messaggio e firma di prova per l'autotest (controlla che la verifica funzioni su ogni sistema).</summary>
+        public const string ProvaMessaggio = "YA-NEC firma di prova 1.7.2\n", ProvaFirma = "MEUCIG99uUanLYOL7avxl0Ch8trflrdQmk+2WA9VLC8FACx8AiEAtkExua/A0jznvWZ/e4Aibi59VQtGrAfl9p009FXiJYo=";
+        const long MaxPacchetto = 400L * 1024 * 1024;
+        static string etag, ultimoJson;   // 1.7.2: richiesta condizionale a GitHub
+
+        /// <summary>1.7.2: vero se la firma (base64, DER) e' quella della chiave di YA-NEC sui dati.</summary>
+        public static bool FirmaValida(Stream dati, string firmaB64)
+        {
+            try
+            {
+                byte[] firma = Convert.FromBase64String((firmaB64 ?? "").Trim());
+                using (ECDsa ec = ECDsa.Create())
+                {
+                    ec.ImportSubjectPublicKeyInfo(Convert.FromBase64String(ChiavePubblica), out _);
+                    return ec.VerifyData(dati, firma, HashAlgorithmName.SHA256, DSASignatureFormat.Rfc3279DerSequence);
+                }
+            }
+            catch { return false; }
+        }
+        public static bool FirmaValida(byte[] dati, string firmaB64) { using (MemoryStream ms = new MemoryStream(dati)) return FirmaValida(ms, firmaB64); }
         static Timer timer;
         static Mutex unica;   // 0.5.0: tenuto vivo finche' la finestra e' aperta
         static Config cfg;
@@ -200,7 +226,24 @@ namespace YaNec
                 {
                     http.DefaultRequestHeaders.UserAgent.ParseAdd(AppPaths.AppName + "/" + AppPaths.Version);
                     http.DefaultRequestHeaders.Accept.ParseAdd("application/vnd.github+json");
-                    string json = await http.GetStringAsync("https://api.github.com/repos/" + repo + "/releases/latest");
+                    if (!string.Equals(repo, RepoPredefinito, StringComparison.OrdinalIgnoreCase))
+                        Registro.Scrivi("AGGIORNAMENTO", "attenzione: il repository dell'aggiornamento non e' " + RepoPredefinito + " ma " + repo + " (Impostazioni > Aggiornamento)");
+                    string json;
+                    using (HttpRequestMessage rq = new HttpRequestMessage(HttpMethod.Get, "https://api.github.com/repos/" + repo + "/releases/latest"))
+                    {
+                        if (etag != null && ultimoJson != null && !reinstalla) rq.Headers.TryAddWithoutValidation("If-None-Match", etag);
+                        using (HttpResponseMessage rs = await http.SendAsync(rq))
+                        {
+                            if (rs.StatusCode == System.Net.HttpStatusCode.NotModified) json = ultimoJson;
+                            else
+                            {
+                                rs.EnsureSuccessStatusCode();
+                                json = await rs.Content.ReadAsStringAsync();
+                                etag = rs.Headers.ETag != null ? rs.Headers.ETag.ToString() : null;
+                                ultimoJson = json;
+                            }
+                        }
+                    }
                     string tag; List<KeyValuePair<string, string>> asset = new List<KeyValuePair<string, string>>();
                     using (JsonDocument d = JsonDocument.Parse(json))
                     {
@@ -233,15 +276,39 @@ namespace YaNec
                     }
                     if (urlZip == null) { ImpostaStato("versione " + nuova + " pubblicata, ma senza il pacchetto " + nomeZip + " per questa piattaforma"); return; }
                     if (urlSha == null) { ImpostaStato("versione " + nuova + ": manca l'impronta " + nomeZip + ".sha256, non si installa"); return; }
+                    string urlSig = null;
+                    foreach (var a in asset) if (a.Key.Equals(nomeZip + ".sig", StringComparison.OrdinalIgnoreCase)) urlSig = a.Value;
+                    if (urlSig == null) { ImpostaStato("versione " + nuova + ": manca la firma " + nomeZip + ".sig, non si installa"); return; }
                     string dir = Path.Combine(AppPaths.DataDir, "aggiornamenti");
                     Directory.CreateDirectory(dir);
                     string zip = Path.Combine(dir, nomeZip);
                     ImpostaStato("scarico la versione " + nuova + " (" + nomeZip + ")");
-                    using (Stream s = await http.GetStreamAsync(urlZip)) using (FileStream fs = File.Create(zip)) await s.CopyToAsync(fs);
+                    using (CancellationTokenSource tempo = new CancellationTokenSource(TimeSpan.FromMinutes(10)))
+                    {
+                        using (HttpResponseMessage rs = await http.GetAsync(urlZip, HttpCompletionOption.ResponseHeadersRead, tempo.Token))
+                        {
+                            rs.EnsureSuccessStatusCode();
+                            if (rs.Content.Headers.ContentLength > MaxPacchetto) { ImpostaStato("versione " + nuova + ": pacchetto troppo grande, non si scarica"); return; }
+                            using (Stream s = await rs.Content.ReadAsStreamAsync(tempo.Token)) using (FileStream fs = File.Create(zip))
+                            {
+                                byte[] buf = new byte[81920]; long tot = 0; int n;
+                                while ((n = await s.ReadAsync(buf, 0, buf.Length, tempo.Token)) > 0)
+                                {
+                                    tot += n;
+                                    if (tot > MaxPacchetto) throw new IOException("pacchetto oltre " + (MaxPacchetto >> 20) + " MB");
+                                    await fs.WriteAsync(buf, 0, n, tempo.Token);
+                                }
+                            }
+                        }
+                    }
                     string attesa = (await http.GetStringAsync(urlSha)).Trim().Split(' ', '\t', '\r', '\n')[0].ToLowerInvariant();
                     string calcolata;
                     using (FileStream fs = File.OpenRead(zip)) using (SHA256 sha = SHA256.Create()) calcolata = Convert.ToHexString(sha.ComputeHash(fs)).ToLowerInvariant();
                     if (calcolata != attesa) { ImpostaStato("versione " + nuova + ": impronta SHA-256 diversa da quella pubblicata, pacchetto scartato"); try { File.Delete(zip); } catch { } return; }
+                    string firma = await http.GetStringAsync(urlSig);
+                    bool firmato;
+                    using (FileStream fs = File.OpenRead(zip)) firmato = FirmaValida(fs, firma);
+                    if (!firmato) { ImpostaStato("versione " + nuova + ": firma del pacchetto non valida, pacchetto scartato"); Registro.Scrivi("AGGIORNAMENTO", "FIRMA NON VALIDA per " + nomeZip + ": installazione rifiutata"); try { File.Delete(zip); } catch { } return; }
                     if (MainWindow.ProveAutomatiche) return;
                     Installa(zip, attuale.ToString(), nuova.ToString());
                 }

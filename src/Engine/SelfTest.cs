@@ -184,6 +184,13 @@ namespace YaNec.Engine
         static List<Line> RunNec2c()
         {
             List<Line> res = new List<Line>();
+            // 1.7.2: verifica della firma degli aggiornamenti (ECDSA P-256): la firma di prova deve passare, il messaggio cambiato no
+            {
+                byte[] msg = Encoding.UTF8.GetBytes(Aggiornamento.ProvaMessaggio), alt = Encoding.UTF8.GetBytes(Aggiornamento.ProvaMessaggio + "x");
+                bool buona = Aggiornamento.FirmaValida(msg, Aggiornamento.ProvaFirma), falsa = Aggiornamento.FirmaValida(alt, Aggiornamento.ProvaFirma);
+                res.Add(new Line { Name = "Firma degli aggiornamenti", Pass = buona && !falsa,
+                    Detail = "firma di prova " + (buona ? "accettata" : "RIFIUTATA") + ", messaggio cambiato " + (falsa ? "ACCETTATO" : "rifiutato") });
+            }
             double necppMax = 0; int necppN = 0;
             foreach (Case c in Cases)
             {

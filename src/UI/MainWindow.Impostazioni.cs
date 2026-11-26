@@ -281,6 +281,13 @@ namespace YaNec
             ToolTip.SetTip(tbRepo, "Repository GitHub da cui si aggiorna il programma, scritto come utente/nome (per esempio IC8TEM/YA-NEC). Invio per salvarlo in config.ini.");
             tbRepo.KeyDown += (s, e) => { if (e.Key == Avalonia.Input.Key.Enter) { cfg.Set("aggiornamento_repo", (tbRepo.Text ?? "").Trim()); Status("Repository dell'aggiornamento: " + (tbRepo.Text ?? "").Trim()); } };
             ag.Children.Add(RigaImp("Repository", tbRepo));
+            // 1.7.2 (controllo di sicurezza): avviso con un repository diverso da quello di YA-NEC
+            TextBlock avvRepo = new TextBlock { Text = "Repository diverso da " + Aggiornamento.RepoPredefinito + ": si installano solo pacchetti firmati con la chiave di YA-NEC.",
+                TextWrapping = TextWrapping.Wrap, Foreground = Pal.B(Pal.Orange), FontSize = 12 };
+            Action vediRepo = () => avvRepo.IsVisible = !string.Equals((tbRepo.Text ?? "").Trim(), Aggiornamento.RepoPredefinito, StringComparison.OrdinalIgnoreCase) && (tbRepo.Text ?? "").Trim().Length > 0;
+            vediRepo();
+            tbRepo.TextChanged += (s, e) => vediRepo();
+            ag.Children.Add(avvRepo);
             // 1.5 (bozzetto approvato da IC8TEM il 18/11/2026 19:35): "Forza l'aggiornamento" e "Reinstalla la versione attuale"
             Button bOra = Btn("Forza l'aggiornamento", true);
             ToolTip.SetTip(bOra, "Controlla subito su GitHub senza aspettare i 3 minuti. Se c'e' una versione nuova la scarica, avvisa e riavvia come l'aggiornamento automatico (10 secondi, il modello si riapre). Funziona anche con l'aggiornamento automatico spento.");

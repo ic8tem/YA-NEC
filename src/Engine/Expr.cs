@@ -111,7 +111,18 @@ namespace YaNec.Engine
             }
 
             // 0.4.10: confronti di Excel (livello piu' basso: A+1 > B*2 confronta le due somme)
+            // 1.7.2 (controllo di sicurezza): un'espressione annidata migliaia di volte faceva finire lo stack e chiudeva il programma
+            int prof;
+            void Entra() { if (++prof > 200) throw new NecException("Espressione troppo annidata (oltre 200 livelli) in '" + (s.Length > 60 ? s.Substring(0, 60) + "..." : s) + "'"); }
+
             public double ParseExpr()
+            {
+                Entra();
+                try { return ParseExprInterna(); }
+                finally { prof--; }
+            }
+
+            double ParseExprInterna()
             {
                 double v = ParseSum();
                 SkipWs();
@@ -166,9 +177,14 @@ namespace YaNec.Engine
             // il meno unario ha precedenza minore della potenza: -2^2 = -4
             double ParseUnary()
             {
-                if (Accept('-')) return -ParseUnary();
-                if (Accept('+')) return ParseUnary();
-                return ParsePower();
+                Entra();
+                try
+                {
+                    if (Accept('-')) return -ParseUnary();
+                    if (Accept('+')) return ParseUnary();
+                    return ParsePower();
+                }
+                finally { prof--; }
             }
 
             double ParsePower()

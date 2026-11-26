@@ -156,8 +156,18 @@ namespace YaNec.Engine
             {
                 string url = "https://elevation-tiles-prod.s3.amazonaws.com/skadi/" + nome.Substring(0, 3) + "/" + nome + ".hgt.gz";
                 byte[] gz = await Http.GetByteArrayAsync(url, ct);
+                // 1.7.2 (controllo di sicurezza): al massimo 60 MB decompressi (un file SRTM1 e' 25,9 MB)
                 using (GZipStream z = new GZipStream(new MemoryStream(gz), CompressionMode.Decompress))
-                using (FileStream o = File.Create(f + ".tmp")) z.CopyTo(o);
+                using (FileStream o = File.Create(f + ".tmp"))
+                {
+                    byte[] buf = new byte[81920]; long tot = 0; int k;
+                    while ((k = z.Read(buf, 0, buf.Length)) > 0)
+                    {
+                        tot += k;
+                        if (tot > 60L * 1024 * 1024) throw new IOException("SRTM1: file decompresso troppo grande, scartato");
+                        o.Write(buf, 0, k);
+                    }
+                }
                 File.Move(f + ".tmp", f, true);
             }
             return LeggiHgt(f, la, lo);
@@ -199,13 +209,25 @@ namespace YaNec.Engine
                 File.WriteAllBytes(f + ".tmp", b);
                 File.Move(f + ".tmp", f, true);
             }
-            Griglia g = LeggiGeoTiff(File.ReadAllBytes(f));
+            Griglia g;
+            try { g = LeggiGeoTiff(File.ReadAllBytes(f)); }
+            catch (IOException) { try { File.Delete(f); } catch { } throw; }   // 1.7.2: il file guasto non resta nella cartella
             g.Fonte = "TINITALY 1.1";
             return g;
         }
 
         /// <summary>GeoTIFF float32 o int16 non compresso (a strisce o a mattonelle), coordinate geografiche (ModelTransformation o tiepoint + scala).</summary>
         public static Griglia LeggiGeoTiff(byte[] b)
+        {
+            // 1.7.2 (controllo di sicurezza): un file guasto o non previsto non deve chiudere il calcolo con un errore oscuro
+            // ne' chiedere memoria senza limite: le letture fuori dal file diventano un messaggio chiaro
+            try { return LeggiGeoTiffInterno(b); }
+            catch (IndexOutOfRangeException) { throw new IOException("GeoTIFF guasto o non previsto (letture fuori dal file)"); }
+            catch (ArgumentException) { throw new IOException("GeoTIFF guasto o non previsto"); }
+            catch (KeyNotFoundException) { throw new IOException("GeoTIFF senza le informazioni necessarie (dimensioni, posizione)"); }
+        }
+
+        static Griglia LeggiGeoTiffInterno(byte[] b)
         {
             bool le = b[0] == 'I';
             Func<int, int> U16 = o => le ? b[o] | (b[o + 1] << 8) : (b[o] << 8) | b[o + 1];
@@ -218,6 +240,7 @@ namespace YaNec.Engine
             for (int i = 0; i < nt; i++)
             {
                 int e = ifd + 2 + 12 * i, id = U16(e), ty = U16(e + 2); int cnt = (int)U32(e + 4);
+                if (cnt < 0 || cnt > b.Length) throw new IOException("GeoTIFF: etichetta non valida");
                 int sz = ty == 3 ? 2 : ty == 4 ? 4 : ty == 12 ? 8 : ty == 2 ? 1 : ty == 16 ? 8 : 4;
                 int off = cnt * sz <= 4 ? e + 8 : (int)U32(e + 8);
                 if (ty == 12) { double[] v = new double[cnt]; for (int k = 0; k < cnt; k++) v[k] = F64(off + 8 * k); tagD[id] = v; }
@@ -225,6 +248,7 @@ namespace YaNec.Engine
                 else { long[] v = new long[cnt]; for (int k = 0; k < cnt; k++) v[k] = ty == 3 ? U16(off + 2 * k) : U32(off + 4 * k); tag[id] = v; }
             }
             int w = (int)tag[256][0], h = (int)tag[257][0], bits = (int)tag[258][0];
+            if (w <= 0 || h <= 0 || (long)w * h > 50000000L) throw new IOException("GeoTIFF: dimensioni non accettate (" + w + " x " + h + ")");
             if (tag.ContainsKey(259) && tag[259][0] != 1) throw new IOException("GeoTIFF compresso: non supportato");
             int fmt = tag.ContainsKey(339) ? (int)tag[339][0] : 1;
             Griglia g = new Griglia { Nx = w, Ny = h, Z = new float[w * h] };
