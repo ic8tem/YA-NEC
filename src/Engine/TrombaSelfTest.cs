@@ -57,6 +57,10 @@ namespace YaNec.Engine
                 Prova(log, "W2IMU: -10 dB piano E (gradi)", w.Theta10E, 54.32, 0.1);
                 Prova(log, "W2IMU: -10 dB piano H (gradi)", w.Theta10H, 54.38, 0.1);
                 Prova(log, "W2IMU: guadagno (dBi)", w.Guadagno_dBi, 10.460, 0.02);
+                // 1.7.3: sonda di partenza da W1GHZ (QEX 2001), ingresso 0,70 lambda: lambda guida 422,99 mm
+                Prova(log, "W2IMU 1296: sonda dal fondo (mm)", Quota(w, "Sonda dal fondo"), 93.06, 0.05);
+                Prova(log, "W2IMU 1296: lunghezza della sonda (mm)", Quota(w, "Lunghezza della sonda"), 50.89, 0.05);
+                Prova(log, "W2IMU 1296: diametro della sonda (mm)", Quota(w, "Diametro della sonda"), 10.18, 0.05);
                 var c = Tromba.Calcola(new TrombaInput { Tipo = TipoTromba.CoffeeCan, FreqMHz = 2320.1, FsuD = 0.38 }, false);
                 Prova(log, "Coffee-can f/D 0,38: diametro (lambda)", Quota(c, "Diametro interno") / c.Lambda_mm, 0.7190, 0.002);
                 var k = Tromba.Calcola(new TrombaInput { Tipo = TipoTromba.Conica, FreqMHz = 5760.1, FsuD = 0.8 }, false);

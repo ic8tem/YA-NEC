@@ -2,6 +2,9 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.7.3**:
+- **Trombe e illuminatori**: misure di partenza della sonda coassiale (distanza dal fondo, lunghezza e diametro) per coffee-can, VE4MA, Super-VE4MA, Chaparral, W2IMU e conica, dalle misure di W1GHZ (QEX 2001): ROS gia' basso, poi si rifinisce (manuale 28.18).
+
 **Novità della 1.7.2** (sicurezza):
 - **aggiornamento automatico firmato**: si installano solo pacchetti con la firma di YA-NEC (ECDSA P-256), oltre all'impronta SHA-256; download con tempo e dimensione massimi;
 - file e modelli preparati apposta non chiudono più il programma (espressioni troppo annidate, segmenti oltre 40000, GeoTIFF guasti);

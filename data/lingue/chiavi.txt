@@ -7686,3 +7686,9 @@ distanza orizzontale
 Distanza di stack cambiata: {0}. «Annulla» della barra Geometria torna al modello di partenza.
 Repository diverso da 
 : si installano solo pacchetti firmati con la chiave di YA-NEC.
+0,22 lambda guida, all'asse della sonda (W1GHZ 2001); da rifinire col ROS
+Lunghezza della sonda
+0,22 lambda dalla parete interna (W1GHZ 2001)
+Diametro della sonda
+0,044 lambda, sonda grossa: banda larga. Con filo sottile (circa 0,01 lambda) sonda piu' lunga e piu' lontana dal fondo, banda stretta
+Le misure sono interne; lo spessore delle pareti si aggiunge fuori. Le misure della sonda sono quelle di partenza di W1GHZ (ROS gia' basso): si rifiniscono col ROS spostando il fondo e accorciando la sonda. Nel modello NEC c'e' un dipolo ideale, buono per il diagramma ma non per il ROS.

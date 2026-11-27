@@ -210,7 +210,7 @@ namespace YaNec
             var modi = new List<string[]> { new[] { "#Sezione", "Modo", "Taglio", "" } };
             foreach (var m in r.Modi) modi.Add(new[] { m.Sezione, m.Modo, D1(m.Taglio_MHz, "0") + " MHz", m.Propaga ? "si propaga" : "sotto il taglio" });
             sp.Children.Add(P.Carta(P.Tabella(modi, "Auto,Auto,Auto,*"), "Modi in guida"));
-            sp.Children.Add(P.Carta(P.Nota("Le misure sono interne; lo spessore delle pareti si aggiunge fuori. La sonda coassiale va tarata per il ROS: nel modello NEC c'e' un dipolo ideale nello stesso punto.")));
+            sp.Children.Add(P.Carta(P.Nota("Le misure sono interne; lo spessore delle pareti si aggiunge fuori. Le misure della sonda sono quelle di partenza di W1GHZ (ROS gia' basso): si rifiniscono col ROS spostando il fondo e accorciando la sonda. Nel modello NEC c'e' un dipolo ideale, buono per il diagramma ma non per il ROS.")));
             return sp;
         }
 

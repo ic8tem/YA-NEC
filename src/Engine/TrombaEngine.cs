@@ -300,8 +300,7 @@ namespace YaNec.Engine
                         r.Profilo.Add(new TrombaStazione { Z_m = 0, A_m = R, B_m = R });
                         r.Quote.Add(new TrombaQuota("Diametro interno della guida", d * L, string.Format(CI, "{0:0.000} lambda", d)));
                         r.Quote.Add(new TrombaQuota("Lunghezza dal fondo alla bocca", len * 1000, "1,25 lambda guida (W1GHZ: oltre una lambda guida, non critica)"));
-                        r.Quote.Add(new TrombaQuota("Sonda dal fondo", lg / 4 * 1000, "lambda guida / 4"));
-                        r.Quote.Add(new TrombaQuota("Lunghezza della sonda (coassiale)", 0.23 * L, "circa lambda/4, da tarare per il ROS"));
+                        QuoteSonda(r, L, lg * 1000);
                         r.DiametroEsterno_m = d * lam;
                         var mod = new List<double[]>();
                         if (p.Tipo == TipoTromba.VE4MA || p.Tipo == TipoTromba.SuperVE4MA)
@@ -357,7 +356,7 @@ namespace YaNec.Engine
                         r.Quote.Add(new TrombaQuota("Lunghezza della svasatura", flare * 1000, "lungo l'asse"));
                         r.Quote.Add(new TrombaQuota("Sezione di fase C", C * lam * 1000, string.Format(CI, "{0:0.000} lambda: TE11 e TM11 in fase alla bocca", C)));
                         r.Quote.Add(new TrombaQuota("Guida d'ingresso dal fondo alla svasatura", 0.75 * lgA * 1000, "0,75 lambda guida"));
-                        r.Quote.Add(new TrombaQuota("Sonda dal fondo", lgA / 4 * 1000, "lambda guida / 4"));
+                        QuoteSonda(r, L, lgA * 1000);
                         r.Quote.Add(new TrombaQuota("Lunghezza totale", -zB * 1000, ""));
                         r.DiametroEsterno_m = B * lam;
                         ModiCircolari(r, "ingresso A", A * lam, lam);
@@ -394,7 +393,7 @@ namespace YaNec.Engine
                         r.Quote.Add(new TrombaQuota("Lunghezza del cono (assiale)", cono * 1000, ""));
                         r.Quote.Add(new TrombaQuota("Diametro d'ingresso", A * L, string.Format(CI, "{0:0.000} lambda", A)));
                         r.Quote.Add(new TrombaQuota("Guida d'ingresso dal fondo al cono", 0.75 * lgA * 1000, "0,75 lambda guida"));
-                        r.Quote.Add(new TrombaQuota("Sonda dal fondo", lgA / 4 * 1000, "lambda guida / 4"));
+                        QuoteSonda(r, L, lgA * 1000);
                         r.DiametroEsterno_m = d * lam;
                         ModiCircolari(r, "ingresso", A * lam, lam);
                         if (cono <= 0) r.Avvisi.Add(new ParabolaAvviso(1, "Bocca piu' piccola dell'ingresso: la tromba si riduce a una guida aperta."));
@@ -522,6 +521,18 @@ namespace YaNec.Engine
             if (r.NecSegmenti > 6000) r.Avvisi.Add(new ParabolaAvviso(1, string.Format(CI, "Modello NEC pesante: {0} segmenti, matrice di {1:0} MB. Allargare la maglia (0,12-0,15 lambda) per una prima prova.", r.NecSegmenti, r.NecMemoria_MB)));
             if (r.NecNodiSciolti > 0) r.Avvisi.Add(new ParabolaAvviso(2, string.Format(CI, "Modello NEC: {0} nodi della griglia non collegati. Segnalare il caso.", r.NecNodiSciolti)));
             return r;
+        }
+
+        // 1.7.3 - sonda coassiale nella guida circolare: misure di partenza da W1GHZ, "Understanding Circular Waveguide -
+        // Experimentally" (QEX gen/feb 2001), sonde da 0,032-0,062" nel tubo da 3/4" (circa 0,69 lambda) a 10,368 GHz:
+        // lunghezza circa 0,22 lambda, fondo a 0,20-0,23 lambda guida (media 0,22), ROS 1,05-1,11 senza taratura.
+        // La sonda sottile (0,010") vuole lunghezza e fondo maggiori e ha banda stretta. Riferite a lambda e lambda guida.
+        public const double SondaDiam_l = 0.044, SondaLung_l = 0.22, SondaFondo_lg = 0.22;
+        static void QuoteSonda(TrombaResult r, double L, double lgMm)
+        {
+            r.Quote.Add(new TrombaQuota("Sonda dal fondo", SondaFondo_lg * lgMm, "0,22 lambda guida, all'asse della sonda (W1GHZ 2001); da rifinire col ROS"));
+            r.Quote.Add(new TrombaQuota("Lunghezza della sonda", SondaLung_l * L, "0,22 lambda dalla parete interna (W1GHZ 2001)"));
+            r.Quote.Add(new TrombaQuota("Diametro della sonda", SondaDiam_l * L, "0,044 lambda, sonda grossa: banda larga. Con filo sottile (circa 0,01 lambda) sonda piu' lunga e piu' lontana dal fondo, banda stretta"));
         }
 
         static Complex[] Coppia(ApCircolare a, double t) { Complex fe, fh; a.Valuta(t, out fe, out fh); return new[] { fe, fh }; }
@@ -756,7 +767,7 @@ namespace YaNec.Engine
             sb.AppendLine("CM YA-NEC - tromba " + p.Tipo + string.Format(ci, " per {0:0.0} MHz (lambda {1:0.00} mm)", p.FreqMHz, lam * 1000));
             sb.AppendLine("CM Bocca nel piano z = 0, la tromba irradia verso +Z; polarizzazione lungo Y: piano E = phi 90, piano H = phi 0");
             sb.AppendLine(string.Format(ci, "CM Griglia di fili, maglia {0:0.0} mm, raggio dei fili {1:0.000} mm; {2} segmenti", maglia * 1000, Raggio * 1000, Segmenti));
-            sb.AppendLine("CM Eccitazione: dipolo nella guida a lambda guida / 4 dal fondo (polarizzatore ideale; la sonda reale va tarata a parte)");
+            sb.AppendLine("CM Eccitazione: dipolo ideale nella guida a lambda guida / 4 dal fondo, solo per il diagramma (il ROS di questo modello non e' quello della sonda reale)");
             if (dipoli.Count > 1) sb.AppendLine("CM Circolare: secondo dipolo lungo X a -90 gradi; verificare il senso con RHCP/LHCP");
             foreach (var q in r.Quote) sb.AppendLine(string.Format(ci, "CM   {0}: {1:0.0}", q.Nome, q.Mm));
             sb.AppendLine("CE");

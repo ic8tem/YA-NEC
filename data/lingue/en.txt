@@ -8138,3 +8138,9 @@ distanza orizzontale	horizontal spacing
 Distanza di stack cambiata: {0}. «Annulla» della barra Geometria torna al modello di partenza.	Stack spacing changed: {0}. «↶ Undo» in the Geometry bar goes back to the starting model.
 Repository diverso da 	Repository other than 
 : si installano solo pacchetti firmati con la chiave di YA-NEC.	: only packages signed with the YA-NEC key are installed.
+0,22 lambda guida, all'asse della sonda (W1GHZ 2001); da rifinire col ROS	0.22 guide lambda, to the probe axis (W1GHZ 2001); refine for SWR
+Lunghezza della sonda	Probe length
+0,22 lambda dalla parete interna (W1GHZ 2001)	0.22 lambda from the inner wall (W1GHZ 2001)
+Diametro della sonda	Probe diameter
+0,044 lambda, sonda grossa: banda larga. Con filo sottile (circa 0,01 lambda) sonda piu' lunga e piu' lontana dal fondo, banda stretta	0.044 lambda, fat probe: wide band. With thin wire (about 0.01 lambda) the probe is longer and farther from the back, narrow band
+Le misure sono interne; lo spessore delle pareti si aggiunge fuori. Le misure della sonda sono quelle di partenza di W1GHZ (ROS gia' basso): si rifiniscono col ROS spostando il fondo e accorciando la sonda. Nel modello NEC c'e' un dipolo ideale, buono per il diagramma ma non per il ROS.	The dimensions are inside; the wall thickness is added outside. The probe dimensions are W1GHZ's starting values (SWR already low): refine them for SWR by moving the back wall and trimming the probe. The NEC model has an ideal dipole, good for the pattern but not for SWR.

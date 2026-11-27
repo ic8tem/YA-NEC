@@ -336,3 +336,11 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
   - D. Controllo dell'aggiornamento con richiesta condizionale (If-None-Match): la risposta «nessuna novita'» di GitHub non conta nel limite di 60 richieste l'ora; repository dell'aggiornamento diverso da ic8tem/YA-NEC segnalato nelle Impostazioni e nel registro.
   - Segnalazione di un problema: cartella utente e nome sostituiti anche se scritti con maiuscole diverse (Windows).
   - Nessuna modifica al motore NEC con le impostazioni di base (il limite di 40000 segmenti riguarda modelli che non entrerebbero comunque in memoria).
+
+## 1.7.3
+- 28/11/2026 00:05, IC8TEM («Ripassa tutti i calcolatori degli illuminatori... Con le misure standard di w2imu ottengo ros4 in 1296mhz»; poi «delle misure abbastanza ottimizzate su cui io raffino il calcolo si possono avere di default?» e «Compila e pubblica»):
+  - Trombe e illuminatori, trombe con ingresso circolare (coffee-can, VE4MA, Super-VE4MA, Chaparral, W2IMU, conica): misure di partenza della sonda coassiale da W1GHZ, «Understanding Circular Waveguide - Experimentally» (QEX gen/feb 2001: sonde da 0,032-0,062" nel tubo da 3/4", circa 0,69 lambda, a 10,368 GHz, ROS 1,05-1,11 senza taratura), riferite a lambda e lambda guida: distanza dal fondo all'asse 0,22 lambda guida (prima 0,25), lunghezza 0,22 lambda dalla parete interna (prima 0,23 lambda e solo nel coffee-can), diametro 0,044 lambda (nuovo). Nota sul filo sottile (sonda piu' lunga e piu' lontana dal fondo, banda stretta).
+  - Esempio W2IMU a 1296,1 MHz, ingresso 0,70 lambda: sonda dal fondo 93,1 mm (prima 105,7), lunga 50,9 mm, diametro 10,2 mm. Tre prove nuove nell'autotest.
+  - Il modello NEC della tromba resta con il dipolo ideale a lambda guida / 4: serve per il diagramma, non per il ROS; il commento del file .nec e la nota della pagina Misure ora lo dicono chiaramente.
+  - Con le impostazioni di base cambiano solo le quote della sonda (avvisato IC8TEM prima del via): diagrammi, efficienza sul disco e motore NEC invariati.
+
