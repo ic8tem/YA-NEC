@@ -119,6 +119,7 @@ namespace YaNec
             };
             Action costruisciVento = () =>
             {
+                foreach (Control vecchia in ventoIn.Children) (vecchia as Panel)?.Children.Clear();
                 ventoIn.Children.Clear();   // 1.7.4: rg toglie le caselle dalla riga vecchia (prima: eccezione e chiusura alla seconda costruzione)
                 if (vento == "mano") ventoIn.Children.Add(rg("Velocità", tVmano, "km/h"));
                 else
@@ -182,6 +183,7 @@ namespace YaNec
 
             Action costruisciParte = () =>
             {
+                foreach (Control vecchia in datiParte.Children) (vecchia as Panel)?.Children.Clear();   // 1.7.4: le caselle restano le stesse: si staccano dalla riga vecchia
                 datiParte.Children.Clear();
                 WrapPanel w = new WrapPanel();
                 if (parte == "elementi") { w.Children.Add(Et("Spessori dei tubi dal boom (mm)")); w.Children.Add(tSpess); }
@@ -414,6 +416,7 @@ namespace YaNec
                     Meccanica.EsitoBoom eb = Meccanica.CalcolaBoom(bm, lg, v, gh);
                     area += eb.Area; massa += eb.Massa;
                     riga(new[] { "boom", "Ø" + mm(bm.D) + "×" + CarichiHf.Fmt(bm.S * 1000, 1), CarichiHf.Fmt(bm.Lunghezza, 3), "1", CarichiHf.Fmt(eb.Massa, 2) }, false);
+                    foreach (Control vecchia in datiParte.Children) (vecchia as Panel)?.Children.Clear();
                     datiParte.Children.Clear(); datiParte.Children.Add(tab);
                     dis.Disegna = null; dis.Height = 0;
                     double F = Meccanica.Pressione(v) * 1.2 * area;

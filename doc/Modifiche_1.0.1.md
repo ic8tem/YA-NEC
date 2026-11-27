@@ -346,5 +346,5 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
 
 ## 1.7.4
 - 28/11/2026 00:35, IC8TEM («dalla linguetta sollecitazioni meccaniche hf il programma si chiude da solo», con il registro e errore_avvio.txt):
-  - Calcoli meccanici > Sollecitazioni elementi (HF): il programma si chiudeva aprendo la pagina (InvalidOperationException: la casella Categoria era ancora dentro la riga vecchia quando la parte del vento veniva ricostruita). Ora la riga toglie la casella dal contenitore precedente prima di metterla nel nuovo. Nessuna modifica al motore.
+  - Calcoli meccanici > Sollecitazioni elementi (HF): il programma si chiudeva aprendo la pagina (InvalidOperationException: le caselle del vento e dei tubi restavano dentro le righe vecchie quando la pagina veniva ricostruita, alla prima apertura e a ogni cambio di parte o di vento). Ora le righe vecchie si svuotano prima di rimettere le caselle in quelle nuove. Nessuna modifica al motore.
 
