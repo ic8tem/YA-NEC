@@ -2,6 +2,9 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.7.4**:
+- correzione: Calcoli meccanici > Sollecitazioni elementi (HF) chiudeva il programma all'apertura.
+
 **Novità della 1.7.3**:
 - **Trombe e illuminatori**: misure di partenza della sonda coassiale (distanza dal fondo, lunghezza e diametro) per coffee-can, VE4MA, Super-VE4MA, Chaparral, W2IMU e conica, dalle misure di W1GHZ (QEX 2001): ROS gia' basso, poi si rifinisce (manuale 28.18).
 

@@ -344,3 +344,7 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
   - Il modello NEC della tromba resta con il dipolo ideale a lambda guida / 4: serve per il diagramma, non per il ROS; il commento del file .nec e la nota della pagina Misure ora lo dicono chiaramente.
   - Con le impostazioni di base cambiano solo le quote della sonda (avvisato IC8TEM prima del via): diagrammi, efficienza sul disco e motore NEC invariati.
 
+## 1.7.4
+- 28/11/2026 00:35, IC8TEM («dalla linguetta sollecitazioni meccaniche hf il programma si chiude da solo», con il registro e errore_avvio.txt):
+  - Calcoli meccanici > Sollecitazioni elementi (HF): il programma si chiudeva aprendo la pagina (InvalidOperationException: la casella Categoria era ancora dentro la riga vecchia quando la parte del vento veniva ricostruita). Ora la riga toglie la casella dal contenitore precedente prima di metterla nel nuovo. Nessuna modifica al motore.
+

@@ -54,7 +54,7 @@ namespace YaNec
             ToolTip.SetTip(cCat, "Categoria di esposizione del sito (NTC 2018, tab. 3.3.II e fig. 3.3.2): dipende dalla classe di rugosita' del terreno (A centri urbani ... D aree prive di ostacoli, mare) e dalla distanza dalla costa. I = costa aperta o mare, V = centro di citta'.");
             TextBox tLoc = Tb("Capri", 110), tQuota = Tb("80", 50), tAlt = Tb("12", 50), tVmano = Tb("130", 50);
             StackPanel ventoIn = new StackPanel { Spacing = 2, Margin = new Thickness(4, 2, 0, 6) };
-            Func<string, Control, string, StackPanel> rg = (a, c, b) => { StackPanel p = new StackPanel { Orientation = Orientation.Horizontal }; p.Children.Add(new TextBlock { Text = a, Width = 74, VerticalAlignment = VerticalAlignment.Center, FontSize = 12.5, Foreground = Pal.B(Pal.Muted) }); p.Children.Add(c); if (b != null) p.Children.Add(new TextBlock { Text = b, VerticalAlignment = VerticalAlignment.Center, FontSize = 12.5, Margin = new Thickness(3, 0) }); return p; };
+            Func<string, Control, string, StackPanel> rg = (a, c, b) => { StackPanel p = new StackPanel { Orientation = Orientation.Horizontal }; p.Children.Add(new TextBlock { Text = a, Width = 74, VerticalAlignment = VerticalAlignment.Center, FontSize = 12.5, Foreground = Pal.B(Pal.Muted) }); if (c.Parent is Panel vecchio) vecchio.Children.Remove(c); p.Children.Add(c); if (b != null) p.Children.Add(new TextBlock { Text = b, VerticalAlignment = VerticalAlignment.Center, FontSize = 12.5, Margin = new Thickness(3, 0) }); return p; };
             StackPanel sx = new StackPanel { Width = 222, Spacing = 2 };
             sx.Children.Add(fParte); sx.Children.Add(fVento); sx.Children.Add(ventoIn); sx.Children.Add(fLega);
             sx.Children.Add(Nota("Tubi presi dalla tabella Rastremazioni: le misure sono le stesse del modello NEC."));
@@ -119,7 +119,7 @@ namespace YaNec
             };
             Action costruisciVento = () =>
             {
-                ventoIn.Children.Clear();
+                ventoIn.Children.Clear();   // 1.7.4: rg toglie le caselle dalla riga vecchia (prima: eccezione e chiusura alla seconda costruzione)
                 if (vento == "mano") ventoIn.Children.Add(rg("Velocità", tVmano, "km/h"));
                 else
                 {
