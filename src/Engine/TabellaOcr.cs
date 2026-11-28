@@ -578,7 +578,7 @@ namespace YaNec.Engine
             int W = (int)(700 * scala), H = (int)(520 * scala);
             var info = new SkiaSharp.SKImageInfo(W, H);
             using (var surf = SkiaSharp.SKSurface.Create(info))
-            using (var font = new SkiaSharp.SKFont(SkiaSharp.SKTypeface.FromFamilyName("DejaVu Sans") ?? SkiaSharp.SKTypeface.Default, (float)(16 * scala)))
+            using (var font = new SkiaSharp.SKFont(SkiaSharp.SKTypeface.FromFamilyName("DejaVu Sans") ?? SkiaSharp.SKTypeface.Default, 16f))   // la scala la da' il canvas
             using (var paint = new SkiaSharp.SKPaint { Color = SkiaSharp.SKColors.Black, IsAntialias = true })
             {
                 var c = surf.Canvas; c.Clear(SkiaSharp.SKColors.White);
