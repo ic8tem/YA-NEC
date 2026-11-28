@@ -294,6 +294,11 @@ namespace YaNec
             };
             cmd.Children.Add(bOpen);
             cmd.Children.Add(bSave);
+            // 1.9.0: Importa tabella da immagine (OCR), bozzetto approvato da IC8TEM il 18/11/2026 21:30
+            Button bImpTab = Btn("Importa tabella...", false);
+            ToolTip.SetTip(bImpTab, "Legge la tabella delle misure di un'antenna da un'immagine, un PDF, gli appunti o lo schermo (OCR): si corregge e diventa un modello, fili o un confronto con un calcolatore.");
+            bImpTab.Click += async (s, e) => await ApriImportaTabella();
+            cmd.Children.Add(bImpTab);
             cmbEsempi = new ComboBox { Width = 190, Margin = new Thickness(4, 3), VerticalAlignment = VerticalAlignment.Center, PlaceholderText = "Esempi..." };
             cmbEsempi.ItemsSource = ExampleNames();
             cmbEsempi.SelectionChanged += async (s, e) =>

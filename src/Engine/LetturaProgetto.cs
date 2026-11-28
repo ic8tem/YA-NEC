@@ -425,7 +425,7 @@ namespace YaNec.Engine
         }
 
         /// <summary>OCR di un'immagine (PNG o JPEG): parole in pixel dell'immagine originale. scala = ingrandimento prima dell'OCR.</summary>
-        public static PaginaLetta Ocr(byte[] immagine, string descrizione, out string errore)
+        public static PaginaLetta Ocr(byte[] immagine, string descrizione, out string errore, string lingua = "eng", int psm = 11)
         {
             errore = null;
             string exe = Tesseract();
@@ -451,7 +451,7 @@ namespace YaNec.Engine
                         string png = Path.Combine(dir, "pagina" + n + ".png");
                         ScriviGrigio(bmp, pa.Item1, pa.Item2, png);
                         string err;
-                        var parole = Tesseract(exe, png, Path.Combine(dir, "uscita" + n), pa.Item1, out err);
+                        var parole = Tesseract(exe, png, Path.Combine(dir, "uscita" + n), pa.Item1, out err, lingua, psm);
                         if (parole == null) { if (n == 1) { errore = err; return null; } continue; }
                         Unisci(pg.Parole, parole);
                     }
@@ -501,15 +501,15 @@ namespace YaNec.Engine
             }
         }
 
-        static List<ParolaLetta> Tesseract(string exe, string png, string uscita, double scala, out string errore)
+        static List<ParolaLetta> Tesseract(string exe, string png, string uscita, double scala, out string errore, string lingua, int psm)
         {
             errore = null;
             var psi = new ProcessStartInfo { FileName = exe, UseShellExecute = false, CreateNoWindow = true, RedirectStandardError = true, RedirectStandardOutput = true };
             psi.ArgumentList.Add(png); psi.ArgumentList.Add(uscita);
             string td = Path.Combine(AppPaths.DataDir, "tessdata");
             if (File.Exists(Path.Combine(td, "eng.traineddata"))) { psi.ArgumentList.Add("--tessdata-dir"); psi.ArgumentList.Add(td); }
-            psi.ArgumentList.Add("-l"); psi.ArgumentList.Add("eng");
-            psi.ArgumentList.Add("--psm"); psi.ArgumentList.Add("11");
+            psi.ArgumentList.Add("-l"); psi.ArgumentList.Add(string.IsNullOrEmpty(lingua) ? "eng" : lingua);
+            psi.ArgumentList.Add("--psm"); psi.ArgumentList.Add(psm.ToString(CI));
             psi.ArgumentList.Add("-c"); psi.ArgumentList.Add("tessedit_create_tsv=1");   // senza il file di configurazione "tsv"
             string err;
             using (var pr = Process.Start(psi))

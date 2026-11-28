@@ -114,6 +114,11 @@ namespace YaNec
             bSim.Margin = new Thickness(6, 0, 0, 0);
             ToolTip.SetTip(bSim, "Inserisce un filo diritto centrato sul boom: X, lunghezza totale, quota, raggio e segmenti; Y1 = -L/2, Y2 = +L/2.");
             bar.Children.Add(bSim);
+            Button bImpT = Btn("Importa tabella...", false);   // 1.9.0
+            bImpT.Margin = new Thickness(6, 0, 0, 0);
+            ToolTip.SetTip(bImpT, "Fili da una tabella letta con l'OCR (immagine, PDF, appunti, schermo): in fondo o al posto dei fili scelti.");
+            bImpT.Click += async (s, e) => await ApriImportaTabella();
+            bar.Children.Add(bImpT);
             bar.Children.Add(new TextBlock
             {
                 Text = "come in Excel: frecce e Tab, Invio applica, Ctrl+C / Ctrl+V anche su più righe, Canc svuota",
