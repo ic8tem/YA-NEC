@@ -318,6 +318,10 @@ namespace YaNec.Engine
             if (miniNec) { iperf = 0; zrati = zratiCampo; }   // MiniNec ground: da qui il campo lontano usa il terreno reale
             PreparaCampoLontano();
             Solved = true;
+            // 1.9.0 (IC8TEM 28/11/2026 07:48, RAM): i blocchi fattorizzati della simmetria servono solo dentro Solve; il risultato
+            // tiene il motore (correnti, campo), quindi si lasciano andare qui. Non cambia nessun numero (prova --prova-memoria).
+            if (Memoria.Attiva) { sZk = null; sChi = null; sIp = null; }
+            Memoria.DopoCalcolo((long)neq * neq * 16);
         }
 
         // ======================= linee di trasmissione e reti a due porte (come NETWK di nec2c) =======================
