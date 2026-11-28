@@ -316,7 +316,15 @@ namespace YaNec.Engine
         // ------------------------------------------------------------------------------------------ elementi e modelli
         public static List<ElementoTab> Elementi(TabellaLetta t, List<int> ruoli, double fMHz, double diamPredef, out string errore)
         {
-            errore = null;
+            string err = null;
+            var l0 = ElementiInterni(t, ruoli, fMHz, diamPredef, e => { if (err == null) err = e; });
+            errore = err;
+            return l0;
+        }
+
+        static List<ElementoTab> ElementiInterni(TabellaLetta t, List<int> ruoli, double fMHz, double diamPredef, Action<string> segnala)
+        {
+            string errore = null;
             var l = new List<ElementoTab>();
             double k = MetriPer(t.Unita, fMHz);
             int kp = ruoli.IndexOf(RPos), kd = ruoli.IndexOf(RDist), kl = ruoli.IndexOf(RLung), ks = ruoli.IndexOf(RSemi), kD = ruoli.IndexOf(RDiam), kr = ruoli.IndexOf(RRaggio), kn = ruoli.IndexOf(RNome), kseg = ruoli.IndexOf(RSeg);
@@ -356,6 +364,7 @@ namespace YaNec.Engine
                 l.Add(e);
             }
             if (errore == null && l.Any(e => double.IsNaN(e.Pos) || double.IsNaN(e.Lung) || double.IsNaN(e.Diam) || e.Lung <= 0 && e.Fili == null)) errore = "ci sono celle vuote o non numeriche";
+            if (errore != null) segnala(errore);
             return l;
         }
 

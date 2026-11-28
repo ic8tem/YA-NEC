@@ -2,6 +2,9 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.9.0**:
+- **Importa tabella da immagine (OCR)**: la tabella delle misure di un articolo (Yagi VHF e non solo) da immagine, PDF, appunti o schermo; si corregge (cifre incerte in giallo, controlli in rosso) e diventa un modello, fili nella tabella o un confronto con DL6WU, rastremazioni e quad (manuale 28.20).
+
 **Novità della 1.8.0**:
 - **Leggi progetto (PDF o immagine)** in Calcolatori > Strumenti: le misure di una direttiva dal manuale o dal disegno del costruttore (testo del PDF o OCR dell'immagine), tabella da controllare con i dubbi in giallo, confronto con il modello aperto e modello NEC (manuale 28.19).
 
