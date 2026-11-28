@@ -8144,3 +8144,26 @@ Lunghezza della sonda	Probe length
 Diametro della sonda	Probe diameter
 0,044 lambda, sonda grossa: banda larga. Con filo sottile (circa 0,01 lambda) sonda piu' lunga e piu' lontana dal fondo, banda stretta	0.044 lambda, fat probe: wide band. With thin wire (about 0.01 lambda) the probe is longer and farther from the back, narrow band
 Le misure sono interne; lo spessore delle pareti si aggiunge fuori. Le misure della sonda sono quelle di partenza di W1GHZ (ROS gia' basso): si rifiniscono col ROS spostando il fondo e accorciando la sonda. Nel modello NEC c'e' un dipolo ideale, buono per il diagramma ma non per il ROS.	The dimensions are inside; the wall thickness is added outside. The probe dimensions are W1GHZ's starting values (SWR already low): refine them for SWR by moving the back wall and trimming the probe. The NEC model has an ideal dipole, good for the pattern but not for SWR.
+Leggi progetto (PDF o immagine)	Read design (PDF or image)
+misure di una direttiva dal manuale o dal disegno del costruttore: tabella da controllare e modello NEC	dimensions of a beam from the manual or the manufacturer's drawing: table to check and NEC model
+Apri PDF o immagine…	Open PDF or image…
+nessun file	no file
+unità	units
+frequenza più alta	highest frequency
+Tabella letta	Table read
+Sul boom	On boom
+Tratti dal centro alla punta: Ø × L	Sections from centre to tip: Ø × L
+Alim.	Fed
+Aggiungi elemento	Add element
+Confronta con il modello aperto	Compare with the open model
+Crea il modello NEC	Create the NEC model
+Il disegno del costruttore compare qui.	The manufacturer's drawing appears here.
+Apri il manuale o il disegno della direttiva: YA-NEC legge le posizioni sul boom e i tubi (diametro × lunghezza) di ogni elemento. Il file resta tuo: YA-NEC non lo copia.	Open the manual or the drawing of the beam: YA-NEC reads the boom positions and the tubes (diameter × length) of each element. The file stays yours: YA-NEC does not copy it.
+Giallo = letto male o mancante: si corregge a mano. Controlli: posizioni crescenti lungo il boom, diametri che calano verso la punta. Le lunghezze sono i tratti visibili di ogni tubo (senza la parte infilata nel tubo più grosso), come nei disegni dei costruttori. OCR: Tesseract (Apache 2.0); PDF: PdfPig (Apache 2.0).	Yellow = misread or missing: correct it by hand. Checks: positions increasing along the boom, diameters decreasing towards the tip. Lengths are the visible part of each tube (without the part inside the larger tube), as in manufacturers' drawings. OCR: Tesseract (Apache 2.0); PDF: PdfPig (Apache 2.0).
+Nessun modello aperto da confrontare (o modello senza elementi diritti).	No open model to compare (or a model without straight elements).
+Nessun elemento alimentato: il modello si apre senza sorgente.	No fed element: the model opens without a source.
+Tabella vuota: apri un file o aggiungi gli elementi a mano.	Empty table: open a file or add the elements by hand.
+Nel file non ci sono pagine con misure né immagini grandi.	The file has no pages with dimensions and no large images.
+Elemento alimentato: sorgente al centro.	Fed element: source at the centre.
+Per i segmenti del modello (circa lambda/40). Con una multibanda: la banda più alta.	For the model segments (about lambda/40). For a multiband beam: the highest band.
+Pagine con le misure: testo del PDF (numeri esatti) oppure immagine (disegno del costruttore, letta con l'OCR).	Pages with dimensions: PDF text (exact numbers) or image (manufacturer's drawing, read with OCR).

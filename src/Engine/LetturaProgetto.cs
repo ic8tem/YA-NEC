@@ -67,7 +67,9 @@ namespace YaNec.Engine
         {
             if (t == null) return "";
             t = t.Trim().Replace('\u201D', '"').Replace('\u201C', '"').Replace('\u2033', '"').Replace("''", "\"").Replace(',', '.');
-            t = t.TrimEnd('|', ';', ':', '_').TrimStart('{', '[', '|', '_');
+            t = t.TrimEnd('|', ';', ':', '_', '!');
+            int k0 = 0; while (k0 < t.Length && !char.IsDigit(t[k0]) && t[k0] != '.' && t[k0] != '(') k0++;
+            t = t.Substring(k0);
             return t;
         }
 
@@ -117,33 +119,59 @@ namespace YaNec.Engine
             if (W <= 0 || H <= 0 || pg.Parole.Count == 0) return el;
             double diamMax = unita == 0 ? 2.5 : unita == 1 ? 65 : unita == 2 ? 6.5 : 0.065;
 
-            // 1. colonna delle posizioni: numeri nel 16 % di destra della pagina
+            // 1. punti di riferimento degli elementi: i numeri della colonna di destra (posizione sul boom) e le righe dei titoli
+            //    ("20 Mtr Reflector, Element #1"): un titolo senza posizione leggibile da' un elemento con la posizione da scrivere
             var posTok = new List<ParolaLetta>();
             foreach (var p in pg.Parole)
             {
                 double v; bool pol;
                 if (p.Cx > 0.84 * W && Numero(p.Testo, out v, out pol)) posTok.Add(p);
             }
-            posTok = posTok.OrderBy(p => p.Cy).ToList();
-            if (posTok.Count == 0) return el;
+            var titoli = Righe(pg.Parole.Where(p => { double vv; bool pp; return p.X >= 0.6 * W && Regex.IsMatch(p.Testo, "[A-Za-z#0-9]") && !(p.Cx > 0.84 * W && Numero(p.Testo, out vv, out pp)); }))
+                .Where(r => Regex.IsMatch(r.Testo, @"element|elem\.|#\s*\d|refl|driv|direct|radiat|rifl|dirett|\bDE\b|\bDR\b|\bD\d", RegexOptions.IgnoreCase)
+                         && !Parole_Escluse.Any(x => r.Testo.ToLowerInvariant().Contains(x))).ToList();
+            double tolY = 0.015 * H;
+            var anc = new List<Tuple<double, ParolaLetta, Riga>>();   // y, posizione, titolo
+            foreach (var t in titoli)
+            {
+                var pt = posTok.Where(q => Math.Abs(q.Cy - t.Cy) < tolY).OrderBy(q => Math.Abs(q.Cy - t.Cy)).FirstOrDefault();
+                anc.Add(Tuple.Create(pt != null ? pt.Cy : t.Cy, pt, t));
+            }
+            foreach (var q in posTok)
+                if (!anc.Any(a => a.Item2 == q) && (titoli.Count < 3 || anc.Any(a => Math.Abs(a.Item1 - q.Cy) < 2 * tolY)) && !anc.Any(a => Math.Abs(a.Item1 - q.Cy) < tolY))
+                    anc.Add(Tuple.Create(q.Cy, q, (Riga)null));
+            anc = anc.OrderBy(a => a.Item1).ToList();
+            if (anc.Count == 0) return el;
 
-            // righe del disegno, senza la colonna di destra e senza le righe di manicotti e note
-            var righe = Righe(pg.Parole.Where(p => p.Cx <= 0.84 * W));
-            righe = righe.Where(r => { string t = r.Testo.ToLowerInvariant(); return !Parole_Escluse.Any(x => t.Contains(x)); }).ToList();
+            // righe del disegno, senza la colonna di destra ne' i titoli; le righe di manicotti e note con al massimo due numeri non contano
+            var righe = Righe(pg.Parole.Where(p => p.Cx <= 0.84 * W && !titoli.Any(t => t.P.Contains(p))));
+            righe = righe.Where(r =>
+            {
+                string t = r.Testo.ToLowerInvariant();
+                if (!Parole_Escluse.Any(x => t.Contains(x))) return true;
+                double vv; bool pp;
+                return r.P.Count(q => Numero(q.Testo, out vv, out pp)) > 2;
+            }).ToList();
 
-            for (int i = 0; i < posTok.Count; i++)
+            for (int i = 0; i < anc.Count; i++)
             {
                 var e = new ElementoLetto();
                 double v; bool pol;
-                Numero(posTok[i].Testo, out v, out pol);
-                e.Pos = v; e.Fonti.Add(posTok[i]);
-                if (posTok[i].Conf < 70) { e.DubbioPos = true; e.Dubbi.Add("posizione letta male (OCR " + posTok[i].Conf.ToString("0", CI) + " %)"); }
-                double y0 = posTok[i].Cy;
-                double su = i > 0 ? (posTok[i - 1].Cy + y0) / 2 : y0 - 0.06 * H, giu = i + 1 < posTok.Count ? (posTok[i + 1].Cy + y0) / 2 : y0 + 0.06 * H;
-                // nome: parole della stessa riga a sinistra della posizione (oltre meta' pagina)
-                var nome = pg.Parole.Where(p => Math.Abs(p.Cy - y0) < 0.02 * H && p.Cx > 0.5 * W && p.X < posTok[i].X && !(Numero(p.Testo, out v, out pol) && pol)).OrderBy(p => p.X).Select(p => p.Testo);
-                e.Nome = string.Join(" ", nome).Trim().TrimEnd(',');
-                string nl = e.Nome.ToLowerInvariant();
+                var pt = anc[i].Item2;
+                if (pt != null && Numero(pt.Testo, out v, out pol))
+                {
+                    e.Pos = v; e.Fonti.Add(pt);
+                    if (pt.Conf < 70) { e.DubbioPos = true; e.Dubbi.Add("posizione letta male (OCR " + pt.Conf.ToString("0", CI) + " %)"); }
+                }
+                else { e.Pos = double.NaN; e.DubbioPos = true; e.Dubbi.Add("posizione non letta: scriverla"); }
+                double y0 = anc[i].Item1;
+                double su = i > 0 ? (anc[i - 1].Item1 + y0) / 2 : y0 - 0.06 * H, giu = i + 1 < anc.Count ? (anc[i + 1].Item1 + y0) / 2 : y0 + 0.06 * H;
+                if (anc[i].Item3 != null)
+                {
+                    var parole = anc[i].Item3.P.OrderBy(p => p.X).Select(p => p.Testo).ToList();
+                    while (parole.Count > 0 && !Regex.IsMatch(parole[0], @"^[A-Za-z0-9#]")) parole.RemoveAt(0);
+                    e.Nome = string.Join(" ", parole).Trim().TrimEnd(',');
+                }
                 if (e.Nome.Length == 0) e.Nome = "elemento " + (i + 1);
 
                 // 2. righe con numeri nella fascia dell'elemento: la prima con diametri, la seguente con le lunghezze
@@ -159,6 +187,11 @@ namespace YaNec.Engine
                         bool perX = (k + 1 < ord.Count && Regex.IsMatch(ord[k + 1].Testo, "^[x×X*]$")) || (k > 0 && Regex.IsMatch(ord[k - 1].Testo, "^[x×X*]$"));
                         if (perX) continue;                                  // manicotto .875" x 72"
                         if (k > 0 && ord[k - 1].Testo.TrimEnd().EndsWith("(")) continue;
+                        if (unita == 0 && !pp)
+                        {
+                            string tt = Pulisci(ord[k].Testo);
+                            if (!tt.Contains(".") && !Regex.IsMatch(tt, @"^\d{3}$")) continue;   // 20 di "20 Mtr", segni del disegno
+                        }
                         l.Add(new KeyValuePair<ParolaLetta, double>(ord[k], vv));
                     }
                     return l;
@@ -225,7 +258,7 @@ namespace YaNec.Engine
         public static void ControllaPosizioni(List<ElementoLetto> el)
         {
             for (int i = 1; i < el.Count; i++)
-                if (el[i].Pos <= el[i - 1].Pos && !el[i].DubbioPos) { el[i].DubbioPos = true; el[i].Dubbi.Add("posizione non crescente lungo il boom"); }
+                if (!double.IsNaN(el[i].Pos) && !double.IsNaN(el[i - 1].Pos) && el[i].Pos <= el[i - 1].Pos && !el[i].DubbioPos) { el[i].DubbioPos = true; el[i].Dubbi.Add("posizione non crescente lungo il boom"); }
         }
 
         public static string Fmt(double v) { return v.ToString("0.###", CI); }

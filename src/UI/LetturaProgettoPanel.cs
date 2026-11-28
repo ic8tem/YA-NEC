@@ -216,7 +216,7 @@ namespace YaNec
         {
             var r = new Riga { E = e, G = RigaGriglia() };
             r.Nome = new TextBox { Text = e.Nome, FontSize = 12.5, Margin = new Thickness(0, 0, 4, 0) };
-            r.Pos = new TextBox { Text = LetturaProgetto.Fmt(e.Pos), FontSize = 12.5, Margin = new Thickness(0, 0, 4, 0) };
+            r.Pos = new TextBox { Text = double.IsNaN(e.Pos) ? "" : LetturaProgetto.Fmt(e.Pos), FontSize = 12.5, Margin = new Thickness(0, 0, 4, 0) };
             r.Tratti = new TextBox { Text = LetturaProgetto.TestoSpezzoni(e.Spezzoni), FontSize = 12.5, Margin = new Thickness(0, 0, 4, 0) };
             r.Alim = new CheckBox { IsChecked = e.Alimentato, HorizontalAlignment = HorizontalAlignment.Center };
             ToolTip.SetTip(r.Alim, "Elemento alimentato: sorgente al centro.");
