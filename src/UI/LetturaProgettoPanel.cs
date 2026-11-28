@@ -48,7 +48,13 @@ namespace YaNec
             public TextBox Nome, Pos, Tratti; public CheckBox Alim; public Grid G;
         }
 
-        public LetturaProgettoPanel() { Content = Costruisci(); }
+        public LetturaProgettoPanel()
+        {
+            Content = Costruisci();
+            // per le prove: YANEC_LEGGI_PROGETTO=<file> apre il file all'apertura della pagina
+            string prova = Environment.GetEnvironmentVariable("YANEC_LEGGI_PROGETTO");
+            if (!string.IsNullOrEmpty(prova) && File.Exists(prova)) Dispatcher.UIThread.Post(async () => await Carica(prova));
+        }
 
         Control Costruisci()
         {
