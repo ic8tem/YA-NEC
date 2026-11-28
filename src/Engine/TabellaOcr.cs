@@ -70,6 +70,18 @@ namespace YaNec.Engine
             corretta = false;
             if (string.IsNullOrEmpty(t)) return t;
             string s = t.Trim().Replace('−', '-').Replace('–', '-');
+            // segni rimasti attaccati dalle linee o dalla punteggiatura: 0.432, = 0.432 ; "6th = 6th
+            string s0 = s;
+            s = s.TrimStart('“', '”', '"', '\'', '`', '‘', '’');
+            if (Regex.IsMatch(s, @"^-?\d*\.?\d+[.,;:]+$")) s = s.TrimEnd('.', ',', ';', ':');
+            // ordinali dei direttori: Ist = 1st, Ath = 4th, Sth = 5th
+            var ord = Regex.Match(s, @"^([0-9OolI|ASB]{1,2})(st|nd|rd|th)$");
+            if (ord.Success && Regex.IsMatch(ord.Groups[1].Value, "[OolI|ASB]"))
+            {
+                corretta = true;
+                return ord.Groups[1].Value.Replace('O', '0').Replace('o', '0').Replace('l', '1').Replace('I', '1').Replace('|', '1').Replace('A', '4').Replace('S', '5').Replace('B', '8') + ord.Groups[2].Value;
+            }
+            if (s != s0 && Regex.IsMatch(s, @"^-?[0-9.,]+$")) { corretta = true; return s; }
             if (Regex.IsMatch(s, @"^-?[0-9.,]+$")) return s;
             if (Regex.IsMatch(s, @"^\(?\d[-~]\d{2,3}$")) { corretta = true; return s.TrimStart('(').Replace('-', '.').Replace('~', '.'); }   // 0-482 = 0.482
             if (Regex.IsMatch(s, @"^-?[0-9.,OolI|SB]+$") && Regex.IsMatch(s, @"[0-9]") || Regex.IsMatch(s, @"^[Oo]$"))
