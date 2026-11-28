@@ -140,6 +140,7 @@ namespace YaNec.Engine
                 if (c != null) r.Spazi.Add(new[] { xIni, xFine });
             }
             // corpo: la serie di righe con numeri (al massimo una riga di rumore in mezzo) che contiene piu' numeri
+            Func<Riga, int> numeri = r => r.Celle.Count(c => { bool k; double v; return Valore(Cifre(c.Testo, out k), false, out v) || Valore(Cifre(c.Testo, out k), true, out v); });
             int best0 = -1, bestN = 0, bestNum = 0;
             for (int i = 0; i < righe.Count; i++)
             {
