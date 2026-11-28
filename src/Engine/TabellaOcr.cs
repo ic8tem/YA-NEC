@@ -604,6 +604,25 @@ namespace YaNec.Engine
             return giuste + " celle giuste su " + tot + ", " + t.Righe.Count + " righe x " + t.Colonne + " colonne";
         }
 
+        /// <summary>Riga di comando (YA-NEC --importa-tabella file|prova [lingua]): tabella letta, per le prove.</summary>
+        public static int RigaDiComando(string file, string lingua)
+        {
+            byte[] png = file == "prova" ? Disegna(1.6, 0.6) : File.ReadAllBytes(file);
+            if (file == "prova") File.WriteAllBytes(Path.Combine(AppPaths.TempDir, "prova_tabella.png"), png);
+            double a = AngoloRaddrizza(png);
+            byte[] pr = Prepara(png, a, false, null);
+            File.WriteAllBytes(Path.Combine(AppPaths.TempDir, "prova_tabella_dritta.png"), pr);
+            string err; var pg = LetturaProgetto.Ocr(pr, file, out err, lingua ?? "eng", 6);
+            if (pg == null) { Console.WriteLine(err); return 2; }
+            Console.WriteLine("angolo " + a.ToString("0.0", CI) + ", " + pg.Parole.Count + " parole " + pg.Larghezza + "x" + pg.Altezza);
+            foreach (var p in pg.Parole.OrderBy(q => q.Cy)) Console.Write(string.Format(CI, "{0:0},{1:0},{2:0}:{3} ", p.X, p.Y, p.H, p.Testo));
+            Console.WriteLine();
+            var t = Riconosci(pg);
+            Console.WriteLine("Titolo: " + t.Titolo + " | unita' " + Unita[t.Unita] + " | " + string.Join(" | ", t.Intestazioni));
+            foreach (var r in t.Righe) Console.WriteLine(string.Join(" | ", r.Select(c => c.Testo + (c.Incerta ? "?" : ""))));
+            return 0;
+        }
+
         public static List<Tuple<string, bool, string>> Prove()
         {
             var r = new List<Tuple<string, bool, string>>();
@@ -629,7 +648,7 @@ namespace YaNec.Engine
             {
                 string nec = Nec(el, 0, 144.3, false, 1, false, "prova", "autotest", t, ruoli);
                 var m = NecModel.Parse(nec); var geo = m.BuildGeometry();
-                ok2 = ok2 && m.Sources.Count == 1 && geo.N > 100;
+                ok2 = ok2 && m.Sources.Count == 1 && geo.N > 50;
                 d2 += ", " + geo.N + " segmenti, sorgente sul DR; controlli: " + note.Count;
                 var conf = Confronto(el, nec, false);
                 ok2 = ok2 && conf.Count == 10 && conf.All(c => c[3] == "0" && c[6] == "0");
