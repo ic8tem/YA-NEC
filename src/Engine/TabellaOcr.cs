@@ -107,7 +107,7 @@ namespace YaNec.Engine
         public static TabellaLetta Riconosci(PaginaLetta pg)
         {
             var t = new TabellaLetta();
-            var parole = pg.Parole.Where(p => !string.IsNullOrWhiteSpace(p.Testo)).OrderBy(p => p.Cy).ToList();
+            var parole = pg.Parole.Where(p => !string.IsNullOrWhiteSpace(p.Testo) && Regex.IsMatch(p.Testo, @"[0-9A-Za-z\u00C0-\u024F\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFFλØø]")).OrderBy(p => p.Cy).ToList();
             if (parole.Count == 0) return t;
             double hMed = parole.Select(p => p.H).OrderBy(h => h).ElementAt(parole.Count / 2);
             // righe
@@ -520,7 +520,7 @@ namespace YaNec.Engine
 
         /// <summary>Immagine ruotata di -angolo (raddrizzata), ritagliata (rettangolo in pixel dell'originale, dopo la rotazione) e,
         /// con "forte", con il contrasto stirato (foto): restituisce un PNG.</summary>
-        public static byte[] Prepara(byte[] png, double angolo, bool forte, double[] ritaglio)
+        public static byte[] Prepara(byte[] png, double angolo, bool forte, double[] ritaglio, bool linee = true)
         {
             using (var b0 = SkiaSharp.SKBitmap.Decode(png))
             {
@@ -542,6 +542,7 @@ namespace YaNec.Engine
                             var r = new SkiaSharp.SKRectI((int)Math.Max(0, ritaglio[0]), (int)Math.Max(0, ritaglio[1]), (int)Math.Min(w, ritaglio[2]), (int)Math.Min(h, ritaglio[3]));
                             if (r.Width > 10 && r.Height > 10) { var sub = new SkiaSharp.SKBitmap(); if (bmp.ExtractSubset(sub, r)) fin = sub.Copy(); }
                         }
+                        if (linee) TogliLinee(fin);
                         if (forte)
                         {
                             var px = fin.Pixels;
@@ -560,6 +561,42 @@ namespace YaNec.Engine
                     }
                 }
             }
+        }
+
+        /// <summary>Toglie le linee della griglia (tratti orizzontali e verticali di nero piu' lunghi del 3 % della larghezza):
+        /// con la griglia Tesseract legge le celle come un blocco unico (prova del 28/11 sulla tabella 1 della NBS TN 688, scansione
+        /// a 300 dpi: 59 parole con la griglia, quasi tutti i numeri senza).</summary>
+        public static void TogliLinee(SkiaSharp.SKBitmap b)
+        {
+            int w = b.Width, h = b.Height;
+            var px = b.Pixels;
+            var nero = new bool[w * h];
+            for (int k = 0; k < px.Length; k++) nero[k] = (px[k].Red * 299 + px[k].Green * 587 + px[k].Blue * 114) / 1000 < 128;
+            var togli = new bool[w * h];
+            int L = Math.Max(25, (int)(0.03 * w));
+            for (int y = 0; y < h; y++)
+            {
+                int x = 0;
+                while (x < w)
+                {
+                    if (!nero[y * w + x]) { x++; continue; }
+                    int s0 = x; while (x < w && nero[y * w + x]) x++;
+                    if (x - s0 >= L) for (int q = s0; q < x; q++) togli[y * w + q] = true;
+                }
+            }
+            for (int x = 0; x < w; x++)
+            {
+                int y = 0;
+                while (y < h)
+                {
+                    if (!nero[y * w + x]) { y++; continue; }
+                    int s0 = y; while (y < h && nero[y * w + x]) y++;
+                    if (y - s0 >= L) for (int q = s0; q < y; q++) togli[q * w + x] = true;
+                }
+            }
+            bool cambiato = false;
+            for (int k = 0; k < px.Length; k++) if (togli[k]) { px[k] = SkiaSharp.SKColors.White; cambiato = true; }
+            if (cambiato) b.Pixels = px;
         }
 
         /// <summary>Lingue di Tesseract disponibili in data/tessdata.</summary>
@@ -588,6 +625,14 @@ namespace YaNec.Engine
                 string[] h = { "Elem.", "Posiz.", "Lungh.", "Diam." }; float[] xs = { 40, 160, 300, 440 };
                 for (int k = 0; k < 4; k++) c.DrawText(h[k], xs[k], 80, font, paint);
                 for (int i = 0; i < Prova.Length; i++) for (int k = 0; k < 4; k++) c.DrawText(Prova[i][k], xs[k], 115 + i * 38, font, paint);
+                if (Math.Abs(scala - 1.01) < 1e-6)   // griglia: linee orizzontali tra le righe e verticali tra le colonne
+                {
+                    using (var lp = new SkiaSharp.SKPaint { Color = SkiaSharp.SKColors.Black, StrokeWidth = 2.5f })
+                    {
+                        for (int i = 0; i <= Prova.Length + 1; i++) c.DrawLine(30, 55 + i * 38 - (i == 0 ? 0 : 0), 520, 55 + i * 38, lp);
+                        foreach (float x in new float[] { 30, 140, 280, 420, 520 }) c.DrawLine(x, 55, x, 55 + (Prova.Length + 1) * 38, lp);
+                    }
+                }
                 using (var img = surf.Snapshot()) using (var d = img.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100)) return d.ToArray();
             }
         }
@@ -658,7 +703,7 @@ namespace YaNec.Engine
             r.Add(Tuple.Create("Importa tabella: modello NEC e confronto", ok2, d2));
             // 3. OCR di immagini della tabella: dritta, storta di 1,6 gradi e ridotta al 60 %
             if (LetturaProgetto.Tesseract() == null) { r.Add(Tuple.Create("Importa tabella: OCR (Tesseract non installato, prova saltata)", true, LetturaProgetto.ComeInstallare())); return r; }
-            foreach (var caso in new[] { Tuple.Create(0.0, 1.0, "dritta"), Tuple.Create(1.6, 0.6, "storta di 1,6 gradi e al 60 %") })
+            foreach (var caso in new[] { Tuple.Create(0.0, 1.0, "dritta"), Tuple.Create(1.6, 0.6, "storta di 1,6 gradi e al 60 %"), Tuple.Create(0.0, 1.01, "con la griglia") })
             {
                 try
                 {
