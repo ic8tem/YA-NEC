@@ -71,6 +71,8 @@ namespace YaNec.Engine
             t = t.TrimEnd('|', ';', ':', '_', '!');
             int k0 = 0; while (k0 < t.Length && "{[|_£€$'`~«»>".IndexOf(t[k0]) >= 0) k0++;
             t = t.Substring(k0);
+            if (t.EndsWith("\"") && t.Length > 1 && Regex.IsMatch(t.Substring(0, t.Length - 1), @"^[0-9.OolI]+$") && Regex.IsMatch(t, @"\d|^[Oo]"))
+                t = t.Replace('O', '0').Replace('o', '0').Replace('l', '1').Replace('I', '1');   // O." = 0." , l2" = 12"
             return t;
         }
 
@@ -131,6 +133,8 @@ namespace YaNec.Engine
             var titoli = Righe(pg.Parole.Where(p => { double vv; bool pp; return p.X >= 0.6 * W && Regex.IsMatch(p.Testo, "[A-Za-z#0-9]") && !(p.Cx > 0.84 * W && Numero(p.Testo, out vv, out pp)); }))
                 .Where(r => Regex.IsMatch(r.Testo, @"element|elem\.|#\s*\d|refl|driv|direct|radiat|rifl|dirett|\bDE\b|\bDR\b|\bD\d", RegexOptions.IgnoreCase)
                          && !Parole_Escluse.Any(x => r.Testo.ToLowerInvariant().Contains(x)) && r.P.Count <= 8).ToList();
+            var forti = titoli.Where(r => Regex.IsMatch(r.Testo, @"element|elem\.|#\s*\d", RegexOptions.IgnoreCase)).ToList();
+            if (forti.Count >= 3) titoli = forti;   // con "Element #n" nei titoli, le altre righe (note, piedi di pagina) non sono elementi
             double tolY = 0.015 * H;
             var anc = new List<Tuple<double, ParolaLetta, Riga>>();   // y, posizione, titolo
             foreach (var t in titoli)
@@ -225,6 +229,19 @@ namespace YaNec.Engine
                     e.Fonti.Add(d.Key); e.Fonti.Add(best.Key);
                     if (d.Key.Conf < 70 || best.Key.Conf < 70) e.Dubbi.Add("tratto " + Fmt(d.Value) + " × " + Fmt(best.Value) + " letto male");
                 }
+                var avanzate = lNum.Where(l => !usate.Contains(l.Key)).ToList();
+                if (coppie.Count > 0 && avanzate.Count > 0)
+                {
+                    double mediaX = coppie.Average(c => c.Item1);
+                    bool sinistra = mediaX < 0.5 * W;
+                    double estremo = sinistra ? coppie.Max(c => c.Item1) : coppie.Min(c => c.Item1);
+                    foreach (var a in avanzate.Where(a => sinistra ? a.Key.Cx > estremo : a.Key.Cx < estremo).ToList())
+                    {
+                        coppie.Add(Tuple.Create(a.Key.Cx, new SpezzoneLetto { Diam = double.NaN, Lung = a.Value }));
+                        e.Fonti.Add(a.Key); usate.Add(a.Key);
+                        e.Dubbi.Add("diametro del tratto lungo " + Fmt(a.Value) + " non letto: scriverlo al posto di ?");
+                    }
+                }
                 if (lNum.Count(l => !usate.Contains(l.Key)) > 0) e.Dubbi.Add("lunghezze in piu': " + string.Join(" ", lNum.Where(l => !usate.Contains(l.Key)).Select(l => Fmt(l.Value))));
                 // dal centro alla punta: le quote stanno da un lato del boom; il centro e' il lato verso il mezzo della pagina
                 double media = coppie.Count > 0 ? coppie.Average(c => c.Item1) : 0;
@@ -252,7 +269,7 @@ namespace YaNec.Engine
         {
             e.Dubbi.RemoveAll(d => d.StartsWith("diametri che crescono"));
             for (int k = 1; k < e.Spezzoni.Count; k++)
-                if (e.Spezzoni[k].Diam > e.Spezzoni[k - 1].Diam + 1e-9) { e.Dubbi.Add("diametri che crescono verso la punta"); break; }
+                if (!double.IsNaN(e.Spezzoni[k].Diam) && !double.IsNaN(e.Spezzoni[k - 1].Diam) && e.Spezzoni[k].Diam > e.Spezzoni[k - 1].Diam + 1e-9) { e.Dubbi.Add("diametri che crescono verso la punta"); break; }
             if (e.Spezzoni.Count == 0 && !e.Dubbi.Any()) e.Dubbi.Add("nessun tratto");
         }
 
@@ -265,13 +282,14 @@ namespace YaNec.Engine
         public static string Fmt(double v) { return v.ToString("0.###", CI); }
 
         /// <summary>Tratti scritti come "1×72 · .875×12 · .75×33" (dal centro alla punta).</summary>
-        public static string TestoSpezzoni(List<SpezzoneLetto> s) { return string.Join(" · ", s.Select(t => Fmt(t.Diam) + "×" + Fmt(t.Lung))); }
+        public static string TestoSpezzoni(List<SpezzoneLetto> s) { return string.Join(" · ", s.Select(t => (double.IsNaN(t.Diam) ? "?" : Fmt(t.Diam)) + "×" + (double.IsNaN(t.Lung) ? "?" : Fmt(t.Lung)))); }
 
         public static bool LeggiSpezzoni(string testo, out List<SpezzoneLetto> s, out string errore)
         {
             s = new List<SpezzoneLetto>(); errore = null;
             foreach (Match m in Regex.Matches(testo ?? "", @"(\d*\.?\d+)\s*[x×X*]\s*(\d*\.?\d+)"))
                 s.Add(new SpezzoneLetto { Diam = double.Parse(m.Groups[1].Value, CI), Lung = double.Parse(m.Groups[2].Value, CI) });
+            if (Regex.IsMatch(testo ?? "", @"\?")) { errore = "c'e' ancora un ? da sostituire con la misura"; return false; }
             if (s.Count == 0) { errore = "scrivere i tratti come diametro×lunghezza, dal centro verso la punta (per esempio 1×72 · .875×12)"; return false; }
             return true;
         }
