@@ -110,7 +110,7 @@ namespace YaNec.Engine
         public static TabellaLetta Riconosci(PaginaLetta pg)
         {
             var t = new TabellaLetta();
-            var parole = pg.Parole.Where(p => !string.IsNullOrWhiteSpace(p.Testo) && (p.Conf >= 45 || ParolaNumero(p.Testo)) && Regex.IsMatch(p.Testo, @"[0-9A-Za-z\u00C0-\u024F\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFFλØø]")).OrderBy(p => p.Cy).ToList();
+            var parole = pg.Parole.Where(p => !string.IsNullOrWhiteSpace(p.Testo) && (p.Conf >= 45 || ParolaNumero(p.Testo) || (p.Conf >= 20 && Regex.IsMatch(p.Testo, "[0-9]"))) && Regex.IsMatch(p.Testo, @"[0-9A-Za-z\u00C0-\u024F\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFFλØø]")).OrderBy(p => p.Cy).ToList();
             if (parole.Count == 0) return t;
             double hMed = parole.Select(p => p.H).OrderBy(h => h).ElementAt(parole.Count / 2);
             // righe
@@ -139,19 +139,23 @@ namespace YaNec.Engine
                 }
                 if (c != null) r.Spazi.Add(new[] { xIni, xFine });
             }
-            // corpo: la serie piu' lunga di righe con almeno due numeri
-            Func<Riga, int> numeri = r => r.Celle.Count(c => { bool k; double v; return Valore(Cifre(c.Testo, out k), false, out v) || Valore(Cifre(c.Testo, out k), true, out v); });
-            int best0 = -1, bestN = 0;
+            // corpo: la serie di righe con numeri (al massimo una riga di rumore in mezzo) che contiene piu' numeri
+            int best0 = -1, bestN = 0, bestNum = 0;
             for (int i = 0; i < righe.Count; i++)
             {
-                if (numeri(righe[i]) < 2) continue;
-                int j = i;
-                while (j + 1 < righe.Count && numeri(righe[j + 1]) >= 2) j++;
-                if (j - i + 1 > bestN) { bestN = j - i + 1; best0 = i; }
+                if (numeri(righe[i]) < 1) continue;
+                int j = i, tot = numeri(righe[i]);
+                while (true)
+                {
+                    if (j + 1 < righe.Count && numeri(righe[j + 1]) >= 1) { j++; tot += numeri(righe[j]); continue; }
+                    if (j + 2 < righe.Count && numeri(righe[j + 2]) >= 1 && righe[j + 1].Celle.Count <= 2) { j += 2; tot += numeri(righe[j]); continue; }
+                    break;
+                }
+                if (tot > bestNum && tot >= 2) { bestNum = tot; best0 = i; bestN = j - i + 1; }
                 i = j;
             }
             if (best0 < 0) return t;
-            var corpo = righe.GetRange(best0, bestN);
+            var corpo = righe.GetRange(best0, bestN).Where(r => numeri(r) >= 1).ToList();
             Riga intest = null;
             if (best0 > 0 && righe[best0 - 1].Celle.Count >= 2 && numeri(righe[best0 - 1]) < righe[best0 - 1].Celle.Count) intest = righe[best0 - 1];
             int titoloFino = (intest != null ? best0 - 1 : best0);
