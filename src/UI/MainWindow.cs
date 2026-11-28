@@ -141,6 +141,10 @@ namespace YaNec
                 CopyExamples();
                 Interfaccia.AvviaGuardia();
                 Registro.Scrivi("COMPUTER", "disegno dell'interfaccia: " + Prestazioni.Disegno());
+                // 1.10.0: dopo 8 s di finestra aperta l'avvio con questo modo di disegno e' riuscito (ripiego automatico sul software)
+                Avalonia.Threading.DispatcherTimer tg = new Avalonia.Threading.DispatcherTimer { Interval = TimeSpan.FromSeconds(8) };
+                tg.Tick += (s2, e2) => { tg.Stop(); Program.GraficaRiuscita(); };
+                tg.Start();
                 if (ProveAutomatiche) AvviaProveInterfaccia();
                 // 0.4.15: aggiornamento automatico dal GitHub (1.4.1: ogni 3 minuti, il primo dopo 10 secondi) (spento durante le prove)
                 string agg = Aggiornamento.PulisciDopoAvvio();

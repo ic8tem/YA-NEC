@@ -307,6 +307,16 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "Dipolo trappolato multibanda, 2-5 bande (1.10.0)",
+                Who = "SP3RL (dx10antenne.pl: idea della scheda, calcolatore di dipoli trappolati); C. L. Buchanan W3DZZ (QST marzo 1955, modello a linea del braccio con trappola); " +
+                      "S. A. Schelkunoff (impedenza media del monopolo); I5WHC (RadioRivista 4/2025, perdite delle trappole)",
+                What = "Bande a scelta (80-10 m, da 2 a 5), trappole con C automatico o scelto, tratti dal modello a linea banda per banda, accordo dei tratti con il NEC, balun 1:1 ... 9:1 col ROS medio piu' basso, " +
+                       "tabelle delle trappole e delle bande (ROS, banda a ROS 2, perdite). Bozzetto approvato da IC8TEM il 28/11/2026.",
+                Link = "dx10console.pl/dx10antenne.html",
+                License = "idea e funzioni della scheda prese da SP3RL (citato); formule e codice di YA-NEC, nessun codice o testo copiato"
+            },
+            new CreditEntry
+            {
                 Title = "Fonti aggiunte ai calcolatori (0.4.30)",
                 Who = "L. G. Windom W8GZ (QST 1929); F. Spillner DJ2KY (FD4, QRV 1971); Belrose e Bouliane (QST 1990); C. L. Buchanan W3DZZ (QST 1955); Y. Someya JE1DEU (Hentenna, 1972); " +
                       "C. E. Smith e E. M. Johnson (Proc. IRE 1947); R. Severns N6LF (QEX 2013); G. Guanella (1944), W. K. Ruthroff (1959), J. Sevick (Transmission Line Transformers); ARRL Antenna Book 19ª e 24ª ed. (spaziatura dei parassiti)",

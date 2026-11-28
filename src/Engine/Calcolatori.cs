@@ -76,6 +76,7 @@ namespace YaNec.Engine
             add(new CalcVInvertita(), "dipoli", "V invertita");
             add(new CalcRipiegato(), "dipoli", "ripiegato");
             add(new CalcTrappolato(), "dipoli", "trappolato");
+            add(new CalcTrappolatoMulti(), "dipoli", "trappolato multibanda");   // 1.10.0 (bozzetto approvato da IC8TEM il 28/11/2026; idea: SP3RL)
             add(new CalcOcf(), "dipoli", "OCF/Windom");
             add(new CalcG5rv(), "dipoli", "G5RV");
             add(new CalcT2fd(), "dipoli", "T2FD");

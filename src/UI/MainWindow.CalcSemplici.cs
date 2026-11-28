@@ -71,7 +71,7 @@ namespace YaNec
             // una famiglia; "Distanze di stack DL6WU" passa alla sopralinguetta Rumore/GT/Stack.
             calcTitolo = new TextBlock { Text = "HF", FontSize = 18, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(2, 0, 0, 6) };
             fasCalc.Children.Add(calcTitolo);
-            fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, OCF/Windom, G5RV, T2FD, banda larga, multibanda a rele'", true);
+            fasCalc.Voce("dipoli", "Dipoli", false, null, "mezz'onda, V invertita, ripiegato, trappolato, trappolato multibanda, OCF/Windom, G5RV, T2FD, banda larga, multibanda a rele'", true);
             fasCalc.Voce("filari", "Filari", false, null, "alimentate in punta: EFHW 49:1 / 64:1, con bobina, filo non risonante 9:1 / 4:1; contrappeso, choke; risonanze in armonica (EFLW)");   // 1.5.6 (bozzetto approvato da IC8TEM 21/11/2026 21:12)
             fasCalc.Voce("dipmb", "Dipolo multibanda", false, null, "bacchette parallele, manica aperta, radiatori XR-5");   // 0.4.30
             fasCalc.Voce("yagihf", "Yagi HF 2-3 elementi", false, null, "valori di partenza e guida di taratura (I4MFA)");   // 1.7.0
@@ -359,6 +359,32 @@ namespace YaNec
                 {
                     gruppo = null; griglia = null;
                     left.Children.Add(TessereScelta(pp, () => { sc.Scale = 1; if (mostra != null) mostra(); }));
+                }
+                else if (pp.Choices != null && pp.Multipla)
+                {
+                    // 1.10.0 (bozzetto del dipolo trappolato multibanda approvato da IC8TEM il 28/11/2026): caselle di spunta, Value = maschera di bit
+                    gruppo = null; griglia = null; ultimaRigaScelte = null;
+                    WrapPanel wp = new WrapPanel { Tag = "spunte-" + pp.Key };
+                    for (int i = 0; i < pp.Choices.Length; i++)
+                    {
+                        int bit = 1 << i;
+                        CheckBox cbx = new CheckBox { Content = pp.Choices[i], IsChecked = ((int)pp.Value & bit) != 0, Margin = new Thickness(0, 0, 12, 0), Foreground = Pal.B(Pal.Fore) };
+                        cbx.IsCheckedChanged += (s, e) =>
+                        {
+                            int v = (int)pp.Value;
+                            v = cbx.IsChecked == true ? v | bit : v & ~bit;
+                            if (v == (int)pp.Value) return;
+                            pp.Value = v; sc.Scale = 1; if (mostra != null) mostra();
+                        };
+                        wp.Children.Add(cbx);
+                    }
+                    if (!string.IsNullOrEmpty(pp.Tip)) ToolTip.SetTip(wp, pp.Tip);
+                    TextBlock h = Muto(pp.Hint);
+                    DockPanel riga = RigaCalc(pp.Label);
+                    riga.Children.Add(wp);
+                    left.Children.Add(riga);
+                    left.Children.Add(h);
+                    aggiornaHint.Add(() => h.Text = pp.Hint ?? "");
                 }
                 else if (pp.Choices != null && pp.Choices.Length > 0 && (pp.Choices.Length <= 4 || pp.Pillole))
                 {
@@ -661,25 +687,40 @@ namespace YaNec
             Border tabPanel = Scheda(tabBox);
             tabPanel.IsVisible = false;
             root.Children.Add(tabPanel);
+            // 1.10.0: seconda tabella (dipolo trappolato multibanda: trappole, poi bande)
+            StackPanel tabBox2 = new StackPanel();
+            TextBlock tabTitolo2 = new TextBlock { FontSize = 15, FontWeight = FontWeight.Bold, Foreground = Pal.B(Pal.Fore), Margin = new Thickness(0, 0, 0, 6), TextWrapping = TextWrapping.Wrap };
+            Grid tabGriglia2 = new Grid();
+            tabBox2.Children.Add(tabTitolo2);
+            tabBox2.Children.Add(new ScrollViewer { Content = tabGriglia2, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto, VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled });
+            Border tabPanel2 = Scheda(tabBox2);
+            tabPanel2.IsVisible = false;
+            root.Children.Add(tabPanel2);
+            Action<List<string[]>, string, Grid, TextBlock, Border> riempiTabella = null;
             Action<CalcOutput> mostraTabella = o0 =>
             {
-                tabGriglia.Children.Clear(); tabGriglia.RowDefinitions.Clear(); tabGriglia.ColumnDefinitions.Clear();
-                if (o0.Tabella == null || o0.Tabella.Count == 0) { tabPanel.IsVisible = false; return; }
-                tabPanel.IsVisible = true;
-                tabTitolo.Text = Lang.T(o0.TabellaTitolo ?? "");
-                int nc = 0; foreach (string[] r in o0.Tabella) nc = Math.Max(nc, r.Length);
-                for (int j = 0; j < nc; j++) tabGriglia.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
-                for (int i = 0; i < o0.Tabella.Count; i++)
+                riempiTabella(o0.Tabella, o0.TabellaTitolo, tabGriglia, tabTitolo, tabPanel);
+                riempiTabella(o0.Tabella2, o0.Tabella2Titolo, tabGriglia2, tabTitolo2, tabPanel2);
+            };
+            riempiTabella = (righe, titolo, griglia0, tit0, pann0) =>
+            {
+                griglia0.Children.Clear(); griglia0.RowDefinitions.Clear(); griglia0.ColumnDefinitions.Clear();
+                if (righe == null || righe.Count == 0) { pann0.IsVisible = false; return; }
+                pann0.IsVisible = true;
+                tit0.Text = Lang.T(titolo ?? "");
+                int nc = 0; foreach (string[] r in righe) nc = Math.Max(nc, r.Length);
+                for (int j = 0; j < nc; j++) griglia0.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
+                for (int i = 0; i < righe.Count; i++)
                 {
-                    tabGriglia.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
-                    for (int j = 0; j < o0.Tabella[i].Length; j++)
+                    griglia0.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                    for (int j = 0; j < righe[i].Length; j++)
                     {
-                        string t = o0.Tabella[i][j] ?? "";
+                        string t = righe[i][j] ?? "";
                         Color col = i == 0 ? Pal.Muted : t.StartsWith("✓") ? Pal.Green : t.StartsWith("⚠") ? Pal.Orange : Pal.Fore;
                         TextBlock tb = new TextBlock { Text = Lang.TC(t), FontSize = i == 0 ? 12.5 : 13, FontWeight = i == 0 || j == 0 ? FontWeight.SemiBold : FontWeight.Normal, Foreground = Pal.B(col) };
                         Border cell = new Border { Child = tb, Padding = new Thickness(7, 4, 10, 4), BorderBrush = Pal.B(Pal.Border), BorderThickness = new Thickness(0, 0, 0, 1) };
                         Grid.SetRow(cell, i); Grid.SetColumn(cell, j);
-                        tabGriglia.Children.Add(cell);
+                        griglia0.Children.Add(cell);
                     }
                 }
             };

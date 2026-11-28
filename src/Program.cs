@@ -540,6 +540,7 @@ namespace YaNec
                     return bad == 0 ? 0 : 1;
                 }
             Registro.Scrivi("AVVIO", "interfaccia grafica, argomenti: " + string.Join(" ", args));
+            ScegliGrafica();
             try
             {
                 BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
@@ -555,9 +556,51 @@ namespace YaNec
             return MainWindow.ProveAutomatiche ? (MainWindow.ProveFinite ? MainWindow.ProveFallite : 10000) : 0;
         }
 
+        // 1.10.0 (valutazione GPU approvata da IC8TEM il 28/11/2026, opzione 1): ripiego automatico sul disegno in software.
+        // Avalonia prova gia' da se' la scheda grafica e, se non parte, il software; qui si copre il caso peggiore: la GPU parte ma il
+        // programma si chiude (driver difettoso) prima che la finestra sia rimasta aperta 8 secondi. Il segnalino data/avvio_grafica.txt
+        // si scrive prima dell'avvio e si cancella dopo 8 s di finestra aperta: se all'avvio c'e' ancora, l'avvio precedente e' caduto e si
+        // passa al software (data/grafica_software.txt, cancellabile per riprovare la GPU). YANEC_GRAFICA=software|gpu forza il modo.
+        public static bool GraficaSoftware { get; private set; }
+        public static string GraficaMotivo = "";
+        static string FileSegnalino { get { return Path.Combine(AppPaths.DataDir, "avvio_grafica.txt"); } }
+        static string FileSoftware { get { return Path.Combine(AppPaths.DataDir, "grafica_software.txt"); } }
+
+        static void ScegliGrafica()
+        {
+            try
+            {
+                string env = Environment.GetEnvironmentVariable("YANEC_GRAFICA") ?? "";
+                if (env.Equals("software", StringComparison.OrdinalIgnoreCase)) { GraficaSoftware = true; GraficaMotivo = "YANEC_GRAFICA=software"; }
+                else if (env.Equals("gpu", StringComparison.OrdinalIgnoreCase)) { GraficaSoftware = false; GraficaMotivo = "YANEC_GRAFICA=gpu"; }
+                else if (File.Exists(FileSoftware)) { GraficaSoftware = true; GraficaMotivo = "data/grafica_software.txt presente"; }
+                else if (File.Exists(FileSegnalino) && !MainWindow.ProveAutomatiche)
+                {
+                    GraficaSoftware = true;
+                    GraficaMotivo = "l'avvio precedente con la scheda grafica si e' chiuso prima di 8 secondi di finestra aperta";
+                    File.WriteAllText(FileSoftware, "Disegno in software scelto da YA-NEC il " + DateTime.Now.ToString("dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture) +
+                        ": " + GraficaMotivo + ".\nCancella questo file per riprovare la scheda grafica.\n");
+                }
+                File.WriteAllText(FileSegnalino, DateTime.Now.ToString("o", System.Globalization.CultureInfo.InvariantCulture));
+            }
+            catch { }
+            Registro.Scrivi("GRAFICA", GraficaSoftware ? "disegno in software (" + GraficaMotivo + ")" : "scheda grafica se disponibile (prova di Avalonia, poi software)" + (GraficaMotivo != "" ? " (" + GraficaMotivo + ")" : ""));
+        }
+
+        /// <summary>Chiamata dalla finestra principale dopo 8 secondi aperta: l'avvio con questo modo di disegno e' riuscito.</summary>
+        public static void GraficaRiuscita()
+        {
+            try { if (File.Exists(FileSegnalino)) File.Delete(FileSegnalino); } catch { }
+        }
+
         public static AppBuilder BuildAvaloniaApp()
         {
-            return AppBuilder.Configure<App>().UsePlatformDetect().WithInterFont().LogToTrace();
+            AppBuilder b = AppBuilder.Configure<App>().UsePlatformDetect().WithInterFont().LogToTrace();
+            if (GraficaSoftware)
+                b = b.With(new Win32PlatformOptions { RenderingMode = new[] { Win32RenderingMode.Software } })
+                     .With(new X11PlatformOptions { RenderingMode = new[] { X11RenderingMode.Software } })
+                     .With(new AvaloniaNativePlatformOptions { RenderingMode = new[] { AvaloniaNativeRenderingMode.Software } });
+            return b;
         }
             static double Max(double[] a) { double m = double.MinValue; foreach (double v in a) m = Math.Max(m, v); return m; }
     }

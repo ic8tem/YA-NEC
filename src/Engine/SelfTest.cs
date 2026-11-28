@@ -197,6 +197,9 @@ namespace YaNec.Engine
             // 1.9.0: Importa tabella da immagine (riconoscimento, modello, OCR di tabelle dritte e storte)
             try { foreach (var t in TabellaOcr.Prove()) res.Add(new Line { Name = t.Item1, Pass = t.Item2, Detail = t.Item3 }); }
             catch (Exception ex) { res.Add(new Line { Name = "Importa tabella", Pass = false, Detail = ex.Message }); }
+            // 1.10.0: dipolo trappolato multibanda (W3DZZ col modello a linea, bande vicine, accordo NEC del 40-20-15-10 m)
+            try { foreach (var t in CalcTrappolatoMulti.Prove()) res.Add(new Line { Name = t.Item1, Pass = t.Item2, Detail = t.Item3 }); }
+            catch (Exception ex) { res.Add(new Line { Name = "Trappolato multibanda", Pass = false, Detail = ex.Message }); }
             double necppMax = 0; int necppN = 0;
             foreach (Case c in Cases)
             {

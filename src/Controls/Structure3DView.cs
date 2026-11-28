@@ -257,6 +257,7 @@ namespace YaNec
                 }
                 if (tag >= 0) WireClicked(tag, pressCtrl);
             }
+            if (rotating) ChiudiMisuraFotogrammi();
             rotating = panning = false;
             e.Pointer.Capture(null);
         }
@@ -288,11 +289,40 @@ namespace YaNec
             sy = cy - sc * v;
         }
 
+        // 1.10.0 (valutazione GPU approvata da IC8TEM il 28/11/2026, opzione 2): tempi dei fotogrammi durante la rotazione col mouse,
+        // base per un dettaglio che si adatta al computer. Si misura il tempo di preparazione del fotogramma (Disegna) e l'intervallo tra
+        // due fotogrammi (quanti ne arrivano davvero sullo schermo); al rilascio del tasto una riga GRAFICA 3D nel registro.
+        readonly System.Diagnostics.Stopwatch orologioFot = System.Diagnostics.Stopwatch.StartNew();
+        int fotN; double fotSomma, fotMax, fotIntervSomma, fotUltimo = -1;
+        /// <summary>Ultima misura in rotazione: tempo medio di disegno (ms) e fotogrammi al secondo (NaN = nessuna rotazione ancora).</summary>
+        public static double UltimoDisegnoMs = double.NaN, UltimiFps = double.NaN;
+
         public override void Render(DrawingContext ctx)
         {
             // 0.4.20: ritaglio esplicito sul rettangolo della vista, oltre a ClipToBounds (nella schermata del 14/11 17:49 le linee uscivano sopra la finestra)
+            double t0 = orologioFot.Elapsed.TotalMilliseconds;
             using (ctx.PushClip(new Rect(0, 0, Bounds.Width, Bounds.Height)))
             using (Prestazioni.Misura("Disegno della struttura 3D (un fotogramma)", null, false)) Disegna(ctx);
+            if (rotating)
+            {
+                double t1 = orologioFot.Elapsed.TotalMilliseconds, dt = t1 - t0;
+                fotN++; fotSomma += dt; fotMax = Math.Max(fotMax, dt);
+                if (fotUltimo >= 0) fotIntervSomma += t0 - fotUltimo;
+                fotUltimo = t0;
+            }
+        }
+
+        void ChiudiMisuraFotogrammi()
+        {
+            if (fotN >= 5)
+            {
+                double medio = fotSomma / fotN, interv = fotIntervSomma / Math.Max(1, fotN - 1);
+                UltimoDisegnoMs = medio; UltimiFps = interv > 0 ? 1000 / interv : double.NaN;
+                Registro.Scrivi("GRAFICA 3D", string.Format(System.Globalization.CultureInfo.InvariantCulture,
+                    "rotazione: {0} fotogrammi, disegno medio {1:0.0} ms (massimo {2:0.0} ms), un fotogramma ogni {3:0.0} ms ({4:0} al secondo), {5} segmenti, {6}",
+                    fotN, medio, fotMax, interv, UltimiFps, Geo != null ? Geo.N : 0, Program.GraficaSoftware ? "disegno in software" : "scheda grafica se disponibile"));
+            }
+            fotN = 0; fotSomma = fotMax = fotIntervSomma = 0; fotUltimo = -1;
         }
 
         void Disegna(DrawingContext ctx)

@@ -412,7 +412,7 @@ namespace YaNec
             // 1.7.0: i pulsanti NEC dei nuovi calcolatori (bozzetto «mining riviste»): Tune, poi calcolo del modello
             foreach (SimpleCalc c in SimpleCalc.All())
             {
-                if (Array.IndexOf(new[] { "yagihf", "verttrap", "caricolin", "quadmulti", "yagibib", "eflw", "lt160", "halfsloper", "gamma", "bandalarga", "dipolorele" }, c.Key) < 0) continue;
+                if (Array.IndexOf(new[] { "yagihf", "verttrap", "caricolin", "quadmulti", "yagibib", "eflw", "lt160", "halfsloper", "gamma", "bandalarga", "dipolorele", "trapmulti" }, c.Key) < 0) continue;
                 try
                 {
                     CalcOutput o0 = c.Run();

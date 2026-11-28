@@ -18,6 +18,7 @@ namespace YaNec.Engine
         public string[] Choices;                 // scelta a pillole (fino a 4 voci) o a tendina: Value = indice
         public string Hint;                      // testo grigio dopo l'unita' (aggiornato da Compute)
         public bool Pillole;                     // 0.5.3: scelta sempre a pillole (anche oltre 4 voci, vanno a capo)
+        public bool Multipla;                    // 1.10.0: caselle di spunta (Value = maschera di bit delle voci scelte), dipolo trappolato multibanda
         // 1.0.11 (bozzetti approvati da IC8TEM il 16/11/2026 23:48): schede in sezioni numerate
         public string Sezione;                   // titolo della sezione che si apre con questo parametro ("2 · Braccio e bobina")
         public Func<bool> Visibile;              // null = sempre; la sezione si vede se si vede il suo primo parametro
@@ -93,6 +94,8 @@ namespace YaNec.Engine
         // le celle che iniziano con "✓" sono verdi, con "⚠" arancio
         public List<string[]> Tabella;
         public string TabellaTitolo;
+        public List<string[]> Tabella2;                          // 1.10.0: seconda tabella (dipolo trappolato multibanda: trappole e bande)
+        public string Tabella2Titolo;
     }
 
     public abstract class SimpleCalc

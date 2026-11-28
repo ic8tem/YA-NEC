@@ -108,6 +108,16 @@ namespace YaNec.Engine
                         r.Add(Balun(B11, fl, fh, 100, "Balun 1:1 ›"));
                         break;
                     }
+                case "trapmulti":
+                    {
+                        // 1.10.0: balun scelto da «Accorda le bande» (1:1, 2:1, 4:1, 6:1, 9:1 = indici 0-4 di Strumenti > Balun)
+                        CalcTrappolatoMulti tm = sc as CalcTrappolatoMulti;
+                        double[] fr = tm != null ? tm.Fr : new[] { 7.1 };
+                        int ib = tm != null ? Math.Max(0, Math.Min(4, tm.BalunScelto)) : 0;
+                        r.Add(Balun(ib, fr[fr.Length - 1], fr[0], 100, "Balun " + CalcTrappolatoMulti.RapportiN[ib] + " ›"));
+                        r.Add(Choke(fr[fr.Length - 1]));
+                        break;
+                    }
                 case "ripiegato":
                     r.Add(Balun(B41, f, f, 100, "Balun 4:1 ›"));
                     break;
