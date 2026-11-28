@@ -5,6 +5,9 @@
 **Novità della 1.9.0**:
 - **Importa tabella da immagine (OCR)**: la tabella delle misure di un articolo (Yagi VHF e non solo) da immagine, PDF, appunti o schermo; si corregge (cifre incerte in giallo, controlli in rosso) e diventa un modello, fili nella tabella o un confronto con DL6WU, rastremazioni e quad (manuale 28.20).
 
+- **Meno RAM dopo i calcoli grandi**: la memoria torna a Windows dopo il calcolo (prova su 24 modelli: risultati del motore identici a 17 cifre, stesso tempo, working set da 263 a 93 MB).
+- **Tabelle con la griglia** (scansioni): linee tolte prima dell'OCR; prova sulla NBS Technical Note 688, 67 numeri giusti su 70.
+
 **Novità della 1.8.0**:
 - **Leggi progetto (PDF o immagine)** in Calcolatori > Strumenti: le misure di una direttiva dal manuale o dal disegno del costruttore (testo del PDF o OCR dell'immagine), tabella da controllare con i dubbi in giallo, confronto con il modello aperto e modello NEC (manuale 28.19).
 
