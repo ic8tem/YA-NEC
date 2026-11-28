@@ -40,7 +40,7 @@
     <!-- 1.8.0: lettura dei PDF in Leggi progetto (Apache 2.0, solo codice .NET) -->
     <PackageReference Include="PdfPig" Version="0.1.9" />
   </ItemGroup>
-  <!-- 1.9.0: il GC compatta i blocchi grandi quando serve (prova --prova-memoria del 28/11/2026: numeri del motore identici a 17 cifre
+  <!-- 1.9.0: il GC compatta i blocchi grandi quando serve (prova "YA-NEC prova-memoria" del 28/11/2026: numeri del motore identici a 17 cifre
        su 24 modelli, stesso tempo, working set 93 MB invece di 132 MB a fine prova) -->
   <ItemGroup>
     <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="5" />
