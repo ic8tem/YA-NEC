@@ -436,7 +436,7 @@ namespace YaNec
             while (ruoli.Count > n) ruoli.RemoveAt(ruoli.Count - 1);
             if (n == 0) { pTabella.Children.Add(T("La tabella letta compare qui: apri un'immagine o un PDF e premi «Leggi la tabella».")); AggiornaAlim(); return; }
             if (tab.Titolo.Length > 0) pTabella.Children.Add(T(tab.Titolo, 12, false));
-            string cols = string.Join(",", Enumerable.Repeat("110", n));
+            string cols = string.Join(",", Enumerable.Repeat("140", n));
             var gr = new Grid { ColumnDefinitions = new ColumnDefinitions(cols) };
             for (int k = 0; k < n; k++)
             {
