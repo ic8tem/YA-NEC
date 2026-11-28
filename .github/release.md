@@ -2,6 +2,9 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.8.0**:
+- **Leggi progetto (PDF o immagine)** in Calcolatori > Strumenti: le misure di una direttiva dal manuale o dal disegno del costruttore (testo del PDF o OCR dell'immagine), tabella da controllare con i dubbi in giallo, confronto con il modello aperto e modello NEC (manuale 28.19).
+
 **Novità della 1.7.4**:
 - correzione: Calcoli meccanici > Sollecitazioni elementi (HF) chiudeva il programma all'apertura.
 

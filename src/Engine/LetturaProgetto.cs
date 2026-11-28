@@ -403,7 +403,7 @@ namespace YaNec.Engine
                 if (File.Exists(Path.Combine(td, "eng.traineddata"))) { psi.ArgumentList.Add("--tessdata-dir"); psi.ArgumentList.Add(td); }
                 psi.ArgumentList.Add("-l"); psi.ArgumentList.Add("eng");
                 psi.ArgumentList.Add("--psm"); psi.ArgumentList.Add("11");
-                psi.ArgumentList.Add("tsv");
+                psi.ArgumentList.Add("-c"); psi.ArgumentList.Add("tessedit_create_tsv=1");   // senza il file di configurazione "tsv"
                 string err;
                 using (var pr = Process.Start(psi))
                 {
@@ -577,6 +577,23 @@ namespace YaNec.Engine
             }
             catch (Exception ex) { r.Add(Tuple.Create("Leggi progetto: OCR di un disegno di prova", false, ex.Message)); }
             return r;
+        }
+
+        /// <summary>Riga di comando (YA-NEC --leggi-progetto file [pagina]): pagine trovate ed elementi letti, per le prove.</summary>
+        public static int RigaDiComando(string file, string scelta)
+        {
+            var l = file.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase) ? LeggiPdf(file) : new List<PaginaLetta> { new PaginaLetta { DaOcr = true, Png = File.ReadAllBytes(file), Descrizione = Path.GetFileName(file) } };
+            for (int i = 0; i < l.Count; i++) Console.WriteLine(i + ": " + l[i].Descrizione + (l[i].DaOcr ? "" : ", " + l[i].NumeriInPollici + " misure in pollici"));
+            int n; if (!int.TryParse(scelta ?? "", out n)) n = Math.Max(0, l.FindIndex(q => q.DaOcr));
+            if (n < 0 || n >= l.Count) return 1;
+            var pg = l[n]; string err = null;
+            if (pg.DaOcr) pg = Ocr(pg.Png, pg.Descrizione, out err);
+            if (pg == null) { Console.WriteLine(err); return 2; }
+            int u = UnitaProbabile(pg);
+            Console.WriteLine("Pagina " + pg.Descrizione + ": " + pg.Parole.Count + " parole, unita' " + Unita[u] + ", frequenza " + FrequenzaDalTesto(pg.Parole.Select(q => q.Testo)));
+            foreach (var e in Analizza(pg, u))
+                Console.WriteLine(string.Format(CI, "{0,-34} {1,8}  {2}{3}", e.Nome, Fmt(e.Pos), TestoSpezzoni(e.Spezzoni), e.Dubbi.Count > 0 ? "   [" + string.Join("; ", e.Dubbi) + "]" : "") + (e.Alimentato ? "  (alimentato)" : ""));
+            return 0;
         }
     }
 }

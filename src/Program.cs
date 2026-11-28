@@ -32,6 +32,7 @@ namespace YaNec
             if (args.Length >= 3 && args[0] == "--converti") { Librerie.Prepara(); return ConvertiModelli.Esegui(args[1], args[2]); }
             // 1.5.7+: prova di tutte le combinazioni della scheda Filari, senza finestra (IC8TEM 22/11/2026)
             if (args.Length >= 2 && args[0] == "--abaco-filari") { Librerie.Prepara(); return AbacoFilari.Esegui(args[1], args.Length > 2 ? args[2] : "perfetto", args.Length > 3 ? double.Parse(args[3], System.Globalization.CultureInfo.InvariantCulture) : 3, args.Length > 4 ? double.Parse(args[4], System.Globalization.CultureInfo.InvariantCulture) : 0.5, args.Length > 5 && args[5] == "solo-efhw"); }   // IC8TEM 22/11/2026 16:28
+            if (args.Length >= 2 && args[0] == "--leggi-progetto") { Librerie.Prepara(); return Engine.LetturaProgetto.RigaDiComando(args[1], args.Length > 2 ? args[2] : null); }   // 1.8.0
             if (args.Length >= 2 && args[0] == "--prova-filari") { Librerie.Prepara(); return ProvaFilari.Esegui(args[1]); }
             if (args.Length >= 2 && args[0] == "--prova-v43") { Librerie.Prepara(); return ProvaVerticale43.Esegui(args[1]); }   // 1.5.9
             if (args.Length >= 3 && args[0] == "--prova-gt") { Librerie.Prepara(); return ProvaGt.Esegui(args[1], args[2], args.Length >= 4 ? args[3] : null); }   // 1.5.8
