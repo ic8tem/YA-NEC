@@ -115,6 +115,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---------------------------------------------------------
+PdfPig (dalla 1.8.0) - https://github.com/UglyToad/PdfPig
+Apache License 2.0 - Copyright UglyToad e contributori. Lettura dei PDF in Leggi progetto.
+
+Tesseract OCR (dalla 1.8.0) - https://github.com/tesseract-ocr/tesseract
+Apache License 2.0 - Copyright Google e contributori. Programma a parte, lanciato da Leggi progetto.
+Nei pacchetti Windows x64 e ARM64: cartella "tesseract" con tesseract.exe e le sue librerie, dalla
+compilazione di UB Mannheim (https://github.com/UB-Mannheim/tesseract; librerie con le loro licenze:
+Leptonica BSD 2, libpng, libtiff, libjpeg, zlib, giflib, libwebp, libarchive, ICU e altre, licenze
+permissive). Dati data/tessdata/eng.traineddata da https://github.com/tesseract-ocr/tessdata_fast
+(Apache License 2.0). Testo della licenza Apache 2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+---------------------------------------------------------
 SERVIZI DI RETE USATI
 
 api.github.com e github.com: controllo e download degli aggiornamenti dal repository

@@ -25,6 +25,7 @@ jobs:
         run: dotnet publish YA-NEC.csproj -c Release -r linux-x64 --self-contained true -p:Version=$(tr -d ' \r\n' < VERSION) -o pub/YA-NEC
       - name: Autotest
         run: |
+          sudo apt-get install -y tesseract-ocr > /dev/null 2>&1 || true
           chmod +x pub/YA-NEC/YA-NEC
           timeout 900 ./pub/YA-NEC/YA-NEC --autotest > autotest.txt 2>&1 || true
           tail -60 autotest.txt

@@ -351,6 +351,14 @@ namespace YaNec
             },
             new CreditEntry
             {
+                Title = "PdfPig e Tesseract OCR (Leggi progetto, 1.8.0)",
+                Who = "UglyToad e contributori (PdfPig); Ray Smith, Google e contributori (Tesseract); UB Mannheim (compilazione per Windows); dati tessdata_fast \"eng\"",
+                What = "Calcolatori > Strumenti > Leggi progetto: testo e immagini dei PDF (PdfPig) e lettura dei disegni con l'OCR (Tesseract, programma a parte).",
+                Link = "github.com/UglyToad/PdfPig - github.com/tesseract-ocr/tesseract - github.com/UB-Mannheim/tesseract",
+                License = "Apache 2.0"
+            },
+            new CreditEntry
+            {
                 Title = "Carattere Inter",
                 Who = "Rasmus Andersson",
                 What = "Il carattere dell'interfaccia.",

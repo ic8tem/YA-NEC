@@ -79,6 +79,27 @@ jobs:
       - name: Compila
         shell: bash
         run: dotnet publish YA-NEC.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:Windows7=${{ matrix.w7 }} -p:Version=$VER -o pub/YA-NEC
+      # 1.8.0: OCR di Calcolatori > Strumenti > Leggi progetto. Tesseract (Apache 2.0) compilato da UB Mannheim, estratto dal suo
+      # installatore: solo tesseract.exe e le sue librerie, nella cartella "tesseract"; i dati "eng" sono in data/tessdata.
+      # Se lo scaricamento non riesce il pacchetto esce lo stesso (l'OCR chiede di installare Tesseract; i PDF con il testo si leggono).
+      - name: Tesseract per Windows (OCR di Leggi progetto)
+        if: matrix.rid == 'win-x64' || matrix.rid == 'win-arm64'
+        shell: bash
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          url=$(curl -s -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/UB-Mannheim/tesseract/releases | jq -r '.[].assets[].browser_download_url' | grep -i 'w64-setup.*\.exe$' | head -1 || true)
+          [ -z "$url" ] && url="https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.4.0.20240606.exe"
+          echo "Tesseract: $url"
+          curl -sSL --fail -o /tmp/tess.exe "$url"
+          rm -rf /tmp/tess && 7z x -y -o/tmp/tess /tmp/tess.exe > /dev/null
+          exe=$(find /tmp/tess -iname tesseract.exe | head -1); d=$(dirname "$exe")
+          mkdir -p pub/YA-NEC/tesseract
+          cp "$exe" "$d"/*.dll pub/YA-NEC/tesseract/
+          echo "$url" > pub/YA-NEC/tesseract/ORIGINE.txt
+          ls pub/YA-NEC/tesseract; du -sh pub/YA-NEC/tesseract
       - name: Pacchetto
         shell: bash
         run: |

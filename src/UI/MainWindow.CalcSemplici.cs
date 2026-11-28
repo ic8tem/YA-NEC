@@ -46,7 +46,7 @@ namespace YaNec
             { "VHF", new[] { "hb9cv", "bigwheel", "hen", "lpda", "yagidl6wu", "quagi", "loopyagi", "boom", "divisori", "yagiincr", "eggbeater", "qfh", "discone" } },   // 1.5.6: Discone da HF a VHF (IC8TEM 21/11/2026)
             { "Antenne riceventi", new string[0] },
             { "Suggerimenti", new string[0] },
-            { "Strumenti", new[] { "ridim", "tetto", "retelc", "forcina", "gamma", "stub", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },   // 1.7.0: gamma, stub
+            { "Strumenti", new[] { "leggiprog", "ridim", "tetto", "retelc", "forcina", "gamma", "stub", "rrad", "cavi", "toroidiT", "toroidiFT", "balun", "staffe" } },   // 1.7.0: gamma, stub
             { "Calcoli meccanici", new string[0] },
             { "Dischi e illuminatori", new[] { "parabola", "offset", "trombe", "biquad" } },
             { "2,4 GHz", new[] { "pcb24" } },
@@ -105,6 +105,7 @@ namespace YaNec
             fasCalc.Voce("eggbeater", "Eggbeater", false, null, "due spire incrociate, riflettore a radiali (F5VIF, tamago)");
             fasCalc.Voce("qfh", "QFH (quadrifilare a elica)", false, null, "spira grande e piccola a mezzo giro (Coppens)");
             fasCalc.Voce("discone", "Discone", false, null, "disco, cono, angolo");   // 1.5.6: spostata da HF a VHF
+            fasCalc.Voce("leggiprog", "Leggi progetto (PDF o immagine)", false, null, "misure di una direttiva dal manuale o dal disegno del costruttore: tabella da controllare e modello NEC");   // 1.8.0
             fasCalc.Voce("ridim", "Ridimensiona antenna", false, null, "ora in Variabili e ottimizzazione > Ridimensiona e ricentra");   // 1.5.3
             fasCalc.Voce("tetto", "Antenna su tetto (solaio)", false, null, "modello aperto: terreno vero sotto il fabbricato o solaio sotto l'antenna");   // 0.5.0
             fasCalc.Voce("retelc", "Rete LC di adattamento", false, null, "L, Pi, T, con i valori");
@@ -129,7 +130,7 @@ namespace YaNec
                 Control c;
                 if (!calcPages.TryGetValue(k, out c))
                 {
-                    c = k == "ridim" ? BuildRimandoRicentra() : k == "carichihf" ? BuildCarichiHfPanel() : k == "divisori" ? BuildDivisoriPanel() : k == "yagiincr" ? BuildYagiIncrociatePanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
+                    c = k == "ridim" ? BuildRimandoRicentra() : k == "carichihf" ? BuildCarichiHfPanel() : k == "divisori" ? BuildDivisoriPanel() : k == "yagiincr" ? BuildYagiIncrociatePanel() : k == "meccanica" ? BuildMeccanicaPanel() : k == "lpda" ? BuildLpdaPanel() : k == "4sq" ? BuildFourSquarePanel() : k == "boom" ? BuildBoomPanel() : k == "staffe" ? BuildStaffePanel() : k == "vertmb" ? BuildVerticaleMbPanel() : k == "pcb24" ? BuildPcb24Panel() : k == "dipmb" ? BuildDipoloMbPanel() : k == "yagimb" ? BuildYagiMbPanel() : k == "parabola" ? CreaPannelloParabola() : k == "leggiprog" ? new LetturaProgettoPanel { ApriNec = ApriModelloCalcolatore, Geometria = () => run?.Geometry } : k == "trombe" ? new TrombaPanel { ApriNec = ApriModelloCalcolatore } : k == "offset" ? CreaPannelloOffset() : BuildGruppoCalc(k);
                     calcPages[k] = c;
                 }
                 hostCalc.Content = c;

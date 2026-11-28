@@ -191,6 +191,9 @@ namespace YaNec.Engine
                 res.Add(new Line { Name = "Firma degli aggiornamenti", Pass = buona && !falsa,
                     Detail = "firma di prova " + (buona ? "accettata" : "RIFIUTATA") + ", messaggio cambiato " + (falsa ? "ACCETTATO" : "rifiutato") });
             }
+            // 1.8.0: Leggi progetto (riconoscimento, modello, OCR se c'e' Tesseract)
+            try { foreach (var t in LetturaProgetto.Prove()) res.Add(new Line { Name = t.Item1, Pass = t.Item2, Detail = t.Item3 }); }
+            catch (Exception ex) { res.Add(new Line { Name = "Leggi progetto", Pass = false, Detail = ex.Message }); }
             double necppMax = 0; int necppN = 0;
             foreach (Case c in Cases)
             {
