@@ -355,5 +355,6 @@ SI: a1 (raggio equivalente di tubi non tondi), a2 (reattanza del dipolo corto), 
   - Riconoscimento: posizioni nella colonna di destra, diametri sopra e lunghezze sotto ogni tubo, accoppiati per posizione orizzontale; righe di manicotti e giunzioni e numeri tra parentesi esclusi; punto iniziale perso dall'OCR rimesso (375" = .375"). Controlli: posizioni crescenti, diametri che calano verso la punta, lettura OCR sotto il 70 %.
   - Il file letto resta dell'utente: YA-NEC non lo copia e non lo distribuisce (il manuale XR-5 non e' nel pacchetto; l'autotest usa un disegno di prova inventato).
   - Autotest: riconoscimento di un disegno di prova, modello NEC e confronto con se' stesso, OCR dello stesso disegno se c'e' Tesseract.
+  - Prova sul manuale XR-5 dell'utente (pagina 19, disegno a 108 punti per pollice): trovati tutti i 10 elementi con il nome, 8 posizioni su 10, 3 righe giuste senza ritocchi, le altre in giallo con il motivo (OCR in tre letture unite: 3 e 4 volte, e 4 volte con piu' contrasto). Riga di comando per le prove: YA-NEC --leggi-progetto <file> [pagina].
   - Nessuna modifica al motore di calcolo.
 
