@@ -8167,3 +8167,31 @@ Nel file non ci sono pagine con misure né immagini grandi.	The file has no page
 Elemento alimentato: sorgente al centro.	Fed element: source at the centre.
 Per i segmenti del modello (circa lambda/40). Con una multibanda: la banda più alta.	For the model segments (about lambda/40). For a multiband beam: the highest band.
 Pagine con le misure: testo del PDF (numeri esatti) oppure immagine (disegno del costruttore, letta con l'OCR).	Pages with dimensions: PDF text (exact numbers) or image (manufacturer's drawing, read with OCR).
+Dipolo trappolato multibanda (2-5 bande)	Multiband trap dipole (2-5 bands)
+trappolato multibanda	multiband trap
+1 · Bande	1 · Bands
+Condensatore delle trappole	Trap capacitor
+scelto	chosen
+C delle trappole	Trap C
+3 · Filo, quota e terreno	3 · Wire, height and ground
+reale medio	average real
+Trappole	Traps
+Balun consigliato	Suggested balun
+Trappole (per braccio, dal centro)	Traps (per leg, from the centre)
+Distanza dal centro	Distance from centre
+Reattanza alle bande sotto	Reactance on the lower bands
+Tratto	Section
+Fino a	Up to
+Z (NEC)	Z (NEC)
+Banda ROS < 2	SWR < 2 bandwidth
+Perdite trappole	Trap losses
+serve la Z del NEC su ogni banda	needs the NEC Z on every band
+Da 2 a 5 bande. Ogni trappola risuona alla banda appena piu' alta del tratto che la segue.	2 to 5 bands. Each trap resonates on the band just above the section that follows it.
+Banda del modello NEC creato e del disegno; se non e' tra quelle scelte si usa la piu' bassa.	Band of the created NEC model and of the drawing; if it is not among the chosen ones, the lowest is used.
+Perdita della trappola: R parallela = Q ω L. Trappole in aria ben fatte 150-250, coassiali 100-150.	Trap loss: parallel R = Q ω L. Well-made air traps 150-250, coax traps 100-150.
+Reale medio: Sommerfeld, εr 13, σ 0,005 S/m.	Average real: Sommerfeld, εr 13, σ 0.005 S/m.
+Automatico: per ogni trappola il valore della serie E12 con reattanza vicina a 250 Ω alla sua risonanza. Scelto: lo stesso C per tutte le trappole.	Automatic: for each trap the E12 value with a reactance close to 250 Ω at its resonance. Chosen: the same C for all traps.
+Scelte piu' di 5 bande: si usano le 5 piu' alte.	More than 5 bands chosen: the 5 highest are used.
+Scegli almeno 2 bande: con una sola banda e' un dipolo semplice (Dipoli > mezz'onda).	Choose at least 2 bands: with a single band it is a plain dipole (Dipoles > half-wave).
+Le trappole riducono banda e rendimento sulle bande basse: la perdita da Q pesa dove la trappola lavora da bobina di carico (I5WHC, RR 4/2025).	Traps reduce bandwidth and efficiency on the low bands: the Q loss matters where the trap works as a loading coil (I5WHC, RR 4/2025).
+«Accorda le bande (NEC)» porta in risonanza ogni banda, sceglie il balun e riempie Z, ROS, banda a ROS 2 e perdite.	«Tune the bands (NEC)» brings every band to resonance, chooses the balun and fills in Z, SWR, SWR 2 bandwidth and losses.

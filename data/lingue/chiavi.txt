@@ -7716,3 +7716,33 @@ Nel file non ci sono pagine con misure né immagini grandi.
 Elemento alimentato: sorgente al centro.
 Per i segmenti del modello (circa lambda/40). Con una multibanda: la banda più alta.
 Pagine con le misure: testo del PDF (numeri esatti) oppure immagine (disegno del costruttore, letta con l'OCR).
+Dipolo trappolato multibanda (2-5 bande)
+trappolato multibanda
+1 · Bande
+Condensatore delle trappole
+automatico
+scelto
+C delle trappole
+3 · Filo, quota e terreno
+reale medio
+perfetto
+Trappole
+Balun consigliato
+Trappole (per braccio, dal centro)
+Distanza dal centro
+Reattanza alle bande sotto
+Tratto
+Fino a
+Z (NEC)
+Banda ROS < 2
+Perdite trappole
+serve la Z del NEC su ogni banda
+Da 2 a 5 bande. Ogni trappola risuona alla banda appena piu' alta del tratto che la segue.
+Banda del modello NEC creato e del disegno; se non e' tra quelle scelte si usa la piu' bassa.
+Perdita della trappola: R parallela = Q ω L. Trappole in aria ben fatte 150-250, coassiali 100-150.
+Reale medio: Sommerfeld, εr 13, σ 0,005 S/m.
+Automatico: per ogni trappola il valore della serie E12 con reattanza vicina a 250 Ω alla sua risonanza. Scelto: lo stesso C per tutte le trappole.
+Scelte piu' di 5 bande: si usano le 5 piu' alte.
+Scegli almeno 2 bande: con una sola banda e' un dipolo semplice (Dipoli > mezz'onda).
+Le trappole riducono banda e rendimento sulle bande basse: la perdita da Q pesa dove la trappola lavora da bobina di carico (I5WHC, RR 4/2025).
+«Accorda le bande (NEC)» porta in risonanza ogni banda, sceglie il balun e riempie Z, ROS, banda a ROS 2 e perdite.

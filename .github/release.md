@@ -2,6 +2,10 @@
 
 > *La storia di questo programma la farete voi: con i vostri progetti, con le vostre idee, con la vostra genialità, con le vostre scoperte e con le vostre certezze.*
 
+**Novità della 1.10.0**:
+- **Dipolo trappolato multibanda (da 2 a 5 bande)** in Calcolatori > Dipoli: spunti le bande, il programma calcola trappole (C, L, risonanza), tratti e distanze dal centro; «Accorda le bande (NEC)» porta ogni banda in risonanza, sceglie il balun (1:1 ... 9:1) e mostra ROS, banda a ROS 2 e perdite delle trappole (manuale 28.21). Idea: SP3RL.
+- **Grafica**: se la scheda grafica fa chiudere il programma all'avvio, la volta dopo YA-NEC disegna da solo in software (manuale 28.22); tempi dei fotogrammi 3D nel registro.
+
 **Novità della 1.9.0**:
 - **Importa tabella da immagine (OCR)**: la tabella delle misure di un articolo (Yagi VHF e non solo) da immagine, PDF, appunti o schermo; si corregge (cifre incerte in giallo, controlli in rosso) e diventa un modello, fili nella tabella o un confronto con DL6WU, rastremazioni e quad (manuale 28.20).
 

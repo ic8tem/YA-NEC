@@ -170,12 +170,14 @@ namespace YaNec.Engine
             Progetto(out tratti, out lt, out ct);
             double[] s = new double[fr.Length];
             for (int i = 0; i < s.Length; i++) s[i] = 1;
-            for (int i = 0; i < fr.Length; i++)
-            {
-                int ii = i;
-                s[ii] = C170.Risonanza(x => { double[] sc = (double[])s.Clone(); sc[ii] = x; return Mazzo(fr[ii], tratti, lt, ct, sc, 50); }, fr[ii]);
-                s[ii] = Math.Max(0.6, Math.Min(1.4, s[ii]));
-            }
+            // due passate: i tratti esterni spostano di poco le bande alte (la trappola non e' un circuito aperto perfetto), la seconda le rimette
+            for (int passata = 0; passata < 2; passata++)
+                for (int i = 0; i < fr.Length; i++)
+                {
+                    int ii = i;
+                    s[ii] = C170.Risonanza(x => { double[] sc = (double[])s.Clone(); sc[ii] = x; return Mazzo(fr[ii], tratti, lt, ct, sc, 50); }, fr[ii], s[ii]);
+                    s[ii] = Math.Max(0.6, Math.Min(1.4, s[ii]));
+                }
             scale = s;
             // Z al centro di ogni banda, poi il balun con la media geometrica del ROS piu' bassa
             Complex[] zb = new Complex[fr.Length];

@@ -365,16 +365,16 @@ namespace YaNec
                     // 1.10.0 (bozzetto del dipolo trappolato multibanda approvato da IC8TEM il 28/11/2026): caselle di spunta, Value = maschera di bit
                     gruppo = null; griglia = null; ultimaRigaScelte = null;
                     WrapPanel wp = new WrapPanel { Tag = "spunte-" + pp.Key };
-                    for (int i = 0; i < pp.Choices.Length; i++)
+                    for (int ib = 0; ib < pp.Choices.Length; ib++)
                     {
-                        int bit = 1 << i;
-                        CheckBox cbx = new CheckBox { Content = pp.Choices[i], IsChecked = ((int)pp.Value & bit) != 0, Margin = new Thickness(0, 0, 12, 0), Foreground = Pal.B(Pal.Fore) };
-                        cbx.IsCheckedChanged += (s, e) =>
+                        int bit = 1 << ib;
+                        CheckBox cbx = new CheckBox { Content = pp.Choices[ib], IsChecked = ((int)pp.Value & bit) != 0, Margin = new Thickness(0, 0, 12, 0), Foreground = Pal.B(Pal.Fore) };
+                        cbx.IsCheckedChanged += (s9, e9) =>
                         {
-                            int v = (int)pp.Value;
-                            v = cbx.IsChecked == true ? v | bit : v & ~bit;
-                            if (v == (int)pp.Value) return;
-                            pp.Value = v; sc.Scale = 1; if (mostra != null) mostra();
+                            int vv = (int)pp.Value;
+                            vv = cbx.IsChecked == true ? vv | bit : vv & ~bit;
+                            if (vv == (int)pp.Value) return;
+                            pp.Value = vv; sc.Scale = 1; if (mostra != null) mostra();
                         };
                         wp.Children.Add(cbx);
                     }

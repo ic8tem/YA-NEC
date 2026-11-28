@@ -2339,3 +2339,24 @@ Pulsante **Importa tabella...** nella barra in alto (accanto a Salva) e nella ta
 **3 Dove la mando.** **Modello nuovo**: Yagi (elementi lungo il boom), quad / loop (la lunghezza e' il perimetro), verticale con radiali (la prima riga e' il radiatore) o fili liberi; frequenza, polarizzazione ed elemento alimentato (di solito il secondo); segmenti automatici a lambda/20; dopo "Crea" si calcola subito. **Tabella dei Fili**: i fili vanno in fondo o al posto dei fili scelti, e "Annulla" della Geometria torna indietro. **Calcolatore**: misure lette e calcolate colonna per colonna con la differenza in mm, per la Yagi lunga DL6WU, i tubi telescopici (rastremazione predefinita con la correzione di Leeson) e la quad.
 
 Il modello porta nelle righe CM il titolo, la fonte, le unita' e la tabella corretta; l'immagine ritagliata si salva in data/fonti_tabelle. OCR: Tesseract (Apache 2.0) con i dati tessdata_fast; Windows x64 e ARM64 lo hanno nel pacchetto, su Linux e Mac si installa dal sistema (capitolo 28.19).
+
+
+### 28.21 Dipolo trappolato multibanda, da 2 a 5 bande (1.10.0)
+
+Calcolatori > Dipoli > **trappolato multibanda**. Si spuntano le bande (80, 40, 30, 20, 17, 15, 12, 10 m; da 2 a 5): ogni trappola risuona alla banda appena piu' alta del tratto che la segue. Per esempio con 40-20-15-10 m il tratto 1 (dal centro) risuona sui 10 m, la trappola T1 a 28,5 MHz, il tratto 2 aggiunge i 15 m, T2 a 21,2 MHz, e cosi' via fino ai 40 m in punta.
+
+**Trappole.** Il condensatore e' automatico (per ogni trappola il valore E12 con reattanza vicina a 250 Ω alla sua risonanza) oppure scelto, uguale per tutte; L = 1 / ((2π f)² C). Un C piu' grande accorcia meno il dipolo e perde meno sulle bande basse, ma la bobina diventa piccola e critica (W3DZZ usava 60 pF a 7,05 MHz, 376 Ω). Il Q da' la perdita: nel modello NEC ogni trappola e' un RLC parallelo con R = Q ω L.
+
+**Come si calcola.** Modello a linea del braccio, lo stesso del Dipolo trappolato W3DZZ (capitolo dei dipoli): per ogni banda, dalla piu' alta alla piu' bassa, si cerca il tratto oltre la trappola che annulla la reattanza al centro, con le trappole interne che sotto la loro risonanza fanno da bobine X = ωL / (1 - (f/ft)²). Con bande vicine (17 e 15 m, 12 e 10 m) il tratto viene corto e la scheda lo segnala.
+
+**Accorda le bande (NEC).** Ritocca i tratti dalla banda alta alla bassa finche' ogni banda e' in risonanza, poi calcola su ogni banda Z, ROS, larghezza a ROS 2 e perdita delle trappole, e sceglie il balun (1:1, 2:1, 4:1, 6:1, 9:1) con la media geometrica del ROS piu' bassa: il ROS e il calcolo in tempo reale sono riferiti a 50 Ω per il rapporto. Il pulsante «Balun ...» apre Strumenti > Balun con quel rapporto.
+
+**Cosa si vede.** Riquadri con lunghezza totale, trappole, balun e ROS peggiore; il disegno del braccio con le trappole e le quote dei tratti; la tabella delle trappole (risonanza, C, L, distanza dal centro, reattanza alle bande sotto) e la tabella delle bande (tratto, Z, ROS, banda a ROS 2, perdite; prima dell'accordo le perdite sono una stima come I5WHC). **Banda calcolata** sceglie la banda del modello creato con «Crea il modello NEC».
+
+Idea della scheda: il calcolatore di dipoli trappolati di SP3RL (dx10antenne.pl), citato nei Crediti; formule e codice sono di YA-NEC.
+
+### 28.22 Grafica: ripiego automatico sul software (1.10.0)
+
+Avalonia prova da se' la scheda grafica e, se non parte, disegna in software. YA-NEC copre anche il caso peggiore: la scheda grafica parte ma il programma si chiude prima che la finestra sia rimasta aperta 8 secondi (driver difettoso). All'avvio dopo, il programma disegna in software, lo scrive nel registro (riga GRAFICA) e crea data/grafica_software.txt: cancellalo per riprovare la scheda grafica. La variabile YANEC_GRAFICA=software oppure gpu forza il modo.
+
+Quando si ruota la struttura 3D col mouse, al rilascio il registro riceve una riga GRAFICA 3D con i fotogrammi, il tempo medio e massimo di disegno, i fotogrammi al secondo e i segmenti: e' la misura che servira' per un dettaglio che si adatta al computer. Il motore di calcolo resta sul processore (la scheda grafica perderebbe precisione).
