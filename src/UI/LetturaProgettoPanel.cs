@@ -163,9 +163,7 @@ namespace YaNec
             caricamento = true;
             cbPagine.ItemsSource = pagine.Select(q => q.Descrizione).ToList();
             // pagina proposta: l'immagine grande con piu' area, altrimenti il testo con piu' misure in pollici
-            int sc = -1;
-            for (int i = 0; i < pagine.Count; i++) if (pagine[i].DaOcr) { sc = i; break; }
-            if (sc < 0 && pagine.Count > 0) sc = pagine.Select((q, i) => new { q, i }).OrderByDescending(x => x.q.NumeriInPollici).First().i;
+            int sc = LetturaProgetto.Proposta(pagine);
             cbPagine.SelectedIndex = sc;
             caricamento = false;
             if (err != null) { tStato.Text = "File non leggibile: " + err; return; }

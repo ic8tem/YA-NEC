@@ -37,6 +37,7 @@ namespace YaNec.Engine
         public double Larghezza, Altezza;
         public List<ParolaLetta> Parole = new List<ParolaLetta>();
         public int NumeriInPollici;         // per scegliere la pagina giusta
+        public double Copertura;            // immagine del PDF: parte della pagina che copre (0-1)
     }
 
     public class SpezzoneLetto { public double Diam, Lung; }
@@ -68,7 +69,7 @@ namespace YaNec.Engine
             if (t == null) return "";
             t = t.Trim().Replace('\u201D', '"').Replace('\u201C', '"').Replace('\u2033', '"').Replace("''", "\"").Replace(',', '.');
             t = t.TrimEnd('|', ';', ':', '_', '!');
-            int k0 = 0; while (k0 < t.Length && !char.IsDigit(t[k0]) && t[k0] != '.' && t[k0] != '(') k0++;
+            int k0 = 0; while (k0 < t.Length && "{[|_£€$'`~«»>".IndexOf(t[k0]) >= 0) k0++;
             t = t.Substring(k0);
             return t;
         }
@@ -129,7 +130,7 @@ namespace YaNec.Engine
             }
             var titoli = Righe(pg.Parole.Where(p => { double vv; bool pp; return p.X >= 0.6 * W && Regex.IsMatch(p.Testo, "[A-Za-z#0-9]") && !(p.Cx > 0.84 * W && Numero(p.Testo, out vv, out pp)); }))
                 .Where(r => Regex.IsMatch(r.Testo, @"element|elem\.|#\s*\d|refl|driv|direct|radiat|rifl|dirett|\bDE\b|\bDR\b|\bD\d", RegexOptions.IgnoreCase)
-                         && !Parole_Escluse.Any(x => r.Testo.ToLowerInvariant().Contains(x))).ToList();
+                         && !Parole_Escluse.Any(x => r.Testo.ToLowerInvariant().Contains(x)) && r.P.Count <= 8).ToList();
             double tolY = 0.015 * H;
             var anc = new List<Tuple<double, ParolaLetta, Riga>>();   // y, posizione, titolo
             foreach (var t in titoli)
@@ -362,11 +363,20 @@ namespace YaNec.Engine
                         try { byte[] p2; if (im.TryGetPng(out p2)) png = p2; } catch { }
                         if (png == null) { try { png = im.RawBytes.ToArray(); } catch { } }
                         if (png == null || png.Length < 100) continue;
-                        out_.Add(new PaginaLetta { Pagina = pg.Number, DaOcr = true, Png = png, Descrizione = "pagina " + pg.Number + " - immagine " + ni + " (" + im.WidthInSamples + "×" + im.HeightInSamples + ")" });
+                        out_.Add(new PaginaLetta { Pagina = pg.Number, DaOcr = true, Png = png, Copertura = r.Width * r.Height / (pg.Width * pg.Height), Descrizione = "pagina " + pg.Number + " - immagine " + ni + " (" + im.WidthInSamples + "×" + im.HeightInSamples + ")" });
                     }
                 }
             }
             return out_;
+        }
+
+        /// <summary>Pagina da proporre: la prima immagine che copre almeno meta' pagina (il disegno), poi la prima immagine, poi il testo con piu' misure.</summary>
+        public static int Proposta(List<PaginaLetta> l)
+        {
+            int k = l.FindIndex(q => q.DaOcr && (q.Copertura >= 0.5 || q.Pagina == 0));
+            if (k < 0) k = l.FindIndex(q => q.DaOcr);
+            if (k < 0 && l.Count > 0) k = l.Select((q, i) => new { q, i }).OrderByDescending(x => x.q.NumeriInPollici).First().i;
+            return k;
         }
 
         static int Pollici(PaginaLetta p) { int n = 0; foreach (var w in p.Parole) { double v; bool pol; if (Numero(w.Testo, out v, out pol) && pol) n++; } return n; }
@@ -406,60 +416,113 @@ namespace YaNec.Engine
             Directory.CreateDirectory(dir);
             try
             {
-                double scala; int w0, h0;
-                string png = Path.Combine(dir, "pagina.png");
+                int w0, h0;
+                PaginaLetta pg = null;
                 using (var bmp = SkiaSharp.SKBitmap.Decode(immagine))
                 {
                     if (bmp == null) { errore = "immagine non leggibile"; return null; }
                     w0 = bmp.Width; h0 = bmp.Height;
-                    scala = w0 < 1600 ? 3.0 : w0 < 3000 ? 1.5 : 1.0;
-                    var info = new SkiaSharp.SKImageInfo((int)(w0 * scala), (int)(h0 * scala), SkiaSharp.SKColorType.Rgba8888, SkiaSharp.SKAlphaType.Premul);
-                    using (var surf = SkiaSharp.SKSurface.Create(info))
+                    pg = new PaginaLetta { DaOcr = true, Png = immagine, Larghezza = w0, Altezza = h0, Descrizione = descrizione };
+                    // tre letture (prova sul disegno XR-5: 85 numeri con la prima, 97 con tutte e tre): 3 volte, 4 volte, 4 volte con piu' contrasto
+                    double s0 = w0 < 1600 ? 3.0 : w0 < 3000 ? 1.5 : 1.0;
+                    var passi = new[] { Tuple.Create(s0, false), Tuple.Create(s0 * 4 / 3, false), Tuple.Create(s0 * 4 / 3, true) };
+                    int n = 0;
+                    foreach (var pa in passi)
                     {
-                        var c = surf.Canvas;
-                        c.Clear(SkiaSharp.SKColors.White);
-                        using (var paint = new SkiaSharp.SKPaint { FilterQuality = SkiaSharp.SKFilterQuality.High, IsAntialias = true })
-                        {
-                            // grigio (luminanza)
-                            paint.ColorFilter = SkiaSharp.SKColorFilter.CreateColorMatrix(new float[] { 0.299f, 0.587f, 0.114f, 0, 0, 0.299f, 0.587f, 0.114f, 0, 0, 0.299f, 0.587f, 0.114f, 0, 0, 0, 0, 0, 1, 0 });
-                            c.DrawBitmap(bmp, new SkiaSharp.SKRect(0, 0, info.Width, info.Height), paint);
-                        }
-                        using (var img = surf.Snapshot())
-                        using (var data = img.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100))
-                        using (var fs = File.Create(png)) data.SaveTo(fs);
+                        n++;
+                        string png = Path.Combine(dir, "pagina" + n + ".png");
+                        ScriviGrigio(bmp, pa.Item1, pa.Item2, png);
+                        string err;
+                        var parole = Tesseract(exe, png, Path.Combine(dir, "uscita" + n), pa.Item1, out err);
+                        if (parole == null) { if (n == 1) { errore = err; return null; } continue; }
+                        Unisci(pg.Parole, parole);
                     }
-                }
-                string uscita = Path.Combine(dir, "uscita");
-                var psi = new ProcessStartInfo { FileName = exe, UseShellExecute = false, CreateNoWindow = true, RedirectStandardError = true, RedirectStandardOutput = true };
-                psi.ArgumentList.Add(png); psi.ArgumentList.Add(uscita);
-                string td = Path.Combine(AppPaths.DataDir, "tessdata");
-                if (File.Exists(Path.Combine(td, "eng.traineddata"))) { psi.ArgumentList.Add("--tessdata-dir"); psi.ArgumentList.Add(td); }
-                psi.ArgumentList.Add("-l"); psi.ArgumentList.Add("eng");
-                psi.ArgumentList.Add("--psm"); psi.ArgumentList.Add("11");
-                psi.ArgumentList.Add("-c"); psi.ArgumentList.Add("tessedit_create_tsv=1");   // senza il file di configurazione "tsv"
-                string err;
-                using (var pr = Process.Start(psi))
-                {
-                    var tErr = pr.StandardError.ReadToEndAsync(); pr.StandardOutput.ReadToEnd();
-                    if (!pr.WaitForExit(180000)) { try { pr.Kill(); } catch { } errore = "OCR fermato dopo 3 minuti"; return null; }
-                    err = tErr.Result;
-                }
-                string tsv = uscita + ".tsv";
-                if (!File.Exists(tsv)) { errore = "OCR non riuscito: " + (err ?? "").Trim(); return null; }
-                var pg = new PaginaLetta { DaOcr = true, Png = immagine, Larghezza = w0, Altezza = h0, Descrizione = descrizione };
-                foreach (string riga in File.ReadAllLines(tsv).Skip(1))
-                {
-                    var c = riga.Split('\t');
-                    if (c.Length < 12 || c[0] != "5" || string.IsNullOrWhiteSpace(c[11])) continue;
-                    double l = double.Parse(c[6], CI), t = double.Parse(c[7], CI), ww = double.Parse(c[8], CI), hh = double.Parse(c[9], CI), cf;
-                    double.TryParse(c[10], NumberStyles.Float, CI, out cf);
-                    pg.Parole.Add(new ParolaLetta { Testo = c[11], X = l / scala, Y = t / scala, W = ww / scala, H = hh / scala, Conf = cf });
                 }
                 pg.NumeriInPollici = Pollici(pg);
                 return pg;
             }
             catch (Exception ex) { errore = "OCR non riuscito: " + ex.Message; return null; }
             finally { try { Directory.Delete(dir, true); } catch { } }
+        }
+
+        // immagine ingrandita in grigio (e con piu' contrasto: 20-80 % portato a 0-100 %)
+        static void ScriviGrigio(SkiaSharp.SKBitmap bmp, double scala, bool contrasto, string png)
+        {
+            var info = new SkiaSharp.SKImageInfo((int)(bmp.Width * scala), (int)(bmp.Height * scala), SkiaSharp.SKColorType.Rgba8888, SkiaSharp.SKAlphaType.Premul);
+            using (var surf = SkiaSharp.SKSurface.Create(info))
+            {
+                var c = surf.Canvas;
+                c.Clear(SkiaSharp.SKColors.White);
+                using (var paint = new SkiaSharp.SKPaint { FilterQuality = SkiaSharp.SKFilterQuality.High, IsAntialias = true })
+                {
+                    paint.ColorFilter = SkiaSharp.SKColorFilter.CreateColorMatrix(new float[] { 0.299f, 0.587f, 0.114f, 0, 0, 0.299f, 0.587f, 0.114f, 0, 0, 0.299f, 0.587f, 0.114f, 0, 0, 0, 0, 0, 1, 0 });
+                    c.DrawBitmap(bmp, new SkiaSharp.SKRect(0, 0, info.Width, info.Height), paint);
+                }
+                using (var img = surf.Snapshot())
+                {
+                    SkiaSharp.SKData data;
+                    if (contrasto)
+                    {
+                        using (var b2 = SkiaSharp.SKBitmap.FromImage(img))
+                        {
+                            var px = b2.Pixels;
+                            for (int k = 0; k < px.Length; k++)
+                            {
+                                int g = px[k].Red;
+                                int v = (int)Math.Round((g - 51) * 255.0 / 153.0);
+                                byte bb = (byte)Math.Max(0, Math.Min(255, v));
+                                px[k] = new SkiaSharp.SKColor(bb, bb, bb, 255);
+                            }
+                            b2.Pixels = px;
+                            data = b2.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100);
+                        }
+                    }
+                    else data = img.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100);
+                    using (data) using (var fs = File.Create(png)) data.SaveTo(fs);
+                }
+            }
+        }
+
+        static List<ParolaLetta> Tesseract(string exe, string png, string uscita, double scala, out string errore)
+        {
+            errore = null;
+            var psi = new ProcessStartInfo { FileName = exe, UseShellExecute = false, CreateNoWindow = true, RedirectStandardError = true, RedirectStandardOutput = true };
+            psi.ArgumentList.Add(png); psi.ArgumentList.Add(uscita);
+            string td = Path.Combine(AppPaths.DataDir, "tessdata");
+            if (File.Exists(Path.Combine(td, "eng.traineddata"))) { psi.ArgumentList.Add("--tessdata-dir"); psi.ArgumentList.Add(td); }
+            psi.ArgumentList.Add("-l"); psi.ArgumentList.Add("eng");
+            psi.ArgumentList.Add("--psm"); psi.ArgumentList.Add("11");
+            psi.ArgumentList.Add("-c"); psi.ArgumentList.Add("tessedit_create_tsv=1");   // senza il file di configurazione "tsv"
+            string err;
+            using (var pr = Process.Start(psi))
+            {
+                var tErr = pr.StandardError.ReadToEndAsync(); pr.StandardOutput.ReadToEnd();
+                if (!pr.WaitForExit(180000)) { try { pr.Kill(); } catch { } errore = "OCR fermato dopo 3 minuti"; return null; }
+                err = tErr.Result;
+            }
+            string tsv = uscita + ".tsv";
+            if (!File.Exists(tsv)) { errore = "OCR non riuscito: " + (err ?? "").Trim(); return null; }
+            var l = new List<ParolaLetta>();
+            foreach (string riga in File.ReadAllLines(tsv).Skip(1))
+            {
+                var c = riga.Split('\t');
+                if (c.Length < 12 || c[0] != "5" || string.IsNullOrWhiteSpace(c[11])) continue;
+                double x = double.Parse(c[6], CI), t = double.Parse(c[7], CI), ww = double.Parse(c[8], CI), hh = double.Parse(c[9], CI), cf;
+                double.TryParse(c[10], NumberStyles.Float, CI, out cf);
+                l.Add(new ParolaLetta { Testo = c[11], X = x / scala, Y = t / scala, W = ww / scala, H = hh / scala, Conf = cf });
+            }
+            return l;
+        }
+
+        // unisce le parole di un'altra lettura: dove due parole si sovrappongono resta quella letta con piu' sicurezza
+        static void Unisci(List<ParolaLetta> tutte, List<ParolaLetta> nuove)
+        {
+            foreach (var p in nuove)
+            {
+                int k = tutte.FindIndex(q => Math.Abs(q.Cx - p.Cx) < 0.5 * Math.Max(q.W, p.W) && Math.Abs(q.Cy - p.Cy) < 0.6 * Math.Max(q.H, p.H));
+                if (k < 0) tutte.Add(p);
+                else if (p.Conf > tutte[k].Conf + 5) tutte[k] = p;
+            }
         }
 
         // ------------------------------------------------------------------------------------------ confronto
@@ -617,7 +680,7 @@ namespace YaNec.Engine
         {
             var l = file.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase) ? LeggiPdf(file) : new List<PaginaLetta> { new PaginaLetta { DaOcr = true, Png = File.ReadAllBytes(file), Descrizione = Path.GetFileName(file) } };
             for (int i = 0; i < l.Count; i++) Console.WriteLine(i + ": " + l[i].Descrizione + (l[i].DaOcr ? "" : ", " + l[i].NumeriInPollici + " misure in pollici"));
-            int n; if (!int.TryParse(scelta ?? "", out n)) n = Math.Max(0, l.FindIndex(q => q.DaOcr));
+            int n; if (!int.TryParse(scelta ?? "", out n)) n = Proposta(l);
             if (n < 0 || n >= l.Count) return 1;
             var pg = l[n]; string err = null;
             if (pg.DaOcr) pg = Ocr(pg.Png, pg.Descrizione, out err);
