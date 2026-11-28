@@ -71,6 +71,7 @@ namespace YaNec.Engine
             if (string.IsNullOrEmpty(t)) return t;
             string s = t.Trim().Replace('−', '-').Replace('–', '-');
             if (Regex.IsMatch(s, @"^-?[0-9.,]+$")) return s;
+            if (Regex.IsMatch(s, @"^\(?\d[-~]\d{2,3}$")) { corretta = true; return s.TrimStart('(').Replace('-', '.').Replace('~', '.'); }   // 0-482 = 0.482
             if (Regex.IsMatch(s, @"^-?[0-9.,OolI|SB]+$") && Regex.IsMatch(s, @"[0-9]") || Regex.IsMatch(s, @"^[Oo]$"))
             {
                 corretta = true;
@@ -85,6 +86,8 @@ namespace YaNec.Engine
             }
             return s;
         }
+
+        static bool ParolaNumero(string t) { bool k; double v; string c = Cifre(t, out k); return Valore(c, false, out v) || Valore(c, true, out v); }
 
         public static bool Valore(string t, bool virgola, out double v)
         {
@@ -107,7 +110,7 @@ namespace YaNec.Engine
         public static TabellaLetta Riconosci(PaginaLetta pg)
         {
             var t = new TabellaLetta();
-            var parole = pg.Parole.Where(p => !string.IsNullOrWhiteSpace(p.Testo) && Regex.IsMatch(p.Testo, @"[0-9A-Za-z\u00C0-\u024F\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFFλØø]")).OrderBy(p => p.Cy).ToList();
+            var parole = pg.Parole.Where(p => !string.IsNullOrWhiteSpace(p.Testo) && (p.Conf >= 45 || ParolaNumero(p.Testo)) && Regex.IsMatch(p.Testo, @"[0-9A-Za-z\u00C0-\u024F\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFFλØø]")).OrderBy(p => p.Cy).ToList();
             if (parole.Count == 0) return t;
             double hMed = parole.Select(p => p.H).OrderBy(h => h).ElementAt(parole.Count / 2);
             // righe
@@ -571,17 +574,18 @@ namespace YaNec.Engine
             int w = b.Width, h = b.Height;
             var px = b.Pixels;
             var nero = new bool[w * h];
-            for (int k = 0; k < px.Length; k++) nero[k] = (px[k].Red * 299 + px[k].Green * 587 + px[k].Blue * 114) / 1000 < 128;
+            for (int k = 0; k < px.Length; k++) nero[k] = (px[k].Red * 299 + px[k].Green * 587 + px[k].Blue * 114) / 1000 < 160;
             var togli = new bool[w * h];
-            int L = Math.Max(25, (int)(0.03 * w));
+            int L = Math.Max(25, (int)(0.03 * w)), buco = Math.Max(2, w / 800);   // le linee delle scansioni sono interrotte qua e la'
             for (int y = 0; y < h; y++)
             {
                 int x = 0;
                 while (x < w)
                 {
                     if (!nero[y * w + x]) { x++; continue; }
-                    int s0 = x; while (x < w && nero[y * w + x]) x++;
-                    if (x - s0 >= L) for (int q = s0; q < x; q++) togli[y * w + q] = true;
+                    int s0 = x, fine = x;
+                    while (x < w) { if (nero[y * w + x]) { fine = x; x++; } else if (x - fine <= buco) x++; else break; }
+                    if (fine - s0 + 1 >= L) for (int q = s0; q <= fine; q++) togli[y * w + q] = true;
                 }
             }
             for (int x = 0; x < w; x++)
@@ -590,12 +594,20 @@ namespace YaNec.Engine
                 while (y < h)
                 {
                     if (!nero[y * w + x]) { y++; continue; }
-                    int s0 = y; while (y < h && nero[y * w + x]) y++;
-                    if (y - s0 >= L) for (int q = s0; q < y; q++) togli[q * w + x] = true;
+                    int s0 = y, fine = y;
+                    while (y < h) { if (nero[y * w + x]) { fine = y; y++; } else if (y - fine <= buco) y++; else break; }
+                    if (fine - s0 + 1 >= L) for (int q = s0; q <= fine; q++) togli[q * w + x] = true;
                 }
             }
+            // un pixel in piu' attorno (bordi sfumati delle linee)
             bool cambiato = false;
-            for (int k = 0; k < px.Length; k++) if (togli[k]) { px[k] = SkiaSharp.SKColors.White; cambiato = true; }
+            for (int y = 0; y < h; y++)
+                for (int x = 0; x < w; x++)
+                {
+                    int k = y * w + x;
+                    if (togli[k] || (x > 0 && togli[k - 1]) || (x + 1 < w && togli[k + 1]) || (y > 0 && togli[k - w]) || (y + 1 < h && togli[k + w]))
+                    { px[k] = SkiaSharp.SKColors.White; cambiato = true; }
+                }
             if (cambiato) b.Pixels = px;
         }
 
