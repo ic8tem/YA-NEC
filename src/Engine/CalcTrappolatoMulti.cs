@@ -362,23 +362,23 @@ namespace YaNec.Engine
             o.Z0Rif = z0;
             o.Bande = (double[])fr.Clone();
 
-            // disegno del braccio: trappole e quote
-            double h = Math.Max(0, P("h")), q = Math.Max(0.4, braccio * 0.1);
+            // disegno: trappole su tutti e due i bracci, nomi e quote solo sul braccio destro, sfalsati su due righe
+            double h = Math.Max(0, P("h")), q = Math.Max(0.4, braccio * 0.16);
             o.Plane = "yz";
             o.HideGround = true;
             double prima = 0;
             for (int i = 0; i < n; i++)
             {
-                o.Mark(7, prima, h - q * (1 + (i % 2) * 0.9), Calcolatori.N(l[i], 2) + " m", 3, pos[i], h - q * (1 + (i % 2) * 0.9));
+                double yq = h - q * (1 + (i % 2) * 0.9);
+                o.Mark(7, prima, yq, Calcolatori.N(l[i], 2) + " m", 3, pos[i], yq);
                 if (i < n - 1)
-                    foreach (int lato in new[] { -1, 1 })
-                    {
-                        o.Mark(6, lato * pos[i] - braccio * 0.03, h, null, 2, lato * pos[i] + braccio * 0.03, h);
-                        o.Mark(0, lato * pos[i] - braccio * 0.03, h + q * 0.8, "T" + (i + 1) + " " + NomeBanda(fr[i]), 2);
-                    }
+                {
+                    foreach (int lato in new[] { -1, 1 }) o.Mark(6, lato * pos[i] - braccio * 0.03, h, null, 2, lato * pos[i] + braccio * 0.03, h);
+                    o.Mark(0, pos[i] - braccio * 0.02, h + q * (0.7 + (i % 2) * 0.9), "T" + (i + 1), 2);
+                }
                 prima = pos[i];
             }
-            o.Mark(7, -braccio, h - q * 2.9, "totale " + Calcolatori.N(2 * braccio, 2) + " m", 3, braccio, h - q * 2.9);
+            o.Mark(7, -braccio, h - q * 3, "totale " + Calcolatori.N(2 * braccio, 2) + " m", 3, braccio, h - q * 3);
             return o;
         }
     }
